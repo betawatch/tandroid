@@ -6,7 +6,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class WebViewRequestProps {
     public boolean allowWrite;
     public TLRPC.BotApp app;

@@ -967,7 +967,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                         if (ThemePreviewActivity.this.patternLayout[i13] != null) {
                             FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) ThemePreviewActivity.this.patternLayout[i13].getLayoutParams();
                             if (i13 == 0) {
-                                f3 = ThemePreviewActivity.this.screenType == 2 ? NotificationCenter.storiesDraftsUpdated : NotificationCenter.proxyCheckDone;
+                                f3 = ThemePreviewActivity.this.screenType == 2 ? NotificationCenter.storiesListUpdated : NotificationCenter.proxyCheckDone;
                             } else {
                                 f3 = 316.0f;
                             }
@@ -1742,12 +1742,12 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                                 }
                                                 this.patternLayout[i9].setWillNotDraw(false);
                                                 if (this.screenType == 2) {
-                                                    createFrame = LayoutHelper.createFrame(-1, i9 == 0 ? NotificationCenter.storiesDraftsUpdated : NotificationCenter.onDatabaseReset, 83);
+                                                    createFrame = LayoutHelper.createFrame(-1, i9 == 0 ? NotificationCenter.storiesListUpdated : NotificationCenter.didUpdateGlobalAutoDeleteTimer, 83);
                                                 } else {
-                                                    createFrame = LayoutHelper.createFrame(-1, i9 == 0 ? NotificationCenter.proxyCheckDone : NotificationCenter.onDatabaseReset, 83);
+                                                    createFrame = LayoutHelper.createFrame(-1, i9 == 0 ? NotificationCenter.proxyCheckDone : NotificationCenter.didUpdateGlobalAutoDeleteTimer, 83);
                                                 }
                                                 if (i9 == 0) {
-                                                    f2 = this.screenType == 2 ? NotificationCenter.storiesDraftsUpdated : NotificationCenter.proxyCheckDone;
+                                                    f2 = this.screenType == 2 ? NotificationCenter.storiesListUpdated : NotificationCenter.proxyCheckDone;
                                                 } else {
                                                     f2 = 316.0f;
                                                 }
@@ -3064,7 +3064,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     if (ThemePreviewActivity.this.patternLayout[i132] != null) {
                         FrameLayout.LayoutParams layoutParams42 = (FrameLayout.LayoutParams) ThemePreviewActivity.this.patternLayout[i132].getLayoutParams();
                         if (i132 == 0) {
-                            f3 = ThemePreviewActivity.this.screenType == 2 ? NotificationCenter.storiesDraftsUpdated : NotificationCenter.proxyCheckDone;
+                            f3 = ThemePreviewActivity.this.screenType == 2 ? NotificationCenter.storiesListUpdated : NotificationCenter.proxyCheckDone;
                         } else {
                             f3 = 316.0f;
                         }
@@ -5257,7 +5257,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         this.valueAnimator.setInterpolator(CubicBezierInterpolator.DEFAULT);
         this.valueAnimator.setDuration(300L);
         this.valueAnimator.start();
-        this.backgroundImage.getImageReceiver().setCrossfadeDuration(NotificationCenter.onRequestPermissionResultReceived);
+        this.backgroundImage.getImageReceiver().setCrossfadeDuration(NotificationCenter.onActivityResultReceived);
         this.backgroundImage.getImageReceiver().setImage(ImageLocation.getForDocument(tL_wallPaper.document), this.imageFilter, null, null, null, tL_wallPaper.document.size, "jpg", tL_wallPaper, 1);
         this.backgroundImage.onNewImageSet();
         this.selectedPattern = tL_wallPaper;
@@ -7629,7 +7629,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 TLRPC.TL_photoSize tL_photoSize = new TLRPC.TL_photoSize();
                 tL_photoSize.size = 0;
                 tL_photoSize.w = 500;
-                tL_photoSize.h = NotificationCenter.currentUserPremiumStatusChanged;
+                tL_photoSize.h = NotificationCenter.onUserRingtonesUpdated;
                 tL_photoSize.type = "s";
                 tL_photoSize.location = new TLRPC.TL_fileLocationUnavailable();
                 tL_message14.media.photo.sizes.add(tL_photoSize);
@@ -7901,6 +7901,11 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ boolean didLongPressPollOption(ChatMessageCell chatMessageCell2, TLRPC.PollAnswer pollAnswer) {
+                        return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressPollOption(this, chatMessageCell2, pollAnswer);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ boolean didLongPressToDoButton(ChatMessageCell chatMessageCell2, TLRPC.TodoItem todoItem) {
                         return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressToDoButton(this, chatMessageCell2, todoItem);
                     }
@@ -7913,6 +7918,11 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ void didPressAboutRevenueSharingAds() {
                         ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAboutRevenueSharingAds(this);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ void didPressAddPollOptionButton(ChatMessageCell chatMessageCell2) {
+                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAddPollOptionButton(this, chatMessageCell2);
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -8031,6 +8041,11 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ void didPressPollMedia(ChatMessageCell chatMessageCell2, ImageReceiver imageReceiver, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, float f, float f2, int i2) {
+                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressPollMedia(this, chatMessageCell2, imageReceiver, pollAnswer, messageMedia, f, f2, i2);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ void didPressReaction(ChatMessageCell chatMessageCell2, TLRPC.ReactionCount reactionCount, boolean z, float f, float f2) {
                         ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReaction(this, chatMessageCell2, reactionCount, z, f, f2);
                     }
@@ -8131,8 +8146,18 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ void didTogglePollPreview(ChatMessageCell chatMessageCell2) {
+                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didTogglePollPreview(this, chatMessageCell2);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ boolean doNotShowLoadingReply(MessageObject messageObject) {
                         return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$doNotShowLoadingReply(this, messageObject);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ void drawPollMode(Canvas canvas, ChatMessageCell chatMessageCell2) {
+                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$drawPollMode(this, canvas, chatMessageCell2);
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -8143,6 +8168,11 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ void forceUpdateNoAnimation(ChatMessageCell chatMessageCell2, boolean z) {
                         ChatMessageCell.ChatMessageCellDelegate.-CC.$default$forceUpdateNoAnimation(this, chatMessageCell2, z);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ int getAddPollOptionInputFieldHeight(ChatMessageCell chatMessageCell2) {
+                        return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getAddPollOptionInputFieldHeight(this, chatMessageCell2);
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

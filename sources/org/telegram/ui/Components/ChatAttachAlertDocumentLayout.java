@@ -125,6 +125,9 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
             public static void $default$didSelectPhotos(DocumentSelectActivityDelegate documentSelectActivityDelegate, ArrayList arrayList, boolean z, int i, int i2, long j) {
             }
 
+            public static void $default$startDocumentSelectActivity(DocumentSelectActivityDelegate documentSelectActivityDelegate) {
+            }
+
             public static void $default$startMusicSelectActivity(DocumentSelectActivityDelegate documentSelectActivityDelegate) {
             }
         }
@@ -922,6 +925,17 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
                 z2 = true;
             }
         }
+        if (this.parentAlert.isPollAttach) {
+            if ((!this.selectedFiles.isEmpty() || !this.selectedMessages.isEmpty()) && this.delegate != null && !this.sendPressed) {
+                ArrayList arrayList = new ArrayList();
+                Iterator it = this.selectedMessages.keySet().iterator();
+                while (it.hasNext()) {
+                    arrayList.add((MessageObject) this.selectedMessages.get((FilteredSearchView.MessageHashId) it.next()));
+                }
+                this.delegate.didSelectFiles(new ArrayList(this.selectedFilesOrder), null, null, arrayList, false, 0, 0, 0L, false, 0L);
+            }
+            return true;
+        }
         if (view instanceof SharedDocumentCell) {
             ((SharedDocumentCell) view).setChecked(z2, true);
         }
@@ -1335,12 +1349,12 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:114:0x0185, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:118:0x0185, code lost:
     
-        if (r3 == null) goto L102;
+        if (r3 == null) goto L110;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0230 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0238 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r3v11, types: [java.io.BufferedReader] */
     /* JADX WARN: Type inference failed for: r3v12, types: [java.io.BufferedReader] */
     /* JADX WARN: Type inference failed for: r3v13 */
@@ -1354,6 +1368,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
     public void listRoots() {
         1 r3;
         ?? r32;
+        ChatAttachAlert chatAttachAlert;
         ?? r33;
         ?? bufferedReader;
         int lastIndexOf;
@@ -1436,16 +1451,11 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
                     th = th2;
                     r32 = bufferedReader;
                     if (r32 != 0) {
-                        try {
-                            r32.close();
-                        } catch (Exception e3) {
-                            FileLog.e(e3);
-                        }
                     }
                     throw th;
                 }
-            } catch (Exception e4) {
-                e = e4;
+            } catch (Exception e3) {
+                e = e3;
                 r3 = bufferedReader;
                 try {
                     FileLog.e(e);
@@ -1455,6 +1465,11 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
                     r1 = r3;
                     r32 = r1;
                     if (r32 != 0) {
+                        try {
+                            r32.close();
+                        } catch (Exception e4) {
+                            FileLog.e(e4);
+                        }
                     }
                     throw th;
                 }
@@ -1479,7 +1494,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
         } catch (Exception e6) {
             FileLog.e(e6);
         }
-        if (!this.isSoundPicker) {
+        if (!this.isSoundPicker && ((chatAttachAlert = this.parentAlert) == null || !chatAttachAlert.isPollAttach)) {
             ListItem listItem4 = new ListItem(r1);
             listItem4.title = LocaleController.getString(R.string.Gallery);
             listItem4.subtitle = LocaleController.getString(R.string.GalleryInfo);

@@ -34,7 +34,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
@@ -48,8 +47,6 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
@@ -168,7 +165,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
     };
 
     public interface PollCreateActivityDelegate {
-        void sendPoll(TLRPC.MessageMedia messageMedia, HashMap hashMap, boolean z, int i);
+        void sendPoll(TLRPC.MessageMedia messageMedia, ArrayList arrayList, boolean z, int i);
     }
 
     static /* synthetic */ int access$4908(PollCreateActivity pollCreateActivity) {
@@ -246,7 +243,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
 
     public PollCreateActivity(ChatActivity chatActivity, boolean z, Boolean bool) {
         this.todo = z;
-        int i = z ? getMessagesController().todoItemsMax : getMessagesController().pollAnswersMax;
+        int i = z ? getMessagesController().todoItemsMax : getMessagesController().config.pollAnswersMax.get();
         this.maxAnswersCount = i;
         this.answers = new CharSequence[i];
         this.answersChecks = new boolean[i];
@@ -675,7 +672,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                     tL_messageMediaPoll.poll.question = new TLRPC.TL_textWithEntities();
                     tL_messageMediaPoll.poll.question.text = charSequence.toString();
                     tL_messageMediaPoll.poll.question.entities = entities;
-                    SerializedData serializedData = new SerializedData(PollCreateActivity.this.maxAnswersCount);
+                    final ArrayList arrayList = new ArrayList(PollCreateActivity.this.maxAnswersCount);
                     for (int i6 = 0; i6 < PollCreateActivity.this.answers.length; i6++) {
                         if (!TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(PollCreateActivity.this.answers[i6]))) {
                             CharSequence[] charSequenceArr2 = {ChatAttachAlertPollLayout.getFixedString(PollCreateActivity.this.answers[i6])};
@@ -694,14 +691,12 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                             tL_textWithEntities.text = charSequence2.toString();
                             tL_pollAnswer.text.entities = entities2;
                             tL_pollAnswer.option = new byte[]{(byte) (tL_messageMediaPoll.poll.answers.size() + 48)};
-                            tL_messageMediaPoll.poll.answers.add(tL_pollAnswer);
                             if ((PollCreateActivity.this.multipleChoise || PollCreateActivity.this.quizPoll) && PollCreateActivity.this.answersChecks[i6]) {
-                                serializedData.writeByte(tL_pollAnswer.option[0]);
+                                arrayList.add(Integer.valueOf(tL_messageMediaPoll.poll.answers.size()));
                             }
+                            tL_messageMediaPoll.poll.answers.add(tL_pollAnswer);
                         }
                     }
-                    final HashMap hashMap = new HashMap();
-                    hashMap.put("answers", Utilities.bytesToHex(serializedData.toByteArray()));
                     tL_messageMediaPoll.results = new TLRPC.TL_pollResults();
                     CharSequence fixedString = ChatAttachAlertPollLayout.getFixedString(PollCreateActivity.this.solutionString);
                     if (fixedString != null) {
@@ -718,12 +713,12 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                         AlertsCreator.createScheduleDatePickerDialog(PollCreateActivity.this.parentFragment.getParentActivity(), PollCreateActivity.this.parentFragment.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.PollCreateActivity$2$$ExternalSyntheticLambda1
                             @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
                             public final void didSelectDate(boolean z, int i8, int i9) {
-                                PollCreateActivity.2.this.lambda$onItemClick$1(tL_messageMediaPoll, hashMap, z, i8, i9);
+                                PollCreateActivity.2.this.lambda$onItemClick$1(tL_messageMediaPoll, arrayList, z, i8, i9);
                             }
                         });
                         return;
                     } else {
-                        PollCreateActivity.this.delegate.sendPoll(tL_messageMediaPoll, hashMap, true, 0);
+                        PollCreateActivity.this.delegate.sendPoll(tL_messageMediaPoll, arrayList, true, 0);
                         PollCreateActivity.this.finishFragment();
                         return;
                     }
@@ -801,8 +796,8 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$1(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, HashMap hashMap, boolean z, int i, int i2) {
-            PollCreateActivity.this.delegate.sendPoll(tL_messageMediaPoll, hashMap, z, i);
+        public /* synthetic */ void lambda$onItemClick$1(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, ArrayList arrayList, boolean z, int i, int i2) {
+            PollCreateActivity.this.delegate.sendPoll(tL_messageMediaPoll, arrayList, z, i);
             PollCreateActivity.this.finishFragment();
         }
     }
@@ -1890,7 +1885,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                     if (PollCreateActivity.this.todo) {
                         i2 = PollCreateActivity.this.editing != null ? R.string.TodoEditTitle : R.string.TodoTitle;
                     } else {
-                        i2 = R.string.PollQuestion;
+                        i2 = R.string.PollQuestion2;
                     }
                     headerCell.setText(LocaleController.getString(i2));
                     return;
@@ -1900,7 +1895,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                         headerCell.setText(LocaleController.getString(R.string.QuizAnswers));
                         return;
                     } else {
-                        headerCell.setText(LocaleController.getString(PollCreateActivity.this.todo ? R.string.TodoItemsTitle : R.string.AnswerOptions));
+                        headerCell.setText(LocaleController.getString(PollCreateActivity.this.todo ? R.string.TodoItemsTitle : R.string.AnswerOptions2));
                         return;
                     }
                 }
@@ -1960,26 +1955,21 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             textInfoPrivacyCell.setFixedSize(0);
             textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
             if (i != PollCreateActivity.this.solutionInfoRow) {
-                if (i == PollCreateActivity.this.settingsSectionRow) {
-                    if (PollCreateActivity.this.quizOnly != 0) {
-                        textInfoPrivacyCell.setFixedSize(12);
-                        textInfoPrivacyCell.setText(null);
+                if (i != PollCreateActivity.this.settingsSectionRow) {
+                    if (PollCreateActivity.this.maxAnswersCount - PollCreateActivity.this.answersCount <= 0) {
+                        textInfoPrivacyCell.setText(LocaleController.getString(PollCreateActivity.this.todo ? R.string.TodoAddTaskInfoMax : R.string.AddAnOptionInfoMax));
+                        return;
+                    } else if (PollCreateActivity.this.todo) {
+                        textInfoPrivacyCell.setText(LocaleController.formatPluralStringComma("TodoNewTaskInfo", PollCreateActivity.this.maxAnswersCount - PollCreateActivity.this.answersCount));
                         return;
                     } else {
-                        textInfoPrivacyCell.setText(LocaleController.getString(R.string.QuizInfo));
+                        textInfoPrivacyCell.setText(LocaleController.formatString("AddAnOptionInfo", R.string.AddAnOptionInfo, LocaleController.formatPluralString("Option", PollCreateActivity.this.maxAnswersCount - PollCreateActivity.this.answersCount, new Object[0])));
                         return;
                     }
                 }
-                if (PollCreateActivity.this.maxAnswersCount - PollCreateActivity.this.answersCount <= 0) {
-                    textInfoPrivacyCell.setText(LocaleController.getString(PollCreateActivity.this.todo ? R.string.TodoAddTaskInfoMax : R.string.AddAnOptionInfoMax));
-                    return;
-                } else if (PollCreateActivity.this.todo) {
-                    textInfoPrivacyCell.setText(LocaleController.formatPluralStringComma("TodoNewTaskInfo", PollCreateActivity.this.maxAnswersCount - PollCreateActivity.this.answersCount));
-                    return;
-                } else {
-                    textInfoPrivacyCell.setText(LocaleController.formatString("AddAnOptionInfo", R.string.AddAnOptionInfo, LocaleController.formatPluralString("Option", PollCreateActivity.this.maxAnswersCount - PollCreateActivity.this.answersCount, new Object[0])));
-                    return;
-                }
+                textInfoPrivacyCell.setFixedSize(12);
+                textInfoPrivacyCell.setText(null);
+                return;
             }
             textInfoPrivacyCell.setText(LocaleController.getString(R.string.AddAnExplanationInfo));
         }

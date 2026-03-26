@@ -98,6 +98,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.EmojiTabsStrip;
 import org.telegram.ui.Components.EmojiView;
 import org.telegram.ui.Components.ExtendedGridLayoutManager;
+import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.LoadingSpan;
 import org.telegram.ui.Components.PermissionRequest;
@@ -253,8 +254,23 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 }
 
                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+                public /* synthetic */ ItemOptions getCustomItemOptions(ViewGroup viewGroup, View view) {
+                    return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$getCustomItemOptions(this, viewGroup, view);
+                }
+
+                @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
                 public long getDialogId() {
                     return 0L;
+                }
+
+                @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+                public /* synthetic */ TLRPC.TL_messageMediaPoll getPoll() {
+                    return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$getPoll(this);
+                }
+
+                @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+                public /* synthetic */ TLRPC.PollAnswer getPollAnswer() {
+                    return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$getPollAnswer(this);
                 }
 
                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -347,6 +363,11 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 }
 
                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+                public /* synthetic */ void retractVote() {
+                    ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$retractVote(this);
+                }
+
+                @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
                 public /* synthetic */ void sendEmoji(TLRPC.Document document) {
                     ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendEmoji(this, document);
                 }
@@ -364,6 +385,11 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
                 public /* synthetic */ void sendSticker(TLRPC.Document document, String str, Object obj, boolean z, int i, int i2) {
                     ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this, document, str, obj, z, i, i2);
+                }
+
+                @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+                public /* synthetic */ void sendVote() {
+                    ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendVote(this);
                 }
 
                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate

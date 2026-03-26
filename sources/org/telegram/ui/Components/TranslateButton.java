@@ -43,7 +43,7 @@ import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.Stories.recorder.HintView2;
 
 /* loaded from: classes5.dex */
-public abstract class TranslateButton extends FrameLayout {
+public abstract class TranslateButton extends FrameLayout implements Theme.Colorable {
     private boolean[] accusative;
     private final int currentAccount;
     private final long dialogId;
@@ -129,6 +129,7 @@ public abstract class TranslateButton extends FrameLayout {
         }
     }
 
+    @Override // org.telegram.ui.ActionBar.Theme.Colorable
     public void updateColors() {
         AnimatedTextView animatedTextView = this.textView;
         int i = Theme.key_chat_addContact;

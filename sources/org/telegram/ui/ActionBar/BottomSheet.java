@@ -111,7 +111,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
     private int[] itemIcons;
     private ArrayList<BottomSheetCell> itemViews;
     private CharSequence[] items;
-    private ValueAnimator keyboardContentAnimator;
+    public ValueAnimator keyboardContentAnimator;
     protected int keyboardHeight;
     protected boolean keyboardVisible;
     private WindowInsets lastInsets;
@@ -811,10 +811,10 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             if (java.lang.System.currentTimeMillis() < r16.this$0.smoothContainerViewLayoutUntil) goto L41;
          */
         /* JADX WARN: Removed duplicated region for block: B:25:0x00e5  */
-        /* JADX WARN: Removed duplicated region for block: B:29:0x0116  */
-        /* JADX WARN: Removed duplicated region for block: B:53:0x01f5  */
-        /* JADX WARN: Removed duplicated region for block: B:58:0x0216  */
-        /* JADX WARN: Removed duplicated region for block: B:64:0x0204  */
+        /* JADX WARN: Removed duplicated region for block: B:29:0x0114  */
+        /* JADX WARN: Removed duplicated region for block: B:53:0x01e4  */
+        /* JADX WARN: Removed duplicated region for block: B:58:0x0205  */
+        /* JADX WARN: Removed duplicated region for block: B:64:0x01f3  */
         /* JADX WARN: Removed duplicated region for block: B:91:0x00f5  */
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
         /*
@@ -833,6 +833,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             int i12;
             int i13;
             int i14;
+            ValueAnimator valueAnimator;
             int i15 = i4 - this.internalPaddingBottom;
             BottomSheet.access$1510(BottomSheet.this);
             ViewGroup viewGroup = BottomSheet.this.containerView;
@@ -869,15 +870,16 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                         BottomSheet.this.onContainerViewTranslation();
                         BottomSheet bottomSheet6 = BottomSheet.this;
                         bottomSheet6.onSmoothContainerViewLayout(bottomSheet6.containerView.getTranslationY());
-                        if (BottomSheet.this.keyboardContentAnimator != null) {
-                            BottomSheet.this.keyboardContentAnimator.cancel();
+                        valueAnimator = BottomSheet.this.keyboardContentAnimator;
+                        if (valueAnimator != null) {
+                            valueAnimator.cancel();
                         }
                         BottomSheet bottomSheet7 = BottomSheet.this;
                         bottomSheet7.keyboardContentAnimator = ValueAnimator.ofFloat(bottomSheet7.containerView.getTranslationY(), 0.0f);
                         BottomSheet.this.keyboardContentAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.BottomSheet$ContainerView$$ExternalSyntheticLambda0
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                                BottomSheet.ContainerView.this.lambda$onLayout$4(valueAnimator);
+                            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                                BottomSheet.ContainerView.this.lambda$onLayout$4(valueAnimator2);
                             }
                         });
                         BottomSheet.this.keyboardContentAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.BottomSheet.ContainerView.4
@@ -903,14 +905,15 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                         BottomSheet.this.onContainerViewTranslation();
                         BottomSheet bottomSheet62 = BottomSheet.this;
                         bottomSheet62.onSmoothContainerViewLayout(bottomSheet62.containerView.getTranslationY());
-                        if (BottomSheet.this.keyboardContentAnimator != null) {
+                        valueAnimator = BottomSheet.this.keyboardContentAnimator;
+                        if (valueAnimator != null) {
                         }
                         BottomSheet bottomSheet72 = BottomSheet.this;
                         bottomSheet72.keyboardContentAnimator = ValueAnimator.ofFloat(bottomSheet72.containerView.getTranslationY(), 0.0f);
                         BottomSheet.this.keyboardContentAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.BottomSheet$ContainerView$$ExternalSyntheticLambda0
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                                BottomSheet.ContainerView.this.lambda$onLayout$4(valueAnimator);
+                            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                                BottomSheet.ContainerView.this.lambda$onLayout$4(valueAnimator2);
                             }
                         });
                         BottomSheet.this.keyboardContentAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.BottomSheet.ContainerView.4
@@ -2217,8 +2220,9 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         return this.tag;
     }
 
-    public void setDimBehind(boolean z) {
+    public BottomSheet setDimBehind(boolean z) {
         this.dimBehind = z;
+        return this;
     }
 
     public void setDimBehindAlpha(int i) {

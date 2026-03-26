@@ -2538,7 +2538,7 @@ public class VideoPlayer implements Player.Listener, VideoListener, AnalyticsLis
                             }
                         } else {
                             while (i < 6) {
-                                int i5 = NotificationCenter.applyGroupCallVisibleParticipants * i;
+                                int i5 = 170 * i;
                                 float f5 = this.fft.getSpectrumReal()[i5];
                                 float f6 = this.fft.getSpectrumImaginary()[i5];
                                 float sqrt3 = (float) (Math.sqrt((f5 * f5) + (f6 * f6)) / 30.0d);

@@ -2809,23 +2809,23 @@ public class ContactsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x0107, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x0108, code lost:
     
         if (r4 != null) goto L53;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x0113, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x0114, code lost:
     
         org.telegram.messenger.FileLog.d("performWriteContactsToPhoneBookInternal " + (java.lang.System.currentTimeMillis() - r2));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x012c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x012d, code lost:
     
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x0110, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x0111, code lost:
     
         r4.close();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x010e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x010f, code lost:
     
         if (r4 == null) goto L54;
      */

@@ -1620,7 +1620,7 @@ public abstract class PreviewView extends FrameLayout {
             this.audioPlayer.setPlayWhenReady(z2);
             this.audioPlayer.seekTo(j3);
         } else if (z) {
-            if (Math.abs(this.audioPlayer.getCurrentPosition() - j3) > (isCollage() ? NotificationCenter.onRequestPermissionResultReceived : 120)) {
+            if (Math.abs(this.audioPlayer.getCurrentPosition() - j3) > (isCollage() ? NotificationCenter.onActivityResultReceived : 120)) {
                 this.audioPlayer.seekTo(j3);
             }
         }
@@ -1679,7 +1679,7 @@ public abstract class PreviewView extends FrameLayout {
             this.roundPlayer.setPlayWhenReady(z2);
             this.roundPlayer.seekTo(j3);
         } else if (z) {
-            if (Math.abs(this.roundPlayer.getCurrentPosition() - j3) > (isCollage() ? NotificationCenter.onRequestPermissionResultReceived : 120)) {
+            if (Math.abs(this.roundPlayer.getCurrentPosition() - j3) > (isCollage() ? NotificationCenter.onActivityResultReceived : 120)) {
                 this.roundPlayer.seekTo(j3);
             }
         }

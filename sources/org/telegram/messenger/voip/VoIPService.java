@@ -1958,9 +1958,9 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0037  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x004f  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0052  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0053  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2028,8 +2028,8 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         this.lastGroupCallUpdate = groupCall;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0199  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x01a6  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x019c  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x01a9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

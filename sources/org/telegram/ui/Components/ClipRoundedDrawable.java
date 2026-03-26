@@ -27,9 +27,9 @@ public class ClipRoundedDrawable extends Drawable {
         }
     };
     private RectF tempBounds = new RectF();
+    private RectF padding = new RectF();
     private boolean hasRadius = false;
     private float[] radii = new float[8];
-    private int R = (int) Math.round(Math.random() * 9999999.0d);
 
     @Override // android.graphics.drawable.Drawable
     public int getOpacity() {
@@ -56,7 +56,7 @@ public class ClipRoundedDrawable extends Drawable {
         }
     }
 
-    public void setRadii(float f, float f2, float f3, float f4) {
+    public ClipRoundedDrawable setRadii(float f, float f2, float f3, float f4) {
         float[] fArr = this.radii;
         float max = Math.max(0.0f, f);
         boolean z = true;
@@ -79,6 +79,7 @@ public class ClipRoundedDrawable extends Drawable {
         }
         this.hasRadius = z;
         updatePath();
+        return this;
     }
 
     private void updatePath() {
@@ -90,7 +91,14 @@ public class ClipRoundedDrawable extends Drawable {
                 path.rewind();
             }
             this.tempBounds.set(getBounds());
-            this.path.addRoundRect(this.tempBounds, this.radii, Path.Direction.CW);
+            RectF rectF = this.tempBounds;
+            float f = rectF.left;
+            RectF rectF2 = this.padding;
+            rectF.left = f + rectF2.left;
+            rectF.top += rectF2.top;
+            rectF.right -= rectF2.right;
+            rectF.bottom -= rectF2.bottom;
+            this.path.addRoundRect(rectF, this.radii, Path.Direction.CW);
         }
     }
 

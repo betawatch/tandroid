@@ -10041,7 +10041,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             };
             frameLayout.addView(linearLayout, LayoutHelper.createFrame(-1, -2.0f));
             if (!z2) {
-                HorizontalRoundTabsLayout horizontalRoundTabsLayout = new HorizontalRoundTabsLayout(context);
+                HorizontalRoundTabsLayout horizontalRoundTabsLayout = new HorizontalRoundTabsLayout(context, resourcesProvider);
                 this.currencyTabsView = horizontalRoundTabsLayout;
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(LocaleController.getString(R.string.Gift2BuyInStars));
@@ -10982,7 +10982,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             this.rays = raysView;
             raysView.setVisibility(8);
             raysView.setAlpha(0.0f);
-            addView(raysView, LayoutHelper.createFrame(NotificationCenter.onRequestPermissionResultReceived, 300.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
+            addView(raysView, LayoutHelper.createFrame(NotificationCenter.onActivityResultReceived, 300.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
             Cube3D cube3D = new Cube3D(context, this.faces);
             this.cube = cube3D;
             addView(cube3D, LayoutHelper.createFrame(-1, 300.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));

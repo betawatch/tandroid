@@ -891,11 +891,16 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         private final TextView headerTextView;
         public long lastBalance;
         private SpannableString loadingString;
+        private final ColoredImageSpan[] ref;
+        private final ColoredImageSpan[] refTon;
         private final Theme.ResourcesProvider resourcesProvider;
+        private boolean withTon;
 
         public StarsBalanceView(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
             super(context);
             this.lastBalance = -1L;
+            this.ref = new ColoredImageSpan[1];
+            this.refTon = new ColoredImageSpan[1];
             this.resourcesProvider = resourcesProvider;
             this.currentAccount = i;
             this.dialogId = UserConfig.getInstance(i).getClientUserId();
@@ -914,9 +919,11 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             AnimatedTextView animatedTextView = new AnimatedTextView(context) { // from class: org.telegram.ui.Stars.StarsIntroActivity.StarsBalanceView.1
                 @Override // android.view.View
                 protected void dispatchDraw(Canvas canvas) {
-                    int measuredWidth = (int) ((getMeasuredWidth() - getDrawable().getCurrentWidth()) - AndroidUtilities.dp(20.0f));
-                    mutate.setBounds(measuredWidth, (getMeasuredHeight() - AndroidUtilities.dp(17.0f)) / 2, AndroidUtilities.dp(17.0f) + measuredWidth, (getMeasuredHeight() + AndroidUtilities.dp(17.0f)) / 2);
-                    mutate.draw(canvas);
+                    if (!StarsBalanceView.this.withTon) {
+                        int measuredWidth = (int) ((getMeasuredWidth() - getDrawable().getCurrentWidth()) - AndroidUtilities.dp(20.0f));
+                        mutate.setBounds(measuredWidth, (getMeasuredHeight() - AndroidUtilities.dp(17.0f)) / 2, AndroidUtilities.dp(17.0f) + measuredWidth, (getMeasuredHeight() + AndroidUtilities.dp(17.0f)) / 2);
+                        mutate.draw(canvas);
+                    }
                     super.dispatchDraw(canvas);
                 }
             };
@@ -931,6 +938,10 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             addView(animatedTextView, LayoutHelper.createLinear(-2, 20, 5, 0, -2, 0, 0));
             updateBalance(false);
             setPadding(AndroidUtilities.dp(15.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(15.0f), AndroidUtilities.dp(4.0f));
+        }
+
+        public void withTon() {
+            this.withTon = true;
         }
 
         public void setDialogId(long j) {
@@ -969,21 +980,28 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             boolean z2;
             TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
             StarsController starsController = StarsController.getInstance(this.currentAccount);
+            StarsController tonInstance = this.withTon ? StarsController.getTonInstance(this.currentAccount) : null;
+            long j2 = 0;
+            AmountUtils$Amount fromNano = AmountUtils$Amount.fromNano(0L, AmountUtils$Currency.TON);
             this.amountTextView.cancelAnimation();
-            boolean z3 = true;
             if (this.dialogId == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
                 z2 = !starsController.balanceAvailable();
                 j = starsController.getBalance().amount;
+                if (tonInstance != null) {
+                    z2 |= !tonInstance.balanceAvailable();
+                    fromNano = tonInstance.getBalanceAmount();
+                }
             } else {
                 TLRPC.TL_payments_starsRevenueStats starsRevenueStats = BotStarsController.getInstance(this.currentAccount).getStarsRevenueStats(this.dialogId);
-                if (starsRevenueStats != null && starsRevenueStats.status != null) {
-                    z3 = false;
+                boolean z3 = starsRevenueStats == null || starsRevenueStats.status == null;
+                if (starsRevenueStats != null && (tL_starsRevenueStatus = starsRevenueStats.status) != null) {
+                    j2 = tL_starsRevenueStatus.current_balance.amount;
                 }
-                j = (starsRevenueStats == null || (tL_starsRevenueStatus = starsRevenueStats.status) == null) ? 0L : tL_starsRevenueStatus.current_balance.amount;
+                j = j2;
                 z2 = z3;
             }
-            long j2 = this.lastBalance;
-            if (j > j2 && j2 != -1) {
+            long j3 = this.lastBalance;
+            if (j > j3 && j3 != -1) {
                 bounce();
             }
             if (z2) {
@@ -996,7 +1014,21 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                 this.lastBalance = -1L;
                 return;
             }
-            this.amountTextView.setText(LocaleController.formatNumber(j, ' '));
+            if (this.withTon) {
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                if (!fromNano.isZero()) {
+                    spannableStringBuilder.append((CharSequence) StarsIntroActivity.replaceStarsWithPlain(true, (CharSequence) ("⭐️" + fromNano.asFormatString()), 0.62f, this.refTon));
+                    ColoredImageSpan coloredImageSpan = this.refTon[0];
+                    if (coloredImageSpan != null) {
+                        coloredImageSpan.setColorKey(Theme.key_telegram_color_text);
+                    }
+                    spannableStringBuilder.append((CharSequence) "  ");
+                }
+                spannableStringBuilder.append((CharSequence) StarsIntroActivity.replaceStarsWithPlain("⭐️" + LocaleController.formatNumber(j, ' '), 0.62f, this.ref));
+                this.amountTextView.setText(spannableStringBuilder);
+            } else {
+                this.amountTextView.setText(LocaleController.formatNumber(j, ' '));
+            }
             this.lastBalance = j;
         }
 
@@ -3311,7 +3343,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                 gLIconRenderer.colorKey2 = Theme.key_starsGradient2;
                 gLIconRenderer.updateColors();
                 gLIconTextureView.setStarParticlesView(makeParticlesView);
-                frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.applyGroupCallVisibleParticipants, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+                frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(170, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
                 gLIconTextureView.setPaused(false);
                 StarsBalanceView starsBalanceView = new StarsBalanceView(context, i, resourcesProvider);
                 this.balanceView = starsBalanceView;
@@ -6634,7 +6666,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         gLIconRenderer.colorKey2 = Theme.key_starsGradient2;
         gLIconRenderer.updateColors();
         gLIconTextureView.setStarParticlesView(makeParticlesView);
-        frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.applyGroupCallVisibleParticipants, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+        frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(170, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
         gLIconTextureView.setPaused(false);
         TextView textView = new TextView(context);
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack, resourcesProvider));

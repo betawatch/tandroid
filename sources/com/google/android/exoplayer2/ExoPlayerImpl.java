@@ -131,6 +131,7 @@ final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
     private int videoChangeFrameRateStrategy;
     private DecoderCounters videoDecoderCounters;
     private Format videoFormat;
+    private VideoFrameMetadataListener videoFrameMetadataListener;
     private final ArrayList videoListeners;
     private Object videoOutput;
     private int videoScalingMode;
@@ -897,6 +898,13 @@ final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
     public Format getVideoFormat() {
         verifyApplicationThread();
         return this.videoFormat;
+    }
+
+    @Override // com.google.android.exoplayer2.ExoPlayer
+    public void setVideoFrameMetadataListener(VideoFrameMetadataListener videoFrameMetadataListener) {
+        verifyApplicationThread();
+        this.videoFrameMetadataListener = videoFrameMetadataListener;
+        createMessageInternal(this.frameMetadataListener).setType(7).setPayload(videoFrameMetadataListener).send();
     }
 
     @Override // com.google.android.exoplayer2.Player

@@ -104,7 +104,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
     protected boolean isSearchFieldVisible;
     protected int itemsActionModeBackgroundColor;
     protected int itemsActionModeColor;
-    protected int itemsBackgroundColor;
+    public int itemsBackgroundColor;
     protected int itemsColor;
     private CharSequence lastOverlayTitle;
     private Drawable lastRightDrawable;
@@ -112,6 +112,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
     private CharSequence lastTitle;
     private boolean manualStart;
     public ActionBarMenu menu;
+    public boolean menuOccupyBack;
     protected boolean occupyStatusBar;
     private boolean onTop;
     private float onTopAnimated;
@@ -1368,15 +1369,26 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         }
         ActionBarMenu actionBarMenu2 = this.menu;
         if (actionBarMenu2 != null && actionBarMenu2.getVisibility() != 8) {
+            float f = 66.0f;
             if (this.menu.searchFieldVisible() && !this.isSearchFieldVisible) {
                 this.menu.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), makeMeasureSpec2);
                 int itemsMeasuredWidth = this.menu.getItemsMeasuredWidth(true);
-                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((size - AndroidUtilities.dp(AndroidUtilities.isTablet() ? 74.0f : 66.0f)) + this.menu.getItemsMeasuredWidth(true), TLObject.FLAG_30);
+                if (this.menuOccupyBack) {
+                    f = 0.0f;
+                } else if (AndroidUtilities.isTablet()) {
+                    f = 74.0f;
+                }
+                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((size - AndroidUtilities.dp(f)) + this.menu.getItemsMeasuredWidth(true), TLObject.FLAG_30);
                 if (!this.isMenuOffsetSuppressed) {
                     this.menu.translateXItems(-itemsMeasuredWidth);
                 }
             } else if (this.isSearchFieldVisible) {
-                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.dp(AndroidUtilities.isTablet() ? 74.0f : 66.0f), TLObject.FLAG_30);
+                if (this.menuOccupyBack) {
+                    f = 0.0f;
+                } else if (AndroidUtilities.isTablet()) {
+                    f = 74.0f;
+                }
+                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.dp(f), TLObject.FLAG_30);
                 if (!this.isMenuOffsetSuppressed) {
                     this.menu.translateXItems(0.0f);
                 }
@@ -1470,8 +1482,8 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         this.isMenuOffsetSuppressed = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:108:0x0275  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x0284  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x027b  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x028a  */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1496,7 +1508,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         }
         ActionBarMenu actionBarMenu = this.menu;
         if (actionBarMenu != null && actionBarMenu.getVisibility() != 8) {
-            int dp2 = this.menu.searchFieldVisible() ? AndroidUtilities.dp(AndroidUtilities.isTablet() ? 74.0f : 66.0f) : (i3 - i) - this.menu.getMeasuredWidth();
+            int dp2 = this.menu.searchFieldVisible() ? AndroidUtilities.dp(this.menuOccupyBack ? 0.0f : AndroidUtilities.isTablet() ? 74.0f : 66.0f) : (i3 - i) - this.menu.getMeasuredWidth();
             ActionBarMenu actionBarMenu2 = this.menu;
             actionBarMenu2.layout(dp2, i11, actionBarMenu2.getMeasuredWidth() + dp2, this.menu.getMeasuredHeight() + i11);
         }

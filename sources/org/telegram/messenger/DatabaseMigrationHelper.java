@@ -1461,16 +1461,26 @@ public class DatabaseMigrationHelper {
             sQLiteDatabase.executeFast("PRAGMA user_version = 167").stepThis().dispose();
             i7 = NotificationCenter.groupCallSpeakingUsersUpdated;
         }
-        if (i7 != 167) {
+        if (i7 == 167) {
+            sQLiteDatabase.executeFast("CREATE TABLE gift_themes (slug TEXT PRIMARY KEY, data BLOB);").stepThis().dispose();
+            sQLiteDatabase.executeFast("PRAGMA user_version = 168").stepThis().dispose();
+            i7 = NotificationCenter.groupCallScreencastStateChanged;
+        }
+        if (i7 == 168) {
+            sQLiteDatabase.executeFast("ALTER TABLE dialogs ADD COLUMN unread_poll_votes INTEGER default 0").stepThis().dispose();
+            sQLiteDatabase.executeFast("PRAGMA user_version = 169").stepThis().dispose();
+            i7 = NotificationCenter.activeGroupCallsUpdated;
+        }
+        if (i7 != 169) {
             return i7;
         }
-        sQLiteDatabase.executeFast("CREATE TABLE gift_themes (slug TEXT PRIMARY KEY, data BLOB);").stepThis().dispose();
-        sQLiteDatabase.executeFast("PRAGMA user_version = 168").stepThis().dispose();
-        return 168;
+        sQLiteDatabase.executeFast("ALTER TABLE topics ADD COLUMN unread_poll_votes INTEGER default 0").stepThis().dispose();
+        sQLiteDatabase.executeFast("PRAGMA user_version = 170").stepThis().dispose();
+        return 170;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:60:0x02bc A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x02be A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x02bd A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x02bf A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1520,7 +1530,7 @@ public class DatabaseMigrationHelper {
             e = e4;
             j = 0;
         }
-        if (intValue != 168) {
+        if (intValue != 170) {
             FileLog.e("can't restore database from version " + intValue);
             return false;
         }

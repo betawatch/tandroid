@@ -34,7 +34,7 @@ import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.StaticLayoutEx;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BotCommandsMenuView extends View {
     final MenuDrawable backDrawable;
     Drawable backgroundDrawable;

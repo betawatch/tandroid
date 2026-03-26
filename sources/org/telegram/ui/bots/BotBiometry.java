@@ -36,7 +36,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BotBiometry {
     private static final WeakHashMap instances = new WeakHashMap();
     private static KeyStore keyStore;

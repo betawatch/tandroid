@@ -1250,7 +1250,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             this.plusPaint = new Paint(1);
             this.sliderCirclePaint = new Paint(1);
             this.textBackgroundPaint = new Paint(1);
-            this.sliderParticles = new Particles(0, NotificationCenter.onRequestPermissionResultReceived);
+            this.sliderParticles = new Particles(0, NotificationCenter.onActivityResultReceived);
             this.textParticles = new Particles(2, 30);
             this.gradientColor1 = -1135603;
             this.gradientColor2 = -404714;

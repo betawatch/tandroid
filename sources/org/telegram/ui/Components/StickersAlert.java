@@ -176,7 +176,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
         boolean isInScheduleMode();
 
         /* renamed from: onStickerSelected */
-        void lambda$onStickerSelected$77(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z, boolean z2, int i, int i2);
+        void lambda$onStickerSelected$83(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z, boolean z2, int i, int i2);
     }
 
     public interface StickersAlertInstallDelegate {
@@ -238,6 +238,21 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public /* synthetic */ void copyEmoji(TLRPC.Document document) {
             ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$copyEmoji(this, document);
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public /* synthetic */ ItemOptions getCustomItemOptions(ViewGroup viewGroup, View view) {
+            return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$getCustomItemOptions(this, viewGroup, view);
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public /* synthetic */ TLRPC.TL_messageMediaPoll getPoll() {
+            return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$getPoll(this);
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public /* synthetic */ TLRPC.PollAnswer getPollAnswer() {
+            return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$getPollAnswer(this);
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -310,6 +325,11 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public /* synthetic */ void retractVote() {
+            ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$retractVote(this);
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public /* synthetic */ void sendEmoji(TLRPC.Document document) {
             ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendEmoji(this, document);
         }
@@ -322,6 +342,11 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public /* synthetic */ void sendSticker(String str) {
             ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this, str);
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public /* synthetic */ void sendVote() {
+            ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendVote(this);
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -354,7 +379,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
             if (StickersAlert.this.delegate == null) {
                 return;
             }
-            StickersAlert.this.delegate.lambda$onStickerSelected$77(document, str, obj, null, StickersAlert.this.clearsInputField, z, i, 0);
+            StickersAlert.this.delegate.lambda$onStickerSelected$83(document, str, obj, null, StickersAlert.this.clearsInputField, z, i, 0);
             StickersAlert.this.lambda$new$0();
         }
 
@@ -1595,7 +1620,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
             hidePreview();
             this.selectedStickerPath = null;
         } else {
-            this.delegate.lambda$onStickerSelected$77(this.selectedSticker, null, this.stickerSet, null, this.clearsInputField, true, 0, 0);
+            this.delegate.lambda$onStickerSelected$83(this.selectedSticker, null, this.stickerSet, null, this.clearsInputField, true, 0, 0);
             lambda$new$0();
         }
     }
@@ -3354,7 +3379,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
             init();
             final int i = 0;
             while (i < 6) {
-                long nextFloat = (long) (Utilities.random.nextFloat() * NotificationCenter.onRequestPermissionResultReceived);
+                long nextFloat = (long) (Utilities.random.nextFloat() * NotificationCenter.onActivityResultReceived);
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, -2.0f, 0.0f, 2.0f, 0.0f);
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.StickersAlert$StickersShaker$$ExternalSyntheticLambda3
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -3366,7 +3391,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
                 ofFloat.setRepeatMode(1);
                 ofFloat.setInterpolator(new LinearInterpolator());
                 ofFloat.setCurrentPlayTime(nextFloat);
-                long j = NotificationCenter.onRequestPermissionResultReceived;
+                long j = NotificationCenter.onActivityResultReceived;
                 ofFloat.setDuration(j);
                 ofFloat.start();
                 float dp = AndroidUtilities.dp(0.5f);
@@ -3387,7 +3412,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
                 ofFloat2.setRepeatMode(1);
                 ofFloat2.setInterpolator(new LinearInterpolator());
                 ofFloat2.setCurrentPlayTime(nextFloat);
-                ofFloat2.setDuration((long) (NotificationCenter.onRequestPermissionResultReceived * 1.2d));
+                ofFloat2.setDuration((long) (NotificationCenter.onActivityResultReceived * 1.2d));
                 ofFloat2.start();
                 c = 3;
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(0.0f, dp, 0.0f - dp, 0.0f);

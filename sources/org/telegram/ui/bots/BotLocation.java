@@ -43,7 +43,7 @@ import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.PermissionRequest;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BotLocation {
     private static final HashMap instances = new HashMap();
     public final long botId;

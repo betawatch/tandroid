@@ -379,27 +379,25 @@ public abstract class NanoHTTPD {
                 try {
                     try {
                         try {
-                            try {
-                                bArr = new byte[8192];
-                                z = false;
-                                this.splitbyte = 0;
-                                this.rlen = 0;
-                                this.inputStream.mark(8192);
-                            } catch (ResponseException e) {
-                                NanoHTTPD.newFixedLengthResponse(e.getStatus(), "text/plain", e.getMessage()).send(this.outputStream);
-                                NanoHTTPD.safeClose(this.outputStream);
-                            }
-                        } catch (IOException e2) {
-                            NanoHTTPD.newFixedLengthResponse(Response.Status.INTERNAL_ERROR, "text/plain", "SERVER INTERNAL ERROR: IOException: " + e2.getMessage()).send(this.outputStream);
+                            bArr = new byte[8192];
+                            z = false;
+                            this.splitbyte = 0;
+                            this.rlen = 0;
+                            this.inputStream.mark(8192);
+                        } catch (ResponseException e) {
+                            NanoHTTPD.newFixedLengthResponse(e.getStatus(), "text/plain", e.getMessage()).send(this.outputStream);
                             NanoHTTPD.safeClose(this.outputStream);
                         }
+                    } catch (SocketException e2) {
+                        throw e2;
                     } catch (SocketTimeoutException e3) {
                         throw e3;
                     }
-                } catch (SocketException e4) {
-                    throw e4;
-                } catch (SSLException e5) {
-                    NanoHTTPD.newFixedLengthResponse(Response.Status.INTERNAL_ERROR, "text/plain", "SSL PROTOCOL FAILURE: " + e5.getMessage()).send(this.outputStream);
+                } catch (SSLException e4) {
+                    NanoHTTPD.newFixedLengthResponse(Response.Status.INTERNAL_ERROR, "text/plain", "SSL PROTOCOL FAILURE: " + e4.getMessage()).send(this.outputStream);
+                    NanoHTTPD.safeClose(this.outputStream);
+                } catch (IOException e5) {
+                    NanoHTTPD.newFixedLengthResponse(Response.Status.INTERNAL_ERROR, "text/plain", "SERVER INTERNAL ERROR: IOException: " + e5.getMessage()).send(this.outputStream);
                     NanoHTTPD.safeClose(this.outputStream);
                 }
                 try {
@@ -576,11 +574,11 @@ public abstract class NanoHTTPD {
             NO_CONTENT(NotificationCenter.storyAlbumsCollectionsUpdate, "No Content"),
             PARTIAL_CONTENT(NotificationCenter.emojiKeywordsLoaded, "Partial Content"),
             MULTI_STATUS(NotificationCenter.smsJobStatusUpdate, "Multi-Status"),
-            REDIRECT(NotificationCenter.onUserRingtonesUpdated, "Moved Permanently"),
-            FOUND(NotificationCenter.currentUserPremiumStatusChanged, "Found"),
-            REDIRECT_SEE_OTHER(NotificationCenter.premiumPromoUpdated, "See Other"),
-            NOT_MODIFIED(NotificationCenter.premiumStatusChangedGlobal, "Not Modified"),
-            TEMPORARY_REDIRECT(NotificationCenter.billingConfirmPurchaseError, "Temporary Redirect"),
+            REDIRECT(NotificationCenter.onRequestPermissionResultReceived, "Moved Permanently"),
+            FOUND(NotificationCenter.onUserRingtonesUpdated, "Found"),
+            REDIRECT_SEE_OTHER(NotificationCenter.currentUserPremiumStatusChanged, "See Other"),
+            NOT_MODIFIED(NotificationCenter.premiumPromoUpdated, "Not Modified"),
+            TEMPORARY_REDIRECT(NotificationCenter.billingProductDetailsUpdated, "Temporary Redirect"),
             BAD_REQUEST(400, "Bad Request"),
             UNAUTHORIZED(401, "Unauthorized"),
             FORBIDDEN(403, "Forbidden"),

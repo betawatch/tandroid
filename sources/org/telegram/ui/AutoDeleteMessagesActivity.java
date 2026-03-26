@@ -93,7 +93,7 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
         stickerImageView.setStickerNum(10);
         frameLayout2.addView(stickerImageView, LayoutHelper.createFrame(NotificationCenter.dialogTranslate, NotificationCenter.dialogTranslate, 17));
         frameLayout2.setTag(-33024);
-        sectionsLinearLayout.addView(frameLayout2, LayoutHelper.createLinear(-1, NotificationCenter.applyGroupCallVisibleParticipants));
+        sectionsLinearLayout.addView(frameLayout2, LayoutHelper.createLinear(-1, 170));
         LinearLayout linearLayout = new LinearLayout(getContext());
         this.checkBoxContainer = linearLayout;
         linearLayout.setOrientation(1);

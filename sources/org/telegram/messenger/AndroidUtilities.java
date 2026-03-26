@@ -858,6 +858,7 @@ public class AndroidUtilities {
                     @Override // android.text.style.CharacterStyle
                     public void updateDrawState(TextPaint textPaint) {
                         textPaint.setUnderlineText(false);
+                        textPaint.setTypeface(AndroidUtilities.bold());
                         textPaint.setColor(i);
                     }
                 }, indexOf, i2 + indexOf, 0);
@@ -4283,10 +4284,10 @@ public class AndroidUtilities {
         return bArr2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0108 A[Catch: Exception -> 0x00fa, TRY_ENTER, TryCatch #1 {Exception -> 0x00fa, blocks: (B:33:0x00c9, B:35:0x00e0, B:37:0x00ef, B:39:0x00f3, B:42:0x00fe, B:45:0x0108, B:48:0x0124, B:51:0x0167, B:57:0x013d, B:59:0x0141, B:60:0x0163, B:62:0x015c, B:64:0x0128, B:67:0x0131, B:54:0x0138), top: B:32:0x00c9, inners: #0 }] */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0167 A[Catch: Exception -> 0x00fa, TRY_LEAVE, TryCatch #1 {Exception -> 0x00fa, blocks: (B:33:0x00c9, B:35:0x00e0, B:37:0x00ef, B:39:0x00f3, B:42:0x00fe, B:45:0x0108, B:48:0x0124, B:51:0x0167, B:57:0x013d, B:59:0x0141, B:60:0x0163, B:62:0x015c, B:64:0x0128, B:67:0x0131, B:54:0x0138), top: B:32:0x00c9, inners: #0 }] */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0138 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0128 A[Catch: Exception -> 0x00fa, TryCatch #1 {Exception -> 0x00fa, blocks: (B:33:0x00c9, B:35:0x00e0, B:37:0x00ef, B:39:0x00f3, B:42:0x00fe, B:45:0x0108, B:48:0x0124, B:51:0x0167, B:57:0x013d, B:59:0x0141, B:60:0x0163, B:62:0x015c, B:64:0x0128, B:67:0x0131, B:54:0x0138), top: B:32:0x00c9, inners: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0109 A[Catch: Exception -> 0x00fa, TRY_ENTER, TryCatch #1 {Exception -> 0x00fa, blocks: (B:33:0x00c9, B:35:0x00e0, B:37:0x00ef, B:39:0x00f3, B:42:0x00fe, B:45:0x0109, B:48:0x0125, B:51:0x0168, B:57:0x013e, B:59:0x0142, B:60:0x0164, B:62:0x015d, B:64:0x0129, B:67:0x0132, B:54:0x0139), top: B:32:0x00c9, inners: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0168 A[Catch: Exception -> 0x00fa, TRY_LEAVE, TryCatch #1 {Exception -> 0x00fa, blocks: (B:33:0x00c9, B:35:0x00e0, B:37:0x00ef, B:39:0x00f3, B:42:0x00fe, B:45:0x0109, B:48:0x0125, B:51:0x0168, B:57:0x013e, B:59:0x0142, B:60:0x0164, B:62:0x015d, B:64:0x0129, B:67:0x0132, B:54:0x0139), top: B:32:0x00c9, inners: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0139 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0129 A[Catch: Exception -> 0x00fa, TryCatch #1 {Exception -> 0x00fa, blocks: (B:33:0x00c9, B:35:0x00e0, B:37:0x00ef, B:39:0x00f3, B:42:0x00fe, B:45:0x0109, B:48:0x0125, B:51:0x0168, B:57:0x013e, B:59:0x0142, B:60:0x0164, B:62:0x015d, B:64:0x0129, B:67:0x0132, B:54:0x0139), top: B:32:0x00c9, inners: #0 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -4387,10 +4388,10 @@ public class AndroidUtilities {
      */
     /* JADX WARN: Removed duplicated region for block: B:21:0x0050 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:22:0x0051  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0075  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00d3  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00a5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0095  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0076  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00d4  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00a6 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0096  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -4789,14 +4790,14 @@ public class AndroidUtilities {
         return handleProxyIntent(activity, new Intent("android.intent.action.VIEW", uri), false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00f9 A[Catch: Exception -> 0x0117, TRY_LEAVE, TryCatch #0 {Exception -> 0x0117, blocks: (B:6:0x0008, B:9:0x0012, B:11:0x0018, B:13:0x001f, B:16:0x0031, B:19:0x003a, B:21:0x0042, B:24:0x0052, B:26:0x0058, B:28:0x005e, B:30:0x0064, B:32:0x0082, B:33:0x0086, B:35:0x00f3, B:37:0x00f9, B:48:0x0113, B:54:0x0097, B:56:0x00a7, B:58:0x00af, B:60:0x00b7, B:62:0x00bd, B:64:0x00c5, B:66:0x00cd, B:68:0x00d7, B:69:0x00db), top: B:5:0x0008 }] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0103  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0108  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x010d  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0112  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x010f  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x010a  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0103 A[Catch: Exception -> 0x0121, TRY_LEAVE, TryCatch #0 {Exception -> 0x0121, blocks: (B:6:0x000a, B:9:0x0014, B:11:0x001a, B:13:0x0021, B:16:0x0034, B:19:0x003d, B:21:0x0046, B:24:0x0059, B:26:0x005f, B:28:0x0065, B:30:0x006b, B:32:0x0089, B:33:0x008d, B:35:0x00fd, B:37:0x0103, B:48:0x011d, B:54:0x009e, B:56:0x00af, B:58:0x00b8, B:60:0x00c1, B:62:0x00c7, B:64:0x00cf, B:66:0x00d7, B:68:0x00e1, B:69:0x00e5), top: B:5:0x000a }] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x010d  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0112  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0117  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x011c  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x010f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

@@ -137,7 +137,7 @@ public class TL_phone {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
-            this.video = (readInt32 & 64) != 0;
+            this.video = TLObject.hasFlag(readInt32, 64);
             this.id = inputSerializedData.readInt64(z);
             this.access_hash = inputSerializedData.readInt64(z);
             this.date = inputSerializedData.readInt32(z);
@@ -150,9 +150,9 @@ public class TL_phone {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.video ? this.flags | 64 : this.flags & (-65);
-            this.flags = i;
-            outputSerializedData.writeInt32(i);
+            int flag = TLObject.setFlag(this.flags, 64, this.video);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
             outputSerializedData.writeInt64(this.id);
             outputSerializedData.writeInt64(this.access_hash);
             outputSerializedData.writeInt32(this.date);
@@ -170,9 +170,9 @@ public class TL_phone {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
-            this.p2p_allowed = (readInt32 & 32) != 0;
-            this.video = (readInt32 & 64) != 0;
-            this.conference_supported = (readInt32 & 256) != 0;
+            this.p2p_allowed = TLObject.hasFlag(readInt32, 32);
+            this.video = TLObject.hasFlag(this.flags, 64);
+            this.conference_supported = TLObject.hasFlag(this.flags, 256);
             this.id = inputSerializedData.readInt64(z);
             this.access_hash = inputSerializedData.readInt64(z);
             this.date = inputSerializedData.readInt32(z);
@@ -183,7 +183,7 @@ public class TL_phone {
             this.protocol = PhoneCallProtocol.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             this.connections = Vector.deserialize(inputSerializedData, new TL_phone$TL_phoneCall$$ExternalSyntheticLambda0(), z);
             this.start_date = inputSerializedData.readInt32(z);
-            if ((this.flags & 128) != 0) {
+            if (TLObject.hasFlag(this.flags, 128)) {
                 this.custom_parameters = TLRPC.TL_dataJSON.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
         }
@@ -191,13 +191,13 @@ public class TL_phone {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.p2p_allowed ? this.flags | 32 : this.flags & (-33);
-            this.flags = i;
-            int i2 = this.video ? i | 64 : i & (-65);
-            this.flags = i2;
-            int i3 = this.conference_supported ? i2 | 256 : i2 & (-257);
-            this.flags = i3;
-            outputSerializedData.writeInt32(i3);
+            int flag = TLObject.setFlag(this.flags, 32, this.p2p_allowed);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 64, this.video);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 256, this.conference_supported);
+            this.flags = flag3;
+            outputSerializedData.writeInt32(flag3);
             outputSerializedData.writeInt64(this.id);
             outputSerializedData.writeInt64(this.access_hash);
             outputSerializedData.writeInt32(this.date);
@@ -208,7 +208,7 @@ public class TL_phone {
             this.protocol.serializeToStream(outputSerializedData);
             Vector.serialize(outputSerializedData, this.connections);
             outputSerializedData.writeInt32(this.start_date);
-            if ((this.flags & 128) != 0) {
+            if (TLObject.hasFlag(this.flags, 128)) {
                 this.custom_parameters.serializeToStream(outputSerializedData);
             }
         }
@@ -221,8 +221,8 @@ public class TL_phone {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
-            this.p2p_allowed = (readInt32 & 32) != 0;
-            this.video = (readInt32 & 64) != 0;
+            this.p2p_allowed = TLObject.hasFlag(readInt32, 32);
+            this.video = TLObject.hasFlag(this.flags, 64);
             this.id = inputSerializedData.readInt64(z);
             this.access_hash = inputSerializedData.readInt64(z);
             this.date = inputSerializedData.readInt32(z);
@@ -238,11 +238,11 @@ public class TL_phone {
         @Override // org.telegram.tgnet.tl.TL_phone.TL_phoneCall, org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.p2p_allowed ? this.flags | 32 : this.flags & (-33);
-            this.flags = i;
-            int i2 = this.video ? i | 64 : i & (-65);
-            this.flags = i2;
-            outputSerializedData.writeInt32(i2);
+            int flag = TLObject.setFlag(this.flags, 32, this.p2p_allowed);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 64, this.video);
+            this.flags = flag2;
+            outputSerializedData.writeInt32(flag2);
             outputSerializedData.writeInt64(this.id);
             outputSerializedData.writeInt64(this.access_hash);
             outputSerializedData.writeInt32(this.date);
@@ -278,7 +278,7 @@ public class TL_phone {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
-            this.video = (readInt32 & 64) != 0;
+            this.video = TLObject.hasFlag(readInt32, 64);
             this.id = inputSerializedData.readInt64(z);
             this.access_hash = inputSerializedData.readInt64(z);
             this.date = inputSerializedData.readInt32(z);
@@ -291,9 +291,9 @@ public class TL_phone {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.video ? this.flags | 64 : this.flags & (-65);
-            this.flags = i;
-            outputSerializedData.writeInt32(i);
+            int flag = TLObject.setFlag(this.flags, 64, this.video);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
             outputSerializedData.writeInt64(this.id);
             outputSerializedData.writeInt64(this.access_hash);
             outputSerializedData.writeInt32(this.date);
@@ -311,14 +311,14 @@ public class TL_phone {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
-            this.video = (readInt32 & 64) != 0;
+            this.video = TLObject.hasFlag(readInt32, 64);
             this.id = inputSerializedData.readInt64(z);
             this.access_hash = inputSerializedData.readInt64(z);
             this.date = inputSerializedData.readInt32(z);
             this.admin_id = inputSerializedData.readInt64(z);
             this.participant_id = inputSerializedData.readInt64(z);
             this.protocol = PhoneCallProtocol.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if ((this.flags & 1) != 0) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 this.receive_date = inputSerializedData.readInt32(z);
             }
         }
@@ -326,16 +326,16 @@ public class TL_phone {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.video ? this.flags | 64 : this.flags & (-65);
-            this.flags = i;
-            outputSerializedData.writeInt32(i);
+            int flag = TLObject.setFlag(this.flags, 64, this.video);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
             outputSerializedData.writeInt64(this.id);
             outputSerializedData.writeInt64(this.access_hash);
             outputSerializedData.writeInt32(this.date);
             outputSerializedData.writeInt64(this.admin_id);
             outputSerializedData.writeInt64(this.participant_id);
             this.protocol.serializeToStream(outputSerializedData);
-            if ((this.flags & 1) != 0) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 outputSerializedData.writeInt32(this.receive_date);
             }
         }
@@ -348,14 +348,14 @@ public class TL_phone {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
-            this.need_rating = (readInt32 & 4) != 0;
-            this.need_debug = (readInt32 & 8) != 0;
-            this.video = (readInt32 & 64) != 0;
+            this.need_rating = TLObject.hasFlag(readInt32, 4);
+            this.need_debug = TLObject.hasFlag(this.flags, 8);
+            this.video = TLObject.hasFlag(this.flags, 64);
             this.id = inputSerializedData.readInt64(z);
-            if ((this.flags & 1) != 0) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 this.reason = TLRPC.PhoneCallDiscardReason.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & 2) != 0) {
+            if (TLObject.hasFlag(this.flags, 2)) {
                 this.duration = inputSerializedData.readInt32(z);
             }
         }
@@ -363,18 +363,18 @@ public class TL_phone {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.need_rating ? this.flags | 4 : this.flags & (-5);
-            this.flags = i;
-            int i2 = this.need_debug ? i | 8 : i & (-9);
-            this.flags = i2;
-            int i3 = this.video ? i2 | 64 : i2 & (-65);
-            this.flags = i3;
-            outputSerializedData.writeInt32(i3);
+            int flag = TLObject.setFlag(this.flags, 4, this.need_rating);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 8, this.need_debug);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 64, this.video);
+            this.flags = flag3;
+            outputSerializedData.writeInt32(flag3);
             outputSerializedData.writeInt64(this.id);
-            if ((this.flags & 1) != 0) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 this.reason.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & 2) != 0) {
+            if (TLObject.hasFlag(this.flags, 2)) {
                 outputSerializedData.writeInt32(this.duration);
             }
         }
@@ -512,9 +512,9 @@ public class TL_phone {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.video ? this.flags | 1 : this.flags & (-2);
-            this.flags = i;
-            outputSerializedData.writeInt32(i);
+            int flag = TLObject.setFlag(this.flags, 1, this.video);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
             this.user_id.serializeToStream(outputSerializedData);
             outputSerializedData.writeInt32(this.random_id);
             outputSerializedData.writeByteArray(this.g_a_hash);
@@ -597,9 +597,9 @@ public class TL_phone {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.video ? this.flags | 1 : this.flags & (-2);
-            this.flags = i;
-            outputSerializedData.writeInt32(i);
+            int flag = TLObject.setFlag(this.flags, 1, this.video);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
             this.peer.serializeToStream(outputSerializedData);
             outputSerializedData.writeInt32(this.duration);
             this.reason.serializeToStream(outputSerializedData);
@@ -623,9 +623,9 @@ public class TL_phone {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.user_initiative ? this.flags | 1 : this.flags & (-2);
-            this.flags = i;
-            outputSerializedData.writeInt32(i);
+            int flag = TLObject.setFlag(this.flags, 1, this.user_initiative);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
             this.peer.serializeToStream(outputSerializedData);
             outputSerializedData.writeInt32(this.rating);
             outputSerializedData.writeString(this.comment);
@@ -687,10 +687,10 @@ public class TL_phone {
             outputSerializedData.writeInt32(this.flags);
             this.peer.serializeToStream(outputSerializedData);
             outputSerializedData.writeInt32(this.random_id);
-            if ((this.flags & 1) != 0) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 outputSerializedData.writeString(this.title);
             }
-            if ((this.flags & 2) != 0) {
+            if (TLObject.hasFlag(this.flags, 2)) {
                 outputSerializedData.writeInt32(this.schedule_date);
             }
         }
@@ -716,17 +716,17 @@ public class TL_phone {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.muted ? this.flags | 1 : this.flags & (-2);
-            this.flags = i;
-            int i2 = this.video_stopped ? i | 4 : i & (-5);
-            this.flags = i2;
-            outputSerializedData.writeInt32(i2);
+            int flag = TLObject.setFlag(this.flags, 1, this.muted);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 4, this.video_stopped);
+            this.flags = flag2;
+            outputSerializedData.writeInt32(flag2);
             this.call.serializeToStream(outputSerializedData);
             this.join_as.serializeToStream(outputSerializedData);
-            if ((this.flags & 2) != 0) {
+            if (TLObject.hasFlag(this.flags, 2)) {
                 outputSerializedData.writeString(this.invite_hash);
             }
-            if ((this.flags & 8) != 0) {
+            if (TLObject.hasFlag(this.flags, 8)) {
                 outputSerializedData.writeBytes(this.public_key);
                 outputSerializedData.writeByteArray(this.block);
             }
@@ -894,16 +894,16 @@ public class TL_phone {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.start ? this.flags | 1 : this.flags & (-2);
-            this.flags = i;
-            int i2 = this.video ? i | 4 : i & (-5);
-            this.flags = i2;
-            outputSerializedData.writeInt32(i2);
+            int flag = TLObject.setFlag(this.flags, 1, this.start);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 4, this.video);
+            this.flags = flag2;
+            outputSerializedData.writeInt32(flag2);
             this.call.serializeToStream(outputSerializedData);
-            if ((this.flags & 2) != 0) {
+            if (TLObject.hasFlag(this.flags, 2)) {
                 outputSerializedData.writeString(this.title);
             }
-            if ((this.flags & 4) != 0) {
+            if (TLObject.hasFlag(this.flags, 4)) {
                 outputSerializedData.writeBool(this.video_portrait);
             }
         }
@@ -932,22 +932,22 @@ public class TL_phone {
             outputSerializedData.writeInt32(this.flags);
             this.call.serializeToStream(outputSerializedData);
             this.participant.serializeToStream(outputSerializedData);
-            if ((this.flags & 1) != 0) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 outputSerializedData.writeBool(this.muted);
             }
-            if ((this.flags & 2) != 0) {
+            if (TLObject.hasFlag(this.flags, 2)) {
                 outputSerializedData.writeInt32(this.volume);
             }
-            if ((this.flags & 4) != 0) {
+            if (TLObject.hasFlag(this.flags, 4)) {
                 outputSerializedData.writeBool(this.raise_hand);
             }
-            if ((this.flags & 8) != 0) {
+            if (TLObject.hasFlag(this.flags, 8)) {
                 outputSerializedData.writeBool(this.video_stopped);
             }
-            if ((this.flags & 16) != 0) {
+            if (TLObject.hasFlag(this.flags, 16)) {
                 outputSerializedData.writeBool(this.video_paused);
             }
-            if ((this.flags & 32) != 0) {
+            if (TLObject.hasFlag(this.flags, 32)) {
                 outputSerializedData.writeBool(this.presentation_paused);
             }
         }
@@ -1001,9 +1001,9 @@ public class TL_phone {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.can_self_unmute ? this.flags | 1 : this.flags & (-2);
-            this.flags = i;
-            outputSerializedData.writeInt32(i);
+            int flag = TLObject.setFlag(this.flags, 1, this.can_self_unmute);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
             this.call.serializeToStream(outputSerializedData);
         }
     }
@@ -1210,8 +1210,8 @@ public class TL_phone {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
-            this.udp_p2p = (readInt32 & 1) != 0;
-            this.udp_reflector = (readInt32 & 2) != 0;
+            this.udp_p2p = TLObject.hasFlag(readInt32, 1);
+            this.udp_reflector = TLObject.hasFlag(this.flags, 2);
             this.min_layer = inputSerializedData.readInt32(z);
             this.max_layer = inputSerializedData.readInt32(z);
             this.library_versions = Vector.deserializeString(inputSerializedData, z);
@@ -1220,11 +1220,11 @@ public class TL_phone {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.udp_p2p ? this.flags | 1 : this.flags & (-2);
-            this.flags = i;
-            int i2 = this.udp_reflector ? i | 2 : i & (-3);
-            this.flags = i2;
-            outputSerializedData.writeInt32(i2);
+            int flag = TLObject.setFlag(this.flags, 1, this.udp_p2p);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 2, this.udp_reflector);
+            this.flags = flag2;
+            outputSerializedData.writeInt32(flag2);
             outputSerializedData.writeInt32(this.min_layer);
             outputSerializedData.writeInt32(this.max_layer);
             Vector.serializeString(outputSerializedData, this.library_versions);
@@ -1238,8 +1238,8 @@ public class TL_phone {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
-            this.udp_p2p = (readInt32 & 1) != 0;
-            this.udp_reflector = (readInt32 & 2) != 0;
+            this.udp_p2p = TLObject.hasFlag(readInt32, 1);
+            this.udp_reflector = TLObject.hasFlag(this.flags, 2);
             this.min_layer = inputSerializedData.readInt32(z);
             this.max_layer = inputSerializedData.readInt32(z);
         }
@@ -1247,11 +1247,11 @@ public class TL_phone {
         @Override // org.telegram.tgnet.tl.TL_phone.TL_phoneCallProtocol, org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.udp_p2p ? this.flags | 1 : this.flags & (-2);
-            this.flags = i;
-            int i2 = this.udp_reflector ? i | 2 : i & (-3);
-            this.flags = i2;
-            outputSerializedData.writeInt32(i2);
+            int flag = TLObject.setFlag(this.flags, 1, this.udp_p2p);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 2, this.udp_reflector);
+            this.flags = flag2;
+            outputSerializedData.writeInt32(flag2);
             outputSerializedData.writeInt32(this.min_layer);
             outputSerializedData.writeInt32(this.max_layer);
         }
@@ -1294,15 +1294,15 @@ public class TL_phone {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.muted ? this.flags | 1 : this.flags & (-2);
-            this.flags = i;
-            int i2 = this.video_stopped ? i | 4 : i & (-5);
-            this.flags = i2;
-            int i3 = this.join ? i2 | 8 : i2 & (-9);
-            this.flags = i3;
-            outputSerializedData.writeInt32(i3);
+            int flag = TLObject.setFlag(this.flags, 1, this.muted);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 4, this.video_stopped);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 8, this.join);
+            this.flags = flag3;
+            outputSerializedData.writeInt32(flag3);
             outputSerializedData.writeInt32(this.random_id);
-            if ((this.flags & 8) != 0) {
+            if (TLObject.hasFlag(this.flags, 8)) {
                 outputSerializedData.writeBytes(this.public_key);
                 outputSerializedData.writeByteArray(this.block);
                 this.params.serializeToStream(outputSerializedData);
@@ -1327,11 +1327,11 @@ public class TL_phone {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.only_left ? this.flags | 1 : this.flags & (-2);
-            this.flags = i;
-            int i2 = this.kick ? i | 2 : i & (-3);
-            this.flags = i2;
-            outputSerializedData.writeInt32(i2);
+            int flag = TLObject.setFlag(this.flags, 1, this.only_left);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 2, this.kick);
+            this.flags = flag2;
+            outputSerializedData.writeInt32(flag2);
             this.call.serializeToStream(outputSerializedData);
             Vector.serializeLong(outputSerializedData, this.ids);
             outputSerializedData.writeByteArray(this.block);
@@ -1371,9 +1371,9 @@ public class TL_phone {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.video ? this.flags | 1 : this.flags & (-2);
-            this.flags = i;
-            outputSerializedData.writeInt32(i);
+            int flag = TLObject.setFlag(this.flags, 1, this.video);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
             this.call.serializeToStream(outputSerializedData);
             this.user_id.serializeToStream(outputSerializedData);
         }

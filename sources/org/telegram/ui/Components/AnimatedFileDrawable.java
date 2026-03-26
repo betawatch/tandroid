@@ -77,6 +77,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
     private boolean limitFps;
     private final Runnable loadFrameRunnable;
     private Runnable loadFrameTask;
+    private boolean loop;
     private final Runnable mStartTask;
     private final int[] metaData;
     public volatile long nativePtr;
@@ -137,7 +138,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
 
     public static native int getVideoFrame(long j, Bitmap bitmap, int[] iArr, int i, boolean z, float f, float f2, boolean z2);
 
-    public static native void getVideoInfo(int i, String str, int[] iArr);
+    public static native void getVideoInfo(int i, String str, int[] iArr, long j);
 
     public static native void prepareToSeek(long j);
 
@@ -320,19 +321,19 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
     }
 
     public AnimatedFileDrawable(File file, boolean z, long j, int i, TLRPC.Document document, ImageLocation imageLocation, Object obj, long j2, int i2, boolean z2, int i3, int i4, BitmapsCache.CacheOptions cacheOptions) {
-        this(file, z, j, i, document, imageLocation, obj, j2, i2, z2, i3, i4, cacheOptions, document != null ? 1 : 0);
+        this(file, z, j, i, document, imageLocation, obj, j2, i2, z2, i3, i4, cacheOptions, document != null ? 1 : 0, true);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x0150, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0153, code lost:
     
         if (r13[1] > 3840) goto L39;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public AnimatedFileDrawable(File file, boolean z, long j, int i, TLRPC.Document document, ImageLocation imageLocation, Object obj, long j2, int i2, boolean z2, int i3, int i4, BitmapsCache.CacheOptions cacheOptions, int i5) {
+    public AnimatedFileDrawable(File file, boolean z, long j, int i, TLRPC.Document document, ImageLocation imageLocation, Object obj, long j2, int i2, boolean z2, int i3, int i4, BitmapsCache.CacheOptions cacheOptions, int i5, boolean z3) {
         long j3;
-        boolean z3;
+        boolean z4;
         this.USE_BITMAP_SHADER = Build.VERSION.SDK_INT < 29;
         this.PRERENDER_FRAME = true;
         this.invalidateAfter = 50;
@@ -490,9 +491,9 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
         this.loadFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.AnimatedFileDrawable.4
             @Override // java.lang.Runnable
             public void run() {
-                boolean z4;
+                boolean z5;
                 if (!AnimatedFileDrawable.this.isRecycled) {
-                    boolean z5 = false;
+                    boolean z6 = false;
                     if (!AnimatedFileDrawable.this.decoderCreated && AnimatedFileDrawable.this.nativePtr == 0) {
                         AnimatedFileDrawable animatedFileDrawable = AnimatedFileDrawable.this;
                         animatedFileDrawable.nativePtr = AnimatedFileDrawable.createDecoder(animatedFileDrawable.path.getAbsolutePath(), AnimatedFileDrawable.this.metaData, AnimatedFileDrawable.this.currentAccount, AnimatedFileDrawable.this.streamFileSize, AnimatedFileDrawable.this.stream, false);
@@ -500,8 +501,8 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
                         if (animatedFileDrawable2.nativePtr == 0) {
                             AnimatedFileDrawable animatedFileDrawable3 = AnimatedFileDrawable.this;
                             if (!animatedFileDrawable3.isWebmSticker || animatedFileDrawable3.decoderTryCount > 15) {
-                                z4 = true;
-                                animatedFileDrawable2.ptrFail = z4;
+                                z5 = true;
+                                animatedFileDrawable2.ptrFail = z5;
                                 if (AnimatedFileDrawable.this.nativePtr != 0 && (AnimatedFileDrawable.this.metaData[0] > 3840 || AnimatedFileDrawable.this.metaData[1] > 3840)) {
                                     AnimatedFileDrawable.destroyDecoder(AnimatedFileDrawable.this.nativePtr);
                                     AnimatedFileDrawable.this.nativePtr = 0L;
@@ -511,8 +512,8 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
                                 animatedFileDrawable4.decoderCreated = animatedFileDrawable4.isWebmSticker || animatedFileDrawable4.nativePtr != 0 || AnimatedFileDrawable.access$3408(AnimatedFileDrawable.this) > 15;
                             }
                         }
-                        z4 = false;
-                        animatedFileDrawable2.ptrFail = z4;
+                        z5 = false;
+                        animatedFileDrawable2.ptrFail = z5;
                         if (AnimatedFileDrawable.this.nativePtr != 0) {
                             AnimatedFileDrawable.destroyDecoder(AnimatedFileDrawable.this.nativePtr);
                             AnimatedFileDrawable.this.nativePtr = 0L;
@@ -593,18 +594,18 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
                                 AnimatedFileDrawable.this.stream.reset();
                             }
                             AnimatedFileDrawable.seekToMs(AnimatedFileDrawable.this.nativePtr, j4, AnimatedFileDrawable.this.metaData, true);
-                            z5 = true;
+                            z6 = true;
                         }
                         if (AnimatedFileDrawable.this.backgroundBitmap != null) {
                             AnimatedFileDrawable.this.lastFrameDecodeTime = System.currentTimeMillis();
-                            if (AnimatedFileDrawable.getVideoFrame(AnimatedFileDrawable.this.nativePtr, AnimatedFileDrawable.this.backgroundBitmap, AnimatedFileDrawable.this.metaData, AnimatedFileDrawable.this.backgroundBitmap.getRowBytes(), false, AnimatedFileDrawable.this.startTime, AnimatedFileDrawable.this.endTime, true) == 0) {
+                            if (AnimatedFileDrawable.getVideoFrame(AnimatedFileDrawable.this.nativePtr, AnimatedFileDrawable.this.backgroundBitmap, AnimatedFileDrawable.this.metaData, AnimatedFileDrawable.this.backgroundBitmap.getRowBytes(), false, AnimatedFileDrawable.this.startTime, AnimatedFileDrawable.this.endTime, AnimatedFileDrawable.this.loop) == 0) {
                                 AndroidUtilities.runOnUIThread(AnimatedFileDrawable.this.uiRunnableNoFrame);
                                 return;
                             }
                             if (AnimatedFileDrawable.this.metaData[3] < AnimatedFileDrawable.this.lastTimeStamp) {
                                 AnimatedFileDrawable.this.isRestarted = true;
                             }
-                            if (z5) {
+                            if (z6) {
                                 AnimatedFileDrawable animatedFileDrawable13 = AnimatedFileDrawable.this;
                                 animatedFileDrawable13.lastTimeStamp = animatedFileDrawable13.metaData[3];
                             }
@@ -618,7 +619,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
                 AndroidUtilities.runOnUIThread(AnimatedFileDrawable.this.uiRunnable);
             }
         };
-        this.mStartTask = new Runnable() { // from class: org.telegram.ui.Components.AnimatedFileDrawable$$ExternalSyntheticLambda0
+        this.mStartTask = new Runnable() { // from class: org.telegram.ui.Components.AnimatedFileDrawable$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 AnimatedFileDrawable.this.lambda$new$0();
@@ -631,6 +632,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
         this.currentAccount = i2;
         this.renderingHeight = i4;
         this.renderingWidth = i3;
+        this.loop = z3;
         this.precache = cacheOptions != null && i3 > 0 && i4 > 0;
         this.document = document;
         getPaint().setFlags(3);
@@ -645,17 +647,17 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
             this.ptrFail = this.nativePtr == j3 && (!this.isWebmSticker || this.decoderTryCount > 15);
             if (this.nativePtr != j3) {
                 if (iArr[0] <= 3840) {
-                    z3 = true;
+                    z4 = true;
                 } else {
-                    z3 = true;
+                    z4 = true;
                 }
                 destroyDecoder(this.nativePtr);
                 this.nativePtr = j3;
             } else {
-                z3 = true;
+                z4 = true;
             }
             updateScaleFactor();
-            this.decoderCreated = z3;
+            this.decoderCreated = z4;
         }
         if (this.precache) {
             this.nativePtr = createDecoder(file.getAbsolutePath(), iArr, this.currentAccount, this.streamFileSize, this.stream, z2);
@@ -742,7 +744,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
         }
         boolean isEmpty = this.parents.isEmpty();
         if (isEmpty && this.cancelCache == null) {
-            Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.AnimatedFileDrawable$$ExternalSyntheticLambda1
+            Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.AnimatedFileDrawable$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
                     AnimatedFileDrawable.this.lambda$checkCacheCancel$1();
@@ -1370,8 +1372,8 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
         return animatedFileDrawable2;
     }
 
-    public static void getVideoInfo(String str, int[] iArr) {
-        getVideoInfo(Build.VERSION.SDK_INT, str, iArr);
+    public static void getVideoInfo(String str, int[] iArr, long j) {
+        getVideoInfo(Build.VERSION.SDK_INT, str, iArr, j);
     }
 
     public void setStartEndTime(long j, long j2) {
@@ -1458,7 +1460,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
         }
         long j = this.cacheGenerateNativePtr;
         Bitmap bitmap2 = this.generatingCacheBitmap;
-        getVideoFrame(j, bitmap2, this.metaData, bitmap2.getRowBytes(), false, this.startTime, this.endTime, true);
+        getVideoFrame(j, bitmap2, this.metaData, bitmap2.getRowBytes(), false, this.startTime, this.endTime, this.loop);
         long j2 = this.cacheGenerateTimestamp;
         if (j2 != 0 && ((i = this.metaData[3]) == 0 || j2 > i)) {
             return 0;

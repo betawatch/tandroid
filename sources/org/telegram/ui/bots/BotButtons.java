@@ -23,7 +23,7 @@ import org.telegram.ui.Components.CircularProgressDrawable;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.voip.CellFlickerDrawable;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class BotButtons extends FrameLayout {
     public final AnimatedColor background;
     private final Paint backgroundPaint;

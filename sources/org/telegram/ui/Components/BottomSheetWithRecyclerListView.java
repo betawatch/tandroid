@@ -85,6 +85,9 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
         return true;
     }
 
+    protected void onActionBarAlpha(float f) {
+    }
+
     protected void onPreDraw(Canvas canvas, int i, float f) {
     }
 
@@ -499,6 +502,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
     private class PaddingView extends View {
         public PaddingView(Context context) {
             super(context);
+            setTag(-33024);
         }
 
         @Override // android.view.View
@@ -716,6 +720,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
             this.shadowAlpha = f4;
             f3 = AndroidUtilities.lerp(1.0f, 0.5f, f4);
             this.actionBar.backButtonImageView.setAlpha(f4);
+            onActionBarAlpha(f4);
             this.actionBar.backButtonImageView.setScaleX(f4);
             this.actionBar.backButtonImageView.setPivotY(r6.getMeasuredHeight() / 2.0f);
             this.actionBar.backButtonImageView.setScaleY(f4);
@@ -836,7 +841,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
         for (int i3 = 0; i3 < this.recyclerListView.getChildCount(); i3++) {
             View childAt = this.recyclerListView.getChildAt(i3);
             int childAdapterPosition = this.recyclerListView.getChildAdapterPosition(childAt);
-            if (childAdapterPosition > 0 && childAt.getTop() < i2) {
+            if (childAdapterPosition >= 0 && childAt.getTop() < i2) {
                 i2 = childAt.getTop();
                 view = childAt;
                 i = childAdapterPosition;
@@ -859,10 +864,6 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
             return;
         }
         int top = (this.savedScrollOffset - this.containerView.getTop()) - this.recyclerListView.getPaddingTop();
-        RecyclerView.ViewHolder findViewHolderForAdapterPosition = this.recyclerListView.findViewHolderForAdapterPosition(0);
-        if (z && findViewHolderForAdapterPosition != null) {
-            top -= Math.max(findViewHolderForAdapterPosition.itemView.getBottom() - this.recyclerListView.getPaddingTop(), 0);
-        }
         if (this.recyclerListView.getLayoutManager() instanceof LinearLayoutManager) {
             ((LinearLayoutManager) this.recyclerListView.getLayoutManager()).scrollToPositionWithOffset(this.savedScrollPosition, top);
         }

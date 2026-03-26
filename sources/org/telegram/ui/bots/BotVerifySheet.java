@@ -46,7 +46,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.TopicsFragment;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class BotVerifySheet {
     public static void openVerify(final int i, final long j, final TL_bots.botVerifierSettings botverifiersettings) {
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();

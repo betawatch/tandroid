@@ -32,7 +32,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.ScaleStateListAnimator;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BotAdView extends FrameLayout {
     public final TextView channelTitleView;
     public final ImageView closeView;

@@ -123,7 +123,7 @@ public class TL_stats {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.flags = inputSerializedData.readInt32(z);
             this.json = TLRPC.TL_dataJSON.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if ((this.flags & 1) != 0) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 this.zoom_token = inputSerializedData.readString(z);
             }
         }
@@ -133,7 +133,7 @@ public class TL_stats {
             outputSerializedData.writeInt32(constructor);
             outputSerializedData.writeInt32(this.flags);
             this.json.serializeToStream(outputSerializedData);
-            if ((this.flags & 1) != 0) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 outputSerializedData.writeString(this.zoom_token);
             }
         }
@@ -430,7 +430,7 @@ public class TL_stats {
             outputSerializedData.writeInt32(constructor);
             outputSerializedData.writeInt32(this.flags);
             outputSerializedData.writeString(this.token);
-            if ((this.flags & 1) != 0) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 outputSerializedData.writeInt64(this.x);
             }
         }
@@ -547,7 +547,7 @@ public class TL_stats {
                     return TL_stats.PublicForward.TLdeserialize(inputSerializedData2, i, z2);
                 }
             }, z);
-            if ((this.flags & 1) != 0) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 this.next_offset = inputSerializedData.readString(z);
             }
             this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
@@ -560,7 +560,7 @@ public class TL_stats {
             outputSerializedData.writeInt32(this.flags);
             outputSerializedData.writeInt32(this.count);
             Vector.serialize(outputSerializedData, this.forwards);
-            if ((this.flags & 1) != 0) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 outputSerializedData.writeString(this.next_offset);
             }
             Vector.serialize(outputSerializedData, this.chats);
@@ -696,12 +696,12 @@ public class TL_stats {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
-            this.pending = (readInt32 & 1) != 0;
-            this.failed = (readInt32 & 4) != 0;
+            this.pending = TLObject.hasFlag(readInt32, 1);
+            this.failed = TLObject.hasFlag(this.flags, 4);
             this.amount = inputSerializedData.readInt64(z);
             this.date = inputSerializedData.readInt32(z);
             this.provider = inputSerializedData.readString(z);
-            if ((this.flags & 2) != 0) {
+            if (TLObject.hasFlag(this.flags, 2)) {
                 this.transaction_date = inputSerializedData.readInt32(z);
                 this.transaction_url = inputSerializedData.readString(z);
             }
@@ -716,7 +716,7 @@ public class TL_stats {
             outputSerializedData.writeInt64(this.amount);
             outputSerializedData.writeInt32(this.date);
             outputSerializedData.writeString(this.provider);
-            if ((this.flags & 2) != 0) {
+            if (TLObject.hasFlag(this.flags, 2)) {
                 outputSerializedData.writeInt32(this.transaction_date);
                 outputSerializedData.writeString(this.transaction_url);
             }

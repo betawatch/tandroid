@@ -1795,7 +1795,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 }
             }
         } else {
-            int max2 = Math.max((int) ((320.0f / this.containerView.getMeasuredWidth()) * x), newBackTransitions() ? NotificationCenter.storiesListUpdated : 120);
+            int max2 = Math.max((int) ((320.0f / this.containerView.getMeasuredWidth()) * x), newBackTransitions() ? NotificationCenter.storyDeleted : 120);
             if (!shouldOverrideSlideTransition) {
                 long j2 = max2;
                 animatorSet.playTogether(ObjectAnimator.ofFloat(this.containerView, (Property<LayoutContainer, Float>) View.TRANSLATION_X, 0.0f).setDuration(j2), ObjectAnimator.ofFloat(this, "innerTranslationX", 0.0f).setDuration(j2));

@@ -58,7 +58,7 @@ public class MediaCodecVideoConvertor {
     /* JADX WARN: Finally extract failed */
     private boolean convertVideoInternal(org.telegram.messenger.video.MediaCodecVideoConvertor.ConvertVideoParams r93, boolean r94, int r95) {
         /*
-            Method dump skipped, instructions count: 7524
+            Method dump skipped, instructions count: 7702
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.video.MediaCodecVideoConvertor.convertVideoInternal(org.telegram.messenger.video.MediaCodecVideoConvertor$ConvertVideoParams, boolean, int):boolean");
@@ -552,6 +552,7 @@ public class MediaCodecVideoConvertor {
         MediaController.SavedFilterState savedFilterState;
         public ArrayList<MixedSoundInfo> soundInfos = new ArrayList<>();
         long startTime;
+        long videoOffset;
         String videoPath;
         float volume;
         long wallpaperPeerId;
@@ -559,9 +560,10 @@ public class MediaCodecVideoConvertor {
         private ConvertVideoParams() {
         }
 
-        public static ConvertVideoParams of(String str, File file, int i, boolean z, int i2, int i3, int i4, int i5, int i6, int i7, int i8, long j, long j2, long j3, boolean z2, long j4, MediaController.VideoConvertorListener videoConvertorListener, VideoEditedInfo videoEditedInfo) {
+        public static ConvertVideoParams of(String str, File file, long j, int i, boolean z, int i2, int i3, int i4, int i5, int i6, int i7, int i8, long j2, long j3, long j4, boolean z2, long j5, MediaController.VideoConvertorListener videoConvertorListener, VideoEditedInfo videoEditedInfo) {
             ConvertVideoParams convertVideoParams = new ConvertVideoParams();
             convertVideoParams.videoPath = str;
+            convertVideoParams.videoOffset = j;
             convertVideoParams.cacheFile = file;
             convertVideoParams.rotationValue = i;
             convertVideoParams.isSecret = z;
@@ -572,11 +574,11 @@ public class MediaCodecVideoConvertor {
             convertVideoParams.framerate = i6;
             convertVideoParams.bitrate = i7;
             convertVideoParams.originalBitrate = i8;
-            convertVideoParams.startTime = j;
-            convertVideoParams.endTime = j2;
-            convertVideoParams.avatarStartTime = j3;
+            convertVideoParams.startTime = j2;
+            convertVideoParams.endTime = j3;
+            convertVideoParams.avatarStartTime = j4;
             convertVideoParams.needCompress = z2;
-            convertVideoParams.duration = j4;
+            convertVideoParams.duration = j5;
             convertVideoParams.savedFilterState = videoEditedInfo.filterState;
             convertVideoParams.paintPath = videoEditedInfo.paintPath;
             convertVideoParams.blurPath = videoEditedInfo.blurPath;

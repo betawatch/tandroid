@@ -481,65 +481,72 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                 }
                 c = 65535;
                 break;
+            case 622623867:
+                if (str.equals("ai_compose")) {
+                    c = '!';
+                    break;
+                }
+                c = 65535;
+                break;
             case 629542059:
                 if (str.equals("business_bots")) {
-                    c = '!';
+                    c = '\"';
                     break;
                 }
                 c = 65535;
                 break;
             case 705083174:
                 if (str.equals("stories__priority_order")) {
-                    c = '\"';
+                    c = '#';
                     break;
                 }
                 c = 65535;
                 break;
             case 1054743185:
                 if (str.equals("pm_noforwards")) {
-                    c = '#';
+                    c = '$';
                     break;
                 }
                 c = 65535;
                 break;
             case 1080006662:
                 if (str.equals("stories__links_and_formatting")) {
-                    c = '$';
+                    c = '%';
                     break;
                 }
                 c = 65535;
                 break;
             case 1219849581:
                 if (str.equals("advanced_chat_management")) {
-                    c = '%';
+                    c = '&';
                     break;
                 }
                 c = 65535;
                 break;
             case 1438966047:
                 if (str.equals("stories__permanent_views_history")) {
-                    c = '&';
+                    c = '\'';
                     break;
                 }
                 c = 65535;
                 break;
             case 1537309393:
                 if (str.equals("saved_tags")) {
-                    c = '\'';
+                    c = '(';
                     break;
                 }
                 c = 65535;
                 break;
             case 1832801148:
                 if (str.equals("app_icons")) {
-                    c = '(';
+                    c = ')';
                     break;
                 }
                 c = 65535;
                 break;
             case 2013274756:
                 if (str.equals("last_seen")) {
-                    c = ')';
+                    c = '*';
                     break;
                 }
                 c = 65535;
@@ -616,22 +623,24 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             case ' ':
                 return 31;
             case '!':
-                return 34;
+                return 42;
             case '\"':
-                return 20;
+                return 34;
             case '#':
-                return 41;
+                return 20;
             case '$':
-                return 19;
+                return 41;
             case '%':
-                return 9;
+                return 19;
             case '&':
-                return 16;
+                return 9;
             case '\'':
-                return 24;
+                return 16;
             case '(':
-                return 10;
+                return 24;
             case ')':
+                return 10;
+            case '*':
                 return 26;
             default:
                 return -1;
@@ -724,6 +733,8 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                 return "gifts";
             case 41:
                 return "pm_noforwards";
+            case 42:
+                return "ai_compose";
             default:
                 return null;
         }
@@ -1396,6 +1407,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         arrayList.add(new PremiumFeatureData(38, R.drawable.menu_premium_effects, LocaleController.getString(R.string.PremiumPreviewEffects), LocaleController.getString(R.string.PremiumPreviewEffectsDescription)));
         arrayList.add(new PremiumFeatureData(39, i3, LocaleController.getString(R.string.PremiumPreviewTodo), LocaleController.getString(R.string.PremiumPreviewTodoDescription)));
         arrayList.add(new PremiumFeatureData(41, R.drawable.filled_sharing_off2_24, LocaleController.getString(R.string.PremiumPreviewSharingDisable), LocaleController.getString(R.string.PremiumPreviewSharingDisableDescription)));
+        arrayList.add(new PremiumFeatureData(42, R.drawable.premium_ai_editor, LocaleController.getString(R.string.PremiumPreviewAIEditor), LocaleController.getString(R.string.PremiumPreviewAIEditorDescription)));
         if (messagesController.premiumFeaturesTypesToPosition.size() > 0) {
             while (i2 < arrayList.size()) {
                 if (messagesController.premiumFeaturesTypesToPosition.get(((PremiumFeatureData) arrayList.get(i2)).type, -1) == -1 && !BuildVars.DEBUG_PRIVATE_VERSION) {

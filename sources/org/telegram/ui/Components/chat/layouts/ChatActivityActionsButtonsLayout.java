@@ -131,13 +131,13 @@ public class ChatActivityActionsButtonsLayout extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public void checkHolderPositionsAndVisibility(ButtonHolder buttonHolder) {
         float floatValue = this.totalVisibilityFactor * buttonHolder.visibilityAnimator.getFloatValue();
-        float dp = AndroidUtilities.dp(54.0f) * (1.0f - floatValue);
+        float f = (-AndroidUtilities.dp(54.0f)) * (1.0f - floatValue);
         float measuredWidth = (getMeasuredWidth() / 2.0f) * (1.0f - AnimatorUtils.DECELERATE_INTERPOLATOR.getInterpolation(floatValue));
         if (buttonHolder == this.replyButton) {
             measuredWidth *= -1.0f;
         }
         buttonHolder.button.setTranslationX(measuredWidth);
-        buttonHolder.button.setTranslationY(dp);
+        buttonHolder.button.setTranslationY(f);
         buttonHolder.button.setAlpha(floatValue);
         buttonHolder.button.setVisibility(floatValue > 0.0f ? 0 : 4);
     }

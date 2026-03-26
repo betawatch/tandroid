@@ -177,14 +177,14 @@ public class ThemePreviewDrawable extends BitmapDrawable {
             drawable6.setBounds(width2, intrinsicHeight2, drawable6.getIntrinsicWidth() + width2, drawable6.getIntrinsicHeight() + intrinsicHeight2);
             drawable6.draw(canvas);
         }
-        messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.premiumStickersPreviewLoaded);
+        messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
         messageDrawableArr[1].setTop(0, 560, 522, false, false);
         messageDrawableArr[1].draw(canvas);
         messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
         messageDrawableArr[1].setTop(430, 560, 522, false, false);
         messageDrawableArr[1].draw(canvas);
-        messageDrawableArr[0].setBounds(20, NotificationCenter.uploadStoryProgress, 399, 415);
-        messageDrawableArr[0].setTop(NotificationCenter.uploadStoryProgress, 560, 522, false, false);
+        messageDrawableArr[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
+        messageDrawableArr[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
         messageDrawableArr[0].draw(canvas);
         paint.setColor(previewColor3);
         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint);

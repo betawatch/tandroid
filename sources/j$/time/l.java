@@ -129,7 +129,7 @@ public final class l implements j$.time.temporal.o, j$.time.temporal.p {
             case 4:
                 return (z ? 1 : 0) + NotificationCenter.musicListLoaded;
             case 5:
-                return (z ? 1 : 0) + NotificationCenter.currentUserShowLimitReachedDialog;
+                return (z ? 1 : 0) + NotificationCenter.premiumStatusChangedGlobal;
             case 6:
                 return 1;
             case 7:
@@ -143,7 +143,7 @@ public final class l implements j$.time.temporal.o, j$.time.temporal.p {
             case 11:
                 return (z ? 1 : 0) + NotificationCenter.proxyChangedByRotation;
             default:
-                return (z ? 1 : 0) + NotificationCenter.tlSchemeParseException;
+                return (z ? 1 : 0) + NotificationCenter.botForumDraftDelete;
         }
     }
 

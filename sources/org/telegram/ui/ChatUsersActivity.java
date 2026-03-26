@@ -247,7 +247,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             return 60;
         }
         if (i == 5) {
-            return NotificationCenter.onRequestPermissionResultReceived;
+            return NotificationCenter.onActivityResultReceived;
         }
         if (i == 6) {
             return 900;

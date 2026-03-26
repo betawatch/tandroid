@@ -297,9 +297,28 @@ public class RadialProgress2 {
         return this.overrideAlpha;
     }
 
+    public float getWholeAlpha() {
+        int currentIcon = this.mediaActionDrawable.getCurrentIcon();
+        int previousIcon = this.mediaActionDrawable.getPreviousIcon();
+        if (this.backgroundStroke != 0) {
+            if (currentIcon == 3) {
+                return 1.0f - this.mediaActionDrawable.getTransitionProgress();
+            }
+            if (previousIcon == 3) {
+                return this.mediaActionDrawable.getTransitionProgress();
+            }
+            return 1.0f;
+        }
+        if ((currentIcon == 3 || currentIcon == 6 || currentIcon == 10 || currentIcon == 8 || currentIcon == 0) && previousIcon == 4) {
+            return this.mediaActionDrawable.getTransitionProgress();
+        }
+        if (currentIcon != 4) {
+            return 1.0f;
+        }
+        return 1.0f - this.mediaActionDrawable.getTransitionProgress();
+    }
+
     public void draw(Canvas canvas) {
-        float transitionProgress;
-        float transitionProgress2;
         int i;
         int ceil;
         int ceil2;
@@ -316,26 +335,7 @@ public class RadialProgress2 {
         int argb;
         if ((this.mediaActionDrawable.getCurrentIcon() != 4 || this.mediaActionDrawable.getTransitionProgress() < 1.0f) && !this.progressRect.isEmpty()) {
             int currentIcon = this.mediaActionDrawable.getCurrentIcon();
-            int previousIcon = this.mediaActionDrawable.getPreviousIcon();
-            if (this.backgroundStroke != 0) {
-                if (currentIcon == 3) {
-                    transitionProgress2 = this.mediaActionDrawable.getTransitionProgress();
-                    transitionProgress = 1.0f - transitionProgress2;
-                } else {
-                    if (previousIcon == 3) {
-                        transitionProgress = this.mediaActionDrawable.getTransitionProgress();
-                    }
-                    transitionProgress = 1.0f;
-                }
-            } else if ((currentIcon == 3 || currentIcon == 6 || currentIcon == 10 || currentIcon == 8 || currentIcon == 0) && previousIcon == 4) {
-                transitionProgress = this.mediaActionDrawable.getTransitionProgress();
-            } else {
-                if (currentIcon == 4) {
-                    transitionProgress2 = this.mediaActionDrawable.getTransitionProgress();
-                    transitionProgress = 1.0f - transitionProgress2;
-                }
-                transitionProgress = 1.0f;
-            }
+            float wholeAlpha = getWholeAlpha();
             if (this.isPressedMini && this.circleCrossfadeColorKey < 0) {
                 int i5 = this.iconPressedColorKey;
                 if (i5 >= 0) {
@@ -411,8 +411,8 @@ public class RadialProgress2 {
             if ((this.drawMiniIcon || this.circleCrossfadeColorKey >= 0) && this.miniDrawCanvas != null) {
                 this.miniDrawBitmap.eraseColor(0);
             }
-            this.circlePaint.setAlpha((int) (this.circlePaint.getAlpha() * transitionProgress * this.overrideAlpha * this.overrideCircleAlpha));
-            this.circleMiniPaint.setAlpha((int) (this.circleMiniPaint.getAlpha() * transitionProgress * this.overrideAlpha));
+            this.circlePaint.setAlpha((int) (this.circlePaint.getAlpha() * wholeAlpha * this.overrideAlpha * this.overrideCircleAlpha));
+            this.circleMiniPaint.setAlpha((int) (this.circleMiniPaint.getAlpha() * wholeAlpha * this.overrideAlpha));
             if ((this.drawMiniIcon || this.circleCrossfadeColorKey >= 0) && this.miniDrawCanvas != null) {
                 ceil = (int) Math.ceil(this.progressRect.width() / 2.0f);
                 ceil2 = (int) Math.ceil(this.progressRect.height() / 2.0f);
@@ -423,7 +423,7 @@ public class RadialProgress2 {
             int i15 = 2;
             if (this.overlayImageView.hasBitmapImage()) {
                 float currentAlpha = this.overlayImageView.getCurrentAlpha();
-                this.overlayPaint.setAlpha((int) (100.0f * currentAlpha * transitionProgress * this.overrideAlpha));
+                this.overlayPaint.setAlpha((int) (100.0f * currentAlpha * wholeAlpha * this.overrideAlpha));
                 if (currentAlpha >= 1.0f) {
                     argb = -1;
                     z = false;
@@ -455,7 +455,7 @@ public class RadialProgress2 {
             if (z && this.drawBackground) {
                 if ((this.drawMiniIcon || this.circleCrossfadeColorKey >= 0) && (canvas4 = this.miniDrawCanvas) != null) {
                     canvas4.drawCircle(ceil, ceil2, this.circleRadius, this.circlePaint);
-                } else if (currentIcon != 4 || transitionProgress != 0.0f) {
+                } else if (currentIcon != 4 || wholeAlpha != 0.0f) {
                     if (this.backgroundStroke != 0) {
                         canvas.drawCircle(ceil, ceil2, this.circleRadius - AndroidUtilities.dp(3.5f), this.circlePaint);
                     } else {
@@ -464,7 +464,7 @@ public class RadialProgress2 {
                 }
             }
             if (this.overlayImageView.hasBitmapImage()) {
-                this.overlayImageView.setAlpha(transitionProgress * this.overrideAlpha * this.overlayImageAlpha);
+                this.overlayImageView.setAlpha(wholeAlpha * this.overrideAlpha * this.overlayImageAlpha);
                 if ((this.drawMiniIcon || this.circleCrossfadeColorKey >= 0) && (canvas3 = this.miniDrawCanvas) != null) {
                     this.overlayImageView.draw(canvas3);
                     this.miniDrawCanvas.drawCircle(ceil, ceil2, this.circleRadius, this.overlayPaint);

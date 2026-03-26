@@ -42,6 +42,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
@@ -109,6 +110,7 @@ public class ItemOptions {
     private int maxHeight;
     private int minWidthDp;
     public boolean needsFocus;
+    private boolean offsetByContainer;
     private float offsetX;
     private float offsetY;
     public boolean onTopOfScrim;
@@ -353,6 +355,10 @@ public class ItemOptions {
         return add(i, charSequence, false, runnable);
     }
 
+    public ItemOptions add(Drawable drawable, CharSequence charSequence, Runnable runnable) {
+        return add(0, drawable, charSequence, Theme.key_actionBarDefaultSubmenuItemIcon, Theme.key_actionBarDefaultSubmenuItem, runnable);
+    }
+
     public ItemOptions add(int i, CharSequence charSequence, boolean z, Runnable runnable) {
         return add(i, charSequence, z ? Theme.key_text_RedRegular : Theme.key_actionBarDefaultSubmenuItemIcon, z ? Theme.key_text_RedRegular : Theme.key_actionBarDefaultSubmenuItem, runnable);
     }
@@ -544,14 +550,12 @@ public class ItemOptions {
         CharSequence charSequence2 = charSequence;
         TLRPC.TL_attachMenuBotIcon sideAttachMenuBotIcon = MediaDataController.getSideAttachMenuBotIcon(tL_attachMenuBot);
         if (sideAttachMenuBotIcon != null) {
-            Drawable svgThumb = DocumentObject.getSvgThumb(sideAttachMenuBotIcon.icon.thumbs, Theme.key_emptyListPlaceholder, 0.2f);
-            if (svgThumb == null) {
-                svgThumb = getContext().getResources().getDrawable(R.drawable.msg_bot).mutate();
+            SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(sideAttachMenuBotIcon.icon, Theme.key_emptyListPlaceholder, 1.0f);
+            if (svgThumb != null) {
+                Integer num = this.iconColor;
+                svgThumb.setColorFilter(new PorterDuffColorFilter(num != null ? num.intValue() : Theme.getColor(i, this.resourcesProvider), PorterDuff.Mode.SRC_IN));
             }
-            Drawable drawable = svgThumb;
-            Integer num = this.iconColor;
-            drawable.setColorFilter(new PorterDuffColorFilter(num != null ? num.intValue() : Theme.getColor(i, this.resourcesProvider), PorterDuff.Mode.SRC_IN));
-            actionBarMenuSubItem.setTextAndIcon(charSequence2, ImageLocation.getForDocument(sideAttachMenuBotIcon.icon), "24_24", drawable, tL_attachMenuBot);
+            actionBarMenuSubItem.setTextAndIcon(charSequence2, ImageLocation.getForDocument(sideAttachMenuBotIcon.icon), "24_24", svgThumb, tL_attachMenuBot);
             actionBarMenuSubItem.setImageSize(24, 24);
         } else {
             actionBarMenuSubItem.setTextAndIcon(charSequence2, R.drawable.msg_bot);
@@ -806,7 +810,7 @@ public class ItemOptions {
             ActionBarMenuSubItem actionBarMenuSubItem = (ActionBarMenuSubItem) itemAt;
             actionBarMenuSubItem.setRightIcon(R.drawable.msg_mini_lock3);
             actionBarMenuSubItem.getRightIcon().setAlpha(0.4f);
-            actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda17
+            actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda16
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     ItemOptions.this.lambda$putPremiumLock$9(runnable, view);
@@ -858,21 +862,28 @@ public class ItemOptions {
     }
 
     public ItemOptions addSpaceGap() {
+        return addSpaceGap(true);
+    }
+
+    public ItemOptions addSpaceGap(boolean z) {
         if (!(this.layout instanceof LinearLayout)) {
             LinearLayout linearLayout = new LinearLayout(this.context);
             this.layout = linearLayout;
-            linearLayout.setOrientation(1);
-            this.layout.addView(this.lastLayout, LayoutHelper.createLinear(-1, -2));
+            linearLayout.setOrientation(z ? 1 : 0);
+            ViewGroup viewGroup = this.layout;
+            ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = this.lastLayout;
+            int i = this.maxHeight;
+            viewGroup.addView(actionBarPopupWindowLayout, LayoutHelper.createLinear(-1.0f, i > 0 ? i / AndroidUtilities.density : -2.0f, 48));
         }
-        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(this.context, this.resourcesProvider);
-        this.lastLayout = actionBarPopupWindowLayout;
-        actionBarPopupWindowLayout.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda16
+        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout2 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(this.context, R.drawable.popup_fixed_alert4, this.resourcesProvider, !z ? 4 : 0);
+        this.lastLayout = actionBarPopupWindowLayout2;
+        actionBarPopupWindowLayout2.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda17
             @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow.OnDispatchKeyEventListener
             public final void onDispatchKeyEvent(KeyEvent keyEvent) {
                 ItemOptions.this.lambda$addSpaceGap$10(keyEvent);
             }
         });
-        this.layout.addView(this.lastLayout, LayoutHelper.createLinear(-1, -2, 0.0f, -8.0f, 0.0f, 0.0f));
+        this.layout.addView(this.lastLayout, LayoutHelper.createLinear(-1, -2, 48, !z ? -8 : 0, z ? -8 : 0, 0, 0));
         return this;
     }
 
@@ -943,6 +954,40 @@ public class ItemOptions {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addProfile$12(Runnable runnable, View view) {
+        dismiss();
+        if (runnable != null) {
+            runnable.run();
+        }
+    }
+
+    public ItemOptions addProfileCustom(TLObject tLObject, CharSequence charSequence, final Runnable runnable) {
+        FrameLayout frameLayout = new FrameLayout(this.context);
+        frameLayout.setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector, this.resourcesProvider), 0, 12));
+        BackupImageView backupImageView = new BackupImageView(this.context);
+        backupImageView.setRoundRadius(AndroidUtilities.dp(17.0f));
+        AvatarDrawable avatarDrawable = new AvatarDrawable();
+        avatarDrawable.setInfo(tLObject);
+        backupImageView.setForUserOrChat(tLObject, avatarDrawable);
+        frameLayout.addView(backupImageView, LayoutHelper.createFrame(34, 34.0f, 51, 13.0f, 11.0f, 0.0f, 11.0f));
+        TextView textView = new TextView(this.context);
+        textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack, this.resourcesProvider));
+        textView.setTextSize(1, 14.0f);
+        textView.setText(charSequence);
+        textView.setMaxWidth(AndroidUtilities.dp(150.0f));
+        textView.setLineSpacing(AndroidUtilities.dp(3.0f), 1.0f);
+        frameLayout.addView(textView, LayoutHelper.createFrame(-2, -2.0f, 55, 59.0f, 8.0f, 16.0f, 0.0f));
+        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda18
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                ItemOptions.this.lambda$addProfileCustom$13(runnable, view);
+            }
+        });
+        addView(frameLayout, LayoutHelper.createLinear(-1, -2));
+        return this;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$addProfileCustom$13(Runnable runnable, View view) {
         dismiss();
         if (runnable != null) {
             runnable.run();
@@ -1128,7 +1173,7 @@ public class ItemOptions {
     }
 
     public ItemOptions setBlurBackground(BlurringShader.BlurManager blurManager, float f, float f2) {
-        Drawable mutate = this.context.getResources().getDrawable(R.drawable.popup_fixed_alert2).mutate();
+        Drawable mutate = this.context.getResources().getDrawable(R.drawable.popup_fixed_alert4).mutate();
         ViewGroup viewGroup = this.layout;
         if (viewGroup instanceof ActionBarPopupWindow.ActionBarPopupWindowLayout) {
             viewGroup.setBackground(new BlurringShader.StoryBlurDrawer(blurManager, viewGroup, 5).makeDrawable(this.offsetX + f + this.layout.getX(), this.offsetY + f2 + this.layout.getY(), mutate, AndroidUtilities.dp(12.0f)));
@@ -1219,13 +1264,18 @@ public class ItemOptions {
         }
     }
 
+    public ItemOptions offsetByContainer() {
+        this.offsetByContainer = true;
+        return this;
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x03b4  */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x03f6  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x0407  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x042e  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x0423  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x03a2 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x03c5  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0407  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x0418  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x043f  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0434  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x03b3 A[ADDED_TO_REGION] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1289,6 +1339,11 @@ public class ItemOptions {
                 float[] fArr = this.point;
                 f = fArr[1];
                 f2 = fArr[0];
+                if (this.offsetByContainer) {
+                    viewGroup2.getLocationOnScreen(new int[2]);
+                    f2 += r2[0];
+                    f += r2[1];
+                }
             } else {
                 f = f5;
                 f2 = 0.0f;
@@ -1317,9 +1372,9 @@ public class ItemOptions {
                 this.preDrawListener = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda3
                     @Override // android.view.ViewTreeObserver.OnPreDrawListener
                     public final boolean onPreDraw() {
-                        boolean lambda$show$13;
-                        lambda$show$13 = ItemOptions.lambda$show$13(ItemOptions.DimView.this);
-                        return lambda$show$13;
+                        boolean lambda$show$14;
+                        lambda$show$14 = ItemOptions.lambda$show$14(ItemOptions.DimView.this);
+                        return lambda$show$14;
                     }
                 };
                 viewGroup2.getViewTreeObserver().addOnPreDrawListener(this.preDrawListener);
@@ -1338,7 +1393,7 @@ public class ItemOptions {
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda4
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        ItemOptions.this.lambda$show$14(valueAnimator2);
+                        ItemOptions.this.lambda$show$15(valueAnimator2);
                     }
                 });
                 this.dimAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ItemOptions.3
@@ -1535,13 +1590,13 @@ public class ItemOptions {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$show$13(DimView dimView) {
+    public static /* synthetic */ boolean lambda$show$14(DimView dimView) {
         dimView.invalidate();
         return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$14(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$show$15(ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         DimView dimView = this.dimView;
         if (dimView != null) {
@@ -1648,7 +1703,7 @@ public class ItemOptions {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda5
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                ItemOptions.lambda$dismissDim$15(ItemOptions.DimView.this, valueAnimator2);
+                ItemOptions.lambda$dismissDim$16(ItemOptions.DimView.this, valueAnimator2);
             }
         });
         this.dimAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ItemOptions.6
@@ -1676,7 +1731,7 @@ public class ItemOptions {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$dismissDim$15(DimView dimView, ValueAnimator valueAnimator) {
+    public static /* synthetic */ void lambda$dismissDim$16(DimView dimView, ValueAnimator valueAnimator) {
         dimView.setProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
@@ -2026,7 +2081,7 @@ public class ItemOptions {
             actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda15
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ItemOptions.lambda$addAlbumsItemOptions$17(contains, hashSet, i2, callback, storyAlbum, view);
+                    ItemOptions.lambda$addAlbumsItemOptions$18(contains, hashSet, i2, callback, storyAlbum, view);
                 }
             });
             linearLayout.addView(actionBarMenuSubItem2, LayoutHelper.createLinear(-1, -2));
@@ -2035,7 +2090,7 @@ public class ItemOptions {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$addAlbumsItemOptions$17(boolean z, HashSet hashSet, int i, Utilities.Callback callback, StoriesController.StoryAlbum storyAlbum, View view) {
+    public static /* synthetic */ void lambda$addAlbumsItemOptions$18(boolean z, HashSet hashSet, int i, Utilities.Callback callback, StoriesController.StoryAlbum storyAlbum, View view) {
         if (z) {
             hashSet.remove(Integer.valueOf(i));
         } else {

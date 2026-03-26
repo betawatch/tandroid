@@ -108,6 +108,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     private int fileLoadingPriority;
     private boolean forceCrossfade;
     private boolean forceLoding;
+    private boolean forceNotMedia;
     private boolean forcePreview;
     private Bitmap gradientBitmap;
     private BitmapShader gradientShader;
@@ -2114,34 +2115,34 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         return draw(canvas, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:129:0x0242, code lost:
-    
-        if (r37.useRoundForThumb == false) goto L119;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:130:0x0244, code lost:
-    
-        if (r6 != null) goto L119;
-     */
     /* JADX WARN: Code restructure failed: missing block: B:131:0x0246, code lost:
+    
+        if (r37.useRoundForThumb == false) goto L121;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:132:0x0248, code lost:
+    
+        if (r6 != null) goto L121;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:133:0x024a, code lost:
     
         updateDrawableRadius(r11);
         r1 = r37.staticThumbShader;
      */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x02a2  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x0354  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x01ad  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x0141 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x0156 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x0167 A[Catch: Exception -> 0x008c, TryCatch #1 {Exception -> 0x008c, blocks: (B:10:0x002a, B:11:0x0100, B:13:0x0104, B:15:0x010b, B:20:0x0127, B:24:0x0131, B:25:0x0199, B:27:0x01a3, B:30:0x01b3, B:41:0x01d6, B:49:0x0345, B:52:0x0350, B:119:0x02ec, B:120:0x030f, B:122:0x0326, B:147:0x032a, B:150:0x035e, B:152:0x0362, B:153:0x0368, B:154:0x037f, B:161:0x0147, B:164:0x0158, B:166:0x0167, B:167:0x0174, B:169:0x0178, B:172:0x017e, B:173:0x0183, B:176:0x0117, B:179:0x011d, B:181:0x0124, B:183:0x0090, B:185:0x00c2, B:190:0x00ca), top: B:8:0x0028 }] */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x0174 A[Catch: Exception -> 0x008c, TryCatch #1 {Exception -> 0x008c, blocks: (B:10:0x002a, B:11:0x0100, B:13:0x0104, B:15:0x010b, B:20:0x0127, B:24:0x0131, B:25:0x0199, B:27:0x01a3, B:30:0x01b3, B:41:0x01d6, B:49:0x0345, B:52:0x0350, B:119:0x02ec, B:120:0x030f, B:122:0x0326, B:147:0x032a, B:150:0x035e, B:152:0x0362, B:153:0x0368, B:154:0x037f, B:161:0x0147, B:164:0x0158, B:166:0x0167, B:167:0x0174, B:169:0x0178, B:172:0x017e, B:173:0x0183, B:176:0x0117, B:179:0x011d, B:181:0x0124, B:183:0x0090, B:185:0x00c2, B:190:0x00ca), top: B:8:0x0028 }] */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x012d A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x01a3 A[Catch: Exception -> 0x008c, TryCatch #1 {Exception -> 0x008c, blocks: (B:10:0x002a, B:11:0x0100, B:13:0x0104, B:15:0x010b, B:20:0x0127, B:24:0x0131, B:25:0x0199, B:27:0x01a3, B:30:0x01b3, B:41:0x01d6, B:49:0x0345, B:52:0x0350, B:119:0x02ec, B:120:0x030f, B:122:0x0326, B:147:0x032a, B:150:0x035e, B:152:0x0362, B:153:0x0368, B:154:0x037f, B:161:0x0147, B:164:0x0158, B:166:0x0167, B:167:0x0174, B:169:0x0178, B:172:0x017e, B:173:0x0183, B:176:0x0117, B:179:0x011d, B:181:0x0124, B:183:0x0090, B:185:0x00c2, B:190:0x00ca), top: B:8:0x0028 }] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x01b3 A[Catch: Exception -> 0x008c, TRY_LEAVE, TryCatch #1 {Exception -> 0x008c, blocks: (B:10:0x002a, B:11:0x0100, B:13:0x0104, B:15:0x010b, B:20:0x0127, B:24:0x0131, B:25:0x0199, B:27:0x01a3, B:30:0x01b3, B:41:0x01d6, B:49:0x0345, B:52:0x0350, B:119:0x02ec, B:120:0x030f, B:122:0x0326, B:147:0x032a, B:150:0x035e, B:152:0x0362, B:153:0x0368, B:154:0x037f, B:161:0x0147, B:164:0x0158, B:166:0x0167, B:167:0x0174, B:169:0x0178, B:172:0x017e, B:173:0x0183, B:176:0x0117, B:179:0x011d, B:181:0x0124, B:183:0x0090, B:185:0x00c2, B:190:0x00ca), top: B:8:0x0028 }] */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0385 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0395  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x039e  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x03af A[LOOP:0: B:73:0x03a7->B:75:0x03af, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x026e A[Catch: Exception -> 0x0202, TryCatch #2 {Exception -> 0x0202, blocks: (B:38:0x01d0, B:43:0x01fc, B:44:0x0207, B:47:0x020d, B:95:0x026e, B:97:0x0272, B:100:0x0277, B:102:0x0286, B:104:0x029a, B:106:0x029e, B:107:0x02a6, B:112:0x02b2, B:113:0x02ca, B:115:0x02cd, B:117:0x02dd, B:124:0x027e, B:128:0x0240, B:131:0x0246, B:138:0x025b, B:141:0x0261), top: B:37:0x01d0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x02a6  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x0358  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x01b1  */
+    /* JADX WARN: Removed duplicated region for block: B:160:0x0145 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x015a A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x016b A[Catch: Exception -> 0x008c, TryCatch #0 {Exception -> 0x008c, blocks: (B:10:0x002a, B:11:0x0100, B:13:0x0104, B:15:0x010b, B:20:0x0127, B:22:0x012d, B:26:0x0135, B:27:0x019d, B:29:0x01a7, B:32:0x01b7, B:43:0x01da, B:51:0x0349, B:54:0x0354, B:121:0x02f0, B:122:0x0313, B:124:0x032a, B:149:0x032e, B:152:0x0362, B:154:0x0366, B:155:0x036c, B:156:0x0383, B:163:0x014b, B:166:0x015c, B:168:0x016b, B:169:0x0178, B:171:0x017c, B:174:0x0182, B:175:0x0187, B:178:0x0117, B:181:0x011d, B:183:0x0124, B:185:0x0090, B:187:0x00c2, B:192:0x00ca), top: B:8:0x0028 }] */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x0178 A[Catch: Exception -> 0x008c, TryCatch #0 {Exception -> 0x008c, blocks: (B:10:0x002a, B:11:0x0100, B:13:0x0104, B:15:0x010b, B:20:0x0127, B:22:0x012d, B:26:0x0135, B:27:0x019d, B:29:0x01a7, B:32:0x01b7, B:43:0x01da, B:51:0x0349, B:54:0x0354, B:121:0x02f0, B:122:0x0313, B:124:0x032a, B:149:0x032e, B:152:0x0362, B:154:0x0366, B:155:0x036c, B:156:0x0383, B:163:0x014b, B:166:0x015c, B:168:0x016b, B:169:0x0178, B:171:0x017c, B:174:0x0182, B:175:0x0187, B:178:0x0117, B:181:0x011d, B:183:0x0124, B:185:0x0090, B:187:0x00c2, B:192:0x00ca), top: B:8:0x0028 }] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x012d A[Catch: Exception -> 0x008c, TryCatch #0 {Exception -> 0x008c, blocks: (B:10:0x002a, B:11:0x0100, B:13:0x0104, B:15:0x010b, B:20:0x0127, B:22:0x012d, B:26:0x0135, B:27:0x019d, B:29:0x01a7, B:32:0x01b7, B:43:0x01da, B:51:0x0349, B:54:0x0354, B:121:0x02f0, B:122:0x0313, B:124:0x032a, B:149:0x032e, B:152:0x0362, B:154:0x0366, B:155:0x036c, B:156:0x0383, B:163:0x014b, B:166:0x015c, B:168:0x016b, B:169:0x0178, B:171:0x017c, B:174:0x0182, B:175:0x0187, B:178:0x0117, B:181:0x011d, B:183:0x0124, B:185:0x0090, B:187:0x00c2, B:192:0x00ca), top: B:8:0x0028 }] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x01a7 A[Catch: Exception -> 0x008c, TryCatch #0 {Exception -> 0x008c, blocks: (B:10:0x002a, B:11:0x0100, B:13:0x0104, B:15:0x010b, B:20:0x0127, B:22:0x012d, B:26:0x0135, B:27:0x019d, B:29:0x01a7, B:32:0x01b7, B:43:0x01da, B:51:0x0349, B:54:0x0354, B:121:0x02f0, B:122:0x0313, B:124:0x032a, B:149:0x032e, B:152:0x0362, B:154:0x0366, B:155:0x036c, B:156:0x0383, B:163:0x014b, B:166:0x015c, B:168:0x016b, B:169:0x0178, B:171:0x017c, B:174:0x0182, B:175:0x0187, B:178:0x0117, B:181:0x011d, B:183:0x0124, B:185:0x0090, B:187:0x00c2, B:192:0x00ca), top: B:8:0x0028 }] */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x01b7 A[Catch: Exception -> 0x008c, TRY_LEAVE, TryCatch #0 {Exception -> 0x008c, blocks: (B:10:0x002a, B:11:0x0100, B:13:0x0104, B:15:0x010b, B:20:0x0127, B:22:0x012d, B:26:0x0135, B:27:0x019d, B:29:0x01a7, B:32:0x01b7, B:43:0x01da, B:51:0x0349, B:54:0x0354, B:121:0x02f0, B:122:0x0313, B:124:0x032a, B:149:0x032e, B:152:0x0362, B:154:0x0366, B:155:0x036c, B:156:0x0383, B:163:0x014b, B:166:0x015c, B:168:0x016b, B:169:0x0178, B:171:0x017c, B:174:0x0182, B:175:0x0187, B:178:0x0117, B:181:0x011d, B:183:0x0124, B:185:0x0090, B:187:0x00c2, B:192:0x00ca), top: B:8:0x0028 }] */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0389 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0399  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x03a2  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x03b3 A[LOOP:0: B:75:0x03ab->B:77:0x03b3, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x0272 A[Catch: Exception -> 0x0206, TryCatch #1 {Exception -> 0x0206, blocks: (B:40:0x01d4, B:45:0x0200, B:46:0x020b, B:49:0x0211, B:97:0x0272, B:99:0x0276, B:102:0x027b, B:104:0x028a, B:106:0x029e, B:108:0x02a2, B:109:0x02aa, B:114:0x02b6, B:115:0x02ce, B:117:0x02d1, B:119:0x02e1, B:126:0x0282, B:130:0x0244, B:133:0x024a, B:140:0x025f, B:143:0x0265), top: B:39:0x01d4 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2284,12 +2285,12 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             if (lottieAnimation != null) {
             }
             z4 = this.forcePreview;
-            if (z4 && drawable2 != null && !z3) {
+            if (z4 && !this.forceNotMedia && drawable2 != null && !z3) {
                 i2 = this.imageOrientation;
-                bitmapShader6 = bitmapShader;
                 i3 = this.imageInvert;
-                drawable6 = drawable2;
                 z5 = z3;
+                bitmapShader6 = bitmapShader;
+                drawable6 = drawable2;
             } else if (z4 && drawable3 != null && (!z3 || drawable2 != null)) {
                 i2 = this.imageOrientation;
                 i3 = this.imageInvert;
@@ -2298,14 +2299,14 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 z5 = false;
             } else if (drawable5 == null && !z2) {
                 i2 = this.imageOrientation;
-                z5 = z3;
                 i3 = this.imageInvert;
+                z5 = z3;
                 drawable6 = drawable5;
                 bitmapShader6 = bitmapShader3;
             } else if (drawable4 != null) {
                 i2 = this.thumbOrientation;
-                z5 = z3;
                 i3 = this.thumbInvert;
+                z5 = z3;
                 drawable6 = drawable4;
                 bitmapShader6 = bitmapShader4;
             } else if (drawable instanceof BitmapDrawable) {
@@ -2314,8 +2315,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                     bitmapShader5 = this.staticThumbShader;
                 }
                 i2 = this.thumbOrientation;
-                z5 = z3;
                 i3 = this.thumbInvert;
+                z5 = z3;
                 bitmapShader6 = bitmapShader5;
                 drawable6 = drawable;
             } else {
@@ -3078,6 +3079,10 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
 
     public void setForcePreview(boolean z) {
         this.forcePreview = z;
+    }
+
+    public void setForceNotMedia(boolean z) {
+        this.forceNotMedia = z;
     }
 
     public void setForceCrossfade(boolean z) {

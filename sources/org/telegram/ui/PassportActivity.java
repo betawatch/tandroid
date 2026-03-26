@@ -9312,7 +9312,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         for (int i3 = 0; i3 < min; i3++) {
             SendMessagesHelper.SendingMediaInfo sendingMediaInfo = (SendMessagesHelper.SendingMediaInfo) arrayList.get(i3);
             Bitmap loadBitmap = ImageLoader.loadBitmap(sendingMediaInfo.path, sendingMediaInfo.uri, 2048.0f, 2048.0f, false);
-            if (loadBitmap != null && (scaleAndSaveImage = ImageLoader.scaleAndSaveImage(loadBitmap, 2048.0f, 2048.0f, 89, false, NotificationCenter.storiesListUpdated, NotificationCenter.storiesListUpdated)) != null) {
+            if (loadBitmap != null && (scaleAndSaveImage = ImageLoader.scaleAndSaveImage(loadBitmap, 2048.0f, 2048.0f, 89, false, NotificationCenter.storyDeleted, NotificationCenter.storyDeleted)) != null) {
                 TLRPC.TL_secureFile tL_secureFile = new TLRPC.TL_secureFile();
                 tL_secureFile.dc_id = (int) scaleAndSaveImage.location.volume_id;
                 tL_secureFile.id = r9.local_id;

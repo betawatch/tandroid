@@ -18,22 +18,25 @@ import org.telegram.ui.ActionBar.Theme;
 /* loaded from: classes5.dex */
 public class HorizontalRoundTabsLayout extends HorizontalScrollView {
     private static final RectF tmpRect = new RectF();
+    private boolean accent;
     private final Paint bgPaint;
     private final Path clipPath;
     private final Path clipPath2;
     public final LinearLayout linearLayout;
+    private final Theme.ResourcesProvider resourcesProvider;
     private int selectedIndex;
     private final AnimatedFloat selectorEndX;
     private final AnimatedFloat selectorStartX;
     private final TextPaint textPaint;
 
-    public HorizontalRoundTabsLayout(Context context) {
+    public HorizontalRoundTabsLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.bgPaint = new Paint(1);
         TextPaint textPaint = new TextPaint(1);
         this.textPaint = textPaint;
         this.clipPath = new Path();
         this.clipPath2 = new Path();
+        this.resourcesProvider = resourcesProvider;
         LinearLayout linearLayout = new LinearLayout(context);
         this.linearLayout = linearLayout;
         linearLayout.setLayerType(0, null);
@@ -41,7 +44,7 @@ public class HorizontalRoundTabsLayout extends HorizontalScrollView {
         addView(linearLayout, LayoutHelper.createScroll(-1, -1, 8388611));
         textPaint.setTextSize(AndroidUtilities.dp(13.0f));
         textPaint.setTypeface(AndroidUtilities.bold());
-        AnimatedFloat animatedFloat = new AnimatedFloat(new Runnable() { // from class: org.telegram.ui.Components.HorizontalRoundTabsLayout$$ExternalSyntheticLambda0
+        AnimatedFloat animatedFloat = new AnimatedFloat(new Runnable() { // from class: org.telegram.ui.Components.HorizontalRoundTabsLayout$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 HorizontalRoundTabsLayout.this.lambda$new$0();
@@ -49,7 +52,7 @@ public class HorizontalRoundTabsLayout extends HorizontalScrollView {
         });
         this.selectorStartX = animatedFloat;
         animatedFloat.setDuration(180L);
-        AnimatedFloat animatedFloat2 = new AnimatedFloat(new Runnable() { // from class: org.telegram.ui.Components.HorizontalRoundTabsLayout$$ExternalSyntheticLambda1
+        AnimatedFloat animatedFloat2 = new AnimatedFloat(new Runnable() { // from class: org.telegram.ui.Components.HorizontalRoundTabsLayout$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 HorizontalRoundTabsLayout.this.lambda$new$1();
@@ -79,12 +82,16 @@ public class HorizontalRoundTabsLayout extends HorizontalScrollView {
         }
     }
 
+    public void setAccent(boolean z) {
+        this.accent = z;
+    }
+
     public void setTabs(ArrayList arrayList, final MessagesStorage.IntCallback intCallback) {
         this.linearLayout.removeAllViews();
         for (final int i = 0; i < arrayList.size(); i++) {
             CharSequence charSequence = (CharSequence) arrayList.get(i);
             RoundTabView roundTabView = new RoundTabView(getContext());
-            roundTabView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.HorizontalRoundTabsLayout$$ExternalSyntheticLambda2
+            roundTabView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.HorizontalRoundTabsLayout$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     HorizontalRoundTabsLayout.this.lambda$setTabs$2(i, intCallback, view);
@@ -106,6 +113,7 @@ public class HorizontalRoundTabsLayout extends HorizontalScrollView {
         this.selectorStartX.set(view.getLeft(), false);
         this.selectorEndX.set(view.getRight(), false);
         intCallback.run(i);
+        invalidate();
     }
 
     public void setSelectedIndex(int i, boolean z) {
@@ -123,6 +131,8 @@ public class HorizontalRoundTabsLayout extends HorizontalScrollView {
 
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
+        int color;
+        int color2;
         RectF rectF = tmpRect;
         rectF.set(this.selectorStartX.getValue(), 0.0f, this.selectorEndX.getValue(), getMeasuredHeight());
         this.clipPath.rewind();
@@ -137,19 +147,29 @@ public class HorizontalRoundTabsLayout extends HorizontalScrollView {
         this.clipPath2.addRoundRect(rectF, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), Path.Direction.CCW);
         this.clipPath2.close();
         Paint paint = this.bgPaint;
-        int i = Theme.key_windowBackgroundWhiteGrayText;
-        paint.setColor(Theme.getColor(i) & 520093695);
+        if (this.accent) {
+            color = Theme.multAlpha(Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider), 0.1f);
+        } else {
+            color = Theme.getColor(Theme.key_windowBackgroundWhiteGrayText, this.resourcesProvider) & 520093695;
+        }
+        paint.setColor(color);
         canvas.drawPath(this.clipPath, this.bgPaint);
-        this.textPaint.setColor(Theme.getColor(i));
+        this.textPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText, this.resourcesProvider));
         canvas.save();
         canvas.clipPath(this.clipPath2);
         super.dispatchDraw(canvas);
         canvas.restore();
-        this.textPaint.setColor(Theme.getColor(Theme.key_chats_nameArchived));
+        TextPaint textPaint = this.textPaint;
+        if (this.accent) {
+            color2 = Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider);
+        } else {
+            color2 = Theme.getColor(Theme.key_chats_nameArchived, this.resourcesProvider);
+        }
+        textPaint.setColor(color2);
         canvas.save();
         canvas.clipPath(this.clipPath);
-        for (int i2 = 0; i2 < this.linearLayout.getChildCount(); i2++) {
-            View childAt = this.linearLayout.getChildAt(i2);
+        for (int i = 0; i < this.linearLayout.getChildCount(); i++) {
+            View childAt = this.linearLayout.getChildAt(i);
             RectF rectF2 = tmpRect;
             if (rectF2.right >= childAt.getLeft() && rectF2.left <= childAt.getRight()) {
                 canvas.save();

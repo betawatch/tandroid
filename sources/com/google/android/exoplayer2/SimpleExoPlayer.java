@@ -10,6 +10,7 @@ import com.google.android.exoplayer2.analytics.AnalyticsListener;
 import com.google.android.exoplayer2.audio.AudioAttributes;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.util.ConditionVariable;
+import com.google.android.exoplayer2.video.VideoFrameMetadataListener;
 import com.google.android.exoplayer2.video.VideoListener;
 import com.google.android.exoplayer2.video.VideoSize;
 import java.util.List;
@@ -94,6 +95,12 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
     public Format getVideoFormat() {
         blockUntilConstructorFinished();
         return this.player.getVideoFormat();
+    }
+
+    @Override // com.google.android.exoplayer2.ExoPlayer
+    public void setVideoFrameMetadataListener(VideoFrameMetadataListener videoFrameMetadataListener) {
+        blockUntilConstructorFinished();
+        this.player.setVideoFrameMetadataListener(videoFrameMetadataListener);
     }
 
     @Override // com.google.android.exoplayer2.Player

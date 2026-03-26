@@ -79,7 +79,7 @@ import org.telegram.ui.AccountFrozenAlert;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda244;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda243;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AnimatedFloat;
@@ -643,6 +643,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     BaseFragment.BottomSheetParams bottomSheetParams = new BaseFragment.BottomSheetParams();
                     bottomSheetParams.transitionFromLeft = true;
                     bottomSheetParams.allowNestedScroll = false;
+                    bottomSheetParams.occupyNavigationBar = true;
                     final ViewTreeObserver viewTreeObserver = this.container.getViewTreeObserver();
                     final ViewTreeObserver.OnPreDrawListener onPreDrawListener = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda14
                         @Override // android.view.ViewTreeObserver.OnPreDrawListener
@@ -1181,7 +1182,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     lambda$fillItems$24 = GiftSheet.this.lambda$fillItems$24((TL_stars.StarGift) obj);
                     return lambda$fillItems$24;
                 }
-            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda244()));
+            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda243()));
         }
         if (this.dialogId < 0) {
             arrayList2 = (ArrayList) Collection.-EL.stream(arrayList2).filter(new Predicate() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda20
@@ -1203,7 +1204,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     lambda$fillItems$25 = GiftSheet.lambda$fillItems$25((TL_stars.StarGift) obj);
                     return lambda$fillItems$25;
                 }
-            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda244()));
+            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda243()));
         }
         if (this.dialogId != UserConfig.getInstance(this.currentAccount).getClientUserId() && (giftsList3 = this.myGifts) != null) {
             Iterator it2 = giftsList3.gifts.iterator();

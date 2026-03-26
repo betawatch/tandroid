@@ -183,8 +183,23 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public /* synthetic */ ItemOptions getCustomItemOptions(ViewGroup viewGroup, View view) {
+            return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$getCustomItemOptions(this, viewGroup, view);
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public long getDialogId() {
             return 0L;
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public /* synthetic */ TLRPC.TL_messageMediaPoll getPoll() {
+            return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$getPoll(this);
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public /* synthetic */ TLRPC.PollAnswer getPollAnswer() {
+            return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$getPollAnswer(this);
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -262,6 +277,11 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public /* synthetic */ void retractVote() {
+            ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$retractVote(this);
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public /* synthetic */ void sendGif(Object obj, Object obj2, boolean z, int i, int i2) {
             ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendGif(this, obj, obj2, z, i, i2);
         }
@@ -274,6 +294,11 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public /* synthetic */ void sendSticker(TLRPC.Document document, String str, Object obj, boolean z, int i, int i2) {
             ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this, document, str, obj, z, i, i2);
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public /* synthetic */ void sendVote() {
+            ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendVote(this);
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate

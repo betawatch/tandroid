@@ -21,6 +21,8 @@ import android.os.Build;
 import android.util.StateSet;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.animation.Interpolator;
+import me.vkryl.android.animator.BoolAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ActionBar.Theme;
@@ -28,6 +30,7 @@ import org.telegram.ui.Cells.BaseCell;
 
 /* loaded from: classes5.dex */
 public class Switch extends View {
+    private final BoolAnimator animatorIconVisibility;
     private boolean attachedToWindow;
     private boolean bitmapsCreated;
     private ObjectAnimator checkAnimator;
@@ -78,6 +81,7 @@ public class Switch extends View {
 
     public Switch(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
+        this.animatorIconVisibility = new BoolAnimator((View) this, (Interpolator) CubicBezierInterpolator.EASE_OUT_QUINT, 380L, true);
         this.iconProgress = 1.0f;
         this.trackColorKey = Theme.key_fill_RedNormal;
         this.trackCheckedColorKey = Theme.key_switch2TrackChecked;
@@ -271,6 +275,10 @@ public class Switch extends View {
         invalidate();
     }
 
+    public void setIconVisible(boolean z, boolean z2) {
+        this.animatorIconVisibility.setValue(z, z2);
+    }
+
     public void setDrawIconType(int i, boolean z) {
         if (this.drawIconType != i) {
             this.drawIconType = i;
@@ -332,40 +340,40 @@ public class Switch extends View {
         invalidate();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x00a8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:105:0x0208, code lost:
     
-        if (r12 == 0) goto L24;
+        r4 = 0.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x00af, code lost:
-    
-        r16 = 1.0f;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x00b2, code lost:
-    
-        r16 = 0.0f;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x00ad, code lost:
-    
-        if (r12 == 0) goto L23;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x01f9, code lost:
-    
-        if (r1 == 0) goto L75;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x0201, code lost:
-    
-        r6 = 1.0f;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x0204, code lost:
-    
-        r6 = 0.0f;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:98:0x01ff, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:108:0x0203, code lost:
     
         if (r1 == 0) goto L74;
      */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x03df  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x03e8  */
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x00a9, code lost:
+    
+        if (r12 == 0) goto L24;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x00b0, code lost:
+    
+        r13 = 1.0f;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00b3, code lost:
+    
+        r13 = 0.0f;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x00ae, code lost:
+    
+        if (r12 == 0) goto L23;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x01fd, code lost:
+    
+        if (r1 == 0) goto L75;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x0205, code lost:
+    
+        r4 = 1.0f;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0406  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x040f  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -375,6 +383,7 @@ public class Switch extends View {
         float f;
         int i;
         float f2;
+        int i2;
         RippleDrawable rippleDrawable;
         Drawable drawable;
         Canvas canvas3 = canvas;
@@ -383,35 +392,37 @@ public class Switch extends View {
         }
         int dp = AndroidUtilities.dp(31.0f);
         AndroidUtilities.dp(20.0f);
-        int i2 = 2;
+        int i3 = 2;
         int measuredWidth = (getMeasuredWidth() - dp) / 2;
         float measuredHeight = (getMeasuredHeight() - AndroidUtilities.dpf2(14.0f)) / 2.0f;
         int dp2 = AndroidUtilities.dp(7.0f) + measuredWidth + ((int) (AndroidUtilities.dp(17.0f) * this.progress));
         int measuredHeight2 = getMeasuredHeight() / 2;
-        int i3 = 0;
         int i4 = 0;
-        while (i4 < i2) {
-            if (i4 != 1 || this.overrideColorProgress != 0) {
-                Canvas canvas4 = i4 == 0 ? canvas3 : this.overlayCanvas[i3];
-                if (i4 == 1) {
-                    this.overlayBitmap[i3].eraseColor(i3);
+        int i5 = 0;
+        while (i5 < i3) {
+            if (i5 == 1 && this.overrideColorProgress == 0) {
+                i2 = i5;
+            } else {
+                Canvas canvas4 = i5 == 0 ? canvas3 : this.overlayCanvas[i4];
+                if (i5 == 1) {
+                    this.overlayBitmap[i4].eraseColor(i4);
                     this.paint.setColor(-16777216);
                     this.overlayMaskCanvas.drawRect(0.0f, 0.0f, this.overlayMaskBitmap.getWidth(), this.overlayMaskBitmap.getHeight(), this.paint);
                     this.overlayMaskCanvas.drawCircle(this.overlayCx - getX(), this.overlayCy - getY(), this.overlayRad, this.overlayEraserPaint);
                 }
-                int i5 = this.overrideColorProgress;
-                if (i5 != 1) {
-                    if (i5 != i2) {
+                int i6 = this.overrideColorProgress;
+                if (i6 != 1) {
+                    if (i6 != i3) {
                         f2 = this.progress;
                     }
                 }
                 int processColor = processColor(Theme.getColor(this.trackColorKey, this.resourcesProvider));
                 int processColor2 = processColor(Theme.getColor(this.trackCheckedColorKey, this.resourcesProvider));
-                if (i4 == 0 && (drawable = this.iconDrawable) != null) {
+                if (i5 == 0 && (drawable = this.iconDrawable) != null) {
                     if (this.lastIconColor != (this.isChecked ? processColor2 : processColor)) {
-                        int i6 = this.isChecked ? processColor2 : processColor;
-                        this.lastIconColor = i6;
-                        drawable.setColorFilter(new PorterDuffColorFilter(i6, PorterDuff.Mode.MULTIPLY));
+                        int i7 = this.isChecked ? processColor2 : processColor;
+                        this.lastIconColor = i7;
+                        drawable.setColorFilter(new PorterDuffColorFilter(i7, PorterDuff.Mode.MULTIPLY));
                     }
                 }
                 int red = Color.red(processColor);
@@ -420,23 +431,28 @@ public class Switch extends View {
                 int green2 = Color.green(processColor2);
                 int blue = Color.blue(processColor);
                 int blue2 = Color.blue(processColor2);
-                int alpha = ((((int) (red + ((red2 - red) * f2))) & NotificationCenter.invalidateMotionBackground) << 16) | ((((int) (Color.alpha(processColor) + ((Color.alpha(processColor2) - r6) * f2))) & NotificationCenter.invalidateMotionBackground) << 24) | ((((int) (green + ((green2 - green) * f2))) & NotificationCenter.invalidateMotionBackground) << 8) | (((int) (blue + ((blue2 - blue) * f2))) & NotificationCenter.invalidateMotionBackground);
+                int i8 = i5;
+                int alpha = (((int) (blue + ((blue2 - blue) * f2))) & NotificationCenter.invalidateMotionBackground) | ((((int) (red + ((red2 - red) * f2))) & NotificationCenter.invalidateMotionBackground) << 16) | ((((int) (Color.alpha(processColor) + ((Color.alpha(processColor2) - r6) * f2))) & NotificationCenter.invalidateMotionBackground) << 24) | ((((int) (green + ((green2 - green) * f2))) & NotificationCenter.invalidateMotionBackground) << 8);
                 this.paint.setColor(alpha);
                 this.paint2.setColor(alpha);
                 this.rectF.set(measuredWidth, measuredHeight, measuredWidth + dp, AndroidUtilities.dpf2(14.0f) + measuredHeight);
                 canvas4.drawRoundRect(this.rectF, AndroidUtilities.dpf2(7.0f), AndroidUtilities.dpf2(7.0f), this.paint);
                 canvas4.drawCircle(dp2, measuredHeight2, AndroidUtilities.dpf2(10.0f), this.paint);
-                if (i4 == 0 && (rippleDrawable = this.rippleDrawable) != null) {
+                if (i8 != 0 || (rippleDrawable = this.rippleDrawable) == null) {
+                    i2 = i8;
+                    if (i2 == 1) {
+                        canvas4.drawBitmap(this.overlayMaskBitmap, 0.0f, 0.0f, this.overlayMaskPaint);
+                    }
+                } else {
                     rippleDrawable.setBounds(dp2 - AndroidUtilities.dp(18.0f), measuredHeight2 - AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f) + dp2, AndroidUtilities.dp(18.0f) + measuredHeight2);
                     this.rippleDrawable.draw(canvas4);
-                } else if (i4 == 1) {
-                    canvas4.drawBitmap(this.overlayMaskBitmap, 0.0f, 0.0f, this.overlayMaskPaint);
+                    i2 = i8;
                 }
             }
-            i4++;
+            i5 = i2 + 1;
             canvas3 = canvas;
-            i2 = 2;
-            i3 = 0;
+            i3 = 2;
+            i4 = 0;
         }
         if (this.overrideColorProgress != 0) {
             canvas2 = canvas;
@@ -444,16 +460,16 @@ public class Switch extends View {
         } else {
             canvas2 = canvas;
         }
-        int i7 = 0;
-        while (i7 < 2) {
-            if (i7 != 1 || this.overrideColorProgress != 0) {
-                Canvas canvas5 = i7 == 0 ? canvas2 : this.overlayCanvas[1];
-                if (i7 == 1) {
+        int i9 = 0;
+        while (i9 < 2) {
+            if (i9 != 1 || this.overrideColorProgress != 0) {
+                Canvas canvas5 = i9 == 0 ? canvas2 : this.overlayCanvas[1];
+                if (i9 == 1) {
                     this.overlayBitmap[1].eraseColor(0);
                 }
-                int i8 = this.overrideColorProgress;
-                if (i8 != 1) {
-                    if (i8 != 2) {
+                int i10 = this.overrideColorProgress;
+                if (i10 != 1) {
+                    if (i10 != 2) {
                         f = this.progress;
                     }
                 }
@@ -465,18 +481,29 @@ public class Switch extends View {
                 int green4 = Color.green(processColor3);
                 int blue3 = Color.blue(color);
                 int blue4 = Color.blue(processColor3);
-                this.paint.setColor(((((int) (Color.alpha(color) + ((Color.alpha(processColor3) - r4) * f))) & NotificationCenter.invalidateMotionBackground) << 24) | ((((int) (red3 + ((red4 - red3) * f))) & NotificationCenter.invalidateMotionBackground) << 16) | ((((int) (green3 + ((green4 - green3) * f))) & NotificationCenter.invalidateMotionBackground) << 8) | (((int) (blue3 + ((blue4 - blue3) * f))) & NotificationCenter.invalidateMotionBackground));
+                this.paint.setColor(((((int) (Color.alpha(color) + ((Color.alpha(processColor3) - r6) * f))) & NotificationCenter.invalidateMotionBackground) << 24) | ((((int) (red3 + ((red4 - red3) * f))) & NotificationCenter.invalidateMotionBackground) << 16) | ((((int) (green3 + ((green4 - green3) * f))) & NotificationCenter.invalidateMotionBackground) << 8) | (((int) (blue3 + ((blue4 - blue3) * f))) & NotificationCenter.invalidateMotionBackground));
                 float f3 = dp2;
                 float f4 = measuredHeight2;
                 canvas5.drawCircle(f3, f4, AndroidUtilities.dp(8.0f), this.paint);
-                if (i7 == 0) {
-                    Drawable drawable2 = this.iconDrawable;
-                    if (drawable2 != null) {
-                        drawable2.setBounds(dp2 - (drawable2.getIntrinsicWidth() / 2), measuredHeight2 - (this.iconDrawable.getIntrinsicHeight() / 2), (this.iconDrawable.getIntrinsicWidth() / 2) + dp2, (this.iconDrawable.getIntrinsicHeight() / 2) + measuredHeight2);
-                        this.iconDrawable.draw(canvas5);
+                if (i9 == 0) {
+                    if (this.iconDrawable != null) {
+                        float floatValue = this.animatorIconVisibility.getFloatValue();
+                        if (floatValue > 0.0f) {
+                            boolean z = floatValue < 1.0f;
+                            if (z) {
+                                canvas.save();
+                                canvas2.scale(floatValue, floatValue, f3, f4);
+                            }
+                            Drawable drawable2 = this.iconDrawable;
+                            drawable2.setBounds(dp2 - (drawable2.getIntrinsicWidth() / 2), measuredHeight2 - (this.iconDrawable.getIntrinsicHeight() / 2), (this.iconDrawable.getIntrinsicWidth() / 2) + dp2, (this.iconDrawable.getIntrinsicHeight() / 2) + measuredHeight2);
+                            this.iconDrawable.draw(canvas5);
+                            if (z) {
+                                canvas.restore();
+                            }
+                        }
                     } else {
-                        int i9 = this.drawIconType;
-                        if (i9 == 1) {
+                        int i11 = this.drawIconType;
+                        if (i11 == 1) {
                             dp2 = (int) (f3 - (AndroidUtilities.dp(10.8f) - (AndroidUtilities.dp(1.3f) * this.progress)));
                             measuredHeight2 = (int) (f4 - (AndroidUtilities.dp(8.5f) - (AndroidUtilities.dp(0.5f) * this.progress)));
                             int dpf2 = ((int) AndroidUtilities.dpf2(4.6f)) + dp2;
@@ -494,11 +521,11 @@ public class Switch extends View {
                             canvas6.drawLine((int) (f5 + (f6 * f7)), (int) (dpf24 + ((dpf22 - dpf24) * f7)), (int) (dp5 + ((dp3 - dp5) * f7)), (int) (dp6 + ((dp4 - dp6) * f7)), this.paint2);
                             canvas6.drawLine(((int) AndroidUtilities.dpf2(7.5f)) + dp2, ((int) AndroidUtilities.dpf2(12.5f)) + measuredHeight2, AndroidUtilities.dp(7.0f) + r2, r4 - AndroidUtilities.dp(7.0f), this.paint2);
                             i = 1;
-                            if (i7 != i) {
+                            if (i9 != i) {
                                 canvas5.drawBitmap(this.overlayMaskBitmap, 0.0f, 0.0f, this.overlayMaskPaint);
                             }
                         } else {
-                            if (i9 == 2 || this.iconAnimator != null) {
+                            if (i11 == 2 || this.iconAnimator != null) {
                                 this.paint2.setAlpha((int) ((1.0f - this.iconProgress) * 255.0f));
                                 Canvas canvas7 = canvas5;
                                 canvas7.drawLine(f3, f4, f3, measuredHeight2 - AndroidUtilities.dp(5.0f), this.paint2);
@@ -507,20 +534,20 @@ public class Switch extends View {
                                 canvas7.drawLine(f3, f4, AndroidUtilities.dp(4.0f) + dp2, f4, this.paint2);
                                 canvas5.restore();
                                 i = 1;
-                                if (i7 != i) {
+                                if (i9 != i) {
                                 }
                             }
                             i = 1;
-                            if (i7 != i) {
+                            if (i9 != i) {
                             }
                         }
                     }
                 }
                 i = 1;
-                if (i7 != i) {
+                if (i9 != i) {
                 }
             }
-            i7++;
+            i9++;
         }
         if (this.overrideColorProgress != 0) {
             canvas2.drawBitmap(this.overlayBitmap[1], 0.0f, 0.0f, (Paint) null);

@@ -339,13 +339,13 @@ public class TopicsController extends BaseController {
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.topicsDidLoaded, Long.valueOf(j), Boolean.FALSE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:151:0x0219, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:151:0x021a, code lost:
     
         if (r27 != 3) goto L102;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0260  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x02bd  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0261  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x02be  */
     /* JADX WARN: Type inference failed for: r3v20 */
     /* JADX WARN: Type inference failed for: r3v3 */
     /* JADX WARN: Type inference failed for: r3v4, types: [boolean, int] */
@@ -1230,12 +1230,41 @@ public class TopicsController extends BaseController {
         return i3;
     }
 
+    public int updatePollVotesUnread(long j, long j2, int i, boolean z) {
+        long j3 = -j;
+        TLRPC.TL_forumTopic findTopic = findTopic(j3, j2);
+        if (findTopic == null) {
+            return -1;
+        }
+        if (z) {
+            int i2 = findTopic.unread_poll_votes_count + i;
+            findTopic.unread_poll_votes_count = i2;
+            if (i2 < 0) {
+                findTopic.unread_poll_votes_count = 0;
+            }
+        } else {
+            findTopic.unread_poll_votes_count = i;
+        }
+        int i3 = findTopic.unread_poll_votes_count;
+        sortTopics(j3, true);
+        return i3;
+    }
+
     public void markAllReactionsAsRead(long j, long j2) {
         TLRPC.TL_forumTopic findTopic = findTopic(j, j2);
         if (findTopic == null || findTopic.unread_reactions_count <= 0) {
             return;
         }
         findTopic.unread_reactions_count = 0;
+        sortTopics(j);
+    }
+
+    public void markAllPollVotesAsRead(long j, long j2) {
+        TLRPC.TL_forumTopic findTopic = findTopic(j, j2);
+        if (findTopic == null || findTopic.unread_poll_votes_count <= 0) {
+            return;
+        }
+        findTopic.unread_poll_votes_count = 0;
         sortTopics(j);
     }
 
@@ -1246,6 +1275,19 @@ public class TopicsController extends BaseController {
                 TLRPC.TL_forumTopic tL_forumTopic = topics.get(i);
                 if (tL_forumTopic != null) {
                     tL_forumTopic.unread_reactions_count = 0;
+                }
+            }
+            sortTopics(j);
+        }
+    }
+
+    public void markAllPollVotesAsRead(long j) {
+        ArrayList<TLRPC.TL_forumTopic> topics = getTopics(j);
+        if (topics != null) {
+            for (int i = 0; i < topics.size(); i++) {
+                TLRPC.TL_forumTopic tL_forumTopic = topics.get(i);
+                if (tL_forumTopic != null) {
+                    tL_forumTopic.unread_poll_votes_count = 0;
                 }
             }
             sortTopics(j);

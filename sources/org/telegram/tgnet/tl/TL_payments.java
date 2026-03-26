@@ -35,12 +35,12 @@ public class TL_payments {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
-            this.revoked = (readInt32 & 2) != 0;
+            this.revoked = TLObject.hasFlag(readInt32, 2);
             this.url = inputSerializedData.readString(z);
             this.date = inputSerializedData.readInt32(z);
             this.bot_id = inputSerializedData.readInt64(z);
             this.commission_permille = inputSerializedData.readInt32(z);
-            if ((this.flags & 1) != 0) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 this.duration_months = inputSerializedData.readInt32(z);
             }
             this.participants = inputSerializedData.readInt64(z);
@@ -50,14 +50,14 @@ public class TL_payments {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.revoked ? this.flags | 2 : this.flags & (-3);
-            this.flags = i;
-            outputSerializedData.writeInt32(i);
+            int flag = TLObject.setFlag(this.flags, 2, this.revoked);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
             outputSerializedData.writeString(this.url);
             outputSerializedData.writeInt32(this.date);
             outputSerializedData.writeInt64(this.bot_id);
             outputSerializedData.writeInt32(this.commission_permille);
-            if ((this.flags & 1) != 0) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 outputSerializedData.writeInt32(this.duration_months);
             }
             outputSerializedData.writeInt64(this.participants);
@@ -119,7 +119,7 @@ public class TL_payments {
                 }
             }, z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
-            if ((this.flags & 1) != 0) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 this.next_offset = inputSerializedData.readString(z);
             }
         }
@@ -131,7 +131,7 @@ public class TL_payments {
             outputSerializedData.writeInt32(this.count);
             Vector.serialize(outputSerializedData, this.suggested_bots);
             Vector.serialize(outputSerializedData, this.users);
-            if ((this.flags & 1) != 0) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 outputSerializedData.writeString(this.next_offset);
             }
         }
@@ -155,13 +155,13 @@ public class TL_payments {
             this.flags = inputSerializedData.readInt32(z);
             this.bot_id = inputSerializedData.readInt64(z);
             this.commission_permille = inputSerializedData.readInt32(z);
-            if ((this.flags & 1) != 0) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 this.duration_months = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & 2) != 0) {
+            if (TLObject.hasFlag(this.flags, 2)) {
                 this.end_date = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & 4) != 0) {
+            if (TLObject.hasFlag(this.flags, 4)) {
                 this.daily_revenue_per_user = TL_stars.StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
         }
@@ -172,13 +172,13 @@ public class TL_payments {
             outputSerializedData.writeInt32(this.flags);
             outputSerializedData.writeInt64(this.bot_id);
             outputSerializedData.writeInt32(this.commission_permille);
-            if ((this.flags & 1) != 0) {
+            if (TLObject.hasFlag(this.flags, 1)) {
                 outputSerializedData.writeInt32(this.duration_months);
             }
-            if ((this.flags & 2) != 0) {
+            if (TLObject.hasFlag(this.flags, 2)) {
                 outputSerializedData.writeInt32(this.end_date);
             }
-            if ((this.flags & 4) != 0) {
+            if (TLObject.hasFlag(this.flags, 4)) {
                 this.daily_revenue_per_user.serializeToStream(outputSerializedData);
             }
         }
@@ -219,11 +219,11 @@ public class TL_payments {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.order_by_revenue ? this.flags | 1 : this.flags & (-2);
-            this.flags = i;
-            int i2 = this.order_by_date ? i | 2 : i & (-3);
-            this.flags = i2;
-            outputSerializedData.writeInt32(i2);
+            int flag = TLObject.setFlag(this.flags, 1, this.order_by_revenue);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 2, this.order_by_date);
+            this.flags = flag2;
+            outputSerializedData.writeInt32(flag2);
             this.peer.serializeToStream(outputSerializedData);
             outputSerializedData.writeString(this.offset);
             outputSerializedData.writeInt32(this.limit);
@@ -248,7 +248,7 @@ public class TL_payments {
             outputSerializedData.writeInt32(constructor);
             outputSerializedData.writeInt32(this.flags);
             this.peer.serializeToStream(outputSerializedData);
-            if ((this.flags & 4) != 0) {
+            if (TLObject.hasFlag(this.flags, 4)) {
                 outputSerializedData.writeInt32(this.offset_date);
                 outputSerializedData.writeString(this.offset_link);
             }
@@ -289,9 +289,9 @@ public class TL_payments {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int i = this.revoked ? this.flags | 1 : this.flags & (-2);
-            this.flags = i;
-            outputSerializedData.writeInt32(i);
+            int flag = TLObject.setFlag(this.flags, 1, this.revoked);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
             this.peer.serializeToStream(outputSerializedData);
             outputSerializedData.writeString(this.link);
         }

@@ -913,7 +913,7 @@ public class LocaleController {
     public LocaleController() {
         LocaleInfo localeInfo;
         boolean z = false;
-        addRules(new String[]{"bem", "brx", "da", "de", "el", "en", "eo", "es", "et", "fi", "fo", "gl", "he", "iw", "it", "nb", "nl", "nn", "no", "sv", "af", "bg", "bn", "ca", "eu", "fur", "fy", "gu", "ha", "is", "ku", "lb", "ml", "mr", "nah", "ne", "om", "or", "pa", "pap", "ps", "so", "sq", "sw", "ta", "te", "tk", "ur", "zu", "mn", "gsw", "chr", "rm", "pt", "an", "ast"}, new PluralRules_One());
+        addRules(new String[]{"bem", "brx", "da", "de", "el", "en", "eo", "es", "et", "fi", "fo", ImageLoader.AUTOPLAY_FILTER_NONLOOP, "he", "iw", "it", "nb", "nl", "nn", "no", "sv", "af", "bg", "bn", "ca", "eu", "fur", "fy", "gu", "ha", "is", "ku", "lb", "ml", "mr", "nah", "ne", "om", "or", "pa", "pap", "ps", "so", "sq", "sw", "ta", "te", "tk", "ur", "zu", "mn", "gsw", "chr", "rm", "pt", "an", "ast"}, new PluralRules_One());
         addRules(new String[]{"cs", "sk"}, new PluralRules_Czech());
         addRules(new String[]{"ff", "fr", "kab"}, new PluralRules_French());
         addRules(new String[]{"ru", "uk", "be"}, new PluralRules_Balkan());
@@ -1005,6 +1005,24 @@ public class LocaleController {
         localeInfo9.builtIn = true;
         this.languages.add(localeInfo9);
         this.languagesDict.put(localeInfo9.shortName, localeInfo9);
+        LocaleInfo localeInfo10 = new LocaleInfo();
+        localeInfo10.name = "Українська";
+        localeInfo10.nameEnglish = "Ukrainian";
+        localeInfo10.pluralLangCode = "uk";
+        localeInfo10.shortName = "uk";
+        localeInfo10.pathToFile = null;
+        localeInfo10.builtIn = true;
+        this.languages.add(localeInfo10);
+        this.languagesDict.put(localeInfo10.shortName, localeInfo10);
+        LocaleInfo localeInfo11 = new LocaleInfo();
+        localeInfo11.name = "Русский";
+        localeInfo11.nameEnglish = "Russian";
+        localeInfo11.pluralLangCode = "ru";
+        localeInfo11.shortName = "ru";
+        localeInfo11.pathToFile = null;
+        localeInfo11.builtIn = true;
+        this.languages.add(localeInfo11);
+        this.languagesDict.put(localeInfo11.shortName, localeInfo11);
         loadOtherLanguages();
         if (this.remoteLanguages.isEmpty()) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.LocaleController$$ExternalSyntheticLambda5
@@ -1015,35 +1033,35 @@ public class LocaleController {
             });
         }
         for (int i = 0; i < this.otherLanguages.size(); i++) {
-            LocaleInfo localeInfo10 = this.otherLanguages.get(i);
-            this.languages.add(localeInfo10);
-            this.languagesDict.put(localeInfo10.getKey(), localeInfo10);
+            LocaleInfo localeInfo12 = this.otherLanguages.get(i);
+            this.languages.add(localeInfo12);
+            this.languagesDict.put(localeInfo12.getKey(), localeInfo12);
         }
         for (int i2 = 0; i2 < this.remoteLanguages.size(); i2++) {
-            LocaleInfo localeInfo11 = this.remoteLanguages.get(i2);
-            LocaleInfo languageFromDict = getLanguageFromDict(localeInfo11.getKey());
+            LocaleInfo localeInfo13 = this.remoteLanguages.get(i2);
+            LocaleInfo languageFromDict = getLanguageFromDict(localeInfo13.getKey());
             if (languageFromDict != null) {
-                languageFromDict.pathToFile = localeInfo11.pathToFile;
-                languageFromDict.version = localeInfo11.version;
-                languageFromDict.baseVersion = localeInfo11.baseVersion;
-                languageFromDict.serverIndex = localeInfo11.serverIndex;
+                languageFromDict.pathToFile = localeInfo13.pathToFile;
+                languageFromDict.version = localeInfo13.version;
+                languageFromDict.baseVersion = localeInfo13.baseVersion;
+                languageFromDict.serverIndex = localeInfo13.serverIndex;
                 this.remoteLanguages.set(i2, languageFromDict);
             } else {
-                this.languages.add(localeInfo11);
-                this.languagesDict.put(localeInfo11.getKey(), localeInfo11);
+                this.languages.add(localeInfo13);
+                this.languagesDict.put(localeInfo13.getKey(), localeInfo13);
             }
         }
         for (int i3 = 0; i3 < this.unofficialLanguages.size(); i3++) {
-            LocaleInfo localeInfo12 = this.unofficialLanguages.get(i3);
-            LocaleInfo languageFromDict2 = getLanguageFromDict(localeInfo12.getKey());
+            LocaleInfo localeInfo14 = this.unofficialLanguages.get(i3);
+            LocaleInfo languageFromDict2 = getLanguageFromDict(localeInfo14.getKey());
             if (languageFromDict2 != null) {
-                languageFromDict2.pathToFile = localeInfo12.pathToFile;
-                languageFromDict2.version = localeInfo12.version;
-                languageFromDict2.baseVersion = localeInfo12.baseVersion;
-                languageFromDict2.serverIndex = localeInfo12.serverIndex;
+                languageFromDict2.pathToFile = localeInfo14.pathToFile;
+                languageFromDict2.version = localeInfo14.version;
+                languageFromDict2.baseVersion = localeInfo14.baseVersion;
+                languageFromDict2.serverIndex = localeInfo14.serverIndex;
                 this.unofficialLanguages.set(i3, languageFromDict2);
             } else {
-                this.languagesDict.put(localeInfo12.getKey(), localeInfo12);
+                this.languagesDict.put(localeInfo14.getKey(), localeInfo14);
             }
         }
         this.systemDefaultLocale = Locale.getDefault();
@@ -2557,18 +2575,18 @@ public class LocaleController {
             if (sb.length() > 0) {
                 sb.append(":");
             }
-            sb.append(i2 > 10 ? "" : "0");
+            sb.append(i2 >= 10 ? "" : "0");
             sb.append(i2);
         }
         if (sb.length() > 0) {
             sb.append(":");
         }
-        sb.append(i3 > 10 ? "" : "0");
+        sb.append(i3 >= 10 ? "" : "0");
         sb.append(i3);
         if (sb.length() > 0) {
             sb.append(":");
         }
-        sb.append(i4 > 10 ? "" : "0");
+        sb.append(i4 >= 10 ? "" : "0");
         sb.append(i4);
         return sb.toString();
     }
@@ -2785,6 +2803,16 @@ public class LocaleController {
             FileLog.e(e);
             return "LOC_ERR";
         }
+    }
+
+    public static String formatPollEndTime(int i) {
+        String formatPluralString;
+        if (i < 86400) {
+            formatPluralString = formatShortDuration(i);
+        } else {
+            formatPluralString = formatPluralString("Days", i / 86400, new Object[0]);
+        }
+        return formatString(R.string.PollEndsIn, formatPluralString);
     }
 
     public static String formatShortDuration2(int i) {

@@ -2,8 +2,11 @@ package org.telegram.ui.Components.blur3.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.Matrix;
+import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.NotificationCenter;
@@ -61,5 +64,43 @@ public abstract class Blur3Utils {
                 canvas.restore();
             }
         }
+    }
+
+    public static Drawable wrapCenteredDrawable(final Drawable drawable, final int i, final int i2) {
+        return new Drawable() { // from class: org.telegram.ui.Components.blur3.utils.Blur3Utils.1
+            @Override // android.graphics.drawable.Drawable
+            public void setColorFilter(ColorFilter colorFilter) {
+            }
+
+            @Override // android.graphics.drawable.Drawable
+            protected void onBoundsChange(Rect rect) {
+                super.onBoundsChange(rect);
+                int width = (rect.width() - i) / 2;
+                int height = rect.height();
+                int i3 = i2;
+                int i4 = (height - i3) / 2;
+                drawable.setBounds(width, i4, i + width, i3 + i4);
+            }
+
+            @Override // android.graphics.drawable.Drawable
+            public void draw(Canvas canvas) {
+                drawable.draw(canvas);
+            }
+
+            @Override // android.graphics.drawable.Drawable
+            public int getAlpha() {
+                return drawable.getAlpha();
+            }
+
+            @Override // android.graphics.drawable.Drawable
+            public void setAlpha(int i3) {
+                drawable.setAlpha(i3);
+            }
+
+            @Override // android.graphics.drawable.Drawable
+            public int getOpacity() {
+                return drawable.getOpacity();
+            }
+        };
     }
 }

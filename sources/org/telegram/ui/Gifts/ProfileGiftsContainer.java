@@ -712,7 +712,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             if (this.parent.list == this.list) {
                 arrayList.add(UItem.asSpace(AndroidUtilities.dp(20.0f)));
                 if (this.parent.dialogId == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
-                    arrayList.add(TextFactory.asText(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, this.resourcesProvider), 17, 14.0f, LocaleController.getString(R.string.ProfileGiftsInfo), true, AndroidUtilities.dp(24.0f)));
+                    arrayList.add(TextFactory.asText(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, this.resourcesProvider), 17, 14.0f, LocaleController.getString(R.string.ProfileGiftsInfo), false, AndroidUtilities.dp(24.0f), 0));
                 }
                 arrayList.add(UItem.asSpace(AndroidUtilities.dp(82.0f)));
             } else if (!arrayList.isEmpty()) {
@@ -2191,20 +2191,21 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             linksTextView.setGravity(uItem.intValue);
             linksTextView.setTextColor((int) uItem.longValue);
             linksTextView.setTextSize(1, uItem.floatValue);
-            linksTextView.setTypeface(uItem.checked ? null : AndroidUtilities.bold());
+            linksTextView.setTypeface(uItem.accent ? AndroidUtilities.bold() : null);
             int i = uItem.pad;
-            linksTextView.setPadding(i, 0, i, 0);
+            linksTextView.setPadding(i, 0, i, uItem.iconResId);
             linksTextView.setText(uItem.text);
         }
 
-        public static UItem asText(int i, int i2, float f, CharSequence charSequence, boolean z, int i3) {
+        public static UItem asText(int i, int i2, float f, CharSequence charSequence, boolean z, int i3, int i4) {
             UItem ofFactory = UItem.ofFactory(TextFactory.class);
             ofFactory.text = charSequence;
             ofFactory.intValue = i2;
             ofFactory.longValue = i;
             ofFactory.floatValue = f;
             ofFactory.pad = i3;
-            ofFactory.checked = z;
+            ofFactory.iconResId = i4;
+            ofFactory.accent = z;
             return ofFactory;
         }
     }

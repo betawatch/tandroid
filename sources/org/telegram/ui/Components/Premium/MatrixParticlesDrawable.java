@@ -163,7 +163,7 @@ public class MatrixParticlesDrawable {
             this.index = Math.abs(Utilities.fastRandom.nextInt() % 16);
             this.nextIndex = Math.abs(Utilities.fastRandom.nextInt() % 16);
             this.lastUpdateTime = j;
-            this.nextUpdateTime = j + Math.abs(Utilities.fastRandom.nextInt() % NotificationCenter.onRequestPermissionResultReceived) + 150;
+            this.nextUpdateTime = j + Math.abs(Utilities.fastRandom.nextInt() % NotificationCenter.onActivityResultReceived) + 150;
         }
 
         public void draw(Canvas canvas, float f, float f2, long j, float f3) {
@@ -181,7 +181,7 @@ public class MatrixParticlesDrawable {
                     this.index = this.nextIndex;
                     this.lastUpdateTime = j;
                     this.nextIndex = Math.abs(Utilities.fastRandom.nextInt() % 16);
-                    this.nextUpdateTime = j + Math.abs(Utilities.fastRandom.nextInt() % NotificationCenter.onRequestPermissionResultReceived) + 150;
+                    this.nextUpdateTime = j + Math.abs(Utilities.fastRandom.nextInt() % NotificationCenter.onActivityResultReceived) + 150;
                     return;
                 }
                 return;

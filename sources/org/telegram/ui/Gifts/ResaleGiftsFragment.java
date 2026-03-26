@@ -29,6 +29,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import me.vkryl.android.animator.BoolAnimator;
+import me.vkryl.android.animator.FactorAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.GenericProvider;
@@ -60,11 +62,13 @@ import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
 import org.telegram.ui.Components.BulletinFactory;
+import org.telegram.ui.Components.CheckBox2;
 import org.telegram.ui.Components.ColoredImageSpan;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.EditTextCaption;
 import org.telegram.ui.Components.FireworksOverlay;
 import org.telegram.ui.Components.FlickerLoadingView;
+import org.telegram.ui.Components.FragmentFloatingButton;
 import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.LinkSpanDrawable;
@@ -76,6 +80,9 @@ import org.telegram.ui.Components.TypefaceSpan;
 import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
+import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
+import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
 import org.telegram.ui.Gifts.GiftSheet;
 import org.telegram.ui.Gifts.ResaleGiftsFragment;
 import org.telegram.ui.LaunchActivity;
@@ -84,7 +91,7 @@ import org.telegram.ui.Stars.StarsController;
 import org.telegram.ui.Stars.StarsIntroActivity;
 
 /* loaded from: classes5.dex */
-public class ResaleGiftsFragment extends BaseFragment {
+public class ResaleGiftsFragment extends BaseFragment implements FactorAnimator.Target {
     private BackDrawable backDrawable;
     private Filter backdropButton;
     private TextView clearFiltersButton;
@@ -99,17 +106,30 @@ public class ResaleGiftsFragment extends BaseFragment {
     private FireworksOverlay fireworksOverlay;
     private final long gift_id;
     private final String gift_name;
+    private BlurredBackgroundDrawableViewFactory iBlur3Factory;
+    private BlurredBackgroundSourceColor iBlur3SourceColor;
     private final ResaleGiftsList list;
     private UniversalRecyclerView listView;
     private Filter modelButton;
+    private FrameLayout onlyStarsContainer;
     private Filter patternButton;
     private Filter sortButton;
+    private final BoolAnimator animatorClearFiltersButtonVisible = new BoolAnimator(0, this, CubicBezierInterpolator.EASE_OUT_QUINT, 380);
     private boolean filtersShown = true;
-    private boolean clearFiltersShown = true;
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean onItemLongClick(UItem uItem, View view, int i, float f, float f2) {
         return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // me.vkryl.android.animator.FactorAnimator.Target
+    public /* synthetic */ void onFactorChangeFinished(int i, float f, FactorAnimator factorAnimator) {
+        FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i, f, factorAnimator);
     }
 
     public ResaleGiftsFragment(long j, String str, long j2, Theme.ResourcesProvider resourcesProvider) {
@@ -134,6 +154,11 @@ public class ResaleGiftsFragment extends BaseFragment {
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public View createView(final Context context) {
+        BlurredBackgroundSourceColor blurredBackgroundSourceColor = new BlurredBackgroundSourceColor();
+        this.iBlur3SourceColor = blurredBackgroundSourceColor;
+        int i = Theme.key_windowBackgroundWhite;
+        blurredBackgroundSourceColor.setColor(getThemedColor(i));
+        this.iBlur3Factory = new BlurredBackgroundDrawableViewFactory(this.iBlur3SourceColor);
         ActionBar actionBar = this.actionBar;
         BackDrawable backDrawable = new BackDrawable(false);
         this.backDrawable = backDrawable;
@@ -143,19 +168,17 @@ public class ResaleGiftsFragment extends BaseFragment {
         this.actionBar.setAddToContainer(false);
         this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment.1
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
-            public void onItemClick(int i) {
-                if (i == -1) {
+            public void onItemClick(int i2) {
+                if (i2 == -1) {
                     ResaleGiftsFragment.this.finishFragment();
                 }
             }
         });
         this.actionBar.setTitle(this.gift_name);
+        this.actionBar.setBackgroundColor(getThemedColor(i));
         ActionBar actionBar2 = this.actionBar;
-        int i = Theme.key_windowBackgroundWhite;
-        actionBar2.setBackgroundColor(getThemedColor(i));
-        ActionBar actionBar3 = this.actionBar;
         int i2 = Theme.key_windowBackgroundWhiteBlackText;
-        actionBar3.setItemsColor(getThemedColor(i2), false);
+        actionBar2.setItemsColor(getThemedColor(i2), false);
         this.actionBar.setItemsColor(getThemedColor(i2), true);
         this.actionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefaultSelector), false);
         this.actionBar.setTitleColor(getThemedColor(i2));
@@ -174,6 +197,7 @@ public class ResaleGiftsFragment extends BaseFragment {
         sizeNotifierFrameLayout.setBackgroundColor(blendOver);
         this.fragmentView = sizeNotifierFrameLayout;
         final StarsIntroActivity.StarsBalanceView starsBalanceView = new StarsIntroActivity.StarsBalanceView(context, this.currentAccount, this.resourceProvider);
+        starsBalanceView.withTon();
         ScaleStateListAnimator.apply(starsBalanceView);
         starsBalanceView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
@@ -182,17 +206,17 @@ public class ResaleGiftsFragment extends BaseFragment {
             }
         });
         this.actionBar.addView(starsBalanceView, LayoutHelper.createFrame(-2, -2.0f, 85, 0.0f, 0.0f, 4.0f, 0.0f));
-        UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(this, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda2
+        UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(this, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 ResaleGiftsFragment.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
             }
-        }, new Utilities.Callback5() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda3
+        }, new Utilities.Callback5() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.Utilities.Callback5
             public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
                 ResaleGiftsFragment.this.onItemClick((UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
             }
-        }, new Utilities.Callback5Return() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda4
+        }, new Utilities.Callback5Return() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.Utilities.Callback5Return
             public final Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
                 boolean onItemLongClick;
@@ -221,7 +245,7 @@ public class ResaleGiftsFragment extends BaseFragment {
         this.listView.setClipToPadding(false);
         sizeNotifierFrameLayout.addView(this.listView, LayoutHelper.createFrame(-1, -1.0f, 119, 7.33f, 0.0f, 7.33f, -45.0f));
         sizeNotifierFrameLayout.addView(this.actionBar);
-        LargeEmptyView largeEmptyView = new LargeEmptyView(context, new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda5
+        LargeEmptyView largeEmptyView = new LargeEmptyView(context, new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ResaleGiftsFragment.this.lambda$createView$1(view);
@@ -247,73 +271,111 @@ public class ResaleGiftsFragment extends BaseFragment {
         sizeNotifierFrameLayout.addView(this.filterScrollView, LayoutHelper.createFrame(-1, 47, 55));
         View view = new View(context);
         this.filtersDivider = view;
-        int i3 = Theme.key_divider;
-        view.setBackgroundColor(getThemedColor(i3));
+        view.setBackgroundColor(getThemedColor(Theme.key_divider));
         this.filtersDivider.setAlpha(0.0f);
         sizeNotifierFrameLayout.addView(this.filtersDivider, LayoutHelper.createFrame(-1.0f, 2.0f / AndroidUtilities.density, 55));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(15.0f), 0);
+        linearLayout2.setOrientation(0);
+        final CheckBox2 checkBox2 = new CheckBox2(context, 24, this.resourceProvider);
+        checkBox2.setColor(Theme.key_radioBackgroundChecked, Theme.key_checkboxDisabled, Theme.key_checkboxCheck);
+        checkBox2.setDrawUnchecked(true);
+        checkBox2.setChecked(false, false);
+        checkBox2.setDrawBackgroundAsArc(10);
+        checkBox2.setTranslationX(AndroidUtilities.dp(4.0f));
+        checkBox2.setScaleX(0.8f);
+        checkBox2.setScaleY(0.8f);
+        linearLayout2.addView(checkBox2, LayoutHelper.createLinear(26, 26, 16));
+        TextView textView = new TextView(context);
+        textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack, this.resourceProvider));
+        textView.setTextSize(1, 14.0f);
+        textView.setText(LocaleController.getString(R.string.GiftResaleStarsOnly));
+        linearLayout2.addView(textView, LayoutHelper.createLinear(-2, -2, 16, 9, 0, 0, 0));
+        int dp = AndroidUtilities.dp(18.0f);
+        int themedColor = getThemedColor(i);
+        int i3 = Theme.key_featuredStickers_addButton;
+        linearLayout2.setBackground(Theme.createSimpleSelectorRoundRectDrawable(dp, 0, Theme.blendOver(themedColor, Theme.multAlpha(getThemedColor(i3), 0.1f))));
         FrameLayout frameLayout = new FrameLayout(context);
-        this.clearFiltersContainer = frameLayout;
-        sizeNotifierFrameLayout.addView(frameLayout, LayoutHelper.createFrame(-1, 49, 87));
+        this.onlyStarsContainer = frameLayout;
+        frameLayout.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+        FrameLayout frameLayout2 = this.onlyStarsContainer;
+        frameLayout2.setBackground(this.iBlur3Factory.create(frameLayout2).setColorProvider(BlurredBackgroundProviderImpl.shadow(this.resourceProvider)).setPadding(AndroidUtilities.dp(8.0f)).setRadius(AndroidUtilities.dp(18.0f)));
+        this.onlyStarsContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda7
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                ResaleGiftsFragment.this.lambda$createView$2(checkBox2, view2);
+            }
+        });
+        this.onlyStarsContainer.addView(linearLayout2, LayoutHelper.createFrame(-2, -1.0f));
+        ScaleStateListAnimator.apply(this.onlyStarsContainer, 0.04f, 1.5f);
+        sizeNotifierFrameLayout.addView(this.onlyStarsContainer, LayoutHelper.createFrame(-2, 52.0f, 81, 0.0f, 0.0f, 0.0f, AndroidUtilities.navigationBarHeight / AndroidUtilities.density));
+        StarsController tonInstance = StarsController.getTonInstance(this.currentAccount);
+        if (tonInstance.balanceAvailable() && !tonInstance.getBalanceAmount().isZero()) {
+            this.onlyStarsContainer.setVisibility(8);
+        }
+        FrameLayout frameLayout3 = new FrameLayout(context);
+        this.clearFiltersContainer = frameLayout3;
+        frameLayout3.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+        FrameLayout frameLayout4 = this.clearFiltersContainer;
+        frameLayout4.setBackground(this.iBlur3Factory.create(frameLayout4).setColorProvider(BlurredBackgroundProviderImpl.shadow(this.resourceProvider)).setPadding(AndroidUtilities.dp(8.0f)).setRadius(AndroidUtilities.dp(22.0f)));
+        sizeNotifierFrameLayout.addView(this.clearFiltersContainer, LayoutHelper.createFrame(-2, 60.0f, 81, 0.0f, 0.0f, 0.0f, AndroidUtilities.navigationBarHeight / AndroidUtilities.density));
         this.clearFiltersButton = new TextView(context);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x");
         spannableStringBuilder.setSpan(new ColoredImageSpan(R.drawable.msg_clearcache), 0, 1, 33);
         spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.Gift2ResaleFiltersClear));
         this.clearFiltersButton.setText(spannableStringBuilder);
-        TextView textView = this.clearFiltersButton;
-        int i4 = Theme.key_featuredStickers_addButton;
-        textView.setTextColor(getThemedColor(i4));
+        this.clearFiltersButton.setTextColor(getThemedColor(i3));
         this.clearFiltersButton.setTypeface(AndroidUtilities.bold());
-        this.clearFiltersButton.setBackground(Theme.createSimpleSelectorRoundRectDrawable(0, getThemedColor(i), Theme.blendOver(getThemedColor(i), Theme.multAlpha(getThemedColor(i4), 0.1f))));
+        this.clearFiltersButton.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
+        this.clearFiltersButton.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(22.0f), 0, Theme.blendOver(getThemedColor(i), Theme.multAlpha(getThemedColor(i3), 0.1f))));
         this.clearFiltersButton.setGravity(17);
-        this.clearFiltersButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda6
+        this.clearFiltersContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                ResaleGiftsFragment.this.lambda$createView$2(view2);
+                ResaleGiftsFragment.this.lambda$createView$3(view2);
             }
         });
-        this.clearFiltersContainer.addView(this.clearFiltersButton, LayoutHelper.createFrame(-1, -1, 119));
-        View view2 = new View(context);
-        view2.setBackgroundColor(getThemedColor(i3));
-        this.clearFiltersContainer.addView(view2, LayoutHelper.createFrame(-1.0f, 1.0f / AndroidUtilities.density, 55));
-        setClearFiltersShown(false, false);
+        this.clearFiltersContainer.addView(this.clearFiltersButton, LayoutHelper.createFrame(-2, -1.0f));
+        this.clearFiltersContainer.setVisibility(8);
+        ScaleStateListAnimator.apply(this.clearFiltersContainer, 0.05f, 1.5f);
         Filter filter = new Filter(context, this.resourceProvider);
         this.sortButton = filter;
         filter.setSorting(this.list.getSorting());
         this.filtersContainer.addView(this.sortButton, LayoutHelper.createLinear(-2, -2, 16, 0, 0, 6, 0));
-        this.sortButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda7
+        this.sortButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view3) {
-                ResaleGiftsFragment.this.lambda$createView$6(view3);
+            public final void onClick(View view2) {
+                ResaleGiftsFragment.this.lambda$createView$9(checkBox2, view2);
             }
         });
         Filter filter2 = new Filter(context, this.resourceProvider);
         this.modelButton = filter2;
         filter2.setValue(LocaleController.getString(R.string.Gift2AttributeModel));
         this.filtersContainer.addView(this.modelButton, LayoutHelper.createLinear(-2, -2, 16, 0, 0, 6, 0));
-        this.modelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda8
+        this.modelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view3) {
-                ResaleGiftsFragment.this.lambda$createView$12(context, view3);
+            public final void onClick(View view2) {
+                ResaleGiftsFragment.this.lambda$createView$15(context, view2);
             }
         });
         Filter filter3 = new Filter(context, this.resourceProvider);
         this.backdropButton = filter3;
         filter3.setValue(LocaleController.getString(R.string.Gift2AttributeBackdrop));
         this.filtersContainer.addView(this.backdropButton, LayoutHelper.createLinear(-2, -2, 16, 0, 0, 6, 0));
-        this.backdropButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda9
+        this.backdropButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view3) {
-                ResaleGiftsFragment.this.lambda$createView$18(context, view3);
+            public final void onClick(View view2) {
+                ResaleGiftsFragment.this.lambda$createView$21(context, view2);
             }
         });
         Filter filter4 = new Filter(context, this.resourceProvider);
         this.patternButton = filter4;
         filter4.setValue(LocaleController.getString(R.string.Gift2AttributeSymbol));
         this.filtersContainer.addView(this.patternButton, LayoutHelper.createLinear(-2, -2, 16, 0, 0, 0, 0));
-        this.patternButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda10
+        this.patternButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view3) {
-                ResaleGiftsFragment.this.lambda$createView$24(context, view3);
+            public final void onClick(View view2) {
+                ResaleGiftsFragment.this.lambda$createView$27(context, view2);
             }
         });
         FireworksOverlay fireworksOverlay = new FireworksOverlay(getContext());
@@ -340,7 +402,17 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$2(View view) {
+    public /* synthetic */ void lambda$createView$2(CheckBox2 checkBox2, View view) {
+        ResaleGiftsList resaleGiftsList = this.list;
+        if (resaleGiftsList != null) {
+            resaleGiftsList.starsOnly = !resaleGiftsList.starsOnly;
+            checkBox2.setChecked(this.list.starsOnly, true);
+            this.list.reload();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$createView$3(View view) {
         this.list.notSelectedBackdropAttributes.clear();
         this.list.notSelectedModelAttributes.clear();
         this.list.notSelectedPatternAttributes.clear();
@@ -348,71 +420,100 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$6(View view) {
+    public /* synthetic */ void lambda$createView$9(final CheckBox2 checkBox2, View view) {
         if (this.filtersShown) {
-            ItemOptions.makeOptions(this, this.sortButton).add(R.drawable.menu_sort_value, LocaleController.getString(ResaleGiftsList.Sorting.BY_PRICE.buttonStringResId), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda26
-                @Override // java.lang.Runnable
-                public final void run() {
-                    ResaleGiftsFragment.this.lambda$createView$3();
-                }
-            }).add(R.drawable.menu_sort_date, LocaleController.getString(ResaleGiftsList.Sorting.BY_DATE.buttonStringResId), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda27
+            ItemOptions.makeOptions(this, this.sortButton).add(R.drawable.menu_sort_value, LocaleController.getString(ResaleGiftsList.Sorting.BY_PRICE.buttonStringResId), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda27
                 @Override // java.lang.Runnable
                 public final void run() {
                     ResaleGiftsFragment.this.lambda$createView$4();
                 }
-            }).add(R.drawable.menu_sort_number, LocaleController.getString(ResaleGiftsList.Sorting.BY_NUMBER.buttonStringResId), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda28
+            }).add(R.drawable.menu_sort_date, LocaleController.getString(ResaleGiftsList.Sorting.BY_DATE.buttonStringResId), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda28
                 @Override // java.lang.Runnable
                 public final void run() {
                     ResaleGiftsFragment.this.lambda$createView$5();
+                }
+            }).add(R.drawable.menu_sort_number, LocaleController.getString(ResaleGiftsList.Sorting.BY_NUMBER.buttonStringResId), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda29
+                @Override // java.lang.Runnable
+                public final void run() {
+                    ResaleGiftsFragment.this.lambda$createView$6();
+                }
+            }).addGap().addChecked(!this.list.starsOnly, LocaleController.getString(R.string.GiftResaleFilterAllListings), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda30
+                @Override // java.lang.Runnable
+                public final void run() {
+                    ResaleGiftsFragment.this.lambda$createView$7(checkBox2);
+                }
+            }).addChecked(this.list.starsOnly, LocaleController.getString(R.string.GiftResaleFilterForStarsOnly), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda31
+                @Override // java.lang.Runnable
+                public final void run() {
+                    ResaleGiftsFragment.this.lambda$createView$8(checkBox2);
                 }
             }).setDrawScrim(false).setOnTopOfScrim().translate(0.0f, AndroidUtilities.dp(-8.0f)).show();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$3() {
+    public /* synthetic */ void lambda$createView$4() {
         this.list.setSorting(ResaleGiftsList.Sorting.BY_PRICE);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$4() {
+    public /* synthetic */ void lambda$createView$5() {
         this.list.setSorting(ResaleGiftsList.Sorting.BY_DATE);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$5() {
+    public /* synthetic */ void lambda$createView$6() {
         this.list.setSorting(ResaleGiftsList.Sorting.BY_NUMBER);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$12(Context context, View view) {
+    public /* synthetic */ void lambda$createView$7(CheckBox2 checkBox2) {
+        if (this.list.starsOnly) {
+            this.list.starsOnly = false;
+            checkBox2.setChecked(false, true);
+            this.list.reload();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$createView$8(CheckBox2 checkBox2) {
+        if (this.list.starsOnly) {
+            return;
+        }
+        this.list.starsOnly = true;
+        checkBox2.setChecked(true, true);
+        this.list.reload();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$createView$15(Context context, View view) {
         if (this.filtersShown && !this.list.modelAttributes.isEmpty()) {
             final ItemOptions needsFocus = ItemOptions.makeOptions((BaseFragment) this, (View) this.modelButton, false, true).setDrawScrim(false).setOnTopOfScrim().translate(0.0f, AndroidUtilities.dp(-8.0f)).needsFocus();
-            needsFocus.setOnDismiss(new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda16
+            needsFocus.setOnDismiss(new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda22
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ResaleGiftsFragment.lambda$createView$7(ItemOptions.this);
+                    ResaleGiftsFragment.lambda$createView$10(ItemOptions.this);
                 }
             });
             final String[] strArr = {""};
             final ArrayList arrayList = new ArrayList(this.list.modelAttributes);
-            Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda17
+            Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda23
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
-                    int lambda$createView$8;
-                    lambda$createView$8 = ResaleGiftsFragment.this.lambda$createView$8((TL_stars.starGiftAttributeModel) obj, (TL_stars.starGiftAttributeModel) obj2);
-                    return lambda$createView$8;
+                    int lambda$createView$11;
+                    lambda$createView$11 = ResaleGiftsFragment.this.lambda$createView$11((TL_stars.starGiftAttributeModel) obj, (TL_stars.starGiftAttributeModel) obj2);
+                    return lambda$createView$11;
                 }
             });
-            final UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(this, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda18
+            final UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(this, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda24
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    ResaleGiftsFragment.this.lambda$createView$9(strArr, arrayList, (ArrayList) obj, (UniversalAdapter) obj2);
+                    ResaleGiftsFragment.this.lambda$createView$12(strArr, arrayList, (ArrayList) obj, (UniversalAdapter) obj2);
                 }
-            }, new Utilities.Callback5() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda19
+            }, new Utilities.Callback5() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda25
                 @Override // org.telegram.messenger.Utilities.Callback5
                 public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-                    ResaleGiftsFragment.this.lambda$createView$10(needsFocus, (UItem) obj, (View) obj2, (Integer) obj3, (Float) obj4, (Float) obj5);
+                    ResaleGiftsFragment.this.lambda$createView$13(needsFocus, (UItem) obj, (View) obj2, (Integer) obj3, (Float) obj4, (Float) obj5);
                 }
             }, null) { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment.5
                 @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
@@ -459,10 +560,10 @@ public class ResaleGiftsFragment extends BaseFragment {
                 needsFocus.addGap();
             }
             if (!this.list.notSelectedModelAttributes.isEmpty()) {
-                needsFocus.add(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda20
+                needsFocus.add(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda26
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ResaleGiftsFragment.this.lambda$createView$11();
+                        ResaleGiftsFragment.this.lambda$createView$14();
                     }
                 });
             }
@@ -472,7 +573,7 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$createView$7(ItemOptions itemOptions) {
+    public static /* synthetic */ void lambda$createView$10(ItemOptions itemOptions) {
         ActionBarPopupWindow actionBarPopupWindow = itemOptions.actionBarPopupWindow;
         if (actionBarPopupWindow != null) {
             AndroidUtilities.hideKeyboard(actionBarPopupWindow.getContentView());
@@ -480,7 +581,7 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ int lambda$createView$8(TL_stars.starGiftAttributeModel stargiftattributemodel, TL_stars.starGiftAttributeModel stargiftattributemodel2) {
+    public /* synthetic */ int lambda$createView$11(TL_stars.starGiftAttributeModel stargiftattributemodel, TL_stars.starGiftAttributeModel stargiftattributemodel2) {
         Integer num = (Integer) this.list.modelAttributesCounter.get(Long.valueOf(stargiftattributemodel.document.id));
         Integer num2 = (Integer) this.list.modelAttributesCounter.get(Long.valueOf(stargiftattributemodel2.document.id));
         if (num == null) {
@@ -493,7 +594,7 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$9(String[] strArr, ArrayList arrayList, ArrayList arrayList2, UniversalAdapter universalAdapter) {
+    public /* synthetic */ void lambda$createView$12(String[] strArr, ArrayList arrayList, ArrayList arrayList2, UniversalAdapter universalAdapter) {
         String lowerCase = strArr[0].toLowerCase();
         String translitSafe = AndroidUtilities.translitSafe(lowerCase);
         boolean isEmpty = this.list.notSelectedModelAttributes.isEmpty();
@@ -521,7 +622,7 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$10(ItemOptions itemOptions, UItem uItem, View view, Integer num, Float f, Float f2) {
+    public /* synthetic */ void lambda$createView$13(ItemOptions itemOptions, UItem uItem, View view, Integer num, Float f, Float f2) {
         long j = ((TL_stars.starGiftAttributeModel) uItem.object).document.id;
         if (!this.list.notSelectedModelAttributes.contains(Long.valueOf(j))) {
             if (this.list.notSelectedModelAttributes.isEmpty()) {
@@ -543,7 +644,7 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$11() {
+    public /* synthetic */ void lambda$createView$14() {
         if (this.list.notSelectedModelAttributes.isEmpty()) {
             return;
         }
@@ -552,34 +653,34 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$18(Context context, View view) {
+    public /* synthetic */ void lambda$createView$21(Context context, View view) {
         if (this.filtersShown && !this.list.backdropAttributes.isEmpty()) {
             final ItemOptions needsFocus = ItemOptions.makeOptions((BaseFragment) this, (View) this.backdropButton, false, true).setDrawScrim(false).setOnTopOfScrim().translate(0.0f, AndroidUtilities.dp(-8.0f)).needsFocus();
-            needsFocus.setOnDismiss(new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda21
+            needsFocus.setOnDismiss(new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda17
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ResaleGiftsFragment.lambda$createView$13(ItemOptions.this);
+                    ResaleGiftsFragment.lambda$createView$16(ItemOptions.this);
                 }
             });
             final String[] strArr = {""};
             final ArrayList arrayList = new ArrayList(this.list.backdropAttributes);
-            Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda22
+            Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda18
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
-                    int lambda$createView$14;
-                    lambda$createView$14 = ResaleGiftsFragment.this.lambda$createView$14((TL_stars.starGiftAttributeBackdrop) obj, (TL_stars.starGiftAttributeBackdrop) obj2);
-                    return lambda$createView$14;
+                    int lambda$createView$17;
+                    lambda$createView$17 = ResaleGiftsFragment.this.lambda$createView$17((TL_stars.starGiftAttributeBackdrop) obj, (TL_stars.starGiftAttributeBackdrop) obj2);
+                    return lambda$createView$17;
                 }
             });
-            final UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(this, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda23
+            final UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(this, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda19
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    ResaleGiftsFragment.this.lambda$createView$15(strArr, arrayList, (ArrayList) obj, (UniversalAdapter) obj2);
+                    ResaleGiftsFragment.this.lambda$createView$18(strArr, arrayList, (ArrayList) obj, (UniversalAdapter) obj2);
                 }
-            }, new Utilities.Callback5() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda24
+            }, new Utilities.Callback5() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda20
                 @Override // org.telegram.messenger.Utilities.Callback5
                 public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-                    ResaleGiftsFragment.this.lambda$createView$16(needsFocus, (UItem) obj, (View) obj2, (Integer) obj3, (Float) obj4, (Float) obj5);
+                    ResaleGiftsFragment.this.lambda$createView$19(needsFocus, (UItem) obj, (View) obj2, (Integer) obj3, (Float) obj4, (Float) obj5);
                 }
             }, null) { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment.7
                 @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
@@ -626,10 +727,10 @@ public class ResaleGiftsFragment extends BaseFragment {
                 needsFocus.addGap();
             }
             if (!this.list.notSelectedBackdropAttributes.isEmpty()) {
-                needsFocus.add(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda25
+                needsFocus.add(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda21
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ResaleGiftsFragment.this.lambda$createView$17();
+                        ResaleGiftsFragment.this.lambda$createView$20();
                     }
                 });
             }
@@ -639,7 +740,7 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$createView$13(ItemOptions itemOptions) {
+    public static /* synthetic */ void lambda$createView$16(ItemOptions itemOptions) {
         ActionBarPopupWindow actionBarPopupWindow = itemOptions.actionBarPopupWindow;
         if (actionBarPopupWindow != null) {
             AndroidUtilities.hideKeyboard(actionBarPopupWindow.getContentView());
@@ -647,7 +748,7 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ int lambda$createView$14(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop, TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2) {
+    public /* synthetic */ int lambda$createView$17(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop, TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2) {
         Integer num = (Integer) this.list.backdropAttributesCounter.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
         Integer num2 = (Integer) this.list.backdropAttributesCounter.get(Integer.valueOf(stargiftattributebackdrop2.backdrop_id));
         if (num == null) {
@@ -660,7 +761,7 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$15(String[] strArr, ArrayList arrayList, ArrayList arrayList2, UniversalAdapter universalAdapter) {
+    public /* synthetic */ void lambda$createView$18(String[] strArr, ArrayList arrayList, ArrayList arrayList2, UniversalAdapter universalAdapter) {
         String lowerCase = strArr[0].toLowerCase();
         String translitSafe = AndroidUtilities.translitSafe(lowerCase);
         boolean isEmpty = this.list.notSelectedBackdropAttributes.isEmpty();
@@ -688,7 +789,7 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$16(ItemOptions itemOptions, UItem uItem, View view, Integer num, Float f, Float f2) {
+    public /* synthetic */ void lambda$createView$19(ItemOptions itemOptions, UItem uItem, View view, Integer num, Float f, Float f2) {
         int i = ((TL_stars.starGiftAttributeBackdrop) uItem.object).backdrop_id;
         if (!this.list.notSelectedBackdropAttributes.contains(Integer.valueOf(i))) {
             if (this.list.notSelectedBackdropAttributes.isEmpty()) {
@@ -710,7 +811,7 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$17() {
+    public /* synthetic */ void lambda$createView$20() {
         if (this.list.notSelectedBackdropAttributes.isEmpty()) {
             return;
         }
@@ -719,34 +820,34 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$24(Context context, View view) {
+    public /* synthetic */ void lambda$createView$27(Context context, View view) {
         if (this.filtersShown && !this.list.patternAttributes.isEmpty()) {
             final ItemOptions needsFocus = ItemOptions.makeOptions((BaseFragment) this, (View) this.patternButton, false, true).setDrawScrim(false).setOnTopOfScrim().translate(0.0f, AndroidUtilities.dp(-8.0f)).needsFocus();
-            needsFocus.setOnDismiss(new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda11
+            needsFocus.setOnDismiss(new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda12
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ResaleGiftsFragment.lambda$createView$19(ItemOptions.this);
+                    ResaleGiftsFragment.lambda$createView$22(ItemOptions.this);
                 }
             });
             final String[] strArr = {""};
             final ArrayList arrayList = new ArrayList(this.list.patternAttributes);
-            Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda12
+            Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda13
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
-                    int lambda$createView$20;
-                    lambda$createView$20 = ResaleGiftsFragment.this.lambda$createView$20((TL_stars.starGiftAttributePattern) obj, (TL_stars.starGiftAttributePattern) obj2);
-                    return lambda$createView$20;
+                    int lambda$createView$23;
+                    lambda$createView$23 = ResaleGiftsFragment.this.lambda$createView$23((TL_stars.starGiftAttributePattern) obj, (TL_stars.starGiftAttributePattern) obj2);
+                    return lambda$createView$23;
                 }
             });
-            final UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(this, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda13
+            final UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(this, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda14
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    ResaleGiftsFragment.this.lambda$createView$21(strArr, arrayList, (ArrayList) obj, (UniversalAdapter) obj2);
+                    ResaleGiftsFragment.this.lambda$createView$24(strArr, arrayList, (ArrayList) obj, (UniversalAdapter) obj2);
                 }
-            }, new Utilities.Callback5() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda14
+            }, new Utilities.Callback5() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda15
                 @Override // org.telegram.messenger.Utilities.Callback5
                 public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-                    ResaleGiftsFragment.this.lambda$createView$22(needsFocus, (UItem) obj, (View) obj2, (Integer) obj3, (Float) obj4, (Float) obj5);
+                    ResaleGiftsFragment.this.lambda$createView$25(needsFocus, (UItem) obj, (View) obj2, (Integer) obj3, (Float) obj4, (Float) obj5);
                 }
             }, null) { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment.9
                 @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
@@ -793,10 +894,10 @@ public class ResaleGiftsFragment extends BaseFragment {
                 needsFocus.addGap();
             }
             if (!this.list.notSelectedPatternAttributes.isEmpty()) {
-                needsFocus.add(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda15
+                needsFocus.add(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda16
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ResaleGiftsFragment.this.lambda$createView$23();
+                        ResaleGiftsFragment.this.lambda$createView$26();
                     }
                 });
             }
@@ -806,7 +907,7 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$createView$19(ItemOptions itemOptions) {
+    public static /* synthetic */ void lambda$createView$22(ItemOptions itemOptions) {
         ActionBarPopupWindow actionBarPopupWindow = itemOptions.actionBarPopupWindow;
         if (actionBarPopupWindow != null) {
             AndroidUtilities.hideKeyboard(actionBarPopupWindow.getContentView());
@@ -814,7 +915,7 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ int lambda$createView$20(TL_stars.starGiftAttributePattern stargiftattributepattern, TL_stars.starGiftAttributePattern stargiftattributepattern2) {
+    public /* synthetic */ int lambda$createView$23(TL_stars.starGiftAttributePattern stargiftattributepattern, TL_stars.starGiftAttributePattern stargiftattributepattern2) {
         Integer num = (Integer) this.list.patternAttributesCounter.get(Long.valueOf(stargiftattributepattern.document.id));
         Integer num2 = (Integer) this.list.patternAttributesCounter.get(Long.valueOf(stargiftattributepattern2.document.id));
         if (num == null) {
@@ -827,7 +928,7 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$21(String[] strArr, ArrayList arrayList, ArrayList arrayList2, UniversalAdapter universalAdapter) {
+    public /* synthetic */ void lambda$createView$24(String[] strArr, ArrayList arrayList, ArrayList arrayList2, UniversalAdapter universalAdapter) {
         String lowerCase = strArr[0].toLowerCase();
         String translitSafe = AndroidUtilities.translitSafe(lowerCase);
         boolean isEmpty = this.list.notSelectedPatternAttributes.isEmpty();
@@ -855,7 +956,7 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$22(ItemOptions itemOptions, UItem uItem, View view, Integer num, Float f, Float f2) {
+    public /* synthetic */ void lambda$createView$25(ItemOptions itemOptions, UItem uItem, View view, Integer num, Float f, Float f2) {
         long j = ((TL_stars.starGiftAttributePattern) uItem.object).document.id;
         if (!this.list.notSelectedPatternAttributes.contains(Long.valueOf(j))) {
             if (this.list.notSelectedPatternAttributes.isEmpty()) {
@@ -877,7 +978,7 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$23() {
+    public /* synthetic */ void lambda$createView$26() {
         if (this.list.notSelectedPatternAttributes.isEmpty()) {
             return;
         }
@@ -914,18 +1015,6 @@ public class ResaleGiftsFragment extends BaseFragment {
         this.listView.setTranslationY(z ? 0.0f : -AndroidUtilities.dp(39.0f));
     }
 
-    private void setClearFiltersShown(boolean z, boolean z2) {
-        if (this.clearFiltersShown == z) {
-            return;
-        }
-        this.clearFiltersShown = z;
-        if (z2) {
-            this.clearFiltersContainer.animate().translationY(z ? 0.0f : AndroidUtilities.dp(49.0f)).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setDuration(420L).start();
-        } else {
-            this.clearFiltersContainer.setTranslationY(z ? 0.0f : AndroidUtilities.dp(49.0f));
-        }
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public void updateList(boolean z) {
         UniversalAdapter universalAdapter;
@@ -943,7 +1032,7 @@ public class ResaleGiftsFragment extends BaseFragment {
         ActionBar actionBar = this.actionBar;
         if (actionBar != null) {
             actionBar.setTitle(this.gift_name);
-            this.actionBar.setSubtitle(this.list.getTotalCount() <= 0 ? LocaleController.getString(R.string.Gift2ResaleNoCount) : LocaleController.formatPluralStringComma("Gift2ResaleCount", this.list.getTotalCount()));
+            this.actionBar.setSubtitle(this.list.getTotalCount() <= 0 ? LocaleController.getString(R.string.Gift2ResaleNoCount) : LocaleController.formatPluralStringComma("Gift2ListingsCount", this.list.getTotalCount()));
         }
         Filter filter = this.sortButton;
         if (filter != null) {
@@ -968,7 +1057,7 @@ public class ResaleGiftsFragment extends BaseFragment {
         if ((resaleGiftsList.loading || resaleGiftsList.getTotalCount() > 0) && (!this.list.notSelectedModelAttributes.isEmpty() || !this.list.notSelectedBackdropAttributes.isEmpty() || !this.list.notSelectedPatternAttributes.isEmpty())) {
             z2 = true;
         }
-        setClearFiltersShown(z2, true);
+        this.animatorClearFiltersButtonVisible.setValue(z2, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1034,10 +1123,10 @@ public class ResaleGiftsFragment extends BaseFragment {
             TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj;
             StarGiftSheet starGiftSheet = new StarGiftSheet(getContext(), this.currentAccount, this.dialogId, this.resourceProvider);
             starGiftSheet.set(tL_starGiftUnique.slug, tL_starGiftUnique, this.list);
-            starGiftSheet.setOnBoughtGift(new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda29
+            starGiftSheet.setOnBoughtGift(new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$$ExternalSyntheticLambda32
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj2, Object obj3) {
-                    ResaleGiftsFragment.this.lambda$onItemClick$25((TL_stars.TL_starGiftUnique) obj2, (Long) obj3);
+                    ResaleGiftsFragment.this.lambda$onItemClick$28((TL_stars.TL_starGiftUnique) obj2, (Long) obj3);
                 }
             });
             showDialog(starGiftSheet);
@@ -1045,7 +1134,7 @@ public class ResaleGiftsFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onItemClick$25(final TL_stars.TL_starGiftUnique tL_starGiftUnique, final Long l) {
+    public /* synthetic */ void lambda$onItemClick$28(final TL_stars.TL_starGiftUnique tL_starGiftUnique, final Long l) {
         if (l.longValue() == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
             this.list.gifts.remove(tL_starGiftUnique);
             updateList(false);
@@ -1096,6 +1185,14 @@ public class ResaleGiftsFragment extends BaseFragment {
         }
     }
 
+    @Override // me.vkryl.android.animator.FactorAnimator.Target
+    public void onFactorChanged(int i, float f, float f2, FactorAnimator factorAnimator) {
+        if (i == 0) {
+            this.onlyStarsContainer.setTranslationY((-AndroidUtilities.dp(52.0f)) * f);
+            FragmentFloatingButton.setAnimatedVisibility(this.clearFiltersContainer, f);
+        }
+    }
+
     public static class ResaleGiftsList implements StarsController.IGiftsList {
         private final int account;
         private long attributes_hash;
@@ -1104,6 +1201,7 @@ public class ResaleGiftsFragment extends BaseFragment {
         private String last_offset;
         public boolean loading;
         private final Utilities.Callback onUpdate;
+        private boolean starsOnly;
         private int totalCount;
         public final ArrayList gifts = new ArrayList();
         public final ArrayList modelAttributes = new ArrayList();
@@ -1184,6 +1282,7 @@ public class ResaleGiftsFragment extends BaseFragment {
                 getresalestargifts.offset = str;
                 getresalestargifts.limit = 15;
                 getresalestargifts.for_craft = this.for_craft;
+                getresalestargifts.stars_only = this.starsOnly;
                 Sorting sorting = this.sorting;
                 if (sorting == Sorting.BY_NUMBER) {
                     getresalestargifts.sort_by_num = true;

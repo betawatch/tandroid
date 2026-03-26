@@ -46,7 +46,7 @@ import org.telegram.ui.Components.Text;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bots.SetupEmojiStatusSheet;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class SetupEmojiStatusSheet {
     public static void show(final int i, final TLRPC.User user, long j, final int i2, final Utilities.Callback2 callback2) {
         if (callback2 == null) {

@@ -72,7 +72,7 @@ import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.bots.AffiliateProgramFragment;
 import org.telegram.ui.bots.ChannelAffiliateProgramsFragment;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity implements NotificationCenter.NotificationCenterDelegate {
     private FrameLayout aboveTitleView;
     private UniversalAdapter adapter;

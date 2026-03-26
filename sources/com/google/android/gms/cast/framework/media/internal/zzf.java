@@ -17,7 +17,7 @@ public final class zzf extends AsyncTask {
 
     public zzf(Context context, int i, int i2, boolean z, long j, int i3, int i4, int i5, zzb zzbVar) {
         this.zzc = zzbVar;
-        this.zzb = zzag.zze(context.getApplicationContext(), this, new zze(this, null), i, i2, false, 2097152L, 5, NotificationCenter.botForumDraftUpdate, 10000);
+        this.zzb = zzag.zze(context.getApplicationContext(), this, new zze(this, null), i, i2, false, 2097152L, 5, NotificationCenter.botForumTopicDidCreate, 10000);
     }
 
     @Override // android.os.AsyncTask

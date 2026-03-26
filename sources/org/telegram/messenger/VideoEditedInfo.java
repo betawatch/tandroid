@@ -80,6 +80,7 @@ public class VideoEditedInfo {
     public long startTime;
     public Bitmap thumb;
     public boolean videoConvertFirstWrite;
+    public long videoOffset;
     public long avatarStartTime = -1;
     public int framerate = 24;
     public float volume = 1.0f;
@@ -449,7 +450,7 @@ public class VideoEditedInfo {
         PhotoFilterView.CurvesValue curvesValue;
         ArrayList<MediaEntity> arrayList;
         if (this.avatarStartTime != -1 || this.filterState != null || this.paintPath != null || this.blurPath != null || (((arrayList = this.mediaEntities) != null && !arrayList.isEmpty()) || this.cropState != null)) {
-            int i = this.filterState != null ? NotificationCenter.applyGroupCallVisibleParticipants : 10;
+            int i = this.filterState != null ? 170 : 10;
             String str = this.paintPath;
             byte[] bArr2 = null;
             if (str != null) {
@@ -573,7 +574,7 @@ public class VideoEditedInfo {
         } else {
             bytesToHex = "";
         }
-        return String.format(Locale.US, "-1_%d_%d_%d_%d_%d_%d_%d_%d_%d_%d_-%s_%s", Long.valueOf(this.startTime), Long.valueOf(this.endTime), Integer.valueOf(this.rotationValue), Integer.valueOf(this.originalWidth), Integer.valueOf(this.originalHeight), Integer.valueOf(this.bitrate), Integer.valueOf(this.resultWidth), Integer.valueOf(this.resultHeight), Long.valueOf(this.originalDuration), Integer.valueOf(this.framerate), bytesToHex, this.originalPath);
+        return String.format(Locale.US, "-1_%d_%d_%d_%d_%d_%d_%d_%d_%d_%d_%d_-%s_%s", Long.valueOf(this.startTime), Long.valueOf(this.endTime), Integer.valueOf(this.rotationValue), Integer.valueOf(this.originalWidth), Integer.valueOf(this.originalHeight), Integer.valueOf(this.bitrate), Integer.valueOf(this.resultWidth), Integer.valueOf(this.resultHeight), Long.valueOf(this.originalDuration), Integer.valueOf(this.framerate), Long.valueOf(this.videoOffset), bytesToHex, this.originalPath);
     }
 
     public boolean parseString(String str) {
@@ -583,8 +584,8 @@ public class VideoEditedInfo {
         }
         try {
             String[] split = str.split("_");
-            int i = 11;
-            if (split.length >= 11) {
+            int i = 12;
+            if (split.length >= 12) {
                 this.startTime = Long.parseLong(split[1]);
                 this.endTime = Long.parseLong(split[2]);
                 this.rotationValue = Integer.parseInt(split[3]);
@@ -595,9 +596,10 @@ public class VideoEditedInfo {
                 this.resultHeight = Integer.parseInt(split[8]);
                 this.originalDuration = Long.parseLong(split[9]);
                 this.framerate = Integer.parseInt(split[10]);
+                this.videoOffset = Long.parseLong(split[11]);
                 this.muted = this.bitrate == -1;
-                if (split[11].startsWith("-")) {
-                    String substring = split[11].substring(1);
+                if (split[12].startsWith("-")) {
+                    String substring = split[12].substring(1);
                     if (substring.length() > 0) {
                         SerializedData serializedData = new SerializedData(Utilities.hexToBytes(substring));
                         int readInt32 = serializedData.readInt32(false);
@@ -701,7 +703,7 @@ public class VideoEditedInfo {
                         }
                         serializedData.cleanup();
                     }
-                    i = 12;
+                    i = 13;
                 }
                 while (i < split.length) {
                     if (this.originalPath == null) {

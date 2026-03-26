@@ -121,6 +121,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
     private Text sensitiveTextShort2;
     private Shaker shaker;
     SharedResources sharedResources;
+    boolean showLivePhoto;
     boolean showVideoLayout;
     private float spoilerMaxRadius;
     private float spoilerRevealProgress;
@@ -293,10 +294,10 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         setMessageObject(this.currentMessageObject, this.currentParentColumnsCount, true);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:84:0x0423  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0437  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0456  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x0469  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0438  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x044c  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x046b  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x047e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -341,6 +342,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
             this.viewsText.setText("", false);
             this.videoInfoLayot = null;
             this.showVideoLayout = false;
+            this.showLivePhoto = false;
             this.gradientDrawableLoading = false;
             this.gradientDrawable = null;
             this.privacyType = -1;
@@ -360,10 +362,11 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
             i6 = (((int) (AndroidUtilities.displaySize.x / AndroidUtilities.density)) * 3) / 5;
         }
         String filterString = this.sharedResources.getFilterString(i6);
-        int photoSize = (i3 <= 2 || z) ? AndroidUtilities.getPhotoSize() : NotificationCenter.storiesListUpdated;
+        int photoSize = (i3 <= 2 || z) ? AndroidUtilities.getPhotoSize() : NotificationCenter.storyDeleted;
         this.videoText = null;
         this.videoInfoLayot = null;
         this.showVideoLayout = false;
+        this.showLivePhoto = false;
         this.imageReceiver.clearDecorators();
         this.imageReceiverFullSize.clearDecorators();
         if (this.isStory && (storyViews = messageObject.storyItem.views) != null) {
@@ -391,8 +394,9 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                 } else {
                     i2 = 2;
                     if (messageObject.isVideo()) {
-                        this.showVideoLayout = true;
-                        if (i3 != 9) {
+                        this.showVideoLayout = !messageObject.isLivePhoto();
+                        this.showLivePhoto = messageObject.isLivePhoto();
+                        if (i3 != 9 && !messageObject.isLivePhoto()) {
                             this.videoText = AndroidUtilities.formatShortDuration((int) messageObject.getDuration());
                         }
                         ImageLocation imageLocation = messageObject.mediaThumb;
@@ -560,6 +564,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         this.videoText = str;
         boolean z2 = str != null;
         this.showVideoLayout = z2;
+        this.showLivePhoto = false;
         if (z2 && (staticLayout = this.videoInfoLayot) != null && !staticLayout.getText().toString().equals(str)) {
             this.videoInfoLayot = null;
         }
@@ -594,16 +599,16 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         drawImpl(canvas, false, 1.0f, 1.0f, 1.0f);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:130:0x05e4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:135:0x0634, code lost:
     
-        if (r1.getProgress() != 0.0f) goto L179;
+        if (r1.getProgress() != 0.0f) goto L184;
      */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x0511  */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x05c2  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x05d1  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x05d8  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x05c8  */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x0508  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x050f  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x0612  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x0621  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x0628  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x0618  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x0506  */
     /* JADX WARN: Removed duplicated region for block: B:66:0x024b  */
     /* JADX WARN: Removed duplicated region for block: B:76:0x0296  */
     /*
@@ -615,15 +620,17 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         float f6;
         float f7;
         float f8;
+        int i;
         float f9;
         int dp;
         float f10;
         float f11;
-        int i;
+        int i2;
         CheckBoxBase checkBoxBase;
         float dp2;
         float f12;
-        int i2;
+        Drawable drawable;
+        int i3;
         FlickerLoadingView flickerLoadingView;
         float padding = getPadding() * f;
         float f13 = this.isFirst ? padding : 0.0f;
@@ -674,13 +681,12 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         if (((checkBoxBase2 != null && checkBoxBase2.isChecked()) || PhotoViewer.isShowingImage(this.currentMessageObject)) && !this.check2) {
             canvas.drawRect(f13, 0.0f, (f13 + f6) - padding, (f7 + 0.0f) - padding, this.sharedResources.backgroundPaint);
         }
-        if (!this.isStory) {
-            f8 = 0.0f;
-        } else {
+        if (this.isStory) {
+            i = 1;
             if (this.currentParentColumnsCount == 1) {
                 float height = getHeight() * 0.72f;
-                Drawable drawable = this.gradientDrawable;
-                if (drawable == null) {
+                Drawable drawable2 = this.gradientDrawable;
+                if (drawable2 == null) {
                     if (!this.gradientDrawableLoading && imageReceiver.getBitmap() != null) {
                         this.gradientDrawableLoading = true;
                         DominantColors.getColors(false, imageReceiver.getBitmap(), Theme.isCurrentThemeDark(), new Utilities.Callback() { // from class: org.telegram.ui.Cells.SharedPhotoVideoCell2$$ExternalSyntheticLambda2
@@ -691,7 +697,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                         });
                     }
                 } else {
-                    drawable.setBounds(0, 0, getWidth(), getHeight());
+                    drawable2.setBounds(0, 0, getWidth(), getHeight());
                     this.gradientDrawable.draw(canvas);
                 }
                 imageReceiver.setImageCoords((f6 - height) / 2.0f, 0.0f, height, getHeight());
@@ -723,7 +729,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                     if (messageObject == null || !messageObject.hasMediaSpoilers() || this.currentMessageObject.isMediaSpoilersRevealedInSharedMedia) {
                         f10 = f6;
                         f11 = f14;
-                        i = -1;
+                        i2 = -1;
                     } else {
                         canvas.save();
                         canvas.clipRect(f13, 0.0f, (f13 + f6) - padding, (f7 + 0.0f) - padding);
@@ -748,15 +754,15 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                         if (this.currentMessageObject.isSensitive()) {
                             if (this.sensitiveText == null) {
                                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x " + LocaleController.getString(R.string.MessageSensitiveContent));
-                                spannableStringBuilder.setSpan(new ColoredImageSpan(R.drawable.filled_sensitive), 0, 1, 33);
+                                spannableStringBuilder.setSpan(new ColoredImageSpan(R.drawable.filled_sensitive), 0, i, 33);
                                 this.sensitiveText = new Text(spannableStringBuilder, 14.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                             }
                             Text text = this.sensitiveText;
-                            int i3 = 13;
+                            int i4 = 13;
                             if (f6 < (AndroidUtilities.dp(13) * 2) + text.getCurrentWidth()) {
                                 if (this.sensitiveTextShort == null) {
                                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x " + LocaleController.getString(R.string.MessageSensitiveContentShort));
-                                    spannableStringBuilder2.setSpan(new ColoredImageSpan(R.drawable.filled_sensitive), 0, 1, 33);
+                                    spannableStringBuilder2.setSpan(new ColoredImageSpan(R.drawable.filled_sensitive), 0, i, 33);
                                     this.sensitiveTextShort = new Text(spannableStringBuilder2, 14.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                                 }
                                 text = this.sensitiveTextShort;
@@ -766,15 +772,15 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                                     this.sensitiveTextShort2 = new Text(new SpannableStringBuilder(LocaleController.getString(R.string.MessageSensitiveContentShort)), 13.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                                 }
                                 text = this.sensitiveTextShort2;
-                                i3 = 10;
-                                i2 = 28;
+                                i4 = 10;
+                                i3 = 28;
                             } else {
-                                i2 = 32;
+                                i3 = 32;
                             }
                             float imageX = imageReceiver.getImageX() + (imageReceiver.getImageWidth() / 2.0f);
                             float imageY = imageReceiver.getImageY() + (imageReceiver.getImageHeight() / 2.0f);
-                            float currentWidth = text.getCurrentWidth() + AndroidUtilities.dp(i3 + i3);
-                            float dp3 = AndroidUtilities.dp(i2) / 2.0f;
+                            float currentWidth = text.getCurrentWidth() + AndroidUtilities.dp(i4 + i4);
+                            float dp3 = AndroidUtilities.dp(i3) / 2.0f;
                             float lerp2 = AndroidUtilities.lerp(0.8f, 1.0f, 1.0f - this.spoilerRevealProgress);
                             RectF rectF = AndroidUtilities.rectTmp;
                             float f24 = currentWidth / 2.0f;
@@ -799,13 +805,13 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                             themePaint.setAlpha(alpha2);
                             canvas.save();
                             canvas.scale(lerp2, lerp2, imageX, imageY);
-                            i = -1;
-                            text.draw(canvas, (imageX - f24) + AndroidUtilities.dp(i3), imageY, -1, 1.0f - this.spoilerRevealProgress);
+                            i2 = -1;
+                            text.draw(canvas, (imageX - f24) + AndroidUtilities.dp(i4), imageY, -1, 1.0f - this.spoilerRevealProgress);
                             canvas.restore();
                         } else {
                             f10 = f6;
                             f11 = f14;
-                            i = -1;
+                            i2 = -1;
                         }
                         invalidate();
                     }
@@ -819,13 +825,13 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                 } else {
                     f10 = f6;
                     f11 = f14;
-                    i = -1;
+                    i2 = -1;
                 }
                 if (this.isStoryUploading) {
                     this.scrimPaint.setColor(805306368);
                     canvas.drawRect(imageReceiver.getDrawRegion(), this.scrimPaint);
                     this.progressPaint.setStyle(Paint.Style.STROKE);
-                    this.progressPaint.setColor(i);
+                    this.progressPaint.setColor(i2);
                     this.progressPaint.setStrokeWidth(AndroidUtilities.dp(3.0f));
                     this.progressPaint.setStrokeJoin(Paint.Join.ROUND);
                     this.progressPaint.setStrokeCap(Paint.Cap.ROUND);
@@ -839,6 +845,10 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                     invalidate();
                 }
                 this.bounds.set(imageReceiver.getImageX(), imageReceiver.getImageY(), imageReceiver.getImageX2(), imageReceiver.getImageY2());
+                if (this.showLivePhoto && (drawable = Theme.chat_livePhoto) != null) {
+                    drawable.setBounds((int) (this.bounds.left + AndroidUtilities.dp(8.0f)), (int) (this.bounds.top + AndroidUtilities.dp(8.0f)), (int) (this.bounds.left + AndroidUtilities.dp(8.0f) + (Theme.chat_livePhoto.getIntrinsicWidth() * 0.75f)), (int) (this.bounds.top + AndroidUtilities.dp(8.0f) + (Theme.chat_livePhoto.getIntrinsicHeight() * 0.75f)));
+                    Theme.chat_livePhoto.draw(canvas);
+                }
                 drawDuration(canvas, this.bounds, f3);
                 drawViews(canvas, this.bounds, f3);
                 if (this.isSearchingHashtag) {
@@ -887,6 +897,9 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                 canvas.restore();
             }
             f8 = 0.0f;
+        } else {
+            f8 = 0.0f;
+            i = 1;
         }
         if (this.checkBoxProgress > f8) {
             float dp5 = AndroidUtilities.dp(this.check2 ? 7.0f : 10.0f) * this.checkBoxProgress;
@@ -917,6 +930,10 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         if (this.isStoryUploading) {
         }
         this.bounds.set(imageReceiver.getImageX(), imageReceiver.getImageY(), imageReceiver.getImageX2(), imageReceiver.getImageY2());
+        if (this.showLivePhoto) {
+            drawable.setBounds((int) (this.bounds.left + AndroidUtilities.dp(8.0f)), (int) (this.bounds.top + AndroidUtilities.dp(8.0f)), (int) (this.bounds.left + AndroidUtilities.dp(8.0f) + (Theme.chat_livePhoto.getIntrinsicWidth() * 0.75f)), (int) (this.bounds.top + AndroidUtilities.dp(8.0f) + (Theme.chat_livePhoto.getIntrinsicHeight() * 0.75f)));
+            Theme.chat_livePhoto.draw(canvas);
+        }
         drawDuration(canvas, this.bounds, f3);
         drawViews(canvas, this.bounds, f3);
         if (this.isSearchingHashtag) {

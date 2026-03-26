@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.bots.BotSensors;
 import org.telegram.ui.web.BotWebViewContainer;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BotSensors {
     private long absoluteOrientationDesiredRefreshRate;
     private Runnable absoluteOrientationListenerPostponed;

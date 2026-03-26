@@ -271,7 +271,7 @@ public abstract class GroupCallRecordAlert extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(View view) {
         onStartRecord(this.currentPage);
-        lambda$new$0();
+        dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -390,7 +390,7 @@ public abstract class GroupCallRecordAlert extends BottomSheet {
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$instantiateItem$0(int i, View view) {
             GroupCallRecordAlert.this.onStartRecord(i);
-            GroupCallRecordAlert.this.lambda$new$0();
+            GroupCallRecordAlert.this.dismiss();
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter

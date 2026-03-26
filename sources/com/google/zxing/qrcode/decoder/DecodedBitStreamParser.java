@@ -295,7 +295,7 @@ abstract class DecodedBitStreamParser {
         if ((readBits & NotificationCenter.didUpdateTonGiftStickers) == 128) {
             return bitSource.readBits(8) | ((readBits & 63) << 8);
         }
-        if ((readBits & NotificationCenter.botStarsUpdated) == 192) {
+        if ((readBits & 224) == 192) {
             return bitSource.readBits(16) | ((readBits & 31) << 16);
         }
         throw FormatException.getFormatInstance();

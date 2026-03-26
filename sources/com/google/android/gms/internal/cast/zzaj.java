@@ -81,7 +81,7 @@ public final class zzaj extends zza implements zzak {
         zza.writeInt(0);
         zza.writeLong(2097152L);
         zza.writeInt(5);
-        zza.writeInt(NotificationCenter.botForumDraftUpdate);
+        zza.writeInt(NotificationCenter.botForumTopicDidCreate);
         zza.writeInt(10000);
         Parcel zzb = zzb(6, zza);
         com.google.android.gms.cast.framework.media.internal.zzi zzb2 = com.google.android.gms.cast.framework.media.internal.zzh.zzb(zzb.readStrongBinder());
@@ -100,7 +100,7 @@ public final class zzaj extends zza implements zzak {
         zza.writeInt(0);
         zza.writeLong(2097152L);
         zza.writeInt(5);
-        zza.writeInt(NotificationCenter.botForumDraftUpdate);
+        zza.writeInt(NotificationCenter.botForumTopicDidCreate);
         zza.writeInt(10000);
         Parcel zzb = zzb(7, zza);
         com.google.android.gms.cast.framework.media.internal.zzi zzb2 = com.google.android.gms.cast.framework.media.internal.zzh.zzb(zzb.readStrongBinder());

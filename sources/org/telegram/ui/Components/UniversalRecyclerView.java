@@ -25,6 +25,9 @@ public class UniversalRecyclerView extends RecyclerListView {
     private boolean reorderingAllowed;
     private boolean reorderingOnOtherAxis;
 
+    protected void onLayoutUpdate() {
+    }
+
     protected void swappedElements() {
     }
 
@@ -124,6 +127,7 @@ public class UniversalRecyclerView extends RecyclerListView {
             protected void onMoveAnimationUpdate(RecyclerView.ViewHolder viewHolder) {
                 super.onMoveAnimationUpdate(viewHolder);
                 UniversalRecyclerView.this.invalidate();
+                UniversalRecyclerView.this.onLayoutUpdate();
             }
 
             @Override // androidx.recyclerview.widget.DefaultItemAnimator
@@ -132,6 +136,7 @@ public class UniversalRecyclerView extends RecyclerListView {
                 if (UniversalRecyclerView.this.hasSections()) {
                     UniversalRecyclerView.this.invalidate();
                 }
+                UniversalRecyclerView.this.onLayoutUpdate();
             }
 
             @Override // androidx.recyclerview.widget.DefaultItemAnimator
@@ -140,6 +145,7 @@ public class UniversalRecyclerView extends RecyclerListView {
                 if (UniversalRecyclerView.this.hasSections()) {
                     UniversalRecyclerView.this.invalidate();
                 }
+                UniversalRecyclerView.this.onLayoutUpdate();
             }
 
             @Override // androidx.recyclerview.widget.DefaultItemAnimator
@@ -148,6 +154,7 @@ public class UniversalRecyclerView extends RecyclerListView {
                 if (UniversalRecyclerView.this.hasSections()) {
                     UniversalRecyclerView.this.invalidate();
                 }
+                UniversalRecyclerView.this.onLayoutUpdate();
             }
         };
         defaultItemAnimator.setSupportsChangeAnimations(false);

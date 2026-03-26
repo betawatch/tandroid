@@ -561,7 +561,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
         } else if (i10 == 5) {
             int[] iArr = new int[8];
             this.colors = iArr;
-            this.imageView.setAnimation(R.raw.qr_login, NotificationCenter.botForumDraftDelete, NotificationCenter.botForumDraftDelete, iArr);
+            this.imageView.setAnimation(R.raw.qr_login, NotificationCenter.botForumDraftUpdate, NotificationCenter.botForumDraftUpdate, iArr);
             this.imageView.setScaleType(ImageView.ScaleType.CENTER);
             this.titleTextView.setText(LocaleController.getString(R.string.AuthAnotherClient));
             this.buttonTextView.setText(LocaleController.getString(R.string.AuthAnotherClientScan));

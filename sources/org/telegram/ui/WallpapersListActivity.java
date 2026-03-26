@@ -1752,7 +1752,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                         TLRPC.Photo photo = botInlineResult.photo;
                         if (photo != null) {
                             TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize());
-                            TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(botInlineResult.photo.sizes, NotificationCenter.storiesListUpdated);
+                            TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(botInlineResult.photo.sizes, NotificationCenter.storyDeleted);
                             if (closestPhotoSizeWithSize != null) {
                                 searchImage.width = closestPhotoSizeWithSize.w;
                                 searchImage.height = closestPhotoSizeWithSize.h;

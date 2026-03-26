@@ -890,7 +890,7 @@ public class MotionBackgroundDrawable extends Drawable {
                 this.paint2.setColorFilter(this.patternColorFilter);
                 this.paint2.setAlpha((int) ((Math.abs(this.intensity) / 100.0f) * this.alpha * this.patternAlpha));
                 canvas.drawBitmap(this.patternBitmap, (android.graphics.Rect) null, this.rect, this.paint2);
-                this.paint.setAlpha((int) ((Math.abs(this.intensity) / 100.0f) * this.alpha * this.patternAlpha * 0.8f));
+                this.paint2.setAlpha((int) ((Math.abs(this.intensity) / 100.0f) * this.alpha * this.patternAlpha * 0.8f));
                 drawGiftPatternsForPositiveIntensity(canvas, this.rect, this.paint2, this.giftPosition);
             }
         }
@@ -1090,7 +1090,7 @@ public class MotionBackgroundDrawable extends Drawable {
                 } else {
                     canvas.drawBitmap(this.patternBitmap, (android.graphics.Rect) null, this.rect, this.paint2);
                 }
-                this.paint.setAlpha((int) ((Math.abs(this.intensity) / 100.0f) * this.alpha * this.patternAlpha * 0.8f));
+                this.paint2.setAlpha((int) ((Math.abs(this.intensity) / 100.0f) * this.alpha * this.patternAlpha * 0.8f));
                 drawGiftPatternsForPositiveIntensity(canvas, this.rect, this.paint2, this.giftPosition);
             }
         }

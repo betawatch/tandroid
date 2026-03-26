@@ -58,7 +58,7 @@ import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bots.BotDownloads;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BotDownloads {
     public final long botId;
     public final Context context;
@@ -252,7 +252,7 @@ public class BotDownloads {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* JADX WARN: Code restructure failed: missing block: B:36:0x00b1, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:36:0x00b3, code lost:
         
             if (0 == 0) goto L33;
          */

@@ -214,6 +214,18 @@ public class HintView extends FrameLayout {
             Integer num = (Integer) obj;
             i5 += i2;
             this.shownY = i2;
+            MessageObject messageObject = chatMessageCell.getMessageObject();
+            if (messageObject != null && (MessageObject.getMedia(messageObject) instanceof TLRPC.TL_messageMediaPoll)) {
+                TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) MessageObject.getMedia(messageObject);
+                if (MessageObject.isVoted(tL_messageMediaPoll) && !MessageObject.isVoteResultsIsNotEmpty(tL_messageMediaPoll)) {
+                    TLRPC.Poll poll = tL_messageMediaPoll.poll;
+                    if (!poll.closed && poll.hide_results_until_close) {
+                        this.textView.setText(LocaleController.getString(R.string.PollResultsWillLater));
+                        measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
+                        forwardNameCenterX = i;
+                    }
+                }
+            }
             if (num.intValue() == -1) {
                 this.textView.setText(LocaleController.getString(R.string.PollSelectOption));
             } else if (chatMessageCell.getMessageObject().isQuiz()) {
@@ -230,7 +242,7 @@ public class HintView extends FrameLayout {
             measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
             forwardNameCenterX = i;
         } else {
-            MessageObject messageObject = chatMessageCell.getMessageObject();
+            MessageObject messageObject2 = chatMessageCell.getMessageObject();
             String str = this.overrideText;
             if (str == null) {
                 this.textView.setText(LocaleController.getString(R.string.HidAccount));
@@ -243,7 +255,7 @@ public class HintView extends FrameLayout {
                 dp = (chatMessageCell.getMeasuredHeight() - Math.max(0, chatMessageCell.getBottom() - view.getMeasuredHeight())) - AndroidUtilities.dp(50.0f);
             } else {
                 i5 += AndroidUtilities.dp(22.0f);
-                if (!messageObject.isOutOwner() && chatMessageCell.isDrawNameLayout()) {
+                if (!messageObject2.isOutOwner() && chatMessageCell.isDrawNameLayout()) {
                     dp = AndroidUtilities.dp(20.0f);
                 }
                 if (this.isTopArrow && i5 <= getMeasuredHeight() + AndroidUtilities.dp(10.0f)) {

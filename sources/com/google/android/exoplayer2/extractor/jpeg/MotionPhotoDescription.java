@@ -4,7 +4,7 @@ import com.google.android.exoplayer2.metadata.mp4.MotionPhotoMetadata;
 import java.util.List;
 
 /* loaded from: classes.dex */
-final class MotionPhotoDescription {
+public final class MotionPhotoDescription {
     public final List items;
     public final long photoPresentationTimestampUs;
 

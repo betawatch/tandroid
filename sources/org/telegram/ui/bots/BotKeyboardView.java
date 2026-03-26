@@ -29,7 +29,7 @@ import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.inset.InAppKeyboardInsetView;
 import org.telegram.ui.Components.spoilers.SpoilersTextView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class BotKeyboardView extends LinearLayout implements InAppKeyboardInsetView, ReplaceAnimator.Callback {
     private final ReplaceAnimator animator;
     private TLRPC.TL_replyKeyboardMarkup botButtons;

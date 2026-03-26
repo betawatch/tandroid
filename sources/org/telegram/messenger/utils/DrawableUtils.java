@@ -1,0 +1,53 @@
+package org.telegram.messenger.utils;
+
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+
+/* loaded from: classes3.dex */
+public abstract class DrawableUtils {
+    public static void drawWithScale(Canvas canvas, Drawable drawable, float f) {
+        if (drawable == null || f == 0.0f) {
+            return;
+        }
+        if (f == 1.0f) {
+            drawable.draw(canvas);
+            return;
+        }
+        canvas.save();
+        canvas.scale(f, f, drawable.getBounds().exactCenterX(), drawable.getBounds().exactCenterY());
+        drawable.draw(canvas);
+        canvas.restore();
+    }
+
+    public static void setBounds(Drawable drawable, float f, float f2, int i) {
+        if (drawable == null) {
+            return;
+        }
+        setBounds(drawable, f, f2, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), i);
+    }
+
+    public static void setBounds(Drawable drawable, float f, float f2, int i, int i2, int i3) {
+        int round;
+        int round2;
+        if (drawable == null) {
+            return;
+        }
+        int i4 = i3 & 7;
+        if (i4 == 3) {
+            round = Math.round(f);
+        } else if (i4 == 5) {
+            round = Math.round(f - i);
+        } else {
+            round = Math.round(f - (i / 2.0f));
+        }
+        int i5 = i3 & 112;
+        if (i5 == 48) {
+            round2 = Math.round(f2);
+        } else if (i5 == 80) {
+            round2 = Math.round(f2 - i2);
+        } else {
+            round2 = Math.round(f2 - (i2 / 2.0f));
+        }
+        drawable.setBounds(round, round2, i + round, i2 + round2);
+    }
+}

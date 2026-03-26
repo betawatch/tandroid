@@ -836,7 +836,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
                     dp4 += f18 + AndroidUtilities.dp(3.0f);
                 }
                 ChatMessageCell chatMessageCell12 = this.messageView;
-                if (chatMessageCell12.isReplyTask && chatMessageCell12.replyTaskCheckbox != null) {
+                if (chatMessageCell12.isReplyTaskOrPollOption && chatMessageCell12.replyTaskCheckbox != null) {
                     float lerp7 = AndroidUtilities.lerp(f34 - chatMessageCell12.replyTextOffset, dp4, f6);
                     this.messageView.replyTaskCheckbox.setBounds((int) lerp7, ((int) lerp6) + AndroidUtilities.dp(2.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
                     Theme.chat_instantViewRectPaint.setColor(getThemedColor(this.currentMessageObject.isOutOwner() ? Theme.key_chat_outMenu : Theme.key_chat_inMenu));
@@ -845,7 +845,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
                     this.messageView.replyTaskCheckbox.setAlpha(f13);
                     this.messageView.replyTaskCheckbox.draw(canvas);
                 }
-                if (this.messageView.isReplyTask) {
+                if (this.messageView.isReplyTaskOrPollOption) {
                     dp4 += AndroidUtilities.dp(16.0f);
                 }
                 ChatMessageCell chatMessageCell13 = this.messageView;

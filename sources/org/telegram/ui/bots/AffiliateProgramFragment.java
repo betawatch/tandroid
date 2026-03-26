@@ -50,7 +50,7 @@ import org.telegram.ui.GradientHeaderActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class AffiliateProgramFragment extends GradientHeaderActivity implements NotificationCenter.NotificationCenterDelegate {
     private FrameLayout aboveTitleView;
     private UniversalAdapter adapter;
@@ -134,14 +134,14 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
         View view2 = new View(context);
         view2.setBackgroundColor(getThemedColor(Theme.key_divider));
         this.buttonLayout.addView(view2, LayoutHelper.createLinear(-1.0f, 1.0f / AndroidUtilities.density));
-        ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, this.resourceProvider) { // from class: org.telegram.ui.bots.AffiliateProgramFragment.2
+        ButtonWithCounterView round = new ButtonWithCounterView(context, this.resourceProvider) { // from class: org.telegram.ui.bots.AffiliateProgramFragment.2
             @Override // org.telegram.ui.Stories.recorder.ButtonWithCounterView
             protected boolean subTextSplitToWords() {
                 return false;
             }
-        };
-        this.button = buttonWithCounterView;
-        buttonWithCounterView.setText(LocaleController.getString(R.string.AffiliateProgramStart), false);
+        }.setRound();
+        this.button = round;
+        round.setText(LocaleController.getString(R.string.AffiliateProgramStart), false);
         this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.AffiliateProgramFragment$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
@@ -433,7 +433,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
         if (userFull != null) {
             TL_payments.starRefProgram starrefprogram2 = this.program;
             starrefprogram2.flags |= 2;
-            starrefprogram2.end_date = getConnectionsManager().getCurrentTime() + (getConnectionsManager().isTestBackend() ? NotificationCenter.onRequestPermissionResultReceived : 86400);
+            starrefprogram2.end_date = getConnectionsManager().getCurrentTime() + (getConnectionsManager().isTestBackend() ? NotificationCenter.onActivityResultReceived : 86400);
             userFull.starref_program = starrefprogram;
             getMessagesStorage().updateUserInfo(userFull, false);
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(this.bot_id), userFull);
@@ -909,5 +909,6 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
     public void onInsets(int i, int i2, int i3, int i4) {
         this.listView.setPadding(0, 0, 0, AndroidUtilities.dp(84.0f) + i4);
         this.listView.setClipToPadding(false);
+        this.buttonLayout.setPadding(0, 0, 0, i4);
     }
 }

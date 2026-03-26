@@ -973,26 +973,26 @@ public class TextureRenderer {
         editTextOutline.setBreakStrategy(0);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0023, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0025, code lost:
     
         r11 = org.telegram.messenger.video.TextureRenderer.VERTEX_SHADER;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0034, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0036, code lost:
     
         r12 = r11;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0032, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0034, code lost:
     
         if (r9 != null) goto L21;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0020, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0022, code lost:
     
         if (r9 != null) goto L21;
      */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x0428  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x0430  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x0433  */
-    /* JADX WARN: Removed duplicated region for block: B:175:0x042b  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x042c  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x0434  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x0437  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x042f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

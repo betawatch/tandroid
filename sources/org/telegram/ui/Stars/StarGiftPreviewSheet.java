@@ -511,7 +511,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
                 i4++;
             } else {
                 this.headerView.addView(this.buttonsLayout, LayoutHelper.createFrame(-1, -2.0f, 87, 16.0f, 0.0f, 16.0f, 18.0f));
-                this.containerView.addView(this.headerView, LayoutHelper.createFrame(-1, NotificationCenter.didUpdateGlobalAutoDeleteTimer, 55));
+                this.containerView.addView(this.headerView, LayoutHelper.createFrame(-1, NotificationCenter.chatSwitchedForum, 55));
                 int backgroundColor = getBackgroundColor();
                 View view = new View(context);
                 this.gradientTop = view;

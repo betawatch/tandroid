@@ -257,6 +257,18 @@ public class WebRtcAudioTrack {
         }
     }
 
+    /* JADX WARN: Can't wrap try/catch for region: R(8:0|1|(6:2|3|(1:5)(1:19)|6|(1:8)|9)|10|11|12|13|(1:(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0050, code lost:
+    
+        r0 = move-exception;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0051, code lost:
+    
+        org.telegram.messenger.FileLog.e(r0);
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private boolean stopPlayout() {
         try {
             this.threadChecker.checkIsOnValidThread();
@@ -278,11 +290,7 @@ public class WebRtcAudioTrack {
             } finally {
             }
         }
-        try {
-            releaseAudioResources();
-        } catch (Throwable th) {
-            FileLog.e(th);
-        }
+        releaseAudioResources();
         return true;
     }
 

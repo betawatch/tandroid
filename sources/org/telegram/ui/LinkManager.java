@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import com.google.android.exoplayer2.util.Consumer;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -22,6 +23,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.tgnet.ConnectionsManager;
@@ -35,6 +37,7 @@ import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.BulletinFactory;
+import org.telegram.ui.Components.CreateBotAlert;
 import org.telegram.ui.Components.Premium.boosts.UserSelectorBottomSheet;
 import org.telegram.ui.Components.SharedMediaLayout;
 import org.telegram.ui.Components.voip.VoIPHelper;
@@ -128,6 +131,12 @@ public class LinkManager {
                 if ("oauth".equalsIgnoreCase(str2)) {
                     return handleOAuth(uri, uri.getQueryParameter("startapp"));
                 }
+                if ("newbot".equalsIgnoreCase(str2)) {
+                    if (pathSegments.size() < 3) {
+                        return true;
+                    }
+                    return handleNewBot(str3, pathSegments.get(2), uri.getQueryParameter("name"));
+                }
             }
         }
         return false;
@@ -146,7 +155,7 @@ public class LinkManager {
     /* JADX WARN: Type inference failed for: r0v13, types: [org.telegram.ui.Stories.recorder.StoryRecorder] */
     /* JADX WARN: Type inference failed for: r8v16, types: [int] */
     /* JADX WARN: Type inference failed for: r8v18 */
-    /* JADX WARN: Type inference failed for: r8v41 */
+    /* JADX WARN: Type inference failed for: r8v43 */
     private boolean handleTg(Uri uri) {
         Uri normalizeTgUri = normalizeTgUri(uri);
         List<String> pathSegments = normalizeTgUri.getPathSegments();
@@ -163,6 +172,9 @@ public class LinkManager {
         }
         String str = (String) arrayList.get(0);
         String str2 = arrayList.size() > 1 ? (String) arrayList.get(1) : null;
+        if ("newbot".equalsIgnoreCase(str)) {
+            return handleNewBot(normalizeTgUri.getQueryParameter("manager"), normalizeTgUri.getQueryParameter("username"), normalizeTgUri.getQueryParameter("name"));
+        }
         if ("resolve".equalsIgnoreCase(str)) {
             return handleTgResolve(normalizeTgUri);
         }
@@ -1089,7 +1101,7 @@ public class LinkManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$handleSettings$2(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda11
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
                 LinkManager.this.lambda$handleSettings$1(tLObject);
@@ -1218,7 +1230,7 @@ public class LinkManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$handleSettings$4(final ProfileActivity profileActivity) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda10
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
                 LinkManager.lambda$handleSettings$3(ProfileActivity.this);
@@ -1237,7 +1249,7 @@ public class LinkManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$handleSettings$6(final ProfileActivity profileActivity) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda12
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
                 LinkManager.lambda$handleSettings$5(ProfileActivity.this);
@@ -1323,7 +1335,7 @@ public class LinkManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$handleSettings$11(final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda16
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda19
             @Override // java.lang.Runnable
             public final void run() {
                 LinkManager.this.lambda$handleSettings$10(tLObject, str);
@@ -1341,7 +1353,7 @@ public class LinkManager {
         if (!TwoStepVerificationActivity.canHandleCurrentPassword(password, false)) {
             AlertsCreator.showUpdateAppAlert(this.activity, LocaleController.getString(R.string.UpdateAppAlert), true);
         }
-        Runnable runnable = new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda17
+        Runnable runnable = new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda20
             @Override // java.lang.Runnable
             public final void run() {
                 LinkManager.this.lambda$handleSettings$9(str);
@@ -1404,7 +1416,7 @@ public class LinkManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$handleInvoiceSlug$17(final TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug, final String str, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda15
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda18
             @Override // java.lang.Runnable
             public final void run() {
                 LinkManager.this.lambda$handleInvoiceSlug$16(tL_error, tLObject, tL_inputInvoiceSlug, str);
@@ -1426,12 +1438,12 @@ public class LinkManager {
                 LaunchActivity launchActivity = this.activity;
                 final Runnable runnable = launchActivity.navigateToPremiumGiftCallback;
                 launchActivity.navigateToPremiumGiftCallback = null;
-                StarsController.getInstance(this.currentAccount).openPaymentForm(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject, new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda18
+                StarsController.getInstance(this.currentAccount).openPaymentForm(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject, new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda21
                     @Override // java.lang.Runnable
                     public final void run() {
                         LinkManager.this.lambda$handleInvoiceSlug$13();
                     }
-                }, new Utilities.Callback() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda19
+                }, new Utilities.Callback() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda22
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         LinkManager.lambda$handleInvoiceSlug$14(runnable, (String) obj);
@@ -1451,7 +1463,7 @@ public class LinkManager {
                 final Runnable runnable2 = launchActivity2.navigateToPremiumGiftCallback;
                 if (runnable2 != null) {
                     launchActivity2.navigateToPremiumGiftCallback = null;
-                    paymentFormActivity.setPaymentFormCallback(new PaymentFormActivity.PaymentFormCallback() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda20
+                    paymentFormActivity.setPaymentFormCallback(new PaymentFormActivity.PaymentFormCallback() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda23
                         @Override // org.telegram.ui.PaymentFormActivity.PaymentFormCallback
                         public final void onInvoiceStatusChanged(PaymentFormActivity.InvoiceStatus invoiceStatus) {
                             LinkManager.lambda$handleInvoiceSlug$15(runnable2, invoiceStatus);
@@ -1514,6 +1526,115 @@ public class LinkManager {
         OAuthSheet.handle(this.isExternalIntent, this.currentAccount, tL_messages_requestUrlAuth, urlAuthResult);
     }
 
+    private boolean handleNewBot(String str, String str2, String str3) {
+        final TLRPC.TL_requestPeerTypeCreateBot tL_requestPeerTypeCreateBot = new TLRPC.TL_requestPeerTypeCreateBot();
+        tL_requestPeerTypeCreateBot.bot_managed = true;
+        if (!TextUtils.isEmpty(str3)) {
+            tL_requestPeerTypeCreateBot.flags |= 2;
+            tL_requestPeerTypeCreateBot.suggested_name = str3;
+        }
+        if (!TextUtils.isEmpty(str2)) {
+            tL_requestPeerTypeCreateBot.flags |= 4;
+            tL_requestPeerTypeCreateBot.suggested_username = str2;
+        }
+        final BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
+        if (safeLastFragment != null && safeLastFragment.getContext() != null) {
+            init();
+            final TLRPC.User[] userArr = {MessagesController.getInstance(this.currentAccount).getUser(str)};
+            final Runnable runnable = new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda10
+                @Override // java.lang.Runnable
+                public final void run() {
+                    LinkManager.this.lambda$handleNewBot$20(safeLastFragment, userArr, tL_requestPeerTypeCreateBot);
+                }
+            };
+            if (userArr[0] == null) {
+                MessagesController.getInstance(this.currentAccount).getUserNameResolver().resolve(str, new Consumer() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda11
+                    @Override // com.google.android.exoplayer2.util.Consumer
+                    public final void accept(Object obj) {
+                        LinkManager.this.lambda$handleNewBot$21(userArr, runnable, (Long) obj);
+                    }
+                });
+            } else {
+                runnable.run();
+            }
+        }
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$handleNewBot$20(BaseFragment baseFragment, final TLRPC.User[] userArr, TLRPC.TL_requestPeerTypeCreateBot tL_requestPeerTypeCreateBot) {
+        CreateBotAlert.show(baseFragment.getContext(), this.currentAccount, userArr[0], tL_requestPeerTypeCreateBot, true, new Utilities.Callback() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda17
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                LinkManager.this.lambda$handleNewBot$19(userArr, (TLRPC.User) obj);
+            }
+        }, baseFragment.getResourceProvider());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$handleNewBot$19(TLRPC.User[] userArr, TLRPC.User user) {
+        lambda$handleInvoiceSlug$13();
+        if (user == null) {
+            return;
+        }
+        long j = userArr[0].id;
+        Bundle bundle = new Bundle();
+        bundle.putLong("user_id", user.id);
+        presentFragment(new 3(bundle, user, userArr, j));
+    }
+
+    class 3 extends ChatActivity {
+        private boolean shownToast;
+        final /* synthetic */ TLRPC.User[] val$manager;
+        final /* synthetic */ long val$managerId;
+        final /* synthetic */ TLRPC.User val$newBot;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        3(Bundle bundle, TLRPC.User user, TLRPC.User[] userArr, long j) {
+            super(bundle);
+            this.val$newBot = user;
+            this.val$manager = userArr;
+            this.val$managerId = j;
+        }
+
+        @Override // org.telegram.ui.ChatActivity, org.telegram.ui.ActionBar.BaseFragment
+        public void onBecomeFullyVisible() {
+            super.onBecomeFullyVisible();
+            if (this.shownToast) {
+                return;
+            }
+            this.shownToast = true;
+            BulletinFactory of = BulletinFactory.of(this);
+            int i = R.raw.contact_check;
+            String formatString = LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.val$newBot));
+            String formatString2 = LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.val$manager[0]));
+            final long j = this.val$managerId;
+            of.createSimpleBulletin(i, formatString, AndroidUtilities.replaceSingleTag(formatString2, new Runnable() { // from class: org.telegram.ui.LinkManager$3$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    LinkManager.3.this.lambda$onBecomeFullyVisible$0(j);
+                }
+            })).show();
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$onBecomeFullyVisible$0(long j) {
+            presentFragment(ChatActivity.of(j));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$handleNewBot$21(TLRPC.User[] userArr, Runnable runnable, Long l) {
+        TLRPC.User user = l == null ? null : MessagesController.getInstance(this.currentAccount).getUser(l);
+        userArr[0] = user;
+        if (user == null) {
+            lambda$handleInvoiceSlug$13();
+            getBulletinFactory().createErrorBulletin(LocaleController.getString(R.string.NoUsernameFound)).show();
+        } else {
+            runnable.run();
+        }
+    }
+
     private void setRequestId(int i) {
         this.currentRequestId = i;
     }
@@ -1568,15 +1689,15 @@ public class LinkManager {
             if (this.progressDialog == null) {
                 this.progressDialog = new AlertDialog(this.activity, 3);
             }
-            this.progressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda13
+            this.progressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda15
                 @Override // android.content.DialogInterface.OnCancelListener
                 public final void onCancel(DialogInterface dialogInterface) {
-                    LinkManager.this.lambda$init$19(dialogInterface);
+                    LinkManager.this.lambda$init$22(dialogInterface);
                 }
             });
             this.progressDialog.showDelayed(300L);
         } else {
-            progress.onCancel(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda14
+            progress.onCancel(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda16
                 @Override // java.lang.Runnable
                 public final void run() {
                     LinkManager.this.cancel();
@@ -1588,7 +1709,7 @@ public class LinkManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$19(DialogInterface dialogInterface) {
+    public /* synthetic */ void lambda$init$22(DialogInterface dialogInterface) {
         cancel();
     }
 

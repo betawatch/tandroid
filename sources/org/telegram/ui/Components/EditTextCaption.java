@@ -32,17 +32,20 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 import org.telegram.messenger.utils.CopyUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.AlertDialogDecor;
+import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.FloatingActionMode;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.TextSelectionHelper$$ExternalSyntheticApiModelOutline6;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.QuoteSpan;
 import org.telegram.ui.Components.TextStyleSpan;
+import org.telegram.ui.LaunchActivity;
 
 /* loaded from: classes5.dex */
 public class EditTextCaption extends EditTextBoldCursor {
@@ -58,6 +61,7 @@ public class EditTextCaption extends EditTextBoldCursor {
     private boolean isInitLineCount;
     private int lineCount;
     private final Theme.ResourcesProvider resourcesProvider;
+    private Text rightText;
     private int selectionEnd;
     private int selectionStart;
     private int triesCount;
@@ -210,12 +214,12 @@ public class EditTextCaption extends EditTextBoldCursor {
             i = getSelectionStart();
             selectionEnd = getSelectionEnd();
         }
-        AlertsCreator.createFormattedDatePickerDialog(getContext(), new AlertsCreator.FormattedDatePickerDelegate() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda6
+        AlertsCreator.createFormattedDatePickerDialog(getContext(), new AlertsCreator.FormattedDatePickerDelegate() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda7
             @Override // org.telegram.ui.Components.AlertsCreator.FormattedDatePickerDelegate
             public final void didSelectDate(int i2, int i3) {
                 EditTextCaption.this.lambda$makeSelectedDate$0(i, selectionEnd, i2, i3);
             }
-        }, new Runnable() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda7
+        }, new Runnable() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
                 EditTextCaption.lambda$makeSelectedDate$1();
@@ -242,6 +246,33 @@ public class EditTextCaption extends EditTextBoldCursor {
         if (editTextCaptionDelegate != null) {
             editTextCaptionDelegate.onSpansChanged();
         }
+    }
+
+    public void translateSelected() {
+        final int selectionEnd;
+        final int i = this.selectionStart;
+        if (i >= 0 && (selectionEnd = this.selectionEnd) >= 0) {
+            this.selectionEnd = -1;
+            this.selectionStart = -1;
+        } else {
+            i = getSelectionStart();
+            selectionEnd = getSelectionEnd();
+        }
+        CharSequence subSequence = getText().subSequence(i, selectionEnd);
+        BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
+        new TranslateAlert3(getContext(), safeLastFragment != null ? safeLastFragment.getResourceProvider() : null).setText(subSequence).setOnUse(new Utilities.Callback() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda0
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                EditTextCaption.this.lambda$translateSelected$2(i, selectionEnd, (CharSequence) obj);
+            }
+        }).show();
+        setSelection(i, selectionEnd);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$translateSelected$2(int i, int i2, CharSequence charSequence) {
+        getText().replace(i, i2, charSequence);
+        setSelection(i, charSequence.length() + i);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -292,16 +323,16 @@ public class EditTextCaption extends EditTextBoldCursor {
         textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(6.0f), Theme.multAlpha(themedColor, 0.12f), Theme.multAlpha(themedColor, 0.15f)));
         ScaleStateListAnimator.apply(textView, 0.1f, 1.5f);
         frameLayout.addView(textView, LayoutHelper.createFrame(-2, 26.0f, 21, 0.0f, 0.0f, 24.0f, 3.0f));
-        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda0
+        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                EditTextCaption.this.lambda$makeSelectedUrl$2(editTextBoldCursor, textView);
+                EditTextCaption.this.lambda$makeSelectedUrl$3(editTextBoldCursor, textView);
             }
         };
-        textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda1
+        textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EditTextCaption.this.lambda$makeSelectedUrl$3(editTextBoldCursor, runnable, view);
+                EditTextCaption.this.lambda$makeSelectedUrl$4(editTextBoldCursor, runnable, view);
             }
         });
         editTextBoldCursor.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.Components.EditTextCaption.3
@@ -341,34 +372,34 @@ public class EditTextCaption extends EditTextBoldCursor {
             i = getSelectionStart();
             selectionEnd = getSelectionEnd();
         }
-        r2.setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda2
+        r2.setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i2) {
-                EditTextCaption.this.lambda$makeSelectedUrl$4(i, selectionEnd, editTextBoldCursor, alertDialog, i2);
+                EditTextCaption.this.lambda$makeSelectedUrl$5(i, selectionEnd, editTextBoldCursor, alertDialog, i2);
             }
         });
         r2.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
         if (this.adaptiveCreateLinkDialog) {
             AlertDialog create = r2.create();
             this.creationLinkDialog = create;
-            create.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda3
+            create.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda4
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    EditTextCaption.this.lambda$makeSelectedUrl$5(dialogInterface);
+                    EditTextCaption.this.lambda$makeSelectedUrl$6(dialogInterface);
                 }
             });
-            this.creationLinkDialog.setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda4
+            this.creationLinkDialog.setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda5
                 @Override // android.content.DialogInterface.OnShowListener
                 public final void onShow(DialogInterface dialogInterface) {
-                    EditTextCaption.lambda$makeSelectedUrl$6(EditTextBoldCursor.this, dialogInterface);
+                    EditTextCaption.lambda$makeSelectedUrl$7(EditTextBoldCursor.this, dialogInterface);
                 }
             });
             this.creationLinkDialog.showDelayed(250L);
         } else {
-            r2.show().setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda5
+            r2.show().setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda6
                 @Override // android.content.DialogInterface.OnShowListener
                 public final void onShow(DialogInterface dialogInterface) {
-                    EditTextCaption.lambda$makeSelectedUrl$7(EditTextBoldCursor.this, dialogInterface);
+                    EditTextCaption.lambda$makeSelectedUrl$8(EditTextBoldCursor.this, dialogInterface);
                 }
             });
         }
@@ -387,14 +418,14 @@ public class EditTextCaption extends EditTextBoldCursor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$makeSelectedUrl$2(EditTextBoldCursor editTextBoldCursor, TextView textView) {
+    public /* synthetic */ void lambda$makeSelectedUrl$3(EditTextBoldCursor editTextBoldCursor, TextView textView) {
         ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService("clipboard");
         boolean z = (TextUtils.isEmpty(editTextBoldCursor.getText()) || TextUtils.equals(editTextBoldCursor.getText().toString(), "http://")) && clipboardManager != null && clipboardManager.hasPrimaryClip();
         textView.animate().alpha(z ? 1.0f : 0.0f).scaleX(z ? 1.0f : 0.7f).scaleY(z ? 1.0f : 0.7f).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setDuration(300L).start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$makeSelectedUrl$3(EditTextBoldCursor editTextBoldCursor, Runnable runnable, View view) {
+    public /* synthetic */ void lambda$makeSelectedUrl$4(EditTextBoldCursor editTextBoldCursor, Runnable runnable, View view) {
         CharSequence charSequence;
         try {
             charSequence = ((ClipboardManager) getContext().getSystemService("clipboard")).getPrimaryClip().getItemAt(0).coerceToText(getContext());
@@ -410,7 +441,7 @@ public class EditTextCaption extends EditTextBoldCursor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$makeSelectedUrl$4(int i, int i2, EditTextBoldCursor editTextBoldCursor, AlertDialog alertDialog, int i3) {
+    public /* synthetic */ void lambda$makeSelectedUrl$5(int i, int i2, EditTextBoldCursor editTextBoldCursor, AlertDialog alertDialog, int i3) {
         Editable text = getText();
         CharacterStyle[] characterStyleArr = (CharacterStyle[]) text.getSpans(i, i2, CharacterStyle.class);
         if (characterStyleArr != null && characterStyleArr.length > 0) {
@@ -439,19 +470,19 @@ public class EditTextCaption extends EditTextBoldCursor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$makeSelectedUrl$5(DialogInterface dialogInterface) {
+    public /* synthetic */ void lambda$makeSelectedUrl$6(DialogInterface dialogInterface) {
         this.creationLinkDialog = null;
         requestFocus();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$makeSelectedUrl$6(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
+    public static /* synthetic */ void lambda$makeSelectedUrl$7(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
         editTextBoldCursor.requestFocus();
         AndroidUtilities.showKeyboard(editTextBoldCursor);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$makeSelectedUrl$7(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
+    public static /* synthetic */ void lambda$makeSelectedUrl$8(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
         editTextBoldCursor.requestFocus();
         AndroidUtilities.showKeyboard(editTextBoldCursor);
     }
@@ -627,10 +658,14 @@ public class EditTextCaption extends EditTextBoldCursor {
             makeSelectedQuote();
             return true;
         }
-        if (i != R.id.menu_date) {
+        if (i == R.id.menu_date) {
+            makeSelectedDate();
+            return true;
+        }
+        if (i != R.id.menu_translate) {
             return false;
         }
-        makeSelectedDate();
+        translateSelected();
         return true;
     }
 
@@ -708,6 +743,7 @@ public class EditTextCaption extends EditTextBoldCursor {
 
     @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.EditTextEffects, android.widget.TextView, android.view.View
     protected void onDraw(Canvas canvas) {
+        Layout layout;
         canvas.save();
         canvas.translate(0.0f, this.offsetY);
         super.onDraw(canvas);
@@ -725,7 +761,14 @@ public class EditTextCaption extends EditTextBoldCursor {
         } catch (Exception e) {
             FileLog.e(e);
         }
+        if (this.rightText != null && length() != 0 && (layout = getLayout()) != null && layout.getLineCount() > 0) {
+            this.rightText.draw(canvas, layout.getLineRight(0), (getHeight() / 2.0f) + AndroidUtilities.dp(1.0f), this.hintColor, 1.0f);
+        }
         canvas.restore();
+    }
+
+    public void setRightText(CharSequence charSequence) {
+        this.rightText = new Text(charSequence, 16.0f, getTypeface());
     }
 
     @Override // org.telegram.ui.Components.EditTextBoldCursor, android.view.View

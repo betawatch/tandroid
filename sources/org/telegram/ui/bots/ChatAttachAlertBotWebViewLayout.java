@@ -63,7 +63,7 @@ import org.telegram.ui.Components.SimpleFloatPropertyCompat;
 import org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout;
 import org.telegram.ui.web.BotWebViewContainer;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlertLayout implements NotificationCenter.NotificationCenterDelegate {
     private ActionBarMenuSubItem addToHomeScreenItem;
     private long botId;

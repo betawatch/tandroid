@@ -60,7 +60,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.bots.BotStorage;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BotStorage {
     public final int account;
     public final long bot_id;
