@@ -203,7 +203,7 @@ public class PollAddOptionFieldLayout extends FrameLayout implements ViewTreeObs
             public final void run(Object obj) {
                 PollAddOptionFieldLayout.this.lambda$new$1((PollAttachedMedia) obj);
             }
-        });
+        }, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

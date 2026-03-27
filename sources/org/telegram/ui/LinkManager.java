@@ -132,10 +132,10 @@ public class LinkManager {
                     return handleOAuth(uri, uri.getQueryParameter("startapp"));
                 }
                 if ("newbot".equalsIgnoreCase(str2)) {
-                    if (pathSegments.size() < 3) {
+                    if (pathSegments.size() < 2) {
                         return true;
                     }
-                    return handleNewBot(str3, pathSegments.get(2), uri.getQueryParameter("name"));
+                    return handleNewBot(str3, pathSegments.size() >= 3 ? pathSegments.get(2) : null, uri.getQueryParameter("name"));
                 }
             }
         }
@@ -1540,23 +1540,19 @@ public class LinkManager {
         final BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (safeLastFragment != null && safeLastFragment.getContext() != null) {
             init();
-            final TLRPC.User[] userArr = {MessagesController.getInstance(this.currentAccount).getUser(str)};
+            final TLRPC.User[] userArr = {null};
             final Runnable runnable = new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda10
                 @Override // java.lang.Runnable
                 public final void run() {
                     LinkManager.this.lambda$handleNewBot$20(safeLastFragment, userArr, tL_requestPeerTypeCreateBot);
                 }
             };
-            if (userArr[0] == null) {
-                MessagesController.getInstance(this.currentAccount).getUserNameResolver().resolve(str, new Consumer() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda11
-                    @Override // com.google.android.exoplayer2.util.Consumer
-                    public final void accept(Object obj) {
-                        LinkManager.this.lambda$handleNewBot$21(userArr, runnable, (Long) obj);
-                    }
-                });
-            } else {
-                runnable.run();
-            }
+            MessagesController.getInstance(this.currentAccount).getUserNameResolver().resolve(str, new Consumer() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda11
+                @Override // com.google.android.exoplayer2.util.Consumer
+                public final void accept(Object obj) {
+                    LinkManager.this.lambda$handleNewBot$21(userArr, runnable, (Long) obj);
+                }
+            });
         }
         return true;
     }
@@ -1568,7 +1564,7 @@ public class LinkManager {
             public final void run(Object obj) {
                 LinkManager.this.lambda$handleNewBot$19(userArr, (TLRPC.User) obj);
             }
-        }, baseFragment.getResourceProvider());
+        }, baseFragment.getResourceProvider(), getBulletinFactory(), false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

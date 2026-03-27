@@ -6107,7 +6107,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             if (ChatActivityEnterView.this.isInitLineCount) {
                 ChatActivityEnterView.this.lineCount = getLineCount();
                 ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
-                chatActivityEnterView.showAiButton(chatActivityEnterView.lineCount > 2);
+                chatActivityEnterView.showAiButton(MessagesController.getInstance(chatActivityEnterView.currentAccount).aiEditorAvailable() && ChatActivityEnterView.this.lineCount > 2 && !TextUtils.isEmpty(getText().toString().trim()));
             }
             ChatActivityEnterView.this.isInitLineCount = false;
         }
@@ -6553,7 +6553,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 ChatActivityEnterView chatActivityEnterView2 = ChatActivityEnterView.this;
                 chatActivityEnterView2.lineCount = chatActivityEnterView2.messageEditText.getLineCount();
                 ChatActivityEnterView chatActivityEnterView3 = ChatActivityEnterView.this;
-                chatActivityEnterView3.showAiButton(chatActivityEnterView3.lineCount > 2);
+                chatActivityEnterView3.showAiButton(MessagesController.getInstance(chatActivityEnterView3.currentAccount).aiEditorAvailable() && ChatActivityEnterView.this.lineCount > 2 && charSequence != null && !TextUtils.isEmpty(charSequence.toString().trim()));
             } else {
                 this.heightShouldBeChanged = false;
             }
@@ -6588,23 +6588,25 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             ChatActivityEnterView.this.updateSendButtonPaid();
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:42:0x0145  */
-        /* JADX WARN: Removed duplicated region for block: B:46:0x0155  */
-        /* JADX WARN: Removed duplicated region for block: B:49:0x0164  */
-        /* JADX WARN: Removed duplicated region for block: B:52:0x0174  */
-        /* JADX WARN: Removed duplicated region for block: B:73:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:42:0x0146  */
+        /* JADX WARN: Removed duplicated region for block: B:46:0x0156  */
+        /* JADX WARN: Removed duplicated region for block: B:49:0x0165  */
+        /* JADX WARN: Removed duplicated region for block: B:52:0x0175  */
+        /* JADX WARN: Removed duplicated region for block: B:64:0x01ce  */
+        /* JADX WARN: Removed duplicated region for block: B:65:0x01d9  */
+        /* JADX WARN: Removed duplicated region for block: B:68:0x01ee  */
         @Override // android.text.TextWatcher
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public void afterTextChanged(Editable editable) {
+            boolean z;
             ChatActivityEnterView chatActivityEnterView;
             BotCommandsMenuContainer botCommandsMenuContainer;
             ChatActivityEnterView chatActivityEnterView2;
             if (this.ignorePrevTextChange) {
                 return;
             }
-            boolean z = false;
             if (this.prevText == null) {
                 if (ChatActivityEnterView.this.innerTextChange == 0) {
                     if (this.nextChangeIsSend) {
@@ -6640,6 +6642,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         if (i < 0) {
                             ChatActivityEnterView chatActivityEnterView3 = ChatActivityEnterView.this;
                             chatActivityEnterView3.captionLimitView.setTextColor(chatActivityEnterView3.getThemedColor(Theme.key_text_RedRegular));
+                            z = false;
                             chatActivityEnterView = ChatActivityEnterView.this;
                             if (chatActivityEnterView.doneButtonEnabled != z && chatActivityEnterView.doneButton != null) {
                                 chatActivityEnterView2 = ChatActivityEnterView.this;
@@ -6653,25 +6656,25 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                 botCommandsMenuContainer.dismiss();
                             }
                             ChatActivityEnterView.this.checkBotMenu();
-                            if (!ChatActivityEnterView.this.editingCaption || ChatActivityEnterView.this.captionLimitBulletinShown || MessagesController.getInstance(ChatActivityEnterView.this.currentAccount).premiumFeaturesBlocked() || UserConfig.getInstance(ChatActivityEnterView.this.currentAccount).isPremium() || ChatActivityEnterView.this.codePointCount <= MessagesController.getInstance(ChatActivityEnterView.this.currentAccount).captionLengthLimitDefault || ChatActivityEnterView.this.codePointCount >= MessagesController.getInstance(ChatActivityEnterView.this.currentAccount).captionLengthLimitPremium) {
-                                return;
+                            if (ChatActivityEnterView.this.editingCaption && !ChatActivityEnterView.this.captionLimitBulletinShown && !MessagesController.getInstance(ChatActivityEnterView.this.currentAccount).premiumFeaturesBlocked() && !UserConfig.getInstance(ChatActivityEnterView.this.currentAccount).isPremium() && ChatActivityEnterView.this.codePointCount > MessagesController.getInstance(ChatActivityEnterView.this.currentAccount).captionLengthLimitDefault && ChatActivityEnterView.this.codePointCount < MessagesController.getInstance(ChatActivityEnterView.this.currentAccount).captionLengthLimitPremium) {
+                                ChatActivityEnterView.this.captionLimitBulletinShown = true;
+                                if (this.heightShouldBeChanged) {
+                                    ChatActivityEnterView.this.showCaptionLimitBulletin();
+                                } else {
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$52$$ExternalSyntheticLambda0
+                                        @Override // java.lang.Runnable
+                                        public final void run() {
+                                            ChatActivityEnterView.52.this.lambda$afterTextChanged$0();
+                                        }
+                                    }, 300L);
+                                }
                             }
-                            ChatActivityEnterView.this.captionLimitBulletinShown = true;
-                            if (!this.heightShouldBeChanged) {
-                                ChatActivityEnterView.this.showCaptionLimitBulletin();
-                                return;
-                            } else {
-                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$52$$ExternalSyntheticLambda0
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        ChatActivityEnterView.52.this.lambda$afterTextChanged$0();
-                                    }
-                                }, 300L);
-                                return;
-                            }
+                            ChatActivityEnterView chatActivityEnterView4 = ChatActivityEnterView.this;
+                            chatActivityEnterView4.showAiButton((MessagesController.getInstance(chatActivityEnterView4.currentAccount).aiEditorAvailable() || ChatActivityEnterView.this.lineCount <= 2 || TextUtils.isEmpty(editable.toString().trim())) ? false : true);
+                            return;
                         }
-                        ChatActivityEnterView chatActivityEnterView4 = ChatActivityEnterView.this;
-                        chatActivityEnterView4.captionLimitView.setTextColor(chatActivityEnterView4.getThemedColor(Theme.key_windowBackgroundWhiteGrayText));
+                        ChatActivityEnterView chatActivityEnterView5 = ChatActivityEnterView.this;
+                        chatActivityEnterView5.captionLimitView.setTextColor(chatActivityEnterView5.getThemedColor(Theme.key_windowBackgroundWhiteGrayText));
                         z = true;
                         chatActivityEnterView = ChatActivityEnterView.this;
                         if (chatActivityEnterView.doneButtonEnabled != z) {
@@ -6685,10 +6688,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         }
                         ChatActivityEnterView.this.checkBotMenu();
                         if (ChatActivityEnterView.this.editingCaption) {
-                            return;
-                        } else {
-                            return;
+                            ChatActivityEnterView.this.captionLimitBulletinShown = true;
+                            if (this.heightShouldBeChanged) {
+                            }
                         }
+                        ChatActivityEnterView chatActivityEnterView42 = ChatActivityEnterView.this;
+                        chatActivityEnterView42.showAiButton((MessagesController.getInstance(chatActivityEnterView42.currentAccount).aiEditorAvailable() || ChatActivityEnterView.this.lineCount <= 2 || TextUtils.isEmpty(editable.toString().trim())) ? false : true);
+                        return;
                     }
                 }
                 NumberTextView numberTextView2 = ChatActivityEnterView.this.captionLimitView;
@@ -6710,12 +6716,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 ChatActivityEnterView.this.checkBotMenu();
                 if (ChatActivityEnterView.this.editingCaption) {
                 }
-            } else {
-                this.ignorePrevTextChange = true;
-                editable.replace(0, editable.length(), this.prevText);
-                this.prevText = null;
-                this.ignorePrevTextChange = false;
+                ChatActivityEnterView chatActivityEnterView422 = ChatActivityEnterView.this;
+                chatActivityEnterView422.showAiButton((MessagesController.getInstance(chatActivityEnterView422.currentAccount).aiEditorAvailable() || ChatActivityEnterView.this.lineCount <= 2 || TextUtils.isEmpty(editable.toString().trim())) ? false : true);
+                return;
             }
+            this.ignorePrevTextChange = true;
+            editable.replace(0, editable.length(), this.prevText);
+            this.prevText = null;
+            this.ignorePrevTextChange = false;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -6739,14 +6747,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }).start();
         if (z) {
             ImageView imageView = this.aiButton;
-            final AiButtonDrawable aiButtonDrawable = this.aiButtonIcon;
+            AiButtonDrawable aiButtonDrawable = this.aiButtonIcon;
             Objects.requireNonNull(aiButtonDrawable);
-            imageView.postDelayed(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda73
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AiButtonDrawable.this.animate();
-                }
-            }, 220L);
+            imageView.postDelayed(new ChatActivityEnterView$$ExternalSyntheticLambda73(aiButtonDrawable), 220L);
             HintView2 hintView2 = this.aiHint;
             if (hintView2 != null) {
                 hintView2.hide();
@@ -12841,7 +12844,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                 public final void run(Object obj) {
                                     ChatActivityEnterView.this.lambda$didPressedBotButton$80(messageObject2, tL_keyboardButtonRequestPeer, user4, (TLRPC.User) obj);
                                 }
-                            }, this.resourcesProvider);
+                            }, this.resourcesProvider, null, false);
                             return false;
                         }
                         if ((requestPeerType instanceof TLRPC.TL_requestPeerTypeUser) && (i = tL_keyboardButtonRequestPeer.max_quantity) > 1) {

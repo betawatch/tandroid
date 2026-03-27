@@ -5433,15 +5433,15 @@ public class MessageObject {
         updateMessageText(MessagesController.getInstance(this.currentAccount).getUsers(), MessagesController.getInstance(this.currentAccount).getChats(), null, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:1422:0x2434, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1428:0x248b, code lost:
     
-        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r5).flags & 4) != 0) goto L1402;
+        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r5).flags & 4) != 0) goto L1408;
      */
-    /* JADX WARN: Removed duplicated region for block: B:1329:0x2235  */
-    /* JADX WARN: Removed duplicated region for block: B:1344:0x228b  */
-    /* JADX WARN: Removed duplicated region for block: B:1346:0x228e  */
-    /* JADX WARN: Removed duplicated region for block: B:1522:0x003d  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x26bd  */
+    /* JADX WARN: Removed duplicated region for block: B:1335:0x228c  */
+    /* JADX WARN: Removed duplicated region for block: B:1350:0x22e2  */
+    /* JADX WARN: Removed duplicated region for block: B:1352:0x22e5  */
+    /* JADX WARN: Removed duplicated region for block: B:1528:0x003d  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x2714  */
     /* JADX WARN: Removed duplicated region for block: B:306:0x0872  */
     /* JADX WARN: Removed duplicated region for block: B:315:0x0891  */
     /* JADX WARN: Removed duplicated region for block: B:333:0x08cf  */
@@ -6888,6 +6888,13 @@ public class MessageObject {
                                                                 this.messageText = LocaleController.formatSpannable(R.string.PollAddingActionYou, formatTextWithEntities(tL_messageActionPollAppendAnswer.answer.text, isOutOwner()));
                                                             } else {
                                                                 this.messageText = LocaleController.formatSpannable(R.string.PollAddingActionOther, DialogObject.getShortName(getUser(abstractMap, longSparseArray, DialogObject.getPeerDialogId(this.messageOwner.from_id))), formatTextWithEntities(tL_messageActionPollAppendAnswer.answer.text, isOutOwner()));
+                                                            }
+                                                        } else if (messageAction6 instanceof TLRPC.TL_messageActionPollDeleteAnswer) {
+                                                            TLRPC.TL_messageActionPollDeleteAnswer tL_messageActionPollDeleteAnswer = (TLRPC.TL_messageActionPollDeleteAnswer) messageAction6;
+                                                            if (isOut()) {
+                                                                this.messageText = LocaleController.formatSpannable(R.string.PollRemovedActionYou, formatTextWithEntities(tL_messageActionPollDeleteAnswer.answer.text, isOutOwner()));
+                                                            } else {
+                                                                this.messageText = LocaleController.formatSpannable(R.string.PollRemovedActionOther, DialogObject.getShortName(getUser(abstractMap, longSparseArray, DialogObject.getPeerDialogId(this.messageOwner.from_id))), formatTextWithEntities(tL_messageActionPollDeleteAnswer.answer.text, isOutOwner()));
                                                             }
                                                         } else if (messageAction6 instanceof TLRPC.TL_messageActionNoForwardsToggle) {
                                                             TLRPC.TL_messageActionNoForwardsToggle tL_messageActionNoForwardsToggle = (TLRPC.TL_messageActionNoForwardsToggle) messageAction6;

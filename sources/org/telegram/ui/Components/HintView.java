@@ -226,19 +226,10 @@ public class HintView extends FrameLayout {
                     }
                 }
             }
-            if (num.intValue() == -1) {
-                this.textView.setText(LocaleController.getString(R.string.PollSelectOption));
-            } else if (chatMessageCell.getMessageObject().isQuiz()) {
-                if (num.intValue() == 0) {
-                    this.textView.setText(LocaleController.getString(R.string.NoVotesQuiz));
-                } else {
-                    this.textView.setText(LocaleController.formatPluralString("Answer", num.intValue(), new Object[0]));
-                }
-            } else if (num.intValue() == 0) {
-                this.textView.setText(LocaleController.getString(R.string.NoVotes));
-            } else {
-                this.textView.setText(LocaleController.formatPluralString("Vote", num.intValue(), new Object[0]));
+            if (num.intValue() != -1) {
+                return false;
             }
+            this.textView.setText(LocaleController.getString(R.string.PollSelectOption));
             measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
             forwardNameCenterX = i;
         } else {

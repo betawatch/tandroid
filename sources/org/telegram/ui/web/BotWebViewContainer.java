@@ -4023,12 +4023,17 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         final TLRPC.TL_keyboardButtonRequestPeer tL_keyboardButtonRequestPeer = (TLRPC.TL_keyboardButtonRequestPeer) keyboardButton;
         TLRPC.RequestPeerType requestPeerType = tL_keyboardButtonRequestPeer.peer_type;
         if (requestPeerType instanceof TLRPC.TL_requestPeerTypeCreateBot) {
-            CreateBotAlert.show(getContext(), this.currentAccount, this.botUser, (TLRPC.TL_requestPeerTypeCreateBot) requestPeerType, false, new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda42
+            Context context = getContext();
+            int i2 = this.currentAccount;
+            TLRPC.User user = this.botUser;
+            Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda42
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     BotWebViewContainer.this.lambda$onEventReceived$51(str, tL_keyboardButtonRequestPeer, (TLRPC.User) obj);
                 }
-            }, this.resourcesProvider);
+            };
+            Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
+            CreateBotAlert.show(context, i2, user, (TLRPC.TL_requestPeerTypeCreateBot) requestPeerType, false, callback, resourcesProvider, BulletinFactory.of(this, resourcesProvider), true);
             return;
         }
         if ((requestPeerType instanceof TLRPC.TL_requestPeerTypeUser) && (i = tL_keyboardButtonRequestPeer.max_quantity) > 1) {
@@ -4083,9 +4088,9 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             }
 
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
-            public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, int i3, TopicsFragment topicsFragment) {
+            public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i3, int i4, TopicsFragment topicsFragment) {
                 boolean lambda$onEventReceived$56;
-                lambda$onEventReceived$56 = BotWebViewContainer.this.lambda$onEventReceived$56(zArr2, str, tL_keyboardButtonRequestPeer, dialogsActivity2, arrayList, charSequence, z, z2, i2, i3, topicsFragment);
+                lambda$onEventReceived$56 = BotWebViewContainer.this.lambda$onEventReceived$56(zArr2, str, tL_keyboardButtonRequestPeer, dialogsActivity2, arrayList, charSequence, z, z2, i3, i4, topicsFragment);
                 return lambda$onEventReceived$56;
             }
 

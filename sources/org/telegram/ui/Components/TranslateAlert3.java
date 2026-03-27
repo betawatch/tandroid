@@ -51,6 +51,7 @@ import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.TranslateAlert3;
 import org.telegram.ui.Components.UItem;
+import org.telegram.ui.Components.spoilers.SpoilersTextView;
 import org.telegram.ui.GradientClip;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
@@ -371,7 +372,7 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
         universalAdapter.itemsOffset = 1;
         universalAdapter.whiteSectionStart();
         String str2 = this.from_lang;
-        arrayList.add(Header.Factory.of(3, "", str2 != null ? TranslateAlert2.capitalFirst(TranslateAlert2.languageName(str2)) : LocaleController.getString(R.string.AIEditorOriginalText), null));
+        arrayList.add(Header.Factory.of(3, "", str2 != null ? TranslateAlert2.capitalFirst(TranslateAlert2.languageName(str2)) : LocaleController.getString(R.string.AIEditorOriginalText), null, null));
         arrayList.add(Text.Factory.of(4, this.text, this.collapsed, this.noforwards, new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateAlert3$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -391,7 +392,7 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
             str = " (" + this.tonesText[this.tone] + ")";
         }
         sb.append(str);
-        arrayList.add(Header.Factory.of(5, "", TranslateAlert2.capitalFirst(sb.toString()), new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateAlert3$$ExternalSyntheticLambda8
+        arrayList.add(Header.Factory.of(5, "", TranslateAlert2.capitalFirst(sb.toString()), null, new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateAlert3$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TranslateAlert3.this.onToLangMenu(view);
@@ -579,18 +580,21 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
         }
     }
 
-    public static class Header extends FrameLayout {
+    public static class Header extends FrameLayout implements Theme.Colorable {
         public final CheckBox2 emojifyCheckbox;
         public final LinearLayout emojifyContainer;
         public final TextView emojifyTextView;
         public final ImageView imageView;
         public final LinearLayout layout1;
         public final LinearLayout layout2;
+        private final Theme.ResourcesProvider resourcesProvider;
         public final TextView text1View;
         public final TextView text2View;
+        public final TextView text3View;
 
         public Header(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context);
+            this.resourcesProvider = resourcesProvider;
             setClipToPadding(false);
             setPadding(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(6.0f));
             LinearLayout linearLayout = new LinearLayout(context);
@@ -601,13 +605,10 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
             this.text1View = textView;
             textView.setTextSize(1, 14.0f);
             textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_EXTRA_BOLD));
-            textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
             linearLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 19, 0, 0, 0, 0));
             LinearLayout linearLayout2 = new LinearLayout(context);
             this.layout2 = linearLayout2;
             linearLayout2.setOrientation(0);
-            int i = Theme.key_windowBackgroundWhiteBlueHeader;
-            linearLayout2.setBackground(Theme.createRadSelectorDrawable(Theme.multAlpha(Theme.getColor(i), 0.1f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f)));
             linearLayout2.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(1.0f));
             ScaleStateListAnimator.apply(linearLayout2);
             linearLayout.addView(linearLayout2, LayoutHelper.createFrame(-2, -2.0f, 19, -6.0f, 0.0f, 0.0f, 0.0f));
@@ -615,20 +616,22 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
             this.text2View = textView2;
             textView2.setTextSize(1, 14.0f);
             textView2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_EXTRA_BOLD));
-            textView2.setTextColor(Theme.getColor(i));
             linearLayout2.addView(textView2, LayoutHelper.createLinear(-2, -2, 19, 0, 0, 0, 0));
             ImageView imageView = new ImageView(context);
             this.imageView = imageView;
-            imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
             imageView.setImageResource(R.drawable.arrows_select);
             linearLayout2.addView(imageView, LayoutHelper.createLinear(16, 16, 19, 1, 0, 0, 0));
             imageView.setTranslationY(AndroidUtilities.dp(1.0f));
+            TextView textView3 = new TextView(context);
+            this.text3View = textView3;
+            textView3.setTextSize(1, 14.0f);
+            textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_EXTRA_BOLD));
+            linearLayout.addView(textView3, LayoutHelper.createLinear(-2, -2, 19, -6, 0, 0, 0));
             LinearLayout linearLayout3 = new LinearLayout(context);
             this.emojifyContainer = linearLayout3;
             linearLayout3.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(3.0f));
             linearLayout3.setClipToPadding(false);
             linearLayout3.setOrientation(0);
-            linearLayout3.setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector, resourcesProvider), 24, 24));
             CheckBox2 checkBox2 = new CheckBox2(context, 20, resourcesProvider);
             this.emojifyCheckbox = checkBox2;
             checkBox2.setColor(Theme.key_radioBackgroundChecked, Theme.key_checkboxDisabled, Theme.key_checkboxCheck);
@@ -636,26 +639,49 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
             checkBox2.setChecked(false, false);
             checkBox2.setDrawBackgroundAsArc(10);
             linearLayout3.addView(checkBox2, LayoutHelper.createLinear(22, 22, 16, 0, 0, 0, 0));
-            TextView textView3 = new TextView(context);
-            this.emojifyTextView = textView3;
-            textView3.setTextColor(Theme.getColor(Theme.key_dialogTextBlack, resourcesProvider));
-            textView3.setTextSize(1, 14.0f);
-            textView3.setTypeface(AndroidUtilities.bold());
-            textView3.setText("emojify");
-            linearLayout3.addView(textView3, LayoutHelper.createLinear(-2, -2, 16, 3, -1, 2, 0));
+            TextView textView4 = new TextView(context);
+            this.emojifyTextView = textView4;
+            textView4.setTextColor(Theme.getColor(Theme.key_dialogTextBlack, resourcesProvider));
+            textView4.setTextSize(1, 14.0f);
+            textView4.setTypeface(AndroidUtilities.bold());
+            textView4.setText(LocaleController.getString(R.string.AIEditorEmojify));
+            linearLayout3.addView(textView4, LayoutHelper.createLinear(-2, -2, 16, 3, -1, 2, 0));
             addView(linearLayout3, LayoutHelper.createFrame(-2, -2.0f, 21, 0.0f, -3.0f, -6.0f, -3.0f));
             ScaleStateListAnimator.apply(linearLayout3, 0.025f, 1.5f);
+            updateColors();
         }
 
-        public void set(CharSequence charSequence, CharSequence charSequence2, View.OnClickListener onClickListener, boolean z, View.OnClickListener onClickListener2) {
+        @Override // org.telegram.ui.ActionBar.Theme.Colorable
+        public void updateColors() {
+            TextView textView = this.text1View;
+            int i = Theme.key_windowBackgroundWhiteBlackText;
+            textView.setTextColor(Theme.getColor(i, this.resourcesProvider));
+            TextView textView2 = this.text2View;
+            int i2 = Theme.key_windowBackgroundWhiteBlueHeader;
+            textView2.setTextColor(Theme.getColor(i2, this.resourcesProvider));
+            this.text3View.setTextColor(Theme.getColor(i, this.resourcesProvider));
+            this.imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2, this.resourcesProvider), PorterDuff.Mode.MULTIPLY));
+            LinearLayout linearLayout = this.layout2;
+            linearLayout.setBackground(linearLayout.isClickable() ? Theme.createRadSelectorDrawable(Theme.multAlpha(Theme.getColor(i2), 0.1f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f)) : null);
+            if (this.layout2.isClickable()) {
+                ScaleStateListAnimator.apply(this.layout2);
+            } else {
+                ScaleStateListAnimator.reset(this.layout2);
+            }
+            this.emojifyContainer.setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector, this.resourcesProvider), 24, 24));
+        }
+
+        public void set(CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, View.OnClickListener onClickListener, boolean z, View.OnClickListener onClickListener2) {
             this.text1View.setText(charSequence);
             this.text2View.setText(charSequence2);
+            this.text3View.setText(charSequence3);
             this.imageView.setVisibility(onClickListener != null ? 0 : 8);
             this.layout2.setOnClickListener(onClickListener);
             this.layout2.setClickable(onClickListener != null);
             this.emojifyCheckbox.setChecked(z, false);
             this.emojifyContainer.setVisibility(onClickListener2 != null ? 0 : 8);
             this.emojifyContainer.setOnClickListener(onClickListener2);
+            updateColors();
         }
 
         @Override // android.widget.FrameLayout, android.view.View
@@ -680,18 +706,19 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
             public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
-                ((Header) view).set(uItem.text, uItem.subtext, uItem.clickCallback, uItem.checked, uItem.clickCallback2);
+                ((Header) view).set(uItem.text, uItem.subtext, uItem.textValue, uItem.clickCallback, uItem.checked, uItem.clickCallback2);
             }
 
-            public static UItem of(int i, CharSequence charSequence, CharSequence charSequence2, View.OnClickListener onClickListener) {
-                return of(i, charSequence, charSequence2, onClickListener, false, null);
+            public static UItem of(int i, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, View.OnClickListener onClickListener) {
+                return of(i, charSequence, charSequence2, charSequence3, onClickListener, false, null);
             }
 
-            public static UItem of(int i, CharSequence charSequence, CharSequence charSequence2, View.OnClickListener onClickListener, boolean z, View.OnClickListener onClickListener2) {
+            public static UItem of(int i, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, View.OnClickListener onClickListener, boolean z, View.OnClickListener onClickListener2) {
                 UItem ofFactory = UItem.ofFactory(Factory.class);
                 ofFactory.id = i;
                 ofFactory.text = charSequence;
                 ofFactory.subtext = charSequence2;
+                ofFactory.textValue = charSequence3;
                 ofFactory.clickCallback = onClickListener;
                 ofFactory.checked = z;
                 ofFactory.clickCallback2 = onClickListener2;
@@ -705,7 +732,7 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
             public boolean contentsEquals(UItem uItem, UItem uItem2) {
-                return TextUtils.equals(uItem.text, uItem2.text) && TextUtils.equals(uItem.subtext, uItem2.subtext) && uItem.clickCallback2 == uItem2.clickCallback2;
+                return TextUtils.equals(uItem.text, uItem2.text) && TextUtils.equals(uItem.subtext, uItem2.subtext) && TextUtils.equals(uItem.textValue, uItem2.textValue) && uItem.clickCallback2 == uItem2.clickCallback2;
             }
         }
     }
@@ -718,8 +745,8 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
         public TextView moreView;
         public boolean needDivider;
         private final Theme.ResourcesProvider resourcesProvider;
-        public LinkSpanDrawable.LinksTextView shortTextView;
-        public LinkSpanDrawable.LinksTextView textView;
+        public SpoilersTextView shortTextView;
+        public SpoilersTextView textView;
         private FrameLayout.LayoutParams textViewLayoutParams;
 
         public Text(Context context, Theme.ResourcesProvider resourcesProvider) {
@@ -729,10 +756,10 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
             this.resourcesProvider = resourcesProvider;
             setClipToPadding(false);
             setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(16.0f));
-            LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context) { // from class: org.telegram.ui.Components.TranslateAlert3.Text.1
+            SpoilersTextView spoilersTextView = new SpoilersTextView(context) { // from class: org.telegram.ui.Components.TranslateAlert3.Text.1
                 private GradientClip clip = new GradientClip();
 
-                @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView, android.widget.TextView, android.view.View
+                @Override // org.telegram.ui.Components.spoilers.SpoilersTextView, android.widget.TextView, android.view.View
                 protected void onDraw(Canvas canvas) {
                     int width = Text.this.moreView.getWidth() + AndroidUtilities.dp(8.0f);
                     canvas.saveLayerAlpha(0.0f, 0.0f, getWidth() - width, getHeight(), NotificationCenter.invalidateMotionBackground, 31);
@@ -747,8 +774,8 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
                     canvas.restore();
                 }
             };
-            this.shortTextView = linksTextView;
-            NotificationCenter.listenEmojiLoading(linksTextView);
+            this.shortTextView = spoilersTextView;
+            NotificationCenter.listenEmojiLoading(spoilersTextView);
             this.shortTextView.setTextSize(1, 16.0f);
             this.shortTextView.setMaxLines(1);
             this.shortTextView.setSingleLine();
@@ -761,8 +788,8 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
             this.moreView.setGravity(17);
             ScaleStateListAnimator.apply(this.moreView);
             addView(this.moreView, LayoutHelper.createFrame(-2, 18.0f, 53, 0.0f, 1.0f, 0.0f, 0.0f));
-            LinkSpanDrawable.LinksTextView linksTextView2 = new LinkSpanDrawable.LinksTextView(context) { // from class: org.telegram.ui.Components.TranslateAlert3.Text.2
-                @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView, android.widget.TextView, android.view.View
+            SpoilersTextView spoilersTextView2 = new SpoilersTextView(context) { // from class: org.telegram.ui.Components.TranslateAlert3.Text.2
+                @Override // org.telegram.ui.Components.spoilers.SpoilersTextView, android.widget.TextView, android.view.View
                 protected void onDraw(Canvas canvas) {
                     super.onDraw(canvas);
                     canvas.save();
@@ -771,8 +798,8 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
                     canvas.restore();
                 }
             };
-            this.textView = linksTextView2;
-            NotificationCenter.listenEmojiLoading(linksTextView2);
+            this.textView = spoilersTextView2;
+            NotificationCenter.listenEmojiLoading(spoilersTextView2);
             this.textView.setTextSize(1, 16.0f);
             this.textView.setTextIsSelectable(true);
             View view = this.textView;
@@ -791,9 +818,9 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
 
         @Override // org.telegram.ui.ActionBar.Theme.Colorable
         public void updateColors() {
-            LinkSpanDrawable.LinksTextView linksTextView = this.shortTextView;
+            SpoilersTextView spoilersTextView = this.shortTextView;
             int i = Theme.key_windowBackgroundWhiteBlackText;
-            linksTextView.setTextColor(Theme.getColor(i, this.resourcesProvider));
+            spoilersTextView.setTextColor(Theme.getColor(i, this.resourcesProvider));
             TextView textView = this.moreView;
             int i2 = Theme.key_windowBackgroundWhiteBlueHeader;
             textView.setTextColor(Theme.getColor(i2, this.resourcesProvider));
@@ -838,9 +865,9 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
                     int spanStart = spannableStringBuilder.getSpanStart(loadingSpanArr[i]);
                     int spanEnd = spannableStringBuilder.getSpanEnd(loadingSpanArr[i]);
                     spannableStringBuilder.removeSpan(loadingSpanArr[i]);
-                    LinkSpanDrawable.LinksTextView linksTextView = this.textView;
+                    SpoilersTextView spoilersTextView = this.textView;
                     LoadingSpan loadingSpan = loadingSpanArr[i];
-                    spannableStringBuilder.setSpan(new LoadingSpan(linksTextView, loadingSpan.size, loadingSpan.yOffset).setHeight(loadingSpanArr[i].height).setAlpha(loadingSpanArr[i].alpha).setFullWidth(loadingSpanArr[i].fullWidth), spanStart, spanEnd, 33);
+                    spannableStringBuilder.setSpan(new LoadingSpan(spoilersTextView, loadingSpan.size, loadingSpan.yOffset).setHeight(loadingSpanArr[i].height).setAlpha(loadingSpanArr[i].alpha).setFullWidth(loadingSpanArr[i].fullWidth), spanStart, spanEnd, 33);
                 }
             }
             if (this.collapsed && !z) {
@@ -882,11 +909,11 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
         protected void onDraw(Canvas canvas) {
             super.onDraw(canvas);
             if (this.needDivider) {
-                LinkSpanDrawable.LinksTextView linksTextView = this.collapsed ? this.shortTextView : this.textView;
+                SpoilersTextView spoilersTextView = this.collapsed ? this.shortTextView : this.textView;
                 if (LocaleController.isRTL) {
-                    canvas.drawRect(0.0f, getMeasuredHeight() - 1, linksTextView.getRight(), getMeasuredHeight(), Theme.dividerPaint);
+                    canvas.drawRect(0.0f, getMeasuredHeight() - 1, spoilersTextView.getRight(), getMeasuredHeight(), Theme.dividerPaint);
                 } else {
-                    canvas.drawRect(linksTextView.getLeft(), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), Theme.dividerPaint);
+                    canvas.drawRect(spoilersTextView.getLeft(), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), Theme.dividerPaint);
                 }
             }
         }

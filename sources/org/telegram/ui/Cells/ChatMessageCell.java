@@ -31072,13 +31072,13 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:315:0x09ba  */
-    /* JADX WARN: Removed duplicated region for block: B:319:0x09f6  */
-    /* JADX WARN: Removed duplicated region for block: B:328:0x0a33  */
-    /* JADX WARN: Removed duplicated region for block: B:335:0x0a63  */
-    /* JADX WARN: Removed duplicated region for block: B:344:0x0a87  */
-    /* JADX WARN: Removed duplicated region for block: B:346:0x0a91  */
-    /* JADX WARN: Removed duplicated region for block: B:350:0x09bf  */
+    /* JADX WARN: Removed duplicated region for block: B:317:0x09be  */
+    /* JADX WARN: Removed duplicated region for block: B:321:0x09fa  */
+    /* JADX WARN: Removed duplicated region for block: B:330:0x0a37  */
+    /* JADX WARN: Removed duplicated region for block: B:337:0x0a67  */
+    /* JADX WARN: Removed duplicated region for block: B:346:0x0a8b  */
+    /* JADX WARN: Removed duplicated region for block: B:348:0x0a95  */
+    /* JADX WARN: Removed duplicated region for block: B:352:0x09c3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -31572,7 +31572,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         if (Arrays.equals(pollButton5.answer.option, pollAnswerVoters.option)) {
                             PollButtonDrawable pollButtonDrawable = pollButton5.pollButtonDrawable;
                             if (pollButtonDrawable != null) {
-                                pollButtonDrawable.setVotersVisible(!this.isBot && (this.pollVoted || this.pollResultsPreview), pollButton2 != null);
+                                pollButtonDrawable.setVotersVisible(!this.isBot && (this.pollVoted || this.pollResultsPreview || this.pollClosed), pollButton2 != null);
                                 pollButton5.pollButtonDrawable.setVotersCount(pollAnswerVoters.voters, pollButton2 != null);
                                 pollButton5.pollButtonDrawable.setRecentVoters(pollAnswerVoters.recent_voters, pollButton2 != null);
                                 float votersCountTargetWidth = pollButton5.pollButtonDrawable.getVotersCountTargetWidth();
@@ -31964,7 +31964,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 z2 = false;
             }
             boolean z3 = this.pollVoted;
-            boolean z4 = !z3 && !this.pollClosed && this.pollHasResults && this.pollHideResults;
+            boolean z4 = !z3 && !this.pollClosed && this.pollHasResults && tL_messageMediaPoll.poll.creator;
             boolean z5 = (z3 || this.pollClosed) ? false : true;
             TLRPC.Poll poll = tL_messageMediaPoll.poll;
             boolean z6 = poll.public_voters;
@@ -31976,7 +31976,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 if (poll.multiple_choice && z5) {
                     charSequence = LocaleController.getString(org.telegram.messenger.R.string.PollSubmitVotesNoCaps);
                     i = 83;
-                } else if ((this.isBot || !z6 || !z3 || (this.pollHideResults && !this.pollHasResults)) && (!this.pollClosed || pollResults.total_voters == 0)) {
+                } else if (this.isBot || !z6 || ((!z3 || (this.pollHideResults && !this.pollHasResults)) && (!this.pollClosed || pollResults.total_voters == 0))) {
                     charSequence = null;
                 } else {
                     formatString = LocaleController.formatString(org.telegram.messenger.R.string.PollViewVotesX, Integer.valueOf(pollResults.total_voters));

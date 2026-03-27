@@ -557,7 +557,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00a4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -574,7 +574,8 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
         if (view instanceof SharedAudioCell) {
             SharedAudioCell sharedAudioCell = (SharedAudioCell) view;
             MediaController.AudioEntry audioEntry = (MediaController.AudioEntry) sharedAudioCell.getTag();
-            if (this.parentAlert.isStoryAudioPicker) {
+            ChatAttachAlert chatAttachAlert = this.parentAlert;
+            if (chatAttachAlert.isStoryAudioPicker || chatAttachAlert.isPollAttach) {
                 this.sendPressed = true;
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(audioEntry.messageObject);

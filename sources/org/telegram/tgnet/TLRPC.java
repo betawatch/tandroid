@@ -14560,7 +14560,7 @@ public class TLRPC {
             TLObject tL_urlAuthResultDefault;
             if (i == -1445536993) {
                 tL_urlAuthResultDefault = new TL_urlAuthResultDefault();
-            } else if (i == -117904610) {
+            } else if (i == 1020666860) {
                 tL_urlAuthResultDefault = new TL_urlAuthResultRequest();
             } else {
                 tL_urlAuthResultDefault = i != 1648005024 ? null : new TL_urlAuthResultAccepted();
@@ -14597,12 +14597,13 @@ public class TLRPC {
     }
 
     public static class TL_urlAuthResultRequest extends UrlAuthResult {
-        public static final int constructor = -117904610;
+        public static final int constructor = 1020666860;
         public User bot;
         public String browser;
         public String domain;
         public int flags;
         public String ip;
+        public boolean is_app;
         public ArrayList<String> match_codes = new ArrayList<>();
         public boolean match_codes_first;
         public String platform;
@@ -14610,6 +14611,7 @@ public class TLRPC {
         public boolean request_phone_number;
         public boolean request_write_access;
         public long user_id_hint;
+        public String verified_app_name;
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
@@ -14618,6 +14620,7 @@ public class TLRPC {
             this.request_write_access = TLObject.hasFlag(readInt32, 1);
             this.request_phone_number = TLObject.hasFlag(this.flags, 2);
             this.match_codes_first = TLObject.hasFlag(this.flags, 32);
+            this.is_app = TLObject.hasFlag(this.flags, 64);
             this.bot = User.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             this.domain = inputSerializedData.readString(z);
             if (TLObject.hasFlag(this.flags, 4)) {
@@ -14632,6 +14635,9 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, 16)) {
                 this.user_id_hint = inputSerializedData.readInt64(z);
             }
+            if (TLObject.hasFlag(this.flags, 128)) {
+                this.verified_app_name = inputSerializedData.readString(z);
+            }
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -14643,7 +14649,9 @@ public class TLRPC {
             this.flags = flag2;
             int flag3 = TLObject.setFlag(flag2, 32, this.match_codes_first);
             this.flags = flag3;
-            outputSerializedData.writeInt32(flag3);
+            int flag4 = TLObject.setFlag(flag3, 64, this.is_app);
+            this.flags = flag4;
+            outputSerializedData.writeInt32(flag4);
             this.bot.serializeToStream(outputSerializedData);
             outputSerializedData.writeString(this.domain);
             if (TLObject.hasFlag(this.flags, 4)) {
@@ -14657,6 +14665,9 @@ public class TLRPC {
             }
             if (TLObject.hasFlag(this.flags, 16)) {
                 outputSerializedData.writeInt64(this.user_id_hint);
+            }
+            if (TLObject.hasFlag(this.flags, 128)) {
+                outputSerializedData.writeString(this.verified_app_name);
             }
         }
     }
@@ -37333,6 +37344,7 @@ public class TLRPC {
         public boolean bot_attach_menu;
         public boolean bot_business;
         public boolean bot_can_edit;
+        public boolean bot_can_manage_bots;
         public boolean bot_chat_history;
         public boolean bot_forum_can_manage_topics;
         public boolean bot_forum_view;
@@ -37618,6 +37630,7 @@ public class TLRPC {
             this.bot_has_main_app = TLObject.hasFlag(this.flags2, 8192);
             this.bot_forum_view = TLObject.hasFlag(this.flags2, 65536);
             this.bot_forum_can_manage_topics = TLObject.hasFlag(this.flags2, 131072);
+            this.bot_can_manage_bots = TLObject.hasFlag(this.flags2, 262144);
             this.id = inputSerializedData.readInt64(z);
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.access_hash = inputSerializedData.readInt64(z);
@@ -37743,7 +37756,9 @@ public class TLRPC {
             this.flags2 = flag26;
             int flag27 = TLObject.setFlag(flag26, 131072, this.bot_forum_can_manage_topics);
             this.flags2 = flag27;
-            outputSerializedData.writeInt32(flag27);
+            int flag28 = TLObject.setFlag(flag27, 262144, this.bot_can_manage_bots);
+            this.flags2 = flag28;
+            outputSerializedData.writeInt32(flag28);
             outputSerializedData.writeInt64(this.id);
             if (TLObject.hasFlag(this.flags, 1)) {
                 outputSerializedData.writeInt64(this.access_hash);
