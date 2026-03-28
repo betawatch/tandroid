@@ -274,6 +274,11 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 }
 
                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+                public /* synthetic */ MessageObject getPollMessageObject() {
+                    return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$getPollMessageObject(this);
+                }
+
+                @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
                 public /* synthetic */ String getQuery(boolean z) {
                     return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$getQuery(this, z);
                 }

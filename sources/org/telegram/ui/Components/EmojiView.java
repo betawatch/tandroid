@@ -570,6 +570,11 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public /* synthetic */ MessageObject getPollMessageObject() {
+            return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$getPollMessageObject(this);
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public /* synthetic */ boolean isPhotoEditor() {
             return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$isPhotoEditor(this);
         }

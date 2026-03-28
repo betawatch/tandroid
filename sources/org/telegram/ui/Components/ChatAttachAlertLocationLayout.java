@@ -650,6 +650,9 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 LocationActivityAdapter locationActivityAdapter2 = new LocationActivityAdapter(context, i7, j, true, resourcesProvider, chatAttachAlert3.isStoryLocationPicker, false, chatAttachAlert3.isBizLocationPicker);
                 this.adapter = locationActivityAdapter2;
                 recyclerListView2.setAdapter(locationActivityAdapter2);
+                LocationActivityAdapter locationActivityAdapter3 = this.adapter;
+                ChatAttachAlert chatAttachAlert4 = this.parentAlert;
+                locationActivityAdapter3.isPollAttach = chatAttachAlert4 == null && chatAttachAlert4.isPollAttach;
                 DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
                 defaultItemAnimator.setDurations(350L);
                 defaultItemAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -764,8 +767,8 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 this.searchListView.setClipToPadding(false);
                 this.searchListView.setVisibility(8);
                 this.searchListView.setLayoutManager(new LinearLayoutManager(context, 1, false));
-                ChatAttachAlert chatAttachAlert4 = this.parentAlert;
-                LocationActivitySearchAdapter locationActivitySearchAdapter2 = new LocationActivitySearchAdapter(context, resourcesProvider, chatAttachAlert4.isStoryLocationPicker, chatAttachAlert4.isBizLocationPicker) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.6
+                ChatAttachAlert chatAttachAlert5 = this.parentAlert;
+                LocationActivitySearchAdapter locationActivitySearchAdapter2 = new LocationActivitySearchAdapter(context, resourcesProvider, chatAttachAlert5.isStoryLocationPicker, chatAttachAlert5.isBizLocationPicker) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.6
                     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
                     public void notifyDataSetChanged() {
                         if (ChatAttachAlertLocationLayout.this.searchItem != null) {
@@ -1057,6 +1060,9 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         LocationActivityAdapter locationActivityAdapter22 = new LocationActivityAdapter(context, i72, j2, true, resourcesProvider, chatAttachAlert32.isStoryLocationPicker, false, chatAttachAlert32.isBizLocationPicker);
         this.adapter = locationActivityAdapter22;
         recyclerListView22.setAdapter(locationActivityAdapter22);
+        LocationActivityAdapter locationActivityAdapter32 = this.adapter;
+        ChatAttachAlert chatAttachAlert42 = this.parentAlert;
+        locationActivityAdapter32.isPollAttach = chatAttachAlert42 == null && chatAttachAlert42.isPollAttach;
         DefaultItemAnimator defaultItemAnimator2 = new DefaultItemAnimator();
         defaultItemAnimator2.setDurations(350L);
         defaultItemAnimator2.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -1171,8 +1177,8 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.searchListView.setClipToPadding(false);
         this.searchListView.setVisibility(8);
         this.searchListView.setLayoutManager(new LinearLayoutManager(context, 1, false));
-        ChatAttachAlert chatAttachAlert42 = this.parentAlert;
-        LocationActivitySearchAdapter locationActivitySearchAdapter22 = new LocationActivitySearchAdapter(context, resourcesProvider, chatAttachAlert42.isStoryLocationPicker, chatAttachAlert42.isBizLocationPicker) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.6
+        ChatAttachAlert chatAttachAlert52 = this.parentAlert;
+        LocationActivitySearchAdapter locationActivitySearchAdapter22 = new LocationActivitySearchAdapter(context, resourcesProvider, chatAttachAlert52.isStoryLocationPicker, chatAttachAlert52.isBizLocationPicker) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.6
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public void notifyDataSetChanged() {
                 if (ChatAttachAlertLocationLayout.this.searchItem != null) {

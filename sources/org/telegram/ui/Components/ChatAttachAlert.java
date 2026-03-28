@@ -6884,7 +6884,6 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         float f2;
         float f3;
         float f4;
-        TextView textView;
         float max;
         int i3;
         float floatValue = this.animatorActionBarVisible.getFloatValue();
@@ -6902,7 +6901,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         }
         ActionBar.getCurrentActionBarHeight();
         float f5 = 1.0f;
-        this.cornerRadius = 1.0f - floatValue;
+        float f6 = 1.0f - floatValue;
+        this.cornerRadius = f6;
         if (AndroidUtilities.isTablet()) {
             i2 = 16;
         } else {
@@ -6952,10 +6952,10 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 }
                 ChatAttachAlertPollLayout chatAttachAlertPollLayout = this.pollLayout;
                 if (chatAttachAlertPollLayout == this.nextAttachLayout) {
-                    f3 = (chatAttachAlertPollLayout.getTranslationY() + getScrollOffsetY(1)) - AndroidUtilities.dp(((i3 * floatValue) + 7.0f) - (r2 * 12.0f));
+                    f3 = (chatAttachAlertPollLayout.getTranslationY() + getScrollOffsetY(1)) - AndroidUtilities.dp(((i3 * floatValue) + 7.0f) - (f6 * 12.0f));
                     f2 = this.translationProgress;
                 } else if (chatAttachAlertPollLayout == this.currentAttachLayout) {
-                    f3 = (chatAttachAlertPollLayout.getTranslationY() + getScrollOffsetY(0)) - AndroidUtilities.dp(((i3 * floatValue) + 7.0f) - (r2 * 12.0f));
+                    f3 = (chatAttachAlertPollLayout.getTranslationY() + getScrollOffsetY(0)) - AndroidUtilities.dp(((i3 * floatValue) + 7.0f) - (f6 * 12.0f));
                     f2 = this.nextAttachLayout == null ? 1.0f : 1.0f - this.translationProgress;
                 }
                 if (this.todoLayout != null) {
@@ -6969,17 +6969,18 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     }
                     ChatAttachAlertPollLayout chatAttachAlertPollLayout2 = this.todoLayout;
                     if (chatAttachAlertPollLayout2 == this.nextAttachLayout) {
-                        float translationY = (chatAttachAlertPollLayout2.getTranslationY() + getScrollOffsetY(1)) - AndroidUtilities.dp(((i4 * floatValue) + 7.0f) - (r2 * 12.0f));
+                        float translationY = (chatAttachAlertPollLayout2.getTranslationY() + getScrollOffsetY(1)) - AndroidUtilities.dp(((i4 * floatValue) + 7.0f) - (f6 * 12.0f));
                         f5 = this.translationProgress;
                         f4 = translationY;
                     } else if (chatAttachAlertPollLayout2 == this.currentAttachLayout) {
-                        f4 = (chatAttachAlertPollLayout2.getTranslationY() + getScrollOffsetY(0)) - AndroidUtilities.dp(((i4 * floatValue) + 7.0f) - (r2 * 12.0f));
+                        f4 = (chatAttachAlertPollLayout2.getTranslationY() + getScrollOffsetY(0)) - AndroidUtilities.dp(((i4 * floatValue) + 7.0f) - (f6 * 12.0f));
                         if (this.nextAttachLayout != null) {
                             f5 = 1.0f - this.translationProgress;
                         }
                     }
-                    textView = this.doneItem;
-                    if (textView != null) {
+                    if (this.doneItem != null) {
+                        int measuredWidth = LocaleController.isRTL ? (this.containerView.getMeasuredWidth() - this.doneItem.getMeasuredWidth()) - AndroidUtilities.dp(62.0f) : 0;
+                        TextView textView = this.doneItem;
                         if (f2 > 0.0f && f5 > 0.0f) {
                             max = AndroidUtilities.lerp(f3, f4, f5);
                         } else {
@@ -6992,15 +6993,14 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                             max = Math.max(f3, f4);
                         }
                         textView.setTranslationY(Math.max(0.0f, max) + this.currentPanTranslationY);
-                        this.doneItem.setTranslationX(-AndroidUtilities.dp((r2 * 12.0f) + 12.0f));
+                        this.doneItem.setTranslationX(-(AndroidUtilities.dp((7.0f * f6) + 12.0f) + (measuredWidth * f6)));
                     }
                     this.doneItemAlphaByLayout = Math.max(f5, f2);
                     checkUi_doneItemVisibility();
                 }
                 f4 = 0.0f;
                 f5 = 0.0f;
-                textView = this.doneItem;
-                if (textView != null) {
+                if (this.doneItem != null) {
                 }
                 this.doneItemAlphaByLayout = Math.max(f5, f2);
                 checkUi_doneItemVisibility();
@@ -7011,8 +7011,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             }
             f4 = 0.0f;
             f5 = 0.0f;
-            textView = this.doneItem;
-            if (textView != null) {
+            if (this.doneItem != null) {
             }
             this.doneItemAlphaByLayout = Math.max(f5, f2);
             checkUi_doneItemVisibility();
@@ -7037,8 +7036,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         }
         f4 = 0.0f;
         f5 = 0.0f;
-        textView = this.doneItem;
-        if (textView != null) {
+        if (this.doneItem != null) {
         }
         this.doneItemAlphaByLayout = Math.max(f5, f2);
         checkUi_doneItemVisibility();

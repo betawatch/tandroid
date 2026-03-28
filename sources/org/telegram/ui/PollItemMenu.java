@@ -85,6 +85,7 @@ import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundPro
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
 import org.telegram.ui.Components.blur3.utils.Blur3Utils;
 import org.telegram.ui.Components.chat.ViewPositionWatcher;
+import org.telegram.ui.Components.poll.RecentVotersCell;
 import org.telegram.ui.PollItemMenu;
 
 /* loaded from: classes4.dex */
@@ -192,7 +193,7 @@ public class PollItemMenu extends Dialog {
             }
         };
         this.windowView = frameLayout;
-        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda11
+        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PollItemMenu.this.lambda$new$0(view);
@@ -263,7 +264,7 @@ public class PollItemMenu extends Dialog {
         MessagePreviewView.TabsView tabsView2 = this.tabsView;
         ViewPagerFixed viewPagerFixed2 = this.viewPager;
         Objects.requireNonNull(viewPagerFixed2);
-        tabsView2.setOnTabClick(new PollItemMenu$$ExternalSyntheticLambda12(viewPagerFixed2));
+        tabsView2.setOnTabClick(new PollItemMenu$$ExternalSyntheticLambda14(viewPagerFixed2));
         MessagePreviewView.TabsView tabsView3 = this.tabsView;
         tabsView3.setBackground(blurredBackgroundDrawableViewFactory.create(tabsView3).setColorProvider(BlurredBackgroundProviderImpl.scrimMenuBackground(resourcesProvider)).setHasPadding(true).setPadding(AndroidUtilities.dp(8.0f)).setRadius(AndroidUtilities.dp(16.0f)));
         TextView textView = new TextView(context);
@@ -351,15 +352,18 @@ public class PollItemMenu extends Dialog {
         this.iBlur3Factory.invalidateAllLinkedViews();
     }
 
-    /* JADX WARN: Type inference failed for: r5v1 */
-    /* JADX WARN: Type inference failed for: r5v2, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r5v3 */
+    /* JADX WARN: Type inference failed for: r5v2 */
+    /* JADX WARN: Type inference failed for: r5v3, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r5v5 */
     public void setCell(final BaseFragment baseFragment, ChatMessageCell chatMessageCell, final byte[] bArr) {
         ChatActivity chatActivity;
         final TLRPC.PollAnswer pollAnswer;
         boolean z;
+        TLRPC.PollAnswerVoters pollAnswerVoters;
+        ArrayList arrayList;
+        boolean z2;
         ?? r5;
-        ArrayList<TLRPC.PollAnswerVoters> arrayList;
+        ArrayList<TLRPC.PollAnswerVoters> arrayList2;
         this.cell = chatMessageCell;
         this.taskId = bArr;
         ChatActivity chatActivity2 = baseFragment instanceof ChatActivity ? (ChatActivity) baseFragment : null;
@@ -383,7 +387,7 @@ public class PollItemMenu extends Dialog {
                 private final Paint shadowPaint = new Paint(1);
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell, android.view.View
-                public void setPressed(boolean z2) {
+                public void setPressed(boolean z3) {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell, android.view.View
@@ -394,6 +398,8 @@ public class PollItemMenu extends Dialog {
                     float pollButtonBottom = getPollButtonBottom(pollIndex);
                     RectF rectF = AndroidUtilities.rectTmp;
                     rectF.set(getPollButtonsLeft(), pollButtonTop, getPollButtonsRight(), pollButtonBottom);
+                    rectF.top += AndroidUtilities.dp(3.0f) * (1.0f - PollItemMenu.this.openProgress);
+                    rectF.bottom += AndroidUtilities.dp(3.0f) * (1.0f - PollItemMenu.this.openProgress);
                     this.clipPath.rewind();
                     this.clipPath.addRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), Path.Direction.CW);
                     this.shadowPaint.setColor(0);
@@ -509,13 +515,13 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressChannelAvatar(ChatMessageCell chatMessageCell3, TLRPC.Chat chat, int i, float f, float f2, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelAvatar(this, chatMessageCell3, chat, i, f, f2, z2);
+                public /* synthetic */ void didPressChannelAvatar(ChatMessageCell chatMessageCell3, TLRPC.Chat chat, int i, float f, float f2, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelAvatar(this, chatMessageCell3, chat, i, f, f2, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressChannelRecommendation(ChatMessageCell chatMessageCell3, TLObject tLObject, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelRecommendation(this, chatMessageCell3, tLObject, z2);
+                public /* synthetic */ void didPressChannelRecommendation(ChatMessageCell chatMessageCell3, TLObject tLObject, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelRecommendation(this, chatMessageCell3, tLObject, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -579,8 +585,8 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressImage(ChatMessageCell chatMessageCell3, float f, float f2, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressImage(this, chatMessageCell3, f, f2, z2);
+                public /* synthetic */ void didPressImage(ChatMessageCell chatMessageCell3, float f, float f2, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressImage(this, chatMessageCell3, f, f2, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -604,13 +610,13 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressReaction(ChatMessageCell chatMessageCell3, TLRPC.ReactionCount reactionCount, boolean z2, float f, float f2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReaction(this, chatMessageCell3, reactionCount, z2, f, f2);
+                public /* synthetic */ void didPressReaction(ChatMessageCell chatMessageCell3, TLRPC.ReactionCount reactionCount, boolean z3, float f, float f2) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReaction(this, chatMessageCell3, reactionCount, z3, f, f2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressReplyMessage(ChatMessageCell chatMessageCell3, int i, float f, float f2, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReplyMessage(this, chatMessageCell3, i, f, f2, z2);
+                public /* synthetic */ void didPressReplyMessage(ChatMessageCell chatMessageCell3, int i, float f, float f2, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReplyMessage(this, chatMessageCell3, i, f, f2, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -634,8 +640,8 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressSummarize(ChatMessageCell chatMessageCell3, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSummarize(this, chatMessageCell3, z2);
+                public /* synthetic */ void didPressSummarize(ChatMessageCell chatMessageCell3, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSummarize(this, chatMessageCell3, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -644,18 +650,18 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean didPressToDoButton(ChatMessageCell chatMessageCell3, TLRPC.TodoItem todoItem, boolean z2) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressToDoButton(this, chatMessageCell3, todoItem, z2);
+                public /* synthetic */ boolean didPressToDoButton(ChatMessageCell chatMessageCell3, TLRPC.TodoItem todoItem, boolean z3) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressToDoButton(this, chatMessageCell3, todoItem, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressUrl(ChatMessageCell chatMessageCell3, CharacterStyle characterStyle, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressUrl(this, chatMessageCell3, characterStyle, z2);
+                public /* synthetic */ void didPressUrl(ChatMessageCell chatMessageCell3, CharacterStyle characterStyle, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressUrl(this, chatMessageCell3, characterStyle, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressUserAvatar(ChatMessageCell chatMessageCell3, TLRPC.User user, float f, float f2, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressUserAvatar(this, chatMessageCell3, user, f, f2, z2);
+                public /* synthetic */ void didPressUserAvatar(ChatMessageCell chatMessageCell3, TLRPC.User user, float f, float f2, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressUserAvatar(this, chatMessageCell3, user, f, f2, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -674,12 +680,12 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressVoteButtons(ChatMessageCell chatMessageCell3, ArrayList arrayList2, int i, int i2, int i3) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressVoteButtons(this, chatMessageCell3, arrayList2, i, i2, i3);
+                public /* synthetic */ void didPressVoteButtons(ChatMessageCell chatMessageCell3, ArrayList arrayList3, int i, int i2, int i3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressVoteButtons(this, chatMessageCell3, arrayList3, i, i2, i3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressWebPage(ChatMessageCell chatMessageCell3, TLRPC.WebPage webPage, String str, boolean z2) {
+                public /* synthetic */ void didPressWebPage(ChatMessageCell chatMessageCell3, TLRPC.WebPage webPage, String str, boolean z3) {
                     Browser.openUrl(chatMessageCell3.getContext(), str);
                 }
 
@@ -719,13 +725,13 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void forceUpdate(ChatMessageCell chatMessageCell3, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$forceUpdate(this, chatMessageCell3, z2);
+                public /* synthetic */ void forceUpdate(ChatMessageCell chatMessageCell3, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$forceUpdate(this, chatMessageCell3, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void forceUpdateNoAnimation(ChatMessageCell chatMessageCell3, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$forceUpdateNoAnimation(this, chatMessageCell3, z2);
+                public /* synthetic */ void forceUpdateNoAnimation(ChatMessageCell chatMessageCell3, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$forceUpdateNoAnimation(this, chatMessageCell3, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -804,8 +810,8 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean needPlayMessage(ChatMessageCell chatMessageCell3, MessageObject messageObject2, boolean z2) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needPlayMessage(this, chatMessageCell3, messageObject2, z2);
+                public /* synthetic */ boolean needPlayMessage(ChatMessageCell chatMessageCell3, MessageObject messageObject2, boolean z3) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needPlayMessage(this, chatMessageCell3, messageObject2, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -834,8 +840,8 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean shouldDrawThreadProgress(ChatMessageCell chatMessageCell3, boolean z2) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldDrawThreadProgress(this, chatMessageCell3, z2);
+                public /* synthetic */ boolean shouldDrawThreadProgress(ChatMessageCell chatMessageCell3, boolean z3) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldDrawThreadProgress(this, chatMessageCell3, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -853,10 +859,12 @@ public class PollItemMenu extends Dialog {
             MessageObject.GroupedMessages currentMessagesGroup = this.cell.getCurrentMessagesGroup();
             ChatMessageCell chatMessageCell4 = this.cell;
             chatMessageCell3.setMessageObject(messageObject2, currentMessagesGroup, chatMessageCell4.pinnedBottom, chatMessageCell4.pinnedTop, chatMessageCell4.firstInChat);
-            this.containerView.addView(this.myTaskCell, new FrameLayout.LayoutParams(this.cell.getWidth(), height, 51));
-            ChatMessageCell chatMessageCell5 = new ChatMessageCell(getContext(), UserConfig.selectedAccount, false, null, this.cell.getResourcesProvider()) { // from class: org.telegram.ui.PollItemMenu.9
+            ChatMessageCell chatMessageCell5 = this.myTaskCell;
+            chatMessageCell5.drawOnlyPollId = bArr;
+            this.containerView.addView(chatMessageCell5, new FrameLayout.LayoutParams(this.cell.getWidth(), height, 51));
+            ChatMessageCell chatMessageCell6 = new ChatMessageCell(getContext(), UserConfig.selectedAccount, false, null, this.cell.getResourcesProvider()) { // from class: org.telegram.ui.PollItemMenu.9
                 @Override // org.telegram.ui.Cells.ChatMessageCell, android.view.View
-                public void setPressed(boolean z2) {
+                public void setPressed(boolean z3) {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell, android.view.View
@@ -871,8 +879,8 @@ public class PollItemMenu extends Dialog {
                     super.drawOverlays(canvas);
                 }
             };
-            this.myCell = chatMessageCell5;
-            this.cell.copyVisiblePartTo(chatMessageCell5);
+            this.myCell = chatMessageCell6;
+            this.cell.copyVisiblePartTo(chatMessageCell6);
             this.cell.copyParamsTo(this.myCell);
             this.myCell.copySpoilerEffect2AttachIndexFrom(this.cell);
             this.myCell.setDelegate(new ChatMessageCell.ChatMessageCellDelegate() { // from class: org.telegram.ui.PollItemMenu.10
@@ -894,38 +902,38 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didLongPress(ChatMessageCell chatMessageCell6, float f, float f2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPress(this, chatMessageCell6, f, f2);
+                public /* synthetic */ void didLongPress(ChatMessageCell chatMessageCell7, float f, float f2) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPress(this, chatMessageCell7, f, f2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didLongPressBotButton(ChatMessageCell chatMessageCell6, TLRPC.KeyboardButton keyboardButton) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressBotButton(this, chatMessageCell6, keyboardButton);
+                public /* synthetic */ void didLongPressBotButton(ChatMessageCell chatMessageCell7, TLRPC.KeyboardButton keyboardButton) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressBotButton(this, chatMessageCell7, keyboardButton);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean didLongPressChannelAvatar(ChatMessageCell chatMessageCell6, TLRPC.Chat chat, int i, float f, float f2) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressChannelAvatar(this, chatMessageCell6, chat, i, f, f2);
+                public /* synthetic */ boolean didLongPressChannelAvatar(ChatMessageCell chatMessageCell7, TLRPC.Chat chat, int i, float f, float f2) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressChannelAvatar(this, chatMessageCell7, chat, i, f, f2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didLongPressCustomBotButton(ChatMessageCell chatMessageCell6, BotInlineKeyboard.ButtonCustom buttonCustom) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressCustomBotButton(this, chatMessageCell6, buttonCustom);
+                public /* synthetic */ void didLongPressCustomBotButton(ChatMessageCell chatMessageCell7, BotInlineKeyboard.ButtonCustom buttonCustom) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressCustomBotButton(this, chatMessageCell7, buttonCustom);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean didLongPressPollOption(ChatMessageCell chatMessageCell6, TLRPC.PollAnswer pollAnswer2) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressPollOption(this, chatMessageCell6, pollAnswer2);
+                public /* synthetic */ boolean didLongPressPollOption(ChatMessageCell chatMessageCell7, TLRPC.PollAnswer pollAnswer2) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressPollOption(this, chatMessageCell7, pollAnswer2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean didLongPressToDoButton(ChatMessageCell chatMessageCell6, TLRPC.TodoItem todoItem) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressToDoButton(this, chatMessageCell6, todoItem);
+                public /* synthetic */ boolean didLongPressToDoButton(ChatMessageCell chatMessageCell7, TLRPC.TodoItem todoItem) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressToDoButton(this, chatMessageCell7, todoItem);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean didLongPressUserAvatar(ChatMessageCell chatMessageCell6, TLRPC.User user, float f, float f2) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressUserAvatar(this, chatMessageCell6, user, f, f2);
+                public /* synthetic */ boolean didLongPressUserAvatar(ChatMessageCell chatMessageCell7, TLRPC.User user, float f, float f2) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressUserAvatar(this, chatMessageCell7, user, f, f2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -934,223 +942,223 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressAddPollOptionButton(ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAddPollOptionButton(this, chatMessageCell6);
+                public /* synthetic */ void didPressAddPollOptionButton(ChatMessageCell chatMessageCell7) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAddPollOptionButton(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressAdmin(ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAdmin(this, chatMessageCell6);
+                public /* synthetic */ void didPressAdmin(ChatMessageCell chatMessageCell7) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAdmin(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean didPressAnimatedEmoji(ChatMessageCell chatMessageCell6, AnimatedEmojiSpan animatedEmojiSpan) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAnimatedEmoji(this, chatMessageCell6, animatedEmojiSpan);
+                public /* synthetic */ boolean didPressAnimatedEmoji(ChatMessageCell chatMessageCell7, AnimatedEmojiSpan animatedEmojiSpan) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAnimatedEmoji(this, chatMessageCell7, animatedEmojiSpan);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressBoostCounter(ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressBoostCounter(this, chatMessageCell6);
+                public /* synthetic */ void didPressBoostCounter(ChatMessageCell chatMessageCell7) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressBoostCounter(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressBotButton(ChatMessageCell chatMessageCell6, TLRPC.KeyboardButton keyboardButton) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressBotButton(this, chatMessageCell6, keyboardButton);
+                public /* synthetic */ void didPressBotButton(ChatMessageCell chatMessageCell7, TLRPC.KeyboardButton keyboardButton) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressBotButton(this, chatMessageCell7, keyboardButton);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressCancelSendButton(ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressCancelSendButton(this, chatMessageCell6);
+                public /* synthetic */ void didPressCancelSendButton(ChatMessageCell chatMessageCell7) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressCancelSendButton(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressChannelAvatar(ChatMessageCell chatMessageCell6, TLRPC.Chat chat, int i, float f, float f2, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelAvatar(this, chatMessageCell6, chat, i, f, f2, z2);
+                public /* synthetic */ void didPressChannelAvatar(ChatMessageCell chatMessageCell7, TLRPC.Chat chat, int i, float f, float f2, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelAvatar(this, chatMessageCell7, chat, i, f, f2, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressChannelRecommendation(ChatMessageCell chatMessageCell6, TLObject tLObject, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelRecommendation(this, chatMessageCell6, tLObject, z2);
+                public /* synthetic */ void didPressChannelRecommendation(ChatMessageCell chatMessageCell7, TLObject tLObject, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelRecommendation(this, chatMessageCell7, tLObject, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressChannelRecommendationsClose(ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelRecommendationsClose(this, chatMessageCell6);
+                public /* synthetic */ void didPressChannelRecommendationsClose(ChatMessageCell chatMessageCell7) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelRecommendationsClose(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressCodeCopy(ChatMessageCell chatMessageCell6, MessageObject.TextLayoutBlock textLayoutBlock) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressCodeCopy(this, chatMessageCell6, textLayoutBlock);
+                public /* synthetic */ void didPressCodeCopy(ChatMessageCell chatMessageCell7, MessageObject.TextLayoutBlock textLayoutBlock) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressCodeCopy(this, chatMessageCell7, textLayoutBlock);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressCommentButton(ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressCommentButton(this, chatMessageCell6);
+                public /* synthetic */ void didPressCommentButton(ChatMessageCell chatMessageCell7) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressCommentButton(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressCustomBotButton(ChatMessageCell chatMessageCell6, BotInlineKeyboard.ButtonCustom buttonCustom) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressCustomBotButton(this, chatMessageCell6, buttonCustom);
+                public /* synthetic */ void didPressCustomBotButton(ChatMessageCell chatMessageCell7, BotInlineKeyboard.ButtonCustom buttonCustom) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressCustomBotButton(this, chatMessageCell7, buttonCustom);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressEffect(ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressEffect(this, chatMessageCell6);
+                public /* synthetic */ void didPressEffect(ChatMessageCell chatMessageCell7) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressEffect(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressExtendedMediaPreview(ChatMessageCell chatMessageCell6, TLRPC.KeyboardButton keyboardButton) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressExtendedMediaPreview(this, chatMessageCell6, keyboardButton);
+                public /* synthetic */ void didPressExtendedMediaPreview(ChatMessageCell chatMessageCell7, TLRPC.KeyboardButton keyboardButton) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressExtendedMediaPreview(this, chatMessageCell7, keyboardButton);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressFactCheck(ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressFactCheck(this, chatMessageCell6);
+                public /* synthetic */ void didPressFactCheck(ChatMessageCell chatMessageCell7) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressFactCheck(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressFactCheckWhat(ChatMessageCell chatMessageCell6, int i, int i2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressFactCheckWhat(this, chatMessageCell6, i, i2);
+                public /* synthetic */ void didPressFactCheckWhat(ChatMessageCell chatMessageCell7, int i, int i2) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressFactCheckWhat(this, chatMessageCell7, i, i2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressGiveawayChatButton(ChatMessageCell chatMessageCell6, int i) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressGiveawayChatButton(this, chatMessageCell6, i);
+                public /* synthetic */ void didPressGiveawayChatButton(ChatMessageCell chatMessageCell7, int i) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressGiveawayChatButton(this, chatMessageCell7, i);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressGroupImage(ChatMessageCell chatMessageCell6, ImageReceiver imageReceiver, TLRPC.MessageExtendedMedia messageExtendedMedia, float f, float f2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressGroupImage(this, chatMessageCell6, imageReceiver, messageExtendedMedia, f, f2);
+                public /* synthetic */ void didPressGroupImage(ChatMessageCell chatMessageCell7, ImageReceiver imageReceiver, TLRPC.MessageExtendedMedia messageExtendedMedia, float f, float f2) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressGroupImage(this, chatMessageCell7, imageReceiver, messageExtendedMedia, f, f2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressHiddenForward(ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressHiddenForward(this, chatMessageCell6);
+                public /* synthetic */ void didPressHiddenForward(ChatMessageCell chatMessageCell7) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressHiddenForward(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressHint(ChatMessageCell chatMessageCell6, int i) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressHint(this, chatMessageCell6, i);
+                public /* synthetic */ void didPressHint(ChatMessageCell chatMessageCell7, int i) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressHint(this, chatMessageCell7, i);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressImage(ChatMessageCell chatMessageCell6, float f, float f2, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressImage(this, chatMessageCell6, f, f2, z2);
+                public /* synthetic */ void didPressImage(ChatMessageCell chatMessageCell7, float f, float f2, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressImage(this, chatMessageCell7, f, f2, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressInstantButton(ChatMessageCell chatMessageCell6, int i) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressInstantButton(this, chatMessageCell6, i);
+                public /* synthetic */ void didPressInstantButton(ChatMessageCell chatMessageCell7, int i) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressInstantButton(this, chatMessageCell7, i);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressMoreChannelRecommendations(ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressMoreChannelRecommendations(this, chatMessageCell6);
+                public /* synthetic */ void didPressMoreChannelRecommendations(ChatMessageCell chatMessageCell7) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressMoreChannelRecommendations(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressOther(ChatMessageCell chatMessageCell6, float f, float f2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressOther(this, chatMessageCell6, f, f2);
+                public /* synthetic */ void didPressOther(ChatMessageCell chatMessageCell7, float f, float f2) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressOther(this, chatMessageCell7, f, f2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressPollMedia(ChatMessageCell chatMessageCell6, ImageReceiver imageReceiver, TLRPC.PollAnswer pollAnswer2, TLRPC.MessageMedia messageMedia, float f, float f2, int i) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressPollMedia(this, chatMessageCell6, imageReceiver, pollAnswer2, messageMedia, f, f2, i);
+                public /* synthetic */ void didPressPollMedia(ChatMessageCell chatMessageCell7, ImageReceiver imageReceiver, TLRPC.PollAnswer pollAnswer2, TLRPC.MessageMedia messageMedia, float f, float f2, int i) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressPollMedia(this, chatMessageCell7, imageReceiver, pollAnswer2, messageMedia, f, f2, i);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressReaction(ChatMessageCell chatMessageCell6, TLRPC.ReactionCount reactionCount, boolean z2, float f, float f2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReaction(this, chatMessageCell6, reactionCount, z2, f, f2);
+                public /* synthetic */ void didPressReaction(ChatMessageCell chatMessageCell7, TLRPC.ReactionCount reactionCount, boolean z3, float f, float f2) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReaction(this, chatMessageCell7, reactionCount, z3, f, f2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressReplyMessage(ChatMessageCell chatMessageCell6, int i, float f, float f2, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReplyMessage(this, chatMessageCell6, i, f, f2, z2);
+                public /* synthetic */ void didPressReplyMessage(ChatMessageCell chatMessageCell7, int i, float f, float f2, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReplyMessage(this, chatMessageCell7, i, f, f2, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressRevealSensitiveContent(ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressRevealSensitiveContent(this, chatMessageCell6);
+                public /* synthetic */ void didPressRevealSensitiveContent(ChatMessageCell chatMessageCell7) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressRevealSensitiveContent(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressSideButton(ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSideButton(this, chatMessageCell6);
+                public /* synthetic */ void didPressSideButton(ChatMessageCell chatMessageCell7) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSideButton(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressSponsoredClose(ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSponsoredClose(this, chatMessageCell6);
+                public /* synthetic */ void didPressSponsoredClose(ChatMessageCell chatMessageCell7) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSponsoredClose(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressSponsoredInfo(ChatMessageCell chatMessageCell6, float f, float f2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSponsoredInfo(this, chatMessageCell6, f, f2);
+                public /* synthetic */ void didPressSponsoredInfo(ChatMessageCell chatMessageCell7, float f, float f2) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSponsoredInfo(this, chatMessageCell7, f, f2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressSummarize(ChatMessageCell chatMessageCell6, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSummarize(this, chatMessageCell6, z2);
+                public /* synthetic */ void didPressSummarize(ChatMessageCell chatMessageCell7, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSummarize(this, chatMessageCell7, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressTime(ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressTime(this, chatMessageCell6);
+                public /* synthetic */ void didPressTime(ChatMessageCell chatMessageCell7) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressTime(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean didPressToDoButton(ChatMessageCell chatMessageCell6, TLRPC.TodoItem todoItem, boolean z2) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressToDoButton(this, chatMessageCell6, todoItem, z2);
+                public /* synthetic */ boolean didPressToDoButton(ChatMessageCell chatMessageCell7, TLRPC.TodoItem todoItem, boolean z3) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressToDoButton(this, chatMessageCell7, todoItem, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressUrl(ChatMessageCell chatMessageCell6, CharacterStyle characterStyle, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressUrl(this, chatMessageCell6, characterStyle, z2);
+                public /* synthetic */ void didPressUrl(ChatMessageCell chatMessageCell7, CharacterStyle characterStyle, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressUrl(this, chatMessageCell7, characterStyle, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressUserAvatar(ChatMessageCell chatMessageCell6, TLRPC.User user, float f, float f2, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressUserAvatar(this, chatMessageCell6, user, f, f2, z2);
+                public /* synthetic */ void didPressUserAvatar(ChatMessageCell chatMessageCell7, TLRPC.User user, float f, float f2, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressUserAvatar(this, chatMessageCell7, user, f, f2, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressUserStatus(ChatMessageCell chatMessageCell6, TLRPC.User user, TLRPC.Document document, String str) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressUserStatus(this, chatMessageCell6, user, document, str);
+                public /* synthetic */ void didPressUserStatus(ChatMessageCell chatMessageCell7, TLRPC.User user, TLRPC.Document document, String str) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressUserStatus(this, chatMessageCell7, user, document, str);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressViaBot(ChatMessageCell chatMessageCell6, String str) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressViaBot(this, chatMessageCell6, str);
+                public /* synthetic */ void didPressViaBot(ChatMessageCell chatMessageCell7, String str) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressViaBot(this, chatMessageCell7, str);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressViaBotNotInline(ChatMessageCell chatMessageCell6, long j) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressViaBotNotInline(this, chatMessageCell6, j);
+                public /* synthetic */ void didPressViaBotNotInline(ChatMessageCell chatMessageCell7, long j) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressViaBotNotInline(this, chatMessageCell7, j);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressVoteButtons(ChatMessageCell chatMessageCell6, ArrayList arrayList2, int i, int i2, int i3) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressVoteButtons(this, chatMessageCell6, arrayList2, i, i2, i3);
+                public /* synthetic */ void didPressVoteButtons(ChatMessageCell chatMessageCell7, ArrayList arrayList3, int i, int i2, int i3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressVoteButtons(this, chatMessageCell7, arrayList3, i, i2, i3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressWebPage(ChatMessageCell chatMessageCell6, TLRPC.WebPage webPage, String str, boolean z2) {
-                    Browser.openUrl(chatMessageCell6.getContext(), str);
+                public /* synthetic */ void didPressWebPage(ChatMessageCell chatMessageCell7, TLRPC.WebPage webPage, String str, boolean z3) {
+                    Browser.openUrl(chatMessageCell7.getContext(), str);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didQuickShareEnd(ChatMessageCell chatMessageCell6, float f, float f2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didQuickShareEnd(this, chatMessageCell6, f, f2);
+                public /* synthetic */ void didQuickShareEnd(ChatMessageCell chatMessageCell7, float f, float f2) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didQuickShareEnd(this, chatMessageCell7, f, f2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didQuickShareMove(ChatMessageCell chatMessageCell6, float f, float f2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didQuickShareMove(this, chatMessageCell6, f, f2);
+                public /* synthetic */ void didQuickShareMove(ChatMessageCell chatMessageCell7, float f, float f2) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didQuickShareMove(this, chatMessageCell7, f, f2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didQuickShareStart(ChatMessageCell chatMessageCell6, float f, float f2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didQuickShareStart(this, chatMessageCell6, f, f2);
+                public /* synthetic */ void didQuickShareStart(ChatMessageCell chatMessageCell7, float f, float f2) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didQuickShareStart(this, chatMessageCell7, f, f2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1159,8 +1167,8 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didTogglePollPreview(ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didTogglePollPreview(this, chatMessageCell6);
+                public /* synthetic */ void didTogglePollPreview(ChatMessageCell chatMessageCell7) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didTogglePollPreview(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1169,23 +1177,23 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void drawPollMode(Canvas canvas, ChatMessageCell chatMessageCell6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$drawPollMode(this, canvas, chatMessageCell6);
+                public /* synthetic */ void drawPollMode(Canvas canvas, ChatMessageCell chatMessageCell7) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$drawPollMode(this, canvas, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void forceUpdate(ChatMessageCell chatMessageCell6, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$forceUpdate(this, chatMessageCell6, z2);
+                public /* synthetic */ void forceUpdate(ChatMessageCell chatMessageCell7, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$forceUpdate(this, chatMessageCell7, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void forceUpdateNoAnimation(ChatMessageCell chatMessageCell6, boolean z2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$forceUpdateNoAnimation(this, chatMessageCell6, z2);
+                public /* synthetic */ void forceUpdateNoAnimation(ChatMessageCell chatMessageCell7, boolean z3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$forceUpdateNoAnimation(this, chatMessageCell7, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ int getAddPollOptionInputFieldHeight(ChatMessageCell chatMessageCell6) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getAddPollOptionInputFieldHeight(this, chatMessageCell6);
+                public /* synthetic */ int getAddPollOptionInputFieldHeight(ChatMessageCell chatMessageCell7) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getAddPollOptionInputFieldHeight(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1199,13 +1207,13 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ String getProgressLoadingBotButtonUrl(ChatMessageCell chatMessageCell6) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getProgressLoadingBotButtonUrl(this, chatMessageCell6);
+                public /* synthetic */ String getProgressLoadingBotButtonUrl(ChatMessageCell chatMessageCell7) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getProgressLoadingBotButtonUrl(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ CharacterStyle getProgressLoadingLink(ChatMessageCell chatMessageCell6) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getProgressLoadingLink(this, chatMessageCell6);
+                public /* synthetic */ CharacterStyle getProgressLoadingLink(ChatMessageCell chatMessageCell7) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getProgressLoadingLink(this, chatMessageCell7);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1239,8 +1247,8 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean isProgressLoading(ChatMessageCell chatMessageCell6, int i) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isProgressLoading(this, chatMessageCell6, i);
+                public /* synthetic */ boolean isProgressLoading(ChatMessageCell chatMessageCell7, int i) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isProgressLoading(this, chatMessageCell7, i);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1259,8 +1267,8 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean needPlayMessage(ChatMessageCell chatMessageCell6, MessageObject messageObject3, boolean z2) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needPlayMessage(this, chatMessageCell6, messageObject3, z2);
+                public /* synthetic */ boolean needPlayMessage(ChatMessageCell chatMessageCell7, MessageObject messageObject3, boolean z3) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needPlayMessage(this, chatMessageCell7, messageObject3, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1289,8 +1297,8 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean shouldDrawThreadProgress(ChatMessageCell chatMessageCell6, boolean z2) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldDrawThreadProgress(this, chatMessageCell6, z2);
+                public /* synthetic */ boolean shouldDrawThreadProgress(ChatMessageCell chatMessageCell7, boolean z3) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldDrawThreadProgress(this, chatMessageCell7, z3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1303,11 +1311,11 @@ public class PollItemMenu extends Dialog {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$videoTimerReached(this);
                 }
             });
-            ChatMessageCell chatMessageCell6 = this.myCell;
+            ChatMessageCell chatMessageCell7 = this.myCell;
             MessageObject messageObject3 = this.messageObject;
             MessageObject.GroupedMessages currentMessagesGroup2 = this.cell.getCurrentMessagesGroup();
-            ChatMessageCell chatMessageCell7 = this.cell;
-            chatMessageCell6.setMessageObject(messageObject3, currentMessagesGroup2, chatMessageCell7.pinnedBottom, chatMessageCell7.pinnedTop, chatMessageCell7.firstInChat);
+            ChatMessageCell chatMessageCell8 = this.cell;
+            chatMessageCell7.setMessageObject(messageObject3, currentMessagesGroup2, chatMessageCell8.pinnedBottom, chatMessageCell8.pinnedTop, chatMessageCell8.firstInChat);
             this.containerView.addView(this.myCell, new FrameLayout.LayoutParams(this.cell.getWidth(), height, 51));
         } else {
             chatActivity = chatActivity2;
@@ -1316,7 +1324,7 @@ public class PollItemMenu extends Dialog {
         this.menuContainer.bringToFront();
         this.tabsView.bringToFront();
         this.viewPager.onTabAnimationUpdate(false);
-        ItemOptions makeOptions = ItemOptions.makeOptions(this.containerView, this.resourcesProvider, (View) null);
+        final ItemOptions makeOptions = ItemOptions.makeOptions((ViewGroup) this.containerView, this.resourcesProvider, new View(this.context), true);
         TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) MessageObject.getMedia(this.messageObject);
         int i = 0;
         while (true) {
@@ -1333,56 +1341,100 @@ public class PollItemMenu extends Dialog {
         }
         if (pollAnswer != null) {
             TLRPC.Poll poll = tL_messageMediaPoll.poll;
-            boolean z2 = (poll.closed || poll.revoting_disabled) ? false : true;
-            final boolean z3 = poll.multiple_choice;
-            final ArrayList arrayList2 = new ArrayList();
+            boolean z3 = (poll.closed || poll.revoting_disabled) ? false : true;
+            boolean z4 = poll.multiple_choice;
+            ArrayList arrayList3 = new ArrayList();
             TLRPC.PollResults pollResults = tL_messageMediaPoll.results;
-            if (pollResults == null || (arrayList = pollResults.results) == null) {
+            if (pollResults == null || (arrayList2 = pollResults.results) == null) {
                 z = false;
+                pollAnswerVoters = null;
             } else {
-                Iterator<TLRPC.PollAnswerVoters> it = arrayList.iterator();
-                z = false;
+                Iterator<TLRPC.PollAnswerVoters> it = arrayList2.iterator();
+                boolean z5 = false;
+                TLRPC.PollAnswerVoters pollAnswerVoters2 = null;
                 while (it.hasNext()) {
                     TLRPC.PollAnswerVoters next = it.next();
+                    boolean equals = Arrays.equals(next.option, bArr);
+                    if (equals) {
+                        pollAnswerVoters2 = next;
+                    }
                     if (next.chosen) {
-                        if (Arrays.equals(next.option, bArr)) {
-                            z = true;
+                        if (equals) {
+                            z5 = true;
                         }
                         Iterator<TLRPC.PollAnswer> it2 = tL_messageMediaPoll.poll.answers.iterator();
                         while (it2.hasNext()) {
                             TLRPC.PollAnswer next2 = it2.next();
                             if (Arrays.equals(next2.option, next.option)) {
-                                arrayList2.add(next2);
+                                arrayList3.add(next2);
                             }
                         }
                     }
                 }
+                z = z5;
+                pollAnswerVoters = pollAnswerVoters2;
             }
-            if (z2) {
+            if (pollAnswerVoters == null || pollAnswerVoters.voters <= 0 || !MessageObject.canShowVotersList(tL_messageMediaPoll)) {
+                arrayList = arrayList3;
+                z2 = z4;
+            } else {
+                RecentVotersCell recentVotersCell = new RecentVotersCell(this.context, baseFragment.getCurrentAccount(), this.resourcesProvider);
+                final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
+                makeSwipeback.setGapBackgroundColor(Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, this.resourcesProvider), 0.06f));
+                makeSwipeback.setBlurBackgroundForSwipeback(this.iBlur3Factory, BlurredBackgroundProviderImpl.scrimMenuBackground(this.resourcesProvider), false);
+                makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda284(makeOptions));
+                makeSwipeback.addGap();
+                arrayList = arrayList3;
+                z2 = z4;
+                makeSwipeback.addView(recentVotersCell.createListView(baseFragment, this.messageObject.getDialogId(), this.messageObject.getId(), bArr, pollAnswerVoters.voters, new Utilities.Callback() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda2
+                    @Override // org.telegram.messenger.Utilities.Callback
+                    public final void run(Object obj) {
+                        PollItemMenu.this.lambda$setCell$1(baseFragment, (Long) obj);
+                    }
+                }));
+                recentVotersCell.setMinimumHeight(AndroidUtilities.dp(48.0f));
+                recentVotersCell.setText(LocaleController.formatPluralString("PollVotesCount", pollAnswerVoters.voters, new Object[0]));
+                recentVotersCell.setRecentVoters(pollAnswerVoters.recent_voters, false);
+                recentVotersCell.setLayoutParams(LayoutHelper.createLinear(-1, 48));
+                recentVotersCell.setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_dialogButtonSelector), 12, 0));
+                recentVotersCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda3
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view2) {
+                        ItemOptions.this.openSwipeback(makeSwipeback);
+                    }
+                });
+                makeOptions.addView(recentVotersCell);
+                makeOptions.addGap();
+            }
+            if (z3) {
                 if (z) {
+                    final boolean z6 = z2;
+                    final ArrayList arrayList4 = arrayList;
                     final TLRPC.PollAnswer pollAnswer2 = pollAnswer;
-                    makeOptions.add(R.drawable.msg_unvote, LocaleController.getString(R.string.Unvote), new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda2
+                    makeOptions.add(R.drawable.msg_unvote, LocaleController.getString(R.string.Unvote), new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda4
                         @Override // java.lang.Runnable
                         public final void run() {
-                            PollItemMenu.this.lambda$setCell$1(z3, baseFragment, arrayList2, pollAnswer2);
+                            PollItemMenu.this.lambda$setCell$3(z6, baseFragment, arrayList4, pollAnswer2);
                         }
                     });
                 } else {
+                    final boolean z7 = z2;
                     final TLRPC.PollAnswer pollAnswer3 = pollAnswer;
-                    makeOptions.add(R.drawable.msg_select, LocaleController.getString(R.string.PollSubmitVotesNoCaps), new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda3
+                    final ArrayList arrayList5 = arrayList;
+                    makeOptions.add(R.drawable.msg_select, LocaleController.getString(R.string.PollSubmitVotesNoCaps), new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda5
                         @Override // java.lang.Runnable
                         public final void run() {
-                            PollItemMenu.this.lambda$setCell$2(z3, pollAnswer3, baseFragment, arrayList2);
+                            PollItemMenu.this.lambda$setCell$4(z7, pollAnswer3, baseFragment, arrayList5);
                         }
                     });
                 }
             }
             final ChatActivity chatActivity3 = chatActivity;
             if (chatActivity3 != null) {
-                makeOptions.add(R.drawable.menu_reply, LocaleController.getString(R.string.PollItemQuote), new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda4
+                makeOptions.add(R.drawable.menu_reply, LocaleController.getString(R.string.PollItemQuote), new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PollItemMenu.this.lambda$setCell$3(chatActivity3, pollAnswer);
+                        PollItemMenu.this.lambda$setCell$5(chatActivity3, pollAnswer);
                     }
                 });
             }
@@ -1402,17 +1454,17 @@ public class PollItemMenu extends Dialog {
                 sb.append("?option=");
                 sb.append(new String(Base64.encode(pollAnswer.option, 9)));
                 final String sb2 = sb.toString();
-                makeOptions.add(R.drawable.msg_link, LocaleController.getString(R.string.CopyLink), new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda5
+                makeOptions.add(R.drawable.msg_link, LocaleController.getString(R.string.CopyLink), new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda7
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PollItemMenu.this.lambda$setCell$4(sb2);
+                        PollItemMenu.this.lambda$setCell$6(sb2);
                     }
                 });
             }
-            makeOptions.add(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda6
+            makeOptions.add(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PollItemMenu.this.lambda$setCell$5(pollAnswer);
+                    PollItemMenu.this.lambda$setCell$7(pollAnswer);
                 }
             });
             TLRPC.Peer peer = pollAnswer.added_by;
@@ -1423,10 +1475,10 @@ public class PollItemMenu extends Dialog {
                 long j = pollAnswer.date + MessagesController.getInstance(this.messageObject.currentAccount).config.pollAnswerDeletePeriod.get(TimeUnit.SECONDS);
                 if (tL_messageMediaPoll.poll.creator || (peerDialogId == clientUserId && currentTime < j)) {
                     r5 = 1;
-                    makeOptions.add(R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.Delete), true, new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda7
+                    makeOptions.add(R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.Delete), true, new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda9
                         @Override // java.lang.Runnable
                         public final void run() {
-                            PollItemMenu.this.lambda$setCell$6(bArr);
+                            PollItemMenu.this.lambda$setCell$8(bArr);
                         }
                     });
                 } else {
@@ -1440,10 +1492,10 @@ public class PollItemMenu extends Dialog {
                 Object[] objArr = new Object[2];
                 objArr[0] = shortName;
                 objArr[r5] = formatDateTime;
-                makeOptions.addProfileCustom(userOrChat, AndroidUtilities.replaceTags(LocaleController.formatSpannable(i2, objArr)), new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda8
+                makeOptions.addProfileCustom(userOrChat, AndroidUtilities.replaceTags(LocaleController.formatSpannable(i2, objArr)), new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda10
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PollItemMenu.this.lambda$setCell$7(peerDialogId, baseFragment);
+                        PollItemMenu.this.lambda$setCell$9(peerDialogId, baseFragment);
                     }
                 });
             }
@@ -1459,7 +1511,19 @@ public class PollItemMenu extends Dialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$1(boolean z, BaseFragment baseFragment, ArrayList arrayList, TLRPC.PollAnswer pollAnswer) {
+    public /* synthetic */ void lambda$setCell$1(BaseFragment baseFragment, Long l) {
+        Bundle bundle = new Bundle();
+        if (l.longValue() >= 0) {
+            bundle.putLong("user_id", l.longValue());
+        } else {
+            bundle.putLong("chat_id", -l.longValue());
+        }
+        baseFragment.presentFragment(new ProfileActivity(bundle));
+        dismiss(false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setCell$3(boolean z, BaseFragment baseFragment, ArrayList arrayList, TLRPC.PollAnswer pollAnswer) {
         if (!z) {
             baseFragment.getSendMessagesHelper().sendVote(this.messageObject, null, null);
         } else {
@@ -1470,7 +1534,7 @@ public class PollItemMenu extends Dialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$2(boolean z, TLRPC.PollAnswer pollAnswer, BaseFragment baseFragment, ArrayList arrayList) {
+    public /* synthetic */ void lambda$setCell$4(boolean z, TLRPC.PollAnswer pollAnswer, BaseFragment baseFragment, ArrayList arrayList) {
         if (!z) {
             ArrayList<TLRPC.PollAnswer> arrayList2 = new ArrayList<>(1);
             arrayList2.add(pollAnswer);
@@ -1483,32 +1547,32 @@ public class PollItemMenu extends Dialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$3(ChatActivity chatActivity, TLRPC.PollAnswer pollAnswer) {
+    public /* synthetic */ void lambda$setCell$5(ChatActivity chatActivity, TLRPC.PollAnswer pollAnswer) {
         MessageObject messageObject = this.messageObject;
         chatActivity.showFieldPanelForReplyQuote(messageObject, ChatActivity.ReplyQuote.fromPollOption(messageObject, pollAnswer.option));
         dismiss(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$4(String str) {
+    public /* synthetic */ void lambda$setCell$6(String str) {
         AndroidUtilities.addToClipboard(str);
         dismiss(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$5(TLRPC.PollAnswer pollAnswer) {
+    public /* synthetic */ void lambda$setCell$7(TLRPC.PollAnswer pollAnswer) {
         AndroidUtilities.addToClipboard(MessageObject.formatTextWithEntities(pollAnswer.text, false));
         dismiss(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$6(byte[] bArr) {
+    public /* synthetic */ void lambda$setCell$8(byte[] bArr) {
         SendMessagesHelper.getInstance(this.messageObject.currentAccount).deletePollOption(this.messageObject, bArr);
         dismiss(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCell$7(long j, BaseFragment baseFragment) {
+    public /* synthetic */ void lambda$setCell$9(long j, BaseFragment baseFragment) {
         Bundle bundle = new Bundle();
         if (j > 0) {
             bundle.putLong("user_id", j);
@@ -1561,18 +1625,18 @@ public class PollItemMenu extends Dialog {
                     z2 = z4;
                     i = -2;
                     if (z) {
-                        makeOptions.addView(new MessagePrivateSeenView(getContext(), 0, messageObject, new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda13
+                        makeOptions.addView(new MessagePrivateSeenView(getContext(), 0, messageObject, new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda15
                             @Override // java.lang.Runnable
                             public final void run() {
-                                PollItemMenu.this.lambda$setupMessageOptions$8();
+                                PollItemMenu.this.lambda$setupMessageOptions$10();
                             }
                         }, this.resourcesProvider), LayoutHelper.createLinear(-1, 36));
                         makeOptions.addGap();
                     } else if (z6) {
-                        makeOptions.addView(new MessagePrivateSeenView(getContext(), 1, messageObject, new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda14
+                        makeOptions.addView(new MessagePrivateSeenView(getContext(), 1, messageObject, new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda16
                             @Override // java.lang.Runnable
                             public final void run() {
-                                PollItemMenu.this.lambda$setupMessageOptions$9();
+                                PollItemMenu.this.lambda$setupMessageOptions$11();
                             }
                         }, this.resourcesProvider), LayoutHelper.createLinear(-1, 36));
                         makeOptions.addGap();
@@ -1645,10 +1709,10 @@ public class PollItemMenu extends Dialog {
                 size = arrayList.size();
                 for (i2 = 0; i2 < size; i2++) {
                     final int intValue = ((Integer) arrayList3.get(i2)).intValue();
-                    makeOptions.add(((Integer) arrayList.get(i2)).intValue(), (CharSequence) arrayList2.get(i2), new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda15
+                    makeOptions.add(((Integer) arrayList.get(i2)).intValue(), (CharSequence) arrayList2.get(i2), new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda17
                         @Override // java.lang.Runnable
                         public final void run() {
-                            PollItemMenu.this.lambda$setupMessageOptions$10(callback, intValue);
+                            PollItemMenu.this.lambda$setupMessageOptions$12(callback, intValue);
                         }
                     });
                 }
@@ -1662,18 +1726,18 @@ public class PollItemMenu extends Dialog {
                 this.menuContainer.addView(this.messageOptionsView, LayoutHelper.createFrame(i, i, 51));
                 view = this.messageOptionsView;
                 if (view instanceof ActionBarPopupWindow.ActionBarPopupWindowLayout) {
-                    ((ActionBarPopupWindow.ActionBarPopupWindowLayout) view).setOnSizeChangedListener(new ActionBarPopupWindow.onSizeChangedListener() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda16
+                    ((ActionBarPopupWindow.ActionBarPopupWindowLayout) view).setOnSizeChangedListener(new ActionBarPopupWindow.onSizeChangedListener() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda18
                         @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow.onSizeChangedListener
                         public final void onSizeChanged() {
                             PollItemMenu.this.updateTranslation();
                         }
                     });
-                    this.messageOptionsView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda17
+                    this.messageOptionsView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda19
                         @Override // android.view.View.OnTouchListener
                         public final boolean onTouch(View view2, MotionEvent motionEvent) {
-                            boolean lambda$setupMessageOptions$11;
-                            lambda$setupMessageOptions$11 = PollItemMenu.this.lambda$setupMessageOptions$11(view2, motionEvent);
-                            return lambda$setupMessageOptions$11;
+                            boolean lambda$setupMessageOptions$13;
+                            lambda$setupMessageOptions$13 = PollItemMenu.this.lambda$setupMessageOptions$13(view2, motionEvent);
+                            return lambda$setupMessageOptions$13;
                         }
                     });
                 }
@@ -1781,17 +1845,17 @@ public class PollItemMenu extends Dialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupMessageOptions$8() {
+    public /* synthetic */ void lambda$setupMessageOptions$10() {
         dismiss(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupMessageOptions$9() {
+    public /* synthetic */ void lambda$setupMessageOptions$11() {
         dismiss(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setupMessageOptions$10(Utilities.Callback callback, int i) {
+    public /* synthetic */ void lambda$setupMessageOptions$12(Utilities.Callback callback, int i) {
         callback.run(Integer.valueOf(i));
         boolean z = true;
         if (i != 1 && i != 13) {
@@ -1801,7 +1865,7 @@ public class PollItemMenu extends Dialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$setupMessageOptions$11(View view, MotionEvent motionEvent) {
+    public /* synthetic */ boolean lambda$setupMessageOptions$13(View view, MotionEvent motionEvent) {
         if (this.messageOptionsView == null || motionEvent.getAction() != 0) {
             return false;
         }
@@ -1964,13 +2028,13 @@ public class PollItemMenu extends Dialog {
         ScrimOptions.makeGlobalBlurBitmaps(new Utilities.Callback2() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                PollItemMenu.this.lambda$prepareBlur$12(view, (Bitmap) obj, (Bitmap) obj2);
+                PollItemMenu.this.lambda$prepareBlur$14(view, (Bitmap) obj, (Bitmap) obj2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$prepareBlur$12(View view, Bitmap bitmap, Bitmap bitmap2) {
+    public /* synthetic */ void lambda$prepareBlur$14(View view, Bitmap bitmap, Bitmap bitmap2) {
         if (view != null) {
             view.setVisibility(0);
         }
@@ -2039,23 +2103,23 @@ public class PollItemMenu extends Dialog {
         animateOpenTo(false, new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                PollItemMenu.this.lambda$dismiss$14(z2);
+                PollItemMenu.this.lambda$dismiss$16(z2);
             }
         });
         this.windowView.invalidate();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$13() {
+    public /* synthetic */ void lambda$dismiss$15() {
         super.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$14(boolean z) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda18
+    public /* synthetic */ void lambda$dismiss$16(boolean z) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda20
             @Override // java.lang.Runnable
             public final void run() {
-                PollItemMenu.this.lambda$dismiss$13();
+                PollItemMenu.this.lambda$dismiss$15();
             }
         });
         ChatMessageCell chatMessageCell = this.cell;
@@ -2088,10 +2152,10 @@ public class PollItemMenu extends Dialog {
         setupTranslation();
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.openProgress, z ? 1.0f : 0.0f);
         this.openAnimator = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda9
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda11
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
-                PollItemMenu.this.lambda$animateOpenTo$15(valueAnimator3);
+                PollItemMenu.this.lambda$animateOpenTo$17(valueAnimator3);
             }
         });
         this.openAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.PollItemMenu.14
@@ -2115,10 +2179,10 @@ public class PollItemMenu extends Dialog {
         this.openAnimator.start();
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.openProgress2, z ? 1.0f : 0.0f);
         this.open2Animator = ofFloat2;
-        ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda10
+        ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda12
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator4) {
-                PollItemMenu.this.lambda$animateOpenTo$16(valueAnimator4);
+                PollItemMenu.this.lambda$animateOpenTo$18(valueAnimator4);
             }
         });
         this.open2Animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.PollItemMenu.15
@@ -2133,7 +2197,7 @@ public class PollItemMenu extends Dialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateOpenTo$15(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$animateOpenTo$17(ValueAnimator valueAnimator) {
         this.openProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         this.windowView.invalidate();
         this.containerView.invalidate();
@@ -2145,7 +2209,7 @@ public class PollItemMenu extends Dialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateOpenTo$16(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$animateOpenTo$18(ValueAnimator valueAnimator) {
         this.openProgress2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
     }
 }

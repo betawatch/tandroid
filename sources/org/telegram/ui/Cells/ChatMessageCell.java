@@ -443,6 +443,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
     private boolean drawName;
     private boolean drawNameAvatar;
     private boolean drawNameLayout;
+    public byte[] drawOnlyPollId;
     public boolean drawPhotoImage;
     public boolean drawPinnedBottom;
     public boolean drawPinnedTop;
@@ -31072,13 +31073,28 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:317:0x09be  */
-    /* JADX WARN: Removed duplicated region for block: B:321:0x09fa  */
-    /* JADX WARN: Removed duplicated region for block: B:330:0x0a37  */
-    /* JADX WARN: Removed duplicated region for block: B:337:0x0a67  */
-    /* JADX WARN: Removed duplicated region for block: B:346:0x0a8b  */
-    /* JADX WARN: Removed duplicated region for block: B:348:0x0a95  */
-    /* JADX WARN: Removed duplicated region for block: B:352:0x09c3  */
+    public void checkPollFileState() {
+        MessageObject messageObject = this.currentMessageObject;
+        if (messageObject == null || !messageObject.isPoll()) {
+            return;
+        }
+        PollContentDrawable pollContentDrawable = this.pollExplanationDrawable;
+        if (pollContentDrawable != null) {
+            pollContentDrawable.checkFileState();
+        }
+        PollContentDrawable pollContentDrawable2 = this.pollContentDrawable;
+        if (pollContentDrawable2 != null) {
+            pollContentDrawable2.checkFileState();
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:317:0x09ec  */
+    /* JADX WARN: Removed duplicated region for block: B:321:0x0a22  */
+    /* JADX WARN: Removed duplicated region for block: B:330:0x0a5c  */
+    /* JADX WARN: Removed duplicated region for block: B:337:0x0a85  */
+    /* JADX WARN: Removed duplicated region for block: B:346:0x0aa9  */
+    /* JADX WARN: Removed duplicated region for block: B:348:0x0ab3  */
+    /* JADX WARN: Removed duplicated region for block: B:351:0x09f1  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -31102,42 +31118,42 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         boolean z9;
         boolean z10;
         int i3;
-        int i4;
         Object obj;
+        Object obj2;
+        int i4;
         int i5;
+        ArrayList arrayList3;
         PollButton pollButton;
         int i6;
-        TLRPC.TL_messageMediaToDo tL_messageMediaToDo;
-        Object obj2;
+        Object obj3;
         int dp;
         String string2;
-        Object obj3;
         Object obj4;
-        ArrayList arrayList3;
-        TLRPC.TL_messageMediaPoll tL_messageMediaPoll;
-        boolean z11;
-        int i7;
-        int i8;
         Object obj5;
-        int i9;
-        PollButton pollButton2;
-        int i10;
-        int i11;
         ArrayList arrayList4;
-        int i12;
-        int i13;
+        TLRPC.TL_messageMediaPoll tL_messageMediaPoll;
+        TLRPC.PollAnswer pollAnswer;
+        boolean z11;
+        byte[] bArr2;
+        int i7;
+        ArrayList<TLRPC.PollAnswer> arrayList5;
+        int i8;
+        PollButton pollButton2;
+        ArrayList arrayList6;
+        int i9;
+        int i10;
         TLRPC.Message message;
         TranslateController.PollText pollText;
         TLRPC.PollResults pollResults;
         CharSequence ellipsize;
-        int i14;
+        int i11;
         int currentTime;
         TLRPC.Message message2;
         TranslateController.PollText pollText2;
         TLRPC.TL_textWithEntities tL_textWithEntities2;
         String string3;
-        int i15;
-        int i16;
+        int i12;
+        int i13;
         MessageObject messageObject2 = messageObject;
         if (this.timerParticles == null) {
             this.timerParticles = new TimerParticles();
@@ -31157,7 +31173,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             z4 = poll.quiz;
             z5 = poll.public_voters;
             z6 = poll.multiple_choice;
-            int i17 = tL_messageMediaPoll2.results.total_voters;
+            int i14 = tL_messageMediaPoll2.results.total_voters;
             this.timerTransitionProgress = poll.close_date - ConnectionsManager.getInstance(this.currentAccount).getCurrentTime() < 60 ? 0.0f : 1.0f;
             TLRPC.Poll poll2 = tL_messageMediaPoll2.poll;
             boolean z13 = poll2.closed;
@@ -31195,8 +31211,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 this.explanationContentHeight = 0;
                 TLRPC.PollResults pollResults3 = tL_messageMediaPoll2.results;
                 if (pollResults3 == null || pollResults3.solution_media == null) {
-                    i15 = i17;
-                    i16 = dp2;
+                    i12 = i14;
+                    i13 = dp2;
                     z2 = z12;
                     messageMedia = media;
                     i = min;
@@ -31204,35 +31220,35 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     if (this.pollExplanationDrawable == null) {
                         this.pollExplanationDrawable = new PollContentDrawable(this.currentAccount, this, this.resourcesProvider, true);
                     }
-                    i15 = i17;
+                    i12 = i14;
                     z2 = z12;
                     messageMedia = media;
                     i = min;
                     this.pollExplanationDrawable.setMedia(messageObject, tL_messageMediaPoll2.results.solution_media, messageObject, dp2, PollAttachedMediaPack.getAttachPath(messageObject2.messageOwner, -3), !z);
                     if (this.pollExplanationDrawable.isHasMedia()) {
-                        i16 = dp2;
-                        this.explanationContentHeight = this.pollExplanationDrawable.getHeightForWidth(i16);
+                        i13 = dp2;
+                        this.explanationContentHeight = this.pollExplanationDrawable.getHeightForWidth(i13);
                     } else {
-                        i16 = dp2;
+                        i13 = dp2;
                     }
                     if (isCellAttachedToWindow()) {
                         this.pollExplanationDrawable.attach();
                     }
                 }
                 this.explanationTitleLayout = new StaticLayout(TextUtils.ellipsize(LocaleController.getString(org.telegram.messenger.R.string.QuizExplanationTitle), Theme.chat_replyNamePaint, i - AndroidUtilities.dp(30.0f), TextUtils.TruncateAt.END), Theme.chat_replyNamePaint, i - AndroidUtilities.dp(30.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                MessageObject.TextLayoutBlocks textLayoutBlocks = new MessageObject.TextLayoutBlocks(messageObject2, this.currentExplanation, Theme.chat_quoteTextPaint, i16 - AndroidUtilities.dp(11.0f));
+                MessageObject.TextLayoutBlocks textLayoutBlocks = new MessageObject.TextLayoutBlocks(messageObject2, this.currentExplanation, Theme.chat_quoteTextPaint, i13 - AndroidUtilities.dp(11.0f));
                 this.explanationLayout = textLayoutBlocks;
                 int textHeight = textLayoutBlocks.textHeight() + AndroidUtilities.dp(37.0f);
-                int i18 = this.explanationContentHeight;
-                this.explanationHeight = textHeight + (i18 > 0 ? i18 + AndroidUtilities.dp(14.0f) : 0);
+                int i15 = this.explanationContentHeight;
+                this.explanationHeight = textHeight + (i15 > 0 ? i15 + AndroidUtilities.dp(14.0f) : 0);
                 this.animatedEmojiPollExplanation = AnimatedEmojiSpan.update(0, (View) this, false, this.animatedEmojiPollExplanation, this.explanationLayout.textLayoutBlocks);
             } else {
-                i15 = i17;
+                i12 = i14;
                 z2 = z12;
                 messageMedia = media;
                 i = min;
             }
-            i2 = i15;
+            i2 = i12;
             string = str;
             z3 = false;
         } else {
@@ -31263,9 +31279,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             messageObject2.checkedVotes.clear();
         }
         CharSequence replaceEmoji = Emoji.replaceEmoji(new SpannableStringBuilder(tL_textWithEntities.text), Theme.chat_audioTitlePaint.getFontMetricsInt(), false);
-        ArrayList<TLRPC.MessageEntity> arrayList5 = tL_textWithEntities.entities;
-        if (arrayList5 != null) {
-            replaceEmoji = MessageObject.replaceAnimatedEmoji(replaceEmoji, arrayList5, Theme.chat_audioTitlePaint.getFontMetricsInt(), true);
+        ArrayList<TLRPC.MessageEntity> arrayList7 = tL_textWithEntities.entities;
+        if (arrayList7 != null) {
+            replaceEmoji = MessageObject.replaceAnimatedEmoji(replaceEmoji, arrayList7, Theme.chat_audioTitlePaint.getFontMetricsInt(), true);
             MessageObject.addEntitiesToText(replaceEmoji, tL_textWithEntities.entities, this.currentMessageObject.isOutOwner(), false, false, false);
         }
         StaticLayout staticLayout = new StaticLayout(replaceEmoji, Theme.chat_audioTitlePaint, (i + AndroidUtilities.dp(2.0f)) - (getExtraTextX() * 2), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
@@ -31274,8 +31290,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         StaticLayout staticLayout2 = this.titleLayout;
         if (staticLayout2 != null) {
             int lineCount = staticLayout2.getLineCount();
-            for (int i19 = 0; i19 < lineCount; i19++) {
-                if (this.titleLayout.getLineLeft(i19) > 0.0f) {
+            for (int i16 = 0; i16 < lineCount; i16++) {
+                if (this.titleLayout.getLineLeft(i16) > 0.0f) {
                     z7 = true;
                     break;
                 }
@@ -31300,18 +31316,18 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         } else {
             TextPaint textPaint = (z5 || z6) ? Theme.chat_locationAddressPaint : Theme.chat_livePaint;
             if (z3) {
-                TLRPC.TL_messageMediaToDo tL_messageMediaToDo2 = (TLRPC.TL_messageMediaToDo) messageMedia;
-                if (!this.currentMessageObject.isOutOwner() && this.currentMessageObject.getDialogId() >= 0 && !tL_messageMediaToDo2.todo.others_can_complete) {
-                    ellipsize = LocaleController.formatPluralStringComma("TodoCompletedBy", tL_messageMediaToDo2.todo.list.size(), Integer.valueOf(MessageObject.getCompletionsCount(tL_messageMediaToDo2)), DialogObject.getName(this.currentMessageObject.getFromChatId()));
+                TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) messageMedia;
+                if (!this.currentMessageObject.isOutOwner() && this.currentMessageObject.getDialogId() >= 0 && !tL_messageMediaToDo.todo.others_can_complete) {
+                    ellipsize = LocaleController.formatPluralStringComma("TodoCompletedBy", tL_messageMediaToDo.todo.list.size(), Integer.valueOf(MessageObject.getCompletionsCount(tL_messageMediaToDo)), DialogObject.getName(this.currentMessageObject.getFromChatId()));
                 } else {
-                    ellipsize = LocaleController.formatPluralStringComma("TodoCompleted", tL_messageMediaToDo2.todo.list.size(), Integer.valueOf(MessageObject.getCompletionsCount(tL_messageMediaToDo2)));
+                    ellipsize = LocaleController.formatPluralStringComma("TodoCompleted", tL_messageMediaToDo.todo.list.size(), Integer.valueOf(MessageObject.getCompletionsCount(tL_messageMediaToDo)));
                 }
             } else if (z4) {
                 ellipsize = TextUtils.ellipsize(i2 == 0 ? LocaleController.getString(org.telegram.messenger.R.string.NoVotesQuiz) : LocaleController.formatPluralString("Answer", i2, new Object[0]), textPaint, dp3, truncateAt);
             } else {
                 ellipsize = TextUtils.ellipsize(i2 == 0 ? LocaleController.getString(org.telegram.messenger.R.string.NoVotes) : LocaleController.formatPluralString("Vote", i2, new Object[0]), textPaint, dp3, truncateAt);
             }
-            if (!this.pollClosed && z2 && (i14 = ((TLRPC.TL_messageMediaPoll) messageMedia).poll.close_date) > 0 && (currentTime = i14 - ConnectionsManager.getInstance(this.currentAccount).getCurrentTime()) > 0) {
+            if (!this.pollClosed && z2 && (i11 = ((TLRPC.TL_messageMediaPoll) messageMedia).poll.close_date) > 0 && (currentTime = i11 - ConnectionsManager.getInstance(this.currentAccount).getCurrentTime()) > 0) {
                 if (this.pollCountDownTimer == null) {
                     this.pollCountDownTimer = new CountdownTimer(new CountdownTimer.Callback() { // from class: org.telegram.ui.Cells.ChatMessageCell$$ExternalSyntheticLambda21
                         @Override // org.telegram.messenger.utils.CountdownTimer.Callback
@@ -31374,13 +31390,13 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         boolean z14 = this.attachedToWindow && (this.pollVoteInProgress || this.pollUnvoteInProgress);
         this.animatePollAnswer = z14;
         this.animatePollAnswerAlpha = z14 && z2;
-        ArrayList arrayList6 = this.oldPollButtons;
-        ArrayList arrayList7 = new ArrayList();
+        ArrayList arrayList8 = this.oldPollButtons;
+        ArrayList arrayList9 = new ArrayList();
         if (this.pollButtons.isEmpty()) {
-            arrayList = arrayList6;
+            arrayList = arrayList8;
             arrayList2 = null;
         } else {
-            ArrayList arrayList8 = new ArrayList(this.pollButtons);
+            ArrayList arrayList10 = new ArrayList(this.pollButtons);
             Iterator it = this.pollButtons.iterator();
             while (it.hasNext()) {
                 ((PollButton) it.next()).destroy();
@@ -31391,14 +31407,14 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             }
             float f = this.pollAnimationProgress;
             if (f > 0.0f && f < 1.0f) {
-                int size = arrayList8.size();
-                for (int i20 = 0; i20 < size; i20++) {
-                    PollButton pollButton3 = (PollButton) arrayList8.get(i20);
+                int size = arrayList10.size();
+                for (int i17 = 0; i17 < size; i17++) {
+                    PollButton pollButton3 = (PollButton) arrayList10.get(i17);
                     pollButton3.percent = (int) Math.ceil(pollButton3.prevPercent + ((pollButton3.percent - pollButton3.prevPercent) * this.pollAnimationProgress));
                     pollButton3.percentProgress = pollButton3.prevPercentProgress + ((pollButton3.percentProgress - pollButton3.prevPercentProgress) * this.pollAnimationProgress);
                 }
             }
-            arrayList2 = arrayList8;
+            arrayList2 = arrayList10;
             arrayList = arrayList2;
         }
         this.pollAnimationProgress = this.animatePollAnswer ? 0.0f : 1.0f;
@@ -31409,9 +31425,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             this.pollVoteInProgressNum = -1;
             bArr = SendMessagesHelper.getInstance(this.currentAccount).isSendingVote(this.currentMessageObject);
         }
-        int i21 = messageObject2.expandedExplanation ? this.explanationHeight : 0;
+        int i18 = messageObject2.expandedExplanation ? this.explanationHeight : 0;
         StaticLayout staticLayout4 = this.titleLayout;
-        int height = i21 + (staticLayout4 != null ? staticLayout4.getHeight() : 0);
+        int height = i18 + (staticLayout4 != null ? staticLayout4.getHeight() : 0);
         if (z2) {
             this.captionAbove = true;
             TLRPC.TL_messageMediaPoll tL_messageMediaPoll3 = (TLRPC.TL_messageMediaPoll) messageMedia2;
@@ -31422,10 +31438,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     pollContentDrawable.imageReceiver.setRoundRadius(this.pollPhotoImageRadius);
                 }
                 int dp4 = ((this.backgroundWidth - AndroidUtilities.dp(13.0f)) - AndroidUtilities.dp(2.0f)) - AndroidUtilities.dp(2.0f);
-                obj3 = Emoji.EmojiSpan.class;
-                obj4 = AnimatedEmojiSpan.class;
+                obj4 = Emoji.EmojiSpan.class;
+                obj5 = AnimatedEmojiSpan.class;
                 z9 = z6;
-                arrayList3 = arrayList2;
+                arrayList4 = arrayList2;
                 tL_messageMediaPoll = tL_messageMediaPoll3;
                 this.pollContentDrawable.setMedia(messageObject, tL_messageMediaPoll3.attached_media, messageObject, dp4, PollAttachedMediaPack.getAttachPath(messageObject2.messageOwner, -2), !z);
                 if (this.pollContentDrawable.isHasMedia()) {
@@ -31440,51 +31456,51 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     this.pollContentDrawable.attach();
                 }
             } else {
-                obj3 = Emoji.EmojiSpan.class;
-                obj4 = AnimatedEmojiSpan.class;
-                arrayList3 = arrayList2;
+                obj4 = Emoji.EmojiSpan.class;
+                obj5 = AnimatedEmojiSpan.class;
+                arrayList4 = arrayList2;
                 z9 = z6;
                 tL_messageMediaPoll = tL_messageMediaPoll3;
             }
             TlUtils.calculateAnswerShuffleHash(tL_messageMediaPoll.poll, UserConfig.getInstance(this.currentAccount).getClientUserId());
             TLRPC.Poll poll3 = tL_messageMediaPoll.poll;
-            ArrayList<TLRPC.PollAnswer> arrayList9 = poll3.shuffled_answers;
-            if (arrayList9 == null) {
-                arrayList9 = poll3.answers;
+            ArrayList<TLRPC.PollAnswer> arrayList11 = poll3.shuffled_answers;
+            if (arrayList11 == null) {
+                arrayList11 = poll3.answers;
             }
+            ArrayList<TLRPC.PollAnswer> arrayList12 = arrayList11;
             int size2 = poll3.answers.size();
-            int i22 = 0;
+            int i19 = 0;
             while (true) {
-                if (i22 >= size2) {
+                if (i19 >= size2) {
                     break;
                 }
-                if (tL_messageMediaPoll.poll.answers.get(i22).media != null) {
+                if (tL_messageMediaPoll.poll.answers.get(i19).media != null) {
                     this.pollWithMediaInAnswers = true;
                     break;
                 }
-                i22++;
+                i19++;
             }
-            int size3 = arrayList9.size();
-            byte[] bArr2 = bArr;
-            int i23 = 100;
-            int i24 = 0;
-            int i25 = 0;
-            int i26 = 0;
+            int size3 = arrayList12.size();
+            byte[] bArr3 = bArr;
+            int i20 = 0;
+            int i21 = 0;
+            int i22 = 0;
+            int i23 = 0;
+            int i24 = 100;
             boolean z15 = false;
-            z8 = z5;
-            int i27 = 0;
-            while (i24 < size3) {
-                int i28 = size3;
-                TLRPC.PollAnswer pollAnswer = arrayList9.get(i24);
-                ArrayList<TLRPC.PollAnswer> arrayList10 = arrayList9;
+            while (i23 < size3) {
+                int i25 = i21;
+                TLRPC.PollAnswer pollAnswer2 = arrayList12.get(i23);
+                int i26 = i22;
                 MessageObject messageObject3 = this.currentMessageObject;
-                int i29 = i24;
+                int i27 = i23;
                 if (messageObject3.translated && (message = messageObject3.messageOwner) != null && (pollText = message.translatedPoll) != null) {
                     Iterator<TLRPC.PollAnswer> it2 = pollText.answers.iterator();
                     while (it2.hasNext()) {
                         TLRPC.PollAnswer next = it2.next();
                         Iterator<TLRPC.PollAnswer> it3 = it2;
-                        if (Arrays.equals(next.option, pollAnswer.option)) {
+                        if (Arrays.equals(next.option, pollAnswer2.option)) {
                             pollAnswer = next;
                             z11 = true;
                             break;
@@ -31492,33 +31508,34 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         it2 = it3;
                     }
                 }
+                pollAnswer = pollAnswer2;
                 z11 = false;
-                byte[] bArr3 = bArr2;
-                CharSequence replaceEmoji2 = Emoji.replaceEmoji(new SpannableStringBuilder(pollAnswer.text.text), Theme.chat_audioTitlePaint.getFontMetricsInt(), false, null, 0, 1.0f, i25);
-                ArrayList<TLRPC.MessageEntity> arrayList11 = pollAnswer.text.entities;
-                if (arrayList11 != null) {
-                    replaceEmoji2 = MessageObject.replaceAnimatedEmoji(replaceEmoji2, arrayList11, Theme.chat_audioPerformerPaint.getFontMetricsInt(), true, 1.2f, i25);
+                boolean z16 = z11;
+                CharSequence replaceEmoji2 = Emoji.replaceEmoji(new SpannableStringBuilder(pollAnswer.text.text), Theme.chat_audioTitlePaint.getFontMetricsInt(), false, null, 0, 1.0f, i20);
+                ArrayList<TLRPC.MessageEntity> arrayList13 = pollAnswer.text.entities;
+                if (arrayList13 != null) {
+                    replaceEmoji2 = MessageObject.replaceAnimatedEmoji(replaceEmoji2, arrayList13, Theme.chat_audioPerformerPaint.getFontMetricsInt(), true, 1.2f, i20);
                     MessageObject.addEntitiesToText(replaceEmoji2, pollAnswer.text.entities, this.currentMessageObject.isOutOwner(), false, false, false);
                 }
                 CharSequence charSequence2 = replaceEmoji2;
                 if (charSequence2 instanceof Spannable) {
                     Spannable spannable = (Spannable) charSequence2;
-                    i8 = i26;
-                    i7 = i23;
-                    obj5 = obj3;
-                    i9 = ((AnimatedEmojiSpan[]) spannable.getSpans(0, charSequence2.length(), obj4)).length + ((Emoji.EmojiSpan[]) spannable.getSpans(0, charSequence2.length(), obj3)).length;
+                    bArr2 = bArr3;
+                    i7 = size3;
+                    arrayList5 = arrayList12;
+                    i8 = ((AnimatedEmojiSpan[]) spannable.getSpans(0, charSequence2.length(), obj5)).length + ((Emoji.EmojiSpan[]) spannable.getSpans(0, charSequence2.length(), obj4)).length;
                 } else {
-                    i7 = i23;
-                    i8 = i26;
-                    obj5 = obj3;
-                    i9 = 0;
+                    bArr2 = bArr3;
+                    i7 = size3;
+                    arrayList5 = arrayList12;
+                    i8 = 0;
                 }
-                int i30 = i25 + i9;
+                int i28 = i20 + i8;
                 if (arrayList != null) {
-                    for (int i31 = 0; i31 < arrayList.size(); i31++) {
-                        PollButton pollButton4 = (PollButton) arrayList.get(i31);
-                        if (pollButton4.answer == pollAnswer || (pollButton4.answer != null && Arrays.equals(((PollButton) arrayList.get(i31)).answer.option, pollAnswer.option))) {
-                            pollButton2 = (PollButton) arrayList.get(i31);
+                    for (int i29 = 0; i29 < arrayList.size(); i29++) {
+                        PollButton pollButton4 = (PollButton) arrayList.get(i29);
+                        if (pollButton4.answer == pollAnswer || (pollButton4.answer != null && Arrays.equals(((PollButton) arrayList.get(i29)).answer.option, pollAnswer.option))) {
+                            pollButton2 = (PollButton) arrayList.get(i29);
                             break;
                         }
                     }
@@ -31542,39 +31559,46 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 }
                 String attachPath = PollAttachedMediaPack.getAttachPath(messageObject2.messageOwner, pollAnswer.unshuffled_index);
                 pollButton5.pollButtonDrawable.setHasMediaPadding(this.pollWithMediaInAnswers);
-                pollButton5.pollButtonDrawable.setMedia(messageObject2, pollAnswer.media, messageObject2, attachPath);
+                boolean z17 = z5;
+                Object obj6 = obj5;
+                Object obj7 = obj4;
+                ArrayList arrayList14 = arrayList;
+                TLRPC.PollAnswer pollAnswer3 = pollAnswer;
+                byte[] bArr4 = bArr2;
+                PollButton pollButton6 = pollButton2;
+                pollButton5.pollButtonDrawable.setMedia(messageObject, pollAnswer.media, messageObject, attachPath, !z);
                 if (isCellAttachedToWindow()) {
                     pollButton5.attach();
                 }
                 pollButton5.selectorDrawable.setCallback(this);
-                pollButton5.answer = pollAnswer;
+                pollButton5.answer = pollAnswer3;
                 StaticLayout staticLayout5 = new StaticLayout(charSequence2, Theme.chat_audioPerformerPaint, i - AndroidUtilities.dp((this.pollWithMediaInAnswers ? 48 : 0) + 33), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 pollButton5.title = staticLayout5;
                 pollButton5.animatedEmoji = AnimatedEmojiSpan.update(0, (View) this, false, pollButton5.animatedEmoji, staticLayout5);
                 pollButton5.y = height + AndroidUtilities.dp(52.0f);
                 pollButton5.height = pollButton5.title.getHeight();
-                pollButton5.translated = z11;
-                if (pollButton2 != null && pollButton2.translated != z11) {
-                    pollButton5.animateTitle = pollButton2.title;
+                pollButton5.translated = z16;
+                if (pollButton6 != null && pollButton6.translated != z16) {
+                    pollButton5.animateTitle = pollButton6.title;
                     pollButton5.animateTitleEmoji = AnimatedEmojiSpan.update(0, (View) this, false, pollButton5.animateTitleEmoji, pollButton5.animateTitle);
-                    pollButton5.animateY = pollButton2.y;
-                    pollButton5.animateHeight = pollButton2.height;
+                    pollButton5.animateY = pollButton6.y;
+                    pollButton5.animateHeight = pollButton6.height;
                 }
                 this.pollButtons.add(pollButton5);
-                arrayList7.add(pollButton5);
+                arrayList9.add(pollButton5);
                 height += pollButton5.height + AndroidUtilities.dp(26.66f);
                 int lineCount2 = pollButton5.title.getLineCount();
-                float dp6 = (r7 - AndroidUtilities.dp(10.0f)) - (lineCount2 > 0 ? pollButton5.title.getLineWidth(lineCount2 - 1) : 0.0f);
+                float dp6 = (r2 - AndroidUtilities.dp(10.0f)) - (lineCount2 > 0 ? pollButton5.title.getLineWidth(lineCount2 - 1) : 0.0f);
                 if (!tL_messageMediaPoll.results.results.isEmpty()) {
                     int size4 = tL_messageMediaPoll.results.results.size();
-                    for (int i32 = 0; i32 < size4; i32++) {
-                        TLRPC.PollAnswerVoters pollAnswerVoters = tL_messageMediaPoll.results.results.get(i32);
+                    for (int i30 = 0; i30 < size4; i30++) {
+                        TLRPC.PollAnswerVoters pollAnswerVoters = tL_messageMediaPoll.results.results.get(i30);
                         if (Arrays.equals(pollButton5.answer.option, pollAnswerVoters.option)) {
                             PollButtonDrawable pollButtonDrawable = pollButton5.pollButtonDrawable;
                             if (pollButtonDrawable != null) {
-                                pollButtonDrawable.setVotersVisible(!this.isBot && (this.pollVoted || this.pollResultsPreview || this.pollClosed), pollButton2 != null);
-                                pollButton5.pollButtonDrawable.setVotersCount(pollAnswerVoters.voters, pollButton2 != null);
-                                pollButton5.pollButtonDrawable.setRecentVoters(pollAnswerVoters.recent_voters, pollButton2 != null);
+                                pollButtonDrawable.setVotersVisible(!this.isBot && (this.pollVoted || this.pollResultsPreview || this.pollClosed), pollButton6 != null);
+                                pollButton5.pollButtonDrawable.setVotersCount(pollAnswerVoters.voters, pollButton6 != null);
+                                pollButton5.pollButtonDrawable.setRecentVoters(pollAnswerVoters.recent_voters, pollButton6 != null);
                                 float votersCountTargetWidth = pollButton5.pollButtonDrawable.getVotersCountTargetWidth();
                                 if ((this.pollVoted || this.pollClosed || this.pollResultsPreview) && votersCountTargetWidth > dp6) {
                                     pollButton5.height += AndroidUtilities.dp(22.0f);
@@ -31582,73 +31606,73 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     pollButton5.chosen = pollAnswerVoters.chosen;
                                     pollButton5.count = pollAnswerVoters.voters;
                                     pollButton5.correct = pollAnswerVoters.correct;
-                                    if ((!this.pollVoted || this.pollClosed || this.pollResultsPreview) && (i13 = tL_messageMediaPoll.results.total_voters) > 0) {
-                                        pollButton5.decimal = MathUtils.clamp(pollAnswerVoters.voters / i13, 0.0f, 1.0f) * 100.0f;
+                                    if ((!this.pollVoted || this.pollClosed || this.pollResultsPreview) && (i10 = tL_messageMediaPoll.results.total_voters) > 0) {
+                                        pollButton5.decimal = MathUtils.clamp(pollAnswerVoters.voters / i10, 0.0f, 1.0f) * 100.0f;
                                         pollButton5.percent = (int) pollButton5.decimal;
                                         PollButton.access$3124(pollButton5, pollButton5.percent);
                                     } else {
                                         pollButton5.percent = 0;
                                         pollButton5.decimal = 0.0f;
                                     }
-                                    if (i27 != 0) {
-                                        i27 = pollButton5.percent;
-                                    } else if (pollButton5.percent != 0 && i27 != pollButton5.percent) {
+                                    if (i25 != 0) {
+                                        i21 = pollButton5.percent;
+                                    } else if (pollButton5.percent == 0 || i25 == pollButton5.percent) {
+                                        i21 = i25;
+                                    } else {
+                                        i21 = i25;
                                         z15 = true;
                                     }
-                                    i11 = i7 - pollButton5.percent;
-                                    i10 = Math.max(pollButton5.percent, i8);
-                                    arrayList4 = arrayList3;
-                                    if (arrayList4 != null) {
-                                        int size5 = arrayList4.size();
-                                        int i33 = 0;
+                                    i24 -= pollButton5.percent;
+                                    i22 = Math.max(pollButton5.percent, i26);
+                                    arrayList6 = arrayList4;
+                                    if (arrayList6 != null) {
+                                        int size5 = arrayList6.size();
+                                        int i31 = 0;
                                         while (true) {
-                                            if (i33 >= size5) {
+                                            if (i31 >= size5) {
                                                 break;
                                             }
-                                            PollButton pollButton6 = (PollButton) arrayList4.get(i33);
-                                            if (Arrays.equals(pollButton5.answer.option, pollButton6.answer.option)) {
-                                                pollButton5.prevPercent = pollButton6.percent;
-                                                pollButton5.prevPercentProgress = pollButton6.percentProgress;
-                                                pollButton5.prevChosen = pollButton6.chosen;
+                                            PollButton pollButton7 = (PollButton) arrayList6.get(i31);
+                                            if (Arrays.equals(pollButton5.answer.option, pollButton7.answer.option)) {
+                                                pollButton5.prevPercent = pollButton7.percent;
+                                                pollButton5.prevPercentProgress = pollButton7.percentProgress;
+                                                pollButton5.prevChosen = pollButton7.chosen;
                                                 break;
                                             }
-                                            i33++;
+                                            i31++;
                                         }
                                     }
-                                    if (bArr3 != null || pollButton5.answer.option.length <= 0) {
-                                        i12 = i29;
-                                        bArr2 = bArr3;
+                                    if (bArr4 != null || pollButton5.answer.option.length <= 0 || Arrays.binarySearch(bArr4, pollButton5.answer.option[0]) < 0) {
+                                        i9 = i27;
                                     } else {
-                                        bArr2 = bArr3;
-                                        if (Arrays.binarySearch(bArr2, pollButton5.answer.option[0]) >= 0) {
-                                            i12 = i29;
-                                            this.pollVoteInProgressNum = i12;
-                                            this.pollVoteInProgress = true;
-                                            this.vibrateOnPollVote = true;
-                                            bArr2 = null;
-                                        } else {
-                                            i12 = i29;
-                                        }
+                                        i9 = i27;
+                                        this.pollVoteInProgressNum = i9;
+                                        this.pollVoteInProgress = true;
+                                        this.vibrateOnPollVote = true;
+                                        bArr4 = null;
                                     }
                                     if (this.pollVoted || this.pollHasResults || !this.pollHideResults) {
                                         if (this.currentMessageObject.checkedVotes.contains(pollButton5.answer)) {
-                                            this.pollCheckBox[i12].setChecked(true, false);
+                                            this.pollCheckBox[i9].setChecked(true, false);
                                         } else {
-                                            this.pollCheckBox[i12].setChecked(false, false);
+                                            this.pollCheckBox[i9].setChecked(false, false);
                                         }
                                     } else {
-                                        this.pollCheckBox[i12].setChecked(pollButton5.chosen, false);
+                                        this.pollCheckBox[i9].setChecked(pollButton5.chosen, false);
                                     }
-                                    this.pollCheckBox[i12].checkScale = 0.85f;
-                                    int i34 = i12 + 1;
-                                    i26 = i10;
-                                    arrayList3 = arrayList4;
-                                    arrayList9 = arrayList10;
-                                    obj3 = obj5;
-                                    i25 = i30;
-                                    i24 = i34;
-                                    i23 = i11;
-                                    size3 = i28;
+                                    this.pollCheckBox[i9].checkScale = 0.85f;
+                                    int i32 = i9 + 1;
+                                    arrayList4 = arrayList6;
+                                    bArr3 = bArr4;
+                                    obj5 = obj6;
+                                    obj4 = obj7;
+                                    arrayList = arrayList14;
+                                    size3 = i7;
+                                    arrayList12 = arrayList5;
+                                    z5 = z17;
+                                    messageObject2 = messageObject;
+                                    i23 = i32;
+                                    i20 = i28;
                                 }
                             }
                             pollButton5.chosen = pollAnswerVoters.chosen;
@@ -31656,234 +31680,257 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             pollButton5.correct = pollAnswerVoters.correct;
                             if (!this.pollVoted) {
                             }
-                            pollButton5.decimal = MathUtils.clamp(pollAnswerVoters.voters / i13, 0.0f, 1.0f) * 100.0f;
+                            pollButton5.decimal = MathUtils.clamp(pollAnswerVoters.voters / i10, 0.0f, 1.0f) * 100.0f;
                             pollButton5.percent = (int) pollButton5.decimal;
                             PollButton.access$3124(pollButton5, pollButton5.percent);
-                            if (i27 != 0) {
+                            if (i25 != 0) {
                             }
-                            i11 = i7 - pollButton5.percent;
-                            i10 = Math.max(pollButton5.percent, i8);
-                            arrayList4 = arrayList3;
-                            if (arrayList4 != null) {
+                            i24 -= pollButton5.percent;
+                            i22 = Math.max(pollButton5.percent, i26);
+                            arrayList6 = arrayList4;
+                            if (arrayList6 != null) {
                             }
-                            if (bArr3 != null) {
+                            if (bArr4 != null) {
                             }
-                            i12 = i29;
-                            bArr2 = bArr3;
+                            i9 = i27;
                             if (this.pollVoted) {
                             }
                             if (this.currentMessageObject.checkedVotes.contains(pollButton5.answer)) {
                             }
-                            this.pollCheckBox[i12].checkScale = 0.85f;
-                            int i342 = i12 + 1;
-                            i26 = i10;
-                            arrayList3 = arrayList4;
-                            arrayList9 = arrayList10;
-                            obj3 = obj5;
-                            i25 = i30;
-                            i24 = i342;
-                            i23 = i11;
-                            size3 = i28;
+                            this.pollCheckBox[i9].checkScale = 0.85f;
+                            int i322 = i9 + 1;
+                            arrayList4 = arrayList6;
+                            bArr3 = bArr4;
+                            obj5 = obj6;
+                            obj4 = obj7;
+                            arrayList = arrayList14;
+                            size3 = i7;
+                            arrayList12 = arrayList5;
+                            z5 = z17;
+                            messageObject2 = messageObject;
+                            i23 = i322;
+                            i20 = i28;
                         }
                     }
                 }
-                i10 = i8;
-                i11 = i7;
-                arrayList4 = arrayList3;
-                if (arrayList4 != null) {
+                i21 = i25;
+                i22 = i26;
+                arrayList6 = arrayList4;
+                if (arrayList6 != null) {
                 }
-                if (bArr3 != null) {
+                if (bArr4 != null) {
                 }
-                i12 = i29;
-                bArr2 = bArr3;
+                i9 = i27;
                 if (this.pollVoted) {
                 }
                 if (this.currentMessageObject.checkedVotes.contains(pollButton5.answer)) {
                 }
-                this.pollCheckBox[i12].checkScale = 0.85f;
-                int i3422 = i12 + 1;
-                i26 = i10;
-                arrayList3 = arrayList4;
-                arrayList9 = arrayList10;
-                obj3 = obj5;
-                i25 = i30;
-                i24 = i3422;
-                i23 = i11;
-                size3 = i28;
+                this.pollCheckBox[i9].checkScale = 0.85f;
+                int i3222 = i9 + 1;
+                arrayList4 = arrayList6;
+                bArr3 = bArr4;
+                obj5 = obj6;
+                obj4 = obj7;
+                arrayList = arrayList14;
+                size3 = i7;
+                arrayList12 = arrayList5;
+                z5 = z17;
+                messageObject2 = messageObject;
+                i23 = i3222;
+                i20 = i28;
             }
-            int i35 = i23;
+            z8 = z5;
+            ArrayList arrayList15 = arrayList;
             TLRPC.Poll poll4 = tL_messageMediaPoll.poll;
-            if (poll4.open_answers && !this.pollClosed && poll4.answers.size() < MessagesController.getInstance(this.currentAccount).config.pollAnswersMax.get()) {
-                if (this.pollAddButtonDrawable == null) {
-                    PollAddButtonDrawable pollAddButtonDrawable = new PollAddButtonDrawable(getContext(), this.resourcesProvider);
-                    this.pollAddButtonDrawable = pollAddButtonDrawable;
-                    pollAddButtonDrawable.setupCallbacks(this);
+            if (poll4.open_answers && !this.pollClosed) {
+                if (!messageObject.scheduled && poll4.answers.size() < MessagesController.getInstance(this.currentAccount).config.pollAnswersMax.get()) {
+                    if (this.pollAddButtonDrawable == null) {
+                        PollAddButtonDrawable pollAddButtonDrawable = new PollAddButtonDrawable(getContext(), this.resourcesProvider);
+                        this.pollAddButtonDrawable = pollAddButtonDrawable;
+                        pollAddButtonDrawable.setupCallbacks(this);
+                    }
+                    this.pollAllowAdding = true;
+                    ChatMessageCellDelegate chatMessageCellDelegate = this.delegate;
+                    int addPollOptionInputFieldHeight = chatMessageCellDelegate != null ? chatMessageCellDelegate.getAddPollOptionInputFieldHeight(this) : 0;
+                    boolean z18 = addPollOptionInputFieldHeight > 0;
+                    this.pollInInputNewOption = z18;
+                    this.pollAddButtonDrawable.setIsEditEnabled(z18, !z);
+                    int max = Math.max(AndroidUtilities.dp(44.33f), addPollOptionInputFieldHeight);
+                    this.pollAddButtonHeight = max;
+                    height += max;
                 }
-                this.pollAllowAdding = true;
-                ChatMessageCellDelegate chatMessageCellDelegate = this.delegate;
-                int addPollOptionInputFieldHeight = chatMessageCellDelegate != null ? chatMessageCellDelegate.getAddPollOptionInputFieldHeight(this) : 0;
-                boolean z16 = addPollOptionInputFieldHeight > 0;
-                this.pollInInputNewOption = z16;
-                this.pollAddButtonDrawable.setIsEditEnabled(z16, !z);
-                int max = Math.max(AndroidUtilities.dp(44.33f), addPollOptionInputFieldHeight);
-                this.pollAddButtonHeight = max;
-                height += max;
             }
-            Iterator it4 = arrayList.iterator();
+            Iterator it4 = arrayList15.iterator();
             while (it4.hasNext()) {
-                PollButton pollButton7 = (PollButton) it4.next();
-                pollButton7.detach();
-                pollButton7.pollButtonDrawable = null;
+                PollButton pollButton8 = (PollButton) it4.next();
+                pollButton8.detach();
+                pollButton8.pollButtonDrawable = null;
             }
             checkInstantButtonForPoll(!z);
+            i3 = i24;
             z10 = z15;
-            i3 = i35;
         } else {
-            Object obj6 = Emoji.EmojiSpan.class;
-            Object obj7 = AnimatedEmojiSpan.class;
+            Object obj8 = Emoji.EmojiSpan.class;
+            Object obj9 = AnimatedEmojiSpan.class;
+            MessageObject messageObject4 = messageObject2;
             z8 = z5;
             z9 = z6;
+            ArrayList arrayList16 = arrayList;
             if (messageMedia2 instanceof TLRPC.TL_messageMediaToDo) {
-                TLRPC.TL_messageMediaToDo tL_messageMediaToDo3 = (TLRPC.TL_messageMediaToDo) messageMedia2;
-                int size6 = tL_messageMediaToDo3.todo.list.size();
-                int i36 = 0;
-                int i37 = 0;
-                while (i36 < size6) {
-                    TLRPC.TodoItem todoItem = tL_messageMediaToDo3.todo.list.get(i36);
-                    CharSequence replaceEmoji3 = Emoji.replaceEmoji(new SpannableStringBuilder(todoItem.title.text), Theme.chat_audioTitlePaint.getFontMetricsInt(), false, null, 0, 1.0f, i37);
-                    ArrayList<TLRPC.MessageEntity> arrayList12 = todoItem.title.entities;
-                    if (arrayList12 != null) {
-                        replaceEmoji3 = MessageObject.replaceAnimatedEmoji(replaceEmoji3, arrayList12, Theme.chat_audioPerformerPaint.getFontMetricsInt(), true, 1.2f, i37);
+                TLRPC.TL_messageMediaToDo tL_messageMediaToDo2 = (TLRPC.TL_messageMediaToDo) messageMedia2;
+                int size6 = tL_messageMediaToDo2.todo.list.size();
+                int i33 = 0;
+                int i34 = 0;
+                while (i33 < size6) {
+                    TLRPC.TodoItem todoItem = tL_messageMediaToDo2.todo.list.get(i33);
+                    CharSequence replaceEmoji3 = Emoji.replaceEmoji(new SpannableStringBuilder(todoItem.title.text), Theme.chat_audioTitlePaint.getFontMetricsInt(), false, null, 0, 1.0f, i34);
+                    ArrayList<TLRPC.MessageEntity> arrayList17 = todoItem.title.entities;
+                    if (arrayList17 != null) {
+                        replaceEmoji3 = MessageObject.replaceAnimatedEmoji(replaceEmoji3, arrayList17, Theme.chat_audioPerformerPaint.getFontMetricsInt(), true, 1.2f, i34);
                         MessageObject.addEntitiesToText(replaceEmoji3, todoItem.title.entities, this.currentMessageObject.isOutOwner(), false, false, false);
                     }
-                    CharSequence charSequence3 = replaceEmoji3;
-                    if (charSequence3 instanceof Spannable) {
-                        Spannable spannable2 = (Spannable) charSequence3;
-                        obj = obj6;
-                        i4 = size6;
-                        i5 = ((AnimatedEmojiSpan[]) spannable2.getSpans(0, charSequence3.length(), obj7)).length + ((Emoji.EmojiSpan[]) spannable2.getSpans(0, charSequence3.length(), obj)).length;
+                    if (replaceEmoji3 instanceof Spannable) {
+                        Spannable spannable2 = (Spannable) replaceEmoji3;
+                        obj2 = obj8;
+                        obj = obj9;
+                        i4 = ((AnimatedEmojiSpan[]) spannable2.getSpans(0, replaceEmoji3.length(), obj)).length + ((Emoji.EmojiSpan[]) spannable2.getSpans(0, replaceEmoji3.length(), obj2)).length;
                     } else {
-                        i4 = size6;
-                        obj = obj6;
-                        i5 = 0;
+                        obj = obj9;
+                        obj2 = obj8;
+                        i4 = 0;
                     }
-                    int i38 = i37 + i5;
-                    if (arrayList != null) {
-                        for (int i39 = 0; i39 < arrayList.size(); i39++) {
-                            pollButton = (PollButton) arrayList.get(i39);
-                            if (pollButton.task == todoItem || (pollButton.task != null && pollButton.task.id == todoItem.id)) {
+                    int i35 = i34 + i4;
+                    if (arrayList16 != null) {
+                        int i36 = 0;
+                        while (i36 < arrayList16.size()) {
+                            arrayList3 = arrayList16;
+                            pollButton = (PollButton) arrayList3.get(i36);
+                            if (pollButton.task == todoItem) {
+                                i5 = size6;
                                 break;
                             }
+                            if (pollButton.task != null) {
+                                i5 = size6;
+                                if (pollButton.task.id == todoItem.id) {
+                                    break;
+                                }
+                            } else {
+                                i5 = size6;
+                            }
+                            i36++;
+                            arrayList16 = arrayList3;
+                            size6 = i5;
                         }
                     }
+                    i5 = size6;
+                    arrayList3 = arrayList16;
                     pollButton = null;
-                    Boolean sendingTodoValue = SendMessagesHelper.getInstance(this.currentAccount).getSendingTodoValue(messageObject2, todoItem);
-                    PollButton pollButton8 = new PollButton();
-                    pollButton8.author = pollButton != null ? pollButton.author : null;
+                    Boolean sendingTodoValue = SendMessagesHelper.getInstance(this.currentAccount).getSendingTodoValue(messageObject4, todoItem);
+                    PollButton pollButton9 = new PollButton();
+                    pollButton9.author = pollButton != null ? pollButton.author : null;
                     if (pollButton != null) {
-                        pollButton8.selectorDrawableColor = pollButton.selectorDrawableColor;
-                        pollButton8.selectorDrawable = pollButton.selectorDrawable;
-                        i6 = i38;
+                        pollButton9.selectorDrawableColor = pollButton.selectorDrawableColor;
+                        pollButton9.selectorDrawable = pollButton.selectorDrawable;
                     } else {
                         int themedColor2 = getThemedColor(Theme.key_listSelector);
-                        pollButton8.selectorDrawableColor = themedColor2;
-                        i6 = i38;
-                        pollButton8.selectorDrawable = Theme.createRadSelectorDrawable(themedColor2, 0, 0);
+                        pollButton9.selectorDrawableColor = themedColor2;
+                        pollButton9.selectorDrawable = Theme.createRadSelectorDrawable(themedColor2, 0, 0);
                     }
-                    pollButton8.selectorDrawable.setCallback(this);
+                    pollButton9.selectorDrawable.setCallback(this);
                     if (pollButton != null) {
-                        pollButton8.avatarDrawable = pollButton.avatarDrawable;
-                        pollButton8.avatarImageReceiver = pollButton.avatarImageReceiver;
+                        pollButton9.avatarDrawable = pollButton.avatarDrawable;
+                        pollButton9.avatarImageReceiver = pollButton.avatarImageReceiver;
                         pollButton.avatarDrawable = null;
                         pollButton.avatarImageReceiver = null;
                     }
-                    if (pollButton8.avatarDrawable == null) {
-                        pollButton8.avatarDrawable = new AvatarDrawable();
+                    if (pollButton9.avatarDrawable == null) {
+                        pollButton9.avatarDrawable = new AvatarDrawable();
                     }
-                    if (pollButton8.avatarImageReceiver == null) {
-                        pollButton8.avatarImageReceiver = new ImageReceiver(this);
-                        pollButton8.avatarImageReceiver.setRoundRadius(AndroidUtilities.dp(20.0f));
+                    if (pollButton9.avatarImageReceiver == null) {
+                        pollButton9.avatarImageReceiver = new ImageReceiver(this);
+                        pollButton9.avatarImageReceiver.setRoundRadius(AndroidUtilities.dp(20.0f));
                     }
                     if (isCellAttachedToWindow()) {
-                        pollButton8.attach();
+                        pollButton9.attach();
                     }
-                    pollButton8.chosen = false;
-                    if (!tL_messageMediaToDo3.completions.isEmpty()) {
-                        Iterator<TLRPC.TodoCompletion> it5 = tL_messageMediaToDo3.completions.iterator();
+                    pollButton9.chosen = false;
+                    if (!tL_messageMediaToDo2.completions.isEmpty()) {
+                        Iterator<TLRPC.TodoCompletion> it5 = tL_messageMediaToDo2.completions.iterator();
                         while (it5.hasNext()) {
                             TLRPC.TodoCompletion next2 = it5.next();
                             Iterator<TLRPC.TodoCompletion> it6 = it5;
-                            tL_messageMediaToDo = tL_messageMediaToDo3;
+                            i6 = i35;
                             if (next2.id == todoItem.id) {
-                                pollButton8.chosen = true;
+                                pollButton9.chosen = true;
                                 MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
                                 TLRPC.Peer peer = next2.completed_by;
-                                obj2 = obj7;
+                                arrayList16 = arrayList3;
+                                obj3 = obj2;
                                 TLObject userOrChat = messagesController.getUserOrChat(DialogObject.getPeerDialogId(peer));
-                                pollButton8.avatarDrawable.setInfo(userOrChat);
-                                pollButton8.avatarImageReceiver.setForUserOrChat(userOrChat, pollButton8.avatarDrawable);
-                                pollButton8.author = new Text(DialogObject.getName(userOrChat), 12.0f);
+                                pollButton9.avatarDrawable.setInfo(userOrChat);
+                                pollButton9.avatarImageReceiver.setForUserOrChat(userOrChat, pollButton9.avatarDrawable);
+                                pollButton9.author = new Text(DialogObject.getName(userOrChat), 12.0f);
                                 break;
                             }
                             it5 = it6;
-                            tL_messageMediaToDo3 = tL_messageMediaToDo;
+                            i35 = i6;
                         }
                     }
-                    tL_messageMediaToDo = tL_messageMediaToDo3;
-                    obj2 = obj7;
+                    i6 = i35;
+                    arrayList16 = arrayList3;
+                    obj3 = obj2;
                     if (sendingTodoValue != null) {
-                        pollButton8.chosen = sendingTodoValue.booleanValue();
+                        pollButton9.chosen = sendingTodoValue.booleanValue();
                     }
-                    if (pollButton8.chosen && !messageObject.canCompleteTodo()) {
-                        if (!(charSequence3 instanceof SpannableStringBuilder)) {
-                            charSequence3 = new SpannableStringBuilder(charSequence3);
+                    if (pollButton9.chosen && !messageObject.canCompleteTodo()) {
+                        if (!(replaceEmoji3 instanceof SpannableStringBuilder)) {
+                            replaceEmoji3 = new SpannableStringBuilder(replaceEmoji3);
                         }
-                        ((SpannableStringBuilder) charSequence3).setSpan(new StrikethroughSpan(), 0, charSequence3.length(), 33);
+                        ((SpannableStringBuilder) replaceEmoji3).setSpan(new StrikethroughSpan(), 0, replaceEmoji3.length(), 33);
                     }
-                    CharSequence charSequence4 = charSequence3;
-                    pollButton8.task = todoItem;
-                    StaticLayout staticLayout6 = new StaticLayout(charSequence4, Theme.chat_audioPerformerPaint, i - AndroidUtilities.dp(46.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                    pollButton8.title = staticLayout6;
-                    pollButton8.animatedEmoji = AnimatedEmojiSpan.update(0, (View) this, false, pollButton8.animatedEmoji, staticLayout6);
-                    pollButton8.y = height + AndroidUtilities.dp(52.0f);
-                    pollButton8.height = pollButton8.title.getHeight();
-                    pollButton8.translated = false;
+                    CharSequence charSequence3 = replaceEmoji3;
+                    pollButton9.task = todoItem;
+                    StaticLayout staticLayout6 = new StaticLayout(charSequence3, Theme.chat_audioPerformerPaint, i - AndroidUtilities.dp(46.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                    pollButton9.title = staticLayout6;
+                    pollButton9.animatedEmoji = AnimatedEmojiSpan.update(0, (View) this, false, pollButton9.animatedEmoji, staticLayout6);
+                    pollButton9.y = height + AndroidUtilities.dp(52.0f);
+                    pollButton9.height = pollButton9.title.getHeight();
+                    pollButton9.translated = false;
                     if (pollButton != null && pollButton.translated) {
-                        pollButton8.animateTitle = pollButton.title;
-                        pollButton8.animateTitleEmoji = AnimatedEmojiSpan.update(0, (View) this, false, pollButton8.animateTitleEmoji, pollButton8.animateTitle);
-                        pollButton8.animateY = pollButton.y;
-                        pollButton8.animateHeight = pollButton.height;
+                        pollButton9.animateTitle = pollButton.title;
+                        pollButton9.animateTitleEmoji = AnimatedEmojiSpan.update(0, (View) this, false, pollButton9.animateTitleEmoji, pollButton9.animateTitle);
+                        pollButton9.animateY = pollButton.y;
+                        pollButton9.animateHeight = pollButton.height;
                     }
-                    this.pollButtons.add(pollButton8);
-                    arrayList7.add(pollButton8);
-                    height += pollButton8.height + AndroidUtilities.dp(26.66f);
-                    this.pollCheckBox[i36].setChecked(pollButton8.chosen, !z);
-                    this.pollCheckBox[i36].checkScale = 1.0f;
-                    i36++;
-                    messageObject2 = messageObject;
-                    obj6 = obj;
-                    obj7 = obj2;
-                    size6 = i4;
-                    i37 = i6;
-                    tL_messageMediaToDo3 = tL_messageMediaToDo;
+                    this.pollButtons.add(pollButton9);
+                    arrayList9.add(pollButton9);
+                    height += pollButton9.height + AndroidUtilities.dp(26.66f);
+                    this.pollCheckBox[i33].setChecked(pollButton9.chosen, !z);
+                    this.pollCheckBox[i33].checkScale = 1.0f;
+                    i33++;
+                    messageObject4 = messageObject;
+                    obj8 = obj3;
+                    obj9 = obj;
+                    size6 = i5;
+                    i34 = i6;
                 }
-                Iterator it7 = arrayList.iterator();
+                Iterator it7 = arrayList16.iterator();
                 while (it7.hasNext()) {
-                    PollButton pollButton9 = (PollButton) it7.next();
-                    if (pollButton9.avatarImageReceiver != null) {
-                        pollButton9.avatarImageReceiver.onDetachedFromWindow();
-                        pollButton9.avatarImageReceiver = null;
+                    PollButton pollButton10 = (PollButton) it7.next();
+                    if (pollButton10.avatarImageReceiver != null) {
+                        pollButton10.avatarImageReceiver.onDetachedFromWindow();
+                        pollButton10.avatarImageReceiver = null;
                     }
                 }
             }
             z10 = false;
             i3 = 100;
         }
-        normalizePollPercents(z10, i3, arrayList7);
+        normalizePollPercents(z10, i3, arrayList9);
         int dp7 = this.backgroundWidth - AndroidUtilities.dp(76.0f);
         int size7 = this.pollButtons.size();
-        for (int i40 = 0; i40 < size7; i40++) {
-            ((PollButton) this.pollButtons.get(i40)).percentProgress = Math.max(AndroidUtilities.dp(5.0f) / dp7, r4.percent / 100);
+        for (int i37 = 0; i37 < size7; i37++) {
+            ((PollButton) this.pollButtons.get(i37)).percentProgress = Math.max(AndroidUtilities.dp(5.0f) / dp7, r4.percent / 100);
         }
         setMessageObjectInternal(messageObject);
         this.pollInstantViewTouchesBottom = false;
@@ -31894,27 +31941,27 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             dp = height + AndroidUtilities.dp(13.0f);
         }
         int dp8 = AndroidUtilities.dp(73.0f);
-        int i41 = this.namesOffset;
-        this.totalHeight = dp8 + i41 + dp;
+        int i38 = this.namesOffset;
+        this.totalHeight = dp8 + i38 + dp;
         if (this.drawPinnedTop) {
-            this.namesOffset = i41 - AndroidUtilities.dp(1.0f);
+            this.namesOffset = i38 - AndroidUtilities.dp(1.0f);
         }
         this.instantTextNewLine = false;
         if (z8 || z9) {
-            int i42 = 0;
-            for (int i43 = 0; i43 < 3; i43++) {
-                if (i43 == 0) {
+            int i39 = 0;
+            for (int i40 = 0; i40 < 3; i40++) {
+                if (i40 == 0) {
                     string2 = LocaleController.getString(org.telegram.messenger.R.string.PollViewResultsNoCaps);
-                } else if (i43 == 1) {
+                } else if (i40 == 1) {
                     string2 = LocaleController.getString(org.telegram.messenger.R.string.PollSubmitVotesNoCaps);
                 } else {
                     string2 = LocaleController.getString(org.telegram.messenger.R.string.NoVotes);
                 }
-                i42 = Math.max(i42, (int) Math.ceil(Theme.chat_instantViewPaint.measureText(string2)));
+                i39 = Math.max(i39, (int) Math.ceil(Theme.chat_instantViewPaint.measureText(string2)));
             }
             int dp9 = this.timeWidth + (messageObject.isOutOwner() ? AndroidUtilities.dp(20.0f) : 0) + getExtraTimeX();
             ReactionsLayoutInBubble reactionsLayoutInBubble = this.reactionsLayoutInBubble;
-            if (!reactionsLayoutInBubble.isSmall && reactionsLayoutInBubble.isEmpty && dp9 >= ((this.backgroundWidth - AndroidUtilities.dp(76.0f)) - i42) / 2) {
+            if (!reactionsLayoutInBubble.isSmall && reactionsLayoutInBubble.isEmpty && dp9 >= ((this.backgroundWidth - AndroidUtilities.dp(76.0f)) - i39) / 2) {
                 this.totalHeight += AndroidUtilities.dp(18.0f);
                 this.instantTextNewLine = true;
             }
@@ -49584,126 +49631,126 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:1477:0x1ee2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1483:0x1ef9, code lost:
     
-        if (r5 < 1.0f) goto L1149;
+        if (r5 < 1.0f) goto L1156;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:303:0x2573, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:303:0x258a, code lost:
     
-        if (r1 < 1.0f) goto L1442;
+        if (r1 < 1.0f) goto L1449;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:317:0x2383, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:317:0x239a, code lost:
     
-        if (r0.revealingMediaSpoilers != false) goto L1344;
+        if (r0.revealingMediaSpoilers != false) goto L1351;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:327:0x23a4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:327:0x23bb, code lost:
     
-        if (r75.radialProgress.getIcon() != 4) goto L1344;
+        if (r75.radialProgress.getIcon() != 4) goto L1351;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:775:0x105b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:777:0x105f, code lost:
     
-        if (r0 == 3) goto L512;
+        if (r0 == 3) goto L514;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:1006:0x1829  */
-    /* JADX WARN: Removed duplicated region for block: B:1015:0x186e  */
-    /* JADX WARN: Removed duplicated region for block: B:1018:0x1880  */
-    /* JADX WARN: Removed duplicated region for block: B:1021:0x188c  */
-    /* JADX WARN: Removed duplicated region for block: B:1026:0x18ba  */
-    /* JADX WARN: Removed duplicated region for block: B:1029:0x18cd  */
-    /* JADX WARN: Removed duplicated region for block: B:1034:0x18e4  */
-    /* JADX WARN: Removed duplicated region for block: B:1037:0x18f2  */
-    /* JADX WARN: Removed duplicated region for block: B:1040:0x190e  */
-    /* JADX WARN: Removed duplicated region for block: B:1043:0x191e  */
-    /* JADX WARN: Removed duplicated region for block: B:1050:0x193d  */
-    /* JADX WARN: Removed duplicated region for block: B:1053:0x1965  */
-    /* JADX WARN: Removed duplicated region for block: B:1056:0x19e1  */
-    /* JADX WARN: Removed duplicated region for block: B:1058:0x1968  */
-    /* JADX WARN: Removed duplicated region for block: B:1059:0x1921  */
-    /* JADX WARN: Removed duplicated region for block: B:1060:0x1914  */
-    /* JADX WARN: Removed duplicated region for block: B:1061:0x18f5  */
-    /* JADX WARN: Removed duplicated region for block: B:1062:0x18e7  */
-    /* JADX WARN: Removed duplicated region for block: B:1063:0x18d7  */
-    /* JADX WARN: Removed duplicated region for block: B:1064:0x18bd  */
-    /* JADX WARN: Removed duplicated region for block: B:1065:0x18ad  */
-    /* JADX WARN: Removed duplicated region for block: B:1066:0x1883  */
-    /* JADX WARN: Removed duplicated region for block: B:1067:0x1871  */
-    /* JADX WARN: Removed duplicated region for block: B:1069:0x183e  */
-    /* JADX WARN: Removed duplicated region for block: B:1074:0x16a4  */
-    /* JADX WARN: Removed duplicated region for block: B:1076:0x1662  */
-    /* JADX WARN: Removed duplicated region for block: B:1081:0x1572  */
-    /* JADX WARN: Removed duplicated region for block: B:1098:0x156e  */
-    /* JADX WARN: Removed duplicated region for block: B:1132:0x1a0e A[EDGE_INSN: B:1132:0x1a0e->B:1133:0x1a0e BREAK  A[LOOP:0: B:792:0x10be->B:806:0x19ff], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:1135:0x1a1f  */
-    /* JADX WARN: Removed duplicated region for block: B:1141:0x1a55  */
-    /* JADX WARN: Removed duplicated region for block: B:1155:0x1aab  */
+    /* JADX WARN: Removed duplicated region for block: B:1012:0x1840  */
+    /* JADX WARN: Removed duplicated region for block: B:1021:0x1885  */
+    /* JADX WARN: Removed duplicated region for block: B:1024:0x1897  */
+    /* JADX WARN: Removed duplicated region for block: B:1027:0x18a3  */
+    /* JADX WARN: Removed duplicated region for block: B:1032:0x18d1  */
+    /* JADX WARN: Removed duplicated region for block: B:1035:0x18e4  */
+    /* JADX WARN: Removed duplicated region for block: B:1040:0x18fb  */
+    /* JADX WARN: Removed duplicated region for block: B:1043:0x1909  */
+    /* JADX WARN: Removed duplicated region for block: B:1046:0x1925  */
+    /* JADX WARN: Removed duplicated region for block: B:1049:0x1935  */
+    /* JADX WARN: Removed duplicated region for block: B:1056:0x1954  */
+    /* JADX WARN: Removed duplicated region for block: B:1059:0x197c  */
+    /* JADX WARN: Removed duplicated region for block: B:1062:0x19f8  */
+    /* JADX WARN: Removed duplicated region for block: B:1064:0x197f  */
+    /* JADX WARN: Removed duplicated region for block: B:1065:0x1938  */
+    /* JADX WARN: Removed duplicated region for block: B:1066:0x192b  */
+    /* JADX WARN: Removed duplicated region for block: B:1067:0x190c  */
+    /* JADX WARN: Removed duplicated region for block: B:1068:0x18fe  */
+    /* JADX WARN: Removed duplicated region for block: B:1069:0x18ee  */
+    /* JADX WARN: Removed duplicated region for block: B:1070:0x18d4  */
+    /* JADX WARN: Removed duplicated region for block: B:1071:0x18c4  */
+    /* JADX WARN: Removed duplicated region for block: B:1072:0x189a  */
+    /* JADX WARN: Removed duplicated region for block: B:1073:0x1888  */
+    /* JADX WARN: Removed duplicated region for block: B:1075:0x1855  */
+    /* JADX WARN: Removed duplicated region for block: B:1080:0x16bb  */
+    /* JADX WARN: Removed duplicated region for block: B:1082:0x1679  */
+    /* JADX WARN: Removed duplicated region for block: B:1087:0x1589  */
+    /* JADX WARN: Removed duplicated region for block: B:1104:0x1585  */
+    /* JADX WARN: Removed duplicated region for block: B:1138:0x1a25 A[EDGE_INSN: B:1138:0x1a25->B:1139:0x1a25 BREAK  A[LOOP:0: B:794:0x10c2->B:808:0x1a16], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:1141:0x1a36  */
+    /* JADX WARN: Removed duplicated region for block: B:1147:0x1a6c  */
     /* JADX WARN: Removed duplicated region for block: B:1161:0x1ac2  */
-    /* JADX WARN: Removed duplicated region for block: B:1168:0x1ad4  */
-    /* JADX WARN: Removed duplicated region for block: B:1170:0x1ada  */
-    /* JADX WARN: Removed duplicated region for block: B:1198:0x1c2d  */
-    /* JADX WARN: Removed duplicated region for block: B:1202:0x1c56  */
-    /* JADX WARN: Removed duplicated region for block: B:1212:0x1c71  */
-    /* JADX WARN: Removed duplicated region for block: B:1215:0x1cac  */
-    /* JADX WARN: Removed duplicated region for block: B:1237:0x1bba  */
-    /* JADX WARN: Removed duplicated region for block: B:1252:0x1ad7  */
-    /* JADX WARN: Removed duplicated region for block: B:1256:0x1a50  */
-    /* JADX WARN: Removed duplicated region for block: B:1298:0x0e74  */
-    /* JADX WARN: Removed duplicated region for block: B:1304:0x0c65  */
-    /* JADX WARN: Removed duplicated region for block: B:1307:0x0b80  */
-    /* JADX WARN: Removed duplicated region for block: B:1308:0x08e6  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x264b  */
-    /* JADX WARN: Removed duplicated region for block: B:1358:0x1dc1  */
-    /* JADX WARN: Removed duplicated region for block: B:1380:0x2171  */
-    /* JADX WARN: Removed duplicated region for block: B:1386:0x21ab  */
-    /* JADX WARN: Removed duplicated region for block: B:1392:0x21e1  */
-    /* JADX WARN: Removed duplicated region for block: B:1397:0x21f3  */
-    /* JADX WARN: Removed duplicated region for block: B:1403:0x2201  */
-    /* JADX WARN: Removed duplicated region for block: B:1407:0x2212  */
-    /* JADX WARN: Removed duplicated region for block: B:1416:0x21c2  */
-    /* JADX WARN: Removed duplicated region for block: B:1422:0x218a  */
-    /* JADX WARN: Removed duplicated region for block: B:1432:0x1e0e  */
-    /* JADX WARN: Removed duplicated region for block: B:1463:0x1e50  */
-    /* JADX WARN: Removed duplicated region for block: B:1474:0x1ed7  */
-    /* JADX WARN: Removed duplicated region for block: B:1481:0x1eed  */
-    /* JADX WARN: Removed duplicated region for block: B:1563:0x1e56  */
-    /* JADX WARN: Removed duplicated region for block: B:192:0x2856  */
-    /* JADX WARN: Removed duplicated region for block: B:199:0x2875  */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x28c3  */
-    /* JADX WARN: Removed duplicated region for block: B:244:0x2981  */
+    /* JADX WARN: Removed duplicated region for block: B:1167:0x1ad9  */
+    /* JADX WARN: Removed duplicated region for block: B:1174:0x1aeb  */
+    /* JADX WARN: Removed duplicated region for block: B:1176:0x1af1  */
+    /* JADX WARN: Removed duplicated region for block: B:1204:0x1c44  */
+    /* JADX WARN: Removed duplicated region for block: B:1208:0x1c6d  */
+    /* JADX WARN: Removed duplicated region for block: B:1218:0x1c88  */
+    /* JADX WARN: Removed duplicated region for block: B:1221:0x1cc3  */
+    /* JADX WARN: Removed duplicated region for block: B:1243:0x1bd1  */
+    /* JADX WARN: Removed duplicated region for block: B:1258:0x1aee  */
+    /* JADX WARN: Removed duplicated region for block: B:1262:0x1a67  */
+    /* JADX WARN: Removed duplicated region for block: B:1304:0x0e74  */
+    /* JADX WARN: Removed duplicated region for block: B:1310:0x0c65  */
+    /* JADX WARN: Removed duplicated region for block: B:1313:0x0b80  */
+    /* JADX WARN: Removed duplicated region for block: B:1314:0x08e6  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x2662  */
+    /* JADX WARN: Removed duplicated region for block: B:1364:0x1dd8  */
+    /* JADX WARN: Removed duplicated region for block: B:1386:0x2188  */
+    /* JADX WARN: Removed duplicated region for block: B:1392:0x21c2  */
+    /* JADX WARN: Removed duplicated region for block: B:1398:0x21f8  */
+    /* JADX WARN: Removed duplicated region for block: B:1403:0x220a  */
+    /* JADX WARN: Removed duplicated region for block: B:1409:0x2218  */
+    /* JADX WARN: Removed duplicated region for block: B:1413:0x2229  */
+    /* JADX WARN: Removed duplicated region for block: B:1422:0x21d9  */
+    /* JADX WARN: Removed duplicated region for block: B:1428:0x21a1  */
+    /* JADX WARN: Removed duplicated region for block: B:1438:0x1e25  */
+    /* JADX WARN: Removed duplicated region for block: B:1469:0x1e67  */
+    /* JADX WARN: Removed duplicated region for block: B:1480:0x1eee  */
+    /* JADX WARN: Removed duplicated region for block: B:1487:0x1f04  */
+    /* JADX WARN: Removed duplicated region for block: B:1569:0x1e6d  */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x286d  */
+    /* JADX WARN: Removed duplicated region for block: B:199:0x288c  */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x28da  */
+    /* JADX WARN: Removed duplicated region for block: B:244:0x2998  */
     /* JADX WARN: Removed duplicated region for block: B:279:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:282:0x2532  */
-    /* JADX WARN: Removed duplicated region for block: B:300:0x2568  */
-    /* JADX WARN: Removed duplicated region for block: B:306:0x2494  */
-    /* JADX WARN: Removed duplicated region for block: B:314:0x237b  */
-    /* JADX WARN: Removed duplicated region for block: B:330:0x23ae  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x222a  */
+    /* JADX WARN: Removed duplicated region for block: B:282:0x2549  */
+    /* JADX WARN: Removed duplicated region for block: B:300:0x257f  */
+    /* JADX WARN: Removed duplicated region for block: B:306:0x24ab  */
+    /* JADX WARN: Removed duplicated region for block: B:314:0x2392  */
+    /* JADX WARN: Removed duplicated region for block: B:330:0x23c5  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x2241  */
     /* JADX WARN: Removed duplicated region for block: B:425:0x0476  */
     /* JADX WARN: Removed duplicated region for block: B:435:0x047a  */
     /* JADX WARN: Removed duplicated region for block: B:628:0x08cd  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x244b  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x2462  */
     /* JADX WARN: Removed duplicated region for block: B:631:0x08da  */
     /* JADX WARN: Removed duplicated region for block: B:635:0x0909  */
     /* JADX WARN: Removed duplicated region for block: B:638:0x0912  */
     /* JADX WARN: Removed duplicated region for block: B:641:0x0937  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x2455  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x246c  */
     /* JADX WARN: Removed duplicated region for block: B:666:0x0b8d  */
     /* JADX WARN: Removed duplicated region for block: B:681:0x0c6e  */
     /* JADX WARN: Removed duplicated region for block: B:692:0x0ce1  */
     /* JADX WARN: Removed duplicated region for block: B:724:0x0e7c  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x2478  */
-    /* JADX WARN: Removed duplicated region for block: B:772:0x1053  */
-    /* JADX WARN: Removed duplicated region for block: B:784:0x109e  */
-    /* JADX WARN: Removed duplicated region for block: B:788:0x10a9  */
-    /* JADX WARN: Removed duplicated region for block: B:794:0x10c3  */
-    /* JADX WARN: Removed duplicated region for block: B:797:0x10d4  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x2491  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x249d  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x2507  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x2528  */
-    /* JADX WARN: Removed duplicated region for block: B:927:0x14e8  */
-    /* JADX WARN: Removed duplicated region for block: B:948:0x164b  */
-    /* JADX WARN: Removed duplicated region for block: B:958:0x16a1  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x2587  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x248f  */
+    /* JADX WARN: Removed duplicated region for block: B:774:0x1057  */
+    /* JADX WARN: Removed duplicated region for block: B:786:0x10a2  */
+    /* JADX WARN: Removed duplicated region for block: B:790:0x10ad  */
+    /* JADX WARN: Removed duplicated region for block: B:796:0x10c7  */
+    /* JADX WARN: Removed duplicated region for block: B:799:0x10d8  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x24a8  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x24b4  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x251e  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x253f  */
+    /* JADX WARN: Removed duplicated region for block: B:933:0x14ff  */
+    /* JADX WARN: Removed duplicated region for block: B:954:0x1662  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x259e  */
+    /* JADX WARN: Removed duplicated region for block: B:964:0x16b8  */
     /* JADX WARN: Type inference failed for: r15v18 */
     /* JADX WARN: Type inference failed for: r15v19, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r15v36 */
@@ -50953,7 +51000,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         this.pollRecentVotersDrawable.draw(canvas, this.currentBackgroundDrawable.getPaint());
                                                     }
                                                 }
-                                                if (((!this.pollClosed || this.pollVoted || this.pollResultsPreview) && !this.pollVoteInProgress) || (poll2 = this.lastPoll) == null || !poll2.quiz || poll2.close_period == 0) {
+                                                if (((!this.pollClosed || this.pollVoted || this.pollResultsPreview) && !this.pollVoteInProgress) || (poll2 = this.lastPoll) == null || !poll2.quiz || poll2.close_period == 0 || !this.isBot) {
                                                     i21 = i19;
                                                     j3 = j2;
                                                     f16 = 0.0f;
@@ -51047,7 +51094,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         i58 = AndroidUtilities.lerp(pollButton2.animateHeight, i58, this.transitionParams.animateChangeProgress);
                                                     }
                                                     int i59 = i58;
-                                                    if ((pollButton2.task == null || pollButton2.task.id != this.doNotDrawTaskId) && (pollButton2.answer == null || pollButton2.answer.option == null || !Arrays.equals(pollButton2.answer.option, this.doNotDrawPollId))) {
+                                                    if ((pollButton2.task == null || pollButton2.task.id != this.doNotDrawTaskId) && ((this.drawOnlyPollId == null || Arrays.equals(pollButton2.answer.option, this.drawOnlyPollId)) && (pollButton2.answer == null || pollButton2.answer.option == null || !Arrays.equals(pollButton2.answer.option, this.doNotDrawPollId)))) {
                                                         canvas.save();
                                                         int i60 = i21;
                                                         int multAlpha = Theme.multAlpha(i60, 0.12f);

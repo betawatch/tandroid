@@ -44,6 +44,7 @@ public class PollContentDrawable extends Drawable implements DownloadController.
     private Text fileInfoText;
     private CharSequence fileName;
     private Text fileNameText;
+    private FileState fileState;
     private boolean hasMedia;
     public final ImageReceiver imageReceiver;
     private final boolean isExplanation;
@@ -52,6 +53,7 @@ public class PollContentDrawable extends Drawable implements DownloadController.
     private boolean isMusic;
     private boolean isVideo;
     private int lastIcon;
+    private int lastIconMini;
     int lastTime;
     private ClipRoundedDrawable locationLoadingThumb;
     private SvgHelper.SvgDrawable locationSvgThumb;
@@ -80,14 +82,6 @@ public class PollContentDrawable extends Drawable implements DownloadController.
     @Override // org.telegram.ui.Components.SeekBar.SeekBarDelegate
     public /* synthetic */ boolean isSeekBarDragAllowed() {
         return SeekBar.SeekBarDelegate.-CC.$default$isSeekBarDragAllowed(this);
-    }
-
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public void onFailedDownload(String str, boolean z) {
-    }
-
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public void onSuccessDownload(String str) {
     }
 
     @Override // org.telegram.ui.Components.SeekBar.SeekBarDelegate
@@ -146,6 +140,7 @@ public class PollContentDrawable extends Drawable implements DownloadController.
         this.videoDuration = 0;
         this.attachPath = str;
         this.attachFileName = null;
+        this.fileState = null;
         boolean mediaImpl = setMediaImpl(messageMedia, obj, i, str);
         this.hasMedia = mediaImpl;
         if (!mediaImpl) {
@@ -161,6 +156,7 @@ public class PollContentDrawable extends Drawable implements DownloadController.
         }
         if (!this.isMusic) {
             this.radialProgress.setImageOverlay(null, null, null);
+            setIconMini(4, false);
         }
         updatePlayingMessageProgress(z);
     }
@@ -219,6 +215,7 @@ public class PollContentDrawable extends Drawable implements DownloadController.
                 if (!(messageMedia instanceof TLRPC.TL_messageMediaDocument) || (document = ((TLRPC.TL_messageMediaDocument) messageMedia).document) == null) {
                     return false;
                 }
+                this.fileState = new FileState(this.currentAccount, this.messageObject, document, str);
                 this.attachFileName = !TextUtils.isEmpty(str) ? str : MessageObject.getFileName(messageMedia);
                 if (MessageObject.isMusicDocument(document)) {
                     this.isMusic = true;
@@ -466,12 +463,28 @@ public class PollContentDrawable extends Drawable implements DownloadController.
         if (messageObject != null && messageObject.isSending()) {
             if (ImageLoader.getInstance().getFileProgressSizes(this.attachPath) == null) {
                 this.radialProgress.setProgress(1.0f, true);
-                setIcon(6);
+                if (this.isMusic) {
+                    setIconMini(6, true);
+                } else {
+                    setIcon(6, true);
+                }
             }
-        } else if (!TextUtils.isEmpty(this.attachFileName) && FileLoader.getInstance(this.currentAccount).isLoadingFile(this.attachFileName)) {
-            setIcon(3);
         } else {
-            setIcon(getDefaultIcon());
+            FileState fileState = this.fileState;
+            if (fileState != null && fileState.isLoading()) {
+                if (this.isMusic) {
+                    setIconMini(3, true);
+                } else {
+                    setIcon(3, true);
+                }
+            } else if (this.isMusic) {
+                setIconMini(4, true);
+            } else {
+                setIcon(getDefaultIcon(), true);
+            }
+        }
+        if (this.isMusic) {
+            setIcon(getDefaultIcon(), true);
         }
         this.radialProgress.draw(canvas);
     }
@@ -497,21 +510,58 @@ public class PollContentDrawable extends Drawable implements DownloadController.
         if (this.isVideo || this.isMusic) {
             return 0;
         }
-        return this.isFile ? 5 : 4;
+        if (!this.isFile) {
+            return 4;
+        }
+        FileState fileState = this.fileState;
+        return (fileState == null || !fileState.isExists()) ? 2 : 5;
     }
 
-    private void setIcon(int i) {
+    private void setIcon(int i, boolean z) {
         if (this.lastIcon != i) {
             this.lastIcon = i;
-            this.radialProgress.setIcon(i, true, true);
+            this.radialProgress.setIcon(i, true, z);
         }
+    }
+
+    private void setIconMini(int i, boolean z) {
+        if (this.lastIconMini != i) {
+            this.lastIconMini = i;
+            this.radialProgress.setMiniIcon(i, true, z);
+        }
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public void onFailedDownload(String str, boolean z) {
+        checkFileState();
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public void onSuccessDownload(String str) {
+        checkFileState();
+    }
+
+    public void checkFileState() {
+        FileState fileState = this.fileState;
+        if (fileState != null) {
+            fileState.checkState();
+        }
+        this.parent.invalidate();
     }
 
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
     public void onProgressDownload(String str, long j, long j2) {
         float min = j2 == 0 ? 0.0f : Math.min(1.0f, j / j2);
         this.radialProgress.setProgress(min, true);
-        setIcon(min < 1.0f ? 3 : getDefaultIcon());
+        FileState fileState = this.fileState;
+        if (fileState != null) {
+            fileState.checkState();
+        }
+        if (this.isMusic) {
+            setIconMini(min >= 1.0f ? 4 : 3, true);
+        } else {
+            setIcon(min >= 1.0f ? getDefaultIcon() : 3, true);
+        }
         this.parent.invalidate();
     }
 
@@ -519,7 +569,15 @@ public class PollContentDrawable extends Drawable implements DownloadController.
     public void onProgressUpload(String str, long j, long j2, boolean z) {
         float min = j2 == 0 ? 0.0f : Math.min(1.0f, j / j2);
         this.radialProgress.setProgress(min, true);
-        setIcon(min < 1.0f ? 3 : getDefaultIcon());
+        FileState fileState = this.fileState;
+        if (fileState != null) {
+            fileState.checkState();
+        }
+        if (this.isMusic) {
+            setIconMini(min >= 1.0f ? 4 : 3, true);
+        } else {
+            setIcon(min >= 1.0f ? getDefaultIcon() : 3, true);
+        }
         this.parent.invalidate();
     }
 

@@ -90,6 +90,7 @@ import org.telegram.ui.Stories.recorder.KeyboardNotifier;
 
 /* loaded from: classes5.dex */
 public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout implements SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate, NotificationCenter.NotificationCenterDelegate {
+    private final int MAX_CAPTION_LENGTH;
     private final int[] POLL_DURATION_OPTIONS;
     private int addAnswerRow;
     private boolean allowAdding;
@@ -438,6 +439,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         this.hintView.setAlpha(0.0f);
         this.hintView.setVisibility(4);
         addView(this.hintView, LayoutHelper.createFrame(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
+        this.MAX_CAPTION_LENGTH = MessagesController.getInstance(this.parentAlert.currentAccount).config.pollCaptionLengthMax.get();
         if (isPremium) {
             NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
             SuggestEmojiView suggestEmojiView = new SuggestEmojiView(context, this.parentAlert.currentAccount, null, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.6
@@ -1136,7 +1138,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         } else {
             i = 0;
         }
-        boolean z = (TextUtils.isEmpty(getFixedString(this.solutionString)) || this.solutionString.length() <= 200) && !TextUtils.isEmpty(getFixedString(this.questionString)) && this.questionString.length() <= 255;
+        boolean z = (TextUtils.isEmpty(getFixedString(this.descriptionString)) || this.descriptionString.length() <= this.MAX_CAPTION_LENGTH) && (TextUtils.isEmpty(getFixedString(this.solutionString)) || this.solutionString.length() <= 200) && !TextUtils.isEmpty(getFixedString(this.questionString)) && this.questionString.length() <= 255;
         int i3 = 0;
         int i4 = 0;
         boolean z2 = false;
@@ -1377,41 +1379,78 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x007f  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00ab  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void setTextLeft(View view, int i) {
         int length;
         int i2;
-        if (view instanceof PollEditTextCell) {
-            PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
-            if (i == this.questionRow) {
-                i2 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.invalidateMotionBackground;
-                CharSequence charSequence = this.questionString;
-                length = i2 - (charSequence != null ? charSequence.length() : 0);
-            } else if (i == this.solutionRow) {
-                CharSequence charSequence2 = this.solutionString;
-                length = 200 - (charSequence2 != null ? charSequence2.length() : 0);
-                i2 = NotificationCenter.channelRecommendationsLoaded;
-            } else {
-                int i3 = this.answerStartRow;
-                if (i < i3 || i >= this.answersCount + i3) {
+        int length2;
+        float f;
+        if (!(view instanceof PollEditTextCell)) {
+            return;
+        }
+        PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
+        if (i == this.descriptionRow) {
+            i2 = this.MAX_CAPTION_LENGTH;
+            CharSequence charSequence = this.descriptionString;
+            if (charSequence != null) {
+                length2 = charSequence.length();
+                length = i2 - length2;
+                f = i2;
+                if (length <= f - (0.7f * f)) {
+                    pollEditTextCell.setText2(String.format("%d", Integer.valueOf(length)));
+                    SimpleTextView textView2 = pollEditTextCell.getTextView2();
+                    int i3 = length < 0 ? Theme.key_text_RedRegular : Theme.key_windowBackgroundWhiteGrayText3;
+                    textView2.setTextColor(getThemedColor(i3));
+                    textView2.setTag(Integer.valueOf(i3));
                     return;
                 }
-                int i4 = i - i3;
-                int i5 = this.todo ? getMessagesController().todoItemLengthMax : 100;
-                CharSequence charSequence3 = this.answers[i4];
-                int i6 = i5;
-                length = i5 - (charSequence3 != null ? charSequence3.length() : 0);
-                i2 = i6;
-            }
-            float f = i2;
-            if (length <= f - (0.7f * f)) {
-                pollEditTextCell.setText2(String.format("%d", Integer.valueOf(length)));
-                SimpleTextView textView2 = pollEditTextCell.getTextView2();
-                int i7 = length < 0 ? Theme.key_text_RedRegular : Theme.key_windowBackgroundWhiteGrayText3;
-                textView2.setTextColor(getThemedColor(i7));
-                textView2.setTag(Integer.valueOf(i7));
+                pollEditTextCell.setText2("");
                 return;
             }
-            pollEditTextCell.setText2("");
+            length2 = 0;
+            length = i2 - length2;
+            f = i2;
+            if (length <= f - (0.7f * f)) {
+            }
+        } else if (i == this.questionRow) {
+            i2 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.invalidateMotionBackground;
+            CharSequence charSequence2 = this.questionString;
+            if (charSequence2 != null) {
+                length2 = charSequence2.length();
+                length = i2 - length2;
+                f = i2;
+                if (length <= f - (0.7f * f)) {
+                }
+            }
+            length2 = 0;
+            length = i2 - length2;
+            f = i2;
+            if (length <= f - (0.7f * f)) {
+            }
+        } else {
+            if (i == this.solutionRow) {
+                CharSequence charSequence3 = this.solutionString;
+                length = 200 - (charSequence3 != null ? charSequence3.length() : 0);
+                i2 = NotificationCenter.channelRecommendationsLoaded;
+            } else {
+                int i4 = this.answerStartRow;
+                if (i < i4 || i >= this.answersCount + i4) {
+                    return;
+                }
+                int i5 = i - i4;
+                int i6 = this.todo ? getMessagesController().todoItemLengthMax : 100;
+                CharSequence charSequence4 = this.answers[i5];
+                int i7 = i6;
+                length = i6 - (charSequence4 != null ? charSequence4.length() : 0);
+                i2 = i7;
+            }
+            f = i2;
+            if (length <= f - (0.7f * f)) {
+            }
         }
     }
 
@@ -2355,7 +2394,8 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
                             if (pollEditTextCell.getTag() != null) {
                                 return;
                             }
-                            RecyclerView.ViewHolder findViewHolderForAdapterPosition = ChatAttachAlertPollLayout.this.listView.findViewHolderForAdapterPosition(ChatAttachAlertPollLayout.this.questionRow);
+                            int i2 = i == 11 ? ChatAttachAlertPollLayout.this.descriptionRow : ChatAttachAlertPollLayout.this.questionRow;
+                            RecyclerView.ViewHolder findViewHolderForAdapterPosition = ChatAttachAlertPollLayout.this.listView.findViewHolderForAdapterPosition(i2);
                             if (findViewHolderForAdapterPosition != null && ChatAttachAlertPollLayout.this.suggestEmojiPanel != null) {
                                 for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
                                     editable.removeSpan(imageSpan);
@@ -2372,8 +2412,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
                                 ChatAttachAlertPollLayout.this.questionString = editable;
                             }
                             if (findViewHolderForAdapterPosition != null) {
-                                ChatAttachAlertPollLayout chatAttachAlertPollLayout = ChatAttachAlertPollLayout.this;
-                                chatAttachAlertPollLayout.setTextLeft(findViewHolderForAdapterPosition.itemView, chatAttachAlertPollLayout.questionRow);
+                                ChatAttachAlertPollLayout.this.setTextLeft(findViewHolderForAdapterPosition.itemView, i2);
                             }
                             ChatAttachAlertPollLayout.this.checkDoneButton();
                         }
@@ -3060,6 +3099,11 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public /* synthetic */ MessageObject getPollMessageObject() {
+            return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$getPollMessageObject(this);
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public /* synthetic */ String getQuery(boolean z) {
             return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$getQuery(this, z);
         }
@@ -3202,7 +3246,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         public ItemOptions getCustomItemOptions(ViewGroup viewGroup, View view) {
             ItemOptions drawScrim = ItemOptions.makeOptions(viewGroup, new View(ChatAttachAlertPollLayout.this.getContext())).setDimAlpha(0).setDrawScrim(false);
             int i = R.drawable.msg_replace;
-            String string = LocaleController.getString(R.string.Replace);
+            String string = LocaleController.getString(R.string.ReplaceAttachedPollMedia);
             final int i2 = this.val$index;
             ItemOptions add = drawScrim.add(i, string, new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$12$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
@@ -3243,7 +3287,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
     }
 
     private void showOptionsForDrawable(final int i, Utilities.CallbackReturn callbackReturn, int i2, int i3) {
-        ItemOptions add = ItemOptions.makeOptions(this, new View(getContext())).setDimAlpha(0).setDrawScrim(false).add(R.drawable.msg_replace, LocaleController.getString(R.string.Replace), new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda20
+        ItemOptions add = ItemOptions.makeOptions(this, new View(getContext())).setDimAlpha(0).setDrawScrim(false).add(R.drawable.msg_replace, LocaleController.getString(R.string.ReplaceAttachedPollMedia), new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda20
             @Override // java.lang.Runnable
             public final void run() {
                 ChatAttachAlertPollLayout.this.lambda$showOptionsForDrawable$15(i);

@@ -46,6 +46,7 @@ public class LocationActivityAdapter extends BaseLocationAdapter implements Loca
     private boolean fetchingLocation;
     private boolean fromStories;
     private Location gpsLocation;
+    public boolean isPollAttach;
     private int locationType;
     private Context mContext;
     private boolean myLocationDenied;
@@ -225,7 +226,9 @@ public class LocationActivityAdapter extends BaseLocationAdapter implements Loca
                         }
                     }
                 }
-                if (this.locationType == 4) {
+                if (this.isPollAttach) {
+                    this.sendLocationCell.setText(LocaleController.getString(R.string.AttachSelectedLocation), str);
+                } else if (this.locationType == 4) {
                     this.sendLocationCell.setText(LocaleController.getString(R.string.ChatSetThisLocation), str);
                 } else {
                     this.sendLocationCell.setText(LocaleController.getString(R.string.SendSelectedLocation), str);

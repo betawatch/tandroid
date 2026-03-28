@@ -31,6 +31,7 @@ public class PollButtonDrawable extends Drawable implements DownloadController.F
     private final int TAG;
     private final BoolAnimator animatorShowVoters;
     private String attachFileName;
+    private String attachPath;
     private final int currentAccount;
     private final Paint darkenPaint;
     private boolean hasMedia;
@@ -114,7 +115,7 @@ public class PollButtonDrawable extends Drawable implements DownloadController.F
         this.hasMediaPadding = z;
     }
 
-    public void setMedia(MessageObject messageObject, TLRPC.MessageMedia messageMedia, Object obj, String str) {
+    public void setMedia(MessageObject messageObject, TLRPC.MessageMedia messageMedia, Object obj, String str, boolean z) {
         this.messageObject = messageObject;
         String str2 = this.attachFileName;
         this.needDrawProgress = false;
@@ -125,16 +126,15 @@ public class PollButtonDrawable extends Drawable implements DownloadController.F
             this.imageReceiver.clearImage();
         }
         this.radialProgress.setColors(this.isVideo ? 0 : Theme.getColor(Theme.key_chat_mediaLoaderPhoto), this.isVideo ? 0 : Theme.getColor(Theme.key_chat_mediaLoaderPhotoSelected), Theme.getColor(Theme.key_chat_mediaLoaderPhotoIcon), Theme.getColor(Theme.key_chat_mediaLoaderPhotoIconSelected));
-        if (TextUtils.equals(str2, this.attachFileName)) {
-            return;
+        if (!TextUtils.equals(str2, this.attachFileName)) {
+            if (!TextUtils.isEmpty(str2)) {
+                DownloadController.getInstance(this.currentAccount).removeLoadingFileObserver(this);
+            }
+            if (!TextUtils.isEmpty(this.attachFileName)) {
+                DownloadController.getInstance(this.currentAccount).addLoadingFileObserver(this.attachFileName, this);
+            }
         }
-        if (!TextUtils.isEmpty(str2)) {
-            DownloadController.getInstance(this.currentAccount).removeLoadingFileObserver(this);
-        }
-        if (TextUtils.isEmpty(this.attachFileName)) {
-            return;
-        }
-        DownloadController.getInstance(this.currentAccount).addLoadingFileObserver(this.attachFileName, this);
+        checkIcon(z);
     }
 
     public boolean isHasMedia() {
@@ -149,6 +149,7 @@ public class PollButtonDrawable extends Drawable implements DownloadController.F
         TLRPC.GeoPoint geoPoint;
         if (messageMedia != null && !(messageMedia instanceof TLRPC.TL_messageMediaEmpty)) {
             this.isVideo = false;
+            this.attachPath = str;
             if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
                 TLRPC.Photo photo = ((TLRPC.TL_messageMediaPhoto) messageMedia).photo;
                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 40);
@@ -234,16 +235,21 @@ public class PollButtonDrawable extends Drawable implements DownloadController.F
             if (this.isVideo) {
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), this.darkenPaint);
             }
-            if (!this.messageObject.isSending()) {
-                if (!TextUtils.isEmpty(this.attachFileName) && FileLoader.getInstance(this.currentAccount).isLoadingFile(this.attachFileName)) {
-                    setIcon(3);
-                } else {
-                    setIcon(getDefaultIcon());
-                }
-            }
+            checkIcon(true);
             if (this.needDrawProgress) {
                 this.radialProgress.draw(canvas);
             }
+        }
+    }
+
+    private void checkIcon(boolean z) {
+        if (this.messageObject.isSending() || this.messageObject.isEditing()) {
+            return;
+        }
+        if (!TextUtils.isEmpty(this.attachFileName) && FileLoader.getInstance(this.currentAccount).isLoadingFile(this.attachFileName)) {
+            setIcon(3, z);
+        } else {
+            setIcon(getDefaultIcon(), z);
         }
     }
 
@@ -255,10 +261,10 @@ public class PollButtonDrawable extends Drawable implements DownloadController.F
         return this.isVideo ? 0 : 4;
     }
 
-    private void setIcon(int i) {
+    private void setIcon(int i, boolean z) {
         if (this.lastIcon != i) {
             this.lastIcon = i;
-            this.radialProgress.setIcon(i, true, true);
+            this.radialProgress.setIcon(i, true, z);
         }
     }
 
@@ -266,7 +272,7 @@ public class PollButtonDrawable extends Drawable implements DownloadController.F
     public void onProgressDownload(String str, long j, long j2) {
         float min = j2 == 0 ? 0.0f : Math.min(1.0f, j / j2);
         this.radialProgress.setProgress(min, true);
-        setIcon(min < 1.0f ? 3 : getDefaultIcon());
+        setIcon(min < 1.0f ? 3 : getDefaultIcon(), true);
         this.parent.invalidate();
     }
 
@@ -274,7 +280,7 @@ public class PollButtonDrawable extends Drawable implements DownloadController.F
     public void onProgressUpload(String str, long j, long j2, boolean z) {
         float min = j2 == 0 ? 0.0f : Math.min(1.0f, j / j2);
         this.radialProgress.setProgress(min, true);
-        setIcon(min < 1.0f ? 3 : getDefaultIcon());
+        setIcon(min < 1.0f ? 3 : getDefaultIcon(), true);
         this.parent.invalidate();
     }
 

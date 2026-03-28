@@ -11219,6 +11219,11 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                             }
 
                             @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+                            public MessageObject getPollMessageObject() {
+                                return chatMessageCell.getMessageObject();
+                            }
+
+                            @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
                             public void retractVote() {
                                 SendMessagesHelper.getInstance(i).sendVote(chatMessageCell.getMessageObject(), null, null);
                             }
