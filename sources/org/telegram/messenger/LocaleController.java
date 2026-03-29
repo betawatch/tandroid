@@ -2805,14 +2805,14 @@ public class LocaleController {
         }
     }
 
-    public static String formatPollEndTime(int i) {
+    public static String formatPollEndTime(int i, boolean z) {
         String formatPluralString;
         if (i < 86400) {
             formatPluralString = formatShortDuration(i);
         } else {
             formatPluralString = formatPluralString("Days", i / 86400, new Object[0]);
         }
-        return formatString(R.string.PollEndsIn, formatPluralString);
+        return formatString(z ? R.string.PollResultsIn : R.string.PollEndsIn, formatPluralString);
     }
 
     public static String formatShortDuration2(int i) {

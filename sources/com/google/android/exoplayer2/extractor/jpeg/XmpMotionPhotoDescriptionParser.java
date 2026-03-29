@@ -19,8 +19,8 @@ public abstract class XmpMotionPhotoDescriptionParser {
     public static MotionPhotoDescription parse(String str) {
         try {
             return parseInternal(str);
-        } catch (ParserException | NumberFormatException | XmlPullParserException unused) {
-            Log.w("MotionPhotoXmpParser", "Ignoring unexpected XMP metadata");
+        } catch (ParserException | NumberFormatException | XmlPullParserException e) {
+            Log.w("MotionPhotoXmpParser", "Ignoring unexpected XMP metadata", e);
             return null;
         }
     }

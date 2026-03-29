@@ -157,8 +157,6 @@ public class PollAddOptionFieldLayout extends FrameLayout implements ViewTreeObs
     }
 
     class 1 extends EditTextCaption {
-        private int lastHeight;
-
         @Override // org.telegram.ui.Components.EditTextEffects
         protected int emojiCacheType() {
             return 3;
@@ -168,23 +166,19 @@ public class PollAddOptionFieldLayout extends FrameLayout implements ViewTreeObs
             super(context, resourcesProvider);
         }
 
-        @Override // org.telegram.ui.Components.EditTextEffects, android.widget.TextView, android.view.View
-        protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-            super.onLayout(z, i, i2, i3, i4);
-            int height = getHeight();
-            if (this.lastHeight != height) {
-                postOnAnimation(new Runnable() { // from class: org.telegram.ui.Components.poll.PollAddOptionFieldLayout$1$$ExternalSyntheticLambda0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        PollAddOptionFieldLayout.1.this.lambda$onLayout$0();
-                    }
-                });
-                this.lastHeight = height;
-            }
+        @Override // org.telegram.ui.Components.EditTextEffects, android.view.View
+        protected void onSizeChanged(int i, int i2, int i3, int i4) {
+            super.onSizeChanged(i, i2, i3, i4);
+            postOnAnimation(new Runnable() { // from class: org.telegram.ui.Components.poll.PollAddOptionFieldLayout$1$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    PollAddOptionFieldLayout.1.this.lambda$onSizeChanged$0();
+                }
+            });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onLayout$0() {
+        public /* synthetic */ void lambda$onSizeChanged$0() {
             PollAddOptionFieldLayout.this.updateCell();
         }
 

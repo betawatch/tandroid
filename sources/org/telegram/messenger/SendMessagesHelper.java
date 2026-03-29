@@ -22,7 +22,6 @@ import android.os.SystemClock;
 import android.text.Spannable;
 import android.text.TextUtils;
 import android.util.Base64;
-import android.util.Log;
 import android.util.Pair;
 import android.util.SparseArray;
 import android.webkit.MimeTypeMap;
@@ -6379,7 +6378,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         */
     public void sendMessage(org.telegram.messenger.SendMessagesHelper.SendMessageParams r114) {
         /*
-            Method dump skipped, instructions count: 10704
+            Method dump skipped, instructions count: 10728
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.sendMessage(org.telegram.messenger.SendMessagesHelper$SendMessageParams):void");
@@ -9171,16 +9170,16 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         updateMediaPaths(messageObject, message, i, Collections.singletonList(str), z, -1, hashMap);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:350:0x08b7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:344:0x083e, code lost:
     
-        if (r11.h > 90) goto L395;
+        if (r11.h > 90) goto L389;
      */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0208  */
-    /* JADX WARN: Removed duplicated region for block: B:262:0x0b52  */
-    /* JADX WARN: Removed duplicated region for block: B:279:0x0bae  */
-    /* JADX WARN: Removed duplicated region for block: B:303:0x0bf3  */
-    /* JADX WARN: Removed duplicated region for block: B:305:0x0bf6  */
-    /* JADX WARN: Removed duplicated region for block: B:307:0x0b57  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x0ad9  */
+    /* JADX WARN: Removed duplicated region for block: B:273:0x0b35  */
+    /* JADX WARN: Removed duplicated region for block: B:297:0x0b7a  */
+    /* JADX WARN: Removed duplicated region for block: B:299:0x0b7d  */
+    /* JADX WARN: Removed duplicated region for block: B:301:0x0ade  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -9559,21 +9558,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             if (messageObject.isLivePhoto()) {
                 String str19 = messageObject.messageOwner.attachPath;
                 String str20 = hashMap != null ? (String) Map.-EL.getOrDefault(hashMap, "imagePath", null) : null;
-                Log.d("lolkek", "updateMediaPaths msg_id=" + message.id);
-                Log.d("lolkek", "updateMediaPaths video=" + str19);
-                Log.d("lolkek", "updateMediaPaths image=" + str20);
                 TLRPC.Photo photo9 = messageMedia2.photo;
                 TLRPC.Photo photo10 = messageMedia.photo;
                 photo9.id = photo10.id;
                 photo9.dc_id = photo10.dc_id;
                 photo9.access_hash = photo10.access_hash;
                 if (str20 != null && str20.startsWith(FileLoader.getDirectory(4).getAbsolutePath())) {
-                    File file4 = new File(str20);
-                    File pathToAttach = FileLoader.getInstance(sendMessagesHelper.currentAccount).getPathToAttach(messageMedia.photo, messageMedia.ttl_seconds != 0);
-                    if (pathToAttach != null) {
-                        Log.d("lolkek", "updateMediaPaths moved photo to=" + pathToAttach.getAbsolutePath());
-                    }
-                    if (file4.renameTo(pathToAttach)) {
+                    if (new File(str20).renameTo(FileLoader.getInstance(sendMessagesHelper.currentAccount).getPathToAttach(messageMedia.photo, messageMedia.ttl_seconds != 0))) {
                         messageObject.mediaExists = messageObject.attachPathExists;
                         messageObject.attachPathExists = false;
                     }
@@ -9593,13 +9584,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         message.message = message5.message;
                     }
                 } else {
-                    File file5 = new File(str19);
-                    File pathToAttach2 = FileLoader.getInstance(sendMessagesHelper.currentAccount).getPathToAttach(messageMedia.document, messageMedia.ttl_seconds != 0);
-                    if (pathToAttach2 != null) {
-                        Log.d("lolkek", "updateMediaPaths moved video to=" + pathToAttach2.getAbsolutePath());
-                    }
-                    if (!file5.renameTo(pathToAttach2)) {
-                        if (!file5.exists()) {
+                    File file4 = new File(str19);
+                    File pathToAttach = FileLoader.getInstance(sendMessagesHelper.currentAccount).getPathToAttach(messageMedia.document, messageMedia.ttl_seconds != 0);
+                    if (!file4.renameTo(pathToAttach)) {
+                        if (!file4.exists()) {
                             tL_messageExtendedMedia6 = tL_messageExtendedMedia5;
                             if (tL_messageExtendedMedia6 == null) {
                                 messageObject.attachPathExists = false;
@@ -9612,7 +9600,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             message.attachPath = str19;
                         }
                         if (tL_messageExtendedMedia6 == null) {
-                            messageObject.mediaExists = pathToAttach2.exists();
+                            messageObject.mediaExists = pathToAttach.exists();
                         }
                         message.message = message5.message;
                     } else {
@@ -9743,7 +9731,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                             sb7.append(str21);
                                             str7 = str3;
                                             sb7.append(str7);
-                                            File file6 = new File(directory, sb7.toString());
+                                            File file5 = new File(directory, sb7.toString());
                                             if (messageMedia3.ttl_seconds == 0) {
                                                 if (photo.sizes.size() != 1) {
                                                     if (photoSize11.w <= 90) {
@@ -9751,14 +9739,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 }
                                                 if (!z10) {
                                                     file = FileLoader.getInstance(sendMessagesHelper.currentAccount).getPathToAttach(photoSize11, true);
-                                                    file6.renameTo(file);
+                                                    file5.renameTo(file);
                                                     ImageLoader.getInstance().replaceImageInCache(str21, str22, ImageLocation.getForPhoto(photoSize11, photo), z);
                                                     photoSize10.location = photoSize11.location;
                                                     photoSize10.size = photoSize11.size;
                                                 }
                                             }
                                             file = new File(FileLoader.getDirectory(4), str22 + str7);
-                                            file6.renameTo(file);
+                                            file5.renameTo(file);
                                             ImageLoader.getInstance().replaceImageInCache(str21, str22, ImageLocation.getForPhoto(photoSize11, photo), z);
                                             photoSize10.location = photoSize11.location;
                                             photoSize10.size = photoSize11.size;
@@ -9887,10 +9875,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             return;
                         }
                     }
-                    File file7 = new File(str6);
-                    File pathToAttach3 = FileLoader.getInstance(this.currentAccount).getPathToAttach(messageMedia3.document, messageMedia3.ttl_seconds != 0);
-                    if (!file7.renameTo(pathToAttach3)) {
-                        if (file7.exists()) {
+                    File file6 = new File(str6);
+                    File pathToAttach2 = FileLoader.getInstance(this.currentAccount).getPathToAttach(messageMedia3.document, messageMedia3.ttl_seconds != 0);
+                    if (!file6.renameTo(pathToAttach2)) {
+                        if (file6.exists()) {
                             if (tL_messageExtendedMedia4 != null) {
                                 tL_messageExtendedMedia4.attachPath = str6;
                             } else {
@@ -9900,7 +9888,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             messageObject2 = messageObject;
                             messageObject2.attachPathExists = false;
                             if (tL_messageExtendedMedia4 == null) {
-                                messageObject2.mediaExists = pathToAttach3.exists();
+                                messageObject2.mediaExists = pathToAttach2.exists();
                             }
                             message.message = message3.message;
                             return;
@@ -9925,7 +9913,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     if (str4 != null) {
                         String str27 = str4;
                         if (str27.startsWith("http")) {
-                            getMessagesStorage().addRecentLocalFile(str27, pathToAttach3.toString(), messageMedia4.document);
+                            getMessagesStorage().addRecentLocalFile(str27, pathToAttach2.toString(), messageMedia4.document);
                             return;
                         }
                         return;
@@ -13191,14 +13179,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
      */
     /* JADX WARN: Code restructure failed: missing block: B:520:0x098e, code lost:
     
-        if (r4 != null) goto L875;
+        if (r4 != null) goto L873;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:122:0x032f  */
     /* JADX WARN: Removed duplicated region for block: B:127:0x03a2  */
     /* JADX WARN: Removed duplicated region for block: B:131:0x03a8  */
     /* JADX WARN: Removed duplicated region for block: B:147:0x02c2  */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x0589 A[Catch: Exception -> 0x056c, TRY_LEAVE, TryCatch #1 {Exception -> 0x056c, blocks: (B:261:0x0564, B:218:0x0571, B:255:0x0580, B:220:0x0589), top: B:260:0x0564 }] */
+    /* JADX WARN: Removed duplicated region for block: B:220:0x0589 A[Catch: Exception -> 0x056c, TRY_LEAVE, TryCatch #0 {Exception -> 0x056c, blocks: (B:261:0x0564, B:218:0x0571, B:255:0x0580, B:220:0x0589), top: B:260:0x0564 }] */
     /* JADX WARN: Removed duplicated region for block: B:226:0x05c5  */
     /* JADX WARN: Removed duplicated region for block: B:230:0x05fe  */
     /* JADX WARN: Removed duplicated region for block: B:233:0x0608  */
@@ -13212,33 +13200,33 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX WARN: Removed duplicated region for block: B:521:0x0989 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:563:0x0dd6  */
     /* JADX WARN: Removed duplicated region for block: B:609:0x0f3b  */
-    /* JADX WARN: Removed duplicated region for block: B:628:0x110d  */
-    /* JADX WARN: Removed duplicated region for block: B:630:0x1115  */
-    /* JADX WARN: Removed duplicated region for block: B:634:0x1128  */
-    /* JADX WARN: Removed duplicated region for block: B:653:0x1195  */
-    /* JADX WARN: Removed duplicated region for block: B:656:0x11a6  */
-    /* JADX WARN: Removed duplicated region for block: B:661:0x11c1  */
-    /* JADX WARN: Removed duplicated region for block: B:669:0x1219  */
-    /* JADX WARN: Removed duplicated region for block: B:672:0x122e  */
-    /* JADX WARN: Removed duplicated region for block: B:693:0x134d  */
-    /* JADX WARN: Removed duplicated region for block: B:698:0x135c  */
-    /* JADX WARN: Removed duplicated region for block: B:702:0x1369  */
-    /* JADX WARN: Removed duplicated region for block: B:706:0x1378 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:709:0x1384  */
-    /* JADX WARN: Removed duplicated region for block: B:715:0x1392  */
-    /* JADX WARN: Removed duplicated region for block: B:717:0x1396  */
-    /* JADX WARN: Removed duplicated region for block: B:720:0x13ca  */
-    /* JADX WARN: Removed duplicated region for block: B:723:0x13d1  */
-    /* JADX WARN: Removed duplicated region for block: B:728:0x13e4  */
-    /* JADX WARN: Removed duplicated region for block: B:730:0x13e9 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:739:0x1456 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:769:0x1286  */
-    /* JADX WARN: Removed duplicated region for block: B:771:0x121f  */
-    /* JADX WARN: Removed duplicated region for block: B:778:0x1183  */
-    /* JADX WARN: Removed duplicated region for block: B:779:0x1112  */
-    /* JADX WARN: Removed duplicated region for block: B:821:0x12a2  */
-    /* JADX WARN: Removed duplicated region for block: B:868:0x153e  */
-    /* JADX WARN: Removed duplicated region for block: B:870:0x155a  */
+    /* JADX WARN: Removed duplicated region for block: B:628:0x10af  */
+    /* JADX WARN: Removed duplicated region for block: B:630:0x10b7  */
+    /* JADX WARN: Removed duplicated region for block: B:634:0x10ca  */
+    /* JADX WARN: Removed duplicated region for block: B:653:0x1137  */
+    /* JADX WARN: Removed duplicated region for block: B:656:0x1148  */
+    /* JADX WARN: Removed duplicated region for block: B:661:0x1163  */
+    /* JADX WARN: Removed duplicated region for block: B:669:0x11bb  */
+    /* JADX WARN: Removed duplicated region for block: B:672:0x11d0  */
+    /* JADX WARN: Removed duplicated region for block: B:693:0x12ef  */
+    /* JADX WARN: Removed duplicated region for block: B:698:0x12fe  */
+    /* JADX WARN: Removed duplicated region for block: B:702:0x130b  */
+    /* JADX WARN: Removed duplicated region for block: B:706:0x131a A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:709:0x1326  */
+    /* JADX WARN: Removed duplicated region for block: B:715:0x1334  */
+    /* JADX WARN: Removed duplicated region for block: B:717:0x1338  */
+    /* JADX WARN: Removed duplicated region for block: B:720:0x136c  */
+    /* JADX WARN: Removed duplicated region for block: B:723:0x1373  */
+    /* JADX WARN: Removed duplicated region for block: B:728:0x1386  */
+    /* JADX WARN: Removed duplicated region for block: B:730:0x138b A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:739:0x13f8 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:769:0x1228  */
+    /* JADX WARN: Removed duplicated region for block: B:771:0x11c1  */
+    /* JADX WARN: Removed duplicated region for block: B:778:0x1125  */
+    /* JADX WARN: Removed duplicated region for block: B:779:0x10b4  */
+    /* JADX WARN: Removed duplicated region for block: B:821:0x1244  */
+    /* JADX WARN: Removed duplicated region for block: B:868:0x14e0  */
+    /* JADX WARN: Removed duplicated region for block: B:870:0x14fc  */
     /* JADX WARN: Removed duplicated region for block: B:871:0x0dd8  */
     /* JADX WARN: Removed duplicated region for block: B:97:0x029e  */
     /* JADX WARN: Removed duplicated region for block: B:99:0x02c6  */
@@ -13524,27 +13512,27 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             str106 = str109;
                             try {
                                 str107 = str108;
-                            } catch (Exception e) {
-                                e = e;
-                                str107 = str108;
-                                FileLog.e(e);
-                                i30++;
-                                str109 = str106;
-                                str108 = str107;
-                                str114 = str103;
-                                str113 = str104;
-                                str112 = str105;
-                            }
-                            try {
-                                matrix.postScale(intValue == 1 ? -1.0f : 1.0f, intValue == 2 ? -1.0f : 1.0f, decodeFile3.getWidth() / 2.0f, decodeFile3.getHeight() / 2.0f);
-                                matrix.postRotate(((Integer) imageOrientation.first).intValue());
-                                Bitmap createBitmap2 = Bitmap.createBitmap(decodeFile3, 0, 0, decodeFile3.getWidth(), decodeFile3.getHeight(), matrix, true);
-                                File file8 = new File(FileLoader.getDirectory(4), "-2147483648_" + SharedConfig.getLastLocalId() + ".jpeg");
-                                createBitmap2.compress(Bitmap.CompressFormat.JPEG, 97, new FileOutputStream(file8));
-                                sendingMediaInfo2.path = file8.getAbsolutePath();
-                                file7.delete();
+                                try {
+                                    matrix.postScale(intValue == 1 ? -1.0f : 1.0f, intValue == 2 ? -1.0f : 1.0f, decodeFile3.getWidth() / 2.0f, decodeFile3.getHeight() / 2.0f);
+                                    matrix.postRotate(((Integer) imageOrientation.first).intValue());
+                                    Bitmap createBitmap2 = Bitmap.createBitmap(decodeFile3, 0, 0, decodeFile3.getWidth(), decodeFile3.getHeight(), matrix, true);
+                                    File file8 = new File(FileLoader.getDirectory(4), "-2147483648_" + SharedConfig.getLastLocalId() + ".jpeg");
+                                    createBitmap2.compress(Bitmap.CompressFormat.JPEG, 97, new FileOutputStream(file8));
+                                    sendingMediaInfo2.path = file8.getAbsolutePath();
+                                    file7.delete();
+                                } catch (Exception e) {
+                                    e = e;
+                                    FileLog.e(e);
+                                    i30++;
+                                    str109 = str106;
+                                    str108 = str107;
+                                    str114 = str103;
+                                    str113 = str104;
+                                    str112 = str105;
+                                }
                             } catch (Exception e2) {
                                 e = e2;
+                                str107 = str108;
                                 FileLog.e(e);
                                 i30++;
                                 str109 = str106;
@@ -14526,13 +14514,6 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 sb6.append(str144);
                                                 File file14 = new File(directory2, sb6.toString());
                                                 File file15 = new File(FileLoader.getDirectory(4), str15 + SharedConfig.getLastLocalId() + ".mp4");
-                                                StringBuilder sb7 = new StringBuilder();
-                                                sb7.append("Send Live Photo; original path = ");
-                                                sb7.append(str35);
-                                                Log.d("lolkek", sb7.toString());
-                                                Log.d("lolkek", "Send Live Photo; whole file = " + file13.getAbsolutePath());
-                                                Log.d("lolkek", "Send Live Photo; image file = " + file14.getAbsolutePath());
-                                                Log.d("lolkek", "Send Live Photo; video file = " + file15.getAbsolutePath());
                                                 long j21 = sendingMediaInfo5.livePhotoVideoOffset;
                                                 try {
                                                     str52 = str141;
@@ -15220,12 +15201,12 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         }
                                         if (z10 && z2) {
                                             int i38 = i7 + 1;
-                                            StringBuilder sb8 = new StringBuilder();
-                                            sb8.append("");
+                                            StringBuilder sb7 = new StringBuilder();
+                                            sb7.append("");
                                             j12 = j7;
-                                            sb8.append(j12);
+                                            sb7.append(j12);
                                             str46 = str19;
-                                            hashMap4.put(str46, sb8.toString());
+                                            hashMap4.put(str46, sb7.toString());
                                             if (z6) {
                                                 str18 = str18;
                                                 str43 = str39;
@@ -15443,15 +15424,15 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 obj2 = null;
                                 try {
                                     Bitmap decodeStream = BitmapFactory.decodeStream(inputStream, null, options);
-                                    StringBuilder sb9 = new StringBuilder();
+                                    StringBuilder sb8 = new StringBuilder();
                                     str56 = str15;
                                     try {
-                                        sb9.append(str56);
-                                        sb9.append(SharedConfig.getLastLocalId());
+                                        sb8.append(str56);
+                                        sb8.append(SharedConfig.getLastLocalId());
                                         str55 = str7;
                                         try {
-                                            sb9.append(str55);
-                                            File file17 = new File(FileLoader.getDirectory(4), sb9.toString());
+                                            sb8.append(str55);
+                                            File file17 = new File(FileLoader.getDirectory(4), sb8.toString());
                                             fileOutputStream = new FileOutputStream(file17);
                                             try {
                                                 decodeStream.compress(Bitmap.CompressFormat.WEBP, 100, fileOutputStream);
@@ -15556,15 +15537,15 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             if (z12) {
                                 if (str54 != null) {
                                     File file18 = new File(str54);
-                                    StringBuilder sb10 = new StringBuilder();
-                                    sb10.append(str60);
-                                    sb10.append(file18.length());
+                                    StringBuilder sb9 = new StringBuilder();
+                                    sb9.append(str60);
+                                    sb9.append(file18.length());
                                     str62 = str4;
-                                    sb10.append(str62);
+                                    sb9.append(str62);
                                     arrayList8 = arrayList4;
                                     str61 = str59;
-                                    sb10.append(file18.lastModified());
-                                    str63 = sb10.toString();
+                                    sb9.append(file18.lastModified());
+                                    str63 = sb9.toString();
                                     hashMap5 = hashMap2;
                                 } else {
                                     arrayList8 = arrayList4;
@@ -15780,13 +15761,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         }
                                         if (z2) {
                                             int i42 = i7 + 1;
-                                            StringBuilder sb11 = new StringBuilder();
-                                            sb11.append(str65);
+                                            StringBuilder sb10 = new StringBuilder();
+                                            sb10.append(str65);
                                             str76 = str67;
                                             j14 = j7;
-                                            sb11.append(j14);
+                                            sb10.append(j14);
                                             str80 = str19;
-                                            hashMap9.put(str80, sb11.toString());
+                                            hashMap9.put(str80, sb10.toString());
                                             if (z6) {
                                                 i21 = i8;
                                                 str77 = str62;

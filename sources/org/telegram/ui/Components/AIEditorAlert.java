@@ -316,12 +316,13 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView {
         if (this.editing || this.onSendListener == null || getResultText() == null) {
             return false;
         }
-        ItemOptions.makeOptions(this.container, resourcesProvider, this.sendButton).add(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda19
+        boolean z = this.dialogId == UserConfig.getInstance(this.currentAccount).getClientUserId();
+        ItemOptions.makeOptions(this.container, resourcesProvider, this.sendButton).addIf(!z, R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda19
             @Override // java.lang.Runnable
             public final void run() {
                 AIEditorAlert.this.lambda$new$2();
             }
-        }).add(R.drawable.msg_calendar2, LocaleController.getString(R.string.ScheduleMessage), new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda20
+        }).add(R.drawable.msg_calendar2, LocaleController.getString(z ? R.string.SetReminder : R.string.ScheduleMessage), new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda20
             @Override // java.lang.Runnable
             public final void run() {
                 AIEditorAlert.this.lambda$new$3(context, resourcesProvider);
@@ -1152,14 +1153,20 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView {
                     boolean z2 = getOrientation() == 0;
                     int size = z2 ? View.MeasureSpec.getSize(i3) : View.MeasureSpec.getSize(i4);
                     int i5 = 0;
-                    for (int i6 = 0; i6 < getChildCount(); i6++) {
-                        View childAt = getChildAt(i6);
-                        childAt.measure(z2 ? View.MeasureSpec.makeMeasureSpec(0, 0) : i3, !z2 ? View.MeasureSpec.makeMeasureSpec(0, 0) : i4);
-                        i5 += z2 ? childAt.getMeasuredWidth() : childAt.getMeasuredHeight();
-                    }
-                    boolean z3 = i5 <= size;
+                    int i6 = 0;
                     for (int i7 = 0; i7 < getChildCount(); i7++) {
-                        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) getChildAt(i7).getLayoutParams();
+                        View childAt = getChildAt(i7);
+                        childAt.setPadding(0, 0, 0, 0);
+                        childAt.measure(z2 ? View.MeasureSpec.makeMeasureSpec(0, 0) : i3, !z2 ? View.MeasureSpec.makeMeasureSpec(0, 0) : i4);
+                        int measuredWidth = z2 ? childAt.getMeasuredWidth() : childAt.getMeasuredHeight();
+                        i6 = Math.max(i6, measuredWidth);
+                        i5 += measuredWidth;
+                    }
+                    boolean z3 = i5 <= size && ((float) i6) < ((float) size) / ((float) getChildCount());
+                    for (int i8 = 0; i8 < getChildCount(); i8++) {
+                        View childAt2 = getChildAt(i8);
+                        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) childAt2.getLayoutParams();
+                        childAt2.setPadding(AndroidUtilities.dp(!z3 ? 8.0f : 0.0f), 0, AndroidUtilities.dp(z3 ? 0.0f : 8.0f), 0);
                         if (z3) {
                             if (z2) {
                                 layoutParams.width = 0;
@@ -1324,7 +1331,6 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView {
                 textView.setTextSize(1, 12.0f);
                 textView.setGravity(17);
                 textView.setSingleLine();
-                textView.setEllipsize(TextUtils.TruncateAt.END);
                 linearLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 49, 0, 2, 0, 0));
                 ScaleStateListAnimator.apply(this, 0.05f, 1.5f);
                 updateSelected(0.0f, true);

@@ -8,7 +8,6 @@ import android.os.Build;
 import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextUtils;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -49,6 +48,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.SharedAudioCell;
 import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
 import org.telegram.ui.Components.ChatAttachAlert;
+import org.telegram.ui.Components.ChatAttachAlertAudioLayout;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.FragmentSearchField;
 import org.telegram.ui.Components.LayoutHelper;
@@ -88,6 +88,7 @@ public class SelectAudioAlert extends BottomSheetWithRecyclerListView implements
     private final BlurredBackgroundSourceColor iBlur3SourceColor;
     private final BlurredBackgroundSourceRenderNode iBlur3SourceGlass;
     private final BlurredBackgroundSourceRenderNode iBlur3SourceGlassFrosted;
+    private boolean ignoreScroll;
     private String lastLoadingGlobalAudioQuery;
     private String lastLoadingSharedAudioQuery;
     private Runnable loadGlobalAudioRunnable;
@@ -245,27 +246,18 @@ public class SelectAudioAlert extends BottomSheetWithRecyclerListView implements
         this.frameLayout = frameLayout;
         FragmentSearchField fragmentSearchField = new FragmentSearchField(context, resourcesProvider);
         this.searchField = fragmentSearchField;
-        fragmentSearchField.editText.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Stories.recorder.SelectAudioAlert.3
-            @Override // android.view.View.OnTouchListener
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if (motionEvent.getAction() != 0) {
-                    return false;
-                }
-                SelectAudioAlert.this.scrollToSearchTop();
-                return false;
-            }
-        });
-        fragmentSearchField.editText.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.Stories.recorder.SelectAudioAlert.4
+        fragmentSearchField.editText.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.Stories.recorder.SelectAudioAlert.3
             @Override // android.view.View.OnFocusChangeListener
             public void onFocusChange(View view, boolean z2) {
                 if (z2) {
+                    SelectAudioAlert.this.ignoreScroll = true;
                     SelectAudioAlert.this.scrollToSearchTop();
                 }
             }
         });
         fragmentSearchField.setSectionBackground();
         fragmentSearchField.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
-        fragmentSearchField.editText.addTextChangedListener(new TextWatcherImpl() { // from class: org.telegram.ui.Stories.recorder.SelectAudioAlert.5
+        fragmentSearchField.editText.addTextChangedListener(new TextWatcherImpl() { // from class: org.telegram.ui.Stories.recorder.SelectAudioAlert.4
             @Override // android.text.TextWatcher
             public /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
                 TextWatcherImpl.-CC.$default$beforeTextChanged(this, charSequence, i2, i3, i4);
@@ -278,14 +270,14 @@ public class SelectAudioAlert extends BottomSheetWithRecyclerListView implements
 
             @Override // android.text.TextWatcher
             public void afterTextChanged(Editable editable) {
-                String str = SelectAudioAlert.this.query;
+                String unused = SelectAudioAlert.this.query;
                 SelectAudioAlert.this.query = editable.toString();
                 if (!SelectAudioAlert.this.local) {
                     boolean z2 = false;
                     if (!TextUtils.equals(SelectAudioAlert.this.lastLoadingSharedAudioQuery, SelectAudioAlert.this.query == null ? "" : SelectAudioAlert.this.query)) {
                         SelectAudioAlert.this.cancelLoadingSharedAudio();
                         SelectAudioAlert selectAudioAlert2 = SelectAudioAlert.this;
-                        selectAudioAlert2.willLoadSharedAudio = selectAudioAlert2.query != null && SelectAudioAlert.this.query.length() > 3;
+                        selectAudioAlert2.willLoadSharedAudio = selectAudioAlert2.query != null && SelectAudioAlert.this.query.length() > 0;
                     }
                     if (!TextUtils.equals(SelectAudioAlert.this.lastLoadingGlobalAudioQuery, SelectAudioAlert.this.query != null ? SelectAudioAlert.this.query : "")) {
                         SelectAudioAlert.this.cancelLoadingGlobalAudio();
@@ -295,13 +287,8 @@ public class SelectAudioAlert extends BottomSheetWithRecyclerListView implements
                         }
                         selectAudioAlert3.willLoadGlobalAudio = z2;
                     }
-                    if (TextUtils.isEmpty(str) || !TextUtils.isEmpty(SelectAudioAlert.this.query)) {
-                        SelectAudioAlert.this.loadSharedAudioDelayed();
-                        SelectAudioAlert.this.loadGlobalAudioDelayed();
-                    } else {
-                        SelectAudioAlert.this.loadSharedAudio();
-                        SelectAudioAlert.this.loadGlobalAudio();
-                    }
+                    SelectAudioAlert.this.loadSharedAudioDelayed();
+                    SelectAudioAlert.this.loadGlobalAudioDelayed();
                 }
                 SelectAudioAlert.this.adapter.update(true);
             }
@@ -334,14 +321,23 @@ public class SelectAudioAlert extends BottomSheetWithRecyclerListView implements
             this.savedMusicList = null;
             loadLocalAudio();
         }
-        this.recyclerListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Stories.recorder.SelectAudioAlert.6
+        this.recyclerListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Stories.recorder.SelectAudioAlert.5
+            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
+            public void onScrollStateChanged(RecyclerView recyclerView, int i4) {
+                super.onScrollStateChanged(recyclerView, i4);
+                if (i4 == 0 && SelectAudioAlert.this.ignoreScroll) {
+                    SelectAudioAlert.this.ignoreScroll = false;
+                }
+            }
+
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i4, int i5) {
                 SelectAudioAlert.this.updateSearchY();
                 SelectAudioAlert.this.blur3_InvalidateBlur();
-                if (((BottomSheetWithRecyclerListView) SelectAudioAlert.this).recyclerListView.scrollingByUser) {
-                    AndroidUtilities.hideKeyboard(((BottomSheet) SelectAudioAlert.this).containerView);
+                if (!((BottomSheetWithRecyclerListView) SelectAudioAlert.this).recyclerListView.scrollingByUser || SelectAudioAlert.this.ignoreScroll) {
+                    return;
                 }
+                AndroidUtilities.hideKeyboard(((BottomSheet) SelectAudioAlert.this).containerView);
             }
         });
         this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Stories.recorder.SelectAudioAlert$$ExternalSyntheticLambda4
@@ -516,19 +512,28 @@ public class SelectAudioAlert extends BottomSheetWithRecyclerListView implements
         int dp = AndroidUtilities.dp(64.0f);
         arrayList.add(UItem.asSpace(AndroidUtilities.dp(64.0f)));
         if (this.local || this.withoutSavedMusic) {
-            dp += addSection(true, arrayList, LocaleController.getString(R.string.StoryMusicLocalMusic), this.localAudio, false, false, -1);
+            dp += addSection(true, arrayList, LocaleController.getString(R.string.AudioSearchLocal), this.localAudio, false, false, -1);
         }
         if (!this.local) {
             if (TextUtils.isEmpty(this.query) && !this.withoutSavedMusic) {
+                universalAdapter.whiteSectionStart();
                 arrayList.add(UItem.asButton(1, R.drawable.msg2_folder, LocaleController.getString(R.string.StoryMusicSelectFromFiles)).accent());
+                universalAdapter.whiteSectionEnd();
                 dp += AndroidUtilities.dp(50.0f);
             }
             if (!this.withoutSavedMusic && this.savedMusicList != null) {
-                String string = LocaleController.getString(R.string.StoryMusicProfileMusic);
+                String string = LocaleController.getString(R.string.AudioSearchProfile);
                 MessagesController.SavedMusicList savedMusicList = this.savedMusicList;
                 dp += addSection(true, arrayList, string, savedMusicList.list, savedMusicList.loading, !savedMusicList.endReached, 2);
             }
-            dp = dp + addSection(false, arrayList, LocaleController.getString(R.string.StoryMusicSearchMusic), this.sharedAudio, this.willLoadSharedAudio || this.loadingSharedAudio, this.sharedAudioHasMore, 3) + addSection(false, arrayList, LocaleController.getString(R.string.StoryMusicGlobalMusic), this.globalAudio, this.willLoadGlobalAudio || this.loadingGlobalAudio, this.globalAudioHasMore, 4);
+            dp = dp + addSection(false, arrayList, LocaleController.getString(R.string.AudioSearchChats), this.sharedAudio, this.willLoadSharedAudio || this.loadingSharedAudio, this.sharedAudioHasMore, 3) + addSection(false, arrayList, LocaleController.getString(R.string.AudioSearchGlobal), this.globalAudio, this.willLoadGlobalAudio || this.loadingGlobalAudio, this.globalAudioHasMore, 4);
+        }
+        if (arrayList.size() <= ((this.local || !TextUtils.isEmpty(this.query) || this.withoutSavedMusic) ? 1 : 2)) {
+            if (TextUtils.isEmpty(this.query)) {
+                arrayList.add(ChatAttachAlertAudioLayout.EmptyView.Factory.as(LocaleController.getString(R.string.NoAudioFound), LocaleController.getString(R.string.NoAudioFilesInfo)));
+            } else {
+                arrayList.add(ChatAttachAlertAudioLayout.EmptyView.Factory.as(LocaleController.getString(R.string.NoAudioFound), AndroidUtilities.replaceTags(LocaleController.formatString(this.query.length() >= 3 ? R.string.NoAudioFoundInfo2 : R.string.NoAudioFoundInfo, this.query))));
+            }
         }
         arrayList.add(UItem.asShadow(null));
         arrayList.add(UItem.asSpace(Math.max(0, (((AndroidUtilities.displaySize.y - (dp + AndroidUtilities.dp(12.0f))) - AndroidUtilities.statusBarHeight) - ActionBar.getCurrentActionBarHeight()) + AndroidUtilities.dp(24.0f))));
@@ -586,7 +591,7 @@ public class SelectAudioAlert extends BottomSheetWithRecyclerListView implements
                 arrayList.add(UItem.asFlicker(4));
                 i2 += AndroidUtilities.dp(56.0f) * 3;
             }
-            if (z3) {
+            if (z3 && !z2) {
                 arrayList.add(UItem.asButton(i, R.drawable.arrow_more, LocaleController.getString(R.string.ShowMore)).accent());
                 i2 += AndroidUtilities.dp(50.0f);
             }

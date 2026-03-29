@@ -62,6 +62,7 @@ public class StoryEntry {
     public HashSet albums;
     public boolean allowScreenshots;
     public String audioAuthor;
+    public TLRPC.InputDocument audioDocument;
     public long audioDuration;
     public float audioLeft;
     public long audioOffset;
@@ -1934,6 +1935,7 @@ public class StoryEntry {
         storyEntry.isError = this.isError;
         storyEntry.error = this.error;
         storyEntry.audioPath = this.audioPath;
+        storyEntry.audioDocument = this.audioDocument;
         storyEntry.audioAuthor = this.audioAuthor;
         storyEntry.audioTitle = this.audioTitle;
         storyEntry.audioDuration = this.audioDuration;

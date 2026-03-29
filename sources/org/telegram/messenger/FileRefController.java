@@ -1452,8 +1452,9 @@ public class FileRefController extends BaseController {
 
     /* JADX WARN: Removed duplicated region for block: B:31:0x009f A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:33:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0864  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0881  */
+    /* JADX WARN: Removed duplicated region for block: B:379:0x07d2  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0879  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0896  */
     /* JADX WARN: Type inference failed for: r13v0 */
     /* JADX WARN: Type inference failed for: r13v25 */
     /*
@@ -1472,12 +1473,11 @@ public class FileRefController extends BaseController {
         int i2;
         TLRPC.InputFileLocation inputFileLocation;
         TL_stories.StoryItem storyItem;
-        TL_stories.StoryItem storyItem2;
         TLRPC.MessageMedia messageMedia;
-        TLRPC.MessageMedia messageMedia2;
         TLRPC.Document document;
         TLRPC.Photo photo;
         TLRPC.Photo photo2;
+        TLRPC.Document document2;
         byte[] fileReference;
         byte[] bArr;
         TLRPC.InputFileLocation[] inputFileLocationArr3;
@@ -1561,12 +1561,12 @@ public class FileRefController extends BaseController {
                     TLRPC.InputFileLocation[] inputFileLocationArr5 = inputFileLocationArr4;
                     requester4.completed = i7;
                     if (tLObject instanceof StoriesController.BotPreview) {
-                        TLRPC.MessageMedia messageMedia3 = ((StoriesController.BotPreview) tLObject).media;
-                        TLRPC.Document document2 = messageMedia3.document;
-                        if (document2 != null) {
+                        TLRPC.MessageMedia messageMedia2 = ((StoriesController.BotPreview) tLObject).media;
+                        TLRPC.Document document3 = messageMedia2.document;
+                        if (document3 != null) {
                             i = i9;
                             requester = requester4;
-                            bArr2 = getFileReference(document2, messageMedia3.alt_documents, requester4.location, zArr2, inputFileLocationArr5);
+                            bArr2 = getFileReference(document3, messageMedia2.alt_documents, requester4.location, zArr2, inputFileLocationArr5);
                             z4 = z7;
                             i2 = size2;
                             inputFileLocationArr3 = inputFileLocationArr5;
@@ -1592,7 +1592,7 @@ public class FileRefController extends BaseController {
                         } else {
                             requester = requester4;
                             i = i9;
-                            TLRPC.Photo photo3 = messageMedia3.photo;
+                            TLRPC.Photo photo3 = messageMedia2.photo;
                             if (photo3 != null) {
                                 inputFileLocationArr = inputFileLocationArr5;
                                 bArr2 = getFileReference(photo3, requester.location, zArr2, inputFileLocationArr);
@@ -1630,9 +1630,9 @@ public class FileRefController extends BaseController {
                                         break;
                                     }
                                     TLRPC.Message message = messages_messages.messages.get(i10);
-                                    TLRPC.MessageMedia messageMedia4 = message.media;
-                                    if (messageMedia4 instanceof TLRPC.TL_messageMediaPaidMedia) {
-                                        TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = (TLRPC.TL_messageMediaPaidMedia) messageMedia4;
+                                    TLRPC.MessageMedia messageMedia3 = message.media;
+                                    if (messageMedia3 instanceof TLRPC.TL_messageMediaPaidMedia) {
+                                        TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = (TLRPC.TL_messageMediaPaidMedia) messageMedia3;
                                         i4 = size3;
                                         for (int i11 = 0; i11 < tL_messageMediaPaidMedia.extended_media.size(); i11++) {
                                             TLRPC.MessageExtendedMedia messageExtendedMedia = tL_messageMediaPaidMedia.extended_media.get(i11);
@@ -1643,10 +1643,10 @@ public class FileRefController extends BaseController {
                                         }
                                     } else {
                                         i4 = size3;
-                                        if (messageMedia4 instanceof TLRPC.TL_messageMediaPoll) {
-                                            fileReference2 = getFileReferenceForPoll((TLRPC.TL_messageMediaPoll) messageMedia4, requester.location, zArr2, inputFileLocationArr);
-                                        } else if (messageMedia4 != null) {
-                                            fileReference2 = getFileReferenceForMediaImpl(messageMedia4, requester.location, zArr2, inputFileLocationArr);
+                                        if (messageMedia3 instanceof TLRPC.TL_messageMediaPoll) {
+                                            fileReference2 = getFileReferenceForPoll((TLRPC.TL_messageMediaPoll) messageMedia3, requester.location, zArr2, inputFileLocationArr);
+                                        } else if (messageMedia3 != null) {
+                                            fileReference2 = getFileReferenceForMediaImpl(messageMedia3, requester.location, zArr2, inputFileLocationArr);
                                         } else {
                                             TLRPC.MessageAction messageAction = message.action;
                                             if ((messageAction instanceof TLRPC.TL_messageActionChatEditPhoto) || (messageAction instanceof TLRPC.TL_messageActionSuggestProfilePhoto)) {
@@ -1788,14 +1788,14 @@ public class FileRefController extends BaseController {
                                                 FileLog.e(e2);
                                             }
                                             try {
-                                                TLRPC.Document document3 = tL_help_appUpdate.document;
-                                                if (document3 != null) {
-                                                    bArr = document3.file_reference;
+                                                TLRPC.Document document4 = tL_help_appUpdate.document;
+                                                if (document4 != null) {
+                                                    bArr = document4.file_reference;
                                                     TLRPC.TL_inputDocumentFileLocation tL_inputDocumentFileLocation = new TLRPC.TL_inputDocumentFileLocation();
-                                                    TLRPC.Document document4 = tL_help_appUpdate.document;
-                                                    tL_inputDocumentFileLocation.id = document4.id;
-                                                    tL_inputDocumentFileLocation.access_hash = document4.access_hash;
-                                                    tL_inputDocumentFileLocation.file_reference = document4.file_reference;
+                                                    TLRPC.Document document5 = tL_help_appUpdate.document;
+                                                    tL_inputDocumentFileLocation.id = document5.id;
+                                                    tL_inputDocumentFileLocation.access_hash = document5.access_hash;
+                                                    tL_inputDocumentFileLocation.file_reference = document5.file_reference;
                                                     tL_inputDocumentFileLocation.thumb_size = "";
                                                     inputFileLocationArr2 = new TLRPC.InputFileLocation[]{tL_inputDocumentFileLocation};
                                                 } else {
@@ -2006,48 +2006,56 @@ public class FileRefController extends BaseController {
                                                         }
                                                     } else if (tLObject instanceof TL_stories.TL_stories_stories) {
                                                         TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
-                                                        if (tL_stories_stories.stories.isEmpty() || (messageMedia = (storyItem2 = tL_stories_stories.stories.get(0)).media) == null) {
-                                                            storyItem = null;
-                                                        } else {
-                                                            if (bArr2 == null && (photo2 = messageMedia.photo) != null) {
-                                                                bArr2 = getFileReference(photo2, requester.location, zArr2, inputFileLocationArr2);
+                                                        if (!tL_stories_stories.stories.isEmpty()) {
+                                                            TL_stories.StoryItem storyItem2 = tL_stories_stories.stories.get(0);
+                                                            if (bArr2 == null && (document2 = storyItem2.music) != null) {
+                                                                bArr2 = getFileReference(document2, null, requester.location, zArr2, inputFileLocationArr2);
                                                             }
-                                                            if (bArr2 == null && (photo = storyItem2.media.video_cover) != null) {
-                                                                bArr2 = getFileReference(photo, requester.location, zArr2, inputFileLocationArr2);
-                                                            }
-                                                            if (bArr2 == null && (document = (messageMedia2 = storyItem2.media).document) != null) {
-                                                                bArr2 = getFileReference(document, messageMedia2.alt_documents, requester.location, zArr2, inputFileLocationArr2);
-                                                            }
-                                                            storyItem = storyItem2;
-                                                        }
-                                                        if (requester.args[1] instanceof FileLoadOperation) {
-                                                            Object obj2 = ((FileLoadOperation) requester.args[1]).parentObject;
-                                                            if (obj2 instanceof TL_stories.StoryItem) {
-                                                                TL_stories.StoryItem storyItem3 = (TL_stories.StoryItem) obj2;
-                                                                if (storyItem == null) {
-                                                                    TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
-                                                                    tL_updateStory.peer = getMessagesController().getPeer(storyItem3.dialogId);
-                                                                    TL_stories.TL_storyItemDeleted tL_storyItemDeleted = new TL_stories.TL_storyItemDeleted();
-                                                                    tL_updateStory.story = tL_storyItemDeleted;
-                                                                    tL_storyItemDeleted.id = storyItem3.id;
-                                                                    ArrayList<TLRPC.Update> arrayList9 = new ArrayList<>();
-                                                                    arrayList9.add(tL_updateStory);
-                                                                    getMessagesController().processUpdateArray(arrayList9, null, null, false, 0);
-                                                                } else {
-                                                                    TLRPC.User user2 = getMessagesController().getUser(Long.valueOf(storyItem3.dialogId));
-                                                                    if (user2 != null && user2.contact) {
-                                                                        MessagesController.getInstance(this.currentAccount).getStoriesController().getStoriesStorage().updateStoryItem(storyItem3.dialogId, storyItem);
+                                                            TLRPC.MessageMedia messageMedia4 = storyItem2.media;
+                                                            if (messageMedia4 != null) {
+                                                                if (bArr2 == null && (photo2 = messageMedia4.photo) != null) {
+                                                                    bArr2 = getFileReference(photo2, requester.location, zArr2, inputFileLocationArr2);
+                                                                }
+                                                                if (bArr2 == null && (photo = storyItem2.media.video_cover) != null) {
+                                                                    bArr2 = getFileReference(photo, requester.location, zArr2, inputFileLocationArr2);
+                                                                }
+                                                                if (bArr2 == null && (document = (messageMedia = storyItem2.media).document) != null) {
+                                                                    bArr2 = getFileReference(document, messageMedia.alt_documents, requester.location, zArr2, inputFileLocationArr2);
+                                                                }
+                                                                storyItem = storyItem2;
+                                                                if (requester.args[1] instanceof FileLoadOperation) {
+                                                                    Object obj2 = ((FileLoadOperation) requester.args[1]).parentObject;
+                                                                    if (obj2 instanceof TL_stories.StoryItem) {
+                                                                        TL_stories.StoryItem storyItem3 = (TL_stories.StoryItem) obj2;
+                                                                        if (storyItem == null) {
+                                                                            TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
+                                                                            tL_updateStory.peer = getMessagesController().getPeer(storyItem3.dialogId);
+                                                                            TL_stories.TL_storyItemDeleted tL_storyItemDeleted = new TL_stories.TL_storyItemDeleted();
+                                                                            tL_updateStory.story = tL_storyItemDeleted;
+                                                                            tL_storyItemDeleted.id = storyItem3.id;
+                                                                            ArrayList<TLRPC.Update> arrayList9 = new ArrayList<>();
+                                                                            arrayList9.add(tL_updateStory);
+                                                                            getMessagesController().processUpdateArray(arrayList9, null, null, false, 0);
+                                                                        } else {
+                                                                            TLRPC.User user2 = getMessagesController().getUser(Long.valueOf(storyItem3.dialogId));
+                                                                            if (user2 != null && user2.contact) {
+                                                                                MessagesController.getInstance(this.currentAccount).getStoriesController().getStoriesStorage().updateStoryItem(storyItem3.dialogId, storyItem);
+                                                                            }
+                                                                        }
+                                                                        if (storyItem != null && bArr2 == null) {
+                                                                            TL_stories.TL_updateStory tL_updateStory2 = new TL_stories.TL_updateStory();
+                                                                            tL_updateStory2.peer = MessagesController.getInstance(this.currentAccount).getPeer(storyItem3.dialogId);
+                                                                            tL_updateStory2.story = storyItem;
+                                                                            ArrayList<TLRPC.Update> arrayList10 = new ArrayList<>();
+                                                                            arrayList10.add(tL_updateStory2);
+                                                                            MessagesController.getInstance(this.currentAccount).processUpdateArray(arrayList10, null, null, false, 0);
+                                                                        }
                                                                     }
                                                                 }
-                                                                if (storyItem != null && bArr2 == null) {
-                                                                    TL_stories.TL_updateStory tL_updateStory2 = new TL_stories.TL_updateStory();
-                                                                    tL_updateStory2.peer = MessagesController.getInstance(this.currentAccount).getPeer(storyItem3.dialogId);
-                                                                    tL_updateStory2.story = storyItem;
-                                                                    ArrayList<TLRPC.Update> arrayList10 = new ArrayList<>();
-                                                                    arrayList10.add(tL_updateStory2);
-                                                                    MessagesController.getInstance(this.currentAccount).processUpdateArray(arrayList10, null, null, false, 0);
-                                                                }
                                                             }
+                                                        }
+                                                        storyItem = null;
+                                                        if (requester.args[1] instanceof FileLoadOperation) {
                                                         }
                                                     }
                                                 }

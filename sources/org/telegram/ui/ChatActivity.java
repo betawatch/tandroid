@@ -15384,9 +15384,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             ChatActivity.this.chatAdapter.notifyDataSetChanged(false);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:75:0x00b2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:77:0x00ba, code lost:
         
-            if (org.telegram.messenger.UserObject.isBotForum(r12.currentUser) == false) goto L37;
+            if (org.telegram.messenger.UserObject.isBotForum(r12.currentUser) == false) goto L39;
          */
         @Override // androidx.recyclerview.widget.GridLayoutManager, androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
         /*
@@ -15433,7 +15433,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             if (!z) {
                 i2 = super.scrollVerticallyBy(i, recycler, state);
             }
-            if (i > 0 && i2 == 0) {
+            if (!ChatActivity.this.isInPollAddOptionMode() && i > 0 && i2 == 0) {
                 if (!ChatObject.isChannel(ChatActivity.this.currentChat) || ChatActivity.this.currentChat.megagroup) {
                     ChatActivity chatActivity3 = ChatActivity.this;
                     if (chatActivity3.isTopic) {
@@ -30754,7 +30754,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     /* JADX WARN: Removed duplicated region for block: B:1016:0x17df  */
     /* JADX WARN: Removed duplicated region for block: B:1019:0x17e6  */
     /* JADX WARN: Removed duplicated region for block: B:1024:0x17fb A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:1050:0x4b8b A[ADDED_TO_REGION, ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:1050:0x4b88 A[ADDED_TO_REGION, ORIG_RETURN, RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:1054:0x1686  */
     /* JADX WARN: Removed duplicated region for block: B:1066:0x11ff  */
     /* JADX WARN: Removed duplicated region for block: B:1083:0x122c  */
@@ -30792,15 +30792,15 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     /* JADX WARN: Removed duplicated region for block: B:286:0x06f1  */
     /* JADX WARN: Removed duplicated region for block: B:316:0x0749  */
     /* JADX WARN: Removed duplicated region for block: B:318:0x074f  */
-    /* JADX WARN: Removed duplicated region for block: B:3245:0x35bd  */
+    /* JADX WARN: Removed duplicated region for block: B:3245:0x35ba  */
     /* JADX WARN: Removed duplicated region for block: B:324:0x0765  */
-    /* JADX WARN: Removed duplicated region for block: B:3250:0x35ea  */
+    /* JADX WARN: Removed duplicated region for block: B:3250:0x35e7  */
     /* JADX WARN: Removed duplicated region for block: B:333:0x0792  */
-    /* JADX WARN: Removed duplicated region for block: B:3574:0x3adc  */
-    /* JADX WARN: Removed duplicated region for block: B:3578:0x3aea  */
+    /* JADX WARN: Removed duplicated region for block: B:3574:0x3ad9  */
+    /* JADX WARN: Removed duplicated region for block: B:3578:0x3ae7  */
     /* JADX WARN: Removed duplicated region for block: B:357:0x080e  */
-    /* JADX WARN: Removed duplicated region for block: B:3581:0x3aee A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:3686:0x3c65  */
+    /* JADX WARN: Removed duplicated region for block: B:3581:0x3aeb A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:3686:0x3c62  */
     /* JADX WARN: Removed duplicated region for block: B:3713:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:372:0x0892  */
     /* JADX WARN: Removed duplicated region for block: B:375:0x0899  */
@@ -30861,16 +30861,16 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     /* JADX WARN: Removed duplicated region for block: B:961:0x16c5  */
     /* JADX WARN: Removed duplicated region for block: B:984:0x1763  */
     /* JADX WARN: Removed duplicated region for block: B:987:0x1771  */
-    /* JADX WARN: Type inference failed for: r0v946, types: [org.telegram.ui.Components.ChatActivityEnterView] */
+    /* JADX WARN: Type inference failed for: r0v947, types: [org.telegram.ui.Components.ChatActivityEnterView] */
     /* JADX WARN: Type inference failed for: r12v44 */
     /* JADX WARN: Type inference failed for: r12v45, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r12v56 */
-    /* JADX WARN: Type inference failed for: r1v843 */
-    /* JADX WARN: Type inference failed for: r1v844, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r1v855 */
-    /* JADX WARN: Type inference failed for: r1v947 */
-    /* JADX WARN: Type inference failed for: r1v948, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r1v950 */
+    /* JADX WARN: Type inference failed for: r1v842 */
+    /* JADX WARN: Type inference failed for: r1v843, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r1v854 */
+    /* JADX WARN: Type inference failed for: r1v946 */
+    /* JADX WARN: Type inference failed for: r1v947, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r1v949 */
     /* JADX WARN: Type inference failed for: r2v594 */
     /* JADX WARN: Type inference failed for: r2v595, types: [boolean] */
     /* JADX WARN: Type inference failed for: r2v607 */
@@ -35136,11 +35136,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                     if (z70) {
                                         this.fireworksOverlay.start();
                                         return;
+                                    } else {
+                                        chatMessageCell10.shakeView();
+                                        showPollSolution(chatMessageCell10.getMessageObject(), pollResults);
+                                        return;
                                     }
-                                    chatMessageCell10.shakeView();
-                                    showPollSolution(chatMessageCell10.getMessageObject(), pollResults);
-                                    chatMessageCell10.showHintButton(false, true, 0);
-                                    return;
                                 }
                                 return;
                             }
@@ -40281,8 +40281,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         this.hintMessageObject = null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void showPollSolution(MessageObject messageObject, TLRPC.PollResults pollResults) {
+    private void showPollSolution(MessageObject messageObject, TLRPC.PollResults pollResults) {
         CharSequence replaceEmoji;
         TLRPC.Message message;
         TranslateController.PollText pollText;
@@ -41107,7 +41106,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             menu.add(i3, R.id.menu_link, i4, LocaleController.getString(R.string.CreateLink));
             i4++;
         }
-        if (encryptedChat == null) {
+        if (z && encryptedChat == null) {
             menu.add(i3, R.id.menu_date, i4, LocaleController.getString(R.string.FormattedDate));
             i4++;
         }
@@ -57808,9 +57807,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
         @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
         public void didPressHint(ChatMessageCell chatMessageCell, int i) {
-            if (i == 0) {
-                ChatActivity.this.showPollSolution(chatMessageCell.getMessageObject(), ((TLRPC.TL_messageMediaPoll) chatMessageCell.getMessageObject().messageOwner.media).results);
-            } else if (i == 1) {
+            if (i == 1) {
                 MessageObject messageObject = chatMessageCell.getMessageObject();
                 TLRPC.MessageFwdHeader messageFwdHeader = messageObject.messageOwner.fwd_from;
                 if (messageFwdHeader == null || TextUtils.isEmpty(messageFwdHeader.psa_type)) {
@@ -58524,10 +58521,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
         @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
         public int getAddPollOptionInputFieldHeight(ChatMessageCell chatMessageCell) {
-            if (ChatActivity.this.isInPollAddOptionMode() && ChatActivity.this.pollAddOptionFieldLayout != null && ChatActivity.this.pollAddOptionFieldLayout.cellToWatch == chatMessageCell) {
-                return ChatActivity.this.pollAddOptionFieldLayout.textView.getHeight();
+            if (!ChatActivity.this.isInPollAddOptionMode() || ChatActivity.this.pollAddOptionFieldLayout == null || ChatActivity.this.pollAddOptionFieldLayout.cellToWatch != chatMessageCell || ChatActivity.this.pollAddOptionFieldLayout.textView.getWidth() <= 0) {
+                return 0;
             }
-            return 0;
+            return ChatActivity.this.pollAddOptionFieldLayout.textView.getHeight();
         }
 
         @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

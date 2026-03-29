@@ -18,12 +18,15 @@ import android.text.style.ClickableSpan;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.TextView;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
+import org.telegram.messenger.FileLog;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.TextSelectionHelper;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
@@ -34,6 +37,9 @@ import org.telegram.ui.Components.spoilers.SpoilersClickDetector;
 
 /* loaded from: classes5.dex */
 public class SpoilersTextView extends TextView implements TextSelectionHelper.SimpleSelectabeleView {
+    private static Class editorClass;
+    private static Field mEditor;
+    private static Method mEditorInvalidateDisplayList;
     public boolean allowClickSpoilers;
     private AnimatedEmojiSpan.EmojiGroupedSpans animatedEmoji;
     private ColorFilter animatedEmojiColorFilter;
@@ -45,6 +51,7 @@ public class SpoilersTextView extends TextView implements TextSelectionHelper.Si
     private boolean disablePaddingsOffset;
     private boolean disablePaddingsOffsetX;
     private boolean disablePaddingsOffsetY;
+    private Object editor;
     private boolean isSpoilersRevealed;
     private Layout lastLayout;
     private int lastTextLength;
@@ -56,6 +63,7 @@ public class SpoilersTextView extends TextView implements TextSelectionHelper.Si
     private Theme.ResourcesProvider resourcesProvider;
     protected List spoilers;
     private Stack spoilersPool;
+    private boolean triedGetInvalidate;
     private boolean useAlphaForEmoji;
     private Paint xRefPaint;
 
@@ -396,5 +404,44 @@ public class SpoilersTextView extends TextView implements TextSelectionHelper.Si
     @Override // org.telegram.ui.Cells.TextSelectionHelper.SimpleSelectabeleView
     public Layout getStaticTextLayout() {
         return getLayout();
+    }
+
+    @Override // android.view.View, org.telegram.ui.Cells.TextSelectionHelper.SelectableView
+    public void invalidate() {
+        if (!this.triedGetInvalidate) {
+            this.triedGetInvalidate = true;
+            try {
+                if (editorClass == null) {
+                    Field declaredField = TextView.class.getDeclaredField("mEditor");
+                    mEditor = declaredField;
+                    declaredField.setAccessible(true);
+                    Class<?> cls = Class.forName("android.widget.Editor");
+                    editorClass = cls;
+                    try {
+                        Method declaredMethod = cls.getDeclaredMethod("invalidateTextDisplayList", null);
+                        mEditorInvalidateDisplayList = declaredMethod;
+                        declaredMethod.setAccessible(true);
+                    } catch (Exception unused) {
+                    }
+                }
+            } catch (Throwable th) {
+                FileLog.e(th);
+            }
+        }
+        super.invalidate();
+        if (isHardwareAccelerated()) {
+            try {
+                if (mEditorInvalidateDisplayList != null) {
+                    if (this.editor == null) {
+                        this.editor = mEditor.get(this);
+                    }
+                    Object obj = this.editor;
+                    if (obj != null) {
+                        mEditorInvalidateDisplayList.invoke(obj, null);
+                    }
+                }
+            } catch (Exception unused2) {
+            }
+        }
     }
 }

@@ -153,6 +153,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.Callable;
@@ -7182,5 +7183,19 @@ public class AndroidUtilities {
         } catch (Throwable th) {
             FileLog.e(th);
         }
+    }
+
+    public static <A, B> B find(ArrayList<A> arrayList, Class<B> cls) {
+        if (arrayList == null) {
+            return null;
+        }
+        Iterator<A> it = arrayList.iterator();
+        while (it.hasNext()) {
+            A next = it.next();
+            if (cls.isInstance(next)) {
+                return cls.cast(next);
+            }
+        }
+        return null;
     }
 }

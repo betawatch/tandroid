@@ -68,7 +68,7 @@ public abstract class BlurredBackgroundProviderImpl {
                 lambda$scrimMenuBackground$2 = BlurredBackgroundProviderImpl.lambda$scrimMenuBackground$2(resourcesProvider2, z);
                 return lambda$scrimMenuBackground$2;
             }
-        }).setStrokeColorTop(-1, 553648127).setStrokeColorBottom(-1, 553648127).setShadowColor(637534208, 0).setShadowLayer(AndroidUtilities.dpf2(4.0f), 0.0f, 0.0f).setStrokeWidth(AndroidUtilities.dpf2(0.6666667f), AndroidUtilities.dpf2(0.6666667f)).build();
+        }).setStrokeColorTop(-1, 0).setStrokeColorBottom(-1, 0).setShadowColor(637534208, 0).setShadowLayer(AndroidUtilities.dpf2(4.0f), 0.0f, 0.0f).setStrokeWidth(AndroidUtilities.dpf2(0.6666667f), AndroidUtilities.dpf2(0.6666667f)).build();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

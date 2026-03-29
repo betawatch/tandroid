@@ -2512,8 +2512,8 @@ public class StoriesController {
             if (r14.isEmpty() == false) goto L73;
          */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Removed duplicated region for block: B:138:0x02d5  */
-        /* JADX WARN: Removed duplicated region for block: B:180:0x01b3  */
+        /* JADX WARN: Removed duplicated region for block: B:141:0x02eb  */
+        /* JADX WARN: Removed duplicated region for block: B:186:0x01b3  */
         /* JADX WARN: Removed duplicated region for block: B:23:0x0076  */
         /* JADX WARN: Removed duplicated region for block: B:59:0x0139  */
         /* JADX WARN: Removed duplicated region for block: B:77:0x01a6  */
@@ -2660,7 +2660,13 @@ public class StoriesController {
                         tL_stories_sendStory2.pinned = storyEntry4.pinned;
                         tL_stories_sendStory2.noforwards = !storyEntry4.allowScreenshots;
                         tL_stories_sendStory2.albums = storyEntry4.albums != null ? new ArrayList<>(this.entry.albums) : null;
-                        CharSequence charSequence3 = this.entry.caption;
+                        StoryEntry storyEntry5 = this.entry;
+                        TLRPC.InputDocument inputDocument = storyEntry5.audioDocument;
+                        if (inputDocument != null) {
+                            tL_stories_sendStory2.flags |= 512;
+                            tL_stories_sendStory2.music = inputDocument;
+                        }
+                        CharSequence charSequence3 = storyEntry5.caption;
                         if (charSequence3 != null) {
                             tL_stories_sendStory2.flags |= 3;
                             CharSequence[] charSequenceArr = {charSequence3};
@@ -2683,15 +2689,15 @@ public class StoriesController {
                             tL_stories_sendStory2.fwd_from_story = this.entry.repostStoryId;
                             tL_stories_sendStory2.fwd_modified = !z;
                         }
-                        StoryEntry storyEntry5 = this.entry;
-                        int i5 = storyEntry5.period;
+                        StoryEntry storyEntry6 = this.entry;
+                        int i5 = storyEntry6.period;
                         if (i5 == Integer.MAX_VALUE) {
                             tL_stories_sendStory2.pinned = true;
                         } else {
                             tL_stories_sendStory2.flags |= 8;
                             tL_stories_sendStory2.period = i5;
                         }
-                        if (storyEntry5.mediaEntities != null) {
+                        if (storyEntry6.mediaEntities != null) {
                             while (i < this.entry.mediaEntities.size()) {
                                 TL_stories.MediaArea mediaArea = ((VideoEditedInfo.MediaEntity) this.entry.mediaEntities.get(i)).mediaArea;
                                 if (mediaArea != null) {
@@ -2708,21 +2714,28 @@ public class StoriesController {
                 } else if (this.entry.botId != 0) {
                     TL_bots.editPreviewMedia editpreviewmedia = new TL_bots.editPreviewMedia();
                     editpreviewmedia.bot = MessagesController.getInstance(StoriesController.this.currentAccount).getInputUser(this.entry.botId);
-                    StoryEntry storyEntry6 = this.entry;
-                    editpreviewmedia.media = storyEntry6.editingBotPreview;
+                    StoryEntry storyEntry7 = this.entry;
+                    editpreviewmedia.media = storyEntry7.editingBotPreview;
                     editpreviewmedia.new_media = inputMedia;
-                    editpreviewmedia.lang_code = storyEntry6.botLang;
+                    editpreviewmedia.lang_code = storyEntry7.botLang;
                     tL_stories_sendStory = editpreviewmedia;
                 } else {
                     TL_stories.TL_stories_editStory tL_stories_editStory = new TL_stories.TL_stories_editStory();
                     tL_stories_editStory.id = this.entry.editStoryId;
                     tL_stories_editStory.peer = MessagesController.getInstance(StoriesController.this.currentAccount).getInputPeer(this.dialogId);
+                    tL_stories_editStory.flags |= 16;
+                    TLRPC.InputDocument inputDocument2 = this.entry.audioDocument;
+                    if (inputDocument2 != null) {
+                        tL_stories_editStory.music = inputDocument2;
+                    } else {
+                        tL_stories_editStory.music = new TLRPC.TL_inputDocumentEmpty();
+                    }
                     if (inputMedia != null && this.entry.editedMedia) {
                         tL_stories_editStory.flags |= 1;
                         tL_stories_editStory.media = inputMedia;
                     }
-                    StoryEntry storyEntry7 = this.entry;
-                    if (storyEntry7.editedCaption && (charSequence2 = storyEntry7.caption) != null) {
+                    StoryEntry storyEntry8 = this.entry;
+                    if (storyEntry8.editedCaption && (charSequence2 = storyEntry8.caption) != null) {
                         tL_stories_editStory.flags |= 2;
                         CharSequence[] charSequenceArr2 = {charSequence2};
                         if (charSequence2.length() > i4) {
@@ -2738,10 +2751,10 @@ public class StoriesController {
                         }
                         tL_stories_editStory.caption = charSequenceArr2[0].toString();
                     }
-                    StoryEntry storyEntry8 = this.entry;
-                    if (storyEntry8.editedPrivacy) {
+                    StoryEntry storyEntry9 = this.entry;
+                    if (storyEntry9.editedPrivacy) {
                         tL_stories_editStory.flags |= 4;
-                        tL_stories_editStory.privacy_rules.addAll(storyEntry8.privacyRules);
+                        tL_stories_editStory.privacy_rules.addAll(storyEntry9.privacyRules);
                     }
                     ArrayList arrayList2 = this.entry.editedMediaAreas;
                     if (arrayList2 != null) {
