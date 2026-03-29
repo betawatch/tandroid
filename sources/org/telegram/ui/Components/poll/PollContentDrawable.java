@@ -40,6 +40,8 @@ public class PollContentDrawable extends Drawable implements DownloadController.
     private CharSequence authorInfo;
     private Text authorInfoText;
     private final int currentAccount;
+    private int fileButtonX;
+    private int fileButtonY;
     private CharSequence fileInfo;
     private Text fileInfoText;
     private CharSequence fileName;
@@ -61,6 +63,7 @@ public class PollContentDrawable extends Drawable implements DownloadController.
     private int mediaHeight;
     private int mediaWidth;
     private MessageObject messageObject;
+    private boolean miniButtonPressed;
     private double musicDuration;
     private final ViewGroup parent;
     private final RadialProgress2 radialProgress;
@@ -114,6 +117,43 @@ public class PollContentDrawable extends Drawable implements DownloadController.
 
     public boolean seekBarOnTouch(int i, float f, float f2) {
         return this.seekBar.onTouch(i, f - this.seekBarX, f2 - this.seekBarY);
+    }
+
+    public boolean miniButtonOnTouch(int i, float f, float f2) {
+        if (!this.isMusic || this.lastIconMini == 4) {
+            return false;
+        }
+        if (i == 0) {
+            int dp = AndroidUtilities.dp(36.0f);
+            int dp2 = AndroidUtilities.dp(27.0f);
+            if (f >= this.fileButtonX + dp2 && f <= r4 + dp) {
+                if (f2 >= this.fileButtonY + dp2 && f2 <= r8 + dp) {
+                    this.miniButtonPressed = true;
+                    return true;
+                }
+            }
+        }
+        boolean z = this.miniButtonPressed;
+        if (z) {
+            if (i == 1) {
+                FileState fileState = this.fileState;
+                if (fileState != null) {
+                    if (fileState.isLoading()) {
+                        this.fileState.downloadCancel();
+                    } else if (!this.fileState.isExists()) {
+                        this.fileState.downloadStart();
+                    }
+                    checkFileState();
+                }
+                this.miniButtonPressed = false;
+                return true;
+            }
+            if (i == 3) {
+                this.miniButtonPressed = false;
+                return true;
+            }
+        }
+        return z;
     }
 
     public void attach() {
@@ -177,7 +217,7 @@ public class PollContentDrawable extends Drawable implements DownloadController.
             if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
                 TLRPC.Photo photo = ((TLRPC.TL_messageMediaPhoto) messageMedia).photo;
                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 40);
-                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, i, false, closestPhotoSizeWithSize, true);
+                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize(), true, closestPhotoSizeWithSize, true);
                 if (closestPhotoSizeWithSize2 == null) {
                     return false;
                 }
@@ -436,7 +476,12 @@ public class PollContentDrawable extends Drawable implements DownloadController.
             if (text2 != null) {
                 text2.draw(canvas, AndroidUtilities.dp(56.0f) + dp, dp3 + dp2 + AndroidUtilities.dp((this.isMusic ? 20 : 2) + 34));
             }
-            this.radialProgress.setProgressRect(AndroidUtilities.dp(2.0f) + dp, AndroidUtilities.dp(5.0f) + dp2, dp + AndroidUtilities.dp(2.0f) + AndroidUtilities.dp(44.0f), dp2 + AndroidUtilities.dp(5.0f) + AndroidUtilities.dp(44.0f));
+            RadialProgress2 radialProgress2 = this.radialProgress;
+            int dp6 = AndroidUtilities.dp(2.0f) + dp;
+            this.fileButtonX = dp6;
+            int dp7 = AndroidUtilities.dp(5.0f) + dp2;
+            this.fileButtonY = dp7;
+            radialProgress2.setProgressRect(dp6, dp7, dp + AndroidUtilities.dp(2.0f) + AndroidUtilities.dp(44.0f), dp2 + AndroidUtilities.dp(5.0f) + AndroidUtilities.dp(44.0f));
         } else {
             this.imageReceiver.setAlpha(this.alpha / 255.0f);
             this.imageReceiver.setImageCoords(bounds);
@@ -478,7 +523,8 @@ public class PollContentDrawable extends Drawable implements DownloadController.
                     setIcon(3, true);
                 }
             } else if (this.isMusic) {
-                setIconMini(4, true);
+                FileState fileState2 = this.fileState;
+                setIconMini((fileState2 == null || !fileState2.isExists()) ? 2 : 4, true);
             } else {
                 setIcon(getDefaultIcon(), true);
             }
@@ -487,6 +533,10 @@ public class PollContentDrawable extends Drawable implements DownloadController.
             setIcon(getDefaultIcon(), true);
         }
         this.radialProgress.draw(canvas);
+    }
+
+    public boolean isFile() {
+        return this.isFile;
     }
 
     public boolean isMusic() {

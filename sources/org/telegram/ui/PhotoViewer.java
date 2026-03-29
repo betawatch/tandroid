@@ -27211,11 +27211,11 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:121:0x0141, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:129:0x0141, code lost:
     
         if (r0.exists() == false) goto L68;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:125:0x0180, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:133:0x0180, code lost:
     
         if (r0.exists() == false) goto L68;
      */
@@ -27224,6 +27224,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         if (r0.exists() == false) goto L21;
      */
     /* JADX WARN: Removed duplicated region for block: B:104:0x02f2  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0308  */
     /* JADX WARN: Removed duplicated region for block: B:63:0x01ea A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:68:0x01f5 A[ADDED_TO_REGION] */
     /*
@@ -27236,27 +27237,28 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         ArrayList arrayList;
         Uri uri;
         Uri uri2;
+        MessageObject messageObject;
         TLRPC.Document document;
         TLRPC.MessageMedia messageMedia;
-        MessageObject messageObject = this.currentMessageObject;
-        if (messageObject == null && this.currentBotInlineResult == null && ((this.pageBlocksAdapter == null || this.currentFileNames[0] == null) && this.sendPhotoType != -1)) {
+        MessageObject messageObject2 = this.currentMessageObject;
+        if (messageObject2 == null && this.currentBotInlineResult == null && ((this.pageBlocksAdapter == null || this.currentFileNames[0] == null) && this.sendPhotoType != -1)) {
             return;
         }
         this.isStreaming = false;
-        if (messageObject != null) {
-            String str = messageObject.messageOwner.attachPath;
+        if (messageObject2 != null) {
+            String str = messageObject2.messageOwner.attachPath;
             if (str != null && str.length() != 0) {
                 file2 = new File(this.currentMessageObject.messageOwner.attachPath);
             }
             file2 = null;
             if (file2 == null) {
                 ArrayList arrayList2 = new ArrayList();
-                MessageObject messageObject2 = this.currentMessageObject;
-                TLRPC.Message message = messageObject2.messageOwner;
+                MessageObject messageObject3 = this.currentMessageObject;
+                TLRPC.Message message = messageObject3.messageOwner;
                 if (message != null && (messageMedia = message.media) != null && (document = messageMedia.document) != null) {
                     arrayList2.addAll(messageMedia.alt_documents);
                 } else {
-                    document = messageObject2.getDocument();
+                    document = messageObject3.getDocument();
                 }
                 if ((document != null ? 1 : 0) + arrayList2.size() <= 1) {
                     if (document != null) {
@@ -27289,13 +27291,13 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                         }
                         uri2 = uri;
                         if (uri2 == null || arrayList != null) {
-                            if (this.sharedMediaType != 1 && !this.currentMessageObject.canPreviewDocument()) {
+                            if (this.sharedMediaType != 1 && (messageObject = this.currentMessageObject) != null && !messageObject.canPreviewDocument()) {
                                 AndroidUtilities.openDocument(this.currentMessageObject, this.parentActivity, null);
                                 return;
-                            } else {
-                                preparePlayer(arrayList, uri2, true, false, this.currentMessageObject.isLivePhoto());
-                                this.videoSizeSet = true;
                             }
+                            MessageObject messageObject4 = this.currentMessageObject;
+                            preparePlayer(arrayList, uri2, true, false, messageObject4 == null && messageObject4.isLivePhoto());
+                            this.videoSizeSet = true;
                         }
                         if (z) {
                             if (this.currentMessageObject != null) {
@@ -27376,7 +27378,8 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                         }
                         if (this.sharedMediaType != 1) {
                         }
-                        preparePlayer(arrayList, uri2, true, false, this.currentMessageObject.isLivePhoto());
+                        MessageObject messageObject42 = this.currentMessageObject;
+                        preparePlayer(arrayList, uri2, true, false, messageObject42 == null && messageObject42.isLivePhoto());
                         this.videoSizeSet = true;
                     }
                 } else {
@@ -27401,7 +27404,8 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         }
         if (this.sharedMediaType != 1) {
         }
-        preparePlayer(arrayList, uri2, true, false, this.currentMessageObject.isLivePhoto());
+        MessageObject messageObject422 = this.currentMessageObject;
+        preparePlayer(arrayList, uri2, true, false, messageObject422 == null && messageObject422.isLivePhoto());
         this.videoSizeSet = true;
     }
 

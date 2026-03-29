@@ -1230,7 +1230,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         if (i4 < (this.todo ? 1 : 2) || (this.quizPoll && i < 1)) {
             z = false;
         }
-        if (!TextUtils.isEmpty(this.solutionString) || !TextUtils.isEmpty(this.questionString) || z2) {
+        if (!TextUtils.isEmpty(this.solutionString) || !TextUtils.isEmpty(this.questionString) || !TextUtils.isEmpty(this.descriptionString) || z2 || this.attachedMedia.medias.size() > 0) {
             this.allowNesterScroll = false;
         } else {
             this.allowNesterScroll = true;
@@ -1416,12 +1416,12 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
     }
 
     private boolean checkDiscard() {
-        boolean isEmpty = TextUtils.isEmpty(getFixedString(this.questionString));
-        if (isEmpty) {
-            for (int i = 0; i < this.answersCount && (isEmpty = TextUtils.isEmpty(getFixedString(this.answers[i]))); i++) {
+        boolean z = TextUtils.isEmpty(getFixedString(this.questionString)) && TextUtils.isEmpty(getFixedString(this.descriptionString)) && TextUtils.isEmpty(getFixedString(this.solutionString)) && this.attachedMedia.medias.size() == 0;
+        if (z) {
+            for (int i = 0; i < this.answersCount && (z = TextUtils.isEmpty(getFixedString(this.answers[i]))); i++) {
             }
         }
-        if (!isEmpty) {
+        if (!z) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this.parentAlert.baseFragment.getParentActivity());
             builder.setTitle(LocaleController.getString(this.todo ? R.string.CancelTodoAlertTitle : R.string.CancelPollAlertTitle));
             builder.setMessage(LocaleController.getString(this.todo ? R.string.CancelTodoAlertText : R.string.CancelPollAlertText));
@@ -1434,7 +1434,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
             builder.show();
         }
-        return isEmpty;
+        return z;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3851,7 +3851,11 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setAttachedMedia, reason: merged with bridge method [inline-methods] */
     public void lambda$openAttachMenuForOptions$21(int i, PollAttachedMedia pollAttachedMedia) {
-        this.attachedMedia.set(i, pollAttachedMedia);
+        if (pollAttachedMedia != null) {
+            this.attachedMedia.set(i, pollAttachedMedia);
+        } else {
+            this.attachedMedia.remove(i);
+        }
         int mediaIndexToAdapterPosition = mediaIndexToAdapterPosition(i);
         if (mediaIndexToAdapterPosition >= 0) {
             RecyclerView.ViewHolder findViewHolderForAdapterPosition = this.listView.findViewHolderForAdapterPosition(mediaIndexToAdapterPosition);
@@ -3859,10 +3863,10 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
                 View view = findViewHolderForAdapterPosition.itemView;
                 if (view instanceof PollEditTextCell) {
                     ((PollEditTextCell) view).attachView.setAttachedMedia(pollAttachedMedia, true);
-                    return;
                 }
             }
             this.listAdapter.notifyItemChanged(mediaIndexToAdapterPosition);
         }
+        checkDoneButton();
     }
 }

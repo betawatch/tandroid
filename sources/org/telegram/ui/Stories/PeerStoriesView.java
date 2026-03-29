@@ -9762,6 +9762,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         void set(TL_stories.StoryItem storyItem) {
             this.storyItem = storyItem;
             this.panel = null;
+            this.musicPanel = null;
             this.uploadingStory = null;
             this.skipped = storyItem instanceof TL_stories.TL_storyItemSkipped;
             this.isVideo = isVideoInternal();
@@ -9796,6 +9797,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         void set(StoriesController.UploadingStory uploadingStory) {
             this.uploadingStory = uploadingStory;
             this.panel = null;
+            this.musicPanel = null;
             this.storyItem = null;
             this.skipped = false;
             this.isVideo = isVideoInternal();
