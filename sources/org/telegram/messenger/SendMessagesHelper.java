@@ -11820,7 +11820,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         long j5 = pollSendParams2 != null ? pollSendParams2.groupId : 0L;
         boolean z4 = pollSendParams2 != null;
         int size = arrayList.size();
-        long j6 = j5 > 0 ? j5 : 0L;
+        long j6 = j5 != 0 ? j5 : 0L;
         int i5 = 0;
         int i6 = 0;
         while (i6 < size) {
@@ -11828,7 +11828,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             String str3 = messageObject4.messageOwner.attachPath;
             File file = new File(str3);
             boolean isEncryptedDialog = DialogObject.isEncryptedDialog(j);
-            if (isEncryptedDialog || size <= i4 || i5 % 10 != 0 || pollSendParams2 == null) {
+            if (isEncryptedDialog || size <= i4 || i5 % 10 != 0 || pollSendParams2 != null) {
                 j4 = j6;
             } else {
                 j4 = Utilities.random.nextLong();
