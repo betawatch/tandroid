@@ -67655,11 +67655,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     private int getMergedVisibleBlurredPositions(List list) {
         int mergeOverlapping = RectFMergeBounding.mergeOverlapping(this.glassDrawablesPositions, getVisibleBlurredPositions(this.glassDrawablesPositions), list);
+        int measuredWidth = this.contentView.getMeasuredWidth();
         for (int i = 0; i < mergeOverlapping; i++) {
             RectF rectF = (RectF) list.get(i);
-            rectF.left = Math.max(0.0f, rectF.left);
+            float f = measuredWidth;
+            rectF.left = MathUtils.clamp(rectF.left, 0.0f, f);
             rectF.top = Math.max(this.chatListView.getY(), rectF.top);
-            rectF.right = Math.min(this.contentView.getMeasuredWidth(), rectF.right);
+            rectF.right = MathUtils.clamp(rectF.right, 0.0f, f);
             rectF.bottom = Math.min(this.chatListView.getY() + this.chatListView.getMeasuredHeight(), rectF.bottom);
         }
         return mergeOverlapping;
