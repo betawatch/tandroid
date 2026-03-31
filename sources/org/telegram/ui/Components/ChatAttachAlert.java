@@ -192,6 +192,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     private final AiButtonDrawable aiButtonIcon;
     private boolean allowDrawContent;
     public boolean allowEnterCaption;
+    public boolean allowLivePhotos;
     protected boolean allowOrder;
     protected boolean allowPassConfirmationAlert;
     private final BoolAnimator animatorActionBarVisible;
@@ -1423,6 +1424,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 return Float.valueOf(ChatAttachAlert.this.translationProgress);
             }
         };
+        this.allowLivePhotos = false;
         this.layouts = new AttachAlertLayout[10];
         this.botAttachLayouts = new LongSparseArray();
         this.commentTextViewLocation = new int[2];
@@ -7327,7 +7329,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         if (chatAttachAlertPhotoLayout == null || this.motionIcon == null) {
             return;
         }
-        final boolean z2 = this.menuShowed && this.currentAttachLayout == chatAttachAlertPhotoLayout && chatAttachAlertPhotoLayout.hasLivePhotos();
+        final boolean z2 = this.menuShowed && this.allowLivePhotos && this.currentAttachLayout == chatAttachAlertPhotoLayout && chatAttachAlertPhotoLayout.hasLivePhotos();
         this.motionIcon.setDisabled(true ^ this.photoLayout.areLivePhotosEnabled(), z);
         if (z && this.menuShowed) {
             this.motionItem.setVisibility(0);

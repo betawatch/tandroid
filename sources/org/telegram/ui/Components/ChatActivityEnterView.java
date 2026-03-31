@@ -13411,6 +13411,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 }
 
                 @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
+                public /* synthetic */ boolean allowLivePhotos() {
+                    return PhotoViewer.PhotoViewerProvider.-CC.$default$allowLivePhotos(this);
+                }
+
+                @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
                 public boolean allowSendingSubmenu() {
                     return true;
                 }

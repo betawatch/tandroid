@@ -244,41 +244,40 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
     }
 
     public void update(final boolean z) {
-        this.oldItems.clear();
-        this.oldItems.addAll(this.items);
-        this.items.clear();
-        this.currentWhiteSection = null;
-        this.whiteSections.clear();
-        this.reorderSections.clear();
-        Utilities.Callback2 callback2 = this.fillItems;
-        if (callback2 != null) {
-            callback2.run(this.items, this);
-            updateReorderSections();
-            RecyclerListView recyclerListView = this.listView;
-            if (recyclerListView != null && recyclerListView.isComputingLayout()) {
-                this.listView.post(new Runnable() { // from class: org.telegram.ui.Components.UniversalAdapter$$ExternalSyntheticLambda3
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        UniversalAdapter.this.lambda$update$0(z);
-                    }
-                });
-            } else if (z) {
-                setItems(this.oldItems, this.items);
-            } else {
-                notifyDataSetChanged();
-            }
+        RecyclerListView recyclerListView = this.listView;
+        if (recyclerListView != null && recyclerListView.isComputingLayout()) {
+            this.listView.post(new Runnable() { // from class: org.telegram.ui.Components.UniversalAdapter$$ExternalSyntheticLambda3
+                @Override // java.lang.Runnable
+                public final void run() {
+                    UniversalAdapter.this.lambda$update$0(z);
+                }
+            });
+        } else {
+            lambda$update$0(z);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$update$0(boolean z) {
-        if (this.listView.isComputingLayout()) {
-            return;
-        }
-        if (z) {
-            setItems(this.oldItems, this.items);
-        } else {
-            notifyDataSetChanged();
+    /* renamed from: updateInternal, reason: merged with bridge method [inline-methods] */
+    public void lambda$update$0(boolean z) {
+        RecyclerListView recyclerListView = this.listView;
+        if (recyclerListView == null || !recyclerListView.isComputingLayout()) {
+            this.oldItems.clear();
+            this.oldItems.addAll(this.items);
+            this.items.clear();
+            this.currentWhiteSection = null;
+            this.whiteSections.clear();
+            this.reorderSections.clear();
+            Utilities.Callback2 callback2 = this.fillItems;
+            if (callback2 != null) {
+                callback2.run(this.items, this);
+                updateReorderSections();
+                if (z) {
+                    setItems(this.oldItems, this.items);
+                } else {
+                    notifyDataSetChanged();
+                }
+            }
         }
     }
 

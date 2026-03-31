@@ -176,7 +176,7 @@ public class MessagesController extends BaseController implements NotificationCe
     public int aboutLengthLimitDefault;
     public int aboutLengthLimitPremium;
     private final HashMap<Long, TLRPC.Chat> activeVoiceChatsMap;
-    public Set<String> aiComposeStyles;
+    public String aiComposeStyles;
     protected final ArrayList<TLRPC.Dialog> allDialogs;
     public boolean androidDisableRoundCamera2;
     public float animatedEmojisZoom;
@@ -976,8 +976,8 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public boolean aiEditorAvailable() {
-        Set<String> set = this.aiComposeStyles;
-        return (set == null || set.isEmpty()) ? false : true;
+        String str = this.aiComposeStyles;
+        return (str == null || str.isEmpty()) ? false : true;
     }
 
     public boolean starsPurchaseAvailable() {
@@ -1977,7 +1977,6 @@ public class MessagesController extends BaseController implements NotificationCe
         this.emojiInteractions = new HashMap<>();
         this.showAnnualPerMonth = false;
         this.starrefStartParamPrefixes = new HashSet();
-        this.aiComposeStyles = new HashSet();
         this.directPaymentsCurrency = new ArrayList();
         this.emojiStatusUntilValues = new ConcurrentHashMap<>();
         AppGlobalConfig appGlobalConfig = new AppGlobalConfig();
@@ -2293,7 +2292,12 @@ public class MessagesController extends BaseController implements NotificationCe
         this.starsPaidPostAmountMax = this.mainPreferences.getLong("starsPaidPostAmountMax", 10000L);
         this.botPreviewMediasMax = this.mainPreferences.getInt("botPreviewMediasMax", 10);
         this.webAppAllowedProtocols = this.mainPreferences.getStringSet("webAppAllowedProtocols", new HashSet(Arrays.asList("http", "https")));
-        this.aiComposeStyles = this.mainPreferences.getStringSet("aiComposeStyles2", new HashSet());
+        Set<String> stringSet = this.mainPreferences.getStringSet("aiComposeStyles2", new HashSet());
+        String string = this.mainPreferences.getString("aiComposeStyles3", stringSet != null ? TextUtils.join(";;;", stringSet) : null);
+        this.aiComposeStyles = string;
+        if (string != null && string.length() <= 0) {
+            this.aiComposeStyles = null;
+        }
         this.ignoreRestrictionReasons = this.mainPreferences.getStringSet("ignoreRestrictionReasons", new HashSet(Arrays.asList(new String[0])));
         this.tonProxyAddress = this.mainPreferences.getString("tonProxyAddress", "magic.org");
         this.weatherSearchUsername = this.mainPreferences.getString("weatherSearchUsername", "izweatherbot");
@@ -2365,10 +2369,10 @@ public class MessagesController extends BaseController implements NotificationCe
         } else {
             this.webFileDatacenterId = z ? 2 : 4;
         }
-        Set<String> stringSet = this.mainPreferences.getStringSet("directPaymentsCurrency", null);
-        if (stringSet != null) {
+        Set<String> stringSet2 = this.mainPreferences.getStringSet("directPaymentsCurrency", null);
+        if (stringSet2 != null) {
             this.directPaymentsCurrency.clear();
-            this.directPaymentsCurrency.addAll(stringSet);
+            this.directPaymentsCurrency.addAll(stringSet2);
         }
         loadPremiumFeaturesPreviewOrder(this.premiumFeaturesTypesToPosition, this.mainPreferences.getString("premiumFeaturesTypesToPosition", null));
         loadPremiumFeaturesPreviewOrder(this.businessFeaturesTypesToPosition, this.mainPreferences.getString("businessFeaturesTypesToPosition", null));
@@ -2382,9 +2386,9 @@ public class MessagesController extends BaseController implements NotificationCe
         } else {
             this.dismissedSuggestions = new HashSet();
         }
-        Set<String> stringSet2 = this.mainPreferences.getStringSet("exportUri2", null);
-        this.exportUri = stringSet2;
-        if (stringSet2 != null) {
+        Set<String> stringSet3 = this.mainPreferences.getStringSet("exportUri2", null);
+        this.exportUri = stringSet3;
+        if (stringSet3 != null) {
             this.exportUri = new HashSet(this.exportUri);
         } else {
             HashSet hashSet = new HashSet();
@@ -2395,54 +2399,54 @@ public class MessagesController extends BaseController implements NotificationCe
             this.exportUri.add(".*WhatsApp.*\\.txt$");
             this.exportUri.add(".*WhatsApp.*\\.zip$");
         }
-        Set<String> stringSet3 = this.mainPreferences.getStringSet("exportGroupUri", null);
-        this.exportGroupUri = stringSet3;
-        if (stringSet3 != null) {
+        Set<String> stringSet4 = this.mainPreferences.getStringSet("exportGroupUri", null);
+        this.exportGroupUri = stringSet4;
+        if (stringSet4 != null) {
             this.exportGroupUri = new HashSet(this.exportGroupUri);
         } else {
             HashSet hashSet2 = new HashSet();
             this.exportGroupUri = hashSet2;
             hashSet2.add("@g.us/");
         }
-        Set<String> stringSet4 = this.mainPreferences.getStringSet("exportPrivateUri", null);
-        this.exportPrivateUri = stringSet4;
-        if (stringSet4 != null) {
+        Set<String> stringSet5 = this.mainPreferences.getStringSet("exportPrivateUri", null);
+        this.exportPrivateUri = stringSet5;
+        if (stringSet5 != null) {
             this.exportPrivateUri = new HashSet(this.exportPrivateUri);
         } else {
             HashSet hashSet3 = new HashSet();
             this.exportPrivateUri = hashSet3;
             hashSet3.add("@s.whatsapp.net/");
         }
-        Set<String> stringSet5 = this.mainPreferences.getStringSet("autologinDomains", null);
-        this.autologinDomains = stringSet5;
-        if (stringSet5 != null) {
+        Set<String> stringSet6 = this.mainPreferences.getStringSet("autologinDomains", null);
+        this.autologinDomains = stringSet6;
+        if (stringSet6 != null) {
             this.autologinDomains = new HashSet(this.autologinDomains);
         } else {
             this.autologinDomains = new HashSet();
         }
-        Set<String> stringSet6 = this.mainPreferences.getStringSet("authDomains", null);
-        this.authDomains = stringSet6;
-        if (stringSet6 != null) {
+        Set<String> stringSet7 = this.mainPreferences.getStringSet("authDomains", null);
+        this.authDomains = stringSet7;
+        if (stringSet7 != null) {
             this.authDomains = new HashSet(this.authDomains);
         } else {
             this.authDomains = new HashSet();
         }
         this.autologinToken = this.mainPreferences.getString("autologinToken", null);
-        Set<String> stringSet7 = this.mainPreferences.getStringSet("diceEmojies", null);
-        if (stringSet7 == null) {
+        Set<String> stringSet8 = this.mainPreferences.getStringSet("diceEmojies", null);
+        if (stringSet8 == null) {
             HashSet<String> hashSet4 = new HashSet<>();
             this.diceEmojies = hashSet4;
             hashSet4.add("🎲");
             this.diceEmojies.add("🎯");
         } else {
-            this.diceEmojies = new HashSet<>(stringSet7);
+            this.diceEmojies = new HashSet<>(stringSet8);
         }
-        String string = this.mainPreferences.getString("diceSuccess", null);
-        if (string == null) {
+        String string2 = this.mainPreferences.getString("diceSuccess", null);
+        if (string2 == null) {
             this.diceSuccess.put("🎯", new DiceFrameSuccess(62, 6));
         } else {
             try {
-                byte[] decode = Base64.decode(string, 0);
+                byte[] decode = Base64.decode(string2, 0);
                 if (decode != null) {
                     SerializedData serializedData = new SerializedData(decode);
                     int readInt32 = serializedData.readInt32(true);
@@ -2455,10 +2459,10 @@ public class MessagesController extends BaseController implements NotificationCe
                 FileLog.e(e);
             }
         }
-        String string2 = this.mainPreferences.getString("emojiSounds", null);
-        if (string2 != null) {
+        String string3 = this.mainPreferences.getString("emojiSounds", null);
+        if (string3 != null) {
             try {
-                byte[] decode2 = Base64.decode(string2, 0);
+                byte[] decode2 = Base64.decode(string3, 0);
                 if (decode2 != null) {
                     SerializedData serializedData2 = new SerializedData(decode2);
                     int readInt322 = serializedData2.readInt32(true);
@@ -2471,8 +2475,8 @@ public class MessagesController extends BaseController implements NotificationCe
                 FileLog.e(e2);
             }
         }
-        String string3 = this.mainPreferences.getString("gifSearchEmojies", null);
-        if (string3 == null) {
+        String string4 = this.mainPreferences.getString("gifSearchEmojies", null);
+        if (string4 == null) {
             this.gifSearchEmojies.add("👍");
             this.gifSearchEmojies.add("👎");
             this.gifSearchEmojies.add("😍");
@@ -2485,7 +2489,7 @@ public class MessagesController extends BaseController implements NotificationCe
             this.gifSearchEmojies.add("😎");
         } else {
             try {
-                byte[] decode3 = Base64.decode(string3, 0);
+                byte[] decode3 = Base64.decode(string4, 0);
                 if (decode3 != null) {
                     SerializedData serializedData3 = new SerializedData(decode3);
                     int readInt323 = serializedData3.readInt32(true);
@@ -3514,6 +3518,7 @@ public class MessagesController extends BaseController implements NotificationCe
         boolean z13;
         boolean z14;
         boolean z15;
+        boolean z16;
         String str16;
         String str17;
         String str18;
@@ -3523,24 +3528,24 @@ public class MessagesController extends BaseController implements NotificationCe
         String str20;
         String str21;
         String str22;
-        boolean z16;
         boolean z17;
         boolean z18;
         boolean z19;
         boolean z20;
         boolean z21;
         boolean z22;
-        int intValue;
         boolean z23;
+        int intValue;
+        boolean z24;
         char c2;
         int i5;
-        boolean z24;
         boolean z25;
+        boolean z26;
         int i6;
         int i7;
         HashMap<String, EmojiSound> hashMap2;
         String str23;
-        boolean z26;
+        boolean z27;
         TLRPC.TL_jsonObject tL_jsonObject3 = tL_jsonObject;
         String str24 = "stories_changelog_user_id";
         String str25 = "giveaway_countries_max";
@@ -3555,18 +3560,19 @@ public class MessagesController extends BaseController implements NotificationCe
         resetAppConfig();
         boolean apply = this.config.apply(edit, tL_jsonObject3);
         int size = tL_jsonObject3.value.size();
-        boolean z27 = apply;
+        boolean z28 = apply;
         TLRPC.TL_jsonObject tL_jsonObject4 = null;
         int i8 = 0;
         int i9 = 0;
         int i10 = 0;
-        boolean z28 = false;
         boolean z29 = false;
+        boolean z30 = false;
         while (i8 < size) {
             TLRPC.TL_jsonObjectValue tL_jsonObjectValue = tL_jsonObject3.value.get(i8);
             String str33 = tL_jsonObjectValue.key;
             str33.hashCode();
             int i11 = size;
+            String str34 = "";
             switch (str33.hashCode()) {
                 case -2144614625:
                     i2 = i8;
@@ -5167,8 +5173,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             int i12 = (int) d;
                             this.chatlistJoinedLimitPremium = i12;
                             edit.putInt("chatlistJoinedLimitPremium", i12);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                         }
                     }
                     break;
@@ -5186,8 +5192,8 @@ public class MessagesController extends BaseController implements NotificationCe
                     if ((jSONValue2 instanceof TLRPC.TL_jsonBool) && (z2 = ((TLRPC.TL_jsonBool) jSONValue2).value) != this.channelRevenueWithdrawalEnabled) {
                         this.channelRevenueWithdrawalEnabled = z2;
                         edit.putBoolean("channelRevenueWithdrawalEnabled", z2);
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                     }
                     break;
                 case 2:
@@ -5207,8 +5213,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             int i13 = (int) d2;
                             this.dialogFiltersPinnedLimitPremium = i13;
                             edit.putInt("dialogFiltersPinnedLimitPremium", i13);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                         }
                     }
                     break;
@@ -5229,8 +5235,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             int i14 = (int) d3;
                             this.businessChatLinksLimit = i14;
                             edit.putInt("businessChatLinksLimit", i14);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                         }
                     }
                     break;
@@ -5248,11 +5254,11 @@ public class MessagesController extends BaseController implements NotificationCe
                     if (jSONValue5 instanceof TLRPC.TL_jsonString) {
                         TLRPC.TL_jsonString tL_jsonString = (TLRPC.TL_jsonString) jSONValue5;
                         if (!TextUtils.equals(tL_jsonString.value, this.freezeAppealUrl)) {
-                            String str34 = tL_jsonString.value;
-                            this.freezeAppealUrl = str34;
-                            edit.putString("freezeAppealUrl", str34);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            String str35 = tL_jsonString.value;
+                            this.freezeAppealUrl = str35;
+                            edit.putString("freezeAppealUrl", str35);
+                            z14 = true;
+                            z28 = z14;
                         }
                     }
                     break;
@@ -5273,8 +5279,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             if (parseLong != this.telegramAntispamUserId) {
                                 this.telegramAntispamUserId = parseLong;
                                 edit.putLong("telegramAntispamUserId", parseLong);
-                                savePremiumFeaturesPreviewOrder = true;
-                                z27 = savePremiumFeaturesPreviewOrder;
+                                z14 = true;
+                                z28 = z14;
                             }
                         } catch (Exception e) {
                             FileLog.e(e);
@@ -5298,8 +5304,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             int i15 = (int) d4;
                             this.channelCustomWallpaperLevelMin = i15;
                             edit.putInt("channelCustomWallpaperLevelMin", i15);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                         }
                     }
                     break;
@@ -5321,8 +5327,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             int i16 = (int) d6;
                             this.channelRestrictSponsoredLevelMin = i16;
                             edit.putInt("channelRestrictSponsoredLevelMin", i16);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                         }
                     }
                     break;
@@ -5336,7 +5342,6 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str30;
                     str8 = str31;
                     str9 = str32;
-                    HashSet hashSet = new HashSet();
                     TLRPC.JSONValue jSONValue9 = tL_jsonObjectValue.value;
                     if (jSONValue9 instanceof TLRPC.TL_jsonArray) {
                         TLRPC.TL_jsonArray tL_jsonArray = (TLRPC.TL_jsonArray) jSONValue9;
@@ -5344,16 +5349,25 @@ public class MessagesController extends BaseController implements NotificationCe
                             if (tL_jsonArray.value.get(i17) instanceof TLRPC.TL_jsonArray) {
                                 TLRPC.TL_jsonArray tL_jsonArray2 = (TLRPC.TL_jsonArray) tL_jsonArray.value.get(i17);
                                 if (tL_jsonArray2.value.size() == 3 && (tL_jsonArray2.value.get(0) instanceof TLRPC.TL_jsonString) && (tL_jsonArray2.value.get(1) instanceof TLRPC.TL_jsonString) && (tL_jsonArray2.value.get(2) instanceof TLRPC.TL_jsonString)) {
-                                    hashSet.add(((TLRPC.TL_jsonString) tL_jsonArray2.value.get(0)).value + "|" + ((TLRPC.TL_jsonString) tL_jsonArray2.value.get(1)).value + "|" + ((TLRPC.TL_jsonString) tL_jsonArray2.value.get(2)).value);
+                                    String str36 = ((TLRPC.TL_jsonString) tL_jsonArray2.value.get(0)).value;
+                                    String str37 = ((TLRPC.TL_jsonString) tL_jsonArray2.value.get(1)).value;
+                                    String str38 = ((TLRPC.TL_jsonString) tL_jsonArray2.value.get(2)).value;
+                                    if (str34.length() > 0) {
+                                        str34 = str34 + ";;;";
+                                    }
+                                    str34 = str34 + str36 + "|" + str37 + "|" + str38;
                                 }
                             }
                         }
                     }
-                    if (!this.aiComposeStyles.equals(hashSet)) {
-                        this.aiComposeStyles = hashSet;
-                        edit.putStringSet("aiComposeStyles2", hashSet);
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                    if (str34.length() <= 0) {
+                        str34 = null;
+                    }
+                    if (!TextUtils.equals(this.aiComposeStyles, str34)) {
+                        this.aiComposeStyles = str34;
+                        edit.putString("aiComposeStyles3", str34);
+                        z14 = true;
+                        z28 = z14;
                     }
                     break;
                 case '\t':
@@ -5373,8 +5387,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             int i18 = (int) d7;
                             this.stargiftsMessageLengthMax = i18;
                             edit.putInt("stargiftsMessageLengthMax", i18);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5390,13 +5404,13 @@ public class MessagesController extends BaseController implements NotificationCe
                     str9 = str32;
                     TLRPC.JSONValue jSONValue11 = tL_jsonObjectValue.value;
                     if (jSONValue11 instanceof TLRPC.TL_jsonBool) {
-                        boolean z30 = this.enableGiftsInProfile;
-                        boolean z31 = ((TLRPC.TL_jsonBool) jSONValue11).value;
-                        if (z30 != z31) {
-                            this.enableGiftsInProfile = z31;
-                            edit.putBoolean("enableGiftsInProfile", z31);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                        boolean z31 = this.enableGiftsInProfile;
+                        boolean z32 = ((TLRPC.TL_jsonBool) jSONValue11).value;
+                        if (z31 != z32) {
+                            this.enableGiftsInProfile = z32;
+                            edit.putBoolean("enableGiftsInProfile", z32);
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5434,8 +5448,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             int i20 = (int) d8;
                             this.uploadMaxFileParts = i20;
                             edit.putInt("uploadMaxFileParts", i20);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5456,8 +5470,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             int i21 = (int) d9;
                             this.maxPinnedDialogsCountDefault = i21;
                             edit.putInt("maxPinnedDialogsCountDefault", i21);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5474,8 +5488,8 @@ public class MessagesController extends BaseController implements NotificationCe
                     TLRPC.JSONValue jSONValue15 = tL_jsonObjectValue.value;
                     if ((jSONValue15 instanceof TLRPC.TL_jsonBool) && (z3 = ((TLRPC.TL_jsonBool) jSONValue15).value) != this.collectDeviceStats) {
                         this.collectDeviceStats = z3;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     break;
@@ -5496,8 +5510,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             int i22 = (int) d10;
                             this.storiesSuggestedReactionsLimitDefault = i22;
                             edit.putInt("storiesSuggestedReactionsLimitDefault", i22);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5515,8 +5529,8 @@ public class MessagesController extends BaseController implements NotificationCe
                     if ((jSONValue17 instanceof TLRPC.TL_jsonBool) && (z4 = ((TLRPC.TL_jsonBool) jSONValue17).value) != this.starsGiftsEnabled) {
                         this.starsGiftsEnabled = z4;
                         edit.putBoolean("starsGiftsEnabled", z4);
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     break;
@@ -5537,8 +5551,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             int i23 = (int) d11;
                             this.pmReadDateExpirePeriod = i23;
                             edit.putInt("pmReadDateExpirePeriod", i23);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5559,8 +5573,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             int i24 = (int) d12;
                             this.starrefMinCommissionPermille = i24;
                             edit.putInt("starrefMinCommissionPermille", i24);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5578,8 +5592,8 @@ public class MessagesController extends BaseController implements NotificationCe
                     if ((jSONValue20 instanceof TLRPC.TL_jsonBool) && (z5 = ((TLRPC.TL_jsonBool) jSONValue20).value) != this.smsjobsStickyNotificationEnabled) {
                         this.smsjobsStickyNotificationEnabled = z5;
                         edit.putBoolean("smsjobsStickyNotificationEnabled", z5);
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     break;
@@ -5600,8 +5614,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             int i25 = (int) d13;
                             this.uploadPremiumSpeedupNotifyPeriod = i25;
                             edit.putInt("uploadPremiumSpeedupNotifyPeriod2", i25);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5622,8 +5636,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             int i26 = (int) d14;
                             this.storiesSentMonthlyLimitDefault = i26;
                             edit.putInt("storiesSentMonthlyLimitDefault", i26);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5641,8 +5655,8 @@ public class MessagesController extends BaseController implements NotificationCe
                     if ((jSONValue23 instanceof TLRPC.TL_jsonNumber) && (i3 = (int) ((TLRPC.TL_jsonNumber) jSONValue23).value) != this.botPreviewMediasMax) {
                         this.botPreviewMediasMax = i3;
                         edit.putInt("botPreviewMediasMax", i3);
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     break;
@@ -5661,7 +5675,7 @@ public class MessagesController extends BaseController implements NotificationCe
                         this.showFiltersTooltip = z6;
                         edit.putBoolean("showFiltersTooltip", z6);
                         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.filterSettingsUpdated, new Object[0]);
-                        z27 = true;
+                        z28 = true;
                         break;
                     }
                     break;
@@ -5679,8 +5693,8 @@ public class MessagesController extends BaseController implements NotificationCe
                     if ((jSONValue25 instanceof TLRPC.TL_jsonBool) && (z7 = ((TLRPC.TL_jsonBool) jSONValue25).value) != this.qrLoginCamera) {
                         this.qrLoginCamera = z7;
                         edit.putBoolean("qrLoginCamera", z7);
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     break;
@@ -5696,13 +5710,13 @@ public class MessagesController extends BaseController implements NotificationCe
                     str9 = str32;
                     TLRPC.JSONValue jSONValue26 = tL_jsonObjectValue.value;
                     if (jSONValue26 instanceof TLRPC.TL_jsonBool) {
-                        boolean z32 = this.starsLocked;
-                        boolean z33 = ((TLRPC.TL_jsonBool) jSONValue26).value;
-                        if (z32 != z33) {
-                            this.starsLocked = z33;
-                            edit.putBoolean("starsLocked", z33);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                        boolean z33 = this.starsLocked;
+                        boolean z34 = ((TLRPC.TL_jsonBool) jSONValue26).value;
+                        if (z33 != z34) {
+                            this.starsLocked = z34;
+                            edit.putBoolean("starsLocked", z34);
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5723,8 +5737,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             int i27 = (int) d15;
                             this.groupCustomWallpaperLevelMin = i27;
                             edit.putInt("groupCustomWallpaperLevelMin", i27);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5745,8 +5759,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             this.giveawayAddPeersMax = j;
                             str9 = str10;
                             edit.putLong(str9, j);
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5769,8 +5783,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             this.channelWallpaperLevelMin = i28;
                             edit.putInt("channelWallpaperLevelMin", i28);
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5793,8 +5807,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             this.chatlistUpdatePeriod = i29;
                             edit.putInt("chatlistUpdatePeriod", i29);
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5816,8 +5830,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             this.starsSubscriptionAmountMax = j2;
                             edit.putLong("starsSubscriptionAmountMax", j2);
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5840,8 +5854,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             this.starsGroupcallMessageAmountMax = i31;
                             edit.putInt("starsGroupcallMessageAmountMax", i31);
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5864,8 +5878,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             this.groupWallpaperLevelMin = i32;
                             edit.putInt("groupWallpaperLevelMin", i32);
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5885,8 +5899,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         this.videoIgnoreAltDocuments = z8;
                         edit.putBoolean("videoIgnoreAltDocuments", z8);
                         str9 = str10;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str9 = str10;
@@ -5909,8 +5923,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             this.channelEmojiStatusLevelMin = i33;
                             edit.putInt("channelEmojiStatusLevelMin", i33);
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5933,8 +5947,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             this.publicLinksLimitPremium = i34;
                             edit.putInt("publicLinksLimitPremium", i34);
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5957,8 +5971,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             this.storyExpiringLimitPremium = i35;
                             edit.putInt("storyExpiringLimitPremium", i35);
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -5975,14 +5989,14 @@ public class MessagesController extends BaseController implements NotificationCe
                     str10 = str32;
                     TLRPC.JSONValue jSONValue38 = tL_jsonObjectValue.value;
                     if (jSONValue38 instanceof TLRPC.TL_jsonBool) {
-                        boolean z34 = this.starsPaidMessagesAvailable;
-                        boolean z35 = ((TLRPC.TL_jsonBool) jSONValue38).value;
-                        if (z34 != z35) {
-                            this.starsPaidMessagesAvailable = z35;
-                            edit.putBoolean("starsPaidMessagesAvailable", z35);
+                        boolean z35 = this.starsPaidMessagesAvailable;
+                        boolean z36 = ((TLRPC.TL_jsonBool) jSONValue38).value;
+                        if (z35 != z36) {
+                            this.starsPaidMessagesAvailable = z36;
+                            edit.putBoolean("starsPaidMessagesAvailable", z36);
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6005,8 +6019,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             this.groupProfileBgIconLevelMin = i36;
                             edit.putInt("groupProfileBgIconLevelMin", i36);
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6029,8 +6043,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             this.uploadPremiumSpeedupDownload = f;
                             edit.putFloat("uploadPremiumSpeedupDownload", f);
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6045,7 +6059,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str30;
                     str8 = str31;
                     str10 = str32;
-                    HashSet hashSet2 = new HashSet();
+                    HashSet hashSet = new HashSet();
                     TLRPC.JSONValue jSONValue41 = tL_jsonObjectValue.value;
                     if (jSONValue41 instanceof TLRPC.TL_jsonArray) {
                         TLRPC.TL_jsonArray tL_jsonArray3 = (TLRPC.TL_jsonArray) jSONValue41;
@@ -6053,16 +6067,16 @@ public class MessagesController extends BaseController implements NotificationCe
                         for (int i37 = 0; i37 < size2; i37++) {
                             TLRPC.JSONValue jSONValue42 = tL_jsonArray3.value.get(i37);
                             if (jSONValue42 instanceof TLRPC.TL_jsonString) {
-                                hashSet2.add(((TLRPC.TL_jsonString) jSONValue42).value.toLowerCase());
+                                hashSet.add(((TLRPC.TL_jsonString) jSONValue42).value.toLowerCase());
                             }
                         }
                     }
-                    if (!this.ignoreRestrictionReasons.equals(hashSet2)) {
-                        this.ignoreRestrictionReasons = hashSet2;
-                        edit.putStringSet("ignoreRestrictionReasons", hashSet2);
+                    if (!this.ignoreRestrictionReasons.equals(hashSet)) {
+                        this.ignoreRestrictionReasons = hashSet;
+                        edit.putStringSet("ignoreRestrictionReasons", hashSet);
                         str9 = str10;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str9 = str10;
@@ -6081,8 +6095,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         this.newNoncontactPeersRequirePremiumWithoutOwnpremium = z9;
                         edit.putBoolean("newNoncontactPeersRequirePremiumWithoutOwnpremium", z9);
                         str9 = str10;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str9 = str10;
@@ -6105,8 +6119,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             this.quickReplyMessagesLimit = i38;
                             edit.putInt("quickReplyMessagesLimit", i38);
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6129,8 +6143,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             this.stickersFavedLimitPremium = i39;
                             edit.putInt("stickersFavedLimitPremium", i39);
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6153,8 +6167,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             this.todoItemLengthMax = i40;
                             edit.putInt("todoItemLengthMax", i40);
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6167,16 +6181,16 @@ public class MessagesController extends BaseController implements NotificationCe
                     str5 = str28;
                     str6 = str29;
                     str7 = str30;
-                    String str35 = str31;
+                    String str39 = str31;
                     str10 = str32;
                     TLRPC.JSONValue jSONValue47 = tL_jsonObjectValue.value;
                     if (jSONValue47 instanceof TLRPC.TL_jsonNumber) {
                         int i41 = (int) ((TLRPC.TL_jsonNumber) jSONValue47).value;
                         this.stealthModeCooldown = i41;
-                        str8 = str35;
+                        str8 = str39;
                         edit.putInt(str8, i41);
                     } else {
-                        str8 = str35;
+                        str8 = str39;
                     }
                     str9 = str10;
                     break;
@@ -6199,8 +6213,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             edit.putInt("stargiftsConvertPeriodMax", i42);
                             str9 = str12;
                             str8 = str11;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6255,15 +6269,15 @@ public class MessagesController extends BaseController implements NotificationCe
                     str12 = str32;
                     TLRPC.JSONValue jSONValue51 = tL_jsonObjectValue.value;
                     if (jSONValue51 instanceof TLRPC.TL_jsonBool) {
-                        boolean z36 = this.giftTextFieldIcon;
-                        boolean z37 = ((TLRPC.TL_jsonBool) jSONValue51).value;
-                        if (z36 != z37) {
-                            this.giftTextFieldIcon = z37;
-                            edit.putBoolean("giftTextFieldIcon", z37);
+                        boolean z37 = this.giftTextFieldIcon;
+                        boolean z38 = ((TLRPC.TL_jsonBool) jSONValue51).value;
+                        if (z37 != z38) {
+                            this.giftTextFieldIcon = z38;
+                            edit.putBoolean("giftTextFieldIcon", z38);
                             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdatePremiumGiftFieldIcon, new Object[0]);
                             str9 = str12;
                             str8 = str11;
-                            z27 = true;
+                            z28 = true;
                             break;
                         }
                     }
@@ -6289,8 +6303,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             edit.putInt("chatReadMarkExpirePeriod", i43);
                             str9 = str12;
                             str8 = str11;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6315,8 +6329,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             edit.putInt("reactionsUniqMax", i44);
                             str9 = str12;
                             str8 = str11;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6332,7 +6346,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str30;
                     str11 = str31;
                     str12 = str32;
-                    HashSet<String> hashSet3 = new HashSet<>();
+                    HashSet<String> hashSet2 = new HashSet<>();
                     TLRPC.JSONValue jSONValue54 = tL_jsonObjectValue.value;
                     if (jSONValue54 instanceof TLRPC.TL_jsonArray) {
                         TLRPC.TL_jsonArray tL_jsonArray4 = (TLRPC.TL_jsonArray) jSONValue54;
@@ -6340,17 +6354,17 @@ public class MessagesController extends BaseController implements NotificationCe
                         for (int i45 = 0; i45 < size3; i45++) {
                             TLRPC.JSONValue jSONValue55 = tL_jsonArray4.value.get(i45);
                             if (jSONValue55 instanceof TLRPC.TL_jsonString) {
-                                hashSet3.add(((TLRPC.TL_jsonString) jSONValue55).value.replace("️", ""));
+                                hashSet2.add(((TLRPC.TL_jsonString) jSONValue55).value.replace("️", ""));
                             }
                         }
                     }
-                    if (!this.diceEmojies.equals(hashSet3)) {
-                        this.diceEmojies = hashSet3;
-                        edit.putStringSet("diceEmojies", hashSet3);
+                    if (!this.diceEmojies.equals(hashSet2)) {
+                        this.diceEmojies = hashSet2;
+                        edit.putStringSet("diceEmojies", hashSet2);
                         str9 = str12;
                         str8 = str11;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str9 = str12;
@@ -6365,7 +6379,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str30;
                     str11 = str31;
                     str12 = str32;
-                    HashSet hashSet4 = new HashSet();
+                    HashSet hashSet3 = new HashSet();
                     TLRPC.JSONValue jSONValue56 = tL_jsonObjectValue.value;
                     if (jSONValue56 instanceof TLRPC.TL_jsonArray) {
                         TLRPC.TL_jsonArray tL_jsonArray5 = (TLRPC.TL_jsonArray) jSONValue56;
@@ -6373,17 +6387,17 @@ public class MessagesController extends BaseController implements NotificationCe
                         for (int i46 = 0; i46 < size4; i46++) {
                             TLRPC.JSONValue jSONValue57 = tL_jsonArray5.value.get(i46);
                             if (jSONValue57 instanceof TLRPC.TL_jsonString) {
-                                hashSet4.add(((TLRPC.TL_jsonString) jSONValue57).value);
+                                hashSet3.add(((TLRPC.TL_jsonString) jSONValue57).value);
                             }
                         }
                     }
-                    if (!this.authDomains.equals(hashSet4)) {
-                        this.authDomains = hashSet4;
-                        edit.putStringSet("authDomains", hashSet4);
+                    if (!this.authDomains.equals(hashSet3)) {
+                        this.authDomains = hashSet3;
+                        edit.putStringSet("authDomains", hashSet3);
                         str9 = str12;
                         str8 = str11;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str9 = str12;
@@ -6406,8 +6420,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             edit.putLong("starsRevenueWithdrawalMin", j3);
                             str9 = str12;
                             str8 = str11;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6420,17 +6434,17 @@ public class MessagesController extends BaseController implements NotificationCe
                     str4 = str27;
                     str5 = str28;
                     str6 = str29;
-                    String str36 = str30;
+                    String str40 = str30;
                     str11 = str31;
                     str12 = str32;
                     TLRPC.JSONValue jSONValue59 = tL_jsonObjectValue.value;
                     if (jSONValue59 instanceof TLRPC.TL_jsonNumber) {
                         int i47 = (int) ((TLRPC.TL_jsonNumber) jSONValue59).value;
                         this.stealthModePast = i47;
-                        str7 = str36;
+                        str7 = str40;
                         edit.putInt(str7, i47);
                     } else {
-                        str7 = str36;
+                        str7 = str40;
                     }
                     str9 = str12;
                     str8 = str11;
@@ -6455,8 +6469,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6483,8 +6497,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6511,8 +6525,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6536,8 +6550,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str9 = str15;
                         str8 = str14;
                         str7 = str13;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str9 = str15;
@@ -6564,8 +6578,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6584,15 +6598,15 @@ public class MessagesController extends BaseController implements NotificationCe
                     str15 = str32;
                     TLRPC.JSONValue jSONValue65 = tL_jsonObjectValue.value;
                     if (jSONValue65 instanceof TLRPC.TL_jsonString) {
-                        String str37 = ((TLRPC.TL_jsonString) jSONValue65).value;
-                        if (!str37.equals(this.premiumInvoiceSlug)) {
-                            this.premiumInvoiceSlug = str37;
-                            edit.putString("premiumInvoiceSlug", str37);
+                        String str41 = ((TLRPC.TL_jsonString) jSONValue65).value;
+                        if (!str41.equals(this.premiumInvoiceSlug)) {
+                            this.premiumInvoiceSlug = str41;
+                            edit.putString("premiumInvoiceSlug", str41);
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6619,8 +6633,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6657,8 +6671,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6677,16 +6691,16 @@ public class MessagesController extends BaseController implements NotificationCe
                     str15 = str32;
                     TLRPC.JSONValue jSONValue68 = tL_jsonObjectValue.value;
                     if (jSONValue68 instanceof TLRPC.TL_jsonBool) {
-                        boolean z38 = this.storiesExportNopublicLink;
-                        boolean z39 = ((TLRPC.TL_jsonBool) jSONValue68).value;
-                        if (z38 != z39) {
-                            this.storiesExportNopublicLink = z39;
-                            edit.putBoolean("storiesExportNopublicLink", z39);
+                        boolean z39 = this.storiesExportNopublicLink;
+                        boolean z40 = ((TLRPC.TL_jsonBool) jSONValue68).value;
+                        if (z39 != z40) {
+                            this.storiesExportNopublicLink = z40;
+                            edit.putBoolean("storiesExportNopublicLink", z40);
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6713,8 +6727,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6738,8 +6752,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str9 = str15;
                         str8 = str14;
                         str7 = str13;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str9 = str15;
@@ -6756,7 +6770,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str13 = str30;
                     str14 = str31;
                     str15 = str32;
-                    HashSet hashSet5 = new HashSet();
+                    HashSet hashSet4 = new HashSet();
                     TLRPC.JSONValue jSONValue71 = tL_jsonObjectValue.value;
                     if (jSONValue71 instanceof TLRPC.TL_jsonArray) {
                         TLRPC.TL_jsonArray tL_jsonArray7 = (TLRPC.TL_jsonArray) jSONValue71;
@@ -6764,18 +6778,18 @@ public class MessagesController extends BaseController implements NotificationCe
                         for (int i55 = 0; i55 < size5; i55++) {
                             TLRPC.JSONValue jSONValue72 = tL_jsonArray7.value.get(i55);
                             if (jSONValue72 instanceof TLRPC.TL_jsonString) {
-                                hashSet5.add(((TLRPC.TL_jsonString) jSONValue72).value);
+                                hashSet4.add(((TLRPC.TL_jsonString) jSONValue72).value);
                             }
                         }
                     }
-                    if (!this.exportUri.equals(hashSet5)) {
-                        this.exportUri = hashSet5;
-                        edit.putStringSet("exportUri2", hashSet5);
+                    if (!this.exportUri.equals(hashSet4)) {
+                        this.exportUri = hashSet4;
+                        edit.putStringSet("exportUri2", hashSet4);
                         str9 = str15;
                         str8 = str14;
                         str7 = str13;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str9 = str15;
@@ -6801,8 +6815,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6829,8 +6843,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6857,8 +6871,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6885,8 +6899,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6913,8 +6927,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6941,8 +6955,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6970,8 +6984,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -6995,8 +7009,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str9 = str15;
                         str8 = str14;
                         str7 = str13;
-                        z27 = true;
                         z28 = true;
+                        z29 = true;
                         break;
                     }
                     str9 = str15;
@@ -7016,10 +7030,11 @@ public class MessagesController extends BaseController implements NotificationCe
                     TLRPC.JSONValue jSONValue81 = tL_jsonObjectValue.value;
                     if (jSONValue81 instanceof TLRPC.TL_jsonArray) {
                         savePremiumFeaturesPreviewOrder = savePremiumFeaturesPreviewOrder("premiumFeaturesTypesToPosition", this.premiumFeaturesTypesToPosition, edit, ((TLRPC.TL_jsonArray) jSONValue81).value);
+                        z14 = savePremiumFeaturesPreviewOrder;
                         str9 = str15;
                         str8 = str14;
                         str7 = str13;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z28 = z14;
                         break;
                     }
                     str9 = str15;
@@ -7045,8 +7060,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7073,8 +7088,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7098,8 +7113,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str9 = str15;
                         str8 = str14;
                         str7 = str13;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str9 = str15;
@@ -7119,10 +7134,11 @@ public class MessagesController extends BaseController implements NotificationCe
                     TLRPC.JSONValue jSONValue85 = tL_jsonObjectValue.value;
                     if (jSONValue85 instanceof TLRPC.TL_jsonArray) {
                         savePremiumFeaturesPreviewOrder = savePremiumFeaturesPreviewOrder("businessFeaturesTypesToPosition", this.businessFeaturesTypesToPosition, edit, ((TLRPC.TL_jsonArray) jSONValue85).value);
+                        z14 = savePremiumFeaturesPreviewOrder;
                         str9 = str15;
                         str8 = str14;
                         str7 = str13;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z28 = z14;
                         break;
                     }
                     str9 = str15;
@@ -7148,8 +7164,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7176,8 +7192,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7204,8 +7220,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7223,14 +7239,14 @@ public class MessagesController extends BaseController implements NotificationCe
                     str14 = str31;
                     str15 = str32;
                     TLRPC.JSONValue jSONValue89 = tL_jsonObjectValue.value;
-                    if ((jSONValue89 instanceof TLRPC.TL_jsonBool) && (z14 = ((TLRPC.TL_jsonBool) jSONValue89).value) != this.disableBotFullscreenBlur) {
-                        this.disableBotFullscreenBlur = z14;
-                        edit.putBoolean("disableBotFullscreenBlur", z14);
+                    if ((jSONValue89 instanceof TLRPC.TL_jsonBool) && (z15 = ((TLRPC.TL_jsonBool) jSONValue89).value) != this.disableBotFullscreenBlur) {
+                        this.disableBotFullscreenBlur = z15;
+                        edit.putBoolean("disableBotFullscreenBlur", z15);
                         str9 = str15;
                         str8 = str14;
                         str7 = str13;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str9 = str15;
@@ -7248,14 +7264,14 @@ public class MessagesController extends BaseController implements NotificationCe
                     str14 = str31;
                     str15 = str32;
                     TLRPC.JSONValue jSONValue90 = tL_jsonObjectValue.value;
-                    if ((jSONValue90 instanceof TLRPC.TL_jsonBool) && (z15 = ((TLRPC.TL_jsonBool) jSONValue90).value) != this.backgroundConnection) {
-                        this.backgroundConnection = z15;
-                        edit.putBoolean("backgroundConnection", z15);
+                    if ((jSONValue90 instanceof TLRPC.TL_jsonBool) && (z16 = ((TLRPC.TL_jsonBool) jSONValue90).value) != this.backgroundConnection) {
+                        this.backgroundConnection = z16;
+                        edit.putBoolean("backgroundConnection", z16);
                         str9 = str15;
                         str8 = str14;
                         str7 = str13;
-                        z27 = true;
                         z28 = true;
+                        z29 = true;
                         break;
                     }
                     str9 = str15;
@@ -7268,7 +7284,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str3 = str26;
                     str4 = str27;
                     str5 = str28;
-                    String str38 = str29;
+                    String str42 = str29;
                     str13 = str30;
                     str14 = str31;
                     str15 = str32;
@@ -7277,17 +7293,17 @@ public class MessagesController extends BaseController implements NotificationCe
                         long j4 = (long) ((TLRPC.TL_jsonNumber) jSONValue91).value;
                         if (j4 != this.giveawayPeriodMax) {
                             this.giveawayPeriodMax = j4;
-                            str6 = str38;
+                            str6 = str42;
                             edit.putLong(str6, j4);
                             str9 = str15;
                             str8 = str14;
                             str7 = str13;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
-                    str6 = str38;
+                    str6 = str42;
                     str9 = str15;
                     str8 = str14;
                     str7 = str13;
@@ -7450,8 +7466,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                     }
                     str9 = str19;
                     str8 = str18;
@@ -7478,8 +7494,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7513,8 +7529,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7548,8 +7564,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7568,9 +7584,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     str18 = str31;
                     str19 = str32;
                     TLRPC.JSONValue jSONValue97 = tL_jsonObjectValue.value;
-                    if ((jSONValue97 instanceof TLRPC.TL_jsonBool) && (z16 = ((TLRPC.TL_jsonBool) jSONValue97).value) != this.autoarchiveAvailable) {
-                        this.autoarchiveAvailable = z16;
-                        edit.putBoolean("autoarchiveAvailable", z16);
+                    if ((jSONValue97 instanceof TLRPC.TL_jsonBool) && (z17 = ((TLRPC.TL_jsonBool) jSONValue97).value) != this.autoarchiveAvailable) {
+                        this.autoarchiveAvailable = z17;
+                        edit.putBoolean("autoarchiveAvailable", z17);
                         str = str24;
                         str2 = str25;
                         str3 = str26;
@@ -7580,8 +7596,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -7615,8 +7631,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7638,9 +7654,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     if (jSONValue99 instanceof TLRPC.TL_jsonString) {
                         TLRPC.TL_jsonString tL_jsonString2 = (TLRPC.TL_jsonString) jSONValue99;
                         if (!tL_jsonString2.value.equals(this.youtubePipType)) {
-                            String str39 = tL_jsonString2.value;
-                            this.youtubePipType = str39;
-                            edit.putString("youtubePipType", str39);
+                            String str43 = tL_jsonString2.value;
+                            this.youtubePipType = str43;
+                            edit.putString("youtubePipType", str43);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -7650,8 +7666,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7673,9 +7689,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     if (jSONValue100 instanceof TLRPC.TL_jsonString) {
                         TLRPC.TL_jsonString tL_jsonString3 = (TLRPC.TL_jsonString) jSONValue100;
                         if (!TextUtils.equals(tL_jsonString3.value, this.tonProxyAddress)) {
-                            String str40 = tL_jsonString3.value;
-                            this.tonProxyAddress = str40;
-                            edit.putString("tonProxyAddress", str40);
+                            String str44 = tL_jsonString3.value;
+                            this.tonProxyAddress = str44;
+                            edit.putString("tonProxyAddress", str44);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -7685,8 +7701,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7721,8 +7737,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7756,8 +7772,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7791,8 +7807,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7814,9 +7830,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     if (jSONValue104 instanceof TLRPC.TL_jsonString) {
                         TLRPC.TL_jsonString tL_jsonString4 = (TLRPC.TL_jsonString) jSONValue104;
                         if (!TextUtils.equals(this.translationsAutoEnabled, tL_jsonString4.value)) {
-                            String str41 = tL_jsonString4.value;
-                            this.translationsAutoEnabled = str41;
-                            edit.putString("translationsAutoEnabled", str41);
+                            String str45 = tL_jsonString4.value;
+                            this.translationsAutoEnabled = str45;
+                            edit.putString("translationsAutoEnabled", str45);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -7826,8 +7842,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7887,8 +7903,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7908,11 +7924,11 @@ public class MessagesController extends BaseController implements NotificationCe
                     str19 = str32;
                     TLRPC.JSONValue jSONValue106 = tL_jsonObjectValue.value;
                     if (jSONValue106 instanceof TLRPC.TL_jsonBool) {
-                        boolean z40 = this.giveawayGiftsPurchaseAvailable;
-                        boolean z41 = ((TLRPC.TL_jsonBool) jSONValue106).value;
-                        if (z40 != z41) {
-                            this.giveawayGiftsPurchaseAvailable = z41;
-                            edit.putBoolean("giveawayGiftsPurchaseAvailable", z41);
+                        boolean z41 = this.giveawayGiftsPurchaseAvailable;
+                        boolean z42 = ((TLRPC.TL_jsonBool) jSONValue106).value;
+                        if (z41 != z42) {
+                            this.giveawayGiftsPurchaseAvailable = z42;
+                            edit.putBoolean("giveawayGiftsPurchaseAvailable", z42);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -7922,8 +7938,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7956,8 +7972,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -7976,9 +7992,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     str18 = str31;
                     str19 = str32;
                     TLRPC.JSONValue jSONValue108 = tL_jsonObjectValue.value;
-                    if ((jSONValue108 instanceof TLRPC.TL_jsonBool) && (z17 = ((TLRPC.TL_jsonBool) jSONValue108).value) != this.suggestStickersApiOnly) {
-                        this.suggestStickersApiOnly = z17;
-                        edit.putBoolean("suggestStickersApiOnly", z17);
+                    if ((jSONValue108 instanceof TLRPC.TL_jsonBool) && (z18 = ((TLRPC.TL_jsonBool) jSONValue108).value) != this.suggestStickersApiOnly) {
+                        this.suggestStickersApiOnly = z18;
+                        edit.putBoolean("suggestStickersApiOnly", z18);
                         str = str24;
                         str2 = str25;
                         str3 = str26;
@@ -7988,8 +8004,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -8038,8 +8054,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -8056,7 +8072,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str17 = str30;
                     str18 = str31;
                     str19 = str32;
-                    HashSet hashSet6 = new HashSet();
+                    HashSet hashSet5 = new HashSet();
                     TLRPC.JSONValue jSONValue111 = tL_jsonObjectValue.value;
                     if (jSONValue111 instanceof TLRPC.TL_jsonArray) {
                         TLRPC.TL_jsonArray tL_jsonArray11 = (TLRPC.TL_jsonArray) jSONValue111;
@@ -8064,13 +8080,13 @@ public class MessagesController extends BaseController implements NotificationCe
                         for (int i81 = 0; i81 < size10; i81++) {
                             TLRPC.JSONValue jSONValue112 = tL_jsonArray11.value.get(i81);
                             if (jSONValue112 instanceof TLRPC.TL_jsonString) {
-                                hashSet6.add(((TLRPC.TL_jsonString) jSONValue112).value);
+                                hashSet5.add(((TLRPC.TL_jsonString) jSONValue112).value);
                             }
                         }
                     }
-                    if (!this.autologinDomains.equals(hashSet6)) {
-                        this.autologinDomains = hashSet6;
-                        edit.putStringSet("autologinDomains", hashSet6);
+                    if (!this.autologinDomains.equals(hashSet5)) {
+                        this.autologinDomains = hashSet5;
+                        edit.putStringSet("autologinDomains", hashSet5);
                         str = str24;
                         str2 = str25;
                         str3 = str26;
@@ -8080,8 +8096,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -8098,7 +8114,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str17 = str30;
                     str18 = str31;
                     str19 = str32;
-                    HashSet hashSet7 = new HashSet();
+                    HashSet hashSet6 = new HashSet();
                     TLRPC.JSONValue jSONValue113 = tL_jsonObjectValue.value;
                     if (jSONValue113 instanceof TLRPC.TL_jsonArray) {
                         TLRPC.TL_jsonArray tL_jsonArray12 = (TLRPC.TL_jsonArray) jSONValue113;
@@ -8106,13 +8122,13 @@ public class MessagesController extends BaseController implements NotificationCe
                         for (int i82 = 0; i82 < size11; i82++) {
                             TLRPC.JSONValue jSONValue114 = tL_jsonArray12.value.get(i82);
                             if (jSONValue114 instanceof TLRPC.TL_jsonString) {
-                                hashSet7.add(((TLRPC.TL_jsonString) jSONValue114).value);
+                                hashSet6.add(((TLRPC.TL_jsonString) jSONValue114).value);
                             }
                         }
                     }
-                    if (!this.exportGroupUri.equals(hashSet7)) {
-                        this.exportGroupUri = hashSet7;
-                        edit.putStringSet("exportGroupUri", hashSet7);
+                    if (!this.exportGroupUri.equals(hashSet6)) {
+                        this.exportGroupUri = hashSet6;
+                        edit.putStringSet("exportGroupUri", hashSet6);
                         str = str24;
                         str2 = str25;
                         str3 = str26;
@@ -8122,8 +8138,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -8144,9 +8160,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     if (jSONValue115 instanceof TLRPC.TL_jsonString) {
                         TLRPC.TL_jsonString tL_jsonString5 = (TLRPC.TL_jsonString) jSONValue115;
                         if (!TextUtils.equals(tL_jsonString5.value, this.storiesPosting)) {
-                            String str42 = tL_jsonString5.value;
-                            this.storiesPosting = str42;
-                            edit.putString("storiesPosting", str42);
+                            String str46 = tL_jsonString5.value;
+                            this.storiesPosting = str46;
+                            edit.putString("storiesPosting", str46);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -8156,8 +8172,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            z27 = true;
-                            z29 = true;
+                            z28 = true;
+                            z30 = true;
                             break;
                         }
                     }
@@ -8192,8 +8208,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -8227,8 +8243,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -8248,10 +8264,10 @@ public class MessagesController extends BaseController implements NotificationCe
                     str19 = str32;
                     TLRPC.JSONValue jSONValue118 = tL_jsonObjectValue.value;
                     if (jSONValue118 instanceof TLRPC.TL_jsonString) {
-                        String str43 = ((TLRPC.TL_jsonString) jSONValue118).value;
-                        if (!str43.equals(this.verifyAgeBotUsername)) {
-                            this.verifyAgeBotUsername = str43;
-                            edit.putString("verifyAgeBotUsername", str43);
+                        String str47 = ((TLRPC.TL_jsonString) jSONValue118).value;
+                        if (!str47.equals(this.verifyAgeBotUsername)) {
+                            this.verifyAgeBotUsername = str47;
+                            edit.putString("verifyAgeBotUsername", str47);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -8261,8 +8277,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -8284,9 +8300,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     if (jSONValue119 instanceof TLRPC.TL_jsonString) {
                         TLRPC.TL_jsonString tL_jsonString6 = (TLRPC.TL_jsonString) jSONValue119;
                         if (!TextUtils.equals(tL_jsonString6.value, this.weatherSearchUsername)) {
-                            String str44 = tL_jsonString6.value;
-                            this.weatherSearchUsername = str44;
-                            edit.putString("weatherSearchUsername", str44);
+                            String str48 = tL_jsonString6.value;
+                            this.weatherSearchUsername = str48;
+                            edit.putString("weatherSearchUsername", str48);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -8296,8 +8312,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -8319,9 +8335,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     if (jSONValue120 instanceof TLRPC.TL_jsonString) {
                         TLRPC.TL_jsonString tL_jsonString7 = (TLRPC.TL_jsonString) jSONValue120;
                         if (!TextUtils.equals(this.translationsManualEnabled, tL_jsonString7.value)) {
-                            String str45 = tL_jsonString7.value;
-                            this.translationsManualEnabled = str45;
-                            edit.putString("translationsManualEnabled", str45);
+                            String str49 = tL_jsonString7.value;
+                            this.translationsManualEnabled = str49;
+                            edit.putString("translationsManualEnabled", str49);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -8331,8 +8347,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -8351,9 +8367,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     str18 = str31;
                     str19 = str32;
                     TLRPC.JSONValue jSONValue121 = tL_jsonObjectValue.value;
-                    if ((jSONValue121 instanceof TLRPC.TL_jsonBool) && (z18 = ((TLRPC.TL_jsonBool) jSONValue121).value) != this.getfileExperimentalParams) {
-                        this.getfileExperimentalParams = z18;
-                        edit.putBoolean("getfileExperimentalParams", z18);
+                    if ((jSONValue121 instanceof TLRPC.TL_jsonBool) && (z19 = ((TLRPC.TL_jsonBool) jSONValue121).value) != this.getfileExperimentalParams) {
+                        this.getfileExperimentalParams = z19;
+                        edit.putBoolean("getfileExperimentalParams", z19);
                         str = str24;
                         str2 = str25;
                         str3 = str26;
@@ -8363,8 +8379,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -8383,9 +8399,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     str18 = str31;
                     str19 = str32;
                     TLRPC.JSONValue jSONValue122 = tL_jsonObjectValue.value;
-                    if ((jSONValue122 instanceof TLRPC.TL_jsonBool) && (z19 = ((TLRPC.TL_jsonBool) jSONValue122).value) != this.canEditFactcheck) {
-                        this.canEditFactcheck = z19;
-                        edit.putBoolean("canEditFactcheck", z19);
+                    if ((jSONValue122 instanceof TLRPC.TL_jsonBool) && (z20 = ((TLRPC.TL_jsonBool) jSONValue122).value) != this.canEditFactcheck) {
+                        this.canEditFactcheck = z20;
+                        edit.putBoolean("canEditFactcheck", z20);
                         str = str24;
                         str2 = str25;
                         str3 = str26;
@@ -8395,8 +8411,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -8416,18 +8432,18 @@ public class MessagesController extends BaseController implements NotificationCe
                     str19 = str32;
                     TLRPC.JSONValue jSONValue123 = tL_jsonObjectValue.value;
                     if (jSONValue123 instanceof TLRPC.TL_jsonArray) {
-                        HashSet hashSet8 = new HashSet();
+                        HashSet hashSet7 = new HashSet();
                         Iterator<TLRPC.JSONValue> it = ((TLRPC.TL_jsonArray) jSONValue123).value.iterator();
                         while (it.hasNext()) {
                             TLRPC.JSONValue next = it.next();
                             if (next instanceof TLRPC.TL_jsonString) {
-                                hashSet8.add(((TLRPC.TL_jsonString) next).value);
+                                hashSet7.add(((TLRPC.TL_jsonString) next).value);
                             }
                         }
-                        if (!this.directPaymentsCurrency.containsAll(hashSet8) || !hashSet8.containsAll(this.directPaymentsCurrency)) {
+                        if (!this.directPaymentsCurrency.containsAll(hashSet7) || !hashSet7.containsAll(this.directPaymentsCurrency)) {
                             this.directPaymentsCurrency.clear();
-                            this.directPaymentsCurrency.addAll(hashSet8);
-                            edit.putStringSet("directPaymentsCurrency", hashSet8);
+                            this.directPaymentsCurrency.addAll(hashSet7);
+                            edit.putStringSet("directPaymentsCurrency", hashSet7);
                             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.billingProductDetailsUpdated, new Object[0]);
                             str = str24;
                             str2 = str25;
@@ -8438,7 +8454,7 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            z27 = true;
+                            z28 = true;
                             break;
                         }
                     }
@@ -8474,8 +8490,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -8509,8 +8525,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -8544,8 +8560,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -8564,9 +8580,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     str18 = str31;
                     str19 = str32;
                     TLRPC.JSONValue jSONValue127 = tL_jsonObjectValue.value;
-                    if ((jSONValue127 instanceof TLRPC.TL_jsonBool) && (z20 = ((TLRPC.TL_jsonBool) jSONValue127).value) != this.sponsoredLinksInappAllow) {
-                        this.sponsoredLinksInappAllow = z20;
-                        edit.putBoolean("sponsoredLinksInappAllow", z20);
+                    if ((jSONValue127 instanceof TLRPC.TL_jsonBool) && (z21 = ((TLRPC.TL_jsonBool) jSONValue127).value) != this.sponsoredLinksInappAllow) {
+                        this.sponsoredLinksInappAllow = z21;
+                        edit.putBoolean("sponsoredLinksInappAllow", z21);
                         str = str24;
                         str2 = str25;
                         str3 = str26;
@@ -8576,8 +8592,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -8632,8 +8648,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -8667,8 +8683,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -8702,8 +8718,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -8737,8 +8753,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -8771,8 +8787,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -8806,8 +8822,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -8826,9 +8842,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     str18 = str31;
                     str19 = str32;
                     TLRPC.JSONValue jSONValue135 = tL_jsonObjectValue.value;
-                    if ((jSONValue135 instanceof TLRPC.TL_jsonBool) && (z21 = ((TLRPC.TL_jsonBool) jSONValue135).value) != this.saveGifsWithStickers) {
-                        this.saveGifsWithStickers = z21;
-                        edit.putBoolean("saveGifsWithStickers", z21);
+                    if ((jSONValue135 instanceof TLRPC.TL_jsonBool) && (z22 = ((TLRPC.TL_jsonBool) jSONValue135).value) != this.saveGifsWithStickers) {
+                        this.saveGifsWithStickers = z22;
+                        edit.putBoolean("saveGifsWithStickers", z22);
                         str = str24;
                         str2 = str25;
                         str3 = str26;
@@ -8838,8 +8854,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -8872,8 +8888,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -8907,8 +8923,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -8927,9 +8943,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     str18 = str31;
                     str19 = str32;
                     TLRPC.JSONValue jSONValue138 = tL_jsonObjectValue.value;
-                    if ((jSONValue138 instanceof TLRPC.TL_jsonBool) && (z22 = ((TLRPC.TL_jsonBool) jSONValue138).value) != this.androidDisableRoundCamera2) {
-                        this.androidDisableRoundCamera2 = z22;
-                        edit.putBoolean("androidDisableRoundCamera2", z22);
+                    if ((jSONValue138 instanceof TLRPC.TL_jsonBool) && (z23 = ((TLRPC.TL_jsonBool) jSONValue138).value) != this.androidDisableRoundCamera2) {
+                        this.androidDisableRoundCamera2 = z23;
+                        edit.putBoolean("androidDisableRoundCamera2", z23);
                         str = str24;
                         str2 = str25;
                         str3 = str26;
@@ -8939,8 +8955,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -8960,10 +8976,10 @@ public class MessagesController extends BaseController implements NotificationCe
                     str19 = str32;
                     TLRPC.JSONValue jSONValue139 = tL_jsonObjectValue.value;
                     if (jSONValue139 instanceof TLRPC.TL_jsonString) {
-                        String str46 = ((TLRPC.TL_jsonString) jSONValue139).value;
-                        if (!Objects.equals(BuildVars.GOOGLE_AUTH_CLIENT_ID, str46)) {
-                            BuildVars.GOOGLE_AUTH_CLIENT_ID = str46;
-                            edit.putString("googleAuthClientId", str46);
+                        String str50 = ((TLRPC.TL_jsonString) jSONValue139).value;
+                        if (!Objects.equals(BuildVars.GOOGLE_AUTH_CLIENT_ID, str50)) {
+                            BuildVars.GOOGLE_AUTH_CLIENT_ID = str50;
+                            edit.putString("googleAuthClientId", str50);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -8973,8 +8989,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9008,8 +9024,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9044,8 +9060,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9079,8 +9095,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9114,8 +9130,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9149,8 +9165,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9219,8 +9235,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str7 = str17;
                         str6 = str16;
                     }
-                    savePremiumFeaturesPreviewOrder = true;
-                    z27 = savePremiumFeaturesPreviewOrder;
+                    z14 = true;
+                    z28 = z14;
                     break;
                 case NotificationCenter.fileUploaded /* 137 */:
                     str16 = str29;
@@ -9243,8 +9259,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9266,9 +9282,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     if (jSONValue147 instanceof TLRPC.TL_jsonString) {
                         TLRPC.TL_jsonString tL_jsonString8 = (TLRPC.TL_jsonString) jSONValue147;
                         if (!TextUtils.equals(this.storyVenueSearchBot, tL_jsonString8.value)) {
-                            String str47 = tL_jsonString8.value;
-                            this.storyVenueSearchBot = str47;
-                            edit.putString("storyVenueSearchBot", str47);
+                            String str51 = tL_jsonString8.value;
+                            this.storyVenueSearchBot = str51;
+                            edit.putString("storyVenueSearchBot", str51);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -9278,8 +9294,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9313,8 +9329,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9348,8 +9364,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9383,8 +9399,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9404,10 +9420,10 @@ public class MessagesController extends BaseController implements NotificationCe
                     str19 = str32;
                     TLRPC.JSONValue jSONValue151 = tL_jsonObjectValue.value;
                     if (jSONValue151 instanceof TLRPC.TL_jsonString) {
-                        String str48 = ((TLRPC.TL_jsonString) jSONValue151).value;
-                        if (!str48.equals(this.premiumBotUsername)) {
-                            this.premiumBotUsername = str48;
-                            edit.putString("premiumBotUsername", str48);
+                        String str52 = ((TLRPC.TL_jsonString) jSONValue151).value;
+                        if (!str52.equals(this.premiumBotUsername)) {
+                            this.premiumBotUsername = str52;
+                            edit.putString("premiumBotUsername", str52);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -9417,8 +9433,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9438,11 +9454,11 @@ public class MessagesController extends BaseController implements NotificationCe
                     str19 = str32;
                     TLRPC.JSONValue jSONValue152 = tL_jsonObjectValue.value;
                     if (jSONValue152 instanceof TLRPC.TL_jsonBool) {
-                        boolean z42 = this.premiumLocked;
-                        boolean z43 = ((TLRPC.TL_jsonBool) jSONValue152).value;
-                        if (z42 != z43) {
-                            this.premiumLocked = z43;
-                            edit.putBoolean("premiumLocked", z43);
+                        boolean z43 = this.premiumLocked;
+                        boolean z44 = ((TLRPC.TL_jsonBool) jSONValue152).value;
+                        if (z43 != z44) {
+                            this.premiumLocked = z44;
+                            edit.putBoolean("premiumLocked", z44);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -9452,8 +9468,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9486,8 +9502,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9506,9 +9522,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     str18 = str31;
                     str19 = str32;
                     TLRPC.JSONValue jSONValue154 = tL_jsonObjectValue.value;
-                    if ((jSONValue154 instanceof TLRPC.TL_jsonBool) && (z23 = ((TLRPC.TL_jsonBool) jSONValue154).value) != this.storyWeatherPreload) {
-                        this.storyWeatherPreload = z23;
-                        edit.putBoolean("storyWeatherPreload", z23);
+                    if ((jSONValue154 instanceof TLRPC.TL_jsonBool) && (z24 = ((TLRPC.TL_jsonBool) jSONValue154).value) != this.storyWeatherPreload) {
+                        this.storyWeatherPreload = z24;
+                        edit.putBoolean("storyWeatherPreload", z24);
                         str = str24;
                         str2 = str25;
                         str3 = str26;
@@ -9518,8 +9534,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -9552,8 +9568,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9587,8 +9603,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9608,10 +9624,10 @@ public class MessagesController extends BaseController implements NotificationCe
                     str19 = str32;
                     TLRPC.JSONValue jSONValue157 = tL_jsonObjectValue.value;
                     if (jSONValue157 instanceof TLRPC.TL_jsonString) {
-                        String str49 = ((TLRPC.TL_jsonString) jSONValue157).value;
-                        if (!str49.equals(this.verifyAgeCountry)) {
-                            this.verifyAgeCountry = str49;
-                            edit.putString("verifyAgeCountry", str49);
+                        String str53 = ((TLRPC.TL_jsonString) jSONValue157).value;
+                        if (!str53.equals(this.verifyAgeCountry)) {
+                            this.verifyAgeCountry = str53;
+                            edit.putString("verifyAgeCountry", str53);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -9621,8 +9637,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9644,9 +9660,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     if (jSONValue158 instanceof TLRPC.TL_jsonString) {
                         TLRPC.TL_jsonString tL_jsonString9 = (TLRPC.TL_jsonString) jSONValue158;
                         if (!TextUtils.equals(tL_jsonString9.value, this.premiumManageSubscriptionUrl)) {
-                            String str50 = tL_jsonString9.value;
-                            this.premiumManageSubscriptionUrl = str50;
-                            edit.putString("premiumManageSubscriptionUrl", str50);
+                            String str54 = tL_jsonString9.value;
+                            this.premiumManageSubscriptionUrl = str54;
+                            edit.putString("premiumManageSubscriptionUrl", str54);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -9656,8 +9672,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9692,8 +9708,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9713,11 +9729,11 @@ public class MessagesController extends BaseController implements NotificationCe
                     str19 = str32;
                     TLRPC.JSONValue jSONValue160 = tL_jsonObjectValue.value;
                     if (jSONValue160 instanceof TLRPC.TL_jsonBool) {
-                        boolean z44 = this.giftAttachMenuIcon;
-                        boolean z45 = ((TLRPC.TL_jsonBool) jSONValue160).value;
-                        if (z44 != z45) {
-                            this.giftAttachMenuIcon = z45;
-                            edit.putBoolean("giftAttachMenuIcon", z45);
+                        boolean z45 = this.giftAttachMenuIcon;
+                        boolean z46 = ((TLRPC.TL_jsonBool) jSONValue160).value;
+                        if (z45 != z46) {
+                            this.giftAttachMenuIcon = z46;
+                            edit.putBoolean("giftAttachMenuIcon", z46);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -9727,8 +9743,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9762,8 +9778,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9788,25 +9804,25 @@ public class MessagesController extends BaseController implements NotificationCe
                         int i106 = 0;
                         while (i106 < size12) {
                             TLRPC.TL_jsonObjectValue tL_jsonObjectValue4 = tL_jsonObject7.value.get(i106);
-                            String str51 = tL_jsonObjectValue4.key;
-                            str51.hashCode();
-                            switch (str51.hashCode()) {
+                            String str55 = tL_jsonObjectValue4.key;
+                            str55.hashCode();
+                            switch (str55.hashCode()) {
                                 case -233204595:
-                                    if (str51.equals("diameter")) {
+                                    if (str55.equals("diameter")) {
                                         c2 = 0;
                                         break;
                                     }
                                     c2 = 65535;
                                     break;
                                 case 258902020:
-                                    if (str51.equals("audio_bitrate")) {
+                                    if (str55.equals("audio_bitrate")) {
                                         c2 = 1;
                                         break;
                                     }
                                     c2 = 65535;
                                     break;
                                 case 1924434857:
-                                    if (str51.equals("video_bitrate")) {
+                                    if (str55.equals("video_bitrate")) {
                                         c2 = 2;
                                         break;
                                     }
@@ -9826,7 +9842,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                             this.roundVideoSize = i107;
                                             edit.putInt("roundVideoSize", i107);
                                             i5 = 1;
-                                            z27 = true;
+                                            z28 = true;
                                             break;
                                         }
                                     }
@@ -9841,7 +9857,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                             this.roundAudioBitrate = i108;
                                             edit.putInt("roundAudioBitrate", i108);
                                             i5 = 1;
-                                            z27 = true;
+                                            z28 = true;
                                             break;
                                         }
                                     }
@@ -9856,7 +9872,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                             this.roundVideoBitrate = i109;
                                             edit.putInt("roundVideoBitrate", i109);
                                             i5 = 1;
-                                            z27 = true;
+                                            z28 = true;
                                             break;
                                         }
                                     }
@@ -9910,8 +9926,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -9974,8 +9990,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -10009,8 +10025,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -10045,8 +10061,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -10081,8 +10097,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -10131,11 +10147,11 @@ public class MessagesController extends BaseController implements NotificationCe
                     str19 = str32;
                     TLRPC.JSONValue jSONValue173 = tL_jsonObjectValue.value;
                     if (jSONValue173 instanceof TLRPC.TL_jsonBool) {
-                        boolean z46 = this.uploadMarkupVideo;
-                        boolean z47 = ((TLRPC.TL_jsonBool) jSONValue173).value;
-                        if (z46 != z47) {
-                            this.uploadMarkupVideo = z47;
-                            edit.putBoolean("uploadMarkupVideo", z47);
+                        boolean z47 = this.uploadMarkupVideo;
+                        boolean z48 = ((TLRPC.TL_jsonBool) jSONValue173).value;
+                        if (z47 != z48) {
+                            this.uploadMarkupVideo = z48;
+                            edit.putBoolean("uploadMarkupVideo", z48);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -10145,8 +10161,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -10180,8 +10196,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -10215,8 +10231,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -10234,19 +10250,19 @@ public class MessagesController extends BaseController implements NotificationCe
                     str17 = str30;
                     str18 = str31;
                     str19 = str32;
-                    HashSet<Long> hashSet9 = new HashSet<>();
+                    HashSet<Long> hashSet8 = new HashSet<>();
                     TLRPC.JSONValue jSONValue176 = tL_jsonObjectValue.value;
                     if (jSONValue176 instanceof TLRPC.TL_jsonArray) {
                         ArrayList<TLRPC.JSONValue> arrayList2 = ((TLRPC.TL_jsonArray) jSONValue176).value;
                         for (int i117 = 0; i117 < arrayList2.size(); i117++) {
                             if (arrayList2.get(i117) instanceof TLRPC.TL_jsonNumber) {
-                                hashSet9.add(Long.valueOf((long) ((TLRPC.TL_jsonNumber) arrayList2.get(i117)).value));
+                                hashSet8.add(Long.valueOf((long) ((TLRPC.TL_jsonNumber) arrayList2.get(i117)).value));
                             }
                         }
                     }
-                    if (!hashSet9.equals(this.whitelistedBots)) {
-                        this.whitelistedBots = hashSet9;
-                        edit.putStringSet("whitelistedBots", (Set) Collection.-EL.stream(hashSet9).map(new Function() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda145
+                    if (!hashSet8.equals(this.whitelistedBots)) {
+                        this.whitelistedBots = hashSet8;
+                        edit.putStringSet("whitelistedBots", (Set) Collection.-EL.stream(hashSet8).map(new Function() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda145
                             public /* synthetic */ Function andThen(Function function) {
                                 return Function$-CC.$default$andThen(this, function);
                             }
@@ -10271,8 +10287,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -10305,8 +10321,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -10325,9 +10341,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     str18 = str31;
                     str19 = str32;
                     TLRPC.JSONValue jSONValue178 = tL_jsonObjectValue.value;
-                    if ((jSONValue178 instanceof TLRPC.TL_jsonBool) && (z24 = ((TLRPC.TL_jsonBool) jSONValue178).value) != this.stargiftsBlocked) {
-                        this.stargiftsBlocked = z24;
-                        edit.putBoolean("stargiftsBlocked", z24);
+                    if ((jSONValue178 instanceof TLRPC.TL_jsonBool) && (z25 = ((TLRPC.TL_jsonBool) jSONValue178).value) != this.stargiftsBlocked) {
+                        this.stargiftsBlocked = z25;
+                        edit.putBoolean("stargiftsBlocked", z25);
                         str = str24;
                         str2 = str25;
                         str3 = str26;
@@ -10337,8 +10353,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -10360,9 +10376,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     if (jSONValue179 instanceof TLRPC.TL_jsonString) {
                         TLRPC.TL_jsonString tL_jsonString10 = (TLRPC.TL_jsonString) jSONValue179;
                         if (!TextUtils.equals(tL_jsonString10.value, this.storiesEntities)) {
-                            String str52 = tL_jsonString10.value;
-                            this.storiesEntities = str52;
-                            edit.putString("storiesEntities", str52);
+                            String str56 = tL_jsonString10.value;
+                            this.storiesEntities = str56;
+                            edit.putString("storiesEntities", str56);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -10372,8 +10388,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -10407,8 +10423,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -10441,8 +10457,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -10497,8 +10513,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -10532,8 +10548,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -10567,8 +10583,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -10586,7 +10602,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str17 = str30;
                     str18 = str31;
                     str19 = str32;
-                    HashSet hashSet10 = new HashSet();
+                    HashSet hashSet9 = new HashSet();
                     TLRPC.JSONValue jSONValue186 = tL_jsonObjectValue.value;
                     if (jSONValue186 instanceof TLRPC.TL_jsonArray) {
                         TLRPC.TL_jsonArray tL_jsonArray13 = (TLRPC.TL_jsonArray) jSONValue186;
@@ -10594,13 +10610,13 @@ public class MessagesController extends BaseController implements NotificationCe
                         for (int i123 = 0; i123 < size13; i123++) {
                             TLRPC.JSONValue jSONValue187 = tL_jsonArray13.value.get(i123);
                             if (jSONValue187 instanceof TLRPC.TL_jsonString) {
-                                hashSet10.add(((TLRPC.TL_jsonString) jSONValue187).value.toLowerCase());
+                                hashSet9.add(((TLRPC.TL_jsonString) jSONValue187).value.toLowerCase());
                             }
                         }
                     }
-                    if (!this.webAppAllowedProtocols.equals(hashSet10)) {
-                        this.webAppAllowedProtocols = hashSet10;
-                        edit.putStringSet("webAppAllowedProtocols", hashSet10);
+                    if (!this.webAppAllowedProtocols.equals(hashSet9)) {
+                        this.webAppAllowedProtocols = hashSet9;
+                        edit.putStringSet("webAppAllowedProtocols", hashSet9);
                         str = str24;
                         str2 = str25;
                         str3 = str26;
@@ -10610,8 +10626,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -10665,8 +10681,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -10685,9 +10701,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     str18 = str31;
                     str19 = str32;
                     TLRPC.JSONValue jSONValue190 = tL_jsonObjectValue.value;
-                    if ((jSONValue190 instanceof TLRPC.TL_jsonBool) && (z25 = ((TLRPC.TL_jsonBool) jSONValue190).value) != this.starrefConnectAllowed) {
-                        this.starrefConnectAllowed = z25;
-                        edit.putBoolean("starrefConnectAllowed", z25);
+                    if ((jSONValue190 instanceof TLRPC.TL_jsonBool) && (z26 = ((TLRPC.TL_jsonBool) jSONValue190).value) != this.starrefConnectAllowed) {
+                        this.starrefConnectAllowed = z26;
+                        edit.putBoolean("starrefConnectAllowed", z26);
                         str = str24;
                         str2 = str25;
                         str3 = str26;
@@ -10697,8 +10713,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -10729,8 +10745,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -10764,8 +10780,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -10796,8 +10812,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -10831,8 +10847,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str8 = str18;
                             str7 = str17;
                             str6 = str16;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -10865,7 +10881,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                         TLRPC.TL_jsonObject tL_jsonObject10 = (TLRPC.TL_jsonObject) jSONValue196;
                                         int size15 = tL_jsonObject10.value.size();
                                         str17 = str30;
-                                        String str53 = null;
+                                        String str57 = null;
                                         long j14 = 0;
                                         long j15 = 0;
                                         int i130 = 0;
@@ -10882,7 +10898,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                         } else if ("access_hash".equals(tL_jsonObjectValue6.key)) {
                                                             j15 = Utilities.parseLong(((TLRPC.TL_jsonString) tL_jsonObjectValue6.value).value).longValue();
                                                         } else if ("file_reference_base64".equals(tL_jsonObjectValue6.key)) {
-                                                            str53 = ((TLRPC.TL_jsonString) tL_jsonObjectValue6.value).value;
+                                                            str57 = ((TLRPC.TL_jsonString) tL_jsonObjectValue6.value).value;
                                                         }
                                                     } catch (Exception e6) {
                                                         e = e6;
@@ -10922,8 +10938,8 @@ public class MessagesController extends BaseController implements NotificationCe
                                             }
                                         }
                                         str23 = str29;
-                                        if (j14 != 0 && j15 != 0 && str53 != null) {
-                                            hashMap2.put(tL_jsonObjectValue5.key.replace("️", ""), new EmojiSound(j14, j15, str53));
+                                        if (j14 != 0 && j15 != 0 && str57 != null) {
+                                            hashMap2.put(tL_jsonObjectValue5.key.replace("️", ""), new EmojiSound(j14, j15, str57));
                                         }
                                     } else {
                                         str23 = str29;
@@ -10973,8 +10989,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str8 = str18;
                         str7 = str17;
                         str6 = str16;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                     }
                     str = str24;
                     str2 = str25;
@@ -11004,8 +11020,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str7 = str30;
                             str8 = str31;
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -11036,8 +11052,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str7 = str30;
                             str8 = str31;
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -11068,8 +11084,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str7 = str30;
                             str8 = str31;
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -11084,7 +11100,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str9 = str10;
                 case NotificationCenter.updateBotMenuButton /* 186 */:
                     str10 = str32;
-                    HashSet hashSet11 = new HashSet();
+                    HashSet hashSet10 = new HashSet();
                     TLRPC.JSONValue jSONValue200 = tL_jsonObjectValue.value;
                     if (jSONValue200 instanceof TLRPC.TL_jsonArray) {
                         TLRPC.TL_jsonArray tL_jsonArray14 = (TLRPC.TL_jsonArray) jSONValue200;
@@ -11092,13 +11108,13 @@ public class MessagesController extends BaseController implements NotificationCe
                         for (int i134 = 0; i134 < size16; i134++) {
                             TLRPC.JSONValue jSONValue201 = tL_jsonArray14.value.get(i134);
                             if (jSONValue201 instanceof TLRPC.TL_jsonString) {
-                                hashSet11.add(((TLRPC.TL_jsonString) jSONValue201).value.toLowerCase());
+                                hashSet10.add(((TLRPC.TL_jsonString) jSONValue201).value.toLowerCase());
                             }
                         }
                     }
-                    if (!this.starrefStartParamPrefixes.equals(hashSet11)) {
-                        this.starrefStartParamPrefixes = hashSet11;
-                        edit.putStringSet("starrefStartParamPrefixes", hashSet11);
+                    if (!this.starrefStartParamPrefixes.equals(hashSet10)) {
+                        this.starrefStartParamPrefixes = hashSet10;
+                        edit.putStringSet("starrefStartParamPrefixes", hashSet10);
                         str = str24;
                         str2 = str25;
                         str3 = str26;
@@ -11108,8 +11124,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str7 = str30;
                         str8 = str31;
                         str9 = str10;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -11140,8 +11156,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str7 = str30;
                             str8 = str31;
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -11172,8 +11188,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str7 = str30;
                             str8 = str31;
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -11192,9 +11208,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     if (jSONValue204 instanceof TLRPC.TL_jsonString) {
                         TLRPC.TL_jsonString tL_jsonString11 = (TLRPC.TL_jsonString) jSONValue204;
                         if (!TextUtils.equals(tL_jsonString11.value, this.tonBlockchainExplorerUrl)) {
-                            String str54 = tL_jsonString11.value;
-                            this.tonBlockchainExplorerUrl = str54;
-                            edit.putString("tonBlockchainExplorerUrl", str54);
+                            String str58 = tL_jsonString11.value;
+                            this.tonBlockchainExplorerUrl = str58;
+                            edit.putString("tonBlockchainExplorerUrl", str58);
                             str = str24;
                             str2 = str25;
                             str3 = str26;
@@ -11204,8 +11220,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str7 = str30;
                             str8 = str31;
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -11220,7 +11236,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str9 = str10;
                 case NotificationCenter.boostByChannelCreated /* 190 */:
                     str10 = str32;
-                    HashSet hashSet12 = new HashSet();
+                    HashSet hashSet11 = new HashSet();
                     TLRPC.JSONValue jSONValue205 = tL_jsonObjectValue.value;
                     if (jSONValue205 instanceof TLRPC.TL_jsonArray) {
                         TLRPC.TL_jsonArray tL_jsonArray15 = (TLRPC.TL_jsonArray) jSONValue205;
@@ -11228,13 +11244,13 @@ public class MessagesController extends BaseController implements NotificationCe
                         for (int i137 = 0; i137 < size17; i137++) {
                             TLRPC.JSONValue jSONValue206 = tL_jsonArray15.value.get(i137);
                             if (jSONValue206 instanceof TLRPC.TL_jsonString) {
-                                hashSet12.add(((TLRPC.TL_jsonString) jSONValue206).value);
+                                hashSet11.add(((TLRPC.TL_jsonString) jSONValue206).value);
                             }
                         }
                     }
-                    if (!this.exportPrivateUri.equals(hashSet12)) {
-                        this.exportPrivateUri = hashSet12;
-                        edit.putStringSet("exportPrivateUri", hashSet12);
+                    if (!this.exportPrivateUri.equals(hashSet11)) {
+                        this.exportPrivateUri = hashSet11;
+                        edit.putStringSet("exportPrivateUri", hashSet11);
                         str = str24;
                         str2 = str25;
                         str3 = str26;
@@ -11244,8 +11260,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str7 = str30;
                         str8 = str31;
                         str9 = str10;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -11275,8 +11291,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str7 = str30;
                             str8 = str31;
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -11307,8 +11323,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str7 = str30;
                             str8 = str31;
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -11339,8 +11355,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str7 = str30;
                             str8 = str31;
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -11372,8 +11388,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str7 = str30;
                             str8 = str31;
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                     }
@@ -11404,8 +11420,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             str7 = str30;
                             str8 = str31;
                             str9 = str10;
-                            savePremiumFeaturesPreviewOrder = true;
-                            z27 = savePremiumFeaturesPreviewOrder;
+                            z14 = true;
+                            z28 = z14;
                             break;
                         }
                         str = str24;
@@ -11429,9 +11445,9 @@ public class MessagesController extends BaseController implements NotificationCe
                     str9 = str32;
                 case NotificationCenter.storiesLimitUpdate /* 196 */:
                     TLRPC.JSONValue jSONValue212 = tL_jsonObjectValue.value;
-                    if ((jSONValue212 instanceof TLRPC.TL_jsonBool) && (z26 = ((TLRPC.TL_jsonBool) jSONValue212).value) != this.filtersEnabled) {
-                        this.filtersEnabled = z26;
-                        edit.putBoolean("filtersEnabled", z26);
+                    if ((jSONValue212 instanceof TLRPC.TL_jsonBool) && (z27 = ((TLRPC.TL_jsonBool) jSONValue212).value) != this.filtersEnabled) {
+                        this.filtersEnabled = z27;
+                        edit.putBoolean("filtersEnabled", z27);
                         str = str24;
                         str2 = str25;
                         str3 = str26;
@@ -11441,8 +11457,8 @@ public class MessagesController extends BaseController implements NotificationCe
                         str7 = str30;
                         str8 = str31;
                         str9 = str32;
-                        savePremiumFeaturesPreviewOrder = true;
-                        z27 = savePremiumFeaturesPreviewOrder;
+                        z14 = true;
+                        z28 = z14;
                         break;
                     }
                     str = str24;
@@ -11492,7 +11508,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 this.transcribeAudioTrialCurrentNumber = i141;
                 edit.putInt("transcribeAudioTrialCurrentNumber", i141);
             }
-            z27 = true;
+            z28 = true;
         } else {
             i = i10;
         }
@@ -11502,7 +11518,7 @@ public class MessagesController extends BaseController implements NotificationCe
             scheduleTranscriptionUpdate();
             z = true;
         } else {
-            z = z27;
+            z = z28;
         }
         if (z) {
             edit.apply();
@@ -11516,12 +11532,12 @@ public class MessagesController extends BaseController implements NotificationCe
         if (tL_jsonObject4 != null) {
             LiteMode.updatePresets(tL_jsonObject4);
         }
-        if (z28) {
+        if (z29) {
             ApplicationLoader.startPushService();
             ConnectionsManager connectionsManager = getConnectionsManager();
             connectionsManager.setPushConnectionEnabled(connectionsManager.isPushConnectionEnabled());
         }
-        if (z29) {
+        if (z30) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda149
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -12192,6 +12208,7 @@ public class MessagesController extends BaseController implements NotificationCe
         this.freezeAppealUrl = "t.me/spambot";
         this.verifyAgeBotUsername = null;
         this.verifyAgeCountry = "GB";
+        this.aiComposeStyles = null;
         this.ignoreRestrictionReasons = new HashSet();
         this.mainPreferences.edit().remove("starsLocked").remove("getfileExperimentalParams").remove("smsjobsStickyNotificationEnabled").remove("channelRevenueWithdrawalEnabled").remove("showAnnualPerMonth").remove("canEditFactcheck").remove("factcheckLengthLimit").remove("videoIgnoreAltDocuments").remove("freezeSinceDate").remove("freezeUntilDate").remove("freezeAppealUrl").remove("verifyAgeBotUsername").remove("verifyAgeCountry").remove("ignoreRestrictionReasons").apply();
     }
@@ -28976,7 +28993,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r4v1 ??), method size: 7754
+        jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)

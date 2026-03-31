@@ -31,7 +31,6 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Set;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2;
 import org.telegram.messenger.CodeHighlighting;
@@ -117,21 +116,20 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView {
         this.collapsed = true;
         this.requestId = -1;
         this.lastRequest = new TLRPC.TL_messages_composeMessageWithAI[3];
-        Set<String> set = MessagesController.getInstance(this.currentAccount).aiComposeStyles;
-        this.tones = new String[set.size()];
-        this.toneTitles = new String[set.size()];
-        this.toneDocumentId = new Long[set.size()];
-        Iterator<String> it = set.iterator();
+        String[] split = MessagesController.getInstance(this.currentAccount).aiComposeStyles.split(";;;");
+        this.tones = new String[split.length];
+        this.toneTitles = new String[split.length];
+        this.toneDocumentId = new Long[split.length];
         int i = 0;
-        while (it.hasNext()) {
-            String[] split = it.next().split("\\|");
-            this.tones[i] = split[0];
+        for (String str : split) {
+            String[] split2 = str.split("\\|");
+            this.tones[i] = split2[0];
             try {
-                this.toneDocumentId[i] = Long.valueOf(Long.parseLong(split[1]));
+                this.toneDocumentId[i] = Long.valueOf(Long.parseLong(split2[1]));
             } catch (Exception e) {
                 FileLog.e(e);
             }
-            this.toneTitles[i] = split[2];
+            this.toneTitles[i] = split2[2];
             i++;
         }
         ImageView imageView = new ImageView(context);

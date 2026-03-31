@@ -861,6 +861,11 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         }
 
         @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
+        public /* synthetic */ boolean allowLivePhotos() {
+            return PhotoViewerProvider.-CC.$default$allowLivePhotos(this);
+        }
+
+        @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
         public boolean allowSendingSubmenu() {
             return true;
         }
@@ -1119,6 +1124,10 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     public interface PhotoViewerProvider {
 
         public abstract /* synthetic */ class -CC {
+            public static boolean $default$allowLivePhotos(PhotoViewerProvider photoViewerProvider) {
+                return false;
+            }
+
             public static boolean $default$canLoadMoreAvatars(PhotoViewerProvider photoViewerProvider) {
                 return true;
             }
@@ -1178,6 +1187,8 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         }
 
         boolean allowCaption();
+
+        boolean allowLivePhotos();
 
         boolean allowSendingSubmenu();
 
@@ -1341,6 +1352,10 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     }
 
     private boolean isUnalivePhoto() {
+        PhotoViewerProvider photoViewerProvider = this.placeProvider;
+        if (photoViewerProvider != null && !photoViewerProvider.allowLivePhotos()) {
+            return true;
+        }
         int i = this.currentIndex;
         if (i >= 0 && i < this.imagesArrLocals.size()) {
             Object obj = this.imagesArrLocals.get(this.currentIndex);
@@ -15928,7 +15943,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 arrayList.add(ObjectAnimator.ofFloat(PhotoViewer.this.muteButton, (Property<ImageView, Float>) property2, 1.0f));
             }
             if (PhotoViewer.this.livePhotoButton.getTag() != null) {
-                PhotoViewer.this.livePhotoButton.setVisibility((PhotoViewer.this.sendPhotoTypeIsGif || !PhotoViewer.this.centerImageIsLivePhoto) ? 8 : 0);
+                PhotoViewer.this.livePhotoButton.setVisibility((!PhotoViewer.this.sendPhotoTypeIsGif && PhotoViewer.this.centerImageIsLivePhoto && (PhotoViewer.this.placeProvider == null || PhotoViewer.this.placeProvider.allowLivePhotos())) ? 0 : 8);
                 arrayList.add(ObjectAnimator.ofFloat(PhotoViewer.this.muteButton, (Property<ImageView, Float>) property2, 1.0f));
             }
             if (PhotoViewer.this.editCoverButton.getTag() != null) {
@@ -18265,30 +18280,30 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:680:0x0af6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:685:0x0b03, code lost:
     
-        if (r2 == null) goto L540;
+        if (r2 == null) goto L545;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x1035  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x1042  */
     /* JADX WARN: Removed duplicated region for block: B:131:0x03ca  */
     /* JADX WARN: Removed duplicated region for block: B:50:0x0385  */
     /* JADX WARN: Removed duplicated region for block: B:62:0x03c1  */
-    /* JADX WARN: Removed duplicated region for block: B:685:0x0b0e  */
-    /* JADX WARN: Removed duplicated region for block: B:688:0x0b21  */
     /* JADX WARN: Removed duplicated region for block: B:68:0x0695  */
-    /* JADX WARN: Removed duplicated region for block: B:694:0x0b16  */
-    /* JADX WARN: Removed duplicated region for block: B:737:0x0c81  */
+    /* JADX WARN: Removed duplicated region for block: B:690:0x0b1b  */
+    /* JADX WARN: Removed duplicated region for block: B:693:0x0b2e  */
+    /* JADX WARN: Removed duplicated region for block: B:699:0x0b23  */
     /* JADX WARN: Removed duplicated region for block: B:73:0x06a5  */
-    /* JADX WARN: Removed duplicated region for block: B:740:0x0c8e  */
-    /* JADX WARN: Removed duplicated region for block: B:743:0x0c9b  */
-    /* JADX WARN: Removed duplicated region for block: B:748:0x0c9e  */
-    /* JADX WARN: Removed duplicated region for block: B:749:0x0c91  */
-    /* JADX WARN: Removed duplicated region for block: B:750:0x0c83  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x0fda  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0fed A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x100b  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x1018  */
+    /* JADX WARN: Removed duplicated region for block: B:742:0x0c8e  */
+    /* JADX WARN: Removed duplicated region for block: B:745:0x0c9b  */
+    /* JADX WARN: Removed duplicated region for block: B:748:0x0ca8  */
+    /* JADX WARN: Removed duplicated region for block: B:753:0x0cab  */
+    /* JADX WARN: Removed duplicated region for block: B:754:0x0c9e  */
+    /* JADX WARN: Removed duplicated region for block: B:755:0x0c90  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0fe7  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x0ffa A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x1018  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x1025  */
     /* JADX WARN: Type inference failed for: r4v182 */
     /* JADX WARN: Type inference failed for: r4v183, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r4v198 */
@@ -18350,6 +18365,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         TLRPC.Photo photo2;
         boolean z21;
         ChatActivity chatActivity;
+        PhotoViewerProvider photoViewerProvider;
         String str3;
         int i15;
         float f3;
@@ -19057,7 +19073,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                             this.mirrorItem.setVisibility(8);
                                             this.mirrorItem.setTag(null);
                                             AndroidUtilities.updateViewVisibilityAnimated(this.muteButton, (this.sendPhotoTypeIsGif || z9) ? false : true, 1.0f, z2);
-                                            AndroidUtilities.updateViewVisibilityAnimated(this.livePhotoButton, !this.sendPhotoTypeIsGif && z9, 1.0f, z2);
+                                            AndroidUtilities.updateViewVisibilityAnimated(this.livePhotoButton, !this.sendPhotoTypeIsGif && z9 && ((photoViewerProvider = this.placeProvider) == null || photoViewerProvider.allowLivePhotos()), 1.0f, z2);
                                             if (z9) {
                                                 this.livePhotoButton.setValue(!isUnalivePhoto(), true);
                                             }
@@ -19875,13 +19891,13 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x062f  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0774  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x079b  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0636  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x077b  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x07a2  */
     /* JADX WARN: Removed duplicated region for block: B:168:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x0766 A[LOOP:0: B:178:0x0764->B:179:0x0766, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x05f2  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x056e  */
+    /* JADX WARN: Removed duplicated region for block: B:179:0x076d A[LOOP:0: B:178:0x076b->B:179:0x076d, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x05f2  */
+    /* JADX WARN: Removed duplicated region for block: B:188:0x056e  */
     /* JADX WARN: Removed duplicated region for block: B:54:0x0138  */
     /* JADX WARN: Removed duplicated region for block: B:57:0x0148  */
     /* JADX WARN: Removed duplicated region for block: B:60:0x0153  */
@@ -20360,7 +20376,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                             j7 = j6;
                             cropState = clone2;
                             z17 = z20;
-                            preparePlayer(null, uri, this.sendPhotoType == 1 || (z14 && !isUnalivePhoto()), false, this.editState.savedFilterState, z14, j5);
+                            preparePlayer(null, uri, (this.sendPhotoType == 1 && !(z14 && isUnalivePhoto())) || (z14 && !isUnalivePhoto()), false, this.editState.savedFilterState, z14, j5);
                         }
                         if (this.imagesArrLocals.isEmpty()) {
                             this.editState.reset();
@@ -24842,21 +24858,21 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:430:0x0a91, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:430:0x0a97, code lost:
     
-        if (r6 == 2) goto L455;
+        if (r6 == 2) goto L457;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:556:0x0ef8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:556:0x0efe, code lost:
     
-        if (r47.switchingToMode == (-1)) goto L693;
+        if (r47.switchingToMode == (-1)) goto L695;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:704:0x0a99, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:704:0x0a9f, code lost:
     
-        if (r0 == (-1)) goto L447;
+        if (r0 == (-1)) goto L449;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:710:0x0aa5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:710:0x0aab, code lost:
     
-        if (r0 == r9) goto L455;
+        if (r0 == r9) goto L457;
      */
     /* JADX WARN: Removed duplicated region for block: B:189:0x0548  */
     /* JADX WARN: Removed duplicated region for block: B:208:0x060b  */
@@ -24864,14 +24880,14 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     /* JADX WARN: Removed duplicated region for block: B:242:0x0765  */
     /* JADX WARN: Removed duplicated region for block: B:257:0x07cc  */
     /* JADX WARN: Removed duplicated region for block: B:266:0x07f5 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:272:0x0ff8  */
-    /* JADX WARN: Removed duplicated region for block: B:294:0x10a8  */
-    /* JADX WARN: Removed duplicated region for block: B:311:0x1192  */
-    /* JADX WARN: Removed duplicated region for block: B:338:0x11ea  */
-    /* JADX WARN: Removed duplicated region for block: B:341:0x11f1  */
-    /* JADX WARN: Removed duplicated region for block: B:349:0x1273  */
-    /* JADX WARN: Removed duplicated region for block: B:352:0x1280  */
-    /* JADX WARN: Removed duplicated region for block: B:363:0x1180  */
+    /* JADX WARN: Removed duplicated region for block: B:272:0x0ffe  */
+    /* JADX WARN: Removed duplicated region for block: B:294:0x10ae  */
+    /* JADX WARN: Removed duplicated region for block: B:311:0x1198  */
+    /* JADX WARN: Removed duplicated region for block: B:338:0x11f0  */
+    /* JADX WARN: Removed duplicated region for block: B:341:0x11f7  */
+    /* JADX WARN: Removed duplicated region for block: B:349:0x1279  */
+    /* JADX WARN: Removed duplicated region for block: B:352:0x1286  */
+    /* JADX WARN: Removed duplicated region for block: B:363:0x1186  */
     /* JADX WARN: Removed duplicated region for block: B:368:0x080e  */
     /* JADX WARN: Removed duplicated region for block: B:373:0x0823  */
     /* JADX WARN: Removed duplicated region for block: B:374:0x082e  */
@@ -24879,43 +24895,43 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     /* JADX WARN: Removed duplicated region for block: B:380:0x08c6  */
     /* JADX WARN: Removed duplicated region for block: B:383:0x08e5  */
     /* JADX WARN: Removed duplicated region for block: B:391:0x0941 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:412:0x0a33  */
-    /* JADX WARN: Removed duplicated region for block: B:422:0x0a79  */
-    /* JADX WARN: Removed duplicated region for block: B:433:0x0ab0  */
-    /* JADX WARN: Removed duplicated region for block: B:448:0x0b3b  */
-    /* JADX WARN: Removed duplicated region for block: B:451:0x0b46  */
-    /* JADX WARN: Removed duplicated region for block: B:459:0x0b5e  */
-    /* JADX WARN: Removed duplicated region for block: B:463:0x0b7e  */
-    /* JADX WARN: Removed duplicated region for block: B:473:0x0d1e  */
-    /* JADX WARN: Removed duplicated region for block: B:478:0x0d64  */
-    /* JADX WARN: Removed duplicated region for block: B:483:0x0d7c  */
-    /* JADX WARN: Removed duplicated region for block: B:486:0x0dac  */
-    /* JADX WARN: Removed duplicated region for block: B:489:0x0db9  */
-    /* JADX WARN: Removed duplicated region for block: B:544:0x0ed1  */
-    /* JADX WARN: Removed duplicated region for block: B:551:0x0eec  */
-    /* JADX WARN: Removed duplicated region for block: B:559:0x0f1e  */
-    /* JADX WARN: Removed duplicated region for block: B:569:0x0f44  */
-    /* JADX WARN: Removed duplicated region for block: B:596:0x0fe6 A[EDGE_INSN: B:596:0x0fe6->B:270:0x0fe6 BREAK  A[LOOP:1: B:567:0x0f3f->B:583:0x0fe2], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:602:0x0f18  */
-    /* JADX WARN: Removed duplicated region for block: B:608:0x0ecd  */
-    /* JADX WARN: Removed duplicated region for block: B:610:0x0d9b  */
-    /* JADX WARN: Removed duplicated region for block: B:613:0x0d4a  */
-    /* JADX WARN: Removed duplicated region for block: B:618:0x0ba8  */
-    /* JADX WARN: Removed duplicated region for block: B:638:0x0c67  */
-    /* JADX WARN: Removed duplicated region for block: B:641:0x0c85  */
-    /* JADX WARN: Removed duplicated region for block: B:644:0x0cad  */
-    /* JADX WARN: Removed duplicated region for block: B:647:0x0cd8  */
-    /* JADX WARN: Removed duplicated region for block: B:650:0x0ce0  */
-    /* JADX WARN: Removed duplicated region for block: B:659:0x0cff  */
-    /* JADX WARN: Removed duplicated region for block: B:663:0x0bed  */
-    /* JADX WARN: Removed duplicated region for block: B:672:0x0c25  */
-    /* JADX WARN: Removed duplicated region for block: B:675:0x0c2f  */
-    /* JADX WARN: Removed duplicated region for block: B:699:0x0d0b  */
-    /* JADX WARN: Removed duplicated region for block: B:713:0x0aa9  */
-    /* JADX WARN: Removed duplicated region for block: B:734:0x08c9  */
-    /* JADX WARN: Removed duplicated region for block: B:735:0x08bb  */
-    /* JADX WARN: Removed duplicated region for block: B:757:0x06f6  */
-    /* JADX WARN: Removed duplicated region for block: B:764:0x068d  */
+    /* JADX WARN: Removed duplicated region for block: B:412:0x0a39  */
+    /* JADX WARN: Removed duplicated region for block: B:422:0x0a7f  */
+    /* JADX WARN: Removed duplicated region for block: B:433:0x0ab6  */
+    /* JADX WARN: Removed duplicated region for block: B:448:0x0b41  */
+    /* JADX WARN: Removed duplicated region for block: B:451:0x0b4c  */
+    /* JADX WARN: Removed duplicated region for block: B:459:0x0b64  */
+    /* JADX WARN: Removed duplicated region for block: B:463:0x0b84  */
+    /* JADX WARN: Removed duplicated region for block: B:473:0x0d24  */
+    /* JADX WARN: Removed duplicated region for block: B:478:0x0d6a  */
+    /* JADX WARN: Removed duplicated region for block: B:483:0x0d82  */
+    /* JADX WARN: Removed duplicated region for block: B:486:0x0db2  */
+    /* JADX WARN: Removed duplicated region for block: B:489:0x0dbf  */
+    /* JADX WARN: Removed duplicated region for block: B:544:0x0ed7  */
+    /* JADX WARN: Removed duplicated region for block: B:551:0x0ef2  */
+    /* JADX WARN: Removed duplicated region for block: B:559:0x0f24  */
+    /* JADX WARN: Removed duplicated region for block: B:569:0x0f4a  */
+    /* JADX WARN: Removed duplicated region for block: B:596:0x0fec A[EDGE_INSN: B:596:0x0fec->B:270:0x0fec BREAK  A[LOOP:1: B:567:0x0f45->B:583:0x0fe8], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:602:0x0f1e  */
+    /* JADX WARN: Removed duplicated region for block: B:608:0x0ed3  */
+    /* JADX WARN: Removed duplicated region for block: B:610:0x0da1  */
+    /* JADX WARN: Removed duplicated region for block: B:613:0x0d50  */
+    /* JADX WARN: Removed duplicated region for block: B:618:0x0bae  */
+    /* JADX WARN: Removed duplicated region for block: B:638:0x0c6d  */
+    /* JADX WARN: Removed duplicated region for block: B:641:0x0c8b  */
+    /* JADX WARN: Removed duplicated region for block: B:644:0x0cb3  */
+    /* JADX WARN: Removed duplicated region for block: B:647:0x0cde  */
+    /* JADX WARN: Removed duplicated region for block: B:650:0x0ce6  */
+    /* JADX WARN: Removed duplicated region for block: B:659:0x0d05  */
+    /* JADX WARN: Removed duplicated region for block: B:663:0x0bf3  */
+    /* JADX WARN: Removed duplicated region for block: B:672:0x0c2b  */
+    /* JADX WARN: Removed duplicated region for block: B:675:0x0c35  */
+    /* JADX WARN: Removed duplicated region for block: B:699:0x0d11  */
+    /* JADX WARN: Removed duplicated region for block: B:713:0x0aaf  */
+    /* JADX WARN: Removed duplicated region for block: B:736:0x08c9  */
+    /* JADX WARN: Removed duplicated region for block: B:737:0x08bb  */
+    /* JADX WARN: Removed duplicated region for block: B:759:0x06f6  */
+    /* JADX WARN: Removed duplicated region for block: B:766:0x068d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -25607,7 +25623,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                                 min = Math.min(f19 / bitmapWidth3, f80 / bitmapHeight3);
                                             }
                                             this.centerImage.setImageCoords((-r1) / 2, (-r2) / 2, (int) (bitmapWidth3 * min), (int) (bitmapHeight3 * min));
-                                            if (this.isCurrentVideo && !this.centerImageIsLivePhoto) {
+                                            if (this.isCurrentVideo && (!this.centerImageIsLivePhoto || isUnalivePhoto())) {
                                                 this.centerImage.draw(canvas2);
                                                 this.centerImageTransformLocked = true;
                                             } else {

@@ -4248,78 +4248,78 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     /* JADX WARN: Removed duplicated region for block: B:252:0x082f  */
     /* JADX WARN: Removed duplicated region for block: B:258:0x090a  */
     /* JADX WARN: Removed duplicated region for block: B:269:0x0931  */
-    /* JADX WARN: Removed duplicated region for block: B:277:0x0955 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:281:0x096b  */
-    /* JADX WARN: Removed duplicated region for block: B:298:0x09a6  */
-    /* JADX WARN: Removed duplicated region for block: B:301:0x09c2  */
-    /* JADX WARN: Removed duplicated region for block: B:310:0x0a07  */
-    /* JADX WARN: Removed duplicated region for block: B:318:0x0a2b  */
-    /* JADX WARN: Removed duplicated region for block: B:321:0x0a77  */
-    /* JADX WARN: Removed duplicated region for block: B:328:0x0a98  */
-    /* JADX WARN: Removed duplicated region for block: B:331:0x0aba  */
-    /* JADX WARN: Removed duplicated region for block: B:334:0x0b1d  */
-    /* JADX WARN: Removed duplicated region for block: B:339:0x0b35  */
-    /* JADX WARN: Removed duplicated region for block: B:344:0x0b5a  */
-    /* JADX WARN: Removed duplicated region for block: B:347:0x0ba7  */
-    /* JADX WARN: Removed duplicated region for block: B:351:0x0bde  */
-    /* JADX WARN: Removed duplicated region for block: B:354:0x0c6b  */
-    /* JADX WARN: Removed duplicated region for block: B:357:0x0d5a  */
-    /* JADX WARN: Removed duplicated region for block: B:360:0x0e12  */
-    /* JADX WARN: Removed duplicated region for block: B:363:0x0e58  */
-    /* JADX WARN: Removed duplicated region for block: B:367:0x0e87  */
-    /* JADX WARN: Removed duplicated region for block: B:370:0x0ea1  */
-    /* JADX WARN: Removed duplicated region for block: B:373:0x0eca  */
-    /* JADX WARN: Removed duplicated region for block: B:378:0x0f71  */
-    /* JADX WARN: Removed duplicated region for block: B:381:0x0fff  */
-    /* JADX WARN: Removed duplicated region for block: B:384:0x109b  */
-    /* JADX WARN: Removed duplicated region for block: B:389:0x1130  */
-    /* JADX WARN: Removed duplicated region for block: B:392:0x1150  */
-    /* JADX WARN: Removed duplicated region for block: B:395:0x117a  */
-    /* JADX WARN: Removed duplicated region for block: B:398:0x11a8  */
-    /* JADX WARN: Removed duplicated region for block: B:403:0x11c4  */
-    /* JADX WARN: Removed duplicated region for block: B:406:0x11ce  */
-    /* JADX WARN: Removed duplicated region for block: B:411:0x11e3  */
-    /* JADX WARN: Removed duplicated region for block: B:415:0x122a  */
-    /* JADX WARN: Removed duplicated region for block: B:418:0x127b  */
-    /* JADX WARN: Removed duplicated region for block: B:421:0x12e1  */
-    /* JADX WARN: Removed duplicated region for block: B:424:0x1474  */
-    /* JADX WARN: Removed duplicated region for block: B:433:0x14ba  */
-    /* JADX WARN: Removed duplicated region for block: B:446:0x16e9  */
-    /* JADX WARN: Removed duplicated region for block: B:465:0x17f2  */
-    /* JADX WARN: Removed duplicated region for block: B:468:0x182a  */
-    /* JADX WARN: Removed duplicated region for block: B:476:0x189a  */
-    /* JADX WARN: Removed duplicated region for block: B:479:0x18b4  */
-    /* JADX WARN: Removed duplicated region for block: B:485:0x1919  */
-    /* JADX WARN: Removed duplicated region for block: B:492:0x1948  */
-    /* JADX WARN: Removed duplicated region for block: B:495:0x199f  */
-    /* JADX WARN: Removed duplicated region for block: B:498:0x19e0  */
-    /* JADX WARN: Removed duplicated region for block: B:502:0x1a1d  */
-    /* JADX WARN: Removed duplicated region for block: B:505:0x1ac8  */
-    /* JADX WARN: Removed duplicated region for block: B:506:0x1a26  */
-    /* JADX WARN: Removed duplicated region for block: B:509:0x1b1a  */
-    /* JADX WARN: Removed duplicated region for block: B:512:0x1b92  */
-    /* JADX WARN: Removed duplicated region for block: B:515:0x1bba  */
-    /* JADX WARN: Removed duplicated region for block: B:520:0x1be1  */
-    /* JADX WARN: Removed duplicated region for block: B:530:0x19b1  */
-    /* JADX WARN: Removed duplicated region for block: B:537:0x1231  */
-    /* JADX WARN: Removed duplicated region for block: B:541:0x115b  */
-    /* JADX WARN: Removed duplicated region for block: B:542:0x1132  */
-    /* JADX WARN: Removed duplicated region for block: B:543:0x1001  */
-    /* JADX WARN: Removed duplicated region for block: B:544:0x0ea4  */
-    /* JADX WARN: Removed duplicated region for block: B:545:0x0e89  */
-    /* JADX WARN: Removed duplicated region for block: B:550:0x09a9  */
+    /* JADX WARN: Removed duplicated region for block: B:277:0x0954 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:281:0x096a  */
+    /* JADX WARN: Removed duplicated region for block: B:298:0x09a5  */
+    /* JADX WARN: Removed duplicated region for block: B:301:0x09c1  */
+    /* JADX WARN: Removed duplicated region for block: B:310:0x0a06  */
+    /* JADX WARN: Removed duplicated region for block: B:318:0x0a2a  */
+    /* JADX WARN: Removed duplicated region for block: B:321:0x0a76  */
+    /* JADX WARN: Removed duplicated region for block: B:328:0x0a97  */
+    /* JADX WARN: Removed duplicated region for block: B:331:0x0ab9  */
+    /* JADX WARN: Removed duplicated region for block: B:334:0x0b1c  */
+    /* JADX WARN: Removed duplicated region for block: B:339:0x0b34  */
+    /* JADX WARN: Removed duplicated region for block: B:344:0x0b59  */
+    /* JADX WARN: Removed duplicated region for block: B:347:0x0ba6  */
+    /* JADX WARN: Removed duplicated region for block: B:351:0x0bdd  */
+    /* JADX WARN: Removed duplicated region for block: B:354:0x0c6e  */
+    /* JADX WARN: Removed duplicated region for block: B:357:0x0d5d  */
+    /* JADX WARN: Removed duplicated region for block: B:360:0x0e26  */
+    /* JADX WARN: Removed duplicated region for block: B:363:0x0e6c  */
+    /* JADX WARN: Removed duplicated region for block: B:367:0x0e9b  */
+    /* JADX WARN: Removed duplicated region for block: B:370:0x0eb5  */
+    /* JADX WARN: Removed duplicated region for block: B:373:0x0ede  */
+    /* JADX WARN: Removed duplicated region for block: B:378:0x0f85  */
+    /* JADX WARN: Removed duplicated region for block: B:381:0x1013  */
+    /* JADX WARN: Removed duplicated region for block: B:384:0x10af  */
+    /* JADX WARN: Removed duplicated region for block: B:389:0x1144  */
+    /* JADX WARN: Removed duplicated region for block: B:392:0x1164  */
+    /* JADX WARN: Removed duplicated region for block: B:395:0x118e  */
+    /* JADX WARN: Removed duplicated region for block: B:398:0x11bc  */
+    /* JADX WARN: Removed duplicated region for block: B:403:0x11d8  */
+    /* JADX WARN: Removed duplicated region for block: B:406:0x11e2  */
+    /* JADX WARN: Removed duplicated region for block: B:411:0x11f7  */
+    /* JADX WARN: Removed duplicated region for block: B:415:0x122f  */
+    /* JADX WARN: Removed duplicated region for block: B:418:0x1280  */
+    /* JADX WARN: Removed duplicated region for block: B:421:0x12e6  */
+    /* JADX WARN: Removed duplicated region for block: B:424:0x1479  */
+    /* JADX WARN: Removed duplicated region for block: B:433:0x14bf  */
+    /* JADX WARN: Removed duplicated region for block: B:446:0x16ef  */
+    /* JADX WARN: Removed duplicated region for block: B:465:0x17f8  */
+    /* JADX WARN: Removed duplicated region for block: B:468:0x1830  */
+    /* JADX WARN: Removed duplicated region for block: B:476:0x18a0  */
+    /* JADX WARN: Removed duplicated region for block: B:479:0x18ba  */
+    /* JADX WARN: Removed duplicated region for block: B:485:0x191f  */
+    /* JADX WARN: Removed duplicated region for block: B:492:0x194e  */
+    /* JADX WARN: Removed duplicated region for block: B:495:0x19a5  */
+    /* JADX WARN: Removed duplicated region for block: B:498:0x19e6  */
+    /* JADX WARN: Removed duplicated region for block: B:502:0x1a23  */
+    /* JADX WARN: Removed duplicated region for block: B:505:0x1ace  */
+    /* JADX WARN: Removed duplicated region for block: B:506:0x1a2c  */
+    /* JADX WARN: Removed duplicated region for block: B:509:0x1b20  */
+    /* JADX WARN: Removed duplicated region for block: B:512:0x1b98  */
+    /* JADX WARN: Removed duplicated region for block: B:515:0x1bc0  */
+    /* JADX WARN: Removed duplicated region for block: B:520:0x1be7  */
+    /* JADX WARN: Removed duplicated region for block: B:530:0x19b7  */
+    /* JADX WARN: Removed duplicated region for block: B:537:0x1236  */
+    /* JADX WARN: Removed duplicated region for block: B:541:0x116f  */
+    /* JADX WARN: Removed duplicated region for block: B:542:0x1146  */
+    /* JADX WARN: Removed duplicated region for block: B:543:0x1015  */
+    /* JADX WARN: Removed duplicated region for block: B:544:0x0eb8  */
+    /* JADX WARN: Removed duplicated region for block: B:545:0x0e9d  */
+    /* JADX WARN: Removed duplicated region for block: B:550:0x09a8  */
     /* JADX WARN: Removed duplicated region for block: B:554:0x0607  */
     /* JADX WARN: Type inference failed for: r14v0 */
     /* JADX WARN: Type inference failed for: r14v1, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r14v17, types: [android.graphics.drawable.Drawable, java.lang.String] */
-    /* JADX WARN: Type inference failed for: r14v21 */
+    /* JADX WARN: Type inference failed for: r14v16, types: [android.graphics.drawable.Drawable, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r14v20 */
+    /* JADX WARN: Type inference failed for: r14v22 */
     /* JADX WARN: Type inference failed for: r14v23 */
     /* JADX WARN: Type inference failed for: r14v24 */
-    /* JADX WARN: Type inference failed for: r14v25 */
     /* JADX WARN: Type inference failed for: r14v3, types: [android.widget.FrameLayout, android.widget.ImageView, android.widget.TextView, org.telegram.ui.Business.BusinessBotButton, org.telegram.ui.Components.LinkSpanDrawable$LinksTextView, org.telegram.ui.Components.NumberTextView, org.telegram.ui.Components.ThanosEffect, org.telegram.ui.Components.TopicsTabsView, org.telegram.ui.Components.TranslateButton, org.telegram.ui.Components.UndoView, org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider, org.telegram.ui.bots.BotAdView] */
     /* JADX WARN: Type inference failed for: r6v0 */
     /* JADX WARN: Type inference failed for: r6v1, types: [android.graphics.drawable.Drawable, android.view.TextureView, android.view.View, android.widget.FrameLayout, com.google.android.exoplayer2.ui.AspectRatioFrameLayout, java.lang.Object, org.telegram.ui.Cells.ChatActionCell, org.telegram.ui.Cells.ChatMessageCell, org.telegram.ui.Components.BluredView, org.telegram.ui.Components.ChatAttachAlert, org.telegram.ui.Components.ChecksHintView, org.telegram.ui.Components.HintView, org.telegram.ui.Components.TextSelectionHint] */
-    /* JADX WARN: Type inference failed for: r6v24 */
+    /* JADX WARN: Type inference failed for: r6v22 */
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -5016,9 +5016,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                             }
                                         });
                                     }
-                                    22 r5 = new 22(context, MediaDataController.MAX_STYLE_RUNS_COUNT, 1, !this.reversed);
-                                    this.chatLayoutManager = r5;
-                                    r5.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.ChatActivity.23
+                                    22 r4 = new 22(context, MediaDataController.MAX_STYLE_RUNS_COUNT, 1, !this.reversed);
+                                    this.chatLayoutManager = r4;
+                                    r4.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.ChatActivity.23
                                         @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
                                         public int getSpanSize(int i22) {
                                             int i23;
@@ -5252,6 +5252,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                         }
                                     });
                                     this.contentView.addView(this.sideControlsButtonsLayout, LayoutHelper.createFrame(57, NotificationCenter.onActivityResultReceived, 85));
+                                    this.contentView.addView(this.topPanelLayout, LayoutHelper.createFrame(-1, -2, 48));
                                     updateMessageListAccessibilityVisibility();
                                     charSequence2 = charSequence;
                                     float f = 0.0f;
@@ -6125,7 +6126,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                     if (ChatObject.isChannel(this.currentChat) || this.currentChat.megagroup) {
                                         this.chatActivityEnterView.setBotInfo(this.botInfo, false);
                                     }
-                                    this.contentView.addView(this.topPanelLayout, LayoutHelper.createFrame(-1, -2, 48));
                                     this.chatActivityEnterView.setViewParentForEmoji(this.chatInputInAppContainer);
                                     this.chatInputBubbleContainer.addView(this.chatActivityEnterView, LayoutHelper.createFrame(-1, -2.0f, 83, 7.0f, 0.0f, 7.0f, 0.0f));
                                     int indexOfChild = this.contentView.indexOfChild(this.chatListView);
@@ -6908,9 +6908,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             invalidateChatListViewTopPadding();
                             if (MessagesController.getGlobalMainSettings().getBoolean("view_animations", true)) {
                             }
-                            22 r52 = new 22(context, MediaDataController.MAX_STYLE_RUNS_COUNT, 1, !this.reversed);
-                            this.chatLayoutManager = r52;
-                            r52.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.ChatActivity.23
+                            22 r42 = new 22(context, MediaDataController.MAX_STYLE_RUNS_COUNT, 1, !this.reversed);
+                            this.chatLayoutManager = r42;
+                            r42.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.ChatActivity.23
                                 @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
                                 public int getSpanSize(int i222) {
                                     int i232;
@@ -7129,6 +7129,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 }
                             });
                             this.contentView.addView(this.sideControlsButtonsLayout, LayoutHelper.createFrame(57, NotificationCenter.onActivityResultReceived, 85));
+                            this.contentView.addView(this.topPanelLayout, LayoutHelper.createFrame(-1, -2, 48));
                             updateMessageListAccessibilityVisibility();
                             charSequence2 = charSequence;
                             float f2 = 0.0f;
@@ -7756,7 +7757,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             if (ChatObject.isChannel(this.currentChat)) {
                             }
                             this.chatActivityEnterView.setBotInfo(this.botInfo, false);
-                            this.contentView.addView(this.topPanelLayout, LayoutHelper.createFrame(-1, -2, 48));
                             this.chatActivityEnterView.setViewParentForEmoji(this.chatInputInAppContainer);
                             this.chatInputBubbleContainer.addView(this.chatActivityEnterView, LayoutHelper.createFrame(-1, -2.0f, 83, 7.0f, 0.0f, 7.0f, 0.0f));
                             int indexOfChild2 = this.contentView.indexOfChild(this.chatListView);
@@ -8511,9 +8511,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 invalidateChatListViewTopPadding();
                 if (MessagesController.getGlobalMainSettings().getBoolean("view_animations", true)) {
                 }
-                22 r522 = new 22(context, MediaDataController.MAX_STYLE_RUNS_COUNT, 1, !this.reversed);
-                this.chatLayoutManager = r522;
-                r522.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.ChatActivity.23
+                22 r422 = new 22(context, MediaDataController.MAX_STYLE_RUNS_COUNT, 1, !this.reversed);
+                this.chatLayoutManager = r422;
+                r422.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.ChatActivity.23
                     @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
                     public int getSpanSize(int i2222) {
                         int i2322;
@@ -8732,6 +8732,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     }
                 });
                 this.contentView.addView(this.sideControlsButtonsLayout, LayoutHelper.createFrame(57, NotificationCenter.onActivityResultReceived, 85));
+                this.contentView.addView(this.topPanelLayout, LayoutHelper.createFrame(-1, -2, 48));
                 updateMessageListAccessibilityVisibility();
                 charSequence2 = charSequence;
                 float f22 = 0.0f;
@@ -9221,7 +9222,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 if (ChatObject.isChannel(this.currentChat)) {
                 }
                 this.chatActivityEnterView.setBotInfo(this.botInfo, false);
-                this.contentView.addView(this.topPanelLayout, LayoutHelper.createFrame(-1, -2, 48));
                 this.chatActivityEnterView.setViewParentForEmoji(this.chatInputInAppContainer);
                 this.chatInputBubbleContainer.addView(this.chatActivityEnterView, LayoutHelper.createFrame(-1, -2.0f, 83, 7.0f, 0.0f, 7.0f, 0.0f));
                 int indexOfChild22 = this.contentView.indexOfChild(this.chatListView);
@@ -9950,9 +9950,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             invalidateChatListViewTopPadding();
             if (MessagesController.getGlobalMainSettings().getBoolean("view_animations", true)) {
             }
-            22 r5222 = new 22(context, MediaDataController.MAX_STYLE_RUNS_COUNT, 1, !this.reversed);
-            this.chatLayoutManager = r5222;
-            r5222.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.ChatActivity.23
+            22 r4222 = new 22(context, MediaDataController.MAX_STYLE_RUNS_COUNT, 1, !this.reversed);
+            this.chatLayoutManager = r4222;
+            r4222.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.ChatActivity.23
                 @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
                 public int getSpanSize(int i22222) {
                     int i23222;
@@ -10171,6 +10171,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 }
             });
             this.contentView.addView(this.sideControlsButtonsLayout, LayoutHelper.createFrame(57, NotificationCenter.onActivityResultReceived, 85));
+            this.contentView.addView(this.topPanelLayout, LayoutHelper.createFrame(-1, -2, 48));
             updateMessageListAccessibilityVisibility();
             charSequence2 = charSequence;
             float f222 = 0.0f;
@@ -10660,7 +10661,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             if (ChatObject.isChannel(this.currentChat)) {
             }
             this.chatActivityEnterView.setBotInfo(this.botInfo, false);
-            this.contentView.addView(this.topPanelLayout, LayoutHelper.createFrame(-1, -2, 48));
             this.chatActivityEnterView.setViewParentForEmoji(this.chatInputInAppContainer);
             this.chatInputBubbleContainer.addView(this.chatActivityEnterView, LayoutHelper.createFrame(-1, -2.0f, 83, 7.0f, 0.0f, 7.0f, 0.0f));
             int indexOfChild222 = this.contentView.indexOfChild(this.chatListView);
@@ -11360,9 +11360,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         invalidateChatListViewTopPadding();
         if (MessagesController.getGlobalMainSettings().getBoolean("view_animations", true)) {
         }
-        22 r52222 = new 22(context, MediaDataController.MAX_STYLE_RUNS_COUNT, 1, !this.reversed);
-        this.chatLayoutManager = r52222;
-        r52222.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.ChatActivity.23
+        22 r42222 = new 22(context, MediaDataController.MAX_STYLE_RUNS_COUNT, 1, !this.reversed);
+        this.chatLayoutManager = r42222;
+        r42222.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.ChatActivity.23
             @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i222222) {
                 int i232222;
@@ -11581,6 +11581,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
         });
         this.contentView.addView(this.sideControlsButtonsLayout, LayoutHelper.createFrame(57, NotificationCenter.onActivityResultReceived, 85));
+        this.contentView.addView(this.topPanelLayout, LayoutHelper.createFrame(-1, -2, 48));
         updateMessageListAccessibilityVisibility();
         charSequence2 = charSequence;
         float f2222 = 0.0f;
@@ -12070,7 +12071,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         if (ChatObject.isChannel(this.currentChat)) {
         }
         this.chatActivityEnterView.setBotInfo(this.botInfo, false);
-        this.contentView.addView(this.topPanelLayout, LayoutHelper.createFrame(-1, -2, 48));
         this.chatActivityEnterView.setViewParentForEmoji(this.chatInputInAppContainer);
         this.chatInputBubbleContainer.addView(this.chatActivityEnterView, LayoutHelper.createFrame(-1, -2.0f, 83, 7.0f, 0.0f, 7.0f, 0.0f));
         int indexOfChild2222 = this.contentView.indexOfChild(this.chatListView);
@@ -20991,6 +20991,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
         };
         this.chatAttachAlert = chatAttachAlert;
+        chatAttachAlert.allowLivePhotos = true;
         chatAttachAlert.setDelegate(new ChatAttachAlert.ChatAttachViewDelegate() { // from class: org.telegram.ui.ChatActivity.78
             @Override // org.telegram.ui.Components.ChatAttachAlert.ChatAttachViewDelegate
             public /* synthetic */ void onWallpaperSelected(Object obj) {
