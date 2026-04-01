@@ -553,6 +553,9 @@ public class NativeByteBuffer extends AbstractSerializedData {
             } else {
                 i = 1;
             }
+            if (intFromByte > remaining() || intFromByte < 0) {
+                throw new RuntimeException("string size too big");
+            }
             byte[] bArr = new byte[intFromByte];
             this.buffer.get(bArr);
             while ((intFromByte + i) % 4 != 0) {
@@ -584,6 +587,9 @@ public class NativeByteBuffer extends AbstractSerializedData {
             } else {
                 i = 1;
             }
+            if (intFromByte > remaining() || intFromByte < 0) {
+                throw new RuntimeException("byte array size too big");
+            }
             byte[] bArr = new byte[intFromByte];
             this.buffer.get(bArr);
             while ((intFromByte + i) % 4 != 0) {
@@ -613,6 +619,9 @@ public class NativeByteBuffer extends AbstractSerializedData {
                 i = 4;
             } else {
                 i = 1;
+            }
+            if (intFromByte > remaining() || intFromByte < 0) {
+                throw new RuntimeException("byte array size too big");
             }
             NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(intFromByte);
             int limit = this.buffer.limit();
