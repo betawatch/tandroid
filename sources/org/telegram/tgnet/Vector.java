@@ -17,6 +17,10 @@ public class Vector<T extends TLObject> extends TLObject {
         T deserialize(InputSerializedData inputSerializedData, int i, boolean z);
     }
 
+    public static boolean validateSize(int i, int i2, int i3) {
+        return i >= 0 && i2 > 0 && ((long) i) * ((long) i2) <= ((long) i3);
+    }
+
     public Vector(TLDeserializer<T> tLDeserializer) {
         this.itemDeserializer = tLDeserializer;
     }
@@ -185,7 +189,11 @@ public class Vector<T extends TLObject> extends TLObject {
             return new ArrayList<>();
         }
         int readInt322 = inputSerializedData.readInt32(z);
-        ArrayList<T> arrayList = new ArrayList<>(Math.min(readInt322, 16384));
+        if (!validateSize(readInt322, 1, inputSerializedData.remaining())) {
+            TLParseException.doThrowOrLog(inputSerializedData, "VectorWrongSize", readInt32, z);
+            return new ArrayList<>();
+        }
+        ArrayList<T> arrayList = new ArrayList<>(readInt322);
         for (int i = 0; i < readInt322; i++) {
             arrayList.add(callbackReturn.run(Boolean.valueOf(z)));
         }
@@ -239,34 +247,17 @@ public class Vector<T extends TLObject> extends TLObject {
             return new ArrayList<>();
         }
         int readInt322 = inputSerializedData.readInt32(z);
-        if (readInt322 < 0) {
+        if (!validateSize(readInt322, 4, inputSerializedData.remaining())) {
             TLParseException.doThrowOrLog(inputSerializedData, "VectorWrongSize", readInt32, z);
             return new ArrayList<>();
         }
-        int i = 0;
-        if (readInt322 > 16384) {
-            ArrayList<T> arrayList = new ArrayList<>(128);
-            while (i < readInt322) {
-                int readInt323 = inputSerializedData.readInt32(z);
-                T deserialize = tLDeserializer.deserialize(inputSerializedData, readInt323, z);
-                if (deserialize != null) {
-                    arrayList.add(deserialize);
-                    i++;
-                } else {
-                    TLParseException.doThrowOrLog(inputSerializedData, "VectorWrongContent", readInt323, z);
-                    return new ArrayList<>();
-                }
+        ArrayList<T> arrayList = new ArrayList<>(readInt322);
+        for (int i = 0; i < readInt322; i++) {
+            T deserialize = tLDeserializer.deserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            if (deserialize != null) {
+                arrayList.add(deserialize);
             }
-            return arrayList;
         }
-        ArrayList<T> arrayList2 = new ArrayList<>(readInt322);
-        while (i < readInt322) {
-            T deserialize2 = tLDeserializer.deserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (deserialize2 != null) {
-                arrayList2.add(deserialize2);
-            }
-            i++;
-        }
-        return arrayList2;
+        return arrayList;
     }
 }
