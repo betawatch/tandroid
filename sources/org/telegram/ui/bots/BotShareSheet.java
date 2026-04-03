@@ -282,6 +282,11 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
         this.messageCell = chatMessageCell;
         chatMessageCell.setDelegate(new ChatMessageCell.ChatMessageCellDelegate() { // from class: org.telegram.ui.bots.BotShareSheet.3
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+            public /* synthetic */ boolean allowAddPollOptions() {
+                return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$allowAddPollOptions(this);
+            }
+
+            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ boolean canDrawOutboundsContent() {
                 return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$canDrawOutboundsContent(this);
             }

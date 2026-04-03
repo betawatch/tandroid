@@ -393,27 +393,41 @@ final class DvbParser {
     }
 
     private static int[] generateDefault8BitClutEntries() {
+        int i;
         int[] iArr = new int[256];
         iArr[0] = 0;
-        for (int i = 0; i < 256; i++) {
-            int i2 = NotificationCenter.invalidateMotionBackground;
-            if (i < 8) {
-                int i3 = (i & 1) != 0 ? NotificationCenter.invalidateMotionBackground : 0;
-                int i4 = (i & 2) != 0 ? NotificationCenter.invalidateMotionBackground : 0;
-                if ((i & 4) == 0) {
-                    i2 = 0;
+        for (int i2 = 0; i2 < 256; i2++) {
+            int i3 = NotificationCenter.invalidateMotionBackground;
+            if (i2 < 8) {
+                int i4 = (i2 & 1) != 0 ? NotificationCenter.invalidateMotionBackground : 0;
+                int i5 = (i2 & 2) != 0 ? NotificationCenter.invalidateMotionBackground : 0;
+                if ((i2 & 4) == 0) {
+                    i3 = 0;
                 }
-                iArr[i] = getColor(63, i3, i4, i2);
+                iArr[i2] = getColor(63, i4, i5, i3);
             } else {
-                int i5 = i & NotificationCenter.didUpdateConnectionState;
-                if (i5 == 0) {
-                    iArr[i] = getColor(NotificationCenter.invalidateMotionBackground, ((i & 1) != 0 ? 85 : 0) + ((i & 16) != 0 ? 170 : 0), ((i & 2) != 0 ? 85 : 0) + ((i & 32) != 0 ? 170 : 0), ((i & 4) == 0 ? 0 : 85) + ((i & 64) == 0 ? 0 : 170));
-                } else if (i5 == 8) {
-                    iArr[i] = getColor(NotificationCenter.messageTranslated, ((i & 1) != 0 ? 85 : 0) + ((i & 16) != 0 ? 170 : 0), ((i & 2) != 0 ? 85 : 0) + ((i & 32) != 0 ? 170 : 0), ((i & 4) == 0 ? 0 : 85) + ((i & 64) == 0 ? 0 : 170));
-                } else if (i5 == 128) {
-                    iArr[i] = getColor(NotificationCenter.invalidateMotionBackground, ((i & 1) != 0 ? 43 : 0) + NotificationCenter.messageTranslated + ((i & 16) != 0 ? 85 : 0), ((i & 2) != 0 ? 43 : 0) + NotificationCenter.messageTranslated + ((i & 32) != 0 ? 85 : 0), ((i & 4) == 0 ? 0 : 43) + NotificationCenter.messageTranslated + ((i & 64) == 0 ? 0 : 85));
-                } else if (i5 == 136) {
-                    iArr[i] = getColor(NotificationCenter.invalidateMotionBackground, ((i & 1) != 0 ? 43 : 0) + ((i & 16) != 0 ? 85 : 0), ((i & 2) != 0 ? 43 : 0) + ((i & 32) != 0 ? 85 : 0), ((i & 4) == 0 ? 0 : 43) + ((i & 64) == 0 ? 0 : 85));
+                int i6 = i2 & NotificationCenter.didUpdateConnectionState;
+                int i7 = NotificationCenter.applyGroupCallVisibleParticipants;
+                if (i6 == 0) {
+                    int i8 = ((i2 & 1) != 0 ? 85 : 0) + ((i2 & 16) != 0 ? NotificationCenter.applyGroupCallVisibleParticipants : 0);
+                    int i9 = ((i2 & 2) != 0 ? 85 : 0) + ((i2 & 32) != 0 ? NotificationCenter.applyGroupCallVisibleParticipants : 0);
+                    i = (i2 & 4) == 0 ? 0 : 85;
+                    if ((i2 & 64) == 0) {
+                        i7 = 0;
+                    }
+                    iArr[i2] = getColor(NotificationCenter.invalidateMotionBackground, i8, i9, i + i7);
+                } else if (i6 == 8) {
+                    int i10 = ((i2 & 1) != 0 ? 85 : 0) + ((i2 & 16) != 0 ? NotificationCenter.applyGroupCallVisibleParticipants : 0);
+                    int i11 = ((i2 & 2) != 0 ? 85 : 0) + ((i2 & 32) != 0 ? NotificationCenter.applyGroupCallVisibleParticipants : 0);
+                    i = (i2 & 4) == 0 ? 0 : 85;
+                    if ((i2 & 64) == 0) {
+                        i7 = 0;
+                    }
+                    iArr[i2] = getColor(NotificationCenter.messageTranslated, i10, i11, i + i7);
+                } else if (i6 == 128) {
+                    iArr[i2] = getColor(NotificationCenter.invalidateMotionBackground, ((i2 & 1) != 0 ? 43 : 0) + NotificationCenter.messageTranslated + ((i2 & 16) != 0 ? 85 : 0), ((i2 & 2) != 0 ? 43 : 0) + NotificationCenter.messageTranslated + ((i2 & 32) != 0 ? 85 : 0), ((i2 & 4) == 0 ? 0 : 43) + NotificationCenter.messageTranslated + ((i2 & 64) == 0 ? 0 : 85));
+                } else if (i6 == 136) {
+                    iArr[i2] = getColor(NotificationCenter.invalidateMotionBackground, ((i2 & 1) != 0 ? 43 : 0) + ((i2 & 16) != 0 ? 85 : 0), ((i2 & 2) != 0 ? 43 : 0) + ((i2 & 32) != 0 ? 85 : 0), ((i2 & 4) == 0 ? 0 : 43) + ((i2 & 64) == 0 ? 0 : 85));
                 }
             }
         }

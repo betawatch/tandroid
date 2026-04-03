@@ -410,6 +410,11 @@ public class TodoItemMenu extends Dialog {
             this.myTaskCell.copySpoilerEffect2AttachIndexFrom(this.cell);
             this.myTaskCell.setDelegate(new ChatMessageCell.ChatMessageCellDelegate() { // from class: org.telegram.ui.TodoItemMenu.8
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ boolean allowAddPollOptions() {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$allowAddPollOptions(this);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ boolean canDrawOutboundsContent() {
                     return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$canDrawOutboundsContent(this);
                 }
@@ -867,6 +872,11 @@ public class TodoItemMenu extends Dialog {
             this.cell.copyParamsTo(this.myCell);
             this.myCell.copySpoilerEffect2AttachIndexFrom(this.cell);
             this.myCell.setDelegate(new ChatMessageCell.ChatMessageCellDelegate() { // from class: org.telegram.ui.TodoItemMenu.10
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ boolean allowAddPollOptions() {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$allowAddPollOptions(this);
+                }
+
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ boolean canDrawOutboundsContent() {
                     return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$canDrawOutboundsContent(this);

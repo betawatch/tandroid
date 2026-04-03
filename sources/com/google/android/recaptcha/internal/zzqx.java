@@ -1,6 +1,7 @@
 package com.google.android.recaptcha.internal;
 
 import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.video.VideoAds;
 
 /* loaded from: classes.dex */
 final class zzqx implements zzsr {
@@ -26,7 +27,7 @@ final class zzqx implements zzsr {
                 case 998:
                     zzqyVar = zzqy.zzc;
                     break;
-                case 999:
+                case VideoAds.BULLETIN_TAG_VIDEO_AD /* 999 */:
                     zzqyVar = zzqy.zzd;
                     break;
                 case MediaDataController.MAX_STYLE_RUNS_COUNT /* 1000 */:

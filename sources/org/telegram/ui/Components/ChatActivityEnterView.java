@@ -113,6 +113,7 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
@@ -4965,7 +4966,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     public void showRestrictedHint() {
         ChatActivityEnterViewDelegate chatActivityEnterViewDelegate = this.delegate;
         if ((chatActivityEnterViewDelegate == null || !chatActivityEnterViewDelegate.checkCanRemoveRestrictionsByBoosts()) && DialogObject.isChatDialog(this.dialog_id)) {
-            BulletinFactory.of(this.parentFragment).createSimpleBulletin(R.raw.passcode_lock_close, LocaleController.formatString("SendPlainTextRestrictionHint", R.string.SendPlainTextRestrictionHint, ChatObject.getAllowedSendString(this.accountInstance.getMessagesController().getChat(Long.valueOf(-this.dialog_id)))), 3).show();
+            BulletinFactory.of(this.parentFragment).createSimpleBulletin(R.raw.passcode_lock_close, LocaleController.formatString("SendPlainTextRestrictionHint", R.string.SendPlainTextRestrictionHint, ChatObject.getAllowedSendString(this.accountInstance.getMessagesController().getChat(Long.valueOf(-this.dialog_id)))), 4).show();
         }
     }
 
@@ -6744,19 +6745,21 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void showAiButton(final boolean z) {
-        if (this.shownAiButton == z) {
+    public void showAiButton(boolean z) {
+        ChatActivity chatActivity;
+        final boolean z2 = (!z || (chatActivity = this.parentFragment) == null || chatActivity.isSecretChat()) ? false : true;
+        if (this.shownAiButton == z2) {
             return;
         }
-        this.shownAiButton = z;
+        this.shownAiButton = z2;
         this.aiButton.setVisibility(0);
-        this.aiButton.animate().alpha(z ? 1.0f : 0.0f).scaleX(z ? 1.0f : 0.6f).scaleY(z ? 1.0f : 0.6f).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setDuration(420L).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda72
+        this.aiButton.animate().alpha(z2 ? 1.0f : 0.0f).scaleX(z2 ? 1.0f : 0.6f).scaleY(z2 ? 1.0f : 0.6f).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setDuration(420L).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda72
             @Override // java.lang.Runnable
             public final void run() {
-                ChatActivityEnterView.this.lambda$showAiButton$47(z);
+                ChatActivityEnterView.this.lambda$showAiButton$47(z2);
             }
         }).start();
-        if (z) {
+        if (z2) {
             ImageView imageView = this.aiButton;
             AiButtonDrawable aiButtonDrawable = this.aiButtonIcon;
             Objects.requireNonNull(aiButtonDrawable);
@@ -6769,7 +6772,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             if (MessagesController.getGlobalMainSettings().getInt("aihintshown", 0) < 3) {
                 final HintView2 hintView22 = new HintView2(getContext(), 3);
                 this.aiHint = hintView22;
-                hintView22.setText(LocaleController.getString(R.string.AIEditorHint));
+                hintView22.setMultilineText(true);
+                this.aiHint.setText(LocaleController.getString(R.string.AIEditorHint));
                 this.aiHint.setJointPx(1.0f, ((-this.aiButton.getWidth()) / 2.0f) + AndroidUtilities.dp(4.0f));
                 addView(this.aiHint, LayoutHelper.createFrame(-1, 200.0f, 48, 0.0f, -196.0f, 0.0f, 0.0f));
                 this.aiHint.setOnHiddenListener(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda74
@@ -13561,6 +13565,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
                 public /* synthetic */ void onEditModeChanged(boolean z2) {
                     PhotoViewer.PhotoViewerProvider.-CC.$default$onEditModeChanged(this, z2);
+                }
+
+                @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
+                public /* synthetic */ void onPhotoIndexChanged(int i3, ImageLocation imageLocation) {
+                    PhotoViewer.PhotoViewerProvider.-CC.$default$onPhotoIndexChanged(this, i3, imageLocation);
                 }
 
                 @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider

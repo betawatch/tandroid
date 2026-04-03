@@ -115,6 +115,7 @@ import org.telegram.ui.Components.BackgroundGradientDrawable;
 import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.ChoosingStickerStatusDrawable;
 import org.telegram.ui.Components.CombinedDrawable;
+import org.telegram.ui.Components.EightPatchDrawable;
 import org.telegram.ui.Components.FragmentContextViewWavesDrawable;
 import org.telegram.ui.Components.LinkPath;
 import org.telegram.ui.Components.MotionBackgroundDrawable;
@@ -4999,6 +5000,7 @@ public abstract class Theme {
 
         public Drawable getShadowDrawable() {
             char c;
+            Drawable ninePatchDrawable;
             if (this.isCrossfadeBackground) {
                 return null;
             }
@@ -5042,7 +5044,13 @@ public abstract class Theme {
                         draw(canvas, paint);
                     }
                     this.shadowDrawableBitmap[c] = createBitmap;
-                    this.shadowDrawable[c] = new NinePatchDrawable(createBitmap, getByteBuffer((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1).array(), new Rect(), null);
+                    Drawable[] drawableArr = this.shadowDrawable;
+                    if (SharedConfig.useEightPatch) {
+                        ninePatchDrawable = new EightPatchDrawable(createBitmap, getByteBuffer((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1).array(), new Rect(), null);
+                    } else {
+                        ninePatchDrawable = new NinePatchDrawable(createBitmap, getByteBuffer((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1).array(), new Rect(), null);
+                    }
+                    drawableArr[c] = ninePatchDrawable;
                     z2 = true;
                 } catch (Throwable unused) {
                 }

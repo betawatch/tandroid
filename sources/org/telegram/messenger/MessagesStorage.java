@@ -61,7 +61,7 @@ public class MessagesStorage extends BaseController {
     public static final int FORUM_TYPE_CHAT = 1;
     public static final int FORUM_TYPE_CHAT_TABS = 2;
     public static final int FORUM_TYPE_DIRECT = 4;
-    public static final int LAST_DB_VERSION = 170;
+    public static final int LAST_DB_VERSION = 172;
     public static final int SENT_FILE_TYPE_AUDIO = 1;
     public static final int SENT_FILE_TYPE_AUDIO_ENCRYPTED = 4;
     public static final int SENT_FILE_TYPE_PHOTO = 0;
@@ -411,7 +411,7 @@ public class MessagesStorage extends BaseController {
                         FileLog.e(e3);
                     }
                 }
-                if (intValue < 170) {
+                if (intValue < 172) {
                     try {
                         updateDbToLastVersion(intValue);
                     } catch (Exception e4) {
@@ -681,7 +681,7 @@ public class MessagesStorage extends BaseController {
         sQLiteDatabase.executeFast("CREATE INDEX IF NOT EXISTS poll_votes_mentions_did ON poll_votes_mentions(dialog_id);").stepThis().dispose();
         sQLiteDatabase.executeFast("CREATE TABLE poll_votes_mentions_topics(message_id INTEGER, state INTEGER, dialog_id INTEGER, topic_id INTEGER, PRIMARY KEY(message_id, dialog_id, topic_id))").stepThis().dispose();
         sQLiteDatabase.executeFast("CREATE INDEX IF NOT EXISTS poll_votes_mentions_topics_did ON poll_votes_mentions_topics(dialog_id, topic_id);").stepThis().dispose();
-        sQLiteDatabase.executeFast("PRAGMA user_version = 170").stepThis().dispose();
+        sQLiteDatabase.executeFast("PRAGMA user_version = 172").stepThis().dispose();
     }
 
     public boolean isDatabaseMigrationInProgress() {
@@ -695,7 +695,7 @@ public class MessagesStorage extends BaseController {
                 MessagesStorage.this.lambda$updateDbToLastVersion$3();
             }
         });
-        FileLog.d("MessagesStorage start db migration from " + i + " to 170");
+        FileLog.d("MessagesStorage start db migration from " + i + " to 172");
         int migrate = DatabaseMigrationHelper.migrate(this, i);
         StringBuilder sb = new StringBuilder();
         sb.append("MessagesStorage db migration finished to varsion ");
@@ -719,14 +719,6 @@ public class MessagesStorage extends BaseController {
     public /* synthetic */ void lambda$updateDbToLastVersion$4() {
         this.databaseMigrationInProgress = false;
         NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.onDatabaseMigration, Boolean.FALSE);
-    }
-
-    void executeNoException(String str) {
-        try {
-            this.database.executeFast(str).stepThis().dispose();
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
     }
 
     private void cleanupInternal(boolean z) {
@@ -19111,7 +19103,7 @@ public class MessagesStorage extends BaseController {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v44 ??), method size: 9114
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r22v29 ?? I:??[long, double]), method size: 9114
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)

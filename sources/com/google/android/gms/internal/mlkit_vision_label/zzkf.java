@@ -31,7 +31,7 @@ public enum zzkf implements zzck {
     zzy(NotificationCenter.didStartedCall),
     zzz(NotificationCenter.audioRouteChanged),
     zzA(NotificationCenter.groupCallTypingsUpdated),
-    zzB(NotificationCenter.didEndCall),
+    zzB(172),
     zzC(NotificationCenter.closeInCallActivity),
     zzD(NotificationCenter.groupCallVisibilityChanged),
     zzE(NotificationCenter.liveStoryUpdated),

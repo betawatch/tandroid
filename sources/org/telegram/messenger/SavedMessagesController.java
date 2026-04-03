@@ -13,6 +13,7 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.SavedMessagesController;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.video.VideoAds;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.RequestDelegate;
@@ -1316,7 +1317,7 @@ public class SavedMessagesController {
                     sQLitePreparedStatement.bindLong(1, savedDialog.dialogId);
                     sQLitePreparedStatement.bindInteger(2, savedDialog.getDate());
                     sQLitePreparedStatement.bindInteger(3, savedDialog.top_message_id);
-                    sQLitePreparedStatement.bindInteger(4, savedDialog.pinned ? i : 999);
+                    sQLitePreparedStatement.bindInteger(4, savedDialog.pinned ? i : VideoAds.BULLETIN_TAG_VIDEO_AD);
                     sQLitePreparedStatement.bindInteger(5, savedDialog.messagesCountLoaded ? 1 : 0);
                     sQLitePreparedStatement.bindInteger(6, 0);
                     sQLitePreparedStatement.bindInteger(7, 0);

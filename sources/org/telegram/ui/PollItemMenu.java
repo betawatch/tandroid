@@ -353,9 +353,6 @@ public class PollItemMenu extends Dialog {
         this.iBlur3Factory.invalidateAllLinkedViews();
     }
 
-    /* JADX WARN: Type inference failed for: r5v2 */
-    /* JADX WARN: Type inference failed for: r5v3, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r5v5 */
     public void setCell(final BaseFragment baseFragment, ChatMessageCell chatMessageCell, final byte[] bArr) {
         ChatActivity chatActivity;
         final TLRPC.PollAnswer pollAnswer;
@@ -363,7 +360,6 @@ public class PollItemMenu extends Dialog {
         TLRPC.PollAnswerVoters pollAnswerVoters;
         ArrayList arrayList;
         boolean z2;
-        ?? r5;
         ArrayList<TLRPC.PollAnswerVoters> arrayList2;
         this.cell = chatMessageCell;
         this.taskId = bArr;
@@ -434,6 +430,11 @@ public class PollItemMenu extends Dialog {
             this.cell.copyParamsTo(chatMessageCell2);
             this.myTaskCell.copySpoilerEffect2AttachIndexFrom(this.cell);
             this.myTaskCell.setDelegate(new ChatMessageCell.ChatMessageCellDelegate() { // from class: org.telegram.ui.PollItemMenu.8
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ boolean allowAddPollOptions() {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$allowAddPollOptions(this);
+                }
+
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ boolean canDrawOutboundsContent() {
                     return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$canDrawOutboundsContent(this);
@@ -891,6 +892,11 @@ public class PollItemMenu extends Dialog {
             this.cell.copyParamsTo(this.myCell);
             this.myCell.copySpoilerEffect2AttachIndexFrom(this.cell);
             this.myCell.setDelegate(new ChatMessageCell.ChatMessageCellDelegate() { // from class: org.telegram.ui.PollItemMenu.10
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ boolean allowAddPollOptions() {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$allowAddPollOptions(this);
+                }
+
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ boolean canDrawOutboundsContent() {
                     return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$canDrawOutboundsContent(this);
@@ -1390,7 +1396,7 @@ public class PollItemMenu extends Dialog {
                 final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
                 makeSwipeback.setGapBackgroundColor(Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, this.resourcesProvider), 0.06f));
                 makeSwipeback.setBlurBackgroundForSwipeback(this.iBlur3Factory, BlurredBackgroundProviderImpl.scrimMenuBackground(this.resourcesProvider), false);
-                makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda318(makeOptions));
+                makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda307(makeOptions));
                 makeSwipeback.addGap();
                 arrayList = arrayList3;
                 z2 = z4;
@@ -1438,7 +1444,7 @@ public class PollItemMenu extends Dialog {
                 }
             }
             final ChatActivity chatActivity3 = chatActivity;
-            if (chatActivity3 != null) {
+            if (chatActivity3 != null && chatActivity3.canSendMessage()) {
                 makeOptions.add(R.drawable.menu_reply, LocaleController.getString(R.string.PollItemQuote), new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -1481,26 +1487,17 @@ public class PollItemMenu extends Dialog {
                 long clientUserId = UserConfig.getInstance(this.messageObject.currentAccount).getClientUserId();
                 long currentTime = ConnectionsManager.getInstance(this.messageObject.currentAccount).getCurrentTime();
                 long j = pollAnswer.date + MessagesController.getInstance(this.messageObject.currentAccount).config.pollAnswerDeletePeriod.get(TimeUnit.SECONDS);
-                if (tL_messageMediaPoll.poll.creator || (peerDialogId == clientUserId && currentTime < j)) {
-                    r5 = 1;
+                if (!this.messageObject.isForwarded() && (tL_messageMediaPoll.poll.creator || (peerDialogId == clientUserId && currentTime < j))) {
                     makeOptions.add(R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.Delete), true, new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda9
                         @Override // java.lang.Runnable
                         public final void run() {
                             PollItemMenu.this.lambda$setCell$8(bArr);
                         }
                     });
-                } else {
-                    r5 = 1;
                 }
                 makeOptions.addGap();
                 TLObject userOrChat = MessagesController.getInstance(this.messageObject.currentAccount).getUserOrChat(peerDialogId);
-                int i2 = R.string.PollAddedByAtTime;
-                String shortName = DialogObject.getShortName(userOrChat);
-                String formatDateTime = LocaleController.formatDateTime(pollAnswer.date, r5);
-                Object[] objArr = new Object[2];
-                objArr[0] = shortName;
-                objArr[r5] = formatDateTime;
-                makeOptions.addProfileCustom(userOrChat, AndroidUtilities.replaceTags(LocaleController.formatSpannable(i2, objArr)), new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda10
+                makeOptions.addProfileCustom(userOrChat, AndroidUtilities.replaceTags(LocaleController.formatSpannable(R.string.PollAddedByAtTime, DialogObject.getShortName(userOrChat), LocaleController.formatDateTime(pollAnswer.date, true))), new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda10
                     @Override // java.lang.Runnable
                     public final void run() {
                         PollItemMenu.this.lambda$setCell$9(peerDialogId, baseFragment);

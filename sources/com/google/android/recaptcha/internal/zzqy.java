@@ -1,6 +1,7 @@
 package com.google.android.recaptcha.internal;
 
 import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.video.VideoAds;
 import org.telegram.tgnet.ConnectionsManager;
 
 /* loaded from: classes.dex */
@@ -8,7 +9,7 @@ public enum zzqy implements zzsp {
     zza(0),
     zzb(900),
     zzc(998),
-    zzd(999),
+    zzd(VideoAds.BULLETIN_TAG_VIDEO_AD),
     zze(MediaDataController.MAX_STYLE_RUNS_COUNT),
     zzf(1001),
     zzg(1),

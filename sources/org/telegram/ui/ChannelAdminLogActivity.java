@@ -3125,6 +3125,11 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
 
         class 1 implements ChatMessageCell.ChatMessageCellDelegate {
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+            public /* synthetic */ boolean allowAddPollOptions() {
+                return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$allowAddPollOptions(this);
+            }
+
+            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public boolean canDrawOutboundsContent() {
                 return true;
             }

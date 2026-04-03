@@ -10471,7 +10471,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case 170:
+                case NotificationCenter.applyGroupCallVisibleParticipants /* 170 */:
                     str16 = str29;
                     str17 = str30;
                     str18 = str31;
@@ -10527,7 +10527,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case NotificationCenter.didEndCall /* 172 */:
+                case 172:
                     str16 = str29;
                     str17 = str30;
                     str18 = str31;
@@ -28993,7 +28993,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r4v1 ??), method size: 7754
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r4v74 ??), method size: 7754
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)

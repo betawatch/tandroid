@@ -7621,16 +7621,16 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Can't wrap try/catch for region: R(21:0|1|2|3|4|5|6|7|8|9|10|(23:12|(3:200|201|(1:203))|(2:15|(2:17|(1:19)))|193|194|(2:196|197)|180|32|33|(11:35|(2:37|(1:39))|(2:41|(2:43|(2:45|(1:47))))|48|(2:59|60)|50|51|(2:54|52)|55|56|57)|64|(1:66)(1:172)|67|(7:69|70|71|(1:73)(1:168)|74|(4:77|(3:163|164|165)(10:79|80|(7:82|83|84|85|(1:87)(1:158)|(1:89)|90)(1:162)|(7:140|141|142|143|144|145|146)(1:92)|93|94|(2:96|(2:134|135)(3:102|103|104))(1:136)|105|106|107)|108|75)|166)|171|48|(0)|50|51|(1:52)|55|56|57)|204|205|206|(1:208)(1:431)|209|210|211|(50:214|215|216|217|218|219|220|221|222|(1:224)(1:407)|225|226|227|228|229|230|231|232|233|234|235|236|237|238|239|240|241|242|(7:246|247|248|(3:373|374|375)(20:250|251|(21:362|363|364|365|366|255|(5:257|(4:260|(2:262|263)(2:265|(2:267|268)(1:269))|264|258)|270|271|(18:274|275|276|277|278|(5:343|344|345|346|347)(1:280)|(5:330|331|332|333|334)(1:282)|283|284|285|286|287|(3:289|(1:322)(4:293|294|295|(3:297|298|299)(1:317))|318)(1:323)|300|(2:302|(1:309)(1:308))|310|311|312))(1:361)|360|(0)(0)|(0)(0)|283|284|285|286|287|(0)(0)|300|(0)|310|311|312)(1:253)|254|255|(0)(0)|360|(0)(0)|(0)(0)|283|284|285|286|287|(0)(0)|300|(0)|310|311|312)|313|243|244)|379|380|194|(0)|180|32|33|(0)|64|(0)(0)|67|(0)|171|48|(0)|50|51|(1:52)|55|56|57)(19:213|(0)|180|32|33|(0)|64|(0)(0)|67|(0)|171|48|(0)|50|51|(1:52)|55|56|57)|(1:(0))) */
+    /* JADX WARN: Can't wrap try/catch for region: R(21:0|1|2|3|4|5|6|7|8|9|10|(23:12|(3:200|201|(1:203))|(2:15|(2:17|(1:19)))|193|194|(2:196|197)|180|32|33|(11:35|(2:37|(1:39))|(2:41|(2:43|(2:45|(1:47))))|48|(2:59|60)|50|51|(2:54|52)|55|56|57)|64|(1:66)(1:172)|67|(7:69|70|71|(1:73)(1:168)|74|(4:77|(3:163|164|165)(10:79|80|(7:82|83|84|85|(1:87)(1:158)|(1:89)|90)(1:162)|(7:140|141|142|143|144|145|146)(1:92)|93|94|(2:96|(2:134|135)(3:102|103|104))(1:136)|105|106|107)|108|75)|166)|171|48|(0)|50|51|(1:52)|55|56|57)|204|205|206|(1:208)(1:434)|209|210|211|(50:214|215|216|217|218|219|220|221|222|(1:224)(1:410)|225|226|227|228|229|230|231|232|233|234|235|236|237|238|239|240|241|242|(7:246|247|248|(3:376|377|378)(20:250|251|(21:365|366|367|368|369|255|(5:257|(4:260|(2:262|263)(2:265|(2:267|268)(1:269))|264|258)|270|271|(18:277|278|279|280|281|(5:346|347|348|349|350)(1:283)|(5:333|334|335|336|337)(1:285)|286|287|288|289|290|(3:292|(1:325)(4:296|297|298|(3:300|301|302)(1:320))|321)(1:326)|303|(2:305|(1:312)(1:311))|313|314|315))(1:364)|363|(0)(0)|(0)(0)|286|287|288|289|290|(0)(0)|303|(0)|313|314|315)(1:253)|254|255|(0)(0)|363|(0)(0)|(0)(0)|286|287|288|289|290|(0)(0)|303|(0)|313|314|315)|316|243|244)|382|383|194|(0)|180|32|33|(0)|64|(0)(0)|67|(0)|171|48|(0)|50|51|(1:52)|55|56|57)(19:213|(0)|180|32|33|(0)|64|(0)(0)|67|(0)|171|48|(0)|50|51|(1:52)|55|56|57)|(1:(0))) */
     /* JADX WARN: Code restructure failed: missing block: B:20:0x00b5, code lost:
     
-        if (r15 == 0) goto L443;
+        if (r15 == 0) goto L446;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:418:0x011d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:421:0x011d, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:420:0x0126, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:423:0x0126, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
         r27 = r14.getContentResolver();
@@ -7638,29 +7638,29 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         r29 = org.telegram.messenger.MediaController.projectionPhotos2;
         r0 = new java.lang.StringBuilder();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:421:0x013a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:424:0x013a, code lost:
     
         if (android.os.Build.VERSION.SDK_INT > 28) goto L52;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:422:0x013c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:425:0x013c, code lost:
     
         r9 = "date_modified";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:423:0x0141, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:426:0x0141, code lost:
     
         r0.append(r9);
         r0.append(" DESC");
         r0 = android.provider.MediaStore.Images.Media.query(r27, r28, r29, null, null, r0.toString());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:425:0x013f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:428:0x013f, code lost:
     
         r9 = "datetaken";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:426:0x0441, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:429:0x0449, code lost:
     
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:427:0x0442, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:430:0x044a, code lost:
     
         r35 = "_size";
         r34 = "height";
@@ -7676,16 +7676,16 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         r1 = r21;
         r5 = r26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:428:0x045c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:431:0x0464, code lost:
     
         r9 = null;
         r36 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:429:0x010a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:432:0x010a, code lost:
     
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:430:0x010b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:433:0x010b, code lost:
     
         r35 = "_size";
         r34 = "height";
@@ -7696,46 +7696,46 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         r27 = "bucket_id";
         r30 = "_id";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:433:0x0123, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:436:0x0123, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:434:0x0124, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:437:0x0124, code lost:
     
         r33 = "android.permission.READ_MEDIA_AUDIO";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:435:0x011f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:438:0x011f, code lost:
     
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:436:0x0120, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:439:0x0120, code lost:
     
         r33 = "android.permission.READ_MEDIA_AUDIO";
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x0649 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x0651 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:12:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x04da  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x0486 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x0438 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x04e2  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x048e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x0440 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:208:0x00f1  */
-    /* JADX WARN: Removed duplicated region for block: B:213:0x0416  */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x041e  */
     /* JADX WARN: Removed duplicated region for block: B:214:0x0156 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:257:0x0239  */
-    /* JADX WARN: Removed duplicated region for block: B:280:0x02c9  */
-    /* JADX WARN: Removed duplicated region for block: B:282:0x02eb  */
-    /* JADX WARN: Removed duplicated region for block: B:289:0x02ff A[Catch: all -> 0x033c, TRY_LEAVE, TryCatch #12 {all -> 0x033c, blocks: (B:287:0x02f7, B:289:0x02ff), top: B:286:0x02f7 }] */
-    /* JADX WARN: Removed duplicated region for block: B:302:0x0355 A[Catch: all -> 0x0324, TryCatch #2 {all -> 0x0324, blocks: (B:299:0x031a, B:300:0x0348, B:302:0x0355, B:306:0x0363, B:308:0x0369, B:309:0x0374, B:310:0x0377, B:318:0x0338), top: B:298:0x031a }] */
-    /* JADX WARN: Removed duplicated region for block: B:323:0x0342  */
-    /* JADX WARN: Removed duplicated region for block: B:330:0x02cf A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:343:0x02a3 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x049b  */
-    /* JADX WARN: Removed duplicated region for block: B:361:0x029c  */
-    /* JADX WARN: Removed duplicated region for block: B:431:0x00f4  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x065d A[LOOP:0: B:52:0x0657->B:54:0x065d, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0635 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x04d7  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x04f0  */
+    /* JADX WARN: Removed duplicated region for block: B:283:0x02d1  */
+    /* JADX WARN: Removed duplicated region for block: B:285:0x02f3  */
+    /* JADX WARN: Removed duplicated region for block: B:292:0x0307 A[Catch: all -> 0x0344, TRY_LEAVE, TryCatch #12 {all -> 0x0344, blocks: (B:290:0x02ff, B:292:0x0307), top: B:289:0x02ff }] */
+    /* JADX WARN: Removed duplicated region for block: B:305:0x035d A[Catch: all -> 0x032c, TryCatch #3 {all -> 0x032c, blocks: (B:302:0x0322, B:303:0x0350, B:305:0x035d, B:309:0x036b, B:311:0x0371, B:312:0x037c, B:313:0x037f, B:321:0x0340), top: B:301:0x0322 }] */
+    /* JADX WARN: Removed duplicated region for block: B:326:0x034a  */
+    /* JADX WARN: Removed duplicated region for block: B:333:0x02d7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:346:0x02ab A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x04a3  */
+    /* JADX WARN: Removed duplicated region for block: B:364:0x02a4  */
+    /* JADX WARN: Removed duplicated region for block: B:434:0x00f4  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0665 A[LOOP:0: B:52:0x065f->B:54:0x0665, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x063d A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x04df  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x04f8  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -8577,7 +8577,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                                     }
                                     i8 = columnIndex5;
                                     i9 = columnIndex3;
-                                    if (containerItem2 != null && containerItem != null) {
+                                    if (containerItem2 != null && containerItem != null && containerItem.length > 0) {
                                         try {
                                             i10 = columnIndex6;
                                         } catch (Exception e10) {

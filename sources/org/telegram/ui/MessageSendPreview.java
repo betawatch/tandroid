@@ -715,6 +715,11 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
                 MessageCell messageCell = messageSendPreview.new MessageCell(context, messageSendPreview.currentAccount, true, null, resourcesProvider);
                 messageCell.setDelegate(new ChatMessageCell.ChatMessageCellDelegate() { // from class: org.telegram.ui.MessageSendPreview.11.1
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ boolean allowAddPollOptions() {
+                        return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$allowAddPollOptions(this);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ boolean canDrawOutboundsContent() {
                         return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$canDrawOutboundsContent(this);
                     }

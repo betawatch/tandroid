@@ -7864,6 +7864,11 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 });
                 chatMessageCell.setDelegate(new ChatMessageCell.ChatMessageCellDelegate() { // from class: org.telegram.ui.ThemePreviewActivity.MessagesAdapter.5
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ boolean allowAddPollOptions() {
+                        return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$allowAddPollOptions(this);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ boolean canDrawOutboundsContent() {
                         return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$canDrawOutboundsContent(this);
                     }

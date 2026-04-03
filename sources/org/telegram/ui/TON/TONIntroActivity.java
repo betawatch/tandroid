@@ -210,7 +210,7 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
         gLIconRenderer.colorKey2 = Theme.key_starsGradient2;
         gLIconRenderer.updateColors();
         this.iconTextureView.setStarParticlesView(this.particlesView);
-        this.aboveTitleView.addView(this.iconTextureView, LayoutHelper.createFrame(170, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+        this.aboveTitleView.addView(this.iconTextureView, LayoutHelper.createFrame(NotificationCenter.applyGroupCallVisibleParticipants, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
         configureHeader(LocaleController.getString(R.string.TONBalanceTitle), AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.TONBalanceText), new Runnable() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
@@ -944,7 +944,7 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
                 gLIconRenderer.colorKey2 = Theme.key_starsGradient2;
                 gLIconRenderer.updateColors();
                 gLIconTextureView.setStarParticlesView(makeParticlesView);
-                frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(170, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+                frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.applyGroupCallVisibleParticipants, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
                 gLIconTextureView.setPaused(false);
                 addView(frameLayout, LayoutHelper.createFrame(-1, 180.0f));
                 TextView textView = new TextView(context);

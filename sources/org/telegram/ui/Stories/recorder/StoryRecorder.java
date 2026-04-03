@@ -5743,6 +5743,7 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
         if (obj == null || this.galleryListViewOpening != null || this.scrollingY || !isGalleryOpen()) {
             return;
         }
+        int i = 0;
         if (z) {
             if (this.outputEntry == null) {
                 return;
@@ -5765,7 +5766,10 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
             boolean z2 = obj instanceof MediaController.PhotoEntry;
             if (z2) {
                 MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
-                this.mode = photoEntry.isVideo ? 1 : 0;
+                if (photoEntry.isVideo && !photoEntry.isLivePhoto) {
+                    i = 1;
+                }
+                this.mode = i;
                 StoryEntry fromPhotoEntry = StoryEntry.fromPhotoEntry(photoEntry);
                 fromPhotoEntry.blurredVideoThumb = bitmap;
                 fromPhotoEntry.botId = this.botId;

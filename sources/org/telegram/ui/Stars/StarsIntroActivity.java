@@ -3343,7 +3343,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                 gLIconRenderer.colorKey2 = Theme.key_starsGradient2;
                 gLIconRenderer.updateColors();
                 gLIconTextureView.setStarParticlesView(makeParticlesView);
-                frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(170, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+                frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.applyGroupCallVisibleParticipants, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
                 gLIconTextureView.setPaused(false);
                 StarsBalanceView starsBalanceView = new StarsBalanceView(context, i, resourcesProvider);
                 this.balanceView = starsBalanceView;
@@ -6666,7 +6666,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         gLIconRenderer.colorKey2 = Theme.key_starsGradient2;
         gLIconRenderer.updateColors();
         gLIconTextureView.setStarParticlesView(makeParticlesView);
-        frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(170, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+        frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.applyGroupCallVisibleParticipants, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
         gLIconTextureView.setPaused(false);
         TextView textView = new TextView(context);
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack, resourcesProvider));

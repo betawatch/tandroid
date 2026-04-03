@@ -17,6 +17,7 @@ import androidx.core.graphics.ColorUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
@@ -49,6 +50,7 @@ public class ActionBarMenuSubItem extends FrameLayout {
     private int textColor;
     public AnimatedEmojiSpan.TextViewEmojis textView;
     boolean top;
+    public TextView valueTextView;
 
     public ActionBarMenuSubItem(Context context, boolean z, boolean z2) {
         this(context, false, z, z2);
@@ -90,10 +92,23 @@ public class ActionBarMenuSubItem extends FrameLayout {
         textViewEmojis.setLines(1);
         this.textView.setSingleLine(true);
         this.textView.setGravity(3);
-        this.textView.setEllipsize(TextUtils.TruncateAt.END);
+        AnimatedEmojiSpan.TextViewEmojis textViewEmojis2 = this.textView;
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textViewEmojis2.setEllipsize(truncateAt);
         this.textView.setTextColor(this.textColor);
         this.textView.setTextSize(1, 16.0f);
         addView(this.textView, LayoutHelper.createFrame(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
+        TextView textView = new TextView(context);
+        this.valueTextView = textView;
+        textView.setLines(1);
+        this.valueTextView.setSingleLine(true);
+        this.valueTextView.setGravity((LocaleController.isRTL ? 3 : 5) | 16);
+        this.valueTextView.setEllipsize(truncateAt);
+        this.valueTextView.setTextColor(this.textColor);
+        this.valueTextView.setTextSize(1, 16.0f);
+        this.valueTextView.setTypeface(AndroidUtilities.bold());
+        this.valueTextView.setVisibility(8);
+        addView(this.valueTextView, LayoutHelper.createFrame(-2, -2, (LocaleController.isRTL ? 3 : 5) | 16));
         this.checkViewLeft = LocaleController.isRTL;
         makeCheckView(i);
     }
@@ -123,6 +138,13 @@ public class ActionBarMenuSubItem extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
+        if (this.valueTextView.getVisibility() == 0) {
+            int max = Math.max(0, (View.MeasureSpec.getSize(i) - getPaddingLeft()) - getPaddingRight());
+            this.valueTextView.measure(View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.itemHeight), TLObject.FLAG_31));
+            this.textView.setMaxWidth(Math.max(0, (max - this.valueTextView.getMeasuredWidth()) - AndroidUtilities.dp(8.0f)));
+        } else {
+            this.textView.setMaxWidth(ConnectionsManager.DEFAULT_DATACENTER_ID);
+        }
         super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.itemHeight), TLObject.FLAG_30));
         if (!this.expandIfMultiline || this.textView.getLayout().getLineCount() <= 1) {
             return;
@@ -204,6 +226,7 @@ public class ActionBarMenuSubItem extends FrameLayout {
     public void setTextAndIcon(CharSequence charSequence, int i, Drawable drawable) {
         int dp;
         int dp2;
+        this.valueTextView.setVisibility(8);
         this.textView.setText(charSequence);
         if (i != 0 || drawable != null || this.checkView != null) {
             if (drawable != null) {
@@ -234,6 +257,7 @@ public class ActionBarMenuSubItem extends FrameLayout {
     }
 
     public void setTextAndIcon(CharSequence charSequence, ImageLocation imageLocation, String str, Drawable drawable, Object obj) {
+        this.valueTextView.setVisibility(8);
         this.textView.setText(charSequence);
         this.textView.setPadding((this.checkViewLeft && this.checkView == null) ? 0 : AndroidUtilities.dp(43.0f), 0, (!this.checkViewLeft && this.checkView == null) ? 0 : AndroidUtilities.dp(43.0f), 0);
         if (this.backupImageView == null) {
@@ -271,6 +295,7 @@ public class ActionBarMenuSubItem extends FrameLayout {
             AnimatedEmojiSpan.TextViewEmojis textViewEmojis = this.textView;
             this.textColor = i;
             textViewEmojis.setTextColor(i);
+            this.valueTextView.setTextColor(this.textColor);
         }
     }
 
@@ -381,7 +406,55 @@ public class ActionBarMenuSubItem extends FrameLayout {
     }
 
     public void setText(CharSequence charSequence) {
+        this.valueTextView.setVisibility(8);
         this.textView.setText(charSequence);
+    }
+
+    public void setTextAndValueAndIcon(CharSequence charSequence, CharSequence charSequence2, int i, Drawable drawable) {
+        int dp;
+        int dp2;
+        this.textView.setText(charSequence);
+        if (TextUtils.isEmpty(charSequence2)) {
+            this.valueTextView.setVisibility(8);
+        } else {
+            this.valueTextView.setVisibility(0);
+            this.valueTextView.setText(charSequence2);
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.valueTextView.getLayoutParams();
+            if (LocaleController.isRTL) {
+                layoutParams.leftMargin = (this.checkView == null || this.checkViewLeft) ? 0 : AndroidUtilities.dp(34.0f);
+                layoutParams.rightMargin = 0;
+            } else {
+                layoutParams.rightMargin = (this.checkView == null || this.checkViewLeft) ? 0 : AndroidUtilities.dp(34.0f);
+                layoutParams.leftMargin = 0;
+            }
+            this.valueTextView.setLayoutParams(layoutParams);
+        }
+        if (i != 0 || drawable != null || this.checkView != null) {
+            if (drawable != null) {
+                this.iconResId = 0;
+                this.imageView.setImageDrawable(drawable);
+            } else {
+                this.iconResId = i;
+                this.imageView.setImageResource(i);
+            }
+            this.imageView.setVisibility(0);
+            AnimatedEmojiSpan.TextViewEmojis textViewEmojis = this.textView;
+            if (this.checkViewLeft) {
+                dp = this.checkView != null ? AndroidUtilities.dp(43.0f) : 0;
+            } else {
+                dp = AndroidUtilities.dp((i == 0 && drawable == null) ? 0.0f : 43.0f);
+            }
+            if (this.checkViewLeft) {
+                dp2 = AndroidUtilities.dp((i == 0 && drawable == null) ? 0.0f : 43.0f);
+            } else {
+                dp2 = this.checkView != null ? AndroidUtilities.dp(43.0f) : 0;
+            }
+            textViewEmojis.setPadding(dp, 0, dp2, 0);
+            return;
+        }
+        this.iconResId = 0;
+        this.imageView.setVisibility(4);
+        this.textView.setPadding(0, 0, 0, 0);
     }
 
     public void setSubtextColor(int i) {

@@ -2010,6 +2010,14 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             this.poller.checkList(this);
         }
 
+        @Override // org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
+        public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+            if (motionEvent.getAction() != 0 || motionEvent.getY() >= getPaddingTop() + DialogsActivity.this.scrollYOffset) {
+                return super.dispatchTouchEvent(motionEvent);
+            }
+            return false;
+        }
+
         private boolean drawMovingViewsOverlayed() {
             return getItemAnimator() != null && getItemAnimator().isRunning();
         }
@@ -2075,6 +2083,11 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             if (dp2 != this.topPadding || calculateListViewPaddingBottom != getPaddingBottom()) {
                 setTopGlowOffset(dp2);
                 setPadding(0, dp2, 0, calculateListViewPaddingBottom);
+                RecyclerListView recyclerListView = this.animationSupportListView;
+                if (recyclerListView != null && (recyclerListView.getPaddingTop() != dp2 || this.animationSupportListView.getPaddingBottom() != calculateListViewPaddingBottom)) {
+                    this.animationSupportListView.setPadding(getPaddingLeft(), dp2, getPaddingLeft(), calculateListViewPaddingBottom);
+                    this.animationSupportListView.requestLayout();
+                }
                 if (DialogsActivity.this.hasStories) {
                     this.parentPage.progressView.setPaddingTop(dp2 - AndroidUtilities.dp(81.0f));
                 } else {

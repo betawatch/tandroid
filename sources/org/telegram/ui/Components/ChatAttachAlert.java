@@ -7825,36 +7825,53 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void showAiButton(final boolean z) {
-        if (this.shownAiButton == z) {
-            return;
-        }
-        this.shownAiButton = z;
-        this.aiButton.setVisibility(0);
-        this.topAiButton.setVisibility(0);
-        ViewPropertyAnimator scaleY = this.aiButton.animate().alpha(z ? 1.0f : 0.0f).scaleX(z ? 1.0f : 0.6f).scaleY(z ? 1.0f : 0.6f);
-        CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
-        scaleY.setInterpolator(cubicBezierInterpolator).setDuration(420L).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda60
-            @Override // java.lang.Runnable
-            public final void run() {
-                ChatAttachAlert.this.lambda$showAiButton$61(z);
-            }
-        }).start();
-        this.topAiButton.animate().alpha(z ? 1.0f : 0.0f).scaleX(z ? 1.0f : 0.6f).scaleY(z ? 1.0f : 0.6f).setInterpolator(cubicBezierInterpolator).setDuration(420L).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda61
-            @Override // java.lang.Runnable
-            public final void run() {
-                ChatAttachAlert.this.lambda$showAiButton$62(z);
-            }
-        }).start();
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0018 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0019  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void showAiButton(boolean z) {
+        final boolean z2;
         if (z) {
-            ImageView imageView = this.aiButton;
-            AiButtonDrawable aiButtonDrawable = this.aiButtonIcon;
-            Objects.requireNonNull(aiButtonDrawable);
-            imageView.postDelayed(new ChatActivityEnterView$$ExternalSyntheticLambda73(aiButtonDrawable), 220L);
-            ImageView imageView2 = this.topAiButton;
-            AiButtonDrawable aiButtonDrawable2 = this.topAiButtonIcon;
-            Objects.requireNonNull(aiButtonDrawable2);
-            imageView2.postDelayed(new ChatActivityEnterView$$ExternalSyntheticLambda73(aiButtonDrawable2), 220L);
+            BaseFragment baseFragment = this.baseFragment;
+            if ((baseFragment instanceof ChatActivity) && !((ChatActivity) baseFragment).isSecretChat()) {
+                z2 = true;
+                if (this.shownAiButton != z2) {
+                    return;
+                }
+                this.shownAiButton = z2;
+                this.aiButton.setVisibility(0);
+                this.topAiButton.setVisibility(0);
+                ViewPropertyAnimator scaleY = this.aiButton.animate().alpha(z2 ? 1.0f : 0.0f).scaleX(z2 ? 1.0f : 0.6f).scaleY(z2 ? 1.0f : 0.6f);
+                CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
+                scaleY.setInterpolator(cubicBezierInterpolator).setDuration(420L).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda60
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        ChatAttachAlert.this.lambda$showAiButton$61(z2);
+                    }
+                }).start();
+                this.topAiButton.animate().alpha(z2 ? 1.0f : 0.0f).scaleX(z2 ? 1.0f : 0.6f).scaleY(z2 ? 1.0f : 0.6f).setInterpolator(cubicBezierInterpolator).setDuration(420L).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda61
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        ChatAttachAlert.this.lambda$showAiButton$62(z2);
+                    }
+                }).start();
+                if (z2) {
+                    ImageView imageView = this.aiButton;
+                    AiButtonDrawable aiButtonDrawable = this.aiButtonIcon;
+                    Objects.requireNonNull(aiButtonDrawable);
+                    imageView.postDelayed(new ChatActivityEnterView$$ExternalSyntheticLambda73(aiButtonDrawable), 220L);
+                    ImageView imageView2 = this.topAiButton;
+                    AiButtonDrawable aiButtonDrawable2 = this.topAiButtonIcon;
+                    Objects.requireNonNull(aiButtonDrawable2);
+                    imageView2.postDelayed(new ChatActivityEnterView$$ExternalSyntheticLambda73(aiButtonDrawable2), 220L);
+                    return;
+                }
+                return;
+            }
+        }
+        z2 = false;
+        if (this.shownAiButton != z2) {
         }
     }
 
