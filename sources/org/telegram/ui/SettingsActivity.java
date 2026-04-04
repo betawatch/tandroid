@@ -1686,7 +1686,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         } else {
             str4 = null;
         }
-        builder.setItems(new CharSequence[]{string2, string3, string4, string5, string, string6, string7, string8, null, string9, string10, str5, str6, str7, string11, string12, string13, str8, str3, str9, str10, str11, str12, string14, str13, str14, str15, str16, str17, str18, str19, str20, str21, str22, str4, "Reload app config", !SharedConfig.forceForumTabs ? "Force Forum Tabs" : "Do Not Force Forum Tabs", "Make Memory Dump", BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.fastWallpaperDisabled ? "enable wallpaper shader" : "disable wallpaper shader" : null, SharedConfig.frameMetricsEnabled ? "hide frame metrics" : "show frame metrics", BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.shadowsInSections ? "disable shadows in settings" : "enable shadows in settings" : null, BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.debugViewMetrics ? "disable debug view metrics" : "enable debug view metrics" : null, BuildVars.DEBUG_VERSION ? SharedConfig.useEightPatch ? "use nine patch" : "use eight patch" : null}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda15
+        builder.setItems(new CharSequence[]{string2, string3, string4, string5, string, string6, string7, string8, null, string9, string10, str5, str6, str7, string11, string12, string13, str8, str3, str9, str10, str11, str12, string14, str13, str14, str15, str16, str17, str18, str19, str20, str21, str22, str4, "Reload app config", !SharedConfig.forceForumTabs ? "Force Forum Tabs" : "Do Not Force Forum Tabs", "Make Memory Dump", BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.fastWallpaperDisabled ? "enable wallpaper shader" : "disable wallpaper shader" : null, SharedConfig.frameMetricsEnabled ? "hide frame metrics" : "show frame metrics", BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.shadowsInSections ? "disable shadows in settings" : "enable shadows in settings" : null, BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.debugViewMetrics ? "disable debug view metrics" : "enable debug view metrics" : null}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda15
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i3) {
                 SettingsActivity.this.lambda$openDebugMenu$21(dialogInterface, i3);
@@ -1991,13 +1991,6 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                     boolean z2 = !SharedConfig.debugViewMetrics;
                     SharedConfig.debugViewMetrics = z2;
                     edit4.putBoolean("debugViewMetrics", z2).apply();
-                    return;
-                }
-                if (i == 42) {
-                    SharedPreferences.Editor edit5 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0).edit();
-                    boolean z3 = !SharedConfig.useEightPatch;
-                    SharedConfig.useEightPatch = z3;
-                    edit5.putBoolean("useEightPatch", z3).apply();
                     return;
                 }
                 return;

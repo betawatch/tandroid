@@ -59,10 +59,10 @@ public abstract class NinePatchBuilder {
         int clamp = MathUtils.clamp(((int) Math.ceil(max11)) + ceil2, 1, i3 - 2);
         int clamp2 = MathUtils.clamp((i3 - ceil3) - ((int) Math.ceil(max12)), clamp + 1, i3 - 1);
         int clamp3 = MathUtils.clamp(((int) Math.ceil(max13)) + ceil4, 1, i4 - 2);
-        return new NinePatchDrawable(createBitmap, createNinePatchChunk(clamp, clamp2, clamp3, MathUtils.clamp((i4 - ceil5) - ((int) Math.ceil(max14)), clamp3 + 1, i4 - 1), ceil2, ceil4, ceil3, ceil5).array(), new Rect(ceil2, ceil4, ceil3, ceil5), null);
+        return new NinePatchDrawable(createBitmap, createNinePatchChunk(clamp, clamp2, clamp3, MathUtils.clamp((i4 - ceil5) - ((int) Math.ceil(max14)), clamp3 + 1, i4 - 1), ceil2, ceil4, ceil3, ceil5, 1).array(), new Rect(ceil2, ceil4, ceil3, ceil5), null);
     }
 
-    public static ByteBuffer createNinePatchChunk(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+    public static ByteBuffer createNinePatchChunk(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9) {
         ByteBuffer order = ByteBuffer.allocate(84).order(ByteOrder.nativeOrder());
         order.put((byte) 1);
         order.put((byte) 2);
@@ -79,9 +79,15 @@ public abstract class NinePatchBuilder {
         order.putInt(i2);
         order.putInt(i3);
         order.putInt(i4);
-        for (int i9 = 0; i9 < 9; i9++) {
-            order.putInt(1);
-        }
+        order.putInt(1);
+        order.putInt(1);
+        order.putInt(1);
+        order.putInt(1);
+        order.putInt(i9);
+        order.putInt(1);
+        order.putInt(1);
+        order.putInt(1);
+        order.putInt(1);
         return order;
     }
 }

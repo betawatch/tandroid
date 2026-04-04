@@ -63,7 +63,6 @@ import java.lang.ref.WeakReference;
 import java.lang.reflect.Array;
 import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -115,7 +114,6 @@ import org.telegram.ui.Components.BackgroundGradientDrawable;
 import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.ChoosingStickerStatusDrawable;
 import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.EightPatchDrawable;
 import org.telegram.ui.Components.FragmentContextViewWavesDrawable;
 import org.telegram.ui.Components.LinkPath;
 import org.telegram.ui.Components.MotionBackgroundDrawable;
@@ -131,6 +129,7 @@ import org.telegram.ui.Components.SendingFileDrawable;
 import org.telegram.ui.Components.StatusDrawable;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.TypingDotsDrawable;
+import org.telegram.ui.Components.blur3.utils.NinePatchBuilder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.RoundVideoProgressShadow;
 import org.telegram.ui.ThemeActivity;
@@ -4929,7 +4928,7 @@ public abstract class Theme {
                     try {
                         setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
                         draw(canvas, paint2);
-                        this.backgroundDrawable[c2][c] = new NinePatchDrawable(createBitmap, getByteBuffer((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1).array(), new Rect(), null);
+                        this.backgroundDrawable[c2][c] = new NinePatchDrawable(createBitmap, getByteBuffer((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1, -1).array(), new Rect(), null);
                         try {
                             setBounds(this.backupRect);
                         } catch (Throwable unused2) {
@@ -4981,7 +4980,7 @@ public abstract class Theme {
                 paint.setColor(-1);
                 setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
                 draw(canvas, paint);
-                this.transitionDrawable = new NinePatchDrawable(createBitmap, getByteBuffer((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1).array(), new Rect(), null);
+                this.transitionDrawable = new NinePatchDrawable(createBitmap, getByteBuffer((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1, -1).array(), new Rect(), null);
                 setBounds(this.backupRect);
             }
             if (this.transitionDrawableColor != i) {
@@ -5000,7 +4999,7 @@ public abstract class Theme {
 
         public Drawable getShadowDrawable() {
             char c;
-            Drawable ninePatchDrawable;
+            int i;
             if (this.isCrossfadeBackground) {
                 return null;
             }
@@ -5042,15 +5041,12 @@ public abstract class Theme {
                         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
                         setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
                         draw(canvas, paint);
+                        i = 0;
+                    } else {
+                        i = 1;
                     }
                     this.shadowDrawableBitmap[c] = createBitmap;
-                    Drawable[] drawableArr = this.shadowDrawable;
-                    if (SharedConfig.useEightPatch) {
-                        ninePatchDrawable = new EightPatchDrawable(createBitmap, getByteBuffer((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1).array(), new Rect(), null);
-                    } else {
-                        ninePatchDrawable = new NinePatchDrawable(createBitmap, getByteBuffer((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1).array(), new Rect(), null);
-                    }
-                    drawableArr[c] = ninePatchDrawable;
+                    this.shadowDrawable[c] = new NinePatchDrawable(createBitmap, getByteBuffer((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1, i).array(), new Rect(), null);
                     z2 = true;
                 } catch (Throwable unused) {
                 }
@@ -5076,33 +5072,8 @@ public abstract class Theme {
             Arrays.fill(this.currentShadowDrawableRadius, -1);
         }
 
-        private static ByteBuffer getByteBuffer(int i, int i2, int i3, int i4) {
-            ByteBuffer order = ByteBuffer.allocate(84).order(ByteOrder.nativeOrder());
-            order.put((byte) 1);
-            order.put((byte) 2);
-            order.put((byte) 2);
-            order.put((byte) 9);
-            order.putInt(0);
-            order.putInt(0);
-            order.putInt(0);
-            order.putInt(0);
-            order.putInt(0);
-            order.putInt(0);
-            order.putInt(0);
-            order.putInt(i);
-            order.putInt(i2);
-            order.putInt(i3);
-            order.putInt(i4);
-            order.putInt(1);
-            order.putInt(1);
-            order.putInt(1);
-            order.putInt(1);
-            order.putInt(1);
-            order.putInt(1);
-            order.putInt(1);
-            order.putInt(1);
-            order.putInt(1);
-            return order;
+        private static ByteBuffer getByteBuffer(int i, int i2, int i3, int i4, int i5) {
+            return NinePatchBuilder.createNinePatchChunk(i, i2, i3, i4, 0, 0, 0, 0, i5);
         }
 
         public void drawCached(Canvas canvas, PathDrawParams pathDrawParams, Paint paint) {
