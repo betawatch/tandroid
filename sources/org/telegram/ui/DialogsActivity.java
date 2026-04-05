@@ -1623,20 +1623,26 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             float f7 = (0.6f * f6) + 0.4f;
             this.actionBar.getTitlesContainer().setScaleY(f7);
             this.actionBar.getTitlesContainer().setScaleX(f7);
-            this.actionBar.getTitlesContainer().setAlpha((1.0f - this.progressToActionMode) * f6);
             this.actionBar.getAdditionalSubTitleOverlayContainer().setPivotX(0.0f);
             this.actionBar.getAdditionalSubTitleOverlayContainer().setPivotY(-AndroidUtilities.dp(30.0f));
             this.actionBar.getAdditionalSubTitleOverlayContainer().setScaleY(f7);
             this.actionBar.getAdditionalSubTitleOverlayContainer().setScaleX(f7);
-            this.actionBar.getAdditionalSubTitleOverlayContainer().setAlpha(f6 * (1.0f - this.progressToActionMode));
+            float f8 = f6 * (1.0f - this.progressToActionMode);
+            this.actionBar.getTitlesContainer().setAlpha(f8);
+            this.actionBar.getTitlesContainer().setVisibility(f8 > 0.0f ? 0 : 4);
+            this.actionBar.getAdditionalSubTitleOverlayContainer().setAlpha(f8);
+            this.actionBar.getAdditionalSubTitleOverlayContainer().setVisibility(f8 <= 0.0f ? 4 : 0);
             return;
         }
         this.actionBar.getTitlesContainer().setScaleY(1.0f);
         this.actionBar.getTitlesContainer().setScaleX(1.0f);
-        this.actionBar.getTitlesContainer().setAlpha(1.0f - this.progressToActionMode);
         this.actionBar.getAdditionalSubTitleOverlayContainer().setScaleY(1.0f);
         this.actionBar.getAdditionalSubTitleOverlayContainer().setScaleX(1.0f);
-        this.actionBar.getAdditionalSubTitleOverlayContainer().setAlpha(1.0f - this.progressToActionMode);
+        float f9 = 1.0f - this.progressToActionMode;
+        this.actionBar.getTitlesContainer().setAlpha(f9);
+        this.actionBar.getTitlesContainer().setVisibility(f9 > 0.0f ? 0 : 4);
+        this.actionBar.getAdditionalSubTitleOverlayContainer().setAlpha(f9);
+        this.actionBar.getAdditionalSubTitleOverlayContainer().setVisibility(f9 <= 0.0f ? 4 : 0);
     }
 
     public class DialogsRecyclerView extends BlurredRecyclerView implements StoriesListPlaceProvider.ClippedView {
@@ -2083,11 +2089,6 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             if (dp2 != this.topPadding || calculateListViewPaddingBottom != getPaddingBottom()) {
                 setTopGlowOffset(dp2);
                 setPadding(0, dp2, 0, calculateListViewPaddingBottom);
-                RecyclerListView recyclerListView = this.animationSupportListView;
-                if (recyclerListView != null && (recyclerListView.getPaddingTop() != dp2 || this.animationSupportListView.getPaddingBottom() != calculateListViewPaddingBottom)) {
-                    this.animationSupportListView.setPadding(getPaddingLeft(), dp2, getPaddingLeft(), calculateListViewPaddingBottom);
-                    this.animationSupportListView.requestLayout();
-                }
                 if (DialogsActivity.this.hasStories) {
                     this.parentPage.progressView.setPaddingTop(dp2 - AndroidUtilities.dp(81.0f));
                 } else {
@@ -11161,8 +11162,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     public void setScrollY(float f) {
         ViewPage[] viewPageArr = this.viewPages;
         if (viewPageArr != null) {
-            int i = 0;
             int paddingTop = viewPageArr[0].listView.getPaddingTop() + ((int) f);
+            int i = 0;
             while (true) {
                 ViewPage[] viewPageArr2 = this.viewPages;
                 if (i >= viewPageArr2.length) {
@@ -11180,10 +11181,11 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         if (bulletin != null) {
             bulletin.updatePosition();
         }
-        AnimatedStatusView animatedStatusView = this.animatedStatusView;
-        if (animatedStatusView != null) {
-            animatedStatusView.translateY2((int) f);
-            this.animatedStatusView.setAlpha(1.0f - ((-f) / ActionBar.getCurrentActionBarHeight()));
+        if (this.animatedStatusView != null) {
+            float currentActionBarHeight = 1.0f - ((-f) / ActionBar.getCurrentActionBarHeight());
+            this.animatedStatusView.translateY2((int) f);
+            this.animatedStatusView.setAlpha(MathUtils.clamp(currentActionBarHeight, 0.0f, 1.0f));
+            this.animatedStatusView.setVisibility(currentActionBarHeight <= 0.0f ? 4 : 0);
         }
         checkUi_searchFieldVisibility();
         this.fragmentView.invalidate();

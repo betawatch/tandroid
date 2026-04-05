@@ -1517,4 +1517,9 @@ public abstract class BaseFragment {
     public int getBottomInset() {
         return this.bottomInset;
     }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public void dumpCanvas() {
+        AndroidUtilities.dumpCanvas(this.fragmentView);
+    }
 }

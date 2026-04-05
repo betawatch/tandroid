@@ -1,7 +1,6 @@
 package com.google.android.recaptcha.internal;
 
 import java.util.HashMap;
-import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes.dex */
 public final class zzjb {
@@ -17,7 +16,7 @@ public final class zzjb {
         this.zza = zzjaVar;
         HashMap hashMap = new HashMap();
         this.zzb = hashMap;
-        zzjaVar.zzd(NotificationCenter.closeInCallActivity, hashMap);
+        zzjaVar.zzd(173, hashMap);
     }
 
     public final zzja zza() {
@@ -27,7 +26,7 @@ public final class zzjb {
     public final void zzb() {
         zzja zzjaVar = this.zza;
         zzjaVar.zzc();
-        zzjaVar.zzd(NotificationCenter.closeInCallActivity, this.zzb);
+        zzjaVar.zzd(173, this.zzb);
     }
 
     public final zzdo zzc() {

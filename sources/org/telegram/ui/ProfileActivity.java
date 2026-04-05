@@ -776,7 +776,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$39800(ProfileActivity profileActivity, View view) {
+    public static /* synthetic */ void access$39700(ProfileActivity profileActivity, View view) {
         profileActivity.onTextDetailCellImageClicked(view);
     }
 
@@ -2193,39 +2193,30 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         this.provider = new PhotoViewer.EmptyPhotoViewerProvider() { // from class: org.telegram.ui.ProfileActivity.3
             @Override // org.telegram.ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.ui.PhotoViewer.PhotoViewerProvider
             public PhotoViewer.PlaceProviderObject getPlaceForPhoto(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i, boolean z, boolean z2) {
+                TLRPC.Chat chat;
+                TLRPC.ChatPhoto chatPhoto;
                 TLRPC.FileLocation fileLocation2;
-                ImageLocation currentImageLocation;
-                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated;
+                TLRPC.User user;
+                TLRPC.UserProfilePhoto userProfilePhoto;
                 if (fileLocation == null) {
                     return null;
                 }
-                if (ProfileActivity.this.avatarContainer.getScaleX() > 0.96f && (z2 || !z)) {
+                if (ProfileActivity.this.avatarContainer.getScaleX() > 0.96f && z2) {
                     return null;
                 }
-                BackupImageView currentItemView = (ProfileActivity.this.avatarsViewPager != null && ProfileActivity.this.avatarsViewPager.hasImages() && (currentImageLocation = ProfileActivity.this.avatarsViewPager.getCurrentImageLocation()) != null && (tL_fileLocationToBeDeprecated = currentImageLocation.location) != null && tL_fileLocationToBeDeprecated.local_id == fileLocation.local_id && tL_fileLocationToBeDeprecated.volume_id == fileLocation.volume_id && currentImageLocation.dc_id == fileLocation.dc_id) ? ProfileActivity.this.avatarsViewPager.getCurrentItemView() : null;
-                if (currentItemView == null) {
-                    if (ProfileActivity.this.userId != 0) {
-                        fileLocation2 = null;
-                        if (fileLocation2 != null && fileLocation2.local_id == fileLocation.local_id && fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.dc_id == fileLocation.dc_id) {
-                            currentItemView = ProfileActivity.this.avatarImage;
-                        }
-                    } else {
-                        fileLocation2 = null;
-                        if (fileLocation2 != null) {
-                            currentItemView = ProfileActivity.this.avatarImage;
-                        }
-                    }
+                if (ProfileActivity.this.userId == 0 ? ProfileActivity.this.chatId == 0 || (chat = ProfileActivity.this.getMessagesController().getChat(Long.valueOf(ProfileActivity.this.chatId))) == null || (chatPhoto = chat.photo) == null || (fileLocation2 = chatPhoto.photo_big) == null : (user = ProfileActivity.this.getMessagesController().getUser(Long.valueOf(ProfileActivity.this.userId))) == null || (userProfilePhoto = user.photo) == null || (fileLocation2 = userProfilePhoto.photo_big) == null) {
+                    fileLocation2 = null;
                 }
-                if (currentItemView == null) {
+                if (fileLocation2 == null || fileLocation2.local_id != fileLocation.local_id || fileLocation2.volume_id != fileLocation.volume_id || fileLocation2.dc_id != fileLocation.dc_id) {
                     return null;
                 }
                 int[] iArr = new int[2];
-                ProfileActivity.this.avatarContainer.getLocationInWindow(iArr);
+                ProfileActivity.this.avatarImage.getLocationInWindow(iArr);
                 PhotoViewer.PlaceProviderObject placeProviderObject = new PhotoViewer.PlaceProviderObject();
                 placeProviderObject.viewX = iArr[0];
                 placeProviderObject.viewY = iArr[1];
-                placeProviderObject.parentView = ProfileActivity.this.avatarContainer;
-                placeProviderObject.imageReceiver = currentItemView.getImageReceiver();
+                placeProviderObject.parentView = ProfileActivity.this.avatarImage;
+                placeProviderObject.imageReceiver = ProfileActivity.this.avatarImage.getImageReceiver();
                 if (ProfileActivity.this.userId != 0) {
                     placeProviderObject.dialogId = ProfileActivity.this.userId;
                 } else if (ProfileActivity.this.chatId != 0) {
@@ -2237,37 +2228,15 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     return null;
                 }
                 placeProviderObject.size = -1L;
-                placeProviderObject.radius = currentItemView.getImageReceiver().getRoundRadius(true);
-                placeProviderObject.scale = currentItemView.getScaleX();
+                placeProviderObject.radius = ProfileActivity.this.avatarImage.getImageReceiver().getRoundRadius(true);
+                placeProviderObject.scale = ProfileActivity.this.avatarContainer.getScaleX();
                 placeProviderObject.canEdit = ProfileActivity.this.userId == ProfileActivity.this.getUserConfig().clientUserId;
                 placeProviderObject.fadeIn = ProfileActivity.this.avatarContainer.getScaleX() > 0.96f;
                 return placeProviderObject;
             }
 
             @Override // org.telegram.ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.ui.PhotoViewer.PhotoViewerProvider
-            public void onPhotoIndexChanged(int i, ImageLocation imageLocation) {
-                int findPhotoIndexByLocation;
-                if (ProfileActivity.this.avatarsViewPager == null || imageLocation == null || (findPhotoIndexByLocation = ProfileActivity.this.avatarsViewPager.findPhotoIndexByLocation(imageLocation)) < 0) {
-                    return;
-                }
-                ProfileActivity.this.avatarsViewPager.setCurrentItem(ProfileActivity.this.avatarsViewPager.getAdapterPositionForPhotoIndex(findPhotoIndexByLocation), false);
-            }
-
-            @Override // org.telegram.ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.ui.PhotoViewer.PhotoViewerProvider
-            public void onPreClose() {
-                BackupImageView currentItemView;
-                if (ProfileActivity.this.avatarsViewPager == null || (currentItemView = ProfileActivity.this.avatarsViewPager.getCurrentItemView()) == null) {
-                    return;
-                }
-                currentItemView.getImageReceiver().setVisible(true, true);
-            }
-
-            @Override // org.telegram.ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.ui.PhotoViewer.PhotoViewerProvider
             public void willHidePhotoViewer() {
-                BackupImageView currentItemView;
-                if (ProfileActivity.this.avatarsViewPager != null && (currentItemView = ProfileActivity.this.avatarsViewPager.getCurrentItemView()) != null) {
-                    currentItemView.getImageReceiver().setVisible(true, true);
-                }
                 ProfileActivity.this.avatarImage.getImageReceiver().setVisible(true, true);
             }
 
@@ -3280,10 +3249,15 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 return super.onInterceptTouchEvent(motionEvent);
             }
 
+            /* JADX WARN: Removed duplicated region for block: B:19:0x00be  */
             @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
+            /*
+                Code decompiled incorrectly, please refer to instructions dump.
+            */
             public boolean onTouchEvent(MotionEvent motionEvent) {
                 VelocityTracker velocityTracker;
                 View findViewByPosition2;
+                float measuredWidth;
                 int action = motionEvent.getAction();
                 if (action == 0) {
                     VelocityTracker velocityTracker2 = this.velocityTracker;
@@ -3311,9 +3285,19 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
                 boolean onTouchEvent = super.onTouchEvent(motionEvent);
                 if (action == 2) {
-                    if (ProfileActivity.this.extraHeight >= (ProfileActivity.this.shouldUseCompactProfileListPadding() ? ProfileActivity.this.getHeaderExtraHeight() + (ActionBar.getCurrentActionBarHeight() + (((BaseFragment) ProfileActivity.this).actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0)) : ProfileActivity.this.listView.getMeasuredWidth() + ProfileActivity.this.getActionsExtraHeight()) - 1.0f) {
-                        ProfileActivity.this.openAvatar(true);
-                        onTouchEvent = false;
+                    int currentActionBarHeight = ActionBar.getCurrentActionBarHeight() + (((BaseFragment) ProfileActivity.this).actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0);
+                    if (ProfileActivity.this.isInLandscapeMode) {
+                        ProfileActivity profileActivity = ProfileActivity.this;
+                        if (!profileActivity.hasMainTabs) {
+                            measuredWidth = profileActivity.getHeaderExtraHeight() + currentActionBarHeight;
+                            if (ProfileActivity.this.extraHeight >= measuredWidth - 1.0f) {
+                                ProfileActivity.this.openAvatar(true);
+                                onTouchEvent = false;
+                            }
+                        }
+                    }
+                    measuredWidth = ProfileActivity.this.listView.getMeasuredWidth() + ProfileActivity.this.getActionsExtraHeight();
+                    if (ProfileActivity.this.extraHeight >= measuredWidth - 1.0f) {
                     }
                 }
                 if ((action == 1 || action == 3) && (findViewByPosition2 = ProfileActivity.this.layoutManager.findViewByPosition(0)) != null) {
@@ -4947,7 +4931,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             return true;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:133:0x05de  */
+        /* JADX WARN: Removed duplicated region for block: B:137:0x05e8  */
         @Override // android.widget.FrameLayout, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -5012,12 +4996,13 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             if (ProfileActivity.this.fragmentOpened || (!ProfileActivity.this.expandPhoto && (!ProfileActivity.this.openAnimationInProgress || ProfileActivity.this.playProfileAnimation != 2))) {
                 if (ProfileActivity.this.fragmentOpened && !ProfileActivity.this.openAnimationInProgress && !ProfileActivity.this.firstLayout) {
                     this.ignoreLayout = true;
-                    if (ProfileActivity.this.shouldUseCompactProfileListPadding()) {
-                        measuredWidth = ProfileActivity.this.getHeaderExtraHeight();
-                        max = 0;
-                    } else {
+                    ProfileActivity profileActivity3 = ProfileActivity.this;
+                    if (profileActivity3.hasMainTabs || (!profileActivity3.isInLandscapeMode && !AndroidUtilities.isTablet())) {
                         measuredWidth = ProfileActivity.this.listView.getMeasuredWidth() + ProfileActivity.this.getActionsExtraHeight();
                         max = Math.max(0, getMeasuredHeight() - ((ProfileActivity.this.listContentHeight + ProfileActivity.this.getHeaderExtraHeight()) + currentActionBarHeight));
+                    } else {
+                        measuredWidth = ProfileActivity.this.getHeaderExtraHeight();
+                        max = 0;
                     }
                     if (ProfileActivity.this.banFromGroup == 0) {
                         ProfileActivity.this.listView.setBottomGlowOffset(0);
@@ -5047,12 +5032,12 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         ProfileActivity.this.layoutManager.scrollToPositionWithOffset(ProfileActivity.this.sharedMediaRow, -measuredWidth);
                     } else {
                         if (ProfileActivity.this.invalidateScroll || paddingTop != measuredWidth) {
-                            ProfileActivity profileActivity3 = ProfileActivity.this;
-                            if (profileActivity3.savedScrollPosition >= 0) {
-                                LinearLayoutManager linearLayoutManager = profileActivity3.layoutManager;
-                                ProfileActivity profileActivity4 = ProfileActivity.this;
-                                linearLayoutManager.scrollToPositionWithOffset(profileActivity4.savedScrollPosition, profileActivity4.savedScrollOffset - measuredWidth);
-                            } else if ((!z || !profileActivity3.allowPullingDown) && view != null) {
+                            ProfileActivity profileActivity4 = ProfileActivity.this;
+                            if (profileActivity4.savedScrollPosition >= 0) {
+                                LinearLayoutManager linearLayoutManager = profileActivity4.layoutManager;
+                                ProfileActivity profileActivity5 = ProfileActivity.this;
+                                linearLayoutManager.scrollToPositionWithOffset(profileActivity5.savedScrollPosition, profileActivity5.savedScrollOffset - measuredWidth);
+                            } else if ((!z || !profileActivity4.allowPullingDown) && view != null) {
                                 if (i3 == 0 && !ProfileActivity.this.allowPullingDown && top > ProfileActivity.this.getHeaderExtraHeight()) {
                                     top = ProfileActivity.this.getHeaderExtraHeight();
                                 }
@@ -5170,8 +5155,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
                 ProfileActivity.this.initialAnimationExtraHeight = measuredWidth2 - currentActionBarHeight;
                 if (ProfileActivity.this.playProfileAnimation == 0) {
-                    ProfileActivity profileActivity5 = ProfileActivity.this;
-                    profileActivity5.extraHeight = profileActivity5.initialAnimationExtraHeight;
+                    ProfileActivity profileActivity6 = ProfileActivity.this;
+                    profileActivity6.extraHeight = profileActivity6.initialAnimationExtraHeight;
                 }
                 ProfileActivity.this.layoutManager.scrollToPositionWithOffset(0, -currentActionBarHeight);
                 ProfileActivity.this.listView.setPadding(0, measuredWidth2, 0, max2);
@@ -7494,11 +7479,6 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public boolean shouldUseCompactProfileListPadding() {
-        return (this.isInLandscapeMode || AndroidUtilities.isTablet()) && (!this.hasMainTabs || this.isInLandscapeMode);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public int getHeaderExtraHeight() {
         return getHeaderOnlyExtraHeight() + getActionsExtraHeight();
     }
@@ -8421,19 +8401,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         TLRPC.Chat chat;
         TLRPC.ChatPhoto chatPhoto;
         ImageLocation imageLocation;
-        ImageLocation currentImageLocation;
         if (this.listView.getScrollState() != 1 || z) {
-            ProfileGalleryView profileGalleryView = this.avatarsViewPager;
-            if (profileGalleryView != null && profileGalleryView.hasImages() && (currentImageLocation = this.avatarsViewPager.getCurrentImageLocation()) != null && currentImageLocation.location != null) {
-                PhotoViewer.getInstance().setParentActivity(this);
-                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = currentImageLocation.location;
-                int i = currentImageLocation.dc_id;
-                if (i != 0) {
-                    tL_fileLocationToBeDeprecated.dc_id = i;
-                }
-                PhotoViewer.getInstance().openPhoto(tL_fileLocationToBeDeprecated, currentImageLocation, this.provider);
-                return;
-            }
             if (this.userId != 0) {
                 TLRPC.User user = getMessagesController().getUser(Long.valueOf(this.userId));
                 TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
@@ -8442,11 +8410,11 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
                 PhotoViewer.getInstance().setParentActivity(this);
                 TLRPC.UserProfilePhoto userProfilePhoto2 = user.photo;
-                int i2 = userProfilePhoto2.dc_id;
-                if (i2 != 0) {
-                    userProfilePhoto2.photo_big.dc_id = i2;
+                int i = userProfilePhoto2.dc_id;
+                if (i != 0) {
+                    userProfilePhoto2.photo_big.dc_id = i;
                 }
-                PhotoViewer.getInstance().openPhoto(user.photo.photo_big, this.provider, true);
+                PhotoViewer.getInstance().openPhoto(user.photo.photo_big, this.provider);
                 return;
             }
             if (this.chatId == 0 || (chatPhoto = (chat = getMessagesController().getChat(Long.valueOf(this.chatId))).photo) == null || chatPhoto.photo_big == null) {
@@ -8454,20 +8422,20 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             }
             PhotoViewer.getInstance().setParentActivity(this);
             TLRPC.ChatPhoto chatPhoto2 = chat.photo;
-            int i3 = chatPhoto2.dc_id;
-            if (i3 != 0) {
-                chatPhoto2.photo_big.dc_id = i3;
+            int i2 = chatPhoto2.dc_id;
+            if (i2 != 0) {
+                chatPhoto2.photo_big.dc_id = i2;
             }
             TLRPC.ChatFull chatFull = this.chatInfo;
             if (chatFull != null) {
                 TLRPC.Photo photo = chatFull.chat_photo;
                 if ((photo instanceof TLRPC.TL_photo) && !photo.video_sizes.isEmpty()) {
                     imageLocation = ImageLocation.getForPhoto(this.chatInfo.chat_photo.video_sizes.get(0), this.chatInfo.chat_photo);
-                    PhotoViewer.getInstance().openPhotoWithVideo(chat.photo.photo_big, imageLocation, this.provider, true);
+                    PhotoViewer.getInstance().openPhotoWithVideo(chat.photo.photo_big, imageLocation, this.provider);
                 }
             }
             imageLocation = null;
-            PhotoViewer.getInstance().openPhotoWithVideo(chat.photo.photo_big, imageLocation, this.provider, true);
+            PhotoViewer.getInstance().openPhotoWithVideo(chat.photo.photo_big, imageLocation, this.provider);
         }
     }
 
@@ -17801,7 +17769,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                 textDetailCell.setImageClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$$ExternalSyntheticLambda6
                                     @Override // android.view.View.OnClickListener
                                     public final void onClick(View view) {
-                                        ProfileActivity.access$39800(ProfileActivity.this, view);
+                                        ProfileActivity.access$39700(ProfileActivity.this, view);
                                     }
                                 });
                             }
@@ -17814,7 +17782,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                             textDetailCell.setImageClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$$ExternalSyntheticLambda7
                                 @Override // android.view.View.OnClickListener
                                 public final void onClick(View view) {
-                                    ProfileActivity.access$39800(ProfileActivity.this, view);
+                                    ProfileActivity.access$39700(ProfileActivity.this, view);
                                 }
                             });
                         } else {

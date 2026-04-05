@@ -74,7 +74,6 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.video.VideoAds;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -389,7 +388,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
             this.oncePaint.setTextSize(AndroidUtilities.dp(13.0f));
             this.oncePaint.setTypeface(AndroidUtilities.getTypeface("fonts/num.otf"));
             this.oncePaint.setColor(-1);
-            StaticLayout staticLayout = new StaticLayout("1", this.oncePaint, VideoAds.BULLETIN_TAG_VIDEO_AD, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            StaticLayout staticLayout = new StaticLayout("1", this.oncePaint, 999, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
             this.onceLayout = staticLayout;
             this.onceLayoutWidth = staticLayout.getLineCount() > 0 ? this.onceLayout.getLineWidth(0) : 0.0f;
             this.onceLayoutHeight = this.onceLayout.getHeight();

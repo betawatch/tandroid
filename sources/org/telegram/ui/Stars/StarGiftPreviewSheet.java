@@ -621,7 +621,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         boolean z;
         float y;
         int measuredHeight;
-        boolean z2 = true;
+        final boolean z2 = true;
         int childCount = this.recyclerListView.getChildCount() - 1;
         while (true) {
             if (childCount < 0) {
@@ -655,11 +655,27 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         }
         if (this.gradientVisible != z2) {
             this.gradientVisible = z2;
-            this.gradientTop.animate().alpha(z2 ? 1.0f : 0.0f).setDuration(200L).start();
+            if (z2) {
+                this.gradientTop.setVisibility(0);
+            }
+            this.gradientTop.animate().alpha(z2 ? 1.0f : 0.0f).setDuration(200L).withEndAction(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda16
+                @Override // java.lang.Runnable
+                public final void run() {
+                    StarGiftPreviewSheet.this.lambda$updateTranslationHeader$10(z2);
+                }
+            }).start();
         }
         this.headerMoveTop = f <= 0.0f ? 0 : AndroidUtilities.dp(6.0f);
         this.headerView.setVisibility(z ? 0 : 8);
         this.headerView.setTranslationY(f);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$updateTranslationHeader$10(boolean z) {
+        if (z) {
+            return;
+        }
+        this.gradientTop.setVisibility(8);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -686,10 +702,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         this.rModels.reset();
         int selectedTab = this.tabsSelectorView.getSelectedTab();
         if (selectedTab == 0) {
-            boolean z = this.crafting;
-            if (z) {
-                arrayList.add(UItem.asCenterShadow(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(z ? "GiftPreviewCountModelsCrafting" : "GiftPreviewCountModels", this.models.size()))));
-            }
+            arrayList.add(UItem.asCenterShadow(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(this.crafting ? "GiftPreviewCountModelsCrafting" : "GiftPreviewCountModels", this.models.size()))));
             Iterator it = this.models.iterator();
             while (it.hasNext()) {
                 arrayList.add(GiftAttributeCell.Factory.asAttribute(selectedTab, new Attributes((TL_stars.starGiftAttributeBackdrop) this.rBackdrops.next(), (TL_stars.starGiftAttributePattern) this.rPatterns.next(), (TL_stars.starGiftAttributeModel) it.next())));

@@ -15,6 +15,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.utils.CountdownTimer;
 import org.telegram.tgnet.ConnectionsManager;
@@ -281,7 +282,7 @@ public class ActiveGiftAuctionsHintCell extends FrameLayout implements GiftAucti
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(LayoutHelper.measureSpecExactlyDp(172), LayoutHelper.measureSpecExactlyDp(28));
+            super.onMeasure(LayoutHelper.measureSpecExactlyDp(NotificationCenter.didEndCall), LayoutHelper.measureSpecExactlyDp(28));
         }
     }
 }

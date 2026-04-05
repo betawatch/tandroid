@@ -1962,7 +1962,9 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
                     float f16 = avatarStoryParams5.progressToSate;
                     this.textAlpha = avatarStoryParams5.globalState == 2 ? 0.7f : 1.0f;
                 }
-                this.textViewContainer.setAlpha(this.textAlphaTransition * this.textAlpha);
+                float f17 = this.textAlphaTransition * this.textAlpha;
+                this.textViewContainer.setAlpha(f17);
+                this.textViewContainer.setVisibility(f17 > 0.0f ? 0 : 4);
             }
             super.dispatchDraw(canvas);
         }
@@ -2118,6 +2120,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         }
 
         public void setProgressToCollapsed(float f, float f2, float f3, boolean z) {
+            float clamp;
             if (this.progressToCollapsed != f || this.progressToCollapsed2 != f2 || this.overscrollProgress != f3 || this.selectedForOverscroll != z) {
                 this.selectedForOverscroll = z;
                 this.progressToCollapsed = f;
@@ -2125,13 +2128,16 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
                 invalidate();
                 DialogStoriesCell.this.recyclerListView.invalidate();
             }
-            float f4 = 0.0f;
-            if (!this.mini) {
+            if (this.mini) {
+                clamp = 0.0f;
+            } else {
                 DialogStoriesCell dialogStoriesCell = DialogStoriesCell.this;
-                f4 = 1.0f - Utilities.clamp(dialogStoriesCell.collapsedProgress / dialogStoriesCell.K, 1.0f, 0.0f);
+                clamp = 1.0f - Utilities.clamp(dialogStoriesCell.collapsedProgress / dialogStoriesCell.K, 1.0f, 0.0f);
             }
-            this.textAlphaTransition = f4;
-            this.textViewContainer.setAlpha(f4 * this.textAlpha);
+            this.textAlphaTransition = clamp;
+            float f4 = clamp * this.textAlpha;
+            this.textViewContainer.setAlpha(f4);
+            this.textViewContainer.setVisibility(f4 > 0.0f ? 0 : 4);
         }
 
         /* JADX WARN: Multi-variable type inference failed */

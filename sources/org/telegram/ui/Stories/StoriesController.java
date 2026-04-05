@@ -3393,9 +3393,8 @@ public class StoriesController {
                 ((ArrayList) this.fakeDays.get(0)).add(Integer.valueOf(messageObject2.getId()));
                 this.messageObjects.add(messageObject2);
             }
-            markStoriesListUpdateFull();
-            AndroidUtilities.cancelRunOnUIThread(this.storiesListNotifyRunnable);
-            AndroidUtilities.runOnUIThread(this.storiesListNotifyRunnable);
+            AndroidUtilities.cancelRunOnUIThread(((StoriesList) this).notify);
+            AndroidUtilities.runOnUIThread(((StoriesList) this).notify);
             if (runnable != null) {
                 AndroidUtilities.runOnUIThread(runnable);
             }
@@ -3476,9 +3475,8 @@ public class StoriesController {
         }
 
         public void notifyUpdate() {
-            markStoriesListUpdateFull();
-            AndroidUtilities.cancelRunOnUIThread(this.storiesListNotifyRunnable);
-            AndroidUtilities.runOnUIThread(this.storiesListNotifyRunnable);
+            AndroidUtilities.cancelRunOnUIThread(((StoriesList) this).notify);
+            AndroidUtilities.runOnUIThread(((StoriesList) this).notify);
         }
 
         public void reload(Runnable runnable) {
@@ -3616,9 +3614,8 @@ public class StoriesController {
                 deletepreviewmedia.media.add(MessagesController.toInputMedia((TLRPC.MessageMedia) arrayList.get(i3)));
             }
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(deletepreviewmedia, null);
-            markStoriesListUpdateFull();
-            AndroidUtilities.cancelRunOnUIThread(this.storiesListNotifyRunnable);
-            AndroidUtilities.runOnUIThread(this.storiesListNotifyRunnable);
+            AndroidUtilities.cancelRunOnUIThread(((StoriesList) this).notify);
+            AndroidUtilities.runOnUIThread(((StoriesList) this).notify);
         }
 
         public void delete(TLRPC.MessageMedia messageMedia) {
@@ -3740,9 +3737,8 @@ public class StoriesController {
             }
             this.count = 0;
             this.last_offset = "";
-            markStoriesListUpdateFull();
-            AndroidUtilities.cancelRunOnUIThread(this.storiesListNotifyRunnable);
-            AndroidUtilities.runOnUIThread(this.storiesListNotifyRunnable);
+            AndroidUtilities.cancelRunOnUIThread(((StoriesList) this).notify);
+            AndroidUtilities.runOnUIThread(((StoriesList) this).notify);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -3780,9 +3776,8 @@ public class StoriesController {
                 }
                 this.last_offset = (this.messageObjects.size() >= tL_foundStories.count || tL_foundStories.stories.isEmpty()) ? null : tL_foundStories.next_offset;
                 this.loading = false;
-                markStoriesListUpdateFull();
-                AndroidUtilities.cancelRunOnUIThread(this.storiesListNotifyRunnable);
-                AndroidUtilities.runOnUIThread(this.storiesListNotifyRunnable);
+                AndroidUtilities.cancelRunOnUIThread(((StoriesList) this).notify);
+                AndroidUtilities.runOnUIThread(((StoriesList) this).notify);
             }
         }
 
@@ -3815,74 +3810,6 @@ public class StoriesController {
         }
     }
 
-    public static class StoriesListUpdate {
-        public static final StoriesListUpdate FULL = new StoriesListUpdate(true, 0, 0, 0, 0, 0, 0);
-        public final int changeCount;
-        public final boolean fullRefresh;
-        public final int insertCount;
-        public final int relativeChangeStart;
-        public final int relativeInsertStart;
-        public final int relativeRemoveStart;
-        public final int removeCount;
-
-        private StoriesListUpdate(boolean z, int i, int i2, int i3, int i4, int i5, int i6) {
-            this.fullRefresh = z;
-            this.relativeChangeStart = i;
-            this.changeCount = i2;
-            this.relativeInsertStart = i3;
-            this.insertCount = i4;
-            this.relativeRemoveStart = i5;
-            this.removeCount = i6;
-        }
-
-        public static StoriesListUpdate computeContiguousRemoval(ArrayList arrayList, ArrayList arrayList2) {
-            if (arrayList == null || arrayList2 == null) {
-                return FULL;
-            }
-            int size = arrayList.size();
-            int size2 = arrayList2.size();
-            int i = size - size2;
-            if (i <= 0) {
-                return FULL;
-            }
-            int i2 = 0;
-            int i3 = 0;
-            while (i3 < size2 && i3 < size && Objects.equals(arrayList.get(i3), arrayList2.get(i3))) {
-                i3++;
-            }
-            while (i2 < size - i3 && i2 < size2 - i3 && Objects.equals(arrayList.get((size - 1) - i2), arrayList2.get((size2 - 1) - i2))) {
-                i2++;
-            }
-            if (i3 + i + i2 != size) {
-                return FULL;
-            }
-            return new StoriesListUpdate(false, 0, 0, 0, 0, i3, i);
-        }
-
-        public static StoriesListUpdate computeAfterFill(int i, int i2, ArrayList arrayList, ArrayList arrayList2, int i3) {
-            int size = arrayList2.size();
-            if (size < i) {
-                ArrayList arrayList3 = new ArrayList(size);
-                for (int i4 = 0; i4 < size; i4++) {
-                    arrayList3.add(Integer.valueOf(((MessageObject) arrayList2.get(i4)).getId()));
-                }
-                return computeContiguousRemoval(arrayList, arrayList3);
-            }
-            if (i3 < i2) {
-                return FULL;
-            }
-            if (arrayList.size() != i) {
-                return FULL;
-            }
-            for (int i5 = 0; i5 < i; i5++) {
-                if (((MessageObject) arrayList2.get(i5)).getId() != ((Integer) arrayList.get(i5)).intValue()) {
-                    return FULL;
-                }
-            }
-            return new StoriesListUpdate(false, i, Math.max(0, Math.min(i2, size) - i), i2, i3 - i2, 0, 0);
-        }
-    }
-
     public static class StoriesList {
         private static HashMap lastLoadTime;
         public final int albumId;
@@ -3900,7 +3827,7 @@ public class StoriesController {
         private int maxLinkId;
         public final ArrayList messageObjects;
         private final HashMap messageObjectsMap;
-        private StoriesListUpdate pendingStoriesListUpdate;
+        private final Runnable notify;
         public final ArrayList pinnedIds;
         protected boolean preloading;
         private int reqId;
@@ -3908,7 +3835,6 @@ public class StoriesController {
         public final HashSet seenStories;
         private boolean showPhotos;
         private boolean showVideos;
-        protected final Runnable storiesListNotifyRunnable;
         private final ArrayList tempArr;
         protected Utilities.CallbackReturn toLoad;
         private int totalCount;
@@ -3969,65 +3895,49 @@ public class StoriesController {
             return this.showVideos;
         }
 
-        protected void markStoriesListUpdateFull() {
-            this.pendingStoriesListUpdate = StoriesListUpdate.FULL;
-        }
-
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$new$0() {
-            StoriesListUpdate storiesListUpdate = this.pendingStoriesListUpdate;
-            if (storiesListUpdate == null) {
-                storiesListUpdate = StoriesListUpdate.FULL;
-            }
-            this.pendingStoriesListUpdate = null;
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesListUpdated, this, storiesListUpdate);
+            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesListUpdated, this);
         }
 
         public void fill(boolean z) {
             fill(this.messageObjects, this.showPhotos, this.showVideos);
             if (z) {
-                AndroidUtilities.cancelRunOnUIThread(this.storiesListNotifyRunnable);
-                AndroidUtilities.runOnUIThread(this.storiesListNotifyRunnable);
+                AndroidUtilities.cancelRunOnUIThread(this.notify);
+                AndroidUtilities.runOnUIThread(this.notify);
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:67:0x00df, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:57:0x00b6, code lost:
         
-            if (r7 >= r5) goto L84;
+            if (r4 >= r2) goto L74;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public void fill(ArrayList arrayList, boolean z, boolean z2) {
-            int size = arrayList.size();
-            int count = getCount();
-            ArrayList arrayList2 = new ArrayList(size);
-            for (int i = 0; i < size; i++) {
-                MessageObject messageObject = (MessageObject) arrayList.get(i);
-                arrayList2.add(Integer.valueOf(messageObject != null ? messageObject.getId() : 0));
-            }
             this.tempArr.clear();
             if (this.type == 0 && this.albumId <= 0) {
                 Iterator it = this.pinnedIds.iterator();
                 while (it.hasNext()) {
                     Integer num = (Integer) it.next();
                     num.intValue();
-                    MessageObject messageObject2 = (MessageObject) this.messageObjectsMap.get(num);
-                    if (filter(messageObject2, z, z2)) {
-                        this.tempArr.add(messageObject2);
+                    MessageObject messageObject = (MessageObject) this.messageObjectsMap.get(num);
+                    if (filter(messageObject, z, z2)) {
+                        this.tempArr.add(messageObject);
                     }
                 }
             }
-            int i2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
             for (Integer num2 : this.loadedObjects) {
                 int intValue = num2.intValue();
-                MessageObject messageObject3 = (MessageObject) this.messageObjectsMap.get(num2);
+                MessageObject messageObject2 = (MessageObject) this.messageObjectsMap.get(num2);
                 if (this.type != 0 || this.albumId > 0 || !this.pinnedIds.contains(num2)) {
-                    if (filter(messageObject3, z, z2)) {
-                        this.tempArr.add(messageObject3);
+                    if (filter(messageObject2, z, z2)) {
+                        this.tempArr.add(messageObject2);
                     }
-                    if (intValue < i2) {
-                        i2 = intValue;
+                    if (intValue < i) {
+                        i = intValue;
                     }
                 }
             }
@@ -4037,16 +3947,15 @@ public class StoriesController {
                     Integer num3 = (Integer) it2.next();
                     int intValue2 = num3.intValue();
                     if (this.type != 0 || this.albumId > 0 || !this.pinnedIds.contains(num3)) {
-                        MessageObject messageObject4 = (MessageObject) this.messageObjectsMap.get(num3);
-                        if (filter(messageObject4, z, z2)) {
-                            this.tempArr.add(messageObject4);
+                        MessageObject messageObject3 = (MessageObject) this.messageObjectsMap.get(num3);
+                        if (filter(messageObject3, z, z2)) {
+                            this.tempArr.add(messageObject3);
                         }
                     }
                 }
             }
             arrayList.clear();
             arrayList.addAll(this.tempArr);
-            this.pendingStoriesListUpdate = StoriesListUpdate.computeAfterFill(size, count, arrayList2, arrayList, getCount());
         }
 
         private boolean filter(MessageObject messageObject, boolean z, boolean z2) {
@@ -4064,7 +3973,7 @@ public class StoriesController {
             this.showPhotos = true;
             this.showVideos = true;
             this.tempArr = new ArrayList();
-            this.storiesListNotifyRunnable = new Runnable() { // from class: org.telegram.ui.Stories.StoriesController$StoriesList$$ExternalSyntheticLambda0
+            this.notify = new Runnable() { // from class: org.telegram.ui.Stories.StoriesController$StoriesList$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
                     StoriesController.StoriesList.this.lambda$new$0();
@@ -4282,12 +4191,7 @@ public class StoriesController {
                 callbackReturn.run(0);
                 this.toLoad = null;
             }
-            StoriesListUpdate storiesListUpdate = this.pendingStoriesListUpdate;
-            if (storiesListUpdate == null) {
-                storiesListUpdate = StoriesListUpdate.FULL;
-            }
-            this.pendingStoriesListUpdate = null;
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesListUpdated, this, storiesListUpdate);
+            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesListUpdated, this);
         }
 
         private void pushObject(MessageObject messageObject, boolean z) {

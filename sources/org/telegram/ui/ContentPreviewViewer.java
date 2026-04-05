@@ -942,7 +942,7 @@ public class ContentPreviewViewer {
                             i2 = 0;
                         }
                         int min2 = (Math.min(ContentPreviewViewer.this.containerView.getWidth(), ContentPreviewViewer.this.containerView.getHeight() - i2) - AndroidUtilities.dp(40.0f)) / 2;
-                        int max3 = ((int) (((int) (ContentPreviewViewer.this.moveY + Math.max(i + min2 + (ContentPreviewViewer.this.stickerEmojiLayout != null ? AndroidUtilities.dp(40.0f) : 0), ((ContentPreviewViewer.this.containerView.getHeight() - i2) - ContentPreviewViewer.this.keyboardHeight) / 2) + min2)) + (AndroidUtilities.dp(24.0f) - ContentPreviewViewer.this.moveY))) + ContentPreviewViewer.this.getGifPreviewOffsetY();
+                        int max3 = (int) (((int) (ContentPreviewViewer.this.moveY + Math.max(i + min2 + (ContentPreviewViewer.this.stickerEmojiLayout != null ? AndroidUtilities.dp(40.0f) : 0), ((ContentPreviewViewer.this.containerView.getHeight() - i2) - ContentPreviewViewer.this.keyboardHeight) / 2) + min2)) + (AndroidUtilities.dp(24.0f) - ContentPreviewViewer.this.moveY));
                         ContentPreviewViewer contentPreviewViewer4 = ContentPreviewViewer.this;
                         contentPreviewViewer4.popupWindow.showAtLocation(contentPreviewViewer4.containerView, 0, (int) ((ContentPreviewViewer.this.containerView.getMeasuredWidth() - actionBarPopupWindowLayout.getMeasuredWidth()) / 2.0f), max3);
                         try {
@@ -2160,14 +2160,6 @@ public class ContentPreviewViewer {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public int getGifPreviewOffsetY() {
-        if (this.currentContentType != 1 || this.isPhotoEditor || this.slideUpDrawable == null) {
-            return 0;
-        }
-        return AndroidUtilities.dp(56.0f);
-    }
-
     public void open(TLRPC.Document document, SendMessagesHelper.ImportingSticker importingSticker, String str, String str2, TLRPC.BotInlineResult botInlineResult, int i, boolean z, Object obj, Theme.ResourcesProvider resourcesProvider) {
         open(document, importingSticker, str, str2, botInlineResult, i, z, obj, resourcesProvider, 0);
     }
@@ -2511,7 +2503,7 @@ public class ContentPreviewViewer {
         if (this.drawEffect) {
             max += AndroidUtilities.dp(40.0f);
         }
-        canvas.translate(this.containerView.getWidth() / 2, this.moveY + max + getGifPreviewOffsetY());
+        canvas.translate(this.containerView.getWidth() / 2, this.moveY + max);
         int i4 = (int) (i3 * ((this.showProgress * 0.8f) / 0.8f));
         if (this.currentContentType == 3) {
             canvas.translate(0.0f, AndroidUtilities.dp(70.0f));

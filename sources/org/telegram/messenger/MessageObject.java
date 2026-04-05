@@ -498,7 +498,7 @@ public class MessageObject {
     }
 
     @Deprecated
-    public static long getTopicId(int i, TLRPC.Message message, boolean z, boolean z2) {
+    private static long getTopicId(int i, TLRPC.Message message, boolean z, boolean z2) {
         int i2;
         long clientUserId = UserConfig.getInstance(i).getClientUserId();
         if (z2) {
@@ -8293,8 +8293,8 @@ public class MessageObject {
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0118  */
-    /* JADX WARN: Removed duplicated region for block: B:62:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:57:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -8306,7 +8306,6 @@ public class MessageObject {
         if (this.linkDescription != null) {
             return;
         }
-        boolean shouldBlockIncomingLinks = shouldBlockIncomingLinks();
         TLRPC.WebPage webPage = this.storyMentionWebpage;
         if (webPage == null) {
             webPage = getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaWebPage ? ((TLRPC.TL_messageMediaWebPage) getMedia(this.messageOwner)).webpage : null;
@@ -8342,15 +8341,12 @@ public class MessageObject {
                         } catch (Exception e) {
                             FileLog.e(e);
                         }
-                        if (shouldBlockIncomingLinks) {
-                            removeDisallowedParsedLinks(this.linkDescription);
-                        }
                     }
                     CharSequence replaceEmoji = Emoji.replaceEmoji(this.linkDescription, Theme.chat_msgTextPaint.getFontMetricsInt(), false);
                     this.linkDescription = replaceEmoji;
                     ArrayList<TLRPC.MessageEntity> arrayList = this.webPageDescriptionEntities;
                     if (arrayList != null) {
-                        addEntitiesToText(replaceEmoji, arrayList, isOut(), z, false, !z, 0, shouldBlockIncomingLinks);
+                        addEntitiesToText(replaceEmoji, arrayList, isOut(), z, false, !z);
                         replaceAnimatedEmoji(this.linkDescription, this.webPageDescriptionEntities, Theme.chat_msgTextPaint.getFontMetricsInt());
                     }
                     if (i != 0) {
@@ -8358,10 +8354,6 @@ public class MessageObject {
                             this.linkDescription = new SpannableStringBuilder(this.linkDescription);
                         }
                         addUrlsByPattern(isOutOwner(), this.linkDescription, false, i, 0, false);
-                        if (shouldBlockIncomingLinks) {
-                            removeDisallowedParsedLinks(this.linkDescription);
-                            return;
-                        }
                         return;
                     }
                     return;
@@ -8521,7 +8513,6 @@ public class MessageObject {
                         }
                     }
                 }
-                boolean shouldBlockIncomingLinks = shouldBlockIncomingLinks();
                 if (!isMediaEmpty() || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGame) || TextUtils.isEmpty(str)) {
                     return;
                 }
@@ -8538,19 +8529,13 @@ public class MessageObject {
                         }
                     }
                     addUrlsByPattern(isOutOwner(), this.caption, true, 0, 0, true);
-                    if (shouldBlockIncomingLinks) {
-                        removeDisallowedParsedLinks(this.caption);
-                    }
                 }
-                addEntitiesToText(this.caption, false, z3, shouldBlockIncomingLinks);
+                addEntitiesToText(this.caption, z3);
                 this.caption = FormattedDateSpan.applyFormatedDateEntities(this.caption);
-                if (!shouldBlockIncomingLinks && isVideo()) {
+                if (isVideo()) {
                     addUrlsByPattern(isOutOwner(), this.caption, true, 3, (int) getDuration(), false);
                     return;
                 } else {
-                    if (shouldBlockIncomingLinks) {
-                        return;
-                    }
                     if (isMusic() || isVoice()) {
                         addUrlsByPattern(isOutOwner(), this.caption, true, 4, (int) getDuration(), false);
                         return;
@@ -8578,7 +8563,6 @@ public class MessageObject {
         }
         this.captionSummarized = false;
         this.captionTranslated = false;
-        boolean shouldBlockIncomingLinks2 = shouldBlockIncomingLinks();
         if (isMediaEmpty()) {
         }
     }
@@ -8864,14 +8848,10 @@ public class MessageObject {
     }
 
     private boolean addEntitiesToText(CharSequence charSequence, boolean z) {
-        return addEntitiesToText(charSequence, false, z, false);
+        return addEntitiesToText(charSequence, false, z);
     }
 
     public boolean addEntitiesToText(CharSequence charSequence, boolean z, boolean z2) {
-        return addEntitiesToText(charSequence, z, z2, false);
-    }
-
-    public boolean addEntitiesToText(CharSequence charSequence, boolean z, boolean z2, boolean z3) {
         if (charSequence == null) {
             return false;
         }
@@ -8881,9 +8861,9 @@ public class MessageObject {
             tL_messageEntityItalic.offset = 0;
             tL_messageEntityItalic.length = charSequence.length();
             arrayList.add(tL_messageEntityItalic);
-            return addEntitiesToText(charSequence, arrayList, isOutOwner(), true, z, z2, 0, z3);
+            return addEntitiesToText(charSequence, arrayList, isOutOwner(), true, z, z2);
         }
-        return addEntitiesToText(charSequence, getEntities(), isOutOwner(), true, z, z2, 0, z3);
+        return addEntitiesToText(charSequence, getEntities(), isOutOwner(), true, z, z2);
     }
 
     public void replaceEmojiToLottieFrame(CharSequence charSequence, int[] iArr) {
@@ -9018,23 +8998,19 @@ public class MessageObject {
         return addEntitiesToText(charSequence, arrayList, z, z2, z3, z4, 0);
     }
 
-    public static boolean addEntitiesToText(CharSequence charSequence, ArrayList<TLRPC.MessageEntity> arrayList, boolean z, boolean z2, boolean z3, boolean z4, int i) {
-        return addEntitiesToText(charSequence, arrayList, z, z2, z3, z4, i, false);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0285  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x0288 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x04d8  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x01d2  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x0275  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0278 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x04c8  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x01c2  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static boolean addEntitiesToText(CharSequence charSequence, ArrayList<TLRPC.MessageEntity> arrayList, boolean z, boolean z2, boolean z3, boolean z4, int i, boolean z5) {
+    public static boolean addEntitiesToText(CharSequence charSequence, ArrayList<TLRPC.MessageEntity> arrayList, boolean z, boolean z2, boolean z3, boolean z4, int i) {
         int i2;
         String str;
         int i3;
         int i4;
-        boolean z6;
+        boolean z5;
         int i5;
         int i6;
         int size;
@@ -9046,7 +9022,7 @@ public class MessageObject {
         CharSequence restoreFormatedDateEntities = FormattedDateSpan.restoreFormatedDateEntities(charSequence);
         Spannable spannable = (Spannable) restoreFormatedDateEntities;
         URLSpan[] uRLSpanArr = (URLSpan[]) spannable.getSpans(0, restoreFormatedDateEntities.length(), URLSpan.class);
-        boolean z7 = uRLSpanArr != null && uRLSpanArr.length > 0;
+        boolean z6 = uRLSpanArr != null && uRLSpanArr.length > 0;
         if (arrayList != null && !arrayList.isEmpty()) {
             byte b = z3 ? (byte) 2 : z ? (byte) 1 : (byte) 0;
             ArrayList arrayList2 = new ArrayList();
@@ -9081,7 +9057,7 @@ public class MessageObject {
                             }
                         }
                     }
-                    if ((i != 1 || (messageEntity instanceof TLRPC.TL_messageEntityHashtag)) && ((!z5 || !isLinkableEntity(messageEntity) || isInternalTelegramLinkEntity(messageEntity, restoreFormatedDateEntities)) && !(messageEntity instanceof TLRPC.TL_messageEntityCustomEmoji) && !(messageEntity instanceof TLRPC.TL_messageEntityBlockquote) && !(messageEntity instanceof TLRPC.TL_messageEntityPre) && !(messageEntity instanceof TLRPC.TL_messageEntityDiffReplace))) {
+                    if ((i != 1 || (messageEntity instanceof TLRPC.TL_messageEntityHashtag)) && !(messageEntity instanceof TLRPC.TL_messageEntityCustomEmoji) && !(messageEntity instanceof TLRPC.TL_messageEntityBlockquote) && !(messageEntity instanceof TLRPC.TL_messageEntityPre) && !(messageEntity instanceof TLRPC.TL_messageEntityDiffReplace)) {
                         TextStyleSpan.TextStyleRun textStyleRun = new TextStyleSpan.TextStyleRun();
                         int i12 = messageEntity.offset;
                         textStyleRun.start = i12;
@@ -9246,12 +9222,12 @@ public class MessageObject {
                                         str = str.replaceAll("∕|⁄|%E2%81%84|%E2%88%95", "/");
                                     }
                                     if (Browser.isTonsitePunycode(str)) {
-                                        z7 = true;
+                                        z6 = true;
                                         i19++;
                                     } else {
                                         spannable.setSpan(new URLSpanBrowser(str, textStyleRun8), textStyleRun8.start, textStyleRun8.end, 33);
-                                        z6 = false;
-                                        z7 = true;
+                                        z5 = false;
+                                        z6 = true;
                                     }
                                 }
                                 i19++;
@@ -9259,7 +9235,7 @@ public class MessageObject {
                                 if (i20 < 250) {
                                     i20++;
                                     spannable.setSpan(new FormattedDateSpan(str, textStyleRun8, (TLRPC.TL_messageEntityFormattedDate) textStyleRun8.urlEntity), textStyleRun8.start, textStyleRun8.end, 33);
-                                    z6 = false;
+                                    z5 = false;
                                 }
                                 i19++;
                             } else {
@@ -9282,7 +9258,7 @@ public class MessageObject {
                                             i19++;
                                         } else {
                                             spannable.setSpan(new URLSpanReplacement(str2, textStyleRun8), textStyleRun8.start, textStyleRun8.end, 33);
-                                            z6 = false;
+                                            z5 = false;
                                         }
                                     }
                                     i19++;
@@ -9293,33 +9269,33 @@ public class MessageObject {
                                         spannable.setSpan(new URLSpanUserMention("" + ((TLRPC.TL_inputMessageEntityMentionName) textStyleRun8.urlEntity).user_id.user_id, b, textStyleRun8), textStyleRun8.start, textStyleRun8.end, 33);
                                     } else if ((textStyleRun8.flags & 4) != 0) {
                                         spannable.setSpan(new URLSpanMono(spannable, textStyleRun8.start, textStyleRun8.end, b, textStyleRun8), textStyleRun8.start, textStyleRun8.end, 33);
-                                        z6 = false;
+                                        z5 = false;
                                     } else {
                                         spannable.setSpan(new TextStyleSpan(textStyleRun8), textStyleRun8.start, textStyleRun8.end, 33);
-                                        z6 = true;
+                                        z5 = true;
                                     }
-                                    z6 = false;
+                                    z5 = false;
                                 }
-                                z6 = false;
-                                z7 = true;
+                                z5 = false;
+                                z6 = true;
                             }
-                            if (!z6) {
+                            if (!z5) {
                             }
                             i19++;
                         } else if (i20 < 250) {
                             i20++;
                             spannable.setSpan(new URLSpanReplacement("mailto:" + str, textStyleRun8), textStyleRun8.start, textStyleRun8.end, 33);
                             i3 = min;
-                            z6 = false;
-                            if (!z6) {
+                            z5 = false;
+                            if (!z5) {
                             }
                             i19++;
                         }
                         if (i20 < i4) {
                             i20++;
                             spannable.setSpan(new URLSpanNoUnderline(str, textStyleRun8), textStyleRun8.start, textStyleRun8.end, 33);
-                            z6 = false;
-                            if (!z6) {
+                            z5 = false;
+                            if (!z5) {
                             }
                         }
                         i19++;
@@ -9327,8 +9303,8 @@ public class MessageObject {
                         i20++;
                         spannable.setSpan(new URLSpanBotCommand(str, b, textStyleRun8), textStyleRun8.start, textStyleRun8.end, 33);
                         i3 = min;
-                        z6 = false;
-                        if (!z6) {
+                        z5 = false;
+                        if (!z5) {
                             if ((textStyleRun8.flags & 256) != 0 && i21 < 100) {
                                 i21++;
                                 spannable.setSpan(new TextStyleSpan(textStyleRun8), textStyleRun8.start, textStyleRun8.end, 33);
@@ -9368,7 +9344,7 @@ public class MessageObject {
                 }
             }
         }
-        return z7;
+        return z6;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -9592,25 +9568,21 @@ public class MessageObject {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0057, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0053, code lost:
     
-        if (r10.messageOwner.send_state == 0) goto L29;
+        if (r8.messageOwner.send_state == 0) goto L29;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x005d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0059, code lost:
     
-        if (r10.messageOwner.id >= 0) goto L32;
+        if (r8.messageOwner.id >= 0) goto L32;
      */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0064  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x009d  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0075  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private boolean applyEntities() {
-        boolean z;
         generateLinkDescription();
         spoilLoginCode();
-        boolean shouldBlockIncomingLinks = shouldBlockIncomingLinks();
+        boolean z = false;
         if (!(this.messageOwner.send_state != 0 ? false : !getEntities().isEmpty())) {
             if (this.eventId == 0) {
                 TLRPC.Message message = this.messageOwner;
@@ -9634,115 +9606,21 @@ public class MessageObject {
                 }
             }
             z = true;
-            if (!z) {
-                addLinks(isOutOwner(), this.messageText, true, true);
-                if (shouldBlockIncomingLinks) {
-                    removeDisallowedParsedLinks(this.messageText);
-                }
-            } else if (!shouldBlockIncomingLinks) {
-                addPhoneLinks(this.messageText);
-            }
-            if (shouldBlockIncomingLinks && isYouTubeVideo()) {
-                addUrlsByPattern(isOutOwner(), this.messageText, false, 3, ConnectionsManager.DEFAULT_DATACENTER_ID, false);
-            } else {
-                applyTimestampsHighlightForReplyMsg();
-            }
-            if (!(this.messageText instanceof Spannable)) {
-                this.messageText = new SpannableStringBuilder(this.messageText);
-            }
-            return addEntitiesToText(this.messageText, false, z, shouldBlockIncomingLinks);
         }
-        z = false;
-        if (!z) {
-        }
-        if (shouldBlockIncomingLinks) {
-        }
-        applyTimestampsHighlightForReplyMsg();
-        if (!(this.messageText instanceof Spannable)) {
-        }
-        return addEntitiesToText(this.messageText, false, z, shouldBlockIncomingLinks);
-    }
-
-    private boolean shouldBlockIncomingLinks() {
-        if (isOutOwner()) {
-            return false;
-        }
-        long dialogId = getDialogId();
-        if (dialogId == 0) {
-            return false;
-        }
-        return MessagesController.getNotificationsSettings(this.currentAccount).getBoolean("dialog_bar_block" + dialogId, false);
-    }
-
-    public boolean isIncomingLinksBlocked() {
-        return shouldBlockIncomingLinks();
-    }
-
-    public static boolean isInternalTelegramWebpageType(String str) {
-        if (str == null) {
-            return false;
-        }
-        switch (str) {
-        }
-        return false;
-    }
-
-    private static boolean isInternalTelegramLinkEntity(TLRPC.MessageEntity messageEntity, CharSequence charSequence) {
-        String str;
-        int i;
-        if ((messageEntity instanceof TLRPC.TL_messageEntityMention) || (messageEntity instanceof TLRPC.TL_messageEntityHashtag) || (messageEntity instanceof TLRPC.TL_messageEntityBotCommand) || (messageEntity instanceof TLRPC.TL_messageEntityMentionName) || (messageEntity instanceof TLRPC.TL_inputMessageEntityMentionName)) {
-            return true;
-        }
-        if (messageEntity instanceof TLRPC.TL_messageEntityTextUrl) {
-            str = messageEntity.url;
+        if (z) {
+            addLinks(isOutOwner(), this.messageText, true, true);
         } else {
-            int i2 = messageEntity.offset;
-            if (i2 < 0 || (i = messageEntity.length) <= 0 || i2 + i > charSequence.length()) {
-                str = null;
-            } else {
-                int i3 = messageEntity.offset;
-                str = TextUtils.substring(charSequence, i3, messageEntity.length + i3);
-            }
+            addPhoneLinks(this.messageText);
         }
-        return isInternalTelegramUrl(str);
-    }
-
-    private static boolean isLinkableEntity(TLRPC.MessageEntity messageEntity) {
-        return (messageEntity instanceof TLRPC.TL_messageEntityUrl) || (messageEntity instanceof TLRPC.TL_messageEntityTextUrl) || (messageEntity instanceof TLRPC.TL_messageEntityEmail) || (messageEntity instanceof TLRPC.TL_messageEntityPhone) || (messageEntity instanceof TLRPC.TL_messageEntityMention) || (messageEntity instanceof TLRPC.TL_messageEntityHashtag) || (messageEntity instanceof TLRPC.TL_messageEntityBotCommand) || (messageEntity instanceof TLRPC.TL_messageEntityCashtag) || (messageEntity instanceof TLRPC.TL_messageEntityMentionName) || (messageEntity instanceof TLRPC.TL_inputMessageEntityMentionName) || (messageEntity instanceof TLRPC.TL_messageEntityBankCard);
-    }
-
-    private static void removeDisallowedParsedLinks(CharSequence charSequence) {
-        if (charSequence instanceof Spannable) {
-            Spannable spannable = (Spannable) charSequence;
-            for (URLSpan uRLSpan : (URLSpan[]) spannable.getSpans(0, spannable.length(), URLSpan.class)) {
-                if (uRLSpan != null && !isInternalTelegramUrl(uRLSpan.getURL())) {
-                    spannable.removeSpan(uRLSpan);
-                }
-            }
+        if (isYouTubeVideo()) {
+            addUrlsByPattern(isOutOwner(), this.messageText, false, 3, ConnectionsManager.DEFAULT_DATACENTER_ID, false);
+        } else {
+            applyTimestampsHighlightForReplyMsg();
         }
-    }
-
-    private static boolean isInternalTelegramUrl(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return false;
+        if (!(this.messageText instanceof Spannable)) {
+            this.messageText = new SpannableStringBuilder(this.messageText);
         }
-        String normalizePotentialInternalUrl = normalizePotentialInternalUrl(str);
-        if (normalizePotentialInternalUrl.contains("telegram_") || normalizePotentialInternalUrl.startsWith("tg:") || normalizePotentialInternalUrl.startsWith("tg://") || normalizePotentialInternalUrl.startsWith("https://t.me/") || normalizePotentialInternalUrl.startsWith("http://t.me/") || normalizePotentialInternalUrl.startsWith("t.me/") || normalizePotentialInternalUrl.startsWith("https://telegram.me/") || normalizePotentialInternalUrl.startsWith("http://telegram.me/") || normalizePotentialInternalUrl.startsWith("telegram.me/")) {
-            return true;
-        }
-        try {
-            return Browser.isInternalUrl(normalizePotentialInternalUrl, null);
-        } catch (Exception unused) {
-            return false;
-        }
-    }
-
-    private static String normalizePotentialInternalUrl(String str) {
-        String lowerCase = str.trim().toLowerCase();
-        if (!lowerCase.startsWith("@")) {
-            return lowerCase;
-        }
-        return "https://t.me/" + lowerCase.substring(1);
+        return addEntitiesToText(this.messageText, z);
     }
 
     public static StaticLayout makeStaticLayout(CharSequence charSequence, TextPaint textPaint, int i, float f, float f2, boolean z) {

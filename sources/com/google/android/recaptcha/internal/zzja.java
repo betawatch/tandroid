@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import kotlin.collections.CollectionsKt;
-import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes.dex */
 public final class zzja {
@@ -83,8 +82,8 @@ public final class zzja {
     }
 
     public final void zzd(int i, Object obj) {
-        zze(NotificationCenter.closeInCallActivity, obj);
-        this.zzb.add(Integer.valueOf(NotificationCenter.closeInCallActivity));
+        zze(173, obj);
+        this.zzb.add(173);
     }
 
     public final void zze(int i, Object obj) {

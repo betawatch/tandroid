@@ -133,7 +133,7 @@ import org.telegram.ui.Cells.SharedPhotoVideoCell2;
 import org.telegram.ui.Cells.TextSelectionHelper;
 import org.telegram.ui.Cells.UserCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda307;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda318;
 import org.telegram.ui.ChatActivityContainer;
 import org.telegram.ui.Components.Forum.ForumUtilities;
 import org.telegram.ui.Components.FragmentContextView;
@@ -474,7 +474,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
     public void showChatPreview(DialogCell dialogCell) {
     }
 
-    static /* synthetic */ int access$14708(SharedMediaLayout sharedMediaLayout) {
+    static /* synthetic */ int access$14608(SharedMediaLayout sharedMediaLayout) {
         int i = sharedMediaLayout.tabIndexCounter;
         sharedMediaLayout.tabIndexCounter = i + 1;
         return i;
@@ -2229,36 +2229,6 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                     stickerEmptyView.showProgress(storiesList != null && (storiesList.isLoading() || (SharedMediaLayout.this.hasInternet() && this.storiesList.getCount() > 0)));
                 }
             }
-
-            @Override // org.telegram.ui.Components.SharedMediaLayout.StoriesAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
-            public void notifyItemRangeChanged(int i22, int i23) {
-                super.notifyItemRangeChanged(i22, i23);
-                MediaPage mediaPage2 = SharedMediaLayout.this.getMediaPage(8);
-                if (mediaPage2 == null || mediaPage2.animationSupportingListView.getVisibility() != 0) {
-                    return;
-                }
-                SharedMediaLayout.this.animationSupportingStoriesAdapter.notifyItemRangeChanged(i22, i23);
-            }
-
-            @Override // org.telegram.ui.Components.SharedMediaLayout.StoriesAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
-            public void notifyItemRangeInserted(int i22, int i23) {
-                super.notifyItemRangeInserted(i22, i23);
-                MediaPage mediaPage2 = SharedMediaLayout.this.getMediaPage(8);
-                if (mediaPage2 == null || mediaPage2.animationSupportingListView.getVisibility() != 0) {
-                    return;
-                }
-                SharedMediaLayout.this.animationSupportingStoriesAdapter.notifyItemRangeInserted(i22, i23);
-            }
-
-            @Override // org.telegram.ui.Components.SharedMediaLayout.StoriesAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
-            public void notifyItemRangeRemoved(int i22, int i23) {
-                super.notifyItemRangeRemoved(i22, i23);
-                MediaPage mediaPage2 = SharedMediaLayout.this.getMediaPage(8);
-                if (mediaPage2 == null || mediaPage2.animationSupportingListView.getVisibility() != 0) {
-                    return;
-                }
-                SharedMediaLayout.this.animationSupportingStoriesAdapter.notifyItemRangeRemoved(i22, i23);
-            }
         };
         this.storiesReorder = new ItemTouchHelper(new ItemTouchHelper.Callback() { // from class: org.telegram.ui.Components.SharedMediaLayout.10
             private RecyclerListView listView;
@@ -2353,36 +2323,6 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                     StoriesController.StoriesList storiesList = this.storiesList;
                     stickerEmptyView.showProgress(storiesList != null && (storiesList.isLoading() || (SharedMediaLayout.this.hasInternet() && this.storiesList.getCount() > 0)));
                 }
-            }
-
-            @Override // org.telegram.ui.Components.SharedMediaLayout.StoriesAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
-            public void notifyItemRangeChanged(int i22, int i23) {
-                super.notifyItemRangeChanged(i22, i23);
-                MediaPage mediaPage2 = SharedMediaLayout.this.getMediaPage(9);
-                if (mediaPage2 == null || mediaPage2.animationSupportingListView.getVisibility() != 0) {
-                    return;
-                }
-                SharedMediaLayout.this.animationSupportingArchivedStoriesAdapter.notifyItemRangeChanged(i22, i23);
-            }
-
-            @Override // org.telegram.ui.Components.SharedMediaLayout.StoriesAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
-            public void notifyItemRangeInserted(int i22, int i23) {
-                super.notifyItemRangeInserted(i22, i23);
-                MediaPage mediaPage2 = SharedMediaLayout.this.getMediaPage(9);
-                if (mediaPage2 == null || mediaPage2.animationSupportingListView.getVisibility() != 0) {
-                    return;
-                }
-                SharedMediaLayout.this.animationSupportingArchivedStoriesAdapter.notifyItemRangeInserted(i22, i23);
-            }
-
-            @Override // org.telegram.ui.Components.SharedMediaLayout.StoriesAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
-            public void notifyItemRangeRemoved(int i22, int i23) {
-                super.notifyItemRangeRemoved(i22, i23);
-                MediaPage mediaPage2 = SharedMediaLayout.this.getMediaPage(9);
-                if (mediaPage2 == null || mediaPage2.animationSupportingListView.getVisibility() != 0) {
-                    return;
-                }
-                SharedMediaLayout.this.animationSupportingArchivedStoriesAdapter.notifyItemRangeRemoved(i22, i23);
             }
         };
         this.animationSupportingArchivedStoriesAdapter = new StoriesAdapter(this, context, true);
@@ -4193,21 +4133,15 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             if (SharedMediaLayout.this.mediaPages != null) {
                 for (MediaPage mediaPage : SharedMediaLayout.this.mediaPages) {
                     if (mediaPage != null && mediaPage.listView != null) {
-                        int paddingTop = mediaPage.listView.getPaddingTop();
-                        int pagePaddingTop = SharedMediaLayout.this.getPagePaddingTop(mediaPage.selectedType);
-                        mediaPage.listView.hintPaddingTop = pagePaddingTop;
                         InternalListView internalListView = mediaPage.listView;
                         int paddingLeft = mediaPage.listView.getPaddingLeft();
+                        int pagePaddingTop = SharedMediaLayout.this.getPagePaddingTop(mediaPage.selectedType);
                         int paddingRight = mediaPage.listView.getPaddingRight();
                         InternalListView internalListView2 = mediaPage.listView;
                         SharedMediaLayout sharedMediaLayout = SharedMediaLayout.this;
                         int pagePaddingBottom = sharedMediaLayout.getPagePaddingBottom(sharedMediaLayout.isStoriesView());
                         internalListView2.hintPaddingBottom = pagePaddingBottom;
                         internalListView.setPadding(paddingLeft, pagePaddingTop, paddingRight, pagePaddingBottom);
-                        int paddingTop2 = paddingTop - mediaPage.listView.getPaddingTop();
-                        if (paddingTop2 != 0) {
-                            mediaPage.listView.scrollBy(0, paddingTop2);
-                        }
                     }
                 }
             }
@@ -4388,7 +4322,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                     public void onTransitionAnimationStart(boolean z, boolean z2) {
                         if (this.firstCreateView) {
                             if (this.searchItem != null) {
-                                lambda$openSearchWithText$351("");
+                                lambda$openSearchWithText$350("");
                                 this.searchItem.setSearchFieldText(SharedMediaLayout.this.savedMessagesSearchAdapter.lastQuery, false);
                             }
                             SearchTagsList searchTagsList = this.actionBarSearchTags;
@@ -7208,18 +7142,15 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:211:0x038f  */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x03b1  */
-    /* JADX WARN: Removed duplicated region for block: B:304:0x049c  */
-    /* JADX WARN: Removed duplicated region for block: B:307:0x04c2 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:387:0x05bf  */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x0394  */
+    /* JADX WARN: Removed duplicated region for block: B:226:0x03b6  */
+    /* JADX WARN: Removed duplicated region for block: B:307:0x04a4  */
+    /* JADX WARN: Removed duplicated region for block: B:310:0x04ca A[SYNTHETIC] */
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void didReceivedNotification(int i, int i2, Object... objArr) {
-        StoriesAdapter storyAlbums_getStoriesAdapterByTabType;
-        StoriesController.StoriesList storiesList;
         RecyclerView.Adapter adapter;
         int i3;
         int size;
@@ -7232,9 +7163,6 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         int i7 = 0;
         int i8 = 0;
         int i9 = 0;
-        r14 = false;
-        r14 = false;
-        boolean z2 = false;
         int i10 = 0;
         if (i == NotificationCenter.mediaDidLoad) {
             long longValue = ((Long) objArr[0]).longValue();
@@ -7284,8 +7212,10 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                     this.sharedMediaData[intValue3].loading = false;
                     SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
                     if (booleanValue) {
-                        for (int size3 = arrayList.size() - 1; size3 >= 0; size3--) {
-                            MessageObject messageObject = (MessageObject) arrayList.get(size3);
+                        int size3 = arrayList.size() - 1;
+                        while (size3 >= 0) {
+                            ArrayList arrayList2 = arrayList;
+                            MessageObject messageObject = (MessageObject) arrayList2.get(size3);
                             if (this.sharedMediaData[intValue3].addMessage(messageObject, i11, true, isEncryptedDialog)) {
                                 sparseBooleanArray.put(messageObject.getId(), true);
                                 SharedMediaData.access$610(this.sharedMediaData[intValue3]);
@@ -7293,6 +7223,8 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                                     this.sharedMediaData[intValue3].startOffset = 0;
                                 }
                             }
+                            size3--;
+                            arrayList = arrayList2;
                         }
                         this.sharedMediaData[intValue3].startReached = ((Boolean) objArr[5]).booleanValue();
                         SharedMediaData sharedMediaData2 = this.sharedMediaData[intValue3];
@@ -7329,8 +7261,8 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                         }
                     }
                     if (adapter3 != null) {
-                        InternalListView internalListView = null;
                         int i13 = 0;
+                        InternalListView internalListView = null;
                         while (true) {
                             MediaPage[] mediaPageArr = this.mediaPages;
                             if (i13 >= mediaPageArr.length) {
@@ -7338,8 +7270,9 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                             }
                             MediaPage mediaPage = mediaPageArr[i13];
                             if (mediaPage != null && mediaPage.listView != null && this.mediaPages[i13].listView.getAdapter() == adapter3) {
-                                internalListView = this.mediaPages[i13].listView;
+                                InternalListView internalListView2 = this.mediaPages[i13].listView;
                                 this.mediaPages[i13].listView.stopScroll();
+                                internalListView = internalListView2;
                             }
                             i13++;
                         }
@@ -7435,15 +7368,15 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             if (ChatObject.isChannel(chat)) {
                 if (longValue2 == 0 && this.mergeDialogId != 0) {
                     i3 = 1;
-                    ArrayList arrayList2 = (ArrayList) objArr[0];
-                    size = arrayList2.size();
+                    ArrayList arrayList3 = (ArrayList) objArr[0];
+                    size = arrayList3.size();
                     z = false;
                     for (i4 = 0; i4 < size; i4++) {
                         int i17 = 0;
                         while (true) {
                             SharedMediaData[] sharedMediaDataArr = this.sharedMediaData;
                             if (i17 < sharedMediaDataArr.length) {
-                                if (sharedMediaDataArr[i17].deleteMessage(((Integer) arrayList2.get(i4)).intValue(), i3) != null) {
+                                if (sharedMediaDataArr[i17].deleteMessage(((Integer) arrayList3.get(i4)).intValue(), i3) != null) {
                                     i16 = i17;
                                     z = true;
                                 }
@@ -7495,8 +7428,8 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 return;
             }
             i3 = 0;
-            ArrayList arrayList22 = (ArrayList) objArr[0];
-            size = arrayList22.size();
+            ArrayList arrayList32 = (ArrayList) objArr[0];
+            size = arrayList32.size();
             z = false;
             while (i4 < size) {
             }
@@ -7514,29 +7447,26 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             if (longValue3 != j) {
                 return;
             }
-            ArrayList arrayList3 = (ArrayList) objArr[1];
+            ArrayList arrayList4 = (ArrayList) objArr[1];
             boolean isEncryptedDialog2 = DialogObject.isEncryptedDialog(j);
-            int i18 = 0;
-            boolean z3 = false;
-            while (i18 < arrayList3.size()) {
-                MessageObject messageObject3 = (MessageObject) arrayList3.get(i18);
+            boolean z2 = false;
+            for (int i18 = 0; i18 < arrayList4.size(); i18++) {
+                MessageObject messageObject3 = (MessageObject) arrayList4.get(i18);
                 if (MessageObject.getMedia(messageObject3.messageOwner) != null && !messageObject3.needDrawBluredPreview()) {
                     int mediaType = MediaDataController.getMediaType(messageObject3.messageOwner);
-                    if (mediaType == i16) {
+                    if (mediaType == -1) {
                         return;
                     }
                     SharedMediaData sharedMediaData8 = this.sharedMediaData[mediaType];
                     if (sharedMediaData8.startReached) {
                         if (sharedMediaData8.addMessage(messageObject3, messageObject3.getDialogId() == this.dialog_id ? 0 : 1, true, isEncryptedDialog2)) {
                             this.hasMedia[mediaType] = 1;
-                            z3 = true;
+                            z2 = true;
                         }
                     }
                 }
-                i18++;
-                i16 = -1;
             }
-            if (!z3) {
+            if (!z2) {
                 return;
             }
             this.scrolling = true;
@@ -7554,13 +7484,9 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                         adapter = this.linksAdapter;
                     } else if (i19 == 4) {
                         adapter = this.audioAdapter;
-                    } else {
-                        if (i19 == 5) {
-                            adapter = this.gifAdapter;
-                        } else {
-                            adapter = i19 == 15 ? this.pollAdapter : null;
-                        }
-                        if (adapter == null) {
+                    } else if (i19 == 5) {
+                        adapter = this.gifAdapter;
+                        if (adapter != null) {
                             adapter.getItemCount();
                             this.photoVideoAdapter.notifyDataSetChanged();
                             this.documentsAdapter.notifyDataSetChanged();
@@ -7571,8 +7497,13 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                             this.gifAdapter.notifyDataSetChanged();
                         }
                         i8++;
+                    } else {
+                        adapter = i19 == 15 ? this.pollAdapter : null;
+                        if (adapter != null) {
+                        }
+                        i8++;
                     }
-                    if (adapter == null) {
+                    if (adapter != null) {
                     }
                     i8++;
                 } else {
@@ -7642,61 +7573,18 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             }
         } else {
             if (i == NotificationCenter.storiesListUpdated) {
-                StoriesController.StoriesList storiesList2 = (StoriesController.StoriesList) objArr[0];
-                MediaPage mediaPage4 = getMediaPage(storyAlbums_getTabTypeByStoriesList(storiesList2));
+                StoriesController.StoriesList storiesList = (StoriesController.StoriesList) objArr[0];
+                MediaPage mediaPage4 = getMediaPage(storyAlbums_getTabTypeByStoriesList(storiesList));
                 if (mediaPage4 != null) {
-                    if (mediaPage4.fastScrollEnabled != (storiesList2.getCount() > 0)) {
-                        mediaPage4.fastScrollEnabled = storiesList2.getCount() > 0;
+                    if (mediaPage4.fastScrollEnabled != (storiesList.getCount() > 0)) {
+                        mediaPage4.fastScrollEnabled = storiesList.getCount() > 0;
                         updateFastScrollVisibility(mediaPage4, true);
                     }
                 }
                 if (mediaPage4 != null) {
-                    StoriesAdapter storyAlbums_getStoriesAdapterByTabType2 = storyAlbums_getStoriesAdapterByTabType(mediaPage4.selectedType);
-                    if (storyAlbums_getStoriesAdapterByTabType2 != null && storyAlbums_getStoriesAdapterByTabType2.storiesList == storiesList2 && objArr.length > 1) {
-                        Object obj = objArr[1];
-                        if (obj instanceof StoriesController.StoriesListUpdate) {
-                            StoriesController.StoriesListUpdate storiesListUpdate = (StoriesController.StoriesListUpdate) obj;
-                            if (storiesListUpdate.fullRefresh) {
-                                AndroidUtilities.notifyDataSetChanged(mediaPage4.listView);
-                            } else {
-                                int uploadingStoriesSize = storyAlbums_getStoriesAdapterByTabType2.uploadingStoriesSize();
-                                int i24 = storiesListUpdate.changeCount;
-                                if (i24 > 0) {
-                                    storyAlbums_getStoriesAdapterByTabType2.notifyItemRangeChanged(storiesListUpdate.relativeChangeStart + uploadingStoriesSize, i24);
-                                }
-                                int i25 = storiesListUpdate.insertCount;
-                                if (i25 > 0) {
-                                    storyAlbums_getStoriesAdapterByTabType2.notifyItemRangeInserted(storiesListUpdate.relativeInsertStart + uploadingStoriesSize, i25);
-                                }
-                                int i26 = storiesListUpdate.removeCount;
-                                if (i26 > 0) {
-                                    storyAlbums_getStoriesAdapterByTabType2.notifyItemRangeRemoved(uploadingStoriesSize + storiesListUpdate.relativeRemoveStart, i26);
-                                }
-                                storyAlbums_getStoriesAdapterByTabType2.checkColumns();
-                            }
-                            if (isAnyStoryPageType(mediaPage4.selectedType) && (storyAlbums_getStoriesAdapterByTabType = storyAlbums_getStoriesAdapterByTabType(mediaPage4.selectedType)) != null) {
-                                StickerEmptyView stickerEmptyView = mediaPage4.emptyView;
-                                storiesList = storyAlbums_getStoriesAdapterByTabType.storiesList;
-                                if (storiesList != null && (storiesList.isLoading() || (hasInternet() && storyAlbums_getStoriesAdapterByTabType.storiesList.getCount() > 0))) {
-                                    z2 = true;
-                                }
-                                stickerEmptyView.showProgress(z2);
-                            }
-                            if (mediaPage4.listView.getLayoutManager() instanceof LinearLayoutManager) {
-                                checkLoadMoreScroll(mediaPage4, mediaPage4.listView, (LinearLayoutManager) mediaPage4.listView.getLayoutManager());
-                            }
-                        }
-                    }
                     AndroidUtilities.notifyDataSetChanged(mediaPage4.listView);
-                    if (isAnyStoryPageType(mediaPage4.selectedType)) {
-                        StickerEmptyView stickerEmptyView2 = mediaPage4.emptyView;
-                        storiesList = storyAlbums_getStoriesAdapterByTabType.storiesList;
-                        if (storiesList != null) {
-                            z2 = true;
-                        }
-                        stickerEmptyView2.showProgress(z2);
-                    }
                     if (mediaPage4.listView.getLayoutManager() instanceof LinearLayoutManager) {
+                        checkLoadMoreScroll(mediaPage4, mediaPage4.listView, (LinearLayoutManager) mediaPage4.listView.getLayoutManager());
                     }
                 }
                 Delegate delegate = this.delegate;
@@ -7710,8 +7598,8 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 for (MediaPage mediaPage5 : this.mediaPages) {
                     if (mediaPage5 != null && mediaPage5.listView != null && isAnyStoryPageType(mediaPage5.selectedType)) {
                         if (!isBot() || mediaPage5.listView.getAdapter() == null) {
-                            for (int i27 = 0; i27 < mediaPage5.listView.getChildCount(); i27++) {
-                                View childAt3 = mediaPage5.listView.getChildAt(i27);
+                            for (int i24 = 0; i24 < mediaPage5.listView.getChildCount(); i24++) {
+                                View childAt3 = mediaPage5.listView.getChildAt(i24);
                                 if (childAt3 instanceof SharedPhotoVideoCell2) {
                                     ((SharedPhotoVideoCell2) childAt3).updateViews();
                                 }
@@ -9416,7 +9304,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             boolean isStoryAlbumPageType = isStoryAlbumPageType(getClosestTab());
             final ItemOptions makeOptions = ItemOptions.makeOptions(this.profileActivity, view, true);
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda307(makeOptions));
+            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda318(makeOptions));
             makeSwipeback.addGap();
             ItemOptions.addAlbumsItemOptions(makeSwipeback, getStoriesController().getStoryAlbumsList(this.dialog_id), hashSet, true, new Runnable() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda24
                 @Override // java.lang.Runnable
@@ -13306,8 +13194,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public void checkColumns() {
+        private void checkColumns() {
             if (this.storiesList == null || this.isArchive) {
                 return;
             }
@@ -13327,37 +13214,6 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                     }
                 }
                 SharedMediaLayout.this.storiesColumnsCountSet = true;
-            }
-        }
-
-        public int uploadingStoriesSize() {
-            return this.uploadingStories.size();
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public void notifyItemRangeChanged(int i, int i2) {
-            super.notifyItemRangeChanged(i, i2);
-            StoriesAdapter storiesAdapter = this.supportingAdapter;
-            if (storiesAdapter != null) {
-                storiesAdapter.notifyItemRangeChanged(i, i2);
-            }
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public void notifyItemRangeInserted(int i, int i2) {
-            super.notifyItemRangeInserted(i, i2);
-            StoriesAdapter storiesAdapter = this.supportingAdapter;
-            if (storiesAdapter != null) {
-                storiesAdapter.notifyItemRangeInserted(i, i2);
-            }
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-        public void notifyItemRangeRemoved(int i, int i2) {
-            super.notifyItemRangeRemoved(i, i2);
-            StoriesAdapter storiesAdapter = this.supportingAdapter;
-            if (storiesAdapter != null) {
-                storiesAdapter.notifyItemRangeRemoved(i, i2);
             }
         }
 
@@ -15385,7 +15241,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
 
         private StoryAlbumData(Context context, int i) {
             this.albumId = i;
-            this.tabType = SharedMediaLayout.getStoryAlbumType(SharedMediaLayout.access$14708(SharedMediaLayout.this));
+            this.tabType = SharedMediaLayout.getStoryAlbumType(SharedMediaLayout.access$14608(SharedMediaLayout.this));
             this.adapter = new StoriesAdapter(context, i, false) { // from class: org.telegram.ui.Components.SharedMediaLayout.StoryAlbumData.1
                 {
                     SharedMediaLayout sharedMediaLayout = SharedMediaLayout.this;
@@ -15404,39 +15260,6 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                         StoriesController.StoriesList storiesList = this.storiesList;
                         stickerEmptyView.showProgress(storiesList != null && (storiesList.isLoading() || (SharedMediaLayout.this.hasInternet() && this.storiesList.getCount() > 0)));
                     }
-                }
-
-                @Override // org.telegram.ui.Components.SharedMediaLayout.StoriesAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
-                public void notifyItemRangeChanged(int i2, int i3) {
-                    super.notifyItemRangeChanged(i2, i3);
-                    StoryAlbumData storyAlbumData = StoryAlbumData.this;
-                    MediaPage mediaPage = SharedMediaLayout.this.getMediaPage(storyAlbumData.tabType);
-                    if (mediaPage == null || mediaPage.animationSupportingListView.getVisibility() != 0) {
-                        return;
-                    }
-                    StoryAlbumData.this.adapterSupport.notifyItemRangeChanged(i2, i3);
-                }
-
-                @Override // org.telegram.ui.Components.SharedMediaLayout.StoriesAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
-                public void notifyItemRangeInserted(int i2, int i3) {
-                    super.notifyItemRangeInserted(i2, i3);
-                    StoryAlbumData storyAlbumData = StoryAlbumData.this;
-                    MediaPage mediaPage = SharedMediaLayout.this.getMediaPage(storyAlbumData.tabType);
-                    if (mediaPage == null || mediaPage.animationSupportingListView.getVisibility() != 0) {
-                        return;
-                    }
-                    StoryAlbumData.this.adapterSupport.notifyItemRangeInserted(i2, i3);
-                }
-
-                @Override // org.telegram.ui.Components.SharedMediaLayout.StoriesAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
-                public void notifyItemRangeRemoved(int i2, int i3) {
-                    super.notifyItemRangeRemoved(i2, i3);
-                    StoryAlbumData storyAlbumData = StoryAlbumData.this;
-                    MediaPage mediaPage = SharedMediaLayout.this.getMediaPage(storyAlbumData.tabType);
-                    if (mediaPage == null || mediaPage.animationSupportingListView.getVisibility() != 0) {
-                        return;
-                    }
-                    StoryAlbumData.this.adapterSupport.notifyItemRangeRemoved(i2, i3);
                 }
             };
             this.adapterSupport = SharedMediaLayout.this.new StoriesAdapter(context, i, false);

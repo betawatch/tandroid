@@ -751,6 +751,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
             } else {
                 this.shadowDrawable.setBounds(-AndroidUtilities.dp(6.0f), i4, view.getMeasuredWidth() + AndroidUtilities.dp(6.0f), view.getMeasuredHeight());
             }
+            checkBackDrawableInsets();
             this.shadowDrawable.draw(canvas);
             if (this.showHandle && f3 > 0.0f) {
                 int dp = AndroidUtilities.dp(36.0f);
@@ -763,9 +764,22 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
         onPreDraw(canvas, i4, f);
     }
 
+    private void checkBackDrawableInsets() {
+        if (this.backDrawable == null || this.containerView == null || this.shadowDrawable == null || !shouldDrawBackground() || this.hasFixedSize) {
+            return;
+        }
+        android.graphics.Rect bounds = this.shadowDrawable.getBounds();
+        if (this.containerView.getMeasuredWidth() >= this.container.getMeasuredWidth()) {
+            this.backDrawable.setBackgroundInsets(0, 0, 0, ((this.containerView.getMeasuredHeight() - bounds.top) - AndroidUtilities.dp(30.0f)) - ((int) this.containerView.getTranslationY()));
+        } else {
+            this.backDrawable.setBackgroundInsets(0, 0, 0, 0);
+        }
+    }
+
     @Override // org.telegram.ui.ActionBar.BottomSheet
     protected void onContainerViewTranslation() {
         onSheetTop(this.lastTop);
+        checkBackDrawableInsets();
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet

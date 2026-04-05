@@ -2278,9 +2278,9 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{2, 1, 2, 2, 4, 2};
             case NotificationCenter.groupCallTypingsUpdated /* 171 */:
                 return new int[]{2, 0, 2, 0, 2, 1};
-            case 172:
+            case NotificationCenter.didEndCall /* 172 */:
                 return new int[]{3, 4, 1, 4, 2, 2};
-            case NotificationCenter.closeInCallActivity /* 173 */:
+            case 173:
                 return new int[]{1, 0, 0, 0, 1, 2};
             case NotificationCenter.groupCallVisibilityChanged /* 174 */:
                 return new int[]{2, 2, 4, 2, 2, 2};

@@ -225,12 +225,12 @@ public abstract class MimeTypes {
                 default:
                     switch (i) {
                         case NotificationCenter.activeGroupCallsUpdated /* 169 */:
-                        case 172:
+                        case NotificationCenter.didEndCall /* 172 */:
                             return "audio/vnd.dts";
                         case NotificationCenter.applyGroupCallVisibleParticipants /* 170 */:
                         case NotificationCenter.groupCallTypingsUpdated /* 171 */:
                             return "audio/vnd.dts.hd";
-                        case NotificationCenter.closeInCallActivity /* 173 */:
+                        case 173:
                             return "audio/opus";
                         case NotificationCenter.groupCallVisibilityChanged /* 174 */:
                             return "audio/ac4";

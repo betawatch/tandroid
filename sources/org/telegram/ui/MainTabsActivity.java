@@ -428,7 +428,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
                 accountView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda7
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
-                        MainTabsActivity.this.lambda$openAccountSelector$5(intValue, makeOptions, view2);
+                        MainTabsActivity.this.lambda$openAccountSelector$7(intValue, makeOptions, view2);
                     }
                 });
                 makeOptions.addView(accountView, LayoutHelper.createLinear(NotificationCenter.starUserGiftsLoaded, 48));
@@ -479,7 +479,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openAccountSelector$5(int i, ItemOptions itemOptions, View view) {
+    public /* synthetic */ void lambda$openAccountSelector$7(int i, ItemOptions itemOptions, View view) {
         if (this.currentAccount == i) {
             return;
         }
@@ -932,7 +932,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MainTabsActivity.this.lambda$showAccountChangeHint$7();
+                    MainTabsActivity.this.lambda$showAccountChangeHint$9();
                 }
             }, 1500L);
             MessagesController.getGlobalMainSettings().edit().putInt("accountswitchhint", MessagesController.getGlobalMainSettings().getInt("channelgifthint", 0) + 1).apply();
@@ -941,7 +941,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showAccountChangeHint$7() {
+    public /* synthetic */ void lambda$showAccountChangeHint$9() {
         GlassTabView[] glassTabViewArr;
         if (getContext() == null || (glassTabViewArr = this.tabs) == null) {
             return;
@@ -959,7 +959,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         this.accountSwitchHint.setOnHiddenListener(new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                MainTabsActivity.this.lambda$showAccountChangeHint$6();
+                MainTabsActivity.this.lambda$showAccountChangeHint$8();
             }
         });
         this.accountSwitchHint.setDuration(8000L);
@@ -967,7 +967,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showAccountChangeHint$6() {
+    public /* synthetic */ void lambda$showAccountChangeHint$8() {
         AndroidUtilities.removeFromParent(this.accountSwitchHint);
     }
 

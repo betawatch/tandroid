@@ -76,6 +76,7 @@ import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
+import org.telegram.ui.Components.TypefaceSpan;
 import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
@@ -1552,7 +1553,7 @@ public class ResaleGiftsFragment extends BaseFragment implements FactorAnimator.
         protected void onMeasure(int i, int i2) {
             int size = View.MeasureSpec.getSize(i);
             if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
-                size = AndroidUtilities.dp(270.0f);
+                size = AndroidUtilities.dp(250.0f);
             }
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i2);
         }
@@ -1686,7 +1687,15 @@ public class ResaleGiftsFragment extends BaseFragment implements FactorAnimator.
             if (!TextUtils.isEmpty(str)) {
                 charSequence = AndroidUtilities.highlightText(charSequence, str, this.resourcesProvider);
             }
-            setTextAndValueAndIcon(charSequence, i > 0 ? Integer.toString(i) : null, 0, this.emojiDrawable);
+            if (i > 0) {
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
+                spannableStringBuilder.append((CharSequence) "  ");
+                int length = spannableStringBuilder.length();
+                spannableStringBuilder.append((CharSequence) Integer.toString(i));
+                spannableStringBuilder.setSpan(new TypefaceSpan(AndroidUtilities.bold()), length, spannableStringBuilder.length(), 33);
+                charSequence = spannableStringBuilder;
+            }
+            setTextAndIcon(charSequence, 0, this.emojiDrawable);
             setChecked(z);
         }
 
@@ -1694,7 +1703,7 @@ public class ResaleGiftsFragment extends BaseFragment implements FactorAnimator.
         protected void onMeasure(int i, int i2) {
             int size = View.MeasureSpec.getSize(i);
             if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
-                size = AndroidUtilities.dp(270.0f);
+                size = AndroidUtilities.dp(250.0f);
             }
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i2);
         }
@@ -1785,7 +1794,15 @@ public class ResaleGiftsFragment extends BaseFragment implements FactorAnimator.
             if (!TextUtils.isEmpty(str)) {
                 charSequence = AndroidUtilities.highlightText(charSequence, str, this.resourcesProvider);
             }
-            setTextAndValueAndIcon(charSequence, i > 0 ? Integer.toString(i) : null, 0, this.emojiDrawable);
+            if (i > 0) {
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
+                spannableStringBuilder.append((CharSequence) "  ");
+                int length = spannableStringBuilder.length();
+                spannableStringBuilder.append((CharSequence) Integer.toString(i));
+                spannableStringBuilder.setSpan(new TypefaceSpan(AndroidUtilities.bold()), length, spannableStringBuilder.length(), 33);
+                charSequence = spannableStringBuilder;
+            }
+            setTextAndIcon(charSequence, 0, this.emojiDrawable);
             setChecked(z);
         }
 
@@ -1793,7 +1810,7 @@ public class ResaleGiftsFragment extends BaseFragment implements FactorAnimator.
         protected void onMeasure(int i, int i2) {
             int size = View.MeasureSpec.getSize(i);
             if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
-                size = AndroidUtilities.dp(270.0f);
+                size = AndroidUtilities.dp(250.0f);
             }
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i2);
         }
@@ -1840,7 +1857,15 @@ public class ResaleGiftsFragment extends BaseFragment implements FactorAnimator.
             if (!TextUtils.isEmpty(str)) {
                 charSequence = AndroidUtilities.highlightText(charSequence, str, this.resourcesProvider);
             }
-            setTextAndValueAndIcon(charSequence, i > 0 ? Integer.toString(i) : null, 0, createCircleDrawable);
+            if (i > 0) {
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
+                spannableStringBuilder.append((CharSequence) "  ");
+                int length = spannableStringBuilder.length();
+                spannableStringBuilder.append((CharSequence) Integer.toString(i));
+                spannableStringBuilder.setSpan(new TypefaceSpan(AndroidUtilities.bold()), length, spannableStringBuilder.length(), 33);
+                charSequence = spannableStringBuilder;
+            }
+            setTextAndIcon(charSequence, 0, createCircleDrawable);
             setChecked(z);
         }
 

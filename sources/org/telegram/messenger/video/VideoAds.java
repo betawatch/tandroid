@@ -61,7 +61,6 @@ import org.telegram.ui.RevenueSharingAdsInfoBottomSheet;
 
 /* loaded from: classes3.dex */
 public class VideoAds {
-    public static final int BULLETIN_TAG_VIDEO_AD = 999;
     private static HashMap<VideoAdsLocation, VideoAds> cached = new HashMap<>();
     private int between_delay;
     private Bulletin bulletin;
@@ -158,10 +157,6 @@ public class VideoAds {
         PremiumFeatureBottomSheet premiumFeatureBottomSheet;
         ItemOptions itemOptions = this.currentMenu;
         return (itemOptions != null && itemOptions.isShown()) || ((premiumFeatureBottomSheet = this.premiumSheet) != null && premiumFeatureBottomSheet.isShown());
-    }
-
-    public boolean isBulletinShown() {
-        return this.bulletin != null;
     }
 
     private void init(BulletinFactory bulletinFactory) {
@@ -313,10 +308,8 @@ public class VideoAds {
         });
         final Bulletin create = this.bulletinFactory.create(adLayout, tL_sponsoredMessage.max_display_duration * MediaDataController.MAX_STYLE_RUNS_COUNT);
         this.bulletin = create;
-        create.setTag(BULLETIN_TAG_VIDEO_AD);
-        Bulletin bulletin2 = this.bulletin;
-        bulletin2.setCanHideOnShow = false;
-        bulletin2.setCanHide(false);
+        create.setCanHideOnShow = false;
+        create.setCanHide(false);
         final Runnable runnable = new Runnable() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda16
             @Override // java.lang.Runnable
             public final void run() {
@@ -334,9 +327,9 @@ public class VideoAds {
         };
         AndroidUtilities.runOnUIThread(runnable, tL_sponsoredMessage.min_display_duration * 1000);
         final boolean[] zArr2 = new boolean[1];
-        Bulletin bulletin3 = this.bulletin;
-        bulletin3.hideAfterBottomSheet = false;
-        bulletin3.setOnHideListener(new Runnable() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda18
+        Bulletin bulletin2 = this.bulletin;
+        bulletin2.hideAfterBottomSheet = false;
+        bulletin2.setOnHideListener(new Runnable() { // from class: org.telegram.messenger.video.VideoAds$$ExternalSyntheticLambda18
             @Override // java.lang.Runnable
             public final void run() {
                 VideoAds.this.lambda$show$5(create, zArr2);

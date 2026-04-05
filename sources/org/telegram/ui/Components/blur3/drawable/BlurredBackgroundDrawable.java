@@ -53,6 +53,7 @@ public abstract class BlurredBackgroundDrawable extends Drawable {
     private long ninePatchDrawableHash;
     private final Rect ninePatchDrawablePadding;
     private final Blur3HashImpl ninePatchHashBuilder;
+    private Bitmap[] ninePatchRef;
     private final Paint paintStrokeFill;
     protected float shadowAlpha;
     protected int shadowColor;
@@ -738,7 +739,7 @@ public abstract class BlurredBackgroundDrawable extends Drawable {
         long j = this.ninePatchHashBuilder.get();
         if (this.ninePatchDrawable == null || this.ninePatchDrawableHash != j) {
             this.ninePatchDrawableHash = j;
-            NinePatchDrawable createNinePatch = NinePatchBuilder.createNinePatch(i, this.boundProps.radii, this.shadowLayerRadius, this.shadowColor, this.shadowLayerDx, this.shadowLayerDy);
+            NinePatchDrawable createNinePatch = NinePatchBuilder.createNinePatch(this.ninePatchRef, i, this.boundProps.radii, this.shadowLayerRadius, this.shadowColor, this.shadowLayerDx, this.shadowLayerDy, 1);
             this.ninePatchDrawable = createNinePatch;
             createNinePatch.getPadding(this.ninePatchDrawablePadding);
         }

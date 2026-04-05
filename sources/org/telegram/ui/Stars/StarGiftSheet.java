@@ -2261,7 +2261,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                     if (childAt == ((BottomSheetWithRecyclerListView) StarGiftSheet.this).recyclerListView) {
                         childAt.measure(i, View.MeasureSpec.makeMeasureSpec(size - bottomInset, TLObject.FLAG_30));
                     } else {
-                        childAt.measure(i, View.MeasureSpec.makeMeasureSpec(9999, TLObject.FLAG_31));
+                        childAt.measure(i, View.MeasureSpec.makeMeasureSpec((childAt.getLayoutParams() == null || childAt.getLayoutParams().height != -1) ? 9999 : size, TLObject.FLAG_31));
                     }
                 } else {
                     childAt.measure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_30));
@@ -2610,7 +2610,13 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 if (i3 >= backupImageViewArr.length) {
                     break;
                 }
-                backupImageViewArr[i3] = new BackupImageView(context);
+                backupImageViewArr[i3] = new BackupImageView(context) { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.1
+                    @Override // android.view.View
+                    public void setAlpha(float f2) {
+                        super.setAlpha(f2);
+                        setVisibility(f2 > 0.0f ? 0 : 4);
+                    }
+                };
                 this.imageView[i3].setLayerNum(6660);
                 if (i3 > 0) {
                     this.imageView[i3].getImageReceiver().setCrossfadeDuration(1);
@@ -2655,7 +2661,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             textView2.setVisibility(8);
             textView2.setGravity(17);
             ScaleStateListAnimator.apply(textView2);
-            LinearLayout linearLayout = new LinearLayout(context) { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.1
+            LinearLayout linearLayout = new LinearLayout(context) { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.2
                 @Override // android.view.ViewGroup, android.view.View
                 public boolean dispatchTouchEvent(MotionEvent motionEvent) {
                     if (TopView.this.currentPage.is(0)) {
@@ -2895,11 +2901,17 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             this.currentPage = pageTransition;
             int i2 = 0;
             while (true) {
-                LinearLayout[] linearLayoutArr = this.layout;
-                if (i2 >= linearLayoutArr.length) {
+                int i3 = 4;
+                if (i2 >= this.layout.length) {
                     break;
                 }
-                linearLayoutArr[i2].setAlpha(pageTransition.at(i2));
+                float at2 = pageTransition.at(i2);
+                this.layout[i2].setAlpha(at2);
+                LinearLayout linearLayout = this.layout[i2];
+                if (at2 > 0.0f) {
+                    i3 = 0;
+                }
+                linearLayout.setVisibility(i3);
                 i2++;
             }
             this.closeView.setAlpha(Math.max(this.backdrop[0] != null ? pageTransition.at(2) : 0.0f, this.backdrop[1] != null ? pageTransition.at(1) : 0.0f));
@@ -2915,44 +2927,44 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 this.resellPriceView.setVisibility((this.hasResellPrice && pageTransition.to == 0) ? 0 : 4);
             }
             int color = Theme.getColor(Theme.key_dialogTextBlack, this.resourcesProvider);
-            int i3 = 0;
-            while (i3 < 2) {
-                this.titleView[i3].setTextColor(this.backdrop[Math.min(1, i3)] == null ? color : -1);
-                LinkSpanDrawable.LinksTextView linksTextView = this.subtitleView[i3];
-                if (i3 == 0 || i3 == 2) {
-                    TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = this.backdrop[i3];
+            int i4 = 0;
+            while (i4 < 2) {
+                this.titleView[i4].setTextColor(this.backdrop[Math.min(1, i4)] == null ? color : -1);
+                LinkSpanDrawable.LinksTextView linksTextView = this.subtitleView[i4];
+                if (i4 == 0 || i4 == 2) {
+                    TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = this.backdrop[i4];
                     i = stargiftattributebackdrop == null ? color : (-16777216) | stargiftattributebackdrop.text_color;
                 } else {
                     TL_stars.starGiftAttributeBackdrop[] stargiftattributebackdropArr2 = this.backdrop;
                     TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = stargiftattributebackdropArr2[1];
-                    int i4 = stargiftattributebackdrop2 == null ? color : stargiftattributebackdrop2.text_color | (-16777216);
+                    int i5 = stargiftattributebackdrop2 == null ? color : stargiftattributebackdrop2.text_color | (-16777216);
                     TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop3 = stargiftattributebackdropArr2[2];
-                    i = ColorUtils.blendARGB(i4, stargiftattributebackdrop3 == null ? color : (-16777216) | stargiftattributebackdrop3.text_color, this.toggleBackdrop);
+                    i = ColorUtils.blendARGB(i5, stargiftattributebackdrop3 == null ? color : (-16777216) | stargiftattributebackdrop3.text_color, this.toggleBackdrop);
                 }
                 linksTextView.setTextColor(i);
-                if (this.backdrop[i3] != null) {
-                    z = (AndroidUtilities.dp(184.0f) == this.layoutLayoutParams[i3].topMargin && this.layout[i3].getPaddingBottom() == AndroidUtilities.dp(18.0f)) ? false : true;
+                if (this.backdrop[i4] != null) {
+                    z = (AndroidUtilities.dp(184.0f) == this.layoutLayoutParams[i4].topMargin && this.layout[i4].getPaddingBottom() == AndroidUtilities.dp(18.0f)) ? false : true;
                     if (z) {
-                        this.layout[i3].setPadding(0, 0, 0, AndroidUtilities.dp(18.0f));
-                        this.layoutLayoutParams[i3].topMargin = AndroidUtilities.dp(184.0f);
+                        this.layout[i4].setPadding(0, 0, 0, AndroidUtilities.dp(18.0f));
+                        this.layoutLayoutParams[i4].topMargin = AndroidUtilities.dp(184.0f);
                     }
                 } else {
-                    z = (AndroidUtilities.dp(170.0f) == this.layoutLayoutParams[i3].topMargin && this.layout[i3].getPaddingBottom() == AndroidUtilities.dp(3.0f)) ? false : true;
+                    z = (AndroidUtilities.dp(170.0f) == this.layoutLayoutParams[i4].topMargin && this.layout[i4].getPaddingBottom() == AndroidUtilities.dp(3.0f)) ? false : true;
                     if (z) {
-                        this.layout[i3].setPadding(0, 0, 0, AndroidUtilities.dp(3.0f));
-                        this.layoutLayoutParams[i3].topMargin = AndroidUtilities.dp(170.0f);
+                        this.layout[i4].setPadding(0, 0, 0, AndroidUtilities.dp(3.0f));
+                        this.layoutLayoutParams[i4].topMargin = AndroidUtilities.dp(170.0f);
                     }
                 }
-                this.subtitleViewLayoutParams[i3].topMargin = AndroidUtilities.dp(i3 == 1 ? 7.33f : this.backdrop[0] == null ? 9.0f : 5.66f);
+                this.subtitleViewLayoutParams[i4].topMargin = AndroidUtilities.dp(i4 == 1 ? 7.33f : this.backdrop[0] == null ? 9.0f : 5.66f);
                 if (z) {
-                    this.layout[i3].setLayoutParams(this.layoutLayoutParams[i3]);
-                    if (i3 == 0) {
-                        this.subtitleContainer.setLayoutParams(this.subtitleViewLayoutParams[i3]);
+                    this.layout[i4].setLayoutParams(this.layoutLayoutParams[i4]);
+                    if (i4 == 0) {
+                        this.subtitleContainer.setLayoutParams(this.subtitleViewLayoutParams[i4]);
                     } else {
-                        this.subtitleView[i3].setLayoutParams(this.subtitleViewLayoutParams[i3]);
+                        this.subtitleView[i4].setLayoutParams(this.subtitleViewLayoutParams[i4]);
                     }
                 }
-                i3++;
+                i4++;
             }
             TextView textView = this.collectionReleasedView;
             int dp = AndroidUtilities.dp(24.0f);
@@ -2971,17 +2983,17 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             this.imageLayout.setScaleY(AndroidUtilities.lerp(1.0f, this.wearImageScale, pageTransition.at(2)));
             this.imageLayout.setTranslationX(this.wearImageTx * pageTransition.at(2));
             this.imageLayout.setTranslationY((AndroidUtilities.dp(16.0f) * pageTransition.at(1)) + (this.wearImageTy * pageTransition.at(2)));
-            LinearLayout linearLayout = this.layout[2];
-            int i5 = pageTransition.from;
-            if (i5 == 2 && pageTransition.to == 2) {
+            LinearLayout linearLayout2 = this.layout[2];
+            int i6 = pageTransition.from;
+            if (i6 == 2 && pageTransition.to == 2) {
                 at = 0.0f;
             } else {
-                if (i5 == 2) {
-                    i5 = pageTransition.to;
+                if (i6 == 2) {
+                    i6 = pageTransition.to;
                 }
-                at = (-(r1[i5].getMeasuredHeight() - this.layout[2].getMeasuredHeight())) * (1.0f - pageTransition.at(2));
+                at = (-(r1[i6].getMeasuredHeight() - this.layout[2].getMeasuredHeight())) * (1.0f - pageTransition.at(2));
             }
-            linearLayout.setTranslationY(at);
+            linearLayout2.setTranslationY(at);
             this.ribbon.setVisibility((this.hasRibbon && this.currentPage.contains(0)) ? 0 : 8);
             this.ribbon.setAlpha(this.currentPage.at(0));
             this.craftTopView.setVisibility(pageTransition.at(4) <= 0.0f ? 8 : 0);
@@ -3114,7 +3126,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 this.resellPriceViewInProgress = true;
                 ViewPropertyAnimator duration = this.resellPriceView.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(420L);
                 CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
-                duration.setInterpolator(cubicBezierInterpolator).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.2
+                duration.setInterpolator(cubicBezierInterpolator).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.3
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         TopView.this.resellPriceViewInProgress = false;
@@ -3124,12 +3136,12 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             } else {
                 ViewPropertyAnimator duration2 = this.resellPriceView.animate().scaleX(0.4f).scaleY(0.4f).alpha(0.0f).setDuration(420L);
                 CubicBezierInterpolator cubicBezierInterpolator2 = CubicBezierInterpolator.EASE_OUT_QUINT;
-                duration2.setInterpolator(cubicBezierInterpolator2).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.4
+                duration2.setInterpolator(cubicBezierInterpolator2).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.5
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         TopView.this.resellPriceView.setVisibility(4);
                     }
-                }).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.3
+                }).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.4
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         TopView.this.resellPriceViewInProgress = false;
@@ -3262,7 +3274,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                         StarGiftSheet.TopView.this.lambda$setPreviewAttributes$4(valueAnimator2);
                     }
                 });
-                this.rotationAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.5
+                this.rotationAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.6
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         TopView.this.toggleBackdrop = r2.toggled;
@@ -3315,7 +3327,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                         StarGiftSheet.TopView.this.lambda$rotateAttributes$5(valueAnimator2);
                     }
                 });
-                this.rotationAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.6
+                this.rotationAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.7
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         TopView.this.toggleBackdrop = r3.toggled;
@@ -3410,7 +3422,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                     StarGiftSheet.TopView.this.lambda$animateSwitch$6(valueAnimator2);
                 }
             });
-            this.switchAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.7
+            this.switchAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.8
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     TopView.this.switchScale = 1.0f;

@@ -1,10 +1,15 @@
 package org.telegram.messenger.utils;
 
 import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
 /* loaded from: classes3.dex */
 public abstract class DrawableUtils {
+    private static final Rect tmpRect = new Rect();
+    private static final RectF tmpRectF = new RectF();
+
     public static void drawWithScale(Canvas canvas, Drawable drawable, float f) {
         if (drawable == null || f == 0.0f) {
             return;
@@ -17,6 +22,15 @@ public abstract class DrawableUtils {
         canvas.scale(f, f, drawable.getBounds().exactCenterX(), drawable.getBounds().exactCenterY());
         drawable.draw(canvas);
         canvas.restore();
+    }
+
+    public static void setBoundsIncreasePadding(Drawable drawable, Rect rect) {
+        Rect rect2 = tmpRect;
+        if (drawable.getPadding(rect2)) {
+            drawable.setBounds(rect.left - rect2.left, rect.top - rect2.top, rect.right + rect2.right, rect.bottom + rect2.bottom);
+        } else {
+            drawable.setBounds(rect);
+        }
     }
 
     public static void setBounds(Drawable drawable, float f, float f2, int i) {

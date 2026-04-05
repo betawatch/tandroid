@@ -1,7 +1,6 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.content.res.Configuration;
 import android.util.SparseArray;
 import android.view.MotionEvent;
 import android.view.View;
@@ -290,18 +289,6 @@ public abstract class ViewPagerActivity extends BaseFragment {
         this.isResumed = true;
         checkSystemBarColors();
         checkFragmentsVisibility();
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        int size = this.fragmentsArr.size();
-        for (int i = 0; i < size; i++) {
-            FragmentState fragmentState = (FragmentState) this.fragmentsArr.valueAt(i);
-            if (fragmentState != null) {
-                fragmentState.fragment.onConfigurationChanged(configuration);
-            }
-        }
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

@@ -8680,7 +8680,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                                     if (i == 5) {
                                         this.bigMicDrawable.setCurrentFrame(376);
                                     } else if (i == 7) {
-                                        this.bigMicDrawable.setCurrentFrame(NotificationCenter.closeInCallActivity);
+                                        this.bigMicDrawable.setCurrentFrame(173);
                                     } else if (i == 6) {
                                         this.bigMicDrawable.setCurrentFrame(NotificationCenter.requestPermissions);
                                     } else if (i == 0) {
@@ -8784,7 +8784,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                         } else if (i6 == 6) {
                             customEndFrame2 = this.bigMicDrawable.setCustomEndFrame(NotificationCenter.proxyChangedByRotation);
                         } else if (i6 == 1) {
-                            customEndFrame2 = this.bigMicDrawable.setCustomEndFrame(NotificationCenter.closeInCallActivity);
+                            customEndFrame2 = this.bigMicDrawable.setCustomEndFrame(173);
                         } else {
                             customEndFrame2 = this.bigMicDrawable.setCustomEndFrame(NotificationCenter.didUpdateConnectionState);
                         }
