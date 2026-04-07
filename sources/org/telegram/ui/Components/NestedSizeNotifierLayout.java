@@ -6,9 +6,7 @@ import androidx.core.view.NestedScrollingParent3;
 import androidx.core.view.NestedScrollingParentHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.CachedMediaLayout;
 
 /* loaded from: classes5.dex */
 public abstract class NestedSizeNotifierLayout extends SizeNotifierFrameLayout implements NestedScrollingParent3, View.OnLayoutChangeListener {
@@ -16,6 +14,7 @@ public abstract class NestedSizeNotifierLayout extends SizeNotifierFrameLayout i
     BottomSheet.ContainerView bottomSheetContainerView;
     ChildLayout childLayout;
     int maxTop;
+    int maxTopPadding;
     private NestedScrollingParentHelper nestedScrollingParentHelper;
     View targetListView;
 
@@ -58,13 +57,12 @@ public abstract class NestedSizeNotifierLayout extends SizeNotifierFrameLayout i
     }
 
     private void updateMaxTop() {
-        ChildLayout childLayout;
         View view = this.targetListView;
-        if (view == null || (childLayout = this.childLayout) == null) {
+        if (view == null || this.childLayout == null) {
             return;
         }
-        if (childLayout instanceof CachedMediaLayout) {
-            this.maxTop = view.getPaddingTop() + AndroidUtilities.dp(40.0f);
+        if (this.maxTopPadding != 0) {
+            this.maxTop = view.getPaddingTop() + this.maxTopPadding;
         } else {
             this.maxTop = (view.getMeasuredHeight() - this.targetListView.getPaddingBottom()) - this.childLayout.getMeasuredHeight();
         }
@@ -145,13 +143,18 @@ public abstract class NestedSizeNotifierLayout extends SizeNotifierFrameLayout i
     }
 
     public void setChildLayout(ChildLayout childLayout) {
+        setChildLayout(childLayout, 0);
+    }
+
+    public void setChildLayout(ChildLayout childLayout, int i) {
+        this.maxTopPadding = i;
         if (this.childLayout != childLayout) {
             this.childLayout = childLayout;
             if (this.attached && childLayout != null && childLayout.getListView() != null) {
                 childLayout.getListView().addOnLayoutChangeListener(this);
             }
-            updateMaxTop();
         }
+        updateMaxTop();
     }
 
     @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.view.ViewGroup, android.view.View

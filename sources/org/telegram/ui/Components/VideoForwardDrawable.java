@@ -4,6 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
@@ -137,7 +138,7 @@ public class VideoForwardDrawable extends Drawable {
     public void draw(Canvas canvas) {
         int width;
         float f;
-        android.graphics.Rect bounds = getBounds();
+        Rect bounds = getBounds();
         int width2 = bounds.left + ((bounds.width() - getIntrinsicWidth()) / 2);
         int height = bounds.top + ((bounds.height() - getIntrinsicHeight()) / 2);
         if (this.leftSide) {

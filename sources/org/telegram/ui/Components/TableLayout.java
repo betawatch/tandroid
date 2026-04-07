@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PointF;
 import android.graphics.RectF;
 import android.util.Pair;
 import android.view.View;
@@ -432,7 +433,7 @@ public class TableLayout extends View {
         child.rowspan = i2;
         this.childrens.add(child);
         if (tL_pageTableCell.rowspan > 1) {
-            this.rowSpans.add(new Point(i2, r1 + i2));
+            this.rowSpans.add(new PointF(i2, r1 + i2));
         }
         invalidateStructure();
     }
@@ -866,8 +867,8 @@ public class TableLayout extends View {
                     int size = this.rowSpans.size();
                     while (true) {
                         if (i4 < size) {
-                            Point point = (Point) this.rowSpans.get(i4);
-                            i4 = (point.x > ((float) childAt.layoutParams.rowSpec.span.min) || point.y <= ((float) childAt.layoutParams.rowSpec.span.min)) ? i4 + 1 : 0;
+                            PointF pointF = (PointF) this.rowSpans.get(i4);
+                            i4 = (pointF.x > ((float) childAt.layoutParams.rowSpec.span.min) || pointF.y <= ((float) childAt.layoutParams.rowSpec.span.min)) ? i4 + 1 : 0;
                         } else {
                             this.cellsToFixHeight.add(childAt);
                             break;

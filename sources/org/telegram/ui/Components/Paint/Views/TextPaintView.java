@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PointF;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
@@ -28,8 +29,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Paint.PaintTypeface;
 import org.telegram.ui.Components.Paint.Swatch;
 import org.telegram.ui.Components.Paint.Views.EntityView;
-import org.telegram.ui.Components.Point;
-import org.telegram.ui.Components.Rect;
+import org.telegram.ui.Components.RectOld;
 
 /* loaded from: classes5.dex */
 public class TextPaintView extends EntityView {
@@ -45,8 +45,8 @@ public class TextPaintView extends EntityView {
     private Swatch swatch;
     private PaintTypeface typeface;
 
-    public TextPaintView(Context context, Point point, int i, CharSequence charSequence, Swatch swatch, int i2) {
-        super(context, point);
+    public TextPaintView(Context context, PointF pointF, int i, CharSequence charSequence, Swatch swatch, int i2) {
+        super(context, pointF);
         this.typeface = PaintTypeface.ROBOTO_MEDIUM;
         this.baseFontSize = i;
         EditTextOutline editTextOutline = new EditTextOutline(context) { // from class: org.telegram.ui.Components.Paint.Views.TextPaintView.1
@@ -180,8 +180,8 @@ public class TextPaintView extends EntityView {
         }
     }
 
-    public TextPaintView(Context context, TextPaintView textPaintView, Point point) {
-        this(context, point, textPaintView.baseFontSize, textPaintView.getText(), textPaintView.getSwatch(), textPaintView.currentType);
+    public TextPaintView(Context context, TextPaintView textPaintView, PointF pointF) {
+        this(context, pointF, textPaintView.baseFontSize, textPaintView.getText(), textPaintView.getSwatch(), textPaintView.currentType);
         setRotation(textPaintView.getRotation());
         setScale(textPaintView.getScale());
         setTypeface(textPaintView.getTypeface());
@@ -385,16 +385,16 @@ public class TextPaintView extends EntityView {
     }
 
     @Override // org.telegram.ui.Components.Paint.Views.EntityView
-    public Rect getSelectionBounds() {
+    public RectOld getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new Rect();
+            return new RectOld();
         }
         float scaleX = viewGroup.getScaleX();
         float measuredWidth = (getMeasuredWidth() * getScale()) + (AndroidUtilities.dp(64.0f) / scaleX);
         float measuredHeight = (getMeasuredHeight() * getScale()) + (AndroidUtilities.dp(52.0f) / scaleX);
         float positionX = (getPositionX() - (measuredWidth / 2.0f)) * scaleX;
-        return new Rect(positionX, (getPositionY() - (((measuredHeight - this.editText.getExtendedPaddingTop()) - AndroidUtilities.dpf2(4.0f)) / 2.0f)) * scaleX, ((measuredWidth * scaleX) + positionX) - positionX, (measuredHeight - this.editText.getExtendedPaddingBottom()) * scaleX);
+        return new RectOld(positionX, (getPositionY() - (((measuredHeight - this.editText.getExtendedPaddingTop()) - AndroidUtilities.dpf2(4.0f)) / 2.0f)) * scaleX, ((measuredWidth * scaleX) + positionX) - positionX, (measuredHeight - this.editText.getExtendedPaddingBottom()) * scaleX);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

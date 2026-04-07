@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
@@ -236,7 +237,7 @@ public class MediaActionDrawable extends Drawable {
         if (messageDrawable == null || !messageDrawable.hasGradient() || this.hasOverlayImage) {
             return;
         }
-        android.graphics.Rect bounds = getBounds();
+        Rect bounds = getBounds();
         Shader gradientShader = this.messageDrawable.getGradientShader();
         Matrix matrix = this.messageDrawable.getMatrix();
         matrix.reset();
@@ -299,7 +300,7 @@ public class MediaActionDrawable extends Drawable {
         float f;
         float dp;
         int i2;
-        android.graphics.Rect rect;
+        Rect rect;
         int i3;
         int i4;
         float dp2;
@@ -314,7 +315,7 @@ public class MediaActionDrawable extends Drawable {
         float f8;
         float f9;
         float f10;
-        android.graphics.Rect rect2;
+        Rect rect2;
         int i5;
         int i6;
         int i7;
@@ -370,7 +371,7 @@ public class MediaActionDrawable extends Drawable {
         int i23;
         int i24;
         float f29 = 90.0f;
-        android.graphics.Rect bounds = getBounds();
+        Rect bounds = getBounds();
         Theme.MessageDrawable messageDrawable = this.messageDrawable;
         if (messageDrawable != null && messageDrawable.hasGradient() && !this.hasOverlayImage) {
             Shader gradientShader = this.messageDrawable.getGradientShader();

@@ -144,6 +144,7 @@ import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
 import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RLottieImageView;
+import org.telegram.ui.Components.RectOld;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.TextStyleSpan;
 import org.telegram.ui.Components.ThanosEffect;
@@ -2958,7 +2959,7 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
                 for (int i = 0; i < StoryRecorder.this.paintView.entitiesView.getChildCount(); i++) {
                     View childAt = StoryRecorder.this.paintView.entitiesView.getChildAt(i);
                     if (childAt instanceof EntityView) {
-                        org.telegram.ui.Components.Rect selectionBounds = ((EntityView) childAt).getSelectionBounds();
+                        RectOld selectionBounds = ((EntityView) childAt).getSelectionBounds();
                         RectF rectF = AndroidUtilities.rectTmp;
                         float f3 = selectionBounds.x;
                         float f4 = selectionBounds.y;

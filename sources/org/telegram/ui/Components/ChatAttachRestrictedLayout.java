@@ -1,6 +1,7 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Point;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -137,7 +138,7 @@ public class ChatAttachRestrictedLayout extends ChatAttachAlert.AttachAlertLayou
             this.adapter.notifyDataSetChanged();
         }
         if (!AndroidUtilities.isTablet()) {
-            android.graphics.Point point = AndroidUtilities.displaySize;
+            Point point = AndroidUtilities.displaySize;
             if (point.x > point.y) {
                 i3 = (int) (i2 / 3.5f);
                 int dp = i3 - AndroidUtilities.dp(52.0f);

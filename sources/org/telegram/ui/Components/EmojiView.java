@@ -18,6 +18,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RecordingCanvas;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
@@ -275,7 +276,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
     private ArrayList recentGifs;
     private ArrayList recentStickers;
     private int recentTabNum;
-    android.graphics.Rect rect;
+    Rect rect;
     private LongSparseArray removingStickerSets;
     private final Theme.ResourcesProvider resourcesProvider;
     private final DownscaleScrollableNoiseSuppressor scrollableViewNoiseSuppressor;
@@ -1881,7 +1882,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
         this.animateExpandStartTime = -1L;
         this.emojiPackAlertOpened = false;
         this.fixBottomTabContainerTranslation = true;
-        this.rect = new android.graphics.Rect();
+        this.rect = new Rect();
         RectF rectF = new RectF();
         this.blurredRectF = rectF;
         ArrayList arrayList = new ArrayList(1);
@@ -2305,7 +2306,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                 recyclerListView2.setLayoutManager(gifLayoutManager);
                 this.gifGridView.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: org.telegram.ui.Components.EmojiView.15
                     @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
-                    public void getItemOffsets(android.graphics.Rect rect, View view3, RecyclerView recyclerView, RecyclerView.State state) {
+                    public void getItemOffsets(Rect rect, View view3, RecyclerView recyclerView, RecyclerView.State state) {
                         int childAdapterPosition = recyclerView.getChildAdapterPosition(view3);
                         if (EmojiView.this.gifGridView.getAdapter() == EmojiView.this.gifAdapter && childAdapterPosition == EmojiView.this.gifAdapter.trendingSectionItem) {
                             rect.set(0, 0, 0, 0);
@@ -3903,7 +3904,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                         imageViewEmoji.backgroundThreadDrawHolder[this.threadIndex].overrideAlpha = 1.0f;
                         animatedEmojiDrawable.setAlpha(NotificationCenter.invalidateMotionBackground);
                         int height = (int) (imageViewEmoji.getHeight() * 0.03f);
-                        android.graphics.Rect rect = AndroidUtilities.rectTmp2;
+                        Rect rect = AndroidUtilities.rectTmp2;
                         rect.set((imageViewEmoji.getLeft() + imageViewEmoji.getPaddingLeft()) - this.startOffset, height, (imageViewEmoji.getRight() - imageViewEmoji.getPaddingRight()) - this.startOffset, ((imageViewEmoji.getMeasuredHeight() + height) - imageViewEmoji.getPaddingTop()) - imageViewEmoji.getPaddingBottom());
                         imageViewEmoji.backgroundThreadDrawHolder[this.threadIndex].setBounds(rect);
                         imageViewEmoji.drawable = animatedEmojiDrawable;
@@ -3943,7 +3944,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                         ImageViewEmoji imageViewEmoji = (ImageViewEmoji) this.imageViewEmojis.get(i);
                         if (imageViewEmoji.getSpan() != null && (animatedEmojiDrawable = (AnimatedEmojiDrawable) EmojiView.this.animatedEmojiDrawables.get(imageViewEmoji.span.getDocumentId())) != null) {
                             int height = (int) (imageViewEmoji.getHeight() * 0.03f);
-                            android.graphics.Rect rect = AndroidUtilities.rectTmp2;
+                            Rect rect = AndroidUtilities.rectTmp2;
                             rect.set(imageViewEmoji.getLeft() + imageViewEmoji.getPaddingLeft(), height, imageViewEmoji.getRight() - imageViewEmoji.getPaddingRight(), ((imageViewEmoji.getMeasuredHeight() + height) - imageViewEmoji.getPaddingBottom()) - imageViewEmoji.getPaddingTop());
                             float f4 = imageViewEmoji.pressedProgress;
                             float f5 = f4 != f2 ? (((1.0f - f4) * 0.2f) + 0.8f) * 1.0f : 1.0f;
@@ -4769,7 +4770,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
-        public void getItemOffsets(android.graphics.Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
+        public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
             if (view instanceof StickerSetNameCell) {
                 rect.left = AndroidUtilities.dp(5.0f);
                 rect.right = AndroidUtilities.dp(5.0f);
@@ -7454,7 +7455,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                     trendingListView.setClipToPadding(false);
                     trendingListView.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: org.telegram.ui.Components.EmojiView.StickersGridAdapter.2
                         @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
-                        public void getItemOffsets(android.graphics.Rect rect, View view2, RecyclerView recyclerView, RecyclerView.State state) {
+                        public void getItemOffsets(Rect rect, View view2, RecyclerView recyclerView, RecyclerView.State state) {
                             rect.right = AndroidUtilities.dp(2.0f);
                         }
                     });
@@ -7938,7 +7939,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                     trendingListView.setClipToPadding(false);
                     trendingListView.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: org.telegram.ui.Components.EmojiView.EmojiGridAdapter.1
                         @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
-                        public void getItemOffsets(android.graphics.Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
+                        public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
                             rect.right = AndroidUtilities.dp(2.0f);
                         }
                     });

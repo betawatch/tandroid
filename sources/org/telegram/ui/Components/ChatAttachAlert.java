@@ -17,9 +17,11 @@ import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.ColorDrawable;
@@ -27,6 +29,7 @@ import android.graphics.drawable.Drawable;
 import android.media.MediaMetadataRetriever;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.ParcelFileDescriptor;
 import android.text.Editable;
 import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
@@ -265,7 +268,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     private EmojiView.EmojiViewDelegate emojiViewDelegate;
     private boolean enterCommentEventSent;
     private ArrayList exclusionRects;
-    private android.graphics.Rect exclustionRect;
+    private Rect exclustionRect;
     public boolean forUser;
     private final boolean forceDarkTheme;
     private FrameLayout frameLayout2;
@@ -1453,7 +1456,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         this.attachButtonPaint = new Paint(1);
         this.captionLimitBulletinShown = false;
         this.exclusionRects = new ArrayList();
-        this.exclustionRect = new android.graphics.Rect();
+        this.exclustionRect = new Rect();
         this.ATTACH_ALERT_PROGRESS = new AnimationProperties.FloatProperty("openProgress") { // from class: org.telegram.ui.Components.ChatAttachAlert.31
             private float openProgress;
 
@@ -2865,7 +2868,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             if (AndroidUtilities.isTablet()) {
                 ChatAttachAlert.this.selectedMenuItem.setAdditionalYOffset(-AndroidUtilities.dp(3.0f));
             } else {
-                android.graphics.Point point = AndroidUtilities.displaySize;
+                Point point = AndroidUtilities.displaySize;
                 if (point.x > point.y) {
                     ChatAttachAlert.this.selectedMenuItem.setAdditionalYOffset(0);
                 } else {
@@ -3612,7 +3615,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         }
 
         @Override // org.telegram.ui.Components.SizeNotifierFrameLayout
-        public void drawBlurRect(Canvas canvas, float f, android.graphics.Rect rect, Paint paint, boolean z) {
+        public void drawBlurRect(Canvas canvas, float f, Rect rect, Paint paint, boolean z) {
             if (ChatAttachAlert.this.currentAttachLayout != ChatAttachAlert.this.photoLayout || Build.VERSION.SDK_INT < 29 || !SharedConfig.chatBlurEnabled() || ChatAttachAlert.this.iBlur3SourceGlassFrosted == null || !BlurredBackgroundProviderImpl.checkBlurEnabled(ChatAttachAlert.this.currentAccount, this.val$resourcesProvider)) {
                 canvas.drawRect(rect, paint);
                 return;
@@ -3828,7 +3831,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             AndroidUtilities.hideKeyboard(getContainer().findFocus());
         }
         File makeCacheFile = StoryEntry.makeCacheFile(this.currentAccount, "webp");
-        android.graphics.Point point = AndroidUtilities.displaySize;
+        Point point = AndroidUtilities.displaySize;
         int i = point.x;
         int i2 = point.y;
         if (i > 1080 || i2 > 1080) {
@@ -4457,19 +4460,38 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Can't wrap try/catch for region: R(7:(4:239|240|241|242)|(5:(4:244|245|246|(15:248|249|250|251|252|253|254|255|256|257|258|259|260|261|262))(1:328)|259|260|261|262)|318|319|320|321|258) */
+    /* JADX WARN: Code restructure failed: missing block: B:263:0x0493, code lost:
+    
+        if (r4 != null) goto L323;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:265:0x0495, code lost:
+    
+        r4.close();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:267:0x049a, code lost:
+    
+        r0 = move-exception;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:268:0x04d5, code lost:
+    
+        org.telegram.messenger.FileLog.e(r0);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:278:0x04d2, code lost:
+    
+        if (r4 != null) goto L323;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:323:0x04a1, code lost:
+    
+        r0 = e;
+     */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:154:0x02f9  */
     /* JADX WARN: Removed duplicated region for block: B:168:0x033d  */
-    /* JADX WARN: Removed duplicated region for block: B:198:0x0470  */
-    /* JADX WARN: Removed duplicated region for block: B:201:0x047d  */
-    /* JADX WARN: Removed duplicated region for block: B:204:0x04ec  */
-    /* JADX WARN: Removed duplicated region for block: B:207:0x04fb A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x0528 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x055e A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x0575  */
-    /* JADX WARN: Removed duplicated region for block: B:233:0x04ef  */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x04b7  */
-    /* JADX WARN: Removed duplicated region for block: B:235:0x0475  */
+    /* JADX WARN: Removed duplicated region for block: B:279:0x04c9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:289:0x04eb A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:296:? A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:297:0x04e0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r15v2 */
     /* JADX WARN: Type inference failed for: r15v3, types: [java.lang.CharSequence, java.lang.Runnable] */
     /* JADX WARN: Type inference failed for: r15v5 */
@@ -4492,15 +4514,17 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         ArrayList<Object> arrayList;
         int i;
         int i2;
+        long j3;
         int i3;
         int i4;
-        long j3;
-        String charSequence;
-        MessageObject messageObject4;
         int i5;
         Throwable th;
         MediaMetadataRetriever mediaMetadataRetriever;
+        ParcelFileDescriptor parcelFileDescriptor;
         MediaMetadataRetriever mediaMetadataRetriever2;
+        ParcelFileDescriptor parcelFileDescriptor2;
+        ParcelFileDescriptor parcelFileDescriptor3;
+        ParcelFileDescriptor parcelFileDescriptor4;
         String str;
         ArrayList arrayList2;
         final long j4;
@@ -4510,8 +4534,8 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         BaseFragment baseFragment2;
         final Theme.ResourcesProvider resourcesProvider2;
         AttachAlertLayout attachAlertLayout;
+        MessageObject messageObject4;
         MessageObject messageObject5;
-        MessageObject messageObject6;
         boolean z3;
         String substring;
         boolean z4;
@@ -4570,14 +4594,14 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             if (!selectedPhotos.isEmpty()) {
                 int ceil = (int) Math.ceil(selectedPhotos.size() / 10.0f);
                 boolean z8 = false;
-                MessageObject messageObject7 = null;
+                MessageObject messageObject6 = null;
                 int i8 = 0;
                 int i9 = 0;
                 z = false;
                 while (i8 < ceil) {
                     int i10 = ceil;
                     int i11 = i8 * 10;
-                    MessageObject messageObject8 = messageObject7;
+                    MessageObject messageObject7 = messageObject6;
                     int min = Math.min(10, selectedPhotos.size() - i11);
                     String str3 = str2;
                     long nextLong = Utilities.random.nextLong();
@@ -4591,7 +4615,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         if (i14 >= selectedPhotosOrder.size()) {
                             hashMap = selectedPhotos;
                             arrayList = selectedPhotosOrder;
-                            i4 = min;
+                            i2 = min;
                             j3 = j;
                             z8 = z9;
                             i5 = 1;
@@ -4626,204 +4650,208 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                                         mediaMetadataRetriever2 = new MediaMetadataRetriever();
                                         try {
                                             try {
-                                                mediaMetadataRetriever2.setDataSource(photoEntry.path);
-                                                photoEntry.videoOrientation = Integer.parseInt(mediaMetadataRetriever2.extractMetadata(24));
-                                                try {
-                                                    mediaMetadataRetriever2.release();
-                                                } catch (IOException e) {
-                                                    e = e;
-                                                    i = i17;
-                                                    FileLog.e(e);
-                                                    i18 = photoEntry.videoOrientation;
-                                                    if ((i18 / 90) % 2 == 0) {
-                                                    }
-                                                    if (!photoEntry.isVideo) {
-                                                    }
-                                                    tL_message.media.spoiler = photoEntry.hasSpoiler;
-                                                    CharSequence charSequence2 = photoEntry.caption;
-                                                    if (charSequence2 != null) {
-                                                    }
-                                                    tL_message.message = charSequence;
-                                                    if (TextUtils.isEmpty(charSequence)) {
-                                                    }
-                                                    if (i8 != 0) {
-                                                    }
-                                                    messageObject4 = new MessageObject(this.currentAccount, tL_message, true, false);
-                                                    if (i8 == 0) {
-                                                    }
-                                                    messageObject4.sendPreviewEntry = photoEntry;
-                                                    messageObject4.sendPreview = true;
-                                                    messageObject4.notime = true;
-                                                    messageObject4.isOutOwnerCached = Boolean.TRUE;
-                                                    arrayList3.add(messageObject4);
-                                                    if (messageObject8 == null) {
-                                                    }
-                                                    i12 = i15;
-                                                    z8 = true;
-                                                    i5 = 1;
-                                                    z = true;
-                                                    i13 += i5;
-                                                    selectedPhotos = hashMap;
-                                                    selectedPhotosOrder = arrayList;
-                                                    min = i4;
-                                                    j = j3;
-                                                }
                                             } catch (Throwable th2) {
-                                                mediaMetadataRetriever = mediaMetadataRetriever2;
                                                 th = th2;
-                                                if (mediaMetadataRetriever != null) {
-                                                    try {
-                                                        mediaMetadataRetriever.release();
-                                                        throw th;
-                                                    } catch (IOException e2) {
-                                                        FileLog.e(e2);
-                                                        throw th;
-                                                    }
-                                                }
-                                                throw th;
+                                                parcelFileDescriptor3 = null;
                                             }
-                                        } catch (Exception e3) {
-                                            e = e3;
+                                        } catch (Exception e) {
+                                            e = e;
                                             i = i17;
-                                            photoEntry.videoOrientation = 0;
-                                            FileLog.e(e);
-                                            if (mediaMetadataRetriever2 != null) {
-                                                try {
-                                                    mediaMetadataRetriever2.release();
-                                                } catch (IOException e4) {
-                                                    e = e4;
-                                                    FileLog.e(e);
-                                                    i18 = photoEntry.videoOrientation;
-                                                    if ((i18 / 90) % 2 == 0) {
-                                                    }
-                                                    if (!photoEntry.isVideo) {
-                                                    }
-                                                    tL_message.media.spoiler = photoEntry.hasSpoiler;
-                                                    CharSequence charSequence22 = photoEntry.caption;
-                                                    if (charSequence22 != null) {
-                                                    }
-                                                    tL_message.message = charSequence;
-                                                    if (TextUtils.isEmpty(charSequence)) {
-                                                        CharSequence[] charSequenceArr = {getCommentView().getText()};
-                                                        MessageObject.addLinks(true, charSequenceArr[0]);
-                                                        tL_message.entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr, true);
-                                                        tL_message.message = charSequenceArr[0].toString();
-                                                    }
-                                                    if (i8 != 0) {
-                                                    }
-                                                    messageObject4 = new MessageObject(this.currentAccount, tL_message, true, false);
-                                                    if (i8 == 0) {
-                                                        messageObject4.replyMessageObject = messageObject;
-                                                    }
-                                                    messageObject4.sendPreviewEntry = photoEntry;
-                                                    messageObject4.sendPreview = true;
-                                                    messageObject4.notime = true;
-                                                    messageObject4.isOutOwnerCached = Boolean.TRUE;
-                                                    arrayList3.add(messageObject4);
-                                                    if (messageObject8 == null) {
-                                                        messageObject8 = messageObject4;
-                                                    }
-                                                    i12 = i15;
-                                                    z8 = true;
-                                                    i5 = 1;
-                                                    z = true;
-                                                    i13 += i5;
-                                                    selectedPhotos = hashMap;
-                                                    selectedPhotosOrder = arrayList;
-                                                    min = i4;
-                                                    j = j3;
-                                                }
-                                            }
-                                            i18 = photoEntry.videoOrientation;
-                                            if ((i18 / 90) % 2 == 0) {
-                                            }
-                                            if (!photoEntry.isVideo) {
-                                            }
-                                            tL_message.media.spoiler = photoEntry.hasSpoiler;
-                                            CharSequence charSequence222 = photoEntry.caption;
-                                            if (charSequence222 != null) {
-                                            }
-                                            tL_message.message = charSequence;
-                                            if (TextUtils.isEmpty(charSequence)) {
-                                            }
-                                            if (i8 != 0) {
-                                            }
-                                            messageObject4 = new MessageObject(this.currentAccount, tL_message, true, false);
-                                            if (i8 == 0) {
-                                            }
-                                            messageObject4.sendPreviewEntry = photoEntry;
-                                            messageObject4.sendPreview = true;
-                                            messageObject4.notime = true;
-                                            messageObject4.isOutOwnerCached = Boolean.TRUE;
-                                            arrayList3.add(messageObject4);
-                                            if (messageObject8 == null) {
-                                            }
-                                            i12 = i15;
-                                            z8 = true;
-                                            i5 = 1;
-                                            z = true;
-                                            i13 += i5;
-                                            selectedPhotos = hashMap;
-                                            selectedPhotosOrder = arrayList;
-                                            min = i4;
-                                            j = j3;
+                                            i2 = min;
                                         }
-                                    } catch (Exception e5) {
-                                        e = e5;
+                                    } catch (Exception e2) {
+                                        e = e2;
                                         i = i17;
+                                        i2 = min;
+                                        j3 = j;
                                         mediaMetadataRetriever2 = null;
                                     } catch (Throwable th3) {
                                         th = th3;
                                         mediaMetadataRetriever = null;
+                                        parcelFileDescriptor = null;
                                     }
+                                    try {
+                                        try {
+                                            if (photoEntry.isLivePhoto) {
+                                                i = i17;
+                                                i2 = min;
+                                                try {
+                                                    if (photoEntry.livePhotoVideoOffset > 0) {
+                                                        File file = new File(photoEntry.path);
+                                                        parcelFileDescriptor2 = ParcelFileDescriptor.open(file, TLObject.FLAG_28);
+                                                        try {
+                                                            parcelFileDescriptor4 = parcelFileDescriptor2;
+                                                            try {
+                                                                try {
+                                                                    j3 = j;
+                                                                    try {
+                                                                        mediaMetadataRetriever2.setDataSource(parcelFileDescriptor2.getFileDescriptor(), photoEntry.livePhotoVideoOffset, file.length() - photoEntry.livePhotoVideoOffset);
+                                                                        parcelFileDescriptor2 = parcelFileDescriptor4;
+                                                                        photoEntry.videoOrientation = Integer.parseInt(mediaMetadataRetriever2.extractMetadata(24));
+                                                                        mediaMetadataRetriever2.release();
+                                                                    } catch (Exception e3) {
+                                                                        e = e3;
+                                                                        parcelFileDescriptor2 = parcelFileDescriptor4;
+                                                                        try {
+                                                                            photoEntry.videoOrientation = 0;
+                                                                            FileLog.e(e);
+                                                                            if (mediaMetadataRetriever2 != null) {
+                                                                            }
+                                                                        } catch (Throwable th4) {
+                                                                            th = th4;
+                                                                            mediaMetadataRetriever = mediaMetadataRetriever2;
+                                                                            parcelFileDescriptor = parcelFileDescriptor2;
+                                                                            if (mediaMetadataRetriever != null) {
+                                                                            }
+                                                                            if (parcelFileDescriptor != null) {
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                } catch (Throwable th5) {
+                                                                    th = th5;
+                                                                    parcelFileDescriptor3 = parcelFileDescriptor4;
+                                                                    th = th;
+                                                                    parcelFileDescriptor = parcelFileDescriptor3;
+                                                                    mediaMetadataRetriever = mediaMetadataRetriever2;
+                                                                    if (mediaMetadataRetriever != null) {
+                                                                        try {
+                                                                            mediaMetadataRetriever.release();
+                                                                        } catch (IOException e4) {
+                                                                            FileLog.e(e4);
+                                                                        }
+                                                                    }
+                                                                    if (parcelFileDescriptor != null) {
+                                                                        try {
+                                                                            parcelFileDescriptor.close();
+                                                                            throw th;
+                                                                        } catch (IOException e5) {
+                                                                            FileLog.e(e5);
+                                                                            throw th;
+                                                                        }
+                                                                    }
+                                                                    throw th;
+                                                                }
+                                                            } catch (Exception e6) {
+                                                                e = e6;
+                                                                j3 = j;
+                                                            }
+                                                        } catch (Exception e7) {
+                                                            e = e7;
+                                                            j3 = j;
+                                                        } catch (Throwable th6) {
+                                                            th = th6;
+                                                            parcelFileDescriptor4 = parcelFileDescriptor2;
+                                                        }
+                                                    }
+                                                } catch (Exception e8) {
+                                                    e = e8;
+                                                    j3 = j;
+                                                    parcelFileDescriptor2 = null;
+                                                    photoEntry.videoOrientation = 0;
+                                                    FileLog.e(e);
+                                                    if (mediaMetadataRetriever2 != null) {
+                                                        try {
+                                                            mediaMetadataRetriever2.release();
+                                                        } catch (IOException e9) {
+                                                            FileLog.e(e9);
+                                                        }
+                                                    }
+                                                }
+                                            } else {
+                                                i = i17;
+                                                i2 = min;
+                                            }
+                                            mediaMetadataRetriever2.release();
+                                        } catch (IOException e10) {
+                                            FileLog.e(e10);
+                                        }
+                                        photoEntry.videoOrientation = Integer.parseInt(mediaMetadataRetriever2.extractMetadata(24));
+                                    } catch (Exception e11) {
+                                        e = e11;
+                                        photoEntry.videoOrientation = 0;
+                                        FileLog.e(e);
+                                        if (mediaMetadataRetriever2 != null) {
+                                        }
+                                    } catch (Throwable th7) {
+                                        th = th7;
+                                        parcelFileDescriptor3 = parcelFileDescriptor2;
+                                        th = th;
+                                        parcelFileDescriptor = parcelFileDescriptor3;
+                                        mediaMetadataRetriever = mediaMetadataRetriever2;
+                                        if (mediaMetadataRetriever != null) {
+                                        }
+                                        if (parcelFileDescriptor != null) {
+                                        }
+                                    }
+                                    j3 = j;
+                                    mediaMetadataRetriever2.setDataSource(photoEntry.path);
+                                    parcelFileDescriptor2 = null;
+                                } else {
+                                    i = i17;
+                                    i2 = min;
+                                    j3 = j;
                                 }
-                                i = i17;
                                 i18 = photoEntry.videoOrientation;
                             } else {
                                 i = i17;
+                                i2 = min;
+                                j3 = j;
                             }
-                            if ((i18 / 90) % 2 == 0) {
-                                i3 = i16;
-                                i2 = i;
-                            } else {
-                                i2 = i16;
+                            if ((i18 / 90) % 2 != 0) {
+                                i4 = i16;
                                 i3 = i;
-                            }
-                            if (!photoEntry.isVideo) {
-                                TLRPC.TL_messageMediaDocument tL_messageMediaDocument = new TLRPC.TL_messageMediaDocument();
-                                tL_message.media = tL_messageMediaDocument;
-                                i4 = min;
-                                tL_messageMediaDocument.document = new TLRPC.TL_document();
-                                j3 = j;
-                                tL_message.media.document.mime_type = MimeTypeMap.getSingleton().getExtensionFromMimeType(tL_message.attachPath);
-                                TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo = new TLRPC.TL_documentAttributeVideo();
-                                tL_documentAttributeVideo.w = i2;
-                                tL_documentAttributeVideo.h = i3;
-                                tL_documentAttributeVideo.duration = photoEntry.duration;
-                                tL_message.media.document.attributes.add(tL_documentAttributeVideo);
                             } else {
-                                i4 = min;
-                                j3 = j;
+                                i3 = i16;
+                                i4 = i;
+                            }
+                            if (photoEntry.isLivePhoto) {
                                 TLRPC.TL_messageMediaPhoto tL_messageMediaPhoto = new TLRPC.TL_messageMediaPhoto();
                                 tL_message.media = tL_messageMediaPhoto;
+                                tL_messageMediaPhoto.live_photo = true;
                                 tL_messageMediaPhoto.photo = new TLRPC.TL_photo();
                                 TLRPC.TL_photoSize tL_photoSize = new TLRPC.TL_photoSize();
-                                tL_photoSize.w = i2;
-                                tL_photoSize.h = i3;
+                                tL_photoSize.w = i3;
+                                tL_photoSize.h = i4;
                                 tL_photoSize.location = new TLRPC.TL_fileLocationToBeDeprecated();
                                 tL_message.media.photo.sizes.add(tL_photoSize);
+                                tL_message.media.document = new TLRPC.TL_document();
+                                tL_message.media.document.mime_type = MimeTypeMap.getSingleton().getExtensionFromMimeType(tL_message.attachPath);
+                                TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo = new TLRPC.TL_documentAttributeVideo();
+                                tL_documentAttributeVideo.w = i3;
+                                tL_documentAttributeVideo.h = i4;
+                                tL_documentAttributeVideo.duration = photoEntry.duration;
+                                tL_message.media.document.attributes.add(tL_documentAttributeVideo);
+                            } else if (photoEntry.isVideo) {
+                                TLRPC.TL_messageMediaDocument tL_messageMediaDocument = new TLRPC.TL_messageMediaDocument();
+                                tL_message.media = tL_messageMediaDocument;
+                                tL_messageMediaDocument.document = new TLRPC.TL_document();
+                                tL_message.media.document.mime_type = MimeTypeMap.getSingleton().getExtensionFromMimeType(tL_message.attachPath);
+                                TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo2 = new TLRPC.TL_documentAttributeVideo();
+                                tL_documentAttributeVideo2.w = i3;
+                                tL_documentAttributeVideo2.h = i4;
+                                tL_documentAttributeVideo2.duration = photoEntry.duration;
+                                tL_message.media.document.attributes.add(tL_documentAttributeVideo2);
+                            } else {
+                                TLRPC.TL_messageMediaPhoto tL_messageMediaPhoto2 = new TLRPC.TL_messageMediaPhoto();
+                                tL_message.media = tL_messageMediaPhoto2;
+                                tL_messageMediaPhoto2.photo = new TLRPC.TL_photo();
+                                TLRPC.TL_photoSize tL_photoSize2 = new TLRPC.TL_photoSize();
+                                tL_photoSize2.w = i3;
+                                tL_photoSize2.h = i4;
+                                tL_photoSize2.location = new TLRPC.TL_fileLocationToBeDeprecated();
+                                tL_message.media.photo.sizes.add(tL_photoSize2);
                             }
                             tL_message.media.spoiler = photoEntry.hasSpoiler;
-                            CharSequence charSequence2222 = photoEntry.caption;
-                            charSequence = charSequence2222 != null ? str3 : charSequence2222.toString();
-                            tL_message.message = charSequence;
-                            if (TextUtils.isEmpty(charSequence) && i8 == 0 && i13 == 0) {
-                                CharSequence[] charSequenceArr2 = {getCommentView().getText()};
-                                MessageObject.addLinks(true, charSequenceArr2[0]);
-                                tL_message.entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr2, true);
-                                tL_message.message = charSequenceArr2[0].toString();
+                            CharSequence charSequence = photoEntry.caption;
+                            String charSequence2 = charSequence == null ? str3 : charSequence.toString();
+                            tL_message.message = charSequence2;
+                            if (TextUtils.isEmpty(charSequence2) && i8 == 0 && i13 == 0) {
+                                CharSequence[] charSequenceArr = {getCommentView().getText()};
+                                MessageObject.addLinks(true, charSequenceArr[0]);
+                                tL_message.entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr, true);
+                                tL_message.message = charSequenceArr[0].toString();
                             }
-                            if (i8 != 0 && messageObject != null && !messageObject.isTopicMainMessage) {
+                            if (i8 == 0 && messageObject != null && !messageObject.isTopicMainMessage) {
                                 TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
                                 if (messageObject2 != null) {
                                     tL_messageReplyHeader.flags |= 2;
@@ -4833,17 +4861,17 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                                 tL_messageReplyHeader.reply_to_msg_id = messageObject.getId();
                                 tL_message.reply_to = tL_messageReplyHeader;
                             }
-                            messageObject4 = new MessageObject(this.currentAccount, tL_message, true, false);
+                            MessageObject messageObject8 = new MessageObject(this.currentAccount, tL_message, true, false);
                             if (i8 == 0 && messageObject != null && !messageObject.isTopicMainMessage) {
-                                messageObject4.replyMessageObject = messageObject;
+                                messageObject8.replyMessageObject = messageObject;
                             }
-                            messageObject4.sendPreviewEntry = photoEntry;
-                            messageObject4.sendPreview = true;
-                            messageObject4.notime = true;
-                            messageObject4.isOutOwnerCached = Boolean.TRUE;
-                            arrayList3.add(messageObject4);
-                            if (messageObject8 == null && !TextUtils.isEmpty(tL_message.message)) {
-                                messageObject8 = messageObject4;
+                            messageObject8.sendPreviewEntry = photoEntry;
+                            messageObject8.sendPreview = true;
+                            messageObject8.notime = true;
+                            messageObject8.isOutOwnerCached = Boolean.TRUE;
+                            arrayList3.add(messageObject8);
+                            if (messageObject7 == null && !TextUtils.isEmpty(tL_message.message)) {
+                                messageObject7 = messageObject8;
                             }
                             i12 = i15;
                             z8 = true;
@@ -4853,12 +4881,12 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         i13 += i5;
                         selectedPhotos = hashMap;
                         selectedPhotosOrder = arrayList;
-                        min = i4;
+                        min = i2;
                         j = j3;
                     }
                     i8++;
                     i9 = i12;
-                    messageObject7 = messageObject8;
+                    messageObject6 = messageObject7;
                     ceil = i10;
                     str2 = str3;
                     user = user3;
@@ -4867,7 +4895,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 z2 = z8;
                 user2 = user;
                 j2 = j;
-                messageObject3 = messageObject7;
+                messageObject3 = messageObject6;
             }
             user2 = user;
             j2 = j;
@@ -4885,10 +4913,10 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     tL_message2.out = true;
                     tL_message2.from_id = MessagesController.getInstance(this.currentAccount).getPeer(UserConfig.getInstance(this.currentAccount).getClientUserId());
                     tL_message2.peer_id = MessagesController.getInstance(this.currentAccount).getPeer(j);
-                    CharSequence[] charSequenceArr3 = {getCommentView().getText()};
-                    MessageObject.addLinks(true, charSequenceArr3[0]);
-                    tL_message2.entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr3, true);
-                    tL_message2.message = charSequenceArr3[0].toString();
+                    CharSequence[] charSequenceArr2 = {getCommentView().getText()};
+                    MessageObject.addLinks(true, charSequenceArr2[0]);
+                    tL_message2.entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr2, true);
+                    tL_message2.message = charSequenceArr2[0].toString();
                     MessageObject messageObject9 = new MessageObject(this.currentAccount, tL_message2, true, false);
                     messageObject9.sendPreview = true;
                     messageObject9.notime = true;
@@ -4964,9 +4992,9 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                             if (TextUtils.isEmpty(tL_message4.message) && i22 == 0) {
                                 z4 = true;
                                 z5 = false;
-                                CharSequence[] charSequenceArr4 = {getCommentView().getText()};
-                                tL_message4.entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr4, true);
-                                tL_message4.message = charSequenceArr4[0].toString();
+                                CharSequence[] charSequenceArr3 = {getCommentView().getText()};
+                                tL_message4.entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr3, true);
+                                tL_message4.message = charSequenceArr3[0].toString();
                             } else {
                                 z4 = true;
                                 z5 = false;
@@ -4994,17 +5022,17 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     arrayList3.addAll(chatAttachAlertAudioLayout.getSelected());
                     if (!arrayList3.isEmpty()) {
                         MessageObject messageObject12 = (MessageObject) arrayList3.get(0);
-                        CharSequence[] charSequenceArr5 = {getCommentView().getText()};
-                        MessageObject.addLinks(true, charSequenceArr5[0]);
-                        messageObject12.messageOwner.entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr5, true);
-                        messageObject12.messageOwner.message = charSequenceArr5[0].toString();
+                        CharSequence[] charSequenceArr4 = {getCommentView().getText()};
+                        MessageObject.addLinks(true, charSequenceArr4[0]);
+                        messageObject12.messageOwner.entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr4, true);
+                        messageObject12.messageOwner.message = charSequenceArr4[0].toString();
                         if (!TextUtils.isEmpty(messageObject12.messageOwner.message)) {
                             messageObject12.generateCaption();
-                            messageObject5 = messageObject12;
+                            messageObject4 = messageObject12;
                             if (arrayList3.size() <= 1) {
                                 int i24 = 0;
                                 while (true) {
-                                    messageObject6 = messageObject5;
+                                    messageObject5 = messageObject4;
                                     if (i24 >= Math.ceil(arrayList3.size() / 10.0f)) {
                                         break;
                                     }
@@ -5018,23 +5046,23 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                                         }
                                     }
                                     i24++;
-                                    messageObject5 = messageObject6;
+                                    messageObject4 = messageObject5;
                                 }
                             } else {
-                                messageObject6 = messageObject5;
+                                messageObject5 = messageObject4;
                             }
                             user2 = user;
-                            messageObject3 = messageObject6;
+                            messageObject3 = messageObject5;
                             j2 = j;
                             z = false;
                             z2 = true;
                         }
                     }
-                    messageObject5 = null;
+                    messageObject4 = null;
                     if (arrayList3.size() <= 1) {
                     }
                     user2 = user;
-                    messageObject3 = messageObject6;
+                    messageObject3 = messageObject5;
                     j2 = j;
                     z = false;
                     z2 = true;
@@ -6912,7 +6940,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         if (AndroidUtilities.isTablet()) {
             i2 = 16;
         } else {
-            android.graphics.Point point = AndroidUtilities.displaySize;
+            Point point = AndroidUtilities.displaySize;
             i2 = point.x > point.y ? 6 : 12;
         }
         float dp = this.actionBar.getAlpha() != 0.0f ? 0.0f : AndroidUtilities.dp((1.0f - this.headerView.getAlpha()) * 26.0f);
@@ -6953,7 +6981,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 if (AndroidUtilities.isTablet()) {
                     i3 = 63;
                 } else {
-                    android.graphics.Point point2 = AndroidUtilities.displaySize;
+                    Point point2 = AndroidUtilities.displaySize;
                     i3 = point2.x > point2.y ? 53 : 59;
                 }
                 ChatAttachAlertPollLayout chatAttachAlertPollLayout = this.pollLayout;
@@ -6968,7 +6996,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     if (AndroidUtilities.isTablet()) {
                         i4 = 63;
                     } else {
-                        android.graphics.Point point3 = AndroidUtilities.displaySize;
+                        Point point3 = AndroidUtilities.displaySize;
                         if (point3.x > point3.y) {
                             i4 = 53;
                         }

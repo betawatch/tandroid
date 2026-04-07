@@ -4,6 +4,8 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
+import android.graphics.Point;
+import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.GradientDrawable;
 import android.view.View;
@@ -85,7 +87,7 @@ public class BackgroundGradientDrawable extends GradientDrawable {
         }
 
         public static Sizes ofDeviceScreen(float f, Orientation orientation) {
-            android.graphics.Point point = AndroidUtilities.displaySize;
+            Point point = AndroidUtilities.displaySize;
             int i = (int) (point.x * f);
             int i2 = (int) (point.y * f);
             if (i == i2) {
@@ -118,10 +120,10 @@ public class BackgroundGradientDrawable extends GradientDrawable {
             super.draw(canvas);
             return;
         }
-        android.graphics.Rect bounds = getBounds();
+        Rect bounds = getBounds();
         Bitmap findBestBitmapForSize = findBestBitmapForSize(bounds.width(), bounds.height());
         if (findBestBitmapForSize != null) {
-            canvas.drawBitmap(findBestBitmapForSize, (android.graphics.Rect) null, bounds, this.bitmapPaint);
+            canvas.drawBitmap(findBestBitmapForSize, (Rect) null, bounds, this.bitmapPaint);
         } else {
             super.draw(canvas);
         }
@@ -136,7 +138,7 @@ public class BackgroundGradientDrawable extends GradientDrawable {
             super.draw(canvas);
             return null;
         }
-        android.graphics.Rect bounds = getBounds();
+        Rect bounds = getBounds();
         int width = (int) (bounds.width() * f);
         int height = (int) (bounds.height() * f);
         int size = this.bitmaps.size();
@@ -145,7 +147,7 @@ public class BackgroundGradientDrawable extends GradientDrawable {
             if (intSize.width == width && intSize.height == height) {
                 Bitmap bitmap = (Bitmap) this.bitmaps.valueAt(i);
                 if (bitmap != null) {
-                    canvas.drawBitmap(bitmap, (android.graphics.Rect) null, bounds, this.bitmapPaint);
+                    canvas.drawBitmap(bitmap, (Rect) null, bounds, this.bitmapPaint);
                 } else {
                     super.draw(canvas);
                 }
@@ -406,8 +408,8 @@ public class BackgroundGradientDrawable extends GradientDrawable {
         }
     }
 
-    public static android.graphics.Rect getGradientPoints(GradientDrawable.Orientation orientation, int i, int i2) {
-        android.graphics.Rect rect = new android.graphics.Rect();
+    public static Rect getGradientPoints(GradientDrawable.Orientation orientation, int i, int i2) {
+        Rect rect = new Rect();
         switch (2.$SwitchMap$android$graphics$drawable$GradientDrawable$Orientation[orientation.ordinal()]) {
             case 1:
                 int i3 = i / 2;
@@ -464,7 +466,7 @@ public class BackgroundGradientDrawable extends GradientDrawable {
         }
     }
 
-    public static android.graphics.Rect getGradientPoints(int i, int i2, int i3) {
+    public static Rect getGradientPoints(int i, int i2, int i3) {
         return getGradientPoints(getGradientOrientation(i), i2, i3);
     }
 
@@ -502,7 +504,7 @@ public class BackgroundGradientDrawable extends GradientDrawable {
     }
 
     private static Bitmap createDitheredGradientBitmap(GradientDrawable.Orientation orientation, int[] iArr, int i, int i2) {
-        android.graphics.Rect gradientPoints = getGradientPoints(orientation, i, i2);
+        Rect gradientPoints = getGradientPoints(orientation, i, i2);
         Bitmap createBitmap = Bitmap.createBitmap(i, i2, Bitmap.Config.ARGB_8888);
         Utilities.drawDitheredGradient(createBitmap, iArr, gradientPoints.left, gradientPoints.top, gradientPoints.right, gradientPoints.bottom);
         return createBitmap;

@@ -13,8 +13,10 @@ import android.graphics.ColorMatrix;
 import android.graphics.CornerPathEffect;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
@@ -400,7 +402,7 @@ public class ScrimOptions extends Dialog {
         boolean z;
         Drawable drawable = this.scrimDrawable;
         if (drawable != null) {
-            android.graphics.Rect bounds = drawable.getBounds();
+            Rect bounds = drawable.getBounds();
             if (this.optionsContainer != null) {
                 float f = bounds.left;
                 float f2 = this.scrimDrawableTx2;
@@ -444,7 +446,7 @@ public class ScrimOptions extends Dialog {
         BlurredBackgroundDrawable radius = this.iBlur3Factory.create().setColorProvider(BlurredBackgroundProviderImpl.scrimMenuBackground(this.resourcesProvider)).setPadding(AndroidUtilities.dp(8.0f)).setHasPadding(true).setRadius(AndroidUtilities.dp(16.0f));
         this.scrimDrawableBackground = radius;
         this.scrimDrawable = drawable;
-        android.graphics.Point point = AndroidUtilities.displaySize;
+        Point point = AndroidUtilities.displaySize;
         int i3 = (point.x - i) / 2;
         int i4 = (point.y - i2) / 2;
         int i5 = i + i3;

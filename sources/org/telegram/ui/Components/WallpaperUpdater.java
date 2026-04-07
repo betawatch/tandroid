@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Point;
 import android.net.Uri;
 import android.os.Build;
 import androidx.core.content.FileProvider;
@@ -170,7 +171,7 @@ public class WallpaperUpdater {
             SendMessagesHelper.SendingMediaInfo sendingMediaInfo = (SendMessagesHelper.SendingMediaInfo) arrayList.get(0);
             if (sendingMediaInfo.path != null) {
                 this.currentWallpaperPath = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-                android.graphics.Point realScreenSize = AndroidUtilities.getRealScreenSize();
+                Point realScreenSize = AndroidUtilities.getRealScreenSize();
                 Bitmap loadBitmap = ImageLoader.loadBitmap(sendingMediaInfo.path, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
                 loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(this.currentWallpaperPath));
                 this.delegate.didSelectWallpaper(this.currentWallpaperPath, loadBitmap, true);
@@ -204,7 +205,7 @@ public class WallpaperUpdater {
                 AndroidUtilities.addMediaToGallery(this.currentPicturePath);
                 try {
                     this.currentWallpaperPath = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-                    android.graphics.Point realScreenSize = AndroidUtilities.getRealScreenSize();
+                    Point realScreenSize = AndroidUtilities.getRealScreenSize();
                     Bitmap loadBitmap = ImageLoader.loadBitmap(this.currentPicturePath, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
                     fileOutputStream = new FileOutputStream(this.currentWallpaperPath);
                     try {
@@ -256,7 +257,7 @@ public class WallpaperUpdater {
             }
             try {
                 this.currentWallpaperPath = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-                android.graphics.Point realScreenSize2 = AndroidUtilities.getRealScreenSize();
+                Point realScreenSize2 = AndroidUtilities.getRealScreenSize();
                 Bitmap loadBitmap2 = ImageLoader.loadBitmap(null, intent.getData(), (float) realScreenSize2.x, (float) realScreenSize2.y, true);
                 loadBitmap2.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(this.currentWallpaperPath));
                 this.delegate.didSelectWallpaper(this.currentWallpaperPath, loadBitmap2, false);

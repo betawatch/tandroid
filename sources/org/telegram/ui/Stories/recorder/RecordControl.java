@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PointF;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.PorterDuffXfermode;
@@ -36,7 +37,6 @@ import org.telegram.ui.Components.ButtonBounce;
 import org.telegram.ui.Components.CircularProgressDrawable;
 import org.telegram.ui.Components.CombinedDrawable;
 import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.Point;
 import org.telegram.ui.Stories.recorder.FlashViews;
 
 /* loaded from: classes5.dex */
@@ -46,9 +46,9 @@ public class RecordControl extends View implements FlashViews.Invertable {
     public final AnimatedFloat animatedAmplitude;
     private final Paint buttonPaint;
     private final Paint buttonPaintWhite;
-    private final Point check1;
-    private final Point check2;
-    private final Point check3;
+    private final PointF check1;
+    private final PointF check2;
+    private final PointF check3;
     private final AnimatedFloat checkAnimated;
     private final Paint checkPaint;
     private final Path checkPath;
@@ -69,10 +69,10 @@ public class RecordControl extends View implements FlashViews.Invertable {
     private final AnimatedFloat flipDrawableRotateT;
     private final Drawable flipDrawableWhite;
     private final ImageReceiver galleryImage;
-    private final Point h1;
-    private final Point h2;
-    private final Point h3;
-    private final Point h4;
+    private final PointF h1;
+    private final PointF h2;
+    private final PointF h3;
+    private final PointF h4;
     private final Paint hintLinePaintBlack;
     private final Paint hintLinePaintWhite;
     private long lastDuration;
@@ -90,10 +90,10 @@ public class RecordControl extends View implements FlashViews.Invertable {
     private final Paint outlineFilledPaint;
     private final Paint outlinePaint;
     private float overrideStartModeIsVideoT;
-    private final Point p1;
-    private final Point p2;
-    private final Point p3;
-    private final Point p4;
+    private final PointF p1;
+    private final PointF p2;
+    private final PointF p3;
+    private final PointF p4;
     private final Drawable pauseDrawable;
     private final ButtonBounce recordButton;
     private final AnimatedFloat recordCx;
@@ -208,9 +208,9 @@ public class RecordControl extends View implements FlashViews.Invertable {
         this.flipDrawableRotateT = new AnimatedFloat(this, 0L, 310L, cubicBezierInterpolator);
         this.dualT = new AnimatedFloat(this, 0L, 330L, cubicBezierInterpolator);
         this.checkPath = new Path();
-        this.check1 = new Point(-AndroidUtilities.dpf2(9.666667f), AndroidUtilities.dpf2(2.3333333f));
-        this.check2 = new Point(-AndroidUtilities.dpf2(2.8333333f), AndroidUtilities.dpf2(8.666667f));
-        this.check3 = new Point(AndroidUtilities.dpf2(9.666667f), AndroidUtilities.dpf2(-3.6666667f));
+        this.check1 = new PointF(-AndroidUtilities.dpf2(9.666667f), AndroidUtilities.dpf2(2.3333333f));
+        this.check2 = new PointF(-AndroidUtilities.dpf2(2.8333333f), AndroidUtilities.dpf2(8.666667f));
+        this.check3 = new PointF(AndroidUtilities.dpf2(9.666667f), AndroidUtilities.dpf2(-3.6666667f));
         this.animatedAmplitude = new AnimatedFloat(this, 0L, 200L, CubicBezierInterpolator.DEFAULT);
         this.startModeIsVideoT = new AnimatedFloat(this, 0L, 350L, cubicBezierInterpolator);
         this.overrideStartModeIsVideoT = -1.0f;
@@ -243,14 +243,14 @@ public class RecordControl extends View implements FlashViews.Invertable {
         this.metaballsPath = new Path();
         this.circlePath = new Path();
         this.HALF_PI = 1.5707964f;
-        this.p1 = new Point();
-        this.p2 = new Point();
-        this.p3 = new Point();
-        this.p4 = new Point();
-        this.h1 = new Point();
-        this.h2 = new Point();
-        this.h3 = new Point();
-        this.h4 = new Point();
+        this.p1 = new PointF();
+        this.p2 = new PointF();
+        this.p3 = new PointF();
+        this.p4 = new PointF();
+        this.h1 = new PointF();
+        this.h2 = new PointF();
+        this.h3 = new PointF();
+        this.h4 = new PointF();
         setWillNotDraw(false);
         RadialGradient radialGradient = new RadialGradient(0.0f, 0.0f, AndroidUtilities.dp(48.0f), new int[]{-577231, -577231, -1}, new float[]{0.0f, 0.64f, 1.0f}, Shader.TileMode.CLAMP);
         this.redGradient = radialGradient;
@@ -570,8 +570,8 @@ public class RecordControl extends View implements FlashViews.Invertable {
             this.checkPaint.setStrokeWidth(AndroidUtilities.dp(4.0f));
             this.checkPath.rewind();
             Path path = this.checkPath;
-            Point point = this.check1;
-            path.moveTo(point.x, point.y);
+            PointF pointF = this.check1;
+            path.moveTo(pointF.x, pointF.y);
             float f34 = f / 0.3f;
             f10 = f9;
             f11 = lerp;
@@ -738,44 +738,44 @@ public class RecordControl extends View implements FlashViews.Invertable {
                 float min2 = Math.min(clamp3 * 2.4f, dist(this.p1, this.p3) / f48) * Math.min(1.0f, (abs2 * 2.0f) / f48);
                 float f54 = lerp2 * min2;
                 float f55 = f13 * min2;
-                Point point2 = this.p1;
-                getVector(point2.x, point2.y, d6 - 1.5707963705062866d, f54, this.h1);
-                Point point3 = this.p2;
-                getVector(point3.x, point3.y, d7 + 1.5707963705062866d, f54, this.h2);
-                Point point4 = this.p3;
-                getVector(point4.x, point4.y, d9 + 1.5707963705062866d, f55, this.h3);
-                Point point5 = this.p4;
-                getVector(point5.x, point5.y, d10 - 1.5707963705062866d, f55, this.h4);
+                PointF pointF2 = this.p1;
+                getVector(pointF2.x, pointF2.y, d6 - 1.5707963705062866d, f54, this.h1);
+                PointF pointF3 = this.p2;
+                getVector(pointF3.x, pointF3.y, d7 + 1.5707963705062866d, f54, this.h2);
+                PointF pointF4 = this.p3;
+                getVector(pointF4.x, pointF4.y, d9 + 1.5707963705062866d, f55, this.h3);
+                PointF pointF5 = this.p4;
+                getVector(pointF5.x, pointF5.y, d10 - 1.5707963705062866d, f55, this.h4);
                 float f56 = f4 * max * f14 * f20;
                 if (f56 > 0.0f) {
                     this.metaballsPath.rewind();
                     Path path2 = this.metaballsPath;
-                    Point point6 = this.p1;
-                    path2.moveTo(point6.x, point6.y);
+                    PointF pointF6 = this.p1;
+                    path2.moveTo(pointF6.x, pointF6.y);
                     Path path3 = this.metaballsPath;
-                    Point point7 = this.h1;
-                    float f57 = point7.x;
-                    float f58 = point7.y;
-                    Point point8 = this.h3;
-                    float f59 = point8.x;
-                    float f60 = point8.y;
-                    Point point9 = this.p3;
-                    path3.cubicTo(f57, f58, f59, f60, point9.x, point9.y);
+                    PointF pointF7 = this.h1;
+                    float f57 = pointF7.x;
+                    float f58 = pointF7.y;
+                    PointF pointF8 = this.h3;
+                    float f59 = pointF8.x;
+                    float f60 = pointF8.y;
+                    PointF pointF9 = this.p3;
+                    path3.cubicTo(f57, f58, f59, f60, pointF9.x, pointF9.y);
                     Path path4 = this.metaballsPath;
-                    Point point10 = this.p4;
-                    path4.lineTo(point10.x, point10.y);
+                    PointF pointF10 = this.p4;
+                    path4.lineTo(pointF10.x, pointF10.y);
                     Path path5 = this.metaballsPath;
-                    Point point11 = this.h4;
-                    float f61 = point11.x;
-                    float f62 = point11.y;
-                    Point point12 = this.h2;
-                    float f63 = point12.x;
-                    float f64 = point12.y;
-                    Point point13 = this.p2;
-                    path5.cubicTo(f61, f62, f63, f64, point13.x, point13.y);
+                    PointF pointF11 = this.h4;
+                    float f61 = pointF11.x;
+                    float f62 = pointF11.y;
+                    PointF pointF12 = this.h2;
+                    float f63 = pointF12.x;
+                    float f64 = pointF12.y;
+                    PointF pointF13 = this.p2;
+                    path5.cubicTo(f61, f62, f63, f64, pointF13.x, pointF13.y);
                     Path path6 = this.metaballsPath;
-                    Point point14 = this.p1;
-                    path6.lineTo(point14.x, point14.y);
+                    PointF pointF14 = this.p1;
+                    path6.lineTo(pointF14.x, pointF14.y);
                     this.redPaint.setAlpha((int) (f56 * 255.0f));
                     canvas.drawPath(this.metaballsPath, this.redPaint);
                     float f65 = this.cy;
@@ -855,14 +855,14 @@ public class RecordControl extends View implements FlashViews.Invertable {
         return this.collageProgress >= 1.0f;
     }
 
-    private void getVector(float f, float f2, double d, float f3, Point point) {
+    private void getVector(float f, float f2, double d, float f3, PointF pointF) {
         double d2 = f3;
-        point.x = (float) (f + (Math.cos(d) * d2));
-        point.y = (float) (f2 + (Math.sin(d) * d2));
+        pointF.x = (float) (f + (Math.cos(d) * d2));
+        pointF.y = (float) (f2 + (Math.sin(d) * d2));
     }
 
-    private float dist(Point point, Point point2) {
-        return MathUtils.distance(point.x, point.y, point2.x, point2.y);
+    private float dist(PointF pointF, PointF pointF2) {
+        return MathUtils.distance(pointF.x, pointF.y, pointF2.x, pointF2.y);
     }
 
     public void rotateFlip(float f) {

@@ -288,6 +288,7 @@ import org.telegram.ui.Components.QuoteSpan;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.telegram.ui.Components.RectOld;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.SeekSpeedDrawable;
@@ -11328,7 +11329,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             }
         }
         this.pipAnimationInProgress = true;
-        org.telegram.ui.Components.Rect pipRect = PipVideoOverlay.getPipRect(true, this.aspectRatioFrameLayout.getAspectRatio());
+        RectOld pipRect = PipVideoOverlay.getPipRect(true, this.aspectRatioFrameLayout.getAspectRatio());
         final View view = this.usedSurfaceView ? this.videoSurfaceView : this.videoTextureView;
         final float width = pipRect.width / view.getWidth();
         final ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
@@ -11821,7 +11822,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 this.clippingImageProgress = 0.0f;
             } else if (view != null) {
                 this.pipAnimationInProgress = true;
-                org.telegram.ui.Components.Rect pipRect = PipVideoOverlay.getPipRect(false, this.aspectRatioFrameLayout.getAspectRatio());
+                RectOld pipRect = PipVideoOverlay.getPipRect(false, this.aspectRatioFrameLayout.getAspectRatio());
                 final float f = pipRect.width / this.textureImageView.getLayoutParams().width;
                 this.textureImageView.setScaleX(f);
                 this.textureImageView.setScaleY(f);

@@ -3,6 +3,7 @@ package org.telegram.ui.Components;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import android.view.View;
@@ -72,7 +73,7 @@ public class MessageBackgroundDrawable extends Drawable {
     }
 
     private void calcRadius() {
-        android.graphics.Rect bounds = getBounds();
+        Rect bounds = getBounds();
         float centerX = bounds.centerX();
         float f = bounds.left - centerX;
         float centerY = bounds.top - bounds.centerY();
@@ -113,7 +114,7 @@ public class MessageBackgroundDrawable extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public void setBounds(android.graphics.Rect rect) {
+    public void setBounds(Rect rect) {
         super.setBounds(rect);
         calcRadius();
     }
@@ -145,7 +146,7 @@ public class MessageBackgroundDrawable extends Drawable {
         float f;
         float f2 = this.currentAnimationProgress;
         if (f2 == 1.0f) {
-            android.graphics.Rect bounds = getBounds();
+            Rect bounds = getBounds();
             Paint paint = this.customPaint;
             if (paint == null) {
                 paint = this.paint;
@@ -157,7 +158,7 @@ public class MessageBackgroundDrawable extends Drawable {
             } else {
                 interpolation = 1.0f - CubicBezierInterpolator.EASE_OUT_QUINT.getInterpolation(1.0f - f2);
             }
-            android.graphics.Rect bounds2 = getBounds();
+            Rect bounds2 = getBounds();
             float centerX = bounds2.centerX();
             float centerY = bounds2.centerY();
             float f3 = this.touchOverrideX;

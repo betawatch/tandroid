@@ -13,8 +13,10 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Outline;
 import android.graphics.Paint;
+import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -272,7 +274,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
     private PollAdapter pollAdapter;
     private BaseFragment profileActivity;
     private PhotoViewer.PhotoViewerProvider provider;
-    android.graphics.Rect rect;
+    Rect rect;
     private Theme.ResourcesProvider resourcesProvider;
     public TextView saveItem;
     private SavedDialogsAdapter savedDialogsAdapter;
@@ -1671,7 +1673,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         int i12;
         int i13;
         TL_bots.BotInfo botInfo;
-        this.rect = new android.graphics.Rect();
+        this.rect = new Rect();
         this.mediaPages = new MediaPage[2];
         this.cellCache = new ArrayList(10);
         this.cache = new ArrayList(10);
@@ -2735,7 +2737,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             this.mediaPages[i25].animationSupportingListView.setVisibility(8);
             this.mediaPages[i25].animationSupportingListView.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: org.telegram.ui.Components.SharedMediaLayout.21
                 @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
-                public void getItemOffsets(android.graphics.Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
+                public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
                     if (view instanceof SharedPhotoVideoCell2) {
                         SharedPhotoVideoCell2 sharedPhotoVideoCell2 = (SharedPhotoVideoCell2) view;
                         int childAdapterPosition = mediaPage2.animationSupportingListView.getChildAdapterPosition(sharedPhotoVideoCell2);
@@ -2758,7 +2760,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             });
             this.mediaPages[i25].listView.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: org.telegram.ui.Components.SharedMediaLayout.22
                 @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
-                public void getItemOffsets(android.graphics.Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
+                public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
                     if (mediaPage2.listView.getAdapter() == SharedMediaLayout.this.gifAdapter) {
                         int childAdapterPosition = recyclerView.getChildAdapterPosition(view);
                         rect.left = 0;
@@ -2909,7 +2911,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListenerExtended
                 public void onMove(float f, float f2) {
                     if (SharedMediaLayout.this.profileActivity != null) {
-                        android.graphics.Point point = AndroidUtilities.displaySize;
+                        Point point = AndroidUtilities.displaySize;
                         if (point.x > point.y) {
                             SharedMediaLayout.this.profileActivity.movePreviewFragment(f2);
                         }
@@ -2919,7 +2921,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListenerExtended
                 public void onLongClickRelease() {
                     if (SharedMediaLayout.this.profileActivity != null) {
-                        android.graphics.Point point = AndroidUtilities.displaySize;
+                        Point point = AndroidUtilities.displaySize;
                         if (point.x > point.y) {
                             SharedMediaLayout.this.profileActivity.finishPreviewFragment();
                         }
@@ -4020,7 +4022,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             if (SharedMediaLayout.this.getStoriesController().canEditStoryAlbums(SharedMediaLayout.this.dialog_id)) {
                 ItemOptions scrimViewBackground = ItemOptions.makeOptions(SharedMediaLayout.this.profileActivity, view).setScrimViewBackground(new Drawable() { // from class: org.telegram.ui.Components.SharedMediaLayout.14.1
                     private final Drawable bg;
-                    private final android.graphics.Rect bgBounds = new android.graphics.Rect();
+                    private final Rect bgBounds = new Rect();
 
                     @Override // android.graphics.drawable.Drawable
                     public int getOpacity() {
@@ -5475,7 +5477,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         }
     }
 
-    protected void drawBackgroundWithBlur(Canvas canvas, float f, android.graphics.Rect rect, Paint paint) {
+    protected void drawBackgroundWithBlur(Canvas canvas, float f, Rect rect, Paint paint) {
         canvas.drawRect(rect, paint);
     }
 
@@ -9380,8 +9382,8 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             makeOptions.setBlur(true);
             makeOptions.allowMoveScrim();
             makeOptions.allowMoveScrimGravity(3);
-            android.graphics.Point point = AndroidUtilities.displaySize;
-            android.graphics.Point point2 = AndroidUtilities.displaySize;
+            Point point = AndroidUtilities.displaySize;
+            Point point2 = AndroidUtilities.displaySize;
             int min = Math.min((int) (Math.min(point.x, point.y) * 0.6777f), (int) (((Math.max(point2.x, point2.y) * 0.4333f) * 3.0f) / 4.0f));
             makeOptions.animateToSize(min, (min * 4) / 3);
             makeOptions.setDrawScrim(true);
@@ -14229,7 +14231,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
     public class ScrollSlidingTextTabStripInner extends ScrollSlidingTextTabStrip {
         public int backgroundColor;
         protected Paint backgroundPaint;
-        private android.graphics.Rect blurBounds;
+        private Rect blurBounds;
 
         protected void drawBackground(Canvas canvas) {
         }
@@ -14237,7 +14239,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         public ScrollSlidingTextTabStripInner(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context, resourcesProvider);
             this.backgroundColor = 0;
-            this.blurBounds = new android.graphics.Rect();
+            this.blurBounds = new Rect();
         }
 
         @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip, android.view.ViewGroup, android.view.View

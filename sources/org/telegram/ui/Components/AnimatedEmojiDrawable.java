@@ -4,6 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Looper;
 import android.text.TextPaint;
@@ -972,7 +973,7 @@ public class AnimatedEmojiDrawable extends Drawable {
         this.imageReceiver.draw(canvas);
     }
 
-    public void draw(Canvas canvas, android.graphics.Rect rect, float f) {
+    public void draw(Canvas canvas, Rect rect, float f) {
         ImageReceiver imageReceiver = this.imageReceiver;
         if (imageReceiver == null) {
             return;
@@ -1265,7 +1266,7 @@ public class AnimatedEmojiDrawable extends Drawable {
         private Integer account;
         private int alpha;
         boolean attached;
-        private final android.graphics.Rect bounds;
+        private final Rect bounds;
         private int cacheType;
         public boolean center;
         private final AnimatedFloat changeProgress;
@@ -1316,7 +1317,7 @@ public class AnimatedEmojiDrawable extends Drawable {
             this.particlesAlpha = animatedFloat2;
             this.drawables = new Drawable[2];
             this.alpha = NotificationCenter.invalidateMotionBackground;
-            this.bounds = new android.graphics.Rect();
+            this.bounds = new Rect();
             this.invalidateRunnable = new Runnable() { // from class: org.telegram.ui.Components.AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -1433,11 +1434,11 @@ public class AnimatedEmojiDrawable extends Drawable {
                     int i2 = intrinsicHeight / 2;
                     drawable2.setBounds(this.bounds.centerX() - i, this.bounds.centerY() - i2, this.bounds.centerX() + i, this.bounds.centerY() + i2);
                 } else {
-                    android.graphics.Rect rect = this.bounds;
+                    Rect rect = this.bounds;
                     int i3 = rect.left;
                     int i4 = intrinsicHeight / 2;
                     int centerY = rect.centerY() - i4;
-                    android.graphics.Rect rect2 = this.bounds;
+                    Rect rect2 = this.bounds;
                     drawable2.setBounds(i3, centerY, rect2.left + intrinsicWidth, rect2.centerY() + i4);
                 }
                 this.drawables[1].setColorFilter(this.colorFilter);
@@ -1469,15 +1470,15 @@ public class AnimatedEmojiDrawable extends Drawable {
                 } else {
                     if (f < 1.0f) {
                         float interpolation3 = this.overshootInterpolator.getInterpolation(f);
-                        android.graphics.Rect rect3 = this.bounds;
+                        Rect rect3 = this.bounds;
                         canvas.scale(interpolation3, interpolation3, rect3.left + (intrinsicWidth2 / 2.0f), rect3.centerY());
                     }
                     Drawable drawable4 = this.drawables[0];
-                    android.graphics.Rect rect4 = this.bounds;
+                    Rect rect4 = this.bounds;
                     int i7 = rect4.left;
                     int i8 = intrinsicHeight2 / 2;
                     int centerY2 = rect4.centerY() - i8;
-                    android.graphics.Rect rect5 = this.bounds;
+                    Rect rect5 = this.bounds;
                     drawable4.setBounds(i7, centerY2, rect5.left + intrinsicWidth2, rect5.centerY() + i8);
                 }
                 this.drawables[0].setAlpha(this.alpha);

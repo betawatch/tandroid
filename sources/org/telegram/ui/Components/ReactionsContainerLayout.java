@@ -13,6 +13,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
@@ -167,7 +168,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
     private final Paint selectedPaint;
     final HashSet selectedReactions;
     private Drawable shadow;
-    private android.graphics.Rect shadowPad;
+    private Rect shadowPad;
     private boolean showExpandableReactions;
     boolean skipDraw;
     public boolean skipEnterAnimation;
@@ -274,7 +275,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
         this.selectedReactions = new HashSet();
         this.alwaysSelectedReactions = new HashSet();
         this.location = new int[2];
-        this.shadowPad = new android.graphics.Rect();
+        this.shadowPad = new Rect();
         this.triggeredReactions = new ArrayList();
         this.lastVisibleViews = new HashSet();
         this.lastVisibleViewsTmp = new HashSet();
@@ -301,7 +302,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
         addView(this.nextRecentReaction);
         this.animationEnabled = SharedConfig.animationsEnabled() && SharedConfig.getDevicePerformanceClass() != 0;
         this.shadow = ContextCompat.getDrawable(context, R.drawable.reactions_bubble_shadow).mutate();
-        android.graphics.Rect rect = this.shadowPad;
+        Rect rect = this.shadowPad;
         int dp2 = AndroidUtilities.dp(7.0f);
         rect.bottom = dp2;
         rect.right = dp2;
@@ -392,7 +393,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
         };
         recyclerListView.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: org.telegram.ui.Components.ReactionsContainerLayout.4
             @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
-            public void getItemOffsets(android.graphics.Rect rect2, View view, RecyclerView recyclerView, RecyclerView.State state) {
+            public void getItemOffsets(Rect rect2, View view, RecyclerView recyclerView, RecyclerView.State state) {
                 super.getItemOffsets(rect2, view, recyclerView, state);
                 if (!ReactionsContainerLayout.this.showCustomEmojiReaction()) {
                     int childAdapterPosition = recyclerView.getChildAdapterPosition(view);
@@ -450,7 +451,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
         });
         recyclerListView.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: org.telegram.ui.Components.ReactionsContainerLayout.6
             @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
-            public void getItemOffsets(android.graphics.Rect rect2, View view, RecyclerView recyclerView, RecyclerView.State state) {
+            public void getItemOffsets(Rect rect2, View view, RecyclerView recyclerView, RecyclerView.State state) {
                 int childAdapterPosition = recyclerView.getChildAdapterPosition(view);
                 if (childAdapterPosition == 0) {
                     rect2.left = AndroidUtilities.dp(8.0f);
@@ -809,7 +810,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
                     Drawable drawable = this.shadow;
                     float paddingLeft = getPaddingLeft();
                     int width3 = getWidth() - getPaddingRight();
-                    android.graphics.Rect rect = this.shadowPad;
+                    Rect rect = this.shadowPad;
                     int i2 = (int) expandSize;
                     drawable.setBounds((int) ((paddingLeft + ((width3 + rect.right) * f5)) - rect.left), (getPaddingTop() - this.shadowPad.top) - i2, (int) (((getWidth() - getPaddingRight()) + this.shadowPad.right) * max2), (getHeight() - getPaddingBottom()) + this.shadowPad.bottom + i2);
                     this.shadow.draw(canvas);
@@ -2206,7 +2207,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
             }
 
             @Override // android.view.View
-            public void invalidate(android.graphics.Rect rect) {
+            public void invalidate(Rect rect) {
                 if (HwEmojis.grabIfWeakDevice(this, ReactionsContainerLayout.this)) {
                     return;
                 }

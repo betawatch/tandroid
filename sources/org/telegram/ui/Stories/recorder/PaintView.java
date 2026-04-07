@@ -15,6 +15,8 @@ import android.graphics.ColorFilter;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Point;
+import android.graphics.PointF;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
@@ -134,7 +136,6 @@ import org.telegram.ui.Components.Paint.Views.RoundView;
 import org.telegram.ui.Components.Paint.Views.StickerView;
 import org.telegram.ui.Components.Paint.Views.TextPaintView;
 import org.telegram.ui.Components.Paint.Views.WeatherView;
-import org.telegram.ui.Components.Point;
 import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
@@ -1491,7 +1492,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         onTextAdd();
         this.forceChanges = true;
         getPaintingSize();
-        Point startPositionRelativeToEntity = startPositionRelativeToEntity(null);
+        PointF startPositionRelativeToEntity = startPositionRelativeToEntity(null);
         float measuredWidth = this.entitiesView.getMeasuredWidth() <= 0 ? this.w : this.entitiesView.getMeasuredWidth();
         int dp = ((int) measuredWidth) - AndroidUtilities.dp(58.0f);
         LocationView locationView = new LocationView(getContext(), startPositionRelativeToEntity, this.currentAccount, messageMedia, mediaArea, measuredWidth / 240.0f, dp);
@@ -1526,7 +1527,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         onTextAdd();
         this.forceChanges = true;
         getPaintingSize();
-        Point startPositionRelativeToEntity = startPositionRelativeToEntity(null);
+        PointF startPositionRelativeToEntity = startPositionRelativeToEntity(null);
         float measuredWidth = this.entitiesView.getMeasuredWidth() <= 0 ? this.w : this.entitiesView.getMeasuredWidth();
         int dp = ((int) measuredWidth) - AndroidUtilities.dp(58.0f);
         WeatherView weatherView = new WeatherView(getContext(), startPositionRelativeToEntity, this.currentAccount, state, measuredWidth / 240.0f, dp);
@@ -1561,7 +1562,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         onTextAdd();
         this.forceChanges = true;
         getPaintingSize();
-        Point startPositionRelativeToEntity = startPositionRelativeToEntity(null);
+        PointF startPositionRelativeToEntity = startPositionRelativeToEntity(null);
         float measuredWidth = this.entitiesView.getMeasuredWidth() <= 0 ? this.w : this.entitiesView.getMeasuredWidth();
         int dp = ((int) measuredWidth) - AndroidUtilities.dp(58.0f);
         LinkView linkView = new LinkView(getContext(), startPositionRelativeToEntity, this.currentAccount, webPagePreview, mediaArea, measuredWidth / 360.0f, dp, 3);
@@ -1594,7 +1595,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
     private TextPaintView createText(boolean z) {
         onTextAdd();
         Size paintingSize = getPaintingSize();
-        Point startPositionRelativeToEntity = startPositionRelativeToEntity(null);
+        PointF startPositionRelativeToEntity = startPositionRelativeToEntity(null);
         TextPaintView textPaintView = new TextPaintView(getContext(), startPositionRelativeToEntity, (int) (paintingSize.width / 9.0f), "", this.colorSwatch, this.selectedTextType);
         float f = paintingSize.width / 9.0f;
         textPaintView.setMinMaxFontSize((int) (0.5f * f), (int) (f * 2.0f), new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda33
@@ -2901,7 +2902,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
                         LinkPreview linkPreview = createLinkSticker.marker;
                         mediaEntity.viewWidth = ceil + linkPreview.padx;
                         mediaEntity.viewHeight = linkPreview.pady + ((int) Math.ceil(linkPreview.h)) + createLinkSticker.marker.pady;
-                        Point position = createLinkSticker.getPosition();
+                        PointF position = createLinkSticker.getPosition();
                         position.y += this.h * 0.3f;
                         createLinkSticker.setPosition(position);
                     } else {
@@ -2932,7 +2933,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
                 }
                 roundView.setX((mediaEntity.x * this.w) - ((mediaEntity.viewWidth * (1.0f - mediaEntity.scale)) / 2.0f));
                 roundView.setY((mediaEntity.y * this.h) - ((mediaEntity.viewHeight * (1.0f - mediaEntity.scale)) / 2.0f));
-                roundView.setPosition(new Point(roundView.getX() + (mediaEntity.viewWidth / 2.0f), roundView.getY() + (mediaEntity.viewHeight / 2.0f)));
+                roundView.setPosition(new PointF(roundView.getX() + (mediaEntity.viewWidth / 2.0f), roundView.getY() + (mediaEntity.viewHeight / 2.0f)));
                 roundView.setScale(mediaEntity.scale);
                 roundView.setRotation((float) (((-mediaEntity.rotation) / 3.141592653589793d) * 180.0d));
             }
@@ -4968,7 +4969,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         if (entityView == null) {
             return;
         }
-        Point startPositionRelativeToEntity = startPositionRelativeToEntity(entityView);
+        PointF startPositionRelativeToEntity = startPositionRelativeToEntity(entityView);
         if (entityView instanceof StickerView) {
             StickerView stickerView = new StickerView(getContext(), (StickerView) entityView, startPositionRelativeToEntity);
             stickerView.setDelegate(this);
@@ -4991,17 +4992,17 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         appearAnimation(entityView2);
     }
 
-    private Point startPositionRelativeToEntity(EntityView entityView) {
+    private PointF startPositionRelativeToEntity(EntityView entityView) {
         int i;
         MediaController.CropState cropState = this.currentCropState;
         float f = cropState != null ? 200.0f / cropState.cropScale : 200.0f;
         if (entityView != null) {
-            Point position = entityView.getPosition();
+            PointF position = entityView.getPosition();
             float min = Math.min(entityView.getHeight(), entityView.getWidth()) * 0.2f;
-            return new Point(position.x + min, position.y + min);
+            return new PointF(position.x + min, position.y + min);
         }
         float f2 = cropState != null ? 100.0f / cropState.cropScale : 100.0f;
-        Point centerPositionForEntity = centerPositionForEntity();
+        PointF centerPositionForEntity = centerPositionForEntity();
         int i2 = 0;
         while (i2 < 10) {
             int i3 = 0;
@@ -5011,7 +5012,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
                 if (!(childAt instanceof EntityView) || (childAt instanceof MessageEntityView)) {
                     i = i2;
                 } else {
-                    Point position2 = ((EntityView) childAt).getPosition();
+                    PointF position2 = ((EntityView) childAt).getPosition();
                     i = i2;
                     if (((float) Math.sqrt(Math.pow(position2.x - centerPositionForEntity.x, 2.0d) + Math.pow(position2.y - centerPositionForEntity.y, 2.0d))) < f2) {
                         f = Math.min(childAt.getHeight(), childAt.getWidth()) * 0.2f;
@@ -5026,7 +5027,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
                 break;
             }
             i2 = i4 + 1;
-            centerPositionForEntity = new Point(centerPositionForEntity.x + f, centerPositionForEntity.y + f);
+            centerPositionForEntity = new PointF(centerPositionForEntity.x + f, centerPositionForEntity.y + f);
         }
         return centerPositionForEntity;
     }
@@ -5249,7 +5250,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         }
     }
 
-    private Point centerPositionForEntity() {
+    private PointF centerPositionForEntity() {
         int measuredWidth = this.entitiesView.getMeasuredWidth();
         int measuredHeight = this.entitiesView.getMeasuredHeight();
         if (measuredWidth <= 0) {
@@ -5258,7 +5259,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         if (measuredHeight <= 0) {
             measuredHeight = this.h;
         }
-        return new Point(measuredWidth / 2.0f, measuredHeight / 2.0f);
+        return new PointF(measuredWidth / 2.0f, measuredHeight / 2.0f);
     }
 
     private StickerPosition calculateStickerPosition(TLRPC.Document document) {
@@ -5292,9 +5293,9 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         if (tL_maskCoords == null || (arrayList = this.faces) == null || arrayList.size() == 0 || (randomFaceWithVacantAnchor = getRandomFaceWithVacantAnchor((i = tL_maskCoords.n), document.id, tL_maskCoords)) == null) {
             return stickerPosition;
         }
-        Point pointForAnchor = randomFaceWithVacantAnchor.getPointForAnchor(i);
+        PointF pointForAnchor = randomFaceWithVacantAnchor.getPointForAnchor(i);
         float widthForAnchor = randomFaceWithVacantAnchor.getWidthForAnchor(i);
-        return new StickerPosition(new Point(pointForAnchor.x, pointForAnchor.y), (float) ((widthForAnchor / baseStickerSize().width) * tL_maskCoords.zoom), randomFaceWithVacantAnchor.getAngle());
+        return new StickerPosition(new PointF(pointForAnchor.x, pointForAnchor.y), (float) ((widthForAnchor / baseStickerSize().width) * tL_maskCoords.zoom), randomFaceWithVacantAnchor.getAngle());
     }
 
     private PhotoFace getRandomFaceWithVacantAnchor(int i, long j, TLRPC.TL_maskCoords tL_maskCoords) {
@@ -5324,7 +5325,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
                 if (stickerView.getAnchor() != i) {
                     continue;
                 } else {
-                    Point position = stickerView.getPosition();
+                    PointF position = stickerView.getPosition();
                     float hypot = (float) Math.hypot(position.x - r14.x, position.y - r14.y);
                     if ((j == stickerView.getSticker().id || this.faces.size() > 1) && hypot < widthForAnchor) {
                         return true;
@@ -5383,7 +5384,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         }
         float floor = (float) Math.floor(0.43f * r0);
         Size size = new Size(floor, floor);
-        final RoundView roundView = new RoundView(getContext(), new Point((measuredWidth - (size.width / 2.0f)) - AndroidUtilities.dp(16.0f), AndroidUtilities.dp(72.0f) + (size.height / 2.0f)), 0.0f, 1.0f, size, str);
+        final RoundView roundView = new RoundView(getContext(), new PointF((measuredWidth - (size.width / 2.0f)) - AndroidUtilities.dp(16.0f), AndroidUtilities.dp(72.0f) + (size.height / 2.0f)), 0.0f, 1.0f, size, str);
         roundView.setDelegate(this);
         this.entitiesView.addView(roundView);
         checkEntitiesIsVideo();
@@ -5465,7 +5466,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
 
     private ReactionWidgetEntityView createReactionWidget(boolean z) {
         Size size = new Size(AndroidUtilities.dp(106.0f), AndroidUtilities.dp(106.0f));
-        Point centerPositionForEntity = centerPositionForEntity();
+        PointF centerPositionForEntity = centerPositionForEntity();
         if (this.entitiesView.getMeasuredHeight() > 0) {
             loop0: while (true) {
                 for (int i = 0; i < this.entitiesView.getChildCount(); i++) {
@@ -5663,11 +5664,11 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
 
     private static class StickerPosition {
         private float angle;
-        private Point position;
+        private PointF position;
         private float scale;
 
-        StickerPosition(Point point, float f, float f2) {
-            this.position = point;
+        StickerPosition(PointF pointF, float f, float f2) {
+            this.position = pointF;
             this.scale = f;
             this.angle = f2;
         }
@@ -5704,7 +5705,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
                     this.keyboardHeightLand = MessagesController.getGlobalEmojiSettings().getInt("kbd_height_land3", AndroidUtilities.dp(200.0f));
                 }
             }
-            android.graphics.Point point = AndroidUtilities.displaySize;
+            Point point = AndroidUtilities.displaySize;
             int paddingUnderContainer = (point.x > point.y ? this.keyboardHeightLand : this.keyboardHeight) + this.parent.getPaddingUnderContainer();
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) emojiView2.getLayoutParams();
             layoutParams.height = paddingUnderContainer;

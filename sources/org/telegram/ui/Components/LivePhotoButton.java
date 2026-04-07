@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
@@ -41,7 +42,7 @@ public class LivePhotoButton extends View {
     protected void onDraw(Canvas canvas) {
         float f = this.animatedValue.set(!this.value);
         this.icon.setBounds((getWidth() - this.icon.getIntrinsicWidth()) / 2, (getHeight() - this.icon.getIntrinsicHeight()) / 2, (getWidth() + this.icon.getIntrinsicWidth()) / 2, (getHeight() + this.icon.getIntrinsicHeight()) / 2);
-        android.graphics.Rect bounds = this.icon.getBounds();
+        Rect bounds = this.icon.getBounds();
         float width = bounds.left + (bounds.width() * 0.325f);
         float height = bounds.top + (bounds.height() * 0.152f);
         float height2 = bounds.bottom - (bounds.height() * 0.152f);

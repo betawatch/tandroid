@@ -13,6 +13,8 @@ import android.graphics.ColorFilter;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Point;
+import android.graphics.PointF;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.PorterDuffXfermode;
@@ -105,7 +107,6 @@ import org.telegram.ui.Components.Paint.Views.LPhotoPaintView;
 import org.telegram.ui.Components.Paint.Views.PaintTextOptionsView;
 import org.telegram.ui.Components.Paint.Views.PaintToolsView;
 import org.telegram.ui.Components.Paint.Views.PaintWeightChooserView;
-import org.telegram.ui.Components.Point;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.Size;
@@ -681,7 +682,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
                 }
                 photoView.setX((mediaEntity.x * this.paintingSize.width) - ((mediaEntity.viewWidth * (1.0f - mediaEntity.scale)) / 2.0f));
                 photoView.setY((mediaEntity.y * this.paintingSize.height) - ((mediaEntity.viewHeight * (1.0f - mediaEntity.scale)) / 2.0f));
-                photoView.setPosition(new Point(photoView.getX() + (mediaEntity.viewWidth / 2.0f), photoView.getY() + (mediaEntity.viewHeight / 2.0f)));
+                photoView.setPosition(new PointF(photoView.getX() + (mediaEntity.viewWidth / 2.0f), photoView.getY() + (mediaEntity.viewHeight / 2.0f)));
                 photoView.setScale(mediaEntity.scale);
                 photoView.setRotation((float) (((-mediaEntity.rotation) / 3.141592653589793d) * 180.0d));
                 i4++;
@@ -1329,7 +1330,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
     private TextPaintView createText(boolean z) {
         onTextAdd();
         Size paintingSize = getPaintingSize();
-        Point startPositionRelativeToEntity = startPositionRelativeToEntity(null);
+        PointF startPositionRelativeToEntity = startPositionRelativeToEntity(null);
         TextPaintView textPaintView = new TextPaintView(getContext(), startPositionRelativeToEntity, (int) (paintingSize.width / 9.0f), "", this.colorSwatch, this.selectedTextType);
         float f = paintingSize.width / 9.0f;
         textPaintView.setMinMaxFontSize((int) (0.5f * f), (int) (f * 2.0f), new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.LPhotoPaintView$$ExternalSyntheticLambda41
@@ -2308,7 +2309,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
                 View childAt = this.entitiesView.getChildAt(i5);
                 if (childAt instanceof EntityView) {
                     EntityView entityView = (EntityView) childAt;
-                    Point position = entityView.getPosition();
+                    PointF position = entityView.getPosition();
                     if (arrayList != null) {
                         VideoEditedInfo.MediaEntity mediaEntity = new VideoEditedInfo.MediaEntity();
                         if (entityView instanceof TextPaintView) {
@@ -3391,7 +3392,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
         if (entityView2 == null) {
             return;
         }
-        Point startPositionRelativeToEntity = startPositionRelativeToEntity(entityView2);
+        PointF startPositionRelativeToEntity = startPositionRelativeToEntity(entityView2);
         EntityView entityView3 = this.currentEntityView;
         if (entityView3 instanceof StickerView) {
             StickerView stickerView = new StickerView(getContext(), (StickerView) this.currentEntityView, startPositionRelativeToEntity);
@@ -3411,21 +3412,21 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
         selectEntity(entityView);
     }
 
-    private Point startPositionRelativeToEntity(EntityView entityView) {
+    private PointF startPositionRelativeToEntity(EntityView entityView) {
         MediaController.CropState cropState = this.currentCropState;
         float f = cropState != null ? 200.0f / cropState.cropScale : 200.0f;
         if (entityView != null) {
-            Point position = entityView.getPosition();
-            return new Point(position.x + f, position.y + f);
+            PointF position = entityView.getPosition();
+            return new PointF(position.x + f, position.y + f);
         }
         float f2 = cropState != null ? 100.0f / cropState.cropScale : 100.0f;
-        Point centerPositionForEntity = centerPositionForEntity();
+        PointF centerPositionForEntity = centerPositionForEntity();
         while (true) {
             boolean z = false;
             for (int i = 0; i < this.entitiesView.getChildCount(); i++) {
                 View childAt = this.entitiesView.getChildAt(i);
                 if (childAt instanceof EntityView) {
-                    Point position2 = ((EntityView) childAt).getPosition();
+                    PointF position2 = ((EntityView) childAt).getPosition();
                     if (((float) Math.sqrt(Math.pow(position2.x - centerPositionForEntity.x, 2.0d) + Math.pow(position2.y - centerPositionForEntity.y, 2.0d))) < f2) {
                         z = true;
                     }
@@ -3434,7 +3435,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
             if (!z) {
                 return centerPositionForEntity;
             }
-            centerPositionForEntity = new Point(centerPositionForEntity.x + f, centerPositionForEntity.y + f);
+            centerPositionForEntity = new PointF(centerPositionForEntity.x + f, centerPositionForEntity.y + f);
         }
     }
 
@@ -3537,7 +3538,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
         return new Size(floor, floor);
     }
 
-    private Point centerPositionForEntity() {
+    private PointF centerPositionForEntity() {
         Size paintingSize = getPaintingSize();
         float f = paintingSize.width / 2.0f;
         float f2 = paintingSize.height / 2.0f;
@@ -3548,7 +3549,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
             f -= cos * paintingSize.width;
             f2 -= sin * paintingSize.height;
         }
-        return new Point(f, f2);
+        return new PointF(f, f2);
     }
 
     private StickerPosition calculateStickerPosition(TLRPC.Document document) {
@@ -3582,7 +3583,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
         if (tL_maskCoords == null || (arrayList = this.faces) == null || arrayList.size() == 0 || (randomFaceWithVacantAnchor = getRandomFaceWithVacantAnchor((i = tL_maskCoords.n), document.id, tL_maskCoords)) == null) {
             return stickerPosition;
         }
-        Point pointForAnchor = randomFaceWithVacantAnchor.getPointForAnchor(i);
+        PointF pointForAnchor = randomFaceWithVacantAnchor.getPointForAnchor(i);
         float widthForAnchor = randomFaceWithVacantAnchor.getWidthForAnchor(i);
         float angle = randomFaceWithVacantAnchor.getAngle();
         float f3 = (float) ((widthForAnchor / baseStickerSize().width) * tL_maskCoords.zoom);
@@ -3590,7 +3591,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
         double d = 1.5707963267948966d - radians;
         double d2 = widthForAnchor;
         double d3 = radians + 1.5707963267948966d;
-        return new StickerPosition(new Point(pointForAnchor.x + ((float) (Math.sin(d) * d2 * tL_maskCoords.x)) + ((float) (Math.cos(d3) * d2 * tL_maskCoords.y)), pointForAnchor.y + ((float) (Math.cos(d) * d2 * tL_maskCoords.x)) + ((float) (Math.sin(d3) * d2 * tL_maskCoords.y))), f3, angle);
+        return new StickerPosition(new PointF(pointForAnchor.x + ((float) (Math.sin(d) * d2 * tL_maskCoords.x)) + ((float) (Math.cos(d3) * d2 * tL_maskCoords.y)), pointForAnchor.y + ((float) (Math.cos(d) * d2 * tL_maskCoords.x)) + ((float) (Math.sin(d3) * d2 * tL_maskCoords.y))), f3, angle);
     }
 
     private PhotoFace getRandomFaceWithVacantAnchor(int i, long j, TLRPC.TL_maskCoords tL_maskCoords) {
@@ -3620,7 +3621,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
                 if (stickerView.getAnchor() != i) {
                     continue;
                 } else {
-                    Point position = stickerView.getPosition();
+                    PointF position = stickerView.getPosition();
                     float hypot = (float) Math.hypot(position.x - r14.x, position.y - r14.y);
                     if ((j == stickerView.getSticker().id || this.faces.size() > 1) && hypot < widthForAnchor) {
                         return true;
@@ -3708,7 +3709,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
 
     @Override // org.telegram.ui.Components.Paint.Views.EntityView.EntityViewDelegate
     public void getTransformedTouch(float f, float f2, float[] fArr) {
-        android.graphics.Point point = AndroidUtilities.displaySize;
+        Point point = AndroidUtilities.displaySize;
         float f3 = f2 - (point.y / 2.0f);
         double d = f - (point.x / 2.0f);
         double radians = (float) Math.toRadians(-this.entitiesView.getRotation());
@@ -3747,7 +3748,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
         this.pos2[0] = Math.round(this.position[0]);
         this.pos2[1] = Math.round(this.position[1]);
         float f = this.pos2[0];
-        android.graphics.Point point = AndroidUtilities.displaySize;
+        Point point = AndroidUtilities.displaySize;
         double d = f - (point.x / 2.0f);
         double radians = (float) Math.toRadians(-this.entitiesView.getRotation());
         double d2 = r14[1] - (point.y / 2.0f);
@@ -3776,11 +3777,11 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
 
     private static class StickerPosition {
         private float angle;
-        private Point position;
+        private PointF position;
         private float scale;
 
-        StickerPosition(Point point, float f, float f2) {
-            this.position = point;
+        StickerPosition(PointF pointF, float f, float f2) {
+            this.position = pointF;
             this.scale = f;
             this.angle = f2;
         }
@@ -3827,7 +3828,7 @@ public abstract class LPhotoPaintView extends SizeNotifierFrameLayoutPhoto imple
                     this.keyboardHeightLand = MessagesController.getGlobalEmojiSettings().getInt("kbd_height_land3", AndroidUtilities.dp(200.0f));
                 }
             }
-            android.graphics.Point point = AndroidUtilities.displaySize;
+            Point point = AndroidUtilities.displaySize;
             int i2 = point.x > point.y ? this.keyboardHeightLand : this.keyboardHeight;
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) emojiView2.getLayoutParams();
             layoutParams.height = i2;

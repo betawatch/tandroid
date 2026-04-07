@@ -5,6 +5,7 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import androidx.core.content.ContextCompat;
@@ -111,13 +112,13 @@ public class ReplaceableIconDrawable extends Drawable implements Animator.Animat
     }
 
     @Override // android.graphics.drawable.Drawable
-    protected void onBoundsChange(android.graphics.Rect rect) {
+    protected void onBoundsChange(Rect rect) {
         super.onBoundsChange(rect);
         updateBounds(this.currentDrawable, rect);
         updateBounds(this.outDrawable, rect);
     }
 
-    private void updateBounds(Drawable drawable, android.graphics.Rect rect) {
+    private void updateBounds(Drawable drawable, Rect rect) {
         int height;
         int intrinsicHeight;
         int width;

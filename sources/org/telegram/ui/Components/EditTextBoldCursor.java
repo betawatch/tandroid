@@ -10,6 +10,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -132,11 +133,11 @@ public class EditTextBoldCursor extends EditTextEffects {
     public boolean lineYFix;
     private ViewTreeObserver.OnPreDrawListener listenerFixer;
     private Drawable mCursorDrawable;
-    private android.graphics.Rect mTempRect;
+    private Rect mTempRect;
     private boolean nextSetTextAnimated;
     private Runnable onPremiumMenuLockClickListener;
-    private android.graphics.Rect padding;
-    private android.graphics.Rect rect;
+    private Rect padding;
+    private Rect rect;
     private List<TextWatcher> registeredTextWatchers;
     float rightHintOffset;
     private int scrollY;
@@ -206,7 +207,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         }
 
         @Override // android.view.ActionMode.Callback2
-        public void onGetContentRect(ActionMode actionMode, View view, android.graphics.Rect rect) {
+        public void onGetContentRect(ActionMode actionMode, View view, Rect rect) {
             ActionMode.Callback callback = this.mWrapped;
             if (EditTextBoldCursor$ActionModeCallback2Wrapper$$ExternalSyntheticApiModelOutline0.m(callback)) {
                 TextSelectionHelper$$ExternalSyntheticApiModelOutline6.m(callback).onGetContentRect(actionMode, view, rect);
@@ -227,7 +228,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                 }
             }
         };
-        this.rect = new android.graphics.Rect();
+        this.rect = new Rect();
         this.hintVisible = true;
         this.hintAlpha = 1.0f;
         this.allowDrawCursor = true;
@@ -241,7 +242,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         this.lastOffset = -1;
         this.registeredTextWatchers = new ArrayList();
         this.isTextWatchersSuppressed = false;
-        this.padding = new android.graphics.Rect();
+        this.padding = new Rect();
         this.lastTouchX = -1;
         if (Build.VERSION.SDK_INT >= 26) {
             setImportantForAutofill(2);
@@ -523,7 +524,7 @@ public class EditTextBoldCursor extends EditTextEffects {
     public void setLineColors(int i, int i2, int i3) {
         this.lineVisible = true;
         getContext().getResources().getDrawable(R.drawable.search_dark).getPadding(this.padding);
-        android.graphics.Rect rect = this.padding;
+        Rect rect = this.padding;
         setPadding(rect.left, rect.top, rect.right, rect.bottom);
         this.lineColor = i;
         this.activeLineColor = i2;
@@ -698,7 +699,7 @@ public class EditTextBoldCursor extends EditTextEffects {
     }
 
     @Override // android.widget.TextView, android.view.View
-    protected void onFocusChanged(boolean z, int i, android.graphics.Rect rect) {
+    protected void onFocusChanged(boolean z, int i, Rect rect) {
         try {
             super.onFocusChanged(z, i, rect);
         } catch (Exception e) {
@@ -919,13 +920,13 @@ public class EditTextBoldCursor extends EditTextEffects {
         boolean z;
         boolean z2;
         int totalPaddingTop;
-        android.graphics.Rect rect;
+        Rect rect;
         int i;
         float f;
         Object obj;
         boolean z3;
         int totalPaddingTop2;
-        android.graphics.Rect rect2;
+        Rect rect2;
         int i2;
         float f2;
         int i3;
@@ -991,8 +992,8 @@ public class EditTextBoldCursor extends EditTextEffects {
                             int lineForOffset = layout.getLineForOffset(getSelectionStart());
                             int lineCount = layout.getLineCount();
                             updateCursorPosition();
-                            android.graphics.Rect bounds = this.gradientDrawable.getBounds();
-                            android.graphics.Rect rect3 = this.rect;
+                            Rect bounds = this.gradientDrawable.getBounds();
+                            Rect rect3 = this.rect;
                             rect3.left = bounds.left;
                             rect3.right = bounds.left + AndroidUtilities.dp(this.cursorWidth);
                             rect = this.rect;
@@ -1006,7 +1007,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                             int centerY = rect.centerY();
                             int i4 = this.cursorSize;
                             rect.top = centerY - (i4 / 2);
-                            android.graphics.Rect rect4 = this.rect;
+                            Rect rect4 = this.rect;
                             rect4.bottom = rect4.top + i4;
                             this.gradientDrawable.setBounds(rect4);
                             this.gradientDrawable.draw(canvas);
@@ -1018,8 +1019,8 @@ public class EditTextBoldCursor extends EditTextEffects {
                         int lineForOffset2 = layout2.getLineForOffset(getSelectionStart());
                         int lineCount2 = layout2.getLineCount();
                         updateCursorPosition();
-                        android.graphics.Rect bounds2 = this.gradientDrawable.getBounds();
-                        android.graphics.Rect rect32 = this.rect;
+                        Rect bounds2 = this.gradientDrawable.getBounds();
+                        Rect rect32 = this.rect;
                         rect32.left = bounds2.left;
                         rect32.right = bounds2.left + AndroidUtilities.dp(this.cursorWidth);
                         rect = this.rect;
@@ -1033,7 +1034,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                         int centerY2 = rect.centerY();
                         int i42 = this.cursorSize;
                         rect.top = centerY2 - (i42 / 2);
-                        android.graphics.Rect rect42 = this.rect;
+                        Rect rect42 = this.rect;
                         rect42.bottom = rect42.top + i42;
                         this.gradientDrawable.setBounds(rect42);
                         this.gradientDrawable.draw(canvas);
@@ -1046,8 +1047,8 @@ public class EditTextBoldCursor extends EditTextEffects {
                             int lineForOffset22 = layout22.getLineForOffset(getSelectionStart());
                             int lineCount22 = layout22.getLineCount();
                             updateCursorPosition();
-                            android.graphics.Rect bounds22 = this.gradientDrawable.getBounds();
-                            android.graphics.Rect rect322 = this.rect;
+                            Rect bounds22 = this.gradientDrawable.getBounds();
+                            Rect rect322 = this.rect;
                             rect322.left = bounds22.left;
                             rect322.right = bounds22.left + AndroidUtilities.dp(this.cursorWidth);
                             rect = this.rect;
@@ -1060,7 +1061,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                             int centerY22 = rect.centerY();
                             int i422 = this.cursorSize;
                             rect.top = centerY22 - (i422 / 2);
-                            android.graphics.Rect rect422 = this.rect;
+                            Rect rect422 = this.rect;
                             rect422.bottom = rect422.top + i422;
                             this.gradientDrawable.setBounds(rect422);
                             this.gradientDrawable.draw(canvas);
@@ -1072,8 +1073,8 @@ public class EditTextBoldCursor extends EditTextEffects {
                         int lineForOffset222 = layout222.getLineForOffset(getSelectionStart());
                         int lineCount222 = layout222.getLineCount();
                         updateCursorPosition();
-                        android.graphics.Rect bounds222 = this.gradientDrawable.getBounds();
-                        android.graphics.Rect rect3222 = this.rect;
+                        Rect bounds222 = this.gradientDrawable.getBounds();
+                        Rect rect3222 = this.rect;
                         rect3222.left = bounds222.left;
                         rect3222.right = bounds222.left + AndroidUtilities.dp(this.cursorWidth);
                         rect = this.rect;
@@ -1086,7 +1087,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                         int centerY222 = rect.centerY();
                         int i4222 = this.cursorSize;
                         rect.top = centerY222 - (i4222 / 2);
-                        android.graphics.Rect rect4222 = this.rect;
+                        Rect rect4222 = this.rect;
                         rect4222.bottom = rect4222.top + i4222;
                         this.gradientDrawable.setBounds(rect4222);
                         this.gradientDrawable.draw(canvas);
@@ -1109,8 +1110,8 @@ public class EditTextBoldCursor extends EditTextEffects {
                         int lineForOffset3 = layout3.getLineForOffset(getSelectionStart());
                         int lineCount3 = layout3.getLineCount();
                         updateCursorPosition();
-                        android.graphics.Rect bounds3 = this.gradientDrawable.getBounds();
-                        android.graphics.Rect rect5 = this.rect;
+                        Rect bounds3 = this.gradientDrawable.getBounds();
+                        Rect rect5 = this.rect;
                         rect5.left = bounds3.left;
                         rect5.right = bounds3.left + AndroidUtilities.dp(this.cursorWidth);
                         rect2 = this.rect;
@@ -1124,7 +1125,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                         int centerY3 = rect2.centerY();
                         int i5 = this.cursorSize;
                         rect2.top = centerY3 - (i5 / 2);
-                        android.graphics.Rect rect6 = this.rect;
+                        Rect rect6 = this.rect;
                         rect6.bottom = rect6.top + i5;
                         this.gradientDrawable.setBounds(rect6);
                         this.gradientDrawable.draw(canvas);
@@ -1137,8 +1138,8 @@ public class EditTextBoldCursor extends EditTextEffects {
                     int lineForOffset32 = layout32.getLineForOffset(getSelectionStart());
                     int lineCount32 = layout32.getLineCount();
                     updateCursorPosition();
-                    android.graphics.Rect bounds32 = this.gradientDrawable.getBounds();
-                    android.graphics.Rect rect52 = this.rect;
+                    Rect bounds32 = this.gradientDrawable.getBounds();
+                    Rect rect52 = this.rect;
                     rect52.left = bounds32.left;
                     rect52.right = bounds32.left + AndroidUtilities.dp(this.cursorWidth);
                     rect2 = this.rect;
@@ -1152,7 +1153,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                     int centerY32 = rect2.centerY();
                     int i52 = this.cursorSize;
                     rect2.top = centerY32 - (i52 / 2);
-                    android.graphics.Rect rect62 = this.rect;
+                    Rect rect62 = this.rect;
                     rect62.bottom = rect62.top + i52;
                     this.gradientDrawable.setBounds(rect62);
                     this.gradientDrawable.draw(canvas);
@@ -1166,8 +1167,8 @@ public class EditTextBoldCursor extends EditTextEffects {
                         int lineForOffset322 = layout322.getLineForOffset(getSelectionStart());
                         int lineCount322 = layout322.getLineCount();
                         updateCursorPosition();
-                        android.graphics.Rect bounds322 = this.gradientDrawable.getBounds();
-                        android.graphics.Rect rect522 = this.rect;
+                        Rect bounds322 = this.gradientDrawable.getBounds();
+                        Rect rect522 = this.rect;
                         rect522.left = bounds322.left;
                         rect522.right = bounds322.left + AndroidUtilities.dp(this.cursorWidth);
                         rect2 = this.rect;
@@ -1180,7 +1181,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                         int centerY322 = rect2.centerY();
                         int i522 = this.cursorSize;
                         rect2.top = centerY322 - (i522 / 2);
-                        android.graphics.Rect rect622 = this.rect;
+                        Rect rect622 = this.rect;
                         rect622.bottom = rect622.top + i522;
                         this.gradientDrawable.setBounds(rect622);
                         this.gradientDrawable.draw(canvas);
@@ -1193,8 +1194,8 @@ public class EditTextBoldCursor extends EditTextEffects {
                     int lineForOffset3222 = layout3222.getLineForOffset(getSelectionStart());
                     int lineCount3222 = layout3222.getLineCount();
                     updateCursorPosition();
-                    android.graphics.Rect bounds3222 = this.gradientDrawable.getBounds();
-                    android.graphics.Rect rect5222 = this.rect;
+                    Rect bounds3222 = this.gradientDrawable.getBounds();
+                    Rect rect5222 = this.rect;
                     rect5222.left = bounds3222.left;
                     rect5222.right = bounds3222.left + AndroidUtilities.dp(this.cursorWidth);
                     rect2 = this.rect;
@@ -1207,7 +1208,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                     int centerY3222 = rect2.centerY();
                     int i5222 = this.cursorSize;
                     rect2.top = centerY3222 - (i5222 / 2);
-                    android.graphics.Rect rect6222 = this.rect;
+                    Rect rect6222 = this.rect;
                     rect6222.bottom = rect6222.top + i5222;
                     this.gradientDrawable.setBounds(rect6222);
                     this.gradientDrawable.draw(canvas);
@@ -1302,7 +1303,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         int i;
         float max = Math.max(0.5f, f - 0.5f);
         if (this.mTempRect == null) {
-            this.mTempRect = new android.graphics.Rect();
+            this.mTempRect = new Rect();
         }
         if (drawable != null) {
             drawable.getPadding(this.mTempRect);
@@ -1328,7 +1329,7 @@ public class EditTextBoldCursor extends EditTextEffects {
         int clampHorizontalPosition = clampHorizontalPosition(this.gradientDrawable, f);
         int dp = AndroidUtilities.dp(this.cursorWidth);
         GradientDrawable gradientDrawable = this.gradientDrawable;
-        android.graphics.Rect rect = this.mTempRect;
+        Rect rect = this.mTempRect;
         gradientDrawable.setBounds(clampHorizontalPosition, i - rect.top, dp + clampHorizontalPosition, i2 + rect.bottom);
     }
 

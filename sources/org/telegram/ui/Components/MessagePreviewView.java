@@ -10,8 +10,10 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Outline;
 import android.graphics.Paint;
+import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -159,7 +161,7 @@ public abstract class MessagePreviewView extends FrameLayout {
         ActionBarMenuSubItem quoteAnotherChatButton;
         ActionBarMenuSubItem quoteButton;
         private AnimatorSet quoteSwitcher;
-        android.graphics.Rect rect;
+        Rect rect;
         ActionBarMenuSubItem replyAnotherChatButton;
         int scrollToOffset;
         ChatMessageSharedResources sharedResources;
@@ -310,7 +312,7 @@ public abstract class MessagePreviewView extends FrameLayout {
             ViewGroup viewGroup;
             this.firstLayout = true;
             this.scrollToOffset = -1;
-            this.rect = new android.graphics.Rect();
+            this.rect = new Rect();
             this.updateScroll = false;
             this.firstAttach = true;
             this.sharedResources = new ChatMessageSharedResources(context);
@@ -719,7 +721,7 @@ public abstract class MessagePreviewView extends FrameLayout {
             this.chatListView.setLayoutManager(this.chatLayoutManager);
             this.chatListView.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: org.telegram.ui.Components.MessagePreviewView.Page.12
                 @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
-                public void getItemOffsets(android.graphics.Rect rect, View view2, RecyclerView recyclerView, RecyclerView.State state) {
+                public void getItemOffsets(Rect rect, View view2, RecyclerView recyclerView, RecyclerView.State state) {
                     ChatMessageCell chatMessageCell;
                     MessageObject.GroupedMessages currentMessagesGroup;
                     MessageObject.GroupedMessagePosition currentPosition;
@@ -728,7 +730,7 @@ public abstract class MessagePreviewView extends FrameLayout {
                     if (!(view2 instanceof ChatMessageCell) || (currentMessagesGroup = (chatMessageCell = (ChatMessageCell) view2).getCurrentMessagesGroup()) == null || (currentPosition = chatMessageCell.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
                         return;
                     }
-                    android.graphics.Point point = AndroidUtilities.displaySize;
+                    Point point = AndroidUtilities.displaySize;
                     float max = Math.max(point.x, point.y) * 0.5f;
                     int extraInsetHeight = chatMessageCell.getExtraInsetHeight();
                     int i5 = 0;
@@ -1643,7 +1645,7 @@ public abstract class MessagePreviewView extends FrameLayout {
             this.menu.measure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), 0));
             int i3 = this.buttonsHeight;
             int measuredHeight = this.menu.getMeasuredHeight();
-            android.graphics.Rect rect = this.rect;
+            Rect rect = this.rect;
             this.buttonsHeight = Math.max(i3, measuredHeight + rect.top + rect.bottom);
             ((ViewGroup.MarginLayoutParams) this.chatListView.getLayoutParams()).topMargin = org.telegram.ui.ActionBar.ActionBar.getCurrentActionBarHeight();
             if (MessagePreviewView.this.isLandscapeMode) {
@@ -3197,7 +3199,7 @@ public abstract class MessagePreviewView extends FrameLayout {
             }
             Drawable drawable = this.bgDrawable;
             if (drawable != null) {
-                android.graphics.Rect rect = AndroidUtilities.rectTmp2;
+                Rect rect = AndroidUtilities.rectTmp2;
                 drawable.getPadding(rect);
                 int i5 = measuredHeight / 2;
                 this.bgDrawable.setBounds((((int) f3) - AndroidUtilities.dp(3.0f)) - rect.left, (i5 - AndroidUtilities.dp(16.0f)) - rect.top, ((int) ((f2 + f) / 2.0f)) + AndroidUtilities.dp(3.0f) + rect.right, i5 + AndroidUtilities.dp(16.0f) + rect.bottom);
@@ -3562,7 +3564,7 @@ public abstract class MessagePreviewView extends FrameLayout {
             if (this.detached) {
                 return;
             }
-            android.graphics.Rect rect = AndroidUtilities.rectTmp2;
+            Rect rect = AndroidUtilities.rectTmp2;
             rect.set(getBounds().centerX() - AndroidUtilities.dp(12.0f), getBounds().centerY() - AndroidUtilities.dp(12.0f), getBounds().centerX() + AndroidUtilities.dp(12.0f), getBounds().centerY() + AndroidUtilities.dp(12.0f));
             if (this.currentState.isLastFrame()) {
                 RLottieDrawable rLottieDrawable = this.currentState;

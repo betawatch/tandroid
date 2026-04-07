@@ -1487,13 +1487,16 @@ public class PollItemMenu extends Dialog {
                 long clientUserId = UserConfig.getInstance(this.messageObject.currentAccount).getClientUserId();
                 long currentTime = ConnectionsManager.getInstance(this.messageObject.currentAccount).getCurrentTime();
                 long j = pollAnswer.date + MessagesController.getInstance(this.messageObject.currentAccount).config.pollAnswerDeletePeriod.get(TimeUnit.SECONDS);
-                if (!this.messageObject.isForwarded() && (tL_messageMediaPoll.poll.creator || (peerDialogId == clientUserId && currentTime < j))) {
-                    makeOptions.add(R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.Delete), true, new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda9
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            PollItemMenu.this.lambda$setCell$8(bArr);
-                        }
-                    });
+                if (!this.messageObject.isForwarded()) {
+                    TLRPC.Poll poll2 = tL_messageMediaPoll.poll;
+                    if (!poll2.closed && (poll2.creator || (peerDialogId == clientUserId && currentTime < j))) {
+                        makeOptions.add(R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.Delete), true, new Runnable() { // from class: org.telegram.ui.PollItemMenu$$ExternalSyntheticLambda9
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                PollItemMenu.this.lambda$setCell$8(bArr);
+                            }
+                        });
+                    }
                 }
                 makeOptions.addGap();
                 TLObject userOrChat = MessagesController.getInstance(this.messageObject.currentAccount).getUserOrChat(peerDialogId);

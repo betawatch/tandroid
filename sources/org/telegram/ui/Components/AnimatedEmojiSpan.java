@@ -9,6 +9,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.text.Layout;
 import android.text.Spannable;
@@ -419,7 +420,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
         public float alpha;
         private ImageReceiver.BackgroundThreadDrawHolder[] backgroundDrawHolder = new ImageReceiver.BackgroundThreadDrawHolder[2];
         public AnimatedEmojiDrawable drawable;
-        public android.graphics.Rect drawableBounds;
+        public Rect drawableBounds;
         public float drawingYOffset;
         public boolean insideSpoiler;
         private final boolean invalidateInParent;
@@ -436,7 +437,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
         }
 
         public boolean outOfBounds(float f, float f2) {
-            android.graphics.Rect rect = this.drawableBounds;
+            Rect rect = this.drawableBounds;
             return ((float) rect.bottom) < f || ((float) rect.top) > f2;
         }
 
@@ -650,7 +651,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
                                 }
                             }
                             animatedEmojiHolder2.insideSpoiler = isInsideSpoiler(layout, spanned.getSpanStart(animatedEmojiSpan), spanned.getSpanEnd(animatedEmojiSpan));
-                            animatedEmojiHolder2.drawableBounds = new android.graphics.Rect();
+                            animatedEmojiHolder2.drawableBounds = new Rect();
                             animatedEmojiHolder2.span = animatedEmojiSpan;
                             emojiGroupedSpans2.add(layout, animatedEmojiHolder2);
                         } else {

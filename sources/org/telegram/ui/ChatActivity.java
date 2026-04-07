@@ -358,6 +358,7 @@ import org.telegram.ui.Components.Reactions.ChatSelectionReactionMenuOverlay;
 import org.telegram.ui.Components.Reactions.ReactionsEffectOverlay;
 import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Components.ReactionsContainerLayout;
+import org.telegram.ui.Components.RectOld;
 import org.telegram.ui.Components.RecyclerAnimationScrollHelper;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.ScaleStateListAnimator;
@@ -2985,18 +2986,18 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         blurredBackgroundDrawableViewFactory.setLinkedViewsRef(new ReferenceList());
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:340:0x03d2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:348:0x03da, code lost:
     
-        if (r0 != null) goto L119;
+        if (r0 != null) goto L125;
      */
+    /* JADX WARN: Type inference failed for: r12v17 */
     /* JADX WARN: Type inference failed for: r12v19 */
-    /* JADX WARN: Type inference failed for: r12v21 */
+    /* JADX WARN: Type inference failed for: r12v23 */
+    /* JADX WARN: Type inference failed for: r12v24 */
     /* JADX WARN: Type inference failed for: r12v25 */
     /* JADX WARN: Type inference failed for: r12v26 */
     /* JADX WARN: Type inference failed for: r12v27 */
     /* JADX WARN: Type inference failed for: r12v28 */
-    /* JADX WARN: Type inference failed for: r12v29 */
-    /* JADX WARN: Type inference failed for: r12v30 */
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -3027,8 +3028,12 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         this.textToSet = this.arguments.getString("start_text");
         this.premiumInvoiceBot = this.arguments.getBoolean("premium_bot", false);
         this.startLoadFromMessageId = this.arguments.getInt("message_id", 0);
-        this.highlightTaskId = this.arguments.containsKey("task_id") ? Integer.valueOf(this.arguments.getInt("task_id", 0)) : null;
-        this.highlightPollOptionId = this.arguments.containsKey("poll_option_id") ? this.arguments.getByteArray("poll_option_id") : null;
+        if (this.highlightTaskId == null) {
+            this.highlightTaskId = this.arguments.containsKey("task_id") ? Integer.valueOf(this.arguments.getInt("task_id", 0)) : null;
+        }
+        if (this.highlightPollOptionId == null) {
+            this.highlightPollOptionId = this.arguments.containsKey("poll_option_id") ? this.arguments.getByteArray("poll_option_id") : null;
+        }
         this.startReplyTo = this.arguments.getInt("reply_to", 0);
         this.startLoadFromDate = this.arguments.getInt("start_from_date", 0);
         this.startFromVideoTimestamp = this.arguments.getInt("video_timestamp", -1);
@@ -4228,7 +4233,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:571:0x046b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:576:0x046b, code lost:
     
         if (r0 == 8) goto L151;
      */
@@ -4274,41 +4279,42 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     /* JADX WARN: Removed duplicated region for block: B:384:0x10af  */
     /* JADX WARN: Removed duplicated region for block: B:389:0x1144  */
     /* JADX WARN: Removed duplicated region for block: B:392:0x1164  */
-    /* JADX WARN: Removed duplicated region for block: B:395:0x118e  */
-    /* JADX WARN: Removed duplicated region for block: B:398:0x11bc  */
-    /* JADX WARN: Removed duplicated region for block: B:403:0x11d8  */
-    /* JADX WARN: Removed duplicated region for block: B:406:0x11e2  */
-    /* JADX WARN: Removed duplicated region for block: B:411:0x11f7  */
-    /* JADX WARN: Removed duplicated region for block: B:415:0x122f  */
-    /* JADX WARN: Removed duplicated region for block: B:418:0x1280  */
-    /* JADX WARN: Removed duplicated region for block: B:421:0x12e6  */
-    /* JADX WARN: Removed duplicated region for block: B:424:0x1479  */
-    /* JADX WARN: Removed duplicated region for block: B:433:0x14bf  */
-    /* JADX WARN: Removed duplicated region for block: B:446:0x16ef  */
-    /* JADX WARN: Removed duplicated region for block: B:465:0x17f8  */
-    /* JADX WARN: Removed duplicated region for block: B:468:0x1830  */
-    /* JADX WARN: Removed duplicated region for block: B:476:0x18a0  */
-    /* JADX WARN: Removed duplicated region for block: B:479:0x18ba  */
-    /* JADX WARN: Removed duplicated region for block: B:485:0x191f  */
-    /* JADX WARN: Removed duplicated region for block: B:494:0x1954  */
-    /* JADX WARN: Removed duplicated region for block: B:497:0x19ab  */
-    /* JADX WARN: Removed duplicated region for block: B:500:0x19ec  */
-    /* JADX WARN: Removed duplicated region for block: B:504:0x1a29  */
-    /* JADX WARN: Removed duplicated region for block: B:507:0x1ad4  */
-    /* JADX WARN: Removed duplicated region for block: B:508:0x1a32  */
-    /* JADX WARN: Removed duplicated region for block: B:511:0x1b26  */
-    /* JADX WARN: Removed duplicated region for block: B:514:0x1b9e  */
-    /* JADX WARN: Removed duplicated region for block: B:517:0x1bc6  */
-    /* JADX WARN: Removed duplicated region for block: B:522:0x1bed  */
-    /* JADX WARN: Removed duplicated region for block: B:532:0x19bd  */
-    /* JADX WARN: Removed duplicated region for block: B:539:0x1236  */
-    /* JADX WARN: Removed duplicated region for block: B:543:0x116f  */
-    /* JADX WARN: Removed duplicated region for block: B:544:0x1146  */
-    /* JADX WARN: Removed duplicated region for block: B:545:0x1015  */
-    /* JADX WARN: Removed duplicated region for block: B:546:0x0eb8  */
-    /* JADX WARN: Removed duplicated region for block: B:547:0x0e9d  */
-    /* JADX WARN: Removed duplicated region for block: B:552:0x09a8  */
-    /* JADX WARN: Removed duplicated region for block: B:556:0x0607  */
+    /* JADX WARN: Removed duplicated region for block: B:395:0x117f  */
+    /* JADX WARN: Removed duplicated region for block: B:399:0x119e  */
+    /* JADX WARN: Removed duplicated region for block: B:402:0x11cc  */
+    /* JADX WARN: Removed duplicated region for block: B:407:0x11e8  */
+    /* JADX WARN: Removed duplicated region for block: B:410:0x11f2  */
+    /* JADX WARN: Removed duplicated region for block: B:415:0x1207  */
+    /* JADX WARN: Removed duplicated region for block: B:419:0x123f  */
+    /* JADX WARN: Removed duplicated region for block: B:422:0x1290  */
+    /* JADX WARN: Removed duplicated region for block: B:425:0x12f6  */
+    /* JADX WARN: Removed duplicated region for block: B:428:0x1489  */
+    /* JADX WARN: Removed duplicated region for block: B:437:0x14cf  */
+    /* JADX WARN: Removed duplicated region for block: B:450:0x16ff  */
+    /* JADX WARN: Removed duplicated region for block: B:469:0x1808  */
+    /* JADX WARN: Removed duplicated region for block: B:472:0x1840  */
+    /* JADX WARN: Removed duplicated region for block: B:480:0x18b0  */
+    /* JADX WARN: Removed duplicated region for block: B:483:0x18ca  */
+    /* JADX WARN: Removed duplicated region for block: B:489:0x192f  */
+    /* JADX WARN: Removed duplicated region for block: B:498:0x1964  */
+    /* JADX WARN: Removed duplicated region for block: B:501:0x19bb  */
+    /* JADX WARN: Removed duplicated region for block: B:504:0x19fc  */
+    /* JADX WARN: Removed duplicated region for block: B:508:0x1a39  */
+    /* JADX WARN: Removed duplicated region for block: B:511:0x1ae4  */
+    /* JADX WARN: Removed duplicated region for block: B:512:0x1a42  */
+    /* JADX WARN: Removed duplicated region for block: B:515:0x1b36  */
+    /* JADX WARN: Removed duplicated region for block: B:518:0x1bae  */
+    /* JADX WARN: Removed duplicated region for block: B:521:0x1bd6  */
+    /* JADX WARN: Removed duplicated region for block: B:526:0x1bfd  */
+    /* JADX WARN: Removed duplicated region for block: B:536:0x19cd  */
+    /* JADX WARN: Removed duplicated region for block: B:543:0x1246  */
+    /* JADX WARN: Removed duplicated region for block: B:548:0x116f  */
+    /* JADX WARN: Removed duplicated region for block: B:549:0x1146  */
+    /* JADX WARN: Removed duplicated region for block: B:550:0x1015  */
+    /* JADX WARN: Removed duplicated region for block: B:551:0x0eb8  */
+    /* JADX WARN: Removed duplicated region for block: B:552:0x0e9d  */
+    /* JADX WARN: Removed duplicated region for block: B:557:0x09a8  */
+    /* JADX WARN: Removed duplicated region for block: B:561:0x0607  */
     /* JADX WARN: Type inference failed for: r14v0 */
     /* JADX WARN: Type inference failed for: r14v1, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r14v16, types: [android.graphics.drawable.Drawable, java.lang.String] */
@@ -6096,6 +6102,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                     } else {
                                         this.chatActivityEnterView.setDelegate(new ChatActivityEnterViewDelegate());
                                     }
+                                    if (this.chatMode != 1 || this.isComments) {
+                                        this.chatActivityEnterView.setSideButtonsForAttach(this.sideControlsButtonsLayout);
+                                    }
                                     this.chatActivityEnterView.setInAppInsetsController(this.windowInsetsStateHolder);
                                     this.chatActivityEnterView.setDialogId(this.dialog_id, this.currentAccount);
                                     chatFull = this.chatInfo;
@@ -7741,6 +7750,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             this.chatActivityEnterView.getEditField().adaptiveCreateLinkDialog = true;
                             if (this.chatMode == 6) {
                             }
+                            if (this.chatMode != 1) {
+                            }
+                            this.chatActivityEnterView.setSideButtonsForAttach(this.sideControlsButtonsLayout);
                             this.chatActivityEnterView.setInAppInsetsController(this.windowInsetsStateHolder);
                             this.chatActivityEnterView.setDialogId(this.dialog_id, this.currentAccount);
                             chatFull = this.chatInfo;
@@ -9212,6 +9224,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 this.chatActivityEnterView.getEditField().adaptiveCreateLinkDialog = true;
                 if (this.chatMode == 6) {
                 }
+                if (this.chatMode != 1) {
+                }
+                this.chatActivityEnterView.setSideButtonsForAttach(this.sideControlsButtonsLayout);
                 this.chatActivityEnterView.setInAppInsetsController(this.windowInsetsStateHolder);
                 this.chatActivityEnterView.setDialogId(this.dialog_id, this.currentAccount);
                 chatFull = this.chatInfo;
@@ -10657,6 +10672,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             this.chatActivityEnterView.getEditField().adaptiveCreateLinkDialog = true;
             if (this.chatMode == 6) {
             }
+            if (this.chatMode != 1) {
+            }
+            this.chatActivityEnterView.setSideButtonsForAttach(this.sideControlsButtonsLayout);
             this.chatActivityEnterView.setInAppInsetsController(this.windowInsetsStateHolder);
             this.chatActivityEnterView.setDialogId(this.dialog_id, this.currentAccount);
             chatFull = this.chatInfo;
@@ -12073,6 +12091,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         this.chatActivityEnterView.getEditField().adaptiveCreateLinkDialog = true;
         if (this.chatMode == 6) {
         }
+        if (this.chatMode != 1) {
+        }
+        this.chatActivityEnterView.setSideButtonsForAttach(this.sideControlsButtonsLayout);
         this.chatActivityEnterView.setInAppInsetsController(this.windowInsetsStateHolder);
         this.chatActivityEnterView.setDialogId(this.dialog_id, this.currentAccount);
         chatFull = this.chatInfo;
@@ -56765,7 +56786,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 this.val$messageCell.getViewTreeObserver().removeOnPreDrawListener(this);
                 ImageReceiver photoImage = this.val$messageCell.getPhotoImage();
                 float imageWidth = photoImage.getImageWidth();
-                org.telegram.ui.Components.Rect cameraRect = ChatActivity.this.instantCameraView.getCameraRect();
+                RectOld cameraRect = ChatActivity.this.instantCameraView.getCameraRect();
                 float f = imageWidth / cameraRect.width;
                 int[] iArr = new int[2];
                 this.val$messageCell.getTransitionParams().ignoreAlpha = true;
@@ -59755,11 +59776,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         
             if (org.telegram.messenger.DialogObject.getPeerDialogId(r4) != r20.this$0.dialog_id) goto L66;
          */
-        /* JADX WARN: Removed duplicated region for block: B:110:0x0288  */
-        /* JADX WARN: Removed duplicated region for block: B:124:0x02ae  */
-        /* JADX WARN: Removed duplicated region for block: B:139:0x02cd  */
-        /* JADX WARN: Removed duplicated region for block: B:144:0x02da  */
-        /* JADX WARN: Removed duplicated region for block: B:145:0x02dd  */
+        /* JADX WARN: Removed duplicated region for block: B:110:0x028a  */
+        /* JADX WARN: Removed duplicated region for block: B:124:0x02b0  */
+        /* JADX WARN: Removed duplicated region for block: B:139:0x02cf  */
+        /* JADX WARN: Removed duplicated region for block: B:144:0x02dc  */
+        /* JADX WARN: Removed duplicated region for block: B:145:0x02df  */
         /* JADX WARN: Removed duplicated region for block: B:146:0x015e  */
         /* JADX WARN: Removed duplicated region for block: B:151:0x012b  */
         /* JADX WARN: Removed duplicated region for block: B:43:0x0107  */
@@ -59942,7 +59963,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                             ChatActivity.this.progressDialogCurrent.cancel();
                                             ChatActivity.this.progressDialogCurrent = null;
                                         }
-                                        LaunchActivity.instance.openMessage(j, i, str2, ChatActivity.this.progressDialogCurrent = new 6(messageObject2, chatMessageCell), messageObject2.getId(), i2, num);
+                                        LaunchActivity.instance.openMessage(j, i, str2, ChatActivity.this.progressDialogCurrent = new 6(messageObject2, chatMessageCell), messageObject2.getId(), i2, num, bArr);
                                         return;
                                     }
                                     return;

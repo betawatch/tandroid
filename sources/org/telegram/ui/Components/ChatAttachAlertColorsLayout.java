@@ -1,6 +1,7 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Point;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -190,7 +191,7 @@ public class ChatAttachAlertColorsLayout extends ChatAttachAlert.AttachAlertLayo
         if (AndroidUtilities.isTablet()) {
             this.itemsPerRow = 4;
         } else {
-            android.graphics.Point point = AndroidUtilities.displaySize;
+            Point point = AndroidUtilities.displaySize;
             if (point.x > point.y) {
                 this.itemsPerRow = 4;
             } else {
@@ -207,7 +208,7 @@ public class ChatAttachAlertColorsLayout extends ChatAttachAlert.AttachAlertLayo
         int ceil = (int) Math.ceil((this.adapter.getItemCount() - 1) / this.itemsPerRow);
         Math.max(0, ((i2 - ((dp * ceil) + ((ceil - 1) * AndroidUtilities.dp(5.0f)))) - ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.dp(60.0f));
         if (!AndroidUtilities.isTablet()) {
-            android.graphics.Point point2 = AndroidUtilities.displaySize;
+            Point point2 = AndroidUtilities.displaySize;
             if (point2.x > point2.y) {
                 i3 = (int) (i2 / 3.5f);
                 int dp2 = i3 - AndroidUtilities.dp(52.0f);

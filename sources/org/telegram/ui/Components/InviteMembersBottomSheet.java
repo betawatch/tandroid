@@ -11,6 +11,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Point;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
@@ -379,7 +380,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         }
         spansCountChanged(false);
         int childCount = this.spansContainer.getChildCount();
-        android.graphics.Point point = AndroidUtilities.displaySize;
+        Point point = AndroidUtilities.displaySize;
         boolean z = point.x < point.y;
         if (AndroidUtilities.isTablet() || z) {
             this.maxSize = AndroidUtilities.dp(144.0f);
@@ -387,7 +388,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
             this.maxSize = AndroidUtilities.dp(56.0f);
         }
         if (AndroidUtilities.isTablet()) {
-            android.graphics.Point point2 = AndroidUtilities.displaySize;
+            Point point2 = AndroidUtilities.displaySize;
             max = Math.min(point2.x, point2.y) * 0.8f;
         } else {
             if (z) {

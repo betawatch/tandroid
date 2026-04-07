@@ -14,7 +14,7 @@ import org.telegram.ui.Components.PhotoFilterView;
 /* loaded from: classes5.dex */
 public class PhotoFilterCurvesControl extends View {
     private int activeSegment;
-    private Rect actualArea;
+    private RectOld actualArea;
     private boolean checkForMoving;
     private PhotoFilterView.CurvesToolValue curveValue;
     private PhotoFilterCurvesControlDelegate delegate;
@@ -35,7 +35,7 @@ public class PhotoFilterCurvesControl extends View {
         super(context);
         this.activeSegment = 0;
         this.checkForMoving = true;
-        this.actualArea = new Rect();
+        this.actualArea = new RectOld();
         this.paint = new Paint(1);
         this.paintDash = new Paint(1);
         this.paintCurve = new Paint(1);
@@ -63,11 +63,11 @@ public class PhotoFilterCurvesControl extends View {
     }
 
     public void setActualArea(float f, float f2, float f3, float f4) {
-        Rect rect = this.actualArea;
-        rect.x = f;
-        rect.y = f2;
-        rect.width = f3;
-        rect.height = f4;
+        RectOld rectOld = this.actualArea;
+        rectOld.x = f;
+        rectOld.y = f2;
+        rectOld.width = f3;
+        rectOld.height = f4;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x0014, code lost:
@@ -105,11 +105,11 @@ public class PhotoFilterCurvesControl extends View {
                 float y = motionEvent.getY();
                 this.lastX = x;
                 this.lastY = y;
-                Rect rect = this.actualArea;
-                float f = rect.x;
-                if (x >= f && x <= f + rect.width) {
-                    float f2 = rect.y;
-                    if (y >= f2 && y <= f2 + rect.height) {
+                RectOld rectOld = this.actualArea;
+                float f = rectOld.x;
+                if (x >= f && x <= f + rectOld.width) {
+                    float f2 = rectOld.y;
+                    if (y >= f2 && y <= f2 + rectOld.height) {
                         this.isMoving = true;
                     }
                 }
@@ -178,8 +178,8 @@ public class PhotoFilterCurvesControl extends View {
         if (this.activeSegment != 0) {
             return;
         }
-        Rect rect = this.actualArea;
-        this.activeSegment = (int) Math.floor(((f - rect.x) / (rect.width / 5.0f)) + 1.0f);
+        RectOld rectOld = this.actualArea;
+        this.activeSegment = (int) Math.floor(((f - rectOld.x) / (rectOld.width / 5.0f)) + 1.0f);
     }
 
     private void unselectSegments() {
@@ -195,15 +195,15 @@ public class PhotoFilterCurvesControl extends View {
         String format;
         float f = this.actualArea.width / 5.0f;
         for (int i = 0; i < 4; i++) {
-            Rect rect = this.actualArea;
-            float f2 = rect.x + f + (i * f);
-            float f3 = rect.y;
-            canvas.drawLine(f2, f3, f2, f3 + rect.height, this.paint);
+            RectOld rectOld = this.actualArea;
+            float f2 = rectOld.x + f + (i * f);
+            float f3 = rectOld.y;
+            canvas.drawLine(f2, f3, f2, f3 + rectOld.height, this.paint);
         }
-        Rect rect2 = this.actualArea;
-        float f4 = rect2.x;
-        float f5 = rect2.y;
-        canvas.drawLine(f4, f5 + rect2.height, f4 + rect2.width, f5, this.paintDash);
+        RectOld rectOld2 = this.actualArea;
+        float f4 = rectOld2.x;
+        float f5 = rectOld2.y;
+        canvas.drawLine(f4, f5 + rectOld2.height, f4 + rectOld2.width, f5, this.paintDash);
         int i2 = this.curveValue.activeType;
         if (i2 == 0) {
             this.paintCurve.setColor(-1);
@@ -235,8 +235,8 @@ public class PhotoFilterCurvesControl extends View {
                 format = "";
             }
             float measureText = this.textPaint.measureText(format);
-            Rect rect3 = this.actualArea;
-            canvas.drawText(format, rect3.x + ((f - measureText) / 2.0f) + (i3 * f), (rect3.y + rect3.height) - AndroidUtilities.dp(4.0f), this.textPaint);
+            RectOld rectOld3 = this.actualArea;
+            canvas.drawText(format, rectOld3.x + ((f - measureText) / 2.0f) + (i3 * f), (rectOld3.y + rectOld3.height) - AndroidUtilities.dp(4.0f), this.textPaint);
         }
         float[] interpolateCurve = curvesValue.interpolateCurve();
         invalidate();
@@ -244,14 +244,14 @@ public class PhotoFilterCurvesControl extends View {
         for (int i4 = 0; i4 < interpolateCurve.length / 2; i4++) {
             if (i4 == 0) {
                 Path path = this.path;
-                Rect rect4 = this.actualArea;
+                RectOld rectOld4 = this.actualArea;
                 int i5 = i4 * 2;
-                path.moveTo(rect4.x + (interpolateCurve[i5] * rect4.width), rect4.y + ((1.0f - interpolateCurve[i5 + 1]) * rect4.height));
+                path.moveTo(rectOld4.x + (interpolateCurve[i5] * rectOld4.width), rectOld4.y + ((1.0f - interpolateCurve[i5 + 1]) * rectOld4.height));
             } else {
                 Path path2 = this.path;
-                Rect rect5 = this.actualArea;
+                RectOld rectOld5 = this.actualArea;
                 int i6 = i4 * 2;
-                path2.lineTo(rect5.x + (interpolateCurve[i6] * rect5.width), rect5.y + ((1.0f - interpolateCurve[i6 + 1]) * rect5.height));
+                path2.lineTo(rectOld5.x + (interpolateCurve[i6] * rectOld5.width), rectOld5.y + ((1.0f - interpolateCurve[i6 + 1]) * rectOld5.height));
             }
         }
         canvas.drawPath(this.path, this.paintCurve);

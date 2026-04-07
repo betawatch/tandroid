@@ -1,6 +1,7 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Point;
 import android.view.View;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -142,7 +143,7 @@ public class ChatAttachAlertEmojiLayout extends ChatAttachAlert.AttachAlertLayou
         int dp2;
         ((FrameLayout.LayoutParams) getLayoutParams()).topMargin = ActionBar.getCurrentActionBarHeight();
         if (!AndroidUtilities.isTablet()) {
-            android.graphics.Point point = AndroidUtilities.displaySize;
+            Point point = AndroidUtilities.displaySize;
             if (point.x > point.y) {
                 i3 = (int) (i2 / 3.5f);
                 dp = i3 - AndroidUtilities.dp(52.0f);

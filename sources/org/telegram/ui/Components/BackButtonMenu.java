@@ -3,6 +3,7 @@ package org.telegram.ui.Components;
 import android.app.Activity;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -88,7 +89,7 @@ public abstract class BackButtonMenu {
             return null;
         }
         ?? actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity, resourcesProvider);
-        android.graphics.Rect rect = new android.graphics.Rect();
+        Rect rect = new Rect();
         baseFragment.getParentActivity().getResources().getDrawable(R.drawable.popup_fixed_alert).mutate().getPadding(rect);
         actionBarPopupWindowLayout.setBackgroundColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground, resourcesProvider));
         AtomicReference atomicReference = new AtomicReference();
@@ -103,7 +104,7 @@ public abstract class BackButtonMenu {
             int i2 = i;
             frameLayout.setMinimumWidth(AndroidUtilities.dp(200.0f));
             BackupImageView backupImageView = new BackupImageView(parentActivity);
-            android.graphics.Rect rect2 = rect;
+            Rect rect2 = rect;
             if (chat == null && user == null) {
                 backupImageView.setRoundRadius(0);
             } else {
@@ -260,7 +261,7 @@ public abstract class BackButtonMenu {
             fragmentView = view322;
         }
         AtomicReference atomicReference4 = atomicReference;
-        android.graphics.Rect rect3 = rect;
+        Rect rect3 = rect;
         View view4 = fragmentView;
         if (!z3) {
             return null;

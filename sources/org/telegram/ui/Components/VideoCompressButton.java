@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
@@ -115,7 +116,7 @@ public class VideoCompressButton extends View {
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set((getWidth() - max) / 2.0f, (getHeight() - dpf2) / 2.0f, (getWidth() + max) / 2.0f, (getHeight() + dpf2) / 2.0f);
         canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(4.0f), AndroidUtilities.dpf2(4.0f), this.strokePaint);
-        android.graphics.Rect rect = AndroidUtilities.rectTmp2;
+        Rect rect = AndroidUtilities.rectTmp2;
         rect.set(0, (int) ((getHeight() - dpf2) / 2.0f), getWidth(), (int) ((getHeight() + dpf2) / 2.0f));
         this.textDrawable.setBounds(rect);
         this.textDrawable.setAlpha(i);

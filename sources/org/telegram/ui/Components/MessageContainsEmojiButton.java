@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
 import android.text.Layout;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
@@ -31,7 +32,7 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
     public boolean checkWidth;
     private int currentAccount;
     private AnimatedEmojiDrawable emojiDrawable;
-    private android.graphics.Rect emojiDrawableBounds;
+    private Rect emojiDrawableBounds;
     private CharSequence endText;
     private TLRPC.InputStickerSet inputStickerSet;
     private int lastLineHeight;
@@ -44,8 +45,8 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
     private int lastWidth;
     private ValueAnimator loadAnimator;
     private float loadT;
-    private android.graphics.Rect loadingBoundsFrom;
-    private android.graphics.Rect loadingBoundsTo;
+    private Rect loadingBoundsFrom;
+    private Rect loadingBoundsTo;
     private LoadingDrawable loadingDrawable;
     private boolean loadingDrawableBoundsSet;
     private CharSequence mainText;
@@ -85,7 +86,7 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         TLRPC.StickerSet stickerSet2;
         ArrayList<TLRPC.Document> arrayList2;
         String formatPluralString;
-        this.emojiDrawableBounds = new android.graphics.Rect();
+        this.emojiDrawableBounds = new Rect();
         this.loadingDrawableBoundsSet = false;
         this.lastWidth = -1;
         this.checkWidth = true;
@@ -204,9 +205,9 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
                     this.lastLineHeight = r1 - this.lastLineTop;
                     float min = Math.min(AndroidUtilities.dp(100.0f), this.mainTextLayout.getWidth() - this.lastLineMargin);
                     if (this.loadingBoundsFrom == null) {
-                        this.loadingBoundsFrom = new android.graphics.Rect();
+                        this.loadingBoundsFrom = new Rect();
                     }
-                    android.graphics.Rect rect = this.loadingBoundsFrom;
+                    Rect rect = this.loadingBoundsFrom;
                     int i2 = this.lastLineMargin;
                     rect.set(i2, this.lastLineTop, (int) (i2 + min), r1);
                     this.loadingDrawable.setBounds(this.loadingBoundsFrom);
@@ -258,7 +259,7 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
-        android.graphics.Rect rect;
+        Rect rect;
         super.onDraw(canvas);
         if (this.mainTextLayout != null) {
             canvas.save();
@@ -268,10 +269,10 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
             LoadingDrawable loadingDrawable = this.loadingDrawable;
             if (loadingDrawable != null && this.loadingDrawableBoundsSet) {
                 loadingDrawable.setAlpha((int) ((1.0f - this.loadT) * 255.0f));
-                android.graphics.Rect rect2 = this.loadingBoundsFrom;
+                Rect rect2 = this.loadingBoundsFrom;
                 if (rect2 != null && (rect = this.loadingBoundsTo) != null) {
                     float f = this.loadT;
-                    android.graphics.Rect rect3 = AndroidUtilities.rectTmp2;
+                    Rect rect3 = AndroidUtilities.rectTmp2;
                     AndroidUtilities.lerp(rect2, rect, f, rect3);
                     this.loadingDrawable.setBounds(rect3);
                 }
@@ -368,12 +369,12 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         int updateLayout = updateLayout((this.lastWidth - getPaddingLeft()) - getPaddingRight(), true);
         if (this.loadingBoundsFrom != null && this.secondPartTextLayout != null) {
             if (this.loadingBoundsTo == null) {
-                this.loadingBoundsTo = new android.graphics.Rect();
+                this.loadingBoundsTo = new Rect();
             }
             StaticLayout staticLayout = this.secondPartTextLayout;
             float primaryHorizontal = staticLayout.getPrimaryHorizontal(staticLayout.getLineEnd(0));
-            android.graphics.Rect rect = this.loadingBoundsTo;
-            android.graphics.Rect rect2 = this.loadingBoundsFrom;
+            Rect rect = this.loadingBoundsTo;
+            Rect rect2 = this.loadingBoundsFrom;
             rect.set(rect2.left, rect2.top, (int) primaryHorizontal, rect2.bottom);
         }
         this.inputStickerSet = null;

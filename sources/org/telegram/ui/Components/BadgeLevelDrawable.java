@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
@@ -121,7 +122,7 @@ public class BadgeLevelDrawable extends Drawable implements Drawable.Callback {
     }
 
     @Override // android.graphics.drawable.Drawable
-    protected void onBoundsChange(android.graphics.Rect rect) {
+    protected void onBoundsChange(Rect rect) {
         checkBounds();
     }
 

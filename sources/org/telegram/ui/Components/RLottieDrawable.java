@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.BitmapDrawable;
@@ -109,7 +110,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     public boolean shouldLimitFps;
     private boolean singleFrameDecoded;
     public boolean skipFrameUpdate;
-    public android.graphics.Rect srcRect;
+    public Rect srcRect;
     protected int timeBetweenFrames;
     protected Runnable uiRunnable;
     private Runnable uiRunnableCacheFinished;
@@ -600,7 +601,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 RLottieDrawable.uiHandler.post(RLottieDrawable.this.uiRunnableNoFrame);
             }
         };
-        this.srcRect = new android.graphics.Rect();
+        this.srcRect = new Rect();
         this.rawBackgroundBitmapFrame = -1;
         this.width = i;
         this.height = i2;
@@ -949,7 +950,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 RLottieDrawable.uiHandler.post(RLottieDrawable.this.uiRunnableNoFrame);
             }
         };
-        this.srcRect = new android.graphics.Rect();
+        this.srcRect = new Rect();
         this.rawBackgroundBitmapFrame = -1;
         this.width = i;
         this.height = i2;
@@ -1371,7 +1372,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 RLottieDrawable.uiHandler.post(RLottieDrawable.this.uiRunnableNoFrame);
             }
         };
-        this.srcRect = new android.graphics.Rect();
+        this.srcRect = new Rect();
         this.rawBackgroundBitmapFrame = -1;
         this.width = i;
         this.height = i2;
@@ -1832,7 +1833,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 RLottieDrawable.uiHandler.post(RLottieDrawable.this.uiRunnableNoFrame);
             }
         };
-        this.srcRect = new android.graphics.Rect();
+        this.srcRect = new Rect();
         this.rawBackgroundBitmapFrame = -1;
         this.width = i2;
         this.height = i3;
@@ -2193,7 +2194,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     }
 
     @Override // android.graphics.drawable.BitmapDrawable, android.graphics.drawable.Drawable
-    protected void onBoundsChange(android.graphics.Rect rect) {
+    protected void onBoundsChange(Rect rect) {
         super.onBoundsChange(rect);
         this.applyTransformation = true;
     }
@@ -2464,7 +2465,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     public void drawFrame(Canvas canvas, int i) {
         cacheFrame(i);
         if (this.rawBackgroundBitmap != null) {
-            android.graphics.Rect rect = AndroidUtilities.rectTmp2;
+            Rect rect = AndroidUtilities.rectTmp2;
             rect.set(0, 0, this.width, this.height);
             canvas.drawBitmap(this.rawBackgroundBitmap, rect, getBounds(), getPaint());
         }

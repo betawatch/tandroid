@@ -10,6 +10,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
@@ -134,7 +135,7 @@ public class ItemOptions {
     private float translateX;
     private float translateY;
     public boolean useScrollView;
-    private android.graphics.Rect viewAdditionalOffsets;
+    private Rect viewAdditionalOffsets;
 
     public void updateColors() {
     }
@@ -208,7 +209,7 @@ public class ItemOptions {
         this.gravity = 5;
         this.point = new float[2];
         this.drawScrim = true;
-        this.viewAdditionalOffsets = new android.graphics.Rect();
+        this.viewAdditionalOffsets = new Rect();
         this.dismissWithButtons = true;
         this.shiftDp = -4;
         if (baseFragment.getContext() == null) {
@@ -234,7 +235,7 @@ public class ItemOptions {
         this.gravity = 5;
         this.point = new float[2];
         this.drawScrim = true;
-        this.viewAdditionalOffsets = new android.graphics.Rect();
+        this.viewAdditionalOffsets = new Rect();
         this.dismissWithButtons = true;
         this.shiftDp = -4;
         if (viewGroup == null || viewGroup.getContext() == null) {
@@ -259,7 +260,7 @@ public class ItemOptions {
         this.gravity = 5;
         this.point = new float[2];
         this.drawScrim = true;
-        this.viewAdditionalOffsets = new android.graphics.Rect();
+        this.viewAdditionalOffsets = new Rect();
         this.dismissWithButtons = true;
         this.shiftDp = -4;
         this.context = actionBarPopupWindowLayout.getContext();
@@ -1432,7 +1433,7 @@ public class ItemOptions {
             float f8 = f6;
             this.layout.measure(View.MeasureSpec.makeMeasureSpec(viewGroup2.getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(viewGroup2.getMeasuredHeight(), TLObject.FLAG_31));
             RectF rectF2 = new RectF();
-            android.graphics.Rect padding = this.lastLayout.getPadding();
+            Rect padding = this.lastLayout.getPadding();
             rectF2.set(padding.left, padding.top, this.layout.getMeasuredWidth() - padding.right, this.layout.getMeasuredHeight() - padding.bottom);
             ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(this.layout, -2, -2) { // from class: org.telegram.ui.Components.ItemOptions.4
                 @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow

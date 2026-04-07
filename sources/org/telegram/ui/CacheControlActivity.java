@@ -101,7 +101,7 @@ import org.telegram.ui.Components.SlideChooseView;
 import org.telegram.ui.Components.StorageDiagramView;
 import org.telegram.ui.Components.StorageUsageView;
 import org.telegram.ui.Components.TypefaceSpan;
-import org.telegram.ui.DilogCacheBottomSheet;
+import org.telegram.ui.DialogCacheBottomSheet;
 import org.telegram.ui.KeepMediaPopupView;
 import org.telegram.ui.Storage.CacheModel;
 
@@ -1698,8 +1698,8 @@ public class CacheControlActivity extends BaseFragment implements NotificationCe
         if (this.totalSize <= 0 || getParentActivity() == null) {
             return;
         }
-        DilogCacheBottomSheet dilogCacheBottomSheet = new DilogCacheBottomSheet(this, dialogFileEntities, dialogFileEntities.createCacheModel(), new DilogCacheBottomSheet.Delegate() { // from class: org.telegram.ui.CacheControlActivity.6
-            @Override // org.telegram.ui.DilogCacheBottomSheet.Delegate
+        DialogCacheBottomSheet dialogCacheBottomSheet = new DialogCacheBottomSheet(this, dialogFileEntities, dialogFileEntities.createCacheModel(), new DialogCacheBottomSheet.Delegate() { // from class: org.telegram.ui.CacheControlActivity.6
+            @Override // org.telegram.ui.DialogCacheBottomSheet.Delegate
             public void onAvatarClick() {
                 CacheControlActivity.this.bottomSheet.dismiss();
                 Bundle bundle = new Bundle();
@@ -1712,13 +1712,13 @@ public class CacheControlActivity extends BaseFragment implements NotificationCe
                 CacheControlActivity.this.presentFragment(new ProfileActivity(bundle, null));
             }
 
-            @Override // org.telegram.ui.DilogCacheBottomSheet.Delegate
+            @Override // org.telegram.ui.DialogCacheBottomSheet.Delegate
             public void cleanupDialogFiles(DialogFileEntities dialogFileEntities2, StorageDiagramView.ClearViewData[] clearViewDataArr, CacheModel cacheModel) {
                 CacheControlActivity.this.cleanupDialogFiles(dialogFileEntities2, clearViewDataArr, cacheModel);
             }
         });
-        this.bottomSheet = dilogCacheBottomSheet;
-        showDialog(dilogCacheBottomSheet);
+        this.bottomSheet = dialogCacheBottomSheet;
+        showDialog(dialogCacheBottomSheet);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2846,7 +2846,7 @@ public class CacheControlActivity extends BaseFragment implements NotificationCe
                             }
                         });
                         CacheControlActivity.this.cachedMediaLayout.setCacheModel(CacheControlActivity.this.cacheModel);
-                        CacheControlActivity.this.nestedSizeNotifierLayout.setChildLayout(CacheControlActivity.this.cachedMediaLayout);
+                        CacheControlActivity.this.nestedSizeNotifierLayout.setChildLayout(CacheControlActivity.this.cachedMediaLayout, AndroidUtilities.dp(40.0f));
                         view2.setLayoutParams(new RecyclerView.LayoutParams(-1, -1));
                         view = view2;
                         break;

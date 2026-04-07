@@ -28,7 +28,7 @@ import org.telegram.ui.Components.StorageDiagramView;
 import org.telegram.ui.Storage.CacheModel;
 
 /* loaded from: classes4.dex */
-public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
+public class DialogCacheBottomSheet extends BottomSheetWithRecyclerListView {
     private CacheControlActivity.ClearCacheButton button;
     private final Delegate cacheDelegate;
     private final CacheModel cacheModel;
@@ -58,7 +58,7 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
     protected RecyclerListView.SelectionAdapter createAdapter(RecyclerListView recyclerListView) {
-        return new RecyclerListView.SelectionAdapter() { // from class: org.telegram.ui.DilogCacheBottomSheet.1
+        return new RecyclerListView.SelectionAdapter() { // from class: org.telegram.ui.DialogCacheBottomSheet.1
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public int getItemViewType(int i) {
                 return i;
@@ -77,12 +77,12 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
             public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
                 View view;
                 if (i == 0) {
-                    view = DilogCacheBottomSheet.this.linearLayout;
+                    view = DialogCacheBottomSheet.this.linearLayout;
                 } else if (i == 2) {
-                    view = DilogCacheBottomSheet.this.cachedMediaLayout;
+                    view = DialogCacheBottomSheet.this.cachedMediaLayout;
                     RecyclerView.LayoutParams layoutParams = new RecyclerView.LayoutParams(-1, -2);
-                    ((ViewGroup.MarginLayoutParams) layoutParams).leftMargin = ((BottomSheet) DilogCacheBottomSheet.this).backgroundPaddingLeft;
-                    ((ViewGroup.MarginLayoutParams) layoutParams).rightMargin = ((BottomSheet) DilogCacheBottomSheet.this).backgroundPaddingLeft;
+                    ((ViewGroup.MarginLayoutParams) layoutParams).leftMargin = ((BottomSheet) DialogCacheBottomSheet.this).backgroundPaddingLeft;
+                    ((ViewGroup.MarginLayoutParams) layoutParams).rightMargin = ((BottomSheet) DialogCacheBottomSheet.this).backgroundPaddingLeft;
                     view.setLayoutParams(layoutParams);
                 } else {
                     TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(viewGroup.getContext());
@@ -97,13 +97,13 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
 
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public int getItemCount() {
-                return DilogCacheBottomSheet.this.cacheModel.isEmpty() ? 1 : 3;
+                return DialogCacheBottomSheet.this.cacheModel.isEmpty() ? 1 : 3;
             }
         };
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DilogCacheBottomSheet(CacheControlActivity cacheControlActivity, CacheControlActivity.DialogFileEntities dialogFileEntities, final CacheModel cacheModel, final Delegate delegate) {
+    public DialogCacheBottomSheet(CacheControlActivity cacheControlActivity, CacheControlActivity.DialogFileEntities dialogFileEntities, final CacheModel cacheModel, final Delegate delegate) {
         super(cacheControlActivity, false, false, !cacheModel.isEmpty(), null);
         String string;
         int i;
@@ -124,7 +124,7 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
         LinearLayout linearLayout = new LinearLayout(context);
         this.linearLayout = linearLayout;
         linearLayout.setOrientation(1);
-        StorageDiagramView storageDiagramView = new StorageDiagramView(getContext(), dialogFileEntities.dialogId) { // from class: org.telegram.ui.DilogCacheBottomSheet.2
+        StorageDiagramView storageDiagramView = new StorageDiagramView(getContext(), dialogFileEntities.dialogId) { // from class: org.telegram.ui.DialogCacheBottomSheet.2
             @Override // org.telegram.ui.Components.StorageDiagramView
             protected void onAvatarClick() {
                 delegate.onAvatarClick();
@@ -174,10 +174,10 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
                 checkBoxCell.setText(string, AndroidUtilities.formatFileSize(j), true, true);
                 checkBoxCell.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
                 checkBoxCell.setCheckBoxColor(i, Theme.key_windowBackgroundWhiteGrayIcon, Theme.key_checkboxCheck);
-                checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DilogCacheBottomSheet$$ExternalSyntheticLambda1
+                checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DialogCacheBottomSheet$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        DilogCacheBottomSheet.this.lambda$new$0(cacheModel, view);
+                        DialogCacheBottomSheet.this.lambda$new$0(cacheModel, view);
                     }
                 });
                 this.checkBoxes[i3] = checkBoxCell;
@@ -192,16 +192,16 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
             checkBoxCell.setNeedDivider(false);
         }
         this.circleDiagramView.setData(cacheModel, this.clearViewData);
-        CachedMediaLayout cachedMediaLayout = new CachedMediaLayout(getContext(), cacheControlActivity) { // from class: org.telegram.ui.DilogCacheBottomSheet.3
+        CachedMediaLayout cachedMediaLayout = new CachedMediaLayout(getContext(), cacheControlActivity) { // from class: org.telegram.ui.DialogCacheBottomSheet.3
             @Override // org.telegram.ui.CachedMediaLayout, android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i5, int i6) {
-                super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec((((BottomSheetWithRecyclerListView) DilogCacheBottomSheet.this).contentHeight - ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight, TLObject.FLAG_30));
+                super.onMeasure(i5, View.MeasureSpec.makeMeasureSpec((((BottomSheetWithRecyclerListView) DialogCacheBottomSheet.this).contentHeight - ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight, TLObject.FLAG_30));
             }
         };
         this.cachedMediaLayout = cachedMediaLayout;
         cachedMediaLayout.setBottomPadding(AndroidUtilities.dp(80.0f));
         this.cachedMediaLayout.setCacheModel(cacheModel);
-        this.cachedMediaLayout.setDelegate(new CachedMediaLayout.Delegate() { // from class: org.telegram.ui.DilogCacheBottomSheet.4
+        this.cachedMediaLayout.setDelegate(new CachedMediaLayout.Delegate() { // from class: org.telegram.ui.DialogCacheBottomSheet.4
             @Override // org.telegram.ui.CachedMediaLayout.Delegate
             public void clear() {
             }
@@ -214,16 +214,16 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
             public void onItemSelected(CacheControlActivity.DialogFileEntities dialogFileEntities2, CacheModel.FileInfo fileInfo, boolean z) {
                 if (fileInfo != null) {
                     cacheModel.toggleSelect(fileInfo);
-                    DilogCacheBottomSheet.this.cachedMediaLayout.updateVisibleRows();
-                    DilogCacheBottomSheet.this.syncCheckBoxes();
-                    DilogCacheBottomSheet.this.button.setSize(true, DilogCacheBottomSheet.this.circleDiagramView.updateDescription());
-                    DilogCacheBottomSheet.this.circleDiagramView.update(true);
+                    DialogCacheBottomSheet.this.cachedMediaLayout.updateVisibleRows();
+                    DialogCacheBottomSheet.this.syncCheckBoxes();
+                    DialogCacheBottomSheet.this.button.setSize(true, DialogCacheBottomSheet.this.circleDiagramView.updateDescription());
+                    DialogCacheBottomSheet.this.circleDiagramView.update(true);
                 }
             }
 
             @Override // org.telegram.ui.CachedMediaLayout.Delegate
             public void dismiss() {
-                DilogCacheBottomSheet.this.lambda$new$0();
+                DialogCacheBottomSheet.this.lambda$new$0();
             }
         });
         NestedSizeNotifierLayout nestedSizeNotifierLayout = this.nestedSizeNotifierLayout;
@@ -302,13 +302,13 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
     public void onViewCreated(FrameLayout frameLayout) {
         super.onViewCreated(frameLayout);
-        this.recyclerListView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.DilogCacheBottomSheet.5
+        this.recyclerListView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.DialogCacheBottomSheet.5
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i, int i2) {
                 super.onScrolled(recyclerView, i, i2);
-                DilogCacheBottomSheet dilogCacheBottomSheet = DilogCacheBottomSheet.this;
-                if (dilogCacheBottomSheet.nestedSizeNotifierLayout != null) {
-                    dilogCacheBottomSheet.setShowShadow(!r2.isPinnedToTop());
+                DialogCacheBottomSheet dialogCacheBottomSheet = DialogCacheBottomSheet.this;
+                if (dialogCacheBottomSheet.nestedSizeNotifierLayout != null) {
+                    dialogCacheBottomSheet.setShowShadow(!r2.isPinnedToTop());
                 }
             }
         });
@@ -321,10 +321,10 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
     private void createButton() {
         CacheControlActivity.ClearCacheButton clearCacheButton = new CacheControlActivity.ClearCacheButton(getContext());
         this.button = clearCacheButton;
-        clearCacheButton.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DilogCacheBottomSheet$$ExternalSyntheticLambda0
+        clearCacheButton.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DialogCacheBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DilogCacheBottomSheet.this.lambda$createButton$3(view);
+                DialogCacheBottomSheet.this.lambda$createButton$3(view);
             }
         });
         StorageDiagramView storageDiagramView = this.circleDiagramView;
@@ -338,16 +338,16 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle(LocaleController.getString(R.string.ClearCache));
         builder.setMessage(LocaleController.getString(R.string.ClearCacheForChat));
-        builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.DilogCacheBottomSheet$$ExternalSyntheticLambda2
+        builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.DialogCacheBottomSheet$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                DilogCacheBottomSheet.this.lambda$createButton$1(alertDialog, i);
+                DialogCacheBottomSheet.this.lambda$createButton$1(alertDialog, i);
             }
         });
-        builder.setPositiveButton(LocaleController.getString(R.string.Clear), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.DilogCacheBottomSheet$$ExternalSyntheticLambda3
+        builder.setPositiveButton(LocaleController.getString(R.string.Clear), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.DialogCacheBottomSheet$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                DilogCacheBottomSheet.this.lambda$createButton$2(alertDialog, i);
+                DialogCacheBottomSheet.this.lambda$createButton$2(alertDialog, i);
             }
         });
         AlertDialog create = builder.create();

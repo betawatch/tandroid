@@ -146,7 +146,7 @@ public class FilterShaders {
 
         float getBlurExcludeBlurSize();
 
-        Point getBlurExcludePoint();
+        PointF getBlurExcludePoint();
 
         float getBlurExcludeSize();
 
@@ -1340,7 +1340,7 @@ public class FilterShaders {
             GLES20.glUniform1i(this.radialBlurSourceImage2Handle, 1);
             GLES20.glUniform1f(this.radialBlurExcludeSizeHandle, this.delegate.getBlurExcludeSize());
             GLES20.glUniform1f(this.radialBlurExcludeBlurSizeHandle, this.delegate.getBlurExcludeBlurSize());
-            Point blurExcludePoint = this.delegate.getBlurExcludePoint();
+            PointF blurExcludePoint = this.delegate.getBlurExcludePoint();
             GLES20.glUniform2f(this.radialBlurExcludePointHandle, blurExcludePoint.x, blurExcludePoint.y);
             GLES20.glUniform1f(this.radialBlurAspectRatioHandle, this.renderBufferHeight / this.renderBufferWidth);
             GLES20.glEnableVertexAttribArray(this.radialBlurInputTexCoordHandle);
@@ -1354,7 +1354,7 @@ public class FilterShaders {
             GLES20.glUniform1f(this.linearBlurExcludeSizeHandle, this.delegate.getBlurExcludeSize());
             GLES20.glUniform1f(this.linearBlurExcludeBlurSizeHandle, this.delegate.getBlurExcludeBlurSize());
             GLES20.glUniform1f(this.linearBlurAngleHandle, this.delegate.getBlurAngle());
-            Point blurExcludePoint2 = this.delegate.getBlurExcludePoint();
+            PointF blurExcludePoint2 = this.delegate.getBlurExcludePoint();
             GLES20.glUniform2f(this.linearBlurExcludePointHandle, blurExcludePoint2.x, blurExcludePoint2.y);
             GLES20.glUniform1f(this.linearBlurAspectRatioHandle, this.renderBufferHeight / this.renderBufferWidth);
             GLES20.glEnableVertexAttribArray(this.linearBlurInputTexCoordHandle);
@@ -1593,7 +1593,7 @@ public class FilterShaders {
             }
 
             @Override // org.telegram.ui.Components.FilterShaders.FilterShadersDelegate
-            public Point getBlurExcludePoint() {
+            public PointF getBlurExcludePoint() {
                 return MediaController.SavedFilterState.this.blurExcludePoint;
             }
 

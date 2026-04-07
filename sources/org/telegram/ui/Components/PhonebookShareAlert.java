@@ -16,6 +16,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Parcelable;
@@ -477,7 +478,7 @@ public class PhonebookShareAlert extends BottomSheet {
                     }
 
                     @Override // androidx.core.widget.NestedScrollView
-                    protected int computeScrollDeltaToGetChildRectOnScreen(android.graphics.Rect rect) {
+                    protected int computeScrollDeltaToGetChildRectOnScreen(Rect rect) {
                         if (this.focusingView == null || PhonebookShareAlert.this.linearLayout.getTop() != getPaddingTop()) {
                             return 0;
                         }
@@ -693,7 +694,7 @@ public class PhonebookShareAlert extends BottomSheet {
             }
 
             @Override // androidx.core.widget.NestedScrollView
-            protected int computeScrollDeltaToGetChildRectOnScreen(android.graphics.Rect rect) {
+            protected int computeScrollDeltaToGetChildRectOnScreen(Rect rect) {
                 if (this.focusingView == null || PhonebookShareAlert.this.linearLayout.getTop() != getPaddingTop()) {
                     return 0;
                 }

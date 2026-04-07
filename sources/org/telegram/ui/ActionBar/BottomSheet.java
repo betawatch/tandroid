@@ -340,7 +340,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
 
         @Override // android.graphics.drawable.Drawable
         public void draw(Canvas canvas) {
-            if (this.boundsWithInsets.isEmpty() || getAlpha() == 0) {
+            if (this.boundsWithInsets.isEmpty() || getAlpha() == 0 || AndroidUtilities.makingGlobalBlurBitmap) {
                 return;
             }
             canvas.drawRect(this.boundsWithInsets, this.bgPaint);

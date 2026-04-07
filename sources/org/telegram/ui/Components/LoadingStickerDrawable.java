@@ -9,6 +9,7 @@ import android.graphics.LinearGradient;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
+import android.graphics.Rect;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
@@ -74,7 +75,7 @@ public class LoadingStickerDrawable extends Drawable {
             return;
         }
         setColors(Theme.key_dialogBackground, Theme.key_dialogBackgroundGray);
-        android.graphics.Rect bounds = getBounds();
+        Rect bounds = getBounds();
         canvas.drawRect(bounds.left, bounds.top, bounds.right, bounds.bottom, this.placeholderPaint);
         long elapsedRealtime = SystemClock.elapsedRealtime();
         long abs = Math.abs(this.lastUpdateTime - elapsedRealtime);

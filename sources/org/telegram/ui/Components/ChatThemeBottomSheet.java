@@ -11,6 +11,7 @@ import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.PorterDuffXfermode;
@@ -1623,7 +1624,7 @@ public class ChatThemeBottomSheet extends BottomSheet implements NotificationCen
                 }
                 if (str != null) {
                     File file = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-                    android.graphics.Point realScreenSize = AndroidUtilities.getRealScreenSize();
+                    Point realScreenSize = AndroidUtilities.getRealScreenSize();
                     Bitmap loadBitmap = ImageLoader.loadBitmap(str, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
                     loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
                     ThemePreviewActivity themePreviewActivity = new ThemePreviewActivity(new WallpapersListActivity.FileWallpaper("", file, file), loadBitmap) { // from class: org.telegram.ui.Components.ChatThemeBottomSheet.13.1
@@ -1804,7 +1805,7 @@ public class ChatThemeBottomSheet extends BottomSheet implements NotificationCen
                 }
                 if (str != null) {
                     File file = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-                    android.graphics.Point realScreenSize = AndroidUtilities.getRealScreenSize();
+                    Point realScreenSize = AndroidUtilities.getRealScreenSize();
                     Bitmap loadBitmap = ImageLoader.loadBitmap(str, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
                     loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
                     ThemePreviewActivity themePreviewActivity = new ThemePreviewActivity(new WallpapersListActivity.FileWallpaper("", file, file), loadBitmap) { // from class: org.telegram.ui.Components.ChatThemeBottomSheet.14.1

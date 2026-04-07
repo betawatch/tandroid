@@ -11,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
@@ -343,7 +344,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
             for (Map.Entry entry : this.views.entrySet()) {
                 IMapsProvider.IMarker iMarker = (IMapsProvider.IMarker) entry.getKey();
                 View view = (View) entry.getValue();
-                android.graphics.Point screenLocation = projection.toScreenLocation(iMarker.getPosition());
+                Point screenLocation = projection.toScreenLocation(iMarker.getPosition());
                 view.setTranslationX(screenLocation.x - (view.getMeasuredWidth() / 2));
                 view.setTranslationY((screenLocation.y - view.getMeasuredHeight()) + AndroidUtilities.dp(22.0f));
             }
@@ -1666,7 +1667,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
             this.parentAlert.setAllowNestedScroll(false);
         } else {
             if (!AndroidUtilities.isTablet()) {
-                android.graphics.Point point = AndroidUtilities.displaySize;
+                Point point = AndroidUtilities.displaySize;
                 if (point.x > point.y) {
                     i4 = (int) (i2 / 3.5f);
                     i3 = i4 - AndroidUtilities.dp(52.0f);

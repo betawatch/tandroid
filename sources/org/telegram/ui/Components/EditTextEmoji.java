@@ -8,6 +8,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.graphics.Canvas;
+import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
@@ -739,7 +740,7 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
                     this.keyboardHeightLand = MessagesController.getGlobalEmojiSettings().getInt("kbd_height_land3", AndroidUtilities.dp(200.0f));
                 }
             }
-            android.graphics.Point point = AndroidUtilities.displaySize;
+            Point point = AndroidUtilities.displaySize;
             int i2 = (point.x > point.y ? this.keyboardHeightLand : this.keyboardHeight) + (this.includeNavigationBar ? AndroidUtilities.navigationBarHeight : 0);
             if (this.emojiExpanded) {
                 i2 = Math.min(i2 + AndroidUtilities.dp(200.0f), AndroidUtilities.displaySize.y);
@@ -1144,7 +1145,7 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
     }
 
     public int getKeyboardHeight() {
-        android.graphics.Point point = AndroidUtilities.displaySize;
+        Point point = AndroidUtilities.displaySize;
         int i = (point.x > point.y ? this.keyboardHeightLand : this.keyboardHeight) + (this.includeNavigationBar ? AndroidUtilities.navigationBarHeight : 0);
         return this.emojiExpanded ? Math.min(i + AndroidUtilities.dp(200.0f), AndroidUtilities.displaySize.y) : i;
     }

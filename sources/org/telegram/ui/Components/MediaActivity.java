@@ -10,6 +10,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Property;
@@ -530,7 +531,7 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
             }
 
             @Override // org.telegram.ui.Components.SharedMediaLayout
-            protected void drawBackgroundWithBlur(Canvas canvas, float f, android.graphics.Rect rect, Paint paint) {
+            protected void drawBackgroundWithBlur(Canvas canvas, float f, Rect rect, Paint paint) {
                 sizeNotifierFrameLayout2.drawBlurRect(canvas, getY() + f, rect, paint, true);
             }
 
