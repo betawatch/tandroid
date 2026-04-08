@@ -8764,9 +8764,4 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
         }
         invalidate();
     }
-
-    @Override // org.telegram.ui.Cells.BaseCell
-    protected boolean allowCaching() {
-        return this.rightFragmentOpenedProgress <= 0.0f;
-    }
 }

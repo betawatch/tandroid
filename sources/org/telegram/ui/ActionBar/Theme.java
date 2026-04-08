@@ -4857,117 +4857,77 @@ public abstract class Theme {
             return this.shadowDrawable;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:35:0x0186  */
-        /* JADX WARN: Removed duplicated region for block: B:41:0x01a9  */
-        /* JADX WARN: Removed duplicated region for block: B:49:0x0194  */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-        */
         public Drawable getBackgroundDrawable() {
             char c;
-            int i;
-            boolean z;
             int color;
-            Drawable drawable;
+            int i;
             int i2 = this.overrideRoundRadius;
             if (i2 == 0) {
                 i2 = this.overrideRounding > 0.0f ? 0 : dp(SharedConfig.bubbleRadius);
             }
-            boolean z2 = this.isTopNear;
+            boolean z = this.isTopNear;
             char c2 = 3;
-            if (z2 && this.isBottomNear) {
+            if (z && this.isBottomNear) {
                 c = 3;
-            } else if (z2) {
+            } else if (z) {
                 c = 2;
             } else {
                 c = this.isBottomNear ? (char) 1 : (char) 0;
             }
-            boolean z3 = this.isSelected;
-            if (!z3 || !this.botButtonsBottom) {
-                if (z3) {
+            boolean z2 = this.isSelected;
+            if (!z2 || !this.botButtonsBottom) {
+                if (z2) {
                     c2 = 1;
                 } else {
                     c2 = this.botButtonsBottom ? (char) 2 : (char) 0;
                 }
             }
-            boolean z4 = (this.gradientShader != null || z3 || this.isCrossfadeBackground) ? false : true;
+            if (z2) {
+                color = getColor(this.isOut ? Theme.key_chat_outBubbleSelected : Theme.key_chat_inBubbleSelected);
+            } else {
+                color = getColor(this.isOut ? Theme.key_chat_outBubble : Theme.key_chat_inBubble);
+            }
+            boolean z3 = (this.gradientShader != null || this.isSelected || this.isCrossfadeBackground) ? false : true;
             int color2 = getColor(this.isOut ? Theme.key_chat_outBubbleShadow : Theme.key_chat_inBubbleShadow);
-            if (this.lastDrawWithShadow != z4 || this.currentBackgroundDrawableRadius[c2][c] != i2 || (z4 && this.shadowDrawableColor[c] != color2)) {
+            if (this.lastDrawWithShadow != z3 || this.currentBackgroundDrawableRadius[c2][c] != i2 || ((z3 && this.shadowDrawableColor[c] != color2) || this.backgroundDrawableColor[c2][c] != color)) {
                 this.currentBackgroundDrawableRadius[c2][c] = i2;
                 try {
                     Bitmap createBitmap = Bitmap.createBitmap(dp(50.0f), dp(40.0f), Bitmap.Config.ARGB_8888);
                     Canvas canvas = new Canvas(createBitmap);
                     this.backupRect.set(getBounds());
-                    if (z4) {
-                        try {
-                            this.shadowDrawableColor[c] = color2;
-                            Paint paint = new Paint(1);
-                            paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, dp(40.0f), new int[]{358573417, 694117737}, (float[]) null, Shader.TileMode.CLAMP));
-                            paint.setColorFilter(new PorterDuffColorFilter(color2, PorterDuff.Mode.MULTIPLY));
-                            paint.setShadowLayer(2.0f, 0.0f, 1.0f, -1);
-                            if (AndroidUtilities.density > 1.0f) {
-                                setBounds(-1, -1, createBitmap.getWidth() + 1, createBitmap.getHeight() + 1);
-                                i = 0;
-                            } else {
-                                i = 0;
-                                setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-                            }
+                    if (z3) {
+                        this.shadowDrawableColor[c] = color2;
+                        Paint paint = new Paint(1);
+                        paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, dp(40.0f), new int[]{358573417, 694117737}, (float[]) null, Shader.TileMode.CLAMP));
+                        paint.setColorFilter(new PorterDuffColorFilter(color2, PorterDuff.Mode.MULTIPLY));
+                        paint.setShadowLayer(2.0f, 0.0f, 1.0f, -1);
+                        if (AndroidUtilities.density > 1.0f) {
+                            setBounds(-1, -1, createBitmap.getWidth() + 1, createBitmap.getHeight() + 1);
+                            i = 0;
+                        } else {
+                            i = 0;
+                            setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
+                        }
+                        draw(canvas, paint);
+                        if (AndroidUtilities.density > 1.0f) {
+                            paint.setColor(i);
+                            paint.setShadowLayer(0.0f, 0.0f, 0.0f, i);
+                            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+                            setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
                             draw(canvas, paint);
-                            if (AndroidUtilities.density > 1.0f) {
-                                paint.setColor(i);
-                                paint.setShadowLayer(0.0f, 0.0f, 0.0f, i);
-                                paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-                                setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-                                draw(canvas, paint);
-                            }
-                        } catch (Throwable unused) {
                         }
                     }
                     Paint paint2 = new Paint(1);
-                    paint2.setColor(-1);
-                    try {
-                        setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-                        draw(canvas, paint2);
-                        this.backgroundDrawable[c2][c] = new NinePatchDrawable(createBitmap, getByteBuffer((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1, -1).array(), new Rect(), null);
-                        try {
-                            setBounds(this.backupRect);
-                        } catch (Throwable unused2) {
-                        }
-                        z = true;
-                    } catch (Throwable unused3) {
-                        z = false;
-                        this.lastDrawWithShadow = z4;
-                        if (this.isSelected) {
-                        }
-                        drawable = this.backgroundDrawable[c2][c];
-                        if (drawable != null) {
-                        }
-                        return this.backgroundDrawable[c2][c];
-                    }
-                } catch (Throwable unused4) {
+                    paint2.setColor(color);
+                    setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
+                    draw(canvas, paint2);
+                    this.backgroundDrawable[c2][c] = new NinePatchDrawable(createBitmap, getByteBuffer((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1, color).array(), new Rect(), null);
+                    setBounds(this.backupRect);
+                } catch (Throwable unused) {
                 }
-                this.lastDrawWithShadow = z4;
-                if (this.isSelected) {
-                    color = getColor(this.isOut ? Theme.key_chat_outBubbleSelected : Theme.key_chat_inBubbleSelected);
-                } else {
-                    color = getColor(this.isOut ? Theme.key_chat_outBubble : Theme.key_chat_inBubble);
-                }
-                drawable = this.backgroundDrawable[c2][c];
-                if (drawable != null && (this.backgroundDrawableColor[c2][c] != color || z)) {
-                    drawable.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY));
-                    this.backgroundDrawableColor[c2][c] = color;
-                }
-                return this.backgroundDrawable[c2][c];
             }
-            z = false;
-            this.lastDrawWithShadow = z4;
-            if (this.isSelected) {
-            }
-            drawable = this.backgroundDrawable[c2][c];
-            if (drawable != null) {
-                drawable.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY));
-                this.backgroundDrawableColor[c2][c] = color;
-            }
+            this.lastDrawWithShadow = z3;
+            this.backgroundDrawableColor[c2][c] = color;
             return this.backgroundDrawable[c2][c];
         }
 

@@ -44,6 +44,7 @@ import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.HintsController;
 import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
@@ -440,7 +441,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         createRoundRectDrawable.getPaint().setShadowLayer(AndroidUtilities.dp(6.0f), 0.0f, AndroidUtilities.dp(1.0f), Theme.multAlpha(-16777216, 0.15f));
         makeOptions.setScrimViewBackground(createRoundRectDrawable);
         makeOptions.show();
-        MessagesController.getGlobalMainSettings().edit().putInt("accountswitchhint", 3).apply();
+        HintsController.Hint.AccountSwitchHint.doNotShowAgain();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -928,14 +929,13 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         if (this.accountSwitchHintShown) {
             return;
         }
-        if (this.accountSwitchHint == null && MessagesController.getGlobalMainSettings().getInt("accountswitchhint", 0) < 2) {
+        if (this.accountSwitchHint == null && HintsController.Hint.AccountSwitchHint.show()) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
                     MainTabsActivity.this.lambda$showAccountChangeHint$9();
                 }
             }, 1500L);
-            MessagesController.getGlobalMainSettings().edit().putInt("accountswitchhint", MessagesController.getGlobalMainSettings().getInt("channelgifthint", 0) + 1).apply();
         }
         this.accountSwitchHintShown = true;
     }
@@ -964,6 +964,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         });
         this.accountSwitchHint.setDuration(8000L);
         this.accountSwitchHint.show();
+        HintsController.Hint.AccountSwitchHint.increment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -30,12 +30,16 @@ public class ChatListViewPaddingsAnimator {
         }
         final int i4 = paddingTop - i;
         if (z && i4 != 0) {
-            AndroidUtilities.doOnLayout(this.recyclerView, new Runnable() { // from class: org.telegram.ui.Components.chat.ChatListViewPaddingsAnimator$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    ChatListViewPaddingsAnimator.this.lambda$setPaddings$0(i4);
-                }
-            });
+            boolean canScrollVertically = this.recyclerView.canScrollVertically(1);
+            boolean canScrollVertically2 = this.recyclerView.canScrollVertically(-1);
+            if ((i4 >= 0 || canScrollVertically) && (i4 <= 0 || canScrollVertically2)) {
+                AndroidUtilities.doOnLayout(this.recyclerView, new Runnable() { // from class: org.telegram.ui.Components.chat.ChatListViewPaddingsAnimator$$ExternalSyntheticLambda0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        ChatListViewPaddingsAnimator.this.lambda$setPaddings$0(i4);
+                    }
+                });
+            }
         }
         RecyclerView recyclerView = this.recyclerView;
         recyclerView.setPadding(recyclerView.getPaddingLeft(), i, this.recyclerView.getPaddingRight(), i3);

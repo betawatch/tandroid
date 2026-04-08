@@ -319,6 +319,7 @@ import org.telegram.ui.Components.HashtagActivity;
 import org.telegram.ui.Components.HashtagHistoryView;
 import org.telegram.ui.Components.HideViewAfterAnimation;
 import org.telegram.ui.Components.HintView;
+import org.telegram.ui.Components.HintsController;
 import org.telegram.ui.Components.ImageUpdater;
 import org.telegram.ui.Components.ImportingAlert;
 import org.telegram.ui.Components.InstantCameraView;
@@ -16579,13 +16580,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$59(View view) {
-        MessagesController.getGlobalMainSettings().edit().putInt("channelgifthint", 3).apply();
+        HintsController.Hint.ChannelGiftHint.doNotShowAgain();
         showDialog(new GiftSheet(getContext(), this.currentAccount, getDialogId(), null, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$60(View view) {
-        MessagesController.getGlobalMainSettings().edit().putInt("channelsuggesthint", 3).apply();
+        HintsController.Hint.ChannelSuggestHint.doNotShowAgain();
         TLRPC.Chat chat = this.currentChat;
         if (chat == null || chat.linked_monoforum_id == 0) {
             return;
@@ -16602,9 +16603,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$63(final View view, int i, boolean z) {
-        if (this.bottomGiftHintView == null && z && MessagesController.getGlobalMainSettings().getInt("channelgifthint", 0) < 2) {
+        if (this.bottomGiftHintView == null && z) {
             HintView2 hintView2 = this.bottomSuggestHintView;
-            if (hintView2 == null || !hintView2.shown()) {
+            if ((hintView2 == null || !hintView2.shown()) && HintsController.Hint.ChannelGiftHint.show()) {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda232
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -16636,7 +16637,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
         });
         this.bottomGiftHintView.show();
-        MessagesController.getGlobalMainSettings().edit().putInt("channelgifthint", MessagesController.getGlobalMainSettings().getInt("channelgifthint", 0) + 1).apply();
+        HintsController.Hint.ChannelGiftHint.increment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -16646,7 +16647,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$66(final View view, int i, boolean z) {
-        if (this.bottomSuggestHintView == null && z && MessagesController.getGlobalMainSettings().getInt("channelsuggesthint", 0) < 2) {
+        if (this.bottomSuggestHintView == null && z && HintsController.Hint.ChannelSuggestHint.show()) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda137
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -16677,7 +16678,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
         });
         this.bottomSuggestHintView.show();
-        MessagesController.getGlobalMainSettings().edit().putInt("channelsuggesthint", MessagesController.getGlobalMainSettings().getInt("channelsuggesthint", 0) + 1).apply();
+        HintsController.Hint.ChannelSuggestHint.increment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -40681,7 +40682,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         this.transitionAnimationIndex = getNotificationCenter().setAnimationInProgress(this.transitionAnimationIndex, iArr);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x01c3  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x01a8  */
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -40690,6 +40691,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         String string;
         MessageObject messageObject;
         INavigationLayout iNavigationLayout;
+        HintsController.Hint hint;
         Bulletin bulletin;
         super.onTransitionAnimationEnd(z, z2);
         if (z && z2 && this.showPinBulletin && (bulletin = this.pinBulletin) != null) {
@@ -40709,23 +40711,24 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             checkGroupCallJoin(this.lastCallCheckFromServer);
             if (!((!ChatObject.isMonoForum(this.currentChat) || ChatObject.canManageMonoForum(this.currentAccount, this.currentChat)) ? false : this.chatActivityEnterView.showSendSuggestionHint()) && this.chatActivityEnterView.hasRecordVideo() && !this.chatActivityEnterView.isSendButtonVisible()) {
                 TLRPC.Chat chat = this.currentChat;
-                boolean z3 = (chat == null || !ChatObject.isChannel(chat) || this.currentChat.megagroup) ? false : true;
-                SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-                String str = z3 ? "needShowRoundHintChannel2" : "needShowRoundHint2";
-                int i = globalMainSettings.getInt(str, 0);
-                if (i < 3 && Utilities.random.nextFloat() <= 0.2f) {
+                if ((chat == null || !ChatObject.isChannel(chat) || this.currentChat.megagroup) ? false : true) {
+                    hint = HintsController.Hint.RoundHintChannel2;
+                } else {
+                    hint = HintsController.Hint.RoundHint2;
+                }
+                if (hint.show()) {
+                    hint.increment();
                     showVoiceHint(false, this.chatActivityEnterView.isInVideoMode());
-                    globalMainSettings.edit().putInt(str, i + 1).commit();
                 }
             }
             if (!z2 && (iNavigationLayout = this.parentLayout) != null && this.needRemovePreviousSameChatActivity) {
                 int size = iNavigationLayout.getFragmentStack().size() - 1;
-                int i2 = 0;
+                int i = 0;
                 while (true) {
-                    if (i2 >= size) {
+                    if (i >= size) {
                         break;
                     }
-                    BaseFragment baseFragment = (BaseFragment) this.parentLayout.getFragmentStack().get(i2);
+                    BaseFragment baseFragment = (BaseFragment) this.parentLayout.getFragmentStack().get(i);
                     if (baseFragment != this && (baseFragment instanceof ChatActivity)) {
                         ChatActivity chatActivity = (ChatActivity) baseFragment;
                         if (chatActivity.needRemovePreviousSameChatActivity && chatActivity.dialog_id == this.dialog_id && chatActivity.getTopicId() == getTopicId() && chatActivity.getChatMode() == getChatMode() && chatActivity.threadMessageId == this.threadMessageId && chatActivity.isReport() == isReport()) {
@@ -40733,7 +40736,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             break;
                         }
                     }
-                    i2++;
+                    i++;
                 }
             }
             showScheduledOrNoSoundHint();
@@ -40743,13 +40746,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     this.chatActivityEnterView.openKeyboard();
                 }
                 if (getMessagesController().isPromoDialog(this.dialog_id, true)) {
-                    int i3 = getMessagesController().promoDialogType;
+                    int i2 = getMessagesController().promoDialogType;
                     SharedPreferences globalNotificationsSettings = MessagesController.getGlobalNotificationsSettings();
-                    if (i3 != MessagesController.PROMO_TYPE_PROXY) {
-                        if (i3 == MessagesController.PROMO_TYPE_PSA) {
-                            String str2 = getMessagesController().promoPsaType;
-                            if (!globalNotificationsSettings.getBoolean(str2 + "_shown", false)) {
-                                string = LocaleController.getString("PsaInfo_" + str2);
+                    if (i2 != MessagesController.PROMO_TYPE_PROXY) {
+                        if (i2 == MessagesController.PROMO_TYPE_PSA) {
+                            String str = getMessagesController().promoPsaType;
+                            if (!globalNotificationsSettings.getBoolean(str + "_shown", false)) {
+                                string = LocaleController.getString("PsaInfo_" + str);
                                 if (TextUtils.isEmpty(string)) {
                                     string = LocaleController.getString(R.string.PsaInfoDefault);
                                 }
@@ -40766,11 +40769,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             if (!TextUtils.isEmpty(string)) {
                                 checkTopUndoView();
                                 if (this.topUndoView != null) {
-                                    if (i3 == MessagesController.PROMO_TYPE_PROXY) {
+                                    if (i2 == MessagesController.PROMO_TYPE_PROXY) {
                                         globalNotificationsSettings.edit().putLong("proxychannel", this.dialog_id).commit();
-                                    } else if (i3 == MessagesController.PROMO_TYPE_PSA) {
-                                        String str3 = getMessagesController().promoPsaType;
-                                        globalNotificationsSettings.edit().putBoolean(str3 + "_shown", true).commit();
+                                    } else if (i2 == MessagesController.PROMO_TYPE_PSA) {
+                                        String str2 = getMessagesController().promoPsaType;
+                                        globalNotificationsSettings.edit().putBoolean(str2 + "_shown", true).commit();
                                     }
                                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
                                     MessageObject.addLinks(false, spannableStringBuilder);
