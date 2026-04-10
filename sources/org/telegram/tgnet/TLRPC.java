@@ -78027,19 +78027,31 @@ public class TLRPC {
         }
     }
 
-    public static class TL_messages_unpinAllMessages extends TLObject {
-        public static final int constructor = -265962357;
+    public static class TL_messages_unpinAllMessages extends TLMethod<TL_messages_affectedHistory> {
+        public static final int constructor = 103667527;
+        public int flags;
         public InputPeer peer;
+        public InputPeer saved_peer_id;
+        public int top_msg_id;
 
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+        @Override // org.telegram.tgnet.TLMethod
+        public TL_messages_affectedHistory deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
             return TL_messages_affectedHistory.TLdeserialize(inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 2, this.saved_peer_id != null);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
             this.peer.serializeToStream(outputSerializedData);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                outputSerializedData.writeInt32(this.top_msg_id);
+            }
+            if (TLObject.hasFlag(this.flags, 2)) {
+                this.saved_peer_id.serializeToStream(outputSerializedData);
+            }
         }
     }
 

@@ -1291,6 +1291,9 @@ public class SimpleTextView extends View implements Drawable.Callback {
     }
 
     private void clipOutSpoilers(Canvas canvas) {
+        if (this.spoilers.isEmpty()) {
+            return;
+        }
         this.path.rewind();
         Iterator it = this.spoilers.iterator();
         while (it.hasNext()) {

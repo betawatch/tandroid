@@ -114,6 +114,7 @@ import org.telegram.ui.TopicsFragment;
 
 /* loaded from: classes5.dex */
 public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener {
+    public static AudioPlayerAlert instance;
     private static final float[] speeds = {0.5f, 1.0f, 1.2f, 1.5f, 1.7f, 2.0f};
     private int TAG;
     private ActionBar actionBar;
@@ -812,7 +813,9 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         });
         this.repeatSongItem = this.repeatButton.addSubItem(3, R.drawable.player_new_repeatone, LocaleController.getString(R.string.RepeatSong));
         this.repeatListItem = this.repeatButton.addSubItem(4, R.drawable.player_new_repeatall, LocaleController.getString(R.string.RepeatList));
+        this.repeatButton.addColoredGap().getLayoutParams().height = AndroidUtilities.dp(4.0f);
         this.shuffleListItem = this.repeatButton.addSubItem(2, R.drawable.player_new_shuffle, LocaleController.getString(R.string.ShuffleList));
+        this.repeatButton.addColoredGap().getLayoutParams().height = AndroidUtilities.dp(4.0f);
         this.reverseOrderItem = this.repeatButton.addSubItem(1, R.drawable.player_new_order, LocaleController.getString(R.string.ReverseOrder));
         this.repeatButton.setShowedFromBottom(true);
         this.repeatButton.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda16
@@ -2396,6 +2399,9 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.musicIdsLoaded);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.messagePlayingSpeedChanged);
         DownloadController.getInstance(this.currentAccount).removeLoadingFileObserver(this);
+        if (instance == this) {
+            instance = null;
+        }
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
@@ -2421,7 +2427,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         return this.TAG;
     }
 
-    private void updateRepeatButton() {
+    public void updateRepeatButton() {
         int i = SharedConfig.repeatMode;
         if (i != 0 && i != 1) {
             if (i == 2) {
@@ -3708,6 +3714,12 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         } catch (Exception e) {
             FileLog.e(e);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
+    public void show() {
+        super.show();
+        instance = this;
     }
 
     private void forward(MessageObject messageObject, long j) {

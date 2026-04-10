@@ -389,11 +389,9 @@ public class AnimatedTextView extends View {
                     this.ellipsizeGradientMatrix.reset();
                     this.ellipsizeGradientMatrix.postTranslate((this.bounds.right - this.rightPadding) - dp, 0.0f);
                     this.ellipsizeGradient.setLocalMatrix(this.ellipsizeGradientMatrix);
-                    canvas.save();
                     Rect rect2 = this.bounds;
                     float f23 = rect2.right - this.rightPadding;
                     canvas.drawRect(f23 - dp, rect2.top, f23 + AndroidUtilities.dp(1.0f), this.bounds.bottom, this.ellipsizePaint);
-                    canvas.restore();
                     canvas.restore();
                     return;
                 }

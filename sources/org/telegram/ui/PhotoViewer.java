@@ -24225,31 +24225,31 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:265:0x052a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:269:0x052e, code lost:
     
-        if (r2 > r4) goto L270;
+        if (r2 > r4) goto L274;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:267:0x051b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:271:0x051f, code lost:
     
-        if (r1 > r4) goto L264;
+        if (r1 > r4) goto L268;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:278:0x0560, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:282:0x0564, code lost:
     
-        if (r3 > r4) goto L285;
+        if (r3 > r4) goto L289;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:280:0x054f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:284:0x0553, code lost:
     
-        if (r3 > r4) goto L279;
+        if (r3 > r4) goto L283;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:332:0x0652, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:336:0x0656, code lost:
     
-        if (r3 > r4) goto L342;
+        if (r3 > r4) goto L346;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:334:0x0641, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:338:0x0645, code lost:
     
-        if (r3 > r4) goto L336;
+        if (r3 > r4) goto L340;
      */
-    /* JADX WARN: Removed duplicated region for block: B:197:0x041b  */
+    /* JADX WARN: Removed duplicated region for block: B:201:0x041f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -24292,7 +24292,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             return true;
         }
         if (i4 != 1 && (i4 == 3 || this.sendPhotoType != 1)) {
-            if (getCaptionView().editText.isPopupShowing() || getCaptionView().editText.isKeyboardVisible()) {
+            if (getCaptionView().editText.isPopupShowing() || (getCaptionView().keyboardShown && this.isVisible && this.animationInProgress == 0)) {
                 if (motionEvent.getAction() == 1) {
                     closeCaptionEnter(true);
                 }

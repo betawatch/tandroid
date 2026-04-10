@@ -211,6 +211,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     private View invalidateWithParent;
     private boolean invalidatesParent;
     public boolean isAllChats;
+    public boolean isBotForum;
     public boolean isForum;
     public boolean isMonoForum;
     public boolean isSideMenuEnabled;
@@ -677,15 +678,15 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x01ec  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x02aa  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x02b6  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x0211  */
-    /* JADX WARN: Removed duplicated region for block: B:218:0x048a  */
-    /* JADX WARN: Removed duplicated region for block: B:219:0x04a6  */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x07a0  */
-    /* JADX WARN: Removed duplicated region for block: B:266:0x0834  */
-    /* JADX WARN: Removed duplicated region for block: B:284:0x08c0  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x01ec  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x02aa  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x02b6  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0211  */
+    /* JADX WARN: Removed duplicated region for block: B:220:0x048a  */
+    /* JADX WARN: Removed duplicated region for block: B:221:0x04a6  */
+    /* JADX WARN: Removed duplicated region for block: B:245:0x07a0  */
+    /* JADX WARN: Removed duplicated region for block: B:268:0x0834  */
+    /* JADX WARN: Removed duplicated region for block: B:286:0x08c0  */
     /* JADX WARN: Type inference failed for: r2v190 */
     /* JADX WARN: Type inference failed for: r2v191 */
     /* JADX WARN: Type inference failed for: r2v37, types: [org.telegram.tgnet.TLRPC$messages_StickerSet] */
@@ -1265,7 +1266,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     this.imageReceiver.setImageBitmap((Bitmap) null);
                 }
             }
-            if (this.firstInChat && this.isAllChats && this.isSideMenued && (this.isForum || this.isMonoForum)) {
+            if (this.firstInChat && this.isAllChats && this.isSideMenued && (this.isForum || this.isMonoForum || this.isBotForum)) {
                 this.topicSeparatorTopPadding = AndroidUtilities.dp(33.0f);
                 if (this.topicSeparator == null) {
                     TopicSeparator topicSeparator = new TopicSeparator(this.currentAccount, this, this.themeDelegate, true);
@@ -4240,7 +4241,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         if (messageObject == null || !messageObject.isRepostPreview) {
             canvas2 = canvas;
             canvas2.drawPath(this.backgroundPath, paint4);
-            if (hasGradientService()) {
+            if (hasGradientService() && paint3.getAlpha() > 0) {
                 canvas2.drawPath(this.backgroundPath, paint3);
             }
             f = 0.0f;
@@ -4607,6 +4608,9 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
 
     public void drawReactionsLayout(Canvas canvas, boolean z, Integer num) {
         float alpha = z ? getAlpha() : 1.0f;
+        if (alpha <= 0.0f) {
+            return;
+        }
         Theme.ResourcesProvider resourcesProvider = this.themeDelegate;
         if (resourcesProvider != null) {
             resourcesProvider.applyServiceShaderMatrix(getMeasuredWidth(), this.backgroundHeight, this.viewTranslationX, this.viewTop + AndroidUtilities.dp(4.0f));

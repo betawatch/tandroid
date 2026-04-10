@@ -52,6 +52,7 @@ import androidx.arch.core.util.Function;
 import androidx.collection.LongSparseArray;
 import androidx.core.app.ActivityCompat;
 import androidx.core.graphics.ColorUtils;
+import androidx.core.view.inputmethod.InputContentInfoCompat;
 import com.google.android.gms.common.api.Status;
 import com.google.common.primitives.Longs;
 import j$.util.function.Consumer$-CC;
@@ -141,6 +142,7 @@ import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatMessageCell;
 import org.telegram.ui.Cells.LanguageCell;
+import org.telegram.ui.ChatActivity;
 import org.telegram.ui.ChatRightsEditActivity;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.AppIconBulletinLayout;
@@ -284,7 +286,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     private View rippleAbove;
     private WindowAnimatedInsetsProvider rootAnimatedInsetsListener;
     private SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow selectAnimatedEmojiDialog;
-    private String sendingText;
+    private CharSequence sendingText;
     private FrameLayout shadowTablet;
     private FrameLayout shadowTabletSide;
     public ArrayList sheetFragmentsStack = new ArrayList();
@@ -5816,16 +5818,19 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:108:0x0202  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x0446  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x04e1  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0504 A[LOOP:2: B:149:0x04fc->B:151:0x0504, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x03fa  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x0404  */
-    /* JADX WARN: Removed duplicated region for block: B:175:0x040d  */
-    /* JADX WARN: Removed duplicated region for block: B:176:0x0409  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x03ff  */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x0336  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x020c  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x0487  */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x054b  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x0560  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x056f A[LOOP:2: B:155:0x0567->B:157:0x056f, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x059c A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x05b3 A[ADDED_TO_REGION, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x0438  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x0442  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x044c  */
+    /* JADX WARN: Removed duplicated region for block: B:184:0x0447  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x043d  */
+    /* JADX WARN: Removed duplicated region for block: B:229:0x0352  */
     @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -5833,27 +5838,31 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     public boolean didSelectDialogs(final DialogsActivity dialogsActivity, final ArrayList arrayList, final CharSequence charSequence, final boolean z, boolean z2, int i, final int i2, TopicsFragment topicsFragment) {
         final int i3;
         ChatActivity chatActivity;
-        ChatActivity chatActivity2;
+        CharSequence charSequence2;
         boolean z3;
-        int i4;
+        ChatActivity chatActivity2;
+        CharSequence charSequence3;
         boolean z4;
         MessageObject messageObject;
         long j;
         ChatActivity chatActivity3;
-        String str;
+        CharSequence charSequence4;
+        CharSequence charSequence5;
         boolean z5;
         boolean z6;
         boolean z7;
-        String str2;
-        String str3;
+        CharSequence charSequence6;
         int size;
         ArrayList arrayList2;
-        String str4;
+        CharSequence charSequence7;
+        int i4;
+        boolean z8;
+        CharSequence charSequence8;
         ArrayList arrayList3;
         int i5;
-        String str5;
         ArrayList arrayList4;
         ArrayList arrayList5 = arrayList;
+        boolean z9 = true;
         final int currentAccount = dialogsActivity != null ? dialogsActivity.getCurrentAccount() : this.currentAccount;
         final Uri uri = this.exportingChatUri;
         if (uri != null) {
@@ -5870,7 +5879,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             } catch (Exception unused) {
             }
         } else {
-            final boolean z8 = dialogsActivity == null || dialogsActivity.notify || z2;
+            final boolean z10 = dialogsActivity == null || dialogsActivity.notify || z2;
             if (i != 0) {
                 i3 = i;
             } else {
@@ -5938,13 +5947,13 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     final ChatActivity chatActivity5 = chatActivity;
                     phonebookShareAlert.setDelegate(new ChatAttachAlertContactsLayout.PhonebookShareAlertDelegate() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda47
                         @Override // org.telegram.ui.Components.ChatAttachAlertContactsLayout.PhonebookShareAlertDelegate
-                        public final void didSelectContact(TLRPC.User user, boolean z9, int i7, long j3, boolean z10, long j4) {
-                            LaunchActivity.this.lambda$didSelectDialogs$142(chatActivity5, arrayList, i3, i2, charSequence, currentAccount, z8, user, z9, i7, j3, z10, j4);
+                        public final void didSelectContact(TLRPC.User user, boolean z11, int i7, long j3, boolean z12, long j4) {
+                            LaunchActivity.this.lambda$didSelectDialogs$142(chatActivity5, arrayList, i3, i2, charSequence, currentAccount, z10, user, z11, i7, j3, z12, j4);
                         }
 
                         @Override // org.telegram.ui.Components.ChatAttachAlertContactsLayout.PhonebookShareAlertDelegate
-                        public /* synthetic */ void didSelectContacts(ArrayList arrayList13, String str6, boolean z9, int i7, long j3, boolean z10, long j4) {
-                            ChatAttachAlertContactsLayout.PhonebookShareAlertDelegate.-CC.$default$didSelectContacts(this, arrayList13, str6, z9, i7, j3, z10, j4);
+                        public /* synthetic */ void didSelectContacts(ArrayList arrayList13, String str, boolean z11, int i7, long j3, boolean z12, long j4) {
+                            ChatAttachAlertContactsLayout.PhonebookShareAlertDelegate.-CC.$default$didSelectContacts(this, arrayList13, str, z11, i7, j3, z12, j4);
                         }
                     });
                     ((BaseFragment) arrayList12.get(arrayList12.size() - 1)).showDialog(phonebookShareAlert);
@@ -5955,126 +5964,135 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     }
                 }
             }
-            String str6 = null;
+            if (TextUtils.isEmpty(charSequence)) {
+                charSequence2 = charSequence;
+            } else {
+                this.sendingText = charSequence;
+                charSequence2 = null;
+            }
+            CharSequence charSequence9 = null;
             int i7 = 0;
-            boolean z9 = false;
+            z3 = false;
             while (i7 < arrayList.size()) {
                 long j3 = ((MessagesStorage.TopicKey) arrayList5.get(i7)).dialogId;
-                String str7 = str6;
+                CharSequence charSequence10 = charSequence2;
                 long j4 = ((MessagesStorage.TopicKey) arrayList5.get(i7)).topicId;
                 AccountInstance accountInstance = AccountInstance.getInstance(UserConfig.selectedAccount);
                 if (j4 != 0) {
-                    i4 = i7;
+                    charSequence3 = charSequence9;
                     TLRPC.TL_forumTopic findTopic = accountInstance.getMessagesController().getTopicsController().findTopic(-j3, j4);
                     if (findTopic != null && findTopic.topicStartMessage != null) {
-                        z4 = z9;
+                        z4 = z3;
                         messageObject = new MessageObject(accountInstance.getCurrentAccount(), findTopic.topicStartMessage, false, false);
-                        messageObject.isTopicMainMessage = true;
+                        messageObject.isTopicMainMessage = z9;
                         if (chatActivity == null) {
-                            boolean z10 = dialogsActivity == null || this.videoPath != null || ((arrayList4 = this.photoPathsArray) != null && arrayList4.size() > 0);
                             j = j3;
                             chatActivity3 = chatActivity;
-                            getActionBarLayout().presentFragment(chatActivity, dialogsActivity != null, z10, true, false);
-                            boolean z11 = dialogsActivity != null;
-                            String str8 = this.videoPath;
-                            if (str8 != null && j4 == 0) {
-                                chatActivity3.openVideoEditor(str8, this.sendingText);
+                            getActionBarLayout().presentFragment(chatActivity, dialogsActivity != null, dialogsActivity == null || this.videoPath != null || ((arrayList4 = this.photoPathsArray) != null && arrayList4.size() > 0), true, false);
+                            z7 = dialogsActivity != null;
+                            String str = this.videoPath;
+                            if (str != null && j4 == 0) {
+                                chatActivity3.openVideoEditor(str, this.sendingText);
                                 this.sendingText = null;
-                                z5 = z11;
-                                z6 = false;
-                                z7 = true;
+                                charSequence5 = charSequence3;
+                                z5 = false;
+                                z6 = true;
                             } else {
                                 ArrayList arrayList13 = this.photoPathsArray;
                                 if (arrayList13 != null && arrayList13.size() > 0 && j4 == 0) {
-                                    boolean openPhotosEditor = chatActivity3.openPhotosEditor(this.photoPathsArray, (charSequence == null || charSequence.length() == 0) ? this.sendingText : charSequence);
+                                    boolean openPhotosEditor = chatActivity3.openPhotosEditor(this.photoPathsArray, (charSequence10 == null || charSequence10.length() == 0) ? this.sendingText : charSequence10);
                                     if (openPhotosEditor) {
                                         this.sendingText = null;
                                     }
-                                    z6 = openPhotosEditor;
-                                    z5 = z11;
-                                } else if (this.videoPath != null) {
-                                    String str9 = this.sendingText;
-                                    if (str9 == null || str9.length() > 1024) {
-                                        str5 = str7;
-                                    } else {
-                                        String str10 = this.sendingText;
-                                        this.sendingText = null;
-                                        str5 = str10;
-                                    }
-                                    ArrayList arrayList14 = new ArrayList();
-                                    arrayList14.add(this.videoPath);
-                                    SendMessagesHelper.prepareSendingDocuments(accountInstance, arrayList14, arrayList14, null, str5, null, j, messageObject, messageObject, null, null, null, z8, i3, null, null, 0, 0L, false, 0L);
-                                    z5 = z11;
-                                    z7 = false;
-                                    str = str5;
-                                    z6 = false;
+                                    charSequence5 = charSequence3;
+                                    z5 = openPhotosEditor;
                                 } else {
-                                    ArrayList arrayList15 = this.photoPathsArray;
-                                    if (arrayList15 != null && arrayList15.size() > 0) {
-                                        String str11 = this.sendingText;
-                                        if (str11 != null && str11.length() <= 1024 && this.photoPathsArray.size() == 1) {
-                                            ((SendMessagesHelper.SendingMediaInfo) this.photoPathsArray.get(0)).caption = this.sendingText;
+                                    if (this.videoPath != null) {
+                                        CharSequence charSequence11 = this.sendingText;
+                                        if (charSequence11 == null || charSequence11.length() > 1024) {
+                                            charSequence5 = charSequence3;
+                                        } else {
+                                            CharSequence charSequence12 = this.sendingText;
                                             this.sendingText = null;
+                                            charSequence5 = charSequence12;
                                         }
-                                        SendMessagesHelper.prepareSendingMedia(accountInstance, this.photoPathsArray, j, messageObject, messageObject, null, null, false, false, null, z8, i3, i2, 0, false, null, null, 0, 0L, false, 0L, 0L, null);
+                                        ArrayList arrayList14 = new ArrayList();
+                                        arrayList14.add(this.videoPath);
+                                        SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList14, (ArrayList<String>) arrayList14, (ArrayList<Uri>) null, charSequence5, (String) null, j, messageObject, messageObject, (TL_stories.StoryItem) null, (ChatActivity.ReplyQuote) null, (MessageObject) null, z10, i3, (InputContentInfoCompat) null, (String) null, 0, 0L, false, 0L);
+                                    } else {
+                                        ArrayList arrayList15 = this.photoPathsArray;
+                                        if (arrayList15 != null && arrayList15.size() > 0) {
+                                            CharSequence charSequence13 = this.sendingText;
+                                            if (charSequence13 != null && charSequence13.length() <= 1024 && this.photoPathsArray.size() == 1) {
+                                                CharSequence[] charSequenceArr = {this.sendingText};
+                                                ((SendMessagesHelper.SendingMediaInfo) this.photoPathsArray.get(0)).entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr, false);
+                                                ((SendMessagesHelper.SendingMediaInfo) this.photoPathsArray.get(0)).caption = charSequenceArr[0].toString();
+                                                this.sendingText = null;
+                                            }
+                                            SendMessagesHelper.prepareSendingMedia(accountInstance, this.photoPathsArray, j, messageObject, messageObject, null, null, false, false, null, z10, i3, i2, 0, false, null, null, 0, 0L, false, 0L, 0L, null);
+                                        }
+                                        charSequence5 = charSequence3;
                                     }
-                                    z5 = z11;
-                                    z6 = false;
+                                    z5 = false;
                                 }
-                                z7 = false;
+                                z6 = false;
                             }
-                            str = str7;
                         } else {
                             j = j3;
                             chatActivity3 = chatActivity;
                             if (this.videoPath != null) {
-                                String str12 = this.sendingText;
-                                if (str12 == null || str12.length() > 1024) {
-                                    str2 = str7;
+                                CharSequence charSequence14 = this.sendingText;
+                                if (charSequence14 == null || charSequence14.length() > 1024) {
+                                    charSequence4 = charSequence3;
                                 } else {
-                                    String str13 = this.sendingText;
+                                    charSequence4 = this.sendingText;
                                     this.sendingText = null;
-                                    str2 = str13;
                                 }
                                 ArrayList arrayList16 = new ArrayList();
                                 arrayList16.add(this.videoPath);
-                                SendMessagesHelper.prepareSendingDocuments(accountInstance, arrayList16, arrayList16, null, str2, null, j, messageObject, messageObject, null, null, null, z8, i3, null, null, 0, 0L, false, 0L);
-                                str = str2;
+                                SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList16, (ArrayList<String>) arrayList16, (ArrayList<Uri>) null, charSequence4, (String) null, j, messageObject, messageObject, (TL_stories.StoryItem) null, (ChatActivity.ReplyQuote) null, (MessageObject) null, z10, i3, (InputContentInfoCompat) null, (String) null, 0, 0L, false, 0L);
                             } else {
-                                str = str7;
+                                charSequence4 = charSequence3;
                             }
                             if (this.photoPathsArray != null) {
-                                String str14 = this.sendingText;
-                                if (str14 != null && str14.length() <= 1024 && this.photoPathsArray.size() == 1) {
-                                    ((SendMessagesHelper.SendingMediaInfo) this.photoPathsArray.get(0)).caption = this.sendingText;
+                                CharSequence charSequence15 = this.sendingText;
+                                if (charSequence15 != null && charSequence15.length() <= 1024 && this.photoPathsArray.size() == 1) {
+                                    CharSequence[] charSequenceArr2 = {this.sendingText};
+                                    ((SendMessagesHelper.SendingMediaInfo) this.photoPathsArray.get(0)).entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr2, false);
+                                    ((SendMessagesHelper.SendingMediaInfo) this.photoPathsArray.get(0)).caption = charSequenceArr2[0].toString();
                                     this.sendingText = null;
                                 }
-                                SendMessagesHelper.prepareSendingMedia(accountInstance, this.photoPathsArray, j, messageObject, messageObject, null, null, false, false, null, z8, i3, i2, 0, false, null, null, 0, 0L, false, 0L, 0L, null);
+                                SendMessagesHelper.prepareSendingMedia(accountInstance, this.photoPathsArray, j, messageObject, messageObject, null, null, false, false, null, z10, i3, i2, 0, false, null, null, 0, 0L, false, 0L, 0L, null);
                             }
-                            z5 = z4;
+                            charSequence5 = charSequence4;
+                            z5 = false;
                             z6 = false;
-                            z7 = false;
+                            z7 = z4;
                         }
                         if (this.documentsPathsArray == null || this.documentsUrisArray != null) {
-                            str3 = this.sendingText;
-                            if (str3 != null && str3.length() <= 1024) {
+                            charSequence6 = this.sendingText;
+                            if (charSequence6 != null && charSequence6.length() <= 1024) {
                                 ArrayList arrayList17 = this.documentsPathsArray;
                                 size = arrayList17 == null ? arrayList17.size() : 0;
                                 arrayList2 = this.documentsUrisArray;
                                 if (size + (arrayList2 == null ? arrayList2.size() : 0) == 1) {
-                                    String str15 = this.sendingText;
+                                    CharSequence charSequence16 = this.sendingText;
                                     this.sendingText = null;
-                                    str = str15;
+                                    charSequence5 = charSequence16;
                                 }
                             }
-                            SendMessagesHelper.prepareSendingDocuments(accountInstance, this.documentsPathsArray, this.documentsOriginalPathsArray, this.documentsUrisArray, str, this.documentsMimeType, j, messageObject, messageObject, null, null, null, z8, i3, null, null, 0, 0L, false, 0L);
+                            SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) this.documentsPathsArray, (ArrayList<String>) this.documentsOriginalPathsArray, (ArrayList<Uri>) this.documentsUrisArray, charSequence5, this.documentsMimeType, j, messageObject, messageObject, (TL_stories.StoryItem) null, (ChatActivity.ReplyQuote) null, (MessageObject) null, z10, i3, (InputContentInfoCompat) null, (String) null, 0, 0L, false, 0L);
                         }
+                        CharSequence charSequence17 = charSequence5;
                         if (this.voicePath != null) {
                             File file = new File(this.voicePath);
                             if (file.exists()) {
                                 TLRPC.TL_document tL_document = new TLRPC.TL_document();
+                                charSequence7 = charSequence17;
                                 tL_document.file_reference = new byte[0];
                                 tL_document.dc_id = TLObject.FLAG_31;
+                                i4 = i7;
+                                z8 = z7;
                                 tL_document.id = SharedConfig.getLastLocalId();
                                 tL_document.user_id = accountInstance.getUserConfig().getClientUserId();
                                 tL_document.mime_type = "audio/ogg";
@@ -6088,42 +6106,70 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                     tL_documentAttributeAudio.flags |= 4;
                                 }
                                 tL_document.attributes.add(tL_documentAttributeAudio);
-                                accountInstance.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of(tL_document, null, file.getAbsolutePath(), j, messageObject, messageObject, this.sendingText, null, null, null, z8, i3, i2, 0, null, null, false));
+                                CharSequence[] charSequenceArr3 = {this.sendingText};
+                                ArrayList<TLRPC.MessageEntity> entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr3, false);
+                                SendMessagesHelper sendMessagesHelper = accountInstance.getSendMessagesHelper();
+                                String absolutePath = file.getAbsolutePath();
+                                CharSequence charSequence18 = charSequenceArr3[0];
+                                sendMessagesHelper.sendMessage(SendMessagesHelper.SendMessageParams.of(tL_document, null, absolutePath, j, messageObject, messageObject, charSequence18 == null ? null : charSequence18.toString(), entities, null, null, z10, i3, i2, 0, null, null, false));
                                 if (this.sendingText != null) {
                                     this.sendingText = null;
                                 }
+                                charSequence8 = this.sendingText;
+                                if (charSequence8 != null) {
+                                    SendMessagesHelper.prepareSendingText(accountInstance, charSequence8, j, j4, z10, i3, i2, 0L);
+                                }
+                                arrayList3 = this.contactsToSend;
+                                if (arrayList3 != null && !arrayList3.isEmpty()) {
+                                    for (i5 = 0; i5 < this.contactsToSend.size(); i5++) {
+                                        SendMessagesHelper.getInstance(currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of((TLRPC.User) this.contactsToSend.get(i5), j, messageObject, messageObject, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z10, i3, i2));
+                                    }
+                                }
+                                if (TextUtils.isEmpty(charSequence10) && !z6 && !z5) {
+                                    SendMessagesHelper.prepareSendingText(accountInstance, charSequence10, j, j4, z10, i3, i2, 0L);
+                                }
+                                arrayList5 = arrayList;
+                                charSequence9 = charSequence7;
+                                z3 = z8;
+                                i7 = i4 + 1;
+                                chatActivity = chatActivity3;
+                                z9 = true;
+                                charSequence2 = charSequence10;
                             }
                         }
-                        str4 = this.sendingText;
-                        if (str4 != null) {
-                            SendMessagesHelper.prepareSendingText(accountInstance, str4, j, j4, z8, i3, i2, 0L);
+                        charSequence7 = charSequence17;
+                        i4 = i7;
+                        z8 = z7;
+                        charSequence8 = this.sendingText;
+                        if (charSequence8 != null) {
                         }
                         arrayList3 = this.contactsToSend;
-                        if (arrayList3 != null && !arrayList3.isEmpty()) {
-                            for (i5 = 0; i5 < this.contactsToSend.size(); i5++) {
-                                SendMessagesHelper.getInstance(currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of((TLRPC.User) this.contactsToSend.get(i5), j, messageObject, messageObject, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z8, i3, i2));
+                        if (arrayList3 != null) {
+                            while (i5 < this.contactsToSend.size()) {
                             }
                         }
-                        if (!TextUtils.isEmpty(charSequence) && !z7 && !z6) {
-                            SendMessagesHelper.prepareSendingText(accountInstance, charSequence.toString(), j, j4, z8, i3, i2, 0L);
+                        if (TextUtils.isEmpty(charSequence10)) {
+                            SendMessagesHelper.prepareSendingText(accountInstance, charSequence10, j, j4, z10, i3, i2, 0L);
                         }
-                        i7 = i4 + 1;
                         arrayList5 = arrayList;
+                        charSequence9 = charSequence7;
+                        z3 = z8;
+                        i7 = i4 + 1;
                         chatActivity = chatActivity3;
-                        z9 = z5;
-                        str6 = str;
+                        z9 = true;
+                        charSequence2 = charSequence10;
                     }
                 } else {
-                    i4 = i7;
+                    charSequence3 = charSequence9;
                 }
-                z4 = z9;
+                z4 = z3;
                 messageObject = null;
                 if (chatActivity == null) {
                 }
                 if (this.documentsPathsArray == null) {
                 }
-                str3 = this.sendingText;
-                if (str3 != null) {
+                charSequence6 = this.sendingText;
+                if (charSequence6 != null) {
                     ArrayList arrayList172 = this.documentsPathsArray;
                     if (arrayList172 == null) {
                     }
@@ -6131,29 +6177,30 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     if (size + (arrayList2 == null ? arrayList2.size() : 0) == 1) {
                     }
                 }
-                SendMessagesHelper.prepareSendingDocuments(accountInstance, this.documentsPathsArray, this.documentsOriginalPathsArray, this.documentsUrisArray, str, this.documentsMimeType, j, messageObject, messageObject, null, null, null, z8, i3, null, null, 0, 0L, false, 0L);
+                SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) this.documentsPathsArray, (ArrayList<String>) this.documentsOriginalPathsArray, (ArrayList<Uri>) this.documentsUrisArray, charSequence5, this.documentsMimeType, j, messageObject, messageObject, (TL_stories.StoryItem) null, (ChatActivity.ReplyQuote) null, (MessageObject) null, z10, i3, (InputContentInfoCompat) null, (String) null, 0, 0L, false, 0L);
+                CharSequence charSequence172 = charSequence5;
                 if (this.voicePath != null) {
                 }
-                str4 = this.sendingText;
-                if (str4 != null) {
+                charSequence7 = charSequence172;
+                i4 = i7;
+                z8 = z7;
+                charSequence8 = this.sendingText;
+                if (charSequence8 != null) {
                 }
                 arrayList3 = this.contactsToSend;
                 if (arrayList3 != null) {
-                    while (i5 < this.contactsToSend.size()) {
-                    }
                 }
-                if (!TextUtils.isEmpty(charSequence)) {
-                    SendMessagesHelper.prepareSendingText(accountInstance, charSequence.toString(), j, j4, z8, i3, i2, 0L);
+                if (TextUtils.isEmpty(charSequence10)) {
                 }
-                i7 = i4 + 1;
                 arrayList5 = arrayList;
+                charSequence9 = charSequence7;
+                z3 = z8;
+                i7 = i4 + 1;
                 chatActivity = chatActivity3;
-                z9 = z5;
-                str6 = str;
+                z9 = true;
+                charSequence2 = charSequence10;
             }
-            boolean z12 = z9;
             chatActivity2 = chatActivity;
-            z3 = z12;
             if (dialogsActivity != null) {
                 dialogsActivity.finishFragment();
             }
@@ -6226,7 +6273,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             of.invert_media = z3;
             SendMessagesHelper.getInstance(i3).sendMessage(of);
             if (!TextUtils.isEmpty(charSequence)) {
-                SendMessagesHelper.prepareSendingText(accountInstance, charSequence.toString(), j3, z, i4 != 0 ? i4 : i, i2, j);
+                SendMessagesHelper.prepareSendingText(accountInstance, charSequence, j3, z, i4 != 0 ? i4 : i, i2, j);
             }
         }
     }
