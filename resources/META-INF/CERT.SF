@@ -1,10 +1,10 @@
 Signature-Version: 1.0
 Created-By: Android Gradle 8.6.1
-SHA-256-Digest-Manifest: ZNP/neBPPckpWBuXruMnnHBZIF9dhhMQbIP1JqAruvk=
+SHA-256-Digest-Manifest: GZWsM2SfQc4eSrQ4XgbfzaGTMzwxpAWxFx02tg4Z2QQ=
 X-Android-APK-Signed: 2
 
 Name: AndroidManifest.xml
-SHA-256-Digest: WxO0fD3BAw05C4Dadlnj3xl0an6VBamt3k9UXYqTcMg=
+SHA-256-Digest: 4vxYBtRGXrZtz0vKuDqxiB8lClpRkd4sI++C8pPE0KE=
 
 Name: DebugProbesKt.bin
 SHA-256-Digest: XJYoj9g1jxqW8LSScnHRcHzQEKpqZlq7SOYe/7+BzW4=
@@ -174,7 +174,7 @@ Name: META-INF/services/kotlinx.coroutines.internal.MainDispatcherFact
 SHA-256-Digest: CvpiKzNhVHqONkAL//lJVL9QOZGQGXeAZRDX9l7tM4E=
 
 Name: META-INF/version-control-info.textproto
-SHA-256-Digest: PimznwRgQnJqfYDlJnCQeXnwULpH3YkBfY+fmAdAVvI=
+SHA-256-Digest: FK58eHNHQdB0geF1+rWrnYEWwu6iF/Q3ibxP8+YPl1M=
 
 Name: META-INF/versions/9/OSGI-INF/MANIFEST.MF
 SHA-256-Digest: 61Owk6o+Zz8kLb8/j3wagTj1Q0aSKQrU6Hs6PZ46nO4=
@@ -27357,7 +27357,7 @@ Name: res/fTt.png
 SHA-256-Digest: LviEw2bce+j10zi9IikepkWffVY3FKAlrslWernbrQA=
 
 Name: res/fTx.xml
-SHA-256-Digest: +8b2YLJF/zMSh+QOC5/z0UBBWk1HdGTDaPVwLwJjk58=
+SHA-256-Digest: RaqVep5KJLIIfBiBYYegQpV9p8CXHJJ2Ox+pfEZjnZo=
 
 Name: res/fUN.png
 SHA-256-Digest: i2G2tUEqRvlFbmudCsCp7ZCA8iL2waXkXuK5dO1sfa8=
@@ -34524,7 +34524,7 @@ Name: res/zzZ.xml
 SHA-256-Digest: E4VAfgYXmJpd0w//sLoB023purpYUbqY97+GnPQ400Y=
 
 Name: resources.arsc
-SHA-256-Digest: XXN5BtYRi5s5RliacrXC7syWt+VShz8tzjhlMA8EbPY=
+SHA-256-Digest: 92mONCdJ6uLxs8kkFFLrMCuXKBjlj0zQfywjujvlJVs=
 
 Name: version.txt
 SHA-256-Digest: p5wDnbLFihlIF5QDi90qOP68wP82L4ISXw+/3WXeeM0=
