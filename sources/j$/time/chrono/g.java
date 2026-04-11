@@ -1,5 +1,6 @@
 package j$.time.chrono;
 
+import j$.time.temporal.ChronoUnit;
 import j$.util.Objects;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
@@ -16,7 +17,7 @@ final class g implements Serializable {
     final int d;
 
     static {
-        j$.com.android.tools.r8.a.h(new Object[]{j$.time.temporal.b.YEARS, j$.time.temporal.b.MONTHS, j$.time.temporal.b.DAYS});
+        j$.com.android.tools.r8.a.h(new Object[]{ChronoUnit.YEARS, ChronoUnit.MONTHS, ChronoUnit.DAYS});
     }
 
     g(l lVar, int i, int i2, int i3) {

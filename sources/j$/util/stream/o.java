@@ -22,10 +22,10 @@ final class o extends d2 {
 
     @Override // j$.util.stream.b
     final I0 N(b bVar, Spliterator spliterator, IntFunction intFunction) {
-        if (a3.DISTINCT.m(bVar.J())) {
+        if (a3.DISTINCT.o(bVar.J())) {
             return bVar.B(spliterator, false, intFunction);
         }
-        if (a3.ORDERED.m(bVar.J())) {
+        if (a3.ORDERED.o(bVar.J())) {
             return X(bVar, spliterator);
         }
         AtomicBoolean atomicBoolean = new AtomicBoolean(false);
@@ -44,10 +44,10 @@ final class o extends d2 {
 
     @Override // j$.util.stream.b
     final Spliterator O(b bVar, Spliterator spliterator) {
-        if (a3.DISTINCT.m(bVar.J())) {
+        if (a3.DISTINCT.o(bVar.J())) {
             return bVar.W(spliterator);
         }
-        if (a3.ORDERED.m(bVar.J())) {
+        if (a3.ORDERED.o(bVar.J())) {
             return X(bVar, spliterator).spliterator();
         }
         return new j3(bVar.W(spliterator));
@@ -56,10 +56,10 @@ final class o extends d2 {
     @Override // j$.util.stream.b
     final m2 Q(int i, m2 m2Var) {
         Objects.requireNonNull(m2Var);
-        if (a3.DISTINCT.m(i)) {
+        if (a3.DISTINCT.o(i)) {
             return m2Var;
         }
-        if (a3.SORTED.m(i)) {
+        if (a3.SORTED.o(i)) {
             return new m(m2Var);
         }
         return new n(m2Var);

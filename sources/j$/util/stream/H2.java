@@ -27,12 +27,12 @@ final class H2 extends d2 {
     @Override // j$.util.stream.b
     public final m2 Q(int i, m2 m2Var) {
         Objects.requireNonNull(m2Var);
-        if (a3.SORTED.m(i) && this.m) {
+        if (a3.SORTED.o(i) && this.m) {
             return m2Var;
         }
-        boolean m = a3.SIZED.m(i);
+        boolean o = a3.SIZED.o(i);
         Comparator comparator = this.n;
-        if (m) {
+        if (o) {
             return new M2(m2Var, comparator);
         }
         return new I2(m2Var, comparator);
@@ -40,7 +40,7 @@ final class H2 extends d2 {
 
     @Override // j$.util.stream.b
     public final I0 N(b bVar, Spliterator spliterator, IntFunction intFunction) {
-        if (a3.SORTED.m(bVar.J()) && this.m) {
+        if (a3.SORTED.o(bVar.J()) && this.m) {
             return bVar.B(spliterator, false, intFunction);
         }
         Object[] o = bVar.B(spliterator, true, intFunction).o(intFunction);

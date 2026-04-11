@@ -105,9 +105,9 @@ public final class DateTimeFormatter {
         pVar11.v(wVar, sVar);
         p pVar12 = new p();
         pVar12.r();
-        pVar12.m(j$.time.temporal.j.c, 4, 10, xVar);
+        pVar12.m(j$.time.temporal.i.c, 4, 10, xVar);
         pVar12.f("-W");
-        pVar12.l(j$.time.temporal.j.b, 2);
+        pVar12.l(j$.time.temporal.i.b, 2);
         pVar12.e('-');
         j$.time.temporal.a aVar7 = j$.time.temporal.a.DAY_OF_WEEK;
         pVar12.l(aVar7, 1);
@@ -194,12 +194,12 @@ public final class DateTimeFormatter {
         return this.d;
     }
 
-    public final String a(j$.time.temporal.o oVar) {
+    public final String a(j$.time.temporal.m mVar) {
         StringBuilder sb = new StringBuilder(32);
-        Objects.requireNonNull(oVar, "temporal");
+        Objects.requireNonNull(mVar, "temporal");
         Objects.requireNonNull(sb, "appendable");
         try {
-            this.a.i(new r(oVar, this), sb);
+            this.a.k(new r(mVar, this), sb);
             return sb.toString();
         } catch (IOException e2) {
             throw new j$.time.c(e2.getMessage(), e2);

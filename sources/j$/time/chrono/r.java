@@ -1,5 +1,7 @@
 package j$.time.chrono;
 
+import j$.time.temporal.Temporal;
+
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* loaded from: classes2.dex */
@@ -7,9 +9,9 @@ public final class r implements m {
     public static final r AH;
     private static final /* synthetic */ r[] a;
 
-    @Override // j$.time.temporal.o
-    public final /* synthetic */ boolean f(j$.time.temporal.r rVar) {
-        return h.i(this, rVar);
+    @Override // j$.time.temporal.m
+    public final /* synthetic */ boolean g(j$.time.temporal.p pVar) {
+        return h.i(this, pVar);
     }
 
     @Override // j$.time.chrono.m
@@ -17,19 +19,19 @@ public final class r implements m {
         return 1;
     }
 
-    @Override // j$.time.temporal.o
-    public final /* synthetic */ int j(j$.time.temporal.r rVar) {
-        return h.f(this, (j$.time.temporal.a) rVar);
+    @Override // j$.time.temporal.m
+    public final /* synthetic */ int l(j$.time.temporal.p pVar) {
+        return h.f(this, (j$.time.temporal.a) pVar);
     }
 
-    @Override // j$.time.temporal.o
-    public final /* synthetic */ long r(j$.time.temporal.r rVar) {
-        return h.g(this, rVar);
+    @Override // j$.time.temporal.m
+    public final /* synthetic */ long s(j$.time.temporal.p pVar) {
+        return h.g(this, pVar);
     }
 
-    @Override // j$.time.temporal.o
-    public final /* synthetic */ Object u(j$.time.temporal.t tVar) {
-        return h.m(this, tVar);
+    @Override // j$.time.temporal.m
+    public final /* synthetic */ Object w(j$.time.temporal.r rVar) {
+        return h.m(this, rVar);
     }
 
     public static r valueOf(String str) {
@@ -46,16 +48,16 @@ public final class r implements m {
         a = new r[]{rVar};
     }
 
-    @Override // j$.time.temporal.o
-    public final j$.time.temporal.w m(j$.time.temporal.r rVar) {
-        if (rVar == j$.time.temporal.a.ERA) {
-            return j$.time.temporal.w.j(1L, 1L);
+    @Override // j$.time.temporal.m
+    public final j$.time.temporal.u o(j$.time.temporal.p pVar) {
+        if (pVar == j$.time.temporal.a.ERA) {
+            return j$.time.temporal.u.j(1L, 1L);
         }
-        return j$.time.temporal.n.d(this, rVar);
+        return j$.time.temporal.l.d(this, pVar);
     }
 
-    @Override // j$.time.temporal.p
-    public final j$.time.temporal.m v(j$.time.temporal.m mVar) {
-        return mVar.d(1, j$.time.temporal.a.ERA);
+    @Override // j$.time.temporal.n
+    public final Temporal z(Temporal temporal) {
+        return temporal.d(1, j$.time.temporal.a.ERA);
     }
 }

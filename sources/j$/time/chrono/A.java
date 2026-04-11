@@ -1,6 +1,8 @@
 package j$.time.chrono;
 
+import j$.time.Instant;
 import j$.time.LocalDate;
+import j$.time.ZoneId;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
@@ -19,7 +21,7 @@ public final class A extends a implements Serializable {
     }
 
     @Override // j$.time.chrono.l
-    public final m z(int i) {
+    public final m G(int i) {
         if (i == 0) {
             return D.BEFORE_ROC;
         }
@@ -30,37 +32,43 @@ public final class A extends a implements Serializable {
     }
 
     @Override // j$.time.chrono.l
-    public final String q() {
+    public final String r() {
         return "roc";
     }
 
     @Override // j$.time.chrono.l
-    public final b k(j$.time.temporal.o oVar) {
-        if (oVar instanceof C) {
-            return (C) oVar;
+    public final b m(j$.time.temporal.m mVar) {
+        if (mVar instanceof C) {
+            return (C) mVar;
         }
-        return new C(LocalDate.D(oVar));
+        return new C(LocalDate.K(mVar));
     }
 
-    public final j$.time.temporal.w l(j$.time.temporal.a aVar) {
+    @Override // j$.time.chrono.l
+    public final j$.time.temporal.u C(j$.time.temporal.a aVar) {
         int i = z.a[aVar.ordinal()];
         if (i == 1) {
-            j$.time.temporal.w i2 = j$.time.temporal.a.PROLEPTIC_MONTH.i();
-            return j$.time.temporal.w.j(i2.e() - 22932, i2.d() - 22932);
+            j$.time.temporal.u k = j$.time.temporal.a.PROLEPTIC_MONTH.k();
+            return j$.time.temporal.u.j(k.e() - 22932, k.d() - 22932);
         }
         if (i == 2) {
-            j$.time.temporal.w i3 = j$.time.temporal.a.YEAR.i();
-            return j$.time.temporal.w.k(i3.d() - 1911, (-i3.e()) + 1912);
+            j$.time.temporal.u k2 = j$.time.temporal.a.YEAR.k();
+            return j$.time.temporal.u.k(k2.d() - 1911, (-k2.e()) + 1912);
         }
         if (i == 3) {
-            j$.time.temporal.w i4 = j$.time.temporal.a.YEAR.i();
-            return j$.time.temporal.w.j(i4.e() - 1911, i4.d() - 1911);
+            j$.time.temporal.u k3 = j$.time.temporal.a.YEAR.k();
+            return j$.time.temporal.u.j(k3.e() - 1911, k3.d() - 1911);
         }
-        return aVar.i();
+        return aVar.k();
     }
 
     private void readObject(ObjectInputStream objectInputStream) {
         throw new InvalidObjectException("Deserialization via serialization delegate");
+    }
+
+    @Override // j$.time.chrono.l
+    public final ChronoZonedDateTime D(Instant instant, ZoneId zoneId) {
+        return k.J(this, instant, zoneId);
     }
 
     Object writeReplace() {

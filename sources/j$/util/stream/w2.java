@@ -101,7 +101,7 @@ final class w2 extends c {
     @Override // j$.util.stream.e
     protected final Object a() {
         if (d()) {
-            A0 M = this.j.M(a3.SIZED.r(this.j.c) ? this.j.F(this.b) : -1L, this.k);
+            A0 M = this.j.M(a3.SIZED.s(this.j.c) ? this.j.F(this.b) : -1L, this.k);
             m2 Q = this.j.Q(this.a.J(), M);
             b bVar = this.a;
             bVar.A(this.b, bVar.V(Q));

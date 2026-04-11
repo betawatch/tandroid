@@ -54,43 +54,43 @@ final class a3 {
 
     static {
         Z2 z2 = Z2.SPLITERATOR;
-        Y2 u2 = u(z2);
+        Y2 w = w(z2);
         Z2 z22 = Z2.STREAM;
-        u2.a(z22);
+        w.a(z22);
         Z2 z23 = Z2.OP;
-        u2.a.put((EnumMap) z23, (Z2) 3);
-        a3 a3Var = new a3("DISTINCT", 0, 0, u2);
+        w.a.put((EnumMap) z23, (Z2) 3);
+        a3 a3Var = new a3("DISTINCT", 0, 0, w);
         DISTINCT = a3Var;
-        Y2 u3 = u(z2);
-        u3.a(z22);
-        u3.a.put((EnumMap) z23, (Z2) 3);
-        a3 a3Var2 = new a3("SORTED", 1, 1, u3);
+        Y2 w2 = w(z2);
+        w2.a(z22);
+        w2.a.put((EnumMap) z23, (Z2) 3);
+        a3 a3Var2 = new a3("SORTED", 1, 1, w2);
         SORTED = a3Var2;
-        Y2 u4 = u(z2);
-        u4.a(z22);
-        EnumMap enumMap = u4.a;
+        Y2 w3 = w(z2);
+        w3.a(z22);
+        EnumMap enumMap = w3.a;
         enumMap.put((EnumMap) z23, (Z2) 3);
         Z2 z24 = Z2.TERMINAL_OP;
         enumMap.put((EnumMap) z24, (Z2) 2);
         Z2 z25 = Z2.UPSTREAM_TERMINAL_OP;
         enumMap.put((EnumMap) z25, (Z2) 2);
-        a3 a3Var3 = new a3("ORDERED", 2, 2, u4);
+        a3 a3Var3 = new a3("ORDERED", 2, 2, w3);
         ORDERED = a3Var3;
-        Y2 u5 = u(z2);
-        u5.a(z22);
-        u5.a.put((EnumMap) z23, (Z2) 2);
-        a3 a3Var4 = new a3("SIZED", 3, 3, u5);
+        Y2 w4 = w(z2);
+        w4.a(z22);
+        w4.a.put((EnumMap) z23, (Z2) 2);
+        a3 a3Var4 = new a3("SIZED", 3, 3, w4);
         SIZED = a3Var4;
-        Y2 u6 = u(z23);
-        u6.a(z24);
-        a3 a3Var5 = new a3("SHORT_CIRCUIT", 4, 12, u6);
+        Y2 w5 = w(z23);
+        w5.a(z24);
+        a3 a3Var5 = new a3("SHORT_CIRCUIT", 4, 12, w5);
         SHORT_CIRCUIT = a3Var5;
         v = new a3[]{a3Var, a3Var2, a3Var3, a3Var4, a3Var5};
-        f = j(z2);
-        g = j(z22);
-        h = j(z23);
-        j(z24);
-        j(z25);
+        f = l(z2);
+        g = l(z22);
+        h = l(z23);
+        l(z24);
+        l(z25);
         int i2 = 0;
         for (a3 a3Var6 : values()) {
             i2 |= a3Var6.e;
@@ -116,7 +116,7 @@ final class a3 {
         u = SHORT_CIRCUIT.c;
     }
 
-    private static Y2 u(Z2 z2) {
+    private static Y2 w(Z2 z2) {
         Y2 y2 = new Y2(new EnumMap(Z2.class));
         y2.a(z2);
         return y2;
@@ -143,16 +143,16 @@ final class a3 {
         }
     }
 
-    final boolean m(int i2) {
+    final boolean o(int i2) {
         return (i2 & this.e) == this.c;
     }
 
-    final boolean r(int i2) {
+    final boolean s(int i2) {
         int i3 = this.e;
         return (i2 & i3) == i3;
     }
 
-    private static int j(Z2 z2) {
+    private static int l(Z2 z2) {
         int i2 = 0;
         for (a3 a3Var : values()) {
             i2 |= ((Integer) a3Var.a.get(z2)).intValue() << a3Var.b;
@@ -160,7 +160,7 @@ final class a3 {
         return i2;
     }
 
-    static int i(int i2, int i3) {
+    static int k(int i2, int i3) {
         int i4;
         if (i2 == 0) {
             i4 = i;
@@ -170,11 +170,11 @@ final class a3 {
         return i2 | (i3 & i4);
     }
 
-    static int v(int i2) {
+    static int z(int i2) {
         return i2 & ((~i2) >> 1) & j;
     }
 
-    static int l(Spliterator spliterator) {
+    static int n(Spliterator spliterator) {
         int characteristics = spliterator.characteristics();
         int i2 = characteristics & 4;
         int i3 = f;

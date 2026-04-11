@@ -35,7 +35,7 @@ final class j implements f {
     }
 
     @Override // j$.time.format.f
-    public final boolean i(r rVar, StringBuilder sb) {
+    public final boolean k(r rVar, StringBuilder sb) {
         Long e2 = rVar.e(j$.time.temporal.a.OFFSET_SECONDS);
         boolean z = false;
         if (e2 == null) {

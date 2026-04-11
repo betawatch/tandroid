@@ -1,7 +1,11 @@
 package j$.time.chrono;
 
+import j$.time.Instant;
 import j$.time.LocalDate;
 import j$.time.LocalDateTime;
+import j$.time.ZoneId;
+import j$.time.ZonedDateTime;
+import j$.time.temporal.Temporal;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
@@ -12,7 +16,7 @@ public final class s extends a implements Serializable {
     private static final long serialVersionUID = -1440403870442975015L;
 
     @Override // j$.time.chrono.l
-    public final m z(int i) {
+    public final m G(int i) {
         if (i == 0) {
             return t.BCE;
         }
@@ -31,22 +35,37 @@ public final class s extends a implements Serializable {
     }
 
     @Override // j$.time.chrono.l
-    public final String q() {
+    public final String r() {
         return "iso8601";
     }
 
     @Override // j$.time.chrono.l
-    public final b k(j$.time.temporal.o oVar) {
-        return LocalDate.D(oVar);
+    public final b m(j$.time.temporal.m mVar) {
+        return LocalDate.K(mVar);
     }
 
     @Override // j$.time.chrono.a, j$.time.chrono.l
-    public final ChronoLocalDateTime n(LocalDateTime localDateTime) {
-        return LocalDateTime.C(localDateTime);
+    public final ChronoLocalDateTime x(Temporal temporal) {
+        return LocalDateTime.J(temporal);
     }
 
-    public static boolean l(long j) {
+    @Override // j$.time.chrono.a, j$.time.chrono.l
+    public final ChronoZonedDateTime v(Temporal temporal) {
+        return ZonedDateTime.I(temporal);
+    }
+
+    @Override // j$.time.chrono.l
+    public final ChronoZonedDateTime D(Instant instant, ZoneId zoneId) {
+        return ZonedDateTime.J(instant, zoneId);
+    }
+
+    public static boolean n(long j) {
         return (3 & j) == 0 && (j % 100 != 0 || j % 400 == 0);
+    }
+
+    @Override // j$.time.chrono.l
+    public final j$.time.temporal.u C(j$.time.temporal.a aVar) {
+        return aVar.k();
     }
 
     private void readObject(ObjectInputStream objectInputStream) {

@@ -10,8 +10,8 @@ class i implements f {
     final int e;
 
     /* JADX WARN: Multi-variable type inference failed */
-    i(j$.time.temporal.r rVar, int i, int i2, x xVar) {
-        this.a = (Enum) rVar;
+    i(j$.time.temporal.p pVar, int i, int i2, x xVar) {
+        this.a = (Enum) pVar;
         this.b = i;
         this.c = i2;
         this.d = xVar;
@@ -19,29 +19,29 @@ class i implements f {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    protected i(j$.time.temporal.r rVar, int i, int i2, x xVar, int i3) {
-        this.a = (Enum) rVar;
+    protected i(j$.time.temporal.p pVar, int i, int i2, x xVar, int i3) {
+        this.a = (Enum) pVar;
         this.b = i;
         this.c = i2;
         this.d = xVar;
         this.e = i3;
     }
 
-    /* JADX WARN: Type inference failed for: r3v0, types: [j$.time.temporal.r, java.lang.Enum] */
+    /* JADX WARN: Type inference failed for: r3v0, types: [j$.time.temporal.p, java.lang.Enum] */
     i b() {
         return this.e == -1 ? this : new i(this.a, this.b, this.c, this.d, -1);
     }
 
-    /* JADX WARN: Type inference failed for: r1v0, types: [j$.time.temporal.r, java.lang.Enum] */
+    /* JADX WARN: Type inference failed for: r1v0, types: [j$.time.temporal.p, java.lang.Enum] */
     i c(int i) {
         int i2 = this.e + i;
         return new i(this.a, this.b, this.c, this.d, i2);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v0, types: [j$.time.temporal.r, java.lang.Enum, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r0v0, types: [j$.time.temporal.p, java.lang.Enum, java.lang.Object] */
     @Override // j$.time.format.f
-    public boolean i(r rVar, StringBuilder sb) {
+    public boolean k(r rVar, StringBuilder sb) {
         ?? r0 = this.a;
         Long e = rVar.e(r0);
         if (e == null) {

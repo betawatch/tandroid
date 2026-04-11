@@ -8490,7 +8490,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
     /* JADX INFO: Access modifiers changed from: private */
     public void createMentionsContainer() {
-        MentionsContainerView mentionsContainerView = new MentionsContainerView(getContext(), UserConfig.getInstance(this.currentAccount).getClientUserId(), 0L, LaunchActivity.getLastFragment(), this.resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlert.35
+        MentionsContainerView mentionsContainerView = new MentionsContainerView(getContext(), this.dialogId, 0L, LaunchActivity.getLastFragment(), this.resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlert.35
             @Override // org.telegram.ui.Components.MentionsContainerView
             protected void onScrolled(boolean z, boolean z2) {
                 if (ChatAttachAlert.this.photoLayout != null) {
@@ -8542,14 +8542,14 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         mentionsContainerView.getAdapter().setAllowStickers(false);
         mentionsContainerView.getAdapter().setAllowBots(false);
         mentionsContainerView.getAdapter().setAllowChats(false);
-        mentionsContainerView.getAdapter().setSearchInDailogs(true);
-        BaseFragment baseFragment = this.baseFragment;
-        if (baseFragment instanceof ChatActivity) {
-            ChatActivity chatActivity = (ChatActivity) baseFragment;
+        if (this.baseFragment instanceof ChatActivity) {
+            mentionsContainerView.getAdapter().setSearchInDialogs(false);
+            ChatActivity chatActivity = (ChatActivity) this.baseFragment;
             mentionsContainerView.getAdapter().setUserOrChat(chatActivity.getCurrentUser(), chatActivity.getCurrentChat());
             mentionsContainerView.getAdapter().setChatInfo(chatActivity.getCurrentChatInfo());
             mentionsContainerView.getAdapter().setNeedUsernames(chatActivity.getCurrentChat() != null);
         } else {
+            mentionsContainerView.getAdapter().setSearchInDialogs(true);
             mentionsContainerView.getAdapter().setChatInfo(null);
             mentionsContainerView.getAdapter().setNeedUsernames(false);
         }

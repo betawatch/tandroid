@@ -1,12 +1,14 @@
 package j$.time;
 
 import j$.time.format.TextStyle;
+import j$.time.temporal.ChronoUnit;
+import j$.time.temporal.Temporal;
 import java.util.Locale;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* loaded from: classes2.dex */
-public final class DayOfWeek implements j$.time.temporal.o, j$.time.temporal.p {
+public final class DayOfWeek implements j$.time.temporal.m, j$.time.temporal.n {
     public static final DayOfWeek FRIDAY;
     public static final DayOfWeek MONDAY;
     public static final DayOfWeek SATURDAY;
@@ -44,7 +46,7 @@ public final class DayOfWeek implements j$.time.temporal.o, j$.time.temporal.p {
         a = values();
     }
 
-    public static DayOfWeek B(int i) {
+    public static DayOfWeek I(int i) {
         if (i < 1 || i > 7) {
             throw new c("Invalid value for DayOfWeek: " + i);
         }
@@ -61,48 +63,48 @@ public final class DayOfWeek implements j$.time.temporal.o, j$.time.temporal.p {
         return pVar.w(locale).a(this);
     }
 
-    @Override // j$.time.temporal.o
-    public final boolean f(j$.time.temporal.r rVar) {
-        return rVar instanceof j$.time.temporal.a ? rVar == j$.time.temporal.a.DAY_OF_WEEK : rVar != null && rVar.l(this);
+    @Override // j$.time.temporal.m
+    public final boolean g(j$.time.temporal.p pVar) {
+        return pVar instanceof j$.time.temporal.a ? pVar == j$.time.temporal.a.DAY_OF_WEEK : pVar != null && pVar.n(this);
     }
 
-    @Override // j$.time.temporal.o
-    public final j$.time.temporal.w m(j$.time.temporal.r rVar) {
-        if (rVar == j$.time.temporal.a.DAY_OF_WEEK) {
-            return rVar.i();
+    @Override // j$.time.temporal.m
+    public final j$.time.temporal.u o(j$.time.temporal.p pVar) {
+        if (pVar == j$.time.temporal.a.DAY_OF_WEEK) {
+            return pVar.k();
         }
-        return j$.time.temporal.n.d(this, rVar);
+        return j$.time.temporal.l.d(this, pVar);
     }
 
-    @Override // j$.time.temporal.o
-    public final int j(j$.time.temporal.r rVar) {
-        if (rVar == j$.time.temporal.a.DAY_OF_WEEK) {
+    @Override // j$.time.temporal.m
+    public final int l(j$.time.temporal.p pVar) {
+        if (pVar == j$.time.temporal.a.DAY_OF_WEEK) {
             return getValue();
         }
-        return j$.time.temporal.n.a(this, rVar);
+        return j$.time.temporal.l.a(this, pVar);
     }
 
-    @Override // j$.time.temporal.o
-    public final long r(j$.time.temporal.r rVar) {
-        if (rVar == j$.time.temporal.a.DAY_OF_WEEK) {
+    @Override // j$.time.temporal.m
+    public final long s(j$.time.temporal.p pVar) {
+        if (pVar == j$.time.temporal.a.DAY_OF_WEEK) {
             return getValue();
         }
-        if (rVar instanceof j$.time.temporal.a) {
-            throw new j$.time.temporal.v(d.a("Unsupported field: ", rVar));
+        if (pVar instanceof j$.time.temporal.a) {
+            throw new j$.time.temporal.t(d.a("Unsupported field: ", pVar));
         }
-        return rVar.j(this);
+        return pVar.l(this);
     }
 
-    @Override // j$.time.temporal.o
-    public final Object u(j$.time.temporal.t tVar) {
-        if (tVar == j$.time.temporal.n.i()) {
-            return j$.time.temporal.b.DAYS;
+    @Override // j$.time.temporal.m
+    public final Object w(j$.time.temporal.r rVar) {
+        if (rVar == j$.time.temporal.l.i()) {
+            return ChronoUnit.DAYS;
         }
-        return j$.time.temporal.n.c(this, tVar);
+        return j$.time.temporal.l.c(this, rVar);
     }
 
-    @Override // j$.time.temporal.p
-    public final j$.time.temporal.m v(j$.time.temporal.m mVar) {
-        return mVar.d(getValue(), j$.time.temporal.a.DAY_OF_WEEK);
+    @Override // j$.time.temporal.n
+    public final Temporal z(Temporal temporal) {
+        return temporal.d(getValue(), j$.time.temporal.a.DAY_OF_WEEK);
     }
 }

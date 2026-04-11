@@ -21,9 +21,9 @@ public final class p {
         hashMap.put('G', j$.time.temporal.a.ERA);
         hashMap.put('y', j$.time.temporal.a.YEAR_OF_ERA);
         hashMap.put('u', j$.time.temporal.a.YEAR);
-        j$.time.temporal.r rVar = j$.time.temporal.j.a;
-        hashMap.put('Q', rVar);
-        hashMap.put('q', rVar);
+        j$.time.temporal.p pVar = j$.time.temporal.i.a;
+        hashMap.put('Q', pVar);
+        hashMap.put('q', pVar);
         j$.time.temporal.a aVar = j$.time.temporal.a.MONTH_OF_YEAR;
         hashMap.put('M', aVar);
         hashMap.put('L', aVar);
@@ -46,7 +46,7 @@ public final class p {
         hashMap.put('A', j$.time.temporal.a.MILLI_OF_DAY);
         hashMap.put('n', aVar3);
         hashMap.put('N', j$.time.temporal.a.NANO_OF_DAY);
-        hashMap.put('g', j$.time.temporal.l.a);
+        hashMap.put('g', j$.time.temporal.k.a);
     }
 
     public p() {
@@ -81,20 +81,20 @@ public final class p {
         d(k.LENIENT);
     }
 
-    public final void l(j$.time.temporal.r rVar, int i) {
-        Objects.requireNonNull(rVar, "field");
+    public final void l(j$.time.temporal.p pVar, int i) {
+        Objects.requireNonNull(pVar, "field");
         if (i < 1 || i > 19) {
             throw new IllegalArgumentException("The width must be from 1 to 19 inclusive but was " + i);
         }
-        k(new i(rVar, i, i, x.NOT_NEGATIVE));
+        k(new i(pVar, i, i, x.NOT_NEGATIVE));
     }
 
-    public final void m(j$.time.temporal.r rVar, int i, int i2, x xVar) {
+    public final void m(j$.time.temporal.p pVar, int i, int i2, x xVar) {
         if (i == i2 && xVar == x.NOT_NEGATIVE) {
-            l(rVar, i2);
+            l(pVar, i2);
             return;
         }
-        Objects.requireNonNull(rVar, "field");
+        Objects.requireNonNull(pVar, "field");
         Objects.requireNonNull(xVar, "signStyle");
         if (i < 1 || i > 19) {
             throw new IllegalArgumentException("The minimum width must be from 1 to 19 inclusive but was " + i);
@@ -105,7 +105,7 @@ public final class p {
         if (i2 < i) {
             throw new IllegalArgumentException("The maximum width must exceed or equal the minimum width but " + i2 + " < " + i);
         }
-        k(new i(rVar, i, i2, xVar));
+        k(new i(pVar, i, i2, xVar));
     }
 
     private void k(i iVar) {
@@ -138,7 +138,7 @@ public final class p {
     public final void b(j$.time.temporal.a aVar) {
         g gVar = new g(aVar, 0, 9, true, 0);
         Objects.requireNonNull(aVar, "field");
-        if (aVar.i().g()) {
+        if (aVar.k().g()) {
             d(gVar);
         } else {
             throw new IllegalArgumentException("Field must have a fixed set of values: " + aVar);

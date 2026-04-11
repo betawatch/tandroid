@@ -162,7 +162,7 @@ public class UserObject {
     }
 
     public static Long getEmojiStatusDocumentId(TLRPC.EmojiStatus emojiStatus) {
-        if (emojiStatus == null || MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked()) {
+        if (emojiStatus == null) {
             return null;
         }
         if (emojiStatus instanceof TLRPC.TL_emojiStatus) {

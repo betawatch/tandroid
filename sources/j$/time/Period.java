@@ -1,5 +1,6 @@
 package j$.time;
 
+import j$.time.temporal.ChronoUnit;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
@@ -16,11 +17,11 @@ public final class Period implements Serializable {
 
     static {
         Pattern.compile("([-+]?)P(?:([-+]?[0-9]+)Y)?(?:([-+]?[0-9]+)M)?(?:([-+]?[0-9]+)W)?(?:([-+]?[0-9]+)D)?", 2);
-        j$.com.android.tools.r8.a.h(new Object[]{j$.time.temporal.b.YEARS, j$.time.temporal.b.MONTHS, j$.time.temporal.b.DAYS});
+        j$.com.android.tools.r8.a.h(new Object[]{ChronoUnit.YEARS, ChronoUnit.MONTHS, ChronoUnit.DAYS});
     }
 
     public static Period between(LocalDate localDate, LocalDate localDate2) {
-        return localDate.S(localDate2);
+        return localDate.a0(localDate2);
     }
 
     public static Period a(int i, int i2, int i3) {
@@ -79,7 +80,7 @@ public final class Period implements Serializable {
     }
 
     private Object writeReplace() {
-        return new q((byte) 14, this);
+        return new r((byte) 14, this);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {

@@ -21,7 +21,7 @@ final class e implements f {
     }
 
     @Override // j$.time.format.f
-    public final boolean i(r rVar, StringBuilder sb) {
+    public final boolean k(r rVar, StringBuilder sb) {
         int length = sb.length();
         boolean z = this.b;
         if (z) {
@@ -29,7 +29,7 @@ final class e implements f {
         }
         try {
             for (f fVar : this.a) {
-                if (!fVar.i(rVar, sb)) {
+                if (!fVar.k(rVar, sb)) {
                     sb.setLength(length);
                     return true;
                 }

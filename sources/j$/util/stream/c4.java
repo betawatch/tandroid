@@ -60,7 +60,7 @@ final class c4 extends c {
         super(bVar2, spliterator);
         this.j = bVar;
         this.k = intFunction;
-        this.l = a3.ORDERED.m(bVar2.J());
+        this.l = a3.ORDERED.o(bVar2.J());
     }
 
     c4(c4 c4Var, Spliterator spliterator) {

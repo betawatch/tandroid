@@ -3,6 +3,8 @@ package j$.time.chrono;
 import j$.time.Instant;
 import j$.time.LocalDate;
 import j$.time.ZoneOffset;
+import j$.time.temporal.ChronoUnit;
+import j$.time.temporal.Temporal;
 import j$.util.Objects;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
@@ -10,32 +12,38 @@ import java.io.ObjectOutput;
 import java.io.Serializable;
 
 /* loaded from: classes2.dex */
-final class f implements ChronoLocalDateTime, j$.time.temporal.m, j$.time.temporal.p, Serializable {
+final class f implements ChronoLocalDateTime, Temporal, j$.time.temporal.n, Serializable {
     private static final long serialVersionUID = 4556003607393004514L;
     private final transient b a;
     private final transient j$.time.j b;
 
-    public final /* synthetic */ long G(ZoneOffset zoneOffset) {
-        return h.n(this, zoneOffset);
-    }
-
-    @Override // j$.time.temporal.o
-    public final /* synthetic */ Object u(j$.time.temporal.t tVar) {
-        return h.k(this, tVar);
-    }
-
     @Override // java.lang.Comparable
-    /* renamed from: w */
+    /* renamed from: A */
     public final /* synthetic */ int compareTo(ChronoLocalDateTime chronoLocalDateTime) {
         return h.c(this, chronoLocalDateTime);
     }
 
-    static f C(b bVar, j$.time.j jVar) {
+    @Override // j$.time.chrono.ChronoLocalDateTime
+    public final /* synthetic */ Instant toInstant(ZoneOffset zoneOffset) {
+        return h.p(this, zoneOffset);
+    }
+
+    @Override // j$.time.temporal.m
+    public final /* synthetic */ Object w(j$.time.temporal.r rVar) {
+        return h.k(this, rVar);
+    }
+
+    @Override // j$.time.chrono.ChronoLocalDateTime
+    public final /* synthetic */ long y(ZoneOffset zoneOffset) {
+        return h.n(this, zoneOffset);
+    }
+
+    static f J(b bVar, j$.time.j jVar) {
         return new f(bVar, jVar);
     }
 
-    static f B(l lVar, j$.time.temporal.m mVar) {
-        f fVar = (f) mVar;
+    static f I(l lVar, Temporal temporal) {
+        f fVar = (f) temporal;
         a aVar = (a) lVar;
         if (aVar.equals(fVar.a.a())) {
             return fVar;
@@ -48,9 +56,9 @@ final class f implements ChronoLocalDateTime, j$.time.temporal.m, j$.time.tempor
         return this.a.a();
     }
 
-    @Override // j$.time.temporal.m
-    public final j$.time.temporal.m i(long j, j$.time.temporal.b bVar) {
-        return B(this.a.a(), j$.time.temporal.n.b(this, j, bVar));
+    @Override // j$.time.temporal.Temporal
+    public final Temporal k(long j, ChronoUnit chronoUnit) {
+        return I(this.a.a(), j$.time.temporal.l.b(this, j, chronoUnit));
     }
 
     private f(b bVar, j$.time.j jVar) {
@@ -60,9 +68,9 @@ final class f implements ChronoLocalDateTime, j$.time.temporal.m, j$.time.tempor
         this.b = jVar;
     }
 
-    private f I(j$.time.temporal.m mVar, j$.time.j jVar) {
+    private f O(Temporal temporal, j$.time.j jVar) {
         b bVar = this.a;
-        return (bVar == mVar && this.b == jVar) ? this : new f(d.B(bVar.a(), mVar), jVar);
+        return (bVar == temporal && this.b == jVar) ? this : new f(d.I(bVar.a(), temporal), jVar);
     }
 
     @Override // j$.time.chrono.ChronoLocalDateTime
@@ -75,135 +83,182 @@ final class f implements ChronoLocalDateTime, j$.time.temporal.m, j$.time.tempor
         return this.b;
     }
 
-    @Override // j$.time.temporal.o
-    public final boolean f(j$.time.temporal.r rVar) {
-        if (!(rVar instanceof j$.time.temporal.a)) {
-            return rVar != null && rVar.l(this);
+    @Override // j$.time.temporal.m
+    public final boolean g(j$.time.temporal.p pVar) {
+        if (!(pVar instanceof j$.time.temporal.a)) {
+            return pVar != null && pVar.n(this);
         }
-        j$.time.temporal.a aVar = (j$.time.temporal.a) rVar;
-        return aVar.u() || aVar.C();
+        j$.time.temporal.a aVar = (j$.time.temporal.a) pVar;
+        return aVar.w() || aVar.J();
     }
 
-    @Override // j$.time.temporal.o
-    public final j$.time.temporal.w m(j$.time.temporal.r rVar) {
-        if (rVar instanceof j$.time.temporal.a) {
-            if (!((j$.time.temporal.a) rVar).C()) {
-                return this.a.m(rVar);
+    @Override // j$.time.temporal.m
+    public final j$.time.temporal.u o(j$.time.temporal.p pVar) {
+        if (pVar instanceof j$.time.temporal.a) {
+            if (!((j$.time.temporal.a) pVar).J()) {
+                return this.a.o(pVar);
             }
             j$.time.j jVar = this.b;
             jVar.getClass();
-            return j$.time.temporal.n.d(jVar, rVar);
+            return j$.time.temporal.l.d(jVar, pVar);
         }
-        return rVar.r(this);
-    }
-
-    @Override // j$.time.temporal.o
-    public final int j(j$.time.temporal.r rVar) {
-        if (rVar instanceof j$.time.temporal.a) {
-            return ((j$.time.temporal.a) rVar).C() ? this.b.j(rVar) : this.a.j(rVar);
-        }
-        return m(rVar).a(r(rVar), rVar);
-    }
-
-    @Override // j$.time.temporal.o
-    public final long r(j$.time.temporal.r rVar) {
-        if (rVar instanceof j$.time.temporal.a) {
-            return ((j$.time.temporal.a) rVar).C() ? this.b.r(rVar) : this.a.r(rVar);
-        }
-        return rVar.j(this);
+        return pVar.s(this);
     }
 
     @Override // j$.time.temporal.m
-    public final j$.time.temporal.m l(LocalDate localDate) {
+    public final int l(j$.time.temporal.p pVar) {
+        if (pVar instanceof j$.time.temporal.a) {
+            return ((j$.time.temporal.a) pVar).J() ? this.b.l(pVar) : this.a.l(pVar);
+        }
+        return o(pVar).a(s(pVar), pVar);
+    }
+
+    @Override // j$.time.temporal.m
+    public final long s(j$.time.temporal.p pVar) {
+        if (pVar instanceof j$.time.temporal.a) {
+            return ((j$.time.temporal.a) pVar).J() ? this.b.s(pVar) : this.a.s(pVar);
+        }
+        return pVar.l(this);
+    }
+
+    @Override // j$.time.temporal.Temporal
+    public final Temporal n(LocalDate localDate) {
         if (localDate instanceof b) {
-            return I(localDate, this.b);
+            return O(localDate, this.b);
         }
         l a = this.a.a();
         localDate.getClass();
-        return B(a, (f) h.a(localDate, this));
+        return I(a, (f) h.a(localDate, this));
     }
 
-    @Override // j$.time.temporal.m
-    /* renamed from: H, reason: merged with bridge method [inline-methods] */
-    public final f d(long j, j$.time.temporal.r rVar) {
-        boolean z = rVar instanceof j$.time.temporal.a;
+    @Override // j$.time.temporal.Temporal
+    /* renamed from: N, reason: merged with bridge method [inline-methods] */
+    public final f d(long j, j$.time.temporal.p pVar) {
+        boolean z = pVar instanceof j$.time.temporal.a;
         b bVar = this.a;
         if (z) {
-            boolean C = ((j$.time.temporal.a) rVar).C();
+            boolean J = ((j$.time.temporal.a) pVar).J();
             j$.time.j jVar = this.b;
-            if (C) {
-                return I(bVar, jVar.d(j, rVar));
+            if (J) {
+                return O(bVar, jVar.d(j, pVar));
             }
-            return I(bVar.d(j, rVar), jVar);
+            return O(bVar.d(j, pVar), jVar);
         }
-        return B(bVar.a(), rVar.m(this, j));
+        return I(bVar.a(), pVar.o(this, j));
     }
 
-    @Override // j$.time.temporal.m
-    /* renamed from: D, reason: merged with bridge method [inline-methods] */
-    public final f e(long j, j$.time.temporal.u uVar) {
-        boolean z = uVar instanceof j$.time.temporal.b;
+    @Override // j$.time.temporal.Temporal
+    /* renamed from: K, reason: merged with bridge method [inline-methods] */
+    public final f e(long j, j$.time.temporal.s sVar) {
+        boolean z = sVar instanceof ChronoUnit;
         b bVar = this.a;
         if (z) {
-            int i = e.a[((j$.time.temporal.b) uVar).ordinal()];
+            int i = e.a[((ChronoUnit) sVar).ordinal()];
             j$.time.j jVar = this.b;
             switch (i) {
                 case 1:
-                    return F(this.a, 0L, 0L, 0L, j);
+                    return M(this.a, 0L, 0L, 0L, j);
                 case 2:
-                    f I = I(bVar.e(j / 86400000000L, (j$.time.temporal.u) j$.time.temporal.b.DAYS), jVar);
-                    return I.F(I.a, 0L, 0L, 0L, (j % 86400000000L) * 1000);
+                    f O = O(bVar.e(j / 86400000000L, (j$.time.temporal.s) ChronoUnit.DAYS), jVar);
+                    return O.M(O.a, 0L, 0L, 0L, (j % 86400000000L) * 1000);
                 case 3:
-                    f I2 = I(bVar.e(j / 86400000, (j$.time.temporal.u) j$.time.temporal.b.DAYS), jVar);
-                    return I2.F(I2.a, 0L, 0L, 0L, (j % 86400000) * 1000000);
+                    f O2 = O(bVar.e(j / 86400000, (j$.time.temporal.s) ChronoUnit.DAYS), jVar);
+                    return O2.M(O2.a, 0L, 0L, 0L, (j % 86400000) * 1000000);
                 case 4:
-                    return E(j);
+                    return L(j);
                 case 5:
-                    return F(this.a, 0L, j, 0L, 0L);
+                    return M(this.a, 0L, j, 0L, 0L);
                 case 6:
-                    return F(this.a, j, 0L, 0L, 0L);
+                    return M(this.a, j, 0L, 0L, 0L);
                 case 7:
-                    f I3 = I(bVar.e(j / 256, (j$.time.temporal.u) j$.time.temporal.b.DAYS), jVar);
-                    return I3.F(I3.a, (j % 256) * 12, 0L, 0L, 0L);
+                    f O3 = O(bVar.e(j / 256, (j$.time.temporal.s) ChronoUnit.DAYS), jVar);
+                    return O3.M(O3.a, (j % 256) * 12, 0L, 0L, 0L);
                 default:
-                    return I(bVar.e(j, uVar), jVar);
+                    return O(bVar.e(j, sVar), jVar);
             }
         }
-        return B(bVar.a(), uVar.i(this, j));
+        return I(bVar.a(), sVar.k(this, j));
     }
 
-    final f E(long j) {
-        return F(this.a, 0L, 0L, j, 0L);
+    final f L(long j) {
+        return M(this.a, 0L, 0L, j, 0L);
     }
 
-    private f F(b bVar, long j, long j2, long j3, long j4) {
+    private f M(b bVar, long j, long j2, long j3, long j4) {
         long j5 = j | j2 | j3 | j4;
         j$.time.j jVar = this.b;
         if (j5 == 0) {
-            return I(bVar, jVar);
+            return O(bVar, jVar);
         }
         long j6 = j2 / 1440;
         long j7 = j / 24;
         long j8 = (j2 % 1440) * 60000000000L;
         long j9 = ((j % 24) * 3600000000000L) + j8 + ((j3 % 86400) * 1000000000) + (j4 % 86400000000000L);
-        long R = jVar.R();
-        long j10 = j9 + R;
+        long Y = jVar.Y();
+        long j10 = j9 + Y;
         long k = j$.com.android.tools.r8.a.k(j10, 86400000000000L) + j7 + j6 + (j3 / 86400) + (j4 / 86400000000000L);
         long j11 = j$.com.android.tools.r8.a.j(j10, 86400000000000L);
-        if (j11 != R) {
-            jVar = j$.time.j.J(j11);
+        if (j11 != Y) {
+            jVar = j$.time.j.Q(j11);
         }
-        return I(bVar.e(k, (j$.time.temporal.u) j$.time.temporal.b.DAYS), jVar);
+        return O(bVar.e(k, (j$.time.temporal.s) ChronoUnit.DAYS), jVar);
     }
 
     @Override // j$.time.chrono.ChronoLocalDateTime
-    public final ChronoZonedDateTime o(ZoneOffset zoneOffset) {
-        return k.B(zoneOffset, null, this);
+    public final ChronoZonedDateTime p(ZoneOffset zoneOffset) {
+        return k.I(zoneOffset, null, this);
     }
 
-    @Override // j$.time.temporal.p
-    public final j$.time.temporal.m v(j$.time.temporal.m mVar) {
-        return mVar.d(c().s(), j$.time.temporal.a.EPOCH_DAY).d(b().R(), j$.time.temporal.a.NANO_OF_DAY);
+    @Override // j$.time.temporal.Temporal
+    public final long f(Temporal temporal, j$.time.temporal.s sVar) {
+        Objects.requireNonNull(temporal, "endExclusive");
+        b bVar = this.a;
+        ChronoLocalDateTime x = bVar.a().x(temporal);
+        if (!(sVar instanceof ChronoUnit)) {
+            Objects.requireNonNull(sVar, "unit");
+            return sVar.between(this, x);
+        }
+        ChronoUnit chronoUnit = ChronoUnit.DAYS;
+        boolean z = ((ChronoUnit) sVar).compareTo(chronoUnit) < 0;
+        j$.time.j jVar = this.b;
+        if (!z) {
+            b c = x.c();
+            if (x.b().compareTo(jVar) < 0) {
+                c = c.k(1L, chronoUnit);
+            }
+            return bVar.f(c, sVar);
+        }
+        j$.time.temporal.a aVar = j$.time.temporal.a.EPOCH_DAY;
+        long s = x.s(aVar) - bVar.s(aVar);
+        switch (e.a[((ChronoUnit) sVar).ordinal()]) {
+            case 1:
+                s = j$.com.android.tools.r8.a.l(s, 86400000000000L);
+                break;
+            case 2:
+                s = j$.com.android.tools.r8.a.l(s, 86400000000L);
+                break;
+            case 3:
+                s = j$.com.android.tools.r8.a.l(s, 86400000L);
+                break;
+            case 4:
+                s = j$.com.android.tools.r8.a.l(s, 86400);
+                break;
+            case 5:
+                s = j$.com.android.tools.r8.a.l(s, 1440);
+                break;
+            case 6:
+                s = j$.com.android.tools.r8.a.l(s, 24);
+                break;
+            case 7:
+                s = j$.com.android.tools.r8.a.l(s, 2);
+                break;
+        }
+        return j$.com.android.tools.r8.a.f(s, jVar.f(x.b(), sVar));
+    }
+
+    @Override // j$.time.temporal.n
+    public final Temporal z(Temporal temporal) {
+        return temporal.d(c().t(), j$.time.temporal.a.EPOCH_DAY).d(b().Y(), j$.time.temporal.a.NANO_OF_DAY);
     }
 
     private Object writeReplace() {
@@ -228,11 +283,6 @@ final class f implements ChronoLocalDateTime, j$.time.temporal.m, j$.time.tempor
 
     public final int hashCode() {
         return this.a.hashCode() ^ this.b.hashCode();
-    }
-
-    @Override // j$.time.chrono.ChronoLocalDateTime
-    public final Instant toInstant(ZoneOffset zoneOffset) {
-        return Instant.G(G(zoneOffset), b().G());
     }
 
     public final String toString() {

@@ -1,17 +1,20 @@
 package j$.time.chrono;
 
+import j$.time.Instant;
 import j$.time.ZoneOffset;
+import j$.time.temporal.ChronoUnit;
+import j$.time.temporal.Temporal;
 import j$.util.Objects;
 
 /* loaded from: classes2.dex */
 public abstract /* synthetic */ class h {
-    public static boolean i(m mVar, j$.time.temporal.r rVar) {
-        return rVar instanceof j$.time.temporal.a ? rVar == j$.time.temporal.a.ERA : rVar != null && rVar.l(mVar);
+    public static boolean i(m mVar, j$.time.temporal.p pVar) {
+        return pVar instanceof j$.time.temporal.a ? pVar == j$.time.temporal.a.ERA : pVar != null && pVar.n(mVar);
     }
 
-    public static l p(j$.time.temporal.o oVar) {
-        Objects.requireNonNull(oVar, "temporal");
-        Object obj = (l) oVar.u(j$.time.temporal.n.e());
+    public static l q(j$.time.temporal.m mVar) {
+        Objects.requireNonNull(mVar, "temporal");
+        Object obj = (l) mVar.w(j$.time.temporal.l.e());
         s sVar = s.d;
         if (obj == null) {
             obj = Objects.requireNonNull(sVar, "defaultObj");
@@ -19,89 +22,93 @@ public abstract /* synthetic */ class h {
         return (l) obj;
     }
 
-    public static int e(ChronoZonedDateTime chronoZonedDateTime, j$.time.temporal.r rVar) {
-        if (rVar instanceof j$.time.temporal.a) {
-            int i = i.a[((j$.time.temporal.a) rVar).ordinal()];
+    public static int e(ChronoZonedDateTime chronoZonedDateTime, j$.time.temporal.p pVar) {
+        if (pVar instanceof j$.time.temporal.a) {
+            int i = i.a[((j$.time.temporal.a) pVar).ordinal()];
             if (i == 1) {
-                throw new j$.time.temporal.v("Invalid field 'InstantSeconds' for get() method, use getLong() instead");
+                throw new j$.time.temporal.t("Invalid field 'InstantSeconds' for get() method, use getLong() instead");
             }
             if (i == 2) {
-                return chronoZonedDateTime.g().getTotalSeconds();
+                return chronoZonedDateTime.h().getTotalSeconds();
             }
-            return chronoZonedDateTime.x().j(rVar);
+            return chronoZonedDateTime.B().l(pVar);
         }
-        return j$.time.temporal.n.a(chronoZonedDateTime, rVar);
+        return j$.time.temporal.l.a(chronoZonedDateTime, pVar);
     }
 
     public static int f(m mVar, j$.time.temporal.a aVar) {
         if (aVar == j$.time.temporal.a.ERA) {
             return mVar.getValue();
         }
-        return j$.time.temporal.n.a(mVar, aVar);
+        return j$.time.temporal.l.a(mVar, aVar);
     }
 
-    public static long g(m mVar, j$.time.temporal.r rVar) {
-        if (rVar == j$.time.temporal.a.ERA) {
+    public static long g(m mVar, j$.time.temporal.p pVar) {
+        if (pVar == j$.time.temporal.a.ERA) {
             return mVar.getValue();
         }
-        if (rVar instanceof j$.time.temporal.a) {
-            throw new j$.time.temporal.v(j$.time.d.a("Unsupported field: ", rVar));
+        if (pVar instanceof j$.time.temporal.a) {
+            throw new j$.time.temporal.t(j$.time.d.a("Unsupported field: ", pVar));
         }
-        return rVar.j(mVar);
+        return pVar.l(mVar);
     }
 
-    public static Object m(m mVar, j$.time.temporal.t tVar) {
-        if (tVar == j$.time.temporal.n.i()) {
-            return j$.time.temporal.b.ERAS;
+    public static Object m(m mVar, j$.time.temporal.r rVar) {
+        if (rVar == j$.time.temporal.l.i()) {
+            return ChronoUnit.ERAS;
         }
-        return j$.time.temporal.n.c(mVar, tVar);
+        return j$.time.temporal.l.c(mVar, rVar);
     }
 
-    public static Object k(ChronoLocalDateTime chronoLocalDateTime, j$.time.temporal.t tVar) {
-        if (tVar == j$.time.temporal.n.k() || tVar == j$.time.temporal.n.j() || tVar == j$.time.temporal.n.h()) {
+    public static Object k(ChronoLocalDateTime chronoLocalDateTime, j$.time.temporal.r rVar) {
+        if (rVar == j$.time.temporal.l.k() || rVar == j$.time.temporal.l.j() || rVar == j$.time.temporal.l.h()) {
             return null;
         }
-        if (tVar == j$.time.temporal.n.g()) {
+        if (rVar == j$.time.temporal.l.g()) {
             return chronoLocalDateTime.b();
         }
-        if (tVar == j$.time.temporal.n.e()) {
+        if (rVar == j$.time.temporal.l.e()) {
             return chronoLocalDateTime.a();
         }
-        if (tVar == j$.time.temporal.n.i()) {
-            return j$.time.temporal.b.NANOS;
+        if (rVar == j$.time.temporal.l.i()) {
+            return ChronoUnit.NANOS;
         }
-        return tVar.a(chronoLocalDateTime);
+        return rVar.a(chronoLocalDateTime);
     }
 
-    public static boolean h(b bVar, j$.time.temporal.r rVar) {
-        if (rVar instanceof j$.time.temporal.a) {
-            return ((j$.time.temporal.a) rVar).u();
+    public static boolean h(b bVar, j$.time.temporal.p pVar) {
+        if (pVar instanceof j$.time.temporal.a) {
+            return ((j$.time.temporal.a) pVar).w();
         }
-        return rVar != null && rVar.l(bVar);
+        return pVar != null && pVar.n(bVar);
+    }
+
+    public static Instant p(ChronoLocalDateTime chronoLocalDateTime, ZoneOffset zoneOffset) {
+        return Instant.M(chronoLocalDateTime.y(zoneOffset), chronoLocalDateTime.b().N());
     }
 
     public static long n(ChronoLocalDateTime chronoLocalDateTime, ZoneOffset zoneOffset) {
         Objects.requireNonNull(zoneOffset, "offset");
-        return ((chronoLocalDateTime.c().s() * 86400) + chronoLocalDateTime.b().S()) - zoneOffset.getTotalSeconds();
+        return ((chronoLocalDateTime.c().t() * 86400) + chronoLocalDateTime.b().Z()) - zoneOffset.getTotalSeconds();
     }
 
-    public static Object l(ChronoZonedDateTime chronoZonedDateTime, j$.time.temporal.t tVar) {
-        if (tVar == j$.time.temporal.n.j() || tVar == j$.time.temporal.n.k()) {
-            return chronoZonedDateTime.p();
+    public static Object l(ChronoZonedDateTime chronoZonedDateTime, j$.time.temporal.r rVar) {
+        if (rVar == j$.time.temporal.l.j() || rVar == j$.time.temporal.l.k()) {
+            return chronoZonedDateTime.q();
         }
-        if (tVar == j$.time.temporal.n.h()) {
-            return chronoZonedDateTime.g();
+        if (rVar == j$.time.temporal.l.h()) {
+            return chronoZonedDateTime.h();
         }
-        if (tVar == j$.time.temporal.n.g()) {
+        if (rVar == j$.time.temporal.l.g()) {
             return chronoZonedDateTime.b();
         }
-        if (tVar == j$.time.temporal.n.e()) {
+        if (rVar == j$.time.temporal.l.e()) {
             return chronoZonedDateTime.a();
         }
-        if (tVar == j$.time.temporal.n.i()) {
-            return j$.time.temporal.b.NANOS;
+        if (rVar == j$.time.temporal.l.i()) {
+            return ChronoUnit.NANOS;
         }
-        return tVar.a(chronoZonedDateTime);
+        return rVar.a(chronoZonedDateTime);
     }
 
     public static int c(ChronoLocalDateTime chronoLocalDateTime, ChronoLocalDateTime chronoLocalDateTime2) {
@@ -116,41 +123,41 @@ public abstract /* synthetic */ class h {
         return ((a) chronoLocalDateTime.a()).getId().compareTo(chronoLocalDateTime2.a().getId());
     }
 
-    public static Object j(b bVar, j$.time.temporal.t tVar) {
-        if (tVar == j$.time.temporal.n.k() || tVar == j$.time.temporal.n.j() || tVar == j$.time.temporal.n.h() || tVar == j$.time.temporal.n.g()) {
+    public static Object j(b bVar, j$.time.temporal.r rVar) {
+        if (rVar == j$.time.temporal.l.k() || rVar == j$.time.temporal.l.j() || rVar == j$.time.temporal.l.h() || rVar == j$.time.temporal.l.g()) {
             return null;
         }
-        if (tVar == j$.time.temporal.n.e()) {
+        if (rVar == j$.time.temporal.l.e()) {
             return bVar.a();
         }
-        if (tVar == j$.time.temporal.n.i()) {
-            return j$.time.temporal.b.DAYS;
+        if (rVar == j$.time.temporal.l.i()) {
+            return ChronoUnit.DAYS;
         }
-        return tVar.a(bVar);
+        return rVar.a(bVar);
     }
 
-    public static j$.time.temporal.m a(b bVar, j$.time.temporal.m mVar) {
-        return mVar.d(bVar.s(), j$.time.temporal.a.EPOCH_DAY);
+    public static Temporal a(b bVar, Temporal temporal) {
+        return temporal.d(bVar.t(), j$.time.temporal.a.EPOCH_DAY);
     }
 
     public static long o(ChronoZonedDateTime chronoZonedDateTime) {
-        return ((chronoZonedDateTime.c().s() * 86400) + chronoZonedDateTime.b().S()) - chronoZonedDateTime.g().getTotalSeconds();
+        return ((chronoZonedDateTime.c().t() * 86400) + chronoZonedDateTime.b().Z()) - chronoZonedDateTime.h().getTotalSeconds();
     }
 
     public static int d(ChronoZonedDateTime chronoZonedDateTime, ChronoZonedDateTime chronoZonedDateTime2) {
-        int compare = Long.compare(chronoZonedDateTime.A(), chronoZonedDateTime2.A());
+        int compare = Long.compare(chronoZonedDateTime.H(), chronoZonedDateTime2.H());
         if (compare != 0) {
             return compare;
         }
-        int G = chronoZonedDateTime.b().G() - chronoZonedDateTime2.b().G();
-        if (G != 0) {
-            return G;
+        int N = chronoZonedDateTime.b().N() - chronoZonedDateTime2.b().N();
+        if (N != 0) {
+            return N;
         }
-        int compareTo = chronoZonedDateTime.x().compareTo(chronoZonedDateTime2.x());
+        int compareTo = chronoZonedDateTime.B().compareTo(chronoZonedDateTime2.B());
         if (compareTo != 0) {
             return compareTo;
         }
-        int compareTo2 = chronoZonedDateTime.p().getId().compareTo(chronoZonedDateTime2.p().getId());
+        int compareTo2 = chronoZonedDateTime.q().getId().compareTo(chronoZonedDateTime2.q().getId());
         if (compareTo2 != 0) {
             return compareTo2;
         }
@@ -158,7 +165,7 @@ public abstract /* synthetic */ class h {
     }
 
     public static int b(b bVar, b bVar2) {
-        int compare = Long.compare(bVar.s(), bVar2.s());
+        int compare = Long.compare(bVar.t(), bVar2.t());
         if (compare != 0) {
             return compare;
         }

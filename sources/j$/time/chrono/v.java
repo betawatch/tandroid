@@ -1,6 +1,8 @@
 package j$.time.chrono;
 
+import j$.time.Instant;
 import j$.time.LocalDate;
+import j$.time.ZoneId;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
@@ -19,41 +21,47 @@ public final class v extends a implements Serializable {
     }
 
     @Override // j$.time.chrono.l
-    public final String q() {
+    public final String r() {
         return "japanese";
     }
 
     @Override // j$.time.chrono.l
-    public final b k(j$.time.temporal.o oVar) {
-        if (oVar instanceof x) {
-            return (x) oVar;
+    public final b m(j$.time.temporal.m mVar) {
+        if (mVar instanceof x) {
+            return (x) mVar;
         }
-        return new x(LocalDate.D(oVar));
+        return new x(LocalDate.K(mVar));
     }
 
     @Override // j$.time.chrono.l
-    public final m z(int i) {
-        return y.B(i);
+    public final m G(int i) {
+        return y.C(i);
     }
 
-    public final j$.time.temporal.w l(j$.time.temporal.a aVar) {
+    @Override // j$.time.chrono.l
+    public final j$.time.temporal.u C(j$.time.temporal.a aVar) {
         switch (u.a[aVar.ordinal()]) {
             case 1:
             case 2:
             case 3:
             case 4:
-                throw new j$.time.temporal.v("Unsupported field: " + aVar);
+                throw new j$.time.temporal.t("Unsupported field: " + aVar);
             case 5:
-                return j$.time.temporal.w.k(y.D(), 999999999 - y.n().q().getYear());
+                return j$.time.temporal.u.k(y.G(), 999999999 - y.r().v().getYear());
             case 6:
-                return j$.time.temporal.w.k(y.C(), j$.time.temporal.a.DAY_OF_YEAR.i().d());
+                return j$.time.temporal.u.k(y.D(), j$.time.temporal.a.DAY_OF_YEAR.k().d());
             case 7:
-                return j$.time.temporal.w.j(x.d.getYear(), 999999999L);
+                return j$.time.temporal.u.j(x.d.getYear(), 999999999L);
             case 8:
-                return j$.time.temporal.w.j(y.d.getValue(), y.n().getValue());
+                return j$.time.temporal.u.j(y.d.getValue(), y.r().getValue());
             default:
-                return aVar.i();
+                return aVar.k();
         }
+    }
+
+    @Override // j$.time.chrono.l
+    public final ChronoZonedDateTime D(Instant instant, ZoneId zoneId) {
+        return k.J(this, instant, zoneId);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {

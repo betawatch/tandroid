@@ -1,5 +1,7 @@
 package j$.time;
 
+import j$.time.temporal.ChronoUnit;
+import j$.time.temporal.Temporal;
 import j$.util.Objects;
 import java.io.DataOutput;
 import java.io.InvalidObjectException;
@@ -10,7 +12,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 
 /* loaded from: classes2.dex */
-public final class j implements j$.time.temporal.m, j$.time.temporal.p, Comparable, Serializable {
+public final class j implements Temporal, j$.time.temporal.n, Comparable, Serializable {
     public static final j e;
     public static final j f;
     public static final j g;
@@ -39,38 +41,38 @@ public final class j implements j$.time.temporal.m, j$.time.temporal.p, Comparab
         }
     }
 
-    public static j I(int i) {
-        j$.time.temporal.a.HOUR_OF_DAY.B(i);
+    public static j P(int i) {
+        j$.time.temporal.a.HOUR_OF_DAY.I(i);
         return h[i];
     }
 
-    public static j K(long j) {
-        j$.time.temporal.a.SECOND_OF_DAY.B(j);
+    public static j R(long j) {
+        j$.time.temporal.a.SECOND_OF_DAY.I(j);
         int i = (int) (j / 3600);
         long j2 = j - (i * 3600);
-        return C(i, (int) (j2 / 60), (int) (j2 - (r0 * 60)), 0);
+        return J(i, (int) (j2 / 60), (int) (j2 - (r0 * 60)), 0);
     }
 
-    public static j J(long j) {
-        j$.time.temporal.a.NANO_OF_DAY.B(j);
+    public static j Q(long j) {
+        j$.time.temporal.a.NANO_OF_DAY.I(j);
         int i = (int) (j / 3600000000000L);
         long j2 = j - (i * 3600000000000L);
         int i2 = (int) (j2 / 60000000000L);
         long j3 = j2 - (i2 * 60000000000L);
         int i3 = (int) (j3 / 1000000000);
-        return C(i, i2, i3, (int) (j3 - (i3 * 1000000000)));
+        return J(i, i2, i3, (int) (j3 - (i3 * 1000000000)));
     }
 
-    public static j D(j$.time.temporal.o oVar) {
-        Objects.requireNonNull(oVar, "temporal");
-        j jVar = (j) oVar.u(j$.time.temporal.n.g());
+    public static j K(Temporal temporal) {
+        Objects.requireNonNull(temporal, "temporal");
+        j jVar = (j) temporal.w(j$.time.temporal.l.g());
         if (jVar != null) {
             return jVar;
         }
-        throw new c("Unable to obtain LocalTime from TemporalAccessor: " + oVar + " of type " + oVar.getClass().getName());
+        throw new c("Unable to obtain LocalTime from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName());
     }
 
-    private static j C(int i, int i2, int i3, int i4) {
+    private static j J(int i, int i2, int i3, int i4) {
         if ((i2 | i3 | i4) == 0) {
             return h[i];
         }
@@ -84,43 +86,43 @@ public final class j implements j$.time.temporal.m, j$.time.temporal.p, Comparab
         this.d = i4;
     }
 
-    @Override // j$.time.temporal.o
-    public final boolean f(j$.time.temporal.r rVar) {
-        if (rVar instanceof j$.time.temporal.a) {
-            return ((j$.time.temporal.a) rVar).C();
+    @Override // j$.time.temporal.m
+    public final boolean g(j$.time.temporal.p pVar) {
+        if (pVar instanceof j$.time.temporal.a) {
+            return ((j$.time.temporal.a) pVar).J();
         }
-        return rVar != null && rVar.l(this);
+        return pVar != null && pVar.n(this);
     }
 
-    @Override // j$.time.temporal.o
-    public final j$.time.temporal.w m(j$.time.temporal.r rVar) {
-        return j$.time.temporal.n.d(this, rVar);
+    @Override // j$.time.temporal.m
+    public final j$.time.temporal.u o(j$.time.temporal.p pVar) {
+        return j$.time.temporal.l.d(this, pVar);
     }
 
-    @Override // j$.time.temporal.o
-    public final int j(j$.time.temporal.r rVar) {
-        if (rVar instanceof j$.time.temporal.a) {
-            return E(rVar);
+    @Override // j$.time.temporal.m
+    public final int l(j$.time.temporal.p pVar) {
+        if (pVar instanceof j$.time.temporal.a) {
+            return L(pVar);
         }
-        return j$.time.temporal.n.a(this, rVar);
+        return j$.time.temporal.l.a(this, pVar);
     }
 
-    @Override // j$.time.temporal.o
-    public final long r(j$.time.temporal.r rVar) {
-        if (rVar instanceof j$.time.temporal.a) {
-            if (rVar == j$.time.temporal.a.NANO_OF_DAY) {
-                return R();
+    @Override // j$.time.temporal.m
+    public final long s(j$.time.temporal.p pVar) {
+        if (pVar instanceof j$.time.temporal.a) {
+            if (pVar == j$.time.temporal.a.NANO_OF_DAY) {
+                return Y();
             }
-            if (rVar == j$.time.temporal.a.MICRO_OF_DAY) {
-                return R() / 1000;
+            if (pVar == j$.time.temporal.a.MICRO_OF_DAY) {
+                return Y() / 1000;
             }
-            return E(rVar);
+            return L(pVar);
         }
-        return rVar.j(this);
+        return pVar.l(this);
     }
 
-    private int E(j$.time.temporal.r rVar) {
-        int i = i.a[((j$.time.temporal.a) rVar).ordinal()];
+    private int L(j$.time.temporal.p pVar) {
+        int i = i.a[((j$.time.temporal.a) pVar).ordinal()];
         byte b = this.b;
         int i2 = this.d;
         byte b2 = this.a;
@@ -128,19 +130,19 @@ public final class j implements j$.time.temporal.m, j$.time.temporal.p, Comparab
             case 1:
                 return i2;
             case 2:
-                throw new j$.time.temporal.v("Invalid field 'NanoOfDay' for get() method, use getLong() instead");
+                throw new j$.time.temporal.t("Invalid field 'NanoOfDay' for get() method, use getLong() instead");
             case 3:
                 return i2 / MediaDataController.MAX_STYLE_RUNS_COUNT;
             case 4:
-                throw new j$.time.temporal.v("Invalid field 'MicroOfDay' for get() method, use getLong() instead");
+                throw new j$.time.temporal.t("Invalid field 'MicroOfDay' for get() method, use getLong() instead");
             case 5:
                 return i2 / MediaController.VIDEO_BITRATE_480;
             case 6:
-                return (int) (R() / 1000000);
+                return (int) (Y() / 1000000);
             case 7:
                 return this.c;
             case 8:
-                return S();
+                return Z();
             case 9:
                 return b;
             case 10:
@@ -163,36 +165,36 @@ public final class j implements j$.time.temporal.m, j$.time.temporal.p, Comparab
             case 15:
                 return b2 / 12;
             default:
-                throw new j$.time.temporal.v(d.a("Unsupported field: ", rVar));
+                throw new j$.time.temporal.t(d.a("Unsupported field: ", pVar));
         }
     }
 
-    public final int F() {
+    public final int M() {
         return this.a;
     }
 
-    public final int H() {
+    public final int O() {
         return this.c;
     }
 
-    public final int G() {
+    public final int N() {
         return this.d;
     }
 
-    @Override // j$.time.temporal.m
-    public final j$.time.temporal.m l(LocalDate localDate) {
+    @Override // j$.time.temporal.Temporal
+    public final Temporal n(LocalDate localDate) {
         localDate.getClass();
         return (j) j$.time.chrono.h.a(localDate, this);
     }
 
-    @Override // j$.time.temporal.m
-    /* renamed from: T, reason: merged with bridge method [inline-methods] */
-    public final j d(long j, j$.time.temporal.r rVar) {
-        if (!(rVar instanceof j$.time.temporal.a)) {
-            return (j) rVar.m(this, j);
+    @Override // j$.time.temporal.Temporal
+    /* renamed from: a0, reason: merged with bridge method [inline-methods] */
+    public final j d(long j, j$.time.temporal.p pVar) {
+        if (!(pVar instanceof j$.time.temporal.a)) {
+            return (j) pVar.o(this, j);
         }
-        j$.time.temporal.a aVar = (j$.time.temporal.a) rVar;
-        aVar.B(j);
+        j$.time.temporal.a aVar = (j$.time.temporal.a) pVar;
+        aVar.I(j);
         int i = i.a[aVar.ordinal()];
         byte b = this.b;
         byte b2 = this.c;
@@ -200,49 +202,49 @@ public final class j implements j$.time.temporal.m, j$.time.temporal.p, Comparab
         byte b3 = this.a;
         switch (i) {
             case 1:
-                return U((int) j);
+                return b0((int) j);
             case 2:
-                return J(j);
+                return Q(j);
             case 3:
-                return U(((int) j) * MediaDataController.MAX_STYLE_RUNS_COUNT);
+                return b0(((int) j) * MediaDataController.MAX_STYLE_RUNS_COUNT);
             case 4:
-                return J(j * 1000);
+                return Q(j * 1000);
             case 5:
-                return U(((int) j) * MediaController.VIDEO_BITRATE_480);
+                return b0(((int) j) * MediaController.VIDEO_BITRATE_480);
             case 6:
-                return J(j * 1000000);
+                return Q(j * 1000000);
             case 7:
                 int i3 = (int) j;
                 if (b2 == i3) {
                     return this;
                 }
-                j$.time.temporal.a.SECOND_OF_MINUTE.B(i3);
-                return C(b3, b, i3, i2);
+                j$.time.temporal.a.SECOND_OF_MINUTE.I(i3);
+                return J(b3, b, i3, i2);
             case 8:
-                return P(j - S());
+                return W(j - Z());
             case 9:
                 int i4 = (int) j;
                 if (b == i4) {
                     return this;
                 }
-                j$.time.temporal.a.MINUTE_OF_HOUR.B(i4);
-                return C(b3, i4, b2, i2);
+                j$.time.temporal.a.MINUTE_OF_HOUR.I(i4);
+                return J(b3, i4, b2, i2);
             case 10:
-                return N(j - ((b3 * 60) + b));
+                return U(j - ((b3 * 60) + b));
             case 11:
-                return M(j - (b3 % 12));
+                return T(j - (b3 % 12));
             case 12:
                 if (j == 12) {
                     j = 0;
                 }
-                return M(j - (b3 % 12));
+                return T(j - (b3 % 12));
             case 13:
                 int i5 = (int) j;
                 if (b3 == i5) {
                     return this;
                 }
-                j$.time.temporal.a.HOUR_OF_DAY.B(i5);
-                return C(i5, b, b2, i2);
+                j$.time.temporal.a.HOUR_OF_DAY.I(i5);
+                return J(i5, b, b2, i2);
             case 14:
                 if (j == 24) {
                     j = 0;
@@ -251,120 +253,147 @@ public final class j implements j$.time.temporal.m, j$.time.temporal.p, Comparab
                 if (b3 == i6) {
                     return this;
                 }
-                j$.time.temporal.a.HOUR_OF_DAY.B(i6);
-                return C(i6, b, b2, i2);
+                j$.time.temporal.a.HOUR_OF_DAY.I(i6);
+                return J(i6, b, b2, i2);
             case 15:
-                return M((j - (b3 / 12)) * 12);
+                return T((j - (b3 / 12)) * 12);
             default:
-                throw new j$.time.temporal.v(d.a("Unsupported field: ", rVar));
+                throw new j$.time.temporal.t(d.a("Unsupported field: ", pVar));
         }
     }
 
-    public final j U(int i) {
+    public final j b0(int i) {
         if (this.d == i) {
             return this;
         }
-        j$.time.temporal.a.NANO_OF_SECOND.B(i);
-        return C(this.a, this.b, this.c, i);
+        j$.time.temporal.a.NANO_OF_SECOND.I(i);
+        return J(this.a, this.b, this.c, i);
     }
 
-    @Override // j$.time.temporal.m
-    /* renamed from: L, reason: merged with bridge method [inline-methods] */
-    public final j e(long j, j$.time.temporal.u uVar) {
-        if (uVar instanceof j$.time.temporal.b) {
-            switch (i.b[((j$.time.temporal.b) uVar).ordinal()]) {
+    @Override // j$.time.temporal.Temporal
+    /* renamed from: S, reason: merged with bridge method [inline-methods] */
+    public final j e(long j, j$.time.temporal.s sVar) {
+        if (sVar instanceof ChronoUnit) {
+            switch (i.b[((ChronoUnit) sVar).ordinal()]) {
                 case 1:
-                    return O(j);
+                    return V(j);
                 case 2:
-                    return O((j % 86400000000L) * 1000);
+                    return V((j % 86400000000L) * 1000);
                 case 3:
-                    return O((j % 86400000) * 1000000);
+                    return V((j % 86400000) * 1000000);
                 case 4:
-                    return P(j);
+                    return W(j);
                 case 5:
-                    return N(j);
+                    return U(j);
                 case 6:
-                    return M(j);
+                    return T(j);
                 case 7:
-                    return M((j % 2) * 12);
+                    return T((j % 2) * 12);
                 default:
-                    throw new j$.time.temporal.v("Unsupported unit: " + uVar);
+                    throw new j$.time.temporal.t("Unsupported unit: " + sVar);
             }
         }
-        return (j) uVar.i(this, j);
+        return (j) sVar.k(this, j);
     }
 
-    public final j M(long j) {
+    public final j T(long j) {
         if (j == 0) {
             return this;
         }
-        return C(((((int) (j % 24)) + this.a) + 24) % 24, this.b, this.c, this.d);
+        return J(((((int) (j % 24)) + this.a) + 24) % 24, this.b, this.c, this.d);
     }
 
-    public final j N(long j) {
+    public final j U(long j) {
         if (j == 0) {
             return this;
         }
         int i = (this.a * 60) + this.b;
         int i2 = ((((int) (j % 1440)) + i) + 1440) % 1440;
-        return i == i2 ? this : C(i2 / 60, i2 % 60, this.c, this.d);
+        return i == i2 ? this : J(i2 / 60, i2 % 60, this.c, this.d);
     }
 
-    public final j P(long j) {
+    public final j W(long j) {
         if (j == 0) {
             return this;
         }
         int i = (this.b * 60) + (this.a * 3600) + this.c;
         int i2 = ((((int) (j % 86400)) + i) + 86400) % 86400;
-        return i == i2 ? this : C(i2 / 3600, (i2 / 60) % 60, i2 % 60, this.d);
+        return i == i2 ? this : J(i2 / 3600, (i2 / 60) % 60, i2 % 60, this.d);
     }
 
-    public final j O(long j) {
+    public final j V(long j) {
         if (j == 0) {
             return this;
         }
-        long R = R();
-        long j2 = (((j % 86400000000000L) + R) + 86400000000000L) % 86400000000000L;
-        return R == j2 ? this : C((int) (j2 / 3600000000000L), (int) ((j2 / 60000000000L) % 60), (int) ((j2 / 1000000000) % 60), (int) (j2 % 1000000000));
+        long Y = Y();
+        long j2 = (((j % 86400000000000L) + Y) + 86400000000000L) % 86400000000000L;
+        return Y == j2 ? this : J((int) (j2 / 3600000000000L), (int) ((j2 / 60000000000L) % 60), (int) ((j2 / 1000000000) % 60), (int) (j2 % 1000000000));
+    }
+
+    @Override // j$.time.temporal.Temporal
+    public final Temporal k(long j, ChronoUnit chronoUnit) {
+        return j == Long.MIN_VALUE ? e(Long.MAX_VALUE, chronoUnit).e(1L, chronoUnit) : e(-j, chronoUnit);
     }
 
     @Override // j$.time.temporal.m
-    public final j$.time.temporal.m i(long j, j$.time.temporal.b bVar) {
-        return j == Long.MIN_VALUE ? e(Long.MAX_VALUE, bVar).e(1L, bVar) : e(-j, bVar);
-    }
-
-    @Override // j$.time.temporal.o
-    public final Object u(j$.time.temporal.t tVar) {
-        if (tVar == j$.time.temporal.n.e() || tVar == j$.time.temporal.n.k() || tVar == j$.time.temporal.n.j() || tVar == j$.time.temporal.n.h()) {
+    public final Object w(j$.time.temporal.r rVar) {
+        if (rVar == j$.time.temporal.l.e() || rVar == j$.time.temporal.l.k() || rVar == j$.time.temporal.l.j() || rVar == j$.time.temporal.l.h()) {
             return null;
         }
-        if (tVar == j$.time.temporal.n.g()) {
+        if (rVar == j$.time.temporal.l.g()) {
             return this;
         }
-        if (tVar == j$.time.temporal.n.f()) {
+        if (rVar == j$.time.temporal.l.f()) {
             return null;
         }
-        if (tVar == j$.time.temporal.n.i()) {
-            return j$.time.temporal.b.NANOS;
+        if (rVar == j$.time.temporal.l.i()) {
+            return ChronoUnit.NANOS;
         }
-        return tVar.a(this);
+        return rVar.a(this);
     }
 
-    @Override // j$.time.temporal.p
-    public final j$.time.temporal.m v(j$.time.temporal.m mVar) {
-        return mVar.d(R(), j$.time.temporal.a.NANO_OF_DAY);
+    @Override // j$.time.temporal.n
+    public final Temporal z(Temporal temporal) {
+        return temporal.d(Y(), j$.time.temporal.a.NANO_OF_DAY);
     }
 
-    public final int S() {
+    @Override // j$.time.temporal.Temporal
+    public final long f(Temporal temporal, j$.time.temporal.s sVar) {
+        j K = K(temporal);
+        if (sVar instanceof ChronoUnit) {
+            long Y = K.Y() - Y();
+            switch (i.b[((ChronoUnit) sVar).ordinal()]) {
+                case 1:
+                    return Y;
+                case 2:
+                    return Y / 1000;
+                case 3:
+                    return Y / 1000000;
+                case 4:
+                    return Y / 1000000000;
+                case 5:
+                    return Y / 60000000000L;
+                case 6:
+                    return Y / 3600000000000L;
+                case 7:
+                    return Y / 43200000000000L;
+                default:
+                    throw new j$.time.temporal.t("Unsupported unit: " + sVar);
+            }
+        }
+        return sVar.between(this, K);
+    }
+
+    public final int Z() {
         return (this.b * 60) + (this.a * 3600) + this.c;
     }
 
-    public final long R() {
+    public final long Y() {
         return (this.c * 1000000000) + (this.b * 60000000000L) + (this.a * 3600000000000L) + this.d;
     }
 
     @Override // java.lang.Comparable
-    /* renamed from: B, reason: merged with bridge method [inline-methods] */
+    /* renamed from: I, reason: merged with bridge method [inline-methods] */
     public final int compareTo(j jVar) {
         int compare = Integer.compare(this.a, jVar.a);
         if (compare != 0) {
@@ -390,8 +419,8 @@ public final class j implements j$.time.temporal.m, j$.time.temporal.p, Comparab
     }
 
     public final int hashCode() {
-        long R = R();
-        return (int) (R ^ (R >>> 32));
+        long Y = Y();
+        return (int) (Y ^ (Y >>> 32));
     }
 
     public final String toString() {
@@ -422,14 +451,14 @@ public final class j implements j$.time.temporal.m, j$.time.temporal.p, Comparab
     }
 
     private Object writeReplace() {
-        return new q((byte) 4, this);
+        return new r((byte) 4, this);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {
         throw new InvalidObjectException("Deserialization via serialization delegate");
     }
 
-    final void V(DataOutput dataOutput) {
+    final void c0(DataOutput dataOutput) {
         byte b = this.c;
         byte b2 = this.a;
         byte b3 = this.b;
@@ -455,7 +484,7 @@ public final class j implements j$.time.temporal.m, j$.time.temporal.p, Comparab
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r7v3, types: [int] */
-    static j Q(ObjectInput objectInput) {
+    static j X(ObjectInput objectInput) {
         int i;
         int i2;
         int readByte = objectInput.readByte();
@@ -479,19 +508,19 @@ public final class j implements j$.time.temporal.m, j$.time.temporal.p, Comparab
                     b = readByte2;
                 }
             }
-            j$.time.temporal.a.HOUR_OF_DAY.B(readByte);
-            j$.time.temporal.a.MINUTE_OF_HOUR.B(b);
-            j$.time.temporal.a.SECOND_OF_MINUTE.B(i);
-            j$.time.temporal.a.NANO_OF_SECOND.B(i2);
-            return C(readByte, b, i, i2);
+            j$.time.temporal.a.HOUR_OF_DAY.I(readByte);
+            j$.time.temporal.a.MINUTE_OF_HOUR.I(b);
+            j$.time.temporal.a.SECOND_OF_MINUTE.I(i);
+            j$.time.temporal.a.NANO_OF_SECOND.I(i2);
+            return J(readByte, b, i, i2);
         }
         readByte = ~readByte;
         i = 0;
         i2 = 0;
-        j$.time.temporal.a.HOUR_OF_DAY.B(readByte);
-        j$.time.temporal.a.MINUTE_OF_HOUR.B(b);
-        j$.time.temporal.a.SECOND_OF_MINUTE.B(i);
-        j$.time.temporal.a.NANO_OF_SECOND.B(i2);
-        return C(readByte, b, i, i2);
+        j$.time.temporal.a.HOUR_OF_DAY.I(readByte);
+        j$.time.temporal.a.MINUTE_OF_HOUR.I(b);
+        j$.time.temporal.a.SECOND_OF_MINUTE.I(i);
+        j$.time.temporal.a.NANO_OF_SECOND.I(i2);
+        return J(readByte, b, i, i2);
     }
 }

@@ -52,7 +52,7 @@ abstract class b implements BaseStream {
         bVar.d = this;
         this.b = bVar;
         this.c = a3.h & i;
-        this.f = a3.i(i, bVar.f);
+        this.f = a3.k(i, bVar.f);
         b bVar2 = bVar.a;
         this.a = bVar2;
         if (P()) {
@@ -190,7 +190,7 @@ abstract class b implements BaseStream {
                 while (bVar != this) {
                     int i5 = bVar2.c;
                     if (bVar2.P()) {
-                        if (a3.SHORT_CIRCUIT.m(i5)) {
+                        if (a3.SHORT_CIRCUIT.o(i5)) {
                             i5 &= ~a3.u;
                         }
                         spliterator = bVar2.O(bVar, spliterator);
@@ -205,7 +205,7 @@ abstract class b implements BaseStream {
                         i4 = 0;
                     }
                     bVar2.e = i4;
-                    bVar2.f = a3.i(i5, bVar.f);
+                    bVar2.f = a3.k(i5, bVar.f);
                     i4++;
                     b bVar3 = bVar2;
                     bVar2 = bVar2.d;
@@ -213,7 +213,7 @@ abstract class b implements BaseStream {
                 }
             }
             if (i != 0) {
-                this.f = a3.i(i, this.f);
+                this.f = a3.k(i, this.f);
             }
             return spliterator;
         }
@@ -229,7 +229,7 @@ abstract class b implements BaseStream {
     }
 
     final long F(Spliterator spliterator) {
-        if (a3.SIZED.m(this.f)) {
+        if (a3.SIZED.o(this.f)) {
             return spliterator.getExactSizeIfKnown();
         }
         return -1L;
@@ -242,7 +242,7 @@ abstract class b implements BaseStream {
 
     final void z(Spliterator spliterator, m2 m2Var) {
         Objects.requireNonNull(m2Var);
-        if (!a3.SHORT_CIRCUIT.m(this.f)) {
+        if (!a3.SHORT_CIRCUIT.o(this.f)) {
             m2Var.l(spliterator.getExactSizeIfKnown());
             spliterator.forEachRemaining(m2Var);
             m2Var.k();
@@ -267,7 +267,7 @@ abstract class b implements BaseStream {
     }
 
     final boolean K() {
-        return a3.ORDERED.m(this.f);
+        return a3.ORDERED.o(this.f);
     }
 
     final m2 V(m2 m2Var) {

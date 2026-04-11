@@ -1,43 +1,45 @@
 package j$.time;
 
+import j$.time.temporal.ChronoUnit;
+
 /* loaded from: classes2.dex */
 abstract /* synthetic */ class g {
     static final /* synthetic */ int[] a;
     static final /* synthetic */ int[] b;
 
     static {
-        int[] iArr = new int[j$.time.temporal.b.values().length];
+        int[] iArr = new int[ChronoUnit.values().length];
         b = iArr;
         try {
-            iArr[j$.time.temporal.b.DAYS.ordinal()] = 1;
+            iArr[ChronoUnit.DAYS.ordinal()] = 1;
         } catch (NoSuchFieldError unused) {
         }
         try {
-            b[j$.time.temporal.b.WEEKS.ordinal()] = 2;
+            b[ChronoUnit.WEEKS.ordinal()] = 2;
         } catch (NoSuchFieldError unused2) {
         }
         try {
-            b[j$.time.temporal.b.MONTHS.ordinal()] = 3;
+            b[ChronoUnit.MONTHS.ordinal()] = 3;
         } catch (NoSuchFieldError unused3) {
         }
         try {
-            b[j$.time.temporal.b.YEARS.ordinal()] = 4;
+            b[ChronoUnit.YEARS.ordinal()] = 4;
         } catch (NoSuchFieldError unused4) {
         }
         try {
-            b[j$.time.temporal.b.DECADES.ordinal()] = 5;
+            b[ChronoUnit.DECADES.ordinal()] = 5;
         } catch (NoSuchFieldError unused5) {
         }
         try {
-            b[j$.time.temporal.b.CENTURIES.ordinal()] = 6;
+            b[ChronoUnit.CENTURIES.ordinal()] = 6;
         } catch (NoSuchFieldError unused6) {
         }
         try {
-            b[j$.time.temporal.b.MILLENNIA.ordinal()] = 7;
+            b[ChronoUnit.MILLENNIA.ordinal()] = 7;
         } catch (NoSuchFieldError unused7) {
         }
         try {
-            b[j$.time.temporal.b.ERAS.ordinal()] = 8;
+            b[ChronoUnit.ERAS.ordinal()] = 8;
         } catch (NoSuchFieldError unused8) {
         }
         int[] iArr2 = new int[j$.time.temporal.a.values().length];

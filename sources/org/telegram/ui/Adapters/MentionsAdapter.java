@@ -136,7 +136,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
     private boolean needUsernames = true;
     private boolean needBotContext = true;
     private boolean inlineMediaEnabled = true;
-    private boolean searchInDailogs = false;
+    private boolean searchInDialogs = false;
     private ArrayList stickersToLoad = new ArrayList();
     private SendMessagesHelper.LocationProvider locationProvider = new SendMessagesHelper.LocationProvider(new SendMessagesHelper.LocationProvider.LocationProviderDelegate() { // from class: org.telegram.ui.Adapters.MentionsAdapter.1
         @Override // org.telegram.messenger.SendMessagesHelper.LocationProvider.LocationProviderDelegate
@@ -1536,7 +1536,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
                         r14 = 0;
                         break;
                     }
-                    boolean z10 = this.searchInDailogs;
+                    boolean z10 = this.searchInDialogs;
                     if (z10 || this.needUsernames || (this.needBotContext && i9 == 0)) {
                         this.resultStartPosition = i9;
                         this.resultLength = sb3.length() + 1;
@@ -1820,7 +1820,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
                 }
             }
             long j4 = j;
-            if (this.searchInDailogs) {
+            if (this.searchInDialogs) {
                 ArrayList<TLRPC.Dialog> allDialogs = MessagesController.getInstance(this.currentAccount).getAllDialogs();
                 int i26 = 0;
                 while (i26 < allDialogs.size()) {
@@ -1905,7 +1905,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             this.searchResultCommandsHelp = null;
             this.searchResultCommandsUsers = null;
             this.searchResultSuggestions = null;
-            if (((chat3 != null && chat3.megagroup) || this.searchInDailogs) && lowerCase4.length() > 0) {
+            if (((chat3 != null && chat3.megagroup) || this.searchInDialogs) && lowerCase4.length() > 0) {
                 if (arrayList13.size() < 5) {
                     Runnable runnable4 = new Runnable() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda4
                         @Override // java.lang.Runnable
@@ -2594,7 +2594,9 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
     }
 
     public void setDialogId(long j) {
-        this.dialog_id = j;
+        if (this.dialog_id != j) {
+            this.dialog_id = j;
+        }
     }
 
     public void setUserOrChat(TLRPC.User user, TLRPC.Chat chat) {
@@ -2602,8 +2604,8 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
         this.chat = chat;
     }
 
-    public void setSearchInDailogs(boolean z) {
-        this.searchInDailogs = z;
+    public void setSearchInDialogs(boolean z) {
+        this.searchInDialogs = z;
     }
 
     public void setAllowStickers(boolean z) {

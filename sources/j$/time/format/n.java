@@ -4,16 +4,16 @@ import j$.time.ZoneId;
 
 /* loaded from: classes2.dex */
 class n implements f {
-    private final j$.time.temporal.t a;
+    private final j$.time.temporal.r a;
     private final String b;
 
-    n(j$.time.temporal.t tVar, String str) {
-        this.a = tVar;
+    n(j$.time.temporal.r rVar, String str) {
+        this.a = rVar;
         this.b = str;
     }
 
     @Override // j$.time.format.f
-    public boolean i(r rVar, StringBuilder sb) {
+    public boolean k(r rVar, StringBuilder sb) {
         ZoneId zoneId = (ZoneId) rVar.f(this.a);
         if (zoneId == null) {
             return false;

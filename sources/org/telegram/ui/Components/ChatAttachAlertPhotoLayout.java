@@ -2057,6 +2057,8 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
         if (selectedPhotos.containsKey(valueOf)) {
             photoEntry.starsAmount = 0L;
             photoEntry.hasSpoiler = false;
+            photoEntry.discardLivePhoto = false;
+            photoEntry.highQuality = null;
             selectedPhotos.remove(valueOf);
             int indexOf = selectedPhotosOrder.indexOf(valueOf);
             if (indexOf >= 0) {
@@ -2074,6 +2076,10 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
         photoEntry.hasSpoiler = getStarsPrice() > 0;
         photoEntry.isChatPreviewSpoilerRevealed = false;
         photoEntry.isAttachSpoilerRevealed = false;
+        if (hasLivePhotos()) {
+            photoEntry.discardLivePhoto = !areLivePhotosEnabled();
+        }
+        photoEntry.highQuality = Boolean.valueOf(photoEntry.isHighQuality());
         boolean checkSelectedCount = checkSelectedCount(true);
         selectedPhotos.put(valueOf, photoEntry);
         selectedPhotosOrder.add(valueOf);

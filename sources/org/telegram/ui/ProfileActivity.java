@@ -3651,6 +3651,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         this.starFgItem.setScaleY(0.0f);
         this.starFgItem.setScaleX(0.0f);
         frameLayout.addView(this.starFgItem, LayoutHelper.createFrame(20, 20, 51));
+        updateStar();
         showAvatarProgress(r10, r10);
         ProfileGalleryView profileGalleryView = this.avatarsViewPager;
         if (profileGalleryView != null) {
@@ -8385,6 +8386,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         return this.currentChat;
     }
 
+    public TLRPC.ChatFull getChatInfo() {
+        return this.chatInfo;
+    }
+
     public TLRPC.UserFull getUserInfo() {
         return this.userInfo;
     }
@@ -11843,6 +11848,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         }
         this.needTimerImage = i != 0;
         this.needStarImage = i != 0;
+        updateStar();
         if (globalMainSettings.getBoolean("view_animations", true)) {
             this.playProfileAnimation = i;
         } else if (i == 2) {

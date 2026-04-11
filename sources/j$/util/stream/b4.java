@@ -49,7 +49,7 @@ final class b4 extends e {
         super(bVar2, spliterator);
         this.h = bVar;
         this.i = intFunction;
-        this.j = a3.ORDERED.m(bVar2.J());
+        this.j = a3.ORDERED.o(bVar2.J());
     }
 
     b4(b4 b4Var, Spliterator spliterator) {
@@ -67,7 +67,7 @@ final class b4 extends e {
     @Override // j$.util.stream.e
     protected final Object a() {
         boolean d = d();
-        A0 M = this.a.M((!d && this.j && a3.SIZED.r(this.h.c)) ? this.h.F(this.b) : -1L, this.i);
+        A0 M = this.a.M((!d && this.j && a3.SIZED.s(this.h.c)) ? this.h.F(this.b) : -1L, this.i);
         a4 j = ((Z3) this.h).j(M, this.j && !d);
         this.a.U(this.b, j);
         I0 a = M.a();

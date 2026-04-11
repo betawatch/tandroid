@@ -41,12 +41,12 @@ final class E implements Externalizable {
             case 4:
                 x xVar = (x) obj;
                 xVar.getClass();
-                objectOutput.writeInt(j$.time.temporal.n.a(xVar, j$.time.temporal.a.YEAR));
-                objectOutput.writeByte(j$.time.temporal.n.a(xVar, j$.time.temporal.a.MONTH_OF_YEAR));
-                objectOutput.writeByte(j$.time.temporal.n.a(xVar, j$.time.temporal.a.DAY_OF_MONTH));
+                objectOutput.writeInt(j$.time.temporal.l.a(xVar, j$.time.temporal.a.YEAR));
+                objectOutput.writeByte(j$.time.temporal.l.a(xVar, j$.time.temporal.a.MONTH_OF_YEAR));
+                objectOutput.writeByte(j$.time.temporal.l.a(xVar, j$.time.temporal.a.DAY_OF_MONTH));
                 return;
             case 5:
-                ((y) obj).E(objectOutput);
+                ((y) obj).I(objectOutput);
                 return;
             case 6:
                 ((q) obj).writeExternal(objectOutput);
@@ -54,16 +54,16 @@ final class E implements Externalizable {
             case 7:
                 C c = (C) obj;
                 c.getClass();
-                objectOutput.writeInt(j$.time.temporal.n.a(c, j$.time.temporal.a.YEAR));
-                objectOutput.writeByte(j$.time.temporal.n.a(c, j$.time.temporal.a.MONTH_OF_YEAR));
-                objectOutput.writeByte(j$.time.temporal.n.a(c, j$.time.temporal.a.DAY_OF_MONTH));
+                objectOutput.writeInt(j$.time.temporal.l.a(c, j$.time.temporal.a.YEAR));
+                objectOutput.writeByte(j$.time.temporal.l.a(c, j$.time.temporal.a.MONTH_OF_YEAR));
+                objectOutput.writeByte(j$.time.temporal.l.a(c, j$.time.temporal.a.DAY_OF_MONTH));
                 return;
             case 8:
                 I i = (I) obj;
                 i.getClass();
-                objectOutput.writeInt(j$.time.temporal.n.a(i, j$.time.temporal.a.YEAR));
-                objectOutput.writeByte(j$.time.temporal.n.a(i, j$.time.temporal.a.MONTH_OF_YEAR));
-                objectOutput.writeByte(j$.time.temporal.n.a(i, j$.time.temporal.a.DAY_OF_MONTH));
+                objectOutput.writeInt(j$.time.temporal.l.a(i, j$.time.temporal.a.YEAR));
+                objectOutput.writeByte(j$.time.temporal.l.a(i, j$.time.temporal.a.MONTH_OF_YEAR));
+                objectOutput.writeByte(j$.time.temporal.l.a(i, j$.time.temporal.a.DAY_OF_MONTH));
                 return;
             case 9:
                 ((g) obj).writeExternal(objectOutput);
@@ -75,19 +75,19 @@ final class E implements Externalizable {
 
     @Override // java.io.Externalizable
     public final void readExternal(ObjectInput objectInput) {
-        Object i;
+        Object k;
         byte readByte = objectInput.readByte();
         this.a = readByte;
         switch (readByte) {
             case 1:
-                int i2 = a.c;
-                i = a.i(objectInput.readUTF());
+                int i = a.c;
+                k = a.k(objectInput.readUTF());
                 break;
             case 2:
-                i = ((b) objectInput.readObject()).t((j$.time.j) objectInput.readObject());
+                k = ((b) objectInput.readObject()).u((j$.time.j) objectInput.readObject());
                 break;
             case 3:
-                i = ((ChronoLocalDateTime) objectInput.readObject()).o((ZoneOffset) objectInput.readObject()).h((ZoneId) objectInput.readObject());
+                k = ((ChronoLocalDateTime) objectInput.readObject()).p((ZoneOffset) objectInput.readObject()).j((ZoneId) objectInput.readObject());
                 break;
             case 4:
                 LocalDate localDate = x.d;
@@ -95,11 +95,11 @@ final class E implements Externalizable {
                 byte readByte2 = objectInput.readByte();
                 byte readByte3 = objectInput.readByte();
                 v.d.getClass();
-                i = new x(LocalDate.of(readInt, readByte2, readByte3));
+                k = new x(LocalDate.of(readInt, readByte2, readByte3));
                 break;
             case 5:
                 y yVar = y.d;
-                i = y.B(objectInput.readByte());
+                k = y.C(objectInput.readByte());
                 break;
             case 6:
                 o oVar = (o) objectInput.readObject();
@@ -107,30 +107,30 @@ final class E implements Externalizable {
                 byte readByte4 = objectInput.readByte();
                 byte readByte5 = objectInput.readByte();
                 oVar.getClass();
-                i = q.J(oVar, readInt2, readByte4, readByte5);
+                k = q.Q(oVar, readInt2, readByte4, readByte5);
                 break;
             case 7:
                 int readInt3 = objectInput.readInt();
                 byte readByte6 = objectInput.readByte();
                 byte readByte7 = objectInput.readByte();
                 A.d.getClass();
-                i = new C(LocalDate.of(readInt3 + 1911, readByte6, readByte7));
+                k = new C(LocalDate.of(readInt3 + 1911, readByte6, readByte7));
                 break;
             case 8:
                 int readInt4 = objectInput.readInt();
                 byte readByte8 = objectInput.readByte();
                 byte readByte9 = objectInput.readByte();
                 G.d.getClass();
-                i = new I(LocalDate.of(readInt4 - 543, readByte8, readByte9));
+                k = new I(LocalDate.of(readInt4 - 543, readByte8, readByte9));
                 break;
             case 9:
-                int i3 = g.e;
-                i = new g(a.i(objectInput.readUTF()), objectInput.readInt(), objectInput.readInt(), objectInput.readInt());
+                int i2 = g.e;
+                k = new g(a.k(objectInput.readUTF()), objectInput.readInt(), objectInput.readInt(), objectInput.readInt());
                 break;
             default:
                 throw new StreamCorruptedException("Unknown serialized type");
         }
-        this.b = i;
+        this.b = k;
     }
 
     private Object readResolve() {

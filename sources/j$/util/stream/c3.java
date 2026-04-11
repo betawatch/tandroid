@@ -105,7 +105,7 @@ abstract class c3 implements Spliterator {
     @Override // j$.util.Spliterator
     public final long getExactSizeIfKnown() {
         c();
-        if (a3.SIZED.m(this.b.J())) {
+        if (a3.SIZED.o(this.b.J())) {
             return this.d.getExactSizeIfKnown();
         }
         return -1L;
@@ -114,8 +114,8 @@ abstract class c3 implements Spliterator {
     @Override // j$.util.Spliterator
     public final int characteristics() {
         c();
-        int v = a3.v(this.b.J()) & a3.f;
-        return (v & 64) != 0 ? (v & (-16449)) | (this.d.characteristics() & 16448) : v;
+        int z = a3.z(this.b.J()) & a3.f;
+        return (z & 64) != 0 ? (z & (-16449)) | (this.d.characteristics() & 16448) : z;
     }
 
     @Override // j$.util.Spliterator

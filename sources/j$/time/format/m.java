@@ -14,13 +14,13 @@ final class m implements f {
     }
 
     @Override // j$.time.format.f
-    public final boolean i(r rVar, StringBuilder sb) {
+    public final boolean k(r rVar, StringBuilder sb) {
         String d;
         Long e = rVar.e(this.a);
         if (e == null) {
             return false;
         }
-        j$.time.chrono.l lVar = (j$.time.chrono.l) rVar.d().u(j$.time.temporal.n.e());
+        j$.time.chrono.l lVar = (j$.time.chrono.l) rVar.d().w(j$.time.temporal.l.e());
         if (lVar == null || lVar == j$.time.chrono.s.d) {
             d = this.c.d(this.a, e.longValue(), this.b, rVar.c());
         } else {
@@ -33,7 +33,7 @@ final class m implements f {
         if (this.d == null) {
             this.d = new i(this.a, 1, 19, x.NORMAL);
         }
-        return this.d.i(rVar, sb);
+        return this.d.k(rVar, sb);
     }
 
     public final String toString() {

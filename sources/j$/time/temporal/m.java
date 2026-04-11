@@ -1,14 +1,14 @@
 package j$.time.temporal;
 
-import j$.time.LocalDate;
-
 /* loaded from: classes2.dex */
-public interface m extends o {
-    m d(long j, r rVar);
+public interface m {
+    boolean g(p pVar);
 
-    m e(long j, u uVar);
+    int l(p pVar);
 
-    m i(long j, b bVar);
+    u o(p pVar);
 
-    m l(LocalDate localDate);
+    long s(p pVar);
+
+    Object w(r rVar);
 }

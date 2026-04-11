@@ -32,7 +32,7 @@ public final class b implements Comparable, Serializable {
 
     b(long j, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
         this.a = j;
-        this.b = LocalDateTime.K(j, 0, zoneOffset);
+        this.b = LocalDateTime.R(j, 0, zoneOffset);
         this.c = zoneOffset;
         this.d = zoneOffset2;
     }
@@ -51,36 +51,36 @@ public final class b implements Comparable, Serializable {
         a.d(this.d, objectOutput);
     }
 
-    public final long A() {
+    public final long H() {
         return this.a;
     }
 
-    public final LocalDateTime j() {
+    public final LocalDateTime l() {
         return this.b;
     }
 
-    public final ZoneOffset r() {
+    public final ZoneOffset s() {
         return this.c;
     }
 
-    public final ZoneOffset m() {
+    public final ZoneOffset o() {
         return this.d;
     }
 
-    public final LocalDateTime i() {
-        return this.b.M(this.d.getTotalSeconds() - this.c.getTotalSeconds());
+    public final LocalDateTime k() {
+        return this.b.T(this.d.getTotalSeconds() - this.c.getTotalSeconds());
     }
 
-    public final j$.time.e l() {
-        return j$.time.e.l(this.d.getTotalSeconds() - this.c.getTotalSeconds());
+    public final j$.time.e n() {
+        return j$.time.e.n(this.d.getTotalSeconds() - this.c.getTotalSeconds());
     }
 
-    public final boolean v() {
+    public final boolean z() {
         return this.d.getTotalSeconds() > this.c.getTotalSeconds();
     }
 
-    final List u() {
-        return v() ? Collections.emptyList() : j$.com.android.tools.r8.a.h(new Object[]{this.c, this.d});
+    final List w() {
+        return z() ? Collections.emptyList() : j$.com.android.tools.r8.a.h(new Object[]{this.c, this.d});
     }
 
     public final boolean equals(Object obj) {
@@ -100,7 +100,7 @@ public final class b implements Comparable, Serializable {
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("Transition[");
-        sb.append(v() ? "Gap" : "Overlap");
+        sb.append(z() ? "Gap" : "Overlap");
         sb.append(" at ");
         sb.append(this.b);
         sb.append(this.c);

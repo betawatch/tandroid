@@ -446,7 +446,7 @@ public class SpoilerEffect2 {
                 this.running = false;
                 return;
             }
-            GLES20.glShaderSource(glCreateShader, AndroidUtilities.readRes(org.telegram.messenger.R.raw.spoiler_vertex) + "\n// " + Math.random());
+            GLES20.glShaderSource(glCreateShader, AndroidUtilities.readRes(org.telegram.messenger.R.raw.spoiler_vertex));
             GLES20.glCompileShader(glCreateShader);
             int[] iArr = new int[1];
             GLES20.glGetShaderiv(glCreateShader, 35713, iArr, 0);
@@ -456,7 +456,7 @@ public class SpoilerEffect2 {
                 this.running = false;
                 return;
             }
-            GLES20.glShaderSource(glCreateShader2, AndroidUtilities.readRes(org.telegram.messenger.R.raw.spoiler_fragment) + "\n// " + Math.random());
+            GLES20.glShaderSource(glCreateShader2, AndroidUtilities.readRes(org.telegram.messenger.R.raw.spoiler_fragment));
             GLES20.glCompileShader(glCreateShader2);
             GLES20.glGetShaderiv(glCreateShader2, 35713, iArr, 0);
             if (iArr[0] == 0) {

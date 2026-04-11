@@ -1,13 +1,64 @@
 package j$.time.temporal;
 
 /* loaded from: classes2.dex */
-public abstract class j {
-    public static final r a = h.QUARTER_OF_YEAR;
-    public static final r b = h.WEEK_OF_WEEK_BASED_YEAR;
-    public static final r c = h.WEEK_BASED_YEAR;
+enum j implements p {
+    JULIAN_DAY("JulianDay", 2440588),
+    MODIFIED_JULIAN_DAY("ModifiedJulianDay", 40587),
+    RATA_DIE("RataDie", 719163);
+
+    private static final long serialVersionUID = -7501623920830201812L;
+    private final transient String a;
+    private final transient u b;
+    private final transient long c;
+
+    @Override // j$.time.temporal.p
+    public final boolean w() {
+        return true;
+    }
 
     static {
-        i iVar = i.WEEK_BASED_YEARS;
-        i iVar2 = i.WEEK_BASED_YEARS;
+        ChronoUnit chronoUnit = ChronoUnit.NANOS;
+    }
+
+    j(String str, long j) {
+        this.a = str;
+        this.b = u.j((-365243219162L) + j, 365241780471L + j);
+        this.c = j;
+    }
+
+    @Override // j$.time.temporal.p
+    public final u k() {
+        return this.b;
+    }
+
+    @Override // j$.time.temporal.p
+    public final boolean n(m mVar) {
+        return mVar.g(a.EPOCH_DAY);
+    }
+
+    @Override // j$.time.temporal.p
+    public final u s(m mVar) {
+        if (!mVar.g(a.EPOCH_DAY)) {
+            throw new j$.time.c("Unsupported field: " + this);
+        }
+        return this.b;
+    }
+
+    @Override // j$.time.temporal.p
+    public final long l(m mVar) {
+        return mVar.s(a.EPOCH_DAY) + this.c;
+    }
+
+    @Override // j$.time.temporal.p
+    public final Temporal o(Temporal temporal, long j) {
+        if (!this.b.i(j)) {
+            throw new j$.time.c("Invalid value: " + this.a + " " + j);
+        }
+        return temporal.d(j$.com.android.tools.r8.a.m(j, this.c), a.EPOCH_DAY);
+    }
+
+    @Override // java.lang.Enum
+    public final String toString() {
+        return this.a;
     }
 }

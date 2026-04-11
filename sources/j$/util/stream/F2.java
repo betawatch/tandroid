@@ -10,12 +10,12 @@ final class F2 extends Z {
     @Override // j$.util.stream.b
     public final m2 Q(int i, m2 m2Var) {
         Objects.requireNonNull(m2Var);
-        return a3.SORTED.m(i) ? m2Var : a3.SIZED.m(i) ? new K2(m2Var) : new C2(m2Var);
+        return a3.SORTED.o(i) ? m2Var : a3.SIZED.o(i) ? new K2(m2Var) : new C2(m2Var);
     }
 
     @Override // j$.util.stream.b
     public final I0 N(b bVar, Spliterator spliterator, IntFunction intFunction) {
-        if (a3.SORTED.m(bVar.J())) {
+        if (a3.SORTED.o(bVar.J())) {
             return bVar.B(spliterator, false, intFunction);
         }
         int[] iArr = (int[]) ((E0) bVar.B(spliterator, true, intFunction)).d();

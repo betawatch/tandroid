@@ -24,15 +24,15 @@ public final class e implements Comparable, Serializable {
         BigInteger.valueOf(1000000000L);
     }
 
-    public static e l(long j) {
-        return i(j, 0);
+    public static e n(long j) {
+        return k(j, 0);
     }
 
-    public static e m(long j, long j2) {
-        return i(j$.com.android.tools.r8.a.f(j, j$.com.android.tools.r8.a.k(j2, 1000000000L)), (int) j$.com.android.tools.r8.a.j(j2, 1000000000L));
+    public static e o(long j, long j2) {
+        return k(j$.com.android.tools.r8.a.f(j, j$.com.android.tools.r8.a.k(j2, 1000000000L)), (int) j$.com.android.tools.r8.a.j(j2, 1000000000L));
     }
 
-    private static e i(long j, int i) {
+    private static e k(long j, int i) {
         if ((i | j) == 0) {
             return c;
         }
@@ -44,7 +44,7 @@ public final class e implements Comparable, Serializable {
         this.b = i;
     }
 
-    public final long j() {
+    public final long l() {
         return this.a;
     }
 
@@ -111,7 +111,7 @@ public final class e implements Comparable, Serializable {
     }
 
     private Object writeReplace() {
-        return new q((byte) 1, this);
+        return new r((byte) 1, this);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {

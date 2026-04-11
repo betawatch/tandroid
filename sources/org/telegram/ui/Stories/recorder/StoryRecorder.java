@@ -2866,9 +2866,9 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
         this.collageHintTextView.setAlpha(0.0f);
         this.navbarContainer.addView(this.collageHintTextView, LayoutHelper.createFrame(-1, 32.0f, 17, 8.0f, 0.0f, 8.0f, 8.0f));
         this.flashViews.add(this.collageHintTextView);
-        ButtonWithCounterView buttonWithCounterView2 = new ButtonWithCounterView(context, this.resourcesProvider);
-        this.coverButton = buttonWithCounterView2;
-        buttonWithCounterView2.setVisibility(8);
+        ButtonWithCounterView round = new ButtonWithCounterView(context, this.resourcesProvider).setRound();
+        this.coverButton = round;
+        round.setVisibility(8);
         this.coverButton.setAlpha(0.0f);
         this.coverButton.setText(LocaleController.getString(R.string.StoryCoverSave), false);
         this.coverButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryRecorder$$ExternalSyntheticLambda71
@@ -6199,25 +6199,27 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
                 this.storiesSelector.setSelected(this.entries.indexOf(this.outputEntry));
             }
             this.timelineView.setMaxCount((z || z2 || this.entries != null || ((storyEntry5 = this.outputEntry) != null && (storyEntry5.isCollage() || !this.outputEntry.isVideo))) ? 1 : 3);
-            StoryEntry storyEntry16 = this.outputEntry;
-            if (storyEntry16 != null && (storyEntry16.isDraft || storyEntry16.isEdit || this.isReposting)) {
-                if (storyEntry16.paintFile != null) {
-                    destroyPhotoPaintView();
-                    createPhotoPaintView();
-                    hidePhotoPaintView();
+            if (i != 2) {
+                StoryEntry storyEntry16 = this.outputEntry;
+                if (storyEntry16 != null && (storyEntry16.isDraft || storyEntry16.isEdit || this.isReposting)) {
+                    if (storyEntry16.paintFile != null) {
+                        destroyPhotoPaintView();
+                        createPhotoPaintView();
+                        hidePhotoPaintView();
+                    }
+                    StoryEntry storyEntry17 = this.outputEntry;
+                    if (storyEntry17.isVideo && storyEntry17.filterState != null && (textureView = this.previewView.getTextureView()) != null) {
+                        textureView.setDelegate(new VideoEditTextureView.VideoEditTextureViewDelegate() { // from class: org.telegram.ui.Stories.recorder.StoryRecorder$$ExternalSyntheticLambda24
+                            @Override // org.telegram.ui.Components.VideoEditTextureView.VideoEditTextureViewDelegate
+                            public final void onEGLThreadAvailable(FilterGLThread filterGLThread) {
+                                StoryRecorder.this.lambda$onNavigateStart$79(filterGLThread);
+                            }
+                        });
+                    }
+                    this.captionEdit.setText(this.outputEntry.caption);
+                } else if (i != 2) {
+                    this.captionEdit.clear();
                 }
-                StoryEntry storyEntry17 = this.outputEntry;
-                if (storyEntry17.isVideo && storyEntry17.filterState != null && (textureView = this.previewView.getTextureView()) != null) {
-                    textureView.setDelegate(new VideoEditTextureView.VideoEditTextureViewDelegate() { // from class: org.telegram.ui.Stories.recorder.StoryRecorder$$ExternalSyntheticLambda24
-                        @Override // org.telegram.ui.Components.VideoEditTextureView.VideoEditTextureViewDelegate
-                        public final void onEGLThreadAvailable(FilterGLThread filterGLThread) {
-                            StoryRecorder.this.lambda$onNavigateStart$79(filterGLThread);
-                        }
-                    });
-                }
-                this.captionEdit.setText(this.outputEntry.caption);
-            } else {
-                this.captionEdit.clear();
             }
             PreviewButtons previewButtons = this.previewButtons;
             StoryEntry storyEntry18 = this.outputEntry;

@@ -26,7 +26,7 @@ final class o2 extends d2 {
             long j4 = this.m;
             return new u3(W, j4, w0.B(j4, j3));
         }
-        if (a3.ORDERED.m(bVar.J())) {
+        if (a3.ORDERED.o(bVar.J())) {
             return ((I0) new w2(this, bVar, spliterator, new b0(11), this.m, this.n).invoke()).spliterator();
         }
         Spliterator W2 = bVar.W(spliterator);
@@ -53,7 +53,7 @@ final class o2 extends d2 {
         if (F > 0 && spliterator.hasCharacteristics(16384)) {
             return w0.E(bVar, w0.C(bVar.I(), spliterator, this.m, this.n), true, intFunction);
         }
-        if (!a3.ORDERED.m(bVar.J())) {
+        if (!a3.ORDERED.o(bVar.J())) {
             Spliterator W = bVar.W(spliterator);
             long j3 = this.m;
             long j4 = this.n;

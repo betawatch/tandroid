@@ -46,10 +46,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.core.util.Consumer;
+import j$.time.Instant;
 import j$.time.LocalDate;
 import j$.time.YearMonth;
 import j$.time.ZoneId;
 import j$.time.ZoneOffset;
+import j$.time.temporal.ChronoUnit;
 import j$.util.Collection;
 import j$.util.Objects;
 import j$.util.function.Predicate$-CC;
@@ -4816,14 +4818,14 @@ public abstract class AlertsCreator {
         calendar.get(6);
         if (j2 > 0) {
             i2 = i7;
-            long j4 = j2 * 1000;
-            calendar.setTimeInMillis(currentTimeMillis + j4);
+            calendar.setTimeInMillis(currentTimeMillis + (j2 * 1000));
             calendar.set(11, 23);
             calendar.set(12, 59);
             calendar.set(13, 59);
-            i4 = (int) TimeUnit.MILLISECONDS.toDays(j4);
+            calendar.set(14, 0);
+            i3 = (int) ChronoUnit.DAYS.between(Instant.ofEpochMilli(currentTimeMillis).atZone(ZoneId.systemDefault()).c(), Instant.ofEpochMilli(calendar.getTimeInMillis()).atZone(ZoneId.systemDefault()).c());
             j3 = calendar.getTimeInMillis();
-            i3 = 23;
+            i4 = 23;
             i5 = 59;
         } else {
             i2 = i7;
@@ -4833,24 +4835,27 @@ public abstract class AlertsCreator {
             i5 = 0;
         }
         long millis = j > 0 ? TimeUnit.SECONDS.toMillis(j) : 60000L;
-        long j5 = currentTimeMillis + millis;
-        calendar.setTimeInMillis(j5);
+        long j4 = currentTimeMillis + millis;
+        calendar.setTimeInMillis(j4);
         int i8 = calendar.get(11);
         int i9 = calendar.get(12);
-        calendar.setTimeInMillis(System.currentTimeMillis() + (value * 86400000));
+        int i10 = i3;
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.add(6, value);
         calendar.set(11, value2);
         calendar.set(12, value3);
+        calendar.set(13, 0);
+        calendar.set(14, 0);
         long timeInMillis = calendar.getTimeInMillis();
-        calendar.setTimeInMillis(timeInMillis);
         numberPicker.setMinValue(0);
         if (j3 > 0) {
-            numberPicker.setMaxValue(i4);
+            numberPicker.setMaxValue(i10);
         }
         int value4 = numberPicker.getValue();
-        long j6 = millis;
+        long j5 = millis;
         numberPicker2.setMinValue(value4 == 0 ? i8 : 0);
         if (j3 > 0) {
-            numberPicker2.setMaxValue(value4 == i4 ? i3 : 23);
+            numberPicker2.setMaxValue(value4 == i10 ? i4 : 23);
         }
         int value5 = numberPicker2.getValue();
         if (value4 == 0 && value5 == i8) {
@@ -4862,50 +4867,53 @@ public abstract class AlertsCreator {
         }
         numberPicker4.setMinValue(i6);
         if (j3 > 0) {
-            numberPicker4.setMaxValue((value4 == i4 && value5 == i3) ? i5 : 59);
+            numberPicker4.setMaxValue((value4 == i10 && value5 == i4) ? i5 : 59);
         }
         int value6 = numberPicker3.getValue();
-        if (timeInMillis <= j5) {
-            calendar.setTimeInMillis(j5);
+        if (timeInMillis <= j4) {
+            calendar.setTimeInMillis(j4);
         } else if (j3 > 0 && timeInMillis > j3) {
             calendar.setTimeInMillis(j3);
         }
-        int i10 = calendar.get(1);
-        calendar.setTimeInMillis(System.currentTimeMillis() + (value4 * 86400000));
+        int i11 = calendar.get(1);
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.add(6, value4);
         calendar.set(11, value5);
         calendar.set(12, value6);
+        calendar.set(13, 0);
+        calendar.set(14, 0);
         long timeInMillis2 = calendar.getTimeInMillis();
         if (textView != null) {
-            textView.setText(LocaleController.getInstance().getFormatterScheduleSend((value4 == 0 ? 0 : i2 == i10 ? 1 : 2) + (i * 3)).format(timeInMillis2));
+            textView.setText(LocaleController.getInstance().getFormatterScheduleSend((value4 == 0 ? 0 : i2 == i11 ? 1 : 2) + (i * 3)).format(timeInMillis2));
         }
         if (textView2 != null) {
-            int i11 = (int) ((timeInMillis2 - currentTimeMillis) / 1000);
-            if (i11 > 86400) {
+            int i12 = (int) ((timeInMillis2 - currentTimeMillis) / 1000);
+            if (i12 > 86400) {
                 c = 0;
-                formatPluralString = LocaleController.formatPluralString("DaysSchedule", Math.round(i11 / 86400.0f), new Object[0]);
+                formatPluralString = LocaleController.formatPluralString("DaysSchedule", Math.round(i12 / 86400.0f), new Object[0]);
             } else {
                 c = 0;
-                if (i11 >= 3600) {
-                    formatPluralString = LocaleController.formatPluralString("HoursSchedule", Math.round(i11 / 3600.0f), new Object[0]);
-                } else if (i11 >= 60) {
-                    formatPluralString = LocaleController.formatPluralString("MinutesSchedule", Math.round(i11 / 60.0f), new Object[0]);
+                if (i12 >= 3600) {
+                    formatPluralString = LocaleController.formatPluralString("HoursSchedule", Math.round(i12 / 3600.0f), new Object[0]);
+                } else if (i12 >= 60) {
+                    formatPluralString = LocaleController.formatPluralString("MinutesSchedule", Math.round(i12 / 60.0f), new Object[0]);
                 } else {
-                    formatPluralString = LocaleController.formatPluralString("SecondsSchedule", i11, new Object[0]);
+                    formatPluralString = LocaleController.formatPluralString("SecondsSchedule", i12, new Object[0]);
                 }
             }
             if (textView2.getTag() != null) {
-                int i12 = R.string.VoipChannelScheduleInfo;
+                int i13 = R.string.VoipChannelScheduleInfo;
                 Object[] objArr = new Object[1];
                 objArr[c] = formatPluralString;
-                textView2.setText(LocaleController.formatString("VoipChannelScheduleInfo", i12, objArr));
+                textView2.setText(LocaleController.formatString("VoipChannelScheduleInfo", i13, objArr));
             } else {
-                int i13 = R.string.VoipGroupScheduleInfo;
+                int i14 = R.string.VoipGroupScheduleInfo;
                 Object[] objArr2 = new Object[1];
                 objArr2[c] = formatPluralString;
-                textView2.setText(LocaleController.formatString("VoipGroupScheduleInfo", i13, objArr2));
+                textView2.setText(LocaleController.formatString("VoipGroupScheduleInfo", i14, objArr2));
             }
         }
-        return timeInMillis - currentTimeMillis > j6;
+        return timeInMillis - currentTimeMillis > j5;
     }
 
     public static long checkFormattedDateInput(ButtonWithCounterView buttonWithCounterView, NumberPicker numberPicker, NumberPicker numberPicker2, NumberPicker numberPicker3, NumberPicker numberPicker4) {
@@ -5025,7 +5033,7 @@ public abstract class AlertsCreator {
         final int[] iArr;
         String[] strArr;
         ScheduleDatePickerColors scheduleDatePickerColors2;
-        Calendar calendar;
+        final int[] iArr2;
         int i3;
         TextView textView;
         Runnable runnable2;
@@ -5035,7 +5043,7 @@ public abstract class AlertsCreator {
         if (context == null) {
             return null;
         }
-        final int[] iArr2 = {i};
+        int[] iArr3 = {i};
         final long clientUserId = UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
         BottomSheet.Builder builder2 = new BottomSheet.Builder(context, false, resourcesProvider);
         builder2.setApplyBottomPadding(false);
@@ -5165,97 +5173,96 @@ public abstract class AlertsCreator {
         linearLayout2.setOrientation(0);
         linearLayout2.setWeightSum(1.0f);
         linearLayout.addView(linearLayout2, LayoutHelper.createLinear(-1, -2, 1.0f, 0, 0, 12, 0, 12));
-        final long currentTimeMillis = System.currentTimeMillis();
-        final Calendar calendar2 = Calendar.getInstance();
-        calendar2.setTimeInMillis(currentTimeMillis);
-        final int i4 = calendar2.get(1);
+        final Calendar calendar = Calendar.getInstance();
         final TextView textView3 = new TextView(context) { // from class: org.telegram.ui.Components.AlertsCreator.30
             @Override // android.widget.TextView, android.view.View
             public CharSequence getAccessibilityClassName() {
                 return Button.class.getName();
             }
         };
-        final NumberPicker numberPicker7 = numberPicker3;
+        NumberPicker numberPicker7 = numberPicker3;
         linearLayout2.addView(numberPicker7, LayoutHelper.createLinear(0, NotificationCenter.suggestedLangpack, 0.5f));
         numberPicker7.setMinValue(0);
         numberPicker7.setMaxValue(365);
         numberPicker7.setWrapSelectorWheel(false);
         numberPicker7.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda20
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
-            public final String format(int i5) {
+            public final String format(int i4) {
                 String lambda$createScheduleDatePickerDialog$108;
-                lambda$createScheduleDatePickerDialog$108 = AlertsCreator.lambda$createScheduleDatePickerDialog$108(currentTimeMillis, calendar2, i4, i5);
+                lambda$createScheduleDatePickerDialog$108 = AlertsCreator.lambda$createScheduleDatePickerDialog$108(i4);
                 return lambda$createScheduleDatePickerDialog$108;
             }
         });
         final BottomSheet.Builder builder3 = builder;
-        final NumberPicker numberPicker8 = numberPicker2;
-        final NumberPicker numberPicker9 = numberPicker;
+        final NumberPicker numberPicker8 = numberPicker3;
+        final NumberPicker numberPicker9 = numberPicker2;
+        final NumberPicker numberPicker10 = numberPicker;
         NumberPicker.OnValueChangeListener onValueChangeListener = new NumberPicker.OnValueChangeListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda21
             @Override // org.telegram.ui.Components.NumberPicker.OnValueChangeListener
-            public final void onValueChange(NumberPicker numberPicker10, int i5, int i6) {
-                AlertsCreator.lambda$createScheduleDatePickerDialog$109(textView3, str, clientUserId, j, numberPicker7, numberPicker8, numberPicker9, numberPicker10, i5, i6);
+            public final void onValueChange(NumberPicker numberPicker11, int i4, int i5) {
+                AlertsCreator.lambda$createScheduleDatePickerDialog$109(textView3, str, clientUserId, j, numberPicker8, numberPicker9, numberPicker10, numberPicker11, i4, i5);
             }
         };
-        numberPicker7.setOnValueChangedListener(onValueChangeListener);
-        final NumberPicker numberPicker10 = numberPicker2;
-        numberPicker10.setMinValue(0);
-        numberPicker10.setMaxValue(23);
-        linearLayout2.addView(numberPicker10, LayoutHelper.createLinear(0, NotificationCenter.suggestedLangpack, 0.2f));
-        numberPicker10.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda22
+        final NumberPicker numberPicker11 = numberPicker3;
+        numberPicker11.setOnValueChangedListener(onValueChangeListener);
+        final NumberPicker numberPicker12 = numberPicker2;
+        numberPicker12.setMinValue(0);
+        numberPicker12.setMaxValue(23);
+        linearLayout2.addView(numberPicker12, LayoutHelper.createLinear(0, NotificationCenter.suggestedLangpack, 0.2f));
+        numberPicker12.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda22
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
-            public final String format(int i5) {
+            public final String format(int i4) {
                 String lambda$createScheduleDatePickerDialog$110;
-                lambda$createScheduleDatePickerDialog$110 = AlertsCreator.lambda$createScheduleDatePickerDialog$110(i5);
+                lambda$createScheduleDatePickerDialog$110 = AlertsCreator.lambda$createScheduleDatePickerDialog$110(i4);
                 return lambda$createScheduleDatePickerDialog$110;
             }
         });
-        numberPicker10.setOnValueChangedListener(onValueChangeListener);
-        final NumberPicker numberPicker11 = numberPicker;
-        numberPicker11.setMinValue(0);
-        numberPicker11.setMaxValue(59);
-        numberPicker11.setValue(0);
-        numberPicker11.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda23
+        numberPicker12.setOnValueChangedListener(onValueChangeListener);
+        final NumberPicker numberPicker13 = numberPicker;
+        numberPicker13.setMinValue(0);
+        numberPicker13.setMaxValue(59);
+        numberPicker13.setValue(0);
+        numberPicker13.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda23
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
-            public final String format(int i5) {
+            public final String format(int i4) {
                 String lambda$createScheduleDatePickerDialog$111;
-                lambda$createScheduleDatePickerDialog$111 = AlertsCreator.lambda$createScheduleDatePickerDialog$111(i5);
+                lambda$createScheduleDatePickerDialog$111 = AlertsCreator.lambda$createScheduleDatePickerDialog$111(i4);
                 return lambda$createScheduleDatePickerDialog$111;
             }
         });
-        linearLayout2.addView(numberPicker11, LayoutHelper.createLinear(0, NotificationCenter.suggestedLangpack, 0.3f));
-        numberPicker11.setOnValueChangedListener(onValueChangeListener);
+        linearLayout2.addView(numberPicker13, LayoutHelper.createLinear(0, NotificationCenter.suggestedLangpack, 0.3f));
+        numberPicker13.setOnValueChangedListener(onValueChangeListener);
         if (j2 > 0 && j2 != 2147483646) {
             long j3 = 1000 * j2;
-            calendar2.setTimeInMillis(System.currentTimeMillis());
-            calendar2.set(12, 0);
-            calendar2.set(13, 0);
-            calendar2.set(14, 0);
-            calendar2.set(11, 0);
-            int timeInMillis = (int) ((j3 - calendar2.getTimeInMillis()) / 86400000);
-            calendar2.setTimeInMillis(j3);
+            calendar.setTimeInMillis(System.currentTimeMillis());
+            calendar.set(12, 0);
+            calendar.set(13, 0);
+            calendar.set(14, 0);
+            calendar.set(11, 0);
+            int timeInMillis = (int) ((j3 - calendar.getTimeInMillis()) / 86400000);
+            calendar.setTimeInMillis(j3);
             if (timeInMillis >= 0) {
-                numberPicker11.setValue(calendar2.get(12));
-                numberPicker10.setValue(calendar2.get(11));
-                numberPicker7.setValue(timeInMillis);
+                numberPicker13.setValue(calendar.get(12));
+                numberPicker12.setValue(calendar.get(11));
+                numberPicker11.setValue(timeInMillis);
             }
         }
         final boolean[] zArr = {true};
-        checkScheduleDate(textView3, null, str != null ? 3 : clientUserId == j ? 1 : 0, numberPicker7, numberPicker10, numberPicker11);
+        checkScheduleDate(textView3, null, str != null ? 3 : clientUserId == j ? 1 : 0, numberPicker11, numberPicker12, numberPicker13);
         boolean isTestBackend = ConnectionsManager.getInstance(UserConfig.selectedAccount).isTestBackend();
         if (isTestBackend) {
-            int[] iArr3 = new int[10];
-            iArr3[0] = 0;
-            iArr3[1] = i2;
-            iArr3[2] = 300;
-            iArr3[3] = 86400;
-            iArr3[4] = 604800;
-            iArr3[c] = 1209600;
-            iArr3[6] = 2592000;
-            iArr3[7] = 7862400;
-            iArr3[8] = 15724800;
-            iArr3[9] = 31536000;
-            iArr = iArr3;
+            int[] iArr4 = new int[10];
+            iArr4[0] = 0;
+            iArr4[1] = i2;
+            iArr4[2] = 300;
+            iArr4[3] = 86400;
+            iArr4[4] = 604800;
+            iArr4[c] = 1209600;
+            iArr4[6] = 2592000;
+            iArr4[7] = 7862400;
+            iArr4[8] = 15724800;
+            iArr4[9] = 31536000;
+            iArr = iArr4;
         } else {
             iArr = new int[8];
             iArr[0] = 0;
@@ -5293,24 +5300,24 @@ public abstract class AlertsCreator {
         final String[] strArr2 = strArr;
         if (z) {
             scheduleDatePickerColors2 = scheduleDatePickerColors;
-            calendar = calendar2;
+            iArr2 = iArr3;
             i3 = 17;
             textView = null;
             runnable2 = null;
         } else {
             FrameLayout frameLayout7 = new FrameLayout(context);
             scheduleDatePickerColors2 = scheduleDatePickerColors;
-            int i5 = scheduleDatePickerColors2.textColor;
-            int blendOver = Theme.blendOver(scheduleDatePickerColors2.backgroundColor, Theme.multAlpha(i5, 0.075f));
+            int i4 = scheduleDatePickerColors2.textColor;
+            int blendOver = Theme.blendOver(scheduleDatePickerColors2.backgroundColor, Theme.multAlpha(i4, 0.075f));
             int multAlpha = Theme.multAlpha(scheduleDatePickerColors2.textColor, 0.1f);
             final TextView textView4 = new TextView(context);
-            calendar = calendar2;
             textView4.setTextSize(1, 13.0f);
-            textView4.setTextColor(i5);
+            textView4.setTextColor(i4);
             textView4.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
             textView4.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(14.0f), blendOver, Theme.blendOver(blendOver, multAlpha)));
             i3 = 17;
             textView4.setGravity(17);
+            iArr2 = iArr3;
             Runnable runnable3 = new Runnable() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda24
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -5331,13 +5338,13 @@ public abstract class AlertsCreator {
         textView3.setTypeface(AndroidUtilities.bold());
         textView3.setBackground(Theme.AdaptiveRipple.filledRect(scheduleDatePickerColors2.buttonBackgroundColor, 24.0f));
         linearLayout.addView(textView3, LayoutHelper.createLinear(-1, 48, 83, 16, 15, 16, 16));
-        final int[] iArr4 = iArr;
-        final Calendar calendar3 = calendar;
+        final int[] iArr5 = iArr;
+        final int[] iArr6 = iArr2;
         TextView textView5 = textView;
         textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda25
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AlertsCreator.lambda$createScheduleDatePickerDialog$113(zArr, str, clientUserId, j, numberPicker7, numberPicker10, numberPicker11, calendar3, scheduleDatePickerDelegate, iArr2, builder3, view);
+                AlertsCreator.lambda$createScheduleDatePickerDialog$113(zArr, str, clientUserId, j, numberPicker11, numberPicker12, numberPicker13, calendar, scheduleDatePickerDelegate, iArr6, builder3, view);
             }
         });
         builder3.setCustomView(frameLayout);
@@ -5357,7 +5364,7 @@ public abstract class AlertsCreator {
             textView5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda17
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AlertsCreator.lambda$createScheduleDatePickerDialog$117(frameLayout8, resourcesProvider, show, frameLayout9, iArr4, strArr2, iArr2, runnable4, view);
+                    AlertsCreator.lambda$createScheduleDatePickerDialog$117(frameLayout8, resourcesProvider, show, frameLayout9, iArr5, strArr2, iArr6, runnable4, view);
                 }
             });
         }
@@ -5381,16 +5388,18 @@ public abstract class AlertsCreator {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ String lambda$createScheduleDatePickerDialog$108(long j, Calendar calendar, int i, int i2) {
-        if (i2 == 0) {
+    public static /* synthetic */ String lambda$createScheduleDatePickerDialog$108(int i) {
+        if (i == 0) {
             return LocaleController.getString(R.string.MessageScheduleToday);
         }
-        long j2 = j + (i2 * 86400000);
-        calendar.setTimeInMillis(j2);
-        if (calendar.get(1) == i) {
-            return LocaleController.getInstance().getFormatterWeek().format(j2) + ", " + LocaleController.getInstance().getFormatterScheduleDay().format(j2);
+        Calendar calendar = Calendar.getInstance();
+        int i2 = calendar.get(1);
+        calendar.add(6, i);
+        long timeInMillis = calendar.getTimeInMillis();
+        if (calendar.get(1) == i2) {
+            return LocaleController.getInstance().getFormatterWeek().format(timeInMillis) + ", " + LocaleController.getInstance().getFormatterScheduleDay().format(timeInMillis);
         }
-        return LocaleController.getInstance().getFormatterScheduleYear().format(j2);
+        return LocaleController.getInstance().getFormatterScheduleYear().format(timeInMillis);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -5447,11 +5456,13 @@ public abstract class AlertsCreator {
     public static /* synthetic */ void lambda$createScheduleDatePickerDialog$113(boolean[] zArr, String str, long j, long j2, NumberPicker numberPicker, NumberPicker numberPicker2, NumberPicker numberPicker3, Calendar calendar, ScheduleDatePickerDelegate scheduleDatePickerDelegate, int[] iArr, BottomSheet.Builder builder, View view) {
         zArr[0] = false;
         boolean checkScheduleDate = checkScheduleDate(null, null, str != null ? 3 : j == j2 ? 1 : 0, numberPicker, numberPicker2, numberPicker3);
-        calendar.setTimeInMillis(System.currentTimeMillis() + (numberPicker.getValue() * 86400000));
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.add(6, numberPicker.getValue());
         calendar.set(11, numberPicker2.getValue());
         calendar.set(12, numberPicker3.getValue());
         if (checkScheduleDate) {
             calendar.set(13, 0);
+            calendar.set(14, 0);
         }
         scheduleDatePickerDelegate.didSelectDate(true, (int) (calendar.getTimeInMillis() / 1000), iArr[0]);
         builder.getDismissRunnable().run();
@@ -5585,10 +5596,7 @@ public abstract class AlertsCreator {
         linearLayout3.setOrientation(0);
         linearLayout3.setWeightSum(1.0f);
         linearLayout2.addView(linearLayout3, LayoutHelper.createLinear(-1, -2, 1.0f, 0, 0, 12, 0, 12));
-        final long currentTimeMillis = System.currentTimeMillis();
         final Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(currentTimeMillis);
-        final int i = calendar.get(1);
         TextView textView2 = new TextView(context) { // from class: org.telegram.ui.Components.AlertsCreator.34
             @Override // android.widget.TextView, android.view.View
             public CharSequence getAccessibilityClassName() {
@@ -5601,15 +5609,15 @@ public abstract class AlertsCreator {
         numberPicker.setWrapSelectorWheel(false);
         numberPicker.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda190
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
-            public final String format(int i2) {
+            public final String format(int i) {
                 String lambda$createDatePickerDialog$119;
-                lambda$createDatePickerDialog$119 = AlertsCreator.lambda$createDatePickerDialog$119(currentTimeMillis, calendar, i, i2);
+                lambda$createDatePickerDialog$119 = AlertsCreator.lambda$createDatePickerDialog$119(i);
                 return lambda$createDatePickerDialog$119;
             }
         });
         NumberPicker.OnValueChangeListener onValueChangeListener = new NumberPicker.OnValueChangeListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda191
             @Override // org.telegram.ui.Components.NumberPicker.OnValueChangeListener
-            public final void onValueChange(NumberPicker numberPicker4, int i2, int i3) {
+            public final void onValueChange(NumberPicker numberPicker4, int i, int i2) {
                 AlertsCreator.checkScheduleDate(null, null, 0, NumberPicker.this, numberPicker2, numberPicker3);
             }
         };
@@ -5619,9 +5627,9 @@ public abstract class AlertsCreator {
         linearLayout3.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.suggestedLangpack, 0.2f));
         numberPicker2.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda192
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
-            public final String format(int i2) {
+            public final String format(int i) {
                 String lambda$createDatePickerDialog$121;
-                lambda$createDatePickerDialog$121 = AlertsCreator.lambda$createDatePickerDialog$121(i2);
+                lambda$createDatePickerDialog$121 = AlertsCreator.lambda$createDatePickerDialog$121(i);
                 return lambda$createDatePickerDialog$121;
             }
         });
@@ -5631,9 +5639,9 @@ public abstract class AlertsCreator {
         numberPicker3.setValue(0);
         numberPicker3.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda193
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
-            public final String format(int i2) {
+            public final String format(int i) {
                 String lambda$createDatePickerDialog$122;
-                lambda$createDatePickerDialog$122 = AlertsCreator.lambda$createDatePickerDialog$122(i2);
+                lambda$createDatePickerDialog$122 = AlertsCreator.lambda$createDatePickerDialog$122(i);
                 return lambda$createDatePickerDialog$122;
             }
         });
@@ -5681,16 +5689,18 @@ public abstract class AlertsCreator {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ String lambda$createDatePickerDialog$119(long j, Calendar calendar, int i, int i2) {
-        if (i2 == 0) {
+    public static /* synthetic */ String lambda$createDatePickerDialog$119(int i) {
+        if (i == 0) {
             return LocaleController.getString(R.string.MessageScheduleToday);
         }
-        long j2 = j + (i2 * 86400000);
-        calendar.setTimeInMillis(j2);
-        if (calendar.get(1) == i) {
-            return LocaleController.getInstance().getFormatterScheduleDay().format(j2);
+        Calendar calendar = Calendar.getInstance();
+        int i2 = calendar.get(1);
+        calendar.add(6, i);
+        long timeInMillis = calendar.getTimeInMillis();
+        if (calendar.get(1) == i2) {
+            return LocaleController.getInstance().getFormatterScheduleDay().format(timeInMillis);
         }
-        return LocaleController.getInstance().getFormatterScheduleYear().format(j2);
+        return LocaleController.getInstance().getFormatterScheduleYear().format(timeInMillis);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -5706,11 +5716,13 @@ public abstract class AlertsCreator {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$createDatePickerDialog$123(NumberPicker numberPicker, NumberPicker numberPicker2, NumberPicker numberPicker3, Calendar calendar, ScheduleDatePickerDelegate scheduleDatePickerDelegate, BottomSheet.Builder builder, View view) {
         boolean checkScheduleDate = checkScheduleDate(null, null, 0, numberPicker, numberPicker2, numberPicker3);
-        calendar.setTimeInMillis(System.currentTimeMillis() + (numberPicker.getValue() * 86400000));
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.add(6, numberPicker.getValue());
         calendar.set(11, numberPicker2.getValue());
         calendar.set(12, numberPicker3.getValue());
         if (checkScheduleDate) {
             calendar.set(13, 0);
+            calendar.set(14, 0);
         }
         scheduleDatePickerDelegate.didSelectDate(true, (int) (calendar.getTimeInMillis() / 1000), 0);
         builder.getDismissRunnable().run();
@@ -6351,11 +6363,13 @@ public abstract class AlertsCreator {
         int value3 = numberPicker3.getValue();
         Calendar calendar = Calendar.getInstance();
         long currentTimeMillis = System.currentTimeMillis();
-        calendar.setTimeInMillis(System.currentTimeMillis() + (value * 86400000));
+        calendar.setTimeInMillis(currentTimeMillis);
+        calendar.add(6, value);
         calendar.set(11, value2);
         calendar.set(12, value3);
+        calendar.set(13, 0);
+        calendar.set(14, 0);
         long timeInMillis = calendar.getTimeInMillis();
-        calendar.setTimeInMillis(timeInMillis);
         if (textView != null) {
             textView.setText(formatPollCloseCustomDeadline((int) ((timeInMillis - currentTimeMillis) / 1000)));
         }
@@ -6448,10 +6462,7 @@ public abstract class AlertsCreator {
         textView2.setTextSize(1, 12.0f);
         textView2.setTextColor(Theme.getColor(Theme.key_dialogTextGray2, resourcesProvider));
         textView2.setGravity(17);
-        final long currentTimeMillis = System.currentTimeMillis();
         final Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(currentTimeMillis);
-        final int i2 = calendar.get(1);
         TextView textView3 = new TextView(context) { // from class: org.telegram.ui.Components.AlertsCreator.42
             @Override // android.widget.TextView, android.view.View
             public CharSequence getAccessibilityClassName() {
@@ -6466,16 +6477,16 @@ public abstract class AlertsCreator {
         numberPicker.setWrapSelectorWheel(false);
         numberPicker.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda225
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
-            public final String format(int i3) {
+            public final String format(int i2) {
                 String lambda$createPollCloseDatePickerDialog$147;
-                lambda$createPollCloseDatePickerDialog$147 = AlertsCreator.lambda$createPollCloseDatePickerDialog$147(currentTimeMillis, calendar, i2, i3);
+                lambda$createPollCloseDatePickerDialog$147 = AlertsCreator.lambda$createPollCloseDatePickerDialog$147(i2);
                 return lambda$createPollCloseDatePickerDialog$147;
             }
         });
         NumberPicker.OnValueChangeListener onValueChangeListener = new NumberPicker.OnValueChangeListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda226
             @Override // org.telegram.ui.Components.NumberPicker.OnValueChangeListener
-            public final void onValueChange(NumberPicker numberPicker4, int i3, int i4) {
-                AlertsCreator.lambda$createPollCloseDatePickerDialog$148(i, numberPicker, numberPicker2, numberPicker3, textView2, numberPicker4, i3, i4);
+            public final void onValueChange(NumberPicker numberPicker4, int i2, int i3) {
+                AlertsCreator.lambda$createPollCloseDatePickerDialog$148(i, numberPicker, numberPicker2, numberPicker3, textView2, numberPicker4, i2, i3);
             }
         };
         numberPicker.setOnValueChangedListener(onValueChangeListener);
@@ -6484,9 +6495,9 @@ public abstract class AlertsCreator {
         linearLayout2.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.suggestedLangpack, 0.2f));
         numberPicker2.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda227
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
-            public final String format(int i3) {
+            public final String format(int i2) {
                 String lambda$createPollCloseDatePickerDialog$149;
-                lambda$createPollCloseDatePickerDialog$149 = AlertsCreator.lambda$createPollCloseDatePickerDialog$149(i3);
+                lambda$createPollCloseDatePickerDialog$149 = AlertsCreator.lambda$createPollCloseDatePickerDialog$149(i2);
                 return lambda$createPollCloseDatePickerDialog$149;
             }
         });
@@ -6496,9 +6507,9 @@ public abstract class AlertsCreator {
         numberPicker3.setValue(0);
         numberPicker3.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda228
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
-            public final String format(int i3) {
+            public final String format(int i2) {
                 String lambda$createPollCloseDatePickerDialog$150;
-                lambda$createPollCloseDatePickerDialog$150 = AlertsCreator.lambda$createPollCloseDatePickerDialog$150(i3);
+                lambda$createPollCloseDatePickerDialog$150 = AlertsCreator.lambda$createPollCloseDatePickerDialog$150(i2);
                 return lambda$createPollCloseDatePickerDialog$150;
             }
         });
@@ -6550,16 +6561,18 @@ public abstract class AlertsCreator {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ String lambda$createPollCloseDatePickerDialog$147(long j, Calendar calendar, int i, int i2) {
-        if (i2 == 0) {
+    public static /* synthetic */ String lambda$createPollCloseDatePickerDialog$147(int i) {
+        if (i == 0) {
             return LocaleController.getString(R.string.MessageScheduleToday);
         }
-        long j2 = j + (i2 * 86400000);
-        calendar.setTimeInMillis(j2);
-        if (calendar.get(1) == i) {
-            return LocaleController.getInstance().getFormatterWeek().format(j2) + ", " + LocaleController.getInstance().getFormatterScheduleDay().format(j2);
+        Calendar calendar = Calendar.getInstance();
+        int i2 = calendar.get(1);
+        calendar.add(6, i);
+        long timeInMillis = calendar.getTimeInMillis();
+        if (calendar.get(1) == i2) {
+            return LocaleController.getInstance().getFormatterWeek().format(timeInMillis) + ", " + LocaleController.getInstance().getFormatterScheduleDay().format(timeInMillis);
         }
-        return LocaleController.getInstance().getFormatterScheduleYear().format(j2);
+        return LocaleController.getInstance().getFormatterScheduleYear().format(timeInMillis);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -6583,11 +6596,13 @@ public abstract class AlertsCreator {
         zArr[0] = false;
         boolean checkScheduleDate = checkScheduleDate(null, null, i, 3, numberPicker, numberPicker2, numberPicker3);
         checkPollCloseCustomDeadline(textView, numberPicker, numberPicker2, numberPicker3);
-        calendar.setTimeInMillis(System.currentTimeMillis() + (numberPicker.getValue() * 86400000));
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.add(6, numberPicker.getValue());
         calendar.set(11, numberPicker2.getValue());
         calendar.set(12, numberPicker3.getValue());
         if (checkScheduleDate) {
             calendar.set(13, 0);
+            calendar.set(14, 0);
         }
         scheduleDatePickerDelegate.didSelectDate(true, (int) (calendar.getTimeInMillis() / 1000), 0);
         builder.getDismissRunnable().run();
@@ -6678,11 +6693,7 @@ public abstract class AlertsCreator {
         linearLayout3.setOrientation(0);
         linearLayout3.setWeightSum(1.0f);
         linearLayout2.addView(linearLayout3, LayoutHelper.createLinear(-1, -2, 1.0f, 0, 0, 12, 0, 12));
-        final long currentTimeMillis = System.currentTimeMillis();
         final Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(currentTimeMillis);
-        final int i = calendar.get(1);
-        final int i2 = calendar.get(6);
         TextView textView2 = new TextView(context) { // from class: org.telegram.ui.Components.AlertsCreator.46
             @Override // android.widget.TextView, android.view.View
             public CharSequence getAccessibilityClassName() {
@@ -6695,15 +6706,15 @@ public abstract class AlertsCreator {
         numberPicker.setWrapSelectorWheel(false);
         numberPicker.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda153
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
-            public final String format(int i3) {
+            public final String format(int i) {
                 String lambda$createStatusUntilDatePickerDialog$154;
-                lambda$createStatusUntilDatePickerDialog$154 = AlertsCreator.lambda$createStatusUntilDatePickerDialog$154(currentTimeMillis, calendar, i, i2, i3);
+                lambda$createStatusUntilDatePickerDialog$154 = AlertsCreator.lambda$createStatusUntilDatePickerDialog$154(i);
                 return lambda$createStatusUntilDatePickerDialog$154;
             }
         });
         NumberPicker.OnValueChangeListener onValueChangeListener = new NumberPicker.OnValueChangeListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda154
             @Override // org.telegram.ui.Components.NumberPicker.OnValueChangeListener
-            public final void onValueChange(NumberPicker numberPicker4, int i3, int i4) {
+            public final void onValueChange(NumberPicker numberPicker4, int i, int i2) {
                 AlertsCreator.checkScheduleDate(null, null, 0, NumberPicker.this, numberPicker2, numberPicker3);
             }
         };
@@ -6713,9 +6724,9 @@ public abstract class AlertsCreator {
         linearLayout3.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.suggestedLangpack, 0.2f));
         numberPicker2.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda155
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
-            public final String format(int i3) {
+            public final String format(int i) {
                 String lambda$createStatusUntilDatePickerDialog$156;
-                lambda$createStatusUntilDatePickerDialog$156 = AlertsCreator.lambda$createStatusUntilDatePickerDialog$156(i3);
+                lambda$createStatusUntilDatePickerDialog$156 = AlertsCreator.lambda$createStatusUntilDatePickerDialog$156(i);
                 return lambda$createStatusUntilDatePickerDialog$156;
             }
         });
@@ -6725,9 +6736,9 @@ public abstract class AlertsCreator {
         numberPicker3.setValue(0);
         numberPicker3.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda156
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
-            public final String format(int i3) {
+            public final String format(int i) {
                 String lambda$createStatusUntilDatePickerDialog$157;
-                lambda$createStatusUntilDatePickerDialog$157 = AlertsCreator.lambda$createStatusUntilDatePickerDialog$157(i3);
+                lambda$createStatusUntilDatePickerDialog$157 = AlertsCreator.lambda$createStatusUntilDatePickerDialog$157(i);
                 return lambda$createStatusUntilDatePickerDialog$157;
             }
         });
@@ -6775,21 +6786,22 @@ public abstract class AlertsCreator {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ String lambda$createStatusUntilDatePickerDialog$154(long j, Calendar calendar, int i, int i2, int i3) {
-        if (i3 == 0) {
+    public static /* synthetic */ String lambda$createStatusUntilDatePickerDialog$154(int i) {
+        if (i == 0) {
             return LocaleController.getString(R.string.MessageScheduleToday);
         }
-        long j2 = j + (i3 * 86400000);
-        calendar.setTimeInMillis(j2);
-        int i4 = calendar.get(1);
-        int i5 = calendar.get(6);
-        if (i4 != i || i5 >= i2 + 7) {
-            if (i4 == i) {
-                return LocaleController.getInstance().getFormatterScheduleDay().format(j2);
+        Calendar calendar = Calendar.getInstance();
+        int i2 = calendar.get(1);
+        calendar.add(6, i);
+        long timeInMillis = calendar.getTimeInMillis();
+        int i3 = calendar.get(1);
+        if (i3 != i2 || i >= 7) {
+            if (i3 == i2) {
+                return LocaleController.getInstance().getFormatterScheduleDay().format(timeInMillis);
             }
-            return LocaleController.getInstance().getFormatterScheduleYear().format(j2);
+            return LocaleController.getInstance().getFormatterScheduleYear().format(timeInMillis);
         }
-        return LocaleController.getInstance().getFormatterWeek().format(j2) + ", " + LocaleController.getInstance().getFormatterScheduleDay().format(j2);
+        return LocaleController.getInstance().getFormatterWeek().format(timeInMillis) + ", " + LocaleController.getInstance().getFormatterScheduleDay().format(timeInMillis);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -6805,11 +6817,13 @@ public abstract class AlertsCreator {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$createStatusUntilDatePickerDialog$158(NumberPicker numberPicker, NumberPicker numberPicker2, NumberPicker numberPicker3, Calendar calendar, StatusUntilDatePickerDelegate statusUntilDatePickerDelegate, BottomSheet.Builder builder, View view) {
         boolean checkScheduleDate = checkScheduleDate(null, null, 0, numberPicker, numberPicker2, numberPicker3);
-        calendar.setTimeInMillis(System.currentTimeMillis() + (numberPicker.getValue() * 86400000));
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.add(6, numberPicker.getValue());
         calendar.set(11, numberPicker2.getValue());
         calendar.set(12, numberPicker3.getValue());
         if (checkScheduleDate) {
             calendar.set(13, 0);
+            calendar.set(14, 0);
         }
         statusUntilDatePickerDelegate.didSelectDate((int) (calendar.getTimeInMillis() / 1000));
         builder.getDismissRunnable().run();

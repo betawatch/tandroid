@@ -1,6 +1,8 @@
 package j$.time.chrono;
 
-import j$.time.LocalDateTime;
+import j$.time.Instant;
+import j$.time.ZoneId;
+import j$.time.temporal.Temporal;
 import j$.util.Objects;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.Iterator;
@@ -22,16 +24,16 @@ public abstract class a implements l {
         new Locale("ja", "JP", "JP");
     }
 
-    static l j(a aVar, String str) {
-        String q;
+    static l l(a aVar, String str) {
+        String r;
         l lVar = (l) a.putIfAbsent(str, aVar);
-        if (lVar == null && (q = aVar.q()) != null) {
-            b.putIfAbsent(q, aVar);
+        if (lVar == null && (r = aVar.r()) != null) {
+            b.putIfAbsent(r, aVar);
         }
         return lVar;
     }
 
-    static l i(String str) {
+    static l k(String str) {
         Objects.requireNonNull(str, "id");
         while (true) {
             ConcurrentHashMap concurrentHashMap = a;
@@ -46,29 +48,29 @@ public abstract class a implements l {
                 Iterator it = ServiceLoader.load(l.class).iterator();
                 while (it.hasNext()) {
                     l lVar2 = (l) it.next();
-                    if (str.equals(lVar2.getId()) || str.equals(lVar2.q())) {
+                    if (str.equals(lVar2.getId()) || str.equals(lVar2.r())) {
                         return lVar2;
                     }
                 }
                 throw new j$.time.c("Unknown chronology: " + str);
             }
             o oVar = o.o;
-            j(oVar, oVar.getId());
+            l(oVar, oVar.getId());
             v vVar = v.d;
-            j(vVar, vVar.getId());
+            l(vVar, vVar.getId());
             A a2 = A.d;
-            j(a2, a2.getId());
+            l(a2, a2.getId());
             G g = G.d;
-            j(g, g.getId());
+            l(g, g.getId());
             Iterator it2 = ServiceLoader.load(a.class, null).iterator();
             while (it2.hasNext()) {
                 a aVar = (a) it2.next();
                 if (!aVar.getId().equals("ISO")) {
-                    j(aVar, aVar.getId());
+                    l(aVar, aVar.getId());
                 }
             }
             s sVar = s.d;
-            j(sVar, sVar.getId());
+            l(sVar, sVar.getId());
         }
     }
 
@@ -76,11 +78,28 @@ public abstract class a implements l {
     }
 
     @Override // j$.time.chrono.l
-    public ChronoLocalDateTime n(LocalDateTime localDateTime) {
+    public ChronoLocalDateTime x(Temporal temporal) {
         try {
-            return k(localDateTime).t(j$.time.j.D(localDateTime));
+            return m(temporal).u(j$.time.j.K(temporal));
         } catch (j$.time.c e) {
-            throw new j$.time.c("Unable to obtain ChronoLocalDateTime from TemporalAccessor: " + LocalDateTime.class, e);
+            throw new j$.time.c("Unable to obtain ChronoLocalDateTime from TemporalAccessor: " + temporal.getClass(), e);
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r5v6, types: [j$.time.chrono.ChronoZonedDateTime] */
+    @Override // j$.time.chrono.l
+    public ChronoZonedDateTime v(Temporal temporal) {
+        try {
+            ZoneId I = ZoneId.I(temporal);
+            try {
+                temporal = D(Instant.J(temporal), I);
+                return temporal;
+            } catch (j$.time.c unused) {
+                return k.I(I, null, f.I(this, x(temporal)));
+            }
+        } catch (j$.time.c e) {
+            throw new j$.time.c("Unable to obtain ChronoZonedDateTime from TemporalAccessor: " + temporal.getClass(), e);
         }
     }
 

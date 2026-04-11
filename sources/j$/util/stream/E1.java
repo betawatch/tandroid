@@ -28,25 +28,25 @@ final class E1 extends w0 {
     public final Object b(b bVar, Spliterator spliterator) {
         switch (this.h) {
             case 0:
-                if (!a3.SIZED.m(bVar.J())) {
+                if (!a3.SIZED.o(bVar.J())) {
                     break;
                 } else {
                     break;
                 }
             case 1:
-                if (!a3.SIZED.m(bVar.J())) {
+                if (!a3.SIZED.o(bVar.J())) {
                     break;
                 } else {
                     break;
                 }
             case 2:
-                if (!a3.SIZED.m(bVar.J())) {
+                if (!a3.SIZED.o(bVar.J())) {
                     break;
                 } else {
                     break;
                 }
             default:
-                if (!a3.SIZED.m(bVar.J())) {
+                if (!a3.SIZED.o(bVar.J())) {
                     break;
                 } else {
                     break;
@@ -59,25 +59,25 @@ final class E1 extends w0 {
     public final Object c(b bVar, Spliterator spliterator) {
         switch (this.h) {
             case 0:
-                if (!a3.SIZED.m(bVar.J())) {
+                if (!a3.SIZED.o(bVar.J())) {
                     break;
                 } else {
                     break;
                 }
             case 1:
-                if (!a3.SIZED.m(bVar.J())) {
+                if (!a3.SIZED.o(bVar.J())) {
                     break;
                 } else {
                     break;
                 }
             case 2:
-                if (!a3.SIZED.m(bVar.J())) {
+                if (!a3.SIZED.o(bVar.J())) {
                     break;
                 } else {
                     break;
                 }
             default:
-                if (!a3.SIZED.m(bVar.J())) {
+                if (!a3.SIZED.o(bVar.J())) {
                     break;
                 } else {
                     break;

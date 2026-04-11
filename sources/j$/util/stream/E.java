@@ -33,6 +33,6 @@ final class E implements G3 {
 
     @Override // j$.util.stream.G3
     public final Object c(b bVar, Spliterator spliterator) {
-        return new K(this, a3.ORDERED.m(bVar.J()), bVar, spliterator).invoke();
+        return new K(this, a3.ORDERED.o(bVar.J()), bVar, spliterator).invoke();
     }
 }

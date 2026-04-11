@@ -4,10 +4,13 @@ import j$.time.Instant;
 import j$.time.ZoneId;
 import j$.time.ZoneOffset;
 import j$.time.chrono.b;
+import j$.time.temporal.Temporal;
 
 /* loaded from: classes2.dex */
-public interface ChronoZonedDateTime<D extends b> extends j$.time.temporal.m, Comparable<ChronoZonedDateTime<?>> {
-    long A();
+public interface ChronoZonedDateTime<D extends b> extends Temporal, Comparable<ChronoZonedDateTime<?>> {
+    ChronoLocalDateTime B();
+
+    long H();
 
     l a();
 
@@ -15,13 +18,13 @@ public interface ChronoZonedDateTime<D extends b> extends j$.time.temporal.m, Co
 
     b c();
 
-    ZoneOffset g();
+    ZoneOffset h();
 
-    ChronoZonedDateTime h(ZoneId zoneId);
+    ChronoZonedDateTime i(ZoneId zoneId);
 
-    ZoneId p();
+    ChronoZonedDateTime j(ZoneId zoneId);
+
+    ZoneId q();
 
     Instant toInstant();
-
-    ChronoLocalDateTime x();
 }

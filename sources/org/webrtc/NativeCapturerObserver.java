@@ -24,7 +24,7 @@ class NativeCapturerObserver implements CapturerObserver {
     @Override // org.webrtc.CapturerObserver
     public void onFrameCaptured(VideoFrame videoFrame) {
         VideoProcessor.FrameAdaptationParameters adaptFrame = this.nativeAndroidVideoTrackSource.adaptFrame(videoFrame);
-        if (adaptFrame == null) {
+        if (adaptFrame == null || adaptFrame.drop) {
             return;
         }
         VideoFrame.Buffer cropAndScale = videoFrame.getBuffer().cropAndScale(adaptFrame.cropX, adaptFrame.cropY, adaptFrame.cropWidth, adaptFrame.cropHeight, adaptFrame.scaleWidth, adaptFrame.scaleHeight);

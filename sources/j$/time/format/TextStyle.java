@@ -15,7 +15,7 @@ public enum TextStyle {
         this.a = i;
     }
 
-    final int i() {
+    final int k() {
         return this.a;
     }
 }

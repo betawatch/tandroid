@@ -6,39 +6,39 @@ import java.util.Locale;
 
 /* loaded from: classes2.dex */
 final class r {
-    private j$.time.temporal.o a;
+    private j$.time.temporal.m a;
     private DateTimeFormatter b;
     private int c;
 
-    r(j$.time.temporal.o oVar, DateTimeFormatter dateTimeFormatter) {
+    r(j$.time.temporal.m mVar, DateTimeFormatter dateTimeFormatter) {
         j$.time.chrono.l b = dateTimeFormatter.b();
         if (b != null) {
-            j$.time.chrono.l lVar = (j$.time.chrono.l) oVar.u(j$.time.temporal.n.e());
-            ZoneId zoneId = (ZoneId) oVar.u(j$.time.temporal.n.k());
+            j$.time.chrono.l lVar = (j$.time.chrono.l) mVar.w(j$.time.temporal.l.e());
+            ZoneId zoneId = (ZoneId) mVar.w(j$.time.temporal.l.k());
             j$.time.chrono.b bVar = null;
             b = Objects.equals(b, lVar) ? null : b;
             Objects.equals(null, zoneId);
             if (b != null) {
                 j$.time.chrono.l lVar2 = b != null ? b : lVar;
                 if (b != null) {
-                    if (oVar.f(j$.time.temporal.a.EPOCH_DAY)) {
-                        bVar = lVar2.k(oVar);
+                    if (mVar.g(j$.time.temporal.a.EPOCH_DAY)) {
+                        bVar = lVar2.m(mVar);
                     } else if (b != j$.time.chrono.s.d || lVar != null) {
                         for (j$.time.temporal.a aVar : j$.time.temporal.a.values()) {
-                            if (aVar.u() && oVar.f(aVar)) {
-                                throw new j$.time.c("Unable to apply override chronology '" + b + "' because the temporal object being formatted contains date fields but does not represent a whole date: " + oVar);
+                            if (aVar.w() && mVar.g(aVar)) {
+                                throw new j$.time.c("Unable to apply override chronology '" + b + "' because the temporal object being formatted contains date fields but does not represent a whole date: " + mVar);
                             }
                         }
                     }
                 }
-                oVar = new q(bVar, oVar, lVar2, zoneId);
+                mVar = new q(bVar, mVar, lVar2, zoneId);
             }
         }
-        this.a = oVar;
+        this.a = mVar;
         this.b = dateTimeFormatter;
     }
 
-    final j$.time.temporal.o d() {
+    final j$.time.temporal.m d() {
         return this.a;
     }
 
@@ -58,20 +58,20 @@ final class r {
         this.c--;
     }
 
-    final Object f(j$.time.temporal.t tVar) {
-        j$.time.temporal.o oVar = this.a;
-        Object u = oVar.u(tVar);
-        if (u != null || this.c != 0) {
-            return u;
+    final Object f(j$.time.temporal.r rVar) {
+        j$.time.temporal.m mVar = this.a;
+        Object w = mVar.w(rVar);
+        if (w != null || this.c != 0) {
+            return w;
         }
-        throw new j$.time.c("Unable to extract " + tVar + " from temporal " + oVar);
+        throw new j$.time.c("Unable to extract " + rVar + " from temporal " + mVar);
     }
 
-    final Long e(j$.time.temporal.r rVar) {
+    final Long e(j$.time.temporal.p pVar) {
         int i = this.c;
-        j$.time.temporal.o oVar = this.a;
-        if (i <= 0 || oVar.f(rVar)) {
-            return Long.valueOf(oVar.r(rVar));
+        j$.time.temporal.m mVar = this.a;
+        if (i <= 0 || mVar.g(pVar)) {
+            return Long.valueOf(mVar.s(pVar));
         }
         return null;
     }

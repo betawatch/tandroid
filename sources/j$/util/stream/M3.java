@@ -16,7 +16,7 @@ final class M3 extends d2 implements Z3 {
 
     @Override // j$.util.stream.b
     final Spliterator O(b bVar, Spliterator spliterator) {
-        return a3.ORDERED.m(bVar.J()) ? N(bVar, spliterator, new b0(11)).spliterator() : new g4(bVar.W(spliterator), this.m, 0);
+        return a3.ORDERED.o(bVar.J()) ? N(bVar, spliterator, new b0(11)).spliterator() : new g4(bVar.W(spliterator), this.m, 0);
     }
 
     @Override // j$.util.stream.b

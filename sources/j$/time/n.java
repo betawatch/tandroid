@@ -1,5 +1,6 @@
 package j$.time;
 
+import j$.time.temporal.Temporal;
 import j$.util.Objects;
 import java.io.DataOutput;
 import java.io.InvalidObjectException;
@@ -9,7 +10,7 @@ import java.io.Serializable;
 import java.util.Locale;
 
 /* loaded from: classes2.dex */
-public final class n implements j$.time.temporal.o, j$.time.temporal.p, Comparable, Serializable {
+public final class n implements j$.time.temporal.m, j$.time.temporal.n, Comparable, Serializable {
     private static final long serialVersionUID = -939150713474957432L;
     private final int a;
     private final int b;
@@ -35,64 +36,64 @@ public final class n implements j$.time.temporal.o, j$.time.temporal.p, Comparab
         this.b = i2;
     }
 
-    @Override // j$.time.temporal.o
-    public final boolean f(j$.time.temporal.r rVar) {
-        return rVar instanceof j$.time.temporal.a ? rVar == j$.time.temporal.a.MONTH_OF_YEAR || rVar == j$.time.temporal.a.DAY_OF_MONTH : rVar != null && rVar.l(this);
+    @Override // j$.time.temporal.m
+    public final boolean g(j$.time.temporal.p pVar) {
+        return pVar instanceof j$.time.temporal.a ? pVar == j$.time.temporal.a.MONTH_OF_YEAR || pVar == j$.time.temporal.a.DAY_OF_MONTH : pVar != null && pVar.n(this);
     }
 
-    @Override // j$.time.temporal.o
-    public final j$.time.temporal.w m(j$.time.temporal.r rVar) {
-        if (rVar == j$.time.temporal.a.MONTH_OF_YEAR) {
-            return rVar.i();
+    @Override // j$.time.temporal.m
+    public final j$.time.temporal.u o(j$.time.temporal.p pVar) {
+        if (pVar == j$.time.temporal.a.MONTH_OF_YEAR) {
+            return pVar.k();
         }
-        if (rVar != j$.time.temporal.a.DAY_OF_MONTH) {
-            return j$.time.temporal.n.d(this, rVar);
+        if (pVar != j$.time.temporal.a.DAY_OF_MONTH) {
+            return j$.time.temporal.l.d(this, pVar);
         }
-        l E = l.E(this.a);
-        E.getClass();
-        int i = k.a[E.ordinal()];
-        return j$.time.temporal.w.k(i != 1 ? (i == 2 || i == 3 || i == 4 || i == 5) ? 30 : 31 : 28, l.E(r5).D());
+        l L = l.L(this.a);
+        L.getClass();
+        int i = k.a[L.ordinal()];
+        return j$.time.temporal.u.k(i != 1 ? (i == 2 || i == 3 || i == 4 || i == 5) ? 30 : 31 : 28, l.L(r5).K());
     }
 
-    @Override // j$.time.temporal.o
-    public final int j(j$.time.temporal.r rVar) {
-        return m(rVar).a(r(rVar), rVar);
+    @Override // j$.time.temporal.m
+    public final int l(j$.time.temporal.p pVar) {
+        return o(pVar).a(s(pVar), pVar);
     }
 
-    @Override // j$.time.temporal.o
-    public final long r(j$.time.temporal.r rVar) {
+    @Override // j$.time.temporal.m
+    public final long s(j$.time.temporal.p pVar) {
         int i;
-        if (!(rVar instanceof j$.time.temporal.a)) {
-            return rVar.j(this);
+        if (!(pVar instanceof j$.time.temporal.a)) {
+            return pVar.l(this);
         }
-        int i2 = m.a[((j$.time.temporal.a) rVar).ordinal()];
+        int i2 = m.a[((j$.time.temporal.a) pVar).ordinal()];
         if (i2 == 1) {
             i = this.b;
         } else {
             if (i2 != 2) {
-                throw new j$.time.temporal.v(d.a("Unsupported field: ", rVar));
+                throw new j$.time.temporal.t(d.a("Unsupported field: ", pVar));
             }
             i = this.a;
         }
         return i;
     }
 
-    @Override // j$.time.temporal.o
-    public final Object u(j$.time.temporal.t tVar) {
-        if (tVar == j$.time.temporal.n.e()) {
+    @Override // j$.time.temporal.m
+    public final Object w(j$.time.temporal.r rVar) {
+        if (rVar == j$.time.temporal.l.e()) {
             return j$.time.chrono.s.d;
         }
-        return j$.time.temporal.n.c(this, tVar);
+        return j$.time.temporal.l.c(this, rVar);
     }
 
-    @Override // j$.time.temporal.p
-    public final j$.time.temporal.m v(j$.time.temporal.m mVar) {
-        if (!((j$.time.chrono.a) j$.time.chrono.h.p(mVar)).equals(j$.time.chrono.s.d)) {
+    @Override // j$.time.temporal.n
+    public final Temporal z(Temporal temporal) {
+        if (!((j$.time.chrono.a) j$.time.chrono.h.q(temporal)).equals(j$.time.chrono.s.d)) {
             throw new c("Adjustment only supported on ISO date-time");
         }
-        j$.time.temporal.m d = mVar.d(this.a, j$.time.temporal.a.MONTH_OF_YEAR);
+        Temporal d = temporal.d(this.a, j$.time.temporal.a.MONTH_OF_YEAR);
         j$.time.temporal.a aVar = j$.time.temporal.a.DAY_OF_MONTH;
-        return d.d(Math.min(d.m(aVar).d(), this.b), aVar);
+        return d.d(Math.min(d.o(aVar).d(), this.b), aVar);
     }
 
     public final boolean equals(Object obj) {
@@ -123,27 +124,27 @@ public final class n implements j$.time.temporal.o, j$.time.temporal.p, Comparab
     }
 
     private Object writeReplace() {
-        return new q((byte) 13, this);
+        return new r((byte) 13, this);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {
         throw new InvalidObjectException("Deserialization via serialization delegate");
     }
 
-    final void C(DataOutput dataOutput) {
+    final void J(DataOutput dataOutput) {
         dataOutput.writeByte(this.a);
         dataOutput.writeByte(this.b);
     }
 
-    static n B(ObjectInput objectInput) {
+    static n I(ObjectInput objectInput) {
         byte readByte = objectInput.readByte();
         byte readByte2 = objectInput.readByte();
-        l E = l.E(readByte);
-        Objects.requireNonNull(E, "month");
-        j$.time.temporal.a.DAY_OF_MONTH.B(readByte2);
-        if (readByte2 > E.D()) {
-            throw new c("Illegal value for DayOfMonth field, value " + ((int) readByte2) + " is not valid for month " + E.name());
+        l L = l.L(readByte);
+        Objects.requireNonNull(L, "month");
+        j$.time.temporal.a.DAY_OF_MONTH.I(readByte2);
+        if (readByte2 > L.K()) {
+            throw new c("Illegal value for DayOfMonth field, value " + ((int) readByte2) + " is not valid for month " + L.name());
         }
-        return new n(E.getValue(), readByte2);
+        return new n(L.getValue(), readByte2);
     }
 }

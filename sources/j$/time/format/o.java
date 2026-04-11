@@ -20,7 +20,7 @@ final class o extends n {
     private final TextStyle c;
 
     o(TextStyle textStyle) {
-        super(j$.time.temporal.n.j(), "ZoneText(" + textStyle + ")");
+        super(j$.time.temporal.l.j(), "ZoneText(" + textStyle + ")");
         new HashMap();
         new HashMap();
         this.c = (TextStyle) Objects.requireNonNull(textStyle, "textStyle");
@@ -32,28 +32,28 @@ final class o extends n {
     /* JADX WARN: Type inference failed for: r0v3 */
     /* JADX WARN: Type inference failed for: r0v9 */
     @Override // j$.time.format.n, j$.time.format.f
-    public final boolean i(r rVar, StringBuilder sb) {
+    public final boolean k(r rVar, StringBuilder sb) {
         ?? r0;
         String[] strArr;
-        ZoneId zoneId = (ZoneId) rVar.f(j$.time.temporal.n.k());
+        ZoneId zoneId = (ZoneId) rVar.f(j$.time.temporal.l.k());
         if (zoneId == null) {
             return false;
         }
         String id = zoneId.getId();
         if (!(zoneId instanceof ZoneOffset)) {
-            j$.time.temporal.o d2 = rVar.d();
+            j$.time.temporal.m d2 = rVar.d();
             String str = null;
             Map map = null;
-            if (d2.f(j$.time.temporal.a.INSTANT_SECONDS)) {
-                r0 = zoneId.getRules().g(Instant.C(d2));
+            if (d2.g(j$.time.temporal.a.INSTANT_SECONDS)) {
+                r0 = zoneId.getRules().g(Instant.J(d2));
             } else {
                 j$.time.temporal.a aVar = j$.time.temporal.a.EPOCH_DAY;
-                if (d2.f(aVar)) {
+                if (d2.g(aVar)) {
                     j$.time.temporal.a aVar2 = j$.time.temporal.a.NANO_OF_DAY;
-                    if (d2.f(aVar2)) {
-                        LocalDateTime J = LocalDateTime.J(LocalDate.N(d2.r(aVar)), j$.time.j.J(d2.r(aVar2)));
-                        if (zoneId.getRules().e(J) == null) {
-                            r0 = zoneId.getRules().g(Instant.G(ZonedDateTime.B(J, zoneId, null).A(), r0.b().G()));
+                    if (d2.g(aVar2)) {
+                        LocalDateTime Q = LocalDateTime.Q(LocalDate.V(d2.s(aVar)), j$.time.j.Q(d2.s(aVar2)));
+                        if (zoneId.getRules().e(Q) == null) {
+                            r0 = zoneId.getRules().g(Instant.M(ZonedDateTime.K(Q, zoneId, null).H(), r0.b().N()));
                         }
                     }
                 }
@@ -76,11 +76,11 @@ final class o extends n {
                     strArr = strArr2;
                 }
                 if (r0 == 0) {
-                    str = strArr[textStyle2.i() + 1];
+                    str = strArr[textStyle2.k() + 1];
                 } else if (r0 == 1) {
-                    str = strArr[textStyle2.i() + 3];
+                    str = strArr[textStyle2.k() + 3];
                 } else {
-                    str = strArr[textStyle2.i() + 5];
+                    str = strArr[textStyle2.k() + 5];
                 }
             }
             if (str != null) {

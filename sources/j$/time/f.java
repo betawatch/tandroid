@@ -1,43 +1,45 @@
 package j$.time;
 
+import j$.time.temporal.ChronoUnit;
+
 /* loaded from: classes2.dex */
 abstract /* synthetic */ class f {
     static final /* synthetic */ int[] a;
     static final /* synthetic */ int[] b;
 
     static {
-        int[] iArr = new int[j$.time.temporal.b.values().length];
+        int[] iArr = new int[ChronoUnit.values().length];
         b = iArr;
         try {
-            iArr[j$.time.temporal.b.NANOS.ordinal()] = 1;
+            iArr[ChronoUnit.NANOS.ordinal()] = 1;
         } catch (NoSuchFieldError unused) {
         }
         try {
-            b[j$.time.temporal.b.MICROS.ordinal()] = 2;
+            b[ChronoUnit.MICROS.ordinal()] = 2;
         } catch (NoSuchFieldError unused2) {
         }
         try {
-            b[j$.time.temporal.b.MILLIS.ordinal()] = 3;
+            b[ChronoUnit.MILLIS.ordinal()] = 3;
         } catch (NoSuchFieldError unused3) {
         }
         try {
-            b[j$.time.temporal.b.SECONDS.ordinal()] = 4;
+            b[ChronoUnit.SECONDS.ordinal()] = 4;
         } catch (NoSuchFieldError unused4) {
         }
         try {
-            b[j$.time.temporal.b.MINUTES.ordinal()] = 5;
+            b[ChronoUnit.MINUTES.ordinal()] = 5;
         } catch (NoSuchFieldError unused5) {
         }
         try {
-            b[j$.time.temporal.b.HOURS.ordinal()] = 6;
+            b[ChronoUnit.HOURS.ordinal()] = 6;
         } catch (NoSuchFieldError unused6) {
         }
         try {
-            b[j$.time.temporal.b.HALF_DAYS.ordinal()] = 7;
+            b[ChronoUnit.HALF_DAYS.ordinal()] = 7;
         } catch (NoSuchFieldError unused7) {
         }
         try {
-            b[j$.time.temporal.b.DAYS.ordinal()] = 8;
+            b[ChronoUnit.DAYS.ordinal()] = 8;
         } catch (NoSuchFieldError unused8) {
         }
         int[] iArr2 = new int[j$.time.temporal.a.values().length];

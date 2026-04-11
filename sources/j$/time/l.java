@@ -1,11 +1,13 @@
 package j$.time;
 
+import j$.time.temporal.ChronoUnit;
+import j$.time.temporal.Temporal;
 import org.telegram.messenger.NotificationCenter;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* loaded from: classes2.dex */
-public final class l implements j$.time.temporal.o, j$.time.temporal.p {
+public final class l implements j$.time.temporal.m, j$.time.temporal.n {
     public static final l APRIL;
     public static final l AUGUST;
     public static final l DECEMBER;
@@ -58,7 +60,7 @@ public final class l implements j$.time.temporal.o, j$.time.temporal.p {
         a = values();
     }
 
-    public static l E(int i) {
+    public static l L(int i) {
         if (i < 1 || i > 12) {
             throw new c("Invalid value for MonthOfYear: " + i);
         }
@@ -69,48 +71,48 @@ public final class l implements j$.time.temporal.o, j$.time.temporal.p {
         return ordinal() + 1;
     }
 
-    @Override // j$.time.temporal.o
-    public final boolean f(j$.time.temporal.r rVar) {
-        return rVar instanceof j$.time.temporal.a ? rVar == j$.time.temporal.a.MONTH_OF_YEAR : rVar != null && rVar.l(this);
+    @Override // j$.time.temporal.m
+    public final boolean g(j$.time.temporal.p pVar) {
+        return pVar instanceof j$.time.temporal.a ? pVar == j$.time.temporal.a.MONTH_OF_YEAR : pVar != null && pVar.n(this);
     }
 
-    @Override // j$.time.temporal.o
-    public final j$.time.temporal.w m(j$.time.temporal.r rVar) {
-        if (rVar == j$.time.temporal.a.MONTH_OF_YEAR) {
-            return rVar.i();
+    @Override // j$.time.temporal.m
+    public final j$.time.temporal.u o(j$.time.temporal.p pVar) {
+        if (pVar == j$.time.temporal.a.MONTH_OF_YEAR) {
+            return pVar.k();
         }
-        return j$.time.temporal.n.d(this, rVar);
+        return j$.time.temporal.l.d(this, pVar);
     }
 
-    @Override // j$.time.temporal.o
-    public final int j(j$.time.temporal.r rVar) {
-        if (rVar == j$.time.temporal.a.MONTH_OF_YEAR) {
+    @Override // j$.time.temporal.m
+    public final int l(j$.time.temporal.p pVar) {
+        if (pVar == j$.time.temporal.a.MONTH_OF_YEAR) {
             return getValue();
         }
-        return j$.time.temporal.n.a(this, rVar);
+        return j$.time.temporal.l.a(this, pVar);
     }
 
-    @Override // j$.time.temporal.o
-    public final long r(j$.time.temporal.r rVar) {
-        if (rVar == j$.time.temporal.a.MONTH_OF_YEAR) {
+    @Override // j$.time.temporal.m
+    public final long s(j$.time.temporal.p pVar) {
+        if (pVar == j$.time.temporal.a.MONTH_OF_YEAR) {
             return getValue();
         }
-        if (rVar instanceof j$.time.temporal.a) {
-            throw new j$.time.temporal.v(d.a("Unsupported field: ", rVar));
+        if (pVar instanceof j$.time.temporal.a) {
+            throw new j$.time.temporal.t(d.a("Unsupported field: ", pVar));
         }
-        return rVar.j(this);
+        return pVar.l(this);
     }
 
-    public final l F() {
+    public final l M() {
         return a[((((int) 1) + 12) + ordinal()) % 12];
     }
 
-    public final int C(boolean z) {
+    public final int J(boolean z) {
         int i = k.a[ordinal()];
         return i != 1 ? (i == 2 || i == 3 || i == 4 || i == 5) ? 30 : 31 : z ? 29 : 28;
     }
 
-    public final int D() {
+    public final int K() {
         int i = k.a[ordinal()];
         if (i != 1) {
             return (i == 2 || i == 3 || i == 4 || i == 5) ? 30 : 31;
@@ -118,7 +120,7 @@ public final class l implements j$.time.temporal.o, j$.time.temporal.p {
         return 29;
     }
 
-    public final int B(boolean z) {
+    public final int I(boolean z) {
         switch (k.a[ordinal()]) {
             case 1:
                 return 32;
@@ -147,22 +149,22 @@ public final class l implements j$.time.temporal.o, j$.time.temporal.p {
         }
     }
 
-    @Override // j$.time.temporal.o
-    public final Object u(j$.time.temporal.t tVar) {
-        if (tVar == j$.time.temporal.n.e()) {
+    @Override // j$.time.temporal.m
+    public final Object w(j$.time.temporal.r rVar) {
+        if (rVar == j$.time.temporal.l.e()) {
             return j$.time.chrono.s.d;
         }
-        if (tVar == j$.time.temporal.n.i()) {
-            return j$.time.temporal.b.MONTHS;
+        if (rVar == j$.time.temporal.l.i()) {
+            return ChronoUnit.MONTHS;
         }
-        return j$.time.temporal.n.c(this, tVar);
+        return j$.time.temporal.l.c(this, rVar);
     }
 
-    @Override // j$.time.temporal.p
-    public final j$.time.temporal.m v(j$.time.temporal.m mVar) {
-        if (!((j$.time.chrono.a) j$.time.chrono.h.p(mVar)).equals(j$.time.chrono.s.d)) {
+    @Override // j$.time.temporal.n
+    public final Temporal z(Temporal temporal) {
+        if (!((j$.time.chrono.a) j$.time.chrono.h.q(temporal)).equals(j$.time.chrono.s.d)) {
             throw new c("Adjustment only supported on ISO date-time");
         }
-        return mVar.d(getValue(), j$.time.temporal.a.MONTH_OF_YEAR);
+        return temporal.d(getValue(), j$.time.temporal.a.MONTH_OF_YEAR);
     }
 }

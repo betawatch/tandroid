@@ -50,7 +50,7 @@ public abstract /* synthetic */ class w0 implements G3 {
 
     public static Stream f0(Spliterator spliterator, boolean z) {
         Objects.requireNonNull(spliterator);
-        return new c2(spliterator, a3.l(spliterator), z);
+        return new c2(spliterator, a3.n(spliterator), z);
     }
 
     static Spliterator C(b3 b3Var, Spliterator spliterator, long j, long j2) {
@@ -146,7 +146,7 @@ public abstract /* synthetic */ class w0 implements G3 {
     }
 
     public static IntStream T(j$.util.Z z) {
-        return new Y(z, a3.l(z), false);
+        return new Y(z, a3.n(z), false);
     }
 
     public static u0 b0(t0 t0Var) {
@@ -189,7 +189,7 @@ public abstract /* synthetic */ class w0 implements G3 {
     }
 
     public static LongStream V(j$.util.c0 c0Var) {
-        return new h0(c0Var, a3.l(c0Var), false);
+        return new h0(c0Var, a3.n(c0Var), false);
     }
 
     public static void i(l2 l2Var, Long l) {
@@ -243,7 +243,7 @@ public abstract /* synthetic */ class w0 implements G3 {
     }
 
     public static D K(j$.util.W w) {
-        return new y(w, a3.l(w), false);
+        return new y(w, a3.n(w), false);
     }
 
     static x0 J(long j) {
