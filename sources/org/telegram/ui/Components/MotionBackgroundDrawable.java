@@ -1023,7 +1023,7 @@ public class MotionBackgroundDrawable extends Drawable {
                     this.paint2.setAlpha((int) ((Math.abs(this.intensity) / 100.0f) * this.alpha * this.patternAlpha));
                     this.rect.set(bounds.left, bounds.top, bounds.right, bounds.bottom);
                     if (z) {
-                        Paint paint = this.motionBackgroundPaint.getPaint(this.currentBitmap, this.patternBitmap, this.patternColor, (int) (this.alpha * this.patternAlpha), this.intensity);
+                        Paint paint = this.motionBackgroundPaint.getPaint(this.currentBitmap, this.patternBitmap, this.patternColor, (int) (this.alpha * this.patternAlpha), this.intensity, canvas.isHardwareAccelerated());
                         this.motionBackgroundPaint.applyPatternMatrix(this.matrix);
                         this.motionBackgroundPaint.applyGradientMatrix(this.rect);
                         RectF rectF = this.rect;
@@ -1084,7 +1084,7 @@ public class MotionBackgroundDrawable extends Drawable {
                 this.paint2.setColorFilter(this.patternColorFilter);
                 this.paint2.setAlpha((int) ((Math.abs(this.intensity) / 100.0f) * this.alpha * this.patternAlpha));
                 if (z) {
-                    Paint paint3 = this.motionBackgroundPaint.getPaint(this.currentBitmap, this.patternBitmap, this.patternColor, (int) (this.alpha * this.patternAlpha), this.intensity);
+                    Paint paint3 = this.motionBackgroundPaint.getPaint(this.currentBitmap, this.patternBitmap, this.patternColor, (int) (this.alpha * this.patternAlpha), this.intensity, canvas.isHardwareAccelerated());
                     this.motionBackgroundPaint.applyPatternMatrix(this.rect);
                     this.motionBackgroundPaint.applyGradientMatrix(this.rect);
                     canvas.drawRect(this.rect, paint3);

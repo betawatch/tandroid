@@ -6,6 +6,7 @@ import android.graphics.RenderNode;
 import android.graphics.RuntimeShader;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
+import org.telegram.ui.Components.MotionBackgroundPaint$RuntimeShaderState$$ExternalSyntheticApiModelOutline0;
 
 /* loaded from: classes5.dex */
 public class LiquidGlassEffect {
@@ -30,7 +31,7 @@ public class LiquidGlassEffect {
     public LiquidGlassEffect(RenderNode renderNode) {
         RenderEffect createRuntimeShaderEffect;
         this.node = renderNode;
-        RuntimeShader m = LiquidGlassEffect$$ExternalSyntheticApiModelOutline0.m(AndroidUtilities.readRes(R.raw.liquid_glass_shader));
+        RuntimeShader m = MotionBackgroundPaint$RuntimeShaderState$$ExternalSyntheticApiModelOutline0.m(AndroidUtilities.readRes(R.raw.liquid_glass_shader));
         this.shader = m;
         createRuntimeShaderEffect = RenderEffect.createRuntimeShaderEffect(m, "img");
         this.effect = createRuntimeShaderEffect;

@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationBadge;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.blur3.LiquidGlassEffect$$ExternalSyntheticApiModelOutline0;
+import org.telegram.ui.Components.MotionBackgroundPaint$RuntimeShaderState$$ExternalSyntheticApiModelOutline0;
 
 /* loaded from: classes5.dex */
 public class SuperRipple extends ISuperRipple {
@@ -55,7 +55,7 @@ public class SuperRipple extends ISuperRipple {
         this.centerX = new float[7];
         this.centerY = new float[7];
         this.intensity = new float[7];
-        RuntimeShader m = LiquidGlassEffect$$ExternalSyntheticApiModelOutline0.m(AndroidUtilities.readRes(R.raw.superripple_effect));
+        RuntimeShader m = MotionBackgroundPaint$RuntimeShaderState$$ExternalSyntheticApiModelOutline0.m(AndroidUtilities.readRes(R.raw.superripple_effect));
         this.shader = m;
         setupSizeUniforms(true);
         createRuntimeShaderEffect = RenderEffect.createRuntimeShaderEffect(m, "img");
@@ -148,7 +148,7 @@ public class SuperRipple extends ISuperRipple {
         float max = (Math.max(Math.max(MathUtils.distance(0.0f, 0.0f, f, f2), MathUtils.distance(this.view.getWidth(), 0.0f, f, f2)), Math.max(MathUtils.distance(0.0f, this.view.getHeight(), f, f2), MathUtils.distance(this.view.getWidth(), this.view.getHeight(), f, f2))) * 2.0f) / (AndroidUtilities.density * 1200.0f);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, max);
         final Effect effect = new Effect(f, f2, f3, ofFloat);
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.SuperRipple$$ExternalSyntheticLambda3
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.SuperRipple$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                 SuperRipple.this.lambda$animate$0(effect, valueAnimator);
