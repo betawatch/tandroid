@@ -5620,18 +5620,18 @@ public abstract class Theme {
         }
 
         /* JADX WARN: Can't wrap try/catch for region: R(15:7|(1:58)(3:(1:12)|13|(1:15))|16|(1:22)|23|(1:29)|(1:33)|(1:35)(1:(7:56|(3:38|(1:40)(1:53)|41)(1:54)|42|43|(1:45)(1:49)|46|47)(1:57))|36|(0)(0)|42|43|(0)(0)|46|47) */
-        /* JADX WARN: Code restructure failed: missing block: B:50:0x0121, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:50:0x0123, code lost:
         
             r0 = th;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:52:0x0131, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:52:0x0133, code lost:
         
             org.telegram.messenger.FileLog.e(r0);
          */
-        /* JADX WARN: Removed duplicated region for block: B:38:0x00a7 A[Catch: all -> 0x0038, TryCatch #1 {all -> 0x0038, blocks: (B:3:0x0004, B:7:0x000c, B:13:0x002b, B:15:0x0033, B:16:0x003e, B:20:0x0047, B:22:0x004f, B:23:0x0053, B:27:0x005c, B:29:0x0064, B:31:0x006a, B:33:0x0072, B:35:0x0078, B:38:0x00a7, B:40:0x00bd, B:53:0x00c2, B:56:0x007f, B:57:0x0097), top: B:2:0x0004 }] */
-        /* JADX WARN: Removed duplicated region for block: B:45:0x00d3 A[Catch: all -> 0x0121, TRY_ENTER, TryCatch #0 {all -> 0x0121, blocks: (B:45:0x00d3, B:49:0x0123), top: B:43:0x00d1 }] */
-        /* JADX WARN: Removed duplicated region for block: B:49:0x0123 A[Catch: all -> 0x0121, TRY_LEAVE, TryCatch #0 {all -> 0x0121, blocks: (B:45:0x00d3, B:49:0x0123), top: B:43:0x00d1 }] */
-        /* JADX WARN: Removed duplicated region for block: B:54:0x00cd  */
+        /* JADX WARN: Removed duplicated region for block: B:38:0x00a7 A[Catch: all -> 0x0038, TryCatch #1 {all -> 0x0038, blocks: (B:3:0x0004, B:7:0x000c, B:13:0x002b, B:15:0x0033, B:16:0x003e, B:20:0x0047, B:22:0x004f, B:23:0x0053, B:27:0x005c, B:29:0x0064, B:31:0x006a, B:33:0x0072, B:35:0x0078, B:38:0x00a7, B:40:0x00bd, B:53:0x00c4, B:56:0x007f, B:57:0x0097), top: B:2:0x0004 }] */
+        /* JADX WARN: Removed duplicated region for block: B:45:0x00d5 A[Catch: all -> 0x0123, TRY_ENTER, TryCatch #0 {all -> 0x0123, blocks: (B:45:0x00d5, B:49:0x0125), top: B:43:0x00d3 }] */
+        /* JADX WARN: Removed duplicated region for block: B:49:0x0125 A[Catch: all -> 0x0123, TRY_LEAVE, TryCatch #0 {all -> 0x0123, blocks: (B:45:0x00d5, B:49:0x0125), top: B:43:0x00d3 }] */
+        /* JADX WARN: Removed duplicated region for block: B:54:0x00cf  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -5701,7 +5701,7 @@ public abstract class Theme {
                         if (!z) {
                             loadScreenSizedBitmap = Theme.loadScreenSizedBitmap(new FileInputStream(file), 0);
                         } else {
-                            loadScreenSizedBitmap = SvgHelper.getBitmap(file, min, max, false);
+                            loadScreenSizedBitmap = SvgHelper.getBitmap(file, min, max, false, SvgHelper.ScaleMode.ByWidth);
                         }
                         bitmap2 = loadScreenSizedBitmap;
                     } else {
@@ -13863,7 +13863,7 @@ public abstract class Theme {
             Point point2 = AndroidUtilities.displaySize;
             i2 = Math.max(point2.x, point2.y);
         }
-        motionBackgroundDrawable.setPatternBitmap(34, SvgHelper.getBitmap(R.raw.default_pattern, i, i2, -16777216));
+        motionBackgroundDrawable.setPatternBitmap(34, SvgHelper.getBitmap(R.raw.default_pattern, i, i2, -16777216, 1.0f, SvgHelper.ScaleMode.ByWidth));
         motionBackgroundDrawable.setPatternColorFilter(motionBackgroundDrawable.getPatternColor());
         return motionBackgroundDrawable;
     }

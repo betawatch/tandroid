@@ -14656,6 +14656,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         TLRPC.TL_replyKeyboardMarkup tL_replyKeyboardMarkup;
         boolean z2;
         View view;
+        int i2;
+        int i3;
+        WindowInsetsInAppController windowInsetsInAppController;
         if (this.searchingType != 0) {
             this.lastSizeChangeValue1 = i;
             this.lastSizeChangeValue2 = z;
@@ -14676,70 +14679,66 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             this.emojiViewVisible = false;
         }
         if (isPopupShowing()) {
-            int i2 = z ? this.keyboardHeightLand : this.keyboardHeight;
+            int i4 = z ? this.keyboardHeightLand : this.keyboardHeight;
             ChatActivity chatActivity = this.parentFragment;
             if (chatActivity != null && chatActivity.getParentLayout() != null) {
-                i2 -= this.parentFragment.getParentLayout().getBottomTabsHeight(false);
+                i4 -= this.parentFragment.getParentLayout().getBottomTabsHeight(false);
             }
             if (this.currentPopupContentType == 1 && !this.botKeyboardView.isFullSize()) {
-                i2 = Math.min(this.botKeyboardView.getKeyboardHeight(), i2);
+                i4 = Math.min(this.botKeyboardView.getKeyboardHeight(), i4);
             }
-            int i3 = this.currentPopupContentType;
-            if (i3 == 0) {
+            int i5 = this.currentPopupContentType;
+            if (i5 == 0) {
                 view = this.emojiView;
             } else {
-                view = i3 == 1 ? this.botKeyboardView : null;
+                view = i5 == 1 ? this.botKeyboardView : null;
             }
             BotKeyboardView botKeyboardView = this.botKeyboardView;
             if (botKeyboardView != null) {
-                botKeyboardView.setPanelHeight(i2);
-                WindowInsetsInAppController windowInsetsInAppController = this.windowInsetsInAppController;
-                if (windowInsetsInAppController != null && i2 > 0) {
-                    windowInsetsInAppController.requestInAppKeyboardHeightIncludeNavbar(i2);
+                botKeyboardView.setPanelHeight(i4);
+                WindowInsetsInAppController windowInsetsInAppController2 = this.windowInsetsInAppController;
+                if (windowInsetsInAppController2 != null && i4 > 0 && this.currentPopupContentType == 1) {
+                    windowInsetsInAppController2.requestInAppKeyboardHeightIncludeNavbar(i4);
                 }
             }
             if (view != null) {
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
-                if (!this.closeAnimationInProgress) {
-                    int i4 = layoutParams.width;
-                    int i5 = AndroidUtilities.displaySize.x;
-                    if ((i4 != i5 || layoutParams.height != i2) && !this.stickersExpanded) {
-                        if (this.windowInsetsInAppController == null) {
-                            layoutParams.width = i5;
-                            layoutParams.height = i2;
-                            view.setLayoutParams(layoutParams);
-                        }
-                        SizeNotifierFrameLayout sizeNotifierFrameLayout = this.sizeNotifierLayout;
-                        if (sizeNotifierFrameLayout != null) {
-                            int i6 = this.emojiPadding;
-                            this.emojiPadding = layoutParams.height;
-                            sizeNotifierFrameLayout.requestLayout();
-                            onWindowSizeChanged();
-                            if (this.smoothKeyboard && !this.keyboardVisible && i6 != this.emojiPadding && pannelAnimationEnabled()) {
-                                AnimatorSet animatorSet = new AnimatorSet();
-                                this.panelAnimation = animatorSet;
-                                if (this.windowInsetsInAppController != null) {
-                                    animatorSet.playTogether(ValueAnimator.ofFloat(this.emojiPadding - i6, 0.0f));
-                                } else {
-                                    animatorSet.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.TRANSLATION_Y, this.emojiPadding - i6, 0.0f));
-                                }
-                                this.panelAnimation.setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator);
-                                this.panelAnimation.setDuration(250L);
-                                this.panelAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.84
-                                    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                                    public void onAnimationEnd(Animator animator) {
-                                        ChatActivityEnterView.this.panelAnimation = null;
-                                        if (ChatActivityEnterView.this.delegate != null) {
-                                            ChatActivityEnterView.this.delegate.bottomPanelTranslationYChanged(0.0f);
-                                        }
-                                        ChatActivityEnterView.this.requestLayout();
-                                        ChatActivityEnterView.this.notificationsLocker.unlock();
-                                    }
-                                });
-                                AndroidUtilities.runOnUIThread(this.runEmojiPanelAnimation, 50L);
-                                this.notificationsLocker.lock();
-                                requestLayout();
+                if (!this.closeAnimationInProgress && !this.stickersExpanded && (((i2 = layoutParams.width) != (i3 = AndroidUtilities.displaySize.x) || layoutParams.height != i4) && ((windowInsetsInAppController = this.windowInsetsInAppController) == null || i2 != -1 || layoutParams.height != -1))) {
+                    if (windowInsetsInAppController == null) {
+                        layoutParams.width = i3;
+                        layoutParams.height = i4;
+                        view.setLayoutParams(layoutParams);
+                    }
+                    SizeNotifierFrameLayout sizeNotifierFrameLayout = this.sizeNotifierLayout;
+                    if (sizeNotifierFrameLayout != null) {
+                        int i6 = this.emojiPadding;
+                        this.emojiPadding = layoutParams.height;
+                        sizeNotifierFrameLayout.requestLayout();
+                        onWindowSizeChanged();
+                        if (this.smoothKeyboard && !this.keyboardVisible && i6 != this.emojiPadding && pannelAnimationEnabled()) {
+                            AnimatorSet animatorSet = new AnimatorSet();
+                            this.panelAnimation = animatorSet;
+                            if (this.windowInsetsInAppController != null) {
+                                animatorSet.playTogether(ValueAnimator.ofFloat(this.emojiPadding - i6, 0.0f));
+                            } else {
+                                animatorSet.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.TRANSLATION_Y, this.emojiPadding - i6, 0.0f));
                             }
+                            this.panelAnimation.setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator);
+                            this.panelAnimation.setDuration(250L);
+                            this.panelAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.84
+                                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                                public void onAnimationEnd(Animator animator) {
+                                    ChatActivityEnterView.this.panelAnimation = null;
+                                    if (ChatActivityEnterView.this.delegate != null) {
+                                        ChatActivityEnterView.this.delegate.bottomPanelTranslationYChanged(0.0f);
+                                    }
+                                    ChatActivityEnterView.this.requestLayout();
+                                    ChatActivityEnterView.this.notificationsLocker.unlock();
+                                }
+                            });
+                            AndroidUtilities.runOnUIThread(this.runEmojiPanelAnimation, 50L);
+                            this.notificationsLocker.lock();
+                            requestLayout();
                         }
                     }
                 }

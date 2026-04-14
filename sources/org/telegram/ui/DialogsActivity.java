@@ -3468,7 +3468,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         FragmentSearchField fragmentSearchField3 = new FragmentSearchField(context, this.resourceProvider) { // from class: org.telegram.ui.DialogsActivity.7
             @Override // android.view.ViewGroup, android.view.View
             public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-                if (motionEvent.getAction() != 0 || getAlpha() >= 1.0f) {
+                if (motionEvent.getAction() != 0 || getAlpha() >= 0.25f) {
                     return super.dispatchTouchEvent(motionEvent);
                 }
                 return false;

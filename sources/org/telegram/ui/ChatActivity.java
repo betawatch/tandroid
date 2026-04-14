@@ -22080,30 +22080,30 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         return (Integer) arrayList.get(i4);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:237:0x074a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:237:0x0755, code lost:
     
-        if (r1 < r4) goto L370;
+        if (r1 < r4) goto L373;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:334:0x075a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:334:0x0765, code lost:
     
         r43 = r1;
         r50 = r13;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:338:0x0758, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:338:0x0763, code lost:
     
-        if (r1 < r4) goto L370;
+        if (r1 < r4) goto L373;
      */
     /* JADX WARN: Code restructure failed: missing block: B:85:0x01ff, code lost:
     
         if (((r13.getMeasuredHeight() * ((r12 == null || r12.getCurrentPosition() == null) ? 0.8f : 1.0f)) + r7) < r2) goto L112;
      */
-    /* JADX WARN: Removed duplicated region for block: B:216:0x06e3  */
-    /* JADX WARN: Removed duplicated region for block: B:241:0x076b A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x083f  */
-    /* JADX WARN: Removed duplicated region for block: B:283:0x0853  */
-    /* JADX WARN: Removed duplicated region for block: B:351:0x0762  */
+    /* JADX WARN: Removed duplicated region for block: B:216:0x06ee  */
+    /* JADX WARN: Removed duplicated region for block: B:241:0x0776 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:274:0x084a  */
+    /* JADX WARN: Removed duplicated region for block: B:283:0x085e  */
+    /* JADX WARN: Removed duplicated region for block: B:351:0x076d  */
     /* JADX WARN: Removed duplicated region for block: B:383:0x05ae  */
-    /* JADX WARN: Removed duplicated region for block: B:438:0x01a2  */
+    /* JADX WARN: Removed duplicated region for block: B:441:0x01a2  */
     /* JADX WARN: Removed duplicated region for block: B:62:0x019f  */
     /* JADX WARN: Removed duplicated region for block: B:65:0x01ab  */
     /* JADX WARN: Removed duplicated region for block: B:73:0x01d6  */
@@ -22536,6 +22536,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                             ((ChatLoadingCell) childAt).setVisiblePart(serviceTop, serviceHeight);
                                         } else if (childAt instanceof UserInfoCell) {
                                             ((UserInfoCell) childAt).setVisiblePart(serviceTop, serviceHeight);
+                                        } else if (childAt instanceof BotAskCell) {
+                                            ((BotAskCell) childAt).setVisiblePart(serviceTop, serviceHeight);
                                         }
                                         messageObject4 = null;
                                         z12 = false;
@@ -23273,7 +23275,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     /* JADX INFO: Access modifiers changed from: private */
     public float getServiceTop(View view) {
-        return ((view.getY() + (isKeyboardVisible() ? this.chatListView.getTop() : this.actionBar.getMeasuredHeight())) - this.contentView.getBackgroundTranslationY()) - ((1.0f - this.contentPanTranslationT) * this.chatListViewPaddingTop);
+        return ((view.getY() + this.actionBar.getMeasuredHeight()) - this.contentView.getBackgroundTranslationY()) - ((1.0f - this.contentPanTranslationT) * this.chatListViewPaddingTop);
     }
 
     public int getServiceHeight(View view) {
@@ -25706,6 +25708,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     i10 = 0;
                     childAt.layout(i7, i10, measuredWidth + i7, measuredHeight2 + i10);
                 }
+            }
+            if (ChatActivity.this.floatingTopicSeparator != null) {
+                ChatActivity.this.floatingTopicSeparator.setBackgroundHeight(getMeasuredHeight());
             }
             ChatActivity.this.invalidateChatListViewTopPadding();
             ChatActivity.this.invalidateMessagesVisiblePart();

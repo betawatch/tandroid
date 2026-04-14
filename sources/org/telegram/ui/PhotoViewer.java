@@ -5135,7 +5135,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     /* JADX INFO: Access modifiers changed from: private */
     public void showDownloadAlert() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this.parentActivity, this.resourcesProvider);
-        builder.setTitle(LocaleController.getString("AppName", R.string.AppName));
+        builder.setTitle(LocaleController.getString(R.string.AppName));
         builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), null);
         MessageObject messageObject = this.currentMessageObject;
         if (messageObject != null && messageObject.isVideo() && FileLoader.getInstance(this.currentMessageObject.currentAccount).isLoadingFile(this.currentFileNames[0])) {
@@ -30668,7 +30668,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00b6  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00b9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -30677,6 +30677,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         boolean z;
         PhotoViewerProvider photoViewerProvider = this.placeProvider;
         if (photoViewerProvider != null && photoViewerProvider.canMoveCaptionAbove()) {
+            applyCaption();
             CaptionContainerView captionView = getCaptionView();
             this.placeProvider.moveCaptionAbove(!r1.isCaptionAbove());
             showEditCaption(true, true);
