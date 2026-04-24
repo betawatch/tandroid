@@ -52,9 +52,9 @@ public abstract class BackButtonMenu {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0260  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0281 A[SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r0v31, types: [android.graphics.drawable.BitmapDrawable] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x026a  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x028b A[SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r0v32, types: [android.graphics.drawable.BitmapDrawable] */
     /* JADX WARN: Type inference failed for: r15v0, types: [android.view.View, org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout] */
     /* JADX WARN: Type inference failed for: r3v7, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout] */
     /*
@@ -141,7 +141,7 @@ public abstract class BackButtonMenu {
                     if (chatPhoto != null && (r0 = chatPhoto.strippedBitmap) != 0) {
                         avatarDrawable = r0;
                     }
-                    backupImageView.setImage(ImageLocation.getForChat(chat, 1), "50_50", avatarDrawable, chat);
+                    backupImageView.setImage(ImageLocation.getForChat(baseFragment.getCurrentAccount(), chat, 1), "50_50", avatarDrawable, chat);
                     textView.setText(chat.title);
                 } else if (user != null) {
                     TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
@@ -160,11 +160,11 @@ public abstract class BackButtonMenu {
                     } else if (UserObject.isDeleted(user)) {
                         str = LocaleController.getString(R.string.HiddenName);
                         avatarDrawable.setInfo(baseFragment.getCurrentAccount(), user);
-                        backupImageView.setImage(ImageLocation.getForUser(user, 1), "50_50", avatarDrawable, user);
+                        backupImageView.setImage(ImageLocation.getForUser(baseFragment.getCurrentAccount(), user, 1), "50_50", avatarDrawable, user);
                     } else {
                         String userName = UserObject.getUserName(user);
                         avatarDrawable.setInfo(baseFragment.getCurrentAccount(), user);
-                        backupImageView.setImage(ImageLocation.getForUser(user, 1), "50_50", drawable, user);
+                        backupImageView.setImage(ImageLocation.getForUser(baseFragment.getCurrentAccount(), user, 1), "50_50", drawable, user);
                         str = userName;
                     }
                     textView.setText(str);

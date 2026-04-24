@@ -7868,7 +7868,7 @@ public abstract class AlertsCreator {
                 break;
         }
         builder.setPositiveButton(LocaleController.getString(R.string.OK), null);
-        baseFragment.showDialog(builder.create(), true, null);
+        builder.show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

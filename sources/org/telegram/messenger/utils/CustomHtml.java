@@ -135,8 +135,8 @@ public abstract class CustomHtml {
             toHTML_3_wrapMonoscape(sb, spanned, i, nextSpanTransition);
             if (uRLSpanReplacementArr != null) {
                 for (URLSpanReplacement uRLSpanReplacement2 : uRLSpanReplacementArr) {
-                    textStyleSpanEnd(uRLSpanReplacement2.getTextStyleRun(), sb);
                     sb.append("</a>");
+                    textStyleSpanEnd(uRLSpanReplacement2.getTextStyleRun(), sb);
                 }
             }
             i = nextSpanTransition;

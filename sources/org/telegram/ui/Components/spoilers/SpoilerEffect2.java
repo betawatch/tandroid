@@ -336,7 +336,7 @@ public class SpoilerEffect2 {
         private volatile boolean running = true;
         private volatile boolean paused = false;
         private final Object resizeLock = new Object();
-        private float radius = AndroidUtilities.dpf2(1.2f);
+        private final float radius = AndroidUtilities.dpf2(1.2f);
         private boolean reset = true;
         private int currentBuffer = 0;
         private final float timeScale = 0.65f;
@@ -407,12 +407,11 @@ public class SpoilerEffect2 {
             this.egl = egl10;
             EGLDisplay eglGetDisplay = egl10.eglGetDisplay(0);
             this.eglDisplay = eglGetDisplay;
-            EGL10 egl102 = this.egl;
             if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
                 this.running = false;
                 return;
             }
-            if (!egl102.eglInitialize(eglGetDisplay, new int[2])) {
+            if (!this.egl.eglInitialize(eglGetDisplay, new int[2])) {
                 this.running = false;
                 return;
             }

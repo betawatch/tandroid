@@ -584,10 +584,10 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             return;
         }
         if (!z2) {
-            forUserOrChat = ImageLocation.getForUserOrChat(tLObject, 1);
+            forUserOrChat = ImageLocation.getForUserOrChat(this.currentAccount, tLObject, 1);
             str = "50_50";
         } else {
-            forUserOrChat = ImageLocation.getForUserOrChat(tLObject, 0);
+            forUserOrChat = ImageLocation.getForUserOrChat(this.currentAccount, tLObject, 0);
             str = "100_100";
         }
         ImageLocation imageLocation4 = forUserOrChat;
@@ -598,7 +598,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         } else if (bitmapDrawable != null) {
             setImage(imageLocation4, str2, bitmapDrawable, null, obj3, 0);
         } else if (z4) {
-            setImage(imageLocation4, str2, ImageLocation.getForUserOrChat(tLObject, 2), "50_50_b", drawable, obj3, 0);
+            setImage(imageLocation4, str2, ImageLocation.getForUserOrChat(this.currentAccount, tLObject, 2), "50_50_b", drawable, obj3, 0);
         } else {
             setImage(imageLocation4, str2, drawable, null, obj3, 0);
         }
@@ -606,7 +606,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
 
     public static File getAvatarLocalFile(int i, TLObject tLObject) {
         try {
-            ImageLocation forUserOrChat = ImageLocation.getForUserOrChat(tLObject, 1);
+            ImageLocation forUserOrChat = ImageLocation.getForUserOrChat(i, tLObject, 1);
             File localFile = FileLoader.getInstance(i).getLocalFile(forUserOrChat);
             if (localFile != null) {
                 return localFile;

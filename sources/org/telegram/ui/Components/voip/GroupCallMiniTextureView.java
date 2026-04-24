@@ -981,24 +981,24 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
     /* JADX WARN: Removed duplicated region for block: B:105:0x03bd  */
     /* JADX WARN: Removed duplicated region for block: B:112:0x0407  */
     /* JADX WARN: Removed duplicated region for block: B:115:0x0426  */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x04de  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x04ef A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x04f7  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x0501  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x056a  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x0545  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x0577  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x059d  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x05a8  */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x05c2  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x05e7  */
-    /* JADX WARN: Removed duplicated region for block: B:203:0x066b  */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x06a1  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x067d  */
-    /* JADX WARN: Removed duplicated region for block: B:214:0x05b3  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x04e6  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x04f7 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x04ff  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0509  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x0572  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x054d  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x057f  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x05a5  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x05b0  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x05ca  */
+    /* JADX WARN: Removed duplicated region for block: B:179:0x05ef  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x0673  */
+    /* JADX WARN: Removed duplicated region for block: B:208:0x06a9  */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x0685  */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x05bb  */
     /* JADX WARN: Removed duplicated region for block: B:221:0x044f  */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x049d  */
-    /* JADX WARN: Removed duplicated region for block: B:229:0x0473  */
+    /* JADX WARN: Removed duplicated region for block: B:224:0x04a5  */
+    /* JADX WARN: Removed duplicated region for block: B:229:0x0477  */
     /* JADX WARN: Removed duplicated region for block: B:230:0x0411  */
     /* JADX WARN: Removed duplicated region for block: B:257:0x02db  */
     /* JADX WARN: Removed duplicated region for block: B:262:0x00af  */
@@ -1437,14 +1437,14 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
                                     if (!DialogObject.isUserDialog(peerId)) {
                                         TLRPC.User user = AccountInstance.getInstance(this.currentAccount).getMessagesController().getUser(Long.valueOf(peerId));
                                         this.noVideoStubLayout.avatarDrawable.setInfo(this.currentAccount, user);
-                                        forChat = ImageLocation.getForUser(user, 0);
-                                        forChat2 = ImageLocation.getForUser(user, 1);
+                                        forChat = ImageLocation.getForUser(this.currentAccount, user, 0);
+                                        forChat2 = ImageLocation.getForUser(this.currentAccount, user, 1);
                                         chat = user;
                                     } else {
                                         TLRPC.Chat chat2 = AccountInstance.getInstance(UserConfig.selectedAccount).getMessagesController().getChat(Long.valueOf(-peerId));
                                         this.noVideoStubLayout.avatarDrawable.setInfo(this.currentAccount, chat2);
-                                        forChat = ImageLocation.getForChat(chat2, 0);
-                                        forChat2 = ImageLocation.getForChat(chat2, 1);
+                                        forChat = ImageLocation.getForChat(this.currentAccount, chat2, 0);
+                                        forChat2 = ImageLocation.getForChat(this.currentAccount, chat2, 1);
                                         chat = chat2;
                                     }
                                     ImageLocation imageLocation = forChat;
@@ -1684,13 +1684,13 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
             }
             if (peerId > 0) {
                 TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(peerId));
-                ImageLocation forUser = ImageLocation.getForUser(user, 1);
+                ImageLocation forUser = ImageLocation.getForUser(this.currentAccount, user, 1);
                 int colorForId = user != null ? AvatarDrawable.getColorForId(user.id) : ColorUtils.blendARGB(-16777216, -1, 0.2f);
                 this.imageReceiver.setImage(forUser, "50_50_b", new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{ColorUtils.blendARGB(colorForId, -16777216, 0.2f), ColorUtils.blendARGB(colorForId, -16777216, 0.4f)}), null, user, 0);
                 return;
             }
             TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-peerId));
-            ImageLocation forChat = ImageLocation.getForChat(chat, 1);
+            ImageLocation forChat = ImageLocation.getForChat(this.currentAccount, chat, 1);
             int colorForId2 = chat != null ? AvatarDrawable.getColorForId(chat.id) : ColorUtils.blendARGB(-16777216, -1, 0.2f);
             this.imageReceiver.setImage(forChat, "50_50_b", new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{ColorUtils.blendARGB(colorForId2, -16777216, 0.2f), ColorUtils.blendARGB(colorForId2, -16777216, 0.4f)}), null, chat, 0);
         }

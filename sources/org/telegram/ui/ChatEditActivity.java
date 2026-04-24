@@ -2334,7 +2334,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         return null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0075  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0077  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2353,7 +2353,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         if (user == null ? chat.photo != null : user.photo != null) {
             TLRPC.Chat chat2 = user != null ? user : chat;
             this.avatar = user != null ? user.photo.photo_small : chat.photo.photo_small;
-            ImageLocation forUserOrChat = ImageLocation.getForUserOrChat(chat2, 1);
+            ImageLocation forUserOrChat = ImageLocation.getForUserOrChat(this.currentAccount, chat2, 1);
             this.avatarImage.setForUserOrChat(chat2, this.avatarDrawable);
             if (forUserOrChat != null) {
                 z = true;

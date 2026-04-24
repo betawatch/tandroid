@@ -5,7 +5,6 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -921,15 +920,11 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         } else if (i == 1 && ChatObject.isChannelAndNotMegaGroup(this.currentChat) && ChatObject.hasAdminRights(this.currentChat)) {
             this.doneItem = this.actionBar.createMenu().addItemWithWidth(1, R.drawable.ic_ab_done, AndroidUtilities.dp(56.0f), LocaleController.getString("Done", R.string.Done));
         }
-        FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.ChatUsersActivity.3
-            @Override // android.view.ViewGroup, android.view.View
-            protected void dispatchDraw(Canvas canvas) {
-                canvas.drawColor(Theme.getColor(ChatUsersActivity.this.listView.getAdapter() == ChatUsersActivity.this.searchListViewAdapter ? Theme.key_windowBackgroundWhite : Theme.key_windowBackgroundGray));
-                super.dispatchDraw(canvas);
-            }
-        };
+        FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        FrameLayout frameLayout2 = new FrameLayout(context);
+        frameLayout.setBackgroundColor(getThemedColor(Theme.key_windowBackgroundGray));
+        FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
+        FrameLayout frameLayout3 = new FrameLayout(context);
         FlickerLoadingView flickerLoadingView = new FlickerLoadingView(context);
         this.flickerLoadingView = flickerLoadingView;
         flickerLoadingView.setViewType(6);
@@ -939,22 +934,22 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         int i4 = Theme.key_actionBarDefaultSubmenuBackground;
         int i5 = Theme.key_listSelector;
         flickerLoadingView2.setColors(i4, i5, i5);
-        frameLayout2.addView(this.flickerLoadingView);
+        frameLayout3.addView(this.flickerLoadingView);
         RadialProgressView radialProgressView = new RadialProgressView(context);
         this.progressBar = radialProgressView;
-        frameLayout2.addView(radialProgressView, LayoutHelper.createFrame(-2, -2, 17));
+        frameLayout3.addView(radialProgressView, LayoutHelper.createFrame(-2, -2, 17));
         this.flickerLoadingView.setVisibility(8);
         this.progressBar.setVisibility(8);
-        StickerEmptyView stickerEmptyView = new StickerEmptyView(context, frameLayout2, 1);
+        StickerEmptyView stickerEmptyView = new StickerEmptyView(context, frameLayout3, 1);
         this.emptyView = stickerEmptyView;
         stickerEmptyView.title.setText(LocaleController.getString(R.string.NoResult));
         this.emptyView.subtitle.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
         this.emptyView.setVisibility(8);
         this.emptyView.setAnimateLayoutChange(true);
         this.emptyView.showProgress(true, false);
-        frameLayout.addView(this.emptyView, LayoutHelper.createFrame(-1, -1.0f));
-        this.emptyView.addView(frameLayout2, 0);
-        RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.ChatUsersActivity.4
+        frameLayout2.addView(this.emptyView, LayoutHelper.createFrame(-1, -1.0f));
+        this.emptyView.addView(frameLayout3, 0);
+        RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.ChatUsersActivity.3
             @Override // android.view.View
             public void invalidate() {
                 super.invalidate();
@@ -967,7 +962,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         this.listView = recyclerListView;
         recyclerListView.setSections();
         RecyclerListView recyclerListView2 = this.listView;
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, r2, z) { // from class: org.telegram.ui.ChatUsersActivity.5
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, r2, z) { // from class: org.telegram.ui.ChatUsersActivity.4
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public int scrollVerticallyBy(int i6, RecyclerView.Recycler recycler, RecyclerView.State state) {
                 if (!ChatUsersActivity.this.firstLoaded && ChatUsersActivity.this.type == 0 && ChatUsersActivity.this.participants.size() == 0) {
@@ -978,7 +973,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         };
         this.layoutManager = linearLayoutManager;
         recyclerListView2.setLayoutManager(linearLayoutManager);
-        DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator() { // from class: org.telegram.ui.ChatUsersActivity.6
+        DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator() { // from class: org.telegram.ui.ChatUsersActivity.5
             AnimationNotificationsLocker notificationsLocker = new AnimationNotificationsLocker();
 
             @Override // androidx.recyclerview.widget.DefaultItemAnimator
@@ -1022,7 +1017,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         this.listViewAdapter = listAdapter;
         recyclerListView3.setAdapter(listAdapter);
         this.listView.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
-        frameLayout.addView(this.listView, LayoutHelper.createFrame(-1, -1.0f));
+        frameLayout2.addView(this.listView, LayoutHelper.createFrame(-1, -1.0f));
         this.actionBar.setAdaptiveBackground(this.listView);
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda6
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
@@ -1049,7 +1044,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             }
         });
         if (this.searchItem != null) {
-            this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.ChatUsersActivity.12
+            this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.ChatUsersActivity.11
                 @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
                 public void onScrolled(RecyclerView recyclerView, int i6, int i7) {
                 }
@@ -1064,7 +1059,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         }
         UndoView undoView = new UndoView(context);
         this.undoView = undoView;
-        frameLayout.addView(undoView, LayoutHelper.createFrame(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
+        frameLayout2.addView(undoView, LayoutHelper.createFrame(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
         updateRows();
         this.listView.setEmptyView(this.emptyView);
         this.listView.setAnimateEmptyView(false, 0);
@@ -1176,7 +1171,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                         ChatUsersActivity chatUsersActivity = new ChatUsersActivity(bundle);
                         chatUsersActivity.setInfo(this.info);
                         chatUsersActivity.setBannedRights(this.defaultBannedRights);
-                        chatUsersActivity.setDelegate(new ChatUsersActivityDelegate() { // from class: org.telegram.ui.ChatUsersActivity.7
+                        chatUsersActivity.setDelegate(new ChatUsersActivityDelegate() { // from class: org.telegram.ui.ChatUsersActivity.6
                             @Override // org.telegram.ui.ChatUsersActivity.ChatUsersActivityDelegate
                             public /* synthetic */ void didChangeOwner(TLRPC.User user) {
                                 ChatUsersActivityDelegate.-CC.$default$didChangeOwner(this, user);
@@ -1233,7 +1228,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                         bundle2.putInt("type", 2);
                         bundle2.putInt("selectType", 1);
                         ChatUsersActivity chatUsersActivity2 = new ChatUsersActivity(bundle2);
-                        chatUsersActivity2.setDelegate(new 8());
+                        chatUsersActivity2.setDelegate(new 7());
                         chatUsersActivity2.setInfo(this.info);
                         presentFragment(chatUsersActivity2);
                         return;
@@ -1246,7 +1241,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                         groupCreateActivity.setInfo(this.info);
                         LongSparseArray longSparseArray = this.contactsMap;
                         groupCreateActivity.setIgnoreUsers((longSparseArray == null || longSparseArray.size() == 0) ? this.participantsMap : this.contactsMap);
-                        groupCreateActivity.setDelegate2(new 9(groupCreateActivity));
+                        groupCreateActivity.setDelegate2(new 8(groupCreateActivity));
                         presentFragment(groupCreateActivity);
                         return;
                     }
@@ -1352,7 +1347,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                         return;
                     }
                     if (i == this.gigaConvertRow) {
-                        showDialog(new 10(getParentActivity(), this));
+                        showDialog(new 9(getParentActivity(), this));
                     } else {
                         if (i == this.addNew2Row) {
                             if (this.info != null) {
@@ -1650,7 +1645,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 tL_chatBannedRights2 = tL_chatBannedRights;
             }
             ChatRightsEditActivity chatRightsEditActivity = new ChatRightsEditActivity(j, this.chatId, tL_chatAdminRights, this.defaultBannedRights, tL_chatBannedRights2, str, this.type == 1 ? 0 : 1, canBlockUsers, tLObject == null, null);
-            chatRightsEditActivity.setDelegate(new ChatRightsEditActivity.ChatRightsEditActivityDelegate() { // from class: org.telegram.ui.ChatUsersActivity.11
+            chatRightsEditActivity.setDelegate(new ChatRightsEditActivity.ChatRightsEditActivityDelegate() { // from class: org.telegram.ui.ChatUsersActivity.10
                 @Override // org.telegram.ui.ChatRightsEditActivity.ChatRightsEditActivityDelegate
                 public void didSetRights(int i9, TLRPC.TL_chatAdminRights tL_chatAdminRights6, TLRPC.TL_chatBannedRights tL_chatBannedRights10, String str4) {
                     TLObject tLObject3 = tLObject;
@@ -1672,13 +1667,13 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         }
     }
 
-    class 8 implements ChatUsersActivityDelegate {
+    class 7 implements ChatUsersActivityDelegate {
         @Override // org.telegram.ui.ChatUsersActivity.ChatUsersActivityDelegate
         public /* synthetic */ void didKickParticipant(long j) {
             ChatUsersActivityDelegate.-CC.$default$didKickParticipant(this, j);
         }
 
-        8() {
+        7() {
         }
 
         @Override // org.telegram.ui.ChatUsersActivity.ChatUsersActivityDelegate
@@ -1702,10 +1697,10 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         public void didSelectUser(long j) {
             final TLRPC.User user = ChatUsersActivity.this.getMessagesController().getUser(Long.valueOf(j));
             if (user != null) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$8$$ExternalSyntheticLambda0
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$7$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatUsersActivity.8.this.lambda$didSelectUser$0(user);
+                        ChatUsersActivity.7.this.lambda$didSelectUser$0(user);
                     }
                 }, 200L);
             }
@@ -1732,14 +1727,14 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         }
     }
 
-    class 9 implements GroupCreateActivity.ContactsAddActivityDelegate {
+    class 8 implements GroupCreateActivity.ContactsAddActivityDelegate {
         final /* synthetic */ GroupCreateActivity val$fragment;
 
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ void lambda$didSelectUsers$1(TLRPC.User user) {
         }
 
-        9(GroupCreateActivity groupCreateActivity) {
+        8(GroupCreateActivity groupCreateActivity) {
             this.val$fragment = groupCreateActivity;
         }
 
@@ -1748,15 +1743,15 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             if (this.val$fragment.getParentActivity() == null) {
                 return;
             }
-            ChatUsersActivity.this.getMessagesController().addUsersToChat(ChatUsersActivity.this.currentChat, ChatUsersActivity.this, arrayList, i, new Consumer() { // from class: org.telegram.ui.ChatUsersActivity$9$$ExternalSyntheticLambda0
+            ChatUsersActivity.this.getMessagesController().addUsersToChat(ChatUsersActivity.this.currentChat, ChatUsersActivity.this, arrayList, i, new Consumer() { // from class: org.telegram.ui.ChatUsersActivity$8$$ExternalSyntheticLambda0
                 @Override // androidx.core.util.Consumer
                 public final void accept(Object obj) {
-                    ChatUsersActivity.9.this.lambda$didSelectUsers$0((TLRPC.User) obj);
+                    ChatUsersActivity.8.this.lambda$didSelectUsers$0((TLRPC.User) obj);
                 }
-            }, new Consumer() { // from class: org.telegram.ui.ChatUsersActivity$9$$ExternalSyntheticLambda1
+            }, new Consumer() { // from class: org.telegram.ui.ChatUsersActivity$8$$ExternalSyntheticLambda1
                 @Override // androidx.core.util.Consumer
                 public final void accept(Object obj) {
-                    ChatUsersActivity.9.lambda$didSelectUsers$1((TLRPC.User) obj);
+                    ChatUsersActivity.8.lambda$didSelectUsers$1((TLRPC.User) obj);
                 }
             }, null);
         }
@@ -1864,21 +1859,21 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         }
     }
 
-    class 10 extends GigagroupConvertAlert {
+    class 9 extends GigagroupConvertAlert {
         @Override // org.telegram.ui.Components.GigagroupConvertAlert
         protected void onCancel() {
         }
 
-        10(Context context, BaseFragment baseFragment) {
+        9(Context context, BaseFragment baseFragment) {
             super(context, baseFragment);
         }
 
         @Override // org.telegram.ui.Components.GigagroupConvertAlert
         protected void onCovert() {
-            ChatUsersActivity.this.getMessagesController().convertToGigaGroup(ChatUsersActivity.this.getParentActivity(), ChatUsersActivity.this.currentChat, ChatUsersActivity.this, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.ChatUsersActivity$10$$ExternalSyntheticLambda0
+            ChatUsersActivity.this.getMessagesController().convertToGigaGroup(ChatUsersActivity.this.getParentActivity(), ChatUsersActivity.this.currentChat, ChatUsersActivity.this, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.ChatUsersActivity$9$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
                 public final void run(boolean z) {
-                    ChatUsersActivity.10.this.lambda$onCovert$0(z);
+                    ChatUsersActivity.9.this.lambda$onCovert$0(z);
                 }
             });
         }
@@ -1985,7 +1980,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             this.listView.removeView(view);
             i--;
         }
-        this.listView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.ChatUsersActivity.13
+        this.listView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.ChatUsersActivity.12
             @Override // android.view.ViewTreeObserver.OnPreDrawListener
             public boolean onPreDraw() {
                 ChatUsersActivity.this.listView.getViewTreeObserver().removeOnPreDrawListener(this);
@@ -2010,7 +2005,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                         layoutManager.ignoreView(view);
                         View view3 = view;
                         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(view3, (Property<View, Float>) View.ALPHA, view3.getAlpha(), 0.0f);
-                        ofFloat2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ChatUsersActivity.13.1
+                        ofFloat2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ChatUsersActivity.12.1
                             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                             public void onAnimationEnd(Animator animator) {
                                 view.setAlpha(1.0f);
@@ -2140,7 +2135,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
     private void openRightsEdit2(final long j, final int i, TLObject tLObject, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z, final int i2, boolean z2) {
         final boolean[] zArr = new boolean[1];
         boolean z3 = (tLObject instanceof TLRPC.TL_channelParticipantAdmin) || (tLObject instanceof TLRPC.TL_chatParticipantAdmin);
-        ChatRightsEditActivity chatRightsEditActivity = new ChatRightsEditActivity(j, this.chatId, tL_chatAdminRights, this.defaultBannedRights, tL_chatBannedRights, str, i2, true, false, null) { // from class: org.telegram.ui.ChatUsersActivity.14
+        ChatRightsEditActivity chatRightsEditActivity = new ChatRightsEditActivity(j, this.chatId, tL_chatAdminRights, this.defaultBannedRights, tL_chatBannedRights, str, i2, true, false, null) { // from class: org.telegram.ui.ChatUsersActivity.13
             @Override // org.telegram.ui.ActionBar.BaseFragment
             public void onTransitionAnimationEnd(boolean z4, boolean z5) {
                 if (!z4 && z5 && zArr[0] && BulletinFactory.canShowBulletin(ChatUsersActivity.this)) {
@@ -2160,7 +2155,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             }
         };
         final boolean z4 = z3;
-        chatRightsEditActivity.setDelegate(new ChatRightsEditActivity.ChatRightsEditActivityDelegate() { // from class: org.telegram.ui.ChatUsersActivity.15
+        chatRightsEditActivity.setDelegate(new ChatRightsEditActivity.ChatRightsEditActivityDelegate() { // from class: org.telegram.ui.ChatUsersActivity.14
             @Override // org.telegram.ui.ChatRightsEditActivity.ChatRightsEditActivityDelegate
             public void didSetRights(int i3, TLRPC.TL_chatAdminRights tL_chatAdminRights2, TLRPC.TL_chatBannedRights tL_chatBannedRights2, String str2) {
                 TLRPC.ChatParticipant tL_chatParticipant;
@@ -2243,7 +2238,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
     /* JADX INFO: Access modifiers changed from: private */
     public void openRightsEdit(final long j, final TLObject tLObject, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z, int i, final boolean z2) {
         ChatRightsEditActivity chatRightsEditActivity = new ChatRightsEditActivity(j, this.chatId, tL_chatAdminRights, this.defaultBannedRights, tL_chatBannedRights, str, i, z, tLObject == null, null);
-        chatRightsEditActivity.setDelegate(new ChatRightsEditActivity.ChatRightsEditActivityDelegate() { // from class: org.telegram.ui.ChatUsersActivity.16
+        chatRightsEditActivity.setDelegate(new ChatRightsEditActivity.ChatRightsEditActivityDelegate() { // from class: org.telegram.ui.ChatUsersActivity.15
             @Override // org.telegram.ui.ChatRightsEditActivity.ChatRightsEditActivityDelegate
             public void didSetRights(int i2, TLRPC.TL_chatAdminRights tL_chatAdminRights2, TLRPC.TL_chatBannedRights tL_chatBannedRights2, String str2) {
                 TLObject tLObject2 = tLObject;
@@ -2584,7 +2579,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createMenuForParticipant$15(long j, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, final TLObject tLObject) {
         ChatRightsEditActivity chatRightsEditActivity = new ChatRightsEditActivity(j, this.chatId, null, this.defaultBannedRights, tL_chatBannedRights, str, 1, true, false, null);
-        chatRightsEditActivity.setDelegate(new ChatRightsEditActivity.ChatRightsEditActivityDelegate() { // from class: org.telegram.ui.ChatUsersActivity.17
+        chatRightsEditActivity.setDelegate(new ChatRightsEditActivity.ChatRightsEditActivityDelegate() { // from class: org.telegram.ui.ChatUsersActivity.16
             @Override // org.telegram.ui.ChatRightsEditActivity.ChatRightsEditActivityDelegate
             public void didSetRights(int i, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights2, String str2) {
                 TLObject tLObject2 = tLObject;
@@ -2614,7 +2609,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createMenuForParticipant$19(long j, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str, final TLObject tLObject) {
         ChatRightsEditActivity chatRightsEditActivity = new ChatRightsEditActivity(j, this.chatId, tL_chatAdminRights, null, null, str, 0, true, false, null);
-        chatRightsEditActivity.setDelegate(new ChatRightsEditActivity.ChatRightsEditActivityDelegate() { // from class: org.telegram.ui.ChatUsersActivity.18
+        chatRightsEditActivity.setDelegate(new ChatRightsEditActivity.ChatRightsEditActivityDelegate() { // from class: org.telegram.ui.ChatUsersActivity.17
             @Override // org.telegram.ui.ChatRightsEditActivity.ChatRightsEditActivityDelegate
             public void didSetRights(int i, TLRPC.TL_chatAdminRights tL_chatAdminRights2, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str2) {
                 TLObject tLObject2 = tLObject;

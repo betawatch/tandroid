@@ -3143,7 +3143,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
             hwFrameLayout.enableHwAcceleration();
         }
         this.openCloseAnimator.addListener(new 10());
-        this.openCloseAnimator.setDuration(400L);
+        this.openCloseAnimator.setDuration(320L);
         this.openCloseAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
         this.openCloseAnimator.start();
     }
@@ -3185,6 +3185,9 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
             PeerStoriesView.VideoPlayerSharedScope videoPlayerSharedScope = StoryViewer.this.currentPlayerScope;
             if (videoPlayerSharedScope != null) {
                 videoPlayerSharedScope.invalidate();
+            }
+            if (StoryViewer.this.surfaceView != null) {
+                StoryViewer.this.surfaceView.setVisibility(4);
             }
             StoryViewer.this.release();
             try {

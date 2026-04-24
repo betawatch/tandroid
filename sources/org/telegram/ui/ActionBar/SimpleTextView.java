@@ -32,7 +32,6 @@ import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.DialogCell;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
@@ -224,6 +223,7 @@ public class SimpleTextView extends View implements Drawable.Callback {
         this.scrollNonFitText = z;
         updateFadePaints();
         requestLayout();
+        checkUi_layerType();
     }
 
     public void setEllipsizeByGradient(boolean z) {
@@ -241,6 +241,7 @@ public class SimpleTextView extends View implements Drawable.Callback {
         this.ellipsizeByGradient = z;
         this.forceEllipsizeByGradientLeft = bool;
         updateFadePaints();
+        checkUi_layerType();
     }
 
     public void setEllipsizeByGradient(int i, Boolean bool) {
@@ -361,6 +362,7 @@ public class SimpleTextView extends View implements Drawable.Callback {
                 i2 = 0;
             }
             this.textDoesNotFit = this.textWidth + i2 > i - this.paddingRight;
+            checkUi_layerType();
             Layout layout6 = this.fullLayout;
             if (layout6 != null && this.fullLayoutAdditionalWidth > 0) {
                 this.fullLayoutLeftCharactersOffset = layout6.getPrimaryHorizontal(0) - this.firstLineLayout.getPrimaryHorizontal(0);
@@ -542,6 +544,7 @@ public class SimpleTextView extends View implements Drawable.Callback {
             this.lastWidth = i4;
             this.scrollingOffset = 0.0f;
             this.currentScrollDelay = 500;
+            checkUi_layerType();
         }
         int i5 = 0;
         createLayout((((((size - getPaddingLeft()) - getPaddingRight()) - this.minusWidth) - ((!this.leftDrawableOutside || (drawable6 = this.leftDrawable) == null) ? 0 : drawable6.getIntrinsicWidth() + this.drawablePadding)) - ((!this.rightDrawableOutside || (drawable5 = this.rightDrawable) == null) ? 0 : drawable5.getIntrinsicWidth() + this.drawablePadding)) - ((!this.rightDrawableOutside || (drawable4 = this.rightDrawable2) == null) ? 0 : drawable4.getIntrinsicWidth() + this.drawablePadding));
@@ -753,10 +756,12 @@ public class SimpleTextView extends View implements Drawable.Callback {
 
     public void resetScrolling() {
         this.scrollingOffset = 0.0f;
+        checkUi_layerType();
     }
 
     public void copyScrolling(SimpleTextView simpleTextView) {
         this.scrollingOffset = simpleTextView.scrollingOffset;
+        checkUi_layerType();
     }
 
     public void setDrawablePadding(int i) {
@@ -860,6 +865,14 @@ public class SimpleTextView extends View implements Drawable.Callback {
         }
     }
 
+    private void checkUi_layerType() {
+        int i = ((!this.scrollNonFitText || (!this.textDoesNotFit && this.scrollingOffset == 0.0f)) && !this.ellipsizeByGradient) ? 0 : 2;
+        if (getLayerType() != i) {
+            setLayerType(i, null);
+            invalidate();
+        }
+    }
+
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         int intrinsicWidth;
@@ -890,7 +903,6 @@ public class SimpleTextView extends View implements Drawable.Callback {
         this.layoutX = 0.0f;
         this.layoutY = 0.0f;
         boolean z = this.scrollNonFitText && (this.textDoesNotFit || this.scrollingOffset != 0.0f);
-        int saveLayerAlpha = (z || this.ellipsizeByGradient) ? canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.invalidateMotionBackground, 31) : TLObject.FLAG_31;
         this.totalWidth = this.textWidth;
         Drawable drawable = this.leftDrawable;
         if (drawable != null && !this.leftDrawableOutside) {
@@ -946,7 +958,7 @@ public class SimpleTextView extends View implements Drawable.Callback {
             if (i20 == 1 || i20 == 5) {
                 i19 += this.offsetX;
             }
-            int intrinsicWidth2 = (int) (r1.getIntrinsicWidth() * this.rightDrawableScale);
+            int intrinsicWidth2 = (int) (r2.getIntrinsicWidth() * this.rightDrawableScale);
             int intrinsicHeight2 = (int) (this.rightDrawable.getIntrinsicHeight() * this.rightDrawableScale);
             if ((this.gravity & 112) == 16) {
                 paddingTop10 = (getMeasuredHeight() - intrinsicHeight2) / 2;
@@ -965,7 +977,7 @@ public class SimpleTextView extends View implements Drawable.Callback {
         if (this.rightDrawable2 != null && !this.rightDrawableHidden && this.rightDrawableScale > 0.0f && !this.rightDrawableOutside && !this.rightDrawableInside) {
             int i22 = this.textWidth + i18 + this.drawablePadding + ((int) (-this.scrollingOffset));
             if (this.rightDrawable != null) {
-                i22 += ((int) (r3.getIntrinsicWidth() * this.rightDrawableScale)) + this.drawablePadding;
+                i22 += ((int) (r4.getIntrinsicWidth() * this.rightDrawableScale)) + this.drawablePadding;
             }
             int i23 = this.gravity & 7;
             if (i23 == 1 || i23 == 5) {
@@ -1003,7 +1015,7 @@ public class SimpleTextView extends View implements Drawable.Callback {
                 this.leftDrawable.draw(canvas);
             }
             if (this.rightDrawable != null && !this.rightDrawableOutside) {
-                int intrinsicWidth4 = (int) (r1.getIntrinsicWidth() * this.rightDrawableScale);
+                int intrinsicWidth4 = (int) (r2.getIntrinsicWidth() * this.rightDrawableScale);
                 int intrinsicHeight4 = (int) (this.rightDrawable.getIntrinsicHeight() * this.rightDrawableScale);
                 int i27 = this.textWidth + i18 + this.drawablePadding + ((int) (-this.scrollingOffset)) + dp;
                 if ((this.gravity & 112) == 16) {
@@ -1020,11 +1032,11 @@ public class SimpleTextView extends View implements Drawable.Callback {
                 this.rightDrawable.draw(canvas);
             }
             if (this.rightDrawable2 != null && !this.rightDrawableOutside) {
-                int intrinsicWidth5 = (int) (r1.getIntrinsicWidth() * this.rightDrawableScale);
+                int intrinsicWidth5 = (int) (r2.getIntrinsicWidth() * this.rightDrawableScale);
                 int intrinsicHeight5 = (int) (this.rightDrawable2.getIntrinsicHeight() * this.rightDrawableScale);
                 int i29 = this.textWidth + i18 + this.drawablePadding + ((int) (-this.scrollingOffset)) + dp;
                 if (this.rightDrawable != null) {
-                    i29 += ((int) (r4.getIntrinsicWidth() * this.rightDrawableScale)) + this.drawablePadding;
+                    i29 += ((int) (r5.getIntrinsicWidth() * this.rightDrawableScale)) + this.drawablePadding;
                 }
                 if ((this.gravity & 112) == 16) {
                     paddingTop6 = (getMeasuredHeight() - intrinsicHeight5) / 2;
@@ -1106,7 +1118,7 @@ public class SimpleTextView extends View implements Drawable.Callback {
                 if (i36 == 1 || i36 == 5) {
                     i35 += this.offsetX;
                 }
-                int intrinsicWidth6 = (int) (r1.getIntrinsicWidth() * this.rightDrawableScale);
+                int intrinsicWidth6 = (int) (r2.getIntrinsicWidth() * this.rightDrawableScale);
                 int intrinsicHeight6 = (int) (this.rightDrawable.getIntrinsicHeight() * this.rightDrawableScale);
                 if ((this.gravity & 112) == 16) {
                     paddingTop5 = ((getMeasuredHeight() - intrinsicHeight6) / 2) + this.rightDrawableTopPadding;
@@ -1122,7 +1134,7 @@ public class SimpleTextView extends View implements Drawable.Callback {
             if (this.rightDrawable2 != null && !this.rightDrawableHidden && this.rightDrawableScale > 0.0f && !this.rightDrawableOutside && this.rightDrawableInside) {
                 int i37 = this.textWidth + i18 + this.drawablePadding + ((int) (-this.scrollingOffset));
                 if (this.rightDrawable != null) {
-                    i37 += ((int) (r2.getIntrinsicWidth() * this.rightDrawableScale)) + this.drawablePadding;
+                    i37 += ((int) (r3.getIntrinsicWidth() * this.rightDrawableScale)) + this.drawablePadding;
                 }
                 int i38 = this.gravity & 7;
                 if (i38 == 1 || i38 == 5) {
@@ -1171,9 +1183,6 @@ public class SimpleTextView extends View implements Drawable.Callback {
             if (this.leftDrawableOutside || this.rightDrawableOutside || this.ellipsizeByGradient || this.paddingRight > 0) {
                 canvas.restore();
             }
-        }
-        if (z || this.ellipsizeByGradient) {
-            canvas.restoreToCount(saveLayerAlpha);
         }
         Drawable drawable8 = this.leftDrawable;
         if (drawable8 != null && this.leftDrawableOutside) {
@@ -1336,6 +1345,7 @@ public class SimpleTextView extends View implements Drawable.Callback {
                         this.scrollingOffset = 0.0f;
                         this.currentScrollDelay = 500;
                     }
+                    checkUi_layerType();
                 }
                 invalidate();
             }

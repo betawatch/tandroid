@@ -5520,7 +5520,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
             this.topReactionsStartRow = this.totalCount;
             ArrayList arrayList9 = new ArrayList(this.recentReactionsToSet);
             if (this.type == 13 && arrayList9.size() > 8) {
-                arrayList9.removeAll(arrayList9.subList(8, arrayList9.size()));
+                arrayList9.subList(8, arrayList9.size()).clear();
             } else if (this.type == 14) {
                 arrayList4 = new ArrayList();
                 int i31 = 0;

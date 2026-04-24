@@ -12,12 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import androidx.collection.LongSparseArray;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLoader;
@@ -28,6 +30,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
@@ -38,6 +41,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
@@ -78,32 +82,33 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
     private boolean sent;
     private final Utilities.Callback2 whenDone;
 
-    public static void share(final Context context, final int i, final long j, final String str, final Theme.ResourcesProvider resourcesProvider, final Runnable runnable, final Utilities.Callback2 callback2) {
+    public static void share(final Context context, final int i, final long j, String str, final Theme.ResourcesProvider resourcesProvider, final Runnable runnable, final Utilities.Callback2 callback2) {
+        final AlertDialog alertDialog = new AlertDialog(context, 3);
+        alertDialog.showDelayed(500L);
         TLRPC.TL_messages_getPreparedInlineMessage tL_messages_getPreparedInlineMessage = new TLRPC.TL_messages_getPreparedInlineMessage();
         tL_messages_getPreparedInlineMessage.bot = MessagesController.getInstance(i).getInputUser(j);
         tL_messages_getPreparedInlineMessage.id = str;
         ConnectionsManager.getInstance(i).sendRequest(tL_messages_getPreparedInlineMessage, new RequestDelegate() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda0
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                BotShareSheet.lambda$share$4(context, i, j, str, resourcesProvider, runnable, callback2, tLObject, tL_error);
+                BotShareSheet.lambda$share$6(i, alertDialog, context, j, resourcesProvider, runnable, callback2, tLObject, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$share$4(final Context context, final int i, final long j, final String str, final Theme.ResourcesProvider resourcesProvider, final Runnable runnable, final Utilities.Callback2 callback2, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void lambda$share$6(final int i, final AlertDialog alertDialog, final Context context, final long j, final Theme.ResourcesProvider resourcesProvider, final Runnable runnable, final Utilities.Callback2 callback2, final TLObject tLObject, TLRPC.TL_error tL_error) {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                BotShareSheet.lambda$share$3(TLObject.this, context, i, j, str, resourcesProvider, runnable, callback2);
+                BotShareSheet.lambda$share$5(TLObject.this, i, alertDialog, context, j, resourcesProvider, runnable, callback2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$share$3(TLObject tLObject, final Context context, final int i, final long j, final String str, final Theme.ResourcesProvider resourcesProvider, final Runnable runnable, final Utilities.Callback2 callback2) {
-        TLRPC.WebDocument webDocument;
-        String str2;
+    public static /* synthetic */ void lambda$share$5(TLObject tLObject, final int i, final AlertDialog alertDialog, final Context context, final long j, final Theme.ResourcesProvider resourcesProvider, final Runnable runnable, final Utilities.Callback2 callback2) {
+        String str;
         if (!(tLObject instanceof TLRPC.TL_messages_preparedInlineMessage)) {
             if (callback2 != null) {
                 callback2.run("MESSAGE_EXPIRED", null);
@@ -112,42 +117,61 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             return;
         }
         final TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage = (TLRPC.TL_messages_preparedInlineMessage) tLObject;
+        TLRPC.BotInlineMessage botInlineMessage = tL_messages_preparedInlineMessage.result.send_message;
+        if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaWebPage) {
+            TLRPC.TL_botInlineMessageMediaWebPage tL_botInlineMessageMediaWebPage = (TLRPC.TL_botInlineMessageMediaWebPage) botInlineMessage;
+            if (!TextUtils.isEmpty(tL_botInlineMessageMediaWebPage.url)) {
+                final Runnable loadWebPagePreview = loadWebPagePreview(i, tL_botInlineMessageMediaWebPage.url, new Utilities.Callback() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda2
+                    @Override // org.telegram.messenger.Utilities.Callback
+                    public final void run(Object obj) {
+                        BotShareSheet.lambda$share$0(AlertDialog.this, context, i, j, tL_messages_preparedInlineMessage, resourcesProvider, runnable, callback2, (TLRPC.WebPage) obj);
+                    }
+                });
+                alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda3
+                    @Override // android.content.DialogInterface.OnCancelListener
+                    public final void onCancel(DialogInterface dialogInterface) {
+                        loadWebPagePreview.run();
+                    }
+                });
+                return;
+            }
+        }
         final File[] fileArr = new File[1];
-        final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda2
+        final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                BotShareSheet.lambda$share$0(context, i, j, str, tL_messages_preparedInlineMessage, fileArr, resourcesProvider, runnable, callback2);
+                BotShareSheet.lambda$share$2(AlertDialog.this, context, i, j, tL_messages_preparedInlineMessage, fileArr, resourcesProvider, runnable, callback2);
             }
         };
-        if (tL_messages_preparedInlineMessage != null && (webDocument = tL_messages_preparedInlineMessage.result.content) != null && !TextUtils.isEmpty(webDocument.url)) {
+        TLRPC.WebDocument webDocument = tL_messages_preparedInlineMessage.result.content;
+        if (webDocument != null && !TextUtils.isEmpty(webDocument.url)) {
             TLRPC.BotInlineResult botInlineResult = tL_messages_preparedInlineMessage.result;
-            if (botInlineResult.send_message instanceof TLRPC.TL_botInlineMessageMediaAuto) {
-                String str3 = botInlineResult.content.url;
-                String httpUrlExtension = ImageLoader.getHttpUrlExtension(str3, null);
+            TLRPC.BotInlineMessage botInlineMessage2 = botInlineResult.send_message;
+            if ((botInlineMessage2 instanceof TLRPC.TL_botInlineMessageMediaAuto) || (botInlineMessage2 instanceof TLRPC.TL_botInlineMessageMediaWebPage)) {
+                String str2 = botInlineResult.content.url;
+                String httpUrlExtension = ImageLoader.getHttpUrlExtension(str2, null);
                 if (TextUtils.isEmpty(httpUrlExtension)) {
-                    str2 = FileLoader.getExtensionByMimeType(tL_messages_preparedInlineMessage.result.content.mime_type);
+                    str = FileLoader.getExtensionByMimeType(tL_messages_preparedInlineMessage.result.content.mime_type);
                 } else {
-                    str2 = "." + httpUrlExtension;
+                    str = "." + httpUrlExtension;
                 }
-                File file = new File(FileLoader.getDirectory(4), Utilities.MD5(str3) + str2);
+                File file = new File(FileLoader.getDirectory(4), Utilities.MD5(str2) + str);
                 if (!file.exists()) {
-                    final AlertDialog alertDialog = new AlertDialog(context, 3);
-                    final HttpGetFileTask httpGetFileTask = new HttpGetFileTask(new Utilities.Callback() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda3
+                    final HttpGetFileTask httpGetFileTask = new HttpGetFileTask(new Utilities.Callback() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda5
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
-                            BotShareSheet.lambda$share$1(fileArr, alertDialog, runnable2, (File) obj);
+                            BotShareSheet.lambda$share$3(fileArr, runnable2, (File) obj);
                         }
                     }, null);
                     httpGetFileTask.setDestFile(file);
                     httpGetFileTask.setMaxSize(8388608L);
-                    httpGetFileTask.execute(str3);
-                    alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda4
+                    httpGetFileTask.execute(str2);
+                    alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda6
                         @Override // android.content.DialogInterface.OnCancelListener
                         public final void onCancel(DialogInterface dialogInterface) {
                             HttpGetFileTask.this.cancel(true);
                         }
                     });
-                    alertDialog.showDelayed(180L);
                     return;
                 }
                 runnable2.run();
@@ -158,18 +182,98 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$share$0(Context context, int i, long j, String str, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File[] fileArr, Theme.ResourcesProvider resourcesProvider, Runnable runnable, Utilities.Callback2 callback2) {
-        new BotShareSheet(context, i, j, str, tL_messages_preparedInlineMessage, fileArr[0], resourcesProvider, runnable, callback2).show();
+    public static /* synthetic */ void lambda$share$0(AlertDialog alertDialog, Context context, int i, long j, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, Theme.ResourcesProvider resourcesProvider, Runnable runnable, Utilities.Callback2 callback2, TLRPC.WebPage webPage) {
+        alertDialog.dismiss();
+        new BotShareSheet(context, i, j, tL_messages_preparedInlineMessage, null, webPage, resourcesProvider, runnable, callback2).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$share$1(File[] fileArr, AlertDialog alertDialog, Runnable runnable, File file) {
-        fileArr[0] = file;
+    public static /* synthetic */ void lambda$share$2(AlertDialog alertDialog, Context context, int i, long j, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File[] fileArr, Theme.ResourcesProvider resourcesProvider, Runnable runnable, Utilities.Callback2 callback2) {
         alertDialog.dismiss();
+        new BotShareSheet(context, i, j, tL_messages_preparedInlineMessage, fileArr[0], null, resourcesProvider, runnable, callback2).show();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$share$3(File[] fileArr, Runnable runnable, File file) {
+        fileArr[0] = file;
         runnable.run();
     }
 
-    public BotShareSheet(Context context, final int i, final long j, String str, final TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File file, Theme.ResourcesProvider resourcesProvider, final Runnable runnable, final Utilities.Callback2 callback2) {
+    public static Runnable loadWebPagePreview(final int i, String str, final Utilities.Callback callback) {
+        final int[] iArr = new int[1];
+        final NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr = new NotificationCenter.NotificationCenterDelegate[1];
+        TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
+        getwebpagepreview.message = str;
+        iArr[0] = ConnectionsManager.getInstance(i).sendRequestTyped(getwebpagepreview, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda7
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                BotShareSheet.lambda$loadWebPagePreview$7(iArr, callback, notificationCenterDelegateArr, i, (TL_account.webPagePreview) obj, (TLRPC.TL_error) obj2);
+            }
+        });
+        return new Runnable() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda8
+            @Override // java.lang.Runnable
+            public final void run() {
+                BotShareSheet.lambda$loadWebPagePreview$8(iArr, i, notificationCenterDelegateArr);
+            }
+        };
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$loadWebPagePreview$7(int[] iArr, final Utilities.Callback callback, final NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr, final int i, TL_account.webPagePreview webpagepreview, TLRPC.TL_error tL_error) {
+        iArr[0] = -1;
+        TLRPC.MessageMedia messageMedia = webpagepreview.media;
+        if (!(messageMedia instanceof TLRPC.TL_messageMediaEmpty)) {
+            TLRPC.WebPage webPage = messageMedia.webpage;
+            if (!(webPage instanceof TLRPC.TL_webPageEmpty)) {
+                if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
+                    if (webPage instanceof TLRPC.TL_webPagePending) {
+                        final long j = webPage.id;
+                        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.ui.bots.BotShareSheet.1
+                            @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+                            public void didReceivedNotification(int i2, int i3, Object... objArr) {
+                                LongSparseArray longSparseArray;
+                                int i4 = NotificationCenter.didReceivedWebpagesInUpdates;
+                                if (i2 == i4 && (longSparseArray = (LongSparseArray) objArr[0]) != null && longSparseArray.containsKey(j)) {
+                                    TLRPC.WebPage webPage2 = (TLRPC.WebPage) longSparseArray.get(j);
+                                    if (notificationCenterDelegateArr[0] != null) {
+                                        NotificationCenter.getInstance(i).addObserver(notificationCenterDelegateArr[0], i4);
+                                        notificationCenterDelegateArr[0] = null;
+                                    }
+                                    Utilities.Callback callback2 = callback;
+                                    if (!(webPage2 instanceof TLRPC.TL_webPage)) {
+                                        webPage2 = null;
+                                    }
+                                    callback2.run(webPage2);
+                                }
+                            }
+                        };
+                        notificationCenterDelegateArr[0] = notificationCenterDelegate;
+                        NotificationCenter.getInstance(i).addObserver(notificationCenterDelegate, NotificationCenter.didReceivedWebpagesInUpdates);
+                        return;
+                    }
+                    callback.run(webPage instanceof TLRPC.TL_webPage ? webPage : null);
+                    return;
+                }
+                callback.run(null);
+                return;
+            }
+        }
+        callback.run(null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$loadWebPagePreview$8(int[] iArr, int i, NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr) {
+        if (iArr[0] >= 0) {
+            ConnectionsManager.getInstance(i).cancelRequest(iArr[0], true);
+            iArr[0] = -1;
+        }
+        if (notificationCenterDelegateArr[0] != null) {
+            NotificationCenter.getInstance(i).addObserver(notificationCenterDelegateArr[0], NotificationCenter.didReceivedWebpagesInUpdates);
+            notificationCenterDelegateArr[0] = null;
+        }
+    }
+
+    public BotShareSheet(Context context, final int i, final long j, final TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File file, TLRPC.WebPage webPage, Theme.ResourcesProvider resourcesProvider, final Runnable runnable, final Utilities.Callback2 callback2) {
         super(context, null, false, false, false, resourcesProvider);
         this.openedDialogsActivity = false;
         this.sent = false;
@@ -178,15 +282,13 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
         this.botId = j;
         this.botName = UserObject.getUserName(MessagesController.getInstance(i).getUser(Long.valueOf(j)));
         this.whenDone = callback2;
-        int i2 = Theme.key_windowBackgroundWhite;
-        fixNavigationBar(Theme.getColor(i2, resourcesProvider));
         setSlidingActionBar();
         this.headerPaddingTop = AndroidUtilities.dp(4.0f);
         this.headerPaddingBottom = AndroidUtilities.dp(-10.0f);
-        this.messageObject = convert(i, j, tL_messages_preparedInlineMessage.result, file);
+        this.messageObject = convert(i, j, tL_messages_preparedInlineMessage.result, file, webPage);
         ChatActionCell chatActionCell = new ChatActionCell(context, false, resourcesProvider);
         this.actionCell = chatActionCell;
-        chatActionCell.setDelegate(new ChatActionCell.ChatActionCellDelegate() { // from class: org.telegram.ui.bots.BotShareSheet.1
+        chatActionCell.setDelegate(new ChatActionCell.ChatActionCellDelegate() { // from class: org.telegram.ui.bots.BotShareSheet.2
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
             public /* synthetic */ boolean canDrawOutboundsContent() {
                 return ChatActionCell.ChatActionCellDelegate.-CC.$default$canDrawOutboundsContent(this);
@@ -208,13 +310,13 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
-            public /* synthetic */ void didOpenPremiumGift(ChatActionCell chatActionCell2, TLRPC.TL_premiumGiftOption tL_premiumGiftOption, String str2, boolean z) {
-                ChatActionCell.ChatActionCellDelegate.-CC.$default$didOpenPremiumGift(this, chatActionCell2, tL_premiumGiftOption, str2, z);
+            public /* synthetic */ void didOpenPremiumGift(ChatActionCell chatActionCell2, TLRPC.TL_premiumGiftOption tL_premiumGiftOption, String str, boolean z) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$didOpenPremiumGift(this, chatActionCell2, tL_premiumGiftOption, str, z);
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
-            public /* synthetic */ void didOpenPremiumGiftChannel(ChatActionCell chatActionCell2, String str2, boolean z) {
-                ChatActionCell.ChatActionCellDelegate.-CC.$default$didOpenPremiumGiftChannel(this, chatActionCell2, str2, z);
+            public /* synthetic */ void didOpenPremiumGiftChannel(ChatActionCell chatActionCell2, String str, boolean z) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$didOpenPremiumGiftChannel(this, chatActionCell2, str, z);
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
@@ -223,13 +325,13 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
-            public /* synthetic */ void didPressReplyMessage(ChatActionCell chatActionCell2, int i3) {
-                ChatActionCell.ChatActionCellDelegate.-CC.$default$didPressReplyMessage(this, chatActionCell2, i3);
+            public /* synthetic */ void didPressReplyMessage(ChatActionCell chatActionCell2, int i2) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$didPressReplyMessage(this, chatActionCell2, i2);
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
-            public /* synthetic */ void didPressTaskLink(ChatActionCell chatActionCell2, int i3, int i4) {
-                ChatActionCell.ChatActionCellDelegate.-CC.$default$didPressTaskLink(this, chatActionCell2, i3, i4);
+            public /* synthetic */ void didPressTaskLink(ChatActionCell chatActionCell2, int i2, int i3) {
+                ChatActionCell.ChatActionCellDelegate.-CC.$default$didPressTaskLink(this, chatActionCell2, i2, i3);
             }
 
             @Override // org.telegram.ui.Cells.ChatActionCell.ChatActionCellDelegate
@@ -273,14 +375,14 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
         });
         chatActionCell.setCustomText(LocaleController.getString(R.string.BotShareMessagePreview));
-        ChatMessageCell chatMessageCell = new ChatMessageCell(context, i) { // from class: org.telegram.ui.bots.BotShareSheet.2
+        ChatMessageCell chatMessageCell = new ChatMessageCell(context, i) { // from class: org.telegram.ui.bots.BotShareSheet.3
             @Override // org.telegram.ui.Cells.ChatMessageCell
             public boolean isDrawSelectionBackground() {
                 return false;
             }
         };
         this.messageCell = chatMessageCell;
-        chatMessageCell.setDelegate(new ChatMessageCell.ChatMessageCellDelegate() { // from class: org.telegram.ui.bots.BotShareSheet.3
+        chatMessageCell.setDelegate(new ChatMessageCell.ChatMessageCellDelegate() { // from class: org.telegram.ui.bots.BotShareSheet.4
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ boolean allowAddPollOptions() {
                 return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$allowAddPollOptions(this);
@@ -314,8 +416,8 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ boolean didLongPressChannelAvatar(ChatMessageCell chatMessageCell2, TLRPC.Chat chat, int i3, float f, float f2) {
-                return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressChannelAvatar(this, chatMessageCell2, chat, i3, f, f2);
+            public /* synthetic */ boolean didLongPressChannelAvatar(ChatMessageCell chatMessageCell2, TLRPC.Chat chat, int i2, float f, float f2) {
+                return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressChannelAvatar(this, chatMessageCell2, chat, i2, f, f2);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -374,8 +476,8 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ void didPressChannelAvatar(ChatMessageCell chatMessageCell2, TLRPC.Chat chat, int i3, float f, float f2, boolean z) {
-                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelAvatar(this, chatMessageCell2, chat, i3, f, f2, z);
+            public /* synthetic */ void didPressChannelAvatar(ChatMessageCell chatMessageCell2, TLRPC.Chat chat, int i2, float f, float f2, boolean z) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelAvatar(this, chatMessageCell2, chat, i2, f, f2, z);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -419,13 +521,13 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ void didPressFactCheckWhat(ChatMessageCell chatMessageCell2, int i3, int i4) {
-                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressFactCheckWhat(this, chatMessageCell2, i3, i4);
+            public /* synthetic */ void didPressFactCheckWhat(ChatMessageCell chatMessageCell2, int i2, int i3) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressFactCheckWhat(this, chatMessageCell2, i2, i3);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ void didPressGiveawayChatButton(ChatMessageCell chatMessageCell2, int i3) {
-                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressGiveawayChatButton(this, chatMessageCell2, i3);
+            public /* synthetic */ void didPressGiveawayChatButton(ChatMessageCell chatMessageCell2, int i2) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressGiveawayChatButton(this, chatMessageCell2, i2);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -439,8 +541,8 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ void didPressHint(ChatMessageCell chatMessageCell2, int i3) {
-                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressHint(this, chatMessageCell2, i3);
+            public /* synthetic */ void didPressHint(ChatMessageCell chatMessageCell2, int i2) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressHint(this, chatMessageCell2, i2);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -449,8 +551,8 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ void didPressInstantButton(ChatMessageCell chatMessageCell2, int i3) {
-                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressInstantButton(this, chatMessageCell2, i3);
+            public /* synthetic */ void didPressInstantButton(ChatMessageCell chatMessageCell2, int i2) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressInstantButton(this, chatMessageCell2, i2);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -464,8 +566,8 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ void didPressPollMedia(ChatMessageCell chatMessageCell2, ImageReceiver imageReceiver, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, float f, float f2, int i3) {
-                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressPollMedia(this, chatMessageCell2, imageReceiver, pollAnswer, messageMedia, f, f2, i3);
+            public /* synthetic */ void didPressPollMedia(ChatMessageCell chatMessageCell2, ImageReceiver imageReceiver, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, float f, float f2, int i2) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressPollMedia(this, chatMessageCell2, imageReceiver, pollAnswer, messageMedia, f, f2, i2);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -474,8 +576,8 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ void didPressReplyMessage(ChatMessageCell chatMessageCell2, int i3, float f, float f2, boolean z) {
-                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReplyMessage(this, chatMessageCell2, i3, f, f2, z);
+            public /* synthetic */ void didPressReplyMessage(ChatMessageCell chatMessageCell2, int i2, float f, float f2, boolean z) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReplyMessage(this, chatMessageCell2, i2, f, f2, z);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -524,13 +626,13 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ void didPressUserStatus(ChatMessageCell chatMessageCell2, TLRPC.User user, TLRPC.Document document, String str2) {
-                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressUserStatus(this, chatMessageCell2, user, document, str2);
+            public /* synthetic */ void didPressUserStatus(ChatMessageCell chatMessageCell2, TLRPC.User user, TLRPC.Document document, String str) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressUserStatus(this, chatMessageCell2, user, document, str);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ void didPressViaBot(ChatMessageCell chatMessageCell2, String str2) {
-                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressViaBot(this, chatMessageCell2, str2);
+            public /* synthetic */ void didPressViaBot(ChatMessageCell chatMessageCell2, String str) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressViaBot(this, chatMessageCell2, str);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -539,13 +641,13 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ void didPressVoteButtons(ChatMessageCell chatMessageCell2, ArrayList arrayList, int i3, int i4, int i5) {
-                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressVoteButtons(this, chatMessageCell2, arrayList, i3, i4, i5);
+            public /* synthetic */ void didPressVoteButtons(ChatMessageCell chatMessageCell2, ArrayList arrayList, int i2, int i3, int i4) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressVoteButtons(this, chatMessageCell2, arrayList, i2, i3, i4);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ void didPressWebPage(ChatMessageCell chatMessageCell2, TLRPC.WebPage webPage, String str2, boolean z) {
-                Browser.openUrl(chatMessageCell2.getContext(), str2);
+            public /* synthetic */ void didPressWebPage(ChatMessageCell chatMessageCell2, TLRPC.WebPage webPage2, String str, boolean z) {
+                Browser.openUrl(chatMessageCell2.getContext(), str);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -649,8 +751,8 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ boolean isProgressLoading(ChatMessageCell chatMessageCell2, int i3) {
-                return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isProgressLoading(this, chatMessageCell2, i3);
+            public /* synthetic */ boolean isProgressLoading(ChatMessageCell chatMessageCell2, int i2) {
+                return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isProgressLoading(this, chatMessageCell2, i2);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -664,8 +766,8 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ void needOpenWebView(MessageObject messageObject, String str2, String str3, String str4, String str5, int i3, int i4) {
-                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needOpenWebView(this, messageObject, str2, str3, str4, str5, i3, i4);
+            public /* synthetic */ void needOpenWebView(MessageObject messageObject, String str, String str2, String str3, String str4, int i2, int i3) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needOpenWebView(this, messageObject, str, str2, str3, str4, i2, i3);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -679,13 +781,13 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ void needShowPremiumBulletin(int i3) {
-                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needShowPremiumBulletin(this, i3);
+            public /* synthetic */ void needShowPremiumBulletin(int i2) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needShowPremiumBulletin(this, i2);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-            public /* synthetic */ boolean onAccessibilityAction(int i3, Bundle bundle) {
-                return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$onAccessibilityAction(this, i3, bundle);
+            public /* synthetic */ boolean onAccessibilityAction(int i2, Bundle bundle) {
+                return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$onAccessibilityAction(this, i2, bundle);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -719,7 +821,7 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
         linearLayout.setOrientation(1);
         linearLayout.addView(chatActionCell, LayoutHelper.createLinear(-1, -2));
         linearLayout.addView(chatMessageCell, LayoutHelper.createLinear(-1, -2));
-        SizeNotifierFrameLayout sizeNotifierFrameLayout = new SizeNotifierFrameLayout(context) { // from class: org.telegram.ui.bots.BotShareSheet.4
+        SizeNotifierFrameLayout sizeNotifierFrameLayout = new SizeNotifierFrameLayout(context) { // from class: org.telegram.ui.bots.BotShareSheet.5
             @Override // org.telegram.ui.Components.SizeNotifierFrameLayout
             protected boolean isActionBarVisible() {
                 return false;
@@ -741,26 +843,31 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
         sizeNotifierFrameLayout.addView(linearLayout, LayoutHelper.createFrame(-1, -1.0f, 119, 4.0f, 8.0f, 4.0f, 8.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         this.buttonContainer = frameLayout;
-        frameLayout.setBackgroundColor(Theme.getColor(i2, resourcesProvider));
-        ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, resourcesProvider);
-        this.button = buttonWithCounterView;
-        buttonWithCounterView.setText(LocaleController.getString(R.string.BotShareMessageShare), false);
-        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda5
+        ButtonWithCounterView round = new ButtonWithCounterView(context, resourcesProvider).setRound();
+        this.button = round;
+        round.setText(LocaleController.getString(R.string.BotShareMessageShare), false);
+        round.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BotShareSheet.this.lambda$new$6(tL_messages_preparedInlineMessage, callback2, i, j, runnable, view);
+                BotShareSheet.this.lambda$new$10(tL_messages_preparedInlineMessage, callback2, i, j, runnable, view);
             }
         });
-        frameLayout.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, 48.0f, 119, 10.0f, 10.0f, 10.0f, 10.0f));
+        frameLayout.addView(round, LayoutHelper.createFrame(-1, 48.0f, 119, 10.0f, 10.0f, 10.0f, 10.0f));
         ViewGroup viewGroup = this.containerView;
+        int i2 = this.backgroundPaddingLeft;
+        viewGroup.addView(frameLayout, LayoutHelper.createFrameMarginPx(-1, -2.0f, 87, i2, 0, i2, 0));
+        RecyclerListView recyclerListView = this.recyclerListView;
         int i3 = this.backgroundPaddingLeft;
-        viewGroup.addView(frameLayout, LayoutHelper.createFrameMarginPx(-1, -2.0f, 87, i3, 0, i3, 0));
-        this.recyclerListView.setPadding(0, 0, 0, AndroidUtilities.dp(68.0f) + 1);
+        recyclerListView.setPadding(i3, 0, i3, AndroidUtilities.dp(68.0f) + 1);
+        this.recyclerListView.setSections();
+        int i4 = Theme.key_windowBackgroundGray;
+        setBackgroundColor(getThemedColor(i4));
+        fixNavigationBar(getThemedColor(i4));
         this.adapter.update(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$6(final TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, final Utilities.Callback2 callback2, final int i, final long j, Runnable runnable, View view) {
+    public /* synthetic */ void lambda$new$10(final TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, final Utilities.Callback2 callback2, final int i, final long j, Runnable runnable, View view) {
         final BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (safeLastFragment == null) {
             return;
@@ -793,7 +900,7 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
                 }
             }
         }
-        DialogsActivity dialogsActivity = new DialogsActivity(bundle) { // from class: org.telegram.ui.bots.BotShareSheet.5
+        DialogsActivity dialogsActivity = new DialogsActivity(bundle) { // from class: org.telegram.ui.bots.BotShareSheet.6
             @Override // org.telegram.ui.DialogsActivity
             public boolean clickSelectsDialog() {
                 return true;
@@ -812,7 +919,7 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
                 }
             }
         };
-        dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda7
+        dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda11
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
             public /* synthetic */ boolean canSelectStories() {
                 return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
@@ -820,9 +927,9 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
 
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
             public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, int i3, TopicsFragment topicsFragment) {
-                boolean lambda$new$5;
-                lambda$new$5 = BotShareSheet.this.lambda$new$5(i, tL_messages_preparedInlineMessage, j, safeLastFragment, callback2, dialogsActivity2, arrayList, charSequence, z, z2, i2, i3, topicsFragment);
-                return lambda$new$5;
+                boolean lambda$new$9;
+                lambda$new$9 = BotShareSheet.this.lambda$new$9(i, tL_messages_preparedInlineMessage, j, safeLastFragment, callback2, dialogsActivity2, arrayList, charSequence, z, z2, i2, i3, topicsFragment);
+                return lambda$new$9;
             }
 
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
@@ -838,7 +945,7 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$new$5(int i, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, long j, BaseFragment baseFragment, Utilities.Callback2 callback2, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, int i3, TopicsFragment topicsFragment) {
+    public /* synthetic */ boolean lambda$new$9(int i, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, long j, BaseFragment baseFragment, Utilities.Callback2 callback2, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, int i3, TopicsFragment topicsFragment) {
         TLRPC.TL_forumTopic findTopic;
         ArrayList arrayList2 = new ArrayList();
         Iterator it = arrayList.iterator();
@@ -908,7 +1015,7 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
     protected RecyclerListView.SelectionAdapter createAdapter(RecyclerListView recyclerListView) {
-        UniversalAdapter universalAdapter = new UniversalAdapter(recyclerListView, getContext(), this.currentAccount, 0, true, new Utilities.Callback2() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda6
+        UniversalAdapter universalAdapter = new UniversalAdapter(recyclerListView, getContext(), this.currentAccount, 0, true, new Utilities.Callback2() { // from class: org.telegram.ui.bots.BotShareSheet$$ExternalSyntheticLambda9
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 BotShareSheet.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
@@ -924,21 +1031,21 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x02e4  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x02ea  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x02f6  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x02e6  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x02ec  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x02f8  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static MessageObject convert(int i, long j, TLRPC.BotInlineResult botInlineResult, File file) {
+    public static MessageObject convert(int i, long j, TLRPC.BotInlineResult botInlineResult, File file, TLRPC.WebPage webPage) {
         String str;
         String absolutePath;
         TLRPC.TL_photo tL_photo;
         char c;
         TLRPC.TL_photo tL_photo2;
         TLRPC.TL_document tL_document;
-        if (file == null || !file.exists()) {
-            return convert(i, j, botInlineResult, null, null);
+        if (file == null || !file.exists() || webPage != null) {
+            return convert(i, j, botInlineResult, null, null, webPage);
         }
         str = botInlineResult.type;
         absolutePath = file.getAbsolutePath();
@@ -1043,7 +1150,7 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
                                     }
                                     tL_photo = tL_photo2;
                                     tL_document = tL_document2;
-                                    return convert(i, j, botInlineResult, tL_photo, tL_document);
+                                    return convert(i, j, botInlineResult, tL_photo, tL_document, null);
                                 }
                             }
                             tL_photo2 = null;
@@ -1165,10 +1272,10 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
                 tL_document = null;
                 break;
         }
-        return convert(i, j, botInlineResult, tL_photo, tL_document);
+        return convert(i, j, botInlineResult, tL_photo, tL_document, null);
     }
 
-    public static MessageObject convert(int i, long j, TLRPC.BotInlineResult botInlineResult, TLRPC.Photo photo, TLRPC.Document document) {
+    public static MessageObject convert(int i, long j, TLRPC.BotInlineResult botInlineResult, TLRPC.Photo photo, TLRPC.Document document, TLRPC.WebPage webPage) {
         TLRPC.ReplyMarkup replyMarkup;
         if (photo == null) {
             photo = botInlineResult.photo;
@@ -1184,6 +1291,7 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
         tL_message.peer_id = MessagesController.getInstance(i).getPeer(UserConfig.getInstance(i).getClientUserId());
         tL_message.from_id = MessagesController.getInstance(i).getPeer(UserConfig.getInstance(i).getClientUserId());
         TLRPC.BotInlineMessage botInlineMessage = botInlineResult.send_message;
+        boolean z = true;
         if (botInlineMessage != null) {
             if (botInlineMessage instanceof TLRPC.TL_botInlineMessageText) {
                 TLRPC.TL_botInlineMessageText tL_botInlineMessageText = (TLRPC.TL_botInlineMessageText) botInlineMessage;
@@ -1216,20 +1324,51 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaAuto) {
                 TLRPC.TL_botInlineMessageMediaAuto tL_botInlineMessageMediaAuto = (TLRPC.TL_botInlineMessageMediaAuto) botInlineMessage;
                 tL_message.message = tL_botInlineMessageMediaAuto.message;
-                tL_message.entities = tL_botInlineMessageMediaAuto.entities;
-            } else if (!(botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaInvoice) && (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaWebPage)) {
+                if (TLObject.hasFlag(tL_botInlineMessageMediaAuto.flags, 2)) {
+                    tL_message.flags |= 128;
+                    tL_message.entities = tL_botInlineMessageMediaAuto.entities;
+                }
+            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaInvoice) {
+                TLRPC.TL_botInlineMessageMediaInvoice tL_botInlineMessageMediaInvoice = (TLRPC.TL_botInlineMessageMediaInvoice) botInlineMessage;
+                TLRPC.TL_messageMediaInvoice tL_messageMediaInvoice = new TLRPC.TL_messageMediaInvoice();
+                tL_messageMediaInvoice.shipping_address_requested = tL_botInlineMessageMediaInvoice.shipping_address_requested;
+                tL_messageMediaInvoice.test = tL_botInlineMessageMediaInvoice.test;
+                tL_messageMediaInvoice.title = tL_botInlineMessageMediaInvoice.title;
+                tL_messageMediaInvoice.description = tL_botInlineMessageMediaInvoice.description;
+                if (TLObject.hasFlag(tL_botInlineMessageMediaInvoice.flags, 1)) {
+                    tL_messageMediaInvoice.flags |= 128;
+                    tL_messageMediaInvoice.webPhoto = tL_botInlineMessageMediaInvoice.photo;
+                }
+                tL_messageMediaInvoice.currency = tL_botInlineMessageMediaInvoice.currency;
+                tL_messageMediaInvoice.total_amount = tL_botInlineMessageMediaInvoice.total_amount;
+                tL_message.flags |= 512;
+                tL_message.media = tL_messageMediaInvoice;
+            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaWebPage) {
                 TLRPC.TL_botInlineMessageMediaWebPage tL_botInlineMessageMediaWebPage = (TLRPC.TL_botInlineMessageMediaWebPage) botInlineMessage;
                 TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = new TLRPC.TL_messageMediaWebPage();
                 tL_messageMediaWebPage.force_large_media = tL_botInlineMessageMediaWebPage.force_large_media;
                 tL_messageMediaWebPage.force_small_media = tL_botInlineMessageMediaWebPage.force_small_media;
                 tL_messageMediaWebPage.manual = tL_botInlineMessageMediaWebPage.manual;
                 tL_messageMediaWebPage.safe = tL_botInlineMessageMediaWebPage.safe;
-                tL_messageMediaWebPage.webpage = new TLRPC.TL_webPageEmpty();
+                tL_message.invert_media = tL_botInlineMessageMediaWebPage.invert_media;
+                tL_message.message = tL_botInlineMessageMediaWebPage.message;
+                if (webPage != null) {
+                    tL_messageMediaWebPage.webpage = webPage;
+                } else {
+                    TLRPC.TL_webPage tL_webPage = new TLRPC.TL_webPage();
+                    if (TLObject.hasFlag(tL_botInlineMessageMediaWebPage.flags, 2)) {
+                        tL_message.flags |= 128;
+                        tL_message.entities = tL_botInlineMessageMediaWebPage.entities;
+                    }
+                    String str = tL_botInlineMessageMediaWebPage.url;
+                    tL_webPage.display_url = str;
+                    tL_webPage.url = str;
+                    tL_messageMediaWebPage.webpage = tL_webPage;
+                }
                 tL_message.flags |= 512;
                 tL_message.media = tL_messageMediaWebPage;
             }
         }
-        boolean z = true;
         if (photo != null) {
             TLRPC.TL_messageMediaPhoto tL_messageMediaPhoto = new TLRPC.TL_messageMediaPhoto();
             tL_messageMediaPhoto.photo = photo;
@@ -1249,7 +1388,7 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
             tL_message.flags |= 64;
             tL_message.reply_markup = replyMarkup;
         }
-        return new MessageObject(i, tL_message, z, z) { // from class: org.telegram.ui.bots.BotShareSheet.6
+        return new MessageObject(i, tL_message, z, z) { // from class: org.telegram.ui.bots.BotShareSheet.7
             @Override // org.telegram.messenger.MessageObject
             public boolean isOut() {
                 return false;

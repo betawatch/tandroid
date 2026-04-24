@@ -32,6 +32,7 @@ import me.vkryl.android.animator.FactorAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
 import org.telegram.ui.ActionBar.Theme;
@@ -105,14 +106,14 @@ public class FragmentSearchField extends FrameLayout implements FactorAnimator.T
         this.editText = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 15.0f);
         editTextBoldCursor.setCursorWidth(1.5f);
-        editTextBoldCursor.setInputType(655536);
+        editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | NotificationCenter.liveStoryMessageUpdate);
         editTextBoldCursor.setSingleLine(true);
         editTextBoldCursor.setBackground(null);
         editTextBoldCursor.setVerticalScrollBarEnabled(false);
         editTextBoldCursor.setHorizontalScrollBarEnabled(false);
         editTextBoldCursor.setPadding(AndroidUtilities.dp(48.0f), 0, AndroidUtilities.dp(48.0f), 0);
         editTextBoldCursor.setClipToPadding(true);
-        editTextBoldCursor.setImeOptions(268435462);
+        editTextBoldCursor.setImeOptions(268435459);
         editTextBoldCursor.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         editTextBoldCursor.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.Components.FragmentSearchField.2
             @Override // android.text.TextWatcher

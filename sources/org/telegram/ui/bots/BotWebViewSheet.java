@@ -2500,7 +2500,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         if (user == null || user.photo == null || FileLoader.getInstance(this.currentAccount).getPathToAttach(user.photo.photo_small, true).exists()) {
             return;
         }
-        MediaDataController.getInstance(this.currentAccount).preloadImage(ImageLocation.getForUser(user, 1), 0);
+        MediaDataController.getInstance(this.currentAccount).preloadImage(ImageLocation.getForUser(this.currentAccount, user, 1), 0);
     }
 
     public static void deleteBot(final int i, final long j, final Runnable runnable) {

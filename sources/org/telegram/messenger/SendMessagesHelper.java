@@ -11796,15 +11796,19 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00b5  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00ce  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00db  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x00f1  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0125  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0132  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x00d8  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00ad  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00c6  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00ce  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x00cb  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x00e7  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0100  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x010f  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0121  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0128  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x015c  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0169  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0118  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x010b  */
     /* JADX WARN: Type inference failed for: r12v0 */
     /* JADX WARN: Type inference failed for: r12v3 */
     /*
@@ -11814,7 +11818,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         long j4;
         TLRPC.TL_document tL_document;
         String str2;
+        final TLRPC.TL_document tL_document2;
         final HashMap hashMap;
+        Bitmap cover;
         PollSendParams pollSendParams2 = pollSendParams;
         int i4 = 1;
         long j5 = pollSendParams2 != null ? pollSendParams2.groupId : 0L;
@@ -11842,12 +11848,26 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 if (sentFile != null) {
                     Object obj = sentFile[0];
                     if (obj instanceof TLRPC.TL_document) {
-                        tL_document = (TLRPC.TL_document) obj;
+                        TLRPC.TL_document tL_document3 = (TLRPC.TL_document) obj;
                         String str4 = (String) sentFile[i4];
-                        ensureMediaThumbExists(accountInstance, isEncryptedDialog, tL_document, str3, null, 0L);
+                        ensureMediaThumbExists(accountInstance, isEncryptedDialog, tL_document3, str3, null, 0L);
                         str2 = str4;
+                        tL_document = tL_document3;
                         if (tL_document == null) {
                             tL_document = (TLRPC.TL_document) messageObject4.messageOwner.media.document;
+                        }
+                        tL_document2 = tL_document;
+                        if (tL_document2 != null && tL_document2.thumbs.isEmpty()) {
+                            AudioInfo audioInfo = AudioInfo.getAudioInfo(file);
+                            cover = audioInfo == null ? audioInfo.getCover() : null;
+                            if (cover != null) {
+                                TLRPC.PhotoSize scaleAndSaveImage = ImageLoader.scaleAndSaveImage(cover, 132.0f, 132.0f, 55, isEncryptedDialog);
+                                if (scaleAndSaveImage != null) {
+                                    tL_document2.thumbs.add(scaleAndSaveImage);
+                                    tL_document2.flags |= i4;
+                                }
+                                cover.recycle();
+                            }
                         }
                         if (isEncryptedDialog) {
                             if (accountInstance.getMessagesController().getEncryptedChat(Integer.valueOf(DialogObject.getEncryptedChatId(j))) == null) {
@@ -11857,7 +11877,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         CharSequence[] charSequenceArr = new CharSequence[i4];
                         charSequenceArr[0] = charSequence;
                         ArrayList<TLRPC.MessageEntity> entities = i6 != 0 ? accountInstance.getMediaDataController().getEntities(charSequenceArr, i4) : null;
-                        final String charSequence2 = i6 == 0 ? charSequenceArr[0].toString() : null;
+                        String charSequence2 = i6 != 0 ? charSequenceArr[0].toString() : null;
                         hashMap = new HashMap();
                         if (str3 != null) {
                             hashMap.put("originalPath", str3);
@@ -11871,20 +11891,21 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             hashMap.put("final", "1");
                         }
                         final int intValue = arrayList2 == null ? ((Integer) arrayList2.get(i6)).intValue() : 0;
-                        final TLRPC.TL_document tL_document2 = tL_document;
                         final String str5 = str2;
+                        int i8 = size;
+                        final String str6 = charSequence2;
                         final ArrayList<TLRPC.MessageEntity> arrayList3 = entities;
                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda118
                             @Override // java.lang.Runnable
                             public final void run() {
-                                SendMessagesHelper.lambda$prepareSendingAudioDocuments$103(MessageObject.this, accountInstance, tL_document2, messageObject4, hashMap, str5, j, messageObject2, messageObject3, charSequence2, arrayList3, z2, i, i2, storyItem, str, i3, j2, z3, j3, pollSendParams, intValue);
+                                SendMessagesHelper.lambda$prepareSendingAudioDocuments$103(MessageObject.this, accountInstance, tL_document2, messageObject4, hashMap, str5, j, messageObject2, messageObject3, str6, arrayList3, z2, i, i2, storyItem, str, i3, j2, z3, j3, pollSendParams, intValue);
                             }
                         });
                         i6++;
                         pollSendParams2 = pollSendParams;
                         i5 = i7;
                         j6 = j4;
-                        size = size;
+                        size = i8;
                         i4 = 1;
                     }
                 }
@@ -11893,13 +11914,22 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             str2 = null;
             if (tL_document == null) {
             }
+            tL_document2 = tL_document;
+            if (tL_document2 != null) {
+                AudioInfo audioInfo2 = AudioInfo.getAudioInfo(file);
+                if (audioInfo2 == null) {
+                }
+                if (cover != null) {
+                }
+            }
             if (isEncryptedDialog) {
             }
             CharSequence[] charSequenceArr2 = new CharSequence[i4];
             charSequenceArr2[0] = charSequence;
             if (i6 != 0) {
             }
-            final String charSequence22 = i6 == 0 ? charSequenceArr2[0].toString() : null;
+            if (i6 != 0) {
+            }
             hashMap = new HashMap();
             if (str3 != null) {
             }
@@ -11912,20 +11942,21 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }
             if (arrayList2 == null) {
             }
-            final TLRPC.TL_document tL_document22 = tL_document;
             final String str52 = str2;
+            int i82 = size;
+            final String str62 = charSequence2;
             final ArrayList arrayList32 = entities;
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda118
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendMessagesHelper.lambda$prepareSendingAudioDocuments$103(MessageObject.this, accountInstance, tL_document22, messageObject4, hashMap, str52, j, messageObject2, messageObject3, charSequence22, arrayList32, z2, i, i2, storyItem, str, i3, j2, z3, j3, pollSendParams, intValue);
+                    SendMessagesHelper.lambda$prepareSendingAudioDocuments$103(MessageObject.this, accountInstance, tL_document2, messageObject4, hashMap, str52, j, messageObject2, messageObject3, str62, arrayList32, z2, i, i2, storyItem, str, i3, j2, z3, j3, pollSendParams, intValue);
                 }
             });
             i6++;
             pollSendParams2 = pollSendParams;
             i5 = i72;
             j6 = j4;
-            size = size;
+            size = i82;
             i4 = 1;
         }
         if (runnable != null) {

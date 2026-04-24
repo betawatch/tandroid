@@ -253,6 +253,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
     private long mergeDialogId;
     SparseArray messageAlphaEnter;
     AnimationNotificationsLocker notificationsLocker;
+    private final NotificationCenter.ObserversGroup observersGroup;
     private float optionsAlpha;
     private RLottieImageView optionsSearchImageView;
     private int pagesPaddingBottom;
@@ -925,6 +926,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         public boolean hasSavedMessages;
         private boolean mediaWasLoaded;
         private long mergeDialogId;
+        private final NotificationCenter.ObserversGroup observersGroup;
         private BaseFragment parentFragment;
         private SharedMediaData[] sharedMediaData;
         private long topicId;
@@ -1020,20 +1022,10 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             loadMediaCounts();
             BaseFragment baseFragment2 = this.parentFragment;
             if (baseFragment2 == null) {
-                return;
+                this.observersGroup = null;
+            } else {
+                this.observersGroup = baseFragment2.getNotificationCenter().createObserversGroup(this).add(NotificationCenter.mediaCountsDidLoad).add(NotificationCenter.mediaCountDidLoad).add(NotificationCenter.didReceiveNewMessages).add(NotificationCenter.messageReceivedByServer).add(NotificationCenter.mediaDidLoad).add(NotificationCenter.messagesDeleted).add(NotificationCenter.replaceMessagesObjects).add(NotificationCenter.chatInfoDidLoad).add(NotificationCenter.fileLoaded).add(NotificationCenter.storiesListUpdated).add(NotificationCenter.savedMessagesDialogsUpdate);
             }
-            NotificationCenter notificationCenter = baseFragment2.getNotificationCenter();
-            notificationCenter.addObserver(this, NotificationCenter.mediaCountsDidLoad);
-            notificationCenter.addObserver(this, NotificationCenter.mediaCountDidLoad);
-            notificationCenter.addObserver(this, NotificationCenter.didReceiveNewMessages);
-            notificationCenter.addObserver(this, NotificationCenter.messageReceivedByServer);
-            notificationCenter.addObserver(this, NotificationCenter.mediaDidLoad);
-            notificationCenter.addObserver(this, NotificationCenter.messagesDeleted);
-            notificationCenter.addObserver(this, NotificationCenter.replaceMessagesObjects);
-            notificationCenter.addObserver(this, NotificationCenter.chatInfoDidLoad);
-            notificationCenter.addObserver(this, NotificationCenter.fileLoaded);
-            notificationCenter.addObserver(this, NotificationCenter.storiesListUpdated);
-            notificationCenter.addObserver(this, NotificationCenter.savedMessagesDialogsUpdate);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1075,22 +1067,10 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 return;
             }
             this.delegates.clear();
-            BaseFragment baseFragment2 = this.parentFragment;
-            if (baseFragment2 == null) {
-                return;
+            NotificationCenter.ObserversGroup observersGroup = this.observersGroup;
+            if (observersGroup != null) {
+                observersGroup.removeAllObservers();
             }
-            NotificationCenter notificationCenter = baseFragment2.getNotificationCenter();
-            notificationCenter.removeObserver(this, NotificationCenter.mediaCountsDidLoad);
-            notificationCenter.removeObserver(this, NotificationCenter.mediaCountDidLoad);
-            notificationCenter.removeObserver(this, NotificationCenter.didReceiveNewMessages);
-            notificationCenter.removeObserver(this, NotificationCenter.messageReceivedByServer);
-            notificationCenter.removeObserver(this, NotificationCenter.mediaDidLoad);
-            notificationCenter.removeObserver(this, NotificationCenter.messagesDeleted);
-            notificationCenter.removeObserver(this, NotificationCenter.replaceMessagesObjects);
-            notificationCenter.removeObserver(this, NotificationCenter.chatInfoDidLoad);
-            notificationCenter.removeObserver(this, NotificationCenter.fileLoaded);
-            notificationCenter.removeObserver(this, NotificationCenter.storiesListUpdated);
-            notificationCenter.removeObserver(this, NotificationCenter.savedMessagesDialogsUpdate);
         }
 
         public int[] getLastMediaCount() {
@@ -1699,11 +1679,11 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         if (r43.stories_pinned_available != false) goto L98;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x0a0d  */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x0d79 A[EDGE_INSN: B:168:0x0d79->B:169:0x0d79 BREAK  A[LOOP:3: B:140:0x0a08->B:164:0x0c71], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:171:0x0d7f  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x0df4  */
-    /* JADX WARN: Removed duplicated region for block: B:181:0x0f68  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x09ce  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x0d3a A[EDGE_INSN: B:168:0x0d3a->B:169:0x0d3a BREAK  A[LOOP:3: B:140:0x09c9->B:164:0x0c32], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:171:0x0d40  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x0db5  */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x0f29  */
     /* JADX WARN: Type inference failed for: r11v10 */
     /* JADX WARN: Type inference failed for: r11v15 */
     /* JADX WARN: Type inference failed for: r11v6, types: [boolean, int] */
@@ -2007,21 +1987,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         this.actionBar = baseFragment.getActionBar();
         this.mediaColumnsCount[0] = overrideColumnsCount() <= 0 ? SharedConfig.mediaColumnsCount : overrideColumnsCount();
         this.mediaColumnsCount[1] = overrideColumnsCount() <= 0 ? SharedConfig.storiesColumnsCount : overrideColumnsCount();
-        this.profileActivity.getNotificationCenter().addObserver(this, NotificationCenter.mediaDidLoad);
-        this.profileActivity.getNotificationCenter().addObserver(this, NotificationCenter.messagesDeleted);
-        this.profileActivity.getNotificationCenter().addObserver(this, NotificationCenter.didReceiveNewMessages);
-        this.profileActivity.getNotificationCenter().addObserver(this, NotificationCenter.messageReceivedByServer);
-        this.profileActivity.getNotificationCenter().addObserver(this, NotificationCenter.messagePlayingDidReset);
-        this.profileActivity.getNotificationCenter().addObserver(this, NotificationCenter.messagePlayingPlayStateChanged);
-        this.profileActivity.getNotificationCenter().addObserver(this, NotificationCenter.messagePlayingDidStart);
-        this.profileActivity.getNotificationCenter().addObserver(this, NotificationCenter.storiesListUpdated);
-        this.profileActivity.getNotificationCenter().addObserver(this, NotificationCenter.storiesUpdated);
-        this.profileActivity.getNotificationCenter().addObserver(this, NotificationCenter.channelRecommendationsLoaded);
-        this.profileActivity.getNotificationCenter().addObserver(this, NotificationCenter.savedMessagesDialogsUpdate);
-        this.profileActivity.getNotificationCenter().addObserver(this, NotificationCenter.dialogsNeedReload);
-        this.profileActivity.getNotificationCenter().addObserver(this, NotificationCenter.starUserGiftsLoaded);
-        this.profileActivity.getNotificationCenter().addObserver(this, NotificationCenter.updatedChatRanks);
-        this.profileActivity.getNotificationCenter().addObserver(this, NotificationCenter.didUpdatePollResults);
+        this.observersGroup = this.profileActivity.getNotificationCenter().createObserversGroup(this).add(NotificationCenter.mediaDidLoad).add(NotificationCenter.messagesDeleted).add(NotificationCenter.didReceiveNewMessages).add(NotificationCenter.messageReceivedByServer).add(NotificationCenter.messagePlayingDidReset).add(NotificationCenter.messagePlayingPlayStateChanged).add(NotificationCenter.messagePlayingDidStart).add(NotificationCenter.storiesListUpdated).add(NotificationCenter.storiesUpdated).add(NotificationCenter.channelRecommendationsLoaded).add(NotificationCenter.savedMessagesDialogsUpdate).add(NotificationCenter.dialogsNeedReload).add(NotificationCenter.starUserGiftsLoaded).add(NotificationCenter.updatedChatRanks).add(NotificationCenter.didUpdatePollResults);
         for (int i21 = 0; i21 < 10; i21++) {
             if (i2 == 4) {
                 SharedAudioCell sharedAudioCell = new SharedAudioCell(context) { // from class: org.telegram.ui.Components.SharedMediaLayout.2
@@ -6077,21 +6043,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
     }
 
     public void onDestroy() {
-        this.profileActivity.getNotificationCenter().removeObserver(this, NotificationCenter.mediaDidLoad);
-        this.profileActivity.getNotificationCenter().removeObserver(this, NotificationCenter.didReceiveNewMessages);
-        this.profileActivity.getNotificationCenter().removeObserver(this, NotificationCenter.messagesDeleted);
-        this.profileActivity.getNotificationCenter().removeObserver(this, NotificationCenter.messageReceivedByServer);
-        this.profileActivity.getNotificationCenter().removeObserver(this, NotificationCenter.messagePlayingDidReset);
-        this.profileActivity.getNotificationCenter().removeObserver(this, NotificationCenter.messagePlayingPlayStateChanged);
-        this.profileActivity.getNotificationCenter().removeObserver(this, NotificationCenter.messagePlayingDidStart);
-        this.profileActivity.getNotificationCenter().removeObserver(this, NotificationCenter.storiesListUpdated);
-        this.profileActivity.getNotificationCenter().removeObserver(this, NotificationCenter.storiesUpdated);
-        this.profileActivity.getNotificationCenter().removeObserver(this, NotificationCenter.channelRecommendationsLoaded);
-        this.profileActivity.getNotificationCenter().removeObserver(this, NotificationCenter.savedMessagesDialogsUpdate);
-        this.profileActivity.getNotificationCenter().removeObserver(this, NotificationCenter.dialogsNeedReload);
-        this.profileActivity.getNotificationCenter().removeObserver(this, NotificationCenter.starUserGiftsLoaded);
-        this.profileActivity.getNotificationCenter().removeObserver(this, NotificationCenter.updatedChatRanks);
-        this.profileActivity.getNotificationCenter().removeObserver(this, NotificationCenter.didUpdatePollResults);
+        this.observersGroup.removeAllObservers();
         SearchTagsList searchTagsList = this.searchTagsList;
         if (searchTagsList != null) {
             searchTagsList.detach();

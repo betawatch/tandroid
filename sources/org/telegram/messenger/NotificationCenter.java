@@ -1,6 +1,7 @@
 package org.telegram.messenger;
 
 import android.os.SystemClock;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import java.util.ArrayList;
@@ -50,7 +51,7 @@ public class NotificationCenter {
     public static final int businessLinkCreated = 125;
     public static final int businessLinksUpdated = 124;
     public static final int businessMessagesUpdated = 119;
-    public static final int callTabsVisibleToggled = 337;
+    public static final int callTabsVisibleToggled = 338;
     public static final int cameraInitied = 257;
     public static final int changeRepliesCounter = 13;
     public static final int channelConnectedBotsUpdate = 236;
@@ -81,7 +82,7 @@ public class NotificationCenter {
     public static final int configLoaded = 178;
     public static final int contactsDidLoad = 25;
     public static final int contactsImported = 26;
-    public static final int contactsPermissionBadgeCheck = 338;
+    public static final int contactsPermissionBadgeCheck = 339;
     public static final int contentSettingsLoaded = 243;
     public static final int currentUserPremiumStatusChanged = 303;
     public static final int currentUserShowLimitReachedDialog = 306;
@@ -181,6 +182,7 @@ public class NotificationCenter {
     public static final int mediaCountDidLoad = 33;
     public static final int mediaCountsDidLoad = 34;
     public static final int mediaDidLoad = 32;
+    public static final int memoryLeakFoundException = 337;
     public static final int messagePlayingDidReset = 148;
     public static final int messagePlayingDidSeek = 151;
     public static final int messagePlayingDidStart = 150;
@@ -322,7 +324,7 @@ public class NotificationCenter {
     public static final int timezonesUpdated = 213;
     public static final int tlSchemeParseException = 336;
     public static final int topicsDidLoaded = 314;
-    private static int totalEvents = 339;
+    private static int totalEvents = 340;
     public static final int translationModelDownloaded = 332;
     public static final int translationModelDownloading = 331;
     public static final int twoStepPasswordChanged = 52;
@@ -716,6 +718,49 @@ public class NotificationCenter {
         }
     }
 
+    public static class ObserversGroup {
+        private NotificationCenterDelegate delegate;
+        private NotificationCenter notificationCenter;
+        private final ArrayList<Observer> observers;
+
+        private ObserversGroup(NotificationCenter notificationCenter, NotificationCenterDelegate notificationCenterDelegate) {
+            this.observers = new ArrayList<>();
+            this.notificationCenter = notificationCenter;
+            this.delegate = notificationCenterDelegate;
+        }
+
+        private static class Observer {
+            private final int id;
+            private final NotificationCenterDelegate observer;
+
+            private Observer(NotificationCenterDelegate notificationCenterDelegate, int i) {
+                this.observer = notificationCenterDelegate;
+                this.id = i;
+            }
+        }
+
+        public ObserversGroup add(int i) {
+            this.notificationCenter.addObserver(this.delegate, i);
+            this.observers.add(new Observer(this.delegate, i));
+            return this;
+        }
+
+        public void removeAllObservers() {
+            Iterator<Observer> it = this.observers.iterator();
+            while (it.hasNext()) {
+                Observer next = it.next();
+                this.notificationCenter.removeObserver(next.observer, next.id);
+            }
+            this.observers.clear();
+            this.notificationCenter = null;
+            this.delegate = null;
+        }
+    }
+
+    public ObserversGroup createObserversGroup(NotificationCenterDelegate notificationCenterDelegate) {
+        return new ObserversGroup(notificationCenterDelegate);
+    }
+
     public void addObserver(NotificationCenterDelegate notificationCenterDelegate, int i) {
         if (BuildVars.DEBUG_VERSION && Thread.currentThread() != ApplicationLoader.applicationHandler.getLooper().getThread()) {
             throw new RuntimeException("addObserver allowed only from MAIN thread");
@@ -1045,6 +1090,46 @@ public class NotificationCenter {
         public void clear() {
             this.set.clear();
             super.clear();
+        }
+    }
+
+    public int getObserversSize() {
+        int i = 0;
+        for (int i2 = 0; i2 < this.observers.size(); i2++) {
+            ArrayList<NotificationCenterDelegate> valueAt = this.observers.valueAt(i2);
+            if (valueAt != null) {
+                i += valueAt.size();
+            }
+        }
+        return i;
+    }
+
+    public SparseArray<Integer> dumpObservers() {
+        SparseArray<Integer> sparseArray = new SparseArray<>();
+        for (int i = 0; i < this.observers.size(); i++) {
+            int keyAt = this.observers.keyAt(i);
+            ArrayList<NotificationCenterDelegate> valueAt = this.observers.valueAt(i);
+            sparseArray.put(keyAt, Integer.valueOf(valueAt != null ? valueAt.size() : 0));
+        }
+        return sparseArray;
+    }
+
+    public static void diffObserverDumps(SparseArray<Integer> sparseArray, SparseArray<Integer> sparseArray2) {
+        for (int i = 0; i < sparseArray.size(); i++) {
+            int keyAt = sparseArray.keyAt(i);
+            int intValue = sparseArray.valueAt(i).intValue();
+            int intValue2 = sparseArray2.get(keyAt, -1).intValue();
+            if (intValue2 == -1) {
+                Log.i("ObserverDiff", "key=" + keyAt + " REMOVED (was " + intValue + ")");
+            } else if (intValue != intValue2) {
+                Log.i("ObserverDiff", "key=" + keyAt + " CHANGED: " + intValue + " -> " + intValue2);
+            }
+        }
+        for (int i2 = 0; i2 < sparseArray2.size(); i2++) {
+            int keyAt2 = sparseArray2.keyAt(i2);
+            if (sparseArray.get(keyAt2, -1).intValue() == -1) {
+                Log.i("ObserverDiff", "key=" + keyAt2 + " ADDED (size=" + sparseArray2.valueAt(i2) + ")");
+            }
         }
     }
 }

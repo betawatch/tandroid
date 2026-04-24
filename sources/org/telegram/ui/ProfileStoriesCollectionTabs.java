@@ -181,7 +181,7 @@ public abstract class ProfileStoriesCollectionTabs extends BlurredFrameLayout im
     @Override // org.telegram.ui.Components.BlurredFrameLayout, android.view.ViewGroup, android.view.View
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        NotificationCenter.getInstance(this.collections.currentAccount).addObserver(this, NotificationCenter.storyAlbumsCollectionsUpdate);
+        NotificationCenter.getInstance(this.collections.currentAccount).removeObserver(this, NotificationCenter.storyAlbumsCollectionsUpdate);
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate

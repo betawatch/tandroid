@@ -1,6 +1,7 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.text.Layout;
@@ -337,11 +338,19 @@ public class SharedAudioCell extends FrameLayout implements DownloadController.F
         if ((closestPhotoSizeWithSize instanceof TLRPC.TL_photoSize) || (closestPhotoSizeWithSize instanceof TLRPC.TL_photoSizeProgressive)) {
             this.radialProgress.setImageOverlay(closestPhotoSizeWithSize, document, messageObject);
         } else {
-            String artworkUrl = messageObject.getArtworkUrl(true);
-            if (!TextUtils.isEmpty(artworkUrl)) {
-                this.radialProgress.setImageOverlay(artworkUrl);
+            Bitmap bitmap = messageObject.audioCover;
+            if (bitmap == null) {
+                bitmap = null;
+            }
+            if (bitmap != null) {
+                this.radialProgress.setImageOverlay(bitmap);
             } else {
-                this.radialProgress.setImageOverlay(null, null, null);
+                String artworkUrl = messageObject.getArtworkUrl(true);
+                if (!TextUtils.isEmpty(artworkUrl)) {
+                    this.radialProgress.setImageOverlay(artworkUrl);
+                } else {
+                    this.radialProgress.setImageOverlay(null, null, null);
+                }
             }
         }
         updateButtonState(false, false);

@@ -62,15 +62,20 @@ public abstract class BaseFragment {
     protected ActionBar actionBar;
     protected Bundle arguments;
     private int bottomInset;
+    protected int classGuid;
+    protected int currentAccount;
     protected boolean finishing;
     protected boolean fragmentBeginToShow;
     public View fragmentView;
     private Runnable fullyVisibleListener;
+    protected boolean hasOwnBackground;
     protected boolean inBubbleMode;
     protected boolean inMenuMode;
     protected boolean inPreviewMode;
+    protected boolean inTransitionAnimation;
     public boolean isFinished;
     private boolean isFullyVisible;
+    protected boolean isPaused;
     protected Dialog parentDialog;
     protected INavigationLayout parentLayout;
     private PreviewDelegate previewDelegate;
@@ -78,11 +83,6 @@ public abstract class BaseFragment {
     protected Theme.ResourcesProvider resourceProvider;
     public ArrayList<AttachedSheet> sheetsStack;
     public Dialog visibleDialog;
-    protected int currentAccount = UserConfig.selectedAccount;
-    protected boolean hasOwnBackground = false;
-    protected boolean isPaused = true;
-    protected boolean inTransitionAnimation = false;
-    protected int classGuid = ConnectionsManager.generateClassGuid();
 
     public interface AttachedSheetWindow {
     }
@@ -361,10 +361,16 @@ public abstract class BaseFragment {
     }
 
     public BaseFragment() {
+        this(null);
     }
 
     public BaseFragment(Bundle bundle) {
+        this.currentAccount = UserConfig.selectedAccount;
+        this.hasOwnBackground = false;
+        this.isPaused = true;
+        this.inTransitionAnimation = false;
         this.arguments = bundle;
+        this.classGuid = ConnectionsManager.generateClassGuid();
     }
 
     public void setCurrentAccount(int i) {

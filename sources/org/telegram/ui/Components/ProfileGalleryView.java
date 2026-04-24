@@ -777,6 +777,14 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
         setCurrentItem(this.adapter.getExtraCount(), false);
     }
 
+    public void setCurrentRealPosition(int i, boolean z) {
+        ViewPagerAdapter viewPagerAdapter = this.adapter;
+        if (viewPagerAdapter == null) {
+            return;
+        }
+        setCurrentItem(i + viewPagerAdapter.getExtraCount(), z);
+    }
+
     public int getRealCount() {
         int size = this.photos.size();
         return this.hasActiveVideo ? size + 1 : size;
@@ -946,10 +954,10 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
                 Object obj2 = null;
                 if (DialogObject.isChatDialog(this.dialogId)) {
                     TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-this.dialogId));
-                    imageLocation = ImageLocation.getForUserOrChat(chat, 0);
+                    imageLocation = ImageLocation.getForUserOrChat(this.currentAccount, chat, 0);
                     if (imageLocation != null) {
                         this.imagesLocations.add(imageLocation);
-                        this.thumbsLocations.add(ImageLocation.getForUserOrChat(chat, 1));
+                        this.thumbsLocations.add(ImageLocation.getForUserOrChat(this.currentAccount, chat, 1));
                         this.vectorAvatars.add(null);
                         this.thumbsFileNames.add(null);
                         TLRPC.ChatFull chatFull = this.chatInfo;

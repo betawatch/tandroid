@@ -171,11 +171,11 @@ public class ReactedUserHolderView extends FrameLayout {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x01d1  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x01f1  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0312  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x0315  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x02fb  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x01d3  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x01f3  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0314  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0317  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x02fd  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -209,7 +209,7 @@ public class ReactedUserHolderView extends FrameLayout {
         if (user == null ? !((chatPhoto = chat.photo) == null || (drawable = chatPhoto.strippedBitmap) == null) : !((userProfilePhoto = user.photo) == null || (drawable = userProfilePhoto.strippedBitmap) == null)) {
             drawable2 = drawable;
         }
-        this.avatarView.setImage(ImageLocation.getForUserOrChat(user2, 1), "50_50", drawable2, user2);
+        this.avatarView.setImage(ImageLocation.getForUserOrChat(this.currentAccount, user2, 1), "50_50", drawable2, user2);
         if (z) {
             BackupImageView backupImageView = this.reactView;
             if (backupImageView != null) {

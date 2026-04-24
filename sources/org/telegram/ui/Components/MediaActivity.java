@@ -171,10 +171,10 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x068c  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x069f  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x06be  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x06e6  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x068e  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x06a1  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x06c0  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x06e8  */
     /* JADX WARN: Removed duplicated region for block: B:121:0x052b  */
     /* JADX WARN: Removed duplicated region for block: B:151:0x04e4  */
     /* JADX WARN: Removed duplicated region for block: B:152:0x04d3  */
@@ -182,8 +182,8 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
     /* JADX WARN: Removed duplicated region for block: B:72:0x04da  */
     /* JADX WARN: Removed duplicated region for block: B:75:0x04e9  */
     /* JADX WARN: Removed duplicated region for block: B:83:0x050d  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x065a  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0679  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x065c  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x067b  */
     /* JADX WARN: Type inference failed for: r5v13 */
     /* JADX WARN: Type inference failed for: r5v14, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r5v15 */
@@ -809,7 +809,7 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
                                     avatarDrawable = avatarDrawable5;
                                 }
                             }
-                            this.avatarImageView.setImage(ImageLocation.getForUserOrChat(user, 1), "50_50", avatarDrawable, user);
+                            this.avatarImageView.setImage(ImageLocation.getForUserOrChat(this.currentAccount, user, 1), "50_50", avatarDrawable, user);
                             simpleTextView = this.nameTextView[r5];
                             if (simpleTextView != null && TextUtils.isEmpty(simpleTextView.getText())) {
                                 this.nameTextView[r5].setText(LocaleController.getString(R.string.SharedContentTitle));
@@ -842,7 +842,7 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
                     }
                     user = null;
                     avatarDrawable = avatarDrawable2;
-                    this.avatarImageView.setImage(ImageLocation.getForUserOrChat(user, 1), "50_50", avatarDrawable, user);
+                    this.avatarImageView.setImage(ImageLocation.getForUserOrChat(this.currentAccount, user, 1), "50_50", avatarDrawable, user);
                     simpleTextView = this.nameTextView[r5];
                     if (simpleTextView != null) {
                         this.nameTextView[r5].setText(LocaleController.getString(R.string.SharedContentTitle));
@@ -873,7 +873,7 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
                 avatarDrawable2 = avatarDrawable3;
                 user = null;
                 avatarDrawable = avatarDrawable2;
-                this.avatarImageView.setImage(ImageLocation.getForUserOrChat(user, 1), "50_50", avatarDrawable, user);
+                this.avatarImageView.setImage(ImageLocation.getForUserOrChat(this.currentAccount, user, 1), "50_50", avatarDrawable, user);
                 simpleTextView = this.nameTextView[r5];
                 if (simpleTextView != null) {
                 }
@@ -922,7 +922,7 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
         avatarDrawable2 = avatarDrawable3;
         user = null;
         avatarDrawable = avatarDrawable2;
-        this.avatarImageView.setImage(ImageLocation.getForUserOrChat(user, 1), "50_50", avatarDrawable, user);
+        this.avatarImageView.setImage(ImageLocation.getForUserOrChat(this.currentAccount, user, 1), "50_50", avatarDrawable, user);
         simpleTextView = this.nameTextView[r5];
         if (simpleTextView != null) {
         }

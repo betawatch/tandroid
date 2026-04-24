@@ -2192,11 +2192,25 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             }
         };
         this.provider = new PhotoViewer.EmptyPhotoViewerProvider() { // from class: org.telegram.ui.ProfileActivity.3
+            /* JADX WARN: Multi-variable type inference failed */
+            /* JADX WARN: Removed duplicated region for block: B:57:0x0133  */
+            /* JADX WARN: Removed duplicated region for block: B:60:0x0167  */
+            /* JADX WARN: Removed duplicated region for block: B:63:0x0188  */
+            /* JADX WARN: Removed duplicated region for block: B:71:0x018a  */
+            /* JADX WARN: Removed duplicated region for block: B:72:0x016a  */
+            /* JADX WARN: Removed duplicated region for block: B:73:0x013c  */
+            /* JADX WARN: Type inference failed for: r2v13, types: [org.telegram.ui.Components.BackupImageView] */
             @Override // org.telegram.ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.ui.PhotoViewer.PhotoViewerProvider
+            /*
+                Code decompiled incorrectly, please refer to instructions dump.
+            */
             public PhotoViewer.PlaceProviderObject getPlaceForPhoto(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i, boolean z, boolean z2) {
                 TLRPC.Chat chat;
                 TLRPC.ChatPhoto chatPhoto;
                 TLRPC.FileLocation fileLocation2;
+                int i2;
+                boolean z3;
+                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated;
                 TLRPC.User user;
                 TLRPC.UserProfilePhoto userProfilePhoto;
                 if (fileLocation == null) {
@@ -2208,32 +2222,79 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 if (ProfileActivity.this.userId == 0 ? ProfileActivity.this.chatId == 0 || (chat = ProfileActivity.this.getMessagesController().getChat(Long.valueOf(ProfileActivity.this.chatId))) == null || (chatPhoto = chat.photo) == null || (fileLocation2 = chatPhoto.photo_big) == null : (user = ProfileActivity.this.getMessagesController().getUser(Long.valueOf(ProfileActivity.this.userId))) == null || (userProfilePhoto = user.photo) == null || (fileLocation2 = userProfilePhoto.photo_big) == null) {
                     fileLocation2 = null;
                 }
-                if (fileLocation2 == null || fileLocation2.local_id != fileLocation.local_id || fileLocation2.volume_id != fileLocation.volume_id || fileLocation2.dc_id != fileLocation.dc_id) {
+                boolean z4 = false;
+                boolean z5 = fileLocation2 != null && fileLocation2.local_id == fileLocation.local_id && fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.dc_id == fileLocation.dc_id;
+                if (ProfileActivity.this.avatarsViewPager != null) {
+                    int realCount = ProfileActivity.this.avatarsViewPager.getRealCount();
+                    i2 = 0;
+                    while (i2 < realCount) {
+                        ImageLocation realImageLocation = ProfileActivity.this.avatarsViewPager.getRealImageLocation(i2);
+                        if (realImageLocation != null && (tL_fileLocationToBeDeprecated = realImageLocation.location) != null && tL_fileLocationToBeDeprecated.local_id == fileLocation.local_id && tL_fileLocationToBeDeprecated.volume_id == fileLocation.volume_id && realImageLocation.dc_id == fileLocation.dc_id) {
+                            z5 = true;
+                            break;
+                        }
+                        i2++;
+                    }
+                }
+                i2 = -1;
+                if (!z5) {
                     return null;
                 }
-                int[] iArr = new int[2];
-                ProfileActivity.this.avatarImage.getLocationInWindow(iArr);
-                PhotoViewer.PlaceProviderObject placeProviderObject = new PhotoViewer.PlaceProviderObject();
-                placeProviderObject.viewX = iArr[0];
-                placeProviderObject.viewY = iArr[1];
-                placeProviderObject.parentView = ProfileActivity.this.avatarImage;
-                placeProviderObject.imageReceiver = ProfileActivity.this.avatarImage.getImageReceiver();
-                if (ProfileActivity.this.userId != 0) {
-                    placeProviderObject.dialogId = ProfileActivity.this.userId;
-                } else if (ProfileActivity.this.chatId != 0) {
-                    placeProviderObject.dialogId = -ProfileActivity.this.chatId;
+                AvatarImageView avatarImageView = ProfileActivity.this.avatarImage;
+                if (i2 >= 0 && ProfileActivity.this.avatarsViewPager != null && ProfileActivity.this.avatarsViewPager.getVisibility() == 0) {
+                    if (i2 != ProfileActivity.this.avatarsViewPager.getRealPosition()) {
+                        ProfileActivity.this.avatarsViewPager.setCurrentRealPosition(i2, false);
+                    }
+                    ?? currentItemView = ProfileActivity.this.avatarsViewPager.getCurrentItemView();
+                    if (currentItemView != 0) {
+                        avatarImageView = currentItemView;
+                        z3 = true;
+                        int[] iArr = new int[2];
+                        avatarImageView.getLocationInWindow(iArr);
+                        PhotoViewer.PlaceProviderObject placeProviderObject = new PhotoViewer.PlaceProviderObject();
+                        placeProviderObject.viewX = iArr[0];
+                        placeProviderObject.viewY = iArr[1];
+                        placeProviderObject.parentView = avatarImageView;
+                        placeProviderObject.imageReceiver = avatarImageView.getImageReceiver();
+                        if (ProfileActivity.this.userId == 0) {
+                            placeProviderObject.dialogId = ProfileActivity.this.userId;
+                        } else if (ProfileActivity.this.chatId != 0) {
+                            placeProviderObject.dialogId = -ProfileActivity.this.chatId;
+                        }
+                        placeProviderObject.thumb = placeProviderObject.imageReceiver.getBitmapSafe();
+                        placeProviderObject.size = -1L;
+                        placeProviderObject.radius = avatarImageView.getImageReceiver().getRoundRadius(true);
+                        placeProviderObject.scale = !z3 ? 1.0f : ProfileActivity.this.avatarContainer.getScaleX();
+                        placeProviderObject.canEdit = ProfileActivity.this.userId != ProfileActivity.this.getUserConfig().clientUserId;
+                        if (!z3 && ProfileActivity.this.avatarContainer.getScaleX() > 0.96f) {
+                            z4 = true;
+                        }
+                        placeProviderObject.fadeIn = z4;
+                        placeProviderObject.keepImageReceiverVisible = z3;
+                        return placeProviderObject;
+                    }
                 }
-                ImageReceiver.BitmapHolder bitmapSafe = placeProviderObject.imageReceiver.getBitmapSafe();
-                placeProviderObject.thumb = bitmapSafe;
-                if (bitmapSafe == null) {
-                    return null;
+                z3 = false;
+                int[] iArr2 = new int[2];
+                avatarImageView.getLocationInWindow(iArr2);
+                PhotoViewer.PlaceProviderObject placeProviderObject2 = new PhotoViewer.PlaceProviderObject();
+                placeProviderObject2.viewX = iArr2[0];
+                placeProviderObject2.viewY = iArr2[1];
+                placeProviderObject2.parentView = avatarImageView;
+                placeProviderObject2.imageReceiver = avatarImageView.getImageReceiver();
+                if (ProfileActivity.this.userId == 0) {
                 }
-                placeProviderObject.size = -1L;
-                placeProviderObject.radius = ProfileActivity.this.avatarImage.getImageReceiver().getRoundRadius(true);
-                placeProviderObject.scale = ProfileActivity.this.avatarContainer.getScaleX();
-                placeProviderObject.canEdit = ProfileActivity.this.userId == ProfileActivity.this.getUserConfig().clientUserId;
-                placeProviderObject.fadeIn = ProfileActivity.this.avatarContainer.getScaleX() > 0.96f;
-                return placeProviderObject;
+                placeProviderObject2.thumb = placeProviderObject2.imageReceiver.getBitmapSafe();
+                placeProviderObject2.size = -1L;
+                placeProviderObject2.radius = avatarImageView.getImageReceiver().getRoundRadius(true);
+                placeProviderObject2.scale = !z3 ? 1.0f : ProfileActivity.this.avatarContainer.getScaleX();
+                placeProviderObject2.canEdit = ProfileActivity.this.userId != ProfileActivity.this.getUserConfig().clientUserId;
+                if (!z3) {
+                    z4 = true;
+                }
+                placeProviderObject2.fadeIn = z4;
+                placeProviderObject2.keepImageReceiverVisible = z3;
+                return placeProviderObject2;
             }
 
             @Override // org.telegram.ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.ui.PhotoViewer.PhotoViewerProvider
@@ -2788,6 +2849,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             this.applyBulletin = null;
             AndroidUtilities.runOnUIThread(runnable);
         }
+        Bulletin.removeDelegate(this);
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -7989,6 +8051,9 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     }
 
     private int getSmallAvatarRoundRadius() {
+        if (this.isTopic) {
+            return 0;
+        }
         if (this.chatId == 0 || !ChatObject.isForum(getMessagesController().getChat(Long.valueOf(this.chatId)))) {
             return AndroidUtilities.dp(50.0f);
         }
@@ -8404,45 +8469,92 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0073, code lost:
+    
+        if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_photo) != false) goto L39;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x0096, code lost:
+    
+        if (r7 != false) goto L39;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void openAvatar(boolean z) {
         TLRPC.Chat chat;
         TLRPC.ChatPhoto chatPhoto;
-        ImageLocation imageLocation;
+        TLRPC.FileLocation fileLocation;
+        TLRPC.VideoSize closestVideoSizeWithSize;
+        TLRPC.ChatFull chatFull;
+        TLRPC.FileLocation fileLocation2;
+        TLRPC.VideoSize closestVideoSizeWithSize2;
+        TLRPC.UserFull userFull;
+        TLRPC.Photo photo;
         if (this.listView.getScrollState() != 1 || z) {
-            if (this.userId != 0) {
-                TLRPC.User user = getMessagesController().getUser(Long.valueOf(this.userId));
-                TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
-                if (userProfilePhoto == null || userProfilePhoto.photo_big == null) {
+            ProfileGalleryView profileGalleryView = this.avatarsViewPager;
+            int realPosition = profileGalleryView != null ? profileGalleryView.getRealPosition() : 0;
+            ProfileGalleryView profileGalleryView2 = this.avatarsViewPager;
+            ImageLocation imageLocation = null;
+            ImageLocation realImageLocation = profileGalleryView2 != null ? profileGalleryView2.getRealImageLocation(realPosition) : null;
+            ProfileGalleryView profileGalleryView3 = this.avatarsViewPager;
+            TLRPC.Photo photo2 = profileGalleryView3 != null ? profileGalleryView3.getPhoto(realPosition) : null;
+            if (this.userId == 0) {
+                if (this.chatId == 0 || (chatPhoto = (chat = getMessagesController().getChat(Long.valueOf(this.chatId))).photo) == null || chatPhoto.photo_big == null) {
                     return;
                 }
                 PhotoViewer.getInstance().setParentActivity(this);
-                TLRPC.UserProfilePhoto userProfilePhoto2 = user.photo;
-                int i = userProfilePhoto2.dc_id;
+                TLRPC.ChatPhoto chatPhoto2 = chat.photo;
+                int i = chatPhoto2.dc_id;
                 if (i != 0) {
-                    userProfilePhoto2.photo_big.dc_id = i;
+                    chatPhoto2.photo_big.dc_id = i;
                 }
-                PhotoViewer.getInstance().openPhoto(user.photo.photo_big, this.provider);
+                if (realImageLocation == null || (fileLocation = realImageLocation.location) == null) {
+                    fileLocation = chatPhoto2.photo_big;
+                }
+                if (photo2 == null && (chatFull = this.chatInfo) != null) {
+                    TLRPC.Photo photo3 = chatFull.chat_photo;
+                    if (photo3 instanceof TLRPC.TL_photo) {
+                        photo2 = photo3;
+                    }
+                }
+                if (photo2 != null && !photo2.video_sizes.isEmpty() && (closestVideoSizeWithSize = FileLoader.getClosestVideoSizeWithSize(photo2.video_sizes, MediaDataController.MAX_STYLE_RUNS_COUNT)) != null) {
+                    imageLocation = ImageLocation.getForPhoto(closestVideoSizeWithSize, photo2);
+                }
+                PhotoViewer.getInstance().openPhotoWithVideo(fileLocation, realImageLocation, imageLocation, this.provider);
                 return;
             }
-            if (this.chatId == 0 || (chatPhoto = (chat = getMessagesController().getChat(Long.valueOf(this.chatId))).photo) == null || chatPhoto.photo_big == null) {
+            TLRPC.User user = getMessagesController().getUser(Long.valueOf(this.userId));
+            TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
+            if (userProfilePhoto == null || userProfilePhoto.photo_big == null) {
                 return;
             }
             PhotoViewer.getInstance().setParentActivity(this);
-            TLRPC.ChatPhoto chatPhoto2 = chat.photo;
-            int i2 = chatPhoto2.dc_id;
+            TLRPC.UserProfilePhoto userProfilePhoto2 = user.photo;
+            int i2 = userProfilePhoto2.dc_id;
             if (i2 != 0) {
-                chatPhoto2.photo_big.dc_id = i2;
+                userProfilePhoto2.photo_big.dc_id = i2;
             }
-            TLRPC.ChatFull chatFull = this.chatInfo;
-            if (chatFull != null) {
-                TLRPC.Photo photo = chatFull.chat_photo;
-                if ((photo instanceof TLRPC.TL_photo) && !photo.video_sizes.isEmpty()) {
-                    imageLocation = ImageLocation.getForPhoto(this.chatInfo.chat_photo.video_sizes.get(0), this.chatInfo.chat_photo);
-                    PhotoViewer.getInstance().openPhotoWithVideo(chat.photo.photo_big, imageLocation, this.provider);
+            if (realImageLocation == null || (fileLocation2 = realImageLocation.location) == null) {
+                fileLocation2 = userProfilePhoto2.photo_big;
+            }
+            if (photo2 == null && (userFull = this.userInfo) != null) {
+                if (userProfilePhoto2.personal) {
+                    photo = userFull.personal_photo;
                 }
+                photo = userFull.profile_photo;
+                boolean z2 = photo instanceof TLRPC.TL_photo;
+                if (!z2 || photo.id != userProfilePhoto2.photo_id) {
+                    TLRPC.Photo photo4 = userFull.fallback_photo;
+                    if ((photo4 instanceof TLRPC.TL_photo) && photo4.id == userProfilePhoto2.photo_id) {
+                        photo2 = photo4;
+                    }
+                }
+                photo2 = photo;
             }
-            imageLocation = null;
-            PhotoViewer.getInstance().openPhotoWithVideo(chat.photo.photo_big, imageLocation, this.provider);
+            if (photo2 != null && !photo2.video_sizes.isEmpty() && (closestVideoSizeWithSize2 = FileLoader.getClosestVideoSizeWithSize(photo2.video_sizes, MediaDataController.MAX_STYLE_RUNS_COUNT)) != null) {
+                imageLocation = ImageLocation.getForPhoto(closestVideoSizeWithSize2, photo2);
+            }
+            PhotoViewer.getInstance().openPhotoWithVideo(fileLocation2, realImageLocation, imageLocation, this.provider);
         }
     }
 
@@ -13763,19 +13875,19 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     /* JADX WARN: Can't wrap try/catch for region: R(52:37|(1:365)(1:41)|(1:43)(1:364)|44|(3:46|(1:48)(1:50)|49)|51|(1:53)|54|(1:56)|57|(1:59)|60|(1:62)(1:363)|63|(4:65|(1:361)(1:69)|70|(34:72|73|(1:75)|76|(1:(1:79)(1:(1:84)(1:83)))|85|(2:89|90)|(3:92|(1:94)(1:355)|354)(1:356)|96|(2:98|(2:100|(1:102))(2:294|(1:301)(1:300)))(2:302|(1:304)(2:305|(1:353)(2:311|(1:313)(2:314|(2:316|(1:318)(1:319))(28:320|(1:322)(1:352)|323|(1:351)(1:337)|338|(4:342|(1:350)(1:346)|347|(1:349))|104|(1:293)(1:108)|109|110|111|(1:113)|114|(5:117|(1:119)(12:(1:(1:248)(1:247))(1:124)|(1:(1:231)(2:225|(1:227)(2:228|(1:230))))(1:127)|128|(1:222)(1:131)|132|(1:221)(1:135)|136|(1:138)(1:220)|139|(1:141)(1:219)|142|(14:199|(4:201|(1:218)(2:205|(1:207)(1:217))|208|(2:213|(11:215|186|(1:182)(2:162|(7:164|165|(1:169)|170|(1:174)|175|(1:179)))|180|181|165|(1:169)|170|(2:172|174)|175|(2:177|179))(1:216))(13:212|157|158|(1:160)|182|180|181|165|(0)|170|(0)|175|(0)))|188|158|(0)|182|180|181|165|(0)|170|(0)|175|(0))(4:145|(2:197|198)(2:149|(1:151)(5:189|(1:196)|191|192|(1:194)(1:195)))|152|(2:183|(12:185|186|(0)|182|180|181|165|(0)|170|(0)|175|(0))(13:187|188|158|(0)|182|180|181|165|(0)|170|(0)|175|(0)))(13:156|157|158|(0)|182|180|181|165|(0)|170|(0)|175|(0))))|120|121|115)|249|250|(2:252|(1:282)(1:258))(2:283|(10:290|260|(1:262)|263|(1:265)|266|(1:281)(1:272)|273|(1:275)(1:280)|276)(1:289))|259|260|(0)|263|(0)|266|(2:268|270)|281|273|(0)(0)|276)))))|103|104|(1:106)|293|109|110|111|(0)|114|(1:115)|249|250|(0)(0)|259|260|(0)|263|(0)|266|(0)|281|273|(0)(0)|276))(1:362)|360|73|(0)|76|(0)|85|(30:87|89|90|(0)(0)|96|(0)(0)|103|104|(0)|293|109|110|111|(0)|114|(1:115)|249|250|(0)(0)|259|260|(0)|263|(0)|266|(0)|281|273|(0)(0)|276)|358|89|90|(0)(0)|96|(0)(0)|103|104|(0)|293|109|110|111|(0)|114|(1:115)|249|250|(0)(0)|259|260|(0)|263|(0)|266|(0)|281|273|(0)(0)|276) */
     /* JADX WARN: Code restructure failed: missing block: B:406:0x0856, code lost:
     
-        if (r28.chatInfo.can_view_participants != false) goto L423;
+        if (r29.chatInfo.can_view_participants != false) goto L423;
      */
     /* JADX WARN: Code restructure failed: missing block: B:560:0x0adb, code lost:
     
-        if (r28.nameTextView[r13].setText(r3) != false) goto L528;
+        if (r29.nameTextView[r13].setText(r3) != false) goto L528;
      */
     /* JADX WARN: Code restructure failed: missing block: B:567:0x0af2, code lost:
     
-        if (r28.nameTextView[r13].setText(org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.ChatMessageSuggestions)) != false) goto L528;
+        if (r29.nameTextView[r13].setText(org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.ChatMessageSuggestions)) != false) goto L528;
      */
     /* JADX WARN: Code restructure failed: missing block: B:573:0x0b14, code lost:
     
-        if (r28.nameTextView[r13].setText(r3) != false) goto L528;
+        if (r29.nameTextView[r13].setText(r3) != false) goto L528;
      */
     /* JADX WARN: Code restructure failed: missing block: B:95:0x01d8, code lost:
     
@@ -13817,13 +13929,13 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     /* JADX WARN: Removed duplicated region for block: B:579:0x0e0b  */
     /* JADX WARN: Removed duplicated region for block: B:582:0x0e12  */
     /* JADX WARN: Removed duplicated region for block: B:587:0x0e21  */
-    /* JADX WARN: Removed duplicated region for block: B:591:0x0e7e A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:594:0x0ea2  */
-    /* JADX WARN: Removed duplicated region for block: B:599:0x0eb2  */
-    /* JADX WARN: Removed duplicated region for block: B:603:0x0ecb  */
-    /* JADX WARN: Removed duplicated region for block: B:610:0x0ef6  */
-    /* JADX WARN: Removed duplicated region for block: B:617:0x0f0f  */
-    /* JADX WARN: Removed duplicated region for block: B:625:0x0e90  */
+    /* JADX WARN: Removed duplicated region for block: B:591:0x0e89 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:594:0x0ead  */
+    /* JADX WARN: Removed duplicated region for block: B:599:0x0ebd  */
+    /* JADX WARN: Removed duplicated region for block: B:603:0x0ed6  */
+    /* JADX WARN: Removed duplicated region for block: B:610:0x0f01  */
+    /* JADX WARN: Removed duplicated region for block: B:617:0x0f1a  */
+    /* JADX WARN: Removed duplicated region for block: B:625:0x0e9b  */
     /* JADX WARN: Removed duplicated region for block: B:626:0x0e2d  */
     /* JADX WARN: Removed duplicated region for block: B:75:0x0161  */
     /* JADX WARN: Removed duplicated region for block: B:78:0x016a  */
@@ -14754,16 +14866,15 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                     if (ChatObject.isMonoForum(this.currentChat)) {
                                         TLRPC.Chat monoForumLinkedChat = getMessagesController().getMonoForumLinkedChat(this.currentChat.id);
                                         this.avatarDrawable.setInfo(this.currentAccount, monoForumLinkedChat);
-                                        ImageLocation forUserOrChat6 = ImageLocation.getForUserOrChat(monoForumLinkedChat, 0);
-                                        ImageLocation forUserOrChat7 = ImageLocation.getForUserOrChat(monoForumLinkedChat, 1);
-                                        ImageLocation currentVideoLocation3 = this.avatarsViewPager.getCurrentVideoLocation(forUserOrChat7, forUserOrChat6);
+                                        ImageLocation forUserOrChat6 = ImageLocation.getForUserOrChat(this.currentAccount, monoForumLinkedChat, 0);
+                                        ImageLocation forUserOrChat7 = ImageLocation.getForUserOrChat(this.currentAccount, monoForumLinkedChat, 1);
+                                        currentVideoLocation = this.avatarsViewPager.getCurrentVideoLocation(forUserOrChat7, forUserOrChat6);
                                         forUserOrChat2 = forUserOrChat7;
                                         forUserOrChat = forUserOrChat6;
-                                        currentVideoLocation = currentVideoLocation3;
                                     } else {
                                         this.avatarDrawable.setInfo(this.currentAccount, chat);
-                                        forUserOrChat = ImageLocation.getForUserOrChat(chat, 0);
-                                        forUserOrChat2 = ImageLocation.getForUserOrChat(chat, 1);
+                                        forUserOrChat = ImageLocation.getForUserOrChat(this.currentAccount, chat, 0);
+                                        forUserOrChat2 = ImageLocation.getForUserOrChat(this.currentAccount, chat, 1);
                                         ProfileGalleryView profileGalleryView = this.avatarsViewPager;
                                         if (profileGalleryView != null) {
                                             currentVideoLocation = profileGalleryView.getCurrentVideoLocation(forUserOrChat2, forUserOrChat);
@@ -15270,25 +15381,25 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     
         if (getMessagesController().getStoriesController().canPostStories(getDialogId()) != false) goto L187;
      */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x083c  */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x0853  */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x086a  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x0881  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0695  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0858  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x086f  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x0886  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x089d  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x06b1  */
     /* JADX WARN: Removed duplicated region for block: B:166:0x02ce  */
     /* JADX WARN: Removed duplicated region for block: B:175:0x030a  */
     /* JADX WARN: Removed duplicated region for block: B:258:0x0406  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0669  */
-    /* JADX WARN: Removed duplicated region for block: B:339:0x0408  */
-    /* JADX WARN: Removed duplicated region for block: B:342:0x03eb  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x06a8  */
-    /* JADX WARN: Removed duplicated region for block: B:371:0x0608  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x06af  */
-    /* JADX WARN: Removed duplicated region for block: B:385:0x063d  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x06c6  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x06ed  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0783  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0832  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0685  */
+    /* JADX WARN: Removed duplicated region for block: B:338:0x0408  */
+    /* JADX WARN: Removed duplicated region for block: B:341:0x03eb  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x06c4  */
+    /* JADX WARN: Removed duplicated region for block: B:370:0x0624  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x06cb  */
+    /* JADX WARN: Removed duplicated region for block: B:384:0x0659  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x06e2  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0709  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x079f  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x084e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -15306,7 +15417,6 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         boolean z11;
         boolean z12;
         boolean z13;
-        TLRPC.TL_chatAdminRights tL_chatAdminRights;
         boolean z14;
         boolean z15;
         TLRPC.ChatFull chatFull2;
@@ -15736,6 +15846,15 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         z12 = false;
                         z5 = false;
                     }
+                    if (getMessagesController().getStoriesController().canPostStories(chat2)) {
+                        this.otherItem.addSubItem(39, R.drawable.msg_archive, LocaleController.getString(R.string.OpenChannelArchiveStories));
+                        z4 = true;
+                    } else {
+                        if (getMessagesController().getStoriesController().canEditStories(chat2)) {
+                            this.otherItem.addSubItem(39, R.drawable.msg_archive, LocaleController.getString(R.string.OpenChannelArchiveStories));
+                        }
+                        z4 = false;
+                    }
                     if (chat2.megagroup) {
                         TLRPC.ChatFull chatFull3 = this.chatInfo;
                         if (chatFull3 == null || !chatFull3.participants_hidden || ChatObject.hasAdminRights(chat2)) {
@@ -15755,20 +15874,12 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         } else if (chat2.left || chat2.kicked || this.isTopic) {
                             z3 = z12;
                             z2 = false;
-                            z4 = false;
                         } else {
                             this.otherItem.addSubItem(7, R.drawable.msg_leave, LocaleController.getString(R.string.LeaveMega));
                         }
                         z3 = z12;
                         z2 = false;
-                        z4 = false;
                     } else {
-                        if (chat2.creator || ((tL_chatAdminRights = chat2.admin_rights) != null && tL_chatAdminRights.edit_stories)) {
-                            this.otherItem.addSubItem(39, R.drawable.msg_archive, LocaleController.getString(R.string.OpenChannelArchiveStories));
-                            z4 = true;
-                        } else {
-                            z4 = false;
-                        }
                         if (ChatObject.isPublic(chat2)) {
                             this.otherItem.addSubItem(10, R.drawable.msg_share, LocaleController.getString(R.string.BotShare));
                             z13 = !chat2.creator;
@@ -16380,7 +16491,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             }
             if (closestPhotoSizeWithSize != null && this.avatar != null) {
                 FileLoader.getInstance(this.currentAccount).getPathToAttach(this.avatar, true).renameTo(FileLoader.getInstance(this.currentAccount).getPathToAttach(closestPhotoSizeWithSize, true));
-                ImageLoader.getInstance().replaceImageInCache(this.avatar.volume_id + "_" + this.avatar.local_id + "@50_50", closestPhotoSizeWithSize.location.volume_id + "_" + closestPhotoSizeWithSize.location.local_id + "@50_50", ImageLocation.getForUserOrChat(user, 1), false);
+                ImageLoader.getInstance().replaceImageInCache(this.avatar.volume_id + "_" + this.avatar.local_id + "@50_50", closestPhotoSizeWithSize.location.volume_id + "_" + closestPhotoSizeWithSize.location.local_id + "@50_50", ImageLocation.getForUserOrChat(this.currentAccount, user, 1), false);
             }
             if (closestVideoSizeWithSize != null && str != null) {
                 new File(str).renameTo(FileLoader.getInstance(this.currentAccount).getPathToAttach(closestVideoSizeWithSize, "mp4", true));

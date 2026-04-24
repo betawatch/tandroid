@@ -1703,46 +1703,51 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         return this.startedTracking;
     }
 
-    public void onBackStarted(float f, float f2) {
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x0011, code lost:
+    
+        if (r5.animationInProgress != false) goto L8;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public boolean onBackStarted(float f, float f2) {
         if (this.animationInProgress) {
             AnimatorSet animatorSet = this.backAnimator;
-            if (animatorSet == null) {
-                return;
+            if (animatorSet != null) {
+                animatorSet.end();
+                this.backAnimator = null;
             }
-            animatorSet.end();
-            this.backAnimator = null;
-            if (this.animationInProgress) {
-                return;
+            return false;
+        }
+        if (this.predictiveBackInProgress || this.predictiveInput || this.transitionAnimationPreviewMode || this.startedTracking || checkTransitionAnimation() || this.fragmentsStack.size() <= 1 || isInPreviewMode()) {
+            return false;
+        }
+        EmptyBaseFragment emptyBaseFragment = this.sheetFragment;
+        if (emptyBaseFragment != null && emptyBaseFragment.hasShownSheet()) {
+            return false;
+        }
+        List list = this.fragmentsStack;
+        BaseFragment baseFragment = (BaseFragment) list.get(list.size() - 1);
+        if (baseFragment.onBackPressed(false) && !baseFragment.hasShownSheet() && baseFragment.canBeginSlide()) {
+            this.predictiveBackHasProgress = false;
+            this.predictiveBackInProgress = true;
+            this.predictiveInput = true;
+            this.predictiveBackLeft = f < ((float) AndroidUtilities.displaySize.x) / 2.0f;
+            this.predictiveBackY = f2;
+            prepareForMoving();
+            Activity activity = this.parentActivity;
+            if (activity != null && activity.getCurrentFocus() != null) {
+                AndroidUtilities.hideKeyboard(this.parentActivity.getCurrentFocus());
             }
+            baseFragment.onBeginSlide();
+            return true;
         }
-        if (this.predictiveBackInProgress || this.predictiveInput || this.transitionAnimationPreviewMode || this.startedTracking || checkTransitionAnimation()) {
-            return;
-        }
-        if (this.fragmentsStack.size() > 1 && !isInPreviewMode()) {
-            EmptyBaseFragment emptyBaseFragment = this.sheetFragment;
-            if (emptyBaseFragment == null || !emptyBaseFragment.hasShownSheet()) {
-                List list = this.fragmentsStack;
-                BaseFragment baseFragment = (BaseFragment) list.get(list.size() - 1);
-                if (baseFragment.onBackPressed(false) && !baseFragment.hasShownSheet() && baseFragment.canBeginSlide()) {
-                    this.predictiveBackHasProgress = false;
-                    this.predictiveBackInProgress = true;
-                    this.predictiveInput = true;
-                    this.predictiveBackLeft = f < ((float) AndroidUtilities.displaySize.x) / 2.0f;
-                    this.predictiveBackY = f2;
-                    prepareForMoving();
-                    Activity activity = this.parentActivity;
-                    if (activity != null && activity.getCurrentFocus() != null) {
-                        AndroidUtilities.hideKeyboard(this.parentActivity.getCurrentFocus());
-                    }
-                    baseFragment.onBeginSlide();
-                }
-            }
-        }
+        return false;
     }
 
     public void onBackProgress(float f) {
         if (this.predictiveInput) {
-            float dp = AndroidUtilities.dp(56.0f) * f;
+            float dp = AndroidUtilities.dp(56.0f) * CubicBezierInterpolator.StandardDecelerate.getInterpolation(f);
             this.predictiveBackHasProgress = f > 0.0f;
             this.containerView.setTranslationX(dp);
             setInnerTranslationX(dp);

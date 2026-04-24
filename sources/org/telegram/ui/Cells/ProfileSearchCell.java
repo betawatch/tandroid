@@ -793,8 +793,8 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         this.rectangularAvatar = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:138:0x0081  */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x0089  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x008c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -827,11 +827,11 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
                     Drawable drawable4 = userProfilePhoto.strippedBitmap;
                     if (drawable4 != null) {
                         drawable2 = drawable4;
-                        this.avatarImage.setImage(ImageLocation.getForUserOrChat(user4, 1), "50_50", ImageLocation.getForUserOrChat(this.user, 2), "50_50", drawable2, this.user, 0);
+                        this.avatarImage.setImage(ImageLocation.getForUserOrChat(this.currentAccount, user4, 1), "50_50", ImageLocation.getForUserOrChat(this.user, 2), "50_50", drawable2, this.user, 0);
                     }
                 }
                 drawable2 = drawable3;
-                this.avatarImage.setImage(ImageLocation.getForUserOrChat(user4, 1), "50_50", ImageLocation.getForUserOrChat(this.user, 2), "50_50", drawable2, this.user, 0);
+                this.avatarImage.setImage(ImageLocation.getForUserOrChat(this.currentAccount, user4, 1), "50_50", ImageLocation.getForUserOrChat(this.user, 2), "50_50", drawable2, this.user, 0);
             }
         } else {
             TLRPC.Chat chat = this.chat;
@@ -847,7 +847,7 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
                             ForumUtilities.setMonoForumAvatar(this.currentAccount, chat, avatarDrawable, this.avatarImage);
                         } else {
                             avatarDrawable.setInfo(this.currentAccount, chat);
-                            this.avatarImage.setImage(ImageLocation.getForUserOrChat(this.chat, 1), "50_50", ImageLocation.getForUserOrChat(this.chat, 2), "50_50", drawable, this.chat, 0);
+                            this.avatarImage.setImage(ImageLocation.getForUserOrChat(this.currentAccount, this.chat, 1), "50_50", ImageLocation.getForUserOrChat(this.chat, 2), "50_50", drawable, this.chat, 0);
                         }
                     }
                 }

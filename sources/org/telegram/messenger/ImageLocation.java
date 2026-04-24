@@ -140,23 +140,39 @@ public class ImageLocation {
     }
 
     public static ImageLocation getForUserOrChat(TLObject tLObject, int i) {
+        return getForUserOrChat(UserConfig.selectedAccount, tLObject, i);
+    }
+
+    public static ImageLocation getForUserOrChat(int i, TLObject tLObject, int i2) {
         if (tLObject instanceof TLRPC.User) {
-            return getForUser((TLRPC.User) tLObject, i);
+            return getForUser(i, (TLRPC.User) tLObject, i2);
         }
         if (tLObject instanceof TLRPC.Chat) {
-            return getForChat((TLRPC.Chat) tLObject, i);
+            return getForChat(i, (TLRPC.Chat) tLObject, i2);
         }
         return null;
     }
 
     public static ImageLocation getForUser(TLRPC.User user, int i) {
+        return getForUser(UserConfig.selectedAccount, user, i);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0111  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static ImageLocation getForUser(int i, TLRPC.User user, int i2) {
         TLRPC.UserProfilePhoto userProfilePhoto;
-        TLRPC.UserFull userFull;
         TLRPC.Photo photo;
         ArrayList<TLRPC.VideoSize> arrayList;
-        if (user != null && user.access_hash != 0 && (userProfilePhoto = user.photo) != null) {
-            if (i != 4 && i != 3) {
-                if (i == 2) {
+        ArrayList<TLRPC.VideoSize> arrayList2;
+        ArrayList<TLRPC.VideoSize> arrayList3;
+        TLRPC.Photo photo2;
+        ArrayList<TLRPC.VideoSize> arrayList4;
+        TLRPC.InputPeer inputPeer;
+        if (user != null && (userProfilePhoto = user.photo) != null) {
+            if (i2 != 4 && i2 != 3) {
+                if (i2 == 2) {
                     if (userProfilePhoto.stripped_thumb == null) {
                         return null;
                     }
@@ -167,51 +183,92 @@ public class ImageLocation {
                     tL_photoStrippedSize.bytes = user.photo.stripped_thumb;
                     return imageLocation;
                 }
-                TLRPC.FileLocation fileLocation = i == 0 ? userProfilePhoto.photo_big : userProfilePhoto.photo_small;
+                TLRPC.FileLocation fileLocation = i2 == 0 ? userProfilePhoto.photo_big : userProfilePhoto.photo_small;
                 if (fileLocation == null) {
                     return null;
                 }
-                TLRPC.TL_inputPeerUser tL_inputPeerUser = new TLRPC.TL_inputPeerUser();
-                tL_inputPeerUser.user_id = user.id;
-                tL_inputPeerUser.access_hash = user.access_hash;
-                int i2 = user.photo.dc_id;
-                if (i2 == 0) {
-                    i2 = fileLocation.dc_id;
+                if (user.access_hash != 0) {
+                    TLRPC.InputPeer tL_inputPeerUser = new TLRPC.TL_inputPeerUser();
+                    tL_inputPeerUser.user_id = user.id;
+                    tL_inputPeerUser.access_hash = user.access_hash;
+                    inputPeer = tL_inputPeerUser;
+                } else {
+                    if (user.fromMessageDialogId == 0 || user.fromMessageId == 0) {
+                        return null;
+                    }
+                    TLRPC.InputPeer tL_inputPeerUserFromMessage = new TLRPC.TL_inputPeerUserFromMessage();
+                    tL_inputPeerUserFromMessage.user_id = user.id;
+                    tL_inputPeerUserFromMessage.peer = MessagesController.getInstance(i).getInputPeer(user.fromMessageDialogId);
+                    tL_inputPeerUserFromMessage.msg_id = user.fromMessageId;
+                    inputPeer = tL_inputPeerUserFromMessage;
                 }
-                ImageLocation forPhoto = getForPhoto(fileLocation, 0, null, null, tL_inputPeerUser, i, i2, null, null);
+                int i3 = user.photo.dc_id;
+                if (i3 == 0) {
+                    i3 = fileLocation.dc_id;
+                }
+                ImageLocation forPhoto = getForPhoto(fileLocation, 0, null, null, inputPeer, i2, i3, null, null);
                 forPhoto.photoId = user.photo.photo_id;
                 return forPhoto;
             }
-            int i3 = UserConfig.selectedAccount;
-            if (MessagesController.getInstance(i3).isPremiumUser(user) && user.photo.has_video && (userFull = MessagesController.getInstance(i3).getUserFull(user.id)) != null && (photo = userFull.profile_photo) != null && (arrayList = photo.video_sizes) != null && !arrayList.isEmpty()) {
-                if (i == 4) {
-                    return getForPhoto(FileLoader.getClosestVideoSizeWithSize(userFull.profile_photo.video_sizes, MediaDataController.MAX_STYLE_RUNS_COUNT), userFull.profile_photo);
-                }
-                TLRPC.VideoSize closestVideoSizeWithSize = FileLoader.getClosestVideoSizeWithSize(userFull.profile_photo.video_sizes, 100);
-                int i4 = 0;
-                while (true) {
-                    if (i4 >= userFull.profile_photo.video_sizes.size()) {
-                        break;
+            if (MessagesController.getInstance(i).isPremiumUser(user) && user.photo.has_video) {
+                TLRPC.UserFull userFull = MessagesController.getInstance(i).getUserFull(user.id);
+                if (userFull != null) {
+                    if (user.photo.personal && (photo2 = userFull.personal_photo) != null && (arrayList4 = photo2.video_sizes) != null && !arrayList4.isEmpty()) {
+                        photo = userFull.personal_photo;
+                    } else {
+                        TLRPC.Photo photo3 = userFull.profile_photo;
+                        if (photo3 != null && photo3.id == user.photo.photo_id && (arrayList3 = photo3.video_sizes) != null && !arrayList3.isEmpty()) {
+                            photo = userFull.profile_photo;
+                        } else {
+                            TLRPC.Photo photo4 = userFull.fallback_photo;
+                            if (photo4 != null && photo4.id == user.photo.photo_id && (arrayList2 = photo4.video_sizes) != null && !arrayList2.isEmpty()) {
+                                photo = userFull.fallback_photo;
+                            } else {
+                                TLRPC.Photo photo5 = userFull.profile_photo;
+                                if (photo5 != null && (arrayList = photo5.video_sizes) != null && !arrayList.isEmpty()) {
+                                    photo = userFull.profile_photo;
+                                }
+                            }
+                        }
                     }
-                    if ("p".equals(userFull.profile_photo.video_sizes.get(i4).type)) {
-                        closestVideoSizeWithSize = userFull.profile_photo.video_sizes.get(i4);
-                        break;
+                    if (photo != null) {
+                        if (i2 == 4) {
+                            return getForPhoto(FileLoader.getClosestVideoSizeWithSize(photo.video_sizes, MediaDataController.MAX_STYLE_RUNS_COUNT), photo);
+                        }
+                        TLRPC.VideoSize closestVideoSizeWithSize = FileLoader.getClosestVideoSizeWithSize(photo.video_sizes, 100);
+                        int i4 = 0;
+                        while (true) {
+                            if (i4 >= photo.video_sizes.size()) {
+                                break;
+                            }
+                            if ("p".equals(photo.video_sizes.get(i4).type)) {
+                                closestVideoSizeWithSize = photo.video_sizes.get(i4);
+                                break;
+                            }
+                            i4++;
+                        }
+                        return getForPhoto(closestVideoSizeWithSize, photo);
                     }
-                    i4++;
                 }
-                return getForPhoto(closestVideoSizeWithSize, userFull.profile_photo);
+                photo = null;
+                if (photo != null) {
+                }
             }
         }
         return null;
     }
 
     public static ImageLocation getForChat(TLRPC.Chat chat, int i) {
+        return getForChat(UserConfig.selectedAccount, chat, i);
+    }
+
+    public static ImageLocation getForChat(int i, TLRPC.Chat chat, int i2) {
         TLRPC.ChatPhoto chatPhoto;
         TLRPC.InputPeer tL_inputPeerChat;
         if (chat == null || (chatPhoto = chat.photo) == null) {
             return null;
         }
-        if (i == 2) {
+        if (i2 == 2) {
             if (chatPhoto.stripped_thumb == null) {
                 return null;
             }
@@ -222,7 +279,7 @@ public class ImageLocation {
             tL_photoStrippedSize.bytes = chat.photo.stripped_thumb;
             return imageLocation;
         }
-        TLRPC.FileLocation fileLocation = i == 0 ? chatPhoto.photo_big : chatPhoto.photo_small;
+        TLRPC.FileLocation fileLocation = i2 == 0 ? chatPhoto.photo_big : chatPhoto.photo_small;
         if (fileLocation == null) {
             return null;
         }
@@ -238,11 +295,11 @@ public class ImageLocation {
             tL_inputPeerChat.access_hash = chat.access_hash;
         }
         TLRPC.InputPeer inputPeer = tL_inputPeerChat;
-        int i2 = chat.photo.dc_id;
-        if (i2 == 0) {
-            i2 = fileLocation.dc_id;
+        int i3 = chat.photo.dc_id;
+        if (i3 == 0) {
+            i3 = fileLocation.dc_id;
         }
-        ImageLocation forPhoto = getForPhoto(fileLocation, 0, null, null, inputPeer, i, i2, null, null);
+        ImageLocation forPhoto = getForPhoto(fileLocation, 0, null, null, inputPeer, i2, i3, null, null);
         forPhoto.photoId = chat.photo.photo_id;
         return forPhoto;
     }

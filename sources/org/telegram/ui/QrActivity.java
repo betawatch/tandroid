@@ -193,11 +193,11 @@ public class QrActivity extends BaseFragment {
     public View createView(Context context) {
         TLRPC.Chat chat;
         String publicUsername;
-        String str;
-        AvatarDrawable avatarDrawable;
         ImageLocation forChat;
+        AvatarDrawable avatarDrawable;
+        ImageLocation imageLocation;
+        String str;
         boolean z;
-        ImageLocation forChat2;
         String str2;
         boolean z2;
         this.isCurrentThemeDark = Theme.getActiveTheme().isDark();
@@ -298,42 +298,48 @@ public class QrActivity extends BaseFragment {
                     } else {
                         z2 = false;
                         z = true;
-                        avatarDrawable = new AvatarDrawable(user);
-                        forChat = ImageLocation.getForUser(user, 1);
-                        forChat2 = ImageLocation.getForUser(user, 0);
+                        AvatarDrawable avatarDrawable2 = new AvatarDrawable(user);
+                        ImageLocation forUser = ImageLocation.getForUser(this.currentAccount, user, 1);
+                        forChat = ImageLocation.getForUser(this.currentAccount, user, 0);
                         z3 = z2;
+                        avatarDrawable = avatarDrawable2;
+                        imageLocation = forUser;
                     }
                 } else {
                     str = null;
                     z2 = false;
                 }
                 z = false;
-                avatarDrawable = new AvatarDrawable(user);
-                forChat = ImageLocation.getForUser(user, 1);
-                forChat2 = ImageLocation.getForUser(user, 0);
+                AvatarDrawable avatarDrawable22 = new AvatarDrawable(user);
+                ImageLocation forUser2 = ImageLocation.getForUser(this.currentAccount, user, 1);
+                forChat = ImageLocation.getForUser(this.currentAccount, user, 0);
                 z3 = z2;
+                avatarDrawable = avatarDrawable22;
+                imageLocation = forUser2;
             }
             publicUsername = null;
             str = null;
-            forChat2 = null;
-            forChat = null;
-            avatarDrawable = null;
             z = false;
+            forChat = null;
+            imageLocation = null;
+            avatarDrawable = null;
         } else {
             if (this.chatId != 0 && (chat = getMessagesController().getChat(Long.valueOf(this.chatId))) != null) {
                 publicUsername = ChatObject.getPublicUsername(chat);
+                AvatarDrawable avatarDrawable3 = new AvatarDrawable(chat);
+                ImageLocation forChat2 = ImageLocation.getForChat(this.currentAccount, chat, 1);
+                forChat = ImageLocation.getForChat(this.currentAccount, chat, 0);
+                avatarDrawable = avatarDrawable3;
+                imageLocation = forChat2;
                 str = null;
-                avatarDrawable = new AvatarDrawable(chat);
-                forChat = ImageLocation.getForChat(chat, 1);
                 z = false;
-                forChat2 = ImageLocation.getForChat(chat, 0);
             }
             publicUsername = null;
             str = null;
-            forChat2 = null;
-            forChat = null;
-            avatarDrawable = null;
             z = false;
+            forChat = null;
+            imageLocation = null;
+            avatarDrawable = null;
         }
         QrView qrView = new QrView(context);
         this.qrView = qrView;
@@ -366,7 +372,7 @@ public class QrActivity extends BaseFragment {
         backupImageView.setRoundRadius(AndroidUtilities.dp(42.0f));
         this.avatarImageView.setSize(AndroidUtilities.dp(84.0f), AndroidUtilities.dp(84.0f));
         frameLayout.addView(this.avatarImageView, LayoutHelper.createFrame(84, 84, 51));
-        this.avatarImageView.setImage(forChat2, "84_84", forChat, "50_50", avatarDrawable, (Bitmap) null, (String) null, 0, (Object) null);
+        this.avatarImageView.setImage(forChat, "84_84", imageLocation, "50_50", avatarDrawable, (Bitmap) null, (String) null, 0, (Object) null);
         ImageView imageView = new ImageView(context);
         this.closeImageView = imageView;
         imageView.setBackground(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(34.0f), 671088640, 687865855));

@@ -376,6 +376,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     private FragmentSearchField fragmentSearchField;
     private SearchTextWatcher fragmentSearchFieldWatcher;
     private ArrayList frozenDialogsList;
+    private NotificationCenter.ObserversGroup globalObserversGroup;
     private boolean hasInvoice;
     public boolean hasMainTabs;
     public boolean hasOnlySlefStories;
@@ -415,6 +416,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     private int navigationBarHeight;
     private AnimationNotificationsLocker notificationsLocker;
     public boolean notify;
+    private NotificationCenter.ObserversGroup observersGroup;
     private boolean onlySelect;
     private MessagesStorage.TopicKey openedDialogId;
     private ActionBarMenuItem optionsItem;
@@ -575,7 +577,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$21800(DialogsActivity dialogsActivity) {
+    public static /* synthetic */ void access$22600(DialogsActivity dialogsActivity) {
         dialogsActivity.updateSelectedCount();
     }
 
@@ -2956,59 +2958,25 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             this.askAboutContacts = MessagesController.getGlobalNotificationsSettings().getBoolean("askAboutContacts", true);
             SharedConfig.loadProxyList();
         }
+        this.observersGroup = getNotificationCenter().createObserversGroup(this);
+        this.globalObserversGroup = NotificationCenter.getGlobalInstance().createObserversGroup(this);
         if (this.searchString == null) {
             this.currentConnectionState = getConnectionsManager().getConnectionState();
-            getNotificationCenter().addObserver(this, NotificationCenter.dialogsNeedReload);
-            NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
+            this.globalObserversGroup.add(NotificationCenter.emojiLoaded);
             if (!this.onlySelect) {
-                NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.closeSearchByActiveAction);
-                NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.proxySettingsChanged);
-                getNotificationCenter().addObserver(this, NotificationCenter.filterSettingsUpdated);
-                getNotificationCenter().addObserver(this, NotificationCenter.dialogFiltersUpdated);
-                getNotificationCenter().addObserver(this, NotificationCenter.dialogsUnreadCounterChanged);
+                this.globalObserversGroup.add(NotificationCenter.closeSearchByActiveAction);
+                this.globalObserversGroup.add(NotificationCenter.proxySettingsChanged);
+                this.observersGroup.add(NotificationCenter.filterSettingsUpdated);
+                this.observersGroup.add(NotificationCenter.dialogsUnreadCounterChanged);
             }
-            getNotificationCenter().addObserver(this, NotificationCenter.updateInterfaces);
-            getNotificationCenter().addObserver(this, NotificationCenter.encryptedChatUpdated);
-            getNotificationCenter().addObserver(this, NotificationCenter.contactsDidLoad);
-            getNotificationCenter().addObserver(this, NotificationCenter.appDidLogout);
-            getNotificationCenter().addObserver(this, NotificationCenter.openedChatChanged);
-            getNotificationCenter().addObserver(this, NotificationCenter.notificationsSettingsUpdated);
-            getNotificationCenter().addObserver(this, NotificationCenter.messageReceivedByAck);
-            getNotificationCenter().addObserver(this, NotificationCenter.messageReceivedByServer);
-            getNotificationCenter().addObserver(this, NotificationCenter.messageSendError);
-            getNotificationCenter().addObserver(this, NotificationCenter.needReloadRecentDialogsSearch);
-            getNotificationCenter().addObserver(this, NotificationCenter.replyMessagesDidLoad);
-            getNotificationCenter().addObserver(this, NotificationCenter.topicsDidLoaded);
-            getNotificationCenter().addObserver(this, NotificationCenter.reloadHints);
-            getNotificationCenter().addObserver(this, NotificationCenter.didUpdateConnectionState);
-            getNotificationCenter().addObserver(this, NotificationCenter.onDownloadingFilesChanged);
-            getNotificationCenter().addObserver(this, NotificationCenter.needDeleteDialog);
-            getNotificationCenter().addObserver(this, NotificationCenter.folderBecomeEmpty);
-            getNotificationCenter().addObserver(this, NotificationCenter.newSuggestionsAvailable);
-            getNotificationCenter().addObserver(this, NotificationCenter.dialogsUnreadReactionsCounterChanged);
-            getNotificationCenter().addObserver(this, NotificationCenter.dialogsUnreadPollVotesCounterChanged);
-            getNotificationCenter().addObserver(this, NotificationCenter.forceImportContactsStart);
-            getNotificationCenter().addObserver(this, NotificationCenter.userEmojiStatusUpdated);
-            getNotificationCenter().addObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
-            NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didSetPasscode);
+            this.observersGroup.add(NotificationCenter.dialogsNeedReload).add(NotificationCenter.dialogFiltersUpdated).add(NotificationCenter.updateInterfaces).add(NotificationCenter.encryptedChatUpdated).add(NotificationCenter.contactsDidLoad).add(NotificationCenter.appDidLogout).add(NotificationCenter.openedChatChanged).add(NotificationCenter.notificationsSettingsUpdated).add(NotificationCenter.messageReceivedByAck).add(NotificationCenter.messageReceivedByServer).add(NotificationCenter.messageSendError).add(NotificationCenter.needReloadRecentDialogsSearch).add(NotificationCenter.replyMessagesDidLoad).add(NotificationCenter.topicsDidLoaded).add(NotificationCenter.reloadHints).add(NotificationCenter.didUpdateConnectionState).add(NotificationCenter.onDownloadingFilesChanged).add(NotificationCenter.needDeleteDialog).add(NotificationCenter.folderBecomeEmpty).add(NotificationCenter.newSuggestionsAvailable).add(NotificationCenter.dialogsUnreadReactionsCounterChanged).add(NotificationCenter.dialogsUnreadPollVotesCounterChanged).add(NotificationCenter.forceImportContactsStart).add(NotificationCenter.userEmojiStatusUpdated).add(NotificationCenter.currentUserPremiumStatusChanged);
+            this.globalObserversGroup.add(NotificationCenter.didSetPasscode);
         }
-        getNotificationCenter().addObserver(this, NotificationCenter.messagesDeleted);
-        getNotificationCenter().addObserver(this, NotificationCenter.onDatabaseMigration);
-        getNotificationCenter().addObserver(this, NotificationCenter.onDatabaseOpened);
-        getNotificationCenter().addObserver(this, NotificationCenter.didClearDatabase);
-        getNotificationCenter().addObserver(this, NotificationCenter.onDatabaseReset);
-        getNotificationCenter().addObserver(this, NotificationCenter.storiesUpdated);
-        getNotificationCenter().addObserver(this, NotificationCenter.storiesEnabledUpdate);
-        getNotificationCenter().addObserver(this, NotificationCenter.unconfirmedAuthUpdate);
-        getNotificationCenter().addObserver(this, NotificationCenter.premiumPromoUpdated);
+        this.observersGroup.add(NotificationCenter.messagesDeleted).add(NotificationCenter.onDatabaseMigration).add(NotificationCenter.onDatabaseOpened).add(NotificationCenter.didClearDatabase).add(NotificationCenter.onDatabaseReset).add(NotificationCenter.storiesUpdated).add(NotificationCenter.storiesEnabledUpdate).add(NotificationCenter.unconfirmedAuthUpdate).add(NotificationCenter.premiumPromoUpdated).add(NotificationCenter.starBalanceUpdated).add(NotificationCenter.starSubscriptionsLoaded).add(NotificationCenter.appConfigUpdated).add(NotificationCenter.activeAuctionsUpdated);
         if (this.initialDialogsType == 0) {
-            getNotificationCenter().addObserver(this, NotificationCenter.chatlistFolderUpdate);
-            getNotificationCenter().addObserver(this, NotificationCenter.dialogTranslate);
+            this.observersGroup.add(NotificationCenter.chatlistFolderUpdate);
+            this.observersGroup.add(NotificationCenter.dialogTranslate);
         }
-        getNotificationCenter().addObserver(this, NotificationCenter.starBalanceUpdated);
-        getNotificationCenter().addObserver(this, NotificationCenter.starSubscriptionsLoaded);
-        getNotificationCenter().addObserver(this, NotificationCenter.appConfigUpdated);
-        getNotificationCenter().addObserver(this, NotificationCenter.activeAuctionsUpdated);
         loadDialogs(getAccountInstance());
         getMessagesController().getStoriesController().loadAllStories();
         getMessagesController().loadPinnedDialogs(this.folderId, 0L, null);
@@ -3163,58 +3131,16 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         super.onFragmentDestroy();
-        if (this.searchString == null) {
-            getNotificationCenter().removeObserver(this, NotificationCenter.dialogsNeedReload);
-            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.emojiLoaded);
-            if (!this.onlySelect) {
-                NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.closeSearchByActiveAction);
-                NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.proxySettingsChanged);
-                getNotificationCenter().removeObserver(this, NotificationCenter.filterSettingsUpdated);
-                getNotificationCenter().removeObserver(this, NotificationCenter.dialogFiltersUpdated);
-                getNotificationCenter().removeObserver(this, NotificationCenter.dialogsUnreadCounterChanged);
-            }
-            getNotificationCenter().removeObserver(this, NotificationCenter.updateInterfaces);
-            getNotificationCenter().removeObserver(this, NotificationCenter.encryptedChatUpdated);
-            getNotificationCenter().removeObserver(this, NotificationCenter.contactsDidLoad);
-            getNotificationCenter().removeObserver(this, NotificationCenter.appDidLogout);
-            getNotificationCenter().removeObserver(this, NotificationCenter.openedChatChanged);
-            getNotificationCenter().removeObserver(this, NotificationCenter.notificationsSettingsUpdated);
-            getNotificationCenter().removeObserver(this, NotificationCenter.messageReceivedByAck);
-            getNotificationCenter().removeObserver(this, NotificationCenter.messageReceivedByServer);
-            getNotificationCenter().removeObserver(this, NotificationCenter.messageSendError);
-            getNotificationCenter().removeObserver(this, NotificationCenter.needReloadRecentDialogsSearch);
-            getNotificationCenter().removeObserver(this, NotificationCenter.replyMessagesDidLoad);
-            getNotificationCenter().removeObserver(this, NotificationCenter.topicsDidLoaded);
-            getNotificationCenter().removeObserver(this, NotificationCenter.reloadHints);
-            getNotificationCenter().removeObserver(this, NotificationCenter.didUpdateConnectionState);
-            getNotificationCenter().removeObserver(this, NotificationCenter.onDownloadingFilesChanged);
-            getNotificationCenter().removeObserver(this, NotificationCenter.needDeleteDialog);
-            getNotificationCenter().removeObserver(this, NotificationCenter.folderBecomeEmpty);
-            getNotificationCenter().removeObserver(this, NotificationCenter.newSuggestionsAvailable);
-            getNotificationCenter().removeObserver(this, NotificationCenter.dialogsUnreadReactionsCounterChanged);
-            getNotificationCenter().removeObserver(this, NotificationCenter.dialogsUnreadPollVotesCounterChanged);
-            getNotificationCenter().removeObserver(this, NotificationCenter.forceImportContactsStart);
-            getNotificationCenter().removeObserver(this, NotificationCenter.userEmojiStatusUpdated);
-            getNotificationCenter().removeObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
-            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.didSetPasscode);
+        NotificationCenter.ObserversGroup observersGroup = this.observersGroup;
+        if (observersGroup != null) {
+            observersGroup.removeAllObservers();
+            this.observersGroup = null;
         }
-        getNotificationCenter().removeObserver(this, NotificationCenter.messagesDeleted);
-        getNotificationCenter().removeObserver(this, NotificationCenter.onDatabaseMigration);
-        getNotificationCenter().removeObserver(this, NotificationCenter.onDatabaseOpened);
-        getNotificationCenter().removeObserver(this, NotificationCenter.didClearDatabase);
-        getNotificationCenter().removeObserver(this, NotificationCenter.onDatabaseReset);
-        getNotificationCenter().removeObserver(this, NotificationCenter.storiesUpdated);
-        getNotificationCenter().removeObserver(this, NotificationCenter.storiesEnabledUpdate);
-        getNotificationCenter().removeObserver(this, NotificationCenter.unconfirmedAuthUpdate);
-        getNotificationCenter().removeObserver(this, NotificationCenter.premiumPromoUpdated);
-        if (this.initialDialogsType == 0) {
-            getNotificationCenter().removeObserver(this, NotificationCenter.chatlistFolderUpdate);
-            getNotificationCenter().removeObserver(this, NotificationCenter.dialogTranslate);
+        NotificationCenter.ObserversGroup observersGroup2 = this.globalObserversGroup;
+        if (observersGroup2 != null) {
+            observersGroup2.removeAllObservers();
+            this.globalObserversGroup = null;
         }
-        getNotificationCenter().removeObserver(this, NotificationCenter.starBalanceUpdated);
-        getNotificationCenter().removeObserver(this, NotificationCenter.starSubscriptionsLoaded);
-        getNotificationCenter().removeObserver(this, NotificationCenter.appConfigUpdated);
-        getNotificationCenter().removeObserver(this, NotificationCenter.activeAuctionsUpdated);
         ChatActivityEnterView chatActivityEnterView = this.commentView;
         if (chatActivityEnterView != null) {
             chatActivityEnterView.onDestroy();
@@ -3347,25 +3273,25 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x0b6b  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x0bb7  */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x0be7  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x0c25  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x0c32  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0c4a  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x0c72  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x0c8f  */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x0cdf  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x0d20  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x0da6  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x0e02  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x0e3a  */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x0dc1  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x0bef  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x0b6d  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0bb9  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x0be9  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x0c27  */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x0c34  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x0c4c  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x0c74  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x0c91  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x0ce1  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x0d22  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x0da8  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x0e04  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x0e3c  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x0dc3  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0bf1  */
     /* JADX WARN: Type inference failed for: r0v113, types: [org.telegram.ui.ActionBar.ActionBar] */
     /* JADX WARN: Type inference failed for: r0v182, types: [org.telegram.ui.Components.RecyclerListView, org.telegram.ui.DialogsActivity$DialogsRecyclerView] */
     /* JADX WARN: Type inference failed for: r0v20, types: [android.widget.EditText, org.telegram.ui.Components.EditTextBoldCursor] */
-    /* JADX WARN: Type inference failed for: r0v266, types: [android.view.ViewGroup, org.telegram.ui.ActionBar.ActionBarMenuItem] */
+    /* JADX WARN: Type inference failed for: r0v267, types: [android.view.ViewGroup, org.telegram.ui.ActionBar.ActionBarMenuItem] */
     /* JADX WARN: Type inference failed for: r0v28, types: [org.telegram.ui.ActionBar.ActionBar] */
     /* JADX WARN: Type inference failed for: r0v51, types: [org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory] */
     /* JADX WARN: Type inference failed for: r0v52, types: [org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory] */
@@ -3750,7 +3676,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             TLRPC.User currentUser = getUserConfig().getCurrentUser();
             avatarDrawable.setInfo(this.currentAccount, currentUser);
             backupImageView.getImageReceiver().setCurrentAccount(this.currentAccount);
-            backupImageView.setImage(ImageLocation.getForUserOrChat(currentUser, 1), "50_50", ImageLocation.getForUserOrChat(currentUser, 2), "50_50", (currentUser == null || (userProfilePhoto = currentUser.photo) == null || (r3 = userProfilePhoto.strippedBitmap) == null) ? avatarDrawable : r3, currentUser);
+            backupImageView.setImage(ImageLocation.getForUserOrChat(this.currentAccount, currentUser, 1), "50_50", ImageLocation.getForUserOrChat(currentUser, 2), "50_50", (currentUser == null || (userProfilePhoto = currentUser.photo) == null || (r3 = userProfilePhoto.strippedBitmap) == null) ? avatarDrawable : r3, currentUser);
             for (int i7 = 0; i7 < 4; i7++) {
                 if (AccountInstance.getInstance(i7).getUserConfig().getCurrentUser() != null) {
                     AccountSelectCell accountSelectCell = new AccountSelectCell(context, false);
@@ -5776,15 +5702,11 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             DialogsActivity.this.setStoriesOvercroll(viewPage, ((Float) valueAnimator.getAnimatedValue()).floatValue());
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:50:0x00c8, code lost:
-        
-            if (r14.rightSlidingDialogContainer.hasFragment() == false) goto L54;
-         */
-        /* JADX WARN: Removed duplicated region for block: B:155:0x0462 A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:54:0x0239  */
-        /* JADX WARN: Removed duplicated region for block: B:60:0x025a  */
-        /* JADX WARN: Removed duplicated region for block: B:62:0x025d  */
-        /* JADX WARN: Removed duplicated region for block: B:65:0x026e  */
+        /* JADX WARN: Removed duplicated region for block: B:163:0x04b3 A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:64:0x028a  */
+        /* JADX WARN: Removed duplicated region for block: B:70:0x02ab  */
+        /* JADX WARN: Removed duplicated region for block: B:72:0x02ae  */
+        /* JADX WARN: Removed duplicated region for block: B:75:0x02bf  */
         @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -5793,7 +5715,6 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             int i2;
             View findViewByPosition;
             int scrollVerticallyBy;
-            DialogsActivity dialogsActivity;
             float viewOffset;
             float f;
             DialogsRecyclerView dialogsRecyclerView = this.val$viewPage.listView;
@@ -5811,7 +5732,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 }
             }
             float f2 = 0.0f;
-            if (i > 0 && DialogsActivity.this.storiesOverscroll != 0.0f) {
+            if (i > 0 && DialogsActivity.this.storiesOverscroll != 0.0f && (((BaseFragment) DialogsActivity.this).actionBar == null || !((BaseFragment) DialogsActivity.this).actionBar.isActionModeShowed())) {
                 float f3 = DialogsActivity.this.storiesOverscroll - i;
                 if (f3 < 0.0f) {
                     i3 = (int) (-f3);
@@ -5821,152 +5742,124 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 DialogsActivity.this.setStoriesOvercroll(this.val$viewPage, f2);
                 return super.scrollVerticallyBy(i3, recycler, state);
             }
+            DialogsActivity dialogsActivity = DialogsActivity.this;
+            boolean z3 = dialogsActivity.hasStories && (((BaseFragment) dialogsActivity).actionBar == null || !((BaseFragment) DialogsActivity.this).actionBar.isActionModeShowed());
             int paddingTop = this.val$viewPage.listView.getPaddingTop();
-            DialogsActivity dialogsActivity2 = DialogsActivity.this;
-            int dp = (!dialogsActivity2.hasStories || dialogsActivity2.rightSlidingDialogContainer.hasFragment() || DialogsActivity.this.fixScrollYAfterArchiveOpened) ? paddingTop : paddingTop - AndroidUtilities.dp(81.0f);
+            int dp = (!z3 || DialogsActivity.this.rightSlidingDialogContainer.hasFragment() || DialogsActivity.this.fixScrollYAfterArchiveOpened) ? paddingTop : paddingTop - AndroidUtilities.dp(81.0f);
             int i4 = (!DialogsActivity.this.fixScrollYAfterArchiveOpened && this.val$viewPage.dialogsType == 0 && !DialogsActivity.this.onlySelect && DialogsActivity.this.folderId == 0 && DialogsActivity.this.getMessagesController().hasHiddenArchive() && this.val$viewPage.archivePullViewState == 2) ? 1 : 0;
-            if (i4 == 0) {
-                DialogsActivity dialogsActivity3 = DialogsActivity.this;
-                if (dialogsActivity3.hasStories) {
-                }
-                i2 = i;
-                if (this.val$viewPage.dialogsType == 0 && this.val$viewPage.listView.getViewOffset() != 0.0f && i > 0 && z2) {
-                    viewOffset = ((int) this.val$viewPage.listView.getViewOffset()) - i;
-                    if (viewOffset >= 0.0f) {
-                        i2 = (int) viewOffset;
-                        f = 0.0f;
-                    } else {
-                        f = viewOffset;
-                        i2 = 0;
-                    }
-                    this.val$viewPage.listView.setViewsOffset(f);
-                }
-                if (this.val$viewPage.dialogsType != 0 && this.val$viewPage.archivePullViewState != 0 && DialogsActivity.this.hasHiddenArchive() && !DialogsActivity.this.fixScrollYAfterArchiveOpened) {
-                    int scrollVerticallyBy2 = super.scrollVerticallyBy(i2, recycler, state);
-                    if (this.val$viewPage.pullForegroundDrawable != null) {
-                        this.val$viewPage.pullForegroundDrawable.scrollDy = scrollVerticallyBy2;
-                    }
-                    int findFirstVisibleItemPosition = this.val$viewPage.layoutManager.findFirstVisibleItemPosition();
-                    View findViewByPosition2 = findFirstVisibleItemPosition == 0 ? this.val$viewPage.layoutManager.findViewByPosition(findFirstVisibleItemPosition) : null;
-                    if (findFirstVisibleItemPosition != 0 || findViewByPosition2 == null || findViewByPosition2.getBottom() - dp < AndroidUtilities.dp(4.0f)) {
-                        DialogsActivity.this.startArchivePullingTime = 0L;
-                        DialogsActivity.this.canShowHiddenArchive = false;
-                        char c = this.val$viewPage.archivePullViewState != 2 ? (char) 1 : (char) 0;
-                        this.val$viewPage.archivePullViewState = 2;
-                        if (c != 0 && AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
-                            AndroidUtilities.makeAccessibilityAnnouncement(LocaleController.getString(R.string.AccDescrArchivedChatsHidden));
-                        }
-                        if (this.val$viewPage.pullForegroundDrawable != null) {
-                            this.val$viewPage.pullForegroundDrawable.resetText();
-                            this.val$viewPage.pullForegroundDrawable.setPullProgress(0.0f);
-                            this.val$viewPage.pullForegroundDrawable.setListView(this.val$viewPage.listView);
-                        }
-                    } else {
-                        if (DialogsActivity.this.startArchivePullingTime == 0) {
-                            DialogsActivity.this.startArchivePullingTime = System.currentTimeMillis();
-                        }
-                        if (this.val$viewPage.archivePullViewState == 2 && this.val$viewPage.pullForegroundDrawable != null) {
-                            this.val$viewPage.pullForegroundDrawable.showHidden();
-                        }
-                        DialogsActivity dialogsActivity4 = DialogsActivity.this;
-                        if (dialogsActivity4.hasStories && !dialogsActivity4.rightSlidingDialogContainer.hasFragment() && !DialogsActivity.this.fixScrollYAfterArchiveOpened) {
-                            dp += AndroidUtilities.dp(81.0f);
-                        }
-                        float top = ((findViewByPosition2.getTop() - dp) / findViewByPosition2.getMeasuredHeight()) + 1.0f;
-                        if (top > 1.0f) {
-                            top = 1.0f;
-                        }
-                        long currentTimeMillis = System.currentTimeMillis() - DialogsActivity.this.startArchivePullingTime;
-                        if (top > 0.85f && currentTimeMillis > 220) {
-                            z = true;
-                        }
-                        if (DialogsActivity.this.canShowHiddenArchive != z) {
-                            DialogsActivity.this.canShowHiddenArchive = z;
-                            if (this.val$viewPage.archivePullViewState == 2) {
-                                try {
-                                    this.val$viewPage.listView.performHapticFeedback(3, 2);
-                                } catch (Exception unused) {
-                                }
-                                if (this.val$viewPage.pullForegroundDrawable != null) {
-                                    this.val$viewPage.pullForegroundDrawable.colorize(z);
-                                }
-                            }
-                        }
-                        if (this.val$viewPage.archivePullViewState == 2 && i2 - scrollVerticallyBy2 != 0 && i < 0 && z2) {
-                            this.val$viewPage.listView.setViewsOffset(this.val$viewPage.listView.getViewOffset() - ((i * 0.2f) * (1.0f - (this.val$viewPage.listView.getViewOffset() / PullForegroundDrawable.getMaxOverscroll()))));
-                        }
-                        if (this.val$viewPage.pullForegroundDrawable != null) {
-                            this.val$viewPage.pullForegroundDrawable.setPullProgress(top);
-                            this.val$viewPage.pullForegroundDrawable.setListView(this.val$viewPage.listView);
-                        }
-                    }
-                    if (findViewByPosition2 != null) {
-                        findViewByPosition2.invalidate();
-                    }
-                    if (this.val$viewPage.archivePullViewState == 1 && scrollVerticallyBy2 == 0 && i < 0 && z2 && !DialogsActivity.this.rightSlidingDialogContainer.hasFragment()) {
-                        DialogsActivity dialogsActivity5 = DialogsActivity.this;
-                        if (dialogsActivity5.hasStories && dialogsActivity5.progressToActionMode == 0.0f) {
-                            DialogsActivity.this.setStoriesOvercroll(this.val$viewPage, DialogsActivity.this.storiesOverscroll - (i * AndroidUtilities.lerp(0.2f, 0.5f, DialogsActivity.this.dialogStoriesCell.overscrollProgress())));
-                        }
-                    }
-                    return scrollVerticallyBy2;
-                }
-                scrollVerticallyBy = super.scrollVerticallyBy(i2, recycler, state);
-                if (scrollVerticallyBy == 0 && i < 0 && z2 && !DialogsActivity.this.rightSlidingDialogContainer.hasFragment()) {
-                    dialogsActivity = DialogsActivity.this;
-                    if (dialogsActivity.hasStories && dialogsActivity.progressToActionMode == 0.0f) {
-                        DialogsActivity.this.setStoriesOvercroll(this.val$viewPage, DialogsActivity.this.storiesOverscroll - (i * DialogsActivity.this.dialogStoriesCell.getOverScrollCoef()));
-                    }
-                }
-                return scrollVerticallyBy;
-            }
-            if (i < 0) {
+            if ((i4 != 0 || (z3 && !DialogsActivity.this.rightSlidingDialogContainer.hasFragment())) && i < 0) {
                 this.val$viewPage.listView.setOverScrollMode(0);
-                int findFirstVisibleItemPosition2 = this.val$viewPage.layoutManager.findFirstVisibleItemPosition();
-                if (findFirstVisibleItemPosition2 == 0 && (findViewByPosition = this.val$viewPage.layoutManager.findViewByPosition(findFirstVisibleItemPosition2)) != null && findViewByPosition.getBottom() - dp <= AndroidUtilities.dp(1.0f)) {
-                    findFirstVisibleItemPosition2 = 1;
+                int findFirstVisibleItemPosition = this.val$viewPage.layoutManager.findFirstVisibleItemPosition();
+                if (findFirstVisibleItemPosition == 0 && (findViewByPosition = this.val$viewPage.layoutManager.findViewByPosition(findFirstVisibleItemPosition)) != null && findViewByPosition.getBottom() - dp <= AndroidUtilities.dp(1.0f)) {
+                    findFirstVisibleItemPosition = 1;
                 }
                 if (!z2) {
-                    View findViewByPosition3 = this.val$viewPage.layoutManager.findViewByPosition(findFirstVisibleItemPosition2);
-                    if (findViewByPosition3 != null && findFirstVisibleItemPosition2 < 10) {
+                    View findViewByPosition2 = this.val$viewPage.layoutManager.findViewByPosition(findFirstVisibleItemPosition);
+                    if (findViewByPosition2 != null && findFirstVisibleItemPosition < 10) {
                         int i5 = 0;
-                        while (i4 < findFirstVisibleItemPosition2) {
+                        while (i4 < findFirstVisibleItemPosition) {
                             i5 += this.val$viewPage.dialogsAdapter.getItemHeight(i4);
                             i4++;
                         }
-                        int i6 = (-(findViewByPosition3.getTop() - dp)) + i5;
-                        if (!DialogsActivity.this.rightSlidingDialogContainer.hasFragment()) {
+                        int i6 = (-(findViewByPosition2.getTop() - dp)) + i5;
+                        if (!DialogsActivity.this.rightSlidingDialogContainer.hasFragment() && (((BaseFragment) DialogsActivity.this).actionBar == null || !((BaseFragment) DialogsActivity.this).actionBar.isActionModeShowed())) {
                             i6 -= AndroidUtilities.dp(48.0f);
                         }
-                        if (DialogsActivity.this.hasStories && ((this.val$viewPage.scroller.isRunning() || DialogsActivity.this.dialogStoriesCell.isExpanded()) && !DialogsActivity.this.rightSlidingDialogContainer.hasFragment() && !DialogsActivity.this.fixScrollYAfterArchiveOpened)) {
+                        if (z3 && ((this.val$viewPage.scroller.isRunning() || DialogsActivity.this.dialogStoriesCell.isExpanded()) && !DialogsActivity.this.rightSlidingDialogContainer.hasFragment() && !DialogsActivity.this.fixScrollYAfterArchiveOpened)) {
                             i6 += AndroidUtilities.dp(81.0f);
                         }
-                        if ((this.val$viewPage.scroller.isRunning() || DialogsActivity.this.dialogStoriesCell.isExpanded()) && !DialogsActivity.this.rightSlidingDialogContainer.hasFragment() && !DialogsActivity.this.fixScrollYAfterArchiveOpened) {
+                        if ((this.val$viewPage.scroller.isRunning() || DialogsActivity.this.dialogStoriesCell.isExpanded()) && !DialogsActivity.this.rightSlidingDialogContainer.hasFragment() && !DialogsActivity.this.fixScrollYAfterArchiveOpened && (((BaseFragment) DialogsActivity.this).actionBar == null || !((BaseFragment) DialogsActivity.this).actionBar.isActionModeShowed())) {
                             i6 += AndroidUtilities.dp(48.0f);
                         }
                         if (i6 < Math.abs(i)) {
                             i2 = -i6;
-                            if (this.val$viewPage.dialogsType == 0) {
+                            if (this.val$viewPage.dialogsType == 0 && this.val$viewPage.listView.getViewOffset() != 0.0f && i > 0 && z2) {
                                 viewOffset = ((int) this.val$viewPage.listView.getViewOffset()) - i;
                                 if (viewOffset >= 0.0f) {
+                                    i2 = (int) viewOffset;
+                                    f = 0.0f;
+                                } else {
+                                    f = viewOffset;
+                                    i2 = 0;
                                 }
                                 this.val$viewPage.listView.setViewsOffset(f);
                             }
-                            if (this.val$viewPage.dialogsType != 0) {
+                            if (this.val$viewPage.dialogsType != 0 && this.val$viewPage.archivePullViewState != 0 && DialogsActivity.this.hasHiddenArchive() && !DialogsActivity.this.fixScrollYAfterArchiveOpened) {
+                                int scrollVerticallyBy2 = super.scrollVerticallyBy(i2, recycler, state);
+                                if (this.val$viewPage.pullForegroundDrawable != null) {
+                                    this.val$viewPage.pullForegroundDrawable.scrollDy = scrollVerticallyBy2;
+                                }
+                                int findFirstVisibleItemPosition2 = this.val$viewPage.layoutManager.findFirstVisibleItemPosition();
+                                View findViewByPosition3 = findFirstVisibleItemPosition2 == 0 ? this.val$viewPage.layoutManager.findViewByPosition(findFirstVisibleItemPosition2) : null;
+                                if (findFirstVisibleItemPosition2 != 0 || findViewByPosition3 == null || findViewByPosition3.getBottom() - dp < AndroidUtilities.dp(4.0f)) {
+                                    DialogsActivity.this.startArchivePullingTime = 0L;
+                                    DialogsActivity.this.canShowHiddenArchive = false;
+                                    char c = this.val$viewPage.archivePullViewState != 2 ? (char) 1 : (char) 0;
+                                    this.val$viewPage.archivePullViewState = 2;
+                                    if (c != 0 && AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
+                                        AndroidUtilities.makeAccessibilityAnnouncement(LocaleController.getString(R.string.AccDescrArchivedChatsHidden));
+                                    }
+                                    if (this.val$viewPage.pullForegroundDrawable != null) {
+                                        this.val$viewPage.pullForegroundDrawable.resetText();
+                                        this.val$viewPage.pullForegroundDrawable.setPullProgress(0.0f);
+                                        this.val$viewPage.pullForegroundDrawable.setListView(this.val$viewPage.listView);
+                                    }
+                                } else {
+                                    if (DialogsActivity.this.startArchivePullingTime == 0) {
+                                        DialogsActivity.this.startArchivePullingTime = System.currentTimeMillis();
+                                    }
+                                    if (this.val$viewPage.archivePullViewState == 2 && this.val$viewPage.pullForegroundDrawable != null) {
+                                        this.val$viewPage.pullForegroundDrawable.showHidden();
+                                    }
+                                    if (z3 && !DialogsActivity.this.rightSlidingDialogContainer.hasFragment() && !DialogsActivity.this.fixScrollYAfterArchiveOpened) {
+                                        dp += AndroidUtilities.dp(81.0f);
+                                    }
+                                    float top = ((findViewByPosition3.getTop() - dp) / findViewByPosition3.getMeasuredHeight()) + 1.0f;
+                                    if (top > 1.0f) {
+                                        top = 1.0f;
+                                    }
+                                    long currentTimeMillis = System.currentTimeMillis() - DialogsActivity.this.startArchivePullingTime;
+                                    if (top > 0.85f && currentTimeMillis > 220) {
+                                        z = true;
+                                    }
+                                    if (DialogsActivity.this.canShowHiddenArchive != z) {
+                                        DialogsActivity.this.canShowHiddenArchive = z;
+                                        if (this.val$viewPage.archivePullViewState == 2) {
+                                            try {
+                                                this.val$viewPage.listView.performHapticFeedback(3, 2);
+                                            } catch (Exception unused) {
+                                            }
+                                            if (this.val$viewPage.pullForegroundDrawable != null) {
+                                                this.val$viewPage.pullForegroundDrawable.colorize(z);
+                                            }
+                                        }
+                                    }
+                                    if (this.val$viewPage.archivePullViewState == 2 && i2 - scrollVerticallyBy2 != 0 && i < 0 && z2) {
+                                        this.val$viewPage.listView.setViewsOffset(this.val$viewPage.listView.getViewOffset() - ((i * 0.2f) * (1.0f - (this.val$viewPage.listView.getViewOffset() / PullForegroundDrawable.getMaxOverscroll()))));
+                                    }
+                                    if (this.val$viewPage.pullForegroundDrawable != null) {
+                                        this.val$viewPage.pullForegroundDrawable.setPullProgress(top);
+                                        this.val$viewPage.pullForegroundDrawable.setListView(this.val$viewPage.listView);
+                                    }
+                                }
+                                if (findViewByPosition3 != null) {
+                                    findViewByPosition3.invalidate();
+                                }
+                                if (this.val$viewPage.archivePullViewState == 1 && scrollVerticallyBy2 == 0 && i < 0 && z2 && !DialogsActivity.this.rightSlidingDialogContainer.hasFragment() && z3 && DialogsActivity.this.progressToActionMode == 0.0f) {
+                                    DialogsActivity.this.setStoriesOvercroll(this.val$viewPage, DialogsActivity.this.storiesOverscroll - (i * AndroidUtilities.lerp(0.2f, 0.5f, DialogsActivity.this.dialogStoriesCell.overscrollProgress())));
+                                }
+                                return scrollVerticallyBy2;
                             }
                             scrollVerticallyBy = super.scrollVerticallyBy(i2, recycler, state);
-                            if (scrollVerticallyBy == 0) {
-                                dialogsActivity = DialogsActivity.this;
-                                if (dialogsActivity.hasStories) {
-                                    DialogsActivity.this.setStoriesOvercroll(this.val$viewPage, DialogsActivity.this.storiesOverscroll - (i * DialogsActivity.this.dialogStoriesCell.getOverScrollCoef()));
-                                }
+                            if (scrollVerticallyBy == 0 && i < 0 && z2 && !DialogsActivity.this.rightSlidingDialogContainer.hasFragment() && z3 && DialogsActivity.this.progressToActionMode == 0.0f) {
+                                DialogsActivity.this.setStoriesOvercroll(this.val$viewPage, DialogsActivity.this.storiesOverscroll - (i * DialogsActivity.this.dialogStoriesCell.getOverScrollCoef()));
                             }
                             return scrollVerticallyBy;
                         }
                     }
                 } else {
-                    if (findFirstVisibleItemPosition2 == 0 && i4 != 0) {
-                        View findViewByPosition4 = this.val$viewPage.layoutManager.findViewByPosition(findFirstVisibleItemPosition2);
+                    if (findFirstVisibleItemPosition == 0 && i4 != 0) {
+                        View findViewByPosition4 = this.val$viewPage.layoutManager.findViewByPosition(findFirstVisibleItemPosition);
                         float top2 = ((findViewByPosition4.getTop() - paddingTop) / findViewByPosition4.getMeasuredHeight()) + 1.0f;
                         if (top2 > 1.0f) {
                             top2 = 1.0f;
@@ -5977,26 +5870,28 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                         if (DialogsActivity.this.undoView[0] != null && DialogsActivity.this.undoView[0].getVisibility() == 0) {
                             DialogsActivity.this.undoView[0].hide(true, 1);
                         }
-                    } else if ((findFirstVisibleItemPosition2 == 1 && i4 != 0) || findFirstVisibleItemPosition2 == 0) {
-                        DialogsActivity dialogsActivity6 = DialogsActivity.this;
-                        if (dialogsActivity6.hasStories && z2 && !dialogsActivity6.rightSlidingDialogContainer.hasFragment()) {
-                            if (DialogsActivity.this.scrollYOffset == 0.0f) {
-                                this.val$viewPage.listView.setOverScrollMode(0);
-                            } else {
-                                this.val$viewPage.listView.setOverScrollMode(2);
-                            }
-                            int i8 = (int) (i * 0.3f);
-                            if (i8 <= -1) {
-                                i2 = i8;
-                            }
+                    } else if (((findFirstVisibleItemPosition == 1 && i4 != 0) || findFirstVisibleItemPosition == 0) && z3 && z2 && !DialogsActivity.this.rightSlidingDialogContainer.hasFragment()) {
+                        if (DialogsActivity.this.scrollYOffset == 0.0f) {
+                            this.val$viewPage.listView.setOverScrollMode(0);
+                        } else {
+                            this.val$viewPage.listView.setOverScrollMode(2);
+                        }
+                        int i8 = (int) (i * 0.3f);
+                        if (i8 <= -1) {
+                            i2 = i8;
                         }
                     }
                     if (this.val$viewPage.dialogsType == 0) {
+                        viewOffset = ((int) this.val$viewPage.listView.getViewOffset()) - i;
+                        if (viewOffset >= 0.0f) {
+                        }
+                        this.val$viewPage.listView.setViewsOffset(f);
                     }
                     if (this.val$viewPage.dialogsType != 0) {
                     }
                     scrollVerticallyBy = super.scrollVerticallyBy(i2, recycler, state);
                     if (scrollVerticallyBy == 0) {
+                        DialogsActivity.this.setStoriesOvercroll(this.val$viewPage, DialogsActivity.this.storiesOverscroll - (i * DialogsActivity.this.dialogStoriesCell.getOverScrollCoef()));
                     }
                     return scrollVerticallyBy;
                 }
@@ -6401,7 +6296,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.DialogsActivity$23$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DialogsActivity.access$21800(DialogsActivity.this);
+                    DialogsActivity.access$22600(DialogsActivity.this);
                 }
             }, 100L);
         }
@@ -6440,7 +6335,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             final 25 r6 = this;
             MediaDataController.getInstance(((BaseFragment) DialogsActivity.this).currentAccount).loadHints(true);
             DialogsActivity dialogsActivity = DialogsActivity.this;
-            dialogsActivity.filterOptions = ItemOptions.makeOptions(dialogsActivity, view).setViewAdditionalOffsets(0, AndroidUtilities.dp(8.0f), 0, 0).setScrimViewBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(6.0f), DialogsActivity.this.canShowFilterTabsView ? AndroidUtilities.dp(6.0f) : 0, DialogsActivity.this.getThemedColor(Theme.key_windowBackgroundWhite)));
+            dialogsActivity.filterOptions = ItemOptions.makeOptions(dialogsActivity, view).setViewAdditionalOffsets(0, AndroidUtilities.dp(8.0f), 0, 0).setScrimViewBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), DialogsActivity.this.getThemedColor(Theme.key_windowBackgroundWhite))).translate(0.0f, AndroidUtilities.dp(8.0f));
             if (UserObject.isService(j)) {
                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                 return;
@@ -8713,9 +8608,10 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 }, (this.afterSignup || !(z4 || z2)) ? 0L : 4000L);
             }
         } else if (!this.onlySelect && this.folderId == 0 && XiaomiUtilities.isMIUI() && !XiaomiUtilities.isCustomPermissionGranted(XiaomiUtilities.OP_SHOW_WHEN_LOCKED)) {
-            if (getParentActivity() == null || MessagesController.getGlobalNotificationsSettings().getBoolean("askedAboutMiuiLockscreen", false)) {
+            if (getParentActivity() == null) {
                 return;
-            } else {
+            }
+            if (!MessagesController.getGlobalNotificationsSettings().getBoolean("askedAboutMiuiLockscreen", false)) {
                 showDialog(new AlertDialog.Builder(getParentActivity()).setTopAnimation(R.raw.permission_request_apk, 72, false, getThemedColor(Theme.key_dialogTopBackground)).setMessage(LocaleController.getString(R.string.PermissionXiaomiLockscreen)).setPositiveButton(LocaleController.getString(R.string.PermissionOpenSettings), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda27
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i3) {
@@ -8731,9 +8627,10 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         } else if (this.folderId == 0 && Build.VERSION.SDK_INT >= 34) {
             canUseFullScreenIntent = notificationManager.canUseFullScreenIntent();
             if (!canUseFullScreenIntent) {
-                if (getParentActivity() == null || MessagesController.getGlobalNotificationsSettings().getBoolean("askedAboutFSILockscreen", false)) {
+                if (getParentActivity() == null) {
                     return;
-                } else {
+                }
+                if (!MessagesController.getGlobalNotificationsSettings().getBoolean("askedAboutFSILockscreen", false)) {
                     showDialog(new AlertDialog.Builder(getParentActivity()).setTopAnimation(R.raw.permission_request_apk, 72, false, getThemedColor(Theme.key_dialogTopBackground)).setMessage(LocaleController.getString(R.string.PermissionFSILockscreen)).setPositiveButton(LocaleController.getString(R.string.PermissionOpenSettings), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda29
                         @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                         public final void onClick(AlertDialog alertDialog, int i3) {
@@ -16691,7 +16588,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 }
                 if (closestPhotoSizeWithSize != null && DialogsActivity.this.avatar != null) {
                     FileLoader.getInstance(((BaseFragment) DialogsActivity.this).currentAccount).getPathToAttach(DialogsActivity.this.avatar, true).renameTo(FileLoader.getInstance(((BaseFragment) DialogsActivity.this).currentAccount).getPathToAttach(closestPhotoSizeWithSize, true));
-                    ImageLoader.getInstance().replaceImageInCache(DialogsActivity.this.avatar.volume_id + "_" + DialogsActivity.this.avatar.local_id + "@50_50", closestPhotoSizeWithSize.location.volume_id + "_" + closestPhotoSizeWithSize.location.local_id + "@50_50", ImageLocation.getForUserOrChat(user, 1), false);
+                    ImageLoader.getInstance().replaceImageInCache(DialogsActivity.this.avatar.volume_id + "_" + DialogsActivity.this.avatar.local_id + "@50_50", closestPhotoSizeWithSize.location.volume_id + "_" + closestPhotoSizeWithSize.location.local_id + "@50_50", ImageLocation.getForUserOrChat(((BaseFragment) DialogsActivity.this).currentAccount, user, 1), false);
                 }
                 if (closestVideoSizeWithSize == null || str == null) {
                     if (closestPhotoSizeWithSize2 != null && DialogsActivity.this.avatarBig != null) {

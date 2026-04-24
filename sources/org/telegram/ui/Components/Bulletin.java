@@ -51,8 +51,8 @@ import androidx.dynamicanimation.animation.SpringForce;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
@@ -82,8 +82,8 @@ import org.telegram.ui.ViewPagerActivity;
 
 /* loaded from: classes5.dex */
 public class Bulletin {
-    private static final HashMap delegates = new HashMap();
-    private static final HashMap fragmentDelegates = new HashMap();
+    private static final WeakHashMap delegates = new WeakHashMap();
+    private static final WeakHashMap fragmentDelegates = new WeakHashMap();
     private static Bulletin visibleBulletin;
     private boolean allowBlurAnimation;
     private SpringAnimation bottomOffsetSpring;

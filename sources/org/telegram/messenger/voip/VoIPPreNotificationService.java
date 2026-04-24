@@ -682,5 +682,24 @@ public class VoIPPreNotificationService {
         for (int i = 0; i < 4; i++) {
             MessagesController.getInstance(i).ignoreSetOnline = false;
         }
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPPreNotificationService$$ExternalSyntheticLambda5
+            @Override // java.lang.Runnable
+            public final void run() {
+                VoIPPreNotificationService.lambda$dismiss$5();
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$dismiss$5() {
+        LaunchActivity launchActivity = LaunchActivity.instance;
+        if (launchActivity != null && launchActivity.voipLaunchedInBackground && VoIPService.getSharedInstance() == null) {
+            launchActivity.voipLaunchedInBackground = false;
+            VoIPFragment voIPFragment = VoIPFragment.getInstance();
+            if (voIPFragment != null) {
+                voIPFragment.finish();
+            }
+            launchActivity.moveTaskToBack(true);
+        }
     }
 }

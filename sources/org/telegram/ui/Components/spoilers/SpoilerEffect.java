@@ -49,6 +49,7 @@ import org.telegram.ui.Components.Easings;
 import org.telegram.ui.Components.QuoteSpan;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.TextStyleSpan;
+import org.telegram.ui.Components.spoilers.SpoilerEffectBitmapFactory;
 
 /* loaded from: classes5.dex */
 public class SpoilerEffect extends Drawable {
@@ -60,8 +61,9 @@ public class SpoilerEffect extends Drawable {
     private static final Path tempPath;
     private static Paint xRefPaint;
     private int bitmapSize;
-    public boolean drawPoints;
-    private boolean enableAlpha;
+    private final RectF boundsFWithInset;
+    private ColorFilter colorFilter;
+    private final float[] halfStrokeWidths;
     public boolean insideQuote;
     private boolean invalidateParent;
     private boolean isLowDevice;
@@ -84,7 +86,6 @@ public class SpoilerEffect extends Drawable {
     private float rippleX;
     private float rippleY;
     private boolean shouldInvalidateColor;
-    private List spaces;
     private boolean suppressUpdates;
     private RectF visibleRect;
 
@@ -118,12 +119,12 @@ public class SpoilerEffect extends Drawable {
     public SpoilerEffect() {
         float[] fArr = ALPHAS;
         this.particlePaints = new Paint[fArr.length];
+        this.halfStrokeWidths = new float[fArr.length];
         this.particlesPool = new Stack();
         this.particleRands = new float[14];
         this.renderCount = new int[fArr.length];
         this.particles = new ArrayList();
         this.rippleProgress = -1.0f;
-        this.spaces = new ArrayList();
         this.mAlpha = NotificationCenter.invalidateMotionBackground;
         this.rippleInterpolator = new TimeInterpolator() { // from class: org.telegram.ui.Components.spoilers.SpoilerEffect$$ExternalSyntheticLambda0
             @Override // android.animation.TimeInterpolator
@@ -133,6 +134,7 @@ public class SpoilerEffect extends Drawable {
                 return lambda$new$0;
             }
         };
+        this.boundsFWithInset = new RectF();
         for (int i = 0; i < ALPHAS.length; i++) {
             this.particlePaints[i] = new Paint();
             if (i == 0) {
@@ -144,9 +146,9 @@ public class SpoilerEffect extends Drawable {
                 this.particlePaints[i].setStyle(Paint.Style.STROKE);
                 this.particlePaints[i].setStrokeCap(Paint.Cap.ROUND);
             }
+            this.halfStrokeWidths[i] = this.particlePaints[i].getStrokeWidth() * 0.5f;
         }
         this.isLowDevice = SharedConfig.getDevicePerformanceClass() == 0;
-        this.enableAlpha = true;
         setColor(0);
     }
 
@@ -273,145 +275,220 @@ public class SpoilerEffect extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
-        RectF rectF;
-        Particle particle;
+        Rect bounds = getBounds();
+        if (bounds.isEmpty()) {
+            return;
+        }
+        Paint paint = SpoilerEffectBitmapFactory.getInstance().getPaint();
+        paint.setColorFilter(this.colorFilter);
+        canvas.drawRect(bounds, paint);
+        if (LiteMode.isEnabled(128)) {
+            invalidateSelf();
+            SpoilerEffectBitmapFactory.getInstance().checkUpdate(bounds);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    protected void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        this.boundsFWithInset.set(rect);
+        this.boundsFWithInset.inset(0.0f, AndroidUtilities.dp(2.5f));
+    }
+
+    public void addPoints(SpoilerEffectBitmapFactory.PointsBuffer[] pointsBufferArr, Rect rect) {
         int i;
-        float f;
-        if (this.drawPoints) {
+        int i2;
+        int i3;
+        int i4;
+        int i5;
+        int i6;
+        if (pointsBufferArr != null) {
+            int length = pointsBufferArr.length;
+            float[] fArr = ALPHAS;
+            if (length != fArr.length) {
+                return;
+            }
             long currentTimeMillis = System.currentTimeMillis();
             int min = (int) Math.min(currentTimeMillis - this.lastDrawTime, 34L);
             this.lastDrawTime = currentTimeMillis;
-            int i2 = getBounds().left;
-            int i3 = getBounds().top;
-            int i4 = getBounds().right;
-            int i5 = getBounds().bottom;
-            for (int i6 = 0; i6 < ALPHAS.length; i6++) {
-                this.renderCount[i6] = 0;
-            }
-            int i7 = 0;
-            while (i7 < this.particles.size()) {
-                Particle particle2 = (Particle) this.particles.get(i7);
-                float f2 = min;
-                particle2.currentTime = Math.min(particle2.currentTime + f2, particle2.lifeTime);
-                if (particle2.currentTime >= particle2.lifeTime || isOutOfBounds(i2, i3, i4, i5, particle2.x, particle2.y)) {
-                    if (this.particlesPool.size() < this.maxParticles) {
-                        this.particlesPool.push(particle2);
+            ArrayList arrayList = this.particles;
+            Stack stack = this.particlesPool;
+            int i7 = this.maxParticles;
+            int length2 = fArr.length;
+            Rect bounds = getBounds();
+            float f = bounds.left;
+            float f2 = bounds.top;
+            float width = bounds.width();
+            float height = bounds.height();
+            RectF rectF = this.boundsFWithInset;
+            float f3 = rectF.left;
+            float f4 = rectF.top;
+            float f5 = rectF.right;
+            float f6 = rectF.bottom;
+            float dpf2 = AndroidUtilities.dpf2(1.0f);
+            float f7 = rect.left - dpf2;
+            float f8 = rect.top - dpf2;
+            float f9 = rect.right + dpf2;
+            float f10 = rect.bottom + dpf2;
+            float f11 = min;
+            float f12 = f11 / 500.0f;
+            int size = arrayList.size();
+            int i8 = 0;
+            while (i8 < size) {
+                int i9 = length2;
+                Particle particle = (Particle) arrayList.get(i8);
+                float f13 = f2;
+                float f14 = f11;
+                float min2 = Math.min(particle.currentTime + f11, particle.lifeTime);
+                particle.currentTime = min2;
+                float f15 = particle.x;
+                float f16 = particle.y;
+                boolean z = f15 < f3 || f15 > f5 || f16 < f4 || f16 > f6;
+                if (min2 >= particle.lifeTime || z) {
+                    if (stack.size() < i7) {
+                        stack.push(particle);
                     }
-                    this.particles.remove(i7);
-                    i7--;
+                    int i10 = size - 1;
+                    if (i8 != i10) {
+                        arrayList.set(i8, (Particle) arrayList.get(i10));
+                    }
+                    arrayList.remove(i10);
+                    size--;
+                    i8--;
                 } else {
-                    float f3 = (particle2.velocity * f2) / 500.0f;
-                    Particle.access$516(particle2, particle2.vecX * f3);
-                    Particle.access$616(particle2, particle2.vecY * f3);
+                    float f17 = particle.velocity * f12;
+                    particle.x = f15 + (particle.vecX * f17);
+                    particle.y = f16 + (particle.vecY * f17);
                 }
-                i7++;
+                i8++;
+                f11 = f14;
+                length2 = i9;
+                f2 = f13;
             }
-            int size = this.particles.size();
-            int i8 = this.maxParticles;
-            if (size < i8) {
-                int size2 = i8 - this.particles.size();
-                float f4 = -1.0f;
-                Arrays.fill(this.particleRands, -1.0f);
-                int i9 = 0;
-                while (i9 < size2) {
-                    float[] fArr = this.particleRands;
-                    int i10 = i9 % 14;
-                    float f5 = fArr[i10];
-                    if (f5 == f4) {
-                        f5 = Utilities.fastRandom.nextFloat();
-                        fArr[i10] = f5;
+            int i11 = length2;
+            float f18 = f2;
+            int size2 = arrayList.size();
+            if (size2 < i7) {
+                int i12 = i7 - size2;
+                int i13 = 14;
+                float f19 = -1.0f;
+                Arrays.fill(this.particleRands, 0, Math.min(i12, 14), -1.0f);
+                int i14 = 0;
+                int i15 = 0;
+                while (i14 < i12) {
+                    float f20 = this.particleRands[i15];
+                    if (f20 == f19) {
+                        f20 = Utilities.fastRandom.nextFloat();
+                        this.particleRands[i15] = f20;
                     }
-                    float f6 = f5;
-                    Particle particle3 = !this.particlesPool.isEmpty() ? (Particle) this.particlesPool.pop() : new Particle();
-                    int i11 = 0;
+                    int i16 = i15 + 1;
+                    if (i16 == i13) {
+                        i16 = 0;
+                    }
+                    Particle particle2 = !stack.isEmpty() ? (Particle) stack.pop() : new Particle();
+                    int i17 = 0;
                     while (true) {
-                        generateRandomLocation(particle3, i9);
-                        int i12 = i11 + 1;
-                        particle = particle3;
-                        i = size2;
-                        f = f6;
-                        if (isOutOfBounds(i2, i3, i4, i5, particle3.x, particle3.y) && i12 < 4) {
-                            f6 = f;
-                            particle3 = particle;
-                            i11 = i12;
-                            size2 = i;
+                        i6 = i16;
+                        particle2.x = f + (Utilities.fastRandom.nextFloat() * width);
+                        particle2.y = f18 + (Utilities.fastRandom.nextFloat() * height);
+                        i17++;
+                        if ((particle2.x < f3 || particle2.x > f5 || particle2.y < f4 || particle2.y > f6) && i17 < 4) {
+                            i16 = i6;
                         }
                     }
-                    double d = ((f * 3.141592653589793d) * 2.0d) - 3.141592653589793d;
-                    float cos = (float) Math.cos(d);
-                    float sin = (float) Math.sin(d);
-                    particle.vecX = cos;
-                    particle.vecY = sin;
-                    particle.currentTime = 0.0f;
-                    particle.lifeTime = Math.abs(Utilities.fastRandom.nextInt(2000)) + MediaDataController.MAX_STYLE_RUNS_COUNT;
-                    particle.velocity = (f * 6.0f) + 4.0f;
-                    particle.alpha = Utilities.fastRandom.nextInt(ALPHAS.length);
-                    this.particles.add(particle);
-                    i9++;
-                    size2 = i;
-                    f4 = -1.0f;
+                    Stack stack2 = stack;
+                    int i18 = i12;
+                    double d = ((f20 * 3.141592653589793d) * 2.0d) - 3.141592653589793d;
+                    particle2.vecX = (float) Math.cos(d);
+                    particle2.vecY = (float) Math.sin(d);
+                    particle2.currentTime = 0.0f;
+                    particle2.lifeTime = Utilities.fastRandom.nextInt(2000) + MediaDataController.MAX_STYLE_RUNS_COUNT;
+                    particle2.velocity = (f20 * 6.0f) + 4.0f;
+                    particle2.alpha = Utilities.fastRandom.nextInt(i11);
+                    arrayList.add(particle2);
+                    i14++;
+                    i12 = i18;
+                    f = f;
+                    height = height;
+                    i13 = 14;
+                    f19 = -1.0f;
+                    stack = stack2;
+                    i15 = i6;
                 }
+                i = i11;
+                size2 = arrayList.size();
+            } else {
+                i = i11;
             }
-            for (int length = this.enableAlpha ? 0 : ALPHAS.length - 1; length < ALPHAS.length; length++) {
-                float strokeWidth = this.particlePaints[length].getStrokeWidth() / 2.0f;
-                int i13 = 0;
-                for (int i14 = 0; i14 < this.particles.size(); i14++) {
-                    Particle particle4 = (Particle) this.particles.get(i14);
-                    if (particle4 != null && (((rectF = this.visibleRect) == null || rectF.contains(particle4.x, particle4.y)) && (particle4.alpha == length || !this.enableAlpha))) {
-                        float[][] fArr2 = particlePoints;
-                        float[] fArr3 = fArr2[length];
-                        if (i13 < fArr3.length - 2) {
-                            fArr3[i13] = particle4.x;
-                            fArr2[length][i13 + 1] = particle4.y;
-                            int i15 = i13 + 2;
-                            if (particle4.x < strokeWidth) {
-                                float[] fArr4 = fArr2[length];
-                                if (i15 < fArr4.length - 2) {
-                                    fArr4[i15] = particle4.x + this.bitmapSize;
-                                    fArr2[length][i13 + 3] = particle4.y;
-                                    i15 = i13 + 4;
-                                }
-                                i13 = i15;
-                            }
-                            if (particle4.x > this.bitmapSize - strokeWidth) {
-                                float[] fArr5 = fArr2[length];
-                                if (i15 < fArr5.length - 2) {
-                                    fArr5[i15] = particle4.x - this.bitmapSize;
-                                    fArr2[length][i15 + 1] = particle4.y;
-                                    i15 += 2;
-                                }
-                                i13 = i15;
-                            }
-                            if (particle4.y < strokeWidth) {
-                                float[] fArr6 = fArr2[length];
-                                if (i15 < fArr6.length - 2) {
-                                    fArr6[i15] = particle4.x;
-                                    fArr2[length][i15 + 1] = particle4.y + this.bitmapSize;
-                                    i15 += 2;
-                                }
-                                i13 = i15;
-                            }
-                            if (particle4.y > this.bitmapSize - strokeWidth) {
-                                float[] fArr7 = fArr2[length];
-                                if (i15 < fArr7.length - 2) {
-                                    fArr7[i15] = particle4.x;
-                                    fArr2[length][i15 + 1] = particle4.y - this.bitmapSize;
-                                    i13 = i15 + 2;
-                                }
-                            }
-                            i13 = i15;
+            for (int i19 = 0; i19 < i; i19++) {
+                this.renderCount[i19] = 0;
+            }
+            int i20 = this.bitmapSize;
+            int i21 = 0;
+            while (i21 < size2) {
+                Particle particle3 = (Particle) arrayList.get(i21);
+                float f21 = particle3.x;
+                float f22 = particle3.y;
+                if (f21 >= f7 && f21 <= f9 && f22 >= f8 && f22 <= f10) {
+                    int i22 = particle3.alpha;
+                    float[] fArr2 = particlePoints[i22];
+                    int[] iArr = this.renderCount;
+                    int i23 = iArr[i22];
+                    int i24 = i23 + 1;
+                    if (i24 < fArr2.length) {
+                        fArr2[i23] = f21;
+                        fArr2[i24] = f22;
+                        int i25 = i23 + 2;
+                        float f23 = this.halfStrokeWidths[i22];
+                        if (f21 < f23 && (i5 = i23 + 3) < fArr2.length) {
+                            fArr2[i25] = i20 + f21;
+                            fArr2[i5] = f22;
+                            i25 = i23 + 4;
                         }
+                        float f24 = i20;
+                        float f25 = f24 - f23;
+                        if (f21 > f25) {
+                            int i26 = i25 + 1;
+                            i2 = size2;
+                            if (i26 < fArr2.length) {
+                                fArr2[i25] = f21 - f24;
+                                fArr2[i26] = f22;
+                                i25 += 2;
+                            }
+                        } else {
+                            i2 = size2;
+                        }
+                        if (f22 < f23 && (i4 = i25 + 1) < fArr2.length) {
+                            fArr2[i25] = f21;
+                            fArr2[i4] = f22 + f24;
+                            i25 += 2;
+                        }
+                        if (f22 > f25 && (i3 = i25 + 1) < fArr2.length) {
+                            fArr2[i25] = f21;
+                            fArr2[i3] = f22 - f24;
+                            i25 += 2;
+                        }
+                        iArr[i22] = i25;
+                        i21++;
+                        size2 = i2;
                     }
                 }
-                canvas.drawPoints(particlePoints[length], 0, i13, this.particlePaints[length]);
+                i2 = size2;
+                i21++;
+                size2 = i2;
             }
+            for (int i27 = 0; i27 < i; i27++) {
+                pointsBufferArr[i27].addPoints(particlePoints[i27], 0, this.renderCount[i27]);
+            }
+        }
+    }
+
+    public void drawPoints(Canvas canvas, SpoilerEffectBitmapFactory.PointsBuffer[] pointsBufferArr) {
+        if (pointsBufferArr == null || pointsBufferArr.length != ALPHAS.length) {
             return;
         }
-        SpoilerEffectBitmapFactory.getInstance().getPaint().setColorFilter(new PorterDuffColorFilter(this.lastColor, PorterDuff.Mode.SRC_IN));
-        canvas.drawRect(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, SpoilerEffectBitmapFactory.getInstance().getPaint());
-        if (LiteMode.isEnabled(128)) {
-            invalidateSelf();
-            SpoilerEffectBitmapFactory.getInstance().checkUpdate();
+        for (int i = 0; i < ALPHAS.length; i++) {
+            pointsBufferArr[i].draw(canvas, this.particlePaints[i]);
         }
     }
 
@@ -428,23 +505,6 @@ public class SpoilerEffect extends Drawable {
         rectF.right = f3;
         rectF.bottom = f4;
         invalidateSelf();
-    }
-
-    private boolean isOutOfBounds(int i, int i2, int i3, int i4, float f, float f2) {
-        if (f < i || f > i3 || f2 < i2 + AndroidUtilities.dp(2.5f) || f2 > i4 - AndroidUtilities.dp(2.5f)) {
-            return true;
-        }
-        for (int i5 = 0; i5 < this.spaces.size(); i5++) {
-            if (((RectF) this.spaces.get(i5)).contains(f, f2)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private void generateRandomLocation(Particle particle, int i) {
-        particle.x = getBounds().left + (Utilities.fastRandom.nextFloat() * getBounds().width());
-        particle.y = getBounds().top + (Utilities.fastRandom.nextFloat() * getBounds().height());
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -502,6 +562,7 @@ public class SpoilerEffect extends Drawable {
                 this.particlePaints[i2].setColor(ColorUtils.setAlphaComponent(i, (int) (this.mAlpha * fArr[i2])));
                 i2++;
             } else {
+                this.colorFilter = new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN);
                 this.lastColor = i;
                 return;
             }
@@ -836,18 +897,6 @@ public class SpoilerEffect extends Drawable {
         private float y;
 
         private Particle() {
-        }
-
-        static /* synthetic */ float access$516(Particle particle, float f) {
-            float f2 = particle.x + f;
-            particle.x = f2;
-            return f2;
-        }
-
-        static /* synthetic */ float access$616(Particle particle, float f) {
-            float f2 = particle.y + f;
-            particle.y = f2;
-            return f2;
         }
     }
 }
