@@ -34574,7 +34574,7 @@ Name: res/zzZ.xml
 SHA-256-Digest: xqWCaouE8r0YBVgJc0Xzan/HN/Oq7BrXyFux9BXwV7A=
 
 Name: resources.arsc
-SHA-256-Digest: 4u4CCFtY06BMeVPZ39GZyKTqJuhAvqi9Hd5ZsvCyURA=
+SHA-256-Digest: IuQes8YdE6FVDH+89ZLupg5m7Ljj7moFcyNXA2Cyw34=
 
 Name: version.txt
 SHA-256-Digest: cZQJx0x+5QAGq9BLLED2ycADi2VSsLq3f+qG6DWbzDg=

@@ -1,6 +1,6 @@
 Signature-Version: 1.0
 Created-By: Android Gradle 8.6.1
-SHA-256-Digest-Manifest: f2DJ4CK3knUkuttaPSILUuclYBknzOVLkhn0Y3+BV7I=
+SHA-256-Digest-Manifest: W5bDOOCpWgzbMRR2SU+LNP4cOwkeGASrB3ZK3DsBD18=
 X-Android-APK-Signed: 2
 
 Name: AndroidManifest.xml
@@ -34575,7 +34575,7 @@ Name: res/zzZ.xml
 SHA-256-Digest: E4VAfgYXmJpd0w//sLoB023purpYUbqY97+GnPQ400Y=
 
 Name: resources.arsc
-SHA-256-Digest: VCieSo92xEESjZxz7/ITy3lOaAcb4oazRittcLmmNeM=
+SHA-256-Digest: ICt2kBrGBKSdaCgbVzWkETKVTE5Qjh78RP5m7UKBf1U=
 
 Name: version.txt
 SHA-256-Digest: p5wDnbLFihlIF5QDi90qOP68wP82L4ISXw+/3WXeeM0=
