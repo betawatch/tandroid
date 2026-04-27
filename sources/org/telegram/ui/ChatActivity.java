@@ -331,6 +331,7 @@ import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.JoinGroupAlert;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.LinkSpanDrawable;
+import org.telegram.ui.Components.MarkdownParser;
 import org.telegram.ui.Components.MediaActivity;
 import org.telegram.ui.Components.MentionsContainerView;
 import org.telegram.ui.Components.MessageBackgroundDrawable;
@@ -57918,16 +57919,19 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             PhotoViewer.getInstance().openPhoto(arrayList3, i4, ChatActivity.this.getDialogId(), 0L, 0L, ChatActivity.this.photoViewerPaidMediaProvider);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:148:0x0343, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:148:0x0347, code lost:
         
             if (r0.exists() != false) goto L141;
          */
+        /* JADX WARN: Removed duplicated region for block: B:186:0x040b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:193:? A[RETURN, SYNTHETIC] */
         @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public void didPressImage(ChatMessageCell chatMessageCell, float f, float f2, boolean z) {
             int i;
+            boolean z2;
             File file;
             TLRPC.Chat chat;
             TLRPC.Message message;
@@ -57948,6 +57952,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 ChatActivity.this.getOrCreateStoryViewer().open(ChatActivity.this.getContext(), messageObject.messageOwner.media.storyItem, StoriesListPlaceProvider.of(ChatActivity.this.chatListView));
                 return;
             }
+            boolean z3 = true;
             if (messageObject.isVideo()) {
                 if (DownloadController.getInstance(((BaseFragment) ChatActivity.this).currentAccount).canDownloadMedia(messageObject.messageOwner) == 1) {
                     messageObject.putInDownloadsStore = true;
@@ -57962,10 +57967,12 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             if (messageObject.isSending()) {
                 return;
             }
-            r9 = null;
+            r14 = null;
             ChatActivityEnterView chatActivityEnterView = null;
-            r9 = null;
+            r14 = null;
             File file2 = null;
+            r14 = null;
+            File file3 = null;
             if (z && (message = messageObject.messageOwner) != null && (messageMedia = message.media) != null && (webPage = messageMedia.webpage) != null && !TextUtils.isEmpty(webPage.url)) {
                 String str = messageObject.messageOwner.media.webpage.url;
                 AndroidUtilities.getHostAuthority(str);
@@ -58095,42 +58102,65 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 }
                 return;
             }
-            if (i3 == 9 || i3 == 0) {
-                if (messageObject.getDocumentName().toLowerCase().endsWith("attheme")) {
-                    String str3 = messageObject.messageOwner.attachPath;
-                    if (str3 != null && str3.length() != 0) {
-                        file = new File(messageObject.messageOwner.attachPath);
-                    }
-                    file = null;
-                    if (file == null) {
-                        File pathToMessage = ChatActivity.this.getFileLoader().getPathToMessage(messageObject.messageOwner);
-                        if (pathToMessage.exists()) {
-                            file = pathToMessage;
-                        }
-                    }
-                    Theme.ThemeInfo applyThemeFile = Theme.applyThemeFile(file, messageObject.getDocumentName(), null, true);
-                    if (applyThemeFile == null) {
-                        ChatActivity.this.scrollToPositionOnRecreate = -1;
-                    } else {
-                        ChatActivity.this.presentFragment(new ThemePreviewActivity(applyThemeFile));
-                        return;
+            if (i3 != 9 && i3 != 0) {
+                return;
+            }
+            if (messageObject.getDocumentName().toLowerCase().endsWith("attheme")) {
+                String str3 = messageObject.messageOwner.attachPath;
+                if (str3 != null && str3.length() != 0) {
+                    file = new File(messageObject.messageOwner.attachPath);
+                }
+                file = null;
+                if (file == null) {
+                    File pathToMessage = ChatActivity.this.getFileLoader().getPathToMessage(messageObject.messageOwner);
+                    if (pathToMessage.exists()) {
+                        file = pathToMessage;
                     }
                 }
-                if (messageObject.canPreviewDocument()) {
-                    PhotoViewer photoViewer = PhotoViewer.getInstance();
-                    ChatActivity chatActivity4 = ChatActivity.this;
-                    photoViewer.setParentActivity(chatActivity4, chatActivity4.themeDelegate);
-                    PhotoViewer photoViewer2 = PhotoViewer.getInstance();
-                    ChatActivity chatActivity5 = ChatActivity.this;
-                    photoViewer2.openPhoto(messageObject, chatActivity5, messageObject.type != 0 ? chatActivity5.dialog_id : 0L, messageObject.type != 0 ? ChatActivity.this.mergeDialogId : 0L, messageObject.type != 0 ? ChatActivity.this.getTopicId() : 0L, ChatActivity.this.photoViewerProvider);
+                Theme.ThemeInfo applyThemeFile = Theme.applyThemeFile(file, messageObject.getDocumentName(), null, true);
+                if (applyThemeFile == null) {
+                    ChatActivity.this.scrollToPositionOnRecreate = -1;
+                } else {
+                    ChatActivity.this.presentFragment(new ThemePreviewActivity(applyThemeFile));
                     return;
                 }
-                try {
-                    AndroidUtilities.openForView(messageObject, ChatActivity.this.getParentActivity(), ChatActivity.this.themeDelegate, false);
-                } catch (Exception e2) {
-                    FileLog.e(e2);
-                    ChatActivity.this.alertUserOpenError(messageObject);
+            }
+            if (messageObject.canPreviewDocument()) {
+                PhotoViewer photoViewer = PhotoViewer.getInstance();
+                ChatActivity chatActivity4 = ChatActivity.this;
+                photoViewer.setParentActivity(chatActivity4, chatActivity4.themeDelegate);
+                PhotoViewer photoViewer2 = PhotoViewer.getInstance();
+                ChatActivity chatActivity5 = ChatActivity.this;
+                photoViewer2.openPhoto(messageObject, chatActivity5, messageObject.type != 0 ? chatActivity5.dialog_id : 0L, messageObject.type != 0 ? ChatActivity.this.mergeDialogId : 0L, messageObject.type != 0 ? ChatActivity.this.getTopicId() : 0L, ChatActivity.this.photoViewerProvider);
+                z2 = true;
+            } else {
+                z2 = false;
+            }
+            if (MarkdownParser.isMarkdown(messageObject)) {
+                String str4 = messageObject.messageOwner.attachPath;
+                if (str4 != null && str4.length() != 0) {
+                    file3 = new File(messageObject.messageOwner.attachPath);
                 }
+                if (file3 == null || !file3.exists()) {
+                    file3 = FileLoader.getInstance(messageObject.currentAccount).getPathToMessage(messageObject.messageOwner);
+                }
+                if (file3 != null && file3.exists()) {
+                    ChatActivity.this.createArticleViewer(false).open(messageObject);
+                    if (z3) {
+                        try {
+                            AndroidUtilities.openForView(messageObject, ChatActivity.this.getParentActivity(), ChatActivity.this.themeDelegate, false);
+                            return;
+                        } catch (Exception e2) {
+                            FileLog.e(e2);
+                            ChatActivity.this.alertUserOpenError(messageObject);
+                            return;
+                        }
+                    }
+                    return;
+                }
+            }
+            z3 = z2;
+            if (z3) {
             }
         }
 

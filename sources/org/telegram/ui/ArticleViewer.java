@@ -100,6 +100,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.CodeHighlighting;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
@@ -153,6 +154,7 @@ import org.telegram.ui.Components.AnimationProperties;
 import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.BulletinFactory;
+import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.CombinedDrawable;
 import org.telegram.ui.Components.ContextProgressView;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -163,6 +165,7 @@ import org.telegram.ui.Components.LineProgressView;
 import org.telegram.ui.Components.LinkPath;
 import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.LoadingDrawable;
+import org.telegram.ui.Components.MarkdownParser;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.RecyclerListView;
@@ -363,7 +366,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     private static final SparseArray tableTextPaints = new SparseArray();
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$setParentActivity$41(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean lambda$setParentActivity$42(View view, MotionEvent motionEvent) {
         return true;
     }
 
@@ -371,7 +374,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         return null;
     }
 
-    static /* synthetic */ int access$12608(ArticleViewer articleViewer) {
+    static /* synthetic */ int access$13108(ArticleViewer articleViewer) {
         int i = articleViewer.lastBlockNum;
         articleViewer.lastBlockNum = i + 1;
         return i;
@@ -408,7 +411,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         Runnable runnable = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ArticleViewer.this.lambda$new$65();
+                ArticleViewer.this.lambda$new$66();
             }
         };
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
@@ -416,7 +419,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         this.page1Background = new AnimatedColor(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                ArticleViewer.this.lambda$new$66();
+                ArticleViewer.this.lambda$new$67();
             }
         }, 320L, cubicBezierInterpolator);
         this.isSheet = false;
@@ -448,7 +451,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         Runnable runnable = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ArticleViewer.this.lambda$new$65();
+                ArticleViewer.this.lambda$new$66();
             }
         };
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
@@ -456,7 +459,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         this.page1Background = new AnimatedColor(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                ArticleViewer.this.lambda$new$66();
+                ArticleViewer.this.lambda$new$67();
             }
         }, 320L, cubicBezierInterpolator);
         this.isSheet = true;
@@ -468,7 +471,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         if (this.pagesStack.isEmpty()) {
             return false;
         }
-        return this.pagesStack.get(r0.size() - 1) instanceof TLRPC.WebPage;
+        ArrayList arrayList = this.pagesStack;
+        Object obj = arrayList.get(arrayList.size() - 1);
+        if (!(obj instanceof TLRPC.WebPage)) {
+            return false;
+        }
+        TLRPC.Page page = ((TLRPC.WebPage) obj).cached_page;
+        return page == null || page.local == null;
     }
 
     public static ArticleViewer getInstance() {
@@ -534,7 +543,9 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
 
     private static class TL_pageBlockListItem extends TLRPC.PageBlock {
         private TLRPC.PageBlock blockItem;
+        private boolean checked;
         private int index;
+        private boolean isCheckbox;
         private String num;
         private DrawingText numLayout;
         private TL_pageBlockListParent parent;
@@ -560,7 +571,9 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
 
     private static class TL_pageBlockOrderedListItem extends TLRPC.PageBlock {
         private TLRPC.PageBlock blockItem;
+        private boolean checked;
         private int index;
+        private boolean isCheckbox;
         private String num;
         private DrawingText numLayout;
         private TL_pageBlockOrderedListParent parent;
@@ -1508,7 +1521,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         }
         BottomSheet bottomSheet = this.linkSheet;
         if (bottomSheet != null) {
-            bottomSheet.dismiss();
+            bottomSheet.lambda$new$0();
             this.linkSheet = null;
         }
         BottomSheet.Builder builder = new BottomSheet.Builder(this.parentActivity);
@@ -1520,13 +1533,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         }
         builder.setTitle(str2);
         builder.setTitleMultipleLines(true);
-        builder.setItems(new CharSequence[]{LocaleController.getString(R.string.Open), LocaleController.getString(R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda24
+        builder.setItems(new CharSequence[]{LocaleController.getString(R.string.Open), LocaleController.getString(R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda35
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 ArticleViewer.this.lambda$showCopyPopup$0(str, dialogInterface, i);
             }
         });
-        builder.setOnPreDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda25
+        builder.setOnPreDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda36
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 ArticleViewer.this.lambda$showCopyPopup$1(dialogInterface);
@@ -1597,7 +1610,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             actionBarPopupWindowLayout.setPadding(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f));
             this.popupLayout.setBackgroundDrawable(this.parentActivity.getResources().getDrawable(R.drawable.menu_copy));
             this.popupLayout.setAnimationEnabled(false);
-            this.popupLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda56
+            this.popupLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda54
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view2, MotionEvent motionEvent) {
                     boolean lambda$showPopup$2;
@@ -1605,7 +1618,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     return lambda$showPopup$2;
                 }
             });
-            this.popupLayout.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda57
+            this.popupLayout.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda55
                 @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow.OnDispatchKeyEventListener
                 public final void onDispatchKeyEvent(KeyEvent keyEvent) {
                     ArticleViewer.this.lambda$showPopup$3(keyEvent);
@@ -1620,7 +1633,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             this.deleteView.setTextSize(1, 15.0f);
             this.deleteView.setTypeface(AndroidUtilities.bold());
             this.deleteView.setText(LocaleController.getString(R.string.Copy).toUpperCase());
-            this.deleteView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda58
+            this.deleteView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda56
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
                     ArticleViewer.this.lambda$showPopup$4(view2);
@@ -1636,7 +1649,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             this.popupWindow.setInputMethodMode(2);
             this.popupWindow.setSoftInputMode(0);
             this.popupWindow.getContentView().setFocusableInTouchMode(true);
-            this.popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda59
+            this.popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda57
                 @Override // android.widget.PopupWindow.OnDismissListener
                 public final void onDismiss() {
                     ArticleViewer.this.lambda$showPopup$5();
@@ -1890,6 +1903,8 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         if (pageBlock instanceof TL_pageBlockListItem) {
             TL_pageBlockListItem tL_pageBlockListItem = (TL_pageBlockListItem) pageBlock;
             TL_pageBlockListItem tL_pageBlockListItem2 = new TL_pageBlockListItem();
+            tL_pageBlockListItem2.isCheckbox = tL_pageBlockListItem.isCheckbox;
+            tL_pageBlockListItem2.checked = tL_pageBlockListItem.checked;
             tL_pageBlockListItem2.parent = tL_pageBlockListItem.parent;
             tL_pageBlockListItem2.blockItem = wrapInTableBlock(tL_pageBlockListItem.blockItem, pageBlock2);
             return tL_pageBlockListItem2;
@@ -1899,6 +1914,8 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         }
         TL_pageBlockOrderedListItem tL_pageBlockOrderedListItem = (TL_pageBlockOrderedListItem) pageBlock;
         TL_pageBlockOrderedListItem tL_pageBlockOrderedListItem2 = new TL_pageBlockOrderedListItem();
+        tL_pageBlockOrderedListItem2.isCheckbox = tL_pageBlockOrderedListItem.isCheckbox;
+        tL_pageBlockOrderedListItem2.checked = tL_pageBlockOrderedListItem.checked;
         tL_pageBlockOrderedListItem2.parent = tL_pageBlockOrderedListItem.parent;
         tL_pageBlockOrderedListItem2.blockItem = wrapInTableBlock(tL_pageBlockOrderedListItem.blockItem, pageBlock2);
         return tL_pageBlockOrderedListItem2;
@@ -1976,6 +1993,9 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 WebActionBar webActionBar3 = this.actionBar;
                 PageLayout pageLayout4 = this.pages[0];
                 webActionBar3.setIsTonsite(pageLayout4 != null && pageLayout4.isTonsite());
+                WebActionBar webActionBar4 = this.actionBar;
+                PageLayout pageLayout5 = this.pages[0];
+                webActionBar4.setIsLocal(pageLayout5 != null && pageLayout5.isLocal());
                 AnimatorSet animatorSet = this.pageSwitchAnimation;
                 Objects.requireNonNull(animatorSet);
                 AndroidUtilities.runOnUIThread(new ArticleViewer$$ExternalSyntheticLambda23(animatorSet));
@@ -2220,16 +2240,19 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         webActionBar2.setColors((pageLayout3 == null || !SharedConfig.adaptableColorInBrowser) ? getThemedColor(Theme.key_iv_background) : pageLayout3.getActionBarColor(), true);
         WebActionBar webActionBar3 = this.actionBar;
         PageLayout pageLayout4 = this.pages[0];
-        if (pageLayout4 != null && pageLayout4.isTonsite()) {
+        webActionBar3.setIsTonsite(pageLayout4 != null && pageLayout4.isTonsite());
+        WebActionBar webActionBar4 = this.actionBar;
+        PageLayout pageLayout5 = this.pages[0];
+        if (pageLayout5 != null && pageLayout5.isLocal()) {
             z = true;
         }
-        webActionBar3.setIsTonsite(z);
+        webActionBar4.setIsLocal(z);
         this.closeAnimationInProgress = true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: goBack, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
-    public void lambda$setParentActivity$26(final int i) {
+    public void lambda$setParentActivity$27(final int i) {
         boolean z = false;
         if (this.pagesStack.size() <= 1) {
             this.windowView.movingPage = false;
@@ -2374,10 +2397,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         webActionBar2.setColors((pageLayout3 == null || !SharedConfig.adaptableColorInBrowser) ? getThemedColor(Theme.key_iv_background) : pageLayout3.getActionBarColor(), true);
         WebActionBar webActionBar3 = this.actionBar;
         PageLayout pageLayout4 = this.pages[0];
-        if (pageLayout4 != null && pageLayout4.isTonsite()) {
+        webActionBar3.setIsTonsite(pageLayout4 != null && pageLayout4.isTonsite());
+        WebActionBar webActionBar4 = this.actionBar;
+        PageLayout pageLayout5 = this.pages[0];
+        if (pageLayout5 != null && pageLayout5.isLocal()) {
             z = true;
         }
-        webActionBar3.setIsTonsite(z);
+        webActionBar4.setIsLocal(z);
         this.closeAnimationInProgress = true;
     }
 
@@ -2502,11 +2528,17 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                         num = num3;
                     }
                 }
+                if (this.pages[0].adapter.padding) {
+                    num2 = Integer.valueOf(num2.intValue() + 1);
+                }
                 if (z) {
-                    SmoothScroller smoothScroller = new SmoothScroller(this.pages[0].getContext());
-                    int intValue = num2.intValue();
-                    Sheet sheet = this.sheet;
-                    smoothScroller.setTargetPosition(intValue + ((sheet == null || !sheet.halfSize()) ? 0 : 1));
+                    SmoothScroller smoothScroller = new SmoothScroller(this.pages[0].getContext()) { // from class: org.telegram.ui.ArticleViewer.11
+                        @Override // androidx.recyclerview.widget.LinearSmoothScroller
+                        protected int getVerticalSnapPreference() {
+                            return -1;
+                        }
+                    };
+                    smoothScroller.setTargetPosition(num2.intValue());
                     smoothScroller.setOffset((-AndroidUtilities.dp(56.0f)) - num.intValue());
                     this.pages[0].layoutManager.startSmoothScroll(smoothScroller);
                 } else {
@@ -2948,8 +2980,8 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         return getThemedColor(Theme.key_windowBackgroundWhiteGrayText);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x027a  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0295  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x027c  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0297  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2957,8 +2989,8 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         SparseArray sparseArray;
         int dp;
         int textColor;
+        int textColor2;
         int i;
-        int i2;
         int textFlags = getTextFlags(richText2);
         int dp2 = AndroidUtilities.dp(14.0f);
         int dp3 = AndroidUtilities.dp(SharedConfig.ivFontSize - 16);
@@ -3024,7 +3056,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                         textColor = getGrayTextColor();
                     }
                     sparseArray = null;
-                    i = -65536;
+                    textColor2 = -65536;
                 }
             } else if (pageBlock instanceof TLRPC.TL_pageBlockPullquote) {
                 TLRPC.TL_pageBlockPullquote tL_pageBlockPullquote = (TLRPC.TL_pageBlockPullquote) pageBlock;
@@ -3039,12 +3071,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                         textColor = getGrayTextColor();
                     }
                     sparseArray = null;
-                    i = -65536;
+                    textColor2 = -65536;
                 }
             } else if (pageBlock instanceof TLRPC.TL_pageBlockPreformatted) {
                 sparseArray = preformattedTextPaints;
-                dp = AndroidUtilities.dp(14.0f);
-                textColor = getTextColor();
+                dp2 = AndroidUtilities.dp(14.0f);
+                textColor2 = getTextColor();
+                textFlags |= 4;
             } else if (pageBlock instanceof TLRPC.TL_pageBlockParagraph) {
                 sparseArray = paragraphTextPaints;
                 dp = AndroidUtilities.dp(16.0f);
@@ -3100,7 +3133,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                         textColor = getTextColor();
                     }
                     sparseArray = null;
-                    i = -65536;
+                    textColor2 = -65536;
                 }
             } else if (pageBlock instanceof TLRPC.TL_pageBlockVideo) {
                 if (richText2 == ((TLRPC.TL_pageBlockVideo) pageBlock).caption.text) {
@@ -3135,10 +3168,10 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     textColor = getTextColor();
                 }
                 sparseArray = null;
-                i = -65536;
+                textColor2 = -65536;
             }
-            i2 = textFlags & 256;
-            if (i2 == 0 || (textFlags & 128) != 0) {
+            i = textFlags & 256;
+            if (i == 0 || (textFlags & 128) != 0) {
                 dp2 -= AndroidUtilities.dp(4.0f);
             }
             if (sparseArray != null) {
@@ -3158,10 +3191,10 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 } else if (pageBlock instanceof TLRPC.TL_pageBlockRelatedArticles) {
                     textPaint2.setTypeface(AndroidUtilities.bold());
                 } else if (this.selectedFont != 1 && !(pageBlock instanceof TLRPC.TL_pageBlockTitle) && !(pageBlock instanceof TLRPC.TL_pageBlockKicker) && !(pageBlock instanceof TLRPC.TL_pageBlockHeader) && !(pageBlock instanceof TLRPC.TL_pageBlockSubtitle) && !(pageBlock instanceof TLRPC.TL_pageBlockSubheader)) {
-                    int i3 = textFlags & 1;
-                    if (i3 != 0 && (textFlags & 2) != 0) {
+                    int i2 = textFlags & 1;
+                    if (i2 != 0 && (textFlags & 2) != 0) {
                         textPaint2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC));
-                    } else if (i3 != 0) {
+                    } else if (i2 != 0) {
                         textPaint2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                     } else if ((textFlags & 2) != 0) {
                         textPaint2.setTypeface(AndroidUtilities.getTypeface("fonts/ritalic.ttf"));
@@ -3169,10 +3202,10 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 } else if ((pageBlock instanceof TLRPC.TL_pageBlockTitle) || (pageBlock instanceof TLRPC.TL_pageBlockHeader) || (pageBlock instanceof TLRPC.TL_pageBlockSubtitle) || (pageBlock instanceof TLRPC.TL_pageBlockSubheader)) {
                     textPaint2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD));
                 } else {
-                    int i4 = textFlags & 1;
-                    if (i4 != 0 && (textFlags & 2) != 0) {
+                    int i3 = textFlags & 1;
+                    if (i3 != 0 && (textFlags & 2) != 0) {
                         textPaint2.setTypeface(Typeface.create("serif", 3));
-                    } else if (i4 != 0) {
+                    } else if (i3 != 0) {
                         textPaint2.setTypeface(Typeface.create("serif", 1));
                     } else if ((textFlags & 2) != 0) {
                         textPaint2.setTypeface(Typeface.create("serif", 2));
@@ -3188,24 +3221,24 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 }
                 if ((textFlags & 8) != 0 || (textFlags & 512) != 0) {
                     textPaint2.setFlags(textPaint2.getFlags());
-                    i = getLinkTextColor();
+                    textColor2 = getLinkTextColor();
                 }
-                if (i2 != 0) {
+                if (i != 0) {
                     textPaint2.baselineShift -= AndroidUtilities.dp(6.0f);
                 } else if ((textFlags & 128) != 0) {
                     textPaint2.baselineShift += AndroidUtilities.dp(2.0f);
                 }
-                textPaint2.setColor(i);
+                textPaint2.setColor(textColor2);
                 sparseArray.put(textFlags, textPaint2);
             }
             textPaint2.setTextSize(dp2 + dp3);
             return textPaint2;
         }
-        int i5 = textColor;
+        int i4 = textColor;
         dp2 = dp;
-        i = i5;
-        i2 = textFlags & 256;
-        if (i2 == 0) {
+        textColor2 = i4;
+        i = textFlags & 256;
+        if (i == 0) {
         }
         dp2 -= AndroidUtilities.dp(4.0f);
         if (sparseArray != null) {
@@ -3569,7 +3602,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                         if (url != null) {
                             BottomSheet bottomSheet = this.linkSheet;
                             if (bottomSheet != null) {
-                                bottomSheet.dismiss();
+                                bottomSheet.lambda$new$0();
                                 this.linkSheet = null;
                             }
                             int lastIndexOf = url.lastIndexOf(35);
@@ -3639,7 +3672,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         if (linkSpanDrawable == null) {
             return null;
         }
-        return new Browser.Progress() { // from class: org.telegram.ui.ArticleViewer.11
+        return new Browser.Progress() { // from class: org.telegram.ui.ArticleViewer.12
             @Override // org.telegram.messenger.browser.Browser.Progress
             public void init() {
                 ArticleViewer.this.loadingText = drawingText;
@@ -3691,6 +3724,35 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
 
     /* JADX INFO: Access modifiers changed from: private */
     public void openWebpageUrl(final String str, final String str2, final Browser.Progress progress) {
+        Activity activity = this.parentActivity;
+        if (activity == null || activity.isFinishing()) {
+            return;
+        }
+        PageLayout pageLayout = this.pages[0];
+        if (pageLayout != null && pageLayout.isLocal()) {
+            String string = LocaleController.getString(R.string.OpenUrlAlert2);
+            int indexOf = string.indexOf("%");
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(String.format(string, str));
+            if (indexOf >= 0) {
+                spannableStringBuilder.setSpan(new URLSpan(str), indexOf, str.length() + indexOf, 33);
+            }
+            new AlertDialog.Builder(this.parentActivity, getResourcesProvider()).setTitle(LocaleController.getString(R.string.OpenUrlTitle)).setMessage(spannableStringBuilder).setMessageTextViewClickable(false).setNegativeButton(LocaleController.getString(R.string.Cancel), null).setPositiveButton(LocaleController.getString(R.string.Open), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda52
+                @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+                public final void onClick(AlertDialog alertDialog, int i) {
+                    ArticleViewer.this.lambda$openWebpageUrl$6(str, str2, progress, alertDialog, i);
+                }
+            }).show();
+            return;
+        }
+        openWebpageUrlInternal(str, str2, progress);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$openWebpageUrl$6(String str, String str2, Browser.Progress progress, AlertDialog alertDialog, int i) {
+        openWebpageUrlInternal(str, str2, progress);
+    }
+
+    private void openWebpageUrlInternal(final String str, final String str2, final Browser.Progress progress) {
         Sheet sheet;
         Browser.Progress progress2 = this.loadingProgress;
         if (progress2 != null) {
@@ -3709,12 +3771,12 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             sheet.dismiss(false);
             return;
         }
-        final Utilities.Callback0Return callback0Return = new Utilities.Callback0Return() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda52
+        final Utilities.Callback0Return callback0Return = new Utilities.Callback0Return() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda63
             @Override // org.telegram.messenger.Utilities.Callback0Return
             public final Object run() {
-                Boolean lambda$openWebpageUrl$7;
-                lambda$openWebpageUrl$7 = ArticleViewer.this.lambda$openWebpageUrl$7(str, zArr, progress);
-                return lambda$openWebpageUrl$7;
+                Boolean lambda$openWebpageUrlInternal$8;
+                lambda$openWebpageUrlInternal$8 = ArticleViewer.this.lambda$openWebpageUrlInternal$8(str, zArr, progress);
+                return lambda$openWebpageUrlInternal$8;
             }
         };
         final int i = this.lastReqId + 1;
@@ -3723,17 +3785,17 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         final TLRPC.TL_messages_getWebPage tL_messages_getWebPage = new TLRPC.TL_messages_getWebPage();
         tL_messages_getWebPage.url = str;
         tL_messages_getWebPage.hash = 0;
-        this.openUrlReqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getWebPage, new RequestDelegate() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda53
+        this.openUrlReqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getWebPage, new RequestDelegate() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda64
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                ArticleViewer.this.lambda$openWebpageUrl$9(i, progress, str2, callback0Return, tL_messages_getWebPage, tLObject, tL_error);
+                ArticleViewer.this.lambda$openWebpageUrlInternal$10(i, progress, str2, callback0Return, tL_messages_getWebPage, tLObject, tL_error);
             }
         });
         if (progress != null) {
-            progress.onCancel(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda54
+            progress.onCancel(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda65
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ArticleViewer.this.lambda$openWebpageUrl$10(i, progress);
+                    ArticleViewer.this.lambda$openWebpageUrlInternal$11(i, progress);
                 }
             });
             progress.init();
@@ -3741,15 +3803,15 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Boolean lambda$openWebpageUrl$7(String str, boolean[] zArr, final Browser.Progress progress) {
+    public /* synthetic */ Boolean lambda$openWebpageUrlInternal$8(String str, boolean[] zArr, final Browser.Progress progress) {
         if (!Browser.isInternalUri(Uri.parse(str), zArr)) {
             return Boolean.FALSE;
         }
         if (progress != null) {
-            progress.onEnd(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda64
+            progress.onEnd(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda69
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ArticleViewer.this.lambda$openWebpageUrl$6(progress);
+                    ArticleViewer.this.lambda$openWebpageUrlInternal$7(progress);
                 }
             });
         } else {
@@ -3763,7 +3825,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openWebpageUrl$6(Browser.Progress progress) {
+    public /* synthetic */ void lambda$openWebpageUrlInternal$7(Browser.Progress progress) {
         Sheet sheet = this.sheet;
         if (sheet != null) {
             sheet.dismiss(true);
@@ -3774,17 +3836,17 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openWebpageUrl$9(final int i, final Browser.Progress progress, final String str, final Utilities.Callback0Return callback0Return, final TLRPC.TL_messages_getWebPage tL_messages_getWebPage, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda67
+    public /* synthetic */ void lambda$openWebpageUrlInternal$10(final int i, final Browser.Progress progress, final String str, final Utilities.Callback0Return callback0Return, final TLRPC.TL_messages_getWebPage tL_messages_getWebPage, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda74
             @Override // java.lang.Runnable
             public final void run() {
-                ArticleViewer.this.lambda$openWebpageUrl$8(i, progress, tLObject, str, callback0Return, tL_messages_getWebPage);
+                ArticleViewer.this.lambda$openWebpageUrlInternal$9(i, progress, tLObject, str, callback0Return, tL_messages_getWebPage);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openWebpageUrl$8(int i, Browser.Progress progress, TLObject tLObject, String str, Utilities.Callback0Return callback0Return, TLRPC.TL_messages_getWebPage tL_messages_getWebPage) {
+    public /* synthetic */ void lambda$openWebpageUrlInternal$9(int i, Browser.Progress progress, TLObject tLObject, String str, Utilities.Callback0Return callback0Return, TLRPC.TL_messages_getWebPage tL_messages_getWebPage) {
         if (this.openUrlReqId == 0 || i != this.lastReqId) {
             return;
         }
@@ -3834,7 +3896,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openWebpageUrl$10(int i, Browser.Progress progress) {
+    public /* synthetic */ void lambda$openWebpageUrlInternal$11(int i, Browser.Progress progress) {
         if (this.lastReqId == i && this.openUrlReqId != 0) {
             ConnectionsManager.getInstance(this.currentAccount).cancelRequest(this.openUrlReqId, false);
             this.openUrlReqId = 0;
@@ -4210,7 +4272,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         windowView.setWillNotDraw(false);
         this.windowView.setClipChildren(true);
         this.windowView.setFocusable(false);
-        FrameLayout frameLayout = new FrameLayout(activity) { // from class: org.telegram.ui.ArticleViewer.12
+        FrameLayout frameLayout = new FrameLayout(activity) { // from class: org.telegram.ui.ArticleViewer.13
             /* JADX WARN: Removed duplicated region for block: B:13:0x0059  */
             @Override // android.view.ViewGroup
             /*
@@ -4273,9 +4335,9 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             this.containerView.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda8
                 @Override // android.view.View.OnApplyWindowInsetsListener
                 public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-                    WindowInsets lambda$setParentActivity$11;
-                    lambda$setParentActivity$11 = ArticleViewer.lambda$setParentActivity$11(view, windowInsets);
-                    return lambda$setParentActivity$11;
+                    WindowInsets lambda$setParentActivity$12;
+                    lambda$setParentActivity$12 = ArticleViewer.lambda$setParentActivity$12(view, windowInsets);
+                    return lambda$setParentActivity$12;
                 }
             });
         }
@@ -4304,9 +4366,9 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             pageLayout.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda14
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
                 public final boolean onItemClick(View view, int i2) {
-                    boolean lambda$setParentActivity$12;
-                    lambda$setParentActivity$12 = ArticleViewer.this.lambda$setParentActivity$12(view, i2);
-                    return lambda$setParentActivity$12;
+                    boolean lambda$setParentActivity$13;
+                    lambda$setParentActivity$13 = ArticleViewer.this.lambda$setParentActivity$13(view, i2);
+                    return lambda$setParentActivity$13;
                 }
             });
             pageLayout.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda15
@@ -4322,7 +4384,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
 
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
                 public final void onItemClick(View view, int i2, float f, float f2) {
-                    ArticleViewer.this.lambda$setParentActivity$15(pageLayout, view, i2, f, f2);
+                    ArticleViewer.this.lambda$setParentActivity$16(pageLayout, view, i2, f, f2);
                 }
             });
             i++;
@@ -4336,7 +4398,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         this.statusBarPaint.setColor(-16777216);
         this.headerProgressPaint.setColor(-14408666);
         this.navigationBarPaint.setColor(-16777216);
-        WebActionBar webActionBar = new WebActionBar(activity, getResourcesProvider()) { // from class: org.telegram.ui.ArticleViewer.13
+        WebActionBar webActionBar = new WebActionBar(activity, getResourcesProvider()) { // from class: org.telegram.ui.ArticleViewer.14
             @Override // org.telegram.ui.web.WebActionBar
             protected void onSearchUpdated(String str) {
                 ArticleViewer.this.processSearch(str.toLowerCase());
@@ -4399,10 +4461,10 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         this.actionBar.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda16
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ArticleViewer.this.lambda$setParentActivity$21(activity, view);
+                ArticleViewer.this.lambda$setParentActivity$22(activity, view);
             }
         });
-        this.actionBar.addressEditText.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.ArticleViewer.14
+        this.actionBar.addressEditText.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.ArticleViewer.15
             @Override // android.text.TextWatcher
             public void beforeTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
             }
@@ -4421,7 +4483,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         AddressBarList addressBarList = new AddressBarList(activity);
         this.addressBarList = addressBarList;
         addressBarList.setOpenProgress(0.0f);
-        this.addressBarList.listView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.ArticleViewer.15
+        this.addressBarList.listView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.ArticleViewer.16
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i2, int i3) {
                 if (ArticleViewer.this.addressBarList.listView.scrollingByUser) {
@@ -4433,36 +4495,36 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         this.lineProgressTickRunnable = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda17
             @Override // java.lang.Runnable
             public final void run() {
-                ArticleViewer.this.lambda$setParentActivity$22();
+                ArticleViewer.this.lambda$setParentActivity$23();
             }
         };
         this.actionBar.backButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda18
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ArticleViewer.this.lambda$setParentActivity$23(view);
+                ArticleViewer.this.lambda$setParentActivity$24(view);
             }
         });
         this.actionBar.backButton.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda19
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
-                boolean lambda$setParentActivity$29;
-                lambda$setParentActivity$29 = ArticleViewer.this.lambda$setParentActivity$29(view);
-                return lambda$setParentActivity$29;
+                boolean lambda$setParentActivity$30;
+                lambda$setParentActivity$30 = ArticleViewer.this.lambda$setParentActivity$30(view);
+                return lambda$setParentActivity$30;
             }
         });
         this.actionBar.setMenuListener(new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda20
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                ArticleViewer.this.lambda$setParentActivity$39(activity, (Integer) obj);
+                ArticleViewer.this.lambda$setParentActivity$40(activity, (Integer) obj);
             }
         });
         this.actionBar.forwardButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda21
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ArticleViewer.this.lambda$setParentActivity$40(view);
+                ArticleViewer.this.lambda$setParentActivity$41(view);
             }
         });
-        FrameLayout frameLayout5 = new FrameLayout(this.parentActivity) { // from class: org.telegram.ui.ArticleViewer.18
+        FrameLayout frameLayout5 = new FrameLayout(this.parentActivity) { // from class: org.telegram.ui.ArticleViewer.19
             @Override // android.view.View
             public void onDraw(Canvas canvas) {
                 int intrinsicHeight = Theme.chat_composeShadowDrawable.getIntrinsicHeight();
@@ -4475,9 +4537,9 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         frameLayout5.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda22
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean lambda$setParentActivity$41;
-                lambda$setParentActivity$41 = ArticleViewer.lambda$setParentActivity$41(view, motionEvent);
-                return lambda$setParentActivity$41;
+                boolean lambda$setParentActivity$42;
+                lambda$setParentActivity$42 = ArticleViewer.lambda$setParentActivity$42(view, motionEvent);
+                return lambda$setParentActivity$42;
             }
         });
         this.searchPanel.setWillNotDraw(false);
@@ -4491,7 +4553,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         new KeyboardNotifier(this.windowView, new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda9
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                ArticleViewer.this.lambda$setParentActivity$42((Integer) obj);
+                ArticleViewer.this.lambda$setParentActivity$43((Integer) obj);
             }
         });
         ImageView imageView = new ImageView(this.parentActivity);
@@ -4511,7 +4573,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         this.searchUpButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ArticleViewer.this.lambda$setParentActivity$43(view);
+                ArticleViewer.this.lambda$setParentActivity$44(view);
             }
         });
         this.searchUpButton.setContentDescription(LocaleController.getString(R.string.AccDescrSearchNext));
@@ -4525,7 +4587,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         this.searchDownButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ArticleViewer.this.lambda$setParentActivity$44(view);
+                ArticleViewer.this.lambda$setParentActivity$45(view);
             }
         });
         this.searchDownButton.setContentDescription(LocaleController.getString(R.string.AccDescrSearchPrev));
@@ -4564,13 +4626,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             this.textSelectionHelper.setOnTranslate(new TextSelectionHelper.OnTranslateListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda12
                 @Override // org.telegram.ui.Cells.TextSelectionHelper.OnTranslateListener
                 public final void run(CharSequence charSequence, String str, String str2, Runnable runnable) {
-                    ArticleViewer.this.lambda$setParentActivity$45(charSequence, str, str2, runnable);
+                    ArticleViewer.this.lambda$setParentActivity$46(charSequence, str, str2, runnable);
                 }
             });
         }
         TextSelectionHelper.ArticleTextSelectionHelper articleTextSelectionHelper2 = this.textSelectionHelper;
         articleTextSelectionHelper2.layoutManager = this.pages[0].layoutManager;
-        articleTextSelectionHelper2.setCallback(new TextSelectionHelper.Callback() { // from class: org.telegram.ui.ArticleViewer.19
+        articleTextSelectionHelper2.setCallback(new TextSelectionHelper.Callback() { // from class: org.telegram.ui.ArticleViewer.20
             @Override // org.telegram.ui.Cells.TextSelectionHelper.Callback
             public void onStateChanged(boolean z) {
                 if (z) {
@@ -4592,10 +4654,10 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         pinchToZoomHelper.setClipBoundsListener(new PinchToZoomHelper.ClipBoundsListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda13
             @Override // org.telegram.ui.PinchToZoomHelper.ClipBoundsListener
             public final void getClipTopBottom(float[] fArr) {
-                ArticleViewer.this.lambda$setParentActivity$46(fArr);
+                ArticleViewer.this.lambda$setParentActivity$47(fArr);
             }
         });
-        this.pinchToZoomHelper.setCallback(new PinchToZoomHelper.Callback() { // from class: org.telegram.ui.ArticleViewer.20
+        this.pinchToZoomHelper.setCallback(new PinchToZoomHelper.Callback() { // from class: org.telegram.ui.ArticleViewer.21
             @Override // org.telegram.ui.PinchToZoomHelper.Callback
             public /* synthetic */ TextureView getCurrentTextureView() {
                 return PinchToZoomHelper.Callback.-CC.$default$getCurrentTextureView(this);
@@ -4618,7 +4680,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ WindowInsets lambda$setParentActivity$11(View view, WindowInsets windowInsets) {
+    public static /* synthetic */ WindowInsets lambda$setParentActivity$12(View view, WindowInsets windowInsets) {
         WindowInsets windowInsets2;
         if (Build.VERSION.SDK_INT >= 30) {
             windowInsets2 = WindowInsets.CONSUMED;
@@ -4628,7 +4690,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$setParentActivity$12(View view, int i) {
+    public /* synthetic */ boolean lambda$setParentActivity$13(View view, int i) {
         if (!(view instanceof BlockRelatedArticlesCell)) {
             return false;
         }
@@ -4638,7 +4700,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$15(PageLayout pageLayout, View view, int i, float f, float f2) {
+    public /* synthetic */ void lambda$setParentActivity$16(PageLayout pageLayout, View view, int i, float f, float f2) {
         if (this.sheet == null || i - 1 >= 0) {
             TextSelectionHelper.ArticleTextSelectionHelper articleTextSelectionHelper = this.textSelectionHelper;
             if (articleTextSelectionHelper != null) {
@@ -4660,10 +4722,10 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                             showProgressView(true, true);
                             TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
                             tL_contacts_resolveUsername.username = "previews";
-                            this.previewsReqId = ConnectionsManager.getInstance(i2).sendRequest(tL_contacts_resolveUsername, new RequestDelegate() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda26
+                            this.previewsReqId = ConnectionsManager.getInstance(i2).sendRequest(tL_contacts_resolveUsername, new RequestDelegate() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda42
                                 @Override // org.telegram.tgnet.RequestDelegate
                                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                    ArticleViewer.this.lambda$setParentActivity$14(i2, j, tLObject, tL_error);
+                                    ArticleViewer.this.lambda$setParentActivity$15(i2, j, tLObject, tL_error);
                                 }
                             });
                             return;
@@ -4722,17 +4784,17 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$14(final int i, final long j, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda55
+    public /* synthetic */ void lambda$setParentActivity$15(final int i, final long j, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda50
             @Override // java.lang.Runnable
             public final void run() {
-                ArticleViewer.this.lambda$setParentActivity$13(tLObject, i, j);
+                ArticleViewer.this.lambda$setParentActivity$14(tLObject, i, j);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$13(TLObject tLObject, int i, long j) {
+    public /* synthetic */ void lambda$setParentActivity$14(TLObject tLObject, int i, long j) {
         if (this.previewsReqId == 0) {
             return;
         }
@@ -4750,7 +4812,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$21(final Activity activity, View view) {
+    public /* synthetic */ void lambda$setParentActivity$22(final Activity activity, View view) {
         if (this.actionBar.longClicked) {
             return;
         }
@@ -4768,32 +4830,32 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 if (TextUtils.isEmpty(title)) {
                     title = LocaleController.getString(R.string.WebEmpty);
                 }
-                addressBarList.setCurrent(favicon, title, TextUtils.isEmpty(magic2tonsite) ? "about:blank" : magic2tonsite, new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda27
+                addressBarList.setCurrent(favicon, title, TextUtils.isEmpty(magic2tonsite) ? "about:blank" : magic2tonsite, new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda37
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ArticleViewer.this.lambda$setParentActivity$16(magic2tonsite);
+                        ArticleViewer.this.lambda$setParentActivity$17(magic2tonsite);
                     }
-                }, new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda28
+                }, new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda38
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        ArticleViewer.this.lambda$setParentActivity$17(pageLayout, activity, (String) obj);
+                        ArticleViewer.this.lambda$setParentActivity$18(pageLayout, activity, (String) obj);
                     }
-                }, new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda29
+                }, new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda39
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        ArticleViewer.this.lambda$setParentActivity$18((String) obj);
+                        ArticleViewer.this.lambda$setParentActivity$19((String) obj);
                     }
-                }, new ArticleViewer$$ExternalSyntheticLambda30(this), new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda31
+                }, new ArticleViewer$$ExternalSyntheticLambda27(this), new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda40
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
-                        ArticleViewer.this.lambda$setParentActivity$19(magic2tonsite, pageLayout, view2);
+                        ArticleViewer.this.lambda$setParentActivity$20(magic2tonsite, pageLayout, view2);
                     }
                 });
             }
-            this.actionBar.showAddress("", new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda32
+            this.actionBar.showAddress("", new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda41
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    ArticleViewer.lambda$setParentActivity$20(ArticleViewer.PageLayout.this, activity, (String) obj);
+                    ArticleViewer.lambda$setParentActivity$21(ArticleViewer.PageLayout.this, activity, (String) obj);
                 }
             });
             return;
@@ -4813,7 +4875,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$16(String str) {
+    public /* synthetic */ void lambda$setParentActivity$17(String str) {
         EditTextBoldCursor editTextBoldCursor = this.actionBar.addressEditText;
         if (TextUtils.isEmpty(str)) {
             str = "about:blank";
@@ -4825,7 +4887,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$17(PageLayout pageLayout, Activity activity, String str) {
+    public /* synthetic */ void lambda$setParentActivity$18(PageLayout pageLayout, Activity activity, String str) {
         if (TextUtils.isEmpty(str) || pageLayout.getWebView() == null) {
             return;
         }
@@ -4852,7 +4914,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$18(String str) {
+    public /* synthetic */ void lambda$setParentActivity$19(String str) {
         if (TextUtils.isEmpty(str)) {
             return;
         }
@@ -4863,7 +4925,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$19(String str, PageLayout pageLayout, View view) {
+    public /* synthetic */ void lambda$setParentActivity$20(String str, PageLayout pageLayout, View view) {
         this.actionBar.showAddress(false, true);
         AndroidUtilities.hideKeyboard(this.actionBar.addressEditText);
         if (TextUtils.isEmpty(str)) {
@@ -4874,7 +4936,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setParentActivity$20(PageLayout pageLayout, Activity activity, String str) {
+    public static /* synthetic */ void lambda$setParentActivity$21(PageLayout pageLayout, Activity activity, String str) {
         if (TextUtils.isEmpty(str) || pageLayout.getWebView() == null) {
             return;
         }
@@ -4902,7 +4964,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$22() {
+    public /* synthetic */ void lambda$setParentActivity$23() {
         float currentProgress = 0.7f - this.actionBar.lineProgressView.getCurrentProgress();
         if (currentProgress > 0.0f) {
             float f = currentProgress < 0.25f ? 0.01f : 0.02f;
@@ -4913,7 +4975,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$23(View view) {
+    public /* synthetic */ void lambda$setParentActivity$24(View view) {
         if (this.actionBar.isSearching()) {
             this.actionBar.showSearch(false, true);
             return;
@@ -4939,7 +5001,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$setParentActivity$29(View view) {
+    public /* synthetic */ boolean lambda$setParentActivity$30(View view) {
         if (this.pages[0] == null) {
             return false;
         }
@@ -4958,10 +5020,10 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 final int i2 = 0;
                 while (i2 < currentIndex) {
                     WebHistoryItem itemAtIndex = copyBackForwardList.getItemAtIndex(i2);
-                    makeOptions.add(itemAtIndex.getTitle(), new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda33
+                    makeOptions.add(itemAtIndex.getTitle(), new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda43
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ArticleViewer.lambda$setParentActivity$24(currentIndex, i2, webView);
+                            ArticleViewer.lambda$setParentActivity$25(currentIndex, i2, webView);
                         }
                     });
                     ActionBarMenuSubItem last = makeOptions.getLast();
@@ -4972,7 +5034,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                             favicon = itemAtIndex.getFavicon();
                         }
                         final Paint paint = new Paint(i);
-                        last.setTextAndIcon(itemAtIndex.getTitle(), 0, new Drawable() { // from class: org.telegram.ui.ArticleViewer.16
+                        last.setTextAndIcon(itemAtIndex.getTitle(), 0, new Drawable() { // from class: org.telegram.ui.ArticleViewer.17
                             @Override // android.graphics.drawable.Drawable
                             public int getOpacity() {
                                 return -2;
@@ -5019,10 +5081,10 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             Object obj = this.pagesStack.get(size);
             if (obj instanceof CachedWeb) {
                 CachedWeb cachedWeb = (CachedWeb) obj;
-                makeOptions.add(cachedWeb.getTitle(), new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda34
+                makeOptions.add(cachedWeb.getTitle(), new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda44
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ArticleViewer.this.lambda$setParentActivity$25(size);
+                        ArticleViewer.this.lambda$setParentActivity$26(size);
                     }
                 });
                 ActionBarMenuSubItem last2 = makeOptions.getLast();
@@ -5033,7 +5095,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                         favicon2 = cachedWeb.favicon;
                     }
                     final Paint paint2 = new Paint(3);
-                    last2.setTextAndIcon(cachedWeb.getTitle(), 0, new Drawable() { // from class: org.telegram.ui.ArticleViewer.17
+                    last2.setTextAndIcon(cachedWeb.getTitle(), 0, new Drawable() { // from class: org.telegram.ui.ArticleViewer.18
                         @Override // android.graphics.drawable.Drawable
                         public int getOpacity() {
                             return -2;
@@ -5074,10 +5136,10 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 }
             } else if (obj instanceof TLRPC.WebPage) {
                 TLRPC.WebPage webPage = (TLRPC.WebPage) obj;
-                makeOptions.add(webPage.title, new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda35
+                makeOptions.add(webPage.title, new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda45
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ArticleViewer.this.lambda$setParentActivity$26(size);
+                        ArticleViewer.this.lambda$setParentActivity$27(size);
                     }
                 });
                 ActionBarMenuSubItem last3 = makeOptions.getLast();
@@ -5101,43 +5163,44 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         if (makeOptions.getItemsCount() <= 0) {
             return false;
         }
-        checkScrollAnimated(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda36
+        checkScrollAnimated(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda46
             @Override // java.lang.Runnable
             public final void run() {
-                ArticleViewer.this.lambda$setParentActivity$28(makeOptions, rotation);
+                ArticleViewer.this.lambda$setParentActivity$29(makeOptions, rotation);
             }
         });
         return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setParentActivity$24(int i, int i2, BotWebViewContainer.MyWebView myWebView) {
+    public static /* synthetic */ void lambda$setParentActivity$25(int i, int i2, BotWebViewContainer.MyWebView myWebView) {
         for (int i3 = 0; i3 < i - i2; i3++) {
             myWebView.goBack();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$28(ItemOptions itemOptions, final float f) {
+    public /* synthetic */ void lambda$setParentActivity$29(ItemOptions itemOptions, final float f) {
         this.actionBar.backButtonDrawable.setRotation(0.0f, true);
-        itemOptions.setOnDismiss(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda62
+        itemOptions.setOnDismiss(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda53
             @Override // java.lang.Runnable
             public final void run() {
-                ArticleViewer.this.lambda$setParentActivity$27(f);
+                ArticleViewer.this.lambda$setParentActivity$28(f);
             }
         });
         itemOptions.show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$27(float f) {
+    public /* synthetic */ void lambda$setParentActivity$28(float f) {
         this.actionBar.backButtonDrawable.setRotation(f, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$39(Activity activity, Integer num) {
+    public /* synthetic */ void lambda$setParentActivity$40(Activity activity, Integer num) {
         WebInstantView.Loader loader;
         final String str;
+        File file;
         String str2;
         String str3;
         FrameLayout frameLayout;
@@ -5146,6 +5209,10 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             return;
         }
         if (num.intValue() == 1) {
+            WebActionBar webActionBar = this.actionBar;
+            int dp = AndroidUtilities.dp(56.0f);
+            this.currentHeaderHeight = dp;
+            webActionBar.setHeight(dp);
             this.actionBar.showSearch(true, true);
             return;
         }
@@ -5197,10 +5264,10 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             webPage.url = magic2tonsite2;
             webPage.display_url = magic2tonsite2;
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.bookmarkAdded, new MessageObject(this.currentAccount, tL_message, false, false));
-            BulletinFactory.of(frameLayout, getResourcesProvider()).createSimpleBulletin(R.raw.saved_messages, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.WebBookmarkedToast), new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda39
+            BulletinFactory.of(frameLayout, getResourcesProvider()).createSimpleBulletin(R.raw.saved_messages, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.WebBookmarkedToast), new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda24
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ArticleViewer.this.lambda$setParentActivity$30(clientUserId);
+                    ArticleViewer.this.lambda$setParentActivity$31(clientUserId);
                 }
             })).show(true);
             return;
@@ -5210,12 +5277,12 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             bottomSheetParams.transitionFromLeft = true;
             BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
             if (safeLastFragment != null) {
-                safeLastFragment.showAsSheet(new BookmarksFragment(this.sheet != null ? new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda41
+                safeLastFragment.showAsSheet(new BookmarksFragment(this.sheet != null ? new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda26
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ArticleViewer.this.lambda$setParentActivity$31();
+                        ArticleViewer.this.lambda$setParentActivity$32();
                     }
-                } : null, new ArticleViewer$$ExternalSyntheticLambda30(this)), bottomSheetParams);
+                } : null, new ArticleViewer$$ExternalSyntheticLambda27(this)), bottomSheetParams);
                 return;
             }
             return;
@@ -5225,12 +5292,12 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             bottomSheetParams2.transitionFromLeft = true;
             BaseFragment safeLastFragment2 = LaunchActivity.getSafeLastFragment();
             if (safeLastFragment2 != null) {
-                safeLastFragment2.showAsSheet(new HistoryFragment(this.sheet != null ? new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda42
+                safeLastFragment2.showAsSheet(new HistoryFragment(this.sheet != null ? new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda28
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ArticleViewer.this.lambda$setParentActivity$32();
+                        ArticleViewer.this.lambda$setParentActivity$33();
                     }
-                } : null, new ArticleViewer$$ExternalSyntheticLambda43(this)), bottomSheetParams2);
+                } : null, new ArticleViewer$$ExternalSyntheticLambda29(this)), bottomSheetParams2);
                 return;
             }
             return;
@@ -5249,31 +5316,43 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 }
                 str = this.pages[0].getWebView().getUrl();
                 str2 = this.pages[0].getWebView().getOpenURL();
-                BotWebViewContainer botWebViewContainer = this.pages[0].webViewContainer;
+                file = null;
             } else {
                 if (this.pages[0].adapter.currentPage == null) {
                     return;
                 }
                 str = this.pages[0].adapter.currentPage.url;
-                PageLayout pageLayout = this.pages[0];
-                str2 = null;
+                if (this.pages[0].adapter.currentPage.cached_page != null) {
+                    file = this.pages[0].adapter.currentPage.cached_page.local;
+                    str2 = null;
+                } else {
+                    file = null;
+                    str2 = null;
+                }
             }
             Activity activity2 = this.parentActivity;
-            if (activity2 == null || activity2.isFinishing() || str == null) {
+            if (activity2 == null || activity2.isFinishing()) {
+                return;
+            }
+            if (file != null) {
+                AndroidUtilities.openForView(file, null, "text/markdown", this.parentActivity, getResourcesProvider(), true);
+                return;
+            }
+            if (str == null) {
                 return;
             }
             final String hostAuthority = AndroidUtilities.getHostAuthority(str2, true);
             final String hostAuthority2 = AndroidUtilities.getHostAuthority(str, true);
-            final Runnable runnable = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda44
+            final Runnable runnable = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda30
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ArticleViewer.this.lambda$setParentActivity$33(str);
+                    ArticleViewer.this.lambda$setParentActivity$34(str);
                 }
             };
-            final Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda45
+            final Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda31
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    ArticleViewer.this.lambda$setParentActivity$34(hostAuthority2, hostAuthority, (Boolean) obj);
+                    ArticleViewer.this.lambda$setParentActivity$35(hostAuthority2, hostAuthority, (Boolean) obj);
                 }
             };
             if (this.pages[0].isWeb() && !RestrictedDomainsList.getInstance().isRestricted(hostAuthority2) && RestrictedDomainsList.getInstance().incrementOpen(hostAuthority2) >= 2) {
@@ -5292,10 +5371,10 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 checkBoxCell.getTextView().setSingleLine(false);
                 checkBoxCell.getTextView().setMaxLines(3);
                 checkBoxCell.getTextView().setTextSize(1, 16.0f);
-                checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda46
+                checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda32
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        ArticleViewer.lambda$setParentActivity$35(CheckBoxCell.this, view);
+                        ArticleViewer.lambda$setParentActivity$36(CheckBoxCell.this, view);
                     }
                 });
                 checkBoxCell.setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector), 9, 9));
@@ -5303,16 +5382,16 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.BrowserExternalText)));
                 checkBoxCell.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BrowserExternalCheck, hostAuthority2)), "", false, false);
                 builder.setView(linearLayout);
-                builder.setPositiveButton(LocaleController.getString(R.string.Continue), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda47
+                builder.setPositiveButton(LocaleController.getString(R.string.Continue), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda33
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
-                        ArticleViewer.lambda$setParentActivity$36(CheckBoxCell.this, callback, runnable, alertDialog, i);
+                        ArticleViewer.lambda$setParentActivity$37(CheckBoxCell.this, callback, runnable, alertDialog, i);
                     }
                 });
-                builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda48
+                builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda34
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
-                        ArticleViewer.lambda$setParentActivity$37(CheckBoxCell.this, callback, alertDialog, i);
+                        ArticleViewer.lambda$setParentActivity$38(CheckBoxCell.this, callback, alertDialog, i);
                     }
                 });
                 builder.show();
@@ -5348,10 +5427,10 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 }
                 this.fontCells[i].select(i == this.selectedFont, false);
                 this.fontCells[i].setTag(Integer.valueOf(i));
-                this.fontCells[i].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda40
+                this.fontCells[i].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda25
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        ArticleViewer.this.lambda$setParentActivity$38(view);
+                        ArticleViewer.this.lambda$setParentActivity$39(view);
                     }
                 });
                 linearLayout2.addView(this.fontCells[i], LayoutHelper.createLinear(-1, 50));
@@ -5377,7 +5456,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$30(long j) {
+    public /* synthetic */ void lambda$setParentActivity$31(long j) {
         Sheet sheet = this.sheet;
         if (sheet != null) {
             sheet.dismiss(true);
@@ -5391,22 +5470,22 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$31() {
-        this.sheet.dismiss(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setParentActivity$32() {
         this.sheet.dismiss(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$33(String str) {
+    public /* synthetic */ void lambda$setParentActivity$33() {
+        this.sheet.dismiss(true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setParentActivity$34(String str) {
         Browser.openInExternalBrowser(this.parentActivity, str, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$34(String str, String str2, Boolean bool) {
+    public /* synthetic */ void lambda$setParentActivity$35(String str, String str2, Boolean bool) {
         RestrictedDomainsList restrictedDomainsList = RestrictedDomainsList.getInstance();
         if (TextUtils.isEmpty(str2) || TextUtils.equals(str2, str)) {
             str2 = null;
@@ -5415,7 +5494,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         if (!bool.booleanValue()) {
             showRestrictedWebsiteToast();
         } else {
-            LaunchActivity.whenResumed = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda51
+            LaunchActivity.whenResumed = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda60
                 @Override // java.lang.Runnable
                 public final void run() {
                     ArticleViewer.this.showRestrictedWebsiteToast();
@@ -5425,12 +5504,12 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setParentActivity$35(CheckBoxCell checkBoxCell, View view) {
+    public static /* synthetic */ void lambda$setParentActivity$36(CheckBoxCell checkBoxCell, View view) {
         checkBoxCell.setChecked(!checkBoxCell.isChecked(), true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setParentActivity$36(CheckBoxCell checkBoxCell, Utilities.Callback callback, Runnable runnable, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void lambda$setParentActivity$37(CheckBoxCell checkBoxCell, Utilities.Callback callback, Runnable runnable, AlertDialog alertDialog, int i) {
         if (checkBoxCell.isChecked()) {
             callback.run(Boolean.TRUE);
         }
@@ -5438,14 +5517,14 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$setParentActivity$37(CheckBoxCell checkBoxCell, Utilities.Callback callback, AlertDialog alertDialog, int i) {
+    public static /* synthetic */ void lambda$setParentActivity$38(CheckBoxCell checkBoxCell, Utilities.Callback callback, AlertDialog alertDialog, int i) {
         if (checkBoxCell.isChecked()) {
             callback.run(Boolean.FALSE);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$38(View view) {
+    public /* synthetic */ void lambda$setParentActivity$39(View view) {
         int intValue = ((Integer) view.getTag()).intValue();
         this.selectedFont = intValue;
         int i = 0;
@@ -5466,7 +5545,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$40(View view) {
+    public /* synthetic */ void lambda$setParentActivity$41(View view) {
         Sheet sheet = this.sheet;
         if (sheet != null) {
             sheet.dismiss(true);
@@ -5474,7 +5553,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$42(Integer num) {
+    public /* synthetic */ void lambda$setParentActivity$43(Integer num) {
         FrameLayout frameLayout = this.searchPanel;
         float f = -num.intValue();
         this.searchPanelTranslation = f;
@@ -5482,7 +5561,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$43(View view) {
+    public /* synthetic */ void lambda$setParentActivity$44(View view) {
         if (this.pages[0].isWeb()) {
             if (this.pages[0].getWebView() != null) {
                 this.pages[0].getWebView().findNext(false);
@@ -5494,7 +5573,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$44(View view) {
+    public /* synthetic */ void lambda$setParentActivity$45(View view) {
         if (this.pages[0].isWeb()) {
             if (this.pages[0].getWebView() != null) {
                 this.pages[0].getWebView().findNext(true);
@@ -5506,12 +5585,12 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$45(CharSequence charSequence, String str, String str2, Runnable runnable) {
+    public /* synthetic */ void lambda$setParentActivity$46(CharSequence charSequence, String str, String str2, Runnable runnable) {
         TranslateAlert2.showAlert(this.parentActivity, this.parentFragment, this.currentAccount, str, str2, charSequence, null, false, null, runnable);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setParentActivity$46(float[] fArr) {
+    public /* synthetic */ void lambda$setParentActivity$47(float[] fArr) {
         fArr[0] = this.currentHeaderHeight;
         fArr[1] = this.pages[0].listView.getMeasuredHeight();
     }
@@ -5535,7 +5614,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         } else {
             frameLayout = this.pages[0];
         }
-        BulletinFactory.of(frameLayout, getResourcesProvider()).createSimpleBulletin(R.raw.chats_infotip, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.BrowserExternalRestricted), new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda69
+        BulletinFactory.of(frameLayout, getResourcesProvider()).createSimpleBulletin(R.raw.chats_infotip, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.BrowserExternalRestricted), new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda68
             @Override // java.lang.Runnable
             public final void run() {
                 ArticleViewer.this.openWebSettings();
@@ -5585,7 +5664,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         if (safeLastFragment != null) {
             BaseFragment.BottomSheetParams bottomSheetParams = new BaseFragment.BottomSheetParams();
             bottomSheetParams.transitionFromLeft = true;
-            safeLastFragment.showAsSheet(new WebBrowserSettings(new ArticleViewer$$ExternalSyntheticLambda43(this)), bottomSheetParams);
+            safeLastFragment.showAsSheet(new WebBrowserSettings(new ArticleViewer$$ExternalSyntheticLambda29(this)), bottomSheetParams);
         }
     }
 
@@ -5690,7 +5769,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             showSearchPanel(false);
             if (this.pages[0].isWeb()) {
                 if (this.pages[0].getWebView() != null) {
-                    this.pages[0].getWebView().search("", new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda60
+                    this.pages[0].getWebView().search("", new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda58
                         @Override // java.lang.Runnable
                         public final void run() {
                             ArticleViewer.this.updateSearchButtons();
@@ -5710,7 +5789,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         if (this.pages[0].isWeb()) {
             showSearchPanel(true);
             if (this.pages[0].getWebView() != null) {
-                this.pages[0].getWebView().search(str, new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda60
+                this.pages[0].getWebView().search(str, new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda58
                     @Override // java.lang.Runnable
                     public final void run() {
                         ArticleViewer.this.updateSearchButtons();
@@ -5721,10 +5800,10 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             }
             return;
         }
-        Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda61
+        Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda59
             @Override // java.lang.Runnable
             public final void run() {
-                ArticleViewer.this.lambda$processSearch$49(str, i);
+                ArticleViewer.this.lambda$processSearch$50(str, i);
             }
         };
         this.searchRunnable = runnable2;
@@ -5732,21 +5811,21 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processSearch$49(final String str, final int i) {
+    public /* synthetic */ void lambda$processSearch$50(final String str, final int i) {
         final HashMap hashMap = new HashMap(this.pages[0].adapter.textToBlocks);
         final ArrayList arrayList = new ArrayList(this.pages[0].adapter.textBlocks);
         this.searchRunnable = null;
-        Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda68
+        Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda66
             @Override // java.lang.Runnable
             public final void run() {
-                ArticleViewer.this.lambda$processSearch$48(arrayList, hashMap, str, i);
+                ArticleViewer.this.lambda$processSearch$49(arrayList, hashMap, str, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ void lambda$processSearch$48(ArrayList arrayList, HashMap hashMap, final String str, final int i) {
+    public /* synthetic */ void lambda$processSearch$49(ArrayList arrayList, HashMap hashMap, final String str, final int i) {
         TLRPC.PageBlock pageBlock;
         String lowerCase;
         String str2;
@@ -5807,16 +5886,16 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             i2++;
             c = 0;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda70
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda73
             @Override // java.lang.Runnable
             public final void run() {
-                ArticleViewer.this.lambda$processSearch$47(i, arrayList2, str);
+                ArticleViewer.this.lambda$processSearch$48(i, arrayList2, str);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processSearch$47(int i, ArrayList arrayList, String str) {
+    public /* synthetic */ void lambda$processSearch$48(int i, ArrayList arrayList, String str) {
         if (i == this.lastSearchIndex) {
             showSearchPanel(true);
             this.searchResults = arrayList;
@@ -5835,13 +5914,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.searchPanelAlpha, z ? 1.0f : 0.0f);
         this.searchPanelAnimator = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda66
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda62
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                ArticleViewer.this.lambda$showSearchPanel$50(valueAnimator2);
+                ArticleViewer.this.lambda$showSearchPanel$51(valueAnimator2);
             }
         });
-        this.searchPanelAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.21
+        this.searchPanelAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.22
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 ArticleViewer.this.searchPanelAlpha = z ? 1.0f : 0.0f;
@@ -5858,7 +5937,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showSearchPanel$50(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$showSearchPanel$51(ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         this.searchPanelAlpha = floatValue;
         this.searchPanel.setTranslationY(this.searchPanelTranslation + ((1.0f - floatValue) * AndroidUtilities.dp(51.0f)));
@@ -5867,7 +5946,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     /* JADX WARN: Removed duplicated region for block: B:19:0x0087  */
     /* JADX WARN: Removed duplicated region for block: B:30:0x00bd A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:32:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00ba A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00ba A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -5930,7 +6009,15 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                             num = 0;
                         }
                     }
-                    SmoothScroller smoothScroller = new SmoothScroller(this.pages[0].getContext());
+                    SmoothScroller smoothScroller = new SmoothScroller(this.pages[0].getContext()) { // from class: org.telegram.ui.ArticleViewer.23
+                        @Override // androidx.recyclerview.widget.LinearSmoothScroller
+                        protected int getVerticalSnapPreference() {
+                            return -1;
+                        }
+                    };
+                    if (this.pages[0].adapter.padding) {
+                        i2++;
+                    }
                     smoothScroller.setTargetPosition(i2);
                     smoothScroller.setOffset(-(((this.currentHeaderHeight - AndroidUtilities.dp(56.0f)) - num.intValue()) + AndroidUtilities.dp(100.0f)));
                     smoothScroller.setDurationScale(1.2f);
@@ -5965,13 +6052,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         }
         ValueAnimator duration = ValueAnimator.ofObject(new IntEvaluator(), Integer.valueOf(this.currentHeaderHeight), Integer.valueOf(AndroidUtilities.dp(56.0f))).setDuration(180L);
         duration.setInterpolator(new DecelerateInterpolator());
-        duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda38
+        duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda48
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                ArticleViewer.this.lambda$checkScrollAnimated$51(valueAnimator);
+                ArticleViewer.this.lambda$checkScrollAnimated$52(valueAnimator);
             }
         });
-        duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.22
+        duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.24
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 super.onAnimationEnd(animator);
@@ -5988,7 +6075,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkScrollAnimated$51(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$checkScrollAnimated$52(ValueAnimator valueAnimator) {
         setCurrentHeaderHeight(((Integer) valueAnimator.getAnimatedValue()).intValue());
     }
 
@@ -6051,9 +6138,11 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     /* JADX WARN: Multi-variable type inference failed */
     private boolean open(final MessageObject messageObject, TLRPC.WebPage webPage, String str, String str2, Browser.Progress progress) {
         final TLRPC.WebPage webPage2;
-        int lastIndexOf;
-        String substring;
         String str3;
+        boolean z;
+        int lastIndexOf;
+        TLRPC.WebPage webPage3;
+        String str4;
         if (this.parentActivity == null || (this.sheet == null && this.isVisible && !this.collapsed)) {
             return false;
         }
@@ -6062,25 +6151,32 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             AndroidUtilities.hideKeyboard((ActionBarLayout) this.parentFragment.getParentLayout());
         }
         if (messageObject != null) {
-            TLRPC.WebPage webPage3 = messageObject.messageOwner.media.webpage;
+            TLRPC.WebPage webPage4 = messageObject.messageOwner.media.webpage;
+            if (webPage4 == null) {
+                webPage3 = MarkdownParser.fromMarkdown(messageObject);
+                z = true;
+            } else {
+                webPage3 = webPage4;
+                z = false;
+            }
             for (int i = 0; i < messageObject.messageOwner.entities.size(); i++) {
                 TLRPC.MessageEntity messageEntity = messageObject.messageOwner.entities.get(i);
                 if (messageEntity instanceof TLRPC.TL_messageEntityUrl) {
                     try {
-                        String str4 = messageObject.messageOwner.message;
+                        String str5 = messageObject.messageOwner.message;
                         int i2 = messageEntity.offset;
-                        String lowerCase = str4.substring(i2, messageEntity.length + i2).toLowerCase();
+                        String lowerCase = str5.substring(i2, messageEntity.length + i2).toLowerCase();
                         if (!TextUtils.isEmpty(webPage3.cached_page.url)) {
-                            str3 = webPage3.cached_page.url.toLowerCase();
+                            str4 = webPage3.cached_page.url.toLowerCase();
                         } else {
-                            str3 = webPage3.url.toLowerCase();
+                            str4 = webPage3.url.toLowerCase();
                         }
-                        if (lowerCase.contains(str3) || str3.contains(lowerCase)) {
+                        if (lowerCase.contains(str4) || str4.contains(lowerCase)) {
                             int lastIndexOf2 = lowerCase.lastIndexOf(35);
                             if (lastIndexOf2 == -1) {
                                 break;
                             }
-                            substring = lowerCase.substring(lastIndexOf2 + 1);
+                            str3 = lowerCase.substring(lastIndexOf2 + 1);
                             webPage2 = webPage3;
                             break;
                         }
@@ -6090,13 +6186,16 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 }
             }
             webPage2 = webPage3;
-            substring = null;
-        } else if (str == null || (lastIndexOf = str.lastIndexOf(35)) == -1) {
-            webPage2 = webPage;
-            substring = null;
+            str3 = null;
         } else {
-            substring = str.substring(lastIndexOf + 1);
-            webPage2 = webPage;
+            if (str == null || (lastIndexOf = str.lastIndexOf(35)) == -1) {
+                webPage2 = webPage;
+                str3 = null;
+            } else {
+                str3 = str.substring(lastIndexOf + 1);
+                webPage2 = webPage;
+            }
+            z = false;
         }
         int i3 = (this.sheet == null || this.pagesStack.isEmpty()) ? 0 : 1;
         this.collapsed = false;
@@ -6121,28 +6220,35 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             sheet2.animationsLock.lock();
         }
         if (webPage2 != null) {
-            if (addPageToStack(webPage2, substring, i3) || substring == null) {
-                substring = null;
-            }
-            TLRPC.TL_messages_getWebPage tL_messages_getWebPage = new TLRPC.TL_messages_getWebPage();
-            tL_messages_getWebPage.url = webPage2.url;
-            TLRPC.Page page = webPage2.cached_page;
-            if ((page instanceof TLRPC.TL_pagePart_layer82) || page.part) {
-                tL_messages_getWebPage.hash = 0;
-            } else {
-                tL_messages_getWebPage.hash = webPage2.hash;
-            }
-            final int i4 = UserConfig.selectedAccount;
-            final boolean z = i3;
-            final String str5 = substring;
-            ConnectionsManager.getInstance(i4).sendRequest(tL_messages_getWebPage, new RequestDelegate() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda4
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    ArticleViewer.this.lambda$open$53(i4, webPage2, messageObject, z, str5, tLObject, tL_error);
+            boolean addPageToStack = addPageToStack(webPage2, str3, i3);
+            if (!z) {
+                if (addPageToStack || str3 == null) {
+                    str3 = null;
                 }
-            });
+                TLRPC.TL_messages_getWebPage tL_messages_getWebPage = new TLRPC.TL_messages_getWebPage();
+                tL_messages_getWebPage.url = webPage2.url;
+                TLRPC.Page page = webPage2.cached_page;
+                if ((page instanceof TLRPC.TL_pagePart_layer82) || page.part) {
+                    tL_messages_getWebPage.hash = 0;
+                } else {
+                    tL_messages_getWebPage.hash = webPage2.hash;
+                }
+                final int i4 = messageObject != null ? messageObject.currentAccount : UserConfig.selectedAccount;
+                final boolean z2 = i3;
+                final String str6 = str3;
+                ConnectionsManager.getInstance(i4).sendRequest(tL_messages_getWebPage, new RequestDelegate() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda4
+                    @Override // org.telegram.tgnet.RequestDelegate
+                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                        ArticleViewer.this.lambda$open$54(i4, webPage2, messageObject, z2, str6, tLObject, tL_error);
+                    }
+                });
+            }
         } else {
             addPageToStack(str2, i3);
+        }
+        WebActionBar webActionBar = this.actionBar;
+        if (webActionBar != null && i3 == 0) {
+            webActionBar.setIsLocal(this.pages[0].isLocal());
         }
         this.lastInsets = null;
         if (this.sheet != null) {
@@ -6190,17 +6296,17 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 this.animationEndRunnable = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ArticleViewer.this.lambda$open$54();
+                        ArticleViewer.this.lambda$open$55();
                     }
                 };
                 animatorSet.setDuration(150L);
                 animatorSet.setInterpolator(this.interpolator);
-                animatorSet.addListener(new 23());
+                animatorSet.addListener(new 25());
                 this.transitionAnimationStartTime = System.currentTimeMillis();
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ArticleViewer.this.lambda$open$55(animatorSet);
+                        ArticleViewer.this.lambda$open$56(animatorSet);
                     }
                 });
             } else if (i3 != 0) {
@@ -6214,17 +6320,17 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$open$53(final int i, final TLRPC.WebPage webPage, final MessageObject messageObject, final boolean z, final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda37
+    public /* synthetic */ void lambda$open$54(final int i, final TLRPC.WebPage webPage, final MessageObject messageObject, final boolean z, final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda47
             @Override // java.lang.Runnable
             public final void run() {
-                ArticleViewer.this.lambda$open$52(tLObject, i, webPage, messageObject, z, str);
+                ArticleViewer.this.lambda$open$53(tLObject, i, webPage, messageObject, z, str);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$open$52(TLObject tLObject, int i, TLRPC.WebPage webPage, MessageObject messageObject, boolean z, String str) {
+    public /* synthetic */ void lambda$open$53(TLObject tLObject, int i, TLRPC.WebPage webPage, MessageObject messageObject, boolean z, String str) {
         TLRPC.Page page;
         TLObject tLObject2 = tLObject;
         int i2 = 0;
@@ -6297,7 +6403,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$open$54() {
+    public /* synthetic */ void lambda$open$55() {
         FrameLayout frameLayout = this.containerView;
         if (frameLayout == null || this.windowView == null) {
             return;
@@ -6307,16 +6413,16 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         AndroidUtilities.hideKeyboard(this.parentActivity.getCurrentFocus());
     }
 
-    class 23 extends AnimatorListenerAdapter {
-        23() {
+    class 25 extends AnimatorListenerAdapter {
+        25() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationEnd(Animator animator) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$23$$ExternalSyntheticLambda0
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$25$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ArticleViewer.23.this.lambda$onAnimationEnd$0();
+                    ArticleViewer.25.this.lambda$onAnimationEnd$0();
                 }
             });
         }
@@ -6332,7 +6438,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$open$55(AnimatorSet animatorSet) {
+    public /* synthetic */ void lambda$open$56(AnimatorSet animatorSet) {
         this.notificationsLocker.lock();
         animatorSet.start();
     }
@@ -6361,7 +6467,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         } else {
             animatorSet2.playTogether(ObjectAnimator.ofFloat(this.progressView, (Property<ContextProgressView, Float>) View.SCALE_X, 0.1f), ObjectAnimator.ofFloat(this.progressView, (Property<ContextProgressView, Float>) View.SCALE_Y, 0.1f), ObjectAnimator.ofFloat(this.progressView, (Property<ContextProgressView, Float>) View.ALPHA, 0.0f));
         }
-        this.progressViewAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.24
+        this.progressViewAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.26
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 if (ArticleViewer.this.progressViewAnimation == null || !ArticleViewer.this.progressViewAnimation.equals(animator) || z2) {
@@ -6505,12 +6611,12 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         this.animationEndRunnable = new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                ArticleViewer.this.lambda$close$56();
+                ArticleViewer.this.lambda$close$57();
             }
         };
         animatorSet.setDuration(150L);
         animatorSet.setInterpolator(this.interpolator);
-        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.25
+        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.27
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 if (ArticleViewer.this.animationEndRunnable != null) {
@@ -6534,7 +6640,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$close$56() {
+    public /* synthetic */ void lambda$close$57() {
         FrameLayout frameLayout = this.containerView;
         if (frameLayout == null) {
             return;
@@ -6568,14 +6674,14 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         this.containerView.post(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                ArticleViewer.this.lambda$onClosed$57();
+                ArticleViewer.this.lambda$onClosed$58();
             }
         });
         NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.articleClosed, new Object[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClosed$57() {
+    public /* synthetic */ void lambda$onClosed$58() {
         try {
             if (this.windowView.getParent() != null) {
                 ((WindowManager) this.parentActivity.getSystemService("window")).removeView(this.windowView);
@@ -6594,26 +6700,26 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
         tL_contacts_resolveUsername.username = chat.username;
         final int i = UserConfig.selectedAccount;
-        ConnectionsManager.getInstance(i).sendRequest(tL_contacts_resolveUsername, new RequestDelegate() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda50
+        ConnectionsManager.getInstance(i).sendRequest(tL_contacts_resolveUsername, new RequestDelegate() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda51
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                ArticleViewer.this.lambda$loadChannel$59(webpageAdapter, i, blockChannelCell, tLObject, tL_error);
+                ArticleViewer.this.lambda$loadChannel$60(webpageAdapter, i, blockChannelCell, tLObject, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadChannel$59(final WebpageAdapter webpageAdapter, final int i, final BlockChannelCell blockChannelCell, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda65
+    public /* synthetic */ void lambda$loadChannel$60(final WebpageAdapter webpageAdapter, final int i, final BlockChannelCell blockChannelCell, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda67
             @Override // java.lang.Runnable
             public final void run() {
-                ArticleViewer.this.lambda$loadChannel$58(webpageAdapter, tL_error, tLObject, i, blockChannelCell);
+                ArticleViewer.this.lambda$loadChannel$59(webpageAdapter, tL_error, tLObject, i, blockChannelCell);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadChannel$58(WebpageAdapter webpageAdapter, TLRPC.TL_error tL_error, TLObject tLObject, int i, BlockChannelCell blockChannelCell) {
+    public /* synthetic */ void lambda$loadChannel$59(WebpageAdapter webpageAdapter, TLRPC.TL_error tL_error, TLObject tLObject, int i, BlockChannelCell blockChannelCell) {
         this.loadingChannel = false;
         if (this.parentFragment == null || webpageAdapter.blocks.isEmpty()) {
             return;
@@ -6645,22 +6751,22 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         final TLRPC.TL_channels_joinChannel tL_channels_joinChannel = new TLRPC.TL_channels_joinChannel();
         tL_channels_joinChannel.channel = MessagesController.getInputChannel(chat);
         final int i = UserConfig.selectedAccount;
-        ConnectionsManager.getInstance(i).sendRequest(tL_channels_joinChannel, new RequestDelegate() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda63
+        ConnectionsManager.getInstance(i).sendRequest(tL_channels_joinChannel, new RequestDelegate() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda61
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                ArticleViewer.this.lambda$joinChannel$63(blockChannelCell, i, tL_channels_joinChannel, chat, tLObject, tL_error);
+                ArticleViewer.this.lambda$joinChannel$64(blockChannelCell, i, tL_channels_joinChannel, chat, tLObject, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$joinChannel$63(final BlockChannelCell blockChannelCell, final int i, final TLRPC.TL_channels_joinChannel tL_channels_joinChannel, final TLRPC.Chat chat, TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$joinChannel$64(final BlockChannelCell blockChannelCell, final int i, final TLRPC.TL_channels_joinChannel tL_channels_joinChannel, final TLRPC.Chat chat, TLObject tLObject, final TLRPC.TL_error tL_error) {
         boolean z;
         if (tL_error != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda71
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda70
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ArticleViewer.this.lambda$joinChannel$60(blockChannelCell, i, tL_error, tL_channels_joinChannel);
+                    ArticleViewer.this.lambda$joinChannel$61(blockChannelCell, i, tL_error, tL_channels_joinChannel);
                 }
             });
             return;
@@ -6683,16 +6789,16 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         if (!z) {
             MessagesController.getInstance(i).generateJoinMessage(chat.id, true);
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda72
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda71
             @Override // java.lang.Runnable
             public final void run() {
                 ArticleViewer.BlockChannelCell.this.setState(2, false);
             }
         });
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda73
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda72
             @Override // java.lang.Runnable
             public final void run() {
-                ArticleViewer.lambda$joinChannel$62(i, chat);
+                ArticleViewer.lambda$joinChannel$63(i, chat);
             }
         }, 1000L);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(i);
@@ -6701,13 +6807,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$joinChannel$60(BlockChannelCell blockChannelCell, int i, TLRPC.TL_error tL_error, TLRPC.TL_channels_joinChannel tL_channels_joinChannel) {
+    public /* synthetic */ void lambda$joinChannel$61(BlockChannelCell blockChannelCell, int i, TLRPC.TL_error tL_error, TLRPC.TL_channels_joinChannel tL_channels_joinChannel) {
         blockChannelCell.setState(0, false);
         AlertsCreator.processError(i, tL_error, this.parentFragment, tL_channels_joinChannel, Boolean.TRUE);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$joinChannel$62(int i, TLRPC.Chat chat) {
+    public static /* synthetic */ void lambda$joinChannel$63(int i, TLRPC.Chat chat) {
         MessagesController.getInstance(i).loadFullChat(chat.id, 0, true);
     }
 
@@ -6775,7 +6881,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             this.visibleDialog.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda49
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    ArticleViewer.this.lambda$showDialog$64(dialogInterface);
+                    ArticleViewer.this.lambda$showDialog$65(dialogInterface);
                 }
             });
             dialog.show();
@@ -6785,7 +6891,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showDialog$64(DialogInterface dialogInterface) {
+    public /* synthetic */ void lambda$showDialog$65(DialogInterface dialogInterface) {
         this.visibleDialog = null;
     }
 
@@ -7195,10 +7301,14 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
 
         /* JADX INFO: Access modifiers changed from: private */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r1v20, types: [org.telegram.tgnet.TLRPC$PageBlock] */
-        /* JADX WARN: Type inference failed for: r1v60, types: [org.telegram.tgnet.TLRPC$PageBlock] */
+        /* JADX WARN: Type inference failed for: r11v0 */
+        /* JADX WARN: Type inference failed for: r11v2, types: [boolean, int] */
+        /* JADX WARN: Type inference failed for: r11v5 */
+        /* JADX WARN: Type inference failed for: r1v31, types: [org.telegram.tgnet.TLRPC$PageBlock] */
+        /* JADX WARN: Type inference failed for: r1v71, types: [org.telegram.tgnet.TLRPC$PageBlock] */
         /* JADX WARN: Type inference failed for: r25v0, types: [org.telegram.ui.ArticleViewer$WebpageAdapter] */
         public void addBlock(WebpageAdapter webpageAdapter, TLRPC.PageBlock pageBlock, int i, int i2, int i3) {
+            TLRPC.RichText richText;
             TLRPC.TL_pageBlockOrderedList tL_pageBlockOrderedList;
             TLRPC.PageListOrderedItem pageListOrderedItem;
             TLRPC.PageListOrderedItem pageListOrderedItem2;
@@ -7231,8 +7341,20 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 this.anchors.put(((TLRPC.TL_pageBlockAnchor) lastNonListPageBlock).name.toLowerCase(), Integer.valueOf(this.blocks.size()));
                 return;
             }
-            boolean z2 = lastNonListPageBlock instanceof TLRPC.TL_pageBlockList;
-            if (!z2 && !(lastNonListPageBlock instanceof TLRPC.TL_pageBlockOrderedList)) {
+            boolean z2 = lastNonListPageBlock instanceof TLRPC.TL_pageBlockTitle;
+            if (z2 || (lastNonListPageBlock instanceof TLRPC.TL_pageBlockHeader)) {
+                if (z2) {
+                    richText = ((TLRPC.TL_pageBlockTitle) lastNonListPageBlock).text;
+                } else {
+                    richText = ((TLRPC.TL_pageBlockHeader) lastNonListPageBlock).text;
+                }
+                String replaceAll = ArticleViewer.getPlainText(richText).toString().toLowerCase().replaceAll("[\\[\\]\\(\\)\\{\\}]", "").replaceAll(" ", "-");
+                if (!this.anchors.containsKey(replaceAll)) {
+                    this.anchors.put(replaceAll, Integer.valueOf(this.blocks.size()));
+                }
+            }
+            boolean z3 = lastNonListPageBlock instanceof TLRPC.TL_pageBlockList;
+            if (!z3 && !(lastNonListPageBlock instanceof TLRPC.TL_pageBlockOrderedList)) {
                 this.blocks.add(pageBlock);
             }
             if (lastNonListPageBlock instanceof TLRPC.TL_pageBlockAudio) {
@@ -7276,7 +7398,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     return;
                 }
             }
-            1 r13 = null;
+            1 r14 = null;
             if (lastNonListPageBlock instanceof TLRPC.TL_pageBlockEmbedPost) {
                 TLRPC.TL_pageBlockEmbedPost tL_pageBlockEmbedPost = (TLRPC.TL_pageBlockEmbedPost) lastNonListPageBlock;
                 if (tL_pageBlockEmbedPost.blocks.isEmpty()) {
@@ -7343,7 +7465,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 return;
             }
             String str2 = ".%d";
-            if (z2) {
+            if (z3) {
                 TLRPC.TL_pageBlockList tL_pageBlockList2 = (TLRPC.TL_pageBlockList) lastNonListPageBlock;
                 TL_pageBlockListParent tL_pageBlockListParent2 = new TL_pageBlockListParent();
                 tL_pageBlockListParent2.pageBlockList = tL_pageBlockList2;
@@ -7370,10 +7492,16 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     if (pageListItem2 instanceof TLRPC.TL_pageListItemText) {
                         tL_pageBlockListItem2.textItem = ((TLRPC.TL_pageListItemText) pageListItem2).text;
                         pageListItem = pageListItem2;
-                    } else {
-                        boolean z3 = pageListItem2 instanceof TLRPC.TL_pageListItemBlocks;
+                    } else if (pageListItem2 instanceof TLRPC.TL_pageListItemCheckbox) {
+                        tL_pageBlockListItem2.isCheckbox = i12;
+                        TLRPC.TL_pageListItemCheckbox tL_pageListItemCheckbox = (TLRPC.TL_pageListItemCheckbox) pageListItem2;
+                        tL_pageBlockListItem2.textItem = tL_pageListItemCheckbox.text;
+                        tL_pageBlockListItem2.checked = tL_pageListItemCheckbox.checked;
                         pageListItem = pageListItem2;
-                        if (z3) {
+                    } else {
+                        boolean z4 = pageListItem2 instanceof TLRPC.TL_pageListItemBlocks;
+                        pageListItem = pageListItem2;
+                        if (z4) {
                             TLRPC.TL_pageListItemBlocks tL_pageListItemBlocks = (TLRPC.TL_pageListItemBlocks) pageListItem2;
                             if (!tL_pageListItemBlocks.blocks.isEmpty()) {
                                 tL_pageBlockListItem2.blockItem = tL_pageListItemBlocks.blocks.get(0);
@@ -7440,7 +7568,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     size3 = i8;
                     tL_pageBlockList2 = tL_pageBlockList;
                     i12 = 1;
-                    r13 = null;
+                    r14 = null;
                 }
                 return;
             }
@@ -7477,7 +7605,25 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                         tL_pageBlockOrderedList = tL_pageBlockOrderedList2;
                         pageListOrderedItem2 = pageListOrderedItem3;
                     } else {
-                        if (pageListOrderedItem3 instanceof TLRPC.TL_pageListOrderedItemBlocks) {
+                        if (pageListOrderedItem3 instanceof TLRPC.TL_pageListOrderedItemCheckbox) {
+                            TLRPC.TL_pageListOrderedItemCheckbox tL_pageListOrderedItemCheckbox = (TLRPC.TL_pageListOrderedItemCheckbox) pageListOrderedItem3;
+                            tL_pageBlockOrderedListItem2.isCheckbox = true;
+                            tL_pageBlockOrderedListItem2.checked = tL_pageListOrderedItemCheckbox.checked;
+                            tL_pageBlockOrderedListItem2.textItem = tL_pageListOrderedItemCheckbox.text;
+                            if (TextUtils.isEmpty(tL_pageListOrderedItemCheckbox.num)) {
+                                if (this.isRtl) {
+                                    tL_pageBlockOrderedListItem2.num = String.format(".%d", Integer.valueOf(i16 + 1));
+                                    tL_pageBlockOrderedList = tL_pageBlockOrderedList2;
+                                    pageListOrderedItem2 = pageListOrderedItem3;
+                                } else {
+                                    tL_pageBlockOrderedListItem2.num = String.format("%d.", Integer.valueOf(i16 + 1));
+                                }
+                            } else if (this.isRtl) {
+                                tL_pageBlockOrderedListItem2.num = "." + tL_pageListOrderedItemCheckbox.num;
+                            } else {
+                                tL_pageBlockOrderedListItem2.num = tL_pageListOrderedItemCheckbox.num + ".";
+                            }
+                        } else if (pageListOrderedItem3 instanceof TLRPC.TL_pageListOrderedItemBlocks) {
                             TLRPC.TL_pageListOrderedItemBlocks tL_pageListOrderedItemBlocks = (TLRPC.TL_pageListOrderedItemBlocks) pageListOrderedItem3;
                             if (!tL_pageListOrderedItemBlocks.blocks.isEmpty()) {
                                 tL_pageBlockOrderedList = tL_pageBlockOrderedList2;
@@ -7591,7 +7737,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     addAllMediaFromBlock(webpageAdapter, pageBlock2);
                     i++;
                 }
-                ArticleViewer.access$12608(ArticleViewer.this);
+                ArticleViewer.access$13108(ArticleViewer.this);
                 return;
             }
             if (pageBlock instanceof TLRPC.TL_pageBlockCollage) {
@@ -7603,7 +7749,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     addAllMediaFromBlock(webpageAdapter, pageBlock3);
                     i++;
                 }
-                ArticleViewer.access$12608(ArticleViewer.this);
+                ArticleViewer.access$13108(ArticleViewer.this);
                 return;
             }
             if (pageBlock instanceof TLRPC.TL_pageBlockCover) {
@@ -7970,9 +8116,17 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
+            int i;
             TLRPC.WebPage webPage = this.currentPage;
-            int size = (webPage == null || webPage.cached_page == null) ? 0 : this.localBlocks.size() + 1;
-            return this.padding ? size + 1 : size;
+            if (webPage == null || webPage.cached_page == null) {
+                i = 0;
+            } else {
+                i = this.localBlocks.size();
+                if (this.currentPage.cached_page.local == null) {
+                    i++;
+                }
+            }
+            return this.padding ? i + 1 : i;
         }
 
         private boolean isBlockOpened(TL_pageBlockDetailsChild tL_pageBlockDetailsChild) {
@@ -11454,6 +11608,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         private RecyclerView.ViewHolder blockLayout;
         private int blockX;
         private int blockY;
+        private CheckBoxBase checkbox;
         private TL_pageBlockListItem currentBlock;
         private int currentBlockType;
         private boolean drawDot;
@@ -11519,20 +11674,41 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     this.currentBlock.parent.lastFontSize = SharedConfig.ivFontSize;
                     this.currentBlock.parent.maxNumWidth = 0;
                     int size2 = this.currentBlock.parent.items.size();
+                    boolean z = true;
                     for (int i6 = 0; i6 < size2; i6++) {
                         TL_pageBlockListItem tL_pageBlockListItem2 = (TL_pageBlockListItem) this.currentBlock.parent.items.get(i6);
                         if (tL_pageBlockListItem2.num != null) {
-                            tL_pageBlockListItem2.numLayout = ArticleViewer.this.createLayoutForText(this, tL_pageBlockListItem2.num, null, size - AndroidUtilities.dp(54.0f), this.textY, this.currentBlock, this.parentAdapter);
-                            this.currentBlock.parent.maxNumWidth = Math.max(this.currentBlock.parent.maxNumWidth, (int) Math.ceil(tL_pageBlockListItem2.numLayout.getLineWidth(0)));
+                            if (!tL_pageBlockListItem2.isCheckbox || !"•".equalsIgnoreCase(tL_pageBlockListItem2.num)) {
+                                tL_pageBlockListItem2.numLayout = ArticleViewer.this.createLayoutForText(this, tL_pageBlockListItem2.num, null, size - AndroidUtilities.dp(54.0f), this.textY, this.currentBlock, this.parentAdapter);
+                                this.currentBlock.parent.maxNumWidth = Math.max(this.currentBlock.parent.maxNumWidth, (int) Math.ceil(tL_pageBlockListItem2.numLayout.getLineWidth(0)));
+                                z = false;
+                            } else {
+                                tL_pageBlockListItem2.numLayout = null;
+                            }
                         }
                     }
-                    this.currentBlock.parent.maxNumWidth = Math.max(this.currentBlock.parent.maxNumWidth, (int) Math.ceil(ArticleViewer.listTextNumPaint.measureText("00.")));
+                    if (ArticleViewer.listTextNumPaint != null && !z) {
+                        this.currentBlock.parent.maxNumWidth = Math.max(this.currentBlock.parent.maxNumWidth, (int) Math.ceil(ArticleViewer.listTextNumPaint.measureText("00.")));
+                    }
                 }
                 this.drawDot = !this.currentBlock.parent.pageBlockList.ordered;
-                if (!this.parentAdapter.isRtl) {
-                    this.textX = AndroidUtilities.dp(24.0f) + this.currentBlock.parent.maxNumWidth + (this.currentBlock.parent.level * AndroidUtilities.dp(12.0f));
+                if (this.currentBlock.isCheckbox) {
+                    if (this.checkbox == null) {
+                        CheckBoxBase checkBoxBase = new CheckBoxBase(this, 20, ArticleViewer.this.getResourcesProvider());
+                        this.checkbox = checkBoxBase;
+                        checkBoxBase.setColor(Theme.key_telegram_color, Theme.key_dialogCheckboxSquareDisabled, Theme.key_checkboxCheck);
+                        this.checkbox.setBackgroundType(10);
+                        this.checkbox.setDrawUnchecked(true);
+                        this.checkbox.setCustomRadius(AndroidUtilities.dp(5.0f));
+                    }
+                    this.checkbox.setChecked(this.currentBlock.checked, false);
                 } else {
-                    this.textX = AndroidUtilities.dp(18.0f);
+                    this.checkbox = null;
+                }
+                if (this.parentAdapter.isRtl) {
+                    this.textX = AndroidUtilities.dp((this.checkbox == null ? 0 : 26) + 18);
+                } else {
+                    this.textX = AndroidUtilities.dp((this.checkbox == null ? 0 : 26) + 24) + this.currentBlock.parent.maxNumWidth + (this.currentBlock.parent.level * AndroidUtilities.dp(12.0f));
                 }
                 int dp2 = (size - AndroidUtilities.dp(18.0f)) - this.textX;
                 if (this.parentAdapter.isRtl) {
@@ -11671,6 +11847,11 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 this.currentBlock.numLayout.draw(canvas, this);
                 canvas.restore();
             }
+            CheckBoxBase checkBoxBase = this.checkbox;
+            if (checkBoxBase != null) {
+                checkBoxBase.setBounds(this.textX - AndroidUtilities.dp(26.0f), this.textY, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f));
+                this.checkbox.draw(canvas);
+            }
             if (this.textLayout != null) {
                 canvas.save();
                 canvas.translate(this.textX, this.textY);
@@ -11720,6 +11901,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         private RecyclerView.ViewHolder blockLayout;
         private int blockX;
         private int blockY;
+        private CheckBoxBase checkbox;
         private TL_pageBlockOrderedListItem currentBlock;
         private int currentBlockType;
         private int numOffsetY;
@@ -11793,10 +11975,23 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     }
                     this.currentBlock.parent.maxNumWidth = Math.max(this.currentBlock.parent.maxNumWidth, (int) Math.ceil(ArticleViewer.listTextNumPaint.measureText("00.")));
                 }
-                if (!this.parentAdapter.isRtl) {
-                    this.textX = AndroidUtilities.dp(24.0f) + this.currentBlock.parent.maxNumWidth + (this.currentBlock.parent.level * AndroidUtilities.dp(20.0f));
+                if (this.currentBlock.isCheckbox) {
+                    if (this.checkbox == null) {
+                        CheckBoxBase checkBoxBase = new CheckBoxBase(this, 20, ArticleViewer.this.getResourcesProvider());
+                        this.checkbox = checkBoxBase;
+                        checkBoxBase.setColor(Theme.key_telegram_color, Theme.key_dialogCheckboxSquareDisabled, Theme.key_checkboxCheck);
+                        this.checkbox.setBackgroundType(10);
+                        this.checkbox.setDrawUnchecked(true);
+                        this.checkbox.setCustomRadius(AndroidUtilities.dp(5.0f));
+                    }
+                    this.checkbox.setChecked(this.currentBlock.checked, false);
                 } else {
-                    this.textX = AndroidUtilities.dp(18.0f);
+                    this.checkbox = null;
+                }
+                if (this.parentAdapter.isRtl) {
+                    this.textX = AndroidUtilities.dp((this.checkbox == null ? 0 : 26) + 18);
+                } else {
+                    this.textX = AndroidUtilities.dp((this.checkbox == null ? 0 : 26) + 24) + this.currentBlock.parent.maxNumWidth + (this.currentBlock.parent.level * AndroidUtilities.dp(20.0f));
                 }
                 this.verticalAlign = false;
                 int dp2 = (size - AndroidUtilities.dp(18.0f)) - this.textX;
@@ -11932,6 +12127,11 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 }
                 this.currentBlock.numLayout.draw(canvas, this);
                 canvas.restore();
+            }
+            CheckBoxBase checkBoxBase = this.checkbox;
+            if (checkBoxBase != null) {
+                checkBoxBase.setBounds(this.textX - AndroidUtilities.dp(26.0f), this.textY, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f));
+                this.checkbox.draw(canvas);
             }
             if (this.textLayout != null) {
                 canvas.save();
@@ -14054,6 +14254,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         private TLRPC.TL_pageBlockPreformatted currentBlock;
         private WebpageAdapter parentAdapter;
         private HorizontalScrollView scrollView;
+        private CharSequence text;
         private View textContainer;
         private DrawingText textLayout;
 
@@ -14087,8 +14288,16 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     int i3;
                     int i4 = 1;
                     if (BlockPreformattedCell.this.currentBlock != null) {
-                        BlockPreformattedCell blockPreformattedCell = BlockPreformattedCell.this;
-                        blockPreformattedCell.textLayout = ArticleViewer.this.createLayoutForText(this, null, blockPreformattedCell.currentBlock.text, AndroidUtilities.dp(5000.0f), 0, BlockPreformattedCell.this.currentBlock, BlockPreformattedCell.this.parentAdapter);
+                        if (BlockPreformattedCell.this.text == null) {
+                            BlockPreformattedCell blockPreformattedCell = BlockPreformattedCell.this;
+                            blockPreformattedCell.text = ArticleViewer.this.getText(blockPreformattedCell.parentAdapter, this, BlockPreformattedCell.this.currentBlock.text, BlockPreformattedCell.this.currentBlock.text, BlockPreformattedCell.this.currentBlock, AndroidUtilities.dp(5000.0f));
+                            if (!TextUtils.isEmpty(BlockPreformattedCell.this.currentBlock.language)) {
+                                BlockPreformattedCell blockPreformattedCell2 = BlockPreformattedCell.this;
+                                blockPreformattedCell2.text = CodeHighlighting.getHighlighted(blockPreformattedCell2.text, BlockPreformattedCell.this.currentBlock.language);
+                            }
+                        }
+                        BlockPreformattedCell blockPreformattedCell3 = BlockPreformattedCell.this;
+                        blockPreformattedCell3.textLayout = ArticleViewer.this.createLayoutForText(this, blockPreformattedCell3.text, null, AndroidUtilities.dp(5000.0f), 0, BlockPreformattedCell.this.currentBlock, BlockPreformattedCell.this.parentAdapter);
                         if (BlockPreformattedCell.this.textLayout != null) {
                             i3 = BlockPreformattedCell.this.textLayout.getHeight();
                             int lineCount = BlockPreformattedCell.this.textLayout.getLineCount();
@@ -14133,6 +14342,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             int dp2 = AndroidUtilities.dp(12.0f);
             layoutParams.bottomMargin = dp2;
             layoutParams.topMargin = dp2;
+            NotificationCenter.listenEmojiLoading(this.textContainer);
             this.scrollView.addView(this.textContainer, layoutParams);
             if (Build.VERSION.SDK_INT >= 23) {
                 this.scrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() { // from class: org.telegram.ui.ArticleViewer$BlockPreformattedCell$$ExternalSyntheticLambda1
@@ -14155,6 +14365,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         }
 
         public void setBlock(TLRPC.TL_pageBlockPreformatted tL_pageBlockPreformatted) {
+            this.text = null;
             this.currentBlock = tL_pageBlockPreformatted;
             this.scrollView.setScrollX(0);
             this.textContainer.requestLayout();
@@ -14673,12 +14884,12 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$65() {
+    public /* synthetic */ void lambda$new$66() {
         AndroidUtilities.runOnUIThread(new ArticleViewer$$ExternalSyntheticLambda3(this));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$66() {
+    public /* synthetic */ void lambda$new$67() {
         AndroidUtilities.runOnUIThread(new ArticleViewer$$ExternalSyntheticLambda3(this));
     }
 
@@ -14704,6 +14915,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 this.actionBar.setBackButtonCached(false);
             }
             this.actionBar.setHasForward(this.pages[0].hasForwardButton());
+            this.actionBar.setIsLocal(this.pages[0].isLocal());
             this.actionBar.setIsLoaded(this.pages[0].getWebView() != null && this.pages[0].getWebView().isPageLoaded());
         }
         this.actionBar.setBackgroundColor(0, this.page0Background.set(this.pages[0].getActionBarColor(), this.windowView.movingPage || this.windowView.openingPage));
@@ -14788,11 +15000,6 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 }
                 this.paused = false;
             }
-        }
-
-        @Override // android.widget.FrameLayout, android.view.View
-        protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, i2);
         }
 
         public PageLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
@@ -14927,6 +15134,9 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     WebActionBar webActionBar2 = ArticleViewer.this.actionBar;
                     PageLayout pageLayout5 = ArticleViewer.this.pages[0];
                     webActionBar2.setIsTonsite(pageLayout5 != null && pageLayout5.isTonsite());
+                    WebActionBar webActionBar3 = ArticleViewer.this.actionBar;
+                    PageLayout pageLayout6 = ArticleViewer.this.pages[0];
+                    webActionBar3.setIsLocal(pageLayout6 != null && pageLayout6.isLocal());
                 }
 
                 @Override // org.telegram.ui.web.BotWebViewContainer
@@ -15524,6 +15734,11 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             return false;
         }
 
+        public boolean isLocal() {
+            WebpageAdapter webpageAdapter;
+            return (isWeb() || (webpageAdapter = this.adapter) == null || webpageAdapter.currentPage == null || this.adapter.currentPage.cached_page == null || this.adapter.currentPage.cached_page.local == null) ? false : true;
+        }
+
         public void cleanup() {
             this.backButton = false;
             this.forwardButton = false;
@@ -15912,7 +16127,8 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         }
 
         @Override // org.telegram.ui.ActionBar.BaseFragment.AttachedSheet, android.content.DialogInterface
-        public void dismiss() {
+        /* renamed from: dismiss */
+        public void lambda$new$0() {
             dismiss(true);
         }
 
@@ -16301,6 +16517,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
 
             @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
+                float f;
                 if (this.drawingFromOverlay) {
                     return;
                 }
@@ -16315,21 +16532,21 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     sheet.attachedToActionBar = z;
                     sheet.checkNavColor();
                 }
-                float f = this.attachedActionBar.set(z);
+                float f2 = this.attachedActionBar.set(z);
                 Sheet sheet2 = Sheet.this;
-                if (sheet2.fullyAttachedToActionBar != (f >= 0.999f)) {
-                    sheet2.fullyAttachedToActionBar = f >= 0.999f;
+                if (sheet2.fullyAttachedToActionBar != (f2 >= 0.999f)) {
+                    sheet2.fullyAttachedToActionBar = f2 >= 0.999f;
                     sheet2.checkFullyVisible();
                 }
-                int lerp = AndroidUtilities.lerp(listTop, 0, Utilities.clamp01(f));
+                int lerp = AndroidUtilities.lerp(listTop, 0, Utilities.clamp01(f2));
                 float emptyPadding = Sheet.this.getEmptyPadding() * Math.max(1.0f - Sheet.this.openProgress, Sheet.this.dismissProgress);
                 canvas.save();
                 canvas.translate(getWidth() * Sheet.this.backProgress, emptyPadding);
-                float f2 = lerp;
-                this.rect.set(0.0f, f2, getWidth(), getHeight() + AndroidUtilities.dp(16.0f));
-                float f3 = 1.0f - f;
-                float dp = AndroidUtilities.dp(16.0f) * f3;
-                if (f < 1.0f) {
+                float f3 = lerp;
+                this.rect.set(0.0f, f3, getWidth(), getHeight() + AndroidUtilities.dp(16.0f));
+                float f4 = 1.0f - f2;
+                float dp = AndroidUtilities.dp(24.0f) * f4;
+                if (f2 < 1.0f) {
                     this.shadowPaint.setColor(0);
                     this.shadowPaint.setShadowLayer(AndroidUtilities.dp(18.0f), 0.0f, -AndroidUtilities.dp(3.0f), Theme.multAlpha(-16777216, min * 0.26f));
                     canvas.drawRoundRect(this.rect, dp, dp, this.shadowPaint);
@@ -16349,24 +16566,27 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 rectF.left = ArticleViewer.this.pages[0].getX();
                 canvas.drawRect(rectF, this.backgroundPaint);
                 ArticleViewer.this.actionBar.drawShadow = z && Sheet.this.getListPaddingTop() + listTop <= AndroidUtilities.statusBarHeight + ArticleViewer.this.currentHeaderHeight;
-                if (f > 0.0f) {
+                if (f2 > 0.0f) {
                     canvas.save();
-                    float lerp2 = AndroidUtilities.lerp(Sheet.this.getListPaddingTop() + listTop + 1, 0, f);
+                    float lerp2 = AndroidUtilities.lerp(Sheet.this.getListPaddingTop() + listTop + 1, 0, f2);
                     canvas.translate(0.0f, lerp2);
-                    ArticleViewer.this.actionBar.drawBackground(canvas, ((listTop + Sheet.this.getListPaddingTop()) + 1) - lerp2, 1.0f, f, true);
+                    f = 0.0f;
+                    ArticleViewer.this.actionBar.drawBackground(canvas, ((listTop + Sheet.this.getListPaddingTop()) + 1) - lerp2, 1.0f, f2, true);
                     canvas.restore();
+                } else {
+                    f = 0.0f;
                 }
-                canvas.translate(0.0f, -emptyPadding);
+                canvas.translate(f, -emptyPadding);
                 if (!AndroidUtilities.makingGlobalBlurBitmap && (!ArticleViewer.this.pages[0].isWeb() || canvas.isHardwareAccelerated())) {
                     super.dispatchDraw(canvas);
                 }
-                canvas.translate(0.0f, emptyPadding);
-                if (f < 1.0f) {
-                    this.handlePaint.setColor(ColorUtils.blendARGB(Theme.multAlpha((AndroidUtilities.computePerceivedBrightness(Sheet.this.getBackgroundColor()) > 0.721f ? 1 : (AndroidUtilities.computePerceivedBrightness(Sheet.this.getBackgroundColor()) == 0.721f ? 0 : -1)) < 0 ? -1 : -16777216, 0.15f), -16777216, f));
-                    this.handlePaint.setAlpha((int) (r1.getAlpha() * f3));
+                canvas.translate(f, emptyPadding);
+                if (f2 < 1.0f) {
+                    this.handlePaint.setColor(ColorUtils.blendARGB(Theme.multAlpha(AndroidUtilities.computePerceivedBrightness(Sheet.this.getBackgroundColor()) < 0.721f ? -1 : -16777216, 0.15f), -16777216, f2));
+                    this.handlePaint.setAlpha((int) (r1.getAlpha() * f4));
                     float width = getWidth() / 2.0f;
-                    float listPaddingTop = (f2 + (Sheet.this.getListPaddingTop() / 2.0f)) - (AndroidUtilities.dp(8.0f) * f);
-                    float lerp3 = AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(48.0f), f) / 2.0f;
+                    float listPaddingTop = (f3 + (Sheet.this.getListPaddingTop() / 2.0f)) - (AndroidUtilities.dp(8.0f) * f2);
+                    float lerp3 = AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(48.0f), f2) / 2.0f;
                     this.rect.set(width - lerp3, listPaddingTop - AndroidUtilities.dp(2.0f), width + lerp3, listPaddingTop + AndroidUtilities.dp(2.0f));
                     RectF rectF2 = this.rect;
                     canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, this.rect.height() / 2.0f, this.handlePaint);
@@ -16397,7 +16617,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 this.scrimPaint.setColor(-16777216);
                 this.scrimPaint.setAlpha((int) (min * f3 * 96.0f * (1.0f - Sheet.this.backProgress)));
                 canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.scrimPaint);
-                float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(10.0f), f);
+                float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(18.0f), f);
                 this.backgroundPaint.setColor(ArticleViewer.this.getThemedColor(Theme.key_windowBackgroundWhite));
                 this.clipPath2.rewind();
                 this.clipPath2.addRoundRect(rectF2, lerp, lerp, Path.Direction.CW);
@@ -16448,12 +16668,15 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             @Override // android.view.ViewGroup, android.view.ViewParent
             public boolean onNestedPreFling(View view, float f, float f2) {
                 boolean onNestedPreFling = super.onNestedPreFling(view, f, f2);
-                if (Sheet.this.halfSize()) {
+                if (Sheet.this.halfSize() && !ArticleViewer.this.textSelectionHelper.isInSelectionMode()) {
                     if (ArticleViewer.this.pages[0].isAtTop() && f2 < -1000.0f) {
                         Sheet.this.dismiss(true);
                     } else {
                         Sheet.this.animateDismiss(false, true, null);
                     }
+                }
+                if (f != 0.0f || f2 != 0.0f) {
+                    ArticleViewer.this.textSelectionHelper.cancelTextSelectionRunnable();
                 }
                 this.stoppedAtFling = true;
                 return onNestedPreFling;
@@ -16470,13 +16693,17 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 if (!sheet.nestedVerticalScroll) {
                     sheet.nestedVerticalScroll = i2 != 0;
                 }
-                if (ArticleViewer.this.pages[0].isAtTop() && Sheet.this.halfSize()) {
+                if (ArticleViewer.this.pages[0].isAtTop() && Sheet.this.halfSize() && !ArticleViewer.this.textSelectionHelper.isInSelectionMode()) {
                     iArr[1] = Math.min((int) (Sheet.this.getEmptyPadding() * Sheet.this.dismissProgress), i2);
                     Sheet sheet2 = Sheet.this;
                     sheet2.dismissProgress = Utilities.clamp(sheet2.dismissProgress - (i2 / Sheet.this.getEmptyPadding()), 1.0f, 0.0f);
                     Sheet.this.updateTranslation();
                     Sheet.this.checkFullyVisible();
                 }
+                if (i == 0 && i2 == 0) {
+                    return;
+                }
+                ArticleViewer.this.textSelectionHelper.cancelTextSelectionRunnable();
             }
 
             @Override // android.view.ViewGroup, android.view.ViewParent
@@ -16494,7 +16721,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             public void onStopNestedScroll(View view) {
                 Sheet sheet = Sheet.this;
                 sheet.nestedVerticalScroll = false;
-                if (sheet.halfSize() && !this.stoppedAtFling) {
+                if (sheet.halfSize() && !this.stoppedAtFling && !ArticleViewer.this.textSelectionHelper.isInSelectionMode()) {
                     if (Sheet.this.dismissProgress > 0.25f) {
                         Sheet.this.dismiss(true);
                     } else {

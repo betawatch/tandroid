@@ -34,6 +34,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import com.google.zxing.common.detector.MathUtils;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotFullscreenButtons$$ExternalSyntheticApiModelOutline2;
 import org.telegram.messenger.LocaleController;
@@ -48,6 +50,7 @@ import org.telegram.ui.Components.ButtonBounce;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.Text;
 import org.telegram.ui.GradientClip;
+import org.telegram.ui.bots.BotWebViewSheet;
 
 /* loaded from: classes4.dex */
 public class BottomSheetTabsOverlay extends View {
@@ -623,6 +626,19 @@ public class BottomSheetTabsOverlay extends View {
     public void openTabsView() {
         BottomSheetTabs bottomSheetTabs = this.tabsView;
         if (bottomSheetTabs == null || !(bottomSheetTabs.getParent() instanceof View)) {
+            return;
+        }
+        if (!BotWebViewSheet.activeSheets.isEmpty()) {
+            Iterator it = new HashSet(BotWebViewSheet.activeSheets).iterator();
+            while (it.hasNext()) {
+                ((BotWebViewSheet) it.next()).dismiss(true);
+            }
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ActionBar.BottomSheetTabsOverlay$$ExternalSyntheticLambda9
+                @Override // java.lang.Runnable
+                public final void run() {
+                    BottomSheetTabsOverlay.this.openTabsView();
+                }
+            }, 100L);
             return;
         }
         stopAnimations();
@@ -1252,7 +1268,7 @@ public class BottomSheetTabsOverlay extends View {
             canvas.rotate(this.dismissProgress * 20.0f, rectF.centerX() + (AndroidUtilities.dp(50.0f) * this.dismissProgress), rectF.bottom + AndroidUtilities.dp(350.0f));
             float scale = this.bounce.getScale(0.01f);
             canvas.scale(scale, scale, rectF.centerX(), rectF.centerY());
-            float lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(6.0f), f2);
+            float lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), f2);
             if (z) {
                 this.shadowPaint.setColor(0);
                 this.shadowPaint.setShadowLayer(AndroidUtilities.dp(30.0f), 0.0f, AndroidUtilities.dp(10.0f), Theme.multAlpha(TLObject.FLAG_29, clamp * f2 * f7));
@@ -1389,7 +1405,7 @@ public class BottomSheetTabsOverlay extends View {
         lockHardwareCanvas.translate(0.0f, f);
         view.draw(lockHardwareCanvas);
         surface.unlockCanvasAndPost(lockHardwareCanvas);
-        PixelCopy.request(surface, createBitmap, new PixelCopy.OnPixelCopyFinishedListener() { // from class: org.telegram.ui.ActionBar.BottomSheetTabsOverlay$$ExternalSyntheticLambda9
+        PixelCopy.request(surface, createBitmap, new PixelCopy.OnPixelCopyFinishedListener() { // from class: org.telegram.ui.ActionBar.BottomSheetTabsOverlay$$ExternalSyntheticLambda10
             @Override // android.view.PixelCopy.OnPixelCopyFinishedListener
             public final void onPixelCopyFinished(int i) {
                 BottomSheetTabsOverlay.lambda$renderHardwareViewToBitmap$8(Utilities.Callback.this, createBitmap, surface, m, i);

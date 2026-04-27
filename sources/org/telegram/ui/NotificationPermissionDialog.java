@@ -96,7 +96,7 @@ public class NotificationPermissionDialog extends BottomSheet implements Notific
         textView3.setTypeface(AndroidUtilities.bold());
         textView3.setTextSize(1, 14.0f);
         textView3.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
-        textView3.setBackground(Theme.AdaptiveRipple.filledRect(Theme.getColor(i), 8.0f));
+        textView3.setBackground(Theme.AdaptiveRipple.filledRect(Theme.getColor(i), 24.0f));
         textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.NotificationPermissionDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

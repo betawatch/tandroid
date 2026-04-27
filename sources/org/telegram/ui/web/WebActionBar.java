@@ -80,6 +80,7 @@ public abstract class WebActionBar extends FrameLayout {
     public boolean hasLoaded;
     public int height;
     public int iconColor;
+    public boolean isLocal;
     public boolean isMenuShown;
     public boolean isTonsite;
     public final LinearLayout leftmenu;
@@ -378,7 +379,7 @@ public abstract class WebActionBar extends FrameLayout {
             if (i == 0) {
                 makeOptions.add(R.drawable.msg_openin, LocaleController.getString(R.string.OpenInExternalApp), (Runnable) callbackReturn.run(3));
                 makeOptions.add(R.drawable.msg_search, LocaleController.getString(R.string.Search), (Runnable) callbackReturn.run(1));
-                makeOptions.add(R.drawable.msg_share, LocaleController.getString(R.string.ShareFile), (Runnable) callbackReturn.run(2));
+                makeOptions.addIf(!this.isLocal, R.drawable.msg_share, LocaleController.getString(R.string.ShareFile), (Runnable) callbackReturn.run(2));
                 makeOptions.add(R.drawable.msg_settings_old, LocaleController.getString(R.string.Settings), (Runnable) callbackReturn.run(4));
             } else if (i == 1) {
                 if (!this.isTonsite) {
@@ -603,6 +604,10 @@ public abstract class WebActionBar extends FrameLayout {
 
     public void setIsTonsite(boolean z) {
         this.isTonsite = z;
+    }
+
+    public void setIsLocal(boolean z) {
+        this.isLocal = z;
     }
 
     public void setColors(int i, boolean z) {

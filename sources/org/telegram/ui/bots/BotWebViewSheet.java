@@ -3355,7 +3355,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             AndroidUtilities.lerpCentered(this.rect, rectF, f, rectF2);
             canvas.save();
             this.clipPath.rewind();
-            float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(16.0f) * (AndroidUtilities.isTablet() ? 1.0f : 1.0f - BotWebViewSheet.this.actionBarTransitionProgress), AndroidUtilities.dp(10.0f), f);
+            float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(16.0f) * (AndroidUtilities.isTablet() ? 1.0f : 1.0f - BotWebViewSheet.this.actionBarTransitionProgress), AndroidUtilities.dp(18.0f), f);
             this.clipPath.addRoundRect(rectF2, lerp, lerp, Path.Direction.CW);
             canvas.clipPath(this.clipPath);
             canvas.drawPaint(BotWebViewSheet.this.backgroundPaint);

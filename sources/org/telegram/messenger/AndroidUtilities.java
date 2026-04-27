@@ -4386,16 +4386,16 @@ public class AndroidUtilities {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x003f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0043, code lost:
     
-        if (r8.length() != 0) goto L19;
+        if (r8.length() != 0) goto L23;
      */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0050 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0051  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0076  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00d4  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00a6 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0096  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0054 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x007a  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00d8  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00aa A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x009a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -4407,7 +4407,7 @@ public class AndroidUtilities {
         Intent intent = new Intent("android.intent.action.VIEW");
         intent.setFlags(1);
         MimeTypeMap singleton = MimeTypeMap.getSingleton();
-        int lastIndexOf = str.lastIndexOf(46);
+        int lastIndexOf = str == null ? -1 : str.lastIndexOf(46);
         if (lastIndexOf != -1) {
             String substring = str.substring(lastIndexOf + 1);
             if (z && MessageObject.isV(substring)) {

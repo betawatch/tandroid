@@ -6,6 +6,7 @@ import android.text.SpannableString;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.style.CharacterStyle;
+import j$.util.concurrent.ConcurrentHashMap;
 import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.lang.reflect.Array;
@@ -31,7 +32,7 @@ public class CodeHighlighting {
     public static final int MATCH_OPERATOR = 2;
     public static final int MATCH_STRING = 4;
     private static HashMap<String, TokenPattern[]> compiledPatterns;
-    private static final HashMap<String, Highlighting> processedHighlighting = new HashMap<>();
+    private static final ConcurrentHashMap<String, Highlighting> processedHighlighting = new ConcurrentHashMap<>();
 
     public static int getTextSizeDecrement(int i) {
         if (i > 120) {
@@ -163,32 +164,32 @@ public class CodeHighlighting {
     private static class Highlighting {
         String language;
         SpannableString result;
-        String text;
+        CharSequence text;
 
         private Highlighting() {
         }
     }
 
-    public static SpannableString getHighlighted(String str, String str2) {
-        if (TextUtils.isEmpty(str2)) {
-            return new SpannableString(str);
+    public static SpannableString getHighlighted(CharSequence charSequence, String str) {
+        if (TextUtils.isEmpty(str)) {
+            return new SpannableString(charSequence);
         }
-        String str3 = str2 + "`" + str;
-        HashMap<String, Highlighting> hashMap = processedHighlighting;
-        Highlighting highlighting = hashMap.get(str3);
+        String str2 = str + "`" + ((Object) charSequence);
+        ConcurrentHashMap<String, Highlighting> concurrentHashMap = processedHighlighting;
+        Highlighting highlighting = concurrentHashMap.get(str2);
         if (highlighting == null) {
             highlighting = new Highlighting();
-            highlighting.text = str;
-            highlighting.language = str2;
-            LockedSpannableString lockedSpannableString = new LockedSpannableString(str);
+            highlighting.text = charSequence;
+            highlighting.language = str;
+            LockedSpannableString lockedSpannableString = new LockedSpannableString(charSequence);
             highlighting.result = lockedSpannableString;
-            highlight(lockedSpannableString, 0, lockedSpannableString.length(), str2, 0, null, true);
-            Iterator<String> it = hashMap.keySet().iterator();
+            highlight(lockedSpannableString, 0, lockedSpannableString.length(), str, 0, null, true);
+            Iterator<String> it = concurrentHashMap.keySet().iterator();
             while (it.hasNext() && processedHighlighting.size() > 8) {
                 it.next();
                 it.remove();
             }
-            processedHighlighting.put(str3, highlighting);
+            processedHighlighting.put(str2, highlighting);
         }
         return highlighting.result;
     }
