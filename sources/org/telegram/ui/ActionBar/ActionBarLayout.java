@@ -500,7 +500,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 View childAt2 = getChildAt(i5);
                 if (!(childAt2 instanceof ActionBar)) {
                     if (childAt2 instanceof BaseFragment.AttachedSheetWindow) {
-                        measureChildWithMargins(childAt2, i, 0, i2, 0);
+                        measureChildWithMargins(childAt2, i, 0, i2, (ActionBarLayout.this.getBottomTabsHeight(false) > 0 || !this.isSupportEdgeToEdge) ? 0 : ActionBarLayout.this.navigationBarInsetHeight);
                     } else if (childAt2.getTag(-15654349) != null || childAt2.getFitsSystemWindows()) {
                         measureChildWithMargins(childAt2, i, 0, i2, this.isSupportEdgeToEdge ? ActionBarLayout.this.navigationBarInsetHeight : 0);
                     } else {
