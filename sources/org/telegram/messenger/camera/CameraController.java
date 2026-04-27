@@ -473,7 +473,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                         return 0;
                     }
                     if (pack5 == 3) {
-                        return NotificationCenter.newEmojiSuggestionsAvailable;
+                        return NotificationCenter.needDeleteDialog;
                     }
                     if (pack5 == 6) {
                         return 90;
@@ -481,7 +481,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                     if (pack5 != 8) {
                         return -1;
                     }
-                    return NotificationCenter.suggestedLangpack;
+                    return NotificationCenter.locationPermissionDenied;
                 }
                 i5 += 12;
                 i6 -= 12;

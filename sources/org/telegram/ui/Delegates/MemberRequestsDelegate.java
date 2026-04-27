@@ -1201,14 +1201,14 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
             if (visibleDialog != null) {
                 visibleDialog.getWindow().getDecorView().draw(canvas);
             }
-            Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.newEmojiSuggestionsAvailable));
+            Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.needDeleteDialog));
             return createBitmap;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public void updateBackgroundBitmap() {
             BitmapDrawable bitmapDrawable = this.backgroundDrawable;
-            int alpha = bitmapDrawable != null ? bitmapDrawable.getAlpha() : NotificationCenter.invalidateMotionBackground;
+            int alpha = bitmapDrawable != null ? bitmapDrawable.getAlpha() : NotificationCenter.didReceiveCall;
             BitmapDrawable bitmapDrawable2 = new BitmapDrawable(getContext().getResources(), getBlurredBitmap());
             this.backgroundDrawable = bitmapDrawable2;
             bitmapDrawable2.setAlpha(alpha);

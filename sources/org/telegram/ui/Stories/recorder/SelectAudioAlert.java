@@ -20,9 +20,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;
+import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
@@ -351,7 +351,7 @@ public class SelectAudioAlert extends BottomSheetWithRecyclerListView implements
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(Canvas canvas, RectF rectF) {
         RecyclerListView recyclerListView = this.recyclerListView;
-        Blur3Utils.captureRelativeParent(recyclerListView, canvas, rectF, recyclerListView, getContainerView(), NotificationCenter.invalidateMotionBackground);
+        Blur3Utils.captureRelativeParent(recyclerListView, canvas, rectF, recyclerListView, getContainerView(), NotificationCenter.didReceiveCall);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -785,7 +785,7 @@ public class SelectAudioAlert extends BottomSheetWithRecyclerListView implements
             String str6 = str5 != null ? str5 : "";
             this.lastLoadingGlobalAudioQuery = str6;
             tL_messages_getInlineBotResults.query = str6;
-            this.loadingGlobalAudioRequestId = ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_getInlineBotResults, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.Stories.recorder.SelectAudioAlert$$ExternalSyntheticLambda6
+            this.loadingGlobalAudioRequestId = ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_getInlineBotResults, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Stories.recorder.SelectAudioAlert$$ExternalSyntheticLambda6
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     SelectAudioAlert.this.lambda$loadGlobalAudio$5((TLRPC.messages_BotResults) obj, (TLRPC.TL_error) obj2);

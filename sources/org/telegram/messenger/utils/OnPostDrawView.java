@@ -5,12 +5,15 @@ import android.graphics.Canvas;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
+import android.view.ViewTreeObserver;
 import org.telegram.ui.Components.LayoutHelper;
 
 /* loaded from: classes3.dex */
-public class OnPostDrawView extends View {
+public class OnPostDrawView extends View implements ViewTreeObserver.OnPreDrawListener {
     private final InvalidateCallback callback;
     private int invalidateFlags;
+    private ViewTreeObserver observer;
+    private final boolean onPreDrawMode;
 
     public interface InvalidateCallback {
         void onPostDraw(int i);
@@ -23,10 +26,11 @@ public class OnPostDrawView extends View {
         this.invalidateFlags = i | this.invalidateFlags;
     }
 
-    public OnPostDrawView(Context context, InvalidateCallback invalidateCallback) {
+    public OnPostDrawView(Context context, boolean z, InvalidateCallback invalidateCallback) {
         super(context);
         this.invalidateFlags = 0;
         this.callback = invalidateCallback;
+        this.onPreDrawMode = z;
     }
 
     @Override // android.view.View
@@ -37,6 +41,9 @@ public class OnPostDrawView extends View {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        if (this.onPreDrawMode) {
+            return;
+        }
         this.callback.onPostDraw(this.invalidateFlags);
         this.invalidateFlags = 0;
     }
@@ -49,5 +56,36 @@ public class OnPostDrawView extends View {
             return;
         }
         viewGroup.bringChildToFront(this);
+    }
+
+    @Override // android.view.View
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (this.onPreDrawMode) {
+            ViewTreeObserver viewTreeObserver = getViewTreeObserver();
+            this.observer = viewTreeObserver;
+            viewTreeObserver.addOnPreDrawListener(this);
+        }
+    }
+
+    @Override // android.view.View
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        ViewTreeObserver viewTreeObserver = this.observer;
+        if (viewTreeObserver != null && viewTreeObserver.isAlive()) {
+            this.observer.removeOnPreDrawListener(this);
+        }
+        this.observer = null;
+    }
+
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public boolean onPreDraw() {
+        int i;
+        if (!this.onPreDrawMode || (i = this.invalidateFlags) == 0) {
+            return true;
+        }
+        this.callback.onPostDraw(i);
+        this.invalidateFlags = 0;
+        return true;
     }
 }

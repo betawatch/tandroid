@@ -174,7 +174,7 @@ public abstract class ColorStateListInflaterCompat {
         if (f == 1.0f && !z) {
             return i;
         }
-        int clamp = MathUtils.clamp((int) ((Color.alpha(i) * f) + 0.5f), 0, NotificationCenter.invalidateMotionBackground);
+        int clamp = MathUtils.clamp((int) ((Color.alpha(i) * f) + 0.5f), 0, NotificationCenter.didReceiveCall);
         if (z) {
             CamColor fromColor = CamColor.fromColor(i);
             i = CamColor.toColor(fromColor.getHue(), fromColor.getChroma(), f2);

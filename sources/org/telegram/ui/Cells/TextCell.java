@@ -217,11 +217,26 @@ public class TextCell extends FrameLayout {
 
     @Override // android.view.View
     public void setEnabled(boolean z) {
+        setEnabled(z, true);
+    }
+
+    public void setEnabled(boolean z, boolean z2) {
         super.setEnabled(z);
         Switch r0 = this.checkBox;
         if (r0 != null) {
             r0.setEnabled(z);
         }
+        if (z2) {
+            this.textView.animate().alpha(z ? 1.0f : 0.5f).start();
+            this.subtitleView.animate().alpha(z ? 1.0f : 0.5f).start();
+            this.valueTextView.animate().alpha(z ? 1.0f : 0.5f).start();
+            this.valueSpoilersTextView.animate().alpha(z ? 1.0f : 0.5f).start();
+            return;
+        }
+        this.textView.setAlpha(z ? 1.0f : 0.5f);
+        this.subtitleView.setAlpha(z ? 1.0f : 0.5f);
+        this.valueTextView.setAlpha(z ? 1.0f : 0.5f);
+        this.valueSpoilersTextView.setAlpha(z ? 1.0f : 0.5f);
     }
 
     public void updateEmojiBounds() {
@@ -985,11 +1000,11 @@ public class TextCell extends FrameLayout {
         AnimatedTextView animatedTextView = this.valueTextView;
         float f7 = 1.0f - this.drawLoadingProgress;
         AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable = this.emojiDrawable;
-        animatedTextView.setAlpha(f7 * (swapAnimatedEmojiDrawable == null ? 1.0f : 1.0f - swapAnimatedEmojiDrawable.isNotEmpty()));
+        animatedTextView.setAlpha(f7 * (swapAnimatedEmojiDrawable == null ? 1.0f : 1.0f - swapAnimatedEmojiDrawable.isNotEmpty()) * (isEnabled() ? 1.0f : 0.5f));
         SimpleTextView simpleTextView = this.valueSpoilersTextView;
         float f8 = 1.0f - this.drawLoadingProgress;
         AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable2 = this.emojiDrawable;
-        simpleTextView.setAlpha(f8 * (swapAnimatedEmojiDrawable2 != null ? 1.0f - swapAnimatedEmojiDrawable2.isNotEmpty() : 1.0f));
+        simpleTextView.setAlpha(f8 * (swapAnimatedEmojiDrawable2 == null ? 1.0f : 1.0f - swapAnimatedEmojiDrawable2.isNotEmpty()) * (isEnabled() ? 1.0f : 0.5f));
         super.dispatchDraw(canvas);
         if (this.emojiDrawable != null) {
             updateEmojiBounds();

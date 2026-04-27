@@ -7231,7 +7231,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     }
                     View view2 = this.rippleAbove;
                     if (view2 != null && view2.getBackground() != null) {
-                        this.rippleAbove.getBackground().setAlpha(NotificationCenter.invalidateMotionBackground);
+                        this.rippleAbove.getBackground().setAlpha(NotificationCenter.didReceiveCall);
                     }
                     this.frameLayout.removeView(this.themeSwitchImageView);
                     this.themeSwitchImageView = new ImageView(this);
@@ -7357,7 +7357,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         } else {
             if (i == NotificationCenter.needShowPlayServicesAlert) {
                 try {
-                    ((Status) objArr[0]).startResolutionForResult(this, NotificationCenter.fileLoadProgressChanged);
+                    ((Status) objArr[0]).startResolutionForResult(this, NotificationCenter.fileUploadProgressChanged);
                     return;
                 } catch (Throwable unused2) {
                     return;

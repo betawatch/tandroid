@@ -60,6 +60,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatActionCell;
 import org.telegram.ui.Cells.ChatMessageCell;
+import org.telegram.ui.Cells.CollapseTextCell;
 import org.telegram.ui.Cells.GraySectionCell;
 import org.telegram.ui.Cells.ShadowSectionCell;
 import org.telegram.ui.Cells.TextInfoPrivacyCell;
@@ -622,7 +623,7 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
             for (int i3 = 0; i3 < 8; i3++) {
                 this.radii[i3] = AndroidUtilities.dp(44.0f);
             }
-            this.scrollX = AndroidUtilities.dp(this.isRtl ? 10.0f : (i == 0 ? NotificationCenter.walletPendingTransactionsChanged : NotificationCenter.appConfigUpdated) - 15);
+            this.scrollX = AndroidUtilities.dp(this.isRtl ? 10.0f : (i == 0 ? NotificationCenter.didGenerateFingerprintKeyPair : NotificationCenter.commonChatsLoaded) - 15);
             if (RecyclerListView.this.hasSections()) {
                 this.scrollX += AndroidUtilities.dp(this.isRtl ? -4.0f : 6.0f);
             }
@@ -3320,7 +3321,7 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ Boolean lambda$setSections$2(View view) {
-        return Boolean.valueOf(((view instanceof TextInfoPrivacyCell) || (view instanceof ShadowSectionCell) || (view instanceof FiltersSetupActivity.HintInnerCell) || (view instanceof GraySectionCell) || Objects.equals(view.getTag(), -33024)) ? false : true);
+        return Boolean.valueOf(((view instanceof TextInfoPrivacyCell) || (view instanceof ShadowSectionCell) || (view instanceof FiltersSetupActivity.HintInnerCell) || (view instanceof GraySectionCell) || (view instanceof CollapseTextCell) || Objects.equals(view.getTag(), -33024)) ? false : true);
     }
 
     private static Pair cachedIsViewTypeShadow(final RecyclerListView recyclerListView, final Utilities.CallbackReturn callbackReturn) {
@@ -3458,7 +3459,7 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
         }
         float bottomInfoMargin = view2 instanceof JoinToSendSettingsView ? ((JoinToSendSettingsView) view2).getBottomInfoMargin() : 0.0f;
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(view.getLeft(), Math.max(this.applyPaddingToSections ? getPaddingTop() : -this.sectionRadius, view.getY() - (z ? this.sectionRadius : 0.0f)), view.getRight(), Math.min(getHeight() - (this.applyPaddingToSections ? getPaddingBottom() : -this.sectionRadius), ((view2.getY() + view2.getHeight()) + (z2 ? this.sectionRadius : 0.0f)) - bottomInfoMargin));
+        rectF.set(view.getLeft(), Math.max(this.applyPaddingToSections ? getPaddingTop() : -this.sectionRadius, top(view) - (z ? this.sectionRadius : 0.0f)), view.getRight(), Math.min(getHeight() - (this.applyPaddingToSections ? getPaddingBottom() : -this.sectionRadius), (bottom(view2) + (z2 ? this.sectionRadius : 0.0f)) - bottomInfoMargin));
         if (rectF.bottom < rectF.top) {
             return;
         }
@@ -3508,8 +3509,8 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
             for (int i2 = 0; i2 < getChildCount(); i2++) {
                 View childAt = getChildAt(i2);
                 if (childAt != this.emptyView && childAt.getVisibility() == 0 && childAt.getAlpha() > 0.0f && ((Boolean) this.sectionsItemDecoration.isSectionItem.run(childAt)).booleanValue()) {
-                    float y = childAt.getY();
-                    float y2 = childAt.getY() + childAt.getHeight();
+                    float pVar = top(childAt);
+                    float bottom = bottom(childAt);
                     RecyclerView.ViewHolder childViewHolder = getChildViewHolder(childAt);
                     if (childViewHolder.isRemoved() && childAt.getAlpha() < 1.0f) {
                         if (childViewHolder.isRemoved() && (i = childViewHolder.mOldCompoundPosition) >= 0) {
@@ -3527,18 +3528,18 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
                                     i3++;
                                 }
                             }
-                            if (view != null && y2 > view.getY() && ((Boolean) this.sectionsItemDecoration.isSectionItem.run(view)).booleanValue() && !getChildViewHolder(view).isRemoved()) {
-                                y -= 1.0f;
-                                y2 = view.getY();
-                                if (y2 < y) {
+                            if (view != null && bottom > view.getY() && ((Boolean) this.sectionsItemDecoration.isSectionItem.run(view)).booleanValue() && !getChildViewHolder(view).isRemoved()) {
+                                pVar -= 1.0f;
+                                bottom = view.getY();
+                                if (bottom < pVar) {
                                 }
                             }
                         }
-                        this.sections.add(new SectionsDrawer.Section(y, y2, childAt.getAlpha()));
+                        this.sections.add(new SectionsDrawer.Section(pVar, bottom, childAt.getAlpha()));
                     } else {
                         if (isInsideForcedSection(childViewHolder.getAdapterPosition())) {
                         }
-                        this.sections.add(new SectionsDrawer.Section(y, y2, childAt.getAlpha()));
+                        this.sections.add(new SectionsDrawer.Section(pVar, bottom, childAt.getAlpha()));
                     }
                 }
             }
@@ -3591,8 +3592,8 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
                     View childAt3 = getChildAt(i8);
                     int childAdapterPosition = getChildAdapterPosition(childAt3);
                     if (childAdapterPosition >= unpackA && childAdapterPosition <= unpackB) {
-                        f2 = Math.min(f2, childAt3.getY());
-                        f3 = Math.max(f3, childAt3.getY() + childAt3.getHeight());
+                        f2 = Math.min(f2, top(childAt3));
+                        f3 = Math.max(f3, bottom(childAt3));
                     }
                 }
                 if (f2 < f3) {
@@ -3668,10 +3669,10 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
             z2 = findViewByPosition2 != null && ((Boolean) this.sectionsItemDecoration.isSectionItem.run(findViewByPosition2)).booleanValue();
         }
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(view.getX(), Math.max(this.applyPaddingToSections ? getPaddingTop() : -this.sectionRadius, view.getY()), view.getX() + view.getWidth(), Math.min(getHeight() - (this.applyPaddingToSections ? getPaddingBottom() : -this.sectionRadius), view.getY() + view.getHeight()));
+        rectF.set(view.getX(), Math.max(this.applyPaddingToSections ? getPaddingTop() : -this.sectionRadius, top(view)), view.getX() + view.getWidth(), Math.min(getHeight() - (this.applyPaddingToSections ? getPaddingBottom() : -this.sectionRadius), bottom(view)));
         if (z && z2) {
-            z = view.getY() >= rectF.top;
-            boolean z3 = view.getY() + ((float) view.getHeight()) <= rectF.bottom;
+            z = top(view) >= rectF.top;
+            boolean z3 = bottom(view) <= rectF.bottom;
             if (z && z3) {
                 return;
             } else {
@@ -3700,6 +3701,20 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
         }
     }
 
+    public static float top(View view) {
+        if (view.getTag(R.id.dragging) != null) {
+            return view.getTop();
+        }
+        return view.getY();
+    }
+
+    public static float bottom(View view) {
+        if (view.getTag(R.id.dragging) != null) {
+            return view.getBottom();
+        }
+        return view.getY() + view.getHeight();
+    }
+
     public Drawable getClipBackground(final View view) {
         boolean z;
         boolean z2;
@@ -3717,10 +3732,10 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
             z2 = findViewByPosition2 != null && ((Boolean) this.sectionsItemDecoration.isSectionItem.run(findViewByPosition2)).booleanValue();
         }
         final RectF rectF = new RectF();
-        rectF.set(view.getX(), Math.max(this.applyPaddingToSections ? getPaddingTop() : 0.0f, view.getY()), view.getX() + view.getWidth(), Math.min(getHeight() - (this.applyPaddingToSections ? getPaddingBottom() : 0), view.getY() + view.getHeight()));
+        rectF.set(view.getX(), Math.max(this.applyPaddingToSections ? getPaddingTop() : 0.0f, top(view)), view.getX() + view.getWidth(), Math.min(getHeight() - (this.applyPaddingToSections ? getPaddingBottom() : 0), bottom(view)));
         if (z && z2) {
-            z = view.getY() >= rectF.top;
-            boolean z3 = view.getY() + ((float) view.getHeight()) <= rectF.bottom;
+            z = top(view) >= rectF.top;
+            boolean z3 = bottom(view) <= rectF.bottom;
             if (z && z3) {
                 return Theme.createRoundRectDrawable(0, Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider));
             }

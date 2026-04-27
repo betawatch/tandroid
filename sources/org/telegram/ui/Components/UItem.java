@@ -97,6 +97,14 @@ public class UItem extends AdapterWithDiffUtils.Item {
         return uItem;
     }
 
+    public static UItem asCustomShadow(View view, boolean z) {
+        UItem uItem = new UItem(-4, false);
+        uItem.view = view;
+        uItem.intValue = -1;
+        uItem.checked = z;
+        return uItem;
+    }
+
     public static UItem asCustomShadow(View view, int i) {
         UItem uItem = new UItem(-4, false);
         uItem.view = view;
@@ -148,11 +156,20 @@ public class UItem extends AdapterWithDiffUtils.Item {
         return uItem;
     }
 
-    public static UItem asTopView(CharSequence charSequence, String str, String str2) {
+    public static UItem asTopView(CharSequence charSequence, CharSequence charSequence2, String str, String str2) {
         UItem uItem = new UItem(2, false);
         uItem.text = charSequence;
+        uItem.animatedText = charSequence2;
         uItem.subtext = str;
         uItem.textValue = str2;
+        return uItem;
+    }
+
+    public static UItem asTopView(CharSequence charSequence, CharSequence charSequence2, int i) {
+        UItem uItem = new UItem(2, false);
+        uItem.text = charSequence;
+        uItem.animatedText = charSequence2;
+        uItem.iconResId = i;
         return uItem;
     }
 
@@ -292,15 +309,6 @@ public class UItem extends AdapterWithDiffUtils.Item {
         UItem uItem = new UItem(11, false);
         uItem.include = z;
         uItem.dialogId = j;
-        return uItem;
-    }
-
-    public static UItem asFilterChat(boolean z, CharSequence charSequence, String str, int i) {
-        UItem uItem = new UItem(11, false);
-        uItem.include = z;
-        uItem.text = charSequence;
-        uItem.chatType = str;
-        uItem.flags = i;
         return uItem;
     }
 
@@ -653,7 +661,7 @@ public class UItem extends AdapterWithDiffUtils.Item {
     public boolean itemContentEquals(UItem uItem) {
         int i = this.viewType;
         if (i == uItem.viewType) {
-            if (this.id != uItem.id) {
+            if (this.id != uItem.id || this.enabled != uItem.enabled) {
                 return false;
             }
             if (i != 0 && i != 1) {

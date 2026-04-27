@@ -1009,7 +1009,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                 actionBarPopupWindowLayout.setBackgroundColor(CalendarActivity.this.getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
                 ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(CalendarActivity.this.getParentActivity(), true, false);
                 actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(R.string.JumpToDate), R.drawable.msg_message);
-                actionBarMenuSubItem.setMinimumWidth(NotificationCenter.albumsDidLoad);
+                actionBarMenuSubItem.setMinimumWidth(NotificationCenter.screenshotTook);
                 actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CalendarActivity$MonthView$2$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -1020,7 +1020,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                 if (CalendarActivity.this.canClearHistory) {
                     ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem(CalendarActivity.this.getParentActivity(), false, false);
                     actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString(R.string.SelectThisDay), R.drawable.msg_select);
-                    actionBarMenuSubItem2.setMinimumWidth(NotificationCenter.albumsDidLoad);
+                    actionBarMenuSubItem2.setMinimumWidth(NotificationCenter.screenshotTook);
                     actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CalendarActivity$MonthView$2$$ExternalSyntheticLambda1
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
@@ -1030,7 +1030,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                     actionBarPopupWindowLayout.addView(actionBarMenuSubItem2);
                     ActionBarMenuSubItem actionBarMenuSubItem3 = new ActionBarMenuSubItem(CalendarActivity.this.getParentActivity(), false, true);
                     actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString(R.string.ClearHistory), R.drawable.msg_delete);
-                    actionBarMenuSubItem3.setMinimumWidth(NotificationCenter.albumsDidLoad);
+                    actionBarMenuSubItem3.setMinimumWidth(NotificationCenter.screenshotTook);
                     actionBarMenuSubItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CalendarActivity$MonthView$2$$ExternalSyntheticLambda2
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
@@ -1275,7 +1275,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                             if (messageObject.isVideo()) {
                                 TLRPC.Document document = messageObject.getDocument();
                                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 50);
-                                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.storyDeleted);
+                                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.wallpaperSettedToUser);
                                 if (closestPhotoSizeWithSize == closestPhotoSizeWithSize2) {
                                     closestPhotoSizeWithSize2 = null;
                                 }
@@ -1290,7 +1290,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                                 TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
                                 if ((messageMedia instanceof TLRPC.TL_messageMediaPhoto) && messageMedia.photo != null && !messageObject.photoThumbs.isEmpty()) {
                                     TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, 50);
-                                    TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, NotificationCenter.storyDeleted, z2, closestPhotoSizeWithSize3, z2);
+                                    TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, NotificationCenter.wallpaperSettedToUser, z2, closestPhotoSizeWithSize3, z2);
                                     if (messageObject.mediaExists || DownloadController.getInstance(((BaseFragment) CalendarActivity.this).currentAccount).canDownloadMedia(messageObject)) {
                                         if (closestPhotoSizeWithSize4 == closestPhotoSizeWithSize3) {
                                             closestPhotoSizeWithSize3 = null;
@@ -1847,7 +1847,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
         Canvas canvas = new Canvas(createBitmap);
         canvas.scale(0.16666667f, 0.16666667f);
         this.parentLayout.getView().draw(canvas);
-        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.newEmojiSuggestionsAvailable));
+        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.needDeleteDialog));
         this.blurredView.setBackground(new BitmapDrawable(createBitmap));
         this.blurredView.setAlpha(0.0f);
         this.blurredView.setVisibility(0);

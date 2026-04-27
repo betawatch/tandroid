@@ -113,7 +113,7 @@ public abstract class SelectorSearchCell extends ScrollView {
                     SelectorSearchCell.this.currentDeletingSpan = null;
                 }
                 if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
-                    SelectorSearchCell.this.fullScroll(NotificationCenter.dialogTranslate);
+                    SelectorSearchCell.this.fullScroll(NotificationCenter.dialogIsTranslatable);
                     clearFocus();
                     requestFocus();
                 }
@@ -133,7 +133,7 @@ public abstract class SelectorSearchCell extends ScrollView {
         this.editText.setHandlesColor(Theme.getColor(i, resourcesProvider));
         this.editText.setCursorWidth(1.5f);
         EditTextBoldCursor editTextBoldCursor3 = this.editText;
-        editTextBoldCursor3.setInputType(editTextBoldCursor3.getInputType() | NotificationCenter.liveStoryMessageUpdate);
+        editTextBoldCursor3.setInputType(editTextBoldCursor3.getInputType() | NotificationCenter.liveStoryUpdated);
         this.editText.setSingleLine(true);
         this.editText.setBackgroundDrawable(null);
         this.editText.setVerticalScrollBarEnabled(false);
@@ -269,7 +269,7 @@ public abstract class SelectorSearchCell extends ScrollView {
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
         float scrollY = getScrollY();
-        canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, NotificationCenter.invalidateMotionBackground, 31);
+        canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, NotificationCenter.didReceiveCall, 31);
         super.dispatchDraw(canvas);
         canvas.save();
         float f = this.topGradientAlpha.set(canScrollVertically(-1));
@@ -508,7 +508,7 @@ public abstract class SelectorSearchCell extends ScrollView {
                     SelectorSearchCell.this.editText.bringPointIntoView(SelectorSearchCell.this.editText.getSelectionStart());
                 }
                 if (SelectorSearchCell.this.scroll) {
-                    SelectorSearchCell.this.fullScroll(NotificationCenter.dialogTranslate);
+                    SelectorSearchCell.this.fullScroll(NotificationCenter.dialogIsTranslatable);
                     SelectorSearchCell.this.scroll = false;
                 }
             }
@@ -517,7 +517,7 @@ public abstract class SelectorSearchCell extends ScrollView {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onMeasure$0() {
-            SelectorSearchCell.this.fullScroll(NotificationCenter.dialogTranslate);
+            SelectorSearchCell.this.fullScroll(NotificationCenter.dialogIsTranslatable);
         }
 
         @Override // android.view.ViewGroup, android.view.View
@@ -549,7 +549,7 @@ public abstract class SelectorSearchCell extends ScrollView {
                         SelectorSearchCell.this.updateHeight.run();
                     }
                     if (SelectorSearchCell.this.scroll) {
-                        SelectorSearchCell.this.fullScroll(NotificationCenter.dialogTranslate);
+                        SelectorSearchCell.this.fullScroll(NotificationCenter.dialogIsTranslatable);
                         SelectorSearchCell.this.scroll = false;
                     }
                 }
@@ -595,7 +595,7 @@ public abstract class SelectorSearchCell extends ScrollView {
                             SelectorSearchCell.this.updateHeight.run();
                         }
                         if (SelectorSearchCell.this.scroll) {
-                            SelectorSearchCell.this.fullScroll(NotificationCenter.dialogTranslate);
+                            SelectorSearchCell.this.fullScroll(NotificationCenter.dialogIsTranslatable);
                             SelectorSearchCell.this.scroll = false;
                         }
                     }
@@ -661,7 +661,7 @@ public abstract class SelectorSearchCell extends ScrollView {
                             SelectorSearchCell.this.updateHeight.run();
                         }
                         if (SelectorSearchCell.this.scroll) {
-                            SelectorSearchCell.this.fullScroll(NotificationCenter.dialogTranslate);
+                            SelectorSearchCell.this.fullScroll(NotificationCenter.dialogIsTranslatable);
                             SelectorSearchCell.this.scroll = false;
                         }
                     }

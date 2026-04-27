@@ -54,7 +54,7 @@ import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
 import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EmojiView$$ExternalSyntheticLambda12;
+import org.telegram.ui.Components.EmojiView$$ExternalSyntheticLambda15;
 import org.telegram.ui.Components.ExtendedGridLayoutManager;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RecyclerListView;
@@ -180,7 +180,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         RecyclerListView recyclerListView = this.recyclerListView;
         BottomSheet.ContainerView containerView = this.container;
         Objects.requireNonNull(recyclerListView);
-        this.viewGroupPartRenderer = new ViewGroupPartRenderer(recyclerListView, containerView, new EmojiView$$ExternalSyntheticLambda12(recyclerListView));
+        this.viewGroupPartRenderer = new ViewGroupPartRenderer(recyclerListView, containerView, new EmojiView$$ExternalSyntheticLambda15(recyclerListView));
         ArrayList findAllInstances = TlUtils.findAllInstances(arrayList, TL_stars.starGiftAttributeBackdrop.class);
         this.backdrops = findAllInstances;
         BagRandomizer bagRandomizer = new BagRandomizer(findAllInstances);
@@ -511,11 +511,11 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
                 i4++;
             } else {
                 this.headerView.addView(this.buttonsLayout, LayoutHelper.createFrame(-1, -2.0f, 87, 16.0f, 0.0f, 16.0f, 18.0f));
-                this.containerView.addView(this.headerView, LayoutHelper.createFrame(-1, NotificationCenter.chatSwitchedForum, 55));
+                this.containerView.addView(this.headerView, LayoutHelper.createFrame(-1, NotificationCenter.activityPermissionsGranted, 55));
                 int backgroundColor = getBackgroundColor();
                 View view = new View(context);
                 this.gradientTop = view;
-                view.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{ColorUtils.setAlphaComponent(backgroundColor, NotificationCenter.albumsDidLoad), backgroundColor & 16777215}));
+                view.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{ColorUtils.setAlphaComponent(backgroundColor, NotificationCenter.screenshotTook), backgroundColor & 16777215}));
                 view.setAlpha(0.0f);
                 FrameLayout.LayoutParams createFrame = LayoutHelper.createFrame(-1, 0, 48);
                 createFrame.height = AndroidUtilities.statusBarHeight;
@@ -526,7 +526,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
                 create.setRadius(AndroidUtilities.dp(28.0f));
                 create.setColorProvider(new BlurredBackgroundColorProviderThemed(resourcesProvider, Theme.key_windowBackgroundWhite));
                 this.tabsSelectorView.setBackground(create);
-                this.containerView.addView(this.tabsSelectorView, LayoutHelper.createFrame(NotificationCenter.locationPermissionDenied, 64.0f, 81, 0.0f, 0.0f, 0.0f, 5.0f));
+                this.containerView.addView(this.tabsSelectorView, LayoutHelper.createFrame(NotificationCenter.goingToPreviewTheme, 64.0f, 81, 0.0f, 0.0f, 0.0f, 5.0f));
                 this.selectedAttributes = new Attributes((TL_stars.starGiftAttributeBackdrop) TlUtils.findFirstInstance(arrayList, TL_stars.starGiftAttributeBackdrop.class), (TL_stars.starGiftAttributePattern) TlUtils.findFirstInstance(arrayList, TL_stars.starGiftAttributePattern.class), (TL_stars.starGiftAttributeModel) TlUtils.findFirstInstance(arrayList, TL_stars.starGiftAttributeModel.class));
                 this.adapter.update(false);
                 updateHeaderAttributes(false);
@@ -849,7 +849,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
                 this.percentageView.setTextColor(ColorUtils.blendARGB(ColorUtils.blendARGB(Theme.getColor(i), Theme.getColor(i2), 0.5f), -1, this.isSelected.getFloatValue()));
                 blendARGB = blendARGB2;
             } else {
-                blendARGB = ColorUtils.blendARGB(ColorUtils.setAlphaComponent(this.attributes.backdrop.center_color, NotificationCenter.invalidateMotionBackground), ColorUtils.setAlphaComponent(this.attributes.backdrop.pattern_color, NotificationCenter.invalidateMotionBackground), 0.5f);
+                blendARGB = ColorUtils.blendARGB(ColorUtils.setAlphaComponent(this.attributes.backdrop.center_color, NotificationCenter.didReceiveCall), ColorUtils.setAlphaComponent(this.attributes.backdrop.pattern_color, NotificationCenter.didReceiveCall), 0.5f);
                 this.percentageView.setTextColor(-1);
             }
             if (this.percentageView.getBackground() instanceof ShapeDrawable) {
@@ -1116,7 +1116,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         private void updateLens() {
             float factor = this.animator.getFactor();
             setLensBounds(AndroidUtilities.lerp(AndroidUtilities.dp(8.0f), getMeasuredWidth() - AndroidUtilities.dp(8.0f), factor / 3.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.lerp(AndroidUtilities.dp(8.0f), getMeasuredWidth() - AndroidUtilities.dp(8.0f), (factor + 1.0f) / 3.0f), getMeasuredHeight() - AndroidUtilities.dp(8.0f));
-            MathUtils.clamp((int) ((1.0f - Math.abs(factor - 1.0f)) * 255.0f), 0, NotificationCenter.invalidateMotionBackground);
+            MathUtils.clamp((int) ((1.0f - Math.abs(factor - 1.0f)) * 255.0f), 0, NotificationCenter.didReceiveCall);
         }
 
         @Override // android.view.View

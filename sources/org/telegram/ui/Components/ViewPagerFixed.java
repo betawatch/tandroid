@@ -1628,7 +1628,7 @@ public class ViewPagerFixed extends FrameLayout {
                     int dp = measuredWidth + this.currentTab.titleWidth + AndroidUtilities.dp(6.0f);
                     int measuredHeight = (getMeasuredHeight() - AndroidUtilities.dp(20.0f)) / 2;
                     if (this.currentTab.id == Integer.MAX_VALUE || ((!TabsView.this.isEditing && TabsView.this.editingStartAnimationProgress == 0.0f) || str2 != null)) {
-                        TabsView.this.counterPaint.setAlpha(NotificationCenter.invalidateMotionBackground);
+                        TabsView.this.counterPaint.setAlpha(NotificationCenter.didReceiveCall);
                     } else {
                         TabsView.this.counterPaint.setAlpha((int) (TabsView.this.editingStartAnimationProgress * 255.0f));
                     }
@@ -1816,7 +1816,7 @@ public class ViewPagerFixed extends FrameLayout {
                                 calculateDxToMakeVisible -= AndroidUtilities.dp(60.0f);
                             }
                             int calculateDyToMakeVisible = calculateDyToMakeVisible(view, getVerticalSnapPreference());
-                            int max = Math.max(NotificationCenter.newEmojiSuggestionsAvailable, calculateTimeForDeceleration((int) Math.sqrt((calculateDxToMakeVisible * calculateDxToMakeVisible) + (calculateDyToMakeVisible * calculateDyToMakeVisible))));
+                            int max = Math.max(NotificationCenter.needDeleteDialog, calculateTimeForDeceleration((int) Math.sqrt((calculateDxToMakeVisible * calculateDxToMakeVisible) + (calculateDyToMakeVisible * calculateDyToMakeVisible))));
                             if (max > 0) {
                                 action.update(-calculateDxToMakeVisible, -calculateDyToMakeVisible, max, this.mDecelerateInterpolator);
                             }

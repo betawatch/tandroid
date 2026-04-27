@@ -521,7 +521,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
         int i10 = this.currentType;
         if (i10 == 0) {
             this.imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            this.imageView.setAnimation(R.raw.channel_create, NotificationCenter.channelRecommendationsLoaded, NotificationCenter.channelRecommendationsLoaded);
+            this.imageView.setAnimation(R.raw.channel_create, NotificationCenter.dialogPhotosUpdate, NotificationCenter.dialogPhotosUpdate);
             this.titleTextView.setText(LocaleController.getString(R.string.ChannelAlertTitle));
             this.descriptionText.setText(LocaleController.getString(R.string.ChannelAlertText));
             this.buttonTextView.setText(LocaleController.getString(R.string.ChannelAlertCreate2));
@@ -530,7 +530,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
         } else if (i10 == 3) {
             this.subtitleTextView.setVisibility(0);
             this.imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            this.imageView.setAnimation(R.raw.utyan_change_number, NotificationCenter.channelRecommendationsLoaded, NotificationCenter.channelRecommendationsLoaded);
+            this.imageView.setAnimation(R.raw.utyan_change_number, NotificationCenter.dialogPhotosUpdate, NotificationCenter.dialogPhotosUpdate);
             this.imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -561,14 +561,14 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
         } else if (i10 == 5) {
             int[] iArr = new int[8];
             this.colors = iArr;
-            this.imageView.setAnimation(R.raw.qr_login, NotificationCenter.botForumDraftUpdate, NotificationCenter.botForumDraftUpdate, iArr);
+            this.imageView.setAnimation(R.raw.qr_login, NotificationCenter.translationModelDownloaded, NotificationCenter.translationModelDownloaded, iArr);
             this.imageView.setScaleType(ImageView.ScaleType.CENTER);
             this.titleTextView.setText(LocaleController.getString(R.string.AuthAnotherClient));
             this.buttonTextView.setText(LocaleController.getString(R.string.AuthAnotherClientScan));
             this.imageView.playAnimation();
         } else if (i10 == 6) {
             this.imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            this.imageView.setAnimation(R.raw.utyan_passcode, NotificationCenter.channelRecommendationsLoaded, NotificationCenter.channelRecommendationsLoaded);
+            this.imageView.setAnimation(R.raw.utyan_passcode, NotificationCenter.dialogPhotosUpdate, NotificationCenter.dialogPhotosUpdate);
             this.imageView.setFocusable(false);
             this.imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionIntroActivity$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener

@@ -90,6 +90,7 @@ import org.telegram.ui.Components.MotionBackgroundDrawable;
 import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.chat.ChatActivityDraftMessageMeasureController;
 import org.telegram.ui.GroupCreateActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PrivacyControlActivity;
@@ -384,7 +385,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
             tL_message.message = LocaleController.getString(R.string.PrivacyForwardsMessageLine);
             tL_message.date = currentTimeMillis - 3540;
             tL_message.dialog_id = 1L;
-            tL_message.flags = NotificationCenter.didApplyNewTheme;
+            tL_message.flags = NotificationCenter.didSetNewTheme;
             tL_message.from_id = new TLRPC.TL_peerUser();
             tL_message.id = 1;
             TLRPC.TL_messageFwdHeader tL_messageFwdHeader = new TLRPC.TL_messageFwdHeader();
@@ -722,6 +723,11 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ String getAdminRank(long j) {
                     return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getAdminRank(this, j);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ ChatActivityDraftMessageMeasureController getDraftMessageMeasureController() {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getDraftMessageMeasureController(this);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -2779,7 +2785,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
             if (itemViewType == 9) {
                 SlideIntChooseView slideIntChooseView = (SlideIntChooseView) viewHolder.itemView;
                 if (i == PrivacyControlActivity.this.priceRow) {
-                    slideIntChooseView.set((int) Utilities.clamp(PrivacyControlActivity.this.currentStars, PrivacyControlActivity.this.getMessagesController().starsPaidMessageAmountMax, 1L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{1, 10, 50, 100, NotificationCenter.channelRecommendationsLoaded, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) PrivacyControlActivity.this.getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.PrivacyControlActivity$ListAdapter$$ExternalSyntheticLambda3
+                    slideIntChooseView.set((int) Utilities.clamp(PrivacyControlActivity.this.currentStars, PrivacyControlActivity.this.getMessagesController().starsPaidMessageAmountMax, 1L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{1, 10, 50, 100, NotificationCenter.dialogPhotosUpdate, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) PrivacyControlActivity.this.getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.PrivacyControlActivity$ListAdapter$$ExternalSyntheticLambda3
                         @Override // org.telegram.messenger.Utilities.Callback2Return
                         public final Object run(Object obj, Object obj2) {
                             CharSequence lambda$onBindViewHolder$6;

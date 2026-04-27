@@ -1275,7 +1275,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         RecyclerListView recyclerListView6 = this.gridView;
         ViewGroup viewGroup2 = this.containerView;
         Objects.requireNonNull(recyclerListView6);
-        this.iBlur3Capture = new ViewGroupPartRenderer(recyclerListView6, viewGroup2, new EmojiView$$ExternalSyntheticLambda12(recyclerListView6));
+        this.iBlur3Capture = new ViewGroupPartRenderer(recyclerListView6, viewGroup2, new EmojiView$$ExternalSyntheticLambda15(recyclerListView6));
         this.layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.Components.ShareAlert.13
             @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i10) {
@@ -1440,7 +1440,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             }
         };
         this.bottomFadeView = view;
-        this.containerView.addView(view, LayoutHelper.createFrame(-1, NotificationCenter.onActivityResultReceived, 80));
+        this.containerView.addView(view, LayoutHelper.createFrame(-1, NotificationCenter.onDatabaseOpened, 80));
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, AndroidUtilities.getShadowHeight(), 51);
         layoutParams.topMargin = AndroidUtilities.dp((!this.darkTheme || this.linkToCopy[1] == null) ? 58.0f : 111.0f);
         this.shadow[0] = new View(context);

@@ -329,7 +329,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 SettingsActivity.this.iBlur3SourceGlassFrosted.draw(canvas, rect.left, rect.top + f, rect.right, rect.bottom + f);
                 canvas.restore();
                 int alpha = paint.getAlpha();
-                paint.setAlpha(NotificationCenter.configLoaded);
+                paint.setAlpha(NotificationCenter.appDidLogout);
                 canvas.drawRect(rect, paint);
                 paint.setAlpha(alpha);
             }
@@ -457,7 +457,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             }
         };
         this.actionBarBackground = view;
-        this.contentView.addView(view, LayoutHelper.createFrame(-1, NotificationCenter.channelRecommendationsLoaded, 48));
+        this.contentView.addView(view, LayoutHelper.createFrame(-1, NotificationCenter.dialogPhotosUpdate, 48));
         this.contentView.addView(this.actionBar, LayoutHelper.createFrame(-1, -2, 55));
         ImageUpdater imageUpdater = new ImageUpdater(true, 0, true);
         this.imageUpdater = imageUpdater;
@@ -770,7 +770,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             this.search.fillItems(arrayList);
             return;
         }
-        arrayList.add(UItem.asCustomShadow(this.topView, NotificationCenter.didStartedMultiGiftsSelector));
+        arrayList.add(UItem.asCustomShadow(this.topView, NotificationCenter.giftsToUserSent));
         this.accountNumbers.clear();
         for (int i = 0; i < 4; i++) {
             if (UserConfig.getInstance(i).isClientActivated() && this.currentAccount != i) {
@@ -1350,6 +1350,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
 
     public static class SettingCell extends LinearLayout implements Theme.Colorable {
         private final Background iconBackground;
+        private final FrameLayout iconLayout;
         private final ImageView iconView;
         private final Theme.ResourcesProvider resourcesProvider;
         private final TextView subtitleView;
@@ -1362,12 +1363,15 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             super(context);
             this.resourcesProvider = resourcesProvider;
             setOrientation(0);
-            ImageView imageView = new ImageView(context);
-            this.iconView = imageView;
-            imageView.setScaleType(ImageView.ScaleType.CENTER);
+            FrameLayout frameLayout = new FrameLayout(context);
+            this.iconLayout = frameLayout;
             Background background = new Background();
             this.iconBackground = background;
-            imageView.setBackground(background);
+            frameLayout.setBackground(background);
+            ImageView imageView = new ImageView(context);
+            this.iconView = imageView;
+            imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            frameLayout.addView(imageView, LayoutHelper.createFrame(24, 24, 17));
             LinearLayout linearLayout = new LinearLayout(context);
             this.textLayout = linearLayout;
             linearLayout.setOrientation(1);
@@ -1385,9 +1389,9 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             if (LocaleController.isRTL) {
                 addView(textView3, LayoutHelper.createLinear(-2, -2, 16, 20, 0, 0, 0));
                 addView(linearLayout, LayoutHelper.createLinear(0, -2, 1.0f, 23, 20, 0, 18, 0));
-                addView(imageView, LayoutHelper.createLinear(28, 28, 21, 0, 0, 18, 0));
+                addView(frameLayout, LayoutHelper.createLinear(28, 28, 21, 0, 0, 18, 0));
             } else {
-                addView(imageView, LayoutHelper.createLinear(28, 28, 19, 18, 0, 0, 0));
+                addView(frameLayout, LayoutHelper.createLinear(28, 28, 19, 18, 0, 0, 0));
                 addView(linearLayout, LayoutHelper.createLinear(0, -2, 1.0f, 23, 18, 0, 20, 0));
                 addView(textView3, LayoutHelper.createLinear(-2, -2, 16, 0, 0, 20, 0));
             }
@@ -1405,7 +1409,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         }
 
         public void set(int i, int i2, int i3, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3) {
-            this.iconView.setVisibility(i3 != 0 ? 0 : 8);
+            this.iconLayout.setVisibility(i3 != 0 ? 0 : 8);
             this.titleView.setTranslationX(i3 == 0 ? AndroidUtilities.dp(2.0f) : 0.0f);
             this.subtitleView.setTranslationX(i3 == 0 ? AndroidUtilities.dp(2.0f) : 0.0f);
             this.iconBackground.setColor(i, i2);
@@ -1746,7 +1750,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         if (i == 6) {
             getMessagesStorage().clearSentMedia();
             SharedConfig.setNoSoundHintShowed(false);
-            MessagesController.getGlobalMainSettings().edit().remove("archivehint").remove("proximityhint").remove("archivehint_l").remove("searchpostsnew").remove("speedhint").remove("gifhint").remove("reminderhint").remove("soundHint").remove("themehint").remove("bganimationhint").remove("filterhint").remove("n_0").remove("storyprvhint").remove("storyhint").remove("storyhint2").remove("storydualhint").remove("storysvddualhint").remove("stories_camera").remove("dualcam").remove("dualmatrix").remove("dual_available").remove("archivehint").remove("askNotificationsAfter").remove("askNotificationsDuration").remove("viewoncehint").remove("voicepausehint").remove("taptostorysoundhint").remove("nothanos").remove("voiceoncehint").remove("savedhint").remove("savedsearchhint").remove("savedsearchtaghint").remove("groupEmojiPackHintShown").remove("newppsms").remove("monetizationadshint").remove("seekSpeedHintShowed").remove("unsupport_video/av01").remove("statusgiftpage").remove("multistorieshint").remove("trimvoicehint").remove("taptostoryhighlighthint").remove("proxycheckstatusip").remove("callmiconstart").remove("showchattagsinfo").remove("language_showed2").remove("aihintshown").remove("savedmsgschatshint").apply();
+            MessagesController.getGlobalMainSettings().edit().remove("archivehint").remove("proximityhint").remove("archivehint_l").remove("searchpostsnew").remove("speedhint").remove("gifhint").remove("reminderhint").remove("soundHint").remove("themehint").remove("bganimationhint").remove("filterhint").remove("n_0").remove("storyprvhint").remove("storyhint").remove("storyhint2").remove("storydualhint").remove("storysvddualhint").remove("stories_camera").remove("dualcam").remove("dualmatrix").remove("dual_available").remove("archivehint").remove("askNotificationsAfter").remove("askNotificationsDuration").remove("viewoncehint").remove("voicepausehint").remove("taptostorysoundhint").remove("nothanos").remove("voiceoncehint").remove("savedhint").remove("savedsearchhint").remove("savedsearchtaghint").remove("newppsms").remove("monetizationadshint").remove("seekSpeedHintShowed").remove("unsupport_video/av01").remove("statusgiftpage").remove("multistorieshint").remove("trimvoicehint").remove("taptostoryhighlighthint").remove("proxycheckstatusip").remove("callmiconstart").remove("showchattagsinfo").remove("language_showed2").remove("aihintshown").remove("savedmsgschatshint").apply();
             HintsController.resetAll();
             MessagesController.getEmojiSettings(this.currentAccount).edit().remove("featured_hidden").remove("emoji_featured_hidden").commit();
             MessagesController.getGlobalNotificationsSettings().edit().remove("disable_sharing_learn").remove("askedAboutFSILockscreen").apply();

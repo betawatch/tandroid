@@ -926,7 +926,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         this.descriptionTextView.setEnabled(this.currentUser != null || ChatObject.canChangeChatInfo(this.currentChat));
         EditTextBoldCursor editTextBoldCursor3 = this.descriptionTextView;
         editTextBoldCursor3.setFocusable(editTextBoldCursor3.isEnabled());
-        this.descriptionTextView.setFilters(new InputFilter[]{new InputFilter.LengthFilter(NotificationCenter.invalidateMotionBackground)});
+        this.descriptionTextView.setFilters(new InputFilter[]{new InputFilter.LengthFilter(NotificationCenter.didReceiveCall)});
         this.descriptionTextView.setHint(LocaleController.getString("DescriptionOptionalPlaceholder", R.string.DescriptionOptionalPlaceholder));
         this.descriptionTextView.setCursorColor(Theme.getColor(i6));
         this.descriptionTextView.setCursorSize(AndroidUtilities.dp(20.0f));
@@ -3314,7 +3314,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                         TextCell textCell28 = this.logCell;
                         textCell27.setTextAndValueAndIcon(string8, format3, i11, textCell28 != null && textCell28.getVisibility() == 0);
                     } else {
-                        int i12 = this.forum ? 15 : 14;
+                        int i12 = this.forum ? 16 : 15;
                         TLRPC.TL_chatBannedRights tL_chatBannedRights = chat3.default_banned_rights;
                         if (tL_chatBannedRights != null) {
                             int i13 = !tL_chatBannedRights.send_plain ? 1 : 0;

@@ -149,7 +149,7 @@ public final class Tx3gDecoder extends SimpleSubtitleDecoder {
 
     private static void attachColor(SpannableStringBuilder spannableStringBuilder, int i, int i2, int i3, int i4, int i5) {
         if (i != i2) {
-            spannableStringBuilder.setSpan(new ForegroundColorSpan((i >>> 8) | ((i & NotificationCenter.invalidateMotionBackground) << 24)), i3, i4, i5 | 33);
+            spannableStringBuilder.setSpan(new ForegroundColorSpan((i >>> 8) | ((i & NotificationCenter.didReceiveCall) << 24)), i3, i4, i5 | 33);
         }
     }
 

@@ -1117,7 +1117,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             }
             float f3 = this.duration;
             if (f3 == 0.0f || this.time >= f3) {
-                this.duration = Utilities.random.nextInt(NotificationCenter.channelRecommendationsLoaded) + 1500;
+                this.duration = Utilities.random.nextInt(NotificationCenter.dialogPhotosUpdate) + 1500;
                 this.time = 0.0f;
                 if (this.targetX == -1.0f) {
                     setTarget();
@@ -1188,7 +1188,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
         this.drawingForBlur = true;
         this.containerView.draw(canvas);
         this.drawingForBlur = false;
-        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.newEmojiSuggestionsAvailable));
+        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.needDeleteDialog));
         this.blurredView.setBackground(new BitmapDrawable(createBitmap));
         this.blurredView.setAlpha(0.0f);
         this.blurredView.setVisibility(0);
@@ -3372,7 +3372,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                             this.lastUpdateTime = elapsedRealtime;
                             f2 = this.duration;
                             if (f2 != 0.0f || this.time >= f2) {
-                                this.duration = Utilities.random.nextInt(NotificationCenter.channelRecommendationsLoaded) + 1500;
+                                this.duration = Utilities.random.nextInt(NotificationCenter.dialogPhotosUpdate) + 1500;
                                 this.time = 0.0f;
                                 if (this.targetX == -1.0f) {
                                     setTarget();
@@ -3405,7 +3405,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                         f2 = this.duration;
                         if (f2 != 0.0f) {
                         }
-                        this.duration = Utilities.random.nextInt(NotificationCenter.channelRecommendationsLoaded) + 1500;
+                        this.duration = Utilities.random.nextInt(NotificationCenter.dialogPhotosUpdate) + 1500;
                         this.time = 0.0f;
                         if (this.targetX == -1.0f) {
                         }
@@ -3980,7 +3980,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                                         }
                                         if (GroupCallActivity.isLandscapeMode) {
                                             if (i12 == 0) {
-                                                GroupCallActivity.this.paint.setAlpha(NotificationCenter.invalidateMotionBackground);
+                                                GroupCallActivity.this.paint.setAlpha(NotificationCenter.didReceiveCall);
                                             } else {
                                                 GroupCallActivity.this.paint.setAlpha((int) (f * 255.0f));
                                             }
@@ -4115,7 +4115,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                                 GroupCallActivity.this.tinyWaveDrawable.draw(x3, y3, canvas, GroupCallActivity.this.paint);
                                 canvas.restore();
                             }
-                            GroupCallActivity.this.paint.setAlpha(NotificationCenter.invalidateMotionBackground);
+                            GroupCallActivity.this.paint.setAlpha(NotificationCenter.didReceiveCall);
                             if (z2) {
                                 canvas.drawCircle(x3, y3, AndroidUtilities.dp(25.909092f), GroupCallActivity.this.paint);
                                 GroupCallActivity.this.paint.setColor(Theme.getColor(Theme.key_voipgroup_connectingProgress));
@@ -4463,7 +4463,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
         }
         AccountSelectCell accountSelectCell = new AccountSelectCell(activity, true);
         this.accountSelectCell = accountSelectCell;
-        accountSelectCell.setTag(R.id.fit_width_tag, Integer.valueOf(NotificationCenter.appConfigUpdated));
+        accountSelectCell.setTag(R.id.fit_width_tag, Integer.valueOf(NotificationCenter.commonChatsLoaded));
         this.otherItem.addSubItem(8, accountSelectCell, -2, AndroidUtilities.dp(48.0f));
         this.otherItem.setShowSubmenuByMove(false);
         int i14 = Theme.key_voipgroup_listSelector;
@@ -5240,7 +5240,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             calendar.setTimeInMillis(currentTimeMillis);
             final int i19 = calendar.get(1);
             int i20 = calendar.get(6);
-            this.scheduleTimerContainer.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.suggestedLangpack, 0.5f));
+            this.scheduleTimerContainer.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.locationPermissionDenied, 0.5f));
             numberPicker.setMinValue(0);
             numberPicker.setMaxValue(365);
             numberPicker.setWrapSelectorWheel(false);
@@ -5261,7 +5261,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             numberPicker.setOnValueChangedListener(onValueChangeListener);
             numberPicker2.setMinValue(0);
             numberPicker2.setMaxValue(23);
-            this.scheduleTimerContainer.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.suggestedLangpack, 0.2f));
+            this.scheduleTimerContainer.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.locationPermissionDenied, 0.2f));
             numberPicker2.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.GroupCallActivity$$ExternalSyntheticLambda23
                 @Override // org.telegram.ui.Components.NumberPicker.Formatter
                 public final String format(int i21) {
@@ -5282,7 +5282,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                     return lambda$new$49;
                 }
             });
-            this.scheduleTimerContainer.addView(numberPicker3, LayoutHelper.createLinear(0, NotificationCenter.suggestedLangpack, 0.3f));
+            this.scheduleTimerContainer.addView(numberPicker3, LayoutHelper.createLinear(0, NotificationCenter.locationPermissionDenied, 0.3f));
             numberPicker3.setOnValueChangedListener(onValueChangeListener);
             calendar.setTimeInMillis(currentTimeMillis + 10800000);
             calendar.set(12, 0);
@@ -5353,7 +5353,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
         updateSubtitle();
         FrameLayout frameLayout4 = new FrameLayout(activity);
         this.bulletinContainer = frameLayout4;
-        this.containerView.addView(frameLayout4, LayoutHelper.createFrame(-1, NotificationCenter.channelRecommendationsLoaded, 87));
+        this.containerView.addView(frameLayout4, LayoutHelper.createFrame(-1, NotificationCenter.dialogPhotosUpdate, 87));
         this.messageButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.GroupCallActivity$$ExternalSyntheticLambda26
             @Override // android.view.View.OnClickListener
             public final void onClick(View view6) {
@@ -6592,9 +6592,9 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                 int nextInt = Utilities.random.nextInt(100);
                 int i2 = 120;
                 if (nextInt >= 32) {
-                    i = NotificationCenter.appConfigUpdated;
+                    i = NotificationCenter.commonChatsLoaded;
                     if (nextInt < 64) {
-                        i2 = NotificationCenter.appConfigUpdated;
+                        i2 = NotificationCenter.commonChatsLoaded;
                         i = 120;
                     } else {
                         i2 = 420;
@@ -8636,7 +8636,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
         }
         if (i == 7) {
             string3 = LocaleController.getString(R.string.VoipGroupCancelReminderShort);
-            customEndFrame5 = this.bigMicDrawable.setCustomEndFrame(NotificationCenter.savedReactionTagsUpdate);
+            customEndFrame5 = this.bigMicDrawable.setCustomEndFrame(NotificationCenter.savedMessagesDialogsUpdate);
         } else if (i == 6) {
             string3 = LocaleController.getString(R.string.VoipGroupSetReminderShort);
             customEndFrame5 = this.bigMicDrawable.setCustomEndFrame(344);
@@ -8682,7 +8682,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                                     } else if (i == 7) {
                                         this.bigMicDrawable.setCurrentFrame(173);
                                     } else if (i == 6) {
-                                        this.bigMicDrawable.setCurrentFrame(NotificationCenter.requestPermissions);
+                                        this.bigMicDrawable.setCurrentFrame(NotificationCenter.premiumStickersPreviewLoaded);
                                     } else if (i == 0) {
                                         int i3 = this.muteButtonState;
                                         if (i3 == 5) {
@@ -8690,7 +8690,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                                         } else if (i3 == 7) {
                                             this.bigMicDrawable.setCurrentFrame(344);
                                         } else if (i3 == 6) {
-                                            this.bigMicDrawable.setCurrentFrame(NotificationCenter.savedReactionTagsUpdate);
+                                            this.bigMicDrawable.setCurrentFrame(NotificationCenter.savedMessagesDialogsUpdate);
                                         } else if (i3 == 2) {
                                             this.bigMicDrawable.setCurrentFrame(0);
                                         } else {
@@ -8703,11 +8703,11 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                                     } else if (z2) {
                                         int i4 = this.muteButtonState;
                                         if (i4 == 7) {
-                                            this.bigMicDrawable.setCurrentFrame(NotificationCenter.proxyChangedByRotation);
+                                            this.bigMicDrawable.setCurrentFrame(NotificationCenter.proxySettingsChanged);
                                         } else if (i4 == 6) {
-                                            this.bigMicDrawable.setCurrentFrame(NotificationCenter.adminedChannelsLoaded);
+                                            this.bigMicDrawable.setCurrentFrame(NotificationCenter.channelConnectedBotsUpdate);
                                         } else if (i4 == 1) {
-                                            this.bigMicDrawable.setCurrentFrame(NotificationCenter.didUpdateConnectionState);
+                                            this.bigMicDrawable.setCurrentFrame(NotificationCenter.httpFileDidFailedLoad);
                                         } else {
                                             this.bigMicDrawable.setCurrentFrame(99);
                                         }
@@ -8718,7 +8718,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                                         } else if (i5 == 7) {
                                             this.bigMicDrawable.setCurrentFrame(344);
                                         } else if (i5 == 6) {
-                                            this.bigMicDrawable.setCurrentFrame(NotificationCenter.savedReactionTagsUpdate);
+                                            this.bigMicDrawable.setCurrentFrame(NotificationCenter.savedMessagesDialogsUpdate);
                                         } else if (i5 == 2 || i5 == 4) {
                                             this.bigMicDrawable.setCurrentFrame(0);
                                         } else {
@@ -8758,7 +8758,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                     } else if (i2 == 7) {
                         customEndFrame3 = this.bigMicDrawable.setCustomEndFrame(376);
                     } else if (i2 == 6) {
-                        customEndFrame3 = this.bigMicDrawable.setCustomEndFrame(NotificationCenter.adminedChannelsLoaded);
+                        customEndFrame3 = this.bigMicDrawable.setCustomEndFrame(NotificationCenter.channelConnectedBotsUpdate);
                     } else if (i2 == 2) {
                         customEndFrame3 = this.bigMicDrawable.setCustomEndFrame(36);
                     } else {
@@ -8773,20 +8773,20 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                 } else if (i == 4) {
                     string3 = LocaleController.getString(R.string.VoipMutedTapedForSpeakShort);
                     string4 = LocaleController.getString(R.string.VoipMutedTapedForSpeakInfo);
-                    customEndFrame3 = this.bigMicDrawable.setCustomEndFrame(NotificationCenter.didUpdateConnectionState);
+                    customEndFrame3 = this.bigMicDrawable.setCustomEndFrame(NotificationCenter.httpFileDidFailedLoad);
                 } else {
                     TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) this.call.participants.get(MessageObject.getPeerId(this.selfPeer));
                     boolean z5 = (groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || canManageCall()) ? false : true;
                     if (z5) {
                         int i6 = this.muteButtonState;
                         if (i6 == 7) {
-                            customEndFrame2 = this.bigMicDrawable.setCustomEndFrame(NotificationCenter.requestPermissions);
+                            customEndFrame2 = this.bigMicDrawable.setCustomEndFrame(NotificationCenter.premiumStickersPreviewLoaded);
                         } else if (i6 == 6) {
-                            customEndFrame2 = this.bigMicDrawable.setCustomEndFrame(NotificationCenter.proxyChangedByRotation);
+                            customEndFrame2 = this.bigMicDrawable.setCustomEndFrame(NotificationCenter.proxySettingsChanged);
                         } else if (i6 == 1) {
                             customEndFrame2 = this.bigMicDrawable.setCustomEndFrame(173);
                         } else {
-                            customEndFrame2 = this.bigMicDrawable.setCustomEndFrame(NotificationCenter.didUpdateConnectionState);
+                            customEndFrame2 = this.bigMicDrawable.setCustomEndFrame(NotificationCenter.httpFileDidFailedLoad);
                         }
                     } else {
                         int i7 = this.muteButtonState;
@@ -8836,7 +8836,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                                 }
                                 updateMuteButtonState(z);
                             }
-                            customEndFrame2 = this.bigMicDrawable.setCustomEndFrame(NotificationCenter.adminedChannelsLoaded);
+                            customEndFrame2 = this.bigMicDrawable.setCustomEndFrame(NotificationCenter.channelConnectedBotsUpdate);
                         }
                     }
                     customEndFrame = customEndFrame2;
@@ -9863,7 +9863,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
         };
         groupCallActivity.scrimPopupWindow = actionBarPopupWindow2;
         actionBarPopupWindow2.setPauseNotifications(true);
-        groupCallActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+        groupCallActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starGiveawayOptionsLoaded);
         groupCallActivity.scrimPopupWindow.setOutsideTouchable(true);
         groupCallActivity.scrimPopupWindow.setClippingEnabled(true);
         groupCallActivity.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
@@ -11328,7 +11328,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             boolean z2 = false;
             if (iArr2 == null || iArr[0] != iArr2[0] || iArr[1] != iArr2[1]) {
                 if (iArr2 == null) {
-                    this.paint.setAlpha(NotificationCenter.invalidateMotionBackground);
+                    this.paint.setAlpha(NotificationCenter.didReceiveCall);
                 }
                 this.currentColors = iArr;
                 if (GroupCallActivity.this.liveLabelBgColorAnimator != null && GroupCallActivity.this.textureLightningViewAnimatingAlpha != 1.0f) {
@@ -11520,7 +11520,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             float f2 = -dp;
             this.rectF.inset(f2, f2);
             RectF rectF2 = this.rectF;
-            canvas.saveLayerAlpha(rectF2.left, rectF2.top, rectF2.right, rectF2.bottom, NotificationCenter.invalidateMotionBackground, 31);
+            canvas.saveLayerAlpha(rectF2.left, rectF2.top, rectF2.right, rectF2.bottom, NotificationCenter.didReceiveCall, 31);
             long currentTimeMillis = System.currentTimeMillis() + (this.offset * 45);
             long j = currentTimeMillis - this.startTime;
             float f3 = j / 180.0f;
@@ -11536,7 +11536,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                     canvas.translate(rectF3.left, rectF3.top);
                     this.realThumb.setAlpha((int) ((1.0f - f) * 255.0f));
                     this.realThumb.draw(canvas);
-                    this.realThumb.setAlpha(NotificationCenter.invalidateMotionBackground);
+                    this.realThumb.setAlpha(NotificationCenter.didReceiveCall);
                     canvas.restore();
                 }
                 if (f > 0.0f) {
@@ -11547,7 +11547,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                     canvas.translate(rectF4.left, rectF4.top);
                     this.real.setAlpha((int) (255.0f * f));
                     this.real.draw(canvas);
-                    this.real.setAlpha(NotificationCenter.invalidateMotionBackground);
+                    this.real.setAlpha(NotificationCenter.didReceiveCall);
                     canvas.restore();
                 }
             } else {
@@ -11557,9 +11557,9 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                 RectF rectF5 = this.rectF;
                 canvas.translate(rectF5.left, rectF5.top);
                 this.pool[1].setBounds(0, 0, (int) this.rectF.width(), (int) this.rectF.height());
-                this.pool[1].setAlpha(NotificationCenter.messageTranslated);
+                this.pool[1].setAlpha(NotificationCenter.needDeleteBusinessLink);
                 this.pool[1].draw(canvas);
-                this.pool[1].setAlpha(NotificationCenter.invalidateMotionBackground);
+                this.pool[1].setAlpha(NotificationCenter.didReceiveCall);
                 canvas.restore();
             }
             this.rectF.set(rectF);
@@ -11568,9 +11568,9 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             RectF rectF6 = this.rectF;
             canvas.translate(rectF6.left, rectF6.top);
             this.pool[0].setBounds(0, 0, (int) this.rectF.width(), (int) this.rectF.height());
-            this.pool[0].setAlpha(NotificationCenter.messageTranslated);
+            this.pool[0].setAlpha(NotificationCenter.needDeleteBusinessLink);
             this.pool[0].draw(canvas);
-            this.pool[0].setAlpha(NotificationCenter.invalidateMotionBackground);
+            this.pool[0].setAlpha(NotificationCenter.didReceiveCall);
             canvas.restore();
             if (f3 >= 1.0f) {
                 if (this.loaded && this.realAllowed) {

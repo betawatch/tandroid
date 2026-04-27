@@ -57,7 +57,7 @@ public class VectorAvatarThumbDrawable extends Drawable implements AnimatedEmoji
         this.currentAccount = UserConfig.selectedAccount;
         this.type = i;
         this.isPremium = z;
-        gradientTools.setColors(ColorUtils.setAlphaComponent(videoSize.background_colors.get(0).intValue(), NotificationCenter.invalidateMotionBackground), videoSize.background_colors.size() > 1 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(1).intValue(), NotificationCenter.invalidateMotionBackground) : 0, videoSize.background_colors.size() > 2 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(2).intValue(), NotificationCenter.invalidateMotionBackground) : 0, videoSize.background_colors.size() > 3 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(3).intValue(), NotificationCenter.invalidateMotionBackground) : 0);
+        gradientTools.setColors(ColorUtils.setAlphaComponent(videoSize.background_colors.get(0).intValue(), NotificationCenter.didReceiveCall), videoSize.background_colors.size() > 1 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(1).intValue(), NotificationCenter.didReceiveCall) : 0, videoSize.background_colors.size() > 2 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(2).intValue(), NotificationCenter.didReceiveCall) : 0, videoSize.background_colors.size() > 3 ? ColorUtils.setAlphaComponent(videoSize.background_colors.get(3).intValue(), NotificationCenter.didReceiveCall) : 0);
         if (videoSize instanceof TLRPC.TL_videoSizeEmojiMarkup) {
             AnimatedEmojiDrawable animatedEmojiDrawable = new AnimatedEmojiDrawable((i == 1 && z) ? 7 : i == 2 ? 15 : 8, UserConfig.selectedAccount, ((TLRPC.TL_videoSizeEmojiMarkup) videoSize).emoji_id);
             this.animatedEmojiDrawable = animatedEmojiDrawable;
@@ -67,7 +67,7 @@ public class VectorAvatarThumbDrawable extends Drawable implements AnimatedEmoji
         if (videoSize instanceof TLRPC.TL_videoSizeStickerMarkup) {
             this.sizeStickerMarkup = (TLRPC.TL_videoSizeStickerMarkup) videoSize;
             ImageReceiver imageReceiver = new ImageReceiver() { // from class: org.telegram.ui.Components.VectorAvatarThumbDrawable.1
-                @Override // org.telegram.messenger.ImageReceiver
+                @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.AnimatedEmojiSpan.InvalidateHolder
                 public void invalidate() {
                     VectorAvatarThumbDrawable.this.invalidate();
                 }

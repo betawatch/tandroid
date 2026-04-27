@@ -64,11 +64,11 @@ public final class zzb {
         zze();
         this.zzc = uri;
         if (this.zzb.getWidthInPixels() == 0 || this.zzb.getHeightInPixels() == 0) {
-            this.zzd = new zzf(this.zza, 0, 0, false, 2097152L, 5, NotificationCenter.botForumTopicDidCreate, 10000, this);
+            this.zzd = new zzf(this.zza, 0, 0, false, 2097152L, 5, NotificationCenter.translationModelDownloading, 10000, this);
         } else {
             Context context = this.zza;
             ImageHints imageHints = this.zzb;
-            this.zzd = new zzf(context, imageHints.getWidthInPixels(), imageHints.getHeightInPixels(), false, 2097152L, 5, NotificationCenter.botForumTopicDidCreate, 10000, this);
+            this.zzd = new zzf(context, imageHints.getWidthInPixels(), imageHints.getHeightInPixels(), false, 2097152L, 5, NotificationCenter.translationModelDownloading, 10000, this);
         }
         ((zzf) Preconditions.checkNotNull(this.zzd)).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, (Uri) Preconditions.checkNotNull(this.zzc));
         return false;

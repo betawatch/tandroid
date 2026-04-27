@@ -632,7 +632,7 @@ final class zzhu implements ObjectEncoder {
         zzbt = builder123.withProperty(zzbzVar123.zzb()).build();
         FieldDescriptor.Builder builder124 = FieldDescriptor.builder("aggregatedOnDeviceSubjectSegmentationLogEvent");
         zzbz zzbzVar124 = new zzbz();
-        zzbzVar124.zza(NotificationCenter.messageTranslated);
+        zzbzVar124.zza(NotificationCenter.needDeleteBusinessLink);
         zzbu = builder124.withProperty(zzbzVar124.zzb()).build();
         FieldDescriptor.Builder builder125 = FieldDescriptor.builder("subjectSegmentationOptionalModuleLogEvent");
         zzbz zzbzVar125 = new zzbz();
@@ -640,15 +640,15 @@ final class zzhu implements ObjectEncoder {
         zzbv = builder125.withProperty(zzbzVar125.zzb()).build();
         FieldDescriptor.Builder builder126 = FieldDescriptor.builder("documentScannerUiModuleScreenViewEvent");
         zzbz zzbzVar126 = new zzbz();
-        zzbzVar126.zza(NotificationCenter.dialogIsTranslatable);
+        zzbzVar126.zza(NotificationCenter.messageTranslating);
         zzbw = builder126.withProperty(zzbzVar126.zzb()).build();
         FieldDescriptor.Builder builder127 = FieldDescriptor.builder("documentScannerUiModuleScreenClickEvent");
         zzbz zzbzVar127 = new zzbz();
-        zzbzVar127.zza(NotificationCenter.dialogTranslate);
+        zzbzVar127.zza(NotificationCenter.dialogIsTranslatable);
         zzbx = builder127.withProperty(zzbzVar127.zzb()).build();
         FieldDescriptor.Builder builder128 = FieldDescriptor.builder("documentScannerUiModuleScreenErrorEvent");
         zzbz zzbzVar128 = new zzbz();
-        zzbzVar128.zza(NotificationCenter.didGenerateFingerprintKeyPair);
+        zzbzVar128.zza(NotificationCenter.dialogTranslate);
         zzby = builder128.withProperty(zzbzVar128.zzb()).build();
     }
 

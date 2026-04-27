@@ -104,6 +104,11 @@ public class GroupCallMessageCell extends ViewGroup implements ClickHelper.Deleg
     }
 
     @Override // me.vkryl.android.util.ClickHelper.Delegate
+    public /* synthetic */ boolean needCancelTouchBySlopMove() {
+        return ClickHelper.Delegate.-CC.$default$needCancelTouchBySlopMove(this);
+    }
+
+    @Override // me.vkryl.android.util.ClickHelper.Delegate
     public /* synthetic */ boolean needLongPress(float f, float f2) {
         return ClickHelper.Delegate.-CC.$default$needLongPress(this, f, f2);
     }

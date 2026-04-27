@@ -413,7 +413,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
     public boolean executeKeyEvent(KeyEvent keyEvent) {
         this.mTempRect.setEmpty();
         boolean canScroll = canScroll();
-        int i = NotificationCenter.dialogTranslate;
+        int i = NotificationCenter.dialogIsTranslatable;
         if (!canScroll) {
             if (!isFocused() || keyEvent.getKeyCode() == 4) {
                 return false;
@@ -422,8 +422,8 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
             if (findFocus == this) {
                 findFocus = null;
             }
-            View findNextFocus = FocusFinder.getInstance().findNextFocus(this, findFocus, NotificationCenter.dialogTranslate);
-            return (findNextFocus == null || findNextFocus == this || !findNextFocus.requestFocus(NotificationCenter.dialogTranslate)) ? false : true;
+            View findNextFocus = FocusFinder.getInstance().findNextFocus(this, findFocus, NotificationCenter.dialogIsTranslatable);
+            return (findNextFocus == null || findNextFocus == this || !findNextFocus.requestFocus(NotificationCenter.dialogIsTranslatable)) ? false : true;
         }
         if (keyEvent.getAction() != 0) {
             return false;
@@ -437,9 +437,9 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
         }
         if (keyCode == 20) {
             if (keyEvent.isAltPressed()) {
-                return fullScroll(NotificationCenter.dialogTranslate);
+                return fullScroll(NotificationCenter.dialogIsTranslatable);
             }
-            return arrowScroll(NotificationCenter.dialogTranslate);
+            return arrowScroll(NotificationCenter.dialogIsTranslatable);
         }
         if (keyCode == 62) {
             if (keyEvent.isShiftPressed()) {
@@ -452,7 +452,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
             return fullScroll(33);
         }
         if (keyCode == 93) {
-            return fullScroll(NotificationCenter.dialogTranslate);
+            return fullScroll(NotificationCenter.dialogIsTranslatable);
         }
         if (keyCode == 122) {
             pageScroll(33);
@@ -461,7 +461,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
         if (keyCode != 123) {
             return false;
         }
-        pageScroll(NotificationCenter.dialogTranslate);
+        pageScroll(NotificationCenter.dialogIsTranslatable);
         return false;
     }
 
@@ -512,7 +512,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
         if (action == 2 && this.mIsBeingDragged) {
             return true;
         }
-        int i = action & NotificationCenter.invalidateMotionBackground;
+        int i = action & NotificationCenter.didReceiveCall;
         if (i == 0) {
             int y = (int) motionEvent.getY();
             if (!inChild((int) motionEvent.getX(), y)) {
@@ -1363,7 +1363,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
     protected boolean onRequestFocusInDescendants(int i, Rect rect) {
         View findNextFocusFromRect;
         if (i == 2) {
-            i = NotificationCenter.dialogTranslate;
+            i = NotificationCenter.dialogIsTranslatable;
         } else if (i == 1) {
             i = 33;
         }

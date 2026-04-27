@@ -44,7 +44,7 @@ abstract class zzfg {
             } else if (charAt3 < 2048) {
                 int i3 = position + 1;
                 try {
-                    byteBuffer.put(position, (byte) ((charAt3 >>> 6) | NotificationCenter.didUpdateTonGiftStickers));
+                    byteBuffer.put(position, (byte) ((charAt3 >>> 6) | NotificationCenter.didUpdatePremiumGiftStickers));
                     byteBuffer.put(i3, (byte) ((charAt3 & '?') | 128));
                     position = i3;
                 } catch (IndexOutOfBoundsException unused2) {
@@ -68,7 +68,7 @@ abstract class zzfg {
                                 int codePoint = Character.toCodePoint(charAt3, charAt4);
                                 int i5 = position + 1;
                                 try {
-                                    byteBuffer.put(position, (byte) ((codePoint >>> 18) | NotificationCenter.appConfigUpdated));
+                                    byteBuffer.put(position, (byte) ((codePoint >>> 18) | NotificationCenter.commonChatsLoaded));
                                     i = position + 2;
                                 } catch (IndexOutOfBoundsException unused3) {
                                     position = i5;
@@ -109,7 +109,7 @@ abstract class zzfg {
                     throw new zzfi(i2, length);
                 }
                 int i6 = position + 1;
-                byteBuffer.put(position, (byte) ((charAt3 >>> '\f') | 224));
+                byteBuffer.put(position, (byte) ((charAt3 >>> '\f') | NotificationCenter.factCheckLoaded));
                 position += 2;
                 byteBuffer.put(i6, (byte) (((charAt3 >>> 6) & 63) | 128));
                 byteBuffer.put(position, (byte) ((charAt3 & '?') | 128));

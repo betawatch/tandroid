@@ -282,7 +282,7 @@ public class ActiveGiftAuctionsHintCell extends FrameLayout implements GiftAucti
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(LayoutHelper.measureSpecExactlyDp(NotificationCenter.didEndCall), LayoutHelper.measureSpecExactlyDp(28));
+            super.onMeasure(LayoutHelper.measureSpecExactlyDp(NotificationCenter.groupCallTypingsUpdated), LayoutHelper.measureSpecExactlyDp(28));
         }
     }
 }

@@ -1,5 +1,6 @@
 package org.telegram.ui.Business;
 
+import android.text.TextUtils;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
@@ -14,6 +15,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.Components.UItem;
+import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.UsersSelectActivity;
 
@@ -282,69 +284,95 @@ public class BusinessRecipientsHelper {
         this.exclude = z;
     }
 
-    public void fillItems(ArrayList arrayList) {
-        boolean z;
+    public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
+        fillItems(arrayList, universalAdapter, true);
+    }
+
+    public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter, boolean z) {
+        String str;
+        String str2;
+        universalAdapter.whiteSectionStart();
         int flags = getFlags();
+        String str3 = "";
         if (!this.exclude) {
-            arrayList.add(UItem.asHeader(LocaleController.getString(R.string.BusinessChatsIncluded)));
-            arrayList.add(UItem.asButton(101, R.drawable.msg2_chats_add, LocaleController.getString(R.string.BusinessChatsIncludedAdd)).accent());
             if ((flags & 1) != 0) {
-                arrayList.add(UItem.asFilterChat(true, LocaleController.getString(R.string.FilterExistingChats), "existing_chats", 1));
+                if (TextUtils.isEmpty("")) {
+                    str2 = "";
+                } else {
+                    str2 = ", ";
+                }
+                str = str2 + LocaleController.getString(R.string.FilterExistingChats);
+            } else {
+                str = "";
             }
             if ((flags & 2) != 0) {
-                arrayList.add(UItem.asFilterChat(true, LocaleController.getString(R.string.FilterNewChats), "new_chats", 2));
+                if (!TextUtils.isEmpty(str)) {
+                    str = str + ", ";
+                }
+                str = str + LocaleController.getString(R.string.FilterNewChats);
             }
             if ((flags & 4) != 0) {
-                arrayList.add(UItem.asFilterChat(true, LocaleController.getString(R.string.FilterContacts), "contacts", 4));
+                if (!TextUtils.isEmpty(str)) {
+                    str = str + ", ";
+                }
+                str = str + LocaleController.getString(R.string.FilterContacts);
             }
             if ((flags & 8) != 0) {
-                arrayList.add(UItem.asFilterChat(true, LocaleController.getString(R.string.FilterNonContacts), "non_contacts", 8));
+                if (!TextUtils.isEmpty(str)) {
+                    str = str + ", ";
+                }
+                str = str + LocaleController.getString(R.string.FilterNonContacts);
             }
             if (!this.alwaysShow.isEmpty()) {
-                int size = (this.includeExpanded || this.alwaysShow.size() < 8) ? this.alwaysShow.size() : Math.min(5, this.alwaysShow.size());
-                for (int i = 0; i < size; i++) {
-                    arrayList.add(UItem.asFilterChat(true, ((Long) this.alwaysShow.get(i)).longValue()));
-                }
-                if (size != this.alwaysShow.size()) {
-                    arrayList.add(UItem.asButton(102, R.drawable.arrow_more, LocaleController.formatPluralString("FilterShowMoreChats", this.alwaysShow.size() - 5, new Object[0])).accent());
-                }
-            }
-        }
-        boolean z2 = this.bot;
-        if (z2 || this.exclude) {
-            if (z2) {
-                arrayList.add(UItem.asShadow(null));
-            }
-            arrayList.add(UItem.asHeader(LocaleController.getString(R.string.BusinessChatsExcluded)));
-            arrayList.add(UItem.asButton(103, R.drawable.msg2_chats_add, LocaleController.getString(R.string.BusinessChatsExcludedAdd)).accent());
-            if (!this.bot || this.exclude) {
-                if ((flags & 1) != 0) {
-                    z = false;
-                    arrayList.add(UItem.asFilterChat(false, LocaleController.getString(R.string.FilterExistingChats), "existing_chats", 1));
+                if (!TextUtils.isEmpty(str)) {
+                    str = str + " + " + this.alwaysShow.size();
                 } else {
-                    z = false;
-                }
-                if ((flags & 2) != 0) {
-                    arrayList.add(UItem.asFilterChat(z, LocaleController.getString(R.string.FilterNewChats), "new_chats", 2));
-                }
-                if ((flags & 4) != 0) {
-                    arrayList.add(UItem.asFilterChat(z, LocaleController.getString(R.string.FilterContacts), "contacts", 4));
-                }
-                if ((flags & 8) != 0) {
-                    arrayList.add(UItem.asFilterChat(z, LocaleController.getString(R.string.FilterNonContacts), "non_contacts", 8));
+                    str = str + LocaleController.formatPluralStringComma("Chats", this.alwaysShow.size());
                 }
             }
-            if (this.neverShow.isEmpty()) {
-                return;
+            if (TextUtils.isEmpty(str)) {
+                str = LocaleController.getString(R.string.BusinessChatsIncludedAdd2);
             }
-            int size2 = (this.excludeExpanded || this.neverShow.size() < 8) ? this.neverShow.size() : Math.min(5, this.neverShow.size());
-            for (int i2 = 0; i2 < size2; i2++) {
-                arrayList.add(UItem.asFilterChat(false, ((Long) this.neverShow.get(i2)).longValue()));
-            }
-            if (size2 != this.neverShow.size()) {
-                arrayList.add(UItem.asButton(104, R.drawable.arrow_more, LocaleController.formatPluralString("FilterShowMoreChats", this.neverShow.size() - 5, new Object[0])).accent());
-            }
+            arrayList.add(UItem.asButton(101, LocaleController.getString(R.string.BusinessChatsIncluded), str).setEnabled(z));
         }
+        if (this.bot || this.exclude) {
+            if ((flags & 1) != 0) {
+                if (!TextUtils.isEmpty("")) {
+                    str3 = ", ";
+                }
+                str3 = str3 + LocaleController.getString(R.string.FilterExistingChats);
+            }
+            if ((flags & 2) != 0) {
+                if (!TextUtils.isEmpty(str3)) {
+                    str3 = str3 + ", ";
+                }
+                str3 = str3 + LocaleController.getString(R.string.FilterNewChats);
+            }
+            if ((flags & 4) != 0) {
+                if (!TextUtils.isEmpty(str3)) {
+                    str3 = str3 + ", ";
+                }
+                str3 = str3 + LocaleController.getString(R.string.FilterContacts);
+            }
+            if ((flags & 8) != 0) {
+                if (!TextUtils.isEmpty(str3)) {
+                    str3 = str3 + ", ";
+                }
+                str3 = str3 + LocaleController.getString(R.string.FilterNonContacts);
+            }
+            if (!this.neverShow.isEmpty()) {
+                if (!TextUtils.isEmpty(str3)) {
+                    str3 = str3 + " + " + this.alwaysShow.size();
+                } else {
+                    str3 = str3 + LocaleController.formatPluralStringComma("Chats", this.neverShow.size());
+                }
+            }
+            if (TextUtils.isEmpty(str3)) {
+                str3 = LocaleController.getString(R.string.BusinessChatsExcludedAdd2);
+            }
+            arrayList.add(UItem.asButton(103, LocaleController.getString(R.string.BusinessChatsExcluded), str3).setEnabled(z));
+        }
+        universalAdapter.whiteSectionEnd();
     }
 
     public boolean onClick(final UItem uItem) {

@@ -294,7 +294,7 @@ public abstract class AvatarPreviewPagerIndicator extends View implements Profil
                     this.rect.set(f10, dp, (measuredWidth * f2) + f10, AndroidUtilities.dp(2.0f) + dp);
                     if (i3 == this.selectedPosition) {
                         if (this.overlayCountVisible == 3) {
-                            this.barPaint.setAlpha((int) (AndroidUtilities.lerp(i2, NotificationCenter.invalidateMotionBackground, CubicBezierInterpolator.EASE_BOTH.getInterpolation(this.alphas[i3])) * this.alpha));
+                            this.barPaint.setAlpha((int) (AndroidUtilities.lerp(i2, NotificationCenter.didReceiveCall, CubicBezierInterpolator.EASE_BOTH.getInterpolation(this.alphas[i3])) * this.alpha));
                         }
                     } else {
                         this.alphas[i3] = 0.75f;

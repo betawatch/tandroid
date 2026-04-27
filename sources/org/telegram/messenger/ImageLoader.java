@@ -1203,7 +1203,7 @@ public class ImageLoader {
                         min = Math.max(point.x, point.y);
                     } else {
                         Point point2 = AndroidUtilities.displaySize;
-                        min = Math.min(NotificationCenter.newEmojiSuggestionsAvailable, Math.min(point2.x, point2.y) / 4);
+                        min = Math.min(NotificationCenter.needDeleteDialog, Math.min(point2.x, point2.y) / 4);
                     }
                     int i = this.mediaType;
                     Bitmap bitmap = null;
@@ -1365,21 +1365,21 @@ public class ImageLoader {
             boolean z = true;
             if (wallPaperSettings2.second_background_color == 0) {
                 i = AndroidUtilities.getPatternColor(wallPaperSettings2.background_color);
-                canvas.drawColor(ColorUtils.setAlphaComponent(wallPaper.settings.background_color, NotificationCenter.invalidateMotionBackground));
+                canvas.drawColor(ColorUtils.setAlphaComponent(wallPaper.settings.background_color, NotificationCenter.didReceiveCall));
             } else if (wallPaperSettings2.third_background_color == 0) {
-                int alphaComponent = ColorUtils.setAlphaComponent(wallPaperSettings2.background_color, NotificationCenter.invalidateMotionBackground);
-                int alphaComponent2 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.invalidateMotionBackground);
+                int alphaComponent = ColorUtils.setAlphaComponent(wallPaperSettings2.background_color, NotificationCenter.didReceiveCall);
+                int alphaComponent2 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.didReceiveCall);
                 int averageColor = AndroidUtilities.getAverageColor(alphaComponent, alphaComponent2);
                 GradientDrawable gradientDrawable = new GradientDrawable(BackgroundGradientDrawable.getGradientOrientation(wallPaper.settings.rotation), new int[]{alphaComponent, alphaComponent2});
                 gradientDrawable.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
                 gradientDrawable.draw(canvas);
                 i = averageColor;
             } else {
-                int alphaComponent3 = ColorUtils.setAlphaComponent(wallPaperSettings2.background_color, NotificationCenter.invalidateMotionBackground);
-                int alphaComponent4 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.invalidateMotionBackground);
-                int alphaComponent5 = ColorUtils.setAlphaComponent(wallPaper.settings.third_background_color, NotificationCenter.invalidateMotionBackground);
+                int alphaComponent3 = ColorUtils.setAlphaComponent(wallPaperSettings2.background_color, NotificationCenter.didReceiveCall);
+                int alphaComponent4 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.didReceiveCall);
+                int alphaComponent5 = ColorUtils.setAlphaComponent(wallPaper.settings.third_background_color, NotificationCenter.didReceiveCall);
                 int i2 = wallPaper.settings.fourth_background_color;
-                int alphaComponent6 = i2 == 0 ? 0 : ColorUtils.setAlphaComponent(i2, NotificationCenter.invalidateMotionBackground);
+                int alphaComponent6 = i2 == 0 ? 0 : ColorUtils.setAlphaComponent(i2, NotificationCenter.didReceiveCall);
                 int patternColor = MotionBackgroundDrawable.getPatternColor(alphaComponent3, alphaComponent4, alphaComponent5, alphaComponent6);
                 MotionBackgroundDrawable motionBackgroundDrawable = new MotionBackgroundDrawable();
                 motionBackgroundDrawable.setColors(alphaComponent3, alphaComponent4, alphaComponent5, alphaComponent6);
@@ -5721,7 +5721,7 @@ public class ImageLoader {
                 for (int i3 = 0; i3 < size; i3++) {
                     TLRPC.PhotoSize photoSize = message.media.document.thumbs.get(i3);
                     if (photoSize instanceof TLRPC.TL_photoStrippedSize) {
-                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(message.media.document.thumbs, NotificationCenter.storyDeleted);
+                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(message.media.document.thumbs, NotificationCenter.wallpaperSettedToUser);
                         if (closestPhotoSizeWithSize == null) {
                             int i4 = 0;
                             while (true) {

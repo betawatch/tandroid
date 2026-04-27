@@ -32,10 +32,6 @@ public interface Map<K, V> {
     void replaceAll(BiFunction<? super K, ? super V, ? extends V> biFunction);
 
     public final /* synthetic */ class -EL {
-        public static /* synthetic */ Object a(java.util.Map map, Object obj, Object obj2) {
-            return map instanceof Map ? ((Map) map).putIfAbsent(obj, obj2) : -CC.$default$putIfAbsent(map, obj, obj2);
-        }
-
         public static /* synthetic */ void forEach(java.util.Map map, BiConsumer biConsumer) {
             if (map instanceof Map) {
                 ((Map) map).forEach(biConsumer);
@@ -44,6 +40,10 @@ public interface Map<K, V> {
             } else {
                 -CC.$default$forEach(map, biConsumer);
             }
+        }
+
+        public static /* synthetic */ Object putIfAbsent(java.util.Map map, Object obj, Object obj2) {
+            return map instanceof Map ? ((Map) map).putIfAbsent(obj, obj2) : -CC.$default$putIfAbsent(map, obj, obj2);
         }
 
         public static Object getOrDefault(java.util.Map map, Object obj, Object obj2) {

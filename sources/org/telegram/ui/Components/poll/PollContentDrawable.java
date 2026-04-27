@@ -75,7 +75,7 @@ public class PollContentDrawable extends Drawable implements DownloadController.
     private Text videoDurationText;
     private final Paint durationBackgroundPaint = new Paint(1);
     private int lastFileNameWidth = 0;
-    private int alpha = NotificationCenter.invalidateMotionBackground;
+    private int alpha = NotificationCenter.didReceiveCall;
 
     @Override // android.graphics.drawable.Drawable
     public int getOpacity() {

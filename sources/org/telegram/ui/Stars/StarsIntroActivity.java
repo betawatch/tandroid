@@ -288,7 +288,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         gLIconRenderer.colorKey2 = Theme.key_starsGradient2;
         gLIconRenderer.updateColors();
         this.iconTextureView.setStarParticlesView(this.particlesView);
-        this.aboveTitleView.addView(this.iconTextureView, LayoutHelper.createFrame(NotificationCenter.boostByChannelCreated, 190.0f, 17, 0.0f, 12.0f, 0.0f, 24.0f));
+        this.aboveTitleView.addView(this.iconTextureView, LayoutHelper.createFrame(NotificationCenter.boostedChannelByUser, 190.0f, 17, 0.0f, 12.0f, 0.0f, 24.0f));
         configureHeader(LocaleController.getString(R.string.TelegramStars), AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.TelegramStarsInfo2), new Runnable() { // from class: org.telegram.ui.Stars.StarsIntroActivity$$ExternalSyntheticLambda33
             @Override // java.lang.Runnable
             public final void run() {
@@ -3343,7 +3343,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                 gLIconRenderer.colorKey2 = Theme.key_starsGradient2;
                 gLIconRenderer.updateColors();
                 gLIconTextureView.setStarParticlesView(makeParticlesView);
-                frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.applyGroupCallVisibleParticipants, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+                frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.activeGroupCallsUpdated, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
                 gLIconTextureView.setPaused(false);
                 StarsBalanceView starsBalanceView = new StarsBalanceView(context, i, resourcesProvider);
                 this.balanceView = starsBalanceView;
@@ -4204,7 +4204,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                 }
             });
             Drawable svgThumb = DocumentObject.getSvgThumb(document, Theme.key_windowBackgroundGray, 0.3f);
-            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.albumsDidLoad, true, null, true);
+            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.screenshotTook, true, null, true);
             imageReceiver.setAutoRepeat(0);
             imageReceiver.setImage(ImageLocation.getForDocument(document), "160_160_nr", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "160_160", svgThumb, document.size, "tgs", tL_messages_stickerSet, 1);
             return;
@@ -4382,8 +4382,8 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                 swapAnimatedEmojiDrawable.set(stargiftattributepattern.document, false);
                 r0.setOrientation(1);
                 BackupImageView backupImageView = new BackupImageView(context);
-                setGiftImage(backupImageView.getImageReceiver(), starsTransaction.stargift, NotificationCenter.albumsDidLoad);
-                r0.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.albumsDidLoad, NotificationCenter.albumsDidLoad, 17, 0, 20, 0, 0));
+                setGiftImage(backupImageView.getImageReceiver(), starsTransaction.stargift, NotificationCenter.screenshotTook);
+                r0.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.screenshotTook, NotificationCenter.screenshotTook, 17, 0, 20, 0, 0));
                 if (!TextUtils.isEmpty(tL_starGiftUnique.slug)) {
                     ScaleStateListAnimator.apply(backupImageView);
                     backupImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsIntroActivity$$ExternalSyntheticLambda0
@@ -5216,7 +5216,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         final BackupImageView backupImageView2 = new BackupImageView(context);
         if (starsTransaction.premium_gift) {
             setPremiumGiftImage(backupImageView2, backupImageView2.getImageReceiver(), starsTransaction.premium_gift_months);
-            linearLayout.addView(backupImageView2, LayoutHelper.createLinear(NotificationCenter.albumsDidLoad, NotificationCenter.albumsDidLoad, 17, 0, -8, 0, 10));
+            linearLayout.addView(backupImageView2, LayoutHelper.createLinear(NotificationCenter.screenshotTook, NotificationCenter.screenshotTook, 17, 0, -8, 0, 10));
         } else if (starsTransaction.posts_search) {
             CombinedDrawable createDrawable = SessionCell.createDrawable(100, "search");
             createDrawable.setIconSize(AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
@@ -5228,8 +5228,8 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                     backupImageView2.setImageDrawable(new StarGiftSheet.StarGiftDrawableIcon(backupImageView2, starsTransaction.stargift, 94, 0.44f));
                     linearLayout.addView(backupImageView2, LayoutHelper.createLinear(94, 94, 17, 0, 2, 0, 10));
                 } else {
-                    setGiftImage(backupImageView2.getImageReceiver(), starsTransaction.stargift, NotificationCenter.albumsDidLoad);
-                    linearLayout.addView(backupImageView2, LayoutHelper.createLinear(NotificationCenter.albumsDidLoad, NotificationCenter.albumsDidLoad, 17, 0, -8, 0, 10));
+                    setGiftImage(backupImageView2.getImageReceiver(), starsTransaction.stargift, NotificationCenter.screenshotTook);
+                    linearLayout.addView(backupImageView2, LayoutHelper.createLinear(NotificationCenter.screenshotTook, NotificationCenter.screenshotTook, 17, 0, -8, 0, 10));
                 }
             } else {
                 if (z5 || starsTransaction.gift) {
@@ -5241,7 +5241,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                     } else {
                         setGiftImage(backupImageView2, backupImageView2.getImageReceiver(), starsTransaction.amount.amount);
                     }
-                    linearLayout.addView(backupImageView2, LayoutHelper.createLinear(NotificationCenter.albumsDidLoad, NotificationCenter.albumsDidLoad, 17, 0, -8, 0, 10));
+                    linearLayout.addView(backupImageView2, LayoutHelper.createLinear(NotificationCenter.screenshotTook, NotificationCenter.screenshotTook, 17, 0, -8, 0, 10));
                 } else if (!starsTransaction.extended_media.isEmpty()) {
                     backupImageView2.setRoundRadius(AndroidUtilities.dp(30.0f));
                     TLRPC.MessageMedia messageMedia = starsTransaction.extended_media.get(0);
@@ -6666,7 +6666,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         gLIconRenderer.colorKey2 = Theme.key_starsGradient2;
         gLIconRenderer.updateColors();
         gLIconTextureView.setStarParticlesView(makeParticlesView);
-        frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.applyGroupCallVisibleParticipants, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+        frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.activeGroupCallsUpdated, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
         gLIconTextureView.setPaused(false);
         TextView textView = new TextView(context);
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack, resourcesProvider));
@@ -7190,8 +7190,8 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         BackupImageView backupImageView = new BackupImageView(context);
-        setGiftImage(backupImageView.getImageReceiver(), starGift, NotificationCenter.albumsDidLoad);
-        linearLayout.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.albumsDidLoad, NotificationCenter.albumsDidLoad, 17, 0, -8, 0, 10));
+        setGiftImage(backupImageView.getImageReceiver(), starGift, NotificationCenter.screenshotTook);
+        linearLayout.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.screenshotTook, NotificationCenter.screenshotTook, 17, 0, -8, 0, 10));
         TextView textView = new TextView(context);
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack, resourcesProvider));
         textView.setTextSize(1, 20.0f);

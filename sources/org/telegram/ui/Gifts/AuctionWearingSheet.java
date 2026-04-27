@@ -142,7 +142,7 @@ public class AuctionWearingSheet extends BottomSheetWithRecyclerListView impleme
         int i4 = this.backgroundPaddingLeft;
         recyclerListView.setPadding(i4, 0, i4, AndroidUtilities.dp(64.0f));
         this.adapter.update(false);
-        int i5 = z ? NotificationCenter.starBalanceUpdated : NotificationCenter.storyQualityUpdate;
+        int i5 = z ? NotificationCenter.starGiveawayOptionsLoaded : NotificationCenter.smsJobStatusUpdate;
         this.auction = GiftAuctionController.getInstance(this.currentAccount).subscribeToGiftAuction(j2, this);
         final int i6 = i5;
         StarGiftSheet.TopView topView = new StarGiftSheet.TopView(context, resourcesProvider, new Runnable() { // from class: org.telegram.ui.Gifts.AuctionWearingSheet$$ExternalSyntheticLambda1

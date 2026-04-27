@@ -27,7 +27,7 @@ public final class zzj extends SessionTransferCallback {
         zzlVar = zzkVar.zzh;
         zzno zzf = zzmVar.zzf(zzlVar, i, i2);
         zzgVar = this.zza.zzb;
-        zzgVar.zze(zzf, NotificationCenter.starGiftSoldOut);
+        zzgVar.zze(zzf, NotificationCenter.starUserGiftCollectionsLoaded);
         this.zza.zzj = false;
     }
 
@@ -45,7 +45,7 @@ public final class zzj extends SessionTransferCallback {
         zzlVar = zzkVar.zzh;
         zzno zzg = zzmVar.zzg(zzlVar, i);
         zzgVar = this.zza.zzb;
-        zzgVar.zze(zzg, NotificationCenter.starUserGiftCollectionsLoaded);
+        zzgVar.zze(zzg, NotificationCenter.starUserGiftsLoaded);
         this.zza.zzj = false;
         this.zza.zzh = null;
     }
@@ -65,6 +65,6 @@ public final class zzj extends SessionTransferCallback {
         zzlVar = zzkVar.zzh;
         zzno zzg = zzmVar.zzg(zzlVar, i);
         zzgVar = this.zza.zzb;
-        zzgVar.zze(zzg, NotificationCenter.starUserGiftsLoaded);
+        zzgVar.zze(zzg, NotificationCenter.starGiftsLoaded);
     }
 }

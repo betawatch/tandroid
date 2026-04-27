@@ -145,7 +145,7 @@ public final class PsExtractor implements Extractor {
             extractorInput.skipFully(1);
             return 0;
         }
-        int i = readInt & NotificationCenter.invalidateMotionBackground;
+        int i = readInt & NotificationCenter.didReceiveCall;
         PesReader pesReader = (PesReader) this.psPayloadReaders.get(i);
         if (!this.foundAllTracks) {
             if (pesReader == null) {
@@ -153,11 +153,11 @@ public final class PsExtractor implements Extractor {
                     elementaryStreamReader = new Ac3Reader();
                     this.foundAudioTrack = true;
                     this.lastTrackPosition = extractorInput.getPosition();
-                } else if ((readInt & 224) == 192) {
+                } else if ((readInt & NotificationCenter.factCheckLoaded) == 192) {
                     elementaryStreamReader = new MpegAudioReader();
                     this.foundAudioTrack = true;
                     this.lastTrackPosition = extractorInput.getPosition();
-                } else if ((readInt & NotificationCenter.appConfigUpdated) == 224) {
+                } else if ((readInt & NotificationCenter.commonChatsLoaded) == 224) {
                     elementaryStreamReader = new H262Reader();
                     this.foundVideoTrack = true;
                     this.lastTrackPosition = extractorInput.getPosition();

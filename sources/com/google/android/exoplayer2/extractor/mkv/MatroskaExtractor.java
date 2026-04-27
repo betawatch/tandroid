@@ -126,18 +126,18 @@ public class MatroskaExtractor implements Extractor {
 
     protected int getElementType(int i) {
         switch (i) {
-            case NotificationCenter.didGenerateFingerprintKeyPair /* 131 */:
-            case NotificationCenter.didUpdateConnectionState /* 136 */:
-            case NotificationCenter.recordStartError /* 155 */:
-            case NotificationCenter.screenshotTook /* 159 */:
-            case NotificationCenter.liveStoryMessageUpdate /* 176 */:
-            case NotificationCenter.needDeleteDialog /* 179 */:
-            case NotificationCenter.updateBotMenuButton /* 186 */:
-            case NotificationCenter.premiumFloodWaitReceived /* 215 */:
-            case NotificationCenter.starUserGiftCollectionsLoaded /* 231 */:
-            case NotificationCenter.messagesFeeUpdated /* 238 */:
-            case NotificationCenter.activeAuctionsUpdated /* 241 */:
-            case NotificationCenter.wallpapersNeedReload /* 251 */:
+            case NotificationCenter.dialogTranslate /* 131 */:
+            case NotificationCenter.httpFileDidFailedLoad /* 136 */:
+            case NotificationCenter.recordStarted /* 155 */:
+            case NotificationCenter.recordResumed /* 159 */:
+            case NotificationCenter.liveStoryUpdated /* 176 */:
+            case NotificationCenter.configLoaded /* 179 */:
+            case NotificationCenter.suggestedFiltersLoaded /* 186 */:
+            case NotificationCenter.customStickerCreated /* 215 */:
+            case NotificationCenter.starUserGiftsLoaded /* 231 */:
+            case NotificationCenter.adminedChannelsLoaded /* 238 */:
+            case NotificationCenter.appConfigUpdated /* 241 */:
+            case NotificationCenter.pushMessagesUpdated /* 251 */:
             case 16871:
             case 16980:
             case 17029:
@@ -166,18 +166,18 @@ public class MatroskaExtractor implements Extractor {
             case 2352003:
             case 2807729:
                 return 2;
-            case NotificationCenter.httpFileDidLoad /* 134 */:
+            case NotificationCenter.walletSyncProgressChanged /* 134 */:
             case 17026:
             case 21358:
             case 2274716:
                 return 3;
-            case NotificationCenter.albumsDidLoad /* 160 */:
-            case NotificationCenter.storyGroupCallUpdated /* 166 */:
-            case NotificationCenter.groupCallVisibilityChanged /* 174 */:
-            case NotificationCenter.dialogFiltersUpdated /* 183 */:
-            case NotificationCenter.giftsToUserSent /* 187 */:
-            case 224:
-            case NotificationCenter.botStarsTransactionsLoaded /* 225 */:
+            case NotificationCenter.screenshotTook /* 160 */:
+            case NotificationCenter.groupCallUpdated /* 166 */:
+            case NotificationCenter.closeInCallActivity /* 174 */:
+            case NotificationCenter.themeUploadError /* 183 */:
+            case NotificationCenter.updateBotMenuButton /* 187 */:
+            case NotificationCenter.factCheckLoaded /* 224 */:
+            case 225:
             case 16868:
             case 18407:
             case 19899:
@@ -197,9 +197,9 @@ public class MatroskaExtractor implements Extractor {
             case 475249515:
             case 524531317:
                 return 1;
-            case NotificationCenter.audioDidSent /* 161 */:
-            case NotificationCenter.audioRouteChanged /* 163 */:
-            case NotificationCenter.groupCallUpdated /* 165 */:
+            case NotificationCenter.albumsDidLoad /* 161 */:
+            case NotificationCenter.audioRecordTooShort /* 163 */:
+            case NotificationCenter.didStartedCall /* 165 */:
             case 16877:
             case 16981:
             case 18402:
@@ -207,7 +207,7 @@ public class MatroskaExtractor implements Extractor {
             case 25506:
             case 30322:
                 return 4;
-            case NotificationCenter.themeUploadedToServer /* 181 */:
+            case NotificationCenter.newEmojiSuggestionsAvailable /* 181 */:
             case 17545:
             case 21969:
             case 21970:
@@ -240,8 +240,8 @@ public class MatroskaExtractor implements Extractor {
         HashMap hashMap = new HashMap();
         hashMap.put("htc_video_rotA-000", 0);
         hashMap.put("htc_video_rotA-090", 90);
-        hashMap.put("htc_video_rotA-180", Integer.valueOf(NotificationCenter.newEmojiSuggestionsAvailable));
-        hashMap.put("htc_video_rotA-270", Integer.valueOf(NotificationCenter.suggestedLangpack));
+        hashMap.put("htc_video_rotA-180", Integer.valueOf(NotificationCenter.needDeleteDialog));
+        hashMap.put("htc_video_rotA-270", Integer.valueOf(NotificationCenter.locationPermissionDenied));
         TRACK_NAME_TO_ROTATION_DEGREES = DesugarCollections.unmodifiableMap(hashMap);
     }
 
@@ -498,38 +498,38 @@ public class MatroskaExtractor implements Extractor {
             throw ParserException.createForMalformedContainer("ContentEncodingScope " + j + " not supported", null);
         }
         switch (i) {
-            case NotificationCenter.didGenerateFingerprintKeyPair /* 131 */:
+            case NotificationCenter.dialogTranslate /* 131 */:
                 getCurrentTrack(i).type = (int) j;
                 return;
-            case NotificationCenter.didUpdateConnectionState /* 136 */:
+            case NotificationCenter.httpFileDidFailedLoad /* 136 */:
                 getCurrentTrack(i).flagDefault = j == 1;
                 return;
-            case NotificationCenter.recordStartError /* 155 */:
+            case NotificationCenter.recordStarted /* 155 */:
                 this.blockDurationUs = scaleTimecodeToUs(j);
                 return;
-            case NotificationCenter.screenshotTook /* 159 */:
+            case NotificationCenter.recordResumed /* 159 */:
                 getCurrentTrack(i).channelCount = (int) j;
                 return;
-            case NotificationCenter.liveStoryMessageUpdate /* 176 */:
+            case NotificationCenter.liveStoryUpdated /* 176 */:
                 getCurrentTrack(i).width = (int) j;
                 return;
-            case NotificationCenter.needDeleteDialog /* 179 */:
+            case NotificationCenter.configLoaded /* 179 */:
                 assertInCues(i);
                 this.cueTimesUs.add(scaleTimecodeToUs(j));
                 return;
-            case NotificationCenter.updateBotMenuButton /* 186 */:
+            case NotificationCenter.suggestedFiltersLoaded /* 186 */:
                 getCurrentTrack(i).height = (int) j;
                 return;
-            case NotificationCenter.premiumFloodWaitReceived /* 215 */:
+            case NotificationCenter.customStickerCreated /* 215 */:
                 getCurrentTrack(i).number = (int) j;
                 return;
-            case NotificationCenter.starUserGiftCollectionsLoaded /* 231 */:
+            case NotificationCenter.starUserGiftsLoaded /* 231 */:
                 this.clusterTimecodeUs = scaleTimecodeToUs(j);
                 return;
-            case NotificationCenter.messagesFeeUpdated /* 238 */:
+            case NotificationCenter.adminedChannelsLoaded /* 238 */:
                 this.blockAdditionalId = (int) j;
                 return;
-            case NotificationCenter.activeAuctionsUpdated /* 241 */:
+            case NotificationCenter.appConfigUpdated /* 241 */:
                 if (this.seenClusterPositionForCurrentCuePoint) {
                     return;
                 }
@@ -537,7 +537,7 @@ public class MatroskaExtractor implements Extractor {
                 this.cueClusterPositions.add(j);
                 this.seenClusterPositionForCurrentCuePoint = true;
                 return;
-            case NotificationCenter.wallpapersNeedReload /* 251 */:
+            case NotificationCenter.pushMessagesUpdated /* 251 */:
                 this.blockHasReferenceBlock = true;
                 return;
             case 16871:
@@ -1189,10 +1189,10 @@ public class MatroskaExtractor implements Extractor {
                 this.supplementalData.reset(0);
                 int limit = (this.sampleStrippedBytes.limit() + i) - this.sampleBytesRead;
                 this.scratch.reset(4);
-                this.scratch.getData()[0] = (byte) ((limit >> 24) & NotificationCenter.invalidateMotionBackground);
-                this.scratch.getData()[1] = (byte) ((limit >> 16) & NotificationCenter.invalidateMotionBackground);
-                this.scratch.getData()[2] = (byte) ((limit >> 8) & NotificationCenter.invalidateMotionBackground);
-                this.scratch.getData()[3] = (byte) (limit & NotificationCenter.invalidateMotionBackground);
+                this.scratch.getData()[0] = (byte) ((limit >> 24) & NotificationCenter.didReceiveCall);
+                this.scratch.getData()[1] = (byte) ((limit >> 16) & NotificationCenter.didReceiveCall);
+                this.scratch.getData()[2] = (byte) ((limit >> 8) & NotificationCenter.didReceiveCall);
+                this.scratch.getData()[3] = (byte) (limit & NotificationCenter.didReceiveCall);
                 trackOutput.sampleData(this.scratch, 4, 2);
                 this.sampleBytesWritten += 4;
             }
@@ -1524,7 +1524,7 @@ public class MatroskaExtractor implements Extractor {
         public int colorTransfer = -1;
         public int colorRange = -1;
         public int maxContentLuminance = MediaDataController.MAX_STYLE_RUNS_COUNT;
-        public int maxFrameAverageLuminance = NotificationCenter.channelRecommendationsLoaded;
+        public int maxFrameAverageLuminance = NotificationCenter.dialogPhotosUpdate;
         public float primaryRChromaticityX = -1.0f;
         public float primaryRChromaticityY = -1.0f;
         public float primaryGChromaticityX = -1.0f;
@@ -1866,9 +1866,9 @@ public class MatroskaExtractor implements Extractor {
                             } else if (Float.compare(this.projectionPosePitch, 90.0f) == 0) {
                                 i6 = 90;
                             } else if (Float.compare(this.projectionPosePitch, -180.0f) == 0 || Float.compare(this.projectionPosePitch, 180.0f) == 0) {
-                                i6 = NotificationCenter.newEmojiSuggestionsAvailable;
+                                i6 = NotificationCenter.needDeleteDialog;
                             } else if (Float.compare(this.projectionPosePitch, -90.0f) == 0) {
-                                i6 = NotificationCenter.suggestedLangpack;
+                                i6 = NotificationCenter.locationPermissionDenied;
                             }
                         }
                         builder.setWidth(this.width).setHeight(this.height).setPixelWidthHeightRatio(f).setRotationDegrees(i6).setProjectionData(this.projectionData).setStereoMode(this.stereoMode).setColorInfo(colorInfo);
@@ -2727,22 +2727,22 @@ public class MatroskaExtractor implements Extractor {
                 int i3 = 1;
                 int i4 = 0;
                 while (true) {
-                    i = bArr[i3] & NotificationCenter.invalidateMotionBackground;
+                    i = bArr[i3] & NotificationCenter.didReceiveCall;
                     if (i != 255) {
                         break;
                     }
-                    i4 += NotificationCenter.invalidateMotionBackground;
+                    i4 += NotificationCenter.didReceiveCall;
                     i3++;
                 }
                 int i5 = i3 + 1;
                 int i6 = i4 + i;
                 int i7 = 0;
                 while (true) {
-                    i2 = bArr[i5] & NotificationCenter.invalidateMotionBackground;
+                    i2 = bArr[i5] & NotificationCenter.didReceiveCall;
                     if (i2 != 255) {
                         break;
                     }
-                    i7 += NotificationCenter.invalidateMotionBackground;
+                    i7 += NotificationCenter.didReceiveCall;
                     i5++;
                 }
                 int i8 = i5 + 1;

@@ -1597,7 +1597,7 @@ public class ResaleGiftsFragment extends BaseFragment implements FactorAnimator.
             BackupImageView backupImageView = new BackupImageView(context);
             this.imageView = backupImageView;
             backupImageView.setImageDrawable(new RLottieDrawable(R.raw.utyan_empty, "utyan_empty", AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
-            linearLayout.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.dialogTranslate, NotificationCenter.dialogTranslate, 17));
+            linearLayout.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.dialogIsTranslatable, NotificationCenter.dialogIsTranslatable, 17));
             TextView textView = new TextView(context);
             this.titleView = textView;
             textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, resourcesProvider));
@@ -1669,12 +1669,12 @@ public class ResaleGiftsFragment extends BaseFragment implements FactorAnimator.
                     animatedEmojiDrawable.removeView(this.imageView);
                 }
                 this.emojiDrawable = new AnimatedEmojiDrawable(3, this.currentAccount, stargiftattributemodel.document) { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment.ModelItem.2
-                    @Override // android.graphics.drawable.Drawable
+                    @Override // org.telegram.ui.Components.AnimatedEmojiDrawable, android.graphics.drawable.Drawable
                     public int getIntrinsicHeight() {
                         return AndroidUtilities.dp(24.0f);
                     }
 
-                    @Override // android.graphics.drawable.Drawable
+                    @Override // org.telegram.ui.Components.AnimatedEmojiDrawable, android.graphics.drawable.Drawable
                     public int getIntrinsicWidth() {
                         return AndroidUtilities.dp(24.0f);
                     }
@@ -1774,12 +1774,12 @@ public class ResaleGiftsFragment extends BaseFragment implements FactorAnimator.
                     animatedEmojiDrawable.removeView(this.imageView);
                 }
                 AnimatedEmojiDrawable animatedEmojiDrawable2 = new AnimatedEmojiDrawable(3, this.currentAccount, stargiftattributepattern.document) { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment.PatternItem.2
-                    @Override // android.graphics.drawable.Drawable
+                    @Override // org.telegram.ui.Components.AnimatedEmojiDrawable, android.graphics.drawable.Drawable
                     public int getIntrinsicHeight() {
                         return AndroidUtilities.dp(24.0f);
                     }
 
-                    @Override // android.graphics.drawable.Drawable
+                    @Override // org.telegram.ui.Components.AnimatedEmojiDrawable, android.graphics.drawable.Drawable
                     public int getIntrinsicWidth() {
                         return AndroidUtilities.dp(24.0f);
                     }

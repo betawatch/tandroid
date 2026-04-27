@@ -14,7 +14,7 @@ import org.telegram.messenger.NotificationCenter;
 /* loaded from: classes.dex */
 public final class zzp extends GmsClient {
     public zzp(Context context, Looper looper, ClientSettings clientSettings, GoogleApiClient.ConnectionCallbacks connectionCallbacks, GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener) {
-        super(context, looper, NotificationCenter.messagePlayingDidReset, clientSettings, connectionCallbacks, onConnectionFailedListener);
+        super(context, looper, NotificationCenter.messagePlayingProgressDidChanged, clientSettings, connectionCallbacks, onConnectionFailedListener);
     }
 
     @Override // com.google.android.gms.common.internal.BaseGmsClient

@@ -292,7 +292,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
             ofFloat.setDuration(360L);
             ofFloat.start();
             this.views.put(iMarker, frameLayout);
-            ChatAttachAlertLocationLayout.this.map.animateCamera(ApplicationLoader.getMapsProvider().newCameraUpdateLatLng(iMarker.getPosition()), NotificationCenter.onActivityResultReceived, null);
+            ChatAttachAlertLocationLayout.this.map.animateCamera(ApplicationLoader.getMapsProvider().newCameraUpdateLatLng(iMarker.getPosition()), NotificationCenter.onDatabaseOpened, null);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -2537,7 +2537,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 if (locationActivityAdapter2 != null) {
                     locationActivityAdapter2.setMyLocationDenied(this.locationDenied, true);
                 }
-                parentActivity.requestPermissions(new String[]{"android.permission.ACCESS_MEDIA_LOCATION"}, NotificationCenter.chatWasBoostedByUser);
+                parentActivity.requestPermissions(new String[]{"android.permission.ACCESS_MEDIA_LOCATION"}, NotificationCenter.groupRestrictionsUnlockedByBoosts);
             }
         }
     }

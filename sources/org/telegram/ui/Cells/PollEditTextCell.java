@@ -416,7 +416,7 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
         } else if (this.deleteImageView == null) {
             i3 = 70;
         } else {
-            i3 = this.emojiButton != null ? NotificationCenter.fileNewChunkAvailable : 122;
+            i3 = this.emojiButton != null ? NotificationCenter.filePreparingStarted : 122;
         }
         this.textView.measure(View.MeasureSpec.makeMeasureSpec(((size - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(i3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
         int measuredHeight = this.textView.getMeasuredHeight();

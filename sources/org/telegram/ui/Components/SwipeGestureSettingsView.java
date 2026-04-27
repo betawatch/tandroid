@@ -116,7 +116,7 @@ public class SwipeGestureSettingsView extends FrameLayout {
         });
         this.picker.setImportantForAccessibility(2);
         this.picker.setValue(SharedConfig.getChatSwipeAction(i));
-        addView(this.picker, LayoutHelper.createFrame(NotificationCenter.walletPendingTransactionsChanged, -1.0f, 5, 21.0f, 0.0f, 21.0f, 0.0f));
+        addView(this.picker, LayoutHelper.createFrame(NotificationCenter.didGenerateFingerprintKeyPair, -1.0f, 5, 21.0f, 0.0f, 21.0f, 0.0f));
         setWillNotDraw(false);
         this.currentIconIndex = 0;
         for (int i3 = 0; i3 < 2; i3++) {
@@ -246,7 +246,7 @@ public class SwipeGestureSettingsView extends FrameLayout {
                 this.filledPaint.setColor(ColorUtils.blendARGB(i2, ColorUtils.blendARGB(Theme.getColor(i3), Theme.getColor(this.currentColorKey), 0.9f), this.colorProgress));
                 canvas.drawRoundRect(this.rect, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.filledPaint);
                 this.filledPaint.setColor(Theme.getColor(i3));
-                this.filledPaint.setAlpha(NotificationCenter.invalidateMotionBackground);
+                this.filledPaint.setAlpha(NotificationCenter.didReceiveCall);
                 this.rect.set(f4, measuredHeight, measuredWidth - AndroidUtilities.dp(58.0f), getMeasuredHeight() - r4);
                 this.rect.inset(-AndroidUtilities.dp(1.0f), -AndroidUtilities.dp(1.0f));
                 canvas.drawRoundRect(this.rect, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.filledPaint);
@@ -299,7 +299,7 @@ public class SwipeGestureSettingsView extends FrameLayout {
         this.filledPaint.setColor(ColorUtils.blendARGB(i22, ColorUtils.blendARGB(Theme.getColor(i32), Theme.getColor(this.currentColorKey), 0.9f), this.colorProgress));
         canvas.drawRoundRect(this.rect, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.filledPaint);
         this.filledPaint.setColor(Theme.getColor(i32));
-        this.filledPaint.setAlpha(NotificationCenter.invalidateMotionBackground);
+        this.filledPaint.setAlpha(NotificationCenter.didReceiveCall);
         this.rect.set(f42, measuredHeight2, measuredWidth2 - AndroidUtilities.dp(58.0f), getMeasuredHeight() - r4);
         this.rect.inset(-AndroidUtilities.dp(1.0f), -AndroidUtilities.dp(1.0f));
         canvas.drawRoundRect(this.rect, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.filledPaint);

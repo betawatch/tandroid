@@ -22,7 +22,7 @@ public final class QRCode {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder(NotificationCenter.channelRecommendationsLoaded);
+        StringBuilder sb = new StringBuilder(NotificationCenter.dialogPhotosUpdate);
         sb.append("<<\n");
         sb.append(" mode: ");
         sb.append(this.mode);

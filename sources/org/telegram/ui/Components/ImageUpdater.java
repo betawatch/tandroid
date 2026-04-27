@@ -774,13 +774,13 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
             if (checkSelfPermission2 == 0) {
                 checkSelfPermission3 = parentActivity.checkSelfPermission("android.permission.READ_MEDIA_VIDEO");
             }
-            parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, NotificationCenter.messagePlayingDidSeek);
+            parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, NotificationCenter.messagePlayingDidStart);
             return;
         }
         if (i >= 23 && parentActivity != null) {
             checkSelfPermission = parentActivity.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE");
             if (checkSelfPermission != 0) {
-                parentActivity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, NotificationCenter.messagePlayingDidSeek);
+                parentActivity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, NotificationCenter.messagePlayingDidStart);
                 return;
             }
         }
@@ -918,7 +918,7 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
         this.convertingVideo = null;
         this.videoPath = null;
         this.vectorMarkup = messageObject == null ? null : messageObject.emojiMarkup;
-        this.bigPhoto = ImageLoader.scaleAndSaveImage(bitmap, 800.0f, 800.0f, 80, false, NotificationCenter.storyDeleted, NotificationCenter.storyDeleted);
+        this.bigPhoto = ImageLoader.scaleAndSaveImage(bitmap, 800.0f, 800.0f, 80, false, NotificationCenter.wallpaperSettedToUser, NotificationCenter.wallpaperSettedToUser);
         TLRPC.PhotoSize scaleAndSaveImage = ImageLoader.scaleAndSaveImage(bitmap, 150.0f, 150.0f, 80, false, 150, 150);
         this.smallPhoto = scaleAndSaveImage;
         if (scaleAndSaveImage != null) {
@@ -1120,7 +1120,7 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
                         }
                         pathToAttach2.delete();
                     }
-                    this.bigPhoto = ImageLoader.scaleAndSaveImage(createVideoThumbnailAtTime, 800.0f, 800.0f, 80, false, NotificationCenter.storyDeleted, NotificationCenter.storyDeleted);
+                    this.bigPhoto = ImageLoader.scaleAndSaveImage(createVideoThumbnailAtTime, 800.0f, 800.0f, 80, false, NotificationCenter.wallpaperSettedToUser, NotificationCenter.wallpaperSettedToUser);
                     TLRPC.PhotoSize scaleAndSaveImage = ImageLoader.scaleAndSaveImage(createVideoThumbnailAtTime, 150.0f, 150.0f, 80, false, 150, 150);
                     this.smallPhoto = scaleAndSaveImage;
                     if (scaleAndSaveImage != null) {

@@ -1007,7 +1007,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                                     if (z5 || messageObject.type != 18) {
                                         SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document4, Theme.key_windowBackgroundGray, 0.3f);
                                         this.imageReceiver.setAutoRepeat(0);
-                                        this.imageReceiver.setImage(ImageLocation.getForDocument(document4), String.format(Locale.US, "%d_%d_nr_messageId=%d", Integer.valueOf(NotificationCenter.albumsDidLoad), Integer.valueOf(NotificationCenter.albumsDidLoad), Integer.valueOf(messageObject.stableId)), svgThumb, "tgs", messageObject2, 1);
+                                        this.imageReceiver.setImage(ImageLocation.getForDocument(document4), String.format(Locale.US, "%d_%d_nr_messageId=%d", Integer.valueOf(NotificationCenter.screenshotTook), Integer.valueOf(NotificationCenter.screenshotTook), Integer.valueOf(messageObject.stableId)), svgThumb, "tgs", messageObject2, 1);
                                     }
                                 } else if (str2 != null) {
                                     MediaDataController.getInstance(this.currentAccount).loadStickersByEmojiOrName(str2, false, messageObject3 == null);
@@ -3608,7 +3608,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                                 height2 = AndroidUtilities.lerp(this.giftPremiumTextCollapsedHeight, height2, f7);
                                 RectF rectF3 = AndroidUtilities.rectTmp;
                                 rectF3.set(0.0f, -AndroidUtilities.dp(20.0f), getWidth(), height2);
-                                canvas.saveLayerAlpha(rectF3, NotificationCenter.invalidateMotionBackground, 31);
+                                canvas.saveLayerAlpha(rectF3, NotificationCenter.didReceiveCall, 31);
                             } else {
                                 canvas.save();
                             }
@@ -4385,7 +4385,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
             if (drawable != null) {
                 int i2 = (int) dp;
                 drawable.setBounds((int) dp3, i2, (int) f2, botButton.height + i2);
-                botButton.selectorDrawable.setAlpha(NotificationCenter.invalidateMotionBackground);
+                botButton.selectorDrawable.setAlpha(NotificationCenter.didReceiveCall);
                 botButton.selectorDrawable.draw(canvas);
             }
             canvas.restore();
@@ -4396,7 +4396,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
             if (drawable2 != null) {
                 int i3 = (int) width2;
                 drawable2.setBounds(i3, (int) (((botButton.height - AndroidUtilities.dp(24.0f)) / 2.0f) + dp), i3 + AndroidUtilities.dp(24.0f), ((int) (((botButton.height - AndroidUtilities.dp(24.0f)) / 2.0f) + dp)) + AndroidUtilities.dp(24.0f));
-                botButton.iconDrawable.setAlpha(botButton.isLocked ? 128 : NotificationCenter.invalidateMotionBackground);
+                botButton.iconDrawable.setAlpha(botButton.isLocked ? 128 : NotificationCenter.didReceiveCall);
                 botButton.iconDrawable.draw(canvas);
                 width2 += dp6;
             }

@@ -541,7 +541,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(getContext(), this.resourcesProvider);
             this.emptyView2Button = buttonWithCounterView;
             buttonWithCounterView.setText(LocaleController.getString(R.string.Gift2CollectionEmptyButton), false);
-            this.emptyView2Layout.addView(this.emptyView2Button, LayoutHelper.createLinear(NotificationCenter.channelRecommendationsLoaded, 44, 1, 0, 19, 0, 12));
+            this.emptyView2Layout.addView(this.emptyView2Button, LayoutHelper.createLinear(NotificationCenter.dialogPhotosUpdate, 44, 1, 0, 19, 0, 12));
             this.emptyView2Button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda21
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -871,12 +871,12 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                     actionBarMenuSubItem2.setSelectorColor(Theme.multAlpha(Theme.getColor(i4, this.resourcesProvider), f3));
                     if (tL_starGiftCollection.icon != null) {
                         AnimatedEmojiDrawable animatedEmojiDrawable = new AnimatedEmojiDrawable(3, this.currentAccount, tL_starGiftCollection.icon) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.6
-                            @Override // android.graphics.drawable.Drawable
+                            @Override // org.telegram.ui.Components.AnimatedEmojiDrawable, android.graphics.drawable.Drawable
                             public int getIntrinsicHeight() {
                                 return AndroidUtilities.dp(24.0f);
                             }
 
-                            @Override // android.graphics.drawable.Drawable
+                            @Override // org.telegram.ui.Components.AnimatedEmojiDrawable, android.graphics.drawable.Drawable
                             public int getIntrinsicWidth() {
                                 return AndroidUtilities.dp(24.0f);
                             }
@@ -1488,7 +1488,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 buttonWithCounterView.setVisibility(!canSwitchNotify() ? 8 : 0);
                 linearLayout.setVisibility(canSwitchNotify() ? 0 : 8);
                 this.buttonContainerHeightDp = 60;
-                addView(frameLayout2, LayoutHelper.createFrame(-1, NotificationCenter.channelRecommendationsLoaded, 87));
+                addView(frameLayout2, LayoutHelper.createFrame(-1, NotificationCenter.dialogPhotosUpdate, 87));
                 updateColors();
                 updateTabsShown(false);
             }
@@ -1521,7 +1521,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         buttonWithCounterView2.setVisibility(!canSwitchNotify() ? 8 : 0);
         linearLayout.setVisibility(canSwitchNotify() ? 0 : 8);
         this.buttonContainerHeightDp = 60;
-        addView(frameLayout2, LayoutHelper.createFrame(-1, NotificationCenter.channelRecommendationsLoaded, 87));
+        addView(frameLayout2, LayoutHelper.createFrame(-1, NotificationCenter.dialogPhotosUpdate, 87));
         updateColors();
         updateTabsShown(false);
     }

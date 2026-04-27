@@ -106,7 +106,7 @@ public class FragmentSearchField extends FrameLayout implements FactorAnimator.T
         this.editText = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 15.0f);
         editTextBoldCursor.setCursorWidth(1.5f);
-        editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | NotificationCenter.liveStoryMessageUpdate);
+        editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | NotificationCenter.liveStoryUpdated);
         editTextBoldCursor.setSingleLine(true);
         editTextBoldCursor.setBackground(null);
         editTextBoldCursor.setVerticalScrollBarEnabled(false);

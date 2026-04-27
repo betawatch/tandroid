@@ -19,8 +19,17 @@ public abstract class ViewOutlineProviderImpl {
         }
     };
 
-    public static ViewOutlineProvider boundsWithPaddingRoundRect(final int i, final float f) {
+    public static ViewOutlineProvider boundsWithPaddingFromViewAndRoundRect(final float f) {
         return new ViewOutlineProvider() { // from class: org.telegram.messenger.utils.ViewOutlineProviderImpl.4
+            @Override // android.view.ViewOutlineProvider
+            public void getOutline(View view, Outline outline) {
+                outline.setRoundRect(view.getPaddingLeft(), view.getPaddingTop(), view.getMeasuredWidth() - view.getPaddingRight(), view.getMeasuredHeight() - view.getPaddingBottom(), f);
+            }
+        };
+    }
+
+    public static ViewOutlineProvider boundsWithPaddingRoundRect(final int i, final float f) {
+        return new ViewOutlineProvider() { // from class: org.telegram.messenger.utils.ViewOutlineProviderImpl.5
             @Override // android.view.ViewOutlineProvider
             public void getOutline(View view, Outline outline) {
                 int i2 = i;

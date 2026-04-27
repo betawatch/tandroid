@@ -75,7 +75,7 @@ public abstract class DialogsRequestedEmptyCell extends LinearLayout implements 
             }
         });
         updateSticker();
-        linearLayout.addView(this.stickerView, LayoutHelper.createLinear(NotificationCenter.dialogTranslate, NotificationCenter.dialogTranslate, 49));
+        linearLayout.addView(this.stickerView, LayoutHelper.createLinear(NotificationCenter.dialogIsTranslatable, NotificationCenter.dialogIsTranslatable, 49));
         TextView textView = new TextView(context);
         this.titleView = textView;
         textView.setGravity(17);

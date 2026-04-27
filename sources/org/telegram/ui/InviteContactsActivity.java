@@ -60,7 +60,7 @@ import org.telegram.ui.Cells.ShadowSectionCell;
 import org.telegram.ui.Cells.TextCell;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.EmojiView$$ExternalSyntheticLambda12;
+import org.telegram.ui.Components.EmojiView$$ExternalSyntheticLambda15;
 import org.telegram.ui.Components.FlickerLoadingView;
 import org.telegram.ui.Components.FragmentFloatingButton;
 import org.telegram.ui.Components.GroupCreateSpan;
@@ -499,7 +499,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             }
         });
         BackDrawable backDrawable = new BackDrawable(false);
-        backDrawable.setArrowRotation(NotificationCenter.newEmojiSuggestionsAvailable);
+        backDrawable.setArrowRotation(NotificationCenter.needDeleteDialog);
         FragmentFloatingButton fragmentFloatingButton = new FragmentFloatingButton(context, this.resourceProvider);
         this.floatingButton = fragmentFloatingButton;
         fragmentFloatingButton.imageView.setImageDrawable(backDrawable);
@@ -514,7 +514,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         this.actionBar.setBackgroundColor(getThemedColor(i));
         RecyclerListView recyclerListView2 = this.listView;
         Objects.requireNonNull(recyclerListView2);
-        this.iBlur3Capture = new ViewGroupPartRenderer(recyclerListView2, frameLayout, new EmojiView$$ExternalSyntheticLambda12(recyclerListView2));
+        this.iBlur3Capture = new ViewGroupPartRenderer(recyclerListView2, frameLayout, new EmojiView$$ExternalSyntheticLambda15(recyclerListView2));
         this.listView.addEdgeEffectListener(new Runnable() { // from class: org.telegram.ui.InviteContactsActivity$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
@@ -715,7 +715,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             editTextBoldCursor.setHint(LocaleController.getString(R.string.Search));
             editTextBoldCursor.setTextSize(1, 15.0f);
             editTextBoldCursor.setCursorWidth(1.5f);
-            editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | NotificationCenter.liveStoryMessageUpdate);
+            editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | NotificationCenter.liveStoryUpdated);
             editTextBoldCursor.setSingleLine(true);
             editTextBoldCursor.setBackground(null);
             editTextBoldCursor.setVerticalScrollBarEnabled(false);

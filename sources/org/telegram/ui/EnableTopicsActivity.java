@@ -205,11 +205,11 @@ public class EnableTopicsActivity extends BaseFragment {
             FrameLayout frameLayout = new FrameLayout(context);
             this.leftLayout = frameLayout;
             ScaleStateListAnimator.apply(frameLayout, 0.05f, 1.25f);
-            addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.channelStarsUpdated, 1.0f, 119));
+            addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.botStarsTransactionsLoaded, 1.0f, 119));
             BackupImageView backupImageView = new BackupImageView(context);
             this.leftImageView = backupImageView;
             backupImageView.setImageDrawable(new RLottieDrawable(R.raw.topics_tabs, "topics_tabs", AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
-            frameLayout.addView(backupImageView, LayoutHelper.createFrame(NotificationCenter.albumsDidLoad, 160.0f, 49, 0.0f, 12.33f, 0.0f, 0.0f));
+            frameLayout.addView(backupImageView, LayoutHelper.createFrame(NotificationCenter.screenshotTook, 160.0f, 49, 0.0f, 12.33f, 0.0f, 0.0f));
             FrameLayout frameLayout2 = new FrameLayout(context);
             this.leftTitleLayout = frameLayout2;
             int i = Theme.key_windowBackgroundWhiteGrayText2;
@@ -235,11 +235,11 @@ public class EnableTopicsActivity extends BaseFragment {
             FrameLayout frameLayout4 = new FrameLayout(context);
             this.rightLayout = frameLayout4;
             ScaleStateListAnimator.apply(frameLayout4, 0.05f, 1.25f);
-            addView(frameLayout4, LayoutHelper.createLinear(-1, NotificationCenter.channelStarsUpdated, 1.0f, 119));
+            addView(frameLayout4, LayoutHelper.createLinear(-1, NotificationCenter.botStarsTransactionsLoaded, 1.0f, 119));
             BackupImageView backupImageView2 = new BackupImageView(context);
             this.rightImageView = backupImageView2;
             backupImageView2.setImageDrawable(new RLottieDrawable(R.raw.topics_list, "topics_list", AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
-            frameLayout4.addView(backupImageView2, LayoutHelper.createFrame(NotificationCenter.albumsDidLoad, 160.0f, 49, 0.0f, 12.33f, 0.0f, 0.0f));
+            frameLayout4.addView(backupImageView2, LayoutHelper.createFrame(NotificationCenter.screenshotTook, 160.0f, 49, 0.0f, 12.33f, 0.0f, 0.0f));
             FrameLayout frameLayout5 = new FrameLayout(context);
             this.rightTitleLayout = frameLayout5;
             TextView makeTextView3 = TextHelper.makeTextView(context, 14.0f, i, true);

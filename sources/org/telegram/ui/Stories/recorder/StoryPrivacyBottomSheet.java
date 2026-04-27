@@ -723,7 +723,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                     public final void run(Object obj) {
                         StoryPrivacyBottomSheet.Page.this.lambda$new$3(j, (TLRPC.TL_channels_channelParticipants) obj);
                     }
-                }, NotificationCenter.channelRecommendationsLoaded);
+                }, NotificationCenter.dialogPhotosUpdate);
             } else {
                 MessagesController.getInstance(((BottomSheet) StoryPrivacyBottomSheet.this).currentAccount).loadFullChat(j, 0, true);
             }
@@ -2684,7 +2684,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                     ((org.telegram.ui.Cells.HeaderCell) viewHolder.itemView).setText(itemInner2.text);
                 } else if (itemViewType == 10) {
                     int i7 = (int) MessagesController.getInstance(((BottomSheet) StoryPrivacyBottomSheet.this).currentAccount).starsPaidMessageAmountMax;
-                    ((SlideIntChooseView) viewHolder.itemView).set(Utilities.clamp(StoryPrivacyBottomSheet.this.commentsPrice, i7, 0), SlideIntChooseView.Options.make(0, SlideIntChooseView.cut(new int[]{0, 1, 10, 50, 100, NotificationCenter.channelRecommendationsLoaded, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, i7), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$Adapter$$ExternalSyntheticLambda0
+                    ((SlideIntChooseView) viewHolder.itemView).set(Utilities.clamp(StoryPrivacyBottomSheet.this.commentsPrice, i7, 0), SlideIntChooseView.Options.make(0, SlideIntChooseView.cut(new int[]{0, 1, 10, 50, 100, NotificationCenter.dialogPhotosUpdate, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, i7), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$Adapter$$ExternalSyntheticLambda0
                         @Override // org.telegram.messenger.Utilities.Callback2Return
                         public final Object run(Object obj, Object obj2) {
                             CharSequence lambda$onBindViewHolder$0;
@@ -4214,7 +4214,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                         SearchUsersCell.this.currentDeletingSpan = null;
                     }
                     if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
-                        SearchUsersCell.this.fullScroll(NotificationCenter.dialogTranslate);
+                        SearchUsersCell.this.fullScroll(NotificationCenter.dialogIsTranslatable);
                         clearFocus();
                         requestFocus();
                     }
@@ -4234,7 +4234,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
             this.editText.setHandlesColor(Theme.getColor(i, resourcesProvider));
             this.editText.setCursorWidth(1.5f);
             EditTextBoldCursor editTextBoldCursor3 = this.editText;
-            editTextBoldCursor3.setInputType(editTextBoldCursor3.getInputType() | NotificationCenter.liveStoryMessageUpdate);
+            editTextBoldCursor3.setInputType(editTextBoldCursor3.getInputType() | NotificationCenter.liveStoryUpdated);
             this.editText.setSingleLine(true);
             this.editText.setBackgroundDrawable(null);
             this.editText.setVerticalScrollBarEnabled(false);
@@ -4275,7 +4275,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
         @Override // android.view.ViewGroup, android.view.View
         protected void dispatchDraw(Canvas canvas) {
             float scrollY = getScrollY();
-            canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, NotificationCenter.invalidateMotionBackground, 31);
+            canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, NotificationCenter.didReceiveCall, 31);
             super.dispatchDraw(canvas);
             canvas.save();
             float f = this.topGradientAlpha.set(canScrollVertically(-1));
@@ -4517,7 +4517,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                         SearchUsersCell.this.editText.bringPointIntoView(SearchUsersCell.this.editText.getSelectionStart());
                     }
                     if (SearchUsersCell.this.scroll) {
-                        SearchUsersCell.this.fullScroll(NotificationCenter.dialogTranslate);
+                        SearchUsersCell.this.fullScroll(NotificationCenter.dialogIsTranslatable);
                         SearchUsersCell.this.scroll = false;
                     }
                 }
@@ -4526,7 +4526,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
 
             /* JADX INFO: Access modifiers changed from: private */
             public /* synthetic */ void lambda$onMeasure$0() {
-                SearchUsersCell.this.fullScroll(NotificationCenter.dialogTranslate);
+                SearchUsersCell.this.fullScroll(NotificationCenter.dialogIsTranslatable);
             }
 
             @Override // android.view.ViewGroup, android.view.View
@@ -4558,7 +4558,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                             SearchUsersCell.this.updateHeight.run();
                         }
                         if (SearchUsersCell.this.scroll) {
-                            SearchUsersCell.this.fullScroll(NotificationCenter.dialogTranslate);
+                            SearchUsersCell.this.fullScroll(NotificationCenter.dialogIsTranslatable);
                             SearchUsersCell.this.scroll = false;
                         }
                     }
@@ -4604,7 +4604,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                                 SearchUsersCell.this.updateHeight.run();
                             }
                             if (SearchUsersCell.this.scroll) {
-                                SearchUsersCell.this.fullScroll(NotificationCenter.dialogTranslate);
+                                SearchUsersCell.this.fullScroll(NotificationCenter.dialogIsTranslatable);
                                 SearchUsersCell.this.scroll = false;
                             }
                         }
@@ -4670,7 +4670,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                                 SearchUsersCell.this.updateHeight.run();
                             }
                             if (SearchUsersCell.this.scroll) {
-                                SearchUsersCell.this.fullScroll(NotificationCenter.dialogTranslate);
+                                SearchUsersCell.this.fullScroll(NotificationCenter.dialogIsTranslatable);
                                 SearchUsersCell.this.scroll = false;
                             }
                         }

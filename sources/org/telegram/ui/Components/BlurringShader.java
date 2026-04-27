@@ -1209,7 +1209,7 @@ public class BlurringShader {
                     Rect bounds = getBounds();
                     if (paint != null || (StoryBlurDrawer.this.manager != null && StoryBlurDrawer.this.manager.hasRenderNode())) {
                         if (drawable != null) {
-                            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, NotificationCenter.invalidateMotionBackground, 31);
+                            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, NotificationCenter.didReceiveCall, 31);
                             drawable.setBounds(bounds);
                             drawable.draw(canvas);
                             if (StoryBlurDrawer.this.manager != null && StoryBlurDrawer.this.manager.hasRenderNode()) {

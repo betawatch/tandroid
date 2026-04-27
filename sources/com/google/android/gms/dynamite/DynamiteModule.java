@@ -668,7 +668,7 @@ public final class DynamiteModule {
                 z = true;
             }
             zzf = Boolean.valueOf(z);
-            if (z && (applicationInfo = resolveContentProvider.applicationInfo) != null && (applicationInfo.flags & NotificationCenter.dialogIsTranslatable) == 0) {
+            if (z && (applicationInfo = resolveContentProvider.applicationInfo) != null && (applicationInfo.flags & NotificationCenter.messageTranslating) == 0) {
                 Log.i("DynamiteModule", "Non-system-image GmsCore APK, forcing V1");
                 zzd = true;
             }

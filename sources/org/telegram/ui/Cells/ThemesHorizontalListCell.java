@@ -442,7 +442,7 @@ public abstract class ThemesHorizontalListCell extends RecyclerListView implemen
                 this.hasWhiteBackground = false;
             }
             if (this.themeInfo.getPreviewBackgroundColor() == 0 && this.themeInfo.previewParsed && this.backgroundDrawable == null) {
-                Drawable createDefaultWallpaper = Theme.createDefaultWallpaper(100, NotificationCenter.channelRecommendationsLoaded);
+                Drawable createDefaultWallpaper = Theme.createDefaultWallpaper(100, NotificationCenter.dialogPhotosUpdate);
                 this.backgroundDrawable = createDefaultWallpaper;
                 if (createDefaultWallpaper instanceof MotionBackgroundDrawable) {
                     ((MotionBackgroundDrawable) createDefaultWallpaper).setRoundRadius(AndroidUtilities.dp(6.0f));

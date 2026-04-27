@@ -837,7 +837,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
             this.holders.add(animatedEmojiHolder);
             SpansChunk spansChunk = (SpansChunk) this.groupedByLayout.get(layout);
             if (spansChunk == null) {
-                spansChunk = new SpansChunk(animatedEmojiHolder.view, layout, animatedEmojiHolder.invalidateInParent);
+                spansChunk = new SpansChunk(animatedEmojiHolder.view, layout, false);
                 this.groupedByLayout.put(layout, spansChunk);
                 this.backgroundDrawingArray.add(spansChunk);
             }
@@ -899,7 +899,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
     }
 
     private static class SpansChunk {
-        private boolean allowBackgroundRendering;
+        private final boolean allowBackgroundRendering;
         DrawingInBackgroundThreadDrawable backgroundThreadDrawable;
         ArrayList holders = new ArrayList();
         Layout layout;

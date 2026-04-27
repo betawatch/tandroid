@@ -128,6 +128,10 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
         Section section = this.currentWhiteSection;
         if (section != null) {
             section.end = Math.max(0, (this.itemsOffset + this.items.size()) - 1);
+            Section section2 = this.currentWhiteSection;
+            if (section2.start == section2.end) {
+                this.whiteSections.remove(section2);
+            }
             this.currentWhiteSection = null;
         }
     }
@@ -616,6 +620,8 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                 case -2:
                 case -1:
                     FrameLayout frameLayout = (FrameLayout) viewHolder.itemView;
+                    frameLayout.setClipChildren(!item.checked);
+                    frameLayout.setClipToPadding(!item.checked);
                     if (frameLayout.getChildCount() != (item.view != null) || frameLayout.getChildAt(0) != item.view) {
                         frameLayout.removeAllViews();
                         View view2 = item.view;
@@ -649,6 +655,7 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                 case 1:
                 case 26:
                     ((HeaderCell) viewHolder.itemView).setText(item.text);
+                    ((HeaderCell) viewHolder.itemView).setEnabled(item.enabled, true);
                     break;
                 case 2:
                     TopViewCell topViewCell = (TopViewCell) viewHolder.itemView;
@@ -662,8 +669,13 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     } else {
                         topViewCell.setEmoji(item.subtext.toString(), item.textValue.toString());
                     }
-                    topViewCell.setText(item.text);
-                    break;
+                    if (TextUtils.isEmpty(item.animatedText)) {
+                        topViewCell.setText(item.text);
+                        break;
+                    } else {
+                        topViewCell.setText(item.text, item.animatedText);
+                        break;
+                    }
                 case 3:
                     TextCell textCell = (TextCell) viewHolder.itemView;
                     Object obj = item.object;
@@ -699,14 +711,13 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     if (item.accent) {
                         int i7 = Theme.key_windowBackgroundWhiteBlueText4;
                         textCell.setColors(i7, i7);
-                        break;
                     } else if (item.red) {
                         textCell.setColors(Theme.key_text_RedBold, Theme.key_text_RedRegular);
-                        break;
                     } else {
                         textCell.setColors(Theme.key_windowBackgroundWhiteGrayIcon, Theme.key_windowBackgroundWhiteBlackText);
-                        break;
                     }
+                    textCell.setEnabled(item.enabled, true);
+                    break;
                 case 4:
                 case 9:
                     TextCheckCell textCheckCell = (TextCheckCell) viewHolder.itemView;
@@ -738,7 +749,7 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     if (itemViewType == 7 || itemViewType == 8) {
                         TextInfoPrivacyCell textInfoPrivacyCell2 = (TextInfoPrivacyCell) viewHolder.itemView;
                         if (TextUtils.isEmpty(item.text)) {
-                            textInfoPrivacyCell2.setFixedSize(itemViewType == 8 ? NotificationCenter.starBalanceUpdated : 12);
+                            textInfoPrivacyCell2.setFixedSize(itemViewType == 8 ? NotificationCenter.starGiveawayOptionsLoaded : 12);
                             textInfoPrivacyCell2.setText("");
                         } else {
                             textInfoPrivacyCell2.setFixedSize(0);

@@ -67,7 +67,7 @@ public class SnowflakesEffect {
 
     public SnowflakesEffect(int i) {
         this.viewType = i;
-        int i2 = i == 0 ? 100 : NotificationCenter.onActivityResultReceived;
+        int i2 = i == 0 ? 100 : NotificationCenter.onDatabaseOpened;
         this.maxCount = i2;
         Paint paint = new Paint(1);
         this.particlePaint = paint;

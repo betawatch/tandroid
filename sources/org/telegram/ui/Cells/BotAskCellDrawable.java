@@ -64,7 +64,7 @@ public class BotAskCellDrawable extends Drawable {
         Drawable mutate2 = context.getResources().getDrawable(R.drawable.arrow_more).mutate();
         this.groupsArrow = mutate2;
         mutate2.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        mutate2.setAlpha(NotificationCenter.recordProgressChanged);
+        mutate2.setAlpha(NotificationCenter.messagePlayingGoingToStop);
         this.dPaint.setColor(-16777216);
         this.dPaint.setAlpha(30);
     }

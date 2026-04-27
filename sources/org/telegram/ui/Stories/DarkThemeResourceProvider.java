@@ -107,7 +107,7 @@ public class DarkThemeResourceProvider implements Theme.ResourcesProvider {
         this.sparseIntArray.put(Theme.key_actionBarActionModeDefaultIcon, -1);
         this.sparseIntArray.put(i, ColorUtils.blendARGB(-16777216, -1, 0.5f));
         this.sparseIntArray.put(i2, ColorUtils.setAlphaComponent(-1, 17));
-        this.sparseIntArray.put(Theme.key_windowBackgroundWhiteGrayText, ColorUtils.setAlphaComponent(-1, NotificationCenter.messageTranslated));
+        this.sparseIntArray.put(Theme.key_windowBackgroundWhiteGrayText, ColorUtils.setAlphaComponent(-1, NotificationCenter.needDeleteBusinessLink));
         this.sparseIntArray.put(Theme.key_chat_messagePanelVoiceLockBackground, -14606046);
         this.sparseIntArray.put(Theme.key_chat_messagePanelVoiceLock, -1);
         this.sparseIntArray.put(Theme.key_chat_recordedVoiceDot, -1221292);

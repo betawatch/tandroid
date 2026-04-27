@@ -21,8 +21,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLog;
@@ -664,7 +664,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
         } else if (num.intValue() == 1) {
             i = 90;
         } else if (num.intValue() == 2) {
-            i = NotificationCenter.themeUploadError;
+            i = NotificationCenter.themeUploadedToServer;
         } else if (num.intValue() == 3) {
             i = 365;
         } else if (num.intValue() == 4) {
@@ -1105,7 +1105,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
     }
 
     private void loadPasskeys() {
-        getConnectionsManager().sendRequestTyped(new TL_account.getPasskeys(), new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda7
+        getConnectionsManager().sendRequestTyped(new TL_account.getPasskeys(), new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda7
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 PrivacySettingsActivity.this.lambda$loadPasskeys$23((TL_account.Passkeys) obj, (TLRPC.TL_error) obj2);

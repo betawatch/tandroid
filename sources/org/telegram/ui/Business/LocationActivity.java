@@ -291,7 +291,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         universalRecyclerView.setSections();
         this.listView.adapter.setApplyBackground(false);
         frameLayout.addView(this.listView, LayoutHelper.createFrame(-1, -1.0f));
-        this.actionBar.setAdaptiveBackground(this.listView);
+        this.actionBar.setAdaptiveBackground(this.listView, true);
         setValue();
         this.fragmentView = frameLayout;
         return frameLayout;
@@ -366,7 +366,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             int min = Math.min(2, (int) Math.ceil(f));
             BackupImageView backupImageView2 = this.mapPreview;
             TLRPC.GeoPoint geoPoint = this.geo;
-            backupImageView2.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i, min * NotificationCenter.appConfigUpdated, 15, min)), i + "_" + NotificationCenter.appConfigUpdated, this.mapLoadingDrawable, 0, (Object) null);
+            backupImageView2.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i, min * NotificationCenter.commonChatsLoaded, 15, min)), i + "_" + NotificationCenter.commonChatsLoaded, this.mapLoadingDrawable, 0, (Object) null);
             return;
         }
         backupImageView.setImageBitmap(null);
@@ -547,7 +547,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
 
     /* JADX INFO: Access modifiers changed from: private */
     public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
-        arrayList.add(UItem.asTopView(LocaleController.getString(R.string.BusinessLocationInfo), R.raw.biz_map));
+        arrayList.add(UItem.asTopView(LocaleController.getString(R.string.BusinessLocation), LocaleController.getString(R.string.BusinessLocationInfo), R.raw.biz_map));
         arrayList.add(UItem.asCustom(this.editTextContainer));
         arrayList.add(UItem.asShadow(null));
         boolean z = false;

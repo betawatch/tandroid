@@ -313,7 +313,7 @@ public class PrivacyUsersActivity extends BaseFragment implements NotificationCe
             public final void run() {
                 PrivacyUsersActivity.this.lambda$showUnblockAlert$6(l);
             }
-        }).setMinWidth(NotificationCenter.boostByChannelCreated).show();
+        }).setMinWidth(NotificationCenter.boostedChannelByUser).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -123,7 +123,7 @@ final class zzcf implements ObjectEncoderContext {
     private final void zzn(int i) {
         while (true) {
             long j = i & (-128);
-            int i2 = i & NotificationCenter.messageTranslated;
+            int i2 = i & NotificationCenter.needDeleteBusinessLink;
             if (j == 0) {
                 this.zze.write(i2);
                 return;
@@ -137,7 +137,7 @@ final class zzcf implements ObjectEncoderContext {
     private final void zzo(long j) {
         while (true) {
             long j2 = (-128) & j;
-            int i = ((int) j) & NotificationCenter.messageTranslated;
+            int i = ((int) j) & NotificationCenter.needDeleteBusinessLink;
             if (j2 == 0) {
                 this.zze.write(i);
                 return;

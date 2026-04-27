@@ -837,7 +837,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
                 for (i12 = 0; i12 < i11; i12 += r14) {
                     MessageObject.GroupedMessagePosition groupedMessagePosition14 = (MessageObject.GroupedMessagePosition) groupCalculator.posArray.get(i12);
                     if (groupedMessagePosition14.minX == 0) {
-                        groupedMessagePosition14.spanSize += NotificationCenter.channelRecommendationsLoaded;
+                        groupedMessagePosition14.spanSize += NotificationCenter.dialogPhotosUpdate;
                     }
                     if ((groupedMessagePosition14.flags & 2) != 0) {
                         groupedMessagePosition14.edge = r14;

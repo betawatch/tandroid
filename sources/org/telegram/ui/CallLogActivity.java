@@ -873,7 +873,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                 CallLogActivity.this.iBlur3SourceGlassFrosted.draw(canvas, rect.left, rect.top + f, rect.right, rect.bottom + f);
                 canvas.restore();
                 int alpha = paint.getAlpha();
-                paint.setAlpha(NotificationCenter.configLoaded);
+                paint.setAlpha(NotificationCenter.appDidLogout);
                 canvas.drawRect(rect, paint);
                 paint.setAlpha(alpha);
             }
@@ -2135,7 +2135,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, resourcesProvider));
             textView.setText(" " + LocaleController.getString(R.string.GroupCallCreatedLinkJoinOr) + " ");
             textView.setTextSize(14.0f);
-            linearLayout.addView(textView, LayoutHelper.createLinear(NotificationCenter.boostByChannelCreated, -2, 1, 28, 12, 28, 8));
+            linearLayout.addView(textView, LayoutHelper.createLinear(NotificationCenter.boostedChannelByUser, -2, 1, 28, 12, 28, 8));
             final Runnable runnable = new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda38
                 @Override // java.lang.Runnable
                 public final void run() {

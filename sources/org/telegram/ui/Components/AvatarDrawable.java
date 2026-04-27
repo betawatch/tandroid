@@ -92,7 +92,7 @@ public class AvatarDrawable extends Drawable {
         this.roundRadius = -1;
         this.drawAvatarBackground = true;
         this.rotate45Background = false;
-        this.alpha = NotificationCenter.invalidateMotionBackground;
+        this.alpha = NotificationCenter.didReceiveCall;
         this.resourcesProvider = resourcesProvider;
         TextPaint textPaint = new TextPaint(1);
         this.namePaint = textPaint;
@@ -672,7 +672,7 @@ public class AvatarDrawable extends Drawable {
                 if (i7 != 255) {
                     drawable3.setAlpha(i7);
                     drawable3.draw(canvas);
-                    drawable3.setAlpha(NotificationCenter.invalidateMotionBackground);
+                    drawable3.setAlpha(NotificationCenter.didReceiveCall);
                 } else {
                     drawable3.draw(canvas);
                 }

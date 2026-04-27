@@ -677,7 +677,7 @@ public abstract class FilterTabsView extends FrameLayout {
             }
             int measuredHeight3 = (getMeasuredHeight() - AndroidUtilities.dp(17.333f)) / 2;
             if (z || ((!FilterTabsView.this.isEditing && FilterTabsView.this.editingStartAnimationProgress == f5) || str3 != null)) {
-                FilterTabsView.this.counterPaint.setAlpha(NotificationCenter.invalidateMotionBackground);
+                FilterTabsView.this.counterPaint.setAlpha(NotificationCenter.didReceiveCall);
             } else {
                 FilterTabsView.this.counterPaint.setAlpha((int) (FilterTabsView.this.editingStartAnimationProgress * 255.0f));
             }
@@ -744,7 +744,7 @@ public abstract class FilterTabsView extends FrameLayout {
                                 this.stableCounter.draw(canvas);
                                 canvas.restore();
                             }
-                            FilterTabsView.this.textCounterPaint.setAlpha(NotificationCenter.invalidateMotionBackground);
+                            FilterTabsView.this.textCounterPaint.setAlpha(NotificationCenter.didReceiveCall);
                         }
                         f26 += (dp2 - (lineBottom - lineTop)) / 2.0f;
                         float dp32 = f26 - AndroidUtilities.dp(0.5f);
@@ -756,7 +756,7 @@ public abstract class FilterTabsView extends FrameLayout {
                         }
                         if (this.stableCounter != null) {
                         }
-                        FilterTabsView.this.textCounterPaint.setAlpha(NotificationCenter.invalidateMotionBackground);
+                        FilterTabsView.this.textCounterPaint.setAlpha(NotificationCenter.didReceiveCall);
                     } else if (str3 != null) {
                         if (!z) {
                             FilterTabsView.this.textCounterPaint.setAlpha((int) ((1.0f - FilterTabsView.this.editingStartAnimationProgress) * 255.0f));
@@ -1229,7 +1229,7 @@ public abstract class FilterTabsView extends FrameLayout {
                             calculateDxToMakeVisible -= AndroidUtilities.dp(60.0f);
                         }
                         int calculateDyToMakeVisible = calculateDyToMakeVisible(view, getVerticalSnapPreference());
-                        int max = Math.max(NotificationCenter.newEmojiSuggestionsAvailable, calculateTimeForDeceleration((int) Math.sqrt((calculateDxToMakeVisible * calculateDxToMakeVisible) + (calculateDyToMakeVisible * calculateDyToMakeVisible))));
+                        int max = Math.max(NotificationCenter.needDeleteDialog, calculateTimeForDeceleration((int) Math.sqrt((calculateDxToMakeVisible * calculateDxToMakeVisible) + (calculateDyToMakeVisible * calculateDyToMakeVisible))));
                         if (max > 0) {
                             action.update(-calculateDxToMakeVisible, -calculateDyToMakeVisible, max, this.mDecelerateInterpolator);
                         }
@@ -2211,6 +2211,9 @@ public abstract class FilterTabsView extends FrameLayout {
                 AndroidUtilities.runOnUIThread(this.resetDefaultPosition, 320L);
             }
             super.onSelectedChanged(viewHolder, i);
+            if (viewHolder != null) {
+                viewHolder.itemView.setTag(R.id.dragging, i == 2 ? Boolean.TRUE : null);
+            }
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
@@ -2218,6 +2221,7 @@ public abstract class FilterTabsView extends FrameLayout {
             super.clearView(recyclerView, viewHolder);
             viewHolder.itemView.setPressed(false);
             viewHolder.itemView.setBackground(null);
+            viewHolder.itemView.setTag(R.id.dragging, null);
         }
     }
 

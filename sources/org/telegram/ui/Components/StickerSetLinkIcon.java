@@ -18,7 +18,7 @@ public class StickerSetLinkIcon extends Drawable {
     private final int count;
     private final AnimatedEmojiDrawable[] drawables;
     public final boolean out;
-    public int alpha = NotificationCenter.invalidateMotionBackground;
+    public int alpha = NotificationCenter.didReceiveCall;
     private final RectF rect = new RectF();
     private boolean hit = false;
 

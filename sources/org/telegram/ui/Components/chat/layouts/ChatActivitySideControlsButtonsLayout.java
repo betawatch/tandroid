@@ -28,6 +28,11 @@ public class ChatActivitySideControlsButtonsLayout extends FrameLayout implement
     private ButtonOnLongClickListener onLongClickListener;
     private final Theme.ResourcesProvider resourcesProvider;
 
+    @Override // android.view.View
+    public boolean hasOverlappingRendering() {
+        return false;
+    }
+
     @Override // me.vkryl.android.animator.FactorAnimator.Target
     public /* synthetic */ void onFactorChangeFinished(int i, float f, FactorAnimator factorAnimator) {
         FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i, f, factorAnimator);

@@ -340,7 +340,7 @@ public abstract class VoIPHelper {
             if (user == null && chat == null) {
                 return;
             }
-            if (SystemClock.elapsedRealtime() - lastCallTime < (chat != null ? NotificationCenter.channelRecommendationsLoaded : 2000)) {
+            if (SystemClock.elapsedRealtime() - lastCallTime < (chat != null ? NotificationCenter.dialogPhotosUpdate : 2000)) {
                 return;
             }
             if (z5 && chat != null && !z4 && (chatFull2 = accountInstance.getMessagesController().getChatFull(chat.id)) != null && (peer = chatFull2.groupcall_default_join_as) != null) {

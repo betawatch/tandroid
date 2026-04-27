@@ -685,9 +685,9 @@ public abstract class VideoTimelinePlayView extends View {
             canvas.restore();
         }
         if (!this.isLivePhoto) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.invalidateMotionBackground, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
             this.rect3.set(dp - AndroidUtilities.dpf2(10.0f), dp3, AndroidUtilities.dpf2(10.0f) + dp2, dp4);
-            this.whitePaint.setAlpha(NotificationCenter.invalidateMotionBackground);
+            this.whitePaint.setAlpha(NotificationCenter.didReceiveCall);
             canvas.drawRoundRect(this.rect3, AndroidUtilities.dpf2(6.0f), AndroidUtilities.dpf2(6.0f), this.whitePaint);
             this.rect3.set(dp, AndroidUtilities.dpf2(2.0f) + dp3, dp2, dp4 - AndroidUtilities.dpf2(2.0f));
             canvas.drawRect(this.rect3, this.cutPaint);

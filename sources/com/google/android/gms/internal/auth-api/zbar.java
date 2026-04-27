@@ -18,7 +18,7 @@ public final class zbar extends GmsClient {
     private final Bundle zba;
 
     public zbar(Context context, Looper looper, zbv zbvVar, ClientSettings clientSettings, ConnectionCallbacks connectionCallbacks, OnConnectionFailedListener onConnectionFailedListener) {
-        super(context, looper, NotificationCenter.groupPackUpdated, clientSettings, connectionCallbacks, onConnectionFailedListener);
+        super(context, looper, NotificationCenter.chatWasBoostedByUser, clientSettings, connectionCallbacks, onConnectionFailedListener);
         this.zba = new Bundle();
     }
 

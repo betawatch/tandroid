@@ -343,7 +343,7 @@ public class AndroidUtilities {
     }
 
     public static int getWallpaperRotation(int i, boolean z) {
-        int i2 = z ? i + NotificationCenter.newEmojiSuggestionsAvailable : i - 180;
+        int i2 = z ? i + NotificationCenter.needDeleteDialog : i - 180;
         while (i2 >= 360) {
             i2 -= 360;
         }
@@ -1457,7 +1457,7 @@ public class AndroidUtilities {
     }
 
     public static boolean doSafe(Utilities.Callback0Return<Boolean> callback0Return) {
-        return doSafe(callback0Return, NotificationCenter.channelRecommendationsLoaded);
+        return doSafe(callback0Return, NotificationCenter.dialogPhotosUpdate);
     }
 
     public static boolean doSafe(final Utilities.Callback0Return<Boolean> callback0Return, int i) {
@@ -1704,15 +1704,15 @@ public class AndroidUtilities {
             }
             i = -16777216;
         }
-        double[] rgbToHsv = rgbToHsv((i >> 16) & NotificationCenter.invalidateMotionBackground, (i >> 8) & NotificationCenter.invalidateMotionBackground, i & NotificationCenter.invalidateMotionBackground);
+        double[] rgbToHsv = rgbToHsv((i >> 16) & NotificationCenter.didReceiveCall, (i >> 8) & NotificationCenter.didReceiveCall, i & NotificationCenter.didReceiveCall);
         double d = rgbToHsv[1];
         rgbToHsv[1] = Math.min(1.0d, 0.05d + d + ((1.0d - d) * 0.1d));
         int[] hsvToRgb = hsvToRgb(rgbToHsv[0], rgbToHsv[1], Math.max(0.0d, rgbToHsv[2] * 0.65d));
         iArr[0] = Color.argb(102, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
-        iArr[1] = Color.argb(NotificationCenter.didUpdateConnectionState, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
+        iArr[1] = Color.argb(NotificationCenter.httpFileDidFailedLoad, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
         int[] hsvToRgb2 = hsvToRgb(rgbToHsv[0], rgbToHsv[1], Math.max(0.0d, rgbToHsv[2] * 0.72d));
         iArr[2] = Color.argb(102, hsvToRgb2[0], hsvToRgb2[1], hsvToRgb2[2]);
-        iArr[3] = Color.argb(NotificationCenter.didUpdateConnectionState, hsvToRgb2[0], hsvToRgb2[1], hsvToRgb2[2]);
+        iArr[3] = Color.argb(NotificationCenter.httpFileDidFailedLoad, hsvToRgb2[0], hsvToRgb2[1], hsvToRgb2[2]);
         return iArr;
     }
 
@@ -1751,7 +1751,7 @@ public class AndroidUtilities {
 
     public static int hsvToColor(double d, double d2, double d3) {
         int[] hsvToRgb = hsvToRgb(d, d2, d3);
-        return Color.argb(NotificationCenter.invalidateMotionBackground, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
+        return Color.argb(NotificationCenter.didReceiveCall, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
     }
 
     public static int[] hsvToRgb(double d, double d2, double d3) {
@@ -5196,7 +5196,7 @@ public class AndroidUtilities {
             i2 = (int) ((f5 * 255.0f) + 0.5f);
             i3 = (int) ((f7 * 255.0f) + 0.5f);
         }
-        return ((i & NotificationCenter.invalidateMotionBackground) << 16) | (-16777216) | ((i2 & NotificationCenter.invalidateMotionBackground) << 8) | (i3 & NotificationCenter.invalidateMotionBackground);
+        return ((i & NotificationCenter.didReceiveCall) << 16) | (-16777216) | ((i2 & NotificationCenter.didReceiveCall) << 8) | (i3 & NotificationCenter.didReceiveCall);
     }
 
     public static float computePerceivedBrightness(int i) {
@@ -5535,7 +5535,7 @@ public class AndroidUtilities {
     }
 
     public static int getAverageColor(int i, int i2) {
-        return Color.argb(NotificationCenter.invalidateMotionBackground, (Color.red(i) / 2) + (Color.red(i2) / 2), (Color.green(i) / 2) + (Color.green(i2) / 2), (Color.blue(i) / 2) + (Color.blue(i2) / 2));
+        return Color.argb(NotificationCenter.didReceiveCall, (Color.red(i) / 2) + (Color.red(i2) / 2), (Color.green(i) / 2) + (Color.green(i2) / 2), (Color.blue(i) / 2) + (Color.blue(i2) / 2));
     }
 
     public static void setLightStatusBar(Window window, boolean z) {
@@ -6224,7 +6224,7 @@ public class AndroidUtilities {
         canvas.scale(f2, f2);
         canvas.drawColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         view.draw(canvas);
-        Utilities.stackBlurBitmap(createBitmap, Math.max(i, Math.max(width, height) / NotificationCenter.newEmojiSuggestionsAvailable));
+        Utilities.stackBlurBitmap(createBitmap, Math.max(i, Math.max(width, height) / NotificationCenter.needDeleteDialog));
         return createBitmap;
     }
 
@@ -6338,7 +6338,7 @@ public class AndroidUtilities {
                         canvas.restore();
                     }
                 }
-                Utilities.stackBlurBitmap(createBitmap, Math.max(i, Math.max(width, i2) / NotificationCenter.newEmojiSuggestionsAvailable));
+                Utilities.stackBlurBitmap(createBitmap, Math.max(i, Math.max(width, i2) / NotificationCenter.needDeleteDialog));
                 callback.run(createBitmap);
             } catch (Exception e2) {
                 FileLog.e(e2);
@@ -6555,13 +6555,13 @@ public class AndroidUtilities {
         try {
             int i = 1;
             int attributeInt = exifInterface.getAttributeInt("Orientation", 1);
-            int i2 = NotificationCenter.suggestedLangpack;
+            int i2 = NotificationCenter.locationPermissionDenied;
             switch (attributeInt) {
                 case 2:
                     i2 = 0;
                     break;
                 case 3:
-                    i2 = NotificationCenter.newEmojiSuggestionsAvailable;
+                    i2 = NotificationCenter.needDeleteDialog;
                     i = 0;
                     break;
                 case 4:
@@ -6646,7 +6646,7 @@ public class AndroidUtilities {
         if (i == 0) {
             return 0;
         }
-        return Color.argb(NotificationCenter.invalidateMotionBackground, i4 / i, i3 / i, i2 / i);
+        return Color.argb(NotificationCenter.didReceiveCall, i4 / i, i3 / i, i2 / i);
     }
 
     public static String translitSafe(String str) {
@@ -7157,7 +7157,7 @@ public class AndroidUtilities {
         float f3 = (array[0] * f) + (array[1] * green) + (array[2] * blue) + (array[3] * f2) + array[4];
         float f4 = (array[5] * f) + (array[6] * green) + (array[7] * blue) + (array[8] * f2) + array[9];
         float f5 = (array[10] * f) + (array[11] * green) + (array[12] * blue) + (array[13] * f2) + array[14];
-        return Color.argb(MathUtils.clamp(Math.round((array[15] * f) + (array[16] * green) + (array[17] * blue) + (array[18] * f2) + array[19]), 0, NotificationCenter.invalidateMotionBackground), MathUtils.clamp(Math.round(f3), 0, NotificationCenter.invalidateMotionBackground), MathUtils.clamp(Math.round(f4), 0, NotificationCenter.invalidateMotionBackground), MathUtils.clamp(Math.round(f5), 0, NotificationCenter.invalidateMotionBackground));
+        return Color.argb(MathUtils.clamp(Math.round((array[15] * f) + (array[16] * green) + (array[17] * blue) + (array[18] * f2) + array[19]), 0, NotificationCenter.didReceiveCall), MathUtils.clamp(Math.round(f3), 0, NotificationCenter.didReceiveCall), MathUtils.clamp(Math.round(f4), 0, NotificationCenter.didReceiveCall), MathUtils.clamp(Math.round(f5), 0, NotificationCenter.didReceiveCall));
     }
 
     public static void createCalendarEvent(Activity activity, long j, String str, String str2, boolean z) {

@@ -181,7 +181,7 @@ final class zzvc {
         long j2 = (-4) & j;
         int i = unsafe.getInt(obj, j2);
         int i2 = ((~((int) j)) & 3) << 3;
-        unsafe.putInt(obj, j2, ((255 & b) << i2) | (i & (~(NotificationCenter.invalidateMotionBackground << i2))));
+        unsafe.putInt(obj, j2, ((255 & b) << i2) | (i & (~(NotificationCenter.didReceiveCall << i2))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -189,7 +189,7 @@ final class zzvc {
         Unsafe unsafe = zzf.zza;
         long j2 = (-4) & j;
         int i = (((int) j) & 3) << 3;
-        unsafe.putInt(obj, j2, ((255 & b) << i) | (unsafe.getInt(obj, j2) & (~(NotificationCenter.invalidateMotionBackground << i))));
+        unsafe.putInt(obj, j2, ((255 & b) << i) | (unsafe.getInt(obj, j2) & (~(NotificationCenter.didReceiveCall << i))));
     }
 
     static double zza(Object obj, long j) {
@@ -261,11 +261,11 @@ final class zzvc {
     }
 
     static /* bridge */ /* synthetic */ boolean zzt(Object obj, long j) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) (((~j) & 3) << 3))) & NotificationCenter.invalidateMotionBackground)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) (((~j) & 3) << 3))) & NotificationCenter.didReceiveCall)) != 0;
     }
 
     static /* bridge */ /* synthetic */ boolean zzu(Object obj, long j) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) ((j & 3) << 3))) & NotificationCenter.invalidateMotionBackground)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) ((j & 3) << 3))) & NotificationCenter.didReceiveCall)) != 0;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

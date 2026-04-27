@@ -78,9 +78,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
+import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.DialogObject;
@@ -304,7 +304,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             this.parentActivity = (Activity) context;
         }
         cellFlickerDrawable.drawFrame = false;
-        cellFlickerDrawable.setColors(i, NotificationCenter.recordProgressChanged, NotificationCenter.storyAlbumsCollectionsUpdate);
+        cellFlickerDrawable.setColors(i, NotificationCenter.messagePlayingGoingToStop, NotificationCenter.userIsPremiumBlockedUpadted);
         BackupImageView backupImageView = new BackupImageView(context) { // from class: org.telegram.ui.web.BotWebViewContainer.1
             {
                 this.imageReceiver = new 1(this);
@@ -627,7 +627,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
     }
 
     public void updateFlickerBackgroundColor(int i) {
-        this.flickerDrawable.setColors(i, NotificationCenter.recordProgressChanged, NotificationCenter.storyAlbumsCollectionsUpdate);
+        this.flickerDrawable.setColors(i, NotificationCenter.messagePlayingGoingToStop, NotificationCenter.userIsPremiumBlockedUpadted);
     }
 
     public boolean onBackPressed() {
@@ -1466,31 +1466,31 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:254:0x0db2 A[ADDED_TO_REGION, REMOVE, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:255:0x0db3  */
-    /* JADX WARN: Removed duplicated region for block: B:463:0x1275  */
-    /* JADX WARN: Removed duplicated region for block: B:465:0x1281  */
+    /* JADX WARN: Removed duplicated region for block: B:254:0x0db3 A[ADDED_TO_REGION, REMOVE, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x0db4  */
+    /* JADX WARN: Removed duplicated region for block: B:463:0x1276  */
+    /* JADX WARN: Removed duplicated region for block: B:465:0x1282  */
     /* JADX WARN: Removed duplicated region for block: B:836:0x0503  */
-    /* JADX WARN: Removed duplicated region for block: B:840:0x0511 A[Catch: Exception -> 0x04d5, TRY_LEAVE, TryCatch #35 {Exception -> 0x04d5, blocks: (B:822:0x04b6, B:824:0x04c6, B:826:0x04cc, B:829:0x04d7, B:840:0x0511, B:843:0x0508, B:845:0x050c, B:846:0x04ec, B:849:0x04f6), top: B:821:0x04b6 }] */
-    /* JADX WARN: Removed duplicated region for block: B:845:0x050c A[Catch: Exception -> 0x04d5, TryCatch #35 {Exception -> 0x04d5, blocks: (B:822:0x04b6, B:824:0x04c6, B:826:0x04cc, B:829:0x04d7, B:840:0x0511, B:843:0x0508, B:845:0x050c, B:846:0x04ec, B:849:0x04f6), top: B:821:0x04b6 }] */
-    /* JADX WARN: Removed duplicated region for block: B:891:0x0ea6  */
-    /* JADX WARN: Removed duplicated region for block: B:908:0x0758  */
-    /* JADX WARN: Removed duplicated region for block: B:915:0x0817 A[Catch: Exception -> 0x073e, TRY_LEAVE, TryCatch #39 {Exception -> 0x073e, blocks: (B:899:0x0714, B:915:0x0817, B:919:0x0760, B:921:0x0765, B:935:0x07a7, B:936:0x07aa, B:937:0x07ad, B:938:0x077f, B:941:0x078a, B:944:0x0792, B:947:0x07b0, B:948:0x07ba, B:960:0x0801, B:961:0x0805, B:962:0x0809, B:963:0x080d, B:964:0x0811, B:965:0x07be, B:968:0x07c8, B:971:0x07d2, B:974:0x07dc, B:977:0x07e6, B:980:0x0734, B:983:0x0741, B:986:0x074b), top: B:898:0x0714 }] */
-    /* JADX WARN: Removed duplicated region for block: B:930:0x07a0  */
-    /* JADX WARN: Removed duplicated region for block: B:937:0x07ad A[Catch: Exception -> 0x073e, TryCatch #39 {Exception -> 0x073e, blocks: (B:899:0x0714, B:915:0x0817, B:919:0x0760, B:921:0x0765, B:935:0x07a7, B:936:0x07aa, B:937:0x07ad, B:938:0x077f, B:941:0x078a, B:944:0x0792, B:947:0x07b0, B:948:0x07ba, B:960:0x0801, B:961:0x0805, B:962:0x0809, B:963:0x080d, B:964:0x0811, B:965:0x07be, B:968:0x07c8, B:971:0x07d2, B:974:0x07dc, B:977:0x07e6, B:980:0x0734, B:983:0x0741, B:986:0x074b), top: B:898:0x0714 }] */
-    /* JADX WARN: Removed duplicated region for block: B:947:0x07b0 A[Catch: Exception -> 0x073e, TryCatch #39 {Exception -> 0x073e, blocks: (B:899:0x0714, B:915:0x0817, B:919:0x0760, B:921:0x0765, B:935:0x07a7, B:936:0x07aa, B:937:0x07ad, B:938:0x077f, B:941:0x078a, B:944:0x0792, B:947:0x07b0, B:948:0x07ba, B:960:0x0801, B:961:0x0805, B:962:0x0809, B:963:0x080d, B:964:0x0811, B:965:0x07be, B:968:0x07c8, B:971:0x07d2, B:974:0x07dc, B:977:0x07e6, B:980:0x0734, B:983:0x0741, B:986:0x074b), top: B:898:0x0714 }] */
+    /* JADX WARN: Removed duplicated region for block: B:840:0x0511 A[Catch: Exception -> 0x04d5, TRY_LEAVE, TryCatch #34 {Exception -> 0x04d5, blocks: (B:822:0x04b6, B:824:0x04c6, B:826:0x04cc, B:829:0x04d7, B:840:0x0511, B:843:0x0508, B:845:0x050c, B:846:0x04ec, B:849:0x04f6), top: B:821:0x04b6 }] */
+    /* JADX WARN: Removed duplicated region for block: B:845:0x050c A[Catch: Exception -> 0x04d5, TryCatch #34 {Exception -> 0x04d5, blocks: (B:822:0x04b6, B:824:0x04c6, B:826:0x04cc, B:829:0x04d7, B:840:0x0511, B:843:0x0508, B:845:0x050c, B:846:0x04ec, B:849:0x04f6), top: B:821:0x04b6 }] */
+    /* JADX WARN: Removed duplicated region for block: B:891:0x0ea7  */
+    /* JADX WARN: Removed duplicated region for block: B:917:0x0758  */
+    /* JADX WARN: Removed duplicated region for block: B:924:0x0818 A[Catch: Exception -> 0x073e, TRY_LEAVE, TryCatch #40 {Exception -> 0x073e, blocks: (B:908:0x0714, B:924:0x0818, B:928:0x0760, B:930:0x0765, B:944:0x07a7, B:945:0x07aa, B:946:0x07ad, B:947:0x077f, B:950:0x078a, B:953:0x0792, B:956:0x07b0, B:957:0x07ba, B:969:0x0802, B:970:0x0806, B:971:0x080a, B:972:0x080e, B:973:0x0812, B:974:0x07be, B:977:0x07c8, B:980:0x07d2, B:983:0x07dc, B:986:0x07e7, B:989:0x0734, B:992:0x0741, B:995:0x074b), top: B:907:0x0714 }] */
+    /* JADX WARN: Removed duplicated region for block: B:939:0x07a0  */
+    /* JADX WARN: Removed duplicated region for block: B:946:0x07ad A[Catch: Exception -> 0x073e, TryCatch #40 {Exception -> 0x073e, blocks: (B:908:0x0714, B:924:0x0818, B:928:0x0760, B:930:0x0765, B:944:0x07a7, B:945:0x07aa, B:946:0x07ad, B:947:0x077f, B:950:0x078a, B:953:0x0792, B:956:0x07b0, B:957:0x07ba, B:969:0x0802, B:970:0x0806, B:971:0x080a, B:972:0x080e, B:973:0x0812, B:974:0x07be, B:977:0x07c8, B:980:0x07d2, B:983:0x07dc, B:986:0x07e7, B:989:0x0734, B:992:0x0741, B:995:0x074b), top: B:907:0x0714 }] */
+    /* JADX WARN: Removed duplicated region for block: B:956:0x07b0 A[Catch: Exception -> 0x073e, TryCatch #40 {Exception -> 0x073e, blocks: (B:908:0x0714, B:924:0x0818, B:928:0x0760, B:930:0x0765, B:944:0x07a7, B:945:0x07aa, B:946:0x07ad, B:947:0x077f, B:950:0x078a, B:953:0x0792, B:956:0x07b0, B:957:0x07ba, B:969:0x0802, B:970:0x0806, B:971:0x080a, B:972:0x080e, B:973:0x0812, B:974:0x07be, B:977:0x07c8, B:980:0x07d2, B:983:0x07dc, B:986:0x07e7, B:989:0x0734, B:992:0x0741, B:995:0x074b), top: B:907:0x0714 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void onEventReceived(final BotWebViewProxy botWebViewProxy, String str, String str2) {
         char c;
         int parseColor;
-        boolean z;
         char c2;
         char c3;
         BotWebViewVibrationEffect botWebViewVibrationEffect;
         BotWebViewVibrationEffect botWebViewVibrationEffect2;
         char c4;
+        boolean z;
         boolean z2;
         boolean z3;
         JSONArray jSONArray;
@@ -3265,7 +3265,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         TL_bots.getRequestedWebViewButton getrequestedwebviewbutton = new TL_bots.getRequestedWebViewButton();
                         getrequestedwebviewbutton.bot = MessagesController.getInstance(this.currentAccount).getInputUser(this.botUser);
                         getrequestedwebviewbutton.webapp_req_id = str7;
-                        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(getrequestedwebviewbutton, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda26
+                        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(getrequestedwebviewbutton, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda26
                             @Override // org.telegram.messenger.Utilities.Callback2
                             public final void run(Object obj2, Object obj3) {
                                 BotWebViewContainer.this.lambda$onEventReceived$57(str7, (TLRPC.KeyboardButton) obj2, (TLRPC.TL_error) obj3);
@@ -4120,7 +4120,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         tL_messages_sendBotRequestedPeer.webapp_req_id = str;
         tL_messages_sendBotRequestedPeer.button_id = tL_keyboardButtonRequestPeer.button_id;
         tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInputPeer(user));
-        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_sendBotRequestedPeer, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda59
+        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_sendBotRequestedPeer, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda59
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 BotWebViewContainer.this.lambda$onEventReceived$50(str, user, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
@@ -4211,7 +4211,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         while (it.hasNext()) {
             tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(this.currentAccount).getInputPeer(((Long) it.next()).longValue()));
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_sendBotRequestedPeer, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda54
+        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_sendBotRequestedPeer, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda54
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 BotWebViewContainer.this.lambda$onEventReceived$52(str, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
@@ -4260,7 +4260,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             while (it2.hasNext()) {
                 tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(this.currentAccount).getInputPeer(((Long) it2.next()).longValue()));
             }
-            ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_sendBotRequestedPeer, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda58
+            ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_sendBotRequestedPeer, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda58
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     BotWebViewContainer.this.lambda$onEventReceived$55(str, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);

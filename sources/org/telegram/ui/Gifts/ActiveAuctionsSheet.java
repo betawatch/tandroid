@@ -230,7 +230,7 @@ public class ActiveAuctionsSheet extends BottomSheetWithRecyclerListView impleme
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, LayoutHelper.measureSpecExactlyDp(NotificationCenter.dialogsUnreadCounterChanged));
+            super.onMeasure(i, LayoutHelper.measureSpecExactlyDp(NotificationCenter.filePreparingFailed));
         }
 
         @Override // android.view.ViewGroup, android.view.View

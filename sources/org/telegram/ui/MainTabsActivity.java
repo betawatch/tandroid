@@ -277,7 +277,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     @Override // org.telegram.ui.ViewPagerActivity, org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
         super.createView(context);
-        MainTabsLayout mainTabsLayout = new MainTabsLayout(context);
+        MainTabsLayout mainTabsLayout = new MainTabsLayout(context, this.resourceProvider);
         this.tabsView = mainTabsLayout;
         mainTabsLayout.setClipChildren(false);
         this.tabsView.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
@@ -296,6 +296,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
                 return lambda$createView$0;
             }
         });
+        this.tabsView.addTabToIgnoreClick(this.tabs[4]);
         int i = 0;
         while (true) {
             GlassTabView[] glassTabViewArr2 = this.tabs;
@@ -434,7 +435,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
                         MainTabsActivity.this.lambda$openAccountSelector$7(intValue, makeOptions, view2);
                     }
                 });
-                makeOptions.addView(accountView, LayoutHelper.createLinear(NotificationCenter.starUserGiftsLoaded, 48));
+                makeOptions.addView(accountView, LayoutHelper.createLinear(NotificationCenter.starGiftsLoaded, 48));
             }
         }
         makeOptions.setBlur(true);
@@ -830,10 +831,8 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     public void checkUi_tabsPosition() {
         int dp = AndroidUtilities.dp(40.0f) + (-(this.updateLayoutWrapper.isUpdateLayoutVisible() ? AndroidUtilities.dp(44.0f) : 0));
         float floatValue = this.animatorTabsVisible.getFloatValue();
-        float lerp = AndroidUtilities.lerp(0.85f, 1.0f, floatValue);
+        AndroidUtilities.lerp(0.85f, 1.0f, floatValue);
         this.tabsViewWrapper.setTranslationY(AndroidUtilities.lerp(dp, r0, floatValue));
-        this.tabsView.setScaleX(lerp);
-        this.tabsView.setScaleY(lerp);
         this.tabsView.setClickable(floatValue > 1.0f);
         this.tabsView.setEnabled(floatValue > 1.0f);
         this.tabsView.setAlpha(floatValue);

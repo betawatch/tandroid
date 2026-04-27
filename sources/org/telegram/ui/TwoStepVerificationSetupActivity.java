@@ -798,7 +798,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                             TwoStepVerificationSetupActivity.this.descriptionText2.measure(View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                             TwoStepVerificationSetupActivity.this.buttonTextView.measure(View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLObject.FLAG_30));
                         } else {
-                            float f2 = TwoStepVerificationSetupActivity.this.currentType == 7 ? NotificationCenter.albumsDidLoad : NotificationCenter.fileLoadProgressChanged;
+                            float f2 = TwoStepVerificationSetupActivity.this.currentType == 7 ? NotificationCenter.screenshotTook : NotificationCenter.fileUploadProgressChanged;
                             TwoStepVerificationSetupActivity.this.imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f2), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f2), TLObject.FLAG_30));
                             TwoStepVerificationSetupActivity.this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                             TwoStepVerificationSetupActivity.this.descriptionText.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
@@ -880,7 +880,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                 this.outlineTextFirstRow.setText(LocaleController.getString(this.currentType == 0 ? R.string.EnterPassword : R.string.ReEnterPassword));
                 this.editTextFirstRow.setContentDescription(LocaleController.getString(this.currentType == 0 ? R.string.EnterPassword : R.string.ReEnterPassword));
                 this.editTextFirstRow.setImeOptions(268435461);
-                this.editTextFirstRow.setInputType(NotificationCenter.dialogIsTranslatable);
+                this.editTextFirstRow.setInputType(NotificationCenter.messageTranslating);
                 this.editTextFirstRow.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 this.editTextFirstRow.setTypeface(Typeface.DEFAULT);
                 this.needPasswordButton = this.currentType == 0;
@@ -1016,7 +1016,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                 this.descriptionText.setText(LocaleController.getString(R.string.SetAdditionalPasswordInfo));
                 this.buttonTextView.setText(LocaleController.getString(R.string.TwoStepVerificationSetPassword));
                 this.descriptionText.setVisibility(0);
-                this.imageView.setAnimation(R.raw.tsv_setup_intro, NotificationCenter.fileLoadProgressChanged, NotificationCenter.fileLoadProgressChanged);
+                this.imageView.setAnimation(R.raw.tsv_setup_intro, NotificationCenter.fileUploadProgressChanged, NotificationCenter.fileUploadProgressChanged);
                 this.imageView.playAnimation();
                 break;
             case 7:
@@ -1030,7 +1030,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                     this.buttonTextView.setText(LocaleController.getString(R.string.TwoStepVerificationPasswordReturnSettings));
                 }
                 this.descriptionText.setVisibility(0);
-                this.imageView.setAnimation(R.raw.wallet_allset, NotificationCenter.albumsDidLoad, NotificationCenter.albumsDidLoad);
+                this.imageView.setAnimation(R.raw.wallet_allset, NotificationCenter.screenshotTook, NotificationCenter.screenshotTook);
                 this.imageView.playAnimation();
                 break;
             case 8:
@@ -1048,7 +1048,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                 outlineTextContainerView4.setText(LocaleController.getString(i23));
                 this.editTextFirstRow.setContentDescription(LocaleController.getString(i23));
                 this.editTextFirstRow.setImeOptions(268435462);
-                this.editTextFirstRow.setInputType(NotificationCenter.dialogIsTranslatable);
+                this.editTextFirstRow.setInputType(NotificationCenter.messageTranslating);
                 this.editTextFirstRow.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 this.editTextFirstRow.setTypeface(Typeface.DEFAULT);
                 this.imageView.setAnimation(R.raw.wallet_science, 120, 120);
@@ -1059,7 +1059,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                 this.descriptionText.setText(LocaleController.getString(R.string.CheckPasswordPerfectInfo));
                 this.buttonTextView.setText(LocaleController.getString(R.string.CheckPasswordBackToSettings));
                 this.descriptionText.setVisibility(0);
-                this.imageView.setAnimation(R.raw.wallet_perfect, NotificationCenter.fileLoadProgressChanged, NotificationCenter.fileLoadProgressChanged);
+                this.imageView.setAnimation(R.raw.wallet_perfect, NotificationCenter.fileUploadProgressChanged, NotificationCenter.fileUploadProgressChanged);
                 this.imageView.playAnimation();
                 break;
         }

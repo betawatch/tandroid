@@ -198,7 +198,7 @@ public abstract class AvatarConstructorPreviewCell extends FrameLayout {
         }
         float f = this.progressToNext;
         if (f == 1.0f) {
-            this.currentBackgroundDrawable.paint.setAlpha(NotificationCenter.invalidateMotionBackground);
+            this.currentBackgroundDrawable.paint.setAlpha(NotificationCenter.didReceiveCall);
             canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.currentBackgroundDrawable.paint);
             this.currentImage.setAlpha(1.0f);
             this.currentImage.setScaleX(1.0f);
@@ -206,7 +206,7 @@ public abstract class AvatarConstructorPreviewCell extends FrameLayout {
             this.nextImage.setAlpha(0.0f);
         } else {
             float interpolation = CubicBezierInterpolator.DEFAULT.getInterpolation(f);
-            this.currentBackgroundDrawable.paint.setAlpha(NotificationCenter.invalidateMotionBackground);
+            this.currentBackgroundDrawable.paint.setAlpha(NotificationCenter.didReceiveCall);
             canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.currentBackgroundDrawable.paint);
             this.nextBackgroundDrawable.paint.setAlpha((int) (255.0f * interpolation));
             canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.nextBackgroundDrawable.paint);

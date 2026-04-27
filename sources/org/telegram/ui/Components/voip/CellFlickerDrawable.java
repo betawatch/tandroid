@@ -35,11 +35,11 @@ public class CellFlickerDrawable {
     int size;
 
     public CellFlickerDrawable() {
-        this(64, NotificationCenter.storyAlbumsCollectionsUpdate, NotificationCenter.albumsDidLoad);
+        this(64, NotificationCenter.userIsPremiumBlockedUpadted, NotificationCenter.screenshotTook);
     }
 
     public CellFlickerDrawable(int i, int i2) {
-        this(i, i2, NotificationCenter.albumsDidLoad);
+        this(i, i2, NotificationCenter.screenshotTook);
     }
 
     public CellFlickerDrawable(int i, int i2, int i3) {
@@ -68,7 +68,7 @@ public class CellFlickerDrawable {
     }
 
     public void setColors(int i) {
-        setColors(i, 64, NotificationCenter.storyAlbumsCollectionsUpdate);
+        setColors(i, 64, NotificationCenter.userIsPremiumBlockedUpadted);
     }
 
     public void setColors(int i, int i2, int i3) {

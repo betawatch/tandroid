@@ -4045,7 +4045,7 @@ public abstract class Theme {
         themeInfo5.firstAccentIsDefault = true;
         themeInfo5.currentAccentId = DEFALT_THEME_ACCENT_ID;
         themeInfo5.sortIndex = 1;
-        themeInfo5.setAccentColorOptions(new int[]{-10972987, -14444461, -3252606, -8428605, -14380627, -14050257, -7842636, -13464881, -12342073, -11359164, -3317869, -2981834, -8165684, -3256745, -2904512, -8681301}, new int[]{-4660851, -328756, -1572, -4108434, -3031781, -1335, -198952, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, -853047, -264993, 0, 0, -135756, -198730, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, -2104672, -937328, -2637335, -2639714, -1270157, -3428124, -6570777, -7223828, -6567550, -1793599, -1855875, -4674838, -1336199, -2900876, -6247730}, new int[]{0, -4532067, -1257580, -1524266, -1646910, -1519483, -1324823, -4138509, -4202516, -2040429, -1458474, -1256030, -3814930, -1000039, -1450082, -3485987}, new int[]{0, -1909081, -1592444, -2969879, -2439762, -1137033, -2119471, -6962197, -4857383, -4270699, -3364639, -2117514, -5000734, -1598028, -2045813, -5853742}, new int[]{0, -6371440, -1319256, -1258616, -1712961, -1186647, -1193816, -4467224, -4203544, -3023977, -1061929, -1255788, -2113811, -806526, -1715305, -3485976}, new int[]{99, 9, 10, 11, 12, 13, 14, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "O-wmAfBPSFADAAAA4zINVfD_bro", "RepJ5uE_SVABAAAAr4d0YhgB850", "-Xc-np9y2VMCAAAARKr0yNNPYW0", "fqv01SQemVIBAAAApND8LDRUhRU", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "lp0prF8ISFAEAAAA_p385_CvG0w", "heptcj-hSVACAAAAC9RrMzOa-cs", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "dhf9pceaQVACAAAAbzdVo4SCiZA", "Ujx2TFcJSVACAAAARJ4vLa50MkM", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "dk_wwlghOFACAAAAfz9xrxi6euw"}, new int[]{0, NotificationCenter.newEmojiSuggestionsAvailable, 45, 0, 45, NotificationCenter.newEmojiSuggestionsAvailable, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 52, 46, 57, 45, 64, 52, 35, 36, 41, 50, 50, 35, 38, 37, 30});
+        themeInfo5.setAccentColorOptions(new int[]{-10972987, -14444461, -3252606, -8428605, -14380627, -14050257, -7842636, -13464881, -12342073, -11359164, -3317869, -2981834, -8165684, -3256745, -2904512, -8681301}, new int[]{-4660851, -328756, -1572, -4108434, -3031781, -1335, -198952, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, -853047, -264993, 0, 0, -135756, -198730, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, -2104672, -937328, -2637335, -2639714, -1270157, -3428124, -6570777, -7223828, -6567550, -1793599, -1855875, -4674838, -1336199, -2900876, -6247730}, new int[]{0, -4532067, -1257580, -1524266, -1646910, -1519483, -1324823, -4138509, -4202516, -2040429, -1458474, -1256030, -3814930, -1000039, -1450082, -3485987}, new int[]{0, -1909081, -1592444, -2969879, -2439762, -1137033, -2119471, -6962197, -4857383, -4270699, -3364639, -2117514, -5000734, -1598028, -2045813, -5853742}, new int[]{0, -6371440, -1319256, -1258616, -1712961, -1186647, -1193816, -4467224, -4203544, -3023977, -1061929, -1255788, -2113811, -806526, -1715305, -3485976}, new int[]{99, 9, 10, 11, 12, 13, 14, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "O-wmAfBPSFADAAAA4zINVfD_bro", "RepJ5uE_SVABAAAAr4d0YhgB850", "-Xc-np9y2VMCAAAARKr0yNNPYW0", "fqv01SQemVIBAAAApND8LDRUhRU", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "lp0prF8ISFAEAAAA_p385_CvG0w", "heptcj-hSVACAAAAC9RrMzOa-cs", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "dhf9pceaQVACAAAAbzdVo4SCiZA", "Ujx2TFcJSVACAAAARJ4vLa50MkM", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "dk_wwlghOFACAAAAfz9xrxi6euw"}, new int[]{0, NotificationCenter.needDeleteDialog, 45, 0, 45, NotificationCenter.needDeleteDialog, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 52, 46, 57, 45, 64, 52, 35, 36, 41, 50, 50, 35, 38, 37, 30});
         sortAccents(themeInfo5);
         ArrayList arrayList = themes;
         defaultTheme = themeInfo5;
@@ -4059,7 +4059,7 @@ public abstract class Theme {
         themeInfo6.previewInColor = -9009508;
         themeInfo6.previewOutColor = -8214301;
         themeInfo6.sortIndex = 3;
-        themeInfo6.setAccentColorOptions(new int[]{-7177260, -9860357, -14440464, -8687151, -9848491, -14053142, -9403671, -10044691, -13203974, -12138259, -10179489, -1344335, -1142742, -6127120, -2931932, -1131212, -8417365, -13270557}, new int[]{-6464359, -10267323, -13532789, -5413850, -11898828, -13410942, -13215889, -10914461, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-10465880, -9937588, -14983040, -6736562, -14197445, -13534568, -13144441, -10587280, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-14213586, -15263198, -16310753, -15724781, -15853551, -16051428, -14868183, -14668758, -15854566, -15326427, -15327979, -14411490, -14345453, -14738135, -14543346, -14212843, -15263205, -15854566}, new int[]{-15659501, -14277074, -15459034, -14542297, -14735336, -15129808, -15591910, -15459810, -15260623, -15853800, -15259879, -14477540, -14674936, -15461604, -13820650, -15067635, -14605528, -15260623}, new int[]{-13951445, -15395557, -15985382, -15855853, -16050417, -15525854, -15260627, -15327189, -15788258, -14799314, -15458796, -13952727, -13754603, -14081231, -14478324, -14081004, -15197667, -15788258}, new int[]{-15330777, -15066858, -15915220, -14213847, -15262439, -15260879, -15657695, -16443625, -15459285, -15589601, -14932454, -14740451, -15002870, -15264997, -13821660, -14805234, -14605784, -15459285}, new int[]{11, 12, 13, 14, 15, 16, 17, 18, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, new String[]{"O-wmAfBPSFADAAAA4zINVfD_bro", "RepJ5uE_SVABAAAAr4d0YhgB850", "dk_wwlghOFACAAAAfz9xrxi6euw", "9LW_RcoOSVACAAAAFTk3DTyXN-M", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "-Xc-np9y2VMCAAAARKr0yNNPYW0", "kO4jyq55SFABAAAA0WEpcLfahXk", "CJNyxPMgSVAEAAAAvW9sMwc51cw", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "CJNyxPMgSVAEAAAAvW9sMwc51cw", "9LW_RcoOSVACAAAAFTk3DTyXN-M", "9GcNVISdSVADAAAAUcw5BYjELW4", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "9ShF73d1MFIIAAAAjWnm8_ZMe8Q", "3rX-PaKbSFACAAAAEiHNvcEm6X4", "dk_wwlghOFACAAAAfz9xrxi6euw", "fqv01SQemVIBAAAApND8LDRUhRU"}, new int[]{NotificationCenter.botStarsTransactionsLoaded, 45, NotificationCenter.botStarsTransactionsLoaded, NotificationCenter.httpFileDidFailedLoad, 45, NotificationCenter.botStarsTransactionsLoaded, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{40, 40, 31, 50, 25, 34, 35, 35, 38, 29, 24, 34, 34, 31, 29, 37, 21, 38});
+        themeInfo6.setAccentColorOptions(new int[]{-7177260, -9860357, -14440464, -8687151, -9848491, -14053142, -9403671, -10044691, -13203974, -12138259, -10179489, -1344335, -1142742, -6127120, -2931932, -1131212, -8417365, -13270557}, new int[]{-6464359, -10267323, -13532789, -5413850, -11898828, -13410942, -13215889, -10914461, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-10465880, -9937588, -14983040, -6736562, -14197445, -13534568, -13144441, -10587280, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-14213586, -15263198, -16310753, -15724781, -15853551, -16051428, -14868183, -14668758, -15854566, -15326427, -15327979, -14411490, -14345453, -14738135, -14543346, -14212843, -15263205, -15854566}, new int[]{-15659501, -14277074, -15459034, -14542297, -14735336, -15129808, -15591910, -15459810, -15260623, -15853800, -15259879, -14477540, -14674936, -15461604, -13820650, -15067635, -14605528, -15260623}, new int[]{-13951445, -15395557, -15985382, -15855853, -16050417, -15525854, -15260627, -15327189, -15788258, -14799314, -15458796, -13952727, -13754603, -14081231, -14478324, -14081004, -15197667, -15788258}, new int[]{-15330777, -15066858, -15915220, -14213847, -15262439, -15260879, -15657695, -16443625, -15459285, -15589601, -14932454, -14740451, -15002870, -15264997, -13821660, -14805234, -14605784, -15459285}, new int[]{11, 12, 13, 14, 15, 16, 17, 18, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, new String[]{"O-wmAfBPSFADAAAA4zINVfD_bro", "RepJ5uE_SVABAAAAr4d0YhgB850", "dk_wwlghOFACAAAAfz9xrxi6euw", "9LW_RcoOSVACAAAAFTk3DTyXN-M", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "-Xc-np9y2VMCAAAARKr0yNNPYW0", "kO4jyq55SFABAAAA0WEpcLfahXk", "CJNyxPMgSVAEAAAAvW9sMwc51cw", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "CJNyxPMgSVAEAAAAvW9sMwc51cw", "9LW_RcoOSVACAAAAFTk3DTyXN-M", "9GcNVISdSVADAAAAUcw5BYjELW4", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "9ShF73d1MFIIAAAAjWnm8_ZMe8Q", "3rX-PaKbSFACAAAAEiHNvcEm6X4", "dk_wwlghOFACAAAAfz9xrxi6euw", "fqv01SQemVIBAAAApND8LDRUhRU"}, new int[]{225, 45, 225, NotificationCenter.httpFileDidLoad, 45, 225, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{40, 40, 31, 50, 25, 34, 35, 35, 38, 29, 24, 34, 34, 31, 29, 37, 21, 38});
         sortAccents(themeInfo6);
         themes.add(themeInfo6);
         HashMap hashMap = themesDict;
@@ -4072,7 +4072,7 @@ public abstract class Theme {
         themeInfo7.previewInColor = -1;
         themeInfo7.previewOutColor = -9657877;
         themeInfo7.sortIndex = 5;
-        themeInfo7.setAccentColorOptions(new int[]{-12537374, -12472227, -3240928, -11033621, -2194124, -3382903, -13332245, -12342073, -11359164, -3317869, -2981834, -8165684, -3256745, -2904512, -8681301}, new int[]{-13525046, -14113959, -7579073, -13597229, -3581840, -8883763, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-11616542, -9716647, -6400452, -12008744, -2592697, -4297041, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-3808528, -2433367, -2700891, -1838093, -1120848, -1712148, -2037779, -4202261, -4005713, -1058332, -925763, -1975316, -1189672, -1318451, -2302235}, new int[]{-1510157, -4398164, -1647697, -3610898, -1130838, -1980692, -4270093, -4202261, -3415654, -1259815, -1521765, -4341268, -1127744, -1318219, -3945761}, new int[]{-4924688, -3283031, -1523567, -2494477, -1126510, -595210, -2037517, -3478548, -4661623, -927514, -796762, -2696971, -1188403, -1319735, -1577487}, new int[]{-3149585, -5714021, -1978209, -4925720, -1134713, -1718833, -3613709, -5317397, -3218014, -999207, -2116466, -4343054, -931397, -1583186, -3815718}, new int[]{9, 10, 11, 12, 13, 14, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"MIo6r0qGSFAFAAAAtL8TsDzNX60", "dhf9pceaQVACAAAAbzdVo4SCiZA", "fqv01SQemVIBAAAApND8LDRUhRU", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "pgJfpFNRSFABAAAACDT8s5sEjfc", "ptuUd96JSFACAAAATobI23sPpz0", "dhf9pceaQVACAAAAbzdVo4SCiZA", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "9iklpvIPQVABAAAAORQXKur_Eyc", "F5oWoCs7QFACAAAAgf2bD_mg8Bw"}, new int[]{NotificationCenter.chatSwitchedForum, NotificationCenter.chatSwitchedForum, NotificationCenter.botStarsTransactionsLoaded, NotificationCenter.chatSwitchedForum, 0, NotificationCenter.newEmojiSuggestionsAvailable, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{50, 50, 58, 47, 46, 50, 49, 46, 51, 50, 49, 34, 54, 50, 40});
+        themeInfo7.setAccentColorOptions(new int[]{-12537374, -12472227, -3240928, -11033621, -2194124, -3382903, -13332245, -12342073, -11359164, -3317869, -2981834, -8165684, -3256745, -2904512, -8681301}, new int[]{-13525046, -14113959, -7579073, -13597229, -3581840, -8883763, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-11616542, -9716647, -6400452, -12008744, -2592697, -4297041, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-3808528, -2433367, -2700891, -1838093, -1120848, -1712148, -2037779, -4202261, -4005713, -1058332, -925763, -1975316, -1189672, -1318451, -2302235}, new int[]{-1510157, -4398164, -1647697, -3610898, -1130838, -1980692, -4270093, -4202261, -3415654, -1259815, -1521765, -4341268, -1127744, -1318219, -3945761}, new int[]{-4924688, -3283031, -1523567, -2494477, -1126510, -595210, -2037517, -3478548, -4661623, -927514, -796762, -2696971, -1188403, -1319735, -1577487}, new int[]{-3149585, -5714021, -1978209, -4925720, -1134713, -1718833, -3613709, -5317397, -3218014, -999207, -2116466, -4343054, -931397, -1583186, -3815718}, new int[]{9, 10, 11, 12, 13, 14, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"MIo6r0qGSFAFAAAAtL8TsDzNX60", "dhf9pceaQVACAAAAbzdVo4SCiZA", "fqv01SQemVIBAAAApND8LDRUhRU", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "pgJfpFNRSFABAAAACDT8s5sEjfc", "ptuUd96JSFACAAAATobI23sPpz0", "dhf9pceaQVACAAAAbzdVo4SCiZA", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "9iklpvIPQVABAAAAORQXKur_Eyc", "F5oWoCs7QFACAAAAgf2bD_mg8Bw"}, new int[]{NotificationCenter.activityPermissionsGranted, NotificationCenter.activityPermissionsGranted, 225, NotificationCenter.activityPermissionsGranted, 0, NotificationCenter.needDeleteDialog, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{50, 50, 58, 47, 46, 50, 49, 46, 51, 50, 49, 34, 54, 50, 40});
         sortAccents(themeInfo7);
         themes.add(themeInfo7);
         themesDict.put("Arctic Blue", themeInfo7);
@@ -4094,7 +4094,7 @@ public abstract class Theme {
         themeInfo9.previewInColor = -9143676;
         themeInfo9.previewOutColor = -9067802;
         themeInfo9.sortIndex = 4;
-        themeInfo9.setAccentColorOptions(new int[]{-9781697, -7505693, -2204034, -10913816, -2375398, -12678921, -11881005, -11880383, -2534026, -1934037, -7115558, -3128522, -1528292, -8812381}, new int[]{-7712108, -4953061, -5288081, -14258547, -9154889, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-9939525, -5948598, -10335844, -13659747, -14054507, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-15330532, -14806760, -15791344, -16184308, -16313063, -15921641, -15656164, -15986420, -15856883, -14871025, -16185078, -14937584, -14869736, -15855598}, new int[]{-14673881, -15724781, -15002342, -15458526, -15987697, -16184820, -16118258, -16250616, -15067624, -15527923, -14804447, -15790836, -15987960, -16316665}, new int[]{-15856877, -14608861, -15528430, -15921391, -15722209, -15197144, -15458015, -15591406, -15528431, -15068401, -16053749, -15594229, -15395825, -15724012}, new int[]{-14804694, -15658986, -14609382, -15656421, -16118509, -15855854, -16315381, -16052981, -14544354, -15791092, -15659241, -16316922, -15988214, -16185077}, new int[]{9, 10, 11, 12, 13, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"YIxYGEALQVADAAAAA3QbEH0AowY", "9LW_RcoOSVACAAAAFTk3DTyXN-M", "O-wmAfBPSFADAAAA4zINVfD_bro", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "-Xc-np9y2VMCAAAARKr0yNNPYW0", "fqv01SQemVIBAAAApND8LDRUhRU", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "ptuUd96JSFACAAAATobI23sPpz0", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "Nl8Pg2rBQVACAAAA25Lxtb8SDp0", "dhf9pceaQVACAAAAbzdVo4SCiZA", "9GcNVISdSVADAAAAUcw5BYjELW4", "9LW_RcoOSVACAAAAFTk3DTyXN-M", "dk_wwlghOFACAAAAfz9xrxi6euw"}, new int[]{45, NotificationCenter.httpFileDidFailedLoad, 0, NotificationCenter.newEmojiSuggestionsAvailable, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{34, 47, 52, 48, 54, 50, 37, 56, 48, 49, 40, 64, 38, 48});
+        themeInfo9.setAccentColorOptions(new int[]{-9781697, -7505693, -2204034, -10913816, -2375398, -12678921, -11881005, -11880383, -2534026, -1934037, -7115558, -3128522, -1528292, -8812381}, new int[]{-7712108, -4953061, -5288081, -14258547, -9154889, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-9939525, -5948598, -10335844, -13659747, -14054507, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-15330532, -14806760, -15791344, -16184308, -16313063, -15921641, -15656164, -15986420, -15856883, -14871025, -16185078, -14937584, -14869736, -15855598}, new int[]{-14673881, -15724781, -15002342, -15458526, -15987697, -16184820, -16118258, -16250616, -15067624, -15527923, -14804447, -15790836, -15987960, -16316665}, new int[]{-15856877, -14608861, -15528430, -15921391, -15722209, -15197144, -15458015, -15591406, -15528431, -15068401, -16053749, -15594229, -15395825, -15724012}, new int[]{-14804694, -15658986, -14609382, -15656421, -16118509, -15855854, -16315381, -16052981, -14544354, -15791092, -15659241, -16316922, -15988214, -16185077}, new int[]{9, 10, 11, 12, 13, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"YIxYGEALQVADAAAAA3QbEH0AowY", "9LW_RcoOSVACAAAAFTk3DTyXN-M", "O-wmAfBPSFADAAAA4zINVfD_bro", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "-Xc-np9y2VMCAAAARKr0yNNPYW0", "fqv01SQemVIBAAAApND8LDRUhRU", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "ptuUd96JSFACAAAATobI23sPpz0", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "Nl8Pg2rBQVACAAAA25Lxtb8SDp0", "dhf9pceaQVACAAAAbzdVo4SCiZA", "9GcNVISdSVADAAAAUcw5BYjELW4", "9LW_RcoOSVACAAAAFTk3DTyXN-M", "dk_wwlghOFACAAAAfz9xrxi6euw"}, new int[]{45, NotificationCenter.httpFileDidLoad, 0, NotificationCenter.needDeleteDialog, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{34, 47, 52, 48, 54, 50, 37, 56, 48, 49, 40, 64, 38, 48});
         sortAccents(themeInfo9);
         themes.add(themeInfo9);
         themesDict.put("Night", themeInfo9);
@@ -4616,7 +4616,7 @@ public abstract class Theme {
             this.isSelected = z2;
             this.path = new Path();
             this.selectedPaint = new Paint(1);
-            this.alpha = NotificationCenter.invalidateMotionBackground;
+            this.alpha = NotificationCenter.didReceiveCall;
         }
 
         public boolean hasGradient() {
@@ -5061,7 +5061,7 @@ public abstract class Theme {
                 messageDrawable.draw(canvas);
                 setAlpha((int) (this.crossfadeProgress * 255.0f));
                 draw(canvas, null);
-                setAlpha(NotificationCenter.invalidateMotionBackground);
+                setAlpha(NotificationCenter.didReceiveCall);
                 return;
             }
             draw(canvas, null);
@@ -6216,14 +6216,14 @@ public abstract class Theme {
                 float[] fArr3 = this.tempHSV;
                 float f4 = fArr3[2];
                 fArr3[2] = Math.max(0.0f, Math.min(1.0f, f4 - (f4 <= 0.7f ? 0.25f : 0.125f)));
-                return Theme.blendOver(i, Color.HSVToColor(NotificationCenter.invalidateMotionBackground, this.tempHSV));
+                return Theme.blendOver(i, Color.HSVToColor(NotificationCenter.didReceiveCall, this.tempHSV));
             }
             fArr2[0] = f;
             fArr2[1] = Math.max(0.0f, Math.min(1.0f, f2 + 0.6f));
             float[] fArr32 = this.tempHSV;
             float f42 = fArr32[2];
             fArr32[2] = Math.max(0.0f, Math.min(1.0f, f42 - (f42 <= 0.7f ? 0.25f : 0.125f)));
-            return Theme.blendOver(i, Color.HSVToColor(NotificationCenter.invalidateMotionBackground, this.tempHSV));
+            return Theme.blendOver(i, Color.HSVToColor(NotificationCenter.didReceiveCall, this.tempHSV));
         }
 
         private int linkSelectionBackground(int i, int i2, boolean z) {
@@ -6304,7 +6304,7 @@ public abstract class Theme {
             if (i == 0) {
                 return 0;
             }
-            return Color.argb(NotificationCenter.invalidateMotionBackground, i4 / i, i3 / i, i2 / i);
+            return Color.argb(NotificationCenter.didReceiveCall, i4 / i, i3 / i, i2 / i);
         }
 
         public File getPathToWallpaper() {
@@ -6374,10 +6374,10 @@ public abstract class Theme {
                 if (i6 == 0) {
                     i6 = 45;
                 }
-                String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (i2 >> 8)) & 255), Byte.valueOf((byte) (i2 & NotificationCenter.invalidateMotionBackground))).toLowerCase();
-                String lowerCase2 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (i3 >> 8)) & 255), Byte.valueOf((byte) (i3 & NotificationCenter.invalidateMotionBackground))).toLowerCase() : null;
-                String lowerCase3 = i4 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i4 >> 16)) & 255), Integer.valueOf(((byte) (i4 >> 8)) & 255), Byte.valueOf((byte) (i4 & NotificationCenter.invalidateMotionBackground))).toLowerCase() : null;
-                String lowerCase4 = i5 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i5 >> 16)) & 255), Integer.valueOf(((byte) (i5 >> 8)) & 255), Byte.valueOf((byte) (i5 & NotificationCenter.invalidateMotionBackground))).toLowerCase() : null;
+                String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (i2 >> 8)) & 255), Byte.valueOf((byte) (i2 & NotificationCenter.didReceiveCall))).toLowerCase();
+                String lowerCase2 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (i3 >> 8)) & 255), Byte.valueOf((byte) (i3 & NotificationCenter.didReceiveCall))).toLowerCase() : null;
+                String lowerCase3 = i4 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i4 >> 16)) & 255), Integer.valueOf(((byte) (i4 >> 8)) & 255), Byte.valueOf((byte) (i4 & NotificationCenter.didReceiveCall))).toLowerCase() : null;
+                String lowerCase4 = i5 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i5 >> 16)) & 255), Integer.valueOf(((byte) (i5 >> 8)) & 255), Byte.valueOf((byte) (i5 & NotificationCenter.didReceiveCall))).toLowerCase() : null;
                 if (lowerCase2 == null || lowerCase3 == null) {
                     if (lowerCase2 != null) {
                         lowerCase = (lowerCase + "-" + lowerCase2) + "&rotation=" + i6;
@@ -6488,7 +6488,7 @@ public abstract class Theme {
     }
 
     public static int multAlpha(int i, float f) {
-        return f == 1.0f ? i : ColorUtils.setAlphaComponent(i, MathUtils.clamp((int) (Color.alpha(i) * f), 0, NotificationCenter.invalidateMotionBackground));
+        return f == 1.0f ? i : ColorUtils.setAlphaComponent(i, MathUtils.clamp((int) (Color.alpha(i) * f), 0, NotificationCenter.didReceiveCall));
     }
 
     public static class OverrideWallpaperInfo {
@@ -7627,7 +7627,7 @@ public abstract class Theme {
             }
         };
         stateListDrawable.setEnterFadeDuration(1);
-        stateListDrawable.setExitFadeDuration(NotificationCenter.channelRecommendationsLoaded);
+        stateListDrawable.setExitFadeDuration(NotificationCenter.dialogPhotosUpdate);
         stateListDrawable.addState(new int[]{android.R.attr.state_selected}, mutate2);
         stateListDrawable.addState(new int[0], mutate);
         return stateListDrawable;
@@ -8366,7 +8366,7 @@ public abstract class Theme {
             } else {
                 fArr[2] = Math.min(1.0f, Math.max(0.0f, fArr[2] + (Theme.isCurrentThemeDark() ? 0.1f : -0.1f)));
             }
-            return Color.HSVToColor(NotificationCenter.messageTranslated, tempHSV);
+            return Color.HSVToColor(NotificationCenter.needDeleteBusinessLink, tempHSV);
         }
     }
 
@@ -9158,7 +9158,7 @@ public abstract class Theme {
         tempHsv[1] = (tempHsv2[1] * fArr[1]) / tempHsv[1];
         float f = ((((tempHsv2[2] / tempHsv[2]) + min) - 1.0f) * fArr[2]) / min;
         tempHsv[2] = f;
-        return f < 0.3f ? i2 : Color.HSVToColor(NotificationCenter.invalidateMotionBackground, tempHsv);
+        return f < 0.3f ? i2 : Color.HSVToColor(NotificationCenter.didReceiveCall, tempHsv);
     }
 
     public static int changeColorAccent(int i) {
@@ -9196,7 +9196,7 @@ public abstract class Theme {
         int red = (int) (Color.red(i) * f);
         int green = (int) (Color.green(i) * f);
         int blue = (int) (Color.blue(i) * f);
-        return Color.argb(Color.alpha(i), red < 0 ? 0 : Math.min(red, NotificationCenter.invalidateMotionBackground), green < 0 ? 0 : Math.min(green, NotificationCenter.invalidateMotionBackground), blue >= 0 ? Math.min(blue, NotificationCenter.invalidateMotionBackground) : 0);
+        return Color.argb(Color.alpha(i), red < 0 ? 0 : Math.min(red, NotificationCenter.didReceiveCall), green < 0 ? 0 : Math.min(green, NotificationCenter.didReceiveCall), blue >= 0 ? Math.min(blue, NotificationCenter.didReceiveCall) : 0);
     }
 
     public static boolean deleteThemeAccent(ThemeInfo themeInfo, ThemeAccent themeAccent, boolean z) {
@@ -9646,13 +9646,13 @@ public abstract class Theme {
         if (i == 0) {
             str = "https://attheme.org?slug=" + overrideWallpaperInfo.slug;
         } else {
-            String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.color >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.color & NotificationCenter.invalidateMotionBackground))).toLowerCase();
+            String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.color >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.color & NotificationCenter.didReceiveCall))).toLowerCase();
             int i2 = overrideWallpaperInfo.gradientColor1;
-            String lowerCase2 = i2 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor1 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor1 & NotificationCenter.invalidateMotionBackground))).toLowerCase() : null;
+            String lowerCase2 = i2 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor1 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor1 & NotificationCenter.didReceiveCall))).toLowerCase() : null;
             int i3 = overrideWallpaperInfo.gradientColor2;
-            String lowerCase3 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor2 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor2 & NotificationCenter.invalidateMotionBackground))).toLowerCase() : null;
+            String lowerCase3 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor2 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor2 & NotificationCenter.didReceiveCall))).toLowerCase() : null;
             int i4 = overrideWallpaperInfo.gradientColor3;
-            String lowerCase4 = i4 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i4 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor3 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor3 & NotificationCenter.invalidateMotionBackground))).toLowerCase() : null;
+            String lowerCase4 = i4 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i4 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor3 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor3 & NotificationCenter.didReceiveCall))).toLowerCase() : null;
             if (lowerCase2 == null || lowerCase3 == null) {
                 if (lowerCase2 != null) {
                     lowerCase = (lowerCase + "-" + lowerCase2) + "&rotation=" + overrideWallpaperInfo.rotation;
@@ -10567,14 +10567,14 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+                                                            messageDrawableArr[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
                                                             messageDrawableArr[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr[1].draw(canvas);
-                                                            messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+                                                            messageDrawableArr[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr[1].draw(canvas);
-                                                            messageDrawableArr[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-                                                            messageDrawableArr[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+                                                            messageDrawableArr[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+                                                            messageDrawableArr[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
                                                             messageDrawableArr[0].draw(canvas);
                                                             paint3.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3);
@@ -10635,14 +10635,14 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr2[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+                                                            messageDrawableArr2[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
                                                             messageDrawableArr2[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr2[1].draw(canvas);
-                                                            messageDrawableArr2[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+                                                            messageDrawableArr2[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr2[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr2[1].draw(canvas);
-                                                            messageDrawableArr2[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-                                                            messageDrawableArr2[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+                                                            messageDrawableArr2[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+                                                            messageDrawableArr2[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
                                                             messageDrawableArr2[0].draw(canvas);
                                                             paint32.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32);
@@ -10702,14 +10702,14 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr22[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+                                                            messageDrawableArr22[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
                                                             messageDrawableArr22[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr22[1].draw(canvas);
-                                                            messageDrawableArr22[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+                                                            messageDrawableArr22[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr22[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr22[1].draw(canvas);
-                                                            messageDrawableArr22[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-                                                            messageDrawableArr22[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+                                                            messageDrawableArr22[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+                                                            messageDrawableArr22[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
                                                             messageDrawableArr22[0].draw(canvas);
                                                             paint322.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322);
@@ -10818,14 +10818,14 @@ public abstract class Theme {
                                                                         }
                                                                         if (drawable != null) {
                                                                         }
-                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
                                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
-                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                                         messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
-                                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-                                                                        messageDrawableArr222[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+                                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+                                                                        messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
                                                                         messageDrawableArr222[0].draw(canvas);
                                                                         paint3222.setColor(previewColor3);
                                                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222);
@@ -10872,14 +10872,14 @@ public abstract class Theme {
                                                                 drawable.setBounds(width, intrinsicHeight2, drawable.getIntrinsicWidth() + width, drawable.getIntrinsicHeight() + intrinsicHeight2);
                                                                 drawable.draw(canvas);
                                                             }
-                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+                                                            messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
                                                             messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
-                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+                                                            messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
-                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-                                                            messageDrawableArr222[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+                                                            messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
                                                             messageDrawableArr222[0].draw(canvas);
                                                             paint32222.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222);
@@ -10930,14 +10930,14 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+                                                            messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
                                                             messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
-                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+                                                            messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
-                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-                                                            messageDrawableArr222[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+                                                            messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
                                                             messageDrawableArr222[0].draw(canvas);
                                                             paint322222.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222);
@@ -10965,14 +10965,14 @@ public abstract class Theme {
                                                         }
                                                         if (drawable != null) {
                                                         }
-                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+                                                        messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
-                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+                                                        messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                         messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
-                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-                                                        messageDrawableArr222[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+                                                        messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
                                                         messageDrawableArr222[0].draw(canvas);
                                                         paint3222222.setColor(previewColor3);
                                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222222);
@@ -11026,14 +11026,14 @@ public abstract class Theme {
                                                                                     }
                                                                                     if (drawable != null) {
                                                                                     }
-                                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+                                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
                                                                                     messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                                     messageDrawableArr222[1].draw(canvas);
-                                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+                                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                                                     messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                                     messageDrawableArr222[1].draw(canvas);
-                                                                                    messageDrawableArr222[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-                                                                                    messageDrawableArr222[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+                                                                                    messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+                                                                                    messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
                                                                                     messageDrawableArr222[0].draw(canvas);
                                                                                     paint32222222.setColor(previewColor3);
                                                                                     canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222222);
@@ -11060,14 +11060,14 @@ public abstract class Theme {
                                                                             }
                                                                             if (drawable != null) {
                                                                             }
-                                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+                                                                            messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
                                                                             messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                             messageDrawableArr222[1].draw(canvas);
-                                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+                                                                            messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                                             messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                             messageDrawableArr222[1].draw(canvas);
-                                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-                                                                            messageDrawableArr222[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+                                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+                                                                            messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
                                                                             messageDrawableArr222[0].draw(canvas);
                                                                             paint322222222.setColor(previewColor3);
                                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222222);
@@ -11101,14 +11101,14 @@ public abstract class Theme {
                                                                     }
                                                                     if (drawable != null) {
                                                                     }
-                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
                                                                     messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                     messageDrawableArr222[1].draw(canvas);
-                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                                     messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                     messageDrawableArr222[1].draw(canvas);
-                                                                    messageDrawableArr222[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-                                                                    messageDrawableArr222[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+                                                                    messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+                                                                    messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
                                                                     messageDrawableArr222[0].draw(canvas);
                                                                     paint3222222222.setColor(previewColor3);
                                                                     canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222222222);
@@ -11170,14 +11170,14 @@ public abstract class Theme {
                                                                         }
                                                                         if (drawable != null) {
                                                                         }
-                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
                                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
-                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                                         messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
-                                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-                                                                        messageDrawableArr222[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+                                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+                                                                        messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
                                                                         messageDrawableArr222[0].draw(canvas);
                                                                         paint32222222222.setColor(previewColor3);
                                                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222222222);
@@ -11203,14 +11203,14 @@ public abstract class Theme {
                                                                 }
                                                                 if (drawable != null) {
                                                                 }
-                                                                messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+                                                                messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
                                                                 messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                 messageDrawableArr222[1].draw(canvas);
-                                                                messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+                                                                messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                                 messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                 messageDrawableArr222[1].draw(canvas);
-                                                                messageDrawableArr222[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-                                                                messageDrawableArr222[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+                                                                messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+                                                                messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
                                                                 messageDrawableArr222[0].draw(canvas);
                                                                 paint322222222222.setColor(previewColor3);
                                                                 canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222222222);
@@ -11239,14 +11239,14 @@ public abstract class Theme {
                                                         }
                                                         if (drawable != null) {
                                                         }
-                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+                                                        messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
-                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+                                                        messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                         messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
-                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-                                                        messageDrawableArr222[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+                                                        messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
                                                         messageDrawableArr222[0].draw(canvas);
                                                         paint3222222222222.setColor(previewColor3);
                                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222222222222);
@@ -11274,14 +11274,14 @@ public abstract class Theme {
                                                 }
                                                 if (drawable != null) {
                                                 }
-                                                messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+                                                messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
                                                 messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                 messageDrawableArr222[1].draw(canvas);
-                                                messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+                                                messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                 messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                 messageDrawableArr222[1].draw(canvas);
-                                                messageDrawableArr222[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-                                                messageDrawableArr222[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+                                                messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+                                                messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
                                                 messageDrawableArr222[0].draw(canvas);
                                                 paint32222222222222.setColor(previewColor3);
                                                 canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222222222222);
@@ -11330,14 +11330,14 @@ public abstract class Theme {
                                         }
                                         if (drawable != null) {
                                         }
-                                        messageDrawableArr2222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+                                        messageDrawableArr2222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
                                         messageDrawableArr2222[1].setTop(0, 560, 522, false, false);
                                         messageDrawableArr2222[1].draw(canvas);
-                                        messageDrawableArr2222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+                                        messageDrawableArr2222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                         messageDrawableArr2222[1].setTop(430, 560, 522, false, false);
                                         messageDrawableArr2222[1].draw(canvas);
-                                        messageDrawableArr2222[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-                                        messageDrawableArr2222[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+                                        messageDrawableArr2222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+                                        messageDrawableArr2222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
                                         messageDrawableArr2222[0].draw(canvas);
                                         paint322222222222222.setColor(previewColor3);
                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222222222222);
@@ -11393,14 +11393,14 @@ public abstract class Theme {
                                 }
                                 if (drawable != null) {
                                 }
-                                messageDrawableArr22222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+                                messageDrawableArr22222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
                                 messageDrawableArr22222[1].setTop(0, 560, 522, false, false);
                                 messageDrawableArr22222[1].draw(canvas);
-                                messageDrawableArr22222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+                                messageDrawableArr22222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                 messageDrawableArr22222[1].setTop(430, 560, 522, false, false);
                                 messageDrawableArr22222[1].draw(canvas);
-                                messageDrawableArr22222[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-                                messageDrawableArr22222[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+                                messageDrawableArr22222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+                                messageDrawableArr22222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
                                 messageDrawableArr22222[0].draw(canvas);
                                 paint3222222222222222.setColor(previewColor3);
                                 canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222222222222222);
@@ -11470,14 +11470,14 @@ public abstract class Theme {
                         }
                         if (drawable != null) {
                         }
-                        messageDrawableArr222222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+                        messageDrawableArr222222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
                         messageDrawableArr222222[1].setTop(0, 560, 522, false, false);
                         messageDrawableArr222222[1].draw(canvas);
-                        messageDrawableArr222222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+                        messageDrawableArr222222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                         messageDrawableArr222222[1].setTop(430, 560, 522, false, false);
                         messageDrawableArr222222[1].draw(canvas);
-                        messageDrawableArr222222[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-                        messageDrawableArr222222[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+                        messageDrawableArr222222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+                        messageDrawableArr222222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
                         messageDrawableArr222222[0].draw(canvas);
                         paint32222222222222222.setColor(previewColor3);
                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222222222222222);
@@ -11562,14 +11562,14 @@ public abstract class Theme {
             }
             if (drawable != null) {
             }
-            messageDrawableArr2222222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.billingConfirmPurchaseError);
+            messageDrawableArr2222222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
             messageDrawableArr2222222[1].setTop(0, 560, 522, false, false);
             messageDrawableArr2222222[1].draw(canvas);
-            messageDrawableArr2222222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
+            messageDrawableArr2222222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
             messageDrawableArr2222222[1].setTop(430, 560, 522, false, false);
             messageDrawableArr2222222[1].draw(canvas);
-            messageDrawableArr2222222[0].setBounds(20, NotificationCenter.chatlistFolderUpdate, 399, 415);
-            messageDrawableArr2222222[0].setTop(NotificationCenter.chatlistFolderUpdate, 560, 522, false, false);
+            messageDrawableArr2222222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
+            messageDrawableArr2222222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
             messageDrawableArr2222222[0].draw(canvas);
             paint322222222222222222.setColor(previewColor3);
             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222222222222222);
@@ -12954,7 +12954,7 @@ public abstract class Theme {
             chat_actionBackgroundPaint.setFilterBitmap(true);
             chat_actionBackgroundPaint.setShader(serviceBitmapShader);
             chat_actionBackgroundPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-            chat_actionBackgroundPaint.setAlpha(NotificationCenter.invalidateMotionBackground);
+            chat_actionBackgroundPaint.setAlpha(NotificationCenter.didReceiveCall);
             chat_actionBackgroundSelectedPaint.setFilterBitmap(true);
             chat_actionBackgroundSelectedPaint.setShader(serviceBitmapShader);
             ColorMatrix colorMatrix2 = new ColorMatrix(colorMatrix);
@@ -12962,7 +12962,7 @@ public abstract class Theme {
             isCurrentThemeDark();
             AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix2, 0.92f);
             chat_actionBackgroundSelectedPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix2));
-            chat_actionBackgroundSelectedPaint.setAlpha(NotificationCenter.invalidateMotionBackground);
+            chat_actionBackgroundSelectedPaint.setAlpha(NotificationCenter.didReceiveCall);
             chat_actionBackgroundGradientDarkenPaint.setAlpha(0);
             return;
         }
@@ -13563,9 +13563,9 @@ public abstract class Theme {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x0233  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x0357  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x036b  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x023b  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x035f  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x0373  */
     /* JADX WARN: Removed duplicated region for block: B:43:0x0102  */
     /* JADX WARN: Type inference failed for: r32v0, types: [boolean] */
     /* JADX WARN: Type inference failed for: r32v11 */
@@ -13678,10 +13678,14 @@ public abstract class Theme {
                     if (i9 != 0 && i8 != 0) {
                         MotionBackgroundDrawable motionBackgroundDrawable2 = new MotionBackgroundDrawable(i10, i9, i8, i7, false);
                         if (file != null) {
+                            Point point = AndroidUtilities.displaySize;
+                            int min = Math.min(point.x, point.y);
+                            Point point2 = AndroidUtilities.displaySize;
+                            int max = Math.max(point2.x, point2.y);
                             if (document != null) {
-                                bitmap2 = SvgHelper.getBitmap(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true), AndroidUtilities.dp(360.0f), AndroidUtilities.dp(640.0f), false);
+                                bitmap2 = SvgHelper.getBitmap(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true), min, max, false, SvgHelper.ScaleMode.ByWidth);
                             } else {
-                                bitmap2 = SvgHelper.getBitmap(R.raw.default_pattern, AndroidUtilities.dp(360.0f), AndroidUtilities.dp(640.0f), -1);
+                                bitmap2 = SvgHelper.getBitmap(R.raw.default_pattern, min, max, -1, 1.0f, SvgHelper.ScaleMode.ByWidth);
                             }
                             bitmap = bitmap2;
                             if (bitmap != null) {
@@ -13709,8 +13713,8 @@ public abstract class Theme {
                         backgroundGradientDisposable = backgroundGradientDrawable.startDithering(BackgroundGradientDrawable.Sizes.ofDeviceScreen(), new BackgroundGradientDrawable.ListenerAdapter() { // from class: org.telegram.ui.ActionBar.Theme.13
                             @Override // org.telegram.ui.Components.BackgroundGradientDrawable.ListenerAdapter, org.telegram.ui.Components.BackgroundGradientDrawable.Listener
                             public void onSizeReady(int i12, int i13) {
-                                Point point = AndroidUtilities.displaySize;
-                                if ((point.x <= point.y) == (i12 <= i13)) {
+                                Point point3 = AndroidUtilities.displaySize;
+                                if ((point3.x <= point3.y) == (i12 <= i13)) {
                                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewWallpapper, new Object[0]);
                                 }
                             }
@@ -13794,8 +13798,8 @@ public abstract class Theme {
                                 backgroundGradientDisposable = backgroundGradientDrawable2.startDithering(BackgroundGradientDrawable.Sizes.ofDeviceScreen(), new BackgroundGradientDrawable.ListenerAdapter() { // from class: org.telegram.ui.ActionBar.Theme.14
                                     @Override // org.telegram.ui.Components.BackgroundGradientDrawable.ListenerAdapter, org.telegram.ui.Components.BackgroundGradientDrawable.Listener
                                     public void onSizeReady(int i14, int i15) {
-                                        Point point = AndroidUtilities.displaySize;
-                                        if ((point.x <= point.y) == (i14 <= i15)) {
+                                        Point point3 = AndroidUtilities.displaySize;
+                                        if ((point3.x <= point3.y) == (i14 <= i15)) {
                                             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewWallpapper, new Object[0]);
                                         }
                                     }
@@ -13832,10 +13836,10 @@ public abstract class Theme {
             if (drawable instanceof MotionBackgroundDrawable) {
                 MotionBackgroundDrawable motionBackgroundDrawable4 = (MotionBackgroundDrawable) drawable;
                 if (motionBackgroundDrawable4.getPatternBitmap() == null) {
-                    Point point = AndroidUtilities.displaySize;
-                    i4 = Math.min(point.x, point.y);
-                    Point point2 = AndroidUtilities.displaySize;
-                    height = Math.max(point2.x, point2.y);
+                    Point point3 = AndroidUtilities.displaySize;
+                    i4 = Math.min(point3.x, point3.y);
+                    Point point4 = AndroidUtilities.displaySize;
+                    height = Math.max(point4.x, point4.y);
                 } else {
                     int width = motionBackgroundDrawable4.getPatternBitmap().getWidth();
                     height = motionBackgroundDrawable4.getPatternBitmap().getHeight();

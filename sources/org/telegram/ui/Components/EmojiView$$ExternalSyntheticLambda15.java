@@ -5,10 +5,10 @@ import android.view.View;
 import org.telegram.ui.Components.blur3.ViewGroupPartRenderer;
 
 /* loaded from: classes5.dex */
-public final /* synthetic */ class EmojiView$$ExternalSyntheticLambda12 implements ViewGroupPartRenderer.DrawChildMethod {
+public final /* synthetic */ class EmojiView$$ExternalSyntheticLambda15 implements ViewGroupPartRenderer.DrawChildMethod {
     public final /* synthetic */ RecyclerListView f$0;
 
-    public /* synthetic */ EmojiView$$ExternalSyntheticLambda12(RecyclerListView recyclerListView) {
+    public /* synthetic */ EmojiView$$ExternalSyntheticLambda15(RecyclerListView recyclerListView) {
         this.f$0 = recyclerListView;
     }
 

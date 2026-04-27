@@ -6655,61 +6655,6 @@ public class TL_stars {
         }
     }
 
-    public static class StarGiftAuctionRound extends TLObject {
-        public int current_window;
-        public int duration;
-        public int extend_top;
-        public int num;
-
-        public static StarGiftAuctionRound TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-            TLObject tL_starGiftAuctionRoundExtendable;
-            if (i != 178266597) {
-                tL_starGiftAuctionRoundExtendable = i != 984483112 ? null : new TL_starGiftAuctionRound();
-            } else {
-                tL_starGiftAuctionRoundExtendable = new TL_starGiftAuctionRoundExtendable();
-            }
-            return (StarGiftAuctionRound) TLObject.TLdeserialize(StarGiftAuctionRound.class, tL_starGiftAuctionRoundExtendable, inputSerializedData, i, z);
-        }
-    }
-
-    public static class TL_starGiftAuctionRound extends StarGiftAuctionRound {
-        public static final int constructor = 984483112;
-
-        @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.num = inputSerializedData.readInt32(z);
-            this.duration = inputSerializedData.readInt32(z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeInt32(this.num);
-            outputSerializedData.writeInt32(this.duration);
-        }
-    }
-
-    public static class TL_starGiftAuctionRoundExtendable extends StarGiftAuctionRound {
-        public static final int constructor = 178266597;
-
-        @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.num = inputSerializedData.readInt32(z);
-            this.duration = inputSerializedData.readInt32(z);
-            this.extend_top = inputSerializedData.readInt32(z);
-            this.current_window = inputSerializedData.readInt32(z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeInt32(this.num);
-            outputSerializedData.writeInt32(this.duration);
-            outputSerializedData.writeInt32(this.extend_top);
-            outputSerializedData.writeInt32(this.current_window);
-        }
-    }
-
     public static class TL_starGiftAuctionStateNotModified extends StarGiftAuctionState {
         public static final int constructor = -30197422;
 
@@ -6762,6 +6707,61 @@ public class TL_stars {
                 outputSerializedData.writeInt32(this.fragment_listed_count);
                 outputSerializedData.writeString(this.fragment_listed_url);
             }
+        }
+    }
+
+    public static class StarGiftAuctionRound extends TLObject {
+        public int current_window;
+        public int duration;
+        public int extend_top;
+        public int num;
+
+        public static StarGiftAuctionRound TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+            TLObject tL_starGiftAuctionRoundExtendable;
+            if (i != 178266597) {
+                tL_starGiftAuctionRoundExtendable = i != 984483112 ? null : new TL_starGiftAuctionRound();
+            } else {
+                tL_starGiftAuctionRoundExtendable = new TL_starGiftAuctionRoundExtendable();
+            }
+            return (StarGiftAuctionRound) TLObject.TLdeserialize(StarGiftAuctionRound.class, tL_starGiftAuctionRoundExtendable, inputSerializedData, i, z);
+        }
+    }
+
+    public static class TL_starGiftAuctionRound extends StarGiftAuctionRound {
+        public static final int constructor = 984483112;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.num = inputSerializedData.readInt32(z);
+            this.duration = inputSerializedData.readInt32(z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt32(this.num);
+            outputSerializedData.writeInt32(this.duration);
+        }
+    }
+
+    public static class TL_starGiftAuctionRoundExtendable extends StarGiftAuctionRound {
+        public static final int constructor = 178266597;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.num = inputSerializedData.readInt32(z);
+            this.duration = inputSerializedData.readInt32(z);
+            this.extend_top = inputSerializedData.readInt32(z);
+            this.current_window = inputSerializedData.readInt32(z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt32(this.num);
+            outputSerializedData.writeInt32(this.duration);
+            outputSerializedData.writeInt32(this.extend_top);
+            outputSerializedData.writeInt32(this.current_window);
         }
     }
 

@@ -50,15 +50,15 @@ final class zzsz extends zztc {
             int i2 = this.zze;
             int i3 = i2 + 1;
             this.zze = i3;
-            bArr[i2] = (byte) (i & NotificationCenter.invalidateMotionBackground);
+            bArr[i2] = (byte) (i & NotificationCenter.didReceiveCall);
             int i4 = i2 + 2;
             this.zze = i4;
-            bArr[i3] = (byte) ((i >> 8) & NotificationCenter.invalidateMotionBackground);
+            bArr[i3] = (byte) ((i >> 8) & NotificationCenter.didReceiveCall);
             int i5 = i2 + 3;
             this.zze = i5;
-            bArr[i4] = (byte) ((i >> 16) & NotificationCenter.invalidateMotionBackground);
+            bArr[i4] = (byte) ((i >> 16) & NotificationCenter.didReceiveCall);
             this.zze = i2 + 4;
-            bArr[i5] = (byte) ((i >> 24) & NotificationCenter.invalidateMotionBackground);
+            bArr[i5] = (byte) ((i >> 24) & NotificationCenter.didReceiveCall);
         } catch (IndexOutOfBoundsException e) {
             throw new zzta(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
         }
@@ -77,27 +77,27 @@ final class zzsz extends zztc {
             int i = this.zze;
             int i2 = i + 1;
             this.zze = i2;
-            bArr[i] = (byte) (((int) j) & NotificationCenter.invalidateMotionBackground);
+            bArr[i] = (byte) (((int) j) & NotificationCenter.didReceiveCall);
             int i3 = i + 2;
             this.zze = i3;
-            bArr[i2] = (byte) (((int) (j >> 8)) & NotificationCenter.invalidateMotionBackground);
+            bArr[i2] = (byte) (((int) (j >> 8)) & NotificationCenter.didReceiveCall);
             int i4 = i + 3;
             this.zze = i4;
-            bArr[i3] = (byte) (((int) (j >> 16)) & NotificationCenter.invalidateMotionBackground);
+            bArr[i3] = (byte) (((int) (j >> 16)) & NotificationCenter.didReceiveCall);
             int i5 = i + 4;
             this.zze = i5;
-            bArr[i4] = (byte) (((int) (j >> 24)) & NotificationCenter.invalidateMotionBackground);
+            bArr[i4] = (byte) (((int) (j >> 24)) & NotificationCenter.didReceiveCall);
             int i6 = i + 5;
             this.zze = i6;
-            bArr[i5] = (byte) (((int) (j >> 32)) & NotificationCenter.invalidateMotionBackground);
+            bArr[i5] = (byte) (((int) (j >> 32)) & NotificationCenter.didReceiveCall);
             int i7 = i + 6;
             this.zze = i7;
-            bArr[i6] = (byte) (((int) (j >> 40)) & NotificationCenter.invalidateMotionBackground);
+            bArr[i6] = (byte) (((int) (j >> 40)) & NotificationCenter.didReceiveCall);
             int i8 = i + 7;
             this.zze = i8;
-            bArr[i7] = (byte) (((int) (j >> 48)) & NotificationCenter.invalidateMotionBackground);
+            bArr[i7] = (byte) (((int) (j >> 48)) & NotificationCenter.didReceiveCall);
             this.zze = i + 8;
-            bArr[i8] = (byte) (((int) (j >> 56)) & NotificationCenter.invalidateMotionBackground);
+            bArr[i8] = (byte) (((int) (j >> 56)) & NotificationCenter.didReceiveCall);
         } catch (IndexOutOfBoundsException e) {
             throw new zzta(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
         }
@@ -200,7 +200,7 @@ final class zzsz extends zztc {
                 byte[] bArr = this.zzc;
                 int i2 = this.zze;
                 this.zze = i2 + 1;
-                bArr[i2] = (byte) ((i & NotificationCenter.messageTranslated) | 128);
+                bArr[i2] = (byte) ((i & NotificationCenter.needDeleteBusinessLink) | 128);
                 i >>>= 7;
             } catch (IndexOutOfBoundsException e) {
                 throw new zzta(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
@@ -222,7 +222,7 @@ final class zzsz extends zztc {
                     byte[] bArr = this.zzc;
                     int i = this.zze;
                     this.zze = i + 1;
-                    bArr[i] = (byte) ((((int) j) & NotificationCenter.messageTranslated) | 128);
+                    bArr[i] = (byte) ((((int) j) & NotificationCenter.needDeleteBusinessLink) | 128);
                     j >>>= 7;
                 } catch (IndexOutOfBoundsException e) {
                     throw new zzta(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
@@ -246,7 +246,7 @@ final class zzsz extends zztc {
             byte[] bArr4 = this.zzc;
             int i5 = this.zze;
             this.zze = i5 + 1;
-            zzwj.zzn(bArr4, i5, (byte) ((i3 & NotificationCenter.messageTranslated) | 128));
+            zzwj.zzn(bArr4, i5, (byte) ((i3 & NotificationCenter.needDeleteBusinessLink) | 128));
             j >>>= 7;
         }
     }

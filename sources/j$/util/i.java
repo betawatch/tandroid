@@ -214,11 +214,11 @@ final class i implements java.util.Map, Serializable, Map {
 
     @Override // java.util.Map, j$.util.Map
     public final Object putIfAbsent(Object obj, Object obj2) {
-        Object a;
+        Object putIfAbsent;
         synchronized (this.b) {
-            a = Map.-EL.a(this.a, obj, obj2);
+            putIfAbsent = Map.-EL.putIfAbsent(this.a, obj, obj2);
         }
-        return a;
+        return putIfAbsent;
     }
 
     @Override // java.util.Map, j$.util.Map

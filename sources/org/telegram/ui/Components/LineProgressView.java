@@ -121,7 +121,7 @@ public class LineProgressView extends View {
         canvas.drawRoundRect(this.rect, getHeight() / 2.0f, getHeight() / 2.0f, progressPaint);
         if (this.animatedAlphaValue > 0.0f) {
             if (this.cellFlickerDrawable == null) {
-                CellFlickerDrawable cellFlickerDrawable = new CellFlickerDrawable(NotificationCenter.albumsDidLoad, 0);
+                CellFlickerDrawable cellFlickerDrawable = new CellFlickerDrawable(NotificationCenter.screenshotTook, 0);
                 this.cellFlickerDrawable = cellFlickerDrawable;
                 cellFlickerDrawable.drawFrame = false;
                 cellFlickerDrawable.animationSpeedScale = 0.8f;

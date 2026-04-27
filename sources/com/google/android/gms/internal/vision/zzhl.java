@@ -15,7 +15,7 @@ abstract class zzhl {
     }
 
     static int zza(int i, byte[] bArr, int i2, zzhn zzhnVar) {
-        int i3 = i & NotificationCenter.messageTranslated;
+        int i3 = i & NotificationCenter.needDeleteBusinessLink;
         int i4 = i2 + 1;
         byte b = bArr[i2];
         if (b >= 0) {

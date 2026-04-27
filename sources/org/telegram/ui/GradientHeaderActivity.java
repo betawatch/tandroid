@@ -457,7 +457,7 @@ public abstract class GradientHeaderActivity extends BaseFragment {
             if (f3 > 0.01f || !GradientHeaderActivity.this.drawActionBarShadow()) {
                 return;
             }
-            ((BaseFragment) GradientHeaderActivity.this).parentLayout.drawHeaderShadow(canvas, NotificationCenter.invalidateMotionBackground, ((BaseFragment) GradientHeaderActivity.this).actionBar.getMeasuredHeight());
+            ((BaseFragment) GradientHeaderActivity.this).parentLayout.drawHeaderShadow(canvas, NotificationCenter.didReceiveCall, ((BaseFragment) GradientHeaderActivity.this).actionBar.getMeasuredHeight());
         }
 
         private void setLightStatusBar(int i) {
@@ -490,7 +490,7 @@ public abstract class GradientHeaderActivity extends BaseFragment {
                 StarParticlesView.Drawable drawable = new StarParticlesView.Drawable(50) { // from class: org.telegram.ui.GradientHeaderActivity.7.1
                     @Override // org.telegram.ui.Components.Premium.StarParticlesView.Drawable
                     protected int getPathColor(int i) {
-                        return ColorUtils.setAlphaComponent(Theme.getDefaultColor(this.colorKey), NotificationCenter.channelRecommendationsLoaded);
+                        return ColorUtils.setAlphaComponent(Theme.getDefaultColor(this.colorKey), NotificationCenter.dialogPhotosUpdate);
                     }
                 };
                 this.drawable = drawable;

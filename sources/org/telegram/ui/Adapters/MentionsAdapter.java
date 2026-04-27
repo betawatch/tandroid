@@ -13,12 +13,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.collection.LongSparseArray;
 import androidx.recyclerview.widget.RecyclerView;
+import j$.util.List;
+import j$.util.Map;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
@@ -224,7 +227,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             public void onSetHashtags(ArrayList arrayList, HashMap hashMap) {
                 if (MentionsAdapter.this.lastText != null) {
                     MentionsAdapter mentionsAdapter = MentionsAdapter.this;
-                    mentionsAdapter.lambda$searchUsernameOrHashtag$7(mentionsAdapter.lastText, MentionsAdapter.this.lastPosition, MentionsAdapter.this.messages, MentionsAdapter.this.lastUsernameOnly, MentionsAdapter.this.lastForSearch);
+                    mentionsAdapter.lambda$searchUsernameOrHashtag$8(mentionsAdapter.lastText, MentionsAdapter.this.lastPosition, MentionsAdapter.this.messages, MentionsAdapter.this.lastUsernameOnly, MentionsAdapter.this.lastForSearch);
                 }
             }
         });
@@ -366,7 +369,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
         TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
         tL_messages_getStickers.emoticon = str2;
         tL_messages_getStickers.hash = 0L;
-        this.lastReqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getStickers, new RequestDelegate() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda9
+        this.lastReqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getStickers, new RequestDelegate() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda10
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 MentionsAdapter.this.lambda$searchServerStickers$1(str, tLObject, tL_error);
@@ -376,7 +379,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$searchServerStickers$1(final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda10
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
                 MentionsAdapter.this.lambda$searchServerStickers$0(str, tLObject);
@@ -551,7 +554,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
         }
         String str = this.lastText;
         if (str != null) {
-            lambda$searchUsernameOrHashtag$7(str, this.lastPosition, this.messages, this.lastUsernameOnly, this.lastForSearch);
+            lambda$searchUsernameOrHashtag$8(str, this.lastPosition, this.messages, this.lastUsernameOnly, this.lastForSearch);
         }
     }
 
@@ -1063,50 +1066,73 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:241:0x06ae, code lost:
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ int lambda$sortAndDeduplicateTopPeers$7(TLRPC.TL_topPeer tL_topPeer, TLRPC.TL_topPeer tL_topPeer2) {
+        return Double.compare(tL_topPeer2.rating, tL_topPeer.rating);
+    }
+
+    private static ArrayList sortAndDeduplicateTopPeers(ArrayList arrayList) {
+        List.-EL.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda9
+            @Override // java.util.Comparator
+            public final int compare(Object obj, Object obj2) {
+                int lambda$sortAndDeduplicateTopPeers$7;
+                lambda$sortAndDeduplicateTopPeers$7 = MentionsAdapter.lambda$sortAndDeduplicateTopPeers$7((TLRPC.TL_topPeer) obj, (TLRPC.TL_topPeer) obj2);
+                return lambda$sortAndDeduplicateTopPeers$7;
+            }
+        });
+        LinkedHashMap linkedHashMap = new LinkedHashMap();
+        Iterator it = arrayList.iterator();
+        while (it.hasNext()) {
+            TLRPC.TL_topPeer tL_topPeer = (TLRPC.TL_topPeer) it.next();
+            Map.-EL.putIfAbsent(linkedHashMap, Long.valueOf(DialogObject.getPeerDialogId(tL_topPeer.peer)), tL_topPeer);
+        }
+        return new ArrayList(linkedHashMap.values());
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:247:0x06d3, code lost:
     
-        if (r6.user_id == r0.id) goto L378;
+        if (r6.user_id == r0.id) goto L385;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:472:0x040f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:479:0x040f, code lost:
     
         if (r3 != ':') goto L230;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:488:0x042b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:495:0x042b, code lost:
     
         if (r30.info != null) goto L245;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:489:0x042d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:496:0x042d, code lost:
     
         if (r12 == 0) goto L245;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:490:0x042f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:497:0x042f, code lost:
     
         r30.lastText = r0;
         r30.lastPosition = r32;
         r30.messages = r33;
         r30.delegate.needChangePanelVisibility(false);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:491:0x043b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:498:0x043b, code lost:
     
         return;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:142:0x0517  */
     /* JADX WARN: Removed duplicated region for block: B:144:0x0522  */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x06f2  */
-    /* JADX WARN: Removed duplicated region for block: B:454:0x0505  */
-    /* JADX WARN: Removed duplicated region for block: B:457:0x050e  */
+    /* JADX WARN: Removed duplicated region for block: B:221:0x0717  */
+    /* JADX WARN: Removed duplicated region for block: B:461:0x0505  */
+    /* JADX WARN: Removed duplicated region for block: B:464:0x050e  */
     /* JADX WARN: Type inference failed for: r0v144 */
     /* JADX WARN: Type inference failed for: r0v67, types: [org.telegram.tgnet.TLRPC$User] */
     /* JADX WARN: Type inference failed for: r0v80 */
     /* JADX WARN: Type inference failed for: r0v86, types: [org.telegram.ui.Adapters.MentionsAdapter$MentionsAdapterDelegate] */
     /* JADX WARN: Type inference failed for: r14v1 */
     /* JADX WARN: Type inference failed for: r14v18, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r14v41 */
-    /* JADX WARN: Type inference failed for: r15v28 */
-    /* JADX WARN: Type inference failed for: r15v29, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r15v31 */
-    /* JADX WARN: Type inference failed for: r15v38 */
+    /* JADX WARN: Type inference failed for: r14v40 */
+    /* JADX WARN: Type inference failed for: r15v36 */
+    /* JADX WARN: Type inference failed for: r15v37, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r15v39 */
+    /* JADX WARN: Type inference failed for: r15v46 */
     /* JADX WARN: Type inference failed for: r30v0, types: [androidx.recyclerview.widget.RecyclerView$Adapter, org.telegram.ui.Adapters.MentionsAdapter] */
     /* JADX WARN: Type inference failed for: r3v33, types: [org.telegram.ui.Adapters.MentionsAdapter$HashtagHint] */
     /* JADX WARN: Type inference failed for: r3v39 */
@@ -1117,7 +1143,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void lambda$searchUsernameOrHashtag$7(final CharSequence charSequence, final int i, final ArrayList arrayList, final boolean z, final boolean z2) {
+    public void lambda$searchUsernameOrHashtag$8(final CharSequence charSequence, final int i, final ArrayList arrayList, final boolean z, final boolean z2) {
         String str;
         StringBuilder sb;
         String str2;
@@ -1305,7 +1331,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
                 this.checkAgainRunnable = new Runnable() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda3
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MentionsAdapter.this.lambda$searchUsernameOrHashtag$7(charSequence, i, arrayList, z, z2);
+                        MentionsAdapter.this.lambda$searchUsernameOrHashtag$8(charSequence, i, arrayList, z, z2);
                     }
                 };
                 MediaDataController.getInstance(this.currentAccount).loadRecents(0, false, true, false);
@@ -1605,7 +1631,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
                         MediaDataController.getInstance(this.currentAccount).getEmojiSuggestions(this.lastSearchKeyboardLanguage, sb3.toString(), false, new MediaDataController.KeywordResultCallback() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda5
                             @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
                             public final void run(ArrayList arrayList9, String str21) {
-                                MentionsAdapter.this.lambda$searchUsernameOrHashtag$9(arrayList9, str21);
+                                MentionsAdapter.this.lambda$searchUsernameOrHashtag$10(arrayList9, str21);
                             }
                         }, SharedConfig.suggestAnimatedEmoji && UserConfig.getInstance(this.currentAccount).isPremium());
                         return;
@@ -1688,12 +1714,17 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             final ArrayList arrayList13 = new ArrayList();
             LongSparseArray longSparseArray = new LongSparseArray();
             final LongSparseArray longSparseArray2 = new LongSparseArray();
-            ArrayList<TLRPC.TL_topPeer> arrayList14 = MediaDataController.getInstance(this.currentAccount).inlineBots;
-            if (!z5 && this.needBotContext && i3 == 0 && !arrayList14.isEmpty()) {
+            ArrayList arrayList14 = new ArrayList();
+            arrayList14.addAll(MediaDataController.getInstance(this.currentAccount).inlineBots);
+            if (chat == null || (!ChatObject.isMonoForum(chat) && !ChatObject.isChannelAndNotMegaGroup(chat))) {
+                arrayList14.addAll(MediaDataController.getInstance(this.currentAccount).guestBots);
+            }
+            ArrayList sortAndDeduplicateTopPeers = sortAndDeduplicateTopPeers(arrayList14);
+            if (!z5 && this.needBotContext && i3 == 0 && !sortAndDeduplicateTopPeers.isEmpty()) {
                 int i23 = 0;
                 int i24 = 0;
-                while (i23 < arrayList14.size()) {
-                    TLRPC.User user = messagesController.getUser(Long.valueOf(arrayList14.get(i23).peer.user_id));
+                while (i23 < sortAndDeduplicateTopPeers.size()) {
+                    TLRPC.User user = messagesController.getUser(Long.valueOf(((TLRPC.TL_topPeer) sortAndDeduplicateTopPeers.get(i23)).peer.user_id));
                     if (user != null) {
                         String publicUsername2 = UserObject.getPublicUsername(user);
                         if (TextUtils.isEmpty(publicUsername2) || !(lowerCase4.length() == 0 || publicUsername2.toLowerCase().startsWith(lowerCase4))) {
@@ -1910,7 +1941,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
                     Runnable runnable4 = new Runnable() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda4
                         @Override // java.lang.Runnable
                         public final void run() {
-                            MentionsAdapter.this.lambda$searchUsernameOrHashtag$8(arrayList13, longSparseArray2);
+                            MentionsAdapter.this.lambda$searchUsernameOrHashtag$9(arrayList13, longSparseArray2);
                         }
                     };
                     this.cancelDelayRunnable = runnable4;
@@ -1943,7 +1974,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchUsernameOrHashtag$8(ArrayList arrayList, LongSparseArray longSparseArray) {
+    public /* synthetic */ void lambda$searchUsernameOrHashtag$9(ArrayList arrayList, LongSparseArray longSparseArray) {
         this.cancelDelayRunnable = null;
         showUsersResult(arrayList, longSparseArray, true);
     }
@@ -2049,7 +2080,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchUsernameOrHashtag$9(ArrayList arrayList, String str) {
+    public /* synthetic */ void lambda$searchUsernameOrHashtag$10(ArrayList arrayList, String str) {
         this.searchResultSuggestions = arrayList;
         this.searchResultHashtags = null;
         this.stickers = null;
@@ -2392,7 +2423,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onCreateViewHolder$10(ContextLinkCell contextLinkCell) {
+    public /* synthetic */ void lambda$onCreateViewHolder$11(ContextLinkCell contextLinkCell) {
         this.delegate.onContextClick(contextLinkCell.getResult());
     }
 
@@ -2409,7 +2440,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             contextLinkCell.setDelegate(new ContextLinkCell.ContextLinkCellDelegate() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda6
                 @Override // org.telegram.ui.Cells.ContextLinkCell.ContextLinkCellDelegate
                 public final void didPressedImage(ContextLinkCell contextLinkCell2) {
-                    MentionsAdapter.this.lambda$onCreateViewHolder$10(contextLinkCell2);
+                    MentionsAdapter.this.lambda$onCreateViewHolder$11(contextLinkCell2);
                 }
             });
             view = contextLinkCell;

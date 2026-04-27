@@ -393,7 +393,7 @@ public class CheckBoxBase {
                 f4 = f12;
                 i3 = 12;
                 i4 = 13;
-                canvas.saveLayerAlpha(f13 - f, f14 - f, f13 + f, f14 + f, NotificationCenter.invalidateMotionBackground, 31);
+                canvas.saveLayerAlpha(f13 - f, f14 - f, f13 + f, f14 + f, NotificationCenter.didReceiveCall, 31);
             }
             i5 = this.backgroundColorKey;
             if (i5 < 0) {
@@ -550,7 +550,7 @@ public class CheckBoxBase {
                             boolean z3 = f3 < f7;
                             if (z3) {
                                 i10 = save;
-                                canvas.saveLayerAlpha(0.0f, 0.0f, AndroidUtilities.dp(this.size), AndroidUtilities.dp(this.size), NotificationCenter.invalidateMotionBackground, 31);
+                                canvas.saveLayerAlpha(0.0f, 0.0f, AndroidUtilities.dp(this.size), AndroidUtilities.dp(this.size), NotificationCenter.didReceiveCall, 31);
                             } else {
                                 i10 = save;
                             }

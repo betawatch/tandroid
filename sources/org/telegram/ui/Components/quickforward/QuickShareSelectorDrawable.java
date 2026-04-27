@@ -398,7 +398,7 @@ public class QuickShareSelectorDrawable extends Drawable implements Animator.Ani
 
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
-        draw(canvas, NotificationCenter.invalidateMotionBackground, false);
+        draw(canvas, NotificationCenter.didReceiveCall, false);
     }
 
     public void draw(Canvas canvas, int i, boolean z) {
@@ -776,25 +776,25 @@ public class QuickShareSelectorDrawable extends Drawable implements Animator.Ani
         static {
             LinearInterpolator linearInterpolator = new LinearInterpolator();
             LINEAR_INTERPOLATOR = linearInterpolator;
-            closeAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, NotificationCenter.appConfigUpdated, NotificationCenter.appConfigUpdated);
-            closeAvatarPosition = QuickShareSelectorDrawable.interpolator(linearInterpolator, 0, NotificationCenter.appConfigUpdated, NotificationCenter.appConfigUpdated);
-            closeAvatarAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.starBalanceUpdated, NotificationCenter.appConfigUpdated, NotificationCenter.appConfigUpdated);
-            buttonRotationUp = QuickShareSelectorDrawable.interpolator(new CubicBezierInterpolator(0.7f, -0.6f, 0.4f, 1.0f), 0, NotificationCenter.channelRecommendationsLoaded, 560);
-            buttonRotationDown = QuickShareSelectorDrawable.interpolator(new CubicBezierInterpolator(0.7f, -0.6f, 0.4f, 1.0f), NotificationCenter.channelRecommendationsLoaded, 400, 560, true);
+            closeAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, NotificationCenter.commonChatsLoaded, NotificationCenter.commonChatsLoaded);
+            closeAvatarPosition = QuickShareSelectorDrawable.interpolator(linearInterpolator, 0, NotificationCenter.commonChatsLoaded, NotificationCenter.commonChatsLoaded);
+            closeAvatarAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.starGiveawayOptionsLoaded, NotificationCenter.commonChatsLoaded, NotificationCenter.commonChatsLoaded);
+            buttonRotationUp = QuickShareSelectorDrawable.interpolator(new CubicBezierInterpolator(0.7f, -0.6f, 0.4f, 1.0f), 0, NotificationCenter.dialogPhotosUpdate, 560);
+            buttonRotationDown = QuickShareSelectorDrawable.interpolator(new CubicBezierInterpolator(0.7f, -0.6f, 0.4f, 1.0f), NotificationCenter.dialogPhotosUpdate, 400, 560, true);
             buttonJumpUp = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, 150, 560);
-            buttonJumpDown = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.groupRestrictionsUnlockedByBoosts, 425, 560);
+            buttonJumpDown = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.openBoostForUsersDialog, 425, 560);
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
-            bgOpacity = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, NotificationCenter.storyDeleted, 560);
-            bgScale = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 40, NotificationCenter.storyDeleted, 560);
+            bgOpacity = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, NotificationCenter.wallpaperSettedToUser, 560);
+            bgScale = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 40, NotificationCenter.wallpaperSettedToUser, 560);
             heightExpansion = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, 250, 560);
             widthExpansion = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, 460, 560);
-            bubbleY = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, NotificationCenter.uploadStoryEnd, 560);
+            bubbleY = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, NotificationCenter.chatlistFolderUpdate, 560);
             ballsRadius = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 150, 250, 560);
-            overshootCancel = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.channelRecommendationsLoaded, 480, 560);
-            avatar1 = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 60, NotificationCenter.storyDeleted, 560);
+            overshootCancel = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.dialogPhotosUpdate, 480, 560);
+            avatar1 = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 60, NotificationCenter.wallpaperSettedToUser, 560);
             avatar2 = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 90, 380, 560);
             avatar3 = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 110, 440, 560);
-            avatarOvershootCancel = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.channelRecommendationsLoaded, 460, 560);
+            avatarOvershootCancel = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.dialogPhotosUpdate, 460, 560);
         }
     }
 

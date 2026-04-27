@@ -50,6 +50,11 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
     private SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow selectAnimatedEmojiDialog;
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean onFragmentCreate() {
         getNotificationCenter().addObserver(this, NotificationCenter.reactionsDidLoad);
         getNotificationCenter().addObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
@@ -73,7 +78,9 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
         linearLayout.setOrientation(1);
         RecyclerListView recyclerListView = new RecyclerListView(context);
         this.listView = recyclerListView;
-        ((DefaultItemAnimator) recyclerListView.getItemAnimator()).setSupportsChangeAnimations(false);
+        recyclerListView.setSections();
+        this.actionBar.setAdaptiveBackground(this.listView);
+        ((DefaultItemAnimator) this.listView.getItemAnimator()).setSupportsChangeAnimations(false);
         this.listView.setLayoutManager(new LinearLayoutManager(context));
         RecyclerListView recyclerListView2 = this.listView;
         RecyclerListView.SelectionAdapter selectionAdapter = new RecyclerListView.SelectionAdapter() { // from class: org.telegram.ui.ReactionsDoubleTapManageActivity.2
@@ -93,7 +100,6 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
                 } else if (i == 2) {
                     TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(context);
                     textInfoPrivacyCell.setText(LocaleController.getString(R.string.DoubleTapPreviewRational));
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(context, R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                     view = textInfoPrivacyCell;
                 } else if (i == 3) {
                     SetDefaultReactionCell setDefaultReactionCell = ReactionsDoubleTapManageActivity.this.new SetDefaultReactionCell(context);
@@ -106,7 +112,7 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
                             super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLObject.FLAG_30));
                         }
                     };
-                    view2.setBackground(Theme.getThemedDrawableByKey(context, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                    view2.setTag(-33024);
                     view = view2;
                 } else {
                     view = new AvailableReactionCell(context, true, true);
@@ -185,7 +191,6 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
 
         public SetDefaultReactionCell(Context context) {
             super(context);
-            setBackgroundColor(ReactionsDoubleTapManageActivity.this.getThemedColor(Theme.key_windowBackgroundWhite));
             TextView textView = new TextView(context);
             this.textView = textView;
             textView.setTextSize(1, 16.0f);
@@ -239,7 +244,7 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00bd A[LOOP:0: B:20:0x00b7->B:22:0x00bd, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00c4 A[LOOP:0: B:20:0x00be->B:22:0x00c4, LOOP_END] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -264,7 +269,7 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
                 Rect rect = AndroidUtilities.rectTmp2;
                 rect.set(setDefaultReactionCell.imageDrawable.getBounds());
                 int dp = (-(setDefaultReactionCell.getHeight() - rect.centerY())) - AndroidUtilities.dp(16.0f);
-                i = rect.centerX() - (AndroidUtilities.displaySize.x - ((int) Math.min(AndroidUtilities.dp(324.0f), AndroidUtilities.displaySize.x * 0.95f)));
+                i = rect.centerX() - ((AndroidUtilities.displaySize.x - AndroidUtilities.dp(12.0f)) - ((int) Math.min(AndroidUtilities.dp(324.0f), AndroidUtilities.displaySize.x * 0.95f)));
                 swapAnimatedEmojiDrawable = swapAnimatedEmojiDrawable2;
                 i2 = dp;
                 setDefaultReactionCell2 = setDefaultReactionCell;
@@ -452,5 +457,11 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
             updateRows();
             this.listAdapter.notifyDataSetChanged();
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onInsets(int i, int i2, int i3, int i4) {
+        this.listView.setPadding(0, 0, 0, i4);
+        this.listView.setClipToPadding(false);
     }
 }

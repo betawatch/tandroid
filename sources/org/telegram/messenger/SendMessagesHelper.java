@@ -2310,7 +2310,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
             message2.from_id = tL_peerUser;
             tL_peerUser.user_id = getUserConfig().getClientUserId();
-            message2.flags |= NotificationCenter.needShareTheme;
+            message2.flags |= NotificationCenter.themeAccentListUpdated;
             TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
             message2.reply_to = tL_messageReplyHeader;
             tL_messageReplyHeader.flags |= 16;
@@ -2475,7 +2475,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             file = new File(FileLoader.getDirectory(2), key + str2);
         }
         ensureMediaThumbExists(getAccountInstance(), false, document, file.getAbsolutePath(), null, 0L);
-        final String[] strArr = {getKeyForPhotoSize(getAccountInstance(), FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.storyDeleted), bitmapArr, true, true)};
+        final String[] strArr = {getKeyForPhotoSize(getAccountInstance(), FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.wallpaperSettedToUser), bitmapArr, true, true)};
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda37
             @Override // java.lang.Runnable
             public final void run() {
@@ -8469,7 +8469,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             TLRPC.TL_messages_sendMedia tL_messages_sendMedia = (TLRPC.TL_messages_sendMedia) tLObject;
             if (tL_messages_sendMedia.media instanceof TLRPC.TL_inputMediaStakeDice) {
                 if ("GAME_HASH_INVALID".equalsIgnoreCase(tL_error.text)) {
-                    getConnectionsManager().sendRequestTyped(new TLRPC.TL_messages_getEmojiGameInfo(), new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda32
+                    getConnectionsManager().sendRequestTyped(new TLRPC.TL_messages_getEmojiGameInfo(), new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda32
                         @Override // org.telegram.messenger.Utilities.Callback2
                         public final void run(Object obj2, Object obj3) {
                             SendMessagesHelper.this.lambda$performSendMessageRequest$70(tLObject, messageObject, str, delayedMessage, z, delayedMessage2, obj, hashMap, z2, (TLRPC.EmojiGameInfo) obj2, (TLRPC.TL_error) obj3);
@@ -9799,8 +9799,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 str4 = str15;
                 bArr = null;
                 messageMedia4 = messageMedia2;
-                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(messageMedia4.document.thumbs, NotificationCenter.storyDeleted);
-                TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(messageMedia3.document.thumbs, NotificationCenter.storyDeleted);
+                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(messageMedia4.document.thumbs, NotificationCenter.wallpaperSettedToUser);
+                TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(messageMedia3.document.thumbs, NotificationCenter.wallpaperSettedToUser);
                 if (closestPhotoSizeWithSize3 != null && (fileLocation2 = closestPhotoSizeWithSize3.location) != null && fileLocation2.volume_id == -2147483648L && closestPhotoSizeWithSize4 != null && closestPhotoSizeWithSize4.location != null && !(closestPhotoSizeWithSize4 instanceof TLRPC.TL_photoSizeEmpty) && !(closestPhotoSizeWithSize3 instanceof TLRPC.TL_photoSizeEmpty)) {
                     String str25 = closestPhotoSizeWithSize3.location.volume_id + "_" + closestPhotoSizeWithSize3.location.local_id;
                     String str26 = closestPhotoSizeWithSize4.location.volume_id + "_" + closestPhotoSizeWithSize4.location.local_id;
@@ -12670,7 +12670,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     } else {
                                         tL_document3.mime_type = "image/gif";
                                     }
-                                    int i6 = isEncryptedDialog ? 90 : NotificationCenter.storyDeleted;
+                                    int i6 = isEncryptedDialog ? 90 : NotificationCenter.wallpaperSettedToUser;
                                     try {
                                         if (str2.endsWith("mp4")) {
                                             loadBitmap = createVideoThumbnail(str2, 1);
@@ -12846,7 +12846,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         }
                     }
                     if (!MessageObject.isGifDocument((TLRPC.Document) tLObject)) {
-                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLObject.thumbs, NotificationCenter.storyDeleted);
+                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLObject.thumbs, NotificationCenter.wallpaperSettedToUser);
                         File pathToAttach = FileLoader.getInstance(accountInstance.getCurrentAccount()).getPathToAttach(tLObject);
                         if (!pathToAttach.exists()) {
                             pathToAttach = FileLoader.getInstance(accountInstance.getCurrentAccount()).getPathToAttach(tLObject, true);
@@ -13134,8 +13134,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             TLRPC.TL_document tL_document = (TLRPC.TL_document) tLObject;
             if ((MessageObject.isVideoDocument(tL_document) || MessageObject.isNewGifDocument(tL_document)) && MessageObject.isDocumentHasThumb(tL_document)) {
                 ArrayList<TLRPC.PhotoSize> arrayList = tL_document.thumbs;
-                int i = NotificationCenter.storyDeleted;
-                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(arrayList, NotificationCenter.storyDeleted);
+                int i = NotificationCenter.wallpaperSettedToUser;
+                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(arrayList, NotificationCenter.wallpaperSettedToUser);
                 if ((closestPhotoSizeWithSize3 instanceof TLRPC.TL_photoStrippedSize) || (closestPhotoSizeWithSize3 instanceof TLRPC.TL_photoPathSize) || FileLoader.getInstance(accountInstance.getCurrentAccount()).getPathToAttach(closestPhotoSizeWithSize3, true).exists()) {
                     return;
                 }
@@ -14050,7 +14050,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 if (!isEncryptedDialog) {
                                     try {
                                         if (sendingMediaInfo5.ttl == 0) {
-                                            i25 = NotificationCenter.storyDeleted;
+                                            i25 = NotificationCenter.wallpaperSettedToUser;
                                             if (!file5.getAbsolutePath().endsWith("mp4")) {
                                                 try {
                                                     createVideoThumbnail = createVideoThumbnail(file5.getAbsolutePath(), 1);
@@ -16875,7 +16875,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 ensureMediaThumbExists(accountInstance, isEncryptedDialog, tL_document3, str, null, j5);
                                 tL_document = tL_document3;
                                 str7 = str14;
-                                int i8 = NotificationCenter.storyDeleted;
+                                int i8 = NotificationCenter.wallpaperSettedToUser;
                                 if (tL_document == null) {
                                     Bitmap bitmap2 = (createCompressionSettings == null || !createCompressionSettings.notReadyYet) ? null : createCompressionSettings.thumb;
                                     if (bitmap2 == null) {
@@ -17058,7 +17058,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     str6 = str4;
                     tL_document = null;
                     str7 = null;
-                    int i82 = NotificationCenter.storyDeleted;
+                    int i82 = NotificationCenter.wallpaperSettedToUser;
                     if (tL_document == null) {
                     }
                     fileToSize = ImageLoader.fileToSize(str8, z5);
@@ -17102,7 +17102,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             str6 = str4;
             tL_document = null;
             str7 = null;
-            int i822 = NotificationCenter.storyDeleted;
+            int i822 = NotificationCenter.wallpaperSettedToUser;
             if (tL_document == null) {
             }
             fileToSize = ImageLoader.fileToSize(str8, z5);

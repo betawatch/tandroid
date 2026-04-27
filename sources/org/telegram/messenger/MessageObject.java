@@ -1496,7 +1496,7 @@ public class MessageObject {
                 this.maxSizeWidth -= 50;
                 i = 250;
             } else {
-                i = NotificationCenter.channelRecommendationsLoaded;
+                i = NotificationCenter.dialogPhotosUpdate;
             }
             int dp = AndroidUtilities.dp(120.0f);
             float dp2 = AndroidUtilities.dp(120.0f);
@@ -2384,29 +2384,29 @@ public class MessageObject {
     
         if ((r3.new_participant instanceof org.telegram.tgnet.TLRPC.TL_channelParticipant) != false) goto L66;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:721:0x0c77, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:741:0x0ccb, code lost:
     
-        if (r10.id == r12.id) goto L500;
+        if (r10.id == r12.id) goto L520;
      */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x1dbb  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x1e0d  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x1e12  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x1ea8 A[ADDED_TO_REGION, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x1ea9  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x1ebe  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x1ed0  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x1ede  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x1ee9  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x1f20  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x1ee1  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x1ec3  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x1e9f  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x1e0f  */
-    /* JADX WARN: Removed duplicated region for block: B:695:0x0c9d  */
-    /* JADX WARN: Removed duplicated region for block: B:698:0x0cde  */
-    /* JADX WARN: Removed duplicated region for block: B:704:0x0d7a  */
-    /* JADX WARN: Removed duplicated region for block: B:706:0x0d85  */
-    /* JADX WARN: Removed duplicated region for block: B:708:0x0caa  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x1e0f  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x1e61  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x1e66  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x1efc A[ADDED_TO_REGION, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x1efd  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x1f12  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x1f24  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x1f32  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x1f3d  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x1f74  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x1f35  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x1f17  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x1ef3  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x1e63  */
+    /* JADX WARN: Removed duplicated region for block: B:715:0x0cf1  */
+    /* JADX WARN: Removed duplicated region for block: B:718:0x0d32  */
+    /* JADX WARN: Removed duplicated region for block: B:724:0x0dce  */
+    /* JADX WARN: Removed duplicated region for block: B:726:0x0dd9  */
+    /* JADX WARN: Removed duplicated region for block: B:728:0x0cfe  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2683,6 +2683,15 @@ public class MessageObject {
                             sb3.append(' ');
                             sb3.append(LocaleController.getString(R.string.EventLogRestrictedEditRank));
                         }
+                        if (tL_chatBannedRights.send_reactions != tL_chatBannedRights2.send_reactions) {
+                            if (!z7) {
+                                sb3.append('\n');
+                            }
+                            sb3.append('\n');
+                            sb3.append(!tL_chatBannedRights2.send_reactions ? '+' : '-');
+                            sb3.append(' ');
+                            sb3.append(LocaleController.getString(R.string.EventLogRestrictedSendReactions));
+                        }
                         this.messageText = sb3.toString();
                     } else {
                         if (z9) {
@@ -2863,6 +2872,15 @@ public class MessageObject {
                                     sb4.append(LocaleController.getString(R.string.EventLogRestrictedPinMessages));
                                 }
                                 if (tL_chatBannedRights3.edit_rank != tL_chatBannedRights4.edit_rank) {
+                                    if (!z6) {
+                                        sb4.append('\n');
+                                    }
+                                    sb4.append('\n');
+                                    sb4.append(!tL_chatBannedRights4.edit_rank ? '+' : '-');
+                                    sb4.append(' ');
+                                    sb4.append(LocaleController.getString(R.string.EventLogRestrictedEditRank));
+                                }
+                                if (tL_chatBannedRights3.send_reactions != tL_chatBannedRights4.send_reactions) {
                                     if (z6) {
                                         c3 = '\n';
                                     } else {
@@ -2870,9 +2888,9 @@ public class MessageObject {
                                         sb4.append('\n');
                                     }
                                     sb4.append(c3);
-                                    sb4.append(!tL_chatBannedRights4.edit_rank ? '+' : '-');
+                                    sb4.append(!tL_chatBannedRights4.send_reactions ? '+' : '-');
                                     sb4.append(' ');
-                                    sb4.append(LocaleController.getString(R.string.EventLogRestrictedEditRank));
+                                    sb4.append(LocaleController.getString(R.string.EventLogRestrictedSendReactions));
                                 }
                                 this.messageText = sb4.toString();
                             } else {
@@ -4874,7 +4892,9 @@ public class MessageObject {
         if (pollResults.min) {
             return;
         }
-        tL_messageMediaPoll.results.has_unread_votes = pollResults.has_unread_votes;
+        TLRPC.PollResults pollResults8 = tL_messageMediaPoll.results;
+        pollResults8.has_unread_votes = pollResults.has_unread_votes;
+        pollResults8.can_view_stats = pollResults.can_view_stats;
     }
 
     public void loadAnimatedEmojiDocument() {
@@ -7357,6 +7377,14 @@ public class MessageObject {
             return ((TLRPC.TL_messageExtendedMedia) message.media.extended_media.get(0)).media;
         }
         return message.media;
+    }
+
+    public static <T extends TLRPC.MessageMedia> T getMedia(TLRPC.Message message, Class<T> cls) {
+        TLRPC.MessageMedia media = getMedia(message);
+        if (cls.isInstance(media)) {
+            return cls.cast(media);
+        }
+        return null;
     }
 
     public boolean hasRevealedExtendedMedia() {
@@ -11156,7 +11184,11 @@ public class MessageObject {
     /* JADX INFO: Access modifiers changed from: private */
     public boolean needDrawAvatarInternal() {
         TLRPC.Chat chat;
-        if (this.isRepostPreview || this.isSaved || this.forceAvatar || this.customAvatarDrawable != null || this.searchType != 0) {
+        if (this.isRepostPreview || this.isSaved || this.forceAvatar || this.customAvatarDrawable != null) {
+            return true;
+        }
+        TLRPC.Message message = this.messageOwner;
+        if ((message != null && message.guestchat_via_from != null) || this.searchType != 0) {
             return true;
         }
         boolean z = getDialogId() >= 0 ? getDialogId() == UserObject.VERIFY : !((chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-getDialogId()))) == null || !chat.signature_profiles);
@@ -11653,7 +11685,7 @@ public class MessageObject {
                 long j2 = peer.channel_id;
                 if (j2 != 0) {
                     message.dialog_id = -j2;
-                } else if (message.from_id == null || isOut(message)) {
+                } else if (message.from_id == null || isOut(message) || message.guestchat_via_from != null) {
                     message.dialog_id = message.peer_id.user_id;
                 } else {
                     message.dialog_id = message.from_id.user_id;
@@ -11744,7 +11776,7 @@ public class MessageObject {
         TLRPC.Message message = this.messageOwner;
         if (message.send_state != 2 || message.id >= 0) {
             if (this.scheduled && message.id > 0) {
-                if (message.date < ConnectionsManager.getInstance(this.currentAccount).getCurrentTime() - (this.messageOwner.video_processing_pending ? NotificationCenter.onActivityResultReceived : 60)) {
+                if (message.date < ConnectionsManager.getInstance(this.currentAccount).getCurrentTime() - (this.messageOwner.video_processing_pending ? NotificationCenter.onDatabaseOpened : 60)) {
                 }
             }
             return false;
@@ -13941,12 +13973,12 @@ public class MessageObject {
             TLRPC.Document document = messageMedia.document;
             if (document != null) {
                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 50);
-                this.mediaThumb = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.storyDeleted, false, null, true), document);
+                this.mediaThumb = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.wallpaperSettedToUser, false, null, true), document);
                 this.mediaSmallThumb = ImageLocation.getForDocument(closestPhotoSizeWithSize, document);
                 return;
             } else {
                 TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(this.photoThumbs, 50);
-                this.mediaThumb = ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(this.photoThumbs, NotificationCenter.storyDeleted, false, closestPhotoSizeWithSize2, true), this.photoThumbsObject);
+                this.mediaThumb = ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(this.photoThumbs, NotificationCenter.wallpaperSettedToUser, false, closestPhotoSizeWithSize2, true), this.photoThumbsObject);
                 this.mediaSmallThumb = ImageLocation.getForObject(closestPhotoSizeWithSize2, this.photoThumbsObject);
                 return;
             }
@@ -13954,7 +13986,7 @@ public class MessageObject {
         if (isVideo()) {
             TLRPC.Document document2 = getDocument();
             TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, 50);
-            this.mediaThumb = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, NotificationCenter.storyDeleted), document2);
+            this.mediaThumb = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, NotificationCenter.wallpaperSettedToUser), document2);
             this.mediaSmallThumb = ImageLocation.getForDocument(closestPhotoSizeWithSize3, document2);
             return;
         }
@@ -13962,7 +13994,7 @@ public class MessageObject {
             return;
         }
         TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(this.photoThumbs, 50);
-        this.mediaThumb = ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(this.photoThumbs, NotificationCenter.storyDeleted, false, closestPhotoSizeWithSize4, false), this.photoThumbsObject);
+        this.mediaThumb = ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(this.photoThumbs, NotificationCenter.wallpaperSettedToUser, false, closestPhotoSizeWithSize4, false), this.photoThumbsObject);
         this.mediaSmallThumb = ImageLocation.getForObject(closestPhotoSizeWithSize4, this.photoThumbsObject);
     }
 
@@ -15078,7 +15110,7 @@ public class MessageObject {
                                 spannableStringBuilder.append('\"');
                                 spannableStringBuilder.append((CharSequence) tL_messageActionSuggestedPostApproval.reject_comment);
                                 spannableStringBuilder.append('\"');
-                                spannableStringBuilder.setSpan(new EllipsizeSpanAnimator.TextAlphaSpan(NotificationCenter.starOptionsLoaded), length, spannableStringBuilder.length(), 33);
+                                spannableStringBuilder.setSpan(new EllipsizeSpanAnimator.TextAlphaSpan(NotificationCenter.availableEffectsUpdate), length, spannableStringBuilder.length(), 33);
                             }
                         }
                     }

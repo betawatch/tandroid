@@ -1956,7 +1956,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case 1:
                 return new int[]{1, 4, 3, 4, 4, 2};
             case 2:
-            case NotificationCenter.storyGroupCallUpdated /* 166 */:
+            case NotificationCenter.groupCallUpdated /* 166 */:
                 return new int[]{4, 3, 3, 3, 2, 2};
             case 3:
                 return new int[]{2, 4, 3, 4, 2, 2};
@@ -1975,7 +1975,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{4, 4, 4, 3, 2, 2};
             case '\b':
             case '>':
-            case NotificationCenter.didStartedMultiGiftsSelector /* 188 */:
+            case NotificationCenter.giftsToUserSent /* 188 */:
                 return new int[]{4, 2, 2, 2, 2, 2};
             case '\t':
                 return new int[]{2, 2, 3, 3, 2, 2};
@@ -1989,11 +1989,11 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case '\r':
             case '2':
             case 'x':
-            case NotificationCenter.fileLoadProgressChanged /* 140 */:
-            case NotificationCenter.filePreparingStarted /* 143 */:
-            case NotificationCenter.applyGroupCallVisibleParticipants /* 170 */:
-            case NotificationCenter.didUpdatePremiumGiftFieldIcon /* 193 */:
-            case NotificationCenter.factCheckLoaded /* 223 */:
+            case NotificationCenter.fileUploadProgressChanged /* 140 */:
+            case NotificationCenter.fileLoadFailed /* 143 */:
+            case NotificationCenter.activeGroupCallsUpdated /* 170 */:
+            case NotificationCenter.didUpdateTonGiftStickers /* 193 */:
+            case NotificationCenter.starSubscriptionsLoaded /* 223 */:
                 return new int[]{0, 2, 2, 2, 2, 2};
             case 14:
             case 19:
@@ -2010,23 +2010,23 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case 20:
             case '?':
             case 'S':
-            case NotificationCenter.boostedChannelByUser /* 189 */:
+            case NotificationCenter.didStartedMultiGiftsSelector /* 189 */:
                 return new int[]{0, 0, 0, 0, 1, 2};
             case 21:
                 return new int[]{1, 3, 1, 4, 4, 2};
             case 22:
             case '[':
-            case NotificationCenter.walletSyncProgressChanged /* 133 */:
-            case NotificationCenter.recordProgressChanged /* 153 */:
-            case NotificationCenter.storyAlbumsCollectionsUpdate /* 204 */:
-            case NotificationCenter.botStarsTransactionsLoaded /* 225 */:
-            case NotificationCenter.updateStories /* 233 */:
+            case NotificationCenter.walletPendingTransactionsChanged /* 133 */:
+            case NotificationCenter.messagePlayingGoingToStop /* 153 */:
+            case NotificationCenter.userIsPremiumBlockedUpadted /* 204 */:
+            case 225:
+            case NotificationCenter.starGiftSoldOut /* 233 */:
                 return new int[]{4, 4, 4, 4, 2, 2};
             case 23:
                 return new int[]{4, 4, 2, 3, 2, 2};
             case 24:
-            case NotificationCenter.walletPendingTransactionsChanged /* 132 */:
-            case NotificationCenter.liveStoryUpdated /* 175 */:
+            case NotificationCenter.didGenerateFingerprintKeyPair /* 132 */:
+            case NotificationCenter.groupCallVisibilityChanged /* 175 */:
                 return new int[]{1, 2, 2, 2, 2, 2};
             case 26:
                 return new int[]{3, 2, 0, 1, 2, 2};
@@ -2039,7 +2039,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{3, 2, 1, 2, 2, 2};
             case 31:
             case 150:
-            case NotificationCenter.starUserGiftCollectionsLoaded /* 231 */:
+            case NotificationCenter.starUserGiftsLoaded /* 231 */:
                 return new int[]{3, 1, 2, 1, 2, 2};
             case ' ':
                 return new int[]{3, 2, 1, 0, 2, 2};
@@ -2054,7 +2054,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case 'o':
                 return new int[]{4, 3, 3, 2, 2, 2};
             case '%':
-            case NotificationCenter.dialogFiltersUpdated /* 183 */:
+            case NotificationCenter.themeUploadError /* 183 */:
                 return new int[]{4, 2, 4, 2, 2, 2};
             case '&':
             case 'L':
@@ -2088,21 +2088,21 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case '5':
                 return new int[]{0, 1, 3, 2, 2, 2};
             case '6':
-            case NotificationCenter.savedMessagesDialogsUpdate /* 201 */:
-            case NotificationCenter.smsJobStatusUpdate /* 207 */:
+            case NotificationCenter.channelRecommendationsLoaded /* 201 */:
+            case NotificationCenter.emojiKeywordsLoaded /* 207 */:
                 return new int[]{4, 3, 4, 4, 2, 2};
             case '7':
             case '<':
             case '\\':
             case '|':
-            case NotificationCenter.fileNewChunkAvailable /* 144 */:
+            case NotificationCenter.filePreparingStarted /* 144 */:
                 return new int[]{0, 0, 0, 0, 0, 2};
             case '9':
                 return new int[]{3, 4, 4, 4, 4, 2};
             case ';':
                 return new int[]{1, 3, 2, 1, 2, 2};
             case '@':
-            case NotificationCenter.storiesEnabledUpdate /* 194 */:
+            case NotificationCenter.didUpdatePremiumGiftFieldIcon /* 194 */:
                 return new int[]{4, 4, 3, 2, 2, 2};
             case 'A':
                 return new int[]{0, 0, 0, 2, 0, 2};
@@ -2113,7 +2113,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case 'E':
                 return new int[]{1, 1, 2, 1, 1, 2};
             case 'F':
-            case NotificationCenter.savedMessagesForwarded /* 205 */:
+            case NotificationCenter.storyAlbumsCollectionsUpdate /* 205 */:
                 return new int[]{3, 4, 1, 0, 2, 2};
             case 'G':
                 return new int[]{0, 1, 1, 2, 1, 2};
@@ -2121,14 +2121,14 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case 'p':
             case 's':
             case 'w':
-            case NotificationCenter.channelRecommendationsLoaded /* 200 */:
-            case 224:
+            case NotificationCenter.dialogPhotosUpdate /* 200 */:
+            case NotificationCenter.factCheckLoaded /* 224 */:
                 return new int[]{1, 2, 0, 0, 2, 2};
             case 'I':
                 return new int[]{1, 0, 0, 2, 2, 2};
             case 'J':
-            case NotificationCenter.groupCallScreencastStateChanged /* 168 */:
-            case NotificationCenter.didUpdateTonGiftStickers /* 192 */:
+            case NotificationCenter.groupCallSpeakingUsersUpdated /* 168 */:
+            case NotificationCenter.didUpdatePremiumGiftStickers /* 192 */:
                 return new int[]{3, 2, 3, 3, 2, 2};
             case 'K':
                 return new int[]{0, 2, 1, 0, 2, 2};
@@ -2136,7 +2136,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case 'g':
                 return new int[]{1, 2, 0, 1, 2, 2};
             case 'N':
-            case NotificationCenter.storyQualityUpdate /* 208 */:
+            case NotificationCenter.smsJobStatusUpdate /* 208 */:
                 return new int[]{2, 2, 2, 4, 2, 2};
             case 'O':
                 return new int[]{4, 3, 2, 4, 2, 2};
@@ -2165,11 +2165,11 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case 'a':
                 return new int[]{1, 1, 2, 1, 2, 1};
             case 'b':
-            case NotificationCenter.premiumFloodWaitReceived /* 215 */:
-            case NotificationCenter.starUserGiftsLoaded /* 230 */:
+            case NotificationCenter.customStickerCreated /* 215 */:
+            case NotificationCenter.starGiftsLoaded /* 230 */:
                 return new int[]{4, 2, 2, 4, 2, 2};
             case 'c':
-            case NotificationCenter.boostByChannelCreated /* 190 */:
+            case NotificationCenter.boostedChannelByUser /* 190 */:
                 return new int[]{3, 2, 2, 2, 2, 2};
             case 'd':
                 return new int[]{4, 2, 3, 3, 4, 2};
@@ -2186,7 +2186,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case 'k':
                 return new int[]{3, 2, 2, 1, 2, 2};
             case 'l':
-            case NotificationCenter.fileLoaded /* 141 */:
+            case NotificationCenter.fileLoadProgressChanged /* 141 */:
                 return new int[]{2, 1, 1, 2, 2, 2};
             case 'm':
                 return new int[]{1, 0, 4, 2, 2, 2};
@@ -2201,158 +2201,158 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case 'z':
                 return new int[]{3, 4, 3, 4, 2, 2};
             case '{':
-            case NotificationCenter.starGiveawayOptionsLoaded /* 219 */:
+            case NotificationCenter.starGiftOptionsLoaded /* 219 */:
                 return new int[]{3, 3, 3, 2, 2, 2};
             case '}':
                 return new int[]{1, 1, 4, 2, 0, 2};
-            case NotificationCenter.messageTranslated /* 127 */:
-            case NotificationCenter.groupPackUpdated /* 212 */:
-            case NotificationCenter.adminedChannelsLoaded /* 237 */:
+            case NotificationCenter.needDeleteBusinessLink /* 127 */:
+            case NotificationCenter.chatWasBoostedByUser /* 212 */:
+            case NotificationCenter.channelConnectedBotsUpdate /* 237 */:
                 return new int[]{3, 2, 4, 3, 2, 2};
             case 128:
                 return new int[]{3, 3, 2, 1, 2, 2};
-            case NotificationCenter.dialogIsTranslatable /* 129 */:
+            case NotificationCenter.messageTranslating /* 129 */:
                 return new int[]{0, 2, 2, 0, 2, 2};
-            case NotificationCenter.dialogTranslate /* 130 */:
+            case NotificationCenter.dialogIsTranslatable /* 130 */:
                 return new int[]{1, 0, 0, 0, 2, 2};
-            case NotificationCenter.didGenerateFingerprintKeyPair /* 131 */:
+            case NotificationCenter.dialogTranslate /* 131 */:
                 return new int[]{2, 0, 0, 1, 1, 2};
-            case NotificationCenter.httpFileDidLoad /* 134 */:
+            case NotificationCenter.walletSyncProgressChanged /* 134 */:
                 return new int[]{4, 2, 1, 3, 2, 2};
-            case NotificationCenter.httpFileDidFailedLoad /* 135 */:
+            case NotificationCenter.httpFileDidLoad /* 135 */:
                 return new int[]{2, 0, 0, 1, 3, 2};
-            case NotificationCenter.didUpdateConnectionState /* 136 */:
-            case NotificationCenter.starOptionsLoaded /* 217 */:
+            case NotificationCenter.httpFileDidFailedLoad /* 136 */:
+            case NotificationCenter.availableEffectsUpdate /* 217 */:
                 return new int[]{3, 4, 2, 2, 2, 2};
-            case NotificationCenter.fileUploaded /* 137 */:
+            case NotificationCenter.didUpdateConnectionState /* 137 */:
                 return new int[]{2, 2, 2, 3, 4, 2};
-            case NotificationCenter.fileUploadFailed /* 138 */:
+            case NotificationCenter.fileUploaded /* 138 */:
                 return new int[]{2, 0, 1, 2, 2, 2};
-            case NotificationCenter.fileUploadProgressChanged /* 139 */:
+            case NotificationCenter.fileUploadFailed /* 139 */:
                 return new int[]{0, 2, 4, 4, 4, 2};
-            case NotificationCenter.fileLoadFailed /* 142 */:
+            case NotificationCenter.fileLoaded /* 142 */:
                 return new int[]{4, 2, 3, 4, 2, 2};
-            case NotificationCenter.filePreparingFailed /* 145 */:
-            case NotificationCenter.themeUploadError /* 182 */:
+            case NotificationCenter.fileNewChunkAvailable /* 145 */:
+            case NotificationCenter.themeUploadedToServer /* 182 */:
                 return new int[]{3, 1, 1, 2, 2, 2};
-            case NotificationCenter.dialogsUnreadCounterChanged /* 146 */:
+            case NotificationCenter.filePreparingFailed /* 146 */:
                 return new int[]{3, 4, 1, 3, 3, 2};
-            case NotificationCenter.messagePlayingProgressDidChanged /* 147 */:
+            case NotificationCenter.dialogsUnreadCounterChanged /* 147 */:
                 return new int[]{4, 2, 3, 3, 2, 2};
-            case NotificationCenter.messagePlayingDidReset /* 148 */:
+            case NotificationCenter.messagePlayingProgressDidChanged /* 148 */:
                 return new int[]{3, 4, 4, 4, 2, 2};
-            case NotificationCenter.messagePlayingPlayStateChanged /* 149 */:
+            case NotificationCenter.messagePlayingDidReset /* 149 */:
                 return new int[]{1, 0, 4, 1, 2, 2};
-            case NotificationCenter.messagePlayingDidSeek /* 151 */:
+            case NotificationCenter.messagePlayingDidStart /* 151 */:
                 return new int[]{3, 4, 3, 2, 2, 2};
-            case NotificationCenter.messagePlayingGoingToStop /* 152 */:
+            case NotificationCenter.messagePlayingDidSeek /* 152 */:
                 return new int[]{3, 2, 3, 4, 2, 2};
-            case NotificationCenter.recordStarted /* 154 */:
+            case NotificationCenter.recordProgressChanged /* 154 */:
                 return new int[]{3, 4, 2, 1, 2, 2};
-            case NotificationCenter.recordStartError /* 155 */:
+            case NotificationCenter.recordStarted /* 155 */:
                 return new int[]{2, 3, 4, 3, 2, 2};
-            case NotificationCenter.recordStopped /* 156 */:
+            case NotificationCenter.recordStartError /* 156 */:
                 return new int[]{0, 2, 3, 3, 0, 4};
-            case NotificationCenter.recordPaused /* 157 */:
+            case NotificationCenter.recordStopped /* 157 */:
                 return new int[]{0, 1, 2, 1, 1, 2};
-            case NotificationCenter.recordResumed /* 158 */:
+            case NotificationCenter.recordPaused /* 158 */:
                 return new int[]{2, 1, 4, 3, 2, 2};
-            case NotificationCenter.screenshotTook /* 159 */:
+            case NotificationCenter.recordResumed /* 159 */:
                 return new int[]{4, 0, 3, 2, 2, 2};
-            case NotificationCenter.albumsDidLoad /* 160 */:
+            case NotificationCenter.screenshotTook /* 160 */:
                 return new int[]{4, 2, 2, 1, 2, 2};
-            case NotificationCenter.audioDidSent /* 161 */:
+            case NotificationCenter.albumsDidLoad /* 161 */:
                 return new int[]{1, 0, 2, 2, 4, 2};
-            case NotificationCenter.audioRecordTooShort /* 162 */:
+            case NotificationCenter.audioDidSent /* 162 */:
                 return new int[]{2, 3, 1, 3, 4, 2};
-            case NotificationCenter.audioRouteChanged /* 163 */:
+            case NotificationCenter.audioRecordTooShort /* 163 */:
                 return new int[]{2, 3, 3, 3, 2, 2};
-            case NotificationCenter.didStartedCall /* 164 */:
+            case NotificationCenter.audioRouteChanged /* 164 */:
                 return new int[]{1, 2, 4, 4, 3, 2};
-            case NotificationCenter.groupCallUpdated /* 165 */:
-            case NotificationCenter.dialogPhotosUpdate /* 199 */:
+            case NotificationCenter.didStartedCall /* 165 */:
+            case NotificationCenter.unconfirmedAuthUpdate /* 199 */:
                 return new int[]{2, 3, 3, 1, 2, 2};
-            case NotificationCenter.groupCallSpeakingUsersUpdated /* 167 */:
+            case NotificationCenter.storyGroupCallUpdated /* 167 */:
                 return new int[]{2, 1, 3, 2, 2, 0};
-            case NotificationCenter.activeGroupCallsUpdated /* 169 */:
+            case NotificationCenter.groupCallScreencastStateChanged /* 169 */:
                 return new int[]{2, 1, 2, 2, 4, 2};
-            case NotificationCenter.groupCallTypingsUpdated /* 171 */:
+            case NotificationCenter.applyGroupCallVisibleParticipants /* 171 */:
                 return new int[]{2, 0, 2, 0, 2, 1};
-            case NotificationCenter.didEndCall /* 172 */:
+            case NotificationCenter.groupCallTypingsUpdated /* 172 */:
                 return new int[]{3, 4, 1, 4, 2, 2};
             case 173:
                 return new int[]{1, 0, 0, 0, 1, 2};
-            case NotificationCenter.groupCallVisibilityChanged /* 174 */:
+            case NotificationCenter.closeInCallActivity /* 174 */:
                 return new int[]{2, 2, 4, 2, 2, 2};
-            case NotificationCenter.liveStoryMessageUpdate /* 176 */:
+            case NotificationCenter.liveStoryUpdated /* 176 */:
                 return new int[]{1, 4, 4, 4, 4, 2};
-            case NotificationCenter.appDidLogout /* 177 */:
+            case NotificationCenter.liveStoryMessageUpdate /* 177 */:
                 return new int[]{1, 2, 2, 3, 1, 2};
-            case NotificationCenter.configLoaded /* 178 */:
+            case NotificationCenter.appDidLogout /* 178 */:
                 return new int[]{0, 0, 1, 2, 1, 2};
-            case NotificationCenter.needDeleteDialog /* 179 */:
+            case NotificationCenter.configLoaded /* 179 */:
                 return new int[]{2, 0, 0, 0, 2, 2};
-            case NotificationCenter.newEmojiSuggestionsAvailable /* 180 */:
+            case NotificationCenter.needDeleteDialog /* 180 */:
                 return new int[]{1, 0, 0, 0, 3, 3};
-            case NotificationCenter.themeUploadedToServer /* 181 */:
+            case NotificationCenter.newEmojiSuggestionsAvailable /* 181 */:
                 return new int[]{3, 3, 1, 0, 2, 2};
-            case NotificationCenter.filterSettingsUpdated /* 184 */:
+            case NotificationCenter.dialogFiltersUpdated /* 184 */:
                 return new int[]{4, 3, 1, 1, 2, 2};
-            case NotificationCenter.suggestedFiltersLoaded /* 185 */:
+            case NotificationCenter.filterSettingsUpdated /* 185 */:
                 return new int[]{4, 3, 4, 2, 2, 2};
-            case NotificationCenter.updateBotMenuButton /* 186 */:
+            case NotificationCenter.suggestedFiltersLoaded /* 186 */:
                 return new int[]{0, 1, 1, 1, 0, 2};
-            case NotificationCenter.giftsToUserSent /* 187 */:
+            case NotificationCenter.updateBotMenuButton /* 187 */:
                 return new int[]{2, 3, 3, 3, 3, 3};
-            case NotificationCenter.didUpdatePremiumGiftStickers /* 191 */:
+            case NotificationCenter.boostByChannelCreated /* 191 */:
                 return new int[]{1, 1, 1, 1, 3, 2};
-            case NotificationCenter.storiesBlocklistUpdate /* 195 */:
+            case NotificationCenter.storiesEnabledUpdate /* 195 */:
                 return new int[]{3, 2, 2, 4, 4, 2};
-            case NotificationCenter.storiesLimitUpdate /* 196 */:
+            case NotificationCenter.storiesBlocklistUpdate /* 196 */:
                 return new int[]{2, 4, 3, 0, 2, 2};
-            case NotificationCenter.storiesSendAsUpdate /* 197 */:
-            case NotificationCenter.groupRestrictionsUnlockedByBoosts /* 210 */:
+            case NotificationCenter.storiesLimitUpdate /* 197 */:
+            case NotificationCenter.openBoostForUsersDialog /* 210 */:
                 return new int[]{4, 2, 2, 3, 2, 2};
-            case NotificationCenter.unconfirmedAuthUpdate /* 198 */:
+            case NotificationCenter.storiesSendAsUpdate /* 198 */:
                 return new int[]{2, 2, 1, 2, 2, 2};
-            case NotificationCenter.savedReactionTagsUpdate /* 202 */:
+            case NotificationCenter.savedMessagesDialogsUpdate /* 202 */:
                 return new int[]{4, 4, 3, 4, 2, 2};
             case 203:
                 return new int[]{2, 2, 1, 3, 2, 2};
-            case NotificationCenter.emojiKeywordsLoaded /* 206 */:
+            case NotificationCenter.savedMessagesForwarded /* 206 */:
                 return new int[]{0, 1, 2, 1, 2, 2};
-            case NotificationCenter.openBoostForUsersDialog /* 209 */:
+            case NotificationCenter.storyQualityUpdate /* 209 */:
                 return new int[]{4, 2, 4, 4, 2, 2};
-            case NotificationCenter.chatWasBoostedByUser /* 211 */:
-            case NotificationCenter.starTransactionsLoaded /* 221 */:
+            case NotificationCenter.groupRestrictionsUnlockedByBoosts /* 211 */:
+            case NotificationCenter.starBalanceUpdated /* 221 */:
                 return new int[]{2, 1, 1, 1, 2, 2};
-            case NotificationCenter.timezonesUpdated /* 213 */:
+            case NotificationCenter.groupPackUpdated /* 213 */:
                 return new int[]{1, 0, 0, 1, 3, 2};
-            case NotificationCenter.customStickerCreated /* 214 */:
+            case NotificationCenter.timezonesUpdated /* 214 */:
                 return new int[]{1, 4, 0, 0, 2, 2};
-            case NotificationCenter.availableEffectsUpdate /* 216 */:
+            case NotificationCenter.premiumFloodWaitReceived /* 216 */:
                 return new int[]{0, 2, 0, 0, 0, 0};
-            case NotificationCenter.starGiftOptionsLoaded /* 218 */:
+            case NotificationCenter.starOptionsLoaded /* 218 */:
                 return new int[]{0, 1, 1, 2, 4, 2};
-            case NotificationCenter.starBalanceUpdated /* 220 */:
+            case NotificationCenter.starGiveawayOptionsLoaded /* 220 */:
                 return new int[]{1, 1, 4, 1, 3, 1};
-            case NotificationCenter.starSubscriptionsLoaded /* 222 */:
+            case NotificationCenter.starTransactionsLoaded /* 222 */:
                 return new int[]{2, 2, 3, 4, 3, 2};
-            case NotificationCenter.channelStarsUpdated /* 226 */:
+            case NotificationCenter.botStarsTransactionsLoaded /* 226 */:
                 return new int[]{2, 2, 0, 1, 2, 2};
-            case NotificationCenter.webViewResolved /* 227 */:
+            case NotificationCenter.channelStarsUpdated /* 227 */:
                 return new int[]{0, 2, 1, 2, 2, 2};
-            case NotificationCenter.updateAllMessages /* 228 */:
+            case NotificationCenter.webViewResolved /* 228 */:
                 return new int[]{0, 0, 1, 2, 2, 1};
-            case NotificationCenter.starGiftsLoaded /* 229 */:
+            case NotificationCenter.updateAllMessages /* 229 */:
                 return new int[]{4, 3, 3, 1, 2, 2};
-            case NotificationCenter.starGiftSoldOut /* 232 */:
+            case NotificationCenter.starUserGiftCollectionsLoaded /* 232 */:
                 return new int[]{1, 2, 1, 1, 2, 2};
-            case NotificationCenter.botDownloadsUpdate /* 234 */:
+            case NotificationCenter.updateStories /* 234 */:
                 return new int[]{2, 3, 3, 4, 2, 2};
-            case NotificationCenter.channelSuggestedBotsUpdate /* 235 */:
+            case NotificationCenter.botDownloadsUpdate /* 235 */:
                 return new int[]{2, 3, 2, 1, 2, 2};
-            case NotificationCenter.channelConnectedBotsUpdate /* 236 */:
+            case NotificationCenter.channelSuggestedBotsUpdate /* 236 */:
                 return new int[]{4, 4, 4, 3, 3, 2};
             default:
                 return new int[]{2, 2, 2, 2, 2, 2};

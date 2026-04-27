@@ -30,19 +30,21 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.json.TLJsonBuilder;
 import org.telegram.tgnet.json.TLJsonParser;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.tl.legacy.TL_legacy_message;
 import org.telegram.ui.Components.poll.PollAttachedMediaPack;
 import org.telegram.ui.Stories.MessageMediaStoryFull;
 import org.telegram.ui.Stories.MessageMediaStoryFull_old;
 
 /* loaded from: classes3.dex */
 public class TLRPC {
-    public static final int LAYER = 224;
+    public static final int LAYER = 225;
     public static final int MESSAGE_FLAG_EDITED = 32768;
     public static final int MESSAGE_FLAG_FWD = 4;
     public static final int MESSAGE_FLAG_HAS_BOT_ID = 2048;
@@ -145,52 +147,6 @@ public class TLRPC {
             TL_chatTheme tL_chatTheme = new TL_chatTheme();
             tL_chatTheme.emoticon = str;
             return tL_chatTheme;
-        }
-    }
-
-    public static abstract class Dialog extends TLObject {
-        public DraftMessage draft;
-        public int flags;
-        public int folder_id;
-        public long id;
-        public boolean isFolder;
-        public int last_message_date;
-        public PeerNotifySettings notify_settings;
-        public Peer peer;
-        public boolean pinned;
-        public int pinnedNum;
-        public int pts;
-        public int read_inbox_max_id;
-        public int read_outbox_max_id;
-        public int top_message;
-        public int ttl_period;
-        public int unread_count;
-        public boolean unread_mark;
-        public int unread_mentions_count;
-        public int unread_poll_votes_count;
-        public int unread_reactions_count;
-        public boolean view_forum_as_messages;
-
-        public static Dialog TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-            return (Dialog) TLObject.TLdeserialize(Dialog.class, fromConstructor(i), inputSerializedData, i, z);
-        }
-
-        private static Dialog fromConstructor(int i) {
-            if (i == -1460809483) {
-                return new TL_dialog_layer149();
-            }
-            if (i == -712374074) {
-                return new TL_dialog_layer223();
-            }
-            if (i == -58066957) {
-                return new TL_dialog();
-            }
-            if (i != 1908216652) {
-                return null;
-            }
-            TL_dialogFolder tL_dialogFolder = new TL_dialogFolder();
-            tL_dialogFolder.isFolder = true;
-            return tL_dialogFolder;
         }
     }
 
@@ -1499,38 +1455,6 @@ public class TLRPC {
         public ChannelParticipant channelParticipant;
     }
 
-    public static class TL_chatEmpty extends Chat {
-        public static final int constructor = 693512293;
-
-        @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.id = inputSerializedData.readInt64(z);
-            this.title = "DELETED";
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeInt64(this.id);
-        }
-    }
-
-    public static class TL_chatEmpty_layer131 extends TL_chatEmpty {
-        public static final int constructor = -1683826688;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_chatEmpty, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.id = inputSerializedData.readInt32(z);
-            this.title = "DELETED";
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_chatEmpty, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeInt32((int) this.id);
-        }
-    }
-
     public static class TL_chatInvitePublicJoinRequests extends TL_chatInviteExported {
         public static final int constructor = -317687113;
 
@@ -1840,238 +1764,6 @@ public class TLRPC {
             outputSerializedData.writeInt32(constructor);
             this.peer.serializeToStream(outputSerializedData);
             outputSerializedData.writeInt32(this.msg_id);
-        }
-    }
-
-    public static class TL_dialog extends Dialog {
-        public static final int constructor = -58066957;
-
-        @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.pinned = TLObject.hasFlag(readInt32, 4);
-            this.unread_mark = TLObject.hasFlag(this.flags, 8);
-            this.view_forum_as_messages = TLObject.hasFlag(this.flags, 64);
-            this.peer = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.top_message = inputSerializedData.readInt32(z);
-            this.read_inbox_max_id = inputSerializedData.readInt32(z);
-            this.read_outbox_max_id = inputSerializedData.readInt32(z);
-            this.unread_count = inputSerializedData.readInt32(z);
-            this.unread_mentions_count = inputSerializedData.readInt32(z);
-            this.unread_reactions_count = inputSerializedData.readInt32(z);
-            this.unread_poll_votes_count = inputSerializedData.readInt32(z);
-            this.notify_settings = PeerNotifySettings.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 1)) {
-                this.pts = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 2)) {
-                this.draft = DraftMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 16)) {
-                this.folder_id = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 32)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 4, this.pinned);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 8, this.unread_mark);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 64, this.view_forum_as_messages);
-            this.flags = flag3;
-            outputSerializedData.writeInt32(flag3);
-            this.peer.serializeToStream(outputSerializedData);
-            outputSerializedData.writeInt32(this.top_message);
-            outputSerializedData.writeInt32(this.read_inbox_max_id);
-            outputSerializedData.writeInt32(this.read_outbox_max_id);
-            outputSerializedData.writeInt32(this.unread_count);
-            outputSerializedData.writeInt32(this.unread_mentions_count);
-            outputSerializedData.writeInt32(this.unread_reactions_count);
-            outputSerializedData.writeInt32(this.unread_poll_votes_count);
-            this.notify_settings.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 1)) {
-                outputSerializedData.writeInt32(this.pts);
-            }
-            if (TLObject.hasFlag(this.flags, 2)) {
-                this.draft.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 16)) {
-                outputSerializedData.writeInt32(this.folder_id);
-            }
-            if (TLObject.hasFlag(this.flags, 32)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
-        }
-    }
-
-    public static class TL_dialogFolder extends Dialog {
-        public static final int constructor = 1908216652;
-        public TL_folder folder;
-        public int unread_muted_messages_count;
-        public int unread_muted_peers_count;
-        public int unread_unmuted_messages_count;
-        public int unread_unmuted_peers_count;
-
-        @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.pinned = TLObject.hasFlag(readInt32, 4);
-            this.folder = TL_folder.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.peer = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.top_message = inputSerializedData.readInt32(z);
-            this.unread_muted_peers_count = inputSerializedData.readInt32(z);
-            this.unread_unmuted_peers_count = inputSerializedData.readInt32(z);
-            this.unread_muted_messages_count = inputSerializedData.readInt32(z);
-            this.unread_unmuted_messages_count = inputSerializedData.readInt32(z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 4, this.pinned);
-            this.flags = flag;
-            outputSerializedData.writeInt32(flag);
-            this.folder.serializeToStream(outputSerializedData);
-            this.peer.serializeToStream(outputSerializedData);
-            outputSerializedData.writeInt32(this.top_message);
-            outputSerializedData.writeInt32(this.unread_muted_peers_count);
-            outputSerializedData.writeInt32(this.unread_unmuted_peers_count);
-            outputSerializedData.writeInt32(this.unread_muted_messages_count);
-            outputSerializedData.writeInt32(this.unread_unmuted_messages_count);
-        }
-    }
-
-    public static class TL_dialog_layer149 extends TL_dialog {
-        public static final int constructor = -1460809483;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_dialog, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.pinned = TLObject.hasFlag(readInt32, 4);
-            this.unread_mark = TLObject.hasFlag(this.flags, 8);
-            this.peer = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.top_message = inputSerializedData.readInt32(z);
-            this.read_inbox_max_id = inputSerializedData.readInt32(z);
-            this.read_outbox_max_id = inputSerializedData.readInt32(z);
-            this.unread_count = inputSerializedData.readInt32(z);
-            this.unread_mentions_count = inputSerializedData.readInt32(z);
-            this.unread_reactions_count = inputSerializedData.readInt32(z);
-            this.notify_settings = PeerNotifySettings.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 1)) {
-                this.pts = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 2)) {
-                this.draft = DraftMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 16)) {
-                this.folder_id = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 32)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_dialog, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 4, this.pinned);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 8, this.unread_mark);
-            this.flags = flag2;
-            outputSerializedData.writeInt32(flag2);
-            this.peer.serializeToStream(outputSerializedData);
-            outputSerializedData.writeInt32(this.top_message);
-            outputSerializedData.writeInt32(this.read_inbox_max_id);
-            outputSerializedData.writeInt32(this.read_outbox_max_id);
-            outputSerializedData.writeInt32(this.unread_count);
-            outputSerializedData.writeInt32(this.unread_mentions_count);
-            outputSerializedData.writeInt32(this.unread_reactions_count);
-            this.notify_settings.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 1)) {
-                outputSerializedData.writeInt32(this.pts);
-            }
-            if (TLObject.hasFlag(this.flags, 2)) {
-                this.draft.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 16)) {
-                outputSerializedData.writeInt32(this.folder_id);
-            }
-            if (TLObject.hasFlag(this.flags, 32)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
-        }
-    }
-
-    public static class TL_dialog_layer223 extends TL_dialog {
-        public static final int constructor = -712374074;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_dialog, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.pinned = TLObject.hasFlag(readInt32, 4);
-            this.unread_mark = TLObject.hasFlag(this.flags, 8);
-            this.view_forum_as_messages = TLObject.hasFlag(this.flags, 64);
-            this.peer = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.top_message = inputSerializedData.readInt32(z);
-            this.read_inbox_max_id = inputSerializedData.readInt32(z);
-            this.read_outbox_max_id = inputSerializedData.readInt32(z);
-            this.unread_count = inputSerializedData.readInt32(z);
-            this.unread_mentions_count = inputSerializedData.readInt32(z);
-            this.unread_reactions_count = inputSerializedData.readInt32(z);
-            this.notify_settings = PeerNotifySettings.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 1)) {
-                this.pts = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 2)) {
-                this.draft = DraftMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 16)) {
-                this.folder_id = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 32)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_dialog, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 4, this.pinned);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 8, this.unread_mark);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 64, this.view_forum_as_messages);
-            this.flags = flag3;
-            outputSerializedData.writeInt32(flag3);
-            this.peer.serializeToStream(outputSerializedData);
-            outputSerializedData.writeInt32(this.top_message);
-            outputSerializedData.writeInt32(this.read_inbox_max_id);
-            outputSerializedData.writeInt32(this.read_outbox_max_id);
-            outputSerializedData.writeInt32(this.unread_count);
-            outputSerializedData.writeInt32(this.unread_mentions_count);
-            outputSerializedData.writeInt32(this.unread_reactions_count);
-            this.notify_settings.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 1)) {
-                outputSerializedData.writeInt32(this.pts);
-            }
-            if (TLObject.hasFlag(this.flags, 2)) {
-                this.draft.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 16)) {
-                outputSerializedData.writeInt32(this.folder_id);
-            }
-            if (TLObject.hasFlag(this.flags, 32)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
         }
     }
 
@@ -6035,53 +5727,6 @@ public class TLRPC {
         }
     }
 
-    public static class TL_messageForwarded_old extends TL_messageForwarded_old2 {
-        public static final int constructor = 99903492;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_messageForwarded_old2, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.id = inputSerializedData.readInt32(z);
-            TL_messageFwdHeader tL_messageFwdHeader = new TL_messageFwdHeader();
-            this.fwd_from = tL_messageFwdHeader;
-            tL_messageFwdHeader.from_id = new TL_peerUser();
-            this.fwd_from.from_id.user_id = inputSerializedData.readInt32(z);
-            MessageFwdHeader messageFwdHeader = this.fwd_from;
-            messageFwdHeader.flags |= 1;
-            messageFwdHeader.date = inputSerializedData.readInt32(z);
-            TL_peerUser tL_peerUser = new TL_peerUser();
-            this.from_id = tL_peerUser;
-            tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.out = inputSerializedData.readBool(z);
-            this.unread = inputSerializedData.readBool(z);
-            this.flags |= 772;
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.media = TLdeserialize;
-            if (TLdeserialize == null || TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                return;
-            }
-            this.message = this.media.captionLegacy;
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_messageForwarded_old2, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeInt32(this.id);
-            outputSerializedData.writeInt32((int) this.fwd_from.from_id.user_id);
-            outputSerializedData.writeInt32(this.fwd_from.date);
-            outputSerializedData.writeInt32((int) this.from_id.user_id);
-            this.peer_id.serializeToStream(outputSerializedData);
-            outputSerializedData.writeBool(this.out);
-            outputSerializedData.writeBool(this.unread);
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            this.media.serializeToStream(outputSerializedData);
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
     public static class TL_messageMediaGiveaway extends MessageMedia {
         public static final int constructor = -1442366485;
         public ArrayList<Long> channels = new ArrayList<>();
@@ -6445,2276 +6090,6 @@ public class TLRPC {
         }
     }
 
-    public static class TL_messageService extends Message {
-        public static final int constructor = 2055212554;
-
-        @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.reactions_are_possible = TLObject.hasFlag(this.flags, 512);
-            this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.action = MessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions = MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
-            this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, TLObject.FLAG_19, this.legacy);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, 512, this.reactions_are_possible);
-            this.flags = flag7;
-            outputSerializedData.writeInt32(flag7);
-            outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
-            }
-            outputSerializedData.writeInt32(this.date);
-            this.action.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
-        }
-    }
-
-    public static class TL_messageService_layer118 extends TL_messageService {
-        public static final int constructor = -1642487306;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.unread = TLObject.hasFlag(readInt32, 1);
-            this.out = TLObject.hasFlag(this.flags, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                TL_peerUser tL_peerUser = new TL_peerUser();
-                this.from_id = tL_peerUser;
-                tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            }
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 8)) {
-                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
-                this.reply_to = tL_messageReplyHeader;
-                tL_messageReplyHeader.flags = 16 | tL_messageReplyHeader.flags;
-                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.action = MessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.unread);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 2, this.out);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
-            this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 8192, this.silent);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 16384, this.post);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
-            this.flags = flag7;
-            outputSerializedData.writeInt32(flag7);
-            outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                outputSerializedData.writeInt32((int) this.from_id.user_id);
-            }
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 8)) {
-                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
-            }
-            outputSerializedData.writeInt32(this.date);
-            this.action.serializeToStream(outputSerializedData);
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_messageService_layer123 extends TL_messageService {
-        public static final int constructor = 678405636;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.action = MessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
-            this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, TLObject.FLAG_19, this.legacy);
-            this.flags = flag6;
-            outputSerializedData.writeInt32(flag6);
-            outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
-            }
-            outputSerializedData.writeInt32(this.date);
-            this.action.serializeToStream(outputSerializedData);
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_messageService_layer195 extends TL_messageService {
-        public static final int constructor = 721967202;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.action = MessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
-            this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, TLObject.FLAG_19, this.legacy);
-            this.flags = flag6;
-            outputSerializedData.writeInt32(flag6);
-            outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
-            }
-            outputSerializedData.writeInt32(this.date);
-            this.action.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
-        }
-    }
-
-    public static class TL_messageService_layer204 extends TL_messageService {
-        public static final int constructor = -741178048;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.reactions_are_possible = TLObject.hasFlag(this.flags, 512);
-            this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.action = MessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions = MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
-            this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, TLObject.FLAG_19, this.legacy);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, 512, this.reactions_are_possible);
-            this.flags = flag7;
-            outputSerializedData.writeInt32(flag7);
-            outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
-            }
-            outputSerializedData.writeInt32(this.date);
-            this.action.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
-        }
-    }
-
-    public static class TL_messageService_layer48 extends TL_messageService {
-        public static final int constructor = -1066691065;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.unread = TLObject.hasFlag(readInt32, 1);
-            this.out = TLObject.hasFlag(this.flags, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                TL_peerUser tL_peerUser = new TL_peerUser();
-                this.from_id = tL_peerUser;
-                tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            }
-            Peer TLdeserialize = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.peer_id = TLdeserialize;
-            if (this.from_id == null) {
-                this.from_id = TLdeserialize;
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.action = MessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.unread);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 2, this.out);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
-            this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 8192, this.silent);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 16384, this.post);
-            this.flags = flag6;
-            outputSerializedData.writeInt32(flag6);
-            outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                outputSerializedData.writeInt32((int) this.from_id.user_id);
-            }
-            this.peer_id.serializeToStream(outputSerializedData);
-            outputSerializedData.writeInt32(this.date);
-            this.action.serializeToStream(outputSerializedData);
-        }
-    }
-
-    public static class TL_messageService_old extends TL_messageService {
-        public static final int constructor = -1618124613;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.id = inputSerializedData.readInt32(z);
-            TL_peerUser tL_peerUser = new TL_peerUser();
-            this.from_id = tL_peerUser;
-            tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.out = inputSerializedData.readBool(z);
-            this.unread = inputSerializedData.readBool(z);
-            this.flags |= 256;
-            this.date = inputSerializedData.readInt32(z);
-            this.action = MessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeInt32(this.id);
-            outputSerializedData.writeInt32((int) this.from_id.user_id);
-            this.peer_id.serializeToStream(outputSerializedData);
-            outputSerializedData.writeBool(this.out);
-            outputSerializedData.writeBool(this.unread);
-            outputSerializedData.writeInt32(this.date);
-            this.action.serializeToStream(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_layer104 extends TL_message {
-        public static final int constructor = 1157215293;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                TL_peerUser tL_peerUser = new TL_peerUser();
-                this.from_id = tL_peerUser;
-                tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            }
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
-                this.reply_to = tL_messageReplyHeader;
-                tL_messageReplyHeader.flags = 16 | tL_messageReplyHeader.flags;
-                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-                this.media = TLdeserialize;
-                if (TLdeserialize != null) {
-                    this.ttl = TLdeserialize.ttl_seconds;
-                }
-                if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                    this.message = this.media.captionLegacy;
-                }
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.views = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                this.edit_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                this.post_author = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                this.grouped_id = inputSerializedData.readInt64(z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
-            this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 262144, this.from_scheduled);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
-            this.flags = flag7;
-            outputSerializedData.writeInt32(flag7);
-            outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                outputSerializedData.writeInt32((int) this.from_id.user_id);
-            }
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt32((int) this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
-            }
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                this.media.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                Vector.serialize(outputSerializedData, this.entities);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.views);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                outputSerializedData.writeInt32(this.edit_date);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                outputSerializedData.writeString(this.post_author);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                outputSerializedData.writeInt64(this.grouped_id);
-            }
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_layer104_2 extends TL_message {
-        public static final int constructor = 479924263;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                TL_peerUser tL_peerUser = new TL_peerUser();
-                this.from_id = tL_peerUser;
-                tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            }
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
-                this.reply_to = tL_messageReplyHeader;
-                tL_messageReplyHeader.flags = 16 | tL_messageReplyHeader.flags;
-                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-                this.media = TLdeserialize;
-                if (TLdeserialize != null) {
-                    this.ttl = TLdeserialize.ttl_seconds;
-                }
-                if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                    this.message = this.media.captionLegacy;
-                }
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.views = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                this.edit_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                this.post_author = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                this.grouped_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions = MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                inputSerializedData.readString(z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
-            this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 262144, this.from_scheduled);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
-            this.flags = flag7;
-            int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
-            this.flags = flag8;
-            outputSerializedData.writeInt32(flag8);
-            outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                outputSerializedData.writeInt32((int) this.from_id.user_id);
-            }
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt32((int) this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
-            }
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                this.media.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                Vector.serialize(outputSerializedData, this.entities);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.views);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                outputSerializedData.writeInt32(this.edit_date);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                outputSerializedData.writeString(this.post_author);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                outputSerializedData.writeInt64(this.grouped_id);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                outputSerializedData.writeString("");
-            }
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_layer104_3 extends TL_message {
-        public static final int constructor = -1752573244;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                TL_peerUser tL_peerUser = new TL_peerUser();
-                this.from_id = tL_peerUser;
-                tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            }
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
-                this.reply_to = tL_messageReplyHeader;
-                tL_messageReplyHeader.flags = 16 | tL_messageReplyHeader.flags;
-                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-                this.media = TLdeserialize;
-                if (TLdeserialize != null) {
-                    this.ttl = TLdeserialize.ttl_seconds;
-                }
-                if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                    this.message = this.media.captionLegacy;
-                }
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.views = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                this.edit_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                this.post_author = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                this.grouped_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions = MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
-            this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 262144, this.from_scheduled);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
-            this.flags = flag7;
-            int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
-            this.flags = flag8;
-            outputSerializedData.writeInt32(flag8);
-            outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                outputSerializedData.writeInt32((int) this.from_id.user_id);
-            }
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt32((int) this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
-            }
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                this.media.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                Vector.serialize(outputSerializedData, this.entities);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.views);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                outputSerializedData.writeInt32(this.edit_date);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                outputSerializedData.writeString(this.post_author);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                outputSerializedData.writeInt64(this.grouped_id);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_layer117 extends TL_message {
-        public static final int constructor = 1160515173;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                TL_peerUser tL_peerUser = new TL_peerUser();
-                this.from_id = tL_peerUser;
-                tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            }
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
-                this.reply_to = tL_messageReplyHeader;
-                tL_messageReplyHeader.flags = 16 | tL_messageReplyHeader.flags;
-                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-                this.media = TLdeserialize;
-                if (TLdeserialize != null) {
-                    this.ttl = TLdeserialize.ttl_seconds;
-                }
-                if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                    this.message = this.media.captionLegacy;
-                }
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.views = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                this.edit_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                this.post_author = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                this.grouped_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
-            this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 262144, this.from_scheduled);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
-            this.flags = flag7;
-            int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
-            this.flags = flag8;
-            outputSerializedData.writeInt32(flag8);
-            outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                outputSerializedData.writeInt32((int) this.from_id.user_id);
-            }
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt32((int) this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
-            }
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                this.media.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                Vector.serialize(outputSerializedData, this.entities);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.views);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                outputSerializedData.writeInt32(this.edit_date);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                outputSerializedData.writeString(this.post_author);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                outputSerializedData.writeInt64(this.grouped_id);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_layer118 extends TL_message {
-        public static final int constructor = -181507201;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                TL_peerUser tL_peerUser = new TL_peerUser();
-                this.from_id = tL_peerUser;
-                tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            }
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
-                this.reply_to = tL_messageReplyHeader;
-                tL_messageReplyHeader.flags = 16 | tL_messageReplyHeader.flags;
-                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-                this.media = TLdeserialize;
-                if (TLdeserialize != null) {
-                    this.ttl = TLdeserialize.ttl_seconds;
-                }
-                if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                    this.message = this.media.captionLegacy;
-                }
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.views = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.forwards = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                this.edit_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                this.post_author = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                this.grouped_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
-            this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 262144, this.from_scheduled);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
-            this.flags = flag7;
-            int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
-            this.flags = flag8;
-            outputSerializedData.writeInt32(flag8);
-            outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                outputSerializedData.writeInt32((int) this.from_id.user_id);
-            }
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt32((int) this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
-            }
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                this.media.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                Vector.serialize(outputSerializedData, this.entities);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.views);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.forwards);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                outputSerializedData.writeInt32(this.edit_date);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                outputSerializedData.writeString(this.post_author);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                outputSerializedData.writeInt64(this.grouped_id);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_layer123 extends TL_message {
-        public static final int constructor = 1487813065;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.pinned = TLObject.hasFlag(this.flags, 16777216);
-            this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-                this.media = TLdeserialize;
-                if (TLdeserialize != null) {
-                    this.ttl = TLdeserialize.ttl_seconds;
-                }
-                if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                    this.message = this.media.captionLegacy;
-                }
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.views = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.forwards = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies = MessageReplies.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                this.edit_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                this.post_author = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                this.grouped_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
-            this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 262144, this.from_scheduled);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
-            this.flags = flag7;
-            int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
-            this.flags = flag8;
-            int flag9 = TLObject.setFlag(flag8, 16777216, this.pinned);
-            this.flags = flag9;
-            outputSerializedData.writeInt32(flag9);
-            outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt32((int) this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
-            }
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                this.media.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                Vector.serialize(outputSerializedData, this.entities);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.views);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.forwards);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                outputSerializedData.writeInt32(this.edit_date);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                outputSerializedData.writeString(this.post_author);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                outputSerializedData.writeInt64(this.grouped_id);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_layer131 extends TL_message {
-        public static final int constructor = -1125940270;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.pinned = TLObject.hasFlag(this.flags, 16777216);
-            this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-                this.media = TLdeserialize;
-                if (TLdeserialize != null) {
-                    this.ttl = TLdeserialize.ttl_seconds;
-                }
-                if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                    this.message = this.media.captionLegacy;
-                }
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.views = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.forwards = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies = MessageReplies.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                this.edit_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                this.post_author = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                this.grouped_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
-            this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 262144, this.from_scheduled);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
-            this.flags = flag7;
-            int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
-            this.flags = flag8;
-            int flag9 = TLObject.setFlag(flag8, 16777216, this.pinned);
-            this.flags = flag9;
-            outputSerializedData.writeInt32(flag9);
-            outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt32((int) this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
-            }
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                this.media.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                Vector.serialize(outputSerializedData, this.entities);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.views);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.forwards);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                outputSerializedData.writeInt32(this.edit_date);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                outputSerializedData.writeString(this.post_author);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                outputSerializedData.writeInt64(this.grouped_id);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_layer135 extends TL_message {
-        public static final int constructor = -2049520670;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.pinned = TLObject.hasFlag(this.flags, 16777216);
-            this.noforwards = TLObject.hasFlag(this.flags, 67108864);
-            this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-                this.media = TLdeserialize;
-                if (TLdeserialize != null) {
-                    this.ttl = TLdeserialize.ttl_seconds;
-                }
-                if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                    this.message = this.media.captionLegacy;
-                }
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.views = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.forwards = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies = MessageReplies.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                this.edit_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                this.post_author = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                this.grouped_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
-            this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 262144, this.from_scheduled);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
-            this.flags = flag7;
-            int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
-            this.flags = flag8;
-            int flag9 = TLObject.setFlag(flag8, 16777216, this.pinned);
-            this.flags = flag9;
-            int flag10 = TLObject.setFlag(flag9, 67108864, this.noforwards);
-            this.flags = flag10;
-            outputSerializedData.writeInt32(flag10);
-            outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt64(this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
-            }
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                this.media.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                Vector.serialize(outputSerializedData, this.entities);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.views);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.forwards);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                outputSerializedData.writeInt32(this.edit_date);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                outputSerializedData.writeString(this.post_author);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                outputSerializedData.writeInt64(this.grouped_id);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_layer169 extends TL_message {
-        public static final int constructor = 940666592;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.pinned = TLObject.hasFlag(this.flags, 16777216);
-            this.noforwards = TLObject.hasFlag(this.flags, 67108864);
-            this.invert_media = TLObject.hasFlag(this.flags, TLObject.FLAG_27);
-            this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-                this.media = TLdeserialize;
-                if (TLdeserialize != null) {
-                    this.ttl = TLdeserialize.ttl_seconds;
-                }
-                if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                    this.message = this.media.captionLegacy;
-                }
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.views = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.forwards = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies = MessageReplies.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                this.edit_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                this.post_author = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                this.grouped_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions = MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
-            this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 262144, this.from_scheduled);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
-            this.flags = flag7;
-            int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
-            this.flags = flag8;
-            int flag9 = TLObject.setFlag(flag8, 16777216, this.pinned);
-            this.flags = flag9;
-            int flag10 = TLObject.setFlag(flag9, 67108864, this.noforwards);
-            this.flags = flag10;
-            int flag11 = TLObject.setFlag(flag10, TLObject.FLAG_27, this.invert_media);
-            this.flags = flag11;
-            outputSerializedData.writeInt32(flag11);
-            outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt64(this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
-            }
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                this.media.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                Vector.serialize(outputSerializedData, this.entities);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.views);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.forwards);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                outputSerializedData.writeInt32(this.edit_date);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                outputSerializedData.writeString(this.post_author);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                outputSerializedData.writeInt64(this.grouped_id);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_old extends TL_message {
-        public static final int constructor = 585853626;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.id = inputSerializedData.readInt32(z);
-            TL_peerUser tL_peerUser = new TL_peerUser();
-            this.from_id = tL_peerUser;
-            tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.out = inputSerializedData.readBool(z);
-            this.unread = inputSerializedData.readBool(z);
-            this.flags |= 768;
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.media = TLdeserialize;
-            if (TLdeserialize == null || TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                return;
-            }
-            this.message = this.media.captionLegacy;
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeInt32(this.id);
-            outputSerializedData.writeInt32((int) this.from_id.user_id);
-            this.peer_id.serializeToStream(outputSerializedData);
-            outputSerializedData.writeBool(this.out);
-            outputSerializedData.writeBool(this.unread);
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            this.media.serializeToStream(outputSerializedData);
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_old2 extends TL_message {
-        public static final int constructor = 1450613171;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z) | 768;
-            this.flags = readInt32;
-            this.unread = TLObject.hasFlag(readInt32, 1);
-            this.out = TLObject.hasFlag(this.flags, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.id = inputSerializedData.readInt32(z);
-            TL_peerUser tL_peerUser = new TL_peerUser();
-            this.from_id = tL_peerUser;
-            tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.media = TLdeserialize;
-            if (TLdeserialize == null || TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                return;
-            }
-            this.message = this.media.captionLegacy;
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.unread);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 2, this.out);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
-            this.flags = flag4;
-            outputSerializedData.writeInt32(flag4);
-            outputSerializedData.writeInt32(this.id);
-            outputSerializedData.writeInt32((int) this.from_id.user_id);
-            this.peer_id.serializeToStream(outputSerializedData);
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            this.media.serializeToStream(outputSerializedData);
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_old3 extends TL_message {
-        public static final int constructor = -1481959023;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z) | 768;
-            this.flags = readInt32;
-            this.unread = TLObject.hasFlag(readInt32, 1);
-            this.out = TLObject.hasFlag(this.flags, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.id = inputSerializedData.readInt32(z);
-            TL_peerUser tL_peerUser = new TL_peerUser();
-            this.from_id = tL_peerUser;
-            tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                TL_messageFwdHeader tL_messageFwdHeader = new TL_messageFwdHeader();
-                this.fwd_from = tL_messageFwdHeader;
-                tL_messageFwdHeader.from_id = new TL_peerUser();
-                this.fwd_from.from_id.user_id = inputSerializedData.readInt32(z);
-                MessageFwdHeader messageFwdHeader = this.fwd_from;
-                messageFwdHeader.flags = 1 | messageFwdHeader.flags;
-                messageFwdHeader.date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
-                this.reply_to = tL_messageReplyHeader;
-                tL_messageReplyHeader.flags |= 16;
-                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.media = TLdeserialize;
-            if (TLdeserialize == null || TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                return;
-            }
-            this.message = this.media.captionLegacy;
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.unread);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 2, this.out);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
-            this.flags = flag4;
-            outputSerializedData.writeInt32(flag4);
-            outputSerializedData.writeInt32(this.id);
-            outputSerializedData.writeInt32((int) this.from_id.user_id);
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                outputSerializedData.writeInt32((int) this.fwd_from.from_id.user_id);
-                outputSerializedData.writeInt32(this.fwd_from.date);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
-            }
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            this.media.serializeToStream(outputSerializedData);
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_old4 extends TL_message {
-        public static final int constructor = -1023016155;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z) | 768;
-            this.flags = readInt32;
-            this.unread = TLObject.hasFlag(readInt32, 1);
-            this.out = TLObject.hasFlag(this.flags, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.id = inputSerializedData.readInt32(z);
-            TL_peerUser tL_peerUser = new TL_peerUser();
-            this.from_id = tL_peerUser;
-            tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                TL_messageFwdHeader tL_messageFwdHeader = new TL_messageFwdHeader();
-                this.fwd_from = tL_messageFwdHeader;
-                tL_messageFwdHeader.from_id = new TL_peerUser();
-                this.fwd_from.from_id.user_id = inputSerializedData.readInt32(z);
-                MessageFwdHeader messageFwdHeader = this.fwd_from;
-                messageFwdHeader.flags = 1 | messageFwdHeader.flags;
-                messageFwdHeader.date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
-                this.reply_to = tL_messageReplyHeader;
-                tL_messageReplyHeader.flags |= 16;
-                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.media = TLdeserialize;
-            if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                this.message = this.media.captionLegacy;
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.unread);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 2, this.out);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
-            this.flags = flag4;
-            outputSerializedData.writeInt32(flag4);
-            outputSerializedData.writeInt32(this.id);
-            outputSerializedData.writeInt32((int) this.from_id.user_id);
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                outputSerializedData.writeInt32((int) this.fwd_from.from_id.user_id);
-                outputSerializedData.writeInt32(this.fwd_from.date);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
-            }
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            this.media.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup.serializeToStream(outputSerializedData);
-            }
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_old5 extends TL_message {
-        public static final int constructor = -260565816;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z) | 768;
-            this.flags = readInt32;
-            this.unread = TLObject.hasFlag(readInt32, 1);
-            this.out = TLObject.hasFlag(this.flags, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.id = inputSerializedData.readInt32(z);
-            TL_peerUser tL_peerUser = new TL_peerUser();
-            this.from_id = tL_peerUser;
-            tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                TL_messageFwdHeader tL_messageFwdHeader = new TL_messageFwdHeader();
-                this.fwd_from = tL_messageFwdHeader;
-                tL_messageFwdHeader.from_id = new TL_peerUser();
-                this.fwd_from.from_id.user_id = inputSerializedData.readInt32(z);
-                MessageFwdHeader messageFwdHeader = this.fwd_from;
-                messageFwdHeader.flags = 1 | messageFwdHeader.flags;
-                messageFwdHeader.date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
-                this.reply_to = tL_messageReplyHeader;
-                tL_messageReplyHeader.flags |= 16;
-                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.media = TLdeserialize;
-            if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                this.message = this.media.captionLegacy;
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.unread);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 2, this.out);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
-            this.flags = flag4;
-            outputSerializedData.writeInt32(flag4);
-            outputSerializedData.writeInt32(this.id);
-            outputSerializedData.writeInt32((int) this.from_id.user_id);
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                outputSerializedData.writeInt32((int) this.fwd_from.from_id.user_id);
-                outputSerializedData.writeInt32(this.fwd_from.date);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
-            }
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            this.media.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                Vector.serialize(outputSerializedData, this.entities);
-            }
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_old6 extends TL_message {
-        public static final int constructor = 736885382;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z) | 256;
-            this.flags = readInt32;
-            this.unread = TLObject.hasFlag(readInt32, 1);
-            this.out = TLObject.hasFlag(this.flags, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.id = inputSerializedData.readInt32(z);
-            TL_peerUser tL_peerUser = new TL_peerUser();
-            this.from_id = tL_peerUser;
-            tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                TL_messageFwdHeader tL_messageFwdHeader = new TL_messageFwdHeader();
-                this.fwd_from = tL_messageFwdHeader;
-                tL_messageFwdHeader.from_id = new TL_peerUser();
-                this.fwd_from.from_id.user_id = inputSerializedData.readInt32(z);
-                MessageFwdHeader messageFwdHeader = this.fwd_from;
-                messageFwdHeader.flags = 1 | messageFwdHeader.flags;
-                messageFwdHeader.date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
-                this.reply_to = tL_messageReplyHeader;
-                tL_messageReplyHeader.flags |= 16;
-                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-                this.media = TLdeserialize;
-                if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                    this.message = this.media.captionLegacy;
-                }
-            } else {
-                this.media = new TL_messageMediaEmpty();
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.unread);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 2, this.out);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
-            this.flags = flag4;
-            outputSerializedData.writeInt32(flag4);
-            outputSerializedData.writeInt32(this.id);
-            outputSerializedData.writeInt32((int) this.from_id.user_id);
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                outputSerializedData.writeInt32((int) this.fwd_from.from_id.user_id);
-                outputSerializedData.writeInt32(this.fwd_from.date);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
-            }
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                this.media.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                Vector.serialize(outputSerializedData, this.entities);
-            }
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_secret extends TL_message {
-        public static final int constructor = 1431655930;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.unread = TLObject.hasFlag(readInt32, 1);
-            this.out = TLObject.hasFlag(this.flags, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.id = inputSerializedData.readInt32(z);
-            this.ttl = inputSerializedData.readInt32(z);
-            TL_peerUser tL_peerUser = new TL_peerUser();
-            this.from_id = tL_peerUser;
-            tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.media = TLdeserialize;
-            if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                this.message = this.media.captionLegacy;
-            }
-            this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_name = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
-                this.reply_to = tL_messageReplyHeader;
-                tL_messageReplyHeader.reply_to_random_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                this.grouped_id = inputSerializedData.readInt64(z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.unread);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 2, this.out);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
-            this.flags = flag4;
-            outputSerializedData.writeInt32(flag4);
-            outputSerializedData.writeInt32(this.id);
-            outputSerializedData.writeInt32(this.ttl);
-            outputSerializedData.writeInt32((int) this.from_id.user_id);
-            this.peer_id.serializeToStream(outputSerializedData);
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            this.media.serializeToStream(outputSerializedData);
-            Vector.serialize(outputSerializedData, this.entities);
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeString(this.via_bot_name);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                outputSerializedData.writeInt64(this.reply_to.reply_to_random_id);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                outputSerializedData.writeInt64(this.grouped_id);
-            }
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_secret_layer72 extends TL_message {
-        public static final int constructor = 1431655929;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.unread = TLObject.hasFlag(readInt32, 1);
-            this.out = TLObject.hasFlag(this.flags, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.id = inputSerializedData.readInt32(z);
-            this.ttl = inputSerializedData.readInt32(z);
-            TL_peerUser tL_peerUser = new TL_peerUser();
-            this.from_id = tL_peerUser;
-            tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.media = TLdeserialize;
-            if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                this.message = this.media.captionLegacy;
-            }
-            this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_name = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
-                this.reply_to = tL_messageReplyHeader;
-                tL_messageReplyHeader.reply_to_random_id = inputSerializedData.readInt64(z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.unread);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 2, this.out);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
-            this.flags = flag4;
-            outputSerializedData.writeInt32(flag4);
-            outputSerializedData.writeInt32(this.id);
-            outputSerializedData.writeInt32(this.ttl);
-            outputSerializedData.writeInt32((int) this.from_id.user_id);
-            this.peer_id.serializeToStream(outputSerializedData);
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            this.media.serializeToStream(outputSerializedData);
-            Vector.serialize(outputSerializedData, this.entities);
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeString(this.via_bot_name);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                outputSerializedData.writeInt64(this.reply_to.reply_to_random_id);
-            }
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_secret_old extends TL_message_secret {
-        public static final int constructor = 1431655928;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message_secret, org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z) | 768;
-            this.flags = readInt32;
-            this.unread = TLObject.hasFlag(readInt32, 1);
-            this.out = TLObject.hasFlag(this.flags, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.id = inputSerializedData.readInt32(z);
-            this.ttl = inputSerializedData.readInt32(z);
-            TL_peerUser tL_peerUser = new TL_peerUser();
-            this.from_id = tL_peerUser;
-            tL_peerUser.user_id = inputSerializedData.readInt32(z);
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.media = TLdeserialize;
-            if (TLdeserialize == null || TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                return;
-            }
-            this.message = this.media.captionLegacy;
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message_secret, org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.unread);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 2, this.out);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
-            this.flags = flag4;
-            outputSerializedData.writeInt32(flag4);
-            outputSerializedData.writeInt32(this.id);
-            outputSerializedData.writeInt32(this.ttl);
-            outputSerializedData.writeInt32((int) this.from_id.user_id);
-            this.peer_id.serializeToStream(outputSerializedData);
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            this.media.serializeToStream(outputSerializedData);
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
     public static class TL_messages_addPollAnswer extends TLMethod<Updates> {
         public static final int constructor = 431770477;
         public PollAnswer answer;
@@ -8879,11 +6254,11 @@ public class TLRPC {
     }
 
     public static class TL_messages_composeMessageWithAI extends TLMethod<TL_composedMessageWithAI> {
-        public static final int constructor = -45978882;
-        public String change_tone;
+        public static final int constructor = -622017143;
         public boolean emojify;
         public boolean proofread;
         public TL_textWithEntities text;
+        public TL_aicompose.InputAiComposeTone tone;
         public String translate_to_lang;
 
         @Override // org.telegram.tgnet.TLMethod
@@ -8894,15 +6269,53 @@ public class TLRPC {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(TLObject.setFlag(TLObject.setFlag(TLObject.setFlag(0, 1, this.proofread), 2, this.translate_to_lang != null), 4, this.change_tone != null), 8, this.emojify);
+            int flag = TLObject.setFlag(TLObject.setFlag(TLObject.setFlag(TLObject.setFlag(0, 1, this.proofread), 2, this.translate_to_lang != null), 4, this.tone != null), 8, this.emojify);
             outputSerializedData.writeInt32(flag);
             this.text.serializeToStream(outputSerializedData);
             if (TLObject.hasFlag(flag, 2)) {
                 outputSerializedData.writeString(this.translate_to_lang);
             }
             if (TLObject.hasFlag(flag, 4)) {
-                outputSerializedData.writeString(this.change_tone);
+                this.tone.serializeToStream(outputSerializedData);
             }
+        }
+    }
+
+    public static class TL_messages_deleteParticipantReaction extends TLMethod<Updates> {
+        public static final int constructor = -474482644;
+        public int msg_id;
+        public InputPeer participant;
+        public InputPeer peer;
+
+        @Override // org.telegram.tgnet.TLMethod
+        public Updates deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
+            return Updates.TLdeserialize(inputSerializedData, i, z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.peer.serializeToStream(outputSerializedData);
+            outputSerializedData.writeInt32(this.msg_id);
+            this.participant.serializeToStream(outputSerializedData);
+        }
+    }
+
+    public static class TL_messages_deleteParticipantReactions extends TLMethod<Bool> {
+        public static final int constructor = -1598550792;
+        public InputPeer participant;
+        public InputPeer peer;
+
+        @Override // org.telegram.tgnet.TLMethod
+        public Bool deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
+            return Bool.TLdeserialize(inputSerializedData, i, z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.peer.serializeToStream(outputSerializedData);
+            this.participant.serializeToStream(outputSerializedData);
         }
     }
 
@@ -9114,22 +6527,6 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, 1)) {
                 outputSerializedData.writeInt32(this.next_offset);
             }
-        }
-    }
-
-    public static class TL_messages_getAllStickers extends TLObject {
-        public static final int constructor = -1197432408;
-        public long hash;
-
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
-            return messages_AllStickers.TLdeserialize(inputSerializedData, i, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeInt64(this.hash);
         }
     }
 
@@ -9493,24 +6890,6 @@ public class TLRPC {
             this.filter.serializeToStream(outputSerializedData);
             outputSerializedData.writeInt32(this.offset_id);
             outputSerializedData.writeInt32(this.limit);
-        }
-    }
-
-    public static class TL_messages_getStickers extends TLObject {
-        public static final int constructor = -710552671;
-        public String emoticon;
-        public long hash;
-
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
-            return messages_Stickers.TLdeserialize(inputSerializedData, i, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeString(this.emoticon);
-            outputSerializedData.writeInt64(this.hash);
         }
     }
 
@@ -12506,162 +9885,6 @@ public class TLRPC {
         }
     }
 
-    public static class TL_upload_getCdnFile extends TLObject {
-        public static final int constructor = 962554330;
-        public byte[] file_token;
-        public int limit;
-        public long offset;
-
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
-            return upload_CdnFile.TLdeserialize(inputSerializedData, i, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeByteArray(this.file_token);
-            outputSerializedData.writeInt64(this.offset);
-            outputSerializedData.writeInt32(this.limit);
-        }
-    }
-
-    public static class TL_upload_getCdnFileHashes extends TLObject {
-        public static final int constructor = -1847836879;
-        public byte[] file_token;
-        public long offset;
-
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
-            return Vector.TLDeserialize(inputSerializedData, i, z, new TLRPC$TL_upload_fileCdnRedirect$$ExternalSyntheticLambda0());
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeByteArray(this.file_token);
-            outputSerializedData.writeInt64(this.offset);
-        }
-    }
-
-    public static class TL_upload_getFileHashes extends TLObject {
-        public static final int constructor = -956147407;
-        public InputFileLocation location;
-        public int offset;
-
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
-            return Vector.TLDeserialize(inputSerializedData, i, z, new TLRPC$TL_upload_fileCdnRedirect$$ExternalSyntheticLambda0());
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            this.location.serializeToStream(outputSerializedData);
-            outputSerializedData.writeInt32(this.offset);
-        }
-    }
-
-    public static class TL_upload_getWebFile extends TLObject {
-        public static final int constructor = 619086221;
-        public int limit;
-        public InputWebFileLocation location;
-        public int offset;
-
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
-            return TL_upload_webFile.TLdeserialize(inputSerializedData, i, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            this.location.serializeToStream(outputSerializedData);
-            outputSerializedData.writeInt32(this.offset);
-            outputSerializedData.writeInt32(this.limit);
-        }
-    }
-
-    public static class TL_upload_reuploadCdnFile extends TLObject {
-        public static final int constructor = -1691921240;
-        public byte[] file_token;
-        public byte[] request_token;
-
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
-            return Vector.TLDeserialize(inputSerializedData, i, z, new TLRPC$TL_upload_fileCdnRedirect$$ExternalSyntheticLambda0());
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeByteArray(this.file_token);
-            outputSerializedData.writeByteArray(this.request_token);
-        }
-    }
-
-    public static class TL_upload_saveBigFilePart extends TLObject {
-        public static final int constructor = -562337987;
-        public NativeByteBuffer bytes;
-        public long file_id;
-        public int file_part;
-        public int file_total_parts;
-
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
-            return Bool.TLdeserialize(inputSerializedData, i, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void freeResources() {
-            NativeByteBuffer nativeByteBuffer;
-            if (this.disableFree || (nativeByteBuffer = this.bytes) == null) {
-                return;
-            }
-            nativeByteBuffer.reuse();
-            this.bytes = null;
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeInt64(this.file_id);
-            outputSerializedData.writeInt32(this.file_part);
-            outputSerializedData.writeInt32(this.file_total_parts);
-            outputSerializedData.writeByteBuffer(this.bytes);
-        }
-    }
-
-    public static class TL_upload_saveFilePart extends TLObject {
-        public static final int constructor = -1291540959;
-        public NativeByteBuffer bytes;
-        public long file_id;
-        public int file_part;
-
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
-            return Bool.TLdeserialize(inputSerializedData, i, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void freeResources() {
-            NativeByteBuffer nativeByteBuffer;
-            if (this.disableFree || (nativeByteBuffer = this.bytes) == null) {
-                return;
-            }
-            nativeByteBuffer.reuse();
-            this.bytes = null;
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeInt64(this.file_id);
-            outputSerializedData.writeInt32(this.file_part);
-            outputSerializedData.writeByteBuffer(this.bytes);
-        }
-    }
-
     public static class TL_upload_webFile extends TLObject {
         public static final int constructor = 568808380;
         public NativeByteBuffer bytes;
@@ -13253,6 +10476,7 @@ public class TLRPC {
         public boolean send_photos;
         public boolean send_plain;
         public boolean send_polls;
+        public boolean send_reactions;
         public boolean send_roundvideos;
         public boolean send_stickers;
         public boolean send_videos;
@@ -13303,6 +10527,7 @@ public class TLRPC {
             this.send_docs = TLObject.hasFlag(this.flags, 16777216);
             this.send_plain = TLObject.hasFlag(this.flags, 33554432);
             this.edit_rank = TLObject.hasFlag(this.flags, 67108864);
+            this.send_reactions = TLObject.hasFlag(this.flags, TLObject.FLAG_27);
             if (this.send_media) {
                 this.send_photos = true;
                 this.send_videos = true;
@@ -13374,7 +10599,9 @@ public class TLRPC {
             this.flags = flag20;
             int flag21 = TLObject.setFlag(flag20, 67108864, this.edit_rank);
             this.flags = flag21;
-            outputSerializedData.writeInt32(flag21);
+            int flag22 = TLObject.setFlag(flag21, TLObject.FLAG_27, this.send_reactions);
+            this.flags = flag22;
+            outputSerializedData.writeInt32(flag22);
             outputSerializedData.writeInt32(this.until_date);
         }
     }
@@ -17725,6 +14952,7 @@ public class TLRPC {
     }
 
     public static abstract class PollResults extends TLObject {
+        public boolean can_view_stats;
         public int flags;
         public boolean has_unread_votes;
         public boolean min;
@@ -17885,6 +15113,7 @@ public class TLRPC {
             this.flags = readInt32;
             this.min = TLObject.hasFlag(readInt32, 1);
             this.has_unread_votes = TLObject.hasFlag(this.flags, 64);
+            this.can_view_stats = TLObject.hasFlag(this.flags, 128);
             if (TLObject.hasFlag(this.flags, 2)) {
                 this.results = Vector.deserialize(inputSerializedData, new TLRPC$TL_pollResults$$ExternalSyntheticLambda0(), z);
             }
@@ -17914,7 +15143,9 @@ public class TLRPC {
             this.flags = flag2;
             int flag3 = TLObject.setFlag(flag2, 64, this.has_unread_votes);
             this.flags = flag3;
-            outputSerializedData.writeInt32(flag3);
+            int flag4 = TLObject.setFlag(flag3, 128, this.can_view_stats);
+            this.flags = flag4;
+            outputSerializedData.writeInt32(flag4);
             if (TLObject.hasFlag(this.flags, 2)) {
                 Vector.serialize(outputSerializedData, this.results);
             }
@@ -24577,6 +21808,8 @@ public class TLRPC {
                     return new TL_webPageAttributeStickerSet();
                 case TL_webPageAttributeTheme.constructor /* 1421174295 */:
                     return new TL_webPageAttributeTheme();
+                case TL_webPageAttributeAiComposeTone.constructor /* 2005007896 */:
+                    return new TL_webPageAttributeAiComposeTone();
                 default:
                     return null;
             }
@@ -24620,6 +21853,22 @@ public class TLRPC {
             outputSerializedData.writeInt32(constructor);
             this.gift.serializeToStream(outputSerializedData);
             outputSerializedData.writeInt32(this.end_date);
+        }
+    }
+
+    public static class TL_webPageAttributeAiComposeTone extends WebPageAttribute {
+        public static final int constructor = 2005007896;
+        public long emoji_id;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.emoji_id = inputSerializedData.readInt64(z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt64(this.emoji_id);
         }
     }
 
@@ -37074,6 +34323,7 @@ public class TLRPC {
         public boolean bot_chat_history;
         public boolean bot_forum_can_manage_topics;
         public boolean bot_forum_view;
+        public boolean bot_guestchat;
         public boolean bot_has_main_app;
         public int bot_info_version;
         public boolean bot_inline_geo;
@@ -37359,6 +34609,7 @@ public class TLRPC {
             this.bot_forum_view = TLObject.hasFlag(this.flags2, 65536);
             this.bot_forum_can_manage_topics = TLObject.hasFlag(this.flags2, 131072);
             this.bot_can_manage_bots = TLObject.hasFlag(this.flags2, 262144);
+            this.bot_guestchat = TLObject.hasFlag(this.flags2, TLObject.FLAG_19);
             this.id = inputSerializedData.readInt64(z);
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.access_hash = inputSerializedData.readInt64(z);
@@ -37486,7 +34737,9 @@ public class TLRPC {
             this.flags2 = flag27;
             int flag28 = TLObject.setFlag(flag27, 262144, this.bot_can_manage_bots);
             this.flags2 = flag28;
-            outputSerializedData.writeInt32(flag28);
+            int flag29 = TLObject.setFlag(flag28, TLObject.FLAG_19, this.bot_guestchat);
+            this.flags2 = flag29;
+            outputSerializedData.writeInt32(flag29);
             outputSerializedData.writeInt64(this.id);
             if (TLObject.hasFlag(this.flags, 1)) {
                 outputSerializedData.writeInt64(this.access_hash);
@@ -44128,11 +41381,23 @@ public class TLRPC {
                 case TL_topPeerCategoryPhoneCalls.constructor /* 511092620 */:
                     tL_topPeerCategoryForwardUsers = new TL_topPeerCategoryPhoneCalls();
                     break;
+                case TL_topPeerCategoryBotsGuestChat.constructor /* 1814361053 */:
+                    tL_topPeerCategoryForwardUsers = new TL_topPeerCategoryBotsGuestChat();
+                    break;
                 default:
                     tL_topPeerCategoryForwardUsers = null;
                     break;
             }
             return (TopPeerCategory) TLObject.TLdeserialize(TopPeerCategory.class, tL_topPeerCategoryForwardUsers, inputSerializedData, i, z);
+        }
+    }
+
+    public static class TL_topPeerCategoryBotsGuestChat extends TopPeerCategory {
+        public static final int constructor = 1814361053;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
         }
     }
 
@@ -48412,6 +45677,9 @@ public class TLRPC {
                 case TL_updatePaidReactionPrivacy.constructor /* -1955438642 */:
                     tL_updateTheme = new TL_updatePaidReactionPrivacy();
                     break;
+                case TL_updateAiComposeTones.constructor /* -1945136645 */:
+                    tL_updateTheme = new TL_updateAiComposeTones();
+                    break;
                 case TL_updateChannelUserTyping.constructor /* -1937192669 */:
                     tL_updateTheme = new TL_updateChannelUserTyping();
                     break;
@@ -49362,6 +46630,15 @@ public class TLRPC {
             outputSerializedData.writeInt64(this.user_id);
             outputSerializedData.writeInt64(this.bot_id);
             outputSerializedData.writeInt32(this.qts);
+        }
+    }
+
+    public static class TL_updateAiComposeTones extends Update {
+        public static final int constructor = -1945136645;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
         }
     }
 
@@ -54271,17 +51548,21 @@ public class TLRPC {
         public boolean revoting_disabled;
         public boolean shuffle_answers;
         public ArrayList<PollAnswer> shuffled_answers;
+        public boolean subscribers_only;
         public TL_textWithEntities question = new TL_textWithEntities();
         public ArrayList<PollAnswer> answers = new ArrayList<>();
+        public ArrayList<String> countries_iso2 = new ArrayList<>();
 
         private static Poll fromConstructor(int i) {
             switch (i) {
                 case TL_poll_layer178.constructor /* -2032041631 */:
                     return new TL_poll_layer178();
+                case TL_poll.constructor /* -1771164225 */:
+                    return new TL_poll();
                 case TL_poll_toDelete.constructor /* -1351325818 */:
                     return new TL_poll_toDelete();
-                case TL_poll.constructor /* -1203610647 */:
-                    return new TL_poll();
+                case TL_poll_layer224.constructor /* -1203610647 */:
+                    return new TL_poll_layer224();
                 case TL_poll_layer111.constructor /* -716006138 */:
                     return new TL_poll_layer111();
                 case TL_poll_layer223.constructor /* 1484026161 */:
@@ -54301,9 +51582,81 @@ public class TLRPC {
     }
 
     public static class TL_poll extends Poll {
-        public static final int constructor = -1203610647;
+        public static final int constructor = -1771164225;
 
         @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.id = inputSerializedData.readInt64(z);
+            int readInt32 = inputSerializedData.readInt32(z);
+            this.flags = readInt32;
+            this.closed = TLObject.hasFlag(readInt32, 1);
+            this.public_voters = TLObject.hasFlag(this.flags, 2);
+            this.multiple_choice = TLObject.hasFlag(this.flags, 4);
+            this.open_answers = TLObject.hasFlag(this.flags, 64);
+            this.revoting_disabled = TLObject.hasFlag(this.flags, 128);
+            this.shuffle_answers = TLObject.hasFlag(this.flags, 256);
+            this.hide_results_until_close = TLObject.hasFlag(this.flags, 512);
+            this.creator = TLObject.hasFlag(this.flags, 1024);
+            this.subscribers_only = TLObject.hasFlag(this.flags, 2048);
+            this.quiz = TLObject.hasFlag(this.flags, 8);
+            this.question = TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.answers = Vector.deserialize(inputSerializedData, new TranslateController$PollText$$ExternalSyntheticLambda0(), z);
+            if (TLObject.hasFlag(this.flags, 16)) {
+                this.close_period = inputSerializedData.readInt32(z);
+            }
+            if (TLObject.hasFlag(this.flags, 32)) {
+                this.close_date = inputSerializedData.readInt32(z);
+            }
+            if (TLObject.hasFlag(this.flags, 4096)) {
+                this.countries_iso2 = Vector.deserializeString(inputSerializedData, z);
+            }
+            this.hash = inputSerializedData.readInt64(z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt64(this.id);
+            int flag = TLObject.setFlag(this.flags, 1, this.closed);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 2, this.public_voters);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 4, this.multiple_choice);
+            this.flags = flag3;
+            int flag4 = TLObject.setFlag(flag3, 8, this.quiz);
+            this.flags = flag4;
+            int flag5 = TLObject.setFlag(flag4, 64, this.open_answers);
+            this.flags = flag5;
+            int flag6 = TLObject.setFlag(flag5, 128, this.revoting_disabled);
+            this.flags = flag6;
+            int flag7 = TLObject.setFlag(flag6, 256, this.shuffle_answers);
+            this.flags = flag7;
+            int flag8 = TLObject.setFlag(flag7, 512, this.hide_results_until_close);
+            this.flags = flag8;
+            int flag9 = TLObject.setFlag(flag8, 1024, this.creator);
+            this.flags = flag9;
+            int flag10 = TLObject.setFlag(flag9, 2048, this.subscribers_only);
+            this.flags = flag10;
+            outputSerializedData.writeInt32(flag10);
+            this.question.serializeToStream(outputSerializedData);
+            Vector.serialize(outputSerializedData, this.answers);
+            if (TLObject.hasFlag(this.flags, 16)) {
+                outputSerializedData.writeInt32(this.close_period);
+            }
+            if (TLObject.hasFlag(this.flags, 32)) {
+                outputSerializedData.writeInt32(this.close_date);
+            }
+            if (TLObject.hasFlag(this.flags, 4096)) {
+                Vector.serializeString(outputSerializedData, this.countries_iso2);
+            }
+            outputSerializedData.writeInt64(this.hash);
+        }
+    }
+
+    public static class TL_poll_layer224 extends TL_poll {
+        public static final int constructor = -1203610647;
+
+        @Override // org.telegram.tgnet.TLRPC.TL_poll, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.id = inputSerializedData.readInt64(z);
             int readInt32 = inputSerializedData.readInt32(z);
@@ -54328,7 +51681,7 @@ public class TLRPC {
             this.hash = inputSerializedData.readInt64(z);
         }
 
-        @Override // org.telegram.tgnet.TLObject
+        @Override // org.telegram.tgnet.TLRPC.TL_poll, org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
             outputSerializedData.writeInt64(this.id);
@@ -74041,13 +71394,13 @@ public class TLRPC {
         }
     }
 
-    public static class TL_help_getCountriesList extends TLObject {
+    public static class TL_help_getCountriesList extends TLMethod<help_CountriesList> {
         public static final int constructor = 1935116200;
         public int hash;
         public String lang_code;
 
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+        @Override // org.telegram.tgnet.TLMethod
+        public help_CountriesList deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
             return help_CountriesList.TLdeserialize(inputSerializedData, i, z);
         }
 
@@ -75592,9 +72945,10 @@ public class TLRPC {
         }
     }
 
-    public static class TL_contacts_getTopPeers extends TLObject {
+    public static class TL_contacts_getTopPeers extends TLMethod<contacts_TopPeers> {
         public static final int constructor = -1758168906;
         public boolean bots_app;
+        public boolean bots_guestchat;
         public boolean bots_inline;
         public boolean bots_pm;
         public boolean channels;
@@ -75608,8 +72962,8 @@ public class TLRPC {
         public int offset;
         public boolean phone_calls;
 
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+        @Override // org.telegram.tgnet.TLMethod
+        public contacts_TopPeers deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
             return contacts_TopPeers.TLdeserialize(inputSerializedData, i, z);
         }
 
@@ -75634,7 +72988,9 @@ public class TLRPC {
             this.flags = flag8;
             int flag9 = TLObject.setFlag(flag8, 65536, this.bots_app);
             this.flags = flag9;
-            outputSerializedData.writeInt32(flag9);
+            int flag10 = TLObject.setFlag(flag9, 131072, this.bots_guestchat);
+            this.flags = flag10;
+            outputSerializedData.writeInt32(flag10);
             outputSerializedData.writeInt32(this.offset);
             outputSerializedData.writeInt32(this.limit);
             outputSerializedData.writeInt64(this.hash);
@@ -75843,13 +73199,13 @@ public class TLRPC {
         }
     }
 
-    public static class TL_messages_installStickerSet extends TLObject {
+    public static class TL_messages_installStickerSet extends TLMethod<messages_StickerSetInstallResult> {
         public static final int constructor = -946871200;
         public boolean archived;
         public InputStickerSet stickerset;
 
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+        @Override // org.telegram.tgnet.TLMethod
+        public messages_StickerSetInstallResult deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
             return messages_StickerSetInstallResult.TLdeserialize(inputSerializedData, i, z);
         }
 
@@ -78553,15 +75909,15 @@ public class TLRPC {
         }
     }
 
-    public static class TL_messages_searchStickerSets extends TLObject {
+    public static class TL_messages_searchStickerSets extends TLMethod<messages_FoundStickerSets> {
         public static final int constructor = 896555914;
         public boolean exclude_featured;
         public int flags;
         public long hash;
         public String q;
 
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+        @Override // org.telegram.tgnet.TLMethod
+        public messages_FoundStickerSets deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
             return messages_FoundStickerSets.TLdeserialize(inputSerializedData, i, z);
         }
 
@@ -78576,15 +75932,15 @@ public class TLRPC {
         }
     }
 
-    public static class TL_messages_searchEmojiStickerSets extends TLObject {
+    public static class TL_messages_searchEmojiStickerSets extends TLMethod<messages_FoundStickerSets> {
         public static final int constructor = -1833678516;
         public boolean exclude_featured;
         public int flags;
         public long hash;
         public String q;
 
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+        @Override // org.telegram.tgnet.TLMethod
+        public messages_FoundStickerSets deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
             return messages_FoundStickerSets.TLdeserialize(inputSerializedData, i, z);
         }
 
@@ -81033,6 +78389,7 @@ public class TLRPC {
         public boolean from_scheduled;
         public MessageFwdHeader fwd_from;
         public long grouped_id;
+        public Peer guestchat_via_from;
         public int id;
         public boolean invert_media;
         public boolean isThreadMessage;
@@ -81113,8 +78470,8 @@ public class TLRPC {
                 case TL_messageEmpty_layer122.constructor /* -2082087340 */:
                     tL_messageEmpty_layer122 = new TL_messageEmpty_layer122();
                     break;
-                case TL_message_layer135.constructor /* -2049520670 */:
-                    tL_messageEmpty_layer122 = new TL_message_layer135();
+                case TL_legacy_message.TL_message_layer135.constructor /* -2049520670 */:
+                    tL_messageEmpty_layer122 = new TL_legacy_message.TL_message_layer135();
                     break;
                 case TL_messageEmpty.constructor /* -1868117372 */:
                     tL_messageEmpty_layer122 = new TL_messageEmpty();
@@ -81122,20 +78479,23 @@ public class TLRPC {
                 case TL_message_layer72.constructor /* -1864508399 */:
                     tL_messageEmpty_layer122 = new TL_message_layer72();
                     break;
-                case TL_message_layer195.constructor /* -1808510398 */:
-                    tL_messageEmpty_layer122 = new TL_message_layer195();
+                case TL_legacy_message.TL_message_layer195.constructor /* -1808510398 */:
+                    tL_messageEmpty_layer122 = new TL_legacy_message.TL_message_layer195();
                     break;
-                case TL_message_layer199.constructor /* -1761756183 */:
-                    tL_messageEmpty_layer122 = new TL_message_layer199();
+                case TL_message.constructor /* -1779470549 */:
+                    tL_messageEmpty_layer122 = new TL_message();
+                    break;
+                case TL_legacy_message.TL_message_layer199.constructor /* -1761756183 */:
+                    tL_messageEmpty_layer122 = new TL_legacy_message.TL_message_layer199();
                     break;
                 case TL_message_layer104_3.constructor /* -1752573244 */:
                     tL_messageEmpty_layer122 = new TL_message_layer104_3();
                     break;
-                case TL_message_layer216.constructor /* -1743401272 */:
-                    tL_messageEmpty_layer122 = new TL_message_layer216();
+                case TL_legacy_message.TL_message_layer216.constructor /* -1743401272 */:
+                    tL_messageEmpty_layer122 = new TL_legacy_message.TL_message_layer216();
                     break;
-                case TL_message_layer222.constructor /* -1665888023 */:
-                    tL_messageEmpty_layer122 = new TL_message_layer222();
+                case TL_legacy_message.TL_message_layer222.constructor /* -1665888023 */:
+                    tL_messageEmpty_layer122 = new TL_legacy_message.TL_message_layer222();
                     break;
                 case TL_messageService_layer118.constructor /* -1642487306 */:
                     tL_messageEmpty_layer122 = new TL_messageService_layer118();
@@ -81147,23 +78507,23 @@ public class TLRPC {
                     tL_messageEmpty_layer122 = new TL_messageForwarded_old2();
                     break;
                 case -1528201417:
-                case TL_message_layer179.constructor /* 592953125 */:
-                    tL_messageEmpty_layer122 = new TL_message_layer179();
+                case TL_legacy_message.TL_message_layer179.constructor /* 592953125 */:
+                    tL_messageEmpty_layer122 = new TL_legacy_message.TL_message_layer179();
                     break;
-                case TL_message_layer176.constructor /* -1502839044 */:
-                    tL_messageEmpty_layer122 = new TL_message_layer176();
+                case TL_legacy_message.TL_message_layer176.constructor /* -1502839044 */:
+                    tL_messageEmpty_layer122 = new TL_legacy_message.TL_message_layer176();
                     break;
                 case TL_message_old3.constructor /* -1481959023 */:
                     tL_messageEmpty_layer122 = new TL_message_old3();
                     break;
-                case TL_message_layer220.constructor /* -1188071729 */:
-                    tL_messageEmpty_layer122 = new TL_message_layer220();
+                case TL_legacy_message.TL_message_layer220.constructor /* -1188071729 */:
+                    tL_messageEmpty_layer122 = new TL_legacy_message.TL_message_layer220();
                     break;
-                case TL_message_layer131.constructor /* -1125940270 */:
-                    tL_messageEmpty_layer122 = new TL_message_layer131();
+                case TL_legacy_message.TL_message_layer131.constructor /* -1125940270 */:
+                    tL_messageEmpty_layer122 = new TL_legacy_message.TL_message_layer131();
                     break;
-                case TL_message_layer180.constructor /* -1109353426 */:
-                    tL_messageEmpty_layer122 = new TL_message_layer180();
+                case TL_legacy_message.TL_message_layer180.constructor /* -1109353426 */:
+                    tL_messageEmpty_layer122 = new TL_legacy_message.TL_message_layer180();
                     break;
                 case TL_messageService_layer48.constructor /* -1066691065 */:
                     tL_messageEmpty_layer122 = new TL_messageService_layer48();
@@ -81180,14 +78540,14 @@ public class TLRPC {
                 case TL_messageService_layer204.constructor /* -741178048 */:
                     tL_messageEmpty_layer122 = new TL_messageService_layer204();
                     break;
-                case TL_message_layer205.constructor /* -356721331 */:
-                    tL_messageEmpty_layer122 = new TL_message_layer205();
+                case TL_legacy_message.TL_message_layer205.constructor /* -356721331 */:
+                    tL_messageEmpty_layer122 = new TL_legacy_message.TL_message_layer205();
                     break;
                 case TL_message_old5.constructor /* -260565816 */:
                     tL_messageEmpty_layer122 = new TL_message_old5();
                     break;
-                case TL_message_layer118.constructor /* -181507201 */:
-                    tL_messageEmpty_layer122 = new TL_message_layer118();
+                case TL_legacy_message.TL_message_layer118.constructor /* -181507201 */:
+                    tL_messageEmpty_layer122 = new TL_legacy_message.TL_message_layer118();
                     break;
                 case TL_messageForwarded_old.constructor /* 99903492 */:
                     tL_messageEmpty_layer122 = new TL_messageForwarded_old();
@@ -81198,8 +78558,8 @@ public class TLRPC {
                 case TL_messageService_old2.constructor /* 495384334 */:
                     tL_messageEmpty_layer122 = new TL_messageService_old2();
                     break;
-                case TL_message_layer175.constructor /* 508332649 */:
-                    tL_messageEmpty_layer122 = new TL_message_layer175();
+                case TL_legacy_message.TL_message_layer175.constructor /* 508332649 */:
+                    tL_messageEmpty_layer122 = new TL_legacy_message.TL_message_layer175();
                     break;
                 case TL_message_old.constructor /* 585853626 */:
                     tL_messageEmpty_layer122 = new TL_message_old();
@@ -81213,11 +78573,11 @@ public class TLRPC {
                 case TL_message_old6.constructor /* 736885382 */:
                     tL_messageEmpty_layer122 = new TL_message_old6();
                     break;
-                case TL_message_layer169.constructor /* 940666592 */:
-                    tL_messageEmpty_layer122 = new TL_message_layer169();
+                case TL_legacy_message.TL_message_layer169.constructor /* 940666592 */:
+                    tL_messageEmpty_layer122 = new TL_legacy_message.TL_message_layer169();
                     break;
-                case TL_message.constructor /* 988112002 */:
-                    tL_messageEmpty_layer122 = new TL_message();
+                case TL_legacy_message.TL_message_layer224.constructor /* 988112002 */:
+                    tL_messageEmpty_layer122 = new TL_legacy_message.TL_message_layer224();
                     break;
                 case TL_message_layer104.constructor /* 1157215293 */:
                     tL_messageEmpty_layer122 = new TL_message_layer104();
@@ -81237,14 +78597,14 @@ public class TLRPC {
                 case TL_message_old2.constructor /* 1450613171 */:
                     tL_messageEmpty_layer122 = new TL_message_old2();
                     break;
-                case TL_message_layer123.constructor /* 1487813065 */:
-                    tL_messageEmpty_layer122 = new TL_message_layer123();
+                case TL_legacy_message.TL_message_layer123.constructor /* 1487813065 */:
+                    tL_messageEmpty_layer122 = new TL_legacy_message.TL_message_layer123();
                     break;
                 case TL_message_old7.constructor /* 1537633299 */:
                     tL_messageEmpty_layer122 = new TL_message_old7();
                     break;
-                case TL_message_layer173.constructor /* 1992213009 */:
-                    tL_messageEmpty_layer122 = new TL_message_layer173();
+                case TL_legacy_message.TL_message_layer173.constructor /* 1992213009 */:
+                    tL_messageEmpty_layer122 = new TL_legacy_message.TL_message_layer173();
                     break;
                 case TL_messageService.constructor /* 2055212554 */:
                     tL_messageEmpty_layer122 = new TL_messageService();
@@ -81411,8 +78771,8 @@ public class TLRPC {
                 if (this.params == null) {
                     this.params = new HashMap<>();
                 }
-                this.layer = 224;
-                this.params.put("legacy_layer", "224");
+                this.layer = 225;
+                this.params.put("legacy_layer", "225");
             }
             SparseArray<String> sparseArray = this.pollMediaAttachPaths;
             if (sparseArray == null || sparseArray.size() <= 0 || !(this.media instanceof TL_messageMediaPoll)) {
@@ -82028,7 +79388,7 @@ public class TLRPC {
     }
 
     public static class TL_message extends Message {
-        public static final int constructor = 988112002;
+        public static final int constructor = -1779470549;
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
@@ -82073,6 +79433,9 @@ public class TLRPC {
             }
             if (TLObject.hasFlag(this.flags2, 1)) {
                 this.via_business_bot_id = inputSerializedData.readInt64(z);
+            }
+            if (TLObject.hasFlag(this.flags2, TLObject.FLAG_19)) {
+                this.guestchat_via_from = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -82186,7 +79549,9 @@ public class TLRPC {
             this.flags2 = flag16;
             int flag17 = TLObject.setFlag(flag16, 4096, this.from_rank != null);
             this.flags2 = flag17;
-            outputSerializedData.writeInt32(flag17);
+            int flag18 = TLObject.setFlag(flag17, TLObject.FLAG_19, this.guestchat_via_from != null);
+            this.flags2 = flag18;
+            outputSerializedData.writeInt32(flag18);
             outputSerializedData.writeInt32(this.id);
             if (TLObject.hasFlag(this.flags, 256)) {
                 this.from_id.serializeToStream(outputSerializedData);
@@ -82210,249 +79575,8 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags2, 1)) {
                 outputSerializedData.writeInt64(this.via_business_bot_id);
             }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
-            }
-            outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                this.media.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                Vector.serialize(outputSerializedData, this.entities);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.views);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.forwards);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                outputSerializedData.writeInt32(this.edit_date);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                outputSerializedData.writeString(this.post_author);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                outputSerializedData.writeInt64(this.grouped_id);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                outputSerializedData.writeInt32(this.quick_reply_shortcut_id);
-            }
-            if (TLObject.hasFlag(this.flags2, 4)) {
-                outputSerializedData.writeInt64(this.effect);
-            }
-            if (TLObject.hasFlag(this.flags2, 8)) {
-                this.factcheck.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags2, 32)) {
-                outputSerializedData.writeInt32(this.report_delivery_until_date);
-            }
-            if (TLObject.hasFlag(this.flags2, 64)) {
-                outputSerializedData.writeInt64(this.paid_message_stars);
-            }
-            if (TLObject.hasFlag(this.flags2, 128)) {
-                this.suggested_post.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags2, 1024)) {
-                outputSerializedData.writeInt32(this.schedule_repeat_period);
-            }
-            if (TLObject.hasFlag(this.flags2, 2048)) {
-                outputSerializedData.writeString(this.summary_from_language);
-            }
-            writeAttachPath(outputSerializedData);
-        }
-    }
-
-    public static class TL_message_layer222 extends TL_message {
-        public static final int constructor = -1665888023;
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
-            this.mentioned = TLObject.hasFlag(this.flags, 16);
-            this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.pinned = TLObject.hasFlag(this.flags, 16777216);
-            this.noforwards = TLObject.hasFlag(this.flags, 67108864);
-            this.invert_media = TLObject.hasFlag(this.flags, TLObject.FLAG_27);
-            int readInt322 = inputSerializedData.readInt32(z);
-            this.flags2 = readInt322;
-            this.offline = TLObject.hasFlag(readInt322, 2);
-            this.video_processing_pending = TLObject.hasFlag(this.flags2, 16);
-            this.paid_suggested_post_stars = TLObject.hasFlag(this.flags2, 256);
-            this.paid_suggested_post_ton = TLObject.hasFlag(this.flags2, 512);
-            this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                this.from_boosts_applied = inputSerializedData.readInt32(z);
-            }
-            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 1)) {
-                this.via_business_bot_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-                this.media = TLdeserialize;
-                if (TLdeserialize != null) {
-                    this.ttl = TLdeserialize.ttl_seconds;
-                }
-                if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                    this.message = this.media.captionLegacy;
-                }
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.views = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.forwards = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies = MessageReplies.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                this.edit_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                this.post_author = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                this.grouped_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions = MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                this.quick_reply_shortcut_id = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 4)) {
-                this.effect = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 8)) {
-                this.factcheck = TL_factCheck.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags2, 32)) {
-                this.report_delivery_until_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 64)) {
-                this.paid_message_stars = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 128)) {
-                this.suggested_post = SuggestedPost.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags2, 1024)) {
-                this.schedule_repeat_period = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 2048)) {
-                this.summary_from_language = inputSerializedData.readString(z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
-            this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
-            this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
-            this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 262144, this.from_scheduled);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
-            this.flags = flag7;
-            int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
-            this.flags = flag8;
-            int flag9 = TLObject.setFlag(flag8, 16777216, this.pinned);
-            this.flags = flag9;
-            int flag10 = TLObject.setFlag(flag9, 67108864, this.noforwards);
-            this.flags = flag10;
-            int flag11 = TLObject.setFlag(flag10, TLObject.FLAG_27, this.invert_media);
-            this.flags = flag11;
-            outputSerializedData.writeInt32(flag11);
-            int flag12 = TLObject.setFlag(this.flags2, 2, this.offline);
-            this.flags2 = flag12;
-            int flag13 = TLObject.setFlag(flag12, 16, this.video_processing_pending);
-            this.flags2 = flag13;
-            int flag14 = TLObject.setFlag(flag13, 128, this.suggested_post != null);
-            this.flags2 = flag14;
-            int flag15 = TLObject.setFlag(flag14, 256, this.paid_suggested_post_stars);
-            this.flags2 = flag15;
-            int flag16 = TLObject.setFlag(flag15, 512, this.paid_suggested_post_ton);
-            this.flags2 = flag16;
-            outputSerializedData.writeInt32(flag16);
-            outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                outputSerializedData.writeInt32(this.from_boosts_applied);
-            }
-            this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt64(this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags2, 1)) {
-                outputSerializedData.writeInt64(this.via_business_bot_id);
+            if (TLObject.hasFlag(this.flags2, TLObject.FLAG_19)) {
+                this.guestchat_via_from.serializeToStream(outputSerializedData);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.reply_to.serializeToStream(outputSerializedData);
@@ -82523,8 +79647,8 @@ public class TLRPC {
         }
     }
 
-    public static class TL_message_layer220 extends TL_message {
-        public static final int constructor = -1188071729;
+    public static class TL_message_layer117 extends TL_message {
+        public static final int constructor = 1160515173;
 
         @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
@@ -82538,37 +79662,24 @@ public class TLRPC {
             this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
             this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
             this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.pinned = TLObject.hasFlag(this.flags, 16777216);
-            this.noforwards = TLObject.hasFlag(this.flags, 67108864);
-            this.invert_media = TLObject.hasFlag(this.flags, TLObject.FLAG_27);
-            int readInt322 = inputSerializedData.readInt32(z);
-            this.flags2 = readInt322;
-            this.offline = TLObject.hasFlag(readInt322, 2);
-            this.video_processing_pending = TLObject.hasFlag(this.flags2, 16);
-            this.paid_suggested_post_stars = TLObject.hasFlag(this.flags2, 256);
-            this.paid_suggested_post_ton = TLObject.hasFlag(this.flags2, 512);
             this.id = inputSerializedData.readInt32(z);
             if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                this.from_boosts_applied = inputSerializedData.readInt32(z);
+                TL_peerUser tL_peerUser = new TL_peerUser();
+                this.from_id = tL_peerUser;
+                tL_peerUser.user_id = inputSerializedData.readInt32(z);
             }
             this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
             if (TLObject.hasFlag(this.flags, 4)) {
                 this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 1)) {
-                this.via_business_bot_id = inputSerializedData.readInt64(z);
+                this.via_bot_id = inputSerializedData.readInt32(z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
+                this.reply_to = tL_messageReplyHeader;
+                tL_messageReplyHeader.flags = 16 | tL_messageReplyHeader.flags;
+                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
             }
             this.date = inputSerializedData.readInt32(z);
             this.message = inputSerializedData.readString(z);
@@ -82591,12 +79702,6 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z);
             }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.forwards = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies = MessageReplies.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
             if (TLObject.hasFlag(this.flags, 32768)) {
                 this.edit_date = inputSerializedData.readInt32(z);
             }
@@ -82606,35 +79711,8 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, 131072)) {
                 this.grouped_id = inputSerializedData.readInt64(z);
             }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions = MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
             if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
                 this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                this.quick_reply_shortcut_id = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 4)) {
-                this.effect = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 8)) {
-                this.factcheck = TL_factCheck.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags2, 32)) {
-                this.report_delivery_until_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 64)) {
-                this.paid_message_stars = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 128)) {
-                this.suggested_post = SuggestedPost.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags2, 1024)) {
-                this.schedule_repeat_period = inputSerializedData.readInt32(z);
             }
         }
 
@@ -82657,46 +79735,20 @@ public class TLRPC {
             this.flags = flag7;
             int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
             this.flags = flag8;
-            int flag9 = TLObject.setFlag(flag8, 16777216, this.pinned);
-            this.flags = flag9;
-            int flag10 = TLObject.setFlag(flag9, 67108864, this.noforwards);
-            this.flags = flag10;
-            int flag11 = TLObject.setFlag(flag10, TLObject.FLAG_27, this.invert_media);
-            this.flags = flag11;
-            outputSerializedData.writeInt32(flag11);
-            int flag12 = TLObject.setFlag(this.flags2, 2, this.offline);
-            this.flags2 = flag12;
-            int flag13 = TLObject.setFlag(flag12, 16, this.video_processing_pending);
-            this.flags2 = flag13;
-            int flag14 = TLObject.setFlag(flag13, 128, this.suggested_post != null);
-            this.flags2 = flag14;
-            int flag15 = TLObject.setFlag(flag14, 256, this.paid_suggested_post_stars);
-            this.flags2 = flag15;
-            int flag16 = TLObject.setFlag(flag15, 512, this.paid_suggested_post_ton);
-            this.flags2 = flag16;
-            outputSerializedData.writeInt32(flag16);
+            outputSerializedData.writeInt32(flag8);
             outputSerializedData.writeInt32(this.id);
             if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                outputSerializedData.writeInt32(this.from_boosts_applied);
+                outputSerializedData.writeInt32((int) this.from_id.user_id);
             }
             this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id.serializeToStream(outputSerializedData);
-            }
             if (TLObject.hasFlag(this.flags, 4)) {
                 this.fwd_from.serializeToStream(outputSerializedData);
             }
             if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt64(this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags2, 1)) {
-                outputSerializedData.writeInt64(this.via_business_bot_id);
+                outputSerializedData.writeInt32((int) this.via_bot_id);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
+                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
             }
             outputSerializedData.writeInt32(this.date);
             outputSerializedData.writeString(this.message);
@@ -82712,12 +79764,6 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, 1024)) {
                 outputSerializedData.writeInt32(this.views);
             }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.forwards);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies.serializeToStream(outputSerializedData);
-            }
             if (TLObject.hasFlag(this.flags, 32768)) {
                 outputSerializedData.writeInt32(this.edit_date);
             }
@@ -82727,42 +79773,15 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, 131072)) {
                 outputSerializedData.writeInt64(this.grouped_id);
             }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions.serializeToStream(outputSerializedData);
-            }
             if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
                 Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                outputSerializedData.writeInt32(this.quick_reply_shortcut_id);
-            }
-            if (TLObject.hasFlag(this.flags2, 4)) {
-                outputSerializedData.writeInt64(this.effect);
-            }
-            if (TLObject.hasFlag(this.flags2, 8)) {
-                this.factcheck.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags2, 32)) {
-                outputSerializedData.writeInt32(this.report_delivery_until_date);
-            }
-            if (TLObject.hasFlag(this.flags2, 64)) {
-                outputSerializedData.writeInt64(this.paid_message_stars);
-            }
-            if (TLObject.hasFlag(this.flags2, 128)) {
-                this.suggested_post.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags2, 1024)) {
-                outputSerializedData.writeInt32(this.schedule_repeat_period);
             }
             writeAttachPath(outputSerializedData);
         }
     }
 
-    public static class TL_message_layer216 extends TL_message {
-        public static final int constructor = -1743401272;
+    public static class TL_message_layer104_3 extends TL_message {
+        public static final int constructor = -1752573244;
 
         @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
@@ -82776,37 +79795,24 @@ public class TLRPC {
             this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
             this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
             this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.pinned = TLObject.hasFlag(this.flags, 16777216);
-            this.noforwards = TLObject.hasFlag(this.flags, 67108864);
-            this.invert_media = TLObject.hasFlag(this.flags, TLObject.FLAG_27);
-            int readInt322 = inputSerializedData.readInt32(z);
-            this.flags2 = readInt322;
-            this.offline = TLObject.hasFlag(readInt322, 2);
-            this.video_processing_pending = TLObject.hasFlag(this.flags2, 16);
-            this.paid_suggested_post_stars = TLObject.hasFlag(this.flags2, 256);
-            this.paid_suggested_post_ton = TLObject.hasFlag(this.flags2, 512);
             this.id = inputSerializedData.readInt32(z);
             if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                this.from_boosts_applied = inputSerializedData.readInt32(z);
+                TL_peerUser tL_peerUser = new TL_peerUser();
+                this.from_id = tL_peerUser;
+                tL_peerUser.user_id = inputSerializedData.readInt32(z);
             }
             this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
             if (TLObject.hasFlag(this.flags, 4)) {
                 this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 1)) {
-                this.via_business_bot_id = inputSerializedData.readInt64(z);
+                this.via_bot_id = inputSerializedData.readInt32(z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
+                this.reply_to = tL_messageReplyHeader;
+                tL_messageReplyHeader.flags = 16 | tL_messageReplyHeader.flags;
+                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
             }
             this.date = inputSerializedData.readInt32(z);
             this.message = inputSerializedData.readString(z);
@@ -82829,12 +79835,6 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z);
             }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.forwards = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies = MessageReplies.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
             if (TLObject.hasFlag(this.flags, 32768)) {
                 this.edit_date = inputSerializedData.readInt32(z);
             }
@@ -82849,27 +79849,6 @@ public class TLRPC {
             }
             if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
                 this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                this.quick_reply_shortcut_id = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 4)) {
-                this.effect = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 8)) {
-                this.factcheck = TL_factCheck.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags2, 32)) {
-                this.report_delivery_until_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 64)) {
-                this.paid_message_stars = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 128)) {
-                this.suggested_post = SuggestedPost.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
         }
 
@@ -82892,46 +79871,20 @@ public class TLRPC {
             this.flags = flag7;
             int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
             this.flags = flag8;
-            int flag9 = TLObject.setFlag(flag8, 16777216, this.pinned);
-            this.flags = flag9;
-            int flag10 = TLObject.setFlag(flag9, 67108864, this.noforwards);
-            this.flags = flag10;
-            int flag11 = TLObject.setFlag(flag10, TLObject.FLAG_27, this.invert_media);
-            this.flags = flag11;
-            outputSerializedData.writeInt32(flag11);
-            int flag12 = TLObject.setFlag(this.flags2, 2, this.offline);
-            this.flags2 = flag12;
-            int flag13 = TLObject.setFlag(flag12, 16, this.video_processing_pending);
-            this.flags2 = flag13;
-            int flag14 = TLObject.setFlag(flag13, 128, this.suggested_post != null);
-            this.flags2 = flag14;
-            int flag15 = TLObject.setFlag(flag14, 256, this.paid_suggested_post_stars);
-            this.flags2 = flag15;
-            int flag16 = TLObject.setFlag(flag15, 512, this.paid_suggested_post_ton);
-            this.flags2 = flag16;
-            outputSerializedData.writeInt32(flag16);
+            outputSerializedData.writeInt32(flag8);
             outputSerializedData.writeInt32(this.id);
             if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                outputSerializedData.writeInt32(this.from_boosts_applied);
+                outputSerializedData.writeInt32((int) this.from_id.user_id);
             }
             this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id.serializeToStream(outputSerializedData);
-            }
             if (TLObject.hasFlag(this.flags, 4)) {
                 this.fwd_from.serializeToStream(outputSerializedData);
             }
             if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt64(this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags2, 1)) {
-                outputSerializedData.writeInt64(this.via_business_bot_id);
+                outputSerializedData.writeInt32((int) this.via_bot_id);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
+                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
             }
             outputSerializedData.writeInt32(this.date);
             outputSerializedData.writeString(this.message);
@@ -82947,12 +79900,6 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, 1024)) {
                 outputSerializedData.writeInt32(this.views);
             }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.forwards);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies.serializeToStream(outputSerializedData);
-            }
             if (TLObject.hasFlag(this.flags, 32768)) {
                 outputSerializedData.writeInt32(this.edit_date);
             }
@@ -82967,34 +79914,13 @@ public class TLRPC {
             }
             if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
                 Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                outputSerializedData.writeInt32(this.quick_reply_shortcut_id);
-            }
-            if (TLObject.hasFlag(this.flags2, 4)) {
-                outputSerializedData.writeInt64(this.effect);
-            }
-            if (TLObject.hasFlag(this.flags2, 8)) {
-                this.factcheck.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags2, 32)) {
-                outputSerializedData.writeInt32(this.report_delivery_until_date);
-            }
-            if (TLObject.hasFlag(this.flags2, 64)) {
-                outputSerializedData.writeInt64(this.paid_message_stars);
-            }
-            if (TLObject.hasFlag(this.flags2, 128)) {
-                this.suggested_post.serializeToStream(outputSerializedData);
             }
             writeAttachPath(outputSerializedData);
         }
     }
 
-    public static class TL_message_layer205 extends TL_message {
-        public static final int constructor = -356721331;
+    public static class TL_message_layer104_2 extends TL_message {
+        public static final int constructor = 479924263;
 
         @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
@@ -83008,35 +79934,24 @@ public class TLRPC {
             this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
             this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
             this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.pinned = TLObject.hasFlag(this.flags, 16777216);
-            this.noforwards = TLObject.hasFlag(this.flags, 67108864);
-            this.invert_media = TLObject.hasFlag(this.flags, TLObject.FLAG_27);
-            int readInt322 = inputSerializedData.readInt32(z);
-            this.flags2 = readInt322;
-            this.offline = TLObject.hasFlag(readInt322, 2);
-            this.video_processing_pending = TLObject.hasFlag(this.flags2, 16);
             this.id = inputSerializedData.readInt32(z);
             if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                this.from_boosts_applied = inputSerializedData.readInt32(z);
+                TL_peerUser tL_peerUser = new TL_peerUser();
+                this.from_id = tL_peerUser;
+                tL_peerUser.user_id = inputSerializedData.readInt32(z);
             }
             this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
             if (TLObject.hasFlag(this.flags, 4)) {
                 this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 1)) {
-                this.via_business_bot_id = inputSerializedData.readInt64(z);
+                this.via_bot_id = inputSerializedData.readInt32(z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
+                this.reply_to = tL_messageReplyHeader;
+                tL_messageReplyHeader.flags = 16 | tL_messageReplyHeader.flags;
+                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
             }
             this.date = inputSerializedData.readInt32(z);
             this.message = inputSerializedData.readString(z);
@@ -83059,12 +79974,6 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z);
             }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.forwards = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies = MessageReplies.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
             if (TLObject.hasFlag(this.flags, 32768)) {
                 this.edit_date = inputSerializedData.readInt32(z);
             }
@@ -83078,25 +79987,7 @@ public class TLRPC {
                 this.reactions = MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                this.quick_reply_shortcut_id = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 4)) {
-                this.effect = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 8)) {
-                this.factcheck = TL_factCheck.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags2, 32)) {
-                this.report_delivery_until_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 64)) {
-                this.paid_message_stars = inputSerializedData.readInt64(z);
+                inputSerializedData.readString(z);
             }
         }
 
@@ -83119,40 +80010,20 @@ public class TLRPC {
             this.flags = flag7;
             int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
             this.flags = flag8;
-            int flag9 = TLObject.setFlag(flag8, 16777216, this.pinned);
-            this.flags = flag9;
-            int flag10 = TLObject.setFlag(flag9, 67108864, this.noforwards);
-            this.flags = flag10;
-            int flag11 = TLObject.setFlag(flag10, TLObject.FLAG_27, this.invert_media);
-            this.flags = flag11;
-            outputSerializedData.writeInt32(flag11);
-            int flag12 = TLObject.setFlag(this.flags2, 2, this.offline);
-            this.flags2 = flag12;
-            int flag13 = TLObject.setFlag(flag12, 16, this.video_processing_pending);
-            this.flags2 = flag13;
-            outputSerializedData.writeInt32(flag13);
+            outputSerializedData.writeInt32(flag8);
             outputSerializedData.writeInt32(this.id);
             if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                outputSerializedData.writeInt32(this.from_boosts_applied);
+                outputSerializedData.writeInt32((int) this.from_id.user_id);
             }
             this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id.serializeToStream(outputSerializedData);
-            }
             if (TLObject.hasFlag(this.flags, 4)) {
                 this.fwd_from.serializeToStream(outputSerializedData);
             }
             if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt64(this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags2, 1)) {
-                outputSerializedData.writeInt64(this.via_business_bot_id);
+                outputSerializedData.writeInt32((int) this.via_bot_id);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
+                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
             }
             outputSerializedData.writeInt32(this.date);
             outputSerializedData.writeString(this.message);
@@ -83168,12 +80039,6 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, 1024)) {
                 outputSerializedData.writeInt32(this.views);
             }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.forwards);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies.serializeToStream(outputSerializedData);
-            }
             if (TLObject.hasFlag(this.flags, 32768)) {
                 outputSerializedData.writeInt32(this.edit_date);
             }
@@ -83187,32 +80052,14 @@ public class TLRPC {
                 this.reactions.serializeToStream(outputSerializedData);
             }
             if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                outputSerializedData.writeInt32(this.quick_reply_shortcut_id);
-            }
-            if (TLObject.hasFlag(this.flags2, 4)) {
-                outputSerializedData.writeInt64(this.effect);
-            }
-            if (TLObject.hasFlag(this.flags2, 8)) {
-                this.factcheck.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags2, 32)) {
-                outputSerializedData.writeInt32(this.report_delivery_until_date);
-            }
-            if (TLObject.hasFlag(this.flags2, 64)) {
-                outputSerializedData.writeInt64(this.paid_message_stars);
+                outputSerializedData.writeString("");
             }
             writeAttachPath(outputSerializedData);
         }
     }
 
-    public static class TL_message_layer199 extends TL_message {
-        public static final int constructor = -1761756183;
+    public static class TL_message_layer104 extends TL_message {
+        public static final int constructor = 1157215293;
 
         @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
@@ -83225,36 +80072,24 @@ public class TLRPC {
             this.post = TLObject.hasFlag(this.flags, 16384);
             this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
             this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.pinned = TLObject.hasFlag(this.flags, 16777216);
-            this.noforwards = TLObject.hasFlag(this.flags, 67108864);
-            this.invert_media = TLObject.hasFlag(this.flags, TLObject.FLAG_27);
-            int readInt322 = inputSerializedData.readInt32(z);
-            this.flags2 = readInt322;
-            this.offline = TLObject.hasFlag(readInt322, 2);
-            this.video_processing_pending = TLObject.hasFlag(this.flags2, 16);
             this.id = inputSerializedData.readInt32(z);
             if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                this.from_boosts_applied = inputSerializedData.readInt32(z);
+                TL_peerUser tL_peerUser = new TL_peerUser();
+                this.from_id = tL_peerUser;
+                tL_peerUser.user_id = inputSerializedData.readInt32(z);
             }
             this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
             if (TLObject.hasFlag(this.flags, 4)) {
                 this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 1)) {
-                this.via_business_bot_id = inputSerializedData.readInt64(z);
+                this.via_bot_id = inputSerializedData.readInt32(z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
+                this.reply_to = tL_messageReplyHeader;
+                tL_messageReplyHeader.flags = 16 | tL_messageReplyHeader.flags;
+                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
             }
             this.date = inputSerializedData.readInt32(z);
             this.message = inputSerializedData.readString(z);
@@ -83277,12 +80112,6 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z);
             }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.forwards = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies = MessageReplies.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
             if (TLObject.hasFlag(this.flags, 32768)) {
                 this.edit_date = inputSerializedData.readInt32(z);
             }
@@ -83291,27 +80120,6 @@ public class TLRPC {
             }
             if (TLObject.hasFlag(this.flags, 131072)) {
                 this.grouped_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions = MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                this.quick_reply_shortcut_id = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 4)) {
-                this.effect = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 8)) {
-                this.factcheck = TL_factCheck.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags2, 32)) {
-                this.report_delivery_until_date = inputSerializedData.readInt32(z);
             }
         }
 
@@ -83332,42 +80140,20 @@ public class TLRPC {
             this.flags = flag6;
             int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
             this.flags = flag7;
-            int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
-            this.flags = flag8;
-            int flag9 = TLObject.setFlag(flag8, 16777216, this.pinned);
-            this.flags = flag9;
-            int flag10 = TLObject.setFlag(flag9, 67108864, this.noforwards);
-            this.flags = flag10;
-            int flag11 = TLObject.setFlag(flag10, TLObject.FLAG_27, this.invert_media);
-            this.flags = flag11;
-            outputSerializedData.writeInt32(flag11);
-            int flag12 = TLObject.setFlag(this.flags2, 2, this.offline);
-            this.flags2 = flag12;
-            int flag13 = TLObject.setFlag(flag12, 16, this.video_processing_pending);
-            this.flags2 = flag13;
-            outputSerializedData.writeInt32(flag13);
+            outputSerializedData.writeInt32(flag7);
             outputSerializedData.writeInt32(this.id);
             if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                outputSerializedData.writeInt32(this.from_boosts_applied);
+                outputSerializedData.writeInt32((int) this.from_id.user_id);
             }
             this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id.serializeToStream(outputSerializedData);
-            }
             if (TLObject.hasFlag(this.flags, 4)) {
                 this.fwd_from.serializeToStream(outputSerializedData);
             }
             if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt64(this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags2, 1)) {
-                outputSerializedData.writeInt64(this.via_business_bot_id);
+                outputSerializedData.writeInt32((int) this.via_bot_id);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
+                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
             }
             outputSerializedData.writeInt32(this.date);
             outputSerializedData.writeString(this.message);
@@ -83383,12 +80169,6 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, 1024)) {
                 outputSerializedData.writeInt32(this.views);
             }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.forwards);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies.serializeToStream(outputSerializedData);
-            }
             if (TLObject.hasFlag(this.flags, 32768)) {
                 outputSerializedData.writeInt32(this.edit_date);
             }
@@ -83397,88 +80177,52 @@ public class TLRPC {
             }
             if (TLObject.hasFlag(this.flags, 131072)) {
                 outputSerializedData.writeInt64(this.grouped_id);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                outputSerializedData.writeInt32(this.quick_reply_shortcut_id);
-            }
-            if (TLObject.hasFlag(this.flags2, 4)) {
-                outputSerializedData.writeInt64(this.effect);
-            }
-            if (TLObject.hasFlag(this.flags2, 8)) {
-                this.factcheck.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags2, 32)) {
-                outputSerializedData.writeInt32(this.report_delivery_until_date);
             }
             writeAttachPath(outputSerializedData);
         }
     }
 
-    public static class TL_message_layer195 extends TL_message {
-        public static final int constructor = -1808510398;
+    public static class TL_message_old6 extends TL_message {
+        public static final int constructor = 736885382;
 
         @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
+            int readInt32 = inputSerializedData.readInt32(z) | 256;
             this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
+            this.unread = TLObject.hasFlag(readInt32, 1);
+            this.out = TLObject.hasFlag(this.flags, 2);
             this.mentioned = TLObject.hasFlag(this.flags, 16);
             this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.pinned = TLObject.hasFlag(this.flags, 16777216);
-            this.noforwards = TLObject.hasFlag(this.flags, 67108864);
-            this.invert_media = TLObject.hasFlag(this.flags, TLObject.FLAG_27);
-            int readInt322 = inputSerializedData.readInt32(z);
-            this.flags2 = readInt322;
-            this.offline = TLObject.hasFlag(readInt322, 2);
-            this.video_processing_pending = TLObject.hasFlag(this.flags2, 16);
             this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                this.from_boosts_applied = inputSerializedData.readInt32(z);
-            }
+            TL_peerUser tL_peerUser = new TL_peerUser();
+            this.from_id = tL_peerUser;
+            tL_peerUser.user_id = inputSerializedData.readInt32(z);
             this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 1)) {
-                this.via_business_bot_id = inputSerializedData.readInt64(z);
+                TL_messageFwdHeader tL_messageFwdHeader = new TL_messageFwdHeader();
+                this.fwd_from = tL_messageFwdHeader;
+                tL_messageFwdHeader.from_id = new TL_peerUser();
+                this.fwd_from.from_id.user_id = inputSerializedData.readInt32(z);
+                MessageFwdHeader messageFwdHeader = this.fwd_from;
+                messageFwdHeader.flags = 1 | messageFwdHeader.flags;
+                messageFwdHeader.date = inputSerializedData.readInt32(z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
+                this.reply_to = tL_messageReplyHeader;
+                tL_messageReplyHeader.flags |= 16;
+                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
             }
             this.date = inputSerializedData.readInt32(z);
             this.message = inputSerializedData.readString(z);
             if (TLObject.hasFlag(this.flags, 512)) {
                 MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
                 this.media = TLdeserialize;
-                if (TLdeserialize != null) {
-                    this.ttl = TLdeserialize.ttl_seconds;
-                }
                 if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
                     this.message = this.media.captionLegacy;
                 }
+            } else {
+                this.media = new TL_messageMediaEmpty();
             }
             if (TLObject.hasFlag(this.flags, 64)) {
                 this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -83486,97 +80230,29 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, 128)) {
                 this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
             }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.views = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.forwards = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies = MessageReplies.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                this.edit_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                this.post_author = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                this.grouped_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions = MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                this.quick_reply_shortcut_id = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 4)) {
-                this.effect = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 8)) {
-                this.factcheck = TL_factCheck.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
         }
 
         @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
+            int flag = TLObject.setFlag(this.flags, 1, this.unread);
             this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
+            int flag2 = TLObject.setFlag(flag, 2, this.out);
             this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
+            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
             this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
+            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
             this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 262144, this.from_scheduled);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
-            this.flags = flag7;
-            int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
-            this.flags = flag8;
-            int flag9 = TLObject.setFlag(flag8, 16777216, this.pinned);
-            this.flags = flag9;
-            int flag10 = TLObject.setFlag(flag9, 67108864, this.noforwards);
-            this.flags = flag10;
-            int flag11 = TLObject.setFlag(flag10, TLObject.FLAG_27, this.invert_media);
-            this.flags = flag11;
-            outputSerializedData.writeInt32(flag11);
-            int flag12 = TLObject.setFlag(this.flags2, 2, this.offline);
-            this.flags2 = flag12;
-            int flag13 = TLObject.setFlag(flag12, 16, this.video_processing_pending);
-            this.flags2 = flag13;
-            outputSerializedData.writeInt32(flag13);
+            outputSerializedData.writeInt32(flag4);
             outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                outputSerializedData.writeInt32(this.from_boosts_applied);
-            }
+            outputSerializedData.writeInt32((int) this.from_id.user_id);
             this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id.serializeToStream(outputSerializedData);
-            }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt64(this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags2, 1)) {
-                outputSerializedData.writeInt64(this.via_business_bot_id);
+                outputSerializedData.writeInt32((int) this.fwd_from.from_id.user_id);
+                outputSerializedData.writeInt32(this.fwd_from.date);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
+                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
             }
             outputSerializedData.writeInt32(this.date);
             outputSerializedData.writeString(this.message);
@@ -83588,102 +80264,48 @@ public class TLRPC {
             }
             if (TLObject.hasFlag(this.flags, 128)) {
                 Vector.serialize(outputSerializedData, this.entities);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.views);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.forwards);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                outputSerializedData.writeInt32(this.edit_date);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                outputSerializedData.writeString(this.post_author);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                outputSerializedData.writeInt64(this.grouped_id);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                outputSerializedData.writeInt32(this.quick_reply_shortcut_id);
-            }
-            if (TLObject.hasFlag(this.flags2, 4)) {
-                outputSerializedData.writeInt64(this.effect);
-            }
-            if (TLObject.hasFlag(this.flags2, 8)) {
-                this.factcheck.serializeToStream(outputSerializedData);
             }
             writeAttachPath(outputSerializedData);
         }
     }
 
-    public static class TL_message_layer180 extends TL_message {
-        public static final int constructor = -1109353426;
+    public static class TL_message_old5 extends TL_message {
+        public static final int constructor = -260565816;
 
         @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
+            int readInt32 = inputSerializedData.readInt32(z) | 768;
             this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
+            this.unread = TLObject.hasFlag(readInt32, 1);
+            this.out = TLObject.hasFlag(this.flags, 2);
             this.mentioned = TLObject.hasFlag(this.flags, 16);
             this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.pinned = TLObject.hasFlag(this.flags, 16777216);
-            this.noforwards = TLObject.hasFlag(this.flags, 67108864);
-            this.invert_media = TLObject.hasFlag(this.flags, TLObject.FLAG_27);
-            int readInt322 = inputSerializedData.readInt32(z);
-            this.flags2 = readInt322;
-            this.offline = TLObject.hasFlag(readInt322, 2);
             this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                this.from_boosts_applied = inputSerializedData.readInt32(z);
-            }
+            TL_peerUser tL_peerUser = new TL_peerUser();
+            this.from_id = tL_peerUser;
+            tL_peerUser.user_id = inputSerializedData.readInt32(z);
             this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 1)) {
-                this.via_business_bot_id = inputSerializedData.readInt64(z);
+                TL_messageFwdHeader tL_messageFwdHeader = new TL_messageFwdHeader();
+                this.fwd_from = tL_messageFwdHeader;
+                tL_messageFwdHeader.from_id = new TL_peerUser();
+                this.fwd_from.from_id.user_id = inputSerializedData.readInt32(z);
+                MessageFwdHeader messageFwdHeader = this.fwd_from;
+                messageFwdHeader.flags = 1 | messageFwdHeader.flags;
+                messageFwdHeader.date = inputSerializedData.readInt32(z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
+                this.reply_to = tL_messageReplyHeader;
+                tL_messageReplyHeader.flags |= 16;
+                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
             }
             this.date = inputSerializedData.readInt32(z);
             this.message = inputSerializedData.readString(z);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-                this.media = TLdeserialize;
-                if (TLdeserialize != null) {
-                    this.ttl = TLdeserialize.ttl_seconds;
-                }
-                if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                    this.message = this.media.captionLegacy;
-                }
+            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.media = TLdeserialize;
+            if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
+                this.message = this.media.captionLegacy;
             }
             if (TLObject.hasFlag(this.flags, 64)) {
                 this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -83691,688 +80313,617 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, 128)) {
                 this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
             }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.views = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.forwards = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies = MessageReplies.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                this.edit_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                this.post_author = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                this.grouped_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions = MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                this.quick_reply_shortcut_id = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 4)) {
-                this.effect = inputSerializedData.readInt64(z);
-            }
         }
 
         @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
+            int flag = TLObject.setFlag(this.flags, 1, this.unread);
             this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
+            int flag2 = TLObject.setFlag(flag, 2, this.out);
             this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
+            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
             this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
+            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
             this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 262144, this.from_scheduled);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
-            this.flags = flag7;
-            int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
-            this.flags = flag8;
-            int flag9 = TLObject.setFlag(flag8, 16777216, this.pinned);
-            this.flags = flag9;
-            int flag10 = TLObject.setFlag(flag9, 67108864, this.noforwards);
-            this.flags = flag10;
-            int flag11 = TLObject.setFlag(flag10, TLObject.FLAG_27, this.invert_media);
-            this.flags = flag11;
-            outputSerializedData.writeInt32(flag11);
-            int flag12 = TLObject.setFlag(this.flags2, 2, this.offline);
-            this.flags2 = flag12;
-            outputSerializedData.writeInt32(flag12);
+            outputSerializedData.writeInt32(flag4);
             outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                outputSerializedData.writeInt32(this.from_boosts_applied);
-            }
+            outputSerializedData.writeInt32((int) this.from_id.user_id);
             this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id.serializeToStream(outputSerializedData);
-            }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt64(this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags2, 1)) {
-                outputSerializedData.writeInt64(this.via_business_bot_id);
+                outputSerializedData.writeInt32((int) this.fwd_from.from_id.user_id);
+                outputSerializedData.writeInt32(this.fwd_from.date);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
+                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
             }
             outputSerializedData.writeInt32(this.date);
             outputSerializedData.writeString(this.message);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                this.media.serializeToStream(outputSerializedData);
-            }
+            this.media.serializeToStream(outputSerializedData);
             if (TLObject.hasFlag(this.flags, 64)) {
                 this.reply_markup.serializeToStream(outputSerializedData);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
                 Vector.serialize(outputSerializedData, this.entities);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.views);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.forwards);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                outputSerializedData.writeInt32(this.edit_date);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                outputSerializedData.writeString(this.post_author);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                outputSerializedData.writeInt64(this.grouped_id);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                outputSerializedData.writeInt32(this.quick_reply_shortcut_id);
-            }
-            if (TLObject.hasFlag(this.flags2, 4)) {
-                outputSerializedData.writeInt64(this.effect);
             }
             writeAttachPath(outputSerializedData);
         }
     }
 
-    public static class TL_message_layer179 extends TL_message {
-        public static final int constructor = 592953125;
+    public static class TL_messageService_layer48 extends TL_messageService {
+        public static final int constructor = -1066691065;
 
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
+        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
+            this.unread = TLObject.hasFlag(readInt32, 1);
+            this.out = TLObject.hasFlag(this.flags, 2);
             this.mentioned = TLObject.hasFlag(this.flags, 16);
             this.media_unread = TLObject.hasFlag(this.flags, 32);
             this.silent = TLObject.hasFlag(this.flags, 8192);
             this.post = TLObject.hasFlag(this.flags, 16384);
-            this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.pinned = TLObject.hasFlag(this.flags, 16777216);
-            this.noforwards = TLObject.hasFlag(this.flags, 67108864);
-            this.invert_media = TLObject.hasFlag(this.flags, TLObject.FLAG_27);
-            int readInt322 = inputSerializedData.readInt32(z);
-            this.flags2 = readInt322;
-            this.offline = TLObject.hasFlag(readInt322, 2);
             this.id = inputSerializedData.readInt32(z);
             if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+                TL_peerUser tL_peerUser = new TL_peerUser();
+                this.from_id = tL_peerUser;
+                tL_peerUser.user_id = inputSerializedData.readInt32(z);
             }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                this.from_boosts_applied = inputSerializedData.readInt32(z);
+            Peer TLdeserialize = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.peer_id = TLdeserialize;
+            if (this.from_id == null) {
+                this.from_id = TLdeserialize;
             }
+            this.date = inputSerializedData.readInt32(z);
+            this.action = MessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+        }
+
+        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 1, this.unread);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 2, this.out);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
+            this.flags = flag3;
+            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
+            this.flags = flag4;
+            int flag5 = TLObject.setFlag(flag4, 8192, this.silent);
+            this.flags = flag5;
+            int flag6 = TLObject.setFlag(flag5, 16384, this.post);
+            this.flags = flag6;
+            outputSerializedData.writeInt32(flag6);
+            outputSerializedData.writeInt32(this.id);
+            if (TLObject.hasFlag(this.flags, 256)) {
+                outputSerializedData.writeInt32((int) this.from_id.user_id);
+            }
+            this.peer_id.serializeToStream(outputSerializedData);
+            outputSerializedData.writeInt32(this.date);
+            this.action.serializeToStream(outputSerializedData);
+        }
+    }
+
+    public static class TL_message_old4 extends TL_message {
+        public static final int constructor = -1023016155;
+
+        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z) | 768;
+            this.flags = readInt32;
+            this.unread = TLObject.hasFlag(readInt32, 1);
+            this.out = TLObject.hasFlag(this.flags, 2);
+            this.mentioned = TLObject.hasFlag(this.flags, 16);
+            this.media_unread = TLObject.hasFlag(this.flags, 32);
+            this.id = inputSerializedData.readInt32(z);
+            TL_peerUser tL_peerUser = new TL_peerUser();
+            this.from_id = tL_peerUser;
+            tL_peerUser.user_id = inputSerializedData.readInt32(z);
             this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags2, 1)) {
-                this.via_business_bot_id = inputSerializedData.readInt64(z);
+                TL_messageFwdHeader tL_messageFwdHeader = new TL_messageFwdHeader();
+                this.fwd_from = tL_messageFwdHeader;
+                tL_messageFwdHeader.from_id = new TL_peerUser();
+                this.fwd_from.from_id.user_id = inputSerializedData.readInt32(z);
+                MessageFwdHeader messageFwdHeader = this.fwd_from;
+                messageFwdHeader.flags = 1 | messageFwdHeader.flags;
+                messageFwdHeader.date = inputSerializedData.readInt32(z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
+                this.reply_to = tL_messageReplyHeader;
+                tL_messageReplyHeader.flags |= 16;
+                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
             }
             this.date = inputSerializedData.readInt32(z);
             this.message = inputSerializedData.readString(z);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-                this.media = TLdeserialize;
-                if (TLdeserialize != null) {
-                    this.ttl = TLdeserialize.ttl_seconds;
-                }
-                if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                    this.message = this.media.captionLegacy;
-                }
+            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.media = TLdeserialize;
+            if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
+                this.message = this.media.captionLegacy;
             }
             if (TLObject.hasFlag(this.flags, 64)) {
                 this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.views = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.forwards = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies = MessageReplies.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                this.edit_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                this.post_author = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                this.grouped_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions = MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                this.quick_reply_shortcut_id = inputSerializedData.readInt32(z);
             }
         }
 
         @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
+            int flag = TLObject.setFlag(this.flags, 1, this.unread);
             this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
+            int flag2 = TLObject.setFlag(flag, 2, this.out);
             this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
+            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
             this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
+            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
             this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 262144, this.from_scheduled);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
-            this.flags = flag7;
-            int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
-            this.flags = flag8;
-            int flag9 = TLObject.setFlag(flag8, 16777216, this.pinned);
-            this.flags = flag9;
-            int flag10 = TLObject.setFlag(flag9, 67108864, this.noforwards);
-            this.flags = flag10;
-            int flag11 = TLObject.setFlag(flag10, TLObject.FLAG_27, this.invert_media);
-            this.flags = flag11;
-            outputSerializedData.writeInt32(flag11);
-            int flag12 = TLObject.setFlag(this.flags2, 2, this.offline);
-            this.flags2 = flag12;
-            outputSerializedData.writeInt32(flag12);
+            outputSerializedData.writeInt32(flag4);
             outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                outputSerializedData.writeInt32(this.from_boosts_applied);
-            }
+            outputSerializedData.writeInt32((int) this.from_id.user_id);
             this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id.serializeToStream(outputSerializedData);
-            }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt64(this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags2, 1)) {
-                outputSerializedData.writeInt64(this.via_business_bot_id);
+                outputSerializedData.writeInt32((int) this.fwd_from.from_id.user_id);
+                outputSerializedData.writeInt32(this.fwd_from.date);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
+                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
             }
             outputSerializedData.writeInt32(this.date);
             outputSerializedData.writeString(this.message);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                this.media.serializeToStream(outputSerializedData);
-            }
+            this.media.serializeToStream(outputSerializedData);
             if (TLObject.hasFlag(this.flags, 64)) {
                 this.reply_markup.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                Vector.serialize(outputSerializedData, this.entities);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.views);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.forwards);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                outputSerializedData.writeInt32(this.edit_date);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                outputSerializedData.writeString(this.post_author);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                outputSerializedData.writeInt64(this.grouped_id);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                outputSerializedData.writeInt32(this.quick_reply_shortcut_id);
             }
             writeAttachPath(outputSerializedData);
         }
     }
 
-    public static class TL_message_layer176 extends TL_message {
-        public static final int constructor = -1502839044;
+    public static class TL_message_old3 extends TL_message {
+        public static final int constructor = -1481959023;
+
+        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z) | 768;
+            this.flags = readInt32;
+            this.unread = TLObject.hasFlag(readInt32, 1);
+            this.out = TLObject.hasFlag(this.flags, 2);
+            this.mentioned = TLObject.hasFlag(this.flags, 16);
+            this.media_unread = TLObject.hasFlag(this.flags, 32);
+            this.id = inputSerializedData.readInt32(z);
+            TL_peerUser tL_peerUser = new TL_peerUser();
+            this.from_id = tL_peerUser;
+            tL_peerUser.user_id = inputSerializedData.readInt32(z);
+            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            if (TLObject.hasFlag(this.flags, 4)) {
+                TL_messageFwdHeader tL_messageFwdHeader = new TL_messageFwdHeader();
+                this.fwd_from = tL_messageFwdHeader;
+                tL_messageFwdHeader.from_id = new TL_peerUser();
+                this.fwd_from.from_id.user_id = inputSerializedData.readInt32(z);
+                MessageFwdHeader messageFwdHeader = this.fwd_from;
+                messageFwdHeader.flags = 1 | messageFwdHeader.flags;
+                messageFwdHeader.date = inputSerializedData.readInt32(z);
+            }
+            if (TLObject.hasFlag(this.flags, 8)) {
+                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
+                this.reply_to = tL_messageReplyHeader;
+                tL_messageReplyHeader.flags |= 16;
+                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
+            }
+            this.date = inputSerializedData.readInt32(z);
+            this.message = inputSerializedData.readString(z);
+            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.media = TLdeserialize;
+            if (TLdeserialize == null || TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
+                return;
+            }
+            this.message = this.media.captionLegacy;
+        }
+
+        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 1, this.unread);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 2, this.out);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
+            this.flags = flag3;
+            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
+            this.flags = flag4;
+            outputSerializedData.writeInt32(flag4);
+            outputSerializedData.writeInt32(this.id);
+            outputSerializedData.writeInt32((int) this.from_id.user_id);
+            this.peer_id.serializeToStream(outputSerializedData);
+            if (TLObject.hasFlag(this.flags, 4)) {
+                outputSerializedData.writeInt32((int) this.fwd_from.from_id.user_id);
+                outputSerializedData.writeInt32(this.fwd_from.date);
+            }
+            if (TLObject.hasFlag(this.flags, 8)) {
+                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
+            }
+            outputSerializedData.writeInt32(this.date);
+            outputSerializedData.writeString(this.message);
+            this.media.serializeToStream(outputSerializedData);
+            writeAttachPath(outputSerializedData);
+        }
+    }
+
+    public static class TL_message_old2 extends TL_message {
+        public static final int constructor = 1450613171;
+
+        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z) | 768;
+            this.flags = readInt32;
+            this.unread = TLObject.hasFlag(readInt32, 1);
+            this.out = TLObject.hasFlag(this.flags, 2);
+            this.mentioned = TLObject.hasFlag(this.flags, 16);
+            this.media_unread = TLObject.hasFlag(this.flags, 32);
+            this.id = inputSerializedData.readInt32(z);
+            TL_peerUser tL_peerUser = new TL_peerUser();
+            this.from_id = tL_peerUser;
+            tL_peerUser.user_id = inputSerializedData.readInt32(z);
+            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.date = inputSerializedData.readInt32(z);
+            this.message = inputSerializedData.readString(z);
+            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.media = TLdeserialize;
+            if (TLdeserialize == null || TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
+                return;
+            }
+            this.message = this.media.captionLegacy;
+        }
+
+        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 1, this.unread);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 2, this.out);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
+            this.flags = flag3;
+            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
+            this.flags = flag4;
+            outputSerializedData.writeInt32(flag4);
+            outputSerializedData.writeInt32(this.id);
+            outputSerializedData.writeInt32((int) this.from_id.user_id);
+            this.peer_id.serializeToStream(outputSerializedData);
+            outputSerializedData.writeInt32(this.date);
+            outputSerializedData.writeString(this.message);
+            this.media.serializeToStream(outputSerializedData);
+            writeAttachPath(outputSerializedData);
+        }
+    }
+
+    public static class TL_messageService_old extends TL_messageService {
+        public static final int constructor = -1618124613;
+
+        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.id = inputSerializedData.readInt32(z);
+            TL_peerUser tL_peerUser = new TL_peerUser();
+            this.from_id = tL_peerUser;
+            tL_peerUser.user_id = inputSerializedData.readInt32(z);
+            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.out = inputSerializedData.readBool(z);
+            this.unread = inputSerializedData.readBool(z);
+            this.flags |= 256;
+            this.date = inputSerializedData.readInt32(z);
+            this.action = MessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+        }
+
+        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt32(this.id);
+            outputSerializedData.writeInt32((int) this.from_id.user_id);
+            this.peer_id.serializeToStream(outputSerializedData);
+            outputSerializedData.writeBool(this.out);
+            outputSerializedData.writeBool(this.unread);
+            outputSerializedData.writeInt32(this.date);
+            this.action.serializeToStream(outputSerializedData);
+        }
+    }
+
+    public static class TL_messageForwarded_old extends TL_messageForwarded_old2 {
+        public static final int constructor = 99903492;
+
+        @Override // org.telegram.tgnet.TLRPC.TL_messageForwarded_old2, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.id = inputSerializedData.readInt32(z);
+            TL_messageFwdHeader tL_messageFwdHeader = new TL_messageFwdHeader();
+            this.fwd_from = tL_messageFwdHeader;
+            tL_messageFwdHeader.from_id = new TL_peerUser();
+            this.fwd_from.from_id.user_id = inputSerializedData.readInt32(z);
+            MessageFwdHeader messageFwdHeader = this.fwd_from;
+            messageFwdHeader.flags |= 1;
+            messageFwdHeader.date = inputSerializedData.readInt32(z);
+            TL_peerUser tL_peerUser = new TL_peerUser();
+            this.from_id = tL_peerUser;
+            tL_peerUser.user_id = inputSerializedData.readInt32(z);
+            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.out = inputSerializedData.readBool(z);
+            this.unread = inputSerializedData.readBool(z);
+            this.flags |= 772;
+            this.date = inputSerializedData.readInt32(z);
+            this.message = inputSerializedData.readString(z);
+            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.media = TLdeserialize;
+            if (TLdeserialize == null || TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
+                return;
+            }
+            this.message = this.media.captionLegacy;
+        }
+
+        @Override // org.telegram.tgnet.TLRPC.TL_messageForwarded_old2, org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt32(this.id);
+            outputSerializedData.writeInt32((int) this.fwd_from.from_id.user_id);
+            outputSerializedData.writeInt32(this.fwd_from.date);
+            outputSerializedData.writeInt32((int) this.from_id.user_id);
+            this.peer_id.serializeToStream(outputSerializedData);
+            outputSerializedData.writeBool(this.out);
+            outputSerializedData.writeBool(this.unread);
+            outputSerializedData.writeInt32(this.date);
+            outputSerializedData.writeString(this.message);
+            this.media.serializeToStream(outputSerializedData);
+            writeAttachPath(outputSerializedData);
+        }
+    }
+
+    public static class TL_message_old extends TL_message {
+        public static final int constructor = 585853626;
+
+        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.id = inputSerializedData.readInt32(z);
+            TL_peerUser tL_peerUser = new TL_peerUser();
+            this.from_id = tL_peerUser;
+            tL_peerUser.user_id = inputSerializedData.readInt32(z);
+            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.out = inputSerializedData.readBool(z);
+            this.unread = inputSerializedData.readBool(z);
+            this.flags |= 768;
+            this.date = inputSerializedData.readInt32(z);
+            this.message = inputSerializedData.readString(z);
+            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.media = TLdeserialize;
+            if (TLdeserialize == null || TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
+                return;
+            }
+            this.message = this.media.captionLegacy;
+        }
+
+        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt32(this.id);
+            outputSerializedData.writeInt32((int) this.from_id.user_id);
+            this.peer_id.serializeToStream(outputSerializedData);
+            outputSerializedData.writeBool(this.out);
+            outputSerializedData.writeBool(this.unread);
+            outputSerializedData.writeInt32(this.date);
+            outputSerializedData.writeString(this.message);
+            this.media.serializeToStream(outputSerializedData);
+            writeAttachPath(outputSerializedData);
+        }
+    }
+
+    public static class TL_message_secret extends TL_message {
+        public static final int constructor = 1431655930;
 
         @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
+            this.unread = TLObject.hasFlag(readInt32, 1);
+            this.out = TLObject.hasFlag(this.flags, 2);
             this.mentioned = TLObject.hasFlag(this.flags, 16);
             this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.pinned = TLObject.hasFlag(this.flags, 16777216);
-            this.noforwards = TLObject.hasFlag(this.flags, 67108864);
-            this.invert_media = TLObject.hasFlag(this.flags, TLObject.FLAG_27);
             this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                this.from_boosts_applied = inputSerializedData.readInt32(z);
-            }
+            this.ttl = inputSerializedData.readInt32(z);
+            TL_peerUser tL_peerUser = new TL_peerUser();
+            this.from_id = tL_peerUser;
+            tL_peerUser.user_id = inputSerializedData.readInt32(z);
             this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
             this.date = inputSerializedData.readInt32(z);
             this.message = inputSerializedData.readString(z);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-                this.media = TLdeserialize;
-                if (TLdeserialize != null) {
-                    this.ttl = TLdeserialize.ttl_seconds;
-                }
-                if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                    this.message = this.media.captionLegacy;
-                }
+            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.media = TLdeserialize;
+            if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
+                this.message = this.media.captionLegacy;
             }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
+            if (TLObject.hasFlag(this.flags, 2048)) {
+                this.via_bot_name = inputSerializedData.readString(z);
             }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.views = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.forwards = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies = MessageReplies.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                this.edit_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                this.post_author = inputSerializedData.readString(z);
+            if (TLObject.hasFlag(this.flags, 8)) {
+                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
+                this.reply_to = tL_messageReplyHeader;
+                tL_messageReplyHeader.reply_to_random_id = inputSerializedData.readInt64(z);
             }
             if (TLObject.hasFlag(this.flags, 131072)) {
                 this.grouped_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions = MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                this.quick_reply_shortcut_id = inputSerializedData.readInt32(z);
             }
         }
 
         @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
+            int flag = TLObject.setFlag(this.flags, 1, this.unread);
             this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
+            int flag2 = TLObject.setFlag(flag, 2, this.out);
             this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
+            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
             this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
+            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
             this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 262144, this.from_scheduled);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
-            this.flags = flag7;
-            int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
-            this.flags = flag8;
-            int flag9 = TLObject.setFlag(flag8, 16777216, this.pinned);
-            this.flags = flag9;
-            int flag10 = TLObject.setFlag(flag9, 67108864, this.noforwards);
-            this.flags = flag10;
-            int flag11 = TLObject.setFlag(flag10, TLObject.FLAG_27, this.invert_media);
-            this.flags = flag11;
-            outputSerializedData.writeInt32(flag11);
+            outputSerializedData.writeInt32(flag4);
             outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                outputSerializedData.writeInt32(this.from_boosts_applied);
-            }
+            outputSerializedData.writeInt32(this.ttl);
+            outputSerializedData.writeInt32((int) this.from_id.user_id);
             this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt64(this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
-            }
             outputSerializedData.writeInt32(this.date);
             outputSerializedData.writeString(this.message);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                this.media.serializeToStream(outputSerializedData);
+            this.media.serializeToStream(outputSerializedData);
+            Vector.serialize(outputSerializedData, this.entities);
+            if (TLObject.hasFlag(this.flags, 2048)) {
+                outputSerializedData.writeString(this.via_bot_name);
             }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                Vector.serialize(outputSerializedData, this.entities);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.views);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.forwards);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                outputSerializedData.writeInt32(this.edit_date);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                outputSerializedData.writeString(this.post_author);
+            if (TLObject.hasFlag(this.flags, 8)) {
+                outputSerializedData.writeInt64(this.reply_to.reply_to_random_id);
             }
             if (TLObject.hasFlag(this.flags, 131072)) {
                 outputSerializedData.writeInt64(this.grouped_id);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
-                outputSerializedData.writeInt32(this.quick_reply_shortcut_id);
             }
             writeAttachPath(outputSerializedData);
         }
     }
 
-    public static class TL_message_layer175 extends TL_message {
-        public static final int constructor = 508332649;
+    public static class TL_message_secret_layer72 extends TL_message {
+        public static final int constructor = 1431655929;
 
         @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
-            this.out = TLObject.hasFlag(readInt32, 2);
+            this.unread = TLObject.hasFlag(readInt32, 1);
+            this.out = TLObject.hasFlag(this.flags, 2);
             this.mentioned = TLObject.hasFlag(this.flags, 16);
             this.media_unread = TLObject.hasFlag(this.flags, 32);
-            this.silent = TLObject.hasFlag(this.flags, 8192);
-            this.post = TLObject.hasFlag(this.flags, 16384);
-            this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
-            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.pinned = TLObject.hasFlag(this.flags, 16777216);
-            this.noforwards = TLObject.hasFlag(this.flags, 67108864);
-            this.invert_media = TLObject.hasFlag(this.flags, TLObject.FLAG_27);
             this.id = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                this.from_boosts_applied = inputSerializedData.readInt32(z);
-            }
+            this.ttl = inputSerializedData.readInt32(z);
+            TL_peerUser tL_peerUser = new TL_peerUser();
+            this.from_id = tL_peerUser;
+            tL_peerUser.user_id = inputSerializedData.readInt32(z);
             this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
             this.date = inputSerializedData.readInt32(z);
             this.message = inputSerializedData.readString(z);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-                this.media = TLdeserialize;
-                if (TLdeserialize != null) {
-                    this.ttl = TLdeserialize.ttl_seconds;
-                }
-                if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                    this.message = this.media.captionLegacy;
-                }
+            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.media = TLdeserialize;
+            if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
+                this.message = this.media.captionLegacy;
             }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
+            if (TLObject.hasFlag(this.flags, 2048)) {
+                this.via_bot_name = inputSerializedData.readString(z);
             }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.views = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.forwards = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies = MessageReplies.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                this.edit_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                this.post_author = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                this.grouped_id = inputSerializedData.readInt64(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions = MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                this.ttl_period = inputSerializedData.readInt32(z);
+            if (TLObject.hasFlag(this.flags, 8)) {
+                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
+                this.reply_to = tL_messageReplyHeader;
+                tL_messageReplyHeader.reply_to_random_id = inputSerializedData.readInt64(z);
             }
         }
 
         @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 2, this.out);
+            int flag = TLObject.setFlag(this.flags, 1, this.unread);
             this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
+            int flag2 = TLObject.setFlag(flag, 2, this.out);
             this.flags = flag2;
-            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
+            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
             this.flags = flag3;
-            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
+            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
             this.flags = flag4;
-            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
-            this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 262144, this.from_scheduled);
-            this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
-            this.flags = flag7;
-            int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
-            this.flags = flag8;
-            int flag9 = TLObject.setFlag(flag8, 16777216, this.pinned);
-            this.flags = flag9;
-            int flag10 = TLObject.setFlag(flag9, 67108864, this.noforwards);
-            this.flags = flag10;
-            int flag11 = TLObject.setFlag(flag10, TLObject.FLAG_27, this.invert_media);
-            this.flags = flag11;
-            outputSerializedData.writeInt32(flag11);
+            outputSerializedData.writeInt32(flag4);
             outputSerializedData.writeInt32(this.id);
-            if (TLObject.hasFlag(this.flags, 256)) {
-                this.from_id.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_29)) {
-                outputSerializedData.writeInt32(this.from_boosts_applied);
-            }
+            outputSerializedData.writeInt32(this.ttl);
+            outputSerializedData.writeInt32((int) this.from_id.user_id);
             this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt64(this.via_bot_id);
-            }
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.reply_to.serializeToStream(outputSerializedData);
-            }
             outputSerializedData.writeInt32(this.date);
             outputSerializedData.writeString(this.message);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                this.media.serializeToStream(outputSerializedData);
+            this.media.serializeToStream(outputSerializedData);
+            Vector.serialize(outputSerializedData, this.entities);
+            if (TLObject.hasFlag(this.flags, 2048)) {
+                outputSerializedData.writeString(this.via_bot_name);
             }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                Vector.serialize(outputSerializedData, this.entities);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.views);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.forwards);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                outputSerializedData.writeInt32(this.edit_date);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                outputSerializedData.writeString(this.post_author);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                outputSerializedData.writeInt64(this.grouped_id);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                outputSerializedData.writeInt32(this.ttl_period);
+            if (TLObject.hasFlag(this.flags, 8)) {
+                outputSerializedData.writeInt64(this.reply_to.reply_to_random_id);
             }
             writeAttachPath(outputSerializedData);
         }
     }
 
-    public static class TL_message_layer173 extends TL_message {
-        public static final int constructor = 1992213009;
+    public static class TL_message_secret_old extends TL_message_secret {
+        public static final int constructor = 1431655928;
 
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
+        @Override // org.telegram.tgnet.TLRPC.TL_message_secret, org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z) | 768;
+            this.flags = readInt32;
+            this.unread = TLObject.hasFlag(readInt32, 1);
+            this.out = TLObject.hasFlag(this.flags, 2);
+            this.mentioned = TLObject.hasFlag(this.flags, 16);
+            this.media_unread = TLObject.hasFlag(this.flags, 32);
+            this.id = inputSerializedData.readInt32(z);
+            this.ttl = inputSerializedData.readInt32(z);
+            TL_peerUser tL_peerUser = new TL_peerUser();
+            this.from_id = tL_peerUser;
+            tL_peerUser.user_id = inputSerializedData.readInt32(z);
+            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.date = inputSerializedData.readInt32(z);
+            this.message = inputSerializedData.readString(z);
+            MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.media = TLdeserialize;
+            if (TLdeserialize == null || TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
+                return;
+            }
+            this.message = this.media.captionLegacy;
+        }
+
+        @Override // org.telegram.tgnet.TLRPC.TL_message_secret, org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 1, this.unread);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 2, this.out);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
+            this.flags = flag3;
+            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
+            this.flags = flag4;
+            outputSerializedData.writeInt32(flag4);
+            outputSerializedData.writeInt32(this.id);
+            outputSerializedData.writeInt32(this.ttl);
+            outputSerializedData.writeInt32((int) this.from_id.user_id);
+            this.peer_id.serializeToStream(outputSerializedData);
+            outputSerializedData.writeInt32(this.date);
+            outputSerializedData.writeString(this.message);
+            this.media.serializeToStream(outputSerializedData);
+            writeAttachPath(outputSerializedData);
+        }
+    }
+
+    public static class TL_messageService_layer123 extends TL_messageService {
+        public static final int constructor = 678405636;
+
+        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z);
+            this.flags = readInt32;
+            this.out = TLObject.hasFlag(readInt32, 2);
+            this.mentioned = TLObject.hasFlag(this.flags, 16);
+            this.media_unread = TLObject.hasFlag(this.flags, 32);
+            this.silent = TLObject.hasFlag(this.flags, 8192);
+            this.post = TLObject.hasFlag(this.flags, 16384);
+            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
+            this.id = inputSerializedData.readInt32(z);
+            if (TLObject.hasFlag(this.flags, 256)) {
+                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            if (TLObject.hasFlag(this.flags, 8)) {
+                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+            this.date = inputSerializedData.readInt32(z);
+            this.action = MessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+        }
+
+        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
             int flag = TLObject.setFlag(this.flags, 2, this.out);
@@ -84385,78 +80936,27 @@ public class TLRPC {
             this.flags = flag4;
             int flag5 = TLObject.setFlag(flag4, 16384, this.post);
             this.flags = flag5;
-            int flag6 = TLObject.setFlag(flag5, 262144, this.from_scheduled);
+            int flag6 = TLObject.setFlag(flag5, TLObject.FLAG_19, this.legacy);
             this.flags = flag6;
-            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
-            this.flags = flag7;
-            int flag8 = TLObject.setFlag(flag7, TLObject.FLAG_21, this.edit_hide);
-            this.flags = flag8;
-            int flag9 = TLObject.setFlag(flag8, 16777216, this.pinned);
-            this.flags = flag9;
-            int flag10 = TLObject.setFlag(flag9, 67108864, this.noforwards);
-            this.flags = flag10;
-            int flag11 = TLObject.setFlag(flag10, TLObject.FLAG_27, this.invert_media);
-            this.flags = flag11;
-            outputSerializedData.writeInt32(flag11);
+            outputSerializedData.writeInt32(flag6);
             outputSerializedData.writeInt32(this.id);
             if (TLObject.hasFlag(this.flags, 256)) {
                 this.from_id.serializeToStream(outputSerializedData);
             }
             this.peer_id.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
-                this.saved_peer_id.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                outputSerializedData.writeInt64(this.via_bot_id);
-            }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.reply_to.serializeToStream(outputSerializedData);
             }
             outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeString(this.message);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                this.media.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                Vector.serialize(outputSerializedData, this.entities);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.views);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                outputSerializedData.writeInt32(this.forwards);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                outputSerializedData.writeInt32(this.edit_date);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                outputSerializedData.writeString(this.post_author);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                outputSerializedData.writeInt64(this.grouped_id);
-            }
-            if (TLObject.hasFlag(this.flags, 1048576)) {
-                this.reactions.serializeToStream(outputSerializedData);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                Vector.serialize(outputSerializedData, this.restriction_reason);
-            }
-            if (TLObject.hasFlag(this.flags, 33554432)) {
-                outputSerializedData.writeInt32(this.ttl_period);
-            }
+            this.action.serializeToStream(outputSerializedData);
             writeAttachPath(outputSerializedData);
         }
+    }
 
-        @Override // org.telegram.tgnet.TLRPC.TL_message, org.telegram.tgnet.TLObject
+    public static class TL_messageService extends Message {
+        public static final int constructor = 2055212554;
+
+        @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
@@ -84465,12 +80965,8 @@ public class TLRPC {
             this.media_unread = TLObject.hasFlag(this.flags, 32);
             this.silent = TLObject.hasFlag(this.flags, 8192);
             this.post = TLObject.hasFlag(this.flags, 16384);
-            this.from_scheduled = TLObject.hasFlag(this.flags, 262144);
             this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
-            this.edit_hide = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
-            this.pinned = TLObject.hasFlag(this.flags, 16777216);
-            this.noforwards = TLObject.hasFlag(this.flags, 67108864);
-            this.invert_media = TLObject.hasFlag(this.flags, TLObject.FLAG_27);
+            this.reactions_are_possible = TLObject.hasFlag(this.flags, 512);
             this.id = inputSerializedData.readInt32(z);
             if (TLObject.hasFlag(this.flags, 256)) {
                 this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -84479,60 +80975,748 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
                 this.saved_peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.fwd_from = MessageFwdHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 2048)) {
-                this.via_bot_id = inputSerializedData.readInt64(z);
-            }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             this.date = inputSerializedData.readInt32(z);
-            this.message = inputSerializedData.readString(z);
-            if (TLObject.hasFlag(this.flags, 512)) {
-                MessageMedia TLdeserialize = MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-                this.media = TLdeserialize;
-                if (TLdeserialize != null) {
-                    this.ttl = TLdeserialize.ttl_seconds;
-                }
-                if (TLdeserialize != null && !TextUtils.isEmpty(TLdeserialize.captionLegacy)) {
-                    this.message = this.media.captionLegacy;
-                }
-            }
-            if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_markup = ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda190(), z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.views = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 1024)) {
-                this.forwards = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_23)) {
-                this.replies = MessageReplies.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, 32768)) {
-                this.edit_date = inputSerializedData.readInt32(z);
-            }
-            if (TLObject.hasFlag(this.flags, 65536)) {
-                this.post_author = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 131072)) {
-                this.grouped_id = inputSerializedData.readInt64(z);
-            }
+            this.action = MessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             if (TLObject.hasFlag(this.flags, 1048576)) {
                 this.reactions = MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
-                this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
             }
             if (TLObject.hasFlag(this.flags, 33554432)) {
                 this.ttl_period = inputSerializedData.readInt32(z);
             }
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 2, this.out);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
+            this.flags = flag3;
+            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
+            this.flags = flag4;
+            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
+            this.flags = flag5;
+            int flag6 = TLObject.setFlag(flag5, TLObject.FLAG_19, this.legacy);
+            this.flags = flag6;
+            int flag7 = TLObject.setFlag(flag6, 512, this.reactions_are_possible);
+            this.flags = flag7;
+            outputSerializedData.writeInt32(flag7);
+            outputSerializedData.writeInt32(this.id);
+            if (TLObject.hasFlag(this.flags, 256)) {
+                this.from_id.serializeToStream(outputSerializedData);
+            }
+            this.peer_id.serializeToStream(outputSerializedData);
+            if (TLObject.hasFlag(this.flags, TLObject.FLAG_28)) {
+                this.saved_peer_id.serializeToStream(outputSerializedData);
+            }
+            if (TLObject.hasFlag(this.flags, 8)) {
+                this.reply_to.serializeToStream(outputSerializedData);
+            }
+            outputSerializedData.writeInt32(this.date);
+            this.action.serializeToStream(outputSerializedData);
+            if (TLObject.hasFlag(this.flags, 1048576)) {
+                this.reactions.serializeToStream(outputSerializedData);
+            }
+            if (TLObject.hasFlag(this.flags, 33554432)) {
+                outputSerializedData.writeInt32(this.ttl_period);
+            }
+        }
+    }
+
+    public static class TL_messageService_layer204 extends TL_messageService {
+        public static final int constructor = -741178048;
+
+        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z);
+            this.flags = readInt32;
+            this.out = TLObject.hasFlag(readInt32, 2);
+            this.mentioned = TLObject.hasFlag(this.flags, 16);
+            this.media_unread = TLObject.hasFlag(this.flags, 32);
+            this.silent = TLObject.hasFlag(this.flags, 8192);
+            this.post = TLObject.hasFlag(this.flags, 16384);
+            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
+            this.reactions_are_possible = TLObject.hasFlag(this.flags, 512);
+            this.id = inputSerializedData.readInt32(z);
+            if (TLObject.hasFlag(this.flags, 256)) {
+                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            if (TLObject.hasFlag(this.flags, 8)) {
+                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+            this.date = inputSerializedData.readInt32(z);
+            this.action = MessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            if (TLObject.hasFlag(this.flags, 1048576)) {
+                this.reactions = MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+            if (TLObject.hasFlag(this.flags, 33554432)) {
+                this.ttl_period = inputSerializedData.readInt32(z);
+            }
+        }
+
+        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 2, this.out);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
+            this.flags = flag3;
+            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
+            this.flags = flag4;
+            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
+            this.flags = flag5;
+            int flag6 = TLObject.setFlag(flag5, TLObject.FLAG_19, this.legacy);
+            this.flags = flag6;
+            int flag7 = TLObject.setFlag(flag6, 512, this.reactions_are_possible);
+            this.flags = flag7;
+            outputSerializedData.writeInt32(flag7);
+            outputSerializedData.writeInt32(this.id);
+            if (TLObject.hasFlag(this.flags, 256)) {
+                this.from_id.serializeToStream(outputSerializedData);
+            }
+            this.peer_id.serializeToStream(outputSerializedData);
+            if (TLObject.hasFlag(this.flags, 8)) {
+                this.reply_to.serializeToStream(outputSerializedData);
+            }
+            outputSerializedData.writeInt32(this.date);
+            this.action.serializeToStream(outputSerializedData);
+            if (TLObject.hasFlag(this.flags, 1048576)) {
+                this.reactions.serializeToStream(outputSerializedData);
+            }
+            if (TLObject.hasFlag(this.flags, 33554432)) {
+                outputSerializedData.writeInt32(this.ttl_period);
+            }
+        }
+    }
+
+    public static class TL_messageService_layer195 extends TL_messageService {
+        public static final int constructor = 721967202;
+
+        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z);
+            this.flags = readInt32;
+            this.out = TLObject.hasFlag(readInt32, 2);
+            this.mentioned = TLObject.hasFlag(this.flags, 16);
+            this.media_unread = TLObject.hasFlag(this.flags, 32);
+            this.silent = TLObject.hasFlag(this.flags, 8192);
+            this.post = TLObject.hasFlag(this.flags, 16384);
+            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
+            this.id = inputSerializedData.readInt32(z);
+            if (TLObject.hasFlag(this.flags, 256)) {
+                this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            if (TLObject.hasFlag(this.flags, 8)) {
+                this.reply_to = MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+            this.date = inputSerializedData.readInt32(z);
+            this.action = MessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            if (TLObject.hasFlag(this.flags, 33554432)) {
+                this.ttl_period = inputSerializedData.readInt32(z);
+            }
+        }
+
+        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 2, this.out);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 16, this.mentioned);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 32, this.media_unread);
+            this.flags = flag3;
+            int flag4 = TLObject.setFlag(flag3, 8192, this.silent);
+            this.flags = flag4;
+            int flag5 = TLObject.setFlag(flag4, 16384, this.post);
+            this.flags = flag5;
+            int flag6 = TLObject.setFlag(flag5, TLObject.FLAG_19, this.legacy);
+            this.flags = flag6;
+            outputSerializedData.writeInt32(flag6);
+            outputSerializedData.writeInt32(this.id);
+            if (TLObject.hasFlag(this.flags, 256)) {
+                this.from_id.serializeToStream(outputSerializedData);
+            }
+            this.peer_id.serializeToStream(outputSerializedData);
+            if (TLObject.hasFlag(this.flags, 8)) {
+                this.reply_to.serializeToStream(outputSerializedData);
+            }
+            outputSerializedData.writeInt32(this.date);
+            this.action.serializeToStream(outputSerializedData);
+            if (TLObject.hasFlag(this.flags, 33554432)) {
+                outputSerializedData.writeInt32(this.ttl_period);
+            }
+        }
+    }
+
+    public static class TL_messageService_layer118 extends TL_messageService {
+        public static final int constructor = -1642487306;
+
+        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z);
+            this.flags = readInt32;
+            this.unread = TLObject.hasFlag(readInt32, 1);
+            this.out = TLObject.hasFlag(this.flags, 2);
+            this.mentioned = TLObject.hasFlag(this.flags, 16);
+            this.media_unread = TLObject.hasFlag(this.flags, 32);
+            this.silent = TLObject.hasFlag(this.flags, 8192);
+            this.post = TLObject.hasFlag(this.flags, 16384);
+            this.legacy = TLObject.hasFlag(this.flags, TLObject.FLAG_19);
+            this.id = inputSerializedData.readInt32(z);
+            if (TLObject.hasFlag(this.flags, 256)) {
+                TL_peerUser tL_peerUser = new TL_peerUser();
+                this.from_id = tL_peerUser;
+                tL_peerUser.user_id = inputSerializedData.readInt32(z);
+            }
+            this.peer_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            if (TLObject.hasFlag(this.flags, 8)) {
+                TL_messageReplyHeader tL_messageReplyHeader = new TL_messageReplyHeader();
+                this.reply_to = tL_messageReplyHeader;
+                tL_messageReplyHeader.flags = 16 | tL_messageReplyHeader.flags;
+                tL_messageReplyHeader.reply_to_msg_id = inputSerializedData.readInt32(z);
+            }
+            this.date = inputSerializedData.readInt32(z);
+            this.action = MessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+        }
+
+        @Override // org.telegram.tgnet.TLRPC.TL_messageService, org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 1, this.unread);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 2, this.out);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 16, this.mentioned);
+            this.flags = flag3;
+            int flag4 = TLObject.setFlag(flag3, 32, this.media_unread);
+            this.flags = flag4;
+            int flag5 = TLObject.setFlag(flag4, 8192, this.silent);
+            this.flags = flag5;
+            int flag6 = TLObject.setFlag(flag5, 16384, this.post);
+            this.flags = flag6;
+            int flag7 = TLObject.setFlag(flag6, TLObject.FLAG_19, this.legacy);
+            this.flags = flag7;
+            outputSerializedData.writeInt32(flag7);
+            outputSerializedData.writeInt32(this.id);
+            if (TLObject.hasFlag(this.flags, 256)) {
+                outputSerializedData.writeInt32((int) this.from_id.user_id);
+            }
+            this.peer_id.serializeToStream(outputSerializedData);
+            if (TLObject.hasFlag(this.flags, 8)) {
+                outputSerializedData.writeInt32(this.reply_to.reply_to_msg_id);
+            }
+            outputSerializedData.writeInt32(this.date);
+            this.action.serializeToStream(outputSerializedData);
+            writeAttachPath(outputSerializedData);
+        }
+    }
+
+    public static abstract class Dialog extends TLObject {
+        public DraftMessage draft;
+        public int flags;
+        public int folder_id;
+        public long id;
+        public boolean isFolder;
+        public int last_message_date;
+        public PeerNotifySettings notify_settings;
+        public Peer peer;
+        public boolean pinned;
+        public int pinnedNum;
+        public int pts;
+        public int read_inbox_max_id;
+        public int read_outbox_max_id;
+        public int top_message;
+        public int ttl_period;
+        public int unread_count;
+        public boolean unread_mark;
+        public int unread_mentions_count;
+        public int unread_poll_votes_count;
+        public int unread_reactions_count;
+        public boolean view_forum_as_messages;
+
+        private static Dialog fromConstructor(int i) {
+            if (i == -1460809483) {
+                return new TL_dialog_layer149();
+            }
+            if (i == -712374074) {
+                return new TL_dialog_layer223();
+            }
+            if (i == -58066957) {
+                return new TL_dialog();
+            }
+            if (i != 1908216652) {
+                return null;
+            }
+            TL_dialogFolder tL_dialogFolder = new TL_dialogFolder();
+            tL_dialogFolder.isFolder = true;
+            return tL_dialogFolder;
+        }
+
+        public static Dialog TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+            return (Dialog) TLObject.TLdeserialize(Dialog.class, fromConstructor(i), inputSerializedData, i, z);
+        }
+    }
+
+    public static class TL_dialog extends Dialog {
+        public static final int constructor = -58066957;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z);
+            this.flags = readInt32;
+            this.pinned = TLObject.hasFlag(readInt32, 4);
+            this.unread_mark = TLObject.hasFlag(this.flags, 8);
+            this.view_forum_as_messages = TLObject.hasFlag(this.flags, 64);
+            this.peer = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.top_message = inputSerializedData.readInt32(z);
+            this.read_inbox_max_id = inputSerializedData.readInt32(z);
+            this.read_outbox_max_id = inputSerializedData.readInt32(z);
+            this.unread_count = inputSerializedData.readInt32(z);
+            this.unread_mentions_count = inputSerializedData.readInt32(z);
+            this.unread_reactions_count = inputSerializedData.readInt32(z);
+            this.unread_poll_votes_count = inputSerializedData.readInt32(z);
+            this.notify_settings = PeerNotifySettings.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                this.pts = inputSerializedData.readInt32(z);
+            }
+            if (TLObject.hasFlag(this.flags, 2)) {
+                this.draft = DraftMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+            if (TLObject.hasFlag(this.flags, 16)) {
+                this.folder_id = inputSerializedData.readInt32(z);
+            }
+            if (TLObject.hasFlag(this.flags, 32)) {
+                this.ttl_period = inputSerializedData.readInt32(z);
+            }
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 4, this.pinned);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 8, this.unread_mark);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 64, this.view_forum_as_messages);
+            this.flags = flag3;
+            outputSerializedData.writeInt32(flag3);
+            this.peer.serializeToStream(outputSerializedData);
+            outputSerializedData.writeInt32(this.top_message);
+            outputSerializedData.writeInt32(this.read_inbox_max_id);
+            outputSerializedData.writeInt32(this.read_outbox_max_id);
+            outputSerializedData.writeInt32(this.unread_count);
+            outputSerializedData.writeInt32(this.unread_mentions_count);
+            outputSerializedData.writeInt32(this.unread_reactions_count);
+            outputSerializedData.writeInt32(this.unread_poll_votes_count);
+            this.notify_settings.serializeToStream(outputSerializedData);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                outputSerializedData.writeInt32(this.pts);
+            }
+            if (TLObject.hasFlag(this.flags, 2)) {
+                this.draft.serializeToStream(outputSerializedData);
+            }
+            if (TLObject.hasFlag(this.flags, 16)) {
+                outputSerializedData.writeInt32(this.folder_id);
+            }
+            if (TLObject.hasFlag(this.flags, 32)) {
+                outputSerializedData.writeInt32(this.ttl_period);
+            }
+        }
+    }
+
+    public static class TL_dialog_layer223 extends TL_dialog {
+        public static final int constructor = -712374074;
+
+        @Override // org.telegram.tgnet.TLRPC.TL_dialog, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z);
+            this.flags = readInt32;
+            this.pinned = TLObject.hasFlag(readInt32, 4);
+            this.unread_mark = TLObject.hasFlag(this.flags, 8);
+            this.view_forum_as_messages = TLObject.hasFlag(this.flags, 64);
+            this.peer = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.top_message = inputSerializedData.readInt32(z);
+            this.read_inbox_max_id = inputSerializedData.readInt32(z);
+            this.read_outbox_max_id = inputSerializedData.readInt32(z);
+            this.unread_count = inputSerializedData.readInt32(z);
+            this.unread_mentions_count = inputSerializedData.readInt32(z);
+            this.unread_reactions_count = inputSerializedData.readInt32(z);
+            this.notify_settings = PeerNotifySettings.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                this.pts = inputSerializedData.readInt32(z);
+            }
+            if (TLObject.hasFlag(this.flags, 2)) {
+                this.draft = DraftMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+            if (TLObject.hasFlag(this.flags, 16)) {
+                this.folder_id = inputSerializedData.readInt32(z);
+            }
+            if (TLObject.hasFlag(this.flags, 32)) {
+                this.ttl_period = inputSerializedData.readInt32(z);
+            }
+        }
+
+        @Override // org.telegram.tgnet.TLRPC.TL_dialog, org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 4, this.pinned);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 8, this.unread_mark);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 64, this.view_forum_as_messages);
+            this.flags = flag3;
+            outputSerializedData.writeInt32(flag3);
+            this.peer.serializeToStream(outputSerializedData);
+            outputSerializedData.writeInt32(this.top_message);
+            outputSerializedData.writeInt32(this.read_inbox_max_id);
+            outputSerializedData.writeInt32(this.read_outbox_max_id);
+            outputSerializedData.writeInt32(this.unread_count);
+            outputSerializedData.writeInt32(this.unread_mentions_count);
+            outputSerializedData.writeInt32(this.unread_reactions_count);
+            this.notify_settings.serializeToStream(outputSerializedData);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                outputSerializedData.writeInt32(this.pts);
+            }
+            if (TLObject.hasFlag(this.flags, 2)) {
+                this.draft.serializeToStream(outputSerializedData);
+            }
+            if (TLObject.hasFlag(this.flags, 16)) {
+                outputSerializedData.writeInt32(this.folder_id);
+            }
+            if (TLObject.hasFlag(this.flags, 32)) {
+                outputSerializedData.writeInt32(this.ttl_period);
+            }
+        }
+    }
+
+    public static class TL_dialog_layer149 extends TL_dialog {
+        public static final int constructor = -1460809483;
+
+        @Override // org.telegram.tgnet.TLRPC.TL_dialog, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z);
+            this.flags = readInt32;
+            this.pinned = TLObject.hasFlag(readInt32, 4);
+            this.unread_mark = TLObject.hasFlag(this.flags, 8);
+            this.peer = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.top_message = inputSerializedData.readInt32(z);
+            this.read_inbox_max_id = inputSerializedData.readInt32(z);
+            this.read_outbox_max_id = inputSerializedData.readInt32(z);
+            this.unread_count = inputSerializedData.readInt32(z);
+            this.unread_mentions_count = inputSerializedData.readInt32(z);
+            this.unread_reactions_count = inputSerializedData.readInt32(z);
+            this.notify_settings = PeerNotifySettings.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                this.pts = inputSerializedData.readInt32(z);
+            }
+            if (TLObject.hasFlag(this.flags, 2)) {
+                this.draft = DraftMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+            if (TLObject.hasFlag(this.flags, 16)) {
+                this.folder_id = inputSerializedData.readInt32(z);
+            }
+            if (TLObject.hasFlag(this.flags, 32)) {
+                this.ttl_period = inputSerializedData.readInt32(z);
+            }
+        }
+
+        @Override // org.telegram.tgnet.TLRPC.TL_dialog, org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 4, this.pinned);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 8, this.unread_mark);
+            this.flags = flag2;
+            outputSerializedData.writeInt32(flag2);
+            this.peer.serializeToStream(outputSerializedData);
+            outputSerializedData.writeInt32(this.top_message);
+            outputSerializedData.writeInt32(this.read_inbox_max_id);
+            outputSerializedData.writeInt32(this.read_outbox_max_id);
+            outputSerializedData.writeInt32(this.unread_count);
+            outputSerializedData.writeInt32(this.unread_mentions_count);
+            outputSerializedData.writeInt32(this.unread_reactions_count);
+            this.notify_settings.serializeToStream(outputSerializedData);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                outputSerializedData.writeInt32(this.pts);
+            }
+            if (TLObject.hasFlag(this.flags, 2)) {
+                this.draft.serializeToStream(outputSerializedData);
+            }
+            if (TLObject.hasFlag(this.flags, 16)) {
+                outputSerializedData.writeInt32(this.folder_id);
+            }
+            if (TLObject.hasFlag(this.flags, 32)) {
+                outputSerializedData.writeInt32(this.ttl_period);
+            }
+        }
+    }
+
+    public static class TL_dialogFolder extends Dialog {
+        public static final int constructor = 1908216652;
+        public TL_folder folder;
+        public int unread_muted_messages_count;
+        public int unread_muted_peers_count;
+        public int unread_unmuted_messages_count;
+        public int unread_unmuted_peers_count;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z);
+            this.flags = readInt32;
+            this.pinned = TLObject.hasFlag(readInt32, 4);
+            this.folder = TL_folder.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.peer = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.top_message = inputSerializedData.readInt32(z);
+            this.unread_muted_peers_count = inputSerializedData.readInt32(z);
+            this.unread_unmuted_peers_count = inputSerializedData.readInt32(z);
+            this.unread_muted_messages_count = inputSerializedData.readInt32(z);
+            this.unread_unmuted_messages_count = inputSerializedData.readInt32(z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 4, this.pinned);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
+            this.folder.serializeToStream(outputSerializedData);
+            this.peer.serializeToStream(outputSerializedData);
+            outputSerializedData.writeInt32(this.top_message);
+            outputSerializedData.writeInt32(this.unread_muted_peers_count);
+            outputSerializedData.writeInt32(this.unread_unmuted_peers_count);
+            outputSerializedData.writeInt32(this.unread_muted_messages_count);
+            outputSerializedData.writeInt32(this.unread_unmuted_messages_count);
+        }
+    }
+
+    public static class TL_chatEmpty extends Chat {
+        public static final int constructor = 693512293;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.id = inputSerializedData.readInt64(z);
+            this.title = "DELETED";
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt64(this.id);
+        }
+    }
+
+    public static class TL_chatEmpty_layer131 extends TL_chatEmpty {
+        public static final int constructor = -1683826688;
+
+        @Override // org.telegram.tgnet.TLRPC.TL_chatEmpty, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.id = inputSerializedData.readInt32(z);
+            this.title = "DELETED";
+        }
+
+        @Override // org.telegram.tgnet.TLRPC.TL_chatEmpty, org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt32((int) this.id);
+        }
+    }
+
+    public static class TL_upload_saveFilePart extends TLObject {
+        public static final int constructor = -1291540959;
+        public NativeByteBuffer bytes;
+        public long file_id;
+        public int file_part;
+
+        @Override // org.telegram.tgnet.TLObject
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return Bool.TLdeserialize(inputSerializedData, i, z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt64(this.file_id);
+            outputSerializedData.writeInt32(this.file_part);
+            outputSerializedData.writeByteBuffer(this.bytes);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void freeResources() {
+            NativeByteBuffer nativeByteBuffer;
+            if (this.disableFree || (nativeByteBuffer = this.bytes) == null) {
+                return;
+            }
+            nativeByteBuffer.reuse();
+            this.bytes = null;
+        }
+    }
+
+    public static class TL_messages_getStickers extends TLObject {
+        public static final int constructor = -710552671;
+        public String emoticon;
+        public long hash;
+
+        @Override // org.telegram.tgnet.TLObject
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return messages_Stickers.TLdeserialize(inputSerializedData, i, z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeString(this.emoticon);
+            outputSerializedData.writeInt64(this.hash);
+        }
+    }
+
+    public static class TL_messages_getAllStickers extends TLObject {
+        public static final int constructor = -1197432408;
+        public long hash;
+
+        @Override // org.telegram.tgnet.TLObject
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return messages_AllStickers.TLdeserialize(inputSerializedData, i, z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt64(this.hash);
+        }
+    }
+
+    public static class TL_upload_saveBigFilePart extends TLObject {
+        public static final int constructor = -562337987;
+        public NativeByteBuffer bytes;
+        public long file_id;
+        public int file_part;
+        public int file_total_parts;
+
+        @Override // org.telegram.tgnet.TLObject
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return Bool.TLdeserialize(inputSerializedData, i, z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt64(this.file_id);
+            outputSerializedData.writeInt32(this.file_part);
+            outputSerializedData.writeInt32(this.file_total_parts);
+            outputSerializedData.writeByteBuffer(this.bytes);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void freeResources() {
+            NativeByteBuffer nativeByteBuffer;
+            if (this.disableFree || (nativeByteBuffer = this.bytes) == null) {
+                return;
+            }
+            nativeByteBuffer.reuse();
+            this.bytes = null;
+        }
+    }
+
+    public static class TL_upload_getWebFile extends TLObject {
+        public static final int constructor = 619086221;
+        public int limit;
+        public InputWebFileLocation location;
+        public int offset;
+
+        @Override // org.telegram.tgnet.TLObject
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TL_upload_webFile.TLdeserialize(inputSerializedData, i, z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.location.serializeToStream(outputSerializedData);
+            outputSerializedData.writeInt32(this.offset);
+            outputSerializedData.writeInt32(this.limit);
+        }
+    }
+
+    public static class TL_upload_getCdnFile extends TLObject {
+        public static final int constructor = 962554330;
+        public byte[] file_token;
+        public int limit;
+        public long offset;
+
+        @Override // org.telegram.tgnet.TLObject
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return upload_CdnFile.TLdeserialize(inputSerializedData, i, z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeByteArray(this.file_token);
+            outputSerializedData.writeInt64(this.offset);
+            outputSerializedData.writeInt32(this.limit);
+        }
+    }
+
+    public static class TL_upload_reuploadCdnFile extends TLObject {
+        public static final int constructor = -1691921240;
+        public byte[] file_token;
+        public byte[] request_token;
+
+        @Override // org.telegram.tgnet.TLObject
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return Vector.TLDeserialize(inputSerializedData, i, z, new TLRPC$TL_upload_fileCdnRedirect$$ExternalSyntheticLambda0());
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeByteArray(this.file_token);
+            outputSerializedData.writeByteArray(this.request_token);
+        }
+    }
+
+    public static class TL_upload_getCdnFileHashes extends TLObject {
+        public static final int constructor = -1847836879;
+        public byte[] file_token;
+        public long offset;
+
+        @Override // org.telegram.tgnet.TLObject
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return Vector.TLDeserialize(inputSerializedData, i, z, new TLRPC$TL_upload_fileCdnRedirect$$ExternalSyntheticLambda0());
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeByteArray(this.file_token);
+            outputSerializedData.writeInt64(this.offset);
+        }
+    }
+
+    public static class TL_upload_getFileHashes extends TLObject {
+        public static final int constructor = -956147407;
+        public InputFileLocation location;
+        public int offset;
+
+        @Override // org.telegram.tgnet.TLObject
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return Vector.TLDeserialize(inputSerializedData, i, z, new TLRPC$TL_upload_fileCdnRedirect$$ExternalSyntheticLambda0());
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.location.serializeToStream(outputSerializedData);
+            outputSerializedData.writeInt32(this.offset);
         }
     }
 }

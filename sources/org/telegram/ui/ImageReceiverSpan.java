@@ -32,7 +32,7 @@ public class ImageReceiverSpan extends ReplacementSpan {
         }
     };
     private boolean shadowEnabled = true;
-    private int shadowPaintAlpha = NotificationCenter.invalidateMotionBackground;
+    private int shadowPaintAlpha = NotificationCenter.didReceiveCall;
 
     public ImageReceiverSpan(View view, int i, float f) {
         this.currentAccount = i;

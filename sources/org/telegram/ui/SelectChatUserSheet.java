@@ -24,8 +24,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
@@ -152,7 +152,7 @@ public class SelectChatUserSheet extends BottomSheetWithRecyclerListView {
         };
         BackupImageView backupImageView = new BackupImageView(context);
         backupImageView.setImageDrawable(new RLottieDrawable(R.raw.utyan_empty, "utyan_empty", AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
-        this.emptySearchView.addView(backupImageView, LayoutHelper.createFrame(NotificationCenter.dialogTranslate, NotificationCenter.dialogTranslate, 17));
+        this.emptySearchView.addView(backupImageView, LayoutHelper.createFrame(NotificationCenter.dialogIsTranslatable, NotificationCenter.dialogIsTranslatable, 17));
         this.admins = new ParticipantsList(this.currentAccount, chat.id, new TLRPC.TL_channelParticipantsAdmins()).listen(new Runnable() { // from class: org.telegram.ui.SelectChatUserSheet$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
@@ -554,7 +554,7 @@ public class SelectChatUserSheet extends BottomSheetWithRecyclerListView {
                 tL_channels_getParticipants.filter = this.filter;
                 tL_channels_getParticipants.limit = 30;
                 tL_channels_getParticipants.offset = this.clearOnLoad ? 0 : this.users.size();
-                ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_channels_getParticipants, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.SelectChatUserSheet$ParticipantsList$$ExternalSyntheticLambda0
+                ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_channels_getParticipants, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.SelectChatUserSheet$ParticipantsList$$ExternalSyntheticLambda0
                     @Override // org.telegram.messenger.Utilities.Callback2
                     public final void run(Object obj, Object obj2) {
                         SelectChatUserSheet.ParticipantsList.this.lambda$load$0((TLRPC.channels_ChannelParticipants) obj, (TLRPC.TL_error) obj2);
@@ -870,7 +870,7 @@ public class SelectChatUserSheet extends BottomSheetWithRecyclerListView {
         if (safeLastFragment3 == null) {
             return;
         }
-        AlertsCreator.showAddUserAlert(tL_error.text, safeLastFragment3, ChatObject.isChannelAndNotMegaGroup(this.chat), tL_channels_editCreator);
+        AlertsCreator.showAddUserAlert(tL_error, safeLastFragment3, ChatObject.isChannelAndNotMegaGroup(this.chat), tL_channels_editCreator);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

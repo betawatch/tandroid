@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import org.telegram.messenger.BotForumHelper;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.utils.tlutils.TlUtils;
@@ -19,6 +20,7 @@ import org.telegram.ui.MultiLayoutTypingAnimator;
 /* loaded from: classes3.dex */
 public class BotForumHelper extends BaseController {
     private static volatile BotForumHelper[] Instance = new BotForumHelper[4];
+    private BotDraftAnimationsPool botDraftAnimationsPool;
     private final DialogTopicIdKeyMap<BotDraftMessage> botTextDraftsByRandomIds;
     private final LongSparseArray<List<MessagesStorage.IntCallback>> pendingBotTopics;
 
@@ -114,28 +116,39 @@ public class BotForumHelper extends BaseController {
     }
 
     public MessageObject onBotForumDraftCheckNewMessages(long j, int i, int i2, String str) {
+        BotDraftMessage botDraftMessage;
         long j2 = i;
         LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j, j2);
         if (longSparseArray == null) {
             return null;
         }
-        for (int i3 = 0; i3 < longSparseArray.size(); i3++) {
-            BotDraftMessage valueAt = longSparseArray.valueAt(i3);
-            if (str.startsWith(valueAt.text.text)) {
-                if (valueAt.selfDestruct != null) {
-                    AndroidUtilities.cancelRunOnUIThread(valueAt.selfDestruct);
-                }
-                this.botTextDraftsByRandomIds.remove(j, j2, valueAt.randomId);
-                FileLog.d("[BotForum] onDraftNewMessage " + j + " " + i);
-                return valueAt.messageObject;
+        int i3 = 0;
+        BotDraftMessage botDraftMessage2 = null;
+        while (true) {
+            if (i3 >= longSparseArray.size()) {
+                botDraftMessage = botDraftMessage2;
+                break;
             }
+            BotDraftMessage valueAt = longSparseArray.valueAt(i3);
+            if (botDraftMessage2 == null) {
+                botDraftMessage2 = valueAt;
+            }
+            if (str.startsWith(valueAt.text.text)) {
+                botDraftMessage = valueAt;
+                break;
+            }
+            i3++;
         }
-        if (longSparseArray.size() <= 0) {
+        if (botDraftMessage == null) {
             return null;
         }
-        BotDraftMessage valueAt2 = longSparseArray.valueAt(0);
+        if (botDraftMessage.selfDestruct != null) {
+            AndroidUtilities.cancelRunOnUIThread(botDraftMessage.selfDestruct);
+        }
+        this.botTextDraftsByRandomIds.remove(j, j2, botDraftMessage.randomId);
+        this.botDraftAnimationsPool.bind(botDraftMessage.messageObject.getId(), i2);
         FileLog.d("[BotForum] onDraftNewMessage " + j + " " + i);
-        return valueAt2.messageObject;
+        return botDraftMessage.messageObject;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -219,7 +232,7 @@ public class BotForumHelper extends BaseController {
             tL_inputReplyToMessage.reply_to_msg_id = i;
             TlUtils.setInputReplyToFromSendMessageRequest(tLObject, tL_inputReplyToMessage);
         }
-        getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda4
+        getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 BotForumHelper.this.lambda$beforeSendingFinalRequest$1(jArr, j, i, runnable);
@@ -250,7 +263,7 @@ public class BotForumHelper extends BaseController {
         tL_messages_createForumTopic.title_missing = true;
         tL_messages_createForumTopic.peer = inputPeer;
         tL_messages_createForumTopic.random_id = j;
-        getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda3
+        getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 BotForumHelper.this.lambda$performSendBotTopicCreate$3(peerDialogId, str, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
@@ -367,6 +380,7 @@ public class BotForumHelper extends BaseController {
         super(i);
         this.botTextDraftsByRandomIds = new DialogTopicIdKeyMap<>();
         this.pendingBotTopics = new LongSparseArray<>();
+        this.botDraftAnimationsPool = new BotDraftAnimationsPool();
     }
 
     public static BotForumHelper getInstance(int i) {
@@ -388,24 +402,32 @@ public class BotForumHelper extends BaseController {
         return botForumHelper;
     }
 
+    public MultiLayoutTypingAnimator getTypingAnimator(long j, int i, boolean z) {
+        return this.botDraftAnimationsPool.getAnimator(j, i, z);
+    }
+
     public static class BotDraftAnimationsPool {
         private final DialogTopicIdKeyMap<MultiLayoutTypingAnimator> animators = new DialogTopicIdKeyMap<>();
         private final SparseIntArray ids = new SparseIntArray();
 
-        public MultiLayoutTypingAnimator getAnimator(long j, int i, boolean z) {
-            if (i > 0) {
-                i = this.ids.get(i, 0);
-            }
-            if (i == 0) {
+        public MultiLayoutTypingAnimator getAnimator(final long j, final int i, boolean z) {
+            int i2 = i > 0 ? this.ids.get(i, 0) : i;
+            if (i2 == 0) {
                 return null;
             }
-            long j2 = i;
+            long j2 = i2;
             MultiLayoutTypingAnimator multiLayoutTypingAnimator = this.animators.get(j, 0L, j2);
             if (multiLayoutTypingAnimator != null || !z) {
                 return multiLayoutTypingAnimator;
             }
             MultiLayoutTypingAnimator multiLayoutTypingAnimator2 = new MultiLayoutTypingAnimator();
             this.animators.put(j, 0L, j2, multiLayoutTypingAnimator2);
+            multiLayoutTypingAnimator2.setOnFinishListener(new Runnable() { // from class: org.telegram.messenger.BotForumHelper$BotDraftAnimationsPool$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    BotForumHelper.BotDraftAnimationsPool.this.lambda$getAnimator$0(j, i);
+                }
+            });
             return multiLayoutTypingAnimator2;
         }
 
@@ -413,7 +435,8 @@ public class BotForumHelper extends BaseController {
             this.ids.put(i2, i);
         }
 
-        public void removeAnimator(long j, int i) {
+        /* renamed from: removeAnimator, reason: merged with bridge method [inline-methods] */
+        public void lambda$getAnimator$0(long j, int i) {
             if (i > 0) {
                 i = this.ids.get(i, 0);
             }

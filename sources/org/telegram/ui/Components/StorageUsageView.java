@@ -59,7 +59,7 @@ public class StorageUsageView extends FrameLayout {
         this.paintProgress = new Paint(1);
         this.paintProgress2 = new Paint(1);
         this.bgPaint = new Paint();
-        this.cellFlickerDrawable = new CellFlickerDrawable(NotificationCenter.starBalanceUpdated, NotificationCenter.invalidateMotionBackground);
+        this.cellFlickerDrawable = new CellFlickerDrawable(NotificationCenter.starGiveawayOptionsLoaded, NotificationCenter.didReceiveCall);
         setWillNotDraw(false);
         this.cellFlickerDrawable.drawFrame = false;
         this.paintFill.setStrokeWidth(AndroidUtilities.dp(6.0f));
@@ -154,7 +154,7 @@ public class StorageUsageView extends FrameLayout {
         this.telegramCacheTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
         this.freeSizeTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10.0f), ColorUtils.setAlphaComponent(this.lastProgressColor, 64)), (Drawable) null, (Drawable) null, (Drawable) null);
         this.freeSizeTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-        this.totlaSizeTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10.0f), ColorUtils.setAlphaComponent(this.lastProgressColor, NotificationCenter.messageTranslated)), (Drawable) null, (Drawable) null, (Drawable) null);
+        this.totlaSizeTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10.0f), ColorUtils.setAlphaComponent(this.lastProgressColor, NotificationCenter.needDeleteBusinessLink)), (Drawable) null, (Drawable) null, (Drawable) null);
         this.totlaSizeTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
         this.telegramDatabaseTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10.0f), this.lastProgressColor), (Drawable) null, (Drawable) null, (Drawable) null);
         this.telegramDatabaseTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
@@ -281,7 +281,7 @@ public class StorageUsageView extends FrameLayout {
             this.telegramDatabaseTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
             this.freeSizeTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10.0f), ColorUtils.setAlphaComponent(this.lastProgressColor, 64)), (Drawable) null, (Drawable) null, (Drawable) null);
             this.freeSizeTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-            this.totlaSizeTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10.0f), ColorUtils.setAlphaComponent(this.lastProgressColor, NotificationCenter.messageTranslated)), (Drawable) null, (Drawable) null, (Drawable) null);
+            this.totlaSizeTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10.0f), ColorUtils.setAlphaComponent(this.lastProgressColor, NotificationCenter.needDeleteBusinessLink)), (Drawable) null, (Drawable) null, (Drawable) null);
             this.totlaSizeTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
         }
         this.textSettingsCell.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
@@ -305,7 +305,7 @@ public class StorageUsageView extends FrameLayout {
             StorageUsageView.this.paintFill.setColor(color);
             StorageUsageView.this.paintProgress.setColor(color);
             StorageUsageView.this.paintProgress2.setColor(color);
-            StorageUsageView.this.paintProgress.setAlpha(NotificationCenter.invalidateMotionBackground);
+            StorageUsageView.this.paintProgress.setAlpha(NotificationCenter.didReceiveCall);
             StorageUsageView.this.paintProgress2.setAlpha(82);
             StorageUsageView.this.paintFill.setAlpha(46);
             StorageUsageView.this.bgPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhite));

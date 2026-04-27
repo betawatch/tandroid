@@ -278,7 +278,7 @@ public abstract class TranslateButton extends FrameLayout implements Theme.Color
         });
         actionBarPopupWindowLayout.addView(linksTextView);
         actionBarPopupWindow.setPauseNotifications(true);
-        actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+        actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.starGiveawayOptionsLoaded);
         actionBarPopupWindow.setOutsideTouchable(true);
         actionBarPopupWindow.setClippingEnabled(true);
         actionBarPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
@@ -484,7 +484,7 @@ public abstract class TranslateButton extends FrameLayout implements Theme.Color
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         imageView.setImageResource(R.drawable.cocoon_logo);
-        linearLayout2.addView(imageView, LayoutHelper.createLinear(NotificationCenter.walletPendingTransactionsChanged, NotificationCenter.walletPendingTransactionsChanged, 49, 0, 33, 0, 0));
+        linearLayout2.addView(imageView, LayoutHelper.createLinear(NotificationCenter.didGenerateFingerprintKeyPair, NotificationCenter.didGenerateFingerprintKeyPair, 49, 0, 33, 0, 0));
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageResource(R.drawable.cocoon_text);
         linearLayout2.addView(imageView2, LayoutHelper.createLinear(-2, -2, 49, 32, 12, 32, 0));

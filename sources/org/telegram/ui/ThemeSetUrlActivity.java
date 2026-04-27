@@ -452,7 +452,7 @@ public class ThemeSetUrlActivity extends BaseFragment implements NotificationCen
                 builder.getDismissRunnable().run();
             }
         };
-        linearLayout.addView(themesHorizontalListCell, LayoutHelper.createLinear(-1, NotificationCenter.messagePlayingDidReset, 0.0f, 7.0f, 0.0f, 1.0f));
+        linearLayout.addView(themesHorizontalListCell, LayoutHelper.createLinear(-1, NotificationCenter.messagePlayingProgressDidChanged, 0.0f, 7.0f, 0.0f, 1.0f));
         themesHorizontalListCell.scrollToCurrentTheme(this.fragmentView.getMeasuredWidth(), false);
         showDialog(builder.create());
     }

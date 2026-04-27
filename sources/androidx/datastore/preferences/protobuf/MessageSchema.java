@@ -407,7 +407,7 @@ final class MessageSchema implements Schema {
                 z = z2;
                 i15 = i71;
             }
-            int i75 = charAt26 & NotificationCenter.invalidateMotionBackground;
+            int i75 = charAt26 & NotificationCenter.didReceiveCall;
             int i76 = charAt;
             if ((charAt26 & 1024) != 0) {
                 iArr[i64] = i65;

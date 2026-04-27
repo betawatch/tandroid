@@ -239,7 +239,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         CustomPhoneKeyboardView customPhoneKeyboardView = new CustomPhoneKeyboardView(context);
         this.keyboardView = customPhoneKeyboardView;
         customPhoneKeyboardView.setVisibility(isCustomKeyboardVisible() ? 0 : 8);
-        sizeNotifierFrameLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.starUserGiftsLoaded));
+        sizeNotifierFrameLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.starGiftsLoaded));
         int i4 = this.type;
         if (i4 == 0) {
             this.actionBar.setTitle(LocaleController.getString(R.string.Passcode));
@@ -865,7 +865,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         } else if (value == 1) {
             SharedConfig.autoLockIn = 60;
         } else if (value == 2) {
-            SharedConfig.autoLockIn = NotificationCenter.onActivityResultReceived;
+            SharedConfig.autoLockIn = NotificationCenter.onDatabaseOpened;
         } else if (value == 3) {
             SharedConfig.autoLockIn = 3600;
         } else if (value == 4) {
@@ -943,7 +943,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         atomicBoolean.set(!atomicBoolean.get());
         int selectionStart = this.passwordEditText.getSelectionStart();
         int selectionEnd = this.passwordEditText.getSelectionEnd();
-        this.passwordEditText.setInputType((atomicBoolean.get() ? NotificationCenter.fileNewChunkAvailable : 128) | 1);
+        this.passwordEditText.setInputType((atomicBoolean.get() ? NotificationCenter.filePreparingStarted : 128) | 1);
         this.passwordEditText.setSelection(selectionStart, selectionEnd);
         this.passwordButton.setColorFilter(Theme.getColor(atomicBoolean.get() ? Theme.key_windowBackgroundWhiteInputFieldActivated : Theme.key_windowBackgroundWhiteHintText));
     }

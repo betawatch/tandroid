@@ -125,7 +125,7 @@ public class SpoilerEffect extends Drawable {
         this.renderCount = new int[fArr.length];
         this.particles = new ArrayList();
         this.rippleProgress = -1.0f;
-        this.mAlpha = NotificationCenter.invalidateMotionBackground;
+        this.mAlpha = NotificationCenter.didReceiveCall;
         this.rippleInterpolator = new TimeInterpolator() { // from class: org.telegram.ui.Components.spoilers.SpoilerEffect$$ExternalSyntheticLambda0
             @Override // android.animation.TimeInterpolator
             public final float getInterpolation(float f) {
@@ -185,7 +185,7 @@ public class SpoilerEffect extends Drawable {
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        final int alpha = this.reverseAnimator ? NotificationCenter.invalidateMotionBackground : this.particlePaints[ALPHAS.length - 1].getAlpha();
+        final int alpha = this.reverseAnimator ? NotificationCenter.didReceiveCall : this.particlePaints[ALPHAS.length - 1].getAlpha();
         ValueAnimator duration = ValueAnimator.ofFloat(this.rippleProgress, z ? 0.0f : 1.0f).setDuration((long) MathUtils.clamp(this.rippleMaxRadius * 0.3f, 250.0f, 550.0f));
         this.rippleAnimator = duration;
         duration.setInterpolator(this.rippleInterpolator);

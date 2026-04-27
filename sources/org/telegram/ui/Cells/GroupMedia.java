@@ -1301,7 +1301,7 @@ public class GroupMedia {
             for (int i41 = 0; i41 < size; i41++) {
                 MessageObject.GroupedMessagePosition groupedMessagePosition14 = (MessageObject.GroupedMessagePosition) this.posArray.get(i41);
                 if (groupedMessagePosition14.maxX == this.maxX || (groupedMessagePosition14.flags & 2) != 0) {
-                    groupedMessagePosition14.spanSize += NotificationCenter.channelRecommendationsLoaded;
+                    groupedMessagePosition14.spanSize += NotificationCenter.dialogPhotosUpdate;
                 }
                 if ((groupedMessagePosition14.flags & 1) != 0) {
                     groupedMessagePosition14.edge = true;
@@ -1327,7 +1327,7 @@ public class GroupMedia {
             for (int i45 = 0; i45 < size; i45++) {
                 MessageObject.GroupedMessagePosition groupedMessagePosition15 = (MessageObject.GroupedMessagePosition) this.posArray.get(i45);
                 if (groupedMessagePosition15.minX == 0) {
-                    groupedMessagePosition15.spanSize += NotificationCenter.channelRecommendationsLoaded;
+                    groupedMessagePosition15.spanSize += NotificationCenter.dialogPhotosUpdate;
                 }
                 if ((groupedMessagePosition15.flags & 2) != 0) {
                     groupedMessagePosition15.edge = true;

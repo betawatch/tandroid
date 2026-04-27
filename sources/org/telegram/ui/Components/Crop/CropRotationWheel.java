@@ -59,13 +59,13 @@ public class CropRotationWheel extends FrameLayout {
         Paint.Style style = Paint.Style.FILL;
         paint.setStyle(style);
         this.whitePaint.setColor(-1);
-        this.whitePaint.setAlpha(NotificationCenter.invalidateMotionBackground);
+        this.whitePaint.setAlpha(NotificationCenter.didReceiveCall);
         this.whitePaint.setAntiAlias(true);
         Paint paint2 = new Paint();
         this.bluePaint = paint2;
         paint2.setStyle(style);
         this.bluePaint.setColor(-11420173);
-        this.bluePaint.setAlpha(NotificationCenter.invalidateMotionBackground);
+        this.bluePaint.setAlpha(NotificationCenter.didReceiveCall);
         this.bluePaint.setAntiAlias(true);
         ImageView imageView = new ImageView(context);
         this.mirrorButton = imageView;
@@ -268,7 +268,7 @@ public class CropRotationWheel extends FrameLayout {
             }
             i = i2 + 1;
         }
-        this.bluePaint.setAlpha(NotificationCenter.invalidateMotionBackground);
+        this.bluePaint.setAlpha(NotificationCenter.didReceiveCall);
         this.tempRect.left = (width - AndroidUtilities.dp(2.5f)) / 2;
         this.tempRect.top = (height - AndroidUtilities.dp(22.0f)) / 2;
         this.tempRect.right = (AndroidUtilities.dp(2.5f) + width) / 2;
@@ -281,7 +281,7 @@ public class CropRotationWheel extends FrameLayout {
         int dp = (int) ((i2 / 2.0f) - AndroidUtilities.dp(70.0f));
         int cos = (i2 / 2) + ((int) (dp * Math.cos(Math.toRadians(90.0f - ((i * 5) + f)))));
         float abs = Math.abs(r8) / dp;
-        int min = Math.min(NotificationCenter.invalidateMotionBackground, Math.max(0, (int) ((1.0f - (abs * abs)) * 255.0f)));
+        int min = Math.min(NotificationCenter.didReceiveCall, Math.max(0, (int) ((1.0f - (abs * abs)) * 255.0f)));
         if (z) {
             paint = this.bluePaint;
         }

@@ -6697,7 +6697,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         }, 1000L);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(i);
         long j = chat.id;
-        messagesStorage.updateDialogsWithDeletedMessages(-j, j, new ArrayList<>(), null, true);
+        messagesStorage.updateDialogsWithDeletedMessages(-j, j, new ArrayList<>(), null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

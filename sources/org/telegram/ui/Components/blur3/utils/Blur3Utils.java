@@ -33,7 +33,7 @@ public abstract class Blur3Utils {
     }
 
     public static void captureRelativeParent(IBlur3Capture iBlur3Capture, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup) {
-        captureRelativeParent(iBlur3Capture, canvas, rectF, view, viewGroup, NotificationCenter.invalidateMotionBackground);
+        captureRelativeParent(iBlur3Capture, canvas, rectF, view, viewGroup, NotificationCenter.didReceiveCall);
     }
 
     public static void captureRelativeParent(IBlur3Capture iBlur3Capture, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup, int i) {

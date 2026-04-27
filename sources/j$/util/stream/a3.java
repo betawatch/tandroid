@@ -129,7 +129,7 @@ final class a3 {
         while (true) {
             EnumMap enumMap = y2.a;
             if (i4 < length) {
-                Map.-EL.a(enumMap, values[i4], 0);
+                Map.-EL.putIfAbsent(enumMap, values[i4], 0);
                 i4++;
             } else {
                 this.a = enumMap;

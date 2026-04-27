@@ -52,7 +52,7 @@ public final class CreatePublicKeyCredentialRequest extends CreateCredentialRequ
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public CreatePublicKeyCredentialRequest(String requestJson, byte[] bArr, boolean z, String str, boolean z2, boolean z3) {
-        this(requestJson, bArr, z2, z, Companion.getRequestDisplayInfo$credentials_release$default(Companion, requestJson, null, 2, null), str, null, null, z3, NotificationCenter.didUpdateTonGiftStickers, null);
+        this(requestJson, bArr, z2, z, Companion.getRequestDisplayInfo$credentials_release$default(Companion, requestJson, null, 2, null), str, null, null, z3, NotificationCenter.didUpdatePremiumGiftStickers, null);
         Intrinsics.checkNotNullParameter(requestJson, "requestJson");
     }
 

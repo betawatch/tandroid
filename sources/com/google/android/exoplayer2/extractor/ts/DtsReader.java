@@ -106,10 +106,10 @@ public final class DtsReader implements ElementaryStreamReader {
             if (DtsUtil.isSyncWord(readUnsignedByte)) {
                 byte[] data = this.headerScratchBytes.getData();
                 int i2 = this.syncBytes;
-                data[0] = (byte) ((i2 >> 24) & NotificationCenter.invalidateMotionBackground);
-                data[1] = (byte) ((i2 >> 16) & NotificationCenter.invalidateMotionBackground);
-                data[2] = (byte) ((i2 >> 8) & NotificationCenter.invalidateMotionBackground);
-                data[3] = (byte) (i2 & NotificationCenter.invalidateMotionBackground);
+                data[0] = (byte) ((i2 >> 24) & NotificationCenter.didReceiveCall);
+                data[1] = (byte) ((i2 >> 16) & NotificationCenter.didReceiveCall);
+                data[2] = (byte) ((i2 >> 8) & NotificationCenter.didReceiveCall);
+                data[3] = (byte) (i2 & NotificationCenter.didReceiveCall);
                 this.bytesRead = 4;
                 this.syncBytes = 0;
                 return true;

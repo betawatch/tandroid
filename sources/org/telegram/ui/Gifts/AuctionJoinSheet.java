@@ -149,7 +149,7 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
         giftCell.setImageSize(AndroidUtilities.dp(100.0f));
         giftCell.setImageLayer(7);
         giftCell.hidePrice();
-        frameLayout.addView(giftCell, LayoutHelper.createFrame(NotificationCenter.dialogTranslate, 130.0f, 17, 0.0f, 18.0f, 0.0f, 14.0f));
+        frameLayout.addView(giftCell, LayoutHelper.createFrame(NotificationCenter.dialogIsTranslatable, 130.0f, 17, 0.0f, 18.0f, 0.0f, 14.0f));
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
@@ -364,7 +364,7 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
             topView.setPreviewingAttributes(this.auction.previewAttributes);
             topView.hideCloseButton();
             z = false;
-            this.headerContainer.addView(topView, 0, LayoutHelper.createFrame(-1, NotificationCenter.appUpdateAvailable, 48));
+            this.headerContainer.addView(topView, 0, LayoutHelper.createFrame(-1, NotificationCenter.webRtcSpeakerAmplitudeEvent, 48));
             TextView textView2 = new TextView(context);
             this.headerStatus = textView2;
             textView2.setGravity(17);

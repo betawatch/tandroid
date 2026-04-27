@@ -543,7 +543,7 @@ public class LivePlayerView extends FrameLayout implements RendererCommon.Render
             addView(linearLayout, LayoutHelper.createFrame(-2, -2, 17));
             BackupImageView backupImageView = new BackupImageView(context);
             this.imageView = backupImageView;
-            linearLayout.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.dialogTranslate, NotificationCenter.dialogTranslate, 1));
+            linearLayout.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.dialogIsTranslatable, NotificationCenter.dialogIsTranslatable, 1));
             TextView textView = new TextView(context);
             this.textView = textView;
             textView.setTextColor(-1);

@@ -102,7 +102,7 @@ public final class BulletinFactory {
                 Bulletin createErrorBulletin = createErrorBulletin(LocaleController.formatString(R.string.UnknownError, new Object[0]));
                 createErrorBulletin.hideAfterBottomSheet = false;
                 createErrorBulletin.show(z);
-            } else {
+            } else if (tL_error.code != 406) {
                 Bulletin createErrorBulletin2 = createErrorBulletin(LocaleController.formatString(R.string.UnknownErrorCode, tL_error.text));
                 createErrorBulletin2.hideAfterBottomSheet = false;
                 createErrorBulletin2.show(z);
@@ -130,7 +130,9 @@ public final class BulletinFactory {
 
     public static void showError(TLRPC.TL_error tL_error) {
         if (LaunchActivity.isActive) {
-            global().createErrorBulletin(LocaleController.formatString(R.string.UnknownErrorCode, tL_error.text)).show();
+            if (tL_error == null || tL_error.code != 406) {
+                global().createErrorBulletin(LocaleController.formatString(R.string.UnknownErrorCode, tL_error.text)).show();
+            }
         }
     }
 
@@ -657,6 +659,14 @@ public final class BulletinFactory {
         return createUsersBulletin(arrayList, spannableStringBuilder);
     }
 
+    public Bulletin createEmojiBulletin(long j, String str, String str2) {
+        Bulletin.TwoLineBackupLayout twoLineBackupLayout = new Bulletin.TwoLineBackupLayout(getContext(), this.resourcesProvider);
+        twoLineBackupLayout.imageView.setAnimatedEmojiDrawable(new AnimatedEmojiDrawable(1, UserConfig.selectedAccount, j));
+        twoLineBackupLayout.titleTextView.setText(str);
+        twoLineBackupLayout.subtitleTextView.setText(str2);
+        return create(twoLineBackupLayout, 2750);
+    }
+
     public Bulletin createEmojiBulletin(TLRPC.Document document, CharSequence charSequence) {
         Bulletin.LottieLayout lottieLayout = new Bulletin.LottieLayout(getContext(), this.resourcesProvider);
         if (MessageObject.isTextColorEmoji(document)) {
@@ -1150,7 +1160,7 @@ public final class BulletinFactory {
     public static Bulletin createInviteSentBulletin(Context context, FrameLayout frameLayout, int i, long j, int i2, int i3, int i4) {
         SpannableStringBuilder replaceTags;
         final Bulletin.LottieLayout lottieLayout = new Bulletin.LottieLayout(context, null, i3, i4);
-        int i5 = NotificationCenter.onActivityResultReceived;
+        int i5 = NotificationCenter.onDatabaseOpened;
         if (i > 1) {
             replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("InvLinkToChats", R.string.InvLinkToChats, LocaleController.formatPluralString("Chats", i, new Object[0])));
             lottieLayout.setAnimation(R.raw.forward, 30, 30, new String[0]);
@@ -1332,7 +1342,7 @@ public final class BulletinFactory {
             public final void run() {
                 Bulletin.LottieLayout.this.performHapticFeedback(3, 2);
             }
-        }, NotificationCenter.onActivityResultReceived);
+        }, NotificationCenter.onDatabaseOpened);
         if (frameLayout != null) {
             make = Bulletin.make(frameLayout, lottieLayout, i5);
         } else if (baseFragment != null) {

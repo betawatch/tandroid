@@ -136,7 +136,7 @@ public final class CredentialProviderFactory {
 
     private final List getAllowedProvidersFromManifest(Context context) {
         String string;
-        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), NotificationCenter.walletPendingTransactionsChanged);
+        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), NotificationCenter.didGenerateFingerprintKeyPair);
         ArrayList arrayList = new ArrayList();
         ServiceInfo[] serviceInfoArr = packageInfo.services;
         if (serviceInfoArr != null) {

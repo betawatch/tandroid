@@ -792,7 +792,7 @@ public abstract class ProfileActionsView extends View {
             case 3:
                 find = new Action(ActionButton.GIFT);
                 find.supportsLoading = true;
-                find.stopDelay = NotificationCenter.channelRecommendationsLoaded;
+                find.stopDelay = NotificationCenter.dialogPhotosUpdate;
                 break;
             case 4:
                 find = new Action(ActionButton.SHARE);
@@ -811,7 +811,7 @@ public abstract class ProfileActionsView extends View {
             case 7:
                 find = new Action(ActionButton.JOIN);
                 find.supportsLoading = true;
-                find.callDelay = NotificationCenter.onActivityResultReceived;
+                find.callDelay = NotificationCenter.onDatabaseOpened;
                 break;
             case 8:
                 find = new Action(ActionButton.REPORT);
@@ -822,7 +822,7 @@ public abstract class ProfileActionsView extends View {
                 find = new Action(ActionButton.LEAVE);
                 find.supportsLoading = true;
                 find.supportsAnimate = R.raw.profile_leave;
-                find.stopDelay = NotificationCenter.onActivityResultReceived;
+                find.stopDelay = NotificationCenter.onDatabaseOpened;
                 break;
             case 10:
                 find = new Action(ActionButton.VOICE_CHAT);
@@ -842,7 +842,7 @@ public abstract class ProfileActionsView extends View {
             case 13:
                 find = new Action(ActionButton.STOP);
                 find.supportsLoading = true;
-                find.stopDelay = NotificationCenter.onActivityResultReceived;
+                find.stopDelay = NotificationCenter.onDatabaseOpened;
                 break;
         }
         if (find != null) {

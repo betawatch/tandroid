@@ -127,11 +127,11 @@ public final class l implements j$.time.temporal.m, j$.time.temporal.n {
             case 2:
                 return (z ? 1 : 0) + 91;
             case 3:
-                return (z ? 1 : 0) + NotificationCenter.messagePlayingGoingToStop;
+                return (z ? 1 : 0) + NotificationCenter.messagePlayingDidSeek;
             case 4:
-                return (z ? 1 : 0) + NotificationCenter.musicListLoaded;
+                return (z ? 1 : 0) + NotificationCenter.contentSettingsLoaded;
             case 5:
-                return (z ? 1 : 0) + NotificationCenter.premiumStatusChangedGlobal;
+                return (z ? 1 : 0) + NotificationCenter.currentUserPremiumStatusChanged;
             case 6:
                 return 1;
             case 7:
@@ -139,13 +139,13 @@ public final class l implements j$.time.temporal.m, j$.time.temporal.n {
             case 8:
                 return (z ? 1 : 0) + 121;
             case 9:
-                return (z ? 1 : 0) + NotificationCenter.themeUploadError;
+                return (z ? 1 : 0) + NotificationCenter.themeUploadedToServer;
             case 10:
-                return (z ? 1 : 0) + NotificationCenter.timezonesUpdated;
+                return (z ? 1 : 0) + NotificationCenter.groupPackUpdated;
             case 11:
-                return (z ? 1 : 0) + NotificationCenter.proxyChangedByRotation;
+                return (z ? 1 : 0) + NotificationCenter.proxySettingsChanged;
             default:
-                return (z ? 1 : 0) + NotificationCenter.botForumDraftDelete;
+                return (z ? 1 : 0) + NotificationCenter.botForumTopicDidCreate;
         }
     }
 

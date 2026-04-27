@@ -1,0 +1,508 @@
+package org.telegram.ui.Components.poll.sheets;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.util.Pair;
+import android.view.View;
+import android.widget.FrameLayout;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Map;
+import j$.util.function.BiConsumer$-CC;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.function.BiConsumer;
+import me.vkryl.android.animator.FactorAnimator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.utils.GradientProtectionDrawable;
+import org.telegram.messenger.utils.TextWatcherImpl;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.GraySectionCell;
+import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.FragmentSearchField;
+import org.telegram.ui.Components.FragmentSpansContainer;
+import org.telegram.ui.Components.GroupCreateSpan;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.Premium.boosts.BoostRepository;
+import org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet;
+import org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorCountryCell;
+import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.UItem;
+import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Components.UniversalRecyclerView;
+import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
+
+/* loaded from: classes5.dex */
+public class CountrySelectBottomSheet extends BottomSheetWithRecyclerListView implements FactorAnimator.Target {
+    private UniversalAdapter adapter;
+    private final FactorAnimator animatorSelectorContainerHeight;
+    private final ButtonWithCounterView button;
+    private final FrameLayout buttonContainer;
+    private final List countriesLetters;
+    private final List countriesList;
+    private final Map countriesMap;
+    private Set countriesToSelect;
+    private GroupCreateSpan currentDeletingSpan;
+    private final GraySectionCell graySectionCell;
+    private final Rect listViewClipBounds;
+    private Listener listener;
+    private String query;
+    private final FrameLayout searchContainer;
+    private final FragmentSearchField searchField;
+    private final HashMap selectedCountries;
+    private int selectedCountriesHeight;
+    private final FragmentSpansContainer spansContainer;
+
+    public interface Listener {
+        void onCountrySelected(List list);
+    }
+
+    @Override // me.vkryl.android.animator.FactorAnimator.Target
+    public /* synthetic */ void onFactorChangeFinished(int i, float f, FactorAnimator factorAnimator) {
+        FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i, f, factorAnimator);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ void access$500(CountrySelectBottomSheet countrySelectBottomSheet, View view) {
+        countrySelectBottomSheet.onSpanClick(view);
+    }
+
+    public CountrySelectBottomSheet(Context context, final Theme.ResourcesProvider resourcesProvider) {
+        super(context, null, true, false, false, false, BottomSheetWithRecyclerListView.ActionBarType.SLIDING, resourcesProvider);
+        CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
+        this.animatorSelectorContainerHeight = new FactorAnimator(3, this, cubicBezierInterpolator, 350L);
+        this.countriesMap = new HashMap();
+        this.countriesLetters = new ArrayList();
+        this.countriesList = new ArrayList();
+        this.selectedCountries = new HashMap();
+        this.listViewClipBounds = new Rect();
+        this.occupyNavigationBar = true;
+        this.drawNavigationBar = false;
+        this.showShadow = false;
+        AndroidUtilities.enableEdgeToEdge(getWindow());
+        RecyclerListView recyclerListView = this.recyclerListView;
+        int i = this.backgroundPaddingLeft;
+        recyclerListView.setPadding(i, 0, i, AndroidUtilities.navigationBarHeight + AndroidUtilities.dp(68.0f));
+        this.recyclerListView.setClipToPadding(false);
+        this.recyclerListView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet.1
+            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
+            public void onScrolled(RecyclerView recyclerView, int i2, int i3) {
+                super.onScrolled(recyclerView, i2, i3);
+                CountrySelectBottomSheet.this.checkUi_searchFieldY();
+            }
+        });
+        this.recyclerListView.setOnItemClickListener(new 2(context));
+        ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, resourcesProvider);
+        this.button = buttonWithCounterView;
+        buttonWithCounterView.setRound();
+        buttonWithCounterView.setCountFilled(true);
+        buttonWithCounterView.setText(LocaleController.getString(R.string.Save));
+        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda0
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                CountrySelectBottomSheet.this.lambda$new$0(view);
+            }
+        });
+        FragmentSearchField fragmentSearchField = new FragmentSearchField(context, resourcesProvider);
+        this.searchField = fragmentSearchField;
+        fragmentSearchField.editText.setHint(LocaleController.getString(R.string.PollV2SearchHint));
+        fragmentSearchField.editText.addTextChangedListener(new TextWatcherImpl() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet.3
+            @Override // android.text.TextWatcher
+            public /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
+                TextWatcherImpl.-CC.$default$beforeTextChanged(this, charSequence, i2, i3, i4);
+            }
+
+            @Override // android.text.TextWatcher
+            public /* synthetic */ void onTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
+                TextWatcherImpl.-CC.$default$onTextChanged(this, charSequence, i2, i3, i4);
+            }
+
+            @Override // android.text.TextWatcher
+            public void afterTextChanged(Editable editable) {
+                CountrySelectBottomSheet.this.query = editable.toString();
+                CountrySelectBottomSheet.this.adapter.update(true);
+            }
+        });
+        FragmentSpansContainer fragmentSpansContainer = new FragmentSpansContainer(context, this.currentAccount);
+        this.spansContainer = fragmentSpansContainer;
+        fragmentSpansContainer.setDelegate(new FragmentSpansContainer.Delegate() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda1
+            @Override // org.telegram.ui.Components.FragmentSpansContainer.Delegate
+            public final void onAfterMeasure(int i2) {
+                CountrySelectBottomSheet.this.lambda$new$2(i2);
+            }
+        });
+        FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet.4
+            final GradientProtectionDrawable gradientProtectionDrawableTop = new GradientProtectionDrawable(2);
+            final GradientProtectionDrawable gradientProtectionDrawableBottom = new GradientProtectionDrawable(8);
+
+            @Override // android.view.ViewGroup
+            protected boolean drawChild(Canvas canvas, View view, long j) {
+                boolean drawChild = super.drawChild(canvas, view, j);
+                int factor = (int) CountrySelectBottomSheet.this.animatorSelectorContainerHeight.getFactor();
+                if (view == CountrySelectBottomSheet.this.spansContainer && factor > 0) {
+                    this.gradientProtectionDrawableTop.setBounds(0, AndroidUtilities.dp(40.0f), getWidth(), AndroidUtilities.dp(48.0f));
+                    GradientProtectionDrawable gradientProtectionDrawable = this.gradientProtectionDrawableTop;
+                    int i2 = Theme.key_dialogBackground;
+                    gradientProtectionDrawable.setColor(Theme.getColor(i2, resourcesProvider));
+                    this.gradientProtectionDrawableTop.draw(canvas);
+                    int dp = AndroidUtilities.dp(48.0f) + factor;
+                    this.gradientProtectionDrawableBottom.setBounds(0, dp - AndroidUtilities.dp(8.0f), getWidth(), dp);
+                    this.gradientProtectionDrawableBottom.setColor(Theme.getColor(i2, resourcesProvider));
+                    this.gradientProtectionDrawableBottom.draw(canvas);
+                }
+                return drawChild;
+            }
+        };
+        this.searchContainer = frameLayout;
+        int i2 = this.backgroundPaddingLeft;
+        frameLayout.setPadding(i2, 0, i2, 0);
+        frameLayout.addView(fragmentSearchField, LayoutHelper.createFrame(-1, 40.0f, 48, 10.0f, 0.0f, 10.0f, 0.0f));
+        frameLayout.addView(fragmentSpansContainer, LayoutHelper.createFrame(-1, 144.0f, 48, -3.0f, 40.0f, -3.0f, 0.0f));
+        GraySectionCell graySectionCell = new GraySectionCell(context, 18, resourcesProvider);
+        this.graySectionCell = graySectionCell;
+        graySectionCell.setTranslationY(AndroidUtilities.dp(48.0f));
+        graySectionCell.setText(LocaleController.getString(R.string.SearchCountriesTitle), LocaleController.getString(R.string.DeselectAll), new View.OnClickListener() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda2
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                CountrySelectBottomSheet.this.lambda$new$3(view);
+            }
+        });
+        frameLayout.addView(graySectionCell, LayoutHelper.createFrame(-1, 32, 48));
+        this.containerView.addView(frameLayout, LayoutHelper.createFrame(-1, NotificationCenter.premiumFloodWaitReceived, 48));
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        this.buttonContainer = frameLayout2;
+        frameLayout2.setPadding(this.backgroundPaddingLeft + AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), this.backgroundPaddingLeft + AndroidUtilities.dp(10.0f), AndroidUtilities.navigationBarHeight + AndroidUtilities.dp(10.0f));
+        frameLayout2.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, 48.0f));
+        this.containerView.addView(frameLayout2, LayoutHelper.createFrame(-1, -2, 80));
+        DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
+        defaultItemAnimator.setDurations(350L);
+        defaultItemAnimator.setInterpolator(cubicBezierInterpolator);
+        defaultItemAnimator.setDelayAnimations(false);
+        defaultItemAnimator.setSupportsChangeAnimations(false);
+        this.recyclerListView.setItemAnimator(defaultItemAnimator);
+        this.recyclerListView.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet.5
+            final GradientProtectionDrawable gradientProtectionDrawable = new GradientProtectionDrawable(2);
+
+            @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
+            public void onDrawOver(Canvas canvas, RecyclerView recyclerView, RecyclerView.State state) {
+                int max = Math.max(0, ((((int) CountrySelectBottomSheet.this.searchContainer.getTranslationY()) - AndroidUtilities.dp(8.0f)) - AndroidUtilities.statusBarHeight) - ActionBar.getCurrentActionBarHeight()) + CountrySelectBottomSheet.this.listViewClipBounds.top + AndroidUtilities.dp(32.0f);
+                this.gradientProtectionDrawable.setColor(Theme.getColor(Theme.key_dialogBackground, resourcesProvider));
+                this.gradientProtectionDrawable.setBounds(0, max, recyclerView.getWidth(), AndroidUtilities.dp(8.0f) + max);
+                this.gradientProtectionDrawable.draw(canvas);
+            }
+        });
+        loadCountries();
+    }
+
+    class 2 implements RecyclerListView.OnItemClickListener {
+        final /* synthetic */ Context val$context;
+
+        2(Context context) {
+            this.val$context = context;
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
+        public void onItemClick(View view, int i) {
+            TLRPC.TL_help_country tL_help_country;
+            if (i == 0 || (tL_help_country = (TLRPC.TL_help_country) CountrySelectBottomSheet.this.adapter.getItem(i - 1).object) == null) {
+                return;
+            }
+            if (CountrySelectBottomSheet.this.selectedCountries.containsKey(tL_help_country.iso2)) {
+                CountrySelectBottomSheet.this.spansContainer.removeSpan((GroupCreateSpan) CountrySelectBottomSheet.this.selectedCountries.remove(tL_help_country.iso2));
+            } else {
+                GroupCreateSpan groupCreateSpan = new GroupCreateSpan(this.val$context, tL_help_country);
+                final CountrySelectBottomSheet countrySelectBottomSheet = CountrySelectBottomSheet.this;
+                groupCreateSpan.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$2$$ExternalSyntheticLambda0
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view2) {
+                        CountrySelectBottomSheet.access$500(CountrySelectBottomSheet.this, view2);
+                    }
+                });
+                CountrySelectBottomSheet.this.spansContainer.addSpan(groupCreateSpan);
+                CountrySelectBottomSheet.this.selectedCountries.put(tL_help_country.iso2, groupCreateSpan);
+            }
+            CountrySelectBottomSheet.this.adapter.update(true);
+            CountrySelectBottomSheet.this.checkUi_buttonCounter();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0(View view) {
+        Listener listener = this.listener;
+        if (listener != null) {
+            listener.onCountrySelected(new ArrayList(this.selectedCountries.keySet()));
+        }
+        lambda$new$0();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$2(int i) {
+        int min = Math.min(i, AndroidUtilities.dp(144.0f));
+        if (i > 0) {
+            min -= AndroidUtilities.dp(8.0f);
+        }
+        if (this.selectedCountriesHeight != min) {
+            this.selectedCountriesHeight = min;
+            this.animatorSelectorContainerHeight.animateTo(min);
+            this.spansContainer.postOnAnimation(new Runnable() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda5
+                @Override // java.lang.Runnable
+                public final void run() {
+                    CountrySelectBottomSheet.this.lambda$new$1();
+                }
+            });
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$1() {
+        this.adapter.update(true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$3(View view) {
+        this.selectedCountries.clear();
+        this.spansContainer.removeAllSpans(true);
+        this.adapter.update(true);
+        checkUi_buttonCounter();
+    }
+
+    public void setListener(Listener listener) {
+        this.listener = listener;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BottomSheet
+    protected void onContainerLayout(int i, int i2, int i3, int i4) {
+        super.onContainerLayout(i, i2, i3, i4);
+        checkUi_listViewClip();
+        checkUi_searchFieldY();
+    }
+
+    @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView, org.telegram.ui.ActionBar.BottomSheet
+    protected boolean canDismissWithSwipe() {
+        return super.canDismissWithSwipe();
+    }
+
+    private void loadCountries() {
+        BoostRepository.loadCountries(new Utilities.Callback() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda4
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                CountrySelectBottomSheet.this.lambda$loadCountries$5((Pair) obj);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$loadCountries$5(Pair pair) {
+        this.countriesMap.putAll((Map) pair.first);
+        this.countriesLetters.addAll((Collection) pair.second);
+        Map.-EL.forEach(this.countriesMap, new BiConsumer() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda6
+            @Override // java.util.function.BiConsumer
+            public final void accept(Object obj, Object obj2) {
+                CountrySelectBottomSheet.this.lambda$loadCountries$4((String) obj, (List) obj2);
+            }
+
+            public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
+                return BiConsumer$-CC.$default$andThen(this, biConsumer);
+            }
+        });
+        Set set = this.countriesToSelect;
+        if (set != null) {
+            Iterator it = set.iterator();
+            while (it.hasNext()) {
+                TLRPC.TL_help_country findCountry = findCountry((String) it.next());
+                if (findCountry != null) {
+                    GroupCreateSpan groupCreateSpan = new GroupCreateSpan(getContext(), findCountry);
+                    groupCreateSpan.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda7
+                        @Override // android.view.View.OnClickListener
+                        public final void onClick(View view) {
+                            CountrySelectBottomSheet.this.onSpanClick(view);
+                        }
+                    });
+                    this.spansContainer.addSpan(groupCreateSpan);
+                    this.selectedCountries.put(findCountry.iso2, groupCreateSpan);
+                }
+            }
+        }
+        this.adapter.update(true);
+        checkUi_buttonCounter();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$loadCountries$4(String str, List list) {
+        this.countriesList.addAll(list);
+    }
+
+    public void prepare(List list) {
+        this.query = null;
+        this.countriesToSelect = new HashSet(list);
+    }
+
+    private boolean isSearching() {
+        return !TextUtils.isEmpty(this.query);
+    }
+
+    private void checkUi_listViewClip() {
+        int currentActionBarHeight = AndroidUtilities.statusBarHeight + ActionBar.getCurrentActionBarHeight() + AndroidUtilities.dp(56.0f) + ((int) this.animatorSelectorContainerHeight.getFactor());
+        int measuredHeight = (this.containerView.getMeasuredHeight() - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(34.0f);
+        Rect rect = this.listViewClipBounds;
+        boolean z = (rect.top == currentActionBarHeight && rect.bottom == measuredHeight) ? false : true;
+        rect.set(0, currentActionBarHeight, this.containerView.getMeasuredWidth(), measuredHeight);
+        this.recyclerListView.setClipBounds(this.listViewClipBounds);
+        if (z) {
+            this.recyclerListView.invalidate();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void checkUi_searchFieldY() {
+        float f = AndroidUtilities.displaySize.y;
+        for (int i = 0; i < this.recyclerListView.getChildCount(); i++) {
+            View childAt = this.recyclerListView.getChildAt(i);
+            if (this.recyclerListView.getChildAdapterPosition(childAt) >= 1 && childAt.getY() < f) {
+                f = childAt.getY();
+            }
+        }
+        float max = Math.max(AndroidUtilities.statusBarHeight + ActionBar.getCurrentActionBarHeight(), f) + AndroidUtilities.dp(8.0f);
+        if (this.searchContainer.getTranslationY() != max) {
+            this.searchContainer.setTranslationY(max);
+            this.recyclerListView.invalidate();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
+    protected CharSequence getTitle() {
+        return LocaleController.getString(R.string.BoostingSelectCountry);
+    }
+
+    @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
+    protected RecyclerListView.SelectionAdapter createAdapter(RecyclerListView recyclerListView) {
+        UniversalAdapter universalAdapter = new UniversalAdapter(recyclerListView, getContext(), this.currentAccount, 0, true, new Utilities.Callback2() { // from class: org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet$$ExternalSyntheticLambda3
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                CountrySelectBottomSheet.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
+            }
+        }, this.resourcesProvider);
+        this.adapter = universalAdapter;
+        universalAdapter.setApplyBackground(false);
+        return this.adapter;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void onSpanClick(View view) {
+        GroupCreateSpan groupCreateSpan = (GroupCreateSpan) view;
+        if (groupCreateSpan.isDeleting()) {
+            this.currentDeletingSpan = null;
+            this.spansContainer.removeSpan(groupCreateSpan);
+            this.selectedCountries.remove(groupCreateSpan.getCountryIso2());
+            checkUi_buttonCounter();
+            this.adapter.update(true);
+            return;
+        }
+        GroupCreateSpan groupCreateSpan2 = this.currentDeletingSpan;
+        if (groupCreateSpan2 != null) {
+            groupCreateSpan2.cancelDeleteAnimation();
+        }
+        this.currentDeletingSpan = groupCreateSpan;
+        groupCreateSpan.startDeleteAnimation();
+    }
+
+    private TLRPC.TL_help_country findCountry(String str) {
+        Iterator it = this.countriesLetters.iterator();
+        while (it.hasNext()) {
+            for (TLRPC.TL_help_country tL_help_country : (List) this.countriesMap.get((String) it.next())) {
+                if (TextUtils.equals(str, tL_help_country.iso2)) {
+                    return tL_help_country;
+                }
+            }
+        }
+        return null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
+        List list = this.countriesLetters;
+        if (list == null || list.isEmpty()) {
+            return;
+        }
+        int currentActionBarHeight = ((AndroidUtilities.displaySize.y - ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.dp(68.0f)) + AndroidUtilities.dp(13.0f);
+        int dp = AndroidUtilities.dp(88.0f) + this.selectedCountriesHeight;
+        arrayList.add(UItem.asSpace(0, dp));
+        int i = currentActionBarHeight - dp;
+        Iterator it = this.countriesLetters.iterator();
+        while (it.hasNext()) {
+            for (TLRPC.TL_help_country tL_help_country : (List) this.countriesMap.get((String) it.next())) {
+                if (!isSearching() || SelectorBottomSheet.matchLocal(tL_help_country, AndroidUtilities.translitSafe(this.query).toLowerCase())) {
+                    i -= AndroidUtilities.dp(44.0f);
+                    arrayList.add(Factory.asCountry(tL_help_country, this.selectedCountries.containsKey(tL_help_country.iso2)));
+                }
+            }
+        }
+        arrayList.add(UItem.asSpace(1, Math.max(0, i)));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void checkUi_buttonCounter() {
+        this.button.setCount(this.selectedCountries.size(), true);
+    }
+
+    public static class Factory extends UItem.UItemFactory {
+        static {
+            UItem.UItemFactory.setup(new Factory());
+        }
+
+        @Override // org.telegram.ui.Components.UItem.UItemFactory
+        public SelectorCountryCell createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            SelectorCountryCell selectorCountryCell = new SelectorCountryCell(context, resourcesProvider);
+            selectorCountryCell.setBackground(null);
+            return selectorCountryCell;
+        }
+
+        @Override // org.telegram.ui.Components.UItem.UItemFactory
+        public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
+            SelectorCountryCell selectorCountryCell = (SelectorCountryCell) view;
+            selectorCountryCell.setCountry((TLRPC.TL_help_country) uItem.object, z);
+            selectorCountryCell.setChecked(uItem.checked, false);
+        }
+
+        public static UItem asCountry(TLRPC.TL_help_country tL_help_country, boolean z) {
+            UItem ofFactory = UItem.ofFactory(Factory.class);
+            ofFactory.text = tL_help_country.iso2;
+            ofFactory.object = tL_help_country;
+            ofFactory.checked = z;
+            return ofFactory;
+        }
+
+        @Override // org.telegram.ui.Components.UItem.UItemFactory
+        public boolean equals(UItem uItem, UItem uItem2) {
+            return super.equals(uItem, uItem2);
+        }
+
+        @Override // org.telegram.ui.Components.UItem.UItemFactory
+        public boolean contentsEquals(UItem uItem, UItem uItem2) {
+            return super.contentsEquals(uItem, uItem2);
+        }
+    }
+
+    @Override // me.vkryl.android.animator.FactorAnimator.Target
+    public void onFactorChanged(int i, float f, float f2, FactorAnimator factorAnimator) {
+        checkUi_listViewClip();
+        this.graySectionCell.setTranslationY(AndroidUtilities.dp(48.0f) + f);
+        this.searchContainer.invalidate();
+    }
+}

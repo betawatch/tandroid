@@ -147,7 +147,7 @@ public class ChecksHintView extends FrameLayout {
             this.animatorSet.setDuration(180L);
             this.animatorSet.start();
             while (i < 2) {
-                this.textView[i].animate().scaleX(1.04f).scaleY(1.04f).setInterpolator(CubicBezierInterpolator.EASE_IN).setStartDelay((i == 0 ? NotificationCenter.walletPendingTransactionsChanged : 500) + NotificationCenter.fileLoadProgressChanged).setDuration(100L).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChecksHintView.2
+                this.textView[i].animate().scaleX(1.04f).scaleY(1.04f).setInterpolator(CubicBezierInterpolator.EASE_IN).setStartDelay((i == 0 ? NotificationCenter.didGenerateFingerprintKeyPair : 500) + NotificationCenter.fileUploadProgressChanged).setDuration(100L).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChecksHintView.2
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         ChecksHintView.this.textView[i].animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(CubicBezierInterpolator.EASE_OUT).setStartDelay(0L).setDuration(100L).start();

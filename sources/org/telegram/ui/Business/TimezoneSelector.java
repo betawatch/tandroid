@@ -40,6 +40,11 @@ public class TimezoneSelector extends BaseFragment implements NotificationCenter
     private Utilities.Callback whenTimezoneSelected;
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
@@ -91,7 +96,9 @@ public class TimezoneSelector extends BaseFragment implements NotificationCenter
             }
         }, null);
         this.listView = universalRecyclerView;
-        frameLayout.addView(universalRecyclerView, LayoutHelper.createFrame(-1, -1.0f));
+        universalRecyclerView.setSections();
+        this.actionBar.setAdaptiveBackground(this.listView);
+        frameLayout.addView(this.listView, LayoutHelper.createFrame(-1, -1.0f));
         this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Business.TimezoneSelector.3
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView, int i) {
@@ -107,7 +114,7 @@ public class TimezoneSelector extends BaseFragment implements NotificationCenter
         BackupImageView backupImageView = new BackupImageView(context);
         backupImageView.getImageReceiver().setAllowLoadingOnAttachedOnly(false);
         MediaDataController.getInstance(this.currentAccount).setPlaceholderImage(backupImageView, "RestrictedEmoji", "🌖", "130_130");
-        this.emptyView.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.dialogTranslate, NotificationCenter.dialogTranslate, 49, 0, 42, 0, 12));
+        this.emptyView.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.dialogIsTranslatable, NotificationCenter.dialogIsTranslatable, 49, 0, 42, 0, 12));
         TextView textView = new TextView(context);
         textView.setText(LocaleController.getString(R.string.TimezoneNotFound));
         textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText, this.resourceProvider));
@@ -138,30 +145,35 @@ public class TimezoneSelector extends BaseFragment implements NotificationCenter
 
     /* JADX INFO: Access modifiers changed from: private */
     public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
-        int i;
         boolean z = this.searching && !TextUtils.isEmpty(this.query);
         TimezonesController timezonesController = TimezonesController.getInstance(this.currentAccount);
         if (!z) {
+            universalAdapter.whiteSectionStart();
             arrayList.add(UItem.asRippleCheck(-1, LocaleController.getString(R.string.TimezoneDetectAutomatically)).setChecked(this.useSystem));
+            universalAdapter.whiteSectionEnd();
             arrayList.add(UItem.asShadow(LocaleController.formatString(R.string.TimezoneDetectAutomaticallyInfo, timezonesController.getTimezoneName(this.currentTimezone, true))));
+        }
+        universalAdapter.whiteSectionStart();
+        if (!z) {
             arrayList.add(UItem.asHeader(LocaleController.getString(R.string.TimezoneHeader)));
         }
         boolean z2 = true;
-        while (i < timezonesController.getTimezones().size()) {
+        for (int i = 0; i < timezonesController.getTimezones().size(); i++) {
             TLRPC.TL_timezone tL_timezone = (TLRPC.TL_timezone) timezonesController.getTimezones().get(i);
+            CharSequence timezoneName = timezonesController.getTimezoneName(tL_timezone, false);
             if (z) {
                 String replace = AndroidUtilities.translitSafe(tL_timezone.name).toLowerCase().replace("/", " ");
                 String lowerCase = AndroidUtilities.translitSafe(this.query).toLowerCase();
-                StringBuilder sb = new StringBuilder();
-                sb.append(" ");
-                sb.append(lowerCase);
-                i = (replace.contains(sb.toString()) || replace.startsWith(lowerCase)) ? 0 : i + 1;
+                if (replace.contains(" " + lowerCase) || replace.startsWith(lowerCase)) {
+                    timezoneName = AndroidUtilities.highlightText(timezoneName, this.query, this.resourceProvider);
+                }
             }
-            arrayList.add(UItem.asRadio(i, timezonesController.getTimezoneName(tL_timezone, false), timezonesController.getTimezoneOffsetName(tL_timezone)).setChecked(TextUtils.equals(tL_timezone.id, this.currentTimezone)).setEnabled(!this.useSystem || z));
+            arrayList.add(UItem.asRadio(i, timezoneName, timezonesController.getTimezoneOffsetName(tL_timezone)).setChecked(TextUtils.equals(tL_timezone.id, this.currentTimezone)).setEnabled(!this.useSystem || z));
             z2 = false;
         }
+        universalAdapter.whiteSectionEnd();
         if (z2) {
-            arrayList.add(UItem.asCustom(this.emptyView));
+            arrayList.add(UItem.asCustomShadow(this.emptyView));
         } else {
             arrayList.add(UItem.asShadow(null));
         }
@@ -219,5 +231,11 @@ public class TimezoneSelector extends BaseFragment implements NotificationCenter
     public void onFragmentDestroy() {
         getNotificationCenter().removeObserver(this, NotificationCenter.timezonesUpdated);
         super.onFragmentDestroy();
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onInsets(int i, int i2, int i3, int i4) {
+        this.listView.setPadding(0, 0, 0, i4);
+        this.listView.setClipToPadding(false);
     }
 }

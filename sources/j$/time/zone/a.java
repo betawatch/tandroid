@@ -78,7 +78,7 @@ final class a implements Externalizable {
 
     static void d(ZoneOffset zoneOffset, ObjectOutput objectOutput) {
         int totalSeconds = zoneOffset.getTotalSeconds();
-        int i = totalSeconds % 900 == 0 ? totalSeconds / 900 : NotificationCenter.messageTranslated;
+        int i = totalSeconds % 900 == 0 ? totalSeconds / 900 : NotificationCenter.needDeleteBusinessLink;
         objectOutput.writeByte(i);
         if (i == 127) {
             objectOutput.writeInt(totalSeconds);
@@ -93,12 +93,12 @@ final class a implements Externalizable {
     static void c(long j, ObjectOutput objectOutput) {
         if (j >= -4575744000L && j < 10413792000L && j % 900 == 0) {
             int i = (int) ((j + 4575744000L) / 900);
-            objectOutput.writeByte((i >>> 16) & NotificationCenter.invalidateMotionBackground);
-            objectOutput.writeByte((i >>> 8) & NotificationCenter.invalidateMotionBackground);
-            objectOutput.writeByte(i & NotificationCenter.invalidateMotionBackground);
+            objectOutput.writeByte((i >>> 16) & NotificationCenter.didReceiveCall);
+            objectOutput.writeByte((i >>> 8) & NotificationCenter.didReceiveCall);
+            objectOutput.writeByte(i & NotificationCenter.didReceiveCall);
             return;
         }
-        objectOutput.writeByte(NotificationCenter.invalidateMotionBackground);
+        objectOutput.writeByte(NotificationCenter.didReceiveCall);
         objectOutput.writeLong(j);
     }
 

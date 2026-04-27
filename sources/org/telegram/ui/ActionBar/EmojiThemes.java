@@ -591,7 +591,7 @@ public class EmojiThemes {
                 resultCallback.onComplete(new Pair(Long.valueOf(themeId), null));
             }
         } else {
-            ImageLocation forDocument = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.fileLoadProgressChanged), wallpaper.document);
+            ImageLocation forDocument = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.fileUploadProgressChanged), wallpaper.document);
             ImageReceiver imageReceiver = new ImageReceiver();
             imageReceiver.setAllowLoadingOnAttachedOnly(false);
             imageReceiver.setImage(forDocument, "120_140", null, null, null, 1);

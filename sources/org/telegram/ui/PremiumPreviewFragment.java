@@ -874,7 +874,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             if (getUserConfig().isPremium()) {
                 TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
                 tL_inputStickerSetShortName.short_name = "RestrictedEmoji";
-                MediaDataController.getInstance(this.currentAccount).getStickerSet(tL_inputStickerSetShortName, false);
+                MediaDataController.getInstance(this.currentAccount).getStickerSet((TLRPC.InputStickerSet) tL_inputStickerSetShortName, false);
                 BusinessChatbotController.getInstance(this.currentAccount).load(null);
                 if (getMessagesController().suggestedFilters.isEmpty()) {
                     getMessagesController().loadSuggestedFilters();
@@ -2268,7 +2268,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             setOrientation(1);
             FrameLayout frameLayout = new FrameLayout(context);
             this.imageFrameLayout = frameLayout;
-            int i = PremiumPreviewFragment.this.type == 1 ? NotificationCenter.liveStoryUpdated : NotificationCenter.boostByChannelCreated;
+            int i = PremiumPreviewFragment.this.type == 1 ? NotificationCenter.groupCallVisibilityChanged : NotificationCenter.boostedChannelByUser;
             addView(frameLayout, LayoutHelper.createLinear(i, i, 1));
             GLIconTextureView gLIconTextureView = new GLIconTextureView(context, PremiumPreviewFragment.this.whiteBackground ? 1 : 0, PremiumPreviewFragment.this.type == 1 ? 1 : 0) { // from class: org.telegram.ui.PremiumPreviewFragment.BackgroundView.1
                 @Override // org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView

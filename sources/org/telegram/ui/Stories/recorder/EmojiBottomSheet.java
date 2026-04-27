@@ -1462,7 +1462,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                             break;
                         }
                     }
-                    if (!z2 && (stickerSet = mediaDataController.getStickerSet(this.staticEmojiInput, false)) != null) {
+                    if (!z2 && (stickerSet = mediaDataController.getStickerSet((TLRPC.InputStickerSet) this.staticEmojiInput, false)) != null) {
                         this.allStickerSets.add(stickerSet);
                     }
                 }
@@ -3412,7 +3412,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 canvas.scale(scale, scale, this.bounds.centerX(), this.bounds.centerY());
                 canvas.drawRoundRect(this.bounds, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), StoryWidgetsCell.this.bgPaint);
                 if (this.lockDrawable != null) {
-                    canvas.saveLayerAlpha(this.bounds, NotificationCenter.invalidateMotionBackground, 31);
+                    canvas.saveLayerAlpha(this.bounds, NotificationCenter.didReceiveCall, 31);
                 }
                 if (this.drawable == null) {
                     Drawable emojiBigDrawable = Emoji.getEmojiBigDrawable(this.emojiDrawable);

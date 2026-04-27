@@ -74,7 +74,7 @@ public class MotionPhotoDrawable extends Drawable {
         rectF.set(centerX - dpf2, centerY - dpf2, centerX + dpf2, dpf2 + centerY);
         canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(8.33f), AndroidUtilities.dpf2(8.33f), this.strokePaint);
         if (f > 0.0f) {
-            canvas.saveLayerAlpha(rectF, NotificationCenter.invalidateMotionBackground, 31);
+            canvas.saveLayerAlpha(rectF, NotificationCenter.didReceiveCall, 31);
         } else {
             canvas.save();
         }

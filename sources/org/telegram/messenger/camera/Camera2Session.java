@@ -340,9 +340,9 @@ public class Camera2Session {
                 if (rotation == 1) {
                     i = 90;
                 } else if (rotation == 2) {
-                    i = NotificationCenter.newEmojiSuggestionsAvailable;
+                    i = NotificationCenter.needDeleteDialog;
                 } else if (rotation == 3) {
-                    i = NotificationCenter.suggestedLangpack;
+                    i = NotificationCenter.locationPermissionDenied;
                 }
                 Integer num = (Integer) this.cameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
                 if (!this.isFront) {
@@ -377,9 +377,9 @@ public class Camera2Session {
                 if (rotation == 1) {
                     i = 90;
                 } else if (rotation == 2) {
-                    i = NotificationCenter.newEmojiSuggestionsAvailable;
+                    i = NotificationCenter.needDeleteDialog;
                 } else if (rotation == 3) {
-                    i = NotificationCenter.suggestedLangpack;
+                    i = NotificationCenter.locationPermissionDenied;
                 }
                 Integer num = (Integer) this.cameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
                 if (!this.isFront) {

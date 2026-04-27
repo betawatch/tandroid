@@ -248,7 +248,7 @@ abstract class g implements p {
         };
         WEEK_BASED_YEAR = gVar4;
         b = new g[]{gVar, gVar2, gVar3, gVar4};
-        a = new int[]{0, 90, NotificationCenter.themeUploadedToServer, NotificationCenter.proxyCheckDone, 0, 91, NotificationCenter.themeUploadError, NotificationCenter.proxyChangedByRotation};
+        a = new int[]{0, 90, NotificationCenter.newEmojiSuggestionsAvailable, NotificationCenter.didSetNewWallpapper, 0, 91, NotificationCenter.themeUploadedToServer, NotificationCenter.proxySettingsChanged};
     }
 
     static u L(LocalDate localDate) {
@@ -275,7 +275,7 @@ abstract class g implements p {
             i4 = i3 + 4;
         }
         if (N < i4) {
-            return (int) u.j(1L, N(M(localDate.c0(NotificationCenter.newEmojiSuggestionsAvailable).Y(-1L)))).d();
+            return (int) u.j(1L, N(M(localDate.c0(NotificationCenter.needDeleteDialog).Y(-1L)))).d();
         }
         int i5 = ((N - i4) / 7) + 1;
         if (i5 != 53 || i4 == -3 || (i4 == -2 && localDate.R())) {

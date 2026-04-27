@@ -41,7 +41,7 @@ public class InstantCameraVideoEncoderOverlayHelper {
         this.glTextures = iArr;
         this.videoWidth = i;
         this.videoHeight = i2;
-        float[] fArr3 = new float[NotificationCenter.starGiftSoldOut];
+        float[] fArr3 = new float[NotificationCenter.starUserGiftCollectionsLoaded];
         setTextureCords(fArr3, 0, 0.0f, 1.0f, 1.0f, 0.0f);
         setTextureCords(fArr3, 8, 0.0f, 0.0f, 1.0f, 1.0f);
         float[] fArr4 = new float[36];
@@ -139,7 +139,7 @@ public class InstantCameraVideoEncoderOverlayHelper {
         }
         GLES20.glBindTexture(3553, i6);
         GLES20.glGenFramebuffers(1, this.glFrameBuffers, i6);
-        FloatBuffer asFloatBuffer = ByteBuffer.allocateDirect(NotificationCenter.fileNewChunkAvailable).order(ByteOrder.nativeOrder()).asFloatBuffer();
+        FloatBuffer asFloatBuffer = ByteBuffer.allocateDirect(NotificationCenter.filePreparingStarted).order(ByteOrder.nativeOrder()).asFloatBuffer();
         this.attributeVertexBuffer = asFloatBuffer;
         asFloatBuffer.put(fArr4).position(i6);
         FloatBuffer asFloatBuffer2 = ByteBuffer.allocateDirect(928).order(ByteOrder.nativeOrder()).asFloatBuffer();

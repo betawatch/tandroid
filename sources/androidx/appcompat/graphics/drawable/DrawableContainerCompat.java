@@ -26,7 +26,7 @@ public abstract class DrawableContainerCompat extends Drawable implements Drawab
     private Rect mHotspotBounds;
     private Drawable mLastDrawable;
     private boolean mMutated;
-    private int mAlpha = NotificationCenter.invalidateMotionBackground;
+    private int mAlpha = NotificationCenter.didReceiveCall;
     private int mCurIndex = -1;
 
     abstract DrawableContainerState cloneConstantState();
@@ -506,7 +506,7 @@ public abstract class DrawableContainerCompat extends Drawable implements Drawab
                     drawable2.setAlpha(this.mAlpha);
                     this.mEnterAnimationEnd = 0L;
                 } else {
-                    drawable2.setAlpha(((255 - (((int) ((j - uptimeMillis) * 255)) / this.mDrawableContainerState.mEnterFadeDuration)) * this.mAlpha) / NotificationCenter.invalidateMotionBackground);
+                    drawable2.setAlpha(((255 - (((int) ((j - uptimeMillis) * 255)) / this.mDrawableContainerState.mEnterFadeDuration)) * this.mAlpha) / NotificationCenter.didReceiveCall);
                     z2 = true;
                     drawable = this.mLastDrawable;
                     if (drawable == null) {
@@ -517,7 +517,7 @@ public abstract class DrawableContainerCompat extends Drawable implements Drawab
                                 this.mLastDrawable = null;
                                 this.mExitAnimationEnd = 0L;
                             } else {
-                                drawable.setAlpha(((((int) ((j2 - uptimeMillis) * 255)) / this.mDrawableContainerState.mExitFadeDuration) * this.mAlpha) / NotificationCenter.invalidateMotionBackground);
+                                drawable.setAlpha(((((int) ((j2 - uptimeMillis) * 255)) / this.mDrawableContainerState.mExitFadeDuration) * this.mAlpha) / NotificationCenter.didReceiveCall);
                                 if (z && z3) {
                                     scheduleSelf(this.mAnimationRunnable, uptimeMillis + 16);
                                     return;
@@ -1069,7 +1069,7 @@ public abstract class DrawableContainerCompat extends Drawable implements Drawab
         if (resources != null) {
             i = resources.getDisplayMetrics().densityDpi;
         }
-        return i == 0 ? NotificationCenter.albumsDidLoad : i;
+        return i == 0 ? NotificationCenter.screenshotTook : i;
     }
 
     private static class Api21Impl {

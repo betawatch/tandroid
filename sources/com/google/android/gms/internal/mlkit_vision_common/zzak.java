@@ -125,10 +125,10 @@ final class zzak implements ObjectEncoderContext {
             long j = i & (-128);
             OutputStream outputStream = this.zze;
             if (j == 0) {
-                outputStream.write(i & NotificationCenter.messageTranslated);
+                outputStream.write(i & NotificationCenter.needDeleteBusinessLink);
                 return;
             } else {
-                outputStream.write((i & NotificationCenter.messageTranslated) | 128);
+                outputStream.write((i & NotificationCenter.needDeleteBusinessLink) | 128);
                 i >>>= 7;
             }
         }
@@ -139,10 +139,10 @@ final class zzak implements ObjectEncoderContext {
             long j2 = (-128) & j;
             OutputStream outputStream = this.zze;
             if (j2 == 0) {
-                outputStream.write(((int) j) & NotificationCenter.messageTranslated);
+                outputStream.write(((int) j) & NotificationCenter.needDeleteBusinessLink);
                 return;
             } else {
-                outputStream.write((((int) j) & NotificationCenter.messageTranslated) | 128);
+                outputStream.write((((int) j) & NotificationCenter.needDeleteBusinessLink) | 128);
                 j >>>= 7;
             }
         }

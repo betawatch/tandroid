@@ -437,7 +437,7 @@ public final class zzaq extends zzd {
                             }
                             this.zzw = new MediaStatus(jSONObject2);
                             this.zzv = SystemClock.elapsedRealtime();
-                            i2 = NotificationCenter.messageTranslated;
+                            i2 = NotificationCenter.needDeleteBusinessLink;
                             if ((i2 & 1) != 0) {
                             }
                             if ((i2 & 2) != 0) {
@@ -478,7 +478,7 @@ public final class zzaq extends zzd {
                             }
                             this.zzw = new MediaStatus(jSONObject2);
                             this.zzv = SystemClock.elapsedRealtime();
-                            i2 = NotificationCenter.messageTranslated;
+                            i2 = NotificationCenter.needDeleteBusinessLink;
                             if ((i2 & 1) != 0) {
                             }
                             if ((i2 & 2) != 0) {
@@ -501,7 +501,7 @@ public final class zzaq extends zzd {
                             }
                             this.zzw = new MediaStatus(jSONObject2);
                             this.zzv = SystemClock.elapsedRealtime();
-                            i2 = NotificationCenter.messageTranslated;
+                            i2 = NotificationCenter.needDeleteBusinessLink;
                             if ((i2 & 1) != 0) {
                             }
                             if ((i2 & 2) != 0) {

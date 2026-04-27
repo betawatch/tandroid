@@ -50,6 +50,18 @@ public final class SpringAnimation extends DynamicAnimation {
         super.start();
     }
 
+    public void animateToFinalPosition(float f) {
+        if (isRunning()) {
+            this.mPendingPosition = f;
+            return;
+        }
+        if (this.mSpring == null) {
+            this.mSpring = new SpringForce(f);
+        }
+        this.mSpring.setFinalPosition(f);
+        start();
+    }
+
     private void sanityCheck() {
         SpringForce springForce = this.mSpring;
         if (springForce == null) {

@@ -61,7 +61,7 @@ public class MenuDrawable extends Drawable {
         this.rotateToBack = true;
         this.interpolator = new DecelerateInterpolator();
         this.rect = new RectF();
-        this.alpha = NotificationCenter.invalidateMotionBackground;
+        this.alpha = NotificationCenter.didReceiveCall;
         paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
         paint2.setStrokeWidth(AndroidUtilities.density * 1.66f);
         paint2.setStrokeCap(Paint.Cap.ROUND);
@@ -184,7 +184,7 @@ public class MenuDrawable extends Drawable {
                 f3 = 0.0f;
                 f2 = 0.0f;
                 if (!this.rotateToBack) {
-                    canvas.rotate(this.currentRotation * (this.reverseAngle ? -180 : NotificationCenter.newEmojiSuggestionsAvailable), AndroidUtilities.dp(9.0f), 0.0f);
+                    canvas.rotate(this.currentRotation * (this.reverseAngle ? -180 : NotificationCenter.needDeleteDialog), AndroidUtilities.dp(9.0f), 0.0f);
                     this.paint.setColor(i9);
                     this.paint.setAlpha(this.alpha);
                     canvas.drawLine(this.roundCap ? (AndroidUtilities.dp(0.5f) * this.currentRotation) + ((this.paint.getStrokeWidth() / 2.0f) * (1.0f - this.currentRotation)) : 0.0f, 0.0f, ((AndroidUtilities.dp(18.0f) - (AndroidUtilities.dp(3.0f) * this.currentRotation)) - f3) - (this.roundCap ? (this.paint.getStrokeWidth() / 2.0f) * (1.0f - this.currentRotation) : 0.0f), 0.0f, this.paint);
@@ -200,7 +200,7 @@ public class MenuDrawable extends Drawable {
                         dp3 = dp7 + (AndroidUtilities.dp(0.25f) * this.currentRotation);
                     }
                 } else {
-                    canvas.rotate(this.currentRotation * (this.reverseAngle ? -225 : NotificationCenter.httpFileDidFailedLoad), AndroidUtilities.dp(9.0f), 0.0f);
+                    canvas.rotate(this.currentRotation * (this.reverseAngle ? -225 : NotificationCenter.httpFileDidLoad), AndroidUtilities.dp(9.0f), 0.0f);
                     if (this.miniIcon) {
                         this.paint.setColor(i9);
                         this.paint.setAlpha(this.alpha);

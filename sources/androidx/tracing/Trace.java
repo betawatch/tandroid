@@ -51,6 +51,6 @@ public abstract class Trace {
     }
 
     private static String truncatedTraceSectionLabel(String str) {
-        return str.length() <= 127 ? str : str.substring(0, NotificationCenter.messageTranslated);
+        return str.length() <= 127 ? str : str.substring(0, NotificationCenter.needDeleteBusinessLink);
     }
 }

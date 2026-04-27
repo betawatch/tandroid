@@ -17,7 +17,7 @@ import org.telegram.messenger.NotificationCenter;
 /* loaded from: classes.dex */
 public final class zzo extends GmsClient {
     public zzo(Context context, Looper looper, ClientSettings clientSettings, GoogleApiClient.ConnectionCallbacks connectionCallbacks, GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener) {
-        super(context, looper, NotificationCenter.audioDidSent, clientSettings, (ConnectionCallbacks) connectionCallbacks, (OnConnectionFailedListener) onConnectionFailedListener);
+        super(context, looper, NotificationCenter.albumsDidLoad, clientSettings, (ConnectionCallbacks) connectionCallbacks, (OnConnectionFailedListener) onConnectionFailedListener);
     }
 
     @Override // com.google.android.gms.common.internal.BaseGmsClient

@@ -686,7 +686,7 @@ public class StickersActivity extends BaseFragment implements NotificationCenter
             public final void run() {
                 StickersActivity.this.lambda$openStickerSetOptions$12(stickersSet);
             }
-        }).setMinWidth(NotificationCenter.boostByChannelCreated).show();
+        }).setMinWidth(NotificationCenter.boostedChannelByUser).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

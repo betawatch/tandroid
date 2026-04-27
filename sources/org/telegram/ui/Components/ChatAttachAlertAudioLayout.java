@@ -22,9 +22,9 @@ import java.util.HashSet;
 import java.util.Iterator;
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;
+import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -275,7 +275,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
                 chatAttachAlertAudioLayout.parentAlert.updateLayout(chatAttachAlertAudioLayout, true, i2);
             }
         });
-        addView(frameLayout, LayoutHelper.createFrame(-1, NotificationCenter.channelRecommendationsLoaded, 51));
+        addView(frameLayout, LayoutHelper.createFrame(-1, NotificationCenter.dialogPhotosUpdate, 51));
         this.listView.adapter.update(false);
         checkUi_listViewPadding();
         int i = this.parentAlert.currentAccount;
@@ -1025,7 +1025,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
             tL_messages_searchGlobal.offset_id = 0;
             tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
         }
-        this.searchChatsRequestId = connectionsManager.sendRequestTyped(tL_messages_searchGlobal, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.ChatAttachAlertAudioLayout$$ExternalSyntheticLambda7
+        this.searchChatsRequestId = connectionsManager.sendRequestTyped(tL_messages_searchGlobal, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.ChatAttachAlertAudioLayout$$ExternalSyntheticLambda7
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 ChatAttachAlertAudioLayout.this.lambda$searchChats$5(messagesController, i, (TLRPC.messages_Messages) obj, (TLRPC.TL_error) obj2);
@@ -1138,7 +1138,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
         String str4 = str3 != null ? str3 : "";
         this.lastSearchGlobalQuery = str4;
         tL_messages_getInlineBotResults.query = str4;
-        this.searchGlobalRequestId = connectionsManager.sendRequestTyped(tL_messages_getInlineBotResults, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.ChatAttachAlertAudioLayout$$ExternalSyntheticLambda12
+        this.searchGlobalRequestId = connectionsManager.sendRequestTyped(tL_messages_getInlineBotResults, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.ChatAttachAlertAudioLayout$$ExternalSyntheticLambda12
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 ChatAttachAlertAudioLayout.this.lambda$searchGlobal$7(messagesController, i, (TLRPC.messages_BotResults) obj, (TLRPC.TL_error) obj2);

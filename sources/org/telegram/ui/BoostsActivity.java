@@ -809,7 +809,7 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
             @Override // android.view.View
             protected void onDraw(Canvas canvas) {
                 this.drawable.setBounds(0, 0, getWidth(), getHeight());
-                this.drawable.setAlpha(NotificationCenter.invalidateMotionBackground);
+                this.drawable.setAlpha(NotificationCenter.didReceiveCall);
                 this.drawable.draw(canvas);
                 invalidate();
                 super.onDraw(canvas);

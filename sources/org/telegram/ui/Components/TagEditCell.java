@@ -23,8 +23,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
+import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.ChatObject;
@@ -47,6 +47,7 @@ import org.telegram.ui.Cells.ChatMessageCell;
 import org.telegram.ui.Cells.PollEditTextCell;
 import org.telegram.ui.Cells.TextInfoPrivacyCell;
 import org.telegram.ui.Cells.TextSelectionHelper;
+import org.telegram.ui.Components.chat.ChatActivityDraftMessageMeasureController;
 import org.telegram.ui.GradientClip;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PinchToZoomHelper;
@@ -512,6 +513,11 @@ public class TagEditCell extends LinearLayout {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+            public /* synthetic */ ChatActivityDraftMessageMeasureController getDraftMessageMeasureController() {
+                return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getDraftMessageMeasureController(this);
+            }
+
+            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ PinchToZoomHelper getPinchToZoomHelper() {
                 return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getPinchToZoomHelper(this);
             }
@@ -791,7 +797,7 @@ public class TagEditCell extends LinearLayout {
         tL_messages_editChatParticipantRank.peer = messagesController.getInputPeer(j);
         tL_messages_editChatParticipantRank.participant = MessagesController.getInputPeer(user);
         tL_messages_editChatParticipantRank.rank = strArr[0];
-        ConnectionsManager.getInstance(i).sendRequestTyped(tL_messages_editChatParticipantRank, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.TagEditCell$$ExternalSyntheticLambda4
+        ConnectionsManager.getInstance(i).sendRequestTyped(tL_messages_editChatParticipantRank, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.TagEditCell$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 TagEditCell.lambda$showSheet$2(MessagesController.this, j, user, tL_messages_editChatParticipantRank, bottomSheet, z, resourcesProvider, buttonWithCounterView, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
@@ -1249,6 +1255,11 @@ public class TagEditCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ ChatActivityDraftMessageMeasureController getDraftMessageMeasureController() {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getDraftMessageMeasureController(this);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ PinchToZoomHelper getPinchToZoomHelper() {
                     return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getPinchToZoomHelper(this);
                 }
@@ -1392,7 +1403,7 @@ public class TagEditCell extends LinearLayout {
                 @Override // android.view.ViewGroup
                 protected boolean drawChild(Canvas canvas, View view, long j2) {
                     if (view == chatMessageCell) {
-                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.invalidateMotionBackground, 31);
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
                         boolean drawChild = super.drawChild(canvas, view, j2);
                         canvas.save();
                         RectF rectF = AndroidUtilities.rectTmp;

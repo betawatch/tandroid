@@ -165,7 +165,7 @@ final class zzqc {
     static int zzj(int i, byte[] bArr, int i2, zzqb zzqbVar) {
         byte b = bArr[i2];
         int i3 = i2 + 1;
-        int i4 = i & NotificationCenter.messageTranslated;
+        int i4 = i & NotificationCenter.needDeleteBusinessLink;
         if (b >= 0) {
             zzqbVar.zza = i4 | (b << 7);
             return i3;

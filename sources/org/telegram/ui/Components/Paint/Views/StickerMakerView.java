@@ -167,7 +167,7 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
         paint.setStrokeCap(cap);
         paint.setPathEffect(new DashPathEffect(new float[]{AndroidUtilities.dp(5.0f), AndroidUtilities.dp(10.0f)}, 0.5f));
         paint.setShadowLayer(AndroidUtilities.dpf2(0.75f), 0.0f, 0.0f, 1342177280);
-        paint.setAlpha(NotificationCenter.fileLoadProgressChanged);
+        paint.setAlpha(NotificationCenter.fileUploadProgressChanged);
         TextView textView = new TextView(context);
         this.actionTextView = textView;
         textView.setTextSize(1, 13.0f);

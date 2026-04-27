@@ -139,6 +139,7 @@ import org.telegram.ui.Components.URLSpanNoUnderline;
 import org.telegram.ui.Components.URLSpanReplacement;
 import org.telegram.ui.Components.URLSpanUserMention;
 import org.telegram.ui.Components.UndoView;
+import org.telegram.ui.Components.chat.ChatActivityDraftMessageMeasureController;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 
@@ -2039,7 +2040,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         };
         this.scrimPopupWindow = actionBarPopupWindow;
         actionBarPopupWindow.setPauseNotifications(true);
-        this.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+        this.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starGiveawayOptionsLoaded);
         this.scrimPopupWindow.setOutsideTouchable(true);
         this.scrimPopupWindow.setClippingEnabled(true);
         this.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
@@ -2234,7 +2235,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         return this.videoTextureView;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:124:0x0373, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:124:0x0375, code lost:
     
         if (r0.exists() != false) goto L123;
      */
@@ -2459,6 +2460,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
                                         tL_chatBannedRights.send_audios = true;
                                         tL_chatBannedRights.send_voices = true;
                                         tL_chatBannedRights.send_docs = true;
+                                        tL_chatBannedRights.send_reactions = true;
                                         getMessagesController().setParticipantBannedRole(this.currentChat.id, user2, null, this.selectedParticipant.banned_rights, true, getFragmentForAlert(1), new Runnable() { // from class: org.telegram.ui.ChannelAdminLogActivity$$ExternalSyntheticLambda26
                                             @Override // java.lang.Runnable
                                             public final void run() {
@@ -2578,7 +2580,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         tL_channels_getParticipants.channel = MessagesController.getInputChannel(this.currentChat);
         tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsAdmins();
         tL_channels_getParticipants.offset = 0;
-        tL_channels_getParticipants.limit = NotificationCenter.channelRecommendationsLoaded;
+        tL_channels_getParticipants.limit = NotificationCenter.dialogPhotosUpdate;
         ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getParticipants, new RequestDelegate() { // from class: org.telegram.ui.ChannelAdminLogActivity$$ExternalSyntheticLambda6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -3387,6 +3389,11 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ String getAdminRank(long j) {
                 return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getAdminRank(this, j);
+            }
+
+            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+            public /* synthetic */ ChatActivityDraftMessageMeasureController getDraftMessageMeasureController() {
+                return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getDraftMessageMeasureController(this);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

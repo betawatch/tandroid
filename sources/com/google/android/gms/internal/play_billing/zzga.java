@@ -151,7 +151,7 @@ abstract class zzga {
     static int zzi(int i, byte[] bArr, int i2, zzfz zzfzVar) {
         byte b = bArr[i2];
         int i3 = i2 + 1;
-        int i4 = i & NotificationCenter.messageTranslated;
+        int i4 = i & NotificationCenter.needDeleteBusinessLink;
         if (b >= 0) {
             zzfzVar.zza = i4 | (b << 7);
             return i3;

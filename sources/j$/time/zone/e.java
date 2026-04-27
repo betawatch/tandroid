@@ -59,7 +59,7 @@ public final class e implements Serializable {
         ZoneOffset zoneOffset2 = this.i;
         int totalSeconds3 = zoneOffset2.getTotalSeconds() - totalSeconds;
         int M = Z % 3600 == 0 ? z ? 24 : jVar.M() : 31;
-        int i = totalSeconds % 900 == 0 ? (totalSeconds / 900) + 128 : NotificationCenter.invalidateMotionBackground;
+        int i = totalSeconds % 900 == 0 ? (totalSeconds / 900) + 128 : NotificationCenter.didReceiveCall;
         int i2 = (totalSeconds2 == 0 || totalSeconds2 == 1800 || totalSeconds2 == 3600) ? totalSeconds2 / 1800 : 3;
         int i3 = (totalSeconds3 == 0 || totalSeconds3 == 1800 || totalSeconds3 == 3600) ? totalSeconds3 / 1800 : 3;
         DayOfWeek dayOfWeek = this.c;

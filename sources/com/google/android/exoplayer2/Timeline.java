@@ -174,7 +174,7 @@ public abstract class Timeline implements Bundleable {
         }
 
         public int hashCode() {
-            int hashCode = (((this.uid.hashCode() + NotificationCenter.starOptionsLoaded) * 31) + this.mediaItem.hashCode()) * 31;
+            int hashCode = (((this.uid.hashCode() + NotificationCenter.availableEffectsUpdate) * 31) + this.mediaItem.hashCode()) * 31;
             Object obj = this.manifest;
             int hashCode2 = (hashCode + (obj == null ? 0 : obj.hashCode())) * 31;
             MediaItem.LiveConfiguration liveConfiguration = this.liveConfiguration;
@@ -400,7 +400,7 @@ public abstract class Timeline implements Bundleable {
 
         public int hashCode() {
             Object obj = this.id;
-            int hashCode = ((obj == null ? 0 : obj.hashCode()) + NotificationCenter.starOptionsLoaded) * 31;
+            int hashCode = ((obj == null ? 0 : obj.hashCode()) + NotificationCenter.availableEffectsUpdate) * 31;
             Object obj2 = this.uid;
             int hashCode2 = (((hashCode + (obj2 != null ? obj2.hashCode() : 0)) * 31) + this.windowIndex) * 31;
             long j = this.durationUs;
@@ -606,7 +606,7 @@ public abstract class Timeline implements Bundleable {
     public int hashCode() {
         Window window = new Window();
         Period period = new Period();
-        int windowCount = getWindowCount() + NotificationCenter.starOptionsLoaded;
+        int windowCount = getWindowCount() + NotificationCenter.availableEffectsUpdate;
         for (int i = 0; i < getWindowCount(); i++) {
             windowCount = (windowCount * 31) + getWindow(i, window).hashCode();
         }

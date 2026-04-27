@@ -379,7 +379,7 @@ public class SessionsActivity extends BaseFragment implements NotificationCenter
         } else if (num.intValue() == 1) {
             i = 90;
         } else if (num.intValue() == 2) {
-            i = NotificationCenter.dialogFiltersUpdated;
+            i = NotificationCenter.themeUploadError;
         } else {
             i = num.intValue() == 3 ? 365 : 0;
         }

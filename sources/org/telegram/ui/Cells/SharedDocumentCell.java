@@ -449,7 +449,7 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
             TextView textView = this.extTextView;
             int lastIndexOf = documentFileName.lastIndexOf(46);
             textView.setText(lastIndexOf != -1 ? documentFileName.substring(lastIndexOf + 1).toLowerCase() : "");
-            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.storyDeleted);
+            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.wallpaperSettedToUser);
             TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 40);
             if (closestPhotoSizeWithSize2 == closestPhotoSizeWithSize) {
                 closestPhotoSizeWithSize = null;
@@ -628,7 +628,7 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
         int dp = AndroidUtilities.dp(34.0f) + this.nameTextView.getMeasuredHeight() + (this.needDivider ? 1 : 0);
         if (this.caption != null && this.captionTextView != null && this.message.hasHighlightedWords()) {
             this.ignoreRequestLayout = true;
-            this.captionTextView.setText(AndroidUtilities.ellipsizeCenterEnd(this.caption, this.message.highlightedWords.get(0), this.captionTextView.getMeasuredWidth(), this.captionTextView.getPaint(), NotificationCenter.dialogTranslate));
+            this.captionTextView.setText(AndroidUtilities.ellipsizeCenterEnd(this.caption, this.message.highlightedWords.get(0), this.captionTextView.getMeasuredWidth(), this.captionTextView.getPaint(), NotificationCenter.dialogIsTranslatable));
             this.ignoreRequestLayout = false;
             dp += this.captionTextView.getMeasuredHeight() + AndroidUtilities.dp(3.0f);
         }

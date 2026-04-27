@@ -29,7 +29,7 @@ import org.telegram.ui.Components.RectOld;
 
 /* loaded from: classes5.dex */
 public abstract class EntityView extends FrameLayout {
-    private static final List STICKY_ANGLES = Arrays.asList(-90, 0, 90, Integer.valueOf(NotificationCenter.newEmojiSuggestionsAvailable));
+    private static final List STICKY_ANGLES = Arrays.asList(-90, 0, 90, Integer.valueOf(NotificationCenter.needDeleteDialog));
     private float angle;
     private ValueAnimator angleAnimator;
     private boolean announcedDrag;

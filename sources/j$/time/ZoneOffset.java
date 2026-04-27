@@ -280,7 +280,7 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.m, j$.t
 
     final void U(DataOutput dataOutput) {
         int i = this.b;
-        int i2 = i % 900 == 0 ? i / 900 : NotificationCenter.messageTranslated;
+        int i2 = i % 900 == 0 ? i / 900 : NotificationCenter.needDeleteBusinessLink;
         dataOutput.writeByte(i2);
         if (i2 == 127) {
             dataOutput.writeInt(i);

@@ -7,6 +7,7 @@ import me.vkryl.android.animator.FactorAnimator;
 import me.vkryl.android.animator.VariableFloat;
 import me.vkryl.android.animator.VariableRect;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AdjustPanLayoutHelper;
 import org.telegram.ui.Components.inset.KeyboardState;
@@ -23,10 +24,12 @@ public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInse
     private int inAppKeyboardViewHeight;
     private final FactorAnimator insetsAnimator;
     private WindowInsetsCompat lastInsets;
+    private boolean locked;
     private final Runnable onUpdateListener;
     private final VariableFloat keyboardVisibility = new VariableFloat(0.0f);
     private final VariableRect insetsMaxRect = new VariableRect();
     private final VariableRect insetsImeRect = new VariableRect();
+    private final AnimationNotificationsLocker locker = new AnimationNotificationsLocker();
     private final KeyboardState keyboardState = new KeyboardState(new Utilities.Callback() { // from class: org.telegram.ui.Components.inset.WindowInsetsStateHolder$$ExternalSyntheticLambda0
         @Override // org.telegram.messenger.Utilities.Callback
         public final void run(Object obj) {
@@ -76,8 +79,23 @@ public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInse
                 if (z2) {
                     runnable.run();
                 }
+                WindowInsetsStateHolder.this.checkAnimationsLocker();
             }
         }, AdjustPanLayoutHelper.keyboardInterpolator, 250L);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void checkAnimationsLocker() {
+        boolean isAnimating = this.insetsAnimator.isAnimating();
+        if (!this.locked && isAnimating) {
+            this.locked = true;
+            this.locker.lock();
+        }
+        if (!this.locked || isAnimating) {
+            return;
+        }
+        this.locked = false;
+        this.locker.unlock();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -109,29 +127,27 @@ public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInse
         Insets max = Insets.max(insets2, Insets.of(0, 0, 0, this.inAppKeyboardHeight));
         Insets max2 = Insets.max(insets, max);
         if (z) {
-            if (!this.keyboardVisibility.differs(max.bottom > 0 ? 1.0f : 0.0f) && !this.insetsMaxRect.differs(max2.left, max2.top, max2.right, max2.bottom) && !this.insetsImeRect.differs(max.left, max.top, max.right, max.bottom)) {
-                if (state != keyboardVisibility) {
-                    this.onUpdateListener.run();
-                    return;
-                }
-                return;
+            if (this.keyboardVisibility.differs(max.bottom > 0 ? 1.0f : 0.0f) || this.insetsMaxRect.differs(max2.left, max2.top, max2.right, max2.bottom) || this.insetsImeRect.differs(max.left, max.top, max.right, max.bottom)) {
+                this.insetsAnimator.cancel();
+                this.keyboardVisibility.finishAnimation(false);
+                this.insetsMaxRect.finishAnimation(false);
+                this.insetsImeRect.finishAnimation(false);
+                this.keyboardVisibility.setTo(max.bottom > 0 ? 1.0f : 0.0f);
+                this.insetsMaxRect.setTo(max2.left, max2.top, max2.right, max2.bottom);
+                this.insetsImeRect.setTo(max.left, max.top, max.right, max.bottom);
+                this.insetsAnimator.forceFactor(0.0f);
+                this.insetsAnimator.animateTo(1.0f);
+            } else if (state != keyboardVisibility) {
+                this.onUpdateListener.run();
             }
+        } else {
             this.insetsAnimator.cancel();
-            this.keyboardVisibility.finishAnimation(false);
-            this.insetsMaxRect.finishAnimation(false);
-            this.insetsImeRect.finishAnimation(false);
-            this.keyboardVisibility.setTo(max.bottom > 0 ? 1.0f : 0.0f);
-            this.insetsMaxRect.setTo(max2.left, max2.top, max2.right, max2.bottom);
-            this.insetsImeRect.setTo(max.left, max.top, max.right, max.bottom);
-            this.insetsAnimator.forceFactor(0.0f);
-            this.insetsAnimator.animateTo(1.0f);
-            return;
+            this.keyboardVisibility.set(max.bottom > 0 ? 1.0f : 0.0f);
+            this.insetsMaxRect.set(max2.left, max2.top, max2.right, max2.bottom);
+            this.insetsImeRect.set(max.left, max.top, max.right, max.bottom);
+            this.onUpdateListener.run();
         }
-        this.insetsAnimator.cancel();
-        this.keyboardVisibility.set(max.bottom > 0 ? 1.0f : 0.0f);
-        this.insetsMaxRect.set(max2.left, max2.top, max2.right, max2.bottom);
-        this.insetsImeRect.set(max.left, max.top, max.right, max.bottom);
-        this.onUpdateListener.run();
+        checkAnimationsLocker();
     }
 
     @Override // org.telegram.ui.Components.inset.WindowInsetsProvider

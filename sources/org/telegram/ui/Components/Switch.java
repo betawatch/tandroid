@@ -433,7 +433,7 @@ public class Switch extends View {
                 int blue = Color.blue(processColor);
                 int blue2 = Color.blue(processColor2);
                 int i8 = i5;
-                int alpha = (((int) (blue + ((blue2 - blue) * f2))) & NotificationCenter.invalidateMotionBackground) | ((((int) (red + ((red2 - red) * f2))) & NotificationCenter.invalidateMotionBackground) << 16) | ((((int) (Color.alpha(processColor) + ((Color.alpha(processColor2) - r6) * f2))) & NotificationCenter.invalidateMotionBackground) << 24) | ((((int) (green + ((green2 - green) * f2))) & NotificationCenter.invalidateMotionBackground) << 8);
+                int alpha = (((int) (blue + ((blue2 - blue) * f2))) & NotificationCenter.didReceiveCall) | ((((int) (red + ((red2 - red) * f2))) & NotificationCenter.didReceiveCall) << 16) | ((((int) (Color.alpha(processColor) + ((Color.alpha(processColor2) - r6) * f2))) & NotificationCenter.didReceiveCall) << 24) | ((((int) (green + ((green2 - green) * f2))) & NotificationCenter.didReceiveCall) << 8);
                 this.paint.setColor(alpha);
                 this.paint2.setColor(alpha);
                 this.rectF.set(measuredWidth, measuredHeight, measuredWidth + dp, AndroidUtilities.dpf2(14.0f) + measuredHeight);
@@ -482,7 +482,7 @@ public class Switch extends View {
                 int green4 = Color.green(processColor3);
                 int blue3 = Color.blue(color);
                 int blue4 = Color.blue(processColor3);
-                this.paint.setColor(((((int) (Color.alpha(color) + ((Color.alpha(processColor3) - r6) * f))) & NotificationCenter.invalidateMotionBackground) << 24) | ((((int) (red3 + ((red4 - red3) * f))) & NotificationCenter.invalidateMotionBackground) << 16) | ((((int) (green3 + ((green4 - green3) * f))) & NotificationCenter.invalidateMotionBackground) << 8) | (((int) (blue3 + ((blue4 - blue3) * f))) & NotificationCenter.invalidateMotionBackground));
+                this.paint.setColor(((((int) (Color.alpha(color) + ((Color.alpha(processColor3) - r6) * f))) & NotificationCenter.didReceiveCall) << 24) | ((((int) (red3 + ((red4 - red3) * f))) & NotificationCenter.didReceiveCall) << 16) | ((((int) (green3 + ((green4 - green3) * f))) & NotificationCenter.didReceiveCall) << 8) | (((int) (blue3 + ((blue4 - blue3) * f))) & NotificationCenter.didReceiveCall));
                 float f3 = dp2;
                 float f4 = measuredHeight2;
                 canvas5.drawCircle(f3, f4, AndroidUtilities.dp(8.0f), this.paint);

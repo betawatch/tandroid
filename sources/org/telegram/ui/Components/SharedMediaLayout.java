@@ -135,7 +135,7 @@ import org.telegram.ui.Cells.SharedPhotoVideoCell2;
 import org.telegram.ui.Cells.TextSelectionHelper;
 import org.telegram.ui.Cells.UserCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda318;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda291;
 import org.telegram.ui.ChatActivityContainer;
 import org.telegram.ui.Components.Forum.ForumUtilities;
 import org.telegram.ui.Components.FragmentContextView;
@@ -153,6 +153,7 @@ import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
+import org.telegram.ui.Components.chat.ChatActivityDraftMessageMeasureController;
 import org.telegram.ui.ContentPreviewViewer;
 import org.telegram.ui.DialogsActivity;
 import org.telegram.ui.Gifts.ProfileGiftsContainer;
@@ -4433,7 +4434,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                     public void onTransitionAnimationStart(boolean z, boolean z2) {
                         if (this.firstCreateView) {
                             if (this.searchItem != null) {
-                                lambda$openSearchWithText$350("");
+                                lambda$openSearchWithText$355("");
                                 this.searchItem.setSearchFieldText(SharedMediaLayout.this.savedMessagesSearchAdapter.lastQuery, false);
                             }
                             SearchTagsList searchTagsList = this.actionBarSearchTags;
@@ -9427,7 +9428,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             boolean isStoryAlbumPageType = isStoryAlbumPageType(getClosestTab());
             final ItemOptions makeOptions = ItemOptions.makeOptions(this.profileActivity, view, true);
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda318(makeOptions));
+            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda291(makeOptions));
             makeSwipeback.addGap();
             ItemOptions.addAlbumsItemOptions(makeSwipeback, getStoriesController().getStoryAlbumsList(this.dialog_id), hashSet, true, new Runnable() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda24
                 @Override // java.lang.Runnable
@@ -10972,6 +10973,11 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ ChatActivityDraftMessageMeasureController getDraftMessageMeasureController() {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getDraftMessageMeasureController(this);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ PinchToZoomHelper getPinchToZoomHelper() {
                     return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getPinchToZoomHelper(this);
                 }
@@ -11363,7 +11369,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                         });
                         ContentPreviewViewer contentPreviewViewer = ContentPreviewViewer.getInstance();
                         TLRPC.Document document4 = messageMedia.document;
-                        contentPreviewViewer.open(document4, null, "", null, null, MessageObject.isAnimatedEmoji(document4) ? 2 : 0, false, chatMessageCell.getMessageObject(), resourcesProvider, NotificationCenter.channelRecommendationsLoaded);
+                        contentPreviewViewer.open(document4, null, "", null, null, MessageObject.isAnimatedEmoji(document4) ? 2 : 0, false, chatMessageCell.getMessageObject(), resourcesProvider, NotificationCenter.dialogPhotosUpdate);
                         return;
                     }
                     TLRPC.Message message = messageObject.messageOwner;
@@ -12803,7 +12809,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 final TLRPC.Chat chat = (TLRPC.Chat) tLObject;
                 ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(SharedMediaLayout.this.getContext(), false, false);
                 actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(R.string.OpenChannel2), R.drawable.msg_channel);
-                actionBarMenuSubItem.setMinimumWidth(NotificationCenter.albumsDidLoad);
+                actionBarMenuSubItem.setMinimumWidth(NotificationCenter.screenshotTook);
                 actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.SharedMediaLayout$ChannelRecommendationsAdapter$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -12813,7 +12819,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 actionBarPopupWindowLayout.addView(actionBarMenuSubItem);
                 ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem(SharedMediaLayout.this.getContext(), false, false);
                 actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString(R.string.ProfileJoinChannel), R.drawable.msg_addbot);
-                actionBarMenuSubItem2.setMinimumWidth(NotificationCenter.albumsDidLoad);
+                actionBarMenuSubItem2.setMinimumWidth(NotificationCenter.screenshotTook);
                 actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.SharedMediaLayout$ChannelRecommendationsAdapter$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {

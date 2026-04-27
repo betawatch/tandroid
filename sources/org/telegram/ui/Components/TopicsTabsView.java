@@ -191,7 +191,7 @@ public class TopicsTabsView extends FrameLayout implements NotificationCenter.No
                 float f2 = this.animatedClipR.set(canScrollHorizontally(1));
                 boolean z = f > 0.0f || f2 > 0.0f;
                 if (z) {
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.invalidateMotionBackground, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
                 }
                 drawPinnedBackground(canvas);
                 super.dispatchDraw(canvas);
@@ -351,7 +351,7 @@ public class TopicsTabsView extends FrameLayout implements NotificationCenter.No
             protected void dispatchDraw(Canvas canvas) {
                 float f = this.animatedClip.set(canScrollVertically(-1));
                 if (f > 0.0f) {
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.invalidateMotionBackground, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
                 }
                 drawPinnedBackground(canvas);
                 super.dispatchDraw(canvas);
@@ -1410,7 +1410,7 @@ public class TopicsTabsView extends FrameLayout implements NotificationCenter.No
                     if (z) {
                         f = dp3;
                         f2 = width;
-                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.invalidateMotionBackground, 31);
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
                     } else {
                         f = dp3;
                         f2 = width;

@@ -15,7 +15,7 @@ abstract class Atom {
     }
 
     public static int parseFullAtomVersion(int i) {
-        return (i >> 24) & NotificationCenter.invalidateMotionBackground;
+        return (i >> 24) & NotificationCenter.didReceiveCall;
     }
 
     public Atom(int i) {
@@ -84,6 +84,6 @@ abstract class Atom {
     }
 
     public static String getAtomTypeString(int i) {
-        return "" + ((char) ((i >> 24) & NotificationCenter.invalidateMotionBackground)) + ((char) ((i >> 16) & NotificationCenter.invalidateMotionBackground)) + ((char) ((i >> 8) & NotificationCenter.invalidateMotionBackground)) + ((char) (i & NotificationCenter.invalidateMotionBackground));
+        return "" + ((char) ((i >> 24) & NotificationCenter.didReceiveCall)) + ((char) ((i >> 16) & NotificationCenter.didReceiveCall)) + ((char) ((i >> 8) & NotificationCenter.didReceiveCall)) + ((char) (i & NotificationCenter.didReceiveCall));
     }
 }

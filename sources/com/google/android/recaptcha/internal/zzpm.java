@@ -35,11 +35,11 @@ final class zzpm extends zzpo {
                 int i5 = i + 3;
                 int zzb2 = zzb | (zzpkVar.zzb(zze.charAt(i4)) << 6);
                 int i6 = i2 + 2;
-                bArr[i3] = (byte) ((zzb2 >>> 8) & NotificationCenter.invalidateMotionBackground);
+                bArr[i3] = (byte) ((zzb2 >>> 8) & NotificationCenter.didReceiveCall);
                 if (i5 < zze.length()) {
                     i += 4;
                     i2 += 3;
-                    bArr[i6] = (byte) ((zzb2 | zzpkVar.zzb(zze.charAt(i5))) & NotificationCenter.invalidateMotionBackground);
+                    bArr[i6] = (byte) ((zzb2 | zzpkVar.zzb(zze.charAt(i5))) & NotificationCenter.didReceiveCall);
                 } else {
                     i2 = i6;
                     i = i5;

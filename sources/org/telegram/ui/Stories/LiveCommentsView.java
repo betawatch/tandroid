@@ -43,8 +43,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
@@ -779,7 +779,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             return true;
         }
         float y = this.listView.getY() + Math.max(0.0f, this.keyboardOffset - this.listView.getTop());
-        canvas.saveLayerAlpha(this.listView.getX(), this.listView.getY(), this.listView.getX() + this.listView.getWidth(), this.listView.getY() + this.listView.getHeight(), NotificationCenter.invalidateMotionBackground, 31);
+        canvas.saveLayerAlpha(this.listView.getX(), this.listView.getY(), this.listView.getX() + this.listView.getWidth(), this.listView.getY() + this.listView.getHeight(), NotificationCenter.didReceiveCall, 31);
         canvas.save();
         canvas.translate(0.0f, (1.0f - this.listView.getAlpha()) * Math.min((this.listView.getY() + this.listView.getHeight()) - y, getListViewTop()));
         canvas.clipRect(0.0f, y, getWidth(), getHeight());
@@ -924,7 +924,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         this.polling = true;
         final TL_phone.getGroupCallStars getgroupcallstars = new TL_phone.getGroupCallStars();
         getgroupcallstars.call = this.inputCall;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(getgroupcallstars, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda11
+        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(getgroupcallstars, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda11
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 LiveCommentsView.this.lambda$pollStars$10(getgroupcallstars, (TL_phone.groupCallStars) obj, (TLRPC.TL_error) obj2);
@@ -2234,7 +2234,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
                         float f = this.animatedProgress.set(LiveTopSenderView.this.sender.getProgress());
                         this.lastDialogId = LiveTopSenderView.this.sender.dialogId;
                         this.fillPaint.setColor(tierOption2);
-                        this.fillPaint.setAlpha(NotificationCenter.messageTranslated);
+                        this.fillPaint.setAlpha(NotificationCenter.needDeleteBusinessLink);
                         canvas.drawRect(getWidth() * f, 0.0f, getWidth(), getHeight(), this.fillPaint);
                     }
                     if (this.particles == null) {
@@ -2282,7 +2282,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
                         this.width = getLayout() != null ? (int) getLayout().getLineWidth(0) : 0;
                     }
                     if (this.width > AndroidUtilities.dp(100.0f)) {
-                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.invalidateMotionBackground, 31);
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
                         super.onDraw(canvas);
                         canvas.save();
                         RectF rectF = AndroidUtilities.rectTmp;
@@ -2373,7 +2373,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         @Override // android.graphics.drawable.Drawable
         public void draw(Canvas canvas) {
             Rect bounds = getBounds();
-            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, NotificationCenter.invalidateMotionBackground, 31);
+            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, NotificationCenter.didReceiveCall, 31);
             this.crown.setBounds(bounds);
             this.crown.draw(canvas);
             this.text.draw(canvas, bounds.centerX() - (this.text.getCurrentWidth() / 2.0f), bounds.centerY() + AndroidUtilities.dp(0.15f), -1, this.crown.getAlpha() / 255.0f);

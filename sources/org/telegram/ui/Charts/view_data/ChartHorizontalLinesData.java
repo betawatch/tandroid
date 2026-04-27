@@ -17,7 +17,7 @@ import org.telegram.ui.Stars.StarsIntroActivity;
 /* loaded from: classes4.dex */
 public class ChartHorizontalLinesData {
     public int alpha;
-    public int fixedAlpha = NotificationCenter.invalidateMotionBackground;
+    public int fixedAlpha = NotificationCenter.didReceiveCall;
     private DecimalFormat formatterTON;
     private StaticLayout[] layouts;
     private StaticLayout[] layouts2;

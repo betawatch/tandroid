@@ -73,6 +73,7 @@ import org.telegram.ui.Components.SeekBarWaveform;
 import org.telegram.ui.Components.ThanosEffect;
 import org.telegram.ui.Components.TimerParticles;
 import org.telegram.ui.Components.VideoPlayer;
+import org.telegram.ui.Components.chat.ChatActivityDraftMessageMeasureController;
 import org.telegram.ui.SecretVoicePlayer;
 import org.telegram.ui.Stories.recorder.HintView2;
 
@@ -446,7 +447,7 @@ public class SecretVoicePlayer extends Dialog {
                         setImageCoords(SecretVoicePlayer.this.rect.left, SecretVoicePlayer.this.rect.top, SecretVoicePlayer.this.rect.width(), SecretVoicePlayer.this.rect.height());
                         getPhotoImage().setRoundRadius((int) SecretVoicePlayer.this.rect.width());
                         if (SecretVoicePlayer.this.openProgress > 0.0f && SecretVoicePlayer.this.renderedFirstFrame) {
-                            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.invalidateMotionBackground, 31);
+                            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
                         }
                         this.radialProgressAlpha = 1.0f - SecretVoicePlayer.this.openProgress;
                     }
@@ -537,7 +538,7 @@ public class SecretVoicePlayer extends Dialog {
                         this.radialMatrix.postScale(width2, width2);
                         this.radialMatrix.postTranslate(SecretVoicePlayer.this.rect.centerX(), SecretVoicePlayer.this.rect.centerY());
                         this.radialGradient.setLocalMatrix(this.radialMatrix);
-                        canvas.saveLayerAlpha(SecretVoicePlayer.this.rect, NotificationCenter.invalidateMotionBackground, 31);
+                        canvas.saveLayerAlpha(SecretVoicePlayer.this.rect, NotificationCenter.didReceiveCall, 31);
                         super.drawBlurredPhoto(canvas);
                         canvas.save();
                         canvas.drawRect(SecretVoicePlayer.this.rect, this.radialPaint);
@@ -900,6 +901,11 @@ public class SecretVoicePlayer extends Dialog {
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ String getAdminRank(long j) {
                     return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getAdminRank(this, j);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ ChatActivityDraftMessageMeasureController getDraftMessageMeasureController() {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getDraftMessageMeasureController(this);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

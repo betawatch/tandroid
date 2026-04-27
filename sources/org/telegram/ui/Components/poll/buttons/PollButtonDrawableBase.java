@@ -9,7 +9,7 @@ import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
 public abstract class PollButtonDrawableBase extends Drawable {
-    private int alpha = NotificationCenter.invalidateMotionBackground;
+    private int alpha = NotificationCenter.didReceiveCall;
     protected final Theme.ResourcesProvider resourcesProvider;
     protected final Drawable selectorDrawable;
     protected int selectorDrawableColor;

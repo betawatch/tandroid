@@ -34,6 +34,7 @@ import org.telegram.ui.Cells.GroupCreateUserCell;
 public class GroupCreateSpan extends View {
     private AvatarDrawable avatarDrawable;
     private int[] colors;
+    private String countryIso2;
     private ContactsController.Contact currentContact;
     private Drawable deleteDrawable;
     private boolean deleting;
@@ -67,14 +68,14 @@ public class GroupCreateSpan extends View {
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x02ff  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x030e  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x031a  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x032c  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x038b  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x033d  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0311  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0301  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0303  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0312  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x031e  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0330  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x038f  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0341  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0315  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0305  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -294,6 +295,7 @@ public class GroupCreateSpan extends View {
                 this.drawAvatarBackground = false;
                 avatarDrawable2.setDrawAvatarBackground(false);
                 this.uid = tL_help_country.default_name.hashCode();
+                this.countryIso2 = tL_help_country.iso2;
                 str = str3;
             } else {
                 this.avatarDrawable.setInfo(contact.contact_id, contact.first_name, contact.last_name);
@@ -314,7 +316,7 @@ public class GroupCreateSpan extends View {
                 min = AndroidUtilities.dp(398 - (z ? 28 : 32)) / 2;
             } else {
                 Point point = AndroidUtilities.displaySize;
-                min = (Math.min(point.x, point.y) - AndroidUtilities.dp((z ? 28 : 32) + NotificationCenter.walletPendingTransactionsChanged)) / 2;
+                min = (Math.min(point.x, point.y) - AndroidUtilities.dp((z ? 28 : 32) + NotificationCenter.didGenerateFingerprintKeyPair)) / 2;
             }
             staticLayout = new StaticLayout(TextUtils.ellipsize(Emoji.replaceEmoji(str.replace('\n', ' '), textPaint.getFontMetricsInt(), false), textPaint, min, TextUtils.TruncateAt.END), textPaint, MediaDataController.MAX_STYLE_RUNS_COUNT, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
             this.nameLayout = staticLayout;
@@ -368,6 +370,10 @@ public class GroupCreateSpan extends View {
         this.colors[7] = Color.alpha(color);
         this.deleteDrawable.setColorFilter(new PorterDuffColorFilter(color2, PorterDuff.Mode.MULTIPLY));
         backPaint.setColor(multAlpha);
+    }
+
+    public String getCountryIso2() {
+        return this.countryIso2;
     }
 
     public boolean isDeleting() {

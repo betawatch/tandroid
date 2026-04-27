@@ -34,7 +34,7 @@ import org.telegram.ui.Components.ListView.RecyclerListViewWithOverlayDraw;
 import org.telegram.ui.Components.Premium.PremiumLockIconView;
 
 /* loaded from: classes4.dex */
-public abstract class StickerEmojiCell extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, RecyclerListViewWithOverlayDraw.OverlayView {
+public class StickerEmojiCell extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, RecyclerListViewWithOverlayDraw.OverlayView {
     private static AccelerateInterpolator interpolator = new AccelerateInterpolator(0.5f);
     private float alpha;
     private boolean changingAlpha;

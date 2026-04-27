@@ -395,7 +395,7 @@ final class zzva implements zzvi {
                 iArr[i64] = i65;
                 i64++;
             }
-            int i74 = charAt25 & NotificationCenter.invalidateMotionBackground;
+            int i74 = charAt25 & NotificationCenter.didReceiveCall;
             int i75 = charAt25 & 2048;
             int i76 = length;
             if (i74 >= 51) {
@@ -614,7 +614,7 @@ final class zzva implements zzvi {
     }
 
     private static int zzn(int i) {
-        return (i >>> 20) & NotificationCenter.invalidateMotionBackground;
+        return (i >>> 20) & NotificationCenter.didReceiveCall;
     }
 
     private final int zzo(int i) {

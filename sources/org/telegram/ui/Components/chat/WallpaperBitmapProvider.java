@@ -71,10 +71,10 @@ public class WallpaperBitmapProvider {
             return updateSourceFromBackgroundViewDrawable(((ChatBackgroundDrawable) drawable).getDrawable(false));
         }
         if (drawable != null) {
-            Canvas beginRecording = this.sourceBitmap.beginRecording(120, NotificationCenter.albumsDidLoad);
+            Canvas beginRecording = this.sourceBitmap.beginRecording(120, NotificationCenter.screenshotTook);
             Rect rect = tmpRect;
             rect.set(drawable.getBounds());
-            drawable.setBounds(0, 0, 120, NotificationCenter.albumsDidLoad);
+            drawable.setBounds(0, 0, 120, NotificationCenter.screenshotTook);
             drawable.draw(beginRecording);
             drawable.setBounds(rect);
             this.sourceBitmap.endRecording();
@@ -126,10 +126,10 @@ public class WallpaperBitmapProvider {
         int i4 = 0;
         for (int i5 = 0; i5 < i3; i5++) {
             int i6 = iArr[i5];
-            j4 += (i6 >>> 24) & NotificationCenter.invalidateMotionBackground;
-            j3 += (i6 >> 16) & NotificationCenter.invalidateMotionBackground;
-            j2 += (i6 >> 8) & NotificationCenter.invalidateMotionBackground;
-            j += i6 & NotificationCenter.invalidateMotionBackground;
+            j4 += (i6 >>> 24) & NotificationCenter.didReceiveCall;
+            j3 += (i6 >> 16) & NotificationCenter.didReceiveCall;
+            j2 += (i6 >> 8) & NotificationCenter.didReceiveCall;
+            j += i6 & NotificationCenter.didReceiveCall;
             i4++;
         }
         if (i4 == 0) {

@@ -44,7 +44,7 @@ public class DialogRadioCell extends FrameLayout {
         this.textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         TextView textView3 = this.textView;
         boolean z2 = LocaleController.isRTL;
-        addView(textView3, LayoutHelper.createFrame(-1, -1.0f, (z2 ? 5 : 3) | 48, z2 ? 23.0f : 61.0f, 0.0f, z2 ? 61.0f : 23.0f, 0.0f));
+        addView(textView3, LayoutHelper.createFrame(-1, -1.0f, (z2 ? 5 : 3) | 48, z2 ? 61.0f : 23.0f, 0.0f, z2 ? 23.0f : 61.0f, 0.0f));
         TextView textView4 = new TextView(context);
         this.valueTextView = textView4;
         if (z) {
@@ -68,7 +68,29 @@ public class DialogRadioCell extends FrameLayout {
         } else {
             this.radioButton.setColor(Theme.getColor(Theme.key_radioBackground), Theme.getColor(Theme.key_radioBackgroundChecked));
         }
-        addView(this.radioButton, LayoutHelper.createFrame(22, 22.0f, (LocaleController.isRTL ? 5 : 3) | 48, 20.0f, 15.0f, 20.0f, 0.0f));
+        addView(this.radioButton, LayoutHelper.createFrame(22, 22.0f, (LocaleController.isRTL ? 3 : 5) | 48, 20.0f, 15.0f, 20.0f, 0.0f));
+        updateLayout();
+    }
+
+    private void updateLayout() {
+        FrameLayout.LayoutParams createFrame;
+        FrameLayout.LayoutParams createFrame2;
+        TextView textView = this.textView;
+        if (this.valueTextView.getVisibility() == 0) {
+            boolean z = LocaleController.isRTL;
+            createFrame = LayoutHelper.createFrame(-1, -1.0f, (z ? 5 : 3) | 48, z ? 23.0f : 61.0f, 0.0f, z ? 61.0f : 23.0f, 0.0f);
+        } else {
+            boolean z2 = LocaleController.isRTL;
+            createFrame = LayoutHelper.createFrame(-1, -1.0f, (z2 ? 5 : 3) | 48, z2 ? 61.0f : 23.0f, 0.0f, z2 ? 23.0f : 61.0f, 0.0f);
+        }
+        textView.setLayoutParams(createFrame);
+        RadioButton radioButton = this.radioButton;
+        if (this.valueTextView.getVisibility() == 0) {
+            createFrame2 = LayoutHelper.createFrame(22, 22.0f, (LocaleController.isRTL ? 5 : 3) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
+        } else {
+            createFrame2 = LayoutHelper.createFrame(22, 22.0f, (LocaleController.isRTL ? 3 : 5) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
+        }
+        radioButton.setLayoutParams(createFrame2);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -92,6 +114,7 @@ public class DialogRadioCell extends FrameLayout {
         this.textView.setText(charSequence);
         this.radioButton.setChecked(z, false);
         this.needDivider = z2;
+        updateLayout();
         setWillNotDraw(!z2);
     }
 
@@ -101,6 +124,7 @@ public class DialogRadioCell extends FrameLayout {
         this.textView.setText(charSequence);
         this.radioButton.setChecked(z, false);
         this.needDivider = z2;
+        updateLayout();
         setWillNotDraw(!z2);
     }
 
@@ -124,7 +148,7 @@ public class DialogRadioCell extends FrameLayout {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.needDivider) {
-            canvas.drawLine(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 60.0f), getHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 60.0f : 0.0f), getHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 23.0f), getHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 23.0f : 0.0f), getHeight() - 1, Theme.dividerPaint);
         }
     }
 }

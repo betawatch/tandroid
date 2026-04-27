@@ -24,6 +24,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.ScrollView;
@@ -1785,7 +1786,7 @@ public class ItemOptions {
         while (view != viewGroup) {
             f2 += view.getY();
             f += view.getX();
-            if (view instanceof ScrollView) {
+            if ((view instanceof ScrollView) || (view instanceof HorizontalScrollView)) {
                 f -= view.getScrollX();
                 f2 -= view.getScrollY();
             }
@@ -2021,7 +2022,7 @@ public class ItemOptions {
                     this.clipPath.addRoundRect(rectF2, ItemOptions.this.scrimViewRoundRadius * this.dimProgress, ItemOptions.this.scrimViewRoundRadius * this.dimProgress, Path.Direction.CW);
                     canvas.clipPath(this.clipPath);
                 }
-                this.cachedBitmapPaint.setAlpha(NotificationCenter.invalidateMotionBackground);
+                this.cachedBitmapPaint.setAlpha(NotificationCenter.didReceiveCall);
                 canvas.drawBitmap(this.cachedBitmap, -ItemOptions.this.viewAdditionalOffsets.left, -ItemOptions.this.viewAdditionalOffsets.top, this.cachedBitmapPaint);
                 canvas.restore();
             }

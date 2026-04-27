@@ -224,15 +224,15 @@ public abstract class MimeTypes {
                     return "video/mpeg";
                 default:
                     switch (i) {
-                        case NotificationCenter.activeGroupCallsUpdated /* 169 */:
-                        case NotificationCenter.didEndCall /* 172 */:
+                        case NotificationCenter.groupCallScreencastStateChanged /* 169 */:
+                        case NotificationCenter.groupCallTypingsUpdated /* 172 */:
                             return "audio/vnd.dts";
-                        case NotificationCenter.applyGroupCallVisibleParticipants /* 170 */:
-                        case NotificationCenter.groupCallTypingsUpdated /* 171 */:
+                        case NotificationCenter.activeGroupCallsUpdated /* 170 */:
+                        case NotificationCenter.applyGroupCallVisibleParticipants /* 171 */:
                             return "audio/vnd.dts.hd";
                         case 173:
                             return "audio/opus";
-                        case NotificationCenter.groupCallVisibilityChanged /* 174 */:
+                        case NotificationCenter.closeInCallActivity /* 174 */:
                             return "audio/ac4";
                         default:
                             return null;

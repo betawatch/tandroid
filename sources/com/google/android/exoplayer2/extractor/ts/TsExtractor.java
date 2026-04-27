@@ -128,7 +128,7 @@ public final class TsExtractor implements Extractor {
         int i = 0;
         while (i < 188) {
             for (int i2 = 0; i2 < 5; i2++) {
-                if (data[(i2 * NotificationCenter.didStartedMultiGiftsSelector) + i] != 71) {
+                if (data[(i2 * NotificationCenter.giftsToUserSent) + i] != 71) {
                     break;
                 }
             }
@@ -281,7 +281,7 @@ public final class TsExtractor implements Extractor {
         int limit = this.tsPacketBuffer.limit();
         int findSyncBytePosition = TsUtil.findSyncBytePosition(this.tsPacketBuffer.getData(), position, limit);
         this.tsPacketBuffer.setPosition(findSyncBytePosition);
-        int i = findSyncBytePosition + NotificationCenter.didStartedMultiGiftsSelector;
+        int i = findSyncBytePosition + NotificationCenter.giftsToUserSent;
         if (i > limit) {
             int i2 = this.bytesSinceLastSync + (findSyncBytePosition - position);
             this.bytesSinceLastSync = i2;
@@ -475,20 +475,20 @@ public final class TsExtractor implements Extractor {
                                     i3 = 36;
                                 }
                             }
-                            i3 = NotificationCenter.didEndCall;
+                            i3 = NotificationCenter.groupCallTypingsUpdated;
                         }
-                        i3 = NotificationCenter.httpFileDidFailedLoad;
+                        i3 = NotificationCenter.httpFileDidLoad;
                     }
-                    i3 = NotificationCenter.dialogIsTranslatable;
+                    i3 = NotificationCenter.messageTranslating;
                 } else {
                     if (readUnsignedByte != 106) {
                         if (readUnsignedByte != 122) {
                             if (readUnsignedByte == 127) {
                                 if (parsableByteArray.readUnsignedByte() != 21) {
                                 }
-                                i3 = NotificationCenter.didEndCall;
+                                i3 = NotificationCenter.groupCallTypingsUpdated;
                             } else if (readUnsignedByte == 123) {
-                                i3 = NotificationCenter.fileUploadFailed;
+                                i3 = NotificationCenter.fileUploaded;
                             } else if (readUnsignedByte == 10) {
                                 str = parsableByteArray.readString(3).trim();
                             } else if (readUnsignedByte == 89) {
@@ -503,12 +503,12 @@ public final class TsExtractor implements Extractor {
                                 arrayList = arrayList2;
                                 i3 = 89;
                             } else if (readUnsignedByte == 111) {
-                                i3 = NotificationCenter.cameraInitied;
+                                i3 = NotificationCenter.invalidateMotionBackground;
                             }
                         }
-                        i3 = NotificationCenter.httpFileDidFailedLoad;
+                        i3 = NotificationCenter.httpFileDidLoad;
                     }
-                    i3 = NotificationCenter.dialogIsTranslatable;
+                    i3 = NotificationCenter.messageTranslating;
                 }
                 parsableByteArray.skipBytes(position2 - parsableByteArray.getPosition());
             }

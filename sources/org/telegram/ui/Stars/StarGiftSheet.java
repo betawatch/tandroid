@@ -69,11 +69,11 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import org.json.JSONObject;
+import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BirthdayController;
-import org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.ChannelBoostsController;
 import org.telegram.messenger.ChatObject;
@@ -1088,7 +1088,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             tL_inputSavedStarGiftSlug.slug = starGift.slug;
             craftstargift.stargift.add(tL_inputSavedStarGiftSlug);
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(craftstargift, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda117
+        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(craftstargift, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda117
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 StarGiftSheet.this.lambda$openCrafting$4(callback2, arrayList, runnable, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
@@ -2417,7 +2417,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             float min = Math.min(AndroidUtilities.dp(176.0f), f3) / 2.0f;
             float f6 = f5 - max;
             float f7 = f5 + max;
-            canvas.saveLayerAlpha(f6, 0.0f, f7, f3, NotificationCenter.invalidateMotionBackground, 31);
+            canvas.saveLayerAlpha(f6, 0.0f, f7, f3, NotificationCenter.didReceiveCall, 31);
             background.backgroundMatrix.reset();
             background.backgroundMatrix.postTranslate(f5, min);
             background.backgroundGradient.setLocalMatrix(background.backgroundMatrix);
@@ -2709,7 +2709,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 if (i5 == 2) {
                     FrameLayout frameLayout = new FrameLayout(context);
                     this.userLayout = frameLayout;
-                    this.layout[i5].addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.fileNewChunkAvailable, 119));
+                    this.layout[i5].addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.filePreparingStarted, 119));
                     BackupImageView backupImageView2 = new BackupImageView(context);
                     this.avatarView = backupImageView2;
                     backupImageView2.setRoundRadius(AndroidUtilities.dp(41.0f));
@@ -2798,7 +2798,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 addView(view2, createFrame2);
                 i5++;
             }
-            addView(this.imageLayout, LayoutHelper.createFrame(NotificationCenter.albumsDidLoad, 160.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
+            addView(this.imageLayout, LayoutHelper.createFrame(NotificationCenter.screenshotTook, 160.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
             StickersRollView stickersRollView = new StickersRollView(context, resourcesProvider);
             this.imagesRollView = stickersRollView;
             addView(stickersRollView, LayoutHelper.createFrame(-1, 160.0f, 55, 0.0f, 8.0f, 0.0f, 0.0f));
@@ -3086,7 +3086,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             }
             this.hasLink = z4;
             setBackdropPaint(0, this.backdrop[0]);
-            StarsIntroActivity.setGiftImage(this.imageView[0].getImageReceiver(), starGift, NotificationCenter.albumsDidLoad);
+            StarsIntroActivity.setGiftImage(this.imageView[0].getImageReceiver(), starGift, NotificationCenter.screenshotTook);
             this.imageViewAttributes[0] = (TL_stars.starGiftAttributeModel) StarsController.findAttribute(starGift.attributes, TL_stars.starGiftAttributeModel.class);
             onSwitchPage(this.currentPage);
         }
@@ -3168,13 +3168,13 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             this.toggled = 0;
             setPattern(1, (TL_stars.starGiftAttributePattern) this.patterns.next(), true);
             this.imageViewAttributes[1] = (TL_stars.starGiftAttributeModel) this.models.next();
-            StarsIntroActivity.setGiftImage(this.imageView[1].getImageReceiver(), this.imageViewAttributes[1].document, NotificationCenter.albumsDidLoad);
+            StarsIntroActivity.setGiftImage(this.imageView[1].getImageReceiver(), this.imageViewAttributes[1].document, NotificationCenter.screenshotTook);
             TL_stars.starGiftAttributeBackdrop[] stargiftattributebackdropArr = this.backdrop;
             TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) this.backdrops.next();
             stargiftattributebackdropArr[1] = stargiftattributebackdrop;
             setBackdropPaint(1, stargiftattributebackdrop);
             this.imageViewAttributes[2] = (TL_stars.starGiftAttributeModel) this.models.getNext();
-            StarsIntroActivity.setGiftImage(this.imageView[2].getImageReceiver(), this.imageViewAttributes[2].document, NotificationCenter.albumsDidLoad);
+            StarsIntroActivity.setGiftImage(this.imageView[2].getImageReceiver(), this.imageViewAttributes[2].document, NotificationCenter.screenshotTook);
             AndroidUtilities.cancelRunOnUIThread(this.checkToRotateRunnable);
             AndroidUtilities.runOnUIThread(this.checkToRotateRunnable, 2500L);
             invalidate();
@@ -3263,7 +3263,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 TL_stars.starGiftAttributeModel[] stargiftattributemodelArr = this.imageViewAttributes;
                 int i3 = this.toggled + 1;
                 stargiftattributemodelArr[i3] = attributes.model;
-                StarsIntroActivity.setGiftImage(this.imageView[i3].getImageReceiver(), this.imageViewAttributes[this.toggled + 1].document, NotificationCenter.albumsDidLoad);
+                StarsIntroActivity.setGiftImage(this.imageView[i3].getImageReceiver(), this.imageViewAttributes[this.toggled + 1].document, NotificationCenter.screenshotTook);
                 animateSwitch();
                 float f = this.toggled;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f - f, f);
@@ -3334,7 +3334,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                         TopView topView = TopView.this;
                         topView.onSwitchPage(topView.currentPage);
                         TopView.this.imageViewAttributes[2 - TopView.this.toggled] = (TL_stars.starGiftAttributeModel) TopView.this.models.getNext();
-                        StarsIntroActivity.setGiftImage(TopView.this.imageView[2 - TopView.this.toggled].getImageReceiver(), TopView.this.imageViewAttributes[2 - TopView.this.toggled].document, NotificationCenter.albumsDidLoad);
+                        StarsIntroActivity.setGiftImage(TopView.this.imageView[2 - TopView.this.toggled].getImageReceiver(), TopView.this.imageViewAttributes[2 - TopView.this.toggled].document, NotificationCenter.screenshotTook);
                         TopView topView2 = TopView.this;
                         topView2.preloadPattern((TL_stars.starGiftAttributePattern) topView2.patterns.getNext());
                         AndroidUtilities.cancelRunOnUIThread(TopView.this.checkToRotateRunnable);
@@ -4493,7 +4493,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 this.mine = true;
                 ImageReceiver imageReceiver = new ImageReceiver(view);
                 this.imageReceiver = imageReceiver;
-                StarsIntroActivity.setGiftImage(imageReceiver, stargiftattributemodel.document, NotificationCenter.albumsDidLoad);
+                StarsIntroActivity.setGiftImage(imageReceiver, stargiftattributemodel.document, NotificationCenter.screenshotTook);
             }
 
             public Sticker(BackupImageView backupImageView, TL_stars.starGiftAttributeModel stargiftattributemodel) {
@@ -4688,7 +4688,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
         @Override // android.view.ViewGroup, android.view.View
         protected void dispatchDraw(Canvas canvas) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.invalidateMotionBackground, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
             super.dispatchDraw(canvas);
             canvas.save();
             this.rect.set(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(8.0f));
@@ -4872,7 +4872,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         int length = spannableStringBuilder.length();
         spannableStringBuilder.append((CharSequence) ("#" + LocaleController.formatNumber(tL_starGiftUnique.num, ',')));
         spannableStringBuilder.setSpan(new RelativeSizeSpan(0.85f), length, spannableStringBuilder.length(), 33);
-        spannableStringBuilder.setSpan(new EllipsizeSpanAnimator.TextAlphaSpan(NotificationCenter.boostByChannelCreated), length, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new EllipsizeSpanAnimator.TextAlphaSpan(NotificationCenter.boostedChannelByUser), length, spannableStringBuilder.length(), 33);
         TopView topView = this.topView;
         TLRPC.Peer peer = tL_starGiftUnique.released_by;
         topView.setText(0, spannableStringBuilder, peer == null ? stargiftattributemodel != null ? stargiftattributemodel.name : "" : null, releasedByText(peer), null);
@@ -10294,8 +10294,8 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         BackupImageView backupImageView = new BackupImageView(getContext());
-        StarsIntroActivity.setGiftImage(backupImageView.getImageReceiver(), document, NotificationCenter.albumsDidLoad);
-        linearLayout.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.albumsDidLoad, NotificationCenter.albumsDidLoad, 1, 0, 0, 0, 0));
+        StarsIntroActivity.setGiftImage(backupImageView.getImageReceiver(), document, NotificationCenter.screenshotTook);
+        linearLayout.addView(backupImageView, LayoutHelper.createLinear(NotificationCenter.screenshotTook, NotificationCenter.screenshotTook, 1, 0, 0, 0, 0));
         TextView textView = new TextView(getContext());
         textView.setTextSize(1, 20.0f);
         textView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText, this.resourcesProvider));
@@ -10994,7 +10994,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             this.rays = raysView;
             raysView.setVisibility(8);
             raysView.setAlpha(0.0f);
-            addView(raysView, LayoutHelper.createFrame(NotificationCenter.onActivityResultReceived, 300.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
+            addView(raysView, LayoutHelper.createFrame(NotificationCenter.onDatabaseOpened, 300.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
             Cube3D cube3D = new Cube3D(context, this.faces);
             this.cube = cube3D;
             addView(cube3D, LayoutHelper.createFrame(-1, 300.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
@@ -12034,9 +12034,8 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             }
 
             public void setReplaceIcon(boolean z) {
-                float f = z ? 1.0f : 0.8f;
-                this.closeIcon.setScaleX(f);
-                this.closeIcon.setScaleY(f);
+                this.closeIcon.setScaleX(0.8f);
+                this.closeIcon.setScaleY(0.8f);
                 ImageView imageView = this.closeIcon;
                 this.isReplaceIcon = z;
                 imageView.setImageResource(z ? R.drawable.mini_replace2 : R.drawable.msg_close);
@@ -12311,7 +12310,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                     f = f;
                 }
                 float f3 = f;
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.invalidateMotionBackground, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
                 while (true) {
                     RadialGradient[] radialGradientArr = this.gradient;
                     if (i < radialGradientArr.length) {

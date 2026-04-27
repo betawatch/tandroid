@@ -59,6 +59,12 @@ public class AnimatedEmojiDrawable extends Drawable {
     private static boolean LOG_MEMORY_LEAK = false;
     public static int attachedCount;
     public static ArrayList attachedDrawable;
+    private static final Runnable cleanup = new Runnable() { // from class: org.telegram.ui.Components.AnimatedEmojiDrawable$$ExternalSyntheticLambda0
+        @Override // java.lang.Runnable
+        public final void run() {
+            AnimatedEmojiDrawable.lambda$static$2();
+        }
+    };
     private static boolean disabledToggleableAnimations;
     private static HashMap dominantColors;
     private static HashMap fetchers;
@@ -197,10 +203,6 @@ public class AnimatedEmojiDrawable extends Drawable {
 
         public EmojiDocumentFetcher(int i) {
             this.currentAccount = i;
-        }
-
-        public void setUiDbCallback(Runnable runnable) {
-            this.uiDbCallback = runnable;
         }
 
         public void fetchDocument(long j, ReceivedDocument receivedDocument) {
@@ -547,7 +549,7 @@ public class AnimatedEmojiDrawable extends Drawable {
         this.cacheType = i;
         updateSize();
         this.documentId = j;
-        getDocumentFetcher(i2).fetchDocument(j, new ReceivedDocument() { // from class: org.telegram.ui.Components.AnimatedEmojiDrawable$$ExternalSyntheticLambda0
+        getDocumentFetcher(i2).fetchDocument(j, new ReceivedDocument() { // from class: org.telegram.ui.Components.AnimatedEmojiDrawable$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.AnimatedEmojiDrawable.ReceivedDocument
             public final void run(TLRPC.Document document) {
                 AnimatedEmojiDrawable.this.lambda$new$0(document);
@@ -567,7 +569,7 @@ public class AnimatedEmojiDrawable extends Drawable {
         updateSize();
         this.documentId = j;
         this.absolutePath = str;
-        getDocumentFetcher(i2).fetchDocument(j, new ReceivedDocument() { // from class: org.telegram.ui.Components.AnimatedEmojiDrawable$$ExternalSyntheticLambda1
+        getDocumentFetcher(i2).fetchDocument(j, new ReceivedDocument() { // from class: org.telegram.ui.Components.AnimatedEmojiDrawable$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.AnimatedEmojiDrawable.ReceivedDocument
             public final void run(TLRPC.Document document) {
                 AnimatedEmojiDrawable.this.lambda$new$1(document);
@@ -631,7 +633,7 @@ public class AnimatedEmojiDrawable extends Drawable {
             return;
         }
         if (i == 24) {
-            this.sizedp = NotificationCenter.fileLoadProgressChanged;
+            this.sizedp = NotificationCenter.fileUploadProgressChanged;
             return;
         }
         if (i == 23) {
@@ -662,7 +664,7 @@ public class AnimatedEmojiDrawable extends Drawable {
         1() {
         }
 
-        @Override // org.telegram.messenger.ImageReceiver
+        @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.AnimatedEmojiSpan.InvalidateHolder
         public void invalidate() {
             AnimatedEmojiDrawable.this.invalidate();
             super.invalidate();
@@ -963,6 +965,16 @@ public class AnimatedEmojiDrawable extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        return AndroidUtilities.dp(this.sizedp);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        return AndroidUtilities.dp(this.sizedp);
+    }
+
+    @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
         ImageReceiver imageReceiver = this.imageReceiver;
         if (imageReceiver == null) {
@@ -1090,6 +1102,36 @@ public class AnimatedEmojiDrawable extends Drawable {
                 }
                 Log.d("animatedDrawable", "attached count " + attachedCount);
             }
+            if (this.attached) {
+                return;
+            }
+            Runnable runnable = cleanup;
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            AndroidUtilities.runOnUIThread(runnable, 5000L);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$static$2() {
+        AndroidUtilities.cancelRunOnUIThread(cleanup);
+        for (int i = 0; i < globalEmojiCache.size(); i++) {
+            try {
+                LongSparseArray longSparseArray = (LongSparseArray) globalEmojiCache.valueAt(i);
+                int i2 = 0;
+                while (i2 < longSparseArray.size()) {
+                    if (!((AnimatedEmojiDrawable) longSparseArray.valueAt(i2)).attached) {
+                        longSparseArray.removeAt(i2);
+                        i2--;
+                    }
+                    i2++;
+                }
+            } catch (Exception e) {
+                if (BuildVars.DEBUG_PRIVATE_VERSION) {
+                    FileLog.e(e);
+                    return;
+                }
+                return;
+            }
         }
     }
 
@@ -1200,7 +1242,7 @@ public class AnimatedEmojiDrawable extends Drawable {
     }
 
     public static class WrapSizeDrawable extends Drawable {
-        private int alpha = NotificationCenter.invalidateMotionBackground;
+        private int alpha = NotificationCenter.didReceiveCall;
         private Drawable drawable;
         int height;
         int width;
@@ -1316,7 +1358,7 @@ public class AnimatedEmojiDrawable extends Drawable {
             AnimatedFloat animatedFloat2 = new AnimatedFloat((View) null, 300L, cubicBezierInterpolator);
             this.particlesAlpha = animatedFloat2;
             this.drawables = new Drawable[2];
-            this.alpha = NotificationCenter.invalidateMotionBackground;
+            this.alpha = NotificationCenter.didReceiveCall;
             this.bounds = new Rect();
             this.invalidateRunnable = new Runnable() { // from class: org.telegram.ui.Components.AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable

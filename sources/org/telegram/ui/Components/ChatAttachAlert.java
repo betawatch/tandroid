@@ -1885,7 +1885,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 canvas.save();
                 canvas.clipRect(0.0f, 0.0f, getWidth(), getHeight() * getAlpha());
                 canvas.clipPath(this.path);
-                canvas.saveLayerAlpha(rectF4, NotificationCenter.invalidateMotionBackground, 31);
+                canvas.saveLayerAlpha(rectF4, NotificationCenter.didReceiveCall, 31);
                 super.dispatchDraw(canvas);
                 rectF4.set(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getPaddingTop() + AndroidUtilities.dp(6.0f));
                 this.clip.draw(canvas, rectF4, 1, 1.0f);
@@ -2157,7 +2157,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 this.path.addRoundRect(rectF4, dp2, dp2, Path.Direction.CW);
                 canvas.save();
                 canvas.clipPath(this.path);
-                canvas.saveLayerAlpha(rectF4, NotificationCenter.invalidateMotionBackground, 31);
+                canvas.saveLayerAlpha(rectF4, NotificationCenter.didReceiveCall, 31);
                 super.dispatchDraw(canvas);
                 rectF4.set(getPaddingLeft(), f, getWidth() - getPaddingRight(), dp3 + AndroidUtilities.dp(6.0f));
                 this.clip.draw(canvas, rectF4, 1, 1.0f);
@@ -2266,7 +2266,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 }
                 if (ChatAttachAlert.this.mentionContainer.getAdapter() != null) {
                     ChatAttachAlert.this.mentionContainer.setReversed(false);
-                    ChatAttachAlert.this.mentionContainer.getAdapter().lambda$searchUsernameOrHashtag$7(charSequence, ChatAttachAlert.this.commentTextView.getEditText().getSelectionStart(), null, false, false);
+                    ChatAttachAlert.this.mentionContainer.getAdapter().lambda$searchUsernameOrHashtag$8(charSequence, ChatAttachAlert.this.commentTextView.getEditText().getSelectionStart(), null, false, false);
                     ChatAttachAlert.this.updateCommentTextViewPosition();
                 }
             }
@@ -2332,7 +2332,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 if (chatAttachAlert2.captionAbove) {
                     return;
                 }
-                chatAttachAlert2.showAiButton(MessagesController.getInstance(chatAttachAlert2.currentAccount).aiEditorAvailable() && ChatAttachAlert.this.commentTextView.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(ChatAttachAlert.this.commentTextView.getText().toString().trim()));
+                chatAttachAlert2.showAiButton(chatAttachAlert2.commentTextView.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(ChatAttachAlert.this.commentTextView.getText().toString().trim()));
             }
         });
         this.captionContainer.addView(this.commentTextView, LayoutHelper.createFrame(-1, -2.0f, 83, 0.0f, 0.0f, 84.0f, 0.0f));
@@ -2362,7 +2362,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 ChatAttachAlert.this.updatedTopCaptionHeight();
                 ChatAttachAlert chatAttachAlert = ChatAttachAlert.this;
                 if (chatAttachAlert.captionAbove) {
-                    chatAttachAlert.showAiButton(MessagesController.getInstance(chatAttachAlert.currentAccount).aiEditorAvailable() && i15 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim()));
+                    chatAttachAlert.showAiButton(i15 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim()));
                 }
             }
 
@@ -2414,7 +2414,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 }
                 if (ChatAttachAlert.this.mentionContainer.getAdapter() != null) {
                     ChatAttachAlert.this.mentionContainer.setReversed(true);
-                    ChatAttachAlert.this.mentionContainer.getAdapter().lambda$searchUsernameOrHashtag$7(charSequence, ChatAttachAlert.this.topCommentTextView.getEditText().getSelectionStart(), null, false, false);
+                    ChatAttachAlert.this.mentionContainer.getAdapter().lambda$searchUsernameOrHashtag$8(charSequence, ChatAttachAlert.this.topCommentTextView.getEditText().getSelectionStart(), null, false, false);
                     ChatAttachAlert.this.updateCommentTextViewPosition();
                 }
             }
@@ -2484,7 +2484,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 }
                 ChatAttachAlert chatAttachAlert4 = ChatAttachAlert.this;
                 if (chatAttachAlert4.captionAbove) {
-                    chatAttachAlert4.showAiButton(MessagesController.getInstance(chatAttachAlert4.currentAccount).aiEditorAvailable() && ChatAttachAlert.this.topCommentTextView.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(ChatAttachAlert.this.topCommentTextView.getText().toString().trim()));
+                    chatAttachAlert4.showAiButton(chatAttachAlert4.topCommentTextView.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(ChatAttachAlert.this.topCommentTextView.getText().toString().trim()));
                 }
             }
         });
@@ -3621,7 +3621,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 return;
             }
             Theme.ResourcesProvider resourcesProvider = this.val$resourcesProvider;
-            int i = (resourcesProvider == null ? Theme.isCurrentThemeDark() : resourcesProvider.isDark()) ? NotificationCenter.configLoaded : NotificationCenter.availableEffectsUpdate;
+            int i = (resourcesProvider == null ? Theme.isCurrentThemeDark() : resourcesProvider.isDark()) ? NotificationCenter.appDidLogout : NotificationCenter.premiumFloodWaitReceived;
             canvas.save();
             canvas.translate(0.0f, -f);
             ChatAttachAlert.this.iBlur3SourceGlassFrosted.draw(canvas, rect.left, rect.top + f, rect.right, rect.bottom + f);
@@ -4362,7 +4362,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             }
             ChatAttachAlert chatAttachAlert = ChatAttachAlert.this;
             if (!chatAttachAlert.captionAbove) {
-                if (MessagesController.getInstance(chatAttachAlert.currentAccount).aiEditorAvailable() && i2 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim())) {
+                if (i2 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim())) {
                     z = true;
                 }
                 chatAttachAlert.showAiButton(z);
@@ -6695,7 +6695,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     }
 
     private void setNavBarAlpha(float f) {
-        int alphaComponent = ColorUtils.setAlphaComponent(getThemedColor(Theme.key_windowBackgroundGray), Math.min(NotificationCenter.invalidateMotionBackground, Math.max(0, (int) (f * 255.0f))));
+        int alphaComponent = ColorUtils.setAlphaComponent(getThemedColor(Theme.key_windowBackgroundGray), Math.min(NotificationCenter.didReceiveCall, Math.max(0, (int) (f * 255.0f))));
         this.navBarColor = alphaComponent;
         AndroidUtilities.setNavigationBarColor((Dialog) this, alphaComponent, false);
         AndroidUtilities.setLightNavigationBar(this, ((double) AndroidUtilities.computePerceivedBrightness(this.navBarColor)) > 0.721d);
@@ -7867,6 +7867,9 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 if (this.shownAiButton != z2) {
                     return;
                 }
+                if (z2) {
+                    MessagesController.getInstance(this.currentAccount).getTonesController().load();
+                }
                 this.shownAiButton = z2;
                 this.aiButton.setVisibility(0);
                 this.topAiButton.setVisibility(0);
@@ -8648,7 +8651,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setCaptionAbove$71() {
         EditTextEmoji editTextEmoji = this.captionAbove ? this.topCommentTextView : this.commentTextView;
-        showAiButton(MessagesController.getInstance(this.currentAccount).aiEditorAvailable() && editTextEmoji.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(editTextEmoji.getText().toString().trim()));
+        showAiButton(editTextEmoji.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(editTextEmoji.getText().toString().trim()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

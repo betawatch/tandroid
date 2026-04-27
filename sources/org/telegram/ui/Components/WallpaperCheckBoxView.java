@@ -180,7 +180,7 @@ public class WallpaperCheckBoxView extends View {
             } else if (iArr[1] != 0) {
                 while (i2 < 2) {
                     this.backgroundPaint.setColor(this.colors[i2]);
-                    canvas.drawArc(this.rect, (i2 * NotificationCenter.newEmojiSuggestionsAvailable) - 90, 180.0f, true, this.backgroundPaint);
+                    canvas.drawArc(this.rect, (i2 * NotificationCenter.needDeleteDialog) - 90, 180.0f, true, this.backgroundPaint);
                     i2++;
                 }
             } else {

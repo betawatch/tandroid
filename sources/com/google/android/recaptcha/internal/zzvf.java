@@ -83,7 +83,7 @@ final class zzvf {
                         if (Character.isSurrogatePair(charAt2, charAt3)) {
                             int i9 = i7 + 3;
                             int codePoint = Character.toCodePoint(charAt2, charAt3);
-                            bArr[i7] = (byte) ((codePoint >>> 18) | NotificationCenter.appConfigUpdated);
+                            bArr[i7] = (byte) ((codePoint >>> 18) | NotificationCenter.commonChatsLoaded);
                             bArr[i7 + 1] = (byte) (((codePoint >>> 12) & 63) | 128);
                             bArr[i7 + 2] = (byte) (((codePoint >>> 6) & 63) | 128);
                             i7 += 4;

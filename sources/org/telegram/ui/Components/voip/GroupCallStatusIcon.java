@@ -71,9 +71,9 @@ public class GroupCallStatusIcon {
         if (nextInt < 32) {
             i = 0;
         } else {
-            i = NotificationCenter.appConfigUpdated;
+            i = NotificationCenter.commonChatsLoaded;
             if (nextInt < 64) {
-                i2 = NotificationCenter.appConfigUpdated;
+                i2 = NotificationCenter.commonChatsLoaded;
                 i = 120;
             } else {
                 i2 = 420;
@@ -173,7 +173,7 @@ public class GroupCallStatusIcon {
             if (j != 0 && j2 <= 5000) {
                 AndroidUtilities.runOnUIThread(this.checkRaiseRunnable, 5000 - j2);
             }
-            customEndFrame = this.micDrawable.setCustomEndFrame(NotificationCenter.didUpdateConnectionState);
+            customEndFrame = this.micDrawable.setCustomEndFrame(NotificationCenter.httpFileDidFailedLoad);
         } else {
             this.iconView.setAnimation(this.micDrawable);
             this.micDrawable.setOnFinishCallback(null, 0);
@@ -190,7 +190,7 @@ public class GroupCallStatusIcon {
         } else if (customEndFrame) {
             if (z6) {
                 this.micDrawable.setCurrentFrame(99);
-                this.micDrawable.setCustomEndFrame(NotificationCenter.didUpdateConnectionState);
+                this.micDrawable.setCustomEndFrame(NotificationCenter.httpFileDidFailedLoad);
             } else if (z5 && this.lastRaisedHand && !z6) {
                 this.micDrawable.setCurrentFrame(0);
                 this.micDrawable.setCustomEndFrame(36);

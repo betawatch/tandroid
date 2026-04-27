@@ -2132,7 +2132,7 @@ public class LimitReachedBottomSheet extends BottomSheetWithRecyclerListView imp
                                                 textView3.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, ((BottomSheet) LimitReachedBottomSheet.this).resourcesProvider));
                                                 textView3.setText(" " + LocaleController.getString(R.string.InvitePremiumBlockedOr) + " ");
                                                 textView3.setTextSize(14.0f);
-                                                addView(textView3, LayoutHelper.createLinear(NotificationCenter.boostByChannelCreated, -2, 1, 12, 0, 12, 20));
+                                                addView(textView3, LayoutHelper.createLinear(NotificationCenter.boostedChannelByUser, -2, 1, 12, 0, 12, 20));
                                                 TextView textView4 = new TextView(context);
                                                 textView4.setGravity(17);
                                                 textView4.setTypeface(AndroidUtilities.bold());
@@ -2896,7 +2896,7 @@ public class LimitReachedBottomSheet extends BottomSheetWithRecyclerListView imp
             limitParams.descriptionStrLocked = LocaleController.formatString("LimitReachedCommunitiesLocked", R.string.LimitReachedCommunitiesLocked, Integer.valueOf(limitParams.defaultLimit));
         } else if (i == 6) {
             limitParams.defaultLimit = 100;
-            limitParams.premiumLimit = NotificationCenter.channelRecommendationsLoaded;
+            limitParams.premiumLimit = NotificationCenter.dialogPhotosUpdate;
             limitParams.icon = R.drawable.msg_limit_folder;
             limitParams.descriptionStr = LocaleController.formatString("LimitReachedFileSize", R.string.LimitReachedFileSize, "2 GB", "4 GB");
             limitParams.descriptionStrPremium = LocaleController.formatString("LimitReachedFileSizePremium", R.string.LimitReachedFileSizePremium, "4 GB");

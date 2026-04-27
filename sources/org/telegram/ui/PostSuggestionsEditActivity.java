@@ -130,7 +130,7 @@ public class PostSuggestionsEditActivity extends BaseFragment {
         arrayList.add(UItem.asShadow(2, null));
         if (this.isSuggestionsEnabled) {
             arrayList.add(UItem.asHeader(LocaleController.getString(R.string.PriceForEachSuggestion)));
-            this.slideView.set((int) Utilities.clamp(this.suggestionsStarsCount, 10000L, 0L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{0, 10, 50, 100, NotificationCenter.channelRecommendationsLoaded, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.PostSuggestionsEditActivity$$ExternalSyntheticLambda4
+            this.slideView.set((int) Utilities.clamp(this.suggestionsStarsCount, 10000L, 0L), SlideIntChooseView.Options.make(1, SlideIntChooseView.cut(new int[]{0, 10, 50, 100, NotificationCenter.dialogPhotosUpdate, 250, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000}, (int) getMessagesController().starsPaidMessageAmountMax), 20, new Utilities.Callback2Return() { // from class: org.telegram.ui.PostSuggestionsEditActivity$$ExternalSyntheticLambda4
                 @Override // org.telegram.messenger.Utilities.Callback2Return
                 public final Object run(Object obj, Object obj2) {
                     CharSequence lambda$fillItems$0;

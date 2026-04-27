@@ -78,7 +78,7 @@ import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.ContactsEmptyView;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.EmojiView$$ExternalSyntheticLambda12;
+import org.telegram.ui.Components.EmojiView$$ExternalSyntheticLambda15;
 import org.telegram.ui.Components.FlickerLoadingView;
 import org.telegram.ui.Components.FragmentFloatingButton;
 import org.telegram.ui.Components.FragmentSearchField;
@@ -507,7 +507,7 @@ public class ContactsActivity extends BaseFragment implements FactorAnimator.Tar
                 ContactsActivity.this.iBlur3SourceGlassFrosted.draw(canvas, rect.left, rect.top + f, rect.right, rect.bottom + f);
                 canvas.restore();
                 int alpha = paint.getAlpha();
-                paint.setAlpha(NotificationCenter.configLoaded);
+                paint.setAlpha(NotificationCenter.appDidLogout);
                 canvas.drawRect(rect, paint);
                 paint.setAlpha(alpha);
             }
@@ -535,7 +535,7 @@ public class ContactsActivity extends BaseFragment implements FactorAnimator.Tar
         this.fragmentView = sizeNotifierFrameLayout;
         RecyclerListView recyclerListView2 = this.listView;
         Objects.requireNonNull(recyclerListView2);
-        this.iBlur3Capture = new ViewGroupPartRenderer(recyclerListView2, sizeNotifierFrameLayout, new EmojiView$$ExternalSyntheticLambda12(recyclerListView2));
+        this.iBlur3Capture = new ViewGroupPartRenderer(recyclerListView2, sizeNotifierFrameLayout, new EmojiView$$ExternalSyntheticLambda15(recyclerListView2));
         this.listView.addEdgeEffectListener(new Runnable() { // from class: org.telegram.ui.ContactsActivity$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {

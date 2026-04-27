@@ -16,7 +16,7 @@ public class RecordStatusDrawable extends StatusDrawable {
     private long lastUpdateTime = 0;
     private boolean started = false;
     private RectF rect = new RectF();
-    int alpha = NotificationCenter.invalidateMotionBackground;
+    int alpha = NotificationCenter.didReceiveCall;
 
     @Override // android.graphics.drawable.Drawable
     public int getOpacity() {

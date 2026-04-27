@@ -662,7 +662,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                 TopicsFragment.this.iBlur3SourceGlassFrosted.draw(canvas, rect.left, rect.top + f, rect.right, rect.bottom + f);
                 canvas.restore();
                 int alpha = paint.getAlpha();
-                paint.setAlpha(NotificationCenter.configLoaded);
+                paint.setAlpha(NotificationCenter.appDidLogout);
                 canvas.drawRect(rect, paint);
                 paint.setAlpha(alpha);
             }
@@ -2315,7 +2315,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             } else {
                 actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(R.string.DialogPin), R.drawable.msg_pin);
             }
-            actionBarMenuSubItem.setMinimumWidth(NotificationCenter.albumsDidLoad);
+            actionBarMenuSubItem.setMinimumWidth(NotificationCenter.screenshotTook);
             actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda16
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -2330,7 +2330,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         } else {
             actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString(R.string.Mute), R.drawable.msg_unmute);
         }
-        actionBarMenuSubItem2.setMinimumWidth(NotificationCenter.albumsDidLoad);
+        actionBarMenuSubItem2.setMinimumWidth(NotificationCenter.screenshotTook);
         actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda17
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -2345,7 +2345,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             } else {
                 actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString(R.string.CloseTopic), R.drawable.msg_topic_close);
             }
-            actionBarMenuSubItem3.setMinimumWidth(NotificationCenter.albumsDidLoad);
+            actionBarMenuSubItem3.setMinimumWidth(NotificationCenter.screenshotTook);
             actionBarMenuSubItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda18
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -2359,7 +2359,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             actionBarMenuSubItem4.setTextAndIcon(LocaleController.getPluralString("DeleteTopics", 1), R.drawable.msg_delete);
             actionBarMenuSubItem4.setIconColor(getThemedColor(Theme.key_text_RedRegular));
             actionBarMenuSubItem4.setTextColor(getThemedColor(Theme.key_text_RedBold));
-            actionBarMenuSubItem4.setMinimumWidth(NotificationCenter.albumsDidLoad);
+            actionBarMenuSubItem4.setMinimumWidth(NotificationCenter.screenshotTook);
             actionBarMenuSubItem4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda19
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -4557,7 +4557,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         Canvas canvas = new Canvas(createBitmap);
         canvas.scale(0.16666667f, 0.16666667f);
         this.parentLayout.getView().draw(canvas);
-        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.newEmojiSuggestionsAvailable));
+        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.needDeleteDialog));
         this.blurredView.setBackground(new BitmapDrawable(createBitmap));
         this.blurredView.setAlpha(0.0f);
         if (this.blurredView.getParent() != null) {

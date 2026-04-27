@@ -5,7 +5,7 @@ import java.util.function.Function;
 import org.telegram.messenger.MessageObject;
 
 /* loaded from: classes5.dex */
-public final /* synthetic */ class DeleteMessagesBottomSheet$$ExternalSyntheticLambda8 implements Function {
+public final /* synthetic */ class DeleteMessagesBottomSheet$$ExternalSyntheticLambda11 implements Function {
     public /* synthetic */ Function andThen(Function function) {
         return Function$-CC.$default$andThen(this, function);
     }

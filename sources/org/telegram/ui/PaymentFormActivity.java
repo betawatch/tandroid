@@ -1412,7 +1412,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                     this.inputFields[i15].setCursorWidth(1.5f);
                     if (i15 == 3) {
                         this.inputFields[i15].setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
-                        this.inputFields[i15].setInputType(NotificationCenter.dialogTranslate);
+                        this.inputFields[i15].setInputType(NotificationCenter.dialogIsTranslatable);
                         this.inputFields[i15].setTypeface(Typeface.DEFAULT);
                         this.inputFields[i15].setTransformationMethod(PasswordTransformationMethod.getInstance());
                     } else if (i15 == 0) {
@@ -1942,7 +1942,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                     });
                     this.inputFields[i20].setInputType(0);
                 } else {
-                    this.inputFields[i20].setInputType(NotificationCenter.dialogIsTranslatable);
+                    this.inputFields[i20].setInputType(NotificationCenter.messageTranslating);
                     this.inputFields[i20].setTypeface(Typeface.DEFAULT);
                 }
                 this.inputFields[i20].setImeOptions(268435462);
@@ -2763,7 +2763,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                     this.inputFields[i38].setCursorSize(AndroidUtilities.dp(20.0f));
                     this.inputFields[i38].setCursorWidth(1.5f);
                     if (i38 != 0 || i38 == 1) {
-                        this.inputFields[i38].setInputType(NotificationCenter.dialogIsTranslatable);
+                        this.inputFields[i38].setInputType(NotificationCenter.messageTranslating);
                         this.inputFields[i38].setTypeface(Typeface.DEFAULT);
                         this.inputFields[i38].setImeOptions(268435461);
                     } else {
@@ -2823,7 +2823,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                 this.inputFields[i38].setCursorWidth(1.5f);
                 if (i38 != 0) {
                 }
-                this.inputFields[i38].setInputType(NotificationCenter.dialogIsTranslatable);
+                this.inputFields[i38].setInputType(NotificationCenter.messageTranslating);
                 this.inputFields[i38].setTypeface(Typeface.DEFAULT);
                 this.inputFields[i38].setImeOptions(268435461);
                 if (i38 != 0) {
@@ -2960,7 +2960,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             if (!PaymentFormActivity.WEBVIEW_PROTOCOLS.contains(parse.getScheme())) {
                 try {
                     if (PaymentFormActivity.this.getContext() instanceof Activity) {
-                        ((Activity) PaymentFormActivity.this.getContext()).startActivityForResult(new Intent("android.intent.action.VIEW", parse), NotificationCenter.groupRestrictionsUnlockedByBoosts);
+                        ((Activity) PaymentFormActivity.this.getContext()).startActivityForResult(new Intent("android.intent.action.VIEW", parse), NotificationCenter.openBoostForUsersDialog);
                     }
                 } catch (ActivityNotFoundException unused2) {
                     new AlertDialog.Builder(this.val$context).setTitle(PaymentFormActivity.this.currentBotName).setMessage(LocaleController.getString(R.string.PaymentAppNotFoundForDeeplink)).setPositiveButton(LocaleController.getString(R.string.OK), null).show();
@@ -3412,7 +3412,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                 }
                 try {
                     if (PaymentFormActivity.this.getContext() instanceof Activity) {
-                        ((Activity) PaymentFormActivity.this.getContext()).startActivityForResult(new Intent("android.intent.action.VIEW", parse), NotificationCenter.groupRestrictionsUnlockedByBoosts);
+                        ((Activity) PaymentFormActivity.this.getContext()).startActivityForResult(new Intent("android.intent.action.VIEW", parse), NotificationCenter.openBoostForUsersDialog);
                     }
                 } catch (ActivityNotFoundException unused) {
                     new AlertDialog.Builder(this.val$context).setTitle(PaymentFormActivity.this.currentBotName).setMessage(LocaleController.getString(R.string.PaymentAppNotFoundForDeeplink)).setPositiveButton(LocaleController.getString(R.string.OK), null).show();

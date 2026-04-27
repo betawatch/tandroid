@@ -106,7 +106,7 @@ public class LoadingSpan extends ReplacementSpan {
             int i8 = (int) f;
             this.drawable.setBounds(i8, (int) (i3 + ((((i5 - AndroidUtilities.dp(2.0f)) - i3) / 2.0f) * (1.0f - this.scaleY)) + this.yOffset), i6 + i8, (int) (((i5 - AndroidUtilities.dp(2.0f)) - ((((i5 - AndroidUtilities.dp(2.0f)) - i3) / 2.0f) * (1.0f - this.scaleY))) + this.yOffset));
         }
-        this.drawable.setAlpha((int) ((paint == null ? NotificationCenter.invalidateMotionBackground : paint.getAlpha()) * this.alpha));
+        this.drawable.setAlpha((int) ((paint == null ? NotificationCenter.didReceiveCall : paint.getAlpha()) * this.alpha));
         this.drawable.draw(canvas);
         View view2 = this.view;
         if (view2 != null) {
