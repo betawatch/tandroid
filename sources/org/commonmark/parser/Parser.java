@@ -100,6 +100,11 @@ public class Parser {
             return this;
         }
 
+        public Builder inlineParserFactory(InlineParserFactory inlineParserFactory) {
+            this.inlineParserFactory = inlineParserFactory;
+            return this;
+        }
+
         /* JADX INFO: Access modifiers changed from: private */
         public InlineParserFactory getInlineParserFactory() {
             InlineParserFactory inlineParserFactory = this.inlineParserFactory;

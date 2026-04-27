@@ -24,7 +24,6 @@ import org.telegram.messenger.Utilities;
 /* loaded from: classes5.dex */
 public class PaintTypeface {
     public static final List BUILT_IN_FONTS;
-    public static final PaintTypeface COURIER_NEW_BOLD;
     public static final PaintTypeface MW_BOLD;
     public static final PaintTypeface ROBOTO_CONDENSED;
     public static final PaintTypeface ROBOTO_ITALIC;
@@ -96,16 +95,7 @@ public class PaintTypeface {
             }
         }));
         MW_BOLD = paintTypeface6;
-        PaintTypeface paintTypeface7 = new PaintTypeface("courier_new_bold", "PhotoEditorTypefaceCourierNew", new LazyTypeface(new LazyTypeface.LazyTypefaceLoader() { // from class: org.telegram.ui.Components.Paint.PaintTypeface$$ExternalSyntheticLambda9
-            @Override // org.telegram.ui.Components.Paint.PaintTypeface.LazyTypeface.LazyTypefaceLoader
-            public final Typeface load() {
-                Typeface lambda$static$6;
-                lambda$static$6 = PaintTypeface.lambda$static$6();
-                return lambda$static$6;
-            }
-        }));
-        COURIER_NEW_BOLD = paintTypeface7;
-        BUILT_IN_FONTS = Arrays.asList(paintTypeface, paintTypeface2, paintTypeface3, paintTypeface4, paintTypeface5, paintTypeface6, paintTypeface7);
+        BUILT_IN_FONTS = Arrays.asList(paintTypeface, paintTypeface2, paintTypeface3, paintTypeface4, paintTypeface5, paintTypeface6);
         preferable = Arrays.asList("Google Sans", "Dancing Script", "Carrois Gothic SC", "Cutive Mono", "Droid Sans Mono", "Coming Soon");
     }
 
@@ -137,11 +127,6 @@ public class PaintTypeface {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ Typeface lambda$static$5() {
         return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Typeface lambda$static$6() {
-        return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_COURIER_NEW_BOLD);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -179,19 +164,19 @@ public class PaintTypeface {
         this.name = str;
         this.nameKey = null;
         this.typeface = null;
-        this.lazyTypeface = new LazyTypeface(new LazyTypeface.LazyTypefaceLoader() { // from class: org.telegram.ui.Components.Paint.PaintTypeface$$ExternalSyntheticLambda12
+        this.lazyTypeface = new LazyTypeface(new LazyTypeface.LazyTypefaceLoader() { // from class: org.telegram.ui.Components.Paint.PaintTypeface$$ExternalSyntheticLambda11
             @Override // org.telegram.ui.Components.Paint.PaintTypeface.LazyTypeface.LazyTypefaceLoader
             public final Typeface load() {
-                Typeface lambda$new$7;
-                lambda$new$7 = PaintTypeface.lambda$new$7(font);
-                return lambda$new$7;
+                Typeface lambda$new$6;
+                lambda$new$6 = PaintTypeface.lambda$new$6(font);
+                return lambda$new$6;
             }
         });
         this.font = font;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Typeface lambda$new$7(Font font) {
+    public static /* synthetic */ Typeface lambda$new$6(Font font) {
         File file;
         file = font.getFile();
         return Typeface.createFromFile(file);
@@ -219,16 +204,16 @@ public class PaintTypeface {
             return;
         }
         loadingTypefaces = true;
-        Utilities.themeQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.Paint.PaintTypeface$$ExternalSyntheticLambda10
+        Utilities.themeQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.Paint.PaintTypeface$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                PaintTypeface.lambda$load$9();
+                PaintTypeface.lambda$load$8();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$load$9() {
+    public static /* synthetic */ void lambda$load$8() {
         Set availableFonts;
         File file;
         FontData parseFont;
@@ -265,16 +250,16 @@ public class PaintTypeface {
                 }
             }
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.PaintTypeface$$ExternalSyntheticLambda11
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.PaintTypeface$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                PaintTypeface.lambda$load$8(arrayList);
+                PaintTypeface.lambda$load$7(arrayList);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$load$8(ArrayList arrayList) {
+    public static /* synthetic */ void lambda$load$7(ArrayList arrayList) {
         typefaces = arrayList;
         loadingTypefaces = false;
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.customTypefacesLoaded, new Object[0]);

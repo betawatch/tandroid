@@ -1466,48 +1466,48 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:254:0x0db3 A[ADDED_TO_REGION, REMOVE, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:255:0x0db4  */
-    /* JADX WARN: Removed duplicated region for block: B:463:0x1276  */
-    /* JADX WARN: Removed duplicated region for block: B:465:0x1282  */
-    /* JADX WARN: Removed duplicated region for block: B:836:0x0503  */
-    /* JADX WARN: Removed duplicated region for block: B:840:0x0511 A[Catch: Exception -> 0x04d5, TRY_LEAVE, TryCatch #33 {Exception -> 0x04d5, blocks: (B:822:0x04b6, B:824:0x04c6, B:826:0x04cc, B:829:0x04d7, B:840:0x0511, B:843:0x0508, B:845:0x050c, B:846:0x04ec, B:849:0x04f6), top: B:821:0x04b6 }] */
-    /* JADX WARN: Removed duplicated region for block: B:845:0x050c A[Catch: Exception -> 0x04d5, TryCatch #33 {Exception -> 0x04d5, blocks: (B:822:0x04b6, B:824:0x04c6, B:826:0x04cc, B:829:0x04d7, B:840:0x0511, B:843:0x0508, B:845:0x050c, B:846:0x04ec, B:849:0x04f6), top: B:821:0x04b6 }] */
-    /* JADX WARN: Removed duplicated region for block: B:891:0x0ea7  */
-    /* JADX WARN: Removed duplicated region for block: B:917:0x0758  */
-    /* JADX WARN: Removed duplicated region for block: B:924:0x0818 A[Catch: Exception -> 0x073e, TRY_LEAVE, TryCatch #40 {Exception -> 0x073e, blocks: (B:908:0x0714, B:924:0x0818, B:928:0x0760, B:930:0x0765, B:944:0x07a7, B:945:0x07aa, B:946:0x07ad, B:947:0x077f, B:950:0x078a, B:953:0x0792, B:956:0x07b0, B:957:0x07ba, B:969:0x0802, B:970:0x0806, B:971:0x080a, B:972:0x080e, B:973:0x0812, B:974:0x07be, B:977:0x07c8, B:980:0x07d2, B:983:0x07dc, B:986:0x07e7, B:989:0x0734, B:992:0x0741, B:995:0x074b), top: B:907:0x0714 }] */
-    /* JADX WARN: Removed duplicated region for block: B:939:0x07a0  */
-    /* JADX WARN: Removed duplicated region for block: B:946:0x07ad A[Catch: Exception -> 0x073e, TryCatch #40 {Exception -> 0x073e, blocks: (B:908:0x0714, B:924:0x0818, B:928:0x0760, B:930:0x0765, B:944:0x07a7, B:945:0x07aa, B:946:0x07ad, B:947:0x077f, B:950:0x078a, B:953:0x0792, B:956:0x07b0, B:957:0x07ba, B:969:0x0802, B:970:0x0806, B:971:0x080a, B:972:0x080e, B:973:0x0812, B:974:0x07be, B:977:0x07c8, B:980:0x07d2, B:983:0x07dc, B:986:0x07e7, B:989:0x0734, B:992:0x0741, B:995:0x074b), top: B:907:0x0714 }] */
-    /* JADX WARN: Removed duplicated region for block: B:956:0x07b0 A[Catch: Exception -> 0x073e, TryCatch #40 {Exception -> 0x073e, blocks: (B:908:0x0714, B:924:0x0818, B:928:0x0760, B:930:0x0765, B:944:0x07a7, B:945:0x07aa, B:946:0x07ad, B:947:0x077f, B:950:0x078a, B:953:0x0792, B:956:0x07b0, B:957:0x07ba, B:969:0x0802, B:970:0x0806, B:971:0x080a, B:972:0x080e, B:973:0x0812, B:974:0x07be, B:977:0x07c8, B:980:0x07d2, B:983:0x07dc, B:986:0x07e7, B:989:0x0734, B:992:0x0741, B:995:0x074b), top: B:907:0x0714 }] */
+    /* JADX WARN: Removed duplicated region for block: B:1001:0x0eae  */
+    /* JADX WARN: Removed duplicated region for block: B:254:0x0db9 A[ADDED_TO_REGION, REMOVE, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x0dba  */
+    /* JADX WARN: Removed duplicated region for block: B:463:0x127e  */
+    /* JADX WARN: Removed duplicated region for block: B:465:0x128a  */
+    /* JADX WARN: Removed duplicated region for block: B:834:0x0505  */
+    /* JADX WARN: Removed duplicated region for block: B:838:0x0513 A[Catch: Exception -> 0x04d6, TRY_LEAVE, TryCatch #32 {Exception -> 0x04d6, blocks: (B:820:0x04b7, B:822:0x04c7, B:824:0x04cd, B:827:0x04d8, B:838:0x0513, B:841:0x050a, B:843:0x050e, B:844:0x04ed, B:847:0x04f8), top: B:819:0x04b7 }] */
+    /* JADX WARN: Removed duplicated region for block: B:843:0x050e A[Catch: Exception -> 0x04d6, TryCatch #32 {Exception -> 0x04d6, blocks: (B:820:0x04b7, B:822:0x04c7, B:824:0x04cd, B:827:0x04d8, B:838:0x0513, B:841:0x050a, B:843:0x050e, B:844:0x04ed, B:847:0x04f8), top: B:819:0x04b7 }] */
+    /* JADX WARN: Removed duplicated region for block: B:887:0x075b  */
+    /* JADX WARN: Removed duplicated region for block: B:894:0x081b A[Catch: Exception -> 0x0740, TRY_LEAVE, TryCatch #35 {Exception -> 0x0740, blocks: (B:878:0x0716, B:894:0x081b, B:898:0x0763, B:900:0x0768, B:914:0x07aa, B:915:0x07ad, B:916:0x07b0, B:917:0x0782, B:920:0x078d, B:923:0x0795, B:926:0x07b3, B:927:0x07bd, B:939:0x0805, B:940:0x0809, B:941:0x080d, B:942:0x0811, B:943:0x0815, B:944:0x07c1, B:947:0x07cb, B:950:0x07d5, B:953:0x07df, B:956:0x07ea, B:959:0x0736, B:962:0x0743, B:965:0x074e), top: B:877:0x0716 }] */
+    /* JADX WARN: Removed duplicated region for block: B:909:0x07a3  */
+    /* JADX WARN: Removed duplicated region for block: B:916:0x07b0 A[Catch: Exception -> 0x0740, TryCatch #35 {Exception -> 0x0740, blocks: (B:878:0x0716, B:894:0x081b, B:898:0x0763, B:900:0x0768, B:914:0x07aa, B:915:0x07ad, B:916:0x07b0, B:917:0x0782, B:920:0x078d, B:923:0x0795, B:926:0x07b3, B:927:0x07bd, B:939:0x0805, B:940:0x0809, B:941:0x080d, B:942:0x0811, B:943:0x0815, B:944:0x07c1, B:947:0x07cb, B:950:0x07d5, B:953:0x07df, B:956:0x07ea, B:959:0x0736, B:962:0x0743, B:965:0x074e), top: B:877:0x0716 }] */
+    /* JADX WARN: Removed duplicated region for block: B:926:0x07b3 A[Catch: Exception -> 0x0740, TryCatch #35 {Exception -> 0x0740, blocks: (B:878:0x0716, B:894:0x081b, B:898:0x0763, B:900:0x0768, B:914:0x07aa, B:915:0x07ad, B:916:0x07b0, B:917:0x0782, B:920:0x078d, B:923:0x0795, B:926:0x07b3, B:927:0x07bd, B:939:0x0805, B:940:0x0809, B:941:0x080d, B:942:0x0811, B:943:0x0815, B:944:0x07c1, B:947:0x07cb, B:950:0x07d5, B:953:0x07df, B:956:0x07ea, B:959:0x0736, B:962:0x0743, B:965:0x074e), top: B:877:0x0716 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void onEventReceived(final BotWebViewProxy botWebViewProxy, String str, String str2) {
         char c;
+        boolean z;
+        boolean z2;
+        boolean z3;
+        JSONArray jSONArray;
         int parseColor;
         char c2;
         char c3;
         BotWebViewVibrationEffect botWebViewVibrationEffect;
         BotWebViewVibrationEffect botWebViewVibrationEffect2;
         char c4;
-        boolean z;
-        boolean z2;
-        boolean z3;
-        JSONArray jSONArray;
-        String str3;
         char c5;
         int i;
         int i2;
-        String str4;
-        String str5;
+        String str3;
         boolean z4;
-        String str6;
-        boolean z5;
-        long j;
-        final String str7;
-        boolean z6;
         LaunchActivity launchActivity;
         BottomSheetTabs.WebTabData webTabData;
+        String str4;
+        boolean z5;
+        String str5;
+        boolean z6;
+        long j;
+        final String str6;
+        String str7;
         TextView textView;
         TextView textView2;
         TextView textView3;
@@ -2453,9 +2453,9 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     break;
                 case 21:
                     try {
-                        str3 = new JSONObject(str2).getString("reason");
+                        str7 = new JSONObject(str2).getString("reason");
                     } catch (Exception unused4) {
-                        str3 = null;
+                        str7 = null;
                     }
                     createBiometry();
                     BotBiometry botBiometry = this.biometry;
@@ -2471,7 +2471,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                 return;
                             }
                         } else {
-                            botBiometry.requestToken(str3, new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda12
+                            botBiometry.requestToken(str7, new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda12
                                 @Override // org.telegram.messenger.Utilities.Callback2
                                 public final void run(Object obj2, Object obj3) {
                                     BotWebViewContainer.this.lambda$onEventReceived$31((Boolean) obj2, (String) obj3);
@@ -2552,23 +2552,23 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         }
                         try {
                             str10 = jSONObject2.optString("text");
-                            try {
-                                optJSONObject = jSONObject2.optJSONObject("widget_link");
-                            } catch (Exception e13) {
-                                e = e13;
-                                str11 = null;
-                                FileLog.e(e);
-                                str14 = str9;
-                                str13 = str10;
-                                str12 = str11;
-                                str15 = null;
-                                if (str14 != null) {
-                                    return;
-                                }
+                        } catch (Exception e13) {
+                            e = e13;
+                            str10 = null;
+                            str11 = null;
+                            FileLog.e(e);
+                            str14 = str9;
+                            str13 = str10;
+                            str12 = str11;
+                            str15 = null;
+                            if (str14 != null) {
+                                return;
                             }
+                        }
+                        try {
+                            optJSONObject = jSONObject2.optJSONObject("widget_link");
                         } catch (Exception e14) {
                             e = e14;
-                            str10 = null;
                             str11 = null;
                             FileLog.e(e);
                             str14 = str9;
@@ -2695,13 +2695,13 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     break;
                 case 29:
                     try {
-                        z6 = new JSONObject(str2).optBoolean("return_back");
+                        z4 = new JSONObject(str2).optBoolean("return_back");
                     } catch (Exception e16) {
                         FileLog.e(e16);
-                        z6 = false;
+                        z4 = false;
                     }
                     this.delegate.onCloseRequested(null);
-                    if (z6) {
+                    if (z4) {
                         if (this.wasOpenedByLinkIntent && LaunchActivity.instance != null) {
                             Activity findActivity = AndroidUtilities.findActivity(getContext());
                             if (findActivity == null) {
@@ -3196,21 +3196,21 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         int parseColor4 = jSONObject14.has("color") ? Color.parseColor(jSONObject14.optString("color")) : this.lastButtonColor;
                         int parseColor5 = jSONObject14.has("text_color") ? Color.parseColor(jSONObject14.optString("text_color")) : this.lastButtonTextColor;
                         if (jSONObject14.optBoolean("is_progress_visible", false) && z17) {
-                            str5 = "has_shine_effect";
-                            z4 = true;
-                        } else {
-                            str5 = "has_shine_effect";
-                            z4 = false;
-                        }
-                        if (jSONObject14.optBoolean(str5, false) && z17) {
-                            str6 = "icon_custom_emoji_id";
+                            str4 = "has_shine_effect";
                             z5 = true;
                         } else {
-                            str6 = "icon_custom_emoji_id";
+                            str4 = "has_shine_effect";
                             z5 = false;
                         }
+                        if (jSONObject14.optBoolean(str4, false) && z17) {
+                            str5 = "icon_custom_emoji_id";
+                            z6 = true;
+                        } else {
+                            str5 = "icon_custom_emoji_id";
+                            z6 = false;
+                        }
                         try {
-                            j = Long.parseLong(jSONObject14.getString(str6));
+                            j = Long.parseLong(jSONObject14.getString(str5));
                         } catch (Throwable unused12) {
                             j = 0;
                         }
@@ -3218,7 +3218,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         this.lastButtonTextColor = parseColor5;
                         this.lastButtonText = trim2;
                         this.buttonData = str2;
-                        this.delegate.onSetupMainButton(z17, optBoolean4, trim2, j, parseColor4, parseColor5, z4, z5);
+                        this.delegate.onSetupMainButton(z17, optBoolean4, trim2, j, parseColor4, parseColor5, z5, z6);
                         break;
                     } catch (Exception e24) {
                         FileLog.e(e24);
@@ -3256,19 +3256,19 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     break;
                 case '7':
                     try {
-                        str7 = new JSONObject(str2).optString("req_id");
+                        str6 = new JSONObject(str2).optString("req_id");
                     } catch (Exception e27) {
                         FileLog.e(e27);
-                        str7 = null;
+                        str6 = null;
                     }
-                    if (str7 != null) {
+                    if (str6 != null) {
                         TL_bots.getRequestedWebViewButton getrequestedwebviewbutton = new TL_bots.getRequestedWebViewButton();
                         getrequestedwebviewbutton.bot = MessagesController.getInstance(this.currentAccount).getInputUser(this.botUser);
-                        getrequestedwebviewbutton.webapp_req_id = str7;
+                        getrequestedwebviewbutton.webapp_req_id = str6;
                         ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(getrequestedwebviewbutton, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda26
                             @Override // org.telegram.messenger.Utilities.Callback2
                             public final void run(Object obj2, Object obj3) {
-                                BotWebViewContainer.this.lambda$onEventReceived$57(str7, (TLRPC.KeyboardButton) obj2, (TLRPC.TL_error) obj3);
+                                BotWebViewContainer.this.lambda$onEventReceived$57(str6, (TLRPC.KeyboardButton) obj2, (TLRPC.TL_error) obj3);
                             }
                         });
                         break;
@@ -3299,9 +3299,9 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         JSONObject jSONObject16 = new JSONObject(str2);
                         final String string8 = jSONObject16.getString("token");
                         try {
-                            str4 = jSONObject16.getString("reason");
+                            str3 = jSONObject16.getString("reason");
                         } catch (Exception unused14) {
-                            str4 = null;
+                            str3 = null;
                         }
                         createBiometry();
                         BotBiometry botBiometry3 = this.biometry;
@@ -3317,7 +3317,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                     return;
                                 }
                             } else {
-                                botBiometry3.updateToken(str4, string8, new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda17
+                                botBiometry3.updateToken(str3, string8, new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda17
                                     @Override // org.telegram.messenger.Utilities.Callback
                                     public final void run(Object obj2) {
                                         BotWebViewContainer.this.lambda$onEventReceived$32(string8, (Boolean) obj2);

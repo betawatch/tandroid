@@ -1,0 +1,8 @@
+package org.scilab.forge.jlatexmath;
+
+/* loaded from: classes3.dex */
+public class FormulaNotFoundException extends JMathTeXException {
+    protected FormulaNotFoundException(String str) {
+        super("There's no predefined TeXFormula with the name '" + str + "' defined in 'PredefinedTeXFormulas.xml'!");
+    }
+}

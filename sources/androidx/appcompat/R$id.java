@@ -36,12 +36,12 @@ public abstract class R$id {
     public static final int shortcut = 2131296643;
     public static final int spacer = 2131296655;
     public static final int split_action_bar = 2131296657;
-    public static final int submenuarrow = 2131296669;
-    public static final int submit_area = 2131296670;
-    public static final int textSpacerNoButtons = 2131296696;
-    public static final int textSpacerNoTitle = 2131296697;
-    public static final int title = 2131296704;
-    public static final int titleDividerNoCustom = 2131296705;
-    public static final int title_template = 2131296706;
-    public static final int topPanel = 2131296712;
+    public static final int submenuarrow = 2131296670;
+    public static final int submit_area = 2131296671;
+    public static final int textSpacerNoButtons = 2131296697;
+    public static final int textSpacerNoTitle = 2131296698;
+    public static final int title = 2131296705;
+    public static final int titleDividerNoCustom = 2131296706;
+    public static final int title_template = 2131296707;
+    public static final int topPanel = 2131296713;
 }

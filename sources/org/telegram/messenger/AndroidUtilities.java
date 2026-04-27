@@ -235,7 +235,6 @@ public class AndroidUtilities {
     public static final int REPLACING_TAG_TYPE_UNDERLINE = 4;
     public static final String STICKERS_PLACEHOLDER_PACK_NAME = "tg_placeholders_android";
     public static final String STICKERS_PLACEHOLDER_PACK_NAME_2 = "tg_superplaceholders_android_2";
-    public static final String TYPEFACE_COURIER_NEW_BOLD = "fonts/courier_new_bold.ttf";
     public static final String TYPEFACE_MERRIWEATHER_BOLD = "fonts/mw_bold.ttf";
     public static final String TYPEFACE_ROBOTO_EXTRA_BOLD = "fonts/rextrabold.ttf";
     public static final String TYPEFACE_ROBOTO_MEDIUM = "fonts/rmedium.ttf";
@@ -4794,14 +4793,14 @@ public class AndroidUtilities {
         return handleProxyIntent(activity, new Intent("android.intent.action.VIEW", uri), false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0103 A[Catch: Exception -> 0x0121, TRY_LEAVE, TryCatch #0 {Exception -> 0x0121, blocks: (B:6:0x000a, B:9:0x0014, B:11:0x001a, B:13:0x0021, B:16:0x0034, B:19:0x003d, B:21:0x0046, B:24:0x0059, B:26:0x005f, B:28:0x0065, B:30:0x006b, B:32:0x0089, B:33:0x008d, B:35:0x00fd, B:37:0x0103, B:48:0x011d, B:54:0x009e, B:56:0x00af, B:58:0x00b8, B:60:0x00c1, B:62:0x00c7, B:64:0x00cf, B:66:0x00d7, B:68:0x00e1, B:69:0x00e5), top: B:5:0x000a }] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x010d  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0112  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0117  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x011c  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0119  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0114  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x010f  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0105 A[Catch: Exception -> 0x0123, TRY_LEAVE, TryCatch #0 {Exception -> 0x0123, blocks: (B:6:0x000a, B:9:0x0014, B:11:0x001a, B:13:0x0021, B:16:0x0036, B:19:0x003f, B:21:0x0048, B:24:0x005b, B:26:0x0061, B:28:0x0067, B:30:0x006d, B:32:0x008b, B:33:0x008f, B:35:0x00ff, B:37:0x0105, B:48:0x011f, B:54:0x00a0, B:56:0x00b1, B:58:0x00ba, B:60:0x00c3, B:62:0x00c9, B:64:0x00d1, B:66:0x00d9, B:68:0x00e3, B:69:0x00e7), top: B:5:0x000a }] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x010f  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x011e  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x011b  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0116  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0111  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

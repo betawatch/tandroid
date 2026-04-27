@@ -2176,8 +2176,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         checkUnsentMessages();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00ce  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0097  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00cf  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -6378,7 +6378,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         */
     public void sendMessage(org.telegram.messenger.SendMessagesHelper.SendMessageParams r114) {
         /*
-            Method dump skipped, instructions count: 10729
+            Method dump skipped, instructions count: 10730
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.sendMessage(org.telegram.messenger.SendMessagesHelper$SendMessageParams):void");
@@ -7265,8 +7265,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0084  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00fc  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0086  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00fe  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -9170,16 +9170,16 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         updateMediaPaths(messageObject, message, i, Collections.singletonList(str), z, -1, hashMap);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:344:0x083e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:344:0x083f, code lost:
     
         if (r11.h > 90) goto L389;
      */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0208  */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x0ad9  */
-    /* JADX WARN: Removed duplicated region for block: B:273:0x0b35  */
-    /* JADX WARN: Removed duplicated region for block: B:297:0x0b7a  */
-    /* JADX WARN: Removed duplicated region for block: B:299:0x0b7d  */
-    /* JADX WARN: Removed duplicated region for block: B:301:0x0ade  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x0ada  */
+    /* JADX WARN: Removed duplicated region for block: B:273:0x0b36  */
+    /* JADX WARN: Removed duplicated region for block: B:297:0x0b7b  */
+    /* JADX WARN: Removed duplicated region for block: B:299:0x0b7e  */
+    /* JADX WARN: Removed duplicated region for block: B:301:0x0adf  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

@@ -1,0 +1,1301 @@
+package org.scilab.forge.jlatexmath;
+
+import java.lang.Character;
+import java.util.HashSet;
+import java.util.Set;
+import org.scilab.forge.jlatexmath.TeXFormula;
+import ru.noties.jlatexmath.awt.Color;
+
+/* loaded from: classes3.dex */
+public class TeXParser {
+    protected static boolean isLoading = false;
+    private static final Set unparsedContents;
+    private boolean arrayMode;
+    private int atIsLetter;
+    private int col;
+    TeXFormula formula;
+    private int group;
+    private boolean ignoreWhiteSpace;
+    private boolean insertion;
+    private boolean isPartial;
+    private int len;
+    private int line;
+    private StringBuffer parseString;
+    private int pos;
+    private int spos;
+
+    private static char convertToRomanNumber(char c) {
+        int i;
+        if (c == 1643) {
+            return '.';
+        }
+        if (1632 <= c && c <= 1641) {
+            i = c - 1584;
+        } else if (1776 <= c && c <= 1785) {
+            i = c - 1728;
+        } else if (2406 <= c && c <= 2415) {
+            i = c - 2358;
+        } else if (2534 <= c && c <= 2543) {
+            i = c - 2486;
+        } else if (2662 <= c && c <= 2671) {
+            i = c - 2614;
+        } else if (2790 <= c && c <= 2799) {
+            i = c - 2742;
+        } else if (2918 <= c && c <= 2927) {
+            i = c - 2870;
+        } else if (3174 <= c && c <= 3183) {
+            i = c - 3126;
+        } else if (3430 <= c && c <= 3439) {
+            i = c - 3382;
+        } else if (3664 <= c && c <= 3673) {
+            i = c - 3616;
+        } else if (3792 <= c && c <= 3801) {
+            i = c - 3744;
+        } else if (3872 <= c && c <= 3881) {
+            i = c - 3728;
+        } else if (4160 <= c && c <= 4169) {
+            i = c - 4112;
+        } else if (6112 <= c && c <= 6121) {
+            i = c - 6064;
+        } else if (6160 <= c && c <= 6169) {
+            i = c - 6112;
+        } else if (6992 <= c && c <= 7001) {
+            i = c - 6944;
+        } else if (7088 <= c && c <= 7097) {
+            i = c - 7040;
+        } else if (7232 <= c && c <= 7241) {
+            i = c - 7184;
+        } else if (7248 <= c && c <= 7257) {
+            i = c - 7200;
+        } else {
+            if (43216 > c || c > 43225) {
+                return c;
+            }
+            i = c - 43168;
+        }
+        return (char) i;
+    }
+
+    static {
+        HashSet hashSet = new HashSet(6);
+        unparsedContents = hashSet;
+        hashSet.add("jlmDynamic");
+        hashSet.add("jlmText");
+        hashSet.add("jlmTextit");
+        hashSet.add("jlmTextbf");
+        hashSet.add("jlmTextitbf");
+        hashSet.add("jlmExternalFont");
+    }
+
+    public TeXParser(String str, TeXFormula teXFormula) {
+        this(str, teXFormula, true);
+    }
+
+    public TeXParser(boolean z, String str, TeXFormula teXFormula) {
+        this(str, teXFormula, false);
+        this.isPartial = z;
+        firstpass();
+    }
+
+    public TeXParser(boolean z, String str, TeXFormula teXFormula, boolean z2) {
+        this.ignoreWhiteSpace = true;
+        this.formula = teXFormula;
+        this.isPartial = z;
+        if (str != null) {
+            this.parseString = new StringBuffer(str);
+            this.len = str.length();
+            this.pos = 0;
+            if (z2) {
+                firstpass();
+                return;
+            }
+            return;
+        }
+        this.parseString = null;
+        this.pos = 0;
+        this.len = 0;
+    }
+
+    public TeXParser(String str, TeXFormula teXFormula, boolean z) {
+        this(false, str, teXFormula, z);
+    }
+
+    public TeXParser(boolean z, String str, ArrayOfAtoms arrayOfAtoms, boolean z2) {
+        this(z, str, (TeXFormula) arrayOfAtoms, z2);
+        this.arrayMode = true;
+    }
+
+    public TeXParser(boolean z, String str, ArrayOfAtoms arrayOfAtoms, boolean z2, boolean z3) {
+        this(z, str, (TeXFormula) arrayOfAtoms, z2, z3);
+        this.arrayMode = true;
+    }
+
+    public TeXParser(boolean z, String str, TeXFormula teXFormula, boolean z2, boolean z3) {
+        this(z, str, teXFormula, z2);
+        this.ignoreWhiteSpace = z3;
+    }
+
+    public boolean getIsPartial() {
+        return this.isPartial;
+    }
+
+    public int getLine() {
+        return this.line;
+    }
+
+    public int getCol() {
+        return (this.pos - this.col) - 1;
+    }
+
+    public Atom getLastAtom() {
+        TeXFormula teXFormula = this.formula;
+        Atom atom = teXFormula.root;
+        if (atom instanceof RowAtom) {
+            return ((RowAtom) atom).getLastAtom();
+        }
+        teXFormula.root = null;
+        return atom;
+    }
+
+    public Atom getFormulaAtom() {
+        TeXFormula teXFormula = this.formula;
+        Atom atom = teXFormula.root;
+        teXFormula.root = null;
+        return atom;
+    }
+
+    public void addAtom(Atom atom) {
+        this.formula.add(atom);
+    }
+
+    public void makeAtLetter() {
+        this.atIsLetter++;
+    }
+
+    public void makeAtOther() {
+        this.atIsLetter--;
+    }
+
+    public boolean isArrayMode() {
+        return this.arrayMode;
+    }
+
+    public boolean isIgnoreWhiteSpace() {
+        return this.ignoreWhiteSpace;
+    }
+
+    public boolean isMathMode() {
+        return this.ignoreWhiteSpace;
+    }
+
+    public int getPos() {
+        return this.pos;
+    }
+
+    public String getStringFromCurrentPos() {
+        return this.parseString.substring(this.pos);
+    }
+
+    public void finish() {
+        this.pos = this.parseString.length();
+    }
+
+    public void addRow() {
+        if (!this.arrayMode) {
+            throw new ParseException("You can add a row only in array mode !");
+        }
+        ((ArrayOfAtoms) this.formula).addRow();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:18:0x054b  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private void firstpass() {
+        int i;
+        char charAt;
+        if (this.len == 0) {
+            return;
+        }
+        while (true) {
+            int i2 = this.pos;
+            if (i2 < this.len) {
+                char charAt2 = this.parseString.charAt(i2);
+                if (charAt2 != '%') {
+                    if (charAt2 != '\\') {
+                        if (charAt2 != 176) {
+                            if (charAt2 != 185) {
+                                if (charAt2 != 8304) {
+                                    if (charAt2 != 178) {
+                                        if (charAt2 == 179) {
+                                            StringBuffer stringBuffer = this.parseString;
+                                            int i3 = this.pos;
+                                            stringBuffer.replace(i3, i3 + 1, "\\jlatexmathcumsup{3}");
+                                            this.len = this.parseString.length();
+                                            this.pos++;
+                                        } else {
+                                            switch (charAt2) {
+                                                case 8308:
+                                                    StringBuffer stringBuffer2 = this.parseString;
+                                                    int i4 = this.pos;
+                                                    stringBuffer2.replace(i4, i4 + 1, "\\jlatexmathcumsup{4}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8309:
+                                                    StringBuffer stringBuffer3 = this.parseString;
+                                                    int i5 = this.pos;
+                                                    stringBuffer3.replace(i5, i5 + 1, "\\jlatexmathcumsup{5}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8310:
+                                                    StringBuffer stringBuffer4 = this.parseString;
+                                                    int i6 = this.pos;
+                                                    stringBuffer4.replace(i6, i6 + 1, "\\jlatexmathcumsup{6}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8311:
+                                                    StringBuffer stringBuffer5 = this.parseString;
+                                                    int i7 = this.pos;
+                                                    stringBuffer5.replace(i7, i7 + 1, "\\jlatexmathcumsup{7}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8312:
+                                                    StringBuffer stringBuffer6 = this.parseString;
+                                                    int i8 = this.pos;
+                                                    stringBuffer6.replace(i8, i8 + 1, "\\jlatexmathcumsup{8}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8313:
+                                                    StringBuffer stringBuffer7 = this.parseString;
+                                                    int i9 = this.pos;
+                                                    stringBuffer7.replace(i9, i9 + 1, "\\jlatexmathcumsup{9}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8314:
+                                                    StringBuffer stringBuffer8 = this.parseString;
+                                                    int i10 = this.pos;
+                                                    stringBuffer8.replace(i10, i10 + 1, "\\jlatexmathcumsup{+}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8315:
+                                                    StringBuffer stringBuffer9 = this.parseString;
+                                                    int i11 = this.pos;
+                                                    stringBuffer9.replace(i11, i11 + 1, "\\jlatexmathcumsup{-}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8316:
+                                                    StringBuffer stringBuffer10 = this.parseString;
+                                                    int i12 = this.pos;
+                                                    stringBuffer10.replace(i12, i12 + 1, "\\jlatexmathcumsup{=}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8317:
+                                                    StringBuffer stringBuffer11 = this.parseString;
+                                                    int i13 = this.pos;
+                                                    stringBuffer11.replace(i13, i13 + 1, "\\jlatexmathcumsup{(}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8318:
+                                                    StringBuffer stringBuffer12 = this.parseString;
+                                                    int i14 = this.pos;
+                                                    stringBuffer12.replace(i14, i14 + 1, "\\jlatexmathcumsup{)}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8319:
+                                                    StringBuffer stringBuffer13 = this.parseString;
+                                                    int i15 = this.pos;
+                                                    stringBuffer13.replace(i15, i15 + 1, "\\jlatexmathcumsup{n}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8320:
+                                                    StringBuffer stringBuffer14 = this.parseString;
+                                                    int i16 = this.pos;
+                                                    stringBuffer14.replace(i16, i16 + 1, "\\jlatexmathcumsub{0}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8321:
+                                                    StringBuffer stringBuffer15 = this.parseString;
+                                                    int i17 = this.pos;
+                                                    stringBuffer15.replace(i17, i17 + 1, "\\jlatexmathcumsub{1}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8322:
+                                                    StringBuffer stringBuffer16 = this.parseString;
+                                                    int i18 = this.pos;
+                                                    stringBuffer16.replace(i18, i18 + 1, "\\jlatexmathcumsub{2}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8323:
+                                                    StringBuffer stringBuffer17 = this.parseString;
+                                                    int i19 = this.pos;
+                                                    stringBuffer17.replace(i19, i19 + 1, "\\jlatexmathcumsub{3}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8324:
+                                                    StringBuffer stringBuffer18 = this.parseString;
+                                                    int i20 = this.pos;
+                                                    stringBuffer18.replace(i20, i20 + 1, "\\jlatexmathcumsub{4}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8325:
+                                                    StringBuffer stringBuffer19 = this.parseString;
+                                                    int i21 = this.pos;
+                                                    stringBuffer19.replace(i21, i21 + 1, "\\jlatexmathcumsub{5}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8326:
+                                                    StringBuffer stringBuffer20 = this.parseString;
+                                                    int i22 = this.pos;
+                                                    stringBuffer20.replace(i22, i22 + 1, "\\jlatexmathcumsub{6}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8327:
+                                                    StringBuffer stringBuffer21 = this.parseString;
+                                                    int i23 = this.pos;
+                                                    stringBuffer21.replace(i23, i23 + 1, "\\jlatexmathcumsub{7}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8328:
+                                                    StringBuffer stringBuffer22 = this.parseString;
+                                                    int i24 = this.pos;
+                                                    stringBuffer22.replace(i24, i24 + 1, "\\jlatexmathcumsub{8}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8329:
+                                                    StringBuffer stringBuffer23 = this.parseString;
+                                                    int i25 = this.pos;
+                                                    stringBuffer23.replace(i25, i25 + 1, "\\jlatexmathcumsub{9}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8330:
+                                                    StringBuffer stringBuffer24 = this.parseString;
+                                                    int i26 = this.pos;
+                                                    stringBuffer24.replace(i26, i26 + 1, "\\jlatexmathcumsub{+}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8331:
+                                                    StringBuffer stringBuffer25 = this.parseString;
+                                                    int i27 = this.pos;
+                                                    stringBuffer25.replace(i27, i27 + 1, "\\jlatexmathcumsub{-}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8332:
+                                                    StringBuffer stringBuffer26 = this.parseString;
+                                                    int i28 = this.pos;
+                                                    stringBuffer26.replace(i28, i28 + 1, "\\jlatexmathcumsub{=}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8333:
+                                                    StringBuffer stringBuffer27 = this.parseString;
+                                                    int i29 = this.pos;
+                                                    stringBuffer27.replace(i29, i29 + 1, "\\jlatexmathcumsub{(}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                case 8334:
+                                                    StringBuffer stringBuffer28 = this.parseString;
+                                                    int i30 = this.pos;
+                                                    stringBuffer28.replace(i30, i30 + 1, "\\jlatexmathcumsub{)}");
+                                                    this.len = this.parseString.length();
+                                                    this.pos++;
+                                                    break;
+                                                default:
+                                                    this.pos++;
+                                                    break;
+                                            }
+                                        }
+                                    } else {
+                                        StringBuffer stringBuffer29 = this.parseString;
+                                        int i31 = this.pos;
+                                        stringBuffer29.replace(i31, i31 + 1, "\\jlatexmathcumsup{2}");
+                                        this.len = this.parseString.length();
+                                        this.pos++;
+                                    }
+                                } else {
+                                    StringBuffer stringBuffer30 = this.parseString;
+                                    int i32 = this.pos;
+                                    stringBuffer30.replace(i32, i32 + 1, "\\jlatexmathcumsup{0}");
+                                    this.len = this.parseString.length();
+                                    this.pos++;
+                                }
+                            } else {
+                                StringBuffer stringBuffer31 = this.parseString;
+                                int i33 = this.pos;
+                                stringBuffer31.replace(i33, i33 + 1, "\\jlatexmathcumsup{1}");
+                                this.len = this.parseString.length();
+                                this.pos++;
+                            }
+                        } else {
+                            StringBuffer stringBuffer32 = this.parseString;
+                            int i34 = this.pos;
+                            stringBuffer32.replace(i34, i34 + 1, "^{\\circ}");
+                            this.len = this.parseString.length();
+                            this.pos++;
+                        }
+                    } else {
+                        int i35 = this.pos;
+                        String command = getCommand();
+                        if ("newcommand".equals(command) || "renewcommand".equals(command)) {
+                            try {
+                                ((MacroInfo) MacroInfo.Commands.get(command)).invoke(this, getOptsArgs(2, 2));
+                            } catch (ParseException e) {
+                                if (!this.isPartial) {
+                                    throw e;
+                                }
+                            }
+                            this.parseString.delete(i35, this.pos);
+                            this.len = this.parseString.length();
+                            this.pos = i35;
+                        } else if (NewCommandMacro.isMacro(command)) {
+                            MacroInfo macroInfo = (MacroInfo) MacroInfo.Commands.get(command);
+                            String[] optsArgs = getOptsArgs(macroInfo.nbArgs, macroInfo.hasOptions ? 1 : 0);
+                            optsArgs[0] = command;
+                            try {
+                                this.parseString.replace(i35, this.pos, (String) macroInfo.invoke(this, optsArgs));
+                            } catch (ParseException e2) {
+                                if (!this.isPartial) {
+                                    throw e2;
+                                }
+                                i35 += command.length() + 1;
+                            }
+                            this.len = this.parseString.length();
+                            this.pos = i35;
+                        } else if ("begin".equals(command)) {
+                            String[] optsArgs2 = getOptsArgs(1, 0);
+                            MacroInfo macroInfo2 = (MacroInfo) MacroInfo.Commands.get(optsArgs2[1] + "@env");
+                            if (macroInfo2 == null) {
+                                if (!this.isPartial) {
+                                    throw new ParseException("Unknown environment: " + optsArgs2[1] + " at position " + getLine() + ":" + getCol());
+                                }
+                            } else {
+                                try {
+                                    String[] optsArgs3 = getOptsArgs(macroInfo2.nbArgs - 1, 0);
+                                    String group = getGroup("\\begin{" + optsArgs2[1] + "}", "\\end{" + optsArgs2[1] + "}");
+                                    String str = "{\\makeatletter \\" + optsArgs2[1] + "@env";
+                                    for (int i36 = 1; i36 <= macroInfo2.nbArgs - 1; i36++) {
+                                        str = str + "{" + optsArgs3[i36] + "}";
+                                    }
+                                    this.parseString.replace(i35, this.pos, str + "{" + group + "}\\makeatother}");
+                                    this.len = this.parseString.length();
+                                    this.pos = i35;
+                                } catch (ParseException e3) {
+                                    if (!this.isPartial) {
+                                        throw e3;
+                                    }
+                                }
+                            }
+                        } else if ("makeatletter".equals(command)) {
+                            this.atIsLetter++;
+                        } else if ("makeatother".equals(command)) {
+                            this.atIsLetter--;
+                        } else if (unparsedContents.contains(command)) {
+                            getOptsArgs(1, 0);
+                        }
+                    }
+                } else {
+                    int i37 = this.pos;
+                    this.pos = i37 + 1;
+                    do {
+                        int i38 = this.pos;
+                        if (i38 < this.len) {
+                            StringBuffer stringBuffer33 = this.parseString;
+                            this.pos = i38 + 1;
+                            charAt = stringBuffer33.charAt(i38);
+                            if (charAt != '\r') {
+                            }
+                        }
+                        i = this.pos;
+                        if (i < this.len) {
+                            this.pos = i - 1;
+                        }
+                        this.parseString.replace(i37, this.pos, "");
+                        this.len = this.parseString.length();
+                        this.pos = i37;
+                    } while (charAt != '\n');
+                    i = this.pos;
+                    if (i < this.len) {
+                    }
+                    this.parseString.replace(i37, this.pos, "");
+                    this.len = this.parseString.length();
+                    this.pos = i37;
+                }
+            } else {
+                this.pos = 0;
+                this.len = this.parseString.length();
+                return;
+            }
+        }
+    }
+
+    public void parse() {
+        int i;
+        boolean z;
+        char charAt;
+        if (this.len != 0) {
+            while (true) {
+                int i2 = this.pos;
+                if (i2 >= this.len) {
+                    break;
+                }
+                char charAt2 = this.parseString.charAt(i2);
+                if (charAt2 != '\t') {
+                    if (charAt2 == '\n') {
+                        this.line++;
+                        this.col = this.pos;
+                    } else if (charAt2 != '\r') {
+                        if (charAt2 == ' ') {
+                            this.pos++;
+                            if (!this.ignoreWhiteSpace) {
+                                this.formula.add(new SpaceAtom());
+                                this.formula.add(new BreakMarkAtom());
+                                while (true) {
+                                    int i3 = this.pos;
+                                    if (i3 < this.len && (charAt = this.parseString.charAt(i3)) == ' ' && charAt == '\t' && charAt == '\r') {
+                                        this.pos++;
+                                    }
+                                }
+                            }
+                        } else if (charAt2 == '\"') {
+                            if (this.ignoreWhiteSpace) {
+                                this.formula.add(new CumulativeScriptsAtom(getLastAtom(), null, SymbolAtom.get("prime")));
+                                this.formula.add(new CumulativeScriptsAtom(getLastAtom(), null, SymbolAtom.get("prime")));
+                            } else {
+                                this.formula.add(convertCharacter('\'', true));
+                                this.formula.add(convertCharacter('\'', true));
+                            }
+                            this.pos++;
+                        } else if (charAt2 == '$') {
+                            int i4 = this.pos + 1;
+                            this.pos = i4;
+                            if (!this.ignoreWhiteSpace) {
+                                if (this.parseString.charAt(i4) == '$') {
+                                    this.pos++;
+                                    i = 0;
+                                    z = true;
+                                } else {
+                                    i = 2;
+                                    z = false;
+                                }
+                                this.formula.add(new MathAtom(new TeXFormula(this, getDollarGroup('$'), false).root, i));
+                                if (z && this.parseString.charAt(this.pos) == '$') {
+                                    this.pos++;
+                                }
+                            }
+                        } else if (charAt2 == '\\') {
+                            Atom processEscape = processEscape();
+                            this.formula.add(processEscape);
+                            if (this.arrayMode && (processEscape instanceof HlineAtom)) {
+                                ((ArrayOfAtoms) this.formula).addRow();
+                            }
+                            if (this.insertion) {
+                                this.insertion = false;
+                            }
+                        } else if (charAt2 == '{') {
+                            Atom argument = getArgument();
+                            if (argument != null) {
+                                argument.type = 0;
+                            }
+                            this.formula.add(argument);
+                        } else if (charAt2 == 8245) {
+                            if (this.ignoreWhiteSpace) {
+                                this.formula.add(new CumulativeScriptsAtom(getLastAtom(), null, SymbolAtom.get("backprime")));
+                            } else {
+                                this.formula.add(convertCharacter((char) 8245, true));
+                            }
+                            this.pos++;
+                        } else if (charAt2 != '&') {
+                            if (charAt2 == '\'') {
+                                if (this.ignoreWhiteSpace) {
+                                    this.formula.add(new CumulativeScriptsAtom(getLastAtom(), null, SymbolAtom.get("prime")));
+                                } else {
+                                    this.formula.add(convertCharacter('\'', true));
+                                }
+                                this.pos++;
+                            } else if (charAt2 == '^') {
+                                this.formula.add(getScripts(charAt2));
+                            } else if (charAt2 != '_') {
+                                if (charAt2 == '}') {
+                                    int i5 = this.group - 1;
+                                    this.group = i5;
+                                    this.pos++;
+                                    if (i5 == -1) {
+                                        throw new ParseException("Found a closing '}' without an opening '{'!");
+                                    }
+                                    return;
+                                }
+                                if (charAt2 == '~') {
+                                    this.formula.add(new SpaceAtom());
+                                    this.pos++;
+                                } else {
+                                    this.formula.add(convertCharacter(charAt2, false));
+                                    this.pos++;
+                                }
+                            } else if (this.ignoreWhiteSpace) {
+                                this.formula.add(getScripts(charAt2));
+                            } else {
+                                this.formula.add(new UnderscoreAtom());
+                                this.pos++;
+                            }
+                        } else {
+                            if (!this.arrayMode) {
+                                throw new ParseException("Character '&' is only available in array mode !");
+                            }
+                            ((ArrayOfAtoms) this.formula).addCol();
+                            this.pos++;
+                        }
+                    }
+                }
+                this.pos++;
+            }
+        }
+        TeXFormula teXFormula = this.formula;
+        if (teXFormula.root != null || this.arrayMode) {
+            return;
+        }
+        teXFormula.add(new EmptyAtom());
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0052  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0072  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0078  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0059  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private Atom getScripts(char c) {
+        Atom atom;
+        Atom atom2;
+        this.pos++;
+        Atom argument = getArgument();
+        int i = this.pos;
+        char charAt = i < this.len ? this.parseString.charAt(i) : (char) 0;
+        if (c != '^' || charAt != '^') {
+            if (c == '_' && charAt == '^') {
+                this.pos++;
+                atom = getArgument();
+            } else if (c == '^' && charAt == '_') {
+                this.pos++;
+                argument = getArgument();
+                atom = argument;
+            } else if (c != '^' || charAt == '_') {
+                atom = null;
+            }
+            TeXFormula teXFormula = this.formula;
+            atom2 = teXFormula.root;
+            if (!(atom2 instanceof RowAtom)) {
+                atom2 = ((RowAtom) atom2).getLastAtom();
+            } else if (atom2 == null) {
+                atom2 = new PhantomAtom(new CharAtom('M', "mathnormal"), false, true, true);
+            } else {
+                teXFormula.root = null;
+            }
+            if (atom2.getRightType() != 1) {
+                return new BigOperatorAtom(atom2, argument, atom);
+            }
+            if (atom2 instanceof OverUnderDelimiter) {
+                OverUnderDelimiter overUnderDelimiter = (OverUnderDelimiter) atom2;
+                if (overUnderDelimiter.isOver()) {
+                    if (atom != null) {
+                        overUnderDelimiter.addScript(atom);
+                        return new ScriptsAtom(atom2, argument, null);
+                    }
+                } else if (argument != null) {
+                    overUnderDelimiter.addScript(argument);
+                    return new ScriptsAtom(atom2, null, atom);
+                }
+            }
+            return new ScriptsAtom(atom2, argument, atom);
+        }
+        atom = argument;
+        argument = null;
+        TeXFormula teXFormula2 = this.formula;
+        atom2 = teXFormula2.root;
+        if (!(atom2 instanceof RowAtom)) {
+        }
+        if (atom2.getRightType() != 1) {
+        }
+    }
+
+    public String getDollarGroup(char c) {
+        char charAt;
+        int i;
+        int i2 = this.pos;
+        do {
+            StringBuffer stringBuffer = this.parseString;
+            int i3 = this.pos;
+            this.pos = i3 + 1;
+            charAt = stringBuffer.charAt(i3);
+            if (charAt == '\\') {
+                this.pos++;
+            }
+            i = this.pos;
+            if (i >= this.len) {
+                break;
+            }
+        } while (charAt != c);
+        if (charAt == c) {
+            return this.parseString.substring(i2, i - 1);
+        }
+        return this.parseString.substring(i2, i);
+    }
+
+    public String getGroup(char c, char c2) {
+        int i;
+        int i2;
+        int i3 = this.pos;
+        if (i3 == this.len) {
+            return null;
+        }
+        char charAt = this.parseString.charAt(i3);
+        int i4 = this.pos;
+        if (i4 < this.len && charAt == c) {
+            int i5 = 1;
+            while (true) {
+                i = this.pos;
+                if (i >= this.len - 1 || i5 == 0) {
+                    break;
+                }
+                int i6 = i + 1;
+                this.pos = i6;
+                char charAt2 = this.parseString.charAt(i6);
+                if (charAt2 == c) {
+                    i5++;
+                } else if (charAt2 == c2) {
+                    i5--;
+                } else if (charAt2 == '\\' && (i2 = this.pos) != this.len - 1) {
+                    this.pos = i2 + 1;
+                }
+            }
+            int i7 = i + 1;
+            this.pos = i7;
+            if (i5 != 0) {
+                return this.parseString.substring(i4 + 1, i7);
+            }
+            return this.parseString.substring(i4 + 1, i);
+        }
+        throw new ParseException("missing '" + c + "'!");
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x00b8, code lost:
+    
+        if (isValidCharacterInCommand(r8) != false) goto L46;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public String getGroup(String str, String str2) {
+        int length = str.length();
+        int length2 = str2.length();
+        boolean isValidCharacterInCommand = isValidCharacterInCommand(str.charAt(length - 1));
+        boolean isValidCharacterInCommand2 = isValidCharacterInCommand(str2.charAt(length2 - 1));
+        StringBuffer stringBuffer = new StringBuffer();
+        int i = 1;
+        int i2 = 0;
+        char c = 0;
+        int i3 = 0;
+        int i4 = 0;
+        while (true) {
+            int i5 = this.pos;
+            if (i5 >= this.len || i == 0) {
+                break;
+            }
+            char charAt = this.parseString.charAt(i5);
+            if (c == '\\' || charAt != ' ') {
+                c = charAt;
+            } else {
+                while (true) {
+                    int i6 = this.pos;
+                    if (i6 >= this.len) {
+                        break;
+                    }
+                    StringBuffer stringBuffer2 = this.parseString;
+                    this.pos = i6 + 1;
+                    if (stringBuffer2.charAt(i6) != ' ') {
+                        break;
+                    }
+                    stringBuffer.append(' ');
+                }
+                StringBuffer stringBuffer3 = this.parseString;
+                int i7 = this.pos - 1;
+                this.pos = i7;
+                char charAt2 = stringBuffer3.charAt(i7);
+                if (isValidCharacterInCommand(c) && isValidCharacterInCommand(charAt2)) {
+                    c = charAt2;
+                    i3 = 0;
+                    i4 = 0;
+                } else {
+                    c = charAt2;
+                }
+            }
+            i3 = c == str.charAt(i3) ? i3 + 1 : 0;
+            if (c == str2.charAt(i4)) {
+                if (i4 == 0) {
+                    i2 = this.pos;
+                }
+                i4++;
+            } else {
+                i4 = 0;
+            }
+            int i8 = this.pos;
+            if (i8 + 1 < this.len) {
+                char charAt3 = this.parseString.charAt(i8 + 1);
+                if (i3 == length) {
+                    if (!isValidCharacterInCommand || !isValidCharacterInCommand(charAt3)) {
+                        i++;
+                    }
+                    i3 = 0;
+                }
+                if (i4 != length2) {
+                    stringBuffer.append(c);
+                    this.pos++;
+                } else {
+                    if (isValidCharacterInCommand2) {
+                    }
+                    i--;
+                }
+            } else {
+                if (i3 == length) {
+                    i++;
+                    i3 = 0;
+                }
+                if (i4 != length2) {
+                    stringBuffer.append(c);
+                    this.pos++;
+                }
+                i--;
+            }
+            i4 = 0;
+            stringBuffer.append(c);
+            this.pos++;
+        }
+        if (i != 0) {
+            if (this.isPartial) {
+                return stringBuffer.toString();
+            }
+            throw new ParseException("The token " + str + " must be closed by " + str2);
+        }
+        return stringBuffer.substring(0, (stringBuffer.length() - this.pos) + i2);
+    }
+
+    public Atom getArgument() {
+        skipWhiteSpace();
+        int i = this.pos;
+        if (i < this.len) {
+            char charAt = this.parseString.charAt(i);
+            if (charAt != '{') {
+                if (charAt == '\\') {
+                    Atom processEscape = processEscape();
+                    if (!this.insertion) {
+                        return processEscape;
+                    }
+                    this.insertion = false;
+                    return getArgument();
+                }
+                Atom convertCharacter = convertCharacter(charAt, true);
+                this.pos++;
+                return convertCharacter;
+            }
+            TeXFormula teXFormula = new TeXFormula();
+            TeXFormula teXFormula2 = this.formula;
+            this.formula = teXFormula;
+            this.pos++;
+            this.group++;
+            parse();
+            this.formula = teXFormula2;
+            if (teXFormula2.root == null) {
+                RowAtom rowAtom = new RowAtom();
+                rowAtom.add(teXFormula.root);
+                return rowAtom;
+            }
+            return teXFormula.root;
+        }
+        return new EmptyAtom();
+    }
+
+    public String getOverArgument() {
+        int i;
+        String substring;
+        int i2 = this.pos;
+        if (i2 == this.len) {
+            return null;
+        }
+        char c = 0;
+        int i3 = 1;
+        char c2 = 0;
+        while (true) {
+            i = this.pos;
+            if (i >= this.len || i3 == 0) {
+                break;
+            }
+            c2 = this.parseString.charAt(i);
+            if (c2 != '&') {
+                if (c2 == '\\') {
+                    int i4 = this.pos + 1;
+                    this.pos = i4;
+                    if (i4 < this.len && this.parseString.charAt(i4) == '\\' && i3 == 1) {
+                        i3--;
+                        this.pos--;
+                    } else {
+                        int i5 = this.pos;
+                        if (i5 < this.len - 1 && this.parseString.charAt(i5) == 'c' && this.parseString.charAt(this.pos + 1) == 'r' && i3 == 1) {
+                            i3--;
+                            this.pos--;
+                        }
+                    }
+                } else if (c2 != '{') {
+                    if (c2 != '}') {
+                    }
+                    i3--;
+                } else {
+                    i3++;
+                }
+                this.pos++;
+            } else {
+                if (i3 != 1) {
+                    this.pos++;
+                }
+                i3--;
+                this.pos++;
+            }
+        }
+        if (i3 >= 2) {
+            throw new ParseException("Illegal end,  missing '}' !");
+        }
+        if (i3 == 0) {
+            substring = this.parseString.substring(i2, i - 1);
+            c = c2;
+        } else {
+            substring = this.parseString.substring(i2, i);
+        }
+        if (c == '&' || c == '\\' || c == '}') {
+            this.pos--;
+        }
+        return substring;
+    }
+
+    public float[] getLength() {
+        if (this.pos == this.len) {
+            return null;
+        }
+        skipWhiteSpace();
+        int i = this.pos;
+        char c = 0;
+        while (true) {
+            int i2 = this.pos;
+            if (i2 >= this.len || c == ' ') {
+                break;
+            }
+            StringBuffer stringBuffer = this.parseString;
+            this.pos = i2 + 1;
+            c = stringBuffer.charAt(i2);
+        }
+        skipWhiteSpace();
+        return SpaceAtom.getLength(this.parseString.substring(i, this.pos - 1));
+    }
+
+    public Atom convertCharacter(char c, boolean z) {
+        String str;
+        String[] strArr;
+        if (this.ignoreWhiteSpace) {
+            if (c >= 945 && c <= 969) {
+                return SymbolAtom.get(TeXFormula.symbolMappings[c]);
+            }
+            if (c >= 913 && c <= 937) {
+                return new TeXFormula(TeXFormula.symbolFormulaMappings[c]).root;
+            }
+        }
+        char convertToRomanNumber = convertToRomanNumber(c);
+        if ((convertToRomanNumber < '0' || convertToRomanNumber > '9') && ((convertToRomanNumber < 'a' || convertToRomanNumber > 'z') && (convertToRomanNumber < 'A' || convertToRomanNumber > 'Z'))) {
+            Character.UnicodeBlock of = Character.UnicodeBlock.of(convertToRomanNumber);
+            if (!isLoading && !DefaultTeXFont.loadedAlphabets.contains(of)) {
+                DefaultTeXFont.addAlphabet((AlphabetRegistration) DefaultTeXFont.registeredAlphabets.get(of));
+            }
+            String str2 = TeXFormula.symbolMappings[convertToRomanNumber];
+            if (str2 == null && ((strArr = TeXFormula.symbolFormulaMappings) == null || strArr[convertToRomanNumber] == null)) {
+                Character.UnicodeBlock unicodeBlock = Character.UnicodeBlock.BASIC_LATIN;
+                boolean equals = unicodeBlock.equals(of);
+                TeXFormula.FontInfos externalFont = (!(equals && TeXFormula.isRegisteredBlock(unicodeBlock)) && equals) ? null : TeXFormula.getExternalFont(of);
+                if (externalFont == null) {
+                    if (!this.isPartial) {
+                        throw new ParseException("Unknown character : '" + Character.toString(convertToRomanNumber) + "' (or " + ((int) convertToRomanNumber) + ")");
+                    }
+                    return new ColorAtom(new RomanAtom(new TeXFormula("\\text{(Unknown char " + ((int) convertToRomanNumber) + ")}").root), null, Color.RED);
+                }
+                if (z) {
+                    return new JavaFontRenderingAtom(Character.toString(convertToRomanNumber), externalFont);
+                }
+                int i = this.pos;
+                this.pos = i + 1;
+                int i2 = this.len - 1;
+                while (true) {
+                    int i3 = this.pos;
+                    if (i3 >= this.len) {
+                        break;
+                    }
+                    if (!Character.UnicodeBlock.of(this.parseString.charAt(i3)).equals(of)) {
+                        i2 = this.pos - 1;
+                        this.pos = i2;
+                        break;
+                    }
+                    this.pos++;
+                }
+                return new JavaFontRenderingAtom(this.parseString.substring(i, i2 + 1), externalFont);
+            }
+            if (!this.ignoreWhiteSpace && (str = TeXFormula.symbolTextMappings[convertToRomanNumber]) != null) {
+                return SymbolAtom.get(str).setUnicode(convertToRomanNumber);
+            }
+            String[] strArr2 = TeXFormula.symbolFormulaMappings;
+            if (strArr2 != null && strArr2[convertToRomanNumber] != null) {
+                return new TeXFormula(TeXFormula.symbolFormulaMappings[convertToRomanNumber]).root;
+            }
+            try {
+                return SymbolAtom.get(str2);
+            } catch (SymbolNotFoundException e) {
+                throw new ParseException("The character '" + Character.toString(convertToRomanNumber) + "' was mapped to an unknown symbol with the name '" + str2 + "'!", e);
+            }
+        }
+        TeXFormula.FontInfos fontInfos = (TeXFormula.FontInfos) TeXFormula.externalFontMap.get(Character.UnicodeBlock.BASIC_LATIN);
+        if (fontInfos == null) {
+            return new CharAtom(convertToRomanNumber, this.formula.textStyle, this.ignoreWhiteSpace);
+        }
+        if (z) {
+            return new JavaFontRenderingAtom(Character.toString(convertToRomanNumber), fontInfos);
+        }
+        int i4 = this.pos;
+        this.pos = i4 + 1;
+        int i5 = this.len - 1;
+        while (true) {
+            int i6 = this.pos;
+            if (i6 >= this.len) {
+                break;
+            }
+            char charAt = this.parseString.charAt(i6);
+            if ((charAt < '0' || charAt > '9') && ((charAt < 'a' || charAt > 'z') && (charAt < 'A' || charAt > 'Z'))) {
+                break;
+            }
+            this.pos++;
+        }
+        i5 = this.pos - 1;
+        this.pos = i5;
+        return new JavaFontRenderingAtom(this.parseString.substring(i4, i5 + 1), fontInfos);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0035, code lost:
+    
+        return "";
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private String getCommand() {
+        int i;
+        int i2 = this.pos + 1;
+        this.pos = i2;
+        char c = 0;
+        while (true) {
+            int i3 = this.pos;
+            if (i3 >= this.len || (((c = this.parseString.charAt(i3)) < 'a' || c > 'z') && ((c < 'A' || c > 'Z') && (this.atIsLetter == 0 || c != '@')))) {
+                break;
+            }
+            this.pos++;
+        }
+        int i4 = this.pos;
+        if (i4 == i2) {
+            this.pos = i4 + 1;
+        }
+        String substring = this.parseString.substring(i2, this.pos);
+        if ("cr".equals(substring) && (i = this.pos) < this.len && this.parseString.charAt(i) == ' ') {
+            this.pos++;
+        }
+        return substring;
+    }
+
+    private Atom processEscape() {
+        this.spos = this.pos;
+        String command = getCommand();
+        if (command.length() == 0) {
+            return new EmptyAtom();
+        }
+        if (MacroInfo.Commands.get(command) != null) {
+            return processCommands(command);
+        }
+        try {
+            try {
+                return TeXFormula.get(command).root;
+            } catch (SymbolNotFoundException unused) {
+                if (!this.isPartial) {
+                    throw new ParseException("Unknown symbol or command or predefined TeXFormula: '" + command + "'");
+                }
+                return new ColorAtom(new RomanAtom(new TeXFormula("\\backslash " + command).root), null, Color.RED);
+            }
+        } catch (FormulaNotFoundException unused2) {
+            return SymbolAtom.get(command);
+        }
+    }
+
+    private void insert(int i, int i2, String str) {
+        this.parseString.replace(i, i2, str);
+        this.len = this.parseString.length();
+        this.pos = i;
+        this.insertion = true;
+    }
+
+    public String[] getOptsArgs(int i, int i2) {
+        String[] strArr = new String[i + 11];
+        if (i != 0) {
+            if (i2 == 1) {
+                for (int i3 = i + 1; i3 < i + 11; i3++) {
+                    try {
+                        skipWhiteSpace();
+                        strArr[i3] = getGroup('[', ']');
+                    } catch (ParseException unused) {
+                        strArr[i3] = null;
+                    }
+                }
+            }
+            skipWhiteSpace();
+            try {
+                strArr[1] = getGroup('{', '}');
+            } catch (ParseException unused2) {
+                if (this.parseString.charAt(this.pos) != '\\') {
+                    strArr[1] = "" + this.parseString.charAt(this.pos);
+                    this.pos = this.pos + 1;
+                } else {
+                    strArr[1] = getCommandWithArgs(getCommand());
+                }
+            }
+            if (i2 == 2) {
+                for (int i4 = i + 1; i4 < i + 11; i4++) {
+                    try {
+                        skipWhiteSpace();
+                        strArr[i4] = getGroup('[', ']');
+                    } catch (ParseException unused3) {
+                        strArr[i4] = null;
+                    }
+                }
+            }
+            for (int i5 = 2; i5 <= i; i5++) {
+                skipWhiteSpace();
+                try {
+                    strArr[i5] = getGroup('{', '}');
+                } catch (ParseException unused4) {
+                    if (this.parseString.charAt(this.pos) != '\\') {
+                        strArr[i5] = "" + this.parseString.charAt(this.pos);
+                        this.pos = this.pos + 1;
+                    } else {
+                        strArr[i5] = getCommandWithArgs(getCommand());
+                    }
+                }
+            }
+            if (this.ignoreWhiteSpace) {
+                skipWhiteSpace();
+            }
+        }
+        return strArr;
+    }
+
+    private String getCommandWithArgs(String str) {
+        if (str.equals("left")) {
+            return getGroup("\\left", "\\right");
+        }
+        MacroInfo macroInfo = (MacroInfo) MacroInfo.Commands.get(str);
+        if (macroInfo != null) {
+            int i = 0;
+            String[] optsArgs = getOptsArgs(macroInfo.nbArgs, macroInfo.hasOptions ? macroInfo.posOpts : 0);
+            StringBuffer stringBuffer = new StringBuffer("\\");
+            stringBuffer.append(str);
+            for (int i2 = 0; i2 < macroInfo.posOpts; i2++) {
+                String str2 = optsArgs[macroInfo.nbArgs + i2 + 1];
+                if (str2 != null) {
+                    stringBuffer.append("[");
+                    stringBuffer.append(str2);
+                    stringBuffer.append("]");
+                }
+            }
+            while (i < macroInfo.nbArgs) {
+                i++;
+                String str3 = optsArgs[i];
+                if (str3 != null) {
+                    stringBuffer.append("{");
+                    stringBuffer.append(str3);
+                    stringBuffer.append("}");
+                }
+            }
+            return stringBuffer.toString();
+        }
+        return "\\" + str;
+    }
+
+    private Atom processCommands(String str) {
+        MacroInfo macroInfo = (MacroInfo) MacroInfo.Commands.get(str);
+        String[] optsArgs = getOptsArgs(macroInfo.nbArgs, macroInfo.hasOptions ? macroInfo.posOpts : 0);
+        optsArgs[0] = str;
+        if (NewCommandMacro.isMacro(str)) {
+            insert(this.spos, this.pos, (String) macroInfo.invoke(this, optsArgs));
+            return null;
+        }
+        return (Atom) macroInfo.invoke(this, optsArgs);
+    }
+
+    public final boolean isValidName(String str) {
+        char c = 0;
+        if (str == null || "".equals(str) || str.charAt(0) != '\\') {
+            return false;
+        }
+        int length = str.length();
+        for (int i = 1; i < length; i++) {
+            c = str.charAt(i);
+            if (!Character.isLetter(c) && (this.atIsLetter == 0 || c != '@')) {
+                break;
+            }
+        }
+        return Character.isLetter(c);
+    }
+
+    public final boolean isValidCharacterInCommand(char c) {
+        return Character.isLetter(c) || (this.atIsLetter != 0 && c == '@');
+    }
+
+    private final void skipWhiteSpace() {
+        while (true) {
+            int i = this.pos;
+            if (i >= this.len) {
+                return;
+            }
+            char charAt = this.parseString.charAt(i);
+            if (charAt != ' ' && charAt != '\t' && charAt != '\n' && charAt != '\r') {
+                return;
+            }
+            if (charAt == '\n') {
+                this.line++;
+                this.col = this.pos;
+            }
+            this.pos++;
+        }
+    }
+}

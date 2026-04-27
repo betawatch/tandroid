@@ -1,8 +1,11 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.text.style.ReplacementSpan;
 import android.view.View;
@@ -17,6 +20,8 @@ import org.telegram.ui.web.WebInstantView;
 /* loaded from: classes5.dex */
 public class TextPaintImageReceiverSpan extends ReplacementSpan {
     private boolean alignTop;
+    private boolean baselineMode;
+    private int depth;
     private int height;
     private ImageReceiver imageReceiver;
     private int width;
@@ -62,7 +67,6 @@ public class TextPaintImageReceiverSpan extends ReplacementSpan {
     }
 
     public TextPaintImageReceiverSpan(View view, WebInstantView.WebPhoto webPhoto, Object obj, int i, int i2, boolean z, boolean z2) {
-        String.format(Locale.US, "%d_%d_i", Integer.valueOf(i), Integer.valueOf(i2));
         this.width = i;
         this.height = i2;
         ImageReceiver imageReceiver = new ImageReceiver(view);
@@ -102,23 +106,43 @@ public class TextPaintImageReceiverSpan extends ReplacementSpan {
         }
     }
 
+    public TextPaintImageReceiverSpan(View view, Bitmap bitmap, int i, int i2, int i3, int i4) {
+        this.width = i;
+        this.height = i2;
+        ImageReceiver imageReceiver = new ImageReceiver(view);
+        this.imageReceiver = imageReceiver;
+        imageReceiver.setInvalidateAll(true);
+        this.imageReceiver.setImageBitmap(bitmap);
+        this.imageReceiver.setColorFilter(new PorterDuffColorFilter(i3, PorterDuff.Mode.SRC_IN));
+        this.depth = i4;
+        this.baselineMode = true;
+    }
+
     @Override // android.text.style.ReplacementSpan
     public int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
         if (fontMetricsInt != null) {
-            if (this.alignTop) {
+            if (this.baselineMode) {
+                int i3 = this.height;
+                int i4 = this.depth;
+                int i5 = -(i3 - i4);
+                fontMetricsInt.ascent = i5;
+                fontMetricsInt.top = i5;
+                fontMetricsInt.descent = i4;
+                fontMetricsInt.bottom = i4;
+            } else if (this.alignTop) {
                 int dp = (fontMetricsInt.descent - fontMetricsInt.ascent) - AndroidUtilities.dp(4.0f);
-                int i3 = this.height - dp;
-                fontMetricsInt.descent = i3;
-                fontMetricsInt.bottom = i3;
-                int i4 = 0 - dp;
-                fontMetricsInt.ascent = i4;
-                fontMetricsInt.top = i4;
+                int i6 = this.height - dp;
+                fontMetricsInt.descent = i6;
+                fontMetricsInt.bottom = i6;
+                int i7 = 0 - dp;
+                fontMetricsInt.ascent = i7;
+                fontMetricsInt.top = i7;
             } else {
                 int dp2 = ((-this.height) / 2) - AndroidUtilities.dp(4.0f);
                 fontMetricsInt.ascent = dp2;
                 fontMetricsInt.top = dp2;
-                int i5 = this.height;
-                int dp3 = (i5 - (i5 / 2)) - AndroidUtilities.dp(4.0f);
+                int i8 = this.height;
+                int dp3 = (i8 - (i8 / 2)) - AndroidUtilities.dp(4.0f);
                 fontMetricsInt.descent = dp3;
                 fontMetricsInt.bottom = dp3;
             }
@@ -129,7 +153,9 @@ public class TextPaintImageReceiverSpan extends ReplacementSpan {
     @Override // android.text.style.ReplacementSpan
     public void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
         canvas.save();
-        if (this.alignTop) {
+        if (this.baselineMode) {
+            this.imageReceiver.setImageCoords((int) f, i4 - (r4 - this.depth), this.width, this.height);
+        } else if (this.alignTop) {
             this.imageReceiver.setImageCoords((int) f, i3 - 1, this.width, this.height);
         } else {
             int dp = (i5 - AndroidUtilities.dp(4.0f)) - i3;

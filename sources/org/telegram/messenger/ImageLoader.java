@@ -2383,18 +2383,18 @@ public class ImageLoader {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:168:0x0168, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:168:0x0169, code lost:
     
         if (r2.canWrite() == false) goto L71;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:171:0x0162, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:171:0x0163, code lost:
     
         if (r2.mkdirs() != false) goto L69;
      */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x019d A[Catch: Exception -> 0x00ad, TryCatch #1 {Exception -> 0x00ad, blocks: (B:8:0x0053, B:10:0x005f, B:12:0x006d, B:15:0x0075, B:17:0x007c, B:19:0x00aa, B:23:0x00b0, B:25:0x00bc, B:28:0x00c5, B:30:0x00c8, B:34:0x00e9, B:35:0x00cd, B:38:0x00ec, B:181:0x012d, B:47:0x0190, B:49:0x019d, B:51:0x01a8, B:53:0x01b0, B:55:0x01b8, B:58:0x01c4, B:60:0x01cf, B:64:0x01d2, B:151:0x034e, B:153:0x030c, B:155:0x02cb, B:157:0x028a, B:159:0x0249, B:68:0x0353, B:89:0x03be, B:91:0x038a, B:92:0x03cc, B:161:0x0215, B:184:0x012a, B:41:0x013c, B:43:0x0144, B:46:0x0189, B:162:0x0151, B:164:0x0157, B:167:0x0164, B:169:0x016a, B:170:0x015e, B:191:0x03c2, B:193:0x03c6, B:142:0x030f, B:144:0x0321, B:146:0x0328, B:148:0x0337, B:133:0x02ce, B:135:0x02e0, B:137:0x02e7, B:139:0x02f6, B:124:0x028d, B:126:0x029f, B:128:0x02a6, B:130:0x02b5, B:71:0x0359, B:73:0x0367, B:75:0x036d, B:77:0x0376, B:115:0x024c, B:117:0x025e, B:119:0x0265, B:121:0x0274, B:97:0x01e4, B:99:0x01f4, B:101:0x01fa, B:103:0x0201, B:80:0x038d, B:82:0x039b, B:84:0x03a1, B:86:0x03aa, B:106:0x0218, B:108:0x0228, B:110:0x022e, B:112:0x0235), top: B:7:0x0053, inners: #0, #2, #3, #4, #5, #6, #10, #11 }] */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0376 A[Catch: Exception -> 0x0389, TRY_LEAVE, TryCatch #4 {Exception -> 0x0389, blocks: (B:71:0x0359, B:73:0x0367, B:75:0x036d, B:77:0x0376), top: B:70:0x0359, outer: #1 }] */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x03aa A[Catch: Exception -> 0x03bd, TRY_LEAVE, TryCatch #10 {Exception -> 0x03bd, blocks: (B:80:0x038d, B:82:0x039b, B:84:0x03a1, B:86:0x03aa), top: B:79:0x038d, outer: #1 }] */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x01e4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x019e A[Catch: Exception -> 0x00ae, TryCatch #1 {Exception -> 0x00ae, blocks: (B:8:0x0054, B:10:0x0060, B:12:0x006e, B:15:0x0076, B:17:0x007d, B:19:0x00ab, B:23:0x00b1, B:25:0x00bd, B:28:0x00c6, B:30:0x00c9, B:34:0x00ea, B:35:0x00ce, B:38:0x00ed, B:181:0x012e, B:47:0x0191, B:49:0x019e, B:51:0x01a9, B:53:0x01b1, B:55:0x01b9, B:58:0x01c5, B:60:0x01d0, B:64:0x01d3, B:151:0x034f, B:153:0x030d, B:155:0x02cc, B:157:0x028b, B:159:0x024a, B:68:0x0354, B:89:0x03bf, B:91:0x038b, B:92:0x03cd, B:161:0x0216, B:184:0x012b, B:41:0x013d, B:43:0x0145, B:46:0x018a, B:162:0x0152, B:164:0x0158, B:167:0x0165, B:169:0x016b, B:170:0x015f, B:191:0x03c3, B:193:0x03c7, B:142:0x0310, B:144:0x0322, B:146:0x0329, B:148:0x0338, B:133:0x02cf, B:135:0x02e1, B:137:0x02e8, B:139:0x02f7, B:124:0x028e, B:126:0x02a0, B:128:0x02a7, B:130:0x02b6, B:71:0x035a, B:73:0x0368, B:75:0x036e, B:77:0x0377, B:115:0x024d, B:117:0x025f, B:119:0x0266, B:121:0x0275, B:106:0x0219, B:108:0x0229, B:110:0x022f, B:112:0x0236, B:97:0x01e5, B:99:0x01f5, B:101:0x01fb, B:103:0x0202, B:80:0x038e, B:82:0x039c, B:84:0x03a2, B:86:0x03ab), top: B:7:0x0054, inners: #0, #2, #3, #4, #5, #6, #7, #10 }] */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0377 A[Catch: Exception -> 0x038a, TRY_LEAVE, TryCatch #4 {Exception -> 0x038a, blocks: (B:71:0x035a, B:73:0x0368, B:75:0x036e, B:77:0x0377), top: B:70:0x035a, outer: #1 }] */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x03ab A[Catch: Exception -> 0x03be, TRY_LEAVE, TryCatch #10 {Exception -> 0x03be, blocks: (B:80:0x038e, B:82:0x039c, B:84:0x03a2, B:86:0x03ab), top: B:79:0x038e, outer: #1 }] */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x01e5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2455,48 +2455,48 @@ public class ImageLoader {
                             File publicStorageDir = getPublicStorageDir();
                             try {
                                 file = new File(publicStorageDir, "Telegram");
-                            } catch (Exception e2) {
+                                try {
+                                    file.mkdirs();
+                                } catch (Exception e2) {
+                                    e = e2;
+                                    FileLog.e(e);
+                                    this.telegramPath = new File(ApplicationLoader.applicationContext.getExternalFilesDir(null), "Telegram");
+                                    file4 = file;
+                                    this.telegramPath.mkdirs();
+                                    if (!this.telegramPath.isDirectory()) {
+                                    }
+                                    if (this.telegramPath.isDirectory()) {
+                                    }
+                                    if (file4 != null) {
+                                        try {
+                                            file3 = new File(file4, "Telegram Images");
+                                            file3.mkdir();
+                                            if (file3.isDirectory()) {
+                                                sparseArray.put(100, file3);
+                                                if (BuildVars.LOGS_ENABLED) {
+                                                }
+                                            }
+                                        } catch (Exception e3) {
+                                            FileLog.e(e3);
+                                        }
+                                        try {
+                                            file2 = new File(file4, "Telegram Video");
+                                            file2.mkdir();
+                                            if (file2.isDirectory()) {
+                                                sparseArray.put(101, file2);
+                                                if (BuildVars.LOGS_ENABLED) {
+                                                }
+                                            }
+                                        } catch (Exception e4) {
+                                            FileLog.e(e4);
+                                        }
+                                    }
+                                    SharedConfig.checkSaveToGalleryFiles();
+                                    return sparseArray;
+                                }
+                            } catch (Exception e5) {
                                 file = publicStorageDir;
-                                e = e2;
-                            }
-                            try {
-                                file.mkdirs();
-                            } catch (Exception e3) {
-                                e = e3;
-                                FileLog.e(e);
-                                this.telegramPath = new File(ApplicationLoader.applicationContext.getExternalFilesDir(null), "Telegram");
-                                file4 = file;
-                                this.telegramPath.mkdirs();
-                                if (!this.telegramPath.isDirectory()) {
-                                }
-                                if (this.telegramPath.isDirectory()) {
-                                }
-                                if (file4 != null) {
-                                    try {
-                                        file3 = new File(file4, "Telegram Images");
-                                        file3.mkdir();
-                                        if (file3.isDirectory()) {
-                                            sparseArray.put(100, file3);
-                                            if (BuildVars.LOGS_ENABLED) {
-                                            }
-                                        }
-                                    } catch (Exception e4) {
-                                        FileLog.e(e4);
-                                    }
-                                    try {
-                                        file2 = new File(file4, "Telegram Video");
-                                        file2.mkdir();
-                                        if (file2.isDirectory()) {
-                                            sparseArray.put(101, file2);
-                                            if (BuildVars.LOGS_ENABLED) {
-                                            }
-                                        }
-                                    } catch (Exception e5) {
-                                        FileLog.e(e5);
-                                    }
-                                }
-                                SharedConfig.checkSaveToGalleryFiles();
-                                return sparseArray;
+                                e = e5;
                             }
                         } else {
                             file = null;

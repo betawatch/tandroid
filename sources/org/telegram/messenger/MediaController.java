@@ -1944,14 +1944,14 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x0065, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x0066, code lost:
     
         if (r4.toLowerCase().contains("screenshot") != false) goto L71;
      */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0081 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0093 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00a3 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00a3 A[ADDED_TO_REGION, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0082 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0094 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00a4 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00a4 A[ADDED_TO_REGION, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

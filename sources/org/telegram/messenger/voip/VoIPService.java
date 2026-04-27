@@ -5644,7 +5644,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             contentIntent.setSmallIcon(isMicMute() ? R.drawable.voicechat_muted : R.drawable.voicechat_active);
         } else {
             contentIntent.setContentTitle(LocaleController.getString(R.string.VoipOutgoingCall));
-            contentIntent.setSmallIcon(R.drawable.ic_call);
+            contentIntent.setSmallIcon(R.drawable.call);
             contentIntent.setOngoing(true);
         }
         int i = Build.VERSION.SDK_INT;
@@ -6492,7 +6492,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 if (this.groupCall != null) {
                     showWhen.setSmallIcon(isMicMute() ? R.drawable.voicechat_muted : R.drawable.voicechat_active);
                 } else {
-                    showWhen.setSmallIcon(R.drawable.ic_call);
+                    showWhen.setSmallIcon(R.drawable.call);
                 }
                 this.foregroundStarted = true;
                 if (i >= 33) {
@@ -6513,7 +6513,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             NotificationsController.checkOtherNotificationsChannel();
             Distribute$$ExternalSyntheticApiModelOutline1.m();
             Notification.Builder showWhen2 = Distribute$$ExternalSyntheticApiModelOutline0.m(this, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(LocaleController.getString(R.string.VoipCallEnded)).setShowWhen(false);
-            showWhen2.setSmallIcon(R.drawable.ic_call);
+            showWhen2.setSmallIcon(R.drawable.call);
             this.foregroundStarted = true;
             if (i >= 33) {
                 this.foregroundId = 201;
@@ -7069,7 +7069,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         String id2;
         Intent intent = new Intent(this, (Class<?>) LaunchActivity.class);
         intent.setAction("voip");
-        Notification.Builder contentIntent = new Notification.Builder(this).setContentTitle(LocaleController.getString(z ? R.string.VoipInVideoCallBranding : R.string.VoipInCallBranding)).setSmallIcon(R.drawable.ic_call).setContentIntent(PendingIntent.getActivity(this, 0, intent, 33554432));
+        Notification.Builder contentIntent = new Notification.Builder(this).setContentTitle(LocaleController.getString(z ? R.string.VoipInVideoCallBranding : R.string.VoipInCallBranding)).setSmallIcon(R.drawable.call).setContentIntent(PendingIntent.getActivity(this, 0, intent, 33554432));
         if (Build.VERSION.SDK_INT >= 26) {
             SharedPreferences globalNotificationsSettings = MessagesController.getGlobalNotificationsSettings();
             int i4 = globalNotificationsSettings.getInt("calls_notification_channel", 0);
@@ -7185,7 +7185,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             notification = contentIntent.build();
         } else {
             contentIntent.addAction(R.drawable.ic_call_end_white_24dp, string, broadcast);
-            contentIntent.addAction(R.drawable.ic_call, string2, broadcast2);
+            contentIntent.addAction(R.drawable.call, string2, broadcast2);
             contentIntent.setContentText(str);
             RemoteViews remoteViews = new RemoteViews(getPackageName(), LocaleController.isRTL ? R.layout.call_notification_rtl : R.layout.call_notification);
             remoteViews.setTextViewText(R.id.name, str);
