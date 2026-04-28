@@ -38,6 +38,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.CountDownLatch;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.ChannelBoostsController;
@@ -2038,7 +2039,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
     public /* synthetic */ void lambda$createView$28(View view) {
         Bundle bundle = new Bundle();
         bundle.putLong("chat_id", this.chatId);
-        bundle.putInt("type", (this.isChannel || this.currentChat.gigagroup) ? 0 : 3);
+        bundle.putInt(TeXSymbolParser.TYPE_ATTR, (this.isChannel || this.currentChat.gigagroup) ? 0 : 3);
         ChatUsersActivity chatUsersActivity = new ChatUsersActivity(bundle);
         chatUsersActivity.setInfo(this.info);
         presentFragment(chatUsersActivity);
@@ -2069,7 +2070,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
     public /* synthetic */ void lambda$createView$31(View view) {
         Bundle bundle = new Bundle();
         bundle.putLong("chat_id", this.chatId);
-        bundle.putInt("type", 1);
+        bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
         ChatUsersActivity chatUsersActivity = new ChatUsersActivity(bundle);
         chatUsersActivity.setInfo(this.info);
         presentFragment(chatUsersActivity);
@@ -2079,7 +2080,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
     public /* synthetic */ void lambda$createView$32(View view) {
         Bundle bundle = new Bundle();
         bundle.putLong("chat_id", this.chatId);
-        bundle.putInt("type", 2);
+        bundle.putInt(TeXSymbolParser.TYPE_ATTR, 2);
         ChatUsersActivity chatUsersActivity = new ChatUsersActivity(bundle);
         chatUsersActivity.setInfo(this.info);
         presentFragment(chatUsersActivity);

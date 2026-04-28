@@ -23,6 +23,7 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
@@ -336,7 +337,7 @@ public class BotBiometry {
         boolean z = false;
         if (availableType != null) {
             jSONObject.put("available", true);
-            jSONObject.put("type", availableType);
+            jSONObject.put(TeXSymbolParser.TYPE_ATTR, availableType);
         } else {
             jSONObject.put("available", false);
         }

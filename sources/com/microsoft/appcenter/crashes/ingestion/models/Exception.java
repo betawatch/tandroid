@@ -7,8 +7,9 @@ import com.microsoft.appcenter.ingestion.models.json.JSONUtils;
 import java.util.List;
 import org.json.JSONObject;
 import org.json.JSONStringer;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class Exception implements Model {
     private List frames;
     private List innerExceptions;
@@ -76,7 +77,7 @@ public class Exception implements Model {
 
     @Override // com.microsoft.appcenter.ingestion.models.Model
     public void read(JSONObject jSONObject) {
-        setType(jSONObject.optString("type", null));
+        setType(jSONObject.optString(TeXSymbolParser.TYPE_ATTR, null));
         setMessage(jSONObject.optString("message", null));
         setStackTrace(jSONObject.optString("stackTrace", null));
         setFrames(JSONUtils.readArray(jSONObject, "frames", StackFrameFactory.getInstance()));
@@ -87,7 +88,7 @@ public class Exception implements Model {
 
     @Override // com.microsoft.appcenter.ingestion.models.Model
     public void write(JSONStringer jSONStringer) {
-        JSONUtils.write(jSONStringer, "type", getType());
+        JSONUtils.write(jSONStringer, TeXSymbolParser.TYPE_ATTR, getType());
         JSONUtils.write(jSONStringer, "message", getMessage());
         JSONUtils.write(jSONStringer, "stackTrace", getStackTrace());
         JSONUtils.writeArray(jSONStringer, "frames", getFrames());

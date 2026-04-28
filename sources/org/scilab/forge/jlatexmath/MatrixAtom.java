@@ -3,17 +3,24 @@ package org.scilab.forge.jlatexmath;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
 
 /* loaded from: classes3.dex */
 public class MatrixAtom extends Atom {
+    public static final int ALIGN = 2;
+    public static final int ALIGNAT = 3;
+    public static final int ALIGNED = 6;
+    public static final int ALIGNEDAT = 7;
+    public static final int ARRAY = 0;
+    public static final int FLALIGN = 4;
+    public static final int MATRIX = 1;
+    public static final int SMALLMATRIX = 5;
     private boolean isPartial;
     private ArrayOfAtoms matrix;
     private int[] position;
     private boolean spaceAround;
     private int type;
-    private Map vlines;
+    private Map<Integer, VlineAtom> vlines;
     public static SpaceAtom hsep = new SpaceAtom(0, 1.0f, 0.0f, 0.0f);
     public static SpaceAtom semihsep = new SpaceAtom(0, 0.5f, 0.0f, 0.0f);
     public static SpaceAtom vsep_in = new SpaceAtom(1, 0.0f, 1.0f, 0.0f);
@@ -33,6 +40,10 @@ public class MatrixAtom extends Atom {
 
     public MatrixAtom(boolean z, ArrayOfAtoms arrayOfAtoms, String str) {
         this(z, arrayOfAtoms, str, false);
+    }
+
+    public MatrixAtom(ArrayOfAtoms arrayOfAtoms, String str) {
+        this(false, arrayOfAtoms, str);
     }
 
     public MatrixAtom(boolean z, ArrayOfAtoms arrayOfAtoms, int i) {
@@ -69,6 +80,26 @@ public class MatrixAtom extends Atom {
         }
     }
 
+    public MatrixAtom(boolean z, ArrayOfAtoms arrayOfAtoms, int i, int i2) {
+        this(z, arrayOfAtoms, i, i2, true);
+    }
+
+    public MatrixAtom(boolean z, ArrayOfAtoms arrayOfAtoms, int i, int i2, boolean z2) {
+        this.vlines = new HashMap();
+        this.isPartial = z;
+        this.matrix = arrayOfAtoms;
+        this.type = i;
+        this.spaceAround = z2;
+        this.position = new int[arrayOfAtoms.col];
+        for (int i3 = 0; i3 < this.matrix.col; i3++) {
+            this.position[i3] = i2;
+        }
+    }
+
+    public MatrixAtom(ArrayOfAtoms arrayOfAtoms, int i) {
+        this(false, arrayOfAtoms, i);
+    }
+
     private void parsePositions(StringBuffer stringBuffer) {
         int pos;
         int length = stringBuffer.length();
@@ -100,7 +131,7 @@ public class MatrixAtom extends Atom {
                         if (i5 >= arrayOfAtoms.row) {
                             break;
                         }
-                        ((LinkedList) arrayOfAtoms.array.get(i5)).add(arrayList.size(), argument);
+                        arrayOfAtoms.array.get(i5).add(arrayList.size(), argument);
                         i5++;
                     }
                     arrayList.add(5);
@@ -297,7 +328,7 @@ public class MatrixAtom extends Atom {
             int i7 = 0;
             while (i7 < i5) {
                 try {
-                    atom = (Atom) ((LinkedList) this.matrix.array.get(i6)).get(i7);
+                    atom = this.matrix.array.get(i6).get(i7);
                 } catch (Exception unused) {
                     boxArr[i6][i7 - 1].type = 11;
                     i7 = i5 - 1;
@@ -349,7 +380,7 @@ public class MatrixAtom extends Atom {
         for (int i11 = 0; i11 < i5 + 1; i11++) {
             f4 += columnSep[i11].getWidth();
             if (this.vlines.get(Integer.valueOf(i11)) != null) {
-                f4 += ((VlineAtom) this.vlines.get(Integer.valueOf(i11))).getWidth(teXEnvironment2);
+                f4 += this.vlines.get(Integer.valueOf(i11)).getWidth(teXEnvironment2);
             }
         }
         VerticalBox verticalBox2 = new VerticalBox();
@@ -384,11 +415,11 @@ public class MatrixAtom extends Atom {
                         case 12:
                             break;
                         case 13:
-                            HlineAtom hlineAtom = (HlineAtom) ((LinkedList) this.matrix.array.get(i12)).get(i13);
+                            HlineAtom hlineAtom = (HlineAtom) this.matrix.array.get(i12).get(i13);
                             hlineAtom.setWidth(f4);
                             if (i12 >= 1) {
                                 f = f4;
-                                if (((LinkedList) this.matrix.array.get(i12 - 1)).get(i13) instanceof HlineAtom) {
+                                if (this.matrix.array.get(i12 - 1).get(i13) instanceof HlineAtom) {
                                     horizontalBox2.add(new StrutBox(0.0f, defaultRuleThickness * 2.0f, 0.0f, 0.0f));
                                     hlineAtom.setShift(((-createBox.getHeight()) / 2.0f) + defaultRuleThickness);
                                     horizontalBox2.add(hlineAtom.createBox(teXEnvironment2));
@@ -437,7 +468,7 @@ public class MatrixAtom extends Atom {
                 if (i13 != 0) {
                     box = createBox;
                 } else if (this.vlines.get(num2) != null) {
-                    VlineAtom vlineAtom = (VlineAtom) this.vlines.get(num2);
+                    VlineAtom vlineAtom = this.vlines.get(num2);
                     vlineAtom.setHeight(fArr3[i12] + fArr2[i12] + createBox.getHeight());
                     vlineAtom.setShift(fArr2[i12] + (createBox.getHeight() / 2.0f));
                     Box createBox2 = vlineAtom.createBox(teXEnvironment2);
@@ -463,7 +494,7 @@ public class MatrixAtom extends Atom {
                     teXEnvironment3 = teXEnvironment2;
                     fArr = fArr4;
                     Box generateMulticolumn = generateMulticolumn(teXEnvironment2, columnSep, fArr4, i, i16);
-                    MulticolumnAtom multicolumnAtom3 = (MulticolumnAtom) ((LinkedList) this.matrix.array.get(i)).get(i16);
+                    MulticolumnAtom multicolumnAtom3 = (MulticolumnAtom) this.matrix.array.get(i).get(i16);
                     int skipped2 = (multicolumnAtom3.getSkipped() - 1) + i16;
                     horizontalBox.add(generateMulticolumn);
                     hasRightVline = multicolumnAtom3.hasRightVline();
@@ -472,7 +503,7 @@ public class MatrixAtom extends Atom {
                 if (hasRightVline) {
                     int i17 = i13 + 1;
                     if (this.vlines.get(Integer.valueOf(i17)) != null) {
-                        VlineAtom vlineAtom2 = (VlineAtom) this.vlines.get(Integer.valueOf(i17));
+                        VlineAtom vlineAtom2 = this.vlines.get(Integer.valueOf(i17));
                         vlineAtom2.setHeight(fArr3[i] + fArr2[i] + box.getHeight());
                         vlineAtom2.setShift(fArr2[i] + (box.getHeight() / 2.0f));
                         Box createBox3 = vlineAtom2.createBox(teXEnvironment3);
@@ -551,7 +582,7 @@ public class MatrixAtom extends Atom {
     }
 
     private Box generateMulticolumn(TeXEnvironment teXEnvironment, Box[] boxArr, float[] fArr, int i, int i2) {
-        MulticolumnAtom multicolumnAtom = (MulticolumnAtom) ((LinkedList) this.matrix.array.get(i)).get(i2);
+        MulticolumnAtom multicolumnAtom = (MulticolumnAtom) this.matrix.array.get(i).get(i2);
         int skipped = multicolumnAtom.getSkipped();
         int i3 = i2;
         float f = 0.0f;
@@ -560,7 +591,7 @@ public class MatrixAtom extends Atom {
             i3++;
             f += f2 + boxArr[i3].getWidth();
             if (this.vlines.get(Integer.valueOf(i3)) != null) {
-                f += ((VlineAtom) this.vlines.get(Integer.valueOf(i3))).getWidth(teXEnvironment);
+                f += this.vlines.get(Integer.valueOf(i3)).getWidth(teXEnvironment);
             }
         }
         float f3 = f + fArr[i3];

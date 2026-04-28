@@ -69,6 +69,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.CountDownLatch;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
@@ -1590,7 +1591,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                         return;
                     }
                     Bundle bundle = new Bundle();
-                    bundle.putInt("type", 3);
+                    bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
                     bundle.putString("hashtag", url);
                     StoryViewer storyViewer2 = this.val$storyViewer;
                     if (storyViewer2 != null) {
@@ -1927,7 +1928,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         long j2 = this.dialogId;
         if (j == j2) {
             Bundle bundle = new Bundle();
-            bundle.putInt("type", 1);
+            bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
             bundle.putLong("dialog_id", this.dialogId);
             storyViewer.presentFragment(new MediaActivity(bundle, null));
             return;

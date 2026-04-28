@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.widget.RemoteViews;
 import java.util.ArrayList;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
@@ -48,7 +49,7 @@ public class ContactsWidgetProvider extends AppWidgetProvider {
                 AccountInstance.getInstance(i2).getMessagesStorage().clearWidgetDialogs(iArr[i]);
             }
             edit.remove("account" + iArr[i]);
-            edit.remove("type" + iArr[i]);
+            edit.remove(TeXSymbolParser.TYPE_ATTR + iArr[i]);
             edit.remove("deleted" + iArr[i]);
         }
         edit.commit();
@@ -73,7 +74,7 @@ public class ContactsWidgetProvider extends AppWidgetProvider {
             if (i3 == -1) {
                 SharedPreferences.Editor edit = sharedPreferences.edit();
                 edit.putInt("account" + i, UserConfig.selectedAccount);
-                edit.putInt("type" + i, 0).commit();
+                edit.putInt(TeXSymbolParser.TYPE_ATTR + i, 0).commit();
             }
             ArrayList<Long> arrayList = new ArrayList<>();
             if (i3 >= 0) {

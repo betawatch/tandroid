@@ -423,9 +423,9 @@ public class PredefMacros {
                 str = "mathcal";
             }
         }
-        Map map = TeXFormula.externalFontMap;
+        Map<Character.UnicodeBlock, TeXFormula.FontInfos> map = TeXFormula.externalFontMap;
         Character.UnicodeBlock unicodeBlock = Character.UnicodeBlock.BASIC_LATIN;
-        TeXFormula.FontInfos fontInfos = (TeXFormula.FontInfos) map.get(unicodeBlock);
+        TeXFormula.FontInfos fontInfos = map.get(unicodeBlock);
         if (fontInfos != null) {
             TeXFormula.externalFontMap.put(unicodeBlock, null);
         }
@@ -1030,7 +1030,7 @@ public class PredefMacros {
         TeXFormula teXFormula = new TeXFormula("\\mathbb{G}\\mathsf{e}");
         teXFormula.add(new GeoGebraLogoAtom());
         teXFormula.add("\\mathsf{Gebra}");
-        return new ColorAtom(teXFormula.root, null, new Color(102, 102, 102));
+        return new ColorAtom(teXFormula.root, (Color) null, new Color(102, 102, 102));
     }
 
     public static final Atom hphantom_macro(TeXParser teXParser, String[] strArr) {
@@ -1248,7 +1248,7 @@ public class PredefMacros {
 
     public static final Atom fgcolor_macro(TeXParser teXParser, String[] strArr) {
         try {
-            return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, null, ColorAtom.getColor(strArr[1]));
+            return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, (Color) null, ColorAtom.getColor(strArr[1]));
         } catch (NumberFormatException e) {
             throw new ParseException(e.toString());
         }
@@ -1256,14 +1256,14 @@ public class PredefMacros {
 
     public static final Atom bgcolor_macro(TeXParser teXParser, String[] strArr) {
         try {
-            return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, ColorAtom.getColor(strArr[1]), null);
+            return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, ColorAtom.getColor(strArr[1]), (Color) null);
         } catch (NumberFormatException e) {
             throw new ParseException(e.toString());
         }
     }
 
     public static final Atom textcolor_macro(TeXParser teXParser, String[] strArr) {
-        return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, null, ColorAtom.getColor(strArr[1]));
+        return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, (Color) null, ColorAtom.getColor(strArr[1]));
     }
 
     public static final Atom colorbox_macro(TeXParser teXParser, String[] strArr) {
@@ -1743,7 +1743,7 @@ public class PredefMacros {
     }
 
     public static final Atom jlmXML_macro(TeXParser teXParser, String[] strArr) {
-        Map map = teXParser.formula.jlmXMLMap;
+        Map<String, String> map = teXParser.formula.jlmXMLMap;
         String str = strArr[1];
         StringBuffer stringBuffer = new StringBuffer();
         while (true) {
@@ -1757,7 +1757,7 @@ public class PredefMacros {
                             break;
                         }
                     } while (Character.isLetter(str.charAt(i)));
-                    String str2 = (String) map.get(str.substring(indexOf + 1, i));
+                    String str2 = map.get(str.substring(indexOf + 1, i));
                     if (str2 != null) {
                         stringBuffer.append(str.substring(0, indexOf));
                         stringBuffer.append(str2);

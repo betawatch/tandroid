@@ -156,6 +156,10 @@ public class WindowInsetsCompat {
         return this.mImpl.getInsets(i);
     }
 
+    public Insets getInsetsIgnoringVisibility(int i) {
+        return this.mImpl.getInsetsIgnoringVisibility(i);
+    }
+
     public boolean isVisible(int i) {
         return this.mImpl.isVisible(i);
     }
@@ -271,6 +275,13 @@ public class WindowInsetsCompat {
             return Insets.NONE;
         }
 
+        Insets getInsetsIgnoringVisibility(int i) {
+            if ((i & 8) != 0) {
+                throw new IllegalArgumentException("Unable to query the maximum insets for IME");
+            }
+            return Insets.NONE;
+        }
+
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
@@ -322,6 +333,11 @@ public class WindowInsetsCompat {
         @Override // androidx.core.view.WindowInsetsCompat.Impl
         public Insets getInsets(int i) {
             return getInsets(i, false);
+        }
+
+        @Override // androidx.core.view.WindowInsetsCompat.Impl
+        public Insets getInsetsIgnoringVisibility(int i) {
+            return getInsets(i, true);
         }
 
         @Override // androidx.core.view.WindowInsetsCompat.Impl
@@ -723,6 +739,13 @@ public class WindowInsetsCompat {
         }
 
         @Override // androidx.core.view.WindowInsetsCompat.Impl20, androidx.core.view.WindowInsetsCompat.Impl
+        public Insets getInsetsIgnoringVisibility(int i) {
+            android.graphics.Insets insetsIgnoringVisibility;
+            insetsIgnoringVisibility = this.mPlatformInsets.getInsetsIgnoringVisibility(TypeImpl30.toPlatformType(i));
+            return Insets.toCompatInsets(insetsIgnoringVisibility);
+        }
+
+        @Override // androidx.core.view.WindowInsetsCompat.Impl20, androidx.core.view.WindowInsetsCompat.Impl
         public boolean isVisible(int i) {
             boolean isVisible;
             isVisible = this.mPlatformInsets.isVisible(TypeImpl30.toPlatformType(i));
@@ -752,6 +775,13 @@ public class WindowInsetsCompat {
             android.graphics.Insets insets;
             insets = this.mPlatformInsets.getInsets(TypeImpl34.toPlatformType(i));
             return Insets.toCompatInsets(insets);
+        }
+
+        @Override // androidx.core.view.WindowInsetsCompat.Impl30, androidx.core.view.WindowInsetsCompat.Impl20, androidx.core.view.WindowInsetsCompat.Impl
+        public Insets getInsetsIgnoringVisibility(int i) {
+            android.graphics.Insets insetsIgnoringVisibility;
+            insetsIgnoringVisibility = this.mPlatformInsets.getInsetsIgnoringVisibility(TypeImpl34.toPlatformType(i));
+            return Insets.toCompatInsets(insetsIgnoringVisibility);
         }
 
         @Override // androidx.core.view.WindowInsetsCompat.Impl30, androidx.core.view.WindowInsetsCompat.Impl20, androidx.core.view.WindowInsetsCompat.Impl

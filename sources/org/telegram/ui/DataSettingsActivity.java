@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.io.File;
 import java.util.ArrayList;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.DownloadController;
@@ -363,7 +364,7 @@ public class DataSettingsActivity extends BaseFragment {
                 return;
             } else {
                 Bundle bundle = new Bundle();
-                bundle.putInt("type", i6);
+                bundle.putInt(TeXSymbolParser.TYPE_ATTR, i6);
                 presentFragment(new SaveToGallerySettingsActivity(bundle));
                 return;
             }

@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.UUID;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.Utilities;
@@ -513,7 +514,7 @@ public class Painting {
             GLES20.glBindTexture(3553, this.bluredTexture.texture());
         }
         if (brush instanceof Brush.Shape) {
-            GLES20.glUniform1i(shader.getUniform("type"), shape.getType());
+            GLES20.glUniform1i(shader.getUniform(TeXSymbolParser.TYPE_ATTR), shape.getType());
             int uniform = shader.getUniform("resolution");
             Size size2 = this.size;
             GLES20.glUniform2f(uniform, size2.width, size2.height);
@@ -885,7 +886,7 @@ public class Painting {
         GLES20.glActiveTexture(33985);
         GLES20.glBindTexture(3553, i2);
         if (brush instanceof Brush.Shape) {
-            GLES20.glUniform1i(shader.getUniform("type"), ((Brush.Shape) brush).getShapeShaderType());
+            GLES20.glUniform1i(shader.getUniform(TeXSymbolParser.TYPE_ATTR), ((Brush.Shape) brush).getShapeShaderType());
             int uniform = shader.getUniform("resolution");
             Size size = this.size;
             GLES20.glUniform2f(uniform, size.width, size.height);

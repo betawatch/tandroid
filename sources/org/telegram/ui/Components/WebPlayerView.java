@@ -51,6 +51,7 @@ import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Bitmaps;
@@ -797,7 +798,7 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
                                             String[] strArr4 = split4;
                                             str6 = str7;
                                             try {
-                                                if (split5[0].startsWith("type")) {
+                                                if (split5[0].startsWith(TeXSymbolParser.TYPE_ATTR)) {
                                                     if (URLDecoder.decode(split5[1], "UTF-8").contains("video/mp4")) {
                                                         z6 = true;
                                                     }

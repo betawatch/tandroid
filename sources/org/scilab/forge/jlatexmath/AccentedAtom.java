@@ -47,7 +47,28 @@ public class AccentedAtom extends Atom {
                 return;
             }
         }
-        throw new InvalidSymbolTypeException("The symbol with the name '" + str + "' is not defined as an accent (type='acc') in 'TeXSymbols.xml'!");
+        throw new InvalidSymbolTypeException("The symbol with the name '" + str + "' is not defined as an accent (" + TeXSymbolParser.TYPE_ATTR + "='acc') in '" + TeXSymbolParser.RESOURCE_NAME + "'!");
+    }
+
+    public AccentedAtom(Atom atom, TeXFormula teXFormula) {
+        this.acc = false;
+        this.changeSize = true;
+        this.base = null;
+        this.underbase = null;
+        if (teXFormula == null) {
+            throw new InvalidTeXFormulaException("The accent TeXFormula can't be null!");
+        }
+        Atom atom2 = teXFormula.root;
+        if (atom2 instanceof SymbolAtom) {
+            SymbolAtom symbolAtom = (SymbolAtom) atom2;
+            this.accent = symbolAtom;
+            if (symbolAtom.type == 10) {
+                this.base = atom;
+                return;
+            }
+            throw new InvalidSymbolTypeException("The accent TeXFormula represents a single symbol with the name '" + symbolAtom.getName() + "', but this symbol is not defined as an accent (" + TeXSymbolParser.TYPE_ATTR + "='acc') in '" + TeXSymbolParser.RESOURCE_NAME + "'!");
+        }
+        throw new InvalidTeXFormulaException("The accent TeXFormula does not represent a single symbol!");
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom

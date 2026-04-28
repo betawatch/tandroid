@@ -1,11 +1,12 @@
 package org.scilab.forge.jlatexmath;
 
 import java.util.HashMap;
+import java.util.regex.Matcher;
 
 /* loaded from: classes3.dex */
-public abstract class NewCommandMacro {
-    protected static HashMap macrocode = new HashMap();
-    protected static HashMap macroreplacement = new HashMap();
+public class NewCommandMacro {
+    protected static HashMap<String, String> macrocode = new HashMap<>();
+    protected static HashMap<String, String> macroreplacement = new HashMap<>();
 
     public static void addNewCommand(String str, String str2, int i) {
         macrocode.put(str, str2);
@@ -31,5 +32,32 @@ public abstract class NewCommandMacro {
         }
         macrocode.put(str, str2);
         MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i));
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0040 A[LOOP:0: B:6:0x003e->B:7:0x0040, LOOP_END] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public String executeMacro(TeXParser teXParser, String[] strArr) {
+        int i = 0;
+        String str = macrocode.get(strArr[0]);
+        int length = strArr.length;
+        int i2 = length - 11;
+        String str2 = strArr[length - 10];
+        if (str2 != null) {
+            str = str.replaceAll("#1", Matcher.quoteReplacement(str2));
+        } else {
+            if (macroreplacement.get(strArr[0]) != null) {
+                str = str.replaceAll("#1", Matcher.quoteReplacement(macroreplacement.get(strArr[0])));
+            }
+            for (int i3 = 1; i3 <= i2; i3++) {
+                str = str.replaceAll("#" + (i3 + i), Matcher.quoteReplacement(strArr[i3]));
+            }
+            return str;
+        }
+        i = 1;
+        while (i3 <= i2) {
+        }
+        return str;
     }
 }

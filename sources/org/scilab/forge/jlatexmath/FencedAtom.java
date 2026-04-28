@@ -4,9 +4,11 @@ import java.util.List;
 
 /* loaded from: classes3.dex */
 public class FencedAtom extends Atom {
+    private static final int DELIMITER_FACTOR = 901;
+    private static final float DELIMITER_SHORTFALL = 5.0f;
     private final Atom base;
     private SymbolAtom left;
-    private final List middle;
+    private final List<MiddleAtom> middle;
     private SymbolAtom right;
 
     @Override // org.scilab.forge.jlatexmath.Atom
@@ -23,7 +25,7 @@ public class FencedAtom extends Atom {
         this(atom, symbolAtom, null, symbolAtom2);
     }
 
-    public FencedAtom(Atom atom, SymbolAtom symbolAtom, List list, SymbolAtom symbolAtom2) {
+    public FencedAtom(Atom atom, SymbolAtom symbolAtom, List<MiddleAtom> list, SymbolAtom symbolAtom2) {
         this.left = null;
         this.right = null;
         if (atom == null) {
@@ -49,14 +51,14 @@ public class FencedAtom extends Atom {
     public Box createBox(TeXEnvironment teXEnvironment) {
         TeXFont teXFont = teXEnvironment.getTeXFont();
         Box createBox = this.base.createBox(teXEnvironment);
-        float factor = SpaceAtom.getFactor(3, teXEnvironment) * 5.0f;
+        float factor = SpaceAtom.getFactor(3, teXEnvironment) * DELIMITER_SHORTFALL;
         float axisHeight = teXFont.getAxisHeight(teXEnvironment.getStyle());
         float max = Math.max(createBox.getHeight() - axisHeight, createBox.getDepth() + axisHeight);
         float max2 = Math.max((max / 500.0f) * 901.0f, (max * 2.0f) - factor);
         HorizontalBox horizontalBox = new HorizontalBox();
         if (this.middle != null) {
             for (int i = 0; i < this.middle.size(); i++) {
-                MiddleAtom middleAtom = (MiddleAtom) this.middle.get(i);
+                MiddleAtom middleAtom = this.middle.get(i);
                 Atom atom = middleAtom.base;
                 if (atom instanceof SymbolAtom) {
                     Box create = DelimiterFactory.create(((SymbolAtom) atom).getName(), teXEnvironment, max2);

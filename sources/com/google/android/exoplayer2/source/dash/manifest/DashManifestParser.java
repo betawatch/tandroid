@@ -31,6 +31,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.tgnet.TLObject;
 import org.webrtc.MediaStreamTrack;
 import org.xml.sax.helpers.DefaultHandler;
@@ -102,7 +103,7 @@ public class DashManifestParser extends DefaultHandler implements ParsingLoadabl
         long parseDuration = parseDuration(xmlPullParser, "mediaPresentationDuration", -9223372036854775807L);
         long parseDuration2 = parseDuration(xmlPullParser, "minBufferTime", -9223372036854775807L);
         Throwable th2 = null;
-        boolean equals = "dynamic".equals(xmlPullParser.getAttributeValue(null, "type"));
+        boolean equals = "dynamic".equals(xmlPullParser.getAttributeValue(null, TeXSymbolParser.TYPE_ATTR));
         long parseDuration3 = equals ? parseDuration(xmlPullParser, "minimumUpdatePeriod", -9223372036854775807L) : -9223372036854775807L;
         long parseDuration4 = equals ? parseDuration(xmlPullParser, "timeShiftBufferDepth", -9223372036854775807L) : -9223372036854775807L;
         long parseDuration5 = equals ? parseDuration(xmlPullParser, "suggestedPresentationDelay", -9223372036854775807L) : -9223372036854775807L;

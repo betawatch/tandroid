@@ -119,6 +119,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.PhoneFormat.PhoneFormat;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
@@ -1989,7 +1990,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             bundle.putInt("nextType", 15);
         }
         if (auth_sentcode.type instanceof TLRPC.TL_auth_sentCodeTypeApp) {
-            bundle.putInt("type", 1);
+            bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
             bundle.putInt("length", auth_sentcode.type.length);
             setPage(1, z, bundle, false);
             return;
@@ -2000,33 +2001,33 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         bundle.putInt("timeout", auth_sentcode.timeout * MediaDataController.MAX_STYLE_RUNS_COUNT);
         TLRPC.auth_SentCodeType auth_sentcodetype2 = auth_sentcode.type;
         if (auth_sentcodetype2 instanceof TLRPC.TL_auth_sentCodeTypeCall) {
-            bundle.putInt("type", 4);
+            bundle.putInt(TeXSymbolParser.TYPE_ATTR, 4);
             bundle.putInt("length", auth_sentcode.type.length);
             setPage(4, z, bundle, false);
             return;
         }
         if (auth_sentcodetype2 instanceof TLRPC.TL_auth_sentCodeTypeFlashCall) {
-            bundle.putInt("type", 3);
+            bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
             bundle.putString("pattern", auth_sentcode.type.pattern);
             setPage(3, z, bundle, false);
             return;
         }
         if ((auth_sentcodetype2 instanceof TLRPC.TL_auth_sentCodeTypeSms) || (auth_sentcodetype2 instanceof TLRPC.TL_auth_sentCodeTypeFirebaseSms)) {
-            bundle.putInt("type", 2);
+            bundle.putInt(TeXSymbolParser.TYPE_ATTR, 2);
             bundle.putInt("length", auth_sentcode.type.length);
             bundle.putBoolean("firebase", auth_sentcode.type instanceof TLRPC.TL_auth_sentCodeTypeFirebaseSms);
             setPage(2, z, bundle, false);
             return;
         }
         if (auth_sentcodetype2 instanceof TLRPC.TL_auth_sentCodeTypeFragmentSms) {
-            bundle.putInt("type", 15);
+            bundle.putInt(TeXSymbolParser.TYPE_ATTR, 15);
             bundle.putString("url", auth_sentcode.type.url);
             bundle.putInt("length", auth_sentcode.type.length);
             setPage(15, z, bundle, false);
             return;
         }
         if (auth_sentcodetype2 instanceof TLRPC.TL_auth_sentCodeTypeMissedCall) {
-            bundle.putInt("type", 11);
+            bundle.putInt(TeXSymbolParser.TYPE_ATTR, 11);
             bundle.putInt("length", auth_sentcode.type.length);
             bundle.putString("prefix", auth_sentcode.type.prefix);
             setPage(11, z, bundle, false);

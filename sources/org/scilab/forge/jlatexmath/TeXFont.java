@@ -2,7 +2,11 @@ package org.scilab.forge.jlatexmath;
 
 /* loaded from: classes3.dex */
 public interface TeXFont {
+    public static final int NO_FONT = -1;
+
     TeXFont copy();
+
+    TeXFont deriveFont(float f);
 
     float getAxisHeight(int i);
 
@@ -15,6 +19,8 @@ public interface TeXFont {
     float getBigOpSpacing4(int i);
 
     float getBigOpSpacing5(int i);
+
+    boolean getBold();
 
     Char getChar(char c, String str, int i);
 
@@ -34,6 +40,8 @@ public interface TeXFont {
 
     Extension getExtension(Char r1, int i);
 
+    boolean getIt();
+
     float getKern(CharFont charFont, CharFont charFont2, int i);
 
     CharFont getLigature(CharFont charFont, CharFont charFont2);
@@ -50,6 +58,8 @@ public interface TeXFont {
 
     float getQuad(int i, int i2);
 
+    boolean getRoman();
+
     float getScaleFactor();
 
     float getSize();
@@ -57,6 +67,8 @@ public interface TeXFont {
     float getSkew(CharFont charFont, int i);
 
     float getSpace(int i);
+
+    boolean getSs();
 
     float getSub1(int i);
 
@@ -72,6 +84,8 @@ public interface TeXFont {
 
     float getSupDrop(int i);
 
+    boolean getTt();
+
     float getXHeight(int i, int i2);
 
     boolean hasNextLarger(Char r1);
@@ -79,6 +93,8 @@ public interface TeXFont {
     boolean hasSpace(int i);
 
     boolean isExtensionChar(Char r1);
+
+    TeXFont scaleFont(float f);
 
     void setBold(boolean z);
 

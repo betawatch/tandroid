@@ -14,6 +14,7 @@ import com.google.android.gms.internal.fido.zzcf;
 import com.google.android.gms.internal.fido.zzgx;
 import java.util.List;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes.dex */
 public class PublicKeyCredentialDescriptor extends AbstractSafeParcelable {
@@ -35,7 +36,7 @@ public class PublicKeyCredentialDescriptor extends AbstractSafeParcelable {
     }
 
     public static PublicKeyCredentialDescriptor zza(JSONObject jSONObject) {
-        return new PublicKeyCredentialDescriptor(jSONObject.getString("type"), Base64.decode(jSONObject.getString("id"), 11), jSONObject.has("transports") ? Transport.parseTransports(jSONObject.getJSONArray("transports")) : null);
+        return new PublicKeyCredentialDescriptor(jSONObject.getString(TeXSymbolParser.TYPE_ATTR), Base64.decode(jSONObject.getString("id"), 11), jSONObject.has("transports") ? Transport.parseTransports(jSONObject.getJSONArray("transports")) : null);
     }
 
     public boolean equals(Object obj) {

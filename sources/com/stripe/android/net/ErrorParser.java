@@ -3,6 +3,7 @@ package com.stripe.android.net;
 import com.stripe.android.util.StripeJsonUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes3.dex */
 abstract class ErrorParser {
@@ -15,7 +16,7 @@ abstract class ErrorParser {
             stripeError.decline_code = StripeJsonUtils.optString(jSONObject, "decline_code");
             stripeError.message = StripeJsonUtils.optString(jSONObject, "message");
             stripeError.param = StripeJsonUtils.optString(jSONObject, "param");
-            stripeError.type = StripeJsonUtils.optString(jSONObject, "type");
+            stripeError.type = StripeJsonUtils.optString(jSONObject, TeXSymbolParser.TYPE_ATTR);
         } catch (JSONException unused) {
             stripeError.message = "An improperly formatted error response was found.";
         }

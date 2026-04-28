@@ -10,6 +10,7 @@ import java.util.UUID;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes3.dex */
 public abstract class AbstractLog implements Log {
@@ -90,7 +91,7 @@ public abstract class AbstractLog implements Log {
 
     @Override // com.microsoft.appcenter.ingestion.models.Model
     public void write(JSONStringer jSONStringer) {
-        JSONUtils.write(jSONStringer, "type", getType());
+        JSONUtils.write(jSONStringer, TeXSymbolParser.TYPE_ATTR, getType());
         jSONStringer.key("timestamp").value(JSONDateUtils.toString(getTimestamp()));
         JSONUtils.write(jSONStringer, "sid", getSid());
         JSONUtils.write(jSONStringer, "distributionGroupId", getDistributionGroupId());
@@ -104,7 +105,7 @@ public abstract class AbstractLog implements Log {
 
     @Override // com.microsoft.appcenter.ingestion.models.Model
     public void read(JSONObject jSONObject) {
-        if (!jSONObject.getString("type").equals(getType())) {
+        if (!jSONObject.getString(TeXSymbolParser.TYPE_ATTR).equals(getType())) {
             throw new JSONException("Invalid type");
         }
         setTimestamp(JSONDateUtils.toDate(jSONObject.getString("timestamp")));

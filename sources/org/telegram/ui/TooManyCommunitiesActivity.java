@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DispatchQueue;
@@ -122,13 +123,13 @@ public class TooManyCommunitiesActivity extends BaseFragment {
 
     public TooManyCommunitiesActivity(int i) {
         Bundle bundle = new Bundle();
-        bundle.putInt("type", i);
+        bundle.putInt(TeXSymbolParser.TYPE_ATTR, i);
         this.arguments = bundle;
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.type = this.arguments.getInt("type", 0);
+        this.type = this.arguments.getInt(TeXSymbolParser.TYPE_ATTR, 0);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.LimitReached));

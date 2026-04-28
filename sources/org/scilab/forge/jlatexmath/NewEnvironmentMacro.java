@@ -1,7 +1,7 @@
 package org.scilab.forge.jlatexmath;
 
 /* loaded from: classes3.dex */
-public abstract class NewEnvironmentMacro extends NewCommandMacro {
+public class NewEnvironmentMacro extends NewCommandMacro {
     public static void addNewEnvironment(String str, String str2, String str3, int i) {
         StringBuilder sb = new StringBuilder();
         sb.append(str2);

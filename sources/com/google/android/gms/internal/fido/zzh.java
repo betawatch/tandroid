@@ -1,9 +1,11 @@
 package com.google.android.gms.internal.fido;
 
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+
 /* loaded from: classes.dex */
 public abstract class zzh {
     public static final zzhn zza = zzhp.zzi("id");
-    public static final zzhn zzb = zzhp.zzi("type");
+    public static final zzhn zzb = zzhp.zzi(TeXSymbolParser.TYPE_ATTR);
     public static final zzhn zzc = zzhp.zzi("transports");
     public static final zzhn zzd = zzhp.zzi("name");
     public static final zzhn zze = zzhp.zzi("icon");

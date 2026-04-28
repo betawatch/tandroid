@@ -30,10 +30,6 @@ public class TypingDotsDrawable extends StatusDrawable {
     public void setAlpha(int i) {
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
-    }
-
     public TypingDotsDrawable(boolean z) {
         if (z) {
             this.currentPaint = new Paint(1);
@@ -140,6 +136,14 @@ public class TypingDotsDrawable extends StatusDrawable {
                     }
                 }, 100L);
             }
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(ColorFilter colorFilter) {
+        Paint paint = this.currentPaint;
+        if (paint != null) {
+            paint.setColorFilter(colorFilter);
         }
     }
 

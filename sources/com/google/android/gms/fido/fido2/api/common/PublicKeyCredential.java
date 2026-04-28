@@ -12,6 +12,7 @@ import com.google.android.gms.internal.fido.zzgx;
 import com.google.android.gms.internal.fido.zzia;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes.dex */
 public class PublicKeyCredential extends AbstractSafeParcelable {
@@ -150,7 +151,7 @@ public class PublicKeyCredential extends AbstractSafeParcelable {
             }
             String str2 = this.zzb;
             if (str2 != null && this.zzf == null) {
-                jSONObject2.put("type", str2);
+                jSONObject2.put(TeXSymbolParser.TYPE_ATTR, str2);
             }
             String str3 = this.zza;
             if (str3 != null) {

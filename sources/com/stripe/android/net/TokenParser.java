@@ -5,6 +5,7 @@ import com.stripe.android.util.StripeJsonUtils;
 import com.stripe.android.util.StripeTextUtils;
 import java.util.Date;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes3.dex */
 public abstract class TokenParser {
@@ -13,7 +14,7 @@ public abstract class TokenParser {
         String string = StripeJsonUtils.getString(jSONObject, "id");
         long j = jSONObject.getLong("created");
         boolean z = jSONObject.getBoolean("livemode");
-        String asTokenType = StripeTextUtils.asTokenType(StripeJsonUtils.getString(jSONObject, "type"));
+        String asTokenType = StripeTextUtils.asTokenType(StripeJsonUtils.getString(jSONObject, TeXSymbolParser.TYPE_ATTR));
         return new Token(string, z, new Date(j * 1000), Boolean.valueOf(jSONObject.getBoolean("used")), CardParser.parseCard(jSONObject.getJSONObject("card")), asTokenType);
     }
 }

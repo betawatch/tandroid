@@ -41,7 +41,7 @@ import java.util.Map;
 import java.util.UUID;
 import org.json.JSONException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class Crashes extends AbstractAppCenterService {
     private static final CrashesListener DEFAULT_ERROR_REPORTING_LISTENER = new DefaultCrashesListener();
     private static Crashes sInstance = null;

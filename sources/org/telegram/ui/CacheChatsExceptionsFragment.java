@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Iterator;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.CacheByChatsController;
 import org.telegram.messenger.ContactsController;
@@ -285,7 +286,7 @@ public class CacheChatsExceptionsFragment extends BaseFragment {
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean onFragmentCreate() {
-        this.currentType = getArguments().getInt("type");
+        this.currentType = getArguments().getInt(TeXSymbolParser.TYPE_ATTR);
         updateRows();
         return super.onFragmentCreate();
     }

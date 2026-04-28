@@ -52,6 +52,7 @@ import java.util.function.Function;
 import java.util.function.IntFunction;
 import java.util.function.LongFunction;
 import java.util.function.ToLongFunction;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLiteException;
@@ -13200,7 +13201,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     appWidgetManager = AppWidgetManager.getInstance(ApplicationLoader.applicationContext);
                 }
                 editor.putBoolean("deleted" + intValue, true);
-                if (sharedPreferences.getInt("type" + intValue, 0) == 0) {
+                if (sharedPreferences.getInt(TeXSymbolParser.TYPE_ATTR + intValue, 0) == 0) {
                     if (arrayList == null) {
                         arrayList = new ArrayList();
                     }
@@ -29165,7 +29166,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r4v74 ??), method size: 7801
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
@@ -29337,17 +29338,17 @@ public class MessagesController extends BaseController implements NotificationCe
     
         if (r3.getCallState() == 0) goto L543;
      */
-    /* JADX WARN: Removed duplicated region for block: B:1007:0x1705  */
-    /* JADX WARN: Removed duplicated region for block: B:1009:0x1713  */
-    /* JADX WARN: Removed duplicated region for block: B:1011:0x1719  */
-    /* JADX WARN: Removed duplicated region for block: B:1014:0x1725  */
-    /* JADX WARN: Removed duplicated region for block: B:1023:0x1761  */
-    /* JADX WARN: Removed duplicated region for block: B:1026:0x1777  */
-    /* JADX WARN: Removed duplicated region for block: B:1029:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:1014:0x1711  */
+    /* JADX WARN: Removed duplicated region for block: B:1016:0x171f  */
+    /* JADX WARN: Removed duplicated region for block: B:1018:0x1725  */
+    /* JADX WARN: Removed duplicated region for block: B:1021:0x1731  */
+    /* JADX WARN: Removed duplicated region for block: B:1030:0x176d  */
+    /* JADX WARN: Removed duplicated region for block: B:1033:0x1783  */
+    /* JADX WARN: Removed duplicated region for block: B:1036:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:303:0x06c8  */
     /* JADX WARN: Removed duplicated region for block: B:586:0x0d0f  */
-    /* JADX WARN: Removed duplicated region for block: B:932:0x15bf  */
-    /* JADX WARN: Removed duplicated region for block: B:938:0x15da  */
+    /* JADX WARN: Removed duplicated region for block: B:939:0x15cb  */
+    /* JADX WARN: Removed duplicated region for block: B:945:0x15e6  */
     /* JADX WARN: Type inference failed for: r14v1 */
     /* JADX WARN: Type inference failed for: r14v27 */
     /*
@@ -30375,6 +30376,11 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                     } else if (update instanceof TLRPC.TL_updateChatParticipantRank) {
                                                                         TLRPC.TL_updateChatParticipantRank tL_updateChatParticipantRank = (TLRPC.TL_updateChatParticipantRank) update;
                                                                         updateRank(tL_updateChatParticipantRank.chat_id, tL_updateChatParticipantRank.user_id, tL_updateChatParticipantRank.rank);
+                                                                    } else if (update instanceof TLRPC.TL_updateAiComposeTones) {
+                                                                        AiTonesController aiTonesController = messagesController2.tonesController;
+                                                                        if (aiTonesController != null) {
+                                                                            aiTonesController.invalidate();
+                                                                        }
                                                                     } else {
                                                                         ApplicationLoader applicationLoader = ApplicationLoader.applicationLoaderInstance;
                                                                         if (applicationLoader != null) {

@@ -6378,7 +6378,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         */
     public void sendMessage(org.telegram.messenger.SendMessagesHelper.SendMessageParams r114) {
         /*
-            Method dump skipped, instructions count: 10730
+            Method dump skipped, instructions count: 10731
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.sendMessage(org.telegram.messenger.SendMessagesHelper$SendMessageParams):void");
@@ -9170,16 +9170,16 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         updateMediaPaths(messageObject, message, i, Collections.singletonList(str), z, -1, hashMap);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:344:0x083f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:344:0x0840, code lost:
     
         if (r11.h > 90) goto L389;
      */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0208  */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x0ada  */
-    /* JADX WARN: Removed duplicated region for block: B:273:0x0b36  */
-    /* JADX WARN: Removed duplicated region for block: B:297:0x0b7b  */
-    /* JADX WARN: Removed duplicated region for block: B:299:0x0b7e  */
-    /* JADX WARN: Removed duplicated region for block: B:301:0x0adf  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x0adb  */
+    /* JADX WARN: Removed duplicated region for block: B:273:0x0b37  */
+    /* JADX WARN: Removed duplicated region for block: B:297:0x0b7c  */
+    /* JADX WARN: Removed duplicated region for block: B:299:0x0b7f  */
+    /* JADX WARN: Removed duplicated region for block: B:301:0x0ae0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

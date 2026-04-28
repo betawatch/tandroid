@@ -3,6 +3,7 @@ package com.google.android.gms.internal.mlkit_vision_common;
 import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.firebase.encoders.FieldDescriptor;
 import com.google.firebase.encoders.ObjectEncoder;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes.dex */
 final class zzev implements ObjectEncoder {
@@ -17,7 +18,7 @@ final class zzev implements ObjectEncoder {
         zzae zzaeVar = new zzae();
         zzaeVar.zza(1);
         zzb = builder.withProperty(zzaeVar.zzb()).build();
-        FieldDescriptor.Builder builder2 = FieldDescriptor.builder("type");
+        FieldDescriptor.Builder builder2 = FieldDescriptor.builder(TeXSymbolParser.TYPE_ATTR);
         zzae zzaeVar2 = new zzae();
         zzaeVar2.zza(2);
         zzc = builder2.withProperty(zzaeVar2.zzb()).build();

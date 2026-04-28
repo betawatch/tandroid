@@ -5,8 +5,8 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 /* loaded from: classes3.dex */
-public abstract class ParseOption {
-    public static final Map parseMap(String str) {
+public final class ParseOption {
+    public static final Map<String, String> parseMap(String str) {
         HashMap hashMap = new HashMap();
         if (str != null && str.length() != 0) {
             StringTokenizer stringTokenizer = new StringTokenizer(str, ",");

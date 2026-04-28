@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeSet;
+import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
 
 /* loaded from: classes.dex */
 abstract class MessageLiteToString {
@@ -41,7 +42,7 @@ abstract class MessageLiteToString {
                     printField(sb, i, camelCaseToSnakeCase(str2), GeneratedMessageLite.invokeOrDie(method2, messageLite, new Object[0]));
                 }
             }
-            if (replaceFirst.endsWith("Map") && !replaceFirst.equals("Map")) {
+            if (replaceFirst.endsWith(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && !replaceFirst.equals(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL)) {
                 String str3 = replaceFirst.substring(0, 1).toLowerCase() + replaceFirst.substring(1, replaceFirst.length() - 3);
                 Method method3 = (Method) hashMap.get(str);
                 if (method3 != null && method3.getReturnType().equals(Map.class) && !method3.isAnnotationPresent(Deprecated.class) && Modifier.isPublic(method3.getModifiers())) {

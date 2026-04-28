@@ -6,7 +6,7 @@ import java.util.List;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ManagedErrorLog extends AbstractErrorLog {
     private Exception exception;
     private List threads;

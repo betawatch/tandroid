@@ -1,7 +1,7 @@
 package org.scilab.forge.jlatexmath;
 
 /* loaded from: classes3.dex */
-public abstract class DelimiterFactory {
+public class DelimiterFactory {
     public static Box create(SymbolAtom symbolAtom, TeXEnvironment teXEnvironment, int i) {
         if (i > 4) {
             return symbolAtom.createBox(teXEnvironment);

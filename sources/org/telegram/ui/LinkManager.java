@@ -12,6 +12,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -880,7 +881,7 @@ public class LinkManager {
                                         i = "channels".equalsIgnoreCase(str3) ? 4 : 1;
                                     }
                                     Bundle bundle5 = new Bundle();
-                                    bundle5.putInt("type", i);
+                                    bundle5.putInt(TeXSymbolParser.TYPE_ATTR, i);
                                     presentFragment(new SaveToGallerySettingsActivity(bundle5));
                                     if ("max-video-size".equalsIgnoreCase(str4)) {
                                         scrollTo("maxVideoSizeRow");

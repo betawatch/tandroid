@@ -10,6 +10,7 @@ import android.util.AttributeSet;
 import androidx.core.R$styleable;
 import java.util.ArrayList;
 import java.util.List;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -27,7 +28,7 @@ abstract class GradientColorInflaterCompat {
         float namedFloat4 = TypedArrayUtils.getNamedFloat(obtainAttributes, xmlPullParser, "endY", R$styleable.GradientColor_android_endY, 0.0f);
         float namedFloat5 = TypedArrayUtils.getNamedFloat(obtainAttributes, xmlPullParser, "centerX", R$styleable.GradientColor_android_centerX, 0.0f);
         float namedFloat6 = TypedArrayUtils.getNamedFloat(obtainAttributes, xmlPullParser, "centerY", R$styleable.GradientColor_android_centerY, 0.0f);
-        int namedInt = TypedArrayUtils.getNamedInt(obtainAttributes, xmlPullParser, "type", R$styleable.GradientColor_android_type, 0);
+        int namedInt = TypedArrayUtils.getNamedInt(obtainAttributes, xmlPullParser, TeXSymbolParser.TYPE_ATTR, R$styleable.GradientColor_android_type, 0);
         int namedColor = TypedArrayUtils.getNamedColor(obtainAttributes, xmlPullParser, "startColor", R$styleable.GradientColor_android_startColor, 0);
         boolean hasAttribute = TypedArrayUtils.hasAttribute(xmlPullParser, "centerColor");
         int namedColor2 = TypedArrayUtils.getNamedColor(obtainAttributes, xmlPullParser, "centerColor", R$styleable.GradientColor_android_centerColor, 0);

@@ -7,6 +7,7 @@ import com.google.firebase.encoders.ObjectEncoder;
 import com.google.firebase.encoders.ObjectEncoderContext;
 import com.google.firebase.encoders.config.Configurator;
 import com.google.firebase.encoders.config.EncoderConfig;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes.dex */
 public final class AutoCrashlyticsReportEncoder implements Configurator {
@@ -274,7 +275,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
     private static final class CrashlyticsReportSessionEventEncoder implements ObjectEncoder {
         static final CrashlyticsReportSessionEventEncoder INSTANCE = new CrashlyticsReportSessionEventEncoder();
         private static final FieldDescriptor TIMESTAMP_DESCRIPTOR = FieldDescriptor.of("timestamp");
-        private static final FieldDescriptor TYPE_DESCRIPTOR = FieldDescriptor.of("type");
+        private static final FieldDescriptor TYPE_DESCRIPTOR = FieldDescriptor.of(TeXSymbolParser.TYPE_ATTR);
         private static final FieldDescriptor APP_DESCRIPTOR = FieldDescriptor.of("app");
         private static final FieldDescriptor DEVICE_DESCRIPTOR = FieldDescriptor.of("device");
         private static final FieldDescriptor LOG_DESCRIPTOR = FieldDescriptor.of("log");
@@ -380,7 +381,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
 
     private static final class CrashlyticsReportSessionEventApplicationExecutionExceptionEncoder implements ObjectEncoder {
         static final CrashlyticsReportSessionEventApplicationExecutionExceptionEncoder INSTANCE = new CrashlyticsReportSessionEventApplicationExecutionExceptionEncoder();
-        private static final FieldDescriptor TYPE_DESCRIPTOR = FieldDescriptor.of("type");
+        private static final FieldDescriptor TYPE_DESCRIPTOR = FieldDescriptor.of(TeXSymbolParser.TYPE_ATTR);
         private static final FieldDescriptor REASON_DESCRIPTOR = FieldDescriptor.of("reason");
         private static final FieldDescriptor FRAMES_DESCRIPTOR = FieldDescriptor.of("frames");
         private static final FieldDescriptor CAUSEDBY_DESCRIPTOR = FieldDescriptor.of("causedBy");

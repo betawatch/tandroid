@@ -8,10 +8,12 @@ import ru.noties.jlatexmath.JLatexMathAndroid;
 
 /* loaded from: classes3.dex */
 public class TeXFormulaSettingsParser {
+    public static final String CHARTODEL_MAPPING_EL = "Map";
+    public static final String RESOURCE_NAME = "TeXFormulaSettings.xml";
     private Element root;
 
     public TeXFormulaSettingsParser() {
-        this(JLatexMathAndroid.getResourceAsStream("TeXFormulaSettings.xml"), "TeXFormulaSettings.xml");
+        this(JLatexMathAndroid.getResourceAsStream(RESOURCE_NAME), RESOURCE_NAME);
     }
 
     public TeXFormulaSettingsParser(InputStream inputStream, String str) {
@@ -28,14 +30,14 @@ public class TeXFormulaSettingsParser {
     public void parseSymbolToFormulaMappings(String[] strArr, String[] strArr2) {
         Element element = (Element) this.root.getElementsByTagName("CharacterToFormulaMappings").item(0);
         if (element != null) {
-            addFormulaToMap(element.getElementsByTagName("Map"), strArr, strArr2);
+            addFormulaToMap(element.getElementsByTagName(CHARTODEL_MAPPING_EL), strArr, strArr2);
         }
     }
 
     public void parseSymbolMappings(String[] strArr, String[] strArr2) {
         Element element = (Element) this.root.getElementsByTagName("CharacterToSymbolMappings").item(0);
         if (element != null) {
-            addToMap(element.getElementsByTagName("Map"), strArr, strArr2);
+            addToMap(element.getElementsByTagName(CHARTODEL_MAPPING_EL), strArr, strArr2);
         }
     }
 
@@ -46,10 +48,10 @@ public class TeXFormulaSettingsParser {
             String attribute2 = element.getAttribute("symbol");
             String attribute3 = element.getAttribute("text");
             if (attribute.equals("")) {
-                throw new XMLResourceParseException("TeXFormulaSettings.xml", element.getTagName(), "char", null);
+                throw new XMLResourceParseException(RESOURCE_NAME, element.getTagName(), "char", null);
             }
             if (attribute2.equals("")) {
-                throw new XMLResourceParseException("TeXFormulaSettings.xml", element.getTagName(), "symbol", null);
+                throw new XMLResourceParseException(RESOURCE_NAME, element.getTagName(), "symbol", null);
             }
             if (attribute.length() == 1) {
                 strArr[attribute.charAt(0)] = attribute2;
@@ -57,7 +59,7 @@ public class TeXFormulaSettingsParser {
                     strArr2[attribute.charAt(0)] = attribute3;
                 }
             } else {
-                throw new XMLResourceParseException("TeXFormulaSettings.xml", element.getTagName(), "char", "must have a value that contains exactly 1 character!");
+                throw new XMLResourceParseException(RESOURCE_NAME, element.getTagName(), "char", "must have a value that contains exactly 1 character!");
             }
         }
     }
@@ -69,10 +71,10 @@ public class TeXFormulaSettingsParser {
             String attribute2 = element.getAttribute("formula");
             String attribute3 = element.getAttribute("text");
             if (attribute.equals("")) {
-                throw new XMLResourceParseException("TeXFormulaSettings.xml", element.getTagName(), "char", null);
+                throw new XMLResourceParseException(RESOURCE_NAME, element.getTagName(), "char", null);
             }
             if (attribute2.equals("")) {
-                throw new XMLResourceParseException("TeXFormulaSettings.xml", element.getTagName(), "formula", null);
+                throw new XMLResourceParseException(RESOURCE_NAME, element.getTagName(), "formula", null);
             }
             if (attribute.length() == 1) {
                 strArr[attribute.charAt(0)] = attribute2;
@@ -80,7 +82,7 @@ public class TeXFormulaSettingsParser {
                     strArr2[attribute.charAt(0)] = attribute3;
                 }
             } else {
-                throw new XMLResourceParseException("TeXFormulaSettings.xml", element.getTagName(), "char", "must have a value that contains exactly 1 character!");
+                throw new XMLResourceParseException(RESOURCE_NAME, element.getTagName(), "char", "must have a value that contains exactly 1 character!");
             }
         }
     }

@@ -14,6 +14,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes.dex */
 public final class MediaTrack extends AbstractSafeParcelable implements ReflectedParcelable {
@@ -100,11 +101,11 @@ public final class MediaTrack extends AbstractSafeParcelable implements Reflecte
             jSONObject.put("trackId", this.zzb);
             int i = this.zzc;
             if (i == 1) {
-                jSONObject.put("type", "TEXT");
+                jSONObject.put(TeXSymbolParser.TYPE_ATTR, "TEXT");
             } else if (i == 2) {
-                jSONObject.put("type", "AUDIO");
+                jSONObject.put(TeXSymbolParser.TYPE_ATTR, "AUDIO");
             } else if (i == 3) {
-                jSONObject.put("type", "VIDEO");
+                jSONObject.put(TeXSymbolParser.TYPE_ATTR, "VIDEO");
             }
             String str = this.zzd;
             if (str != null) {

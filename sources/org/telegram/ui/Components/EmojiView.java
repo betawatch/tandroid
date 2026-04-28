@@ -136,8 +136,7 @@ import org.telegram.ui.Components.blur3.DownscaleScrollableNoiseSuppressor;
 import org.telegram.ui.Components.blur3.ViewGroupPartRenderer;
 import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
 import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProviderThemed;
+import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
 import org.telegram.ui.Components.chat.ViewPositionWatcher;
@@ -506,7 +505,8 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
         void showTrendingStickersAlert(TrendingStickersLayout trendingStickersLayout);
     }
 
-    private interface SearchRunnable extends Runnable {
+    /* JADX INFO: Access modifiers changed from: private */
+    interface SearchRunnable extends Runnable {
         boolean isCompleted();
 
         boolean isLoading();
@@ -2116,7 +2116,9 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
                     return;
                 }
                 if (EmojiView.this.emojiLayoutManager.findLastVisibleItemPosition() + 20 > EmojiView.this.emojiSearchAdapter.getItemCount()) {
-                    EmojiView.this.emojiSearchAdapter.searchRunnable.loadNext();
+                    SearchRunnable searchRunnable = EmojiView.this.emojiSearchAdapter.searchRunnable;
+                    Objects.requireNonNull(searchRunnable);
+                    AndroidUtilities.runOnUIThread(new EmojiView$18$$ExternalSyntheticLambda0(searchRunnable));
                 }
             }
 
@@ -2530,7 +2532,9 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
                         return;
                     }
                     if (EmojiView.this.stickersLayoutManager.findLastVisibleItemPosition() + 50 > EmojiView.this.stickersSearchGridAdapter.getItemCount()) {
-                        EmojiView.this.stickersSearchGridAdapter.searchRunnable.loadNext();
+                        SearchRunnable searchRunnable = EmojiView.this.stickersSearchGridAdapter.searchRunnable;
+                        Objects.requireNonNull(searchRunnable);
+                        AndroidUtilities.runOnUIThread(new EmojiView$18$$ExternalSyntheticLambda0(searchRunnable));
                     }
                 }
             };
@@ -3518,36 +3522,21 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
     }
 
     public void setBlurredBackgroundDrawableFactory(BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory) {
-        BlurredBackgroundColorProviderThemed blurredBackgroundColorProviderThemed = new BlurredBackgroundColorProviderThemed(this.resourcesProvider, Theme.key_windowBackgroundWhite);
         ImageView imageView = this.backspaceButton;
         if (imageView != null) {
-            BlurredBackgroundDrawable create = blurredBackgroundDrawableViewFactory.create(imageView, blurredBackgroundColorProviderThemed);
-            create.setRadius(AndroidUtilities.dp(18.0f));
-            create.setPadding(AndroidUtilities.dp(6.0f));
-            this.backspaceButton.setBackground(create);
-            this.backspaceButton.setTranslationZ(AndroidUtilities.dp(3.0f));
+            imageView.setBackground(blurredBackgroundDrawableViewFactory.create(imageView).setColorProvider(BlurredBackgroundProviderImpl.emojiViewButton(this.resourcesProvider)).setRadius(AndroidUtilities.dp(18.0f)).setPadding(AndroidUtilities.dp(6.0f)));
         }
-        if (this.searchButton != null) {
-            BlurredBackgroundDrawable create2 = blurredBackgroundDrawableViewFactory.create(this.backspaceButton, blurredBackgroundColorProviderThemed);
-            create2.setRadius(AndroidUtilities.dp(18.0f));
-            create2.setPadding(AndroidUtilities.dp(6.0f));
-            this.searchButton.setBackground(create2);
-            this.searchButton.setTranslationZ(AndroidUtilities.dp(3.0f));
+        ImageView imageView2 = this.searchButton;
+        if (imageView2 != null) {
+            imageView2.setBackground(blurredBackgroundDrawableViewFactory.create(imageView2).setColorProvider(BlurredBackgroundProviderImpl.emojiViewButton(this.resourcesProvider)).setRadius(AndroidUtilities.dp(18.0f)).setPadding(AndroidUtilities.dp(6.0f)));
         }
         PagerSlidingTabStrip pagerSlidingTabStrip = this.typeTabs;
         if (pagerSlidingTabStrip != null) {
-            BlurredBackgroundDrawable create3 = blurredBackgroundDrawableViewFactory.create(pagerSlidingTabStrip, blurredBackgroundColorProviderThemed);
-            create3.setRadius(AndroidUtilities.dp(18.0f));
-            create3.setPadding(AndroidUtilities.dp(6.0f));
-            this.typeTabs.setBackground(create3);
-            this.typeTabs.setTranslationZ(AndroidUtilities.dp(3.0f));
+            pagerSlidingTabStrip.setBackground(blurredBackgroundDrawableViewFactory.create(pagerSlidingTabStrip).setColorProvider(BlurredBackgroundProviderImpl.emojiViewButton(this.resourcesProvider)).setRadius(AndroidUtilities.dp(18.0f)).setPadding(AndroidUtilities.dp(6.0f)));
         }
-        if (this.stickerSettingsButton != null) {
-            BlurredBackgroundDrawable create4 = blurredBackgroundDrawableViewFactory.create(this.backspaceButton, blurredBackgroundColorProviderThemed);
-            create4.setRadius(AndroidUtilities.dp(18.0f));
-            create4.setPadding(AndroidUtilities.dp(6.0f));
-            this.stickerSettingsButton.setBackground(create4);
-            this.stickerSettingsButton.setTranslationZ(AndroidUtilities.dp(3.0f));
+        ImageView imageView3 = this.stickerSettingsButton;
+        if (imageView3 != null) {
+            imageView3.setBackground(blurredBackgroundDrawableViewFactory.create(imageView3).setColorProvider(BlurredBackgroundProviderImpl.emojiViewButton(this.resourcesProvider)).setRadius(AndroidUtilities.dp(18.0f)).setPadding(AndroidUtilities.dp(6.0f)));
         }
     }
 
@@ -9178,7 +9167,7 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
                 }
                 final ArrayList arrayList = new ArrayList();
                 EmojiView.this.emojiSearchField.showProgress(true);
-                EmojiSearchAdapter.this.searchEmoji(new Runnable() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$4$$ExternalSyntheticLambda0
+                EmojiSearchAdapter.this.searchEmoji(new Runnable() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$4$$ExternalSyntheticLambda7
                     @Override // java.lang.Runnable
                     public final void run() {
                         EmojiView.EmojiSearchAdapter.4.this.lambda$loadNext$0(arrayList);
@@ -9211,14 +9200,14 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
             public void run() {
                 final LinkedHashSet linkedHashSet = new LinkedHashSet();
                 final String str = EmojiSearchAdapter.this.lastSearchEmojiString;
-                final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$4$$ExternalSyntheticLambda1
+                final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$4$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
                         EmojiView.EmojiSearchAdapter.4.this.lambda$run$8(str);
                     }
                 };
                 if (Emoji.fullyConsistsOfEmojis(str)) {
-                    StickerCategoriesListView.search.fetch(UserConfig.selectedAccount, str, new Utilities.Callback() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$4$$ExternalSyntheticLambda2
+                    StickerCategoriesListView.search.fetch(UserConfig.selectedAccount, str, new Utilities.Callback() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$4$$ExternalSyntheticLambda1
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             EmojiView.EmojiSearchAdapter.4.lambda$run$9(linkedHashSet, runnable, (TLRPC.TL_emojiList) obj);
@@ -9239,27 +9228,27 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
                 final ArrayList arrayList = new ArrayList();
                 final ArrayList arrayList2 = new ArrayList();
                 final ArrayList arrayList3 = new ArrayList();
-                Utilities.doCallbacks(new Utilities.Callback() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$4$$ExternalSyntheticLambda3
+                Utilities.doCallbacks(new Utilities.Callback() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$4$$ExternalSyntheticLambda2
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         EmojiView.EmojiSearchAdapter.4.this.lambda$run$2(str, arrayList3, (Runnable) obj);
                     }
-                }, new Utilities.Callback() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$4$$ExternalSyntheticLambda4
+                }, new Utilities.Callback() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$4$$ExternalSyntheticLambda3
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         EmojiView.EmojiSearchAdapter.4.this.lambda$run$4(str, (Runnable) obj);
                     }
-                }, new Utilities.Callback() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$4$$ExternalSyntheticLambda5
+                }, new Utilities.Callback() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$4$$ExternalSyntheticLambda4
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         EmojiView.EmojiSearchAdapter.4.this.lambda$run$5(str, arrayList2, (Runnable) obj);
                     }
-                }, new Utilities.Callback() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$4$$ExternalSyntheticLambda6
+                }, new Utilities.Callback() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$4$$ExternalSyntheticLambda5
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         EmojiView.EmojiSearchAdapter.4.this.lambda$run$6(arrayList, (Runnable) obj);
                     }
-                }, new Utilities.Callback() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$4$$ExternalSyntheticLambda7
+                }, new Utilities.Callback() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$4$$ExternalSyntheticLambda6
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         EmojiView.EmojiSearchAdapter.4.this.lambda$run$7(str, arrayList, arrayList2, arrayList3, (Runnable) obj);

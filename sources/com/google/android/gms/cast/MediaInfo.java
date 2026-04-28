@@ -19,6 +19,7 @@ import java.util.Locale;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes.dex */
 public class MediaInfo extends AbstractSafeParcelable implements ReflectedParcelable {
@@ -457,7 +458,7 @@ public class MediaInfo extends AbstractSafeParcelable implements ReflectedParcel
                 JSONObject jSONObject3 = jSONArray.getJSONObject(i2);
                 Parcelable.Creator<MediaTrack> creator = MediaTrack.CREATOR;
                 long j = jSONObject3.getLong("trackId");
-                String optString2 = jSONObject3.optString("type");
+                String optString2 = jSONObject3.optString(TeXSymbolParser.TYPE_ATTR);
                 int i3 = "TEXT".equals(optString2) ? 1 : "AUDIO".equals(optString2) ? 2 : "VIDEO".equals(optString2) ? 3 : 0;
                 String optStringOrNull = CastUtils.optStringOrNull(jSONObject3, "trackContentId");
                 String optStringOrNull2 = CastUtils.optStringOrNull(jSONObject3, "trackContentType");

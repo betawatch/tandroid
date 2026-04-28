@@ -83,12 +83,12 @@ class VerticalBox extends Box {
     @Override // org.scilab.forge.jlatexmath.Box
     public void draw(Graphics2D graphics2D, float f, float f2) {
         float f3 = f2 - this.height;
-        Iterator it = this.children.iterator();
+        Iterator<Box> it = this.children.iterator();
         while (it.hasNext()) {
-            Box box = (Box) it.next();
-            float height = f3 + box.getHeight();
-            box.draw(graphics2D, (box.getShift() + f) - this.leftMostPos, height);
-            f3 = height + box.getDepth();
+            Box next = it.next();
+            float height = f3 + next.getHeight();
+            next.draw(graphics2D, (next.getShift() + f) - this.leftMostPos, height);
+            f3 = height + next.getDepth();
         }
     }
 
@@ -98,11 +98,11 @@ class VerticalBox extends Box {
 
     @Override // org.scilab.forge.jlatexmath.Box
     public int getLastFontId() {
-        LinkedList linkedList = this.children;
-        ListIterator listIterator = linkedList.listIterator(linkedList.size());
+        LinkedList<Box> linkedList = this.children;
+        ListIterator<Box> listIterator = linkedList.listIterator(linkedList.size());
         int i = -1;
         while (i == -1 && listIterator.hasPrevious()) {
-            i = ((Box) listIterator.previous()).getLastFontId();
+            i = listIterator.previous().getLastFontId();
         }
         return i;
     }

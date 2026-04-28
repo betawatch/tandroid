@@ -9,6 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes3.dex */
 public class CustomPropertiesLog extends AbstractLog {
@@ -25,7 +26,7 @@ public class CustomPropertiesLog extends AbstractLog {
     }
 
     private static Object readPropertyValue(JSONObject jSONObject) {
-        String string = jSONObject.getString("type");
+        String string = jSONObject.getString(TeXSymbolParser.TYPE_ATTR);
         if (string.equals("clear")) {
             return null;
         }
@@ -65,23 +66,23 @@ public class CustomPropertiesLog extends AbstractLog {
 
     private static void writePropertyValue(JSONStringer jSONStringer, Object obj) {
         if (obj == null) {
-            JSONUtils.write(jSONStringer, "type", "clear");
+            JSONUtils.write(jSONStringer, TeXSymbolParser.TYPE_ATTR, "clear");
             return;
         }
         if (obj instanceof Boolean) {
-            JSONUtils.write(jSONStringer, "type", "boolean");
+            JSONUtils.write(jSONStringer, TeXSymbolParser.TYPE_ATTR, "boolean");
             JSONUtils.write(jSONStringer, "value", obj);
             return;
         }
         if (obj instanceof Number) {
-            JSONUtils.write(jSONStringer, "type", "number");
+            JSONUtils.write(jSONStringer, TeXSymbolParser.TYPE_ATTR, "number");
             JSONUtils.write(jSONStringer, "value", obj);
         } else if (obj instanceof Date) {
-            JSONUtils.write(jSONStringer, "type", "dateTime");
+            JSONUtils.write(jSONStringer, TeXSymbolParser.TYPE_ATTR, "dateTime");
             JSONUtils.write(jSONStringer, "value", JSONDateUtils.toString((Date) obj));
         } else {
             if (obj instanceof String) {
-                JSONUtils.write(jSONStringer, "type", "string");
+                JSONUtils.write(jSONStringer, TeXSymbolParser.TYPE_ATTR, "string");
                 JSONUtils.write(jSONStringer, "value", obj);
                 return;
             }

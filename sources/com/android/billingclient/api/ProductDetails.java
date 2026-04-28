@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes.dex */
 public final class ProductDetails {
@@ -220,7 +221,7 @@ public final class ProductDetails {
         this.zzb = jSONObject;
         String optString = jSONObject.optString("productId");
         this.zzc = optString;
-        String optString2 = jSONObject.optString("type");
+        String optString2 = jSONObject.optString(TeXSymbolParser.TYPE_ATTR);
         this.zzd = optString2;
         if (TextUtils.isEmpty(optString)) {
             throw new IllegalArgumentException("Product id cannot be empty.");

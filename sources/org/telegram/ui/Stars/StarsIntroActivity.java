@@ -53,6 +53,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Locale;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BirthdayController;
@@ -5638,7 +5639,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             }
             Bundle bundle = new Bundle();
             bundle.putLong("chat_id", j2);
-            bundle.putInt("type", 3);
+            bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
             ChatUsersActivity chatUsersActivity = new ChatUsersActivity(bundle);
             chatUsersActivity.setInfo(MessagesController.getInstance(i).getChatFull(j2));
             safeLastFragment.presentFragment(chatUsersActivity);

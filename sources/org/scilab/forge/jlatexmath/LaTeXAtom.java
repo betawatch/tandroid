@@ -11,9 +11,9 @@ public class LaTeXAtom extends Atom {
         TeXEnvironment copy = teXEnvironment.copy(teXEnvironment.getTeXFont().copy());
         copy.getTeXFont().setRoman(true);
         float scaleFactor = copy.getTeXFont().getScaleFactor();
-        Map map = TeXFormula.externalFontMap;
+        Map<Character.UnicodeBlock, TeXFormula.FontInfos> map = TeXFormula.externalFontMap;
         Character.UnicodeBlock unicodeBlock = Character.UnicodeBlock.BASIC_LATIN;
-        TeXFormula.FontInfos fontInfos = (TeXFormula.FontInfos) map.get(unicodeBlock);
+        TeXFormula.FontInfos fontInfos = map.get(unicodeBlock);
         if (fontInfos != null) {
             TeXFormula.externalFontMap.put(unicodeBlock, null);
         }

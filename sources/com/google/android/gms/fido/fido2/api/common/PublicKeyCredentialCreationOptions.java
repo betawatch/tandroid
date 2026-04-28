@@ -16,6 +16,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes.dex */
 public class PublicKeyCredentialCreationOptions extends RequestOptions {
@@ -166,7 +167,7 @@ public class PublicKeyCredentialCreationOptions extends RequestOptions {
         for (int i = 0; i < jSONArray.length(); i++) {
             JSONObject jSONObject4 = jSONArray.getJSONObject(i);
             try {
-                zzc = zzbl.zzd(new PublicKeyCredentialParameters(jSONObject4.getString("type"), jSONObject4.getInt("alg")));
+                zzc = zzbl.zzd(new PublicKeyCredentialParameters(jSONObject4.getString(TeXSymbolParser.TYPE_ATTR), jSONObject4.getInt("alg")));
             } catch (IllegalArgumentException unused) {
                 zzc = zzbl.zzc();
             }

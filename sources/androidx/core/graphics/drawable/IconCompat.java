@@ -33,6 +33,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes.dex */
 public class IconCompat extends CustomVersionedParcelable {
@@ -305,7 +306,7 @@ public class IconCompat extends CustomVersionedParcelable {
                 bundle.putByteArray("obj", (byte[]) this.mObj1);
                 break;
         }
-        bundle.putInt("type", this.mType);
+        bundle.putInt(TeXSymbolParser.TYPE_ATTR, this.mType);
         bundle.putInt("int1", this.mInt1);
         bundle.putInt("int2", this.mInt2);
         bundle.putString("string1", this.mString1);

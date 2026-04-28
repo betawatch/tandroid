@@ -10,7 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ErrorAttachmentLog extends AbstractLog {
     static final Charset CHARSET = Charset.forName("UTF-8");
     private String contentType;

@@ -12,18 +12,26 @@ public class RotateAtom extends Atom {
     private float y;
     private int yunit;
 
+    public RotateAtom(Atom atom, String str, String str2) {
+        this.option = -1;
+        this.type = atom.type;
+        this.base = atom;
+        this.angle = Double.parseDouble(str);
+        this.option = RotateBox.getOrigin(str2);
+    }
+
     public RotateAtom(Atom atom, double d, String str) {
         this.option = -1;
         this.type = atom.type;
         this.base = atom;
         this.angle = d;
-        Map parseMap = ParseOption.parseMap(str);
+        Map<String, String> parseMap = ParseOption.parseMap(str);
         if (parseMap.containsKey("origin")) {
-            this.option = RotateBox.getOrigin((String) parseMap.get("origin"));
+            this.option = RotateBox.getOrigin(parseMap.get("origin"));
             return;
         }
         if (parseMap.containsKey("x")) {
-            float[] length = SpaceAtom.getLength((String) parseMap.get("x"));
+            float[] length = SpaceAtom.getLength(parseMap.get("x"));
             this.xunit = (int) length[0];
             this.x = length[1];
         } else {
@@ -31,7 +39,7 @@ public class RotateAtom extends Atom {
             this.x = 0.0f;
         }
         if (parseMap.containsKey("y")) {
-            float[] length2 = SpaceAtom.getLength((String) parseMap.get("y"));
+            float[] length2 = SpaceAtom.getLength(parseMap.get("y"));
             this.yunit = (int) length2[0];
             this.y = length2[1];
         } else {

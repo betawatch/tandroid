@@ -5,6 +5,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes3.dex */
 public abstract class TypedPropertyUtils {
@@ -35,7 +36,7 @@ public abstract class TypedPropertyUtils {
         ArrayList arrayList = new ArrayList(optJSONArray.length());
         for (int i = 0; i < optJSONArray.length(); i++) {
             JSONObject jSONObject2 = optJSONArray.getJSONObject(i);
-            TypedProperty create = create(jSONObject2.getString("type"));
+            TypedProperty create = create(jSONObject2.getString(TeXSymbolParser.TYPE_ATTR));
             create.read(jSONObject2);
             arrayList.add(create);
         }

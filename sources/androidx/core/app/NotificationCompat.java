@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes.dex */
 public abstract class NotificationCompat {
@@ -784,7 +785,7 @@ public abstract class NotificationCompat {
                 }
                 String str = this.mDataMimeType;
                 if (str != null) {
-                    bundle.putString("type", str);
+                    bundle.putString(TeXSymbolParser.TYPE_ATTR, str);
                 }
                 Uri uri = this.mDataUri;
                 if (uri != null) {

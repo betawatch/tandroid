@@ -73,6 +73,7 @@ import java.util.TimerTask;
 import javax.crypto.Cipher;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.PhoneFormat.PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -8996,15 +8997,15 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         bundle.putInt("timeout", tL_auth_sentCode.timeout * MediaDataController.MAX_STYLE_RUNS_COUNT);
         TLRPC.auth_SentCodeType auth_sentcodetype = tL_auth_sentCode.type;
         if (auth_sentcodetype instanceof TLRPC.TL_auth_sentCodeTypeCall) {
-            bundle.putInt("type", 4);
+            bundle.putInt(TeXSymbolParser.TYPE_ATTR, 4);
             bundle.putInt("length", tL_auth_sentCode.type.length);
             setPage(2, z, bundle);
         } else if (auth_sentcodetype instanceof TLRPC.TL_auth_sentCodeTypeFlashCall) {
-            bundle.putInt("type", 3);
+            bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
             bundle.putString("pattern", tL_auth_sentCode.type.pattern);
             setPage(1, z, bundle);
         } else if (auth_sentcodetype instanceof TLRPC.TL_auth_sentCodeTypeSms) {
-            bundle.putInt("type", 2);
+            bundle.putInt(TeXSymbolParser.TYPE_ATTR, 2);
             bundle.putInt("length", tL_auth_sentCode.type.length);
             setPage(0, z, bundle);
         }

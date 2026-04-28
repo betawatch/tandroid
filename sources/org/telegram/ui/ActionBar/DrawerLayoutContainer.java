@@ -147,6 +147,12 @@ public class DrawerLayoutContainer extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         int makeMeasureSpec;
+        WindowInsetsCompat rootWindowInsets;
+        if (!BuildVars.USE_LEGACY_SYSTEM_INSETS && (rootWindowInsets = ViewCompat.getRootWindowInsets(this)) != null) {
+            Insets insetsIgnoringVisibility = rootWindowInsets.getInsetsIgnoringVisibility(WindowInsetsCompat.Type.systemBars());
+            AndroidUtilities.statusBarHeight = insetsIgnoringVisibility.top;
+            AndroidUtilities.navigationBarHeight = insetsIgnoringVisibility.bottom;
+        }
         int size = View.MeasureSpec.getSize(i);
         int size2 = View.MeasureSpec.getSize(i2);
         setMeasuredDimension(size, size2);

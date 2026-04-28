@@ -1712,18 +1712,25 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ WindowInsets lambda$new$1(View view, WindowInsets windowInsets) {
         WindowInsets windowInsets2;
-        int systemWindowInsetTop = windowInsets.getSystemWindowInsetTop();
-        if ((systemWindowInsetTop != 0 || AndroidUtilities.isInMultiwindow) && this.statusBarHeight != systemWindowInsetTop) {
-            this.statusBarHeight = systemWindowInsetTop;
-        }
-        this.lastInsets = windowInsets;
-        view.requestLayout();
-        onInsetsChanged();
+        processLegacyContainerInsets(windowInsets);
         if (Build.VERSION.SDK_INT >= 30) {
             windowInsets2 = WindowInsets.CONSUMED;
             return windowInsets2;
         }
         return windowInsets.consumeSystemWindowInsets();
+    }
+
+    protected void processLegacyContainerInsets(WindowInsets windowInsets) {
+        if (windowInsets == null) {
+            return;
+        }
+        int systemWindowInsetTop = windowInsets.getSystemWindowInsetTop();
+        if ((systemWindowInsetTop != 0 || AndroidUtilities.isInMultiwindow) && this.statusBarHeight != systemWindowInsetTop) {
+            this.statusBarHeight = systemWindowInsetTop;
+        }
+        this.lastInsets = windowInsets;
+        this.container.requestLayout();
+        onInsetsChanged();
     }
 
     public void fixNavigationBar() {

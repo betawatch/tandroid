@@ -15,6 +15,9 @@ import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
 public class ColoredImageSpan extends ReplacementSpan {
+    public static final int ALIGN_BASELINE = 1;
+    public static final int ALIGN_CENTER = 2;
+    public static final int ALIGN_DEFAULT = 0;
     private float alpha;
     private Runnable checkColorDelegate;
     int colorKey;
@@ -236,6 +239,10 @@ public class ColoredImageSpan extends ReplacementSpan {
 
     public void setTopOffset(int i) {
         this.topOffset = i;
+    }
+
+    public void setCheckColorDelegate(Runnable runnable) {
+        this.checkColorDelegate = runnable;
     }
 
     public void setScale(float f) {

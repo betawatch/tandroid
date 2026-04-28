@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
@@ -93,7 +94,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean onFragmentCreate() {
-        this.type = getArguments().getInt("type");
+        this.type = getArguments().getInt(TeXSymbolParser.TYPE_ATTR);
         this.exceptionsDialogs = getUserConfig().getSaveGalleryExceptions(this.type);
         long j = getArguments().getLong("dialog_id");
         this.dialogId = j;
@@ -268,7 +269,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
         if (((Item) this.items.get(i)).viewType == 2) {
             Bundle bundle2 = new Bundle();
             bundle2.putLong("dialog_id", ((Item) this.items.get(i)).exception.dialogId);
-            bundle2.putInt("type", this.type);
+            bundle2.putInt(TeXSymbolParser.TYPE_ATTR, this.type);
             presentFragment(new SaveToGallerySettingsActivity(bundle2));
             return;
         }
@@ -288,7 +289,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
     public /* synthetic */ boolean lambda$createView$0(DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId);
-        bundle.putInt("type", this.type);
+        bundle.putInt(TeXSymbolParser.TYPE_ATTR, this.type);
         presentFragment(new SaveToGallerySettingsActivity(bundle), true);
         return true;
     }
@@ -333,7 +334,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
         actionBarPopupWindow.dismiss();
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", ((Item) this.items.get(i)).exception.dialogId);
-        bundle.putInt("type", this.type);
+        bundle.putInt(TeXSymbolParser.TYPE_ATTR, this.type);
         presentFragment(new SaveToGallerySettingsActivity(bundle));
     }
 

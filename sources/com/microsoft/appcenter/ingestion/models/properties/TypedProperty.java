@@ -4,6 +4,7 @@ import com.microsoft.appcenter.ingestion.models.Model;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes3.dex */
 public abstract class TypedProperty implements Model {
@@ -21,7 +22,7 @@ public abstract class TypedProperty implements Model {
 
     @Override // com.microsoft.appcenter.ingestion.models.Model
     public void read(JSONObject jSONObject) {
-        if (!jSONObject.getString("type").equals(getType())) {
+        if (!jSONObject.getString(TeXSymbolParser.TYPE_ATTR).equals(getType())) {
             throw new JSONException("Invalid type");
         }
         setName(jSONObject.getString("name"));
@@ -29,7 +30,7 @@ public abstract class TypedProperty implements Model {
 
     @Override // com.microsoft.appcenter.ingestion.models.Model
     public void write(JSONStringer jSONStringer) {
-        jSONStringer.key("type").value(getType());
+        jSONStringer.key(TeXSymbolParser.TYPE_ATTR).value(getType());
         jSONStringer.key("name").value(getName());
     }
 

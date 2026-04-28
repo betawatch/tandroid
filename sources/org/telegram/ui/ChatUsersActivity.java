@@ -31,6 +31,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
@@ -282,7 +283,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         this.initialStarsPrice = 10L;
         this.starsPrice = 10L;
         this.chatId = this.arguments.getLong("chat_id");
-        this.type = this.arguments.getInt("type");
+        this.type = this.arguments.getInt(TeXSymbolParser.TYPE_ATTR);
         this.transfer = this.arguments.getBoolean("transfer");
         this.needOpenSearch = this.arguments.getBoolean("open_search");
         this.selectType = this.arguments.getInt("selectType");
@@ -1172,7 +1173,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                     if (i3 == 0 || i3 == 3) {
                         Bundle bundle = new Bundle();
                         bundle.putLong("chat_id", this.chatId);
-                        bundle.putInt("type", 2);
+                        bundle.putInt(TeXSymbolParser.TYPE_ATTR, 2);
                         bundle.putInt("selectType", this.type == 0 ? 2 : 3);
                         ChatUsersActivity chatUsersActivity = new ChatUsersActivity(bundle);
                         chatUsersActivity.setInfo(this.info);
@@ -1231,7 +1232,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                     if (i3 == 1) {
                         Bundle bundle2 = new Bundle();
                         bundle2.putLong("chat_id", this.chatId);
-                        bundle2.putInt("type", 2);
+                        bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
                         bundle2.putInt("selectType", 1);
                         ChatUsersActivity chatUsersActivity2 = new ChatUsersActivity(bundle2);
                         chatUsersActivity2.setDelegate(new 7());
@@ -1346,7 +1347,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                     if (i == this.removedUsersRow) {
                         Bundle bundle4 = new Bundle();
                         bundle4.putLong("chat_id", this.chatId);
-                        bundle4.putInt("type", 0);
+                        bundle4.putInt(TeXSymbolParser.TYPE_ATTR, 0);
                         ChatUsersActivity chatUsersActivity3 = new ChatUsersActivity(bundle4);
                         chatUsersActivity3.setInfo(this.info);
                         presentFragment(chatUsersActivity3);

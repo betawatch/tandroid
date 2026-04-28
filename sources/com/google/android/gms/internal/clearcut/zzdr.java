@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeSet;
+import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
 
 /* loaded from: classes.dex */
 abstract class zzdr {
@@ -68,7 +69,7 @@ abstract class zzdr {
                     zza(sb, i, zzj(concat), zzcg.zza(method2, zzdoVar, new Object[0]));
                 }
             }
-            if (replaceFirst.endsWith("Map") && !replaceFirst.equals("Map")) {
+            if (replaceFirst.endsWith(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && !replaceFirst.equals(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL)) {
                 String valueOf3 = String.valueOf(replaceFirst.substring(0, 1).toLowerCase());
                 String valueOf4 = String.valueOf(replaceFirst.substring(1, replaceFirst.length() - 3));
                 String concat2 = valueOf4.length() != 0 ? valueOf3.concat(valueOf4) : new String(valueOf3);

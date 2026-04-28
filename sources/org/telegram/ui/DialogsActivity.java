@@ -77,6 +77,7 @@ import java.util.Iterator;
 import java.util.List;
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
@@ -6476,7 +6477,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         public /* synthetic */ void lambda$onUserLongPressed$1() {
             Bundle bundle = new Bundle();
             bundle.putLong("dialog_id", UserConfig.getInstance(((BaseFragment) DialogsActivity.this).currentAccount).getClientUserId());
-            bundle.putInt("type", 1);
+            bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
             bundle.putInt("start_from", 9);
             DialogsActivity.this.presentFragment(new MediaActivity(bundle, null));
         }
@@ -6485,7 +6486,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         public /* synthetic */ void lambda$onUserLongPressed$2() {
             Bundle bundle = new Bundle();
             bundle.putLong("dialog_id", UserConfig.getInstance(((BaseFragment) DialogsActivity.this).currentAccount).getClientUserId());
-            bundle.putInt("type", 1);
+            bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
             DialogsActivity.this.presentFragment(new MediaActivity(bundle, null));
         }
 
@@ -9935,7 +9936,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                                 if (j2 != getUserConfig().getClientUserId() && getMessagesController().savedViewAsChats) {
                                     Bundle bundle4 = new Bundle();
                                     bundle4.putLong("dialog_id", UserConfig.getInstance(this.currentAccount).getClientUserId());
-                                    bundle4.putInt("type", 0);
+                                    bundle4.putInt(TeXSymbolParser.TYPE_ATTR, 0);
                                     bundle4.putInt("start_from", 11);
                                     if (this.sharedMediaPreloader == null) {
                                         this.sharedMediaPreloader = new SharedMediaLayout.SharedMediaPreloader(this);
@@ -16351,7 +16352,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         if (obj instanceof StoriesController.SearchStoriesList) {
             StoriesController.SearchStoriesList searchStoriesList = (StoriesController.SearchStoriesList) obj;
             Bundle bundle2 = new Bundle();
-            bundle2.putInt("type", 3);
+            bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 3);
             bundle2.putString("hashtag", searchStoriesList.query);
             bundle2.putInt("storiesCount", searchStoriesList.getCount());
             presentFragment(new MediaActivity(bundle2, null));

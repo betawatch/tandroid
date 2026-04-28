@@ -27,6 +27,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import androidx.collection.LongSparseArray;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -131,6 +132,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         AiTonesController tonesController = MessagesController.getInstance(this.currentAccount).getTonesController();
         this.tonesController = tonesController;
         tonesController.load();
+        tonesController.open = true;
         ImageView imageView = new ImageView(context);
         this.closeView = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -271,7 +273,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
             }
         });
         this.takeTranslationIntoAccount = true;
-        DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator() { // from class: org.telegram.ui.Components.AIEditorAlert.2
+        DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator() { // from class: org.telegram.ui.Components.AIEditorAlert.3
             @Override // androidx.recyclerview.widget.DefaultItemAnimator
             protected void onMoveAnimationUpdate(RecyclerView.ViewHolder viewHolder) {
                 ((BottomSheet) AIEditorAlert.this).containerView.invalidate();
@@ -282,7 +284,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         defaultItemAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
         defaultItemAnimator.setDurations(350L);
         this.recyclerListView.setItemAnimator(defaultItemAnimator);
-        this.recyclerListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.AIEditorAlert.3
+        this.recyclerListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.AIEditorAlert.4
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i10, int i11) {
                 AIEditorAlert.this.updateStyleHintY();
@@ -316,7 +318,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
             }).add(R.drawable.msg_share, LocaleController.getString(R.string.AIEditorShareStyle), new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda21
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AIEditorAlert.lambda$new$3(TL_aicompose.TL_aiComposeTone.this, context, resourcesProvider);
+                    AIEditorAlert.this.lambda$new$3(tL_aiComposeTone, context, resourcesProvider);
                 }
             });
             boolean z = !tL_aiComposeTone.creator;
@@ -356,9 +358,32 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$3(TL_aicompose.TL_aiComposeTone tL_aiComposeTone, Context context, Theme.ResourcesProvider resourcesProvider) {
+    public /* synthetic */ void lambda$new$3(TL_aicompose.TL_aiComposeTone tL_aiComposeTone, Context context, Theme.ResourcesProvider resourcesProvider) {
         String str = "https://t.me/addstyle/" + tL_aiComposeTone.slug;
-        new ShareAlert(context, null, str, false, str, false, resourcesProvider).show();
+        new ShareAlert(context, null, str, false, str, false, resourcesProvider) { // from class: org.telegram.ui.Components.AIEditorAlert.1
+            @Override // org.telegram.ui.Components.ShareAlert
+            protected void onSend(LongSparseArray longSparseArray, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
+                BulletinFactory of;
+                if (z && (of = BulletinFactory.of(AIEditorAlert.this.bulletinContainer, this.resourcesProvider)) != null) {
+                    if (longSparseArray.size() == 1) {
+                        long keyAt = longSparseArray.keyAt(0);
+                        if (keyAt == UserConfig.getInstance(this.currentAccount).clientUserId) {
+                            of.createSimpleBulletin(R.raw.saved_messages, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AIEditorStyleSharedToSavedMessages, new Object[0])), 5000).hideAfterBottomSheet(false).show();
+                        } else if (keyAt < 0) {
+                            of.createSimpleBulletin(R.raw.forward, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AIEditorStyleSharedTo, tL_forumTopic != null ? tL_forumTopic.title : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-keyAt)).title)), 5000).hideAfterBottomSheet(false).show();
+                        } else {
+                            of.createSimpleBulletin(R.raw.forward, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AIEditorStyleSharedTo, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(keyAt)).first_name)), 5000).hideAfterBottomSheet(false).show();
+                        }
+                    } else {
+                        of.createSimpleBulletin(R.raw.forward, AndroidUtilities.replaceTags(LocaleController.formatPluralString("AIEditorStyleSharedToManyChats", longSparseArray.size(), Integer.valueOf(longSparseArray.size())))).hideAfterBottomSheet(false).show();
+                    }
+                    try {
+                        AIEditorAlert.this.bulletinContainer.performHapticFeedback(3);
+                    } catch (Exception unused) {
+                    }
+                }
+            }
+        }.show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -433,7 +458,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$11(Context context, Theme.ResourcesProvider resourcesProvider) {
-        AlertsCreator.createScheduleDatePickerDialog(context, this.dialogId, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.AIEditorAlert.1
+        AlertsCreator.createScheduleDatePickerDialog(context, this.dialogId, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.AIEditorAlert.2
             @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
             public void didSelectDate(boolean z, int i, int i2) {
                 AIEditorAlert.this.onSendListener.run(AIEditorAlert.this.getResultText(), Integer.valueOf(i), Integer.valueOf(i2), Boolean.valueOf(z));
@@ -456,6 +481,10 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
     /* renamed from: dismiss */
     public void lambda$new$0() {
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.loadedAiComposeTones);
+        AiTonesController aiTonesController = this.tonesController;
+        if (aiTonesController != null) {
+            aiTonesController.open = false;
+        }
         super.lambda$new$0();
     }
 
@@ -636,14 +665,26 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
 
     /* JADX INFO: Access modifiers changed from: private */
     public void selectStyle(TL_aicompose.AiComposeTone aiComposeTone) {
+        int i;
         if (aiComposeTone == null) {
-            new CreateAiStyleAlert(getContext(), this.resourcesProvider).setOnToneCreated(new Utilities.Callback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda24
-                @Override // org.telegram.messenger.Utilities.Callback
-                public final void run(Object obj) {
-                    AIEditorAlert.this.lambda$selectStyle$18((TL_aicompose.AiComposeTone) obj);
-                }
-            }).show();
-            return;
+            int savedTonesCount = this.tonesController.getSavedTonesCount() + 1;
+            if (UserConfig.getInstance(this.currentAccount).isPremium()) {
+                i = MessagesController.getInstance(this.currentAccount).config.aicomposeToneSavedLimitPremium.get();
+            } else {
+                i = MessagesController.getInstance(this.currentAccount).config.aicomposeToneSavedLimitDefault.get();
+            }
+            if (savedTonesCount > i) {
+                showStylesLimitToast(BulletinFactory.of(this.bulletinContainer, this.resourcesProvider), this.currentAccount);
+                return;
+            } else {
+                new CreateAiStyleAlert(getContext(), this.resourcesProvider).setOnToneCreated(new Utilities.Callback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda24
+                    @Override // org.telegram.messenger.Utilities.Callback
+                    public final void run(Object obj) {
+                        AIEditorAlert.this.lambda$selectStyle$18((TL_aicompose.AiComposeTone) obj);
+                    }
+                }).show();
+                return;
+            }
         }
         if (this.styleTabs.getSelectedTone() == aiComposeTone) {
             return;
@@ -1625,6 +1666,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
                     int blendARGB = ColorUtils.blendARGB(color, Theme.getColor(i2, this.resourcesProvider), f);
                     int blendARGB2 = ColorUtils.blendARGB(Theme.getColor(i, this.resourcesProvider), Theme.getColor(i2, this.resourcesProvider), f);
                     this.imageView.setColorFilter(!this.isEmoji ? new PorterDuffColorFilter(blendARGB, PorterDuff.Mode.SRC_IN) : null);
+                    this.imageView.setEmojiColorFilter(new PorterDuffColorFilter(blendARGB, PorterDuff.Mode.SRC_IN));
                     this.imageView.invalidate();
                     this.textView.setTextColor(blendARGB2);
                 }
@@ -2054,6 +2096,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
             } else {
                 this.icon.setAnimatedEmojiDrawable(new AnimatedEmojiDrawable(4, this.currentAccount, this.emoji_id.longValue()));
                 this.icon.setColorFilter(null);
+                this.icon.setEmojiColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogTextBlack, this.resourcesProvider), PorterDuff.Mode.SRC_IN));
             }
         }
 
@@ -2385,6 +2428,8 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
 
         /* JADX INFO: Access modifiers changed from: private */
         public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
+            String str;
+            String formatString;
             universalAdapter.itemsOffset = 1;
             arrayList.add(UItem.asShadow(null));
             arrayList.add(UItem.asCustomShadow((View) this.iconCell, true));
@@ -2408,11 +2453,28 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
                 arrayList.add(TranslateAlert3.Header.Factory.of(5, LocaleController.getString(R.string.AIEditorAfter), null, null, null));
                 arrayList.add(TranslateAlert3.Text.Factory.of(6, aicomposetoneexample == null ? loadingText() : MessageObject.formatTextWithEntities(aicomposetoneexample.to), false, false, null, null, null));
                 universalAdapter.whiteSectionEnd();
-                String publicUsername = tL_aiComposeTone.author_id != 0 ? UserObject.getPublicUsername(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(tL_aiComposeTone.author_id))) : null;
-                if (TextUtils.isEmpty(publicUsername)) {
-                    arrayList.add(UItem.asShadow(LocaleController.formatPluralString("AIEditorUsedBy", tL_aiComposeTone.installs_count, new Object[0])));
+                TLRPC.User user = tL_aiComposeTone.author_id != 0 ? MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(tL_aiComposeTone.author_id)) : null;
+                String publicUsername = UserObject.getPublicUsername(user);
+                if (user == null) {
+                    int i = tL_aiComposeTone.installs_count;
+                    if (i > 0) {
+                        arrayList.add(UItem.asShadow(LocaleController.formatPluralString("AIEditorUsedBy", i, new Object[0])));
+                    }
                 } else {
-                    arrayList.add(UItem.asShadow(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralString("AIEditorUsedBy", tL_aiComposeTone.installs_count, new Object[0]) + " " + LocaleController.formatString(R.string.AIEditorCreatedBy, publicUsername), getThemedColor(Theme.key_chat_messageLinkIn), new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$AiStyleAlert$$ExternalSyntheticLambda5
+                    StringBuilder sb = new StringBuilder();
+                    if (tL_aiComposeTone.installs_count > 0) {
+                        str = LocaleController.formatPluralString("AIEditorUsedBy", tL_aiComposeTone.installs_count, new Object[0]) + " ";
+                    } else {
+                        str = "";
+                    }
+                    sb.append(str);
+                    if (TextUtils.isEmpty(publicUsername)) {
+                        formatString = LocaleController.formatString(R.string.AIEditorCreatedBy, UserObject.getUserName(user));
+                    } else {
+                        formatString = LocaleController.formatString(R.string.AIEditorCreatedBy, "@" + publicUsername);
+                    }
+                    sb.append(formatString);
+                    arrayList.add(UItem.asShadow(AndroidUtilities.replaceSingleLink(sb.toString(), getThemedColor(Theme.key_chat_messageLinkIn), new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$AiStyleAlert$$ExternalSyntheticLambda5
                         @Override // java.lang.Runnable
                         public final void run() {
                             AIEditorAlert.AiStyleAlert.this.lambda$fillItems$5(tL_aiComposeTone);

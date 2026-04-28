@@ -29,6 +29,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import org.json.JSONException;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes3.dex */
 public class DatabasePersistence extends Persistence {
@@ -70,7 +71,7 @@ public class DatabasePersistence extends Persistence {
         contentValues.put("persistence_group", str);
         contentValues.put("log", str2);
         contentValues.put("target_token", str3);
-        contentValues.put("type", str4);
+        contentValues.put(TeXSymbolParser.TYPE_ATTR, str4);
         contentValues.put("target_key", str5);
         contentValues.put("priority", Integer.valueOf(i));
         return contentValues;
@@ -272,7 +273,7 @@ public class DatabasePersistence extends Persistence {
                             throw new JSONException("Log payload is null and not stored as a file.");
                         }
                     }
-                    Log deserializeLog = getLogSerializer().deserializeLog(asString, nextValues.getAsString("type"));
+                    Log deserializeLog = getLogSerializer().deserializeLog(asString, nextValues.getAsString(TeXSymbolParser.TYPE_ATTR));
                     String asString2 = nextValues.getAsString("target_token");
                     if (asString2 != null) {
                         deserializeLog.addTransmissionTarget(CryptoUtils.getInstance(this.mContext).decrypt(asString2).getDecryptedData());

@@ -9,6 +9,7 @@ import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes3.dex */
 public class DefaultLogSerializer implements LogSerializer {
@@ -23,7 +24,7 @@ public class DefaultLogSerializer implements LogSerializer {
 
     private Log readLog(JSONObject jSONObject, String str) {
         if (str == null) {
-            str = jSONObject.getString("type");
+            str = jSONObject.getString(TeXSymbolParser.TYPE_ATTR);
         }
         LogFactory logFactory = (LogFactory) this.mLogFactories.get(str);
         if (logFactory == null) {

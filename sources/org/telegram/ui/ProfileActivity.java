@@ -127,6 +127,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.PhoneFormat.PhoneFormat;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
@@ -4523,7 +4524,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             if (i == 17) {
                 Bundle bundle6 = new Bundle();
                 bundle6.putLong("chat_id", ProfileActivity.this.chatId);
-                bundle6.putInt("type", 2);
+                bundle6.putInt(TeXSymbolParser.TYPE_ATTR, 2);
                 bundle6.putBoolean("open_search", true);
                 ChatUsersActivity chatUsersActivity = new ChatUsersActivity(bundle6);
                 chatUsersActivity.setInfo(ProfileActivity.this.chatInfo);
@@ -4548,7 +4549,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             }
             if (i == 39) {
                 Bundle bundle7 = new Bundle();
-                bundle7.putInt("type", 2);
+                bundle7.putInt(TeXSymbolParser.TYPE_ATTR, 2);
                 bundle7.putLong("dialog_id", -ProfileActivity.this.chatId);
                 MediaActivity mediaActivity = new MediaActivity(bundle7, null);
                 mediaActivity.setChatInfo(ProfileActivity.this.chatInfo);
@@ -6176,7 +6177,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         if (i == this.subscribersRow) {
             Bundle bundle3 = new Bundle();
             bundle3.putLong("chat_id", this.chatId);
-            bundle3.putInt("type", 2);
+            bundle3.putInt(TeXSymbolParser.TYPE_ATTR, 2);
             ChatUsersActivity chatUsersActivity = new ChatUsersActivity(bundle3);
             chatUsersActivity.setInfo(this.chatInfo);
             presentFragment(chatUsersActivity);
@@ -6189,7 +6190,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         if (i == this.administratorsRow) {
             Bundle bundle4 = new Bundle();
             bundle4.putLong("chat_id", this.chatId);
-            bundle4.putInt("type", 1);
+            bundle4.putInt(TeXSymbolParser.TYPE_ATTR, 1);
             ChatUsersActivity chatUsersActivity2 = new ChatUsersActivity(bundle4);
             chatUsersActivity2.setInfo(this.chatInfo);
             presentFragment(chatUsersActivity2);
@@ -6217,7 +6218,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         if (i == this.blockedUsersRow) {
             Bundle bundle6 = new Bundle();
             bundle6.putLong("chat_id", this.chatId);
-            bundle6.putInt("type", 0);
+            bundle6.putInt(TeXSymbolParser.TYPE_ATTR, 0);
             ChatUsersActivity chatUsersActivity3 = new ChatUsersActivity(bundle6);
             chatUsersActivity3.setInfo(this.chatInfo);
             presentFragment(chatUsersActivity3);

@@ -2,7 +2,7 @@ package com.microsoft.appcenter.crashes;
 
 import com.microsoft.appcenter.crashes.model.ErrorReport;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AbstractCrashesListener implements CrashesListener {
     @Override // com.microsoft.appcenter.crashes.CrashesListener
     public Iterable getErrorAttachments(ErrorReport errorReport) {

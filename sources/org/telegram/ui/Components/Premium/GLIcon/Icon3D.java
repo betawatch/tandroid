@@ -21,6 +21,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
@@ -166,7 +167,7 @@ public class Icon3D {
         this.modelIndexHandle = GLES20.glGetUniformLocation(this.mProgramObject, "modelIndex");
         this.modelIndex2Handle = GLES20.glGetUniformLocation(this.mProgramObject, "modelIndex2");
         this.behindHandle = GLES20.glGetUniformLocation(this.mProgramObject, "behind");
-        this.typeHandle = GLES20.glGetUniformLocation(this.mProgramObject, "type");
+        this.typeHandle = GLES20.glGetUniformLocation(this.mProgramObject, TeXSymbolParser.TYPE_ATTR);
         this.nightHandle = GLES20.glGetUniformLocation(this.mProgramObject, "night");
         this.timeHandle = GLES20.glGetUniformLocation(this.mProgramObject, "time");
         int i = this.N * 3;

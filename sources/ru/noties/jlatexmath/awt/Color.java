@@ -1,5 +1,7 @@
 package ru.noties.jlatexmath.awt;
 
+import org.telegram.messenger.NotificationCenter;
+
 /* loaded from: classes3.dex */
 public class Color {
     public static final Color BLACK;
@@ -13,6 +15,10 @@ public class Color {
     public static final Color white;
     public static final Color yellow;
     private final int color;
+
+    public int getAlpha() {
+        return NotificationCenter.didReceiveCall;
+    }
 
     static {
         Color color = new Color(-16777216);
@@ -43,6 +49,18 @@ public class Color {
 
     public Color(float f, float f2, float f3) {
         this((int) ((f * 255.0f) + 0.5f), (int) ((f2 * 255.0f) + 0.5f), (int) ((f3 * 255.0f) + 0.5f));
+    }
+
+    public int getRed() {
+        return android.graphics.Color.red(this.color);
+    }
+
+    public int getBlue() {
+        return android.graphics.Color.blue(this.color);
+    }
+
+    public int getGreen() {
+        return android.graphics.Color.green(this.color);
     }
 
     public int getColorInt() {

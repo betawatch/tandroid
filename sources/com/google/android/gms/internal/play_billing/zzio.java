@@ -9,6 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
 
 /* loaded from: classes.dex */
 abstract class zzio {
@@ -138,7 +139,7 @@ abstract class zzio {
             String substring = ((String) entry.getKey()).substring(i2);
             if (substring.endsWith("List") && !substring.endsWith("OrBuilderList") && !substring.equals("List") && (method2 = (Method) entry.getValue()) != null && method2.getReturnType().equals(List.class)) {
                 zzb(sb, i, substring.substring(0, substring.length() - 4), zzhk.zzt(method2, zzimVar, new Object[0]));
-            } else if (substring.endsWith("Map") && !substring.equals("Map") && (method = (Method) entry.getValue()) != null && method.getReturnType().equals(Map.class) && !method.isAnnotationPresent(Deprecated.class) && Modifier.isPublic(method.getModifiers())) {
+            } else if (substring.endsWith(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && !substring.equals(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && (method = (Method) entry.getValue()) != null && method.getReturnType().equals(Map.class) && !method.isAnnotationPresent(Deprecated.class) && Modifier.isPublic(method.getModifiers())) {
                 zzb(sb, i, substring.substring(0, substring.length() - 3), zzhk.zzt(method, zzimVar, new Object[0]));
             } else if (hashSet.contains("set".concat(substring)) && (!substring.endsWith("Bytes") || !treeMap.containsKey("get".concat(String.valueOf(substring.substring(0, substring.length() - 5)))))) {
                 Method method4 = (Method) entry.getValue();

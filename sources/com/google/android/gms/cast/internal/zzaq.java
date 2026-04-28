@@ -14,6 +14,7 @@ import java.util.Iterator;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes.dex */
@@ -203,7 +204,7 @@ public final class zzaq extends zzd {
         long zzd = zzd();
         try {
             jSONObject.put("requestId", zzd);
-            jSONObject.put("type", "GET_STATUS");
+            jSONObject.put(TeXSymbolParser.TYPE_ATTR, "GET_STATUS");
             MediaStatus mediaStatus = this.zzw;
             if (mediaStatus != null) {
                 jSONObject.put("mediaSessionId", mediaStatus.zzb());
@@ -221,7 +222,7 @@ public final class zzaq extends zzd {
         long position = mediaSeekOptions.isSeekToInfinite() ? 4294967296000L : mediaSeekOptions.getPosition();
         try {
             jSONObject.put("requestId", zzd);
-            jSONObject.put("type", "SEEK");
+            jSONObject.put(TeXSymbolParser.TYPE_ATTR, "SEEK");
             jSONObject.put("mediaSessionId", zzn());
             jSONObject.put("currentTime", CastUtils.millisecToSec(position));
             if (mediaSeekOptions.getResumeState() == 1) {
@@ -248,7 +249,7 @@ public final class zzaq extends zzd {
         long zzd = zzd();
         try {
             jSONObject2.put("requestId", zzd);
-            jSONObject2.put("type", "SET_PLAYBACK_RATE");
+            jSONObject2.put(TeXSymbolParser.TYPE_ATTR, "SET_PLAYBACK_RATE");
             jSONObject2.put("playbackRate", d);
             Preconditions.checkNotNull(this.zzw, "mediaStatus should not be null");
             jSONObject2.put("mediaSessionId", this.zzw.zzb());
@@ -270,7 +271,7 @@ public final class zzaq extends zzd {
         long zzd = zzd();
         try {
             jSONObject2.put("requestId", zzd);
-            jSONObject2.put("type", "SET_VOLUME");
+            jSONObject2.put(TeXSymbolParser.TYPE_ATTR, "SET_VOLUME");
             jSONObject2.put("mediaSessionId", zzn());
             JSONObject jSONObject3 = new JSONObject();
             jSONObject3.put("level", d);
@@ -320,7 +321,7 @@ public final class zzaq extends zzd {
         this.zza.d("message received: %s", str);
         try {
             JSONObject jSONObject = new JSONObject(str);
-            String string = jSONObject.getString("type");
+            String string = jSONObject.getString(TeXSymbolParser.TYPE_ATTR);
             long optLong = jSONObject.optLong("requestId", -1L);
             switch (string.hashCode()) {
                 case -1830647528:
@@ -734,7 +735,7 @@ public final class zzaq extends zzd {
         long zzd = zzd();
         try {
             json.put("requestId", zzd);
-            json.put("type", "LOAD");
+            json.put(TeXSymbolParser.TYPE_ATTR, "LOAD");
         } catch (JSONException unused) {
         }
         zzg(json.toString(), zzd, null);
@@ -747,7 +748,7 @@ public final class zzaq extends zzd {
         long zzd = zzd();
         try {
             jSONObject2.put("requestId", zzd);
-            jSONObject2.put("type", "PAUSE");
+            jSONObject2.put(TeXSymbolParser.TYPE_ATTR, "PAUSE");
             jSONObject2.put("mediaSessionId", zzn());
             if (jSONObject != null) {
                 jSONObject2.put("customData", jSONObject);
@@ -764,7 +765,7 @@ public final class zzaq extends zzd {
         long zzd = zzd();
         try {
             jSONObject2.put("requestId", zzd);
-            jSONObject2.put("type", "PLAY");
+            jSONObject2.put(TeXSymbolParser.TYPE_ATTR, "PLAY");
             jSONObject2.put("mediaSessionId", zzn());
             if (jSONObject != null) {
                 jSONObject2.put("customData", jSONObject);
@@ -781,7 +782,7 @@ public final class zzaq extends zzd {
         long zzd = zzd();
         try {
             jSONObject.put("requestId", zzd);
-            jSONObject.put("type", "QUEUE_GET_ITEM_IDS");
+            jSONObject.put(TeXSymbolParser.TYPE_ATTR, "QUEUE_GET_ITEM_IDS");
             jSONObject.put("mediaSessionId", zzn());
         } catch (JSONException unused) {
         }
@@ -795,7 +796,7 @@ public final class zzaq extends zzd {
         long zzd = zzd();
         try {
             jSONObject.put("requestId", zzd);
-            jSONObject.put("type", "QUEUE_GET_ITEMS");
+            jSONObject.put(TeXSymbolParser.TYPE_ATTR, "QUEUE_GET_ITEMS");
             jSONObject.put("mediaSessionId", zzn());
             JSONArray jSONArray = new JSONArray();
             for (int i : iArr) {
@@ -817,7 +818,7 @@ public final class zzaq extends zzd {
         long zzd = zzd();
         try {
             jSONObject2.put("requestId", zzd);
-            jSONObject2.put("type", "QUEUE_UPDATE");
+            jSONObject2.put(TeXSymbolParser.TYPE_ATTR, "QUEUE_UPDATE");
             jSONObject2.put("mediaSessionId", zzn());
             if (i != 0) {
                 jSONObject2.put("currentItemId", i);

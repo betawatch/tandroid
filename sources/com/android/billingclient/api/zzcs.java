@@ -4,11 +4,12 @@ import com.android.billingclient.api.ProductDetails;
 import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
 /* loaded from: classes.dex */
 public final class zzcs {
     zzcs(JSONObject jSONObject) {
-        jSONObject.getString("type");
+        jSONObject.getString(TeXSymbolParser.TYPE_ATTR);
         JSONArray optJSONArray = jSONObject.optJSONArray("balanceThresholds");
         ArrayList arrayList = new ArrayList();
         if (optJSONArray != null) {

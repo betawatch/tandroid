@@ -50,6 +50,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.PhoneFormat.PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
@@ -1293,7 +1294,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                     if (i2 == 14) {
                         Bundle bundle = new Bundle();
                         bundle.putLong("dialog_id", UserConfig.getInstance(this.currentAccount).getClientUserId());
-                        bundle.putInt("type", 1);
+                        bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
                         presentFragment(new MediaActivity(bundle, null));
                         return;
                     }

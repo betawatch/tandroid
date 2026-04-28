@@ -29,6 +29,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import j$.time.YearMonth;
 import java.util.ArrayList;
 import java.util.Calendar;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
@@ -154,7 +155,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
     public boolean onFragmentCreate() {
         this.dialogId = getArguments().getLong("dialog_id");
         this.topicId = getArguments().getLong("topic_id");
-        int i = getArguments().getInt("type");
+        int i = getArguments().getInt(TeXSymbolParser.TYPE_ATTR);
         this.calendarType = i;
         if (i == 2) {
             this.storiesList = MessagesController.getInstance(this.currentAccount).getStoriesController().getStoriesList(this.dialogId, 0);

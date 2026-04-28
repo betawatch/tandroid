@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.CacheByChatsController;
 import org.telegram.messenger.LocaleController;
@@ -146,7 +147,7 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
             return;
         }
         Bundle bundle2 = new Bundle();
-        bundle2.putInt("type", this.currentType);
+        bundle2.putInt(TeXSymbolParser.TYPE_ATTR, this.currentType);
         CacheChatsExceptionsFragment cacheChatsExceptionsFragment = new CacheChatsExceptionsFragment(bundle2);
         cacheChatsExceptionsFragment.setExceptions(this.exceptions);
         baseFragment.presentFragment(cacheChatsExceptionsFragment);
@@ -165,7 +166,7 @@ public class KeepMediaPopupView extends ActionBarPopupWindow.ActionBarPopupWindo
         }
         this.cacheByChatsController.saveKeepMediaExceptions(this.currentType, this.exceptions);
         Bundle bundle = new Bundle();
-        bundle.putInt("type", this.currentType);
+        bundle.putInt(TeXSymbolParser.TYPE_ATTR, this.currentType);
         final CacheChatsExceptionsFragment cacheChatsExceptionsFragment = new CacheChatsExceptionsFragment(bundle) { // from class: org.telegram.ui.KeepMediaPopupView.1
             @Override // org.telegram.ui.ActionBar.BaseFragment
             public void onTransitionAnimationEnd(boolean z3, boolean z4) {

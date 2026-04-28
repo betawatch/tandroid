@@ -37,6 +37,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.function.ToDoubleFunction;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
@@ -731,7 +732,7 @@ public class NotificationsCustomSettingsActivity extends BaseFragment implements
                 if (view.isEnabled()) {
                     try {
                         Bundle bundle2 = new Bundle();
-                        bundle2.putInt("type", this.currentType);
+                        bundle2.putInt(TeXSymbolParser.TYPE_ATTR, this.currentType);
                         presentFragment(new NotificationsSoundActivity(bundle2, getResourceProvider()));
                         return;
                     } catch (Exception e) {

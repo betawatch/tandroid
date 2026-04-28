@@ -2,6 +2,8 @@ package ru.noties.jlatexmath.awt;
 
 /* loaded from: classes3.dex */
 public class BasicStroke implements Stroke {
+    public static final int CAP_BUTT = 0;
+    public static final int JOIN_MITER = 0;
     private final float miterLimit;
     private final float width;
 
@@ -17,6 +19,11 @@ public class BasicStroke implements Stroke {
     @Override // ru.noties.jlatexmath.awt.Stroke
     public float width() {
         return this.width;
+    }
+
+    @Override // ru.noties.jlatexmath.awt.Stroke
+    public float miterLimit() {
+        return this.miterLimit;
     }
 
     public String toString() {

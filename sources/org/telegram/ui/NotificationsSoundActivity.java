@@ -29,6 +29,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.ContactsController;
@@ -138,7 +139,7 @@ public class NotificationsSoundActivity extends BaseFragment implements ChatAtta
         if (getArguments() != null) {
             this.dialogId = getArguments().getLong("dialog_id", 0L);
             this.topicId = getArguments().getLong("topic_id", 0L);
-            this.currentType = getArguments().getInt("type", -1);
+            this.currentType = getArguments().getInt(TeXSymbolParser.TYPE_ATTR, -1);
         }
         long j = this.dialogId;
         if (j != 0) {

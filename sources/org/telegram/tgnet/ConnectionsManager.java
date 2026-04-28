@@ -48,6 +48,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javax.net.ssl.SSLException;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -1505,7 +1506,7 @@ public class ConnectionsManager extends BaseController {
                         ArrayList arrayList = new ArrayList(length);
                         for (int i2 = 0; i2 < length; i2++) {
                             JSONObject jSONObject = jSONArray.getJSONObject(i2);
-                            if (jSONObject.getInt("type") == 16) {
+                            if (jSONObject.getInt(TeXSymbolParser.TYPE_ATTR) == 16) {
                                 arrayList.add(jSONObject.getString("data"));
                             }
                         }
@@ -1685,7 +1686,7 @@ public class ConnectionsManager extends BaseController {
                         ArrayList arrayList = new ArrayList(length);
                         for (int i2 = 0; i2 < length; i2++) {
                             JSONObject jSONObject = jSONArray.getJSONObject(i2);
-                            if (jSONObject.getInt("type") == 16) {
+                            if (jSONObject.getInt(TeXSymbolParser.TYPE_ATTR) == 16) {
                                 arrayList.add(jSONObject.getString("data"));
                             }
                         }

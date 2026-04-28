@@ -7114,11 +7114,11 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x00bd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x00be, code lost:
     
         if (r2 == null) goto L67;
      */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x00c6 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x00c7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -7197,7 +7197,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         return null;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0047, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0048, code lost:
     
         if (r1 == null) goto L27;
      */

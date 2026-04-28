@@ -78,6 +78,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -1466,28 +1467,25 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:1001:0x0eae  */
-    /* JADX WARN: Removed duplicated region for block: B:254:0x0db9 A[ADDED_TO_REGION, REMOVE, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:255:0x0dba  */
-    /* JADX WARN: Removed duplicated region for block: B:463:0x127e  */
-    /* JADX WARN: Removed duplicated region for block: B:465:0x128a  */
-    /* JADX WARN: Removed duplicated region for block: B:834:0x0505  */
-    /* JADX WARN: Removed duplicated region for block: B:838:0x0513 A[Catch: Exception -> 0x04d6, TRY_LEAVE, TryCatch #32 {Exception -> 0x04d6, blocks: (B:820:0x04b7, B:822:0x04c7, B:824:0x04cd, B:827:0x04d8, B:838:0x0513, B:841:0x050a, B:843:0x050e, B:844:0x04ed, B:847:0x04f8), top: B:819:0x04b7 }] */
-    /* JADX WARN: Removed duplicated region for block: B:843:0x050e A[Catch: Exception -> 0x04d6, TryCatch #32 {Exception -> 0x04d6, blocks: (B:820:0x04b7, B:822:0x04c7, B:824:0x04cd, B:827:0x04d8, B:838:0x0513, B:841:0x050a, B:843:0x050e, B:844:0x04ed, B:847:0x04f8), top: B:819:0x04b7 }] */
-    /* JADX WARN: Removed duplicated region for block: B:887:0x075b  */
-    /* JADX WARN: Removed duplicated region for block: B:894:0x081b A[Catch: Exception -> 0x0740, TRY_LEAVE, TryCatch #35 {Exception -> 0x0740, blocks: (B:878:0x0716, B:894:0x081b, B:898:0x0763, B:900:0x0768, B:914:0x07aa, B:915:0x07ad, B:916:0x07b0, B:917:0x0782, B:920:0x078d, B:923:0x0795, B:926:0x07b3, B:927:0x07bd, B:939:0x0805, B:940:0x0809, B:941:0x080d, B:942:0x0811, B:943:0x0815, B:944:0x07c1, B:947:0x07cb, B:950:0x07d5, B:953:0x07df, B:956:0x07ea, B:959:0x0736, B:962:0x0743, B:965:0x074e), top: B:877:0x0716 }] */
-    /* JADX WARN: Removed duplicated region for block: B:909:0x07a3  */
-    /* JADX WARN: Removed duplicated region for block: B:916:0x07b0 A[Catch: Exception -> 0x0740, TryCatch #35 {Exception -> 0x0740, blocks: (B:878:0x0716, B:894:0x081b, B:898:0x0763, B:900:0x0768, B:914:0x07aa, B:915:0x07ad, B:916:0x07b0, B:917:0x0782, B:920:0x078d, B:923:0x0795, B:926:0x07b3, B:927:0x07bd, B:939:0x0805, B:940:0x0809, B:941:0x080d, B:942:0x0811, B:943:0x0815, B:944:0x07c1, B:947:0x07cb, B:950:0x07d5, B:953:0x07df, B:956:0x07ea, B:959:0x0736, B:962:0x0743, B:965:0x074e), top: B:877:0x0716 }] */
-    /* JADX WARN: Removed duplicated region for block: B:926:0x07b3 A[Catch: Exception -> 0x0740, TryCatch #35 {Exception -> 0x0740, blocks: (B:878:0x0716, B:894:0x081b, B:898:0x0763, B:900:0x0768, B:914:0x07aa, B:915:0x07ad, B:916:0x07b0, B:917:0x0782, B:920:0x078d, B:923:0x0795, B:926:0x07b3, B:927:0x07bd, B:939:0x0805, B:940:0x0809, B:941:0x080d, B:942:0x0811, B:943:0x0815, B:944:0x07c1, B:947:0x07cb, B:950:0x07d5, B:953:0x07df, B:956:0x07ea, B:959:0x0736, B:962:0x0743, B:965:0x074e), top: B:877:0x0716 }] */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x0dbb A[ADDED_TO_REGION, REMOVE, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x0dbc  */
+    /* JADX WARN: Removed duplicated region for block: B:463:0x1280  */
+    /* JADX WARN: Removed duplicated region for block: B:465:0x128c  */
+    /* JADX WARN: Removed duplicated region for block: B:808:0x0eb0  */
+    /* JADX WARN: Removed duplicated region for block: B:830:0x0505  */
+    /* JADX WARN: Removed duplicated region for block: B:834:0x0513 A[Catch: Exception -> 0x04d6, TRY_LEAVE, TryCatch #32 {Exception -> 0x04d6, blocks: (B:816:0x04b7, B:818:0x04c7, B:820:0x04cd, B:823:0x04d8, B:834:0x0513, B:837:0x050a, B:839:0x050e, B:840:0x04ed, B:843:0x04f8), top: B:815:0x04b7 }] */
+    /* JADX WARN: Removed duplicated region for block: B:839:0x050e A[Catch: Exception -> 0x04d6, TryCatch #32 {Exception -> 0x04d6, blocks: (B:816:0x04b7, B:818:0x04c7, B:820:0x04cd, B:823:0x04d8, B:834:0x0513, B:837:0x050a, B:839:0x050e, B:840:0x04ed, B:843:0x04f8), top: B:815:0x04b7 }] */
+    /* JADX WARN: Removed duplicated region for block: B:912:0x075b  */
+    /* JADX WARN: Removed duplicated region for block: B:919:0x081c A[Catch: Exception -> 0x0740, TRY_LEAVE, TryCatch #37 {Exception -> 0x0740, blocks: (B:903:0x0716, B:919:0x081c, B:923:0x0763, B:925:0x0768, B:939:0x07aa, B:940:0x07ad, B:941:0x07b0, B:942:0x0782, B:945:0x078d, B:948:0x0795, B:951:0x07b3, B:952:0x07bd, B:964:0x0806, B:965:0x080a, B:966:0x080e, B:967:0x0812, B:968:0x0816, B:969:0x07c1, B:972:0x07cc, B:975:0x07d6, B:978:0x07e0, B:981:0x07eb, B:984:0x0736, B:987:0x0743, B:990:0x074e), top: B:902:0x0716 }] */
+    /* JADX WARN: Removed duplicated region for block: B:934:0x07a3  */
+    /* JADX WARN: Removed duplicated region for block: B:941:0x07b0 A[Catch: Exception -> 0x0740, TryCatch #37 {Exception -> 0x0740, blocks: (B:903:0x0716, B:919:0x081c, B:923:0x0763, B:925:0x0768, B:939:0x07aa, B:940:0x07ad, B:941:0x07b0, B:942:0x0782, B:945:0x078d, B:948:0x0795, B:951:0x07b3, B:952:0x07bd, B:964:0x0806, B:965:0x080a, B:966:0x080e, B:967:0x0812, B:968:0x0816, B:969:0x07c1, B:972:0x07cc, B:975:0x07d6, B:978:0x07e0, B:981:0x07eb, B:984:0x0736, B:987:0x0743, B:990:0x074e), top: B:902:0x0716 }] */
+    /* JADX WARN: Removed duplicated region for block: B:951:0x07b3 A[Catch: Exception -> 0x0740, TryCatch #37 {Exception -> 0x0740, blocks: (B:903:0x0716, B:919:0x081c, B:923:0x0763, B:925:0x0768, B:939:0x07aa, B:940:0x07ad, B:941:0x07b0, B:942:0x0782, B:945:0x078d, B:948:0x0795, B:951:0x07b3, B:952:0x07bd, B:964:0x0806, B:965:0x080a, B:966:0x080e, B:967:0x0812, B:968:0x0816, B:969:0x07c1, B:972:0x07cc, B:975:0x07d6, B:978:0x07e0, B:981:0x07eb, B:984:0x0736, B:987:0x0743, B:990:0x074e), top: B:902:0x0716 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void onEventReceived(final BotWebViewProxy botWebViewProxy, String str, String str2) {
         char c;
         boolean z;
-        boolean z2;
-        boolean z3;
-        JSONArray jSONArray;
         int parseColor;
         char c2;
         char c3;
@@ -1497,15 +1495,18 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         char c5;
         int i;
         int i2;
+        boolean z2;
+        boolean z3;
+        JSONArray jSONArray;
         String str3;
+        String str4;
         boolean z4;
+        String str5;
+        boolean z5;
+        long j;
+        boolean z6;
         LaunchActivity launchActivity;
         BottomSheetTabs.WebTabData webTabData;
-        String str4;
-        boolean z5;
-        String str5;
-        boolean z6;
-        long j;
         final String str6;
         String str7;
         TextView textView;
@@ -2695,13 +2696,13 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                     break;
                 case 29:
                     try {
-                        z4 = new JSONObject(str2).optBoolean("return_back");
+                        z6 = new JSONObject(str2).optBoolean("return_back");
                     } catch (Exception e16) {
                         FileLog.e(e16);
-                        z4 = false;
+                        z6 = false;
                     }
                     this.delegate.onCloseRequested(null);
-                    if (z4) {
+                    if (z6) {
                         if (this.wasOpenedByLinkIntent && LaunchActivity.instance != null) {
                             Activity findActivity = AndroidUtilities.findActivity(getContext());
                             if (findActivity == null) {
@@ -3032,7 +3033,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 case '2':
                     try {
                         JSONObject jSONObject13 = new JSONObject(str2);
-                        String optString7 = jSONObject13.optString("type");
+                        String optString7 = jSONObject13.optString(TeXSymbolParser.TYPE_ATTR);
                         int hashCode = optString7.hashCode();
                         if (hashCode == -1184809658) {
                             if (optString7.equals("impact")) {
@@ -3197,17 +3198,17 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         int parseColor5 = jSONObject14.has("text_color") ? Color.parseColor(jSONObject14.optString("text_color")) : this.lastButtonTextColor;
                         if (jSONObject14.optBoolean("is_progress_visible", false) && z17) {
                             str4 = "has_shine_effect";
-                            z5 = true;
+                            z4 = true;
                         } else {
                             str4 = "has_shine_effect";
-                            z5 = false;
+                            z4 = false;
                         }
                         if (jSONObject14.optBoolean(str4, false) && z17) {
                             str5 = "icon_custom_emoji_id";
-                            z6 = true;
+                            z5 = true;
                         } else {
                             str5 = "icon_custom_emoji_id";
-                            z6 = false;
+                            z5 = false;
                         }
                         try {
                             j = Long.parseLong(jSONObject14.getString(str5));
@@ -3218,7 +3219,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         this.lastButtonTextColor = parseColor5;
                         this.lastButtonText = trim2;
                         this.buttonData = str2;
-                        this.delegate.onSetupMainButton(z17, optBoolean4, trim2, j, parseColor4, parseColor5, z5, z6);
+                        this.delegate.onSetupMainButton(z17, optBoolean4, trim2, j, parseColor4, parseColor5, z4, z5);
                         break;
                     } catch (Exception e24) {
                         FileLog.e(e24);
@@ -4976,7 +4977,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             char c = 65535;
             this.textColorKey = -1;
             this.id = jSONObject.getString("id");
-            String string = jSONObject.getString("type");
+            String string = jSONObject.getString(TeXSymbolParser.TYPE_ATTR);
             switch (string.hashCode()) {
                 case -1829997182:
                     if (string.equals("destructive")) {

@@ -1,9 +1,10 @@
 package org.scilab.forge.jlatexmath;
 
-import java.util.LinkedList;
-
 /* loaded from: classes3.dex */
 public class MultlineAtom extends Atom {
+    public static final int GATHER = 1;
+    public static final int GATHERED = 2;
+    public static final int MULTLINE = 0;
     public static SpaceAtom vsep_in = new SpaceAtom(1, 0.0f, 1.0f, 0.0f);
     private ArrayOfAtoms column;
     private boolean isPartial;
@@ -15,6 +16,10 @@ public class MultlineAtom extends Atom {
         this.type = i;
     }
 
+    public MultlineAtom(ArrayOfAtoms arrayOfAtoms, int i) {
+        this(false, arrayOfAtoms, i);
+    }
+
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
         ArrayOfAtoms arrayOfAtoms;
@@ -23,7 +28,7 @@ public class MultlineAtom extends Atom {
         if (textwidth != Float.POSITIVE_INFINITY) {
             if (this.type != 2) {
                 VerticalBox verticalBox = new VerticalBox();
-                Atom atom = (Atom) ((LinkedList) this.column.array.get(0)).get(0);
+                Atom atom = this.column.array.get(0).get(0);
                 int i2 = this.type == 1 ? 2 : 0;
                 int i3 = atom.alignment;
                 if (i3 != -1) {
@@ -38,7 +43,7 @@ public class MultlineAtom extends Atom {
                     if (i4 >= i - 1) {
                         break;
                     }
-                    Atom atom2 = (Atom) ((LinkedList) arrayOfAtoms.array.get(i4)).get(0);
+                    Atom atom2 = arrayOfAtoms.array.get(i4).get(0);
                     int i5 = atom2.alignment;
                     if (i5 == -1) {
                         i5 = 2;
@@ -48,7 +53,7 @@ public class MultlineAtom extends Atom {
                     i4++;
                 }
                 if (i > 1) {
-                    Atom atom3 = (Atom) ((LinkedList) arrayOfAtoms.array.get(i - 1)).get(0);
+                    Atom atom3 = arrayOfAtoms.array.get(i - 1).get(0);
                     int i6 = this.type != 1 ? 1 : 2;
                     int i7 = atom3.alignment;
                     if (i7 != -1) {

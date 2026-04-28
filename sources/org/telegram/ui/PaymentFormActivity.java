@@ -87,6 +87,7 @@ import java.util.Scanner;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.PhoneFormat.PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -3732,7 +3733,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             if (this.googlePayPublicKey != null && this.googlePayParameters == null) {
                 baseCardPaymentMethod.put("tokenizationSpecification", new JSONObject() { // from class: org.telegram.ui.PaymentFormActivity.23
                     {
-                        put("type", "DIRECT");
+                        put(TeXSymbolParser.TYPE_ATTR, "DIRECT");
                         put("parameters", new JSONObject() { // from class: org.telegram.ui.PaymentFormActivity.23.1
                             {
                                 put("protocolVersion", "ECv2");
@@ -3744,7 +3745,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             } else {
                 baseCardPaymentMethod.put("tokenizationSpecification", new JSONObject() { // from class: org.telegram.ui.PaymentFormActivity.24
                     {
-                        put("type", "PAYMENT_GATEWAY");
+                        put(TeXSymbolParser.TYPE_ATTR, "PAYMENT_GATEWAY");
                         if (PaymentFormActivity.this.googlePayParameters != null) {
                             put("parameters", PaymentFormActivity.this.googlePayParameters);
                         } else {
@@ -3958,7 +3959,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
         List asList = Arrays.asList("AMEX", "DISCOVER", "JCB", "MASTERCARD", "VISA");
         List asList2 = Arrays.asList("PAN_ONLY", "CRYPTOGRAM_3DS");
         JSONObject jSONObject = new JSONObject();
-        jSONObject.put("type", "CARD");
+        jSONObject.put(TeXSymbolParser.TYPE_ATTR, "CARD");
         JSONObject jSONObject2 = new JSONObject();
         jSONObject2.put("allowedAuthMethods", new JSONArray((Collection) asList2));
         jSONObject2.put("allowedCardNetworks", new JSONArray((Collection) asList));
@@ -4232,7 +4233,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             try {
                 JSONObject jSONObject = new JSONObject(json).getJSONObject("paymentMethodData");
                 JSONObject jSONObject2 = jSONObject.getJSONObject("tokenizationData");
-                jSONObject2.getString("type");
+                jSONObject2.getString(TeXSymbolParser.TYPE_ATTR);
                 String string = jSONObject2.getString("token");
                 if (this.googlePayPublicKey == null && this.googlePayParameters == null) {
                     Token parseToken = TokenParser.parseToken(string);
@@ -4974,7 +4975,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                                     if (responseCode < 200 && responseCode < 300) {
                                         JSONObject jSONObject3 = new JSONObject();
                                         jSONObject3.put("token", new JSONObject(PaymentFormActivity.getResponseBody(httpURLConnection2.getInputStream())).getJSONObject("data").getString("token"));
-                                        jSONObject3.put("type", "card");
+                                        jSONObject3.put(TeXSymbolParser.TYPE_ATTR, "card");
                                         String jSONObject4 = jSONObject3.toString();
                                         httpURLConnection2.disconnect();
                                         return jSONObject4;

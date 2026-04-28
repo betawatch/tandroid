@@ -61,6 +61,7 @@ import kotlin.text.StringsKt;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.MediaDataController;
 
 /* loaded from: classes.dex */
@@ -74,7 +75,7 @@ public abstract class PublicKeyCredentialControllerUtility {
     private static final String JSON_KEY_RESPONSE = "response";
     private static final String JSON_KEY_ID = "id";
     private static final String JSON_KEY_RAW_ID = "rawId";
-    private static final String JSON_KEY_TYPE = "type";
+    private static final String JSON_KEY_TYPE = TeXSymbolParser.TYPE_ATTR;
     private static final String JSON_KEY_RPID = "rpId";
     private static final String JSON_KEY_CHALLENGE = "challenge";
     private static final String JSON_KEY_APPID = "appid";

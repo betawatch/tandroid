@@ -71,6 +71,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.ApplicationLoader;
@@ -3805,7 +3806,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onClick$16(ItemOptions itemOptions) {
             Bundle bundle = new Bundle();
-            bundle.putInt("type", 2);
+            bundle.putInt(TeXSymbolParser.TYPE_ATTR, 2);
             bundle.putLong("dialog_id", -SharedMediaLayout.this.info.id);
             MediaActivity mediaActivity = new MediaActivity(bundle, null);
             mediaActivity.setChatInfo(SharedMediaLayout.this.info);
@@ -5020,11 +5021,11 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 if (period != null) {
                     i2 = period.date;
                     if (i != 9) {
-                        bundle.putInt("type", 3);
+                        bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
                     } else if (i == 8) {
-                        bundle.putInt("type", 2);
+                        bundle.putInt(TeXSymbolParser.TYPE_ATTR, 2);
                     } else {
-                        bundle.putInt("type", 1);
+                        bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
                     }
                     CalendarActivity calendarActivity = new CalendarActivity(bundle, this.sharedMediaData[0].filterType, i2);
                     calendarActivity.setCallback(new CalendarActivity.Callback() { // from class: org.telegram.ui.Components.SharedMediaLayout.33
