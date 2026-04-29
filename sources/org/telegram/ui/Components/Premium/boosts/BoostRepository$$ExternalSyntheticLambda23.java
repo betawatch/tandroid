@@ -4,7 +4,7 @@ import java.text.Collator;
 import java.util.Comparator;
 
 /* loaded from: classes5.dex */
-public final /* synthetic */ class BoostRepository$$ExternalSyntheticLambda30 implements Comparator {
+public final /* synthetic */ class BoostRepository$$ExternalSyntheticLambda23 implements Comparator {
     public final /* synthetic */ Collator f$0;
 
     @Override // java.util.Comparator

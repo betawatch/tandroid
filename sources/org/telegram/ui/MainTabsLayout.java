@@ -142,8 +142,8 @@ public class MainTabsLayout extends AnimatedLinearLayout {
             @Override // me.vkryl.android.util.ClickHelper.Delegate
             public boolean needClickAt(View view, float f, float f2) {
                 MainTabsLayout.this.lastLongSelectedView = null;
-                View findChildUnder = MainTabsLayout.findChildUnder(MainTabsLayout.this, f, r2.getHeight() / 2.0f);
-                return findChildUnder == null || !MainTabsLayout.this.tabsWithIgnoreClick.contains(findChildUnder);
+                View findChildUnder = MainTabsLayout.findChildUnder(MainTabsLayout.this, f, f2);
+                return (findChildUnder == null || MainTabsLayout.this.tabsWithIgnoreClick.contains(findChildUnder)) ? false : true;
             }
 
             @Override // me.vkryl.android.util.ClickHelper.Delegate
@@ -447,6 +447,26 @@ public class MainTabsLayout extends AnimatedLinearLayout {
 
     public void addTabToIgnoreClick(View view) {
         this.tabsWithIgnoreClick.add(view);
+    }
+
+    @Override // android.view.View
+    public void setScaleY(float f) {
+        super.setScaleY(f);
+        checkLayerType();
+    }
+
+    @Override // android.view.View
+    public void setScaleX(float f) {
+        super.setScaleX(f);
+        checkLayerType();
+    }
+
+    private void checkLayerType() {
+        int i = (Math.abs(getScaleX() - 1.0f) >= 1.0E-4f || Math.abs(getScaleY() - 1.0f) >= 1.0E-4f) ? 2 : 0;
+        if (getLayerType() != i) {
+            setLayerType(i, null);
+            invalidate();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */

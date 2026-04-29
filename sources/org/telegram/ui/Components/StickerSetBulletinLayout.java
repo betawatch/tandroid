@@ -31,18 +31,18 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:108:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0077 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x0115  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0127  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x013b  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x01c7  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0250  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0262  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0274  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0286  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x0301  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x036b  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0093 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x0131  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x00aa  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0143  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0157  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x01e3  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x026c  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x027e  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0290  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x02a2  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x031d  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0387  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -51,6 +51,8 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
         TLRPC.Document document2;
         TLRPC.StickerSet stickerSet;
         TLRPC.Document document3;
+        TLRPC.TL_stickerSetFullCovered tL_stickerSetFullCovered;
+        ArrayList<TLRPC.Document> arrayList;
         int i3;
         ImageLocation forSticker;
         TLRPC.TL_messages_stickerSet stickerSet2;
@@ -58,9 +60,9 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
         if (z) {
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
             stickerSet = tL_messages_stickerSet.set;
-            ArrayList<TLRPC.Document> arrayList = tL_messages_stickerSet.documents;
-            if (arrayList != null && !arrayList.isEmpty()) {
-                document3 = arrayList.get(0);
+            ArrayList<TLRPC.Document> arrayList2 = tL_messages_stickerSet.documents;
+            if (arrayList2 != null && !arrayList2.isEmpty()) {
+                document3 = arrayList2.get(0);
                 document2 = document3;
                 if (stickerSet == null) {
                     stickerSet = stickerSet2.set;
@@ -73,7 +75,7 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
                 switch (i2) {
                 }
             } else {
-                document2 = null;
+                document2 = document;
                 if (stickerSet == null && document2 != null && (stickerSet2 = MediaDataController.getInstance(UserConfig.selectedAccount).getStickerSet(MessageObject.getInputStickerSet(document2), true)) != null) {
                     stickerSet = stickerSet2.set;
                 }
@@ -224,8 +226,10 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
             TLRPC.Document document4 = stickerSetCovered.cover;
             if (document4 != null) {
                 document3 = document4;
+            } else if (!stickerSetCovered.covers.isEmpty()) {
+                document3 = stickerSetCovered.covers.get(0);
             } else {
-                document3 = !stickerSetCovered.covers.isEmpty() ? stickerSetCovered.covers.get(0) : null;
+                document3 = (!(stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) || (arrayList = (tL_stickerSetFullCovered = (TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents) == null || arrayList.isEmpty()) ? document : tL_stickerSetFullCovered.documents.get(0);
             }
             document2 = document3;
             if (stickerSet == null) {

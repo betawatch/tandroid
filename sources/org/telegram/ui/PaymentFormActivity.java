@@ -139,7 +139,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.EmbedBottomSheet$$ExternalSyntheticLambda6;
 import org.telegram.ui.Components.HintEditText;
 import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda31;
+import org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda24;
 import org.telegram.ui.Components.TypefaceSpan;
 import org.telegram.ui.Components.URLSpanNoUnderline;
 import org.telegram.ui.CountrySelectActivity;
@@ -796,7 +796,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                     hashMap.put(split[1], split[2]);
                 } else {
                     bufferedReader.close();
-                    Collections.sort(this.countriesArray, new BoostRepository$$ExternalSyntheticLambda31());
+                    Collections.sort(this.countriesArray, new BoostRepository$$ExternalSyntheticLambda24());
                     int i10 = 10;
                     this.inputFields = new EditTextBoldCursor[10];
                     int i11 = 0;

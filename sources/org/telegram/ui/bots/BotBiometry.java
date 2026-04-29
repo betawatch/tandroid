@@ -118,17 +118,16 @@ public class BotBiometry {
     }
 
     public void requestToken(String str, final Utilities.Callback2 callback2) {
-        prompt(str, true, null, new Utilities.Callback2() { // from class: org.telegram.ui.bots.BotBiometry$$ExternalSyntheticLambda4
-            @Override // org.telegram.messenger.Utilities.Callback2
-            public final void run(Object obj, Object obj2) {
-                BotBiometry.this.lambda$requestToken$0(callback2, (Boolean) obj, (BiometricPrompt.AuthenticationResult) obj2);
+        prompt(str, true, null, new Utilities.Callback3() { // from class: org.telegram.ui.bots.BotBiometry$$ExternalSyntheticLambda4
+            @Override // org.telegram.messenger.Utilities.Callback3
+            public final void run(Object obj, Object obj2, Object obj3) {
+                BotBiometry.this.lambda$requestToken$0(callback2, (Boolean) obj, (BiometricPrompt.AuthenticationResult) obj2, (BiometricPrompt.CryptoObject) obj3);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$requestToken$0(Utilities.Callback2 callback2, Boolean bool, BiometricPrompt.AuthenticationResult authenticationResult) {
-        BiometricPrompt.CryptoObject cryptoObject;
+    public /* synthetic */ void lambda$requestToken$0(Utilities.Callback2 callback2, Boolean bool, BiometricPrompt.AuthenticationResult authenticationResult, BiometricPrompt.CryptoObject cryptoObject) {
         String str;
         String str2 = null;
         if (authenticationResult != null) {
@@ -139,12 +138,10 @@ public class BotBiometry {
                 } else {
                     if (i >= 30) {
                         cryptoObject = makeCryptoObject(true);
-                    } else {
-                        cryptoObject = authenticationResult.getCryptoObject();
                     }
                     if (cryptoObject != null) {
                         if (!TextUtils.isEmpty(this.encrypted_token)) {
-                            str2 = new String(cryptoObject.getCipher().doFinal(Utilities.hexToBytes(this.encrypted_token)), StandardCharsets.UTF_8);
+                            str = new String(cryptoObject.getCipher().doFinal(Utilities.hexToBytes(this.encrypted_token)), StandardCharsets.UTF_8);
                         } else {
                             str = this.encrypted_token;
                         }
@@ -162,20 +159,18 @@ public class BotBiometry {
     }
 
     public void updateToken(String str, final String str2, final Utilities.Callback callback) {
-        prompt(str, false, str2, new Utilities.Callback2() { // from class: org.telegram.ui.bots.BotBiometry$$ExternalSyntheticLambda5
-            @Override // org.telegram.messenger.Utilities.Callback2
-            public final void run(Object obj, Object obj2) {
-                BotBiometry.this.lambda$updateToken$1(str2, callback, (Boolean) obj, (BiometricPrompt.AuthenticationResult) obj2);
+        prompt(str, false, str2, new Utilities.Callback3() { // from class: org.telegram.ui.bots.BotBiometry$$ExternalSyntheticLambda5
+            @Override // org.telegram.messenger.Utilities.Callback3
+            public final void run(Object obj, Object obj2, Object obj3) {
+                BotBiometry.this.lambda$updateToken$1(str2, callback, (Boolean) obj, (BiometricPrompt.AuthenticationResult) obj2, (BiometricPrompt.CryptoObject) obj3);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateToken$1(String str, Utilities.Callback callback, Boolean bool, BiometricPrompt.AuthenticationResult authenticationResult) {
-        BiometricPrompt.CryptoObject cryptoObject;
+    public /* synthetic */ void lambda$updateToken$1(String str, Utilities.Callback callback, Boolean bool, BiometricPrompt.AuthenticationResult authenticationResult, BiometricPrompt.CryptoObject cryptoObject) {
         if (authenticationResult != null) {
             try {
-                authenticationResult.getCryptoObject();
                 if (TextUtils.isEmpty(str)) {
                     this.encrypted_token = null;
                     this.iv = null;
@@ -187,8 +182,6 @@ public class BotBiometry {
                     } else {
                         if (i >= 30) {
                             cryptoObject = makeCryptoObject(false);
-                        } else {
-                            cryptoObject = authenticationResult.getCryptoObject();
                         }
                         if (cryptoObject != null) {
                             this.encrypted_token = Utilities.bytesToHex(cryptoObject.getCipher().doFinal(str.getBytes(StandardCharsets.UTF_8)));
@@ -258,9 +251,10 @@ public class BotBiometry {
         }
     }
 
-    private void prompt(String str, boolean z, String str2, Utilities.Callback2 callback2) {
+    private void prompt(String str, boolean z, String str2, final Utilities.Callback3 callback3) {
         int i;
-        this.callback = callback2;
+        final BiometricPrompt.CryptoObject cryptoObject = null;
+        this.callback = null;
         try {
             initPrompt();
             BiometricPrompt.CryptoObject makeCryptoObject = makeCryptoObject(z);
@@ -280,8 +274,7 @@ public class BotBiometry {
                         this.iv = Utilities.bytesToHex(makeCryptoObject.getCipher().getIV());
                     }
                     save();
-                    this.callback = null;
-                    callback2.run(Boolean.TRUE, null);
+                    callback3.run(Boolean.TRUE, null, null);
                     return;
                 } catch (Exception e) {
                     FileLog.e(e);
@@ -289,13 +282,22 @@ public class BotBiometry {
                 }
             }
             if (makeCryptoObject != null && Build.VERSION.SDK_INT < 30) {
+                cryptoObject = makeCryptoObject;
+            }
+            this.callback = new Utilities.Callback2() { // from class: org.telegram.ui.bots.BotBiometry$$ExternalSyntheticLambda6
+                @Override // org.telegram.messenger.Utilities.Callback2
+                public final void run(Object obj, Object obj2) {
+                    Utilities.Callback3.this.run((Boolean) obj, (BiometricPrompt.AuthenticationResult) obj2, cryptoObject);
+                }
+            };
+            if (makeCryptoObject != null && Build.VERSION.SDK_INT < 30) {
                 this.prompt.authenticate(build, makeCryptoObject);
             } else {
                 this.prompt.authenticate(build);
             }
         } catch (Exception e2) {
             FileLog.e(e2);
-            callback2.run(Boolean.FALSE, null);
+            callback3.run(Boolean.FALSE, null, null);
         }
     }
 
@@ -435,25 +437,25 @@ public class BotBiometry {
             MessagesStorage.getInstance(i).getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.bots.BotBiometry$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BotBiometry.lambda$getBots$3(i, arrayList, hashMap, callback);
+                    BotBiometry.lambda$getBots$4(i, arrayList, hashMap, callback);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$getBots$3(int i, ArrayList arrayList, final HashMap hashMap, final Utilities.Callback callback) {
+    public static /* synthetic */ void lambda$getBots$4(int i, ArrayList arrayList, final HashMap hashMap, final Utilities.Callback callback) {
         final ArrayList<TLRPC.User> users = MessagesStorage.getInstance(i).getUsers(arrayList);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotBiometry$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                BotBiometry.lambda$getBots$2(users, hashMap, callback);
+                BotBiometry.lambda$getBots$3(users, hashMap, callback);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$getBots$2(ArrayList arrayList, HashMap hashMap, Utilities.Callback callback) {
+    public static /* synthetic */ void lambda$getBots$3(ArrayList arrayList, HashMap hashMap, Utilities.Callback callback) {
         ArrayList arrayList2 = new ArrayList();
         for (int i = 0; i < arrayList.size(); i++) {
             TLRPC.User user = (TLRPC.User) arrayList.get(i);

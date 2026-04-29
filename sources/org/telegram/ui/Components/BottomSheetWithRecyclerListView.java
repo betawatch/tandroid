@@ -130,8 +130,12 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
         this.editTextEmoji = editTextEmoji;
     }
 
-    public BottomSheetWithRecyclerListView(Context context, BaseFragment baseFragment, boolean z, final boolean z2, boolean z3, final boolean z4, ActionBarType actionBarType, Theme.ResourcesProvider resourcesProvider) {
-        super(context, z, resourcesProvider);
+    public BottomSheetWithRecyclerListView(Context context, BaseFragment baseFragment, boolean z, boolean z2, boolean z3, boolean z4, ActionBarType actionBarType, Theme.ResourcesProvider resourcesProvider) {
+        this(context, baseFragment, z, false, z2, z3, z4, actionBarType, resourcesProvider);
+    }
+
+    public BottomSheetWithRecyclerListView(Context context, BaseFragment baseFragment, boolean z, boolean z2, final boolean z3, boolean z4, final boolean z5, ActionBarType actionBarType, Theme.ResourcesProvider resourcesProvider) {
+        super(context, z, z2, resourcesProvider);
         final SizeNotifierFrameLayout sizeNotifierFrameLayout;
         this.topPadding = 0.4f;
         this.showShadow = true;
@@ -149,16 +153,16 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
         this.takeTranslationIntoAccount = false;
         this.savedScrollPosition = -1;
         this.baseFragment = baseFragment;
-        this.hasFixedSize = z2;
-        this.stackFromEnd = z4;
+        this.hasFixedSize = z3;
+        this.stackFromEnd = z5;
         this.headerShadowDrawable = ContextCompat.getDrawable(context, R.drawable.header_shadow).mutate();
-        if (z3) {
+        if (z4) {
             NestedSizeNotifierLayout nestedSizeNotifierLayout = new NestedSizeNotifierLayout(context) { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.1
                 @Override // org.telegram.ui.Components.NestedSizeNotifierLayout, android.widget.FrameLayout, android.view.View
                 protected void onMeasure(int i, int i2) {
                     BottomSheetWithRecyclerListView.this.contentHeight = View.MeasureSpec.getSize(i2);
                     BottomSheetWithRecyclerListView.this.onPreMeasure(i, i2);
-                    if (z4) {
+                    if (z5) {
                         i2 = View.MeasureSpec.makeMeasureSpec(BottomSheetWithRecyclerListView.this.contentHeight, TLObject.FLAG_30);
                     }
                     super.onMeasure(i, i2);
@@ -173,7 +177,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
 
                 @Override // android.view.ViewGroup
                 protected boolean drawChild(Canvas canvas, View view, long j) {
-                    if (!z2) {
+                    if (!z3) {
                         BottomSheetWithRecyclerListView bottomSheetWithRecyclerListView = BottomSheetWithRecyclerListView.this;
                         if (bottomSheetWithRecyclerListView.clipToActionBar && view == bottomSheetWithRecyclerListView.recyclerListView) {
                             canvas.save();
@@ -204,7 +208,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
                 protected void onMeasure(int i, int i2) {
                     BottomSheetWithRecyclerListView.this.contentHeight = View.MeasureSpec.getSize(i2);
                     BottomSheetWithRecyclerListView.this.onPreMeasure(i, i2);
-                    if (z4) {
+                    if (z5) {
                         i2 = View.MeasureSpec.makeMeasureSpec(BottomSheetWithRecyclerListView.this.contentHeight, TLObject.FLAG_30);
                     }
                     if (BottomSheetWithRecyclerListView.this.editTextEmoji != null) {
@@ -263,7 +267,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
 
                 @Override // android.view.ViewGroup
                 protected boolean drawChild(Canvas canvas, View view, long j) {
-                    if (!z2) {
+                    if (!z3) {
                         BottomSheetWithRecyclerListView bottomSheetWithRecyclerListView = BottomSheetWithRecyclerListView.this;
                         if (bottomSheetWithRecyclerListView.clipToActionBar && view == bottomSheetWithRecyclerListView.recyclerListView) {
                             canvas.save();
@@ -291,7 +295,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
                 */
-                protected void onLayout(boolean z5, int i, int i2, int i3, int i4) {
+                protected void onLayout(boolean z6, int i, int i2, int i3, int i4) {
                     int i5;
                     int i6;
                     int i7;
@@ -301,7 +305,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
                     int measuredHeight;
                     int measuredHeight2;
                     if (BottomSheetWithRecyclerListView.this.editTextEmoji == null) {
-                        super.onLayout(z5, i, i2, i3, i4);
+                        super.onLayout(z6, i, i2, i3, i4);
                         return;
                     }
                     int childCount = getChildCount();
@@ -386,8 +390,8 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
             }
 
             @Override // androidx.recyclerview.widget.LinearLayoutManager
-            public void scrollToPositionWithOffset(int i, int i2, boolean z5) {
-                super.scrollToPositionWithOffset(i, i2, z5);
+            public void scrollToPositionWithOffset(int i, int i2, boolean z6) {
+                super.scrollToPositionWithOffset(i, i2, z6);
             }
 
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
@@ -396,7 +400,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
             }
         };
         this.layoutManager = linearLayoutManager;
-        if (z4) {
+        if (z5) {
             linearLayoutManager.setStackFromEnd(true);
         }
         this.recyclerListView.setLayoutManager(this.layoutManager);
@@ -405,7 +409,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
             nestedSizeNotifierLayout2.setBottomSheetContainerView(getContainer());
             this.nestedSizeNotifierLayout.setTargetListView(this.recyclerListView);
         }
-        if (z2) {
+        if (z3) {
             this.recyclerListView.setHasFixedSize(true);
             RecyclerListView recyclerListView = this.recyclerListView;
             recyclerListView.setAdapter(createAdapter(recyclerListView));
