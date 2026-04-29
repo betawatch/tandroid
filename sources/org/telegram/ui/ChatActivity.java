@@ -1812,7 +1812,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 return;
             }
             TLRPC.Chat chat = ChatActivity.this.currentChat;
-            if (chat == null || ChatObject.canUserDoAction(chat, 26)) {
+            if (chat == null || ChatObject.isChannelAndNotMegaGroup(chat) || ChatObject.canUserDoAction(ChatActivity.this.currentChat, 26)) {
                 ReactionsEffectOverlay.removeCurrent(false);
                 String doubleTapReaction = ChatActivity.this.getMediaDataController().getDoubleTapReaction();
                 if (doubleTapReaction.startsWith("animated_")) {
@@ -47305,9 +47305,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         BulletinFactory.of(this).createEmojiBulletin(findDocument, LocaleController.getString(R.string.ChatMultipleReactionsPromo)).setDuration(5000).show();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:125:0x0277  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x02b9  */
-    /* JADX WARN: Removed duplicated region for block: B:132:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x027f  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x02c1  */
+    /* JADX WARN: Removed duplicated region for block: B:134:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -47390,7 +47390,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 return;
             }
         }
-        if (messageObject2.hasReaction(visibleReaction) && (chat = this.currentChat) != null && !ChatObject.canUserDoAction(chat, 26)) {
+        if (messageObject2.hasReaction(visibleReaction) && (chat = this.currentChat) != null && !ChatObject.isChannelAndNotMegaGroup(chat) && !ChatObject.canUserDoAction(this.currentChat, 26)) {
             BulletinFactory.of(this).createSimpleBulletin(R.raw.e_hand_2, LocaleController.getString(R.string.SendReactionsIsRestrictedInThisChat)).show();
             return;
         }
