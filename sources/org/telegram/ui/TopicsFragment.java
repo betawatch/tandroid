@@ -2505,7 +2505,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
 
     private void checkLoading() {
         this.loadingTopics = this.topicsController.isLoading(this.chatId);
-        if (this.topicsEmptyView != null && (this.forumTopics.size() == 0 || (this.forumTopics.size() == 1 && ((Item) this.forumTopics.get(0)).topic.id == 1))) {
+        if (this.topicsEmptyView != null && (this.forumTopics.size() == 0 || (this.forumTopics.size() == 1 && ((Item) this.forumTopics.get(0)).topic != null && ((Item) this.forumTopics.get(0)).topic.id == 1))) {
             this.topicsEmptyView.showProgress(this.loadingTopics, this.fragmentBeginToShow);
         }
         TopicsRecyclerView topicsRecyclerView = this.recyclerListView;
@@ -3181,7 +3181,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             int size = this.forumTopics.size();
             ArrayList arrayList = new ArrayList(this.forumTopics);
             this.forumTopics.clear();
-            if (UserObject.isBotForumWithEditableTopics(this.currentAccount, -this.chatId) && this.openedForForward) {
+            if (UserObject.isBotForum(this.currentAccount, -this.chatId) && this.openedForForward) {
                 this.forumTopics.add(new Item(3, null));
             }
             for (int i = 0; i < topics.size(); i++) {
@@ -3363,64 +3363,65 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            if (i == 0 || i == 3) {
-                TopicDialogCell topicDialogCell = TopicsFragment.this.new TopicDialogCell(null, viewGroup.getContext(), true, false);
-                if (i == 3) {
-                    topicDialogCell.setForumIcon(ForumUtilities.createTopicDrawable("", ForumBubbleDrawable.serverSupportedColor[0], false));
-                    topicDialogCell.setTitleOverride(LocaleController.getString(R.string.BotForumAskForStartNewChatTitle));
-                    topicDialogCell.setCustomMessage(LocaleController.getString(R.string.BotForumAskForStartNewChatForward));
-                }
-                topicDialogCell.inPreviewMode = ((BaseFragment) TopicsFragment.this).inPreviewMode;
-                topicDialogCell.setArchivedPullAnimation(TopicsFragment.this.pullForegroundDrawable);
-                return new RecyclerListView.Holder(topicDialogCell);
-            }
-            if (i == 2) {
-                return new RecyclerListView.Holder(TopicsFragment.this.emptyView = new View(TopicsFragment.this.getContext()) { // from class: org.telegram.ui.TopicsFragment.Adapter.1
-                    HashMap precalcEllipsized = new HashMap();
+            if (i != 0 && i != 3) {
+                if (i == 2) {
+                    return new RecyclerListView.Holder(TopicsFragment.this.emptyView = new View(TopicsFragment.this.getContext()) { // from class: org.telegram.ui.TopicsFragment.Adapter.1
+                        HashMap precalcEllipsized = new HashMap();
 
-                    @Override // android.view.View
-                    protected void onMeasure(int i2, int i3) {
-                        int i4;
-                        int dp;
-                        int size = View.MeasureSpec.getSize(i2);
-                        int dp2 = AndroidUtilities.dp(64.0f);
-                        int i5 = 0;
-                        int i6 = 0;
-                        for (int i7 = 0; i7 < Adapter.this.getArray().size(); i7++) {
-                            if (Adapter.this.getArray().get(i7) != null && ((Item) Adapter.this.getArray().get(i7)).topic != null) {
-                                String str = ((Item) Adapter.this.getArray().get(i7)).topic.title;
-                                Boolean bool = (Boolean) this.precalcEllipsized.get(str);
-                                if (bool == null) {
-                                    int dp3 = AndroidUtilities.dp(LocaleController.isRTL ? 18.0f : (TopicsFragment.this.isInPreviewMode() ? 11 : 50) + 4);
-                                    if (LocaleController.isRTL) {
-                                        i4 = size - dp3;
-                                        dp = AndroidUtilities.dp((TopicsFragment.this.isInPreviewMode() ? 11 : 50) + 13);
-                                    } else {
-                                        i4 = size - dp3;
-                                        dp = AndroidUtilities.dp(22.0f);
+                        @Override // android.view.View
+                        protected void onMeasure(int i2, int i3) {
+                            int i4;
+                            int dp;
+                            int size = View.MeasureSpec.getSize(i2);
+                            int dp2 = AndroidUtilities.dp(64.0f);
+                            int i5 = 0;
+                            int i6 = 0;
+                            for (int i7 = 0; i7 < Adapter.this.getArray().size(); i7++) {
+                                if (Adapter.this.getArray().get(i7) != null && ((Item) Adapter.this.getArray().get(i7)).topic != null) {
+                                    String str = ((Item) Adapter.this.getArray().get(i7)).topic.title;
+                                    Boolean bool = (Boolean) this.precalcEllipsized.get(str);
+                                    if (bool == null) {
+                                        int dp3 = AndroidUtilities.dp(LocaleController.isRTL ? 18.0f : (TopicsFragment.this.isInPreviewMode() ? 11 : 50) + 4);
+                                        if (LocaleController.isRTL) {
+                                            i4 = size - dp3;
+                                            dp = AndroidUtilities.dp((TopicsFragment.this.isInPreviewMode() ? 11 : 50) + 13);
+                                        } else {
+                                            i4 = size - dp3;
+                                            dp = AndroidUtilities.dp(22.0f);
+                                        }
+                                        bool = Boolean.valueOf(Theme.dialogs_namePaint[0].measureText(str) <= ((float) ((i4 - dp) - ((int) Math.ceil((double) Theme.dialogs_timePaint.measureText("00:00"))))));
+                                        this.precalcEllipsized.put(str, bool);
                                     }
-                                    bool = Boolean.valueOf(Theme.dialogs_namePaint[0].measureText(str) <= ((float) ((i4 - dp) - ((int) Math.ceil((double) Theme.dialogs_timePaint.measureText("00:00"))))));
-                                    this.precalcEllipsized.put(str, bool);
+                                    int dp4 = AndroidUtilities.dp((!bool.booleanValue() ? 20 : 0) + 64);
+                                    if (((Item) Adapter.this.getArray().get(i7)).topic.id == 1) {
+                                        dp2 = dp4;
+                                    }
+                                    if (((Item) Adapter.this.getArray().get(i7)).topic.hidden) {
+                                        i5++;
+                                    }
+                                    i6 += dp4;
                                 }
-                                int dp4 = AndroidUtilities.dp((!bool.booleanValue() ? 20 : 0) + 64);
-                                if (((Item) Adapter.this.getArray().get(i7)).topic.id == 1) {
-                                    dp2 = dp4;
-                                }
-                                if (((Item) Adapter.this.getArray().get(i7)).topic.hidden) {
-                                    i5++;
-                                }
-                                i6 += dp4;
                             }
+                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(Math.max(0, i5 > 0 ? (((TopicsFragment.this.recyclerListView.getMeasuredHeight() - TopicsFragment.this.recyclerListView.getPaddingTop()) - TopicsFragment.this.recyclerListView.getPaddingBottom()) - i6) + dp2 : 0), TLObject.FLAG_30));
                         }
-                        super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(Math.max(0, i5 > 0 ? (((TopicsFragment.this.recyclerListView.getMeasuredHeight() - TopicsFragment.this.recyclerListView.getPaddingTop()) - TopicsFragment.this.recyclerListView.getPaddingBottom()) - i6) + dp2 : 0), TLObject.FLAG_30));
-                    }
-                });
+                    });
+                }
+                FlickerLoadingView flickerLoadingView = new FlickerLoadingView(viewGroup.getContext());
+                flickerLoadingView.setViewType(24);
+                flickerLoadingView.setIsSingleCell(true);
+                flickerLoadingView.showDate(true);
+                return new RecyclerListView.Holder(flickerLoadingView);
             }
-            FlickerLoadingView flickerLoadingView = new FlickerLoadingView(viewGroup.getContext());
-            flickerLoadingView.setViewType(24);
-            flickerLoadingView.setIsSingleCell(true);
-            flickerLoadingView.showDate(true);
-            return new RecyclerListView.Holder(flickerLoadingView);
+            TopicDialogCell topicDialogCell = TopicsFragment.this.new TopicDialogCell(null, viewGroup.getContext(), true, false);
+            if (i == 3) {
+                boolean isBotForumWithEditableTopics = UserObject.isBotForumWithEditableTopics(((BaseFragment) TopicsFragment.this).currentAccount, -TopicsFragment.this.chatId);
+                topicDialogCell.setForumIcon(ForumUtilities.createTopicDrawable("", ForumBubbleDrawable.serverSupportedColor[0], false));
+                topicDialogCell.setTitleOverride(LocaleController.getString(!isBotForumWithEditableTopics ? R.string.BotForumAskForStartOffNewChatTitle : R.string.BotForumAskForStartNewChatTitle));
+                topicDialogCell.setCustomMessage(LocaleController.getString(!isBotForumWithEditableTopics ? R.string.BotForumAskForStartOffNewChatForward : R.string.BotForumAskForStartNewChatForward));
+            }
+            topicDialogCell.inPreviewMode = ((BaseFragment) TopicsFragment.this).inPreviewMode;
+            topicDialogCell.setArchivedPullAnimation(TopicsFragment.this.pullForegroundDrawable);
+            return new RecyclerListView.Holder(topicDialogCell);
         }
 
         /* JADX WARN: Removed duplicated region for block: B:44:0x0108  */

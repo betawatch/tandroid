@@ -140,6 +140,7 @@ import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundPro
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
 import org.telegram.ui.Components.chat.ViewPositionWatcher;
+import org.telegram.ui.Components.emojiview.FoundEmojiPacksRecyclerView;
 import org.telegram.ui.Components.emojiview.FoundStickerPackButton;
 import org.telegram.ui.Components.emojiview.FoundStickerPackButtonContainer;
 import org.telegram.ui.Components.emojiview.FoundStickerPackCell;
@@ -8671,7 +8672,7 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
 
     /* JADX INFO: Access modifiers changed from: private */
     class EmojiSearchAdapter extends RecyclerListView.SelectionAdapter {
-        private UniversalRecyclerView foundPacksListView;
+        private FoundEmojiPacksRecyclerView foundPacksListView;
         private boolean isCompleted;
         private String lastSearchAlias;
         private String lastSearchEmojiString;
@@ -8685,7 +8686,7 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
         private final ArrayList packs = new ArrayList();
 
         public EmojiSearchAdapter(Context context) {
-            UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(context, EmojiView.this.currentAccount, -1, false, new Utilities.Callback2() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$$ExternalSyntheticLambda0
+            FoundEmojiPacksRecyclerView foundEmojiPacksRecyclerView = new FoundEmojiPacksRecyclerView(context, EmojiView.this.currentAccount, -1, false, new Utilities.Callback2() { // from class: org.telegram.ui.Components.EmojiView$EmojiSearchAdapter$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     EmojiView.EmojiSearchAdapter.this.foundPackListFillItems((ArrayList) obj, (UniversalAdapter) obj2);
@@ -8697,8 +8698,8 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
                 }
             }, null, EmojiView.this.resourcesProvider, -1, 0) { // from class: org.telegram.ui.Components.EmojiView.EmojiSearchAdapter.1
             };
-            this.foundPacksListView = universalRecyclerView;
-            universalRecyclerView.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f));
+            this.foundPacksListView = foundEmojiPacksRecyclerView;
+            foundEmojiPacksRecyclerView.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f));
             this.foundPacksListView.setClipToPadding(false);
             this.foundPacksListView.adapter.setApplyBackground(false);
             this.foundPacksListView.setNestedScrollingEnabled(false);
@@ -8766,6 +8767,9 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
             EmojiView.this.animatorSearchEmojiPackSelected.setValue(this.selectedPackId != 0, true);
             notifyDataSetChanged();
             EmojiView.this.emojiSearchField.hideKeyboard();
+            if (this.selectedPackId != 0) {
+                this.foundPacksListView.scrollOnSelect(view);
+            }
         }
 
         public void resetSelectedPackId() {
@@ -10228,7 +10232,7 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
     class StickersSearchGridAdapter extends RecyclerListView.SelectionAdapter {
         private Context context;
         private int emojiSearchId;
-        private UniversalRecyclerView foundPacksListView;
+        private FoundEmojiPacksRecyclerView foundPacksListView;
         private boolean isCompleted;
         private int reqId;
         private int reqId2;
@@ -10597,7 +10601,7 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
 
         public StickersSearchGridAdapter(Context context) {
             this.context = context;
-            UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(context, EmojiView.this.currentAccount, -1, false, new Utilities.Callback2() { // from class: org.telegram.ui.Components.EmojiView$StickersSearchGridAdapter$$ExternalSyntheticLambda1
+            FoundEmojiPacksRecyclerView foundEmojiPacksRecyclerView = new FoundEmojiPacksRecyclerView(context, EmojiView.this.currentAccount, -1, false, new Utilities.Callback2() { // from class: org.telegram.ui.Components.EmojiView$StickersSearchGridAdapter$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     EmojiView.StickersSearchGridAdapter.this.foundPackListFillItems((ArrayList) obj, (UniversalAdapter) obj2);
@@ -10609,8 +10613,8 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
                 }
             }, null, EmojiView.this.resourcesProvider, -1, 0) { // from class: org.telegram.ui.Components.EmojiView.StickersSearchGridAdapter.2
             };
-            this.foundPacksListView = universalRecyclerView;
-            universalRecyclerView.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f));
+            this.foundPacksListView = foundEmojiPacksRecyclerView;
+            foundEmojiPacksRecyclerView.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f));
             this.foundPacksListView.setClipToPadding(false);
             this.foundPacksListView.adapter.setApplyBackground(false);
             this.foundPacksListView.setNestedScrollingEnabled(false);
@@ -10678,6 +10682,9 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
             EmojiView.this.animatorSearchStickerPackSelected.setValue(this.selectedPackId != 0, true);
             notifyDataSetChanged();
             EmojiView.this.stickersSearchField.hideKeyboard();
+            if (this.selectedPackId != 0) {
+                this.foundPacksListView.scrollOnSelect(view);
+            }
         }
 
         public void resetSelectedPackId() {
@@ -10799,18 +10806,18 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            FrameLayout frameLayout;
+            ViewGroup viewGroup2;
             View view;
             boolean z = true;
             switch (i) {
                 case 0:
-                    frameLayout = new StickerEmojiCell(this.context, z, EmojiView.this.resourcesProvider) { // from class: org.telegram.ui.Components.EmojiView.StickersSearchGridAdapter.3
+                    viewGroup2 = new StickerEmojiCell(this.context, z, EmojiView.this.resourcesProvider) { // from class: org.telegram.ui.Components.EmojiView.StickersSearchGridAdapter.3
                         @Override // android.widget.FrameLayout, android.view.View
                         public void onMeasure(int i2, int i3) {
                             super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(82.0f), TLObject.FLAG_30));
                         }
                     };
-                    view = frameLayout;
+                    view = viewGroup2;
                     break;
                 case 1:
                     view = new EmptyCell(this.context);
@@ -10834,7 +10841,7 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
                     view = view2;
                     break;
                 case 5:
-                    frameLayout = new FrameLayout(this.context) { // from class: org.telegram.ui.Components.EmojiView.StickersSearchGridAdapter.4
+                    viewGroup2 = new FrameLayout(this.context) { // from class: org.telegram.ui.Components.EmojiView.StickersSearchGridAdapter.4
                         @Override // android.widget.FrameLayout, android.view.View
                         protected void onMeasure(int i2, int i3) {
                             super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec((int) ((((EmojiView.this.stickersGridView.getMeasuredHeight() - EmojiView.this.searchFieldHeight) - AndroidUtilities.dp(8.0f)) / 3) * 1.7f), TLObject.FLAG_30));
@@ -10847,14 +10854,14 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
                     int i2 = Theme.key_chat_emojiPanelEmptyText;
                     imageView.setColorFilter(new PorterDuffColorFilter(emojiView.getThemedColor(i2), PorterDuff.Mode.MULTIPLY));
                     imageView.setTranslationY(-AndroidUtilities.dp(24.0f));
-                    frameLayout.addView(imageView, LayoutHelper.createFrame(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 28.0f));
+                    viewGroup2.addView(imageView, LayoutHelper.createFrame(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 28.0f));
                     TextView textView = new TextView(this.context);
                     textView.setText(LocaleController.getString(R.string.NoStickersFound));
                     textView.setTextSize(1, 16.0f);
                     textView.setTextColor(EmojiView.this.getThemedColor(i2));
-                    frameLayout.addView(textView, LayoutHelper.createFrame(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 9.0f));
-                    frameLayout.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-                    view = frameLayout;
+                    viewGroup2.addView(textView, LayoutHelper.createFrame(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 9.0f));
+                    viewGroup2.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
+                    view = viewGroup2;
                     break;
                 case 6:
                 default:

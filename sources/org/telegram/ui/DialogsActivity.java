@@ -6198,6 +6198,11 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         }
 
         @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
+        public /* synthetic */ void onEmojiViewTabChanged() {
+            ChatActivityEnterView.ChatActivityEnterViewDelegate.-CC.$default$onEmojiViewTabChanged(this);
+        }
+
+        @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
         public /* synthetic */ void onKeyboardRequested() {
             ChatActivityEnterView.ChatActivityEnterViewDelegate.-CC.$default$onKeyboardRequested(this);
         }
@@ -9643,19 +9648,19 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:117:0x0451  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x0468  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x04ac  */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x04d2  */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x0382  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x045e  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x0475  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x04b9  */
+    /* JADX WARN: Removed duplicated region for block: B:140:0x04df  */
+    /* JADX WARN: Removed duplicated region for block: B:212:0x038f  */
     /* JADX WARN: Removed duplicated region for block: B:21:0x0059  */
-    /* JADX WARN: Removed duplicated region for block: B:228:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:232:0x0067  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x027b A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:28:0x027c  */
-    /* JADX WARN: Removed duplicated region for block: B:297:0x024a  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x037c  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x03a0  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x03c5  */
+    /* JADX WARN: Removed duplicated region for block: B:301:0x024a  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0389  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x03ad  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x03d2  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -9841,7 +9846,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     }
                     if (this.onlySelect) {
                         if (validateSlowModeDialog(j2)) {
-                            if (!getMessagesController().isForum(j2) && (!this.selectedDialogs.isEmpty() || (this.initialDialogsType == 3 && this.selectAlertString != null))) {
+                            if ((!getMessagesController().isForum(j2) || isBotForumWithEmptyTopics(j2)) && (!this.selectedDialogs.isEmpty() || (this.initialDialogsType == 3 && this.selectAlertString != null))) {
                                 if (this.selectedDialogs.contains(Long.valueOf(j2)) || checkCanWrite(j2)) {
                                     boolean addOrRemoveSelectedDialog = addOrRemoveSelectedDialog(j2, view);
                                     SearchViewPager searchViewPager5 = this.searchViewPager;
@@ -9854,7 +9859,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                                 }
                                 return;
                             }
-                            if (this.canSelectTopics && (getMessagesController().isForum(j2) || getMessagesController().isMonoForumWithManageRights(j2))) {
+                            if (this.canSelectTopics && ((getMessagesController().isForum(j2) && !isBotForumWithEmptyTopics(j2)) || getMessagesController().isMonoForumWithManageRights(j2))) {
                                 Bundle bundle2 = new Bundle();
                                 bundle2.putLong("chat_id", -j2);
                                 bundle2.putBoolean("for_select", true);
@@ -10136,6 +10141,18 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         j5 = 0;
         if (j2 == j5) {
         }
+    }
+
+    private boolean isBotForumWithEmptyTopics(long j) {
+        if (j < 0) {
+            return false;
+        }
+        TLRPC.User user = getMessagesController().getUser(Long.valueOf(j));
+        if (!UserObject.isBotForum(user)) {
+            return false;
+        }
+        ArrayList<TLRPC.TL_forumTopic> topics = MessagesController.getInstance(this.currentAccount).getTopicsController().getTopics(-user.id);
+        return (topics == null || topics.isEmpty()) && MessagesController.getInstance(this.currentAccount).getTopicsController().endIsReached(-user.id);
     }
 
     public static ChatActivity highlightFoundQuote(ChatActivity chatActivity, MessageObject messageObject) {

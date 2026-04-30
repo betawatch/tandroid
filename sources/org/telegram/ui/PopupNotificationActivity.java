@@ -406,6 +406,11 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             }
 
             @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
+            public /* synthetic */ void onEmojiViewTabChanged() {
+                ChatActivityEnterView.ChatActivityEnterViewDelegate.-CC.$default$onEmojiViewTabChanged(this);
+            }
+
+            @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
             public /* synthetic */ void onKeyboardRequested() {
                 ChatActivityEnterView.ChatActivityEnterViewDelegate.-CC.$default$onKeyboardRequested(this);
             }

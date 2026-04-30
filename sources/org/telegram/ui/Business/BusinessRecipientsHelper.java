@@ -335,34 +335,37 @@ public class BusinessRecipientsHelper {
             }
             arrayList.add(UItem.asButton(101, LocaleController.getString(R.string.BusinessChatsIncluded), str).setEnabled(z));
         }
-        if (this.bot || this.exclude) {
-            if ((flags & 1) != 0) {
-                if (!TextUtils.isEmpty("")) {
-                    str3 = ", ";
+        boolean z2 = this.bot;
+        if (z2 || this.exclude) {
+            if (!z2 || this.exclude) {
+                if ((flags & 1) != 0) {
+                    if (!TextUtils.isEmpty("")) {
+                        str3 = ", ";
+                    }
+                    str3 = str3 + LocaleController.getString(R.string.FilterExistingChats);
                 }
-                str3 = str3 + LocaleController.getString(R.string.FilterExistingChats);
-            }
-            if ((flags & 2) != 0) {
-                if (!TextUtils.isEmpty(str3)) {
-                    str3 = str3 + ", ";
+                if ((flags & 2) != 0) {
+                    if (!TextUtils.isEmpty(str3)) {
+                        str3 = str3 + ", ";
+                    }
+                    str3 = str3 + LocaleController.getString(R.string.FilterNewChats);
                 }
-                str3 = str3 + LocaleController.getString(R.string.FilterNewChats);
-            }
-            if ((flags & 4) != 0) {
-                if (!TextUtils.isEmpty(str3)) {
-                    str3 = str3 + ", ";
+                if ((flags & 4) != 0) {
+                    if (!TextUtils.isEmpty(str3)) {
+                        str3 = str3 + ", ";
+                    }
+                    str3 = str3 + LocaleController.getString(R.string.FilterContacts);
                 }
-                str3 = str3 + LocaleController.getString(R.string.FilterContacts);
-            }
-            if ((flags & 8) != 0) {
-                if (!TextUtils.isEmpty(str3)) {
-                    str3 = str3 + ", ";
+                if ((flags & 8) != 0) {
+                    if (!TextUtils.isEmpty(str3)) {
+                        str3 = str3 + ", ";
+                    }
+                    str3 = str3 + LocaleController.getString(R.string.FilterNonContacts);
                 }
-                str3 = str3 + LocaleController.getString(R.string.FilterNonContacts);
             }
             if (!this.neverShow.isEmpty()) {
                 if (!TextUtils.isEmpty(str3)) {
-                    str3 = str3 + " + " + this.alwaysShow.size();
+                    str3 = str3 + " + " + this.neverShow.size();
                 } else {
                     str3 = str3 + LocaleController.formatPluralStringComma("Chats", this.neverShow.size());
                 }

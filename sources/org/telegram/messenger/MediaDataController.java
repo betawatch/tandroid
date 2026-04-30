@@ -1962,27 +1962,32 @@ public class MediaDataController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$setPlaceholderImage$31(String str, BackupImageView backupImageView, String str2, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
         TLRPC.Document document;
+        int i;
         if (tL_messages_stickerSet == null) {
             return;
         }
-        int i = 0;
-        while (true) {
-            if (i >= tL_messages_stickerSet.packs.size()) {
+        ArrayList<Emoji.EmojiSpanRange> parseEmojis = Emoji.parseEmojis(str);
+        for (int i2 = 0; i2 < parseEmojis.size(); i2++) {
+            parseEmojis.get(i2).code = Emoji.fixEmoji(parseEmojis.get(i2).code.toString());
+        }
+        int i3 = 0;
+        loop1: while (true) {
+            if (i3 >= tL_messages_stickerSet.documents.size()) {
+                document = null;
                 break;
             }
-            if (tL_messages_stickerSet.packs.get(i).documents.isEmpty() || !TextUtils.equals(tL_messages_stickerSet.packs.get(i).emoticon, str)) {
-                i++;
-            } else {
-                long longValue = tL_messages_stickerSet.packs.get(i).documents.get(0).longValue();
-                for (int i2 = 0; i2 < tL_messages_stickerSet.documents.size(); i2++) {
-                    if (tL_messages_stickerSet.documents.get(i2).id == longValue) {
-                        document = tL_messages_stickerSet.documents.get(i2);
-                        break;
-                    }
+            TLRPC.Document document2 = tL_messages_stickerSet.documents.get(i3);
+            Iterator<Emoji.EmojiSpanRange> it = parseEmojis.iterator();
+            while (it.hasNext()) {
+                Emoji.EmojiSpanRange next = it.next();
+                while (i < tL_messages_stickerSet.packs.size()) {
+                    i = (tL_messages_stickerSet.packs.get(i).documents.contains(Long.valueOf(document2.id)) && TextUtils.equals(Emoji.fixEmoji(tL_messages_stickerSet.packs.get(i).emoticon), next.code)) ? 0 : i + 1;
                 }
             }
+            document = document2;
+            break loop1;
+            i3++;
         }
-        document = null;
         if (document != null) {
             backupImageView.setImage(ImageLocation.getForDocument(document), str2, DocumentObject.getSvgThumb(document, Theme.key_windowBackgroundWhiteGrayIcon, 0.2f, 1.0f, null), 0, document);
             backupImageView.invalidate();

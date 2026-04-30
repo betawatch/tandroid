@@ -667,6 +667,10 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                             topViewCell.setEmoji(i4);
                         }
                     } else {
+                        int i5 = item.intValue;
+                        if (i5 != 0) {
+                            topViewCell.setEmojiSize(i5);
+                        }
                         topViewCell.setEmoji(item.subtext.toString(), item.textValue.toString());
                     }
                     if (TextUtils.isEmpty(item.animatedText)) {
@@ -688,11 +692,11 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                         if (obj2 instanceof Drawable) {
                             textCell.setTextAndIcon(item.text, (Drawable) obj2, hasDivider);
                         } else {
-                            int i5 = item.iconResId;
-                            if (i5 == 0) {
+                            int i6 = item.iconResId;
+                            if (i6 == 0) {
                                 textCell.setText(item.text, hasDivider);
                             } else {
-                                textCell.setTextAndIcon(item.text, i5, hasDivider);
+                                textCell.setTextAndIcon(item.text, i6, hasDivider);
                             }
                         }
                     } else {
@@ -700,17 +704,17 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                         if (obj3 instanceof Drawable) {
                             textCell.setTextAndValueAndIcon(item.text, item.textValue, (Drawable) obj3, hasDivider);
                         } else {
-                            int i6 = item.iconResId;
-                            if (i6 == 0) {
+                            int i7 = item.iconResId;
+                            if (i7 == 0) {
                                 textCell.setTextAndValue(item.text, item.textValue, hasDivider);
                             } else {
-                                textCell.setTextAndValueAndIcon(item.text, item.textValue, i6, hasDivider);
+                                textCell.setTextAndValueAndIcon(item.text, item.textValue, i7, hasDivider);
                             }
                         }
                     }
                     if (item.accent) {
-                        int i7 = Theme.key_windowBackgroundWhiteBlueText4;
-                        textCell.setColors(i7, i7);
+                        int i8 = Theme.key_windowBackgroundWhiteBlueText4;
+                        textCell.setColors(i8, i8);
                     } else if (item.red) {
                         textCell.setColors(Theme.key_text_RedBold, Theme.key_text_RedRegular);
                     } else {
@@ -834,6 +838,8 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                 case 13:
                     UserCell userCell2 = (UserCell) viewHolder.itemView;
                     userCell2.setFromUItem(this.currentAccount, item, hasDivider);
+                    CharSequence charSequence3 = item.textValue;
+                    userCell2.setQuery(charSequence3 != null ? charSequence3.toString().toLowerCase() : null);
                     userCell2.setAddButtonVisible(!item.checked);
                     userCell2.setCloseIcon(item.clickCallback);
                     break;
@@ -843,8 +849,8 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     slideChooseView.setMinAllowedIndex((int) item.longValue);
                     slideChooseView.setCallback(new SlideChooseView.Callback() { // from class: org.telegram.ui.Components.UniversalAdapter$$ExternalSyntheticLambda2
                         @Override // org.telegram.ui.Components.SlideChooseView.Callback
-                        public final void onOptionSelected(int i8) {
-                            UniversalAdapter.lambda$onBindViewHolder$1(UItem.this, i8);
+                        public final void onOptionSelected(int i9) {
+                            UniversalAdapter.lambda$onBindViewHolder$1(UItem.this, i9);
                         }
 
                         @Override // org.telegram.ui.Components.SlideChooseView.Callback
@@ -914,9 +920,9 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     if (item.transparent) {
                         viewHolder.itemView.setBackgroundColor(0);
                     } else {
-                        int i8 = item.iconResId;
-                        if (i8 != 0) {
-                            viewHolder.itemView.setBackgroundColor(i8);
+                        int i9 = item.iconResId;
+                        if (i9 != 0) {
+                            viewHolder.itemView.setBackgroundColor(i9);
                         }
                     }
                     viewHolder.itemView.setId(item.id);
@@ -971,13 +977,13 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                                 } else if (obj8 instanceof TLRPC.User) {
                                     str = UserObject.getUserName((TLRPC.User) obj8);
                                 }
-                                CharSequence charSequence3 = charSequence;
+                                CharSequence charSequence4 = charSequence;
                                 String str2 = str;
                                 boolean z5 = item.locked;
                                 Object obj9 = item.object2;
                                 profileSearchCell.allowBotOpenButton(z5, obj9 instanceof Utilities.Callback ? (Utilities.Callback) obj9 : null);
                                 profileSearchCell.setRectangularAvatar(item.red);
-                                profileSearchCell.setData(obj8, null, str2, charSequence3, false, false);
+                                profileSearchCell.setData(obj8, null, str2, charSequence4, false, false);
                                 profileSearchCell.setChecked(item.checked, false);
                                 profileSearchCell.useSeparator = hasDivider;
                                 break;
@@ -986,13 +992,13 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                         charSequence = "";
                         if (!(obj8 instanceof TLRPC.Chat)) {
                         }
-                        CharSequence charSequence32 = charSequence;
+                        CharSequence charSequence42 = charSequence;
                         String str22 = str;
                         boolean z52 = item.locked;
                         Object obj92 = item.object2;
                         profileSearchCell.allowBotOpenButton(z52, obj92 instanceof Utilities.Callback ? (Utilities.Callback) obj92 : null);
                         profileSearchCell.setRectangularAvatar(item.red);
-                        profileSearchCell.setData(obj8, null, str22, charSequence32, false, false);
+                        profileSearchCell.setData(obj8, null, str22, charSequence42, false, false);
                         profileSearchCell.setChecked(item.checked, false);
                         profileSearchCell.useSeparator = hasDivider;
                     } else {
@@ -1000,26 +1006,26 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                             charSequence = LocaleController.formatPluralStringSpaced("BotUsers", i3);
                             if (!(obj8 instanceof TLRPC.Chat)) {
                             }
-                            CharSequence charSequence322 = charSequence;
+                            CharSequence charSequence422 = charSequence;
                             String str222 = str;
                             boolean z522 = item.locked;
                             Object obj922 = item.object2;
                             profileSearchCell.allowBotOpenButton(z522, obj922 instanceof Utilities.Callback ? (Utilities.Callback) obj922 : null);
                             profileSearchCell.setRectangularAvatar(item.red);
-                            profileSearchCell.setData(obj8, null, str222, charSequence322, false, false);
+                            profileSearchCell.setData(obj8, null, str222, charSequence422, false, false);
                             profileSearchCell.setChecked(item.checked, false);
                             profileSearchCell.useSeparator = hasDivider;
                         }
                         charSequence = "";
                         if (!(obj8 instanceof TLRPC.Chat)) {
                         }
-                        CharSequence charSequence3222 = charSequence;
+                        CharSequence charSequence4222 = charSequence;
                         String str2222 = str;
                         boolean z5222 = item.locked;
                         Object obj9222 = item.object2;
                         profileSearchCell.allowBotOpenButton(z5222, obj9222 instanceof Utilities.Callback ? (Utilities.Callback) obj9222 : null);
                         profileSearchCell.setRectangularAvatar(item.red);
-                        profileSearchCell.setData(obj8, null, str2222, charSequence3222, false, false);
+                        profileSearchCell.setData(obj8, null, str2222, charSequence4222, false, false);
                         profileSearchCell.setChecked(item.checked, false);
                         profileSearchCell.useSeparator = hasDivider;
                     }
@@ -1089,13 +1095,13 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                 case 43:
                     TextSettingsCell textSettingsCell = (TextSettingsCell) viewHolder.itemView;
                     textSettingsCell.getValueBackupImageView().setImageDrawable(null);
-                    CharSequence charSequence4 = item.text;
-                    if (charSequence4 != null) {
-                        CharSequence charSequence5 = item.subtext;
-                        if (charSequence5 != null) {
-                            textSettingsCell.setTextAndValue(charSequence4, charSequence5, hasDivider);
+                    CharSequence charSequence5 = item.text;
+                    if (charSequence5 != null) {
+                        CharSequence charSequence6 = item.subtext;
+                        if (charSequence6 != null) {
+                            textSettingsCell.setTextAndValue(charSequence5, charSequence6, hasDivider);
                         } else {
-                            textSettingsCell.setText(charSequence4, hasDivider);
+                            textSettingsCell.setText(charSequence5, hasDivider);
                         }
                     }
                     textSettingsCell.setIcon(item.iconResId);

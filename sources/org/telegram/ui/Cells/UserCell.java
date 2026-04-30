@@ -75,6 +75,7 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
     public boolean needDivider;
     private final int padding;
     private Drawable premiumDrawable;
+    private String query;
     protected Theme.ResourcesProvider resourcesProvider;
     private boolean selfAsSavedMessages;
     private int statusColor;
@@ -366,6 +367,11 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
 
     public void setData(Object obj, CharSequence charSequence, CharSequence charSequence2, int i, boolean z) {
         setData(obj, null, charSequence, charSequence2, i, z);
+    }
+
+    public void setQuery(String str) {
+        this.query = str;
+        update(0);
     }
 
     public void setData(Object obj, TLRPC.EncryptedChat encryptedChat, CharSequence charSequence, CharSequence charSequence2, int i, boolean z) {
@@ -675,6 +681,16 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
         CharSequence charSequence2 = this.currentName;
         if (charSequence2 != null) {
             this.lastName = null;
+            String str3 = this.query;
+            if (str3 != null) {
+                charSequence2 = AndroidUtilities.highlightText(charSequence2, str3, this.resourcesProvider);
+            }
+            if (charSequence2 != null) {
+                try {
+                    charSequence2 = Emoji.replaceEmoji(charSequence2, this.nameTextView.getPaint().getFontMetricsInt(), false);
+                } catch (Exception unused) {
+                }
+            }
             this.nameTextView.setText(charSequence2);
         } else {
             if (user != null) {
@@ -688,10 +704,14 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
                 this.lastName = "";
             }
             CharSequence charSequence3 = this.lastName;
+            String str4 = this.query;
+            if (str4 != null) {
+                charSequence3 = AndroidUtilities.highlightText(charSequence3, str4, this.resourcesProvider);
+            }
             if (charSequence3 != null) {
                 try {
                     charSequence3 = Emoji.replaceEmoji(charSequence3, this.nameTextView.getPaint().getFontMetricsInt(), false);
-                } catch (Exception unused) {
+                } catch (Exception unused2) {
                 }
             }
             this.nameTextView.setText(charSequence3);
@@ -738,7 +758,12 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
         }
         if (this.currentStatus != null) {
             this.statusTextView.setTextColor(this.statusColor);
-            this.statusTextView.setText(this.currentStatus);
+            CharSequence charSequence4 = this.currentStatus;
+            String str5 = this.query;
+            if (str5 != null) {
+                charSequence4 = AndroidUtilities.highlightText(charSequence4, str5, this.resourcesProvider);
+            }
+            this.statusTextView.setText(charSequence4);
         } else if (user != null) {
             if (user.bot) {
                 this.statusTextView.setTextColor(this.statusColor);
@@ -840,8 +865,11 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
         long j = uItem.dialogId;
         if (j > 0) {
             TLRPC.User user = MessagesController.getInstance(i).getUser(Long.valueOf(j));
+            String publicUsername = UserObject.getPublicUsername(user);
             if (user != null) {
-                if (user.bot) {
+                if (!TextUtils.isEmpty(publicUsername)) {
+                    string2 = "@" + publicUsername;
+                } else if (user.bot) {
                     string2 = LocaleController.getString(R.string.Bot);
                 } else if (user.contact) {
                     string2 = LocaleController.getString(R.string.FilterContact);

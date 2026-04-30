@@ -4802,6 +4802,18 @@ public class MessageObject {
         return false;
     }
 
+    public boolean hasChosenReaction(ReactionsLayoutInBubble.VisibleReaction visibleReaction) {
+        if (hasReactions() && visibleReaction != null) {
+            for (int i = 0; i < this.messageOwner.reactions.results.size(); i++) {
+                TLRPC.ReactionCount reactionCount = this.messageOwner.reactions.results.get(i);
+                if (visibleReaction.isSame(reactionCount.reaction)) {
+                    return reactionCount.chosen;
+                }
+            }
+        }
+        return false;
+    }
+
     public static void updatePollResults(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, TLRPC.PollResults pollResults) {
         TLRPC.Poll poll;
         ArrayList<TLRPC.PollAnswerVoters> arrayList;

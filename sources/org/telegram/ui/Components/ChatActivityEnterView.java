@@ -565,6 +565,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             public static void $default$onEditTextScroll(ChatActivityEnterViewDelegate chatActivityEnterViewDelegate) {
             }
 
+            public static void $default$onEmojiViewTabChanged(ChatActivityEnterViewDelegate chatActivityEnterViewDelegate) {
+            }
+
             public static void $default$onKeyboardRequested(ChatActivityEnterViewDelegate chatActivityEnterViewDelegate) {
             }
 
@@ -636,6 +639,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         void onContextMenuOpen();
 
         void onEditTextScroll();
+
+        void onEmojiViewTabChanged();
 
         void onKeyboardRequested();
 
@@ -13160,11 +13165,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     ChatActivityEnterView.this.stickersExpanded = true;
                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 1);
                     ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
-                    chatActivityEnterView.stickersExpandedHeight = ((((chatActivityEnterView.sizeNotifierLayout.getHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - ActionBar.getCurrentActionBarHeight()) - ChatActivityEnterView.this.getHeight()) + Theme.chat_composeShadowDrawable.getIntrinsicHeight();
+                    chatActivityEnterView.stickersExpandedHeight = ((((chatActivityEnterView.sizeNotifierLayout.getHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(11.0f)) - ActionBar.getCurrentActionBarHeight()) - ChatActivityEnterView.this.getHeight();
                     if (ChatActivityEnterView.this.searchingType == 2) {
                         ChatActivityEnterView chatActivityEnterView2 = ChatActivityEnterView.this;
                         int i = chatActivityEnterView2.stickersExpandedHeight;
-                        int dp = AndroidUtilities.dp(120.0f);
+                        int dp = AndroidUtilities.dp(175.0f);
                         Point point = AndroidUtilities.displaySize;
                         chatActivityEnterView2.stickersExpandedHeight = Math.min(i, dp + (point.x > point.y ? ChatActivityEnterView.this.keyboardHeightLand : ChatActivityEnterView.this.keyboardHeight));
                     }
@@ -13803,6 +13808,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
 
         @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
         public void onTabOpened(int i) {
+            ChatActivityEnterView.this.delegate.onEmojiViewTabChanged();
             ChatActivityEnterView.this.delegate.onStickersTab(i == 3);
             ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
             chatActivityEnterView.post(chatActivityEnterView.updateExpandabilityRunnable);
@@ -14539,6 +14545,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
+    public boolean isCurrentPageEmoji() {
+        EmojiView emojiView = this.emojiView;
+        return emojiView != null && emojiView.getCurrentPage() == 0;
+    }
+
     public void openKeyboardInternal() {
         ChatActivity chatActivity;
         if ((hasBotWebView() && botCommandsMenuIsShowing()) || BaseFragment.hasSheets(this.parentFragment)) {
@@ -15147,12 +15158,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
         Point point = AndroidUtilities.displaySize;
         int i = point.x > point.y ? this.keyboardHeightLand : this.keyboardHeight;
-        int currentActionBarHeight = ((((this.originalViewHeight - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - ActionBar.getCurrentActionBarHeight()) - getHeight()) + Theme.chat_composeShadowDrawable.getIntrinsicHeight();
+        int dp = ((((this.originalViewHeight - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(11.0f)) - ActionBar.getCurrentActionBarHeight()) - getHeight();
         if (this.searchingType == 2) {
-            currentActionBarHeight = Math.min(currentActionBarHeight, AndroidUtilities.dp(120.0f) + i);
+            dp = Math.min(dp, AndroidUtilities.dp(175.0f) + i);
         }
         int i2 = this.emojiView.getLayoutParams().height;
-        if (i2 == currentActionBarHeight) {
+        if (i2 == dp) {
             return;
         }
         Animator animator = this.stickersExpansionAnim;
@@ -15160,8 +15171,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             animator.cancel();
             this.stickersExpansionAnim = null;
         }
-        this.stickersExpandedHeight = currentActionBarHeight;
-        if (i2 > currentActionBarHeight) {
+        this.stickersExpandedHeight = dp;
+        if (i2 > dp) {
             final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda16
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -15236,7 +15247,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
         WindowInsetsInAppController windowInsetsInAppController = this.windowInsetsInAppController;
         if (windowInsetsInAppController != null) {
-            windowInsetsInAppController.requestInAppKeyboardHeightIncludeNavbar(currentActionBarHeight);
+            windowInsetsInAppController.requestInAppKeyboardHeightIncludeNavbar(dp);
         }
     }
 
@@ -15289,10 +15300,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 }
                 int height = this.sizeNotifierLayout.getHeight();
                 this.originalViewHeight = height;
-                int currentActionBarHeight = ((((height - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - ActionBar.getCurrentActionBarHeight()) - getHeight()) + Theme.chat_composeShadowDrawable.getIntrinsicHeight();
-                this.stickersExpandedHeight = currentActionBarHeight;
+                int dp = ((((height - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(11.0f)) - ActionBar.getCurrentActionBarHeight()) - getHeight();
+                this.stickersExpandedHeight = dp;
                 if (this.searchingType == 2) {
-                    this.stickersExpandedHeight = Math.min(currentActionBarHeight, AndroidUtilities.dp(120.0f) + i);
+                    this.stickersExpandedHeight = Math.min(dp, AndroidUtilities.dp(175.0f) + i);
                 }
                 if (this.windowInsetsInAppController == null) {
                     this.emojiView.getLayoutParams().height = this.stickersExpandedHeight;
