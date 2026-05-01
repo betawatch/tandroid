@@ -3274,25 +3274,25 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x0b6d  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x0bb9  */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x0be9  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x0c27  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x0c34  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0c4c  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x0c74  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x0c91  */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x0ce1  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x0d22  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x0da8  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x0e04  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x0e3c  */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x0dc3  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x0bf1  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x0b83  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0bcf  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x0bff  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x0c3d  */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x0c4a  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x0c62  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x0c8a  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x0ca7  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x0cf7  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x0d38  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x0dbe  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x0e1a  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x0e52  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x0dd9  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0c07  */
     /* JADX WARN: Type inference failed for: r0v113, types: [org.telegram.ui.ActionBar.ActionBar] */
     /* JADX WARN: Type inference failed for: r0v182, types: [org.telegram.ui.Components.RecyclerListView, org.telegram.ui.DialogsActivity$DialogsRecyclerView] */
     /* JADX WARN: Type inference failed for: r0v20, types: [android.widget.EditText, org.telegram.ui.Components.EditTextBoldCursor] */
-    /* JADX WARN: Type inference failed for: r0v267, types: [android.view.ViewGroup, org.telegram.ui.ActionBar.ActionBarMenuItem] */
+    /* JADX WARN: Type inference failed for: r0v268, types: [android.view.ViewGroup, org.telegram.ui.ActionBar.ActionBarMenuItem] */
     /* JADX WARN: Type inference failed for: r0v28, types: [org.telegram.ui.ActionBar.ActionBar] */
     /* JADX WARN: Type inference failed for: r0v51, types: [org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory] */
     /* JADX WARN: Type inference failed for: r0v52, types: [org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory] */
@@ -3303,13 +3303,13 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     /* JADX WARN: Type inference failed for: r15v0 */
     /* JADX WARN: Type inference failed for: r15v1, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r15v5 */
-    /* JADX WARN: Type inference failed for: r1v198, types: [org.telegram.ui.Components.RecyclerListView, org.telegram.ui.DialogsActivity$DialogsRecyclerView] */
     /* JADX WARN: Type inference failed for: r1v199, types: [org.telegram.ui.Components.RecyclerListView, org.telegram.ui.DialogsActivity$DialogsRecyclerView] */
     /* JADX WARN: Type inference failed for: r1v200, types: [org.telegram.ui.Components.RecyclerListView, org.telegram.ui.DialogsActivity$DialogsRecyclerView] */
-    /* JADX WARN: Type inference failed for: r1v201, types: [androidx.recyclerview.widget.RecyclerView, org.telegram.ui.DialogsActivity$DialogsRecyclerView] */
-    /* JADX WARN: Type inference failed for: r1v205, types: [org.telegram.ui.Components.RecyclerListView, org.telegram.ui.DialogsActivity$DialogsRecyclerView] */
+    /* JADX WARN: Type inference failed for: r1v201, types: [org.telegram.ui.Components.RecyclerListView, org.telegram.ui.DialogsActivity$DialogsRecyclerView] */
+    /* JADX WARN: Type inference failed for: r1v202, types: [androidx.recyclerview.widget.RecyclerView, org.telegram.ui.DialogsActivity$DialogsRecyclerView] */
     /* JADX WARN: Type inference failed for: r1v206, types: [org.telegram.ui.Components.RecyclerListView, org.telegram.ui.DialogsActivity$DialogsRecyclerView] */
-    /* JADX WARN: Type inference failed for: r1v208, types: [androidx.recyclerview.widget.LinearLayoutManager] */
+    /* JADX WARN: Type inference failed for: r1v207, types: [org.telegram.ui.Components.RecyclerListView, org.telegram.ui.DialogsActivity$DialogsRecyclerView] */
+    /* JADX WARN: Type inference failed for: r1v209, types: [androidx.recyclerview.widget.LinearLayoutManager] */
     /* JADX WARN: Type inference failed for: r1v26, types: [org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory] */
     /* JADX WARN: Type inference failed for: r3v50, types: [android.graphics.drawable.BitmapDrawable] */
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -3557,7 +3557,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         if (this.initialDialogsType == 0) {
             ActionBarMenuItem addItem4 = createMenu.addItem(4, R.drawable.ic_ab_other);
             this.optionsItem = addItem4;
-            addItem4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda21
+            addItem4.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
+            this.optionsItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda21
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     DialogsActivity.this.lambda$createView$11(view);
@@ -4074,7 +4075,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         this.searchTabsAndFiltersLayout.addView(this.filtersView, LayoutHelper.createFrame(-1, -1, 48));
         FragmentFloatingButton fragmentFloatingButton = new FragmentFloatingButton(context, this.resourceProvider, true);
         this.floatingButtonStories = fragmentFloatingButton;
-        fragmentFloatingButton.setImageResource(R.drawable.outline_fab_story_24);
+        fragmentFloatingButton.setContentDescription(LocaleController.getString(R.string.StoryPrivacyButtonPost));
+        this.floatingButtonStories.setImageResource(R.drawable.outline_fab_story_24);
         this.floatingButtonStories.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -4266,7 +4268,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     return super.isInScheduleMode();
                 }
 
-                @Override // android.view.View
+                @Override // org.telegram.ui.Components.ChatActivityEnterView.SendButton, android.view.View
                 public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
                     super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                     accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", DialogsActivity.this.selectedDialogs.size(), new Object[0]));

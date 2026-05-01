@@ -14,28 +14,36 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RadialGradient;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.RenderNode;
 import android.graphics.Shader;
 import android.graphics.SurfaceTexture;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.PixelCopy;
 import android.view.Surface;
 import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewConfiguration;
+import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.webkit.WebView;
 import android.widget.OverScroller;
 import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import androidx.customview.widget.ExploreByTouchHelper;
 import com.google.zxing.common.detector.MathUtils;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotFullscreenButtons$$ExternalSyntheticApiModelOutline2;
 import org.telegram.messenger.LocaleController;
@@ -54,6 +62,7 @@ import org.telegram.ui.bots.BotWebViewSheet;
 
 /* loaded from: classes4.dex */
 public class BottomSheetTabsOverlay extends View {
+    private OverlayAccessibilityHelper accessibilityHelper;
     private View actionBarLayout;
     private final AnimatedFloat animatedCount;
     private ValueAnimator animator;
@@ -154,6 +163,10 @@ public class BottomSheetTabsOverlay extends View {
         ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
         this.maximumVelocity = viewConfiguration.getScaledMaximumFlingVelocity();
         this.minimumVelocity = viewConfiguration.getScaledMinimumFlingVelocity();
+        OverlayAccessibilityHelper overlayAccessibilityHelper = new OverlayAccessibilityHelper(this);
+        this.accessibilityHelper = overlayAccessibilityHelper;
+        ViewCompat.setAccessibilityDelegate(this, overlayAccessibilityHelper);
+        setImportantForAccessibility(2);
         ViewCompat.setOnApplyWindowInsetsListener(this, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ActionBar.BottomSheetTabsOverlay$$ExternalSyntheticLambda7
             @Override // androidx.core.view.OnApplyWindowInsetsListener
             public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
@@ -162,6 +175,15 @@ public class BottomSheetTabsOverlay extends View {
                 return onApplyWindowInsets;
             }
         });
+    }
+
+    @Override // android.view.View
+    protected boolean dispatchHoverEvent(MotionEvent motionEvent) {
+        OverlayAccessibilityHelper overlayAccessibilityHelper;
+        if (this.openProgress <= 0.0f || (overlayAccessibilityHelper = this.accessibilityHelper) == null || !overlayAccessibilityHelper.dispatchHoverEvent(motionEvent)) {
+            return super.dispatchHoverEvent(motionEvent);
+        }
+        return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -733,6 +755,7 @@ public class BottomSheetTabsOverlay extends View {
             bottomSheetTabs.drawTabs = false;
             bottomSheetTabs.invalidate();
         }
+        setModalAccessibility(z);
         invalidate();
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.openProgress, z ? 1.0f : 0.0f);
         this.openAnimator = ofFloat;
@@ -768,6 +791,209 @@ public class BottomSheetTabsOverlay extends View {
     public /* synthetic */ void lambda$animateOpen$6(ValueAnimator valueAnimator) {
         this.openProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         invalidate();
+    }
+
+    private void setModalAccessibility(boolean z) {
+        setImportantForAccessibility(z ? 1 : 2);
+        ViewParent parent = getParent();
+        if (parent instanceof ViewGroup) {
+            ViewGroup viewGroup = (ViewGroup) parent;
+            for (int i = 0; i < viewGroup.getChildCount(); i++) {
+                View childAt = viewGroup.getChildAt(i);
+                if (childAt != this) {
+                    childAt.setImportantForAccessibility(z ? 4 : 0);
+                }
+            }
+        }
+        OverlayAccessibilityHelper overlayAccessibilityHelper = this.accessibilityHelper;
+        if (overlayAccessibilityHelper != null) {
+            overlayAccessibilityHelper.invalidateRoot();
+        }
+        if (z) {
+            sendAccessibilityEvent(32);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    class OverlayAccessibilityHelper extends ExploreByTouchHelper {
+        private final Rect tmpRect;
+
+        public OverlayAccessibilityHelper(View view) {
+            super(view);
+            this.tmpRect = new Rect();
+        }
+
+        @Override // androidx.customview.widget.ExploreByTouchHelper
+        protected int getVirtualViewAt(float f, float f2) {
+            if (BottomSheetTabsOverlay.this.openProgress < 0.5f) {
+                return -1;
+            }
+            if (BottomSheetTabsOverlay.this.closeAllButtonBackground != null && BottomSheetTabsOverlay.this.closeAllButtonBackground.getBounds().contains((int) f, (int) f2)) {
+                return 1;
+            }
+            for (int size = BottomSheetTabsOverlay.this.tabs.size() - 1; size >= 0; size--) {
+                TabPreview tabPreview = (TabPreview) BottomSheetTabsOverlay.this.tabs.get(size);
+                if (Math.abs(tabPreview.dismissProgress) < 0.4f && tabPreview.clickBounds.contains(f, f2)) {
+                    Rect bounds = tabPreview.tabDrawable.closeRipple.getBounds();
+                    if (!bounds.isEmpty()) {
+                        RectF rectF = tabPreview.clickBounds;
+                        if (bounds.contains((int) (f - rectF.left), (int) ((f2 - rectF.top) - AndroidUtilities.dp(24.0f)))) {
+                            return size + 2000;
+                        }
+                    }
+                    return size + MediaDataController.MAX_STYLE_RUNS_COUNT;
+                }
+            }
+            return -1;
+        }
+
+        @Override // androidx.customview.widget.ExploreByTouchHelper
+        protected void getVisibleVirtualViews(List list) {
+            if (BottomSheetTabsOverlay.this.openProgress < 0.5f) {
+                return;
+            }
+            if (BottomSheetTabsOverlay.this.closeAllButtonBackground != null && !BottomSheetTabsOverlay.this.closeAllButtonBackground.getBounds().isEmpty()) {
+                list.add(1);
+            }
+            for (int i = 0; i < BottomSheetTabsOverlay.this.tabs.size(); i++) {
+                TabPreview tabPreview = (TabPreview) BottomSheetTabsOverlay.this.tabs.get(i);
+                if (Math.abs(tabPreview.dismissProgress) < 0.4f && !tabPreview.clickBounds.isEmpty()) {
+                    list.add(Integer.valueOf(i + MediaDataController.MAX_STYLE_RUNS_COUNT));
+                    BottomSheetTabs.TabDrawable tabDrawable = tabPreview.tabDrawable;
+                    if (tabDrawable != null && !tabDrawable.closeRipple.getBounds().isEmpty()) {
+                        list.add(Integer.valueOf(i + 2000));
+                    }
+                }
+            }
+        }
+
+        @Override // androidx.customview.widget.ExploreByTouchHelper
+        protected void onPopulateNodeForVirtualView(int i, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
+            int i2;
+            boolean z;
+            String str;
+            String str2;
+            accessibilityNodeInfoCompat.setClassName("android.widget.Button");
+            accessibilityNodeInfoCompat.addAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_CLICK);
+            if (i == 1) {
+                if (BottomSheetTabsOverlay.this.closeAllButtonBackground != null) {
+                    this.tmpRect.set(BottomSheetTabsOverlay.this.closeAllButtonBackground.getBounds());
+                } else {
+                    this.tmpRect.set(0, 0, 1, 1);
+                    accessibilityNodeInfoCompat.setVisibleToUser(false);
+                }
+                accessibilityNodeInfoCompat.setBoundsInParent(this.tmpRect);
+                accessibilityNodeInfoCompat.setContentDescription(LocaleController.getString(org.telegram.messenger.R.string.BotCloseAllTabs));
+                return;
+            }
+            if (i >= 2000) {
+                i2 = i - 2000;
+                z = true;
+            } else {
+                if (i < 1000) {
+                    this.tmpRect.set(0, 0, 1, 1);
+                    accessibilityNodeInfoCompat.setBoundsInParent(this.tmpRect);
+                    accessibilityNodeInfoCompat.setVisibleToUser(false);
+                    return;
+                }
+                i2 = i - MediaDataController.MAX_STYLE_RUNS_COUNT;
+                z = false;
+            }
+            if (i2 >= 0 && i2 < BottomSheetTabsOverlay.this.tabs.size()) {
+                TabPreview tabPreview = (TabPreview) BottomSheetTabsOverlay.this.tabs.get(i2);
+                BottomSheetTabs.WebTabData webTabData = tabPreview.tabData;
+                String title = (webTabData == null || webTabData.getTitle() == null) ? "" : tabPreview.tabData.getTitle();
+                if (z) {
+                    Rect bounds = tabPreview.tabDrawable.closeRipple.getBounds();
+                    RectF rectF = tabPreview.clickBounds;
+                    int i3 = (int) (rectF.left + bounds.left);
+                    int dp = (int) (rectF.top + AndroidUtilities.dp(24.0f) + bounds.top);
+                    RectF rectF2 = tabPreview.clickBounds;
+                    this.tmpRect.set(i3, dp, (int) (rectF2.left + bounds.right), (int) (rectF2.top + AndroidUtilities.dp(24.0f) + bounds.bottom));
+                    accessibilityNodeInfoCompat.setBoundsInParent(this.tmpRect);
+                    if (TextUtils.isEmpty(title)) {
+                        str2 = LocaleController.getString(org.telegram.messenger.R.string.Close);
+                    } else {
+                        str2 = LocaleController.getString(org.telegram.messenger.R.string.Close) + ", " + title;
+                    }
+                    accessibilityNodeInfoCompat.setContentDescription(str2);
+                    return;
+                }
+                Rect rect = this.tmpRect;
+                RectF rectF3 = tabPreview.clickBounds;
+                rect.set((int) rectF3.left, (int) rectF3.top, (int) rectF3.right, (int) rectF3.bottom);
+                accessibilityNodeInfoCompat.setBoundsInParent(this.tmpRect);
+                if (TextUtils.isEmpty(title)) {
+                    str = LocaleController.getString(org.telegram.messenger.R.string.Open);
+                } else {
+                    str = LocaleController.getString(org.telegram.messenger.R.string.Open) + ", " + title;
+                }
+                accessibilityNodeInfoCompat.setContentDescription(str);
+                return;
+            }
+            this.tmpRect.set(0, 0, 1, 1);
+            accessibilityNodeInfoCompat.setBoundsInParent(this.tmpRect);
+            accessibilityNodeInfoCompat.setVisibleToUser(false);
+        }
+
+        @Override // androidx.customview.widget.ExploreByTouchHelper
+        protected boolean onPerformActionForVirtualView(int i, int i2, Bundle bundle) {
+            int i3;
+            boolean z;
+            if (i2 != 16) {
+                return false;
+            }
+            if (i == 1) {
+                if (BottomSheetTabsOverlay.this.tabsView != null) {
+                    BottomSheetTabsOverlay.this.tabsView.removeAll();
+                }
+                BottomSheetTabsOverlay.this.closeTabsView();
+                return true;
+            }
+            if (i < 2000) {
+                if (i >= 1000) {
+                    i3 = i - MediaDataController.MAX_STYLE_RUNS_COUNT;
+                    z = false;
+                }
+                return false;
+            }
+            i3 = i - 2000;
+            z = true;
+            if (i3 >= 0 && i3 < BottomSheetTabsOverlay.this.tabs.size()) {
+                final TabPreview tabPreview = (TabPreview) BottomSheetTabsOverlay.this.tabs.get(i3);
+                if (z) {
+                    if (BottomSheetTabsOverlay.this.tabsView != null) {
+                        BottomSheetTabsOverlay.this.tabsView.removeTab(tabPreview.tabData, new Utilities.Callback() { // from class: org.telegram.ui.ActionBar.BottomSheetTabsOverlay$OverlayAccessibilityHelper$$ExternalSyntheticLambda0
+                            @Override // org.telegram.messenger.Utilities.Callback
+                            public final void run(Object obj) {
+                                BottomSheetTabsOverlay.OverlayAccessibilityHelper.this.lambda$onPerformActionForVirtualView$0(tabPreview, (Boolean) obj);
+                            }
+                        });
+                    }
+                    return true;
+                }
+                if (BottomSheetTabsOverlay.this.tabsView != null) {
+                    BottomSheetTabsOverlay.this.closeTabsView();
+                    tabPreview.webView = null;
+                    BottomSheetTabsOverlay.this.tabsView.openTab(tabPreview.tabData);
+                }
+                return true;
+            }
+            return false;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$onPerformActionForVirtualView$0(TabPreview tabPreview, Boolean bool) {
+            if (bool.booleanValue()) {
+                tabPreview.animateDismiss(1.0f);
+                if (BottomSheetTabsOverlay.this.tabsView.getTabs().isEmpty()) {
+                    BottomSheetTabsOverlay.this.closeTabsView();
+                    return;
+                }
+                return;
+            }
+            tabPreview.animateDismiss(0.0f);
+        }
     }
 
     private void drawDismissingTab(Canvas canvas) {

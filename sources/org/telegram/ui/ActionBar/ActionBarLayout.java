@@ -371,6 +371,59 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             setWillNotDraw(false);
         }
 
+        @Override // android.view.ViewGroup
+        public void onViewAdded(View view) {
+            super.onViewAdded(view);
+            updateChildrenAccessibilityImportance();
+        }
+
+        @Override // android.view.ViewGroup
+        public void onViewRemoved(View view) {
+            super.onViewRemoved(view);
+            updateChildrenAccessibilityImportance();
+        }
+
+        /* JADX WARN: Removed duplicated region for block: B:24:0x0037 A[Catch: Exception -> 0x0018, TRY_LEAVE, TryCatch #0 {Exception -> 0x0018, blocks: (B:2:0x0000, B:5:0x0009, B:7:0x0011, B:13:0x0022, B:22:0x0031, B:24:0x0037, B:33:0x001a), top: B:1:0x0000 }] */
+        /* JADX WARN: Removed duplicated region for block: B:26:0x003a A[SYNTHETIC] */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
+        private void updateChildrenAccessibilityImportance() {
+            int i;
+            try {
+                int childCount = getChildCount();
+                int i2 = childCount - 1;
+                while (true) {
+                    if (i2 < 0) {
+                        i2 = -1;
+                        break;
+                    }
+                    View childAt = getChildAt(i2);
+                    if ((childAt instanceof BaseFragment.AttachedSheetWindow) && childAt.getVisibility() == 0) {
+                        break;
+                    } else {
+                        i2--;
+                    }
+                }
+                for (int i3 = 0; i3 < childCount; i3++) {
+                    View childAt2 = getChildAt(i3);
+                    if (childAt2 != null) {
+                        if (i2 != -1 && i3 != i2) {
+                            i = 4;
+                            if (childAt2.getImportantForAccessibility() == i) {
+                                childAt2.setImportantForAccessibility(i);
+                            }
+                        }
+                        i = 0;
+                        if (childAt2.getImportantForAccessibility() == i) {
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+        }
+
         @Override // android.view.View
         public void setTranslationX(float f) {
             boolean z = (getTranslationX() == f || this.isSupportEdgeToEdge) ? false : true;

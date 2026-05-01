@@ -593,7 +593,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     LoginActivity.this.lambda$createView$3(view2);
                 }
             });
-            this.backButtonView.setContentDescription(LocaleController.getString(R.string.Back));
+            this.backButtonView.setContentDescription(LocaleController.getString(R.string.AccDescrGoBack));
             int dp = AndroidUtilities.dp(4.0f);
             this.backButtonView.setPadding(dp, dp, dp, dp);
             this.sizeNotifierFrameLayout.addView(this.backButtonView, LayoutHelper.createFrame(32, 32.0f, 51, 16.0f, 16.0f, 0.0f, 0.0f));
@@ -730,7 +730,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 LoginActivity.this.lambda$createView$3(view2);
             }
         });
-        this.backButtonView.setContentDescription(LocaleController.getString(R.string.Back));
+        this.backButtonView.setContentDescription(LocaleController.getString(R.string.AccDescrGoBack));
         int dp2 = AndroidUtilities.dp(4.0f);
         this.backButtonView.setPadding(dp2, dp2, dp2, dp2);
         this.sizeNotifierFrameLayout.addView(this.backButtonView, LayoutHelper.createFrame(32, 32.0f, 51, 16.0f, 16.0f, 0.0f, 0.0f));

@@ -17,6 +17,7 @@ import android.os.Build;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import androidx.collection.LongSparseArray;
@@ -28,7 +29,9 @@ import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
@@ -348,6 +351,7 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
             EmojiTabButton emojiTabButton = new EmojiTabButton(context, R.drawable.msg_emoji_stickers, false, false);
             this.toggleEmojiStickersTab = emojiTabButton;
             linearLayout2.addView(emojiTabButton);
+            this.toggleEmojiStickersTab.setContentDescription(LocaleController.getString(R.string.AccDescrStickers));
         }
         if (i == 3) {
             this.recentDrawableId = R.drawable.msg_emoji_smiles;
@@ -360,6 +364,7 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
             EmojiTabButton emojiTabButton2 = new EmojiTabButton(context, this.recentDrawableId, false, false);
             this.recentTab = emojiTabButton2;
             linearLayout3.addView(emojiTabButton2);
+            this.recentTab.setContentDescription(LocaleController.getString(R.string.RecentlyUsed));
             this.recentTab.id = Long.valueOf(-934918565);
         }
         if (z2) {
@@ -367,6 +372,7 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
             EmojiTabButton emojiTabButton3 = new EmojiTabButton(context, this.giftsDrawableId, false, false);
             this.giftsTab = emojiTabButton3;
             linearLayout4.addView(emojiTabButton3);
+            this.giftsTab.setContentDescription(LocaleController.getString(R.string.EmojiPackCollectibles));
             this.giftsTab.setAlpha(0.0f);
             this.giftsTab.id = Long.valueOf(98352451);
         }
@@ -384,6 +390,7 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
                 EmojiTabButton emojiTabButton4 = new EmojiTabButton(context, this.settingsDrawableId, false, true);
                 this.settingsTab = emojiTabButton4;
                 linearLayout6.addView(emojiTabButton4);
+                this.settingsTab.setContentDescription(LocaleController.getString(R.string.Settings));
                 this.settingsTab.id = Long.valueOf(1434631203);
                 this.settingsTab.setAlpha(0.0f);
             }
@@ -394,7 +401,9 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
         while (true) {
             int[] iArr = emojiTabsDrawableIds;
             if (i3 < iArr.length) {
-                this.contentView.addView(new EmojiTabButton(context, iArr[i3], false, i3 == 0));
+                EmojiTabButton emojiTabButton5 = new EmojiTabButton(context, iArr[i3], false, i3 == 0);
+                emojiTabButton5.setContentDescription(getEmojiCategoryName(i3));
+                this.contentView.addView(emojiTabButton5);
                 i3++;
             } else {
                 updateClickListeners();
@@ -867,6 +876,30 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
         this.animatedEmojiCacheType = i;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static String getEmojiCategoryName(int i) {
+        switch (i) {
+            case 0:
+                return LocaleController.getString(R.string.Emoji1);
+            case 1:
+                return LocaleController.getString(R.string.Emoji2);
+            case 2:
+                return LocaleController.getString(R.string.Emoji3);
+            case 3:
+                return LocaleController.getString(R.string.Emoji4);
+            case 4:
+                return LocaleController.getString(R.string.Emoji5);
+            case 5:
+                return LocaleController.getString(R.string.Emoji6);
+            case 6:
+                return LocaleController.getString(R.string.Emoji7);
+            case 7:
+                return LocaleController.getString(R.string.Emoji8);
+            default:
+                return null;
+        }
+    }
+
     public class EmojiTabButton extends ViewGroup {
         AnimatedEmojiDrawable animatedEmoji;
         TLRPC.Document animatedEmojiDocument;
@@ -878,6 +911,7 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
         private boolean isAnimatedEmoji;
         private boolean isVisible;
         public boolean keepAttached;
+        private Boolean lastLock;
         private ValueAnimator lockAnimator;
         private float lockT;
         private PremiumLockIconView lockView;
@@ -889,6 +923,44 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
         private boolean selected;
         EmojiView.EmojiPack setObject;
         public boolean shown;
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            TLRPC.Document findDocument;
+            TLRPC.StickerSet stickerSet;
+            String str;
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            CharSequence contentDescription = accessibilityNodeInfo.getContentDescription();
+            if (contentDescription == null) {
+                EmojiView.EmojiPack emojiPack = this.setObject;
+                if (emojiPack == null || (stickerSet = emojiPack.set) == null || (str = stickerSet.title) == null) {
+                    TLRPC.Document document = this.animatedEmojiDocument;
+                    if (document != null) {
+                        contentDescription = MessageObject.findAnimatedEmojiEmoticon(document, null);
+                    } else {
+                        Long l = this.animatedEmojiDocumentId;
+                        if (l != null && (findDocument = AnimatedEmojiDrawable.findDocument(UserConfig.selectedAccount, l.longValue())) != null) {
+                            contentDescription = MessageObject.findAnimatedEmojiEmoticon(findDocument, null);
+                        }
+                    }
+                } else {
+                    contentDescription = str;
+                }
+            }
+            Boolean bool = this.lastLock;
+            if (bool != null && !bool.booleanValue()) {
+                String string = LocaleController.getString(R.string.FeaturedStickersShort);
+                if (contentDescription == null) {
+                    contentDescription = string;
+                } else {
+                    contentDescription = ((Object) contentDescription) + ", " + string;
+                }
+            }
+            if (contentDescription != null) {
+                accessibilityNodeInfo.setContentDescription(contentDescription);
+            }
+            accessibilityNodeInfo.setSelected(this.selected);
+        }
 
         public Long id() {
             TLRPC.StickerSet stickerSet;
@@ -914,6 +986,7 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
         public EmojiTabButton(Context context, int i, int i2, boolean z, boolean z2) {
             super(context);
             this.shown = true;
+            setFocusable(true);
             this.round = z;
             this.forceSelector = z2;
             if (z) {
@@ -941,6 +1014,7 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
         public EmojiTabButton(Context context, int i, boolean z, boolean z2) {
             super(context);
             this.shown = true;
+            setFocusable(true);
             this.round = z;
             this.forceSelector = z2;
             if (z) {
@@ -959,6 +1033,7 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
         public EmojiTabButton(Context context, TLRPC.Document document, boolean z, boolean z2, boolean z3) {
             super(context);
             this.shown = true;
+            setFocusable(true);
             this.newly = true;
             this.round = z2;
             this.forceSelector = z3;
@@ -1020,6 +1095,7 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
         public EmojiTabButton(Context context, long j, boolean z, boolean z2, boolean z3) {
             super(context);
             this.shown = true;
+            setFocusable(true);
             this.newly = true;
             this.round = z2;
             this.forceSelector = z3;
@@ -1251,6 +1327,7 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
             if (this.lockView == null) {
                 return;
             }
+            this.lastLock = bool;
             if (bool == null) {
                 updateLock(false, z);
                 return;
@@ -1549,7 +1626,7 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
             linearLayout.setOrientation(0);
             addView(this.contentView, new FrameLayout.LayoutParams(-2, -1));
             for (int i = 0; i < EmojiTabsStrip.emojiTabsDrawableIds.length; i++) {
-                this.contentView.addView(new EmojiTabButton(context, EmojiTabsStrip.emojiTabsDrawableIds[i], EmojiTabsStrip.emojiTabsAnimatedDrawableIds[i], true, false) { // from class: org.telegram.ui.Components.EmojiTabsStrip.EmojiTabsView.2
+                EmojiTabButton emojiTabButton = new EmojiTabButton(context, EmojiTabsStrip.emojiTabsDrawableIds[i], EmojiTabsStrip.emojiTabsAnimatedDrawableIds[i], true, false) { // from class: org.telegram.ui.Components.EmojiTabsStrip.EmojiTabsView.2
                     {
                         EmojiTabsStrip emojiTabsStrip = EmojiTabsStrip.this;
                     }
@@ -1559,7 +1636,9 @@ public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
                         EmojiTabsView.this.intercept(motionEvent);
                         return super.onTouchEvent(motionEvent);
                     }
-                });
+                };
+                emojiTabButton.setContentDescription(EmojiTabsStrip.getEmojiCategoryName(i));
+                this.contentView.addView(emojiTabButton);
             }
         }
 

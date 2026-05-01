@@ -728,6 +728,10 @@ public class AccessibilityNodeInfoCompat {
         return this.mInfo.getExtras().getCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.STATE_DESCRIPTION_KEY");
     }
 
+    public void setContentDescription(CharSequence charSequence) {
+        this.mInfo.setContentDescription(charSequence);
+    }
+
     public void setStateDescription(CharSequence charSequence) {
         if (Build.VERSION.SDK_INT >= 30) {
             Api30Impl.setStateDescription(this.mInfo, charSequence);

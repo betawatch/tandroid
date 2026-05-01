@@ -10,6 +10,7 @@ import android.view.accessibility.AccessibilityManager;
 import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewParentCompat;
+import androidx.core.view.accessibility.AccessibilityEventCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityNodeProviderCompat;
 import androidx.core.view.accessibility.AccessibilityRecordCompat;
@@ -99,6 +100,20 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
             return false;
         }
         return ViewParentCompat.requestSendAccessibilityEvent(parent, this.mHost, createEvent(i, i2));
+    }
+
+    public final void invalidateRoot() {
+        invalidateVirtualView(-1, 1);
+    }
+
+    public final void invalidateVirtualView(int i, int i2) {
+        ViewParent parent;
+        if (i == Integer.MIN_VALUE || !this.mManager.isEnabled() || (parent = this.mHost.getParent()) == null) {
+            return;
+        }
+        AccessibilityEvent createEvent = createEvent(i, 2048);
+        AccessibilityEventCompat.setContentChangeTypes(createEvent, i2);
+        ViewParentCompat.requestSendAccessibilityEvent(parent, this.mHost, createEvent);
     }
 
     private void updateHoveredVirtualView(int i) {

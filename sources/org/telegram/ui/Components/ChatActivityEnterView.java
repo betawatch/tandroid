@@ -3234,6 +3234,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
         });
         this.sendButton.setOnLongClickListener(new ChatActivityEnterView$$ExternalSyntheticLambda9(this));
+        if (AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
+            this.sendButtonContainer.setOnLongClickListener(new ChatActivityEnterView$$ExternalSyntheticLambda9(this));
+        }
         SlowModeBtn slowModeBtn = new SlowModeBtn(activity);
         this.slowModeButton = slowModeBtn;
         slowModeBtn.setTextSize(18);
@@ -4296,8 +4299,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
         };
         this.doneButton = sendButton;
+        sendButton.setContentDescription(LocaleController.getString(R.string.EditMessage));
         if (z) {
-            ScaleStateListAnimator.apply(sendButton);
+            ScaleStateListAnimator.apply(this.doneButton);
         }
         this.textFieldContainer.addView(this.doneButton, LayoutHelper.createFrame(44, 44, 85));
     }
@@ -10955,6 +10959,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     ChatActivityEnterView.this.lambda$setEditingBusinessLink$63(view);
                 }
             });
+            this.doneButton.setContentDescription(LocaleController.getString(R.string.Done));
             this.doneButton.setVisibility(0);
             this.doneButton.setScaleX(0.1f);
             this.doneButton.setScaleY(0.1f);
@@ -16911,6 +16916,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             float dpf2 = AndroidUtilities.dpf2(3.0f);
             float dpf22 = AndroidUtilities.dpf2(38.0f);
             this.backgroundRect.set((getMeasuredWidth() - Math.max(dpf22, AndroidUtilities.dpf2(20.0f) + this.priceText.getCurrentWidth())) - dpf2, (getMeasuredHeight() - dpf22) - dpf2, getMeasuredWidth() - dpf2, getMeasuredHeight() - dpf2);
+        }
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setClassName("android.widget.Button");
         }
     }
 

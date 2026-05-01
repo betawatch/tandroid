@@ -9,6 +9,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import androidx.core.graphics.ColorUtils;
@@ -112,7 +113,25 @@ public class PremiumButtonView extends FrameLayout implements Loadable {
         this.iconView = rLottieImageView;
         rLottieImageView.setColorFilter(-1);
         this.iconView.setVisibility(8);
-        FrameLayout frameLayout = new FrameLayout(context);
+        FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.Premium.PremiumButtonView.2
+            @Override // android.view.View
+            public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+                AnimatedTextView animatedTextView2;
+                AnimatedTextView animatedTextView3;
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                accessibilityNodeInfo.setClassName("android.widget.Button");
+                CharSequence text = (!PremiumButtonView.this.showOverlay || (animatedTextView3 = PremiumButtonView.this.overlayTextView) == null) ? null : animatedTextView3.getText();
+                if (text == null && (animatedTextView2 = PremiumButtonView.this.buttonTextView) != null) {
+                    text = animatedTextView2.getText();
+                }
+                if (text != null) {
+                    accessibilityNodeInfo.setText(text);
+                    if (getContentDescription() == null) {
+                        accessibilityNodeInfo.setContentDescription(text);
+                    }
+                }
+            }
+        };
         this.buttonLayout = frameLayout;
         frameLayout.addView(linearLayout, LayoutHelper.createFrame(-2, -2, 17));
         this.buttonLayout.setBackground(Theme.createSimpleSelectorRoundRectDrawable(i, 0, ColorUtils.setAlphaComponent(-1, 120)));
@@ -122,7 +141,7 @@ public class PremiumButtonView extends FrameLayout implements Loadable {
         BadWayToMakeButtonRound.round(this);
         ScaleStateListAnimator.apply(this, 0.02f, 1.2f);
         if (z) {
-            AnimatedTextView animatedTextView2 = new AnimatedTextView(context, true, true, true) { // from class: org.telegram.ui.Components.Premium.PremiumButtonView.2
+            AnimatedTextView animatedTextView2 = new AnimatedTextView(context, true, true, true) { // from class: org.telegram.ui.Components.Premium.PremiumButtonView.3
                 @Override // org.telegram.ui.Components.AnimatedTextView, android.view.View
                 protected void onDraw(Canvas canvas) {
                     if (PremiumButtonView.this.loadingT > 0.0f) {
@@ -204,7 +223,7 @@ public class PremiumButtonView extends FrameLayout implements Loadable {
                     PremiumButtonView.this.lambda$setLoading$0(valueAnimator2);
                 }
             });
-            this.loadingAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Premium.PremiumButtonView.3
+            this.loadingAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Premium.PremiumButtonView.4
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     PremiumButtonView.this.loadingT = z ? 1.0f : 0.0f;
@@ -303,6 +322,7 @@ public class PremiumButtonView extends FrameLayout implements Loadable {
         this.showOverlay = true;
         this.drawOverlayColor = z;
         this.overlayTextView.setText(charSequence, z2);
+        this.overlayTextView.setContentDescription(charSequence);
         updateOverlay(z2);
     }
 
@@ -319,14 +339,14 @@ public class PremiumButtonView extends FrameLayout implements Loadable {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.overlayProgress, this.showOverlay ? 1.0f : 0.0f);
         this.overlayAnimator = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.PremiumButtonView.4
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Premium.PremiumButtonView.5
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator2) {
                 PremiumButtonView.this.overlayProgress = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
                 PremiumButtonView.this.updateOverlayProgress();
             }
         });
-        this.overlayAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Premium.PremiumButtonView.5
+        this.overlayAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Premium.PremiumButtonView.6
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 PremiumButtonView premiumButtonView = PremiumButtonView.this;
@@ -409,6 +429,7 @@ public class PremiumButtonView extends FrameLayout implements Loadable {
             this.buttonTextView.cancelAnimation();
         }
         this.buttonTextView.setText(str, z);
+        this.buttonLayout.setContentDescription(str);
         if (this.nonClickable) {
             return;
         }

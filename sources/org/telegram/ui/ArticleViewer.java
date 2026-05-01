@@ -39,6 +39,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.text.style.ClickableSpan;
 import android.text.style.MetricAffectingSpan;
 import android.text.style.URLSpan;
 import android.util.Property;
@@ -331,7 +332,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     private WindowView windowView;
     public static HashSet activeSheets = new HashSet();
     private static volatile ArticleViewer Instance = null;
-    public static final Property ARTICLE_VIEWER_INNER_TRANSLATION_X = new AnimationProperties.FloatProperty("innerTranslationX") { // from class: org.telegram.ui.ArticleViewer.1
+    public static final Property ARTICLE_VIEWER_INNER_TRANSLATION_X = new AnimationProperties.FloatProperty("innerTranslationX") { // from class: org.telegram.ui.ArticleViewer.2
         @Override // org.telegram.ui.Components.AnimationProperties.FloatProperty
         public void setValue(WindowView windowView, float f) {
             windowView.setInnerTranslationX(f);
@@ -373,13 +374,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         return null;
     }
 
-    static /* synthetic */ int access$13108(ArticleViewer articleViewer) {
+    static /* synthetic */ int access$13308(ArticleViewer articleViewer) {
         int i = articleViewer.lastBlockNum;
         articleViewer.lastBlockNum = i + 1;
         return i;
     }
 
-    static /* synthetic */ int access$2004(ArticleViewer articleViewer) {
+    static /* synthetic */ int access$2304(ArticleViewer articleViewer) {
         int i = articleViewer.pressCount + 1;
         articleViewer.pressCount = i;
         return i;
@@ -591,6 +592,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     public class DrawingText implements TextSelectionHelper.TextLayoutBlock {
+        private CharSequence accessibilityText;
         private boolean isDrawing;
         private View latestParentView;
         public LinkPath markPath;
@@ -719,6 +721,97 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         public CharSequence getPrefix() {
             return this.prefix;
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public CharSequence buildAccessibilityText(final WebpageAdapter webpageAdapter, DrawingText drawingText) {
+        if (drawingText == null || drawingText.textLayout == null) {
+            return null;
+        }
+        if (drawingText.accessibilityText != null) {
+            return drawingText.accessibilityText;
+        }
+        CharSequence text = drawingText.textLayout.getText();
+        if (!(text instanceof Spannable)) {
+            return text;
+        }
+        Spannable spannable = (Spannable) text;
+        TextPaintUrlSpan[] textPaintUrlSpanArr = (TextPaintUrlSpan[]) spannable.getSpans(0, spannable.length(), TextPaintUrlSpan.class);
+        CharSequence charSequence = text;
+        if (textPaintUrlSpanArr != null) {
+            charSequence = text;
+            if (textPaintUrlSpanArr.length != 0) {
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(spannable);
+                for (final TextPaintUrlSpan textPaintUrlSpan : textPaintUrlSpanArr) {
+                    int spanStart = spannableStringBuilder.getSpanStart(textPaintUrlSpan);
+                    int spanEnd = spannableStringBuilder.getSpanEnd(textPaintUrlSpan);
+                    if (spanStart >= 0 && spanEnd > spanStart) {
+                        spannableStringBuilder.setSpan(new ClickableSpan() { // from class: org.telegram.ui.ArticleViewer.1
+                            @Override // android.text.style.ClickableSpan
+                            public void onClick(View view) {
+                                ArticleViewer.this.handleLinkClick(webpageAdapter, textPaintUrlSpan);
+                            }
+                        }, spanStart, spanEnd, 33);
+                    }
+                }
+                drawingText.accessibilityText = spannableStringBuilder;
+                charSequence = spannableStringBuilder;
+            }
+        }
+        return charSequence;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void handleLinkClick(WebpageAdapter webpageAdapter, TextPaintUrlSpan textPaintUrlSpan) {
+        String url;
+        String str;
+        if (textPaintUrlSpan == null || (url = textPaintUrlSpan.getUrl()) == null) {
+            return;
+        }
+        BottomSheet bottomSheet = this.linkSheet;
+        if (bottomSheet != null) {
+            bottomSheet.lambda$new$0();
+            this.linkSheet = null;
+        }
+        int lastIndexOf = url.lastIndexOf(35);
+        boolean z = false;
+        if (lastIndexOf != -1) {
+            String lowerCase = !TextUtils.isEmpty(webpageAdapter.currentPage.cached_page.url) ? webpageAdapter.currentPage.cached_page.url.toLowerCase() : webpageAdapter.currentPage.url.toLowerCase();
+            try {
+                str = URLDecoder.decode(url.substring(lastIndexOf + 1), "UTF-8");
+            } catch (Exception unused) {
+                str = "";
+            }
+            if (lastIndexOf == 0 || url.toLowerCase().contains(lowerCase)) {
+                if (TextUtils.isEmpty(str)) {
+                    this.pages[0].layoutManager.scrollToPositionWithOffset(0, 0);
+                    checkScrollAnimated();
+                } else {
+                    scrollToAnchor(str, true);
+                }
+                z = true;
+            }
+        } else {
+            str = null;
+        }
+        if (z) {
+            return;
+        }
+        DrawingText drawingText = this.pressedLinkOwnerLayout;
+        openWebpageUrl(url, str, drawingText != null ? makeProgress(this.pressedLink, drawingText) : null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public CharSequence appendA11yLabel(CharSequence charSequence, int i) {
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        if (charSequence != null) {
+            spannableStringBuilder.append(charSequence);
+        }
+        if (spannableStringBuilder.length() > 0) {
+            spannableStringBuilder.append((CharSequence) ", ");
+        }
+        spannableStringBuilder.append((CharSequence) LocaleController.getString(i));
+        return spannableStringBuilder;
     }
 
     private class TextSizeCell extends FrameLayout {
@@ -865,7 +958,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 ArticleViewer articleViewer = ArticleViewer.this;
                 articleViewer.pendingCheckForLongPress = articleViewer.new CheckForLongPress();
             }
-            ArticleViewer.this.pendingCheckForLongPress.currentPressCount = ArticleViewer.access$2004(ArticleViewer.this);
+            ArticleViewer.this.pendingCheckForLongPress.currentPressCount = ArticleViewer.access$2304(ArticleViewer.this);
             if (ArticleViewer.this.windowView != null) {
                 ArticleViewer.this.windowView.postDelayed(ArticleViewer.this.pendingCheckForLongPress, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
             }
@@ -894,6 +987,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         public WindowView(Context context) {
             super(context);
             this.blackPaint = new Paint();
+            this.alpha = 1.0f;
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:16:0x005d, code lost:
@@ -1965,7 +2059,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 }
                 this.pageSwitchAnimation.setDuration(320L);
                 this.pageSwitchAnimation.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
-                this.pageSwitchAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.2
+                this.pageSwitchAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.3
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         ArticleViewer.this.pages[1].cleanup();
@@ -2115,7 +2209,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             }
             animatorSet.setDuration(Math.max((int) ((420.0f / frameLayout.getMeasuredWidth()) * measuredWidth), 250));
             animatorSet.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
-            animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.3
+            animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.4
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     if (ArticleViewer.this.windowView.movingPage) {
@@ -2186,7 +2280,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         animatorSet2.playTogether(ObjectAnimator.ofFloat(this.pages[0], (Property<PageLayout, Float>) View.TRANSLATION_X, pageLayout.getMeasuredWidth()));
         animatorSet2.setDuration(420L);
         animatorSet2.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
-        animatorSet2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.4
+        animatorSet2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.5
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 if (!ArticleViewer.this.windowView.openingPage) {
@@ -2269,7 +2363,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             }
             animatorSet.setDuration(Math.max((int) ((420.0f / frameLayout.getMeasuredWidth()) * measuredWidth), 250));
             animatorSet.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
-            animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.5
+            animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.6
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     if (ArticleViewer.this.windowView.movingPage) {
@@ -2337,7 +2431,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         animatorSet2.playTogether(ObjectAnimator.ofFloat(this.pages[0], (Property<PageLayout, Float>) View.TRANSLATION_X, pageLayout.getMeasuredWidth()));
         animatorSet2.setDuration(420L);
         animatorSet2.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
-        animatorSet2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.6
+        animatorSet2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.7
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 if (!ArticleViewer.this.windowView.openingPage) {
@@ -2429,7 +2523,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 TextSelectionHelper.ArticleTextSelectionHelper articleTextSelectionHelper = new TextSelectionHelper.ArticleTextSelectionHelper();
                 this.textSelectionHelperBottomSheet = articleTextSelectionHelper;
                 articleTextSelectionHelper.setParentView(linearLayout);
-                this.textSelectionHelperBottomSheet.setCallback(new TextSelectionHelper.Callback() { // from class: org.telegram.ui.ArticleViewer.7
+                this.textSelectionHelperBottomSheet.setCallback(new TextSelectionHelper.Callback() { // from class: org.telegram.ui.ArticleViewer.8
                     @Override // org.telegram.ui.Cells.TextSelectionHelper.Callback
                     public void onStateChanged(boolean z2) {
                         if (ArticleViewer.this.linkSheet != null) {
@@ -2437,7 +2531,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                         }
                     }
                 });
-                TextView textView = new TextView(this.parentActivity) { // from class: org.telegram.ui.ArticleViewer.8
+                TextView textView = new TextView(this.parentActivity) { // from class: org.telegram.ui.ArticleViewer.9
                     @Override // android.widget.TextView, android.view.View
                     protected void onDraw(Canvas canvas) {
                         canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, ArticleViewer.dividerPaint);
@@ -2454,7 +2548,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 onCreateViewHolder.itemView.setTag("bottomSheet");
                 linearLayout.addView(onCreateViewHolder.itemView, LayoutHelper.createLinear(-1, -2, 0.0f, 7.0f, 0.0f, 0.0f));
                 TextSelectionHelper.TextSelectionOverlay overlayView = this.textSelectionHelperBottomSheet.getOverlayView(this.parentActivity);
-                FrameLayout frameLayout = new FrameLayout(this.parentActivity) { // from class: org.telegram.ui.ArticleViewer.9
+                FrameLayout frameLayout = new FrameLayout(this.parentActivity) { // from class: org.telegram.ui.ArticleViewer.10
                     @Override // android.view.ViewGroup, android.view.View
                     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
                         TextSelectionHelper.TextSelectionOverlay overlayView2 = ArticleViewer.this.textSelectionHelperBottomSheet.getOverlayView(getContext());
@@ -2481,7 +2575,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                         super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(linearLayout.getMeasuredHeight() + AndroidUtilities.dp(8.0f), TLObject.FLAG_30));
                     }
                 };
-                builder.setDelegate(new BottomSheet.BottomSheetDelegate() { // from class: org.telegram.ui.ArticleViewer.10
+                builder.setDelegate(new BottomSheet.BottomSheetDelegate() { // from class: org.telegram.ui.ArticleViewer.11
                     @Override // org.telegram.ui.ActionBar.BottomSheet.BottomSheetDelegate, org.telegram.ui.ActionBar.BottomSheet.BottomSheetDelegateInterface
                     public boolean canDismiss() {
                         TextSelectionHelper.ArticleTextSelectionHelper articleTextSelectionHelper2 = ArticleViewer.this.textSelectionHelperBottomSheet;
@@ -2531,7 +2625,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     num2 = Integer.valueOf(num2.intValue() + 1);
                 }
                 if (z) {
-                    SmoothScroller smoothScroller = new SmoothScroller(this.pages[0].getContext()) { // from class: org.telegram.ui.ArticleViewer.11
+                    SmoothScroller smoothScroller = new SmoothScroller(this.pages[0].getContext()) { // from class: org.telegram.ui.ArticleViewer.12
                         @Override // androidx.recyclerview.widget.LinearSmoothScroller
                         protected int getVerticalSnapPreference() {
                             return -1;
@@ -3509,20 +3603,14 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:134:0x01ed, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:83:0x0155, code lost:
     
-        if (r0.isShowing() == false) goto L113;
+        if (r0.isShowing() == false) goto L79;
      */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x01f8  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0209  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0217  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x021f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public boolean checkLayoutForLinks(WebpageAdapter webpageAdapter, MotionEvent motionEvent, View view, DrawingText drawingText, int i, int i2) {
-        String str;
-        boolean z;
         int i3;
         if (this.pageSwitchAnimation != null || view == null || !this.textSelectionHelper.isSelectable(view)) {
             return false;
@@ -3570,33 +3658,31 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                                         }
                                     }
                                     LinkSpanDrawable linkSpanDrawable = this.pressedLink;
-                                    if (linkSpanDrawable != null) {
-                                        if (linkSpanDrawable.getSpan() != textPaintUrlSpan) {
+                                    if (linkSpanDrawable == null || linkSpanDrawable.getSpan() != textPaintUrlSpan) {
+                                        LinkSpanDrawable linkSpanDrawable2 = this.pressedLink;
+                                        if (linkSpanDrawable2 != null) {
+                                            this.links.removeLink(linkSpanDrawable2);
                                         }
-                                    }
-                                    LinkSpanDrawable linkSpanDrawable2 = this.pressedLink;
-                                    if (linkSpanDrawable2 != null) {
-                                        this.links.removeLink(linkSpanDrawable2);
-                                    }
-                                    LinkSpanDrawable linkSpanDrawable3 = new LinkSpanDrawable(textPaintUrlSpan, null, f3, y);
-                                    this.pressedLink = linkSpanDrawable3;
-                                    linkSpanDrawable3.setColor(getThemedColor(Theme.key_windowBackgroundWhiteLinkSelection) & 872415231);
-                                    this.links.addLink(this.pressedLink, this.pressedLinkOwnerLayout);
-                                    try {
-                                        LinkPath obtainNewPath = this.pressedLink.obtainNewPath();
-                                        obtainNewPath.setCurrentLayout(staticLayout, spanStart, 0.0f);
-                                        TextPaint textPaint = textPaintUrlSpan.getTextPaint();
-                                        int i7 = textPaint != null ? textPaint.baselineShift : 0;
-                                        if (i7 != 0) {
-                                            i3 = i7 + AndroidUtilities.dp(i7 > 0 ? 5.0f : -2.0f);
-                                        } else {
-                                            i3 = 0;
+                                        LinkSpanDrawable linkSpanDrawable3 = new LinkSpanDrawable(textPaintUrlSpan, null, f3, y);
+                                        this.pressedLink = linkSpanDrawable3;
+                                        linkSpanDrawable3.setColor(getThemedColor(Theme.key_windowBackgroundWhiteLinkSelection) & 872415231);
+                                        this.links.addLink(this.pressedLink, this.pressedLinkOwnerLayout);
+                                        try {
+                                            LinkPath obtainNewPath = this.pressedLink.obtainNewPath();
+                                            obtainNewPath.setCurrentLayout(staticLayout, spanStart, 0.0f);
+                                            TextPaint textPaint = textPaintUrlSpan.getTextPaint();
+                                            int i7 = textPaint != null ? textPaint.baselineShift : 0;
+                                            if (i7 != 0) {
+                                                i3 = i7 + AndroidUtilities.dp(i7 > 0 ? 5.0f : -2.0f);
+                                            } else {
+                                                i3 = 0;
+                                            }
+                                            obtainNewPath.setBaselineShift(i3);
+                                            staticLayout.getSelectionPath(spanStart, spanEnd, obtainNewPath);
+                                            view.invalidate();
+                                        } catch (Exception e) {
+                                            FileLog.e(e);
                                         }
-                                        obtainNewPath.setBaselineShift(i3);
-                                        staticLayout.getSelectionPath(spanStart, spanEnd, obtainNewPath);
-                                        view.invalidate();
-                                    } catch (Exception e) {
-                                        FileLog.e(e);
                                     }
                                 }
                             }
@@ -3609,73 +3695,23 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 if (motionEvent.getAction() == 1) {
                     LinkSpanDrawable linkSpanDrawable4 = this.pressedLink;
                     if (linkSpanDrawable4 != null) {
-                        String url = ((TextPaintUrlSpan) linkSpanDrawable4.getSpan()).getUrl();
-                        if (url != null) {
-                            BottomSheet bottomSheet = this.linkSheet;
-                            if (bottomSheet != null) {
-                                bottomSheet.lambda$new$0();
-                                this.linkSheet = null;
-                            }
-                            int lastIndexOf = url.lastIndexOf(35);
-                            if (lastIndexOf != -1) {
-                                String lowerCase = !TextUtils.isEmpty(webpageAdapter.currentPage.cached_page.url) ? webpageAdapter.currentPage.cached_page.url.toLowerCase() : webpageAdapter.currentPage.url.toLowerCase();
-                                try {
-                                    str = URLDecoder.decode(url.substring(lastIndexOf + 1), "UTF-8");
-                                } catch (Exception unused) {
-                                    str = "";
-                                }
-                                if (lastIndexOf == 0 || url.toLowerCase().contains(lowerCase)) {
-                                    if (TextUtils.isEmpty(str)) {
-                                        this.pages[0].layoutManager.scrollToPositionWithOffset(0, 0);
-                                        checkScrollAnimated();
-                                    } else {
-                                        scrollToAnchor(str, true);
-                                    }
-                                    z = true;
-                                } else {
-                                    z = false;
-                                }
-                            } else {
-                                str = null;
-                                z = false;
-                            }
-                            if (!z) {
-                                String url2 = ((TextPaintUrlSpan) this.pressedLink.getSpan()).getUrl();
-                                DrawingText drawingText2 = this.pressedLinkOwnerLayout;
-                                openWebpageUrl(url2, str, drawingText2 != null ? makeProgress(this.pressedLink, drawingText2) : null);
-                            }
-                        }
+                        handleLinkClick(webpageAdapter, (TextPaintUrlSpan) linkSpanDrawable4.getSpan());
                     }
-                } else {
-                    if (motionEvent.getAction() == 3) {
-                        ActionBarPopupWindow actionBarPopupWindow = this.popupWindow;
-                        if (actionBarPopupWindow != null) {
-                        }
+                } else if (motionEvent.getAction() == 3) {
+                    ActionBarPopupWindow actionBarPopupWindow = this.popupWindow;
+                    if (actionBarPopupWindow != null) {
                     }
-                    if (motionEvent.getAction() == 0) {
-                        startCheckLongPress(motionEvent.getX(), motionEvent.getY(), view);
-                    }
-                    if (motionEvent.getAction() != 0 && motionEvent.getAction() != 2) {
-                        cancelCheckLongPress();
-                    }
-                    return view instanceof BlockDetailsCell ? this.pressedLink != null : this.pressedLinkOwnerLayout != null;
                 }
                 removePressedLink();
-                if (motionEvent.getAction() == 0) {
-                }
-                if (motionEvent.getAction() != 0) {
-                    cancelCheckLongPress();
-                }
-                if (view instanceof BlockDetailsCell) {
-                }
             }
         }
         if (motionEvent.getAction() == 0) {
+            startCheckLongPress(motionEvent.getX(), motionEvent.getY(), view);
         }
-        if (motionEvent.getAction() != 0) {
+        if (motionEvent.getAction() != 0 && motionEvent.getAction() != 2) {
+            cancelCheckLongPress();
         }
-        if (view instanceof BlockDetailsCell) {
-        }
+        return view instanceof BlockDetailsCell ? this.pressedLink != null : this.pressedLinkOwnerLayout != null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3683,7 +3719,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         if (linkSpanDrawable == null) {
             return null;
         }
-        return new Browser.Progress() { // from class: org.telegram.ui.ArticleViewer.12
+        return new Browser.Progress() { // from class: org.telegram.ui.ArticleViewer.13
             @Override // org.telegram.messenger.browser.Browser.Progress
             public void init() {
                 ArticleViewer.this.loadingText = drawingText;
@@ -4283,7 +4319,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         windowView.setWillNotDraw(false);
         this.windowView.setClipChildren(true);
         this.windowView.setFocusable(false);
-        FrameLayout frameLayout = new FrameLayout(activity) { // from class: org.telegram.ui.ArticleViewer.13
+        FrameLayout frameLayout = new FrameLayout(activity) { // from class: org.telegram.ui.ArticleViewer.14
             /* JADX WARN: Removed duplicated region for block: B:13:0x0059  */
             @Override // android.view.ViewGroup
             /*
@@ -4409,7 +4445,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         this.statusBarPaint.setColor(-16777216);
         this.headerProgressPaint.setColor(-14408666);
         this.navigationBarPaint.setColor(-16777216);
-        WebActionBar webActionBar = new WebActionBar(activity, getResourcesProvider()) { // from class: org.telegram.ui.ArticleViewer.14
+        WebActionBar webActionBar = new WebActionBar(activity, getResourcesProvider()) { // from class: org.telegram.ui.ArticleViewer.15
             @Override // org.telegram.ui.web.WebActionBar
             protected void onSearchUpdated(String str) {
                 ArticleViewer.this.processSearch(str.toLowerCase());
@@ -4475,7 +4511,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 ArticleViewer.this.lambda$setParentActivity$22(activity, view);
             }
         });
-        this.actionBar.addressEditText.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.ArticleViewer.15
+        this.actionBar.addressEditText.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.ArticleViewer.16
             @Override // android.text.TextWatcher
             public void beforeTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
             }
@@ -4494,7 +4530,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         AddressBarList addressBarList = new AddressBarList(activity);
         this.addressBarList = addressBarList;
         addressBarList.setOpenProgress(0.0f);
-        this.addressBarList.listView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.ArticleViewer.16
+        this.addressBarList.listView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.ArticleViewer.17
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i2, int i3) {
                 if (ArticleViewer.this.addressBarList.listView.scrollingByUser) {
@@ -4535,7 +4571,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 ArticleViewer.this.lambda$setParentActivity$41(view);
             }
         });
-        FrameLayout frameLayout5 = new FrameLayout(this.parentActivity) { // from class: org.telegram.ui.ArticleViewer.19
+        FrameLayout frameLayout5 = new FrameLayout(this.parentActivity) { // from class: org.telegram.ui.ArticleViewer.20
             @Override // android.view.View
             public void onDraw(Canvas canvas) {
                 int intrinsicHeight = Theme.chat_composeShadowDrawable.getIntrinsicHeight();
@@ -4643,7 +4679,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         }
         TextSelectionHelper.ArticleTextSelectionHelper articleTextSelectionHelper2 = this.textSelectionHelper;
         articleTextSelectionHelper2.layoutManager = this.pages[0].layoutManager;
-        articleTextSelectionHelper2.setCallback(new TextSelectionHelper.Callback() { // from class: org.telegram.ui.ArticleViewer.20
+        articleTextSelectionHelper2.setCallback(new TextSelectionHelper.Callback() { // from class: org.telegram.ui.ArticleViewer.21
             @Override // org.telegram.ui.Cells.TextSelectionHelper.Callback
             public void onStateChanged(boolean z) {
                 if (z) {
@@ -4668,7 +4704,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 ArticleViewer.this.lambda$setParentActivity$47(fArr);
             }
         });
-        this.pinchToZoomHelper.setCallback(new PinchToZoomHelper.Callback() { // from class: org.telegram.ui.ArticleViewer.21
+        this.pinchToZoomHelper.setCallback(new PinchToZoomHelper.Callback() { // from class: org.telegram.ui.ArticleViewer.22
             @Override // org.telegram.ui.PinchToZoomHelper.Callback
             public /* synthetic */ TextureView getCurrentTextureView() {
                 return PinchToZoomHelper.Callback.-CC.$default$getCurrentTextureView(this);
@@ -5045,7 +5081,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                             favicon = itemAtIndex.getFavicon();
                         }
                         final Paint paint = new Paint(i);
-                        last.setTextAndIcon(itemAtIndex.getTitle(), 0, new Drawable() { // from class: org.telegram.ui.ArticleViewer.17
+                        last.setTextAndIcon(itemAtIndex.getTitle(), 0, new Drawable() { // from class: org.telegram.ui.ArticleViewer.18
                             @Override // android.graphics.drawable.Drawable
                             public int getOpacity() {
                                 return -2;
@@ -5106,7 +5142,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                         favicon2 = cachedWeb.favicon;
                     }
                     final Paint paint2 = new Paint(3);
-                    last2.setTextAndIcon(cachedWeb.getTitle(), 0, new Drawable() { // from class: org.telegram.ui.ArticleViewer.18
+                    last2.setTextAndIcon(cachedWeb.getTitle(), 0, new Drawable() { // from class: org.telegram.ui.ArticleViewer.19
                         @Override // android.graphics.drawable.Drawable
                         public int getOpacity() {
                             return -2;
@@ -5931,7 +5967,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 ArticleViewer.this.lambda$showSearchPanel$51(valueAnimator2);
             }
         });
-        this.searchPanelAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.22
+        this.searchPanelAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.23
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 ArticleViewer.this.searchPanelAlpha = z ? 1.0f : 0.0f;
@@ -6020,7 +6056,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                             num = 0;
                         }
                     }
-                    SmoothScroller smoothScroller = new SmoothScroller(this.pages[0].getContext()) { // from class: org.telegram.ui.ArticleViewer.23
+                    SmoothScroller smoothScroller = new SmoothScroller(this.pages[0].getContext()) { // from class: org.telegram.ui.ArticleViewer.24
                         @Override // androidx.recyclerview.widget.LinearSmoothScroller
                         protected int getVerticalSnapPreference() {
                             return -1;
@@ -6069,7 +6105,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 ArticleViewer.this.lambda$checkScrollAnimated$52(valueAnimator);
             }
         });
-        duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.24
+        duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.25
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 super.onAnimationEnd(animator);
@@ -6306,7 +6342,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 };
                 animatorSet.setDuration(150L);
                 animatorSet.setInterpolator(this.interpolator);
-                animatorSet.addListener(new 25());
+                animatorSet.addListener(new 26());
                 this.transitionAnimationStartTime = System.currentTimeMillis();
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
@@ -6418,16 +6454,16 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         AndroidUtilities.hideKeyboard(this.parentActivity.getCurrentFocus());
     }
 
-    class 25 extends AnimatorListenerAdapter {
-        25() {
+    class 26 extends AnimatorListenerAdapter {
+        26() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationEnd(Animator animator) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$25$$ExternalSyntheticLambda0
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ArticleViewer$26$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ArticleViewer.25.this.lambda$onAnimationEnd$0();
+                    ArticleViewer.26.this.lambda$onAnimationEnd$0();
                 }
             });
         }
@@ -6472,7 +6508,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         } else {
             animatorSet2.playTogether(ObjectAnimator.ofFloat(this.progressView, (Property<ContextProgressView, Float>) View.SCALE_X, 0.1f), ObjectAnimator.ofFloat(this.progressView, (Property<ContextProgressView, Float>) View.SCALE_Y, 0.1f), ObjectAnimator.ofFloat(this.progressView, (Property<ContextProgressView, Float>) View.ALPHA, 0.0f));
         }
-        this.progressViewAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.26
+        this.progressViewAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.27
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 if (ArticleViewer.this.progressViewAnimation == null || !ArticleViewer.this.progressViewAnimation.equals(animator) || z2) {
@@ -6621,7 +6657,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         };
         animatorSet.setDuration(150L);
         animatorSet.setInterpolator(this.interpolator);
-        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.27
+        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ArticleViewer.28
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 if (ArticleViewer.this.animationEndRunnable != null) {
@@ -7742,7 +7778,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     addAllMediaFromBlock(webpageAdapter, pageBlock2);
                     i++;
                 }
-                ArticleViewer.access$13108(ArticleViewer.this);
+                ArticleViewer.access$13308(ArticleViewer.this);
                 return;
             }
             if (pageBlock instanceof TLRPC.TL_pageBlockCollage) {
@@ -7754,7 +7790,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     addAllMediaFromBlock(webpageAdapter, pageBlock3);
                     i++;
                 }
-                ArticleViewer.access$13108(ArticleViewer.this);
+                ArticleViewer.access$13308(ArticleViewer.this);
                 return;
             }
             if (pageBlock instanceof TLRPC.TL_pageBlockCover) {
@@ -7770,12 +7806,14 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             } else if (i == 91) {
                 view = ArticleViewer.this.new ReportCell(this.context, true);
             } else if (i == 2147483646) {
-                view = new View(this.context) { // from class: org.telegram.ui.ArticleViewer.WebpageAdapter.1
+                View view2 = new View(this.context) { // from class: org.telegram.ui.ArticleViewer.WebpageAdapter.1
                     @Override // android.view.View
                     protected void onMeasure(int i2, int i3) {
                         super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.displaySize.y * 0.4f), TLObject.FLAG_30));
                     }
                 };
+                view2.setImportantForAccessibility(2);
+                view = view2;
             } else {
                 switch (i) {
                     case 0:
@@ -9457,6 +9495,26 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 arrayList.add(drawingText3);
             }
         }
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setEnabled(true);
+            StringBuilder sb = new StringBuilder(LocaleController.getString(R.string.AccDescrIVAudio));
+            if (this.titleLayout != null) {
+                sb.append(", ");
+                sb.append(this.titleLayout.getText());
+            }
+            if (this.captionLayout != null) {
+                sb.append(", ");
+                sb.append(this.captionLayout.getText());
+            }
+            if (this.creditLayout != null) {
+                sb.append(", ");
+                sb.append(this.creditLayout.getText());
+            }
+            accessibilityNodeInfo.setText(sb);
+        }
     }
 
     private class BlockEmbedPostCell extends View implements TextSelectionHelper.ArticleSelectableView {
@@ -9664,6 +9722,30 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 arrayList.add(drawingText4);
             }
         }
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setEnabled(true);
+            StringBuilder sb = new StringBuilder(LocaleController.getString(R.string.AccDescrIVEmbedPost));
+            if (this.nameLayout != null) {
+                sb.append(", ");
+                sb.append(this.nameLayout.getText());
+            }
+            if (this.dateLayout != null) {
+                sb.append(", ");
+                sb.append(this.dateLayout.getText());
+            }
+            if (this.captionLayout != null) {
+                sb.append(", ");
+                sb.append(this.captionLayout.getText());
+            }
+            if (this.creditLayout != null) {
+                sb.append(", ");
+                sb.append(this.creditLayout.getText());
+            }
+            accessibilityNodeInfo.setText(sb);
+        }
     }
 
     public class BlockParagraphCell extends View implements TextSelectionHelper.ArticleSelectableView {
@@ -9749,12 +9831,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         @Override // android.view.View
         public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
             super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setClassName("android.widget.TextView");
             accessibilityNodeInfo.setEnabled(true);
             DrawingText drawingText = this.textLayout;
             if (drawingText == null) {
                 return;
             }
-            accessibilityNodeInfo.setText(drawingText.getText());
+            accessibilityNodeInfo.setText(ArticleViewer.this.buildAccessibilityText(this.parentAdapter, drawingText));
         }
 
         @Override // org.telegram.ui.Cells.TextSelectionHelper.ArticleSelectableView
@@ -10322,6 +10405,22 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 arrayList.add(drawingText2);
             }
         }
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setEnabled(true);
+            StringBuilder sb = new StringBuilder(LocaleController.getString(R.string.AccDescrIVEmbed));
+            if (this.captionLayout != null) {
+                sb.append(", ");
+                sb.append(this.captionLayout.getText());
+            }
+            if (this.creditLayout != null) {
+                sb.append(", ");
+                sb.append(this.creditLayout.getText());
+            }
+            accessibilityNodeInfo.setText(sb);
+        }
     }
 
     public class BlockTableCell extends FrameLayout implements TableLayout.TableLayoutDelegate, TextSelectionHelper.ArticleSelectableView {
@@ -10631,6 +10730,18 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     arrayList.add(drawingText2);
                 }
             }
+        }
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setEnabled(true);
+            StringBuilder sb = new StringBuilder(LocaleController.getString(R.string.AccDescrIVTable));
+            if (this.titleLayout != null) {
+                sb.append(", ");
+                sb.append(this.titleLayout.getText());
+            }
+            accessibilityNodeInfo.setText(sb);
         }
     }
 
@@ -11347,6 +11458,22 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 arrayList.add(drawingText2);
             }
         }
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setEnabled(true);
+            StringBuilder sb = new StringBuilder(LocaleController.getString(R.string.AccDescrCollage));
+            if (this.captionLayout != null) {
+                sb.append(", ");
+                sb.append(this.captionLayout.getText());
+            }
+            if (this.creditLayout != null) {
+                sb.append(", ");
+                sb.append(this.creditLayout.getText());
+            }
+            accessibilityNodeInfo.setText(sb);
+        }
     }
 
     private class BlockSlideshowCell extends FrameLayout implements TextSelectionHelper.ArticleSelectableView {
@@ -11612,6 +11739,22 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             if (drawingText2 != null) {
                 arrayList.add(drawingText2);
             }
+        }
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setEnabled(true);
+            StringBuilder sb = new StringBuilder(LocaleController.getString(R.string.AccDescrIVSlideshow));
+            if (this.captionLayout != null) {
+                sb.append(", ");
+                sb.append(this.captionLayout.getText());
+            }
+            if (this.creditLayout != null) {
+                sb.append(", ");
+                sb.append(this.creditLayout.getText());
+            }
+            accessibilityNodeInfo.setText(sb);
         }
     }
 
@@ -11884,12 +12027,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         @Override // android.view.View
         public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
             super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setClassName("android.widget.TextView");
             accessibilityNodeInfo.setEnabled(true);
             DrawingText drawingText = this.textLayout;
             if (drawingText == null) {
                 return;
             }
-            accessibilityNodeInfo.setText(drawingText.getText());
+            accessibilityNodeInfo.setText(ArticleViewer.this.buildAccessibilityText(this.parentAdapter, drawingText));
         }
 
         @Override // org.telegram.ui.Cells.TextSelectionHelper.ArticleSelectableView
@@ -12165,12 +12309,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         @Override // android.view.View
         public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
             super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setClassName("android.widget.TextView");
             accessibilityNodeInfo.setEnabled(true);
             DrawingText drawingText = this.textLayout;
             if (drawingText == null) {
                 return;
             }
-            accessibilityNodeInfo.setText(drawingText.getText());
+            accessibilityNodeInfo.setText(ArticleViewer.this.buildAccessibilityText(this.parentAdapter, drawingText));
         }
 
         @Override // org.telegram.ui.Cells.TextSelectionHelper.ArticleSelectableView
@@ -12277,6 +12422,23 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 arrayList.add(drawingText);
             }
         }
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            CharSequence buildAccessibilityText;
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setClassName("android.widget.TextView");
+            accessibilityNodeInfo.setEnabled(true);
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+            DrawingText drawingText = this.textLayout;
+            if (drawingText != null && (buildAccessibilityText = ArticleViewer.this.buildAccessibilityText(this.parentAdapter, drawingText)) != null) {
+                spannableStringBuilder.append(buildAccessibilityText).append((CharSequence) ", ");
+            }
+            spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.AccDescrIVDetails)).append((CharSequence) ", ");
+            TLRPC.TL_pageBlockDetails tL_pageBlockDetails = this.currentBlock;
+            spannableStringBuilder.append((CharSequence) LocaleController.getString((tL_pageBlockDetails == null || !tL_pageBlockDetails.open) ? R.string.AccDescrIVCollapsed : R.string.AccDescrIVExpanded));
+            accessibilityNodeInfo.setText(spannableStringBuilder);
+        }
     }
 
     private static class BlockDetailsBottomCell extends View {
@@ -12285,6 +12447,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         public BlockDetailsBottomCell(Context context) {
             super(context);
             this.rect = new RectF();
+            setImportantForAccessibility(2);
         }
 
         @Override // android.view.View
@@ -12307,6 +12470,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             this.shadowDrawable = combinedDrawable;
             combinedDrawable.setFullsize(true);
             setBackgroundDrawable(this.shadowDrawable);
+            setImportantForAccessibility(2);
         }
 
         @Override // android.view.View
@@ -12378,6 +12542,21 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             if (drawingText != null) {
                 arrayList.add(drawingText);
             }
+        }
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setClassName("android.widget.TextView");
+            accessibilityNodeInfo.setEnabled(true);
+            accessibilityNodeInfo.setClickable(false);
+            accessibilityNodeInfo.setLongClickable(false);
+            DrawingText drawingText = this.textLayout;
+            if (drawingText == null) {
+                return;
+            }
+            ArticleViewer articleViewer = ArticleViewer.this;
+            accessibilityNodeInfo.setText(articleViewer.appendA11yLabel(articleViewer.buildAccessibilityText(this.parentAdapter, drawingText), R.string.AccDescrIVRelatedArticles));
         }
     }
 
@@ -12537,6 +12716,32 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 arrayList.add(drawingText2);
             }
         }
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            CharSequence buildAccessibilityText;
+            CharSequence buildAccessibilityText2;
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setClassName("android.widget.TextView");
+            accessibilityNodeInfo.setEnabled(true);
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+            DrawingText drawingText = this.textLayout;
+            if (drawingText != null && (buildAccessibilityText2 = ArticleViewer.this.buildAccessibilityText(this.parentAdapter, drawingText)) != null) {
+                spannableStringBuilder.append(buildAccessibilityText2);
+            }
+            DrawingText drawingText2 = this.textLayout2;
+            if (drawingText2 != null && (buildAccessibilityText = ArticleViewer.this.buildAccessibilityText(this.parentAdapter, drawingText2)) != null) {
+                if (spannableStringBuilder.length() > 0) {
+                    spannableStringBuilder.append((CharSequence) ", ");
+                }
+                spannableStringBuilder.append(buildAccessibilityText);
+            }
+            if (spannableStringBuilder.length() == 0) {
+                return;
+            }
+            spannableStringBuilder.append((CharSequence) ", ").append((CharSequence) LocaleController.getString(R.string.AccDescrIVRelatedArticle));
+            accessibilityNodeInfo.setText(spannableStringBuilder);
+        }
     }
 
     private class BlockHeaderCell extends View implements TextSelectionHelper.ArticleSelectableView {
@@ -12601,10 +12806,12 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
             super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
             accessibilityNodeInfo.setEnabled(true);
-            if (this.textLayout == null) {
+            DrawingText drawingText = this.textLayout;
+            if (drawingText == null) {
                 return;
             }
-            accessibilityNodeInfo.setText(((Object) this.textLayout.getText()) + ", " + LocaleController.getString(R.string.AccDescrIVHeading));
+            ArticleViewer articleViewer = ArticleViewer.this;
+            accessibilityNodeInfo.setText(articleViewer.appendA11yLabel(articleViewer.buildAccessibilityText(this.parentAdapter, drawingText), R.string.AccDescrIVHeading));
         }
 
         @Override // org.telegram.ui.Cells.TextSelectionHelper.ArticleSelectableView
@@ -12622,6 +12829,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         public BlockDividerCell(Context context) {
             super(context);
             this.rect = new RectF();
+            setImportantForAccessibility(2);
         }
 
         @Override // android.view.View
@@ -12698,10 +12906,12 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
             super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
             accessibilityNodeInfo.setEnabled(true);
-            if (this.textLayout == null) {
+            DrawingText drawingText = this.textLayout;
+            if (drawingText == null) {
                 return;
             }
-            accessibilityNodeInfo.setText(((Object) this.textLayout.getText()) + ", " + LocaleController.getString(R.string.AccDescrIVHeading));
+            ArticleViewer articleViewer = ArticleViewer.this;
+            accessibilityNodeInfo.setText(articleViewer.appendA11yLabel(articleViewer.buildAccessibilityText(this.parentAdapter, drawingText), R.string.AccDescrIVHeading));
         }
 
         @Override // org.telegram.ui.Cells.TextSelectionHelper.ArticleSelectableView
@@ -12806,6 +13016,34 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             if (drawingText2 != null) {
                 arrayList.add(drawingText2);
             }
+        }
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            CharSequence buildAccessibilityText;
+            CharSequence buildAccessibilityText2;
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setClassName("android.widget.TextView");
+            accessibilityNodeInfo.setEnabled(true);
+            accessibilityNodeInfo.setClickable(false);
+            accessibilityNodeInfo.setLongClickable(false);
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+            DrawingText drawingText = this.textLayout;
+            if (drawingText != null && (buildAccessibilityText2 = ArticleViewer.this.buildAccessibilityText(this.parentAdapter, drawingText)) != null) {
+                spannableStringBuilder.append(buildAccessibilityText2);
+            }
+            DrawingText drawingText2 = this.textLayout2;
+            if (drawingText2 != null && (buildAccessibilityText = ArticleViewer.this.buildAccessibilityText(this.parentAdapter, drawingText2)) != null) {
+                if (spannableStringBuilder.length() > 0) {
+                    spannableStringBuilder.append((CharSequence) ", ");
+                }
+                spannableStringBuilder.append(buildAccessibilityText);
+            }
+            if (spannableStringBuilder.length() == 0) {
+                return;
+            }
+            spannableStringBuilder.append((CharSequence) ", ").append((CharSequence) LocaleController.getString(R.string.AccDescrIVPullquote));
+            accessibilityNodeInfo.setText(spannableStringBuilder);
         }
     }
 
@@ -12930,6 +13168,34 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             if (drawingText2 != null) {
                 arrayList.add(drawingText2);
             }
+        }
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            CharSequence buildAccessibilityText;
+            CharSequence buildAccessibilityText2;
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setClassName("android.widget.TextView");
+            accessibilityNodeInfo.setEnabled(true);
+            accessibilityNodeInfo.setClickable(false);
+            accessibilityNodeInfo.setLongClickable(false);
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+            DrawingText drawingText = this.textLayout;
+            if (drawingText != null && (buildAccessibilityText2 = ArticleViewer.this.buildAccessibilityText(this.parentAdapter, drawingText)) != null) {
+                spannableStringBuilder.append(buildAccessibilityText2);
+            }
+            DrawingText drawingText2 = this.textLayout2;
+            if (drawingText2 != null && (buildAccessibilityText = ArticleViewer.this.buildAccessibilityText(this.parentAdapter, drawingText2)) != null) {
+                if (spannableStringBuilder.length() > 0) {
+                    spannableStringBuilder.append((CharSequence) ", ");
+                }
+                spannableStringBuilder.append(buildAccessibilityText);
+            }
+            if (spannableStringBuilder.length() == 0) {
+                return;
+            }
+            spannableStringBuilder.append((CharSequence) ", ").append((CharSequence) LocaleController.getString(R.string.AccDescrIVBlockquote));
+            accessibilityNodeInfo.setText(spannableStringBuilder);
         }
     }
 
@@ -13896,6 +14162,18 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 arrayList.add(drawingText);
             }
         }
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setEnabled(true);
+            DrawingText drawingText = this.textLayout;
+            if (drawingText == null) {
+                return;
+            }
+            ArticleViewer articleViewer = ArticleViewer.this;
+            accessibilityNodeInfo.setText(articleViewer.appendA11yLabel(articleViewer.buildAccessibilityText(this.parentAdapter, drawingText), R.string.AccDescrChannel));
+        }
     }
 
     private class BlockAuthorDateCell extends View implements TextSelectionHelper.ArticleSelectableView {
@@ -14006,12 +14284,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         @Override // android.view.View
         public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
             super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setClassName("android.widget.TextView");
             accessibilityNodeInfo.setEnabled(true);
             DrawingText drawingText = this.textLayout;
             if (drawingText == null) {
                 return;
             }
-            accessibilityNodeInfo.setText(drawingText.getText());
+            accessibilityNodeInfo.setText(ArticleViewer.this.buildAccessibilityText(this.parentAdapter, drawingText));
         }
 
         @Override // org.telegram.ui.Cells.TextSelectionHelper.ArticleSelectableView
@@ -14088,11 +14367,16 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         @Override // android.view.View
         public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
             super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setClassName("android.widget.TextView");
             accessibilityNodeInfo.setEnabled(true);
-            if (this.textLayout == null) {
+            accessibilityNodeInfo.setClickable(false);
+            accessibilityNodeInfo.setLongClickable(false);
+            DrawingText drawingText = this.textLayout;
+            if (drawingText == null) {
                 return;
             }
-            accessibilityNodeInfo.setText(((Object) this.textLayout.getText()) + ", " + LocaleController.getString(R.string.AccDescrIVTitle));
+            ArticleViewer articleViewer = ArticleViewer.this;
+            accessibilityNodeInfo.setText(articleViewer.appendA11yLabel(articleViewer.buildAccessibilityText(this.parentAdapter, drawingText), R.string.AccDescrIVTitle));
         }
 
         @Override // org.telegram.ui.Cells.TextSelectionHelper.ArticleSelectableView
@@ -14172,6 +14456,21 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             if (drawingText != null) {
                 arrayList.add(drawingText);
             }
+        }
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setClassName("android.widget.TextView");
+            accessibilityNodeInfo.setEnabled(true);
+            accessibilityNodeInfo.setClickable(false);
+            accessibilityNodeInfo.setLongClickable(false);
+            DrawingText drawingText = this.textLayout;
+            if (drawingText == null) {
+                return;
+            }
+            ArticleViewer articleViewer = ArticleViewer.this;
+            accessibilityNodeInfo.setText(articleViewer.appendA11yLabel(articleViewer.buildAccessibilityText(this.parentAdapter, drawingText), R.string.AccDescrIVKicker));
         }
     }
 
@@ -14257,6 +14556,21 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             if (drawingText != null) {
                 arrayList.add(drawingText);
             }
+        }
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setClassName("android.widget.TextView");
+            accessibilityNodeInfo.setEnabled(true);
+            accessibilityNodeInfo.setClickable(false);
+            accessibilityNodeInfo.setLongClickable(false);
+            DrawingText drawingText = this.textLayout;
+            if (drawingText == null) {
+                return;
+            }
+            ArticleViewer articleViewer = ArticleViewer.this;
+            accessibilityNodeInfo.setText(articleViewer.appendA11yLabel(articleViewer.buildAccessibilityText(this.parentAdapter, drawingText), R.string.AccDescrIVFooter));
         }
     }
 
@@ -14405,6 +14719,21 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             }
         }
 
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setClassName("android.widget.TextView");
+            accessibilityNodeInfo.setEnabled(true);
+            accessibilityNodeInfo.setClickable(false);
+            accessibilityNodeInfo.setLongClickable(false);
+            DrawingText drawingText = this.textLayout;
+            if (drawingText == null) {
+                return;
+            }
+            ArticleViewer articleViewer = ArticleViewer.this;
+            accessibilityNodeInfo.setText(articleViewer.appendA11yLabel(articleViewer.buildAccessibilityText(this.parentAdapter, drawingText), R.string.AccDescrIVCode));
+        }
+
         @Override // android.view.View, org.telegram.ui.Cells.TextSelectionHelper.SelectableView
         public void invalidate() {
             this.textContainer.invalidate();
@@ -14474,10 +14803,12 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
             super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
             accessibilityNodeInfo.setEnabled(true);
-            if (this.textLayout == null) {
+            DrawingText drawingText = this.textLayout;
+            if (drawingText == null) {
                 return;
             }
-            accessibilityNodeInfo.setText(((Object) this.textLayout.getText()) + ", " + LocaleController.getString(R.string.AccDescrIVHeading));
+            ArticleViewer articleViewer = ArticleViewer.this;
+            accessibilityNodeInfo.setText(articleViewer.appendA11yLabel(articleViewer.buildAccessibilityText(this.parentAdapter, drawingText), R.string.AccDescrIVHeading));
         }
 
         @Override // org.telegram.ui.Cells.TextSelectionHelper.ArticleSelectableView

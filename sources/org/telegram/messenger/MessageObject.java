@@ -12721,6 +12721,18 @@ public class MessageObject {
         return (!this.preview || (i = this.parentWidth) <= 0) ? AndroidUtilities.displaySize.x : i;
     }
 
+    public static String getEmoji(TLRPC.Document document) {
+        if (document == null) {
+            return "😀";
+        }
+        TLRPC.TL_documentAttributeCustomEmoji tL_documentAttributeCustomEmoji = (TLRPC.TL_documentAttributeCustomEmoji) AndroidUtilities.find(document.attributes, TLRPC.TL_documentAttributeCustomEmoji.class);
+        if (tL_documentAttributeCustomEmoji != null && !TextUtils.isEmpty(tL_documentAttributeCustomEmoji.alt)) {
+            return tL_documentAttributeCustomEmoji.alt;
+        }
+        TLRPC.TL_documentAttributeSticker tL_documentAttributeSticker = (TLRPC.TL_documentAttributeSticker) AndroidUtilities.find(document.attributes, TLRPC.TL_documentAttributeSticker.class);
+        return (tL_documentAttributeSticker == null || TextUtils.isEmpty(tL_documentAttributeSticker.alt)) ? "😀" : tL_documentAttributeSticker.alt;
+    }
+
     public String getStickerEmoji() {
         TLRPC.Document document = getDocument();
         if (document == null) {

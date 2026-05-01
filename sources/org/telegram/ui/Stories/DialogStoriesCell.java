@@ -17,7 +17,6 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.text.Layout;
-import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.ClickableSpan;
@@ -305,12 +304,17 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         this.titleView.setTypeface(AndroidUtilities.bold());
         this.titleView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
         this.titleView.setTextSize(AndroidUtilities.dp((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 20.0f : 18.0f));
+        this.titleView.setImportantForAccessibility(1);
+        this.titleView.setFocusableInTouchMode(true);
         addView(this.titleView, LayoutHelper.createFrame(-1, -2.0f));
         ImageView imageView = new ImageView(context);
         this.telegramLogoView = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        imageView.setContentDescription(LocaleController.getString(R.string.AppName));
+        this.telegramLogoView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         this.telegramLogoView.setImageResource(R.drawable.telegram_logo_2);
         this.telegramLogoView.setColorFilter(getTextLogoColor(), PorterDuff.Mode.MULTIPLY);
+        this.telegramLogoView.setImportantForAccessibility(1);
+        this.telegramLogoView.setFocusableInTouchMode(true);
         addView(this.telegramLogoView, LayoutHelper.createFrame(90, 22.0f));
         AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(null, AndroidUtilities.dp(26.0f));
         this.statusDrawable = swapAnimatedEmojiDrawable;
@@ -1472,28 +1476,13 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     public void setTitleOverlayText(String str, int i) {
         this.subtitleOverlayContainer.setText(i == R.string.ConnectingToProxyWithDots ? AndroidUtilities.replaceArrows(LocaleController.getString(R.string.TitleSetupProxy), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(2.0f)) : null, true);
-        boolean z = false;
         if (str != null) {
             this.hasOverlayText = true;
             if (this.overlayTextId != i) {
                 this.overlayTextId = i;
-                String string = LocaleController.getString(str, i);
-                boolean isEmpty = TextUtils.isEmpty(string);
-                String str2 = string;
-                if (!isEmpty) {
-                    int indexOf = TextUtils.indexOf(string, "...");
-                    str2 = string;
-                    if (indexOf >= 0) {
-                        SpannableString valueOf = SpannableString.valueOf(string);
-                        this.ellipsizeSpanAnimator.wrap(valueOf, indexOf);
-                        z = true;
-                        str2 = valueOf;
-                    }
-                }
-                this.titleView.setText(str2, !LocaleController.isRTL);
+                this.titleView.setText(LocaleController.getString(str, i), !LocaleController.isRTL);
             }
         } else {
             this.hasOverlayText = false;
@@ -1501,11 +1490,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
             this.titleView.setText(this.currentTitle, !LocaleController.isRTL);
         }
         this.animatorHasTitleText.setValue(this.hasOverlayText, true);
-        if (z) {
-            this.ellipsizeSpanAnimator.addView(this.titleView);
-        } else {
-            this.ellipsizeSpanAnimator.removeView(this.titleView);
-        }
+        this.ellipsizeSpanAnimator.removeView(this.titleView);
     }
 
     public void setClipTop(int i) {

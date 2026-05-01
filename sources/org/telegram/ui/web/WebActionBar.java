@@ -192,6 +192,7 @@ public abstract class WebActionBar extends FrameLayout {
         addView(linearLayout, LayoutHelper.createFrame(-2, 56, 83));
         ImageView imageView = new ImageView(context);
         this.backButton = imageView;
+        imageView.setContentDescription(LocaleController.getString(R.string.AccDescrGoBack));
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         BackDrawable backDrawable = new BackDrawable(false);
@@ -217,7 +218,13 @@ public abstract class WebActionBar extends FrameLayout {
         ImageView imageView2 = new ImageView(context);
         this.forwardButton = imageView2;
         imageView2.setScaleType(scaleType);
-        ForwardDrawable forwardDrawable = new ForwardDrawable();
+        ForwardDrawable forwardDrawable = new ForwardDrawable() { // from class: org.telegram.ui.web.WebActionBar.3
+            @Override // org.telegram.ui.web.WebActionBar.ForwardDrawable
+            public void setState(boolean z) {
+                super.setState(z);
+                WebActionBar.this.forwardButton.setContentDescription(LocaleController.getString(z ? R.string.PollCollapse : R.string.Forward));
+            }
+        };
         this.forwardButtonDrawable = forwardDrawable;
         imageView2.setImageDrawable(forwardDrawable);
         forwardDrawable.setState(false);
@@ -241,7 +248,7 @@ public abstract class WebActionBar extends FrameLayout {
         imageView3.setBackground(createSelectorDrawable3);
         imageView3.setContentDescription(LocaleController.getString("AccDescrMoreOptions", R.string.AccDescrMoreOptions));
         linearLayout2.addView(imageView3, LayoutHelper.createLinear(54, 56));
-        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context) { // from class: org.telegram.ui.web.WebActionBar.3
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context) { // from class: org.telegram.ui.web.WebActionBar.4
             @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
             public boolean onTouchEvent(MotionEvent motionEvent) {
                 if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
@@ -274,7 +281,7 @@ public abstract class WebActionBar extends FrameLayout {
                 return lambda$new$5;
             }
         });
-        editTextBoldCursor.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.web.WebActionBar.4
+        editTextBoldCursor.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.web.WebActionBar.5
             @Override // android.text.TextWatcher
             public void beforeTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
             }
@@ -290,7 +297,7 @@ public abstract class WebActionBar extends FrameLayout {
             }
         });
         frameLayout.addView(editTextBoldCursor, LayoutHelper.createFrame(-1, -1, 119));
-        EditTextBoldCursor editTextBoldCursor2 = new EditTextBoldCursor(context) { // from class: org.telegram.ui.web.WebActionBar.5
+        EditTextBoldCursor editTextBoldCursor2 = new EditTextBoldCursor(context) { // from class: org.telegram.ui.web.WebActionBar.6
             @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
             public boolean onTouchEvent(MotionEvent motionEvent) {
                 if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
@@ -678,7 +685,7 @@ public abstract class WebActionBar extends FrameLayout {
                 WebActionBar.this.lambda$setColors$8(i, f2, f3, valueAnimator2);
             }
         });
-        this.colorAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.web.WebActionBar.6
+        this.colorAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.web.WebActionBar.7
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 WebActionBar.this.setColors(i, f3, false);
@@ -913,7 +920,7 @@ public abstract class WebActionBar extends FrameLayout {
                     WebActionBar.this.lambda$showSearch$9(valueAnimator2);
                 }
             });
-            this.searchAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.web.WebActionBar.7
+            this.searchAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.web.WebActionBar.8
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     WebActionBar webActionBar = WebActionBar.this;
@@ -1040,7 +1047,7 @@ public abstract class WebActionBar extends FrameLayout {
                     WebActionBar.this.lambda$showAddress$10(valueAnimator2);
                 }
             });
-            this.addressAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.web.WebActionBar.8
+            this.addressAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.web.WebActionBar.9
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     WebActionBar webActionBar = WebActionBar.this;

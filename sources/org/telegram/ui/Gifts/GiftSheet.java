@@ -27,6 +27,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
 import android.view.ViewTreeObserver;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
@@ -167,13 +168,12 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         this(context, i, j, null, runnable);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:23:0x047c  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x047a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public GiftSheet(final Context context, final int i, final long j, List list, final Runnable runnable) {
         super(context, null, false, false, false, null);
-        boolean z;
         int i2;
         int i3;
         this.premiumTiers = new ArrayList();
@@ -186,8 +186,8 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         this.tabs = new ArrayList();
         this.currentAccount = i;
         this.dialogId = j;
-        boolean z2 = UserConfig.getInstance(i).getClientUserId() == j;
-        this.self = z2;
+        boolean z = UserConfig.getInstance(i).getClientUserId() == j;
+        this.self = z;
         this.options = list;
         this.closeParentSheet = runnable;
         int i4 = Theme.key_dialogGiftsBackground;
@@ -196,6 +196,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         this.myGifts = StarsController.getInstance(i).getProfileGiftsList(UserConfig.getInstance(i).getClientUserId());
         StarsController.getInstance(i).loadStarGifts();
         BackupImageView backupImageView = new BackupImageView(context);
+        backupImageView.setImportantForAccessibility(2);
         AvatarDrawable avatarDrawable = new AvatarDrawable();
         if (j > 0) {
             TLRPC.User user = MessagesController.getInstance(i).getUser(Long.valueOf(j));
@@ -207,9 +208,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             if (userFull == null) {
                 MessagesController.getInstance(i).loadFullUser(user, 0, true);
             }
-            z = z2;
         } else {
-            z = z2;
             TLRPC.Chat chat = MessagesController.getInstance(i).getChat(Long.valueOf(-j));
             this.name = chat == null ? "" : chat.title;
             avatarDrawable.setInfo(chat);
@@ -1499,6 +1498,251 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             textView5.setTextColor(-1);
             frameLayout.addView(textView5, LayoutHelper.createFrame(-2, 17.0f, 51, 4.0f, 4.0f, 0.0f, 0.0f));
             textView5.setVisibility(8);
+            setImportantForAccessibility(1);
+            frameLayout.setImportantForAccessibility(4);
+            ribbon.setImportantForAccessibility(2);
+        }
+
+        /* JADX WARN: Removed duplicated region for block: B:16:0x0075 A[Catch: Exception -> 0x0173, TryCatch #0 {Exception -> 0x0173, blocks: (B:5:0x0017, B:7:0x0021, B:9:0x0025, B:11:0x002b, B:13:0x0037, B:14:0x006f, B:16:0x0075, B:17:0x007b, B:20:0x0084, B:22:0x008a, B:24:0x0096, B:25:0x00a2, B:27:0x00a6, B:29:0x00ac, B:31:0x00b8, B:32:0x00be, B:34:0x00c2, B:36:0x00c8, B:38:0x00cc, B:40:0x00d2, B:42:0x00de, B:43:0x00ea, B:45:0x00ee, B:47:0x00f2, B:48:0x00fe, B:50:0x0102, B:52:0x0108, B:54:0x010c, B:56:0x0110, B:58:0x0116, B:61:0x0126, B:63:0x0136, B:65:0x0150, B:67:0x0156, B:68:0x013c, B:70:0x014d, B:71:0x015c, B:73:0x0160, B:75:0x0166, B:76:0x016c, B:81:0x003e, B:83:0x0042, B:85:0x0046, B:87:0x004a, B:89:0x0052, B:90:0x0059, B:92:0x005d, B:94:0x0061, B:96:0x0069), top: B:4:0x0017 }] */
+        /* JADX WARN: Removed duplicated region for block: B:20:0x0084 A[Catch: Exception -> 0x0173, TRY_ENTER, TryCatch #0 {Exception -> 0x0173, blocks: (B:5:0x0017, B:7:0x0021, B:9:0x0025, B:11:0x002b, B:13:0x0037, B:14:0x006f, B:16:0x0075, B:17:0x007b, B:20:0x0084, B:22:0x008a, B:24:0x0096, B:25:0x00a2, B:27:0x00a6, B:29:0x00ac, B:31:0x00b8, B:32:0x00be, B:34:0x00c2, B:36:0x00c8, B:38:0x00cc, B:40:0x00d2, B:42:0x00de, B:43:0x00ea, B:45:0x00ee, B:47:0x00f2, B:48:0x00fe, B:50:0x0102, B:52:0x0108, B:54:0x010c, B:56:0x0110, B:58:0x0116, B:61:0x0126, B:63:0x0136, B:65:0x0150, B:67:0x0156, B:68:0x013c, B:70:0x014d, B:71:0x015c, B:73:0x0160, B:75:0x0166, B:76:0x016c, B:81:0x003e, B:83:0x0042, B:85:0x0046, B:87:0x004a, B:89:0x0052, B:90:0x0059, B:92:0x005d, B:94:0x0061, B:96:0x0069), top: B:4:0x0017 }] */
+        /* JADX WARN: Removed duplicated region for block: B:27:0x00a6 A[Catch: Exception -> 0x0173, TryCatch #0 {Exception -> 0x0173, blocks: (B:5:0x0017, B:7:0x0021, B:9:0x0025, B:11:0x002b, B:13:0x0037, B:14:0x006f, B:16:0x0075, B:17:0x007b, B:20:0x0084, B:22:0x008a, B:24:0x0096, B:25:0x00a2, B:27:0x00a6, B:29:0x00ac, B:31:0x00b8, B:32:0x00be, B:34:0x00c2, B:36:0x00c8, B:38:0x00cc, B:40:0x00d2, B:42:0x00de, B:43:0x00ea, B:45:0x00ee, B:47:0x00f2, B:48:0x00fe, B:50:0x0102, B:52:0x0108, B:54:0x010c, B:56:0x0110, B:58:0x0116, B:61:0x0126, B:63:0x0136, B:65:0x0150, B:67:0x0156, B:68:0x013c, B:70:0x014d, B:71:0x015c, B:73:0x0160, B:75:0x0166, B:76:0x016c, B:81:0x003e, B:83:0x0042, B:85:0x0046, B:87:0x004a, B:89:0x0052, B:90:0x0059, B:92:0x005d, B:94:0x0061, B:96:0x0069), top: B:4:0x0017 }] */
+        /* JADX WARN: Removed duplicated region for block: B:31:0x00b8 A[Catch: Exception -> 0x0173, TryCatch #0 {Exception -> 0x0173, blocks: (B:5:0x0017, B:7:0x0021, B:9:0x0025, B:11:0x002b, B:13:0x0037, B:14:0x006f, B:16:0x0075, B:17:0x007b, B:20:0x0084, B:22:0x008a, B:24:0x0096, B:25:0x00a2, B:27:0x00a6, B:29:0x00ac, B:31:0x00b8, B:32:0x00be, B:34:0x00c2, B:36:0x00c8, B:38:0x00cc, B:40:0x00d2, B:42:0x00de, B:43:0x00ea, B:45:0x00ee, B:47:0x00f2, B:48:0x00fe, B:50:0x0102, B:52:0x0108, B:54:0x010c, B:56:0x0110, B:58:0x0116, B:61:0x0126, B:63:0x0136, B:65:0x0150, B:67:0x0156, B:68:0x013c, B:70:0x014d, B:71:0x015c, B:73:0x0160, B:75:0x0166, B:76:0x016c, B:81:0x003e, B:83:0x0042, B:85:0x0046, B:87:0x004a, B:89:0x0052, B:90:0x0059, B:92:0x005d, B:94:0x0061, B:96:0x0069), top: B:4:0x0017 }] */
+        /* JADX WARN: Removed duplicated region for block: B:34:0x00c2 A[Catch: Exception -> 0x0173, TryCatch #0 {Exception -> 0x0173, blocks: (B:5:0x0017, B:7:0x0021, B:9:0x0025, B:11:0x002b, B:13:0x0037, B:14:0x006f, B:16:0x0075, B:17:0x007b, B:20:0x0084, B:22:0x008a, B:24:0x0096, B:25:0x00a2, B:27:0x00a6, B:29:0x00ac, B:31:0x00b8, B:32:0x00be, B:34:0x00c2, B:36:0x00c8, B:38:0x00cc, B:40:0x00d2, B:42:0x00de, B:43:0x00ea, B:45:0x00ee, B:47:0x00f2, B:48:0x00fe, B:50:0x0102, B:52:0x0108, B:54:0x010c, B:56:0x0110, B:58:0x0116, B:61:0x0126, B:63:0x0136, B:65:0x0150, B:67:0x0156, B:68:0x013c, B:70:0x014d, B:71:0x015c, B:73:0x0160, B:75:0x0166, B:76:0x016c, B:81:0x003e, B:83:0x0042, B:85:0x0046, B:87:0x004a, B:89:0x0052, B:90:0x0059, B:92:0x005d, B:94:0x0061, B:96:0x0069), top: B:4:0x0017 }] */
+        /* JADX WARN: Removed duplicated region for block: B:45:0x00ee A[Catch: Exception -> 0x0173, TryCatch #0 {Exception -> 0x0173, blocks: (B:5:0x0017, B:7:0x0021, B:9:0x0025, B:11:0x002b, B:13:0x0037, B:14:0x006f, B:16:0x0075, B:17:0x007b, B:20:0x0084, B:22:0x008a, B:24:0x0096, B:25:0x00a2, B:27:0x00a6, B:29:0x00ac, B:31:0x00b8, B:32:0x00be, B:34:0x00c2, B:36:0x00c8, B:38:0x00cc, B:40:0x00d2, B:42:0x00de, B:43:0x00ea, B:45:0x00ee, B:47:0x00f2, B:48:0x00fe, B:50:0x0102, B:52:0x0108, B:54:0x010c, B:56:0x0110, B:58:0x0116, B:61:0x0126, B:63:0x0136, B:65:0x0150, B:67:0x0156, B:68:0x013c, B:70:0x014d, B:71:0x015c, B:73:0x0160, B:75:0x0166, B:76:0x016c, B:81:0x003e, B:83:0x0042, B:85:0x0046, B:87:0x004a, B:89:0x0052, B:90:0x0059, B:92:0x005d, B:94:0x0061, B:96:0x0069), top: B:4:0x0017 }] */
+        /* JADX WARN: Removed duplicated region for block: B:50:0x0102 A[Catch: Exception -> 0x0173, TryCatch #0 {Exception -> 0x0173, blocks: (B:5:0x0017, B:7:0x0021, B:9:0x0025, B:11:0x002b, B:13:0x0037, B:14:0x006f, B:16:0x0075, B:17:0x007b, B:20:0x0084, B:22:0x008a, B:24:0x0096, B:25:0x00a2, B:27:0x00a6, B:29:0x00ac, B:31:0x00b8, B:32:0x00be, B:34:0x00c2, B:36:0x00c8, B:38:0x00cc, B:40:0x00d2, B:42:0x00de, B:43:0x00ea, B:45:0x00ee, B:47:0x00f2, B:48:0x00fe, B:50:0x0102, B:52:0x0108, B:54:0x010c, B:56:0x0110, B:58:0x0116, B:61:0x0126, B:63:0x0136, B:65:0x0150, B:67:0x0156, B:68:0x013c, B:70:0x014d, B:71:0x015c, B:73:0x0160, B:75:0x0166, B:76:0x016c, B:81:0x003e, B:83:0x0042, B:85:0x0046, B:87:0x004a, B:89:0x0052, B:90:0x0059, B:92:0x005d, B:94:0x0061, B:96:0x0069), top: B:4:0x0017 }] */
+        /* JADX WARN: Removed duplicated region for block: B:60:0x0124  */
+        /* JADX WARN: Removed duplicated region for block: B:67:0x0156 A[Catch: Exception -> 0x0173, TryCatch #0 {Exception -> 0x0173, blocks: (B:5:0x0017, B:7:0x0021, B:9:0x0025, B:11:0x002b, B:13:0x0037, B:14:0x006f, B:16:0x0075, B:17:0x007b, B:20:0x0084, B:22:0x008a, B:24:0x0096, B:25:0x00a2, B:27:0x00a6, B:29:0x00ac, B:31:0x00b8, B:32:0x00be, B:34:0x00c2, B:36:0x00c8, B:38:0x00cc, B:40:0x00d2, B:42:0x00de, B:43:0x00ea, B:45:0x00ee, B:47:0x00f2, B:48:0x00fe, B:50:0x0102, B:52:0x0108, B:54:0x010c, B:56:0x0110, B:58:0x0116, B:61:0x0126, B:63:0x0136, B:65:0x0150, B:67:0x0156, B:68:0x013c, B:70:0x014d, B:71:0x015c, B:73:0x0160, B:75:0x0166, B:76:0x016c, B:81:0x003e, B:83:0x0042, B:85:0x0046, B:87:0x004a, B:89:0x0052, B:90:0x0059, B:92:0x005d, B:94:0x0061, B:96:0x0069), top: B:4:0x0017 }] */
+        /* JADX WARN: Removed duplicated region for block: B:73:0x0160 A[Catch: Exception -> 0x0173, TryCatch #0 {Exception -> 0x0173, blocks: (B:5:0x0017, B:7:0x0021, B:9:0x0025, B:11:0x002b, B:13:0x0037, B:14:0x006f, B:16:0x0075, B:17:0x007b, B:20:0x0084, B:22:0x008a, B:24:0x0096, B:25:0x00a2, B:27:0x00a6, B:29:0x00ac, B:31:0x00b8, B:32:0x00be, B:34:0x00c2, B:36:0x00c8, B:38:0x00cc, B:40:0x00d2, B:42:0x00de, B:43:0x00ea, B:45:0x00ee, B:47:0x00f2, B:48:0x00fe, B:50:0x0102, B:52:0x0108, B:54:0x010c, B:56:0x0110, B:58:0x0116, B:61:0x0126, B:63:0x0136, B:65:0x0150, B:67:0x0156, B:68:0x013c, B:70:0x014d, B:71:0x015c, B:73:0x0160, B:75:0x0166, B:76:0x016c, B:81:0x003e, B:83:0x0042, B:85:0x0046, B:87:0x004a, B:89:0x0052, B:90:0x0059, B:92:0x005d, B:94:0x0061, B:96:0x0069), top: B:4:0x0017 }] */
+        @Override // android.view.View
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            CharSequence charSequence;
+            TL_stars.StarGift starGift;
+            TextView textView;
+            Ribbon ribbon;
+            FrameLayout frameLayout;
+            TL_stars.SavedStarGift savedStarGift;
+            TL_stars.SavedStarGift savedStarGift2;
+            CheckBox2 checkBox2;
+            BackupImageView backupImageView;
+            long peerDialogId;
+            String str;
+            TextView textView2;
+            CharSequence text;
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setClassName("android.widget.Button");
+            accessibilityNodeInfo.setClickable(true);
+            if (isEnabled()) {
+                accessibilityNodeInfo.addAction(16);
+            }
+            try {
+                StringBuilder sb = new StringBuilder();
+                String str2 = null;
+                if (this.premiumTier != null) {
+                    TextView textView3 = this.titleView;
+                    if (textView3 != null && textView3.getVisibility() == 0 && !TextUtils.isEmpty(this.titleView.getText())) {
+                        charSequence = this.titleView.getText();
+                        if (TextUtils.isEmpty(charSequence)) {
+                            charSequence = LocaleController.getString(R.string.Gift2Gift);
+                        }
+                        sb.append(charSequence);
+                        textView = this.subtitleView;
+                        if (textView != null && textView.getVisibility() == 0 && !TextUtils.isEmpty(this.subtitleView.getText())) {
+                            sb.append(", ");
+                            sb.append(this.subtitleView.getText());
+                        }
+                        ribbon = this.ribbon;
+                        if (ribbon != null && ribbon.getVisibility() == 0) {
+                            text = this.ribbon.getText();
+                            if (!TextUtils.isEmpty(text)) {
+                                sb.append(", ");
+                                sb.append(text);
+                            }
+                        }
+                        frameLayout = this.priceLayout;
+                        if (frameLayout != null && frameLayout.getVisibility() == 0 && (textView2 = this.priceView) != null && textView2.getVisibility() == 0 && !TextUtils.isEmpty(this.priceView.getText())) {
+                            sb.append(", ");
+                            sb.append(this.priceView.getText());
+                        }
+                        savedStarGift = this.userGift;
+                        if (savedStarGift != null && savedStarGift.unsaved) {
+                            sb.append(", ");
+                            sb.append(LocaleController.getString(R.string.Gift2FilterHidden));
+                        }
+                        savedStarGift2 = this.userGift;
+                        if (savedStarGift2 != null && !(savedStarGift2.gift instanceof TL_stars.TL_starGiftUnique) && !savedStarGift2.name_hidden && (backupImageView = this.avatarView) != null && backupImageView.getVisibility() == 0) {
+                            peerDialogId = DialogObject.getPeerDialogId(this.userGift.from_id);
+                            if (peerDialogId != 0) {
+                                if (peerDialogId > 0) {
+                                    TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(peerDialogId));
+                                    if (user != null) {
+                                        str = UserObject.getUserName(user);
+                                        str2 = str;
+                                    }
+                                    if (!TextUtils.isEmpty(str2)) {
+                                        sb.append(", ");
+                                        sb.append((CharSequence) str2);
+                                    }
+                                } else {
+                                    TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-peerDialogId));
+                                    if (chat != null) {
+                                        str = chat.title;
+                                        str2 = str;
+                                    }
+                                    if (!TextUtils.isEmpty(str2)) {
+                                    }
+                                }
+                            }
+                        }
+                        checkBox2 = this.checkBox;
+                        if (checkBox2 != null && checkBox2.isChecked()) {
+                            accessibilityNodeInfo.setCheckable(true);
+                            accessibilityNodeInfo.setChecked(true);
+                        }
+                        accessibilityNodeInfo.setContentDescription(sb.toString());
+                    }
+                    charSequence = null;
+                    if (TextUtils.isEmpty(charSequence)) {
+                    }
+                    sb.append(charSequence);
+                    textView = this.subtitleView;
+                    if (textView != null) {
+                        sb.append(", ");
+                        sb.append(this.subtitleView.getText());
+                    }
+                    ribbon = this.ribbon;
+                    if (ribbon != null) {
+                        text = this.ribbon.getText();
+                        if (!TextUtils.isEmpty(text)) {
+                        }
+                    }
+                    frameLayout = this.priceLayout;
+                    if (frameLayout != null) {
+                        sb.append(", ");
+                        sb.append(this.priceView.getText());
+                    }
+                    savedStarGift = this.userGift;
+                    if (savedStarGift != null) {
+                        sb.append(", ");
+                        sb.append(LocaleController.getString(R.string.Gift2FilterHidden));
+                    }
+                    savedStarGift2 = this.userGift;
+                    if (savedStarGift2 != null) {
+                        peerDialogId = DialogObject.getPeerDialogId(this.userGift.from_id);
+                        if (peerDialogId != 0) {
+                        }
+                    }
+                    checkBox2 = this.checkBox;
+                    if (checkBox2 != null) {
+                        accessibilityNodeInfo.setCheckable(true);
+                        accessibilityNodeInfo.setChecked(true);
+                    }
+                    accessibilityNodeInfo.setContentDescription(sb.toString());
+                }
+                TL_stars.SavedStarGift savedStarGift3 = this.userGift;
+                if (savedStarGift3 != null && (starGift = savedStarGift3.gift) != null) {
+                    if ((starGift instanceof TL_stars.TL_starGiftUnique) && !TextUtils.isEmpty(starGift.title)) {
+                        charSequence = this.userGift.gift.title;
+                        if (TextUtils.isEmpty(charSequence)) {
+                        }
+                        sb.append(charSequence);
+                        textView = this.subtitleView;
+                        if (textView != null) {
+                        }
+                        ribbon = this.ribbon;
+                        if (ribbon != null) {
+                        }
+                        frameLayout = this.priceLayout;
+                        if (frameLayout != null) {
+                        }
+                        savedStarGift = this.userGift;
+                        if (savedStarGift != null) {
+                        }
+                        savedStarGift2 = this.userGift;
+                        if (savedStarGift2 != null) {
+                        }
+                        checkBox2 = this.checkBox;
+                        if (checkBox2 != null) {
+                        }
+                        accessibilityNodeInfo.setContentDescription(sb.toString());
+                    }
+                    charSequence = null;
+                    if (TextUtils.isEmpty(charSequence)) {
+                    }
+                    sb.append(charSequence);
+                    textView = this.subtitleView;
+                    if (textView != null) {
+                    }
+                    ribbon = this.ribbon;
+                    if (ribbon != null) {
+                    }
+                    frameLayout = this.priceLayout;
+                    if (frameLayout != null) {
+                    }
+                    savedStarGift = this.userGift;
+                    if (savedStarGift != null) {
+                    }
+                    savedStarGift2 = this.userGift;
+                    if (savedStarGift2 != null) {
+                    }
+                    checkBox2 = this.checkBox;
+                    if (checkBox2 != null) {
+                    }
+                    accessibilityNodeInfo.setContentDescription(sb.toString());
+                }
+                TL_stars.StarGift starGift2 = this.gift;
+                if (starGift2 != null && (starGift2 instanceof TL_stars.TL_starGiftUnique) && !TextUtils.isEmpty(starGift2.title)) {
+                    charSequence = this.gift.title;
+                    if (TextUtils.isEmpty(charSequence)) {
+                    }
+                    sb.append(charSequence);
+                    textView = this.subtitleView;
+                    if (textView != null) {
+                    }
+                    ribbon = this.ribbon;
+                    if (ribbon != null) {
+                    }
+                    frameLayout = this.priceLayout;
+                    if (frameLayout != null) {
+                    }
+                    savedStarGift = this.userGift;
+                    if (savedStarGift != null) {
+                    }
+                    savedStarGift2 = this.userGift;
+                    if (savedStarGift2 != null) {
+                    }
+                    checkBox2 = this.checkBox;
+                    if (checkBox2 != null) {
+                    }
+                    accessibilityNodeInfo.setContentDescription(sb.toString());
+                }
+                charSequence = null;
+                if (TextUtils.isEmpty(charSequence)) {
+                }
+                sb.append(charSequence);
+                textView = this.subtitleView;
+                if (textView != null) {
+                }
+                ribbon = this.ribbon;
+                if (ribbon != null) {
+                }
+                frameLayout = this.priceLayout;
+                if (frameLayout != null) {
+                }
+                savedStarGift = this.userGift;
+                if (savedStarGift != null) {
+                }
+                savedStarGift2 = this.userGift;
+                if (savedStarGift2 != null) {
+                }
+                checkBox2 = this.checkBox;
+                if (checkBox2 != null) {
+                }
+                accessibilityNodeInfo.setContentDescription(sb.toString());
+            } catch (Exception unused) {
+            }
         }
 
         public void removeImage() {
@@ -2568,6 +2812,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
     }
 
     public static class Ribbon extends View {
+        private CharSequence currentText;
         public final RibbonDrawable drawable;
 
         public Ribbon(Context context) {
@@ -2577,11 +2822,17 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             ribbonDrawable.setCallback(this);
         }
 
+        public CharSequence getText() {
+            return this.currentText;
+        }
+
         public void setText(CharSequence charSequence, boolean z) {
+            this.currentText = charSequence;
             this.drawable.setText(z ? 10 : 11, charSequence, z);
         }
 
         public void setText(int i, CharSequence charSequence, boolean z) {
+            this.currentText = charSequence;
             this.drawable.setText(i, charSequence, z);
         }
 

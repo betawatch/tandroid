@@ -57,6 +57,7 @@ public abstract class AboutLinkCell extends FrameLayout {
     private static final int MAX_OPEN_HEIGHT;
     private static final int MOST_SPEC;
     final float SPACE;
+    private CharSequence accessibilityText;
     private Paint backgroundPaint;
     private FrameLayout bottomShadow;
     private ValueAnimator collapseAnimator;
@@ -382,6 +383,7 @@ public abstract class AboutLinkCell extends FrameLayout {
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.oldText);
         this.stringBuilder = spannableStringBuilder;
+        this.accessibilityText = null;
         MessageObject.addLinks(false, spannableStringBuilder, false, false, !z);
         Emoji.replaceEmoji(this.stringBuilder, Theme.profile_aboutTextPaint.getFontMetricsInt(), false);
         if (this.lastMaxWidth <= 0) {
@@ -857,15 +859,49 @@ public abstract class AboutLinkCell extends FrameLayout {
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         if (this.textLayout != null) {
-            SpannableStringBuilder spannableStringBuilder = this.stringBuilder;
+            CharSequence buildAccessibilityText = buildAccessibilityText();
             CharSequence text = this.valueTextView.getText();
             accessibilityNodeInfo.setClassName("android.widget.TextView");
             if (TextUtils.isEmpty(text)) {
-                accessibilityNodeInfo.setText(spannableStringBuilder);
-                return;
+                accessibilityNodeInfo.setText(buildAccessibilityText);
+            } else {
+                accessibilityNodeInfo.setText(TextUtils.concat(text, ": ", buildAccessibilityText));
             }
-            accessibilityNodeInfo.setText(((Object) text) + ": " + ((Object) spannableStringBuilder));
         }
+    }
+
+    private CharSequence buildAccessibilityText() {
+        CharSequence charSequence = this.accessibilityText;
+        if (charSequence != null) {
+            return charSequence;
+        }
+        SpannableStringBuilder spannableStringBuilder = this.stringBuilder;
+        if (spannableStringBuilder == null) {
+            return null;
+        }
+        ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), ClickableSpan.class);
+        if (clickableSpanArr == null || clickableSpanArr.length == 0) {
+            SpannableStringBuilder spannableStringBuilder2 = this.stringBuilder;
+            this.accessibilityText = spannableStringBuilder2;
+            return spannableStringBuilder2;
+        }
+        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(this.stringBuilder);
+        for (final ClickableSpan clickableSpan : clickableSpanArr) {
+            int spanStart = spannableStringBuilder3.getSpanStart(clickableSpan);
+            int spanEnd = spannableStringBuilder3.getSpanEnd(clickableSpan);
+            if (spanStart >= 0 && spanEnd > spanStart) {
+                spannableStringBuilder3.removeSpan(clickableSpan);
+                spannableStringBuilder3.setSpan(new ClickableSpan() { // from class: org.telegram.ui.Cells.AboutLinkCell.5
+                    @Override // android.text.style.ClickableSpan
+                    public void onClick(View view) {
+                        AboutLinkCell aboutLinkCell = AboutLinkCell.this;
+                        aboutLinkCell.onLinkClick(clickableSpan, aboutLinkCell.textLayout, 0.0f);
+                    }
+                }, spanStart, spanEnd, 33);
+            }
+        }
+        this.accessibilityText = spannableStringBuilder3;
+        return spannableStringBuilder3;
     }
 
     public void setMoreButtonDisabled(boolean z) {

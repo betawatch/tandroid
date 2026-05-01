@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.Theme;
@@ -54,7 +55,12 @@ public class AlbumButton extends View {
         textPaint2.setColor(Theme.getColor(i2, resourcesProvider));
         textPaint2.setAlpha(102);
         textPaint2.setTextSize(AndroidUtilities.dp(13.0f));
-        this.title = "" + ((Object) charSequence);
+        StringBuilder sb = new StringBuilder();
+        String str2 = "";
+        sb.append("");
+        sb.append((Object) charSequence);
+        String sb2 = sb.toString();
+        this.title = sb2;
         this.subtitle = "" + i;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
         Drawable mutate = context.getResources().getDrawable(R.drawable.msg_media_gallery).mutate();
@@ -64,17 +70,22 @@ public class AlbumButton extends View {
         combinedDrawable.setIconSize(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f));
         if (photoEntry != null && (str = photoEntry.thumbPath) != null) {
             imageReceiver.setImage(ImageLocation.getForPath(str), "30.0_30.0", (ImageLocation) null, (String) null, combinedDrawable, (Object) null, 0);
-            return;
-        }
-        if (photoEntry != null && photoEntry.path != null) {
+        } else if (photoEntry != null && photoEntry.path != null) {
             if (photoEntry.isVideo) {
                 imageReceiver.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, combinedDrawable, (Object) null, 0);
-                return;
+            } else {
+                imageReceiver.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, combinedDrawable, (Object) null, 0);
             }
-            imageReceiver.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, combinedDrawable, (Object) null, 0);
-            return;
+        } else {
+            imageReceiver.setImageBitmap(combinedDrawable);
         }
-        imageReceiver.setImageBitmap(combinedDrawable);
+        StringBuilder sb3 = new StringBuilder();
+        sb3.append((Object) sb2);
+        if (i > 0) {
+            str2 = " " + LocaleController.formatPluralStringComma("Media", i);
+        }
+        sb3.append(str2);
+        setContentDescription(sb3.toString());
     }
 
     @Override // android.view.View

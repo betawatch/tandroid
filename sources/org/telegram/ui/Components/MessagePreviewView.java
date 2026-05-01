@@ -3482,6 +3482,7 @@ public abstract class MessagePreviewView extends FrameLayout {
                 this.textDrawable.setText(z ? this.text1 : this.text2, z2 && !LocaleController.isRTL);
                 this.iconDrawable.setState(z, z2);
                 this.first = false;
+                setContentDescription(this.textDrawable.getText());
             }
         }
 

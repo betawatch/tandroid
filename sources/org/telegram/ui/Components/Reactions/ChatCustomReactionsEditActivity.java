@@ -146,8 +146,8 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
         checkMaxCustomReactions(false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:50:0x03a2 A[EDGE_INSN: B:50:0x03a2->B:51:0x03a2 BREAK  A[LOOP:1: B:39:0x034f->B:53:0x034f], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x034f A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x03a7 A[EDGE_INSN: B:50:0x03a7->B:51:0x03a7 BREAK  A[LOOP:1: B:39:0x0354->B:53:0x0354], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0354 A[SYNTHETIC] */
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -366,7 +366,8 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
         this.actionButtonContainer.addView(this.actionButtonContainerGradient, LayoutHelper.createFrame(-1, -1, 119));
         UpdateReactionsButton updateReactionsButton = new UpdateReactionsButton(context, getResourceProvider());
         this.actionButton = updateReactionsButton;
-        updateReactionsButton.setDefaultState();
+        updateReactionsButton.setRound();
+        this.actionButton.setDefaultState();
         this.actionButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Reactions.ChatCustomReactionsEditActivity$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

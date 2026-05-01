@@ -779,7 +779,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$39800(ProfileActivity profileActivity, View view) {
+    public static /* synthetic */ void access$39900(ProfileActivity profileActivity, View view) {
         profileActivity.onTextDetailCellImageClicked(view);
     }
 
@@ -4997,7 +4997,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             return true;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:137:0x05e8  */
+        /* JADX WARN: Removed duplicated region for block: B:146:0x061b  */
         @Override // android.widget.FrameLayout, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -5185,6 +5185,15 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     ProfileGiftsView profileGiftsView = ProfileActivity.this.giftsView;
                     if (profileGiftsView != null) {
                         profileGiftsView.setExpandProgress(1.0f);
+                    }
+                    if (ProfileActivity.this.actionsView != null) {
+                        ProfileActivity.this.actionsView.setParentExpanded(1.0f);
+                    }
+                    if (ProfileActivity.this.musicView != null) {
+                        ProfileActivity.this.musicView.setParentExpanded(1.0f);
+                    }
+                    if (ProfileActivity.this.ratingView != null) {
+                        ProfileActivity.this.ratingView.setParentExpanded(1.0f);
                     }
                     ProfileActivity.this.expandPhoto = false;
                     ProfileActivity.this.updateCollectibleHint();
@@ -17944,7 +17953,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                 textDetailCell.setImageClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$$ExternalSyntheticLambda6
                                     @Override // android.view.View.OnClickListener
                                     public final void onClick(View view) {
-                                        ProfileActivity.access$39800(ProfileActivity.this, view);
+                                        ProfileActivity.access$39900(ProfileActivity.this, view);
                                     }
                                 });
                             }
@@ -17957,7 +17966,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                             textDetailCell.setImageClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$$ExternalSyntheticLambda7
                                 @Override // android.view.View.OnClickListener
                                 public final void onClick(View view) {
-                                    ProfileActivity.access$39800(ProfileActivity.this, view);
+                                    ProfileActivity.access$39900(ProfileActivity.this, view);
                                 }
                             });
                         } else {

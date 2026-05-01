@@ -2077,6 +2077,7 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
             }
         });
         this.windowView.setFocusable(true);
+        this.windowView.setImportantForAccessibility(2);
         FlashViews flashViews = new FlashViews(context, this.windowManager, this.windowView, this.windowLayoutParams);
         this.flashViews = flashViews;
         flashViews.add(new FlashViews.Invertable() { // from class: org.telegram.ui.Stories.recorder.StoryRecorder.3
@@ -2409,9 +2410,9 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
         this.previewContainer.addView(this.previewView, LayoutHelper.createFrame(-1, -1, 119));
         this.previewContainer.addView(this.photoFilterEnhanceView, LayoutHelper.createFrame(-1, -1, 119));
         WindowView windowView4 = this.windowView;
-        10 r7 = new 10(context, windowView4, windowView4, this.containerView, this.resourcesProvider, this.blurManager);
-        this.captionEdit = r7;
-        r7.setAccount(this.currentAccount);
+        10 r6 = new 10(context, windowView4, windowView4, this.containerView, this.resourcesProvider, this.blurManager);
+        this.captionEdit = r6;
+        r6.setAccount(this.currentAccount);
         this.captionEdit.setUiBlurBitmap(new Utilities.CallbackVoidReturn() { // from class: org.telegram.ui.Stories.recorder.StoryRecorder$$ExternalSyntheticLambda77
             @Override // org.telegram.messenger.Utilities.CallbackVoidReturn
             public final Object run() {
@@ -2678,7 +2679,8 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
         this.actionBarContainer.addView(this.flashButton, LayoutHelper.createFrame(56, 56, 53));
         ToggleButton toggleButton = new ToggleButton(context, R.drawable.media_dual_camera2_shadow, R.drawable.media_dual_camera2);
         this.dualButton = toggleButton;
-        toggleButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryRecorder$$ExternalSyntheticLambda57
+        toggleButton.setContentDescription(LocaleController.getString(R.string.AccDescrDualCameraOn));
+        this.dualButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryRecorder$$ExternalSyntheticLambda57
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 StoryRecorder.this.lambda$initViews$25(view2);
@@ -2691,7 +2693,8 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
         this.actionBarContainer.addView(this.dualButton, LayoutHelper.createFrame(56, 56, 53));
         CollageLayoutButton collageLayoutButton = new CollageLayoutButton(context);
         this.collageButton = collageLayoutButton;
-        collageLayoutButton.setBackground(Theme.createSelectorDrawable(553648127));
+        collageLayoutButton.setContentDescription(LocaleController.getString(R.string.AccDescrCollage));
+        this.collageButton.setBackground(Theme.createSelectorDrawable(553648127));
         if (this.lastCollageLayout == null) {
             this.lastCollageLayout = (CollageLayout) CollageLayout.getLayouts().get(6);
         }
@@ -2709,7 +2712,8 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
         this.actionBarContainer.addView(this.collageButton, LayoutHelper.createFrame(56, 56, 53));
         ToggleButton2 toggleButton22 = new ToggleButton2(context);
         this.collageRemoveButton = toggleButton22;
-        toggleButton22.setBackground(Theme.createSelectorDrawable(553648127));
+        toggleButton22.setContentDescription(LocaleController.getString(R.string.AccDescrCollageClose));
+        this.collageRemoveButton.setBackground(Theme.createSelectorDrawable(553648127));
         this.collageRemoveButton.setIcon((Drawable) new CollageLayoutButton.CollageLayoutDrawable(new CollageLayout("../../.."), true), false);
         this.collageRemoveButton.setVisibility(8);
         this.collageRemoveButton.setAlpha(0.0f);
@@ -2830,7 +2834,8 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
         this.flashViews.add(this.modeSwitcherView);
         FlashViews.ImageViewInvertable imageViewInvertable4 = new FlashViews.ImageViewInvertable(context);
         this.rotateButton = imageViewInvertable4;
-        imageViewInvertable4.setImageResource(R.drawable.stream_flip);
+        imageViewInvertable4.setContentDescription(LocaleController.getString(R.string.AccDescrSwitchCamera));
+        this.rotateButton.setImageResource(R.drawable.stream_flip);
         this.rotateButton.setScaleType(scaleType);
         this.rotateButton.setColorFilter(new PorterDuffColorFilter(-1, mode));
         this.rotateButton.setBackground(Theme.createSelectorDrawable(553648127));
@@ -2844,7 +2849,8 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
         });
         FlashViews.ImageViewInvertable imageViewInvertable5 = new FlashViews.ImageViewInvertable(context);
         this.liveSettingsButton = imageViewInvertable5;
-        imageViewInvertable5.setImageResource(R.drawable.stream_settings);
+        imageViewInvertable5.setContentDescription(LocaleController.getString(R.string.LiveStorySettings));
+        this.liveSettingsButton.setImageResource(R.drawable.stream_settings);
         this.liveSettingsButton.setScaleType(scaleType);
         this.liveSettingsButton.setColorFilter(new PorterDuffColorFilter(-1, mode));
         this.liveSettingsButton.setBackground(Theme.createSelectorDrawable(553648127));
@@ -3358,6 +3364,7 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
         }
         dualCameraView.toggleDual();
         this.dualButton.setValue(this.cameraView.isDual());
+        this.dualButton.setContentDescription(LocaleController.getString(this.cameraView.isDual() ? R.string.AccDescrDualCameraOn : R.string.AccDescrDualCameraOff));
         this.dualHint.hide();
         MessagesController.getGlobalMainSettings().edit().putInt("storydualhint", 2).apply();
         if (this.savedDualHint.shown()) {
@@ -5990,6 +5997,11 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
             if (z && (draftSavedHint = this.draftSavedHint) != null) {
                 draftSavedHint.hide(true);
             }
+            ContainerView containerView = this.containerView;
+            if (containerView != null) {
+                containerView.setImportantForAccessibility(z ? 4 : 0);
+            }
+            this.galleryListView.setImportantForAccessibility(z ? 0 : 4);
             this.galleryListViewOpening = Boolean.valueOf(z);
             float translationY = this.galleryListView.getTranslationY();
             final float height = z ? 0.0f : (this.windowView.getHeight() - this.galleryListView.top()) + (AndroidUtilities.navigationBarHeight * 2.5f);
@@ -8547,6 +8559,7 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
         public void toggleDual() {
             super.toggleDual();
             StoryRecorder.this.dualButton.setValue(isDual());
+            StoryRecorder.this.dualButton.setContentDescription(LocaleController.getString(isDual() ? R.string.AccDescrDualCameraOn : R.string.AccDescrDualCameraOff));
             StoryRecorder storyRecorder = StoryRecorder.this;
             storyRecorder.setCameraFlashModeIcon(storyRecorder.getCurrentFlashMode(), true);
         }
@@ -8562,6 +8575,7 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
                 }, 340L);
             }
             StoryRecorder.this.dualButton.setValue(isDual());
+            StoryRecorder.this.dualButton.setContentDescription(LocaleController.getString(isDual() ? R.string.AccDescrDualCameraOn : R.string.AccDescrDualCameraOff));
         }
 
         /* JADX INFO: Access modifiers changed from: private */

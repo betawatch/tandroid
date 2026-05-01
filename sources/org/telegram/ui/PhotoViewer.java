@@ -89,6 +89,7 @@ import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
@@ -254,6 +255,7 @@ import org.telegram.ui.Components.GestureDetector2;
 import org.telegram.ui.Components.GroupedPhotosListView;
 import org.telegram.ui.Components.HideViewAfterAnimation;
 import org.telegram.ui.Components.ImageUpdater;
+import org.telegram.ui.Components.IntSeekBarAccessibilityDelegate;
 import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.LinkSpanDrawable;
@@ -1445,6 +1447,8 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             this.subtitleTextView.setGravity(19);
             this.subtitleTextView.setTextColor(-1);
             this.subtitleTextView.setEllipsizeByGradient(true);
+            this.subtitleTextView.setImportantForAccessibility(1);
+            this.subtitleTextView.setAccessibilityLiveRegion(1);
             this.container.addView(this.subtitleTextView, LayoutHelper.createFrame(-1, 20.0f, 51, 16.0f, 0.0f, 0.0f, 0.0f));
         }
 
@@ -1576,6 +1580,11 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 }
             }
             this.subtitleTextView.setText(charSequence, z);
+            AnimatedTextView animatedTextView2 = this.subtitleTextView;
+            if (TextUtils.isEmpty(charSequence)) {
+                charSequence = null;
+            }
+            animatedTextView2.setContentDescription(charSequence);
         }
 
         public void updateOrientation() {
@@ -2928,6 +2937,16 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 int centerY = (int) (((int) this.rect.centerY()) - (AndroidUtilities.dp(5.0f) * (1.0f - this.rotation)));
                 canvas.drawLine(AndroidUtilities.dp(5.0f) + centerX, centerY - AndroidUtilities.dp(5.0f), centerX - AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f) + centerY, this.paint);
                 canvas.drawLine(centerX - AndroidUtilities.dp(5.0f), centerY - AndroidUtilities.dp(5.0f), centerX + AndroidUtilities.dp(5.0f), centerY + AndroidUtilities.dp(5.0f), this.paint);
+            }
+        }
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            accessibilityNodeInfo.setClassName("android.widget.Button");
+            int i = this.currentCount;
+            if (i > 0) {
+                accessibilityNodeInfo.setContentDescription(LocaleController.formatPluralString("PhotosSelected", i, new Object[0]));
             }
         }
     }
@@ -27819,6 +27838,51 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             this.textPaint.setColor(-3289651);
             this.lowQualityDescription = LocaleController.getString("AccDescrVideoCompressLow", R.string.AccDescrVideoCompressLow);
             this.hightQualityDescription = LocaleController.getString("AccDescrVideoCompressHigh", R.string.AccDescrVideoCompressHigh);
+            setImportantForAccessibility(1);
+            setFocusable(true);
+            setAccessibilityDelegate(new IntSeekBarAccessibilityDelegate() { // from class: org.telegram.ui.PhotoViewer.QualityChooseView.1
+                @Override // org.telegram.ui.Components.IntSeekBarAccessibilityDelegate
+                protected int getProgress() {
+                    return PhotoViewer.this.selectedCompression;
+                }
+
+                @Override // org.telegram.ui.Components.IntSeekBarAccessibilityDelegate
+                protected void setProgress(int i) {
+                    int max;
+                    if (PhotoViewer.this.compressionsCount > 0 && (max = Math.max(0, Math.min(PhotoViewer.this.compressionsCount - 1, i))) != PhotoViewer.this.selectedCompression) {
+                        QualityChooseView qualityChooseView = QualityChooseView.this;
+                        qualityChooseView.startMovingQuality = PhotoViewer.this.selectedCompression;
+                        PhotoViewer.this.selectedCompression = max;
+                        PhotoViewer.this.didChangedCompressionLevel(false);
+                        QualityChooseView.this.invalidate();
+                        if (PhotoViewer.this.selectedCompression != QualityChooseView.this.startMovingQuality) {
+                            PhotoViewer.this.requestVideoPreview(1);
+                        }
+                    }
+                }
+
+                @Override // org.telegram.ui.Components.IntSeekBarAccessibilityDelegate
+                protected int getMaxValue() {
+                    return Math.max(0, PhotoViewer.this.compressionsCount - 1);
+                }
+
+                @Override // org.telegram.ui.Components.SeekBarAccessibilityDelegate
+                protected CharSequence getContentDescription(View view) {
+                    StringBuilder sb = new StringBuilder();
+                    sb.append(LocaleController.getString("AccDescrVideoQuality", R.string.AccDescrVideoQuality));
+                    if (PhotoViewer.this.compressionsCount > 0) {
+                        sb.append(", ");
+                        sb.append(PhotoViewer.this.selectedCompression + 1);
+                        sb.append(" / ");
+                        sb.append(PhotoViewer.this.compressionsCount);
+                    }
+                    sb.append(", ");
+                    sb.append(QualityChooseView.this.lowQualityDescription);
+                    sb.append(" – ");
+                    sb.append(QualityChooseView.this.hightQualityDescription);
+                    return sb.toString();
+                }
+            });
         }
 
         @Override // android.view.View

@@ -8,11 +8,13 @@ import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Rect;
 import android.os.Build;
+import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
@@ -25,6 +27,7 @@ import org.telegram.ui.Components.SeekBarView;
 
 /* loaded from: classes4.dex */
 public class SlideIntChooseView extends FrameLayout {
+    private CharSequence label;
     private final AnimatedTextView maxText;
     private float maxTextEmojiSaturation;
     private ValueAnimator maxTextEmojiSaturationAnimator;
@@ -53,6 +56,7 @@ public class SlideIntChooseView extends FrameLayout {
         animatedTextView.setGravity(3);
         animatedTextView.setEmojiCacheType(19);
         animatedTextView.setEmojiColor(-1);
+        animatedTextView.setImportantForAccessibility(2);
         addView(animatedTextView, LayoutHelper.createFrame(-1, 25.0f, 48, 22.0f, 13.0f, 22.0f, 0.0f));
         AnimatedTextView animatedTextView2 = new AnimatedTextView(context, false, true, true);
         this.valueText = animatedTextView2;
@@ -62,6 +66,7 @@ public class SlideIntChooseView extends FrameLayout {
         animatedTextView2.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteValueText, resourcesProvider));
         animatedTextView2.setEmojiColor(-1);
         animatedTextView2.setEmojiCacheType(19);
+        animatedTextView2.setImportantForAccessibility(2);
         addView(animatedTextView2, LayoutHelper.createFrame(-1, 25.0f, 48, 22.0f, 13.0f, 22.0f, 0.0f));
         AnimatedTextView animatedTextView3 = new AnimatedTextView(context, true, true, true);
         this.maxText = animatedTextView3;
@@ -71,6 +76,7 @@ public class SlideIntChooseView extends FrameLayout {
         animatedTextView3.setTextColor(Theme.getColor(i, resourcesProvider));
         animatedTextView3.setEmojiColor(-1);
         animatedTextView3.setEmojiCacheType(19);
+        animatedTextView3.setImportantForAccessibility(2);
         addView(animatedTextView3, LayoutHelper.createFrame(-1, 25.0f, 48, 22.0f, 13.0f, 22.0f, 0.0f));
         SeekBarView seekBarView = new SeekBarView(context, resourcesProvider) { // from class: org.telegram.ui.Cells.SlideIntChooseView.1
             @Override // org.telegram.ui.Components.SeekBarView, android.view.View
@@ -84,11 +90,6 @@ public class SlideIntChooseView extends FrameLayout {
         this.seekBarView = seekBarView;
         seekBarView.setReportChanges(true);
         seekBarView.setDelegate(new SeekBarView.SeekBarViewDelegate() { // from class: org.telegram.ui.Cells.SlideIntChooseView.2
-            @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
-            public /* synthetic */ CharSequence getContentDescription() {
-                return SeekBarView.SeekBarViewDelegate.-CC.$default$getContentDescription(this);
-            }
-
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
             public boolean needVisuallyDivideSteps() {
                 return false;
@@ -124,10 +125,60 @@ public class SlideIntChooseView extends FrameLayout {
 
             @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
             public int getStepsCount() {
+                if (SlideIntChooseView.this.options == null) {
+                    return 0;
+                }
                 return SlideIntChooseView.this.options.getStepsCount();
+            }
+
+            @Override // org.telegram.ui.Components.SeekBarView.SeekBarViewDelegate
+            public CharSequence getContentDescription() {
+                return SlideIntChooseView.this.buildAccessibilityDescription();
             }
         });
         addView(seekBarView, LayoutHelper.createFrame(-1, 38.0f, 55, 6.0f, 30.0f, 6.0f, 0.0f));
+    }
+
+    public void setLabel(CharSequence charSequence) {
+        this.label = charSequence;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public CharSequence buildAccessibilityDescription() {
+        Utilities.Callback2Return callback2Return;
+        try {
+            StringBuilder sb = new StringBuilder();
+            if (!TextUtils.isEmpty(this.label)) {
+                sb.append(this.label);
+            }
+            Options options = this.options;
+            if (options != null && (callback2Return = options.toString) != null) {
+                CharSequence charSequence = (CharSequence) callback2Return.run(0, Integer.valueOf(this.value));
+                if (!TextUtils.isEmpty(charSequence)) {
+                    if (sb.length() > 0) {
+                        sb.append(", ");
+                    }
+                    sb.append(charSequence);
+                }
+                CharSequence charSequence2 = (CharSequence) this.options.toString.run(-1, Integer.valueOf(this.options.getMin()));
+                CharSequence charSequence3 = (CharSequence) this.options.toString.run(1, Integer.valueOf(this.options.getMax()));
+                if (!TextUtils.isEmpty(charSequence2) && !TextUtils.isEmpty(charSequence3)) {
+                    if (sb.length() > 0) {
+                        sb.append(", ");
+                    }
+                    sb.append(charSequence2);
+                    sb.append(" – ");
+                    sb.append(charSequence3);
+                }
+            }
+            if (sb.length() > 0) {
+                return sb.toString();
+            }
+            return null;
+        } catch (Throwable th) {
+            FileLog.e(th);
+            return this.label;
+        }
     }
 
     public void set(int i, Options options, Utilities.Callback callback) {
@@ -193,12 +244,19 @@ public class SlideIntChooseView extends FrameLayout {
         if (this.value < i) {
             this.value = i;
         }
+        if (this.options == null) {
+            return;
+        }
         this.seekBarView.setMinProgress(getProgress(i));
         updateTexts(this.value, false);
         invalidate();
     }
 
     public void updateTexts(int i, boolean z) {
+        Options options = this.options;
+        if (options == null || options.toString == null) {
+            return;
+        }
         this.minText.cancelAnimation();
         this.maxText.cancelAnimation();
         this.valueText.cancelAnimation();

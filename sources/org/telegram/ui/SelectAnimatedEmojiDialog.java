@@ -44,6 +44,7 @@ import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowManager;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
@@ -896,6 +897,8 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                                                     selectAnimatedEmojiDialog.emojiTabs = selectAnimatedEmojiDialog.cachedEmojiTabs[SelectAnimatedEmojiDialog.this.showStickers ? 1 : 0];
                                                     SelectAnimatedEmojiDialog.this.emojiTabs.setVisibility(0);
                                                     SelectAnimatedEmojiDialog.this.emojiTabs.toggleEmojiStickersTab.setDrawable(ContextCompat.getDrawable(getContext(), SelectAnimatedEmojiDialog.this.showStickers ? R.drawable.msg_emoji_stickers : R.drawable.msg_emoji_smiles));
+                                                    SelectAnimatedEmojiDialog selectAnimatedEmojiDialog2 = SelectAnimatedEmojiDialog.this;
+                                                    selectAnimatedEmojiDialog2.emojiTabs.toggleEmojiStickersTab.setContentDescription(LocaleController.getString(selectAnimatedEmojiDialog2.showStickers ? R.string.AccDescrStickers : R.string.Emoji));
                                                     SelectAnimatedEmojiDialog.this.updateRows(true, false, false);
                                                     SelectAnimatedEmojiDialog.this.layoutManager.scrollToPositionWithOffset(0, 0);
                                                     return true;
@@ -914,9 +917,9 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                                                 }
                                                 SelectAnimatedEmojiDialog.this.scrollToPosition(i16, AndroidUtilities.dp((i == 6 ? 7 : 0) - 2));
                                                 SelectAnimatedEmojiDialog.this.emojiTabs.select(i15);
-                                                SelectAnimatedEmojiDialog selectAnimatedEmojiDialog2 = SelectAnimatedEmojiDialog.this;
-                                                selectAnimatedEmojiDialog2.emojiGridView.scrolledByUserOnce = true;
-                                                selectAnimatedEmojiDialog2.search(null);
+                                                SelectAnimatedEmojiDialog selectAnimatedEmojiDialog3 = SelectAnimatedEmojiDialog.this;
+                                                selectAnimatedEmojiDialog3.emojiGridView.scrolledByUserOnce = true;
+                                                selectAnimatedEmojiDialog3.search(null);
                                                 SearchBox searchBox = SelectAnimatedEmojiDialog.this.searchBox;
                                                 if (searchBox != null && searchBox.categoriesListView != null) {
                                                     SelectAnimatedEmojiDialog.this.searchBox.categoriesListView.selectCategory((StickerCategoriesListView.EmojiCategory) null);
@@ -992,6 +995,8 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                                             selectAnimatedEmojiDialog.emojiTabs = selectAnimatedEmojiDialog.cachedEmojiTabs[SelectAnimatedEmojiDialog.this.showStickers ? 1 : 0];
                                             SelectAnimatedEmojiDialog.this.emojiTabs.setVisibility(0);
                                             SelectAnimatedEmojiDialog.this.emojiTabs.toggleEmojiStickersTab.setDrawable(ContextCompat.getDrawable(getContext(), SelectAnimatedEmojiDialog.this.showStickers ? R.drawable.msg_emoji_stickers : R.drawable.msg_emoji_smiles));
+                                            SelectAnimatedEmojiDialog selectAnimatedEmojiDialog2 = SelectAnimatedEmojiDialog.this;
+                                            selectAnimatedEmojiDialog2.emojiTabs.toggleEmojiStickersTab.setContentDescription(LocaleController.getString(selectAnimatedEmojiDialog2.showStickers ? R.string.AccDescrStickers : R.string.Emoji));
                                             SelectAnimatedEmojiDialog.this.updateRows(true, false, false);
                                             SelectAnimatedEmojiDialog.this.layoutManager.scrollToPositionWithOffset(0, 0);
                                             return true;
@@ -1010,9 +1015,9 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                                         }
                                         SelectAnimatedEmojiDialog.this.scrollToPosition(i16, AndroidUtilities.dp((i == 6 ? 7 : 0) - 2));
                                         SelectAnimatedEmojiDialog.this.emojiTabs.select(i15);
-                                        SelectAnimatedEmojiDialog selectAnimatedEmojiDialog2 = SelectAnimatedEmojiDialog.this;
-                                        selectAnimatedEmojiDialog2.emojiGridView.scrolledByUserOnce = true;
-                                        selectAnimatedEmojiDialog2.search(null);
+                                        SelectAnimatedEmojiDialog selectAnimatedEmojiDialog3 = SelectAnimatedEmojiDialog.this;
+                                        selectAnimatedEmojiDialog3.emojiGridView.scrolledByUserOnce = true;
+                                        selectAnimatedEmojiDialog3.search(null);
                                         SearchBox searchBox = SelectAnimatedEmojiDialog.this.searchBox;
                                         if (searchBox != null && searchBox.categoriesListView != null) {
                                             SelectAnimatedEmojiDialog.this.searchBox.categoriesListView.selectCategory((StickerCategoriesListView.EmojiCategory) null);
@@ -4677,6 +4682,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                 formatString = LocaleController.formatString("AddStickersCount", R.string.AddStickersCount, this.lastTitle);
             }
             this.addButtonTextView.setText(formatString, z2);
+            this.addButtonView.setContentDescription(formatString);
             ValueAnimator valueAnimator = this.installFadeAway;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
@@ -4857,6 +4863,31 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                 }
             };
             this.preloadEffectImageReceiver.ignoreNotifications = true;
+            setFocusable(true);
+        }
+
+        @Override // android.view.View
+        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            String findAnimatedEmojiEmoticon;
+            AnimatedEmojiSpan animatedEmojiSpan;
+            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+            if (this.empty) {
+                findAnimatedEmojiEmoticon = LocaleController.getString(R.string.RemoveStatus);
+            } else {
+                ReactionsLayoutInBubble.VisibleReaction visibleReaction = this.reaction;
+                if (visibleReaction == null || (findAnimatedEmojiEmoticon = visibleReaction.emojicon) == null) {
+                    TLRPC.Document document = this.document;
+                    if (document == null && (animatedEmojiSpan = this.span) != null && (document = animatedEmojiSpan.document) == null) {
+                        document = AnimatedEmojiDrawable.findDocument(SelectAnimatedEmojiDialog.this.currentAccount, this.span.getDocumentId());
+                    }
+                    findAnimatedEmojiEmoticon = document != null ? MessageObject.findAnimatedEmojiEmoticon(document, null) : null;
+                }
+            }
+            if (findAnimatedEmojiEmoticon != null) {
+                accessibilityNodeInfo.setContentDescription(findAnimatedEmojiEmoticon);
+            }
+            accessibilityNodeInfo.setSelected(this.selected);
+            accessibilityNodeInfo.setClickable(true);
         }
 
         public void setAnimatedScale(float f) {
@@ -7003,6 +7034,8 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                     SelectAnimatedEmojiDialog.SearchBox.this.lambda$new$0(view);
                 }
             });
+            this.search.setClickable(false);
+            this.search.setImportantForAccessibility(2);
             this.box.addView(this.search, LayoutHelper.createFrame(36, 36, 51));
             FrameLayout frameLayout2 = new FrameLayout(context) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.SearchBox.2
                 Paint fadePaint;
@@ -7394,11 +7427,19 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
             updateButton(false);
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Type inference failed for: r4v3 */
+        /* JADX WARN: Type inference failed for: r4v4, types: [boolean, int] */
+        /* JADX WARN: Type inference failed for: r4v6 */
         private void updateButton(boolean z) {
             StickerCategoriesListView stickerCategoriesListView;
             StickerCategoriesListView stickerCategoriesListView2;
             if (!isInProgress() || ((this.input.length() == 0 && ((stickerCategoriesListView2 = this.categoriesListView) == null || stickerCategoriesListView2.getSelectedCategory() == null)) || z)) {
-                this.searchStateDrawable.setIconState((this.input.length() > 0 || ((stickerCategoriesListView = this.categoriesListView) != null && stickerCategoriesListView.isCategoriesShown() && (this.categoriesListView.isScrolledIntoOccupiedWidth() || this.categoriesListView.getSelectedCategory() != null))) ? 1 : 0);
+                ?? r4 = (this.input.length() > 0 || ((stickerCategoriesListView = this.categoriesListView) != null && stickerCategoriesListView.isCategoriesShown() && (this.categoriesListView.isScrolledIntoOccupiedWidth() || this.categoriesListView.getSelectedCategory() != null))) ? 1 : 0;
+                this.searchStateDrawable.setIconState(r4);
+                this.search.setClickable(r4);
+                this.search.setContentDescription(r4 != 0 ? LocaleController.getString(R.string.AccDescrGoBack) : null);
+                this.search.setImportantForAccessibility(r4 == 0 ? 2 : 1);
             }
         }
 

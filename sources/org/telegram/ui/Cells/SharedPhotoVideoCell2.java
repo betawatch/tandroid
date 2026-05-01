@@ -27,6 +27,7 @@ import android.text.TextUtils;
 import android.util.SparseArray;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
@@ -35,6 +36,7 @@ import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
@@ -294,10 +296,10 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         setMessageObject(this.currentMessageObject, this.currentParentColumnsCount, true);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:84:0x0438  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x044c  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x046b  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x047e  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x043b  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x044f  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x046e  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x0481  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -348,6 +350,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
             this.privacyType = -1;
             this.privacyBitmap = null;
             this.authorText = null;
+            updateAccessibilityDescription();
             return;
         }
         if (this.attached) {
@@ -454,6 +457,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                             spannableStringBuilder.setSpan(avatarSpan, 0, 1, 33);
                             this.authorText = new Text(spannableStringBuilder, i3 == i2 ? 14.0f : 10.1666f, AndroidUtilities.bold());
                         }
+                        updateAccessibilityDescription();
                         invalidate();
                     }
                     if ((MessageObject.getMedia(messageObject.messageOwner) instanceof TLRPC.TL_messageMediaPhoto) && MessageObject.getMedia(messageObject.messageOwner).photo != null && !messageObject.photoThumbs.isEmpty()) {
@@ -497,6 +501,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                         setPrivacyType(getPrivacyType(messageObject));
                         if (this.isSearchingHashtag) {
                         }
+                        updateAccessibilityDescription();
                         invalidate();
                     }
                 }
@@ -512,6 +517,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
             setPrivacyType(getPrivacyType(messageObject));
             if (this.isSearchingHashtag) {
             }
+            updateAccessibilityDescription();
             invalidate();
         }
         i2 = 2;
@@ -526,7 +532,105 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         setPrivacyType(getPrivacyType(messageObject));
         if (this.isSearchingHashtag) {
         }
+        updateAccessibilityDescription();
         invalidate();
+    }
+
+    @Override // android.view.View
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        try {
+            if (this.currentMessageObject != null) {
+                accessibilityNodeInfo.setEnabled(true);
+                accessibilityNodeInfo.setClickable(true);
+                accessibilityNodeInfo.addAction(16);
+            }
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:20:0x006b A[Catch: Exception -> 0x000a, TRY_ENTER, TryCatch #1 {Exception -> 0x000a, blocks: (B:3:0x0002, B:5:0x0006, B:8:0x000d, B:10:0x0018, B:12:0x001c, B:13:0x0025, B:15:0x002b, B:17:0x0063, B:20:0x006b, B:21:0x006e, B:23:0x0073, B:25:0x007f, B:27:0x0083, B:29:0x0087, B:31:0x008b, B:32:0x009f, B:34:0x00a5, B:35:0x00bf, B:37:0x0032, B:39:0x0038, B:40:0x0062, B:41:0x0043, B:43:0x0049, B:46:0x0050, B:47:0x0058), top: B:2:0x0002 }] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0073 A[Catch: Exception -> 0x000a, TryCatch #1 {Exception -> 0x000a, blocks: (B:3:0x0002, B:5:0x0006, B:8:0x000d, B:10:0x0018, B:12:0x001c, B:13:0x0025, B:15:0x002b, B:17:0x0063, B:20:0x006b, B:21:0x006e, B:23:0x0073, B:25:0x007f, B:27:0x0083, B:29:0x0087, B:31:0x008b, B:32:0x009f, B:34:0x00a5, B:35:0x00bf, B:37:0x0032, B:39:0x0038, B:40:0x0062, B:41:0x0043, B:43:0x0049, B:46:0x0050, B:47:0x0058), top: B:2:0x0002 }] */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00a5 A[Catch: Exception -> 0x000a, TryCatch #1 {Exception -> 0x000a, blocks: (B:3:0x0002, B:5:0x0006, B:8:0x000d, B:10:0x0018, B:12:0x001c, B:13:0x0025, B:15:0x002b, B:17:0x0063, B:20:0x006b, B:21:0x006e, B:23:0x0073, B:25:0x007f, B:27:0x0083, B:29:0x0087, B:31:0x008b, B:32:0x009f, B:34:0x00a5, B:35:0x00bf, B:37:0x0032, B:39:0x0038, B:40:0x0062, B:41:0x0043, B:43:0x0049, B:46:0x0050, B:47:0x0058), top: B:2:0x0002 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private void updateAccessibilityDescription() {
+        String string;
+        double duration;
+        int i;
+        TL_stories.StoryItem storyItem;
+        TL_stories.StoryViews storyViews;
+        try {
+            MessageObject messageObject = this.currentMessageObject;
+            if (messageObject == null) {
+                setContentDescription(null);
+                return;
+            }
+            boolean isStory = messageObject.isStory();
+            StringBuilder sb = new StringBuilder();
+            if (isStory && this.isStoryPinned) {
+                sb.append(LocaleController.getString(R.string.AccDescrStoryPinned));
+            }
+            if (messageObject.isLivePhoto()) {
+                string = LocaleController.getString(R.string.AccDescrLivePhoto);
+            } else {
+                if (messageObject.isRoundVideo()) {
+                    string = LocaleController.getString(R.string.AccDescrRoundVideo);
+                    duration = messageObject.getDuration();
+                } else {
+                    if (!messageObject.isVideo() && !messageObject.isVideoStory()) {
+                        string = LocaleController.getString(R.string.AttachPhoto);
+                    }
+                    string = LocaleController.getString(R.string.AttachVideo);
+                    duration = messageObject.getDuration();
+                }
+                i = (int) duration;
+                if (sb.length() > 0) {
+                    sb.append(", ");
+                }
+                sb.append(string);
+                if (i > 0) {
+                    sb.append(", ");
+                    sb.append(LocaleController.formatDuration(i));
+                }
+                if (isStory && (storyItem = messageObject.storyItem) != null) {
+                    storyViews = storyItem.views;
+                    if (storyViews != null && storyViews.views_count > 0) {
+                        sb.append(", ");
+                        sb.append(LocaleController.formatPluralString("Views", messageObject.storyItem.views.views_count, new Object[0]));
+                    }
+                    if (messageObject.storyItem.date > 0) {
+                        sb.append(", ");
+                        sb.append(LocaleController.formatString(R.string.AccDescrPostedDate, LocaleController.formatDateAudio(messageObject.storyItem.date, false)));
+                    }
+                }
+                setContentDescription(sb.toString());
+            }
+            i = 0;
+            if (sb.length() > 0) {
+            }
+            sb.append(string);
+            if (i > 0) {
+            }
+            if (isStory) {
+                storyViews = storyItem.views;
+                if (storyViews != null) {
+                    sb.append(", ");
+                    sb.append(LocaleController.formatPluralString("Views", messageObject.storyItem.views.views_count, new Object[0]));
+                }
+                if (messageObject.storyItem.date > 0) {
+                }
+            }
+            setContentDescription(sb.toString());
+        } catch (Exception e) {
+            FileLog.e(e);
+            try {
+                setContentDescription(null);
+            } catch (Exception unused) {
+            }
+        }
     }
 
     private void setPrivacyType(int i) {

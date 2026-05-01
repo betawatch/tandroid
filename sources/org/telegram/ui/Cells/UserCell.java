@@ -242,6 +242,7 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
             ScaleStateListAnimator.apply(textView2, 0.05f, 1.2f);
             this.adminTextView.setTextSize(1, 14.0f);
             this.adminTextView.setTextColor(Theme.getColor(Theme.key_profile_creatorIcon, resourcesProvider));
+            this.adminTextView.setImportantForAccessibility(2);
             View view8 = this.adminTextView;
             boolean z11 = LocaleController.isRTL;
             addView(view8, LayoutHelper.createFrame(-2, -2.0f, (z11 ? 3 : 5) | 48, z11 ? 23.0f : 0.0f, 10.0f, z11 ? 0.0f : 23.0f, 0.0f));
@@ -815,15 +816,45 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
             accessibilityNodeInfo.setCheckable(true);
             accessibilityNodeInfo.setChecked(this.checkBoxBig.isChecked());
             accessibilityNodeInfo.setClassName("android.widget.CheckBox");
-            return;
+        } else {
+            CheckBox2 checkBox2 = this.checkBox;
+            if (checkBox2 != null && checkBox2.getVisibility() == 0) {
+                accessibilityNodeInfo.setCheckable(true);
+                accessibilityNodeInfo.setChecked(this.checkBox.isChecked());
+                accessibilityNodeInfo.setClassName("android.widget.CheckBox");
+            }
         }
-        CheckBox2 checkBox2 = this.checkBox;
-        if (checkBox2 == null || checkBox2.getVisibility() != 0) {
-            return;
+        StringBuilder sb = new StringBuilder();
+        SimpleTextView simpleTextView = this.nameTextView;
+        if (simpleTextView != null) {
+            CharSequence text = simpleTextView.getText();
+            if (!TextUtils.isEmpty(text)) {
+                sb.append(text);
+            }
         }
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(this.checkBox.isChecked());
-        accessibilityNodeInfo.setClassName("android.widget.CheckBox");
+        TextView textView = this.adminTextView;
+        if (textView != null && textView.getVisibility() == 0) {
+            CharSequence text2 = this.adminTextView.getText();
+            if (!TextUtils.isEmpty(text2)) {
+                if (sb.length() > 0) {
+                    sb.append(", ");
+                }
+                sb.append(text2);
+            }
+        }
+        SimpleTextView simpleTextView2 = this.statusTextView;
+        if (simpleTextView2 != null) {
+            CharSequence text3 = simpleTextView2.getText();
+            if (!TextUtils.isEmpty(text3)) {
+                if (sb.length() > 0) {
+                    sb.append(", ");
+                }
+                sb.append(text3);
+            }
+        }
+        if (sb.length() > 0) {
+            accessibilityNodeInfo.setContentDescription(sb);
+        }
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate

@@ -375,7 +375,8 @@ public class QrActivity extends BaseFragment {
         this.avatarImageView.setImage(forChat, "84_84", imageLocation, "50_50", avatarDrawable, (Bitmap) null, (String) null, 0, (Object) null);
         ImageView imageView = new ImageView(context);
         this.closeImageView = imageView;
-        imageView.setBackground(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(34.0f), 671088640, 687865855));
+        imageView.setContentDescription(LocaleController.getString(R.string.AccDescrGoBack));
+        this.closeImageView.setBackground(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(34.0f), 671088640, 687865855));
         this.closeImageView.setImageResource(R.drawable.ic_ab_back);
         this.closeImageView.setScaleType(ImageView.ScaleType.CENTER);
         this.closeImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.QrActivity$$ExternalSyntheticLambda2

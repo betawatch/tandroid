@@ -2735,6 +2735,43 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                             SharedMediaLayout.this.pollAdapter.onScrolled(this);
                         }
                     }
+
+                    @Override // android.view.View
+                    public boolean performAccessibilityAction(int i27, Bundle bundle2) {
+                        View findOuterScrollingAncestor;
+                        try {
+                        } catch (Exception e) {
+                            FileLog.e(e);
+                        }
+                        if (i27 == 4096) {
+                            View findOuterScrollingAncestor2 = findOuterScrollingAncestor();
+                            if (findOuterScrollingAncestor2 != null && findOuterScrollingAncestor2.canScrollVertically(1) && findOuterScrollingAncestor2.performAccessibilityAction(i27, bundle2)) {
+                                return true;
+                            }
+                        } else {
+                            if (i27 == 8192) {
+                                if (!canScrollVertically(-1) && (findOuterScrollingAncestor = findOuterScrollingAncestor()) != null && findOuterScrollingAncestor.canScrollVertically(-1) && findOuterScrollingAncestor.performAccessibilityAction(i27, bundle2)) {
+                                    return true;
+                                }
+                            }
+                            return super.performAccessibilityAction(i27, bundle2);
+                        }
+                        return super.performAccessibilityAction(i27, bundle2);
+                    }
+
+                    private View findOuterScrollingAncestor() {
+                        try {
+                            for (Object parent = getParent(); parent instanceof View; parent = ((View) parent).getParent()) {
+                                if (parent != this && (parent instanceof RecyclerView)) {
+                                    return (View) parent;
+                                }
+                            }
+                            return null;
+                        } catch (Exception e) {
+                            FileLog.e(e);
+                            return null;
+                        }
+                    }
                 };
                 this.mediaPages[i9].listView.setFastScrollEnabled(1);
                 this.mediaPages[i9].listView.setScrollingTouchSlop(1);

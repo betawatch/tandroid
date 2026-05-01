@@ -5,10 +5,16 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
+import android.graphics.Rect;
 import android.graphics.RectF;
+import android.os.Bundle;
 import android.util.Pair;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import androidx.customview.widget.ExploreByTouchHelper;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -45,6 +51,7 @@ public class TableLayout extends View {
             return TLObject.FLAG_31;
         }
     };
+    private TableA11yHelper accessibilityHelper;
     private Path backgroundPath;
     private ArrayList cellsToFixHeight;
     private ArrayList childrens;
@@ -102,7 +109,7 @@ public class TableLayout extends View {
         public int x;
         public int y;
 
-        static /* synthetic */ int access$1520(Child child, int i) {
+        static /* synthetic */ int access$1420(Child child, int i) {
             int i2 = child.measuredHeight - i;
             child.measuredHeight = i2;
             return i2;
@@ -493,6 +500,87 @@ public class TableLayout extends View {
         setRowOrderPreserved(true);
         setColumnOrderPreserved(true);
         this.delegate = tableLayoutDelegate;
+        TableA11yHelper tableA11yHelper = new TableA11yHelper(this);
+        this.accessibilityHelper = tableA11yHelper;
+        ViewCompat.setAccessibilityDelegate(this, tableA11yHelper);
+    }
+
+    @Override // android.view.View
+    protected boolean dispatchHoverEvent(MotionEvent motionEvent) {
+        TableA11yHelper tableA11yHelper = this.accessibilityHelper;
+        if (tableA11yHelper == null || !tableA11yHelper.dispatchHoverEvent(motionEvent)) {
+            return super.dispatchHoverEvent(motionEvent);
+        }
+        return true;
+    }
+
+    private class TableA11yHelper extends ExploreByTouchHelper {
+        private final Rect tmpRect;
+
+        @Override // androidx.customview.widget.ExploreByTouchHelper
+        protected boolean onPerformActionForVirtualView(int i, int i2, Bundle bundle) {
+            return false;
+        }
+
+        TableA11yHelper(View view) {
+            super(view);
+            this.tmpRect = new Rect();
+        }
+
+        @Override // androidx.customview.widget.ExploreByTouchHelper
+        protected int getVirtualViewAt(float f, float f2) {
+            int childCount = TableLayout.this.getChildCount();
+            for (int i = 0; i < childCount; i++) {
+                Child childAt = TableLayout.this.getChildAt(i);
+                if (childAt.measuredWidth > 0 && childAt.measuredHeight > 0) {
+                    if (f >= childAt.x && f < r3 + childAt.measuredWidth) {
+                        if (f2 >= childAt.y && f2 < r3 + childAt.measuredHeight) {
+                            return i;
+                        }
+                    }
+                }
+            }
+            return TLObject.FLAG_31;
+        }
+
+        @Override // androidx.customview.widget.ExploreByTouchHelper
+        protected void getVisibleVirtualViews(List list) {
+            int childCount = TableLayout.this.getChildCount();
+            for (int i = 0; i < childCount; i++) {
+                Child childAt = TableLayout.this.getChildAt(i);
+                if (childAt.measuredWidth > 0 && childAt.measuredHeight > 0) {
+                    list.add(Integer.valueOf(i));
+                }
+            }
+        }
+
+        @Override // androidx.customview.widget.ExploreByTouchHelper
+        protected void onPopulateNodeForVirtualView(int i, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
+            if (i < 0 || i >= TableLayout.this.getChildCount()) {
+                this.tmpRect.set(0, 0, 1, 1);
+                accessibilityNodeInfoCompat.setBoundsInParent(this.tmpRect);
+                accessibilityNodeInfoCompat.setVisibleToUser(false);
+                accessibilityNodeInfoCompat.setContentDescription("");
+                return;
+            }
+            Child childAt = TableLayout.this.getChildAt(i);
+            Rect rect = this.tmpRect;
+            int i2 = childAt.x;
+            rect.set(i2, childAt.y, childAt.measuredWidth + i2, childAt.y + childAt.measuredHeight);
+            accessibilityNodeInfoCompat.setBoundsInParent(this.tmpRect);
+            accessibilityNodeInfoCompat.setClassName("android.widget.TextView");
+            accessibilityNodeInfoCompat.setEnabled(true);
+            ArticleViewer.DrawingText drawingText = childAt.textLayout;
+            CharSequence text = drawingText != null ? drawingText.getText() : null;
+            if (text == null || text.length() == 0) {
+                text = " ";
+            }
+            accessibilityNodeInfoCompat.setText(text);
+            if (childAt.cell == null || !childAt.cell.header) {
+                return;
+            }
+            accessibilityNodeInfoCompat.setHeading(true);
+        }
     }
 
     public int getOrientation() {
@@ -940,7 +1028,7 @@ public class TableLayout extends View {
                                 }
                                 size2--;
                             }
-                            Child.access$1520(child4, i18);
+                            Child.access$1420(child4, i18);
                             child4.measure(child4.measuredWidth, child4.measuredHeight, true);
                         } else if (child.layoutParams.rowSpec.span.min < child4.layoutParams.rowSpec.span.min) {
                             child4.y -= i18;

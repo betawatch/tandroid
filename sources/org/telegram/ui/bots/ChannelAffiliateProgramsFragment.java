@@ -121,12 +121,11 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
         this.emptyLayout = view;
         view.setBackgroundColor(Theme.getColor(Theme.key_dialogBackgroundGray));
         super.createView(context);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.aboveTitleView = frameLayout;
-        frameLayout.setClickable(true);
+        this.aboveTitleView = new FrameLayout(context);
         GLIconTextureView gLIconTextureView = new GLIconTextureView(context, 1, 3);
         this.iconTextureView = gLIconTextureView;
-        GLIconRenderer gLIconRenderer = gLIconTextureView.mRenderer;
+        gLIconTextureView.setImportantForAccessibility(4);
+        GLIconRenderer gLIconRenderer = this.iconTextureView.mRenderer;
         gLIconRenderer.colorKey1 = Theme.key_starsGradient1;
         gLIconRenderer.colorKey2 = Theme.key_starsGradient2;
         gLIconRenderer.updateColors();

@@ -558,6 +558,7 @@ public class CustomEmojiReactionsWindow {
                 CustomEmojiReactionsWindow customEmojiReactionsWindow2 = CustomEmojiReactionsWindow.this;
                 customEmojiReactionsWindow2.reactionsContainerLayout.setCustomEmojiEnterProgress(Utilities.clamp(customEmojiReactionsWindow2.enterTransitionProgress, 1.0f, 0.0f));
                 if (!z) {
+                    CustomEmojiReactionsWindow.this.reactionsContainerLayout.setImportantForAccessibility(0);
                     CustomEmojiReactionsWindow.this.reactionsContainerLayout.setSkipDraw(false);
                     CustomEmojiReactionsWindow.this.removeView();
                     Runtime.getRuntime().gc();
@@ -740,6 +741,7 @@ public class CustomEmojiReactionsWindow {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void checkAnimationEnd(boolean z) {
+        View view;
         if (this.animators.isEmpty()) {
             switchLayerType(false);
             HwEmojis.disableHw();
@@ -750,6 +752,26 @@ public class CustomEmojiReactionsWindow {
                 this.selectAnimatedEmojiDialog.emojiGridView.invalidate();
                 this.selectAnimatedEmojiDialog.emojiGridView.invalidateViews();
                 this.selectAnimatedEmojiDialog.searchBox.checkInitialization();
+                this.selectAnimatedEmojiDialog.sendAccessibilityEvent(32);
+                this.reactionsContainerLayout.setImportantForAccessibility(4);
+                int i = 0;
+                while (true) {
+                    if (i >= this.selectAnimatedEmojiDialog.emojiGridView.getChildCount()) {
+                        view = null;
+                        break;
+                    } else {
+                        if (this.selectAnimatedEmojiDialog.emojiGridView.getChildAt(i) instanceof SelectAnimatedEmojiDialog.ImageViewEmoji) {
+                            view = this.selectAnimatedEmojiDialog.emojiGridView.getChildAt(i);
+                            break;
+                        }
+                        i++;
+                    }
+                }
+                if (view != null) {
+                    view.performAccessibilityAction(64, null);
+                } else {
+                    this.selectAnimatedEmojiDialog.performAccessibilityAction(64, null);
+                }
                 if (this.reactionsContainerLayout.getPullingLeftProgress() > 0.0f) {
                     ReactionsContainerLayout reactionsContainerLayout = this.reactionsContainerLayout;
                     reactionsContainerLayout.isHiddenNextReaction = false;
