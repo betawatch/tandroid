@@ -161,38 +161,33 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:223:0x01de, code lost:
-    
-        if (r0 == r43.currentPhotoObject) goto L80;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x06c6  */
-    /* JADX WARN: Removed duplicated region for block: B:104:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x05f8  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x031a  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x03ac  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x03b6  */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x0597  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x048c  */
-    /* JADX WARN: Removed duplicated region for block: B:188:0x03ae  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x039e  */
-    /* JADX WARN: Removed duplicated region for block: B:195:0x02e2  */
-    /* JADX WARN: Removed duplicated region for block: B:198:0x02ec  */
-    /* JADX WARN: Removed duplicated region for block: B:204:0x0288  */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x02ac  */
-    /* JADX WARN: Removed duplicated region for block: B:218:0x01c6  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0129  */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x0137 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:229:0x00da A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x017c  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x01e7  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x023b  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x026a  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x02a5  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x02b3  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x02dc A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0301 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x030c  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x05bb  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x06f6  */
+    /* JADX WARN: Removed duplicated region for block: B:103:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x062a  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x030e  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x039d  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x03a9  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x03c4  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x05c6  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x04a3  */
+    /* JADX WARN: Removed duplicated region for block: B:197:0x039f  */
+    /* JADX WARN: Removed duplicated region for block: B:200:0x038f  */
+    /* JADX WARN: Removed duplicated region for block: B:204:0x02d6  */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x02e0  */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x027f  */
+    /* JADX WARN: Removed duplicated region for block: B:223:0x02a1  */
+    /* JADX WARN: Removed duplicated region for block: B:226:0x01b9  */
+    /* JADX WARN: Removed duplicated region for block: B:233:0x012a A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x016f  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x01dd  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0233  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0263  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x029c  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x02a7  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x02d0 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x02f3 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x0300  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x05ea  */
     @Override // android.widget.FrameLayout, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -205,13 +200,16 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         TLRPC.PhotoSize closestPhotoSizeWithSize;
         String str;
         TLRPC.BotInlineResult botInlineResult;
-        String str2;
         WebFile webFile;
+        String str2;
         int i3;
         int i4;
         TLRPC.PhotoSize photoSize;
         String str3;
         String str4;
+        TLRPC.TL_photoStrippedSize strippedPhotoSize;
+        ImageLocation imageLocation;
+        ImageLocation forPhoto;
         String str5;
         float f;
         int dp;
@@ -220,8 +218,6 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         TLRPC.BotInlineMessage botInlineMessage;
         String str6;
         TLRPC.BotInlineResult botInlineResult2;
-        ArrayList arrayList4;
-        String str7;
         char c;
         char c2;
         int i5 = 0;
@@ -250,153 +246,65 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
                 } else {
                     if (botInlineResult2.title != null) {
                         try {
-                            arrayList4 = arrayList;
+                            this.titleLayout = new StaticLayout(TextUtils.ellipsize(Emoji.replaceEmoji(this.inlineResult.title.replace('\n', ' '), Theme.chat_contextResult_titleTextPaint.getFontMetricsInt(), false), Theme.chat_contextResult_titleTextPaint, Math.min((int) Math.ceil(Theme.chat_contextResult_titleTextPaint.measureText(r0)), dp2), TextUtils.TruncateAt.END), Theme.chat_contextResult_titleTextPaint, dp2 + AndroidUtilities.dp(4.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                        } catch (Exception e) {
+                            FileLog.e(e);
+                        }
+                        this.letterDrawable.setTitle(this.inlineResult.title);
+                    }
+                    String str7 = this.inlineResult.description;
+                    if (str7 != null) {
+                        try {
+                            c2 = '\n';
+                            c = ' ';
+                            arrayList3 = arrayList;
                             try {
-                                this.titleLayout = new StaticLayout(TextUtils.ellipsize(Emoji.replaceEmoji(this.inlineResult.title.replace('\n', ' '), Theme.chat_contextResult_titleTextPaint.getFontMetricsInt(), false), Theme.chat_contextResult_titleTextPaint, Math.min((int) Math.ceil(Theme.chat_contextResult_titleTextPaint.measureText(r0)), dp2), TextUtils.TruncateAt.END), Theme.chat_contextResult_titleTextPaint, dp2 + AndroidUtilities.dp(4.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                            } catch (Exception e) {
-                                e = e;
-                                FileLog.e(e);
-                                this.letterDrawable.setTitle(this.inlineResult.title);
-                                str7 = this.inlineResult.description;
-                                if (str7 == null) {
+                                StaticLayout generateStaticLayout = ChatMessageCell.generateStaticLayout(Emoji.replaceEmoji(str7, Theme.chat_contextResult_descriptionTextPaint.getFontMetricsInt(), false), Theme.chat_contextResult_descriptionTextPaint, dp2, dp2, 0, 3);
+                                this.descriptionLayout = generateStaticLayout;
+                                if (generateStaticLayout.getLineCount() > 0) {
+                                    int i6 = this.descriptionY;
+                                    StaticLayout staticLayout = this.descriptionLayout;
+                                    this.linkY = i6 + staticLayout.getLineBottom(staticLayout.getLineCount() - 1) + AndroidUtilities.dp(1.0f);
                                 }
+                            } catch (Exception e2) {
+                                e = e2;
+                                FileLog.e(e);
                                 if (this.inlineResult.url != null) {
                                 }
                                 document = this.documentAttach;
-                                if (document == null) {
-                                }
-                                closestPhotoSizeWithSize = null;
-                                str = null;
-                                botInlineResult = this.inlineResult;
-                                if (botInlineResult != null) {
-                                }
-                                if (this.documentAttach != null) {
-                                }
-                                i3 = 0;
-                                i4 = 0;
-                                if (i3 != 0) {
-                                }
-                                photoSize = this.currentPhotoObject;
-                                if (photoSize != null) {
-                                }
-                                if (i3 != 0) {
-                                }
-                                i3 = AndroidUtilities.dp(80.0f);
-                                i4 = i3;
-                                if (this.documentAttach == null) {
-                                }
-                                if (this.mediaWebpage) {
-                                }
-                                this.linkImageView.setAspectFit(this.documentAttachType == 6);
-                                if (this.documentAttachType == 2) {
-                                }
-                                if (!SharedConfig.isAutoplayGifs()) {
-                                }
-                                this.linkImageView.setAllowStartAnimation(true);
-                                this.linkImageView.startAnimation();
-                                this.drawLinkImageView = true;
-                                if (this.mediaWebpage) {
-                                }
-                                checkBox2 = this.checkBox;
-                                if (checkBox2 != null) {
+                                if (document != null) {
                                 }
                             }
-                        } catch (Exception e2) {
-                            e = e2;
-                            arrayList4 = arrayList;
-                        }
-                        this.letterDrawable.setTitle(this.inlineResult.title);
-                    } else {
-                        arrayList4 = arrayList;
-                    }
-                    str7 = this.inlineResult.description;
-                    if (str7 == null) {
-                        try {
-                            c = ' ';
-                            c2 = '\n';
-                            arrayList3 = arrayList4;
                         } catch (Exception e3) {
                             e = e3;
-                            arrayList3 = arrayList4;
+                            arrayList3 = arrayList;
                             c = ' ';
                             c2 = '\n';
                         }
-                        try {
-                            StaticLayout generateStaticLayout = ChatMessageCell.generateStaticLayout(Emoji.replaceEmoji(str7, Theme.chat_contextResult_descriptionTextPaint.getFontMetricsInt(), false), Theme.chat_contextResult_descriptionTextPaint, dp2, dp2, 0, 3);
-                            this.descriptionLayout = generateStaticLayout;
-                            if (generateStaticLayout.getLineCount() > 0) {
-                                int i6 = this.descriptionY;
-                                StaticLayout staticLayout = this.descriptionLayout;
-                                this.linkY = i6 + staticLayout.getLineBottom(staticLayout.getLineCount() - 1) + AndroidUtilities.dp(1.0f);
-                            }
-                        } catch (Exception e4) {
-                            e = e4;
-                            FileLog.e(e);
-                            if (this.inlineResult.url != null) {
-                            }
-                            document = this.documentAttach;
-                            if (document == null) {
-                            }
-                            closestPhotoSizeWithSize = null;
-                            str = null;
-                            botInlineResult = this.inlineResult;
-                            if (botInlineResult != null) {
-                            }
-                            if (this.documentAttach != null) {
-                            }
-                            i3 = 0;
-                            i4 = 0;
-                            if (i3 != 0) {
-                            }
-                            photoSize = this.currentPhotoObject;
-                            if (photoSize != null) {
-                            }
-                            if (i3 != 0) {
-                            }
-                            i3 = AndroidUtilities.dp(80.0f);
-                            i4 = i3;
-                            if (this.documentAttach == null) {
-                            }
-                            if (this.mediaWebpage) {
-                            }
-                            this.linkImageView.setAspectFit(this.documentAttachType == 6);
-                            if (this.documentAttachType == 2) {
-                            }
-                            if (!SharedConfig.isAutoplayGifs()) {
-                            }
-                            this.linkImageView.setAllowStartAnimation(true);
-                            this.linkImageView.startAnimation();
-                            this.drawLinkImageView = true;
-                            if (this.mediaWebpage) {
-                            }
-                            checkBox2 = this.checkBox;
-                            if (checkBox2 != null) {
-                            }
-                        }
                     } else {
-                        arrayList3 = arrayList4;
+                        arrayList3 = arrayList;
                         c = ' ';
                         c2 = '\n';
                     }
                     if (this.inlineResult.url != null) {
                         try {
                             this.linkLayout = new StaticLayout(TextUtils.ellipsize(this.inlineResult.url.replace(c2, c), Theme.chat_contextResult_descriptionTextPaint, Math.min((int) Math.ceil(Theme.chat_contextResult_descriptionTextPaint.measureText(r0)), dp2), TextUtils.TruncateAt.MIDDLE), Theme.chat_contextResult_descriptionTextPaint, dp2, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                        } catch (Exception e5) {
-                            FileLog.e(e5);
+                        } catch (Exception e4) {
+                            FileLog.e(e4);
                         }
                     }
                 }
                 document = this.documentAttach;
-                if (document == null) {
+                if (document != null) {
                     if (this.isForceGif || MessageObject.isGifDocument(document)) {
-                        this.currentPhotoObject = FileLoader.getClosestPhotoSizeWithSize(this.documentAttach.thumbs, 90);
+                        this.currentPhotoObject = FileLoader.getClosestPhotoSizeWithSize(this.documentAttach.thumbs, 90, false, null, true);
                     } else {
                         if (MessageObject.isStickerDocument(this.documentAttach) || MessageObject.isAnimatedStickerDocument(this.documentAttach, true)) {
-                            this.currentPhotoObject = FileLoader.getClosestPhotoSizeWithSize(this.documentAttach.thumbs, 90);
+                            this.currentPhotoObject = FileLoader.getClosestPhotoSizeWithSize(this.documentAttach.thumbs, 90, false, null, true);
                             str = "webp";
                             closestPhotoSizeWithSize = null;
                             botInlineResult = this.inlineResult;
-                            if (botInlineResult != null) {
+                            if (botInlineResult == null) {
                                 if ((botInlineResult.content instanceof TLRPC.TL_webDocument) && (str6 = botInlineResult.type) != null) {
                                     if (str6.startsWith("gif")) {
                                         TLRPC.WebDocument webDocument = this.inlineResult.thumb;
@@ -441,8 +349,8 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
                                             }
                                         }
                                     }
-                                    str2 = null;
                                     webFile = null;
+                                    str2 = null;
                                     if (tL_webDocument != null) {
                                     }
                                 }
@@ -459,13 +367,13 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
                                     if (MessagesController.getInstance(this.currentAccount).mapProvider != 2) {
                                     }
                                 }
-                                str2 = null;
                                 webFile = null;
+                                str2 = null;
                                 if (tL_webDocument != null) {
                                 }
                             } else {
-                                str2 = null;
                                 webFile = null;
+                                str2 = null;
                             }
                             if (this.documentAttach != null) {
                                 for (int i7 = 0; i7 < this.documentAttach.attributes.size(); i7++) {
@@ -481,7 +389,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
                             i4 = 0;
                             if (i3 != 0 || i4 == 0) {
                                 photoSize = this.currentPhotoObject;
-                                if (photoSize != null) {
+                                if (photoSize == null) {
                                     if (closestPhotoSizeWithSize != null) {
                                         closestPhotoSizeWithSize.size = -1;
                                     }
@@ -502,10 +410,10 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
                                 i4 = i3;
                             }
                             if (this.documentAttach == null || this.currentPhotoObject != null || webFile != null || str2 != null) {
-                                if (this.mediaWebpage) {
-                                    int dp3 = (int) (i3 / (i4 / AndroidUtilities.dp(80.0f)));
+                                if (!this.mediaWebpage) {
+                                    int min = Math.min(i3, i4) / 3;
                                     if (this.documentAttachType == 2) {
-                                        str4 = String.format(Locale.US, "%d_%d_b", Integer.valueOf((int) (dp3 / AndroidUtilities.density)), 80);
+                                        str4 = String.format(Locale.US, "%d_%d_b", Integer.valueOf((int) (min / AndroidUtilities.density)), 80);
                                         if (SharedConfig.isAutoplayGifs() || this.isKeyboard) {
                                             str3 = str4;
                                         } else {
@@ -513,7 +421,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
                                             str4 = str4 + "_firstframe";
                                         }
                                     } else {
-                                        str4 = String.format(Locale.US, "%d_%d", Integer.valueOf((int) (dp3 / AndroidUtilities.density)), 80);
+                                        str4 = String.format(Locale.US, "%d_%d", Integer.valueOf((int) (min / AndroidUtilities.density)), 80);
                                         str5 = str4 + "_b";
                                     }
                                     str3 = str5;
@@ -521,73 +429,94 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
                                     str3 = "52_52_b";
                                     str4 = "52_52";
                                 }
-                                this.linkImageView.setAspectFit(this.documentAttachType == 6);
-                                if (this.documentAttachType == 2) {
+                                this.linkImageView.setAspectFit(this.documentAttachType != 6);
+                                strippedPhotoSize = FileLoader.getStrippedPhotoSize(arrayList3);
+                                if (strippedPhotoSize != null) {
                                     TLRPC.Document document2 = this.documentAttach;
                                     if (document2 != null) {
-                                        TLRPC.VideoSize documentVideoThumb = MessageObject.getDocumentVideoThumb(document2);
-                                        if (documentVideoThumb != null) {
-                                            ImageReceiver imageReceiver = this.linkImageView;
-                                            ImageLocation forDocument = ImageLocation.getForDocument(documentVideoThumb, this.documentAttach);
-                                            StringBuilder sb = new StringBuilder();
-                                            sb.append("100_100");
-                                            sb.append((SharedConfig.isAutoplayGifs() || this.isKeyboard) ? "" : "_firstframe");
-                                            imageReceiver.setImage(forDocument, sb.toString(), ImageLocation.getForDocument(this.currentPhotoObject, this.documentAttach), str4, -1L, str, this.parentObject, 1);
-                                        } else {
-                                            ImageLocation forDocument2 = ImageLocation.getForDocument(this.documentAttach);
-                                            if (this.isForceGif) {
-                                                forDocument2.imageType = 2;
+                                        forPhoto = ImageLocation.getForDocument(strippedPhotoSize, document2);
+                                    } else {
+                                        TLRPC.Photo photo = this.photoAttach;
+                                        if (photo != null) {
+                                            forPhoto = ImageLocation.getForPhoto(strippedPhotoSize, photo);
+                                        }
+                                    }
+                                    imageLocation = forPhoto;
+                                    if (this.documentAttachType == 2) {
+                                        TLRPC.Document document3 = this.documentAttach;
+                                        if (document3 != null) {
+                                            TLRPC.VideoSize documentVideoThumb = MessageObject.getDocumentVideoThumb(document3);
+                                            if (documentVideoThumb != null) {
+                                                ImageReceiver imageReceiver = this.linkImageView;
+                                                ImageLocation forDocument = ImageLocation.getForDocument(documentVideoThumb, this.documentAttach);
+                                                StringBuilder sb = new StringBuilder();
+                                                sb.append("100_100");
+                                                sb.append((SharedConfig.isAutoplayGifs() || this.isKeyboard) ? "" : "_firstframe");
+                                                imageReceiver.setImage(forDocument, sb.toString(), ImageLocation.getForDocument(this.currentPhotoObject, this.documentAttach), str4, imageLocation, str3, null, -1L, str, this.parentObject, 1);
+                                            } else {
+                                                ImageLocation forDocument2 = ImageLocation.getForDocument(this.documentAttach);
+                                                if (this.isForceGif) {
+                                                    forDocument2.imageType = 2;
+                                                }
+                                                ImageReceiver imageReceiver2 = this.linkImageView;
+                                                StringBuilder sb2 = new StringBuilder();
+                                                sb2.append("100_100");
+                                                sb2.append((SharedConfig.isAutoplayGifs() || this.isKeyboard) ? "" : "_firstframe");
+                                                imageReceiver2.setImage(forDocument2, sb2.toString(), ImageLocation.getForDocument(this.currentPhotoObject, this.documentAttach), str4, imageLocation, str3, null, this.documentAttach.size, str, this.parentObject, 0);
                                             }
-                                            ImageReceiver imageReceiver2 = this.linkImageView;
-                                            StringBuilder sb2 = new StringBuilder();
-                                            sb2.append("100_100");
-                                            sb2.append((SharedConfig.isAutoplayGifs() || this.isKeyboard) ? "" : "_firstframe");
-                                            imageReceiver2.setImage(forDocument2, sb2.toString(), ImageLocation.getForDocument(this.currentPhotoObject, this.documentAttach), str4, this.documentAttach.size, str, this.parentObject, 0);
+                                        } else if (webFile != null) {
+                                            this.linkImageView.setImage(ImageLocation.getForWebFile(webFile), "100_100", ImageLocation.getForPhoto(this.currentPhotoObject, this.photoAttach), str4, imageLocation, str3, null, -1L, str, this.parentObject, 1);
+                                        } else {
+                                            this.linkImageView.setImage(ImageLocation.getForPath(str2), "100_100", ImageLocation.getForPhoto(this.currentPhotoObject, this.photoAttach), str4, imageLocation, str3, null, -1L, str, this.parentObject, 1);
+                                        }
+                                    } else if (this.currentPhotoObject != null) {
+                                        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(this.documentAttach, Theme.key_windowBackgroundGray, 1.0f);
+                                        if (!MessageObject.canAutoplayAnimatedSticker(this.documentAttach)) {
+                                            TLRPC.Document document4 = this.documentAttach;
+                                            if (document4 == null) {
+                                                this.linkImageView.setImage(ImageLocation.getForPhoto(this.currentPhotoObject, this.photoAttach), str4, ImageLocation.getForPhoto(closestPhotoSizeWithSize, this.photoAttach), str3, imageLocation, str3, null, this.currentPhotoObject.size, str, this.parentObject, 0);
+                                            } else if (svgThumb != null) {
+                                                this.linkImageView.setImage(ImageLocation.getForDocument(this.currentPhotoObject, document4), str4, null, null, imageLocation, str3, svgThumb, this.currentPhotoObject.size, str, this.parentObject, 0);
+                                            } else {
+                                                this.linkImageView.setImage(ImageLocation.getForDocument(this.currentPhotoObject, document4), str4, ImageLocation.getForPhoto(closestPhotoSizeWithSize, this.photoAttach), str3, imageLocation, str3, null, this.currentPhotoObject.size, str, this.parentObject, 0);
+                                            }
+                                        } else if (svgThumb != null) {
+                                            this.linkImageView.setImage(ImageLocation.getForDocument(this.documentAttach), "80_80", null, null, imageLocation, str3, svgThumb, this.currentPhotoObject.size, str, this.parentObject, 0);
+                                        } else {
+                                            this.linkImageView.setImage(ImageLocation.getForDocument(this.documentAttach), "80_80", ImageLocation.getForDocument(this.currentPhotoObject, this.documentAttach), str3, imageLocation, str3, null, this.currentPhotoObject.size, str, this.parentObject, 0);
                                         }
                                     } else if (webFile != null) {
-                                        this.linkImageView.setImage(ImageLocation.getForWebFile(webFile), "100_100", ImageLocation.getForPhoto(this.currentPhotoObject, this.photoAttach), str4, -1L, str, this.parentObject, 1);
+                                        this.linkImageView.setImage(ImageLocation.getForWebFile(webFile), str4, ImageLocation.getForPhoto(closestPhotoSizeWithSize, this.photoAttach), str3, imageLocation, str3, null, -1L, str, this.parentObject, 1);
                                     } else {
-                                        this.linkImageView.setImage(ImageLocation.getForPath(str2), "100_100", ImageLocation.getForPhoto(this.currentPhotoObject, this.photoAttach), str4, -1L, str, this.parentObject, 1);
+                                        this.linkImageView.setImage(ImageLocation.getForPath(str2), str4, ImageLocation.getForPhoto(closestPhotoSizeWithSize, this.photoAttach), str3, imageLocation, str3, null, -1L, str, this.parentObject, 1);
                                     }
-                                } else if (this.currentPhotoObject != null) {
-                                    SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(this.documentAttach, Theme.key_windowBackgroundGray, 1.0f);
-                                    if (!MessageObject.canAutoplayAnimatedSticker(this.documentAttach)) {
-                                        TLRPC.Document document3 = this.documentAttach;
-                                        if (document3 == null) {
-                                            this.linkImageView.setImage(ImageLocation.getForPhoto(this.currentPhotoObject, this.photoAttach), str4, ImageLocation.getForPhoto(closestPhotoSizeWithSize, this.photoAttach), str3, this.currentPhotoObject.size, str, this.parentObject, 0);
-                                        } else if (svgThumb != null) {
-                                            this.linkImageView.setImage(ImageLocation.getForDocument(this.currentPhotoObject, document3), str4, svgThumb, this.currentPhotoObject.size, str, this.parentObject, 0);
-                                        } else {
-                                            this.linkImageView.setImage(ImageLocation.getForDocument(this.currentPhotoObject, document3), str4, ImageLocation.getForPhoto(closestPhotoSizeWithSize, this.photoAttach), str3, this.currentPhotoObject.size, str, this.parentObject, 0);
-                                        }
-                                    } else if (svgThumb != null) {
-                                        this.linkImageView.setImage(ImageLocation.getForDocument(this.documentAttach), "80_80", svgThumb, this.currentPhotoObject.size, str, this.parentObject, 0);
+                                    if (!SharedConfig.isAutoplayGifs() || this.isKeyboard) {
+                                        this.linkImageView.setAllowStartAnimation(true);
+                                        this.linkImageView.startAnimation();
                                     } else {
-                                        this.linkImageView.setImage(ImageLocation.getForDocument(this.documentAttach), "80_80", ImageLocation.getForDocument(this.currentPhotoObject, this.documentAttach), str3, this.currentPhotoObject.size, str, this.parentObject, 0);
+                                        this.linkImageView.setAllowStartAnimation(false);
+                                        this.linkImageView.stopAnimation();
                                     }
-                                } else if (webFile != null) {
-                                    this.linkImageView.setImage(ImageLocation.getForWebFile(webFile), str4, ImageLocation.getForPhoto(closestPhotoSizeWithSize, this.photoAttach), str3, -1L, str, this.parentObject, 1);
-                                } else {
-                                    this.linkImageView.setImage(ImageLocation.getForPath(str2), str4, ImageLocation.getForPhoto(closestPhotoSizeWithSize, this.photoAttach), str3, -1L, str, this.parentObject, 1);
+                                    this.drawLinkImageView = true;
                                 }
-                                if (!SharedConfig.isAutoplayGifs() || this.isKeyboard) {
-                                    this.linkImageView.setAllowStartAnimation(true);
-                                    this.linkImageView.startAnimation();
-                                } else {
-                                    this.linkImageView.setAllowStartAnimation(false);
-                                    this.linkImageView.stopAnimation();
+                                imageLocation = null;
+                                if (this.documentAttachType == 2) {
                                 }
+                                if (!SharedConfig.isAutoplayGifs()) {
+                                }
+                                this.linkImageView.setAllowStartAnimation(true);
+                                this.linkImageView.startAnimation();
                                 this.drawLinkImageView = true;
                             }
-                            if (this.mediaWebpage) {
+                            if (!this.mediaWebpage) {
                                 int size2 = View.MeasureSpec.getSize(i2);
                                 if (size2 == 0) {
                                     size2 = AndroidUtilities.dp(100.0f);
                                 }
                                 setMeasuredDimension(size, size2);
-                                int dp4 = (size - AndroidUtilities.dp(24.0f)) / 2;
-                                int dp5 = (size2 - AndroidUtilities.dp(24.0f)) / 2;
-                                this.radialProgress.setProgressRect(dp4, dp5, AndroidUtilities.dp(24.0f) + dp4, AndroidUtilities.dp(24.0f) + dp5);
+                                int dp3 = (size - AndroidUtilities.dp(24.0f)) / 2;
+                                int dp4 = (size2 - AndroidUtilities.dp(24.0f)) / 2;
+                                this.radialProgress.setProgressRect(dp3, dp4, AndroidUtilities.dp(24.0f) + dp3, AndroidUtilities.dp(24.0f) + dp4);
                                 this.radialProgress.setCircleRadius(AndroidUtilities.dp(12.0f));
                                 this.linkImageView.setImageCoords(0.0f, 0.0f, size, size2);
                             } else {
@@ -607,16 +536,16 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
                                     i5 += staticLayout7.getLineBottom(staticLayout7.getLineCount() - 1);
                                 }
                                 setMeasuredDimension(View.MeasureSpec.getSize(i), Math.max(AndroidUtilities.dp(68.0f), Math.max(AndroidUtilities.dp(52.0f), i5) + AndroidUtilities.dp(16.0f)) + (this.needDivider ? 1 : 0));
-                                int dp6 = AndroidUtilities.dp(52.0f);
+                                int dp5 = AndroidUtilities.dp(52.0f);
                                 if (LocaleController.isRTL) {
                                     f = 8.0f;
-                                    dp = (View.MeasureSpec.getSize(i) - AndroidUtilities.dp(8.0f)) - dp6;
+                                    dp = (View.MeasureSpec.getSize(i) - AndroidUtilities.dp(8.0f)) - dp5;
                                 } else {
                                     f = 8.0f;
                                     dp = AndroidUtilities.dp(8.0f);
                                 }
-                                this.letterDrawable.setBounds(dp, AndroidUtilities.dp(f), dp + dp6, AndroidUtilities.dp(60.0f));
-                                float f2 = dp6;
+                                this.letterDrawable.setBounds(dp, AndroidUtilities.dp(f), dp + dp5, AndroidUtilities.dp(60.0f));
+                                float f2 = dp5;
                                 this.linkImageView.setImageCoords(dp, AndroidUtilities.dp(f), f2, f2);
                                 int i9 = this.documentAttachType;
                                 if (i9 == 3 || i9 == 5) {
@@ -625,7 +554,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
                                 }
                             }
                             checkBox2 = this.checkBox;
-                            if (checkBox2 != null) {
+                            if (checkBox2 == null) {
                                 measureChildWithMargins(checkBox2, i, 0, i2, 0);
                                 return;
                             }
@@ -633,50 +562,133 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
                         }
                         int i10 = this.documentAttachType;
                         if (i10 != 5 && i10 != 3) {
-                            this.currentPhotoObject = FileLoader.getClosestPhotoSizeWithSize(this.documentAttach.thumbs, 90);
+                            this.currentPhotoObject = FileLoader.getClosestPhotoSizeWithSize(this.documentAttach.thumbs, 90, false, null, true);
                         }
+                    }
+                    closestPhotoSizeWithSize = null;
+                    str = null;
+                    botInlineResult = this.inlineResult;
+                    if (botInlineResult == null) {
+                    }
+                    if (this.documentAttach != null) {
+                    }
+                    i3 = 0;
+                    i4 = 0;
+                    if (i3 != 0) {
+                    }
+                    photoSize = this.currentPhotoObject;
+                    if (photoSize == null) {
+                    }
+                    if (i3 != 0) {
+                    }
+                    i3 = AndroidUtilities.dp(80.0f);
+                    i4 = i3;
+                    if (this.documentAttach == null) {
+                    }
+                    if (!this.mediaWebpage) {
+                    }
+                    this.linkImageView.setAspectFit(this.documentAttachType != 6);
+                    strippedPhotoSize = FileLoader.getStrippedPhotoSize(arrayList3);
+                    if (strippedPhotoSize != null) {
+                    }
+                    imageLocation = null;
+                    if (this.documentAttachType == 2) {
+                    }
+                    if (!SharedConfig.isAutoplayGifs()) {
+                    }
+                    this.linkImageView.setAllowStartAnimation(true);
+                    this.linkImageView.startAnimation();
+                    this.drawLinkImageView = true;
+                    if (!this.mediaWebpage) {
+                    }
+                    checkBox2 = this.checkBox;
+                    if (checkBox2 == null) {
                     }
                 } else {
                     TLRPC.BotInlineResult botInlineResult6 = this.inlineResult;
                     if (botInlineResult6 != null && botInlineResult6.photo != null) {
-                        this.currentPhotoObject = FileLoader.getClosestPhotoSizeWithSize(arrayList3, AndroidUtilities.getPhotoSize(), true);
-                        closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(arrayList3, 80);
+                        this.currentPhotoObject = FileLoader.getClosestPhotoSizeWithSize(arrayList3, AndroidUtilities.getPhotoSize(), true, null, true);
+                        closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(arrayList3, 80, false, null, true);
+                        if (closestPhotoSizeWithSize != this.currentPhotoObject) {
+                            str = null;
+                            botInlineResult = this.inlineResult;
+                            if (botInlineResult == null) {
+                            }
+                            if (this.documentAttach != null) {
+                            }
+                            i3 = 0;
+                            i4 = 0;
+                            if (i3 != 0) {
+                            }
+                            photoSize = this.currentPhotoObject;
+                            if (photoSize == null) {
+                            }
+                            if (i3 != 0) {
+                            }
+                            i3 = AndroidUtilities.dp(80.0f);
+                            i4 = i3;
+                            if (this.documentAttach == null) {
+                            }
+                            if (!this.mediaWebpage) {
+                            }
+                            this.linkImageView.setAspectFit(this.documentAttachType != 6);
+                            strippedPhotoSize = FileLoader.getStrippedPhotoSize(arrayList3);
+                            if (strippedPhotoSize != null) {
+                            }
+                            imageLocation = null;
+                            if (this.documentAttachType == 2) {
+                            }
+                            if (!SharedConfig.isAutoplayGifs()) {
+                            }
+                            this.linkImageView.setAllowStartAnimation(true);
+                            this.linkImageView.startAnimation();
+                            this.drawLinkImageView = true;
+                            if (!this.mediaWebpage) {
+                            }
+                            checkBox2 = this.checkBox;
+                            if (checkBox2 == null) {
+                            }
+                        }
                     }
-                }
-                closestPhotoSizeWithSize = null;
-                str = null;
-                botInlineResult = this.inlineResult;
-                if (botInlineResult != null) {
-                }
-                if (this.documentAttach != null) {
-                }
-                i3 = 0;
-                i4 = 0;
-                if (i3 != 0) {
-                }
-                photoSize = this.currentPhotoObject;
-                if (photoSize != null) {
-                }
-                if (i3 != 0) {
-                }
-                i3 = AndroidUtilities.dp(80.0f);
-                i4 = i3;
-                if (this.documentAttach == null) {
-                }
-                if (this.mediaWebpage) {
-                }
-                this.linkImageView.setAspectFit(this.documentAttachType == 6);
-                if (this.documentAttachType == 2) {
-                }
-                if (!SharedConfig.isAutoplayGifs()) {
-                }
-                this.linkImageView.setAllowStartAnimation(true);
-                this.linkImageView.startAnimation();
-                this.drawLinkImageView = true;
-                if (this.mediaWebpage) {
-                }
-                checkBox2 = this.checkBox;
-                if (checkBox2 != null) {
+                    closestPhotoSizeWithSize = null;
+                    str = null;
+                    botInlineResult = this.inlineResult;
+                    if (botInlineResult == null) {
+                    }
+                    if (this.documentAttach != null) {
+                    }
+                    i3 = 0;
+                    i4 = 0;
+                    if (i3 != 0) {
+                    }
+                    photoSize = this.currentPhotoObject;
+                    if (photoSize == null) {
+                    }
+                    if (i3 != 0) {
+                    }
+                    i3 = AndroidUtilities.dp(80.0f);
+                    i4 = i3;
+                    if (this.documentAttach == null) {
+                    }
+                    if (!this.mediaWebpage) {
+                    }
+                    this.linkImageView.setAspectFit(this.documentAttachType != 6);
+                    strippedPhotoSize = FileLoader.getStrippedPhotoSize(arrayList3);
+                    if (strippedPhotoSize != null) {
+                    }
+                    imageLocation = null;
+                    if (this.documentAttachType == 2) {
+                    }
+                    if (!SharedConfig.isAutoplayGifs()) {
+                    }
+                    this.linkImageView.setAllowStartAnimation(true);
+                    this.linkImageView.startAnimation();
+                    this.drawLinkImageView = true;
+                    if (!this.mediaWebpage) {
+                    }
+                    checkBox2 = this.checkBox;
+                    if (checkBox2 == null) {
+                    }
                 }
             }
         }
@@ -685,42 +697,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         }
         arrayList3 = arrayList;
         document = this.documentAttach;
-        if (document == null) {
-        }
-        closestPhotoSizeWithSize = null;
-        str = null;
-        botInlineResult = this.inlineResult;
-        if (botInlineResult != null) {
-        }
-        if (this.documentAttach != null) {
-        }
-        i3 = 0;
-        i4 = 0;
-        if (i3 != 0) {
-        }
-        photoSize = this.currentPhotoObject;
-        if (photoSize != null) {
-        }
-        if (i3 != 0) {
-        }
-        i3 = AndroidUtilities.dp(80.0f);
-        i4 = i3;
-        if (this.documentAttach == null) {
-        }
-        if (this.mediaWebpage) {
-        }
-        this.linkImageView.setAspectFit(this.documentAttachType == 6);
-        if (this.documentAttachType == 2) {
-        }
-        if (!SharedConfig.isAutoplayGifs()) {
-        }
-        this.linkImageView.setAllowStartAnimation(true);
-        this.linkImageView.startAnimation();
-        this.drawLinkImageView = true;
-        if (this.mediaWebpage) {
-        }
-        checkBox2 = this.checkBox;
-        if (checkBox2 != null) {
+        if (document != null) {
         }
     }
 

@@ -156,23 +156,21 @@ public class VideoFramesRewinder {
                 if (this.meta[3] + ((long) Math.ceil(f)) >= j3) {
                     break;
                 }
-                AnimatedFileDrawable.getVideoFrame(this.ptr, null, this.meta, 0, true, 0.0f, r8[4], false);
+                AnimatedFileDrawable.getVideoFrame(this.ptr, null, this.meta, true, 0.0f, r8[4], false);
                 i4 = i2;
                 i7 = i;
                 min2 = i3;
             }
-            long j4 = this.ptr;
-            Bitmap bitmap2 = frame.bitmap;
-            if (AnimatedFileDrawable.getVideoFrame(j4, bitmap2, this.meta, bitmap2.getRowBytes(), true, 0.0f, this.meta[4], false) == 0) {
+            if (AnimatedFileDrawable.getVideoFrame(this.ptr, frame.bitmap, this.meta, true, 0.0f, r9[4], false) == 0) {
                 i8++;
                 if (i8 > 6) {
                     break;
                 }
             } else {
-                long j5 = this.meta[3];
-                frame.position = j5;
+                long j4 = this.meta[3];
+                frame.position = j4;
                 arrayList.add(frame);
-                j2 = j5;
+                j2 = j4;
             }
             i7 = i + 1;
             i4 = i2;

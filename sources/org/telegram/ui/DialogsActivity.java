@@ -4268,7 +4268,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     return super.isInScheduleMode();
                 }
 
-                @Override // org.telegram.ui.Components.ChatActivityEnterView.SendButton, android.view.View
+                @Override // android.view.View
                 public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
                     super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                     accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", DialogsActivity.this.selectedDialogs.size(), new Object[0]));

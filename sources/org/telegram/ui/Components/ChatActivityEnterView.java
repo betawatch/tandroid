@@ -176,6 +176,7 @@ import org.telegram.ui.Components.VideoTimelineView;
 import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProviderThemed;
+import org.telegram.ui.Components.chat.SendButtonBlockedByTypingView;
 import org.telegram.ui.Components.chat.layouts.ChatActivitySideControlsButtonsLayout;
 import org.telegram.ui.Components.inset.WindowInsetsInAppController;
 import org.telegram.ui.ContentPreviewViewer;
@@ -226,6 +227,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     private Runnable animationEndRunnable;
     private HashMap animationParamsX;
     private final FactorAnimator animatorInputFieldHeight;
+    private final BoolAnimator animatorIsBlockedByStreaming;
     private final BoolAnimator animatorTopViewVisibility;
     private ImageView attachButton;
     private float attachButtonAlpha;
@@ -433,6 +435,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     private int searchingType;
     private SendButton sendButton;
     private int sendButtonBackgroundColor;
+    private SendButtonBlockedByTypingView sendButtonBlockedByTypingView;
     public FrameLayout sendButtonContainer;
     private boolean sendButtonEnabled;
     private boolean sendButtonVisible;
@@ -2893,6 +2896,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         Interpolator interpolator = ChatListItemAnimator.DEFAULT_INTERPOLATOR;
         this.animatorInputFieldHeight = new FactorAnimator(0, this, interpolator, 250L);
         this.animatorTopViewVisibility = new BoolAnimator(1, this, interpolator, 250L);
+        this.animatorIsBlockedByStreaming = new BoolAnimator(2, this, cubicBezierInterpolator, 320L);
         this.resourcesProvider = resourcesProvider;
         this.isChat = z;
         this.smoothKeyboard = z && !AndroidUtilities.isInMultiwindow && (chatActivity == null || !chatActivity.isInBubbleMode());
@@ -3114,7 +3118,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
 
             @Override // android.view.ViewGroup, android.view.View
             public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-                if (ChatActivityEnterView.this.sendButtonEnabled) {
+                if (ChatActivityEnterView.this.isSendButtonEnabled()) {
                     return super.dispatchTouchEvent(motionEvent);
                 }
                 return false;
@@ -3122,7 +3126,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
 
             @Override // android.view.View
             public boolean onTouchEvent(MotionEvent motionEvent) {
-                if (ChatActivityEnterView.this.sendButtonEnabled) {
+                if (ChatActivityEnterView.this.isSendButtonEnabled()) {
                     return super.onTouchEvent(motionEvent);
                 }
                 return false;
@@ -3237,6 +3241,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
             this.sendButtonContainer.setOnLongClickListener(new ChatActivityEnterView$$ExternalSyntheticLambda9(this));
         }
+        SendButtonBlockedByTypingView sendButtonBlockedByTypingView = new SendButtonBlockedByTypingView(activity, resourcesProvider);
+        this.sendButtonBlockedByTypingView = sendButtonBlockedByTypingView;
+        sendButtonBlockedByTypingView.setVisibility(4);
+        this.sendButtonContainer.addView(this.sendButtonBlockedByTypingView, LayoutHelper.createFrame(44, 44, 85));
         SlowModeBtn slowModeBtn = new SlowModeBtn(activity);
         this.slowModeButton = slowModeBtn;
         slowModeBtn.setTextSize(18);
@@ -11590,6 +11598,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         return this.sendButton;
     }
 
+    public void setBlockedByStreaming(boolean z, boolean z2) {
+        this.animatorIsBlockedByStreaming.setValue(z, z2);
+    }
+
     public ValueAnimator animateSendButton(boolean z) {
         final float alpha = getSendButtonInternal().getAlpha();
         final float f = z ? 1.0f : 0.0f;
@@ -16292,6 +16304,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public boolean isSendButtonEnabled() {
+        return this.sendButtonEnabled && !this.animatorIsBlockedByStreaming.getValue();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public void updateAttachButtonTranslationX() {
         ImageView imageView = this.attachButton;
         if (imageView == null) {
@@ -16542,11 +16559,6 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             this.emojiDrawable.set(drawable, true);
         }
 
-        @Override // android.view.View
-        public void invalidate(int i, int i2, int i3, int i4) {
-            super.invalidate(i, i2, i3, i4);
-        }
-
         public boolean isOpen() {
             return this.starsPrice > 0;
         }
@@ -16589,8 +16601,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
             }
             updateColors();
+            checkBackgroundRect();
             if (this.isNewDesignSendButton) {
-                checkBackgroundRect();
                 canvas.drawRoundRect(this.backgroundRect, AndroidUtilities.dp(19.0f), AndroidUtilities.dp(19.0f), this.backgroundPaint);
             }
             Drawable drawable = isInactive() ? this.inactiveDrawable : this.drawable;
@@ -16917,12 +16929,6 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             float dpf22 = AndroidUtilities.dpf2(38.0f);
             this.backgroundRect.set((getMeasuredWidth() - Math.max(dpf22, AndroidUtilities.dpf2(20.0f) + this.priceText.getCurrentWidth())) - dpf2, (getMeasuredHeight() - dpf22) - dpf2, getMeasuredWidth() - dpf2, getMeasuredHeight() - dpf2);
         }
-
-        @Override // android.view.View
-        public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-            super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-            accessibilityNodeInfo.setClassName("android.widget.Button");
-        }
     }
 
     public boolean drawMessageEditText(Canvas canvas, Utilities.Callback0Return callback0Return) {
@@ -16985,6 +16991,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (i == 1) {
             checkUi_IslandTotalHeight();
             checkUi_TopViewVisibility();
+        }
+        if (i == 2) {
+            this.sendButtonBlockedByTypingView.setScaleX(f);
+            this.sendButtonBlockedByTypingView.setScaleY(f);
+            this.sendButtonBlockedByTypingView.setVisibility(f > 0.0f ? 0 : 4);
         }
         invalidate();
     }

@@ -64,53 +64,12 @@ public abstract class ViewPagerActivity extends BaseFragment {
     public View createView(final Context context) {
         this.hasOwnBackground = true;
         this.contentView = createContentView(context);
-        this.viewPager = new ViewPagerFixed(context) { // from class: org.telegram.ui.ViewPagerActivity.1
-            @Override // org.telegram.ui.Components.ViewPagerFixed
-            protected long getManualScrollDuration() {
-                return 320L;
-            }
-
-            @Override // org.telegram.ui.Components.ViewPagerFixed
-            protected void onScrollEnd() {
-                super.onScrollEnd();
-                ViewPagerActivity.this.onViewPagerScrollEnd();
-                ViewPagerActivity.this.checkFragmentsVisibility();
-            }
-
-            @Override // org.telegram.ui.Components.ViewPagerFixed
-            protected float getAvailableTranslationX() {
-                return getMeasuredWidth();
-            }
-
-            @Override // org.telegram.ui.Components.ViewPagerFixed
-            protected void onItemSelected(View view, View view2, int i, int i2) {
-                super.onItemSelected(view, view2, i, i2);
-                ViewPagerActivity.this.checkFragmentsVisibility();
-            }
-
-            @Override // org.telegram.ui.Components.ViewPagerFixed
-            public void onTabAnimationUpdate(boolean z) {
-                super.onTabAnimationUpdate(z);
-                ViewPagerActivity.this.onViewPagerTabAnimationUpdate(z);
-                ViewPagerActivity.this.checkFragmentsVisibility();
-                ViewPagerActivity.this.checkSystemBarColors();
-            }
-
-            @Override // org.telegram.ui.Components.ViewPagerFixed
-            protected boolean canScrollBackward(MotionEvent motionEvent) {
-                return ViewPagerActivity.this.canScrollBackward(motionEvent);
-            }
-
-            @Override // org.telegram.ui.Components.ViewPagerFixed
-            protected boolean canScrollForward(MotionEvent motionEvent) {
-                return ViewPagerActivity.this.canScrollForward(motionEvent);
-            }
-        };
+        this.viewPager = new ViewPagerActivityPagerLayout(context);
         if (this.initialFragmentPosition == -1) {
             this.initialFragmentPosition = getStartPosition();
         }
         this.viewPager.setPosition(this.initialFragmentPosition);
-        this.viewPager.setAdapter(new ViewPagerFixed.Adapter() { // from class: org.telegram.ui.ViewPagerActivity.2
+        this.viewPager.setAdapter(new ViewPagerFixed.Adapter() { // from class: org.telegram.ui.ViewPagerActivity.1
             @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
             public int getItemCount() {
                 return ViewPagerActivity.this.getFragmentsCount();
@@ -118,7 +77,7 @@ public abstract class ViewPagerActivity extends BaseFragment {
 
             @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
             public View createView(int i) {
-                return new FrameLayout(context);
+                return new ViewPagerFragmentRootLayout(context);
             }
 
             @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
@@ -431,6 +390,59 @@ public abstract class ViewPagerActivity extends BaseFragment {
 
         private FragmentState(BaseFragment baseFragment) {
             this.fragment = baseFragment;
+        }
+    }
+
+    private class ViewPagerActivityPagerLayout extends ViewPagerFixed {
+        @Override // org.telegram.ui.Components.ViewPagerFixed
+        protected long getManualScrollDuration() {
+            return 320L;
+        }
+
+        public ViewPagerActivityPagerLayout(Context context) {
+            super(context);
+        }
+
+        @Override // org.telegram.ui.Components.ViewPagerFixed
+        protected void onScrollEnd() {
+            super.onScrollEnd();
+            ViewPagerActivity.this.onViewPagerScrollEnd();
+            ViewPagerActivity.this.checkFragmentsVisibility();
+        }
+
+        @Override // org.telegram.ui.Components.ViewPagerFixed
+        protected float getAvailableTranslationX() {
+            return getMeasuredWidth();
+        }
+
+        @Override // org.telegram.ui.Components.ViewPagerFixed
+        protected void onItemSelected(View view, View view2, int i, int i2) {
+            super.onItemSelected(view, view2, i, i2);
+            ViewPagerActivity.this.checkFragmentsVisibility();
+        }
+
+        @Override // org.telegram.ui.Components.ViewPagerFixed
+        public void onTabAnimationUpdate(boolean z) {
+            super.onTabAnimationUpdate(z);
+            ViewPagerActivity.this.onViewPagerTabAnimationUpdate(z);
+            ViewPagerActivity.this.checkFragmentsVisibility();
+            ViewPagerActivity.this.checkSystemBarColors();
+        }
+
+        @Override // org.telegram.ui.Components.ViewPagerFixed
+        protected boolean canScrollBackward(MotionEvent motionEvent) {
+            return ViewPagerActivity.this.canScrollBackward(motionEvent);
+        }
+
+        @Override // org.telegram.ui.Components.ViewPagerFixed
+        protected boolean canScrollForward(MotionEvent motionEvent) {
+            return ViewPagerActivity.this.canScrollForward(motionEvent);
+        }
+    }
+
+    private static class ViewPagerFragmentRootLayout extends FrameLayout {
+        public ViewPagerFragmentRootLayout(Context context) {
+            super(context);
         }
     }
 }

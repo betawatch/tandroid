@@ -25905,7 +25905,10 @@ public class MessagesController extends BaseController implements NotificationCe
             if (i3 != -1) {
                 UserConfig.selectedAccount = i3;
                 UserConfig.getInstance(0).saveConfig(false);
-                LaunchActivity.clearFragments();
+                LaunchActivity launchActivity = LaunchActivity.instance;
+                if (launchActivity != null) {
+                    launchActivity.clearFragments();
+                }
             }
         }
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appDidLogout, new Object[0]);
@@ -29166,7 +29169,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r4v143 ??), method size: 7801
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r4v74 ??), method size: 7801
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)

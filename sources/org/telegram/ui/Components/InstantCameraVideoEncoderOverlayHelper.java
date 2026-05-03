@@ -29,17 +29,18 @@ public class InstantCameraVideoEncoderOverlayHelper {
 
     public InstantCameraVideoEncoderOverlayHelper(int i, int i2) {
         float[] fArr;
-        int i3;
-        float[] fArr2;
-        Canvas canvas;
-        int i4;
-        int i5;
         Bitmap bitmap;
+        long j;
+        int i3;
+        int i4;
+        float[] fArr2;
+        Bitmap bitmap2;
         Object obj;
+        int i5 = i;
         int i6 = 0;
         int[] iArr = new int[5];
         this.glTextures = iArr;
-        this.videoWidth = i;
+        this.videoWidth = i5;
         this.videoHeight = i2;
         float[] fArr3 = new float[NotificationCenter.starUserGiftCollectionsLoaded];
         setTextureCords(fArr3, 0, 0.0f, 1.0f, 1.0f, 0.0f);
@@ -56,68 +57,70 @@ public class InstantCameraVideoEncoderOverlayHelper {
             GLES20.glTexParameteri(3553, 10243, 33071);
             int i9 = 4;
             if (i7 == 4) {
-                int round = Math.round(i * 0.2f);
-                int round2 = Math.round((i * 28) / 1536.0f);
+                int round = Math.round(i5 * 0.2f);
+                int round2 = Math.round((i5 * 28) / 1536.0f);
                 int i10 = (round - round2) - round2;
                 Object obj2 = null;
                 long createWithJson = RLottieDrawable.createWithJson(AndroidUtilities.readRes(R.raw.plane_logo_plain), "logo_plane", new int[3], null);
                 Bitmap createBitmap = Bitmap.createBitmap(round, round, Bitmap.Config.ARGB_8888);
                 Bitmap createBitmap2 = Bitmap.createBitmap(i10 * 8, i10 * 4, Bitmap.Config.ALPHA_8);
-                Canvas canvas2 = new Canvas(createBitmap2);
+                Canvas canvas = new Canvas(createBitmap2);
                 int i11 = 0;
                 while (i11 < 8) {
                     int i12 = 0;
                     while (i12 < i9) {
                         int i13 = (i12 * 8) + i11;
                         if (i13 >= 27) {
+                            bitmap = createBitmap2;
                             fArr2 = fArr3;
+                            j = createWithJson;
                             i3 = i11;
-                            canvas = canvas2;
-                            bitmap = createBitmap;
-                            i4 = round;
-                            obj = obj2;
-                            i5 = i10;
-                        } else {
-                            i3 = i11;
-                            float[] fArr5 = fArr3;
-                            fArr2 = fArr3;
-                            canvas = canvas2;
-                            Bitmap bitmap2 = createBitmap;
-                            i4 = round;
-                            i5 = i10;
-                            setTextureCords(fArr5, (i13 * 8) + 16, i11 / 8.0f, i12 / 4.0f, (i11 + 1) / 8.0f, (i12 + 1) / 4.0f);
-                            RLottieDrawable.getFrame(createWithJson, i13 * 2, bitmap2, i4, i4, bitmap2.getRowBytes(), true);
-                            bitmap = bitmap2;
+                            bitmap2 = createBitmap;
+                            i4 = i10;
                             obj = null;
-                            canvas.drawBitmap(bitmap, (i5 * i3) - round2, (i5 * i12) - round2, (Paint) null);
+                        } else {
+                            bitmap = createBitmap2;
+                            j = createWithJson;
+                            float[] fArr5 = fArr3;
+                            i3 = i11;
+                            i4 = i10;
+                            fArr2 = fArr3;
+                            bitmap2 = createBitmap;
+                            setTextureCords(fArr5, (i13 * 8) + 16, i11 / 8.0f, i12 / 4.0f, (i11 + 1) / 8.0f, (i12 + 1) / 4.0f);
+                            RLottieDrawable.getFrame(j, i13 * 2, bitmap2, true);
+                            obj = null;
+                            canvas.drawBitmap(bitmap2, (i4 * i3) - round2, (i4 * i12) - round2, (Paint) null);
                         }
                         i12++;
-                        i10 = i5;
-                        canvas2 = canvas;
+                        i10 = i4;
+                        createBitmap = bitmap2;
                         obj2 = obj;
-                        round = i4;
-                        createBitmap = bitmap;
-                        i11 = i3;
                         fArr3 = fArr2;
+                        i11 = i3;
                         i9 = 4;
+                        createWithJson = j;
+                        createBitmap2 = bitmap;
                     }
                     i11++;
-                    obj2 = obj2;
-                    createBitmap = createBitmap;
                     fArr3 = fArr3;
                     i9 = 4;
+                    createWithJson = createWithJson;
+                    createBitmap2 = createBitmap2;
                 }
+                Bitmap bitmap3 = createBitmap2;
                 fArr = fArr3;
                 float f = ((i10 / this.videoWidth) * 2.0f) - 1.0f;
                 setVertexCords(fArr4, 24, -1.0f, f, f, -1.0f);
-                GLUtils.texImage2D(3553, 0, createBitmap2, 0);
-                createBitmap2.recycle();
+                GLUtils.texImage2D(3553, 0, bitmap3, 0);
+                bitmap3.recycle();
                 createBitmap.recycle();
                 RLottieDrawable.destroy(createWithJson);
+                i5 = i;
             } else {
                 fArr = fArr3;
                 if (i7 == 3) {
-                    int round3 = Math.round((i * 372.0f) / 1536.0f);
+                    i5 = i;
+                    int round3 = Math.round((i5 * 372.0f) / 1536.0f);
                     float f2 = (round3 / this.videoWidth) * 2.0f;
                     setVertexCords(fArr4, 12, 1.0f - f2, f2 - 1.0f, 1.0f, -1.0f);
                     Bitmap bitmapFromRaw = AndroidUtilities.getBitmapFromRaw(R.raw.round_blur_overlay_text);
@@ -130,6 +133,7 @@ public class InstantCameraVideoEncoderOverlayHelper {
                         bitmapFromRaw.recycle();
                     }
                 } else {
+                    i5 = i;
                     GLES20.glTexImage2D(3553, 0, 6408, i7 == 0 ? this.videoWidth : 48, i7 == 0 ? this.videoHeight : 48, 0, 6408, 5121, null);
                 }
             }

@@ -12,6 +12,7 @@ import org.telegram.ui.ActionBar.Theme;
 /* loaded from: classes5.dex */
 public class TypingDotsDrawable extends StatusDrawable {
     private Paint currentPaint;
+    private boolean ignoreAnimationLocks;
     private int currentAccount = UserConfig.selectedAccount;
     private boolean isChat = false;
     private float[] scales = new float[3];
@@ -34,6 +35,10 @@ public class TypingDotsDrawable extends StatusDrawable {
         if (z) {
             this.currentPaint = new Paint(1);
         }
+    }
+
+    public void setIgnoreAnimationLocks() {
+        this.ignoreAnimationLocks = true;
     }
 
     @Override // org.telegram.ui.Components.StatusDrawable
@@ -103,6 +108,7 @@ public class TypingDotsDrawable extends StatusDrawable {
     public void draw(Canvas canvas) {
         int dp;
         int i;
+        int i2 = getBounds().left;
         if (this.isChat) {
             dp = AndroidUtilities.dp(8.5f);
             i = getBounds().top;
@@ -110,23 +116,23 @@ public class TypingDotsDrawable extends StatusDrawable {
             dp = AndroidUtilities.dp(9.3f);
             i = getBounds().top;
         }
-        int i2 = dp + i;
+        int i3 = dp + i;
         Paint paint = this.currentPaint;
         if (paint == null) {
             paint = Theme.chat_statusPaint;
             paint.setAlpha(NotificationCenter.didReceiveCall);
         }
-        float f = i2;
-        canvas.drawCircle(AndroidUtilities.dp(3.0f), f, this.scales[0] * AndroidUtilities.density, paint);
-        canvas.drawCircle(AndroidUtilities.dp(9.0f), f, this.scales[1] * AndroidUtilities.density, paint);
-        canvas.drawCircle(AndroidUtilities.dp(15.0f), f, this.scales[2] * AndroidUtilities.density, paint);
+        float f = i3;
+        canvas.drawCircle(AndroidUtilities.dp(3.0f) + i2, f, this.scales[0] * AndroidUtilities.density, paint);
+        canvas.drawCircle(AndroidUtilities.dp(9.0f) + i2, f, this.scales[1] * AndroidUtilities.density, paint);
+        canvas.drawCircle(i2 + AndroidUtilities.dp(15.0f), f, this.scales[2] * AndroidUtilities.density, paint);
         checkUpdate();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void checkUpdate() {
         if (this.started) {
-            if (!NotificationCenter.getInstance(this.currentAccount).isAnimationInProgress()) {
+            if (!NotificationCenter.getInstance(this.currentAccount).isAnimationInProgress() || this.ignoreAnimationLocks) {
                 update();
             } else {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TypingDotsDrawable$$ExternalSyntheticLambda0

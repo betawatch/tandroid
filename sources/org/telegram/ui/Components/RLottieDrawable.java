@@ -131,7 +131,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
 
     public static native double getDuration(String str, String str2);
 
-    public static native int getFrame(long j, int i, Bitmap bitmap, int i2, int i3, int i4, boolean z);
+    public static native int getFrame(long j, int i, Bitmap bitmap, boolean z);
 
     public static native long getFramesCount(String str, String str2);
 
@@ -360,11 +360,11 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.loadFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.5
             private long lastUpdate = 0;
 
-            /* JADX WARN: Removed duplicated region for block: B:65:0x014a A[Catch: Exception -> 0x00b7, TryCatch #3 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:40:0x00d0, B:43:0x00d9, B:45:0x00e3, B:59:0x0134, B:61:0x013c, B:63:0x0142, B:65:0x014a, B:66:0x015a, B:68:0x0162, B:70:0x016a, B:71:0x0197, B:74:0x01bb, B:76:0x01ca, B:79:0x01ce, B:81:0x01da, B:83:0x01e1, B:85:0x01e7, B:86:0x01eb, B:88:0x01f7, B:89:0x01fb, B:91:0x0203, B:93:0x0212, B:95:0x0219, B:96:0x021d, B:97:0x0228, B:99:0x022c, B:101:0x0230, B:103:0x0234, B:105:0x0237, B:106:0x023d, B:107:0x0246, B:109:0x0249, B:110:0x024f, B:111:0x0258, B:115:0x0264, B:117:0x0269, B:118:0x0273, B:119:0x0278, B:121:0x027c, B:123:0x0288, B:124:0x0293, B:126:0x0299, B:128:0x029f, B:130:0x02b0, B:131:0x02bc, B:132:0x025e, B:134:0x011a, B:137:0x011e, B:140:0x00bc, B:142:0x00c4, B:143:0x00cd), top: B:35:0x00ad }] */
-            /* JADX WARN: Removed duplicated region for block: B:68:0x0162 A[Catch: Exception -> 0x00b7, TryCatch #3 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:40:0x00d0, B:43:0x00d9, B:45:0x00e3, B:59:0x0134, B:61:0x013c, B:63:0x0142, B:65:0x014a, B:66:0x015a, B:68:0x0162, B:70:0x016a, B:71:0x0197, B:74:0x01bb, B:76:0x01ca, B:79:0x01ce, B:81:0x01da, B:83:0x01e1, B:85:0x01e7, B:86:0x01eb, B:88:0x01f7, B:89:0x01fb, B:91:0x0203, B:93:0x0212, B:95:0x0219, B:96:0x021d, B:97:0x0228, B:99:0x022c, B:101:0x0230, B:103:0x0234, B:105:0x0237, B:106:0x023d, B:107:0x0246, B:109:0x0249, B:110:0x024f, B:111:0x0258, B:115:0x0264, B:117:0x0269, B:118:0x0273, B:119:0x0278, B:121:0x027c, B:123:0x0288, B:124:0x0293, B:126:0x0299, B:128:0x029f, B:130:0x02b0, B:131:0x02bc, B:132:0x025e, B:134:0x011a, B:137:0x011e, B:140:0x00bc, B:142:0x00c4, B:143:0x00cd), top: B:35:0x00ad }] */
-            /* JADX WARN: Removed duplicated region for block: B:72:0x01b8  */
-            /* JADX WARN: Removed duplicated region for block: B:74:0x01bb A[Catch: Exception -> 0x00b7, TryCatch #3 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:40:0x00d0, B:43:0x00d9, B:45:0x00e3, B:59:0x0134, B:61:0x013c, B:63:0x0142, B:65:0x014a, B:66:0x015a, B:68:0x0162, B:70:0x016a, B:71:0x0197, B:74:0x01bb, B:76:0x01ca, B:79:0x01ce, B:81:0x01da, B:83:0x01e1, B:85:0x01e7, B:86:0x01eb, B:88:0x01f7, B:89:0x01fb, B:91:0x0203, B:93:0x0212, B:95:0x0219, B:96:0x021d, B:97:0x0228, B:99:0x022c, B:101:0x0230, B:103:0x0234, B:105:0x0237, B:106:0x023d, B:107:0x0246, B:109:0x0249, B:110:0x024f, B:111:0x0258, B:115:0x0264, B:117:0x0269, B:118:0x0273, B:119:0x0278, B:121:0x027c, B:123:0x0288, B:124:0x0293, B:126:0x0299, B:128:0x029f, B:130:0x02b0, B:131:0x02bc, B:132:0x025e, B:134:0x011a, B:137:0x011e, B:140:0x00bc, B:142:0x00c4, B:143:0x00cd), top: B:35:0x00ad }] */
-            /* JADX WARN: Removed duplicated region for block: B:79:0x01ce A[Catch: Exception -> 0x00b7, TryCatch #3 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:40:0x00d0, B:43:0x00d9, B:45:0x00e3, B:59:0x0134, B:61:0x013c, B:63:0x0142, B:65:0x014a, B:66:0x015a, B:68:0x0162, B:70:0x016a, B:71:0x0197, B:74:0x01bb, B:76:0x01ca, B:79:0x01ce, B:81:0x01da, B:83:0x01e1, B:85:0x01e7, B:86:0x01eb, B:88:0x01f7, B:89:0x01fb, B:91:0x0203, B:93:0x0212, B:95:0x0219, B:96:0x021d, B:97:0x0228, B:99:0x022c, B:101:0x0230, B:103:0x0234, B:105:0x0237, B:106:0x023d, B:107:0x0246, B:109:0x0249, B:110:0x024f, B:111:0x0258, B:115:0x0264, B:117:0x0269, B:118:0x0273, B:119:0x0278, B:121:0x027c, B:123:0x0288, B:124:0x0293, B:126:0x0299, B:128:0x029f, B:130:0x02b0, B:131:0x02bc, B:132:0x025e, B:134:0x011a, B:137:0x011e, B:140:0x00bc, B:142:0x00c4, B:143:0x00cd), top: B:35:0x00ad }] */
+            /* JADX WARN: Removed duplicated region for block: B:64:0x013a A[Catch: Exception -> 0x00b7, TryCatch #2 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:39:0x00ce, B:42:0x00d7, B:44:0x00e1, B:58:0x0124, B:60:0x012c, B:62:0x0132, B:64:0x013a, B:65:0x014a, B:67:0x0152, B:69:0x015a, B:70:0x0187, B:73:0x0199, B:75:0x01a8, B:78:0x01ac, B:80:0x01b8, B:82:0x01bf, B:84:0x01c5, B:85:0x01c9, B:87:0x01d5, B:88:0x01d9, B:90:0x01e1, B:92:0x01f0, B:94:0x01f7, B:95:0x01fb, B:96:0x0206, B:98:0x020a, B:100:0x020e, B:102:0x0212, B:104:0x0215, B:105:0x021b, B:106:0x0224, B:108:0x0227, B:109:0x022d, B:110:0x0236, B:114:0x0242, B:116:0x0247, B:117:0x0251, B:118:0x0256, B:120:0x025a, B:122:0x0266, B:123:0x0271, B:125:0x0277, B:127:0x027d, B:129:0x028e, B:130:0x029a, B:131:0x023c, B:133:0x0118, B:136:0x011c, B:139:0x00bc, B:141:0x00c4, B:142:0x00cc), top: B:35:0x00ad }] */
+            /* JADX WARN: Removed duplicated region for block: B:67:0x0152 A[Catch: Exception -> 0x00b7, TryCatch #2 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:39:0x00ce, B:42:0x00d7, B:44:0x00e1, B:58:0x0124, B:60:0x012c, B:62:0x0132, B:64:0x013a, B:65:0x014a, B:67:0x0152, B:69:0x015a, B:70:0x0187, B:73:0x0199, B:75:0x01a8, B:78:0x01ac, B:80:0x01b8, B:82:0x01bf, B:84:0x01c5, B:85:0x01c9, B:87:0x01d5, B:88:0x01d9, B:90:0x01e1, B:92:0x01f0, B:94:0x01f7, B:95:0x01fb, B:96:0x0206, B:98:0x020a, B:100:0x020e, B:102:0x0212, B:104:0x0215, B:105:0x021b, B:106:0x0224, B:108:0x0227, B:109:0x022d, B:110:0x0236, B:114:0x0242, B:116:0x0247, B:117:0x0251, B:118:0x0256, B:120:0x025a, B:122:0x0266, B:123:0x0271, B:125:0x0277, B:127:0x027d, B:129:0x028e, B:130:0x029a, B:131:0x023c, B:133:0x0118, B:136:0x011c, B:139:0x00bc, B:141:0x00c4, B:142:0x00cc), top: B:35:0x00ad }] */
+            /* JADX WARN: Removed duplicated region for block: B:71:0x0196  */
+            /* JADX WARN: Removed duplicated region for block: B:73:0x0199 A[Catch: Exception -> 0x00b7, TryCatch #2 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:39:0x00ce, B:42:0x00d7, B:44:0x00e1, B:58:0x0124, B:60:0x012c, B:62:0x0132, B:64:0x013a, B:65:0x014a, B:67:0x0152, B:69:0x015a, B:70:0x0187, B:73:0x0199, B:75:0x01a8, B:78:0x01ac, B:80:0x01b8, B:82:0x01bf, B:84:0x01c5, B:85:0x01c9, B:87:0x01d5, B:88:0x01d9, B:90:0x01e1, B:92:0x01f0, B:94:0x01f7, B:95:0x01fb, B:96:0x0206, B:98:0x020a, B:100:0x020e, B:102:0x0212, B:104:0x0215, B:105:0x021b, B:106:0x0224, B:108:0x0227, B:109:0x022d, B:110:0x0236, B:114:0x0242, B:116:0x0247, B:117:0x0251, B:118:0x0256, B:120:0x025a, B:122:0x0266, B:123:0x0271, B:125:0x0277, B:127:0x027d, B:129:0x028e, B:130:0x029a, B:131:0x023c, B:133:0x0118, B:136:0x011c, B:139:0x00bc, B:141:0x00c4, B:142:0x00cc), top: B:35:0x00ad }] */
+            /* JADX WARN: Removed duplicated region for block: B:78:0x01ac A[Catch: Exception -> 0x00b7, TryCatch #2 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:39:0x00ce, B:42:0x00d7, B:44:0x00e1, B:58:0x0124, B:60:0x012c, B:62:0x0132, B:64:0x013a, B:65:0x014a, B:67:0x0152, B:69:0x015a, B:70:0x0187, B:73:0x0199, B:75:0x01a8, B:78:0x01ac, B:80:0x01b8, B:82:0x01bf, B:84:0x01c5, B:85:0x01c9, B:87:0x01d5, B:88:0x01d9, B:90:0x01e1, B:92:0x01f0, B:94:0x01f7, B:95:0x01fb, B:96:0x0206, B:98:0x020a, B:100:0x020e, B:102:0x0212, B:104:0x0215, B:105:0x021b, B:106:0x0224, B:108:0x0227, B:109:0x022d, B:110:0x0236, B:114:0x0242, B:116:0x0247, B:117:0x0251, B:118:0x0256, B:120:0x025a, B:122:0x0266, B:123:0x0271, B:125:0x0277, B:127:0x027d, B:129:0x028e, B:130:0x029a, B:131:0x023c, B:133:0x0118, B:136:0x011c, B:139:0x00bc, B:141:0x00c4, B:142:0x00cc), top: B:35:0x00ad }] */
             @Override // java.lang.Runnable
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -416,7 +416,6 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                 } else {
                                     j = rLottieDrawable3.nativePtr;
                                 }
-                                long j2 = j;
                                 int i5 = RLottieDrawable.this.shouldLimitFps ? 2 : 1;
                                 System.currentTimeMillis();
                                 RLottieDrawable rLottieDrawable5 = RLottieDrawable.this;
@@ -446,10 +445,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                         }
                                     }
                                 } else {
-                                    int i6 = rLottieDrawable5.currentFrame;
-                                    Bitmap bitmap = rLottieDrawable5.backgroundBitmap;
-                                    RLottieDrawable rLottieDrawable6 = RLottieDrawable.this;
-                                    frame = RLottieDrawable.getFrame(j2, i6, bitmap, rLottieDrawable6.width, rLottieDrawable6.height, rLottieDrawable6.backgroundBitmap.getRowBytes(), true);
+                                    frame = RLottieDrawable.getFrame(j, rLottieDrawable5.currentFrame, rLottieDrawable5.backgroundBitmap, true);
                                 }
                                 bitmapsCache = RLottieDrawable.this.bitmapsCache;
                                 if (bitmapsCache != null && bitmapsCache.needGenCache()) {
@@ -461,18 +457,15 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                         frame = -1;
                                     } else {
                                         if (RLottieDrawable.this.nativePtr == 0) {
+                                            RLottieDrawable rLottieDrawable6 = RLottieDrawable.this;
+                                            String file2 = rLottieDrawable6.args.file.toString();
                                             RLottieDrawable rLottieDrawable7 = RLottieDrawable.this;
-                                            String file2 = rLottieDrawable7.args.file.toString();
-                                            RLottieDrawable rLottieDrawable8 = RLottieDrawable.this;
-                                            NativePtrArgs nativePtrArgs = rLottieDrawable8.args;
-                                            rLottieDrawable7.nativePtr = RLottieDrawable.create(file2, nativePtrArgs.json, rLottieDrawable8.width, rLottieDrawable8.height, new int[3], false, nativePtrArgs.colorReplacement, false, nativePtrArgs.fitzModifier);
+                                            NativePtrArgs nativePtrArgs = rLottieDrawable7.args;
+                                            rLottieDrawable6.nativePtr = RLottieDrawable.create(file2, nativePtrArgs.json, rLottieDrawable7.width, rLottieDrawable7.height, new int[3], false, nativePtrArgs.colorReplacement, false, nativePtrArgs.fitzModifier);
                                         }
-                                        long j3 = RLottieDrawable.this.nativePtr;
-                                        RLottieDrawable rLottieDrawable9 = RLottieDrawable.this;
-                                        int i7 = rLottieDrawable9.currentFrame;
-                                        Bitmap bitmap2 = rLottieDrawable9.backgroundBitmap;
-                                        RLottieDrawable rLottieDrawable10 = RLottieDrawable.this;
-                                        frame = RLottieDrawable.getFrame(j3, i7, bitmap2, rLottieDrawable10.width, rLottieDrawable10.height, rLottieDrawable10.backgroundBitmap.getRowBytes(), true);
+                                        long j2 = RLottieDrawable.this.nativePtr;
+                                        RLottieDrawable rLottieDrawable8 = RLottieDrawable.this;
+                                        frame = RLottieDrawable.getFrame(j2, rLottieDrawable8.currentFrame, rLottieDrawable8.backgroundBitmap, true);
                                     }
                                 }
                                 if (frame != -1) {
@@ -484,21 +477,21 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                     }
                                     return;
                                 }
-                                RLottieDrawable rLottieDrawable11 = RLottieDrawable.this;
-                                rLottieDrawable11.nextRenderingBitmap = rLottieDrawable11.backgroundBitmap;
-                                RLottieDrawable rLottieDrawable12 = RLottieDrawable.this;
-                                int i8 = rLottieDrawable12.isDice;
-                                if (i8 == 1) {
-                                    int i9 = rLottieDrawable12.currentFrame + i5;
-                                    int i10 = rLottieDrawable12.diceSwitchFramesCount;
-                                    if (i10 == -1) {
-                                        i10 = rLottieDrawable12.metaData[0];
+                                RLottieDrawable rLottieDrawable9 = RLottieDrawable.this;
+                                rLottieDrawable9.nextRenderingBitmap = rLottieDrawable9.backgroundBitmap;
+                                RLottieDrawable rLottieDrawable10 = RLottieDrawable.this;
+                                int i6 = rLottieDrawable10.isDice;
+                                if (i6 == 1) {
+                                    int i7 = rLottieDrawable10.currentFrame + i5;
+                                    int i8 = rLottieDrawable10.diceSwitchFramesCount;
+                                    if (i8 == -1) {
+                                        i8 = rLottieDrawable10.metaData[0];
                                     }
-                                    if (i9 < i10) {
-                                        rLottieDrawable12.currentFrame = i9;
+                                    if (i7 < i8) {
+                                        rLottieDrawable10.currentFrame = i7;
                                     } else {
-                                        rLottieDrawable12.currentFrame = 0;
-                                        rLottieDrawable12.nextFrameIsLast = false;
+                                        rLottieDrawable10.currentFrame = 0;
+                                        rLottieDrawable10.nextFrameIsLast = false;
                                         if (RLottieDrawable.this.secondNativePtr != 0) {
                                             RLottieDrawable.this.isDice = 2;
                                         }
@@ -507,75 +500,75 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                             RLottieDrawable.this.resetVibrationAfterRestart = false;
                                         }
                                     }
-                                } else if (i8 == 2) {
-                                    int i11 = rLottieDrawable12.currentFrame + i5;
-                                    if (i11 < rLottieDrawable12.secondFramesCount) {
-                                        rLottieDrawable12.currentFrame = i11;
+                                } else if (i6 == 2) {
+                                    int i9 = rLottieDrawable10.currentFrame + i5;
+                                    if (i9 < rLottieDrawable10.secondFramesCount) {
+                                        rLottieDrawable10.currentFrame = i9;
                                     } else {
-                                        rLottieDrawable12.nextFrameIsLast = true;
+                                        rLottieDrawable10.nextFrameIsLast = true;
                                         RLottieDrawable.this.autoRepeatPlayCount++;
                                     }
                                 } else {
-                                    int i12 = rLottieDrawable12.customEndFrame;
-                                    if (i12 >= 0 && rLottieDrawable12.playInDirectionOfCustomEndFrame) {
-                                        int i13 = rLottieDrawable12.currentFrame;
-                                        if (i13 > i12) {
-                                            int i14 = i13 - i5;
-                                            if (i14 >= i12) {
-                                                rLottieDrawable12.currentFrame = i14;
-                                                rLottieDrawable12.nextFrameIsLast = false;
+                                    int i10 = rLottieDrawable10.customEndFrame;
+                                    if (i10 >= 0 && rLottieDrawable10.playInDirectionOfCustomEndFrame) {
+                                        int i11 = rLottieDrawable10.currentFrame;
+                                        if (i11 > i10) {
+                                            int i12 = i11 - i5;
+                                            if (i12 >= i10) {
+                                                rLottieDrawable10.currentFrame = i12;
+                                                rLottieDrawable10.nextFrameIsLast = false;
                                             } else {
-                                                rLottieDrawable12.nextFrameIsLast = true;
+                                                rLottieDrawable10.nextFrameIsLast = true;
                                                 RLottieDrawable.this.checkDispatchOnAnimationEnd();
                                             }
                                         } else {
-                                            int i15 = i13 + i5;
-                                            if (i15 < i12) {
-                                                rLottieDrawable12.currentFrame = i15;
-                                                rLottieDrawable12.nextFrameIsLast = false;
+                                            int i13 = i11 + i5;
+                                            if (i13 < i10) {
+                                                rLottieDrawable10.currentFrame = i13;
+                                                rLottieDrawable10.nextFrameIsLast = false;
                                             } else {
-                                                rLottieDrawable12.nextFrameIsLast = true;
+                                                rLottieDrawable10.nextFrameIsLast = true;
                                                 RLottieDrawable.this.checkDispatchOnAnimationEnd();
                                             }
                                         }
                                     } else {
-                                        int i16 = rLottieDrawable12.currentFrame + i5;
-                                        if (i12 < 0) {
-                                            i12 = rLottieDrawable12.metaData[0];
+                                        int i14 = rLottieDrawable10.currentFrame + i5;
+                                        if (i10 < 0) {
+                                            i10 = rLottieDrawable10.metaData[0];
                                         }
-                                        if (i16 < i12) {
-                                            if (rLottieDrawable12.autoRepeat == 3) {
-                                                rLottieDrawable12.nextFrameIsLast = true;
+                                        if (i14 < i10) {
+                                            if (rLottieDrawable10.autoRepeat == 3) {
+                                                rLottieDrawable10.nextFrameIsLast = true;
                                                 RLottieDrawable.this.autoRepeatPlayCount++;
                                             } else {
-                                                rLottieDrawable12.currentFrame = i16;
-                                                rLottieDrawable12.nextFrameIsLast = false;
+                                                rLottieDrawable10.currentFrame = i14;
+                                                rLottieDrawable10.nextFrameIsLast = false;
                                             }
                                         } else {
-                                            int i17 = rLottieDrawable12.autoRepeat;
-                                            if (i17 == 1) {
-                                                rLottieDrawable12.currentFrame = 0;
-                                                rLottieDrawable12.nextFrameIsLast = false;
+                                            int i15 = rLottieDrawable10.autoRepeat;
+                                            if (i15 == 1) {
+                                                rLottieDrawable10.currentFrame = 0;
+                                                rLottieDrawable10.nextFrameIsLast = false;
                                                 if (RLottieDrawable.this.resetVibrationAfterRestart) {
                                                     RLottieDrawable.this.vibrationPattern = null;
                                                     RLottieDrawable.this.resetVibrationAfterRestart = false;
                                                 }
-                                                RLottieDrawable rLottieDrawable13 = RLottieDrawable.this;
-                                                int i18 = rLottieDrawable13.autoRepeatCount;
-                                                if (i18 > 0) {
-                                                    rLottieDrawable13.autoRepeatCount = i18 - 1;
+                                                RLottieDrawable rLottieDrawable11 = RLottieDrawable.this;
+                                                int i16 = rLottieDrawable11.autoRepeatCount;
+                                                if (i16 > 0) {
+                                                    rLottieDrawable11.autoRepeatCount = i16 - 1;
                                                 }
-                                            } else if (i17 == 2) {
-                                                rLottieDrawable12.currentFrame = 0;
-                                                rLottieDrawable12.nextFrameIsLast = true;
-                                                RLottieDrawable rLottieDrawable14 = RLottieDrawable.this;
-                                                rLottieDrawable14.autoRepeatPlayCount++;
-                                                if (rLottieDrawable14.resetVibrationAfterRestart) {
+                                            } else if (i15 == 2) {
+                                                rLottieDrawable10.currentFrame = 0;
+                                                rLottieDrawable10.nextFrameIsLast = true;
+                                                RLottieDrawable rLottieDrawable12 = RLottieDrawable.this;
+                                                rLottieDrawable12.autoRepeatPlayCount++;
+                                                if (rLottieDrawable12.resetVibrationAfterRestart) {
                                                     RLottieDrawable.this.vibrationPattern = null;
                                                     RLottieDrawable.this.resetVibrationAfterRestart = false;
                                                 }
                                             } else {
-                                                rLottieDrawable12.nextFrameIsLast = true;
+                                                rLottieDrawable10.nextFrameIsLast = true;
                                                 RLottieDrawable.this.checkDispatchOnAnimationEnd();
                                             }
                                         }
@@ -709,11 +702,11 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.loadFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.5
             private long lastUpdate = 0;
 
-            /* JADX WARN: Removed duplicated region for block: B:65:0x014a A[Catch: Exception -> 0x00b7, TryCatch #3 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:40:0x00d0, B:43:0x00d9, B:45:0x00e3, B:59:0x0134, B:61:0x013c, B:63:0x0142, B:65:0x014a, B:66:0x015a, B:68:0x0162, B:70:0x016a, B:71:0x0197, B:74:0x01bb, B:76:0x01ca, B:79:0x01ce, B:81:0x01da, B:83:0x01e1, B:85:0x01e7, B:86:0x01eb, B:88:0x01f7, B:89:0x01fb, B:91:0x0203, B:93:0x0212, B:95:0x0219, B:96:0x021d, B:97:0x0228, B:99:0x022c, B:101:0x0230, B:103:0x0234, B:105:0x0237, B:106:0x023d, B:107:0x0246, B:109:0x0249, B:110:0x024f, B:111:0x0258, B:115:0x0264, B:117:0x0269, B:118:0x0273, B:119:0x0278, B:121:0x027c, B:123:0x0288, B:124:0x0293, B:126:0x0299, B:128:0x029f, B:130:0x02b0, B:131:0x02bc, B:132:0x025e, B:134:0x011a, B:137:0x011e, B:140:0x00bc, B:142:0x00c4, B:143:0x00cd), top: B:35:0x00ad }] */
-            /* JADX WARN: Removed duplicated region for block: B:68:0x0162 A[Catch: Exception -> 0x00b7, TryCatch #3 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:40:0x00d0, B:43:0x00d9, B:45:0x00e3, B:59:0x0134, B:61:0x013c, B:63:0x0142, B:65:0x014a, B:66:0x015a, B:68:0x0162, B:70:0x016a, B:71:0x0197, B:74:0x01bb, B:76:0x01ca, B:79:0x01ce, B:81:0x01da, B:83:0x01e1, B:85:0x01e7, B:86:0x01eb, B:88:0x01f7, B:89:0x01fb, B:91:0x0203, B:93:0x0212, B:95:0x0219, B:96:0x021d, B:97:0x0228, B:99:0x022c, B:101:0x0230, B:103:0x0234, B:105:0x0237, B:106:0x023d, B:107:0x0246, B:109:0x0249, B:110:0x024f, B:111:0x0258, B:115:0x0264, B:117:0x0269, B:118:0x0273, B:119:0x0278, B:121:0x027c, B:123:0x0288, B:124:0x0293, B:126:0x0299, B:128:0x029f, B:130:0x02b0, B:131:0x02bc, B:132:0x025e, B:134:0x011a, B:137:0x011e, B:140:0x00bc, B:142:0x00c4, B:143:0x00cd), top: B:35:0x00ad }] */
-            /* JADX WARN: Removed duplicated region for block: B:72:0x01b8  */
-            /* JADX WARN: Removed duplicated region for block: B:74:0x01bb A[Catch: Exception -> 0x00b7, TryCatch #3 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:40:0x00d0, B:43:0x00d9, B:45:0x00e3, B:59:0x0134, B:61:0x013c, B:63:0x0142, B:65:0x014a, B:66:0x015a, B:68:0x0162, B:70:0x016a, B:71:0x0197, B:74:0x01bb, B:76:0x01ca, B:79:0x01ce, B:81:0x01da, B:83:0x01e1, B:85:0x01e7, B:86:0x01eb, B:88:0x01f7, B:89:0x01fb, B:91:0x0203, B:93:0x0212, B:95:0x0219, B:96:0x021d, B:97:0x0228, B:99:0x022c, B:101:0x0230, B:103:0x0234, B:105:0x0237, B:106:0x023d, B:107:0x0246, B:109:0x0249, B:110:0x024f, B:111:0x0258, B:115:0x0264, B:117:0x0269, B:118:0x0273, B:119:0x0278, B:121:0x027c, B:123:0x0288, B:124:0x0293, B:126:0x0299, B:128:0x029f, B:130:0x02b0, B:131:0x02bc, B:132:0x025e, B:134:0x011a, B:137:0x011e, B:140:0x00bc, B:142:0x00c4, B:143:0x00cd), top: B:35:0x00ad }] */
-            /* JADX WARN: Removed duplicated region for block: B:79:0x01ce A[Catch: Exception -> 0x00b7, TryCatch #3 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:40:0x00d0, B:43:0x00d9, B:45:0x00e3, B:59:0x0134, B:61:0x013c, B:63:0x0142, B:65:0x014a, B:66:0x015a, B:68:0x0162, B:70:0x016a, B:71:0x0197, B:74:0x01bb, B:76:0x01ca, B:79:0x01ce, B:81:0x01da, B:83:0x01e1, B:85:0x01e7, B:86:0x01eb, B:88:0x01f7, B:89:0x01fb, B:91:0x0203, B:93:0x0212, B:95:0x0219, B:96:0x021d, B:97:0x0228, B:99:0x022c, B:101:0x0230, B:103:0x0234, B:105:0x0237, B:106:0x023d, B:107:0x0246, B:109:0x0249, B:110:0x024f, B:111:0x0258, B:115:0x0264, B:117:0x0269, B:118:0x0273, B:119:0x0278, B:121:0x027c, B:123:0x0288, B:124:0x0293, B:126:0x0299, B:128:0x029f, B:130:0x02b0, B:131:0x02bc, B:132:0x025e, B:134:0x011a, B:137:0x011e, B:140:0x00bc, B:142:0x00c4, B:143:0x00cd), top: B:35:0x00ad }] */
+            /* JADX WARN: Removed duplicated region for block: B:64:0x013a A[Catch: Exception -> 0x00b7, TryCatch #2 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:39:0x00ce, B:42:0x00d7, B:44:0x00e1, B:58:0x0124, B:60:0x012c, B:62:0x0132, B:64:0x013a, B:65:0x014a, B:67:0x0152, B:69:0x015a, B:70:0x0187, B:73:0x0199, B:75:0x01a8, B:78:0x01ac, B:80:0x01b8, B:82:0x01bf, B:84:0x01c5, B:85:0x01c9, B:87:0x01d5, B:88:0x01d9, B:90:0x01e1, B:92:0x01f0, B:94:0x01f7, B:95:0x01fb, B:96:0x0206, B:98:0x020a, B:100:0x020e, B:102:0x0212, B:104:0x0215, B:105:0x021b, B:106:0x0224, B:108:0x0227, B:109:0x022d, B:110:0x0236, B:114:0x0242, B:116:0x0247, B:117:0x0251, B:118:0x0256, B:120:0x025a, B:122:0x0266, B:123:0x0271, B:125:0x0277, B:127:0x027d, B:129:0x028e, B:130:0x029a, B:131:0x023c, B:133:0x0118, B:136:0x011c, B:139:0x00bc, B:141:0x00c4, B:142:0x00cc), top: B:35:0x00ad }] */
+            /* JADX WARN: Removed duplicated region for block: B:67:0x0152 A[Catch: Exception -> 0x00b7, TryCatch #2 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:39:0x00ce, B:42:0x00d7, B:44:0x00e1, B:58:0x0124, B:60:0x012c, B:62:0x0132, B:64:0x013a, B:65:0x014a, B:67:0x0152, B:69:0x015a, B:70:0x0187, B:73:0x0199, B:75:0x01a8, B:78:0x01ac, B:80:0x01b8, B:82:0x01bf, B:84:0x01c5, B:85:0x01c9, B:87:0x01d5, B:88:0x01d9, B:90:0x01e1, B:92:0x01f0, B:94:0x01f7, B:95:0x01fb, B:96:0x0206, B:98:0x020a, B:100:0x020e, B:102:0x0212, B:104:0x0215, B:105:0x021b, B:106:0x0224, B:108:0x0227, B:109:0x022d, B:110:0x0236, B:114:0x0242, B:116:0x0247, B:117:0x0251, B:118:0x0256, B:120:0x025a, B:122:0x0266, B:123:0x0271, B:125:0x0277, B:127:0x027d, B:129:0x028e, B:130:0x029a, B:131:0x023c, B:133:0x0118, B:136:0x011c, B:139:0x00bc, B:141:0x00c4, B:142:0x00cc), top: B:35:0x00ad }] */
+            /* JADX WARN: Removed duplicated region for block: B:71:0x0196  */
+            /* JADX WARN: Removed duplicated region for block: B:73:0x0199 A[Catch: Exception -> 0x00b7, TryCatch #2 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:39:0x00ce, B:42:0x00d7, B:44:0x00e1, B:58:0x0124, B:60:0x012c, B:62:0x0132, B:64:0x013a, B:65:0x014a, B:67:0x0152, B:69:0x015a, B:70:0x0187, B:73:0x0199, B:75:0x01a8, B:78:0x01ac, B:80:0x01b8, B:82:0x01bf, B:84:0x01c5, B:85:0x01c9, B:87:0x01d5, B:88:0x01d9, B:90:0x01e1, B:92:0x01f0, B:94:0x01f7, B:95:0x01fb, B:96:0x0206, B:98:0x020a, B:100:0x020e, B:102:0x0212, B:104:0x0215, B:105:0x021b, B:106:0x0224, B:108:0x0227, B:109:0x022d, B:110:0x0236, B:114:0x0242, B:116:0x0247, B:117:0x0251, B:118:0x0256, B:120:0x025a, B:122:0x0266, B:123:0x0271, B:125:0x0277, B:127:0x027d, B:129:0x028e, B:130:0x029a, B:131:0x023c, B:133:0x0118, B:136:0x011c, B:139:0x00bc, B:141:0x00c4, B:142:0x00cc), top: B:35:0x00ad }] */
+            /* JADX WARN: Removed duplicated region for block: B:78:0x01ac A[Catch: Exception -> 0x00b7, TryCatch #2 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:39:0x00ce, B:42:0x00d7, B:44:0x00e1, B:58:0x0124, B:60:0x012c, B:62:0x0132, B:64:0x013a, B:65:0x014a, B:67:0x0152, B:69:0x015a, B:70:0x0187, B:73:0x0199, B:75:0x01a8, B:78:0x01ac, B:80:0x01b8, B:82:0x01bf, B:84:0x01c5, B:85:0x01c9, B:87:0x01d5, B:88:0x01d9, B:90:0x01e1, B:92:0x01f0, B:94:0x01f7, B:95:0x01fb, B:96:0x0206, B:98:0x020a, B:100:0x020e, B:102:0x0212, B:104:0x0215, B:105:0x021b, B:106:0x0224, B:108:0x0227, B:109:0x022d, B:110:0x0236, B:114:0x0242, B:116:0x0247, B:117:0x0251, B:118:0x0256, B:120:0x025a, B:122:0x0266, B:123:0x0271, B:125:0x0277, B:127:0x027d, B:129:0x028e, B:130:0x029a, B:131:0x023c, B:133:0x0118, B:136:0x011c, B:139:0x00bc, B:141:0x00c4, B:142:0x00cc), top: B:35:0x00ad }] */
             @Override // java.lang.Runnable
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -765,7 +758,6 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                 } else {
                                     j = rLottieDrawable3.nativePtr;
                                 }
-                                long j2 = j;
                                 int i5 = RLottieDrawable.this.shouldLimitFps ? 2 : 1;
                                 System.currentTimeMillis();
                                 RLottieDrawable rLottieDrawable5 = RLottieDrawable.this;
@@ -795,10 +787,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                         }
                                     }
                                 } else {
-                                    int i6 = rLottieDrawable5.currentFrame;
-                                    Bitmap bitmap = rLottieDrawable5.backgroundBitmap;
-                                    RLottieDrawable rLottieDrawable6 = RLottieDrawable.this;
-                                    frame = RLottieDrawable.getFrame(j2, i6, bitmap, rLottieDrawable6.width, rLottieDrawable6.height, rLottieDrawable6.backgroundBitmap.getRowBytes(), true);
+                                    frame = RLottieDrawable.getFrame(j, rLottieDrawable5.currentFrame, rLottieDrawable5.backgroundBitmap, true);
                                 }
                                 bitmapsCache = RLottieDrawable.this.bitmapsCache;
                                 if (bitmapsCache != null && bitmapsCache.needGenCache()) {
@@ -810,18 +799,15 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                         frame = -1;
                                     } else {
                                         if (RLottieDrawable.this.nativePtr == 0) {
+                                            RLottieDrawable rLottieDrawable6 = RLottieDrawable.this;
+                                            String file2 = rLottieDrawable6.args.file.toString();
                                             RLottieDrawable rLottieDrawable7 = RLottieDrawable.this;
-                                            String file2 = rLottieDrawable7.args.file.toString();
-                                            RLottieDrawable rLottieDrawable8 = RLottieDrawable.this;
-                                            NativePtrArgs nativePtrArgs = rLottieDrawable8.args;
-                                            rLottieDrawable7.nativePtr = RLottieDrawable.create(file2, nativePtrArgs.json, rLottieDrawable8.width, rLottieDrawable8.height, new int[3], false, nativePtrArgs.colorReplacement, false, nativePtrArgs.fitzModifier);
+                                            NativePtrArgs nativePtrArgs = rLottieDrawable7.args;
+                                            rLottieDrawable6.nativePtr = RLottieDrawable.create(file2, nativePtrArgs.json, rLottieDrawable7.width, rLottieDrawable7.height, new int[3], false, nativePtrArgs.colorReplacement, false, nativePtrArgs.fitzModifier);
                                         }
-                                        long j3 = RLottieDrawable.this.nativePtr;
-                                        RLottieDrawable rLottieDrawable9 = RLottieDrawable.this;
-                                        int i7 = rLottieDrawable9.currentFrame;
-                                        Bitmap bitmap2 = rLottieDrawable9.backgroundBitmap;
-                                        RLottieDrawable rLottieDrawable10 = RLottieDrawable.this;
-                                        frame = RLottieDrawable.getFrame(j3, i7, bitmap2, rLottieDrawable10.width, rLottieDrawable10.height, rLottieDrawable10.backgroundBitmap.getRowBytes(), true);
+                                        long j2 = RLottieDrawable.this.nativePtr;
+                                        RLottieDrawable rLottieDrawable8 = RLottieDrawable.this;
+                                        frame = RLottieDrawable.getFrame(j2, rLottieDrawable8.currentFrame, rLottieDrawable8.backgroundBitmap, true);
                                     }
                                 }
                                 if (frame != -1) {
@@ -833,21 +819,21 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                     }
                                     return;
                                 }
-                                RLottieDrawable rLottieDrawable11 = RLottieDrawable.this;
-                                rLottieDrawable11.nextRenderingBitmap = rLottieDrawable11.backgroundBitmap;
-                                RLottieDrawable rLottieDrawable12 = RLottieDrawable.this;
-                                int i8 = rLottieDrawable12.isDice;
-                                if (i8 == 1) {
-                                    int i9 = rLottieDrawable12.currentFrame + i5;
-                                    int i10 = rLottieDrawable12.diceSwitchFramesCount;
-                                    if (i10 == -1) {
-                                        i10 = rLottieDrawable12.metaData[0];
+                                RLottieDrawable rLottieDrawable9 = RLottieDrawable.this;
+                                rLottieDrawable9.nextRenderingBitmap = rLottieDrawable9.backgroundBitmap;
+                                RLottieDrawable rLottieDrawable10 = RLottieDrawable.this;
+                                int i6 = rLottieDrawable10.isDice;
+                                if (i6 == 1) {
+                                    int i7 = rLottieDrawable10.currentFrame + i5;
+                                    int i8 = rLottieDrawable10.diceSwitchFramesCount;
+                                    if (i8 == -1) {
+                                        i8 = rLottieDrawable10.metaData[0];
                                     }
-                                    if (i9 < i10) {
-                                        rLottieDrawable12.currentFrame = i9;
+                                    if (i7 < i8) {
+                                        rLottieDrawable10.currentFrame = i7;
                                     } else {
-                                        rLottieDrawable12.currentFrame = 0;
-                                        rLottieDrawable12.nextFrameIsLast = false;
+                                        rLottieDrawable10.currentFrame = 0;
+                                        rLottieDrawable10.nextFrameIsLast = false;
                                         if (RLottieDrawable.this.secondNativePtr != 0) {
                                             RLottieDrawable.this.isDice = 2;
                                         }
@@ -856,75 +842,75 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                             RLottieDrawable.this.resetVibrationAfterRestart = false;
                                         }
                                     }
-                                } else if (i8 == 2) {
-                                    int i11 = rLottieDrawable12.currentFrame + i5;
-                                    if (i11 < rLottieDrawable12.secondFramesCount) {
-                                        rLottieDrawable12.currentFrame = i11;
+                                } else if (i6 == 2) {
+                                    int i9 = rLottieDrawable10.currentFrame + i5;
+                                    if (i9 < rLottieDrawable10.secondFramesCount) {
+                                        rLottieDrawable10.currentFrame = i9;
                                     } else {
-                                        rLottieDrawable12.nextFrameIsLast = true;
+                                        rLottieDrawable10.nextFrameIsLast = true;
                                         RLottieDrawable.this.autoRepeatPlayCount++;
                                     }
                                 } else {
-                                    int i12 = rLottieDrawable12.customEndFrame;
-                                    if (i12 >= 0 && rLottieDrawable12.playInDirectionOfCustomEndFrame) {
-                                        int i13 = rLottieDrawable12.currentFrame;
-                                        if (i13 > i12) {
-                                            int i14 = i13 - i5;
-                                            if (i14 >= i12) {
-                                                rLottieDrawable12.currentFrame = i14;
-                                                rLottieDrawable12.nextFrameIsLast = false;
+                                    int i10 = rLottieDrawable10.customEndFrame;
+                                    if (i10 >= 0 && rLottieDrawable10.playInDirectionOfCustomEndFrame) {
+                                        int i11 = rLottieDrawable10.currentFrame;
+                                        if (i11 > i10) {
+                                            int i12 = i11 - i5;
+                                            if (i12 >= i10) {
+                                                rLottieDrawable10.currentFrame = i12;
+                                                rLottieDrawable10.nextFrameIsLast = false;
                                             } else {
-                                                rLottieDrawable12.nextFrameIsLast = true;
+                                                rLottieDrawable10.nextFrameIsLast = true;
                                                 RLottieDrawable.this.checkDispatchOnAnimationEnd();
                                             }
                                         } else {
-                                            int i15 = i13 + i5;
-                                            if (i15 < i12) {
-                                                rLottieDrawable12.currentFrame = i15;
-                                                rLottieDrawable12.nextFrameIsLast = false;
+                                            int i13 = i11 + i5;
+                                            if (i13 < i10) {
+                                                rLottieDrawable10.currentFrame = i13;
+                                                rLottieDrawable10.nextFrameIsLast = false;
                                             } else {
-                                                rLottieDrawable12.nextFrameIsLast = true;
+                                                rLottieDrawable10.nextFrameIsLast = true;
                                                 RLottieDrawable.this.checkDispatchOnAnimationEnd();
                                             }
                                         }
                                     } else {
-                                        int i16 = rLottieDrawable12.currentFrame + i5;
-                                        if (i12 < 0) {
-                                            i12 = rLottieDrawable12.metaData[0];
+                                        int i14 = rLottieDrawable10.currentFrame + i5;
+                                        if (i10 < 0) {
+                                            i10 = rLottieDrawable10.metaData[0];
                                         }
-                                        if (i16 < i12) {
-                                            if (rLottieDrawable12.autoRepeat == 3) {
-                                                rLottieDrawable12.nextFrameIsLast = true;
+                                        if (i14 < i10) {
+                                            if (rLottieDrawable10.autoRepeat == 3) {
+                                                rLottieDrawable10.nextFrameIsLast = true;
                                                 RLottieDrawable.this.autoRepeatPlayCount++;
                                             } else {
-                                                rLottieDrawable12.currentFrame = i16;
-                                                rLottieDrawable12.nextFrameIsLast = false;
+                                                rLottieDrawable10.currentFrame = i14;
+                                                rLottieDrawable10.nextFrameIsLast = false;
                                             }
                                         } else {
-                                            int i17 = rLottieDrawable12.autoRepeat;
-                                            if (i17 == 1) {
-                                                rLottieDrawable12.currentFrame = 0;
-                                                rLottieDrawable12.nextFrameIsLast = false;
+                                            int i15 = rLottieDrawable10.autoRepeat;
+                                            if (i15 == 1) {
+                                                rLottieDrawable10.currentFrame = 0;
+                                                rLottieDrawable10.nextFrameIsLast = false;
                                                 if (RLottieDrawable.this.resetVibrationAfterRestart) {
                                                     RLottieDrawable.this.vibrationPattern = null;
                                                     RLottieDrawable.this.resetVibrationAfterRestart = false;
                                                 }
-                                                RLottieDrawable rLottieDrawable13 = RLottieDrawable.this;
-                                                int i18 = rLottieDrawable13.autoRepeatCount;
-                                                if (i18 > 0) {
-                                                    rLottieDrawable13.autoRepeatCount = i18 - 1;
+                                                RLottieDrawable rLottieDrawable11 = RLottieDrawable.this;
+                                                int i16 = rLottieDrawable11.autoRepeatCount;
+                                                if (i16 > 0) {
+                                                    rLottieDrawable11.autoRepeatCount = i16 - 1;
                                                 }
-                                            } else if (i17 == 2) {
-                                                rLottieDrawable12.currentFrame = 0;
-                                                rLottieDrawable12.nextFrameIsLast = true;
-                                                RLottieDrawable rLottieDrawable14 = RLottieDrawable.this;
-                                                rLottieDrawable14.autoRepeatPlayCount++;
-                                                if (rLottieDrawable14.resetVibrationAfterRestart) {
+                                            } else if (i15 == 2) {
+                                                rLottieDrawable10.currentFrame = 0;
+                                                rLottieDrawable10.nextFrameIsLast = true;
+                                                RLottieDrawable rLottieDrawable12 = RLottieDrawable.this;
+                                                rLottieDrawable12.autoRepeatPlayCount++;
+                                                if (rLottieDrawable12.resetVibrationAfterRestart) {
                                                     RLottieDrawable.this.vibrationPattern = null;
                                                     RLottieDrawable.this.resetVibrationAfterRestart = false;
                                                 }
                                             } else {
-                                                rLottieDrawable12.nextFrameIsLast = true;
+                                                rLottieDrawable10.nextFrameIsLast = true;
                                                 RLottieDrawable.this.checkDispatchOnAnimationEnd();
                                             }
                                         }
@@ -1131,11 +1117,11 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.loadFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.5
             private long lastUpdate = 0;
 
-            /* JADX WARN: Removed duplicated region for block: B:65:0x014a A[Catch: Exception -> 0x00b7, TryCatch #3 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:40:0x00d0, B:43:0x00d9, B:45:0x00e3, B:59:0x0134, B:61:0x013c, B:63:0x0142, B:65:0x014a, B:66:0x015a, B:68:0x0162, B:70:0x016a, B:71:0x0197, B:74:0x01bb, B:76:0x01ca, B:79:0x01ce, B:81:0x01da, B:83:0x01e1, B:85:0x01e7, B:86:0x01eb, B:88:0x01f7, B:89:0x01fb, B:91:0x0203, B:93:0x0212, B:95:0x0219, B:96:0x021d, B:97:0x0228, B:99:0x022c, B:101:0x0230, B:103:0x0234, B:105:0x0237, B:106:0x023d, B:107:0x0246, B:109:0x0249, B:110:0x024f, B:111:0x0258, B:115:0x0264, B:117:0x0269, B:118:0x0273, B:119:0x0278, B:121:0x027c, B:123:0x0288, B:124:0x0293, B:126:0x0299, B:128:0x029f, B:130:0x02b0, B:131:0x02bc, B:132:0x025e, B:134:0x011a, B:137:0x011e, B:140:0x00bc, B:142:0x00c4, B:143:0x00cd), top: B:35:0x00ad }] */
-            /* JADX WARN: Removed duplicated region for block: B:68:0x0162 A[Catch: Exception -> 0x00b7, TryCatch #3 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:40:0x00d0, B:43:0x00d9, B:45:0x00e3, B:59:0x0134, B:61:0x013c, B:63:0x0142, B:65:0x014a, B:66:0x015a, B:68:0x0162, B:70:0x016a, B:71:0x0197, B:74:0x01bb, B:76:0x01ca, B:79:0x01ce, B:81:0x01da, B:83:0x01e1, B:85:0x01e7, B:86:0x01eb, B:88:0x01f7, B:89:0x01fb, B:91:0x0203, B:93:0x0212, B:95:0x0219, B:96:0x021d, B:97:0x0228, B:99:0x022c, B:101:0x0230, B:103:0x0234, B:105:0x0237, B:106:0x023d, B:107:0x0246, B:109:0x0249, B:110:0x024f, B:111:0x0258, B:115:0x0264, B:117:0x0269, B:118:0x0273, B:119:0x0278, B:121:0x027c, B:123:0x0288, B:124:0x0293, B:126:0x0299, B:128:0x029f, B:130:0x02b0, B:131:0x02bc, B:132:0x025e, B:134:0x011a, B:137:0x011e, B:140:0x00bc, B:142:0x00c4, B:143:0x00cd), top: B:35:0x00ad }] */
-            /* JADX WARN: Removed duplicated region for block: B:72:0x01b8  */
-            /* JADX WARN: Removed duplicated region for block: B:74:0x01bb A[Catch: Exception -> 0x00b7, TryCatch #3 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:40:0x00d0, B:43:0x00d9, B:45:0x00e3, B:59:0x0134, B:61:0x013c, B:63:0x0142, B:65:0x014a, B:66:0x015a, B:68:0x0162, B:70:0x016a, B:71:0x0197, B:74:0x01bb, B:76:0x01ca, B:79:0x01ce, B:81:0x01da, B:83:0x01e1, B:85:0x01e7, B:86:0x01eb, B:88:0x01f7, B:89:0x01fb, B:91:0x0203, B:93:0x0212, B:95:0x0219, B:96:0x021d, B:97:0x0228, B:99:0x022c, B:101:0x0230, B:103:0x0234, B:105:0x0237, B:106:0x023d, B:107:0x0246, B:109:0x0249, B:110:0x024f, B:111:0x0258, B:115:0x0264, B:117:0x0269, B:118:0x0273, B:119:0x0278, B:121:0x027c, B:123:0x0288, B:124:0x0293, B:126:0x0299, B:128:0x029f, B:130:0x02b0, B:131:0x02bc, B:132:0x025e, B:134:0x011a, B:137:0x011e, B:140:0x00bc, B:142:0x00c4, B:143:0x00cd), top: B:35:0x00ad }] */
-            /* JADX WARN: Removed duplicated region for block: B:79:0x01ce A[Catch: Exception -> 0x00b7, TryCatch #3 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:40:0x00d0, B:43:0x00d9, B:45:0x00e3, B:59:0x0134, B:61:0x013c, B:63:0x0142, B:65:0x014a, B:66:0x015a, B:68:0x0162, B:70:0x016a, B:71:0x0197, B:74:0x01bb, B:76:0x01ca, B:79:0x01ce, B:81:0x01da, B:83:0x01e1, B:85:0x01e7, B:86:0x01eb, B:88:0x01f7, B:89:0x01fb, B:91:0x0203, B:93:0x0212, B:95:0x0219, B:96:0x021d, B:97:0x0228, B:99:0x022c, B:101:0x0230, B:103:0x0234, B:105:0x0237, B:106:0x023d, B:107:0x0246, B:109:0x0249, B:110:0x024f, B:111:0x0258, B:115:0x0264, B:117:0x0269, B:118:0x0273, B:119:0x0278, B:121:0x027c, B:123:0x0288, B:124:0x0293, B:126:0x0299, B:128:0x029f, B:130:0x02b0, B:131:0x02bc, B:132:0x025e, B:134:0x011a, B:137:0x011e, B:140:0x00bc, B:142:0x00c4, B:143:0x00cd), top: B:35:0x00ad }] */
+            /* JADX WARN: Removed duplicated region for block: B:64:0x013a A[Catch: Exception -> 0x00b7, TryCatch #2 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:39:0x00ce, B:42:0x00d7, B:44:0x00e1, B:58:0x0124, B:60:0x012c, B:62:0x0132, B:64:0x013a, B:65:0x014a, B:67:0x0152, B:69:0x015a, B:70:0x0187, B:73:0x0199, B:75:0x01a8, B:78:0x01ac, B:80:0x01b8, B:82:0x01bf, B:84:0x01c5, B:85:0x01c9, B:87:0x01d5, B:88:0x01d9, B:90:0x01e1, B:92:0x01f0, B:94:0x01f7, B:95:0x01fb, B:96:0x0206, B:98:0x020a, B:100:0x020e, B:102:0x0212, B:104:0x0215, B:105:0x021b, B:106:0x0224, B:108:0x0227, B:109:0x022d, B:110:0x0236, B:114:0x0242, B:116:0x0247, B:117:0x0251, B:118:0x0256, B:120:0x025a, B:122:0x0266, B:123:0x0271, B:125:0x0277, B:127:0x027d, B:129:0x028e, B:130:0x029a, B:131:0x023c, B:133:0x0118, B:136:0x011c, B:139:0x00bc, B:141:0x00c4, B:142:0x00cc), top: B:35:0x00ad }] */
+            /* JADX WARN: Removed duplicated region for block: B:67:0x0152 A[Catch: Exception -> 0x00b7, TryCatch #2 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:39:0x00ce, B:42:0x00d7, B:44:0x00e1, B:58:0x0124, B:60:0x012c, B:62:0x0132, B:64:0x013a, B:65:0x014a, B:67:0x0152, B:69:0x015a, B:70:0x0187, B:73:0x0199, B:75:0x01a8, B:78:0x01ac, B:80:0x01b8, B:82:0x01bf, B:84:0x01c5, B:85:0x01c9, B:87:0x01d5, B:88:0x01d9, B:90:0x01e1, B:92:0x01f0, B:94:0x01f7, B:95:0x01fb, B:96:0x0206, B:98:0x020a, B:100:0x020e, B:102:0x0212, B:104:0x0215, B:105:0x021b, B:106:0x0224, B:108:0x0227, B:109:0x022d, B:110:0x0236, B:114:0x0242, B:116:0x0247, B:117:0x0251, B:118:0x0256, B:120:0x025a, B:122:0x0266, B:123:0x0271, B:125:0x0277, B:127:0x027d, B:129:0x028e, B:130:0x029a, B:131:0x023c, B:133:0x0118, B:136:0x011c, B:139:0x00bc, B:141:0x00c4, B:142:0x00cc), top: B:35:0x00ad }] */
+            /* JADX WARN: Removed duplicated region for block: B:71:0x0196  */
+            /* JADX WARN: Removed duplicated region for block: B:73:0x0199 A[Catch: Exception -> 0x00b7, TryCatch #2 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:39:0x00ce, B:42:0x00d7, B:44:0x00e1, B:58:0x0124, B:60:0x012c, B:62:0x0132, B:64:0x013a, B:65:0x014a, B:67:0x0152, B:69:0x015a, B:70:0x0187, B:73:0x0199, B:75:0x01a8, B:78:0x01ac, B:80:0x01b8, B:82:0x01bf, B:84:0x01c5, B:85:0x01c9, B:87:0x01d5, B:88:0x01d9, B:90:0x01e1, B:92:0x01f0, B:94:0x01f7, B:95:0x01fb, B:96:0x0206, B:98:0x020a, B:100:0x020e, B:102:0x0212, B:104:0x0215, B:105:0x021b, B:106:0x0224, B:108:0x0227, B:109:0x022d, B:110:0x0236, B:114:0x0242, B:116:0x0247, B:117:0x0251, B:118:0x0256, B:120:0x025a, B:122:0x0266, B:123:0x0271, B:125:0x0277, B:127:0x027d, B:129:0x028e, B:130:0x029a, B:131:0x023c, B:133:0x0118, B:136:0x011c, B:139:0x00bc, B:141:0x00c4, B:142:0x00cc), top: B:35:0x00ad }] */
+            /* JADX WARN: Removed duplicated region for block: B:78:0x01ac A[Catch: Exception -> 0x00b7, TryCatch #2 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:39:0x00ce, B:42:0x00d7, B:44:0x00e1, B:58:0x0124, B:60:0x012c, B:62:0x0132, B:64:0x013a, B:65:0x014a, B:67:0x0152, B:69:0x015a, B:70:0x0187, B:73:0x0199, B:75:0x01a8, B:78:0x01ac, B:80:0x01b8, B:82:0x01bf, B:84:0x01c5, B:85:0x01c9, B:87:0x01d5, B:88:0x01d9, B:90:0x01e1, B:92:0x01f0, B:94:0x01f7, B:95:0x01fb, B:96:0x0206, B:98:0x020a, B:100:0x020e, B:102:0x0212, B:104:0x0215, B:105:0x021b, B:106:0x0224, B:108:0x0227, B:109:0x022d, B:110:0x0236, B:114:0x0242, B:116:0x0247, B:117:0x0251, B:118:0x0256, B:120:0x025a, B:122:0x0266, B:123:0x0271, B:125:0x0277, B:127:0x027d, B:129:0x028e, B:130:0x029a, B:131:0x023c, B:133:0x0118, B:136:0x011c, B:139:0x00bc, B:141:0x00c4, B:142:0x00cc), top: B:35:0x00ad }] */
             @Override // java.lang.Runnable
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -1187,7 +1173,6 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                 } else {
                                     j = rLottieDrawable3.nativePtr;
                                 }
-                                long j2 = j;
                                 int i5 = RLottieDrawable.this.shouldLimitFps ? 2 : 1;
                                 System.currentTimeMillis();
                                 RLottieDrawable rLottieDrawable5 = RLottieDrawable.this;
@@ -1217,10 +1202,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                         }
                                     }
                                 } else {
-                                    int i6 = rLottieDrawable5.currentFrame;
-                                    Bitmap bitmap = rLottieDrawable5.backgroundBitmap;
-                                    RLottieDrawable rLottieDrawable6 = RLottieDrawable.this;
-                                    frame = RLottieDrawable.getFrame(j2, i6, bitmap, rLottieDrawable6.width, rLottieDrawable6.height, rLottieDrawable6.backgroundBitmap.getRowBytes(), true);
+                                    frame = RLottieDrawable.getFrame(j, rLottieDrawable5.currentFrame, rLottieDrawable5.backgroundBitmap, true);
                                 }
                                 bitmapsCache = RLottieDrawable.this.bitmapsCache;
                                 if (bitmapsCache != null && bitmapsCache.needGenCache()) {
@@ -1232,18 +1214,15 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                         frame = -1;
                                     } else {
                                         if (RLottieDrawable.this.nativePtr == 0) {
+                                            RLottieDrawable rLottieDrawable6 = RLottieDrawable.this;
+                                            String file2 = rLottieDrawable6.args.file.toString();
                                             RLottieDrawable rLottieDrawable7 = RLottieDrawable.this;
-                                            String file2 = rLottieDrawable7.args.file.toString();
-                                            RLottieDrawable rLottieDrawable8 = RLottieDrawable.this;
-                                            NativePtrArgs nativePtrArgs = rLottieDrawable8.args;
-                                            rLottieDrawable7.nativePtr = RLottieDrawable.create(file2, nativePtrArgs.json, rLottieDrawable8.width, rLottieDrawable8.height, new int[3], false, nativePtrArgs.colorReplacement, false, nativePtrArgs.fitzModifier);
+                                            NativePtrArgs nativePtrArgs = rLottieDrawable7.args;
+                                            rLottieDrawable6.nativePtr = RLottieDrawable.create(file2, nativePtrArgs.json, rLottieDrawable7.width, rLottieDrawable7.height, new int[3], false, nativePtrArgs.colorReplacement, false, nativePtrArgs.fitzModifier);
                                         }
-                                        long j3 = RLottieDrawable.this.nativePtr;
-                                        RLottieDrawable rLottieDrawable9 = RLottieDrawable.this;
-                                        int i7 = rLottieDrawable9.currentFrame;
-                                        Bitmap bitmap2 = rLottieDrawable9.backgroundBitmap;
-                                        RLottieDrawable rLottieDrawable10 = RLottieDrawable.this;
-                                        frame = RLottieDrawable.getFrame(j3, i7, bitmap2, rLottieDrawable10.width, rLottieDrawable10.height, rLottieDrawable10.backgroundBitmap.getRowBytes(), true);
+                                        long j2 = RLottieDrawable.this.nativePtr;
+                                        RLottieDrawable rLottieDrawable8 = RLottieDrawable.this;
+                                        frame = RLottieDrawable.getFrame(j2, rLottieDrawable8.currentFrame, rLottieDrawable8.backgroundBitmap, true);
                                     }
                                 }
                                 if (frame != -1) {
@@ -1255,21 +1234,21 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                     }
                                     return;
                                 }
-                                RLottieDrawable rLottieDrawable11 = RLottieDrawable.this;
-                                rLottieDrawable11.nextRenderingBitmap = rLottieDrawable11.backgroundBitmap;
-                                RLottieDrawable rLottieDrawable12 = RLottieDrawable.this;
-                                int i8 = rLottieDrawable12.isDice;
-                                if (i8 == 1) {
-                                    int i9 = rLottieDrawable12.currentFrame + i5;
-                                    int i10 = rLottieDrawable12.diceSwitchFramesCount;
-                                    if (i10 == -1) {
-                                        i10 = rLottieDrawable12.metaData[0];
+                                RLottieDrawable rLottieDrawable9 = RLottieDrawable.this;
+                                rLottieDrawable9.nextRenderingBitmap = rLottieDrawable9.backgroundBitmap;
+                                RLottieDrawable rLottieDrawable10 = RLottieDrawable.this;
+                                int i6 = rLottieDrawable10.isDice;
+                                if (i6 == 1) {
+                                    int i7 = rLottieDrawable10.currentFrame + i5;
+                                    int i8 = rLottieDrawable10.diceSwitchFramesCount;
+                                    if (i8 == -1) {
+                                        i8 = rLottieDrawable10.metaData[0];
                                     }
-                                    if (i9 < i10) {
-                                        rLottieDrawable12.currentFrame = i9;
+                                    if (i7 < i8) {
+                                        rLottieDrawable10.currentFrame = i7;
                                     } else {
-                                        rLottieDrawable12.currentFrame = 0;
-                                        rLottieDrawable12.nextFrameIsLast = false;
+                                        rLottieDrawable10.currentFrame = 0;
+                                        rLottieDrawable10.nextFrameIsLast = false;
                                         if (RLottieDrawable.this.secondNativePtr != 0) {
                                             RLottieDrawable.this.isDice = 2;
                                         }
@@ -1278,75 +1257,75 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                             RLottieDrawable.this.resetVibrationAfterRestart = false;
                                         }
                                     }
-                                } else if (i8 == 2) {
-                                    int i11 = rLottieDrawable12.currentFrame + i5;
-                                    if (i11 < rLottieDrawable12.secondFramesCount) {
-                                        rLottieDrawable12.currentFrame = i11;
+                                } else if (i6 == 2) {
+                                    int i9 = rLottieDrawable10.currentFrame + i5;
+                                    if (i9 < rLottieDrawable10.secondFramesCount) {
+                                        rLottieDrawable10.currentFrame = i9;
                                     } else {
-                                        rLottieDrawable12.nextFrameIsLast = true;
+                                        rLottieDrawable10.nextFrameIsLast = true;
                                         RLottieDrawable.this.autoRepeatPlayCount++;
                                     }
                                 } else {
-                                    int i12 = rLottieDrawable12.customEndFrame;
-                                    if (i12 >= 0 && rLottieDrawable12.playInDirectionOfCustomEndFrame) {
-                                        int i13 = rLottieDrawable12.currentFrame;
-                                        if (i13 > i12) {
-                                            int i14 = i13 - i5;
-                                            if (i14 >= i12) {
-                                                rLottieDrawable12.currentFrame = i14;
-                                                rLottieDrawable12.nextFrameIsLast = false;
+                                    int i10 = rLottieDrawable10.customEndFrame;
+                                    if (i10 >= 0 && rLottieDrawable10.playInDirectionOfCustomEndFrame) {
+                                        int i11 = rLottieDrawable10.currentFrame;
+                                        if (i11 > i10) {
+                                            int i12 = i11 - i5;
+                                            if (i12 >= i10) {
+                                                rLottieDrawable10.currentFrame = i12;
+                                                rLottieDrawable10.nextFrameIsLast = false;
                                             } else {
-                                                rLottieDrawable12.nextFrameIsLast = true;
+                                                rLottieDrawable10.nextFrameIsLast = true;
                                                 RLottieDrawable.this.checkDispatchOnAnimationEnd();
                                             }
                                         } else {
-                                            int i15 = i13 + i5;
-                                            if (i15 < i12) {
-                                                rLottieDrawable12.currentFrame = i15;
-                                                rLottieDrawable12.nextFrameIsLast = false;
+                                            int i13 = i11 + i5;
+                                            if (i13 < i10) {
+                                                rLottieDrawable10.currentFrame = i13;
+                                                rLottieDrawable10.nextFrameIsLast = false;
                                             } else {
-                                                rLottieDrawable12.nextFrameIsLast = true;
+                                                rLottieDrawable10.nextFrameIsLast = true;
                                                 RLottieDrawable.this.checkDispatchOnAnimationEnd();
                                             }
                                         }
                                     } else {
-                                        int i16 = rLottieDrawable12.currentFrame + i5;
-                                        if (i12 < 0) {
-                                            i12 = rLottieDrawable12.metaData[0];
+                                        int i14 = rLottieDrawable10.currentFrame + i5;
+                                        if (i10 < 0) {
+                                            i10 = rLottieDrawable10.metaData[0];
                                         }
-                                        if (i16 < i12) {
-                                            if (rLottieDrawable12.autoRepeat == 3) {
-                                                rLottieDrawable12.nextFrameIsLast = true;
+                                        if (i14 < i10) {
+                                            if (rLottieDrawable10.autoRepeat == 3) {
+                                                rLottieDrawable10.nextFrameIsLast = true;
                                                 RLottieDrawable.this.autoRepeatPlayCount++;
                                             } else {
-                                                rLottieDrawable12.currentFrame = i16;
-                                                rLottieDrawable12.nextFrameIsLast = false;
+                                                rLottieDrawable10.currentFrame = i14;
+                                                rLottieDrawable10.nextFrameIsLast = false;
                                             }
                                         } else {
-                                            int i17 = rLottieDrawable12.autoRepeat;
-                                            if (i17 == 1) {
-                                                rLottieDrawable12.currentFrame = 0;
-                                                rLottieDrawable12.nextFrameIsLast = false;
+                                            int i15 = rLottieDrawable10.autoRepeat;
+                                            if (i15 == 1) {
+                                                rLottieDrawable10.currentFrame = 0;
+                                                rLottieDrawable10.nextFrameIsLast = false;
                                                 if (RLottieDrawable.this.resetVibrationAfterRestart) {
                                                     RLottieDrawable.this.vibrationPattern = null;
                                                     RLottieDrawable.this.resetVibrationAfterRestart = false;
                                                 }
-                                                RLottieDrawable rLottieDrawable13 = RLottieDrawable.this;
-                                                int i18 = rLottieDrawable13.autoRepeatCount;
-                                                if (i18 > 0) {
-                                                    rLottieDrawable13.autoRepeatCount = i18 - 1;
+                                                RLottieDrawable rLottieDrawable11 = RLottieDrawable.this;
+                                                int i16 = rLottieDrawable11.autoRepeatCount;
+                                                if (i16 > 0) {
+                                                    rLottieDrawable11.autoRepeatCount = i16 - 1;
                                                 }
-                                            } else if (i17 == 2) {
-                                                rLottieDrawable12.currentFrame = 0;
-                                                rLottieDrawable12.nextFrameIsLast = true;
-                                                RLottieDrawable rLottieDrawable14 = RLottieDrawable.this;
-                                                rLottieDrawable14.autoRepeatPlayCount++;
-                                                if (rLottieDrawable14.resetVibrationAfterRestart) {
+                                            } else if (i15 == 2) {
+                                                rLottieDrawable10.currentFrame = 0;
+                                                rLottieDrawable10.nextFrameIsLast = true;
+                                                RLottieDrawable rLottieDrawable12 = RLottieDrawable.this;
+                                                rLottieDrawable12.autoRepeatPlayCount++;
+                                                if (rLottieDrawable12.resetVibrationAfterRestart) {
                                                     RLottieDrawable.this.vibrationPattern = null;
                                                     RLottieDrawable.this.resetVibrationAfterRestart = false;
                                                 }
                                             } else {
-                                                rLottieDrawable12.nextFrameIsLast = true;
+                                                rLottieDrawable10.nextFrameIsLast = true;
                                                 RLottieDrawable.this.checkDispatchOnAnimationEnd();
                                             }
                                         }
@@ -1592,11 +1571,11 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.loadFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.5
             private long lastUpdate = 0;
 
-            /* JADX WARN: Removed duplicated region for block: B:65:0x014a A[Catch: Exception -> 0x00b7, TryCatch #3 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:40:0x00d0, B:43:0x00d9, B:45:0x00e3, B:59:0x0134, B:61:0x013c, B:63:0x0142, B:65:0x014a, B:66:0x015a, B:68:0x0162, B:70:0x016a, B:71:0x0197, B:74:0x01bb, B:76:0x01ca, B:79:0x01ce, B:81:0x01da, B:83:0x01e1, B:85:0x01e7, B:86:0x01eb, B:88:0x01f7, B:89:0x01fb, B:91:0x0203, B:93:0x0212, B:95:0x0219, B:96:0x021d, B:97:0x0228, B:99:0x022c, B:101:0x0230, B:103:0x0234, B:105:0x0237, B:106:0x023d, B:107:0x0246, B:109:0x0249, B:110:0x024f, B:111:0x0258, B:115:0x0264, B:117:0x0269, B:118:0x0273, B:119:0x0278, B:121:0x027c, B:123:0x0288, B:124:0x0293, B:126:0x0299, B:128:0x029f, B:130:0x02b0, B:131:0x02bc, B:132:0x025e, B:134:0x011a, B:137:0x011e, B:140:0x00bc, B:142:0x00c4, B:143:0x00cd), top: B:35:0x00ad }] */
-            /* JADX WARN: Removed duplicated region for block: B:68:0x0162 A[Catch: Exception -> 0x00b7, TryCatch #3 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:40:0x00d0, B:43:0x00d9, B:45:0x00e3, B:59:0x0134, B:61:0x013c, B:63:0x0142, B:65:0x014a, B:66:0x015a, B:68:0x0162, B:70:0x016a, B:71:0x0197, B:74:0x01bb, B:76:0x01ca, B:79:0x01ce, B:81:0x01da, B:83:0x01e1, B:85:0x01e7, B:86:0x01eb, B:88:0x01f7, B:89:0x01fb, B:91:0x0203, B:93:0x0212, B:95:0x0219, B:96:0x021d, B:97:0x0228, B:99:0x022c, B:101:0x0230, B:103:0x0234, B:105:0x0237, B:106:0x023d, B:107:0x0246, B:109:0x0249, B:110:0x024f, B:111:0x0258, B:115:0x0264, B:117:0x0269, B:118:0x0273, B:119:0x0278, B:121:0x027c, B:123:0x0288, B:124:0x0293, B:126:0x0299, B:128:0x029f, B:130:0x02b0, B:131:0x02bc, B:132:0x025e, B:134:0x011a, B:137:0x011e, B:140:0x00bc, B:142:0x00c4, B:143:0x00cd), top: B:35:0x00ad }] */
-            /* JADX WARN: Removed duplicated region for block: B:72:0x01b8  */
-            /* JADX WARN: Removed duplicated region for block: B:74:0x01bb A[Catch: Exception -> 0x00b7, TryCatch #3 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:40:0x00d0, B:43:0x00d9, B:45:0x00e3, B:59:0x0134, B:61:0x013c, B:63:0x0142, B:65:0x014a, B:66:0x015a, B:68:0x0162, B:70:0x016a, B:71:0x0197, B:74:0x01bb, B:76:0x01ca, B:79:0x01ce, B:81:0x01da, B:83:0x01e1, B:85:0x01e7, B:86:0x01eb, B:88:0x01f7, B:89:0x01fb, B:91:0x0203, B:93:0x0212, B:95:0x0219, B:96:0x021d, B:97:0x0228, B:99:0x022c, B:101:0x0230, B:103:0x0234, B:105:0x0237, B:106:0x023d, B:107:0x0246, B:109:0x0249, B:110:0x024f, B:111:0x0258, B:115:0x0264, B:117:0x0269, B:118:0x0273, B:119:0x0278, B:121:0x027c, B:123:0x0288, B:124:0x0293, B:126:0x0299, B:128:0x029f, B:130:0x02b0, B:131:0x02bc, B:132:0x025e, B:134:0x011a, B:137:0x011e, B:140:0x00bc, B:142:0x00c4, B:143:0x00cd), top: B:35:0x00ad }] */
-            /* JADX WARN: Removed duplicated region for block: B:79:0x01ce A[Catch: Exception -> 0x00b7, TryCatch #3 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:40:0x00d0, B:43:0x00d9, B:45:0x00e3, B:59:0x0134, B:61:0x013c, B:63:0x0142, B:65:0x014a, B:66:0x015a, B:68:0x0162, B:70:0x016a, B:71:0x0197, B:74:0x01bb, B:76:0x01ca, B:79:0x01ce, B:81:0x01da, B:83:0x01e1, B:85:0x01e7, B:86:0x01eb, B:88:0x01f7, B:89:0x01fb, B:91:0x0203, B:93:0x0212, B:95:0x0219, B:96:0x021d, B:97:0x0228, B:99:0x022c, B:101:0x0230, B:103:0x0234, B:105:0x0237, B:106:0x023d, B:107:0x0246, B:109:0x0249, B:110:0x024f, B:111:0x0258, B:115:0x0264, B:117:0x0269, B:118:0x0273, B:119:0x0278, B:121:0x027c, B:123:0x0288, B:124:0x0293, B:126:0x0299, B:128:0x029f, B:130:0x02b0, B:131:0x02bc, B:132:0x025e, B:134:0x011a, B:137:0x011e, B:140:0x00bc, B:142:0x00c4, B:143:0x00cd), top: B:35:0x00ad }] */
+            /* JADX WARN: Removed duplicated region for block: B:64:0x013a A[Catch: Exception -> 0x00b7, TryCatch #2 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:39:0x00ce, B:42:0x00d7, B:44:0x00e1, B:58:0x0124, B:60:0x012c, B:62:0x0132, B:64:0x013a, B:65:0x014a, B:67:0x0152, B:69:0x015a, B:70:0x0187, B:73:0x0199, B:75:0x01a8, B:78:0x01ac, B:80:0x01b8, B:82:0x01bf, B:84:0x01c5, B:85:0x01c9, B:87:0x01d5, B:88:0x01d9, B:90:0x01e1, B:92:0x01f0, B:94:0x01f7, B:95:0x01fb, B:96:0x0206, B:98:0x020a, B:100:0x020e, B:102:0x0212, B:104:0x0215, B:105:0x021b, B:106:0x0224, B:108:0x0227, B:109:0x022d, B:110:0x0236, B:114:0x0242, B:116:0x0247, B:117:0x0251, B:118:0x0256, B:120:0x025a, B:122:0x0266, B:123:0x0271, B:125:0x0277, B:127:0x027d, B:129:0x028e, B:130:0x029a, B:131:0x023c, B:133:0x0118, B:136:0x011c, B:139:0x00bc, B:141:0x00c4, B:142:0x00cc), top: B:35:0x00ad }] */
+            /* JADX WARN: Removed duplicated region for block: B:67:0x0152 A[Catch: Exception -> 0x00b7, TryCatch #2 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:39:0x00ce, B:42:0x00d7, B:44:0x00e1, B:58:0x0124, B:60:0x012c, B:62:0x0132, B:64:0x013a, B:65:0x014a, B:67:0x0152, B:69:0x015a, B:70:0x0187, B:73:0x0199, B:75:0x01a8, B:78:0x01ac, B:80:0x01b8, B:82:0x01bf, B:84:0x01c5, B:85:0x01c9, B:87:0x01d5, B:88:0x01d9, B:90:0x01e1, B:92:0x01f0, B:94:0x01f7, B:95:0x01fb, B:96:0x0206, B:98:0x020a, B:100:0x020e, B:102:0x0212, B:104:0x0215, B:105:0x021b, B:106:0x0224, B:108:0x0227, B:109:0x022d, B:110:0x0236, B:114:0x0242, B:116:0x0247, B:117:0x0251, B:118:0x0256, B:120:0x025a, B:122:0x0266, B:123:0x0271, B:125:0x0277, B:127:0x027d, B:129:0x028e, B:130:0x029a, B:131:0x023c, B:133:0x0118, B:136:0x011c, B:139:0x00bc, B:141:0x00c4, B:142:0x00cc), top: B:35:0x00ad }] */
+            /* JADX WARN: Removed duplicated region for block: B:71:0x0196  */
+            /* JADX WARN: Removed duplicated region for block: B:73:0x0199 A[Catch: Exception -> 0x00b7, TryCatch #2 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:39:0x00ce, B:42:0x00d7, B:44:0x00e1, B:58:0x0124, B:60:0x012c, B:62:0x0132, B:64:0x013a, B:65:0x014a, B:67:0x0152, B:69:0x015a, B:70:0x0187, B:73:0x0199, B:75:0x01a8, B:78:0x01ac, B:80:0x01b8, B:82:0x01bf, B:84:0x01c5, B:85:0x01c9, B:87:0x01d5, B:88:0x01d9, B:90:0x01e1, B:92:0x01f0, B:94:0x01f7, B:95:0x01fb, B:96:0x0206, B:98:0x020a, B:100:0x020e, B:102:0x0212, B:104:0x0215, B:105:0x021b, B:106:0x0224, B:108:0x0227, B:109:0x022d, B:110:0x0236, B:114:0x0242, B:116:0x0247, B:117:0x0251, B:118:0x0256, B:120:0x025a, B:122:0x0266, B:123:0x0271, B:125:0x0277, B:127:0x027d, B:129:0x028e, B:130:0x029a, B:131:0x023c, B:133:0x0118, B:136:0x011c, B:139:0x00bc, B:141:0x00c4, B:142:0x00cc), top: B:35:0x00ad }] */
+            /* JADX WARN: Removed duplicated region for block: B:78:0x01ac A[Catch: Exception -> 0x00b7, TryCatch #2 {Exception -> 0x00b7, blocks: (B:36:0x00ad, B:38:0x00b4, B:39:0x00ce, B:42:0x00d7, B:44:0x00e1, B:58:0x0124, B:60:0x012c, B:62:0x0132, B:64:0x013a, B:65:0x014a, B:67:0x0152, B:69:0x015a, B:70:0x0187, B:73:0x0199, B:75:0x01a8, B:78:0x01ac, B:80:0x01b8, B:82:0x01bf, B:84:0x01c5, B:85:0x01c9, B:87:0x01d5, B:88:0x01d9, B:90:0x01e1, B:92:0x01f0, B:94:0x01f7, B:95:0x01fb, B:96:0x0206, B:98:0x020a, B:100:0x020e, B:102:0x0212, B:104:0x0215, B:105:0x021b, B:106:0x0224, B:108:0x0227, B:109:0x022d, B:110:0x0236, B:114:0x0242, B:116:0x0247, B:117:0x0251, B:118:0x0256, B:120:0x025a, B:122:0x0266, B:123:0x0271, B:125:0x0277, B:127:0x027d, B:129:0x028e, B:130:0x029a, B:131:0x023c, B:133:0x0118, B:136:0x011c, B:139:0x00bc, B:141:0x00c4, B:142:0x00cc), top: B:35:0x00ad }] */
             @Override // java.lang.Runnable
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -1648,7 +1627,6 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                 } else {
                                     j = rLottieDrawable3.nativePtr;
                                 }
-                                long j2 = j;
                                 int i5 = RLottieDrawable.this.shouldLimitFps ? 2 : 1;
                                 System.currentTimeMillis();
                                 RLottieDrawable rLottieDrawable5 = RLottieDrawable.this;
@@ -1678,10 +1656,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                         }
                                     }
                                 } else {
-                                    int i6 = rLottieDrawable5.currentFrame;
-                                    Bitmap bitmap = rLottieDrawable5.backgroundBitmap;
-                                    RLottieDrawable rLottieDrawable6 = RLottieDrawable.this;
-                                    frame = RLottieDrawable.getFrame(j2, i6, bitmap, rLottieDrawable6.width, rLottieDrawable6.height, rLottieDrawable6.backgroundBitmap.getRowBytes(), true);
+                                    frame = RLottieDrawable.getFrame(j, rLottieDrawable5.currentFrame, rLottieDrawable5.backgroundBitmap, true);
                                 }
                                 bitmapsCache = RLottieDrawable.this.bitmapsCache;
                                 if (bitmapsCache != null && bitmapsCache.needGenCache()) {
@@ -1693,18 +1668,15 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                         frame = -1;
                                     } else {
                                         if (RLottieDrawable.this.nativePtr == 0) {
+                                            RLottieDrawable rLottieDrawable6 = RLottieDrawable.this;
+                                            String file2 = rLottieDrawable6.args.file.toString();
                                             RLottieDrawable rLottieDrawable7 = RLottieDrawable.this;
-                                            String file2 = rLottieDrawable7.args.file.toString();
-                                            RLottieDrawable rLottieDrawable8 = RLottieDrawable.this;
-                                            NativePtrArgs nativePtrArgs = rLottieDrawable8.args;
-                                            rLottieDrawable7.nativePtr = RLottieDrawable.create(file2, nativePtrArgs.json, rLottieDrawable8.width, rLottieDrawable8.height, new int[3], false, nativePtrArgs.colorReplacement, false, nativePtrArgs.fitzModifier);
+                                            NativePtrArgs nativePtrArgs = rLottieDrawable7.args;
+                                            rLottieDrawable6.nativePtr = RLottieDrawable.create(file2, nativePtrArgs.json, rLottieDrawable7.width, rLottieDrawable7.height, new int[3], false, nativePtrArgs.colorReplacement, false, nativePtrArgs.fitzModifier);
                                         }
-                                        long j3 = RLottieDrawable.this.nativePtr;
-                                        RLottieDrawable rLottieDrawable9 = RLottieDrawable.this;
-                                        int i7 = rLottieDrawable9.currentFrame;
-                                        Bitmap bitmap2 = rLottieDrawable9.backgroundBitmap;
-                                        RLottieDrawable rLottieDrawable10 = RLottieDrawable.this;
-                                        frame = RLottieDrawable.getFrame(j3, i7, bitmap2, rLottieDrawable10.width, rLottieDrawable10.height, rLottieDrawable10.backgroundBitmap.getRowBytes(), true);
+                                        long j2 = RLottieDrawable.this.nativePtr;
+                                        RLottieDrawable rLottieDrawable8 = RLottieDrawable.this;
+                                        frame = RLottieDrawable.getFrame(j2, rLottieDrawable8.currentFrame, rLottieDrawable8.backgroundBitmap, true);
                                     }
                                 }
                                 if (frame != -1) {
@@ -1716,21 +1688,21 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                     }
                                     return;
                                 }
-                                RLottieDrawable rLottieDrawable11 = RLottieDrawable.this;
-                                rLottieDrawable11.nextRenderingBitmap = rLottieDrawable11.backgroundBitmap;
-                                RLottieDrawable rLottieDrawable12 = RLottieDrawable.this;
-                                int i8 = rLottieDrawable12.isDice;
-                                if (i8 == 1) {
-                                    int i9 = rLottieDrawable12.currentFrame + i5;
-                                    int i10 = rLottieDrawable12.diceSwitchFramesCount;
-                                    if (i10 == -1) {
-                                        i10 = rLottieDrawable12.metaData[0];
+                                RLottieDrawable rLottieDrawable9 = RLottieDrawable.this;
+                                rLottieDrawable9.nextRenderingBitmap = rLottieDrawable9.backgroundBitmap;
+                                RLottieDrawable rLottieDrawable10 = RLottieDrawable.this;
+                                int i6 = rLottieDrawable10.isDice;
+                                if (i6 == 1) {
+                                    int i7 = rLottieDrawable10.currentFrame + i5;
+                                    int i8 = rLottieDrawable10.diceSwitchFramesCount;
+                                    if (i8 == -1) {
+                                        i8 = rLottieDrawable10.metaData[0];
                                     }
-                                    if (i9 < i10) {
-                                        rLottieDrawable12.currentFrame = i9;
+                                    if (i7 < i8) {
+                                        rLottieDrawable10.currentFrame = i7;
                                     } else {
-                                        rLottieDrawable12.currentFrame = 0;
-                                        rLottieDrawable12.nextFrameIsLast = false;
+                                        rLottieDrawable10.currentFrame = 0;
+                                        rLottieDrawable10.nextFrameIsLast = false;
                                         if (RLottieDrawable.this.secondNativePtr != 0) {
                                             RLottieDrawable.this.isDice = 2;
                                         }
@@ -1739,75 +1711,75 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                             RLottieDrawable.this.resetVibrationAfterRestart = false;
                                         }
                                     }
-                                } else if (i8 == 2) {
-                                    int i11 = rLottieDrawable12.currentFrame + i5;
-                                    if (i11 < rLottieDrawable12.secondFramesCount) {
-                                        rLottieDrawable12.currentFrame = i11;
+                                } else if (i6 == 2) {
+                                    int i9 = rLottieDrawable10.currentFrame + i5;
+                                    if (i9 < rLottieDrawable10.secondFramesCount) {
+                                        rLottieDrawable10.currentFrame = i9;
                                     } else {
-                                        rLottieDrawable12.nextFrameIsLast = true;
+                                        rLottieDrawable10.nextFrameIsLast = true;
                                         RLottieDrawable.this.autoRepeatPlayCount++;
                                     }
                                 } else {
-                                    int i12 = rLottieDrawable12.customEndFrame;
-                                    if (i12 >= 0 && rLottieDrawable12.playInDirectionOfCustomEndFrame) {
-                                        int i13 = rLottieDrawable12.currentFrame;
-                                        if (i13 > i12) {
-                                            int i14 = i13 - i5;
-                                            if (i14 >= i12) {
-                                                rLottieDrawable12.currentFrame = i14;
-                                                rLottieDrawable12.nextFrameIsLast = false;
+                                    int i10 = rLottieDrawable10.customEndFrame;
+                                    if (i10 >= 0 && rLottieDrawable10.playInDirectionOfCustomEndFrame) {
+                                        int i11 = rLottieDrawable10.currentFrame;
+                                        if (i11 > i10) {
+                                            int i12 = i11 - i5;
+                                            if (i12 >= i10) {
+                                                rLottieDrawable10.currentFrame = i12;
+                                                rLottieDrawable10.nextFrameIsLast = false;
                                             } else {
-                                                rLottieDrawable12.nextFrameIsLast = true;
+                                                rLottieDrawable10.nextFrameIsLast = true;
                                                 RLottieDrawable.this.checkDispatchOnAnimationEnd();
                                             }
                                         } else {
-                                            int i15 = i13 + i5;
-                                            if (i15 < i12) {
-                                                rLottieDrawable12.currentFrame = i15;
-                                                rLottieDrawable12.nextFrameIsLast = false;
+                                            int i13 = i11 + i5;
+                                            if (i13 < i10) {
+                                                rLottieDrawable10.currentFrame = i13;
+                                                rLottieDrawable10.nextFrameIsLast = false;
                                             } else {
-                                                rLottieDrawable12.nextFrameIsLast = true;
+                                                rLottieDrawable10.nextFrameIsLast = true;
                                                 RLottieDrawable.this.checkDispatchOnAnimationEnd();
                                             }
                                         }
                                     } else {
-                                        int i16 = rLottieDrawable12.currentFrame + i5;
-                                        if (i12 < 0) {
-                                            i12 = rLottieDrawable12.metaData[0];
+                                        int i14 = rLottieDrawable10.currentFrame + i5;
+                                        if (i10 < 0) {
+                                            i10 = rLottieDrawable10.metaData[0];
                                         }
-                                        if (i16 < i12) {
-                                            if (rLottieDrawable12.autoRepeat == 3) {
-                                                rLottieDrawable12.nextFrameIsLast = true;
+                                        if (i14 < i10) {
+                                            if (rLottieDrawable10.autoRepeat == 3) {
+                                                rLottieDrawable10.nextFrameIsLast = true;
                                                 RLottieDrawable.this.autoRepeatPlayCount++;
                                             } else {
-                                                rLottieDrawable12.currentFrame = i16;
-                                                rLottieDrawable12.nextFrameIsLast = false;
+                                                rLottieDrawable10.currentFrame = i14;
+                                                rLottieDrawable10.nextFrameIsLast = false;
                                             }
                                         } else {
-                                            int i17 = rLottieDrawable12.autoRepeat;
-                                            if (i17 == 1) {
-                                                rLottieDrawable12.currentFrame = 0;
-                                                rLottieDrawable12.nextFrameIsLast = false;
+                                            int i15 = rLottieDrawable10.autoRepeat;
+                                            if (i15 == 1) {
+                                                rLottieDrawable10.currentFrame = 0;
+                                                rLottieDrawable10.nextFrameIsLast = false;
                                                 if (RLottieDrawable.this.resetVibrationAfterRestart) {
                                                     RLottieDrawable.this.vibrationPattern = null;
                                                     RLottieDrawable.this.resetVibrationAfterRestart = false;
                                                 }
-                                                RLottieDrawable rLottieDrawable13 = RLottieDrawable.this;
-                                                int i18 = rLottieDrawable13.autoRepeatCount;
-                                                if (i18 > 0) {
-                                                    rLottieDrawable13.autoRepeatCount = i18 - 1;
+                                                RLottieDrawable rLottieDrawable11 = RLottieDrawable.this;
+                                                int i16 = rLottieDrawable11.autoRepeatCount;
+                                                if (i16 > 0) {
+                                                    rLottieDrawable11.autoRepeatCount = i16 - 1;
                                                 }
-                                            } else if (i17 == 2) {
-                                                rLottieDrawable12.currentFrame = 0;
-                                                rLottieDrawable12.nextFrameIsLast = true;
-                                                RLottieDrawable rLottieDrawable14 = RLottieDrawable.this;
-                                                rLottieDrawable14.autoRepeatPlayCount++;
-                                                if (rLottieDrawable14.resetVibrationAfterRestart) {
+                                            } else if (i15 == 2) {
+                                                rLottieDrawable10.currentFrame = 0;
+                                                rLottieDrawable10.nextFrameIsLast = true;
+                                                RLottieDrawable rLottieDrawable12 = RLottieDrawable.this;
+                                                rLottieDrawable12.autoRepeatPlayCount++;
+                                                if (rLottieDrawable12.resetVibrationAfterRestart) {
                                                     RLottieDrawable.this.vibrationPattern = null;
                                                     RLottieDrawable.this.resetVibrationAfterRestart = false;
                                                 }
                                             } else {
-                                                rLottieDrawable12.nextFrameIsLast = true;
+                                                rLottieDrawable10.nextFrameIsLast = true;
                                                 RLottieDrawable.this.checkDispatchOnAnimationEnd();
                                             }
                                         }
@@ -2437,7 +2409,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
             return -1;
         }
         int i = this.shouldLimitFps ? 2 : 1;
-        if (getFrame(j, this.generateCacheFramePointer, bitmap, this.width, this.height, bitmap.getRowBytes(), true) == -5) {
+        if (getFrame(j, this.generateCacheFramePointer, bitmap, true) == -5) {
             try {
                 Thread.sleep(100L);
             } catch (InterruptedException e) {
@@ -2457,8 +2429,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
             }
             long j = this.nativePtr;
             this.rawBackgroundBitmapFrame = i;
-            Bitmap bitmap = this.rawBackgroundBitmap;
-            getFrame(j, i, bitmap, this.width, this.height, bitmap.getRowBytes(), true);
+            getFrame(j, i, this.rawBackgroundBitmap, true);
         }
     }
 

@@ -3,6 +3,8 @@ package org.telegram.SQLite;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.Vector;
 
 /* loaded from: classes3.dex */
 public class SQLiteCursor {
@@ -77,6 +79,18 @@ public class SQLiteCursor {
             return NativeByteBuffer.wrap(columnByteBufferValue);
         }
         return null;
+    }
+
+    public <T extends TLObject> T tlObjectValue(int i, Vector.TLDeserializer<T> tLDeserializer, boolean z) {
+        NativeByteBuffer byteBufferValue = byteBufferValue(i);
+        if (byteBufferValue == null) {
+            return null;
+        }
+        try {
+            return tLDeserializer.deserialize(byteBufferValue, byteBufferValue.readInt32(z), z);
+        } finally {
+            byteBufferValue.reuse();
+        }
     }
 
     public int getTypeOf(int i) {

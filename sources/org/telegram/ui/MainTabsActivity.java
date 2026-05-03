@@ -704,6 +704,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public void didReceivedNotification(int i, int i2, Object... objArr) {
         GlassTabView glassTabView;
+        LaunchActivity launchActivity;
         IUpdateLayout iUpdateLayout;
         IUpdateLayout iUpdateLayout2;
         if (i == NotificationCenter.notificationsCountUpdated || i == NotificationCenter.updateInterfaces) {
@@ -749,10 +750,10 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         }
         if (i == NotificationCenter.appUpdateAvailable) {
             IUpdateLayout iUpdateLayout5 = this.updateLayout;
-            if (iUpdateLayout5 != null) {
-                iUpdateLayout5.updateAppUpdateViews(this.currentAccount, LaunchActivity.getMainFragmentsStackSize() == 1);
+            if (iUpdateLayout5 == null || (launchActivity = LaunchActivity.instance) == null) {
                 return;
             }
+            iUpdateLayout5.updateAppUpdateViews(this.currentAccount, launchActivity.getMainFragmentsStackSize() == 1);
             return;
         }
         if (i == NotificationCenter.needSetDayNightTheme) {

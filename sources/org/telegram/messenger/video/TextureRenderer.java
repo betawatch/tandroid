@@ -712,21 +712,20 @@ public class TextureRenderer {
         GLES20.glFinish();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void drawEntity(VideoEditedInfo.MediaEntity mediaEntity, int i, long j) {
         VideoEditedInfo.MediaEntity mediaEntity2;
         Bitmap bitmap;
         long j2;
         long j3;
         long clamp;
-        int i2;
-        int i3;
         long j4 = mediaEntity.ptr;
         if (j4 != 0) {
             Bitmap bitmap2 = mediaEntity.bitmap;
-            if (bitmap2 == null || (i2 = mediaEntity.W) <= 0 || (i3 = mediaEntity.H) <= 0) {
+            if (bitmap2 == null || mediaEntity.W <= 0 || mediaEntity.H <= 0) {
                 return;
             }
-            RLottieDrawable.getFrame(j4, (int) mediaEntity.currentFrame, bitmap2, i2, i3, bitmap2.getRowBytes(), true);
+            RLottieDrawable.getFrame(j4, (int) mediaEntity.currentFrame, bitmap2, true);
             applyRoundRadius(mediaEntity, mediaEntity.bitmap, (mediaEntity.subType & 8) != 0 ? i : 0);
             GLES20.glBindTexture(3553, this.stickerTexture[0]);
             GLUtils.texImage2D(3553, 0, mediaEntity.bitmap, 0);
@@ -740,7 +739,7 @@ public class TextureRenderer {
         }
         if (mediaEntity.animatedFileDrawable != null) {
             float f2 = mediaEntity.currentFrame;
-            int i4 = (int) f2;
+            int i2 = (int) f2;
             float f3 = 1.0f;
             if (mediaEntity.type == 5) {
                 if (this.isPhoto) {
@@ -774,7 +773,7 @@ public class TextureRenderer {
             } else {
                 float f4 = f2 + mediaEntity.framesPerDraw;
                 mediaEntity.currentFrame = f4;
-                for (int i5 = (int) f4; i4 != i5; i5--) {
+                for (int i3 = (int) f4; i2 != i3; i3--) {
                     mediaEntity.animatedFileDrawable.getNextFrame(true);
                 }
             }
@@ -834,20 +833,20 @@ public class TextureRenderer {
         if (mediaEntity.bitmap != null) {
             GLES20.glBindTexture(3553, this.stickerTexture[0]);
             GLUtils.texImage2D(3553, 0, mediaEntity.bitmap, 0);
-            int i6 = this.stickerTexture[0];
+            int i4 = this.stickerTexture[0];
             float f5 = mediaEntity.x;
             float f6 = mediaEntity.additionalWidth;
             float f7 = f5 - (f6 / 2.0f);
             float f8 = mediaEntity.y;
             float f9 = mediaEntity.additionalHeight;
-            drawTexture(false, i6, f7, f8 - (f9 / 2.0f), mediaEntity.width + f6, mediaEntity.height + f9, mediaEntity.rotation, mediaEntity.type == 2 && (mediaEntity.subType & 2) != 0);
+            drawTexture(false, i4, f7, f8 - (f9 / 2.0f), mediaEntity.width + f6, f9 + mediaEntity.height, mediaEntity.rotation, mediaEntity.type == 2 && (mediaEntity.subType & 2) != 0);
         }
         ArrayList<VideoEditedInfo.EmojiEntity> arrayList = mediaEntity.entities;
         if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
-        for (int i7 = 0; i7 < mediaEntity.entities.size(); i7++) {
-            VideoEditedInfo.EmojiEntity emojiEntity = mediaEntity.entities.get(i7);
+        for (int i5 = 0; i5 < mediaEntity.entities.size(); i5++) {
+            VideoEditedInfo.EmojiEntity emojiEntity = mediaEntity.entities.get(i5);
             if (emojiEntity != null && (mediaEntity2 = emojiEntity.entity) != null) {
                 drawEntity(mediaEntity2, mediaEntity.color, j);
             }
