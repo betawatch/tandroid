@@ -729,7 +729,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private final ArrayList glassDrawablesPositions;
     private int glassDrawablesPositionsCount;
     private final ArrayList glassDrawablesPositionsMerged;
-    private boolean glassSourcesInvalidated;
     private boolean globalIgnoreLayout;
     private NotificationCenter.ObserversGroup globalObserversGroup;
     private ChatActionCell greetingsInfo;
@@ -64724,7 +64723,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     /* JADX INFO: Access modifiers changed from: private */
     public void invalidateAllGlassAttachedViews() {
-        this.glassSourcesInvalidated = true;
         this.contentView.invalidate();
         Iterator it = this.glassAttachedViews.iterator();
         while (it.hasNext()) {

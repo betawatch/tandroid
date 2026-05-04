@@ -741,24 +741,24 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
     
         if ((r45.currentWallpaper instanceof org.telegram.tgnet.TLRPC.TL_wallPaper) != false) goto L79;
      */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x0eae  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x057b  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x076c  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x079f  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x087e  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0ea2  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0577  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x0768  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x079b  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x087a  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0067  */
-    /* JADX WARN: Removed duplicated region for block: B:230:0x0965  */
+    /* JADX WARN: Removed duplicated region for block: B:230:0x0961  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0079  */
-    /* JADX WARN: Removed duplicated region for block: B:272:0x0a90  */
-    /* JADX WARN: Removed duplicated region for block: B:276:0x0e42  */
-    /* JADX WARN: Removed duplicated region for block: B:279:0x0e4d  */
-    /* JADX WARN: Removed duplicated region for block: B:285:0x0a9c  */
+    /* JADX WARN: Removed duplicated region for block: B:272:0x0a8c  */
+    /* JADX WARN: Removed duplicated region for block: B:276:0x0e36  */
+    /* JADX WARN: Removed duplicated region for block: B:279:0x0e41  */
+    /* JADX WARN: Removed duplicated region for block: B:285:0x0a98  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0115  */
-    /* JADX WARN: Removed duplicated region for block: B:360:0x087a  */
-    /* JADX WARN: Removed duplicated region for block: B:364:0x0788  */
-    /* JADX WARN: Removed duplicated region for block: B:367:0x053c  */
-    /* JADX WARN: Removed duplicated region for block: B:368:0x050f  */
-    /* JADX WARN: Removed duplicated region for block: B:371:0x04d7  */
+    /* JADX WARN: Removed duplicated region for block: B:360:0x0876  */
+    /* JADX WARN: Removed duplicated region for block: B:364:0x0784  */
+    /* JADX WARN: Removed duplicated region for block: B:367:0x0538  */
+    /* JADX WARN: Removed duplicated region for block: B:368:0x050b  */
+    /* JADX WARN: Removed duplicated region for block: B:371:0x04d3  */
     /* JADX WARN: Removed duplicated region for block: B:374:0x0218  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0123  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x0184  */
@@ -767,15 +767,15 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
     /* JADX WARN: Removed duplicated region for block: B:43:0x01a0 A[LOOP:0: B:42:0x019e->B:43:0x01a0, LOOP_END] */
     /* JADX WARN: Removed duplicated region for block: B:47:0x01e0  */
     /* JADX WARN: Removed duplicated region for block: B:50:0x01f9  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x04a8  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x050d  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0517  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0573 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0eab  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x0eed  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x1016  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x103f  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x1051  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x04a4  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0509  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0513  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x056f A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0e9f  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x0ee1  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x1002  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x102b  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x103d  */
     /* JADX WARN: Type inference failed for: r11v11 */
     /* JADX WARN: Type inference failed for: r11v17 */
     /* JADX WARN: Type inference failed for: r11v19 */
@@ -1787,7 +1787,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                                     TextView textView = this.patternsCancelButton[i9];
                                                     int i19 = Theme.key_chat_fieldOverlayText;
                                                     textView.setTextColor(getThemedColor(i19));
-                                                    this.patternsCancelButton[i9].setText(LocaleController.getString(R.string.Cancel).toUpperCase());
+                                                    this.patternsCancelButton[i9].setText(LocaleController.getString(R.string.Cancel));
                                                     this.patternsCancelButton[i9].setGravity(17);
                                                     this.patternsCancelButton[i9].setPadding(AndroidUtilities.dp(21.0f), 0, AndroidUtilities.dp(21.0f), 0);
                                                     TextView textView2 = this.patternsCancelButton[i9];
@@ -1804,7 +1804,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                                     this.patternsSaveButton[i9].setTextSize(i2, 15.0f);
                                                     this.patternsSaveButton[i9].setTypeface(AndroidUtilities.bold());
                                                     this.patternsSaveButton[i9].setTextColor(getThemedColor(i19));
-                                                    this.patternsSaveButton[i9].setText(LocaleController.getString(R.string.ApplyTheme).toUpperCase());
+                                                    this.patternsSaveButton[i9].setText(LocaleController.getString(R.string.ApplyTheme));
                                                     this.patternsSaveButton[i9].setGravity(17);
                                                     this.patternsSaveButton[i9].setPadding(AndroidUtilities.dp(21.0f), 0, AndroidUtilities.dp(21.0f), 0);
                                                     this.patternsSaveButton[i9].setBackgroundDrawable(Theme.createSelectorDrawable(getThemedColor(i20), 0));
@@ -2142,7 +2142,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                 this.cancelButton.setGravity(17);
                                 this.cancelButton.setBackgroundDrawable(Theme.createSelectorDrawable(AndroidUtilities.LIGHT_STATUS_BAR_OVERLAY, 0));
                                 this.cancelButton.setPadding(AndroidUtilities.dp(29.0f), 0, AndroidUtilities.dp(29.0f), 0);
-                                this.cancelButton.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
+                                this.cancelButton.setText(LocaleController.getString(R.string.Cancel));
                                 this.cancelButton.setTypeface(AndroidUtilities.bold());
                                 this.saveButtonsContainer.addView(this.cancelButton, LayoutHelper.createFrame(-2, -1, 51));
                                 this.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda10
@@ -2158,7 +2158,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                 this.doneButton.setGravity(17);
                                 this.doneButton.setBackgroundDrawable(Theme.createSelectorDrawable(AndroidUtilities.LIGHT_STATUS_BAR_OVERLAY, 0));
                                 this.doneButton.setPadding(AndroidUtilities.dp(29.0f), 0, AndroidUtilities.dp(29.0f), 0);
-                                this.doneButton.setText(LocaleController.getString(R.string.ApplyTheme).toUpperCase());
+                                this.doneButton.setText(LocaleController.getString(R.string.ApplyTheme));
                                 this.doneButton.setTypeface(AndroidUtilities.bold());
                                 this.saveButtonsContainer.addView(this.doneButton, LayoutHelper.createFrame(-2, -1, 53));
                                 this.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda11
@@ -2189,7 +2189,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                         }
                     } else {
                         ActionBarMenu createMenu2 = this.actionBar2.createMenu();
-                        this.saveItem = createMenu2.addItem(4, LocaleController.getString(R.string.Save).toUpperCase());
+                        this.saveItem = createMenu2.addItem(4, LocaleController.getString(R.string.Save));
                         f = -2.0f;
                         str = "d";
                         charSequence = "";
@@ -9067,27 +9067,27 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
             Text text;
-            float dp = AndroidUtilities.dp(8.0f);
+            float height = getHeight() / 2.0f;
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(0.0f, 0.0f, getWidth(), getHeight());
             Theme.applyServiceShaderMatrixForView(this, ThemePreviewActivity.this.backgroundImage, ThemePreviewActivity.this.themeDelegate);
             Paint paint = ThemePreviewActivity.this.themeDelegate.getPaint("paintChatActionBackground");
             ColorFilter colorFilter = paint.getColorFilter();
             paint.setColorFilter(this.colorFilter);
-            canvas.drawRoundRect(rectF, dp, dp, paint);
+            canvas.drawRoundRect(rectF, height, height, paint);
             paint.setColorFilter(colorFilter);
             if (ThemePreviewActivity.this.shouldShowBrightnessControll && ThemePreviewActivity.this.dimAmount > 0.0f) {
                 this.dimPaint2.setColor(ColorUtils.setAlphaComponent(-16777216, (int) (ThemePreviewActivity.this.dimAmount * 255.0f * ThemePreviewActivity.this.progressToDarkTheme)));
-                canvas.drawRoundRect(rectF, dp, dp, this.dimPaint2);
+                canvas.drawRoundRect(rectF, height, height, this.dimPaint2);
             }
             this.dimPaint.setColor(520093695);
-            canvas.drawRoundRect(rectF, dp, dp, this.dimPaint);
+            canvas.drawRoundRect(rectF, height, height, this.dimPaint);
             if (this.loadingT > 0.0f) {
                 if (this.loadingDrawable == null) {
                     this.loadingDrawable = new CircularProgressDrawable(-1);
                 }
-                int dp2 = (int) ((1.0f - this.loadingT) * AndroidUtilities.dp(-24.0f));
-                this.loadingDrawable.setBounds(0, dp2, getWidth(), getHeight() + dp2);
+                int dp = (int) ((1.0f - this.loadingT) * AndroidUtilities.dp(-24.0f));
+                this.loadingDrawable.setBounds(0, dp, getWidth(), getHeight() + dp);
                 this.loadingDrawable.setAlpha((int) (this.loadingT * 255.0f));
                 this.loadingDrawable.draw(canvas);
                 invalidate();

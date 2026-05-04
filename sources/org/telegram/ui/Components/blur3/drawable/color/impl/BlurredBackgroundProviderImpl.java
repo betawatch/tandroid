@@ -16,7 +16,7 @@ import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProvider
 
 /* loaded from: classes5.dex */
 public abstract class BlurredBackgroundProviderImpl {
-    public static /* synthetic */ int $r8$lambda$eSh9RFhJvzzs8u0jcTFsaw_jJUg(Theme.ResourcesProvider resourcesProvider, boolean z) {
+    public static /* synthetic */ int $r8$lambda$Zq69wz4M_ep68AQg9bDQ3F-Hlz8(Theme.ResourcesProvider resourcesProvider, boolean z) {
         int i;
         i = TLObject.FLAG_30;
         return i;
@@ -117,19 +117,38 @@ public abstract class BlurredBackgroundProviderImpl {
         }).setStrokeColorTop(385875968, 402653183).setStrokeColorBottom(385875968, 402653183).setShadowColor(0, 0).setStrokeWidth(1.0f, 1.0f).build();
     }
 
-    public static BlurredBackgroundProvider topPanelChatActivity(final Theme.ResourcesProvider resourcesProvider) {
-        return new BlurredBackgroundProviderBuilder(resourcesProvider).setBackgroundColor(new BlurredBackgroundProviderBuilder.ColorProvider() { // from class: org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl$$ExternalSyntheticLambda4
+    public static BlurredBackgroundProvider bottomPanelChatActivity(final Theme.ResourcesProvider resourcesProvider) {
+        return new BlurredBackgroundProviderBuilder(resourcesProvider).setBackgroundColor(new BlurredBackgroundProviderBuilder.ColorProvider() { // from class: org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl$$ExternalSyntheticLambda12
             @Override // org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProviderBuilder.ColorProvider
             public final int getColor(Theme.ResourcesProvider resourcesProvider2, boolean z) {
-                int lambda$topPanelChatActivity$6;
-                lambda$topPanelChatActivity$6 = BlurredBackgroundProviderImpl.lambda$topPanelChatActivity$6(Theme.ResourcesProvider.this, resourcesProvider2, z);
-                return lambda$topPanelChatActivity$6;
+                int lambda$bottomPanelChatActivity$6;
+                lambda$bottomPanelChatActivity$6 = BlurredBackgroundProviderImpl.lambda$bottomPanelChatActivity$6(Theme.ResourcesProvider.this, resourcesProvider2, z);
+                return lambda$bottomPanelChatActivity$6;
             }
         }).setStrokeColorTop(-1, 687865855).setStrokeColorBottom(-1, 352321535).setShadowColor(TLObject.FLAG_29, 0).setStrokeWidth(AndroidUtilities.dpf2(0.5f), AndroidUtilities.dpf2(0.5f)).build();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$topPanelChatActivity$6(Theme.ResourcesProvider resourcesProvider, Theme.ResourcesProvider resourcesProvider2, boolean z) {
+    public static /* synthetic */ int lambda$bottomPanelChatActivity$6(Theme.ResourcesProvider resourcesProvider, Theme.ResourcesProvider resourcesProvider2, boolean z) {
+        if (!checkBlurEnabled(resourcesProvider)) {
+            return ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_chat_messagePanelBackground, resourcesProvider2), NotificationCenter.didReceiveCall);
+        }
+        return Theme.multAlpha(Theme.getColor(Theme.key_chat_messagePanelBackground, resourcesProvider2), LiteMode.isEnabled(262144) ? 0.85f : 0.76f);
+    }
+
+    public static BlurredBackgroundProvider topPanelChatActivity(final Theme.ResourcesProvider resourcesProvider) {
+        return new BlurredBackgroundProviderBuilder(resourcesProvider).setBackgroundColor(new BlurredBackgroundProviderBuilder.ColorProvider() { // from class: org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl$$ExternalSyntheticLambda4
+            @Override // org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProviderBuilder.ColorProvider
+            public final int getColor(Theme.ResourcesProvider resourcesProvider2, boolean z) {
+                int lambda$topPanelChatActivity$7;
+                lambda$topPanelChatActivity$7 = BlurredBackgroundProviderImpl.lambda$topPanelChatActivity$7(Theme.ResourcesProvider.this, resourcesProvider2, z);
+                return lambda$topPanelChatActivity$7;
+            }
+        }).setStrokeColorTop(-1, 687865855).setStrokeColorBottom(-1, 352321535).setShadowColor(TLObject.FLAG_29, 0).setStrokeWidth(AndroidUtilities.dpf2(0.5f), AndroidUtilities.dpf2(0.5f)).build();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ int lambda$topPanelChatActivity$7(Theme.ResourcesProvider resourcesProvider, Theme.ResourcesProvider resourcesProvider2, boolean z) {
         if (!checkBlurEnabled(resourcesProvider)) {
             return ColorUtils.setAlphaComponent(Theme.getColor(z ? Theme.key_actionBarDefault : Theme.key_chat_topPanelBackground, resourcesProvider2), NotificationCenter.didReceiveCall);
         }
@@ -140,15 +159,15 @@ public abstract class BlurredBackgroundProviderImpl {
         return new BlurredBackgroundProviderBuilder(resourcesProvider).setBackgroundColor(new BlurredBackgroundProviderBuilder.ColorProvider() { // from class: org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl$$ExternalSyntheticLambda9
             @Override // org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProviderBuilder.ColorProvider
             public final int getColor(Theme.ResourcesProvider resourcesProvider2, boolean z) {
-                int lambda$bulletin$7;
-                lambda$bulletin$7 = BlurredBackgroundProviderImpl.lambda$bulletin$7(resourcesProvider2, z);
-                return lambda$bulletin$7;
+                int lambda$bulletin$8;
+                lambda$bulletin$8 = BlurredBackgroundProviderImpl.lambda$bulletin$8(resourcesProvider2, z);
+                return lambda$bulletin$8;
             }
         }).setStrokeWidth(AndroidUtilities.dpf2(0.5f), AndroidUtilities.dpf2(0.5f)).build();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$bulletin$7(Theme.ResourcesProvider resourcesProvider, boolean z) {
+    public static /* synthetic */ int lambda$bulletin$8(Theme.ResourcesProvider resourcesProvider, boolean z) {
         return Theme.multAlpha(Theme.getColor(Theme.key_undo_background, resourcesProvider), LiteMode.isEnabled(262144) ? 0.85f : 0.76f);
     }
 
@@ -160,15 +179,15 @@ public abstract class BlurredBackgroundProviderImpl {
         return new BlurredBackgroundProviderBuilder(resourcesProvider).setBackgroundColor(new BlurredBackgroundProviderBuilder.ColorProvider() { // from class: org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProviderBuilder.ColorProvider
             public final int getColor(Theme.ResourcesProvider resourcesProvider2, boolean z) {
-                int lambda$inputFieldShareAlert$8;
-                lambda$inputFieldShareAlert$8 = BlurredBackgroundProviderImpl.lambda$inputFieldShareAlert$8(resourcesProvider2, z);
-                return lambda$inputFieldShareAlert$8;
+                int lambda$inputFieldShareAlert$9;
+                lambda$inputFieldShareAlert$9 = BlurredBackgroundProviderImpl.lambda$inputFieldShareAlert$9(resourcesProvider2, z);
+                return lambda$inputFieldShareAlert$9;
             }
         }).setStrokeColorTop(687865855, 687865855).setStrokeColorBottom(352321535, 352321535).setShadowColor(TLObject.FLAG_29, 0).setShadowLayer(AndroidUtilities.dpf2(3.3333333f), 0.0f, AndroidUtilities.dpf2(0.6666667f)).setStrokeWidth(AndroidUtilities.dpf2(1.0f), AndroidUtilities.dpf2(0.6666667f)).build();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$inputFieldShareAlert$8(Theme.ResourcesProvider resourcesProvider, boolean z) {
+    public static /* synthetic */ int lambda$inputFieldShareAlert$9(Theme.ResourcesProvider resourcesProvider, boolean z) {
         return solveSrcColor(Theme.getColor(Theme.key_windowBackgroundWhite, resourcesProvider), Theme.getColor(Theme.key_chat_messagePanelBackground, resourcesProvider), LiteMode.isEnabled(262144) ? 0.85f : 0.76f);
     }
 
@@ -176,15 +195,15 @@ public abstract class BlurredBackgroundProviderImpl {
         return new BlurredBackgroundProviderBuilder(resourcesProvider).setBackgroundColor(new BlurredBackgroundProviderBuilder.ColorProvider() { // from class: org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl$$ExternalSyntheticLambda6
             @Override // org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProviderBuilder.ColorProvider
             public final int getColor(Theme.ResourcesProvider resourcesProvider2, boolean z) {
-                int lambda$photoViewer$9;
-                lambda$photoViewer$9 = BlurredBackgroundProviderImpl.lambda$photoViewer$9(resourcesProvider2, z);
-                return lambda$photoViewer$9;
+                int lambda$photoViewer$10;
+                lambda$photoViewer$10 = BlurredBackgroundProviderImpl.lambda$photoViewer$10(resourcesProvider2, z);
+                return lambda$photoViewer$10;
             }
         }).setStrokeColorTop(687865855, 687865855).setStrokeColorBottom(352321535, 352321535).setStrokeWidth(AndroidUtilities.dpf2(0.6666667f), AndroidUtilities.dpf2(0.6666667f)).build();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$photoViewer$9(Theme.ResourcesProvider resourcesProvider, boolean z) {
+    public static /* synthetic */ int lambda$photoViewer$10(Theme.ResourcesProvider resourcesProvider, boolean z) {
         LiteMode.isEnabled(262144);
         return 0;
     }
@@ -193,7 +212,7 @@ public abstract class BlurredBackgroundProviderImpl {
         return new BlurredBackgroundProviderBuilder(resourcesProvider).setBackgroundColor(new BlurredBackgroundProviderBuilder.ColorProvider() { // from class: org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl$$ExternalSyntheticLambda11
             @Override // org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProviderBuilder.ColorProvider
             public final int getColor(Theme.ResourcesProvider resourcesProvider2, boolean z) {
-                return BlurredBackgroundProviderImpl.$r8$lambda$eSh9RFhJvzzs8u0jcTFsaw_jJUg(resourcesProvider2, z);
+                return BlurredBackgroundProviderImpl.$r8$lambda$Zq69wz4M_ep68AQg9bDQ3F-Hlz8(resourcesProvider2, z);
             }
         }).setStrokeColorTop(687865855, 687865855).setStrokeColorBottom(352321535, 352321535).setStrokeWidth(AndroidUtilities.dpf2(0.6666667f), AndroidUtilities.dpf2(0.6666667f)).build();
     }
@@ -202,15 +221,15 @@ public abstract class BlurredBackgroundProviderImpl {
         return new BlurredBackgroundProviderBuilder(resourcesProvider).setBackgroundColor(new BlurredBackgroundProviderBuilder.ColorProvider() { // from class: org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProviderBuilder.ColorProvider
             public final int getColor(Theme.ResourcesProvider resourcesProvider2, boolean z) {
-                int lambda$premiumButton$11;
-                lambda$premiumButton$11 = BlurredBackgroundProviderImpl.lambda$premiumButton$11(resourcesProvider2, z);
-                return lambda$premiumButton$11;
+                int lambda$premiumButton$12;
+                lambda$premiumButton$12 = BlurredBackgroundProviderImpl.lambda$premiumButton$12(resourcesProvider2, z);
+                return lambda$premiumButton$12;
             }
         }).setStrokeColorTop(-1, 553648127).setStrokeColorBottom(0, 553648127).setShadowColor(805306368, 83886079).setShadowLayer(AndroidUtilities.dpf2(4.0f), 0.0f, AndroidUtilities.dpf2(0.33333334f)).setStrokeWidth(AndroidUtilities.dpf2(0.67f), AndroidUtilities.dpf2(0.67f)).build();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$premiumButton$11(Theme.ResourcesProvider resourcesProvider, boolean z) {
+    public static /* synthetic */ int lambda$premiumButton$12(Theme.ResourcesProvider resourcesProvider, boolean z) {
         return Theme.multAlpha(Theme.getColor(Theme.key_dialogBackground, resourcesProvider), 0.78f);
     }
 
