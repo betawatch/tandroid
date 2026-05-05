@@ -12466,6 +12466,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             of6.replyQuote = replyQuote;
             of6.payStars = j2;
             of6.monoForumPeer = j3;
+            of6.invert_media = botInlineResult.send_message.invert_media;
             accountInstance.getSendMessagesHelper().sendMessage(of6);
         }
     }
@@ -12473,19 +12474,21 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x047f  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0485  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x0491  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x04bb  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x047f  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0485  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0491  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x04bb  */
     /* JADX WARN: Removed duplicated region for block: B:15:0x04c9  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x04db A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:24:0x04e6  */
     /* JADX WARN: Removed duplicated region for block: B:33:0x0523  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x056b  */
     /* JADX WARN: Removed duplicated region for block: B:41:0x057b  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0576  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0563  */
-    /* JADX WARN: Type inference failed for: r0v82, types: [org.telegram.tgnet.TLRPC$TL_game] */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x05a5  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x05ae  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0576  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0563  */
+    /* JADX WARN: Type inference failed for: r0v80, types: [org.telegram.tgnet.TLRPC$TL_game] */
     /* JADX WARN: Type inference failed for: r16v8, types: [org.telegram.tgnet.TLRPC$TL_game] */
     /* JADX WARN: Type inference failed for: r2v13 */
     /* JADX WARN: Type inference failed for: r2v14 */
@@ -12513,8 +12516,6 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         TLRPC.TL_photo tL_photo3;
         final TLObject tLObject;
         TLRPC.TL_document tL_document;
-        final Bitmap[] bitmapArr;
-        final String[] strArr;
         TLRPC.InputPeer inputPeer;
         int i5;
         TLRPC.WebDocument webDocument;
@@ -12737,15 +12738,15 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 tLObject = tL_document3;
                                                 if (hashMap != null) {
                                                 }
-                                                bitmapArr = new Bitmap[1];
-                                                strArr = new String[1];
+                                                final Bitmap[] bitmapArr = new Bitmap[1];
+                                                final String[] strArr = new String[1];
                                                 if (isEncryptedDialog) {
                                                 }
                                                 if (!MessageObject.isGifDocument((TLRPC.Document) tLObject)) {
                                                 }
                                                 if (DialogObject.isEncryptedDialog(j)) {
                                                 }
-                                                if (inputPeer == null) {
+                                                if (inputPeer != null) {
                                                 }
                                                 final String str8 = str5;
                                                 final TLRPC.TL_photo tL_photo4 = tL_photo2;
@@ -12931,8 +12932,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     if (hashMap != null && (webDocument = botInlineResult.content) != null) {
                         hashMap.put("originalPath", webDocument.url);
                     }
-                    bitmapArr = new Bitmap[1];
-                    strArr = new String[1];
+                    final Bitmap[] bitmapArr2 = new Bitmap[1];
+                    final String[] strArr2 = new String[1];
                     if (isEncryptedDialog && tLObject != 0) {
                         for (i5 = 0; i5 < tLObject.attributes.size(); i5++) {
                             if (tLObject.attributes.get(i5) instanceof TLRPC.TL_documentAttributeVideo) {
@@ -12955,11 +12956,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             pathToAttach = FileLoader.getInstance(accountInstance.getCurrentAccount()).getPathToAttach(tLObject, true);
                         }
                         ensureMediaThumbExists(accountInstance, isEncryptedDialog, tLObject, pathToAttach.getAbsolutePath(), null, 0L);
-                        strArr[c3] = getKeyForPhotoSize(accountInstance, closestPhotoSizeWithSize, bitmapArr, true, true);
+                        strArr2[c3] = getKeyForPhotoSize(accountInstance, closestPhotoSizeWithSize, bitmapArr2, true, true);
                     }
                     inputPeer = DialogObject.isEncryptedDialog(j) ? accountInstance.getMessagesController().getInputPeer(j) : tL_photo;
-                    if (inputPeer == null && inputPeer.user_id != 0 && accountInstance.getMessagesController().getUserFull(inputPeer.user_id) != null && accountInstance.getMessagesController().getUserFull(inputPeer.user_id).voice_messages_forbidden && tLObject != 0) {
-                        if (MessageObject.isVoiceDocument(tLObject)) {
+                    if (inputPeer != null && inputPeer.user_id != 0 && accountInstance.getMessagesController().getUserFull(inputPeer.user_id) != null && accountInstance.getMessagesController().getUserFull(inputPeer.user_id).voice_messages_forbidden && tLObject != 0) {
+                        if (!MessageObject.isVoiceDocument(tLObject)) {
                             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda11
                                 @Override // java.lang.Runnable
                                 public final void run() {
@@ -12967,16 +12968,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 }
                             });
                             return;
-                        } else {
-                            if (MessageObject.isRoundVideoDocument(tLObject)) {
-                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda12
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        AlertsCreator.showSendMediaAlert(8, BaseFragment.this, null);
-                                    }
-                                });
-                                return;
-                            }
+                        } else if (MessageObject.isRoundVideoDocument(tLObject)) {
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda12
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    AlertsCreator.showSendMediaAlert(8, BaseFragment.this, null);
+                                }
+                            });
                             return;
                         }
                     }
@@ -12986,7 +12984,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda13
                         @Override // java.lang.Runnable
                         public final void run() {
-                            SendMessagesHelper.lambda$prepareSendingBotContextResult$112(TLRPC.TL_document.this, bitmapArr, strArr, str82, j, messageObject, messageObject2, botInlineResult, hashMap, z, i, i2, tL_photo42, r162, str, i3, storyItem, replyQuote, j2, j3, accountInstance);
+                            SendMessagesHelper.lambda$prepareSendingBotContextResult$112(TLRPC.TL_document.this, bitmapArr2, strArr2, str82, j, messageObject, messageObject2, botInlineResult, hashMap, z, i, i2, tL_photo42, r162, str, i3, storyItem, replyQuote, j2, j3, accountInstance);
                         }
                     });
                 }
@@ -13000,8 +12998,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             if (hashMap != null) {
                 hashMap.put("originalPath", webDocument.url);
             }
-            bitmapArr = new Bitmap[1];
-            strArr = new String[1];
+            final Bitmap[] bitmapArr22 = new Bitmap[1];
+            final String[] strArr22 = new String[1];
             if (isEncryptedDialog) {
                 while (i5 < tLObject.attributes.size()) {
                 }
@@ -13010,7 +13008,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }
             if (DialogObject.isEncryptedDialog(j)) {
             }
-            if (inputPeer == null) {
+            if (inputPeer != null) {
+                if (!MessageObject.isVoiceDocument(tLObject)) {
+                }
             }
             final String str822 = str5;
             final TLRPC.TL_photo tL_photo422 = tL_photo2;
@@ -13018,7 +13018,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda13
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendMessagesHelper.lambda$prepareSendingBotContextResult$112(TLRPC.TL_document.this, bitmapArr, strArr, str822, j, messageObject, messageObject2, botInlineResult, hashMap, z, i, i2, tL_photo422, r1622, str, i3, storyItem, replyQuote, j2, j3, accountInstance);
+                    SendMessagesHelper.lambda$prepareSendingBotContextResult$112(TLRPC.TL_document.this, bitmapArr22, strArr22, str822, j, messageObject, messageObject2, botInlineResult, hashMap, z, i, i2, tL_photo422, r1622, str, i3, storyItem, replyQuote, j2, j3, accountInstance);
                 }
             });
         }
@@ -13047,15 +13047,15 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         tLObject = tL_document2;
         if (hashMap != null) {
         }
-        bitmapArr = new Bitmap[1];
-        strArr = new String[1];
+        final Bitmap[] bitmapArr222 = new Bitmap[1];
+        final String[] strArr222 = new String[1];
         if (isEncryptedDialog) {
         }
         if (!MessageObject.isGifDocument((TLRPC.Document) tLObject)) {
         }
         if (DialogObject.isEncryptedDialog(j)) {
         }
-        if (inputPeer == null) {
+        if (inputPeer != null) {
         }
         final String str8222 = str5;
         final TLRPC.TL_photo tL_photo4222 = tL_photo2;
@@ -13063,7 +13063,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
-                SendMessagesHelper.lambda$prepareSendingBotContextResult$112(TLRPC.TL_document.this, bitmapArr, strArr, str8222, j, messageObject, messageObject2, botInlineResult, hashMap, z, i, i2, tL_photo4222, r16222, str, i3, storyItem, replyQuote, j2, j3, accountInstance);
+                SendMessagesHelper.lambda$prepareSendingBotContextResult$112(TLRPC.TL_document.this, bitmapArr222, strArr222, str8222, j, messageObject, messageObject2, botInlineResult, hashMap, z, i, i2, tL_photo4222, r16222, str, i3, storyItem, replyQuote, j2, j3, accountInstance);
             }
         });
     }
