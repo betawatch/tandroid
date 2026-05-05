@@ -4461,37 +4461,37 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't wrap try/catch for region: R(7:(4:239|240|241|242)|(5:(4:244|245|246|(15:248|249|250|251|252|253|254|255|256|257|258|259|260|261|262))(1:328)|259|260|261|262)|318|319|320|321|258) */
-    /* JADX WARN: Code restructure failed: missing block: B:263:0x0493, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:263:0x0495, code lost:
     
-        if (r4 != null) goto L323;
+        if (r4 != null) goto L345;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:265:0x0495, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:265:0x0497, code lost:
     
         r4.close();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:267:0x049a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:267:0x049c, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:268:0x04d5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:268:0x04d7, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:278:0x04d2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:278:0x04d4, code lost:
     
-        if (r4 != null) goto L323;
+        if (r4 != null) goto L345;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:323:0x04a1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:323:0x04a3, code lost:
     
         r0 = e;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:154:0x02f9  */
     /* JADX WARN: Removed duplicated region for block: B:168:0x033d  */
-    /* JADX WARN: Removed duplicated region for block: B:279:0x04c9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:289:0x04eb A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:279:0x04cb A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:289:0x04ed A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:296:? A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:297:0x04e0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:297:0x04e2 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r15v2 */
     /* JADX WARN: Type inference failed for: r15v3, types: [java.lang.CharSequence, java.lang.Runnable] */
     /* JADX WARN: Type inference failed for: r15v5 */
@@ -4650,14 +4650,14 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                                         mediaMetadataRetriever2 = new MediaMetadataRetriever();
                                         try {
                                             try {
-                                            } catch (Throwable th2) {
-                                                th = th2;
-                                                parcelFileDescriptor3 = null;
+                                            } catch (Exception e) {
+                                                e = e;
+                                                i = i17;
+                                                i2 = min;
                                             }
-                                        } catch (Exception e) {
-                                            e = e;
-                                            i = i17;
-                                            i2 = min;
+                                        } catch (Throwable th2) {
+                                            th = th2;
+                                            parcelFileDescriptor3 = null;
                                         }
                                     } catch (Exception e2) {
                                         e = e2;
@@ -4672,7 +4672,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                                     }
                                     try {
                                         try {
-                                            if (photoEntry.isLivePhoto) {
+                                            if (photoEntry.isLivePhoto()) {
                                                 i = i17;
                                                 i2 = min;
                                                 try {
@@ -4804,7 +4804,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                                 i3 = i16;
                                 i4 = i;
                             }
-                            if (photoEntry.isLivePhoto) {
+                            if (photoEntry.isLivePhoto()) {
                                 TLRPC.TL_messageMediaPhoto tL_messageMediaPhoto = new TLRPC.TL_messageMediaPhoto();
                                 tL_message.media = tL_messageMediaPhoto;
                                 tL_messageMediaPhoto.live_photo = true;
@@ -7752,6 +7752,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         this.avatarPicker = 1;
         this.isPhotoPicker = true;
         this.isStickerMode = true;
+        this.allowLivePhotos = false;
         this.customStickerHandler = callback2;
         if (this.optionsItem != null) {
             this.selectedTextView.setTranslationY(-AndroidUtilities.dp(8.0f));
@@ -7789,6 +7790,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         this.avatarPicker = 0;
         this.isPhotoPicker = false;
         this.isStickerMode = false;
+        this.allowLivePhotos = true;
         this.customStickerHandler = null;
         if (this.optionsItem != null) {
             this.selectedTextView.setTranslationY(0.0f);

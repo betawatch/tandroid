@@ -530,7 +530,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             return;
         }
         Utilities.Callback2 callback2 = this.onSelectListener;
-        if (photoEntry.isVideo && !photoEntry.isLivePhoto) {
+        if (photoEntry.isVideo && !photoEntry.isLivePhoto()) {
             r2 = prepareBlurredThumb(cell);
         }
         callback2.run(photoEntry, r2);
@@ -806,7 +806,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
         Iterator it = this.selectedPhotos.iterator();
         while (it.hasNext()) {
             MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) it.next();
-            arrayList.add((!photoEntry.isVideo || photoEntry.isLivePhoto) ? null : prepareBlurredThumb(findCell(photoEntry)));
+            arrayList.add((!photoEntry.isVideo || photoEntry.isLivePhoto()) ? null : prepareBlurredThumb(findCell(photoEntry)));
         }
         this.onSelectMultipleListener.run(Boolean.valueOf(z), new ArrayList(this.selectedPhotos), arrayList);
         this.selectedPhotos.clear();
@@ -1199,7 +1199,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
 
         public void set(MediaController.PhotoEntry photoEntry) {
             this.currentObject = photoEntry;
-            setDuration((photoEntry == null || !photoEntry.isVideo || photoEntry.isLivePhoto) ? null : AndroidUtilities.formatShortDuration(photoEntry.duration));
+            setDuration((photoEntry == null || !photoEntry.isVideo || photoEntry.isLivePhoto()) ? null : AndroidUtilities.formatShortDuration(photoEntry.duration));
             setDraft(false);
             if (photoEntry == null) {
                 this.accessibilityText = null;
@@ -1546,7 +1546,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             if (str != null) {
                 return BitmapFactory.decodeFile(str, options);
             }
-            if (photoEntry.isVideo && !photoEntry.isLivePhoto) {
+            if (photoEntry.isVideo && !photoEntry.isLivePhoto()) {
                 return MediaStore.Video.Thumbnails.getThumbnail(getContext().getContentResolver(), photoEntry.imageId, 1, options);
             }
             return MediaStore.Images.Thumbnails.getThumbnail(getContext().getContentResolver(), photoEntry.imageId, 1, options);
@@ -1560,7 +1560,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             if (str != null) {
                 return str;
             }
-            if (photoEntry.isVideo && !photoEntry.isLivePhoto) {
+            if (photoEntry.isVideo && !photoEntry.isLivePhoto()) {
                 return "" + photoEntry.imageId;
             }
             return photoEntry.path;

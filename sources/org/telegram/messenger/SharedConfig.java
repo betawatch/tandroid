@@ -129,6 +129,7 @@ public class SharedConfig {
     public static TLRPC.TL_help_appUpdate pendingAppUpdate;
     public static int pendingAppUpdateBuildVersion;
     public static boolean photoHighQualityDefault;
+    public static boolean photoLiveDefault;
     public static boolean photoViewerBlur;
     public static boolean playOrderReversed;
     public static ArrayList<ProxyInfo> proxyList;
@@ -522,14 +523,14 @@ public class SharedConfig {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:36:0x0247  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x02a5 A[Catch: all -> 0x00e8, TryCatch #1 {all -> 0x00e8, Exception -> 0x0158, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00e1, B:12:0x00eb, B:14:0x00f3, B:16:0x00f7, B:17:0x0104, B:19:0x0112, B:20:0x011d, B:22:0x0129, B:24:0x0131, B:26:0x0143, B:27:0x015a, B:55:0x015e, B:58:0x0170, B:60:0x017d, B:62:0x0183, B:63:0x0185, B:65:0x0189, B:67:0x018f, B:69:0x0195, B:71:0x0199, B:75:0x0177, B:29:0x01a7, B:31:0x0218, B:34:0x0223, B:37:0x024c, B:39:0x02a5, B:40:0x02a7, B:43:0x0470, B:46:0x047e, B:47:0x04da, B:51:0x0465, B:80:0x01a4, B:81:0x0119, B:82:0x04dc), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0464  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x047b  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x047d  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0465 A[Catch: all -> 0x00e8, TryCatch #1 {all -> 0x00e8, Exception -> 0x0158, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00e1, B:12:0x00eb, B:14:0x00f3, B:16:0x00f7, B:17:0x0104, B:19:0x0112, B:20:0x011d, B:22:0x0129, B:24:0x0131, B:26:0x0143, B:27:0x015a, B:55:0x015e, B:58:0x0170, B:60:0x017d, B:62:0x0183, B:63:0x0185, B:65:0x0189, B:67:0x018f, B:69:0x0195, B:71:0x0199, B:75:0x0177, B:29:0x01a7, B:31:0x0218, B:34:0x0223, B:37:0x024c, B:39:0x02a5, B:40:0x02a7, B:43:0x0470, B:46:0x047e, B:47:0x04da, B:51:0x0465, B:80:0x01a4, B:81:0x0119, B:82:0x04dc), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x02a5 A[Catch: all -> 0x00e8, TryCatch #1 {all -> 0x00e8, Exception -> 0x0158, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00e1, B:12:0x00eb, B:14:0x00f3, B:16:0x00f7, B:17:0x0104, B:19:0x0112, B:20:0x011d, B:22:0x0129, B:24:0x0131, B:26:0x0143, B:27:0x015a, B:55:0x015e, B:58:0x0170, B:60:0x017d, B:62:0x0183, B:63:0x0185, B:65:0x0189, B:67:0x018f, B:69:0x0195, B:71:0x0199, B:75:0x0177, B:29:0x01a7, B:31:0x0218, B:34:0x0223, B:37:0x024c, B:39:0x02a5, B:40:0x02a7, B:43:0x0471, B:46:0x047f, B:47:0x04e3, B:51:0x0466, B:80:0x01a4, B:81:0x0119, B:82:0x04e5), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0465  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x047c  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x047e  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0466 A[Catch: all -> 0x00e8, TryCatch #1 {all -> 0x00e8, Exception -> 0x0158, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00e1, B:12:0x00eb, B:14:0x00f3, B:16:0x00f7, B:17:0x0104, B:19:0x0112, B:20:0x011d, B:22:0x0129, B:24:0x0131, B:26:0x0143, B:27:0x015a, B:55:0x015e, B:58:0x0170, B:60:0x017d, B:62:0x0183, B:63:0x0185, B:65:0x0189, B:67:0x018f, B:69:0x0195, B:71:0x0199, B:75:0x0177, B:29:0x01a7, B:31:0x0218, B:34:0x0223, B:37:0x024c, B:39:0x02a5, B:40:0x02a7, B:43:0x0471, B:46:0x047f, B:47:0x04e3, B:51:0x0466, B:80:0x01a4, B:81:0x0119, B:82:0x04e5), top: B:3:0x0003 }] */
     /* JADX WARN: Removed duplicated region for block: B:52:0x024a  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x017d A[Catch: all -> 0x00e8, Exception -> 0x0158, Merged into TryCatch #1 {all -> 0x00e8, Exception -> 0x0158, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00e1, B:12:0x00eb, B:14:0x00f3, B:16:0x00f7, B:17:0x0104, B:19:0x0112, B:20:0x011d, B:22:0x0129, B:24:0x0131, B:26:0x0143, B:27:0x015a, B:55:0x015e, B:58:0x0170, B:60:0x017d, B:62:0x0183, B:63:0x0185, B:65:0x0189, B:67:0x018f, B:69:0x0195, B:71:0x0199, B:75:0x0177, B:29:0x01a7, B:31:0x0218, B:34:0x0223, B:37:0x024c, B:39:0x02a5, B:40:0x02a7, B:43:0x0470, B:46:0x047e, B:47:0x04da, B:51:0x0465, B:80:0x01a4, B:81:0x0119, B:82:0x04dc), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0183 A[Catch: all -> 0x00e8, Exception -> 0x0158, Merged into TryCatch #1 {all -> 0x00e8, Exception -> 0x0158, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00e1, B:12:0x00eb, B:14:0x00f3, B:16:0x00f7, B:17:0x0104, B:19:0x0112, B:20:0x011d, B:22:0x0129, B:24:0x0131, B:26:0x0143, B:27:0x015a, B:55:0x015e, B:58:0x0170, B:60:0x017d, B:62:0x0183, B:63:0x0185, B:65:0x0189, B:67:0x018f, B:69:0x0195, B:71:0x0199, B:75:0x0177, B:29:0x01a7, B:31:0x0218, B:34:0x0223, B:37:0x024c, B:39:0x02a5, B:40:0x02a7, B:43:0x0470, B:46:0x047e, B:47:0x04da, B:51:0x0465, B:80:0x01a4, B:81:0x0119, B:82:0x04dc), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x017d A[Catch: all -> 0x00e8, Exception -> 0x0158, Merged into TryCatch #1 {all -> 0x00e8, Exception -> 0x0158, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00e1, B:12:0x00eb, B:14:0x00f3, B:16:0x00f7, B:17:0x0104, B:19:0x0112, B:20:0x011d, B:22:0x0129, B:24:0x0131, B:26:0x0143, B:27:0x015a, B:55:0x015e, B:58:0x0170, B:60:0x017d, B:62:0x0183, B:63:0x0185, B:65:0x0189, B:67:0x018f, B:69:0x0195, B:71:0x0199, B:75:0x0177, B:29:0x01a7, B:31:0x0218, B:34:0x0223, B:37:0x024c, B:39:0x02a5, B:40:0x02a7, B:43:0x0471, B:46:0x047f, B:47:0x04e3, B:51:0x0466, B:80:0x01a4, B:81:0x0119, B:82:0x04e5), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0183 A[Catch: all -> 0x00e8, Exception -> 0x0158, Merged into TryCatch #1 {all -> 0x00e8, Exception -> 0x0158, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00e1, B:12:0x00eb, B:14:0x00f3, B:16:0x00f7, B:17:0x0104, B:19:0x0112, B:20:0x011d, B:22:0x0129, B:24:0x0131, B:26:0x0143, B:27:0x015a, B:55:0x015e, B:58:0x0170, B:60:0x017d, B:62:0x0183, B:63:0x0185, B:65:0x0189, B:67:0x018f, B:69:0x0195, B:71:0x0199, B:75:0x0177, B:29:0x01a7, B:31:0x0218, B:34:0x0223, B:37:0x024c, B:39:0x02a5, B:40:0x02a7, B:43:0x0471, B:46:0x047f, B:47:0x04e3, B:51:0x0466, B:80:0x01a4, B:81:0x0119, B:82:0x04e5), top: B:3:0x0003 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -715,6 +716,7 @@ public class SharedConfig {
                         shadowsInSections = sharedPreferences.getBoolean("shadowsInSections", false);
                         debugViewMetrics = sharedPreferences.getBoolean("debugViewMetrics", false);
                         photoHighQualityDefault = sharedPreferences.getBoolean("photoHighQualityDefault", false);
+                        photoLiveDefault = sharedPreferences.getBoolean("photoLiveDefault", false);
                         loadDebugConfig(sharedPreferences);
                         showNotificationsForAllAccounts = ApplicationLoader.applicationContext.getSharedPreferences("Notifications", 0).getBoolean("AllAccounts", true);
                         configLoaded = true;
@@ -832,6 +834,7 @@ public class SharedConfig {
                 shadowsInSections = sharedPreferences.getBoolean("shadowsInSections", false);
                 debugViewMetrics = sharedPreferences.getBoolean("debugViewMetrics", false);
                 photoHighQualityDefault = sharedPreferences.getBoolean("photoHighQualityDefault", false);
+                photoLiveDefault = sharedPreferences.getBoolean("photoLiveDefault", false);
                 loadDebugConfig(sharedPreferences);
                 showNotificationsForAllAccounts = ApplicationLoader.applicationContext.getSharedPreferences("Notifications", 0).getBoolean("AllAccounts", true);
                 configLoaded = true;

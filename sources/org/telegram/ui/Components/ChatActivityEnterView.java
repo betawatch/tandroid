@@ -3058,6 +3058,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             });
             ImageView imageView4 = new ImageView(activity) { // from class: org.telegram.ui.Components.ChatActivityEnterView.20
                 @Override // android.view.View
+                public ViewPropertyAnimator animate() {
+                    AndroidUtilities.printStackTrace("WTF_DEBUG");
+                    return super.animate();
+                }
+
+                @Override // android.view.View
                 public boolean dispatchTouchEvent(MotionEvent motionEvent) {
                     if (getAlpha() < 0.5f) {
                         return false;
@@ -6213,8 +6219,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         ArrayList arrayList2 = new ArrayList();
                         SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
                         MediaController.PhotoEntry photoEntry2 = photoEntry;
-                        boolean z3 = photoEntry2.isVideo;
-                        if (!z3 && (str = photoEntry2.imagePath) != null) {
+                        if (!photoEntry2.isVideo && (str = photoEntry2.imagePath) != null) {
                             sendingMediaInfo.path = str;
                         } else {
                             String str2 = photoEntry2.path;
@@ -6223,17 +6228,19 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             }
                         }
                         sendingMediaInfo.thumbPath = photoEntry2.thumbPath;
-                        sendingMediaInfo.isVideo = z3;
-                        sendingMediaInfo.isLivePhoto = photoEntry2.isLivePhoto;
-                        sendingMediaInfo.discardLivePhoto = photoEntry2.discardLivePhoto;
-                        sendingMediaInfo.livePhotoVideoOffset = photoEntry2.livePhotoVideoOffset;
-                        sendingMediaInfo.livePhotoTimestampUs = photoEntry2.livePhotoTimestampUs;
-                        CharSequence charSequence = photoEntry2.caption;
-                        sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
+                        sendingMediaInfo.isLivePhoto = photoEntry2.isLivePhoto();
                         MediaController.PhotoEntry photoEntry3 = photoEntry;
-                        sendingMediaInfo.entities = photoEntry3.entities;
-                        sendingMediaInfo.masks = photoEntry3.stickers;
-                        sendingMediaInfo.ttl = photoEntry3.ttl;
+                        sendingMediaInfo.isVideo = photoEntry3.isVideo;
+                        sendingMediaInfo.discardLivePhoto = photoEntry3.isUnalivePhoto();
+                        MediaController.PhotoEntry photoEntry4 = photoEntry;
+                        sendingMediaInfo.livePhotoVideoOffset = photoEntry4.livePhotoVideoOffset;
+                        sendingMediaInfo.livePhotoTimestampUs = photoEntry4.livePhotoTimestampUs;
+                        CharSequence charSequence = photoEntry4.caption;
+                        sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
+                        MediaController.PhotoEntry photoEntry5 = photoEntry;
+                        sendingMediaInfo.entities = photoEntry5.entities;
+                        sendingMediaInfo.masks = photoEntry5.stickers;
+                        sendingMediaInfo.ttl = photoEntry5.ttl;
                         sendingMediaInfo.videoEditedInfo = videoEditedInfo;
                         sendingMediaInfo.canDeleteAfter = true;
                         arrayList2.add(sendingMediaInfo);
@@ -9113,7 +9120,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 }
             }
         } else {
-            if (trimmedString.length() > 0 || this.forceShowSendButton || this.audioToSend != null || this.videoToSendMessageObject != null || ((this.slowModeTimer == Integer.MAX_VALUE && !isInScheduleMode()) || (this.isLiveComment && getStarsPrice() > 0))) {
+            if (trimmedString.length() > 0 || this.forceShowSendButton || this.audioToSend != null || this.videoToSendMessageObject != null || ((this.slowModeTimer == Integer.MAX_VALUE && !isInScheduleMode()) || ((this.isLiveComment && getStarsPrice() > 0) || this.animatorIsBlockedByStreaming.getValue()))) {
                 EditTextCaption editTextCaption2 = this.messageEditText;
                 final String caption = editTextCaption2 == null ? null : editTextCaption2.getCaption();
                 boolean z6 = caption != null && (getSendButtonInternal().getVisibility() == 0 || ((imageView2 = this.expandStickersButton) != null && imageView2.getVisibility() == 0));
@@ -9129,7 +9136,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     this.sendButtonBackgroundColor = themedColor;
                     Theme.setSelectorDrawableColor(this.sendButton.getBackground(), Color.argb(24, Color.red(themedColor), Color.green(themedColor), Color.blue(themedColor)), true);
                 }
-                if (this.audioVideoButtonContainer.getVisibility() != 0 && this.slowModeButton.getVisibility() != 0 && !z6 && !z7) {
+                if (this.audioVideoButtonContainer.getVisibility() != 0 && this.slowModeButton.getVisibility() != 0 && !z6 && !z7 && !this.animatorIsBlockedByStreaming.getValue()) {
                     ChatActivitySideControlsButtonsLayout chatActivitySideControlsButtonsLayout3 = this.sideButtons;
                     if (chatActivitySideControlsButtonsLayout3 != null) {
                         chatActivitySideControlsButtonsLayout3.showButton(0, z8, true);
@@ -11600,6 +11607,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
 
     public void setBlockedByStreaming(boolean z, boolean z2) {
         this.animatorIsBlockedByStreaming.setValue(z, z2);
+        checkSendButton(z2);
     }
 
     public ValueAnimator animateSendButton(boolean z) {
@@ -13646,6 +13654,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 }
 
                 @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
+                public /* synthetic */ void updatedLivePhotos() {
+                    PhotoViewer.PhotoViewerProvider.-CC.$default$updatedLivePhotos(this);
+                }
+
+                @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
                 public void willHidePhotoViewer() {
                 }
 
@@ -13775,9 +13788,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     sendingMediaInfo.thumbPath = photoEntry.thumbPath;
                     sendingMediaInfo.coverPath = photoEntry.coverPath;
                     sendingMediaInfo.coverPhoto = photoEntry.coverPhoto;
+                    sendingMediaInfo.isLivePhoto = photoEntry.isLivePhoto();
                     sendingMediaInfo.isVideo = photoEntry.isVideo;
-                    sendingMediaInfo.isLivePhoto = photoEntry.isLivePhoto;
-                    sendingMediaInfo.discardLivePhoto = photoEntry.discardLivePhoto;
+                    sendingMediaInfo.discardLivePhoto = photoEntry.isUnalivePhoto();
                     sendingMediaInfo.livePhotoVideoOffset = photoEntry.livePhotoVideoOffset;
                     sendingMediaInfo.livePhotoTimestampUs = photoEntry.livePhotoTimestampUs;
                     CharSequence charSequence = photoEntry.caption;
@@ -16993,8 +17006,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             checkUi_TopViewVisibility();
         }
         if (i == 2) {
-            this.sendButtonBlockedByTypingView.setScaleX(f);
-            this.sendButtonBlockedByTypingView.setScaleY(f);
+            this.sendButtonBlockedByTypingView.setAlpha(f);
+            this.sendButtonBlockedByTypingView.setScaleX(AndroidUtilities.lerp(0.5f, 1.0f, f));
+            this.sendButtonBlockedByTypingView.setScaleY(AndroidUtilities.lerp(0.5f, 1.0f, f));
             this.sendButtonBlockedByTypingView.setVisibility(f > 0.0f ? 0 : 4);
         }
         invalidate();

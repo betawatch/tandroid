@@ -1602,8 +1602,7 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
             tL_messageMediaDocument.flags |= 1;
             tL_messageMediaDocument.document = document2;
             afterUploadingMedia();
-        }
-        if (videoEditedInfo != null) {
+        } else if (videoEditedInfo != null) {
             TLRPC.TL_message tL_message = new TLRPC.TL_message();
             tL_message.id = 1;
             StickerUploader stickerUploader5 = this.stickerUploader;

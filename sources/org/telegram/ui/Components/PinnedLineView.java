@@ -15,7 +15,6 @@ import android.graphics.Shader;
 import android.view.View;
 import androidx.core.graphics.ColorUtils;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
@@ -32,6 +31,7 @@ public class PinnedLineView extends View {
     Paint fadePaint2;
     private int lineHFrom;
     private int lineHTo;
+    private boolean needDrawFade;
     private int nextPosition;
     Paint paint;
     RectF rectF;
@@ -138,21 +138,24 @@ public class PinnedLineView extends View {
         invalidate();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public void checkLayerType() {
+        boolean z = (this.replaceInProgress ? Math.max(this.animateFromTotal, this.animateToTotal) : this.totalCount) > 3;
+        int i = z ? 2 : 0;
+        if (getLayerType() != i) {
+            setLayerType(i, null);
+            invalidate();
+        }
+        this.needDrawFade = z;
+    }
+
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
-        int i;
         float measuredHeight;
         float f;
         super.onDraw(canvas);
-        if (this.selectedPosition < 0 || (i = this.totalCount) == 0) {
+        if (this.selectedPosition < 0 || this.totalCount == 0) {
             return;
-        }
-        if (this.replaceInProgress) {
-            i = Math.max(this.animateFromTotal, this.animateToTotal);
-        }
-        boolean z = i > 3;
-        if (z) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.didReceiveCall, 31);
         }
         int dp = AndroidUtilities.dp(8.0f);
         if (this.replaceInProgress) {
@@ -198,12 +201,12 @@ public class PinnedLineView extends View {
             float f11 = f10 + measuredHeight;
             if (f11 >= f4 && f10 <= getMeasuredHeight()) {
                 this.rectF.set(f4, f10 + dpf2, getMeasuredWidth(), f11 - dpf2);
-                boolean z2 = this.replaceInProgress;
-                if (z2 && max >= this.animateToTotal) {
-                    this.paint.setColor(ColorUtils.setAlphaComponent(this.color, (int) ((Color.alpha(r15) / 255.0f) * 76.0f * (1.0f - this.animationProgress))));
+                boolean z = this.replaceInProgress;
+                if (z && max >= this.animateToTotal) {
+                    this.paint.setColor(ColorUtils.setAlphaComponent(this.color, (int) ((Color.alpha(r14) / 255.0f) * 76.0f * (1.0f - this.animationProgress))));
                     canvas.drawRoundRect(this.rectF, measuredWidth, measuredWidth, this.paint);
                     this.paint.setColor(ColorUtils.setAlphaComponent(this.color, (int) ((Color.alpha(r11) / 255.0f) * 76.0f)));
-                } else if (z2 && max >= this.animateFromTotal) {
+                } else if (z && max >= this.animateFromTotal) {
                     this.paint.setColor(ColorUtils.setAlphaComponent(this.color, (int) ((Color.alpha(r11) / 255.0f) * 76.0f * this.animationProgress)));
                     canvas.drawRoundRect(this.rectF, measuredWidth, measuredWidth, this.paint);
                     this.paint.setColor(ColorUtils.setAlphaComponent(this.color, (int) ((Color.alpha(r11) / 255.0f) * 76.0f)));
@@ -225,7 +228,7 @@ public class PinnedLineView extends View {
             this.rectF.set(0.0f, f15 + dpf2, getMeasuredWidth(), (f15 + measuredHeight) - dpf2);
             canvas.drawRoundRect(this.rectF, measuredWidth, measuredWidth, this.selectedPaint);
         }
-        if (z) {
+        if (this.needDrawFade) {
             canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), AndroidUtilities.dp(6.0f), this.fadePaint);
             canvas.drawRect(0.0f, getMeasuredHeight() - AndroidUtilities.dp(6.0f), getMeasuredWidth(), getMeasuredHeight(), this.fadePaint);
             canvas.translate(0.0f, getMeasuredHeight() - AndroidUtilities.dp(6.0f));
@@ -246,9 +249,7 @@ public class PinnedLineView extends View {
             this.selectedPosition = i;
             this.totalCount = i2;
             invalidate();
-            return;
-        }
-        if (this.totalCount != i2 || (Math.abs(i3 - i) > 2 && !this.animationInProgress && !this.replaceInProgress)) {
+        } else if (this.totalCount != i2 || (Math.abs(i3 - i) > 2 && !this.animationInProgress && !this.replaceInProgress)) {
             ValueAnimator valueAnimator2 = this.animator;
             if (valueAnimator2 != null) {
                 this.nextPosition = 0;
@@ -313,14 +314,16 @@ public class PinnedLineView extends View {
                         pinnedLineView2.selectPosition(pinnedLineView2.nextPosition);
                         PinnedLineView.this.nextPosition = -1;
                     }
+                    PinnedLineView.this.checkLayerType();
                 }
             });
             this.animator.setInterpolator(CubicBezierInterpolator.DEFAULT);
             this.animator.setDuration(220L);
             this.animator.start();
-            return;
+        } else {
+            selectPosition(i);
         }
-        selectPosition(i);
+        checkLayerType();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
