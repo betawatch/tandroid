@@ -12,18 +12,22 @@ import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.dynamicanimation.animation.SpringForce;
 import java.util.HashSet;
 import java.util.Set;
+import me.vkryl.android.animator.BoolAnimator;
+import me.vkryl.android.animator.FactorAnimator;
 import me.vkryl.android.animator.ListAnimator;
 import me.vkryl.android.util.ClickHelper;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedLinearLayout;
+import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.glass.GlassTabView;
 
 /* loaded from: classes4.dex */
 public class MainTabsLayout extends AnimatedLinearLayout {
     private float animatedLongSelectedViewCenterX;
     private float animatedLongSelectedViewOffsetX;
+    private final BoolAnimator animatorIsScaled;
     private int biggestTabTextWidth;
     private final ClickHelper clickHelper;
     private boolean drawCustomSelector;
@@ -94,30 +98,21 @@ public class MainTabsLayout extends AnimatedLinearLayout {
         springAnimation2.setSpring(new SpringForce(1.0f).setStiffness(250.0f).setDampingRatio(0.25f));
         springAnimation4.setSpring(new SpringForce(1.0f).setStiffness(1500.0f).setDampingRatio(0.75f));
         this.tabsWithIgnoreClick = new HashSet();
+        this.animatorIsScaled = new BoolAnimator(0, new FactorAnimator.Target() { // from class: org.telegram.ui.MainTabsLayout$$ExternalSyntheticLambda1
+            @Override // me.vkryl.android.animator.FactorAnimator.Target
+            public /* synthetic */ void onFactorChangeFinished(int i, float f, FactorAnimator factorAnimator) {
+                FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i, f, factorAnimator);
+            }
+
+            @Override // me.vkryl.android.animator.FactorAnimator.Target
+            public final void onFactorChanged(int i, float f, float f2, FactorAnimator factorAnimator) {
+                MainTabsLayout.this.lambda$new$1(i, f, f2, factorAnimator);
+            }
+        }, CubicBezierInterpolator.EASE_OUT_QUINT, 380L);
         this.clickHelper = new ClickHelper(new ClickHelper.Delegate() { // from class: org.telegram.ui.MainTabsLayout.3
             @Override // me.vkryl.android.util.ClickHelper.Delegate
             public /* synthetic */ boolean forceEnableVibration() {
                 return ClickHelper.Delegate.-CC.$default$forceEnableVibration(this);
-            }
-
-            /*  JADX ERROR: JadxRuntimeException in pass: ModVisitor
-                jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r0v0 long, still in use, count: 1, list:
-                  (r0v0 long) from 0x0004: RETURN (r0v0 long)
-                	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
-                	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
-                	at jadx.core.utils.InsnRemover.unbindInsn(InsnRemover.java:91)
-                	at jadx.core.utils.InsnRemover.addAndUnbind(InsnRemover.java:57)
-                	at jadx.core.dex.visitors.ModVisitor.removeStep(ModVisitor.java:452)
-                	at jadx.core.dex.visitors.ModVisitor.visit(ModVisitor.java:96)
-                */
-            @Override // me.vkryl.android.util.ClickHelper.Delegate
-            public /* synthetic */ long getLongPressDuration() {
-                /*
-                    r2 = this;
-                    long r0 = me.vkryl.android.util.ClickHelper.Delegate.-CC.$default$getLongPressDuration(r2)
-                    return r0
-                */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.MainTabsLayout.3.getLongPressDuration():long");
             }
 
             @Override // me.vkryl.android.util.ClickHelper.Delegate
@@ -140,6 +135,21 @@ public class MainTabsLayout extends AnimatedLinearLayout {
             }
 
             @Override // me.vkryl.android.util.ClickHelper.Delegate
+            public /* synthetic */ void onClickTouchDown(View view, float f, float f2) {
+                ClickHelper.Delegate.-CC.$default$onClickTouchDown(this, view, f, f2);
+            }
+
+            @Override // me.vkryl.android.util.ClickHelper.Delegate
+            public /* synthetic */ void onClickTouchMove(View view, float f, float f2) {
+                ClickHelper.Delegate.-CC.$default$onClickTouchMove(this, view, f, f2);
+            }
+
+            @Override // me.vkryl.android.util.ClickHelper.Delegate
+            public /* synthetic */ void onClickTouchUp(View view, float f, float f2) {
+                ClickHelper.Delegate.-CC.$default$onClickTouchUp(this, view, f, f2);
+            }
+
+            @Override // me.vkryl.android.util.ClickHelper.Delegate
             public boolean needClickAt(View view, float f, float f2) {
                 MainTabsLayout.this.lastLongSelectedView = null;
                 View findChildUnder = MainTabsLayout.findChildUnder(MainTabsLayout.this, f, f2);
@@ -148,22 +158,50 @@ public class MainTabsLayout extends AnimatedLinearLayout {
 
             @Override // me.vkryl.android.util.ClickHelper.Delegate
             public boolean onLongPressRequestedAt(View view, float f, float f2) {
+                MainTabsLayout.this.checkPivot(view, f, f2);
                 MainTabsLayout.this.isInLongPress = true;
                 AndroidUtilities.cancelRunOnUIThread(MainTabsLayout.this.restoreDrawSelector);
                 MainTabsLayout.this.setSkipDrawSelector(true);
                 MainTabsLayout.this.checkLongMove(f, f2, true, false);
                 MainTabsLayout.this.invalidate();
+                longTouchStart();
                 return true;
             }
 
             @Override // me.vkryl.android.util.ClickHelper.Delegate
             public void onLongPressMove(View view, MotionEvent motionEvent, float f, float f2, float f3, float f4) {
+                MainTabsLayout.this.checkPivot(view, f, f2);
                 MainTabsLayout.this.checkLongMove(f, f2, false, false);
                 MainTabsLayout.this.invalidate();
             }
 
+            /*  JADX ERROR: JadxRuntimeException in pass: ModVisitor
+                jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r0v0 long, still in use, count: 1, list:
+                  (r0v0 long) from 0x0006: ARITH (r0v1 long) = (r0v0 long) * (750 long)
+                	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
+                	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
+                	at jadx.core.utils.InsnRemover.unbindInsn(InsnRemover.java:91)
+                	at jadx.core.utils.InsnRemover.addAndUnbind(InsnRemover.java:57)
+                	at jadx.core.dex.visitors.ModVisitor.removeStep(ModVisitor.java:452)
+                	at jadx.core.dex.visitors.ModVisitor.visit(ModVisitor.java:96)
+                */
+            @Override // me.vkryl.android.util.ClickHelper.Delegate
+            public long getLongPressDuration() {
+                /*
+                    r4 = this;
+                    long r0 = me.vkryl.android.util.ClickHelper.Delegate.-CC.$default$getLongPressDuration(r4)
+                    r2 = 750(0x2ee, double:3.705E-321)
+                    long r0 = r0 * r2
+                    r2 = 1000(0x3e8, double:4.94E-321)
+                    long r0 = r0 / r2
+                    return r0
+                */
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.MainTabsLayout.3.getLongPressDuration():long");
+            }
+
             @Override // me.vkryl.android.util.ClickHelper.Delegate
             public void onLongPressFinish(View view, float f, float f2) {
+                MainTabsLayout.this.checkPivot(view, f, f2);
                 MainTabsLayout.this.checkLongMove(f, f2, false, true);
                 MainTabsLayout.this.isInLongPress = false;
                 AndroidUtilities.runOnUIThread(MainTabsLayout.this.restoreDrawSelector, 450L);
@@ -172,42 +210,26 @@ public class MainTabsLayout extends AnimatedLinearLayout {
                 }
                 MainTabsLayout.this.lastLongSelectedView = null;
                 MainTabsLayout.this.invalidate();
+                longTouchEnd();
             }
 
             @Override // me.vkryl.android.util.ClickHelper.Delegate
             public void onLongPressCancelled(View view, float f, float f2) {
+                MainTabsLayout.this.checkPivot(view, f, f2);
                 MainTabsLayout.this.checkLongMove(f, f2, false, true);
                 MainTabsLayout.this.isInLongPress = false;
                 AndroidUtilities.runOnUIThread(MainTabsLayout.this.restoreDrawSelector, 450L);
                 MainTabsLayout.this.lastLongSelectedView = null;
                 MainTabsLayout.this.invalidate();
+                longTouchEnd();
             }
 
-            @Override // me.vkryl.android.util.ClickHelper.Delegate
-            public void onClickTouchDown(View view, float f, float f2) {
-                MainTabsLayout.this.checkPivot(view, f, f2);
-                if (!MainTabsLayout.this.scaleX.isRunning()) {
-                    MainTabsLayout.this.scaleX.setStartVelocity(-0.45f);
-                    MainTabsLayout.this.scaleY.setStartVelocity(-0.45f);
-                }
-                MainTabsLayout.this.scaleX.animateToFinalPosition(1.012f);
-                MainTabsLayout.this.scaleY.animateToFinalPosition(1.012f);
+            private void longTouchStart() {
+                MainTabsLayout.this.animatorIsScaled.setValue(true, true);
             }
 
-            @Override // me.vkryl.android.util.ClickHelper.Delegate
-            public void onClickTouchMove(View view, float f, float f2) {
-                MainTabsLayout.this.checkPivot(view, f, f2);
-            }
-
-            @Override // me.vkryl.android.util.ClickHelper.Delegate
-            public void onClickTouchUp(View view, float f, float f2) {
-                MainTabsLayout.this.checkPivot(view, f, f2);
-                if (!MainTabsLayout.this.scaleX.isRunning()) {
-                    MainTabsLayout.this.scaleX.setStartVelocity(0.25f);
-                    MainTabsLayout.this.scaleY.setStartVelocity(0.25f);
-                }
-                MainTabsLayout.this.scaleX.animateToFinalPosition(1.0f);
-                MainTabsLayout.this.scaleY.animateToFinalPosition(1.0f);
+            private void longTouchEnd() {
+                MainTabsLayout.this.animatorIsScaled.setValue(false, true);
             }
         });
         this.resourcesProvider = resourcesProvider;
@@ -449,6 +471,12 @@ public class MainTabsLayout extends AnimatedLinearLayout {
         this.tabsWithIgnoreClick.add(view);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$1(int i, float f, float f2, FactorAnimator factorAnimator) {
+        setScaleX(AndroidUtilities.lerp(1.0f, 1.019f, f));
+        setScaleY(AndroidUtilities.lerp(1.0f, 1.019f, f));
+    }
+
     @Override // android.view.View
     public void setScaleY(float f) {
         super.setScaleY(f);
@@ -493,8 +521,8 @@ public class MainTabsLayout extends AnimatedLinearLayout {
             f3 = f5;
             f4 = f6;
         }
-        float lerp = AndroidUtilities.lerp(f5, f3, 0.95f);
-        float lerp2 = AndroidUtilities.lerp(f6, f4, 2.83f);
+        float lerp = AndroidUtilities.lerp(f5, f3, 1.0f);
+        float lerp2 = AndroidUtilities.lerp(f6, f4, 3.0f);
         view.setPivotX(lerp);
         view.setPivotY(lerp2);
     }

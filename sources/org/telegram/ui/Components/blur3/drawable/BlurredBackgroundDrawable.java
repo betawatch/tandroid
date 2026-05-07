@@ -625,28 +625,13 @@ public abstract class BlurredBackgroundDrawable extends Drawable {
         if (Color.alpha(compositeColors) == 0 && Color.alpha(this.shadowColor) == 0) {
             return;
         }
-        NinePatchDrawable checkNinePatchDrawable = checkNinePatchDrawable(compositeColors);
-        if (checkNinePatchDrawable != null) {
-            Rect rect = this.boundProps.boundsWithPadding;
-            int i2 = rect.left;
-            Rect rect2 = this.ninePatchDrawablePadding;
-            checkNinePatchDrawable.setBounds(i2 - rect2.left, rect.top - rect2.top, rect.right + rect2.right, rect.bottom + rect2.bottom);
-            checkNinePatchDrawable.setAlpha(this.alpha);
-            checkNinePatchDrawable.draw(canvas);
-            drawStrokeInternalIfNeeded(canvas);
-            return;
-        }
-        int multAlpha = Theme.multAlpha(compositeColors, this.alpha / 255.0f);
-        if (Color.alpha(this.shadowColor) > 0 && this.alpha == 255) {
-            float f = this.shadowAlpha;
-            if (f > 0.0f) {
-                this.shadowPaint.setShadowLayer(this.shadowLayerRadius, this.shadowLayerDx, this.shadowLayerDy, Theme.multAlpha(this.shadowColor, f));
-                this.boundProps.drawShadows(canvas, this.shadowPaint, this.inAppKeyboardOptimization);
-            }
-        }
-        this.backgroundColorPaint.setColor(multAlpha);
-        this.boundProps.draw(canvas, this.backgroundColorPaint);
-        drawStrokeInternalIfNeeded(canvas);
+        NinePatchDrawable checkNinePatchDrawable = checkNinePatchDrawable(compositeColors, true);
+        Rect rect = this.boundProps.boundsWithPadding;
+        int i2 = rect.left;
+        Rect rect2 = this.ninePatchDrawablePadding;
+        checkNinePatchDrawable.setBounds(i2 - rect2.left, rect.top - rect2.top, rect.right + rect2.right, rect.bottom + rect2.bottom);
+        checkNinePatchDrawable.setAlpha(this.alpha);
+        checkNinePatchDrawable.draw(canvas);
     }
 
     private void drawSourceBitmap(Canvas canvas, BlurredBackgroundSourceBitmap blurredBackgroundSourceBitmap) {
@@ -663,21 +648,13 @@ public abstract class BlurredBackgroundDrawable extends Drawable {
             }
         }
         if (Color.alpha(this.shadowColor) > 0) {
-            NinePatchDrawable checkNinePatchDrawable = checkNinePatchDrawable(0);
-            if (checkNinePatchDrawable != null) {
-                Rect rect = this.boundProps.boundsWithPadding;
-                int i = rect.left;
-                Rect rect2 = this.ninePatchDrawablePadding;
-                checkNinePatchDrawable.setBounds(i - rect2.left, rect.top - rect2.top, rect.right + rect2.right, rect.bottom + rect2.bottom);
-                checkNinePatchDrawable.setAlpha(this.alpha);
-                checkNinePatchDrawable.draw(canvas);
-            } else if (this.alpha == 255) {
-                float f = this.shadowAlpha;
-                if (f > 0.0f) {
-                    this.shadowPaint.setShadowLayer(this.shadowLayerRadius, this.shadowLayerDx, this.shadowLayerDy, Theme.multAlpha(this.shadowColor, f));
-                    this.boundProps.drawShadows(canvas, this.shadowPaint, this.inAppKeyboardOptimization);
-                }
-            }
+            NinePatchDrawable checkNinePatchDrawable = checkNinePatchDrawable(0, false);
+            Rect rect = this.boundProps.boundsWithPadding;
+            int i = rect.left;
+            Rect rect2 = this.ninePatchDrawablePadding;
+            checkNinePatchDrawable.setBounds(i - rect2.left, rect.top - rect2.top, rect.right + rect2.right, rect.bottom + rect2.bottom);
+            checkNinePatchDrawable.setAlpha(this.alpha);
+            checkNinePatchDrawable.draw(canvas);
         }
         if (this.bitmapShader != null && bitmap != null && !bitmap.isRecycled() && this.alpha > 0) {
             this.bitmapShaderMatrix.set(blurredBackgroundSourceBitmap.getMatrix());
@@ -728,7 +705,7 @@ public abstract class BlurredBackgroundDrawable extends Drawable {
         rectF.offset(this.sourceOffsetX, this.sourceOffsetY);
     }
 
-    private NinePatchDrawable checkNinePatchDrawable(int i) {
+    private NinePatchDrawable checkNinePatchDrawable(final int i, final boolean z) {
         this.ninePatchHashBuilder.start();
         this.ninePatchHashBuilder.add(i);
         this.ninePatchHashBuilder.add(this.shadowColor);
@@ -736,13 +713,91 @@ public abstract class BlurredBackgroundDrawable extends Drawable {
         this.ninePatchHashBuilder.addF(this.shadowLayerRadius);
         this.ninePatchHashBuilder.addF(this.shadowLayerDx);
         this.ninePatchHashBuilder.addF(this.shadowLayerDy);
+        this.ninePatchHashBuilder.add(z);
+        if (z) {
+            this.ninePatchHashBuilder.add(this.strokeColorTop);
+            this.ninePatchHashBuilder.add(this.strokeColorBottom);
+            this.ninePatchHashBuilder.addF(this.boundProps.strokeWidthTop);
+            this.ninePatchHashBuilder.addF(this.boundProps.strokeWidthBottom);
+        }
         long j = this.ninePatchHashBuilder.get();
         if (this.ninePatchDrawable == null || this.ninePatchDrawableHash != j) {
             this.ninePatchDrawableHash = j;
-            NinePatchDrawable createNinePatch = NinePatchBuilder.createNinePatch(this.ninePatchRef, i, this.boundProps.radii, this.shadowLayerRadius, this.shadowColor, this.shadowLayerDx, this.shadowLayerDy, 1);
+            NinePatchDrawable createNinePatch = NinePatchBuilder.createNinePatch(this.ninePatchRef, this.boundProps.radii, this.shadowLayerRadius, this.shadowLayerDx, this.shadowLayerDy, Color.alpha(i) == 255 ? i : 1, new NinePatchBuilder.NinePathRenderer() { // from class: org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable$$ExternalSyntheticLambda0
+                @Override // org.telegram.ui.Components.blur3.utils.NinePatchBuilder.NinePathRenderer
+                public final void draw(Canvas canvas, RectF rectF, float[] fArr) {
+                    BlurredBackgroundDrawable.this.lambda$checkNinePatchDrawable$0(i, z, canvas, rectF, fArr);
+                }
+            });
             this.ninePatchDrawable = createNinePatch;
             createNinePatch.getPadding(this.ninePatchDrawablePadding);
         }
         return this.ninePatchDrawable;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$checkNinePatchDrawable$0(int i, boolean z, Canvas canvas, RectF rectF, float[] fArr) {
+        Path path = new Path();
+        Path.Direction direction = Path.Direction.CW;
+        path.addRoundRect(rectF, fArr, direction);
+        Paint paint = new Paint(1);
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(i);
+        float f = this.shadowLayerRadius;
+        if (f > 0.0f) {
+            paint.setShadowLayer(f, this.shadowLayerDx, this.shadowLayerDy, this.shadowColor);
+        }
+        canvas.drawPath(path, paint);
+        if (this.shadowLayerRadius > 0.0f) {
+            paint.clearShadowLayer();
+            canvas.drawPath(path, paint);
+        }
+        if (z) {
+            Path path2 = new Path();
+            Path path3 = new Path();
+            float[] copyOf = Arrays.copyOf(this.boundProps.radii, 8);
+            boolean radiiAreSame = radiiAreSame(copyOf);
+            float min = Math.min(rectF.width(), rectF.height()) / 2.0f;
+            float[] fArr2 = tmpRadii;
+            Arrays.fill(fArr2, 0.0f);
+            fArr2[0] = copyOf[0];
+            fArr2[1] = copyOf[1];
+            fArr2[2] = copyOf[2];
+            fArr2[3] = copyOf[3];
+            if (radiiAreSame && copyOf[0] > min) {
+                fArr2[3] = min;
+                fArr2[2] = min;
+                fArr2[1] = min;
+                fArr2[0] = min;
+            }
+            float f2 = rectF.left;
+            float f3 = rectF.top;
+            path2.addRoundRect(f2, f3, rectF.right, Math.min(copyOf[0] + f3, rectF.bottom), fArr2, direction);
+            float f4 = rectF.left;
+            float f5 = rectF.top;
+            float f6 = this.boundProps.strokeWidthTop + f5;
+            float f7 = rectF.right;
+            float min2 = Math.min(f5 + copyOf[0], rectF.bottom);
+            Path.Direction direction2 = Path.Direction.CCW;
+            path2.addRoundRect(f4, f6, f7, min2, fArr2, direction2);
+            Arrays.fill(fArr2, 0.0f);
+            fArr2[4] = copyOf[4];
+            fArr2[5] = copyOf[5];
+            fArr2[6] = copyOf[6];
+            fArr2[7] = copyOf[7];
+            if (radiiAreSame && copyOf[0] > min) {
+                fArr2[7] = min;
+                fArr2[6] = min;
+                fArr2[5] = min;
+                fArr2[4] = min;
+            }
+            path3.addRoundRect(rectF.left, Math.max(rectF.bottom - copyOf[4], rectF.top), rectF.right, rectF.bottom, fArr2, direction);
+            path3.addRoundRect(rectF.left, Math.max(rectF.bottom - copyOf[4], rectF.top), rectF.right, rectF.bottom - this.boundProps.strokeWidthBottom, fArr2, direction2);
+            Paint paint2 = new Paint(1);
+            paint2.setColor(this.strokeColorTop);
+            canvas.drawPath(path2, paint2);
+            paint2.setColor(this.strokeColorBottom);
+            canvas.drawPath(path3, paint2);
+        }
     }
 }

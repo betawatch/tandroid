@@ -1902,7 +1902,7 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
                                 }
                                 int countForSection = this.sectionsAdapter.getCountForSection(sectionForPosition);
                                 int positionInSectionForPosition = this.sectionsAdapter.getPositionInSectionForPosition(adapterPosition);
-                                int i7 = (i5 == 0 || i5 >= getMeasuredHeight() - getPaddingBottom()) ? this.sectionOffset : 0;
+                                int i7 = (i5 == 0 || i5 >= getMeasuredHeight() - getPaddingBottom()) ? this.sectionOffset : -paddingTop;
                                 if (positionInSectionForPosition == countForSection - 1) {
                                     int height = this.pinnedHeader.getHeight();
                                     int top = ((view3.getTop() - paddingTop) - this.sectionOffset) + view3.getHeight();

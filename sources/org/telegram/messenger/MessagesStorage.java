@@ -19373,7 +19373,7 @@ public class MessagesStorage extends BaseController {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v76 ??), method size: 9115
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r30v7 ??), method size: 9115
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
@@ -32454,67 +32454,79 @@ public class MessagesStorage extends BaseController {
         }
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(10:(3:(26:9|(1:11)|(1:13)(1:559)|14|(1:16)|17|18|(7:20|21|22|23|24|25|26)(3:550|551|552)|27|(5:31|(2:39|(2:41|(2:43|(2:59|60))(2:64|(2:66|67)(2:68|(2:70|71)(1:72))))(1:(2:77|(2:79|80)(1:81))(1:76)))|37|28|29)|82|83|84|(3:86|87|88)(1:539)|90|91|92|(24:94|95|(3:523|524|525)|99|(1:101)|(2:103|104)|125|126|(9:128|129|130|131|132|133|(15:136|(1:138)|139|140|(3:142|143|144)(1:197)|145|(1:(6:147|(2:149|(5:(2:152|(2:154|(1:156)))|(1:185)(1:160)|(2:162|(2:164|(1:1))(0))(1:184)|180|181))(1:187)|186|(0)(0)|180|181)(3:188|189|190))|170|(1:172)|173|(1:175)(1:179)|176|177|178|134)|198|199)(1:517)|200|201|(9:401|402|403|404|405|406|(9:409|(1:411)|412|(5:414|(2:416|(6:(2:419|(1:421))|423|424|425|426|427))|428|429|(7:431|(5:(2:434|(4:436|425|426|427))|424|425|426|427)(1:488)|437|(5:446|(7:448|449|(1:451)|452|(1:454)|455|(2:457|(1:484)(4:(2:460|(2:462|(2:464|465))(1:482))|483|426|427))(1:485))(2:486|487)|466|(5:474|(1:476)(1:480)|477|478|479)|473)|425|426|427)(1:489))|492|490|491|473|407)|493|494)(1:203)|204|205|(1:396)(9:209|210|211|212|213|214|(11:219|(1:221)(1:273)|222|(1:224)(1:272)|225|(1:(4:227|(2:229|(3:(2:232|(2:234|(1:236)))|(1:269)(1:240)|(6:243|244|(1:246)(1:268)|247|(1:249)(1:267)|(8:252|(1:254)|255|(1:257)|258|(1:260)(1:264)|261|262)(0))(1:242)))|270|(0)(0))(1:271))|265|266|263|216|217)|274|275)|276|277|(6:280|281|(1:285)|286|287|278)|292|293|(3:296|297|294)|299|300|(1:371)(5:308|(4:311|(3:358|359|360)(9:313|314|(1:316)(1:357)|317|(1:319)(1:356)|320|(1:(4:322|(2:324|(3:(2:327|(2:329|(1:331)))|(1:335)|(3:338|339|(5:341|(1:343)|344|(1:346)(1:348)|347)(0))(1:337)))(1:353)|352|(0)(0))(2:354|355))|349|350)|351|309)|361|362|369))|532|533|534|95|(1:97)|523|524|525)|524|525)|91|92|(0)|532|533|534|95|(0)|523) */
-    /* JADX WARN: Can't wrap try/catch for region: R(16:7|(12:(26:9|(1:11)|(1:13)(1:559)|14|(1:16)|17|18|(7:20|21|22|23|24|25|26)(3:550|551|552)|27|(5:31|(2:39|(2:41|(2:43|(2:59|60))(2:64|(2:66|67)(2:68|(2:70|71)(1:72))))(1:(2:77|(2:79|80)(1:81))(1:76)))|37|28|29)|82|83|84|(3:86|87|88)(1:539)|90|91|92|(24:94|95|(3:523|524|525)|99|(1:101)|(2:103|104)|125|126|(9:128|129|130|131|132|133|(15:136|(1:138)|139|140|(3:142|143|144)(1:197)|145|(1:(6:147|(2:149|(5:(2:152|(2:154|(1:156)))|(1:185)(1:160)|(2:162|(2:164|(1:1))(0))(1:184)|180|181))(1:187)|186|(0)(0)|180|181)(3:188|189|190))|170|(1:172)|173|(1:175)(1:179)|176|177|178|134)|198|199)(1:517)|200|201|(9:401|402|403|404|405|406|(9:409|(1:411)|412|(5:414|(2:416|(6:(2:419|(1:421))|423|424|425|426|427))|428|429|(7:431|(5:(2:434|(4:436|425|426|427))|424|425|426|427)(1:488)|437|(5:446|(7:448|449|(1:451)|452|(1:454)|455|(2:457|(1:484)(4:(2:460|(2:462|(2:464|465))(1:482))|483|426|427))(1:485))(2:486|487)|466|(5:474|(1:476)(1:480)|477|478|479)|473)|425|426|427)(1:489))|492|490|491|473|407)|493|494)(1:203)|204|205|(1:396)(9:209|210|211|212|213|214|(11:219|(1:221)(1:273)|222|(1:224)(1:272)|225|(1:(4:227|(2:229|(3:(2:232|(2:234|(1:236)))|(1:269)(1:240)|(6:243|244|(1:246)(1:268)|247|(1:249)(1:267)|(8:252|(1:254)|255|(1:257)|258|(1:260)(1:264)|261|262)(0))(1:242)))|270|(0)(0))(1:271))|265|266|263|216|217)|274|275)|276|277|(6:280|281|(1:285)|286|287|278)|292|293|(3:296|297|294)|299|300|(1:371)(5:308|(4:311|(3:358|359|360)(9:313|314|(1:316)(1:357)|317|(1:319)(1:356)|320|(1:(4:322|(2:324|(3:(2:327|(2:329|(1:331)))|(1:335)|(3:338|339|(5:341|(1:343)|344|(1:346)(1:348)|347)(0))(1:337)))(1:353)|352|(0)(0))(2:354|355))|349|350)|351|309)|361|362|369))|532|533|534|95|(1:97)|523|524|525)|91|92|(0)|532|533|534|95|(0)|523|524|525)|560|(0)(0)|14|(0)|17|18|(0)(0)|27|(2:28|29)|82|83|84|(0)(0)|90) */
-    /* JADX WARN: Code restructure failed: missing block: B:106:0x01c3, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(25:7|(3:(26:9|(1:11)|(1:13)(1:559)|14|(1:16)|17|18|(7:20|21|22|23|24|25|26)(3:550|551|552)|27|(5:31|(2:39|(2:41|(2:43|(2:59|60))(2:64|(2:66|67)(2:68|(2:70|71)(1:72))))(1:(2:77|(2:79|80)(1:81))(1:76)))|37|28|29)|82|83|84|(3:86|87|88)(1:539)|90|91|92|(24:94|95|(3:523|524|525)|99|(1:101)|(2:103|104)|125|126|(9:128|129|130|131|132|133|(15:136|(1:138)|139|140|(3:142|143|144)(1:197)|145|(1:(6:147|(2:149|(5:(2:152|(2:154|(1:156)))|(1:185)(1:160)|(2:162|(2:164|(1:1))(0))(1:184)|180|181))(1:187)|186|(0)(0)|180|181)(3:188|189|190))|170|(1:172)|173|(1:175)(1:179)|176|177|178|134)|198|199)(1:517)|200|201|(9:401|402|403|404|405|406|(9:409|(1:411)|412|(5:414|(2:416|(6:(2:419|(1:421))|423|424|425|426|427))|428|429|(7:431|(5:(2:434|(4:436|425|426|427))|424|425|426|427)(1:488)|437|(5:446|(7:448|449|(1:451)|452|(1:454)|455|(2:457|(1:484)(4:(2:460|(2:462|(2:464|465))(1:482))|483|426|427))(1:485))(2:486|487)|466|(5:474|(1:476)(1:480)|477|478|479)|473)|425|426|427)(1:489))|492|490|491|473|407)|493|494)(1:203)|204|205|(1:396)(9:209|210|211|212|213|214|(11:219|(1:221)(1:273)|222|(1:224)(1:272)|225|(1:(4:227|(2:229|(3:(2:232|(2:234|(1:236)))|(1:269)(1:240)|(6:243|244|(1:246)(1:268)|247|(1:249)(1:267)|(8:252|(1:254)|255|(1:257)|258|(1:260)(1:264)|261|262)(0))(1:242)))|270|(0)(0))(1:271))|265|266|263|216|217)|274|275)|276|277|(6:280|281|(1:285)|286|287|278)|292|293|(3:296|297|294)|299|300|(1:371)(5:308|(4:311|(3:358|359|360)(9:313|314|(1:316)(1:357)|317|(1:319)(1:356)|320|(1:(4:322|(2:324|(3:(2:327|(2:329|(1:331)))|(1:335)|(3:338|339|(5:341|(1:343)|344|(1:346)(1:348)|347)(0))(1:337)))(1:353)|352|(0)(0))(2:354|355))|349|350)|351|309)|361|362|369))|532|533|534|95|(1:97)|523|524|525)|524|525)|560|(0)(0)|14|(0)|17|18|(0)(0)|27|(2:28|29)|82|83|84|(0)(0)|90|91|92|(0)|532|533|534|95|(0)|523) */
+    /* JADX WARN: Code restructure failed: missing block: B:106:0x01c4, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:107:0x01c4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:107:0x01c5, code lost:
     
         r1 = r0;
         r2 = r8;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:122:0x01be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:122:0x01bf, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:123:0x01bf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:123:0x01c0, code lost:
     
         r1 = r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:422:0x0401, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:422:0x0402, code lost:
     
         if (r2.contains(" " + r7) != false) goto L215;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:526:0x01dc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:526:0x01dd, code lost:
     
         if (r21.startsWith(r6) != false) goto L116;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:556:0x00a4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:528:0x08cf, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:557:0x00a5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:529:0x08d0, code lost:
     
         r12 = null;
         r2 = r28;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:89:0x0183, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:530:0x08cb, code lost:
+    
+        r0 = th;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:556:0x00a5, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:557:0x00a6, code lost:
+    
+        r12 = null;
+        r2 = r28;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x0184, code lost:
     
         if (r15.startsWith(r6) == false) goto L93;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x08dc  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x08dd  */
     /* JADX WARN: Removed duplicated region for block: B:114:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x08e5  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x08e6  */
     /* JADX WARN: Removed duplicated region for block: B:121:? A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x005e  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x02d3 A[Catch: all -> 0x0102, Exception -> 0x0109, TryCatch #27 {Exception -> 0x0109, all -> 0x0102, blocks: (B:29:0x00cf, B:31:0x00d5, B:34:0x00f3, B:39:0x010e, B:41:0x0114, B:57:0x012c, B:59:0x0136, B:68:0x0142, B:70:0x014d, B:77:0x015a, B:79:0x0168, B:83:0x0170, B:134:0x0248, B:136:0x024e, B:139:0x0262, B:147:0x0284, B:149:0x028c, B:152:0x02a5, B:154:0x02ab, B:158:0x02c3, B:162:0x02d3, B:164:0x02de, B:167:0x02f1, B:181:0x035e, B:170:0x02ff, B:172:0x030b, B:175:0x0315, B:176:0x0349, B:179:0x0320, B:199:0x0372, B:407:0x03aa, B:409:0x03b0, B:414:0x03c9, B:416:0x03d1, B:419:0x03e8, B:421:0x03ee, B:429:0x040b, B:431:0x0411, B:434:0x0424, B:439:0x043d, B:444:0x0447, B:446:0x0453), top: B:28:0x00cf }] */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x006d A[Catch: all -> 0x0052, Exception -> 0x0056, TryCatch #25 {Exception -> 0x0056, all -> 0x0052, blocks: (B:3:0x0015, B:7:0x0024, B:9:0x004b, B:14:0x0063, B:16:0x006d, B:17:0x0071), top: B:2:0x0015 }] */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x0357  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0089  */
-    /* JADX WARN: Removed duplicated region for block: B:242:0x070e A[Catch: all -> 0x0579, Exception -> 0x057d, LOOP:4: B:226:0x0584->B:242:0x070e, LOOP_END, TryCatch #33 {Exception -> 0x057d, all -> 0x0579, blocks: (B:217:0x054c, B:219:0x0552, B:222:0x056b, B:224:0x0572, B:227:0x0586, B:229:0x058e, B:232:0x05a7, B:234:0x05ad, B:238:0x05c5, B:244:0x05d3, B:246:0x05da, B:247:0x05e9, B:249:0x05ef, B:252:0x0601, B:254:0x0692, B:255:0x0694, B:257:0x06a0, B:260:0x06aa, B:261:0x06fa, B:264:0x06d1, B:242:0x070e, B:275:0x071e), top: B:216:0x054c }] */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x05d3 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00d5 A[Catch: all -> 0x0102, Exception -> 0x0109, TryCatch #27 {Exception -> 0x0109, all -> 0x0102, blocks: (B:29:0x00cf, B:31:0x00d5, B:34:0x00f3, B:39:0x010e, B:41:0x0114, B:57:0x012c, B:59:0x0136, B:68:0x0142, B:70:0x014d, B:77:0x015a, B:79:0x0168, B:83:0x0170, B:134:0x0248, B:136:0x024e, B:139:0x0262, B:147:0x0284, B:149:0x028c, B:152:0x02a5, B:154:0x02ab, B:158:0x02c3, B:162:0x02d3, B:164:0x02de, B:167:0x02f1, B:181:0x035e, B:170:0x02ff, B:172:0x030b, B:175:0x0315, B:176:0x0349, B:179:0x0320, B:199:0x0372, B:407:0x03aa, B:409:0x03b0, B:414:0x03c9, B:416:0x03d1, B:419:0x03e8, B:421:0x03ee, B:429:0x040b, B:431:0x0411, B:434:0x0424, B:439:0x043d, B:444:0x0447, B:446:0x0453), top: B:28:0x00cf }] */
-    /* JADX WARN: Removed duplicated region for block: B:337:0x0898 A[Catch: all -> 0x0465, Exception -> 0x07e2, LOOP:8: B:321:0x07ec->B:337:0x0898, LOOP_END, TryCatch #40 {Exception -> 0x07e2, all -> 0x0465, blocks: (B:427:0x04b5, B:449:0x0459, B:452:0x0468, B:455:0x047b, B:457:0x0481, B:460:0x0498, B:462:0x049e, B:466:0x04bd, B:468:0x04c1, B:470:0x04c7, B:474:0x04cd, B:476:0x04da, B:478:0x04e5, B:480:0x04e2, B:494:0x04fa, B:309:0x07a9, B:311:0x07af, B:314:0x07bb, B:317:0x07d4, B:319:0x07dc, B:322:0x07ee, B:324:0x07f6, B:327:0x080f, B:329:0x0815, B:333:0x082d, B:339:0x083a, B:341:0x0841, B:343:0x0850, B:346:0x085a, B:347:0x0891, B:348:0x0867, B:337:0x0898, B:362:0x08a6), top: B:426:0x04b5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:338:0x083a A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:539:0x0197  */
-    /* JADX WARN: Removed duplicated region for block: B:550:0x00bc  */
-    /* JADX WARN: Removed duplicated region for block: B:559:0x0061  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x017d  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x01c8  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x01ce A[Catch: all -> 0x01be, Exception -> 0x01c3, TRY_LEAVE, TryCatch #30 {Exception -> 0x01c3, all -> 0x01be, blocks: (B:97:0x01ce, B:99:0x01de, B:101:0x01ef, B:103:0x0200, B:534:0x01a1), top: B:533:0x01a1 }] */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x02d4 A[Catch: all -> 0x0103, Exception -> 0x010a, TryCatch #27 {Exception -> 0x010a, all -> 0x0103, blocks: (B:29:0x00d0, B:31:0x00d6, B:34:0x00f4, B:39:0x010f, B:41:0x0115, B:57:0x012d, B:59:0x0137, B:68:0x0143, B:70:0x014e, B:77:0x015b, B:79:0x0169, B:83:0x0171, B:134:0x0249, B:136:0x024f, B:139:0x0263, B:147:0x0285, B:149:0x028d, B:152:0x02a6, B:154:0x02ac, B:158:0x02c4, B:162:0x02d4, B:164:0x02df, B:167:0x02f2, B:181:0x035f, B:170:0x0300, B:172:0x030c, B:175:0x0316, B:176:0x034a, B:179:0x0321, B:199:0x0373, B:407:0x03ab, B:409:0x03b1, B:414:0x03ca, B:416:0x03d2, B:419:0x03e9, B:421:0x03ef, B:429:0x040c, B:431:0x0412, B:434:0x0425, B:439:0x043e, B:444:0x0448, B:446:0x0454), top: B:28:0x00d0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x006e A[Catch: all -> 0x0053, Exception -> 0x0057, TryCatch #25 {Exception -> 0x0057, all -> 0x0053, blocks: (B:3:0x0015, B:7:0x0024, B:9:0x004c, B:14:0x0064, B:16:0x006e, B:17:0x0072), top: B:2:0x0015 }] */
+    /* JADX WARN: Removed duplicated region for block: B:184:0x0358  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x008a  */
+    /* JADX WARN: Removed duplicated region for block: B:242:0x070f A[Catch: all -> 0x057a, Exception -> 0x057e, LOOP:4: B:226:0x0585->B:242:0x070f, LOOP_END, TryCatch #33 {Exception -> 0x057e, all -> 0x057a, blocks: (B:217:0x054d, B:219:0x0553, B:222:0x056c, B:224:0x0573, B:227:0x0587, B:229:0x058f, B:232:0x05a8, B:234:0x05ae, B:238:0x05c6, B:244:0x05d4, B:246:0x05db, B:247:0x05ea, B:249:0x05f0, B:252:0x0602, B:254:0x0693, B:255:0x0695, B:257:0x06a1, B:260:0x06ab, B:261:0x06fb, B:264:0x06d2, B:242:0x070f, B:275:0x071f), top: B:216:0x054d }] */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x05d4 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00d6 A[Catch: all -> 0x0103, Exception -> 0x010a, TryCatch #27 {Exception -> 0x010a, all -> 0x0103, blocks: (B:29:0x00d0, B:31:0x00d6, B:34:0x00f4, B:39:0x010f, B:41:0x0115, B:57:0x012d, B:59:0x0137, B:68:0x0143, B:70:0x014e, B:77:0x015b, B:79:0x0169, B:83:0x0171, B:134:0x0249, B:136:0x024f, B:139:0x0263, B:147:0x0285, B:149:0x028d, B:152:0x02a6, B:154:0x02ac, B:158:0x02c4, B:162:0x02d4, B:164:0x02df, B:167:0x02f2, B:181:0x035f, B:170:0x0300, B:172:0x030c, B:175:0x0316, B:176:0x034a, B:179:0x0321, B:199:0x0373, B:407:0x03ab, B:409:0x03b1, B:414:0x03ca, B:416:0x03d2, B:419:0x03e9, B:421:0x03ef, B:429:0x040c, B:431:0x0412, B:434:0x0425, B:439:0x043e, B:444:0x0448, B:446:0x0454), top: B:28:0x00d0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:337:0x0899 A[Catch: all -> 0x0466, Exception -> 0x07e3, LOOP:8: B:321:0x07ed->B:337:0x0899, LOOP_END, TryCatch #40 {Exception -> 0x07e3, all -> 0x0466, blocks: (B:427:0x04b6, B:449:0x045a, B:452:0x0469, B:455:0x047c, B:457:0x0482, B:460:0x0499, B:462:0x049f, B:466:0x04be, B:468:0x04c2, B:470:0x04c8, B:474:0x04ce, B:476:0x04db, B:478:0x04e6, B:480:0x04e3, B:494:0x04fb, B:309:0x07aa, B:311:0x07b0, B:314:0x07bc, B:317:0x07d5, B:319:0x07dd, B:322:0x07ef, B:324:0x07f7, B:327:0x0810, B:329:0x0816, B:333:0x082e, B:339:0x083b, B:341:0x0842, B:343:0x0851, B:346:0x085b, B:347:0x0892, B:348:0x0868, B:337:0x0899, B:362:0x08a7), top: B:426:0x04b6 }] */
+    /* JADX WARN: Removed duplicated region for block: B:338:0x083b A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:539:0x0198  */
+    /* JADX WARN: Removed duplicated region for block: B:550:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:559:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x017e  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x01c9  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x01cf A[Catch: all -> 0x01bf, Exception -> 0x01c4, TRY_LEAVE, TryCatch #30 {Exception -> 0x01c4, all -> 0x01bf, blocks: (B:97:0x01cf, B:99:0x01df, B:101:0x01f0, B:103:0x0201, B:534:0x01a2), top: B:533:0x01a2 }] */
     /* JADX WARN: Type inference failed for: r11v44 */
     /* JADX WARN: Type inference failed for: r11v45 */
     /* JADX WARN: Type inference failed for: r11v50 */
@@ -32577,366 +32589,321 @@ public class MessagesStorage extends BaseController {
             String lowerCase3 = LocaleController.getString(R.string.RepliesTitle).toLowerCase();
             String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
             try {
-                try {
-                    if (!lowerCase.equals(translitString)) {
-                        if (translitString.length() == 0) {
+                if (!lowerCase.equals(translitString)) {
+                    if (translitString.length() == 0) {
+                    }
+                    int i14 = (translitString == null ? 1 : 0) + 1;
+                    String[] strArr = new String[i14];
+                    strArr[0] = lowerCase;
+                    if (translitString != null) {
+                        strArr[1] = translitString;
+                    }
+                    ArrayList arrayList7 = new ArrayList();
+                    ArrayList arrayList8 = new ArrayList();
+                    ArrayList arrayList9 = new ArrayList();
+                    LongSparseArray longSparseArray = new LongSparseArray();
+                    if (i2 < 0) {
+                        i3 = i14;
+                        try {
+                            str2 = "replies";
+                            str3 = lowerCase3;
+                        } catch (Throwable th4) {
+                            th = th4;
+                            th = th;
+                            sQLiteCursor2 = null;
+                            sQLiteCursor3 = sQLiteCursor2;
+                            if (sQLiteCursor3 != null) {
+                            }
                         }
-                        int i14 = (translitString == null ? 1 : 0) + 1;
-                        String[] strArr = new String[i14];
-                        strArr[0] = lowerCase;
-                        if (translitString != null) {
-                            strArr[1] = translitString;
-                        }
-                        ArrayList arrayList7 = new ArrayList();
-                        ArrayList arrayList8 = new ArrayList();
-                        ArrayList arrayList9 = new ArrayList();
-                        LongSparseArray longSparseArray = new LongSparseArray();
-                        if (i2 < 0) {
-                            i3 = i14;
+                        try {
+                            queryFinalized = getDatabase().queryFinalized("SELECT did, date FROM dialogs WHERE folder_id = ? ORDER BY date DESC LIMIT 600", Integer.valueOf(i2));
+                        } catch (Exception e2) {
+                            e = e2;
+                            exc = e;
+                            sQLiteCursor3 = null;
+                            messagesStorage = this;
                             try {
-                                str2 = "replies";
-                                str3 = lowerCase3;
-                            } catch (Throwable th4) {
-                                th = th4;
-                                th = th;
-                                sQLiteCursor2 = null;
-                                sQLiteCursor3 = sQLiteCursor2;
+                                messagesStorage.checkSQLException(exc);
+                                if (sQLiteCursor3 == null) {
+                                }
+                            } catch (Throwable th5) {
+                                th2 = th5;
+                                th = th2;
                                 if (sQLiteCursor3 != null) {
+                                    sQLiteCursor3.dispose();
+                                    throw th;
+                                }
+                                throw th;
+                            }
+                        } catch (Throwable th6) {
+                            th3 = th6;
+                            th = th3;
+                            sQLiteCursor3 = null;
+                            if (sQLiteCursor3 != null) {
+                            }
+                        }
+                    } else {
+                        str2 = "replies";
+                        i3 = i14;
+                        str3 = lowerCase3;
+                        try {
+                            queryFinalized = getDatabase().queryFinalized("SELECT did, date FROM dialogs ORDER BY date DESC LIMIT 600", new Object[0]);
+                        } catch (Throwable th7) {
+                            th = th7;
+                            sQLiteCursor2 = null;
+                            th = th;
+                            sQLiteCursor3 = sQLiteCursor2;
+                            if (sQLiteCursor3 != null) {
+                            }
+                        }
+                    }
+                    while (queryFinalized.next()) {
+                        try {
+                            String str17 = lowerCase;
+                            long longValue = queryFinalized.longValue(0);
+                            DialogsSearchAdapter.DialogSearchResult dialogSearchResult = new DialogsSearchAdapter.DialogSearchResult();
+                            String str18 = str16;
+                            dialogSearchResult.date = queryFinalized.intValue(1);
+                            longSparseArray.put(longValue, dialogSearchResult);
+                            if (i13 != 15 || (arrayList6 != null && arrayList6.contains(Long.valueOf(longValue)))) {
+                                if (DialogObject.isEncryptedDialog(longValue)) {
+                                    if (i13 == 0 || i13 == 3) {
+                                        int encryptedChatId = DialogObject.getEncryptedChatId(longValue);
+                                        if (!arrayList9.contains(Integer.valueOf(encryptedChatId))) {
+                                            arrayList9.add(Integer.valueOf(encryptedChatId));
+                                        }
+                                    }
+                                } else if (DialogObject.isUserDialog(longValue)) {
+                                    if ((i13 != 4 || longValue != clientUserId) && i13 != 6 && i13 != 5 && i13 != 2 && !arrayList7.contains(Long.valueOf(longValue))) {
+                                        arrayList7.add(Long.valueOf(longValue));
+                                    }
+                                } else if (i13 != 4) {
+                                    long j = -longValue;
+                                    if (!arrayList8.contains(Long.valueOf(j))) {
+                                        arrayList8.add(Long.valueOf(j));
+                                    }
                                 }
                             }
+                            lowerCase = str17;
+                            str16 = str18;
+                        } catch (Exception e3) {
+                            e = e3;
+                            messagesStorage = this;
+                        } catch (Throwable th8) {
+                            th2 = th8;
+                        }
+                    }
+                    str4 = str16;
+                    String str19 = lowerCase;
+                    queryFinalized.dispose();
+                    if (i13 == 4) {
+                        str5 = str19;
+                        try {
+                        } catch (Exception e4) {
+                            e = e4;
+                            sQLiteCursor3 = null;
+                            messagesStorage = this;
+                            exc = e;
+                            messagesStorage.checkSQLException(exc);
+                            if (sQLiteCursor3 == null) {
+                            }
+                        } catch (Throwable th9) {
+                            th2 = th9;
+                            sQLiteCursor3 = null;
+                            th = th2;
+                            if (sQLiteCursor3 != null) {
+                            }
+                        }
+                    } else {
+                        str5 = str19;
+                    }
+                    if (!str4.startsWith(str5)) {
+                        messagesStorage2 = this;
+                        i4 = 0;
+                        if (i13 != 4 || !str3.startsWith(str5)) {
+                        }
+                        TLRPC.User user2 = getMessagesController().getUser((Long) 708513L);
+                        if (user2 == null) {
+                            user2 = getMessagesController().getUser(Long.valueOf(UserObject.REPLY_BOT));
+                        }
+                        if (user2 != null) {
+                            DialogsSearchAdapter.DialogSearchResult dialogSearchResult2 = new DialogsSearchAdapter.DialogSearchResult();
+                            dialogSearchResult2.date = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                            dialogSearchResult2.name = LocaleController.getString(R.string.RepliesTitle);
+                            dialogSearchResult2.object = user2;
+                            longSparseArray.put(user2.id, dialogSearchResult2);
+                            i4++;
+                        }
+                        String str20 = ";;;";
+                        if (arrayList7.isEmpty()) {
+                            arrayList5 = arrayList9;
+                            str6 = ";;;";
+                            i5 = i3;
+                        } else {
+                            arrayList5 = arrayList9;
+                            int i15 = i4;
                             try {
-                                queryFinalized = getDatabase().queryFinalized("SELECT did, date FROM dialogs WHERE folder_id = ? ORDER BY date DESC LIMIT 600", Integer.valueOf(i2));
-                            } catch (Exception e2) {
-                                e = e2;
+                                SQLiteCursor queryFinalized2 = getDatabase().queryFinalized(String.format(Locale.US, "SELECT data, status, name FROM users WHERE uid IN(%s)", TextUtils.join(",", arrayList7)), new Object[0]);
+                                i4 = i15;
+                                while (queryFinalized2.next()) {
+                                    String stringValue = queryFinalized2.stringValue(2);
+                                    String translitString2 = LocaleController.getInstance().getTranslitString(stringValue);
+                                    if (stringValue.equals(translitString2)) {
+                                        translitString2 = null;
+                                    }
+                                    int lastIndexOf = stringValue.lastIndexOf(str20);
+                                    if (lastIndexOf != -1) {
+                                        try {
+                                            str11 = stringValue.substring(lastIndexOf + 3);
+                                        } catch (Exception e5) {
+                                            e = e5;
+                                            sQLiteCursor3 = queryFinalized2;
+                                            messagesStorage = messagesStorage2;
+                                            exc = e;
+                                            messagesStorage.checkSQLException(exc);
+                                            if (sQLiteCursor3 == null) {
+                                            }
+                                        } catch (Throwable th10) {
+                                            th2 = th10;
+                                            sQLiteCursor3 = queryFinalized2;
+                                            th = th2;
+                                            if (sQLiteCursor3 != null) {
+                                            }
+                                        }
+                                    } else {
+                                        str11 = null;
+                                    }
+                                    String str21 = str20;
+                                    int i16 = i3;
+                                    int i17 = 0;
+                                    boolean z = false;
+                                    while (true) {
+                                        if (i17 >= i16) {
+                                            i12 = i16;
+                                            break;
+                                        }
+                                        str12 = strArr[i17];
+                                        if (stringValue.startsWith(str12)) {
+                                            i12 = i16;
+                                        } else {
+                                            i12 = i16;
+                                            if (!stringValue.contains(" " + str12)) {
+                                                if (translitString2 != null) {
+                                                    if (!translitString2.startsWith(str12)) {
+                                                        if (translitString2.contains(" " + str12)) {
+                                                        }
+                                                    }
+                                                }
+                                                r11 = (str11 == null || !str11.startsWith(str12)) ? z : 2;
+                                                if (r11 == 0) {
+                                                    str13 = translitString2;
+                                                    str14 = stringValue;
+                                                    NativeByteBuffer byteBufferValue = queryFinalized2.byteBufferValue(0);
+                                                    if (byteBufferValue != null) {
+                                                        str15 = str11;
+                                                        TLdeserialize = TLRPC.User.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
+                                                        byteBufferValue.reuse();
+                                                        if (i13 != 15 || (arrayList6 != null && arrayList6.contains(Long.valueOf(TLdeserialize.id)))) {
+                                                            break;
+                                                        }
+                                                    }
+                                                } else {
+                                                    str13 = translitString2;
+                                                    str14 = stringValue;
+                                                    str15 = str11;
+                                                }
+                                                i17++;
+                                                i13 = i;
+                                                translitString2 = str13;
+                                                stringValue = str14;
+                                                str11 = str15;
+                                                z = r11;
+                                                i16 = i12;
+                                            }
+                                        }
+                                        r11 = 1;
+                                        if (r11 == 0) {
+                                        }
+                                        i17++;
+                                        i13 = i;
+                                        translitString2 = str13;
+                                        stringValue = str14;
+                                        str11 = str15;
+                                        z = r11;
+                                        i16 = i12;
+                                    }
+                                    DialogsSearchAdapter.DialogSearchResult dialogSearchResult3 = (DialogsSearchAdapter.DialogSearchResult) longSparseArray.get(TLdeserialize.id);
+                                    TLRPC.UserStatus userStatus = TLdeserialize.status;
+                                    if (userStatus != null) {
+                                        userStatus.expires = queryFinalized2.intValue(1);
+                                    }
+                                    if (r11 == 1) {
+                                        dialogSearchResult3.name = AndroidUtilities.generateSearchName(TLdeserialize.first_name, TLdeserialize.last_name, str12);
+                                    } else {
+                                        dialogSearchResult3.name = AndroidUtilities.generateSearchName("@" + UserObject.getPublicUsername(TLdeserialize), null, "@" + str12);
+                                    }
+                                    dialogSearchResult3.object = TLdeserialize;
+                                    i4++;
+                                    messagesStorage2 = this;
+                                    i13 = i;
+                                    str20 = str21;
+                                    i3 = i12;
+                                }
+                                str6 = str20;
+                                i5 = i3;
+                                queryFinalized2.dispose();
+                            } catch (Exception e6) {
+                                e = e6;
                                 exc = e;
                                 sQLiteCursor3 = null;
                                 messagesStorage = this;
-                                try {
-                                    messagesStorage.checkSQLException(exc);
-                                    if (sQLiteCursor3 == null) {
-                                    }
-                                } catch (Throwable th5) {
-                                    th2 = th5;
-                                    th = th2;
-                                    if (sQLiteCursor3 != null) {
-                                        sQLiteCursor3.dispose();
-                                        throw th;
-                                    }
-                                    throw th;
+                                messagesStorage.checkSQLException(exc);
+                                if (sQLiteCursor3 == null) {
                                 }
-                            } catch (Throwable th6) {
-                                th3 = th6;
+                            } catch (Throwable th11) {
+                                th3 = th11;
                                 th = th3;
                                 sQLiteCursor3 = null;
                                 if (sQLiteCursor3 != null) {
                                 }
                             }
-                        } else {
-                            str2 = "replies";
-                            i3 = i14;
-                            str3 = lowerCase3;
-                            try {
-                                queryFinalized = getDatabase().queryFinalized("SELECT did, date FROM dialogs ORDER BY date DESC LIMIT 600", new Object[0]);
-                            } catch (Throwable th7) {
-                                th = th7;
-                                sQLiteCursor2 = null;
-                                th = th;
-                                sQLiteCursor3 = sQLiteCursor2;
-                                if (sQLiteCursor3 != null) {
-                                }
-                            }
                         }
-                        while (queryFinalized.next()) {
-                            try {
-                                String str17 = lowerCase;
-                                long longValue = queryFinalized.longValue(0);
-                                DialogsSearchAdapter.DialogSearchResult dialogSearchResult = new DialogsSearchAdapter.DialogSearchResult();
-                                String str18 = str16;
-                                dialogSearchResult.date = queryFinalized.intValue(1);
-                                longSparseArray.put(longValue, dialogSearchResult);
-                                if (i13 != 15 || (arrayList6 != null && arrayList6.contains(Long.valueOf(longValue)))) {
-                                    if (DialogObject.isEncryptedDialog(longValue)) {
-                                        if (i13 == 0 || i13 == 3) {
-                                            int encryptedChatId = DialogObject.getEncryptedChatId(longValue);
-                                            if (!arrayList9.contains(Integer.valueOf(encryptedChatId))) {
-                                                arrayList9.add(Integer.valueOf(encryptedChatId));
-                                            }
-                                        }
-                                    } else if (DialogObject.isUserDialog(longValue)) {
-                                        if ((i13 != 4 || longValue != clientUserId) && i13 != 6 && i13 != 5 && i13 != 2 && !arrayList7.contains(Long.valueOf(longValue))) {
-                                            arrayList7.add(Long.valueOf(longValue));
-                                        }
-                                    } else if (i13 != 4) {
-                                        long j = -longValue;
-                                        if (!arrayList8.contains(Long.valueOf(j))) {
-                                            arrayList8.add(Long.valueOf(j));
-                                        }
-                                    }
-                                }
-                                lowerCase = str17;
-                                str16 = str18;
-                            } catch (Exception e3) {
-                                e = e3;
+                        try {
+                            if (arrayList8.isEmpty()) {
                                 messagesStorage = this;
-                            } catch (Throwable th8) {
-                                th2 = th8;
-                            }
-                        }
-                        str4 = str16;
-                        String str19 = lowerCase;
-                        queryFinalized.dispose();
-                        if (i13 == 4) {
-                            str5 = str19;
-                            try {
-                            } catch (Exception e4) {
-                                e = e4;
-                                sQLiteCursor3 = null;
-                                messagesStorage = this;
-                                exc = e;
-                                messagesStorage.checkSQLException(exc);
-                                if (sQLiteCursor3 == null) {
-                                }
-                            } catch (Throwable th9) {
-                                th2 = th9;
-                                sQLiteCursor3 = null;
-                                th = th2;
-                                if (sQLiteCursor3 != null) {
-                                }
-                            }
-                        } else {
-                            str5 = str19;
-                        }
-                        if (!str4.startsWith(str5)) {
-                            messagesStorage2 = this;
-                            i4 = 0;
-                            if (i13 != 4 || !str3.startsWith(str5)) {
-                            }
-                            TLRPC.User user2 = getMessagesController().getUser((Long) 708513L);
-                            if (user2 == null) {
-                                user2 = getMessagesController().getUser(Long.valueOf(UserObject.REPLY_BOT));
-                            }
-                            if (user2 != null) {
-                                DialogsSearchAdapter.DialogSearchResult dialogSearchResult2 = new DialogsSearchAdapter.DialogSearchResult();
-                                dialogSearchResult2.date = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                                dialogSearchResult2.name = LocaleController.getString(R.string.RepliesTitle);
-                                dialogSearchResult2.object = user2;
-                                longSparseArray.put(user2.id, dialogSearchResult2);
-                                i4++;
-                            }
-                            String str20 = ";;;";
-                            if (arrayList7.isEmpty()) {
-                                arrayList5 = arrayList9;
-                                str6 = ";;;";
-                                i5 = i3;
+                                i6 = i;
+                                i7 = i5;
                             } else {
-                                arrayList5 = arrayList9;
-                                int i15 = i4;
                                 try {
-                                    SQLiteCursor queryFinalized2 = getDatabase().queryFinalized(String.format(Locale.US, "SELECT data, status, name FROM users WHERE uid IN(%s)", TextUtils.join(",", arrayList7)), new Object[0]);
-                                    i4 = i15;
-                                    while (queryFinalized2.next()) {
-                                        String stringValue = queryFinalized2.stringValue(2);
-                                        String translitString2 = LocaleController.getInstance().getTranslitString(stringValue);
-                                        if (stringValue.equals(translitString2)) {
-                                            translitString2 = null;
-                                        }
-                                        int lastIndexOf = stringValue.lastIndexOf(str20);
-                                        if (lastIndexOf != -1) {
-                                            try {
-                                                str11 = stringValue.substring(lastIndexOf + 3);
-                                            } catch (Exception e5) {
-                                                e = e5;
-                                                sQLiteCursor3 = queryFinalized2;
-                                                messagesStorage = messagesStorage2;
-                                                exc = e;
-                                                messagesStorage.checkSQLException(exc);
-                                                if (sQLiteCursor3 == null) {
-                                                }
-                                            } catch (Throwable th10) {
-                                                th2 = th10;
-                                                sQLiteCursor3 = queryFinalized2;
-                                                th = th2;
-                                                if (sQLiteCursor3 != null) {
-                                                }
-                                            }
-                                        } else {
-                                            str11 = null;
-                                        }
-                                        String str21 = str20;
-                                        int i16 = i3;
-                                        int i17 = 0;
-                                        boolean z = false;
-                                        while (true) {
-                                            if (i17 >= i16) {
-                                                i12 = i16;
-                                                break;
-                                            }
-                                            str12 = strArr[i17];
-                                            if (stringValue.startsWith(str12)) {
-                                                i12 = i16;
-                                            } else {
-                                                i12 = i16;
-                                                if (!stringValue.contains(" " + str12)) {
-                                                    if (translitString2 != null) {
-                                                        if (!translitString2.startsWith(str12)) {
-                                                            if (translitString2.contains(" " + str12)) {
-                                                            }
-                                                        }
-                                                    }
-                                                    r11 = (str11 == null || !str11.startsWith(str12)) ? z : 2;
-                                                    if (r11 == 0) {
-                                                        str13 = translitString2;
-                                                        str14 = stringValue;
-                                                        NativeByteBuffer byteBufferValue = queryFinalized2.byteBufferValue(0);
-                                                        if (byteBufferValue != null) {
-                                                            str15 = str11;
-                                                            TLdeserialize = TLRPC.User.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                                                            byteBufferValue.reuse();
-                                                            if (i13 != 15 || (arrayList6 != null && arrayList6.contains(Long.valueOf(TLdeserialize.id)))) {
-                                                                break;
-                                                            }
-                                                        }
-                                                    } else {
-                                                        str13 = translitString2;
-                                                        str14 = stringValue;
-                                                        str15 = str11;
-                                                    }
-                                                    i17++;
-                                                    i13 = i;
-                                                    translitString2 = str13;
-                                                    stringValue = str14;
-                                                    str11 = str15;
-                                                    z = r11;
-                                                    i16 = i12;
-                                                }
-                                            }
-                                            r11 = 1;
-                                            if (r11 == 0) {
-                                            }
-                                            i17++;
-                                            i13 = i;
-                                            translitString2 = str13;
-                                            stringValue = str14;
-                                            str11 = str15;
-                                            z = r11;
-                                            i16 = i12;
-                                        }
-                                        DialogsSearchAdapter.DialogSearchResult dialogSearchResult3 = (DialogsSearchAdapter.DialogSearchResult) longSparseArray.get(TLdeserialize.id);
-                                        TLRPC.UserStatus userStatus = TLdeserialize.status;
-                                        if (userStatus != null) {
-                                            userStatus.expires = queryFinalized2.intValue(1);
-                                        }
-                                        if (r11 == 1) {
-                                            dialogSearchResult3.name = AndroidUtilities.generateSearchName(TLdeserialize.first_name, TLdeserialize.last_name, str12);
-                                        } else {
-                                            dialogSearchResult3.name = AndroidUtilities.generateSearchName("@" + UserObject.getPublicUsername(TLdeserialize), null, "@" + str12);
-                                        }
-                                        dialogSearchResult3.object = TLdeserialize;
-                                        i4++;
-                                        messagesStorage2 = this;
-                                        i13 = i;
-                                        str20 = str21;
-                                        i3 = i12;
-                                    }
-                                    str6 = str20;
-                                    i5 = i3;
-                                    queryFinalized2.dispose();
-                                } catch (Exception e6) {
-                                    e = e6;
-                                    exc = e;
-                                    sQLiteCursor3 = null;
+                                } catch (Exception e7) {
+                                    e = e7;
                                     messagesStorage = this;
+                                    exc = e;
+                                    sQLiteCursor = null;
+                                    sQLiteCursor3 = sQLiteCursor;
                                     messagesStorage.checkSQLException(exc);
                                     if (sQLiteCursor3 == null) {
-                                    }
-                                } catch (Throwable th11) {
-                                    th3 = th11;
-                                    th = th3;
-                                    sQLiteCursor3 = null;
-                                    if (sQLiteCursor3 != null) {
-                                    }
-                                }
-                            }
-                            try {
-                                if (arrayList8.isEmpty()) {
-                                    messagesStorage = this;
-                                    i6 = i;
-                                    i7 = i5;
-                                } else {
-                                    try {
-                                    } catch (Exception e7) {
-                                        e = e7;
-                                        messagesStorage = this;
-                                        exc = e;
-                                        sQLiteCursor = null;
-                                        sQLiteCursor3 = sQLiteCursor;
-                                        messagesStorage.checkSQLException(exc);
-                                        if (sQLiteCursor3 == null) {
-                                            sQLiteCursor3.dispose();
-                                            return;
-                                        }
+                                        sQLiteCursor3.dispose();
                                         return;
                                     }
-                                    try {
-                                        queryFinalized = getDatabase().queryFinalized(String.format(Locale.US, "SELECT data, name FROM chats WHERE uid IN(%s)", TextUtils.join(",", arrayList8)), new Object[0]);
-                                        while (queryFinalized.next()) {
-                                            String stringValue2 = queryFinalized.stringValue(1);
-                                            String translitString3 = LocaleController.getInstance().getTranslitString(stringValue2);
-                                            if (stringValue2.equals(translitString3)) {
-                                                translitString3 = null;
-                                            }
-                                            int i18 = i5;
-                                            int i19 = 0;
-                                            while (i19 < i18) {
-                                                String str22 = strArr[i19];
-                                                if (!stringValue2.startsWith(str22)) {
-                                                    if (!stringValue2.contains(" " + str22)) {
-                                                        if (translitString3 != null) {
-                                                            if (!translitString3.startsWith(str22)) {
-                                                            }
-                                                        }
-                                                        str7 = translitString3;
-                                                        str8 = stringValue2;
-                                                        i8 = 1;
-                                                        messagesStorage = this;
-                                                        stringValue2 = str8;
-                                                        try {
-                                                            i19 += i8;
-                                                            arrayList6 = arrayList4;
-                                                            translitString3 = str7;
-                                                        } catch (Exception e8) {
-                                                            e = e8;
-                                                            sQLiteCursor3 = queryFinalized;
-                                                            exc = e;
-                                                            messagesStorage.checkSQLException(exc);
-                                                            if (sQLiteCursor3 == null) {
-                                                            }
-                                                        } catch (Throwable th12) {
-                                                            th2 = th12;
-                                                            sQLiteCursor3 = queryFinalized;
-                                                            th = th2;
-                                                            if (sQLiteCursor3 != null) {
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                                NativeByteBuffer byteBufferValue2 = queryFinalized.byteBufferValue(0);
-                                                if (byteBufferValue2 == null) {
-                                                    break;
-                                                }
-                                                TLRPC.Chat TLdeserialize2 = TLRPC.Chat.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), false);
-                                                byteBufferValue2.reuse();
-                                                if (i == 15) {
-                                                    if (arrayList6 != null) {
-                                                        str7 = translitString3;
-                                                        str8 = stringValue2;
-                                                        if (!arrayList6.contains(Long.valueOf(-TLdeserialize2.id))) {
-                                                            i8 = 1;
-                                                            messagesStorage = this;
-                                                            stringValue2 = str8;
-                                                            i19 += i8;
-                                                            arrayList6 = arrayList4;
-                                                            translitString3 = str7;
+                                    return;
+                                }
+                                try {
+                                    queryFinalized = getDatabase().queryFinalized(String.format(Locale.US, "SELECT data, name FROM chats WHERE uid IN(%s)", TextUtils.join(",", arrayList8)), new Object[0]);
+                                    while (queryFinalized.next()) {
+                                        String stringValue2 = queryFinalized.stringValue(1);
+                                        String translitString3 = LocaleController.getInstance().getTranslitString(stringValue2);
+                                        if (stringValue2.equals(translitString3)) {
+                                            translitString3 = null;
+                                        }
+                                        int i18 = i5;
+                                        int i19 = 0;
+                                        while (i19 < i18) {
+                                            String str22 = strArr[i19];
+                                            if (!stringValue2.startsWith(str22)) {
+                                                if (!stringValue2.contains(" " + str22)) {
+                                                    if (translitString3 != null) {
+                                                        if (!translitString3.startsWith(str22)) {
                                                         }
                                                     }
                                                     str7 = translitString3;
@@ -32944,75 +32911,272 @@ public class MessagesStorage extends BaseController {
                                                     i8 = 1;
                                                     messagesStorage = this;
                                                     stringValue2 = str8;
-                                                    i19 += i8;
-                                                    arrayList6 = arrayList4;
-                                                    translitString3 = str7;
-                                                } else {
+                                                    try {
+                                                        i19 += i8;
+                                                        arrayList6 = arrayList4;
+                                                        translitString3 = str7;
+                                                    } catch (Exception e8) {
+                                                        e = e8;
+                                                        sQLiteCursor3 = queryFinalized;
+                                                        exc = e;
+                                                        messagesStorage.checkSQLException(exc);
+                                                        if (sQLiteCursor3 == null) {
+                                                        }
+                                                    } catch (Throwable th12) {
+                                                        th2 = th12;
+                                                        sQLiteCursor3 = queryFinalized;
+                                                        th = th2;
+                                                        if (sQLiteCursor3 != null) {
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            NativeByteBuffer byteBufferValue2 = queryFinalized.byteBufferValue(0);
+                                            if (byteBufferValue2 == null) {
+                                                break;
+                                            }
+                                            TLRPC.Chat TLdeserialize2 = TLRPC.Chat.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), false);
+                                            byteBufferValue2.reuse();
+                                            if (i == 15) {
+                                                if (arrayList6 != null) {
                                                     str7 = translitString3;
                                                     str8 = stringValue2;
-                                                }
-                                                if ((i != 6 || !ChatObject.isChannelAndNotMegaGroup(TLdeserialize2)) && (i != 5 || ChatObject.isChannelAndNotMegaGroup(TLdeserialize2))) {
-                                                    if (TLdeserialize2.monoforum) {
+                                                    if (!arrayList6.contains(Long.valueOf(-TLdeserialize2.id))) {
+                                                        i8 = 1;
                                                         messagesStorage = this;
-                                                        String monoForumTitle = ForumUtilities.getMonoForumTitle(messagesStorage.currentAccount, TLdeserialize2, true);
-                                                        if (monoForumTitle == null) {
-                                                            monoForumTitle = "";
-                                                        }
-                                                        stringValue2 = monoForumTitle.toLowerCase();
-                                                        str7 = LocaleController.getInstance().getTranslitString(stringValue2);
-                                                        if (stringValue2.equals(str7)) {
-                                                            str7 = null;
-                                                        }
-                                                        if (!stringValue2.startsWith(str22)) {
-                                                            if (!stringValue2.contains(" " + str22)) {
-                                                                if (str7 != null) {
-                                                                    if (!str7.startsWith(str22)) {
-                                                                        if (str7.contains(" " + str22)) {
-                                                                        }
-                                                                    }
-                                                                }
-                                                                i8 = 1;
-                                                                i19 += i8;
-                                                                arrayList6 = arrayList4;
-                                                                translitString3 = str7;
-                                                            }
-                                                        }
-                                                    } else {
-                                                        messagesStorage = this;
+                                                        stringValue2 = str8;
+                                                        i19 += i8;
+                                                        arrayList6 = arrayList4;
+                                                        translitString3 = str7;
                                                     }
-                                                    if (!TLdeserialize2.deactivated && (!ChatObject.isChannel(TLdeserialize2) || !ChatObject.isNotInChat(TLdeserialize2))) {
-                                                        DialogsSearchAdapter.DialogSearchResult dialogSearchResult4 = (DialogsSearchAdapter.DialogSearchResult) longSparseArray.get(-TLdeserialize2.id);
-                                                        dialogSearchResult4.name = AndroidUtilities.generateSearchName(TLdeserialize2.monoforum ? ForumUtilities.getMonoForumTitle(messagesStorage.currentAccount, TLdeserialize2) : TLdeserialize2.title, null, str22);
-                                                        dialogSearchResult4.object = TLdeserialize2;
-                                                        i4++;
-                                                    }
-                                                    arrayList6 = arrayList4;
-                                                    i5 = i18;
                                                 }
+                                                str7 = translitString3;
+                                                str8 = stringValue2;
                                                 i8 = 1;
                                                 messagesStorage = this;
                                                 stringValue2 = str8;
                                                 i19 += i8;
                                                 arrayList6 = arrayList4;
                                                 translitString3 = str7;
+                                            } else {
+                                                str7 = translitString3;
+                                                str8 = stringValue2;
                                             }
+                                            if ((i != 6 || !ChatObject.isChannelAndNotMegaGroup(TLdeserialize2)) && (i != 5 || ChatObject.isChannelAndNotMegaGroup(TLdeserialize2))) {
+                                                if (TLdeserialize2.monoforum) {
+                                                    messagesStorage = this;
+                                                    String monoForumTitle = ForumUtilities.getMonoForumTitle(messagesStorage.currentAccount, TLdeserialize2, true);
+                                                    if (monoForumTitle == null) {
+                                                        monoForumTitle = "";
+                                                    }
+                                                    stringValue2 = monoForumTitle.toLowerCase();
+                                                    str7 = LocaleController.getInstance().getTranslitString(stringValue2);
+                                                    if (stringValue2.equals(str7)) {
+                                                        str7 = null;
+                                                    }
+                                                    if (!stringValue2.startsWith(str22)) {
+                                                        if (!stringValue2.contains(" " + str22)) {
+                                                            if (str7 != null) {
+                                                                if (!str7.startsWith(str22)) {
+                                                                    if (str7.contains(" " + str22)) {
+                                                                    }
+                                                                }
+                                                            }
+                                                            i8 = 1;
+                                                            i19 += i8;
+                                                            arrayList6 = arrayList4;
+                                                            translitString3 = str7;
+                                                        }
+                                                    }
+                                                } else {
+                                                    messagesStorage = this;
+                                                }
+                                                if (!TLdeserialize2.deactivated && (!ChatObject.isChannel(TLdeserialize2) || !ChatObject.isNotInChat(TLdeserialize2))) {
+                                                    DialogsSearchAdapter.DialogSearchResult dialogSearchResult4 = (DialogsSearchAdapter.DialogSearchResult) longSparseArray.get(-TLdeserialize2.id);
+                                                    dialogSearchResult4.name = AndroidUtilities.generateSearchName(TLdeserialize2.monoforum ? ForumUtilities.getMonoForumTitle(messagesStorage.currentAccount, TLdeserialize2) : TLdeserialize2.title, null, str22);
+                                                    dialogSearchResult4.object = TLdeserialize2;
+                                                    i4++;
+                                                }
+                                                arrayList6 = arrayList4;
+                                                i5 = i18;
+                                            }
+                                            i8 = 1;
+                                            messagesStorage = this;
+                                            stringValue2 = str8;
+                                            i19 += i8;
                                             arrayList6 = arrayList4;
-                                            i5 = i18;
+                                            translitString3 = str7;
                                         }
-                                        messagesStorage = this;
-                                        i6 = i;
-                                        i7 = i5;
-                                        queryFinalized.dispose();
-                                    } catch (Exception e9) {
-                                        e = e9;
-                                        messagesStorage = this;
+                                        arrayList6 = arrayList4;
+                                        i5 = i18;
+                                    }
+                                    messagesStorage = this;
+                                    i6 = i;
+                                    i7 = i5;
+                                    queryFinalized.dispose();
+                                } catch (Exception e9) {
+                                    e = e9;
+                                    messagesStorage = this;
+                                    exc = e;
+                                    sQLiteCursor3 = null;
+                                    messagesStorage.checkSQLException(exc);
+                                    if (sQLiteCursor3 == null) {
+                                    }
+                                } catch (Throwable th13) {
+                                    th = th13;
+                                    th = th;
+                                    sQLiteCursor3 = null;
+                                    if (sQLiteCursor3 != null) {
+                                    }
+                                }
+                            }
+                            try {
+                                if (arrayList5.isEmpty() || i6 == 15) {
+                                    i9 = i7;
+                                } else {
+                                    try {
+                                    } catch (Exception e10) {
+                                        e = e10;
+                                        exc = e;
+                                        sQLiteCursor = null;
+                                        sQLiteCursor3 = sQLiteCursor;
+                                        messagesStorage.checkSQLException(exc);
+                                        if (sQLiteCursor3 == null) {
+                                        }
+                                    } catch (Throwable th14) {
+                                        th = th14;
+                                        th = th;
+                                        sQLiteCursor2 = null;
+                                        sQLiteCursor3 = sQLiteCursor2;
+                                        if (sQLiteCursor3 != null) {
+                                        }
+                                    }
+                                    try {
+                                        SQLiteCursor queryFinalized3 = getDatabase().queryFinalized(String.format(Locale.US, "SELECT q.data, u.name, q.user, q.g, q.authkey, q.ttl, u.data, u.status, q.layer, q.seq_in, q.seq_out, q.use_count, q.exchange_id, q.key_date, q.fprint, q.fauthkey, q.khash, q.in_seq_no, q.admin_id, q.mtproto_seq FROM enc_chats as q INNER JOIN users as u ON q.user = u.uid WHERE q.uid IN(%s)", TextUtils.join(",", arrayList5)), new Object[0]);
+                                        while (queryFinalized3.next()) {
+                                            try {
+                                                String stringValue3 = queryFinalized3.stringValue(1);
+                                                String translitString4 = LocaleController.getInstance().getTranslitString(stringValue3);
+                                                if (stringValue3.equals(translitString4)) {
+                                                    str10 = str6;
+                                                    translitString4 = null;
+                                                } else {
+                                                    str10 = str6;
+                                                }
+                                                int lastIndexOf2 = stringValue3.lastIndexOf(str10);
+                                                String substring = lastIndexOf2 != -1 ? stringValue3.substring(lastIndexOf2 + 2) : null;
+                                                char c = 0;
+                                                int i20 = 0;
+                                                while (true) {
+                                                    if (i20 >= i7) {
+                                                        break;
+                                                    }
+                                                    String str23 = strArr[i20];
+                                                    if (!stringValue3.startsWith(str23)) {
+                                                        char c2 = c;
+                                                        if (!stringValue3.contains(" " + str23)) {
+                                                            if (translitString4 != null) {
+                                                                if (!translitString4.startsWith(str23)) {
+                                                                    if (translitString4.contains(" " + str23)) {
+                                                                    }
+                                                                }
+                                                            }
+                                                            c = (substring == null || !substring.startsWith(str23)) ? c2 : (char) 2;
+                                                            if (c == 0) {
+                                                                NativeByteBuffer byteBufferValue3 = queryFinalized3.byteBufferValue(0);
+                                                                if (byteBufferValue3 != null) {
+                                                                    encryptedChat = TLRPC.EncryptedChat.TLdeserialize(byteBufferValue3, byteBufferValue3.readInt32(false), false);
+                                                                    byteBufferValue3.reuse();
+                                                                    i11 = 6;
+                                                                } else {
+                                                                    i11 = 6;
+                                                                    encryptedChat = null;
+                                                                }
+                                                                NativeByteBuffer byteBufferValue4 = queryFinalized3.byteBufferValue(i11);
+                                                                if (byteBufferValue4 != null) {
+                                                                    user = TLRPC.User.TLdeserialize(byteBufferValue4, byteBufferValue4.readInt32(false), false);
+                                                                    byteBufferValue4.reuse();
+                                                                } else {
+                                                                    user = null;
+                                                                }
+                                                                if (encryptedChat != null && user != null) {
+                                                                    DialogsSearchAdapter.DialogSearchResult dialogSearchResult5 = (DialogsSearchAdapter.DialogSearchResult) longSparseArray.get(DialogObject.makeEncryptedDialogId(encryptedChat.id));
+                                                                    str6 = str10;
+                                                                    i10 = i7;
+                                                                    encryptedChat.user_id = queryFinalized3.longValue(2);
+                                                                    encryptedChat.a_or_b = queryFinalized3.byteArrayValue(3);
+                                                                    encryptedChat.auth_key = queryFinalized3.byteArrayValue(4);
+                                                                    encryptedChat.ttl = queryFinalized3.intValue(5);
+                                                                    encryptedChat.layer = queryFinalized3.intValue(8);
+                                                                    encryptedChat.seq_in = queryFinalized3.intValue(9);
+                                                                    encryptedChat.seq_out = queryFinalized3.intValue(10);
+                                                                    int intValue = queryFinalized3.intValue(11);
+                                                                    encryptedChat.key_use_count_in = (short) (intValue >> 16);
+                                                                    encryptedChat.key_use_count_out = (short) intValue;
+                                                                    encryptedChat.exchange_id = queryFinalized3.longValue(12);
+                                                                    encryptedChat.key_create_date = queryFinalized3.intValue(13);
+                                                                    encryptedChat.future_key_fingerprint = queryFinalized3.longValue(14);
+                                                                    encryptedChat.future_auth_key = queryFinalized3.byteArrayValue(15);
+                                                                    encryptedChat.key_hash = queryFinalized3.byteArrayValue(16);
+                                                                    encryptedChat.in_seq_no = queryFinalized3.intValue(17);
+                                                                    long longValue2 = queryFinalized3.longValue(18);
+                                                                    if (longValue2 != 0) {
+                                                                        encryptedChat.admin_id = longValue2;
+                                                                    }
+                                                                    encryptedChat.mtproto_seq = queryFinalized3.intValue(19);
+                                                                    TLRPC.UserStatus userStatus2 = user.status;
+                                                                    if (userStatus2 != null) {
+                                                                        userStatus2.expires = queryFinalized3.intValue(7);
+                                                                    }
+                                                                    if (c == 1) {
+                                                                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(ContactsController.formatName(user.first_name, user.last_name));
+                                                                        dialogSearchResult5.name = spannableStringBuilder;
+                                                                        spannableStringBuilder.setSpan(new ForegroundColorSpan(Theme.getColor(Theme.key_chats_secretName)), 0, dialogSearchResult5.name.length(), 33);
+                                                                    } else {
+                                                                        dialogSearchResult5.name = AndroidUtilities.generateSearchName("@" + UserObject.getPublicUsername(user), null, "@" + str23);
+                                                                    }
+                                                                    dialogSearchResult5.object = encryptedChat;
+                                                                    arrayList3.add(user);
+                                                                    i4++;
+                                                                }
+                                                            } else {
+                                                                i20++;
+                                                                translitString4 = translitString4;
+                                                                str10 = str10;
+                                                            }
+                                                        }
+                                                    }
+                                                    c = 1;
+                                                    if (c == 0) {
+                                                    }
+                                                }
+                                                str6 = str10;
+                                                i10 = i7;
+                                                i7 = i10;
+                                            } catch (Exception e11) {
+                                                sQLiteCursor3 = queryFinalized3;
+                                                exc = e11;
+                                                messagesStorage.checkSQLException(exc);
+                                                if (sQLiteCursor3 == null) {
+                                                }
+                                            } catch (Throwable th15) {
+                                                sQLiteCursor3 = queryFinalized3;
+                                                th = th15;
+                                                if (sQLiteCursor3 != null) {
+                                                }
+                                            }
+                                        }
+                                        i9 = i7;
+                                        queryFinalized3.dispose();
+                                    } catch (Exception e12) {
+                                        e = e12;
                                         exc = e;
                                         sQLiteCursor3 = null;
                                         messagesStorage.checkSQLException(exc);
                                         if (sQLiteCursor3 == null) {
                                         }
-                                    } catch (Throwable th13) {
-                                        th = th13;
+                                    } catch (Throwable th16) {
+                                        th = th16;
                                         th = th;
                                         sQLiteCursor3 = null;
                                         if (sQLiteCursor3 != null) {
@@ -33020,350 +33184,168 @@ public class MessagesStorage extends BaseController {
                                     }
                                 }
                                 try {
-                                    if (arrayList5.isEmpty() || i6 == 15) {
-                                        i9 = i7;
-                                    } else {
+                                    ArrayList arrayList10 = new ArrayList(i4);
+                                    for (int i21 = 0; i21 < longSparseArray.size(); i21++) {
                                         try {
-                                            try {
-                                                SQLiteCursor queryFinalized3 = getDatabase().queryFinalized(String.format(Locale.US, "SELECT q.data, u.name, q.user, q.g, q.authkey, q.ttl, u.data, u.status, q.layer, q.seq_in, q.seq_out, q.use_count, q.exchange_id, q.key_date, q.fprint, q.fauthkey, q.khash, q.in_seq_no, q.admin_id, q.mtproto_seq FROM enc_chats as q INNER JOIN users as u ON q.user = u.uid WHERE q.uid IN(%s)", TextUtils.join(",", arrayList5)), new Object[0]);
-                                                while (queryFinalized3.next()) {
-                                                    try {
-                                                        String stringValue3 = queryFinalized3.stringValue(1);
-                                                        String translitString4 = LocaleController.getInstance().getTranslitString(stringValue3);
-                                                        if (stringValue3.equals(translitString4)) {
-                                                            str10 = str6;
-                                                            translitString4 = null;
-                                                        } else {
-                                                            str10 = str6;
-                                                        }
-                                                        int lastIndexOf2 = stringValue3.lastIndexOf(str10);
-                                                        String substring = lastIndexOf2 != -1 ? stringValue3.substring(lastIndexOf2 + 2) : null;
-                                                        char c = 0;
-                                                        int i20 = 0;
-                                                        while (true) {
-                                                            if (i20 >= i7) {
-                                                                break;
-                                                            }
-                                                            String str23 = strArr[i20];
-                                                            if (!stringValue3.startsWith(str23)) {
-                                                                char c2 = c;
-                                                                if (!stringValue3.contains(" " + str23)) {
-                                                                    if (translitString4 != null) {
-                                                                        if (!translitString4.startsWith(str23)) {
-                                                                            if (translitString4.contains(" " + str23)) {
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                    c = (substring == null || !substring.startsWith(str23)) ? c2 : (char) 2;
-                                                                    if (c == 0) {
-                                                                        NativeByteBuffer byteBufferValue3 = queryFinalized3.byteBufferValue(0);
-                                                                        if (byteBufferValue3 != null) {
-                                                                            encryptedChat = TLRPC.EncryptedChat.TLdeserialize(byteBufferValue3, byteBufferValue3.readInt32(false), false);
-                                                                            byteBufferValue3.reuse();
-                                                                            i11 = 6;
-                                                                        } else {
-                                                                            i11 = 6;
-                                                                            encryptedChat = null;
-                                                                        }
-                                                                        NativeByteBuffer byteBufferValue4 = queryFinalized3.byteBufferValue(i11);
-                                                                        if (byteBufferValue4 != null) {
-                                                                            user = TLRPC.User.TLdeserialize(byteBufferValue4, byteBufferValue4.readInt32(false), false);
-                                                                            byteBufferValue4.reuse();
-                                                                        } else {
-                                                                            user = null;
-                                                                        }
-                                                                        if (encryptedChat != null && user != null) {
-                                                                            DialogsSearchAdapter.DialogSearchResult dialogSearchResult5 = (DialogsSearchAdapter.DialogSearchResult) longSparseArray.get(DialogObject.makeEncryptedDialogId(encryptedChat.id));
-                                                                            str6 = str10;
-                                                                            i10 = i7;
-                                                                            encryptedChat.user_id = queryFinalized3.longValue(2);
-                                                                            encryptedChat.a_or_b = queryFinalized3.byteArrayValue(3);
-                                                                            encryptedChat.auth_key = queryFinalized3.byteArrayValue(4);
-                                                                            encryptedChat.ttl = queryFinalized3.intValue(5);
-                                                                            encryptedChat.layer = queryFinalized3.intValue(8);
-                                                                            encryptedChat.seq_in = queryFinalized3.intValue(9);
-                                                                            encryptedChat.seq_out = queryFinalized3.intValue(10);
-                                                                            int intValue = queryFinalized3.intValue(11);
-                                                                            encryptedChat.key_use_count_in = (short) (intValue >> 16);
-                                                                            encryptedChat.key_use_count_out = (short) intValue;
-                                                                            encryptedChat.exchange_id = queryFinalized3.longValue(12);
-                                                                            encryptedChat.key_create_date = queryFinalized3.intValue(13);
-                                                                            encryptedChat.future_key_fingerprint = queryFinalized3.longValue(14);
-                                                                            encryptedChat.future_auth_key = queryFinalized3.byteArrayValue(15);
-                                                                            encryptedChat.key_hash = queryFinalized3.byteArrayValue(16);
-                                                                            encryptedChat.in_seq_no = queryFinalized3.intValue(17);
-                                                                            long longValue2 = queryFinalized3.longValue(18);
-                                                                            if (longValue2 != 0) {
-                                                                                encryptedChat.admin_id = longValue2;
-                                                                            }
-                                                                            encryptedChat.mtproto_seq = queryFinalized3.intValue(19);
-                                                                            TLRPC.UserStatus userStatus2 = user.status;
-                                                                            if (userStatus2 != null) {
-                                                                                userStatus2.expires = queryFinalized3.intValue(7);
-                                                                            }
-                                                                            if (c == 1) {
-                                                                                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(ContactsController.formatName(user.first_name, user.last_name));
-                                                                                dialogSearchResult5.name = spannableStringBuilder;
-                                                                                spannableStringBuilder.setSpan(new ForegroundColorSpan(Theme.getColor(Theme.key_chats_secretName)), 0, dialogSearchResult5.name.length(), 33);
-                                                                            } else {
-                                                                                dialogSearchResult5.name = AndroidUtilities.generateSearchName("@" + UserObject.getPublicUsername(user), null, "@" + str23);
-                                                                            }
-                                                                            dialogSearchResult5.object = encryptedChat;
-                                                                            arrayList3.add(user);
-                                                                            i4++;
-                                                                        }
-                                                                    } else {
-                                                                        i20++;
-                                                                        translitString4 = translitString4;
-                                                                        str10 = str10;
-                                                                    }
-                                                                }
-                                                            }
-                                                            c = 1;
-                                                            if (c == 0) {
-                                                            }
-                                                        }
-                                                        str6 = str10;
-                                                        i10 = i7;
-                                                        i7 = i10;
-                                                    } catch (Exception e10) {
-                                                        sQLiteCursor3 = queryFinalized3;
-                                                        exc = e10;
-                                                        messagesStorage.checkSQLException(exc);
-                                                        if (sQLiteCursor3 == null) {
-                                                        }
-                                                    } catch (Throwable th14) {
-                                                        sQLiteCursor3 = queryFinalized3;
-                                                        th = th14;
-                                                        if (sQLiteCursor3 != null) {
-                                                        }
-                                                    }
-                                                }
-                                                i9 = i7;
-                                                queryFinalized3.dispose();
-                                            } catch (Exception e11) {
-                                                e = e11;
-                                                exc = e;
-                                                sQLiteCursor3 = null;
-                                                messagesStorage.checkSQLException(exc);
-                                                if (sQLiteCursor3 == null) {
-                                                }
-                                            } catch (Throwable th15) {
-                                                th = th15;
-                                                th = th;
-                                                sQLiteCursor3 = null;
-                                                if (sQLiteCursor3 != null) {
-                                                }
+                                            DialogsSearchAdapter.DialogSearchResult dialogSearchResult6 = (DialogsSearchAdapter.DialogSearchResult) longSparseArray.valueAt(i21);
+                                            if (dialogSearchResult6.object != null && dialogSearchResult6.name != null) {
+                                                arrayList10.add(dialogSearchResult6);
                                             }
-                                        } catch (Exception e12) {
-                                            e = e12;
+                                        } catch (Exception e13) {
+                                            e = e13;
                                             exc = e;
-                                            sQLiteCursor = null;
-                                            sQLiteCursor3 = sQLiteCursor;
+                                            sQLiteCursor3 = null;
                                             messagesStorage.checkSQLException(exc);
                                             if (sQLiteCursor3 == null) {
                                             }
-                                        } catch (Throwable th16) {
-                                            th = th16;
+                                        } catch (Throwable th17) {
+                                            th = th17;
                                             th = th;
-                                            sQLiteCursor2 = null;
-                                            sQLiteCursor3 = sQLiteCursor2;
+                                            sQLiteCursor3 = null;
                                             if (sQLiteCursor3 != null) {
                                             }
                                         }
                                     }
-                                    try {
-                                        ArrayList arrayList10 = new ArrayList(i4);
-                                        for (int i21 = 0; i21 < longSparseArray.size(); i21++) {
-                                            try {
-                                                DialogsSearchAdapter.DialogSearchResult dialogSearchResult6 = (DialogsSearchAdapter.DialogSearchResult) longSparseArray.valueAt(i21);
-                                                if (dialogSearchResult6.object != null && dialogSearchResult6.name != null) {
-                                                    arrayList10.add(dialogSearchResult6);
-                                                }
-                                            } catch (Exception e13) {
-                                                e = e13;
-                                                exc = e;
-                                                sQLiteCursor3 = null;
-                                                messagesStorage.checkSQLException(exc);
-                                                if (sQLiteCursor3 == null) {
-                                                }
-                                            } catch (Throwable th17) {
-                                                th = th17;
-                                                th = th;
-                                                sQLiteCursor3 = null;
-                                                if (sQLiteCursor3 != null) {
-                                                }
+                                    Collections.sort(arrayList10, new Comparator() { // from class: org.telegram.messenger.MessagesStorage$$ExternalSyntheticLambda51
+                                        @Override // java.util.Comparator
+                                        public final int compare(Object obj, Object obj2) {
+                                            int lambda$localSearch$250;
+                                            lambda$localSearch$250 = MessagesStorage.lambda$localSearch$250((DialogsSearchAdapter.DialogSearchResult) obj, (DialogsSearchAdapter.DialogSearchResult) obj2);
+                                            return lambda$localSearch$250;
+                                        }
+                                    });
+                                    for (int i22 = 0; i22 < arrayList10.size(); i22++) {
+                                        DialogsSearchAdapter.DialogSearchResult dialogSearchResult7 = (DialogsSearchAdapter.DialogSearchResult) arrayList10.get(i22);
+                                        arrayList.add(dialogSearchResult7.object);
+                                        arrayList2.add(dialogSearchResult7.name);
+                                    }
+                                    if (i6 == 2 || i6 == 15 || i6 == 6 || i6 == 5) {
+                                        return;
+                                    }
+                                    queryFinalized = getDatabase().queryFinalized("SELECT u.data, u.status, u.name, u.uid FROM users as u INNER JOIN contacts as c ON u.uid = c.uid", new Object[0]);
+                                    while (queryFinalized.next()) {
+                                        if (longSparseArray.indexOfKey(queryFinalized.longValue(3)) < 0) {
+                                            String stringValue4 = queryFinalized.stringValue(2);
+                                            String translitString5 = LocaleController.getInstance().getTranslitString(stringValue4);
+                                            if (stringValue4.equals(translitString5)) {
+                                                str9 = str6;
+                                                translitString5 = null;
+                                            } else {
+                                                str9 = str6;
                                             }
-                                        }
-                                        Collections.sort(arrayList10, new Comparator() { // from class: org.telegram.messenger.MessagesStorage$$ExternalSyntheticLambda51
-                                            @Override // java.util.Comparator
-                                            public final int compare(Object obj, Object obj2) {
-                                                int lambda$localSearch$250;
-                                                lambda$localSearch$250 = MessagesStorage.lambda$localSearch$250((DialogsSearchAdapter.DialogSearchResult) obj, (DialogsSearchAdapter.DialogSearchResult) obj2);
-                                                return lambda$localSearch$250;
-                                            }
-                                        });
-                                        for (int i22 = 0; i22 < arrayList10.size(); i22++) {
-                                            DialogsSearchAdapter.DialogSearchResult dialogSearchResult7 = (DialogsSearchAdapter.DialogSearchResult) arrayList10.get(i22);
-                                            arrayList.add(dialogSearchResult7.object);
-                                            arrayList2.add(dialogSearchResult7.name);
-                                        }
-                                        if (i6 == 2 || i6 == 15 || i6 == 6 || i6 == 5) {
-                                            return;
-                                        }
-                                        queryFinalized = getDatabase().queryFinalized("SELECT u.data, u.status, u.name, u.uid FROM users as u INNER JOIN contacts as c ON u.uid = c.uid", new Object[0]);
-                                        while (queryFinalized.next()) {
-                                            if (longSparseArray.indexOfKey(queryFinalized.longValue(3)) < 0) {
-                                                String stringValue4 = queryFinalized.stringValue(2);
-                                                String translitString5 = LocaleController.getInstance().getTranslitString(stringValue4);
-                                                if (stringValue4.equals(translitString5)) {
-                                                    str9 = str6;
-                                                    translitString5 = null;
+                                            int lastIndexOf3 = stringValue4.lastIndexOf(str9);
+                                            String substring2 = lastIndexOf3 != -1 ? stringValue4.substring(lastIndexOf3 + 3) : null;
+                                            int i23 = i9;
+                                            int i24 = 0;
+                                            char c3 = 0;
+                                            while (true) {
+                                                if (i24 >= i23) {
+                                                    str6 = str9;
+                                                    break;
+                                                }
+                                                String str24 = strArr[i24];
+                                                if (stringValue4.startsWith(str24)) {
+                                                    str6 = str9;
                                                 } else {
-                                                    str9 = str6;
-                                                }
-                                                int lastIndexOf3 = stringValue4.lastIndexOf(str9);
-                                                String substring2 = lastIndexOf3 != -1 ? stringValue4.substring(lastIndexOf3 + 3) : null;
-                                                int i23 = i9;
-                                                int i24 = 0;
-                                                char c3 = 0;
-                                                while (true) {
-                                                    if (i24 >= i23) {
-                                                        str6 = str9;
-                                                        break;
-                                                    }
-                                                    String str24 = strArr[i24];
-                                                    if (stringValue4.startsWith(str24)) {
-                                                        str6 = str9;
-                                                    } else {
-                                                        str6 = str9;
-                                                        if (!stringValue4.contains(" " + str24)) {
-                                                            if (translitString5 != null) {
-                                                                if (!translitString5.startsWith(str24)) {
-                                                                    if (translitString5.contains(" " + str24)) {
-                                                                    }
+                                                    str6 = str9;
+                                                    if (!stringValue4.contains(" " + str24)) {
+                                                        if (translitString5 != null) {
+                                                            if (!translitString5.startsWith(str24)) {
+                                                                if (translitString5.contains(" " + str24)) {
                                                                 }
-                                                            }
-                                                            if (substring2 != null && substring2.startsWith(str24)) {
-                                                                c3 = 2;
-                                                            }
-                                                            if (c3 == 0) {
-                                                                NativeByteBuffer byteBufferValue5 = queryFinalized.byteBufferValue(0);
-                                                                if (byteBufferValue5 != null) {
-                                                                    TLRPC.User TLdeserialize3 = TLRPC.User.TLdeserialize(byteBufferValue5, byteBufferValue5.readInt32(false), false);
-                                                                    byteBufferValue5.reuse();
-                                                                    TLRPC.UserStatus userStatus3 = TLdeserialize3.status;
-                                                                    if (userStatus3 != null) {
-                                                                        userStatus3.expires = queryFinalized.intValue(1);
-                                                                    }
-                                                                    if (c3 == 1) {
-                                                                        arrayList2.add(AndroidUtilities.generateSearchName(TLdeserialize3.first_name, TLdeserialize3.last_name, str24));
-                                                                    } else {
-                                                                        arrayList2.add(AndroidUtilities.generateSearchName("@" + UserObject.getPublicUsername(TLdeserialize3), null, "@" + str24));
-                                                                    }
-                                                                    arrayList.add(TLdeserialize3);
-                                                                }
-                                                            } else {
-                                                                i24++;
-                                                                str9 = str6;
                                                             }
                                                         }
-                                                    }
-                                                    c3 = 1;
-                                                    if (c3 == 0) {
+                                                        if (substring2 != null && substring2.startsWith(str24)) {
+                                                            c3 = 2;
+                                                        }
+                                                        if (c3 == 0) {
+                                                            NativeByteBuffer byteBufferValue5 = queryFinalized.byteBufferValue(0);
+                                                            if (byteBufferValue5 != null) {
+                                                                TLRPC.User TLdeserialize3 = TLRPC.User.TLdeserialize(byteBufferValue5, byteBufferValue5.readInt32(false), false);
+                                                                byteBufferValue5.reuse();
+                                                                TLRPC.UserStatus userStatus3 = TLdeserialize3.status;
+                                                                if (userStatus3 != null) {
+                                                                    userStatus3.expires = queryFinalized.intValue(1);
+                                                                }
+                                                                if (c3 == 1) {
+                                                                    arrayList2.add(AndroidUtilities.generateSearchName(TLdeserialize3.first_name, TLdeserialize3.last_name, str24));
+                                                                } else {
+                                                                    arrayList2.add(AndroidUtilities.generateSearchName("@" + UserObject.getPublicUsername(TLdeserialize3), null, "@" + str24));
+                                                                }
+                                                                arrayList.add(TLdeserialize3);
+                                                            }
+                                                        } else {
+                                                            i24++;
+                                                            str9 = str6;
+                                                        }
                                                     }
                                                 }
-                                                i9 = i23;
+                                                c3 = 1;
+                                                if (c3 == 0) {
+                                                }
                                             }
-                                        }
-                                        queryFinalized.dispose();
-                                        return;
-                                    } catch (Exception e14) {
-                                        e = e14;
-                                        sQLiteCursor = null;
-                                        exc = e;
-                                        sQLiteCursor3 = sQLiteCursor;
-                                        messagesStorage.checkSQLException(exc);
-                                        if (sQLiteCursor3 == null) {
-                                        }
-                                    } catch (Throwable th18) {
-                                        th = th18;
-                                        sQLiteCursor2 = null;
-                                        th = th;
-                                        sQLiteCursor3 = sQLiteCursor2;
-                                        if (sQLiteCursor3 != null) {
+                                            i9 = i23;
                                         }
                                     }
-                                } catch (Exception e15) {
-                                    e = e15;
+                                    queryFinalized.dispose();
+                                    return;
+                                } catch (Exception e14) {
+                                    e = e14;
                                     sQLiteCursor = null;
                                     exc = e;
                                     sQLiteCursor3 = sQLiteCursor;
                                     messagesStorage.checkSQLException(exc);
                                     if (sQLiteCursor3 == null) {
                                     }
-                                } catch (Throwable th19) {
-                                    th = th19;
+                                } catch (Throwable th18) {
+                                    th = th18;
+                                    sQLiteCursor2 = null;
+                                    th = th;
+                                    sQLiteCursor3 = sQLiteCursor2;
+                                    if (sQLiteCursor3 != null) {
+                                    }
                                 }
-                            } catch (Exception e16) {
-                                e = e16;
+                            } catch (Exception e15) {
+                                e = e15;
                                 sQLiteCursor = null;
-                                messagesStorage = this;
-                            } catch (Throwable th20) {
-                                th = th20;
+                                exc = e;
+                                sQLiteCursor3 = sQLiteCursor;
+                                messagesStorage.checkSQLException(exc);
+                                if (sQLiteCursor3 == null) {
+                                }
+                            } catch (Throwable th19) {
+                                th = th19;
                             }
-                        }
-                        messagesStorage2 = this;
-                        TLRPC.User currentUser = UserConfig.getInstance(messagesStorage2.currentAccount).getCurrentUser();
-                        DialogsSearchAdapter.DialogSearchResult dialogSearchResult8 = new DialogsSearchAdapter.DialogSearchResult();
-                        dialogSearchResult8.date = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                        dialogSearchResult8.name = lowerCase2;
-                        dialogSearchResult8.object = currentUser;
-                        longSparseArray.put(currentUser.id, dialogSearchResult8);
-                        i4 = 1;
-                        if (i13 != 4) {
+                        } catch (Exception e16) {
+                            e = e16;
+                            sQLiteCursor = null;
+                            messagesStorage = this;
+                        } catch (Throwable th20) {
+                            th = th20;
                         }
                     }
-                } catch (Exception e17) {
-                    e = e17;
-                    messagesStorage = messagesStorage2;
-                    sQLiteCursor = null;
-                    exc = e;
-                    sQLiteCursor3 = sQLiteCursor;
-                    messagesStorage.checkSQLException(exc);
-                    if (sQLiteCursor3 == null) {
-                    }
-                } catch (Throwable th21) {
-                    th = th21;
-                    sQLiteCursor2 = null;
-                    th = th;
-                    sQLiteCursor3 = sQLiteCursor2;
-                    if (sQLiteCursor3 != null) {
+                    messagesStorage2 = this;
+                    TLRPC.User currentUser = UserConfig.getInstance(messagesStorage2.currentAccount).getCurrentUser();
+                    DialogsSearchAdapter.DialogSearchResult dialogSearchResult8 = new DialogsSearchAdapter.DialogSearchResult();
+                    dialogSearchResult8.date = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    dialogSearchResult8.name = lowerCase2;
+                    dialogSearchResult8.object = currentUser;
+                    longSparseArray.put(currentUser.id, dialogSearchResult8);
+                    i4 = 1;
+                    if (i13 != 4) {
                     }
                 }
-                if (!str4.startsWith(str5)) {
-                }
-                messagesStorage2 = this;
-                TLRPC.User currentUser2 = UserConfig.getInstance(messagesStorage2.currentAccount).getCurrentUser();
-                DialogsSearchAdapter.DialogSearchResult dialogSearchResult82 = new DialogsSearchAdapter.DialogSearchResult();
-                dialogSearchResult82.date = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                dialogSearchResult82.name = lowerCase2;
-                dialogSearchResult82.object = currentUser2;
-                longSparseArray.put(currentUser2.id, dialogSearchResult82);
-                i4 = 1;
-                if (i13 != 4) {
-                }
-            } catch (Exception e18) {
-                e = e18;
+            } catch (Exception e17) {
+                e = e17;
+                messagesStorage = messagesStorage2;
                 sQLiteCursor = null;
-                messagesStorage = this;
                 exc = e;
                 sQLiteCursor3 = sQLiteCursor;
                 messagesStorage.checkSQLException(exc);
                 if (sQLiteCursor3 == null) {
                 }
-            } catch (Throwable th22) {
-                th = th22;
+            } catch (Throwable th21) {
+                th = th21;
                 sQLiteCursor2 = null;
                 th = th;
                 sQLiteCursor3 = sQLiteCursor2;
@@ -33389,12 +33371,24 @@ public class MessagesStorage extends BaseController {
             queryFinalized.dispose();
             if (i13 == 4) {
             }
-        } catch (Exception e19) {
-            e = e19;
+            if (!str4.startsWith(str5)) {
+            }
+            messagesStorage2 = this;
+            TLRPC.User currentUser2 = UserConfig.getInstance(messagesStorage2.currentAccount).getCurrentUser();
+            DialogsSearchAdapter.DialogSearchResult dialogSearchResult82 = new DialogsSearchAdapter.DialogSearchResult();
+            dialogSearchResult82.date = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            dialogSearchResult82.name = lowerCase2;
+            dialogSearchResult82.object = currentUser2;
+            longSparseArray2.put(currentUser2.id, dialogSearchResult82);
+            i4 = 1;
+            if (i13 != 4) {
+            }
+        } catch (Exception e18) {
+            e = e18;
             messagesStorage = this;
             sQLiteCursor = null;
-        } catch (Throwable th23) {
-            th = th23;
+        } catch (Throwable th22) {
+            th = th22;
         }
     }
 

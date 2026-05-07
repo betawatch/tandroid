@@ -3058,12 +3058,6 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             });
             ImageView imageView4 = new ImageView(activity) { // from class: org.telegram.ui.Components.ChatActivityEnterView.20
                 @Override // android.view.View
-                public ViewPropertyAnimator animate() {
-                    AndroidUtilities.printStackTrace("WTF_DEBUG");
-                    return super.animate();
-                }
-
-                @Override // android.view.View
                 public boolean dispatchTouchEvent(MotionEvent motionEvent) {
                     if (getAlpha() < 0.5f) {
                         return false;
