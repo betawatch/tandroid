@@ -1001,8 +1001,8 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00b6  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00b9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1019,24 +1019,26 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         } else {
             i = 0;
         }
-        if ((TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(this.solutionString)) || this.solutionString.length() <= 200) && !TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(this.questionString)) && this.questionString.length() <= 255) {
-            int i3 = 0;
-            int i4 = 0;
+        int i3 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.didReceiveCall;
+        int i4 = this.todo ? getMessagesController().todoItemLengthMax : 100;
+        if ((TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(this.solutionString)) || this.solutionString.length() <= 200) && !TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(this.questionString)) && this.questionString.length() <= i3) {
+            int i5 = 0;
+            int i6 = 0;
             while (true) {
                 CharSequence[] charSequenceArr = this.answers;
-                if (i3 >= charSequenceArr.length) {
+                if (i5 >= charSequenceArr.length) {
                     break;
                 }
-                if (!TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(charSequenceArr[i3]))) {
-                    if (this.answers[i3].length() > 100) {
-                        i4 = 0;
+                if (!TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(charSequenceArr[i5]))) {
+                    if (this.answers[i5].length() > i4) {
+                        i6 = 0;
                         break;
                     }
-                    i4++;
+                    i6++;
                 }
-                i3++;
+                i5++;
             }
-            if (i4 >= (this.todo ? 1 : 2) && (!this.quizPoll || i >= 1)) {
+            if (i6 >= (this.todo ? 1 : 2) && (!this.quizPoll || i >= 1)) {
                 z = true;
                 this.doneItem.setEnabled((this.quizPoll && i == 0) || z);
                 this.doneItem.setAlpha(z ? 1.0f : 0.5f);
@@ -1204,78 +1206,41 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0059  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0085  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public void setTextLeft(View view, int i) {
-        int i2;
         int length;
-        int i3;
-        int i4;
-        int length2;
-        float f;
-        if (!(view instanceof PollEditTextCell)) {
-            return;
-        }
-        PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
-        if (i == this.questionRow) {
-            CharSequence charSequence = this.questionString;
-            i3 = NotificationCenter.didReceiveCall;
-            if (charSequence != null) {
-                length2 = charSequence.length();
-                i2 = NotificationCenter.didReceiveCall;
-                length = i3 - length2;
-                f = i2;
-                if (length <= f - (0.7f * f)) {
-                    pollEditTextCell.setText2(String.format("%d", Integer.valueOf(length)));
-                    SimpleTextView textView2 = pollEditTextCell.getTextView2();
-                    int i5 = length < 0 ? Theme.key_text_RedRegular : Theme.key_windowBackgroundWhiteGrayText3;
-                    textView2.setTextColor(Theme.getColor(i5));
-                    textView2.setTag(Integer.valueOf(i5));
+        int i2;
+        if (view instanceof PollEditTextCell) {
+            PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
+            if (i == this.questionRow) {
+                i2 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.didReceiveCall;
+                CharSequence charSequence = this.questionString;
+                length = i2 - (charSequence != null ? charSequence.length() : 0);
+            } else if (i == this.solutionRow) {
+                CharSequence charSequence2 = this.solutionString;
+                length = 200 - (charSequence2 != null ? charSequence2.length() : 0);
+                i2 = NotificationCenter.dialogPhotosUpdate;
+            } else {
+                int i3 = this.answerStartRow;
+                if (i < i3 || i >= this.answersCount + i3) {
                     return;
                 }
-                pollEditTextCell.setText2("");
+                int i4 = i - i3;
+                int i5 = this.todo ? getMessagesController().todoItemLengthMax : 100;
+                CharSequence charSequence3 = this.answers[i4];
+                int i6 = i5;
+                length = i5 - (charSequence3 != null ? charSequence3.length() : 0);
+                i2 = i6;
+            }
+            float f = i2;
+            if (length <= f - (0.7f * f)) {
+                pollEditTextCell.setText2(String.format("%d", Integer.valueOf(length)));
+                SimpleTextView textView2 = pollEditTextCell.getTextView2();
+                int i7 = length < 0 ? Theme.key_text_RedRegular : Theme.key_windowBackgroundWhiteGrayText3;
+                textView2.setTextColor(Theme.getColor(i7));
+                textView2.setTag(Integer.valueOf(i7));
                 return;
             }
-            i4 = NotificationCenter.didReceiveCall;
-            i2 = i4;
-            length2 = 0;
-            length = i3 - length2;
-            f = i2;
-            if (length <= f - (0.7f * f)) {
-            }
-        } else if (i == this.solutionRow) {
-            CharSequence charSequence2 = this.solutionString;
-            i3 = NotificationCenter.dialogPhotosUpdate;
-            if (charSequence2 != null) {
-                length2 = charSequence2.length();
-                i2 = NotificationCenter.dialogPhotosUpdate;
-                length = i3 - length2;
-                f = i2;
-                if (length <= f - (0.7f * f)) {
-                }
-            } else {
-                i4 = NotificationCenter.dialogPhotosUpdate;
-                i2 = i4;
-                length2 = 0;
-                length = i3 - length2;
-                f = i2;
-                if (length <= f - (0.7f * f)) {
-                }
-            }
-        } else {
-            int i6 = this.answerStartRow;
-            if (i < i6 || i >= this.answersCount + i6) {
-                return;
-            }
-            CharSequence charSequence3 = this.answers[i - i6];
-            i2 = 100;
-            length = 100 - (charSequence3 != null ? charSequence3.length() : 0);
-            f = i2;
-            if (length <= f - (0.7f * f)) {
-            }
+            pollEditTextCell.setText2("");
         }
     }
 

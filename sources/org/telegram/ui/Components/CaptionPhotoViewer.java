@@ -7,11 +7,15 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -34,11 +38,15 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
     private final int SHOW_ONCE;
     private final ImageView addPhotoButton;
     private boolean addPhotoVisible;
+    private ImageView aiButton;
+    private AiButtonDrawable aiButtonIcon;
+    public HintView2 aiHint;
     private final Runnable applyCaption;
     private BlurredBackgroundDrawable backgroundForCaptionButton;
     private final Runnable collapseMoveButton;
     private final HintView2 hint;
     private boolean isVideo;
+    private final AnimatedFloat lineCountAnimated;
     private final AnimatedFloat moveButtonAnimated;
     private final ButtonBounce moveButtonBounce;
     private final RectF moveButtonBounds;
@@ -48,6 +56,7 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
     private final AnimatedTextView.AnimatedTextDrawable moveButtonText;
     private boolean moveButtonVisible;
     private Utilities.Callback onTTLChange;
+    private boolean shownAiButton;
     private int timer;
     private final ImageView timerButton;
     private final CaptionContainerView.PeriodDrawable timerDrawable;
@@ -81,12 +90,13 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
         this.moveButtonText = animatedTextDrawable;
         this.moveButtonBounce = new ButtonBounce(this);
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
+        this.lineCountAnimated = new AnimatedFloat(this, 0L, 350L, cubicBezierInterpolator);
         this.moveButtonAnimated = new AnimatedFloat(this, 0L, 350L, cubicBezierInterpolator);
         this.moveButtonExpandedAnimated = new AnimatedFloat(this, 0L, 350L, cubicBezierInterpolator);
         this.collapseMoveButton = new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                CaptionPhotoViewer.this.lambda$new$2();
+                CaptionPhotoViewer.this.lambda$new$5();
             }
         };
         this.applyCaption = runnable;
@@ -125,16 +135,80 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
         hintView2.setJoint(1.0f, -21.0f);
         hintView2.setMultilineText(true);
         addView(hintView2, LayoutHelper.createFrame(-1, 80, (isAtTop() ? 48 : 80) | 5));
-        imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda1
+        ImageView imageView3 = new ImageView(context);
+        this.aiButton = imageView3;
+        AiButtonDrawable aiButtonDrawable = new AiButtonDrawable(context);
+        this.aiButtonIcon = aiButtonDrawable;
+        imageView3.setImageDrawable(aiButtonDrawable);
+        this.aiButton.setScaleType(scaleType);
+        this.aiButton.setColorFilter(new PorterDuffColorFilter(-1140850689, PorterDuff.Mode.MULTIPLY));
+        this.aiButton.setBackground(Theme.createSelectorDrawable(1090519039, 1, AndroidUtilities.dp(16.0f)));
+        addView(this.aiButton, LayoutHelper.createFrame(44, 44.0f, 53, 8.0f, 0.0f, 8.0f, 0.0f));
+        this.aiButton.setContentDescription(LocaleController.getString(R.string.AIEditor));
+        ScaleStateListAnimator.apply(this.aiButton);
+        this.editText.getEditText().addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.Components.CaptionPhotoViewer.1
+            @Override // android.text.TextWatcher
+            public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+            }
+
+            @Override // android.text.TextWatcher
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+            }
+
+            @Override // android.text.TextWatcher
+            public void afterTextChanged(Editable editable) {
+                CaptionPhotoViewer captionPhotoViewer = CaptionPhotoViewer.this;
+                captionPhotoViewer.showAiButton((captionPhotoViewer.editText.getEditText().getLineCount() <= 2 || editable == null || TextUtils.isEmpty(editable.toString().trim())) ? false : true);
+            }
+        });
+        this.aiButton.setVisibility(8);
+        this.aiButton.setAlpha(0.0f);
+        this.aiButton.setScaleX(0.6f);
+        this.aiButton.setScaleY(0.6f);
+        this.aiButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CaptionPhotoViewer.this.lambda$new$1(frameLayout, view);
+                CaptionPhotoViewer.this.lambda$new$2(view);
+            }
+        });
+        imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda2
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                CaptionPhotoViewer.this.lambda$new$4(frameLayout, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(FrameLayout frameLayout, View view) {
+    public /* synthetic */ void lambda$new$2(View view) {
+        MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", 3).apply();
+        new AIEditorAlert(getContext(), new DarkThemeResourceProvider()).setText(this.editText.getText()).setOnUse(new Utilities.Callback() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda7
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                CaptionPhotoViewer.this.lambda$new$0((CharSequence) obj);
+            }
+        }).setOnSend(0L, true, new Utilities.Callback4() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda8
+            @Override // org.telegram.messenger.Utilities.Callback4
+            public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
+                CaptionPhotoViewer.this.lambda$new$1((CharSequence) obj, (Integer) obj2, (Integer) obj3, (Boolean) obj4);
+            }
+        }).show();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0(CharSequence charSequence) {
+        this.editText.setText(charSequence);
+        this.editText.setSelection(charSequence.length(), charSequence.length());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$1(CharSequence charSequence, Integer num, Integer num2, Boolean bool) {
+        this.editText.setText(charSequence);
+        done();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$4(FrameLayout frameLayout, View view) {
         String formatPluralString;
         ItemOptions itemOptions = this.timerPopup;
         if (itemOptions != null && itemOptions.isShown()) {
@@ -156,10 +230,10 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
             } else {
                 formatPluralString = LocaleController.formatPluralString("Seconds", i, new Object[0]);
             }
-            this.timerPopup.add(0, formatPluralString, new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda3
+            this.timerPopup.add(0, formatPluralString, new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda9
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CaptionPhotoViewer.this.lambda$new$0(i);
+                    CaptionPhotoViewer.this.lambda$new$3(i);
                 }
             });
             if (this.timer == i) {
@@ -167,6 +241,22 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
             }
         }
         this.timerPopup.show();
+    }
+
+    @Override // org.telegram.ui.Stories.recorder.CaptionContainerView
+    protected void onLineCountChanged(int i, int i2) {
+        CharSequence text = getText();
+        showAiButton((i2 <= 2 || text == null || TextUtils.isEmpty(text.toString().trim())) ? false : true);
+        if (this.shownAiButton) {
+            if ((i < 3) != (i2 < 3)) {
+                invalidate();
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Stories.recorder.CaptionContainerView
+    public void setText(CharSequence charSequence) {
+        super.setText(charSequence);
     }
 
     public void expandMoveButton() {
@@ -181,7 +271,7 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2() {
+    public /* synthetic */ void lambda$new$5() {
         if (this.moveButtonExpanded) {
             this.moveButtonExpanded = false;
             invalidate();
@@ -201,7 +291,12 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
     @Override // org.telegram.ui.Stories.recorder.CaptionContainerView, android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        float f = this.moveButtonAnimated.set(this.moveButtonVisible, !showMoveButton());
+        ImageView imageView = this.aiButton;
+        if (imageView != null) {
+            imageView.setTranslationX(-AndroidUtilities.dp((1.0f - this.keyboardT) * 4.0f));
+            this.aiButton.setTranslationY((isAtTop() ? this.bounds.bottom - AndroidUtilities.dp(44.0f) : this.bounds.top) + ((isAtTop() ? 1 : -1) * AndroidUtilities.dp(3.0f) * Utilities.clamp01((-this.lineCountAnimated.set(this.editText.getEditText().getLineCount())) + 4.0f)));
+        }
+        float f = this.moveButtonAnimated.set(this.moveButtonVisible, true ^ showMoveButton());
         float f2 = this.moveButtonExpandedAnimated.set(this.moveButtonExpanded);
         if (f > 0.0f) {
             float scale = this.moveButtonBounce.getScale(0.03f);
@@ -253,10 +348,10 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
         int i = 0;
         if (z2) {
             this.addPhotoButton.setVisibility(0);
-            this.addPhotoButton.animate().alpha(z ? 1.0f : 0.0f).translationX(z ? 0.0f : AndroidUtilities.dp(-8.0f)).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda2
+            this.addPhotoButton.animate().alpha(z ? 1.0f : 0.0f).translationX(z ? 0.0f : AndroidUtilities.dp(-8.0f)).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CaptionPhotoViewer.this.lambda$setAddPhotoVisible$3(z);
+                    CaptionPhotoViewer.this.lambda$setAddPhotoVisible$6(z);
                 }
             }).start();
         } else {
@@ -274,7 +369,7 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setAddPhotoVisible$3(boolean z) {
+    public /* synthetic */ void lambda$setAddPhotoVisible$6(boolean z) {
         if (z) {
             return;
         }
@@ -309,10 +404,10 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
         int i = 0;
         if (z2) {
             this.timerButton.setVisibility(0);
-            this.timerButton.animate().alpha(z ? 1.0f : 0.0f).translationX(z ? 0.0f : AndroidUtilities.dp(8.0f)).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda4
+            this.timerButton.animate().alpha(z ? 1.0f : 0.0f).translationX(z ? 0.0f : AndroidUtilities.dp(8.0f)).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda10
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CaptionPhotoViewer.this.lambda$setTimerVisible$4(z);
+                    CaptionPhotoViewer.this.lambda$setTimerVisible$7(z);
                 }
             }).start();
         } else {
@@ -329,7 +424,7 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setTimerVisible$4(boolean z) {
+    public /* synthetic */ void lambda$setTimerVisible$7(boolean z) {
         if (z) {
             return;
         }
@@ -351,7 +446,7 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: changeTimer, reason: merged with bridge method [inline-methods] */
-    public void lambda$new$0(int i) {
+    public void lambda$new$3(int i) {
         CharSequence replaceTags;
         if (this.timer == i) {
             return;
@@ -496,5 +591,71 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
             return true;
         }
         return this.moveButtonBounce.isPressed() || super.dispatchTouchEvent(motionEvent);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void showAiButton(final boolean z) {
+        if (this.shownAiButton == z) {
+            return;
+        }
+        if (z) {
+            MessagesController.getInstance(this.currentAccount).getTonesController().load();
+        }
+        this.shownAiButton = z;
+        this.aiButton.setVisibility(0);
+        this.aiButton.animate().alpha(z ? 1.0f : 0.0f).scaleX(z ? 1.0f : 0.6f).scaleY(z ? 1.0f : 0.6f).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setDuration(420L).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda4
+            @Override // java.lang.Runnable
+            public final void run() {
+                CaptionPhotoViewer.this.lambda$showAiButton$8(z);
+            }
+        }).start();
+        if (z) {
+            ImageView imageView = this.aiButton;
+            AiButtonDrawable aiButtonDrawable = this.aiButtonIcon;
+            Objects.requireNonNull(aiButtonDrawable);
+            imageView.postDelayed(new CaptionPhotoViewer$$ExternalSyntheticLambda5(aiButtonDrawable), 220L);
+            HintView2 hintView2 = this.aiHint;
+            if (hintView2 != null) {
+                hintView2.hide();
+                this.aiHint = null;
+            }
+            if (MessagesController.getGlobalMainSettings().getInt("aihintshown", 0) < 3) {
+                final HintView2 hintView22 = new HintView2(getContext(), 3);
+                this.aiHint = hintView22;
+                hintView22.setMultilineText(true);
+                this.aiHint.setText(LocaleController.getString(R.string.AIEditorHint));
+                this.aiHint.setJointPx(1.0f, ((-this.aiButton.getWidth()) / 2.0f) + AndroidUtilities.dp(4.0f));
+                addView(this.aiHint, LayoutHelper.createFrame(-1, 200.0f, 48, 0.0f, -196.0f, 0.0f, 0.0f));
+                this.aiHint.setOnHiddenListener(new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda6
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        CaptionPhotoViewer.this.lambda$showAiButton$9(hintView22);
+                    }
+                });
+                this.aiHint.setDuration(4000L);
+                this.aiHint.show();
+                MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", MessagesController.getGlobalMainSettings().getInt("aihintshown", 0) + 1).apply();
+                return;
+            }
+            return;
+        }
+        HintView2 hintView23 = this.aiHint;
+        if (hintView23 != null) {
+            hintView23.hide();
+            this.aiHint = null;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$showAiButton$8(boolean z) {
+        if (z) {
+            return;
+        }
+        this.aiButton.setVisibility(8);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$showAiButton$9(HintView2 hintView2) {
+        removeView(hintView2);
     }
 }

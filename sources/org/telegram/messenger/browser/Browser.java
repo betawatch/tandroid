@@ -52,6 +52,7 @@ import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheetTabs;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.BubbleActivity;
+import org.telegram.ui.EmptyBaseFragment;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.RestrictedDomainsList;
 
@@ -290,8 +291,12 @@ public abstract class Browser {
         openUrl(context, uri, z, z2, false, progress, null, false, true, false);
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(9:19|(1:21)|(3:115|116|117)|24|25|(1:27)|(10:108|(3:86|87|(2:89|(2:91|(2:93|(7:95|(1:103)|60|61|62|(1:64)|(1:(2:71|(4:73|(2:77|(1:79))|80|81)(1:82))(2:83|84))(2:68|69))))))|58|(6:85|61|62|(0)|(1:66)|(0)(0))|60|61|62|(0)|(0)|(0)(0))|45|(2:47|48)(5:49|50|51|52|53)) */
-    /* JADX WARN: Code restructure failed: missing block: B:109:0x0148, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(9:19|(1:21)|(3:119|120|121)|24|25|(1:27)|(10:112|(3:88|89|(4:91|(2:93|(1:95))|96|(2:98|(7:100|(2:102|(2:104|(1:106)))|62|63|64|(1:66)|(1:(2:73|(4:75|(2:79|(1:81))|82|83)(1:84))(2:85|86))(2:70|71)))))|60|(6:87|63|64|(0)|(1:68)|(0)(0))|62|63|64|(0)|(0)|(0)(0))|47|(2:49|50)(5:51|52|53|54|55)) */
+    /* JADX WARN: Code restructure failed: missing block: B:107:0x0268, code lost:
+    
+        if ("tonsite".equals(r2.getScheme()) != false) goto L117;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:113:0x0148, code lost:
     
         r0 = e;
      */
@@ -299,13 +304,13 @@ public abstract class Browser {
     
         if ("https".equals(r1) != false) goto L149;
      */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0127 A[Catch: Exception -> 0x0148, TryCatch #5 {Exception -> 0x0148, blocks: (B:25:0x010b, B:27:0x0127, B:29:0x014c, B:31:0x0150, B:34:0x0156, B:36:0x015f, B:38:0x0169, B:40:0x016e, B:42:0x0178, B:45:0x0186, B:47:0x0192, B:49:0x01a4), top: B:24:0x010b }] */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0273 A[Catch: Exception -> 0x025b, TRY_ENTER, TryCatch #3 {Exception -> 0x025b, blocks: (B:87:0x0216, B:89:0x021a, B:91:0x021e, B:93:0x0224, B:95:0x0233, B:97:0x0239, B:99:0x0243, B:101:0x024d, B:61:0x026b, B:64:0x0273, B:66:0x027c, B:68:0x0280, B:71:0x028e, B:73:0x0298, B:75:0x029e, B:77:0x02a8, B:79:0x02bd, B:80:0x02c1, B:83:0x02c9, B:58:0x025e), top: B:86:0x0216 }] */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x027c A[Catch: Exception -> 0x025b, TryCatch #3 {Exception -> 0x025b, blocks: (B:87:0x0216, B:89:0x021a, B:91:0x021e, B:93:0x0224, B:95:0x0233, B:97:0x0239, B:99:0x0243, B:101:0x024d, B:61:0x026b, B:64:0x0273, B:66:0x027c, B:68:0x0280, B:71:0x028e, B:73:0x0298, B:75:0x029e, B:77:0x02a8, B:79:0x02bd, B:80:0x02c1, B:83:0x02c9, B:58:0x025e), top: B:86:0x0216 }] */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x028e A[Catch: Exception -> 0x025b, TryCatch #3 {Exception -> 0x025b, blocks: (B:87:0x0216, B:89:0x021a, B:91:0x021e, B:93:0x0224, B:95:0x0233, B:97:0x0239, B:99:0x0243, B:101:0x024d, B:61:0x026b, B:64:0x0273, B:66:0x027c, B:68:0x0280, B:71:0x028e, B:73:0x0298, B:75:0x029e, B:77:0x02a8, B:79:0x02bd, B:80:0x02c1, B:83:0x02c9, B:58:0x025e), top: B:86:0x0216 }] */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x02c9 A[Catch: Exception -> 0x025b, TRY_LEAVE, TryCatch #3 {Exception -> 0x025b, blocks: (B:87:0x0216, B:89:0x021a, B:91:0x021e, B:93:0x0224, B:95:0x0233, B:97:0x0239, B:99:0x0243, B:101:0x024d, B:61:0x026b, B:64:0x0273, B:66:0x027c, B:68:0x0280, B:71:0x028e, B:73:0x0298, B:75:0x029e, B:77:0x02a8, B:79:0x02bd, B:80:0x02c1, B:83:0x02c9, B:58:0x025e), top: B:86:0x0216 }] */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x026a  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x0216 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0127 A[Catch: Exception -> 0x0148, TryCatch #3 {Exception -> 0x0148, blocks: (B:25:0x010b, B:27:0x0127, B:29:0x014c, B:31:0x0150, B:33:0x0156, B:36:0x015c, B:38:0x0165, B:40:0x016f, B:42:0x0174, B:44:0x017e, B:47:0x018c, B:49:0x0198, B:51:0x01aa), top: B:24:0x010b }] */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x027f A[Catch: Exception -> 0x022b, TRY_ENTER, TryCatch #2 {Exception -> 0x022b, blocks: (B:89:0x021c, B:91:0x0220, B:93:0x0224, B:96:0x022e, B:98:0x0234, B:100:0x0243, B:102:0x0249, B:104:0x0253, B:106:0x025d, B:63:0x0277, B:66:0x027f, B:68:0x0288, B:70:0x028c, B:73:0x029a, B:75:0x02a4, B:77:0x02aa, B:79:0x02b4, B:81:0x02c9, B:82:0x02cd, B:85:0x02d5, B:60:0x026a), top: B:88:0x021c }] */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0288 A[Catch: Exception -> 0x022b, TryCatch #2 {Exception -> 0x022b, blocks: (B:89:0x021c, B:91:0x0220, B:93:0x0224, B:96:0x022e, B:98:0x0234, B:100:0x0243, B:102:0x0249, B:104:0x0253, B:106:0x025d, B:63:0x0277, B:66:0x027f, B:68:0x0288, B:70:0x028c, B:73:0x029a, B:75:0x02a4, B:77:0x02aa, B:79:0x02b4, B:81:0x02c9, B:82:0x02cd, B:85:0x02d5, B:60:0x026a), top: B:88:0x021c }] */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x029a A[Catch: Exception -> 0x022b, TryCatch #2 {Exception -> 0x022b, blocks: (B:89:0x021c, B:91:0x0220, B:93:0x0224, B:96:0x022e, B:98:0x0234, B:100:0x0243, B:102:0x0249, B:104:0x0253, B:106:0x025d, B:63:0x0277, B:66:0x027f, B:68:0x0288, B:70:0x028c, B:73:0x029a, B:75:0x02a4, B:77:0x02aa, B:79:0x02b4, B:81:0x02c9, B:82:0x02cd, B:85:0x02d5, B:60:0x026a), top: B:88:0x021c }] */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x02d5 A[Catch: Exception -> 0x022b, TRY_LEAVE, TryCatch #2 {Exception -> 0x022b, blocks: (B:89:0x021c, B:91:0x0220, B:93:0x0224, B:96:0x022e, B:98:0x0234, B:100:0x0243, B:102:0x0249, B:104:0x0253, B:106:0x025d, B:63:0x0277, B:66:0x027f, B:68:0x0288, B:70:0x028c, B:73:0x029a, B:75:0x02a4, B:77:0x02aa, B:79:0x02b4, B:81:0x02c9, B:82:0x02cd, B:85:0x02d5, B:60:0x026a), top: B:88:0x021c }] */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0276  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x021c A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -398,7 +403,7 @@ public abstract class Browser {
                     }
                     if (!isInternalUri) {
                     }
-                    if (z9) {
+                    if (!z9) {
                     }
                 }
             } else {
@@ -408,6 +413,18 @@ public abstract class Browser {
         } catch (Exception e2) {
             e = e2;
             uri2 = uri;
+            FileLog.e(e);
+            if (z5) {
+            }
+            if (!isTonsite(uri2.toString())) {
+            }
+            z9 = true;
+            if (uri2.getScheme() != null) {
+            }
+            if (!isInternalUri) {
+            }
+            if (!z9) {
+            }
         }
         if (str3 != null && str3.contains(".")) {
             return;
@@ -433,46 +450,52 @@ public abstract class Browser {
             }
             if (!isInternalUri) {
             }
-            if (z9) {
+            if (!z9) {
             }
         }
         hostAuthority = AndroidUtilities.getHostAuthority(uri2.toString().toLowerCase());
         if (AccountInstance.getInstance(i).getMessagesController().autologinDomains.contains(hostAuthority)) {
             uri2 = uri2.buildUpon().appendQueryParameter("autologin_token", URLEncoder.encode(AccountInstance.getInstance(UserConfig.selectedAccount).getMessagesController().autologinToken, "UTF-8")).build();
         }
-        if (z7 || SharedConfig.inappBrowser || !SharedConfig.customTabs || isInternalUri || str3.equals("tel") || isTonsite(uri2.toString()) || (!zArr[0] && openInExternalApp(context, uri2.toString(), false) && hasAppToOpen(context, uri2.toString()))) {
+        if (z7 || SharedConfig.inappBrowser || isInstantViewOpen() || !SharedConfig.customTabs || isInternalUri || str3.equals("tel") || isTonsite(uri2.toString()) || (!zArr[0] && openInExternalApp(context, uri2.toString(), false) && hasAppToOpen(context, uri2.toString()))) {
             if (z5) {
                 try {
                     if (BubbleActivity.instance == null) {
-                        if (SharedConfig.inappBrowser) {
-                            if (TextUtils.isEmpty(str2)) {
-                                if (!RestrictedDomainsList.getInstance().isRestricted(AndroidUtilities.getHostAuthority(uri2, true))) {
-                                    if (uri2.getScheme() != null && !"https".equals(uri2.getScheme()) && !"http".equals(uri2.getScheme()) && !"tonsite".equals(uri2.getScheme())) {
-                                    }
-                                    z9 = true;
-                                    if (uri2.getScheme() != null) {
-                                        uri2.getScheme().equalsIgnoreCase("intent");
-                                    }
-                                    if (!isInternalUri && (launchActivity = LaunchActivity.instance) != null) {
-                                        openAsInternalIntent(launchActivity, uri2.toString(), z3, z6, progress);
-                                        return;
-                                    }
-                                    if (z9) {
-                                        if (openInExternalApp(context, uri2.toString(), z4)) {
-                                            return;
+                        if (!SharedConfig.inappBrowser) {
+                            if (isInstantViewOpen()) {
+                            }
+                        }
+                        if (TextUtils.isEmpty(str2)) {
+                            if (!RestrictedDomainsList.getInstance().isRestricted(AndroidUtilities.getHostAuthority(uri2, true))) {
+                                if (uri2.getScheme() != null) {
+                                    if (!"https".equals(uri2.getScheme())) {
+                                        if (!"http".equals(uri2.getScheme())) {
                                         }
-                                        if (uri2.getScheme() != null && uri2.getScheme().equalsIgnoreCase("intent")) {
-                                            String stringExtra = Intent.parseUri(uri2.toString(), 1).getStringExtra("browser_fallback_url");
-                                            if (!TextUtils.isEmpty(stringExtra)) {
-                                                uri2 = Uri.parse(stringExtra);
-                                            }
-                                        }
-                                        openInTelegramBrowser(context, uri2.toString(), progress);
-                                        return;
                                     }
-                                    openInExternalBrowser(context, uri2.toString(), z4, str2);
+                                }
+                                z9 = true;
+                                if (uri2.getScheme() != null) {
+                                    uri2.getScheme().equalsIgnoreCase("intent");
+                                }
+                                if (!isInternalUri && (launchActivity = LaunchActivity.instance) != null) {
+                                    openAsInternalIntent(launchActivity, uri2.toString(), z3, z6, progress);
                                     return;
                                 }
+                                if (!z9) {
+                                    if (openInExternalApp(context, uri2.toString(), z4)) {
+                                        return;
+                                    }
+                                    if (uri2.getScheme() != null && uri2.getScheme().equalsIgnoreCase("intent")) {
+                                        String stringExtra = Intent.parseUri(uri2.toString(), 1).getStringExtra("browser_fallback_url");
+                                        if (!TextUtils.isEmpty(stringExtra)) {
+                                            uri2 = Uri.parse(stringExtra);
+                                        }
+                                    }
+                                    openInTelegramBrowser(context, uri2.toString(), progress);
+                                    return;
+                                }
+                                openInExternalBrowser(context, uri2.toString(), z4, str2);
+                                return;
                             }
                         }
                     }
@@ -487,7 +510,7 @@ public abstract class Browser {
                 }
                 if (!isInternalUri) {
                 }
-                if (z9) {
+                if (!z9) {
                 }
             }
             z9 = true;
@@ -495,7 +518,7 @@ public abstract class Browser {
             }
             if (!isInternalUri) {
             }
-            if (z9) {
+            if (!z9) {
             }
         }
         if (MessagesController.getInstance(i).authDomains.contains(hostAuthority)) {
@@ -528,7 +551,7 @@ public abstract class Browser {
             }
             if (!isInternalUri) {
             }
-            if (z9) {
+            if (!z9) {
             }
         }
     }
@@ -624,6 +647,15 @@ public abstract class Browser {
         return true;
     }
 
+    public static boolean isInstantViewOpen() {
+        EmptyBaseFragment sheetFragment;
+        BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
+        if (safeLastFragment == null || !(safeLastFragment.getParentLayout() instanceof ActionBarLayout) || (sheetFragment = ((ActionBarLayout) safeLastFragment.getParentLayout()).getSheetFragment()) == null || sheetFragment.getArticleViewer() == null) {
+            return (safeLastFragment == null || safeLastFragment.getArticleViewer() == null) ? false : true;
+        }
+        return true;
+    }
+
     public static boolean openInTelegramBrowser(Context context, String str, Progress progress) {
         BottomSheetTabs bottomSheetTabs;
         LaunchActivity launchActivity = LaunchActivity.instance;
@@ -631,6 +663,10 @@ public abstract class Browser {
             return true;
         }
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
+        if (safeLastFragment != null && safeLastFragment.getArticleViewer() != null) {
+            safeLastFragment.getArticleViewer().open(str, progress);
+            return true;
+        }
         if (safeLastFragment != null && (safeLastFragment.getParentLayout() instanceof ActionBarLayout)) {
             safeLastFragment = ((ActionBarLayout) safeLastFragment.getParentLayout()).getSheetFragment();
         }

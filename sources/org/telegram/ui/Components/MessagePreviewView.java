@@ -18,6 +18,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.StaticLayout;
 import android.text.TextUtils;
 import android.text.style.CharacterStyle;
 import android.text.style.URLSpan;
@@ -164,8 +165,10 @@ public abstract class MessagePreviewView extends FrameLayout {
         private AnimatorSet quoteSwitcher;
         Rect rect;
         ActionBarMenuSubItem replyAnotherChatButton;
-        int scrollToOffset;
+        int scrollToQuoteEndY;
+        int scrollToQuoteStartY;
         ChatMessageSharedResources sharedResources;
+        boolean shouldScrollToQuote;
         TextSelectionHelper.ChatListTextSelectionHelper textSelectionHelper;
         View textSelectionOverlay;
         boolean toQuote;
@@ -294,9 +297,9 @@ public abstract class MessagePreviewView extends FrameLayout {
             return MessagePreviewView.this.messagePreviewParams.replyMessage.messages.get(0);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:39:0x076a  */
-        /* JADX WARN: Removed duplicated region for block: B:42:0x079e  */
-        /* JADX WARN: Removed duplicated region for block: B:49:0x0771  */
+        /* JADX WARN: Removed duplicated region for block: B:39:0x076e  */
+        /* JADX WARN: Removed duplicated region for block: B:42:0x07a2  */
+        /* JADX WARN: Removed duplicated region for block: B:49:0x0775  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -312,7 +315,9 @@ public abstract class MessagePreviewView extends FrameLayout {
             float f;
             ViewGroup viewGroup;
             this.firstLayout = true;
-            this.scrollToOffset = -1;
+            this.scrollToQuoteStartY = -1;
+            this.scrollToQuoteEndY = -1;
+            this.shouldScrollToQuote = false;
             this.rect = new Rect();
             this.updateScroll = false;
             this.firstAttach = true;
@@ -448,223 +453,11 @@ public abstract class MessagePreviewView extends FrameLayout {
                     }
                 }
             });
-            RecyclerListView recyclerListView = new RecyclerListView(context, MessagePreviewView.this.resourcesProvider) { // from class: org.telegram.ui.Components.MessagePreviewView.Page.6
-                @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-                public boolean drawChild(Canvas canvas, View view2, long j) {
-                    if (!(view2 instanceof ChatMessageCell)) {
-                        return true;
-                    }
-                    ChatMessageCell chatMessageCell = (ChatMessageCell) view2;
-                    boolean drawChild = super.drawChild(canvas, view2, j);
-                    chatMessageCell.drawCheckBox(canvas);
-                    canvas.save();
-                    canvas.translate(chatMessageCell.getX(), chatMessageCell.getY());
-                    canvas.save();
-                    canvas.scale(chatMessageCell.getScaleX(), chatMessageCell.getScaleY(), chatMessageCell.getPivotX(), chatMessageCell.getPivotY());
-                    chatMessageCell.drawContent(canvas, true);
-                    chatMessageCell.layoutTextXY(true);
-                    chatMessageCell.drawMessageText(canvas);
-                    if (chatMessageCell.getCurrentMessagesGroup() == null || ((chatMessageCell.getCurrentPosition() != null && (((chatMessageCell.getCurrentPosition().flags & chatMessageCell.captionFlag()) != 0 && (chatMessageCell.getCurrentPosition().flags & 1) != 0) || (chatMessageCell.getCurrentMessagesGroup() != null && chatMessageCell.getCurrentMessagesGroup().isDocuments))) || chatMessageCell.getTransitionParams().animateBackgroundBoundsInner)) {
-                        chatMessageCell.drawCaptionLayout(canvas, false, chatMessageCell.getAlpha());
-                        chatMessageCell.drawReactionsLayout(canvas, chatMessageCell.getAlpha(), null);
-                        chatMessageCell.drawCommentLayout(canvas, chatMessageCell.getAlpha());
-                    }
-                    if (chatMessageCell.getCurrentMessagesGroup() != null || chatMessageCell.getTransitionParams().animateBackgroundBoundsInner) {
-                        chatMessageCell.drawNamesLayout(canvas, chatMessageCell.getAlpha());
-                    }
-                    if ((chatMessageCell.getCurrentPosition() != null && chatMessageCell.getCurrentPosition().last) || chatMessageCell.getTransitionParams().animateBackgroundBoundsInner) {
-                        chatMessageCell.drawTime(canvas, chatMessageCell.getAlpha(), true);
-                    }
-                    chatMessageCell.drawOverlays(canvas);
-                    canvas.restore();
-                    chatMessageCell.getTransitionParams().recordDrawingStatePreview();
-                    canvas.restore();
-                    return drawChild;
-                }
-
-                @Override // org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
-                protected void dispatchDraw(Canvas canvas) {
-                    for (int i4 = 0; i4 < getChildCount(); i4++) {
-                        View childAt = getChildAt(i4);
-                        if (childAt instanceof ChatMessageCell) {
-                            ((ChatMessageCell) childAt).setParentViewSize(Page.this.chatPreviewContainer.getMeasuredWidth(), Page.this.chatPreviewContainer.getBackgroundSizeY());
-                        }
-                    }
-                    drawChatBackgroundElements(canvas);
-                    super.dispatchDraw(canvas);
-                }
-
-                @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-                protected void onLayout(boolean z2, int i4, int i5, int i6, int i7) {
-                    if (Page.this.firstLayout) {
-                        if (Page.this.currentTab != 0) {
-                            scrollToPosition(0);
-                        }
-                        Page.this.firstLayout = false;
-                    }
-                    super.onLayout(z2, i4, i5, i6, i7);
-                    Page.this.updatePositions();
-                    Page.this.checkScroll();
-                }
-
-                /* JADX WARN: Type inference failed for: r3v0 */
-                /* JADX WARN: Type inference failed for: r3v1, types: [boolean, int] */
-                /* JADX WARN: Type inference failed for: r3v9 */
-                private void drawChatBackgroundElements(Canvas canvas) {
-                    boolean z2;
-                    int i4;
-                    MessageObject.GroupedMessages currentMessagesGroup;
-                    ChatMessageCell chatMessageCell;
-                    MessageObject.GroupedMessages currentMessagesGroup2;
-                    int childCount = getChildCount();
-                    ?? r3 = 0;
-                    MessageObject.GroupedMessages groupedMessages = null;
-                    for (int i5 = 0; i5 < childCount; i5++) {
-                        View childAt = getChildAt(i5);
-                        if ((childAt instanceof ChatMessageCell) && ((currentMessagesGroup2 = (chatMessageCell = (ChatMessageCell) childAt).getCurrentMessagesGroup()) == null || currentMessagesGroup2 != groupedMessages)) {
-                            chatMessageCell.getCurrentPosition();
-                            chatMessageCell.getBackgroundDrawable();
-                            groupedMessages = currentMessagesGroup2;
-                        }
-                    }
-                    int i6 = 0;
-                    while (i6 < 3) {
-                        MessagePreviewView.this.drawingGroups.clear();
-                        if (i6 != 2 || Page.this.chatListView.isFastScrollAnimationRunning()) {
-                            int i7 = 0;
-                            while (true) {
-                                z2 = true;
-                                if (i7 >= childCount) {
-                                    break;
-                                }
-                                View childAt2 = Page.this.chatListView.getChildAt(i7);
-                                if (childAt2 instanceof ChatMessageCell) {
-                                    ChatMessageCell chatMessageCell2 = (ChatMessageCell) childAt2;
-                                    if (childAt2.getY() <= Page.this.chatListView.getHeight() && childAt2.getY() + childAt2.getHeight() >= 0.0f && (currentMessagesGroup = chatMessageCell2.getCurrentMessagesGroup()) != null && ((i6 != 0 || currentMessagesGroup.messages.size() != 1) && ((i6 != 1 || currentMessagesGroup.transitionParams.drawBackgroundForDeletedItems) && ((i6 != 0 || !chatMessageCell2.getMessageObject().deleted) && ((i6 != 1 || chatMessageCell2.getMessageObject().deleted) && ((i6 != 2 || chatMessageCell2.willRemovedAfterAnimation()) && (i6 == 2 || !chatMessageCell2.willRemovedAfterAnimation()))))))) {
-                                        if (!MessagePreviewView.this.drawingGroups.contains(currentMessagesGroup)) {
-                                            MessageObject.GroupedMessages.TransitionParams transitionParams = currentMessagesGroup.transitionParams;
-                                            transitionParams.left = r3;
-                                            transitionParams.top = r3;
-                                            transitionParams.right = r3;
-                                            transitionParams.bottom = r3;
-                                            transitionParams.pinnedBotton = r3;
-                                            transitionParams.pinnedTop = r3;
-                                            transitionParams.cell = chatMessageCell2;
-                                            MessagePreviewView.this.drawingGroups.add(currentMessagesGroup);
-                                        }
-                                        currentMessagesGroup.transitionParams.pinnedTop = chatMessageCell2.isPinnedTop();
-                                        currentMessagesGroup.transitionParams.pinnedBotton = chatMessageCell2.isPinnedBottom();
-                                        int left = chatMessageCell2.getLeft() + chatMessageCell2.getBackgroundDrawableLeft();
-                                        int left2 = chatMessageCell2.getLeft() + chatMessageCell2.getBackgroundDrawableRight();
-                                        int top = chatMessageCell2.getTop() + chatMessageCell2.getPaddingTop() + chatMessageCell2.getBackgroundDrawableTop();
-                                        int top2 = chatMessageCell2.getTop() + chatMessageCell2.getPaddingTop() + chatMessageCell2.getBackgroundDrawableBottom();
-                                        if ((chatMessageCell2.getCurrentPosition().flags & 4) == 0) {
-                                            top -= AndroidUtilities.dp(10.0f);
-                                        }
-                                        if ((chatMessageCell2.getCurrentPosition().flags & 8) == 0) {
-                                            top2 += AndroidUtilities.dp(10.0f);
-                                        }
-                                        if (chatMessageCell2.willRemovedAfterAnimation()) {
-                                            currentMessagesGroup.transitionParams.cell = chatMessageCell2;
-                                        }
-                                        MessageObject.GroupedMessages.TransitionParams transitionParams2 = currentMessagesGroup.transitionParams;
-                                        int i8 = transitionParams2.top;
-                                        if (i8 == 0 || top < i8) {
-                                            transitionParams2.top = top;
-                                        }
-                                        int i9 = transitionParams2.bottom;
-                                        if (i9 == 0 || top2 > i9) {
-                                            transitionParams2.bottom = top2;
-                                        }
-                                        int i10 = transitionParams2.left;
-                                        if (i10 == 0 || left < i10) {
-                                            transitionParams2.left = left;
-                                        }
-                                        int i11 = transitionParams2.right;
-                                        if (i11 == 0 || left2 > i11) {
-                                            transitionParams2.right = left2;
-                                        }
-                                    }
-                                }
-                                i7++;
-                            }
-                            int i12 = 0;
-                            while (i12 < MessagePreviewView.this.drawingGroups.size()) {
-                                MessageObject.GroupedMessages groupedMessages2 = (MessageObject.GroupedMessages) MessagePreviewView.this.drawingGroups.get(i12);
-                                if (groupedMessages2 == null) {
-                                    i4 = i6;
-                                } else {
-                                    float nonAnimationTranslationX = groupedMessages2.transitionParams.cell.getNonAnimationTranslationX(z2);
-                                    MessageObject.GroupedMessages.TransitionParams transitionParams3 = groupedMessages2.transitionParams;
-                                    float f2 = transitionParams3.left + nonAnimationTranslationX + transitionParams3.offsetLeft;
-                                    float f3 = transitionParams3.top + transitionParams3.offsetTop;
-                                    float f4 = transitionParams3.right + nonAnimationTranslationX + transitionParams3.offsetRight;
-                                    float f5 = transitionParams3.bottom + transitionParams3.offsetBottom;
-                                    if (!transitionParams3.backgroundChangeBounds) {
-                                        f3 += transitionParams3.cell.getTranslationY();
-                                        f5 += groupedMessages2.transitionParams.cell.getTranslationY();
-                                    }
-                                    if (f3 < (-AndroidUtilities.dp(20.0f))) {
-                                        f3 = -AndroidUtilities.dp(20.0f);
-                                    }
-                                    if (f5 > Page.this.chatListView.getMeasuredHeight() + AndroidUtilities.dp(20.0f)) {
-                                        f5 = Page.this.chatListView.getMeasuredHeight() + AndroidUtilities.dp(20.0f);
-                                    }
-                                    boolean z3 = (groupedMessages2.transitionParams.cell.getScaleX() == 1.0f && groupedMessages2.transitionParams.cell.getScaleY() == 1.0f) ? false : true;
-                                    if (z3) {
-                                        canvas.save();
-                                        canvas.scale(groupedMessages2.transitionParams.cell.getScaleX(), groupedMessages2.transitionParams.cell.getScaleY(), f2 + ((f4 - f2) / 2.0f), f3 + ((f5 - f3) / 2.0f));
-                                    }
-                                    MessageObject.GroupedMessages.TransitionParams transitionParams4 = groupedMessages2.transitionParams;
-                                    i4 = i6;
-                                    transitionParams4.cell.drawBackground(canvas, (int) f2, (int) f3, (int) f4, (int) f5, transitionParams4.pinnedTop, transitionParams4.pinnedBotton, false, 0);
-                                    MessageObject.GroupedMessages.TransitionParams transitionParams5 = groupedMessages2.transitionParams;
-                                    transitionParams5.cell = null;
-                                    transitionParams5.drawCaptionLayout = groupedMessages2.hasCaption;
-                                    if (z3) {
-                                        canvas.restore();
-                                        for (int i13 = 0; i13 < childCount; i13++) {
-                                            View childAt3 = Page.this.chatListView.getChildAt(i13);
-                                            if (childAt3 instanceof ChatMessageCell) {
-                                                ChatMessageCell chatMessageCell3 = (ChatMessageCell) childAt3;
-                                                if (chatMessageCell3.getCurrentMessagesGroup() == groupedMessages2) {
-                                                    int left3 = chatMessageCell3.getLeft();
-                                                    int top3 = chatMessageCell3.getTop();
-                                                    childAt3.setPivotX((f2 - left3) + ((f4 - f2) / 2.0f));
-                                                    childAt3.setPivotY((f3 - top3) + ((f5 - f3) / 2.0f));
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                                i12++;
-                                i6 = i4;
-                                z2 = true;
-                            }
-                        }
-                        i6++;
-                        r3 = 0;
-                    }
-                }
-
-                @Override // androidx.recyclerview.widget.RecyclerView
-                public void onScrollStateChanged(int i4) {
-                    if (i4 == 0) {
-                        Page.this.textSelectionHelper.stopScrolling();
-                    }
-                    super.onScrollStateChanged(i4);
-                }
-
-                @Override // androidx.recyclerview.widget.RecyclerView
-                public void onScrolled(int i4, int i5) {
-                    super.onScrolled(i4, i5);
-                    Page.this.textSelectionHelper.onParentScrolled();
-                }
-            };
-            this.chatListView = recyclerListView;
+            6 r15 = new 6(context, MessagePreviewView.this.resourcesProvider, MessagePreviewView.this);
+            this.chatListView = r15;
             7 r5 = new 7(null, this.chatListView, MessagePreviewView.this.resourcesProvider, MessagePreviewView.this);
             this.itemAnimator = r5;
-            recyclerListView.setItemAnimator(r5);
+            r15.setItemAnimator(r5);
             this.chatListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.MessagePreviewView.Page.8
                 @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
                 public void onScrolled(RecyclerView recyclerView, int i4, int i5) {
@@ -700,14 +493,14 @@ public abstract class MessagePreviewView extends FrameLayout {
                     Page.this.updateSubtitle(true);
                 }
             });
-            RecyclerListView recyclerListView2 = this.chatListView;
+            RecyclerListView recyclerListView = this.chatListView;
             Adapter adapter = new Adapter();
             this.adapter = adapter;
-            recyclerListView2.setAdapter(adapter);
+            recyclerListView.setAdapter(adapter);
             this.chatListView.setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
-            10 r15 = new 10(context, MediaDataController.MAX_STYLE_RUNS_COUNT, 1, true, MessagePreviewView.this);
-            this.chatLayoutManager = r15;
-            r15.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.Components.MessagePreviewView.Page.11
+            10 r152 = new 10(context, MediaDataController.MAX_STYLE_RUNS_COUNT, 1, true, MessagePreviewView.this);
+            this.chatLayoutManager = r152;
+            r152.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.Components.MessagePreviewView.Page.11
                 @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
                 public int getSpanSize(int i4) {
                     if (i4 < 0 || i4 >= Page.this.messages.previewMessages.size()) {
@@ -1089,6 +882,261 @@ public abstract class MessagePreviewView extends FrameLayout {
                 MessagePreviewView.this.dismiss(true);
             }
             return true;
+        }
+
+        class 6 extends RecyclerListView {
+            final /* synthetic */ MessagePreviewView val$this$0;
+
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            6(Context context, Theme.ResourcesProvider resourcesProvider, MessagePreviewView messagePreviewView) {
+                super(context, resourcesProvider);
+                this.val$this$0 = messagePreviewView;
+            }
+
+            @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+            public boolean drawChild(Canvas canvas, View view, long j) {
+                if (!(view instanceof ChatMessageCell)) {
+                    return true;
+                }
+                ChatMessageCell chatMessageCell = (ChatMessageCell) view;
+                boolean drawChild = super.drawChild(canvas, view, j);
+                chatMessageCell.drawCheckBox(canvas);
+                canvas.save();
+                canvas.translate(chatMessageCell.getX(), chatMessageCell.getY());
+                canvas.save();
+                canvas.scale(chatMessageCell.getScaleX(), chatMessageCell.getScaleY(), chatMessageCell.getPivotX(), chatMessageCell.getPivotY());
+                chatMessageCell.drawContent(canvas, true);
+                chatMessageCell.layoutTextXY(true);
+                chatMessageCell.drawMessageText(canvas);
+                if (chatMessageCell.getCurrentMessagesGroup() == null || ((chatMessageCell.getCurrentPosition() != null && (((chatMessageCell.getCurrentPosition().flags & chatMessageCell.captionFlag()) != 0 && (chatMessageCell.getCurrentPosition().flags & 1) != 0) || (chatMessageCell.getCurrentMessagesGroup() != null && chatMessageCell.getCurrentMessagesGroup().isDocuments))) || chatMessageCell.getTransitionParams().animateBackgroundBoundsInner)) {
+                    chatMessageCell.drawCaptionLayout(canvas, false, chatMessageCell.getAlpha());
+                    chatMessageCell.drawReactionsLayout(canvas, chatMessageCell.getAlpha(), null);
+                    chatMessageCell.drawCommentLayout(canvas, chatMessageCell.getAlpha());
+                }
+                if (chatMessageCell.getCurrentMessagesGroup() != null || chatMessageCell.getTransitionParams().animateBackgroundBoundsInner) {
+                    chatMessageCell.drawNamesLayout(canvas, chatMessageCell.getAlpha());
+                }
+                if ((chatMessageCell.getCurrentPosition() != null && chatMessageCell.getCurrentPosition().last) || chatMessageCell.getTransitionParams().animateBackgroundBoundsInner) {
+                    chatMessageCell.drawTime(canvas, chatMessageCell.getAlpha(), true);
+                }
+                chatMessageCell.drawOverlays(canvas);
+                canvas.restore();
+                chatMessageCell.getTransitionParams().recordDrawingStatePreview();
+                canvas.restore();
+                return drawChild;
+            }
+
+            @Override // org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
+            protected void dispatchDraw(Canvas canvas) {
+                for (int i = 0; i < getChildCount(); i++) {
+                    View childAt = getChildAt(i);
+                    if (childAt instanceof ChatMessageCell) {
+                        ((ChatMessageCell) childAt).setParentViewSize(Page.this.chatPreviewContainer.getMeasuredWidth(), Page.this.chatPreviewContainer.getBackgroundSizeY());
+                    }
+                }
+                drawChatBackgroundElements(canvas);
+                super.dispatchDraw(canvas);
+            }
+
+            @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+            protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+                if (Page.this.firstLayout) {
+                    if (Page.this.currentTab != 0) {
+                        scrollToPosition(0);
+                    }
+                    Page.this.firstLayout = false;
+                }
+                super.onLayout(z, i, i2, i3, i4);
+                Page.this.updatePositions();
+                Page.this.checkScroll();
+                Page page = Page.this;
+                if (page.shouldScrollToQuote && page.currentTab == 0) {
+                    final int i5 = page.scrollToQuoteStartY;
+                    final int i6 = page.scrollToQuoteEndY;
+                    page.shouldScrollToQuote = false;
+                    post(new Runnable() { // from class: org.telegram.ui.Components.MessagePreviewView$Page$6$$ExternalSyntheticLambda0
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            MessagePreviewView.Page.6.this.lambda$onLayout$0(i5, i6);
+                        }
+                    });
+                }
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public /* synthetic */ void lambda$onLayout$0(int i, int i2) {
+                ChatMessageCell replyMessageCell = Page.this.getReplyMessageCell();
+                if (replyMessageCell == null) {
+                    return;
+                }
+                int top = replyMessageCell.getTop() + i;
+                int top2 = replyMessageCell.getTop() + i2;
+                int i3 = top2 - top;
+                int paddingTop = Page.this.chatListView.getPaddingTop();
+                int height = Page.this.chatListView.getHeight() - Page.this.chatListView.getPaddingBottom();
+                if (i3 <= height - paddingTop) {
+                    top = (top + top2) / 2;
+                    paddingTop = (paddingTop + height) / 2;
+                }
+                int i4 = top - paddingTop;
+                if (i4 < 0) {
+                    Page.this.chatListView.scrollBy(0, i4);
+                }
+            }
+
+            /* JADX WARN: Type inference failed for: r3v0 */
+            /* JADX WARN: Type inference failed for: r3v1, types: [boolean, int] */
+            /* JADX WARN: Type inference failed for: r3v9 */
+            private void drawChatBackgroundElements(Canvas canvas) {
+                boolean z;
+                int i;
+                MessageObject.GroupedMessages currentMessagesGroup;
+                ChatMessageCell chatMessageCell;
+                MessageObject.GroupedMessages currentMessagesGroup2;
+                int childCount = getChildCount();
+                ?? r3 = 0;
+                MessageObject.GroupedMessages groupedMessages = null;
+                for (int i2 = 0; i2 < childCount; i2++) {
+                    View childAt = getChildAt(i2);
+                    if ((childAt instanceof ChatMessageCell) && ((currentMessagesGroup2 = (chatMessageCell = (ChatMessageCell) childAt).getCurrentMessagesGroup()) == null || currentMessagesGroup2 != groupedMessages)) {
+                        chatMessageCell.getCurrentPosition();
+                        chatMessageCell.getBackgroundDrawable();
+                        groupedMessages = currentMessagesGroup2;
+                    }
+                }
+                int i3 = 0;
+                while (i3 < 3) {
+                    MessagePreviewView.this.drawingGroups.clear();
+                    if (i3 != 2 || Page.this.chatListView.isFastScrollAnimationRunning()) {
+                        int i4 = 0;
+                        while (true) {
+                            z = true;
+                            if (i4 >= childCount) {
+                                break;
+                            }
+                            View childAt2 = Page.this.chatListView.getChildAt(i4);
+                            if (childAt2 instanceof ChatMessageCell) {
+                                ChatMessageCell chatMessageCell2 = (ChatMessageCell) childAt2;
+                                if (childAt2.getY() <= Page.this.chatListView.getHeight() && childAt2.getY() + childAt2.getHeight() >= 0.0f && (currentMessagesGroup = chatMessageCell2.getCurrentMessagesGroup()) != null && ((i3 != 0 || currentMessagesGroup.messages.size() != 1) && ((i3 != 1 || currentMessagesGroup.transitionParams.drawBackgroundForDeletedItems) && ((i3 != 0 || !chatMessageCell2.getMessageObject().deleted) && ((i3 != 1 || chatMessageCell2.getMessageObject().deleted) && ((i3 != 2 || chatMessageCell2.willRemovedAfterAnimation()) && (i3 == 2 || !chatMessageCell2.willRemovedAfterAnimation()))))))) {
+                                    if (!MessagePreviewView.this.drawingGroups.contains(currentMessagesGroup)) {
+                                        MessageObject.GroupedMessages.TransitionParams transitionParams = currentMessagesGroup.transitionParams;
+                                        transitionParams.left = r3;
+                                        transitionParams.top = r3;
+                                        transitionParams.right = r3;
+                                        transitionParams.bottom = r3;
+                                        transitionParams.pinnedBotton = r3;
+                                        transitionParams.pinnedTop = r3;
+                                        transitionParams.cell = chatMessageCell2;
+                                        MessagePreviewView.this.drawingGroups.add(currentMessagesGroup);
+                                    }
+                                    currentMessagesGroup.transitionParams.pinnedTop = chatMessageCell2.isPinnedTop();
+                                    currentMessagesGroup.transitionParams.pinnedBotton = chatMessageCell2.isPinnedBottom();
+                                    int left = chatMessageCell2.getLeft() + chatMessageCell2.getBackgroundDrawableLeft();
+                                    int left2 = chatMessageCell2.getLeft() + chatMessageCell2.getBackgroundDrawableRight();
+                                    int top = chatMessageCell2.getTop() + chatMessageCell2.getPaddingTop() + chatMessageCell2.getBackgroundDrawableTop();
+                                    int top2 = chatMessageCell2.getTop() + chatMessageCell2.getPaddingTop() + chatMessageCell2.getBackgroundDrawableBottom();
+                                    if ((chatMessageCell2.getCurrentPosition().flags & 4) == 0) {
+                                        top -= AndroidUtilities.dp(10.0f);
+                                    }
+                                    if ((chatMessageCell2.getCurrentPosition().flags & 8) == 0) {
+                                        top2 += AndroidUtilities.dp(10.0f);
+                                    }
+                                    if (chatMessageCell2.willRemovedAfterAnimation()) {
+                                        currentMessagesGroup.transitionParams.cell = chatMessageCell2;
+                                    }
+                                    MessageObject.GroupedMessages.TransitionParams transitionParams2 = currentMessagesGroup.transitionParams;
+                                    int i5 = transitionParams2.top;
+                                    if (i5 == 0 || top < i5) {
+                                        transitionParams2.top = top;
+                                    }
+                                    int i6 = transitionParams2.bottom;
+                                    if (i6 == 0 || top2 > i6) {
+                                        transitionParams2.bottom = top2;
+                                    }
+                                    int i7 = transitionParams2.left;
+                                    if (i7 == 0 || left < i7) {
+                                        transitionParams2.left = left;
+                                    }
+                                    int i8 = transitionParams2.right;
+                                    if (i8 == 0 || left2 > i8) {
+                                        transitionParams2.right = left2;
+                                    }
+                                }
+                            }
+                            i4++;
+                        }
+                        int i9 = 0;
+                        while (i9 < MessagePreviewView.this.drawingGroups.size()) {
+                            MessageObject.GroupedMessages groupedMessages2 = (MessageObject.GroupedMessages) MessagePreviewView.this.drawingGroups.get(i9);
+                            if (groupedMessages2 == null) {
+                                i = i3;
+                            } else {
+                                float nonAnimationTranslationX = groupedMessages2.transitionParams.cell.getNonAnimationTranslationX(z);
+                                MessageObject.GroupedMessages.TransitionParams transitionParams3 = groupedMessages2.transitionParams;
+                                float f = transitionParams3.left + nonAnimationTranslationX + transitionParams3.offsetLeft;
+                                float f2 = transitionParams3.top + transitionParams3.offsetTop;
+                                float f3 = transitionParams3.right + nonAnimationTranslationX + transitionParams3.offsetRight;
+                                float f4 = transitionParams3.bottom + transitionParams3.offsetBottom;
+                                if (!transitionParams3.backgroundChangeBounds) {
+                                    f2 += transitionParams3.cell.getTranslationY();
+                                    f4 += groupedMessages2.transitionParams.cell.getTranslationY();
+                                }
+                                if (f2 < (-AndroidUtilities.dp(20.0f))) {
+                                    f2 = -AndroidUtilities.dp(20.0f);
+                                }
+                                if (f4 > Page.this.chatListView.getMeasuredHeight() + AndroidUtilities.dp(20.0f)) {
+                                    f4 = Page.this.chatListView.getMeasuredHeight() + AndroidUtilities.dp(20.0f);
+                                }
+                                boolean z2 = (groupedMessages2.transitionParams.cell.getScaleX() == 1.0f && groupedMessages2.transitionParams.cell.getScaleY() == 1.0f) ? false : true;
+                                if (z2) {
+                                    canvas.save();
+                                    canvas.scale(groupedMessages2.transitionParams.cell.getScaleX(), groupedMessages2.transitionParams.cell.getScaleY(), f + ((f3 - f) / 2.0f), f2 + ((f4 - f2) / 2.0f));
+                                }
+                                MessageObject.GroupedMessages.TransitionParams transitionParams4 = groupedMessages2.transitionParams;
+                                i = i3;
+                                transitionParams4.cell.drawBackground(canvas, (int) f, (int) f2, (int) f3, (int) f4, transitionParams4.pinnedTop, transitionParams4.pinnedBotton, false, 0);
+                                MessageObject.GroupedMessages.TransitionParams transitionParams5 = groupedMessages2.transitionParams;
+                                transitionParams5.cell = null;
+                                transitionParams5.drawCaptionLayout = groupedMessages2.hasCaption;
+                                if (z2) {
+                                    canvas.restore();
+                                    for (int i10 = 0; i10 < childCount; i10++) {
+                                        View childAt3 = Page.this.chatListView.getChildAt(i10);
+                                        if (childAt3 instanceof ChatMessageCell) {
+                                            ChatMessageCell chatMessageCell3 = (ChatMessageCell) childAt3;
+                                            if (chatMessageCell3.getCurrentMessagesGroup() == groupedMessages2) {
+                                                int left3 = chatMessageCell3.getLeft();
+                                                int top3 = chatMessageCell3.getTop();
+                                                childAt3.setPivotX((f - left3) + ((f3 - f) / 2.0f));
+                                                childAt3.setPivotY((f2 - top3) + ((f4 - f2) / 2.0f));
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            i9++;
+                            i3 = i;
+                            z = true;
+                        }
+                    }
+                    i3++;
+                    r3 = 0;
+                }
+            }
+
+            @Override // androidx.recyclerview.widget.RecyclerView
+            public void onScrollStateChanged(int i) {
+                if (i == 0) {
+                    Page.this.textSelectionHelper.stopScrolling();
+                }
+                super.onScrollStateChanged(i);
+            }
+
+            @Override // androidx.recyclerview.widget.RecyclerView
+            public void onScrolled(int i, int i2) {
+                super.onScrolled(i, i2);
+                Page.this.textSelectionHelper.onParentScrolled();
+            }
         }
 
         class 7 extends ChatListItemAnimator {
@@ -2859,8 +2907,12 @@ public abstract class MessagePreviewView extends FrameLayout {
                     chatListTextSelectionHelper.select(chatMessageCell, messagePreviewParams2.quoteStart, messagePreviewParams2.quoteEnd);
                     if (Page.this.firstAttach) {
                         Page page4 = Page.this;
-                        page4.scrollToOffset = offset(chatMessageCell, MessagePreviewView.this.messagePreviewParams.quoteStart);
-                        Page.this.firstAttach = false;
+                        page4.scrollToQuoteStartY = offset(chatMessageCell, MessagePreviewView.this.messagePreviewParams.quoteStart, false);
+                        Page page5 = Page.this;
+                        page5.scrollToQuoteEndY = offset(chatMessageCell, MessagePreviewView.this.messagePreviewParams.quoteEnd, true);
+                        Page page6 = Page.this;
+                        page6.shouldScrollToQuote = true;
+                        page6.firstAttach = false;
                         return;
                     }
                     return;
@@ -2868,12 +2920,12 @@ public abstract class MessagePreviewView extends FrameLayout {
                 chatMessageCell.setDrawSelectionBackground(false);
             }
 
-            private int offset(ChatMessageCell chatMessageCell, int i) {
+            private int offset(ChatMessageCell chatMessageCell, int i, boolean z) {
                 MessageObject messageObject;
                 int i2;
                 ArrayList<MessageObject.TextLayoutBlock> arrayList;
                 CharSequence charSequence;
-                float lineTop;
+                float lineBottom;
                 MessageObject.TextLayoutBlocks textLayoutBlocks;
                 if (chatMessageCell == null || (messageObject = chatMessageCell.getMessageObject()) == null || messageObject.getGroupId() != 0) {
                     return 0;
@@ -2896,15 +2948,17 @@ public abstract class MessagePreviewView extends FrameLayout {
                 if (arrayList != null && charSequence != null) {
                     for (int i3 = 0; i3 < arrayList.size(); i3++) {
                         MessageObject.TextLayoutBlock textLayoutBlock = arrayList.get(i3);
-                        String charSequence3 = textLayoutBlock.textLayout.getText().toString();
+                        StaticLayout staticLayout = textLayoutBlock.textLayout;
+                        String charSequence3 = staticLayout.getText().toString();
                         int i4 = textLayoutBlock.charactersOffset;
                         if (i > i4) {
                             if (i - i4 > charSequence3.length() - 1) {
-                                lineTop = i2 + ((int) (textLayoutBlock.textYOffset(arrayList, chatMessageCell.transitionParams) + textLayoutBlock.padTop + textLayoutBlock.height));
+                                lineBottom = i2 + ((int) (textLayoutBlock.textYOffset(arrayList, chatMessageCell.transitionParams) + textLayoutBlock.padTop + textLayoutBlock.height));
                             } else {
-                                lineTop = r6.getLineTop(r6.getLineForOffset(i - textLayoutBlock.charactersOffset)) + i2 + textLayoutBlock.textYOffset(arrayList, chatMessageCell.transitionParams) + textLayoutBlock.padTop;
+                                int lineForOffset = staticLayout.getLineForOffset(i - textLayoutBlock.charactersOffset);
+                                lineBottom = (z ? staticLayout.getLineBottom(lineForOffset) : staticLayout.getLineTop(lineForOffset)) + i2 + textLayoutBlock.textYOffset(arrayList, chatMessageCell.transitionParams) + textLayoutBlock.padTop;
                             }
-                            return (int) lineTop;
+                            return (int) lineBottom;
                         }
                     }
                 }

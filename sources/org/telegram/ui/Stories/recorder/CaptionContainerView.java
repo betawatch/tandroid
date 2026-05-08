@@ -222,6 +222,9 @@ public abstract class CaptionContainerView extends FrameLayout {
     protected void onEditHeightChange(int i) {
     }
 
+    protected void onLineCountChanged(int i, int i2) {
+    }
+
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: onTextChange, reason: merged with bridge method [inline-methods] */
     public void lambda$new$1() {
@@ -474,6 +477,11 @@ public abstract class CaptionContainerView extends FrameLayout {
                 CaptionContainerView.this.scrollAnimator.start();
                 return false;
             }
+
+            @Override // org.telegram.ui.Components.EditTextEmoji
+            protected void onLineCountChanged(int i2, int i3) {
+                CaptionContainerView.this.onLineCountChanged(i2, i3);
+            }
         };
         this.editText = editTextEmoji;
         editTextEmoji.glassDesignForEmojiView = true;
@@ -614,9 +622,7 @@ public abstract class CaptionContainerView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(View view) {
-        closeKeyboard();
-        AndroidUtilities.cancelRunOnUIThread(this.textChangeRunnable);
-        this.textChangeRunnable.run();
+        done();
     }
 
     public void setDialogId(long j) {
@@ -625,6 +631,12 @@ public abstract class CaptionContainerView extends FrameLayout {
         if (mentionsContainerView != null) {
             mentionsContainerView.setDialogId(j);
         }
+    }
+
+    protected void done() {
+        closeKeyboard();
+        AndroidUtilities.cancelRunOnUIThread(this.textChangeRunnable);
+        this.textChangeRunnable.run();
     }
 
     public void invalidateBlur() {

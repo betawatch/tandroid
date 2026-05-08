@@ -630,7 +630,7 @@ public class SharedConfig {
                         nextMediaTap = sharedPreferences.getBoolean("next_media_on_tap", true);
                         recordViaSco = sharedPreferences.getBoolean("record_via_sco", false);
                         customTabs = sharedPreferences.getBoolean("custom_tabs", true);
-                        inappBrowser = sharedPreferences.getBoolean("inapp_browser", true);
+                        inappBrowser = sharedPreferences.getBoolean("inapp_browser", false);
                         adaptableColorInBrowser = sharedPreferences.getBoolean("adaptableBrowser", false);
                         onlyLocalInstantView = sharedPreferences.getBoolean("onlyLocalInstantView", BuildVars.DEBUG_PRIVATE_VERSION);
                         directShare = sharedPreferences.getBoolean("direct_share", true);
@@ -746,7 +746,7 @@ public class SharedConfig {
                 nextMediaTap = sharedPreferences.getBoolean("next_media_on_tap", true);
                 recordViaSco = sharedPreferences.getBoolean("record_via_sco", false);
                 customTabs = sharedPreferences.getBoolean("custom_tabs", true);
-                inappBrowser = sharedPreferences.getBoolean("inapp_browser", true);
+                inappBrowser = sharedPreferences.getBoolean("inapp_browser", false);
                 adaptableColorInBrowser = sharedPreferences.getBoolean("adaptableBrowser", false);
                 onlyLocalInstantView = sharedPreferences.getBoolean("onlyLocalInstantView", BuildVars.DEBUG_PRIVATE_VERSION);
                 directShare = sharedPreferences.getBoolean("direct_share", true);

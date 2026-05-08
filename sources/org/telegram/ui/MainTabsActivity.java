@@ -26,9 +26,11 @@ import me.vkryl.android.animator.FactorAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
@@ -37,6 +39,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
@@ -44,6 +47,7 @@ import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.FolderDrawable;
 import org.telegram.ui.Components.HintsController;
 import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
@@ -76,6 +80,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     private final BlurredBackgroundSourceRenderNode iBlur3SourceTabGlass;
     private int navigationBarHeight;
     private NotificationCenter.ObserversGroup observersGroup;
+    private Integer pendingFolderId;
     public GlassTabView[] tabs;
     private MainTabsLayout tabsView;
     private BlurredBackgroundDrawable tabsViewBackground;
@@ -105,7 +110,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$createView$2(View view) {
+    public static /* synthetic */ void lambda$createView$1(View view) {
     }
 
     @Override // org.telegram.ui.ViewPagerActivity
@@ -288,15 +293,36 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         this.tabs[2] = GlassTabView.createMainTab(context, this.resourceProvider, GlassTabView.TabAnimation.SETTINGS, R.string.Settings);
         this.tabs[3] = GlassTabView.createMainTab(context, this.resourceProvider, GlassTabView.TabAnimation.CALLS, R.string.MainTabsCalls);
         this.tabs[4] = GlassTabView.createAvatar(context, this.resourceProvider, this.currentAccount, R.string.MainTabsProfile);
-        this.tabs[4].setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda0
+        this.tabs[0].setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda0
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
-                boolean lambda$createView$0;
-                lambda$createView$0 = MainTabsActivity.this.lambda$createView$0(view);
-                return lambda$createView$0;
+                boolean openFoldersSelector;
+                openFoldersSelector = MainTabsActivity.this.openFoldersSelector(view);
+                return openFoldersSelector;
             }
         });
+        this.tabs[1].setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda1
+            @Override // android.view.View.OnLongClickListener
+            public final boolean onLongClick(View view) {
+                return MainTabsActivity.this.openContactsSelector(view);
+            }
+        });
+        this.tabs[3].setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda2
+            @Override // android.view.View.OnLongClickListener
+            public final boolean onLongClick(View view) {
+                return MainTabsActivity.this.openCallsSelector(view);
+            }
+        });
+        this.tabs[4].setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda3
+            @Override // android.view.View.OnLongClickListener
+            public final boolean onLongClick(View view) {
+                return MainTabsActivity.this.openAccountSelector(view);
+            }
+        });
+        this.tabsView.addTabToIgnoreClick(this.tabs[0]);
+        this.tabsView.addTabToIgnoreClick(this.tabs[1]);
         this.tabsView.addTabToIgnoreClick(this.tabs[4]);
+        this.tabsView.addTabToIgnoreClick(this.tabs[3]);
         int i = 0;
         while (true) {
             GlassTabView[] glassTabViewArr2 = this.tabs;
@@ -305,10 +331,10 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             }
             GlassTabView glassTabView = glassTabViewArr2[i];
             final int indexToPosition = indexToPosition(i);
-            this.tabs[i].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda1
+            this.tabs[i].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MainTabsActivity.this.lambda$createView$1(indexToPosition, view);
+                    MainTabsActivity.this.lambda$createView$0(indexToPosition, view);
                 }
             });
             this.tabsView.addView(this.tabs[i]);
@@ -340,10 +366,10 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         this.contentView.addView(this.fadeView, LayoutHelper.createFrame(-1, 0, 80));
         FrameLayout frameLayout = new FrameLayout(context);
         this.tabsViewWrapper = frameLayout;
-        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda2
+        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MainTabsActivity.lambda$createView$2(view);
+                MainTabsActivity.lambda$createView$1(view);
             }
         });
         this.tabsViewWrapper.addView(this.tabsView, LayoutHelper.createFrame(344, 72, 81));
@@ -362,13 +388,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$createView$0(View view) {
-        openAccountSelector(view);
-        return true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1(int i, View view) {
+    public /* synthetic */ void lambda$createView$0(int i, View view) {
         if (this.viewPager.isManualScrolling() || this.viewPager.isTouch()) {
             return;
         }
@@ -396,7 +416,156 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         }
     }
 
-    public void openAccountSelector(View view) {
+    public boolean openContactsSelector(View view) {
+        if (getContext() == null || getParentActivity() == null) {
+            return false;
+        }
+        ItemOptions makeOptions = ItemOptions.makeOptions(this, view);
+        makeOptions.add(R.drawable.msg_contact_add, LocaleController.getString(R.string.NewContact), new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda16
+            @Override // java.lang.Runnable
+            public final void run() {
+                MainTabsActivity.this.lambda$openContactsSelector$2();
+            }
+        });
+        makeOptions.add(R.drawable.msg_calls, LocaleController.getString(R.string.VoipChatRecentCalls), new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda17
+            @Override // java.lang.Runnable
+            public final void run() {
+                MainTabsActivity.this.lambda$openContactsSelector$3();
+            }
+        });
+        makeOptions.setBlur(true);
+        makeOptions.translate(0.0f, -AndroidUtilities.dp(4.0f));
+        makeOptions.setGravity(3);
+        ShapeDrawable createRoundRectDrawable = Theme.createRoundRectDrawable(AndroidUtilities.dp(28.0f), getThemedColor(Theme.key_windowBackgroundWhite));
+        createRoundRectDrawable.getPaint().setShadowLayer(AndroidUtilities.dp(6.0f), 0.0f, AndroidUtilities.dp(1.0f), Theme.multAlpha(-16777216, 0.15f));
+        makeOptions.setScrimViewBackground(createRoundRectDrawable);
+        makeOptions.show();
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$openContactsSelector$2() {
+        new NewContactBottomSheet(this, getContext()).show();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$openContactsSelector$3() {
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("needFinishFragment", false);
+        presentFragment(new CallLogActivity(bundle));
+    }
+
+    public boolean openCallsSelector(View view) {
+        if (getContext() == null || getParentActivity() == null) {
+            return false;
+        }
+        ItemOptions makeOptions = ItemOptions.makeOptions(this, view);
+        makeOptions.add(R.drawable.menu_call_create, LocaleController.getString(R.string.GroupCallCreate2), new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda12
+            @Override // java.lang.Runnable
+            public final void run() {
+                MainTabsActivity.this.lambda$openCallsSelector$4();
+            }
+        });
+        if (getUserConfig().showCallsTab) {
+            makeOptions.add(R.drawable.msg_archive_hide, LocaleController.getString(R.string.HideCallTab), new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda13
+                @Override // java.lang.Runnable
+                public final void run() {
+                    MainTabsActivity.this.lambda$openCallsSelector$5();
+                }
+            });
+        } else {
+            makeOptions.add(R.drawable.menu_add_tab_24, LocaleController.getString(R.string.GroupCallShowInMainTabs), new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda14
+                @Override // java.lang.Runnable
+                public final void run() {
+                    MainTabsActivity.this.lambda$openCallsSelector$6();
+                }
+            });
+        }
+        makeOptions.setBlur(true);
+        makeOptions.translate(0.0f, -AndroidUtilities.dp(4.0f));
+        ShapeDrawable createRoundRectDrawable = Theme.createRoundRectDrawable(AndroidUtilities.dp(28.0f), getThemedColor(Theme.key_windowBackgroundWhite));
+        createRoundRectDrawable.getPaint().setShadowLayer(AndroidUtilities.dp(6.0f), 0.0f, AndroidUtilities.dp(1.0f), Theme.multAlpha(-16777216, 0.15f));
+        makeOptions.setScrimViewBackground(createRoundRectDrawable);
+        makeOptions.show();
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$openCallsSelector$4() {
+        CallLogActivity.openCreateCall(this);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$openCallsSelector$5() {
+        getUserConfig().setShowCallsTab(false);
+        checkUi_callTabVisible(false, true);
+        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.callTabsVisibleToggled, new Object[0]);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$openCallsSelector$6() {
+        getUserConfig().setShowCallsTab(true);
+        checkUi_callTabVisible(true, true);
+        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.callTabsVisibleToggled, new Object[0]);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public boolean openFoldersSelector(View view) {
+        ArrayList<MessagesController.DialogFilter> dialogFilters;
+        if (getContext() == null || getParentActivity() == null || (dialogFilters = getMessagesController().getDialogFilters()) == null || dialogFilters.isEmpty()) {
+            return false;
+        }
+        final ItemOptions makeOptions = ItemOptions.makeOptions(this, view);
+        for (int i = 0; i < dialogFilters.size(); i++) {
+            final MessagesController.DialogFilter dialogFilter = dialogFilters.get(i);
+            ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem((Context) getParentActivity(), 2, false, false, getResourceProvider());
+            actionBarMenuSubItem.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
+            CharSequence replaceEmoji = Emoji.replaceEmoji(dialogFilter.isDefault() ? LocaleController.getString(R.string.FilterAllChats) : dialogFilter.name, actionBarMenuSubItem.getTextView().getPaint().getFontMetricsInt(), false);
+            if (!dialogFilter.isDefault()) {
+                replaceEmoji = MessageObject.replaceAnimatedEmoji(replaceEmoji, dialogFilter.entities, actionBarMenuSubItem.getTextView().getPaint().getFontMetricsInt());
+            }
+            actionBarMenuSubItem.setEmojiCacheType(dialogFilter.title_noanimate ? 26 : 0);
+            actionBarMenuSubItem.setTextAndIcon(replaceEmoji, 0, new FolderDrawable(getContext(), R.drawable.msg_folders, getMessagesController().folderTags ? dialogFilter.color : -1));
+            actionBarMenuSubItem.getTextView().setEmojiColor(getThemedColor(Theme.key_featuredStickers_addButton));
+            actionBarMenuSubItem.setMinimumWidth(NotificationCenter.screenshotTook);
+            actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda8
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view2) {
+                    MainTabsActivity.this.lambda$openFoldersSelector$7(makeOptions, dialogFilter, view2);
+                }
+            });
+            makeOptions.addView(actionBarMenuSubItem, LayoutHelper.createLinear(-1, -2));
+        }
+        makeOptions.translate(-AndroidUtilities.dp(8.0f), -AndroidUtilities.dp(4.0f));
+        ShapeDrawable createRoundRectDrawable = Theme.createRoundRectDrawable(AndroidUtilities.dp(28.0f), getThemedColor(Theme.key_windowBackgroundWhite));
+        createRoundRectDrawable.getPaint().setShadowLayer(AndroidUtilities.dp(6.0f), 0.0f, AndroidUtilities.dp(1.0f), Theme.multAlpha(-16777216, 0.15f));
+        makeOptions.setScrimViewBackground(createRoundRectDrawable);
+        makeOptions.setGravity(3);
+        makeOptions.show();
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$openFoldersSelector$7(ItemOptions itemOptions, MessagesController.DialogFilter dialogFilter, View view) {
+        itemOptions.dismiss();
+        openFolder(dialogFilter.id);
+    }
+
+    private void openFolder(int i) {
+        DialogsActivity dialogsActivity;
+        if (this.viewPager.getCurrentPosition() == 0 && (dialogsActivity = this.dialogsActivity) != null) {
+            dialogsActivity.scrollToFolder(i);
+            return;
+        }
+        if (this.dialogsActivity == null) {
+            prepareDialogsActivity(null);
+        }
+        this.pendingFolderId = Integer.valueOf(i);
+        selectTab(0, true);
+        this.viewPager.scrollToPosition(0);
+    }
+
+    public boolean openAccountSelector(View view) {
         ArrayList arrayList = new ArrayList();
         arrayList.clear();
         for (int i = 0; i < 4; i++) {
@@ -404,20 +573,20 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
                 arrayList.add(Integer.valueOf(i));
             }
         }
-        Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda5
+        Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda9
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$openAccountSelector$3;
-                lambda$openAccountSelector$3 = MainTabsActivity.lambda$openAccountSelector$3((Integer) obj, (Integer) obj2);
-                return lambda$openAccountSelector$3;
+                int lambda$openAccountSelector$8;
+                lambda$openAccountSelector$8 = MainTabsActivity.lambda$openAccountSelector$8((Integer) obj, (Integer) obj2);
+                return lambda$openAccountSelector$8;
             }
         });
         final ItemOptions makeOptions = ItemOptions.makeOptions(this, view);
         if (UserConfig.getActivatedAccountsCount() < 4) {
-            makeOptions.add(R.drawable.msg_addbot, LocaleController.getString(R.string.AddAccount), new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda6
+            makeOptions.add(R.drawable.msg_addbot, LocaleController.getString(R.string.AddAccount), new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda10
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MainTabsActivity.this.lambda$openAccountSelector$4();
+                    MainTabsActivity.this.lambda$openAccountSelector$9();
                 }
             });
         }
@@ -429,10 +598,10 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             while (it.hasNext()) {
                 final int intValue = ((Integer) it.next()).intValue();
                 LinearLayout accountView = accountView(intValue, this.currentAccount == intValue);
-                accountView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda7
+                accountView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda11
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
-                        MainTabsActivity.this.lambda$openAccountSelector$7(intValue, makeOptions, view2);
+                        MainTabsActivity.this.lambda$openAccountSelector$12(intValue, makeOptions, view2);
                     }
                 });
                 makeOptions.addView(accountView, LayoutHelper.createLinear(NotificationCenter.starGiftsLoaded, 48));
@@ -445,10 +614,11 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         makeOptions.setScrimViewBackground(createRoundRectDrawable);
         makeOptions.show();
         HintsController.Hint.AccountSwitchHint.doNotShowAgain();
+        return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$openAccountSelector$3(Integer num, Integer num2) {
+    public static /* synthetic */ int lambda$openAccountSelector$8(Integer num, Integer num2) {
         long j = UserConfig.getInstance(num.intValue()).loginTime;
         long j2 = UserConfig.getInstance(num2.intValue()).loginTime;
         if (j > j2) {
@@ -458,7 +628,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openAccountSelector$4() {
+    public /* synthetic */ void lambda$openAccountSelector$9() {
         int i = 0;
         Integer num = null;
         for (int i2 = 3; i2 >= 0; i2--) {
@@ -483,7 +653,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openAccountSelector$7(int i, ItemOptions itemOptions, View view) {
+    public /* synthetic */ void lambda$openAccountSelector$12(int i, ItemOptions itemOptions, View view) {
         if (this.currentAccount == i) {
             return;
         }
@@ -537,6 +707,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
 
     @Override // org.telegram.ui.ViewPagerActivity
     protected void onViewPagerScrollEnd() {
+        DialogsActivity dialogsActivity;
         if (this.tabsView != null) {
             selectTab(this.viewPager.getCurrentPosition(), true);
             setGestureSelectedOverride(0.0f, false);
@@ -552,6 +723,12 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             if (currentPosition != 3) {
                 dropFragmentAtPosition(3);
             }
+            Integer num = this.pendingFolderId;
+            if (num == null || currentPosition != 0 || (dialogsActivity = this.dialogsActivity) == null) {
+                return;
+            }
+            dialogsActivity.scrollToFolder(num.intValue());
+            this.pendingFolderId = null;
         }
     }
 
@@ -851,7 +1028,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     @Override // org.telegram.ui.ViewPagerActivity, org.telegram.ui.ActionBar.BaseFragment
     public ArrayList getThemeDescriptions() {
         ArrayList themeDescriptions = super.getThemeDescriptions();
-        ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda4
+        ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda7
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 MainTabsActivity.this.blur3_updateColors();
@@ -922,10 +1099,10 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             return;
         }
         if (this.accountSwitchHint == null && HintsController.Hint.AccountSwitchHint.show()) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda3
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MainTabsActivity.this.lambda$showAccountChangeHint$9();
+                    MainTabsActivity.this.lambda$showAccountChangeHint$14();
                 }
             }, 1500L);
         }
@@ -933,7 +1110,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showAccountChangeHint$9() {
+    public /* synthetic */ void lambda$showAccountChangeHint$14() {
         GlassTabView[] glassTabViewArr;
         if (getContext() == null || (glassTabViewArr = this.tabs) == null) {
             return;
@@ -948,10 +1125,10 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         this.accountSwitchHint.setText(LocaleController.getString(R.string.SwitchAccountHint));
         this.accountSwitchHint.setJoint(1.0f, (-width) + 7.33f);
         this.contentView.addView(this.accountSwitchHint, LayoutHelper.createFrame(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, 72.0f));
-        this.accountSwitchHint.setOnHiddenListener(new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda8
+        this.accountSwitchHint.setOnHiddenListener(new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda15
             @Override // java.lang.Runnable
             public final void run() {
-                MainTabsActivity.this.lambda$showAccountChangeHint$8();
+                MainTabsActivity.this.lambda$showAccountChangeHint$13();
             }
         });
         this.accountSwitchHint.setDuration(8000L);
@@ -960,7 +1137,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showAccountChangeHint$8() {
+    public /* synthetic */ void lambda$showAccountChangeHint$13() {
         AndroidUtilities.removeFromParent(this.accountSwitchHint);
     }
 

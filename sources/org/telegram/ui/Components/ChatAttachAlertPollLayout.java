@@ -70,7 +70,7 @@ import org.telegram.ui.Cells.TextCell;
 import org.telegram.ui.Cells.TextCheckCell;
 import org.telegram.ui.Cells.TextInfoPrivacyCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda327;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda267;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.ChatActivityEnterViewAnimatedIconView;
 import org.telegram.ui.Components.ChatAttachAlert;
@@ -1293,28 +1293,30 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         } else {
             i = 0;
         }
-        boolean z = (TextUtils.isEmpty(getFixedString(this.descriptionString)) || this.descriptionString.length() <= this.MAX_CAPTION_LENGTH) && (TextUtils.isEmpty(getFixedString(this.solutionString)) || this.solutionString.length() <= 200) && !TextUtils.isEmpty(getFixedString(this.questionString)) && this.questionString.length() <= 255;
-        int i3 = 0;
-        int i4 = 0;
+        int i3 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.didReceiveCall;
+        int i4 = this.todo ? getMessagesController().todoItemLengthMax : 100;
+        boolean z = (TextUtils.isEmpty(getFixedString(this.descriptionString)) || this.descriptionString.length() <= this.MAX_CAPTION_LENGTH) && (TextUtils.isEmpty(getFixedString(this.solutionString)) || this.solutionString.length() <= 200) && !TextUtils.isEmpty(getFixedString(this.questionString)) && this.questionString.length() <= i3;
+        int i5 = 0;
+        int i6 = 0;
         boolean z2 = false;
         while (true) {
             CharSequence[] charSequenceArr = this.answers;
-            if (i3 >= charSequenceArr.length) {
+            if (i5 >= charSequenceArr.length) {
                 break;
             }
-            if (!TextUtils.isEmpty(getFixedString(charSequenceArr[i3]))) {
-                if (this.answers[i3].length() > 100) {
-                    i4 = 0;
+            if (!TextUtils.isEmpty(getFixedString(charSequenceArr[i5]))) {
+                if (this.answers[i5].length() > i4) {
+                    i6 = 0;
                     z2 = true;
                     break;
                 } else {
-                    i4++;
+                    i6++;
                     z2 = true;
                 }
             }
-            i3++;
+            i5++;
         }
-        if (i4 < 1 || (this.quizPoll && i < 1)) {
+        if (i6 < 1 || (this.quizPoll && i < 1)) {
             z = false;
         }
         if (!TextUtils.isEmpty(this.solutionString) || !TextUtils.isEmpty(this.questionString) || !TextUtils.isEmpty(this.descriptionString) || z2 || this.attachedMedia.medias.size() > 0) {
@@ -3551,7 +3553,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             }
         });
         ScrimOptions scrimOptions = new ScrimOptions(getContext(), this.resourcesProvider);
-        add.setOnDismiss(new ChatActivity$$ExternalSyntheticLambda327(scrimOptions));
+        add.setOnDismiss(new ChatActivity$$ExternalSyntheticLambda267(scrimOptions));
         add.setMinWidth(AndroidUtilities.dp(185.0f));
         add.setupSelectors();
         scrimOptions.setItemOptions(add);

@@ -7893,11 +7893,11 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     ImageView imageView = this.aiButton;
                     AiButtonDrawable aiButtonDrawable = this.aiButtonIcon;
                     Objects.requireNonNull(aiButtonDrawable);
-                    imageView.postDelayed(new ChatActivityEnterView$$ExternalSyntheticLambda73(aiButtonDrawable), 220L);
+                    imageView.postDelayed(new CaptionPhotoViewer$$ExternalSyntheticLambda5(aiButtonDrawable), 220L);
                     ImageView imageView2 = this.topAiButton;
                     AiButtonDrawable aiButtonDrawable2 = this.topAiButtonIcon;
                     Objects.requireNonNull(aiButtonDrawable2);
-                    imageView2.postDelayed(new ChatActivityEnterView$$ExternalSyntheticLambda73(aiButtonDrawable2), 220L);
+                    imageView2.postDelayed(new CaptionPhotoViewer$$ExternalSyntheticLambda5(aiButtonDrawable2), 220L);
                     return;
                 }
                 return;

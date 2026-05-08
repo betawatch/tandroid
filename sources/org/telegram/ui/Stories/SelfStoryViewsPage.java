@@ -94,6 +94,7 @@ public abstract class SelfStoryViewsPage extends FrameLayout implements Notifica
     private boolean checkAutoscroll;
     int currentAccount;
     ViewsModel currentModel;
+    private StoriesController.StoryRepostsList currentRepostsList;
     ViewsModel defaultModel;
     private long dialogId;
     HeaderView headerView;
@@ -106,6 +107,7 @@ public abstract class SelfStoryViewsPage extends FrameLayout implements Notifica
     private CustomPopupMenu popupMenu;
     RecyclerItemsEnterAnimator recyclerItemsEnterAnimator;
     RecyclerListView recyclerListView;
+    private int repostsListConsumedCount;
     Theme.ResourcesProvider resourcesProvider;
     RecyclerAnimationScrollHelper scrollHelper;
     private final RecyclerListViewScroller scroller;
@@ -232,7 +234,7 @@ public abstract class SelfStoryViewsPage extends FrameLayout implements Notifica
         this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                SelfStoryViewsPage.this.lambda$new$0(storyViewer, view, i);
+                SelfStoryViewsPage.this.lambda$new$1(storyViewer, view, i);
             }
         });
         this.recyclerListView.setOnItemLongClickListener(new 4(storyViewer));
@@ -259,8 +261,11 @@ public abstract class SelfStoryViewsPage extends FrameLayout implements Notifica
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(StoryViewer storyViewer, View view, int i) {
+    public /* synthetic */ void lambda$new$1(StoryViewer storyViewer, View view, int i) {
         TLRPC.Message message;
+        ArrayList arrayList;
+        TL_stories.TL_storyReactionPublicRepost tL_storyReactionPublicRepost;
+        TL_stories.StoryItem storyItem;
         if (i < 0 || i >= this.listAdapter.items.size()) {
             return;
         }
@@ -280,6 +285,38 @@ public abstract class SelfStoryViewsPage extends FrameLayout implements Notifica
             return;
         }
         if (storyReaction instanceof TL_stories.TL_storyReactionPublicRepost) {
+            ArrayList arrayList2 = new ArrayList();
+            ViewsModel viewsModel = this.currentModel;
+            int i2 = 0;
+            int i3 = -1;
+            if (viewsModel != null && (arrayList = viewsModel.reactions) != null) {
+                int size = arrayList.size();
+                while (i2 < this.currentModel.reactions.size()) {
+                    TL_stories.StoryReaction storyReaction2 = (TL_stories.StoryReaction) this.currentModel.reactions.get(i2);
+                    if ((storyReaction2 instanceof TL_stories.TL_storyReactionPublicRepost) && (storyItem = (tL_storyReactionPublicRepost = (TL_stories.TL_storyReactionPublicRepost) storyReaction2).story) != null) {
+                        storyItem.dialogId = DialogObject.getPeerDialogId(tL_storyReactionPublicRepost.peer_id);
+                        if (storyReaction2 == item.reaction) {
+                            i3 = arrayList2.size();
+                        }
+                        arrayList2.add(storyItem);
+                    }
+                    i2++;
+                }
+                i2 = size;
+            }
+            if (i3 >= 0 && arrayList2.size() > 1) {
+                this.currentRepostsList = new StoriesController.StoryRepostsList(this.currentAccount, arrayList2);
+                this.repostsListConsumedCount = i2;
+                final ViewsModel viewsModel2 = this.currentModel;
+                storyViewer.fragment.createOverlayStoryViewer().open(getContext(), i3, this.currentRepostsList, StoriesListPlaceProvider.of(this.recyclerListView).with(new StoriesListPlaceProvider.LoadNextInterface() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$$ExternalSyntheticLambda1
+                    @Override // org.telegram.ui.Stories.StoriesListPlaceProvider.LoadNextInterface
+                    public final void loadNext(boolean z) {
+                        SelfStoryViewsPage.lambda$new$0(SelfStoryViewsPage.ViewsModel.this, z);
+                    }
+                }));
+                return;
+            }
+            this.currentRepostsList = null;
             storyViewer.fragment.createOverlayStoryViewer().open(getContext(), ((TL_stories.TL_storyReactionPublicRepost) item.reaction).story, StoriesListPlaceProvider.of(this.recyclerListView));
             return;
         }
@@ -299,6 +336,13 @@ public abstract class SelfStoryViewsPage extends FrameLayout implements Notifica
             }
             bundle.putInt("message_id", message.id);
             storyViewer.presentFragment(new ChatActivity(bundle));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$new$0(ViewsModel viewsModel, boolean z) {
+        if (viewsModel != null) {
+            viewsModel.loadNext();
         }
     }
 
@@ -835,6 +879,66 @@ public abstract class SelfStoryViewsPage extends FrameLayout implements Notifica
         this.listAdapter.updateRows();
         this.recyclerItemsEnterAnimator.showItemsAnimated(itemCount - 1);
         checkLoadMore();
+        appendNewRepostsToList(viewsModel);
+    }
+
+    public boolean scrollToRepostCell(long j, int i) {
+        ListAdapter listAdapter = this.listAdapter;
+        if (listAdapter == null || listAdapter.items == null || this.layoutManager == null) {
+            return false;
+        }
+        int i2 = 0;
+        while (true) {
+            if (i2 >= this.listAdapter.items.size()) {
+                i2 = -1;
+                break;
+            }
+            Item item = (Item) this.listAdapter.items.get(i2);
+            if (item != null) {
+                TL_stories.StoryReaction storyReaction = item.reaction;
+                if (storyReaction instanceof TL_stories.TL_storyReactionPublicRepost) {
+                    TL_stories.TL_storyReactionPublicRepost tL_storyReactionPublicRepost = (TL_stories.TL_storyReactionPublicRepost) storyReaction;
+                    if (tL_storyReactionPublicRepost.story != null && DialogObject.getPeerDialogId(tL_storyReactionPublicRepost.peer_id) == j && tL_storyReactionPublicRepost.story.id == i) {
+                        break;
+                    }
+                } else {
+                    continue;
+                }
+            }
+            i2++;
+        }
+        if (i2 < 0) {
+            return false;
+        }
+        int findFirstVisibleItemPosition = this.layoutManager.findFirstVisibleItemPosition();
+        int findLastVisibleItemPosition = this.layoutManager.findLastVisibleItemPosition();
+        if (i2 >= findFirstVisibleItemPosition && i2 <= findLastVisibleItemPosition) {
+            return false;
+        }
+        this.layoutManager.scrollToPositionWithOffset(i2, AndroidUtilities.dp(60.0f));
+        return true;
+    }
+
+    private void appendNewRepostsToList(ViewsModel viewsModel) {
+        ArrayList arrayList;
+        TL_stories.TL_storyReactionPublicRepost tL_storyReactionPublicRepost;
+        TL_stories.StoryItem storyItem;
+        if (this.currentRepostsList == null || viewsModel == null || viewsModel != this.currentModel || (arrayList = viewsModel.reactions) == null || this.repostsListConsumedCount >= arrayList.size()) {
+            return;
+        }
+        ArrayList arrayList2 = new ArrayList();
+        for (int i = this.repostsListConsumedCount; i < viewsModel.reactions.size(); i++) {
+            TL_stories.StoryReaction storyReaction = (TL_stories.StoryReaction) viewsModel.reactions.get(i);
+            if ((storyReaction instanceof TL_stories.TL_storyReactionPublicRepost) && (storyItem = (tL_storyReactionPublicRepost = (TL_stories.TL_storyReactionPublicRepost) storyReaction).story) != null) {
+                storyItem.dialogId = DialogObject.getPeerDialogId(tL_storyReactionPublicRepost.peer_id);
+                arrayList2.add(storyItem);
+            }
+        }
+        this.repostsListConsumedCount = viewsModel.reactions.size();
+        if (arrayList2.isEmpty()) {
+            return;
+        }
+        this.currentRepostsList.append(arrayList2);
     }
 
     public void setListBottomPadding(float f) {

@@ -108,7 +108,7 @@ public abstract class StoriesViewPager extends ViewPager {
                     ArrayList arrayList2 = (ArrayList) arrayList.get(i2);
                     pageLayout.day = arrayList2;
                     StoriesController.StoriesList storiesList = storyViewer.storiesList;
-                    if (storiesList instanceof StoriesController.SearchStoriesList) {
+                    if ((storiesList instanceof StoriesController.SearchStoriesList) || (storiesList instanceof StoriesController.StoryRepostsList)) {
                         MessageObject findMessageObject = storiesList.findMessageObject(((Integer) arrayList2.get(0)).intValue());
                         pageLayout.dialogId = findMessageObject == null ? StoriesViewPager.this.daysDialogId : findMessageObject.getDialogId();
                     } else {
@@ -332,15 +332,22 @@ public abstract class StoriesViewPager extends ViewPager {
     }
 
     public void setDays(long j, ArrayList arrayList, int i) {
+        PagerAdapter pagerAdapter;
         if (this.daysDialogId == j && eqA(this.days, arrayList) && this.currentAccount == i) {
             return;
         }
+        int i2 = 0;
+        boolean z = this.daysDialogId == j && this.currentAccount == i && isPrefix(this.days, arrayList);
         this.daysDialogId = j;
         this.days = arrayList;
         this.currentAccount = i;
+        if (z && (pagerAdapter = this.pagerAdapter) != null) {
+            pagerAdapter.notifyDataSetChanged();
+            this.updateDelegate = true;
+            return;
+        }
         setAdapter(null);
         setAdapter(this.pagerAdapter);
-        int i2 = 0;
         while (i2 < arrayList.size() && !((ArrayList) arrayList.get(i2)).contains(Integer.valueOf(this.storyViewer.dayStoryId))) {
             i2++;
         }
@@ -349,6 +356,18 @@ public abstract class StoriesViewPager extends ViewPager {
         }
         setCurrentItem(i2);
         this.updateDelegate = true;
+    }
+
+    private static boolean isPrefix(ArrayList arrayList, ArrayList arrayList2) {
+        if (arrayList == null || arrayList2 == null || arrayList2.size() <= arrayList.size()) {
+            return false;
+        }
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (!eq((ArrayList) arrayList.get(i), (ArrayList) arrayList2.get(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private static boolean eqA(ArrayList arrayList, ArrayList arrayList2) {

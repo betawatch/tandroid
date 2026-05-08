@@ -276,6 +276,16 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
                 }
                 return null;
             }
+
+            @Override // org.telegram.ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.ui.PhotoViewer.PhotoViewerProvider
+            public CharSequence getTitleFor(int i) {
+                return FilteredSearchView.createFromInfoString((MessageObject) FilteredSearchView.this.messages.get(i), 0);
+            }
+
+            @Override // org.telegram.ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.ui.PhotoViewer.PhotoViewerProvider
+            public CharSequence getSubtitleFor(int i) {
+                return LocaleController.formatDateAudio(((MessageObject) FilteredSearchView.this.messages.get(i)).messageOwner.date, false);
+            }
         };
         this.firstLoading = true;
         this.notificationsLocker = new AnimationNotificationsLocker();

@@ -20,6 +20,7 @@ import android.graphics.drawable.ShapeDrawable;
 import android.os.Build;
 import android.text.TextUtils;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -30,6 +31,7 @@ import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -104,6 +106,9 @@ public class ItemOptions {
     private Integer gapBackgroundColor;
     private int gravity;
     private boolean hideScrimUnder;
+    private final int[] hoverLoc;
+    private View.OnTouchListener hoverReleaseListener;
+    private View hoveredItem;
     private Integer iconColor;
     private boolean ignoreX;
     private ActionBarPopupWindow.ActionBarPopupWindowLayout lastLayout;
@@ -213,6 +218,7 @@ public class ItemOptions {
         this.viewAdditionalOffsets = new Rect();
         this.dismissWithButtons = true;
         this.shiftDp = -4;
+        this.hoverLoc = new int[2];
         if (baseFragment.getContext() == null) {
             return;
         }
@@ -239,6 +245,7 @@ public class ItemOptions {
         this.viewAdditionalOffsets = new Rect();
         this.dismissWithButtons = true;
         this.shiftDp = -4;
+        this.hoverLoc = new int[2];
         if (viewGroup == null || viewGroup.getContext() == null) {
             return;
         }
@@ -264,6 +271,7 @@ public class ItemOptions {
         this.viewAdditionalOffsets = new Rect();
         this.dismissWithButtons = true;
         this.shiftDp = -4;
+        this.hoverLoc = new int[2];
         this.context = actionBarPopupWindowLayout.getContext();
         LinearLayout linearLayout = new LinearLayout(this.context);
         this.linearLayout = linearLayout;
@@ -461,14 +469,14 @@ public class ItemOptions {
         actionBarMenuSubItem.setColors(intValue, num2 != null ? num2.intValue() : Theme.getColor(i2, this.resourcesProvider));
         Integer num3 = this.selectorColor;
         actionBarMenuSubItem.setSelectorColor(num3 != null ? num3.intValue() : Theme.multAlpha(Theme.getColor(i, this.resourcesProvider), 0.12f));
-        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda11
+        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ItemOptions.this.lambda$addChecked$2(runnable, view);
             }
         });
         if (runnable2 != null) {
-            actionBarMenuSubItem.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda12
+            actionBarMenuSubItem.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda13
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
                     boolean lambda$addChecked$3;
@@ -570,13 +578,13 @@ public class ItemOptions {
         actionBarMenuSubItem.setIconColorImage(num4 != null ? num4.intValue() : Theme.getColor(i, this.resourcesProvider));
         Integer num5 = this.selectorColor;
         actionBarMenuSubItem.setSelectorColor(num5 != null ? num5.intValue() : Theme.multAlpha(Theme.getColor(i2, this.resourcesProvider), 0.12f));
-        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda7
+        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ItemOptions.this.lambda$addBot$4(runnable, view);
             }
         });
-        actionBarMenuSubItem.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda8
+        actionBarMenuSubItem.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda9
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
                 boolean lambda$addBot$5;
@@ -658,7 +666,7 @@ public class ItemOptions {
         actionBarMenuSubItem.setColors(intValue, num2 != null ? num2.intValue() : Theme.getColor(i2, this.resourcesProvider));
         Integer num3 = this.selectorColor;
         actionBarMenuSubItem.setSelectorColor(num3 != null ? num3.intValue() : Theme.multAlpha(Theme.getColor(i, this.resourcesProvider), 0.12f));
-        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda13
+        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda14
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 ItemOptions.this.lambda$addChat$6(runnable, view2);
@@ -716,7 +724,7 @@ public class ItemOptions {
         actionBarMenuSubItem.setColors(intValue, num2 != null ? num2.intValue() : Theme.getColor(i3, this.resourcesProvider));
         Integer num3 = this.selectorColor;
         actionBarMenuSubItem.setSelectorColor(num3 != null ? num3.intValue() : Theme.multAlpha(Theme.getColor(i2, this.resourcesProvider), 0.12f));
-        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda6
+        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 ItemOptions.this.lambda$addAccount$7(runnable, view2);
@@ -756,7 +764,7 @@ public class ItemOptions {
         actionBarMenuSubItem.setColors(intValue, num2 != null ? num2.intValue() : Theme.getColor(Theme.key_actionBarDefaultSubmenuItemIcon, this.resourcesProvider));
         Integer num3 = this.selectorColor;
         actionBarMenuSubItem.setSelectorColor(num3 != null ? num3.intValue() : Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, this.resourcesProvider), 0.12f));
-        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda9
+        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ItemOptions.this.lambda$add$8(runnable, view);
@@ -812,7 +820,7 @@ public class ItemOptions {
             ActionBarMenuSubItem actionBarMenuSubItem = (ActionBarMenuSubItem) itemAt;
             actionBarMenuSubItem.setRightIcon(R.drawable.msg_mini_lock3);
             actionBarMenuSubItem.getRightIcon().setAlpha(0.4f);
-            actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda16
+            actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda17
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     ItemOptions.this.lambda$putPremiumLock$9(runnable, view);
@@ -879,7 +887,7 @@ public class ItemOptions {
         }
         ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout2 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(this.context, R.drawable.popup_fixed_alert4, this.resourcesProvider, !z ? 4 : 0);
         this.lastLayout = actionBarPopupWindowLayout2;
-        actionBarPopupWindowLayout2.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda17
+        actionBarPopupWindowLayout2.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda18
             @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow.OnDispatchKeyEventListener
             public final void onDispatchKeyEvent(KeyEvent keyEvent) {
                 ItemOptions.this.lambda$addSpaceGap$10(keyEvent);
@@ -944,7 +952,7 @@ public class ItemOptions {
         textView2.setTextSize(1, 13.0f);
         textView2.setText(AndroidUtilities.replaceArrows(charSequence, false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(0.66f)));
         frameLayout.addView(textView2, LayoutHelper.createFrame(-2, -2.0f, 55, 59.0f, 27.0f, 16.0f, 0.0f));
-        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda10
+        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ItemOptions.this.lambda$addProfile$12(runnable, view);
@@ -978,7 +986,7 @@ public class ItemOptions {
         textView.setMaxWidth(AndroidUtilities.dp(150.0f));
         textView.setLineSpacing(AndroidUtilities.dp(3.0f), 1.0f);
         frameLayout.addView(textView, LayoutHelper.createFrame(-2, -2.0f, 55, 59.0f, 8.0f, 16.0f, 0.0f));
-        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda18
+        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda19
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ItemOptions.this.lambda$addProfileCustom$13(runnable, view);
@@ -1283,8 +1291,6 @@ public class ItemOptions {
     /* JADX WARN: Removed duplicated region for block: B:104:0x03c5  */
     /* JADX WARN: Removed duplicated region for block: B:108:0x0407  */
     /* JADX WARN: Removed duplicated region for block: B:111:0x0418  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x043f  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x0434  */
     /* JADX WARN: Removed duplicated region for block: B:96:0x03b3 A[ADDED_TO_REGION] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1296,7 +1302,6 @@ public class ItemOptions {
         int width;
         int height;
         boolean z;
-        BaseFragment baseFragment;
         DimView dimView;
         ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout;
         float x;
@@ -1454,6 +1459,7 @@ public class ItemOptions {
                     ItemOptions itemOptions = ItemOptions.this;
                     itemOptions.actionBarPopupWindow = null;
                     itemOptions.dismissDim(viewGroup2);
+                    ItemOptions.this.clearHoverListener();
                     if (ItemOptions.this.dismissListener != null) {
                         ItemOptions.this.dismissListener.run();
                         ItemOptions.this.dismissListener = null;
@@ -1522,12 +1528,6 @@ public class ItemOptions {
                                 width = (int) (this.dimView.moveToX - AndroidUtilities.dp(8.0f));
                             }
                         }
-                        baseFragment = this.fragment;
-                        if (baseFragment == null && baseFragment.getFragmentView() != null) {
-                            this.fragment.getFragmentView().getRootView().dispatchTouchEvent(AndroidUtilities.emptyMotionEvent());
-                        } else if (this.container != null) {
-                            viewGroup2.dispatchTouchEvent(AndroidUtilities.emptyMotionEvent());
-                        }
                         if (this.blurForMenu && this.scrimBlur3SourceBitmap != null) {
                             setGapBackgroundColor(Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, this.resourcesProvider), 0.06f));
                             BlurredBackgroundDrawable radius = new BlurredBackgroundDrawableViewFactory(this.scrimBlur3SourceBitmap).create((View) this.layout, true).setColorProvider(BlurredBackgroundProviderImpl.scrimMenuBackground(this.resourcesProvider)).setPadding(AndroidUtilities.dp(8.0f)).setHasPadding(true).setRadius(AndroidUtilities.dp(12.0f));
@@ -1541,6 +1541,7 @@ public class ItemOptions {
                         float f11 = height + this.translateY;
                         this.offsetY = f11;
                         actionBarPopupWindow2.showAtLocation(viewGroup2, 0, (int) f10, (int) f11);
+                        installHoverReleaseListener();
                     }
                 }
                 z = false;
@@ -1555,11 +1556,6 @@ public class ItemOptions {
                     if (this.allowMoveScrimGravity == 3) {
                     }
                 }
-                baseFragment = this.fragment;
-                if (baseFragment == null) {
-                }
-                if (this.container != null) {
-                }
                 if (this.blurForMenu) {
                     setGapBackgroundColor(Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, this.resourcesProvider), 0.06f));
                     BlurredBackgroundDrawable radius2 = new BlurredBackgroundDrawableViewFactory(this.scrimBlur3SourceBitmap).create((View) this.layout, true).setColorProvider(BlurredBackgroundProviderImpl.scrimMenuBackground(this.resourcesProvider)).setPadding(AndroidUtilities.dp(8.0f)).setHasPadding(true).setRadius(AndroidUtilities.dp(12.0f));
@@ -1573,6 +1569,7 @@ public class ItemOptions {
                 float f112 = height + this.translateY;
                 this.offsetY = f112;
                 actionBarPopupWindow22.showAtLocation(viewGroup2, 0, (int) f102, (int) f112);
+                installHoverReleaseListener();
             } else {
                 height = (viewGroup2.getHeight() - this.layout.getMeasuredHeight()) / 2;
             }
@@ -1580,11 +1577,6 @@ public class ItemOptions {
             if (this.swipeback) {
             }
             if (this.allowMoveScrim) {
-            }
-            baseFragment = this.fragment;
-            if (baseFragment == null) {
-            }
-            if (this.container != null) {
             }
             if (this.blurForMenu) {
             }
@@ -1595,6 +1587,7 @@ public class ItemOptions {
             float f1122 = height + this.translateY;
             this.offsetY = f1122;
             actionBarPopupWindow222.showAtLocation(viewGroup2, 0, (int) f1022, (int) f1122);
+            installHoverReleaseListener();
         }
         return this;
     }
@@ -1712,7 +1705,7 @@ public class ItemOptions {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(dimView.dimProgress, 0.0f);
         this.dimAnimator = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda5
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda6
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                 ItemOptions.lambda$dismissDim$16(ItemOptions.DimView.this, valueAnimator2);
@@ -1775,6 +1768,129 @@ public class ItemOptions {
 
     public void dontDismiss() {
         this.dontDismiss = true;
+    }
+
+    private void installHoverReleaseListener() {
+        View view = this.scrimView;
+        if (view == null) {
+            return;
+        }
+        if (view.getParent() != null) {
+            this.scrimView.getParent().requestDisallowInterceptTouchEvent(true);
+        }
+        final WeakReference weakReference = new WeakReference(this);
+        View view2 = this.scrimView;
+        View.OnTouchListener onTouchListener = new View.OnTouchListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda5
+            @Override // android.view.View.OnTouchListener
+            public final boolean onTouch(View view3, MotionEvent motionEvent) {
+                boolean lambda$installHoverReleaseListener$17;
+                lambda$installHoverReleaseListener$17 = ItemOptions.lambda$installHoverReleaseListener$17(weakReference, view3, motionEvent);
+                return lambda$installHoverReleaseListener$17;
+            }
+        };
+        this.hoverReleaseListener = onTouchListener;
+        view2.setOnTouchListener(onTouchListener);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ boolean lambda$installHoverReleaseListener$17(WeakReference weakReference, View view, MotionEvent motionEvent) {
+        ActionBarPopupWindow actionBarPopupWindow;
+        ItemOptions itemOptions = (ItemOptions) weakReference.get();
+        if (itemOptions == null || (actionBarPopupWindow = itemOptions.actionBarPopupWindow) == null || !actionBarPopupWindow.isShowing()) {
+            view.setOnTouchListener(null);
+            return false;
+        }
+        if (view.getParent() != null) {
+            view.getParent().requestDisallowInterceptTouchEvent(true);
+        }
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 2) {
+            itemOptions.updateHover((int) motionEvent.getRawX(), (int) motionEvent.getRawY());
+        } else if (actionMasked == 1) {
+            itemOptions.releaseHover((int) motionEvent.getRawX(), (int) motionEvent.getRawY());
+            view.setOnTouchListener(null);
+            itemOptions.hoverReleaseListener = null;
+        } else if (actionMasked == 3) {
+            itemOptions.cancelHover();
+            view.setOnTouchListener(null);
+            itemOptions.hoverReleaseListener = null;
+        }
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void clearHoverListener() {
+        View view;
+        cancelHover();
+        if (this.hoverReleaseListener != null && (view = this.scrimView) != null) {
+            view.setOnTouchListener(null);
+        }
+        this.hoverReleaseListener = null;
+    }
+
+    private void updateHover(int i, int i2) {
+        View findItemAt = findItemAt(this.layout, i, i2);
+        View view = this.hoveredItem;
+        if (findItemAt != view) {
+            if (view != null) {
+                view.setPressed(false);
+            }
+            this.hoveredItem = findItemAt;
+            if (findItemAt != null) {
+                findItemAt.setPressed(true);
+            }
+        }
+        View view2 = this.hoveredItem;
+        if (view2 != null) {
+            view2.getLocationOnScreen(this.hoverLoc);
+            View view3 = this.hoveredItem;
+            int[] iArr = this.hoverLoc;
+            view3.drawableHotspotChanged(i - iArr[0], i2 - iArr[1]);
+        }
+    }
+
+    private void releaseHover(int i, int i2) {
+        updateHover(i, i2);
+        View view = this.hoveredItem;
+        if (view != null) {
+            this.hoveredItem = null;
+            view.setPressed(false);
+            view.performClick();
+        }
+    }
+
+    private void cancelHover() {
+        View view = this.hoveredItem;
+        if (view != null) {
+            view.setPressed(false);
+            this.hoveredItem = null;
+        }
+    }
+
+    private static View findItemAt(View view, int i, int i2) {
+        if (view != null && view.getVisibility() == 0) {
+            int[] iArr = new int[2];
+            view.getLocationOnScreen(iArr);
+            int i3 = iArr[0];
+            int i4 = iArr[1];
+            int width = view.getWidth() + i3;
+            int height = view.getHeight() + i4;
+            if (i >= i3 && i < width && i2 >= i4 && i2 < height) {
+                if (view instanceof ViewGroup) {
+                    ViewGroup viewGroup = (ViewGroup) view;
+                    for (int childCount = viewGroup.getChildCount() - 1; childCount >= 0; childCount--) {
+                        View findItemAt = findItemAt(viewGroup.getChildAt(childCount), i, i2);
+                        if (findItemAt != null) {
+                            return findItemAt;
+                        }
+                    }
+                }
+                if (view.isClickable() && view.isEnabled() && !(view instanceof ActionBarPopupWindow.GapView)) {
+                    return view;
+                }
+            }
+        }
+        return null;
     }
 
     public static void getPointOnScreen(View view, ViewGroup viewGroup, float[] fArr) {
@@ -2065,7 +2181,7 @@ public class ItemOptions {
             actionBarMenuSubItem.setColors(Theme.getColor(i, itemOptions.resourcesProvider), Theme.getColor(Theme.key_actionBarDefaultSubmenuItemIcon, itemOptions.resourcesProvider));
             actionBarMenuSubItem.setSelectorColor(Theme.multAlpha(Theme.getColor(i, itemOptions.resourcesProvider), 0.12f));
             actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(R.string.StoriesAlbumNewAlbum), R.drawable.menu_album_add);
-            actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda14
+            actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda15
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     runnable.run();
@@ -2090,10 +2206,10 @@ public class ItemOptions {
             } else {
                 actionBarMenuSubItem2.setTextAndIcon(storyAlbum.title, R.drawable.msg_folders);
             }
-            actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda15
+            actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda16
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ItemOptions.lambda$addAlbumsItemOptions$18(contains, hashSet, i2, callback, storyAlbum, view);
+                    ItemOptions.lambda$addAlbumsItemOptions$19(contains, hashSet, i2, callback, storyAlbum, view);
                 }
             });
             linearLayout.addView(actionBarMenuSubItem2, LayoutHelper.createLinear(-1, -2));
@@ -2102,7 +2218,7 @@ public class ItemOptions {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$addAlbumsItemOptions$18(boolean z, HashSet hashSet, int i, Utilities.Callback callback, StoriesController.StoryAlbum storyAlbum, View view) {
+    public static /* synthetic */ void lambda$addAlbumsItemOptions$19(boolean z, HashSet hashSet, int i, Utilities.Callback callback, StoriesController.StoryAlbum storyAlbum, View view) {
         if (z) {
             hashSet.remove(Integer.valueOf(i));
         } else {
