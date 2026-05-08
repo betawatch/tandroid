@@ -512,7 +512,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     /* JADX INFO: Access modifiers changed from: private */
     public boolean openFoldersSelector(View view) {
         ArrayList<MessagesController.DialogFilter> dialogFilters;
-        if (getContext() == null || getParentActivity() == null || (dialogFilters = getMessagesController().getDialogFilters()) == null || dialogFilters.isEmpty()) {
+        if (getContext() == null || getParentActivity() == null || (dialogFilters = getMessagesController().getDialogFilters()) == null || dialogFilters.size() <= 1) {
             return false;
         }
         final ItemOptions makeOptions = ItemOptions.makeOptions(this, view);
@@ -537,6 +537,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             makeOptions.addView(actionBarMenuSubItem, LayoutHelper.createLinear(-1, -2));
         }
         makeOptions.translate(-AndroidUtilities.dp(8.0f), -AndroidUtilities.dp(4.0f));
+        makeOptions.setMaxHeight(AndroidUtilities.dp(400.0f));
         ShapeDrawable createRoundRectDrawable = Theme.createRoundRectDrawable(AndroidUtilities.dp(28.0f), getThemedColor(Theme.key_windowBackgroundWhite));
         createRoundRectDrawable.getPaint().setShadowLayer(AndroidUtilities.dp(6.0f), 0.0f, AndroidUtilities.dp(1.0f), Theme.multAlpha(-16777216, 0.15f));
         makeOptions.setScrimViewBackground(createRoundRectDrawable);
