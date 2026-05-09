@@ -212,6 +212,29 @@ public interface IMediaControllerCallback extends IInterface {
             }
 
             @Override // android.support.v4.media.session.IMediaControllerCallback
+            public void onQueueTitleChanged(CharSequence charSequence) {
+                Parcel obtain = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
+                    if (charSequence != null) {
+                        obtain.writeInt(1);
+                        TextUtils.writeToParcel(charSequence, obtain, 0);
+                    } else {
+                        obtain.writeInt(0);
+                    }
+                    if (this.mRemote.transact(6, obtain, null, 1) || Stub.getDefaultImpl() == null) {
+                        obtain.recycle();
+                    } else {
+                        Stub.getDefaultImpl().onQueueTitleChanged(charSequence);
+                        obtain.recycle();
+                    }
+                } catch (Throwable th) {
+                    obtain.recycle();
+                    throw th;
+                }
+            }
+
+            @Override // android.support.v4.media.session.IMediaControllerCallback
             public void onExtrasChanged(Bundle bundle) {
                 Parcel obtain = Parcel.obtain();
                 try {

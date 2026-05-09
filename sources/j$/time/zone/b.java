@@ -1,5 +1,6 @@
 package j$.time.zone;
 
+import j$.time.Duration;
 import j$.time.LocalDateTime;
 import j$.time.ZoneOffset;
 import java.io.InvalidObjectException;
@@ -32,7 +33,7 @@ public final class b implements Comparable, Serializable {
 
     b(long j, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
         this.a = j;
-        this.b = LocalDateTime.R(j, 0, zoneOffset);
+        this.b = LocalDateTime.P(j, 0, zoneOffset);
         this.c = zoneOffset;
         this.d = zoneOffset2;
     }
@@ -51,7 +52,7 @@ public final class b implements Comparable, Serializable {
         a.d(this.d, objectOutput);
     }
 
-    public final long H() {
+    public final long F() {
         return this.a;
     }
 
@@ -59,7 +60,7 @@ public final class b implements Comparable, Serializable {
         return this.b;
     }
 
-    public final ZoneOffset s() {
+    public final ZoneOffset r() {
         return this.c;
     }
 
@@ -68,19 +69,19 @@ public final class b implements Comparable, Serializable {
     }
 
     public final LocalDateTime k() {
-        return this.b.T(this.d.getTotalSeconds() - this.c.getTotalSeconds());
+        return this.b.R(this.d.getTotalSeconds() - this.c.getTotalSeconds());
     }
 
-    public final j$.time.e n() {
-        return j$.time.e.n(this.d.getTotalSeconds() - this.c.getTotalSeconds());
+    public final Duration n() {
+        return Duration.l(this.d.getTotalSeconds() - this.c.getTotalSeconds());
     }
 
-    public final boolean z() {
+    public final boolean x() {
         return this.d.getTotalSeconds() > this.c.getTotalSeconds();
     }
 
-    final List w() {
-        return z() ? Collections.emptyList() : j$.com.android.tools.r8.a.h(new Object[]{this.c, this.d});
+    final List v() {
+        return x() ? Collections.emptyList() : j$.com.android.tools.r8.a.h(new Object[]{this.c, this.d});
     }
 
     public final boolean equals(Object obj) {
@@ -100,7 +101,7 @@ public final class b implements Comparable, Serializable {
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("Transition[");
-        sb.append(z() ? "Gap" : "Overlap");
+        sb.append(x() ? "Gap" : "Overlap");
         sb.append(" at ");
         sb.append(this.b);
         sb.append(this.c);

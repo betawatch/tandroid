@@ -18,7 +18,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class MobileVisionBase<DetectionResultT> implements Closeable, LifecycleObserver {
     public static final /* synthetic */ int $r8$clinit = 0;
     private static final GmsLogger zzb = new GmsLogger("MobileVisionBase", "");

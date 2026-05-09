@@ -18,7 +18,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class QRCodeWriter {
     private int imageBlockX;
     private int imageBloks;

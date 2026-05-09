@@ -46,7 +46,7 @@ final class E implements Externalizable {
                 objectOutput.writeByte(j$.time.temporal.l.a(xVar, j$.time.temporal.a.DAY_OF_MONTH));
                 return;
             case 5:
-                ((y) obj).I(objectOutput);
+                ((y) obj).G(objectOutput);
                 return;
             case 6:
                 ((q) obj).writeExternal(objectOutput);
@@ -84,7 +84,7 @@ final class E implements Externalizable {
                 k = a.k(objectInput.readUTF());
                 break;
             case 2:
-                k = ((b) objectInput.readObject()).u((j$.time.j) objectInput.readObject());
+                k = ((b) objectInput.readObject()).t((j$.time.i) objectInput.readObject());
                 break;
             case 3:
                 k = ((ChronoLocalDateTime) objectInput.readObject()).p((ZoneOffset) objectInput.readObject()).j((ZoneId) objectInput.readObject());
@@ -99,7 +99,7 @@ final class E implements Externalizable {
                 break;
             case 5:
                 y yVar = y.d;
-                k = y.C(objectInput.readByte());
+                k = y.A(objectInput.readByte());
                 break;
             case 6:
                 o oVar = (o) objectInput.readObject();
@@ -107,7 +107,7 @@ final class E implements Externalizable {
                 byte readByte4 = objectInput.readByte();
                 byte readByte5 = objectInput.readByte();
                 oVar.getClass();
-                k = q.Q(oVar, readInt2, readByte4, readByte5);
+                k = q.O(oVar, readInt2, readByte4, readByte5);
                 break;
             case 7:
                 int readInt3 = objectInput.readInt();

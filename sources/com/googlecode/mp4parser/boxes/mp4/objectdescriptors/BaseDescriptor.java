@@ -4,7 +4,7 @@ import com.coremedia.iso.IsoTypeReader;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class BaseDescriptor {
     int sizeBytes;
     int sizeOfInstance;

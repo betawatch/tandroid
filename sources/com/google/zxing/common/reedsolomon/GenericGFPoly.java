@@ -1,6 +1,6 @@
 package com.google.zxing.common.reedsolomon;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class GenericGFPoly {
     private final int[] coefficients;
     private final GenericGF field;

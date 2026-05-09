@@ -339,13 +339,13 @@ public class TopicsController extends BaseController {
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.topicsDidLoaded, Long.valueOf(j), Boolean.FALSE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:151:0x021a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:151:0x021b, code lost:
     
         if (r27 != 3) goto L102;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0261  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x02be  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0262  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x02bf  */
     /* JADX WARN: Type inference failed for: r3v20 */
     /* JADX WARN: Type inference failed for: r3v3 */
     /* JADX WARN: Type inference failed for: r3v4, types: [boolean, int] */

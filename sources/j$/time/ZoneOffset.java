@@ -19,9 +19,9 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.m, j$.t
     private final transient String c;
     private static final ConcurrentHashMap d = new ConcurrentHashMap(16, 0.75f, 4);
     private static final ConcurrentHashMap e = new ConcurrentHashMap(16, 0.75f, 4);
-    public static final ZoneOffset UTC = R(0);
-    public static final ZoneOffset f = R(-64800);
-    public static final ZoneOffset g = R(64800);
+    public static final ZoneOffset UTC = P(0);
+    public static final ZoneOffset f = P(-64800);
+    public static final ZoneOffset g = P(64800);
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:20:0x008f A[ADDED_TO_REGION] */
@@ -30,8 +30,8 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.m, j$.t
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static ZoneOffset P(String str) {
-        int S;
+    public static ZoneOffset N(String str) {
+        int Q;
         int i;
         int i2;
         char charAt;
@@ -45,20 +45,20 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.m, j$.t
             str = str.charAt(0) + "0" + str.charAt(1);
         } else if (length != 3) {
             if (length == 5) {
-                S = S(str, 1, false);
-                i = S(str, 3, false);
+                Q = Q(str, 1, false);
+                i = Q(str, 3, false);
             } else if (length == 6) {
-                S = S(str, 1, false);
-                i = S(str, 4, true);
+                Q = Q(str, 1, false);
+                i = Q(str, 4, true);
             } else {
                 if (length == 7) {
-                    S = S(str, 1, false);
-                    i = S(str, 3, false);
-                    i2 = S(str, 5, false);
+                    Q = Q(str, 1, false);
+                    i = Q(str, 3, false);
+                    i2 = Q(str, 5, false);
                 } else if (length == 9) {
-                    S = S(str, 1, false);
-                    i = S(str, 4, true);
-                    i2 = S(str, 7, true);
+                    Q = Q(str, 1, false);
+                    i = Q(str, 4, true);
+                    i2 = Q(str, 7, true);
                 } else {
                     throw new c("Invalid ID for ZoneOffset, invalid format: ".concat(str));
                 }
@@ -67,9 +67,9 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.m, j$.t
                     throw new c("Invalid ID for ZoneOffset, plus/minus not found when expected: ".concat(str));
                 }
                 if (charAt == '-') {
-                    return Q(-S, -i, -i2);
+                    return O(-Q, -i, -i2);
                 }
-                return Q(S, i, i2);
+                return O(Q, i, i2);
             }
             i2 = 0;
             charAt = str.charAt(0);
@@ -78,7 +78,7 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.m, j$.t
             if (charAt == '-') {
             }
         }
-        S = S(str, 1, false);
+        Q = Q(str, 1, false);
         i = 0;
         i2 = 0;
         charAt = str.charAt(0);
@@ -88,7 +88,7 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.m, j$.t
         }
     }
 
-    private static int S(String str, int i, boolean z) {
+    private static int Q(String str, int i, boolean z) {
         if (z && str.charAt(i - 1) != ':') {
             throw new c("Invalid ID for ZoneOffset, colon not found when expected: " + ((Object) str));
         }
@@ -100,16 +100,16 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.m, j$.t
         throw new c("Invalid ID for ZoneOffset, non numeric characters found: " + ((Object) str));
     }
 
-    public static ZoneOffset O(Temporal temporal) {
+    public static ZoneOffset M(Temporal temporal) {
         Objects.requireNonNull(temporal, "temporal");
-        ZoneOffset zoneOffset = (ZoneOffset) temporal.w(j$.time.temporal.l.h());
+        ZoneOffset zoneOffset = (ZoneOffset) temporal.v(j$.time.temporal.l.h());
         if (zoneOffset != null) {
             return zoneOffset;
         }
         throw new c("Unable to obtain ZoneOffset from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName());
     }
 
-    public static ZoneOffset Q(int i, int i2, int i3) {
+    public static ZoneOffset O(int i, int i2, int i3) {
         if (i < -18 || i > 18) {
             throw new c("Zone offset hours not in valid range: value " + i + " is not in the range -18 to 18");
         }
@@ -133,11 +133,11 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.m, j$.t
         if (Math.abs(i) == 18 && (i2 | i3) != 0) {
             throw new c("Zone offset not in valid range: -18:00 to +18:00");
         }
-        return R((i2 * 60) + (i * 3600) + i3);
+        return P((i2 * 60) + (i * 3600) + i3);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static ZoneOffset R(int i) {
+    public static ZoneOffset P(int i) {
         if (i < -64800 || i > 64800) {
             throw new c("Zone offset not in valid range: -18:00 to +18:00");
         }
@@ -213,11 +213,11 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.m, j$.t
         if (pVar instanceof j$.time.temporal.a) {
             throw new j$.time.temporal.t(d.a("Unsupported field: ", pVar));
         }
-        return j$.time.temporal.l.d(this, pVar).a(s(pVar), pVar);
+        return j$.time.temporal.l.d(this, pVar).a(r(pVar), pVar);
     }
 
     @Override // j$.time.temporal.m
-    public final long s(j$.time.temporal.p pVar) {
+    public final long r(j$.time.temporal.p pVar) {
         if (pVar == j$.time.temporal.a.OFFSET_SECONDS) {
             return this.b;
         }
@@ -228,17 +228,17 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.m, j$.t
     }
 
     @Override // j$.time.temporal.m
-    public final Object w(j$.time.temporal.r rVar) {
+    public final Object v(j$.time.temporal.r rVar) {
         return (rVar == j$.time.temporal.l.h() || rVar == j$.time.temporal.l.j()) ? this : j$.time.temporal.l.c(this, rVar);
     }
 
     @Override // j$.time.temporal.n
-    public final Temporal z(Temporal temporal) {
+    public final Temporal x(Temporal temporal) {
         return temporal.d(this.b, j$.time.temporal.a.OFFSET_SECONDS);
     }
 
     @Override // java.lang.Comparable
-    /* renamed from: N, reason: merged with bridge method [inline-methods] */
+    /* renamed from: L, reason: merged with bridge method [inline-methods] */
     public final int compareTo(ZoneOffset zoneOffset) {
         return zoneOffset.b - this.b;
     }
@@ -265,7 +265,7 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.m, j$.t
     }
 
     private Object writeReplace() {
-        return new r((byte) 8, this);
+        return new q((byte) 8, this);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {
@@ -273,12 +273,12 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.m, j$.t
     }
 
     @Override // j$.time.ZoneId
-    final void M(ObjectOutput objectOutput) {
+    final void K(ObjectOutput objectOutput) {
         objectOutput.writeByte(8);
-        U(objectOutput);
+        S(objectOutput);
     }
 
-    final void U(DataOutput dataOutput) {
+    final void S(DataOutput dataOutput) {
         int i = this.b;
         int i2 = i % 900 == 0 ? i / 900 : NotificationCenter.needDeleteBusinessLink;
         dataOutput.writeByte(i2);
@@ -287,8 +287,8 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.m, j$.t
         }
     }
 
-    static ZoneOffset T(ObjectInput objectInput) {
+    static ZoneOffset R(ObjectInput objectInput) {
         byte readByte = objectInput.readByte();
-        return readByte == Byte.MAX_VALUE ? R(objectInput.readInt()) : R(readByte * 900);
+        return readByte == Byte.MAX_VALUE ? P(objectInput.readInt()) : P(readByte * 900);
     }
 }

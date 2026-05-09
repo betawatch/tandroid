@@ -16,7 +16,7 @@ import com.google.mlkit.vision.segmentation.subject.SubjectSegmenter;
 import com.google.mlkit.vision.segmentation.subject.SubjectSegmenterOptions;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class zzd extends MobileVisionBase implements SubjectSegmenter {
     zzd(SubjectSegmenterOptions subjectSegmenterOptions, zzj zzjVar, Executor executor, zztl zztlVar) {
         super(zzjVar, executor);

@@ -14,7 +14,7 @@ public abstract /* synthetic */ class h {
 
     public static l q(j$.time.temporal.m mVar) {
         Objects.requireNonNull(mVar, "temporal");
-        Object obj = (l) mVar.w(j$.time.temporal.l.e());
+        Object obj = (l) mVar.v(j$.time.temporal.l.e());
         s sVar = s.d;
         if (obj == null) {
             obj = Objects.requireNonNull(sVar, "defaultObj");
@@ -31,7 +31,7 @@ public abstract /* synthetic */ class h {
             if (i == 2) {
                 return chronoZonedDateTime.h().getTotalSeconds();
             }
-            return chronoZonedDateTime.B().l(pVar);
+            return chronoZonedDateTime.z().l(pVar);
         }
         return j$.time.temporal.l.a(chronoZonedDateTime, pVar);
     }
@@ -78,23 +78,23 @@ public abstract /* synthetic */ class h {
 
     public static boolean h(b bVar, j$.time.temporal.p pVar) {
         if (pVar instanceof j$.time.temporal.a) {
-            return ((j$.time.temporal.a) pVar).w();
+            return ((j$.time.temporal.a) pVar).v();
         }
         return pVar != null && pVar.n(bVar);
     }
 
     public static Instant p(ChronoLocalDateTime chronoLocalDateTime, ZoneOffset zoneOffset) {
-        return Instant.M(chronoLocalDateTime.y(zoneOffset), chronoLocalDateTime.b().N());
+        return Instant.K(chronoLocalDateTime.toEpochSecond(zoneOffset), chronoLocalDateTime.b().L());
     }
 
     public static long n(ChronoLocalDateTime chronoLocalDateTime, ZoneOffset zoneOffset) {
         Objects.requireNonNull(zoneOffset, "offset");
-        return ((chronoLocalDateTime.c().t() * 86400) + chronoLocalDateTime.b().Z()) - zoneOffset.getTotalSeconds();
+        return ((chronoLocalDateTime.c().s() * 86400) + chronoLocalDateTime.b().X()) - zoneOffset.getTotalSeconds();
     }
 
     public static Object l(ChronoZonedDateTime chronoZonedDateTime, j$.time.temporal.r rVar) {
         if (rVar == j$.time.temporal.l.j() || rVar == j$.time.temporal.l.k()) {
-            return chronoZonedDateTime.q();
+            return chronoZonedDateTime.getZone();
         }
         if (rVar == j$.time.temporal.l.h()) {
             return chronoZonedDateTime.h();
@@ -137,27 +137,27 @@ public abstract /* synthetic */ class h {
     }
 
     public static Temporal a(b bVar, Temporal temporal) {
-        return temporal.d(bVar.t(), j$.time.temporal.a.EPOCH_DAY);
+        return temporal.d(bVar.s(), j$.time.temporal.a.EPOCH_DAY);
     }
 
     public static long o(ChronoZonedDateTime chronoZonedDateTime) {
-        return ((chronoZonedDateTime.c().t() * 86400) + chronoZonedDateTime.b().Z()) - chronoZonedDateTime.h().getTotalSeconds();
+        return ((chronoZonedDateTime.c().s() * 86400) + chronoZonedDateTime.b().X()) - chronoZonedDateTime.h().getTotalSeconds();
     }
 
     public static int d(ChronoZonedDateTime chronoZonedDateTime, ChronoZonedDateTime chronoZonedDateTime2) {
-        int compare = Long.compare(chronoZonedDateTime.H(), chronoZonedDateTime2.H());
+        int compare = Long.compare(chronoZonedDateTime.F(), chronoZonedDateTime2.F());
         if (compare != 0) {
             return compare;
         }
-        int N = chronoZonedDateTime.b().N() - chronoZonedDateTime2.b().N();
-        if (N != 0) {
-            return N;
+        int L = chronoZonedDateTime.b().L() - chronoZonedDateTime2.b().L();
+        if (L != 0) {
+            return L;
         }
-        int compareTo = chronoZonedDateTime.B().compareTo(chronoZonedDateTime2.B());
+        int compareTo = chronoZonedDateTime.z().compareTo(chronoZonedDateTime2.z());
         if (compareTo != 0) {
             return compareTo;
         }
-        int compareTo2 = chronoZonedDateTime.q().getId().compareTo(chronoZonedDateTime2.q().getId());
+        int compareTo2 = chronoZonedDateTime.getZone().getId().compareTo(chronoZonedDateTime2.getZone().getId());
         if (compareTo2 != 0) {
             return compareTo2;
         }
@@ -165,7 +165,7 @@ public abstract /* synthetic */ class h {
     }
 
     public static int b(b bVar, b bVar2) {
-        int compare = Long.compare(bVar.t(), bVar2.t());
+        int compare = Long.compare(bVar.s(), bVar2.s());
         if (compare != 0) {
             return compare;
         }

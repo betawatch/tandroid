@@ -22,7 +22,7 @@ import com.google.mlkit.vision.label.defaults.ImageLabelerOptions;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class zza implements zzb {
     private final Context zza;
     private final ImageLabelerOptions zzb;

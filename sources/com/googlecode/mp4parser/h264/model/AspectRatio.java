@@ -1,5 +1,5 @@
 package com.googlecode.mp4parser.h264.model;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AspectRatio {
 }

@@ -46,7 +46,7 @@ public final class DayOfWeek implements j$.time.temporal.m, j$.time.temporal.n {
         a = values();
     }
 
-    public static DayOfWeek I(int i) {
+    public static DayOfWeek G(int i) {
         if (i < 1 || i > 7) {
             throw new c("Invalid value for DayOfWeek: " + i);
         }
@@ -85,7 +85,7 @@ public final class DayOfWeek implements j$.time.temporal.m, j$.time.temporal.n {
     }
 
     @Override // j$.time.temporal.m
-    public final long s(j$.time.temporal.p pVar) {
+    public final long r(j$.time.temporal.p pVar) {
         if (pVar == j$.time.temporal.a.DAY_OF_WEEK) {
             return getValue();
         }
@@ -96,7 +96,7 @@ public final class DayOfWeek implements j$.time.temporal.m, j$.time.temporal.n {
     }
 
     @Override // j$.time.temporal.m
-    public final Object w(j$.time.temporal.r rVar) {
+    public final Object v(j$.time.temporal.r rVar) {
         if (rVar == j$.time.temporal.l.i()) {
             return ChronoUnit.DAYS;
         }
@@ -104,7 +104,7 @@ public final class DayOfWeek implements j$.time.temporal.m, j$.time.temporal.n {
     }
 
     @Override // j$.time.temporal.n
-    public final Temporal z(Temporal temporal) {
+    public final Temporal x(Temporal temporal) {
         return temporal.d(getValue(), j$.time.temporal.a.DAY_OF_WEEK);
     }
 }

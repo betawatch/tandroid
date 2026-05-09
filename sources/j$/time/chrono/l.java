@@ -6,19 +6,19 @@ import j$.time.temporal.Temporal;
 
 /* loaded from: classes2.dex */
 public interface l extends Comparable {
-    j$.time.temporal.u C(j$.time.temporal.a aVar);
+    j$.time.temporal.u A(j$.time.temporal.a aVar);
 
-    ChronoZonedDateTime D(Instant instant, ZoneId zoneId);
+    ChronoZonedDateTime B(Instant instant, ZoneId zoneId);
 
-    m G(int i);
+    m E(int i);
 
     String getId();
 
     b m(j$.time.temporal.m mVar);
 
-    String r();
+    String q();
 
-    ChronoZonedDateTime v(Temporal temporal);
+    ChronoZonedDateTime u(Temporal temporal);
 
-    ChronoLocalDateTime x(Temporal temporal);
+    ChronoLocalDateTime w(Temporal temporal);
 }

@@ -8,7 +8,7 @@ import com.google.mlkit.nl.languageid.LanguageIdentificationOptions;
 import java.util.Iterator;
 import org.telegram.messenger.TranslateController;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class zzg extends ModelResource {
     private LanguageIdentifierDelegate zza;
     private LanguageIdentificationOptions zzb;

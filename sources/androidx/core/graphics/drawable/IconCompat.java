@@ -465,6 +465,39 @@ public class IconCompat extends CustomVersionedParcelable {
         }
     }
 
+    public static IconCompat createFromBundle(Bundle bundle) {
+        int i = bundle.getInt(TeXSymbolParser.TYPE_ATTR);
+        IconCompat iconCompat = new IconCompat(i);
+        iconCompat.mInt1 = bundle.getInt("int1");
+        iconCompat.mInt2 = bundle.getInt("int2");
+        iconCompat.mString1 = bundle.getString("string1");
+        if (bundle.containsKey("tint_list")) {
+            iconCompat.mTintList = (ColorStateList) bundle.getParcelable("tint_list");
+        }
+        if (bundle.containsKey("tint_mode")) {
+            iconCompat.mTintMode = PorterDuff.Mode.valueOf(bundle.getString("tint_mode"));
+        }
+        switch (i) {
+            case -1:
+            case 1:
+            case 5:
+                iconCompat.mObj1 = bundle.getParcelable("obj");
+                return iconCompat;
+            case 0:
+            default:
+                Log.w("IconCompat", "Unknown type " + i);
+                return null;
+            case 2:
+            case 4:
+            case 6:
+                iconCompat.mObj1 = bundle.getString("obj");
+                return iconCompat;
+            case 3:
+                iconCompat.mObj1 = bundle.getByteArray("obj");
+                return iconCompat;
+        }
+    }
+
     static Bitmap createLegacyIconFromAdaptiveIcon(Bitmap bitmap, boolean z) {
         int min = (int) (Math.min(bitmap.getWidth(), bitmap.getHeight()) * 0.6666667f);
         Bitmap createBitmap = Bitmap.createBitmap(min, min, Bitmap.Config.ARGB_8888);

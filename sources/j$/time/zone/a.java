@@ -87,7 +87,7 @@ final class a implements Externalizable {
 
     static ZoneOffset b(ObjectInput objectInput) {
         byte readByte = objectInput.readByte();
-        return readByte == Byte.MAX_VALUE ? ZoneOffset.R(objectInput.readInt()) : ZoneOffset.R(readByte * 900);
+        return readByte == Byte.MAX_VALUE ? ZoneOffset.P(objectInput.readInt()) : ZoneOffset.P(readByte * 900);
     }
 
     static void c(long j, ObjectOutput objectOutput) {

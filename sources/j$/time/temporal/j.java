@@ -12,7 +12,7 @@ enum j implements p {
     private final transient long c;
 
     @Override // j$.time.temporal.p
-    public final boolean w() {
+    public final boolean v() {
         return true;
     }
 
@@ -37,7 +37,7 @@ enum j implements p {
     }
 
     @Override // j$.time.temporal.p
-    public final u s(m mVar) {
+    public final u r(m mVar) {
         if (!mVar.g(a.EPOCH_DAY)) {
             throw new j$.time.c("Unsupported field: " + this);
         }
@@ -46,7 +46,7 @@ enum j implements p {
 
     @Override // j$.time.temporal.p
     public final long l(m mVar) {
-        return mVar.s(a.EPOCH_DAY) + this.c;
+        return mVar.r(a.EPOCH_DAY) + this.c;
     }
 
     @Override // j$.time.temporal.p

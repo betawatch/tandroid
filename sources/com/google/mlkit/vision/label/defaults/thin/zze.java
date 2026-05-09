@@ -7,7 +7,7 @@ import com.google.mlkit.common.sdkinternal.LazyInstanceMap;
 import com.google.mlkit.common.sdkinternal.MlKitContext;
 import com.google.mlkit.vision.label.defaults.ImageLabelerOptions;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class zze extends LazyInstanceMap {
     private final MlKitContext zza;
 

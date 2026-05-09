@@ -1,0 +1,13 @@
+package org.telegram.messenger.car;
+
+import android.content.Intent;
+import androidx.car.app.Screen;
+import androidx.car.app.Session;
+
+/* loaded from: classes3.dex */
+public class TelegramCarSession extends Session {
+    @Override // androidx.car.app.Session
+    public Screen onCreateScreen(Intent intent) {
+        return new ConversationsScreen(getCarContext());
+    }
+}

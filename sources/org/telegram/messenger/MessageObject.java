@@ -1286,7 +1286,7 @@ public class MessageObject {
             return this.maxSizeWidth / f;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:302:0x07b3, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:302:0x07b5, code lost:
         
             if (r15[2] > r15[3]) goto L251;
          */
@@ -1294,16 +1294,16 @@ public class MessageObject {
         
             if ((org.telegram.messenger.MessageObject.getMedia(r15.messageOwner) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) == false) goto L44;
          */
-        /* JADX WARN: Removed duplicated region for block: B:119:0x086d  */
+        /* JADX WARN: Removed duplicated region for block: B:119:0x086f  */
         /* JADX WARN: Removed duplicated region for block: B:17:0x0068  */
         /* JADX WARN: Removed duplicated region for block: B:19:0x006e  */
         /* JADX WARN: Removed duplicated region for block: B:42:0x00ef  */
         /* JADX WARN: Removed duplicated region for block: B:45:0x00ff  */
-        /* JADX WARN: Removed duplicated region for block: B:48:0x0121  */
-        /* JADX WARN: Removed duplicated region for block: B:51:0x013c  */
-        /* JADX WARN: Removed duplicated region for block: B:58:0x0158  */
-        /* JADX WARN: Removed duplicated region for block: B:61:0x0161  */
-        /* JADX WARN: Removed duplicated region for block: B:67:0x0153  */
+        /* JADX WARN: Removed duplicated region for block: B:48:0x0122  */
+        /* JADX WARN: Removed duplicated region for block: B:51:0x013d  */
+        /* JADX WARN: Removed duplicated region for block: B:58:0x0159  */
+        /* JADX WARN: Removed duplicated region for block: B:61:0x0162  */
+        /* JADX WARN: Removed duplicated region for block: B:67:0x0154  */
         /* JADX WARN: Removed duplicated region for block: B:68:0x0106  */
         /* JADX WARN: Removed duplicated region for block: B:72:0x00f2  */
         /* JADX WARN: Removed duplicated region for block: B:89:0x00c2  */
@@ -5264,11 +5264,11 @@ public class MessageObject {
         createMessageSendInfo(false);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0073, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0074, code lost:
     
         if (isVideoDocument(r3.document) != false) goto L45;
      */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x006d  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x006e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

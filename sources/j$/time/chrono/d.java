@@ -11,16 +11,16 @@ abstract class d implements b, Temporal, j$.time.temporal.n, Serializable {
     private static final long serialVersionUID = 6282433883239719096L;
 
     @Override // java.lang.Comparable
-    /* renamed from: F */
+    /* renamed from: D */
     public final /* synthetic */ int compareTo(b bVar) {
         return h.b(this, bVar);
     }
 
+    abstract b J(long j);
+
+    abstract b K(long j);
+
     abstract b L(long j);
-
-    abstract b M(long j);
-
-    abstract b N(long j);
 
     @Override // j$.time.chrono.b, j$.time.temporal.m
     public /* synthetic */ boolean g(j$.time.temporal.p pVar) {
@@ -38,16 +38,16 @@ abstract class d implements b, Temporal, j$.time.temporal.n, Serializable {
     }
 
     @Override // j$.time.temporal.m
-    public final /* synthetic */ Object w(j$.time.temporal.r rVar) {
+    public final /* synthetic */ Object v(j$.time.temporal.r rVar) {
         return h.j(this, rVar);
     }
 
     @Override // j$.time.temporal.n
-    public final /* synthetic */ Temporal z(Temporal temporal) {
+    public final /* synthetic */ Temporal x(Temporal temporal) {
         return h.a(this, temporal);
     }
 
-    static b I(l lVar, Temporal temporal) {
+    static b G(l lVar, Temporal temporal) {
         b bVar = (b) temporal;
         a aVar = (a) lVar;
         if (aVar.equals(bVar.a())) {
@@ -64,35 +64,35 @@ abstract class d implements b, Temporal, j$.time.temporal.n, Serializable {
         boolean z = sVar instanceof ChronoUnit;
         if (!z) {
             if (!z) {
-                return I(a(), sVar.k(this, j));
+                return G(a(), sVar.k(this, j));
             }
             throw new j$.time.temporal.t("Unsupported unit: " + sVar);
         }
         switch (c.a[((ChronoUnit) sVar).ordinal()]) {
             case 1:
-                return L(j);
+                return J(j);
             case 2:
-                return L(j$.com.android.tools.r8.a.l(j, 7));
+                return J(j$.com.android.tools.r8.a.l(j, 7));
             case 3:
-                return M(j);
+                return K(j);
             case 4:
-                return N(j);
+                return L(j);
             case 5:
-                return N(j$.com.android.tools.r8.a.l(j, 10));
+                return L(j$.com.android.tools.r8.a.l(j, 10));
             case 6:
-                return N(j$.com.android.tools.r8.a.l(j, 100));
+                return L(j$.com.android.tools.r8.a.l(j, 100));
             case 7:
-                return N(j$.com.android.tools.r8.a.l(j, MediaDataController.MAX_STYLE_RUNS_COUNT));
+                return L(j$.com.android.tools.r8.a.l(j, MediaDataController.MAX_STYLE_RUNS_COUNT));
             case 8:
                 j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
-                return d(j$.com.android.tools.r8.a.f(s(aVar), j), (j$.time.temporal.p) aVar);
+                return d(j$.com.android.tools.r8.a.f(r(aVar), j), (j$.time.temporal.p) aVar);
             default:
                 throw new j$.time.temporal.t("Unsupported unit: " + sVar);
         }
     }
 
-    public m J() {
-        return a().G(j$.time.temporal.l.a(this, j$.time.temporal.a.ERA));
+    public m H() {
+        return a().E(j$.time.temporal.l.a(this, j$.time.temporal.a.ERA));
     }
 
     @Override // j$.time.chrono.b, j$.time.temporal.Temporal
@@ -105,35 +105,35 @@ abstract class d implements b, Temporal, j$.time.temporal.n, Serializable {
         }
         switch (c.a[((ChronoUnit) sVar).ordinal()]) {
             case 1:
-                return m.t() - t();
+                return m.s() - s();
             case 2:
-                return (m.t() - t()) / 7;
+                return (m.s() - s()) / 7;
             case 3:
-                return K(m);
+                return I(m);
             case 4:
-                return K(m) / 12;
+                return I(m) / 12;
             case 5:
-                return K(m) / 120;
+                return I(m) / 120;
             case 6:
-                return K(m) / 1200;
+                return I(m) / 1200;
             case 7:
-                return K(m) / 12000;
+                return I(m) / 12000;
             case 8:
                 j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
-                return m.s(aVar) - s(aVar);
+                return m.r(aVar) - r(aVar);
             default:
                 throw new j$.time.temporal.t("Unsupported unit: " + sVar);
         }
     }
 
-    private long K(b bVar) {
-        if (a().C(j$.time.temporal.a.MONTH_OF_YEAR).d() != 12) {
+    private long I(b bVar) {
+        if (a().A(j$.time.temporal.a.MONTH_OF_YEAR).d() != 12) {
             throw new IllegalStateException("ChronoLocalDateImpl only supports Chronologies with 12 months per year");
         }
         j$.time.temporal.a aVar = j$.time.temporal.a.PROLEPTIC_MONTH;
-        long s = s(aVar) * 32;
+        long r = r(aVar) * 32;
         j$.time.temporal.a aVar2 = j$.time.temporal.a.DAY_OF_MONTH;
-        return (((bVar.s(aVar) * 32) + bVar.l(aVar2)) - (s + j$.time.temporal.l.a(this, aVar2))) / 32;
+        return (((bVar.r(aVar) * 32) + bVar.l(aVar2)) - (r + j$.time.temporal.l.a(this, aVar2))) / 32;
     }
 
     public boolean equals(Object obj) {
@@ -145,31 +145,31 @@ abstract class d implements b, Temporal, j$.time.temporal.n, Serializable {
 
     @Override // j$.time.chrono.b
     public int hashCode() {
-        long t = t();
-        return ((a) a()).hashCode() ^ ((int) (t ^ (t >>> 32)));
+        long s = s();
+        return ((a) a()).hashCode() ^ ((int) (s ^ (s >>> 32)));
     }
 
     @Override // j$.time.temporal.Temporal
-    /* renamed from: O, reason: merged with bridge method [inline-methods] */
+    /* renamed from: M, reason: merged with bridge method [inline-methods] */
     public b n(j$.time.temporal.n nVar) {
-        return I(a(), nVar.z(this));
+        return G(a(), nVar.x(this));
     }
 
     @Override // j$.time.chrono.b
     public String toString() {
-        long s = s(j$.time.temporal.a.YEAR_OF_ERA);
-        long s2 = s(j$.time.temporal.a.MONTH_OF_YEAR);
-        long s3 = s(j$.time.temporal.a.DAY_OF_MONTH);
+        long r = r(j$.time.temporal.a.YEAR_OF_ERA);
+        long r2 = r(j$.time.temporal.a.MONTH_OF_YEAR);
+        long r3 = r(j$.time.temporal.a.DAY_OF_MONTH);
         StringBuilder sb = new StringBuilder(30);
         sb.append(((a) a()).getId());
         sb.append(" ");
-        sb.append(J());
+        sb.append(H());
         sb.append(" ");
-        sb.append(s);
-        sb.append(s2 < 10 ? "-0" : "-");
-        sb.append(s2);
-        sb.append(s3 < 10 ? "-0" : "-");
-        sb.append(s3);
+        sb.append(r);
+        sb.append(r2 < 10 ? "-0" : "-");
+        sb.append(r2);
+        sb.append(r3 < 10 ? "-0" : "-");
+        sb.append(r3);
         return sb.toString();
     }
 
@@ -178,22 +178,22 @@ abstract class d implements b, Temporal, j$.time.temporal.n, Serializable {
         if (pVar instanceof j$.time.temporal.a) {
             throw new j$.time.temporal.t(j$.time.d.a("Unsupported field: ", pVar));
         }
-        return I(a(), pVar.o(this, j));
+        return G(a(), pVar.o(this, j));
     }
 
     @Override // j$.time.temporal.Temporal
-    /* renamed from: E, reason: merged with bridge method [inline-methods] */
+    /* renamed from: C, reason: merged with bridge method [inline-methods] */
     public b k(long j, j$.time.temporal.s sVar) {
-        return I(a(), j$.time.temporal.l.b(this, j, sVar));
+        return G(a(), j$.time.temporal.l.b(this, j, sVar));
     }
 
     @Override // j$.time.chrono.b
-    public ChronoLocalDateTime u(j$.time.j jVar) {
-        return f.J(this, jVar);
+    public ChronoLocalDateTime t(j$.time.i iVar) {
+        return f.H(this, iVar);
     }
 
     @Override // j$.time.chrono.b
-    public long t() {
-        return s(j$.time.temporal.a.EPOCH_DAY);
+    public long s() {
+        return r(j$.time.temporal.a.EPOCH_DAY);
     }
 }

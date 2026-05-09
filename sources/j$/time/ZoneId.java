@@ -19,7 +19,7 @@ public abstract class ZoneId implements Serializable {
     public static final Map a;
     private static final long serialVersionUID = 8352817235686L;
 
-    abstract void M(ObjectOutput objectOutput);
+    abstract void K(ObjectOutput objectOutput);
 
     public abstract String getId();
 
@@ -51,10 +51,10 @@ public abstract class ZoneId implements Serializable {
     }
 
     public static ZoneId of(String str) {
-        return J(str, true);
+        return H(str, true);
     }
 
-    public static ZoneId K(String str, ZoneOffset zoneOffset) {
+    public static ZoneId I(String str, ZoneOffset zoneOffset) {
         Objects.requireNonNull(str, "prefix");
         Objects.requireNonNull(zoneOffset, "offset");
         if (str.isEmpty()) {
@@ -66,44 +66,44 @@ public abstract class ZoneId implements Serializable {
         if (zoneOffset.getTotalSeconds() != 0) {
             str = str.concat(zoneOffset.getId());
         }
-        return new w(str, ZoneRules.h(zoneOffset));
+        return new v(str, ZoneRules.h(zoneOffset));
     }
 
-    static ZoneId J(String str, boolean z) {
+    static ZoneId H(String str, boolean z) {
         Objects.requireNonNull(str, "zoneId");
         if (str.length() <= 1 || str.startsWith("+") || str.startsWith("-")) {
-            return ZoneOffset.P(str);
+            return ZoneOffset.N(str);
         }
         if (str.startsWith("UTC") || str.startsWith("GMT")) {
-            return L(str, 3, z);
+            return J(str, 3, z);
         }
         if (str.startsWith("UT")) {
-            return L(str, 2, z);
+            return J(str, 2, z);
         }
-        return w.N(str, z);
+        return v.L(str, z);
     }
 
-    private static ZoneId L(String str, int i, boolean z) {
+    private static ZoneId J(String str, int i, boolean z) {
         String substring = str.substring(0, i);
         if (str.length() == i) {
-            return K(substring, ZoneOffset.UTC);
+            return I(substring, ZoneOffset.UTC);
         }
         if (str.charAt(i) != '+' && str.charAt(i) != '-') {
-            return w.N(str, z);
+            return v.L(str, z);
         }
         try {
-            ZoneOffset P = ZoneOffset.P(str.substring(i));
-            if (P == ZoneOffset.UTC) {
-                return K(substring, P);
+            ZoneOffset N = ZoneOffset.N(str.substring(i));
+            if (N == ZoneOffset.UTC) {
+                return I(substring, N);
             }
-            return K(substring, P);
+            return I(substring, N);
         } catch (c e) {
             throw new c("Invalid ID for offset-based ZoneId: ".concat(str), e);
         }
     }
 
-    public static ZoneId I(Temporal temporal) {
-        ZoneId zoneId = (ZoneId) temporal.w(j$.time.temporal.l.j());
+    public static ZoneId G(Temporal temporal) {
+        ZoneId zoneId = (ZoneId) temporal.v(j$.time.temporal.l.j());
         if (zoneId != null) {
             return zoneId;
         }
@@ -111,7 +111,7 @@ public abstract class ZoneId implements Serializable {
     }
 
     ZoneId() {
-        if (getClass() != ZoneOffset.class && getClass() != w.class) {
+        if (getClass() != ZoneOffset.class && getClass() != v.class) {
             throw new AssertionError("Invalid subclass");
         }
     }
@@ -119,7 +119,7 @@ public abstract class ZoneId implements Serializable {
     public String getDisplayName(TextStyle textStyle, Locale locale) {
         j$.time.format.p pVar = new j$.time.format.p();
         pVar.o(textStyle);
-        return pVar.w(locale).a(new v(this));
+        return pVar.w(locale).a(new u(this));
     }
 
     public boolean equals(Object obj) {
@@ -145,6 +145,6 @@ public abstract class ZoneId implements Serializable {
     }
 
     private Object writeReplace() {
-        return new r((byte) 7, this);
+        return new q((byte) 7, this);
     }
 }

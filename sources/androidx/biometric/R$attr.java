@@ -2,5 +2,5 @@ package androidx.biometric;
 
 /* loaded from: classes.dex */
 public abstract class R$attr {
-    public static final int colorError = 2130968725;
+    public static final int colorError = 2130968730;
 }

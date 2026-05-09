@@ -5,7 +5,7 @@ import java.nio.ByteBuffer;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.runtime.reflect.Factory;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ESDescriptorBox extends AbstractDescriptorBox {
     private static final /* synthetic */ JoinPoint.StaticPart ajc$tjp_0 = null;
     private static final /* synthetic */ JoinPoint.StaticPart ajc$tjp_1 = null;

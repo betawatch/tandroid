@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class LinkedTreeMap extends AbstractMap implements Serializable {
     private static final Comparator NATURAL_ORDER = new Comparator() { // from class: com.google.gson.internal.LinkedTreeMap.1
         @Override // java.util.Comparator

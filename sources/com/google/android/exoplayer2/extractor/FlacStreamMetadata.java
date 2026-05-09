@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.extractor;
 
+import androidx.car.app.media.CarAudioRecord;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.metadata.Metadata;
 import com.google.android.exoplayer2.metadata.flac.PictureFrame;
@@ -46,7 +47,7 @@ public final class FlacStreamMetadata {
         switch (i) {
             case 8000:
                 return 4;
-            case 16000:
+            case CarAudioRecord.AUDIO_CONTENT_SAMPLING_RATE /* 16000 */:
                 return 5;
             case 22050:
                 return 6;

@@ -5,7 +5,7 @@ import com.google.android.gms.internal.mlkit_vision_label_common.zzd;
 import com.google.android.gms.internal.mlkit_vision_label_common.zze;
 import com.google.android.gms.internal.mlkit_vision_label_common.zzi;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ImageLabel {
     private final String zza;
     private final float zzb;

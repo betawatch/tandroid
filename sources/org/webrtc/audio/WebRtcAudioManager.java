@@ -55,7 +55,10 @@ class WebRtcAudioManager {
 
     private static int getSampleRateForApiLevel(AudioManager audioManager) {
         String property = audioManager.getProperty("android.media.property.OUTPUT_SAMPLE_RATE");
-        return property == null ? DEFAULT_SAMPLE_RATE_HZ : Integer.parseInt(property);
+        if (property == null) {
+            return 16000;
+        }
+        return Integer.parseInt(property);
     }
 
     private static int getLowLatencyFramesPerBuffer(AudioManager audioManager) {

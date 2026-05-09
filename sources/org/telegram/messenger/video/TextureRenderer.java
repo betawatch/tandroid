@@ -976,11 +976,11 @@ public class TextureRenderer {
     
         r11 = org.telegram.messenger.video.TextureRenderer.VERTEX_SHADER;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0037, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0039, code lost:
     
         r12 = r11;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0035, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0037, code lost:
     
         if (r9 != null) goto L21;
      */
@@ -988,10 +988,10 @@ public class TextureRenderer {
     
         if (r9 != null) goto L21;
      */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x0430  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x0438  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x043b  */
-    /* JADX WARN: Removed duplicated region for block: B:175:0x0433  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x0434  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x043c  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x043f  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x0437  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

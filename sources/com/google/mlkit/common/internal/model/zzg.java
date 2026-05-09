@@ -4,7 +4,7 @@ import com.google.android.gms.internal.mlkit_common.zzsh;
 import com.google.android.gms.internal.mlkit_common.zzss;
 import com.google.mlkit.common.sdkinternal.MlKitContext;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class zzg {
     private final MlKitContext zza;
     private final zzsh zzb;

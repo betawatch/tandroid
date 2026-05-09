@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class AppCenter {
     private static AppCenter sInstance;
     private AppCenterHandler mAppCenterHandler;

@@ -8,7 +8,7 @@ public interface m {
 
     u o(p pVar);
 
-    long s(p pVar);
+    long r(p pVar);
 
-    Object w(r rVar);
+    Object v(r rVar);
 }

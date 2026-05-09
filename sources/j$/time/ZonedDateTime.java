@@ -1,6 +1,5 @@
 package j$.time;
 
-import j$.time.chrono.ChronoLocalDateTime;
 import j$.time.chrono.ChronoZonedDateTime;
 import j$.time.temporal.ChronoUnit;
 import j$.time.temporal.Temporal;
@@ -22,7 +21,7 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
     private final ZoneId c;
 
     @Override // j$.time.chrono.ChronoZonedDateTime
-    public final /* synthetic */ long H() {
+    public final /* synthetic */ long F() {
         return j$.time.chrono.h.o(this);
     }
 
@@ -32,16 +31,11 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
-    public final ChronoLocalDateTime B() {
-        return this.a;
-    }
-
-    @Override // j$.time.chrono.ChronoZonedDateTime
     public final j$.time.chrono.l a() {
         return ((LocalDate) c()).a();
     }
 
-    public static ZonedDateTime K(LocalDateTime localDateTime, ZoneId zoneId, ZoneOffset zoneOffset) {
+    public static ZonedDateTime I(LocalDateTime localDateTime, ZoneId zoneId, ZoneOffset zoneOffset) {
         Objects.requireNonNull(localDateTime, "localDateTime");
         Objects.requireNonNull(zoneId, "zone");
         if (zoneId instanceof ZoneOffset) {
@@ -53,7 +47,7 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
             zoneOffset = (ZoneOffset) f.get(0);
         } else if (f.size() == 0) {
             j$.time.zone.b e = rules.e(localDateTime);
-            localDateTime = localDateTime.T(e.n().l());
+            localDateTime = localDateTime.R(e.n().getSeconds());
             zoneOffset = e.o();
         } else if (zoneOffset == null || !f.contains(zoneOffset)) {
             zoneOffset = (ZoneOffset) Objects.requireNonNull((ZoneOffset) f.get(0), "offset");
@@ -61,33 +55,33 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
         return new ZonedDateTime(localDateTime, zoneId, zoneOffset);
     }
 
-    public static ZonedDateTime J(Instant instant, ZoneId zoneId) {
+    public static ZonedDateTime H(Instant instant, ZoneId zoneId) {
         Objects.requireNonNull(instant, "instant");
         Objects.requireNonNull(zoneId, "zone");
-        return z(instant.K(), instant.L(), zoneId);
+        return x(instant.I(), instant.J(), zoneId);
     }
 
-    private static ZonedDateTime z(long j, int i, ZoneId zoneId) {
-        ZoneOffset offset = zoneId.getRules().getOffset(Instant.M(j, i));
-        return new ZonedDateTime(LocalDateTime.R(j, i, offset), zoneId, offset);
+    private static ZonedDateTime x(long j, int i, ZoneId zoneId) {
+        ZoneOffset offset = zoneId.getRules().getOffset(Instant.K(j, i));
+        return new ZonedDateTime(LocalDateTime.P(j, i, offset), zoneId, offset);
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
     public final Instant toInstant() {
-        return Instant.M(H(), b().N());
+        return Instant.K(F(), b().L());
     }
 
-    public static ZonedDateTime I(Temporal temporal) {
+    public static ZonedDateTime G(Temporal temporal) {
         if (temporal instanceof ZonedDateTime) {
             return (ZonedDateTime) temporal;
         }
         try {
-            ZoneId I = ZoneId.I(temporal);
+            ZoneId G = ZoneId.G(temporal);
             j$.time.temporal.a aVar = j$.time.temporal.a.INSTANT_SECONDS;
             if (!temporal.g(aVar)) {
-                return K(LocalDateTime.Q(LocalDate.K(temporal), j.K(temporal)), I, null);
+                return I(LocalDateTime.O(LocalDate.I(temporal), i.I(temporal)), G, null);
             }
-            return z(temporal.s(aVar), temporal.l(j$.time.temporal.a.NANO_OF_SECOND), I);
+            return x(temporal.r(aVar), temporal.l(j$.time.temporal.a.NANO_OF_SECOND), G);
         } catch (c e) {
             throw new c("Unable to obtain ZonedDateTime from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e);
         }
@@ -99,8 +93,8 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
         this.c = zoneId;
     }
 
-    private ZonedDateTime N(LocalDateTime localDateTime) {
-        return K(localDateTime, this.c, this.b);
+    private ZonedDateTime L(LocalDateTime localDateTime) {
+        return I(localDateTime, this.c, this.b);
     }
 
     @Override // j$.time.temporal.m
@@ -116,13 +110,13 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
             }
             return this.a.o(pVar);
         }
-        return pVar.s(this);
+        return pVar.r(this);
     }
 
     @Override // j$.time.temporal.m
     public final int l(j$.time.temporal.p pVar) {
         if (pVar instanceof j$.time.temporal.a) {
-            int i = x.a[((j$.time.temporal.a) pVar).ordinal()];
+            int i = w.a[((j$.time.temporal.a) pVar).ordinal()];
             if (i == 1) {
                 throw new j$.time.temporal.t("Invalid field 'InstantSeconds' for get() method, use getLong() instead");
             }
@@ -135,12 +129,12 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
     }
 
     @Override // j$.time.temporal.m
-    public final long s(j$.time.temporal.p pVar) {
+    public final long r(j$.time.temporal.p pVar) {
         if (!(pVar instanceof j$.time.temporal.a)) {
             return pVar.l(this);
         }
-        int i = x.a[((j$.time.temporal.a) pVar).ordinal()];
-        return i != 1 ? i != 2 ? this.a.s(pVar) : this.b.getTotalSeconds() : j$.time.chrono.h.o(this);
+        int i = w.a[((j$.time.temporal.a) pVar).ordinal()];
+        return i != 1 ? i != 2 ? this.a.r(pVar) : this.b.getTotalSeconds() : j$.time.chrono.h.o(this);
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
@@ -149,18 +143,18 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
-    public final ZoneId q() {
+    public ZoneId getZone() {
         return this.c;
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
     public final ChronoZonedDateTime j(ZoneId zoneId) {
         Objects.requireNonNull(zoneId, "zone");
-        return this.c.equals(zoneId) ? this : K(this.a, zoneId, this.b);
+        return this.c.equals(zoneId) ? this : I(this.a, zoneId, this.b);
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
-    /* renamed from: P, reason: merged with bridge method [inline-methods] */
+    /* renamed from: M, reason: merged with bridge method [inline-methods] */
     public final ZonedDateTime i(ZoneId zoneId) {
         Objects.requireNonNull(zoneId, "zone");
         if (this.c.equals(zoneId)) {
@@ -168,21 +162,23 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
         }
         LocalDateTime localDateTime = this.a;
         localDateTime.getClass();
-        return z(j$.time.chrono.h.n(localDateTime, this.b), localDateTime.K(), zoneId);
+        return x(j$.time.chrono.h.n(localDateTime, this.b), localDateTime.I(), zoneId);
     }
 
-    public final LocalDateTime O() {
+    @Override // j$.time.chrono.ChronoZonedDateTime
+    /* renamed from: toLocalDateTime, reason: merged with bridge method [inline-methods] */
+    public LocalDateTime z() {
         return this.a;
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
     /* renamed from: toLocalDate, reason: merged with bridge method [inline-methods] */
     public LocalDate c() {
-        return this.a.V();
+        return this.a.T();
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
-    public final j b() {
+    public final i b() {
         return this.a.b();
     }
 
@@ -191,7 +187,7 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
         boolean z = localDate instanceof LocalDate;
         LocalDateTime localDateTime = this.a;
         if (z) {
-            return N(LocalDateTime.Q(localDate, localDateTime.b()));
+            return L(LocalDateTime.O(localDate, localDateTime.b()));
         }
         localDate.getClass();
         return (ZonedDateTime) j$.time.chrono.h.a(localDate, this);
@@ -201,23 +197,23 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
     public final Temporal d(long j, j$.time.temporal.p pVar) {
         if (pVar instanceof j$.time.temporal.a) {
             j$.time.temporal.a aVar = (j$.time.temporal.a) pVar;
-            int i = x.a[aVar.ordinal()];
+            int i = w.a[aVar.ordinal()];
             ZoneId zoneId = this.c;
             LocalDateTime localDateTime = this.a;
             if (i == 1) {
-                return z(j, localDateTime.K(), zoneId);
+                return x(j, localDateTime.I(), zoneId);
             }
             if (i == 2) {
-                ZoneOffset R = ZoneOffset.R(aVar.z(j));
-                return (R.equals(this.b) || !zoneId.getRules().f(localDateTime).contains(R)) ? this : new ZonedDateTime(localDateTime, zoneId, R);
+                ZoneOffset P = ZoneOffset.P(aVar.x(j));
+                return (P.equals(this.b) || !zoneId.getRules().f(localDateTime).contains(P)) ? this : new ZonedDateTime(localDateTime, zoneId, P);
             }
-            return N(localDateTime.d(j, pVar));
+            return L(localDateTime.d(j, pVar));
         }
         return (ZonedDateTime) pVar.o(this, j);
     }
 
     @Override // j$.time.temporal.Temporal
-    /* renamed from: L, reason: merged with bridge method [inline-methods] */
+    /* renamed from: J, reason: merged with bridge method [inline-methods] */
     public final ZonedDateTime e(long j, j$.time.temporal.s sVar) {
         if (!(sVar instanceof ChronoUnit)) {
             return (ZonedDateTime) sVar.k(this, j);
@@ -226,7 +222,7 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
         boolean z = chronoUnit.compareTo(ChronoUnit.DAYS) >= 0 && chronoUnit != ChronoUnit.FOREVER;
         LocalDateTime localDateTime = this.a;
         if (z) {
-            return N(localDateTime.e(j, sVar));
+            return L(localDateTime.e(j, sVar));
         }
         LocalDateTime e = localDateTime.e(j, sVar);
         Objects.requireNonNull(e, "localDateTime");
@@ -238,7 +234,7 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
             return new ZonedDateTime(e, zoneId, zoneOffset);
         }
         e.getClass();
-        return z(j$.time.chrono.h.n(e, zoneOffset), e.K(), zoneId);
+        return x(j$.time.chrono.h.n(e, zoneOffset), e.I(), zoneId);
     }
 
     @Override // j$.time.temporal.Temporal
@@ -247,7 +243,7 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
     }
 
     @Override // j$.time.temporal.m
-    public final Object w(j$.time.temporal.r rVar) {
+    public final Object v(j$.time.temporal.r rVar) {
         if (rVar == j$.time.temporal.l.f()) {
             return c();
         }
@@ -256,9 +252,9 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
 
     @Override // j$.time.temporal.Temporal
     public final long f(Temporal temporal, j$.time.temporal.s sVar) {
-        ZonedDateTime I = I(temporal);
+        ZonedDateTime G = G(temporal);
         if (sVar instanceof ChronoUnit) {
-            ZonedDateTime i = I.i(this.c);
+            ZonedDateTime i = G.i(this.c);
             ChronoUnit chronoUnit = (ChronoUnit) sVar;
             int compareTo = chronoUnit.compareTo(ChronoUnit.DAYS);
             LocalDateTime localDateTime = this.a;
@@ -266,9 +262,9 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
             if (compareTo >= 0 && chronoUnit != ChronoUnit.FOREVER) {
                 return localDateTime.f(localDateTime2, sVar);
             }
-            return OffsetDateTime.I(localDateTime, this.b).f(OffsetDateTime.I(localDateTime2, i.b), sVar);
+            return OffsetDateTime.G(localDateTime, this.b).f(OffsetDateTime.G(localDateTime2, i.b), sVar);
         }
-        return sVar.between(this, I);
+        return sVar.between(this, G);
     }
 
     public final boolean equals(Object obj) {
@@ -298,31 +294,31 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
     }
 
     private Object writeReplace() {
-        return new r((byte) 6, this);
+        return new q((byte) 6, this);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {
         throw new InvalidObjectException("Deserialization via serialization delegate");
     }
 
-    final void Q(DataOutput dataOutput) {
-        this.a.Z(dataOutput);
-        this.b.U(dataOutput);
-        this.c.M((ObjectOutput) dataOutput);
+    final void N(DataOutput dataOutput) {
+        this.a.X(dataOutput);
+        this.b.S(dataOutput);
+        this.c.K((ObjectOutput) dataOutput);
     }
 
-    static ZonedDateTime M(ObjectInput objectInput) {
+    static ZonedDateTime K(ObjectInput objectInput) {
         LocalDateTime localDateTime = LocalDateTime.c;
         LocalDate localDate = LocalDate.d;
-        LocalDateTime Q = LocalDateTime.Q(LocalDate.of(objectInput.readInt(), objectInput.readByte(), objectInput.readByte()), j.X(objectInput));
-        ZoneOffset T = ZoneOffset.T(objectInput);
-        ZoneId zoneId = (ZoneId) r.a(objectInput);
-        Objects.requireNonNull(Q, "localDateTime");
-        Objects.requireNonNull(T, "offset");
+        LocalDateTime O = LocalDateTime.O(LocalDate.of(objectInput.readInt(), objectInput.readByte(), objectInput.readByte()), i.V(objectInput));
+        ZoneOffset R = ZoneOffset.R(objectInput);
+        ZoneId zoneId = (ZoneId) q.a(objectInput);
+        Objects.requireNonNull(O, "localDateTime");
+        Objects.requireNonNull(R, "offset");
         Objects.requireNonNull(zoneId, "zone");
-        if ((zoneId instanceof ZoneOffset) && !T.equals(zoneId)) {
+        if ((zoneId instanceof ZoneOffset) && !R.equals(zoneId)) {
             throw new IllegalArgumentException("ZoneId must match ZoneOffset");
         }
-        return new ZonedDateTime(Q, zoneId, T);
+        return new ZonedDateTime(O, zoneId, R);
     }
 }

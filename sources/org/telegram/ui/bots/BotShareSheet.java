@@ -1037,9 +1037,9 @@ public class BotShareSheet extends BottomSheetWithRecyclerListView {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x02e6  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x02ec  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x02f8  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x02e7  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x02ed  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x02f9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

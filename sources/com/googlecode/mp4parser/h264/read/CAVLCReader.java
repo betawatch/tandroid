@@ -3,7 +3,7 @@ package com.googlecode.mp4parser.h264.read;
 import com.googlecode.mp4parser.h264.Debug;
 import java.io.InputStream;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class CAVLCReader extends BitstreamReader {
     public CAVLCReader(InputStream inputStream) {
         super(inputStream);

@@ -1,5 +1,7 @@
 package j$.time.temporal;
 
+import j$.time.Duration;
+
 /* loaded from: classes2.dex */
 enum h implements s {
     WEEK_BASED_YEARS("WeekBasedYears"),
@@ -8,7 +10,7 @@ enum h implements s {
     private final String a;
 
     static {
-        j$.time.e eVar = j$.time.e.c;
+        Duration duration = Duration.c;
     }
 
     h(String str) {
@@ -35,7 +37,7 @@ enum h implements s {
         int i = b.a[ordinal()];
         if (i == 1) {
             p pVar = i.c;
-            return j$.com.android.tools.r8.a.m(temporal2.s(pVar), temporal.s(pVar));
+            return j$.com.android.tools.r8.a.m(temporal2.r(pVar), temporal.r(pVar));
         }
         if (i == 2) {
             return temporal.f(temporal2, ChronoUnit.MONTHS) / 3;

@@ -96,6 +96,8 @@ public class MediaSessionCompat {
 
         void setQueue(List list);
 
+        void setQueueTitle(CharSequence charSequence);
+
         void setRepeatMode(int i);
 
         void setSessionActivity(PendingIntent pendingIntent);
@@ -237,6 +239,10 @@ public class MediaSessionCompat {
             }
         }
         this.mImpl.setQueue(list);
+    }
+
+    public void setQueueTitle(CharSequence charSequence) {
+        this.mImpl.setQueueTitle(charSequence);
     }
 
     public void setRepeatMode(int i) {
@@ -1222,6 +1228,11 @@ public class MediaSessionCompat {
                 arrayList.add((MediaSession.QueueItem) ((QueueItem) it.next()).getQueueItem());
             }
             this.mSessionFwk.setQueue(arrayList);
+        }
+
+        @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
+        public void setQueueTitle(CharSequence charSequence) {
+            this.mSessionFwk.setQueueTitle(charSequence);
         }
 
         @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl

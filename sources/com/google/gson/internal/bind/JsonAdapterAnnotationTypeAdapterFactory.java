@@ -11,7 +11,7 @@ import j$.util.Objects;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class JsonAdapterAnnotationTypeAdapterFactory implements TypeAdapterFactory {
     private static final TypeAdapterFactory TREE_TYPE_CLASS_DUMMY_FACTORY;
     private static final TypeAdapterFactory TREE_TYPE_FIELD_DUMMY_FACTORY;

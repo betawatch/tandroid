@@ -790,14 +790,14 @@ public class ConnectionsManager extends BaseController {
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(12:0|1|(1:5)|(2:6|7)|(9:9|(8:11|(2:26|27)|(1:14)(1:25)|15|16|(1:18)(1:22)|19|20)|31|(0)(0)|15|16|(0)(0)|19|20)(1:32)|28|(0)(0)|15|16|(0)(0)|19|20) */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0082, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0088, code lost:
     
         r1 = "";
      */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0076  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0086  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0089  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x007c  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x008c  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x008f  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x007f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

@@ -3,7 +3,7 @@ package com.google.mlkit.nl.languageid;
 import com.google.android.gms.common.internal.Objects;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class LanguageIdentificationOptions {
     public static final LanguageIdentificationOptions zza = new Builder().build();
     private final Float zzb;

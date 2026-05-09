@@ -8,7 +8,7 @@ import com.google.firebase.components.ComponentRegistrar;
 import com.google.mlkit.nl.languageid.internal.LanguageIdentifierCreatorDelegate;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ThickLanguageIdRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {

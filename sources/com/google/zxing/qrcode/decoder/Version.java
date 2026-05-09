@@ -5,7 +5,7 @@ import com.google.zxing.common.BitMatrix;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class Version {
     private final int[] alignmentPatternCenters;
     private final ECBlocks[] ecBlocks;

@@ -35,7 +35,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class DefaultChannel implements Channel {
     private final Handler mAppCenterHandler;
     private String mAppSecret;

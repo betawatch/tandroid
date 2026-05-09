@@ -19,7 +19,7 @@ public abstract /* synthetic */ class l {
     public static u d(m mVar, p pVar) {
         if (!(pVar instanceof a)) {
             Objects.requireNonNull(pVar, "field");
-            return pVar.s(mVar);
+            return pVar.r(mVar);
         }
         if (mVar.g(pVar)) {
             return ((a) pVar).k();
@@ -36,11 +36,11 @@ public abstract /* synthetic */ class l {
         if (!o.h()) {
             throw new t("Invalid field " + pVar + " for get() method, use getLong() instead");
         }
-        long s = mVar.s(pVar);
-        if (o.i(s)) {
-            return (int) s;
+        long r = mVar.r(pVar);
+        if (o.i(r)) {
+            return (int) r;
         }
-        throw new j$.time.c("Invalid value for " + pVar + " (valid values " + o + "): " + s);
+        throw new j$.time.c("Invalid value for " + pVar + " (valid values " + o + "): " + r);
     }
 
     public static r i() {

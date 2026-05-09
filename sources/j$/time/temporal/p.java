@@ -10,7 +10,7 @@ public interface p {
 
     Temporal o(Temporal temporal, long j);
 
-    u s(m mVar);
+    u r(m mVar);
 
-    boolean w();
+    boolean v();
 }

@@ -7,7 +7,7 @@ import j$.time.ZoneOffset;
 public final /* synthetic */ class a implements j$.time.temporal.r {
     @Override // j$.time.temporal.r
     public final Object a(j$.time.temporal.m mVar) {
-        ZoneId zoneId = (ZoneId) mVar.w(j$.time.temporal.l.k());
+        ZoneId zoneId = (ZoneId) mVar.v(j$.time.temporal.l.k());
         if (zoneId == null || (zoneId instanceof ZoneOffset)) {
             return null;
         }

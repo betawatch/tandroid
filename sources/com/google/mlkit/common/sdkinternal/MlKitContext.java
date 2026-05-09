@@ -9,7 +9,7 @@ import com.google.firebase.components.ComponentRuntime;
 import com.google.mlkit.common.internal.MlKitComponentDiscoveryService;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class MlKitContext {
     private static final Object zza = new Object();
     private static MlKitContext zzb;

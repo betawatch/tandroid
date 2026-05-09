@@ -15,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ThickLanguageIdentifier implements LanguageIdentifierDelegate {
     private static boolean zba;
     private final Context zbb;

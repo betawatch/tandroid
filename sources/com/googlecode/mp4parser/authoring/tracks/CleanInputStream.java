@@ -4,7 +4,7 @@ import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class CleanInputStream extends FilterInputStream {
     int prev;
     int prevprev;

@@ -21,12 +21,12 @@ public final class J implements m {
     }
 
     @Override // j$.time.temporal.m
-    public final /* synthetic */ long s(j$.time.temporal.p pVar) {
+    public final /* synthetic */ long r(j$.time.temporal.p pVar) {
         return h.g(this, pVar);
     }
 
     @Override // j$.time.temporal.m
-    public final /* synthetic */ Object w(j$.time.temporal.r rVar) {
+    public final /* synthetic */ Object v(j$.time.temporal.r rVar) {
         return h.m(this, rVar);
     }
 
@@ -57,7 +57,7 @@ public final class J implements m {
     }
 
     @Override // j$.time.temporal.n
-    public final Temporal z(Temporal temporal) {
+    public final Temporal x(Temporal temporal) {
         return temporal.d(getValue(), j$.time.temporal.a.ERA);
     }
 }

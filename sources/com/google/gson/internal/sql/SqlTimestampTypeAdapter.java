@@ -9,7 +9,7 @@ import com.google.gson.stream.JsonWriter;
 import java.sql.Timestamp;
 import java.util.Date;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class SqlTimestampTypeAdapter extends TypeAdapter {
     static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() { // from class: com.google.gson.internal.sql.SqlTimestampTypeAdapter.1
         @Override // com.google.gson.TypeAdapterFactory

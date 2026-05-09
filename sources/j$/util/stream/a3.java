@@ -54,36 +54,36 @@ final class a3 {
 
     static {
         Z2 z2 = Z2.SPLITERATOR;
-        Y2 w = w(z2);
+        Y2 v2 = v(z2);
         Z2 z22 = Z2.STREAM;
-        w.a(z22);
+        v2.a(z22);
         Z2 z23 = Z2.OP;
-        w.a.put((EnumMap) z23, (Z2) 3);
-        a3 a3Var = new a3("DISTINCT", 0, 0, w);
+        v2.a.put((EnumMap) z23, (Z2) 3);
+        a3 a3Var = new a3("DISTINCT", 0, 0, v2);
         DISTINCT = a3Var;
-        Y2 w2 = w(z2);
-        w2.a(z22);
-        w2.a.put((EnumMap) z23, (Z2) 3);
-        a3 a3Var2 = new a3("SORTED", 1, 1, w2);
+        Y2 v3 = v(z2);
+        v3.a(z22);
+        v3.a.put((EnumMap) z23, (Z2) 3);
+        a3 a3Var2 = new a3("SORTED", 1, 1, v3);
         SORTED = a3Var2;
-        Y2 w3 = w(z2);
-        w3.a(z22);
-        EnumMap enumMap = w3.a;
+        Y2 v4 = v(z2);
+        v4.a(z22);
+        EnumMap enumMap = v4.a;
         enumMap.put((EnumMap) z23, (Z2) 3);
         Z2 z24 = Z2.TERMINAL_OP;
         enumMap.put((EnumMap) z24, (Z2) 2);
         Z2 z25 = Z2.UPSTREAM_TERMINAL_OP;
         enumMap.put((EnumMap) z25, (Z2) 2);
-        a3 a3Var3 = new a3("ORDERED", 2, 2, w3);
+        a3 a3Var3 = new a3("ORDERED", 2, 2, v4);
         ORDERED = a3Var3;
-        Y2 w4 = w(z2);
-        w4.a(z22);
-        w4.a.put((EnumMap) z23, (Z2) 2);
-        a3 a3Var4 = new a3("SIZED", 3, 3, w4);
+        Y2 v5 = v(z2);
+        v5.a(z22);
+        v5.a.put((EnumMap) z23, (Z2) 2);
+        a3 a3Var4 = new a3("SIZED", 3, 3, v5);
         SIZED = a3Var4;
-        Y2 w5 = w(z23);
-        w5.a(z24);
-        a3 a3Var5 = new a3("SHORT_CIRCUIT", 4, 12, w5);
+        Y2 v6 = v(z23);
+        v6.a(z24);
+        a3 a3Var5 = new a3("SHORT_CIRCUIT", 4, 12, v6);
         SHORT_CIRCUIT = a3Var5;
         v = new a3[]{a3Var, a3Var2, a3Var3, a3Var4, a3Var5};
         f = l(z2);
@@ -116,7 +116,7 @@ final class a3 {
         u = SHORT_CIRCUIT.c;
     }
 
-    private static Y2 w(Z2 z2) {
+    private static Y2 v(Z2 z2) {
         Y2 y2 = new Y2(new EnumMap(Z2.class));
         y2.a(z2);
         return y2;
@@ -147,7 +147,7 @@ final class a3 {
         return (i2 & this.e) == this.c;
     }
 
-    final boolean s(int i2) {
+    final boolean r(int i2) {
         int i3 = this.e;
         return (i2 & i3) == i3;
     }
@@ -170,7 +170,7 @@ final class a3 {
         return i2 | (i3 & i4);
     }
 
-    static int z(int i2) {
+    static int x(int i2) {
         return i2 & ((~i2) >> 1) & j;
     }
 

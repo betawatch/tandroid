@@ -56,19 +56,19 @@ public enum a implements p {
     }
 
     @Override // j$.time.temporal.p
-    public final boolean w() {
+    public final boolean v() {
         return ordinal() >= DAY_OF_WEEK.ordinal() && ordinal() <= ERA.ordinal();
     }
 
-    public final boolean J() {
+    public final boolean H() {
         return ordinal() < DAY_OF_WEEK.ordinal();
     }
 
-    public final void I(long j) {
+    public final void G(long j) {
         this.b.b(j, this);
     }
 
-    public final int z(long j) {
+    public final int x(long j) {
         return this.b.a(j, this);
     }
 
@@ -78,13 +78,13 @@ public enum a implements p {
     }
 
     @Override // j$.time.temporal.p
-    public final u s(m mVar) {
+    public final u r(m mVar) {
         return mVar.o(this);
     }
 
     @Override // j$.time.temporal.p
     public final long l(m mVar) {
-        return mVar.s(this);
+        return mVar.r(this);
     }
 
     @Override // j$.time.temporal.p

@@ -1,0 +1,56 @@
+package androidx.car.app.model;
+
+import androidx.car.app.utils.CollectionUtils;
+import j$.util.Objects;
+import java.util.Collections;
+import java.util.List;
+
+/* loaded from: classes.dex */
+public final class ActionStrip {
+    private final List<Action> mActions;
+
+    public static final class Builder {
+    }
+
+    public List<Action> getActions() {
+        return CollectionUtils.emptyIfNull(this.mActions);
+    }
+
+    public Action getFirstActionOfType(int i) {
+        for (Action action : this.mActions) {
+            if (action instanceof Action) {
+                Action action2 = action;
+                if (action2.getType() == i) {
+                    return action2;
+                }
+            }
+        }
+        return null;
+    }
+
+    public String toString() {
+        return "[action count: " + this.mActions.size() + "]";
+    }
+
+    public int hashCode() {
+        return Objects.hashCode(this.mActions);
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof ActionStrip) {
+            return Objects.equals(this.mActions, ((ActionStrip) obj).mActions);
+        }
+        return false;
+    }
+
+    ActionStrip(Builder builder) {
+        throw null;
+    }
+
+    private ActionStrip() {
+        this.mActions = Collections.emptyList();
+    }
+}

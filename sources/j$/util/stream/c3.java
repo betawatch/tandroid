@@ -114,8 +114,8 @@ abstract class c3 implements Spliterator {
     @Override // j$.util.Spliterator
     public final int characteristics() {
         c();
-        int z = a3.z(this.b.J()) & a3.f;
-        return (z & 64) != 0 ? (z & (-16449)) | (this.d.characteristics() & 16448) : z;
+        int x = a3.x(this.b.J()) & a3.f;
+        return (x & 64) != 0 ? (x & (-16449)) | (this.d.characteristics() & 16448) : x;
     }
 
     @Override // j$.util.Spliterator

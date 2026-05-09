@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.audio;
 
+import androidx.car.app.media.CarAudioRecord;
 import com.google.android.exoplayer2.audio.DefaultAudioSink;
 import com.google.android.exoplayer2.util.Util;
 import com.google.common.math.IntMath;
@@ -99,7 +100,7 @@ public class DefaultAudioTrackBufferSizeProvider implements DefaultAudioSink.Aud
             case 10:
                 return 100000;
             case 11:
-                return 16000;
+                return CarAudioRecord.AUDIO_CONTENT_SAMPLING_RATE;
             case 12:
                 return 7000;
             case 13:

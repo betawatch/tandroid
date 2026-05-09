@@ -9,7 +9,7 @@ import com.microsoft.appcenter.utils.storage.SharedPreferencesManager;
 import java.util.HashMap;
 import java.util.Map;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class AnalyticsTransmissionTarget {
     private Channel mChannel;
     Context mContext;

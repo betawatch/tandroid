@@ -603,7 +603,7 @@ public class ChatThemeController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x008e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -732,8 +732,8 @@ public class ChatThemeController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0061 A[Catch: all -> 0x0031, TRY_LEAVE, TryCatch #0 {all -> 0x0031, blocks: (B:16:0x000c, B:18:0x0012, B:19:0x0021, B:21:0x0027, B:23:0x0033, B:7:0x0055, B:9:0x005d, B:14:0x0061), top: B:15:0x000c, outer: #2 }] */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x005d A[Catch: all -> 0x0031, TryCatch #0 {all -> 0x0031, blocks: (B:16:0x000c, B:18:0x0012, B:19:0x0021, B:21:0x0027, B:23:0x0033, B:7:0x0055, B:9:0x005d, B:14:0x0061), top: B:15:0x000c, outer: #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0062 A[Catch: all -> 0x0031, TRY_LEAVE, TryCatch #0 {all -> 0x0031, blocks: (B:16:0x000c, B:18:0x0012, B:19:0x0021, B:21:0x0027, B:23:0x0033, B:7:0x0056, B:9:0x005e, B:14:0x0062), top: B:15:0x000c, outer: #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x005e A[Catch: all -> 0x0031, TryCatch #0 {all -> 0x0031, blocks: (B:16:0x000c, B:18:0x0012, B:19:0x0021, B:21:0x0027, B:23:0x0033, B:7:0x0056, B:9:0x005e, B:14:0x0062), top: B:15:0x000c, outer: #2 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

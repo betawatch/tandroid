@@ -21,7 +21,7 @@ public final class Period implements Serializable {
     }
 
     public static Period between(LocalDate localDate, LocalDate localDate2) {
-        return localDate.a0(localDate2);
+        return localDate.Y(localDate2);
     }
 
     public static Period a(int i, int i2, int i3) {
@@ -80,7 +80,7 @@ public final class Period implements Serializable {
     }
 
     private Object writeReplace() {
-        return new r((byte) 14, this);
+        return new q((byte) 14, this);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {

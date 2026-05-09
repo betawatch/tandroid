@@ -16,30 +16,30 @@ final class q implements r {
     public final Object a(m mVar) {
         switch (this.a) {
             case 0:
-                return (ZoneId) mVar.w(l.a);
+                return (ZoneId) mVar.v(l.a);
             case 1:
-                return (j$.time.chrono.l) mVar.w(l.b);
+                return (j$.time.chrono.l) mVar.v(l.b);
             case 2:
-                return (s) mVar.w(l.c);
+                return (s) mVar.v(l.c);
             case 3:
                 a aVar = a.OFFSET_SECONDS;
                 if (mVar.g(aVar)) {
-                    return ZoneOffset.R(mVar.l(aVar));
+                    return ZoneOffset.P(mVar.l(aVar));
                 }
                 return null;
             case 4:
-                ZoneId zoneId = (ZoneId) mVar.w(l.a);
-                return zoneId != null ? zoneId : (ZoneId) mVar.w(l.d);
+                ZoneId zoneId = (ZoneId) mVar.v(l.a);
+                return zoneId != null ? zoneId : (ZoneId) mVar.v(l.d);
             case 5:
                 a aVar2 = a.EPOCH_DAY;
                 if (mVar.g(aVar2)) {
-                    return LocalDate.V(mVar.s(aVar2));
+                    return LocalDate.T(mVar.r(aVar2));
                 }
                 return null;
             default:
                 a aVar3 = a.NANO_OF_DAY;
                 if (mVar.g(aVar3)) {
-                    return j$.time.j.Q(mVar.s(aVar3));
+                    return j$.time.i.O(mVar.r(aVar3));
                 }
                 return null;
         }

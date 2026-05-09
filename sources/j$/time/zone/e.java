@@ -5,8 +5,7 @@ import j$.time.LocalDate;
 import j$.time.LocalDateTime;
 import j$.time.ZoneOffset;
 import j$.time.chrono.s;
-import j$.time.j;
-import j$.time.l;
+import j$.time.k;
 import j$.time.temporal.n;
 import j$.util.Objects;
 import java.io.InvalidObjectException;
@@ -19,21 +18,21 @@ import org.telegram.messenger.NotificationCenter;
 /* loaded from: classes2.dex */
 public final class e implements Serializable {
     private static final long serialVersionUID = 6889046316657758795L;
-    private final l a;
+    private final k a;
     private final byte b;
     private final DayOfWeek c;
-    private final j d;
+    private final j$.time.i d;
     private final boolean e;
     private final d f;
     private final ZoneOffset g;
     private final ZoneOffset h;
     private final ZoneOffset i;
 
-    e(l lVar, int i, DayOfWeek dayOfWeek, j jVar, boolean z, d dVar, ZoneOffset zoneOffset, ZoneOffset zoneOffset2, ZoneOffset zoneOffset3) {
-        this.a = lVar;
+    e(k kVar, int i, DayOfWeek dayOfWeek, j$.time.i iVar, boolean z, d dVar, ZoneOffset zoneOffset, ZoneOffset zoneOffset2, ZoneOffset zoneOffset3) {
+        this.a = kVar;
         this.b = (byte) i;
         this.c = dayOfWeek;
-        this.d = jVar;
+        this.d = iVar;
         this.e = z;
         this.f = dVar;
         this.g = zoneOffset;
@@ -50,22 +49,22 @@ public final class e implements Serializable {
     }
 
     final void writeExternal(ObjectOutput objectOutput) {
-        j jVar = this.d;
+        j$.time.i iVar = this.d;
         boolean z = this.e;
-        int Z = z ? 86400 : jVar.Z();
+        int X = z ? 86400 : iVar.X();
         int totalSeconds = this.g.getTotalSeconds();
         ZoneOffset zoneOffset = this.h;
         int totalSeconds2 = zoneOffset.getTotalSeconds() - totalSeconds;
         ZoneOffset zoneOffset2 = this.i;
         int totalSeconds3 = zoneOffset2.getTotalSeconds() - totalSeconds;
-        int M = Z % 3600 == 0 ? z ? 24 : jVar.M() : 31;
+        int K = X % 3600 == 0 ? z ? 24 : iVar.K() : 31;
         int i = totalSeconds % 900 == 0 ? (totalSeconds / 900) + 128 : NotificationCenter.didReceiveCall;
         int i2 = (totalSeconds2 == 0 || totalSeconds2 == 1800 || totalSeconds2 == 3600) ? totalSeconds2 / 1800 : 3;
         int i3 = (totalSeconds3 == 0 || totalSeconds3 == 1800 || totalSeconds3 == 3600) ? totalSeconds3 / 1800 : 3;
         DayOfWeek dayOfWeek = this.c;
-        objectOutput.writeInt((this.a.getValue() << 28) + ((this.b + 32) << 22) + ((dayOfWeek == null ? 0 : dayOfWeek.getValue()) << 19) + (M << 14) + (this.f.ordinal() << 12) + (i << 4) + (i2 << 2) + i3);
-        if (M == 31) {
-            objectOutput.writeInt(Z);
+        objectOutput.writeInt((this.a.getValue() << 28) + ((this.b + 32) << 22) + ((dayOfWeek == null ? 0 : dayOfWeek.getValue()) << 19) + (K << 14) + (this.f.ordinal() << 12) + (i << 4) + (i2 << 2) + i3);
+        if (K == 31) {
+            objectOutput.writeInt(X);
         }
         if (i == 255) {
             objectOutput.writeInt(totalSeconds);
@@ -80,52 +79,52 @@ public final class e implements Serializable {
 
     static e b(ObjectInput objectInput) {
         int readInt = objectInput.readInt();
-        l L = l.L(readInt >>> 28);
+        k J = k.J(readInt >>> 28);
         int i = ((264241152 & readInt) >>> 22) - 32;
         int i2 = (3670016 & readInt) >>> 19;
-        DayOfWeek I = i2 == 0 ? null : DayOfWeek.I(i2);
+        DayOfWeek G = i2 == 0 ? null : DayOfWeek.G(i2);
         int i3 = (507904 & readInt) >>> 14;
         d dVar = d.values()[(readInt & 12288) >>> 12];
         int i4 = (readInt & 4080) >>> 4;
         int i5 = (readInt & 12) >>> 2;
         int i6 = readInt & 3;
-        j R = i3 == 31 ? j.R(objectInput.readInt()) : j.P(i3 % 24);
-        ZoneOffset R2 = ZoneOffset.R(i4 == 255 ? objectInput.readInt() : (i4 - 128) * 900);
-        ZoneOffset R3 = i5 == 3 ? ZoneOffset.R(objectInput.readInt()) : ZoneOffset.R((i5 * 1800) + R2.getTotalSeconds());
-        ZoneOffset R4 = i6 == 3 ? ZoneOffset.R(objectInput.readInt()) : ZoneOffset.R((i6 * 1800) + R2.getTotalSeconds());
+        j$.time.i P = i3 == 31 ? j$.time.i.P(objectInput.readInt()) : j$.time.i.N(i3 % 24);
+        ZoneOffset P2 = ZoneOffset.P(i4 == 255 ? objectInput.readInt() : (i4 - 128) * 900);
+        ZoneOffset P3 = i5 == 3 ? ZoneOffset.P(objectInput.readInt()) : ZoneOffset.P((i5 * 1800) + P2.getTotalSeconds());
+        ZoneOffset P4 = i6 == 3 ? ZoneOffset.P(objectInput.readInt()) : ZoneOffset.P((i6 * 1800) + P2.getTotalSeconds());
         boolean z = i3 == 24;
-        Objects.requireNonNull(L, "month");
-        Objects.requireNonNull(R, "time");
+        Objects.requireNonNull(J, "month");
+        Objects.requireNonNull(P, "time");
         Objects.requireNonNull(dVar, "timeDefnition");
-        Objects.requireNonNull(R2, "standardOffset");
-        Objects.requireNonNull(R3, "offsetBefore");
-        Objects.requireNonNull(R4, "offsetAfter");
+        Objects.requireNonNull(P2, "standardOffset");
+        Objects.requireNonNull(P3, "offsetBefore");
+        Objects.requireNonNull(P4, "offsetAfter");
         if (i < -28 || i > 31 || i == 0) {
             throw new IllegalArgumentException("Day of month indicator must be between -28 and 31 inclusive excluding zero");
         }
-        if (z && !R.equals(j.g)) {
+        if (z && !P.equals(j$.time.i.g)) {
             throw new IllegalArgumentException("Time must be midnight when end of day flag is true");
         }
-        if (R.N() != 0) {
+        if (P.L() != 0) {
             throw new IllegalArgumentException("Time's nano-of-second must be zero");
         }
-        return new e(L, i, I, R, z, dVar, R2, R3, R4);
+        return new e(J, i, G, P, z, dVar, P2, P3, P4);
     }
 
     public final b a(int i) {
-        LocalDate U;
+        LocalDate S;
         DayOfWeek dayOfWeek = this.c;
-        l lVar = this.a;
+        k kVar = this.a;
         byte b = this.b;
         if (b < 0) {
             s.d.getClass();
-            U = LocalDate.U(i, lVar, lVar.J(s.n(i)) + 1 + b);
+            S = LocalDate.S(i, kVar, kVar.H(s.n(i)) + 1 + b);
             if (dayOfWeek != null) {
                 final int value = dayOfWeek.getValue();
                 final int i2 = 1;
-                U = (LocalDate) new n() { // from class: j$.time.temporal.o
+                S = (LocalDate) new n() { // from class: j$.time.temporal.o
                     @Override // j$.time.temporal.n
-                    public final Temporal z(Temporal temporal) {
+                    public final Temporal x(Temporal temporal) {
                         switch (i2) {
                             case 0:
                                 int l = temporal.l(a.DAY_OF_WEEK);
@@ -143,16 +142,16 @@ public final class e implements Serializable {
                                 return temporal.k(i4 - l2 >= 0 ? 7 - r1 : -r1, ChronoUnit.DAYS);
                         }
                     }
-                }.z(U);
+                }.x(S);
             }
         } else {
-            U = LocalDate.U(i, lVar, b);
+            S = LocalDate.S(i, kVar, b);
             if (dayOfWeek != null) {
                 final int value2 = dayOfWeek.getValue();
                 final int i3 = 0;
-                U = (LocalDate) new n() { // from class: j$.time.temporal.o
+                S = (LocalDate) new n() { // from class: j$.time.temporal.o
                     @Override // j$.time.temporal.n
-                    public final Temporal z(Temporal temporal) {
+                    public final Temporal x(Temporal temporal) {
                         switch (i3) {
                             case 0:
                                 int l = temporal.l(a.DAY_OF_WEEK);
@@ -170,23 +169,23 @@ public final class e implements Serializable {
                                 return temporal.k(i4 - l2 >= 0 ? 7 - r1 : -r1, ChronoUnit.DAYS);
                         }
                     }
-                }.z(U);
+                }.x(S);
             }
         }
         if (this.e) {
-            U = U.plusDays(1L);
+            S = S.plusDays(1L);
         }
-        LocalDateTime Q = LocalDateTime.Q(U, this.d);
+        LocalDateTime O = LocalDateTime.O(S, this.d);
         d dVar = this.f;
         dVar.getClass();
         int i4 = c.a[dVar.ordinal()];
         ZoneOffset zoneOffset = this.h;
         if (i4 == 1) {
-            Q = Q.T(zoneOffset.getTotalSeconds() - ZoneOffset.UTC.getTotalSeconds());
+            O = O.R(zoneOffset.getTotalSeconds() - ZoneOffset.UTC.getTotalSeconds());
         } else if (i4 == 2) {
-            Q = Q.T(zoneOffset.getTotalSeconds() - this.g.getTotalSeconds());
+            O = O.R(zoneOffset.getTotalSeconds() - this.g.getTotalSeconds());
         }
-        return new b(Q, zoneOffset, this.i);
+        return new b(O, zoneOffset, this.i);
     }
 
     public final boolean equals(Object obj) {
@@ -201,9 +200,9 @@ public final class e implements Serializable {
     }
 
     public final int hashCode() {
-        int Z = ((this.d.Z() + (this.e ? 1 : 0)) << 15) + (this.a.ordinal() << 11) + ((this.b + 32) << 5);
+        int X = ((this.d.X() + (this.e ? 1 : 0)) << 15) + (this.a.ordinal() << 11) + ((this.b + 32) << 5);
         DayOfWeek dayOfWeek = this.c;
-        return ((this.g.hashCode() ^ (this.f.ordinal() + (Z + ((dayOfWeek == null ? 7 : dayOfWeek.ordinal()) << 2)))) ^ this.h.hashCode()) ^ this.i.hashCode();
+        return ((this.g.hashCode() ^ (this.f.ordinal() + (X + ((dayOfWeek == null ? 7 : dayOfWeek.ordinal()) << 2)))) ^ this.h.hashCode()) ^ this.i.hashCode();
     }
 
     public final String toString() {
@@ -215,27 +214,27 @@ public final class e implements Serializable {
         sb.append(" to ");
         sb.append(zoneOffset2);
         sb.append(", ");
-        l lVar = this.a;
+        k kVar = this.a;
         byte b = this.b;
         DayOfWeek dayOfWeek = this.c;
         if (dayOfWeek == null) {
-            sb.append(lVar.name());
+            sb.append(kVar.name());
             sb.append(' ');
             sb.append((int) b);
         } else if (b == -1) {
             sb.append(dayOfWeek.name());
             sb.append(" on or before last day of ");
-            sb.append(lVar.name());
+            sb.append(kVar.name());
         } else if (b < 0) {
             sb.append(dayOfWeek.name());
             sb.append(" on or before last day minus ");
             sb.append((-b) - 1);
             sb.append(" of ");
-            sb.append(lVar.name());
+            sb.append(kVar.name());
         } else {
             sb.append(dayOfWeek.name());
             sb.append(" on or after ");
-            sb.append(lVar.name());
+            sb.append(kVar.name());
             sb.append(' ');
             sb.append((int) b);
         }

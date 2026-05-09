@@ -34,7 +34,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class LanguageIdentifierImpl implements LanguageIdentifier {
     private final LanguageIdentificationOptions zza;
     private final zzli zzb;

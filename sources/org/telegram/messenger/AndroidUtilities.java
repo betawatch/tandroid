@@ -3792,8 +3792,8 @@ public class AndroidUtilities {
         return FileLoader.getDirectory(0);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00ac  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00b8 A[Catch: Exception -> 0x0040, TryCatch #0 {Exception -> 0x0040, blocks: (B:3:0x0001, B:5:0x0009, B:8:0x0013, B:10:0x0025, B:14:0x0043, B:16:0x0049, B:18:0x0066, B:20:0x006c, B:32:0x00ba, B:34:0x00b2, B:35:0x00b5, B:36:0x00b8, B:37:0x008b, B:40:0x0096, B:43:0x009f, B:46:0x00c9, B:48:0x00d5, B:50:0x00dc, B:52:0x00e8), top: B:2:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00ad  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00b9 A[Catch: Exception -> 0x0041, TryCatch #0 {Exception -> 0x0041, blocks: (B:3:0x0001, B:5:0x0009, B:8:0x0013, B:10:0x0026, B:14:0x0044, B:16:0x004a, B:18:0x0067, B:20:0x006d, B:32:0x00bb, B:34:0x00b3, B:35:0x00b6, B:36:0x00b9, B:37:0x008c, B:40:0x0097, B:43:0x00a0, B:46:0x00ca, B:48:0x00d6, B:50:0x00dd, B:52:0x00e9), top: B:2:0x0001 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -4793,14 +4793,14 @@ public class AndroidUtilities {
         return handleProxyIntent(activity, new Intent("android.intent.action.VIEW", uri), false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0105 A[Catch: Exception -> 0x0123, TRY_LEAVE, TryCatch #0 {Exception -> 0x0123, blocks: (B:6:0x000a, B:9:0x0014, B:11:0x001a, B:13:0x0021, B:16:0x0036, B:19:0x003f, B:21:0x0048, B:24:0x005b, B:26:0x0061, B:28:0x0067, B:30:0x006d, B:32:0x008b, B:33:0x008f, B:35:0x00ff, B:37:0x0105, B:48:0x011f, B:54:0x00a0, B:56:0x00b1, B:58:0x00ba, B:60:0x00c3, B:62:0x00c9, B:64:0x00d1, B:66:0x00d9, B:68:0x00e3, B:69:0x00e7), top: B:5:0x000a }] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x010f  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0114  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0119  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x011e  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x011b  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0116  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0111  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0107 A[Catch: Exception -> 0x0125, TRY_LEAVE, TryCatch #0 {Exception -> 0x0125, blocks: (B:6:0x000a, B:9:0x0014, B:11:0x001a, B:13:0x0021, B:16:0x0038, B:19:0x0041, B:21:0x004a, B:24:0x005d, B:26:0x0063, B:28:0x0069, B:30:0x006f, B:32:0x008d, B:33:0x0091, B:35:0x0101, B:37:0x0107, B:48:0x0121, B:54:0x00a2, B:56:0x00b3, B:58:0x00bc, B:60:0x00c5, B:62:0x00cb, B:64:0x00d3, B:66:0x00db, B:68:0x00e5, B:69:0x00e9), top: B:5:0x000a }] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0111  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0116  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x011b  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0120  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x011d  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0118  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0113  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -6454,7 +6454,7 @@ public class AndroidUtilities {
         return Math.max(i, i2) >= Math.min(i3, i4) && Math.max(i3, i4) >= Math.min(i, i2);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0026, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0027, code lost:
     
         if (r1 == null) goto L22;
      */

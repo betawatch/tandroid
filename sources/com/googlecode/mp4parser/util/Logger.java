@@ -1,6 +1,6 @@
 package com.googlecode.mp4parser.util;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class Logger {
     public abstract void logDebug(String str);
 

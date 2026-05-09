@@ -53,7 +53,7 @@ public final class ZoneRules implements Serializable {
             while (i2 < jArr2.length) {
                 int i3 = i2 + 1;
                 b bVar = new b(jArr2[i2], zoneOffsetArr2[i2], zoneOffsetArr2[i3]);
-                if (bVar.z()) {
+                if (bVar.x()) {
                     arrayList.add(bVar.l());
                     arrayList.add(bVar.k());
                 } else {
@@ -92,7 +92,7 @@ public final class ZoneRules implements Serializable {
     }
 
     private static ZoneOffset i(int i2) {
-        return ZoneOffset.R(i2 / MediaDataController.MAX_STYLE_RUNS_COUNT);
+        return ZoneOffset.P(i2 / MediaDataController.MAX_STYLE_RUNS_COUNT);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {
@@ -173,31 +173,39 @@ public final class ZoneRules implements Serializable {
         if (jArr.length == 0) {
             return this.b[0];
         }
-        long K = instant.K();
+        long I = instant.I();
         int length = this.f.length;
         ZoneOffset[] zoneOffsetArr = this.e;
-        if (length > 0 && K > jArr[jArr.length - 1]) {
-            b[] b = b(c(K, zoneOffsetArr[zoneOffsetArr.length - 1]));
+        if (length > 0 && I > jArr[jArr.length - 1]) {
+            b[] b = b(c(I, zoneOffsetArr[zoneOffsetArr.length - 1]));
             b bVar = null;
             for (int i2 = 0; i2 < b.length; i2++) {
                 bVar = b[i2];
-                if (K < bVar.H()) {
-                    return bVar.s();
+                if (I < bVar.F()) {
+                    return bVar.r();
                 }
             }
             return bVar.o();
         }
-        int binarySearch = Arrays.binarySearch(jArr, K);
+        int binarySearch = Arrays.binarySearch(jArr, I);
         if (binarySearch < 0) {
             binarySearch = (-binarySearch) - 2;
         }
         return zoneOffsetArr[binarySearch + 1];
     }
 
+    public ZoneOffset getOffset(LocalDateTime localDateTime) {
+        Object d = d(localDateTime);
+        if (d instanceof b) {
+            return ((b) d).r();
+        }
+        return (ZoneOffset) d;
+    }
+
     public final List f(LocalDateTime localDateTime) {
         Object d = d(localDateTime);
         if (d instanceof b) {
-            return ((b) d).w();
+            return ((b) d).v();
         }
         return Collections.singletonList((ZoneOffset) d);
     }
@@ -216,7 +224,7 @@ public final class ZoneRules implements Serializable {
         int i2 = 0;
         TimeZone timeZone = this.g;
         if (timeZone != null) {
-            b[] b = b(localDateTime.M());
+            b[] b = b(localDateTime.K());
             if (b.length == 0) {
                 return i(timeZone.getOffset(j$.time.chrono.h.n(localDateTime, zoneOffsetArr[0]) * 1000));
             }
@@ -224,7 +232,7 @@ public final class ZoneRules implements Serializable {
             while (i2 < length) {
                 b bVar = b[i2];
                 Object a = a(localDateTime, bVar);
-                if ((a instanceof b) || a.equals(bVar.s())) {
+                if ((a instanceof b) || a.equals(bVar.r())) {
                     return a;
                 }
                 i2++;
@@ -237,13 +245,13 @@ public final class ZoneRules implements Serializable {
         }
         int length2 = this.f.length;
         LocalDateTime[] localDateTimeArr = this.d;
-        if (length2 > 0 && localDateTime.N(localDateTimeArr[localDateTimeArr.length - 1])) {
-            b[] b2 = b(localDateTime.M());
+        if (length2 > 0 && localDateTime.L(localDateTimeArr[localDateTimeArr.length - 1])) {
+            b[] b2 = b(localDateTime.K());
             int length3 = b2.length;
             while (i2 < length3) {
                 b bVar2 = b2[i2];
                 Object a2 = a(localDateTime, bVar2);
-                if ((a2 instanceof b) || a2.equals(bVar2.s())) {
+                if ((a2 instanceof b) || a2.equals(bVar2.r())) {
                     return a2;
                 }
                 i2++;
@@ -277,14 +285,14 @@ public final class ZoneRules implements Serializable {
 
     private static Object a(LocalDateTime localDateTime, b bVar) {
         LocalDateTime l2 = bVar.l();
-        if (bVar.z()) {
-            if (localDateTime.O(l2)) {
-                return bVar.s();
+        if (bVar.x()) {
+            if (localDateTime.M(l2)) {
+                return bVar.r();
             }
-            return localDateTime.O(bVar.k()) ? bVar : bVar.o();
+            return localDateTime.M(bVar.k()) ? bVar : bVar.o();
         }
-        if (localDateTime.O(l2)) {
-            return localDateTime.O(bVar.k()) ? bVar.s() : bVar;
+        if (localDateTime.M(l2)) {
+            return localDateTime.M(bVar.k()) ? bVar.r() : bVar;
         }
         return bVar.o();
     }
@@ -314,7 +322,7 @@ public final class ZoneRules implements Serializable {
         if (i2 < 1800) {
             return bVarArr3;
         }
-        long n = j$.time.chrono.h.n(LocalDateTime.P(i2 - 1), this.b[0]);
+        long n = j$.time.chrono.h.n(LocalDateTime.N(i2 - 1), this.b[0]);
         int offset = timeZone.getOffset(n * 1000);
         long j3 = 31968000 + n;
         while (n < j3) {
@@ -369,7 +377,7 @@ public final class ZoneRules implements Serializable {
             if (length == 0) {
                 zoneOffset = zoneOffsetArr[0];
             } else {
-                int binarySearch = Arrays.binarySearch(this.a, instant.K());
+                int binarySearch = Arrays.binarySearch(this.a, instant.I());
                 if (binarySearch < 0) {
                     binarySearch = (-binarySearch) - 2;
                 }
@@ -380,7 +388,7 @@ public final class ZoneRules implements Serializable {
     }
 
     private static int c(long j2, ZoneOffset zoneOffset) {
-        return LocalDate.V(j$.com.android.tools.r8.a.k(j2 + zoneOffset.getTotalSeconds(), 86400)).getYear();
+        return LocalDate.T(j$.com.android.tools.r8.a.k(j2 + zoneOffset.getTotalSeconds(), 86400)).getYear();
     }
 
     public final boolean equals(Object obj) {

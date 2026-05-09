@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class Analytics extends AbstractAppCenterService {
     private static Analytics sInstance;
     private Channel.Listener mAnalyticsTransmissionTargetListener;

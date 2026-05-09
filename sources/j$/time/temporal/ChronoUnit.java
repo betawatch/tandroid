@@ -1,5 +1,7 @@
 package j$.time.temporal;
 
+import j$.time.Duration;
+
 /* loaded from: classes2.dex */
 public enum ChronoUnit implements s {
     NANOS("Nanos"),
@@ -22,8 +24,8 @@ public enum ChronoUnit implements s {
     private final String a;
 
     static {
-        j$.time.e eVar = j$.time.e.c;
-        j$.time.e.o(Long.MAX_VALUE, 999999999L);
+        Duration duration = Duration.c;
+        Duration.n(Long.MAX_VALUE, 999999999L);
     }
 
     ChronoUnit(String str) {

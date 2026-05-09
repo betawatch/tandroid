@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class OptionalModuleUtils {
     public static final Feature[] EMPTY_FEATURES = new Feature[0];
     public static final Feature FEATURE_BARCODE;

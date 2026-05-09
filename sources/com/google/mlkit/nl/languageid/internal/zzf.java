@@ -5,7 +5,7 @@ import com.google.android.gms.internal.mlkit_language_id_common.zzja;
 import com.google.android.gms.internal.mlkit_language_id_common.zzjd;
 import com.google.android.gms.internal.mlkit_language_id_common.zzla;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class zzf {
     public final /* synthetic */ LanguageIdentifierImpl zza;
     public final /* synthetic */ long zzb;

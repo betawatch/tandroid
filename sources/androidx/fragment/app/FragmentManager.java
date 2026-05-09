@@ -27,12 +27,12 @@ import androidx.activity.result.ActivityResultRegistry;
 import androidx.activity.result.ActivityResultRegistryOwner;
 import androidx.activity.result.IntentSenderRequest;
 import androidx.activity.result.contract.ActivityResultContract;
+import androidx.activity.result.contract.ActivityResultContracts$RequestMultiplePermissions;
 import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import androidx.core.app.MultiWindowModeChangedInfo;
 import androidx.core.app.OnMultiWindowModeChangedProvider;
 import androidx.core.app.OnPictureInPictureModeChangedProvider;
 import androidx.core.app.PictureInPictureModeChangedInfo;
-import androidx.core.content.ContextCompat;
 import androidx.core.content.OnConfigurationChangedProvider;
 import androidx.core.content.OnTrimMemoryProvider;
 import androidx.core.util.Consumer;
@@ -57,21 +57,14 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
-import kotlin.Pair;
-import kotlin.TuplesKt;
-import kotlin.collections.ArraysKt;
-import kotlin.collections.CollectionsKt;
-import kotlin.collections.MapsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.ranges.RangesKt;
 
 /* loaded from: classes.dex */
 public abstract class FragmentManager {
@@ -1663,72 +1656,7 @@ public abstract class FragmentManager {
                     findFragmentByWho.onActivityResult(i, activityResult.getResultCode(), activityResult.getData());
                 }
             });
-            this.mRequestPermissions = activityResultRegistry.register(str2 + "RequestPermissions", new ActivityResultContract() { // from class: androidx.activity.result.contract.ActivityResultContracts$RequestMultiplePermissions
-                public static final Companion Companion = new Companion(null);
-
-                public static final class Companion {
-                    public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-                        this();
-                    }
-
-                    private Companion() {
-                    }
-
-                    public final Intent createIntent$activity_release(String[] input) {
-                        Intrinsics.checkNotNullParameter(input, "input");
-                        Intent putExtra = new Intent("androidx.activity.result.contract.action.REQUEST_PERMISSIONS").putExtra("androidx.activity.result.contract.extra.PERMISSIONS", input);
-                        Intrinsics.checkNotNullExpressionValue(putExtra, "Intent(ACTION_REQUEST_PE…EXTRA_PERMISSIONS, input)");
-                        return putExtra;
-                    }
-                }
-
-                @Override // androidx.activity.result.contract.ActivityResultContract
-                public Intent createIntent(Context context, String[] input) {
-                    Intrinsics.checkNotNullParameter(context, "context");
-                    Intrinsics.checkNotNullParameter(input, "input");
-                    return Companion.createIntent$activity_release(input);
-                }
-
-                @Override // androidx.activity.result.contract.ActivityResultContract
-                public ActivityResultContract.SynchronousResult getSynchronousResult(Context context, String[] input) {
-                    Intrinsics.checkNotNullParameter(context, "context");
-                    Intrinsics.checkNotNullParameter(input, "input");
-                    if (input.length == 0) {
-                        return new ActivityResultContract.SynchronousResult(MapsKt.emptyMap());
-                    }
-                    for (String str3 : input) {
-                        if (ContextCompat.checkSelfPermission(context, str3) != 0) {
-                            return null;
-                        }
-                    }
-                    LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(input.length), 16));
-                    for (String str4 : input) {
-                        Pair pair = TuplesKt.to(str4, Boolean.TRUE);
-                        linkedHashMap.put(pair.getFirst(), pair.getSecond());
-                    }
-                    return new ActivityResultContract.SynchronousResult(linkedHashMap);
-                }
-
-                @Override // androidx.activity.result.contract.ActivityResultContract
-                public Map parseResult(int i, Intent intent) {
-                    if (i != -1) {
-                        return MapsKt.emptyMap();
-                    }
-                    if (intent == null) {
-                        return MapsKt.emptyMap();
-                    }
-                    String[] stringArrayExtra = intent.getStringArrayExtra("androidx.activity.result.contract.extra.PERMISSIONS");
-                    int[] intArrayExtra = intent.getIntArrayExtra("androidx.activity.result.contract.extra.PERMISSION_GRANT_RESULTS");
-                    if (intArrayExtra == null || stringArrayExtra == null) {
-                        return MapsKt.emptyMap();
-                    }
-                    ArrayList arrayList = new ArrayList(intArrayExtra.length);
-                    for (int i2 : intArrayExtra) {
-                        arrayList.add(Boolean.valueOf(i2 == 0));
-                    }
-                    return MapsKt.toMap(CollectionsKt.zip(ArraysKt.filterNotNull(stringArrayExtra), arrayList));
-                }
-            }, new ActivityResultCallback() { // from class: androidx.fragment.app.FragmentManager.10
+            this.mRequestPermissions = activityResultRegistry.register(str2 + "RequestPermissions", new ActivityResultContracts$RequestMultiplePermissions(), new ActivityResultCallback() { // from class: androidx.fragment.app.FragmentManager.10
                 @Override // androidx.activity.result.ActivityResultCallback
                 public void onActivityResult(Map map) {
                     String[] strArr = (String[]) map.keySet().toArray(new String[0]);

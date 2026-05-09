@@ -4,9 +4,9 @@ import j$.time.temporal.Temporal;
 
 /* loaded from: classes2.dex */
 public interface b extends Temporal, j$.time.temporal.n, Comparable {
-    b E(long j, j$.time.temporal.s sVar);
+    b C(long j, j$.time.temporal.s sVar);
 
-    /* renamed from: F */
+    /* renamed from: D */
     int compareTo(b bVar);
 
     l a();
@@ -25,9 +25,9 @@ public interface b extends Temporal, j$.time.temporal.n, Comparable {
 
     int hashCode();
 
-    long t();
+    long s();
+
+    ChronoLocalDateTime t(j$.time.i iVar);
 
     String toString();
-
-    ChronoLocalDateTime u(j$.time.j jVar);
 }

@@ -4,12 +4,12 @@ package ru.noties.jlatexmath.android;
 public final class R {
 
     public static final class attr {
-        public static final int jlmv_alignHorizontal = 0x7f0400ee;
-        public static final int jlmv_alignVertical = 0x7f0400ef;
-        public static final int jlmv_background = 0x7f0400f0;
-        public static final int jlmv_latex = 0x7f0400f1;
-        public static final int jlmv_textColor = 0x7f0400f2;
-        public static final int jlmv_textSize = 0x7f0400f3;
+        public static final int jlmv_alignHorizontal = 0x7f0400f3;
+        public static final int jlmv_alignVertical = 0x7f0400f4;
+        public static final int jlmv_background = 0x7f0400f5;
+        public static final int jlmv_latex = 0x7f0400f6;
+        public static final int jlmv_textColor = 0x7f0400f7;
+        public static final int jlmv_textSize = 0x7f0400f8;
 
         private attr() {
         }

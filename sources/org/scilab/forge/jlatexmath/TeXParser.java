@@ -291,7 +291,7 @@ public class TeXParser {
         ((ArrayOfAtoms) this.formula).addRow();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x054b  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x054c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

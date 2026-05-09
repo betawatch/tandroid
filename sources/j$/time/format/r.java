@@ -13,8 +13,8 @@ final class r {
     r(j$.time.temporal.m mVar, DateTimeFormatter dateTimeFormatter) {
         j$.time.chrono.l b = dateTimeFormatter.b();
         if (b != null) {
-            j$.time.chrono.l lVar = (j$.time.chrono.l) mVar.w(j$.time.temporal.l.e());
-            ZoneId zoneId = (ZoneId) mVar.w(j$.time.temporal.l.k());
+            j$.time.chrono.l lVar = (j$.time.chrono.l) mVar.v(j$.time.temporal.l.e());
+            ZoneId zoneId = (ZoneId) mVar.v(j$.time.temporal.l.k());
             j$.time.chrono.b bVar = null;
             b = Objects.equals(b, lVar) ? null : b;
             Objects.equals(null, zoneId);
@@ -25,7 +25,7 @@ final class r {
                         bVar = lVar2.m(mVar);
                     } else if (b != j$.time.chrono.s.d || lVar != null) {
                         for (j$.time.temporal.a aVar : j$.time.temporal.a.values()) {
-                            if (aVar.w() && mVar.g(aVar)) {
+                            if (aVar.v() && mVar.g(aVar)) {
                                 throw new j$.time.c("Unable to apply override chronology '" + b + "' because the temporal object being formatted contains date fields but does not represent a whole date: " + mVar);
                             }
                         }
@@ -60,9 +60,9 @@ final class r {
 
     final Object f(j$.time.temporal.r rVar) {
         j$.time.temporal.m mVar = this.a;
-        Object w = mVar.w(rVar);
-        if (w != null || this.c != 0) {
-            return w;
+        Object v = mVar.v(rVar);
+        if (v != null || this.c != 0) {
+            return v;
         }
         throw new j$.time.c("Unable to extract " + rVar + " from temporal " + mVar);
     }
@@ -71,7 +71,7 @@ final class r {
         int i = this.c;
         j$.time.temporal.m mVar = this.a;
         if (i <= 0 || mVar.g(pVar)) {
-            return Long.valueOf(mVar.s(pVar));
+            return Long.valueOf(mVar.r(pVar));
         }
         return null;
     }

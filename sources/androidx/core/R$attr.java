@@ -3,6 +3,6 @@ package androidx.core;
 /* loaded from: classes.dex */
 public abstract class R$attr {
     public static final int alpha = 2130968618;
-    public static final int lStar = 2130968820;
-    public static final int nestedScrollViewStyle = 2130968879;
+    public static final int lStar = 2130968825;
+    public static final int nestedScrollViewStyle = 2130968884;
 }

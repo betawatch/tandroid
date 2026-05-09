@@ -8,15 +8,15 @@ import j$.time.temporal.Temporal;
 
 /* loaded from: classes2.dex */
 public interface ChronoZonedDateTime<D extends b> extends Temporal, Comparable<ChronoZonedDateTime<?>> {
-    ChronoLocalDateTime B();
-
-    long H();
+    long F();
 
     l a();
 
-    j$.time.j b();
+    j$.time.i b();
 
     b c();
+
+    ZoneId getZone();
 
     ZoneOffset h();
 
@@ -24,7 +24,7 @@ public interface ChronoZonedDateTime<D extends b> extends Temporal, Comparable<C
 
     ChronoZonedDateTime j(ZoneId zoneId);
 
-    ZoneId q();
-
     Instant toInstant();
+
+    ChronoLocalDateTime z();
 }

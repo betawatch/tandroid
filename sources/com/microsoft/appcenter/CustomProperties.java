@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class CustomProperties {
     private static final Pattern KEY_PATTERN = Pattern.compile("^[a-zA-Z][a-zA-Z0-9]*$");
     private final Map mProperties = new HashMap();

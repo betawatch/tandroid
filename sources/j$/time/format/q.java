@@ -24,7 +24,7 @@ final class q implements j$.time.temporal.m {
     @Override // j$.time.temporal.m
     public final boolean g(j$.time.temporal.p pVar) {
         j$.time.chrono.b bVar = this.a;
-        if (bVar != null && pVar.w()) {
+        if (bVar != null && pVar.v()) {
             return bVar.g(pVar);
         }
         return this.b.g(pVar);
@@ -33,23 +33,23 @@ final class q implements j$.time.temporal.m {
     @Override // j$.time.temporal.m
     public final j$.time.temporal.u o(j$.time.temporal.p pVar) {
         j$.time.chrono.b bVar = this.a;
-        if (bVar != null && pVar.w()) {
+        if (bVar != null && pVar.v()) {
             return bVar.o(pVar);
         }
         return this.b.o(pVar);
     }
 
     @Override // j$.time.temporal.m
-    public final long s(j$.time.temporal.p pVar) {
+    public final long r(j$.time.temporal.p pVar) {
         j$.time.chrono.b bVar = this.a;
-        if (bVar != null && pVar.w()) {
-            return bVar.s(pVar);
+        if (bVar != null && pVar.v()) {
+            return bVar.r(pVar);
         }
-        return this.b.s(pVar);
+        return this.b.r(pVar);
     }
 
     @Override // j$.time.temporal.m
-    public final Object w(j$.time.temporal.r rVar) {
+    public final Object v(j$.time.temporal.r rVar) {
         if (rVar == j$.time.temporal.l.e()) {
             return this.c;
         }
@@ -57,7 +57,7 @@ final class q implements j$.time.temporal.m {
             return this.d;
         }
         if (rVar == j$.time.temporal.l.i()) {
-            return this.b.w(rVar);
+            return this.b.v(rVar);
         }
         return rVar.a(this);
     }

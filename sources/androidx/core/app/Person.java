@@ -15,6 +15,11 @@ public class Person {
     CharSequence mName;
     String mUri;
 
+    public static Person fromBundle(Bundle bundle) {
+        Bundle bundle2 = bundle.getBundle("icon");
+        return new Builder().setName(bundle.getCharSequence("name")).setIcon(bundle2 != null ? IconCompat.createFromBundle(bundle2) : null).setUri(bundle.getString("uri")).setKey(bundle.getString("key")).setBot(bundle.getBoolean("isBot")).setImportant(bundle.getBoolean("isImportant")).build();
+    }
+
     public static Person fromPersistableBundle(PersistableBundle persistableBundle) {
         return Api22Impl.fromPersistableBundle(persistableBundle);
     }

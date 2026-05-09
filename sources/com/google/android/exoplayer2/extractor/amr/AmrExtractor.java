@@ -1,6 +1,7 @@
 package com.google.android.exoplayer2.extractor.amr;
 
 import android.net.Uri;
+import androidx.car.app.media.CarAudioRecord;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.extractor.ConstantBitrateSeekMap;
@@ -149,7 +150,7 @@ public final class AmrExtractor implements Extractor {
         }
         this.hasOutputFormat = true;
         boolean z = this.isWideBand;
-        this.trackOutput.format(new Format.Builder().setSampleMimeType(z ? "audio/amr-wb" : "audio/3gpp").setMaxInputSize(MAX_FRAME_SIZE_BYTES).setChannelCount(1).setSampleRate(z ? 16000 : 8000).build());
+        this.trackOutput.format(new Format.Builder().setSampleMimeType(z ? "audio/amr-wb" : "audio/3gpp").setMaxInputSize(MAX_FRAME_SIZE_BYTES).setChannelCount(1).setSampleRate(z ? CarAudioRecord.AUDIO_CONTENT_SAMPLING_RATE : 8000).build());
     }
 
     private int readSample(ExtractorInput extractorInput) {

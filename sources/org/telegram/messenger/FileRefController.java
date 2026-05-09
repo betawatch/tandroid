@@ -376,12 +376,12 @@ public class FileRefController extends BaseController {
         return null;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x0145, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x0146, code lost:
     
         if ("update".equals(r0) != false) goto L75;
      */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0152  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x0169  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0153  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x016a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1450,11 +1450,11 @@ public class FileRefController extends BaseController {
         getSendMessagesHelper().lambda$performSendMessageRequest$73((TLObject) objArr[0], (MessageObject) objArr[1], (String) objArr[2], (SendMessagesHelper.DelayedMessage) objArr[3], ((Boolean) objArr[4]).booleanValue(), (SendMessagesHelper.DelayedMessage) objArr[5], null, null, ((Boolean) objArr[6]).booleanValue());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:31:0x009f A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:379:0x07d2  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0879  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0896  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00a1 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00a2  */
+    /* JADX WARN: Removed duplicated region for block: B:379:0x07d4  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x087b  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0898  */
     /* JADX WARN: Type inference failed for: r13v0 */
     /* JADX WARN: Type inference failed for: r13v25 */
     /*
@@ -2650,7 +2650,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0049, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x004a, code lost:
     
         if ("update".equals(r11) != false) goto L26;
      */

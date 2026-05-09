@@ -13,7 +13,7 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.Writer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class Streams {
     public static JsonElement parse(JsonReader jsonReader) {
         boolean z;

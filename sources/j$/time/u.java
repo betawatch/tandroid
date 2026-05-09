@@ -1,60 +1,38 @@
 package j$.time;
 
-import j$.time.temporal.ChronoUnit;
-
 /* loaded from: classes2.dex */
-abstract /* synthetic */ class u {
-    static final /* synthetic */ int[] a;
-    static final /* synthetic */ int[] b;
+final class u implements j$.time.temporal.m {
+    final /* synthetic */ ZoneId a;
 
-    static {
-        int[] iArr = new int[ChronoUnit.values().length];
-        b = iArr;
-        try {
-            iArr[ChronoUnit.MONTHS.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
+    @Override // j$.time.temporal.m
+    public final boolean g(j$.time.temporal.p pVar) {
+        return false;
+    }
+
+    @Override // j$.time.temporal.m
+    public final /* synthetic */ int l(j$.time.temporal.p pVar) {
+        return j$.time.temporal.l.a(this, pVar);
+    }
+
+    @Override // j$.time.temporal.m
+    public final /* synthetic */ j$.time.temporal.u o(j$.time.temporal.p pVar) {
+        return j$.time.temporal.l.d(this, pVar);
+    }
+
+    u(ZoneId zoneId) {
+        this.a = zoneId;
+    }
+
+    @Override // j$.time.temporal.m
+    public final long r(j$.time.temporal.p pVar) {
+        throw new j$.time.temporal.t(d.a("Unsupported field: ", pVar));
+    }
+
+    @Override // j$.time.temporal.m
+    public final Object v(j$.time.temporal.r rVar) {
+        if (rVar == j$.time.temporal.l.k()) {
+            return this.a;
         }
-        try {
-            b[ChronoUnit.YEARS.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            b[ChronoUnit.DECADES.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            b[ChronoUnit.CENTURIES.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            b[ChronoUnit.MILLENNIA.ordinal()] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            b[ChronoUnit.ERAS.ordinal()] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        int[] iArr2 = new int[j$.time.temporal.a.values().length];
-        a = iArr2;
-        try {
-            iArr2[j$.time.temporal.a.MONTH_OF_YEAR.ordinal()] = 1;
-        } catch (NoSuchFieldError unused7) {
-        }
-        try {
-            a[j$.time.temporal.a.PROLEPTIC_MONTH.ordinal()] = 2;
-        } catch (NoSuchFieldError unused8) {
-        }
-        try {
-            a[j$.time.temporal.a.YEAR_OF_ERA.ordinal()] = 3;
-        } catch (NoSuchFieldError unused9) {
-        }
-        try {
-            a[j$.time.temporal.a.YEAR.ordinal()] = 4;
-        } catch (NoSuchFieldError unused10) {
-        }
-        try {
-            a[j$.time.temporal.a.ERA.ordinal()] = 5;
-        } catch (NoSuchFieldError unused11) {
-        }
+        return j$.time.temporal.l.c(this, rVar);
     }
 }

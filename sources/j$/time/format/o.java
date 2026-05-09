@@ -45,15 +45,15 @@ final class o extends n {
             String str = null;
             Map map = null;
             if (d2.g(j$.time.temporal.a.INSTANT_SECONDS)) {
-                r0 = zoneId.getRules().g(Instant.J(d2));
+                r0 = zoneId.getRules().g(Instant.H(d2));
             } else {
                 j$.time.temporal.a aVar = j$.time.temporal.a.EPOCH_DAY;
                 if (d2.g(aVar)) {
                     j$.time.temporal.a aVar2 = j$.time.temporal.a.NANO_OF_DAY;
                     if (d2.g(aVar2)) {
-                        LocalDateTime Q = LocalDateTime.Q(LocalDate.V(d2.s(aVar)), j$.time.j.Q(d2.s(aVar2)));
-                        if (zoneId.getRules().e(Q) == null) {
-                            r0 = zoneId.getRules().g(Instant.M(ZonedDateTime.K(Q, zoneId, null).H(), r0.b().N()));
+                        LocalDateTime O = LocalDateTime.O(LocalDate.T(d2.r(aVar)), j$.time.i.O(d2.r(aVar2)));
+                        if (zoneId.getRules().e(O) == null) {
+                            r0 = zoneId.getRules().g(Instant.K(ZonedDateTime.I(O, zoneId, null).F(), r0.b().L()));
                         }
                     }
                 }

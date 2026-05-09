@@ -1615,7 +1615,7 @@ public class BufferedChannel implements Channel {
         } while (!receivers$volatile$FU.compareAndSet(this, j2, j));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:89:0x01bd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x01be, code lost:
     
         r3 = (kotlinx.coroutines.channels.ChannelSegment) r3.getNext();
      */

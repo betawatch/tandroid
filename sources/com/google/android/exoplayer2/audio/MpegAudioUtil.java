@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.audio;
 
+import androidx.car.app.media.CarAudioRecord;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.OneUIUtilities;
 
@@ -11,7 +12,7 @@ public abstract class MpegAudioUtil {
     private static final int[] BITRATE_V2_L1 = {32000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 144000, 160000, 176000, 192000, 224000, 256000};
     private static final int[] BITRATE_V1_L2 = {32000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000, 224000, 256000, 320000, 384000};
     private static final int[] BITRATE_V1_L3 = {32000, OneUIUtilities.ONE_UI_4_0, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000, 224000, 256000, 320000};
-    private static final int[] BITRATE_V2 = {8000, 16000, 24000, 32000, OneUIUtilities.ONE_UI_4_0, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 144000, 160000};
+    private static final int[] BITRATE_V2 = {8000, CarAudioRecord.AUDIO_CONTENT_SAMPLING_RATE, 24000, 32000, OneUIUtilities.ONE_UI_4_0, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 144000, 160000};
 
     /* JADX INFO: Access modifiers changed from: private */
     public static boolean isMagicPresent(int i) {

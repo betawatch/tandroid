@@ -5,7 +5,7 @@ import java.io.ObjectStreamClass;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class UnsafeAllocator {
     public static final UnsafeAllocator INSTANCE = create();
 
@@ -37,35 +37,35 @@ public abstract class UnsafeAllocator {
                         }
                     };
                 } catch (Exception unused) {
-                    final Method declaredMethod = ObjectInputStream.class.getDeclaredMethod("newInstance", Class.class, Class.class);
+                    Method declaredMethod = ObjectStreamClass.class.getDeclaredMethod("getConstructorId", Class.class);
                     declaredMethod.setAccessible(true);
-                    return new UnsafeAllocator() { // from class: com.google.gson.internal.UnsafeAllocator.3
+                    final int intValue = ((Integer) declaredMethod.invoke(null, Object.class)).intValue();
+                    final Method declaredMethod2 = ObjectStreamClass.class.getDeclaredMethod("newInstance", Class.class, Integer.TYPE);
+                    declaredMethod2.setAccessible(true);
+                    return new UnsafeAllocator() { // from class: com.google.gson.internal.UnsafeAllocator.2
                         @Override // com.google.gson.internal.UnsafeAllocator
                         public Object newInstance(Class cls2) {
                             UnsafeAllocator.assertInstantiable(cls2);
-                            return declaredMethod.invoke(null, cls2, Object.class);
+                            return declaredMethod2.invoke(null, cls2, Integer.valueOf(intValue));
                         }
                     };
                 }
             } catch (Exception unused2) {
-                Method declaredMethod2 = ObjectStreamClass.class.getDeclaredMethod("getConstructorId", Class.class);
-                declaredMethod2.setAccessible(true);
-                final int intValue = ((Integer) declaredMethod2.invoke(null, Object.class)).intValue();
-                final Method declaredMethod3 = ObjectStreamClass.class.getDeclaredMethod("newInstance", Class.class, Integer.TYPE);
-                declaredMethod3.setAccessible(true);
-                return new UnsafeAllocator() { // from class: com.google.gson.internal.UnsafeAllocator.2
+                return new UnsafeAllocator() { // from class: com.google.gson.internal.UnsafeAllocator.4
                     @Override // com.google.gson.internal.UnsafeAllocator
                     public Object newInstance(Class cls2) {
-                        UnsafeAllocator.assertInstantiable(cls2);
-                        return declaredMethod3.invoke(null, cls2, Integer.valueOf(intValue));
+                        throw new UnsupportedOperationException("Cannot allocate " + cls2 + ". Usage of JDK sun.misc.Unsafe is enabled, but it could not be used. Make sure your runtime is configured correctly.");
                     }
                 };
             }
         } catch (Exception unused3) {
-            return new UnsafeAllocator() { // from class: com.google.gson.internal.UnsafeAllocator.4
+            final Method declaredMethod3 = ObjectInputStream.class.getDeclaredMethod("newInstance", Class.class, Class.class);
+            declaredMethod3.setAccessible(true);
+            return new UnsafeAllocator() { // from class: com.google.gson.internal.UnsafeAllocator.3
                 @Override // com.google.gson.internal.UnsafeAllocator
                 public Object newInstance(Class cls2) {
-                    throw new UnsupportedOperationException("Cannot allocate " + cls2 + ". Usage of JDK sun.misc.Unsafe is enabled, but it could not be used. Make sure your runtime is configured correctly.");
+                    UnsafeAllocator.assertInstantiable(cls2);
+                    return declaredMethod3.invoke(null, cls2, Object.class);
                 }
             };
         }

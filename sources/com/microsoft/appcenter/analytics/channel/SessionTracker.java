@@ -11,7 +11,7 @@ import com.microsoft.appcenter.utils.context.SessionContext;
 import java.util.Date;
 import java.util.UUID;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class SessionTracker extends AbstractChannelListener {
     private final Channel mChannel;
     private final String mGroupName;

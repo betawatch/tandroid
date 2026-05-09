@@ -21,7 +21,7 @@ public final class v extends a implements Serializable {
     }
 
     @Override // j$.time.chrono.l
-    public final String r() {
+    public final String q() {
         return "japanese";
     }
 
@@ -30,16 +30,16 @@ public final class v extends a implements Serializable {
         if (mVar instanceof x) {
             return (x) mVar;
         }
-        return new x(LocalDate.K(mVar));
+        return new x(LocalDate.I(mVar));
     }
 
     @Override // j$.time.chrono.l
-    public final m G(int i) {
-        return y.C(i);
+    public final m E(int i) {
+        return y.A(i);
     }
 
     @Override // j$.time.chrono.l
-    public final j$.time.temporal.u C(j$.time.temporal.a aVar) {
+    public final j$.time.temporal.u A(j$.time.temporal.a aVar) {
         switch (u.a[aVar.ordinal()]) {
             case 1:
             case 2:
@@ -47,21 +47,21 @@ public final class v extends a implements Serializable {
             case 4:
                 throw new j$.time.temporal.t("Unsupported field: " + aVar);
             case 5:
-                return j$.time.temporal.u.k(y.G(), 999999999 - y.r().v().getYear());
+                return j$.time.temporal.u.k(y.E(), 999999999 - y.q().u().getYear());
             case 6:
-                return j$.time.temporal.u.k(y.D(), j$.time.temporal.a.DAY_OF_YEAR.k().d());
+                return j$.time.temporal.u.k(y.B(), j$.time.temporal.a.DAY_OF_YEAR.k().d());
             case 7:
                 return j$.time.temporal.u.j(x.d.getYear(), 999999999L);
             case 8:
-                return j$.time.temporal.u.j(y.d.getValue(), y.r().getValue());
+                return j$.time.temporal.u.j(y.d.getValue(), y.q().getValue());
             default:
                 return aVar.k();
         }
     }
 
     @Override // j$.time.chrono.l
-    public final ChronoZonedDateTime D(Instant instant, ZoneId zoneId) {
-        return k.J(this, instant, zoneId);
+    public final ChronoZonedDateTime B(Instant instant, ZoneId zoneId) {
+        return k.H(this, instant, zoneId);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {

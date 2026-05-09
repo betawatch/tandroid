@@ -2,7 +2,7 @@ package com.google.mlkit.nl.languageid.internal;
 
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface LanguageIdentifierDelegate {
     List identifyPossibleLanguages(String str, float f);
 

@@ -16,7 +16,7 @@ abstract class g implements p {
     private static final /* synthetic */ g[] b;
 
     @Override // j$.time.temporal.p
-    public final boolean w() {
+    public final boolean v() {
         return true;
     }
 
@@ -47,20 +47,20 @@ abstract class g implements p {
             }
 
             @Override // j$.time.temporal.p
-            public final u s(m mVar) {
+            public final u r(m mVar) {
                 if (!n(mVar)) {
                     throw new t("Unsupported field: DayOfQuarter");
                 }
-                long s = mVar.s(g.QUARTER_OF_YEAR);
-                if (s == 1) {
-                    long s2 = mVar.s(a.YEAR);
+                long r = mVar.r(g.QUARTER_OF_YEAR);
+                if (r == 1) {
+                    long r2 = mVar.r(a.YEAR);
                     j$.time.chrono.s.d.getClass();
-                    return j$.time.chrono.s.n(s2) ? u.j(1L, 91L) : u.j(1L, 90L);
+                    return j$.time.chrono.s.n(r2) ? u.j(1L, 91L) : u.j(1L, 90L);
                 }
-                if (s == 2) {
+                if (r == 2) {
                     return u.j(1L, 91L);
                 }
-                if (s == 3 || s == 4) {
+                if (r == 3 || r == 4) {
                     return u.j(1L, 92L);
                 }
                 return k();
@@ -74,11 +74,11 @@ abstract class g implements p {
                 }
                 int l = mVar.l(a.DAY_OF_YEAR);
                 int l2 = mVar.l(a.MONTH_OF_YEAR);
-                long s = mVar.s(a.YEAR);
+                long r = mVar.r(a.YEAR);
                 iArr = g.a;
                 int i = (l2 - 1) / 3;
                 j$.time.chrono.s.d.getClass();
-                return l - iArr[i + (j$.time.chrono.s.n(s) ? 4 : 0)];
+                return l - iArr[i + (j$.time.chrono.s.n(r) ? 4 : 0)];
             }
 
             @Override // j$.time.temporal.p
@@ -86,7 +86,7 @@ abstract class g implements p {
                 long l = l(temporal);
                 k().b(j, this);
                 a aVar = a.DAY_OF_YEAR;
-                return temporal.d((j - l) + temporal.s(aVar), aVar);
+                return temporal.d((j - l) + temporal.r(aVar), aVar);
             }
 
             @Override // java.lang.Enum
@@ -117,11 +117,11 @@ abstract class g implements p {
                 if (!n(mVar)) {
                     throw new t("Unsupported field: QuarterOfYear");
                 }
-                return (mVar.s(a.MONTH_OF_YEAR) + 2) / 3;
+                return (mVar.r(a.MONTH_OF_YEAR) + 2) / 3;
             }
 
             @Override // j$.time.temporal.p
-            public final u s(m mVar) {
+            public final u r(m mVar) {
                 if (!n(mVar)) {
                     throw new t("Unsupported field: QuarterOfYear");
                 }
@@ -133,7 +133,7 @@ abstract class g implements p {
                 long l = l(temporal);
                 k().b(j, this);
                 a aVar = a.MONTH_OF_YEAR;
-                return temporal.d(((j - l) * 3) + temporal.s(aVar), aVar);
+                return temporal.d(((j - l) * 3) + temporal.r(aVar), aVar);
             }
 
             @Override // java.lang.Enum
@@ -160,11 +160,11 @@ abstract class g implements p {
             }
 
             @Override // j$.time.temporal.p
-            public final u s(m mVar) {
+            public final u r(m mVar) {
                 if (!n(mVar)) {
                     throw new t("Unsupported field: WeekOfWeekBasedYear");
                 }
-                return g.L(LocalDate.K(mVar));
+                return g.J(LocalDate.I(mVar));
             }
 
             @Override // j$.time.temporal.p
@@ -172,7 +172,7 @@ abstract class g implements p {
                 if (!n(mVar)) {
                     throw new t("Unsupported field: WeekOfWeekBasedYear");
                 }
-                return g.I(LocalDate.K(mVar));
+                return g.G(LocalDate.I(mVar));
             }
 
             @Override // j$.time.temporal.p
@@ -206,16 +206,16 @@ abstract class g implements p {
 
             @Override // j$.time.temporal.p
             public final long l(m mVar) {
-                int M;
+                int K;
                 if (!n(mVar)) {
                     throw new t("Unsupported field: WeekBasedYear");
                 }
-                M = g.M(LocalDate.K(mVar));
-                return M;
+                K = g.K(LocalDate.I(mVar));
+                return K;
             }
 
             @Override // j$.time.temporal.p
-            public final u s(m mVar) {
+            public final u r(m mVar) {
                 if (!n(mVar)) {
                     throw new t("Unsupported field: WeekBasedYear");
                 }
@@ -224,21 +224,21 @@ abstract class g implements p {
 
             @Override // j$.time.temporal.p
             public final Temporal o(Temporal temporal, long j) {
-                int N;
+                int L;
                 if (!n(temporal)) {
                     throw new t("Unsupported field: WeekBasedYear");
                 }
                 int a2 = a.YEAR.k().a(j, g.WEEK_BASED_YEAR);
-                LocalDate K = LocalDate.K(temporal);
-                int l = K.l(a.DAY_OF_WEEK);
-                int I = g.I(K);
-                if (I == 53) {
-                    N = g.N(a2);
-                    if (N == 52) {
-                        I = 52;
+                LocalDate I = LocalDate.I(temporal);
+                int l = I.l(a.DAY_OF_WEEK);
+                int G = g.G(I);
+                if (G == 53) {
+                    L = g.L(a2);
+                    if (L == 52) {
+                        G = 52;
                     }
                 }
-                return temporal.n(LocalDate.of(a2, 1, 4).plusDays(((I - 1) * 7) + (l - r6.l(r0))));
+                return temporal.n(LocalDate.of(a2, 1, 4).plusDays(((G - 1) * 7) + (l - r6.l(r0))));
             }
 
             @Override // java.lang.Enum
@@ -251,48 +251,48 @@ abstract class g implements p {
         a = new int[]{0, 90, NotificationCenter.newEmojiSuggestionsAvailable, NotificationCenter.didSetNewWallpapper, 0, 91, NotificationCenter.themeUploadedToServer, NotificationCenter.proxySettingsChanged};
     }
 
-    static u L(LocalDate localDate) {
-        return u.j(1L, N(M(localDate)));
+    static u J(LocalDate localDate) {
+        return u.j(1L, L(K(localDate)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static int N(int i) {
+    public static int L(int i) {
         LocalDate of = LocalDate.of(i, 1, 1);
-        if (of.M() != DayOfWeek.THURSDAY) {
-            return (of.M() == DayOfWeek.WEDNESDAY && of.R()) ? 53 : 52;
+        if (of.K() != DayOfWeek.THURSDAY) {
+            return (of.K() == DayOfWeek.WEDNESDAY && of.P()) ? 53 : 52;
         }
         return 53;
     }
 
-    static int I(LocalDate localDate) {
-        int ordinal = localDate.M().ordinal();
+    static int G(LocalDate localDate) {
+        int ordinal = localDate.K().ordinal();
         int i = 1;
-        int N = localDate.N() - 1;
-        int i2 = (3 - ordinal) + N;
+        int L = localDate.L() - 1;
+        int i2 = (3 - ordinal) + L;
         int i3 = i2 - ((i2 / 7) * 7);
         int i4 = i3 - 3;
         if (i4 < -3) {
             i4 = i3 + 4;
         }
-        if (N < i4) {
-            return (int) u.j(1L, N(M(localDate.c0(NotificationCenter.needDeleteDialog).Y(-1L)))).d();
+        if (L < i4) {
+            return (int) u.j(1L, L(K(localDate.a0(NotificationCenter.needDeleteDialog).W(-1L)))).d();
         }
-        int i5 = ((N - i4) / 7) + 1;
-        if (i5 != 53 || i4 == -3 || (i4 == -2 && localDate.R())) {
+        int i5 = ((L - i4) / 7) + 1;
+        if (i5 != 53 || i4 == -3 || (i4 == -2 && localDate.P())) {
             i = i5;
         }
         return i;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static int M(LocalDate localDate) {
+    public static int K(LocalDate localDate) {
         int year = localDate.getYear();
-        int N = localDate.N();
-        if (N <= 3) {
-            return N - localDate.M().ordinal() < -2 ? year - 1 : year;
+        int L = localDate.L();
+        if (L <= 3) {
+            return L - localDate.K().ordinal() < -2 ? year - 1 : year;
         }
-        if (N >= 363) {
-            return ((N - 363) - (localDate.R() ? 1 : 0)) - localDate.M().ordinal() >= 0 ? year + 1 : year;
+        if (L >= 363) {
+            return ((L - 363) - (localDate.P() ? 1 : 0)) - localDate.K().ordinal() >= 0 ? year + 1 : year;
         }
         return year;
     }
