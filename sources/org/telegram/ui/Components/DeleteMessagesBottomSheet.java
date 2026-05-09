@@ -565,7 +565,10 @@ public class DeleteMessagesBottomSheet extends BottomSheetWithRecyclerListView {
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
     protected CharSequence getTitle() {
-        if (!this.restrictUserDeleteAllMessages && this.isReactionOnlyMode) {
+        if (this.isReactionOnlyMode) {
+            if (this.restrictUserDeleteAllMessages) {
+                return LocaleController.getString(R.string.DeleteMessagesOptionsTitleAll);
+            }
             if (this.restrictUserDeleteAllReactions) {
                 return LocaleController.getString(R.string.DeleteReactionOptionsTitleAll);
             }

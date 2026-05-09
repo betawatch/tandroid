@@ -542,7 +542,7 @@ public class StakedDiceSheet extends BottomSheetWithRecyclerListView {
             }
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.StakeDiceToast));
             spannableStringBuilder.append((CharSequence) StarsIntroActivity.formatTON(j2));
-            spannableStringBuilder.append((CharSequence) "  ").append(ButtonSpan.make("change", new Runnable() { // from class: org.telegram.ui.StakedDiceSheet$$ExternalSyntheticLambda0
+            spannableStringBuilder.append((CharSequence) "  ").append(ButtonSpan.make(LocaleController.getString(R.string.StakeDiceToastChange), new Runnable() { // from class: org.telegram.ui.StakedDiceSheet$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
                     StakedDiceSheet.lambda$showStakeToast$7(BaseFragment.this, callback);
