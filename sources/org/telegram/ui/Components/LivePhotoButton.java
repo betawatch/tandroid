@@ -49,7 +49,7 @@ public class LivePhotoButton extends View {
         float width2 = bounds.right - (bounds.width() * 0.101f);
         if (f > 0.0f) {
             this.cutPaint.setStrokeWidth(AndroidUtilities.dp(4.0f));
-            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, NotificationCenter.didReceiveCall, 31);
+            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, NotificationCenter.didReceiveSmsCode, 31);
             this.icon.draw(canvas);
             if (this.value) {
                 canvas.drawLine(width2 - AndroidUtilities.dp(4.0f), height2 - AndroidUtilities.dp(4.0f), AndroidUtilities.lerp(width2 - AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + width, f), AndroidUtilities.lerp(height2 - AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + height, f), this.cutPaint);

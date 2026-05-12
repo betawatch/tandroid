@@ -93,12 +93,12 @@ final class a implements Externalizable {
     static void c(long j, ObjectOutput objectOutput) {
         if (j >= -4575744000L && j < 10413792000L && j % 900 == 0) {
             int i = (int) ((j + 4575744000L) / 900);
-            objectOutput.writeByte((i >>> 16) & NotificationCenter.didReceiveCall);
-            objectOutput.writeByte((i >>> 8) & NotificationCenter.didReceiveCall);
-            objectOutput.writeByte(i & NotificationCenter.didReceiveCall);
+            objectOutput.writeByte((i >>> 16) & NotificationCenter.didReceiveSmsCode);
+            objectOutput.writeByte((i >>> 8) & NotificationCenter.didReceiveSmsCode);
+            objectOutput.writeByte(i & NotificationCenter.didReceiveSmsCode);
             return;
         }
-        objectOutput.writeByte(NotificationCenter.didReceiveCall);
+        objectOutput.writeByte(NotificationCenter.didReceiveSmsCode);
         objectOutput.writeLong(j);
     }
 

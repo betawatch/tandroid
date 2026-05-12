@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 
 /* loaded from: classes5.dex */
 public class SummaryIcon extends Drawable {
-    private int alpha = NotificationCenter.didReceiveCall;
+    private int alpha = NotificationCenter.didReceiveSmsCode;
     private final Drawable arrow;
     private boolean on;
     private final AnimatedFloat progress;

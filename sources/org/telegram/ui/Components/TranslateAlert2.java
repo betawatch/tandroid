@@ -810,7 +810,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
 
                         @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
                         public void updateDrawState(TextPaint textPaint) {
-                            int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & NotificationCenter.didReceiveCall);
+                            int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & NotificationCenter.didReceiveSmsCode);
                             if (!(uRLSpan instanceof URLSpanNoUnderline)) {
                                 textPaint.setUnderlineText(true);
                             }

@@ -918,7 +918,7 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
         this.convertingVideo = null;
         this.videoPath = null;
         this.vectorMarkup = messageObject == null ? null : messageObject.emojiMarkup;
-        this.bigPhoto = ImageLoader.scaleAndSaveImage(bitmap, 800.0f, 800.0f, 80, false, NotificationCenter.wallpaperSettedToUser, NotificationCenter.wallpaperSettedToUser);
+        this.bigPhoto = ImageLoader.scaleAndSaveImage(bitmap, 800.0f, 800.0f, 80, false, NotificationCenter.onDatabaseReset, NotificationCenter.onDatabaseReset);
         TLRPC.PhotoSize scaleAndSaveImage = ImageLoader.scaleAndSaveImage(bitmap, 150.0f, 150.0f, 80, false, 150, 150);
         this.smallPhoto = scaleAndSaveImage;
         if (scaleAndSaveImage != null) {
@@ -1120,7 +1120,7 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
                         }
                         pathToAttach2.delete();
                     }
-                    this.bigPhoto = ImageLoader.scaleAndSaveImage(createVideoThumbnailAtTime, 800.0f, 800.0f, 80, false, NotificationCenter.wallpaperSettedToUser, NotificationCenter.wallpaperSettedToUser);
+                    this.bigPhoto = ImageLoader.scaleAndSaveImage(createVideoThumbnailAtTime, 800.0f, 800.0f, 80, false, NotificationCenter.onDatabaseReset, NotificationCenter.onDatabaseReset);
                     TLRPC.PhotoSize scaleAndSaveImage = ImageLoader.scaleAndSaveImage(createVideoThumbnailAtTime, 150.0f, 150.0f, 80, false, 150, 150);
                     this.smallPhoto = scaleAndSaveImage;
                     if (scaleAndSaveImage != null) {

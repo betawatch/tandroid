@@ -8,7 +8,7 @@ import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes3.dex */
 public class MacroInfo {
-    public static HashMap<String, MacroInfo> Commands = new HashMap<>(NotificationCenter.onDatabaseOpened);
+    public static HashMap<String, MacroInfo> Commands = new HashMap<>(NotificationCenter.dialogsUnreadPollVotesCounterChanged);
     public static HashMap<String, Object> Packages = new HashMap<>();
     public boolean hasOptions;
     public Method macro;

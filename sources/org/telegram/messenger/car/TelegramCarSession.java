@@ -8,6 +8,6 @@ import androidx.car.app.Session;
 public class TelegramCarSession extends Session {
     @Override // androidx.car.app.Session
     public Screen onCreateScreen(Intent intent) {
-        return new ConversationsScreen(getCarContext());
+        return new HomeScreen(getCarContext());
     }
 }

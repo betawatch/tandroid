@@ -7431,12 +7431,12 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             if (read != 255 || read2 != 216) {
                 throw new IOException("Not a JPEG: " + file);
             }
-            outputStream.write(NotificationCenter.didReceiveCall);
+            outputStream.write(NotificationCenter.didReceiveSmsCode);
             outputStream.write(NotificationCenter.premiumFloodWaitReceived);
-            outputStream.write(NotificationCenter.didReceiveCall);
+            outputStream.write(NotificationCenter.didReceiveSmsCode);
             outputStream.write(225);
-            outputStream.write((length >> 8) & NotificationCenter.didReceiveCall);
-            outputStream.write(length & NotificationCenter.didReceiveCall);
+            outputStream.write((length >> 8) & NotificationCenter.didReceiveSmsCode);
+            outputStream.write(length & NotificationCenter.didReceiveSmsCode);
             outputStream.write(bytes);
             outputStream.write(bytes2);
             byte[] bArr = new byte[65536];

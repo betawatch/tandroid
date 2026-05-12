@@ -131,7 +131,7 @@ public abstract class BlurredBackgroundProviderImpl {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ int lambda$bottomPanelChatActivity$6(Theme.ResourcesProvider resourcesProvider, Theme.ResourcesProvider resourcesProvider2, boolean z) {
         if (!checkBlurEnabled(resourcesProvider)) {
-            return ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_chat_messagePanelBackground, resourcesProvider2), NotificationCenter.didReceiveCall);
+            return ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_chat_messagePanelBackground, resourcesProvider2), NotificationCenter.didReceiveSmsCode);
         }
         return Theme.multAlpha(Theme.getColor(Theme.key_chat_messagePanelBackground, resourcesProvider2), LiteMode.isEnabled(262144) ? 0.85f : 0.76f);
     }
@@ -150,7 +150,7 @@ public abstract class BlurredBackgroundProviderImpl {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ int lambda$topPanelChatActivity$7(Theme.ResourcesProvider resourcesProvider, Theme.ResourcesProvider resourcesProvider2, boolean z) {
         if (!checkBlurEnabled(resourcesProvider)) {
-            return ColorUtils.setAlphaComponent(Theme.getColor(z ? Theme.key_actionBarDefault : Theme.key_chat_topPanelBackground, resourcesProvider2), NotificationCenter.didReceiveCall);
+            return ColorUtils.setAlphaComponent(Theme.getColor(z ? Theme.key_actionBarDefault : Theme.key_chat_topPanelBackground, resourcesProvider2), NotificationCenter.didReceiveSmsCode);
         }
         return Theme.multAlpha(Theme.getColor(Theme.key_chat_topPanelBackground, resourcesProvider2), LiteMode.isEnabled(262144) ? 0.85f : 0.76f);
     }
@@ -243,13 +243,13 @@ public abstract class BlurredBackgroundProviderImpl {
             return Color.argb(0, 0, 0, 0);
         }
         if (clamp >= 1.0f) {
-            return Color.argb(NotificationCenter.didReceiveCall, Color.red(i2), Color.green(i2), Color.blue(i2));
+            return Color.argb(NotificationCenter.didReceiveSmsCode, Color.red(i2), Color.green(i2), Color.blue(i2));
         }
         int red = Color.red(i);
         int green = Color.green(i);
         int blue = Color.blue(i);
         float f2 = 1.0f - clamp;
-        return Color.argb(MathUtils.clamp(Math.round(clamp * 255.0f), 0, NotificationCenter.didReceiveCall), MathUtils.clamp(Math.round((Color.red(i2) - (red * f2)) / clamp), 0, NotificationCenter.didReceiveCall), MathUtils.clamp(Math.round((Color.green(i2) - (green * f2)) / clamp), 0, NotificationCenter.didReceiveCall), MathUtils.clamp(Math.round((Color.blue(i2) - (blue * f2)) / clamp), 0, NotificationCenter.didReceiveCall));
+        return Color.argb(MathUtils.clamp(Math.round(clamp * 255.0f), 0, NotificationCenter.didReceiveSmsCode), MathUtils.clamp(Math.round((Color.red(i2) - (red * f2)) / clamp), 0, NotificationCenter.didReceiveSmsCode), MathUtils.clamp(Math.round((Color.green(i2) - (green * f2)) / clamp), 0, NotificationCenter.didReceiveSmsCode), MathUtils.clamp(Math.round((Color.blue(i2) - (blue * f2)) / clamp), 0, NotificationCenter.didReceiveSmsCode));
     }
 
     public static boolean checkBlurEnabled(Theme.ResourcesProvider resourcesProvider) {

@@ -1092,7 +1092,7 @@ public class ReactionsLayoutInBubble {
             StarsReactionsSheet.Particles particles = this.particles;
             particles.setBounds(particles.bounds);
             boolean process = this.particles.process();
-            this.particles.draw(canvas, ColorUtils.blendARGB(ColorUtils.setAlphaComponent(this.backgroundColor, NotificationCenter.didReceiveCall), ColorUtils.blendARGB(this.serviceTextColor, ColorUtils.setAlphaComponent(this.backgroundColor, NotificationCenter.didReceiveCall), 0.4f), getDrawServiceShaderBackground()));
+            this.particles.draw(canvas, ColorUtils.blendARGB(ColorUtils.setAlphaComponent(this.backgroundColor, NotificationCenter.didReceiveSmsCode), ColorUtils.blendARGB(this.serviceTextColor, ColorUtils.setAlphaComponent(this.backgroundColor, NotificationCenter.didReceiveSmsCode), 0.4f), getDrawServiceShaderBackground()));
             if (this.isSelected) {
                 this.tagPath.rewind();
                 this.tagPath.addRoundRect(rectF, f5, f5, Path.Direction.CW);
@@ -1232,7 +1232,7 @@ public class ReactionsLayoutInBubble {
             }
             if (z4) {
                 rectF.right += AndroidUtilities.dp(4.0f);
-                canvas.saveLayerAlpha(rectF, NotificationCenter.didReceiveCall, 31);
+                canvas.saveLayerAlpha(rectF, NotificationCenter.didReceiveSmsCode, 31);
                 rectF.right -= AndroidUtilities.dp(4.0f);
             }
             if (this.particles != null) {

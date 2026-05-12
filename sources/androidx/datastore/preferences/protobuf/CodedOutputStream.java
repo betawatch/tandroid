@@ -512,15 +512,15 @@ public abstract class CodedOutputStream extends ByteOutput {
             int i2 = this.position;
             int i3 = i2 + 1;
             this.position = i3;
-            bArr[i2] = (byte) (i & NotificationCenter.didReceiveCall);
+            bArr[i2] = (byte) (i & NotificationCenter.didReceiveSmsCode);
             int i4 = i2 + 2;
             this.position = i4;
-            bArr[i3] = (byte) ((i >> 8) & NotificationCenter.didReceiveCall);
+            bArr[i3] = (byte) ((i >> 8) & NotificationCenter.didReceiveSmsCode);
             int i5 = i2 + 3;
             this.position = i5;
-            bArr[i4] = (byte) ((i >> 16) & NotificationCenter.didReceiveCall);
+            bArr[i4] = (byte) ((i >> 16) & NotificationCenter.didReceiveSmsCode);
             this.position = i2 + 4;
-            bArr[i5] = (byte) ((i >> 24) & NotificationCenter.didReceiveCall);
+            bArr[i5] = (byte) ((i >> 24) & NotificationCenter.didReceiveSmsCode);
             this.totalBytesWritten += 4;
         }
 
@@ -541,15 +541,15 @@ public abstract class CodedOutputStream extends ByteOutput {
             bArr[i4] = (byte) (255 & (j >> 24));
             int i6 = i + 5;
             this.position = i6;
-            bArr[i5] = (byte) (((int) (j >> 32)) & NotificationCenter.didReceiveCall);
+            bArr[i5] = (byte) (((int) (j >> 32)) & NotificationCenter.didReceiveSmsCode);
             int i7 = i + 6;
             this.position = i7;
-            bArr[i6] = (byte) (((int) (j >> 40)) & NotificationCenter.didReceiveCall);
+            bArr[i6] = (byte) (((int) (j >> 40)) & NotificationCenter.didReceiveSmsCode);
             int i8 = i + 7;
             this.position = i8;
-            bArr[i7] = (byte) (((int) (j >> 48)) & NotificationCenter.didReceiveCall);
+            bArr[i7] = (byte) (((int) (j >> 48)) & NotificationCenter.didReceiveSmsCode);
             this.position = i + 8;
-            bArr[i8] = (byte) (((int) (j >> 56)) & NotificationCenter.didReceiveCall);
+            bArr[i8] = (byte) (((int) (j >> 56)) & NotificationCenter.didReceiveSmsCode);
             this.totalBytesWritten += 8;
         }
     }

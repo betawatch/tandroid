@@ -9,7 +9,7 @@ import org.telegram.messenger.NotificationCenter;
 /* loaded from: classes3.dex */
 public final class Tokeniser {
     private static final char[] notCharRefCharsSorted;
-    static final int[] win1252Extensions = {8364, NotificationCenter.messageTranslating, 8218, 402, 8222, 8230, 8224, 8225, 710, 8240, 352, 8249, NotificationCenter.tlSchemeParseException, NotificationCenter.fileLoadProgressChanged, 381, NotificationCenter.fileLoadFailed, NotificationCenter.filePreparingStarted, 8216, 8217, 8220, 8221, 8226, 8211, 8212, 732, 8482, 353, 8250, NotificationCenter.memoryLeakFoundException, NotificationCenter.recordStopped, 382, 376};
+    static final int[] win1252Extensions = {8364, NotificationCenter.messageTranslating, 8218, 402, 8222, 8230, 8224, 8225, 710, 8240, 352, 8249, NotificationCenter.botForumDraftDelete, NotificationCenter.fileLoadProgressChanged, 381, NotificationCenter.fileLoadFailed, NotificationCenter.filePreparingStarted, 8216, 8217, 8220, 8221, 8226, 8211, 8212, 732, 8482, 353, 8250, NotificationCenter.tlSchemeParseException, NotificationCenter.recordStopped, 382, 376};
     private Token emitPending;
     private final ParseErrorList errors;
     private String lastStartTag;

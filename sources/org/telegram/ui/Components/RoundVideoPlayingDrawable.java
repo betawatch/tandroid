@@ -25,7 +25,7 @@ public class RoundVideoPlayingDrawable extends Drawable {
     private int progress1Direction = 1;
     private int progress2Direction = 1;
     private int progress3Direction = 1;
-    int alpha = NotificationCenter.didReceiveCall;
+    int alpha = NotificationCenter.didReceiveSmsCode;
 
     @Override // android.graphics.drawable.Drawable
     public int getOpacity() {

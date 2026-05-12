@@ -61,7 +61,7 @@ public class AvatarsListDrawable extends Drawable {
         }
     }, CubicBezierInterpolator.EASE_OUT_QUINT, 380);
     private final ArrayList avatarItemsPool = new ArrayList();
-    private int alpha = NotificationCenter.didReceiveCall;
+    private int alpha = NotificationCenter.didReceiveSmsCode;
 
     @Override // android.graphics.drawable.Drawable
     public int getOpacity() {

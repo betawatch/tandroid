@@ -104,6 +104,11 @@ public final class ListTemplate implements Template {
         ItemList mSingleList;
         CarText mTitle;
 
+        public Builder setLoading(boolean z) {
+            this.mIsLoading = z;
+            return this;
+        }
+
         public Builder setHeaderAction(Action action) {
             ActionsConstraints actionsConstraints = ActionsConstraints.ACTIONS_CONSTRAINTS_HEADER;
             Objects.requireNonNull(action);

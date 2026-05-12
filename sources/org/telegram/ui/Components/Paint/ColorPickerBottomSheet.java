@@ -543,7 +543,7 @@ public class ColorPickerBottomSheet extends BottomSheet {
             drawable2.setBounds(i, i2, (int) (paddingLeft + dp + f3), (int) (paddingTop + dp + f3));
             this.shadowDrawable.draw(canvas);
             canvas.drawCircle(paddingLeft, paddingTop, dp, this.outlinePaint);
-            PaintColorsListView.drawColorCircle(canvas, paddingLeft, paddingTop, strokeWidth, ColorUtils.setAlphaComponent(ColorPickerBottomSheet.this.mColor, NotificationCenter.didReceiveCall));
+            PaintColorsListView.drawColorCircle(canvas, paddingLeft, paddingTop, strokeWidth, ColorUtils.setAlphaComponent(ColorPickerBottomSheet.this.mColor, NotificationCenter.didReceiveSmsCode));
         }
 
         @Override // android.view.View
@@ -801,7 +801,7 @@ public class ColorPickerBottomSheet extends BottomSheet {
                     if (SliderCell.this.isInvalidatingColor || this.previous == null || editable == null || TextUtils.isEmpty(editable) || Objects.equals(this.previous.toString(), editable.toString())) {
                         return;
                     }
-                    int clamp = MathUtils.clamp(Integer.parseInt(editable.toString()), 0, NotificationCenter.didReceiveCall);
+                    int clamp = MathUtils.clamp(Integer.parseInt(editable.toString()), 0, NotificationCenter.didReceiveSmsCode);
                     int i = SliderCell.this.mode;
                     ColorPickerBottomSheet.this.onSetColor(i != 1 ? i != 2 ? Color.argb(Color.alpha(ColorPickerBottomSheet.this.mColor), clamp, Color.green(ColorPickerBottomSheet.this.mColor), Color.blue(ColorPickerBottomSheet.this.mColor)) : Color.argb(Color.alpha(ColorPickerBottomSheet.this.mColor), Color.red(ColorPickerBottomSheet.this.mColor), Color.green(ColorPickerBottomSheet.this.mColor), clamp) : Color.argb(Color.alpha(ColorPickerBottomSheet.this.mColor), Color.red(ColorPickerBottomSheet.this.mColor), clamp, Color.blue(ColorPickerBottomSheet.this.mColor)), 5);
                 }
@@ -987,7 +987,7 @@ public class ColorPickerBottomSheet extends BottomSheet {
         }
 
         public void invalidateColor() {
-            this.filledColor = ColorUtils.setAlphaComponent(ColorPickerBottomSheet.this.mColor, NotificationCenter.didReceiveCall);
+            this.filledColor = ColorUtils.setAlphaComponent(ColorPickerBottomSheet.this.mColor, NotificationCenter.didReceiveSmsCode);
             invalidateShader();
             invalidate();
         }
@@ -997,14 +997,14 @@ public class ColorPickerBottomSheet extends BottomSheet {
             int argb2;
             int i = this.mode;
             if (i == 1) {
-                argb = Color.argb(NotificationCenter.didReceiveCall, Color.red(ColorPickerBottomSheet.this.mColor), 0, Color.blue(ColorPickerBottomSheet.this.mColor));
-                argb2 = Color.argb(NotificationCenter.didReceiveCall, Color.red(ColorPickerBottomSheet.this.mColor), NotificationCenter.didReceiveCall, Color.blue(ColorPickerBottomSheet.this.mColor));
+                argb = Color.argb(NotificationCenter.didReceiveSmsCode, Color.red(ColorPickerBottomSheet.this.mColor), 0, Color.blue(ColorPickerBottomSheet.this.mColor));
+                argb2 = Color.argb(NotificationCenter.didReceiveSmsCode, Color.red(ColorPickerBottomSheet.this.mColor), NotificationCenter.didReceiveSmsCode, Color.blue(ColorPickerBottomSheet.this.mColor));
             } else if (i != 2) {
-                argb = Color.argb(NotificationCenter.didReceiveCall, 0, Color.green(ColorPickerBottomSheet.this.mColor), Color.blue(ColorPickerBottomSheet.this.mColor));
-                argb2 = Color.argb(NotificationCenter.didReceiveCall, NotificationCenter.didReceiveCall, Color.green(ColorPickerBottomSheet.this.mColor), Color.blue(ColorPickerBottomSheet.this.mColor));
+                argb = Color.argb(NotificationCenter.didReceiveSmsCode, 0, Color.green(ColorPickerBottomSheet.this.mColor), Color.blue(ColorPickerBottomSheet.this.mColor));
+                argb2 = Color.argb(NotificationCenter.didReceiveSmsCode, NotificationCenter.didReceiveSmsCode, Color.green(ColorPickerBottomSheet.this.mColor), Color.blue(ColorPickerBottomSheet.this.mColor));
             } else {
-                argb = Color.argb(NotificationCenter.didReceiveCall, Color.red(ColorPickerBottomSheet.this.mColor), Color.green(ColorPickerBottomSheet.this.mColor), 0);
-                argb2 = Color.argb(NotificationCenter.didReceiveCall, Color.red(ColorPickerBottomSheet.this.mColor), Color.green(ColorPickerBottomSheet.this.mColor), NotificationCenter.didReceiveCall);
+                argb = Color.argb(NotificationCenter.didReceiveSmsCode, Color.red(ColorPickerBottomSheet.this.mColor), Color.green(ColorPickerBottomSheet.this.mColor), 0);
+                argb2 = Color.argb(NotificationCenter.didReceiveSmsCode, Color.red(ColorPickerBottomSheet.this.mColor), Color.green(ColorPickerBottomSheet.this.mColor), NotificationCenter.didReceiveSmsCode);
             }
             this.colorPaint.setShader(new LinearGradient(0.0f, 0.0f, getWidth(), 0.0f, new int[]{argb, argb2}, (float[]) null, Shader.TileMode.CLAMP));
         }
@@ -1032,7 +1032,7 @@ public class ColorPickerBottomSheet extends BottomSheet {
             float dp = AndroidUtilities.dp(6.0f);
             float clamp = MathUtils.clamp(((f - dp) + (AndroidUtilities.dp(13.0f) - (this.outlinePaint.getStrokeWidth() / 2.0f))) / (getWidth() - (dp * 2.0f)), 0.0f, 1.0f);
             int i = this.mode;
-            int argb = i != 1 ? i != 2 ? Color.argb(NotificationCenter.didReceiveCall, (int) (clamp * 255.0f), Color.green(ColorPickerBottomSheet.this.mColor), Color.blue(ColorPickerBottomSheet.this.mColor)) : Color.argb(NotificationCenter.didReceiveCall, Color.red(ColorPickerBottomSheet.this.mColor), Color.green(ColorPickerBottomSheet.this.mColor), (int) (clamp * 255.0f)) : Color.argb(NotificationCenter.didReceiveCall, Color.red(ColorPickerBottomSheet.this.mColor), (int) (clamp * 255.0f), Color.blue(ColorPickerBottomSheet.this.mColor));
+            int argb = i != 1 ? i != 2 ? Color.argb(NotificationCenter.didReceiveSmsCode, (int) (clamp * 255.0f), Color.green(ColorPickerBottomSheet.this.mColor), Color.blue(ColorPickerBottomSheet.this.mColor)) : Color.argb(NotificationCenter.didReceiveSmsCode, Color.red(ColorPickerBottomSheet.this.mColor), Color.green(ColorPickerBottomSheet.this.mColor), (int) (clamp * 255.0f)) : Color.argb(NotificationCenter.didReceiveSmsCode, Color.red(ColorPickerBottomSheet.this.mColor), (int) (clamp * 255.0f), Color.blue(ColorPickerBottomSheet.this.mColor));
             ColorPickerBottomSheet colorPickerBottomSheet = ColorPickerBottomSheet.this;
             colorPickerBottomSheet.onSetColor(ColorUtils.setAlphaComponent(argb, Color.alpha(colorPickerBottomSheet.mColor)), 4);
             invalidate();

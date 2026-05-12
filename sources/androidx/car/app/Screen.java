@@ -46,6 +46,14 @@ public abstract class Screen implements LifecycleOwner {
         return this.mLifecycleRegistry;
     }
 
+    public final CarContext getCarContext() {
+        return this.mCarContext;
+    }
+
+    public final ScreenManager getScreenManager() {
+        return (ScreenManager) this.mCarContext.getCarService(ScreenManager.class);
+    }
+
     public void dispatchLifecycleEvent(final Lifecycle.Event event) {
         ThreadUtils.runOnMain(new Runnable() { // from class: androidx.car.app.Screen$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable

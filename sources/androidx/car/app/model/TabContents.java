@@ -1,14 +1,12 @@
 package androidx.car.app.model;
 
+import androidx.car.app.model.constraints.TabContentsConstraints;
 import j$.util.Objects;
 
 /* loaded from: classes.dex */
 public class TabContents {
     public static final String CONTENT_ID = "TAB_CONTENTS_CONTENT_ID";
     private final Template mTemplate;
-
-    public static final class Builder {
-    }
 
     public String getContentId() {
         return CONTENT_ID;
@@ -39,10 +37,25 @@ public class TabContents {
     }
 
     TabContents(Builder builder) {
-        throw null;
+        this.mTemplate = builder.mTemplate;
     }
 
     private TabContents() {
         this.mTemplate = null;
+    }
+
+    public static final class Builder {
+        Template mTemplate;
+
+        public TabContents build() {
+            return new TabContents(this);
+        }
+
+        public Builder(Template template) {
+            TabContentsConstraints tabContentsConstraints = TabContentsConstraints.API_7;
+            Objects.requireNonNull(template);
+            tabContentsConstraints.validateOrThrow(template);
+            this.mTemplate = template;
+        }
     }
 }

@@ -104,7 +104,7 @@ public class FireworksEffect {
             int nextInt = Utilities.random.nextInt(4);
             int i3 = nextInt != 0 ? nextInt != 1 ? nextInt != 2 ? nextInt != 3 ? -5752 : -15088582 : -207021 : -843755 : -13357350;
             for (int i4 = 0; i4 < 8; i4++) {
-                double nextInt2 = (Utilities.random.nextInt(NotificationCenter.locationPermissionDenied) - 225) * 0.017453292519943295d;
+                double nextInt2 = (Utilities.random.nextInt(NotificationCenter.locationPermissionGranted) - 225) * 0.017453292519943295d;
                 float cos = (float) Math.cos(nextInt2);
                 float sin = (float) Math.sin(nextInt2);
                 if (!this.freeParticles.isEmpty()) {

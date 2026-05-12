@@ -8283,7 +8283,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         for (byte b : bArr) {
             i += b & 255;
         }
-        if (i % NotificationCenter.didReceiveCall != 239) {
+        if (i % NotificationCenter.didReceiveSmsCode != 239) {
             return false;
         }
         return l == null || Utilities.bytesToLong(Utilities.computeSHA256(bArr)) == l.longValue();
@@ -8297,15 +8297,15 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         for (int i2 = 0; i2 < 32; i2++) {
             i += 255 & bArr[i2];
         }
-        int i3 = i % NotificationCenter.didReceiveCall;
+        int i3 = i % NotificationCenter.didReceiveSmsCode;
         if (i3 != 239) {
             int i4 = NotificationCenter.messagesFeeUpdated - i3;
             int nextInt = Utilities.random.nextInt(32);
             int i5 = (bArr[nextInt] & 255) + i4;
             if (i5 < 255) {
-                i5 += NotificationCenter.didReceiveCall;
+                i5 += NotificationCenter.didReceiveSmsCode;
             }
-            bArr[nextInt] = (byte) (i5 % NotificationCenter.didReceiveCall);
+            bArr[nextInt] = (byte) (i5 % NotificationCenter.didReceiveSmsCode);
         }
         return bArr;
     }
@@ -9313,7 +9313,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         for (int i3 = 0; i3 < min; i3++) {
             SendMessagesHelper.SendingMediaInfo sendingMediaInfo = (SendMessagesHelper.SendingMediaInfo) arrayList.get(i3);
             Bitmap loadBitmap = ImageLoader.loadBitmap(sendingMediaInfo.path, sendingMediaInfo.uri, 2048.0f, 2048.0f, false);
-            if (loadBitmap != null && (scaleAndSaveImage = ImageLoader.scaleAndSaveImage(loadBitmap, 2048.0f, 2048.0f, 89, false, NotificationCenter.wallpaperSettedToUser, NotificationCenter.wallpaperSettedToUser)) != null) {
+            if (loadBitmap != null && (scaleAndSaveImage = ImageLoader.scaleAndSaveImage(loadBitmap, 2048.0f, 2048.0f, 89, false, NotificationCenter.onDatabaseReset, NotificationCenter.onDatabaseReset)) != null) {
                 TLRPC.TL_secureFile tL_secureFile = new TLRPC.TL_secureFile();
                 tL_secureFile.dc_id = (int) scaleAndSaveImage.location.volume_id;
                 tL_secureFile.id = r9.local_id;

@@ -38,7 +38,7 @@ public class ChatBackgroundDrawable extends Drawable {
     View parent;
     private final boolean themeIsDark;
     final TLRPC.WallPaper wallpaper;
-    int alpha = NotificationCenter.didReceiveCall;
+    int alpha = NotificationCenter.didReceiveSmsCode;
     ImageReceiver imageReceiver = new ImageReceiver() { // from class: org.telegram.ui.ChatBackgroundDrawable.1
         @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.AnimatedEmojiSpan.InvalidateHolder
         public void invalidate() {
@@ -167,15 +167,15 @@ public class ChatBackgroundDrawable extends Drawable {
             if (wallPaperSettings == null || wallPaperSettings.intensity < 0) {
                 bitmapDrawableOf = bitmapDrawableOf(new ColorDrawable(-16777216));
             } else if (wallPaperSettings.second_background_color == 0) {
-                bitmapDrawableOf = bitmapDrawableOf(new ColorDrawable(ColorUtils.setAlphaComponent(wallPaper.settings.background_color, NotificationCenter.didReceiveCall)));
+                bitmapDrawableOf = bitmapDrawableOf(new ColorDrawable(ColorUtils.setAlphaComponent(wallPaper.settings.background_color, NotificationCenter.didReceiveSmsCode)));
             } else if (wallPaperSettings.third_background_color == 0) {
-                bitmapDrawableOf = bitmapDrawableOf(new GradientDrawable(BackgroundGradientDrawable.getGradientOrientation(wallPaper.settings.rotation), new int[]{ColorUtils.setAlphaComponent(wallPaperSettings.background_color, NotificationCenter.didReceiveCall), ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.didReceiveCall)}));
+                bitmapDrawableOf = bitmapDrawableOf(new GradientDrawable(BackgroundGradientDrawable.getGradientOrientation(wallPaper.settings.rotation), new int[]{ColorUtils.setAlphaComponent(wallPaperSettings.background_color, NotificationCenter.didReceiveSmsCode), ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.didReceiveSmsCode)}));
             } else {
-                int alphaComponent = ColorUtils.setAlphaComponent(wallPaperSettings.background_color, NotificationCenter.didReceiveCall);
-                int alphaComponent2 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.didReceiveCall);
-                int alphaComponent3 = ColorUtils.setAlphaComponent(wallPaper.settings.third_background_color, NotificationCenter.didReceiveCall);
+                int alphaComponent = ColorUtils.setAlphaComponent(wallPaperSettings.background_color, NotificationCenter.didReceiveSmsCode);
+                int alphaComponent2 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.didReceiveSmsCode);
+                int alphaComponent3 = ColorUtils.setAlphaComponent(wallPaper.settings.third_background_color, NotificationCenter.didReceiveSmsCode);
                 int i = wallPaper.settings.fourth_background_color;
-                r2 = i != 0 ? ColorUtils.setAlphaComponent(i, NotificationCenter.didReceiveCall) : 0;
+                r2 = i != 0 ? ColorUtils.setAlphaComponent(i, NotificationCenter.didReceiveSmsCode) : 0;
                 MotionBackgroundDrawable motionBackgroundDrawable = new MotionBackgroundDrawable();
                 motionBackgroundDrawable.setColors(alphaComponent, alphaComponent2, alphaComponent3, r2);
                 bitmapDrawableOf = new BitmapDrawable(motionBackgroundDrawable.getBitmap());

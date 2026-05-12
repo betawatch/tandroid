@@ -852,11 +852,11 @@ public class CodeHighlighting {
         }
 
         public int readUint8() {
-            return this.is.read() & NotificationCenter.didReceiveCall;
+            return this.is.read() & NotificationCenter.didReceiveSmsCode;
         }
 
         public int readUint16() {
-            return (this.is.read() & NotificationCenter.didReceiveCall) | ((this.is.read() & NotificationCenter.didReceiveCall) << 8);
+            return (this.is.read() & NotificationCenter.didReceiveSmsCode) | ((this.is.read() & NotificationCenter.didReceiveSmsCode) << 8);
         }
 
         public String readString() {

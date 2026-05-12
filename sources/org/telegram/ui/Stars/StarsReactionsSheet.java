@@ -1250,7 +1250,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             this.plusPaint = new Paint(1);
             this.sliderCirclePaint = new Paint(1);
             this.textBackgroundPaint = new Paint(1);
-            this.sliderParticles = new Particles(0, NotificationCenter.onDatabaseOpened);
+            this.sliderParticles = new Particles(0, NotificationCenter.dialogsUnreadPollVotesCounterChanged);
             this.textParticles = new Particles(2, 30);
             this.gradientColor1 = -1135603;
             this.gradientColor2 = -404714;
@@ -2439,7 +2439,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                         this.anonymousAvatarDrawable.setBounds(i2 - (AndroidUtilities.dp(56.0f) / 2), i3 - (AndroidUtilities.dp(56.0f) / 2), i2 + (AndroidUtilities.dp(56.0f) / 2), i3 + (AndroidUtilities.dp(56.0f) / 2));
                         this.anonymousAvatarDrawable.setAlpha((int) (f2 * 255.0f * f5));
                         this.anonymousAvatarDrawable.draw(canvas);
-                        this.anonymousAvatarDrawable.setAlpha(NotificationCenter.didReceiveCall);
+                        this.anonymousAvatarDrawable.setAlpha(NotificationCenter.didReceiveSmsCode);
                     }
                 }
                 RectF rectF = AndroidUtilities.rectTmp;

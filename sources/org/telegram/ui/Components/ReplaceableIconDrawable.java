@@ -161,7 +161,7 @@ public class ReplaceableIconDrawable extends Drawable implements Animator.Animat
         } else {
             Drawable drawable = this.currentDrawable;
             if (drawable != null) {
-                drawable.setAlpha(NotificationCenter.didReceiveCall);
+                drawable.setAlpha(NotificationCenter.didReceiveSmsCode);
                 this.currentDrawable.draw(canvas);
             }
         }
@@ -177,7 +177,7 @@ public class ReplaceableIconDrawable extends Drawable implements Animator.Animat
         }
         Drawable drawable2 = this.outDrawable;
         if (drawable2 != null) {
-            drawable2.setAlpha(NotificationCenter.didReceiveCall);
+            drawable2.setAlpha(NotificationCenter.didReceiveSmsCode);
             this.outDrawable.draw(canvas);
         }
     }

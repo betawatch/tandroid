@@ -42,7 +42,7 @@ public class InputImage implements MLTaskInput {
         boolean z = true;
         if (i != 0 && i != 90 && i != 180) {
             if (i == 270) {
-                i = NotificationCenter.locationPermissionDenied;
+                i = NotificationCenter.locationPermissionGranted;
             } else {
                 z = false;
             }

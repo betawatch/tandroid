@@ -723,7 +723,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                     canvas.translate((getMeasuredWidth() - PeerStoriesView.this.repostCounter.getCurrentWidth()) - AndroidUtilities.dp(6.0f), 0.0f);
                     float f = PeerStoriesView.this.repostCounterProgress.set(PeerStoriesView.this.repostCounterVisible ? 1.0f : 0.0f);
                     canvas.scale(f, f, PeerStoriesView.this.repostCounter.getCurrentWidth() / 2.0f, AndroidUtilities.dp(20.0f));
-                    PeerStoriesView.this.repostCounter.setAlpha(NotificationCenter.didReceiveCall);
+                    PeerStoriesView.this.repostCounter.setAlpha(NotificationCenter.didReceiveSmsCode);
                     PeerStoriesView.this.repostCounter.draw(canvas);
                     canvas.restore();
                 }
@@ -758,7 +758,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                 canvas.translate((getMeasuredWidth() - PeerStoriesView.this.reactionsCounter.getCurrentWidth()) - AndroidUtilities.dp(6.0f), 0.0f);
                 float f = PeerStoriesView.this.reactionsCounterProgress.set(PeerStoriesView.this.reactionsCounterVisible ? 1.0f : 0.0f);
                 canvas.scale(f, f, PeerStoriesView.this.reactionsCounter.getCurrentWidth() / 2.0f, AndroidUtilities.dp(20.0f));
-                PeerStoriesView.this.reactionsCounter.setAlpha(NotificationCenter.didReceiveCall);
+                PeerStoriesView.this.reactionsCounter.setAlpha(NotificationCenter.didReceiveSmsCode);
                 PeerStoriesView.this.reactionsCounter.draw(canvas);
                 canvas.restore();
             }
@@ -1180,7 +1180,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                 PeerStoriesView.this.invalidate();
             }
             float hideInterfaceAlpha = PeerStoriesView.this.getHideInterfaceAlpha();
-            this.val$sharedResources.topOverlayGradient.setAlpha(NotificationCenter.didReceiveCall);
+            this.val$sharedResources.topOverlayGradient.setAlpha(NotificationCenter.didReceiveSmsCode);
             this.val$sharedResources.topOverlayGradient.draw(canvas);
             PeerStoriesView peerStoriesView8 = PeerStoriesView.this;
             if (peerStoriesView8.isSelf || !peerStoriesView8.BIG_SCREEN || PeerStoriesView.this.storyCaptionView.getVisibility() == 0) {
@@ -4434,7 +4434,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                 PeerStoriesView.this.onSideControlButtonOnClick(i, view);
             }
         });
-        addView(this.sideControlsButtonsLayout, LayoutHelper.createFrame(57, NotificationCenter.onDatabaseOpened, 85));
+        addView(this.sideControlsButtonsLayout, LayoutHelper.createFrame(57, NotificationCenter.dialogsUnreadPollVotesCounterChanged, 85));
         this.sideControlsButtonsLayout.setVisibility(8);
         this.chatActivityEnterView.setSideButtonsForAttach(this.sideControlsButtonsLayout);
         this.reactionsContainerIndex = getChildCount();
@@ -5684,7 +5684,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
             TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j));
             if (user != null && user.verified) {
                 Drawable mutate = ContextCompat.getDrawable(getContext(), R.drawable.verified_profile).mutate();
-                mutate.setAlpha(NotificationCenter.didReceiveCall);
+                mutate.setAlpha(NotificationCenter.didReceiveSmsCode);
                 CombinedDrawable combinedDrawable = new CombinedDrawable(mutate, null);
                 combinedDrawable.setFullsize(true);
                 combinedDrawable.setCustomSize(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
@@ -5704,7 +5704,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         this.headerView.titleView.setText(AndroidUtilities.removeDiacritics(chat == null ? "" : chat.title));
         if (chat != null && chat.verified) {
             Drawable mutate2 = ContextCompat.getDrawable(getContext(), R.drawable.verified_profile).mutate();
-            mutate2.setAlpha(NotificationCenter.didReceiveCall);
+            mutate2.setAlpha(NotificationCenter.didReceiveSmsCode);
             CombinedDrawable combinedDrawable2 = new CombinedDrawable(mutate2, null);
             combinedDrawable2.setFullsize(true);
             combinedDrawable2.setCustomSize(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
@@ -10364,7 +10364,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                 if (blurredBackgroundDrawable2 != null) {
                     blurredBackgroundDrawable2.setBounds((int) this.sharedResources.popupRect.left, (int) this.sharedResources.popupRect.top, (int) this.sharedResources.popupRect.right, (int) this.sharedResources.popupRect.bottom);
                     this.emojiKeyboardBackground.setRadius(dp4, dp4, dp4, dp4);
-                    this.emojiKeyboardBackground.setAlpha(NotificationCenter.didReceiveCall);
+                    this.emojiKeyboardBackground.setAlpha(NotificationCenter.didReceiveSmsCode);
                     this.emojiKeyboardBackground.draw(canvas);
                 } else {
                     canvas.drawRoundRect(this.sharedResources.popupRect, dp4, dp4, this.inputBackgroundPaint);

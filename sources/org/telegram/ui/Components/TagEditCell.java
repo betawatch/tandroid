@@ -1403,7 +1403,7 @@ public class TagEditCell extends LinearLayout {
                 @Override // android.view.ViewGroup
                 protected boolean drawChild(Canvas canvas, View view, long j2) {
                     if (view == chatMessageCell) {
-                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveSmsCode, 31);
                         boolean drawChild = super.drawChild(canvas, view, j2);
                         canvas.save();
                         RectF rectF = AndroidUtilities.rectTmp;

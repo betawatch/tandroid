@@ -137,7 +137,7 @@ public class MatroskaExtractor implements Extractor {
             case NotificationCenter.starUserGiftsLoaded /* 231 */:
             case NotificationCenter.adminedChannelsLoaded /* 238 */:
             case NotificationCenter.appConfigUpdated /* 241 */:
-            case NotificationCenter.pushMessagesUpdated /* 251 */:
+            case NotificationCenter.activeAccountChanged /* 251 */:
             case 16871:
             case 16980:
             case 17029:
@@ -241,7 +241,7 @@ public class MatroskaExtractor implements Extractor {
         hashMap.put("htc_video_rotA-000", 0);
         hashMap.put("htc_video_rotA-090", 90);
         hashMap.put("htc_video_rotA-180", Integer.valueOf(NotificationCenter.needDeleteDialog));
-        hashMap.put("htc_video_rotA-270", Integer.valueOf(NotificationCenter.locationPermissionDenied));
+        hashMap.put("htc_video_rotA-270", Integer.valueOf(NotificationCenter.locationPermissionGranted));
         TRACK_NAME_TO_ROTATION_DEGREES = DesugarCollections.unmodifiableMap(hashMap);
     }
 
@@ -537,7 +537,7 @@ public class MatroskaExtractor implements Extractor {
                 this.cueClusterPositions.add(j);
                 this.seenClusterPositionForCurrentCuePoint = true;
                 return;
-            case NotificationCenter.pushMessagesUpdated /* 251 */:
+            case NotificationCenter.activeAccountChanged /* 251 */:
                 this.blockHasReferenceBlock = true;
                 return;
             case 16871:
@@ -1189,10 +1189,10 @@ public class MatroskaExtractor implements Extractor {
                 this.supplementalData.reset(0);
                 int limit = (this.sampleStrippedBytes.limit() + i) - this.sampleBytesRead;
                 this.scratch.reset(4);
-                this.scratch.getData()[0] = (byte) ((limit >> 24) & NotificationCenter.didReceiveCall);
-                this.scratch.getData()[1] = (byte) ((limit >> 16) & NotificationCenter.didReceiveCall);
-                this.scratch.getData()[2] = (byte) ((limit >> 8) & NotificationCenter.didReceiveCall);
-                this.scratch.getData()[3] = (byte) (limit & NotificationCenter.didReceiveCall);
+                this.scratch.getData()[0] = (byte) ((limit >> 24) & NotificationCenter.didReceiveSmsCode);
+                this.scratch.getData()[1] = (byte) ((limit >> 16) & NotificationCenter.didReceiveSmsCode);
+                this.scratch.getData()[2] = (byte) ((limit >> 8) & NotificationCenter.didReceiveSmsCode);
+                this.scratch.getData()[3] = (byte) (limit & NotificationCenter.didReceiveSmsCode);
                 trackOutput.sampleData(this.scratch, 4, 2);
                 this.sampleBytesWritten += 4;
             }
@@ -1868,7 +1868,7 @@ public class MatroskaExtractor implements Extractor {
                             } else if (Float.compare(this.projectionPosePitch, -180.0f) == 0 || Float.compare(this.projectionPosePitch, 180.0f) == 0) {
                                 i6 = NotificationCenter.needDeleteDialog;
                             } else if (Float.compare(this.projectionPosePitch, -90.0f) == 0) {
-                                i6 = NotificationCenter.locationPermissionDenied;
+                                i6 = NotificationCenter.locationPermissionGranted;
                             }
                         }
                         builder.setWidth(this.width).setHeight(this.height).setPixelWidthHeightRatio(f).setRotationDegrees(i6).setProjectionData(this.projectionData).setStereoMode(this.stereoMode).setColorInfo(colorInfo);
@@ -2727,22 +2727,22 @@ public class MatroskaExtractor implements Extractor {
                 int i3 = 1;
                 int i4 = 0;
                 while (true) {
-                    i = bArr[i3] & NotificationCenter.didReceiveCall;
+                    i = bArr[i3] & NotificationCenter.didReceiveSmsCode;
                     if (i != 255) {
                         break;
                     }
-                    i4 += NotificationCenter.didReceiveCall;
+                    i4 += NotificationCenter.didReceiveSmsCode;
                     i3++;
                 }
                 int i5 = i3 + 1;
                 int i6 = i4 + i;
                 int i7 = 0;
                 while (true) {
-                    i2 = bArr[i5] & NotificationCenter.didReceiveCall;
+                    i2 = bArr[i5] & NotificationCenter.didReceiveSmsCode;
                     if (i2 != 255) {
                         break;
                     }
-                    i7 += NotificationCenter.didReceiveCall;
+                    i7 += NotificationCenter.didReceiveSmsCode;
                     i5++;
                 }
                 int i8 = i5 + 1;

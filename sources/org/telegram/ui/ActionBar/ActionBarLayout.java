@@ -216,7 +216,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
 
     @Override // org.telegram.ui.ActionBar.INavigationLayout
     public /* synthetic */ void drawHeaderShadow(Canvas canvas, int i) {
-        drawHeaderShadow(canvas, NotificationCenter.didReceiveCall, i);
+        drawHeaderShadow(canvas, NotificationCenter.didReceiveSmsCode, i);
     }
 
     @Override // org.telegram.ui.ActionBar.INavigationLayout
@@ -1332,7 +1332,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     i5 = width - paddingRight;
                 }
                 if (view != this.containerView) {
-                    int clamp2 = MathUtils.clamp((i5 * NotificationCenter.didReceiveCall) / AndroidUtilities.dp(20.0f), 0, NotificationCenter.didReceiveCall);
+                    int clamp2 = MathUtils.clamp((i5 * NotificationCenter.didReceiveSmsCode) / AndroidUtilities.dp(20.0f), 0, NotificationCenter.didReceiveSmsCode);
                     if (clamp2 > 0) {
                         int i8 = getBottomTabsHeight(false) == 0 ? ((ViewGroup.MarginLayoutParams) view.getLayoutParams()).bottomMargin : 0;
                         if (Build.VERSION.SDK_INT < 31 || this.isSheet) {
@@ -1848,7 +1848,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 }
             }
         } else {
-            int max2 = Math.max((int) ((320.0f / this.containerView.getMeasuredWidth()) * x), newBackTransitions() ? NotificationCenter.wallpaperSettedToUser : 120);
+            int max2 = Math.max((int) ((320.0f / this.containerView.getMeasuredWidth()) * x), newBackTransitions() ? NotificationCenter.onDatabaseReset : 120);
             if (!shouldOverrideSlideTransition) {
                 long j2 = max2;
                 animatorSet.playTogether(ObjectAnimator.ofFloat(this.containerView, (Property<LayoutContainer, Float>) View.TRANSLATION_X, 0.0f).setDuration(j2), ObjectAnimator.ofFloat(this, "innerTranslationX", 0.0f).setDuration(j2));
@@ -3183,7 +3183,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 int green2 = Color.green(iArr[i2]);
                 int blue2 = Color.blue(iArr[i2]);
                 int i3 = size;
-                int argb = Color.argb(Math.min(NotificationCenter.didReceiveCall, (int) (Color.alpha(iArr[i2]) + ((alpha - r2) * f))), Math.min(NotificationCenter.didReceiveCall, (int) (red2 + ((red - red2) * f))), Math.min(NotificationCenter.didReceiveCall, (int) (green2 + ((green - green2) * f))), Math.min(NotificationCenter.didReceiveCall, (int) (blue2 + ((blue - blue2) * f))));
+                int argb = Color.argb(Math.min(NotificationCenter.didReceiveSmsCode, (int) (Color.alpha(iArr[i2]) + ((alpha - r2) * f))), Math.min(NotificationCenter.didReceiveSmsCode, (int) (red2 + ((red - red2) * f))), Math.min(NotificationCenter.didReceiveSmsCode, (int) (green2 + ((green - green2) * f))), Math.min(NotificationCenter.didReceiveSmsCode, (int) (blue2 + ((blue - blue2) * f))));
                 ThemeDescription themeDescription = (ThemeDescription) arrayList.get(i2);
                 themeDescription.setAnimatedColor(argb);
                 themeDescription.setColor(argb, false, false);

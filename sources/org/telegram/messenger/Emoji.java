@@ -166,7 +166,7 @@ public class Emoji {
                     loadBitmap2.getPixels(iArr2, 0, width, 0, 0, width, height);
                     loadBitmap2.recycle();
                     for (int i3 = 0; i3 < i2; i3++) {
-                        iArr[i3] = (iArr[i3] & 16777215) | ((iArr2[i3] & NotificationCenter.didReceiveCall) << 24);
+                        iArr[i3] = (iArr[i3] & 16777215) | ((iArr2[i3] & NotificationCenter.didReceiveSmsCode) << 24);
                     }
                     loadBitmap.recycle();
                     loadBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
@@ -1035,7 +1035,7 @@ public class Emoji {
                 canvas.restore();
             }
             if (z) {
-                getDrawable().setAlpha(NotificationCenter.didReceiveCall);
+                getDrawable().setAlpha(NotificationCenter.didReceiveSmsCode);
             }
         }
 

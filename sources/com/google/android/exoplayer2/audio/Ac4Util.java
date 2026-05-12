@@ -143,9 +143,9 @@ public abstract class Ac4Util {
         data[1] = 64;
         data[2] = -1;
         data[3] = -1;
-        data[4] = (byte) ((i >> 16) & NotificationCenter.didReceiveCall);
-        data[5] = (byte) ((i >> 8) & NotificationCenter.didReceiveCall);
-        data[6] = (byte) (i & NotificationCenter.didReceiveCall);
+        data[4] = (byte) ((i >> 16) & NotificationCenter.didReceiveSmsCode);
+        data[5] = (byte) ((i >> 8) & NotificationCenter.didReceiveSmsCode);
+        data[6] = (byte) (i & NotificationCenter.didReceiveSmsCode);
     }
 
     private static int readVariableBits(ParsableBitArray parsableBitArray, int i) {

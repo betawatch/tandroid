@@ -282,7 +282,7 @@ public class SizeNotifierFrameLayout extends FrameLayout implements Theme.Colora
                     if (i == 1 && SizeNotifierFrameLayout.this.oldBackgroundDrawable != null && SizeNotifierFrameLayout.this.parentLayout != null) {
                         drawable.setAlpha((int) (SizeNotifierFrameLayout.this.themeAnimationValue * 255.0f));
                     } else {
-                        drawable.setAlpha(NotificationCenter.didReceiveCall);
+                        drawable.setAlpha(NotificationCenter.didReceiveSmsCode);
                     }
                     if (i == 0 ? SizeNotifierFrameLayout.this.oldBackgroundMotion : SizeNotifierFrameLayout.this.backgroundMotion) {
                         f = SizeNotifierFrameLayout.this.parallaxScale;
@@ -1029,7 +1029,7 @@ public class SizeNotifierFrameLayout extends FrameLayout implements Theme.Colora
     }
 
     public void drawBlurRect(Canvas canvas, float f, Rect rect, Paint paint, boolean z, float f2) {
-        drawBlurRect(canvas, f, rect, paint, z, AndroidUtilities.lerp(NotificationCenter.didReceiveCall, Color.alpha(Theme.getColor((DRAW_USING_RENDERNODE() && SharedConfig.getDevicePerformanceClass() == 2) ? Theme.key_chat_BlurAlpha : Theme.key_chat_BlurAlphaSlow, getResourceProvider())), f2));
+        drawBlurRect(canvas, f, rect, paint, z, AndroidUtilities.lerp(NotificationCenter.didReceiveSmsCode, Color.alpha(Theme.getColor((DRAW_USING_RENDERNODE() && SharedConfig.getDevicePerformanceClass() == 2) ? Theme.key_chat_BlurAlpha : Theme.key_chat_BlurAlphaSlow, getResourceProvider())), f2));
     }
 
     public void drawBlurRect(Canvas canvas, float f, Rect rect, Paint paint, boolean z, int i) {
@@ -1124,7 +1124,7 @@ public class SizeNotifierFrameLayout extends FrameLayout implements Theme.Colora
             return;
         }
         updateBlurShaderPosition(f, z);
-        paint.setAlpha(NotificationCenter.didReceiveCall);
+        paint.setAlpha(NotificationCenter.didReceiveSmsCode);
         if (this.blurCrossfadeProgress != 1.0f && this.selectedBlurPaint2.getShader() != null) {
             canvas.drawRect(rect, paint);
             canvas.drawRect(rect, this.selectedBlurPaint2);

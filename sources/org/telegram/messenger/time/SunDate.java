@@ -12,7 +12,7 @@ public class SunDate {
     private static final double RADEG = 57.29577951308232d;
 
     private static long days_since_2000_Jan_0(int i, int i2, int i3) {
-        return ((((i * 367) - (((i + ((i2 + 9) / 12)) * 7) / 4)) + ((i2 * NotificationCenter.proxyCheckDone) / 9)) + i3) - 730530;
+        return ((((i * 367) - (((i + ((i2 + 9) / 12)) * 7) / 4)) + ((i2 * NotificationCenter.proxySettingsChanged) / 9)) + i3) - 730530;
     }
 
     private static double revolution(double d) {

@@ -351,7 +351,7 @@ public class SelectAudioAlert extends BottomSheetWithRecyclerListView implements
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(Canvas canvas, RectF rectF) {
         RecyclerListView recyclerListView = this.recyclerListView;
-        Blur3Utils.captureRelativeParent(recyclerListView, canvas, rectF, recyclerListView, getContainerView(), NotificationCenter.didReceiveCall);
+        Blur3Utils.captureRelativeParent(recyclerListView, canvas, rectF, recyclerListView, getContainerView(), NotificationCenter.didReceiveSmsCode);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

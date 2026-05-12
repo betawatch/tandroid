@@ -106,7 +106,7 @@ public class VideoCompressButton extends View {
     @Override // android.view.View
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveSmsCode, 31);
         float f = (1.0f - (this.disabledT.set(this.disabled) * 0.35f)) * 255.0f;
         int i = (int) f;
         this.strokePaint.setAlpha(i);
@@ -125,7 +125,7 @@ public class VideoCompressButton extends View {
         rectF.set(rect);
         rectF.inset(-AndroidUtilities.dpf2(1.33f), -AndroidUtilities.dpf2(1.33f));
         canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(1.66f), AndroidUtilities.dpf2(1.66f), this.clearPaint);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveSmsCode, 31);
         rectF.set(rect);
         this.fillPaint.setAlpha((int) (f * this.sizeTextDrawable.isNotEmpty()));
         canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(1.66f), AndroidUtilities.dpf2(1.66f), this.fillPaint);

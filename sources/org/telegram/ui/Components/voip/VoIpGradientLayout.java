@@ -191,8 +191,8 @@ public class VoIpGradientLayout extends FrameLayout {
             return;
         }
         this.state = gradientState2;
-        this.alphaBlueGreen = NotificationCenter.didReceiveCall;
-        ValueAnimator ofInt = ValueAnimator.ofInt(NotificationCenter.didReceiveCall, 0, NotificationCenter.didReceiveCall);
+        this.alphaBlueGreen = NotificationCenter.didReceiveSmsCode;
+        ValueAnimator ofInt = ValueAnimator.ofInt(NotificationCenter.didReceiveSmsCode, 0, NotificationCenter.didReceiveSmsCode);
         this.callingAnimator = ofInt;
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda4
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -286,9 +286,9 @@ public class VoIpGradientLayout extends FrameLayout {
             this.callingAnimator.cancel();
             this.callingAnimator = null;
         }
-        this.alphaGreen = NotificationCenter.didReceiveCall;
+        this.alphaGreen = NotificationCenter.didReceiveSmsCode;
         this.connectedAnimatorSet = new AnimatorSet();
-        ValueAnimator ofInt = ValueAnimator.ofInt(0, NotificationCenter.didReceiveCall, NotificationCenter.didReceiveCall, NotificationCenter.didReceiveCall, 0);
+        ValueAnimator ofInt = ValueAnimator.ofInt(0, NotificationCenter.didReceiveSmsCode, NotificationCenter.didReceiveSmsCode, NotificationCenter.didReceiveSmsCode, 0);
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda5
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
@@ -297,7 +297,7 @@ public class VoIpGradientLayout extends FrameLayout {
         });
         ofInt.setRepeatCount(-1);
         ofInt.setRepeatMode(1);
-        ValueAnimator ofInt2 = ValueAnimator.ofInt(0, 0, NotificationCenter.didReceiveCall, 0, 0);
+        ValueAnimator ofInt2 = ValueAnimator.ofInt(0, 0, NotificationCenter.didReceiveSmsCode, 0, 0);
         ofInt2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda6
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
@@ -337,7 +337,7 @@ public class VoIpGradientLayout extends FrameLayout {
             return;
         }
         this.state = gradientState2;
-        ValueAnimator ofInt = ValueAnimator.ofInt(this.alphaOrangeRed, NotificationCenter.didReceiveCall);
+        ValueAnimator ofInt = ValueAnimator.ofInt(this.alphaOrangeRed, NotificationCenter.didReceiveSmsCode);
         this.badConnectionAnimator = ofInt;
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIpGradientLayout$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -485,20 +485,20 @@ public class VoIpGradientLayout extends FrameLayout {
             Objects.requireNonNull(this.backgroundProvider);
             Objects.requireNonNull(this.backgroundProvider);
             canvas.scale(1.12f, 1.12f, width, height);
-            this.bgGreen.setAlpha(NotificationCenter.didReceiveCall);
+            this.bgGreen.setAlpha(NotificationCenter.didReceiveSmsCode);
             this.bgGreen.draw(canvas);
             this.clipPath.rewind();
             this.clipPath.addCircle(this.clipCx / 4.0f, this.clipCy / 4.0f, this.clipRadius / 4.0f, direction);
             this.backgroundProvider.getRevealCanvas().drawColor(0, mode);
             this.backgroundProvider.getRevealCanvas().save();
             this.backgroundProvider.getRevealCanvas().clipPath(this.clipPath);
-            this.bgGreenLightReveal.setAlpha(NotificationCenter.didReceiveCall);
+            this.bgGreenLightReveal.setAlpha(NotificationCenter.didReceiveSmsCode);
             this.bgGreenLightReveal.draw(this.backgroundProvider.getRevealCanvas());
             this.backgroundProvider.getRevealCanvas().restore();
             this.backgroundProvider.getRevealDrakCanvas().drawColor(0, mode);
             this.backgroundProvider.getRevealDrakCanvas().save();
             this.backgroundProvider.getRevealDrakCanvas().clipPath(this.clipPath);
-            this.bgGreenDarkReveal.setAlpha(NotificationCenter.didReceiveCall);
+            this.bgGreenDarkReveal.setAlpha(NotificationCenter.didReceiveSmsCode);
             this.bgGreenDarkReveal.draw(this.backgroundProvider.getRevealDrakCanvas());
             this.backgroundProvider.getRevealDrakCanvas().restore();
         }

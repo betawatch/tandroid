@@ -196,8 +196,8 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
                 PrivateVideoPreviewDialogNew.this.bgBlueViolet.setBounds(0, 0, 80, 80);
                 PrivateVideoPreviewDialogNew.this.bgGreenShaderTools.setBounds(0.0f, 0.0f, 80.0f, 80.0f);
                 PrivateVideoPreviewDialogNew.this.bgBlueVioletShaderTools.setBounds(0.0f, 0.0f, 80.0f, 80.0f);
-                PrivateVideoPreviewDialogNew.this.bgGreen.setAlpha(NotificationCenter.didReceiveCall);
-                PrivateVideoPreviewDialogNew.this.bgBlueViolet.setAlpha(NotificationCenter.didReceiveCall);
+                PrivateVideoPreviewDialogNew.this.bgGreen.setAlpha(NotificationCenter.didReceiveSmsCode);
+                PrivateVideoPreviewDialogNew.this.bgBlueViolet.setAlpha(NotificationCenter.didReceiveSmsCode);
                 Canvas canvas = PrivateVideoPreviewDialogNew.this.bgGreenShaderTools.getCanvas();
                 PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
                 canvas.drawColor(0, mode);
@@ -233,7 +233,7 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
                 PrivateVideoPreviewDialogNew.this.bgBlueVioletShaderTools.setBounds(-getX(), -getY(), PrivateVideoPreviewDialogNew.this.getWidth() - getX(), PrivateVideoPreviewDialogNew.this.getHeight() - getY());
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                this.gradientPaint[PrivateVideoPreviewDialogNew.this.strangeCurrentPage].setAlpha(NotificationCenter.didReceiveCall);
+                this.gradientPaint[PrivateVideoPreviewDialogNew.this.strangeCurrentPage].setAlpha(NotificationCenter.didReceiveSmsCode);
                 float dp = AndroidUtilities.dp(8.0f) + ((int) ((AndroidUtilities.dp(26.0f) - AndroidUtilities.dp(8.0f)) * (1.0f - PrivateVideoPreviewDialogNew.this.openProgress1)));
                 canvas.drawRoundRect(rectF, dp, dp, this.gradientPaint[PrivateVideoPreviewDialogNew.this.strangeCurrentPage]);
                 if (PrivateVideoPreviewDialogNew.this.pageOffset > 0.0f) {
@@ -374,7 +374,7 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
         });
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.DEFAULT;
         ofFloat.setInterpolator(cubicBezierInterpolator);
-        long j = NotificationCenter.wallpaperSettedToUser;
+        long j = NotificationCenter.onDatabaseReset;
         ofFloat.setDuration(j);
         ofFloat.start();
         ofFloat2.setInterpolator(cubicBezierInterpolator);
@@ -720,7 +720,7 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
             });
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.DEFAULT;
             ofFloat2.setInterpolator(cubicBezierInterpolator);
-            long j = NotificationCenter.wallpaperSettedToUser;
+            long j = NotificationCenter.onDatabaseReset;
             ofFloat2.setDuration(j);
             ofFloat2.start();
             ofFloat3.setInterpolator(cubicBezierInterpolator);
@@ -731,7 +731,7 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
             this.titlesLayout.setScaleX(1.0f);
             this.titlesLayout.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).setDuration(250L).start();
             ViewPropertyAnimator translationX = this.positiveButton.animate().translationY(AndroidUtilities.dp(53.0f)).translationX((this.startLocationX - (AndroidUtilities.displaySize.x / 2.0f)) + AndroidUtilities.dp(8.0f) + AndroidUtilities.dp(26.0f));
-            float f = NotificationCenter.wallpaperSettedToUser;
+            float f = NotificationCenter.onDatabaseReset;
             translationX.setDuration((long) (0.6f * f)).start();
             animate().alpha(0.0f).setDuration((long) (0.25f * f)).setStartDelay((long) (f * 0.75f)).start();
         }

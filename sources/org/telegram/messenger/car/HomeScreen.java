@@ -18,6 +18,11 @@ import androidx.car.app.model.CarText;
 import androidx.car.app.model.ItemList;
 import androidx.car.app.model.ListTemplate;
 import androidx.car.app.model.MessageTemplate;
+import androidx.car.app.model.OnClickListener;
+import androidx.car.app.model.Row;
+import androidx.car.app.model.Tab;
+import androidx.car.app.model.TabContents;
+import androidx.car.app.model.TabTemplate;
 import androidx.car.app.model.Template;
 import androidx.core.app.Person;
 import androidx.core.graphics.drawable.IconCompat;
@@ -42,14 +47,17 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.TelegramMediaSession;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.car.ConversationsScreen;
+import org.telegram.messenger.car.HomeScreen;
 import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes3.dex */
-public class ConversationsScreen extends Screen implements DefaultLifecycleObserver, NotificationCenter.NotificationCenterDelegate {
-    private final int currentAccount;
+public class HomeScreen extends Screen implements DefaultLifecycleObserver, NotificationCenter.NotificationCenterDelegate {
+    private String activeTabId;
+    private int currentAccount;
+    private boolean musicLoadKicked;
     private final long sessionStartMillis;
 
     @Override // androidx.lifecycle.DefaultLifecycleObserver
@@ -72,8 +80,9 @@ public class ConversationsScreen extends Screen implements DefaultLifecycleObser
         Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
     }
 
-    public ConversationsScreen(CarContext carContext) {
+    public HomeScreen(CarContext carContext) {
         super(carContext);
+        this.activeTabId = "tab_notifications";
         this.sessionStartMillis = System.currentTimeMillis();
         this.currentAccount = UserConfig.selectedAccount;
         getLifecycle().addObserver(this);
@@ -82,25 +91,59 @@ public class ConversationsScreen extends Screen implements DefaultLifecycleObser
     @Override // androidx.lifecycle.DefaultLifecycleObserver
     public void onResume(LifecycleOwner lifecycleOwner) {
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.pushMessagesUpdated);
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.notificationsCountUpdated);
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.activeAccountChanged);
     }
 
     @Override // androidx.lifecycle.DefaultLifecycleObserver
     public void onPause(LifecycleOwner lifecycleOwner) {
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.pushMessagesUpdated);
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.notificationsCountUpdated);
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.activeAccountChanged);
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == NotificationCenter.pushMessagesUpdated) {
+        if (i == NotificationCenter.activeAccountChanged) {
+            this.currentAccount = UserConfig.selectedAccount;
+            this.musicLoadKicked = false;
+            invalidate();
+        } else if ((i == NotificationCenter.pushMessagesUpdated || i == NotificationCenter.notificationsCountUpdated) && "tab_notifications".equals(this.activeTabId)) {
             invalidate();
         }
     }
 
     @Override // androidx.car.app.Screen
     public Template onGetTemplate() {
+        TabTemplate.Builder builder = new TabTemplate.Builder(new TabTemplate.TabCallback() { // from class: org.telegram.messenger.car.HomeScreen.1
+            @Override // androidx.car.app.model.TabTemplate.TabCallback
+            public void onTabSelected(String str) {
+                HomeScreen.this.activeTabId = str;
+                HomeScreen.this.invalidate();
+            }
+        });
+        builder.setHeaderAction(Action.APP_ICON);
+        builder.addTab(new Tab.Builder().setContentId("tab_notifications").setIcon(iconResource(R.drawable.msg_notifications)).setTitle(LocaleController.getString(R.string.Notifications)).build());
+        builder.addTab(new Tab.Builder().setContentId("tab_music").setIcon(iconResource(R.drawable.filled_widget_music)).setTitle(LocaleController.getString(R.string.Music)).build());
+        builder.setActiveTabContentId(this.activeTabId);
+        builder.setTabContents(new TabContents.Builder(buildTabContent(this.activeTabId)).build());
+        return builder.build();
+    }
+
+    private Template buildTabContent(String str) {
+        int hashCode = str.hashCode();
+        if (hashCode == -2006925890) {
+            str.equals("tab_notifications");
+        } else if (hashCode == 1942637819 && str.equals("tab_music")) {
+            return buildMusicTemplate();
+        }
+        return buildNotificationsTemplate();
+    }
+
+    private Template buildNotificationsTemplate() {
         Map collectUnreadDuringDrive = collectUnreadDuringDrive();
         if (collectUnreadDuringDrive.isEmpty()) {
-            return new MessageTemplate.Builder(LocaleController.getString(R.string.NoNewCarMessages)).setHeaderAction(Action.APP_ICON).setTitle("Telegram").build();
+            return new MessageTemplate.Builder(LocaleController.getString(R.string.NoNewCarMessages)).build();
         }
         ItemList.Builder builder = new ItemList.Builder();
         int i = 0;
@@ -115,7 +158,7 @@ public class ConversationsScreen extends Screen implements DefaultLifecycleObser
             }
             i = i2;
         }
-        return new ListTemplate.Builder().setSingleList(builder.build()).setTitle("Telegram").setHeaderAction(Action.APP_ICON).build();
+        return new ListTemplate.Builder().setSingleList(builder.build()).build();
     }
 
     private Map collectUnreadDuringDrive() {
@@ -276,6 +319,97 @@ public class ConversationsScreen extends Screen implements DefaultLifecycleObser
         return new CarMessage.Builder().setBody(CarText.create(charSequence)).setReceivedTimeEpochMillis(messageObject.messageOwner.date * 1000).setSender(builder.build()).setRead(false).build();
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0088, code lost:
+    
+        if ((r11 instanceof org.telegram.tgnet.TLRPC.TL_fileLocationUnavailable) == false) goto L46;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x00a4, code lost:
+    
+        if ((r11 instanceof org.telegram.tgnet.TLRPC.TL_fileLocationUnavailable) == false) goto L46;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private Template buildMusicTemplate() {
+        final String str;
+        TLRPC.FileLocation fileLocation;
+        TelegramMediaSession telegramMediaSession = TelegramMediaSession.getInstance(getCarContext().getApplicationContext());
+        if (!telegramMediaSession.isChatsLoaded()) {
+            if (!this.musicLoadKicked) {
+                this.musicLoadKicked = true;
+                telegramMediaSession.ensureLoaded(new Runnable() { // from class: org.telegram.messenger.car.HomeScreen$$ExternalSyntheticLambda0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        HomeScreen.this.invalidate();
+                    }
+                });
+            }
+            return new ListTemplate.Builder().setLoading(true).build();
+        }
+        ArrayList<Long> musicDialogsSortedByVisibleOrder = telegramMediaSession.getMusicDialogsSortedByVisibleOrder();
+        if (musicDialogsSortedByVisibleOrder == null || musicDialogsSortedByVisibleOrder.isEmpty()) {
+            return new MessageTemplate.Builder(LocaleController.getString(R.string.NoCarMusic)).build();
+        }
+        ItemList.Builder builder = new ItemList.Builder();
+        int i = 0;
+        int i2 = 0;
+        int i3 = 0;
+        while (i2 < musicDialogsSortedByVisibleOrder.size() && i3 < 50) {
+            final long longValue = musicDialogsSortedByVisibleOrder.get(i2).longValue();
+            ArrayList<MessageObject> musicMessages = telegramMediaSession.getMusicMessages(longValue);
+            if (musicMessages != null && !musicMessages.isEmpty()) {
+                if (DialogObject.isUserDialog(longValue)) {
+                    TLRPC.User musicUser = telegramMediaSession.getMusicUser(longValue);
+                    if (musicUser != null) {
+                        str = ContactsController.formatName(musicUser.first_name, musicUser.last_name);
+                        TLRPC.UserProfilePhoto userProfilePhoto = musicUser.photo;
+                        if (userProfilePhoto != null) {
+                            fileLocation = userProfilePhoto.photo_small;
+                        }
+                        fileLocation = null;
+                    }
+                } else {
+                    TLRPC.Chat musicChat = telegramMediaSession.getMusicChat(-longValue);
+                    if (musicChat != null) {
+                        str = musicChat.title;
+                        if (str == null) {
+                            str = "";
+                        }
+                        TLRPC.ChatPhoto chatPhoto = musicChat.photo;
+                        if (chatPhoto != null) {
+                            fileLocation = chatPhoto.photo_small;
+                        }
+                        fileLocation = null;
+                    }
+                }
+                Row.Builder onClickListener = new Row.Builder().setTitle(str).addText(LocaleController.formatPluralString("MusicFiles", musicMessages.size(), new Object[i])).setBrowsable(true).setOnClickListener(new OnClickListener() { // from class: org.telegram.messenger.car.HomeScreen$$ExternalSyntheticLambda1
+                    @Override // androidx.car.app.model.OnClickListener
+                    public final void onClick() {
+                        HomeScreen.this.lambda$buildMusicTemplate$0(longValue, str);
+                    }
+                });
+                IconCompat iconFromAvatar = fileLocation != null ? iconFromAvatar(fileLocation) : null;
+                if (iconFromAvatar != null) {
+                    onClickListener.setImage(new CarIcon.Builder(iconFromAvatar).build(), 2);
+                }
+                builder.addItem(onClickListener.build());
+                i3++;
+            }
+            i2++;
+            i = 0;
+        }
+        return new ListTemplate.Builder().setSingleList(builder.build()).build();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$buildMusicTemplate$0(long j, String str) {
+        getScreenManager().push(new MusicSongsScreen(getCarContext(), j, str));
+    }
+
+    private CarIcon iconResource(int i) {
+        return new CarIcon.Builder(IconCompat.createWithResource(getCarContext(), i)).build();
+    }
+
     private IconCompat loadAvatarIcon(TLRPC.User user, TLRPC.Chat chat) {
         TLRPC.FileLocation fileLocation;
         TLRPC.ChatPhoto chatPhoto;
@@ -349,10 +483,10 @@ public class ConversationsScreen extends Screen implements DefaultLifecycleObser
 
         @Override // androidx.car.app.messaging.model.ConversationCallback
         public void onMarkAsRead() {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.car.ConversationsScreen$TelegramConversationCallback$$ExternalSyntheticLambda0
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.car.HomeScreen$TelegramConversationCallback$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ConversationsScreen.TelegramConversationCallback.this.lambda$onMarkAsRead$0();
+                    HomeScreen.TelegramConversationCallback.this.lambda$onMarkAsRead$0();
                 }
             });
         }
@@ -368,10 +502,10 @@ public class ConversationsScreen extends Screen implements DefaultLifecycleObser
 
         @Override // androidx.car.app.messaging.model.ConversationCallback
         public void onTextReply(final String str) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.car.ConversationsScreen$TelegramConversationCallback$$ExternalSyntheticLambda1
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.car.HomeScreen$TelegramConversationCallback$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ConversationsScreen.TelegramConversationCallback.this.lambda$onTextReply$1(str);
+                    HomeScreen.TelegramConversationCallback.this.lambda$onTextReply$1(str);
                 }
             });
         }

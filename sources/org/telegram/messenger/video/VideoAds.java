@@ -833,7 +833,7 @@ public class VideoAds {
             Paint paint = new Paint(1);
             this.paint = paint;
             this.paused = false;
-            this.alpha = NotificationCenter.didReceiveCall;
+            this.alpha = NotificationCenter.didReceiveSmsCode;
             this.parentView = view;
             this.startTime = System.currentTimeMillis() - j;
             this.min_display_duration = i * 1000;

@@ -248,7 +248,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             return 60;
         }
         if (i == 5) {
-            return NotificationCenter.onDatabaseOpened;
+            return NotificationCenter.dialogsUnreadPollVotesCounterChanged;
         }
         if (i == 6) {
             return 900;

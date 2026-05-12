@@ -60,7 +60,7 @@ public class AddReactionsSpan extends ReplacementSpan {
     }
 
     public void show(final View view) {
-        ValueAnimator ofInt = ValueAnimator.ofInt(this.alpha, NotificationCenter.didReceiveCall);
+        ValueAnimator ofInt = ValueAnimator.ofInt(this.alpha, NotificationCenter.didReceiveSmsCode);
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Reactions.AddReactionsSpan$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {

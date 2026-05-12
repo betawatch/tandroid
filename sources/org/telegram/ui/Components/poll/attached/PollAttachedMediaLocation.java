@@ -49,7 +49,7 @@ public class PollAttachedMediaLocation extends PollAttachedMedia {
         SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(R.raw.map_placeholder, Theme.key_chat_outLocationIcon, (Theme.isCurrentThemeDark() ? 3 : 6) * 0.12f);
         svgThumb.setAspectCenter(true);
         svgThumb.setColorKey(Theme.key_chat_inLocationIcon);
-        imageReceiver.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(this.media.geo, NotificationCenter.onDatabaseOpened, NotificationCenter.groupCallSpeakingUsersUpdated, 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), (String) null, (ImageLocation) null, (String) null, new ClipRoundedDrawable(svgThumb), (Object) null, 0);
+        imageReceiver.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(this.media.geo, NotificationCenter.dialogsUnreadPollVotesCounterChanged, NotificationCenter.groupCallSpeakingUsersUpdated, 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), (String) null, (ImageLocation) null, (String) null, new ClipRoundedDrawable(svgThumb), (Object) null, 0);
         view.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: org.telegram.ui.Components.poll.attached.PollAttachedMediaLocation.1
             @Override // android.view.View.OnAttachStateChangeListener
             public void onViewAttachedToWindow(View view2) {

@@ -865,7 +865,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         } else if (value == 1) {
             SharedConfig.autoLockIn = 60;
         } else if (value == 2) {
-            SharedConfig.autoLockIn = NotificationCenter.onDatabaseOpened;
+            SharedConfig.autoLockIn = NotificationCenter.dialogsUnreadPollVotesCounterChanged;
         } else if (value == 3) {
             SharedConfig.autoLockIn = 3600;
         } else if (value == 4) {

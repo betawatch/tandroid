@@ -582,7 +582,7 @@ public class ShareTopView extends FrameLayout implements NotificationCenter.Noti
         layout.obj.setText(str3);
         TLRPC.Photo photo = webPage.photo;
         if (photo != null) {
-            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, NotificationCenter.wallpaperSettedToUser);
+            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, NotificationCenter.onDatabaseReset);
             TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(webPage.photo.sizes, AndroidUtilities.dp(40.0f));
             if (closestPhotoSizeWithSize != null) {
                 layout.linkImage.setRoundRadius(AndroidUtilities.dp(4.0f));

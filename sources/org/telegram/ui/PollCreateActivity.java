@@ -1019,7 +1019,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         } else {
             i = 0;
         }
-        int i3 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.didReceiveCall;
+        int i3 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.didReceiveSmsCode;
         int i4 = this.todo ? getMessagesController().todoItemLengthMax : 100;
         if ((TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(this.solutionString)) || this.solutionString.length() <= 200) && !TextUtils.isEmpty(ChatAttachAlertPollLayout.getFixedString(this.questionString)) && this.questionString.length() <= i3) {
             int i5 = 0;
@@ -1212,7 +1212,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         if (view instanceof PollEditTextCell) {
             PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
             if (i == this.questionRow) {
-                i2 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.didReceiveCall;
+                i2 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.didReceiveSmsCode;
                 CharSequence charSequence = this.questionString;
                 length = i2 - (charSequence != null ? charSequence.length() : 0);
             } else if (i == this.solutionRow) {

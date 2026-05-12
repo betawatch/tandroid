@@ -248,7 +248,7 @@ abstract class g implements p {
         };
         WEEK_BASED_YEAR = gVar4;
         b = new g[]{gVar, gVar2, gVar3, gVar4};
-        a = new int[]{0, 90, NotificationCenter.newEmojiSuggestionsAvailable, NotificationCenter.didSetNewWallpapper, 0, 91, NotificationCenter.themeUploadedToServer, NotificationCenter.proxySettingsChanged};
+        a = new int[]{0, 90, NotificationCenter.newEmojiSuggestionsAvailable, NotificationCenter.suggestedLangpack, 0, 91, NotificationCenter.themeUploadedToServer, NotificationCenter.didSetNewWallpapper};
     }
 
     static u J(LocalDate localDate) {

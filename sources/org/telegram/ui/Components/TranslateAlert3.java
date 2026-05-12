@@ -812,7 +812,7 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
                 @Override // org.telegram.ui.Components.spoilers.SpoilersTextView, android.widget.TextView, android.view.View
                 protected void onDraw(Canvas canvas) {
                     int width = Text.this.moreView.getWidth() + AndroidUtilities.dp(8.0f);
-                    canvas.saveLayerAlpha(getScrollX(), 0.0f, (getScrollX() + getWidth()) - width, getHeight(), NotificationCenter.didReceiveCall, 31);
+                    canvas.saveLayerAlpha(getScrollX(), 0.0f, (getScrollX() + getWidth()) - width, getHeight(), NotificationCenter.didReceiveSmsCode, 31);
                     super.onDraw(canvas);
                     canvas.save();
                     canvas.translate(getPaddingLeft(), getPaddingTop());

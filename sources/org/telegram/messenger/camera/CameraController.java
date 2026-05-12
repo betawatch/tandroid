@@ -481,7 +481,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                     if (pack5 != 8) {
                         return -1;
                     }
-                    return NotificationCenter.locationPermissionDenied;
+                    return NotificationCenter.locationPermissionGranted;
                 }
                 i5 += 12;
                 i6 -= 12;

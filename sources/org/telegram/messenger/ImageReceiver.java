@@ -214,14 +214,14 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         BitmapShader bitmapShader2;
         Drawable drawable = this.currentThumbDrawable;
         if (drawable != null && (bitmapShader2 = this.thumbShader) != null) {
-            drawDrawable(null, drawable, NotificationCenter.didReceiveCall, bitmapShader2, 0, 0, 0, null);
+            drawDrawable(null, drawable, NotificationCenter.didReceiveSmsCode, bitmapShader2, 0, 0, 0, null);
             return true;
         }
         Drawable drawable2 = this.staticThumbDrawable;
         if (drawable2 == null || (bitmapShader = this.staticThumbShader) == null) {
             return false;
         }
-        drawDrawable(null, drawable2, NotificationCenter.didReceiveCall, bitmapShader, 0, 0, 0, null);
+        drawDrawable(null, drawable2, NotificationCenter.didReceiveSmsCode, bitmapShader, 0, 0, 0, null);
         return true;
     }
 
@@ -2400,7 +2400,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                                 drawable7 = drawable20;
                                                 drawDrawable(canvas, drawable, i5, bitmapShader7, this.thumbOrientation, this.thumbInvert, backgroundThreadDrawHolder);
                                                 if (i5 != 255 && (drawable instanceof Emoji.EmojiDrawable)) {
-                                                    drawable.setAlpha(NotificationCenter.didReceiveCall);
+                                                    drawable.setAlpha(NotificationCenter.didReceiveSmsCode);
                                                 }
                                             }
                                             i4 = (int) ((f5 - min) * f3 * 255.0f);
@@ -2408,7 +2408,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                             drawable7 = drawable20;
                                             drawDrawable(canvas, drawable, i5, bitmapShader7, this.thumbOrientation, this.thumbInvert, backgroundThreadDrawHolder);
                                             if (i5 != 255) {
-                                                drawable.setAlpha(NotificationCenter.didReceiveCall);
+                                                drawable.setAlpha(NotificationCenter.didReceiveSmsCode);
                                             }
                                         } else {
                                             drawable7 = drawable20;

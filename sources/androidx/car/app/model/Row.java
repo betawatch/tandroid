@@ -1,7 +1,10 @@
 package androidx.car.app.model;
 
+import androidx.car.app.model.constraints.CarIconConstraints;
+import androidx.car.app.model.constraints.CarTextConstraints;
 import androidx.car.app.utils.CollectionUtils;
 import j$.util.Objects;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -23,9 +26,6 @@ public final class Row implements Item {
     private final List<CarText> mTexts;
     private final CarText mTitle;
     private final Toggle mToggle;
-
-    public static final class Builder {
-    }
 
     public Row row() {
         return this;
@@ -117,7 +117,17 @@ public final class Row implements Item {
     }
 
     Row(Builder builder) {
-        throw null;
+        this.mTitle = builder.mTitle;
+        this.mTexts = CollectionUtils.unmodifiableCopy(builder.mTexts);
+        this.mImage = builder.mImage;
+        this.mActions = CollectionUtils.unmodifiableCopy(builder.mActions);
+        this.mNumericDecoration = builder.mDecoration;
+        this.mToggle = builder.mToggle;
+        this.mOnClickDelegate = builder.mOnClickDelegate;
+        this.mMetadata = builder.mMetadata;
+        this.mIsBrowsable = builder.mIsBrowsable;
+        this.mRowImageType = builder.mRowImageType;
+        this.mIsEnabled = builder.mIsEnabled;
     }
 
     private Row() {
@@ -132,5 +142,90 @@ public final class Row implements Item {
         this.mIsBrowsable = false;
         this.mRowImageType = 1;
         this.mIsEnabled = true;
+    }
+
+    public static final class Builder {
+        CarIcon mImage;
+        boolean mIsBrowsable;
+        OnClickDelegate mOnClickDelegate;
+        CarText mTitle;
+        Toggle mToggle;
+        boolean mIsEnabled = true;
+        final List mTexts = new ArrayList();
+        final List mActions = new ArrayList();
+        int mDecoration = -1;
+        Metadata mMetadata = Metadata.EMPTY_METADATA;
+        int mRowImageType = 1;
+
+        public Builder setTitle(CharSequence charSequence) {
+            Objects.requireNonNull(charSequence);
+            CarText create = CarText.create(charSequence);
+            if (create.isEmpty()) {
+                throw new IllegalArgumentException("The title cannot be null or empty");
+            }
+            CarTextConstraints.TEXT_AND_ICON.validateOrThrow(create);
+            this.mTitle = create;
+            return this;
+        }
+
+        public Builder addText(CharSequence charSequence) {
+            Objects.requireNonNull(charSequence);
+            CarTextConstraints.TEXT_WITH_COLORS_AND_ICON.validateOrThrow(CarText.create(charSequence));
+            this.mTexts.add(CarText.create(charSequence));
+            return this;
+        }
+
+        public Builder setImage(CarIcon carIcon) {
+            Objects.requireNonNull(carIcon);
+            return setImage(carIcon, 1);
+        }
+
+        public Builder setImage(CarIcon carIcon, int i) {
+            CarIconConstraints carIconConstraints = CarIconConstraints.UNCONSTRAINED;
+            Objects.requireNonNull(carIcon);
+            carIconConstraints.validateOrThrow(carIcon);
+            this.mImage = carIcon;
+            this.mRowImageType = i;
+            return this;
+        }
+
+        public Builder setBrowsable(boolean z) {
+            this.mIsBrowsable = z;
+            return this;
+        }
+
+        public Builder setOnClickListener(OnClickListener onClickListener) {
+            this.mOnClickDelegate = OnClickDelegateImpl.create(onClickListener);
+            return this;
+        }
+
+        public Row build() {
+            if (this.mTitle == null) {
+                throw new IllegalStateException("A title must be set on the row");
+            }
+            if (this.mIsBrowsable) {
+                if (this.mToggle != null) {
+                    throw new IllegalStateException("A browsable row must not have a toggle set");
+                }
+                if (this.mOnClickDelegate == null) {
+                    throw new IllegalStateException("A browsable row must have its onClickListener set");
+                }
+                if (!this.mActions.isEmpty()) {
+                    throw new IllegalStateException("A browsable row must not have a secondary action set");
+                }
+            }
+            if (this.mToggle != null) {
+                if (this.mOnClickDelegate != null) {
+                    throw new IllegalStateException("If a row contains a toggle, it must not have an onClickListener set");
+                }
+                if (this.mDecoration != -1) {
+                    throw new IllegalStateException("If a row contains a toggle, it must not have a numeric decoration set");
+                }
+                if (!this.mActions.isEmpty()) {
+                    throw new IllegalStateException("If a row contains a toggle, it must not have a secondary action set");
+                }
+            }
+            return new Row(this);
+        }
     }
 }

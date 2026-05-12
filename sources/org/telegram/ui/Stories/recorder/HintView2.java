@@ -768,7 +768,7 @@ public class HintView2 extends View {
 
     protected void drawBgPath(Canvas canvas, float f) {
         if (this.blurBackgroundPaint != null) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveSmsCode, 31);
             canvas.drawPath(this.path, this.blurBackgroundPaint);
             canvas.drawPath(this.path, this.blurCutPaint);
             canvas.restore();

@@ -10,7 +10,7 @@ import ru.noties.jlatexmath.awt.geom.AffineTransform;
 /* loaded from: classes3.dex */
 public class GeoGebraLogoBox extends Box {
     private static final Color gray = new Color(102, 102, 102);
-    private static final Color blue = new Color(NotificationCenter.messagePlayingGoingToStop, NotificationCenter.messagePlayingGoingToStop, NotificationCenter.didReceiveCall);
+    private static final Color blue = new Color(NotificationCenter.messagePlayingGoingToStop, NotificationCenter.messagePlayingGoingToStop, NotificationCenter.didReceiveSmsCode);
     private static final BasicStroke st = new BasicStroke(3.8f, 0, 0, 4.0f);
 
     @Override // org.scilab.forge.jlatexmath.Box

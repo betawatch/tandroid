@@ -575,7 +575,7 @@ public class RecordControl extends View implements FlashViews.Invertable {
             f6 = lerp4;
             f7 = f31;
             f9 = lerp3;
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveSmsCode, 31);
         } else {
             rectF = rectF3;
             f6 = lerp4;
@@ -586,7 +586,7 @@ public class RecordControl extends View implements FlashViews.Invertable {
         }
         float f33 = f6;
         canvas.scale(f33, f33, this.cx, this.cy);
-        this.mainPaint.setAlpha(NotificationCenter.didReceiveCall);
+        this.mainPaint.setAlpha(NotificationCenter.didReceiveSmsCode);
         RectF rectF4 = rectF;
         canvas.drawRoundRect(rectF4, f9, f9, this.mainPaint);
         if (f > 0.0f) {
@@ -623,7 +623,7 @@ public class RecordControl extends View implements FlashViews.Invertable {
         this.outlinePaint.setAlpha((int) (AndroidUtilities.lerp(1.0f, 0.3f, f5) * 255.0f * f32));
         canvas.drawCircle(this.cx, this.cy, lerp6, this.outlinePaint);
         if ((f24 > 0.0f) && (f5 > 0.0f)) {
-            this.outlinePaint.setAlpha(NotificationCenter.didReceiveCall);
+            this.outlinePaint.setAlpha(NotificationCenter.didReceiveSmsCode);
             rectF2 = rectF4;
             canvas.drawArc(rectF4, -90.0f, f24 * 360.0f, false, this.outlinePaint);
         } else {
@@ -724,7 +724,7 @@ public class RecordControl extends View implements FlashViews.Invertable {
         }
         float f46 = this.lockedT.set((this.longpressRecording || !this.recording) ? 0.0f : 1.0f);
         if (f13 > 0.0f) {
-            this.redPaint.setAlpha(NotificationCenter.didReceiveCall);
+            this.redPaint.setAlpha(NotificationCenter.didReceiveSmsCode);
             canvas.drawCircle(this.touchX, this.cy, f13, this.redPaint);
             float f47 = this.touchX;
             float clamp3 = Utilities.clamp(1.0f - ((Math.abs(clamp2) * f4) / 1.3f), 1.0f, 0.0f);

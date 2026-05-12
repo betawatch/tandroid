@@ -72,7 +72,7 @@ public final class LocalDate implements Temporal, j$.time.temporal.n, j$.time.ch
         }
         int i = (int) j6;
         int i2 = ((i * 5) + 2) / NotificationCenter.messagePlayingGoingToStop;
-        return new LocalDate(j$.time.temporal.a.YEAR.x(j5 + j2 + (i2 / 10)), ((i2 + 2) % 12) + 1, (i - (((i2 * NotificationCenter.premiumPromoUpdated) + 5) / 10)) + 1);
+        return new LocalDate(j$.time.temporal.a.YEAR.x(j5 + j2 + (i2 / 10)), ((i2 + 2) % 12) + 1, (i - (((i2 * NotificationCenter.currentUserPremiumStatusChanged) + 5) / 10)) + 1);
     }
 
     public static LocalDate I(j$.time.temporal.m mVar) {

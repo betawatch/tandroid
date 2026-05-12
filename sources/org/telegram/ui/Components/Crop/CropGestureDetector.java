@@ -89,7 +89,7 @@ public class CropGestureDetector {
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
         this.mDetector.onTouchEvent(motionEvent);
-        int action = motionEvent.getAction() & NotificationCenter.didReceiveCall;
+        int action = motionEvent.getAction() & NotificationCenter.didReceiveSmsCode;
         if (action == 0) {
             this.mActivePointerId = motionEvent.getPointerId(0);
             this.touchTime = SystemClock.elapsedRealtime();

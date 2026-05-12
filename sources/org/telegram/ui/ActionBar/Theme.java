@@ -4072,7 +4072,7 @@ public abstract class Theme {
         themeInfo7.previewInColor = -1;
         themeInfo7.previewOutColor = -9657877;
         themeInfo7.sortIndex = 5;
-        themeInfo7.setAccentColorOptions(new int[]{-12537374, -12472227, -3240928, -11033621, -2194124, -3382903, -13332245, -12342073, -11359164, -3317869, -2981834, -8165684, -3256745, -2904512, -8681301}, new int[]{-13525046, -14113959, -7579073, -13597229, -3581840, -8883763, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-11616542, -9716647, -6400452, -12008744, -2592697, -4297041, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-3808528, -2433367, -2700891, -1838093, -1120848, -1712148, -2037779, -4202261, -4005713, -1058332, -925763, -1975316, -1189672, -1318451, -2302235}, new int[]{-1510157, -4398164, -1647697, -3610898, -1130838, -1980692, -4270093, -4202261, -3415654, -1259815, -1521765, -4341268, -1127744, -1318219, -3945761}, new int[]{-4924688, -3283031, -1523567, -2494477, -1126510, -595210, -2037517, -3478548, -4661623, -927514, -796762, -2696971, -1188403, -1319735, -1577487}, new int[]{-3149585, -5714021, -1978209, -4925720, -1134713, -1718833, -3613709, -5317397, -3218014, -999207, -2116466, -4343054, -931397, -1583186, -3815718}, new int[]{9, 10, 11, 12, 13, 14, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"MIo6r0qGSFAFAAAAtL8TsDzNX60", "dhf9pceaQVACAAAAbzdVo4SCiZA", "fqv01SQemVIBAAAApND8LDRUhRU", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "pgJfpFNRSFABAAAACDT8s5sEjfc", "ptuUd96JSFACAAAATobI23sPpz0", "dhf9pceaQVACAAAAbzdVo4SCiZA", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "9iklpvIPQVABAAAAORQXKur_Eyc", "F5oWoCs7QFACAAAAgf2bD_mg8Bw"}, new int[]{NotificationCenter.activityPermissionsGranted, NotificationCenter.activityPermissionsGranted, 225, NotificationCenter.activityPermissionsGranted, 0, NotificationCenter.needDeleteDialog, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{50, 50, 58, 47, 46, 50, 49, 46, 51, 50, 49, 34, 54, 50, 40});
+        themeInfo7.setAccentColorOptions(new int[]{-12537374, -12472227, -3240928, -11033621, -2194124, -3382903, -13332245, -12342073, -11359164, -3317869, -2981834, -8165684, -3256745, -2904512, -8681301}, new int[]{-13525046, -14113959, -7579073, -13597229, -3581840, -8883763, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-11616542, -9716647, -6400452, -12008744, -2592697, -4297041, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-3808528, -2433367, -2700891, -1838093, -1120848, -1712148, -2037779, -4202261, -4005713, -1058332, -925763, -1975316, -1189672, -1318451, -2302235}, new int[]{-1510157, -4398164, -1647697, -3610898, -1130838, -1980692, -4270093, -4202261, -3415654, -1259815, -1521765, -4341268, -1127744, -1318219, -3945761}, new int[]{-4924688, -3283031, -1523567, -2494477, -1126510, -595210, -2037517, -3478548, -4661623, -927514, -796762, -2696971, -1188403, -1319735, -1577487}, new int[]{-3149585, -5714021, -1978209, -4925720, -1134713, -1718833, -3613709, -5317397, -3218014, -999207, -2116466, -4343054, -931397, -1583186, -3815718}, new int[]{9, 10, 11, 12, 13, 14, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"MIo6r0qGSFAFAAAAtL8TsDzNX60", "dhf9pceaQVACAAAAbzdVo4SCiZA", "fqv01SQemVIBAAAApND8LDRUhRU", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "pgJfpFNRSFABAAAACDT8s5sEjfc", "ptuUd96JSFACAAAATobI23sPpz0", "dhf9pceaQVACAAAAbzdVo4SCiZA", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "9iklpvIPQVABAAAAORQXKur_Eyc", "F5oWoCs7QFACAAAAgf2bD_mg8Bw"}, new int[]{NotificationCenter.permissionsGranted, NotificationCenter.permissionsGranted, 225, NotificationCenter.permissionsGranted, 0, NotificationCenter.needDeleteDialog, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{50, 50, 58, 47, 46, 50, 49, 46, 51, 50, 49, 34, 54, 50, 40});
         sortAccents(themeInfo7);
         themes.add(themeInfo7);
         themesDict.put("Arctic Blue", themeInfo7);
@@ -4616,7 +4616,7 @@ public abstract class Theme {
             this.isSelected = z2;
             this.path = new Path();
             this.selectedPaint = new Paint(1);
-            this.alpha = NotificationCenter.didReceiveCall;
+            this.alpha = NotificationCenter.didReceiveSmsCode;
         }
 
         public boolean hasGradient() {
@@ -5061,7 +5061,7 @@ public abstract class Theme {
                 messageDrawable.draw(canvas);
                 setAlpha((int) (this.crossfadeProgress * 255.0f));
                 draw(canvas, null);
-                setAlpha(NotificationCenter.didReceiveCall);
+                setAlpha(NotificationCenter.didReceiveSmsCode);
                 return;
             }
             draw(canvas, null);
@@ -6216,14 +6216,14 @@ public abstract class Theme {
                 float[] fArr3 = this.tempHSV;
                 float f4 = fArr3[2];
                 fArr3[2] = Math.max(0.0f, Math.min(1.0f, f4 - (f4 <= 0.7f ? 0.25f : 0.125f)));
-                return Theme.blendOver(i, Color.HSVToColor(NotificationCenter.didReceiveCall, this.tempHSV));
+                return Theme.blendOver(i, Color.HSVToColor(NotificationCenter.didReceiveSmsCode, this.tempHSV));
             }
             fArr2[0] = f;
             fArr2[1] = Math.max(0.0f, Math.min(1.0f, f2 + 0.6f));
             float[] fArr32 = this.tempHSV;
             float f42 = fArr32[2];
             fArr32[2] = Math.max(0.0f, Math.min(1.0f, f42 - (f42 <= 0.7f ? 0.25f : 0.125f)));
-            return Theme.blendOver(i, Color.HSVToColor(NotificationCenter.didReceiveCall, this.tempHSV));
+            return Theme.blendOver(i, Color.HSVToColor(NotificationCenter.didReceiveSmsCode, this.tempHSV));
         }
 
         private int linkSelectionBackground(int i, int i2, boolean z) {
@@ -6304,7 +6304,7 @@ public abstract class Theme {
             if (i == 0) {
                 return 0;
             }
-            return Color.argb(NotificationCenter.didReceiveCall, i4 / i, i3 / i, i2 / i);
+            return Color.argb(NotificationCenter.didReceiveSmsCode, i4 / i, i3 / i, i2 / i);
         }
 
         public File getPathToWallpaper() {
@@ -6374,10 +6374,10 @@ public abstract class Theme {
                 if (i6 == 0) {
                     i6 = 45;
                 }
-                String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (i2 >> 8)) & 255), Byte.valueOf((byte) (i2 & NotificationCenter.didReceiveCall))).toLowerCase();
-                String lowerCase2 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (i3 >> 8)) & 255), Byte.valueOf((byte) (i3 & NotificationCenter.didReceiveCall))).toLowerCase() : null;
-                String lowerCase3 = i4 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i4 >> 16)) & 255), Integer.valueOf(((byte) (i4 >> 8)) & 255), Byte.valueOf((byte) (i4 & NotificationCenter.didReceiveCall))).toLowerCase() : null;
-                String lowerCase4 = i5 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i5 >> 16)) & 255), Integer.valueOf(((byte) (i5 >> 8)) & 255), Byte.valueOf((byte) (i5 & NotificationCenter.didReceiveCall))).toLowerCase() : null;
+                String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (i2 >> 8)) & 255), Byte.valueOf((byte) (i2 & NotificationCenter.didReceiveSmsCode))).toLowerCase();
+                String lowerCase2 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (i3 >> 8)) & 255), Byte.valueOf((byte) (i3 & NotificationCenter.didReceiveSmsCode))).toLowerCase() : null;
+                String lowerCase3 = i4 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i4 >> 16)) & 255), Integer.valueOf(((byte) (i4 >> 8)) & 255), Byte.valueOf((byte) (i4 & NotificationCenter.didReceiveSmsCode))).toLowerCase() : null;
+                String lowerCase4 = i5 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i5 >> 16)) & 255), Integer.valueOf(((byte) (i5 >> 8)) & 255), Byte.valueOf((byte) (i5 & NotificationCenter.didReceiveSmsCode))).toLowerCase() : null;
                 if (lowerCase2 == null || lowerCase3 == null) {
                     if (lowerCase2 != null) {
                         lowerCase = (lowerCase + "-" + lowerCase2) + "&rotation=" + i6;
@@ -6488,7 +6488,7 @@ public abstract class Theme {
     }
 
     public static int multAlpha(int i, float f) {
-        return f == 1.0f ? i : ColorUtils.setAlphaComponent(i, MathUtils.clamp((int) (Color.alpha(i) * f), 0, NotificationCenter.didReceiveCall));
+        return f == 1.0f ? i : ColorUtils.setAlphaComponent(i, MathUtils.clamp((int) (Color.alpha(i) * f), 0, NotificationCenter.didReceiveSmsCode));
     }
 
     public static class OverrideWallpaperInfo {
@@ -9158,7 +9158,7 @@ public abstract class Theme {
         tempHsv[1] = (tempHsv2[1] * fArr[1]) / tempHsv[1];
         float f = ((((tempHsv2[2] / tempHsv[2]) + min) - 1.0f) * fArr[2]) / min;
         tempHsv[2] = f;
-        return f < 0.3f ? i2 : Color.HSVToColor(NotificationCenter.didReceiveCall, tempHsv);
+        return f < 0.3f ? i2 : Color.HSVToColor(NotificationCenter.didReceiveSmsCode, tempHsv);
     }
 
     public static int changeColorAccent(int i) {
@@ -9196,7 +9196,7 @@ public abstract class Theme {
         int red = (int) (Color.red(i) * f);
         int green = (int) (Color.green(i) * f);
         int blue = (int) (Color.blue(i) * f);
-        return Color.argb(Color.alpha(i), red < 0 ? 0 : Math.min(red, NotificationCenter.didReceiveCall), green < 0 ? 0 : Math.min(green, NotificationCenter.didReceiveCall), blue >= 0 ? Math.min(blue, NotificationCenter.didReceiveCall) : 0);
+        return Color.argb(Color.alpha(i), red < 0 ? 0 : Math.min(red, NotificationCenter.didReceiveSmsCode), green < 0 ? 0 : Math.min(green, NotificationCenter.didReceiveSmsCode), blue >= 0 ? Math.min(blue, NotificationCenter.didReceiveSmsCode) : 0);
     }
 
     public static boolean deleteThemeAccent(ThemeInfo themeInfo, ThemeAccent themeAccent, boolean z) {
@@ -9646,13 +9646,13 @@ public abstract class Theme {
         if (i == 0) {
             str = "https://attheme.org?slug=" + overrideWallpaperInfo.slug;
         } else {
-            String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.color >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.color & NotificationCenter.didReceiveCall))).toLowerCase();
+            String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.color >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.color & NotificationCenter.didReceiveSmsCode))).toLowerCase();
             int i2 = overrideWallpaperInfo.gradientColor1;
-            String lowerCase2 = i2 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor1 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor1 & NotificationCenter.didReceiveCall))).toLowerCase() : null;
+            String lowerCase2 = i2 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor1 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor1 & NotificationCenter.didReceiveSmsCode))).toLowerCase() : null;
             int i3 = overrideWallpaperInfo.gradientColor2;
-            String lowerCase3 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor2 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor2 & NotificationCenter.didReceiveCall))).toLowerCase() : null;
+            String lowerCase3 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor2 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor2 & NotificationCenter.didReceiveSmsCode))).toLowerCase() : null;
             int i4 = overrideWallpaperInfo.gradientColor3;
-            String lowerCase4 = i4 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i4 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor3 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor3 & NotificationCenter.didReceiveCall))).toLowerCase() : null;
+            String lowerCase4 = i4 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i4 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor3 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor3 & NotificationCenter.didReceiveSmsCode))).toLowerCase() : null;
             if (lowerCase2 == null || lowerCase3 == null) {
                 if (lowerCase2 != null) {
                     lowerCase = (lowerCase + "-" + lowerCase2) + "&rotation=" + overrideWallpaperInfo.rotation;
@@ -10567,14 +10567,14 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+                                                            messageDrawableArr[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
                                                             messageDrawableArr[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr[1].draw(canvas);
                                                             messageDrawableArr[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr[1].draw(canvas);
-                                                            messageDrawableArr[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-                                                            messageDrawableArr[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+                                                            messageDrawableArr[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+                                                            messageDrawableArr[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
                                                             messageDrawableArr[0].draw(canvas);
                                                             paint3.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3);
@@ -10635,14 +10635,14 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr2[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+                                                            messageDrawableArr2[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
                                                             messageDrawableArr2[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr2[1].draw(canvas);
                                                             messageDrawableArr2[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr2[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr2[1].draw(canvas);
-                                                            messageDrawableArr2[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-                                                            messageDrawableArr2[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+                                                            messageDrawableArr2[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+                                                            messageDrawableArr2[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
                                                             messageDrawableArr2[0].draw(canvas);
                                                             paint32.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32);
@@ -10702,14 +10702,14 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr22[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+                                                            messageDrawableArr22[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
                                                             messageDrawableArr22[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr22[1].draw(canvas);
                                                             messageDrawableArr22[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr22[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr22[1].draw(canvas);
-                                                            messageDrawableArr22[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-                                                            messageDrawableArr22[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+                                                            messageDrawableArr22[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+                                                            messageDrawableArr22[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
                                                             messageDrawableArr22[0].draw(canvas);
                                                             paint322.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322);
@@ -10818,14 +10818,14 @@ public abstract class Theme {
                                                                         }
                                                                         if (drawable != null) {
                                                                         }
-                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
                                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
                                                                         messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                                         messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
-                                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-                                                                        messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+                                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+                                                                        messageDrawableArr222[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
                                                                         messageDrawableArr222[0].draw(canvas);
                                                                         paint3222.setColor(previewColor3);
                                                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222);
@@ -10872,14 +10872,14 @@ public abstract class Theme {
                                                                 drawable.setBounds(width, intrinsicHeight2, drawable.getIntrinsicWidth() + width, drawable.getIntrinsicHeight() + intrinsicHeight2);
                                                                 drawable.draw(canvas);
                                                             }
-                                                            messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+                                                            messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
                                                             messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
                                                             messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
-                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-                                                            messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+                                                            messageDrawableArr222[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
                                                             messageDrawableArr222[0].draw(canvas);
                                                             paint32222.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222);
@@ -10930,14 +10930,14 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+                                                            messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
                                                             messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
                                                             messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
-                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-                                                            messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+                                                            messageDrawableArr222[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
                                                             messageDrawableArr222[0].draw(canvas);
                                                             paint322222.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222);
@@ -10965,14 +10965,14 @@ public abstract class Theme {
                                                         }
                                                         if (drawable != null) {
                                                         }
-                                                        messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+                                                        messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
                                                         messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                         messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
-                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-                                                        messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+                                                        messageDrawableArr222[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
                                                         messageDrawableArr222[0].draw(canvas);
                                                         paint3222222.setColor(previewColor3);
                                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222222);
@@ -11026,14 +11026,14 @@ public abstract class Theme {
                                                                                     }
                                                                                     if (drawable != null) {
                                                                                     }
-                                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+                                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
                                                                                     messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                                     messageDrawableArr222[1].draw(canvas);
                                                                                     messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                                                     messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                                     messageDrawableArr222[1].draw(canvas);
-                                                                                    messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-                                                                                    messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+                                                                                    messageDrawableArr222[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+                                                                                    messageDrawableArr222[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
                                                                                     messageDrawableArr222[0].draw(canvas);
                                                                                     paint32222222.setColor(previewColor3);
                                                                                     canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222222);
@@ -11060,14 +11060,14 @@ public abstract class Theme {
                                                                             }
                                                                             if (drawable != null) {
                                                                             }
-                                                                            messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+                                                                            messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
                                                                             messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                             messageDrawableArr222[1].draw(canvas);
                                                                             messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                                             messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                             messageDrawableArr222[1].draw(canvas);
-                                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-                                                                            messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+                                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+                                                                            messageDrawableArr222[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
                                                                             messageDrawableArr222[0].draw(canvas);
                                                                             paint322222222.setColor(previewColor3);
                                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222222);
@@ -11101,14 +11101,14 @@ public abstract class Theme {
                                                                     }
                                                                     if (drawable != null) {
                                                                     }
-                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
                                                                     messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                     messageDrawableArr222[1].draw(canvas);
                                                                     messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                                     messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                     messageDrawableArr222[1].draw(canvas);
-                                                                    messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-                                                                    messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+                                                                    messageDrawableArr222[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+                                                                    messageDrawableArr222[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
                                                                     messageDrawableArr222[0].draw(canvas);
                                                                     paint3222222222.setColor(previewColor3);
                                                                     canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222222222);
@@ -11170,14 +11170,14 @@ public abstract class Theme {
                                                                         }
                                                                         if (drawable != null) {
                                                                         }
-                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
                                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
                                                                         messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                                         messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
-                                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-                                                                        messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+                                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+                                                                        messageDrawableArr222[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
                                                                         messageDrawableArr222[0].draw(canvas);
                                                                         paint32222222222.setColor(previewColor3);
                                                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222222222);
@@ -11203,14 +11203,14 @@ public abstract class Theme {
                                                                 }
                                                                 if (drawable != null) {
                                                                 }
-                                                                messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+                                                                messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
                                                                 messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                 messageDrawableArr222[1].draw(canvas);
                                                                 messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                                 messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                 messageDrawableArr222[1].draw(canvas);
-                                                                messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-                                                                messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+                                                                messageDrawableArr222[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+                                                                messageDrawableArr222[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
                                                                 messageDrawableArr222[0].draw(canvas);
                                                                 paint322222222222.setColor(previewColor3);
                                                                 canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222222222);
@@ -11239,14 +11239,14 @@ public abstract class Theme {
                                                         }
                                                         if (drawable != null) {
                                                         }
-                                                        messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+                                                        messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
                                                         messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                         messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
-                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-                                                        messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+                                                        messageDrawableArr222[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
                                                         messageDrawableArr222[0].draw(canvas);
                                                         paint3222222222222.setColor(previewColor3);
                                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222222222222);
@@ -11274,14 +11274,14 @@ public abstract class Theme {
                                                 }
                                                 if (drawable != null) {
                                                 }
-                                                messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+                                                messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
                                                 messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                 messageDrawableArr222[1].draw(canvas);
                                                 messageDrawableArr222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                                 messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                 messageDrawableArr222[1].draw(canvas);
-                                                messageDrawableArr222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-                                                messageDrawableArr222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+                                                messageDrawableArr222[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+                                                messageDrawableArr222[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
                                                 messageDrawableArr222[0].draw(canvas);
                                                 paint32222222222222.setColor(previewColor3);
                                                 canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222222222222);
@@ -11330,14 +11330,14 @@ public abstract class Theme {
                                         }
                                         if (drawable != null) {
                                         }
-                                        messageDrawableArr2222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+                                        messageDrawableArr2222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
                                         messageDrawableArr2222[1].setTop(0, 560, 522, false, false);
                                         messageDrawableArr2222[1].draw(canvas);
                                         messageDrawableArr2222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                         messageDrawableArr2222[1].setTop(430, 560, 522, false, false);
                                         messageDrawableArr2222[1].draw(canvas);
-                                        messageDrawableArr2222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-                                        messageDrawableArr2222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+                                        messageDrawableArr2222[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+                                        messageDrawableArr2222[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
                                         messageDrawableArr2222[0].draw(canvas);
                                         paint322222222222222.setColor(previewColor3);
                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222222222222);
@@ -11393,14 +11393,14 @@ public abstract class Theme {
                                 }
                                 if (drawable != null) {
                                 }
-                                messageDrawableArr22222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+                                messageDrawableArr22222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
                                 messageDrawableArr22222[1].setTop(0, 560, 522, false, false);
                                 messageDrawableArr22222[1].draw(canvas);
                                 messageDrawableArr22222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                                 messageDrawableArr22222[1].setTop(430, 560, 522, false, false);
                                 messageDrawableArr22222[1].draw(canvas);
-                                messageDrawableArr22222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-                                messageDrawableArr22222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+                                messageDrawableArr22222[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+                                messageDrawableArr22222[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
                                 messageDrawableArr22222[0].draw(canvas);
                                 paint3222222222222222.setColor(previewColor3);
                                 canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222222222222222);
@@ -11470,14 +11470,14 @@ public abstract class Theme {
                         }
                         if (drawable != null) {
                         }
-                        messageDrawableArr222222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+                        messageDrawableArr222222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
                         messageDrawableArr222222[1].setTop(0, 560, 522, false, false);
                         messageDrawableArr222222[1].draw(canvas);
                         messageDrawableArr222222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
                         messageDrawableArr222222[1].setTop(430, 560, 522, false, false);
                         messageDrawableArr222222[1].draw(canvas);
-                        messageDrawableArr222222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-                        messageDrawableArr222222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+                        messageDrawableArr222222[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+                        messageDrawableArr222222[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
                         messageDrawableArr222222[0].draw(canvas);
                         paint32222222222222222.setColor(previewColor3);
                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222222222222222);
@@ -11562,14 +11562,14 @@ public abstract class Theme {
             }
             if (drawable != null) {
             }
-            messageDrawableArr2222222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.currentUserShowLimitReachedDialog);
+            messageDrawableArr2222222[1].setBounds(NotificationCenter.albumsDidLoad, NotificationCenter.premiumFloodWaitReceived, createBitmap.getWidth() - 20, NotificationCenter.premiumStatusChangedGlobal);
             messageDrawableArr2222222[1].setTop(0, 560, 522, false, false);
             messageDrawableArr2222222[1].draw(canvas);
             messageDrawableArr2222222[1].setBounds(NotificationCenter.albumsDidLoad, 430, createBitmap.getWidth() - 20, 522);
             messageDrawableArr2222222[1].setTop(430, 560, 522, false, false);
             messageDrawableArr2222222[1].draw(canvas);
-            messageDrawableArr2222222[0].setBounds(20, NotificationCenter.storiesListUpdated, 399, 415);
-            messageDrawableArr2222222[0].setTop(NotificationCenter.storiesListUpdated, 560, 522, false, false);
+            messageDrawableArr2222222[0].setBounds(20, NotificationCenter.storyDeleted, 399, 415);
+            messageDrawableArr2222222[0].setTop(NotificationCenter.storyDeleted, 560, 522, false, false);
             messageDrawableArr2222222[0].draw(canvas);
             paint322222222222222222.setColor(previewColor3);
             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222222222222222);
@@ -12954,7 +12954,7 @@ public abstract class Theme {
             chat_actionBackgroundPaint.setFilterBitmap(true);
             chat_actionBackgroundPaint.setShader(serviceBitmapShader);
             chat_actionBackgroundPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-            chat_actionBackgroundPaint.setAlpha(NotificationCenter.didReceiveCall);
+            chat_actionBackgroundPaint.setAlpha(NotificationCenter.didReceiveSmsCode);
             chat_actionBackgroundSelectedPaint.setFilterBitmap(true);
             chat_actionBackgroundSelectedPaint.setShader(serviceBitmapShader);
             ColorMatrix colorMatrix2 = new ColorMatrix(colorMatrix);
@@ -12962,7 +12962,7 @@ public abstract class Theme {
             isCurrentThemeDark();
             AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix2, 0.92f);
             chat_actionBackgroundSelectedPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix2));
-            chat_actionBackgroundSelectedPaint.setAlpha(NotificationCenter.didReceiveCall);
+            chat_actionBackgroundSelectedPaint.setAlpha(NotificationCenter.didReceiveSmsCode);
             chat_actionBackgroundGradientDarkenPaint.setAlpha(0);
             return;
         }

@@ -1242,7 +1242,7 @@ public class AnimatedEmojiDrawable extends Drawable {
     }
 
     public static class WrapSizeDrawable extends Drawable {
-        private int alpha = NotificationCenter.didReceiveCall;
+        private int alpha = NotificationCenter.didReceiveSmsCode;
         private Drawable drawable;
         int height;
         int width;
@@ -1358,7 +1358,7 @@ public class AnimatedEmojiDrawable extends Drawable {
             AnimatedFloat animatedFloat2 = new AnimatedFloat((View) null, 300L, cubicBezierInterpolator);
             this.particlesAlpha = animatedFloat2;
             this.drawables = new Drawable[2];
-            this.alpha = NotificationCenter.didReceiveCall;
+            this.alpha = NotificationCenter.didReceiveSmsCode;
             this.bounds = new Rect();
             this.invalidateRunnable = new Runnable() { // from class: org.telegram.ui.Components.AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable

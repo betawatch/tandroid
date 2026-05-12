@@ -1408,8 +1408,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     f9 = f5;
                     float f25 = f2;
                     int saveLayerAlpha = canvas.saveLayerAlpha(centerX - AndroidUtilities.dp(24.0f), centerY - AndroidUtilities.dp(24.0f), centerX + AndroidUtilities.dp(24.0f), centerY + AndroidUtilities.dp(24.0f), (int) (alpha * (1.0f - clamp)), 31);
-                    this.lockOutlinePaint.setAlpha(NotificationCenter.didReceiveCall);
-                    this.lockPaint.setAlpha(NotificationCenter.didReceiveCall);
+                    this.lockOutlinePaint.setAlpha(NotificationCenter.didReceiveSmsCode);
+                    this.lockPaint.setAlpha(NotificationCenter.didReceiveSmsCode);
                     float f26 = 1.0f - dp;
                     canvas.translate(0.0f, AndroidUtilities.dpf2(2.0f) * f26);
                     canvas.rotate(f20, centerX, centerY);
@@ -1595,8 +1595,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             f9 = f5;
             float f252 = f2;
             int saveLayerAlpha2 = canvas.saveLayerAlpha(centerX2 - AndroidUtilities.dp(24.0f), centerY2 - AndroidUtilities.dp(24.0f), centerX2 + AndroidUtilities.dp(24.0f), centerY2 + AndroidUtilities.dp(24.0f), (int) (alpha2 * (1.0f - clamp)), 31);
-            this.lockOutlinePaint.setAlpha(NotificationCenter.didReceiveCall);
-            this.lockPaint.setAlpha(NotificationCenter.didReceiveCall);
+            this.lockOutlinePaint.setAlpha(NotificationCenter.didReceiveSmsCode);
+            this.lockPaint.setAlpha(NotificationCenter.didReceiveSmsCode);
             float f262 = 1.0f - dp;
             canvas.translate(0.0f, AndroidUtilities.dpf2(2.0f) * f262);
             canvas.rotate(f202, centerX2, centerY2);
@@ -2407,7 +2407,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         drawable.draw(canvas);
                         return;
                     }
-                    drawable.setAlpha(NotificationCenter.didReceiveCall);
+                    drawable.setAlpha(NotificationCenter.didReceiveSmsCode);
                     drawable.draw(canvas);
                     return;
                 }
@@ -16013,7 +16013,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     canvas.restore();
                 }
                 canvas.save();
-                this.textPaint.setAlpha(NotificationCenter.didReceiveCall);
+                this.textPaint.setAlpha(NotificationCenter.didReceiveSmsCode);
                 StaticLayout staticLayout2 = new StaticLayout(this.replaceStable, this.textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 canvas.translate(0.0f, measuredHeight - (staticLayout2.getHeight() / 2.0f));
                 staticLayout2.draw(canvas);
@@ -16686,7 +16686,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             float f6;
             int save = canvas.save();
             if (!this.isNewDesignSendButton) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveSmsCode, 31);
             }
             updateColors();
             checkBackgroundRect();
@@ -17025,7 +17025,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (f <= 0.0f && f2 <= 0.0f) {
             return ((Boolean) callback0Return.run()).booleanValue();
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, this.messageEditText.getX() + this.messageEditText.getMeasuredWidth() + AndroidUtilities.dp(5.0f), this.messageEditText.getY() + this.messageEditText.getMeasuredHeight() + AndroidUtilities.dp(2.0f), NotificationCenter.didReceiveCall, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, this.messageEditText.getX() + this.messageEditText.getMeasuredWidth() + AndroidUtilities.dp(5.0f), this.messageEditText.getY() + this.messageEditText.getMeasuredHeight() + AndroidUtilities.dp(2.0f), NotificationCenter.didReceiveSmsCode, 31);
         boolean booleanValue = ((Boolean) callback0Return.run()).booleanValue();
         canvas.save();
         if (f > 0.0f) {

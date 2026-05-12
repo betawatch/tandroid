@@ -398,7 +398,7 @@ public class QuickShareSelectorDrawable extends Drawable implements Animator.Ani
 
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
-        draw(canvas, NotificationCenter.didReceiveCall, false);
+        draw(canvas, NotificationCenter.didReceiveSmsCode, false);
     }
 
     public void draw(Canvas canvas, int i, boolean z) {
@@ -784,14 +784,14 @@ public class QuickShareSelectorDrawable extends Drawable implements Animator.Ani
             buttonJumpUp = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, 150, 560);
             buttonJumpDown = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.openBoostForUsersDialog, 425, 560);
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
-            bgOpacity = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, NotificationCenter.wallpaperSettedToUser, 560);
-            bgScale = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 40, NotificationCenter.wallpaperSettedToUser, 560);
+            bgOpacity = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, NotificationCenter.onDatabaseReset, 560);
+            bgScale = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 40, NotificationCenter.onDatabaseReset, 560);
             heightExpansion = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, 250, 560);
             widthExpansion = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, 460, 560);
-            bubbleY = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, NotificationCenter.chatlistFolderUpdate, 560);
+            bubbleY = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 0, NotificationCenter.storiesDraftsUpdated, 560);
             ballsRadius = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 150, 250, 560);
             overshootCancel = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.dialogPhotosUpdate, 480, 560);
-            avatar1 = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 60, NotificationCenter.wallpaperSettedToUser, 560);
+            avatar1 = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 60, NotificationCenter.onDatabaseReset, 560);
             avatar2 = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 90, 380, 560);
             avatar3 = QuickShareSelectorDrawable.interpolator(cubicBezierInterpolator, 110, 440, 560);
             avatarOvershootCancel = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.dialogPhotosUpdate, 460, 560);

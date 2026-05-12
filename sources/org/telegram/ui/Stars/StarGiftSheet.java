@@ -2417,7 +2417,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             float min = Math.min(AndroidUtilities.dp(176.0f), f3) / 2.0f;
             float f6 = f5 - max;
             float f7 = f5 + max;
-            canvas.saveLayerAlpha(f6, 0.0f, f7, f3, NotificationCenter.didReceiveCall, 31);
+            canvas.saveLayerAlpha(f6, 0.0f, f7, f3, NotificationCenter.didReceiveSmsCode, 31);
             background.backgroundMatrix.reset();
             background.backgroundMatrix.postTranslate(f5, min);
             background.backgroundGradient.setLocalMatrix(background.backgroundMatrix);
@@ -4689,7 +4689,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
         @Override // android.view.ViewGroup, android.view.View
         protected void dispatchDraw(Canvas canvas) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveSmsCode, 31);
             super.dispatchDraw(canvas);
             canvas.save();
             this.rect.set(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(8.0f));
@@ -10995,7 +10995,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             this.rays = raysView;
             raysView.setVisibility(8);
             raysView.setAlpha(0.0f);
-            addView(raysView, LayoutHelper.createFrame(NotificationCenter.onDatabaseOpened, 300.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
+            addView(raysView, LayoutHelper.createFrame(NotificationCenter.dialogsUnreadPollVotesCounterChanged, 300.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
             Cube3D cube3D = new Cube3D(context, this.faces);
             this.cube = cube3D;
             addView(cube3D, LayoutHelper.createFrame(-1, 300.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
@@ -12311,7 +12311,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                     f = f;
                 }
                 float f3 = f;
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveCall, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveSmsCode, 31);
                 while (true) {
                     RadialGradient[] radialGradientArr = this.gradient;
                     if (i < radialGradientArr.length) {

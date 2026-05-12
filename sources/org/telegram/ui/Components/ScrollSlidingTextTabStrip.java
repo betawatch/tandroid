@@ -473,7 +473,7 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements T
         this.clipPath.addRoundRect(this.rect, height, height, Path.Direction.CW);
         BlurredBackgroundDrawable blurredBackgroundDrawable = this.backgroundDrawable;
         if (blurredBackgroundDrawable != null) {
-            blurredBackgroundDrawable.setAlpha(NotificationCenter.didReceiveCall);
+            blurredBackgroundDrawable.setAlpha(NotificationCenter.didReceiveSmsCode);
             this.backgroundDrawable.setBounds(((int) this.rect.left) - AndroidUtilities.dp(7.0f), 0, ((int) this.rect.right) + AndroidUtilities.dp(7.0f), getMeasuredHeight());
             this.backgroundDrawable.setRadius(height);
         }

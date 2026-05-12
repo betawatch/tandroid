@@ -1131,7 +1131,7 @@ public class MediaRouteControllerDialog extends AlertDialog {
                         mediaRouteVolumeSlider.setEnabled(false);
                     }
                 }
-                ((ImageView) view.findViewById(R$id.mr_volume_item_icon)).setAlpha(isEnabled ? NotificationCenter.didReceiveCall : (int) (this.mDisabledAlpha * 255.0f));
+                ((ImageView) view.findViewById(R$id.mr_volume_item_icon)).setAlpha(isEnabled ? NotificationCenter.didReceiveSmsCode : (int) (this.mDisabledAlpha * 255.0f));
                 ((LinearLayout) view.findViewById(R$id.volume_item_container)).setVisibility(MediaRouteControllerDialog.this.mGroupMemberRoutesAnimatingWithBitmap.contains(routeInfo) ? 4 : 0);
                 Set set = MediaRouteControllerDialog.this.mGroupMemberRoutesAdded;
                 if (set != null && set.contains(routeInfo)) {

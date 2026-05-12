@@ -1293,7 +1293,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         } else {
             i = 0;
         }
-        int i3 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.didReceiveCall;
+        int i3 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.didReceiveSmsCode;
         int i4 = this.todo ? getMessagesController().todoItemLengthMax : 100;
         boolean z = (TextUtils.isEmpty(getFixedString(this.descriptionString)) || this.descriptionString.length() <= this.MAX_CAPTION_LENGTH) && (TextUtils.isEmpty(getFixedString(this.solutionString)) || this.solutionString.length() <= 200) && !TextUtils.isEmpty(getFixedString(this.questionString)) && this.questionString.length() <= i3;
         int i5 = 0;
@@ -1594,7 +1594,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             if (length <= f - (0.7f * f)) {
             }
         } else if (i == this.questionRow) {
-            i2 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.didReceiveCall;
+            i2 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.didReceiveSmsCode;
             CharSequence charSequence2 = this.questionString;
             if (charSequence2 != null) {
                 length2 = charSequence2.length();

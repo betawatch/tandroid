@@ -5076,6 +5076,7 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
     class PhotoAttachAdapter extends RecyclerListView.FastScrollAdapter {
         private boolean hasCamera;
         private boolean hasCameraSpaceRow;
+        private boolean isInFastScroll;
         private int itemsCount;
         private final Context mContext;
         private final boolean needCamera;
@@ -5097,6 +5098,28 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
             for (int i = 0; i < 8; i++) {
                 this.viewsCache.add(createHolder());
             }
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.FastScrollAdapter
+        public void onStartFastScroll() {
+            super.onStartFastScroll();
+            this.isInFastScroll = true;
+        }
+
+        @Override // org.telegram.ui.Components.RecyclerListView.FastScrollAdapter
+        public void onFinishFastScroll(RecyclerListView recyclerListView) {
+            super.onFinishFastScroll(recyclerListView);
+            this.isInFastScroll = false;
+            if (recyclerListView != null) {
+                int childCount = recyclerListView.getChildCount();
+                for (int i = 0; i < childCount; i++) {
+                    recyclerListView.getChildAt(i).invalidate();
+                }
+            }
+        }
+
+        public boolean isInFastScroll() {
+            return this.isInFastScroll;
         }
 
         public RecyclerListView.Holder createHolder() {
@@ -5132,7 +5155,13 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
                 });
                 photoAttachPhotoCell.setClipToOutline(true);
             }
-            photoAttachPhotoCell.setDelegate(new PhotoAttachPhotoCell.PhotoAttachPhotoCellDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertPhotoLayout$PhotoAttachAdapter$$ExternalSyntheticLambda3
+            photoAttachPhotoCell.setFastScrollDelegate(new PhotoAttachPhotoCell.ParentFastScrollDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertPhotoLayout$PhotoAttachAdapter$$ExternalSyntheticLambda3
+                @Override // org.telegram.ui.Cells.PhotoAttachPhotoCell.ParentFastScrollDelegate
+                public final boolean isInFastScroll() {
+                    return ChatAttachAlertPhotoLayout.PhotoAttachAdapter.this.isInFastScroll();
+                }
+            });
+            photoAttachPhotoCell.setDelegate(new PhotoAttachPhotoCell.PhotoAttachPhotoCellDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertPhotoLayout$PhotoAttachAdapter$$ExternalSyntheticLambda4
                 @Override // org.telegram.ui.Cells.PhotoAttachPhotoCell.PhotoAttachPhotoCellDelegate
                 public final void onCheckClick(PhotoAttachPhotoCell photoAttachPhotoCell2) {
                     ChatAttachAlertPhotoLayout.PhotoAttachAdapter.this.lambda$createHolder$0(photoAttachPhotoCell, photoAttachPhotoCell2);

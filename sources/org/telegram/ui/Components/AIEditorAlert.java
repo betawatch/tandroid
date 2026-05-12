@@ -1711,7 +1711,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
             float f2 = (i3 + i5) / 2.0f;
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(f, f2 - AndroidUtilities.dp(7.66f), this.text.getCurrentWidth() + f + AndroidUtilities.dp(6.66f), AndroidUtilities.dp(7.66f) + f2);
-            canvas.saveLayerAlpha(rectF, NotificationCenter.didReceiveCall, 31);
+            canvas.saveLayerAlpha(rectF, NotificationCenter.didReceiveSmsCode, 31);
             this.paint.setColor(paint.getColor());
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), this.paint);
             this.text.draw(canvas, f + AndroidUtilities.dp(3.33f), f2, -1, 1.0f);

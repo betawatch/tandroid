@@ -15,7 +15,7 @@ abstract class AuthenticatorUtils {
     }
 
     static boolean isWeakBiometricAllowed(int i) {
-        return (i & NotificationCenter.didReceiveCall) == 255;
+        return (i & NotificationCenter.didReceiveSmsCode) == 255;
     }
 
     static String convertToString(int i) {
@@ -41,7 +41,7 @@ abstract class AuthenticatorUtils {
         if (promptInfo.getAllowedAuthenticators() != 0) {
             return promptInfo.getAllowedAuthenticators();
         }
-        int i = cryptoObject != null ? 15 : NotificationCenter.didReceiveCall;
+        int i = cryptoObject != null ? 15 : NotificationCenter.didReceiveSmsCode;
         return promptInfo.isDeviceCredentialAllowed() ? 32768 | i : i;
     }
 

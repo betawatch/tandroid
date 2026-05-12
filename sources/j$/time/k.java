@@ -131,7 +131,7 @@ public final class k implements j$.time.temporal.m, j$.time.temporal.n {
             case 4:
                 return (z ? 1 : 0) + NotificationCenter.contentSettingsLoaded;
             case 5:
-                return (z ? 1 : 0) + NotificationCenter.currentUserPremiumStatusChanged;
+                return (z ? 1 : 0) + NotificationCenter.onUserRingtonesUpdated;
             case 6:
                 return 1;
             case 7:
@@ -143,9 +143,9 @@ public final class k implements j$.time.temporal.m, j$.time.temporal.n {
             case 10:
                 return (z ? 1 : 0) + NotificationCenter.groupPackUpdated;
             case 11:
-                return (z ? 1 : 0) + NotificationCenter.proxySettingsChanged;
+                return (z ? 1 : 0) + NotificationCenter.didSetNewWallpapper;
             default:
-                return (z ? 1 : 0) + NotificationCenter.botForumTopicDidCreate;
+                return (z ? 1 : 0) + NotificationCenter.translationModelDownloaded;
         }
     }
 

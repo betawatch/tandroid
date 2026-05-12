@@ -17,7 +17,7 @@ public class Color {
     private final int color;
 
     public int getAlpha() {
-        return NotificationCenter.didReceiveCall;
+        return NotificationCenter.didReceiveSmsCode;
     }
 
     static {

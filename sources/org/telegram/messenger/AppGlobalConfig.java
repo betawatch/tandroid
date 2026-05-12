@@ -98,9 +98,9 @@ public class AppGlobalConfig {
         this.pollAnswersMax = ofInt("poll_answers_max", 12);
         this.pollCountriesMax = ofInt("poll_countries_max", 12);
         this.pollAnswerLengthMax = ofInt("poll_answer_length_max", 100);
-        this.pollQuestionLengthMax = ofInt("poll_question_length_max", NotificationCenter.didReceiveCall);
+        this.pollQuestionLengthMax = ofInt("poll_question_length_max", NotificationCenter.didReceiveSmsCode);
         this.pollSolutionLengthMax = ofInt("poll_solution_length_max", NotificationCenter.dialogPhotosUpdate);
-        this.pollCaptionLengthMax = ofInt("poll_caption_length_max", NotificationCenter.onDatabaseOpened);
+        this.pollCaptionLengthMax = ofInt("poll_caption_length_max", NotificationCenter.dialogsUnreadPollVotesCounterChanged);
         this.pollAnswerDeletePeriod = ofTime("poll_answer_delete_period", 300L, timeUnit);
         this.botsCreateLimitDefault = ofInt("bots_create_limit_default", 20);
         this.botsCreateLimitPremium = ofInt("bots_create_limit_premium", 40);

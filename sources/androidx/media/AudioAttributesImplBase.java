@@ -31,7 +31,7 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
         } else if (legacyStreamType == 7) {
             i |= 1;
         }
-        return i & NotificationCenter.didSetNewWallpapper;
+        return i & NotificationCenter.suggestedLangpack;
     }
 
     public int hashCode() {

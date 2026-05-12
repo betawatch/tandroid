@@ -1160,7 +1160,7 @@ public class SimpleTextView extends View implements Drawable.Callback {
                 } else if (this.scrollingOffset > (this.totalWidth + AndroidUtilities.dp(16.0f)) - AndroidUtilities.dp(10.0f)) {
                     this.fadePaint.setAlpha((int) ((1.0f - ((this.scrollingOffset - ((this.totalWidth + AndroidUtilities.dp(16.0f)) - AndroidUtilities.dp(10.0f))) / AndroidUtilities.dp(10.0f))) * 255.0f));
                 } else {
-                    this.fadePaint.setAlpha(NotificationCenter.didReceiveCall);
+                    this.fadePaint.setAlpha(NotificationCenter.didReceiveSmsCode);
                 }
                 canvas.drawRect(i18, 0.0f, AndroidUtilities.dp(6.0f) + i18, getMeasuredHeight(), this.fadePaint);
                 canvas.save();

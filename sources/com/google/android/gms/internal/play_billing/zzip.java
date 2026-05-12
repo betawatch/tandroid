@@ -572,7 +572,7 @@ final class zzip implements zzix {
                 iArr[i68] = i69;
                 i68++;
             }
-            int i78 = charAt25 & NotificationCenter.didReceiveCall;
+            int i78 = charAt25 & NotificationCenter.didReceiveSmsCode;
             int i79 = length;
             int i80 = charAt25 & 2048;
             int i81 = i5;
@@ -858,7 +858,7 @@ final class zzip implements zzix {
     }
 
     private static int zzr(int i) {
-        return (i >>> 20) & NotificationCenter.didReceiveCall;
+        return (i >>> 20) & NotificationCenter.didReceiveSmsCode;
     }
 
     private final int zzs(int i) {

@@ -163,7 +163,7 @@ public class MatrixParticlesDrawable {
             this.index = Math.abs(Utilities.fastRandom.nextInt() % 16);
             this.nextIndex = Math.abs(Utilities.fastRandom.nextInt() % 16);
             this.lastUpdateTime = j;
-            this.nextUpdateTime = j + Math.abs(Utilities.fastRandom.nextInt() % NotificationCenter.onDatabaseOpened) + 150;
+            this.nextUpdateTime = j + Math.abs(Utilities.fastRandom.nextInt() % NotificationCenter.dialogsUnreadPollVotesCounterChanged) + 150;
         }
 
         public void draw(Canvas canvas, float f, float f2, long j, float f3) {
@@ -176,12 +176,12 @@ public class MatrixParticlesDrawable {
                 MatrixParticlesDrawable.this.paint.setAlpha((int) (f3 * clamp * 255.0f));
                 MatrixParticlesDrawable matrixParticlesDrawable2 = MatrixParticlesDrawable.this;
                 canvas.drawBitmap(matrixParticlesDrawable2.bitmaps[this.nextIndex], f, f2, matrixParticlesDrawable2.paint);
-                MatrixParticlesDrawable.this.paint.setAlpha(NotificationCenter.didReceiveCall);
+                MatrixParticlesDrawable.this.paint.setAlpha(NotificationCenter.didReceiveSmsCode);
                 if (clamp >= 1.0f) {
                     this.index = this.nextIndex;
                     this.lastUpdateTime = j;
                     this.nextIndex = Math.abs(Utilities.fastRandom.nextInt() % 16);
-                    this.nextUpdateTime = j + Math.abs(Utilities.fastRandom.nextInt() % NotificationCenter.onDatabaseOpened) + 150;
+                    this.nextUpdateTime = j + Math.abs(Utilities.fastRandom.nextInt() % NotificationCenter.dialogsUnreadPollVotesCounterChanged) + 150;
                     return;
                 }
                 return;

@@ -2138,7 +2138,7 @@ public class ItemOptions {
                     this.clipPath.addRoundRect(rectF2, ItemOptions.this.scrimViewRoundRadius * this.dimProgress, ItemOptions.this.scrimViewRoundRadius * this.dimProgress, Path.Direction.CW);
                     canvas.clipPath(this.clipPath);
                 }
-                this.cachedBitmapPaint.setAlpha(NotificationCenter.didReceiveCall);
+                this.cachedBitmapPaint.setAlpha(NotificationCenter.didReceiveSmsCode);
                 canvas.drawBitmap(this.cachedBitmap, -ItemOptions.this.viewAdditionalOffsets.left, -ItemOptions.this.viewAdditionalOffsets.top, this.cachedBitmapPaint);
                 canvas.restore();
             }

@@ -1885,7 +1885,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 canvas.save();
                 canvas.clipRect(0.0f, 0.0f, getWidth(), getHeight() * getAlpha());
                 canvas.clipPath(this.path);
-                canvas.saveLayerAlpha(rectF4, NotificationCenter.didReceiveCall, 31);
+                canvas.saveLayerAlpha(rectF4, NotificationCenter.didReceiveSmsCode, 31);
                 super.dispatchDraw(canvas);
                 rectF4.set(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getPaddingTop() + AndroidUtilities.dp(6.0f));
                 this.clip.draw(canvas, rectF4, 1, 1.0f);
@@ -2157,7 +2157,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 this.path.addRoundRect(rectF4, dp2, dp2, Path.Direction.CW);
                 canvas.save();
                 canvas.clipPath(this.path);
-                canvas.saveLayerAlpha(rectF4, NotificationCenter.didReceiveCall, 31);
+                canvas.saveLayerAlpha(rectF4, NotificationCenter.didReceiveSmsCode, 31);
                 super.dispatchDraw(canvas);
                 rectF4.set(getPaddingLeft(), f, getWidth() - getPaddingRight(), dp3 + AndroidUtilities.dp(6.0f));
                 this.clip.draw(canvas, rectF4, 1, 1.0f);
@@ -6695,7 +6695,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     }
 
     private void setNavBarAlpha(float f) {
-        int alphaComponent = ColorUtils.setAlphaComponent(getThemedColor(Theme.key_windowBackgroundGray), Math.min(NotificationCenter.didReceiveCall, Math.max(0, (int) (f * 255.0f))));
+        int alphaComponent = ColorUtils.setAlphaComponent(getThemedColor(Theme.key_windowBackgroundGray), Math.min(NotificationCenter.didReceiveSmsCode, Math.max(0, (int) (f * 255.0f))));
         this.navBarColor = alphaComponent;
         AndroidUtilities.setNavigationBarColor((Dialog) this, alphaComponent, false);
         AndroidUtilities.setLightNavigationBar(this, ((double) AndroidUtilities.computePerceivedBrightness(this.navBarColor)) > 0.721d);

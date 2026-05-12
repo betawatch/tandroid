@@ -342,7 +342,7 @@ public class Camera2Session {
                 } else if (rotation == 2) {
                     i = NotificationCenter.needDeleteDialog;
                 } else if (rotation == 3) {
-                    i = NotificationCenter.locationPermissionDenied;
+                    i = NotificationCenter.locationPermissionGranted;
                 }
                 Integer num = (Integer) this.cameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
                 if (!this.isFront) {
@@ -379,7 +379,7 @@ public class Camera2Session {
                 } else if (rotation == 2) {
                     i = NotificationCenter.needDeleteDialog;
                 } else if (rotation == 3) {
-                    i = NotificationCenter.locationPermissionDenied;
+                    i = NotificationCenter.locationPermissionGranted;
                 }
                 Integer num = (Integer) this.cameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
                 if (!this.isFront) {

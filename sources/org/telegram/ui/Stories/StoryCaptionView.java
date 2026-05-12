@@ -1661,7 +1661,7 @@ public class StoryCaptionView extends NestedScrollView implements ItemOptions.Sc
         @Override // android.view.View
         protected void onDraw(Canvas canvas) {
             if (this.showMore != null) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.didReceiveCall, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.didReceiveSmsCode, 31);
             } else {
                 canvas.save();
             }

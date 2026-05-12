@@ -71,10 +71,10 @@ public class HevcDecoderConfigurationRecord {
         this.reserved1 = (61440 & readUInt16) >> 12;
         this.min_spatial_segmentation_idc = readUInt16 & 4095;
         int readUInt82 = IsoTypeReader.readUInt8(byteBuffer);
-        this.reserved2 = (readUInt82 & NotificationCenter.wallpapersDidLoad) >> 2;
+        this.reserved2 = (readUInt82 & NotificationCenter.pushMessagesUpdated) >> 2;
         this.parallelismType = readUInt82 & 3;
         int readUInt83 = IsoTypeReader.readUInt8(byteBuffer);
-        this.reserved3 = (readUInt83 & NotificationCenter.wallpapersDidLoad) >> 2;
+        this.reserved3 = (readUInt83 & NotificationCenter.pushMessagesUpdated) >> 2;
         this.chromaFormat = readUInt83 & 3;
         int readUInt84 = IsoTypeReader.readUInt8(byteBuffer);
         this.reserved4 = (readUInt84 & NotificationCenter.updatedChatRanks) >> 3;

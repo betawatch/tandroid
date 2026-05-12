@@ -49,7 +49,7 @@ public class FolderDrawable extends Drawable {
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
         if (this.path != null) {
-            canvas.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, NotificationCenter.didReceiveCall);
+            canvas.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, NotificationCenter.didReceiveSmsCode);
             this.drawable.setBounds(getBounds());
             this.drawable.draw(canvas);
             if (this.pathInvalidated) {
