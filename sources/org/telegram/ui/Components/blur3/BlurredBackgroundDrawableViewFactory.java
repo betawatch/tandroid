@@ -15,6 +15,7 @@ import org.telegram.ui.Components.chat.ViewPositionWatcher;
 /* loaded from: classes5.dex */
 public class BlurredBackgroundDrawableViewFactory {
     private boolean isLiquidGlassEffectAllowed;
+    private ReferenceList linkedDrawables;
     private ReferenceList linkedViews;
     private ViewGroup parent;
     private final BlurredBackgroundSource source;
@@ -36,6 +37,10 @@ public class BlurredBackgroundDrawableViewFactory {
 
     public void setLinkedViewsRef(ReferenceList referenceList) {
         this.linkedViews = referenceList;
+    }
+
+    public void setLinkedDrawablesRef(ReferenceList referenceList) {
+        this.linkedDrawables = referenceList;
     }
 
     public void invalidateAllLinkedViews() {
@@ -87,6 +92,10 @@ public class BlurredBackgroundDrawableViewFactory {
                     BlurredBackgroundDrawableViewFactory.lambda$create$0(BlurredBackgroundDrawable.this, view, view2, rectF);
                 }
             }, z);
+        }
+        ReferenceList referenceList2 = this.linkedDrawables;
+        if (referenceList2 != null) {
+            referenceList2.add(createDrawable);
         }
         return createDrawable;
     }

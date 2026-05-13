@@ -201,6 +201,10 @@ public class PollButtonDrawable extends Drawable implements DownloadController.F
         return this.votersCountDrawable.getAnimateToWidth() + (this.recentVotersCount > 0 ? AndroidUtilities.dp((r1 * 9.34f) + 8.66f) : 0);
     }
 
+    public float getVotersCountAnimatedWidth(float f) {
+        return this.lastVotersDrawable.getAnimatedWidth() + this.votersCountDrawable.getCurrentWidth() + (AndroidUtilities.dp(4.0f) * this.lastVotersDrawable.getTotalVisibility() * this.animatorShowVoters.getFloatValue()) + (f * this.animatorShowVoters.getFloatValue());
+    }
+
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
         draw(canvas, null);
@@ -218,7 +222,7 @@ public class PollButtonDrawable extends Drawable implements DownloadController.F
                 this.lastVotersDrawable.setBounds((bounds.right - dp) - animatedWidth, bounds.bottom - AndroidUtilities.dp(31.33f), bounds.right - dp, bounds.bottom);
                 this.lastVotersDrawable.draw(canvas, paint);
             }
-            int dp2 = bounds.bottom - AndroidUtilities.dp(23.0f);
+            int dp2 = bounds.bottom - AndroidUtilities.dp(21.33f);
             this.votersCountDrawable.setAlpha((int) (this.animatorShowVoters.getFloatValue() * 255.0f));
             this.votersCountDrawable.setBounds(bounds.left, AndroidUtilities.dp(15.0f) + dp2, lerp, dp2 - AndroidUtilities.dp(15.0f));
             this.votersCountDrawable.draw(canvas);

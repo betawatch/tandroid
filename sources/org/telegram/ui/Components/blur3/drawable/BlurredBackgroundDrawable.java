@@ -786,49 +786,51 @@ public abstract class BlurredBackgroundDrawable extends Drawable {
             canvas.drawPath(path, paint);
         }
         if (z) {
-            Path path2 = new Path();
-            Path path3 = new Path();
             float[] copyOf = Arrays.copyOf(this.boundProps.radii, 8);
             boolean radiiAreSame = radiiAreSame(copyOf);
             float min = Math.min(rectF.width(), rectF.height()) / 2.0f;
-            float[] fArr2 = tmpRadii;
-            Arrays.fill(fArr2, 0.0f);
-            fArr2[0] = copyOf[0];
-            fArr2[1] = copyOf[1];
-            fArr2[2] = copyOf[2];
-            fArr2[3] = copyOf[3];
-            if (radiiAreSame && copyOf[0] > min) {
-                fArr2[3] = min;
-                fArr2[2] = min;
-                fArr2[1] = min;
-                fArr2[0] = min;
-            }
-            float f2 = rectF.left;
-            float f3 = rectF.top;
-            path2.addRoundRect(f2, f3, rectF.right, Math.min(copyOf[0] + f3, rectF.bottom), fArr2, direction);
-            float f4 = rectF.left;
-            float f5 = rectF.top;
-            float f6 = this.boundProps.strokeWidthTop + f5;
-            float f7 = rectF.right;
-            float min2 = Math.min(f5 + copyOf[0], rectF.bottom);
-            Path.Direction direction2 = Path.Direction.CCW;
-            path2.addRoundRect(f4, f6, f7, min2, fArr2, direction2);
-            Arrays.fill(fArr2, 0.0f);
-            fArr2[4] = copyOf[4];
-            fArr2[5] = copyOf[5];
-            fArr2[6] = copyOf[6];
-            fArr2[7] = copyOf[7];
-            if (radiiAreSame && copyOf[0] > min) {
-                fArr2[7] = min;
-                fArr2[6] = min;
-                fArr2[5] = min;
-                fArr2[4] = min;
-            }
-            path3.addRoundRect(rectF.left, Math.max(rectF.bottom - copyOf[4], rectF.top), rectF.right, rectF.bottom, fArr2, direction);
-            path3.addRoundRect(rectF.left, Math.max(rectF.bottom - copyOf[4], rectF.top), rectF.right, rectF.bottom - this.boundProps.strokeWidthBottom, fArr2, direction2);
             Paint paint2 = new Paint(1);
-            paint2.setColor(this.strokeColorTop);
-            canvas.drawPath(path2, paint2);
+            if (Color.alpha(this.strokeColorTop) > 0 && copyOf[0] > 0.0f) {
+                float[] fArr2 = tmpRadii;
+                Arrays.fill(fArr2, 0.0f);
+                fArr2[0] = copyOf[0];
+                fArr2[1] = copyOf[1];
+                fArr2[2] = copyOf[2];
+                fArr2[3] = copyOf[3];
+                if (radiiAreSame && copyOf[0] > min) {
+                    fArr2[3] = min;
+                    fArr2[2] = min;
+                    fArr2[1] = min;
+                    fArr2[0] = min;
+                }
+                Path path2 = new Path();
+                float f2 = rectF.left;
+                float f3 = rectF.top;
+                path2.addRoundRect(f2, f3, rectF.right, Math.min(Math.max(copyOf[0], copyOf[2]) + f3, rectF.bottom), fArr2, direction);
+                float f4 = rectF.left;
+                float f5 = rectF.top;
+                path2.addRoundRect(f4, f5 + this.boundProps.strokeWidthTop, rectF.right, Math.min(f5 + Math.max(copyOf[0], copyOf[2]), rectF.bottom), fArr2, Path.Direction.CCW);
+                paint2.setColor(this.strokeColorTop);
+                canvas.drawPath(path2, paint2);
+            }
+            if (Color.alpha(this.strokeColorBottom) <= 0 || copyOf[4] <= 0.0f) {
+                return;
+            }
+            float[] fArr3 = tmpRadii;
+            Arrays.fill(fArr3, 0.0f);
+            fArr3[4] = copyOf[4];
+            fArr3[5] = copyOf[5];
+            fArr3[6] = copyOf[6];
+            fArr3[7] = copyOf[7];
+            if (radiiAreSame && copyOf[0] > min) {
+                fArr3[7] = min;
+                fArr3[6] = min;
+                fArr3[5] = min;
+                fArr3[4] = min;
+            }
+            Path path3 = new Path();
+            path3.addRoundRect(rectF.left, Math.max(rectF.bottom - Math.max(copyOf[4], copyOf[6]), rectF.top), rectF.right, rectF.bottom, fArr3, direction);
+            path3.addRoundRect(rectF.left, Math.max(rectF.bottom - Math.max(copyOf[4], copyOf[6]), rectF.top), rectF.right, rectF.bottom - this.boundProps.strokeWidthBottom, fArr3, Path.Direction.CCW);
             paint2.setColor(this.strokeColorBottom);
             canvas.drawPath(path3, paint2);
         }
