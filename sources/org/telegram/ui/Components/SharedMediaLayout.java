@@ -136,7 +136,7 @@ import org.telegram.ui.Cells.SharedPhotoVideoCell2;
 import org.telegram.ui.Cells.TextSelectionHelper;
 import org.telegram.ui.Cells.UserCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda274;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda287;
 import org.telegram.ui.ChatActivityContainer;
 import org.telegram.ui.Components.Forum.ForumUtilities;
 import org.telegram.ui.Components.FragmentContextView;
@@ -1685,10 +1685,10 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
     /* JADX WARN: Removed duplicated region for block: B:168:0x0d3a A[EDGE_INSN: B:168:0x0d3a->B:169:0x0d3a BREAK  A[LOOP:3: B:140:0x09c9->B:164:0x0c32], SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:171:0x0d40  */
     /* JADX WARN: Removed duplicated region for block: B:174:0x0db5  */
-    /* JADX WARN: Removed duplicated region for block: B:181:0x0f29  */
-    /* JADX WARN: Type inference failed for: r11v10 */
-    /* JADX WARN: Type inference failed for: r11v15 */
-    /* JADX WARN: Type inference failed for: r11v6, types: [boolean, int] */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x0f2a  */
+    /* JADX WARN: Type inference failed for: r10v10 */
+    /* JADX WARN: Type inference failed for: r10v15 */
+    /* JADX WARN: Type inference failed for: r10v6, types: [boolean, int] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1702,7 +1702,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         int i7;
         int i8;
         int i9;
-        ?? r11;
+        ?? r10;
         MediaPage[] mediaPageArr;
         View view;
         ProfileStoriesCollectionTabs profileStoriesCollectionTabs;
@@ -2402,7 +2402,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             i7 = 0;
             i8 = -1;
             i9 = 0;
-            r11 = z;
+            r10 = z;
             while (true) {
                 mediaPageArr = this.mediaPages;
                 if (i9 < mediaPageArr.length) {
@@ -2548,7 +2548,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 this.mediaPages[i9].itemAnimator = new DefaultItemAnimator();
                 this.mediaPages[i9].itemAnimator.setDurations(280L);
                 this.mediaPages[i9].itemAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
-                this.mediaPages[i9].itemAnimator.setSupportsChangeAnimations(r11);
+                this.mediaPages[i9].itemAnimator.setSupportsChangeAnimations(r10);
                 this.mediaPages[i9].listView = new SharedMediaListView(context) { // from class: org.telegram.ui.Components.SharedMediaLayout.19
                     float lastY;
                     float startY;
@@ -2776,9 +2776,9 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 this.mediaPages[i9].listView.setFastScrollEnabled(1);
                 this.mediaPages[i9].listView.setScrollingTouchSlop(1);
                 this.mediaPages[i9].listView.setPinnedSectionOffsetY(-AndroidUtilities.dp(2.0f));
-                this.mediaPages[i9].listView.setPadding(r11, AndroidUtilities.dp(54.0f), r11, r11);
+                this.mediaPages[i9].listView.setPadding(r10, AndroidUtilities.dp(54.0f), r10, r10);
                 this.mediaPages[i9].listView.setItemAnimator(null);
-                this.mediaPages[i9].listView.setClipToPadding(r11);
+                this.mediaPages[i9].listView.setClipToPadding(r10);
                 this.mediaPages[i9].listView.setSectionsType(2);
                 this.mediaPages[i9].listView.setLayoutManager(extendedGridLayoutManager);
                 MediaPage mediaPage3 = this.mediaPages[i9];
@@ -3094,7 +3094,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 i7 = i10;
                 i8 = i11;
                 blurredBackgroundDrawableViewFactory3 = blurredBackgroundDrawableViewFactory4;
-                r11 = 0;
+                r10 = 0;
             }
             BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory5 = blurredBackgroundDrawableViewFactory3;
             view = this.storiesContainer;
@@ -3153,7 +3153,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 addView(this.scrollSlidingTextTabStrip, LayoutHelper.createFrame(-2, 50.0f, 49, -2.0f, 0.0f, -2.0f, 0.0f));
                 Context context2 = getContext();
                 BaseFragment baseFragment4 = this.profileActivity;
-                SearchTagsList searchTagsList3 = new SearchTagsList(context2, baseFragment4, null, baseFragment4.getCurrentAccount(), includeSavedDialogs() ? 0L : this.dialog_id, resourcesProvider, false) { // from class: org.telegram.ui.Components.SharedMediaLayout.31
+                SearchTagsList searchTagsList3 = new SearchTagsList(context2, baseFragment4, baseFragment4.getCurrentAccount(), includeSavedDialogs() ? 0L : this.dialog_id, resourcesProvider) { // from class: org.telegram.ui.Components.SharedMediaLayout.31
                     @Override // org.telegram.ui.Components.SearchTagsList
                     protected boolean setFilter(ReactionsLayoutInBubble.VisibleReaction visibleReaction) {
                         if (SharedMediaLayout.this.searchItem == null) {
@@ -3200,8 +3200,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 };
                 this.searchTagsList = searchTagsList3;
                 searchTagsList3.setShown(0.0f);
-                this.searchTagsList.attach();
-                addView(this.searchTagsList, LayoutHelper.createFrame(-1, 40.0f, 51, 0.0f, 4.0f, 0.0f, 0.0f));
+                addView(this.searchTagsList, LayoutHelper.createFrame(-1, 38.0f, 51, 0.0f, 4.0f, 0.0f, 0.0f));
                 addView(this.actionModeLayout, LayoutHelper.createFrame(-1, 48, 51));
             }
             updateTabs(false);
@@ -3230,7 +3229,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         i7 = 0;
         i8 = -1;
         i9 = 0;
-        r11 = z;
+        r10 = z;
         while (true) {
             mediaPageArr = this.mediaPages;
             if (i9 < mediaPageArr.length) {
@@ -3269,7 +3268,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             i7 = i10;
             i8 = i11;
             blurredBackgroundDrawableViewFactory3 = blurredBackgroundDrawableViewFactory4;
-            r11 = 0;
+            r10 = 0;
         }
         BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory52 = blurredBackgroundDrawableViewFactory3;
         view = this.storiesContainer;
@@ -4472,7 +4471,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                     public void onTransitionAnimationStart(boolean z, boolean z2) {
                         if (this.firstCreateView) {
                             if (this.searchItem != null) {
-                                lambda$openSearchWithText$360("");
+                                lambda$openSearchWithText$362("");
                                 this.searchItem.setSearchFieldText(SharedMediaLayout.this.savedMessagesSearchAdapter.lastQuery, false);
                             }
                             SearchTagsList searchTagsList = this.actionBarSearchTags;
@@ -6083,10 +6082,6 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
 
     public void onDestroy() {
         this.observersGroup.removeAllObservers();
-        SearchTagsList searchTagsList = this.searchTagsList;
-        if (searchTagsList != null) {
-            searchTagsList.detach();
-        }
         StoriesAdapter storiesAdapter = this.storiesAdapter;
         if (storiesAdapter != null && storiesAdapter.storiesList != null) {
             storiesAdapter.destroy();
@@ -9466,7 +9461,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             boolean isStoryAlbumPageType = isStoryAlbumPageType(getClosestTab());
             final ItemOptions makeOptions = ItemOptions.makeOptions(this.profileActivity, view, true);
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda274(makeOptions));
+            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda287(makeOptions));
             makeSwipeback.addGap();
             ItemOptions.addAlbumsItemOptions(makeSwipeback, getStoriesController().getStoryAlbumsList(this.dialog_id), hashSet, true, new Runnable() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda24
                 @Override // java.lang.Runnable

@@ -48,6 +48,12 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
         paint3.setStyle(style);
     }
 
+    @Override // org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable
+    public BlurredBackgroundDrawable setClipToOutline(boolean z) {
+        this.renderNode.setClipToOutline(z);
+        return super.setClipToOutline(z);
+    }
+
     public void setLiquidGlassEffectAllowed() {
         this.liquidGlassEffect = new LiquidGlassEffect(this.renderNodeFill);
     }

@@ -79,6 +79,10 @@ public abstract class BlurredBackgroundDrawable extends Drawable {
     protected void onSourceRelativePositionChanged(RectF rectF) {
     }
 
+    public BlurredBackgroundDrawable setClipToOutline(boolean z) {
+        return this;
+    }
+
     @Override // android.graphics.drawable.Drawable
     public void setColorFilter(ColorFilter colorFilter) {
     }
@@ -157,7 +161,7 @@ public abstract class BlurredBackgroundDrawable extends Drawable {
         return this;
     }
 
-    public void setRadius(float f, float f2, float f3, float f4) {
+    public BlurredBackgroundDrawable setRadius(float f, float f2, float f3, float f4) {
         Props props = this.boundProps;
         float[] fArr = props.radii;
         fArr[1] = f;
@@ -170,6 +174,7 @@ public abstract class BlurredBackgroundDrawable extends Drawable {
         fArr[6] = f4;
         props.build();
         onBoundPropsChanged();
+        return this;
     }
 
     public void setRadius(float f, float f2, float f3, float f4, boolean z) {
@@ -198,9 +203,10 @@ public abstract class BlurredBackgroundDrawable extends Drawable {
         onBoundPropsChanged();
     }
 
-    public void setThickness(int i) {
+    public BlurredBackgroundDrawable setThickness(int i) {
         this.boundProps.liquidThickness = i;
         onBoundPropsChanged();
+        return this;
     }
 
     public void setIntensity(float f) {
@@ -447,19 +453,23 @@ public abstract class BlurredBackgroundDrawable extends Drawable {
         return this.alpha;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x0036, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x003d, code lost:
     
-        if (r7 == r16[7]) goto L19;
+        if (r3 == r25[7]) goto L17;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x001e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0028, code lost:
     
-        if (r7 == r16[3]) goto L19;
+        if (r3 == r25[3]) goto L17;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x003f, code lost:
+    
+        r3 = true;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static void drawStroke(Canvas canvas, float f, float f2, float f3, float f4, float[] fArr, float f5, boolean z, Paint paint) {
-        boolean z2 = true;
+        boolean z2;
         if (z) {
             float f6 = fArr[0];
             float f7 = fArr[1];
@@ -485,21 +495,44 @@ public abstract class BlurredBackgroundDrawable extends Drawable {
                 canvas.save();
                 if (canvas.clipRect(f, f2, f3, MathUtils.clamp((fArr[0] * 2.0f) + f2, f2, f4))) {
                     float f13 = fArr[0];
-                    canvas.drawRoundRect(f - f12, f2 + f12, f3 + f12, f12 + f4, f13, f13, paint);
+                    canvas.drawRoundRect(f - f12, f2 + f12, f3 + f12, f4 + f12, f13, f13, paint);
                 }
                 canvas.restore();
                 return;
             }
+            float f14 = (f + f3) / 2.0f;
+            canvas.save();
+            if (canvas.clipRect(f, f2, f14, MathUtils.clamp((fArr[0] * 2.0f) + f2, f2, f4))) {
+                canvas.drawRoundRect(f - f12, f2 + f12, f3 + f12, f4 + f12, fArr[0], fArr[1], paint);
+            }
+            canvas.restore();
+            canvas.save();
+            if (canvas.clipRect(f14, f2, f3, MathUtils.clamp((fArr[0] * 2.0f) + f2, f2, f4))) {
+                canvas.drawRoundRect(f - f12, f2 + f12, f3 + f12, f4 + f12, fArr[2], fArr[3], paint);
+            }
+            canvas.restore();
             return;
         }
         if (z2) {
             canvas.save();
             if (canvas.clipRect(f, MathUtils.clamp(f4 - (fArr[4] * 2.0f), f2, f4), f3, f4)) {
-                float f14 = fArr[4];
-                canvas.drawRoundRect(f - f12, f2 - f12, f3 + f12, f4 - f12, f14, f14, paint);
+                float f15 = fArr[4];
+                canvas.drawRoundRect(f - f12, f2 - f12, f3 + f12, f4 - f12, f15, f15, paint);
             }
             canvas.restore();
+            return;
         }
+        float f16 = (f + f3) / 2.0f;
+        canvas.save();
+        if (canvas.clipRect(f, MathUtils.clamp(f4 - (fArr[4] * 2.0f), f2, f4), f16, f4)) {
+            canvas.drawRoundRect(f - f12, f2 - f12, f3 + f12, f4 - f12, fArr[6], fArr[7], paint);
+        }
+        canvas.restore();
+        canvas.save();
+        if (canvas.clipRect(f16, MathUtils.clamp(f4 - (fArr[4] * 2.0f), f2, f4), f3, f4)) {
+            canvas.drawRoundRect(f - f12, f2 - f12, f3 + f12, f4 - f12, fArr[4], fArr[5], paint);
+        }
+        canvas.restore();
     }
 
     public static void drawStroke(Canvas canvas, RectF rectF, float f, float f2, boolean z, Paint paint) {

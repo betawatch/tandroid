@@ -53,8 +53,4 @@ public class ChatListViewPaddingsAnimator {
             FileLog.e(th);
         }
     }
-
-    public int getCurrentAdditionalHeight() {
-        return this.currentAdditionalHeight;
-    }
 }

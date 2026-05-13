@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
+import android.text.TextUtils;
 import androidx.car.app.CarContext;
 import androidx.car.app.Screen;
 import androidx.car.app.messaging.model.CarMessage;
@@ -323,7 +324,7 @@ public class HomeScreen extends Screen implements DefaultLifecycleObserver, Noti
     
         if ((r11 instanceof org.telegram.tgnet.TLRPC.TL_fileLocationUnavailable) == false) goto L46;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x00a4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x00a4, code lost:
     
         if ((r11 instanceof org.telegram.tgnet.TLRPC.TL_fileLocationUnavailable) == false) goto L46;
      */
@@ -382,18 +383,20 @@ public class HomeScreen extends Screen implements DefaultLifecycleObserver, Noti
                         fileLocation = null;
                     }
                 }
-                Row.Builder onClickListener = new Row.Builder().setTitle(str).addText(LocaleController.formatPluralString("MusicFiles", musicMessages.size(), new Object[i])).setBrowsable(true).setOnClickListener(new OnClickListener() { // from class: org.telegram.messenger.car.HomeScreen$$ExternalSyntheticLambda1
-                    @Override // androidx.car.app.model.OnClickListener
-                    public final void onClick() {
-                        HomeScreen.this.lambda$buildMusicTemplate$0(longValue, str);
+                if (!TextUtils.isEmpty(str)) {
+                    Row.Builder onClickListener = new Row.Builder().setTitle(str).addText(LocaleController.formatPluralString("MusicFiles", musicMessages.size(), new Object[i])).setBrowsable(true).setOnClickListener(new OnClickListener() { // from class: org.telegram.messenger.car.HomeScreen$$ExternalSyntheticLambda1
+                        @Override // androidx.car.app.model.OnClickListener
+                        public final void onClick() {
+                            HomeScreen.this.lambda$buildMusicTemplate$0(longValue, str);
+                        }
+                    });
+                    IconCompat iconFromAvatar = fileLocation != null ? iconFromAvatar(fileLocation) : null;
+                    if (iconFromAvatar != null) {
+                        onClickListener.setImage(new CarIcon.Builder(iconFromAvatar).build(), 2);
                     }
-                });
-                IconCompat iconFromAvatar = fileLocation != null ? iconFromAvatar(fileLocation) : null;
-                if (iconFromAvatar != null) {
-                    onClickListener.setImage(new CarIcon.Builder(iconFromAvatar).build(), 2);
+                    builder.addItem(onClickListener.build());
+                    i3++;
                 }
-                builder.addItem(onClickListener.build());
-                i3++;
             }
             i2++;
             i = 0;

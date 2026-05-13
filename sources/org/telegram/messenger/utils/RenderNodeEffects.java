@@ -6,16 +6,16 @@ import android.graphics.RenderEffect;
 
 /* loaded from: classes3.dex */
 public abstract class RenderNodeEffects {
-    private static RenderEffect saturationUpX2Effect;
+    private static RenderEffect saturationUpX4Effect;
 
-    public static RenderEffect getSaturationX2RenderEffect() {
+    public static RenderEffect getSaturationX4RenderEffect() {
         RenderEffect createColorFilterEffect;
-        if (saturationUpX2Effect == null) {
+        if (saturationUpX4Effect == null) {
             ColorMatrix colorMatrix = new ColorMatrix();
-            colorMatrix.setSaturation(2.0f);
+            colorMatrix.setSaturation(4.0f);
             createColorFilterEffect = RenderEffect.createColorFilterEffect(new ColorMatrixColorFilter(colorMatrix));
-            saturationUpX2Effect = createColorFilterEffect;
+            saturationUpX4Effect = createColorFilterEffect;
         }
-        return saturationUpX2Effect;
+        return saturationUpX4Effect;
     }
 }

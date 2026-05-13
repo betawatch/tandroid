@@ -53,6 +53,8 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.SectionsScrollView;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.SnowflakesEffect;
+import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProvider;
 
 /* loaded from: classes4.dex */
 public class ActionBar extends FrameLayout implements Theme.Colorable {
@@ -90,6 +92,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
     private boolean centerScale;
     private boolean clipContent;
     SizeNotifierFrameLayout contentView;
+    private boolean doNotDrawChild;
     private boolean drawBackButton;
     EllipsizeSpanAnimator ellipsizeSpanAnimator;
     private int extraHeight;
@@ -197,6 +200,20 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
             return;
         }
         runnable.run();
+    }
+
+    public void setupGlass(BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory, BlurredBackgroundProvider blurredBackgroundProvider) {
+        setBackground(null);
+        this.glassDrawable = blurredBackgroundDrawableViewFactory.create(this).setColorProvider(blurredBackgroundProvider).setRadius(AndroidUtilities.dp(26.0f)).setPadding(AndroidUtilities.dp(7.0f));
+        ActionBarMenu actionBarMenu = this.menu;
+        if (actionBarMenu != null) {
+            actionBarMenu.setTranslationX(-AndroidUtilities.dp(9.0f));
+        }
+        ImageView imageView = this.backButtonImageView;
+        if (imageView != null) {
+            imageView.setPadding(0, 0, AndroidUtilities.dp(6.0f), 0);
+            this.backButtonImageView.setTranslationX(AndroidUtilities.dp(6.0f));
+        }
     }
 
     public void setGlassDrawable(Drawable drawable) {
@@ -2111,6 +2128,13 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         setBackground(null);
     }
 
+    public void setSkipDrawChild(boolean z) {
+        if (this.doNotDrawChild != z) {
+            this.doNotDrawChild = z;
+            invalidate();
+        }
+    }
+
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
         if (this.glassDrawable != null) {
@@ -2126,6 +2150,9 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
             } else {
                 this.contentView.drawBlurRect(canvas, getY(), this.rectTmp, this.blurScrimPaint, true);
             }
+        }
+        if (this.doNotDrawChild) {
+            return;
         }
         super.dispatchDraw(canvas);
     }

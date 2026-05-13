@@ -113,7 +113,7 @@ public abstract class FragmentContextView extends FrameLayout implements Notific
     private boolean firstLocationsLoaded;
     private boolean flickOnAttach;
     private BaseFragment fragment;
-    private BlurredFrameLayout frameLayout;
+    private FrameLayout frameLayout;
     private Paint gradientPaint;
     private TextPaint gradientTextPaint;
     private int gradientWidth;
@@ -342,7 +342,7 @@ public abstract class FragmentContextView extends FrameLayout implements Notific
             return;
         }
         final Context context = getContext();
-        BlurredFrameLayout blurredFrameLayout = new BlurredFrameLayout(context, (this.isInsideBubble || !(this.fragment.getFragmentView() instanceof SizeNotifierFrameLayout)) ? null : (SizeNotifierFrameLayout) this.fragment.getFragmentView()) { // from class: org.telegram.ui.Components.FragmentContextView.3
+        FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.FragmentContextView.3
             private final RectF notifyButtonRect = new RectF();
 
             @Override // android.view.View
@@ -354,7 +354,7 @@ public abstract class FragmentContextView extends FrameLayout implements Notific
                 FragmentContextView.this.avatars.invalidate();
             }
 
-            @Override // org.telegram.ui.Components.BlurredFrameLayout, android.view.ViewGroup, android.view.View
+            @Override // android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
                 float f;
                 super.dispatchDraw(canvas);
@@ -427,9 +427,8 @@ public abstract class FragmentContextView extends FrameLayout implements Notific
                 return drawable == FragmentContextView.this.notifyText || super.verifyDrawable(drawable);
             }
         };
-        this.frameLayout = blurredFrameLayout;
-        blurredFrameLayout.drawBlur = !this.isInsideBubble;
-        this.notifyButtonBounce = new ButtonBounce(blurredFrameLayout);
+        this.frameLayout = frameLayout;
+        this.notifyButtonBounce = new ButtonBounce(frameLayout);
         this.notifyText.setOverrideFullWidth(AndroidUtilities.displaySize.x);
         this.notifyText.setScaleProperty(0.4f);
         this.notifyText.setCallback(this.frameLayout);
@@ -646,14 +645,14 @@ public abstract class FragmentContextView extends FrameLayout implements Notific
                 FragmentContextView.this.lambda$checkCreateView$6(view3);
             }
         });
-        FrameLayout frameLayout = new FrameLayout(getContext()) { // from class: org.telegram.ui.Components.FragmentContextView.8
+        FrameLayout frameLayout2 = new FrameLayout(getContext()) { // from class: org.telegram.ui.Components.FragmentContextView.8
             @Override // android.view.ViewGroup, android.view.View
             public boolean dispatchTouchEvent(MotionEvent motionEvent) {
                 return false;
             }
         };
-        this.groupCallMessagesContainer = frameLayout;
-        addView(frameLayout, LayoutHelper.createFrame(-1, -2.0f, 48, 96.0f, 3.0f, 96.0f, 0.0f));
+        this.groupCallMessagesContainer = frameLayout2;
+        addView(frameLayout2, LayoutHelper.createFrame(-1, -2.0f, 48, 96.0f, 3.0f, 96.0f, 0.0f));
         setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {

@@ -25,6 +25,7 @@ import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
 
 /* loaded from: classes5.dex */
 public class BlurredBackgroundWithFadeDrawable extends Drawable {
+    private int alpha;
     private final Matrix bitmapMatrix;
     private final Paint bitmapPaint;
     private BitmapShader bitmapShader;
@@ -34,6 +35,7 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
     private final BlurredBackgroundDrawable drawable;
     private int fadeHeight;
     private Shader gradientShader;
+    private boolean ignoreFastWay;
     private Bitmap lastBitmap;
     private final Paint maskFadeGradientPaint;
     private final Matrix matrix;
@@ -44,10 +46,6 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
     @Override // android.graphics.drawable.Drawable
     public int getOpacity() {
         return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i) {
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -63,6 +61,7 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
         Paint paint2 = new Paint(1);
         this.bitmapPaint = paint2;
         this.colorStaticPaint = new Paint(1);
+        this.alpha = NotificationCenter.didReceiveSmsCode;
         this.drawable = blurredBackgroundDrawable;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         paint2.setFilterBitmap(true);
@@ -94,17 +93,22 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
         this.drawable.setBounds(rect);
     }
 
+    public void setIgnoreFastWay(boolean z) {
+        this.ignoreFastWay = z;
+    }
+
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
         int height;
         int i;
         boolean z;
         Rect bounds = getBounds();
-        if (bounds.isEmpty()) {
+        if (bounds.isEmpty() || this.alpha == 0) {
             return;
         }
         BlurredBackgroundSource unwrappedSource = this.drawable.getUnwrappedSource();
-        if (unwrappedSource instanceof BlurredBackgroundSourceColor) {
+        boolean z2 = this.ignoreFastWay;
+        if (!z2 && (unwrappedSource instanceof BlurredBackgroundSourceColor)) {
             int color = ((BlurredBackgroundSourceColor) unwrappedSource).getColor();
             if (this.colorStaticLast != color || this.gradientShader == null) {
                 LinearGradient createGradient = createGradient(color, this.opacity);
@@ -116,16 +120,17 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
             this.matrixTmp.set(this.matrix);
             this.matrixTmp.postTranslate(bounds.left, bounds.top + height);
             this.gradientShader.setLocalMatrix(this.matrixTmp);
+            this.colorStaticPaint.setAlpha(this.alpha);
             canvas.drawRect(bounds, this.colorStaticPaint);
             return;
         }
-        if ((unwrappedSource instanceof BlurredBackgroundSourceBitmap) && (i = Build.VERSION.SDK_INT) >= 28) {
+        if (!z2 && (unwrappedSource instanceof BlurredBackgroundSourceBitmap) && (i = Build.VERSION.SDK_INT) >= 28) {
             BlurredBackgroundSourceBitmap blurredBackgroundSourceBitmap = (BlurredBackgroundSourceBitmap) unwrappedSource;
             Bitmap bitmap = blurredBackgroundSourceBitmap.getBitmap();
             if (bitmap == null) {
                 return;
             }
-            boolean z2 = true;
+            boolean z3 = true;
             if (this.colorStaticLast != -16777216 || this.gradientShader == null) {
                 this.gradientShader = createGradient(-16777216, this.opacity);
                 this.colorStaticLast = -16777216;
@@ -142,9 +147,9 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
                     bitmapShader.setFilterMode(2);
                 }
             } else {
-                z2 = z;
+                z3 = z;
             }
-            if (z2 || this.composeShader == null) {
+            if (z3 || this.composeShader == null) {
                 ComposeShader composeShader = new ComposeShader(this.bitmapShader, this.gradientShader, PorterDuff.Mode.DST_IN);
                 this.composeShader = composeShader;
                 this.bitmapPaint.setShader(composeShader);
@@ -156,21 +161,32 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
             this.bitmapMatrix.set(blurredBackgroundSourceBitmap.getMatrix());
             this.bitmapMatrix.postTranslate(-this.drawable.getSourceOffsetX(), -this.drawable.getSourceOffsetY());
             this.bitmapShader.setLocalMatrix(this.bitmapMatrix);
+            this.bitmapPaint.setAlpha(this.alpha);
             canvas.drawRect(bounds, this.bitmapPaint);
             return;
         }
-        int saveLayer = canvas.saveLayer(bounds.left, bounds.top, bounds.right, bounds.bottom, null);
+        int saveLayerAlpha = canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, this.alpha);
         height = this.fadeHeight < 0 ? this.fadeHeight + bounds.height() : 0;
         this.drawable.draw(canvas);
         canvas.translate(bounds.left, bounds.top + height);
         canvas.drawRect(0.0f, -height, bounds.width(), bounds.height() - height, this.maskFadeGradientPaint);
-        canvas.restoreToCount(saveLayer);
+        canvas.restoreToCount(saveLayerAlpha);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setAlpha(int i) {
+        this.alpha = i;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getAlpha() {
+        return this.alpha;
     }
 
     private static LinearGradient createGradient(int i, boolean z) {
         int alpha = Color.alpha(i);
         if (z) {
-            return new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{ColorUtils.setAlphaComponent(i, 0), ColorUtils.setAlphaComponent(i, (alpha * 96) / NotificationCenter.liveLocationsCacheChanged), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.liveStoryUpdated) / NotificationCenter.liveLocationsCacheChanged), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.starUserGiftCollectionsLoaded) / NotificationCenter.liveLocationsCacheChanged)}, (float[]) null, Shader.TileMode.CLAMP);
+            return new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{ColorUtils.setAlphaComponent(i, 0), ColorUtils.setAlphaComponent(i, (alpha * 96) / NotificationCenter.screenStateChanged), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.liveStoryUpdated) / NotificationCenter.screenStateChanged), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.starUserGiftCollectionsLoaded) / NotificationCenter.screenStateChanged)}, (float[]) null, Shader.TileMode.CLAMP);
         }
         return new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{ColorUtils.setAlphaComponent(i, 0), ColorUtils.setAlphaComponent(i, (alpha * 96) / NotificationCenter.didReceiveSmsCode), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.liveStoryUpdated) / NotificationCenter.didReceiveSmsCode), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.starUserGiftCollectionsLoaded) / NotificationCenter.didReceiveSmsCode), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.didReceiveSmsCode) / NotificationCenter.didReceiveSmsCode)}, (float[]) null, Shader.TileMode.CLAMP);
     }

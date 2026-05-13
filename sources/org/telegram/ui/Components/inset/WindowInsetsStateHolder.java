@@ -220,6 +220,10 @@ public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInse
         }
     }
 
+    public int getInAppKeyboardHeight() {
+        return this.inAppKeyboardHeight;
+    }
+
     @Override // org.telegram.ui.Components.inset.WindowInsetsInAppController
     public void resetInAppKeyboardHeight(boolean z) {
         if (this.inAppKeyboardHeight == 0) {
