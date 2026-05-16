@@ -1378,8 +1378,8 @@ public class QrActivity extends BaseFragment {
             }
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:19:0x0097  */
-        /* JADX WARN: Removed duplicated region for block: B:29:0x00fd  */
+        /* JADX WARN: Removed duplicated region for block: B:19:0x0096  */
+        /* JADX WARN: Removed duplicated region for block: B:29:0x00f9  */
         /* JADX WARN: Removed duplicated region for block: B:39:? A[RETURN, SYNTHETIC] */
         @Override // android.view.View
         /*
@@ -1412,8 +1412,8 @@ public class QrActivity extends BaseFragment {
                     canvas.save();
                     canvas.translate(0.0f, (-dp) + ((getHeight() + dp) * (1.0f - f)));
                     Paint paint = this.crossfadeToPaint;
-                    i2 = NotificationCenter.didReceiveSmsCode;
-                    i = 31;
+                    i = NotificationCenter.didReceiveSmsCode;
+                    i2 = 31;
                     canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight() + dp, paint);
                     canvas.restore();
                     canvas.restore();
@@ -1421,12 +1421,12 @@ public class QrActivity extends BaseFragment {
                         if (z) {
                             RectF rectF2 = AndroidUtilities.rectTmp;
                             rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
-                            canvas.saveLayerAlpha(rectF2, i2, i);
+                            canvas.saveLayerAlpha(rectF2, i, i2);
                         }
                         Bitmap bitmap3 = this.contentBitmap;
                         if (bitmap3 != null) {
                             canvas.drawBitmap(bitmap3, 0.0f, 0.0f, this.bitmapGradientPaint);
-                            this.gradientDrawable.updateAnimation(true);
+                            this.gradientDrawable.lambda$new$0();
                         } else {
                             drawLoading(canvas);
                         }
@@ -1460,8 +1460,8 @@ public class QrActivity extends BaseFragment {
                     return;
                 }
             }
-            i = 31;
-            i2 = NotificationCenter.didReceiveSmsCode;
+            i = NotificationCenter.didReceiveSmsCode;
+            i2 = 31;
             if (f > 0.0f) {
             }
             if (this.hasTimer) {

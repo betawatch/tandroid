@@ -125,11 +125,6 @@ public class MotionBackgroundDrawable extends Drawable {
         legacyBitmapScale = 0.7f;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0() {
-        updateAnimation(true);
-    }
-
     public MotionBackgroundDrawable() {
         this.colors = new int[]{-12423849, -531317, -7888252, -133430};
         this.interpolator = new CubicBezierInterpolator(0.33d, 0.0d, 0.0d, 1.0d);
@@ -342,7 +337,7 @@ public class MotionBackgroundDrawable extends Drawable {
 
     public void setPosAnimationProgress(float f) {
         this.posAnimationProgress = f;
-        updateAnimation(true);
+        lambda$new$0();
     }
 
     public void switchToNextPosition() {
@@ -474,7 +469,7 @@ public class MotionBackgroundDrawable extends Drawable {
         }
         if (this.postInvalidateParent) {
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.invalidateMotionBackground, new Object[0]);
-            updateAnimation(false);
+            lambda$new$0();
             AndroidUtilities.cancelRunOnUIThread(this.updateAnimationRunnable);
             AndroidUtilities.runOnUIThread(this.updateAnimationRunnable, 16L);
         }
@@ -752,7 +747,7 @@ public class MotionBackgroundDrawable extends Drawable {
             }
         }
         canvas.restore();
-        updateAnimation(true);
+        lambda$new$0();
     }
 
     public void drawPattern(Canvas canvas) {
@@ -896,7 +891,7 @@ public class MotionBackgroundDrawable extends Drawable {
             }
         }
         canvas.restore();
-        updateAnimation(true);
+        lambda$new$0();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -1096,15 +1091,16 @@ public class MotionBackgroundDrawable extends Drawable {
             }
         }
         canvas.restore();
-        updateAnimation(true);
+        lambda$new$0();
     }
 
     public void setAnimationProgressProvider(GenericProvider genericProvider) {
         this.animationProgressProvider = genericProvider;
-        updateAnimation(true);
+        lambda$new$0();
     }
 
-    public void updateAnimation(boolean z) {
+    /* renamed from: updateAnimation, reason: merged with bridge method [inline-methods] */
+    public void lambda$new$0() {
         float f;
         float f2;
         float f3;
@@ -1117,14 +1113,14 @@ public class MotionBackgroundDrawable extends Drawable {
         if (j <= 1) {
             return;
         }
-        boolean z2 = this.isIndeterminateAnimation;
-        if (z2 && this.posAnimationProgress == 1.0f) {
+        boolean z = this.isIndeterminateAnimation;
+        if (z && this.posAnimationProgress == 1.0f) {
             this.posAnimationProgress = 0.0f;
         }
         float f4 = this.posAnimationProgress;
         if (f4 < 1.0f) {
-            boolean z3 = this.postInvalidateParent || this.rotatingPreview;
-            if (z2) {
+            boolean z2 = this.postInvalidateParent || this.rotatingPreview;
+            if (z) {
                 float f5 = f4 + ((j / 12000.0f) * this.indeterminateSpeedScale);
                 this.posAnimationProgress = f5;
                 if (f5 >= 1.0f) {
@@ -1134,7 +1130,7 @@ public class MotionBackgroundDrawable extends Drawable {
                 int i = (int) (f6 / 0.125f);
                 this.phase = i;
                 f2 = 1.0f - ((f6 - (i * 0.125f)) / 0.125f);
-                z3 = true;
+                z2 = true;
             } else if (this.rotatingPreview) {
                 float interpolation = this.interpolator.getInterpolation(f4);
                 char c = interpolation <= 0.25f ? (char) 0 : interpolation <= 0.5f ? (char) 1 : interpolation <= 0.75f ? (char) 2 : (char) 3;
@@ -1217,7 +1213,7 @@ public class MotionBackgroundDrawable extends Drawable {
                 }
                 f2 = f;
             }
-            if (z3) {
+            if (z2) {
                 Bitmap bitmap = this.currentBitmap;
                 Utilities.generateGradient(bitmap, true, this.phase, f2, bitmap.getWidth(), this.currentBitmap.getHeight(), this.currentBitmap.getRowBytes(), this.colors);
                 this.invalidateLegacy = true;
@@ -1235,9 +1231,7 @@ public class MotionBackgroundDrawable extends Drawable {
                     this.gradientCanvas.drawBitmap(this.gradientToBitmap[2], 0.0f, 0.0f, this.paint3);
                 }
             }
-            if (z) {
-                invalidateParent();
-            }
+            invalidateParent();
         }
     }
 

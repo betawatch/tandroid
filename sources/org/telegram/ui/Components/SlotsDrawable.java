@@ -268,19 +268,21 @@ public class SlotsDrawable extends RLottieDrawable {
                         i2 = 20;
                     }
                 }
-                final TLRPC.Document document = tL_messages_stickerSet.documents.get(i2);
-                String readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true), 0);
-                if (TextUtils.isEmpty(readRes)) {
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda8
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            SlotsDrawable.lambda$setBaseDice$2(TLRPC.Document.this, i, messageObject, chatMessageCell, tL_messages_stickerSet);
-                        }
-                    });
-                    z = true;
-                } else {
-                    this.nativePtrs[i3] = RLottieDrawable.createWithJson(readRes, "dice", this.metaData, null);
-                    this.frameCounts[i3] = this.metaData[0];
+                if (i2 < tL_messages_stickerSet.documents.size()) {
+                    final TLRPC.Document document = tL_messages_stickerSet.documents.get(i2);
+                    String readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true), 0);
+                    if (TextUtils.isEmpty(readRes)) {
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.SlotsDrawable$$ExternalSyntheticLambda8
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                SlotsDrawable.lambda$setBaseDice$2(TLRPC.Document.this, i, messageObject, chatMessageCell, tL_messages_stickerSet);
+                            }
+                        });
+                        z = true;
+                    } else {
+                        this.nativePtrs[i3] = RLottieDrawable.createWithJson(readRes, "dice", this.metaData, null);
+                        this.frameCounts[i3] = this.metaData[0];
+                    }
                 }
             }
             i3++;

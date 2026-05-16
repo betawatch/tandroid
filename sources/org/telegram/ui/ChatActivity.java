@@ -26274,9 +26274,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     }
                     motionBackgroundDrawable.setIndeterminateAnimation(z2);
                     motionBackgroundDrawable.setIndeterminateSpeedScale(z2 ? 1.5f : 1.0f);
-                    motionBackgroundDrawable.updateAnimation(true);
+                    motionBackgroundDrawable.lambda$new$0();
                 } else if (z2) {
-                    motionBackgroundDrawable.updateAnimation(false);
+                    motionBackgroundDrawable.lambda$new$0();
                 }
             }
         }
