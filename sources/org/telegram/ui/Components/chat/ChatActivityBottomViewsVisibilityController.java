@@ -12,7 +12,7 @@ public class ChatActivityBottomViewsVisibilityController implements ReplaceAnima
     private final Runnable onValuesChanged;
     private final float[] visibilityValues = new float[32];
     private int visibilityFlags = 1;
-    private final ReplaceAnimator replaceAnimator = new ReplaceAnimator(this, AnimatorUtils.DECELERATE_INTERPOLATOR, 320);
+    private final ReplaceAnimator replaceAnimator = new ReplaceAnimator(this, AnimatorUtils.DECELERATE_INTERPOLATOR, 240);
 
     @Override // me.vkryl.android.animator.ReplaceAnimator.Callback
     public /* synthetic */ boolean hasChanges(ReplaceAnimator replaceAnimator) {

@@ -41,6 +41,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.utils.Choreographer60FpsContent;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
@@ -283,7 +284,7 @@ public class SpoilerEffect extends Drawable {
         paint.setColorFilter(this.colorFilter);
         canvas.drawRect(bounds, paint);
         if (LiteMode.isEnabled(128)) {
-            invalidateSelf();
+            Choreographer60FpsContent.getInstance().postInvalidateDrawable(this);
             SpoilerEffectBitmapFactory.getInstance().checkUpdate(bounds);
         }
     }

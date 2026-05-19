@@ -42,6 +42,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
 import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.Cells.HeaderCell;
@@ -137,7 +138,8 @@ public class ProxySettingsActivity extends BaseFragment {
         this.actionBar.setTitle(LocaleController.getString(R.string.ProxyDetails));
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(false);
-        if (AndroidUtilities.isTablet()) {
+        INavigationLayout iNavigationLayout = this.parentLayout;
+        if (iNavigationLayout != null && !iNavigationLayout.isRightLayout()) {
             this.actionBar.setOccupyStatusBar(false);
         }
         this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ProxySettingsActivity.1

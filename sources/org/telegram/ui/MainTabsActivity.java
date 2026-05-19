@@ -2,6 +2,7 @@ package org.telegram.ui;
 
 import android.animation.Animator;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
@@ -52,7 +53,6 @@ import org.telegram.ui.Components.HintsController;
 import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
-import org.telegram.ui.Components.ViewPagerFixed;
 import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
 import org.telegram.ui.Components.blur3.BlurredBackgroundWithFadeDrawable;
 import org.telegram.ui.Components.blur3.RenderNodeWithHash;
@@ -81,6 +81,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     private int navigationBarHeight;
     private NotificationCenter.ObserversGroup observersGroup;
     private Integer pendingFolderId;
+    private boolean tabletLayout;
     public GlassTabView[] tabs;
     private MainTabsLayout tabsView;
     private BlurredBackgroundDrawable tabsViewBackground;
@@ -126,6 +127,9 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     @Override // me.vkryl.android.animator.FactorAnimator.Target
     public /* synthetic */ void onFactorChangeFinished(int i, float f, FactorAnimator factorAnimator) {
         FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i, f, factorAnimator);
+    }
+
+    public void updateLayout() {
     }
 
     public MainTabsActivity() {
@@ -198,6 +202,12 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
                 MainTabsActivity.this.blur3_invalidateBlur();
             }
         };
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        updateLayout();
     }
 
     @Override // org.telegram.ui.ViewPagerActivity, org.telegram.ui.ActionBar.BaseFragment
@@ -282,10 +292,12 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     @Override // org.telegram.ui.ViewPagerActivity, org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
         super.createView(context);
+        this.tabletLayout = false;
         MainTabsLayout mainTabsLayout = new MainTabsLayout(context, this.resourceProvider);
         this.tabsView = mainTabsLayout;
         mainTabsLayout.setClipChildren(false);
         this.tabsView.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
+        this.tabsView.setMaxWidth(AndroidUtilities.dp(344.0f));
         GlassTabView[] glassTabViewArr = new GlassTabView[5];
         this.tabs = glassTabViewArr;
         glassTabViewArr[0] = GlassTabView.createMainTab(context, this.resourceProvider, GlassTabView.TabAnimation.CHATS, R.string.MainTabsChats);
@@ -372,7 +384,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
                 MainTabsActivity.lambda$createView$1(view);
             }
         });
-        this.tabsViewWrapper.addView(this.tabsView, LayoutHelper.createFrame(344, 72, 81));
+        this.tabsViewWrapper.addView(this.tabsView, LayoutHelper.createFrame(-1, 72, 81));
         this.tabsViewWrapper.setClipToPadding(false);
         this.contentView.addView(this.tabsViewWrapper, LayoutHelper.createFrame(-1, -2, 80));
         UpdateLayoutWrapper updateLayoutWrapper = new UpdateLayoutWrapper(context);
@@ -383,6 +395,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         if (takeUpdateLayout != null) {
             takeUpdateLayout.updateAppUpdateViews(this.currentAccount, false);
         }
+        updateLayout();
         checkUnreadCount(false);
         return this.contentView;
     }
@@ -714,9 +727,9 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             setGestureSelectedOverride(0.0f, false);
         }
         blur3_invalidateBlur();
-        ViewPagerFixed viewPagerFixed = this.viewPager;
-        if (viewPagerFixed != null) {
-            int currentPosition = viewPagerFixed.getCurrentPosition();
+        ViewPagerActivity.ViewPagerActivityPagerLayout viewPagerActivityPagerLayout = this.viewPager;
+        if (viewPagerActivityPagerLayout != null) {
+            int currentPosition = viewPagerActivityPagerLayout.getCurrentPosition();
             if (currentPosition != 2 && this.dropCallsFragmentAfterPageScroll) {
                 dropFragmentAtPosition(2);
                 this.dropCallsFragmentAfterPageScroll = false;
@@ -865,6 +878,9 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             this.fadeView.setLayoutParams(marginLayoutParams);
         }
         int i = isUpdateLayoutVisible ? this.navigationBarHeight + dp : 0;
+        if (this.tabletLayout) {
+            i = Math.max(i, this.navigationBarHeight + AndroidUtilities.dp(72.0f));
+        }
         ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) this.viewPager.getLayoutParams();
         if (marginLayoutParams2.bottomMargin != i) {
             marginLayoutParams2.bottomMargin = i;
@@ -940,8 +956,8 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         }
         if (i == NotificationCenter.callTabsVisibleToggled) {
             checkUi_callTabVisible(getUserConfig().showCallsTab, true);
-            ViewPagerFixed viewPagerFixed = this.viewPager;
-            if (viewPagerFixed != null && viewPagerFixed.getCurrentPosition() == 2) {
+            ViewPagerActivity.ViewPagerActivityPagerLayout viewPagerActivityPagerLayout = this.viewPager;
+            if (viewPagerActivityPagerLayout != null && viewPagerActivityPagerLayout.getCurrentPosition() == 2) {
                 this.viewPager.scrollToPosition(0);
                 selectTab(0, true);
                 this.dropCallsFragmentAfterPageScroll = true;
@@ -995,12 +1011,15 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
 
     /* JADX INFO: Access modifiers changed from: private */
     public void checkUi_fadeView() {
-        ViewPagerFixed viewPagerFixed = this.viewPager;
-        if (viewPagerFixed == null || this.fadeView == null) {
+        ViewPagerActivity.ViewPagerActivityPagerLayout viewPagerActivityPagerLayout = this.viewPager;
+        if (viewPagerActivityPagerLayout == null || this.fadeView == null) {
             return;
         }
-        float clamp = 1.0f - MathUtils.clamp(Math.abs(3.0f - viewPagerFixed.getPositionAnimated()), 0.0f, 1.0f);
+        float clamp = 1.0f - MathUtils.clamp(Math.abs(3.0f - viewPagerActivityPagerLayout.getPositionAnimated()), 0.0f, 1.0f);
         float navigationBarThirdButtonsFactor = (1.0f - ((1.0f - AndroidUtilities.getNavigationBarThirdButtonsFactor(0.0f, 1.0f, this.navigationBarHeight)) * clamp)) * this.animatorTabsVisible.getFloatValue();
+        if (this.tabletLayout) {
+            navigationBarThirdButtonsFactor = 0.0f;
+        }
         this.fadeView.setAlpha(navigationBarThirdButtonsFactor);
         this.fadeView.setTranslationY(clamp * AndroidUtilities.dp(48.0f));
         this.fadeView.setVisibility(navigationBarThirdButtonsFactor > 0.0f ? 0 : 8);

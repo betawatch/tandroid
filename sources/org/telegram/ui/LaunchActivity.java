@@ -14,7 +14,6 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Path;
 import android.graphics.Point;
 import android.media.AudioManager;
 import android.net.Uri;
@@ -914,7 +913,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     public void checkFrameMetrics() {
         if (Build.VERSION.SDK_INT >= 24) {
             if (this.frameMetricsOverlayView == null && SharedConfig.frameMetricsEnabled) {
-                this.frameMetricsOverlayView = FrameMetricsOverlayView.attachToActivityCorner(this, 8388627, 12);
+                this.frameMetricsOverlayView = FrameMetricsOverlayView.attachToActivityCorner(this, 8388627, 12, this.frameLayout);
             }
             FrameMetricsOverlayView frameMetricsOverlayView = this.frameMetricsOverlayView;
             if (frameMetricsOverlayView == null || SharedConfig.frameMetricsEnabled) {
@@ -978,7 +977,6 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             getWindow().setSoftInputMode(16);
             RelativeLayout relativeLayout = new RelativeLayout(this) { // from class: org.telegram.ui.LaunchActivity.11
                 private boolean inLayout;
-                private Path path = new Path();
 
                 @Override // android.widget.RelativeLayout, android.view.View, android.view.ViewParent
                 public void requestLayout() {
@@ -1009,7 +1007,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     }
                     LaunchActivity.this.backgroundTablet.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
                     LaunchActivity.this.shadowTablet.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
-                    LaunchActivity.this.layersActionBarLayout.getView().measure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(530.0f), size - AndroidUtilities.dp(16.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(((size2 - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(16.0f), TLObject.FLAG_30));
+                    LaunchActivity.this.layersActionBarLayout.getView().measure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(500.0f), size - AndroidUtilities.dp(16.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(((size2 - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(16.0f), TLObject.FLAG_30));
                     this.inLayout = false;
                 }
 
@@ -1070,17 +1068,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             this.launchLayout.addView(this.actionBarLayout.getView());
             ActionBarLayout actionBarLayout = new ActionBarLayout(this, false);
             this.rightActionBarLayout = actionBarLayout;
-            actionBarLayout.setFragmentStack(this.rightFragmentsStack);
+            actionBarLayout.setIsRightLayout();
+            this.rightActionBarLayout.setFragmentStack(this.rightFragmentsStack);
             this.rightActionBarLayout.setDelegate(this);
             this.launchLayout.addView(this.rightActionBarLayout.getView());
             FrameLayout frameLayout = new FrameLayout(this);
             this.shadowTabletSide = frameLayout;
             frameLayout.setBackgroundColor(1076449908);
-            this.launchLayout.addView(this.shadowTabletSide);
             FrameLayout frameLayout2 = new FrameLayout(this);
             this.shadowTablet = frameLayout2;
             frameLayout2.setVisibility(this.layerFragmentsStack.isEmpty() ? 8 : 0);
-            this.shadowTablet.setBackgroundColor(2130706432);
+            this.shadowTablet.setBackgroundColor(1056964608);
             this.launchLayout.addView(this.shadowTablet);
             this.shadowTablet.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda21
                 @Override // android.view.View.OnTouchListener
@@ -1106,7 +1104,6 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             this.layersActionBarLayout.setDelegate(this);
             this.layersActionBarLayout.setDrawerLayoutContainer(this.drawerLayoutContainer);
             ViewGroup view2 = this.layersActionBarLayout.getView();
-            view2.setBackgroundResource(R.drawable.popup_fixed_alert3);
             view2.setVisibility(this.layerFragmentsStack.isEmpty() ? 8 : 0);
             this.launchLayout.addView(view2);
         } else {
@@ -3842,7 +3839,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$runLinkRequest$70(TLRPC.TL_error tL_error, final int i, final String str, final String str2, final String str3, final String str4, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final boolean z, final Integer num, final Long l, final Long l2, final Integer num2, final String str13, final HashMap hashMap, final String str14, final String str15, final String str16, final String str17, final TLRPC.TL_wallPaper tL_wallPaper, final String str18, final String str19, final String str20, final String str21, final boolean z2, final String str22, final int i2, final int i3, final String str23, final String str24, final String str25, final Browser.Progress progress, final boolean z3, final int i4, final boolean z4, final int i5, final int i6, final String str26, final String str27, final boolean z5, final String str28, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final boolean z10, final String str29, final Integer num3, final boolean z11, final byte[] bArr, TLObject tLObject, final Long l3, final String str30, final String str31, final TLRPC.User user, final Runnable runnable) {
         LaunchActivity launchActivity;
-        ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda13 chatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda13;
+        ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda14 chatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda14;
         if (tL_error != null) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda166
                 @Override // java.lang.Runnable
@@ -3863,13 +3860,13 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     }
                 };
                 if (progress != null) {
-                    chatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda13 = new ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda13(progress);
+                    chatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda14 = new ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda14(progress);
                     launchActivity = this;
                 } else {
                     launchActivity = this;
-                    chatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda13 = null;
+                    chatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda14 = null;
                 }
-                WebAppDisclaimerAlert.show(launchActivity, consumer, null, chatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda13);
+                WebAppDisclaimerAlert.show(launchActivity, consumer, null, chatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda14);
                 return;
             }
             if (tL_attachMenuBot.request_write_access || z3) {
@@ -5020,7 +5017,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 public final void accept(Object obj) {
                     runnable2.run();
                 }
-            }, null, progress != null ? new ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda13(progress) : null);
+            }, null, progress != null ? new ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda14(progress) : null);
         } else if (tL_messages_botApp.request_write_access || z4) {
             AlertsCreator.createBotLaunchAlert(baseFragment3, atomicBoolean, user, runnable2);
         } else {
@@ -8922,6 +8919,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         ActionBarLayout actionBarLayout;
         ActionBarLayout actionBarLayout2;
         ActionBarLayout actionBarLayout3;
+        ActionBarLayout actionBarLayout4;
         BaseFragment baseFragment = navigationParams.fragment;
         boolean z = navigationParams.removeLast;
         boolean z2 = navigationParams.noAnimation;
@@ -8930,9 +8928,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         }
         if (AndroidUtilities.isTablet()) {
             if (baseFragment instanceof MainTabsActivity) {
-                ActionBarLayout actionBarLayout4 = this.actionBarLayout;
-                if (iNavigationLayout != actionBarLayout4) {
-                    actionBarLayout4.removeAllFragments();
+                ActionBarLayout actionBarLayout5 = this.actionBarLayout;
+                if (iNavigationLayout != actionBarLayout5) {
+                    actionBarLayout5.removeAllFragments();
                     getActionBarLayout().presentFragment(navigationParams.setRemoveLast(z).setNoAnimation(z2).setCheckPresentFromDelegate(false));
                     this.layersActionBarLayout.removeAllFragments();
                     this.layersActionBarLayout.getView().setVisibility(8);
@@ -8963,14 +8961,21 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     return true;
                 }
             }
-            if ((baseFragment instanceof ChatActivity) && !((ChatActivity) baseFragment).isInScheduleMode()) {
+            if (((baseFragment instanceof ChatActivity) && !((ChatActivity) baseFragment).isInScheduleMode()) || navigationParams.forceRightLayout || (iNavigationLayout == (actionBarLayout2 = this.rightActionBarLayout) && (actionBarLayout2.getFragmentStack().size() > 1 || !(this.rightActionBarLayout.getLastFragment() instanceof ChatActivity)))) {
                 boolean z3 = this.tabletFullSize;
                 if ((!z3 && iNavigationLayout == this.rightActionBarLayout) || (z3 && iNavigationLayout == this.actionBarLayout)) {
-                    boolean z4 = (z3 && iNavigationLayout == (actionBarLayout3 = this.actionBarLayout) && actionBarLayout3.getFragmentStack().size() == 1) ? false : true;
+                    ActionBarLayout actionBarLayout6 = this.rightActionBarLayout;
+                    if (iNavigationLayout == actionBarLayout6) {
+                        if (actionBarLayout6.getView() != null) {
+                            this.rightActionBarLayout.getView().setVisibility(0);
+                        }
+                        this.backgroundTablet.setVisibility(8);
+                    }
+                    boolean z4 = (this.tabletFullSize && iNavigationLayout == (actionBarLayout4 = this.actionBarLayout) && actionBarLayout4.getFragmentStack().size() == 1) ? false : true;
                     if (!this.layersActionBarLayout.getFragmentStack().isEmpty()) {
                         while (this.layersActionBarLayout.getFragmentStack().size() - 1 > 0) {
-                            ActionBarLayout actionBarLayout5 = this.layersActionBarLayout;
-                            actionBarLayout5.removeFragmentFromStack(actionBarLayout5.getFragmentStack().get(0));
+                            ActionBarLayout actionBarLayout7 = this.layersActionBarLayout;
+                            actionBarLayout7.removeFragmentFromStack(actionBarLayout7.getFragmentStack().get(0));
                         }
                         this.layersActionBarLayout.closeLastFragment(!z2);
                     }
@@ -8979,8 +8984,8 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     }
                     return z4;
                 }
-                if (!z3 && iNavigationLayout != (actionBarLayout2 = this.rightActionBarLayout) && actionBarLayout2 != null) {
-                    if (actionBarLayout2.getView() != null) {
+                if (!z3 && iNavigationLayout != (actionBarLayout3 = this.rightActionBarLayout) && actionBarLayout3 != null) {
+                    if (actionBarLayout3.getView() != null) {
                         this.rightActionBarLayout.getView().setVisibility(0);
                     }
                     this.backgroundTablet.setVisibility(8);
@@ -8988,8 +8993,8 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     this.rightActionBarLayout.presentFragment(navigationParams.setNoAnimation(true).setRemoveLast(z).setCheckPresentFromDelegate(false));
                     if (!this.layersActionBarLayout.getFragmentStack().isEmpty()) {
                         while (this.layersActionBarLayout.getFragmentStack().size() - 1 > 0) {
-                            ActionBarLayout actionBarLayout6 = this.layersActionBarLayout;
-                            actionBarLayout6.removeFragmentFromStack(actionBarLayout6.getFragmentStack().get(0));
+                            ActionBarLayout actionBarLayout8 = this.layersActionBarLayout;
+                            actionBarLayout8.removeFragmentFromStack(actionBarLayout8.getFragmentStack().get(0));
                         }
                         this.layersActionBarLayout.closeLastFragment(!z2);
                     }
@@ -8999,27 +9004,27 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     getActionBarLayout().presentFragment(navigationParams.setRemoveLast(this.actionBarLayout.getFragmentStack().size() > 1).setNoAnimation(z2).setCheckPresentFromDelegate(false));
                     if (!this.layersActionBarLayout.getFragmentStack().isEmpty()) {
                         while (this.layersActionBarLayout.getFragmentStack().size() - 1 > 0) {
-                            ActionBarLayout actionBarLayout7 = this.layersActionBarLayout;
-                            actionBarLayout7.removeFragmentFromStack(actionBarLayout7.getFragmentStack().get(0));
+                            ActionBarLayout actionBarLayout9 = this.layersActionBarLayout;
+                            actionBarLayout9.removeFragmentFromStack(actionBarLayout9.getFragmentStack().get(0));
                         }
                         this.layersActionBarLayout.closeLastFragment(!z2);
                     }
                     return false;
                 }
-                ActionBarLayout actionBarLayout8 = this.layersActionBarLayout;
-                if (actionBarLayout8 != null && actionBarLayout8.getFragmentStack() != null && !this.layersActionBarLayout.getFragmentStack().isEmpty()) {
+                ActionBarLayout actionBarLayout10 = this.layersActionBarLayout;
+                if (actionBarLayout10 != null && actionBarLayout10.getFragmentStack() != null && !this.layersActionBarLayout.getFragmentStack().isEmpty()) {
                     while (this.layersActionBarLayout.getFragmentStack().size() - 1 > 0) {
-                        ActionBarLayout actionBarLayout9 = this.layersActionBarLayout;
-                        actionBarLayout9.removeFragmentFromStack(actionBarLayout9.getFragmentStack().get(0));
+                        ActionBarLayout actionBarLayout11 = this.layersActionBarLayout;
+                        actionBarLayout11.removeFragmentFromStack(actionBarLayout11.getFragmentStack().get(0));
                     }
                     this.layersActionBarLayout.closeLastFragment(!z2);
                 }
                 getActionBarLayout().presentFragment(navigationParams.setRemoveLast(this.actionBarLayout.getFragmentStack().size() > 1).setNoAnimation(z2).setCheckPresentFromDelegate(false));
                 return false;
             }
-            ActionBarLayout actionBarLayout10 = this.layersActionBarLayout;
-            if (actionBarLayout10 != null && iNavigationLayout != actionBarLayout10) {
-                actionBarLayout10.getView().setVisibility(0);
+            ActionBarLayout actionBarLayout12 = this.layersActionBarLayout;
+            if (actionBarLayout12 != null && iNavigationLayout != actionBarLayout12) {
+                actionBarLayout12.getView().setVisibility(0);
                 int i = 0;
                 while (true) {
                     if (i >= 4) {

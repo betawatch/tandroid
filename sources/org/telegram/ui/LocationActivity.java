@@ -85,6 +85,7 @@ import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.Adapters.BaseLocationAdapter;
@@ -514,26 +515,25 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x0a1c  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x0a2a  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x0a30  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x0867  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x078f  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x05c2  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0315  */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00bc  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00dd  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x02fa  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x05b1  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x05c9  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x078c  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x07d2  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0898  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x093f  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0a3d  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0a49 A[LOOP:0: B:93:0x0a47->B:94:0x0a49, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0aa8  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0aac  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x0a20  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x0a2e  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0a34  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x086b  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0793  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x05c6  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x0319  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x00ee  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x02fe  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x05b5  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x05cd  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0790  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x07d6  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x089c  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0943  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0a41  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0a4d A[LOOP:0: B:95:0x0a4b->B:96:0x0a4d, LOOP_END] */
     /* JADX WARN: Type inference failed for: r0v140, types: [org.telegram.ui.Adapters.LocationActivityAdapter] */
     /* JADX WARN: Type inference failed for: r0v142, types: [org.telegram.ui.Components.RecyclerListView] */
     /* JADX WARN: Type inference failed for: r0v148, types: [androidx.recyclerview.widget.DefaultItemAnimator] */
@@ -548,6 +548,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
     */
     public View createView(final Context context) {
         boolean z;
+        INavigationLayout iNavigationLayout;
         Rect rect;
         int i;
         FrameLayout.LayoutParams layoutParams;
@@ -606,7 +607,8 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 this.actionBar.setItemsBackgroundColor(getThemedColor(Theme.key_dialogButtonSelector), false);
                 this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
                 this.actionBar.setAllowOverlayTitle(true);
-                if (AndroidUtilities.isTablet()) {
+                iNavigationLayout = this.parentLayout;
+                if (iNavigationLayout != null && !iNavigationLayout.isRightLayout()) {
                     this.actionBar.setOccupyStatusBar(false);
                 }
                 this.actionBar.setAddToContainer(false);
@@ -1303,7 +1305,9 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         this.actionBar.setItemsBackgroundColor(getThemedColor(Theme.key_dialogButtonSelector), false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        if (AndroidUtilities.isTablet()) {
+        iNavigationLayout = this.parentLayout;
+        if (iNavigationLayout != null) {
+            this.actionBar.setOccupyStatusBar(false);
         }
         this.actionBar.setAddToContainer(false);
         this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LocationActivity.1

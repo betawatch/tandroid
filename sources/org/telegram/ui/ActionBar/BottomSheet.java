@@ -736,7 +736,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         /* JADX WARN: Removed duplicated region for block: B:52:0x0157  */
         /* JADX WARN: Removed duplicated region for block: B:55:0x016b  */
         /* JADX WARN: Removed duplicated region for block: B:58:0x0174  */
-        /* JADX WARN: Removed duplicated region for block: B:68:0x01d2  */
+        /* JADX WARN: Removed duplicated region for block: B:68:0x01dd  */
         @Override // android.widget.FrameLayout, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -824,8 +824,9 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                     if (viewGroup != null) {
                         if (!bottomSheet13.fullWidth) {
                             if (AndroidUtilities.isTablet()) {
+                                float dp = AndroidUtilities.dp(500.0f);
                                 Point point = AndroidUtilities.displaySize;
-                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(((int) (Math.min(point.x, point.y) * 0.8f)) + (BottomSheet.this.backgroundPaddingLeft * 2), TLObject.FLAG_30);
+                                makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(((int) Math.min(dp, Math.min(point.x, point.y) * 0.8f)) + (BottomSheet.this.backgroundPaddingLeft * 2), TLObject.FLAG_30);
                             } else {
                                 BottomSheet bottomSheet14 = BottomSheet.this;
                                 makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(bottomSheet14.getBottomSheetWidth(bottomSheet14.isPortrait, i7, i6) + (BottomSheet.this.backgroundPaddingLeft * 2), TLObject.FLAG_30);

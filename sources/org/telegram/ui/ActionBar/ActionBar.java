@@ -16,6 +16,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.VectorDrawable;
 import android.text.SpannableString;
 import android.text.TextPaint;
 import android.text.TextUtils;
@@ -54,7 +55,7 @@ import org.telegram.ui.Components.SectionsScrollView;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.SnowflakesEffect;
 import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProvider;
+import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
 
 /* loaded from: classes4.dex */
 public class ActionBar extends FrameLayout implements Theme.Colorable {
@@ -93,6 +94,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
     private boolean clipContent;
     SizeNotifierFrameLayout contentView;
     private boolean doNotDrawChild;
+    private Runnable doOnActionModeFactorChanged;
     private boolean drawBackButton;
     EllipsizeSpanAnimator ellipsizeSpanAnimator;
     private int extraHeight;
@@ -101,6 +103,9 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
     private boolean forceSkipTouches;
     private boolean fromBottom;
     private Drawable glassDrawable;
+    private Drawable glassDrawableBack;
+    private Drawable glassDrawableMenu;
+    private boolean glassMode;
     private boolean ignoreLayoutRequest;
     private View.OnTouchListener interceptTouchEventListener;
     private boolean interceptTouches;
@@ -202,17 +207,26 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         runnable.run();
     }
 
-    public void setupGlass(BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory, BlurredBackgroundProvider blurredBackgroundProvider) {
+    public void setupGlass(BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory, BlurredBackgroundColorProvider blurredBackgroundColorProvider) {
         setBackground(null);
-        this.glassDrawable = blurredBackgroundDrawableViewFactory.create(this).setColorProvider(blurredBackgroundProvider).setRadius(AndroidUtilities.dp(26.0f)).setPadding(AndroidUtilities.dp(7.0f));
+        this.glassMode = true;
+        this.glassDrawable = blurredBackgroundDrawableViewFactory.create(this).setColorProvider(blurredBackgroundColorProvider).setRadius(AndroidUtilities.dp(26.0f)).setPadding(AndroidUtilities.dp(7.0f));
+        this.glassDrawableBack = blurredBackgroundDrawableViewFactory.create(this).setColorProvider(blurredBackgroundColorProvider).setRadius(AndroidUtilities.dp(26.0f)).setPadding(AndroidUtilities.dp(7.0f));
+        this.glassDrawableMenu = blurredBackgroundDrawableViewFactory.create(this).setColorProvider(blurredBackgroundColorProvider).setRadius(AndroidUtilities.dp(26.0f)).setPadding(AndroidUtilities.dp(7.0f));
         ActionBarMenu actionBarMenu = this.menu;
         if (actionBarMenu != null) {
-            actionBarMenu.setTranslationX(-AndroidUtilities.dp(9.0f));
+            actionBarMenu.setTranslationX(-AndroidUtilities.dp(10.0f));
+            this.menu.setGlassMode(true);
+        }
+        ActionBarMenu actionBarMenu2 = this.actionMode;
+        if (actionBarMenu2 != null) {
+            actionBarMenu2.setTranslationX(-AndroidUtilities.dp(10.0f));
+            this.actionMode.setGlassMode(true);
         }
         ImageView imageView = this.backButtonImageView;
         if (imageView != null) {
-            imageView.setPadding(0, 0, AndroidUtilities.dp(6.0f), 0);
-            this.backButtonImageView.setTranslationX(AndroidUtilities.dp(6.0f));
+            imageView.setPadding(0, 0, AndroidUtilities.dp(2.0f), 0);
+            this.backButtonImageView.setTranslationX(AndroidUtilities.dp(2.0f));
         }
     }
 
@@ -276,7 +290,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
             MenuDrawable menuDrawable = (MenuDrawable) drawable;
             menuDrawable.setBackColor(this.actionBarColor);
             menuDrawable.setIconColor(this.itemsColor);
-        } else if (drawable instanceof BitmapDrawable) {
+        } else if ((drawable instanceof BitmapDrawable) || (drawable instanceof VectorDrawable)) {
             this.backButtonImageView.setColorFilter(new PorterDuffColorFilter(this.itemsColor, PorterDuff.Mode.SRC_IN));
         }
         checkBackButtonLayerType();
@@ -705,6 +719,18 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         return str2 != null && str2.equals(str);
     }
 
+    public void setOnActionModeFactorChangeListener(Runnable runnable) {
+        this.doOnActionModeFactorChanged = runnable;
+    }
+
+    public float getActionModeFactor() {
+        ActionBarMenu actionBarMenu = this.actionMode;
+        if (actionBarMenu != null) {
+            return actionBarMenu.getAlpha();
+        }
+        return 0.0f;
+    }
+
     public ActionBarMenu createActionMode(boolean z, String str) {
         if (actionModeIsExist(str)) {
             return this.actionMode;
@@ -739,6 +765,15 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
                 super.dispatchDraw(canvas);
             }
 
+            @Override // android.view.View
+            public void setAlpha(float f) {
+                super.setAlpha(f);
+                ActionBar.this.invalidate();
+                if (ActionBar.this.doOnActionModeFactorChanged != null) {
+                    ActionBar.this.doOnActionModeFactorChanged.run();
+                }
+            }
+
             @Override // android.view.ViewGroup, android.view.View
             protected void onAttachedToWindow() {
                 super.onAttachedToWindow();
@@ -758,9 +793,14 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
             }
         };
         this.actionMode = actionBarMenu2;
-        actionBarMenu2.isActionMode = true;
-        actionBarMenu2.setClickable(true);
-        this.actionMode.setBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefault));
+        actionBarMenu2.setTranslationX(-AndroidUtilities.dp(10.0f));
+        this.actionMode.setGlassMode(this.glassMode);
+        ActionBarMenu actionBarMenu3 = this.actionMode;
+        actionBarMenu3.isActionMode = true;
+        actionBarMenu3.setClickable(true);
+        if (!this.glassMode) {
+            this.actionMode.setBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefault));
+        }
         addView(this.actionMode, indexOfChild(this.backButtonImageView));
         this.actionMode.setPadding(0, this.occupyStatusBar ? AndroidUtilities.statusBarHeight : 0, 0, 0);
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.actionMode.getLayoutParams();
@@ -1846,7 +1886,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
                     ((BackDrawable) drawable).setRotatedColor(i);
                     return;
                 } else {
-                    if (drawable instanceof BitmapDrawable) {
+                    if ((drawable instanceof BitmapDrawable) || (drawable instanceof VectorDrawable)) {
                         this.backButtonImageView.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));
                         return;
                     }
@@ -1863,7 +1903,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
                 ((BackDrawable) drawable2).setColor(i);
             } else if (drawable2 instanceof MenuDrawable) {
                 ((MenuDrawable) drawable2).setIconColor(i);
-            } else if (drawable2 instanceof BitmapDrawable) {
+            } else if ((drawable2 instanceof BitmapDrawable) || (drawable2 instanceof VectorDrawable)) {
                 this.backButtonImageView.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));
             }
         }
@@ -2137,10 +2177,31 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
 
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
-        if (this.glassDrawable != null) {
-            int height = ((getHeight() - (getCurrentActionBarHeight() / 2)) - AndroidUtilities.dp(26.0f)) - AndroidUtilities.dp(7.0f);
-            this.glassDrawable.setBounds(0, height, getWidth(), AndroidUtilities.dp(52.0f) + height + AndroidUtilities.dp(7.0f) + AndroidUtilities.dp(7.0f));
+        int dp = AndroidUtilities.dp(7.0f);
+        int dp2 = AndroidUtilities.dp(44.0f);
+        ActionBarMenu actionBarMenu = this.menu;
+        int max = Math.max(0, actionBarMenu != null ? (actionBarMenu.getItemsWidth() - AndroidUtilities.dp(2.0f)) - AndroidUtilities.dp(2.0f) : 0);
+        ActionBarMenu actionBarMenu2 = this.actionMode;
+        int lerp = AndroidUtilities.lerp(max, Math.max(0, actionBarMenu2 != null ? (actionBarMenu2.getItemsWidth() - AndroidUtilities.dp(2.0f)) - AndroidUtilities.dp(2.0f) : 0), getActionModeFactor());
+        ImageView imageView = this.backButtonImageView;
+        boolean z = imageView != null && imageView.getVisibility() == 0;
+        int height = ((getHeight() - (getCurrentActionBarHeight() / 2)) - (dp2 / 2)) - dp;
+        int i = dp * 2;
+        int i2 = height + dp2 + i;
+        Drawable drawable = this.glassDrawable;
+        if (drawable != null) {
+            drawable.setBounds(z ? dp2 + dp : 0, height, getWidth() - (lerp > 0 ? dp + lerp : 0), i2);
             this.glassDrawable.draw(canvas);
+        }
+        Drawable drawable2 = this.glassDrawableBack;
+        if (drawable2 != null && z) {
+            drawable2.setBounds(0, height, dp2 + i, i2);
+            this.glassDrawableBack.draw(canvas);
+        }
+        Drawable drawable3 = this.glassDrawableMenu;
+        if (drawable3 != null && lerp > 0) {
+            drawable3.setBounds((getWidth() - lerp) - i, height, getWidth(), i2);
+            this.glassDrawableMenu.draw(canvas);
         }
         if (this.blurredBackground && this.actionBarColor != 0) {
             this.rectTmp.set(0, 0, getMeasuredWidth(), getMeasuredHeight());

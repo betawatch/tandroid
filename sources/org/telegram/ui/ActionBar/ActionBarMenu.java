@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -18,6 +19,7 @@ import org.telegram.ui.Components.RLottieDrawable;
 /* loaded from: classes4.dex */
 public class ActionBarMenu extends LinearLayout {
     public boolean drawBlur;
+    private boolean glassMode;
     private ArrayList ids;
     protected boolean isActionMode;
     private Runnable onLayoutListener;
@@ -601,6 +603,49 @@ public class ActionBarMenu extends LinearLayout {
 
     public void setOnLayoutListener(Runnable runnable) {
         this.onLayoutListener = runnable;
+    }
+
+    public void setGlassMode(boolean z) {
+        this.glassMode = z;
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    protected void onMeasure(int i, int i2) {
+        if (this.glassMode) {
+            int childCount = getChildCount();
+            for (int i3 = 0; i3 < childCount; i3++) {
+                View childAt = getChildAt(i3);
+                if (childAt instanceof ActionBarMenuItem) {
+                    ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
+                    if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
+                        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
+                        marginLayoutParams.leftMargin = -AndroidUtilities.dp(5.0f);
+                        marginLayoutParams.rightMargin = -AndroidUtilities.dp(5.0f);
+                    }
+                }
+            }
+        }
+        super.onMeasure(i, i2);
+    }
+
+    public int getItemsWidth() {
+        int childCount = getChildCount();
+        float f = Float.POSITIVE_INFINITY;
+        float f2 = Float.NEGATIVE_INFINITY;
+        boolean z = false;
+        for (int i = 0; i < childCount; i++) {
+            View childAt = getChildAt(i);
+            if ((childAt instanceof ActionBarMenuItem) && childAt.getVisibility() == 0) {
+                float x = childAt.getX();
+                f = Math.min(f, x);
+                f2 = Math.max(f2, childAt.getWidth() + x);
+                z = true;
+            }
+        }
+        if (z) {
+            return (int) (f2 - f);
+        }
+        return 0;
     }
 
     @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View

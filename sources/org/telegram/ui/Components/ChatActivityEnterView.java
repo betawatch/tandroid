@@ -4527,7 +4527,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
         });
         this.senderSelectView.setVisibility(8);
-        this.messageEditTextContainer.addView(this.senderSelectView, LayoutHelper.createFrame(32, 32.0f, 83, 8.0f, 6.0f, 8.0f, 6.0f));
+        this.messageEditTextContainer.addView(this.senderSelectView, LayoutHelper.createFrame(36, 36.0f, 83, 4.66f, 4.0f, 4.66f, 4.0f));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -12213,8 +12213,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         updateSendAsButton(false, z);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:106:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0170  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0170 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0171  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -12279,121 +12279,121 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             f = z3 ? ((-this.senderSelectView.getLayoutParams().width) - marginLayoutParams.leftMargin) - dp : 0.0f;
             if (!z3) {
                 f2 = ((-this.senderSelectView.getLayoutParams().width) - marginLayoutParams.leftMargin) - dp;
-                if (z4 == z3) {
-                    SenderSelectView senderSelectView5 = this.senderSelectView;
-                    ValueAnimator valueAnimator = senderSelectView5 == null ? null : (ValueAnimator) senderSelectView5.getTag();
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
-                        this.senderSelectView.setTag(null);
+                if (z4 != z3) {
+                    return;
+                }
+                SenderSelectView senderSelectView5 = this.senderSelectView;
+                ValueAnimator valueAnimator = senderSelectView5 == null ? null : (ValueAnimator) senderSelectView5.getTag();
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
+                    this.senderSelectView.setTag(null);
+                }
+                if ((this.isLiveComment || ((chatActivity = this.parentFragment) != null && chatActivity.getOtherSameChatsDiff() == 0 && this.parentFragment.fragmentOpened)) && z2) {
+                    ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
+                    SenderSelectView senderSelectView6 = this.senderSelectView;
+                    if (senderSelectView6 != null) {
+                        senderSelectView6.setTranslationX(f);
                     }
-                    if ((this.isLiveComment || ((chatActivity = this.parentFragment) != null && chatActivity.getOtherSameChatsDiff() == 0 && this.parentFragment.fragmentOpened)) && z2) {
-                        ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
-                        SenderSelectView senderSelectView6 = this.senderSelectView;
-                        if (senderSelectView6 != null) {
-                            senderSelectView6.setTranslationX(f);
-                        }
-                        this.messageTextTranslationX = f;
-                        updateMessageTextParams();
-                        final float f5 = f;
-                        final float f6 = f2;
-                        final float f7 = f3;
-                        final float f8 = f4;
-                        duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda19
-                            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                                ChatActivityEnterView.this.lambda$updateSendAsButton$74(f5, f6, f7, f8, valueAnimator2);
-                            }
-                        });
-                        final boolean z5 = z3;
-                        final float f9 = f3;
-                        final float f10 = f;
-                        final float f11 = f2;
-                        duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.73
-                            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                            public void onAnimationStart(Animator animator) {
-                                float f12;
-                                if (z5) {
-                                    ChatActivityEnterView.this.createSenderSelectView();
-                                    ChatActivityEnterView.this.senderSelectView.setVisibility(0);
-                                }
-                                SenderSelectView senderSelectView7 = ChatActivityEnterView.this.senderSelectView;
-                                if (senderSelectView7 != null) {
-                                    senderSelectView7.setAlpha(f9);
-                                    ChatActivityEnterView.this.senderSelectView.setTranslationX(f10);
-                                    f12 = ChatActivityEnterView.this.senderSelectView.getTranslationX();
-                                } else {
-                                    f12 = 0.0f;
-                                }
-                                ChatActivityEnterView.this.emojiButton.setTranslationX(f12);
-                                ChatActivityEnterView.this.messageTextTranslationX = f12;
-                                ChatActivityEnterView.this.updateMessageTextParams();
-                                if (ChatActivityEnterView.this.botCommandsMenuButton == null || ChatActivityEnterView.this.botCommandsMenuButton.getTag() != null) {
-                                    return;
-                                }
-                                ChatActivityEnterView.this.animationParamsX.clear();
-                            }
-
-                            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                            public void onAnimationEnd(Animator animator) {
-                                if (z5) {
-                                    return;
-                                }
-                                SenderSelectView senderSelectView7 = ChatActivityEnterView.this.senderSelectView;
-                                if (senderSelectView7 != null) {
-                                    senderSelectView7.setVisibility(8);
-                                }
-                                ChatActivityEnterView.this.emojiButton.setTranslationX(0.0f);
-                                ChatActivityEnterView.this.messageTextTranslationX = 0.0f;
-                                ChatActivityEnterView.this.updateMessageTextParams();
-                            }
-
-                            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                            public void onAnimationCancel(Animator animator) {
-                                float f12;
-                                if (z5) {
-                                    ChatActivityEnterView.this.createSenderSelectView();
-                                }
-                                SenderSelectView senderSelectView7 = ChatActivityEnterView.this.senderSelectView;
-                                if (senderSelectView7 != null) {
-                                    senderSelectView7.setVisibility(z5 ? 0 : 8);
-                                    ChatActivityEnterView.this.senderSelectView.setAlpha(f8);
-                                    ChatActivityEnterView.this.senderSelectView.setTranslationX(f11);
-                                    f12 = ChatActivityEnterView.this.senderSelectView.getTranslationX();
-                                } else {
-                                    f12 = 0.0f;
-                                }
-                                ChatActivityEnterView.this.emojiButton.setTranslationX(f12);
-                                ChatActivityEnterView.this.messageTextTranslationX = f12;
-                                ChatActivityEnterView.this.updateMessageTextParams();
-                                ChatActivityEnterView.this.requestLayout();
-                            }
-                        });
-                        duration.start();
-                        SenderSelectView senderSelectView7 = this.senderSelectView;
-                        if (senderSelectView7 != null) {
-                            senderSelectView7.setTag(duration);
-                            return;
-                        }
-                        return;
-                    }
-                    if (z3) {
-                        createSenderSelectView();
-                    }
-                    SenderSelectView senderSelectView8 = this.senderSelectView;
-                    if (senderSelectView8 != null) {
-                        senderSelectView8.setVisibility(z3 ? 0 : 8);
-                        this.senderSelectView.setTranslationX(f2);
-                    }
-                    float f12 = z3 ? f2 : 0.0f;
-                    this.emojiButton.setTranslationX(f12);
-                    this.messageTextTranslationX = f12;
+                    this.messageTextTranslationX = f;
                     updateMessageTextParams();
-                    SenderSelectView senderSelectView9 = this.senderSelectView;
-                    if (senderSelectView9 != null) {
-                        senderSelectView9.setAlpha(f4);
-                        this.senderSelectView.setTag(null);
+                    final float f5 = f;
+                    final float f6 = f2;
+                    final float f7 = f3;
+                    final float f8 = f4;
+                    duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda19
+                        @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                        public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                            ChatActivityEnterView.this.lambda$updateSendAsButton$74(f5, f6, f7, f8, valueAnimator2);
+                        }
+                    });
+                    final boolean z5 = z3;
+                    final float f9 = f3;
+                    final float f10 = f;
+                    final float f11 = f2;
+                    duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.73
+                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                        public void onAnimationStart(Animator animator) {
+                            float f12;
+                            if (z5) {
+                                ChatActivityEnterView.this.createSenderSelectView();
+                                ChatActivityEnterView.this.senderSelectView.setVisibility(0);
+                            }
+                            SenderSelectView senderSelectView7 = ChatActivityEnterView.this.senderSelectView;
+                            if (senderSelectView7 != null) {
+                                senderSelectView7.setAlpha(f9);
+                                ChatActivityEnterView.this.senderSelectView.setTranslationX(f10);
+                                f12 = ChatActivityEnterView.this.senderSelectView.getTranslationX();
+                            } else {
+                                f12 = 0.0f;
+                            }
+                            ChatActivityEnterView.this.emojiButton.setTranslationX(f12);
+                            ChatActivityEnterView.this.messageTextTranslationX = f12;
+                            ChatActivityEnterView.this.updateMessageTextParams();
+                            if (ChatActivityEnterView.this.botCommandsMenuButton == null || ChatActivityEnterView.this.botCommandsMenuButton.getTag() != null) {
+                                return;
+                            }
+                            ChatActivityEnterView.this.animationParamsX.clear();
+                        }
+
+                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                        public void onAnimationEnd(Animator animator) {
+                            if (z5) {
+                                return;
+                            }
+                            SenderSelectView senderSelectView7 = ChatActivityEnterView.this.senderSelectView;
+                            if (senderSelectView7 != null) {
+                                senderSelectView7.setVisibility(8);
+                            }
+                            ChatActivityEnterView.this.emojiButton.setTranslationX(0.0f);
+                            ChatActivityEnterView.this.messageTextTranslationX = 0.0f;
+                            ChatActivityEnterView.this.updateMessageTextParams();
+                        }
+
+                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                        public void onAnimationCancel(Animator animator) {
+                            float f12;
+                            if (z5) {
+                                ChatActivityEnterView.this.createSenderSelectView();
+                            }
+                            SenderSelectView senderSelectView7 = ChatActivityEnterView.this.senderSelectView;
+                            if (senderSelectView7 != null) {
+                                senderSelectView7.setVisibility(z5 ? 0 : 8);
+                                ChatActivityEnterView.this.senderSelectView.setAlpha(f8);
+                                ChatActivityEnterView.this.senderSelectView.setTranslationX(f11);
+                                f12 = ChatActivityEnterView.this.senderSelectView.getTranslationX();
+                            } else {
+                                f12 = 0.0f;
+                            }
+                            ChatActivityEnterView.this.emojiButton.setTranslationX(f12);
+                            ChatActivityEnterView.this.messageTextTranslationX = f12;
+                            ChatActivityEnterView.this.updateMessageTextParams();
+                            ChatActivityEnterView.this.requestLayout();
+                        }
+                    });
+                    duration.start();
+                    SenderSelectView senderSelectView7 = this.senderSelectView;
+                    if (senderSelectView7 != null) {
+                        senderSelectView7.setTag(duration);
                         return;
                     }
+                    return;
+                }
+                if (z3) {
+                    createSenderSelectView();
+                }
+                SenderSelectView senderSelectView8 = this.senderSelectView;
+                if (senderSelectView8 != null) {
+                    senderSelectView8.setVisibility(z3 ? 0 : 8);
+                    this.senderSelectView.setTranslationX(f2);
+                }
+                float f12 = z3 ? f2 : 0.0f;
+                this.emojiButton.setTranslationX(f12);
+                this.messageTextTranslationX = f12;
+                updateMessageTextParams();
+                SenderSelectView senderSelectView9 = this.senderSelectView;
+                if (senderSelectView9 != null) {
+                    senderSelectView9.setAlpha(f4);
+                    this.senderSelectView.setTag(null);
                     return;
                 }
                 return;
@@ -12402,7 +12402,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             f = 0.0f;
         }
         f2 = 0.0f;
-        if (z4 == z3) {
+        if (z4 != z3) {
         }
     }
 
@@ -16071,10 +16071,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             if (senderSelectView != null && senderSelectView.getVisibility() == 0) {
                 int i3 = this.senderSelectView.getLayoutParams().width;
                 this.senderSelectView.measure(View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.senderSelectView.getLayoutParams().height, TLObject.FLAG_30));
-                ((ViewGroup.MarginLayoutParams) this.emojiButton.getLayoutParams()).leftMargin = AndroidUtilities.dp(16.0f) + i3;
+                ((ViewGroup.MarginLayoutParams) this.emojiButton.getLayoutParams()).leftMargin = AndroidUtilities.dp(7.0f) + i3;
                 EditTextCaption editTextCaption2 = this.messageEditText;
                 if (editTextCaption2 != null) {
-                    ((ViewGroup.MarginLayoutParams) editTextCaption2.getLayoutParams()).leftMargin = AndroidUtilities.dp(63.0f) + i3;
+                    ((ViewGroup.MarginLayoutParams) editTextCaption2.getLayoutParams()).leftMargin = AndroidUtilities.dp(54.0f) + i3;
                 }
             } else {
                 ((ViewGroup.MarginLayoutParams) this.emojiButton.getLayoutParams()).leftMargin = AndroidUtilities.dp(3.0f);

@@ -91,6 +91,7 @@ import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.BottomSheet$$ExternalSyntheticLambda14;
+import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.AvatarSpan;
@@ -279,6 +280,10 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             }
         };
         super.createView(context);
+        INavigationLayout iNavigationLayout = this.parentLayout;
+        if (iNavigationLayout != null && iNavigationLayout.isRightLayout()) {
+            this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
+        }
         FrameLayout frameLayout = new FrameLayout(context);
         this.aboveTitleView = frameLayout;
         frameLayout.setClickable(true);

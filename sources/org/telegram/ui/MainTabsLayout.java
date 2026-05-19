@@ -3,6 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,7 @@ public class MainTabsLayout extends AnimatedLinearLayout {
     private View lastLongSelectedView;
     private float lastLongSelectedViewCenterX;
     private float lastLongSelectedViewWidth;
+    private int maxWidthPx;
     private final Theme.ResourcesProvider resourcesProvider;
     private final Runnable restoreDrawSelector;
     final SpringAnimation scaleX;
@@ -49,9 +51,13 @@ public class MainTabsLayout extends AnimatedLinearLayout {
     private int[] tabsWidth;
     private final Set tabsWithIgnoreClick;
     private int visibleChildCount;
+    private static final float[] PASS_TEXT_SIZES_DP = {12.0f, 12.0f, 10.0f};
+    private static final int[] PASS_PADDINGS_DP = {16, 8, 4};
 
     public interface Tab {
-        float measureTextWidth();
+        float measureTextWidth(float f);
+
+        void setTextSizeDp(float f);
     }
 
     public MainTabsLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
@@ -235,84 +241,122 @@ public class MainTabsLayout extends AnimatedLinearLayout {
         this.resourcesProvider = resourcesProvider;
     }
 
+    public void setMaxWidth(int i) {
+        if (this.maxWidthPx != i) {
+            this.maxWidthPx = i;
+            requestLayout();
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x007d, code lost:
+    
+        r5 = r9;
+     */
     @Override // org.telegram.ui.Components.AnimatedLinearLayout, android.widget.LinearLayout, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     protected void onMeasure(int i, int i2) {
+        int i3;
         int size = View.MeasureSpec.getSize(i);
         int size2 = View.MeasureSpec.getSize(i2);
         int paddingTop = (size2 - getPaddingTop()) - getPaddingBottom();
-        measureTabTexts();
+        int i4 = this.maxWidthPx;
+        if (i4 > 0 && size > i4) {
+            size = i4;
+        }
         int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
         int min = Math.min(AndroidUtilities.dp(320.0f), paddingLeft);
-        int dp = AndroidUtilities.dp(16.0f);
-        int i3 = this.visibleChildCount;
-        int i4 = min / i3;
-        int i5 = (paddingLeft / i3) - (dp * 2);
-        int childCount = getChildCount();
+        int length = PASS_TEXT_SIZES_DP.length - 1;
+        float f = -1.0f;
+        while (true) {
+            float[] fArr = PASS_TEXT_SIZES_DP;
+            if (i3 >= fArr.length) {
+                break;
+            }
+            float f2 = fArr[i3];
+            if (f2 != f) {
+                measureTabTexts(f2);
+                f = fArr[i3];
+            }
+            int dp = AndroidUtilities.dp(PASS_PADDINGS_DP[i3]);
+            int childCount = getChildCount();
+            float f3 = 0.0f;
+            for (int i5 = 0; i5 < childCount; i5++) {
+                if (isViewVisible(getChildAt(i5))) {
+                    f3 += this.tabsTextWidth[i5] + (dp * 2);
+                }
+            }
+            i3 = (f3 > ((float) paddingLeft) && i3 != PASS_TEXT_SIZES_DP.length - 1) ? i3 + 1 : 0;
+        }
+        applyPassTextSize(length);
+        int dp2 = AndroidUtilities.dp(PASS_PADDINGS_DP[length]) * 2;
+        int max = (paddingLeft / Math.max(1, this.visibleChildCount)) - dp2;
+        int childCount2 = getChildCount();
         int i6 = 0;
-        float f = 0.0f;
-        for (int i7 = 0; i7 < childCount; i7++) {
+        float f4 = 0.0f;
+        for (int i7 = 0; i7 < childCount2; i7++) {
             if (!isViewVisible(getChildAt(i7))) {
-                float[] fArr = this.tabsTextWidth;
+                float[] fArr2 = this.tabsTextWidth;
                 this.tabsTextWidthWithMargin[i7] = 0.0f;
-                fArr[i7] = 0.0f;
+                fArr2[i7] = 0.0f;
                 this.tabsWeight[i7] = 0;
             } else {
-                float f2 = this.tabsTextWidth[i7];
-                if (f2 > i5) {
-                    this.tabsTextWidthWithMargin[i7] = f2 + (AndroidUtilities.dp(13.0f) * 2);
-                } else {
-                    this.tabsTextWidthWithMargin[i7] = f2 + (AndroidUtilities.dp(16.0f) * 2);
-                }
-                this.tabsWeight[i7] = this.tabsTextWidthWithMargin[i7] > ((float) ((AndroidUtilities.dp(16.0f) * 2) + i5)) ? 0 : 1;
-                f += this.tabsTextWidthWithMargin[i7];
-                i6 += this.tabsWeight[i7];
+                float[] fArr3 = this.tabsTextWidthWithMargin;
+                float f5 = this.tabsTextWidth[i7] + dp2;
+                fArr3[i7] = f5;
+                int[] iArr = this.tabsWeight;
+                int i8 = f5 > ((float) (max + dp2)) ? 0 : 1;
+                iArr[i7] = i8;
+                f4 += f5;
+                i6 += i8;
             }
         }
         if (i6 == 0) {
-            int childCount2 = getChildCount();
-            for (int i8 = 0; i8 < childCount2; i8++) {
-                this.tabsWeight[i8] = isViewVisible(getChildAt(i8)) ? 1 : 0;
+            int childCount3 = getChildCount();
+            for (int i9 = 0; i9 < childCount3; i9++) {
+                this.tabsWeight[i9] = isViewVisible(getChildAt(i9)) ? 1 : 0;
             }
             i6 = this.visibleChildCount;
         }
-        float f3 = paddingLeft;
-        if (f > f3) {
-            float f4 = f3 / f;
-            int childCount3 = getChildCount();
-            for (int i9 = 0; i9 < childCount3; i9++) {
-                float[] fArr2 = this.tabsTextWidthWithMargin;
-                fArr2[i9] = fArr2[i9] * f4;
+        float f6 = paddingLeft;
+        if (f4 > f6) {
+            float f7 = f6 / f4;
+            int childCount4 = getChildCount();
+            for (int i10 = 0; i10 < childCount4; i10++) {
+                float[] fArr4 = this.tabsTextWidthWithMargin;
+                fArr4[i10] = fArr4[i10] * f7;
             }
         } else {
-            float f5 = min;
-            if (f < f5) {
-                float f6 = (f5 - f) / i6;
-                int childCount4 = getChildCount();
-                for (int i10 = 0; i10 < childCount4; i10++) {
-                    float[] fArr3 = this.tabsTextWidthWithMargin;
-                    fArr3[i10] = fArr3[i10] + (this.tabsWeight[i10] * f6);
+            float f8 = min;
+            if (f4 < f8) {
+                float f9 = (f8 - f4) / i6;
+                int childCount5 = getChildCount();
+                for (int i11 = 0; i11 < childCount5; i11++) {
+                    float[] fArr5 = this.tabsTextWidthWithMargin;
+                    fArr5[i11] = fArr5[i11] + (this.tabsWeight[i11] * f9);
                 }
             }
         }
-        int childCount5 = getChildCount();
-        int i11 = 0;
-        for (int i12 = 0; i12 < childCount5; i12++) {
-            if (isViewVisible(getChildAt(i12))) {
-                this.tabsWidth[i12] = Math.round(this.tabsTextWidthWithMargin[i12]);
-                this.tabsLeftPos[i12] = i11;
-                i11 += this.tabsWidth[i12];
+        int childCount6 = getChildCount();
+        int i12 = 0;
+        for (int i13 = 0; i13 < childCount6; i13++) {
+            if (isViewVisible(getChildAt(i13))) {
+                this.tabsWidth[i13] = Math.round(this.tabsTextWidthWithMargin[i13]);
+                this.tabsLeftPos[i13] = i12;
+                i12 += this.tabsWidth[i13];
             }
         }
-        setMeasuredDimension(i11 + getPaddingLeft() + getPaddingRight(), size2);
-        int childCount6 = getChildCount();
-        for (int i13 = 0; i13 < childCount6; i13++) {
-            getChildAt(i13).measure(View.MeasureSpec.makeMeasureSpec(this.tabsWidth[i13], TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(paddingTop, TLObject.FLAG_30));
+        setMeasuredDimension(i12 + getPaddingLeft() + getPaddingRight(), size2);
+        int childCount7 = getChildCount();
+        for (int i14 = 0; i14 < childCount7; i14++) {
+            getChildAt(i14).measure(View.MeasureSpec.makeMeasureSpec(this.tabsWidth[i14], TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(paddingTop, TLObject.FLAG_30));
         }
         calculateTotalSizesAfterMeasure();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    private void measureTabTexts() {
+    private void measureTabTexts(float f) {
         int childCount = getChildCount();
         float[] fArr = this.tabsTextWidth;
         if (fArr == null || fArr.length < childCount) {
@@ -323,20 +367,31 @@ public class MainTabsLayout extends AnimatedLinearLayout {
             this.tabsWidth = new int[childCount];
         }
         int i = 0;
-        float f = 0.0f;
+        float f2 = 0.0f;
         for (int i2 = 0; i2 < childCount; i2++) {
             View childAt = getChildAt(i2);
             if (!isViewVisible(childAt)) {
                 this.tabsTextWidth[i2] = -1.0f;
             } else {
-                float measureTextWidth = childAt instanceof Tab ? ((Tab) childAt).measureTextWidth() : 0.0f;
+                float measureTextWidth = childAt instanceof Tab ? ((Tab) childAt).measureTextWidth(f) : 0.0f;
                 this.tabsTextWidth[i2] = measureTextWidth;
-                f = Math.max(f, measureTextWidth);
+                f2 = Math.max(f2, measureTextWidth);
                 i++;
             }
         }
-        this.biggestTabTextWidth = (int) Math.ceil(f);
+        this.biggestTabTextWidth = (int) Math.ceil(f2);
         this.visibleChildCount = i;
+    }
+
+    private void applyPassTextSize(int i) {
+        float f = PASS_TEXT_SIZES_DP[i];
+        int childCount = getChildCount();
+        for (int i2 = 0; i2 < childCount; i2++) {
+            KeyEvent.Callback childAt = getChildAt(i2);
+            if (childAt instanceof Tab) {
+                ((Tab) childAt).setTextSizeDp(f);
+            }
+        }
     }
 
     @Override // org.telegram.ui.Components.AnimatedLinearLayout

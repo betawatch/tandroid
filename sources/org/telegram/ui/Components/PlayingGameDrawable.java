@@ -52,8 +52,8 @@ public class PlayingGameDrawable extends StatusDrawable {
         long currentTimeMillis = System.currentTimeMillis();
         long j = currentTimeMillis - this.lastUpdateTime;
         this.lastUpdateTime = currentTimeMillis;
-        if (j > 16) {
-            j = 16;
+        if (j > 50) {
+            j = 50;
         }
         if (this.progress >= 1.0f) {
             this.progress = 0.0f;
@@ -63,7 +63,7 @@ public class PlayingGameDrawable extends StatusDrawable {
         if (f > 1.0f) {
             this.progress = 1.0f;
         }
-        invalidateSelf();
+        invalidateLimited();
     }
 
     @Override // org.telegram.ui.Components.StatusDrawable

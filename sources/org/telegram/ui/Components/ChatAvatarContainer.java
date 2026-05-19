@@ -68,6 +68,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
     private AnimatedTextView animatedSubtitleTextView;
     private AvatarDrawable avatarDrawable;
     public BackupImageView avatarImageView;
+    private int avatarSizeInDp;
     private final AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable botVerificationDrawable;
     public ButtonBounce bounce;
     private int currentAccount;
@@ -75,6 +76,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
     StatusDrawable currentTypingDrawable;
     private Drawable emojiStatusDefaultDrawable;
     private final AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable emojiStatusDrawable;
+    private boolean glassMode;
     public boolean ignoreTouches;
     private boolean[] isOnline;
     private int largerWidth;
@@ -173,7 +175,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         this(context, baseFragment, z, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x0320, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x0324, code lost:
     
         if (r2.isComments == false) goto L80;
      */
@@ -182,6 +184,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
     */
     public ChatAvatarContainer(Context context, BaseFragment baseFragment, boolean z, final Theme.ResourcesProvider resourcesProvider) {
         super(context);
+        this.avatarSizeInDp = 42;
         this.titleTextLargerCopyView = new AtomicReference();
         this.subtitleTextLargerCopyView = new AtomicReference();
         this.statusDrawables = new StatusDrawable[6];
@@ -810,7 +813,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
     protected void onMeasure(int i, int i2) {
         int size = View.MeasureSpec.getSize(i) + this.titleTextView.getPaddingRight();
         int dp = size - AndroidUtilities.dp((this.avatarImageView.getVisibility() == 0 ? 54 : 0) + 16);
-        this.avatarImageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLObject.FLAG_30));
+        this.avatarImageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.avatarSizeInDp), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.avatarSizeInDp), TLObject.FLAG_30));
         this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f) + this.titleTextView.getPaddingRight(), TLObject.FLAG_31));
         SimpleTextView simpleTextView = this.subtitleTextView;
         if (simpleTextView != null) {
@@ -924,24 +927,36 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         }
     }
 
+    public void setGlassMode() {
+        this.avatarSizeInDp = 38;
+        this.titleTextView.setTextSize(16);
+        this.subtitleTextView.setTextSize(13);
+        this.glassMode = true;
+    }
+
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        int currentActionBarHeight = ((ActionBar.getCurrentActionBarHeight() - AndroidUtilities.dp(42.0f)) / 2) + (this.occupyStatusBar ? AndroidUtilities.statusBarHeight : 0);
+        int i5 = 0;
+        int currentActionBarHeight = ((ActionBar.getCurrentActionBarHeight() - AndroidUtilities.dp(this.avatarSizeInDp)) / 2) + (this.occupyStatusBar ? AndroidUtilities.statusBarHeight : 0);
+        int dp = AndroidUtilities.dp(this.glassMode ? 21.33f : 24.0f) + currentActionBarHeight;
         BackupImageView backupImageView = this.avatarImageView;
-        int i5 = this.leftPadding;
-        int i6 = currentActionBarHeight + 1;
-        backupImageView.layout(i5, i6, AndroidUtilities.dp(42.0f) + i5, AndroidUtilities.dp(42.0f) + i6);
-        int dp = this.leftPadding + (this.avatarImageView.getVisibility() == 0 ? AndroidUtilities.dp(54.0f) : 0) + this.rightAvatarPadding;
+        int i6 = this.leftPadding;
+        backupImageView.layout(i6, currentActionBarHeight, AndroidUtilities.dp(this.avatarSizeInDp) + i6, AndroidUtilities.dp(this.avatarSizeInDp) + currentActionBarHeight);
+        int i7 = this.leftPadding;
+        if (this.avatarImageView.getVisibility() == 0) {
+            i5 = AndroidUtilities.dp(this.glassMode ? 46.0f : 54.0f);
+        }
+        int i8 = i7 + i5 + this.rightAvatarPadding;
         SimpleTextView simpleTextView = (SimpleTextView) this.titleTextLargerCopyView.get();
         if (getSubtitleTextView().getVisibility() != 8) {
-            this.titleTextView.layout(dp, (AndroidUtilities.dp(1.3f) + currentActionBarHeight) - this.titleTextView.getPaddingTop(), this.titleTextView.getMeasuredWidth() + dp, (((this.titleTextView.getTextHeight() + currentActionBarHeight) + AndroidUtilities.dp(1.3f)) - this.titleTextView.getPaddingTop()) + this.titleTextView.getPaddingBottom());
+            this.titleTextView.layout(i8, (AndroidUtilities.dp(1.3f) + currentActionBarHeight) - this.titleTextView.getPaddingTop(), this.titleTextView.getMeasuredWidth() + i8, (((this.titleTextView.getTextHeight() + currentActionBarHeight) + AndroidUtilities.dp(1.3f)) - this.titleTextView.getPaddingTop()) + this.titleTextView.getPaddingBottom());
             if (simpleTextView != null) {
-                simpleTextView.layout(dp, AndroidUtilities.dp(1.3f) + currentActionBarHeight, simpleTextView.getMeasuredWidth() + dp, simpleTextView.getTextHeight() + currentActionBarHeight + AndroidUtilities.dp(1.3f));
+                simpleTextView.layout(i8, AndroidUtilities.dp(1.3f) + currentActionBarHeight, simpleTextView.getMeasuredWidth() + i8, simpleTextView.getTextHeight() + currentActionBarHeight + AndroidUtilities.dp(1.3f));
             }
         } else {
-            this.titleTextView.layout(dp, (AndroidUtilities.dp(11.0f) + currentActionBarHeight) - this.titleTextView.getPaddingTop(), this.titleTextView.getMeasuredWidth() + dp, (((this.titleTextView.getTextHeight() + currentActionBarHeight) + AndroidUtilities.dp(11.0f)) - this.titleTextView.getPaddingTop()) + this.titleTextView.getPaddingBottom());
+            this.titleTextView.layout(i8, (AndroidUtilities.dp(10.0f) + currentActionBarHeight) - this.titleTextView.getPaddingTop(), this.titleTextView.getMeasuredWidth() + i8, (((this.titleTextView.getTextHeight() + currentActionBarHeight) + AndroidUtilities.dp(10.0f)) - this.titleTextView.getPaddingTop()) + this.titleTextView.getPaddingBottom());
             if (simpleTextView != null) {
-                simpleTextView.layout(dp, AndroidUtilities.dp(11.0f) + currentActionBarHeight, simpleTextView.getMeasuredWidth() + dp, simpleTextView.getTextHeight() + currentActionBarHeight + AndroidUtilities.dp(11.0f));
+                simpleTextView.layout(i8, AndroidUtilities.dp(10.0f) + currentActionBarHeight, simpleTextView.getMeasuredWidth() + i8, simpleTextView.getTextHeight() + currentActionBarHeight + AndroidUtilities.dp(10.0f));
             }
         }
         ImageView imageView = this.timeItem;
@@ -954,20 +969,20 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         }
         ImageView imageView3 = this.starFgItem;
         if (imageView3 != null) {
-            imageView3.layout(this.leftPadding + AndroidUtilities.dp(28.0f), AndroidUtilities.dp(24.0f) + currentActionBarHeight, this.leftPadding + AndroidUtilities.dp(28.0f) + this.starFgItem.getMeasuredWidth(), AndroidUtilities.dp(24.0f) + currentActionBarHeight + this.starFgItem.getMeasuredHeight());
+            imageView3.layout(this.leftPadding + AndroidUtilities.dp(28.0f), AndroidUtilities.dp(24.0f) + currentActionBarHeight, this.leftPadding + AndroidUtilities.dp(28.0f) + this.starFgItem.getMeasuredWidth(), currentActionBarHeight + AndroidUtilities.dp(24.0f) + this.starFgItem.getMeasuredHeight());
         }
         SimpleTextView simpleTextView2 = this.subtitleTextView;
         if (simpleTextView2 != null) {
-            simpleTextView2.layout(dp, AndroidUtilities.dp(24.0f) + currentActionBarHeight, this.subtitleTextView.getMeasuredWidth() + dp, this.subtitleTextView.getTextHeight() + currentActionBarHeight + AndroidUtilities.dp(24.0f));
+            simpleTextView2.layout(i8, dp, simpleTextView2.getMeasuredWidth() + i8, this.subtitleTextView.getTextHeight() + dp);
         } else {
             AnimatedTextView animatedTextView = this.animatedSubtitleTextView;
             if (animatedTextView != null) {
-                animatedTextView.layout(dp, AndroidUtilities.dp(24.0f) + currentActionBarHeight, this.animatedSubtitleTextView.getMeasuredWidth() + dp, this.animatedSubtitleTextView.getTextHeight() + currentActionBarHeight + AndroidUtilities.dp(24.0f));
+                animatedTextView.layout(i8, dp, animatedTextView.getMeasuredWidth() + i8, this.animatedSubtitleTextView.getTextHeight() + dp);
             }
         }
         SimpleTextView simpleTextView3 = (SimpleTextView) this.subtitleTextLargerCopyView.get();
         if (simpleTextView3 != null) {
-            simpleTextView3.layout(dp, AndroidUtilities.dp(24.0f) + currentActionBarHeight, simpleTextView3.getMeasuredWidth() + dp, currentActionBarHeight + simpleTextView3.getTextHeight() + AndroidUtilities.dp(24.0f));
+            simpleTextView3.layout(i8, dp, simpleTextView3.getMeasuredWidth() + i8, simpleTextView3.getTextHeight() + dp);
         }
     }
 

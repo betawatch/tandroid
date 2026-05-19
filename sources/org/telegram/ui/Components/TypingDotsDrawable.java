@@ -81,7 +81,7 @@ public class TypingDotsDrawable extends StatusDrawable {
                 this.scales[i] = 1.33f;
             }
         }
-        invalidateSelf();
+        invalidateLimited();
     }
 
     @Override // org.telegram.ui.Components.StatusDrawable

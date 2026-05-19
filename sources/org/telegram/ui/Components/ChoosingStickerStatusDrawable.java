@@ -117,8 +117,8 @@ public class ChoosingStickerStatusDrawable extends StatusDrawable {
         long currentTimeMillis = System.currentTimeMillis();
         long j = currentTimeMillis - this.lastUpdateTime;
         this.lastUpdateTime = currentTimeMillis;
-        if (j > 16) {
-            j = 16;
+        if (j > 50) {
+            j = 50;
         }
         float f = this.progress + (j / 500.0f);
         this.progress = f;
@@ -126,7 +126,7 @@ public class ChoosingStickerStatusDrawable extends StatusDrawable {
             this.progress = 0.0f;
             this.increment = !this.increment;
         }
-        invalidateSelf();
+        invalidateLimited();
     }
 
     @Override // android.graphics.drawable.Drawable

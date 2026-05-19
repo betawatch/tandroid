@@ -125,6 +125,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
     public float innerTranslationX;
     public boolean isKeyboardVisible;
     private boolean isLayersLayout;
+    private boolean isRightLayout;
     private boolean isSheet;
     ArrayList lastActions;
     private long lastFrameTime;
@@ -756,6 +757,20 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         this.isLayersLayout = true;
     }
 
+    public void setIsRightLayout() {
+        this.isRightLayout = true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.INavigationLayout
+    public boolean isRightLayout() {
+        return this.isRightLayout;
+    }
+
+    @Override // org.telegram.ui.ActionBar.INavigationLayout
+    public boolean isLayersLayout() {
+        return this.isLayersLayout;
+    }
+
     @Override // org.telegram.ui.ActionBar.INavigationLayout
     public void setFragmentStack(List<BaseFragment> list) {
         this.fragmentsStack = list;
@@ -1112,32 +1127,43 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
         this.withShadow = true;
+        if (this.isLayersLayout) {
+            canvas.save();
+            float dp = AndroidUtilities.dp(24.0f);
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+            this.clipPath.addRoundRect(rectF, dp, dp, Path.Direction.CW);
+            canvas.clipPath(this.clipPath);
+        }
         super.dispatchDraw(canvas);
+        if (this.isLayersLayout) {
+            canvas.restore();
+        }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:146:0x0377, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:149:0x03a8, code lost:
     
-        if (r20.overrideWidthOffset != (-1)) goto L184;
+        if (r21.overrideWidthOffset != (-1)) goto L188;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:191:0x01de, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:195:0x020f, code lost:
     
         r1 = getRootWindowInsets();
      */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0262  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x02c6  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x032b  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x0346  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x0374  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0384  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x038a  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x03d5  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x037e  */
-    /* JADX WARN: Removed duplicated region for block: B:189:0x01d9  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0293  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x02f7  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x035c  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x0377  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x03a5  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x03b5  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x03bb  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x0406  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x03af  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x020a  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x00af  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0218  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0227  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x023d  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x024c  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0249  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0258  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x026e  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x027d  */
     @Override // android.view.ViewGroup
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1269,6 +1295,14 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                         }
                         fArr4[7] = f5;
                         fArr4[6] = f5;
+                        if (this.isRightLayout) {
+                            float clamp01 = Utilities.clamp01(Math.abs(paddingRight) / AndroidUtilities.dpf2(12.0f));
+                            float[] fArr5 = this.radii;
+                            fArr5[0] = fArr5[0] * clamp01;
+                            fArr5[1] = fArr5[1] * clamp01;
+                            fArr5[6] = fArr5[6] * clamp01;
+                            fArr5[7] = fArr5[7] * clamp01;
+                        }
                         this.clipPath.rewind();
                         this.clipPath.addRoundRect(rectF, this.radii, Path.Direction.CW);
                         canvas.clipPath(this.clipPath);
@@ -2363,6 +2397,8 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 ArrayList arrayList = new ArrayList();
                 Property property = View.ALPHA;
                 arrayList.add(ObjectAnimator.ofFloat(this, (Property<ActionBarLayout, Float>) property, 0.0f, 1.0f));
+                arrayList.add(ObjectAnimator.ofFloat(this, (Property<ActionBarLayout, Float>) View.SCALE_X, 0.9f, 1.0f));
+                arrayList.add(ObjectAnimator.ofFloat(this, (Property<ActionBarLayout, Float>) View.SCALE_Y, 0.9f, 1.0f));
                 View view3 = this.backgroundView;
                 if (view3 != null) {
                     view3.setVisibility(0);
@@ -2375,7 +2411,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 AnimatorSet animatorSet = new AnimatorSet();
                 this.currentAnimation = animatorSet;
                 animatorSet.playTogether(arrayList);
-                this.currentAnimation.setInterpolator(this.accelerateDecelerateInterpolator);
+                this.currentAnimation.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
                 this.currentAnimation.setDuration(200L);
                 this.currentAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.4
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -2950,6 +2986,8 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 ArrayList arrayList = new ArrayList();
                 Property property = View.ALPHA;
                 arrayList.add(ObjectAnimator.ofFloat(this, (Property<ActionBarLayout, Float>) property, 1.0f, 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(this, (Property<ActionBarLayout, Float>) View.SCALE_X, 1.0f, 0.9f));
+                arrayList.add(ObjectAnimator.ofFloat(this, (Property<ActionBarLayout, Float>) View.SCALE_Y, 1.0f, 0.9f));
                 View view2 = this.backgroundView;
                 if (view2 != null) {
                     arrayList.add(ObjectAnimator.ofFloat(view2, (Property<View, Float>) property, 1.0f, 0.0f));

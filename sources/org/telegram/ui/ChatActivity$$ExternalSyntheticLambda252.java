@@ -7,10 +7,10 @@ import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
 import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
 
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ChatActivity$$ExternalSyntheticLambda249 implements IBlur3Capture {
+public final /* synthetic */ class ChatActivity$$ExternalSyntheticLambda252 implements IBlur3Capture {
     public final /* synthetic */ ChatActivity.ChatActivityFragmentView f$0;
 
-    public /* synthetic */ ChatActivity$$ExternalSyntheticLambda249(ChatActivity.ChatActivityFragmentView chatActivityFragmentView) {
+    public /* synthetic */ ChatActivity$$ExternalSyntheticLambda252(ChatActivity.ChatActivityFragmentView chatActivityFragmentView) {
         this.f$0 = chatActivityFragmentView;
     }
 

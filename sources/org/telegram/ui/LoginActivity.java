@@ -846,8 +846,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean isCustomKeyboardForceDisabled() {
-        Point point = AndroidUtilities.displaySize;
-        return point.x > point.y || AndroidUtilities.isTablet() || AndroidUtilities.isAccessibilityTouchExplorationEnabled();
+        return AndroidUtilities.isAccessibilityTouchExplorationEnabled();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

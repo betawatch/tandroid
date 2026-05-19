@@ -552,13 +552,14 @@ public abstract class BaseFragment {
     }
 
     public ActionBar createActionBar(Context context) {
+        INavigationLayout iNavigationLayout;
         ActionBar actionBar = new ActionBar(context, getResourceProvider());
         actionBar.setBackgroundColor(getThemedColor(Theme.key_actionBarDefault));
         actionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSelector), false);
         actionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefaultSelector), true);
         actionBar.setItemsColor(getThemedColor(Theme.key_actionBarDefaultIcon), false);
         actionBar.setItemsColor(getThemedColor(Theme.key_actionBarActionModeDefaultIcon), true);
-        if (this.inPreviewMode || this.inBubbleMode) {
+        if (this.inPreviewMode || this.inBubbleMode || ((iNavigationLayout = this.parentLayout) != null && iNavigationLayout.isLayersLayout())) {
             actionBar.setOccupyStatusBar(false);
         }
         return actionBar;

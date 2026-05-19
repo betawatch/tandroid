@@ -155,8 +155,8 @@ public class ChatActivityActionsButtonsLayout extends LinearLayout {
 
         private ButtonHolder() {
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
-            this.visibilityAnimator = new BoolAnimator(0, this, cubicBezierInterpolator, 350L, true);
-            this.enabledAnimator = new BoolAnimator(1, this, cubicBezierInterpolator, 350L, true);
+            this.visibilityAnimator = new BoolAnimator(0, this, cubicBezierInterpolator, 320L, true);
+            this.enabledAnimator = new BoolAnimator(1, this, cubicBezierInterpolator, 320L, true);
         }
 
         @Override // me.vkryl.android.animator.FactorAnimator.Target

@@ -6533,6 +6533,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
     }
 
     public void updatePlayingMessageProgress() {
+        boolean z;
         double d;
         double d2;
         MessageObject messageObject = this.currentMessageObject;
@@ -6598,6 +6599,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             }
             return;
         }
+        boolean z2 = true;
         if (this.isRoundVideo) {
             if (this.useSeekBarWaveform) {
                 if (!this.seekBarWaveform.isDragging()) {
@@ -6649,12 +6651,14 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 if (!this.seekBarWaveform.isDragging()) {
                     this.seekBarWaveform.setProgress(this.currentMessageObject.audioProgress, true);
                 }
+                z = true;
             } else {
                 if (!this.seekBar.isDragging()) {
                     this.seekBar.setProgress(this.currentMessageObject.audioProgress);
                     this.seekBar.setBufferedProgress(this.currentMessageObject.bufferedProgress);
                 }
                 this.seekBar.updateTimestamps(this.currentMessageObject, null);
+                z = false;
             }
             if (this.documentAttachType == 3) {
                 long j2 = this.overridenDuration;
@@ -6687,10 +6691,13 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 double d4 = r1;
                 if (this.lastTime != d4) {
                     this.lastTime = d4;
-                    this.durationLayout = new StaticLayout(AndroidUtilities.formatShortDuration(r1, (int) duration), Theme.chat_audioTimePaint, (int) Math.ceil(Theme.chat_audioTimePaint.measureText(r3)), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                    this.durationLayout = new StaticLayout(AndroidUtilities.formatShortDuration(r1, (int) duration), Theme.chat_audioTimePaint, (int) Math.ceil(Theme.chat_audioTimePaint.measureText(r4)), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 }
+                z2 = z;
             }
-            invalidate();
+            if (z2) {
+                invalidate();
+            }
         }
     }
 

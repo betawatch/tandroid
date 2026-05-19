@@ -888,7 +888,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         this.shadowDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogBackground), PorterDuff.Mode.MULTIPLY));
         this.shadowDrawable.getPadding(rect);
-        this.statusBarHeight = AndroidUtilities.isTablet() ? 0 : AndroidUtilities.statusBarHeight;
+        this.statusBarHeight = AndroidUtilities.statusBarHeight;
         this.contentView = new FrameLayout(context) { // from class: org.telegram.ui.PremiumPreviewFragment.2
             private final Paint backgroundPaint = new Paint(1);
             boolean iconInterceptedTouch;
@@ -933,12 +933,8 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i2, int i3) {
                 int i4 = 0;
-                if (View.MeasureSpec.getSize(i2) > View.MeasureSpec.getSize(i3)) {
-                    PremiumPreviewFragment.this.isLandscapeMode = true;
-                } else {
-                    PremiumPreviewFragment.this.isLandscapeMode = false;
-                }
-                PremiumPreviewFragment.this.statusBarHeight = AndroidUtilities.isTablet() ? 0 : AndroidUtilities.statusBarHeight;
+                PremiumPreviewFragment.this.isLandscapeMode = View.MeasureSpec.getSize(i2) > View.MeasureSpec.getSize(i3);
+                PremiumPreviewFragment.this.statusBarHeight = AndroidUtilities.statusBarHeight;
                 PremiumPreviewFragment.this.backgroundView.measure(i2, View.MeasureSpec.makeMeasureSpec(0, 0));
                 PremiumPreviewFragment.this.particlesView.getLayoutParams().height = PremiumPreviewFragment.this.backgroundView.getMeasuredHeight();
                 if (PremiumPreviewFragment.this.buttonContainer != null) {
@@ -1202,7 +1198,12 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         this.fragmentView = this.contentView;
         this.actionBar.setBackground(null);
         this.actionBar.setCastShadows(false);
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        INavigationLayout iNavigationLayout = this.parentLayout;
+        if (iNavigationLayout != null && iNavigationLayout.isRightLayout()) {
+            this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
+        } else {
+            this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        }
         this.actionBar.setAddToContainer(false);
         this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PremiumPreviewFragment.5
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
@@ -2864,8 +2865,8 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         if (this.backgroundView == null || (actionBar = this.actionBar) == null) {
             return;
         }
-        actionBar.setItemsColor(Theme.getColor(this.whiteBackground ? Theme.key_windowBackgroundWhiteBlackText : Theme.key_premiumGradientBackgroundOverlay), false);
-        this.actionBar.setItemsColor(Theme.getColor(this.whiteBackground ? Theme.key_windowBackgroundWhiteBlackText : Theme.key_premiumGradientBackgroundOverlay), true);
+        actionBar.setItemsColor(Theme.getColor(this.whiteBackground ? Theme.key_windowBackgroundWhiteBlackText : Theme.key_premiumGradientBackgroundOverlay), true);
+        this.actionBar.setItemsColor(Theme.getColor(this.whiteBackground ? Theme.key_windowBackgroundWhiteBlackText : Theme.key_premiumGradientBackgroundOverlay), false);
         ActionBar actionBar2 = this.actionBar;
         int i = Theme.key_premiumGradientBackgroundOverlay;
         actionBar2.setItemsBackgroundColor(ColorUtils.setAlphaComponent(Theme.getColor(i), 60), false);

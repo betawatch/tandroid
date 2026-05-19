@@ -66,6 +66,7 @@ import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.EmojiThemes;
+import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeColors;
 import org.telegram.ui.ActionBar.ThemeDescription;
@@ -1007,9 +1008,6 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
         this.lastIsDarkTheme = !Theme.isCurrentThemeDay();
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(false);
-        if (AndroidUtilities.isTablet()) {
-            this.actionBar.setOccupyStatusBar(false);
-        }
         int i = this.currentType;
         if (i == 3) {
             this.actionBar.setTitle(LocaleController.getString("BrowseThemes", R.string.BrowseThemes));
@@ -1043,6 +1041,10 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
             }
         } else {
             this.actionBar.setTitle(LocaleController.getString(R.string.AutoNightTheme));
+        }
+        INavigationLayout iNavigationLayout = this.parentLayout;
+        if (iNavigationLayout != null && iNavigationLayout.isRightLayout()) {
+            this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
         }
         this.actionBar.setActionBarMenuOnItemClick(new 1());
         this.listAdapter = new ListAdapter(context);

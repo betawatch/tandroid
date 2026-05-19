@@ -733,49 +733,48 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
     
         if (r9.pattern == false) goto L18;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:394:0x0273, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:396:0x0277, code lost:
     
-        if ("d".equals(((org.telegram.ui.WallpapersListActivity.ColorWallpaper) r4).slug) == false) goto L79;
+        if ("d".equals(((org.telegram.ui.WallpapersListActivity.ColorWallpaper) r4).slug) == false) goto L81;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:396:0x0279, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:398:0x027d, code lost:
     
-        if ((r45.currentWallpaper instanceof org.telegram.tgnet.TLRPC.TL_wallPaper) != false) goto L79;
+        if ((r45.currentWallpaper instanceof org.telegram.tgnet.TLRPC.TL_wallPaper) != false) goto L81;
      */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x0ea2  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0577  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x0768  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x079b  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x087a  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0ea6  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x057b  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x076c  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x079f  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x087e  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0067  */
-    /* JADX WARN: Removed duplicated region for block: B:230:0x0961  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0079  */
-    /* JADX WARN: Removed duplicated region for block: B:272:0x0a8c  */
-    /* JADX WARN: Removed duplicated region for block: B:276:0x0e36  */
-    /* JADX WARN: Removed duplicated region for block: B:279:0x0e41  */
-    /* JADX WARN: Removed duplicated region for block: B:285:0x0a98  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0115  */
-    /* JADX WARN: Removed duplicated region for block: B:360:0x0876  */
-    /* JADX WARN: Removed duplicated region for block: B:364:0x0784  */
-    /* JADX WARN: Removed duplicated region for block: B:367:0x0538  */
-    /* JADX WARN: Removed duplicated region for block: B:368:0x050b  */
-    /* JADX WARN: Removed duplicated region for block: B:371:0x04d3  */
-    /* JADX WARN: Removed duplicated region for block: B:374:0x0218  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0123  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0184  */
-    /* JADX WARN: Removed duplicated region for block: B:430:0x0126  */
-    /* JADX WARN: Removed duplicated region for block: B:431:0x0117  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x01a0 A[LOOP:0: B:42:0x019e->B:43:0x01a0, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x01e0  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x01f9  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x04a4  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0509  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0513  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x056f A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0e9f  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x0ee1  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x1002  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x102b  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x103d  */
+    /* JADX WARN: Removed duplicated region for block: B:232:0x0965  */
+    /* JADX WARN: Removed duplicated region for block: B:274:0x0a90  */
+    /* JADX WARN: Removed duplicated region for block: B:278:0x0e3a  */
+    /* JADX WARN: Removed duplicated region for block: B:281:0x0e45  */
+    /* JADX WARN: Removed duplicated region for block: B:287:0x0a9c  */
+    /* JADX WARN: Removed duplicated region for block: B:362:0x087a  */
+    /* JADX WARN: Removed duplicated region for block: B:366:0x0788  */
+    /* JADX WARN: Removed duplicated region for block: B:369:0x053c  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:370:0x050f  */
+    /* JADX WARN: Removed duplicated region for block: B:373:0x04d7  */
+    /* JADX WARN: Removed duplicated region for block: B:376:0x021c  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0188  */
+    /* JADX WARN: Removed duplicated region for block: B:432:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:433:0x011b  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x01a4 A[LOOP:0: B:44:0x01a2->B:45:0x01a4, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x01e4  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x01fd  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x04a8  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x050d  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0517  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0573 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0ea3  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0ee5  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x1006  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x102f  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x1041  */
     /* JADX WARN: Type inference failed for: r11v11 */
     /* JADX WARN: Type inference failed for: r11v17 */
     /* JADX WARN: Type inference failed for: r11v19 */
@@ -785,6 +784,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
     */
     public View createView(Context context) {
         boolean z;
+        INavigationLayout iNavigationLayout;
         int i;
         String str;
         CharSequence charSequence;
@@ -802,7 +802,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         FrameLayout.LayoutParams createFrame;
         float f2;
         Theme.ThemeAccent themeAccent;
-        INavigationLayout iNavigationLayout;
+        INavigationLayout iNavigationLayout2;
         Theme.ThemeAccent themeAccent2;
         this.msgOutDrawable.setResourceProvider(getResourceProvider());
         this.msgOutDrawableSelected.setResourceProvider(getResourceProvider());
@@ -826,7 +826,8 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             if (z) {
                 this.progressToDarkTheme = dayNightSwitchDelegate.isDark() ? 1.0f : 0.0f;
             }
-            if (AndroidUtilities.isTablet()) {
+            iNavigationLayout = this.parentLayout;
+            if (iNavigationLayout != null && !iNavigationLayout.isRightLayout()) {
                 this.actionBar.setOccupyStatusBar(false);
             }
             this.page1 = new FrameLayout(context);
@@ -2178,8 +2179,8 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                 showPatternsView(0, i2, false);
                             }
                             this.scroller = new Scroller(getContext());
-                            iNavigationLayout = this.parentLayout;
-                            if (iNavigationLayout != null && iNavigationLayout.getBottomSheet() != null) {
+                            iNavigationLayout2 = this.parentLayout;
+                            if (iNavigationLayout2 != null && iNavigationLayout2.getBottomSheet() != null) {
                                 this.parentLayout.getBottomSheet().fixNavigationBar(getThemedColor(Theme.key_dialogBackground));
                                 if (this.screenType == 2 && this.dialogId != 0) {
                                     this.parentLayout.getBottomSheet().setOverlayNavBarColor(-16777216);
@@ -2571,8 +2572,8 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     if (this.showColor) {
                     }
                     this.scroller = new Scroller(getContext());
-                    iNavigationLayout = this.parentLayout;
-                    if (iNavigationLayout != null) {
+                    iNavigationLayout2 = this.parentLayout;
+                    if (iNavigationLayout2 != null) {
                         this.parentLayout.getBottomSheet().fixNavigationBar(getThemedColor(Theme.key_dialogBackground));
                         if (this.screenType == 2) {
                             this.parentLayout.getBottomSheet().setOverlayNavBarColor(-16777216);
@@ -2915,8 +2916,8 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             if (this.showColor) {
             }
             this.scroller = new Scroller(getContext());
-            iNavigationLayout = this.parentLayout;
-            if (iNavigationLayout != null) {
+            iNavigationLayout2 = this.parentLayout;
+            if (iNavigationLayout2 != null) {
             }
             return this.fragmentView;
         }
@@ -2924,7 +2925,9 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         this.shouldShowBrightnessControll = z;
         if (z) {
         }
-        if (AndroidUtilities.isTablet()) {
+        iNavigationLayout = this.parentLayout;
+        if (iNavigationLayout != null) {
+            this.actionBar.setOccupyStatusBar(false);
         }
         this.page1 = new FrameLayout(context);
         int i102 = 3;
@@ -3450,8 +3453,8 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         if (this.showColor) {
         }
         this.scroller = new Scroller(getContext());
-        iNavigationLayout = this.parentLayout;
-        if (iNavigationLayout != null) {
+        iNavigationLayout2 = this.parentLayout;
+        if (iNavigationLayout2 != null) {
         }
         return this.fragmentView;
     }

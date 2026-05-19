@@ -65,7 +65,7 @@ public class RoundStatusDrawable extends StatusDrawable {
             this.progressDirection = 1;
             this.progress = 0.0f;
         }
-        invalidateSelf();
+        invalidateLimited();
     }
 
     @Override // org.telegram.ui.Components.StatusDrawable
