@@ -98,6 +98,6 @@ public class FoundStickerPackCell extends FrameLayout implements FactorAnimator.
             this.bgSelected = createRoundRectDrawable;
             createRoundRectDrawable.setAlpha((int) (this.isSelected.getFloatValue() * 255.0f));
         }
-        this.textView.setTextColor(ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_glass_defaultIcon, this.resourcesProvider), NotificationCenter.updateAllMessages));
+        this.textView.setTextColor(ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_glass_defaultIcon, this.resourcesProvider), NotificationCenter.starGiftsLoaded));
     }
 }

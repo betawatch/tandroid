@@ -825,7 +825,7 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
         };
         this.dropDownContainer = actionBarMenuItem;
         actionBarMenuItem.setSubMenuOpenSide(1);
-        FrameLayout.LayoutParams createFrame = LayoutHelper.createFrame(-2, -1.0f, 51, AndroidUtilities.isTablet() ? 64.0f : 56.0f, 0.0f, 40.0f, 0.0f);
+        FrameLayout.LayoutParams createFrame = LayoutHelper.createFrame(-2, -1.0f, 51, 60.0f, 0.0f, 40.0f, 0.0f);
         createFrame.topMargin = AndroidUtilities.statusBarHeight;
         this.parentAlert.actionBar.addView(this.dropDownContainer, 0, createFrame);
         this.dropDownContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda1
@@ -852,7 +852,6 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
         int themedColor = getThemedColor(i2);
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         mutate.setColorFilter(new PorterDuffColorFilter(themedColor, mode));
-        this.dropDown.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
         this.dropDown.setPadding(0, 0, AndroidUtilities.dp(10.0f), 0);
         this.dropDownContainer.addView(this.dropDown, LayoutHelper.createFrame(-2, -2.0f, 16, 16.0f, 0.0f, 0.0f, 0.0f));
         checkCamera(false);
@@ -4722,7 +4721,6 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
     }
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x00e7  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0116  */
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -4731,7 +4729,6 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
         int dp;
         int i3;
         int dp2;
-        float f;
         this.ignoreLayout = true;
         int i4 = this.itemsPerRow;
         if (AndroidUtilities.isTablet()) {
@@ -4783,17 +4780,7 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
                 if (this.gridView.getPaddingTop() == dp2 || this.gridView.getPaddingBottom() != this.listPaddingBottom) {
                     this.gridView.setPadding(AndroidUtilities.dp(2.0f), dp2, AndroidUtilities.dp(2.0f), this.listPaddingBottom + AndroidUtilities.dp(48.0f));
                 }
-                TextView textView = this.dropDown;
-                if (!AndroidUtilities.isTablet()) {
-                    Point point3 = AndroidUtilities.displaySize;
-                    if (point3.x > point3.y) {
-                        f = 18.0f;
-                        textView.setTextSize(f);
-                        this.ignoreLayout = false;
-                    }
-                }
-                f = 20.0f;
-                textView.setTextSize(f);
+                this.dropDown.setTextSize(17.0f);
                 this.ignoreLayout = false;
             }
         }
@@ -4804,11 +4791,7 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
         if (this.gridView.getPaddingTop() == dp2) {
         }
         this.gridView.setPadding(AndroidUtilities.dp(2.0f), dp2, AndroidUtilities.dp(2.0f), this.listPaddingBottom + AndroidUtilities.dp(48.0f));
-        TextView textView2 = this.dropDown;
-        if (!AndroidUtilities.isTablet()) {
-        }
-        f = 20.0f;
-        textView2.setTextSize(f);
+        this.dropDown.setTextSize(17.0f);
         this.ignoreLayout = false;
     }
 

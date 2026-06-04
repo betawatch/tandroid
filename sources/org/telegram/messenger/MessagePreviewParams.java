@@ -498,7 +498,7 @@ public class MessagePreviewParams {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00e9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -517,6 +517,7 @@ public class MessagePreviewParams {
         tL_message.peer_id = message.peer_id;
         tL_message.from_id = message.from_id;
         tL_message.message = message.message;
+        tL_message.rich_message = message.rich_message;
         tL_message.media = message.media;
         tL_message.action = message.action;
         tL_message.edit_date = 0;

@@ -906,7 +906,7 @@ public class FragmentedMp4Extractor implements Extractor {
         }
         parsableByteArray2.skipBytes(1);
         int readUnsignedByte = parsableByteArray2.readUnsignedByte();
-        int i3 = (readUnsignedByte & NotificationCenter.commonChatsLoaded) >> 4;
+        int i3 = (readUnsignedByte & NotificationCenter.appConfigUpdated) >> 4;
         int i4 = readUnsignedByte & 15;
         boolean z = parsableByteArray2.readUnsignedByte() == 1;
         if (z) {

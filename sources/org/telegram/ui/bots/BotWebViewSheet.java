@@ -91,7 +91,7 @@ import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ArticleViewer;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda379;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda301;
 import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -1433,6 +1433,19 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         return Boolean.valueOf(this.windowView.getKeyboardHeight() >= AndroidUtilities.dp(20.0f));
     }
 
+    public boolean isGuardBotTab(long j, long j2) {
+        WebViewRequestProps webViewRequestProps = this.requestProps;
+        if (webViewRequestProps == null || webViewRequestProps.type != 5) {
+            return false;
+        }
+        long j3 = webViewRequestProps.peerId;
+        if (j3 != j && j3 != 0) {
+            return false;
+        }
+        TLObject tLObject = webViewRequestProps.response;
+        return (tLObject instanceof TLRPC.TL_webViewResultUrl) && ((TLRPC.TL_webViewResultUrl) tLObject).query_id == j2;
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public void relayout() {
         updateFullscreenLayout();
@@ -2212,7 +2225,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         this.fileItems.clear();
         if (botDownloads.hasFiles()) {
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda379(makeOptions));
+            makeSwipeback.add(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda301(makeOptions));
             makeSwipeback.addGap();
             Iterator it2 = botDownloads.getFiles().iterator();
             while (it2.hasNext()) {
@@ -2287,7 +2300,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     public /* synthetic */ void lambda$openOptions$35() {
         Activity activity = this.parentActivity;
         if (activity instanceof LaunchActivity) {
-            ((LaunchActivity) activity).lambda$runLinkRequest$99(ChatActivity.of(this.botId));
+            ((LaunchActivity) activity).lambda$runLinkRequest$100(ChatActivity.of(this.botId));
         }
         dismiss(true);
     }

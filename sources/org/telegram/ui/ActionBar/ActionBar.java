@@ -36,6 +36,8 @@ import android.widget.ImageView;
 import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import me.vkryl.android.animator.BoolAnimator;
+import me.vkryl.android.animator.FactorAnimator;
 import me.vkryl.android.animator.ReplaceAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -47,6 +49,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Adapters.FiltersView;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.BackupImageView;
+import org.telegram.ui.Components.ChatAvatarContainer;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.EllipsizeSpanAnimator;
 import org.telegram.ui.Components.FireworksEffect;
@@ -58,7 +61,7 @@ import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
 import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
 
 /* loaded from: classes4.dex */
-public class ActionBar extends FrameLayout implements Theme.Colorable {
+public class ActionBar extends FrameLayout implements FactorAnimator.Target, Theme.Colorable {
     private int actionBarColor;
     public ActionBarMenuOnItemClick actionBarMenuOnItemClick;
     private ActionBarMenu actionMode;
@@ -80,6 +83,8 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
     private ActionBarAnimatedSubtitleOverlayContainer additionalSubTitleOverlayContainer;
     private SimpleTextView additionalSubtitleTextView;
     private boolean allowOverlayTitle;
+    private final BoolAnimator animatorAvatarContainerHasAvatar;
+    private final FactorAnimator animatorAvatarContainerWidth;
     private boolean attachState;
     private boolean attached;
     private BackupImageView avatarSearchImageView;
@@ -91,6 +96,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
     boolean blurredBackground;
     private boolean castShadows;
     private boolean centerScale;
+    private ChatAvatarContainer chatAvatarContainer;
     private boolean clipContent;
     SizeNotifierFrameLayout contentView;
     private boolean doNotDrawChild;
@@ -101,11 +107,13 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
     private FireworksEffect fireworksEffect;
     private Paint.FontMetricsInt fontMetricsInt;
     private boolean forceSkipTouches;
+    private int forcedMenuWidth;
     private boolean fromBottom;
     private Drawable glassDrawable;
     private Drawable glassDrawableBack;
     private Drawable glassDrawableMenu;
     private boolean glassMode;
+    private boolean hasForcedMenuWidth;
     private boolean ignoreLayoutRequest;
     private View.OnTouchListener interceptTouchEventListener;
     private boolean interceptTouches;
@@ -130,11 +138,13 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
     boolean overlayTitleAnimationInProgress;
     private Object[] overlayTitleToSet;
     protected BaseFragment parentFragment;
+    int prevWidth;
     private Rect rect;
     Rect rectTmp;
     private final Theme.ResourcesProvider resourcesProvider;
     private boolean resumed;
     private View.OnClickListener rightDrawableOnClickListener;
+    private float searchFactor;
     public float searchFieldVisibleAlpha;
     AnimatorSet searchVisibleAnimator;
     private int shadowAlpha;
@@ -165,6 +175,11 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         return false;
     }
 
+    @Override // me.vkryl.android.animator.FactorAnimator.Target
+    public /* synthetic */ void onFactorChangeFinished(int i, float f, FactorAnimator factorAnimator) {
+        FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i, f, factorAnimator);
+    }
+
     protected boolean onSearchChangedIgnoreTitles() {
         return false;
     }
@@ -187,6 +202,9 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         this.blurScrimPaint = new Paint();
         this.rectTmp = new Rect();
         this.ellipsizeSpanAnimator = new EllipsizeSpanAnimator(this);
+        CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
+        this.animatorAvatarContainerWidth = new FactorAnimator(0, this, cubicBezierInterpolator, 380L);
+        this.animatorAvatarContainerHasAvatar = new BoolAnimator(0, this, cubicBezierInterpolator, 380L);
         this.onTop = true;
         this.onTopAnimated = 1.0f;
         this.resourcesProvider = resourcesProvider;
@@ -207,12 +225,17 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         runnable.run();
     }
 
+    public void setChatAvatarContainer(ChatAvatarContainer chatAvatarContainer) {
+        this.chatAvatarContainer = chatAvatarContainer;
+    }
+
     public void setupGlass(BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory, BlurredBackgroundColorProvider blurredBackgroundColorProvider) {
         setBackground(null);
+        setClipChildren(false);
         this.glassMode = true;
-        this.glassDrawable = blurredBackgroundDrawableViewFactory.create(this).setColorProvider(blurredBackgroundColorProvider).setRadius(AndroidUtilities.dp(26.0f)).setPadding(AndroidUtilities.dp(7.0f));
-        this.glassDrawableBack = blurredBackgroundDrawableViewFactory.create(this).setColorProvider(blurredBackgroundColorProvider).setRadius(AndroidUtilities.dp(26.0f)).setPadding(AndroidUtilities.dp(7.0f));
-        this.glassDrawableMenu = blurredBackgroundDrawableViewFactory.create(this).setColorProvider(blurredBackgroundColorProvider).setRadius(AndroidUtilities.dp(26.0f)).setPadding(AndroidUtilities.dp(7.0f));
+        this.glassDrawable = blurredBackgroundDrawableViewFactory.create(this).setColorProvider(blurredBackgroundColorProvider).setRadius(AndroidUtilities.dp(23.0f)).setPadding(AndroidUtilities.dp(6.0f));
+        this.glassDrawableBack = blurredBackgroundDrawableViewFactory.create(this).setColorProvider(blurredBackgroundColorProvider).setRadius(AndroidUtilities.dp(23.0f)).setPadding(AndroidUtilities.dp(6.0f));
+        this.glassDrawableMenu = blurredBackgroundDrawableViewFactory.create(this).setColorProvider(blurredBackgroundColorProvider).setRadius(AndroidUtilities.dp(23.0f)).setPadding(AndroidUtilities.dp(6.0f));
         ActionBarMenu actionBarMenu = this.menu;
         if (actionBarMenu != null) {
             actionBarMenu.setTranslationX(-AndroidUtilities.dp(10.0f));
@@ -225,13 +248,8 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         }
         ImageView imageView = this.backButtonImageView;
         if (imageView != null) {
-            imageView.setPadding(0, 0, AndroidUtilities.dp(2.0f), 0);
-            this.backButtonImageView.setTranslationX(AndroidUtilities.dp(2.0f));
+            imageView.setTranslationX(AndroidUtilities.dp(2.0f));
         }
-    }
-
-    public void setGlassDrawable(Drawable drawable) {
-        this.glassDrawable = drawable;
     }
 
     public INavigationLayout.BackButtonState getBackButtonState() {
@@ -793,7 +811,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
             }
         };
         this.actionMode = actionBarMenu2;
-        actionBarMenu2.setTranslationX(-AndroidUtilities.dp(10.0f));
+        actionBarMenu2.setTranslationX(this.glassMode ? -AndroidUtilities.dp(10.0f) : 0.0f);
         this.actionMode.setGlassMode(this.glassMode);
         ActionBarMenu actionBarMenu3 = this.actionMode;
         actionBarMenu3.isActionMode = true;
@@ -1415,6 +1433,11 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         super.requestLayout();
     }
 
+    @Override // android.view.ViewGroup
+    public void onViewAdded(View view) {
+        super.onViewAdded(view);
+    }
+
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         int dp;
@@ -1482,14 +1505,20 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
                 ActionBarMenu actionBarMenu3 = this.menu;
                 int measuredWidth = (((size - (actionBarMenu3 != null ? actionBarMenu3.getMeasuredWidth() : 0)) - AndroidUtilities.dp(16.0f)) - dp) - this.titleRightMargin;
                 boolean z = this.fromBottom;
+                int i4 = 18;
                 if (((z && i3 == 0) || (!z && i3 == 1)) && this.overlayTitleAnimation && this.titleAnimationRunning) {
-                    this.titleTextView[i3].setTextSize((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 20 : 18);
+                    this.titleTextView[i3].setTextSize(this.glassMode ? 17 : (AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 20 : 18);
                 } else {
                     SimpleTextView simpleTextView4 = this.titleTextView[0];
                     if (simpleTextView4 != null && simpleTextView4.getVisibility() != 8 && (simpleTextView2 = this.subtitleTextView) != null && simpleTextView2.getVisibility() != 8) {
                         SimpleTextView simpleTextView5 = this.titleTextView[i3];
                         if (simpleTextView5 != null) {
-                            simpleTextView5.setTextSize(AndroidUtilities.isTablet() ? 20 : 18);
+                            if (this.glassMode) {
+                                i4 = 17;
+                            } else if (AndroidUtilities.isTablet()) {
+                                i4 = 20;
+                            }
+                            simpleTextView5.setTextSize(i4);
                         }
                         this.subtitleTextView.setTextSize(AndroidUtilities.isTablet() ? 16 : 14);
                         SimpleTextView simpleTextView6 = this.additionalSubtitleTextView;
@@ -1499,7 +1528,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
                     } else {
                         SimpleTextView simpleTextView7 = this.titleTextView[i3];
                         if (simpleTextView7 != null && simpleTextView7.getVisibility() != 8) {
-                            this.titleTextView[i3].setTextSize((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 20 : 18);
+                            this.titleTextView[i3].setTextSize(this.glassMode ? 17 : (AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 20 : 18);
                         }
                         SimpleTextView simpleTextView8 = this.subtitleTextView;
                         if (simpleTextView8 != null && simpleTextView8.getVisibility() != 8) {
@@ -1543,8 +1572,8 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
             backupImageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLObject.FLAG_30));
         }
         int childCount = getChildCount();
-        for (int i4 = 0; i4 < childCount; i4++) {
-            View childAt = getChildAt(i4);
+        for (int i5 = 0; i5 < childCount; i5++) {
+            View childAt = getChildAt(i5);
             if (childAt.getVisibility() != 8) {
                 SimpleTextView[] simpleTextViewArr = this.titleTextView;
                 if (childAt != simpleTextViewArr[0] && childAt != simpleTextViewArr[1] && childAt != this.additionalSubTitleOverlayContainer && childAt != this.subtitleTextView && childAt != this.menu && childAt != this.backButtonImageView && childAt != this.additionalSubtitleTextView && childAt != this.avatarSearchImageView) {
@@ -1558,8 +1587,8 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         this.isMenuOffsetSuppressed = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:111:0x027b  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x028a  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x02a1  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x02b0  */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1574,13 +1603,17 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         int i10;
         int currentActionBarHeight;
         int i11 = this.occupyStatusBar ? AndroidUtilities.statusBarHeight : 0;
+        if (this.prevWidth != getMeasuredWidth()) {
+            this.prevWidth = getMeasuredWidth();
+            checkAvatarContainerWidth(this.animatorAvatarContainerWidth.isAnimating());
+        }
         ImageView imageView = this.backButtonImageView;
         if (imageView != null && imageView.getVisibility() != 8) {
             ImageView imageView2 = this.backButtonImageView;
             imageView2.layout(0, i11, imageView2.getMeasuredWidth(), this.backButtonImageView.getMeasuredHeight() + i11);
-            dp = AndroidUtilities.dp(AndroidUtilities.isTablet() ? 80.0f : 72.0f);
+            dp = AndroidUtilities.dp(this.glassMode ? 76.0f : AndroidUtilities.isTablet() ? 80.0f : 72.0f);
         } else {
-            dp = AndroidUtilities.dp(AndroidUtilities.isTablet() ? 26.0f : 18.0f);
+            dp = AndroidUtilities.dp(this.glassMode ? 24.0f : AndroidUtilities.isTablet() ? 26.0f : 18.0f);
         }
         ActionBarMenu actionBarMenu = this.menu;
         if (actionBarMenu != null && actionBarMenu.getVisibility() != 8) {
@@ -1949,9 +1982,6 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
     }
 
     public static int getCurrentActionBarHeight() {
-        if (AndroidUtilities.isTablet()) {
-            return AndroidUtilities.dp(64.0f);
-        }
         Point point = AndroidUtilities.displaySize;
         if (point.x > point.y) {
             return AndroidUtilities.dp(48.0f);
@@ -2175,32 +2205,86 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         }
     }
 
+    public void setSearchFactor(float f) {
+        if (this.searchFactor != f) {
+            this.searchFactor = f;
+            invalidate();
+        }
+    }
+
+    public void checkAvatarContainerWidth(boolean z) {
+        ChatAvatarContainer chatAvatarContainer = this.chatAvatarContainer;
+        if (chatAvatarContainer == null) {
+            return;
+        }
+        boolean hasVisibleAvatar = chatAvatarContainer.hasVisibleAvatar();
+        int visualWidth = this.chatAvatarContainer.getVisualWidth();
+        if (hasVisibleAvatar) {
+            visualWidth = Math.max(visualWidth, AndroidUtilities.dp(192.0f));
+        }
+        int min = Math.min(getMeasuredWidth() - AndroidUtilities.dp(116.0f), visualWidth);
+        if (z) {
+            float f = min;
+            if (this.animatorAvatarContainerWidth.getToFactor() != f) {
+                this.animatorAvatarContainerWidth.animateTo(f);
+            }
+        } else {
+            this.animatorAvatarContainerWidth.forceFactor(min);
+        }
+        this.animatorAvatarContainerHasAvatar.setValue(hasVisibleAvatar, z);
+    }
+
+    @Override // me.vkryl.android.animator.FactorAnimator.Target
+    public void onFactorChanged(int i, float f, float f2, FactorAnimator factorAnimator) {
+        invalidate();
+    }
+
+    public void setForcedMenuWidth(int i) {
+        this.hasForcedMenuWidth = true;
+        if (this.forcedMenuWidth != i) {
+            this.forcedMenuWidth = i;
+            invalidate();
+        }
+    }
+
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
-        int dp = AndroidUtilities.dp(7.0f);
-        int dp2 = AndroidUtilities.dp(44.0f);
+        int dp = AndroidUtilities.dp(6.0f);
+        int dp2 = AndroidUtilities.dp(46.0f);
+        float actionModeFactor = getActionModeFactor();
         ActionBarMenu actionBarMenu = this.menu;
-        int max = Math.max(0, actionBarMenu != null ? (actionBarMenu.getItemsWidth() - AndroidUtilities.dp(2.0f)) - AndroidUtilities.dp(2.0f) : 0);
+        int max = Math.max(0, actionBarMenu != null ? (actionBarMenu.getItemsWidth() - AndroidUtilities.dp(1.0f)) - AndroidUtilities.dp(1.0f) : 0);
         ActionBarMenu actionBarMenu2 = this.actionMode;
-        int lerp = AndroidUtilities.lerp(max, Math.max(0, actionBarMenu2 != null ? (actionBarMenu2.getItemsWidth() - AndroidUtilities.dp(2.0f)) - AndroidUtilities.dp(2.0f) : 0), getActionModeFactor());
+        int lerp = this.hasForcedMenuWidth ? this.forcedMenuWidth : AndroidUtilities.lerp(max, Math.max(0, actionBarMenu2 != null ? (actionBarMenu2.getItemsWidth() - AndroidUtilities.dp(1.0f)) - AndroidUtilities.dp(1.0f) : 0), getActionModeFactor());
         ImageView imageView = this.backButtonImageView;
         boolean z = imageView != null && imageView.getVisibility() == 0;
-        int height = ((getHeight() - (getCurrentActionBarHeight() / 2)) - (dp2 / 2)) - dp;
+        int height = (getHeight() - ((getCurrentActionBarHeight() + dp2) / 2)) - dp;
         int i = dp * 2;
         int i2 = height + dp2 + i;
-        Drawable drawable = this.glassDrawable;
-        if (drawable != null) {
-            drawable.setBounds(z ? dp2 + dp : 0, height, getWidth() - (lerp > 0 ? dp + lerp : 0), i2);
+        if (this.glassDrawable != null) {
+            int i3 = lerp > 0 ? lerp + dp : 0;
+            int i4 = dp + dp2;
+            int lerp2 = AndroidUtilities.lerp(i3, Math.max(i3, i4), this.chatAvatarContainer == null ? 0.0f : 1.0f - this.animatorAvatarContainerHasAvatar.getFloatValue());
+            int lerp3 = AndroidUtilities.lerp(z ? i4 : 0, i4, this.chatAvatarContainer == null ? 0.0f : 1.0f - this.animatorAvatarContainerHasAvatar.getFloatValue());
+            int width = getWidth() - lerp2;
+            int i5 = width - lerp3;
+            if (this.chatAvatarContainer != null) {
+                int lerp4 = AndroidUtilities.lerp(Math.min(i5, ((int) this.animatorAvatarContainerWidth.getFactor()) + i), i5, Math.max(this.searchFactor, actionModeFactor));
+                lerp3 = ((width + lerp3) - lerp4) / 2;
+                width = lerp3 + lerp4;
+                this.chatAvatarContainer.setTranslationX(((lerp3 - ((ViewGroup.MarginLayoutParams) r3.getLayoutParams()).leftMargin) - this.chatAvatarContainer.getLeftPadding()) + dp + AndroidUtilities.dp(3.0f));
+            }
+            this.glassDrawable.setBounds(lerp3, height, width, i2);
             this.glassDrawable.draw(canvas);
         }
-        Drawable drawable2 = this.glassDrawableBack;
-        if (drawable2 != null && z) {
-            drawable2.setBounds(0, height, dp2 + i, i2);
+        Drawable drawable = this.glassDrawableBack;
+        if (drawable != null && z) {
+            drawable.setBounds(0, height, dp2 + i, i2);
             this.glassDrawableBack.draw(canvas);
         }
-        Drawable drawable3 = this.glassDrawableMenu;
-        if (drawable3 != null && lerp > 0) {
-            drawable3.setBounds((getWidth() - lerp) - i, height, getWidth(), i2);
+        Drawable drawable2 = this.glassDrawableMenu;
+        if (drawable2 != null && lerp > 0) {
+            drawable2.setBounds((getWidth() - lerp) - i, height, getWidth(), i2);
             this.glassDrawableMenu.draw(canvas);
         }
         if (this.blurredBackground && this.actionBarColor != 0) {

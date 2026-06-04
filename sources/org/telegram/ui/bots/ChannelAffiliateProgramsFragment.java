@@ -987,7 +987,7 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
     public static /* synthetic */ void lambda$showConnectAffiliateAlert$10(BottomSheet bottomSheet, TL_payments.starRefProgram starrefprogram, View view) {
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (safeLastFragment != null) {
-            bottomSheet.dismiss();
+            bottomSheet.lambda$new$0();
             safeLastFragment.presentFragment(ProfileActivity.of(starrefprogram.bot_id));
         }
     }
@@ -1035,7 +1035,7 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
         }
         TL_payments.connectedStarRefBots connectedstarrefbots = (TL_payments.connectedStarRefBots) tLObject;
         BotStarsController.getInstance(i).getChannelConnectedBots(j).apply(connectedstarrefbots);
-        bottomSheet.dismiss();
+        bottomSheet.lambda$new$0();
         while (true) {
             if (i2 >= connectedstarrefbots.connected_bots.size()) {
                 connectedbotstarref = null;
@@ -1131,7 +1131,7 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
     public static /* synthetic */ void lambda$showConnectAffiliateAlert$18(final BottomSheet bottomSheet, TL_payments.starRefProgram starrefprogram, View view) {
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (safeLastFragment != null) {
-            bottomSheet.dismiss();
+            bottomSheet.lambda$new$0();
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", starrefprogram.bot_id);
             safeLastFragment.presentFragment(new ChatActivity(bundle) { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment.6
@@ -1488,7 +1488,7 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
         if (userFull == null || userFull.starref_program == null) {
             return;
         }
-        bottomSheet.dismiss();
+        bottomSheet.lambda$new$0();
         showConnectAffiliateAlert(context, i, userFull.starref_program, j, resourcesProvider, true);
     }
 
@@ -1545,7 +1545,7 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
             }
             return;
         }
-        bottomSheet.dismiss();
+        bottomSheet.lambda$new$0();
         showShareAffiliateAlert(context, i, connectedbotstarref2, j, resourcesProvider);
     }
 
@@ -1564,13 +1564,13 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
         if (userFull == null || userFull.starref_program == null) {
             return;
         }
-        bottomSheet.dismiss();
+        bottomSheet.lambda$new$0();
         showConnectAffiliateAlert(context, i, userFull.starref_program, j, resourcesProvider, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$showShareAffiliateAlert$30(BottomSheet bottomSheet, TL_payments.connectedBotStarRef connectedbotstarref, View view) {
-        bottomSheet.dismiss();
+        bottomSheet.lambda$new$0();
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (safeLastFragment != null) {
             safeLastFragment.presentFragment(ProfileActivity.of(connectedbotstarref.bot_id));

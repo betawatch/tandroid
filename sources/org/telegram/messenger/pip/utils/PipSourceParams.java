@@ -63,7 +63,7 @@ public class PipSourceParams {
             if (d < 0.45d) {
                 rational = new Rational(45, 100);
             } else if (d > 2.35d) {
-                rational = new Rational(NotificationCenter.botDownloadsUpdate, 100);
+                rational = new Rational(NotificationCenter.channelSuggestedBotsUpdate, 100);
             } else {
                 Point point2 = this.ratio;
                 rational = new Rational(point2.x, point2.y);

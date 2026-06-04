@@ -3209,7 +3209,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             @Override // org.telegram.ui.ActionBar.ActionBar
             public void closeSearchField(boolean z) {
                 DialogsActivity.this.fragmentSearchField.editText.getText().clear();
-                if (z) {
+                if (z && DialogsActivity.this.fragmentSearchField.editText.isFocused()) {
                     AndroidUtilities.hideKeyboard(DialogsActivity.this.fragmentSearchField.editText);
                 }
                 DialogsActivity.this.fragmentSearchField.editText.clearFocus();
@@ -14455,6 +14455,23 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             }
 
             @Override // org.telegram.ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.ui.PhotoViewer.PhotoViewerProvider
+            public boolean canSetTimer() {
+                TLRPC.User user;
+                if (DialogsActivity.this.selectedDialogs.isEmpty()) {
+                    return false;
+                }
+                MessagesController messagesController = DialogsActivity.this.getMessagesController();
+                Iterator it2 = DialogsActivity.this.selectedDialogs.iterator();
+                while (it2.hasNext()) {
+                    Long l = (Long) it2.next();
+                    if (!DialogObject.isUserDialog(l.longValue()) || (user = messagesController.getUser(l)) == null || user.bot || UserObject.isUserSelf(user)) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            @Override // org.telegram.ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.ui.PhotoViewer.PhotoViewerProvider
             public CharSequence getTitleFor(int i) {
                 if (DialogsActivity.this.sharedMediaEntries == null || DialogsActivity.this.sharedMediaEntries.isEmpty()) {
                     return null;
@@ -17982,7 +17999,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                         DialogsActivity.this.lambda$openAccountSelector$170(intValue, makeOptions, view2);
                     }
                 });
-                makeOptions.addView(accountView, LayoutHelper.createLinear(NotificationCenter.starGiftsLoaded, 48));
+                makeOptions.addView(accountView, LayoutHelper.createLinear(NotificationCenter.starUserGiftsLoaded, 48));
             }
         }
         ShapeDrawable createRoundRectDrawable = Theme.createRoundRectDrawable(AndroidUtilities.dp(24.0f), getThemedColor(Theme.key_windowBackgroundWhite));

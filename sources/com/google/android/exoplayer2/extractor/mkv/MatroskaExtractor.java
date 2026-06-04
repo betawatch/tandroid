@@ -134,9 +134,9 @@ public class MatroskaExtractor implements Extractor {
             case NotificationCenter.configLoaded /* 179 */:
             case NotificationCenter.suggestedFiltersLoaded /* 186 */:
             case NotificationCenter.customStickerCreated /* 215 */:
-            case NotificationCenter.starUserGiftsLoaded /* 231 */:
-            case NotificationCenter.adminedChannelsLoaded /* 238 */:
-            case NotificationCenter.appConfigUpdated /* 241 */:
+            case NotificationCenter.starUserGiftCollectionsLoaded /* 231 */:
+            case NotificationCenter.messagesFeeUpdated /* 238 */:
+            case NotificationCenter.activeAuctionsUpdated /* 241 */:
             case NotificationCenter.activeAccountChanged /* 251 */:
             case 16871:
             case 16980:
@@ -173,11 +173,11 @@ public class MatroskaExtractor implements Extractor {
                 return 3;
             case NotificationCenter.screenshotTook /* 160 */:
             case NotificationCenter.groupCallUpdated /* 166 */:
-            case NotificationCenter.closeInCallActivity /* 174 */:
+            case 174:
             case NotificationCenter.themeUploadError /* 183 */:
             case NotificationCenter.updateBotMenuButton /* 187 */:
             case NotificationCenter.factCheckLoaded /* 224 */:
-            case 225:
+            case NotificationCenter.botStarsUpdated /* 225 */:
             case 16868:
             case 18407:
             case 19899:
@@ -523,13 +523,13 @@ public class MatroskaExtractor implements Extractor {
             case NotificationCenter.customStickerCreated /* 215 */:
                 getCurrentTrack(i).number = (int) j;
                 return;
-            case NotificationCenter.starUserGiftsLoaded /* 231 */:
+            case NotificationCenter.starUserGiftCollectionsLoaded /* 231 */:
                 this.clusterTimecodeUs = scaleTimecodeToUs(j);
                 return;
-            case NotificationCenter.adminedChannelsLoaded /* 238 */:
+            case NotificationCenter.messagesFeeUpdated /* 238 */:
                 this.blockAdditionalId = (int) j;
                 return;
-            case NotificationCenter.appConfigUpdated /* 241 */:
+            case NotificationCenter.activeAuctionsUpdated /* 241 */:
                 if (this.seenClusterPositionForCurrentCuePoint) {
                     return;
                 }

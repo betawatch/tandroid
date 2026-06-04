@@ -1,10 +1,12 @@
 package com.google.android.gms.common.data;
 
+import android.database.CursorIndexOutOfBoundsException;
 import android.database.CursorWindow;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
+import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import java.io.Closeable;
@@ -41,6 +43,19 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
         this.zaj = bundle;
     }
 
+    private final void zae(String str, int i) {
+        Bundle bundle = this.zab;
+        if (bundle == null || !bundle.containsKey(str)) {
+            throw new IllegalArgumentException("No such column: ".concat(String.valueOf(str)));
+        }
+        if (isClosed()) {
+            throw new IllegalArgumentException("Buffer is closed.");
+        }
+        if (i < 0 || i >= this.zad) {
+            throw new CursorIndexOutOfBoundsException(i, this.zad);
+        }
+    }
+
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public void close() {
         synchronized (this) {
@@ -74,12 +89,50 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
         }
     }
 
+    public byte[] getByteArray(String str, int i, int i2) {
+        zae(str, i);
+        return this.zah[i2].getBlob(i, this.zab.getInt(str));
+    }
+
+    public int getCount() {
+        return this.zad;
+    }
+
+    public int getInteger(String str, int i, int i2) {
+        zae(str, i);
+        return this.zah[i2].getInt(i, this.zab.getInt(str));
+    }
+
     public Bundle getMetadata() {
         return this.zaj;
     }
 
     public int getStatusCode() {
         return this.zai;
+    }
+
+    public String getString(String str, int i, int i2) {
+        zae(str, i);
+        return this.zah[i2].getString(i, this.zab.getInt(str));
+    }
+
+    public int getWindowIndex(int i) {
+        int length;
+        int i2 = 0;
+        Preconditions.checkState(i >= 0 && i < this.zad);
+        while (true) {
+            int[] iArr = this.zac;
+            length = iArr.length;
+            if (i2 >= length) {
+                break;
+            }
+            if (i < iArr[i2]) {
+                i2--;
+                break;
+            }
+            i2++;
+        }
+        return i2 == length ? i2 - 1 : i2;
     }
 
     public boolean isClosed() {

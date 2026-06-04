@@ -41,7 +41,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.utils.FrameTickScheduler;
+import org.telegram.messenger.utils.Choreographer60FpsContent;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.RequestDelegate;
@@ -632,6 +632,10 @@ public class AnimatedEmojiDrawable extends Drawable {
             this.sizedp = 56;
             return;
         }
+        if (i == 27) {
+            this.sizedp = 50;
+            return;
+        }
         if (i == 24) {
             this.sizedp = NotificationCenter.fileUploadProgressChanged;
             return;
@@ -705,21 +709,14 @@ public class AnimatedEmojiDrawable extends Drawable {
         initDocument(false);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:145:0x021a, code lost:
-    
-        if (r3 != null) goto L122;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     private void initDocument(boolean z) {
         int i;
         SvgHelper.SvgDrawable svgThumb;
         ImageLocation imageLocation;
         String str;
         int i2;
-        ImageLocation imageLocation2;
         Drawable emojiDrawable;
+        ImageLocation forDocument;
         int dp;
         TLRPC.Document document = this.document;
         if (document != null) {
@@ -746,7 +743,7 @@ public class AnimatedEmojiDrawable extends Drawable {
                 if (i5 == 13 || i5 == 16) {
                     z2 = true;
                 }
-                if (i5 == 24) {
+                if (i5 == 24 || i5 == 27) {
                     z2 = false;
                 }
                 String str2 = this.sizedp + "_" + this.sizedp;
@@ -799,13 +796,9 @@ public class AnimatedEmojiDrawable extends Drawable {
                     imageLocation = null;
                 }
                 int i8 = this.cacheType;
-                if (i8 == 20 || i8 == 21) {
-                    imageLocation2 = null;
-                    emojiDrawable = Emoji.getEmojiDrawable(MessageObject.findAnimatedEmojiEmoticon(this.document, null));
-                } else {
-                    imageLocation2 = null;
+                if ((i8 != 20 && i8 != 21) || (emojiDrawable = Emoji.getEmojiDrawable(MessageObject.findAnimatedEmojiEmoticon(this.document, null))) == null) {
+                    emojiDrawable = svgThumb;
                 }
-                emojiDrawable = svgThumb;
                 if (this.absolutePath != null) {
                     this.imageReceiver.setImageBitmap(new AnimatedFileDrawable(new File(this.absolutePath), true, 0L, 0, null, null, null, 0L, this.currentAccount, true, 512, 512, null));
                 } else {
@@ -815,34 +808,30 @@ public class AnimatedEmojiDrawable extends Drawable {
                         TLRPC.Document document2 = this.document;
                         imageReceiver.setImage(null, null, imageLocation, str2, null, null, emojiDrawable, document2.size, null, document2, 1);
                     } else if (z2 || (!liteModeKeyboard && i9 != 14)) {
-                        if (i9 == 16) {
-                            imageLocation2 = ImageLocation.getForDocument(closestPhotoSizeWithSize, this.document);
-                        }
+                        forDocument = i9 == 16 ? ImageLocation.getForDocument(closestPhotoSizeWithSize, this.document) : null;
                         if ("video/webm".equals(this.document.mime_type)) {
                             ImageReceiver imageReceiver2 = this.imageReceiver;
-                            ImageLocation forDocument = ImageLocation.getForDocument(closestPhotoSizeWithSize, this.document);
+                            ImageLocation forDocument2 = ImageLocation.getForDocument(closestPhotoSizeWithSize, this.document);
                             String str3 = this.sizedp + "_" + this.sizedp;
                             TLRPC.Document document3 = this.document;
-                            imageReceiver2.setImage(null, null, forDocument, str3, imageLocation2, null, emojiDrawable, document3.size, null, document3, 1);
+                            imageReceiver2.setImage(null, null, forDocument2, str3, forDocument, null, emojiDrawable, document3.size, null, document3, 1);
                         } else if (MessageObject.isAnimatedStickerDocument(this.document, true)) {
-                            ImageReceiver imageReceiver3 = this.imageReceiver;
-                            String str4 = str2 + "_firstframe";
                             TLRPC.Document document4 = this.document;
-                            imageReceiver3.setImage(imageLocation, str4, imageLocation2, null, emojiDrawable, document4.size, null, document4, 1);
+                            this.imageReceiver.setImage(imageLocation, str2 + "_firstframe", forDocument, null, emojiDrawable, document4.size, null, document4, 1);
                         } else {
-                            ImageReceiver imageReceiver4 = this.imageReceiver;
-                            ImageLocation forDocument2 = ImageLocation.getForDocument(closestPhotoSizeWithSize, this.document);
-                            String str5 = this.sizedp + "_" + this.sizedp;
+                            ImageReceiver imageReceiver3 = this.imageReceiver;
+                            ImageLocation forDocument3 = ImageLocation.getForDocument(closestPhotoSizeWithSize, this.document);
+                            String str4 = this.sizedp + "_" + this.sizedp;
                             TLRPC.Document document5 = this.document;
-                            imageReceiver4.setImage(forDocument2, str5, imageLocation2, null, emojiDrawable, document5.size, null, document5, 1);
+                            imageReceiver3.setImage(forDocument3, str4, forDocument, null, emojiDrawable, document5.size, null, document5, 1);
                         }
                     } else {
-                        ImageLocation forDocument3 = i9 == 17 ? ImageLocation.getForDocument(closestPhotoSizeWithSize, this.document) : imageLocation2;
-                        ImageReceiver imageReceiver5 = this.imageReceiver;
+                        forDocument = i9 == 17 ? ImageLocation.getForDocument(closestPhotoSizeWithSize, this.document) : null;
+                        ImageReceiver imageReceiver4 = this.imageReceiver;
                         ImageLocation forDocument4 = ImageLocation.getForDocument(closestPhotoSizeWithSize, this.document);
-                        String str6 = this.sizedp + "_" + this.sizedp;
+                        String str5 = this.sizedp + "_" + this.sizedp;
                         TLRPC.Document document6 = this.document;
-                        imageReceiver5.setImage(imageLocation, str2, forDocument4, str6, forDocument3, null, emojiDrawable, document6.size, null, document6, 1);
+                        imageReceiver4.setImage(imageLocation, str2, forDocument4, str5, forDocument, null, emojiDrawable, document6.size, null, document6, 1);
                     }
                 }
                 updateAutoRepeat(this.imageReceiver);
@@ -851,7 +840,7 @@ public class AnimatedEmojiDrawable extends Drawable {
                     this.imageReceiver.setLayerNum(7);
                 }
                 int i11 = this.cacheType;
-                if (i11 == 9 || i11 == 21) {
+                if (i11 == 9 || i11 == 21 || i11 == 27) {
                     this.imageReceiver.setLayerNum(6656);
                 }
                 this.imageReceiver.setAspectFit(true);
@@ -867,7 +856,7 @@ public class AnimatedEmojiDrawable extends Drawable {
                 }
                 this.imageReceiver.setAllowDecodeSingleFrame(true);
                 int i13 = this.cacheType;
-                if (i13 == 5 || i13 == 6) {
+                if (i13 == 5 || i13 == 6 || i13 == 27) {
                     dp = AndroidUtilities.dp(6.0f);
                 } else {
                     dp = i13 == 24 ? AndroidUtilities.dp(14.0f) : 0;
@@ -1114,23 +1103,23 @@ public class AnimatedEmojiDrawable extends Drawable {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$static$2() {
         AndroidUtilities.cancelRunOnUIThread(cleanup);
-        for (int i = 0; i < globalEmojiCache.size(); i++) {
-            try {
-                LongSparseArray longSparseArray = (LongSparseArray) globalEmojiCache.valueAt(i);
-                int i2 = 0;
-                while (i2 < longSparseArray.size()) {
-                    if (!((AnimatedEmojiDrawable) longSparseArray.valueAt(i2)).attached) {
-                        longSparseArray.removeAt(i2);
-                        i2--;
+        try {
+            if (globalEmojiCache != null) {
+                for (int i = 0; i < globalEmojiCache.size(); i++) {
+                    LongSparseArray longSparseArray = (LongSparseArray) globalEmojiCache.valueAt(i);
+                    int i2 = 0;
+                    while (i2 < longSparseArray.size()) {
+                        if (!((AnimatedEmojiDrawable) longSparseArray.valueAt(i2)).attached) {
+                            longSparseArray.removeAt(i2);
+                            i2--;
+                        }
+                        i2++;
                     }
-                    i2++;
                 }
-            } catch (Exception e) {
-                if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                    FileLog.e(e);
-                    return;
-                }
-                return;
+            }
+        } catch (Exception e) {
+            if (BuildVars.DEBUG_PRIVATE_VERSION) {
+                FileLog.e(e);
             }
         }
     }
@@ -1459,9 +1448,9 @@ public class AnimatedEmojiDrawable extends Drawable {
                 StarsReactionsSheet.Particles particles = this.particles;
                 Integer num = this.lastColor;
                 particles.draw(canvas, Theme.multAlpha(num == null ? -1 : num.intValue(), f2));
-                FrameTickScheduler.subscribe(this.invalidateRunnable, 15);
+                Choreographer60FpsContent.getInstance().addFrameCallback(this.invalidateRunnable, 15);
             } else {
-                FrameTickScheduler.unsubscribe(this.invalidateRunnable);
+                Choreographer60FpsContent.getInstance().removeFrameCallback(this.invalidateRunnable);
             }
             Drawable drawable = this.drawables[1];
             if (drawable != null && f < 1.0f) {

@@ -51,7 +51,7 @@ public final class zzi implements SessionManagerListener {
         zzlVar2 = zzkVar.zzh;
         zzno zzb = zzmVar.zzb(zzlVar2, z);
         zzgVar = this.zza.zzb;
-        zzgVar.zze(zzb, NotificationCenter.channelStarsUpdated);
+        zzgVar.zze(zzb, 227);
         r5.zzh.zzc(this.zza.zzg);
         this.zza.zzu();
     }
@@ -152,7 +152,7 @@ public final class zzi implements SessionManagerListener {
         zzlVar2 = zzkVar.zzh;
         zzno zze = zzmVar.zze(zzlVar2, i);
         zzgVar = this.zza.zzb;
-        zzgVar.zze(zze, 225);
+        zzgVar.zze(zze, NotificationCenter.botStarsUpdated);
         r5.zzh.zzc(this.zza.zzg);
         this.zza.zzr();
     }

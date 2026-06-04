@@ -9,7 +9,6 @@ import android.graphics.Canvas;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
@@ -151,7 +150,10 @@ public class InviteLinkBottomSheet extends BottomSheet {
         this.chatId = j;
         this.permanent = z;
         this.isChannel = z2;
-        fixNavigationBar(getThemedColor(Theme.key_graySection));
+        int i = Theme.key_windowBackgroundGray;
+        setBackgroundColor(getThemedColor(i));
+        fixNavigationBar(getThemedColor(i));
+        this.behindKeyboardColorKey = -1;
         if (this.users == null) {
             this.users = new HashMap();
         }
@@ -176,18 +178,18 @@ public class InviteLinkBottomSheet extends BottomSheet {
             }
 
             @Override // android.widget.FrameLayout, android.view.View
-            protected void onMeasure(int i, int i2) {
-                int size = View.MeasureSpec.getSize(i2);
+            protected void onMeasure(int i2, int i3) {
+                int size = View.MeasureSpec.getSize(i3);
                 InviteLinkBottomSheet.this.ignoreLayout = true;
                 setPadding(((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingLeft, 0);
                 InviteLinkBottomSheet.this.ignoreLayout = false;
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
                 this.fullHeight = true;
             }
 
             @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-            protected void onLayout(boolean z3, int i, int i2, int i3, int i4) {
-                super.onLayout(z3, i, i2, i3, i4);
+            protected void onLayout(boolean z3, int i2, int i3, int i4, int i5) {
+                super.onLayout(z3, i2, i3, i4, i5);
                 InviteLinkBottomSheet.this.updateLayout();
             }
 
@@ -199,61 +201,61 @@ public class InviteLinkBottomSheet extends BottomSheet {
                 super.requestLayout();
             }
 
-            /* JADX WARN: Removed duplicated region for block: B:11:0x0094  */
-            /* JADX WARN: Removed duplicated region for block: B:13:0x00e7  */
-            /* JADX WARN: Removed duplicated region for block: B:16:0x0118  */
+            /* JADX WARN: Removed duplicated region for block: B:11:0x009e  */
+            /* JADX WARN: Removed duplicated region for block: B:13:0x00f1  */
+            /* JADX WARN: Removed duplicated region for block: B:16:0x0122  */
             @Override // android.view.View
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
             protected void onDraw(Canvas canvas) {
                 float f;
-                int i;
+                int i2;
                 int dp = (InviteLinkBottomSheet.this.scrollOffsetY - ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingTop) - AndroidUtilities.dp(8.0f);
                 int measuredHeight = getMeasuredHeight() + AndroidUtilities.dp(36.0f) + ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingTop;
-                int i2 = AndroidUtilities.statusBarHeight;
-                int i3 = dp + i2;
-                int i4 = measuredHeight - i2;
+                int i3 = AndroidUtilities.statusBarHeight;
+                int i4 = dp + i3;
+                int i5 = measuredHeight - i3;
                 if (this.fullHeight) {
-                    int i5 = ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingTop + i3;
-                    int i6 = AndroidUtilities.statusBarHeight;
-                    int i7 = i6 * 2;
-                    if (i5 < i7) {
-                        int min = Math.min(i6, (i7 - i3) - ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingTop);
-                        i3 -= min;
-                        i4 += min;
+                    int i6 = ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingTop + i4;
+                    int i7 = AndroidUtilities.statusBarHeight;
+                    int i8 = i7 * 2;
+                    if (i6 < i8) {
+                        int min = Math.min(i7, (i8 - i4) - ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingTop);
+                        i4 -= min;
+                        i5 += min;
                         f = 1.0f - Math.min(1.0f, (min * 2) / AndroidUtilities.statusBarHeight);
                     } else {
                         f = 1.0f;
                     }
-                    int i8 = ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingTop + i3;
-                    int i9 = AndroidUtilities.statusBarHeight;
-                    if (i8 < i9) {
-                        i = Math.min(i9, (i9 - i3) - ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingTop);
-                        ((BottomSheet) InviteLinkBottomSheet.this).shadowDrawable.setBounds(0, i3, getMeasuredWidth(), i4);
+                    int i9 = ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingTop + i4;
+                    int i10 = AndroidUtilities.statusBarHeight;
+                    if (i9 < i10) {
+                        i2 = Math.min(i10, (i10 - i4) - ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingTop);
+                        ((BottomSheet) InviteLinkBottomSheet.this).shadowDrawable.setBounds(0, i4, getMeasuredWidth(), i5 + AndroidUtilities.dp(10.0f) + AndroidUtilities.navigationBarHeight);
                         ((BottomSheet) InviteLinkBottomSheet.this).shadowDrawable.draw(canvas);
                         if (f != 1.0f) {
                             Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor(Theme.key_dialogBackground));
-                            this.rect.set(((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingTop + i3 + AndroidUtilities.dp(24.0f));
+                            this.rect.set(((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingTop + i4, getMeasuredWidth() - ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingTop + i4 + AndroidUtilities.dp(24.0f));
                             canvas.drawRoundRect(this.rect, AndroidUtilities.dp(12.0f) * f, AndroidUtilities.dp(12.0f) * f, Theme.dialogs_onlineCirclePaint);
                         }
-                        if (i > 0) {
+                        if (i2 > 0) {
                             Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor(Theme.key_dialogBackground));
-                            canvas.drawRect(((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight - i, getMeasuredWidth() - ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, Theme.dialogs_onlineCirclePaint);
+                            canvas.drawRect(((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight - i2, getMeasuredWidth() - ((BottomSheet) InviteLinkBottomSheet.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, Theme.dialogs_onlineCirclePaint);
                         }
-                        updateLightStatusBar(i > AndroidUtilities.statusBarHeight / 2);
+                        updateLightStatusBar(i2 > AndroidUtilities.statusBarHeight / 2);
                     }
                 } else {
                     f = 1.0f;
                 }
-                i = 0;
-                ((BottomSheet) InviteLinkBottomSheet.this).shadowDrawable.setBounds(0, i3, getMeasuredWidth(), i4);
+                i2 = 0;
+                ((BottomSheet) InviteLinkBottomSheet.this).shadowDrawable.setBounds(0, i4, getMeasuredWidth(), i5 + AndroidUtilities.dp(10.0f) + AndroidUtilities.navigationBarHeight);
                 ((BottomSheet) InviteLinkBottomSheet.this).shadowDrawable.draw(canvas);
                 if (f != 1.0f) {
                 }
-                if (i > 0) {
+                if (i2 > 0) {
                 }
-                updateLightStatusBar(i > AndroidUtilities.statusBarHeight / 2);
+                updateLightStatusBar(i2 > AndroidUtilities.statusBarHeight / 2);
             }
 
             private void updateLightStatusBar(boolean z3) {
@@ -291,29 +293,30 @@ public class InviteLinkBottomSheet extends BottomSheet {
             }
 
             @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
-            protected void onMeasure(int i, int i2) {
-                if (this.lastH != View.MeasureSpec.getSize(i2)) {
-                    this.lastH = View.MeasureSpec.getSize(i2);
+            protected void onMeasure(int i2, int i3) {
+                if (this.lastH != View.MeasureSpec.getSize(i3)) {
+                    this.lastH = View.MeasureSpec.getSize(i3);
                     InviteLinkBottomSheet.this.ignoreLayout = true;
                     InviteLinkBottomSheet.this.listView.setPadding(0, 0, 0, 0);
                     InviteLinkBottomSheet.this.ignoreLayout = false;
-                    measure(i, View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_31));
+                    measure(i2, View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_31));
                     int measuredHeight = getMeasuredHeight();
-                    int i3 = this.lastH;
-                    int i4 = (int) ((i3 / 5.0f) * 2.0f);
-                    if (i4 < (i3 - measuredHeight) + AndroidUtilities.dp(60.0f)) {
-                        i4 = this.lastH - measuredHeight;
+                    int i4 = this.lastH;
+                    int i5 = (int) ((i4 / 5.0f) * 2.0f);
+                    if (i5 < (i4 - measuredHeight) + AndroidUtilities.dp(60.0f)) {
+                        i5 = this.lastH - measuredHeight;
                     }
                     InviteLinkBottomSheet.this.ignoreLayout = true;
-                    InviteLinkBottomSheet.this.listView.setPadding(0, i4, 0, 0);
+                    InviteLinkBottomSheet.this.listView.setPadding(0, i5, 0, 0);
                     InviteLinkBottomSheet.this.ignoreLayout = false;
-                    measure(i, View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_31));
+                    measure(i2, View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_31));
                 }
-                super.onMeasure(i, i2);
+                super.onMeasure(i2, i3);
             }
         };
         this.listView = recyclerListView;
-        recyclerListView.setTag(14);
+        recyclerListView.setSections();
+        this.listView.setTag(14);
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), 1, false);
         this.listView.setLayoutManager(linearLayoutManager);
         RecyclerListView recyclerListView2 = this.listView;
@@ -325,7 +328,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
         this.listView.setNestedScrollingEnabled(true);
         this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.InviteLinkBottomSheet.3
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i, int i2) {
+            public void onScrolled(RecyclerView recyclerView, int i2, int i3) {
                 InviteLinkBottomSheet.this.updateLayout();
                 InviteLinkBottomSheet inviteLinkBottomSheet = InviteLinkBottomSheet.this;
                 if (!inviteLinkBottomSheet.hasMore || inviteLinkBottomSheet.usersLoading) {
@@ -340,8 +343,8 @@ public class InviteLinkBottomSheet extends BottomSheet {
         });
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.InviteLinkBottomSheet$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view2, int i) {
-                InviteLinkBottomSheet.this.lambda$new$3(tL_chatInviteExported, hashMap, chatFull, context, j, baseFragment, view2, i);
+            public final void onItemClick(View view2, int i2) {
+                InviteLinkBottomSheet.this.lambda$new$3(tL_chatInviteExported, hashMap, chatFull, context, j, baseFragment, view2, i2);
             }
         });
         TextView textView = new TextView(context);
@@ -504,7 +507,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
         }
         this.listView.setGlowColor(Theme.getColor(Theme.key_dialogScrollGlow));
         this.shadow.setBackgroundColor(Theme.getColor(Theme.key_dialogShadowLine));
-        setBackgroundColor(Theme.getColor(Theme.key_dialogBackground));
+        setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         int hiddenChildCount = this.listView.getHiddenChildCount();
         for (int i = 0; i < this.listView.getChildCount(); i++) {
             updateColorForView(this.listView.getChildAt(i));
@@ -532,29 +535,14 @@ public class InviteLinkBottomSheet extends BottomSheet {
     private void updateColorForView(View view) {
         if (view instanceof HeaderCell) {
             ((HeaderCell) view).getTextView().setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader));
-        } else if (view instanceof LinkActionView) {
+            return;
+        }
+        if (view instanceof LinkActionView) {
             ((LinkActionView) view).updateColors();
         } else if (view instanceof TextInfoPrivacyCell) {
-            CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(view.getContext(), R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
-            combinedDrawable.setFullsize(true);
-            view.setBackground(combinedDrawable);
             ((TextInfoPrivacyCell) view).setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText4));
         } else if (view instanceof UserCell) {
             ((UserCell) view).update(0);
-        }
-        RecyclerView.ViewHolder childViewHolder = this.listView.getChildViewHolder(view);
-        if (childViewHolder != null) {
-            if (childViewHolder.getItemViewType() == 7) {
-                CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(view.getContext(), R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow), 0, 0);
-                combinedDrawable2.setFullsize(true);
-                view.setBackgroundDrawable(combinedDrawable2);
-                return;
-            }
-            if (childViewHolder.getItemViewType() == 2) {
-                CombinedDrawable combinedDrawable3 = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(view.getContext(), R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow), 0, 0);
-                combinedDrawable3.setFullsize(true);
-                view.setBackgroundDrawable(combinedDrawable3);
-            }
         }
     }
 
@@ -777,11 +765,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
                     view = linkActionView;
                     break;
                 case 4:
-                    View timerPrivacyCell = InviteLinkBottomSheet.this.new TimerPrivacyCell(context);
-                    CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(context, R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
-                    combinedDrawable.setFullsize(true);
-                    timerPrivacyCell.setBackground(combinedDrawable);
-                    view = timerPrivacyCell;
+                    view = InviteLinkBottomSheet.this.new TimerPrivacyCell(context);
                     break;
                 case 5:
                     FlickerLoadingView flickerLoadingView = new FlickerLoadingView(context);
@@ -800,11 +784,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
                     };
                     break;
                 case 7:
-                    View shadowSectionCell = new ShadowSectionCell(context, 12);
-                    CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(context, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow), 0, 0);
-                    combinedDrawable2.setFullsize(true);
-                    shadowSectionCell.setBackgroundDrawable(combinedDrawable2);
-                    view = shadowSectionCell;
+                    view = new ShadowSectionCell(context, 12);
                     break;
                 case 8:
                     view = InviteLinkBottomSheet.this.new EmptyHintRow(context);

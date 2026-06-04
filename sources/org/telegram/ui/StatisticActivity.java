@@ -853,7 +853,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         sizeNotifierFrameLayout.addView(this.viewPagerFixed, LayoutHelper.createFrameMatchParent());
         sizeNotifierFrameLayout.addView(this.actionBar);
         if (this.showTabs) {
-            sizeNotifierFrameLayout.addView(this.tabsView, LayoutHelper.createFrame(344, 72, 81));
+            sizeNotifierFrameLayout.addView(this.tabsView, LayoutHelper.createFrame(NotificationCenter.webBrowserSettingsUpdate, 72, 81));
             Bulletin.addDelegate(this, new Bulletin.Delegate() { // from class: org.telegram.ui.StatisticActivity.6
                 @Override // org.telegram.ui.Components.Bulletin.Delegate
                 public /* synthetic */ boolean allowLayoutChanges() {
@@ -1018,7 +1018,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         this.progressLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 1, 0, 0, 0, 10));
         this.progressLayout.addView(textView2, LayoutHelper.createLinear(-2, -2, 1));
         FrameLayout frameLayout4 = frameLayout;
-        frameLayout4.addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.commonChatsLoaded, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
+        frameLayout4.addView(this.progressLayout, LayoutHelper.createFrame(NotificationCenter.appConfigUpdated, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
         if (this.adapter == null) {
             this.adapter = new Adapter();
         }

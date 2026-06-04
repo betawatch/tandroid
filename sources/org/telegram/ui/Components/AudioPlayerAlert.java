@@ -97,7 +97,7 @@ import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.CastSync;
 import org.telegram.ui.Cells.AudioPlayerCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda379;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda301;
 import org.telegram.ui.ChooseQualityLayout$QualityIcon;
 import org.telegram.ui.Components.AnimationProperties;
 import org.telegram.ui.Components.AudioPlayerAlert;
@@ -3447,7 +3447,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             TLRPC.Document document = messageObject.getDocument();
             long j = document != null ? document.id : 0L;
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda379(makeOptions));
+            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda301(makeOptions));
             makeSwipeback.addGap();
             makeSwipeback.addIf(!savedMusicIds.ids.contains(Long.valueOf(j)), R.drawable.left_status_profile, LocaleController.getString(R.string.AudioSaveToMyProfile), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda29
                 @Override // java.lang.Runnable
@@ -3804,7 +3804,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
             }
         });
-        this.parentActivity.lambda$runLinkRequest$99(dialogsActivity);
+        this.parentActivity.lambda$runLinkRequest$100(dialogsActivity);
         lambda$new$0();
     }
 
@@ -4250,6 +4250,20 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             }
             invalidate();
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.BottomSheet
+    protected boolean isTouchOutside(float f, float f2) {
+        FrameLayout frameLayout = this.topBulletinContainer;
+        if (frameLayout != null && frameLayout.getChildCount() > 0) {
+            View childAt = this.topBulletinContainer.getChildAt(0);
+            if (f2 >= this.topBulletinContainer.getY() + childAt.getY() && f2 <= this.topBulletinContainer.getY() + childAt.getY() + childAt.getHeight() && f >= this.topBulletinContainer.getX() + childAt.getX() && f <= this.topBulletinContainer.getX() + childAt.getX() + childAt.getWidth()) {
+                return false;
+            }
+        }
+        int top = this.containerView.getTop();
+        Drawable drawable = this.shadowDrawable;
+        return f2 < ((float) (top + (drawable != null ? drawable.getBounds().top : 0))) || f < ((float) this.containerView.getLeft()) || f > ((float) this.containerView.getRight());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

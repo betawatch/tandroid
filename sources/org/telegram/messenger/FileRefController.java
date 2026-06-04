@@ -15,6 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Stories.StoriesController;
@@ -1452,9 +1453,9 @@ public class FileRefController extends BaseController {
 
     /* JADX WARN: Removed duplicated region for block: B:31:0x00a1 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:33:0x00a2  */
-    /* JADX WARN: Removed duplicated region for block: B:379:0x07d4  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x087b  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0898  */
+    /* JADX WARN: Removed duplicated region for block: B:382:0x07e1  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0888  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x08a5  */
     /* JADX WARN: Type inference failed for: r13v0 */
     /* JADX WARN: Type inference failed for: r13v25 */
     /*
@@ -1643,7 +1644,10 @@ public class FileRefController extends BaseController {
                                         }
                                     } else {
                                         i4 = size3;
-                                        if (messageMedia3 instanceof TLRPC.TL_messageMediaPoll) {
+                                        TL_iv.RichMessage richMessage = message.rich_message;
+                                        if (richMessage != null) {
+                                            fileReference2 = getFileReferenceForRichMessage(richMessage, requester.location, zArr2, inputFileLocationArr);
+                                        } else if (messageMedia3 instanceof TLRPC.TL_messageMediaPoll) {
                                             fileReference2 = getFileReferenceForPoll((TLRPC.TL_messageMediaPoll) messageMedia3, requester.location, zArr2, inputFileLocationArr);
                                         } else if (messageMedia3 != null) {
                                             fileReference2 = getFileReferenceForMediaImpl(messageMedia3, requester.location, zArr2, inputFileLocationArr);
@@ -2459,6 +2463,24 @@ public class FileRefController extends BaseController {
         return fileReferenceForMediaImpl;
     }
 
+    private byte[] getFileReferenceForRichMessage(TL_iv.RichMessage richMessage, TLRPC.InputFileLocation inputFileLocation, boolean[] zArr, TLRPC.InputFileLocation[] inputFileLocationArr) {
+        byte[] bArr = null;
+        if (richMessage == null) {
+            return null;
+        }
+        Iterator<TLRPC.Photo> it = richMessage.photos.iterator();
+        while (it.hasNext()) {
+            bArr = getFileReference(it.next(), inputFileLocation, zArr, inputFileLocationArr);
+            if (bArr != null) {
+                return bArr;
+            }
+        }
+        Iterator<TLRPC.Document> it2 = richMessage.documents.iterator();
+        while (it2.hasNext() && (bArr = getFileReference(it2.next(), null, inputFileLocation, zArr, inputFileLocationArr)) == null) {
+        }
+        return bArr;
+    }
+
     private byte[] getFileReferenceForMediaImpl(TLRPC.MessageMedia messageMedia, TLRPC.InputFileLocation inputFileLocation, boolean[] zArr, TLRPC.InputFileLocation[] inputFileLocationArr) {
         TLRPC.Photo photo;
         byte[] bArr = null;
@@ -2933,7 +2955,7 @@ public class FileRefController extends BaseController {
                 }
             }
         }
-        TLRPC.Page page = webPage.cached_page;
+        TL_iv.Page page = webPage.cached_page;
         if (page == null) {
             return null;
         }

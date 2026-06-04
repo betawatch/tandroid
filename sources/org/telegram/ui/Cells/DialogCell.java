@@ -8377,6 +8377,9 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
             }
             return formatInternal(i, append, charSequence);
         }
+        if (message2.rich_message != null) {
+            return formatInternal(i, messageObject2.messageText, charSequence);
+        }
         if (message2.media != null && !messageObject2.isMediaEmpty()) {
             this.currentMessagePaint = Theme.dialogs_messagePrintingPaint[this.paintIndex];
             int i2 = Theme.key_chats_attachMessage;

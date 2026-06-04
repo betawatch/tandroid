@@ -183,7 +183,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
                 PrivacySettingsActivity.this.lambda$onFragmentCreate$0();
             }
         });
-        this.devicesActivityPreload.lambda$loadSessions$17(false);
+        this.devicesActivityPreload.lambda$loadSessions$24(false);
         SessionsActivity sessionsActivity2 = new SessionsActivity(1);
         this.webSessionsActivityPreload = sessionsActivity2;
         sessionsActivity2.setDelegate(new SessionsActivity.Delegate() { // from class: org.telegram.ui.PrivacySettingsActivity$$ExternalSyntheticLambda6
@@ -192,7 +192,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
                 PrivacySettingsActivity.this.lambda$onFragmentCreate$1();
             }
         });
-        this.webSessionsActivityPreload.lambda$loadSessions$17(false);
+        this.webSessionsActivityPreload.lambda$loadSessions$24(false);
         return true;
     }
 
@@ -1628,7 +1628,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
                         if (PrivacySettingsActivity.this.getMessagesController().lastKnownSessionsCount == 0) {
                             str5 = "";
                             PrivacySettingsActivity.this.getMessagesController().lastKnownSessionsCount = PrivacySettingsActivity.this.devicesActivityPreload.getSessionsCount();
-                            textCell.setTextAndValueAndIcon(LocaleController.getString("SessionsTitle", R.string.SessionsTitle), str5, true, R.drawable.msg2_devices, false);
+                            textCell.setTextAndValueAndIcon(LocaleController.getString(R.string.SessionsTitle), str5, true, R.drawable.msg2_devices, false);
                         } else {
                             format2 = String.format(LocaleController.getInstance().getCurrentLocale(), "%d", Integer.valueOf(PrivacySettingsActivity.this.getMessagesController().lastKnownSessionsCount));
                         }
@@ -1638,7 +1638,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
                     str5 = format2;
                     r3 = false;
                     PrivacySettingsActivity.this.getMessagesController().lastKnownSessionsCount = PrivacySettingsActivity.this.devicesActivityPreload.getSessionsCount();
-                    textCell.setTextAndValueAndIcon(LocaleController.getString("SessionsTitle", R.string.SessionsTitle), str5, true, R.drawable.msg2_devices, false);
+                    textCell.setTextAndValueAndIcon(LocaleController.getString(R.string.SessionsTitle), str5, true, R.drawable.msg2_devices, false);
                 } else {
                     if (i == PrivacySettingsActivity.this.emailLoginRow) {
                         if (PrivacySettingsActivity.this.currentPassword == null) {

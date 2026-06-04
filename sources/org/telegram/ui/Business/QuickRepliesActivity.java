@@ -425,7 +425,7 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
                 }
             }
 
-            @Override // org.telegram.ui.Components.EditTextBoldCursor, android.view.View
+            @Override // android.view.View
             protected void dispatchDraw(Canvas canvas) {
                 super.dispatchDraw(canvas);
                 this.limit.setTextColor(this.limitColor.set(Theme.getColor(this.limitCount < 0 ? Theme.key_text_RedRegular : Theme.key_dialogSearchHint, resourcesProvider)));

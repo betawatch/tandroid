@@ -6,7 +6,7 @@ import j$.util.Objects;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class JsonPrimitive extends JsonElement {
     private final Object value;
 

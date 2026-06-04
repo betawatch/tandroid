@@ -5,6 +5,7 @@ import android.util.Base64;
 import android.util.SparseArray;
 import org.telegram.messenger.utils.tlutils.TlUtils;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.poll.attached.PollAttachedMediaLink;
 import org.telegram.ui.Components.poll.attached.PollAttachedMediaLocation;
 import org.telegram.ui.Components.poll.attached.PollAttachedMediaSticker;
 
@@ -170,7 +171,12 @@ public class PollAttachedMediaPack {
         for (int i = 0; i < size; i++) {
             int keyAt = this.medias.keyAt(i);
             PollAttachedMedia pollAttachedMedia = (PollAttachedMedia) this.medias.valueAt(i);
-            if (pollAttachedMedia instanceof PollAttachedMediaLocation) {
+            if (pollAttachedMedia instanceof PollAttachedMediaLink) {
+                TLRPC.TL_inputMediaWebPage tL_inputMediaWebPage = new TLRPC.TL_inputMediaWebPage();
+                tL_inputMediaWebPage.url = ((PollAttachedMediaLink) pollAttachedMedia).url;
+                tL_inputMediaWebPage.optional = true;
+                setInputMedia(tL_inputMediaPoll, keyAt, tL_inputMediaWebPage);
+            } else if (pollAttachedMedia instanceof PollAttachedMediaLocation) {
                 setInputMedia(tL_inputMediaPoll, keyAt, TlUtils.toInputMediaGeo(((PollAttachedMediaLocation) pollAttachedMedia).media));
             } else if (pollAttachedMedia instanceof PollAttachedMediaSticker) {
                 TLRPC.TL_inputMediaDocument tL_inputMediaDocument = new TLRPC.TL_inputMediaDocument();
@@ -190,7 +196,15 @@ public class PollAttachedMediaPack {
         for (int i = 0; i < size; i++) {
             int keyAt = this.medias.keyAt(i);
             PollAttachedMedia pollAttachedMedia = (PollAttachedMedia) this.medias.valueAt(i);
-            if (pollAttachedMedia instanceof PollAttachedMediaLocation) {
+            if (pollAttachedMedia instanceof PollAttachedMediaLink) {
+                TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = new TLRPC.TL_messageMediaWebPage();
+                TLRPC.TL_webPage tL_webPage = new TLRPC.TL_webPage();
+                tL_messageMediaWebPage.webpage = tL_webPage;
+                String str = ((PollAttachedMediaLink) pollAttachedMedia).url;
+                tL_webPage.display_url = str;
+                tL_webPage.url = str;
+                setMessageMedia(tL_messageMediaPoll, keyAt, tL_messageMediaWebPage);
+            } else if (pollAttachedMedia instanceof PollAttachedMediaLocation) {
                 setMessageMedia(tL_messageMediaPoll, keyAt, ((PollAttachedMediaLocation) pollAttachedMedia).media);
             } else if (pollAttachedMedia instanceof PollAttachedMediaSticker) {
                 TLRPC.TL_messageMediaDocument tL_messageMediaDocument = new TLRPC.TL_messageMediaDocument();

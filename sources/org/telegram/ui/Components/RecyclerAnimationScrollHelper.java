@@ -13,7 +13,7 @@ import java.util.Iterator;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Cells.ChatMessageCell;
+import org.telegram.ui.Cells.IMessageCell;
 import org.telegram.ui.Components.RecyclerAnimationScrollHelper;
 import org.telegram.ui.Components.RecyclerListView;
 
@@ -59,6 +59,7 @@ public class RecyclerAnimationScrollHelper {
         scrollToPosition(i, i2, z, z2, false);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void scrollToPosition(final int i, final int i2, final boolean z, final boolean z2, boolean z3) {
         long itemId;
         RecyclerListView recyclerListView = this.recyclerView;
@@ -109,8 +110,8 @@ public class RecyclerAnimationScrollHelper {
                 }
                 this.oldStableIds.put(Long.valueOf(itemId), childAt);
             }
-            if (childAt instanceof ChatMessageCell) {
-                ((ChatMessageCell) childAt).setAnimationRunning(true, true);
+            if (childAt instanceof IMessageCell) {
+                ((IMessageCell) childAt).setAnimationRunning(true, true);
             }
         }
         this.recyclerView.prepareForFastScroll();
@@ -150,6 +151,7 @@ public class RecyclerAnimationScrollHelper {
             this.val$finalAnimatableAdapter = animatableAdapter;
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         @Override // android.view.View.OnLayoutChangeListener
         public void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
             int height;
@@ -172,15 +174,15 @@ public class RecyclerAnimationScrollHelper {
                 if (childAt.getBottom() > i10) {
                     i10 = childAt.getBottom();
                 }
-                if (childAt instanceof ChatMessageCell) {
-                    ((ChatMessageCell) childAt).setAnimationRunning(true, false);
+                if (childAt instanceof IMessageCell) {
+                    ((IMessageCell) childAt).setAnimationRunning(true, false);
                 }
                 RecyclerView.Adapter adapter = this.val$adapter;
                 if (adapter != null && (adapter.hasStableIds() || RecyclerAnimationScrollHelper.this.forceUseStableId)) {
                     long itemId = this.val$adapter.getItemId(RecyclerAnimationScrollHelper.this.recyclerView.getChildAdapterPosition(childAt));
-                    if (RecyclerAnimationScrollHelper.this.oldStableIds.containsKey(Long.valueOf(itemId)) && (view2 = (View) RecyclerAnimationScrollHelper.this.oldStableIds.get(Long.valueOf(itemId))) != null) {
-                        if (view2 instanceof ChatMessageCell) {
-                            ((ChatMessageCell) view2).setAnimationRunning(false, false);
+                    if (RecyclerAnimationScrollHelper.this.oldStableIds.containsKey(Long.valueOf(itemId)) && (view2 = (View) RecyclerAnimationScrollHelper.this.oldStableIds.get(Long.valueOf(itemId))) != 0) {
+                        if (view2 instanceof IMessageCell) {
+                            ((IMessageCell) view2).setAnimationRunning(false, false);
                         }
                         this.val$oldViews.remove(view2);
                         if (RecyclerAnimationScrollHelper.this.animationCallback != null) {
@@ -215,8 +217,8 @@ public class RecyclerAnimationScrollHelper {
                         RecyclerAnimationScrollHelper.this.animationCallback.ignoreView(view3, true);
                     }
                 }
-                if (view3 instanceof ChatMessageCell) {
-                    ((ChatMessageCell) view3).setAnimationRunning(true, true);
+                if (view3 instanceof IMessageCell) {
+                    ((IMessageCell) view3).setAnimationRunning(true, true);
                 }
             }
             int i15 = i13 != Integer.MAX_VALUE ? i13 : 0;
@@ -248,6 +250,7 @@ public class RecyclerAnimationScrollHelper {
                 }
             });
             RecyclerAnimationScrollHelper.this.animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.RecyclerAnimationScrollHelper.1.1
+                /* JADX WARN: Multi-variable type inference failed */
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     if (RecyclerAnimationScrollHelper.this.animator == null) {
@@ -257,8 +260,8 @@ public class RecyclerAnimationScrollHelper {
                     Iterator it2 = 1.this.val$oldViews.iterator();
                     while (it2.hasNext()) {
                         View view4 = (View) it2.next();
-                        if (view4 instanceof ChatMessageCell) {
-                            ((ChatMessageCell) view4).setAnimationRunning(false, true);
+                        if (view4 instanceof IMessageCell) {
+                            ((IMessageCell) view4).setAnimationRunning(false, true);
                         }
                         view4.setTranslationY(0.0f);
                         RecyclerAnimationScrollHelper.this.layoutManager.stopIgnoringView(view4);
@@ -282,16 +285,16 @@ public class RecyclerAnimationScrollHelper {
                     int childCount2 = RecyclerAnimationScrollHelper.this.recyclerView.getChildCount();
                     for (int i17 = 0; i17 < childCount2; i17++) {
                         View childAt2 = RecyclerAnimationScrollHelper.this.recyclerView.getChildAt(i17);
-                        if (childAt2 instanceof ChatMessageCell) {
-                            ((ChatMessageCell) childAt2).setAnimationRunning(false, false);
+                        if (childAt2 instanceof IMessageCell) {
+                            ((IMessageCell) childAt2).setAnimationRunning(false, false);
                         }
                         childAt2.setTranslationY(0.0f);
                     }
                     Iterator it3 = arrayList.iterator();
                     while (it3.hasNext()) {
                         View view5 = (View) it3.next();
-                        if (view5 instanceof ChatMessageCell) {
-                            ((ChatMessageCell) view5).setAnimationRunning(false, false);
+                        if (view5 instanceof IMessageCell) {
+                            ((IMessageCell) view5).setAnimationRunning(false, false);
                         }
                         view5.setTranslationY(0.0f);
                     }
@@ -367,6 +370,7 @@ public class RecyclerAnimationScrollHelper {
         clear();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void clear() {
         this.recyclerView.setVerticalScrollBarEnabled(true);
         RecyclerListView recyclerListView = this.recyclerView;
@@ -380,8 +384,8 @@ public class RecyclerAnimationScrollHelper {
         for (int i = 0; i < childCount; i++) {
             View childAt = this.recyclerView.getChildAt(i);
             childAt.setTranslationY(0.0f);
-            if (childAt instanceof ChatMessageCell) {
-                ((ChatMessageCell) childAt).setAnimationRunning(false, false);
+            if (childAt instanceof IMessageCell) {
+                ((IMessageCell) childAt).setAnimationRunning(false, false);
             }
         }
     }

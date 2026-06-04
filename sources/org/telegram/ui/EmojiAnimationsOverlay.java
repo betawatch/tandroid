@@ -807,7 +807,7 @@ public class EmojiAnimationsOverlay implements NotificationCenter.NotificationCe
                         drawingObject.imageReceiver.setUniqKeyPrefix(intValue3 + "_" + drawingObject.messageId + "_");
                     }
                     drawingObject.document = document2;
-                    drawingObject.imageReceiver.setImage(ImageLocation.getForDocument(premiumStickerAnimation, document2), filterWidth2 + "_" + filterWidth2, null, "tgs", this.set, 1);
+                    drawingObject.imageReceiver.setImage(ImageLocation.getForDocument(premiumStickerAnimation, document2), filterWidth2 + "_" + filterWidth2 + "_pcache", null, "tgs", this.set, 1);
                 }
                 drawingObject.imageReceiver.setLayerNum(ConnectionsManager.DEFAULT_DATACENTER_ID);
                 drawingObject.imageReceiver.setAutoRepeat(0);

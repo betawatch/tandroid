@@ -1032,9 +1032,17 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         if (drawable2 instanceof RecyclableDrawable) {
             ((RecyclableDrawable) drawable2).recycle();
         }
-        if (drawable instanceof AnimatedFileDrawable) {
+        if (drawable instanceof AnimatedEmojiDrawable) {
+            AnimatedEmojiDrawable animatedEmojiDrawable = (AnimatedEmojiDrawable) drawable;
+            if (this.attachedToWindow) {
+                animatedEmojiDrawable.addView(this);
+            }
+        } else if (drawable instanceof AnimatedFileDrawable) {
             AnimatedFileDrawable animatedFileDrawable = (AnimatedFileDrawable) drawable;
             animatedFileDrawable.setParentView(this.parentView);
+            if (this.attachedToWindow) {
+                animatedFileDrawable.addParent(this);
+            }
             animatedFileDrawable.setUseSharedQueue(this.useSharedAnimationQueue || animatedFileDrawable.isWebmSticker);
             if (this.allowStartAnimation && this.currentOpenedLayerFlags == 0) {
                 animatedFileDrawable.checkRepeat();
@@ -1042,7 +1050,12 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             animatedFileDrawable.setAllowDecodeSingleFrame(this.allowDecodeSingleFrame);
         } else if (drawable instanceof RLottieDrawable) {
             RLottieDrawable rLottieDrawable = (RLottieDrawable) drawable;
-            rLottieDrawable.setAllowVibration(this.allowLottieVibration);
+            if (this.attachedToWindow) {
+                rLottieDrawable.addParentView(this);
+            }
+            if (rLottieDrawable != null) {
+                rLottieDrawable.setAllowVibration(this.allowLottieVibration);
+            }
             if (this.allowStartLottieAnimation && (!rLottieDrawable.isHeavyDrawable() || this.currentOpenedLayerFlags == 0)) {
                 rLottieDrawable.start();
             }
@@ -1103,57 +1116,28 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void setStaticDrawable(Drawable drawable) {
         AttachableDrawable attachableDrawable;
-        Drawable drawable2;
-        Drawable drawable3 = this.staticThumbDrawable;
-        if (drawable == drawable3) {
+        Drawable drawable2 = this.staticThumbDrawable;
+        if (drawable == drawable2) {
             return;
         }
-        if (!(drawable3 instanceof AttachableDrawable)) {
+        if (!(drawable2 instanceof AttachableDrawable)) {
             attachableDrawable = null;
-        } else if (drawable3.equals(drawable)) {
+        } else if (drawable2.equals(drawable)) {
             return;
         } else {
             attachableDrawable = (AttachableDrawable) this.staticThumbDrawable;
         }
-        if (this.attachedToWindow && (drawable2 = this.staticThumbDrawable) != null) {
-            removeParentFromDrawable(drawable2);
-        }
         this.staticThumbDrawable = drawable;
-        if (this.attachedToWindow && drawable != null) {
-            addParentToDrawable(drawable);
-        }
-        if (this.attachedToWindow) {
-            Object obj = this.staticThumbDrawable;
-            if (obj instanceof AttachableDrawable) {
-                ((AttachableDrawable) obj).onAttachedToWindow(this);
-            }
+        if (this.attachedToWindow && (drawable instanceof AttachableDrawable)) {
+            ((AttachableDrawable) drawable).onAttachedToWindow(this);
         }
         if (!this.attachedToWindow || attachableDrawable == null) {
             return;
         }
         attachableDrawable.onDetachedFromWindow(this);
-    }
-
-    private void addParentToDrawable(Drawable drawable) {
-        if (drawable instanceof AnimatedEmojiDrawable) {
-            ((AnimatedEmojiDrawable) drawable).addView(this);
-        } else if (drawable instanceof AnimatedFileDrawable) {
-            ((AnimatedFileDrawable) drawable).addParent(this);
-        } else if (drawable instanceof RLottieDrawable) {
-            ((RLottieDrawable) drawable).addParentView(this);
-        }
-    }
-
-    private void removeParentFromDrawable(Drawable drawable) {
-        if (drawable instanceof AnimatedEmojiDrawable) {
-            ((AnimatedEmojiDrawable) drawable).removeView(this);
-        } else if (drawable instanceof AnimatedFileDrawable) {
-            ((AnimatedFileDrawable) drawable).removeParent(this);
-        } else if (drawable instanceof RLottieDrawable) {
-            ((RLottieDrawable) drawable).removeParentView(this);
-        }
     }
 
     private void setDrawableShader(Drawable drawable, BitmapShader bitmapShader) {
@@ -1245,6 +1229,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
 
     public void onDetachedFromWindow() {
         if (this.attachedToWindow) {
+            this.attachedToWindow = false;
             if (this.currentImageLocation != null || this.currentMediaLocation != null || this.currentThumbLocation != null || this.staticThumbDrawable != null) {
                 if (this.setImageBackup == null) {
                     this.setImageBackup = new SetImageBackup();
@@ -1275,7 +1260,6 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 setStaticDrawable(null);
                 this.staticThumbShader = null;
             }
-            this.attachedToWindow = false;
             clearImage();
             this.roundPaint.setShader(null);
             if (this.isPressed == 0) {
@@ -3707,7 +3691,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         }
     }
 
-    private void recycleBitmap(String str, int i) {
+    public void recycleBitmap(String str, int i) {
         String str2;
         Drawable drawable;
         String replacedKey;

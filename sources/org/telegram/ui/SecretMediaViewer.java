@@ -74,6 +74,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.utils.WindowVisibilityManager;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -101,6 +102,7 @@ import org.telegram.ui.Stories.recorder.HintView2;
 public class SecretMediaViewer implements NotificationCenter.NotificationCenterDelegate, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
     private static volatile SecretMediaViewer Instance;
     private ActionBar actionBar;
+    private WindowVisibilityManager.Controller activityVisibilityController;
     private int[] animateFromRadius;
     private float animateToClipBottom;
     private float animateToClipBottomOrigin;
@@ -282,7 +284,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         return false;
     }
 
-    static /* synthetic */ int access$1510(SecretMediaViewer secretMediaViewer) {
+    static /* synthetic */ int access$1610(SecretMediaViewer secretMediaViewer) {
         int i = secretMediaViewer.playerRetryPlayCount;
         secretMediaViewer.playerRetryPlayCount = i - 1;
         return i;
@@ -464,8 +466,8 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
 
         @Override // android.graphics.drawable.ColorDrawable, android.graphics.drawable.Drawable
         public void setAlpha(int i) {
-            if (SecretMediaViewer.this.parentActivity instanceof LaunchActivity) {
-                ((LaunchActivity) SecretMediaViewer.this.parentActivity).drawerLayoutContainer.setAllowDrawContent((SecretMediaViewer.this.isPhotoVisible && i == 255) ? false : true);
+            if (SecretMediaViewer.this.activityVisibilityController != null) {
+                SecretMediaViewer.this.activityVisibilityController.setHidden(SecretMediaViewer.this.isPhotoVisible && i == 255);
             }
             super.setAlpha(i);
         }
@@ -696,7 +698,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
         public void onError(VideoPlayer videoPlayer, Exception exc) {
             if (SecretMediaViewer.this.playerRetryPlayCount > 0) {
-                SecretMediaViewer.access$1510(SecretMediaViewer.this);
+                SecretMediaViewer.access$1610(SecretMediaViewer.this);
                 final File file = this.val$file;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SecretMediaViewer$2$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
@@ -1492,6 +1494,12 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         this.animateToScale = 1.0f;
         this.animateToRadius = true;
         this.zoomAnimation = true;
+        WindowVisibilityManager.Controller controller = this.activityVisibilityController;
+        if (controller != null) {
+            controller.destroy();
+            this.activityVisibilityController = null;
+        }
+        this.activityVisibilityController = LaunchActivity.obtainActivityVisibilityController();
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.messagesDeleted);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.updateMessageMedia);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.didCreatedNewDeleteTask);
@@ -1790,6 +1798,11 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         if (runnable != null) {
             runnable.run();
             this.onClose = null;
+        }
+        WindowVisibilityManager.Controller controller = this.activityVisibilityController;
+        if (controller != null) {
+            controller.destroy();
+            this.activityVisibilityController = null;
         }
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.messagesDeleted);
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.updateMessageMedia);
@@ -2107,10 +2120,10 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         return this.currentMessageObject;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00a5  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x03a6  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x02f9  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00ae  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x03af  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0302  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2136,6 +2149,11 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
             } else {
                 AndroidUtilities.setNavigationBarColor(activity2, this.wasNavigationBarColor);
             }
+        }
+        WindowVisibilityManager.Controller controller = this.activityVisibilityController;
+        if (controller != null) {
+            controller.destroy();
+            this.activityVisibilityController = null;
         }
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.messagesDeleted);
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.updateMessageMedia);

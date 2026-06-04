@@ -565,7 +565,7 @@ public class GroupCallMiniTextureView extends FrameLayout implements GroupCallSt
         SimpleTextView simpleTextView = new SimpleTextView(groupCallRenderersContainer.getContext());
         this.nameView = simpleTextView;
         simpleTextView.setTextSize(13);
-        simpleTextView.setTextColor(ColorUtils.setAlphaComponent(-1, NotificationCenter.updateAllMessages));
+        simpleTextView.setTextColor(ColorUtils.setAlphaComponent(-1, NotificationCenter.starGiftsLoaded));
         simpleTextView.setTypeface(AndroidUtilities.bold());
         simpleTextView.setFullTextMaxLines(1);
         simpleTextView.setBuildFullLayout(true);

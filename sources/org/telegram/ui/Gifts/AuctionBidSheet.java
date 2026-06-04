@@ -922,7 +922,7 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
         builder.setMessage(LocaleController.formatString(R.string.Gift2AuctionPlaceACustomBidHint, Integer.valueOf(this.auction.gift.gifts_per_round)));
         final Drawable mutate = context.getResources().getDrawable(R.drawable.star_small_inner).mutate();
         final EditTextCaption editTextCaption = new EditTextCaption(context, this.resourcesProvider) { // from class: org.telegram.ui.Gifts.AuctionBidSheet.4
-            @Override // org.telegram.ui.Components.EditTextBoldCursor, android.view.View
+            @Override // android.view.View
             protected void dispatchDraw(Canvas canvas) {
                 super.dispatchDraw(canvas);
                 mutate.setBounds(0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(28.0f));

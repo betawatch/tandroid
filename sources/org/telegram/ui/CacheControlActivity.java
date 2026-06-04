@@ -68,7 +68,7 @@ import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BackDrawable;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.BottomSheet$$ExternalSyntheticLambda14;
+import org.telegram.ui.ActionBar.BottomSheet$$ExternalSyntheticLambda7;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.CacheControlActivity;
@@ -2201,7 +2201,7 @@ public class CacheControlActivity extends BaseFragment implements NotificationCe
             addView(this.percentsTextView, LayoutHelper.createFrame(-1, 32.0f, 49, 0.0f, 176.0f, 0.0f, 0.0f));
             ProgressView progressView = new ProgressView(context);
             this.progressView = progressView;
-            addView(progressView, LayoutHelper.createFrame(NotificationCenter.commonChatsLoaded, 5.0f, 49, 0.0f, 226.0f, 0.0f, 0.0f));
+            addView(progressView, LayoutHelper.createFrame(NotificationCenter.appConfigUpdated, 5.0f, 49, 0.0f, 226.0f, 0.0f, 0.0f));
             TextView textView = new TextView(context);
             this.title = textView;
             textView.setGravity(1);
@@ -2216,7 +2216,7 @@ public class CacheControlActivity extends BaseFragment implements NotificationCe
             this.subtitle.setTextColor(Theme.getColor(i));
             this.subtitle.setTextSize(1, 14.0f);
             this.subtitle.setText(LocaleController.getString(R.string.ClearingCacheDescription));
-            addView(this.subtitle, LayoutHelper.createFrame(NotificationCenter.commonChatsLoaded, -2.0f, 49, 0.0f, 289.0f, 0.0f, 0.0f));
+            addView(this.subtitle, LayoutHelper.createFrame(NotificationCenter.appConfigUpdated, -2.0f, 49, 0.0f, 289.0f, 0.0f, 0.0f));
             setProgress(0.0f);
         }
 
@@ -2392,7 +2392,7 @@ public class CacheControlActivity extends BaseFragment implements NotificationCe
             clearingCacheView.setProgress(1.0f);
             if (jArr[0] > 0) {
                 Objects.requireNonNull(bottomSheet);
-                AndroidUtilities.runOnUIThread(new BottomSheet$$ExternalSyntheticLambda14(bottomSheet), Math.max(0L, 1000 - (System.currentTimeMillis() - jArr[0])));
+                AndroidUtilities.runOnUIThread(new BottomSheet$$ExternalSyntheticLambda7(bottomSheet), Math.max(0L, 1000 - (System.currentTimeMillis() - jArr[0])));
             } else {
                 bottomSheet.dismiss();
             }

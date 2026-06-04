@@ -138,7 +138,7 @@ public class EditTextCell extends FrameLayout {
                 EditTextCell.this.updateLimitText();
             }
 
-            @Override // org.telegram.ui.Components.EditTextBoldCursor, android.view.View
+            @Override // android.view.View
             protected void dispatchDraw(Canvas canvas) {
                 super.dispatchDraw(canvas);
                 EditTextCell editTextCell = EditTextCell.this;

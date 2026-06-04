@@ -77,10 +77,10 @@ public class HevcDecoderConfigurationRecord {
         this.reserved3 = (readUInt83 & NotificationCenter.pushMessagesUpdated) >> 2;
         this.chromaFormat = readUInt83 & 3;
         int readUInt84 = IsoTypeReader.readUInt8(byteBuffer);
-        this.reserved4 = (readUInt84 & NotificationCenter.updatedChatRanks) >> 3;
+        this.reserved4 = (readUInt84 & NotificationCenter.joinedGroup) >> 3;
         this.bitDepthLumaMinus8 = readUInt84 & 7;
         int readUInt85 = IsoTypeReader.readUInt8(byteBuffer);
-        this.reserved5 = (readUInt85 & NotificationCenter.updatedChatRanks) >> 3;
+        this.reserved5 = (readUInt85 & NotificationCenter.joinedGroup) >> 3;
         this.bitDepthChromaMinus8 = readUInt85 & 7;
         this.avgFrameRate = IsoTypeReader.readUInt16(byteBuffer);
         int readUInt86 = IsoTypeReader.readUInt8(byteBuffer);

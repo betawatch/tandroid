@@ -53,7 +53,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ChatActivity;
 import org.telegram.ui.Components.AnimatedFileDrawable;
 import org.telegram.ui.Components.PhotoFilterView;
-import org.telegram.ui.Components.RLottieDrawable;
+import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Stories.recorder.CollageLayout;
 import org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet;
 
@@ -218,7 +218,7 @@ public class StoryEntry {
             if ("video/webm".equals(document.mime_type) || "video/mp4".equals(document.mime_type)) {
                 return true;
             }
-            if (MessageObject.isAnimatedStickerDocument(document, true) && RLottieDrawable.getFramesCount(str, null) > 1) {
+            if (MessageObject.isAnimatedStickerDocument(document, true) && RLottieNative.getFramesCount(str, null) > 1) {
                 return true;
             }
         }
@@ -1236,7 +1236,7 @@ public class StoryEntry {
                         long parseInt = Integer.parseInt(this.thumbPath.substring(9));
                         options.inJustDecodeBounds = true;
                         MediaStore.Video.Thumbnails.getThumbnail(ApplicationLoader.applicationContext.getContentResolver(), parseInt, 1, options);
-                        options.inSampleSize = calculateInSampleSize(options, NotificationCenter.commonChatsLoaded, NotificationCenter.commonChatsLoaded);
+                        options.inSampleSize = calculateInSampleSize(options, NotificationCenter.appConfigUpdated, NotificationCenter.appConfigUpdated);
                         options.inJustDecodeBounds = false;
                         options.inPreferredConfig = Bitmap.Config.RGB_565;
                         options.inDither = true;
@@ -1244,7 +1244,7 @@ public class StoryEntry {
                     } else {
                         options.inJustDecodeBounds = true;
                         BitmapFactory.decodeFile(this.thumbPath);
-                        options.inSampleSize = calculateInSampleSize(options, NotificationCenter.commonChatsLoaded, NotificationCenter.commonChatsLoaded);
+                        options.inSampleSize = calculateInSampleSize(options, NotificationCenter.appConfigUpdated, NotificationCenter.appConfigUpdated);
                         options.inJustDecodeBounds = false;
                         options.inPreferredConfig = Bitmap.Config.RGB_565;
                         options.inDither = true;

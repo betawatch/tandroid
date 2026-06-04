@@ -157,7 +157,7 @@ public final class PsExtractor implements Extractor {
                     elementaryStreamReader = new MpegAudioReader();
                     this.foundAudioTrack = true;
                     this.lastTrackPosition = extractorInput.getPosition();
-                } else if ((readInt & NotificationCenter.commonChatsLoaded) == 224) {
+                } else if ((readInt & NotificationCenter.appConfigUpdated) == 224) {
                     elementaryStreamReader = new H262Reader();
                     this.foundVideoTrack = true;
                     this.lastTrackPosition = extractorInput.getPosition();

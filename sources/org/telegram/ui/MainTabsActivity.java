@@ -618,7 +618,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
                         MainTabsActivity.this.lambda$openAccountSelector$12(intValue, makeOptions, view2);
                     }
                 });
-                makeOptions.addView(accountView, LayoutHelper.createLinear(NotificationCenter.starGiftsLoaded, 48));
+                makeOptions.addView(accountView, LayoutHelper.createLinear(NotificationCenter.starUserGiftsLoaded, 48));
             }
         }
         makeOptions.setBlur(true);

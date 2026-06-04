@@ -61,6 +61,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.CheckBoxCell;
@@ -1184,8 +1185,8 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             long longValue = ((Long) objArr[0]).longValue();
             TLObject tLObject = (TLObject) objArr[1];
             boolean booleanValue = ((Boolean) objArr[2]).booleanValue();
-            if (tLObject instanceof TLRPC.TL_updateGroupCallMessage) {
-                TLRPC.TL_updateGroupCallMessage tL_updateGroupCallMessage = (TLRPC.TL_updateGroupCallMessage) tLObject;
+            if (tLObject instanceof TL_update.TL_updateGroupCallMessage) {
+                TL_update.TL_updateGroupCallMessage tL_updateGroupCallMessage = (TL_update.TL_updateGroupCallMessage) tLObject;
                 TLRPC.InputGroupCall inputGroupCall = this.inputCall;
                 if (inputGroupCall == null || inputGroupCall.id != longValue) {
                     return;
@@ -1199,8 +1200,8 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
                 push(i3, i4, z, peerDialogId, groupCallMessage2.message, groupCallMessage2.paid_message_stars, booleanValue);
                 return;
             }
-            if (tLObject instanceof TLRPC.TL_updateDeleteGroupCallMessages) {
-                TLRPC.TL_updateDeleteGroupCallMessages tL_updateDeleteGroupCallMessages = (TLRPC.TL_updateDeleteGroupCallMessages) tLObject;
+            if (tLObject instanceof TL_update.TL_updateDeleteGroupCallMessages) {
+                TL_update.TL_updateDeleteGroupCallMessages tL_updateDeleteGroupCallMessages = (TL_update.TL_updateDeleteGroupCallMessages) tLObject;
                 TLRPC.InputGroupCall inputGroupCall2 = this.inputCall;
                 if (inputGroupCall2 == null || inputGroupCall2.id != longValue) {
                     return;
@@ -1410,9 +1411,9 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             return;
         }
         TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-        Iterator it = MessagesController.findUpdatesAndRemove(updates, TLRPC.TL_updateMessageID.class).iterator();
+        Iterator it = MessagesController.findUpdatesAndRemove(updates, TL_update.TL_updateMessageID.class).iterator();
         while (it.hasNext()) {
-            TLRPC.TL_updateMessageID tL_updateMessageID = (TLRPC.TL_updateMessageID) it.next();
+            TL_update.TL_updateMessageID tL_updateMessageID = (TL_update.TL_updateMessageID) it.next();
             if (sendgroupcallmessage.random_id == tL_updateMessageID.random_id) {
                 updateMessageId(i, tL_updateMessageID.id);
             }

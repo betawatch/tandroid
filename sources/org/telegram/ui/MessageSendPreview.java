@@ -54,9 +54,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
+import org.telegram.messenger.utils.WindowVisibilityManager;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.ui.ActionBar.AdjustPanLayoutHelper;
 import org.telegram.ui.ActionBar.BaseFragment;
@@ -92,6 +94,7 @@ import org.telegram.ui.Stories.recorder.KeyboardNotifier;
 
 /* loaded from: classes4.dex */
 public class MessageSendPreview extends Dialog implements NotificationCenter.NotificationCenterDelegate {
+    private WindowVisibilityManager.Controller activityVisibilityController;
     private final RecyclerView.Adapter adapter;
     public boolean allowRelayout;
     private ChatActivityEnterView.SendButton anchorSendButton;
@@ -182,9 +185,13 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
         this.cellDelta = new Rect();
         this.context = context;
         this.resourcesProvider = resourcesProvider;
+        this.activityVisibilityController = LaunchActivity.obtainActivityVisibilityController();
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.MessageSendPreview.1
             @Override // android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
+                if (MessageSendPreview.this.activityVisibilityController != null) {
+                    MessageSendPreview.this.activityVisibilityController.setHidden(MessageSendPreview.this.openProgress == 1.0f && MessageSendPreview.this.blurBitmapPaint != null);
+                }
                 if (MessageSendPreview.this.openProgress > 0.0f && MessageSendPreview.this.blurBitmapPaint != null) {
                     MessageSendPreview.this.blurMatrix.reset();
                     float width = getWidth() / MessageSendPreview.this.blurBitmap.getWidth();
@@ -1136,6 +1143,11 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ void onDiceFinished() {
                         ChatMessageCell.ChatMessageCellDelegate.-CC.$default$onDiceFinished(this);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ boolean openArticlePhoto(ChatMessageCell chatMessageCell, TL_iv.PageBlock pageBlock) {
+                        return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$openArticlePhoto(this, chatMessageCell, pageBlock);
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -2307,7 +2319,7 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
             }
         });
         this.windowView.invalidate();
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.availableEffectsUpdate);
+        afterDismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2346,7 +2358,7 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
             spoilerEffect2.detach(this.windowView);
         }
         super.dismiss();
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.availableEffectsUpdate);
+        afterDismiss();
     }
 
     @Override // android.app.Dialog, android.content.DialogInterface
@@ -2370,7 +2382,7 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
             }
         });
         this.windowView.invalidate();
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.availableEffectsUpdate);
+        afterDismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2391,6 +2403,15 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$dismiss$9() {
         super.dismiss();
+    }
+
+    private void afterDismiss() {
+        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.availableEffectsUpdate);
+        WindowVisibilityManager.Controller controller = this.activityVisibilityController;
+        if (controller != null) {
+            controller.destroy();
+            this.activityVisibilityController = null;
+        }
     }
 
     private void animateOpenTo(final boolean z, final Runnable runnable) {

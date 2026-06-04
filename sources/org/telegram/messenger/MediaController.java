@@ -7434,7 +7434,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             outputStream.write(NotificationCenter.didReceiveSmsCode);
             outputStream.write(NotificationCenter.premiumFloodWaitReceived);
             outputStream.write(NotificationCenter.didReceiveSmsCode);
-            outputStream.write(225);
+            outputStream.write(NotificationCenter.botStarsUpdated);
             outputStream.write((length >> 8) & NotificationCenter.didReceiveSmsCode);
             outputStream.write(length & NotificationCenter.didReceiveSmsCode);
             outputStream.write(bytes);
@@ -8049,39 +8049,39 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:161:0x0349, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:161:0x034a, code lost:
     
         r15.close();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:163:0x034d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:163:0x034e, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:164:0x0390, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:164:0x0391, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:179:0x0347, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:179:0x0348, code lost:
     
         if (r15 != null) goto L337;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x00b1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x00b2, code lost:
     
-        if (r15 == 0) goto L343;
+        if (r15 == 0) goto L345;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x038d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x038e, code lost:
     
         if (r15 == null) goto L160;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x0530 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x00e7  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x0329  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x0100 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:345:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0545 A[LOOP:0: B:50:0x053f->B:52:0x0545, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x051c A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0531 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0072  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x00e8  */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x032a  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x0101 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:345:0x00eb  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0546 A[LOOP:0: B:50:0x0540->B:52:0x0546, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x051d A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -8660,13 +8660,34 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                             try {
                                 FileLog.e(th);
                                 if (cursor != null) {
+                                    try {
+                                        cursor.close();
+                                    } catch (Exception e4) {
+                                        e = e4;
+                                        albumEntry10 = albumEntry3;
+                                        FileLog.e(e);
+                                        albumEntry4 = albumEntry10;
+                                        AlbumEntry albumEntry1422 = albumEntry2;
+                                        Integer num222 = obj;
+                                        while (i2 < arrayList2.size()) {
+                                        }
+                                        broadcastNewPhotos(i, arrayList2, arrayList, num222, albumEntry1422, albumEntry13, albumEntry4, 0);
+                                    }
                                 }
                                 albumEntry4 = albumEntry3;
-                                AlbumEntry albumEntry1422 = albumEntry2;
-                                Integer num222 = obj;
-                                while (i2 < arrayList2.size()) {
+                                AlbumEntry albumEntry14222 = albumEntry2;
+                                Integer num2222 = obj;
+                                for (i2 = 0; i2 < arrayList2.size(); i2++) {
+                                    Collections.sort(((AlbumEntry) arrayList2.get(i2)).photos, new Comparator() { // from class: org.telegram.messenger.MediaController$$ExternalSyntheticLambda45
+                                        @Override // java.util.Comparator
+                                        public final int compare(Object obj2, Object obj3) {
+                                            int lambda$loadGalleryPhotosAlbums$56;
+                                            lambda$loadGalleryPhotosAlbums$56 = MediaController.lambda$loadGalleryPhotosAlbums$56((MediaController.PhotoEntry) obj2, (MediaController.PhotoEntry) obj3);
+                                            return lambda$loadGalleryPhotosAlbums$56;
+                                        }
+                                    });
                                 }
-                                broadcastNewPhotos(i, arrayList2, arrayList, num222, albumEntry1422, albumEntry13, albumEntry4, 0);
+                                broadcastNewPhotos(i, arrayList2, arrayList, num2222, albumEntry14222, albumEntry13, albumEntry4, 0);
                             } finally {
                             }
                         }
@@ -8687,11 +8708,11 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                                 if (cursor != null) {
                                 }
                                 albumEntry4 = albumEntry3;
-                                AlbumEntry albumEntry14222 = albumEntry2;
-                                Integer num2222 = obj;
+                                AlbumEntry albumEntry142222 = albumEntry2;
+                                Integer num22222 = obj;
                                 while (i2 < arrayList2.size()) {
                                 }
-                                broadcastNewPhotos(i, arrayList2, arrayList, num2222, albumEntry14222, albumEntry13, albumEntry4, 0);
+                                broadcastNewPhotos(i, arrayList2, arrayList, num22222, albumEntry142222, albumEntry13, albumEntry4, 0);
                             }
                         } catch (Throwable th25) {
                             th = th25;
@@ -8701,11 +8722,11 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                             if (cursor != null) {
                             }
                             albumEntry4 = albumEntry3;
-                            AlbumEntry albumEntry142222 = albumEntry2;
-                            Integer num22222 = obj;
+                            AlbumEntry albumEntry1422222 = albumEntry2;
+                            Integer num222222 = obj;
                             while (i2 < arrayList2.size()) {
                             }
-                            broadcastNewPhotos(i, arrayList2, arrayList, num22222, albumEntry142222, albumEntry13, albumEntry4, 0);
+                            broadcastNewPhotos(i, arrayList2, arrayList, num222222, albumEntry1422222, albumEntry13, albumEntry4, 0);
                         }
                     } else {
                         i5 = columnIndex15;
@@ -8729,27 +8750,6 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                                     albumEntry3 = albumEntry10;
                                     FileLog.e(th);
                                     if (cursor != null) {
-                                        try {
-                                            cursor.close();
-                                        } catch (Exception e4) {
-                                            e = e4;
-                                            albumEntry10 = albumEntry3;
-                                            FileLog.e(e);
-                                            albumEntry4 = albumEntry10;
-                                            AlbumEntry albumEntry1422222 = albumEntry2;
-                                            Integer num222222 = obj;
-                                            for (i2 = 0; i2 < arrayList2.size(); i2++) {
-                                                Collections.sort(((AlbumEntry) arrayList2.get(i2)).photos, new Comparator() { // from class: org.telegram.messenger.MediaController$$ExternalSyntheticLambda45
-                                                    @Override // java.util.Comparator
-                                                    public final int compare(Object obj2, Object obj3) {
-                                                        int lambda$loadGalleryPhotosAlbums$56;
-                                                        lambda$loadGalleryPhotosAlbums$56 = MediaController.lambda$loadGalleryPhotosAlbums$56((MediaController.PhotoEntry) obj2, (MediaController.PhotoEntry) obj3);
-                                                        return lambda$loadGalleryPhotosAlbums$56;
-                                                    }
-                                                });
-                                            }
-                                            broadcastNewPhotos(i, arrayList2, arrayList, num222222, albumEntry1422222, albumEntry13, albumEntry4, 0);
-                                        }
                                     }
                                     albumEntry4 = albumEntry3;
                                     AlbumEntry albumEntry14222222 = albumEntry2;

@@ -6,6 +6,7 @@ import android.util.Log;
 import android.util.Pair;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.Releasable;
 import com.google.android.gms.common.api.Result;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
@@ -19,6 +20,7 @@ import java.util.concurrent.atomic.AtomicReference;
 /* loaded from: classes.dex */
 public abstract class BasePendingResult<R extends Result> extends PendingResult {
     static final ThreadLocal zaa = new zaq();
+    private zas resultGuardian;
     protected final CallbackHandler zab;
     protected final WeakReference zac;
     private ResultCallback zah;
@@ -54,6 +56,7 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult 
         this.zaj = result;
         this.zak = result.getStatus();
         this.zaf.countDown();
+        zar zarVar = null;
         if (this.zam) {
             this.zah = null;
         } else {
@@ -61,6 +64,8 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult 
             if (resultCallback != null) {
                 this.zab.removeMessages(2);
                 this.zab.zaa(resultCallback, zaa());
+            } else if (this.zaj instanceof Releasable) {
+                this.resultGuardian = new zas(this, zarVar);
             }
         }
         ArrayList arrayList = this.zag;
@@ -72,6 +77,13 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult 
     }
 
     public static void zal(Result result) {
+        if (result instanceof Releasable) {
+            try {
+                ((Releasable) result).release();
+            } catch (RuntimeException e) {
+                Log.w("BasePendingResult", "Unable to release ".concat(String.valueOf(result)), e);
+            }
+        }
     }
 
     @Override // com.google.android.gms.common.api.PendingResult

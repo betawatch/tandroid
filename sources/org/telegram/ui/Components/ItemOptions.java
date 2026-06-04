@@ -1971,7 +1971,7 @@ public class ItemOptions {
             if (ItemOptions.this.blur) {
                 this.blurPaint = new Paint(3);
                 ItemOptions.this.scrimView.setAlpha(0.0f);
-                ScrimOptions.makeGlobalBlurBitmaps(new Utilities.Callback2() { // from class: org.telegram.ui.Components.ItemOptions$DimView$$ExternalSyntheticLambda3
+                ScrimOptions.makeGlobalBlurBitmaps(ItemOptions.this.pointContainer, new Utilities.Callback2() { // from class: org.telegram.ui.Components.ItemOptions$DimView$$ExternalSyntheticLambda3
                     @Override // org.telegram.messenger.Utilities.Callback2
                     public final void run(Object obj, Object obj2) {
                         ItemOptions.DimView.this.lambda$new$0((Bitmap) obj, (Bitmap) obj2);

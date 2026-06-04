@@ -43,6 +43,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.Theme;
@@ -389,6 +390,45 @@ public class ScrimOptions extends Dialog {
         callback2.run(applyColorMatrix, applyColorMatrix2);
     }
 
+    public static void makeGlobalBlurBitmaps(final View view, final Utilities.Callback2 callback2) {
+        if (view == null) {
+            makeGlobalBlurBitmaps(callback2);
+        } else {
+            AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda8
+                @Override // org.telegram.messenger.Utilities.Callback
+                public final void run(Object obj) {
+                    ScrimOptions.lambda$makeGlobalBlurBitmaps$8(view, callback2, (Bitmap) obj);
+                }
+            }, 15.0f);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$makeGlobalBlurBitmaps$8(View view, Utilities.Callback2 callback2, Bitmap bitmap) {
+        if (view.getWidth() > 0 && view.getHeight() > 0) {
+            view.getLocationOnScreen(new int[2]);
+            int clamp = Utilities.clamp((int) ((r0[0] / AndroidUtilities.displaySize.x) * bitmap.getWidth()), bitmap.getWidth(), 0);
+            int clamp2 = Utilities.clamp((int) ((r0[1] / ((AndroidUtilities.displaySize.y + AndroidUtilities.statusBarHeight) + AndroidUtilities.navigationBarHeight)) * bitmap.getHeight()), bitmap.getHeight(), 0);
+            int clamp3 = Utilities.clamp((int) ((view.getWidth() / AndroidUtilities.displaySize.x) * bitmap.getWidth()), bitmap.getWidth() - clamp, 0);
+            int clamp4 = Utilities.clamp((int) ((view.getHeight() / ((AndroidUtilities.displaySize.y + AndroidUtilities.statusBarHeight) + AndroidUtilities.navigationBarHeight)) * bitmap.getHeight()), bitmap.getHeight() - clamp2, 0);
+            if ((clamp != 0 || clamp2 != 0 || clamp3 != bitmap.getWidth() || clamp4 != bitmap.getHeight()) && clamp3 > 0 && clamp4 > 0) {
+                bitmap = Bitmap.createBitmap(bitmap, clamp, clamp2, clamp3, clamp4);
+            }
+        }
+        ColorMatrix colorMatrix = new ColorMatrix();
+        AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, Theme.isCurrentThemeDark() ? 0.04f : 0.25f);
+        AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, Theme.isCurrentThemeDark() ? -0.04f : -0.07f);
+        Bitmap applyColorMatrix = AndroidUtilities.applyColorMatrix(bitmap, colorMatrix);
+        applyColorMatrix.setHasAlpha(false);
+        ColorMatrix colorMatrix2 = new ColorMatrix();
+        colorMatrix2.setSaturation(Theme.isCurrentThemeDark() ? 2.0f : 3.0f);
+        AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix2, Theme.isCurrentThemeDark() ? -0.2f : -0.07f);
+        Bitmap applyColorMatrix2 = AndroidUtilities.applyColorMatrix(bitmap, colorMatrix2);
+        applyColorMatrix2.setHasAlpha(false);
+        bitmap.recycle();
+        callback2.run(applyColorMatrix, applyColorMatrix2);
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public void checkBitmapMatrix() {
         Blur3Utils.checkBitmapSourceMatrixScale(this.iBlur3SourceBitmap, this.windowView);
@@ -459,16 +499,17 @@ public class ScrimOptions extends Dialog {
         setScrim(chatMessageCell, characterStyle, charSequence, false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:106:0x0211 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x0212  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x0390  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x03a1  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x03b2  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x041c  */
-    /* JADX WARN: Removed duplicated region for block: B:145:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x03b7  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x039a  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0238 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x0239  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x03b7  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x03c8  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x03d9  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0443  */
+    /* JADX WARN: Removed duplicated region for block: B:152:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x03de  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x03c1  */
     /* JADX WARN: Removed duplicated region for block: B:45:0x0101  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0180  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -492,18 +533,21 @@ public class ScrimOptions extends Dialog {
         final Bitmap bitmap;
         SpannableStringBuilder spannableStringBuilder;
         int i6;
+        RichMessageLayout richMessageLayout;
+        RichMessageLayout.FoundLink findLink;
         ArrayList<ChatMessageCell.PollButton> pollButtons;
         int i7;
+        int i8;
         float f6;
         float f7;
-        int i8;
         int i9;
+        int i10;
         CharacterStyle[] characterStyleArr;
         if (chatMessageCell == null) {
             return;
         }
         this.scrimCell = chatMessageCell;
-        int i10 = 0;
+        int i11 = 0;
         this.isGroup = chatMessageCell.getCurrentMessagesGroup() != null;
         MessageObject messageObject = chatMessageCell.getMessageObject();
         boolean z2 = chatMessageCell.getExplanationLayout() != null && messageObject.expandedExplanation;
@@ -530,11 +574,11 @@ public class ScrimOptions extends Dialog {
             f3 = messageObject.textXOffset;
         }
         if (arrayList != null) {
-            int i11 = 0;
-            while (i11 < arrayList.size()) {
-                MessageObject.TextLayoutBlock textLayoutBlock = arrayList.get(i11);
+            int i12 = 0;
+            while (i12 < arrayList.size()) {
+                MessageObject.TextLayoutBlock textLayoutBlock = arrayList.get(i12);
                 StaticLayout staticLayout4 = textLayoutBlock.textLayout;
-                if (staticLayout4 != null && (staticLayout4.getText() instanceof Spanned) && (characterStyleArr = (CharacterStyle[]) ((Spanned) staticLayout4.getText()).getSpans(i10, staticLayout4.getText().length(), CharacterStyle.class)) != null) {
+                if (staticLayout4 != null && (staticLayout4.getText() instanceof Spanned) && (characterStyleArr = (CharacterStyle[]) ((Spanned) staticLayout4.getText()).getSpans(i11, staticLayout4.getText().length(), CharacterStyle.class)) != null) {
                     for (CharacterStyle characterStyle2 : characterStyleArr) {
                         if (characterStyle2 == characterStyle) {
                             i2 = ((Spanned) staticLayout4.getText()).getSpanStart(characterStyle);
@@ -545,11 +589,11 @@ public class ScrimOptions extends Dialog {
                             staticLayout = staticLayout4;
                             if (staticLayout == null && chatMessageCell.getDescriptionlayout() != null) {
                                 StaticLayout descriptionlayout = chatMessageCell.getDescriptionlayout();
-                                i8 = 0;
+                                i9 = 0;
                                 staticLayout = staticLayout;
-                                while (i8 == 0) {
+                                while (i9 == 0) {
                                     if (descriptionlayout != null && (descriptionlayout.getText() instanceof Spanned)) {
-                                        i9 = i;
+                                        i10 = i;
                                         CharacterStyle[] characterStyleArr2 = (CharacterStyle[]) ((Spanned) descriptionlayout.getText()).getSpans(0, descriptionlayout.getText().length(), CharacterStyle.class);
                                         if (characterStyleArr2 != null) {
                                             for (CharacterStyle characterStyle3 : characterStyleArr2) {
@@ -569,41 +613,37 @@ public class ScrimOptions extends Dialog {
                                             }
                                         }
                                     } else {
-                                        i9 = i;
+                                        i10 = i;
                                     }
-                                    i = i9;
-                                    i8++;
+                                    i = i10;
+                                    i9++;
                                     staticLayout = staticLayout;
                                 }
                             }
-                            if (staticLayout == null || (!(messageObject.isTodo() || messageObject.isPoll()) || (pollButtons = chatMessageCell.getPollButtons()) == null)) {
-                                i4 = i;
-                                f4 = f;
-                                staticLayout2 = staticLayout;
-                            } else {
-                                int i12 = 0;
-                                StaticLayout staticLayout5 = staticLayout;
-                                while (i12 < pollButtons.size()) {
-                                    ChatMessageCell.PollButton pollButton = pollButtons.get(i12);
-                                    StaticLayout staticLayout6 = pollButton.title;
-                                    if (staticLayout6 == null) {
-                                        i7 = i;
+                            if (staticLayout == null && ((messageObject.isTodo() || messageObject.isPoll()) && (pollButtons = chatMessageCell.getPollButtons()) != null)) {
+                                i7 = 0;
+                                staticLayout = staticLayout;
+                                while (i7 < pollButtons.size()) {
+                                    ChatMessageCell.PollButton pollButton = pollButtons.get(i7);
+                                    StaticLayout staticLayout5 = pollButton.title;
+                                    if (staticLayout5 == null) {
+                                        i8 = i;
                                     } else {
-                                        i7 = i;
-                                        if (staticLayout6.getText() instanceof Spanned) {
+                                        i8 = i;
+                                        if (staticLayout5.getText() instanceof Spanned) {
                                             f6 = f;
                                             f7 = f2;
-                                            CharacterStyle[] characterStyleArr3 = (CharacterStyle[]) ((Spanned) staticLayout6.getText()).getSpans(0, staticLayout6.getText().length(), CharacterStyle.class);
+                                            CharacterStyle[] characterStyleArr3 = (CharacterStyle[]) ((Spanned) staticLayout5.getText()).getSpans(0, staticLayout5.getText().length(), CharacterStyle.class);
                                             if (characterStyleArr3 != null) {
                                                 for (CharacterStyle characterStyle4 : characterStyleArr3) {
                                                     if (characterStyle4 == characterStyle) {
-                                                        int spanStart2 = ((Spanned) staticLayout6.getText()).getSpanStart(characterStyle);
-                                                        int spanEnd2 = ((Spanned) staticLayout6.getText()).getSpanEnd(characterStyle);
+                                                        int spanStart2 = ((Spanned) staticLayout5.getText()).getSpanStart(characterStyle);
+                                                        int spanEnd2 = ((Spanned) staticLayout5.getText()).getSpanEnd(characterStyle);
                                                         float f8 = pollButton.titleX;
                                                         float f9 = pollButton.titleY;
-                                                        staticLayout5 = staticLayout6;
+                                                        staticLayout = staticLayout5;
                                                         i2 = spanStart2;
-                                                        i = staticLayout6.getWidth();
+                                                        i = staticLayout5.getWidth();
                                                         i3 = spanEnd2;
                                                         f = f8;
                                                         f2 = f9;
@@ -611,25 +651,35 @@ public class ScrimOptions extends Dialog {
                                                     }
                                                 }
                                             }
-                                            i = i7;
+                                            i = i8;
                                             f2 = f7;
                                             f = f6;
-                                            i12++;
-                                            staticLayout5 = staticLayout5;
+                                            i7++;
+                                            staticLayout = staticLayout;
                                         }
                                     }
                                     f6 = f;
                                     f7 = f2;
-                                    i = i7;
+                                    i = i8;
                                     f2 = f7;
                                     f = f6;
-                                    i12++;
-                                    staticLayout5 = staticLayout5;
+                                    i7++;
+                                    staticLayout = staticLayout;
                                 }
-                                int i13 = i;
+                            }
+                            if (staticLayout == null || messageObject == null || (richMessageLayout = messageObject.richLayout) == null || (findLink = richMessageLayout.findLink(characterStyle)) == null) {
+                                i4 = i;
                                 f4 = f;
-                                i4 = i13;
-                                staticLayout2 = staticLayout5;
+                                staticLayout2 = staticLayout;
+                            } else {
+                                StaticLayout staticLayout6 = findLink.layout;
+                                int i13 = findLink.start;
+                                i3 = findLink.end;
+                                i2 = i13;
+                                i4 = findLink.originalWidth;
+                                f4 = chatMessageCell.getTextX() + findLink.x;
+                                f2 = findLink.y + chatMessageCell.getTextY();
+                                staticLayout2 = staticLayout6;
                             }
                             if (staticLayout2 != null && z2 && !z) {
                                 setScrim(chatMessageCell, characterStyle, charSequence, true);
@@ -889,8 +939,8 @@ public class ScrimOptions extends Dialog {
                         }
                     }
                 }
-                i11++;
-                i10 = 0;
+                i12++;
+                i11 = 0;
             }
         }
         i = 0;
@@ -899,9 +949,15 @@ public class ScrimOptions extends Dialog {
         staticLayout = null;
         if (staticLayout == null) {
             StaticLayout descriptionlayout2 = chatMessageCell.getDescriptionlayout();
-            i8 = 0;
+            i9 = 0;
             staticLayout = staticLayout;
-            while (i8 == 0) {
+            while (i9 == 0) {
+            }
+        }
+        if (staticLayout == null) {
+            i7 = 0;
+            staticLayout = staticLayout;
+            while (i7 < pollButtons.size()) {
             }
         }
         if (staticLayout == null) {

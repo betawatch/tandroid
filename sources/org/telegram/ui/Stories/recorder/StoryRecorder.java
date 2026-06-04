@@ -103,11 +103,13 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraView;
+import org.telegram.messenger.utils.WindowVisibilityManager;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.AccountFrozenAlert;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.AlertDialog;
@@ -354,6 +356,7 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
     private boolean videoTimerShown = true;
     private boolean applyContainerViewTranslation2 = true;
     private int frontfaceFlashMode = -1;
+    private final WindowVisibilityManager.Controller activityVisibilityController = LaunchActivity.obtainActivityVisibilityController();
 
     public interface ClosingViewProvider {
         SourceView getView(long j);
@@ -4014,13 +4017,13 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
         if (dualCameraView != null) {
             dualCameraView.destroy(true, null);
         }
-        Iterator it = MessagesController.findUpdates(updates, TLRPC.TL_updateStoryID.class).iterator();
+        Iterator it = MessagesController.findUpdates(updates, TL_update.TL_updateStoryID.class).iterator();
         while (true) {
             if (!it.hasNext()) {
                 i = -1;
                 break;
             }
-            TLRPC.TL_updateStoryID tL_updateStoryID = (TLRPC.TL_updateStoryID) it.next();
+            TL_update.TL_updateStoryID tL_updateStoryID = (TL_update.TL_updateStoryID) it.next();
             if (tL_updateStoryID.random_id == tL_startLive.random_id) {
                 i = tL_updateStoryID.id;
                 break;
@@ -9295,9 +9298,9 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
         if (z == this.isBackgroundVisible) {
             return;
         }
-        Activity activity = this.activity;
-        if (activity instanceof LaunchActivity) {
-            ((LaunchActivity) activity).drawerLayoutContainer.setAllowDrawContent(z);
+        WindowVisibilityManager.Controller controller = this.activityVisibilityController;
+        if (controller != null) {
+            controller.setHidden(!z);
         }
         this.isBackgroundVisible = z;
     }

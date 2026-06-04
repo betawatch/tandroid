@@ -2182,12 +2182,12 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
 
         /* JADX INFO: Access modifiers changed from: private */
         class PreviewGroupCell {
-            private Theme.MessageDrawable.PathDrawParams backgroundCacheParams;
+            private final Theme.MessageDrawable.PathDrawParams backgroundCacheParams;
             private float bottom;
             private Text buttonText;
-            private Paint buttonTextBgPaint;
+            private final Paint buttonTextBgPaint;
             private long buttonTextPrice;
-            private RectF buttonTextRect;
+            private final RectF buttonTextRect;
             final int gap;
             private GroupCalculator group;
             private float groupHeight;
@@ -2199,7 +2199,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
             private long lastMediaUpdate;
             private float left;
             public ArrayList media;
-            private Theme.MessageDrawable messageBackground;
+            private final Theme.MessageDrawable messageBackground;
             final int padding;
             private float previousGroupHeight;
             private float previousGroupWidth;

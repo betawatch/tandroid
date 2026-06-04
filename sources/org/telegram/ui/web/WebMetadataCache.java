@@ -1,23 +1,9 @@
 package org.telegram.ui.web;
 
-import android.R;
-import android.app.Activity;
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.os.Build;
 import android.text.TextUtils;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.webkit.JavascriptInterface;
-import android.webkit.ValueCallback;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.FrameLayout;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -25,21 +11,16 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.BotWebViewContainer;
-import org.telegram.ui.web.WebMetadataCache;
 
 /* loaded from: classes3.dex */
 public class WebMetadataCache {
@@ -48,10 +29,6 @@ public class WebMetadataCache {
     private boolean loaded;
     private boolean loading;
     private boolean saving;
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$retrieveFaviconAndSitename$5(String str) {
-    }
 
     public static WebMetadataCache getInstance() {
         if (instance == null) {
@@ -352,189 +329,5 @@ public class WebMetadataCache {
             hashMap.clear();
         }
         scheduleSave();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    static class SitenameProxy {
-        private final Utilities.Callback whenReceived;
-
-        public SitenameProxy(Utilities.Callback callback) {
-            this.whenReceived = callback;
-        }
-
-        @JavascriptInterface
-        public void post(final String str, final String str2) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.WebMetadataCache$SitenameProxy$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    WebMetadataCache.SitenameProxy.this.lambda$post$0(str, str2);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$post$0(String str, String str2) {
-            str.hashCode();
-            if (str.equals("siteNameEmpty")) {
-                this.whenReceived.run(null);
-            } else if (str.equals("siteName")) {
-                this.whenReceived.run(str2);
-            }
-        }
-    }
-
-    public static void retrieveFaviconAndSitename(final String str, final Utilities.Callback2 callback2) {
-        if (callback2 == null) {
-            return;
-        }
-        Context context = LaunchActivity.instance;
-        if (context == null) {
-            context = ApplicationLoader.applicationContext;
-        }
-        Activity findActivity = AndroidUtilities.findActivity(context);
-        if (findActivity == null) {
-            callback2.run(null, null);
-            return;
-        }
-        View rootView = findActivity.findViewById(R.id.content).getRootView();
-        if (!(rootView instanceof ViewGroup)) {
-            callback2.run(null, null);
-            return;
-        }
-        final FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.web.WebMetadataCache.1
-            @Override // android.view.ViewGroup, android.view.View
-            public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-                return false;
-            }
-
-            @Override // android.view.ViewGroup
-            protected boolean drawChild(Canvas canvas, View view, long j) {
-                return false;
-            }
-
-            @Override // android.view.View
-            public boolean onTouchEvent(MotionEvent motionEvent) {
-                return false;
-            }
-
-            @Override // android.widget.FrameLayout, android.view.View
-            protected void onMeasure(int i, int i2) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(500.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(500.0f), TLObject.FLAG_30));
-            }
-        };
-        ((ViewGroup) rootView).addView(frameLayout);
-        final WebView webView = new WebView(context);
-        WebSettings settings = webView.getSettings();
-        settings.setJavaScriptEnabled(true);
-        settings.setGeolocationEnabled(false);
-        settings.setDomStorageEnabled(true);
-        settings.setDatabaseEnabled(false);
-        settings.setSupportMultipleWindows(false);
-        settings.setAllowFileAccess(false);
-        settings.setAllowContentAccess(false);
-        settings.setCacheMode(1);
-        settings.setSaveFormData(false);
-        settings.setSavePassword(false);
-        webView.setVerticalScrollBarEnabled(false);
-        try {
-            settings.setUserAgentString(settings.getUserAgentString().replace("; wv)", ")"));
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        final boolean[] zArr = {false};
-        final String[] strArr = {null};
-        final Bitmap[] bitmapArr = {null};
-        final Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.web.WebMetadataCache$$ExternalSyntheticLambda5
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                WebMetadataCache.lambda$retrieveFaviconAndSitename$4(zArr, strArr, bitmapArr, str, webView, frameLayout, callback2, (Boolean) obj);
-            }
-        };
-        webView.setWebChromeClient(new WebChromeClient() { // from class: org.telegram.ui.web.WebMetadataCache.2
-            @Override // android.webkit.WebChromeClient
-            public void onReceivedIcon(WebView webView2, Bitmap bitmap) {
-                if (bitmap == null) {
-                    return;
-                }
-                Bitmap bitmap2 = bitmapArr[0];
-                if (bitmap2 == null || (bitmap2.getWidth() < bitmap.getWidth() && bitmapArr[0].getHeight() < bitmap.getHeight())) {
-                    bitmapArr[0] = bitmap;
-                    callback.run(Boolean.FALSE);
-                }
-            }
-        });
-        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.web.WebMetadataCache$$ExternalSyntheticLambda6
-            @Override // java.lang.Runnable
-            public final void run() {
-                WebMetadataCache.lambda$retrieveFaviconAndSitename$6(webView);
-            }
-        };
-        webView.setWebViewClient(new WebViewClient() { // from class: org.telegram.ui.web.WebMetadataCache.3
-            @Override // android.webkit.WebViewClient
-            public void onPageFinished(WebView webView2, String str2) {
-                super.onPageFinished(webView2, str2);
-                runnable.run();
-            }
-        });
-        webView.addJavascriptInterface(new SitenameProxy(new Utilities.Callback() { // from class: org.telegram.ui.web.WebMetadataCache$$ExternalSyntheticLambda7
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                WebMetadataCache.lambda$retrieveFaviconAndSitename$7(strArr, callback, (String) obj);
-            }
-        }), "TelegramWebview");
-        frameLayout.addView(webView, LayoutHelper.createFrame(-1, -1.0f));
-        webView.loadUrl(str);
-        runnable.run();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.WebMetadataCache$$ExternalSyntheticLambda8
-            @Override // java.lang.Runnable
-            public final void run() {
-                WebMetadataCache.lambda$retrieveFaviconAndSitename$8(Utilities.Callback.this);
-            }
-        }, 10000L);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$retrieveFaviconAndSitename$4(boolean[] zArr, String[] strArr, Bitmap[] bitmapArr, String str, WebView webView, FrameLayout frameLayout, Utilities.Callback2 callback2, Boolean bool) {
-        Bitmap bitmap;
-        if (zArr[0]) {
-            return;
-        }
-        if (bool.booleanValue() || (!TextUtils.isEmpty(strArr[0]) && (bitmap = bitmapArr[0]) != null && bitmap.getWidth() > AndroidUtilities.dp(28.0f) && bitmapArr[0].getHeight() > AndroidUtilities.dp(28.0f))) {
-            zArr[0] = true;
-            WebMetadata webMetadata = new WebMetadata();
-            webMetadata.domain = AndroidUtilities.getHostAuthority(str, true);
-            webMetadata.sitename = strArr[0];
-            Bitmap bitmap2 = bitmapArr[0];
-            if (bitmap2 != null) {
-                webMetadata.favicon = Bitmap.createBitmap(bitmap2);
-            }
-            getInstance().save(webMetadata);
-            webView.destroy();
-            AndroidUtilities.removeFromParent(webView);
-            AndroidUtilities.removeFromParent(frameLayout);
-            callback2.run(strArr[0], bitmapArr[0]);
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.webViewResolved, str);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$retrieveFaviconAndSitename$6(WebView webView) {
-        webView.evaluateJavascript(AndroidUtilities.readRes(org.telegram.messenger.R.raw.webview_ext).replace("$DEBUG$", "" + BuildVars.DEBUG_VERSION), new ValueCallback() { // from class: org.telegram.ui.web.WebMetadataCache$$ExternalSyntheticLambda9
-            @Override // android.webkit.ValueCallback
-            public final void onReceiveValue(Object obj) {
-                WebMetadataCache.lambda$retrieveFaviconAndSitename$5((String) obj);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$retrieveFaviconAndSitename$7(String[] strArr, Utilities.Callback callback, String str) {
-        strArr[0] = str;
-        callback.run(Boolean.FALSE);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$retrieveFaviconAndSitename$8(Utilities.Callback callback) {
-        callback.run(Boolean.TRUE);
     }
 }

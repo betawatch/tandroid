@@ -80,7 +80,8 @@ public final class FloatingToolbar {
             return lambda$static$0;
         }
     };
-    public static final List premiumOptions = Arrays.asList(Integer.valueOf(R.id.menu_bold), Integer.valueOf(R.id.menu_italic), Integer.valueOf(R.id.menu_strike), Integer.valueOf(R.id.menu_link), Integer.valueOf(R.id.menu_mono), Integer.valueOf(R.id.menu_underline), Integer.valueOf(R.id.menu_spoiler), Integer.valueOf(R.id.menu_quote));
+    public static final List STYLE_BUTTONS;
+    public static final List premiumOptions;
     BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory;
     private int currentStyle;
     private final Rect mContentRect;
@@ -101,6 +102,27 @@ public final class FloatingToolbar {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ boolean lambda$static$0(MenuItem menuItem) {
         return false;
+    }
+
+    static {
+        Integer valueOf = Integer.valueOf(R.id.menu_regular);
+        int i = R.id.menu_bold;
+        Integer valueOf2 = Integer.valueOf(i);
+        int i2 = R.id.menu_italic;
+        Integer valueOf3 = Integer.valueOf(i2);
+        int i3 = R.id.menu_strike;
+        Integer valueOf4 = Integer.valueOf(i3);
+        int i4 = R.id.menu_mono;
+        Integer valueOf5 = Integer.valueOf(i4);
+        int i5 = R.id.menu_underline;
+        Integer valueOf6 = Integer.valueOf(i5);
+        int i6 = R.id.menu_spoiler;
+        Integer valueOf7 = Integer.valueOf(i6);
+        int i7 = R.id.menu_link;
+        Integer valueOf8 = Integer.valueOf(i7);
+        int i8 = R.id.menu_quote;
+        STYLE_BUTTONS = Arrays.asList(valueOf, valueOf2, valueOf3, valueOf4, valueOf5, valueOf6, valueOf7, valueOf8, Integer.valueOf(i8), Integer.valueOf(R.id.menu_date));
+        premiumOptions = Arrays.asList(Integer.valueOf(i), Integer.valueOf(i2), Integer.valueOf(i3), Integer.valueOf(i7), Integer.valueOf(i4), Integer.valueOf(i5), Integer.valueOf(i6), Integer.valueOf(i8));
     }
 
     public void setOnPremiumLockClick(Runnable runnable) {
@@ -268,10 +290,11 @@ public final class FloatingToolbar {
         private final AnimatorSet mHideAnimation;
         private final int mIconTextSpacing;
         private boolean mIsOverflowOpen;
-        private final int mLineHeight;
+        private int mLineHeight;
         private final Interpolator mLinearOutSlowInInterpolator;
         private final Interpolator mLogAccelerateInterpolator;
-        private final ViewGroup mMainPanel;
+        private final LinearLayout mMainPanel;
+        private LinearLayout mMainPanelButtons;
         private Size mMainPanelSize;
         private final int mMarginHorizontal;
         private final int mMarginVertical;
@@ -957,9 +980,11 @@ public final class FloatingToolbar {
         }
 
         public List layoutMainPanelItems(List list, int i) {
+            LinearLayout linearLayout = this.mMainPanelButtons;
+            if (linearLayout == null) {
+                linearLayout = this.mMainPanel;
+            }
             LinkedList linkedList = new LinkedList(list);
-            this.mMainPanel.removeAllViews();
-            this.mMainPanel.setPaddingRelative(0, 0, 0, 0);
             Iterator it = linkedList.iterator();
             int i2 = i;
             boolean z = true;
@@ -981,7 +1006,7 @@ public final class FloatingToolbar {
                         break;
                     }
                     setButtonTagAndClickListener(createMenuItemButton, menuItem);
-                    this.mMainPanel.addView(createMenuItemButton);
+                    linearLayout.addView(createMenuItemButton);
                     ViewGroup.LayoutParams layoutParams = createMenuItemButton.getLayoutParams();
                     layoutParams.width = min;
                     createMenuItemButton.setLayoutParams(layoutParams);
@@ -991,7 +1016,7 @@ public final class FloatingToolbar {
                 }
             }
             if (!linkedList.isEmpty()) {
-                this.mMainPanel.setPaddingRelative(0, 0, this.mOverflowButtonSize.getWidth(), 0);
+                linearLayout.setPaddingRelative(0, 0, this.mOverflowButtonSize.getWidth(), 0);
             }
             this.mMainPanelSize = measure(this.mMainPanel);
             return linkedList;
@@ -1062,6 +1087,7 @@ public final class FloatingToolbar {
             this.mIsOverflowOpen = false;
             updateOverflowButtonClickListener();
             this.mMainPanel.removeAllViews();
+            this.mMainPanel.setPaddingRelative(0, 0, 0, 0);
             ArrayAdapter arrayAdapter = (ArrayAdapter) this.mOverflowPanel.getAdapter();
             arrayAdapter.clear();
             this.mOverflowPanel.setAdapter((ListAdapter) arrayAdapter);
@@ -1114,7 +1140,7 @@ public final class FloatingToolbar {
             this.mTransitionDurationScale = (int) (Math.sqrt((width * width) + (height * height)) / this.mContentContainer.getContext().getResources().getDisplayMetrics().density);
         }
 
-        private ViewGroup createMainPanel() {
+        private LinearLayout createMainPanel() {
             return new LinearLayout(this.mContext) { // from class: org.telegram.ui.ActionBar.FloatingToolbar.FloatingToolbarPopup.12
                 @Override // android.widget.LinearLayout, android.view.View
                 protected void onMeasure(int i, int i2) {

@@ -22,6 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.json.TLJsonBuilder;
 import org.telegram.tgnet.json.TLJsonParser;
 import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.tgnet.tl.TL_update;
 
 /* loaded from: classes3.dex */
 public class GroupCallMessagesController extends BaseController {
@@ -39,7 +40,7 @@ public class GroupCallMessagesController extends BaseController {
 
     private static native byte[] groupCallMessageEncryptImpl(long j, byte[] bArr);
 
-    public void processUpdate(TLRPC.TL_updateGroupCallMessage tL_updateGroupCallMessage) {
+    public void processUpdate(TL_update.TL_updateGroupCallMessage tL_updateGroupCallMessage) {
         final long j = tL_updateGroupCallMessage.call.id;
         long peerDialogId = DialogObject.getPeerDialogId(tL_updateGroupCallMessage.message.from_id);
         long j2 = tL_updateGroupCallMessage.message.id;
@@ -47,7 +48,7 @@ public class GroupCallMessagesController extends BaseController {
             return;
         }
         final GroupCallMessage groupCallMessage = new GroupCallMessage(this.currentAccount, peerDialogId, j2, tL_updateGroupCallMessage.message.message);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.GroupCallMessagesController$$ExternalSyntheticLambda5
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.GroupCallMessagesController$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 GroupCallMessagesController.this.lambda$processUpdate$0(j, groupCallMessage);
@@ -55,14 +56,14 @@ public class GroupCallMessagesController extends BaseController {
         });
     }
 
-    public void processUpdate(TLRPC.TL_updateGroupCallEncryptedMessage tL_updateGroupCallEncryptedMessage) {
+    public void processUpdate(TL_update.TL_updateGroupCallEncryptedMessage tL_updateGroupCallEncryptedMessage) {
         final long j = tL_updateGroupCallEncryptedMessage.call.id;
         final long peerDialogId = DialogObject.getPeerDialogId(tL_updateGroupCallEncryptedMessage.from_id);
         final byte[] bArr = tL_updateGroupCallEncryptedMessage.encrypted_message;
         if (getUserConfig().clientUserId == peerDialogId) {
             return;
         }
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.GroupCallMessagesController$$ExternalSyntheticLambda2
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.GroupCallMessagesController$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 GroupCallMessagesController.this.lambda$processUpdate$3(j, peerDialogId, bArr);
@@ -88,7 +89,7 @@ public class GroupCallMessagesController extends BaseController {
             tL_groupCallMessage = TLRPC.TL_groupCallMessage.TLJsonDeserialize(new TLJsonParser(new JSONObject(new String(groupCallMessageDecrypt))));
             if (tL_groupCallMessage == null) {
                 final GroupCallMessage groupCallMessage = new GroupCallMessage(this.currentAccount, j2, tL_groupCallMessage.random_id, tL_groupCallMessage.message);
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.GroupCallMessagesController$$ExternalSyntheticLambda3
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.GroupCallMessagesController$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
                         GroupCallMessagesController.this.lambda$processUpdate$1(j, groupCallMessage);
@@ -101,7 +102,7 @@ public class GroupCallMessagesController extends BaseController {
             tL_groupCallMessage2.message = tL_textWithEntities;
             tL_textWithEntities.text = LocaleController.getString(R.string.GroupCalMessageDecryptionError);
             final GroupCallMessage groupCallMessage2 = new GroupCallMessage(this.currentAccount, j2, 0L, tL_groupCallMessage2.message);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.GroupCallMessagesController$$ExternalSyntheticLambda4
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.GroupCallMessagesController$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
                     GroupCallMessagesController.this.lambda$processUpdate$2(j, groupCallMessage2);

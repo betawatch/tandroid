@@ -141,7 +141,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 }
             }
 
-            @Override // org.telegram.ui.Components.EditTextBoldCursor, android.view.View
+            @Override // android.view.View
             protected void dispatchDraw(Canvas canvas) {
                 super.dispatchDraw(canvas);
                 this.limit.setTextColor(this.limitColor.set(Theme.getColor(this.limitCount < 0 ? Theme.key_text_RedRegular : Theme.key_dialogSearchHint, LocationActivity.this.getResourceProvider())));
@@ -366,7 +366,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             int min = Math.min(2, (int) Math.ceil(f));
             BackupImageView backupImageView2 = this.mapPreview;
             TLRPC.GeoPoint geoPoint = this.geo;
-            backupImageView2.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i, min * NotificationCenter.commonChatsLoaded, 15, min)), i + "_" + NotificationCenter.commonChatsLoaded, this.mapLoadingDrawable, 0, (Object) null);
+            backupImageView2.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i, min * NotificationCenter.appConfigUpdated, 15, min)), i + "_" + NotificationCenter.appConfigUpdated, this.mapLoadingDrawable, 0, (Object) null);
             return;
         }
         backupImageView.setImageBitmap(null);

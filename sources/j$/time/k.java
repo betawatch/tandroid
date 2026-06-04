@@ -129,7 +129,7 @@ public final class k implements j$.time.temporal.m, j$.time.temporal.n {
             case 3:
                 return (z ? 1 : 0) + NotificationCenter.messagePlayingDidSeek;
             case 4:
-                return (z ? 1 : 0) + NotificationCenter.contentSettingsLoaded;
+                return (z ? 1 : 0) + NotificationCenter.musicListLoaded;
             case 5:
                 return (z ? 1 : 0) + NotificationCenter.onUserRingtonesUpdated;
             case 6:

@@ -70,8 +70,8 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
+import org.telegram.messenger.utils.Choreographer60FpsContent;
 import org.telegram.messenger.utils.DrawableUtils;
-import org.telegram.messenger.utils.FrameTickScheduler;
 import org.telegram.messenger.utils.tlutils.AmountUtils$Currency;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
@@ -82,7 +82,7 @@ import org.telegram.ui.AccountFrozenAlert;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda250;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda254;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AnimatedFloat;
@@ -1184,7 +1184,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     lambda$fillItems$24 = GiftSheet.this.lambda$fillItems$24((TL_stars.StarGift) obj);
                     return lambda$fillItems$24;
                 }
-            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda250()));
+            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda254()));
         }
         if (this.dialogId < 0) {
             arrayList2 = (ArrayList) Collection.-EL.stream(arrayList2).filter(new Predicate() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda20
@@ -1206,7 +1206,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     lambda$fillItems$25 = GiftSheet.lambda$fillItems$25((TL_stars.StarGift) obj);
                     return lambda$fillItems$25;
                 }
-            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda250()));
+            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda254()));
         }
         if (this.dialogId != UserConfig.getInstance(this.currentAccount).getClientUserId() && (giftsList3 = this.myGifts) != null) {
             Iterator it2 = giftsList3.gifts.iterator();
@@ -2985,7 +2985,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             }
             this.particlesAllowed = z;
             if (z) {
-                int frameSparseness = FrameTickScheduler.getFrameSparseness(15);
+                Choreographer60FpsContent choreographer60FpsContent = Choreographer60FpsContent.getInstance();
                 Runnable runnable = new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$StarsBackground$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -2993,9 +2993,9 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     }
                 };
                 this.invalidateRunnable = runnable;
-                FrameTickScheduler.subscribe(runnable, frameSparseness, 0);
+                choreographer60FpsContent.addFrameCallback(runnable, 15);
             } else {
-                FrameTickScheduler.unsubscribe(this.invalidateRunnable);
+                Choreographer60FpsContent.getInstance().removeFrameCallback(this.invalidateRunnable);
             }
             invalidateSelf();
         }

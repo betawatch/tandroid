@@ -71,9 +71,9 @@ public class GroupCallStatusIcon {
         if (nextInt < 32) {
             i = 0;
         } else {
-            i = NotificationCenter.commonChatsLoaded;
+            i = NotificationCenter.appConfigUpdated;
             if (nextInt < 64) {
-                i2 = NotificationCenter.commonChatsLoaded;
+                i2 = NotificationCenter.appConfigUpdated;
                 i = 120;
             } else {
                 i2 = 420;

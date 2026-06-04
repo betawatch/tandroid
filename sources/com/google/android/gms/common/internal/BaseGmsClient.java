@@ -1,6 +1,7 @@
 package com.google.android.gms.common.internal;
 
 import android.accounts.Account;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -530,6 +531,12 @@ public abstract class BaseGmsClient {
 
     public void triggerConnectionSuspended(int i) {
         this.zzb.sendMessage(this.zzb.obtainMessage(6, this.zzd.get(), i));
+    }
+
+    protected void triggerNotAvailable(ConnectionProgressReportCallbacks connectionProgressReportCallbacks, int i, PendingIntent pendingIntent) {
+        Preconditions.checkNotNull(connectionProgressReportCallbacks, "Connection progress callbacks cannot be null.");
+        this.zzc = connectionProgressReportCallbacks;
+        this.zzb.sendMessage(this.zzb.obtainMessage(3, this.zzd.get(), i, pendingIntent));
     }
 
     public boolean usesClientTelemetry() {

@@ -230,7 +230,7 @@ public abstract class Encoder {
         }
         int sizeInBytes = i - bitArray.getSizeInBytes();
         for (int i4 = 0; i4 < sizeInBytes; i4++) {
-            bitArray.appendBits((i4 & 1) == 0 ? NotificationCenter.channelSuggestedBotsUpdate : 17, 8);
+            bitArray.appendBits((i4 & 1) == 0 ? NotificationCenter.channelConnectedBotsUpdate : 17, 8);
         }
         if (bitArray.getSize() != i2) {
             throw new WriterException("Bits size does not equal capacity");

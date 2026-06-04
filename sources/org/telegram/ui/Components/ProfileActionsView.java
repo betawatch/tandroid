@@ -41,7 +41,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ProfileActivity;
 
 /* loaded from: classes5.dex */
-public abstract class ProfileActionsView extends View {
+public class ProfileActionsView extends View {
     private AccessibilityNodeProvider accessibilityNodeProvider;
     private final List actions;
     private int activeCount;

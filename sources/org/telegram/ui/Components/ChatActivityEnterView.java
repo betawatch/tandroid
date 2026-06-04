@@ -144,6 +144,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
@@ -5242,11 +5243,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Can't wrap try/catch for region: R(15:154|(1:236)(1:158)|159|(8:161|(1:189)(1:165)|(1:188)(1:171)|172|(4:174|(1:176)(1:182)|177|(1:181))|(1:184)|185|(1:187))|190|(3:192|(1:194)(1:196)|195)|197|(4:199|(1:201)(1:217)|(2:205|(1:215))|216)|218|(4:220|(1:234)(1:224)|225|(5:227|228|229|230|231))|235|228|229|230|231) */
-    /* JADX WARN: Can't wrap try/catch for region: R(31:13|(1:15)|16|(1:143)(1:22)|23|(3:25|(1:29)|30)(1:(9:108|(1:110)(1:135)|111|(3:115|(1:117)|118)|119|(3:121|(1:127)|128)|129|(1:133)|134)(2:136|(20:142|32|(1:36)|37|(1:106)|40|(1:103)(1:44)|45|(1:102)(1:49)|(1:101)|(4:56|(1:58)(1:64)|59|(1:63))|65|(1:71)|(1:73)|74|(4:76|(1:78)|(2:82|(1:92))|93)|94|95|96|97)))|31|32|(2:34|36)|37|(0)|104|106|40|(1:42)|103|45|(1:47)|102|(2:51|53)|101|(0)|65|(3:67|69|71)|(0)|74|(0)|94|95|96|97) */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0252  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x02a9  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x02c0  */
+    /* JADX WARN: Can't wrap try/catch for region: R(15:160|(1:242)(1:164)|165|(8:167|(1:195)(1:171)|(1:194)(1:177)|178|(4:180|(1:182)(1:188)|183|(1:187))|(1:190)|191|(1:193))|196|(3:198|(1:200)(1:202)|201)|203|(4:205|(1:207)(1:223)|(2:211|(1:221))|222)|224|(4:226|(1:240)(1:230)|231|(5:233|234|235|236|237))|241|234|235|236|237) */
+    /* JADX WARN: Can't wrap try/catch for region: R(31:13|(1:15)|16|(1:149)(1:22)|23|(3:25|(1:29)|30)(1:(11:108|(1:110)(1:141)|111|(1:140)(1:115)|116|(3:120|(1:122)|123)|124|(3:126|(1:132)|133)|134|(1:138)|139)(2:142|(20:148|32|(1:36)|37|(1:106)|40|(1:103)(1:44)|45|(1:102)(1:49)|(1:101)|(4:56|(1:58)(1:64)|59|(1:63))|65|(1:71)|(1:73)|74|(4:76|(1:78)|(2:82|(1:92))|93)|94|95|96|97)))|31|32|(2:34|36)|37|(0)|104|106|40|(1:42)|103|45|(1:47)|102|(2:51|53)|101|(0)|65|(3:67|69|71)|(0)|74|(0)|94|95|96|97) */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x027a  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x02d1  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x02e8  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -5457,9 +5458,18 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             tL_message2.from_id = MessagesController.getInstance(this.currentAccount).getPeer(UserConfig.getInstance(this.currentAccount).getClientUserId());
             EditTextCaption editTextCaption3 = this.messageEditText;
             CharSequence[] charSequenceArr = {new SpannableStringBuilder(editTextCaption3 == null ? "" : editTextCaption3.getTextToUse())};
-            MessageObject.addLinks(true, charSequenceArr[0]);
-            tL_message2.entities.addAll(MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr, true));
-            tL_message2.message = charSequenceArr[0].toString();
+            ArrayList<TL_iv.PageBlock> arrayList3 = new ArrayList<>();
+            MarkdownParser.parse(charSequenceArr[0].toString(), arrayList3);
+            if (BuildVars.DEBUG_PRIVATE_VERSION && MarkdownParser.isMarkdown(arrayList3)) {
+                tL_message2.flags2 |= 8192;
+                TL_iv.RichMessage richMessage = new TL_iv.RichMessage();
+                tL_message2.rich_message = richMessage;
+                richMessage.blocks = arrayList3;
+            } else {
+                MessageObject.addLinks(true, charSequenceArr[0]);
+                tL_message2.entities.addAll(MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr, true));
+                tL_message2.message = charSequenceArr[0].toString();
+            }
             MessageObject messageObject3 = this.replyingMessageObject;
             if (messageObject3 != null && !messageObject3.isTopicMainMessage) {
                 TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
@@ -8403,7 +8413,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (baseFragment != null) {
             new PremiumFeatureBottomSheet(baseFragment, 11, false).show();
         } else if (baseFragment.getContext() instanceof LaunchActivity) {
-            ((LaunchActivity) baseFragment.getContext()).lambda$runLinkRequest$99(new PremiumPreviewFragment(null));
+            ((LaunchActivity) baseFragment.getContext()).lambda$runLinkRequest$100(new PremiumPreviewFragment(null));
         }
     }
 
@@ -13185,7 +13195,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     ChatActivityEnterView.this.stickersExpanded = true;
                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 1);
                     ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
-                    chatActivityEnterView.stickersExpandedHeight = ((((chatActivityEnterView.sizeNotifierLayout.getHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(11.0f)) - ActionBar.getCurrentActionBarHeight()) - ChatActivityEnterView.this.getHeight();
+                    chatActivityEnterView.stickersExpandedHeight = ((((chatActivityEnterView.sizeNotifierLayout.getHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(6.0f)) - ActionBar.getCurrentActionBarHeight()) - ChatActivityEnterView.this.getHeight();
                     if (ChatActivityEnterView.this.searchingType == 2) {
                         ChatActivityEnterView chatActivityEnterView2 = ChatActivityEnterView.this;
                         int i = chatActivityEnterView2.stickersExpandedHeight;
@@ -13488,6 +13498,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
                 public boolean canScrollAway() {
                     return false;
+                }
+
+                @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
+                public /* synthetic */ boolean canSetTimer() {
+                    return PhotoViewer.PhotoViewerProvider.-CC.$default$canSetTimer(this);
                 }
 
                 @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
@@ -15198,7 +15213,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
         Point point = AndroidUtilities.displaySize;
         int i = point.x > point.y ? this.keyboardHeightLand : this.keyboardHeight;
-        int dp = ((((this.originalViewHeight - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(11.0f)) - ActionBar.getCurrentActionBarHeight()) - getHeight();
+        int dp = ((((this.originalViewHeight - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(6.0f)) - ActionBar.getCurrentActionBarHeight()) - getHeight();
         if (this.searchingType == 2) {
             dp = Math.min(dp, AndroidUtilities.dp(175.0f) + i);
         }
@@ -15340,7 +15355,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 }
                 int height = this.sizeNotifierLayout.getHeight();
                 this.originalViewHeight = height;
-                int dp = ((((height - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(11.0f)) - ActionBar.getCurrentActionBarHeight()) - getHeight();
+                int dp = ((((height - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(6.0f)) - ActionBar.getCurrentActionBarHeight()) - getHeight();
                 this.stickersExpandedHeight = dp;
                 if (this.searchingType == 2) {
                     this.stickersExpandedHeight = Math.min(dp, AndroidUtilities.dp(175.0f) + i);

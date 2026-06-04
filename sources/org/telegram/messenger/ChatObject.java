@@ -26,6 +26,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.GroupCallActivity;
 
 /* loaded from: classes3.dex */
@@ -264,7 +265,7 @@ public class ChatObject {
             }
         };
         private HashSet<Integer> loadingGuids = new HashSet<>();
-        private ArrayList<TLRPC.TL_updateGroupCallParticipants> updatesQueue = new ArrayList<>();
+        private ArrayList<TL_update.TL_updateGroupCallParticipants> updatesQueue = new ArrayList<>();
         private HashSet<Long> loadingUids = new HashSet<>();
         private HashSet<Long> loadingSsrcs = new HashSet<>();
         public final LongSparseArray currentSpeakingPeers = new LongSparseArray();
@@ -1060,7 +1061,7 @@ public class ChatObject {
             }
         }
 
-        private int isValidUpdate(TLRPC.TL_updateGroupCallParticipants tL_updateGroupCallParticipants) {
+        private int isValidUpdate(TL_update.TL_updateGroupCallParticipants tL_updateGroupCallParticipants) {
             int i = this.call.version;
             int i2 = i + 1;
             int i3 = tL_updateGroupCallParticipants.version;
@@ -1095,7 +1096,7 @@ public class ChatObject {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ int lambda$processUpdatesQueue$7(TLRPC.TL_updateGroupCallParticipants tL_updateGroupCallParticipants, TLRPC.TL_updateGroupCallParticipants tL_updateGroupCallParticipants2) {
+        public static /* synthetic */ int lambda$processUpdatesQueue$7(TL_update.TL_updateGroupCallParticipants tL_updateGroupCallParticipants, TL_update.TL_updateGroupCallParticipants tL_updateGroupCallParticipants2) {
             return AndroidUtilities.compare(tL_updateGroupCallParticipants.version, tL_updateGroupCallParticipants2.version);
         }
 
@@ -1104,15 +1105,15 @@ public class ChatObject {
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
                     int lambda$processUpdatesQueue$7;
-                    lambda$processUpdatesQueue$7 = ChatObject.Call.lambda$processUpdatesQueue$7((TLRPC.TL_updateGroupCallParticipants) obj, (TLRPC.TL_updateGroupCallParticipants) obj2);
+                    lambda$processUpdatesQueue$7 = ChatObject.Call.lambda$processUpdatesQueue$7((TL_update.TL_updateGroupCallParticipants) obj, (TL_update.TL_updateGroupCallParticipants) obj2);
                     return lambda$processUpdatesQueue$7;
                 }
             });
-            ArrayList<TLRPC.TL_updateGroupCallParticipants> arrayList = this.updatesQueue;
+            ArrayList<TL_update.TL_updateGroupCallParticipants> arrayList = this.updatesQueue;
             if (arrayList != null && !arrayList.isEmpty()) {
                 boolean z = false;
                 while (this.updatesQueue.size() > 0) {
-                    TLRPC.TL_updateGroupCallParticipants tL_updateGroupCallParticipants = this.updatesQueue.get(0);
+                    TL_update.TL_updateGroupCallParticipants tL_updateGroupCallParticipants = this.updatesQueue.get(0);
                     int isValidUpdate = isValidUpdate(tL_updateGroupCallParticipants);
                     if (isValidUpdate == 0) {
                         processParticipantsUpdate(tL_updateGroupCallParticipants, true);
@@ -1255,7 +1256,7 @@ public class ChatObject {
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
-        public void processParticipantsUpdate(TLRPC.TL_updateGroupCallParticipants tL_updateGroupCallParticipants, boolean z) {
+        public void processParticipantsUpdate(TL_update.TL_updateGroupCallParticipants tL_updateGroupCallParticipants, boolean z) {
             int i;
             int i2;
             long j;
@@ -1581,7 +1582,7 @@ public class ChatObject {
             return true;
         }
 
-        public void processGroupCallUpdate(TLRPC.TL_updateGroupCall tL_updateGroupCall) {
+        public void processGroupCallUpdate(TL_update.TL_updateGroupCall tL_updateGroupCall) {
             processGroupCallUpdate(tL_updateGroupCall.call);
         }
 

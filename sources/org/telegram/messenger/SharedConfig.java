@@ -63,7 +63,6 @@ public class SharedConfig {
     private static int chatSwipeAction = 0;
     private static boolean configLoaded = false;
     public static ProxyInfo currentProxy = null;
-    public static boolean customTabs = false;
     public static int dayNightThemeSwitchHintCount = 0;
     public static int dayNightWallpaperSwitchHint = 0;
     public static boolean debugVideoQualities = false;
@@ -90,7 +89,6 @@ public class SharedConfig {
     public static boolean hasCameraCache = false;
     public static boolean hasEmailLogin = false;
     private static HashSet<String> hevcEncoderWhitelist = null;
-    public static boolean inappBrowser = false;
     public static boolean inappCamera = false;
     public static boolean isFloatingDebugActive = false;
     public static boolean isWaitingForPasscodeEnter = false;
@@ -325,8 +323,6 @@ public class SharedConfig {
         raiseToListen = true;
         nextMediaTap = true;
         recordViaSco = false;
-        customTabs = true;
-        inappBrowser = true;
         adaptableColorInBrowser = true;
         onlyLocalInstantView = false;
         directShare = true;
@@ -522,15 +518,13 @@ public class SharedConfig {
         return i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0258  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x02b6 A[Catch: all -> 0x00f3, TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:55:0x016a, B:57:0x017c, B:59:0x0189, B:61:0x018f, B:62:0x0191, B:64:0x0195, B:66:0x019b, B:68:0x01a1, B:70:0x01a5, B:74:0x0183, B:29:0x01b3, B:31:0x0227, B:34:0x0233, B:37:0x025d, B:39:0x02b6, B:40:0x02b8, B:43:0x0484, B:46:0x0492, B:47:0x04fa, B:51:0x0479, B:80:0x01b0, B:81:0x0125, B:82:0x04fc), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0478  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x048f  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0491  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0479 A[Catch: all -> 0x00f3, TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:55:0x016a, B:57:0x017c, B:59:0x0189, B:61:0x018f, B:62:0x0191, B:64:0x0195, B:66:0x019b, B:68:0x01a1, B:70:0x01a5, B:74:0x0183, B:29:0x01b3, B:31:0x0227, B:34:0x0233, B:37:0x025d, B:39:0x02b6, B:40:0x02b8, B:43:0x0484, B:46:0x0492, B:47:0x04fa, B:51:0x0479, B:80:0x01b0, B:81:0x0125, B:82:0x04fc), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x025b  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0189 A[Catch: all -> 0x00f3, Exception -> 0x0164, Merged into TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:55:0x016a, B:57:0x017c, B:59:0x0189, B:61:0x018f, B:62:0x0191, B:64:0x0195, B:66:0x019b, B:68:0x01a1, B:70:0x01a5, B:74:0x0183, B:29:0x01b3, B:31:0x0227, B:34:0x0233, B:37:0x025d, B:39:0x02b6, B:40:0x02b8, B:43:0x0484, B:46:0x0492, B:47:0x04fa, B:51:0x0479, B:80:0x01b0, B:81:0x0125, B:82:0x04fc), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x018f A[Catch: all -> 0x00f3, Exception -> 0x0164, Merged into TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:55:0x016a, B:57:0x017c, B:59:0x0189, B:61:0x018f, B:62:0x0191, B:64:0x0195, B:66:0x019b, B:68:0x01a1, B:70:0x01a5, B:74:0x0183, B:29:0x01b3, B:31:0x0227, B:34:0x0233, B:37:0x025d, B:39:0x02b6, B:40:0x02b8, B:43:0x0484, B:46:0x0492, B:47:0x04fa, B:51:0x0479, B:80:0x01b0, B:81:0x0125, B:82:0x04fc), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x02ad A[Catch: all -> 0x00f3, TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b3, B:31:0x0218, B:34:0x0224, B:36:0x0249, B:39:0x0254, B:41:0x02ad, B:42:0x02af, B:45:0x047c, B:48:0x048a, B:49:0x04f2, B:53:0x0471, B:82:0x01b0, B:83:0x0125, B:84:0x04f4), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0470  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0487  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0489  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0471 A[Catch: all -> 0x00f3, TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b3, B:31:0x0218, B:34:0x0224, B:36:0x0249, B:39:0x0254, B:41:0x02ad, B:42:0x02af, B:45:0x047c, B:48:0x048a, B:49:0x04f2, B:53:0x0471, B:82:0x01b0, B:83:0x0125, B:84:0x04f4), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0189 A[Catch: all -> 0x00f3, Exception -> 0x0164, Merged into TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b3, B:31:0x0218, B:34:0x0224, B:36:0x0249, B:39:0x0254, B:41:0x02ad, B:42:0x02af, B:45:0x047c, B:48:0x048a, B:49:0x04f2, B:53:0x0471, B:82:0x01b0, B:83:0x0125, B:84:0x04f4), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x018f A[Catch: all -> 0x00f3, Exception -> 0x0164, Merged into TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b3, B:31:0x0218, B:34:0x0224, B:36:0x0249, B:39:0x0254, B:41:0x02ad, B:42:0x02af, B:45:0x047c, B:48:0x048a, B:49:0x04f2, B:53:0x0471, B:82:0x01b0, B:83:0x0125, B:84:0x04f4), top: B:3:0x0003 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -624,8 +618,6 @@ public class SharedConfig {
                             raiseToSpeak = sharedPreferences.getBoolean("raise_to_speak", false);
                             nextMediaTap = sharedPreferences.getBoolean("next_media_on_tap", true);
                             recordViaSco = sharedPreferences.getBoolean("record_via_sco", false);
-                            customTabs = sharedPreferences.getBoolean("custom_tabs", true);
-                            inappBrowser = sharedPreferences.getBoolean("inapp_browser", false);
                             adaptableColorInBrowser = sharedPreferences.getBoolean("adaptableBrowser", false);
                             onlyLocalInstantView = sharedPreferences.getBoolean("onlyLocalInstantView", BuildVars.DEBUG_PRIVATE_VERSION);
                             directShare = sharedPreferences.getBoolean("direct_share", true);
@@ -636,7 +628,7 @@ public class SharedConfig {
                             hasCameraCache = sharedPreferences.contains("cameraCache");
                             roundCamera16to9 = true;
                             repeatMode = sharedPreferences.getInt("repeatMode", 0);
-                            fontSize = sharedPreferences.getInt("fons_size", !AndroidUtilities.isTablet() ? 18 : 16);
+                            fontSize = sharedPreferences.getInt("fons_size", (AndroidUtilities.isTablet() || AndroidUtilities.isFold()) ? 16 : 18);
                             fontSizeIsDefault = !sharedPreferences.contains("fons_size");
                             bubbleRadius = sharedPreferences.getInt("bubbleRadius", 17);
                             ivFontSize = sharedPreferences.getInt("iv_font_size", fontSize);
@@ -744,8 +736,6 @@ public class SharedConfig {
                 raiseToSpeak = sharedPreferences.getBoolean("raise_to_speak", false);
                 nextMediaTap = sharedPreferences.getBoolean("next_media_on_tap", true);
                 recordViaSco = sharedPreferences.getBoolean("record_via_sco", false);
-                customTabs = sharedPreferences.getBoolean("custom_tabs", true);
-                inappBrowser = sharedPreferences.getBoolean("inapp_browser", false);
                 adaptableColorInBrowser = sharedPreferences.getBoolean("adaptableBrowser", false);
                 onlyLocalInstantView = sharedPreferences.getBoolean("onlyLocalInstantView", BuildVars.DEBUG_PRIVATE_VERSION);
                 directShare = sharedPreferences.getBoolean("direct_share", true);
@@ -756,7 +746,7 @@ public class SharedConfig {
                 hasCameraCache = sharedPreferences.contains("cameraCache");
                 roundCamera16to9 = true;
                 repeatMode = sharedPreferences.getInt("repeatMode", 0);
-                fontSize = sharedPreferences.getInt("fons_size", !AndroidUtilities.isTablet() ? 18 : 16);
+                fontSize = sharedPreferences.getInt("fons_size", (AndroidUtilities.isTablet() || AndroidUtilities.isFold()) ? 16 : 18);
                 fontSizeIsDefault = !sharedPreferences.contains("fons_size");
                 bubbleRadius = sharedPreferences.getInt("bubbleRadius", 17);
                 ivFontSize = sharedPreferences.getInt("iv_font_size", fontSize);
@@ -853,7 +843,7 @@ public class SharedConfig {
     public static void updateTabletConfig() {
         if (fontSizeIsDefault) {
             SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
-            int i = sharedPreferences.getInt("fons_size", AndroidUtilities.isTablet() ? 18 : 16);
+            int i = sharedPreferences.getInt("fons_size", (!AndroidUtilities.isTablet() || AndroidUtilities.isFold()) ? 16 : 18);
             fontSize = i;
             ivFontSize = sharedPreferences.getInt("iv_font_size", i);
         }
@@ -1422,20 +1412,6 @@ public class SharedConfig {
 
     public static boolean enabledRaiseTo(boolean z) {
         return raiseToListen && (!z || raiseToSpeak);
-    }
-
-    public static void toggleCustomTabs(boolean z) {
-        customTabs = z;
-        SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-        edit.putBoolean("custom_tabs", customTabs);
-        edit.apply();
-    }
-
-    public static void toggleInappBrowser() {
-        inappBrowser = !inappBrowser;
-        SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-        edit.putBoolean("inapp_browser", inappBrowser);
-        edit.apply();
     }
 
     public static void toggleBrowserAdaptableColors() {

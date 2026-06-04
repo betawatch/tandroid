@@ -153,7 +153,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.Callable;
@@ -3136,6 +3135,10 @@ public class AndroidUtilities {
 
     public static boolean isTablet() {
         return isTabletInternal() && !SharedConfig.forceDisableTabletMode;
+    }
+
+    public static boolean isFold() {
+        return ApplicationLoader.applicationContext != null && ApplicationLoader.applicationContext.getPackageManager().hasSystemFeature("android.hardware.sensor.hinge_angle");
     }
 
     public static boolean isSmallScreen() {
@@ -7187,15 +7190,27 @@ public class AndroidUtilities {
         }
     }
 
-    public static <A, B> B find(ArrayList<A> arrayList, Class<B> cls) {
-        if (arrayList == null) {
+    public static <A, B> B find(List<A> list, Class<B> cls) {
+        if (list == null) {
             return null;
         }
-        Iterator<A> it = arrayList.iterator();
-        while (it.hasNext()) {
-            A next = it.next();
-            if (cls.isInstance(next)) {
-                return cls.cast(next);
+        for (int i = 0; i < list.size(); i++) {
+            A a = list.get(i);
+            if (cls.isInstance(a)) {
+                return cls.cast(a);
+            }
+        }
+        return null;
+    }
+
+    public static <A, B> B findLast(List<A> list, Class<B> cls) {
+        if (list == null) {
+            return null;
+        }
+        for (int size = list.size() - 1; size >= 0; size--) {
+            A a = list.get(size);
+            if (cls.isInstance(a)) {
+                return cls.cast(a);
             }
         }
         return null;

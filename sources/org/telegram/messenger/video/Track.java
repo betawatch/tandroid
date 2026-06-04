@@ -175,7 +175,7 @@ public class Track {
                     } else if (integer2 == 32) {
                         avcConfigurationBox.setAvcProfileIndication(122);
                     } else if (integer2 == 64) {
-                        avcConfigurationBox.setAvcProfileIndication(NotificationCenter.contentSettingsLoaded);
+                        avcConfigurationBox.setAvcProfileIndication(NotificationCenter.musicListLoaded);
                     }
                 } else {
                     avcConfigurationBox.setAvcProfileIndication(100);

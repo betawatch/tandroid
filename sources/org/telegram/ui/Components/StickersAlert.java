@@ -575,7 +575,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
             File pathToAttach = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true);
             if (pathToAttach != null) {
                 try {
-                    photoEntry.averageDuration = (long) (RLottieDrawable.getDuration(pathToAttach.getAbsolutePath(), null) * 1000.0d);
+                    photoEntry.averageDuration = (long) (RLottieNative.getDuration(pathToAttach.getAbsolutePath(), null) * 1000.0d);
                 } catch (Exception e) {
                     FileLog.e(e);
                 }
@@ -2175,7 +2175,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
         if (baseFragment != null) {
             new PremiumFeatureBottomSheet(baseFragment, 11, false).show();
         } else if (getContext() instanceof LaunchActivity) {
-            ((LaunchActivity) getContext()).lambda$runLinkRequest$99(new PremiumPreviewFragment(null));
+            ((LaunchActivity) getContext()).lambda$runLinkRequest$100(new PremiumPreviewFragment(null));
         }
     }
 

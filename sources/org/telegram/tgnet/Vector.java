@@ -169,7 +169,7 @@ public class Vector<T extends TLObject> extends TLObject {
 
     public static void serializeString(final OutputSerializedData outputSerializedData, ArrayList<String> arrayList) {
         Objects.requireNonNull(outputSerializedData);
-        serialize(outputSerializedData, new Utilities.Callback() { // from class: org.telegram.tgnet.Vector$$ExternalSyntheticLambda7
+        serialize(outputSerializedData, new Utilities.Callback() { // from class: org.telegram.tgnet.Vector$$ExternalSyntheticLambda8
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 OutputSerializedData.this.writeString((String) obj);
@@ -179,7 +179,7 @@ public class Vector<T extends TLObject> extends TLObject {
 
     public static void serializeByteArray(OutputSerializedData outputSerializedData, ArrayList<byte[]> arrayList) {
         Objects.requireNonNull(outputSerializedData);
-        serialize(outputSerializedData, new TLRPC$TL_updateGroupCallChainBlocks$$ExternalSyntheticLambda0(outputSerializedData), arrayList);
+        serialize(outputSerializedData, new Vector$$ExternalSyntheticLambda7(outputSerializedData), arrayList);
     }
 
     private static <T> ArrayList<T> deserialize(InputSerializedData inputSerializedData, Utilities.CallbackReturn<Boolean, T> callbackReturn, boolean z) {

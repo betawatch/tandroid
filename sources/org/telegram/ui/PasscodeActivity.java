@@ -239,7 +239,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         CustomPhoneKeyboardView customPhoneKeyboardView = new CustomPhoneKeyboardView(context);
         this.keyboardView = customPhoneKeyboardView;
         customPhoneKeyboardView.setVisibility(isCustomKeyboardVisible() ? 0 : 8);
-        sizeNotifierFrameLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.starGiftsLoaded));
+        sizeNotifierFrameLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.starUserGiftsLoaded));
         int i4 = this.type;
         if (i4 == 0) {
             this.actionBar.setTitle(LocaleController.getString(R.string.Passcode));

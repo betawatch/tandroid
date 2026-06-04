@@ -1438,7 +1438,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         } else if (tLObject instanceof TLRPC.TL_urlAuthResultAccepted) {
             OAuthSheet.handle(false, this.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultAccepted) tLObject, null, null, null, false, this);
         } else if (tLObject instanceof TLRPC.TL_urlAuthResultDefault) {
-            AlertsCreator.showOpenUrlAlert(getContext(), str, false, true, true, false, 0L, null, null);
+            AlertsCreator.showOpenUrlAlert(getContext(), str, false, true, true, false, 0L, (Browser.Progress) null, (Theme.ResourcesProvider) null);
         }
     }
 
@@ -1467,19 +1467,19 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:254:0x0dc2 A[ADDED_TO_REGION, REMOVE, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:255:0x0dc3  */
-    /* JADX WARN: Removed duplicated region for block: B:463:0x128b  */
-    /* JADX WARN: Removed duplicated region for block: B:465:0x1297  */
-    /* JADX WARN: Removed duplicated region for block: B:721:0x0508  */
-    /* JADX WARN: Removed duplicated region for block: B:725:0x0516 A[Catch: Exception -> 0x04d9, TRY_LEAVE, TryCatch #17 {Exception -> 0x04d9, blocks: (B:707:0x04ba, B:709:0x04ca, B:711:0x04d0, B:714:0x04db, B:725:0x0516, B:728:0x050d, B:730:0x0511, B:731:0x04f0, B:734:0x04fb), top: B:706:0x04ba }] */
-    /* JADX WARN: Removed duplicated region for block: B:730:0x0511 A[Catch: Exception -> 0x04d9, TryCatch #17 {Exception -> 0x04d9, blocks: (B:707:0x04ba, B:709:0x04ca, B:711:0x04d0, B:714:0x04db, B:725:0x0516, B:728:0x050d, B:730:0x0511, B:731:0x04f0, B:734:0x04fb), top: B:706:0x04ba }] */
-    /* JADX WARN: Removed duplicated region for block: B:903:0x0eb8  */
-    /* JADX WARN: Removed duplicated region for block: B:935:0x075e  */
-    /* JADX WARN: Removed duplicated region for block: B:942:0x081f A[Catch: Exception -> 0x0743, TRY_LEAVE, TryCatch #43 {Exception -> 0x0743, blocks: (B:926:0x0719, B:942:0x081f, B:946:0x0766, B:948:0x076b, B:962:0x07ad, B:963:0x07b0, B:964:0x07b3, B:965:0x0785, B:968:0x0790, B:971:0x0798, B:974:0x07b6, B:975:0x07c0, B:987:0x0809, B:988:0x080d, B:989:0x0811, B:990:0x0815, B:991:0x0819, B:992:0x07c4, B:995:0x07cf, B:998:0x07d9, B:1001:0x07e3, B:1004:0x07ee, B:1007:0x0739, B:1010:0x0746, B:1013:0x0751), top: B:925:0x0719 }] */
-    /* JADX WARN: Removed duplicated region for block: B:957:0x07a6  */
-    /* JADX WARN: Removed duplicated region for block: B:964:0x07b3 A[Catch: Exception -> 0x0743, TryCatch #43 {Exception -> 0x0743, blocks: (B:926:0x0719, B:942:0x081f, B:946:0x0766, B:948:0x076b, B:962:0x07ad, B:963:0x07b0, B:964:0x07b3, B:965:0x0785, B:968:0x0790, B:971:0x0798, B:974:0x07b6, B:975:0x07c0, B:987:0x0809, B:988:0x080d, B:989:0x0811, B:990:0x0815, B:991:0x0819, B:992:0x07c4, B:995:0x07cf, B:998:0x07d9, B:1001:0x07e3, B:1004:0x07ee, B:1007:0x0739, B:1010:0x0746, B:1013:0x0751), top: B:925:0x0719 }] */
-    /* JADX WARN: Removed duplicated region for block: B:974:0x07b6 A[Catch: Exception -> 0x0743, TryCatch #43 {Exception -> 0x0743, blocks: (B:926:0x0719, B:942:0x081f, B:946:0x0766, B:948:0x076b, B:962:0x07ad, B:963:0x07b0, B:964:0x07b3, B:965:0x0785, B:968:0x0790, B:971:0x0798, B:974:0x07b6, B:975:0x07c0, B:987:0x0809, B:988:0x080d, B:989:0x0811, B:990:0x0815, B:991:0x0819, B:992:0x07c4, B:995:0x07cf, B:998:0x07d9, B:1001:0x07e3, B:1004:0x07ee, B:1007:0x0739, B:1010:0x0746, B:1013:0x0751), top: B:925:0x0719 }] */
+    /* JADX WARN: Removed duplicated region for block: B:254:0x0dc3 A[ADDED_TO_REGION, REMOVE, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x0dc4  */
+    /* JADX WARN: Removed duplicated region for block: B:463:0x128c  */
+    /* JADX WARN: Removed duplicated region for block: B:465:0x1298  */
+    /* JADX WARN: Removed duplicated region for block: B:669:0x0509  */
+    /* JADX WARN: Removed duplicated region for block: B:673:0x0517 A[Catch: Exception -> 0x04da, TRY_LEAVE, TryCatch #17 {Exception -> 0x04da, blocks: (B:655:0x04bb, B:657:0x04cb, B:659:0x04d1, B:662:0x04dc, B:673:0x0517, B:676:0x050e, B:678:0x0512, B:679:0x04f1, B:682:0x04fc), top: B:654:0x04bb }] */
+    /* JADX WARN: Removed duplicated region for block: B:678:0x0512 A[Catch: Exception -> 0x04da, TryCatch #17 {Exception -> 0x04da, blocks: (B:655:0x04bb, B:657:0x04cb, B:659:0x04d1, B:662:0x04dc, B:673:0x0517, B:676:0x050e, B:678:0x0512, B:679:0x04f1, B:682:0x04fc), top: B:654:0x04bb }] */
+    /* JADX WARN: Removed duplicated region for block: B:841:0x0eb9  */
+    /* JADX WARN: Removed duplicated region for block: B:935:0x075f  */
+    /* JADX WARN: Removed duplicated region for block: B:942:0x0820 A[Catch: Exception -> 0x0744, TRY_LEAVE, TryCatch #42 {Exception -> 0x0744, blocks: (B:926:0x071a, B:942:0x0820, B:946:0x0767, B:948:0x076c, B:962:0x07ae, B:963:0x07b1, B:964:0x07b4, B:965:0x0786, B:968:0x0791, B:971:0x0799, B:974:0x07b7, B:975:0x07c1, B:987:0x080a, B:988:0x080e, B:989:0x0812, B:990:0x0816, B:991:0x081a, B:992:0x07c5, B:995:0x07d0, B:998:0x07da, B:1001:0x07e4, B:1004:0x07ef, B:1007:0x073a, B:1010:0x0747, B:1013:0x0752), top: B:925:0x071a }] */
+    /* JADX WARN: Removed duplicated region for block: B:957:0x07a7  */
+    /* JADX WARN: Removed duplicated region for block: B:964:0x07b4 A[Catch: Exception -> 0x0744, TryCatch #42 {Exception -> 0x0744, blocks: (B:926:0x071a, B:942:0x0820, B:946:0x0767, B:948:0x076c, B:962:0x07ae, B:963:0x07b1, B:964:0x07b4, B:965:0x0786, B:968:0x0791, B:971:0x0799, B:974:0x07b7, B:975:0x07c1, B:987:0x080a, B:988:0x080e, B:989:0x0812, B:990:0x0816, B:991:0x081a, B:992:0x07c5, B:995:0x07d0, B:998:0x07da, B:1001:0x07e4, B:1004:0x07ef, B:1007:0x073a, B:1010:0x0747, B:1013:0x0752), top: B:925:0x071a }] */
+    /* JADX WARN: Removed duplicated region for block: B:974:0x07b7 A[Catch: Exception -> 0x0744, TryCatch #42 {Exception -> 0x0744, blocks: (B:926:0x071a, B:942:0x0820, B:946:0x0767, B:948:0x076c, B:962:0x07ae, B:963:0x07b1, B:964:0x07b4, B:965:0x0786, B:968:0x0791, B:971:0x0799, B:974:0x07b7, B:975:0x07c1, B:987:0x080a, B:988:0x080e, B:989:0x0812, B:990:0x0816, B:991:0x081a, B:992:0x07c5, B:995:0x07d0, B:998:0x07da, B:1001:0x07e4, B:1004:0x07ef, B:1007:0x073a, B:1010:0x0747, B:1013:0x0752), top: B:925:0x071a }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1491,6 +1491,9 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         BotWebViewVibrationEffect botWebViewVibrationEffect;
         BotWebViewVibrationEffect botWebViewVibrationEffect2;
         char c4;
+        TextView textView;
+        TextView textView2;
+        TextView textView3;
         boolean z;
         boolean z2;
         String str3;
@@ -1505,9 +1508,6 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         int i;
         int i2;
         String str7;
-        TextView textView;
-        TextView textView2;
-        TextView textView3;
         final String str8;
         boolean z6;
         LaunchActivity launchActivity;
@@ -6137,7 +6137,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 BaseFragment safeLastFragment;
                 MyWebView.this.d("onCreateWindow isDialog=" + z + " isUserGesture=" + z2 + " resultMsg=" + message);
                 String url = MyWebView.this.getUrl();
-                if (SharedConfig.inappBrowser) {
+                if (MessagesController.getInstance(UserConfig.selectedAccount).isWebBrowserInAppEnabled()) {
                     if (MyWebView.this.botWebViewContainer == null || (safeLastFragment = LaunchActivity.getSafeLastFragment()) == null) {
                         return false;
                     }

@@ -144,7 +144,7 @@ final class zzx {
             zza2.zzd(arrayList4);
         }
         zzc.zzl((zznu) zza2.zzq());
-        this.zzl.zze((zzno) zzc.zzq(), NotificationCenter.starGiftSoldOut);
+        this.zzl.zze((zzno) zzc.zzq(), NotificationCenter.updateStories);
     }
 
     final void zzf(CastSession castSession) {

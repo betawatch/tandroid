@@ -11,7 +11,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class TypeAdapter {
     public abstract Object read(JsonReader jsonReader);
 

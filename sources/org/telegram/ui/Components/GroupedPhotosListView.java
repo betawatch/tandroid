@@ -19,6 +19,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
 /* loaded from: classes5.dex */
 public class GroupedPhotosListView extends View implements GestureDetector.OnGestureListener {
@@ -133,7 +134,7 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
         ArrayList arrayList;
         boolean z;
         Object obj;
-        TLRPC.PageBlock pageBlock;
+        TL_iv.PageBlock pageBlock;
         boolean z2;
         int i;
         ?? r3;
@@ -218,7 +219,7 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
                 i2 = 0;
                 obj = null;
             } else {
-                TLRPC.PageBlock pageBlock2 = (TLRPC.PageBlock) pageBlockArr.get(currentIndex);
+                TL_iv.PageBlock pageBlock2 = (TL_iv.PageBlock) pageBlockArr.get(currentIndex);
                 long j = pageBlock2.groupId;
                 if (j != this.currentGroupId) {
                     this.currentGroupId = j;
@@ -231,21 +232,21 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
                     int size2 = pageBlockArr.size();
                     int i7 = currentIndex;
                     i2 = 0;
-                    TLRPC.PageBlock pageBlock3 = pageBlock2;
+                    TL_iv.PageBlock pageBlock3 = pageBlock2;
                     while (true) {
                         if (i7 >= size2) {
                             pageBlock = pageBlock3;
                             break;
                         }
                         pageBlock = pageBlock3;
-                        if (((TLRPC.PageBlock) pageBlockArr.get(i7)).groupId != this.currentGroupId) {
+                        if (((TL_iv.PageBlock) pageBlockArr.get(i7)).groupId != this.currentGroupId) {
                             break;
                         }
                         i2++;
                         i7++;
                         pageBlock3 = pageBlock;
                     }
-                    for (int i8 = currentIndex - 1; i8 >= 0 && ((TLRPC.PageBlock) pageBlockArr.get(i8)).groupId == this.currentGroupId; i8--) {
+                    for (int i8 = currentIndex - 1; i8 >= 0 && ((TL_iv.PageBlock) pageBlockArr.get(i8)).groupId == this.currentGroupId; i8--) {
                         i2++;
                     }
                     obj = pageBlock;
@@ -415,7 +416,7 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
                 if (pageBlockArr != null && !pageBlockArr.isEmpty() && this.currentGroupId != 0) {
                     int size4 = pageBlockArr.size();
                     for (int i13 = i12; i13 < size4; i13++) {
-                        TLRPC.PageBlock pageBlock4 = (TLRPC.PageBlock) pageBlockArr.get(i13);
+                        TL_iv.PageBlock pageBlock4 = (TL_iv.PageBlock) pageBlockArr.get(i13);
                         if (pageBlock4.groupId != this.currentGroupId) {
                             break;
                         }
@@ -426,7 +427,7 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
                     this.animateToItem = -1;
                     this.animateToItemFast = false;
                     for (int i14 = i12 - 1; i14 >= 0; i14--) {
-                        TLRPC.PageBlock pageBlock5 = (TLRPC.PageBlock) pageBlockArr.get(i14);
+                        TL_iv.PageBlock pageBlock5 = (TL_iv.PageBlock) pageBlockArr.get(i14);
                         if (pageBlock5.groupId != this.currentGroupId) {
                             break;
                         }
@@ -571,7 +572,7 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
                 freeReceiver.setImageCoords(i8, this.itemY, this.itemWidth, this.itemHeight);
                 if (this.currentObjects.get(0) instanceof MessageObject) {
                     obj2 = this.currentObjects.get(i2);
-                } else if (this.currentObjects.get(0) instanceof TLRPC.PageBlock) {
+                } else if (this.currentObjects.get(0) instanceof TL_iv.PageBlock) {
                     obj2 = this.delegate.getParentObject();
                 } else {
                     obj2 = "avatar_" + this.delegate.getAvatarsDialogId();
@@ -594,7 +595,7 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
                 freeReceiver2.setImageCoords(i11, this.itemY, this.itemWidth, this.itemHeight);
                 if (this.currentObjects.get(0) instanceof MessageObject) {
                     obj = this.currentObjects.get(i3);
-                } else if (this.currentObjects.get(0) instanceof TLRPC.PageBlock) {
+                } else if (this.currentObjects.get(0) instanceof TL_iv.PageBlock) {
                     obj = this.delegate.getParentObject();
                 } else {
                     obj = "avatar_" + this.delegate.getAvatarsDialogId();
@@ -649,7 +650,7 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
                     this.animateAllLine = true;
                     this.delegate.setCurrentIndex(indexOf);
                 } else if (pageBlockArr != null && !pageBlockArr.isEmpty()) {
-                    int indexOf2 = pageBlockArr.indexOf((TLRPC.PageBlock) this.currentObjects.get(param));
+                    int indexOf2 = pageBlockArr.indexOf((TL_iv.PageBlock) this.currentObjects.get(param));
                     if (currentIndex == indexOf2) {
                         return true;
                     }
@@ -705,7 +706,7 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
             if (imagesArr != null && !imagesArr.isEmpty()) {
                 i8 = imagesArr.indexOf((MessageObject) obj);
             } else if (pageBlockArr != null && !pageBlockArr.isEmpty()) {
-                i8 = pageBlockArr.indexOf((TLRPC.PageBlock) obj);
+                i8 = pageBlockArr.indexOf((TL_iv.PageBlock) obj);
             } else if (imagesArrLocations != null && !imagesArrLocations.isEmpty()) {
                 i8 = imagesArrLocations.indexOf((ImageLocation) obj);
             }

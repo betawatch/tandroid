@@ -1519,7 +1519,7 @@ abstract class AtomParsers {
                 } else {
                     int readUnsignedByte = parsableByteArray.readUnsignedByte();
                     i3 = readUnsignedByte & 15;
-                    i4 = (readUnsignedByte & NotificationCenter.commonChatsLoaded) >> 4;
+                    i4 = (readUnsignedByte & NotificationCenter.appConfigUpdated) >> 4;
                 }
                 boolean z = parsableByteArray.readUnsignedByte() == 1;
                 int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
@@ -1725,7 +1725,7 @@ abstract class AtomParsers {
             if (i2 % 2 == 0) {
                 int readUnsignedByte = this.data.readUnsignedByte();
                 this.currentByte = readUnsignedByte;
-                return (readUnsignedByte & NotificationCenter.commonChatsLoaded) >> 4;
+                return (readUnsignedByte & NotificationCenter.appConfigUpdated) >> 4;
             }
             return this.currentByte & 15;
         }

@@ -103,6 +103,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
 import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
@@ -1121,7 +1122,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         this.actionBar.setCastShadows(false);
         this.actionBar.setBackground(null);
         this.actionBar.setOccupyStatusBar(!AndroidUtilities.isTablet());
-        this.actionBar.setBackButtonDrawable(new BackDrawable(false).setTranslationX(-AndroidUtilities.dp(3.0f)));
+        this.actionBar.setBackButtonDrawable(new BackDrawable(false));
         this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ChannelAdminLogActivity.3
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
@@ -1132,8 +1133,9 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         });
         ChatAvatarContainer chatAvatarContainer = new ChatAvatarContainer(context, null, false);
         this.avatarContainer = chatAvatarContainer;
-        chatAvatarContainer.setOccupyStatusBar(!AndroidUtilities.isTablet());
-        this.actionBar.addView(this.avatarContainer, 0, LayoutHelper.createFrame(-2, -1.0f, 51, 47.0f, 0.0f, 40.0f, 0.0f));
+        chatAvatarContainer.setGlassMode();
+        this.avatarContainer.setOccupyStatusBar(!AndroidUtilities.isTablet());
+        this.actionBar.addView(this.avatarContainer, 0, LayoutHelper.createFrame(-2, -1.0f, 51, 54.0f, 0.0f, 52.0f, 0.0f));
         ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(0, R.drawable.outline_header_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.ChannelAdminLogActivity.4
             @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchCollapse() {
@@ -1161,8 +1163,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         });
         this.searchItem = actionBarMenuItemSearchListener;
         actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString(R.string.Search));
-        this.actionBar.getBackButton().setTranslationX(AndroidUtilities.dp(6.0f));
-        this.actionBar.menu.setTranslationX(-AndroidUtilities.dp(9.0f));
+        this.searchItem.setSearchPaddingStart(12);
         this.avatarContainer.setEnabled(false);
         this.avatarContainer.setTitle(this.currentChat.title);
         this.avatarContainer.setSubtitle(LocaleController.getString(R.string.EventLogAllEvents));
@@ -1349,8 +1350,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         this.navbarContentDrawableFactory.setSourceRootView(viewPositionWatcher, this.contentView);
         this.contentView.setOccupyStatusBar(!AndroidUtilities.isTablet());
         this.contentView.setBackgroundImage(Theme.getCachedWallpaper(), Theme.isWallpaperMotion());
-        ActionBar actionBar = this.actionBar;
-        actionBar.setGlassDrawable(this.glassBackgroundDrawableFactory.create(actionBar).setColorProvider(BlurredBackgroundProviderImpl.topPanelChatActivity(this.resourceProvider)).setRadius(AndroidUtilities.dp(26.0f)).setPadding(AndroidUtilities.dp(7.0f)));
+        this.actionBar.setupGlass(this.glassBackgroundDrawableFactory, BlurredBackgroundProviderImpl.topPanelChatActivity(this.resourceProvider));
         FrameLayout frameLayout = new FrameLayout(context);
         this.emptyViewContainer = frameLayout;
         frameLayout.setVisibility(4);
@@ -1512,9 +1512,9 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         this.chatListView.setClipToPadding(false);
         this.chatListView.setPadding(0, this.recommendedAdditionalSizeY + AndroidUtilities.statusBarHeight + ActionBar.getCurrentActionBarHeight() + AndroidUtilities.dp(4.0f), 0, this.recommendedAdditionalSizeY + AndroidUtilities.dp(60.0f) + AndroidUtilities.navigationBarHeight);
         ChatListRecyclerView chatListRecyclerView3 = this.chatListView;
-        9 r11 = new 9(null, this.chatListView, this.resourceProvider);
-        this.chatListItemAnimator = r11;
-        chatListRecyclerView3.setItemAnimator(r11);
+        9 r12 = new 9(null, this.chatListView, this.resourceProvider);
+        this.chatListItemAnimator = r12;
+        chatListRecyclerView3.setItemAnimator(r12);
         this.chatListItemAnimator.setReversePositions(true);
         this.chatListView.setLayoutAnimation(null);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context) { // from class: org.telegram.ui.ChannelAdminLogActivity.10
@@ -3583,6 +3583,11 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ void onDiceFinished() {
                 ChatMessageCell.ChatMessageCellDelegate.-CC.$default$onDiceFinished(this);
+            }
+
+            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+            public /* synthetic */ boolean openArticlePhoto(ChatMessageCell chatMessageCell, TL_iv.PageBlock pageBlock) {
+                return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$openArticlePhoto(this, chatMessageCell, pageBlock);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

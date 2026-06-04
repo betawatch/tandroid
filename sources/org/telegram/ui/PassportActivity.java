@@ -8299,7 +8299,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         }
         int i3 = i % NotificationCenter.didReceiveSmsCode;
         if (i3 != 239) {
-            int i4 = NotificationCenter.messagesFeeUpdated - i3;
+            int i4 = NotificationCenter.commonChatsLoaded - i3;
             int nextInt = Utilities.random.nextInt(32);
             int i5 = (bArr[nextInt] & 255) + i4;
             if (i5 < 255) {

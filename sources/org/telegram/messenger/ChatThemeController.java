@@ -31,6 +31,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.EmojiThemes;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.theme.ThemeKey;
@@ -95,7 +96,7 @@ public class ChatThemeController extends BaseController {
             FileLog.e(e);
         }
         this.allChatThemes = getAllChatThemesFromPrefs();
-        getMessagesStorage().loadGiftChatTheme(new Utilities.Callback() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda15
+        getMessagesStorage().loadGiftChatTheme(new Utilities.Callback() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda13
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ChatThemeController.this.lambda$init$0((List) obj);
@@ -152,7 +153,7 @@ public class ChatThemeController extends BaseController {
             ConnectionsManager connectionsManager = getConnectionsManager();
             DispatchQueue dispatchQueue = chatThemeQueue;
             Objects.requireNonNull(dispatchQueue);
-            connectionsManager.sendRequestTyped(getchatthemes, new ChatThemeController$$ExternalSyntheticLambda10(dispatchQueue), new Utilities.Callback2() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda21
+            connectionsManager.sendRequestTyped(getchatthemes, new ChatThemeController$$ExternalSyntheticLambda8(dispatchQueue), new Utilities.Callback2() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda21
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     ChatThemeController.this.lambda$requestAllChatThemes$3(resultCallback, z, (TL_account.Themes) obj, (TLRPC.TL_error) obj2);
@@ -359,7 +360,7 @@ public class ChatThemeController extends BaseController {
             TLRPC.TL_messages_setChatTheme tL_messages_setChatTheme = new TLRPC.TL_messages_setChatTheme();
             tL_messages_setChatTheme.theme = ThemeKey.toInputTheme(themeKey);
             tL_messages_setChatTheme.peer = getMessagesController().getInputPeer(j);
-            getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new Utilities.Callback2() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda14
+            getConnectionsManager().sendRequestTyped(tL_messages_setChatTheme, null, new Utilities.Callback2() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda12
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     ChatThemeController.this.lambda$setDialogTheme$4((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
@@ -486,7 +487,7 @@ public class ChatThemeController extends BaseController {
             resultCallback.onComplete(null);
         } else {
             final File patternFile = getPatternFile(j);
-            chatThemeQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda12
+            chatThemeQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda10
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatThemeController.lambda$getWallpaperBitmap$7(patternFile, resultCallback);
@@ -510,7 +511,7 @@ public class ChatThemeController extends BaseController {
         if (file.exists()) {
             bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
             if (resultCallback == null) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda13
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda11
                     @Override // java.lang.Runnable
                     public final void run() {
                         ResultCallback.this.onComplete(bitmap);
@@ -531,7 +532,7 @@ public class ChatThemeController extends BaseController {
 
     private void saveWallpaperBitmap(final Bitmap bitmap, long j) {
         final File patternFile = getPatternFile(j);
-        chatThemeQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda8
+        chatThemeQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
                 ChatThemeController.lambda$saveWallpaperBitmap$8(patternFile, bitmap);
@@ -788,7 +789,7 @@ public class ChatThemeController extends BaseController {
         getSharedPreferences().edit().clear().apply();
     }
 
-    public void processUpdate(TLRPC.TL_updatePeerWallpaper tL_updatePeerWallpaper) {
+    public void processUpdate(TL_update.TL_updatePeerWallpaper tL_updatePeerWallpaper) {
         if (tL_updatePeerWallpaper.peer instanceof TLRPC.TL_peerUser) {
             final TLRPC.UserFull userFull = getMessagesController().getUserFull(tL_updatePeerWallpaper.peer.user_id);
             if (userFull == null || wallpaperEquals(userFull.wallpaper, tL_updatePeerWallpaper.wallpaper)) {
@@ -806,7 +807,7 @@ public class ChatThemeController extends BaseController {
             }
             getMessagesStorage().updateUserInfo(userFull, false);
             saveChatWallpaper(j, userFull.wallpaper);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda2
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda14
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatThemeController.this.lambda$processUpdate$13(j, userFull);
@@ -828,7 +829,7 @@ public class ChatThemeController extends BaseController {
         }
         getMessagesStorage().updateChatInfo(chatFull, false);
         saveChatWallpaper(j2, chatFull.wallpaper);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda3
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda15
             @Override // java.lang.Runnable
             public final void run() {
                 ChatThemeController.this.lambda$processUpdate$14(chatFull);
@@ -919,7 +920,7 @@ public class ChatThemeController extends BaseController {
                 notificationCenter.lambda$postNotificationNameOnUIThread$1(i, chatFull, 0, bool, bool);
             }
         }
-        getConnectionsManager().sendRequest(tL_messages_setChatWallPaper, new RequestDelegate() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda4
+        getConnectionsManager().sendRequest(tL_messages_setChatWallPaper, new RequestDelegate() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda2
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 ChatThemeController.lambda$clearWallpaper$15(tLObject, tL_error);
@@ -1033,7 +1034,7 @@ public class ChatThemeController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setWallpaperToPeer$17(final long j, final boolean z, final String str, final Runnable runnable, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda9
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
                 ChatThemeController.this.lambda$setWallpaperToPeer$16(tLObject, j, z, str, runnable);
@@ -1066,8 +1067,8 @@ public class ChatThemeController extends BaseController {
                 if (i >= updates.updates.size()) {
                     break;
                 }
-                if (updates.updates.get(i) instanceof TLRPC.TL_updateNewMessage) {
-                    TLRPC.MessageAction messageAction = ((TLRPC.TL_updateNewMessage) updates.updates.get(i)).message.action;
+                if (updates.updates.get(i) instanceof TL_update.TL_updateNewMessage) {
+                    TLRPC.MessageAction messageAction = ((TL_update.TL_updateNewMessage) updates.updates.get(i)).message.action;
                     if (messageAction instanceof TLRPC.TL_messageActionSetChatWallPaper) {
                         if (z) {
                             TLRPC.TL_messageActionSetChatWallPaper tL_messageActionSetChatWallPaper = (TLRPC.TL_messageActionSetChatWallPaper) messageAction;
@@ -1186,7 +1187,7 @@ public class ChatThemeController extends BaseController {
             ConnectionsManager connectionsManager = getConnectionsManager();
             DispatchQueue dispatchQueue = chatThemeQueue;
             Objects.requireNonNull(dispatchQueue);
-            connectionsManager.sendRequestTyped(tl_getUniqueGiftChatThemes, new ChatThemeController$$ExternalSyntheticLambda10(dispatchQueue), new Utilities.Callback2() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda11
+            connectionsManager.sendRequestTyped(tl_getUniqueGiftChatThemes, new ChatThemeController$$ExternalSyntheticLambda8(dispatchQueue), new Utilities.Callback2() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda9
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     ChatThemeController.this.lambda$requestNextChatThemes$21(resultCallback, (TL_account.ChatThemes) obj, (TLRPC.TL_error) obj2);
@@ -1198,7 +1199,7 @@ public class ChatThemeController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$requestNextChatThemes$21(final ResultCallback resultCallback, TL_account.ChatThemes chatThemes, final TLRPC.TL_error tL_error) {
         if (tL_error != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda5
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
                     ResultCallback.this.onError(tL_error);
@@ -1226,7 +1227,7 @@ public class ChatThemeController extends BaseController {
                 emojiThemes.preloadWallpaper();
                 arrayList2.add(emojiThemes);
             }
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda6
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatThemeController.this.lambda$requestNextChatThemes$19(tl_chatThemes, arrayList2, arrayList, resultCallback);
@@ -1235,7 +1236,7 @@ public class ChatThemeController extends BaseController {
             return;
         }
         if (chatThemes instanceof TL_account.TL_chatThemesNotModified) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda7
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ChatThemeController$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatThemeController.this.lambda$requestNextChatThemes$20(resultCallback);

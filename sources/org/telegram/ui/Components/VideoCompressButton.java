@@ -36,7 +36,7 @@ public class VideoCompressButton extends View {
         this.clearPaint = paint3;
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
         this.disabledT = new AnimatedFloat(this, 0L, 300L, cubicBezierInterpolator);
-        this.sizes = new int[]{NotificationCenter.filePreparingStarted, NotificationCenter.commonChatsLoaded, 360, 480, 720, 1080, 1440, 2160};
+        this.sizes = new int[]{NotificationCenter.filePreparingStarted, NotificationCenter.appConfigUpdated, 360, 480, 720, 1080, 1440, 2160};
         AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = new AnimatedTextView.AnimatedTextDrawable(true, false, false);
         this.textDrawable = animatedTextDrawable;
         animatedTextDrawable.setAnimationProperties(0.4f, 0L, 360L, cubicBezierInterpolator);

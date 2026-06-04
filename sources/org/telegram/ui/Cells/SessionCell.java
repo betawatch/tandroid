@@ -26,6 +26,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.AvatarDrawable;
@@ -52,7 +53,7 @@ public class SessionCell extends FrameLayout {
     private boolean showStub;
     private AnimatedFloat showStubValue;
 
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x0215, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x021c, code lost:
     
         if (r25 == 0) goto L91;
      */
@@ -89,6 +90,7 @@ public class SessionCell extends FrameLayout {
             BackupImageView backupImageView4 = this.placeholderImageView;
             boolean z3 = LocaleController.isRTL;
             addView(backupImageView4, LayoutHelper.createFrame(42, 42.0f, (z3 ? 5 : 3) | 48, z3 ? 0 : 16, 9.0f, z3 ? 16 : 0, 0.0f));
+            this.avatarDrawable = new AvatarDrawable();
             BackupImageView backupImageView5 = new BackupImageView(context);
             this.imageView = backupImageView5;
             backupImageView5.setRoundRadius(AndroidUtilities.dp(10.0f));
@@ -191,7 +193,19 @@ public class SessionCell extends FrameLayout {
         String str;
         String stringForMessageListDate;
         this.needDivider = z;
-        if (tLObject instanceof TLRPC.TL_authorization) {
+        this.imageView.setRoundRadius(AndroidUtilities.dp(10.0f));
+        if (tLObject instanceof TL_account.TL_connectedBot) {
+            TL_account.TL_connectedBot tL_connectedBot = (TL_account.TL_connectedBot) tLObject;
+            TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(tL_connectedBot.bot_id));
+            this.avatarDrawable.setInfo(user);
+            this.imageView.setRoundRadius(AndroidUtilities.dp(21.0f));
+            this.imageView.setForUserOrChat(user, this.avatarDrawable);
+            this.nameTextView.setText(UserObject.getUserName(user));
+            this.detailTextView.setText(LocaleController.getString(R.string.SessionBot));
+            if (TLObject.hasFlag(tL_connectedBot.flags, 2)) {
+                this.detailExTextView.setText(LocaleController.formatString(R.string.SessionBotConnectedOn, LocaleController.formatDateTime(tL_connectedBot.date, false)));
+            }
+        } else if (tLObject instanceof TLRPC.TL_authorization) {
             TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) tLObject;
             this.imageView.setImageDrawable(createDrawable(42, tL_authorization));
             StringBuilder sb = new StringBuilder();
@@ -235,12 +249,12 @@ public class SessionCell extends FrameLayout {
             this.detailTextView.setText(sb2);
         } else if (tLObject instanceof TLRPC.TL_webAuthorization) {
             TLRPC.TL_webAuthorization tL_webAuthorization = (TLRPC.TL_webAuthorization) tLObject;
-            TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(tL_webAuthorization.bot_id));
+            TLRPC.User user2 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(tL_webAuthorization.bot_id));
             this.nameTextView.setText(tL_webAuthorization.domain);
-            if (user != null) {
-                this.avatarDrawable.setInfo(this.currentAccount, user);
-                str = UserObject.getFirstName(user);
-                this.imageView.setForUserOrChat(user, this.avatarDrawable);
+            if (user2 != null) {
+                this.avatarDrawable.setInfo(this.currentAccount, user2);
+                str = UserObject.getFirstName(user2);
+                this.imageView.setForUserOrChat(user2, this.avatarDrawable);
             } else {
                 str = "";
             }

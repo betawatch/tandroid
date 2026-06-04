@@ -1,5 +1,6 @@
 package org.telegram.ui.Business;
 
+import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
 import java.util.ArrayList;
@@ -14,14 +15,19 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
+import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.UsersSelectActivity;
 
 /* loaded from: classes4.dex */
 public class BusinessRecipientsHelper {
+    public final ArrayList alwaysShow;
     public boolean bot;
+    public final Context context;
+    public final int currentAccount;
     private TL_account.TL_businessBotRecipients currentValue;
     private boolean doNotExcludeNewChats;
     public boolean exclude;
@@ -30,14 +36,31 @@ public class BusinessRecipientsHelper {
     public final BaseFragment fragment;
     public boolean includeExpanded;
     public int includeFlags;
+    public final ArrayList neverShow;
+    public final Theme.ResourcesProvider resourcesProvider;
+    private int shiftDp;
     public final Runnable update;
-    public final ArrayList alwaysShow = new ArrayList();
-    public final ArrayList neverShow = new ArrayList();
-    private int shiftDp = -4;
 
     public BusinessRecipientsHelper(BaseFragment baseFragment, Runnable runnable) {
+        this.alwaysShow = new ArrayList();
+        this.neverShow = new ArrayList();
+        this.shiftDp = -4;
+        this.context = baseFragment.getContext();
+        this.currentAccount = baseFragment.getCurrentAccount();
         this.fragment = baseFragment;
         this.update = runnable;
+        this.resourcesProvider = baseFragment.getResourceProvider();
+    }
+
+    public BusinessRecipientsHelper(Context context, int i, Runnable runnable, Theme.ResourcesProvider resourcesProvider) {
+        this.alwaysShow = new ArrayList();
+        this.neverShow = new ArrayList();
+        this.shiftDp = -4;
+        this.context = context;
+        this.currentAccount = i;
+        this.fragment = null;
+        this.update = runnable;
+        this.resourcesProvider = resourcesProvider;
     }
 
     public int getFlags() {
@@ -59,11 +82,11 @@ public class BusinessRecipientsHelper {
             }
         }
         if (this.bot && !this.exclude) {
-            if (this.neverShow.size() != this.currentValue.users.size()) {
+            if (this.neverShow.size() != this.currentValue.exclude_users.size()) {
                 return true;
             }
             for (int i2 = 0; i2 < this.neverShow.size(); i2++) {
-                if (!this.currentValue.users.contains(this.neverShow.get(i2))) {
+                if (!this.currentValue.exclude_users.contains(this.neverShow.get(i2))) {
                     return true;
                 }
             }
@@ -394,20 +417,24 @@ public class BusinessRecipientsHelper {
             this.update.run();
             return true;
         }
-        if (uItem.viewType != 11 || this.fragment == null) {
+        if (uItem.viewType != 11) {
             return false;
         }
         final boolean z = uItem.include;
         String str = uItem.chatType;
         final int flag = str == null ? 0 : getFlag(str);
-        String peerName = flag == 0 ? this.fragment.getMessagesController().getPeerName(uItem.dialogId) : getFlagName(flag);
-        BaseFragment baseFragment = this.fragment;
-        baseFragment.showDialog(new AlertDialog.Builder(baseFragment.getContext(), this.fragment.getResourceProvider()).setTitle(LocaleController.getString(!z ? R.string.BusinessRecipientsRemoveExcludeTitle : R.string.BusinessRecipientsRemoveIncludeTitle)).setMessage(LocaleController.formatString(!z ? R.string.BusinessRecipientsRemoveExcludeMessage : R.string.BusinessRecipientsRemoveIncludeMessage, peerName)).setPositiveButton(LocaleController.getString(R.string.Remove), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.BusinessRecipientsHelper$$ExternalSyntheticLambda0
+        AlertDialog create = new AlertDialog.Builder(this.context, this.resourcesProvider).setTitle(LocaleController.getString(!z ? R.string.BusinessRecipientsRemoveExcludeTitle : R.string.BusinessRecipientsRemoveIncludeTitle)).setMessage(LocaleController.formatString(!z ? R.string.BusinessRecipientsRemoveExcludeMessage : R.string.BusinessRecipientsRemoveIncludeMessage, flag == 0 ? MessagesController.getInstance(this.currentAccount).getPeerName(uItem.dialogId) : getFlagName(flag))).setPositiveButton(LocaleController.getString(R.string.Remove), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Business.BusinessRecipientsHelper$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i2) {
                 BusinessRecipientsHelper.this.lambda$onClick$0(flag, z, uItem, alertDialog, i2);
             }
-        }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).create());
+        }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).create();
+        BaseFragment baseFragment = this.fragment;
+        if (baseFragment != null) {
+            baseFragment.showDialog(create);
+        } else {
+            create.show();
+        }
         return true;
     }
 
@@ -467,7 +494,19 @@ public class BusinessRecipientsHelper {
                 BusinessRecipientsHelper.this.lambda$selectChatsFor$1(z, arrayList, i);
             }
         });
-        this.fragment.presentFragment(asPrivateChats);
+        BaseFragment baseFragment = this.fragment;
+        if (baseFragment != null) {
+            baseFragment.presentFragment(asPrivateChats);
+            return;
+        }
+        BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
+        if (safeLastFragment == null) {
+            return;
+        }
+        BaseFragment.BottomSheetParams bottomSheetParams = new BaseFragment.BottomSheetParams();
+        bottomSheetParams.transitionFromLeft = true;
+        bottomSheetParams.allowNestedScroll = false;
+        safeLastFragment.showAsSheet(asPrivateChats, bottomSheetParams);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

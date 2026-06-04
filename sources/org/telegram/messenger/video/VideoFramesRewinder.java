@@ -18,7 +18,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.video.VideoFramesRewinder;
-import org.telegram.ui.Components.AnimatedFileDrawable;
+import org.telegram.ui.Components.AnimatedFileNative;
 
 /* loaded from: classes3.dex */
 public class VideoFramesRewinder {
@@ -90,7 +90,7 @@ public class VideoFramesRewinder {
             release();
         } else {
             this.stop.set(false);
-            this.ptr = AnimatedFileDrawable.createDecoder(file.getAbsolutePath(), this.meta, UserConfig.selectedAccount, 0L, null, true);
+            this.ptr = AnimatedFileNative.createDecoder(file.getAbsolutePath(), this.meta, UserConfig.selectedAccount, 0L, null, true);
         }
     }
 
@@ -127,7 +127,7 @@ public class VideoFramesRewinder {
             min = (int) (min * max);
             min2 = (int) (min2 * max);
         }
-        AnimatedFileDrawable.seekToMs(this.ptr, this.prepareToMs - ((long) (this.prepareWithSpeed * 350.0f)), this.meta, false);
+        AnimatedFileNative.seekToMs(this.ptr, this.prepareToMs - ((long) (this.prepareWithSpeed * 350.0f)), this.meta, false);
         long j = this.meta[3];
         int i7 = 0;
         int i8 = 0;
@@ -156,12 +156,12 @@ public class VideoFramesRewinder {
                 if (this.meta[3] + ((long) Math.ceil(f)) >= j3) {
                     break;
                 }
-                AnimatedFileDrawable.getVideoFrame(this.ptr, null, this.meta, true, 0.0f, r8[4], false);
+                AnimatedFileNative.getVideoFrame(this.ptr, null, this.meta, true, 0.0f, r8[4], false);
                 i4 = i2;
                 i7 = i;
                 min2 = i3;
             }
-            if (AnimatedFileDrawable.getVideoFrame(this.ptr, frame.bitmap, this.meta, true, 0.0f, r9[4], false) == 0) {
+            if (AnimatedFileNative.getVideoFrame(this.ptr, frame.bitmap, this.meta, true, 0.0f, r9[4], false) == 0) {
                 i8++;
                 if (i8 > 6) {
                     break;
@@ -285,7 +285,7 @@ public class VideoFramesRewinder {
             this.destroyAfterPrepare = true;
             return;
         }
-        AnimatedFileDrawable.destroyDecoder(this.ptr);
+        AnimatedFileNative.destroyDecoder(this.ptr);
         this.ptr = 0L;
         this.destroyAfterPrepare = false;
         clearCurrent();

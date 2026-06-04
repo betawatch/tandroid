@@ -52,6 +52,7 @@ public class FragmentSearchField extends FrameLayout implements FactorAnimator.T
     private final ArrayList currentSearchFilters;
     public final EditTextBoldCursor editText;
     public boolean isSectionBackground;
+    private boolean isWhiteBackground;
     private final AnimationNotificationsLocker notificationsLocker;
     private Runnable onCloseSearch;
     private final Theme.ResourcesProvider resourcesProvider;
@@ -274,6 +275,11 @@ public class FragmentSearchField extends FrameLayout implements FactorAnimator.T
         updateColors();
     }
 
+    public void setWhiteBackground() {
+        this.isWhiteBackground = true;
+        updateColors();
+    }
+
     @Override // org.telegram.ui.ActionBar.Theme.Colorable
     public void updateColors() {
         Drawable createRoundRectDrawable;
@@ -282,7 +288,7 @@ public class FragmentSearchField extends FrameLayout implements FactorAnimator.T
         if (this.isSectionBackground) {
             createRoundRectDrawable = Theme.createRoundRectDrawableShadowed(AndroidUtilities.dp(20.0f), getThemedColor(Theme.key_windowBackgroundWhite));
         } else {
-            createRoundRectDrawable = Theme.createRoundRectDrawable(AndroidUtilities.dp(20.0f), getThemedColor(Theme.key_windowBackgroundWhiteBlackText, isDark ? 0.07f : 0.05f));
+            createRoundRectDrawable = Theme.createRoundRectDrawable(AndroidUtilities.dp(20.0f), this.isWhiteBackground ? getThemedColor(Theme.key_windowBackgroundWhite) : getThemedColor(Theme.key_windowBackgroundWhiteBlackText, isDark ? 0.07f : 0.05f));
         }
         this.bg = createRoundRectDrawable;
         ImageView imageView = this.searchIcon;

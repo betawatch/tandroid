@@ -966,19 +966,19 @@ public class ManageLinksActivity extends BaseFragment implements NotificationCen
             return new RecyclerListView.Holder(view);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:52:0x015d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:52:0x0150, code lost:
         
             if (r10 == (r8.this$0.linksEndRow - 1)) goto L49;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:55:0x017d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:55:0x0170, code lost:
         
             r1 = false;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:57:0x017b, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:57:0x016e, code lost:
         
             if (r10 == (r8.this$0.revokedLinksEndRow - 1)) goto L49;
          */
-        /* JADX WARN: Removed duplicated region for block: B:29:0x00d3  */
+        /* JADX WARN: Removed duplicated region for block: B:29:0x00c6  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -1100,7 +1100,6 @@ public class ManageLinksActivity extends BaseFragment implements NotificationCen
                     break;
                 case 11:
                     TextInfoPrivacyCell textInfoPrivacyCell2 = (TextInfoPrivacyCell) viewHolder.itemView;
-                    textInfoPrivacyCell2.setBackground(Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                     if (i == ManageLinksActivity.this.linksInfoRow) {
                         TLRPC.ChatFull chatFull2 = ManageLinksActivity.this.getMessagesController().getChatFull(ManageLinksActivity.this.currentChatId);
                         TLRPC.Chat chat2 = ManageLinksActivity.this.getMessagesController().getChat(Long.valueOf(ManageLinksActivity.this.currentChatId));
@@ -1691,57 +1690,53 @@ public class ManageLinksActivity extends BaseFragment implements NotificationCen
                     }
                 }
             }
+            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(str);
             if (tL_chatInviteExported.permanent && !tL_chatInviteExported.revoked) {
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(str);
                 DotDividerSpan dotDividerSpan = new DotDividerSpan();
                 dotDividerSpan.setTopPadding(AndroidUtilities.dp(1.5f));
                 spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(dotDividerSpan, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
                 spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.Permanent));
-                this.subtitleView.setText(spannableStringBuilder2);
-                return;
-            }
-            if (tL_chatInviteExported.expired || tL_chatInviteExported.revoked) {
+            } else if (tL_chatInviteExported.expired || tL_chatInviteExported.revoked) {
                 if (tL_chatInviteExported.revoked && tL_chatInviteExported.usage == 0) {
-                    str = LocaleController.getString(tL_chatInviteExported.subscription_pricing != null ? R.string.NoOneSubscribed : R.string.NoOneJoined);
+                    String string = LocaleController.getString(tL_chatInviteExported.subscription_pricing != null ? R.string.NoOneSubscribed : R.string.NoOneJoined);
+                    spannableStringBuilder2.clear();
+                    spannableStringBuilder2.append((CharSequence) string);
                 }
-                SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(str);
                 DotDividerSpan dotDividerSpan2 = new DotDividerSpan();
                 dotDividerSpan2.setTopPadding(AndroidUtilities.dp(1.5f));
-                spannableStringBuilder3.append((CharSequence) "  .  ").setSpan(dotDividerSpan2, spannableStringBuilder3.length() - 3, spannableStringBuilder3.length() - 2, 0);
+                spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(dotDividerSpan2, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
                 boolean z = tL_chatInviteExported.revoked;
                 if (z || (i2 = tL_chatInviteExported.usage_limit) <= 0 || tL_chatInviteExported.usage < i2) {
-                    spannableStringBuilder3.append((CharSequence) LocaleController.getString(z ? R.string.Revoked : R.string.Expired));
+                    spannableStringBuilder2.append((CharSequence) LocaleController.getString(z ? R.string.Revoked : R.string.Expired));
                 } else {
-                    spannableStringBuilder3.append((CharSequence) LocaleController.getString(R.string.LinkLimitReached));
+                    spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.LinkLimitReached));
                 }
-                this.subtitleView.setText(spannableStringBuilder3);
-                return;
-            }
-            if (tL_chatInviteExported.expire_date > 0) {
-                SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(str);
+            } else if (tL_chatInviteExported.expire_date > 0) {
                 DotDividerSpan dotDividerSpan3 = new DotDividerSpan();
                 dotDividerSpan3.setTopPadding(AndroidUtilities.dp(1.5f));
-                spannableStringBuilder4.append((CharSequence) "  .  ").setSpan(dotDividerSpan3, spannableStringBuilder4.length() - 3, spannableStringBuilder4.length() - 2, 0);
+                spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(dotDividerSpan3, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
                 long currentTimeMillis = (tL_chatInviteExported.expire_date * 1000) - (System.currentTimeMillis() + (ManageLinksActivity.this.timeDif * 1000));
                 if (currentTimeMillis < 0) {
                     currentTimeMillis = 0;
                 }
                 if (currentTimeMillis > 86400000) {
-                    spannableStringBuilder4.append((CharSequence) LocaleController.formatPluralString("DaysLeft", (int) (currentTimeMillis / 86400000), new Object[0]));
+                    spannableStringBuilder2.append((CharSequence) LocaleController.formatPluralString("DaysLeft", (int) (currentTimeMillis / 86400000), new Object[0]));
                 } else {
                     long j = currentTimeMillis / 1000;
                     int i6 = (int) (j % 60);
                     long j2 = j / 60;
-                    int i7 = (int) (j2 % 60);
-                    int i8 = (int) (j2 / 60);
                     Locale locale = Locale.ENGLISH;
-                    spannableStringBuilder4.append((CharSequence) String.format(locale, "%02d", Integer.valueOf(i8))).append((CharSequence) String.format(locale, ":%02d", Integer.valueOf(i7))).append((CharSequence) String.format(locale, ":%02d", Integer.valueOf(i6)));
+                    spannableStringBuilder2.append((CharSequence) String.format(locale, "%02d", Integer.valueOf((int) (j2 / 60)))).append((CharSequence) String.format(locale, ":%02d", Integer.valueOf((int) (j2 % 60)))).append((CharSequence) String.format(locale, ":%02d", Integer.valueOf(i6)));
                     this.timerRunning = true;
                 }
-                this.subtitleView.setText(spannableStringBuilder4);
-                return;
             }
-            this.subtitleView.setText(str);
+            if (tL_chatInviteExported.request_needed) {
+                DotDividerSpan dotDividerSpan4 = new DotDividerSpan();
+                dotDividerSpan4.setTopPadding(AndroidUtilities.dp(1.5f));
+                spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(dotDividerSpan4, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
+                spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.ApprovalRequired));
+            }
+            this.subtitleView.setText(spannableStringBuilder2);
         }
     }
 

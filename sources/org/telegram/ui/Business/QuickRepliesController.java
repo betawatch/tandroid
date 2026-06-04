@@ -25,6 +25,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Business.QuickRepliesController;
 
 /* loaded from: classes4.dex */
@@ -769,8 +770,8 @@ public class QuickRepliesController {
     }
 
     public boolean processUpdate(final TLRPC.Update update, final String str, final int i) {
-        if (update instanceof TLRPC.TL_updateQuickReplyMessage) {
-            final TLRPC.Message message = ((TLRPC.TL_updateQuickReplyMessage) update).message;
+        if (update instanceof TL_update.TL_updateQuickReplyMessage) {
+            final TLRPC.Message message = ((TL_update.TL_updateQuickReplyMessage) update).message;
             ensureLoaded(new Runnable() { // from class: org.telegram.ui.Business.QuickRepliesController$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -779,7 +780,7 @@ public class QuickRepliesController {
             });
             return true;
         }
-        if (update instanceof TLRPC.TL_updateQuickReplies) {
+        if (update instanceof TL_update.TL_updateQuickReplies) {
             ensureLoaded(new Runnable() { // from class: org.telegram.ui.Business.QuickRepliesController$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -788,7 +789,7 @@ public class QuickRepliesController {
             });
             return true;
         }
-        if (update instanceof TLRPC.TL_updateNewQuickReply) {
+        if (update instanceof TL_update.TL_updateNewQuickReply) {
             ensureLoaded(new Runnable() { // from class: org.telegram.ui.Business.QuickRepliesController$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -797,7 +798,7 @@ public class QuickRepliesController {
             });
             return true;
         }
-        if (update instanceof TLRPC.TL_updateDeleteQuickReply) {
+        if (update instanceof TL_update.TL_updateDeleteQuickReply) {
             ensureLoaded(new Runnable() { // from class: org.telegram.ui.Business.QuickRepliesController$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -806,7 +807,7 @@ public class QuickRepliesController {
             });
             return true;
         }
-        if (!(update instanceof TLRPC.TL_updateDeleteQuickReplyMessages)) {
+        if (!(update instanceof TL_update.TL_updateDeleteQuickReplyMessages)) {
             return false;
         }
         ensureLoaded(new Runnable() { // from class: org.telegram.ui.Business.QuickRepliesController$$ExternalSyntheticLambda7
@@ -869,7 +870,7 @@ public class QuickRepliesController {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processUpdate$18(TLRPC.Update update) {
         QuickReply quickReply;
-        ArrayList<TLRPC.TL_quickReply> arrayList = ((TLRPC.TL_updateQuickReplies) update).quick_replies;
+        ArrayList<TLRPC.TL_quickReply> arrayList = ((TL_update.TL_updateQuickReplies) update).quick_replies;
         ArrayList arrayList2 = new ArrayList(this.replies);
         this.replies.clear();
         for (int i = 0; i < arrayList.size(); i++) {
@@ -908,7 +909,7 @@ public class QuickRepliesController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processUpdate$19(TLRPC.Update update) {
-        TLRPC.TL_quickReply tL_quickReply = ((TLRPC.TL_updateNewQuickReply) update).quick_reply;
+        TLRPC.TL_quickReply tL_quickReply = ((TL_update.TL_updateNewQuickReply) update).quick_reply;
         QuickReply findReply = findReply(tL_quickReply.shortcut_id);
         if (findReply != null) {
             findReply.name = tL_quickReply.shortcut;
@@ -936,7 +937,7 @@ public class QuickRepliesController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processUpdate$21(TLRPC.Update update) {
-        QuickReply findReply = findReply(((TLRPC.TL_updateDeleteQuickReply) update).shortcut_id);
+        QuickReply findReply = findReply(((TL_update.TL_updateDeleteQuickReply) update).shortcut_id);
         if (findReply != null) {
             this.replies.remove(findReply);
             deleteLocalReply(findReply.name);
@@ -966,7 +967,7 @@ public class QuickRepliesController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processUpdate$22(TLRPC.Update update) {
-        TLRPC.TL_updateDeleteQuickReplyMessages tL_updateDeleteQuickReplyMessages = (TLRPC.TL_updateDeleteQuickReplyMessages) update;
+        TL_update.TL_updateDeleteQuickReplyMessages tL_updateDeleteQuickReplyMessages = (TL_update.TL_updateDeleteQuickReplyMessages) update;
         QuickReply findReply = findReply(tL_updateDeleteQuickReplyMessages.shortcut_id);
         if (findReply != null) {
             int size = findReply.messagesCount - tL_updateDeleteQuickReplyMessages.messages.size();

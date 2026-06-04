@@ -139,7 +139,7 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
         if (this.rootLayout == null) {
             FrameLayout frameLayout = new FrameLayout(this.fragment.getParentActivity());
             this.rootLayout = frameLayout;
-            frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite, this.fragment.getResourceProvider()));
+            frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray, this.fragment.getResourceProvider()));
             FlickerLoadingView loadingView = getLoadingView();
             this.loadingView = loadingView;
             this.rootLayout.addView(loadingView, -1, -1);
@@ -153,6 +153,7 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
             RecyclerListView recyclerListView = new RecyclerListView(this.fragment.getParentActivity());
             this.recyclerView = recyclerListView;
             recyclerListView.setAdapter(this.adapter);
+            this.recyclerView.setSections();
             this.recyclerView.setLayoutManager(linearLayoutManager);
             this.recyclerView.setOnItemClickListener(new MemberRequestsDelegate$$ExternalSyntheticLambda2(this));
             this.recyclerView.setOnScrollListener(this.listScrollListener);
@@ -166,6 +167,10 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
             this.recyclerView.setItemAnimator(defaultItemAnimator);
         }
         return this.rootLayout;
+    }
+
+    public RecyclerListView getRecyclerView() {
+        return this.recyclerView;
     }
 
     public void setShowLastItemDivider(boolean z) {
@@ -668,24 +673,22 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
         public RecyclerListView.Holder onCreateViewHolder(ViewGroup viewGroup, int i) {
             View view;
             if (i == 1) {
-                View view2 = new View(viewGroup.getContext());
-                view2.setBackground(Theme.getThemedDrawableByKey(viewGroup.getContext(), R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
-                view = view2;
+                view = new View(viewGroup.getContext());
             } else if (i == 2) {
-                view = new View(viewGroup.getContext()) { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate.Adapter.1
+                View view2 = new View(viewGroup.getContext()) { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate.Adapter.1
                     @Override // android.view.View
                     protected void onMeasure(int i2, int i3) {
                         super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
                     }
                 };
+                view2.setTag(-33024);
+                view = view2;
             } else if (i == 3) {
                 view = new View(viewGroup.getContext());
             } else if (i != 4) {
                 Context context = viewGroup.getContext();
                 MemberRequestsDelegate memberRequestsDelegate = MemberRequestsDelegate.this;
-                MemberRequestCell memberRequestCell = new MemberRequestCell(context, memberRequestsDelegate, memberRequestsDelegate.isChannel);
-                memberRequestCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite, MemberRequestsDelegate.this.fragment.getResourceProvider()));
-                view = memberRequestCell;
+                view = new MemberRequestCell(context, memberRequestsDelegate, memberRequestsDelegate.isChannel);
             } else {
                 FlickerLoadingView flickerLoadingView = new FlickerLoadingView(MemberRequestsDelegate.this.fragment.getParentActivity(), MemberRequestsDelegate.this.fragment.getResourceProvider()) { // from class: org.telegram.ui.Delegates.MemberRequestsDelegate.Adapter.2
                     @Override // org.telegram.ui.Components.FlickerLoadingView, android.view.View
@@ -701,6 +704,7 @@ public abstract class MemberRequestsDelegate implements MemberRequestCell.OnClic
                 flickerLoadingView.setMemberRequestButton(MemberRequestsDelegate.this.isChannel);
                 flickerLoadingView.setIsSingleCell(true);
                 flickerLoadingView.setItemsCount(1);
+                flickerLoadingView.setTag(-33024);
                 view = flickerLoadingView;
             }
             return new RecyclerListView.Holder(view);

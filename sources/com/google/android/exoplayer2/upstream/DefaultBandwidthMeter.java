@@ -2019,8 +2019,8 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case NotificationCenter.walletPendingTransactionsChanged /* 133 */:
             case NotificationCenter.messagePlayingGoingToStop /* 153 */:
             case NotificationCenter.userIsPremiumBlockedUpadted /* 204 */:
-            case 225:
-            case NotificationCenter.starGiftSoldOut /* 233 */:
+            case NotificationCenter.botStarsUpdated /* 225 */:
+            case NotificationCenter.updateStories /* 233 */:
                 return new int[]{4, 4, 4, 4, 2, 2};
             case 23:
                 return new int[]{4, 4, 2, 3, 2, 2};
@@ -2039,7 +2039,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{3, 2, 1, 2, 2, 2};
             case 31:
             case 150:
-            case NotificationCenter.starUserGiftsLoaded /* 231 */:
+            case NotificationCenter.starUserGiftCollectionsLoaded /* 231 */:
                 return new int[]{3, 1, 2, 1, 2, 2};
             case ' ':
                 return new int[]{3, 2, 1, 0, 2, 2};
@@ -2166,7 +2166,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{1, 1, 2, 1, 2, 1};
             case 'b':
             case NotificationCenter.customStickerCreated /* 215 */:
-            case NotificationCenter.starGiftsLoaded /* 230 */:
+            case NotificationCenter.starUserGiftsLoaded /* 230 */:
                 return new int[]{4, 2, 2, 4, 2, 2};
             case 'c':
             case NotificationCenter.boostedChannelByUser /* 190 */:
@@ -2207,7 +2207,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{1, 1, 4, 2, 0, 2};
             case NotificationCenter.needDeleteBusinessLink /* 127 */:
             case NotificationCenter.chatWasBoostedByUser /* 212 */:
-            case NotificationCenter.channelConnectedBotsUpdate /* 237 */:
+            case NotificationCenter.adminedChannelsLoaded /* 237 */:
                 return new int[]{3, 2, 4, 3, 2, 2};
             case 128:
                 return new int[]{3, 3, 2, 1, 2, 2};
@@ -2280,9 +2280,9 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{2, 0, 2, 0, 2, 1};
             case NotificationCenter.groupCallTypingsUpdated /* 172 */:
                 return new int[]{3, 4, 1, 4, 2, 2};
-            case 173:
+            case NotificationCenter.didEndCall /* 173 */:
                 return new int[]{1, 0, 0, 0, 1, 2};
-            case NotificationCenter.closeInCallActivity /* 174 */:
+            case 174:
                 return new int[]{2, 2, 4, 2, 2, 2};
             case NotificationCenter.liveStoryUpdated /* 176 */:
                 return new int[]{1, 4, 4, 4, 4, 2};
@@ -2340,19 +2340,19 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{2, 2, 3, 4, 3, 2};
             case NotificationCenter.botStarsTransactionsLoaded /* 226 */:
                 return new int[]{2, 2, 0, 1, 2, 2};
-            case NotificationCenter.channelStarsUpdated /* 227 */:
+            case 227:
                 return new int[]{0, 2, 1, 2, 2, 2};
-            case NotificationCenter.webViewResolved /* 228 */:
+            case NotificationCenter.updateAllMessages /* 228 */:
                 return new int[]{0, 0, 1, 2, 2, 1};
-            case NotificationCenter.updateAllMessages /* 229 */:
+            case NotificationCenter.starGiftsLoaded /* 229 */:
                 return new int[]{4, 3, 3, 1, 2, 2};
-            case NotificationCenter.starUserGiftCollectionsLoaded /* 232 */:
+            case NotificationCenter.starGiftSoldOut /* 232 */:
                 return new int[]{1, 2, 1, 1, 2, 2};
-            case NotificationCenter.updateStories /* 234 */:
+            case NotificationCenter.botDownloadsUpdate /* 234 */:
                 return new int[]{2, 3, 3, 4, 2, 2};
-            case NotificationCenter.botDownloadsUpdate /* 235 */:
+            case NotificationCenter.channelSuggestedBotsUpdate /* 235 */:
                 return new int[]{2, 3, 2, 1, 2, 2};
-            case NotificationCenter.channelSuggestedBotsUpdate /* 236 */:
+            case NotificationCenter.channelConnectedBotsUpdate /* 236 */:
                 return new int[]{4, 4, 4, 3, 3, 2};
             default:
                 return new int[]{2, 2, 2, 2, 2, 2};

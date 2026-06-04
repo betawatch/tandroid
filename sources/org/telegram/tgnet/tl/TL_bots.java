@@ -9,7 +9,6 @@ import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1;
-import org.telegram.tgnet.TLRPC$TL_updateBotCommands$$ExternalSyntheticLambda0;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_payments;
 
@@ -340,7 +339,7 @@ public class TL_bots {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.user_id = inputSerializedData.readInt32(z);
             this.description = inputSerializedData.readString(z);
-            this.commands = Vector.deserialize(inputSerializedData, new TLRPC$TL_updateBotCommands$$ExternalSyntheticLambda0(), z);
+            this.commands = Vector.deserialize(inputSerializedData, new TL_bots$TL_botInfo$$ExternalSyntheticLambda0(), z);
         }
 
         @Override // org.telegram.tgnet.tl.TL_bots.TL_botInfo, org.telegram.tgnet.TLObject
@@ -361,7 +360,7 @@ public class TL_bots {
             this.version = inputSerializedData.readInt32(z);
             inputSerializedData.readString(z);
             this.description = inputSerializedData.readString(z);
-            this.commands = Vector.deserialize(inputSerializedData, new TLRPC$TL_updateBotCommands$$ExternalSyntheticLambda0(), z);
+            this.commands = Vector.deserialize(inputSerializedData, new TL_bots$TL_botInfo$$ExternalSyntheticLambda0(), z);
         }
 
         @Override // org.telegram.tgnet.tl.TL_bots.TL_botInfo, org.telegram.tgnet.TLObject
@@ -382,7 +381,7 @@ public class TL_bots {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.user_id = inputSerializedData.readInt64(z);
             this.description = inputSerializedData.readString(z);
-            this.commands = Vector.deserialize(inputSerializedData, new TLRPC$TL_updateBotCommands$$ExternalSyntheticLambda0(), z);
+            this.commands = Vector.deserialize(inputSerializedData, new TL_bots$TL_botInfo$$ExternalSyntheticLambda0(), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -415,7 +414,7 @@ public class TL_bots {
                 this.description_document = TLRPC.Document.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.commands = Vector.deserialize(inputSerializedData, new TLRPC$TL_updateBotCommands$$ExternalSyntheticLambda0(), z);
+                this.commands = Vector.deserialize(inputSerializedData, new TL_bots$TL_botInfo$$ExternalSyntheticLambda0(), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.menu_button = BotMenuButton.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -488,7 +487,7 @@ public class TL_bots {
                 this.description_document = TLRPC.Document.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.commands = Vector.deserialize(inputSerializedData, new TLRPC$TL_updateBotCommands$$ExternalSyntheticLambda0(), z);
+                this.commands = Vector.deserialize(inputSerializedData, new TL_bots$TL_botInfo$$ExternalSyntheticLambda0(), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.menu_button = BotMenuButton.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -555,7 +554,7 @@ public class TL_bots {
                 this.description_document = TLRPC.Document.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.commands = Vector.deserialize(inputSerializedData, new TLRPC$TL_updateBotCommands$$ExternalSyntheticLambda0(), z);
+                this.commands = Vector.deserialize(inputSerializedData, new TL_bots$TL_botInfo$$ExternalSyntheticLambda0(), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.menu_button = BotMenuButton.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -616,7 +615,7 @@ public class TL_bots {
                 this.description_document = TLRPC.Document.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.commands = Vector.deserialize(inputSerializedData, new TLRPC$TL_updateBotCommands$$ExternalSyntheticLambda0(), z);
+                this.commands = Vector.deserialize(inputSerializedData, new TL_bots$TL_botInfo$$ExternalSyntheticLambda0(), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.menu_button = BotMenuButton.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -657,7 +656,7 @@ public class TL_bots {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.user_id = inputSerializedData.readInt64(z);
             this.description = inputSerializedData.readString(z);
-            this.commands = Vector.deserialize(inputSerializedData, new TLRPC$TL_updateBotCommands$$ExternalSyntheticLambda0(), z);
+            this.commands = Vector.deserialize(inputSerializedData, new TL_bots$TL_botInfo$$ExternalSyntheticLambda0(), z);
             this.menu_button = BotMenuButton.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
         }
 

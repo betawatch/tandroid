@@ -31,6 +31,7 @@ import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -185,10 +186,10 @@ public class HomeScreen extends Screen implements DefaultLifecycleObserver, Noti
         return linkedHashMap;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0076  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00d5  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0104 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0106  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00d8  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0107 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0109  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -206,6 +207,7 @@ public class HomeScreen extends Screen implements DefaultLifecycleObserver, Noti
         if (arrayList.isEmpty()) {
             return null;
         }
+        Collections.reverse(arrayList);
         MessagesController messagesController = AccountInstance.getInstance(this.currentAccount).getMessagesController();
         if (DialogObject.isUserDialog(j)) {
             TLRPC.User user2 = messagesController.getUser(Long.valueOf(j));
@@ -320,20 +322,29 @@ public class HomeScreen extends Screen implements DefaultLifecycleObserver, Noti
         return new CarMessage.Builder().setBody(CarText.create(charSequence)).setReceivedTimeEpochMillis(messageObject.messageOwner.date * 1000).setSender(builder.build()).setRead(false).build();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x0088, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x0096, code lost:
     
-        if ((r11 instanceof org.telegram.tgnet.TLRPC.TL_fileLocationUnavailable) == false) goto L46;
+        if ((r11 instanceof org.telegram.tgnet.TLRPC.TL_fileLocationUnavailable) == false) goto L37;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x00a4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x0098, code lost:
     
-        if ((r11 instanceof org.telegram.tgnet.TLRPC.TL_fileLocationUnavailable) == false) goto L46;
+        r16 = r13;
+        r13 = r11;
+        r11 = r16;
      */
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x00b7, code lost:
+    
+        if ((r11 instanceof org.telegram.tgnet.TLRPC.TL_fileLocationUnavailable) == false) goto L37;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0105 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private Template buildMusicTemplate() {
-        final String str;
+        String str;
         TLRPC.FileLocation fileLocation;
+        final String str2;
         TelegramMediaSession telegramMediaSession = TelegramMediaSession.getInstance(getCarContext().getApplicationContext());
         if (!telegramMediaSession.isChatsLoaded()) {
             if (!this.musicLoadKicked) {
@@ -362,12 +373,34 @@ public class HomeScreen extends Screen implements DefaultLifecycleObserver, Noti
                 if (DialogObject.isUserDialog(longValue)) {
                     TLRPC.User musicUser = telegramMediaSession.getMusicUser(longValue);
                     if (musicUser != null) {
-                        str = ContactsController.formatName(musicUser.first_name, musicUser.last_name);
-                        TLRPC.UserProfilePhoto userProfilePhoto = musicUser.photo;
-                        if (userProfilePhoto != null) {
-                            fileLocation = userProfilePhoto.photo_small;
+                        if (UserObject.isUserSelf(musicUser)) {
+                            str2 = LocaleController.getString(R.string.SavedMessages);
+                            TLRPC.FileLocation fileLocation2 = null;
+                            if (!TextUtils.isEmpty(str2)) {
+                                Row.Builder onClickListener = new Row.Builder().setTitle(str2).addText(LocaleController.formatPluralString("MusicFiles", musicMessages.size(), new Object[i])).setBrowsable(true).setOnClickListener(new OnClickListener() { // from class: org.telegram.messenger.car.HomeScreen$$ExternalSyntheticLambda1
+                                    @Override // androidx.car.app.model.OnClickListener
+                                    public final void onClick() {
+                                        HomeScreen.this.lambda$buildMusicTemplate$0(longValue, str2);
+                                    }
+                                });
+                                IconCompat iconFromAvatar = fileLocation2 != null ? iconFromAvatar(fileLocation2) : null;
+                                if (iconFromAvatar != null) {
+                                    onClickListener.setImage(new CarIcon.Builder(iconFromAvatar).build(), 2);
+                                }
+                                builder.addItem(onClickListener.build());
+                                i3++;
+                            }
+                        } else {
+                            str = ContactsController.formatName(musicUser.first_name, musicUser.last_name);
+                            TLRPC.UserProfilePhoto userProfilePhoto = musicUser.photo;
+                            if (userProfilePhoto != null) {
+                                fileLocation = userProfilePhoto.photo_small;
+                            }
+                            str2 = str;
+                            TLRPC.FileLocation fileLocation22 = null;
+                            if (!TextUtils.isEmpty(str2)) {
+                            }
                         }
-                        fileLocation = null;
                     }
                 } else {
                     TLRPC.Chat musicChat = telegramMediaSession.getMusicChat(-longValue);
@@ -380,22 +413,11 @@ public class HomeScreen extends Screen implements DefaultLifecycleObserver, Noti
                         if (chatPhoto != null) {
                             fileLocation = chatPhoto.photo_small;
                         }
-                        fileLocation = null;
-                    }
-                }
-                if (!TextUtils.isEmpty(str)) {
-                    Row.Builder onClickListener = new Row.Builder().setTitle(str).addText(LocaleController.formatPluralString("MusicFiles", musicMessages.size(), new Object[i])).setBrowsable(true).setOnClickListener(new OnClickListener() { // from class: org.telegram.messenger.car.HomeScreen$$ExternalSyntheticLambda1
-                        @Override // androidx.car.app.model.OnClickListener
-                        public final void onClick() {
-                            HomeScreen.this.lambda$buildMusicTemplate$0(longValue, str);
+                        str2 = str;
+                        TLRPC.FileLocation fileLocation222 = null;
+                        if (!TextUtils.isEmpty(str2)) {
                         }
-                    });
-                    IconCompat iconFromAvatar = fileLocation != null ? iconFromAvatar(fileLocation) : null;
-                    if (iconFromAvatar != null) {
-                        onClickListener.setImage(new CarIcon.Builder(iconFromAvatar).build(), 2);
                     }
-                    builder.addItem(onClickListener.build());
-                    i3++;
                 }
             }
             i2++;

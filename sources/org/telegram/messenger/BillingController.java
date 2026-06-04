@@ -36,6 +36,7 @@ import org.telegram.messenger.utils.BillingUtilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.LaunchActivity;
@@ -426,9 +427,9 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
         if (tLObject instanceof TLRPC.Updates) {
             FileLog.d("BillingController.onPurchasesUpdatedInternal: " + purchase.getOrderId() + " purchase is purchased and now assigned");
             if (tL_payments_assignPlayMarketTransaction.purpose instanceof TLRPC.TL_inputStorePaymentAuthCode) {
-                Iterator it = MessagesController.findUpdatesAndRemove((TLRPC.Updates) tLObject, TLRPC.TL_updateSentPhoneCode.class).iterator();
+                Iterator it = MessagesController.findUpdatesAndRemove((TLRPC.Updates) tLObject, TL_update.TL_updateSentPhoneCode.class).iterator();
                 while (it.hasNext()) {
-                    final TLRPC.TL_updateSentPhoneCode tL_updateSentPhoneCode = (TLRPC.TL_updateSentPhoneCode) it.next();
+                    final TL_update.TL_updateSentPhoneCode tL_updateSentPhoneCode = (TL_update.TL_updateSentPhoneCode) it.next();
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.BillingController$$ExternalSyntheticLambda10
                         @Override // java.lang.Runnable
                         public final void run() {
@@ -485,7 +486,7 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onPurchasesUpdatedInternal$6(AccountInstance accountInstance, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction, TLRPC.TL_updateSentPhoneCode tL_updateSentPhoneCode) {
+    public static /* synthetic */ void lambda$onPurchasesUpdatedInternal$6(AccountInstance accountInstance, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction, TL_update.TL_updateSentPhoneCode tL_updateSentPhoneCode) {
         LoginActivity loginActivity = (LoginActivity) LaunchActivity.findFragment(LoginActivity.class);
         if (loginActivity == null) {
             loginActivity = new LoginActivity(accountInstance.getCurrentAccount());

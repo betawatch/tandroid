@@ -89,6 +89,7 @@ import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.AvatarSpan;
 import org.telegram.ui.Cells.DialogCell;
+import org.telegram.ui.Cells.IMessageCell;
 import org.telegram.ui.ChannelAdminLogActivity;
 import org.telegram.ui.ChatBackgroundDrawable;
 import org.telegram.ui.Components.AlertsCreator;
@@ -131,7 +132,7 @@ import org.telegram.ui.Stories.recorder.HintView2;
 import org.telegram.ui.Stories.recorder.PreviewView;
 
 /* loaded from: classes4.dex */
-public class ChatActionCell extends BaseCell implements DownloadController.FileDownloadProgressListener, NotificationCenter.NotificationCenterDelegate {
+public class ChatActionCell extends BaseCell implements DownloadController.FileDownloadProgressListener, NotificationCenter.NotificationCenterDelegate, IMessageCell {
     private static Map monthsToEmoticon;
     private int TAG;
     private SpannableStringBuilder accessibilityText;
@@ -373,6 +374,59 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         void onTopicClick(ChatActionCell chatActionCell);
     }
 
+    @Override // org.telegram.ui.Cells.IMessageCell
+    public /* synthetic */ boolean drawPinnedBottom() {
+        return IMessageCell.-CC.$default$drawPinnedBottom(this);
+    }
+
+    @Override // org.telegram.ui.Cells.IMessageCell
+    public /* synthetic */ boolean drawPinnedTop() {
+        return IMessageCell.-CC.$default$drawPinnedTop(this);
+    }
+
+    @Override // org.telegram.ui.Cells.IMessageCell
+    public /* bridge */ /* synthetic */ ImageReceiver getAvatarImage() {
+        return IMessageCell.-CC.$default$getAvatarImage(this);
+    }
+
+    @Override // org.telegram.ui.Cells.IMessageCell
+    public /* bridge */ /* synthetic */ float getCheckBoxTranslation() {
+        return IMessageCell.-CC.$default$getCheckBoxTranslation(this);
+    }
+
+    @Override // org.telegram.ui.Cells.IMessageCell
+    public /* bridge */ /* synthetic */ MessageObject.GroupedMessagePosition getCurrentPosition() {
+        return IMessageCell.-CC.$default$getCurrentPosition(this);
+    }
+
+    @Override // org.telegram.ui.Cells.IMessageCell
+    public float getDeltaBottom() {
+        return 0.0f;
+    }
+
+    public float getDeltaLeft() {
+        return 0.0f;
+    }
+
+    public float getDeltaRight() {
+        return 0.0f;
+    }
+
+    public float getDeltaTop() {
+        return 0.0f;
+    }
+
+    public /* bridge */ /* synthetic */ int getLayoutHeight() {
+        int measuredHeight;
+        measuredHeight = getMeasuredHeight();
+        return measuredHeight;
+    }
+
+    @Override // org.telegram.ui.Cells.IMessageCell
+    public /* bridge */ /* synthetic */ float getSlidingOffsetX() {
+        return IMessageCell.-CC.$default$getSlidingOffsetX(this);
+    }
+
     public boolean isFloating() {
         return false;
     }
@@ -387,6 +441,21 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
 
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
     public void onProgressUpload(String str, long j, long j2, boolean z) {
+    }
+
+    @Override // org.telegram.ui.Cells.IMessageCell
+    public /* synthetic */ void setAnimationRunning(boolean z, boolean z2) {
+        IMessageCell.-CC.$default$setAnimationRunning(this, z, z2);
+    }
+
+    @Override // org.telegram.ui.Cells.IMessageCell
+    public /* synthetic */ boolean shouldDrawAlphaLayer() {
+        return IMessageCell.-CC.$default$shouldDrawAlphaLayer(this);
+    }
+
+    @Override // org.telegram.ui.Cells.IMessageCell
+    public /* synthetic */ boolean willRemovedAfterAnimation() {
+        return IMessageCell.-CC.$default$willRemovedAfterAnimation(this);
     }
 
     static {
@@ -1334,8 +1403,21 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         }
     }
 
+    @Override // org.telegram.ui.Cells.IMessageCell
     public MessageObject getMessageObject() {
         return this.currentMessageObject;
+    }
+
+    public ReactionsLayoutInBubble getReactionsLayout() {
+        return this.reactionsLayoutInBubble;
+    }
+
+    @Override // org.telegram.ui.Cells.IMessageCell
+    public void didPressReactionFromLayout(TLRPC.ReactionCount reactionCount, boolean z, float f, float f2) {
+        ChatActionCellDelegate chatActionCellDelegate = this.delegate;
+        if (chatActionCellDelegate != null) {
+            chatActionCellDelegate.didPressReaction(this, reactionCount, z, f, f2);
+        }
     }
 
     public ImageReceiver getPhotoImage() {

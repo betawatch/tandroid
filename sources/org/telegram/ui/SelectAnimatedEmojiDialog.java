@@ -4118,16 +4118,16 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
             return i == SelectAnimatedEmojiDialog.this.defaultTopicIconRow ? 8 : 3;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:237:0x060c, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:242:0x0614, code lost:
         
-            if (r27.this$0.selectedDocumentIds.contains(java.lang.Long.valueOf(r2.id)) != false) goto L350;
+            if (r28.this$0.selectedDocumentIds.contains(java.lang.Long.valueOf(r2.id)) != false) goto L355;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:358:0x084e, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:363:0x0856, code lost:
         
-            if (r27.this$0.selectedDocumentIds.contains(java.lang.Long.valueOf(r2.getDocumentId())) != false) goto L350;
+            if (r28.this$0.selectedDocumentIds.contains(java.lang.Long.valueOf(r2.getDocumentId())) != false) goto L355;
          */
-        /* JADX WARN: Removed duplicated region for block: B:178:0x0854  */
-        /* JADX WARN: Removed duplicated region for block: B:188:0x08b0  */
+        /* JADX WARN: Removed duplicated region for block: B:183:0x085c  */
+        /* JADX WARN: Removed duplicated region for block: B:193:0x08b8  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -4242,7 +4242,11 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                         imageViewEmoji.preloadEffectImageReceiver.clearImage();
                         Drawable drawable = (Drawable) SelectAnimatedEmojiDialog.this.emojiGridView.animatedEmojiDrawables.get(imageViewEmoji.span.getDocumentId());
                         if (drawable == null) {
-                            drawable = AnimatedEmojiDrawable.make(SelectAnimatedEmojiDialog.this.currentAccount, SelectAnimatedEmojiDialog.this.getCacheType(), imageViewEmoji.span.getDocumentId());
+                            int cacheType = SelectAnimatedEmojiDialog.this.getCacheType();
+                            if (cacheType == 3 && visibleReaction.sticker) {
+                                cacheType = 27;
+                            }
+                            drawable = AnimatedEmojiDrawable.make(SelectAnimatedEmojiDialog.this.currentAccount, cacheType, imageViewEmoji.span.getDocumentId());
                             SelectAnimatedEmojiDialog.this.emojiGridView.animatedEmojiDrawables.put(imageViewEmoji.span.getDocumentId(), drawable);
                         }
                         imageViewEmoji.setDrawable(drawable);

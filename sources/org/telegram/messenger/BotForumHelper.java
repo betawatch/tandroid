@@ -17,6 +17,8 @@ import org.telegram.messenger.utils.tlutils.TlUtils;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_forum;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.ColoredImageSpan;
 import org.telegram.ui.Components.TypingDotsDrawable;
@@ -40,6 +42,32 @@ public class BotForumHelper extends BaseController {
         tL_message.message = tL_textWithEntities.text;
         tL_message.entities = tL_textWithEntities.entities;
         tL_message.flags |= 128;
+        tL_message.date = getConnectionsManager().getCurrentTime();
+        TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
+        tL_message.reply_to = tL_messageReplyHeader;
+        tL_message.flags |= 16;
+        tL_messageReplyHeader.forum_topic = true;
+        tL_messageReplyHeader.reply_to_top_id = i;
+        tL_messageReplyHeader.flags |= 2;
+        tL_message.media = new TLRPC.TL_messageMediaEmpty();
+        tL_message.flags |= 512;
+        MessageObject messageObject = new MessageObject(this.currentAccount, tL_message, false, true);
+        messageObject.isBotPendingDraft = true;
+        messageObject.resetLayout();
+        return messageObject;
+    }
+
+    private MessageObject createDraftMessage(long j, int i, long j2, int i2, TL_iv.RichMessage richMessage) {
+        TLRPC.TL_message tL_message = new TLRPC.TL_message();
+        tL_message.dialog_id = j;
+        tL_message.peer_id = getMessagesController().getPeer(j);
+        tL_message.from_id = getMessagesController().getPeer(j);
+        tL_message.local_id = i2;
+        tL_message.id = i2;
+        tL_message.random_id = j2;
+        tL_message.message = "";
+        tL_message.flags |= 8192;
+        tL_message.rich_message = richMessage;
         tL_message.date = getConnectionsManager().getCurrentTime();
         TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
         tL_message.reply_to = tL_messageReplyHeader;
@@ -94,7 +122,7 @@ public class BotForumHelper extends BaseController {
                         AndroidUtilities.cancelRunOnUIThread(botDraftMessage3.selfDestruct);
                     }
                     i2 = i4;
-                    lambda$onBotForumDraftUpdate$0(j, i, j4);
+                    lambda$onBotForumDraftUpdate$1(j, i, j4);
                 }
             }
         }
@@ -111,6 +139,66 @@ public class BotForumHelper extends BaseController {
         botDraftMessage.text = tL_textWithEntities;
         BotDraftMessage botDraftMessage4 = botDraftMessage;
         botDraftMessage4.messageObject = createDraftMessage(j, i, j2, botDraftMessage.localMessageId, tL_textWithEntities);
+        AndroidUtilities.runOnUIThread(botDraftMessage4.selfDestruct, getAppGlobalConfig().messageTypingDraftTtl.get(TimeUnit.MILLISECONDS));
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.botForumDraftUpdate, new BotForumTextDraftUpdateNotification(j, j3, botDraftMessage4.messageObject, z));
+    }
+
+    public void onBotForumDraftUpdate(final long j, final int i, final long j2, TL_iv.RichMessage richMessage) {
+        long[] jArr;
+        long[] jArr2;
+        BotDraftMessage botDraftMessage;
+        int i2;
+        FileLog.d("[BotForum] onDraftNewDraft (rich_message) " + j + " " + i + " " + j2);
+        long j3 = (long) i;
+        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j, j3);
+        if (longSparseArray == null || longSparseArray.size() <= 0) {
+            jArr = null;
+        } else {
+            jArr = new long[longSparseArray.size()];
+            int size = longSparseArray.size();
+            for (int i3 = 0; i3 < size; i3++) {
+                jArr[i3] = longSparseArray.keyAt(i3);
+            }
+        }
+        long[] jArr3 = jArr;
+        BotDraftMessage botDraftMessage2 = this.botTextDraftsByRandomIds.get(j, j3, j2);
+        if (botDraftMessage2 == null) {
+            jArr2 = jArr3;
+            botDraftMessage = new BotDraftMessage(j, i, j2, getUserConfig().getNewMessageId());
+            this.botTextDraftsByRandomIds.put(j, j3, j2, botDraftMessage);
+        } else {
+            jArr2 = jArr3;
+            botDraftMessage = botDraftMessage2;
+        }
+        if (jArr2 != null) {
+            int length = jArr2.length;
+            for (int i4 = 0; i4 < length; i4 = i2 + 1) {
+                long j4 = jArr2[i4];
+                if (j4 == j2) {
+                    i2 = i4;
+                } else {
+                    BotDraftMessage botDraftMessage3 = longSparseArray.get(j4);
+                    if (botDraftMessage3.selfDestruct != null) {
+                        AndroidUtilities.cancelRunOnUIThread(botDraftMessage3.selfDestruct);
+                    }
+                    i2 = i4;
+                    lambda$onBotForumDraftUpdate$1(j, i, j4);
+                }
+            }
+        }
+        boolean z = botDraftMessage.messageObject == null;
+        if (botDraftMessage.selfDestruct != null) {
+            AndroidUtilities.cancelRunOnUIThread(botDraftMessage.selfDestruct);
+        }
+        botDraftMessage.selfDestruct = new Runnable() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda3
+            @Override // java.lang.Runnable
+            public final void run() {
+                BotForumHelper.this.lambda$onBotForumDraftUpdate$1(j, i, j2);
+            }
+        };
+        botDraftMessage.richMessage = richMessage;
+        BotDraftMessage botDraftMessage4 = botDraftMessage;
+        botDraftMessage4.messageObject = createDraftMessage(j, i, j2, botDraftMessage.localMessageId, richMessage);
         AndroidUtilities.runOnUIThread(botDraftMessage4.selfDestruct, getAppGlobalConfig().messageTypingDraftTtl.get(TimeUnit.MILLISECONDS));
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.botForumDraftUpdate, new BotForumTextDraftUpdateNotification(j, j3, botDraftMessage4.messageObject, z));
     }
@@ -138,7 +226,7 @@ public class BotForumHelper extends BaseController {
             if (botDraftMessage2 == null) {
                 botDraftMessage2 = valueAt;
             }
-            if (str.startsWith(valueAt.text.text)) {
+            if (str != null && valueAt.text != null && str.startsWith(valueAt.text.text)) {
                 botDraftMessage = valueAt;
                 break;
             }
@@ -156,8 +244,8 @@ public class BotForumHelper extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onBotForumDraftTimeout, reason: merged with bridge method [inline-methods] */
-    public void lambda$onBotForumDraftUpdate$0(long j, int i, long j2) {
+    /* renamed from: onBotForumDraftTimeout, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
+    public void lambda$onBotForumDraftUpdate$1(long j, int i, long j2) {
         long j3 = i;
         BotDraftMessage remove = this.botTextDraftsByRandomIds.remove(j, j3, j2);
         if (remove == null) {
@@ -170,6 +258,7 @@ public class BotForumHelper extends BaseController {
         public final int localMessageId;
         private MessageObject messageObject;
         public final long randomId;
+        private TL_iv.RichMessage richMessage;
         private Runnable selfDestruct;
         private TLRPC.TL_textWithEntities text;
         public final int topicId;
@@ -217,7 +306,7 @@ public class BotForumHelper extends BaseController {
             performSendBotTopicCreate(inputPeerFromSendMessageRequest, messageFromSendMessageRequest, nextRandomId, new MessagesStorage.IntCallback() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.MessagesStorage.IntCallback
                 public final void run(int i2) {
-                    BotForumHelper.this.lambda$beforeSendingFinalRequest$2(tLObject, jArr, peerDialogId, runnable, i2);
+                    BotForumHelper.this.lambda$beforeSendingFinalRequest$3(tLObject, jArr, peerDialogId, runnable, i2);
                 }
             });
             return false;
@@ -226,7 +315,7 @@ public class BotForumHelper extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$beforeSendingFinalRequest$2(TLObject tLObject, final long[] jArr, final long j, final Runnable runnable, final int i) {
+    public /* synthetic */ void lambda$beforeSendingFinalRequest$3(TLObject tLObject, final long[] jArr, final long j, final Runnable runnable, final int i) {
         if (tLObject instanceof TLRPC.TL_messages_forwardMessages) {
             TLRPC.TL_messages_forwardMessages tL_messages_forwardMessages = (TLRPC.TL_messages_forwardMessages) tLObject;
             tL_messages_forwardMessages.top_msg_id = i;
@@ -236,16 +325,16 @@ public class BotForumHelper extends BaseController {
             tL_inputReplyToMessage.reply_to_msg_id = i;
             TlUtils.setInputReplyToFromSendMessageRequest(tLObject, tL_inputReplyToMessage);
         }
-        getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda3
+        getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                BotForumHelper.this.lambda$beforeSendingFinalRequest$1(jArr, j, i, runnable);
+                BotForumHelper.this.lambda$beforeSendingFinalRequest$2(jArr, j, i, runnable);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$beforeSendingFinalRequest$1(long[] jArr, long j, int i, Runnable runnable) {
+    public /* synthetic */ void lambda$beforeSendingFinalRequest$2(long[] jArr, long j, int i, Runnable runnable) {
         for (long j2 : jArr) {
             getMessagesStorage().updateMessageTopicId(j, j2, i);
         }
@@ -267,17 +356,17 @@ public class BotForumHelper extends BaseController {
         tL_messages_createForumTopic.title_missing = true;
         tL_messages_createForumTopic.peer = inputPeer;
         tL_messages_createForumTopic.random_id = j;
-        getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2
+        getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                BotForumHelper.this.lambda$performSendBotTopicCreate$3(peerDialogId, str, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                BotForumHelper.this.lambda$performSendBotTopicCreate$4(peerDialogId, str, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$performSendBotTopicCreate$3(long j, String str, TLRPC.Updates updates, TLRPC.TL_error tL_error) {
-        TLRPC.TL_updateMessageID tL_updateMessageID;
+    public /* synthetic */ void lambda$performSendBotTopicCreate$4(long j, String str, TLRPC.Updates updates, TLRPC.TL_error tL_error) {
+        TL_update.TL_updateMessageID tL_updateMessageID;
         if (updates == null) {
             performSendBotTopicCreateComplete(j, -1);
             return;
@@ -290,8 +379,8 @@ public class BotForumHelper extends BaseController {
                 break;
             }
             TLRPC.Update next = it.next();
-            if (next instanceof TLRPC.TL_updateMessageID) {
-                tL_updateMessageID = (TLRPC.TL_updateMessageID) next;
+            if (next instanceof TL_update.TL_updateMessageID) {
+                tL_updateMessageID = (TL_update.TL_updateMessageID) next;
                 break;
             }
         }

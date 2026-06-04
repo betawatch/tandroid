@@ -77,6 +77,7 @@ import org.telegram.ui.Components.TypefaceSpan;
 public class ChatEditTypeActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
     private ShadowSectionCell adminedInfoCell;
     private LinearLayout adminnedChannelsLayout;
+    private boolean applyToAllInviteLinks;
     private long chatId;
     private int checkReqId;
     private Runnable checkRunnable;
@@ -405,7 +406,7 @@ public class ChatEditTypeActivity extends BaseFragment implements NotificationCe
         this.editText.setMaxLines(1);
         this.editText.setLines(1);
         this.editText.setEnabled(false);
-        this.editText.setBackgroundDrawable(null);
+        this.editText.setBackground(null);
         this.editText.setPadding(0, 0, 0, 0);
         this.editText.setSingleLine(true);
         this.editText.setInputType(163840);
@@ -430,7 +431,7 @@ public class ChatEditTypeActivity extends BaseFragment implements NotificationCe
         this.usernameTextView.setTextColor(Theme.getColor(i3));
         this.usernameTextView.setMaxLines(1);
         this.usernameTextView.setLines(1);
-        this.usernameTextView.setBackgroundDrawable(null);
+        this.usernameTextView.setBackground(null);
         this.usernameTextView.setPadding(0, 0, 0, 0);
         this.usernameTextView.setSingleLine(true);
         this.usernameTextView.setInputType(163872);
@@ -533,10 +534,11 @@ public class ChatEditTypeActivity extends BaseFragment implements NotificationCe
         TextInfoPrivacyCell textInfoPrivacyCell2 = new TextInfoPrivacyCell(context, 12, this.resourceProvider);
         this.manageLinksInfoCell = textInfoPrivacyCell2;
         this.linearLayout.addView(textInfoPrivacyCell2, LayoutHelper.createLinear(-1, -2));
-        JoinToSendSettingsView joinToSendSettingsView = new JoinToSendSettingsView(context, this.currentChat);
-        this.joinContainer = joinToSendSettingsView;
+        7 r02 = new 7(context, this.currentChat, context);
+        this.joinContainer = r02;
         TLRPC.ChatFull chatFull = this.info;
-        joinToSendSettingsView.showJoinToSend((chatFull == null || chatFull.linked_chat_id == 0) ? false : true);
+        r02.showJoinToSend((chatFull == null || chatFull.linked_chat_id == 0 || this.isChannel) ? false : true);
+        this.joinContainer.setFullInfo(this, this.info);
         this.linearLayout.addView(this.joinContainer);
         LinearLayout linearLayout7 = new LinearLayout(context);
         this.saveContainer = linearLayout7;
@@ -693,6 +695,59 @@ public class ChatEditTypeActivity extends BaseFragment implements NotificationCe
         presentFragment(manageLinksActivity);
     }
 
+    class 7 extends JoinToSendSettingsView {
+        final /* synthetic */ Context val$context;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        7(Context context, TLRPC.Chat chat, Context context2) {
+            super(context, chat);
+            this.val$context = context2;
+        }
+
+        @Override // org.telegram.ui.Components.JoinToSendSettingsView
+        public boolean onJoinRequestToggle(final boolean z, Runnable runnable) {
+            int i;
+            String str;
+            if (!ChatEditTypeActivity.this.isPrivate || ChatEditTypeActivity.this.info == null || (i = ChatEditTypeActivity.this.info.invitesCount) == 0) {
+                return true;
+            }
+            if (ChatEditTypeActivity.this.isChannel) {
+                str = z ? "ApproveNewMembersEnableForLinksChannel" : "ApproveNewMembersDisableForLinksChannel";
+            } else {
+                str = z ? "ApproveNewMembersEnableForLinks" : "ApproveNewMembersDisableForLinks";
+            }
+            AlertDialog.Builder builder = new AlertDialog.Builder(this.val$context, ((BaseFragment) ChatEditTypeActivity.this).resourceProvider);
+            builder.setTitle(LocaleController.getString(R.string.ApproveNewMembersApplyToLinksTitle));
+            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatPluralString(str, i, new Object[0])));
+            builder.setPositiveButton(LocaleController.getString(R.string.ApproveNewMembersApplyToLinksApply), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ChatEditTypeActivity$7$$ExternalSyntheticLambda0
+                @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+                public final void onClick(AlertDialog alertDialog, int i2) {
+                    ChatEditTypeActivity.7.this.lambda$onJoinRequestToggle$0(z, alertDialog, i2);
+                }
+            });
+            builder.setNegativeButton(LocaleController.getString(R.string.ApproveNewMembersApplyToLinksDontApply), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ChatEditTypeActivity$7$$ExternalSyntheticLambda1
+                @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+                public final void onClick(AlertDialog alertDialog, int i2) {
+                    ChatEditTypeActivity.7.this.lambda$onJoinRequestToggle$1(z, alertDialog, i2);
+                }
+            });
+            ChatEditTypeActivity.this.showDialog(builder.create());
+            return false;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$onJoinRequestToggle$0(boolean z, AlertDialog alertDialog, int i) {
+            lambda$new$3(z);
+            ChatEditTypeActivity.this.applyToAllInviteLinks = true;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$onJoinRequestToggle$1(boolean z, AlertDialog alertDialog, int i) {
+            lambda$new$3(z);
+            ChatEditTypeActivity.this.applyToAllInviteLinks = false;
+        }
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$5(View view) {
         boolean z = !this.isSaveRestricted;
@@ -800,38 +855,39 @@ public class ChatEditTypeActivity extends BaseFragment implements NotificationCe
     }
 
     private boolean tryUpdateJoinSettings() {
-        if (!this.isChannel && this.joinContainer != null) {
-            if (getParentActivity() == null) {
+        if (this.joinContainer == null) {
+            return true;
+        }
+        if (getParentActivity() == null) {
+            return false;
+        }
+        if (!this.isChannel && !ChatObject.isChannel(this.currentChat)) {
+            JoinToSendSettingsView joinToSendSettingsView = this.joinContainer;
+            if (joinToSendSettingsView.isJoinToSend || joinToSendSettingsView.isJoinRequest) {
+                getMessagesController().convertToMegaGroup(getParentActivity(), this.chatId, this, new MessagesStorage.LongCallback() { // from class: org.telegram.ui.ChatEditTypeActivity$$ExternalSyntheticLambda12
+                    @Override // org.telegram.messenger.MessagesStorage.LongCallback
+                    public final void run(long j) {
+                        ChatEditTypeActivity.this.lambda$tryUpdateJoinSettings$9(j);
+                    }
+                });
                 return false;
             }
-            if (!ChatObject.isChannel(this.currentChat)) {
-                JoinToSendSettingsView joinToSendSettingsView = this.joinContainer;
-                if (joinToSendSettingsView.isJoinToSend || joinToSendSettingsView.isJoinRequest) {
-                    getMessagesController().convertToMegaGroup(getParentActivity(), this.chatId, this, new MessagesStorage.LongCallback() { // from class: org.telegram.ui.ChatEditTypeActivity$$ExternalSyntheticLambda12
-                        @Override // org.telegram.messenger.MessagesStorage.LongCallback
-                        public final void run(long j) {
-                            ChatEditTypeActivity.this.lambda$tryUpdateJoinSettings$9(j);
-                        }
-                    });
-                    return false;
-                }
-            }
-            if (this.currentChat.join_to_send != this.joinContainer.isJoinToSend) {
-                MessagesController messagesController = getMessagesController();
-                long j = this.chatId;
-                TLRPC.Chat chat = this.currentChat;
-                boolean z = this.joinContainer.isJoinToSend;
-                chat.join_to_send = z;
-                messagesController.toggleChatJoinToSend(j, z, null, null);
-            }
-            if (this.currentChat.join_request != this.joinContainer.isJoinRequest) {
-                MessagesController messagesController2 = getMessagesController();
-                long j2 = this.chatId;
-                TLRPC.Chat chat2 = this.currentChat;
-                boolean z2 = this.joinContainer.isJoinRequest;
-                chat2.join_request = z2;
-                messagesController2.toggleChatJoinRequest(j2, z2, null, null);
-            }
+        }
+        if (this.currentChat.join_to_send != this.joinContainer.isJoinToSend) {
+            MessagesController messagesController = getMessagesController();
+            long j = this.chatId;
+            TLRPC.Chat chat = this.currentChat;
+            boolean z = this.joinContainer.isJoinToSend;
+            chat.join_to_send = z;
+            messagesController.toggleChatJoinToSend(j, z, null, null);
+        }
+        if (this.currentChat.join_request != this.joinContainer.isJoinRequest || this.applyToAllInviteLinks) {
+            MessagesController messagesController2 = getMessagesController();
+            long j2 = this.chatId;
+            TLRPC.Chat chat2 = this.currentChat;
+            boolean z2 = this.joinContainer.isJoinRequest;
+            chat2.join_request = z2;
+            messagesController2.toggleChatJoinRequest(j2, 0L, z2, this.applyToAllInviteLinks, false, null, null);
         }
         return true;
     }
@@ -1251,7 +1307,7 @@ public class ChatEditTypeActivity extends BaseFragment implements NotificationCe
                         return;
                     }
                     ((TextInfoPrivacyCell) viewHolder.itemView).setText(LocaleController.getString(R.string.UsernamesChannelHelp));
-                    ((TextInfoPrivacyCell) viewHolder.itemView).setBackgroundDrawable(Theme.getThemedDrawableByKey(UsernamesListView.this.getContext(), R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                    ((TextInfoPrivacyCell) viewHolder.itemView).setBackground(Theme.getThemedDrawableByKey(UsernamesListView.this.getContext(), R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                     return;
                 }
                 TLRPC.TL_username tL_username = (TLRPC.TL_username) ChatEditTypeActivity.this.usernames.get(i - 1);
@@ -1638,10 +1694,10 @@ public class ChatEditTypeActivity extends BaseFragment implements NotificationCe
         this.usernameTextView.clearFocus();
         JoinToSendSettingsView joinToSendSettingsView = this.joinContainer;
         if (joinToSendSettingsView != null) {
-            joinToSendSettingsView.setVisibility((this.isChannel || this.isPrivate) ? 8 : 0);
+            joinToSendSettingsView.setVisibility((!this.isChannel || this.isPrivate) ? 0 : 8);
             JoinToSendSettingsView joinToSendSettingsView2 = this.joinContainer;
             TLRPC.ChatFull chatFull2 = this.info;
-            joinToSendSettingsView2.showJoinToSend((chatFull2 == null || chatFull2.linked_chat_id == 0) ? false : true);
+            joinToSendSettingsView2.showJoinToSend((chatFull2 == null || chatFull2.linked_chat_id == 0 || this.isChannel) ? false : true);
         }
         UsernamesListView usernamesListView = this.usernamesListView;
         if (usernamesListView != null) {
