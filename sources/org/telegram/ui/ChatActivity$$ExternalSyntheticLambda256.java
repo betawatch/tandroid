@@ -1,26 +1,12 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
-import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
+import java.util.ArrayList;
+import java.util.function.Supplier;
 
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ChatActivity$$ExternalSyntheticLambda256 implements IBlur3Capture {
-    public final /* synthetic */ ChatActivity.ChatActivityFragmentView f$0;
-
-    public /* synthetic */ ChatActivity$$ExternalSyntheticLambda256(ChatActivity.ChatActivityFragmentView chatActivityFragmentView) {
-        this.f$0 = chatActivityFragmentView;
-    }
-
-    @Override // org.telegram.ui.Components.blur3.capture.IBlur3Capture
-    public final void capture(Canvas canvas, RectF rectF) {
-        this.f$0.drawList(canvas, rectF);
-    }
-
-    @Override // org.telegram.ui.Components.blur3.capture.IBlur3Capture
-    public /* synthetic */ void captureCalculateHash(IBlur3Hash iBlur3Hash, RectF rectF) {
-        iBlur3Hash.unsupported();
+public final /* synthetic */ class ChatActivity$$ExternalSyntheticLambda256 implements Supplier {
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        return new ArrayList();
     }
 }

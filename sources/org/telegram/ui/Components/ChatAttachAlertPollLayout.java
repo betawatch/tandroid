@@ -72,7 +72,7 @@ import org.telegram.ui.Cells.TextCell;
 import org.telegram.ui.Cells.TextCheckCell;
 import org.telegram.ui.Cells.TextInfoPrivacyCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda294;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda271;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.ChatActivityEnterViewAnimatedIconView;
 import org.telegram.ui.Components.ChatAttachAlert;
@@ -490,6 +490,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         this.hintView.setVisibility(4);
         addView(this.hintView, LayoutHelper.createFrame(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
         this.MAX_CAPTION_LENGTH = MessagesController.getInstance(this.parentAlert.currentAccount).config.pollCaptionLengthMax.get();
+        this.webPageLoader = new WebPageLoader(this.parentAlert.currentAccount);
         NotificationCenter.getInstance(this.parentAlert.currentAccount).addObserver(this, NotificationCenter.didReceivedWebpagesInUpdates);
         if (isPremium) {
             NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
@@ -506,7 +507,6 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             addView(this.suggestEmojiPanel, LayoutHelper.createFrame(-2, NotificationCenter.screenshotTook, 51));
         }
         this.keyboardNotifier = new KeyboardNotifier(this.parentAlert.sizeNotifierFrameLayout, null);
-        this.webPageLoader = new WebPageLoader(this.parentAlert.currentAccount);
         checkDoneButton();
     }
 
@@ -3603,7 +3603,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             }
         });
         ScrimOptions scrimOptions = new ScrimOptions(getContext(), this.resourcesProvider);
-        add.setOnDismiss(new ChatActivity$$ExternalSyntheticLambda294(scrimOptions));
+        add.setOnDismiss(new ChatActivity$$ExternalSyntheticLambda271(scrimOptions));
         add.setMinWidth(AndroidUtilities.dp(185.0f));
         add.setupSelectors();
         scrimOptions.setItemOptions(add);
