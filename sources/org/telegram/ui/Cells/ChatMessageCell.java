@@ -51796,29 +51796,29 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             this.lastForwardNameWidth = chatMessageCell.forwardedNameWidth;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:395:0x03eb, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:397:0x03ed, code lost:
         
-            if (r8 == (r9 == null ? 0 : r9.textWidth)) goto L188;
+            if (r8 == (r9 == null ? 0 : r9.textWidth)) goto L190;
          */
-        /* JADX WARN: Removed duplicated region for block: B:230:0x0694  */
-        /* JADX WARN: Removed duplicated region for block: B:233:0x06a0  */
-        /* JADX WARN: Removed duplicated region for block: B:236:0x06ac  */
-        /* JADX WARN: Removed duplicated region for block: B:239:0x06ba  */
-        /* JADX WARN: Removed duplicated region for block: B:242:0x06c7  */
-        /* JADX WARN: Removed duplicated region for block: B:245:0x06d8  */
-        /* JADX WARN: Removed duplicated region for block: B:248:0x06e9  */
-        /* JADX WARN: Removed duplicated region for block: B:255:0x0709  */
-        /* JADX WARN: Removed duplicated region for block: B:258:0x0716  */
-        /* JADX WARN: Removed duplicated region for block: B:261:0x0721  */
-        /* JADX WARN: Removed duplicated region for block: B:264:0x072c  */
-        /* JADX WARN: Removed duplicated region for block: B:267:0x073a  */
-        /* JADX WARN: Removed duplicated region for block: B:274:0x075a  */
-        /* JADX WARN: Removed duplicated region for block: B:283:0x07af  */
-        /* JADX WARN: Removed duplicated region for block: B:286:0x07bc  */
-        /* JADX WARN: Removed duplicated region for block: B:298:0x07ed  */
-        /* JADX WARN: Removed duplicated region for block: B:305:0x0806  */
-        /* JADX WARN: Removed duplicated region for block: B:310:0x0817  */
-        /* JADX WARN: Removed duplicated region for block: B:321:0x079b  */
+        /* JADX WARN: Removed duplicated region for block: B:232:0x0696  */
+        /* JADX WARN: Removed duplicated region for block: B:235:0x06a2  */
+        /* JADX WARN: Removed duplicated region for block: B:238:0x06ae  */
+        /* JADX WARN: Removed duplicated region for block: B:241:0x06bc  */
+        /* JADX WARN: Removed duplicated region for block: B:244:0x06c9  */
+        /* JADX WARN: Removed duplicated region for block: B:247:0x06da  */
+        /* JADX WARN: Removed duplicated region for block: B:250:0x06eb  */
+        /* JADX WARN: Removed duplicated region for block: B:257:0x070b  */
+        /* JADX WARN: Removed duplicated region for block: B:260:0x0718  */
+        /* JADX WARN: Removed duplicated region for block: B:263:0x0723  */
+        /* JADX WARN: Removed duplicated region for block: B:266:0x072e  */
+        /* JADX WARN: Removed duplicated region for block: B:269:0x073c  */
+        /* JADX WARN: Removed duplicated region for block: B:276:0x075c  */
+        /* JADX WARN: Removed duplicated region for block: B:285:0x07b1  */
+        /* JADX WARN: Removed duplicated region for block: B:288:0x07be  */
+        /* JADX WARN: Removed duplicated region for block: B:300:0x07ef  */
+        /* JADX WARN: Removed duplicated region for block: B:307:0x0808  */
+        /* JADX WARN: Removed duplicated region for block: B:312:0x0819  */
+        /* JADX WARN: Removed duplicated region for block: B:323:0x079d  */
         /* JADX WARN: Removed duplicated region for block: B:49:0x00eb  */
         /* JADX WARN: Removed duplicated region for block: B:50:0x0111  */
         /*
@@ -51897,7 +51897,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     this.animateRichLayout = true;
                     RichMessageLayout richMessageLayout2 = this.lastDrawingRichLayout;
                     this.animateOutRichLayout = richMessageLayout2;
-                    richMessageLayout2.attach(ChatMessageCell.this);
+                    if (richMessageLayout2 != null) {
+                        richMessageLayout2.attach(ChatMessageCell.this);
+                    }
                 }
             }
             this.animateDrawNameLayout = false;
