@@ -2175,6 +2175,11 @@ public abstract class MessagePreviewView extends FrameLayout {
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ void didPressShowMore(ChatMessageCell chatMessageCell2) {
+                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressShowMore(this, chatMessageCell2);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ void didPressSideButton(ChatMessageCell chatMessageCell2) {
                         ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSideButton(this, chatMessageCell2);
                     }
@@ -2675,6 +2680,11 @@ public abstract class MessagePreviewView extends FrameLayout {
                             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                             public /* synthetic */ void didPressRevealSensitiveContent(ChatMessageCell chatMessageCell2) {
                                 ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressRevealSensitiveContent(this, chatMessageCell2);
+                            }
+
+                            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                            public /* synthetic */ void didPressShowMore(ChatMessageCell chatMessageCell2) {
+                                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressShowMore(this, chatMessageCell2);
                             }
 
                             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

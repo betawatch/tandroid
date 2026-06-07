@@ -40,7 +40,6 @@ public class TabCallbackDelegateImpl implements TabCallbackDelegate {
         private final TabTemplate.TabCallback mCallback;
 
         TabCallbackStub(TabTemplate.TabCallback tabCallback) {
-            this.mCallback = tabCallback;
         }
 
         @Override // androidx.car.app.model.ITabCallback
@@ -57,8 +56,7 @@ public class TabCallbackDelegateImpl implements TabCallbackDelegate {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ Object lambda$onTabSelected$0(String str) {
-            this.mCallback.onTabSelected(str);
-            return null;
+            throw null;
         }
     }
 }

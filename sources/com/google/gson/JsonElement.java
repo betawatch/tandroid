@@ -5,7 +5,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.io.StringWriter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class JsonElement {
     public boolean isJsonArray() {
         return this instanceof JsonArray;

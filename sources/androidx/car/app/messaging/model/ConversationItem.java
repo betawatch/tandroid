@@ -126,48 +126,13 @@ public class ConversationItem implements Item {
         Person mSelf;
         CarText mTitle;
 
-        public Builder setId(String str) {
-            this.mId = str;
-            return this;
-        }
-
-        public Builder setTitle(CarText carText) {
-            this.mTitle = carText;
-            return this;
-        }
-
-        public Builder setIcon(CarIcon carIcon) {
-            this.mIcon = carIcon;
-            return this;
-        }
-
-        public Builder setSelf(Person person) {
-            this.mSelf = person;
-            return this;
-        }
-
-        public Builder setGroupConversation(boolean z) {
-            this.mIsGroupConversation = z;
-            return this;
-        }
-
         public Builder setMessages(List list) {
             this.mMessages = list;
             return this;
         }
 
-        public Builder setConversationCallback(ConversationCallback conversationCallback) {
-            Objects.requireNonNull(conversationCallback);
-            this.mConversationCallbackDelegate = new ConversationCallbackDelegateImpl(conversationCallback);
-            return this;
-        }
-
         public ConversationItem build() {
             return new ConversationItem(this);
-        }
-
-        public Builder() {
-            this.mActions = new ArrayList();
         }
 
         public Builder(ConversationItem conversationItem) {

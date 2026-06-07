@@ -71,6 +71,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.utils.ViewOutlineProviderImpl;
 import org.telegram.tgnet.ConnectionsManager;
@@ -3012,7 +3013,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$openProximityAlert$31(TLRPC.User user, int i, AlertDialog alertDialog, int i2) {
-        shareLiveLocation(user, 900, i);
+        shareLiveLocation(user, RichMessageLayout.PART_MAX_HEIGHT_DP, i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

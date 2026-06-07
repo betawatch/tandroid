@@ -6,6 +6,10 @@ import j$.util.Objects;
 public final class OpenMicrophoneRequest {
     private final CarAudioCallbackDelegate mCarAudioCallbackDelegate;
 
+    public static final class Builder {
+        final CarAudioCallbackDelegate mCarAudioCallbackDelegate;
+    }
+
     OpenMicrophoneRequest(Builder builder) {
         this.mCarAudioCallbackDelegate = builder.mCarAudioCallbackDelegate;
     }
@@ -18,18 +22,5 @@ public final class OpenMicrophoneRequest {
         CarAudioCallbackDelegate carAudioCallbackDelegate = this.mCarAudioCallbackDelegate;
         Objects.requireNonNull(carAudioCallbackDelegate);
         return carAudioCallbackDelegate;
-    }
-
-    public static final class Builder {
-        final CarAudioCallbackDelegate mCarAudioCallbackDelegate;
-
-        public Builder(CarAudioCallback carAudioCallback) {
-            Objects.requireNonNull(carAudioCallback);
-            this.mCarAudioCallbackDelegate = CarAudioCallbackDelegate.create(carAudioCallback);
-        }
-
-        public OpenMicrophoneRequest build() {
-            return new OpenMicrophoneRequest(this);
-        }
     }
 }

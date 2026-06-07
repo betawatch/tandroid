@@ -23,6 +23,7 @@ import javax.microedition.khronos.egl.EGLDisplay;
 import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
@@ -127,7 +128,7 @@ public class SpoilerEffect2 {
         int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
         if (devicePerformanceClass == 1) {
             Point point = AndroidUtilities.displaySize;
-            return Math.min(900, (int) (((point.x + point.y) / 2.0f) * 0.8f));
+            return Math.min(RichMessageLayout.PART_MAX_HEIGHT_DP, (int) (((point.x + point.y) / 2.0f) * 0.8f));
         }
         if (devicePerformanceClass == 2) {
             Point point2 = AndroidUtilities.displaySize;

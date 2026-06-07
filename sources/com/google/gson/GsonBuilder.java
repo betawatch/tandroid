@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class GsonBuilder {
     private Excluder excluder = Excluder.DEFAULT;
     private LongSerializationPolicy longSerializationPolicy = LongSerializationPolicy.DEFAULT;

@@ -10499,45 +10499,45 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Can't wrap try/catch for region: R(34:46|(1:357)(2:50|(1:52))|(8:263|264|265|266|(10:268|269|270|271|272|273|274|275|276|277)(1:346)|278|279|(5:281|282|283|284|285)(1:333))|(3:296|297|(3:299|300|(30:302|288|289|290|291|(0)(0)|(0)(0)|259|(0)(0)|(0)|254|96|(0)(0)|(0)(0)|154|(0)|157|(0)|(0)|163|(0)|204|170|(0)|190|183|184|(0)|187|188)))|287|288|289|290|291|(0)(0)|(0)(0)|259|(0)(0)|(0)|254|96|(0)(0)|(0)(0)|154|(0)|157|(0)|(0)|163|(0)|204|170|(0)|190|183|184|(0)|187|188) */
-    /* JADX WARN: Code restructure failed: missing block: B:293:0x0191, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:293:0x0190, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:294:0x0192, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:294:0x0191, code lost:
     
         r4 = r0;
         r0 = r8;
         r8 = r48;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x0077, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0076, code lost:
     
         if (r3 == false) goto L36;
      */
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x0458  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x0478 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x04eb  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x0509  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x0517  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x0523 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x052c  */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x0538  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x0596 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:186:0x05e3  */
-    /* JADX WARN: Removed duplicated region for block: B:205:0x050f  */
-    /* JADX WARN: Removed duplicated region for block: B:249:0x04ff  */
-    /* JADX WARN: Removed duplicated region for block: B:255:0x028d  */
-    /* JADX WARN: Removed duplicated region for block: B:261:0x0285  */
-    /* JADX WARN: Removed duplicated region for block: B:262:0x0238  */
-    /* JADX WARN: Removed duplicated region for block: B:310:0x01af A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:320:0x01cb A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x0457  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0477 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x04ea  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x0508  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x0516  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x0522 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x052b  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x0537  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x0595 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x05e2  */
+    /* JADX WARN: Removed duplicated region for block: B:205:0x050e  */
+    /* JADX WARN: Removed duplicated region for block: B:249:0x04fe  */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x028c  */
+    /* JADX WARN: Removed duplicated region for block: B:261:0x0284  */
+    /* JADX WARN: Removed duplicated region for block: B:262:0x0237  */
+    /* JADX WARN: Removed duplicated region for block: B:310:0x01ae A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:320:0x01ca A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:327:? A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:361:0x01db  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x020f  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0240  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x028b  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0290 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0343  */
+    /* JADX WARN: Removed duplicated region for block: B:361:0x01da  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x020e  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x023f  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x028a  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x028f A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0342  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -12571,7 +12571,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 TLRPC.BotInlineMessage botInlineMessage4 = botInlineResult.send_message;
                 int i6 = botInlineMessage4.period;
                 if (i6 == 0) {
-                    i6 = 900;
+                    i6 = RichMessageLayout.PART_MAX_HEIGHT_DP;
                 }
                 tL_messageMediaGeoLive.period = i6;
                 tL_messageMediaGeoLive.geo = botInlineMessage4.geo;

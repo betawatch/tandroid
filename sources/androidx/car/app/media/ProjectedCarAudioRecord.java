@@ -13,7 +13,6 @@ public class ProjectedCarAudioRecord extends CarAudioRecord {
         super(carContext);
     }
 
-    @Override // androidx.car.app.media.CarAudioRecord
     protected void startRecordingInternal(OpenMicrophoneResponse openMicrophoneResponse) {
         this.mInputStream = openMicrophoneResponse.getCarMicrophoneInputStream();
     }

@@ -5624,8 +5624,14 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
                 if (this.pages[0].adapter.currentPage == null) {
                     return;
                 }
-                str = this.pages[0].adapter.currentPage.url;
-                file = this.pages[0].adapter.currentPage.cached_page != null ? this.pages[0].adapter.currentPage.cached_page.local : null;
+                String str5 = this.pages[0].adapter.currentPage.url;
+                if (this.pages[0].adapter.currentPage.cached_page != null) {
+                    str = str5;
+                    file = this.pages[0].adapter.currentPage.cached_page.local;
+                } else {
+                    str = str5;
+                    file = null;
+                }
             }
             Activity activity2 = this.parentActivity;
             if (activity2 == null || activity2.isFinishing()) {
@@ -5652,8 +5658,8 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
                     ArticleViewer.this.lambda$setParentActivity$36(hostAuthority2, hostAuthority, (Boolean) obj);
                 }
             };
-            if (this.pages[0].isWeb() && MessagesController.getInstance(this.currentAccount).isWebBrowserOpenInApp(hostAuthority2)) {
-                AlertsCreator.showOpenExternalBrowserAlert(activity, getResourcesProvider(), str, true, new Utilities.Callback2() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda45
+            if (this.pages[0].isWeb() && MessagesController.getInstance(this.currentAccount).isWebBrowserOpenInApp(hostAuthority2) && !MessagesController.getInstance(this.currentAccount).isWebBrowserExceptionsLimitReached(true)) {
+                AlertsCreator.showOpenExternalBrowserAlert(activity, getResourcesProvider(), str, true, true, new Utilities.Callback2() { // from class: org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda45
                     @Override // org.telegram.messenger.Utilities.Callback2
                     public final void run(Object obj, Object obj2) {
                         ArticleViewer.lambda$setParentActivity$37(Utilities.Callback.this, runnable, (Boolean) obj, (Boolean) obj2);

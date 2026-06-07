@@ -37,7 +37,6 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.view.Window;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -9747,10 +9746,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
 
     /* JADX INFO: Access modifiers changed from: private */
     public void checkDecorViewVisibility() {
-        Window window = getWindow();
-        if (window != null) {
-            window.getDecorView().setVisibility((this.reasonsToHideDecorView <= 0 || this.isInPictureInPictureMode) ? 0 : 8);
-        }
+        getWindow();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

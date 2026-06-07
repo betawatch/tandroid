@@ -1,6 +1,5 @@
 package androidx.car.app.model;
 
-import androidx.car.app.model.constraints.CarIconConstraints;
 import androidx.core.graphics.drawable.IconCompat;
 import j$.util.Objects;
 
@@ -129,24 +128,5 @@ public final class CarIcon {
         this.mType = 1;
         this.mIcon = null;
         this.mTint = null;
-    }
-
-    public static final class Builder {
-        private final IconCompat mIcon;
-        private CarColor mTint;
-        private final int mType;
-
-        public CarIcon build() {
-            return new CarIcon(this.mIcon, this.mTint, this.mType);
-        }
-
-        public Builder(IconCompat iconCompat) {
-            CarIconConstraints carIconConstraints = CarIconConstraints.UNCONSTRAINED;
-            Objects.requireNonNull(iconCompat);
-            carIconConstraints.checkSupportedIcon(iconCompat);
-            this.mType = 1;
-            this.mIcon = iconCompat;
-            this.mTint = null;
-        }
     }
 }

@@ -394,8 +394,6 @@ public final class MediaControllerCompat {
 
         public abstract void play();
 
-        public abstract void playFromMediaId(String str, Bundle bundle);
-
         public abstract void stop();
 
         TransportControls() {
@@ -640,11 +638,6 @@ public final class MediaControllerCompat {
         @Override // android.support.v4.media.session.MediaControllerCompat.TransportControls
         public void stop() {
             this.mControlsFwk.stop();
-        }
-
-        @Override // android.support.v4.media.session.MediaControllerCompat.TransportControls
-        public void playFromMediaId(String str, Bundle bundle) {
-            this.mControlsFwk.playFromMediaId(str, bundle);
         }
     }
 

@@ -11,6 +11,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.Serializable;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.RichMessageLayout;
 
 /* loaded from: classes2.dex */
 public final class ZoneOffset extends ZoneId implements j$.time.temporal.m, j$.time.temporal.n, Comparable<ZoneOffset>, Serializable {
@@ -141,7 +142,7 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.m, j$.t
         if (i < -64800 || i > 64800) {
             throw new c("Zone offset not in valid range: -18:00 to +18:00");
         }
-        if (i % 900 == 0) {
+        if (i % RichMessageLayout.PART_MAX_HEIGHT_DP == 0) {
             Integer valueOf = Integer.valueOf(i);
             ConcurrentHashMap concurrentHashMap = d;
             ZoneOffset zoneOffset = (ZoneOffset) concurrentHashMap.get(valueOf);
@@ -280,7 +281,7 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.m, j$.t
 
     final void S(DataOutput dataOutput) {
         int i = this.b;
-        int i2 = i % 900 == 0 ? i / 900 : NotificationCenter.needDeleteBusinessLink;
+        int i2 = i % RichMessageLayout.PART_MAX_HEIGHT_DP == 0 ? i / RichMessageLayout.PART_MAX_HEIGHT_DP : NotificationCenter.needDeleteBusinessLink;
         dataOutput.writeByte(i2);
         if (i2 == 127) {
             dataOutput.writeInt(i);

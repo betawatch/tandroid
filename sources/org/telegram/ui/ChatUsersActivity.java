@@ -46,6 +46,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.RequestDelegate;
@@ -247,13 +248,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         if (i == 4) {
             return 60;
         }
-        if (i == 5) {
-            return NotificationCenter.dialogsUnreadPollVotesCounterChanged;
-        }
-        if (i == 6) {
-            return 900;
-        }
-        return i == 7 ? 3600 : 0;
+        return i == 5 ? NotificationCenter.dialogsUnreadPollVotesCounterChanged : i == 6 ? RichMessageLayout.PART_MAX_HEIGHT_DP : i == 7 ? 3600 : 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -934,12 +929,12 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         this.flickerLoadingView = flickerLoadingView;
         flickerLoadingView.setViewType(6);
         this.flickerLoadingView.showDate(false);
-        this.flickerLoadingView.setUseHeaderOffset(true);
+        this.flickerLoadingView.setUseHeaderOffset(false);
         FlickerLoadingView flickerLoadingView2 = this.flickerLoadingView;
         int i4 = Theme.key_actionBarDefaultSubmenuBackground;
         int i5 = Theme.key_listSelector;
         flickerLoadingView2.setColors(i4, i5, i5);
-        frameLayout3.addView(this.flickerLoadingView);
+        frameLayout3.addView(this.flickerLoadingView, LayoutHelper.createFrame(-1, -1.0f, 0, 12.0f, 30.0f, 12.0f, 0.0f));
         RadialProgressView radialProgressView = new RadialProgressView(context);
         this.progressBar = radialProgressView;
         frameLayout3.addView(radialProgressView, LayoutHelper.createFrame(-2, -2, 17));
@@ -967,7 +962,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         this.listView = recyclerListView;
         recyclerListView.setSections();
         RecyclerListView recyclerListView2 = this.listView;
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, r2, z) { // from class: org.telegram.ui.ChatUsersActivity.4
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, r4, z) { // from class: org.telegram.ui.ChatUsersActivity.4
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public int scrollVerticallyBy(int i6, RecyclerView.Recycler recycler, RecyclerView.State state) {
                 if (!ChatUsersActivity.this.firstLoaded && ChatUsersActivity.this.type == 0 && ChatUsersActivity.this.participants.size() == 0) {
@@ -4013,6 +4008,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             FrameLayout frameLayout;
             if (i == 0) {
                 ManageChatUserCell manageChatUserCell = new ManageChatUserCell(this.mContext, 2, 2, ChatUsersActivity.this.selectType == 0);
+                manageChatUserCell.setUsernameSubtitle();
                 manageChatUserCell.setDelegate(new ManageChatUserCell.ManageChatUserCellDelegate() { // from class: org.telegram.ui.ChatUsersActivity$SearchAdapter$$ExternalSyntheticLambda1
                     @Override // org.telegram.ui.Cells.ManageChatUserCell.ManageChatUserCellDelegate
                     public final boolean onOptionsButtonCheck(ManageChatUserCell manageChatUserCell2, boolean z) {
@@ -4410,8 +4406,14 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                     flickerLoadingView.setIsSingleCell(true);
                     flickerLoadingView.setViewType(6);
                     flickerLoadingView.showDate(false);
+                    flickerLoadingView.setUseHeaderOffset(false);
                     flickerLoadingView.setPaddingLeft(AndroidUtilities.dp(5.0f));
-                    flickerLoadingView.setLayoutParams(new RecyclerView.LayoutParams(-1, -1));
+                    RecyclerView.LayoutParams layoutParams = new RecyclerView.LayoutParams(-1, -1);
+                    int dp = AndroidUtilities.dp(12.0f);
+                    ((ViewGroup.MarginLayoutParams) layoutParams).rightMargin = dp;
+                    ((ViewGroup.MarginLayoutParams) layoutParams).leftMargin = dp;
+                    ((ViewGroup.MarginLayoutParams) layoutParams).topMargin = AndroidUtilities.dp(30.0f);
+                    flickerLoadingView.setLayoutParams(layoutParams);
                     view = flickerLoadingView;
                     break;
                 case 12:

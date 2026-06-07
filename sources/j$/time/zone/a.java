@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.io.StreamCorruptedException;
 import java.util.TimeZone;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.RichMessageLayout;
 
 /* loaded from: classes2.dex */
 final class a implements Externalizable {
@@ -78,7 +79,7 @@ final class a implements Externalizable {
 
     static void d(ZoneOffset zoneOffset, ObjectOutput objectOutput) {
         int totalSeconds = zoneOffset.getTotalSeconds();
-        int i = totalSeconds % 900 == 0 ? totalSeconds / 900 : NotificationCenter.needDeleteBusinessLink;
+        int i = totalSeconds % RichMessageLayout.PART_MAX_HEIGHT_DP == 0 ? totalSeconds / RichMessageLayout.PART_MAX_HEIGHT_DP : NotificationCenter.needDeleteBusinessLink;
         objectOutput.writeByte(i);
         if (i == 127) {
             objectOutput.writeInt(totalSeconds);

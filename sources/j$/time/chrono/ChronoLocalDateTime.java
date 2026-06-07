@@ -19,5 +19,6 @@ public interface ChronoLocalDateTime<D extends b> extends Temporal, j$.time.temp
 
     Instant toInstant(ZoneOffset zoneOffset);
 
-    int y(ChronoLocalDateTime chronoLocalDateTime);
+    /* renamed from: y */
+    int compareTo(ChronoLocalDateTime chronoLocalDateTime);
 }

@@ -854,9 +854,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             if (this.isPremiumMode) {
                 canvas.save();
                 int dp = AndroidUtilities.dp(26.0f);
-                canvas.translate(0.0f, ((getMeasuredHeight() - dp) / 2.0f) - AndroidUtilities.dp(1.0f));
+                canvas.translate(AndroidUtilities.dp(5.0f), (getMeasuredHeight() - dp) / 2.0f);
                 float f = dp;
-                this.bgRect.set(0.0f, 0.0f, getMeasuredWidth() - getPaddingEnd(), f);
+                this.bgRect.set(-AndroidUtilities.dp(5.0f), 0.0f, getMeasuredWidth() - getPaddingEnd(), f);
                 float f2 = f / 2.0f;
                 canvas.drawRoundRect(this.bgRect, f2, f2, this.gradientPaint);
                 canvas.translate(((getMeasuredWidth() - getPaddingEnd()) - AndroidUtilities.dp(6.0f)) - this.closeDrawable.getIntrinsicWidth(), AndroidUtilities.dp(5.0f));
@@ -871,7 +871,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 SimpleTextView simpleTextView = (SimpleTextView) view;
                 canvas.save();
                 canvas.scale(0.8f, 0.8f);
-                canvas.translate(-AndroidUtilities.dp(16.0f), AndroidUtilities.dp(5.0f));
+                canvas.translate(-AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f));
                 int color = simpleTextView.getTextPaint().getColor();
                 simpleTextView.getTextPaint().setColor(-1);
                 boolean drawChild = super.drawChild(canvas, view, j);
@@ -3249,13 +3249,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.sendButtonContainer.addView(this.sendButtonBlockedByTypingView, LayoutHelper.createFrame(44, 44, 85));
         SlowModeBtn slowModeBtn = new SlowModeBtn(activity);
         this.slowModeButton = slowModeBtn;
-        slowModeBtn.setTextSize(18);
+        slowModeBtn.setTextSize(16);
         this.slowModeButton.setVisibility(4);
         this.slowModeButton.setSoundEffectsEnabled(false);
         this.slowModeButton.setScaleX(0.1f);
         this.slowModeButton.setScaleY(0.1f);
         this.slowModeButton.setAlpha(0.0f);
-        this.slowModeButton.setPadding(0, 0, AndroidUtilities.dp(10.0f), 0);
+        this.slowModeButton.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
         this.slowModeButton.setGravity(21);
         this.slowModeButton.setTextColor(getThemedColor(i3));
         this.sendButtonContainer.addView(this.slowModeButton, LayoutHelper.createFrame(74, 44, 85));
@@ -5824,7 +5824,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
         });
         this.botCommandsMenuContainer.setClipToPadding(false);
-        this.sizeNotifierLayout.addView(this.botCommandsMenuContainer, 14, LayoutHelper.createFrame(-1, -1, 80));
+        this.sizeNotifierLayout.addView(this.botCommandsMenuContainer, LayoutHelper.createFrame(-1, -1, 80));
         this.botCommandsMenuContainer.setVisibility(8);
         LongSparseArray longSparseArray = this.lastBotInfo;
         if (longSparseArray != null) {
@@ -9829,7 +9829,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (editTextCaption == null || editTextCaption.getPaddingRight() == i) {
             return;
         }
-        this.messageEditText.setPadding(0, AndroidUtilities.dp(11.0f), i, AndroidUtilities.dp(12.0f));
+        this.messageEditText.setPadding(0, AndroidUtilities.dp(9.0f), i, AndroidUtilities.dp(10.0f));
     }
 
     private void updateFieldRight(int i) {
@@ -11611,8 +11611,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     public void setBlockedByStreaming(boolean z, boolean z2) {
+        boolean z3 = this.animatorIsBlockedByStreaming.getValue() != z;
         this.animatorIsBlockedByStreaming.setValue(z, z2);
-        checkSendButton(z2);
+        if (z3) {
+            checkSendButton(z2);
+        }
     }
 
     public ValueAnimator animateSendButton(boolean z) {

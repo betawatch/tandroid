@@ -38,7 +38,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicLongArray;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class Gson {
     static final Strictness DEFAULT_STRICTNESS = null;
     final List builderFactories;
@@ -279,7 +279,7 @@ public final class Gson {
         }.nullSafe();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0052, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0051, code lost:
     
         r2.setDelegate(r4);
         r0.put(r7, r4);

@@ -606,35 +606,6 @@ public interface IMediaSession extends IInterface {
             }
 
             @Override // android.support.v4.media.session.IMediaSession
-            public void playFromMediaId(String str, Bundle bundle) {
-                Parcel obtain = Parcel.obtain();
-                Parcel obtain2 = Parcel.obtain();
-                try {
-                    obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
-                    obtain.writeString(str);
-                    if (bundle != null) {
-                        obtain.writeInt(1);
-                        bundle.writeToParcel(obtain, 0);
-                    } else {
-                        obtain.writeInt(0);
-                    }
-                    if (!this.mRemote.transact(14, obtain, obtain2, 0) && Stub.getDefaultImpl() != null) {
-                        Stub.getDefaultImpl().playFromMediaId(str, bundle);
-                        obtain2.recycle();
-                        obtain.recycle();
-                    } else {
-                        obtain2.readException();
-                        obtain2.recycle();
-                        obtain.recycle();
-                    }
-                } catch (Throwable th) {
-                    obtain2.recycle();
-                    obtain.recycle();
-                    throw th;
-                }
-            }
-
-            @Override // android.support.v4.media.session.IMediaSession
             public void pause() {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();

@@ -636,6 +636,11 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void didPressShowMore(ChatMessageCell chatMessageCell3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressShowMore(this, chatMessageCell3);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didPressSideButton(ChatMessageCell chatMessageCell3) {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSideButton(this, chatMessageCell3);
                 }
@@ -1108,6 +1113,11 @@ public class PollItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void didPressShowMore(ChatMessageCell chatMessageCell7) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressShowMore(this, chatMessageCell7);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didPressSideButton(ChatMessageCell chatMessageCell7) {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSideButton(this, chatMessageCell7);
                 }
@@ -1419,7 +1429,7 @@ public class PollItemMenu extends Dialog {
                 final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
                 makeSwipeback.setGapBackgroundColor(Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, this.resourcesProvider), 0.06f));
                 makeSwipeback.setBlurBackgroundForSwipeback(this.iBlur3Factory, BlurredBackgroundProviderImpl.scrimMenuBackground(this.resourcesProvider), false);
-                makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda278(makeOptions));
+                makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda350(makeOptions));
                 makeSwipeback.addGap();
                 arrayList = arrayList3;
                 z2 = z4;

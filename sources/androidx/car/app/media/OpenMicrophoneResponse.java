@@ -10,6 +10,11 @@ public final class OpenMicrophoneResponse {
     private final CarAudioCallbackDelegate mCarAudioCallbackDelegate;
     private final ParcelFileDescriptor mCarMicrophoneDescriptor;
 
+    public static final class Builder {
+        final CarAudioCallbackDelegate mCarAudioCallbackDelegate;
+        ParcelFileDescriptor mCarMicrophoneDescriptor;
+    }
+
     OpenMicrophoneResponse(Builder builder) {
         this.mCarAudioCallbackDelegate = builder.mCarAudioCallbackDelegate;
         this.mCarMicrophoneDescriptor = builder.mCarMicrophoneDescriptor;
@@ -38,19 +43,5 @@ public final class OpenMicrophoneResponse {
             }
         }
         return new ParcelFileDescriptor.AutoCloseInputStream(parcelFileDescriptor);
-    }
-
-    public static final class Builder {
-        final CarAudioCallbackDelegate mCarAudioCallbackDelegate;
-        ParcelFileDescriptor mCarMicrophoneDescriptor;
-
-        public Builder(CarAudioCallback carAudioCallback) {
-            Objects.requireNonNull(carAudioCallback);
-            this.mCarAudioCallbackDelegate = CarAudioCallbackDelegate.create(carAudioCallback);
-        }
-
-        public OpenMicrophoneResponse build() {
-            return new OpenMicrophoneResponse(this);
-        }
     }
 }

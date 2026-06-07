@@ -49,15 +49,16 @@ class BotButton {
     public int y;
     private final Path path = new Path();
     private final Paint paint = new Paint(1);
+    private final RectF loadingRect = new RectF();
     private final float[] radii = new float[8];
 
     public BotButton(Runnable runnable) {
         this.invalidateRunnable = runnable;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:64:0x02b4  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x02c0  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x02e8  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x029a  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x02a6  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x02ce  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -126,9 +127,10 @@ class BotButton {
         if (loadingDrawable4 == null || !(z || loadingDrawable4.isDisappearing())) {
             z3 = false;
         } else {
-            rectF.inset(AndroidUtilities.dpf2(0.625f), AndroidUtilities.dpf2(0.625f));
+            this.loadingRect.set(rectF);
+            this.loadingRect.inset(AndroidUtilities.dpf2(0.625f), AndroidUtilities.dpf2(0.625f));
             this.loadingDrawable.setRadii(this.radii);
-            this.loadingDrawable.setBounds(rectF);
+            this.loadingDrawable.setBounds(this.loadingRect);
             LoadingDrawable loadingDrawable5 = this.loadingDrawable;
             int i2 = Theme.key_chat_serviceBackgroundSelector;
             loadingDrawable5.setColors(Theme.multAlpha(Theme.getColor(i2, resourcesProvider), 1.0f), Theme.multAlpha(Theme.getColor(i2, resourcesProvider), 2.5f), Theme.multAlpha(Theme.getColor(i2, resourcesProvider), 3.0f), Theme.multAlpha(Theme.getColor(i2, resourcesProvider), 10.0f));
@@ -145,34 +147,34 @@ class BotButton {
         canvas.save();
         float dp3 = (this.iconDrawable == null && this.animatedEmojiDrawable == null) ? 0 : AndroidUtilities.dp(26.0f);
         float width = rectF.left + (((rectF.width() - (this.title.getWidth() + (this.iconDrawable != null ? AndroidUtilities.dp(4.0f) : 0))) - dp3) / 2.0f);
-        AnimatedEmojiDrawable animatedEmojiDrawable = this.animatedEmojiDrawable;
-        if (animatedEmojiDrawable != null) {
+        if (this.animatedEmojiDrawable != null) {
+            int centerY = (int) (rectF.centerY() - (AndroidUtilities.dp(20.0f) / 2.0f));
             int i3 = (int) width;
-            animatedEmojiDrawable.setBounds(i3, (int) (rectF.top + ((this.height - AndroidUtilities.dp(20.0f)) / 2.0f)), AndroidUtilities.dp(20.0f) + i3, ((int) (rectF.top + ((this.height - AndroidUtilities.dp(20.0f)) / 2.0f))) + AndroidUtilities.dp(20.0f));
+            this.animatedEmojiDrawable.setBounds(i3, centerY, i3 + AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f) + centerY);
             this.animatedEmojiDrawable.setAlpha(this.isLocked ? 128 : NotificationCenter.didReceiveSmsCode);
             this.animatedEmojiDrawable.draw(canvas);
         } else {
-            Drawable drawable2 = this.iconDrawable;
-            if (drawable2 != null) {
+            if (this.iconDrawable != null) {
+                int centerY2 = (int) (rectF.centerY() - (AndroidUtilities.dp(24.0f) / 2.0f));
                 int i4 = (int) width;
-                drawable2.setBounds(i4, (int) (rectF.top + ((this.height - AndroidUtilities.dp(24.0f)) / 2.0f)), AndroidUtilities.dp(24.0f) + i4, ((int) (rectF.top + ((this.height - AndroidUtilities.dp(24.0f)) / 2.0f))) + AndroidUtilities.dp(24.0f));
+                this.iconDrawable.setBounds(i4, centerY2, AndroidUtilities.dp(24.0f) + i4, AndroidUtilities.dp(24.0f) + centerY2);
                 this.iconDrawable.setAlpha(this.isLocked ? 128 : NotificationCenter.didReceiveSmsCode);
                 this.iconDrawable.draw(canvas);
             }
             this.title.ellipsize(Math.max(1.0f, (rectF.width() - AndroidUtilities.dp(15.0f)) - dp3));
-            this.title.draw(canvas, width, rectF.top + (AndroidUtilities.dp(44.0f) / 2.0f), this.isLocked ? 0.5f : 1.0f);
+            this.title.draw(canvas, width, rectF.centerY(), this.isLocked ? 0.5f : 1.0f);
             canvas.restore();
             if (this.buttonCustom == null) {
                 if (this.isLocked) {
                     Drawable themeDrawable2 = Theme.getThemeDrawable("drawableBotLock", resourcesProvider);
-                    BaseCell.setDrawableBounds(themeDrawable2, (((int) rectF.right) - AndroidUtilities.dp(3.0f)) - themeDrawable2.getIntrinsicWidth(), this.y + AndroidUtilities.dp(3.0f));
+                    BaseCell.setDrawableBounds(themeDrawable2, (((int) rectF.right) - AndroidUtilities.dp(3.0f)) - themeDrawable2.getIntrinsicWidth(), rectF.top + AndroidUtilities.dp(3.0f));
                     themeDrawable2.draw(canvas);
                 }
             } else {
                 TLRPC.KeyboardButton keyboardButton = this.button;
                 if (keyboardButton instanceof TLRPC.TL_keyboardButtonWebView) {
                     Drawable themeDrawable3 = Theme.getThemeDrawable("drawableBotWebView", resourcesProvider);
-                    BaseCell.setDrawableBounds(themeDrawable3, (((int) rectF.right) - AndroidUtilities.dp(3.0f)) - themeDrawable3.getIntrinsicWidth(), this.y + AndroidUtilities.dp(3.0f));
+                    BaseCell.setDrawableBounds(themeDrawable3, (((int) rectF.right) - AndroidUtilities.dp(3.0f)) - themeDrawable3.getIntrinsicWidth(), rectF.top + AndroidUtilities.dp(3.0f));
                     themeDrawable3.draw(canvas);
                 } else if (keyboardButton instanceof TLRPC.TL_keyboardButtonUrl) {
                     if (LinkManager.isWebAppLink(keyboardButton.url)) {
@@ -182,14 +184,14 @@ class BotButton {
                     } else {
                         themeDrawable = Theme.getThemeDrawable("drawableBotLink", resourcesProvider);
                     }
-                    BaseCell.setDrawableBounds(themeDrawable, (((int) rectF.right) - AndroidUtilities.dp(3.0f)) - themeDrawable.getIntrinsicWidth(), this.y + AndroidUtilities.dp(3.0f));
+                    BaseCell.setDrawableBounds(themeDrawable, (((int) rectF.right) - AndroidUtilities.dp(3.0f)) - themeDrawable.getIntrinsicWidth(), rectF.top + AndroidUtilities.dp(3.0f));
                     themeDrawable.draw(canvas);
                 } else if ((keyboardButton instanceof TLRPC.TL_keyboardButtonSwitchInline) || (keyboardButton instanceof TLRPC.TL_keyboardButtonRequestPeer)) {
                     Drawable themeDrawable4 = Theme.getThemeDrawable("drawableBotInline", resourcesProvider);
-                    BaseCell.setDrawableBounds(themeDrawable4, (((int) rectF.right) - AndroidUtilities.dp(3.0f)) - themeDrawable4.getIntrinsicWidth(), this.y + AndroidUtilities.dp(3.0f));
+                    BaseCell.setDrawableBounds(themeDrawable4, (((int) rectF.right) - AndroidUtilities.dp(3.0f)) - themeDrawable4.getIntrinsicWidth(), rectF.top + AndroidUtilities.dp(3.0f));
                     themeDrawable4.draw(canvas);
                 } else if ((keyboardButton instanceof TLRPC.TL_keyboardButtonBuy) && z2) {
-                    BaseCell.setDrawableBounds(Theme.chat_botCardDrawable, (((int) rectF.right) - AndroidUtilities.dp(5.0f)) - Theme.chat_botCardDrawable.getIntrinsicWidth(), this.y + AndroidUtilities.dp(4.0f));
+                    BaseCell.setDrawableBounds(Theme.chat_botCardDrawable, (((int) rectF.right) - AndroidUtilities.dp(5.0f)) - Theme.chat_botCardDrawable.getIntrinsicWidth(), rectF.top + AndroidUtilities.dp(4.0f));
                     Theme.chat_botCardDrawable.draw(canvas);
                 }
             }
@@ -198,7 +200,7 @@ class BotButton {
         }
         width += dp3;
         this.title.ellipsize(Math.max(1.0f, (rectF.width() - AndroidUtilities.dp(15.0f)) - dp3));
-        this.title.draw(canvas, width, rectF.top + (AndroidUtilities.dp(44.0f) / 2.0f), this.isLocked ? 0.5f : 1.0f);
+        this.title.draw(canvas, width, rectF.centerY(), this.isLocked ? 0.5f : 1.0f);
         canvas.restore();
         if (this.buttonCustom == null) {
         }

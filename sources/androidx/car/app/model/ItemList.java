@@ -150,10 +150,6 @@ public final class ItemList {
             return new ItemList(this);
         }
 
-        public Builder() {
-            this.mItems = new ArrayList();
-        }
-
         Builder(ItemList itemList) {
             this.mSelectedIndex = itemList.getSelectedIndex();
             this.mOnSelectedDelegate = itemList.getOnSelectedDelegate();

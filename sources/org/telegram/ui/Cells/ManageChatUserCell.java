@@ -4,11 +4,13 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -52,6 +54,7 @@ public class ManageChatUserCell extends FrameLayout {
     private final SimpleTextView statusTextView;
     private final StoriesUtilities.AvatarStoryParams storyAvatarParams;
     private TL_stories.StoryItem storyItem;
+    private boolean subtitleUsername;
 
     public interface ManageChatUserCellDelegate {
         boolean onOptionsButtonCheck(ManageChatUserCell manageChatUserCell, boolean z);
@@ -248,6 +251,10 @@ public class ManageChatUserCell extends FrameLayout {
         this.isAdmin = z;
     }
 
+    public void setUsernameSubtitle() {
+        this.subtitleUsername = true;
+    }
+
     public void setNameColor(int i) {
         this.nameTextView.setTextColor(i);
     }
@@ -256,9 +263,9 @@ public class ManageChatUserCell extends FrameLayout {
         this.dividerColor = i;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:103:0x0197, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:113:0x01c5, code lost:
     
-        if (r12.equals(r6) == false) goto L118;
+        if (r12.equals(r6) == false) goto L128;
      */
     /* JADX WARN: Code restructure failed: missing block: B:35:0x0067, code lost:
     
@@ -324,19 +331,27 @@ public class ManageChatUserCell extends FrameLayout {
             if (this.currentStatus != null) {
                 this.statusTextView.setTextColor(this.statusColor);
                 this.statusTextView.setText(this.currentStatus);
-            } else if (user.bot) {
-                this.statusTextView.setTextColor(this.statusColor);
-                if (user.bot_chat_history || this.isAdmin) {
-                    this.statusTextView.setText(LocaleController.getString(R.string.BotStatusRead));
-                } else {
-                    this.statusTextView.setText(LocaleController.getString(R.string.BotStatusCantRead));
-                }
-            } else if (user.id == UserConfig.getInstance(this.currentAccount).getClientUserId() || (((userStatus = user.status) != null && userStatus.expires > ConnectionsManager.getInstance(this.currentAccount).getCurrentTime()) || MessagesController.getInstance(this.currentAccount).onlinePrivacy.containsKey(Long.valueOf(user.id)))) {
-                this.statusTextView.setTextColor(this.statusOnlineColor);
-                this.statusTextView.setText(LocaleController.getString(R.string.Online));
             } else {
-                this.statusTextView.setTextColor(this.statusColor);
-                this.statusTextView.setText(LocaleController.formatUserStatus(this.currentAccount, user));
+                String publicUsername = DialogObject.getPublicUsername(user);
+                if (user.bot) {
+                    this.statusTextView.setTextColor(this.statusColor);
+                    if (this.subtitleUsername && !TextUtils.isEmpty(publicUsername)) {
+                        this.statusTextView.setText(publicUsername);
+                    } else if (user.bot_chat_history || this.isAdmin) {
+                        this.statusTextView.setText(LocaleController.getString(R.string.BotStatusRead));
+                    } else {
+                        this.statusTextView.setText(LocaleController.getString(R.string.BotStatusCantRead));
+                    }
+                } else if (this.subtitleUsername && !TextUtils.isEmpty(publicUsername)) {
+                    this.statusTextView.setText(publicUsername);
+                    this.statusTextView.setTextColor(this.statusColor);
+                } else if (user.id == UserConfig.getInstance(this.currentAccount).getClientUserId() || (((userStatus = user.status) != null && userStatus.expires > ConnectionsManager.getInstance(this.currentAccount).getCurrentTime()) || MessagesController.getInstance(this.currentAccount).onlinePrivacy.containsKey(Long.valueOf(user.id)))) {
+                    this.statusTextView.setTextColor(this.statusOnlineColor);
+                    this.statusTextView.setText(LocaleController.getString(R.string.Online));
+                } else {
+                    this.statusTextView.setTextColor(this.statusColor);
+                    this.statusTextView.setText(LocaleController.formatUserStatus(this.currentAccount, user));
+                }
             }
             this.lastAvatar = fileLocation3;
             this.avatarImageView.setForUserOrChat(user, this.avatarDrawable);

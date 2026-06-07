@@ -29250,7 +29250,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r4v74 ??), method size: 7819
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
@@ -36193,8 +36193,8 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public boolean isWebBrowserUseCustomTabs() {
-        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.webBrowserSettings;
-        return tL_webBrowserSettings == null || tL_webBrowserSettings.display_close_button;
+        TL_account.TL_webBrowserSettings tL_webBrowserSettings;
+        return !isWebBrowserInAppEnabled() && ((tL_webBrowserSettings = this.webBrowserSettings) == null || tL_webBrowserSettings.display_close_button);
     }
 
     public boolean isWebBrowserInAppEnabled() {
@@ -36560,9 +36560,14 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     private static boolean hasWebBrowserException(ArrayList<TL_account.WebDomainException> arrayList, String str) {
+        String lowerCase = str.toLowerCase();
         int size = arrayList.size();
         for (int i = 0; i < size; i++) {
-            if (TextUtils.equals(arrayList.get(i).domain.toLowerCase(), str.toLowerCase())) {
+            String lowerCase2 = arrayList.get(i).domain.toLowerCase();
+            if (TextUtils.equals(lowerCase2, lowerCase)) {
+                return true;
+            }
+            if (lowerCase.endsWith("." + lowerCase2)) {
                 return true;
             }
         }

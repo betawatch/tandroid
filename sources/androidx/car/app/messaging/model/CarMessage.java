@@ -15,6 +15,9 @@ public class CarMessage {
     private final long mReceivedTimeEpochMillis;
     private final Bundle mSender;
 
+    public static final class Builder {
+    }
+
     public int hashCode() {
         return Objects.hash(Integer.valueOf(PersonsEqualityHelper.getPersonHashCode(getSender())), this.mBody, Long.valueOf(this.mReceivedTimeEpochMillis), Boolean.valueOf(this.mIsRead));
     }
@@ -31,13 +34,7 @@ public class CarMessage {
     }
 
     CarMessage(Builder builder) {
-        Person person = builder.mSender;
-        this.mSender = person == null ? null : ConversationItem.validateSender(person).toBundle();
-        this.mBody = builder.mBody;
-        this.mMultimediaMimeType = builder.mMultimediaMimeType;
-        this.mMultimediaUri = builder.mMultimediaUri;
-        this.mReceivedTimeEpochMillis = builder.mReceivedTimeEpochMillis;
-        this.mIsRead = builder.mIsRead;
+        throw null;
     }
 
     private CarMessage() {
@@ -75,45 +72,5 @@ public class CarMessage {
 
     public boolean isRead() {
         return this.mIsRead;
-    }
-
-    public static final class Builder {
-        CarText mBody;
-        boolean mIsRead;
-        String mMultimediaMimeType;
-        Uri mMultimediaUri;
-        long mReceivedTimeEpochMillis;
-        Person mSender;
-
-        public Builder setSender(Person person) {
-            this.mSender = person;
-            return this;
-        }
-
-        public Builder setBody(CarText carText) {
-            this.mBody = carText;
-            return this;
-        }
-
-        public Builder setReceivedTimeEpochMillis(long j) {
-            this.mReceivedTimeEpochMillis = j;
-            return this;
-        }
-
-        public Builder setRead(boolean z) {
-            this.mIsRead = z;
-            return this;
-        }
-
-        public CarMessage build() {
-            String str = this.mMultimediaMimeType;
-            if ((this.mMultimediaUri == null) ^ (str == null)) {
-                throw new IllegalStateException("Incomplete multimedia data detected in CarMessage. Please be sure to provide both MIME type and URI for multimedia messages.");
-            }
-            if (this.mBody == null && str == null) {
-                throw new IllegalStateException("Message must have content. Please provide body text, multimedia data (URI + MIME type), or both.");
-            }
-            return new CarMessage(this);
-        }
     }
 }

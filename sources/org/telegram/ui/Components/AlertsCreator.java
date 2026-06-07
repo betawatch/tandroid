@@ -96,6 +96,7 @@ import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.NotificationsSettingsFacade;
 import org.telegram.messenger.OneUIUtilities;
 import org.telegram.messenger.R;
+import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.SecretChatHelper;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.SharedConfig;
@@ -2298,7 +2299,7 @@ public abstract class AlertsCreator {
         Browser.openUrl(context, Uri.parse(str), j == 0, z, progress);
     }
 
-    public static void showOpenExternalBrowserAlert(Context context, Theme.ResourcesProvider resourcesProvider, String str, boolean z, final Utilities.Callback2 callback2) {
+    public static void showOpenExternalBrowserAlert(Context context, Theme.ResourcesProvider resourcesProvider, String str, boolean z, boolean z2, final Utilities.Callback2 callback2) {
         if (AndroidUtilities.isContextSafe(context)) {
             final AlertDialog[] alertDialogArr = new AlertDialog[1];
             AlertDialog.Builder builder = new AlertDialog.Builder(context, resourcesProvider);
@@ -2323,7 +2324,7 @@ public abstract class AlertsCreator {
             checkBoxCell.getTextView().setMaxLines(3);
             checkBoxCell.getTextView().setTextSize(1, 16.0f);
             checkBoxCell.setText(LocaleController.getString(z ? R.string.BrowserAlwaysOpenExternal : R.string.BrowserAlwaysOpenInApp), "", false, false);
-            checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda144
+            checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda137
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     AlertsCreator.lambda$showOpenExternalBrowserAlert$41(CheckBoxCell.this, view);
@@ -2332,16 +2333,18 @@ public abstract class AlertsCreator {
             LinearLayout linearLayout = new LinearLayout(context);
             linearLayout.setOrientation(1);
             linearLayout.addView(textView, LayoutHelper.createLinear(-1, -2, 22.0f, 4.0f, 22.0f, 9.0f));
-            linearLayout.addView(checkBoxCell, LayoutHelper.createLinear(-1, -2, 3, 8, 6, 8, 4));
+            if (z2) {
+                linearLayout.addView(checkBoxCell, LayoutHelper.createLinear(-1, -2, 3, 8, 6, 8, 4));
+            }
             builder.setView(linearLayout);
             builder.setWidth(Math.min(AndroidUtilities.dp(320.0f), (AndroidUtilities.displaySize.x * 85) / 100));
-            builder.setPositiveButton(LocaleController.getString(R.string.Open), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda145
+            builder.setPositiveButton(LocaleController.getString(R.string.Open), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda138
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i2) {
                     AlertsCreator.lambda$showOpenExternalBrowserAlert$42(Utilities.Callback2.this, checkBoxCell, alertDialogArr, alertDialog, i2);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda146
+            builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda139
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i2) {
                     AlertsCreator.lambda$showOpenExternalBrowserAlert$43(Utilities.Callback2.this, checkBoxCell, alertDialogArr, alertDialog, i2);
@@ -3047,7 +3050,7 @@ public abstract class AlertsCreator {
             if (activity == null) {
                 return;
             }
-            new StarsIntroActivity.StarsNeededSheet(activity, darkThemeResourceProvider, j, 13, DialogObject.getShortName(i, j2), new Runnable() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda140
+            new StarsIntroActivity.StarsNeededSheet(activity, darkThemeResourceProvider, j, 13, DialogObject.getShortName(i, j2), new Runnable() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda143
                 @Override // java.lang.Runnable
                 public final void run() {
                     AlertsCreator.lambda$ensurePaidMessageConfirmation$60(Utilities.Callback.this, j3);
@@ -8584,7 +8587,7 @@ public abstract class AlertsCreator {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$createLocationUpdateDialog$205(int[] iArr, MessagesStorage.IntCallback intCallback, AlertDialog alertDialog, int i) {
         int i2 = iArr[0];
-        intCallback.run(i2 == 0 ? 900 : i2 == 1 ? 3600 : i2 == 2 ? 28800 : ConnectionsManager.DEFAULT_DATACENTER_ID);
+        intCallback.run(i2 == 0 ? RichMessageLayout.PART_MAX_HEIGHT_DP : i2 == 1 ? 3600 : i2 == 2 ? 28800 : ConnectionsManager.DEFAULT_DATACENTER_ID);
     }
 
     public static AlertDialog.Builder createBackgroundLocationPermissionDialog(final Activity activity, TLRPC.User user, final Runnable runnable, Theme.ResourcesProvider resourcesProvider) {
@@ -8615,13 +8618,13 @@ public abstract class AlertsCreator {
         builder.setTopView(frameLayout);
         builder.setTopViewAspectRatio(0.37820512f);
         builder.setMessage(AndroidUtilities.replaceTags(LocaleController.getString(R.string.PermissionBackgroundLocation)));
-        builder.setPositiveButton(LocaleController.getString(R.string.Continue), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda137
+        builder.setPositiveButton(LocaleController.getString(R.string.Continue), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda140
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
                 AlertsCreator.lambda$createBackgroundLocationPermissionDialog$206(activity, alertDialog, i);
             }
         });
-        builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda138
+        builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda141
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
                 runnable.run();
@@ -8799,7 +8802,7 @@ public abstract class AlertsCreator {
         builder.setTitle(LocaleController.getString(R.string.LowDiskSpaceTitle));
         builder.setMessage(LocaleController.getString(R.string.LowDiskSpaceMessage2));
         builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
-        builder.setPositiveButton(LocaleController.getString(R.string.LowDiskSpaceButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda139
+        builder.setPositiveButton(LocaleController.getString(R.string.LowDiskSpaceButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda142
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
                 AlertsCreator.lambda$createFreeSpaceDialog$212(LaunchActivity.this, alertDialog, i);
@@ -10312,14 +10315,14 @@ public abstract class AlertsCreator {
         editText.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(24.0f) : 0, AndroidUtilities.dp(8.0f), LocaleController.isRTL ? 0 : AndroidUtilities.dp(24.0f), AndroidUtilities.dp(8.0f));
         editText.setSelection(editText.getText().toString().length());
         builder.setView(frameLayout);
-        builder.setPositiveButton(LocaleController.getString(R.string.Decline), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda141
+        builder.setPositiveButton(LocaleController.getString(R.string.Decline), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda144
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
                 AlertsCreator.lambda$showDeclineSuggestedPostDialog$242(Utilities.Callback.this, editText, alertDialog, i);
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
-        builder.setOnPreDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda142
+        builder.setOnPreDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda145
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 AndroidUtilities.hideKeyboard(editText);
@@ -10327,7 +10330,7 @@ public abstract class AlertsCreator {
         });
         frameLayout.addView(editText, LayoutHelper.createFrame(-1, -2.0f, 0, 23.0f, 0.0f, 23.0f, 21.0f));
         editText.requestFocus();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda143
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda146
             @Override // java.lang.Runnable
             public final void run() {
                 AndroidUtilities.showKeyboard(editText);

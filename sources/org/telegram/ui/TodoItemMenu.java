@@ -614,6 +614,11 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void didPressShowMore(ChatMessageCell chatMessageCell3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressShowMore(this, chatMessageCell3);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didPressSideButton(ChatMessageCell chatMessageCell3) {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSideButton(this, chatMessageCell3);
                 }
@@ -1084,6 +1089,11 @@ public class TodoItemMenu extends Dialog {
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didPressRevealSensitiveContent(ChatMessageCell chatMessageCell6) {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressRevealSensitiveContent(this, chatMessageCell6);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void didPressShowMore(ChatMessageCell chatMessageCell6) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressShowMore(this, chatMessageCell6);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

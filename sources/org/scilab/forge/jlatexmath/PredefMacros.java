@@ -6,6 +6,7 @@ import java.util.StringTokenizer;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import org.scilab.forge.jlatexmath.dynamic.DynamicAtom;
 import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.RichMessageLayout;
 import ru.noties.jlatexmath.awt.Color;
 
 /* loaded from: classes3.dex */
@@ -1592,7 +1593,7 @@ public class PredefMacros {
     }
 
     public static final Atom romannumeral_macro(TeXParser teXParser, String[] strArr) {
-        int[] iArr = {MediaDataController.MAX_STYLE_RUNS_COUNT, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        int[] iArr = {MediaDataController.MAX_STYLE_RUNS_COUNT, RichMessageLayout.PART_MAX_HEIGHT_DP, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
         String[] strArr2 = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
         int parseInt = Integer.parseInt(strArr[1].trim());
         String str = "";

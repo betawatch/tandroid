@@ -1,12 +1,13 @@
 package com.google.android.recaptcha.internal;
 
 import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.ConnectionsManager;
 
 /* loaded from: classes.dex */
 public enum zzqy implements zzsp {
     zza(0),
-    zzb(900),
+    zzb(RichMessageLayout.PART_MAX_HEIGHT_DP),
     zzc(998),
     zzd(999),
     zze(MediaDataController.MAX_STYLE_RUNS_COUNT),

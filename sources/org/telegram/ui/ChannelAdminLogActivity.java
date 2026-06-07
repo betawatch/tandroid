@@ -3397,6 +3397,11 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+            public /* synthetic */ void didPressShowMore(ChatMessageCell chatMessageCell) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressShowMore(this, chatMessageCell);
+            }
+
+            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ void didPressSponsoredClose(ChatMessageCell chatMessageCell) {
                 ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSponsoredClose(this, chatMessageCell);
             }

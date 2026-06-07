@@ -296,24 +296,25 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         setMessageObject(this.currentMessageObject, this.currentParentColumnsCount, true);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:84:0x043b  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x044f  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x046e  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x0481  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x040d  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0421  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0440  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x0453  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private void setMessageObject(MessageObject messageObject, int i, boolean z) {
         int i2;
+        int i3;
         String str;
         TL_stories.StoryItem storyItem;
         TL_stories.StoryViews storyViews;
-        int i3 = i;
-        if (i3 < 1) {
-            i3 = 1;
+        int i4 = i;
+        if (i4 < 1) {
+            i4 = 1;
         }
-        int i4 = this.currentParentColumnsCount;
-        this.currentParentColumnsCount = i3;
+        int i5 = this.currentParentColumnsCount;
+        this.currentParentColumnsCount = i4;
         MessageObject messageObject2 = this.currentMessageObject;
         if (messageObject2 == null && messageObject == null) {
             return;
@@ -321,9 +322,9 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         if (messageObject2 != null && messageObject != null && messageObject2.getId() == messageObject.getId()) {
             MessageObject messageObject3 = this.currentMessageObject;
             if ((messageObject3 != null ? messageObject3.uploadingStory : null) == messageObject.uploadingStory) {
-                if ((messageObject3 != null ? messageObject3.parentStoriesList : null) == messageObject.parentStoriesList && mediaEqual(getStoryMedia(messageObject3), getStoryMedia(messageObject)) && i4 == i3) {
-                    int i5 = this.privacyType;
-                    if ((i5 == 100) == this.isStoryPinned && i5 == getPrivacyType(messageObject) && !z) {
+                if ((messageObject3 != null ? messageObject3.parentStoriesList : null) == messageObject.parentStoriesList && mediaEqual(getStoryMedia(messageObject3), getStoryMedia(messageObject)) && i5 == i4) {
+                    int i6 = this.privacyType;
+                    if ((i6 == 100) == this.isStoryPinned && i6 == getPrivacyType(messageObject) && !z) {
                         return;
                     }
                 }
@@ -360,12 +361,12 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         }
         ImageReceiver imageReceiver = z ? this.imageReceiverFullSize : this.imageReceiver;
         String restrictionReason = MessagesController.getInstance(this.currentAccount).getRestrictionReason(messageObject.messageOwner.restriction_reason);
-        int i6 = (int) ((AndroidUtilities.displaySize.x / i3) / AndroidUtilities.density);
+        int i7 = (int) ((AndroidUtilities.displaySize.x / i4) / AndroidUtilities.density);
         if (z) {
-            i6 = (((int) (AndroidUtilities.displaySize.x / AndroidUtilities.density)) * 3) / 5;
+            i7 = (((int) (AndroidUtilities.displaySize.x / AndroidUtilities.density)) * 3) / 5;
         }
-        String filterString = this.sharedResources.getFilterString(i6);
-        int photoSize = (i3 <= 2 || z) ? AndroidUtilities.getPhotoSize() : NotificationCenter.onDatabaseReset;
+        String filterString = this.sharedResources.getFilterString(i7);
+        int photoSize = (i4 <= 2 || z) ? AndroidUtilities.getPhotoSize() : NotificationCenter.onDatabaseReset;
         this.videoText = null;
         this.videoInfoLayot = null;
         this.showVideoLayout = false;
@@ -373,9 +374,9 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         this.imageReceiver.clearDecorators();
         this.imageReceiverFullSize.clearDecorators();
         if (this.isStory && (storyViews = messageObject.storyItem.views) != null) {
-            int i7 = storyViews.views_count;
-            this.drawViews = i7 > 0;
-            this.viewsText.setText(AndroidUtilities.formatWholeNumber(i7, 0), false);
+            int i8 = storyViews.views_count;
+            this.drawViews = i8 > 0;
+            this.viewsText.setText(AndroidUtilities.formatWholeNumber(i8, 0), false);
         } else {
             this.drawViews = false;
             this.viewsAlpha.set(0.0f, true);
@@ -396,10 +397,15 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                     imageReceiver.setImage(ImageLocation.getForPath(str), filterString, null, null, obj, 0);
                 } else {
                     i2 = 2;
-                    if (messageObject.isVideo()) {
+                    TLRPC.Document document = messageObject.getDocument();
+                    TLRPC.Photo photo = messageObject.getPhoto();
+                    if (MessageObject.isVideoDocument(document)) {
                         this.showVideoLayout = !messageObject.isLivePhoto();
                         this.showLivePhoto = messageObject.isLivePhoto();
-                        if (i3 != 9 && !messageObject.isLivePhoto()) {
+                        if (i4 == 9 || messageObject.isLivePhoto()) {
+                            i3 = i4;
+                        } else {
+                            i3 = i4;
                             this.videoText = AndroidUtilities.formatShortDuration((int) messageObject.getDuration());
                         }
                         ImageLocation imageLocation = messageObject.mediaThumb;
@@ -422,17 +428,17 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                                 imageReceiver.setImage(ImageLocation.getForObject(closestPhotoSizeWithSize2, messageObject.photoThumbsObject), filterString, ImageLocation.getForObject(closestPhotoSizeWithSize, messageObject.photoThumbsObject), filterString + "_b", closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.size : 0L, null, obj, messageObject.shouldEncryptPhotoOrVideo() ? 2 : 1);
                             }
                         } else {
-                            TLRPC.Document document = messageObject.getDocument();
-                            TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 50);
-                            TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, photoSize, false, null, this.isStory);
+                            TLRPC.Document document2 = messageObject.getDocument();
+                            TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, 50);
+                            TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, photoSize, false, null, this.isStory);
                             if (closestPhotoSizeWithSize3 == closestPhotoSizeWithSize4 && !this.isStory) {
                                 closestPhotoSizeWithSize4 = null;
                             }
                             if (closestPhotoSizeWithSize3 != null) {
                                 if (messageObject.strippedThumb != null) {
-                                    imageReceiver.setImage(ImageLocation.getForDocument(closestPhotoSizeWithSize4, document), filterString, messageObject.strippedThumb, null, obj, 0);
+                                    imageReceiver.setImage(ImageLocation.getForDocument(closestPhotoSizeWithSize4, document2), filterString, messageObject.strippedThumb, null, obj, 0);
                                 } else {
-                                    imageReceiver.setImage(ImageLocation.getForDocument(closestPhotoSizeWithSize4, document), filterString, ImageLocation.getForDocument(closestPhotoSizeWithSize3, document), filterString + "_b", null, 0L, null, obj, 0);
+                                    imageReceiver.setImage(ImageLocation.getForDocument(closestPhotoSizeWithSize4, document2), filterString, ImageLocation.getForDocument(closestPhotoSizeWithSize3, document2), filterString + "_b", null, 0L, null, obj, 0);
                                 }
                             }
                         }
@@ -452,15 +458,17 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                             long dialogId = messageObject.getDialogId();
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x ");
                             spannableStringBuilder.append((CharSequence) MessagesController.getInstance(this.currentAccount).getPeerName(dialogId));
-                            AvatarSpan avatarSpan = new AvatarSpan(this, this.currentAccount, i3 == i2 ? 16.0f : 13.66f);
+                            int i9 = i3;
+                            AvatarSpan avatarSpan = new AvatarSpan(this, this.currentAccount, i9 == i2 ? 16.0f : 13.66f);
                             avatarSpan.setDialogId(dialogId);
                             spannableStringBuilder.setSpan(avatarSpan, 0, 1, 33);
-                            this.authorText = new Text(spannableStringBuilder, i3 == i2 ? 14.0f : 10.1666f, AndroidUtilities.bold());
+                            this.authorText = new Text(spannableStringBuilder, i9 == i2 ? 14.0f : 10.1666f, AndroidUtilities.bold());
                         }
                         updateAccessibilityDescription();
                         invalidate();
                     }
-                    if ((MessageObject.getMedia(messageObject.messageOwner) instanceof TLRPC.TL_messageMediaPhoto) && MessageObject.getMedia(messageObject.messageOwner).photo != null && !messageObject.photoThumbs.isEmpty()) {
+                    i3 = i4;
+                    if (photo != null && !messageObject.photoThumbs.isEmpty()) {
                         if (messageObject.mediaExists || canAutoDownload(messageObject) || this.isStory) {
                             ImageLocation imageLocation2 = messageObject.mediaThumb;
                             if (imageLocation2 != null) {
@@ -506,6 +514,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                     }
                 }
             }
+            i3 = i4;
             i2 = 2;
             if (this.blurImageReceiver.getBitmap() != null) {
             }
@@ -520,6 +529,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
             updateAccessibilityDescription();
             invalidate();
         }
+        i3 = i4;
         i2 = 2;
         imageReceiver.setImageBitmap(ContextCompat.getDrawable(getContext(), R.drawable.photo_placeholder_in));
         if (this.blurImageReceiver.getBitmap() != null) {

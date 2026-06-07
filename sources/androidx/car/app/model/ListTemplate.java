@@ -2,9 +2,6 @@ package androidx.car.app.model;
 
 import androidx.car.app.messaging.model.ConversationItem;
 import androidx.car.app.model.ItemList;
-import androidx.car.app.model.constraints.ActionsConstraints;
-import androidx.car.app.model.constraints.CarTextConstraints;
-import androidx.car.app.model.constraints.RowListConstraints;
 import androidx.car.app.utils.CollectionUtils;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -97,74 +94,11 @@ public final class ListTemplate implements Template {
     public static final class Builder {
         ActionStrip mActionStrip;
         final List mActions;
-        boolean mHasSelectableList;
         Action mHeaderAction;
         boolean mIsLoading;
         final List mSectionedLists;
         ItemList mSingleList;
         CarText mTitle;
-
-        public Builder setLoading(boolean z) {
-            this.mIsLoading = z;
-            return this;
-        }
-
-        public Builder setHeaderAction(Action action) {
-            ActionsConstraints actionsConstraints = ActionsConstraints.ACTIONS_CONSTRAINTS_HEADER;
-            Objects.requireNonNull(action);
-            actionsConstraints.validateOrThrow(Collections.singletonList(action));
-            this.mHeaderAction = action;
-            return this;
-        }
-
-        public Builder setTitle(CharSequence charSequence) {
-            Objects.requireNonNull(charSequence);
-            CarText create = CarText.create(charSequence);
-            this.mTitle = create;
-            CarTextConstraints.TEXT_ONLY.validateOrThrow(create);
-            return this;
-        }
-
-        public Builder setSingleList(ItemList itemList) {
-            Objects.requireNonNull(itemList);
-            this.mSingleList = itemList;
-            this.mSectionedLists.clear();
-            this.mHasSelectableList = false;
-            return this;
-        }
-
-        public ListTemplate build() {
-            boolean z = (this.mSingleList == null && this.mSectionedLists.isEmpty()) ? false : true;
-            if (this.mIsLoading == z) {
-                throw new IllegalStateException("Template is in a loading state but lists are added, or vice versa");
-            }
-            if (z) {
-                if (!this.mSectionedLists.isEmpty()) {
-                    RowListConstraints.ROW_LIST_CONSTRAINTS_FULL_LIST.validateOrThrow(this.mSectionedLists);
-                } else {
-                    ItemList itemList = this.mSingleList;
-                    if (itemList != null) {
-                        RowListConstraints.ROW_LIST_CONSTRAINTS_FULL_LIST.validateOrThrow(itemList);
-                    }
-                }
-            }
-            if (!this.mSectionedLists.isEmpty()) {
-                List<SectionedItemList> truncatedCopy = ListTemplate.getTruncatedCopy(this.mSectionedLists);
-                this.mSectionedLists.clear();
-                this.mSectionedLists.addAll(truncatedCopy);
-            } else {
-                ItemList itemList2 = this.mSingleList;
-                if (itemList2 != null) {
-                    this.mSingleList = ListTemplate.truncate(itemList2, new TruncateCounter(100));
-                }
-            }
-            return new ListTemplate(this);
-        }
-
-        public Builder() {
-            this.mSectionedLists = new ArrayList();
-            this.mActions = new ArrayList();
-        }
 
         Builder(ListTemplate listTemplate) {
             this.mIsLoading = listTemplate.isLoading();

@@ -14,6 +14,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.Serializable;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.RichMessageLayout;
 
 /* loaded from: classes2.dex */
 public final class e implements Serializable {
@@ -58,7 +59,7 @@ public final class e implements Serializable {
         ZoneOffset zoneOffset2 = this.i;
         int totalSeconds3 = zoneOffset2.getTotalSeconds() - totalSeconds;
         int K = X % 3600 == 0 ? z ? 24 : iVar.K() : 31;
-        int i = totalSeconds % 900 == 0 ? (totalSeconds / 900) + 128 : NotificationCenter.didReceiveSmsCode;
+        int i = totalSeconds % RichMessageLayout.PART_MAX_HEIGHT_DP == 0 ? (totalSeconds / RichMessageLayout.PART_MAX_HEIGHT_DP) + 128 : NotificationCenter.didReceiveSmsCode;
         int i2 = (totalSeconds2 == 0 || totalSeconds2 == 1800 || totalSeconds2 == 3600) ? totalSeconds2 / 1800 : 3;
         int i3 = (totalSeconds3 == 0 || totalSeconds3 == 1800 || totalSeconds3 == 3600) ? totalSeconds3 / 1800 : 3;
         DayOfWeek dayOfWeek = this.c;
@@ -89,7 +90,7 @@ public final class e implements Serializable {
         int i5 = (readInt & 12) >>> 2;
         int i6 = readInt & 3;
         j$.time.i P = i3 == 31 ? j$.time.i.P(objectInput.readInt()) : j$.time.i.N(i3 % 24);
-        ZoneOffset P2 = ZoneOffset.P(i4 == 255 ? objectInput.readInt() : (i4 - 128) * 900);
+        ZoneOffset P2 = ZoneOffset.P(i4 == 255 ? objectInput.readInt() : (i4 - 128) * RichMessageLayout.PART_MAX_HEIGHT_DP);
         ZoneOffset P3 = i5 == 3 ? ZoneOffset.P(objectInput.readInt()) : ZoneOffset.P((i5 * 1800) + P2.getTotalSeconds());
         ZoneOffset P4 = i6 == 3 ? ZoneOffset.P(objectInput.readInt()) : ZoneOffset.P((i6 * 1800) + P2.getTotalSeconds());
         boolean z = i3 == 24;

@@ -162,6 +162,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.NotificationsSettingsFacade;
 import org.telegram.messenger.R;
+import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.SvgHelper;
@@ -19443,7 +19444,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             String string14 = LocaleController.getString(i24);
             int i25 = R.drawable.msg2_battery;
             SearchResult searchResult69 = searchResult27;
-            SearchResult withLink65 = new SearchResult(900, string14, null, i25, new Runnable() { // from class: org.telegram.ui.ProfileActivity$SearchAdapter$$ExternalSyntheticLambda18
+            SearchResult withLink65 = new SearchResult(RichMessageLayout.PART_MAX_HEIGHT_DP, string14, null, i25, new Runnable() { // from class: org.telegram.ui.ProfileActivity$SearchAdapter$$ExternalSyntheticLambda18
                 @Override // java.lang.Runnable
                 public final void run() {
                     ProfileActivity.SearchAdapter.lambda$onCreateSearchArray$117(BaseFragment.this);

@@ -22,6 +22,7 @@ import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda50;
 import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda515;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.BottomSheet;
@@ -47,7 +48,7 @@ public abstract class HighlightMessageSheet {
     public static int TIER_PERIOD;
 
     public static int[] getDefaultTiers() {
-        return new int[]{10000, 3600, 400, 20, -10787210, -8681059, -14341066, 2000, 1800, NotificationCenter.liveLocationsCacheChanged, 10, -2013375, -1482439, -7666429, 500, 900, NotificationCenter.dialogPhotosUpdate, 7, -1214690, -1214690, -6606592, 250, 600, 150, 4, -1926647, -1926647, -6668800, 100, NotificationCenter.dialogsUnreadPollVotesCounterChanged, 110, 3, -12539616, -12539616, -15244800, 50, 120, 80, 2, -12147733, -12147733, -16756594, 10, 60, 60, 1, -6988581, -6988581, -11991141, 0, 30, 30, 0, -6988581, -6988581, -11991141};
+        return new int[]{10000, 3600, 400, 20, -10787210, -8681059, -14341066, 2000, 1800, NotificationCenter.liveLocationsCacheChanged, 10, -2013375, -1482439, -7666429, 500, RichMessageLayout.PART_MAX_HEIGHT_DP, NotificationCenter.dialogPhotosUpdate, 7, -1214690, -1214690, -6606592, 250, 600, 150, 4, -1926647, -1926647, -6668800, 100, NotificationCenter.dialogsUnreadPollVotesCounterChanged, 110, 3, -12539616, -12539616, -15244800, 50, 120, 80, 2, -12147733, -12147733, -16756594, 10, 60, 60, 1, -6988581, -6988581, -11991141, 0, 30, 30, 0, -6988581, -6988581, -11991141};
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
