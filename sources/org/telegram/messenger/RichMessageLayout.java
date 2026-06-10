@@ -523,6 +523,9 @@ public class RichMessageLayout {
         TLRPC.Document document;
         String str;
         int ceil;
+        if (rect.left + rect.right >= this.maxWidth) {
+            return null;
+        }
         if (pageBlock instanceof TL_iv.pageBlockThinking) {
             RichThinkingBlock richThinkingBlock = new RichThinkingBlock(this, new Rect(), this.maxWidth, formatText(pageBlock.text));
             this.blocks.add(richThinkingBlock);

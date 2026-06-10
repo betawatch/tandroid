@@ -7305,16 +7305,18 @@ public class MessageObject {
                     TL_iv.PageListItem pageListItem = pageblocklist.items.get(i3);
                     if (pageListItem instanceof TL_iv.TL_pageListItemText) {
                         TL_iv.TL_pageListItemText tL_pageListItemText = (TL_iv.TL_pageListItemText) pageListItem;
-                        spannableStringBuilder.append("• ");
                         if (tL_pageListItemText.checkbox) {
-                            spannableStringBuilder.append(tL_pageListItemText.checked ? "✅ " : "⬛️ ");
+                            spannableStringBuilder.append(tL_pageListItemText.checked ? "✅ " : "☑️ ");
+                        } else {
+                            spannableStringBuilder.append("• ");
                         }
                         formatRichText(tL_pageListItemText.text, z, z2, i, spannableStringBuilder, 0);
                     } else if (pageListItem instanceof TL_iv.TL_pageListItemBlocks) {
                         TL_iv.TL_pageListItemBlocks tL_pageListItemBlocks = (TL_iv.TL_pageListItemBlocks) pageListItem;
-                        spannableStringBuilder.append("• ");
                         if (tL_pageListItemBlocks.checkbox) {
-                            spannableStringBuilder.append(tL_pageListItemBlocks.checked ? "✅ " : "⬛️ ");
+                            spannableStringBuilder.append(tL_pageListItemBlocks.checked ? "✅ " : "☑️ ");
+                        } else {
+                            spannableStringBuilder.append("• ");
                         }
                         int i4 = 0;
                         while (i4 < tL_pageListItemBlocks.blocks.size()) {
@@ -7348,7 +7350,7 @@ public class MessageObject {
                         spannableStringBuilder.append((CharSequence) tL_pageListOrderedItemText.num);
                         spannableStringBuilder.append(". ");
                         if (tL_pageListOrderedItemText.checkbox) {
-                            spannableStringBuilder.append(tL_pageListOrderedItemText.checked ? "✅ " : "⬛️ ");
+                            spannableStringBuilder.append(tL_pageListOrderedItemText.checked ? "✅ " : "☑️ ");
                         }
                         formatRichText(tL_pageListOrderedItemText.text, z, z2, i, spannableStringBuilder, 0);
                     } else if (pageListOrderedItem instanceof TL_iv.TL_pageListOrderedItemBlocks) {
@@ -7356,7 +7358,7 @@ public class MessageObject {
                         spannableStringBuilder.append((CharSequence) tL_pageListOrderedItemBlocks.num);
                         spannableStringBuilder.append(". ");
                         if (tL_pageListOrderedItemBlocks.checkbox) {
-                            spannableStringBuilder.append(tL_pageListOrderedItemBlocks.checked ? "✅ " : "⬛️ ");
+                            spannableStringBuilder.append(tL_pageListOrderedItemBlocks.checked ? "✅ " : "☑️ ");
                         }
                         int i7 = 0;
                         while (i7 < tL_pageListOrderedItemBlocks.blocks.size()) {
@@ -10037,23 +10039,24 @@ public class MessageObject {
         StaticLayout.Builder hyphenationFrequency2;
         StaticLayout.Builder alignment2;
         StaticLayout build2;
-        int i2 = Build.VERSION.SDK_INT;
-        if (i2 >= 24) {
-            obtain = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i);
+        int i2 = i <= 0 ? 1 : i;
+        int i3 = Build.VERSION.SDK_INT;
+        if (i3 >= 24) {
+            obtain = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i2);
             lineSpacing = obtain.setLineSpacing(f2, f);
             breakStrategy = lineSpacing.setBreakStrategy(1);
             hyphenationFrequency = breakStrategy.setHyphenationFrequency(0);
             alignment = hyphenationFrequency.setAlignment(Layout.Alignment.ALIGN_NORMAL);
             if (z) {
                 alignment.setIncludePad(false);
-                if (i2 >= 28) {
+                if (i3 >= 28) {
                     alignment.setUseLineSpacingFromFallbacks(false);
                 }
             }
             build = alignment.build();
-            for (int i3 = 0; i3 < build.getLineCount(); i3++) {
-                if (build.getLineRight(i3) > i) {
-                    obtain2 = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i);
+            for (int i4 = 0; i4 < build.getLineCount(); i4++) {
+                if (build.getLineRight(i4) > i2) {
+                    obtain2 = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i2);
                     lineSpacing2 = obtain2.setLineSpacing(f2, f);
                     breakStrategy2 = lineSpacing2.setBreakStrategy(0);
                     hyphenationFrequency2 = breakStrategy2.setHyphenationFrequency(0);
@@ -10070,7 +10073,7 @@ public class MessageObject {
             }
             return build;
         }
-        return new StaticLayout(charSequence, textPaint, i, Layout.Alignment.ALIGN_NORMAL, f, f2, false);
+        return new StaticLayout(charSequence, textPaint, i2, Layout.Alignment.ALIGN_NORMAL, f, f2, false);
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(16:285|286|287|288|289|(1:291)(11:320|(1:322)|293|294|295|(1:297)|298|(2:300|(3:302|(5:305|306|(1:311)|308|309)|310))(1:317)|316|(1:315)(5:305|306|(0)|308|309)|310)|292|293|294|295|(0)|298|(0)(0)|316|(0)(0)|310) */
