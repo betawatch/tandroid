@@ -144,7 +144,7 @@ public abstract class BlurredBackgroundProviderImpl {
                 lambda$topPanelChatActivity$7 = BlurredBackgroundProviderImpl.lambda$topPanelChatActivity$7(Theme.ResourcesProvider.this, resourcesProvider2, z);
                 return lambda$topPanelChatActivity$7;
             }
-        }).setStrokeColorTop(-1, 687865855).setStrokeColorBottom(-1, 352321535).setShadowColor(TLObject.FLAG_29, 0).setStrokeWidth(AndroidUtilities.dpf2(0.5f), AndroidUtilities.dpf2(0.5f)).build();
+        }).setStrokeColorTop(-1, 553648127).setStrokeColorBottom(-1, 352321535).setShadowColor(TLObject.FLAG_29, 0).setStrokeWidth(AndroidUtilities.dpf2(0.55f), AndroidUtilities.dpf2(0.55f)).build();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

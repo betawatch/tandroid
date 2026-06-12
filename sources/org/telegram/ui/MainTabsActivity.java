@@ -184,39 +184,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             this.iBlur3SourceTabGlass = null;
         }
         this.iBlur3SourceColor = new BlurredBackgroundSourceColor();
-    }
-
-    @Override // org.telegram.ui.ViewPagerActivity
-    protected FrameLayout createContentView(Context context) {
-        return new FrameLayout(context) { // from class: org.telegram.ui.MainTabsActivity.2
-            @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-            protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-                super.onLayout(z, i, i2, i3, i4);
-                MainTabsActivity.this.checkUi_tabsPosition();
-                MainTabsActivity.this.checkUi_fadeView();
-            }
-
-            @Override // android.view.ViewGroup, android.view.View
-            protected void dispatchDraw(Canvas canvas) {
-                super.dispatchDraw(canvas);
-                MainTabsActivity.this.blur3_invalidateBlur();
-            }
-        };
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        updateLayout();
-    }
-
-    @Override // org.telegram.ui.ViewPagerActivity, org.telegram.ui.ActionBar.BaseFragment
-    public void onResume() {
-        super.onResume();
-        blur3_updateColors();
-        checkContactsTabBadge();
-        checkUnreadCount(true);
-        Bulletin.Delegate delegate = new Bulletin.Delegate() { // from class: org.telegram.ui.MainTabsActivity.3
+        Bulletin.Delegate delegate = new Bulletin.Delegate() { // from class: org.telegram.ui.MainTabsActivity.2
             @Override // org.telegram.ui.Components.Bulletin.Delegate
             public /* synthetic */ boolean allowLayoutChanges() {
                 return Bulletin.Delegate.-CC.$default$allowLayoutChanges(this);
@@ -259,6 +227,38 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         };
         Bulletin.addDelegate(this, delegate);
         Bulletin.addDelegate(this.contentView, delegate);
+    }
+
+    @Override // org.telegram.ui.ViewPagerActivity
+    protected FrameLayout createContentView(Context context) {
+        return new FrameLayout(context) { // from class: org.telegram.ui.MainTabsActivity.3
+            @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+            protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+                super.onLayout(z, i, i2, i3, i4);
+                MainTabsActivity.this.checkUi_tabsPosition();
+                MainTabsActivity.this.checkUi_fadeView();
+            }
+
+            @Override // android.view.ViewGroup, android.view.View
+            protected void dispatchDraw(Canvas canvas) {
+                super.dispatchDraw(canvas);
+                MainTabsActivity.this.blur3_invalidateBlur();
+            }
+        };
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        updateLayout();
+    }
+
+    @Override // org.telegram.ui.ViewPagerActivity, org.telegram.ui.ActionBar.BaseFragment
+    public void onResume() {
+        super.onResume();
+        blur3_updateColors();
+        checkContactsTabBadge();
+        checkUnreadCount(true);
         showAccountChangeHint();
     }
 
@@ -281,8 +281,6 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     @Override // org.telegram.ui.ViewPagerActivity, org.telegram.ui.ActionBar.BaseFragment
     public void onPause() {
         super.onPause();
-        Bulletin.removeDelegate(this);
-        Bulletin.removeDelegate(this.contentView);
         HintView2 hintView2 = this.accountSwitchHint;
         if (hintView2 != null) {
             hintView2.hide();
@@ -988,6 +986,8 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
 
     @Override // org.telegram.ui.ViewPagerActivity, org.telegram.ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
+        Bulletin.removeDelegate(this);
+        Bulletin.removeDelegate(this.contentView);
         NotificationCenter.ObserversGroup observersGroup = this.observersGroup;
         if (observersGroup != null) {
             observersGroup.removeAllObservers();

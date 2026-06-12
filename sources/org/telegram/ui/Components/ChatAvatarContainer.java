@@ -555,15 +555,6 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    public void setTitleExpand(boolean z) {
-        int dp = z ? AndroidUtilities.dp(10.0f) : 0;
-        if (this.titleTextView.getPaddingRight() != dp) {
-            this.titleTextView.setPadding(0, AndroidUtilities.dp(6.0f), dp, AndroidUtilities.dp(12.0f));
-            requestLayout();
-            invalidate();
-        }
-    }
-
     public void setOverrideSubtitleColor(Integer num) {
         this.overrideSubtitleColor = num;
     }
@@ -812,10 +803,10 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        int size = View.MeasureSpec.getSize(i) + this.titleTextView.getPaddingRight();
+        int size = View.MeasureSpec.getSize(i);
         int dp = size - AndroidUtilities.dp((this.avatarImageView.getVisibility() == 0 ? 54 : 0) + 16);
-        this.avatarImageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.avatarSizeInDp), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.avatarSizeInDp), TLObject.FLAG_30));
-        this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f) + this.titleTextView.getPaddingRight(), TLObject.FLAG_31));
+        this.avatarImageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.avatarSizeInDp) - 2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.avatarSizeInDp) - 2, TLObject.FLAG_30));
+        this.titleTextView.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_31));
         SimpleTextView simpleTextView = this.subtitleTextView;
         if (simpleTextView != null) {
             simpleTextView.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_31));
@@ -942,12 +933,13 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        int currentActionBarHeight = ((ActionBar.getCurrentActionBarHeight() - this.avatarImageView.getMeasuredHeight()) / 2) + (this.occupyStatusBar ? AndroidUtilities.statusBarHeight : 0);
+        int currentActionBarHeight = (((ActionBar.getCurrentActionBarHeight() - this.avatarImageView.getMeasuredHeight()) - 2) / 2) + (this.occupyStatusBar ? AndroidUtilities.statusBarHeight : 0);
         int dp = AndroidUtilities.dp(this.glassMode ? 23.66f : 24.0f) + currentActionBarHeight;
         BackupImageView backupImageView = this.avatarImageView;
-        int i5 = this.leftPadding;
-        backupImageView.layout(i5, currentActionBarHeight, backupImageView.getMeasuredWidth() + i5, this.avatarImageView.getMeasuredHeight() + currentActionBarHeight);
-        int dp2 = this.leftPadding + AndroidUtilities.dp(this.avatarImageView.getVisibility() == 0 ? this.glassMode ? 48.66f : 54.0f : this.glassMode ? 12.0f : 0.0f) + this.rightAvatarPadding;
+        int i5 = this.leftPadding + 1;
+        int i6 = currentActionBarHeight + 1;
+        backupImageView.layout(i5, i6, backupImageView.getMeasuredWidth() + i5, this.avatarImageView.getMeasuredHeight() + i6);
+        int dp2 = this.leftPadding + AndroidUtilities.dp(this.avatarImageView.getVisibility() == 0 ? this.glassMode ? 49.66f : 55.0f : this.glassMode ? 13.0f : 1.0f) + this.rightAvatarPadding;
         SimpleTextView simpleTextView = (SimpleTextView) this.titleTextLargerCopyView.get();
         if (getSubtitleTextView().getVisibility() != 8) {
             this.titleTextView.layout(dp2, (AndroidUtilities.dp(1.66f) + currentActionBarHeight) - this.titleTextView.getPaddingTop(), this.titleTextView.getMeasuredWidth() + dp2, (((this.titleTextView.getTextHeight() + currentActionBarHeight) + AndroidUtilities.dp(1.66f)) - this.titleTextView.getPaddingTop()) + this.titleTextView.getPaddingBottom());

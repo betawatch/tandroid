@@ -1163,7 +1163,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         });
         this.searchItem = actionBarMenuItemSearchListener;
         actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString(R.string.Search));
-        this.searchItem.setSearchPaddingStart(12);
+        this.searchItem.setSearchPaddingStart(7);
         this.avatarContainer.setEnabled(false);
         this.avatarContainer.setTitle(this.currentChat.title);
         this.avatarContainer.setSubtitle(LocaleController.getString(R.string.EventLogAllEvents));

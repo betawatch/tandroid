@@ -52,6 +52,7 @@ import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ArticleViewer;
+import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.EmptyBaseFragment;
 import org.telegram.ui.LaunchActivity;
@@ -62,6 +63,7 @@ public abstract class BaseFragment {
     protected ActionBar actionBar;
     protected Bundle arguments;
     private int bottomInset;
+    private Bulletin.Delegate bulletinDelegate;
     protected int classGuid;
     protected int currentAccount;
     protected boolean finishing;
@@ -1538,6 +1540,14 @@ public abstract class BaseFragment {
 
     public int getBottomInset() {
         return this.bottomInset;
+    }
+
+    public void setBulletinDelegate(Bulletin.Delegate delegate) {
+        this.bulletinDelegate = delegate;
+    }
+
+    public Bulletin.Delegate getBulletinDelegate() {
+        return this.bulletinDelegate;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

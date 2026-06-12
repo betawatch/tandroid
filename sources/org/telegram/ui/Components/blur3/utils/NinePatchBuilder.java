@@ -10,6 +10,7 @@ import android.graphics.drawable.NinePatchDrawable;
 import androidx.core.math.MathUtils;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import org.telegram.messenger.ApplicationLoader;
 
 /* loaded from: classes5.dex */
 public abstract class NinePatchBuilder {
@@ -45,9 +46,9 @@ public abstract class NinePatchBuilder {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00fd  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0106  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00f7  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00fc  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00f6  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -110,7 +111,7 @@ public abstract class NinePatchBuilder {
                                 int clamp = MathUtils.clamp(((int) Math.ceil(max11)) + ceil2, 1, i6 - 2);
                                 int clamp2 = MathUtils.clamp((i6 - i4) - ((int) Math.ceil(max12)), clamp + 1, i6 - 1);
                                 int clamp3 = MathUtils.clamp(((int) Math.ceil(max13)) + ceil4, 1, i3 - 2);
-                                return new NinePatchDrawable(bitmap2, createNinePatchChunk(clamp, clamp2, clamp3, MathUtils.clamp((i3 - i5) - ((int) Math.ceil(max14)), clamp3 + 1, i3 - 1), ceil2, ceil4, i4, i5, i).array(), new Rect(ceil2, ceil4, i4, i5), null);
+                                return new NinePatchDrawable(ApplicationLoader.applicationContext.getResources(), bitmap2, createNinePatchChunk(clamp, clamp2, clamp3, MathUtils.clamp((i3 - i5) - ((int) Math.ceil(max14)), clamp3 + 1, i3 - 1), ceil2, ceil4, i4, i5, i).array(), new Rect(ceil2, ceil4, i4, i5), null);
                             }
                         } else {
                             i4 = ceil3;
@@ -129,7 +130,7 @@ public abstract class NinePatchBuilder {
                         int clamp4 = MathUtils.clamp(((int) Math.ceil(max112)) + ceil2, 1, i6 - 2);
                         int clamp22 = MathUtils.clamp((i6 - i4) - ((int) Math.ceil(max122)), clamp4 + 1, i6 - 1);
                         int clamp32 = MathUtils.clamp(((int) Math.ceil(max132)) + ceil4, 1, i3 - 2);
-                        return new NinePatchDrawable(bitmap22, createNinePatchChunk(clamp4, clamp22, clamp32, MathUtils.clamp((i3 - i5) - ((int) Math.ceil(max142)), clamp32 + 1, i3 - 1), ceil2, ceil4, i4, i5, i).array(), new Rect(ceil2, ceil4, i4, i5), null);
+                        return new NinePatchDrawable(ApplicationLoader.applicationContext.getResources(), bitmap22, createNinePatchChunk(clamp4, clamp22, clamp32, MathUtils.clamp((i3 - i5) - ((int) Math.ceil(max142)), clamp32 + 1, i3 - 1), ceil2, ceil4, i4, i5, i).array(), new Rect(ceil2, ceil4, i4, i5), null);
                     }
                 }
                 i4 = ceil3;
@@ -148,7 +149,7 @@ public abstract class NinePatchBuilder {
                 int clamp42 = MathUtils.clamp(((int) Math.ceil(max1122)) + ceil2, 1, i6 - 2);
                 int clamp222 = MathUtils.clamp((i6 - i4) - ((int) Math.ceil(max1222)), clamp42 + 1, i6 - 1);
                 int clamp322 = MathUtils.clamp(((int) Math.ceil(max1322)) + ceil4, 1, i3 - 2);
-                return new NinePatchDrawable(bitmap222, createNinePatchChunk(clamp42, clamp222, clamp322, MathUtils.clamp((i3 - i5) - ((int) Math.ceil(max1422)), clamp322 + 1, i3 - 1), ceil2, ceil4, i4, i5, i).array(), new Rect(ceil2, ceil4, i4, i5), null);
+                return new NinePatchDrawable(ApplicationLoader.applicationContext.getResources(), bitmap222, createNinePatchChunk(clamp42, clamp222, clamp322, MathUtils.clamp((i3 - i5) - ((int) Math.ceil(max1422)), clamp322 + 1, i3 - 1), ceil2, ceil4, i4, i5, i).array(), new Rect(ceil2, ceil4, i4, i5), null);
             }
         } else {
             i2 = i7;
@@ -172,7 +173,7 @@ public abstract class NinePatchBuilder {
         int clamp422 = MathUtils.clamp(((int) Math.ceil(max11222)) + ceil2, 1, i6 - 2);
         int clamp2222 = MathUtils.clamp((i6 - i4) - ((int) Math.ceil(max12222)), clamp422 + 1, i6 - 1);
         int clamp3222 = MathUtils.clamp(((int) Math.ceil(max13222)) + ceil4, 1, i3 - 2);
-        return new NinePatchDrawable(bitmap2222, createNinePatchChunk(clamp422, clamp2222, clamp3222, MathUtils.clamp((i3 - i5) - ((int) Math.ceil(max14222)), clamp3222 + 1, i3 - 1), ceil2, ceil4, i4, i5, i).array(), new Rect(ceil2, ceil4, i4, i5), null);
+        return new NinePatchDrawable(ApplicationLoader.applicationContext.getResources(), bitmap2222, createNinePatchChunk(clamp422, clamp2222, clamp3222, MathUtils.clamp((i3 - i5) - ((int) Math.ceil(max14222)), clamp3222 + 1, i3 - 1), ceil2, ceil4, i4, i5, i).array(), new Rect(ceil2, ceil4, i4, i5), null);
     }
 
     public static ByteBuffer createNinePatchChunk(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9) {

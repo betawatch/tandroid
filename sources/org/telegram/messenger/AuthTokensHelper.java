@@ -95,7 +95,7 @@ public class AuthTokensHelper {
                 edit.putString("log_in_token_" + i2, Utilities.bytesToHex(serializedData.toByteArray()));
             }
             edit.apply();
-            BackupAgent.requestBackup(ApplicationLoader.applicationContext);
+            BackupAgent.requestBackup();
         }
     }
 
@@ -105,7 +105,7 @@ public class AuthTokensHelper {
         SerializedData serializedData = new SerializedData(tL_auth_loggedOut.getObjectSize());
         tL_auth_loggedOut.serializeToStream(serializedData);
         sharedPreferences.edit().putString("log_out_token_" + i, Utilities.bytesToHex(serializedData.toByteArray())).putInt(NotificationBadge.NewHtcHomeBadger.COUNT, i + 1).apply();
-        BackupAgent.requestBackup(ApplicationLoader.applicationContext);
+        BackupAgent.requestBackup();
     }
 
     public static void clearLogInTokens() {

@@ -555,7 +555,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 if (!(childAt2 instanceof ActionBar)) {
                     if (childAt2 instanceof BaseFragment.AttachedSheetWindow) {
                         measureChildWithMargins(childAt2, i, 0, i2, (ActionBarLayout.this.getBottomTabsHeight(false) > 0 || !this.isSupportEdgeToEdge) ? 0 : ActionBarLayout.this.navigationBarInsetHeight);
-                    } else if (childAt2.getTag(-15654349) != null || childAt2.getFitsSystemWindows()) {
+                    } else if (childAt2.getTag(R.id.sheet_attached_to_fragment_tag) != null || childAt2.getFitsSystemWindows()) {
                         measureChildWithMargins(childAt2, i, 0, i2, this.isSupportEdgeToEdge ? ActionBarLayout.this.navigationBarInsetHeight : 0);
                     } else {
                         measureChildWithMargins(childAt2, i, 0, i2, i3);
@@ -587,7 +587,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 View childAt2 = getChildAt(i7);
                 if (!(childAt2 instanceof ActionBar)) {
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt2.getLayoutParams();
-                    if (childAt2.getTag(-15654349) != null || childAt2.getFitsSystemWindows() || (childAt2 instanceof BaseFragment.AttachedSheetWindow)) {
+                    if (childAt2.getTag(R.id.sheet_attached_to_fragment_tag) != null || childAt2.getFitsSystemWindows() || (childAt2 instanceof BaseFragment.AttachedSheetWindow)) {
                         int i8 = layoutParams.leftMargin;
                         childAt2.layout(i8, layoutParams.topMargin, childAt2.getMeasuredWidth() + i8, layoutParams.topMargin + childAt2.getMeasuredHeight());
                     } else {
