@@ -222,7 +222,7 @@ public abstract class ChatGreetingsView extends LinearLayout {
                 this.premiumButtonView.setTypeface(AndroidUtilities.bold());
                 this.premiumButtonView.setTextSize(1, 14.0f);
                 this.premiumButtonView.setPadding(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
-                this.premiumButtonView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(15.0f), 503316480, AndroidUtilities.DARK_STATUS_BAR_OVERLAY));
+                this.premiumButtonView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(15.0f), 503316480, 855638016));
                 ScaleStateListAnimator.apply(this.premiumButtonView);
             }
             this.premiumButtonView.setText(charSequence2);

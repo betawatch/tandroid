@@ -1131,7 +1131,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
                 Boolean bool = this.statusBarOpen;
                 if (bool == null || bool.booleanValue() != z) {
                     boolean z2 = AndroidUtilities.computePerceivedBrightness(StickersAlert.this.getThemedColor(Theme.key_dialogBackground)) > 0.721f;
-                    boolean z3 = AndroidUtilities.computePerceivedBrightness(Theme.blendOver(StickersAlert.this.getThemedColor(Theme.key_actionBarDefault), AndroidUtilities.DARK_STATUS_BAR_OVERLAY)) > 0.721f;
+                    boolean z3 = AndroidUtilities.computePerceivedBrightness(Theme.blendOver(StickersAlert.this.getThemedColor(Theme.key_actionBarDefault), 855638016)) > 0.721f;
                     this.statusBarOpen = Boolean.valueOf(z);
                     if (!z) {
                         z2 = z3;

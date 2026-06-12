@@ -59579,7 +59579,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         ChatActivityEnterView chatActivityEnterView = this.chatActivityEnterView;
         int i24 = Theme.key_chat_recordVoiceCancel;
         arrayList.add(new ThemeDescription(chatActivityEnterView, 0, null, null, null, null, i24));
-        arrayList.add(new ThemeDescription(this.chatActivityEnterView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{ChatActivityEnterView.class}, new String[]{"recordedAudioTimeTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_chat_messagePanelVoiceDuration));
         arrayList.add(new ThemeDescription(this.chatActivityEnterView, 0, null, null, null, null, i24));
         arrayList.add(new ThemeDescription(this.chatActivityEnterView, ThemeDescription.FLAG_IMAGECOLOR, new Class[]{ChatActivityEnterView.class}, new String[]{"cancelBotButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_chat_messagePanelCancelInlineBot));
         arrayList.add(new ThemeDescription(this.chatActivityEnterView, ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, new Class[]{ChatActivityEnterView.class}, new String[]{"cancelBotButton"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i21));

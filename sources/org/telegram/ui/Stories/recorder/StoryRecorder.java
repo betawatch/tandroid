@@ -1386,7 +1386,7 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
                             StoryRecorder.this.fromSourceView.backgroundDrawable.draw(canvas);
                         } else if (StoryRecorder.this.fromSourceView.backgroundPaint != null) {
                             if (StoryRecorder.this.fromSourceView.hasShadow) {
-                                StoryRecorder.this.fromSourceView.backgroundPaint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(3.0f), Theme.multAlpha(AndroidUtilities.DARK_STATUS_BAR_OVERLAY, clamp));
+                                StoryRecorder.this.fromSourceView.backgroundPaint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(3.0f), Theme.multAlpha(855638016, clamp));
                             }
                             StoryRecorder.this.fromSourceView.backgroundPaint.setAlpha((int) (255.0f * clamp));
                             canvas.drawRoundRect(StoryRecorder.this.rectF, lerp, lerp, StoryRecorder.this.fromSourceView.backgroundPaint);

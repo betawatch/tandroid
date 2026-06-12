@@ -1427,7 +1427,7 @@ public class FilterChatlistActivity extends BaseFragment {
                 final View view = new View(getContext()) { // from class: org.telegram.ui.FilterChatlistActivity.InviteLinkCell.4
                     @Override // android.view.View
                     protected void onDraw(Canvas canvas) {
-                        canvas.drawColor(AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
+                        canvas.drawColor(855638016);
                         InviteLinkCell inviteLinkCell = InviteLinkCell.this;
                         inviteLinkCell.getPointOnScreen(inviteLinkCell.linkBox, overlayContainerView, inviteLinkCell.point);
                         canvas.save();

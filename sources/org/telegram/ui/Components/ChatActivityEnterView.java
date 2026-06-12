@@ -4755,7 +4755,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         dialog.getWindow().getDecorView().setSystemUiVisibility(1792);
         dialog.getWindow().setStatusBarColor(0);
         dialog.getWindow().setNavigationBarColor(0);
-        AndroidUtilities.setLightStatusBar(dialog.getWindow(), Theme.getColor(Theme.key_actionBarDefault, null, true) == -1);
+        AndroidUtilities.setLightStatusBar(dialog, Theme.getColor(Theme.key_actionBarDefault, null, true) == -1);
         int i = Build.VERSION.SDK_INT;
         if (i >= 26) {
             AndroidUtilities.setLightNavigationBar(dialog, AndroidUtilities.computePerceivedBrightness(Theme.getColor(Theme.key_windowBackgroundGray, null, true)) >= 0.721f);

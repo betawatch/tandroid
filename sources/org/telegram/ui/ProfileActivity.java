@@ -782,7 +782,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$39900(ProfileActivity profileActivity, View view) {
+    public static /* synthetic */ void access$39300(ProfileActivity profileActivity, View view) {
         profileActivity.onTextDetailCellImageClicked(view);
     }
 
@@ -4127,7 +4127,6 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     rectF.set(0.0f, 0.0f, ProfileActivity.this.avatarsViewPager.getMeasuredWidth(), ProfileActivity.this.avatarsViewPager.getMeasuredHeight() + AndroidUtilities.dp(30.0f));
                     canvas.saveLayerAlpha(rectF, (int) (255.0f * f4), 31);
                     ProfileActivity.this.avatarContainer2.draw(canvas);
-                    ((BaseFragment) ProfileActivity.this).actionBar.getOccupyStatusBar();
                     canvas.save();
                     canvas.translate(((BaseFragment) ProfileActivity.this).actionBar.getX(), ((BaseFragment) ProfileActivity.this).actionBar.getY());
                     ((BaseFragment) ProfileActivity.this).actionBar.draw(canvas);
@@ -17956,7 +17955,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                 textDetailCell.setImageClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$$ExternalSyntheticLambda6
                                     @Override // android.view.View.OnClickListener
                                     public final void onClick(View view) {
-                                        ProfileActivity.access$39900(ProfileActivity.this, view);
+                                        ProfileActivity.access$39300(ProfileActivity.this, view);
                                     }
                                 });
                             }
@@ -17969,7 +17968,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                             textDetailCell.setImageClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$$ExternalSyntheticLambda7
                                 @Override // android.view.View.OnClickListener
                                 public final void onClick(View view) {
-                                    ProfileActivity.access$39900(ProfileActivity.this, view);
+                                    ProfileActivity.access$39300(ProfileActivity.this, view);
                                 }
                             });
                         } else {

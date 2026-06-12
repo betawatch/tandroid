@@ -1305,7 +1305,7 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
                 if (z) {
                     blendOver = TranslateAlert2.this.getThemedColor(Theme.key_dialogBackground);
                 } else {
-                    blendOver = Theme.blendOver(TranslateAlert2.this.getThemedColor(Theme.key_actionBarDefault), AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
+                    blendOver = Theme.blendOver(TranslateAlert2.this.getThemedColor(Theme.key_actionBarDefault), 855638016);
                 }
                 AndroidUtilities.setLightStatusBar(window, AndroidUtilities.computePerceivedBrightness(blendOver) > 0.721f);
             }

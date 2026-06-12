@@ -63,7 +63,7 @@ public class BoostPagerBottomSheet extends BottomSheet {
         this.useBackgroundTopPadding = false;
         setBackgroundColor(0);
         fixNavigationBar();
-        AndroidUtilities.setLightStatusBar(getWindow(), isLightStatusBar());
+        AndroidUtilities.setLightStatusBar(this, isLightStatusBar());
         checkScreenOrientation();
         ViewPagerFixed viewPagerFixed = new ViewPagerFixed(getContext()) { // from class: org.telegram.ui.Components.Premium.boosts.BoostPagerBottomSheet.1
             private boolean isKeyboardVisible;

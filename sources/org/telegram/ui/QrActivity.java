@@ -1315,7 +1315,7 @@ public class QrActivity extends BaseFragment {
             paint.setColor(-1);
             float dp = AndroidUtilities.dp(4.0f);
             float f = SHADOW_SIZE;
-            paint.setShadowLayer(dp, 0.0f, f, AndroidUtilities.LIGHT_STATUS_BAR_OVERLAY);
+            paint.setShadowLayer(dp, 0.0f, f, 251658240);
             this.backgroundBitmap = Bitmap.createBitmap(i, i2, Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(this.backgroundBitmap);
             float f2 = i;

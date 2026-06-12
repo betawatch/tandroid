@@ -2831,12 +2831,12 @@ public class TimelineView extends View {
             canvas8.clipPath(this.timelineClipPath);
             if (this.blurManager.hasRenderNode()) {
                 this.backgroundBlur.drawRect(canvas8);
-                canvas8.drawColor(AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
+                canvas8.drawColor(855638016);
             } else if (paint9 == null) {
                 canvas8.drawColor(TLObject.FLAG_30);
             } else {
                 canvas8.drawRect(this.timelineBounds, paint9);
-                canvas8.drawColor(AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
+                canvas8.drawColor(855638016);
             }
             if (!this.collageWaveforms.isEmpty() && (blurManager2 = this.blurManager) != null && blurManager2.hasRenderNode()) {
                 float f46 = this.timelineWaveformMax.set(WaveformPath.getMaxBar(this.collageWaveforms));
@@ -2953,13 +2953,13 @@ public class TimelineView extends View {
                     if (!z5) {
                         if (this.blurManager.hasRenderNode()) {
                             this.backgroundBlur.drawRect(canvas8);
-                            canvas8.drawColor(AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
+                            canvas8.drawColor(855638016);
                         } else if (paint7 == null) {
                             canvas8.drawColor(TLObject.FLAG_30);
                         } else {
                             paint8 = paint7;
                             canvas8.drawRect(this.videoBounds, paint8);
-                            canvas8.drawColor(AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
+                            canvas8.drawColor(855638016);
                             if (frameWidth != 0) {
                                 int i10 = i6;
                                 while (i10 < Math.min(this.videoTrack.thumbs.frames.size(), min2)) {
@@ -3121,7 +3121,7 @@ public class TimelineView extends View {
                         } else if (this.blurManager.hasRenderNode()) {
                             canvas6 = canvas;
                             this.backgroundBlur.drawRect(canvas6);
-                            canvas6.drawColor(AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
+                            canvas6.drawColor(855638016);
                         } else {
                             canvas6 = canvas;
                             if (paint == null) {
@@ -3130,7 +3130,7 @@ public class TimelineView extends View {
                                 f39 = f81;
                                 paint5 = paint;
                                 canvas6.drawRect(track8.bounds, paint5);
-                                canvas6.drawColor(AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
+                                canvas6.drawColor(855638016);
                                 if (frameWidth2 != 0) {
                                     while (max5 < Math.min(track8.thumbs.frames.size(), min3)) {
                                         VideoThumbsLoader.BitmapFrame bitmapFrame2 = (VideoThumbsLoader.BitmapFrame) track8.thumbs.frames.get(max5);
@@ -3275,14 +3275,14 @@ public class TimelineView extends View {
                     if (!z2) {
                         if (this.blurManager.hasRenderNode()) {
                             this.backgroundBlur.drawRect(canvas3);
-                            canvas3.drawColor(AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
+                            canvas3.drawColor(855638016);
                         } else if (paint2 == null) {
                             canvas3.drawColor(TLObject.FLAG_30);
                         } else {
                             f33 = f106;
                             paint4 = paint2;
                             canvas3.drawRect(this.roundBounds, paint4);
-                            canvas3.drawColor(AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
+                            canvas3.drawColor(855638016);
                             if (frameWidth3 != 0) {
                                 while (max6 < Math.min(this.roundThumbs.frames.size(), min4)) {
                                     VideoThumbsLoader.BitmapFrame bitmapFrame3 = (VideoThumbsLoader.BitmapFrame) this.roundThumbs.frames.get(max6);
@@ -3382,12 +3382,12 @@ public class TimelineView extends View {
                         canvas3.drawColor(Theme.multAlpha(TLObject.FLAG_30, f124));
                     } else {
                         canvas3.drawRect(this.audioBounds, paint11);
-                        canvas3.drawColor(Theme.multAlpha(AndroidUtilities.DARK_STATUS_BAR_OVERLAY, f124));
+                        canvas3.drawColor(Theme.multAlpha(855638016, f124));
                     }
                 } else {
                     this.backgroundBlur.drawRect(canvas3);
                     f124 = f29;
-                    canvas3.drawColor(Theme.multAlpha(AndroidUtilities.DARK_STATUS_BAR_OVERLAY, f124));
+                    canvas3.drawColor(Theme.multAlpha(855638016, f124));
                 }
                 if (this.waveform != null && (blurManager = this.blurManager) != null && blurManager.hasRenderNode()) {
                     float f135 = this.waveformMax.set(this.waveform.getMaxBar(), !this.waveformIsLoaded);

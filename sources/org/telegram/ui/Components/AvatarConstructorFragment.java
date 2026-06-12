@@ -1590,7 +1590,7 @@ public class AvatarConstructorFragment extends BaseFragment {
         }
         BottomSheet bottomSheet = this.bottomSheet;
         if (bottomSheet != null) {
-            AndroidUtilities.setLightStatusBar(bottomSheet.getWindow(), z);
+            AndroidUtilities.setLightStatusBar(bottomSheet, z);
         }
         return z;
     }

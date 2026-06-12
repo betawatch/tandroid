@@ -2142,7 +2142,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                 int i22 = Theme.key_chat_fieldOverlayText;
                                 textView5.setTextColor(getButtonsColor(i22));
                                 this.cancelButton.setGravity(17);
-                                this.cancelButton.setBackgroundDrawable(Theme.createSelectorDrawable(AndroidUtilities.LIGHT_STATUS_BAR_OVERLAY, 0));
+                                this.cancelButton.setBackgroundDrawable(Theme.createSelectorDrawable(251658240, 0));
                                 this.cancelButton.setPadding(AndroidUtilities.dp(29.0f), 0, AndroidUtilities.dp(29.0f), 0);
                                 this.cancelButton.setText(LocaleController.getString(R.string.Cancel));
                                 this.cancelButton.setTypeface(AndroidUtilities.bold());
@@ -2158,7 +2158,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                 textView6.setTextSize(i2, 14.0f);
                                 this.doneButton.setTextColor(getButtonsColor(i22));
                                 this.doneButton.setGravity(17);
-                                this.doneButton.setBackgroundDrawable(Theme.createSelectorDrawable(AndroidUtilities.LIGHT_STATUS_BAR_OVERLAY, 0));
+                                this.doneButton.setBackgroundDrawable(Theme.createSelectorDrawable(251658240, 0));
                                 this.doneButton.setPadding(AndroidUtilities.dp(29.0f), 0, AndroidUtilities.dp(29.0f), 0);
                                 this.doneButton.setText(LocaleController.getString(R.string.ApplyTheme));
                                 this.doneButton.setTypeface(AndroidUtilities.bold());

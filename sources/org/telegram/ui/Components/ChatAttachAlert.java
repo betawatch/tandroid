@@ -5567,8 +5567,9 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        if (this.baseFragment != null) {
-            AndroidUtilities.setLightStatusBar(getWindow(), this.baseFragment.isLightStatusBar());
+        BaseFragment baseFragment = this.baseFragment;
+        if (baseFragment != null) {
+            AndroidUtilities.setLightStatusBar(this, baseFragment.isLightStatusBar());
         }
     }
 
@@ -7196,11 +7197,12 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         } else if (this.typeButtonsAvailable && this.frameLayout2.getTag() == null) {
             this.buttonsRecyclerViewWrapper.setVisibility(0);
         }
-        if (getWindow() != null && this.baseFragment != null) {
+        BaseFragment baseFragment = this.baseFragment;
+        if (baseFragment != null) {
             if (z) {
-                AndroidUtilities.setLightStatusBar(getWindow(), isLightStatusBar());
+                AndroidUtilities.setLightStatusBar(this, isLightStatusBar());
             } else {
-                AndroidUtilities.setLightStatusBar(getWindow(), this.baseFragment.isLightStatusBar());
+                AndroidUtilities.setLightStatusBar(this, baseFragment.isLightStatusBar());
             }
         }
         if (z2) {
@@ -8520,7 +8522,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             }
         });
         if (baseFragment != null) {
-            AndroidUtilities.setLightStatusBar(getWindow(), baseFragment.isLightStatusBar());
+            AndroidUtilities.setLightStatusBar(this, baseFragment.isLightStatusBar());
         }
         this.captionLimitBulletinShown = false;
         super.lambda$new$0();

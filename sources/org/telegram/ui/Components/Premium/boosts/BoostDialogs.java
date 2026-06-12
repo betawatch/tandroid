@@ -405,7 +405,7 @@ public abstract class BoostDialogs {
         BottomSheet show = builder.show();
         show.setBackgroundColor(scheduleDatePickerColors.backgroundColor);
         show.fixNavigationBar(scheduleDatePickerColors.backgroundColor);
-        AndroidUtilities.setLightStatusBar(show.getWindow(), ColorUtils.calculateLuminance(scheduleDatePickerColors.backgroundColor) > 0.699999988079071d);
+        AndroidUtilities.setLightStatusBar(show, ColorUtils.calculateLuminance(scheduleDatePickerColors.backgroundColor) > 0.699999988079071d);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -3320,7 +3320,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             super(context, activity, false);
             this.paint = new Paint();
             setWillNotDraw(false);
-            this.paint.setColor(AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
+            this.paint.setColor(855638016);
             setLayerType(2, null);
         }
 
@@ -5515,7 +5515,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             public void draw(Canvas canvas, float f, float f2, float f3, float f4) {
                 canvas.save();
                 canvas.clipRect(f, f2, f3, f4);
-                PhotoViewer.this.drawCaptionBlur(canvas, this.blur, -14277082, AndroidUtilities.DARK_STATUS_BAR_OVERLAY, false, true, true);
+                PhotoViewer.this.drawCaptionBlur(canvas, this.blur, -14277082, 855638016, false, true, true);
                 canvas.drawColor(637534208);
                 canvas.restore();
             }
@@ -6150,7 +6150,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 canvas.save();
                 canvas.clipRect(rectF);
                 canvas.translate((-getX()) - PhotoViewer.this.videoTimelineViewContainer.getX(), (-getY()) - PhotoViewer.this.videoTimelineViewContainer.getY());
-                PhotoViewer.this.drawCaptionBlur(canvas, this.blur, -14803426, AndroidUtilities.DARK_STATUS_BAR_OVERLAY, false, true, false);
+                PhotoViewer.this.drawCaptionBlur(canvas, this.blur, -14803426, 855638016, false, true, false);
                 canvas.restore();
             }
 
@@ -6332,7 +6332,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 } else {
                     canvas.translate(f2, f3);
                 }
-                PhotoViewer.this.drawCaptionBlur(canvas, storyBlurDrawer, Theme.multAlpha(z3 ? -8882056 : -14277082, f4), Theme.multAlpha(z4 ? z3 ? 0 : AndroidUtilities.DARK_STATUS_BAR_OVERLAY : 1140850688, f4), false, !z3, !z3 && z4);
+                PhotoViewer.this.drawCaptionBlur(canvas, storyBlurDrawer, Theme.multAlpha(z3 ? -8882056 : -14277082, f4), Theme.multAlpha(z4 ? z3 ? 0 : 855638016 : 1140850688, f4), false, !z3, !z3 && z4);
                 canvas.restore();
             }
 
@@ -6473,7 +6473,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 } else {
                     canvas.translate(f2, f3);
                 }
-                PhotoViewer.this.drawCaptionBlur(canvas, storyBlurDrawer, Theme.multAlpha(z3 ? -8882056 : -14277082, f4), Theme.multAlpha(z4 ? z3 ? 0 : AndroidUtilities.DARK_STATUS_BAR_OVERLAY : 1140850688, f4), false, !z3, !z3 && z4);
+                PhotoViewer.this.drawCaptionBlur(canvas, storyBlurDrawer, Theme.multAlpha(z3 ? -8882056 : -14277082, f4), Theme.multAlpha(z4 ? z3 ? 0 : 855638016 : 1140850688, f4), false, !z3, !z3 && z4);
                 canvas.restore();
             }
 
@@ -30662,7 +30662,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             if (this == PhotoViewer.this.eraseBtn || this == PhotoViewer.this.restoreBtn) {
                 canvas.translate(-PhotoViewer.this.btnLayout.getX(), -PhotoViewer.this.btnLayout.getY());
             }
-            PhotoViewer.this.drawCaptionBlur(canvas, this.blurDrawer, -13948117, AndroidUtilities.DARK_STATUS_BAR_OVERLAY, false, true, false);
+            PhotoViewer.this.drawCaptionBlur(canvas, this.blurDrawer, -13948117, 855638016, false, true, false);
             float f = this.activeFloat.set(this.active);
             if (f > 0.0f) {
                 canvas.drawColor(Theme.multAlpha(-1, f));

@@ -1642,7 +1642,7 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
         int i2 = Theme.key_windowBackgroundWhiteInputField;
         paint4.setColor(iArticleViewer.getThemedColor(i2));
         tableLinePaint.setColor(iArticleViewer.getThemedColor(i2));
-        photoBackgroundPaint.setColor(AndroidUtilities.LIGHT_STATUS_BAR_OVERLAY);
+        photoBackgroundPaint.setColor(251658240);
         dividerPaint.setColor(iArticleViewer.getThemedColor(Theme.key_divider));
         webpageMarkPaint.setColor(iArticleViewer.getThemedColor(i) & 872415231);
         webpageMarkPaint.setPathEffect(LinkPath.getRoundedEffect());

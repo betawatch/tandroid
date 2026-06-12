@@ -338,7 +338,7 @@ public class LinkActionView extends LinearLayout {
             final View view2 = new View(context) { // from class: org.telegram.ui.Components.LinkActionView.2
                 @Override // android.view.View
                 protected void onDraw(Canvas canvas) {
-                    canvas.drawColor(AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
+                    canvas.drawColor(855638016);
                     LinkActionView linkActionView = LinkActionView.this;
                     linkActionView.getPointOnScreen(linkActionView.frameLayout, container, LinkActionView.this.point);
                     canvas.save();

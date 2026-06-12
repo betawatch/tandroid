@@ -22,10 +22,9 @@ public abstract class BlurredBackgroundProviderImpl {
         return i;
     }
 
-    public static /* synthetic */ int $r8$lambda$uz3PB-GeZ_9chpGd9fc8ZikyLPM(Theme.ResourcesProvider resourcesProvider, boolean z) {
-        int i;
-        i = AndroidUtilities.DARK_STATUS_BAR_OVERLAY;
-        return i;
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ int lambda$searchFloatingDate$5(Theme.ResourcesProvider resourcesProvider, boolean z) {
+        return 855638016;
     }
 
     public static BlurredBackgroundProvider mainTabs(Theme.ResourcesProvider resourcesProvider) {
@@ -112,7 +111,9 @@ public abstract class BlurredBackgroundProviderImpl {
         return new BlurredBackgroundProviderBuilder(resourcesProvider).setBackgroundColor(new BlurredBackgroundProviderBuilder.ColorProvider() { // from class: org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl$$ExternalSyntheticLambda12
             @Override // org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProviderBuilder.ColorProvider
             public final int getColor(Theme.ResourcesProvider resourcesProvider2, boolean z) {
-                return BlurredBackgroundProviderImpl.$r8$lambda$uz3PB-GeZ_9chpGd9fc8ZikyLPM(resourcesProvider2, z);
+                int lambda$searchFloatingDate$5;
+                lambda$searchFloatingDate$5 = BlurredBackgroundProviderImpl.lambda$searchFloatingDate$5(resourcesProvider2, z);
+                return lambda$searchFloatingDate$5;
             }
         }).setStrokeColorTop(385875968, 402653183).setStrokeColorBottom(385875968, 402653183).setShadowColor(0, 0).setStrokeWidth(1.0f, 1.0f).build();
     }

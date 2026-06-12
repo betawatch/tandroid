@@ -1739,7 +1739,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
     private void needFinishActivity(final boolean z, boolean z2, int i) {
         if (getParentActivity() != null) {
-            AndroidUtilities.setLightStatusBar(getParentActivity().getWindow(), false);
+            AndroidUtilities.setLightStatusBar(getParentActivity(), false);
         }
         clearCurrentState();
         if (getParentActivity() instanceof LaunchActivity) {

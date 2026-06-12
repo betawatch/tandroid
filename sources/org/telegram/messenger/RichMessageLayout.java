@@ -1892,7 +1892,7 @@ public class RichMessageLayout {
                     paint.setPathEffect(LinkPath.getRoundedEffect());
                 }
                 RichMessageLayout richMessageLayout3 = this.root;
-                markPaint.setColor((richMessageLayout3.getThemedColor(richMessageLayout3.isOut() ? Theme.key_chat_messageLinkOut : Theme.key_chat_messageLinkIn) & 16777215) | AndroidUtilities.DARK_STATUS_BAR_OVERLAY);
+                markPaint.setColor((richMessageLayout3.getThemedColor(richMessageLayout3.isOut() ? Theme.key_chat_messageLinkOut : Theme.key_chat_messageLinkIn) & 16777215) | 855638016);
                 canvas.drawPath(this.markPath, markPaint);
             }
             if (view == null) {
@@ -4163,7 +4163,7 @@ public class RichMessageLayout {
             if (mediaBgPaint == null) {
                 Paint paint = new Paint(1);
                 mediaBgPaint = paint;
-                paint.setColor(AndroidUtilities.LIGHT_STATUS_BAR_OVERLAY);
+                paint.setColor(251658240);
             }
             if (!this.imageReceiver.hasBitmapImage() || this.imageReceiver.getCurrentAlpha() != 1.0f) {
                 RichMessageLayout richMessageLayout = this.root;
@@ -5791,7 +5791,7 @@ public class RichMessageLayout {
             if (mediaBgPaint == null) {
                 Paint paint = new Paint(1);
                 mediaBgPaint = paint;
-                paint.setColor(AndroidUtilities.LIGHT_STATUS_BAR_OVERLAY);
+                paint.setColor(251658240);
             }
             RichMessageLayout richMessageLayout = this.root;
             int i = richMessageLayout.padLeft;
@@ -5947,7 +5947,7 @@ public class RichMessageLayout {
             if (mediaBgPaint == null) {
                 Paint paint = new Paint(1);
                 mediaBgPaint = paint;
-                paint.setColor(AndroidUtilities.LIGHT_STATUS_BAR_OVERLAY);
+                paint.setColor(251658240);
             }
             if (slideDotDrawable == null && (view = this.view) != null) {
                 slideDotDrawable = view.getResources().getDrawable(R.drawable.slide_dot_small);

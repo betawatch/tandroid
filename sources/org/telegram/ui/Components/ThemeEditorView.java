@@ -865,7 +865,7 @@ public class ThemeEditorView {
                     Boolean bool = this.statusBarOpen;
                     if (bool == null || bool.booleanValue() != z) {
                         boolean z2 = AndroidUtilities.computePerceivedBrightness(EditorAlert.this.getThemedColor(Theme.key_dialogBackground)) > 0.721f;
-                        boolean z3 = AndroidUtilities.computePerceivedBrightness(Theme.blendOver(EditorAlert.this.getThemedColor(Theme.key_actionBarDefault), AndroidUtilities.DARK_STATUS_BAR_OVERLAY)) > 0.721f;
+                        boolean z3 = AndroidUtilities.computePerceivedBrightness(Theme.blendOver(EditorAlert.this.getThemedColor(Theme.key_actionBarDefault), 855638016)) > 0.721f;
                         this.statusBarOpen = Boolean.valueOf(z);
                         if (!z) {
                             z2 = z3;
@@ -892,7 +892,7 @@ public class ThemeEditorView {
                 }
             };
             this.listView = recyclerListView;
-            recyclerListView.setSelectorDrawableColor(AndroidUtilities.LIGHT_STATUS_BAR_OVERLAY);
+            recyclerListView.setSelectorDrawableColor(251658240);
             this.listView.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
             this.listView.setClipToPadding(false);
             RecyclerListView recyclerListView2 = this.listView;
