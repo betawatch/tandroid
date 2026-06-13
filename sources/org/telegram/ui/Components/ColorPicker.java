@@ -235,7 +235,7 @@ public class ColorPicker extends FrameLayout {
         FrameLayout frameLayout = new FrameLayout(context);
         this.radioContainer = frameLayout;
         frameLayout.setClipChildren(false);
-        addView(this.radioContainer, LayoutHelper.createFrame(174, 30.0f, 49, 72.0f, 1.0f, 0.0f, 0.0f));
+        addView(this.radioContainer, LayoutHelper.createFrame(NotificationCenter.closeInCallActivity, 30.0f, 49, 72.0f, 1.0f, 0.0f, 0.0f));
         int i = 0;
         while (i < 4) {
             this.radioButton[i] = new RadioButton(context);

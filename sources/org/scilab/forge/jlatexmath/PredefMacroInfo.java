@@ -336,9 +336,9 @@ class PredefMacroInfo extends MacroInfo {
                     return PredefMacros.raisebox_macro(teXParser, strArr);
                 case NotificationCenter.didEndCall /* 173 */:
                     return PredefMacros.shadowbox_macro(teXParser, strArr);
-                case 174:
+                case NotificationCenter.closeInCallActivity /* 174 */:
                     return PredefMacros.ovalbox_macro(teXParser, strArr);
-                case NotificationCenter.groupCallVisibilityChanged /* 175 */:
+                case 175:
                     return PredefMacros.doublebox_macro(teXParser, strArr);
                 case NotificationCenter.liveStoryUpdated /* 176 */:
                     return PredefMacros.phantom_macro(teXParser, strArr);

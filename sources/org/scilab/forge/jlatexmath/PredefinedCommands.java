@@ -182,8 +182,8 @@ final class PredefinedCommands {
         MacroInfo.Commands.put("resizebox", new PredefMacroInfo(NotificationCenter.applyGroupCallVisibleParticipants, 3));
         MacroInfo.Commands.put("raisebox", new PredefMacroInfo(NotificationCenter.groupCallTypingsUpdated, 2, 2));
         MacroInfo.Commands.put("shadowbox", new PredefMacroInfo(NotificationCenter.didEndCall, 1));
-        MacroInfo.Commands.put("ovalbox", new PredefMacroInfo(174, 1));
-        MacroInfo.Commands.put("doublebox", new PredefMacroInfo(NotificationCenter.groupCallVisibilityChanged, 1));
+        MacroInfo.Commands.put("ovalbox", new PredefMacroInfo(NotificationCenter.closeInCallActivity, 1));
+        MacroInfo.Commands.put("doublebox", new PredefMacroInfo(175, 1));
         MacroInfo.Commands.put("phantom", new PredefMacroInfo(NotificationCenter.liveStoryUpdated, 1));
         MacroInfo.Commands.put("hphantom", new PredefMacroInfo(NotificationCenter.liveStoryMessageUpdate, 1));
         MacroInfo.Commands.put("vphantom", new PredefMacroInfo(NotificationCenter.appDidLogout, 1));

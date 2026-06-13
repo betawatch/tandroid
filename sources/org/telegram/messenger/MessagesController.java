@@ -10609,7 +10609,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str8 = str18;
                     str7 = str17;
                     str6 = str16;
-                case 174:
+                case NotificationCenter.closeInCallActivity /* 174 */:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;
@@ -10630,7 +10630,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     str7 = str17;
                     str6 = str16;
                     break;
-                case NotificationCenter.groupCallVisibilityChanged /* 175 */:
+                case 175:
                     str16 = str30;
                     str17 = str31;
                     str18 = str32;

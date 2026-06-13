@@ -173,7 +173,7 @@ public class MatroskaExtractor implements Extractor {
                 return 3;
             case NotificationCenter.screenshotTook /* 160 */:
             case NotificationCenter.groupCallUpdated /* 166 */:
-            case 174:
+            case NotificationCenter.closeInCallActivity /* 174 */:
             case NotificationCenter.themeUploadError /* 183 */:
             case NotificationCenter.updateBotMenuButton /* 187 */:
             case NotificationCenter.factCheckLoaded /* 224 */:

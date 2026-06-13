@@ -17,7 +17,7 @@ public abstract class Ac3Util {
     private static final int[] SAMPLE_RATE_BY_FSCOD2 = {24000, 22050, CarAudioRecord.AUDIO_CONTENT_SAMPLING_RATE};
     private static final int[] CHANNEL_COUNT_BY_ACMOD = {2, 1, 2, 3, 3, 4, 4, 5};
     private static final int[] BITRATE_BY_HALF_FRMSIZECOD = {32, 40, 48, 56, 64, 80, 96, 112, 128, NotificationCenter.screenshotTook, NotificationCenter.didUpdatePremiumGiftStickers, NotificationCenter.factCheckLoaded, 256, NotificationCenter.onDatabaseReset, 384, 448, 512, 576, 640};
-    private static final int[] SYNCFRAME_SIZE_WORDS_BY_HALF_FRMSIZECOD_44_1 = {69, 87, 104, 121, NotificationCenter.fileUploadFailed, 174, NotificationCenter.smsJobStatusUpdate, NotificationCenter.contentSettingsLoaded, NotificationCenter.liveLocationsChanged, 348, 417, 487, 557, 696, 835, 975, 1114, 1253, 1393};
+    private static final int[] SYNCFRAME_SIZE_WORDS_BY_HALF_FRMSIZECOD_44_1 = {69, 87, 104, 121, NotificationCenter.fileUploadFailed, NotificationCenter.closeInCallActivity, NotificationCenter.smsJobStatusUpdate, NotificationCenter.contentSettingsLoaded, NotificationCenter.liveLocationsChanged, 348, 417, 487, 557, 696, 835, 975, 1114, 1253, 1393};
 
     public static final class SyncFrameInfo {
         public final int bitrate;

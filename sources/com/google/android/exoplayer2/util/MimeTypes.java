@@ -232,7 +232,7 @@ public abstract class MimeTypes {
                             return "audio/vnd.dts.hd";
                         case NotificationCenter.didEndCall /* 173 */:
                             return "audio/opus";
-                        case 174:
+                        case NotificationCenter.closeInCallActivity /* 174 */:
                             return "audio/ac4";
                         default:
                             return null;

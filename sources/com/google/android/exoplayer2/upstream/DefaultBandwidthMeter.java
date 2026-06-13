@@ -2026,7 +2026,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{4, 4, 2, 3, 2, 2};
             case 24:
             case NotificationCenter.didGenerateFingerprintKeyPair /* 132 */:
-            case NotificationCenter.groupCallVisibilityChanged /* 175 */:
+            case 175:
                 return new int[]{1, 2, 2, 2, 2, 2};
             case 26:
                 return new int[]{3, 2, 0, 1, 2, 2};
@@ -2282,7 +2282,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{3, 4, 1, 4, 2, 2};
             case NotificationCenter.didEndCall /* 173 */:
                 return new int[]{1, 0, 0, 0, 1, 2};
-            case 174:
+            case NotificationCenter.closeInCallActivity /* 174 */:
                 return new int[]{2, 2, 4, 2, 2, 2};
             case NotificationCenter.liveStoryUpdated /* 176 */:
                 return new int[]{1, 4, 4, 4, 4, 2};

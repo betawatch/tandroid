@@ -487,9 +487,7 @@ final class HlsSampleStreamWrapper implements Loader.Callback, Loader.ReleaseCal
     }
 
     /*  JADX ERROR: NullPointerException in pass: LoopRegionVisitor
-        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.SSAVar.use(jadx.core.dex.instructions.args.RegisterArg)" because "ssaVar" is null
-        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:493)
-        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:496)
+        java.lang.NullPointerException
         */
     @Override // com.google.android.exoplayer2.source.SequenceableLoader
     public long getBufferedPositionUs() {
