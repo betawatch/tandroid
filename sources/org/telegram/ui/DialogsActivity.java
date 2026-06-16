@@ -17287,7 +17287,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             }
             ActionBarMenuSubItem actionBarMenuSubItem = this.proxyMenuSubItem;
             if (actionBarMenuSubItem != null) {
-                actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda118
+                actionBarMenuSubItem.subtextView.setTextColor(getThemedColor(Theme.key_groupcreate_sectionText));
+                this.proxyMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda118
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         DialogsActivity.this.lambda$showItemOptions$167(makeOptions, view);

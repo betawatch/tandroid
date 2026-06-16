@@ -14,7 +14,6 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
@@ -69,12 +68,8 @@ public class DialogsHintCell extends FrameLayout {
         linksTextView.setEllipsize(truncateAt);
         linksTextView.setMaxLines(5);
         linearLayout.addView(linksTextView, LayoutHelper.createLinear(-1, -2, 0.0f, 48));
-        NotificationCenter.getGlobalInstance().listenGlobal(this, NotificationCenter.emojiLoaded, new Utilities.Callback() { // from class: org.telegram.ui.Cells.DialogsHintCell$$ExternalSyntheticLambda1
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                DialogsHintCell.this.lambda$new$0((Object[]) obj);
-            }
-        });
+        NotificationCenter.listenEmojiLoading(textViewEmojis);
+        NotificationCenter.listenEmojiLoading(linksTextView);
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.parentView = linearLayout2;
         linearLayout2.setOrientation(0);
@@ -103,18 +98,6 @@ public class DialogsHintCell extends FrameLayout {
         setClipToPadding(false);
         setClipChildren(false);
         updateColors();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(Object[] objArr) {
-        AnimatedEmojiSpan.TextViewEmojis textViewEmojis = this.titleView;
-        if (textViewEmojis != null) {
-            textViewEmojis.invalidate();
-        }
-        LinkSpanDrawable.LinksTextView linksTextView = this.messageView;
-        if (linksTextView != null) {
-            linksTextView.invalidate();
-        }
     }
 
     public void updateColors() {
@@ -203,13 +186,13 @@ public class DialogsHintCell extends FrameLayout {
         super.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.DialogsHintCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DialogsHintCell.this.lambda$setOnClickListener$1(onClickListener, view);
+                DialogsHintCell.this.lambda$setOnClickListener$0(onClickListener, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setOnClickListener$1(View.OnClickListener onClickListener, View view) {
+    public /* synthetic */ void lambda$setOnClickListener$0(View.OnClickListener onClickListener, View view) {
         if (getAlpha() <= 0.5f || onClickListener == null) {
             return;
         }

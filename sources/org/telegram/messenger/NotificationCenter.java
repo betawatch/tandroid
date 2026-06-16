@@ -389,11 +389,7 @@ public class NotificationCenter {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$listen$6() {
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$listenGlobal$3() {
+    public static /* synthetic */ void lambda$listen$3() {
     }
 
     private static class DelayedPost {
@@ -465,9 +461,9 @@ public class NotificationCenter {
         allowedNotifications.allowedIds = iArr;
         this.allowedNotifications.put(this.animationInProgressPointer, allowedNotifications);
         if (this.checkForExpiredNotifications == null) {
-            NotificationCenter$$ExternalSyntheticLambda11 notificationCenter$$ExternalSyntheticLambda11 = new NotificationCenter$$ExternalSyntheticLambda11(this);
-            this.checkForExpiredNotifications = notificationCenter$$ExternalSyntheticLambda11;
-            AndroidUtilities.runOnUIThread(notificationCenter$$ExternalSyntheticLambda11, EXPIRE_NOTIFICATIONS_TIME);
+            NotificationCenter$$ExternalSyntheticLambda5 notificationCenter$$ExternalSyntheticLambda5 = new NotificationCenter$$ExternalSyntheticLambda5(this);
+            this.checkForExpiredNotifications = notificationCenter$$ExternalSyntheticLambda5;
+            AndroidUtilities.runOnUIThread(notificationCenter$$ExternalSyntheticLambda5, EXPIRE_NOTIFICATIONS_TIME);
         }
         return this.animationInProgressPointer;
     }
@@ -498,7 +494,7 @@ public class NotificationCenter {
             }
         }
         if (j != Long.MAX_VALUE) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationCenter$$ExternalSyntheticLambda7
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationCenter$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
                     NotificationCenter.this.lambda$checkForExpiredNotifications$0();
@@ -509,7 +505,7 @@ public class NotificationCenter {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkForExpiredNotifications$0() {
-        this.checkForExpiredNotifications = new NotificationCenter$$ExternalSyntheticLambda11(this);
+        this.checkForExpiredNotifications = new NotificationCenter$$ExternalSyntheticLambda5(this);
     }
 
     public void updateAllowedNotifications(int i, int[] iArr) {
@@ -577,7 +573,7 @@ public class NotificationCenter {
     }
 
     public void postNotificationNameOnUIThread(final int i, final Object... objArr) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationCenter$$ExternalSyntheticLambda13
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationCenter$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationCenter.this.lambda$postNotificationNameOnUIThread$1(i, objArr);
@@ -867,70 +863,22 @@ public class NotificationCenter {
         }
     }
 
-    public Runnable listenGlobal(final View view, final int i, final Utilities.Callback<Object[]> callback) {
+    public Runnable listen(final View view, final int i, final Utilities.Callback<Object[]> callback) {
         if (view == null || callback == null) {
             return new Runnable() { // from class: org.telegram.messenger.NotificationCenter$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NotificationCenter.lambda$listenGlobal$3();
+                    NotificationCenter.lambda$listen$3();
                 }
             };
         }
         final NotificationCenterDelegate notificationCenterDelegate = new NotificationCenterDelegate() { // from class: org.telegram.messenger.NotificationCenter$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
             public final void didReceivedNotification(int i2, int i3, Object[] objArr) {
-                NotificationCenter.lambda$listenGlobal$4(i, callback, i2, i3, objArr);
+                NotificationCenter.lambda$listen$4(i, callback, i2, i3, objArr);
             }
         };
         final View.OnAttachStateChangeListener onAttachStateChangeListener = new View.OnAttachStateChangeListener() { // from class: org.telegram.messenger.NotificationCenter.1
-            @Override // android.view.View.OnAttachStateChangeListener
-            public void onViewAttachedToWindow(View view2) {
-                NotificationCenter.getGlobalInstance().addObserver(notificationCenterDelegate, i);
-            }
-
-            @Override // android.view.View.OnAttachStateChangeListener
-            public void onViewDetachedFromWindow(View view2) {
-                NotificationCenter.getGlobalInstance().removeObserver(notificationCenterDelegate, i);
-            }
-        };
-        view.addOnAttachStateChangeListener(onAttachStateChangeListener);
-        return new Runnable() { // from class: org.telegram.messenger.NotificationCenter$$ExternalSyntheticLambda3
-            @Override // java.lang.Runnable
-            public final void run() {
-                NotificationCenter.lambda$listenGlobal$5(view, onAttachStateChangeListener, notificationCenterDelegate, i);
-            }
-        };
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$listenGlobal$4(int i, Utilities.Callback callback, int i2, int i3, Object[] objArr) {
-        if (i2 == i) {
-            callback.run(objArr);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$listenGlobal$5(View view, View.OnAttachStateChangeListener onAttachStateChangeListener, NotificationCenterDelegate notificationCenterDelegate, int i) {
-        view.removeOnAttachStateChangeListener(onAttachStateChangeListener);
-        getGlobalInstance().removeObserver(notificationCenterDelegate, i);
-    }
-
-    public Runnable listen(final View view, final int i, final Utilities.Callback<Object[]> callback) {
-        if (view == null || callback == null) {
-            return new Runnable() { // from class: org.telegram.messenger.NotificationCenter$$ExternalSyntheticLambda10
-                @Override // java.lang.Runnable
-                public final void run() {
-                    NotificationCenter.lambda$listen$6();
-                }
-            };
-        }
-        final NotificationCenterDelegate notificationCenterDelegate = new NotificationCenterDelegate() { // from class: org.telegram.messenger.NotificationCenter$$ExternalSyntheticLambda8
-            @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-            public final void didReceivedNotification(int i2, int i3, Object[] objArr) {
-                NotificationCenter.lambda$listen$7(i, callback, i2, i3, objArr);
-            }
-        };
-        final View.OnAttachStateChangeListener onAttachStateChangeListener = new View.OnAttachStateChangeListener() { // from class: org.telegram.messenger.NotificationCenter.2
             @Override // android.view.View.OnAttachStateChangeListener
             public void onViewAttachedToWindow(View view2) {
                 NotificationCenter.this.addObserver(notificationCenterDelegate, i);
@@ -942,87 +890,34 @@ public class NotificationCenter {
             }
         };
         view.addOnAttachStateChangeListener(onAttachStateChangeListener);
-        return new Runnable() { // from class: org.telegram.messenger.NotificationCenter$$ExternalSyntheticLambda9
+        return new Runnable() { // from class: org.telegram.messenger.NotificationCenter$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                NotificationCenter.this.lambda$listen$8(view, onAttachStateChangeListener, notificationCenterDelegate, i);
+                NotificationCenter.this.lambda$listen$5(view, onAttachStateChangeListener, notificationCenterDelegate, i);
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$listen$7(int i, Utilities.Callback callback, int i2, int i3, Object[] objArr) {
+    public static /* synthetic */ void lambda$listen$4(int i, Utilities.Callback callback, int i2, int i3, Object[] objArr) {
         if (i2 == i) {
             callback.run(objArr);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$listen$8(View view, View.OnAttachStateChangeListener onAttachStateChangeListener, NotificationCenterDelegate notificationCenterDelegate, int i) {
+    public /* synthetic */ void lambda$listen$5(View view, View.OnAttachStateChangeListener onAttachStateChangeListener, NotificationCenterDelegate notificationCenterDelegate, int i) {
         view.removeOnAttachStateChangeListener(onAttachStateChangeListener);
         removeObserver(notificationCenterDelegate, i);
     }
 
     public static void listenEmojiLoading(final View view) {
-        getGlobalInstance().listenGlobal(view, emojiLoaded, new Utilities.Callback() { // from class: org.telegram.messenger.NotificationCenter$$ExternalSyntheticLambda12
+        getGlobalInstance().listen(view, emojiLoaded, new Utilities.Callback() { // from class: org.telegram.messenger.NotificationCenter$$ExternalSyntheticLambda6
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 view.invalidate();
             }
         });
-    }
-
-    public void listenOnce(final int i, final Runnable runnable) {
-        final NotificationCenterDelegate[] notificationCenterDelegateArr = {r1};
-        NotificationCenterDelegate notificationCenterDelegate = new NotificationCenterDelegate() { // from class: org.telegram.messenger.NotificationCenter$$ExternalSyntheticLambda5
-            @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-            public final void didReceivedNotification(int i2, int i3, Object[] objArr) {
-                NotificationCenter.this.lambda$listenOnce$10(i, notificationCenterDelegateArr, runnable, i2, i3, objArr);
-            }
-        };
-        addObserver(notificationCenterDelegate, i);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$listenOnce$10(int i, NotificationCenterDelegate[] notificationCenterDelegateArr, Runnable runnable, int i2, int i3, Object[] objArr) {
-        if (i2 != i || notificationCenterDelegateArr[0] == null) {
-            return;
-        }
-        if (runnable != null) {
-            runnable.run();
-        }
-        removeObserver(notificationCenterDelegateArr[0], i);
-        notificationCenterDelegateArr[0] = null;
-    }
-
-    public void listenOnce(final int i, final Utilities.Callback3<Integer, Object[], Runnable> callback3) {
-        final NotificationCenterDelegate[] notificationCenterDelegateArr = {r1};
-        NotificationCenterDelegate notificationCenterDelegate = new NotificationCenterDelegate() { // from class: org.telegram.messenger.NotificationCenter$$ExternalSyntheticLambda1
-            @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-            public final void didReceivedNotification(int i2, int i3, Object[] objArr) {
-                NotificationCenter.this.lambda$listenOnce$12(i, notificationCenterDelegateArr, callback3, i2, i3, objArr);
-            }
-        };
-        addObserver(notificationCenterDelegate, i);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$listenOnce$12(final int i, final NotificationCenterDelegate[] notificationCenterDelegateArr, Utilities.Callback3 callback3, int i2, int i3, Object[] objArr) {
-        if (i2 != i || notificationCenterDelegateArr[0] == null || callback3 == null) {
-            return;
-        }
-        callback3.run(Integer.valueOf(i3), objArr, new Runnable() { // from class: org.telegram.messenger.NotificationCenter$$ExternalSyntheticLambda6
-            @Override // java.lang.Runnable
-            public final void run() {
-                NotificationCenter.this.lambda$listenOnce$11(notificationCenterDelegateArr, i);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$listenOnce$11(NotificationCenterDelegate[] notificationCenterDelegateArr, int i) {
-        removeObserver(notificationCenterDelegateArr[0], i);
-        notificationCenterDelegateArr[0] = null;
     }
 
     private class UniqArrayList<T> extends ArrayList<T> {

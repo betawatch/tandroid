@@ -37818,36 +37818,34 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         this.allowAssistant = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:114:0x04c5  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x04df  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x0503  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x055b  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x05b6  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x061e  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x0636  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x066f  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x068d  */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x0696  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x0707  */
-    /* JADX WARN: Removed duplicated region for block: B:195:0x0718  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x0497  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x04b1  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x04d5  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x052d  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x0588  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x05f0  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0608  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x0641  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x065f  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x0668  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x06d9  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x06ea  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0110  */
-    /* JADX WARN: Removed duplicated region for block: B:217:0x07a2  */
-    /* JADX WARN: Removed duplicated region for block: B:219:0x0690  */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x04c7  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x0379  */
-    /* JADX WARN: Removed duplicated region for block: B:232:0x031f  */
-    /* JADX WARN: Removed duplicated region for block: B:233:0x022e  */
-    /* JADX WARN: Removed duplicated region for block: B:261:0x011f  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x01da  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x01fe  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x02ca  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x02d7  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x032e  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0374  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x037f  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x03ba  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x03c3  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x03de  */
+    /* JADX WARN: Removed duplicated region for block: B:204:0x0774  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x0662  */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x0499  */
+    /* JADX WARN: Removed duplicated region for block: B:212:0x034b  */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x02f1  */
+    /* JADX WARN: Removed duplicated region for block: B:220:0x0200  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x01d0  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x029c  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x02a9  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0300  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0346  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0351  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x038c  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0395  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x03b0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -37865,7 +37863,6 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         MessageObject messageObject4;
         TLRPC.MessageFwdHeader messageFwdHeader;
         int i2;
-        TLRPC.Message message3;
         MessageObject.GroupedMessages groupedMessages;
         TLRPC.Chat chat;
         TLRPC.User user;
@@ -37881,17 +37878,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     str = UserObject.getUserName(user2);
                 }
             } else {
-                TLRPC.Message message4 = messageObject.messageOwner;
-                if (message4.post_author != null) {
+                TLRPC.Message message3 = messageObject.messageOwner;
+                if (message3.post_author != null) {
                     if (!this.isMegagroup || messageObject.getFromChatId() != messageObject.getDialogId()) {
                         str = messageObject.messageOwner.post_author.replace("\n", "");
                     }
                 } else {
-                    TLRPC.MessageFwdHeader messageFwdHeader2 = message4.fwd_from;
+                    TLRPC.MessageFwdHeader messageFwdHeader2 = message3.fwd_from;
                     if (messageFwdHeader2 != null && (str3 = messageFwdHeader2.post_author) != null) {
                         str = str3.replace("\n", "");
                     } else if (messageFwdHeader2 != null && messageFwdHeader2.imported) {
-                        str = messageFwdHeader2.date == message4.date ? LocaleController.getString("ImportedMessage", org.telegram.messenger.R.string.ImportedMessage) : LocaleController.formatImportedDate(messageObject.messageOwner.fwd_from.date) + " " + LocaleController.getString("ImportedMessage", org.telegram.messenger.R.string.ImportedMessage);
+                        str = messageFwdHeader2.date == message3.date ? LocaleController.getString("ImportedMessage", org.telegram.messenger.R.string.ImportedMessage) : LocaleController.formatImportedDate(messageObject.messageOwner.fwd_from.date) + " " + LocaleController.getString("ImportedMessage", org.telegram.messenger.R.string.ImportedMessage);
                     } else if (!messageObject.isOutOwner() && fromChatId > 0 && messageObject.messageOwner.post && (user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(fromChatId))) != null) {
                         str = ContactsController.formatName(user.first_name, user.last_name).replace('\n', ' ');
                     }
@@ -37900,307 +37897,232 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             if (messageObject.getDialogId() < 0 && (chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-messageObject.getDialogId()))) != null && chat.signature_profiles && (messageObject.messageOwner.flags & 256) != 0) {
                 str = null;
             }
-            TLRPC.User user3 = !this.currentMessageObject.isFromUser() ? MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(fromChatId)) : null;
+            if (this.currentMessageObject.isFromUser()) {
+                MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(fromChatId));
+            }
             boolean hasReplies = messageObject.hasReplies();
-            if (!messageObject.scheduled && !messageObject.isLiveLocation() && !messageObject.isPoll() && !messageObject.messageOwner.edit_hide && messageObject.getDialogId() != 777000) {
-                message3 = messageObject.messageOwner;
-                if (message3.via_bot_id == 0 && message3.via_bot_name == null && (user3 == null || !user3.bot)) {
-                    if (this.currentPosition != null || (groupedMessages = this.currentMessagesGroup) == null || groupedMessages.messages.isEmpty()) {
-                        this.edited = (messageObject.messageOwner.flags & 32768) == 0 || messageObject.isEditing();
-                    } else {
-                        this.edited = false;
-                        hasReplies = this.currentMessagesGroup.messages.get(0).hasReplies();
-                        if (!this.currentMessagesGroup.messages.get(0).messageOwner.edit_hide) {
-                            int size = this.currentMessagesGroup.messages.size();
-                            for (int i4 = 0; i4 < size; i4++) {
-                                MessageObject messageObject5 = this.currentMessagesGroup.messages.get(i4);
-                                if ((messageObject5.messageOwner.flags & 32768) != 0 || messageObject5.isEditing()) {
-                                    this.edited = true;
-                                    break;
-                                }
-                            }
+            if (!messageObject.scheduled || messageObject.messageOwner.edit_hide) {
+                this.edited = false;
+            } else if (this.currentPosition == null || (groupedMessages = this.currentMessagesGroup) == null || groupedMessages.messages.isEmpty()) {
+                this.edited = (messageObject.messageOwner.flags & 32768) != 0 || messageObject.isEditing();
+            } else {
+                this.edited = false;
+                hasReplies = this.currentMessagesGroup.messages.get(0).hasReplies();
+                if (!this.currentMessagesGroup.messages.get(0).messageOwner.edit_hide) {
+                    int size = this.currentMessagesGroup.messages.size();
+                    for (int i4 = 0; i4 < size; i4++) {
+                        MessageObject messageObject5 = this.currentMessagesGroup.messages.get(i4);
+                        if ((messageObject5.messageOwner.flags & 32768) != 0 || messageObject5.isEditing()) {
+                            this.edited = true;
+                            break;
                         }
-                    }
-                    messageObject2 = this.currentMessageObject;
-                    if (!messageObject2.notime && !messageObject2.isSponsored() && !this.currentMessageObject.isQuickReply()) {
-                        messageObject4 = this.currentMessageObject;
-                        if (messageObject4.scheduled || messageObject4.messageOwner.date != 2147483646) {
-                            if (messageObject4.realDate == 0) {
-                                str2 = LocaleController.formatSmallDateChat(this.currentMessageObject.realDate) + ", " + LocaleController.getInstance().getFormatterDay().format(this.currentMessageObject.realDate * 1000);
-                            } else if (messageObject4.isRepostPreview) {
-                                str2 = LocaleController.formatSmallDateChat(messageObject.messageOwner.date) + ", " + LocaleController.getInstance().getFormatterDay().format(messageObject.messageOwner.date * 1000);
-                            } else if (this.edited) {
-                                str2 = LocaleController.getString(org.telegram.messenger.R.string.EditedMessage) + " " + LocaleController.getInstance().getFormatterDay().format(messageObject.messageOwner.date * 1000);
-                            } else if (messageObject4.isSaved && (messageFwdHeader = messageObject4.messageOwner.fwd_from) != null && ((i2 = messageFwdHeader.date) != 0 || messageFwdHeader.saved_date != 0)) {
-                                int i5 = messageFwdHeader.saved_date;
-                                if (i5 != 0) {
-                                    i2 = i5;
-                                }
-                                str2 = LocaleController.formatSeenDate(i2);
-                            } else {
-                                str2 = LocaleController.getInstance().getFormatterDay().format(messageObject.messageOwner.date * 1000);
-                            }
-                            if (this.currentMessageObject.messageOwner.video_processing_pending) {
-                                str2 = LocaleController.formatString(org.telegram.messenger.R.string.ScheduledTimeApprox, str2);
-                            }
-                            if (str == null) {
-                                TLRPC.Message message5 = messageObject.messageOwner;
-                                if (message5.via_business_bot_id != 0) {
-                                    this.currentTimeString = str2 + ", ";
-                                } else {
-                                    TLRPC.MessageFwdHeader messageFwdHeader3 = message5.fwd_from;
-                                    if (messageFwdHeader3 != null && messageFwdHeader3.imported) {
-                                        this.currentTimeString = " " + str2;
-                                    } else {
-                                        this.currentTimeString = ", " + str2;
-                                    }
-                                }
-                            } else {
-                                this.currentTimeString = str2;
-                            }
-                            if (this.currentMessageObject.isStakedDice()) {
-                                CharSequence concat = TextUtils.concat("💎", StarsIntroActivity.formatTON(this.currentMessageObject.getStakedDiceAmount()), "  ", this.currentTimeString);
-                                this.currentTimeString = concat;
-                                this.currentTimeString = StarsIntroActivity.replaceDiamond(concat, 0.55f, null, 0.0f, AndroidUtilities.dp(-0.33f), 1.05f);
-                            }
-                            starsPrice = this.currentMessageObject.getDialogId() >= 0 ? getStarsPrice() : 0L;
-                            if (starsPrice > 0) {
-                                CharSequence concat2 = TextUtils.concat("⭐️", AndroidUtilities.formatWholeNumber((int) starsPrice, 0), "  ", this.currentTimeString);
-                                this.currentTimeString = concat2;
-                                this.currentTimeString = StarsIntroActivity.replaceStars(concat2, 0.8f, null, 0.0f, AndroidUtilities.dp(-0.33f), 0.94f);
-                            }
-                            message = this.currentMessageObject.messageOwner;
-                            if (message != null && (i = message.schedule_repeat_period) != 0) {
-                                if (i != 31536000) {
-                                    this.currentTimeString = TextUtils.concat(LocaleController.getString(org.telegram.messenger.R.string.MessageScheduledRepeatYearly), ", ", this.currentTimeString);
-                                } else if (i == 15724800) {
-                                    this.currentTimeString = TextUtils.concat(LocaleController.formatPluralString("MessageScheduledRepeatMonthlyMany", 6, new Object[0]), ", ", this.currentTimeString);
-                                } else if (i == 7862400) {
-                                    this.currentTimeString = TextUtils.concat(LocaleController.formatPluralString("MessageScheduledRepeatMonthlyMany", 3, new Object[0]), ", ", this.currentTimeString);
-                                } else if (i == 2592000) {
-                                    this.currentTimeString = TextUtils.concat(LocaleController.getString(org.telegram.messenger.R.string.MessageScheduledRepeatMonthly), ", ", this.currentTimeString);
-                                } else if (i == 1209600) {
-                                    this.currentTimeString = TextUtils.concat(LocaleController.getString(org.telegram.messenger.R.string.MessageScheduledRepeatBiweekly), ", ", this.currentTimeString);
-                                } else if (i == 604800) {
-                                    this.currentTimeString = TextUtils.concat(LocaleController.getString(org.telegram.messenger.R.string.MessageScheduledRepeatWeekly), ", ", this.currentTimeString);
-                                } else if (i == 86400) {
-                                    this.currentTimeString = TextUtils.concat(LocaleController.getString(org.telegram.messenger.R.string.MessageScheduledRepeatDaily), ", ", this.currentTimeString);
-                                } else {
-                                    this.currentTimeString = TextUtils.concat(LocaleController.formatString(org.telegram.messenger.R.string.MessageScheduledRepeatSeconds, Integer.valueOf(i)), ", ", this.currentTimeString);
-                                }
-                            }
-                            TextPaint textPaint = Theme.chat_timePaint;
-                            int ceil = (int) Math.ceil(textPaint.measureText(r4, 0, this.currentTimeString != null ? 0 : r4.length()));
-                            this.timeWidth = ceil;
-                            this.timeTextWidth = ceil;
-                            messageObject3 = this.currentMessageObject;
-                            if ((messageObject3.scheduled && messageObject3.messageOwner.date == 2147483646) || messageObject3.notime) {
-                                this.timeWidth = ceil - AndroidUtilities.dp(8.0f);
-                            }
-                            message2 = messageObject.messageOwner;
-                            if ((message2.flags & 1024) != 0) {
-                                this.currentViewsString = String.format("%s", LocaleController.formatShortNumber(Math.max(1, message2.views), null));
-                                this.viewsTextWidth = (int) Math.ceil(Theme.chat_timePaint.measureText(r2));
-                                this.timeWidth = (int) (this.timeWidth + this.viewsTextWidth + ((Theme.chat_msgInViewsDrawable.getIntrinsicWidth() * (Theme.chat_timePaint.getTextSize() - AndroidUtilities.dp(2.0f))) / Theme.chat_msgInViewsDrawable.getIntrinsicHeight()) + AndroidUtilities.dp(10.0f));
-                            }
-                            if (messageObject.type == 20) {
-                                int i6 = org.telegram.messenger.R.string.PaymentCheckoutPay;
-                                LocaleController localeController = LocaleController.getInstance();
-                                TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
-                                String formatCurrencyString = localeController.formatCurrencyString(messageMedia.total_amount, messageMedia.currency);
-                                Locale locale = Locale.ROOT;
-                                String formatString = LocaleController.formatString(i6, formatCurrencyString.toUpperCase(locale));
-                                if (formatString.length() >= 2) {
-                                    formatString = formatString.substring(0, 1).toUpperCase(locale) + formatString.substring(1).toLowerCase(locale);
-                                }
-                                this.currentUnlockString = formatString;
-                                this.unlockTextWidth = (int) Math.ceil(Theme.chat_unlockExtendedMediaTextPaint.measureText(formatString));
-                            }
-                            if (!this.isChat && this.isMegagroup && ((!this.isThreadChat || this.isMonoForum) && hasReplies)) {
-                                this.currentRepliesString = String.format("%s", LocaleController.formatShortNumber(getRepliesCount(), null));
-                                this.repliesTextWidth = (int) Math.ceil(Theme.chat_timePaint.measureText(r2));
-                                this.timeWidth = (int) (this.timeWidth + this.repliesTextWidth + ((Theme.chat_msgInRepliesDrawable.getIntrinsicWidth() * (Theme.chat_timePaint.getTextSize() - AndroidUtilities.dp(2.0f))) / Theme.chat_msgInRepliesDrawable.getIntrinsicHeight()) + AndroidUtilities.dp(10.0f));
-                            } else {
-                                this.currentRepliesString = null;
-                            }
-                            if (this.isPinned) {
-                                this.timeWidth += Theme.chat_msgInPinnedDrawable.getIntrinsicWidth() + AndroidUtilities.dp(3.0f);
-                            }
-                            if (messageObject.scheduled) {
-                                if (messageObject.isSendError()) {
-                                    this.timeWidth += AndroidUtilities.dp(18.0f);
-                                } else if (messageObject.isSending() && messageObject.messageOwner.peer_id.channel_id != 0 && !messageObject.isSupergroup()) {
-                                    this.timeWidth += AndroidUtilities.dp(18.0f);
-                                }
-                            }
-                            if (this.currentMessageObject.shouldDrawReactions()) {
-                                ReactionsLayoutInBubble reactionsLayoutInBubble = this.reactionsLayoutInBubble;
-                                if (reactionsLayoutInBubble.isSmall) {
-                                    reactionsLayoutInBubble.measure(ConnectionsManager.DEFAULT_DATACENTER_ID, 3);
-                                    this.timeWidth += this.reactionsLayoutInBubble.width;
-                                }
-                            }
-                            effect = getEffect();
-                            if (this.effectId != (effect != null ? effect.id : 0L)) {
-                                if (this.effectDrawable == null) {
-                                    ChatMessageCellDelegate chatMessageCellDelegate = this.delegate;
-                                    this.effectDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(this, chatMessageCellDelegate == null || !chatMessageCellDelegate.canDrawOutboundsContent(), AndroidUtilities.dp(14.0f), 23);
-                                }
-                                boolean z = this.effectMessageId == this.currentMessageObject.getId();
-                                if (effect != null) {
-                                    if (!TextUtils.isEmpty(effect.emoticon)) {
-                                        this.effectDrawable.set(Emoji.getEmojiDrawable(effect.emoticon), z);
-                                    } else if ((effect.flags & 1) != 0) {
-                                        this.effectDrawable.set(effect.static_icon_id, z);
-                                    }
-                                } else {
-                                    this.effectDrawable.set((Drawable) null, z);
-                                }
-                                this.effectId = effect != null ? effect.id : 0L;
-                                this.effectMessageId = this.currentMessageObject.getId();
-                            }
-                            if (this.effectId != 0 && !this.currentMessageObject.notime) {
-                                this.timeWidth += AndroidUtilities.dp(18.0f);
-                            }
-                            if (str != null) {
-                                if (this.availableTimeWidth == 0) {
-                                    this.availableTimeWidth = AndroidUtilities.dp(1000.0f);
-                                }
-                                int i7 = this.availableTimeWidth - this.timeWidth;
-                                if (messageObject.isOutOwner()) {
-                                    if (messageObject.type == 5) {
-                                        dp = AndroidUtilities.dp(20.0f);
-                                    } else {
-                                        dp = AndroidUtilities.dp(96.0f);
-                                    }
-                                    i7 -= dp;
-                                }
-                                CharSequence replaceEmoji = Emoji.replaceEmoji(str, Theme.chat_timePaint.getFontMetricsInt(), false);
-                                int ceil2 = (int) Math.ceil(Theme.chat_timePaint.measureText(replaceEmoji, 0, replaceEmoji.length()));
-                                this.signWidth = Math.min(ceil2, i7);
-                                if (ceil2 <= i7) {
-                                    charSequence = replaceEmoji;
-                                    i3 = ceil2;
-                                } else if (i7 > 0) {
-                                    charSequence = TextUtils.ellipsize(replaceEmoji, Theme.chat_timePaint, i7, TextUtils.TruncateAt.END);
-                                    i3 = i7;
-                                }
-                                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                                if (messageObject.messageOwner.via_business_bot_id != 0) {
-                                    spannableStringBuilder.append(this.currentTimeString);
-                                    spannableStringBuilder.append(charSequence);
-                                } else {
-                                    spannableStringBuilder.append(charSequence);
-                                    spannableStringBuilder.append(this.currentTimeString);
-                                }
-                                this.currentTimeString = spannableStringBuilder;
-                                this.timeTextWidth += i3;
-                                this.timeWidth += i3;
-                                return;
-                            }
-                            this.signWidth = 0;
-                            return;
-                        }
-                    }
-                    str2 = "";
-                    if (this.currentMessageObject.messageOwner.video_processing_pending) {
-                    }
-                    if (str == null) {
-                    }
-                    if (this.currentMessageObject.isStakedDice()) {
-                    }
-                    if (this.currentMessageObject.getDialogId() >= 0) {
-                    }
-                    if (starsPrice > 0) {
-                    }
-                    message = this.currentMessageObject.messageOwner;
-                    if (message != null) {
-                        if (i != 31536000) {
-                        }
-                    }
-                    TextPaint textPaint2 = Theme.chat_timePaint;
-                    int ceil3 = (int) Math.ceil(textPaint2.measureText(r4, 0, this.currentTimeString != null ? 0 : r4.length()));
-                    this.timeWidth = ceil3;
-                    this.timeTextWidth = ceil3;
-                    messageObject3 = this.currentMessageObject;
-                    if (messageObject3.scheduled) {
-                        this.timeWidth = ceil3 - AndroidUtilities.dp(8.0f);
-                        message2 = messageObject.messageOwner;
-                        if ((message2.flags & 1024) != 0) {
-                        }
-                        if (messageObject.type == 20) {
-                        }
-                        if (!this.isChat) {
-                        }
-                        this.currentRepliesString = null;
-                        if (this.isPinned) {
-                        }
-                        if (messageObject.scheduled) {
-                        }
-                        if (this.currentMessageObject.shouldDrawReactions()) {
-                        }
-                        effect = getEffect();
-                        if (this.effectId != (effect != null ? effect.id : 0L)) {
-                        }
-                        if (this.effectId != 0) {
-                            this.timeWidth += AndroidUtilities.dp(18.0f);
-                        }
-                        if (str != null) {
-                        }
-                    }
-                    this.timeWidth = ceil3 - AndroidUtilities.dp(8.0f);
-                    message2 = messageObject.messageOwner;
-                    if ((message2.flags & 1024) != 0) {
-                    }
-                    if (messageObject.type == 20) {
-                    }
-                    if (!this.isChat) {
-                    }
-                    this.currentRepliesString = null;
-                    if (this.isPinned) {
-                    }
-                    if (messageObject.scheduled) {
-                    }
-                    if (this.currentMessageObject.shouldDrawReactions()) {
-                    }
-                    effect = getEffect();
-                    if (this.effectId != (effect != null ? effect.id : 0L)) {
-                    }
-                    if (this.effectId != 0) {
-                    }
-                    if (str != null) {
                     }
                 }
             }
-            this.edited = false;
             messageObject2 = this.currentMessageObject;
-            if (!messageObject2.notime) {
+            if (!messageObject2.notime && !messageObject2.isSponsored() && !this.currentMessageObject.isQuickReply()) {
                 messageObject4 = this.currentMessageObject;
-                if (messageObject4.scheduled) {
+                if (messageObject4.scheduled || messageObject4.messageOwner.date != 2147483646) {
+                    if (messageObject4.realDate == 0) {
+                        str2 = LocaleController.formatSmallDateChat(this.currentMessageObject.realDate) + ", " + LocaleController.getInstance().getFormatterDay().format(this.currentMessageObject.realDate * 1000);
+                    } else if (messageObject4.isRepostPreview) {
+                        str2 = LocaleController.formatSmallDateChat(messageObject.messageOwner.date) + ", " + LocaleController.getInstance().getFormatterDay().format(messageObject.messageOwner.date * 1000);
+                    } else if (this.edited) {
+                        str2 = LocaleController.getString(org.telegram.messenger.R.string.EditedMessage) + " " + LocaleController.getInstance().getFormatterDay().format(messageObject.messageOwner.date * 1000);
+                    } else if (messageObject4.isSaved && (messageFwdHeader = messageObject4.messageOwner.fwd_from) != null && ((i2 = messageFwdHeader.date) != 0 || messageFwdHeader.saved_date != 0)) {
+                        int i5 = messageFwdHeader.saved_date;
+                        if (i5 != 0) {
+                            i2 = i5;
+                        }
+                        str2 = LocaleController.formatSeenDate(i2);
+                    } else {
+                        str2 = LocaleController.getInstance().getFormatterDay().format(messageObject.messageOwner.date * 1000);
+                    }
+                    if (this.currentMessageObject.messageOwner.video_processing_pending) {
+                        str2 = LocaleController.formatString(org.telegram.messenger.R.string.ScheduledTimeApprox, str2);
+                    }
+                    if (str == null) {
+                        TLRPC.Message message4 = messageObject.messageOwner;
+                        if (message4.via_business_bot_id != 0) {
+                            this.currentTimeString = str2 + ", ";
+                        } else {
+                            TLRPC.MessageFwdHeader messageFwdHeader3 = message4.fwd_from;
+                            if (messageFwdHeader3 != null && messageFwdHeader3.imported) {
+                                this.currentTimeString = " " + str2;
+                            } else {
+                                this.currentTimeString = ", " + str2;
+                            }
+                        }
+                    } else {
+                        this.currentTimeString = str2;
+                    }
+                    if (this.currentMessageObject.isStakedDice()) {
+                        CharSequence concat = TextUtils.concat("💎", StarsIntroActivity.formatTON(this.currentMessageObject.getStakedDiceAmount()), "  ", this.currentTimeString);
+                        this.currentTimeString = concat;
+                        this.currentTimeString = StarsIntroActivity.replaceDiamond(concat, 0.55f, null, 0.0f, AndroidUtilities.dp(-0.33f), 1.05f);
+                    }
+                    starsPrice = this.currentMessageObject.getDialogId() >= 0 ? getStarsPrice() : 0L;
+                    if (starsPrice > 0) {
+                        CharSequence concat2 = TextUtils.concat("⭐️", AndroidUtilities.formatWholeNumber((int) starsPrice, 0), "  ", this.currentTimeString);
+                        this.currentTimeString = concat2;
+                        this.currentTimeString = StarsIntroActivity.replaceStars(concat2, 0.8f, null, 0.0f, AndroidUtilities.dp(-0.33f), 0.94f);
+                    }
+                    message = this.currentMessageObject.messageOwner;
+                    if (message != null && (i = message.schedule_repeat_period) != 0) {
+                        if (i != 31536000) {
+                            this.currentTimeString = TextUtils.concat(LocaleController.getString(org.telegram.messenger.R.string.MessageScheduledRepeatYearly), ", ", this.currentTimeString);
+                        } else if (i == 15724800) {
+                            this.currentTimeString = TextUtils.concat(LocaleController.formatPluralString("MessageScheduledRepeatMonthlyMany", 6, new Object[0]), ", ", this.currentTimeString);
+                        } else if (i == 7862400) {
+                            this.currentTimeString = TextUtils.concat(LocaleController.formatPluralString("MessageScheduledRepeatMonthlyMany", 3, new Object[0]), ", ", this.currentTimeString);
+                        } else if (i == 2592000) {
+                            this.currentTimeString = TextUtils.concat(LocaleController.getString(org.telegram.messenger.R.string.MessageScheduledRepeatMonthly), ", ", this.currentTimeString);
+                        } else if (i == 1209600) {
+                            this.currentTimeString = TextUtils.concat(LocaleController.getString(org.telegram.messenger.R.string.MessageScheduledRepeatBiweekly), ", ", this.currentTimeString);
+                        } else if (i == 604800) {
+                            this.currentTimeString = TextUtils.concat(LocaleController.getString(org.telegram.messenger.R.string.MessageScheduledRepeatWeekly), ", ", this.currentTimeString);
+                        } else if (i == 86400) {
+                            this.currentTimeString = TextUtils.concat(LocaleController.getString(org.telegram.messenger.R.string.MessageScheduledRepeatDaily), ", ", this.currentTimeString);
+                        } else {
+                            this.currentTimeString = TextUtils.concat(LocaleController.formatString(org.telegram.messenger.R.string.MessageScheduledRepeatSeconds, Integer.valueOf(i)), ", ", this.currentTimeString);
+                        }
+                    }
+                    TextPaint textPaint = Theme.chat_timePaint;
+                    int ceil = (int) Math.ceil(textPaint.measureText(r6, 0, this.currentTimeString != null ? 0 : r6.length()));
+                    this.timeWidth = ceil;
+                    this.timeTextWidth = ceil;
+                    messageObject3 = this.currentMessageObject;
+                    if ((messageObject3.scheduled && messageObject3.messageOwner.date == 2147483646) || messageObject3.notime) {
+                        this.timeWidth = ceil - AndroidUtilities.dp(8.0f);
+                    }
+                    message2 = messageObject.messageOwner;
+                    if ((message2.flags & 1024) != 0) {
+                        this.currentViewsString = String.format("%s", LocaleController.formatShortNumber(Math.max(1, message2.views), null));
+                        this.viewsTextWidth = (int) Math.ceil(Theme.chat_timePaint.measureText(r2));
+                        this.timeWidth = (int) (this.timeWidth + this.viewsTextWidth + ((Theme.chat_msgInViewsDrawable.getIntrinsicWidth() * (Theme.chat_timePaint.getTextSize() - AndroidUtilities.dp(2.0f))) / Theme.chat_msgInViewsDrawable.getIntrinsicHeight()) + AndroidUtilities.dp(10.0f));
+                    }
+                    if (messageObject.type == 20) {
+                        int i6 = org.telegram.messenger.R.string.PaymentCheckoutPay;
+                        LocaleController localeController = LocaleController.getInstance();
+                        TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
+                        String formatCurrencyString = localeController.formatCurrencyString(messageMedia.total_amount, messageMedia.currency);
+                        Locale locale = Locale.ROOT;
+                        String formatString = LocaleController.formatString(i6, formatCurrencyString.toUpperCase(locale));
+                        if (formatString.length() >= 2) {
+                            formatString = formatString.substring(0, 1).toUpperCase(locale) + formatString.substring(1).toLowerCase(locale);
+                        }
+                        this.currentUnlockString = formatString;
+                        this.unlockTextWidth = (int) Math.ceil(Theme.chat_unlockExtendedMediaTextPaint.measureText(formatString));
+                    }
+                    if (!this.isChat && this.isMegagroup && ((!this.isThreadChat || this.isMonoForum) && hasReplies)) {
+                        this.currentRepliesString = String.format("%s", LocaleController.formatShortNumber(getRepliesCount(), null));
+                        this.repliesTextWidth = (int) Math.ceil(Theme.chat_timePaint.measureText(r2));
+                        this.timeWidth = (int) (this.timeWidth + this.repliesTextWidth + ((Theme.chat_msgInRepliesDrawable.getIntrinsicWidth() * (Theme.chat_timePaint.getTextSize() - AndroidUtilities.dp(2.0f))) / Theme.chat_msgInRepliesDrawable.getIntrinsicHeight()) + AndroidUtilities.dp(10.0f));
+                    } else {
+                        this.currentRepliesString = null;
+                    }
+                    if (this.isPinned) {
+                        this.timeWidth += Theme.chat_msgInPinnedDrawable.getIntrinsicWidth() + AndroidUtilities.dp(3.0f);
+                    }
+                    if (messageObject.scheduled) {
+                        if (messageObject.isSendError()) {
+                            this.timeWidth += AndroidUtilities.dp(18.0f);
+                        } else if (messageObject.isSending() && messageObject.messageOwner.peer_id.channel_id != 0 && !messageObject.isSupergroup()) {
+                            this.timeWidth += AndroidUtilities.dp(18.0f);
+                        }
+                    }
+                    if (this.currentMessageObject.shouldDrawReactions()) {
+                        ReactionsLayoutInBubble reactionsLayoutInBubble = this.reactionsLayoutInBubble;
+                        if (reactionsLayoutInBubble.isSmall) {
+                            reactionsLayoutInBubble.measure(ConnectionsManager.DEFAULT_DATACENTER_ID, 3);
+                            this.timeWidth += this.reactionsLayoutInBubble.width;
+                        }
+                    }
+                    effect = getEffect();
+                    if (this.effectId != (effect != null ? effect.id : 0L)) {
+                        if (this.effectDrawable == null) {
+                            ChatMessageCellDelegate chatMessageCellDelegate = this.delegate;
+                            this.effectDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(this, chatMessageCellDelegate == null || !chatMessageCellDelegate.canDrawOutboundsContent(), AndroidUtilities.dp(14.0f), 23);
+                        }
+                        boolean z = this.effectMessageId == this.currentMessageObject.getId();
+                        if (effect != null) {
+                            if (!TextUtils.isEmpty(effect.emoticon)) {
+                                this.effectDrawable.set(Emoji.getEmojiDrawable(effect.emoticon), z);
+                            } else if ((effect.flags & 1) != 0) {
+                                this.effectDrawable.set(effect.static_icon_id, z);
+                            }
+                        } else {
+                            this.effectDrawable.set((Drawable) null, z);
+                        }
+                        this.effectId = effect != null ? effect.id : 0L;
+                        this.effectMessageId = this.currentMessageObject.getId();
+                    }
+                    if (this.effectId != 0 && !this.currentMessageObject.notime) {
+                        this.timeWidth += AndroidUtilities.dp(18.0f);
+                    }
+                    if (str != null) {
+                        if (this.availableTimeWidth == 0) {
+                            this.availableTimeWidth = AndroidUtilities.dp(1000.0f);
+                        }
+                        int i7 = this.availableTimeWidth - this.timeWidth;
+                        if (messageObject.isOutOwner()) {
+                            if (messageObject.type == 5) {
+                                dp = AndroidUtilities.dp(20.0f);
+                            } else {
+                                dp = AndroidUtilities.dp(96.0f);
+                            }
+                            i7 -= dp;
+                        }
+                        CharSequence replaceEmoji = Emoji.replaceEmoji(str, Theme.chat_timePaint.getFontMetricsInt(), false);
+                        int ceil2 = (int) Math.ceil(Theme.chat_timePaint.measureText(replaceEmoji, 0, replaceEmoji.length()));
+                        this.signWidth = Math.min(ceil2, i7);
+                        if (ceil2 <= i7) {
+                            charSequence = replaceEmoji;
+                            i3 = ceil2;
+                        } else if (i7 > 0) {
+                            charSequence = TextUtils.ellipsize(replaceEmoji, Theme.chat_timePaint, i7, TextUtils.TruncateAt.END);
+                            i3 = i7;
+                        }
+                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                        if (messageObject.messageOwner.via_business_bot_id != 0) {
+                            spannableStringBuilder.append(this.currentTimeString);
+                            spannableStringBuilder.append(charSequence);
+                        } else {
+                            spannableStringBuilder.append(charSequence);
+                            spannableStringBuilder.append(this.currentTimeString);
+                        }
+                        this.currentTimeString = spannableStringBuilder;
+                        this.timeTextWidth += i3;
+                        this.timeWidth += i3;
+                        return;
+                    }
+                    this.signWidth = 0;
+                    return;
                 }
-                if (messageObject4.realDate == 0) {
+            }
+            str2 = "";
+            if (this.currentMessageObject.messageOwner.video_processing_pending) {
+            }
+            if (str == null) {
+            }
+            if (this.currentMessageObject.isStakedDice()) {
+            }
+            if (this.currentMessageObject.getDialogId() >= 0) {
+            }
+            if (starsPrice > 0) {
+            }
+            message = this.currentMessageObject.messageOwner;
+            if (message != null) {
+                if (i != 31536000) {
                 }
-                if (this.currentMessageObject.messageOwner.video_processing_pending) {
-                }
-                if (str == null) {
-                }
-                if (this.currentMessageObject.isStakedDice()) {
-                }
-                if (this.currentMessageObject.getDialogId() >= 0) {
-                }
-                if (starsPrice > 0) {
-                }
-                message = this.currentMessageObject.messageOwner;
-                if (message != null) {
-                }
-                TextPaint textPaint22 = Theme.chat_timePaint;
-                int ceil32 = (int) Math.ceil(textPaint22.measureText(r4, 0, this.currentTimeString != null ? 0 : r4.length()));
-                this.timeWidth = ceil32;
-                this.timeTextWidth = ceil32;
-                messageObject3 = this.currentMessageObject;
-                if (messageObject3.scheduled) {
-                }
-                this.timeWidth = ceil32 - AndroidUtilities.dp(8.0f);
+            }
+            TextPaint textPaint2 = Theme.chat_timePaint;
+            int ceil3 = (int) Math.ceil(textPaint2.measureText(r6, 0, this.currentTimeString != null ? 0 : r6.length()));
+            this.timeWidth = ceil3;
+            this.timeTextWidth = ceil3;
+            messageObject3 = this.currentMessageObject;
+            if (messageObject3.scheduled) {
+                this.timeWidth = ceil3 - AndroidUtilities.dp(8.0f);
                 message2 = messageObject.messageOwner;
                 if ((message2.flags & 1024) != 0) {
                 }
@@ -38219,32 +38141,12 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 if (this.effectId != (effect != null ? effect.id : 0L)) {
                 }
                 if (this.effectId != 0) {
+                    this.timeWidth += AndroidUtilities.dp(18.0f);
                 }
                 if (str != null) {
                 }
             }
-            str2 = "";
-            if (this.currentMessageObject.messageOwner.video_processing_pending) {
-            }
-            if (str == null) {
-            }
-            if (this.currentMessageObject.isStakedDice()) {
-            }
-            if (this.currentMessageObject.getDialogId() >= 0) {
-            }
-            if (starsPrice > 0) {
-            }
-            message = this.currentMessageObject.messageOwner;
-            if (message != null) {
-            }
-            TextPaint textPaint222 = Theme.chat_timePaint;
-            int ceil322 = (int) Math.ceil(textPaint222.measureText(r4, 0, this.currentTimeString != null ? 0 : r4.length()));
-            this.timeWidth = ceil322;
-            this.timeTextWidth = ceil322;
-            messageObject3 = this.currentMessageObject;
-            if (messageObject3.scheduled) {
-            }
-            this.timeWidth = ceil322 - AndroidUtilities.dp(8.0f);
+            this.timeWidth = ceil3 - AndroidUtilities.dp(8.0f);
             message2 = messageObject.messageOwner;
             if ((message2.flags & 1024) != 0) {
             }
@@ -38271,66 +38173,61 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         if (messageObject.getDialogId() < 0) {
             str = null;
         }
-        if (!this.currentMessageObject.isFromUser()) {
+        if (this.currentMessageObject.isFromUser()) {
         }
         boolean hasReplies2 = messageObject.hasReplies();
         if (!messageObject.scheduled) {
-            message3 = messageObject.messageOwner;
-            if (message3.via_bot_id == 0) {
-                if (this.currentPosition != null) {
-                }
-                this.edited = (messageObject.messageOwner.flags & 32768) == 0 || messageObject.isEditing();
-                messageObject2 = this.currentMessageObject;
-                if (!messageObject2.notime) {
-                }
-                str2 = "";
-                if (this.currentMessageObject.messageOwner.video_processing_pending) {
-                }
-                if (str == null) {
-                }
-                if (this.currentMessageObject.isStakedDice()) {
-                }
-                if (this.currentMessageObject.getDialogId() >= 0) {
-                }
-                if (starsPrice > 0) {
-                }
-                message = this.currentMessageObject.messageOwner;
-                if (message != null) {
-                }
-                TextPaint textPaint2222 = Theme.chat_timePaint;
-                int ceil3222 = (int) Math.ceil(textPaint2222.measureText(r4, 0, this.currentTimeString != null ? 0 : r4.length()));
-                this.timeWidth = ceil3222;
-                this.timeTextWidth = ceil3222;
-                messageObject3 = this.currentMessageObject;
-                if (messageObject3.scheduled) {
-                }
-                this.timeWidth = ceil3222 - AndroidUtilities.dp(8.0f);
-                message2 = messageObject.messageOwner;
-                if ((message2.flags & 1024) != 0) {
-                }
-                if (messageObject.type == 20) {
-                }
-                if (!this.isChat) {
-                }
-                this.currentRepliesString = null;
-                if (this.isPinned) {
-                }
-                if (messageObject.scheduled) {
-                }
-                if (this.currentMessageObject.shouldDrawReactions()) {
-                }
-                effect = getEffect();
-                if (this.effectId != (effect != null ? effect.id : 0L)) {
-                }
-                if (this.effectId != 0) {
-                }
-                if (str != null) {
-                }
-            }
         }
         this.edited = false;
         messageObject2 = this.currentMessageObject;
         if (!messageObject2.notime) {
+            messageObject4 = this.currentMessageObject;
+            if (messageObject4.scheduled) {
+            }
+            if (messageObject4.realDate == 0) {
+            }
+            if (this.currentMessageObject.messageOwner.video_processing_pending) {
+            }
+            if (str == null) {
+            }
+            if (this.currentMessageObject.isStakedDice()) {
+            }
+            if (this.currentMessageObject.getDialogId() >= 0) {
+            }
+            if (starsPrice > 0) {
+            }
+            message = this.currentMessageObject.messageOwner;
+            if (message != null) {
+            }
+            TextPaint textPaint22 = Theme.chat_timePaint;
+            int ceil32 = (int) Math.ceil(textPaint22.measureText(r6, 0, this.currentTimeString != null ? 0 : r6.length()));
+            this.timeWidth = ceil32;
+            this.timeTextWidth = ceil32;
+            messageObject3 = this.currentMessageObject;
+            if (messageObject3.scheduled) {
+            }
+            this.timeWidth = ceil32 - AndroidUtilities.dp(8.0f);
+            message2 = messageObject.messageOwner;
+            if ((message2.flags & 1024) != 0) {
+            }
+            if (messageObject.type == 20) {
+            }
+            if (!this.isChat) {
+            }
+            this.currentRepliesString = null;
+            if (this.isPinned) {
+            }
+            if (messageObject.scheduled) {
+            }
+            if (this.currentMessageObject.shouldDrawReactions()) {
+            }
+            effect = getEffect();
+            if (this.effectId != (effect != null ? effect.id : 0L)) {
+            }
+            if (this.effectId != 0) {
+            }
+            if (str != null) {
+            }
         }
         str2 = "";
         if (this.currentMessageObject.messageOwner.video_processing_pending) {
@@ -38346,14 +38243,14 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         message = this.currentMessageObject.messageOwner;
         if (message != null) {
         }
-        TextPaint textPaint22222 = Theme.chat_timePaint;
-        int ceil32222 = (int) Math.ceil(textPaint22222.measureText(r4, 0, this.currentTimeString != null ? 0 : r4.length()));
-        this.timeWidth = ceil32222;
-        this.timeTextWidth = ceil32222;
+        TextPaint textPaint222 = Theme.chat_timePaint;
+        int ceil322 = (int) Math.ceil(textPaint222.measureText(r6, 0, this.currentTimeString != null ? 0 : r6.length()));
+        this.timeWidth = ceil322;
+        this.timeTextWidth = ceil322;
         messageObject3 = this.currentMessageObject;
         if (messageObject3.scheduled) {
         }
-        this.timeWidth = ceil32222 - AndroidUtilities.dp(8.0f);
+        this.timeWidth = ceil322 - AndroidUtilities.dp(8.0f);
         message2 = messageObject.messageOwner;
         if ((message2.flags & 1024) != 0) {
         }

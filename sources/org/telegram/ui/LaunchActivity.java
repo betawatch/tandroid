@@ -119,6 +119,7 @@ import org.telegram.messenger.pip.activity.IPipActivityHandler;
 import org.telegram.messenger.pip.activity.IPipActivityListener;
 import org.telegram.messenger.utils.FrameMetricsOverlayView;
 import org.telegram.messenger.utils.WindowVisibilityManager;
+import org.telegram.messenger.video.VideoAds;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
@@ -6837,6 +6838,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             onBackInvokedDispatcher.unregisterOnBackInvokedCallback(AppCompatDelegateImpl$Api33Impl$$ExternalSyntheticApiModelOutline0.m(this.onBackInvokedCallback));
         }
         Bulletin.removeDelegate(this.frameLayout);
+        VideoAds.dropCache();
         clearFragments();
         super.onDestroy();
         onFinish();

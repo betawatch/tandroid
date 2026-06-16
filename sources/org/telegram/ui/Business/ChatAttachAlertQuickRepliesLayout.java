@@ -153,7 +153,7 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
         this.iBlur3CaptureView = recyclerListView;
         this.occupyStatusBar = true;
         this.occupyNavigationBar = true;
-        NotificationCenter.getInstance(UserConfig.selectedAccount).listenGlobal(recyclerListView, NotificationCenter.emojiLoaded, new Utilities.Callback() { // from class: org.telegram.ui.Business.ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda1
+        NotificationCenter.getGlobalInstance().listen(recyclerListView, NotificationCenter.emojiLoaded, new Utilities.Callback() { // from class: org.telegram.ui.Business.ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ChatAttachAlertQuickRepliesLayout.this.lambda$new$1((Object[]) obj);
