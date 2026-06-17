@@ -17716,7 +17716,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                             spannableStringBuilder5.append((CharSequence) "TON ").append((CharSequence) decimalFormat2.format(d2));
                                         }
                                     }
-                                    textCell.setTextAndValueAndIcon((CharSequence) LocaleController.getString(R.string.BotBalanceTON), ChannelMonetizationLayout.replaceTON(StarsIntroActivity.replaceStarsWithPlain(spannableStringBuilder5, 0.7f), textCell.getTextView().getPaint()), R.drawable.msg_ton, true);
+                                    textCell.setTextAndValueAndIcon((CharSequence) LocaleController.getString(R.string.BotBalanceTON), ChannelMonetizationLayout.replaceTON(StarsIntroActivity.replaceStarsWithPlain(spannableStringBuilder5, 0.7f), textCell.getTextView().getPaint()), R.drawable.outline_gram_24, true);
                                 } else if (i == ProfileActivity.this.blockedUsersRow) {
                                     if (ProfileActivity.this.chatInfo != null) {
                                         textCell.setTextAndValueAndIcon(LocaleController.getString(R.string.ChannelBlacklist), String.format("%d", Integer.valueOf(Math.max(ProfileActivity.this.chatInfo.banned_count, ProfileActivity.this.chatInfo.kicked_count))), R.drawable.msg_user_remove, i != ProfileActivity.this.membersSectionRow - 1);
@@ -17787,7 +17787,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                                                                                                                     str14 = StarsIntroActivity.formatStarsAmount(tonInstance.getBalance(), 0.85f, ' ');
                                                                                                                                 }
                                                                                                                             }
-                                                                                                                            textCell.setTextAndValueAndIcon((CharSequence) string9, (CharSequence) str14, R.drawable.menu_my_ton, true);
+                                                                                                                            textCell.setTextAndValueAndIcon((CharSequence) string9, (CharSequence) str14, R.drawable.settings_gram_24, true);
                                                                                                                             textCell.setImageLeft(23);
                                                                                                                         } else if (i != ProfileActivity.this.businessRow) {
                                                                                                                             if (i != ProfileActivity.this.premiumGiftingRow) {

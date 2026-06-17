@@ -1524,7 +1524,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                 if (!botStarsController.isTONBalanceAvailable(this.userId)) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x");
                     spannableStringBuilder.setSpan(new LoadingSpan(this.tonBalanceCell.valueTextView, AndroidUtilities.dp(30.0f)), 0, spannableStringBuilder.length(), 33);
-                    this.tonBalanceCell.setTextAndValueAndIcon((CharSequence) LocaleController.getString(R.string.BotBalanceTON), (CharSequence) spannableStringBuilder, R.drawable.msg_ton, false);
+                    this.tonBalanceCell.setTextAndValueAndIcon((CharSequence) LocaleController.getString(R.string.BotBalanceTON), (CharSequence) spannableStringBuilder, R.drawable.outline_gram_24, false);
                 } else {
                     long tONBalance = botStarsController.getTONBalance(this.userId);
                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
@@ -1542,7 +1542,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                             spannableStringBuilder2.append((CharSequence) "TON ").append((CharSequence) decimalFormat.format(d));
                         }
                     }
-                    this.tonBalanceCell.setTextAndValueAndIcon((CharSequence) LocaleController.getString(R.string.BotBalanceTON), (CharSequence) spannableStringBuilder2, R.drawable.msg_ton, true);
+                    this.tonBalanceCell.setTextAndValueAndIcon((CharSequence) LocaleController.getString(R.string.BotBalanceTON), (CharSequence) spannableStringBuilder2, R.drawable.outline_gram_24, true);
                 }
                 this.tonBalanceCell.setVisibility(botStarsController.botHasTON(this.userId) ? 0 : 8);
                 TextCell textCell34 = new TextCell(context);

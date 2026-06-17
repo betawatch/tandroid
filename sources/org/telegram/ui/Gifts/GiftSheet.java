@@ -1485,7 +1485,8 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             frameLayout.addView(frameLayout3, LayoutHelper.createFrame(20, 20.0f, 51, 2.0f, 2.0f, 2.0f, 2.0f));
             ImageView imageView2 = new ImageView(context);
             this.tonOnlySaleView = imageView2;
-            imageView2.setImageResource(R.drawable.ton_16);
+            imageView2.setImageResource(R.drawable.mini_gram_14);
+            imageView2.setPadding(0, AndroidUtilities.dp(2.0f), 0, 0);
             imageView2.setVisibility(8);
             imageView2.setScaleType(ImageView.ScaleType.CENTER);
             frameLayout.addView(imageView2, LayoutHelper.createFrame(20, 20.0f, 51, 3.0f, 3.0f, 3.0f, 3.0f));
@@ -2067,13 +2068,13 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         /* JADX WARN: Removed duplicated region for block: B:107:0x02b0  */
         /* JADX WARN: Removed duplicated region for block: B:70:0x0296  */
         /* JADX WARN: Removed duplicated region for block: B:78:0x02e9  */
-        /* JADX WARN: Removed duplicated region for block: B:81:0x030b  */
-        /* JADX WARN: Removed duplicated region for block: B:84:0x031e  */
-        /* JADX WARN: Removed duplicated region for block: B:87:0x032c  */
-        /* JADX WARN: Removed duplicated region for block: B:90:0x0343  */
-        /* JADX WARN: Removed duplicated region for block: B:92:0x0357  */
-        /* JADX WARN: Removed duplicated region for block: B:93:0x0330  */
-        /* JADX WARN: Removed duplicated region for block: B:96:0x030f  */
+        /* JADX WARN: Removed duplicated region for block: B:81:0x030e  */
+        /* JADX WARN: Removed duplicated region for block: B:84:0x0320  */
+        /* JADX WARN: Removed duplicated region for block: B:87:0x032e  */
+        /* JADX WARN: Removed duplicated region for block: B:90:0x0345  */
+        /* JADX WARN: Removed duplicated region for block: B:92:0x0359  */
+        /* JADX WARN: Removed duplicated region for block: B:93:0x0332  */
+        /* JADX WARN: Removed duplicated region for block: B:96:0x0312  */
         /* JADX WARN: Removed duplicated region for block: B:97:0x02ed  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -2140,7 +2141,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                 this.priceBackground.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(13.0f), blendOver, Theme.blendOver(blendOver, 822083583)));
                 this.priceView.setTextColor(-1);
                 this.tonOnlySaleView.setColorFilter(-1);
-                this.tonOnlySaleView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(13.0f), blendOver, Theme.blendOver(blendOver, 822083583)));
+                this.tonOnlySaleView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(10.0f), blendOver, Theme.blendOver(blendOver, 822083583)));
             } else if (z4) {
                 this.priceView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f), 0);
                 long resellStars = starGift.getResellStars();
@@ -2149,7 +2150,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                 this.priceBackground.setBackground(new StarsBackground(1895825407, blendOver2));
                 this.priceView.setTextColor(-1);
                 this.tonOnlySaleView.setColorFilter(-1);
-                this.tonOnlySaleView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(13.0f), blendOver2));
+                this.tonOnlySaleView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(10.0f), blendOver2));
                 this.chanceTextView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(9.0f), blendOver2));
             } else {
                 this.priceView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f), 0);
@@ -2170,7 +2171,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                                     this.priceView.setTextColor(!Theme.isCurrentThemeDark() ? -1333971 : -2722014);
                                     this.tonOnlySaleView.setColorFilter(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
                                     ImageView imageView = this.tonOnlySaleView;
-                                    int dp = AndroidUtilities.dp(13.0f);
+                                    int dp = AndroidUtilities.dp(10.0f);
                                     if (!z7) {
                                         i3 = 1090519039;
                                     } else if (!Theme.isCurrentThemeDark()) {
@@ -2194,7 +2195,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                             this.priceView.setTextColor(!Theme.isCurrentThemeDark() ? -1333971 : -2722014);
                             this.tonOnlySaleView.setColorFilter(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
                             ImageView imageView2 = this.tonOnlySaleView;
-                            int dp2 = AndroidUtilities.dp(13.0f);
+                            int dp2 = AndroidUtilities.dp(10.0f);
                             if (!z7) {
                             }
                             imageView2.setBackground(Theme.createRoundRectDrawable(dp2, i32));
@@ -2216,7 +2217,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                         this.priceView.setTextColor(!Theme.isCurrentThemeDark() ? -1333971 : -2722014);
                         this.tonOnlySaleView.setColorFilter(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
                         ImageView imageView22 = this.tonOnlySaleView;
-                        int dp22 = AndroidUtilities.dp(13.0f);
+                        int dp22 = AndroidUtilities.dp(10.0f);
                         if (!z7) {
                         }
                         imageView22.setBackground(Theme.createRoundRectDrawable(dp22, i322));
@@ -2240,7 +2241,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                 this.priceView.setTextColor(!Theme.isCurrentThemeDark() ? -1333971 : -2722014);
                 this.tonOnlySaleView.setColorFilter(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
                 ImageView imageView222 = this.tonOnlySaleView;
-                int dp222 = AndroidUtilities.dp(13.0f);
+                int dp222 = AndroidUtilities.dp(10.0f);
                 if (!z7) {
                 }
                 imageView222.setBackground(Theme.createRoundRectDrawable(dp222, i3222));
@@ -2367,7 +2368,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                 int blendOver = Theme.blendOver(stargiftattributebackdrop.center_color | (-16777216), Theme.multAlpha(stargiftattributebackdrop.pattern_color | (-16777216), 0.55f));
                 this.priceBackground.setBackground(new StarsBackground(1895825407, blendOver));
                 this.priceView.setTextColor(-1);
-                this.tonOnlySaleView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(13.0f), blendOver));
+                this.tonOnlySaleView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(10.0f), blendOver));
                 this.tonOnlySaleView.setColorFilter(-1);
                 ((FrameLayout.LayoutParams) this.priceLayout.getLayoutParams()).gravity = 49;
                 ((ViewGroup.MarginLayoutParams) this.priceLayout.getLayoutParams()).topMargin = AndroidUtilities.dp(79.0f);
@@ -2403,7 +2404,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                 }
                 this.priceView.setTextColor(z3 ? -1 : Theme.isCurrentThemeDark() ? -1333971 : -4229632);
                 this.priceBackground.setBackground(new StarsBackground(z3 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
-                this.tonOnlySaleView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(13.0f), z3 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
+                this.tonOnlySaleView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(10.0f), z3 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
                 this.tonOnlySaleView.setColorFilter(z3 ? -1 : Theme.isCurrentThemeDark() ? -1333971 : -4229632);
                 ((FrameLayout.LayoutParams) this.priceLayout.getLayoutParams()).gravity = 49;
                 ((ViewGroup.MarginLayoutParams) this.priceLayout.getLayoutParams()).topMargin = AndroidUtilities.dp(103.0f);

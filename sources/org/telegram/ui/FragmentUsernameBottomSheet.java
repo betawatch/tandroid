@@ -116,7 +116,7 @@ public abstract class FragmentUsernameBottomSheet {
         } : null;
         SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(formatString, runnable);
         SpannableString spannableString = new SpannableString("TON");
-        ColoredImageSpan coloredImageSpan = new ColoredImageSpan(R.drawable.mini_ton);
+        ColoredImageSpan coloredImageSpan = new ColoredImageSpan(R.drawable.mini_gram_16);
         coloredImageSpan.setWidth(AndroidUtilities.dp(13.0f));
         spannableString.setSpan(coloredImageSpan, 0, spannableString.length(), 33);
         SpannableStringBuilder replaceCharSequence = AndroidUtilities.replaceCharSequence("TON", AndroidUtilities.replaceTags(formatString2), spannableString);

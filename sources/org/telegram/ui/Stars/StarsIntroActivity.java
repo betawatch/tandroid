@@ -1705,7 +1705,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             spannableString.setSpan(new ImageSpan(mutate), 0, spannableString.length(), 33);
             SpannableString spannableString2 = new SpannableString("TON");
             this.ton = spannableString2;
-            ColoredImageSpan coloredImageSpan = new ColoredImageSpan(context.getResources().getDrawable(R.drawable.ton).mutate());
+            ColoredImageSpan coloredImageSpan = new ColoredImageSpan(context.getResources().getDrawable(R.drawable.mini_gram_72).mutate());
             coloredImageSpan.setSize(AndroidUtilities.dp(18.0f));
             coloredImageSpan.setTranslateY(AndroidUtilities.dp(0.5f));
             spannableString2.setSpan(coloredImageSpan, 0, spannableString2.length(), 33);
@@ -3734,7 +3734,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         }
         SpannableString spannableString = new SpannableString((z ? "TON" : "⭐") + " ");
         if (coloredImageSpanArr == null || (coloredImageSpan = coloredImageSpanArr[0]) == null) {
-            coloredImageSpan = new ColoredImageSpan(z ? R.drawable.ton : R.drawable.msg_premium_liststar);
+            coloredImageSpan = new ColoredImageSpan(z ? R.drawable.mini_gram_72 : R.drawable.msg_premium_liststar);
             if (coloredImageSpanArr != null) {
                 coloredImageSpanArr[0] = coloredImageSpan;
             }
@@ -3811,7 +3811,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             spannableStringBuilder = (SpannableStringBuilder) charSequence;
         }
         if (coloredImageSpanArr == null || (coloredImageSpan = coloredImageSpanArr[0]) == null) {
-            coloredImageSpan = new ColoredImageSpan(z ? R.drawable.ton : R.drawable.msg_premium_liststar);
+            coloredImageSpan = new ColoredImageSpan(z ? R.drawable.mini_gram_72 : R.drawable.msg_premium_liststar);
             coloredImageSpan.setScale(z ? 0.222f : 1.13f, z ? 0.222f : 1.13f);
         }
         if (coloredImageSpanArr != null) {
@@ -3859,7 +3859,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             spannableStringBuilder = (SpannableStringBuilder) charSequence;
         }
         String str = z ? "TON" : "⭐";
-        int i = z ? R.drawable.ton : R.drawable.star_small_inner;
+        int i = z ? R.drawable.mini_gram_72 : R.drawable.star_small_inner;
         SpannableString spannableString = new SpannableString(str + " ");
         if (coloredImageSpanArr == null || (coloredImageSpan = coloredImageSpanArr[0]) == null) {
             if (coloredImageSpanArr != null && coloredImageSpanArr.length > 0) {
