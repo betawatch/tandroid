@@ -14,6 +14,7 @@ import java.util.regex.Pattern;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLog;
@@ -69,7 +70,7 @@ public class DialogsBotsAdapter extends UniversalAdapter {
         this.searchMessagesRunnable = new Runnable() { // from class: org.telegram.ui.Components.DialogsBotsAdapter$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                DialogsBotsAdapter.this.lambda$new$8();
+                DialogsBotsAdapter.this.lambda$new$7();
             }
         };
         this.first = true;
@@ -114,7 +115,7 @@ public class DialogsBotsAdapter extends UniversalAdapter {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$2(Theme.ResourcesProvider resourcesProvider, final Context context) {
         final AlertDialog[] alertDialogArr = new AlertDialog[1];
-        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(AndroidUtilities.replaceLinks(LocaleController.getString(R.string.AppsTabInfoText), resourcesProvider, new Runnable() { // from class: org.telegram.ui.Components.DialogsBotsAdapter$$ExternalSyntheticLambda11
+        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(AndroidUtilities.replaceLinks(LocaleController.getString(R.string.AppsTabInfoText), resourcesProvider, new Runnable() { // from class: org.telegram.ui.Components.DialogsBotsAdapter$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
                 DialogsBotsAdapter.lambda$new$1(alertDialogArr);
@@ -162,7 +163,7 @@ public class DialogsBotsAdapter extends UniversalAdapter {
                 if (arrayList2.size() <= 5 || this.searchMessages.isEmpty() || this.showOnlyPopular) {
                     arrayList.add(UItem.asGraySection(LocaleController.getString(R.string.SearchApps)));
                 } else {
-                    arrayList.add(UItem.asGraySection(LocaleController.getString(R.string.SearchApps), LocaleController.getString(this.expandedSearchBots ? R.string.ShowLess : R.string.ShowMore), new View.OnClickListener() { // from class: org.telegram.ui.Components.DialogsBotsAdapter$$ExternalSyntheticLambda9
+                    arrayList.add(UItem.asGraySection(LocaleController.getString(R.string.SearchApps), LocaleController.getString(this.expandedSearchBots ? R.string.ShowLess : R.string.ShowMore), new View.OnClickListener() { // from class: org.telegram.ui.Components.DialogsBotsAdapter$$ExternalSyntheticLambda8
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             DialogsBotsAdapter.this.toggleExpandedSearchBots(view);
@@ -205,7 +206,7 @@ public class DialogsBotsAdapter extends UniversalAdapter {
         this.topPeersStart = arrayList.size();
         if (!arrayList4.isEmpty() && !this.showOnlyPopular) {
             if (arrayList4.size() > 5) {
-                arrayList.add(UItem.asGraySection(LocaleController.getString(R.string.SearchAppsMine), LocaleController.getString(this.expandedMyBots ? R.string.ShowLess : R.string.ShowMore), new View.OnClickListener() { // from class: org.telegram.ui.Components.DialogsBotsAdapter$$ExternalSyntheticLambda10
+                arrayList.add(UItem.asGraySection(LocaleController.getString(R.string.SearchAppsMine), LocaleController.getString(this.expandedMyBots ? R.string.ShowLess : R.string.ShowMore), new View.OnClickListener() { // from class: org.telegram.ui.Components.DialogsBotsAdapter$$ExternalSyntheticLambda9
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         DialogsBotsAdapter.this.toggleExpandedMyBots(view);
@@ -330,11 +331,12 @@ public class DialogsBotsAdapter extends UniversalAdapter {
         this.loadingBots = true;
         final TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
         tL_contacts_search.limit = 30;
+        tL_contacts_search.bots = true;
         tL_contacts_search.q = this.query;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_contacts_search, new RequestDelegate() { // from class: org.telegram.ui.Components.DialogsBotsAdapter$$ExternalSyntheticLambda1
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                DialogsBotsAdapter.this.lambda$searchMessages$7(tL_contacts_search, tLObject, tL_error);
+        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_contacts_search, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.DialogsBotsAdapter$$ExternalSyntheticLambda1
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                DialogsBotsAdapter.this.lambda$searchMessages$6(tL_contacts_search, (TLRPC.TL_contacts_found) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
@@ -353,7 +355,7 @@ public class DialogsBotsAdapter extends UniversalAdapter {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$searchMessages$4(final int i, final TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, final boolean z, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.DialogsBotsAdapter$$ExternalSyntheticLambda12
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.DialogsBotsAdapter$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
                 DialogsBotsAdapter.this.lambda$searchMessages$3(i, tL_messages_searchGlobal, z, tLObject);
@@ -388,26 +390,14 @@ public class DialogsBotsAdapter extends UniversalAdapter {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchMessages$7(final TLRPC.TL_contacts_search tL_contacts_search, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.DialogsBotsAdapter$$ExternalSyntheticLambda8
-            @Override // java.lang.Runnable
-            public final void run() {
-                DialogsBotsAdapter.this.lambda$searchMessages$6(tL_contacts_search, tLObject);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$searchMessages$6(TLRPC.TL_contacts_search tL_contacts_search, TLObject tLObject) {
-        TLRPC.TL_contacts_found tL_contacts_found;
+    public /* synthetic */ void lambda$searchMessages$6(TLRPC.TL_contacts_search tL_contacts_search, TLRPC.TL_contacts_found tL_contacts_found, TLRPC.TL_error tL_error) {
         TLRPC.User user;
         TLRPC.User user2;
         if (!TextUtils.equals(tL_contacts_search.q, this.query) || TextUtils.isEmpty(this.query)) {
             return;
         }
         this.loadingBots = false;
-        if (tLObject instanceof TLRPC.TL_contacts_found) {
-            tL_contacts_found = (TLRPC.TL_contacts_found) tLObject;
+        if (tL_contacts_found != null) {
             MessagesStorage.getInstance(this.currentAccount).putUsersAndChats(tL_contacts_found.users, tL_contacts_found.chats, true, true);
             MessagesController.getInstance(this.currentAccount).putUsers(tL_contacts_found.users, false);
             MessagesController.getInstance(this.currentAccount).putChats(tL_contacts_found.chats, false);
@@ -445,7 +435,7 @@ public class DialogsBotsAdapter extends UniversalAdapter {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$8() {
+    public /* synthetic */ void lambda$new$7() {
         searchMessages(false);
     }
 

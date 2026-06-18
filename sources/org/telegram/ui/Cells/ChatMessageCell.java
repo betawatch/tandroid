@@ -87,6 +87,7 @@ import me.vkryl.core.BitwiseUtils;
 import org.telegram.PhoneFormat.PhoneFormat;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AppGlobalConfig;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BotForumHelper;
 import org.telegram.messenger.BotInlineKeyboard;
@@ -37818,34 +37819,34 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         this.allowAssistant = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:101:0x0497  */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x04b1  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x04d5  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x052d  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x0588  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x05f0  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0608  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x0641  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x065f  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0668  */
-    /* JADX WARN: Removed duplicated region for block: B:178:0x06d9  */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x06ea  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x04b0  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x04ca  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x04ee  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0546  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x05a1  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x0609  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0621  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x065a  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x0678  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x0681  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x06f2  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x0703  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0110  */
-    /* JADX WARN: Removed duplicated region for block: B:204:0x0774  */
-    /* JADX WARN: Removed duplicated region for block: B:206:0x0662  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x0499  */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x034b  */
-    /* JADX WARN: Removed duplicated region for block: B:219:0x02f1  */
+    /* JADX WARN: Removed duplicated region for block: B:204:0x078d  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x067b  */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x04b2  */
+    /* JADX WARN: Removed duplicated region for block: B:212:0x0364  */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x030a  */
     /* JADX WARN: Removed duplicated region for block: B:220:0x0200  */
     /* JADX WARN: Removed duplicated region for block: B:56:0x01d0  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x029c  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x02a9  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0300  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0346  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0351  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x038c  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x0395  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x03b0  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x02b5  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x02c2  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0319  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x035f  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x036a  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x03a5  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x03ae  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x03c9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -37928,7 +37929,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     } else if (messageObject4.isRepostPreview) {
                         str2 = LocaleController.formatSmallDateChat(messageObject.messageOwner.date) + ", " + LocaleController.getInstance().getFormatterDay().format(messageObject.messageOwner.date * 1000);
                     } else if (this.edited) {
-                        str2 = LocaleController.getString(org.telegram.messenger.R.string.EditedMessage) + " " + LocaleController.getInstance().getFormatterDay().format(messageObject.messageOwner.date * 1000);
+                        str2 = AppGlobalConfig.getInstance(this.currentAccount).messagePrimaryEditedDate.get() ? LocaleController.formatPmEditedDate(messageObject.messageOwner.edit_date) : LocaleController.getString(org.telegram.messenger.R.string.EditedMessage) + " " + LocaleController.getInstance().getFormatterDay().format(messageObject.messageOwner.date * 1000);
                     } else if (messageObject4.isSaved && (messageFwdHeader = messageObject4.messageOwner.fwd_from) != null && ((i2 = messageFwdHeader.date) != 0 || messageFwdHeader.saved_date != 0)) {
                         int i5 = messageFwdHeader.saved_date;
                         if (i5 != 0) {
