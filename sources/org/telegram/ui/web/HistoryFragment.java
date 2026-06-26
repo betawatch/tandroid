@@ -34,7 +34,7 @@ import org.telegram.ui.web.BrowserHistory;
 import org.telegram.ui.web.HistoryFragment;
 import org.telegram.ui.web.WebMetadataCache;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class HistoryFragment extends UniversalFragment {
     private final Runnable closeToTabs;
     private StickerEmptyView emptyView;

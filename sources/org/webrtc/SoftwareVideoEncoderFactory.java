@@ -3,7 +3,7 @@ package org.webrtc;
 import java.util.List;
 import org.webrtc.VideoEncoderFactory;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SoftwareVideoEncoderFactory implements VideoEncoderFactory {
     private static final String TAG = "SoftwareVideoEncoderFactory";
     private final long nativeFactory = nativeCreateFactory();

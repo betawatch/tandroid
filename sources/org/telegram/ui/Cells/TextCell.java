@@ -63,7 +63,7 @@ public class TextCell extends FrameLayout {
     public final AnimatedTextView valueTextView;
 
     protected int getOffsetFromImage(boolean z) {
-        return z ? 65 : 71;
+        return z ? 52 : 58;
     }
 
     protected int processColor(int i) {
@@ -84,9 +84,9 @@ public class TextCell extends FrameLayout {
 
     public TextCell(Context context, int i, boolean z, boolean z2, Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        this.offsetFromImage = 71;
+        this.offsetFromImage = 58;
         this.heightDp = 50;
-        this.imageLeft = 21;
+        this.imageLeft = 16;
         this.resourcesProvider = resourcesProvider;
         this.leftPadding = i;
         SimpleTextView simpleTextView = new SimpleTextView(context);
@@ -132,12 +132,12 @@ public class TextCell extends FrameLayout {
         imageView.setScaleType(scaleType);
         addView(this.valueImageView);
         if (z2) {
-            Switch r3 = new Switch(context, resourcesProvider);
-            this.checkBox = r3;
+            Switch r4 = new Switch(context, resourcesProvider);
+            this.checkBox = r4;
             int i2 = Theme.key_switchTrack;
             int i3 = Theme.key_switchTrackChecked;
             int i4 = Theme.key_windowBackgroundWhite;
-            r3.setColors(i2, i3, i4, i4);
+            r4.setColors(i2, i3, i4, i4);
             addView(this.checkBox, LayoutHelper.createFrame(37, 20.0f, (LocaleController.isRTL ? 3 : 5) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
         }
         setFocusable(true);
@@ -252,14 +252,14 @@ public class TextCell extends FrameLayout {
         int dp;
         int i5 = i4 - i2;
         int i6 = i3 - i;
-        int max = (i5 - Math.max(this.valueSpoilersTextView.getTextHeight(), this.valueTextView.getTextHeight())) / 2;
-        int dp2 = LocaleController.isRTL ? AndroidUtilities.dp(this.leftPadding) : (i6 - this.valueTextView.getMeasuredWidth()) - AndroidUtilities.dp(this.leftPadding);
+        int max = ((i5 - Math.max(this.valueSpoilersTextView.getTextHeight(), this.valueTextView.getTextHeight())) / 2) + 1;
+        int dp2 = LocaleController.isRTL ? AndroidUtilities.dp(this.leftPadding - 6) : (i6 - this.valueTextView.getMeasuredWidth()) - AndroidUtilities.dp(this.leftPadding - 6);
         if (this.prioritizeTitleOverValue && !LocaleController.isRTL) {
             dp2 = (i6 - this.valueTextView.getMeasuredWidth()) - AndroidUtilities.dp(this.leftPadding);
         }
         AnimatedTextView animatedTextView = this.valueTextView;
         animatedTextView.layout(dp2, max, animatedTextView.getMeasuredWidth() + dp2, this.valueTextView.getMeasuredHeight() + max);
-        int dp3 = LocaleController.isRTL ? AndroidUtilities.dp(this.leftPadding) : (i6 - this.valueSpoilersTextView.getMeasuredWidth()) - AndroidUtilities.dp(this.leftPadding);
+        int dp3 = LocaleController.isRTL ? AndroidUtilities.dp(this.leftPadding - 6) : (i6 - this.valueSpoilersTextView.getMeasuredWidth()) - AndroidUtilities.dp(this.leftPadding - 6);
         SimpleTextView simpleTextView = this.valueSpoilersTextView;
         simpleTextView.layout(dp3, max, simpleTextView.getMeasuredWidth() + dp3, this.valueSpoilersTextView.getMeasuredHeight() + max);
         if (LocaleController.isRTL) {
@@ -269,37 +269,37 @@ public class TextCell extends FrameLayout {
         }
         if (this.subtitleView.getVisibility() == 0) {
             float f = this.heightDp > 50 ? 4 : 2;
-            int textHeight = (((i5 - this.textView.getTextHeight()) - this.subtitleView.getTextHeight()) - AndroidUtilities.dp(f)) / 2;
+            int textHeight = ((((i5 - this.textView.getTextHeight()) - this.subtitleView.getTextHeight()) - AndroidUtilities.dp(f)) / 2) + AndroidUtilities.dp(1.0f);
             SimpleTextView simpleTextView2 = this.textView;
             simpleTextView2.layout(dp, textHeight, simpleTextView2.getMeasuredWidth() + dp, this.textView.getMeasuredHeight() + textHeight);
             int textHeight2 = textHeight + this.textView.getTextHeight() + AndroidUtilities.dp(f);
             SimpleTextView simpleTextView3 = this.subtitleView;
             simpleTextView3.layout(dp, textHeight2, simpleTextView3.getMeasuredWidth() + dp, this.subtitleView.getMeasuredHeight() + textHeight2);
         } else {
-            int textHeight3 = (i5 - this.textView.getTextHeight()) / 2;
+            int textHeight3 = ((i5 - this.textView.getTextHeight()) / 2) + AndroidUtilities.dp(1.0f);
             SimpleTextView simpleTextView4 = this.textView;
             simpleTextView4.layout(dp, textHeight3, simpleTextView4.getMeasuredWidth() + dp, this.textView.getMeasuredHeight() + textHeight3);
         }
         if (this.imageView.getVisibility() == 0) {
-            int dp4 = (AndroidUtilities.dp(this.heightDp > 50 ? 0.0f : 2.0f) + ((i5 - this.imageView.getMeasuredHeight()) / 2)) - this.imageView.getPaddingTop();
+            int dp4 = ((AndroidUtilities.dp(this.heightDp > 50 ? 0.0f : 2.0f) + ((i5 - this.imageView.getMeasuredHeight()) / 2)) - this.imageView.getPaddingTop()) + AndroidUtilities.dp(1.0f);
             int dp5 = !LocaleController.isRTL ? AndroidUtilities.dp(this.imageLeft) : (i6 - this.imageView.getMeasuredWidth()) - AndroidUtilities.dp(this.imageLeft);
             RLottieImageView rLottieImageView = this.imageView;
             rLottieImageView.layout(dp5, dp4, rLottieImageView.getMeasuredWidth() + dp5, this.imageView.getMeasuredHeight() + dp4);
         }
         if (this.valueImageView.getVisibility() == 0) {
-            int measuredHeight = (i5 - this.valueImageView.getMeasuredHeight()) / 2;
+            int measuredHeight = ((i5 - this.valueImageView.getMeasuredHeight()) / 2) + AndroidUtilities.dp(1.0f);
             int dp6 = LocaleController.isRTL ? AndroidUtilities.dp(23.0f) : (i6 - this.valueImageView.getMeasuredWidth()) - AndroidUtilities.dp(23.0f);
             ImageView imageView = this.valueImageView;
             imageView.layout(dp6, measuredHeight, imageView.getMeasuredWidth() + dp6, this.valueImageView.getMeasuredHeight() + measuredHeight);
         }
-        Switch r6 = this.checkBox;
-        if (r6 == null || r6.getVisibility() != 0) {
+        Switch r7 = this.checkBox;
+        if (r7 == null || r7.getVisibility() != 0) {
             return;
         }
         int measuredHeight2 = (i5 - this.checkBox.getMeasuredHeight()) / 2;
         int dp7 = LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : (i6 - this.checkBox.getMeasuredWidth()) - AndroidUtilities.dp(22.0f);
-        Switch r7 = this.checkBox;
-        r7.layout(dp7, measuredHeight2, r7.getMeasuredWidth() + dp7, this.checkBox.getMeasuredHeight() + measuredHeight2);
+        Switch r8 = this.checkBox;
+        r8.layout(dp7, measuredHeight2, r8.getMeasuredWidth() + dp7, this.checkBox.getMeasuredHeight() + measuredHeight2);
     }
 
     public void setTextColor(int i) {
@@ -339,7 +339,7 @@ public class TextCell extends FrameLayout {
     }
 
     public void setText(CharSequence charSequence, boolean z) {
-        this.imageLeft = 21;
+        this.imageLeft = 16;
         this.textView.setText(charSequence);
         this.textView.setRightDrawable((Drawable) null);
         AnimatedTextView animatedTextView = this.valueTextView;
@@ -367,7 +367,7 @@ public class TextCell extends FrameLayout {
     }
 
     public void setTextAndIcon(CharSequence charSequence, int i, boolean z) {
-        this.imageLeft = 21;
+        this.imageLeft = 16;
         this.offsetFromImage = getOffsetFromImage(false);
         this.textView.setText(charSequence);
         this.textView.setRightDrawable((Drawable) null);
@@ -389,7 +389,7 @@ public class TextCell extends FrameLayout {
     }
 
     public void setTextAndIcon(CharSequence charSequence, Drawable drawable, boolean z) {
-        this.offsetFromImage = 71;
+        this.offsetFromImage = 58;
         this.imageLeft = 18;
         this.textView.setText(charSequence);
         this.textView.setRightDrawable((Drawable) null);
@@ -415,7 +415,7 @@ public class TextCell extends FrameLayout {
     }
 
     public void setTextAndValueAndIcon(CharSequence charSequence, CharSequence charSequence2, Drawable drawable, boolean z) {
-        this.offsetFromImage = 71;
+        this.offsetFromImage = 58;
         this.imageLeft = 18;
         this.textView.setText(charSequence);
         this.textView.setRightDrawable((Drawable) null);
@@ -453,7 +453,7 @@ public class TextCell extends FrameLayout {
     }
 
     public void setTextAndValue(CharSequence charSequence, CharSequence charSequence2, boolean z, boolean z2) {
-        this.imageLeft = 21;
+        this.imageLeft = 16;
         this.offsetFromImage = getOffsetFromImage(false);
         this.textView.setText(charSequence);
         this.textView.setRightDrawable((Drawable) null);
@@ -490,7 +490,7 @@ public class TextCell extends FrameLayout {
 
     public void setTextAndValueAndColorfulIcon(String str, CharSequence charSequence, boolean z, int i, int i2, int i3, boolean z2) {
         CharSequence ellipsize;
-        this.imageLeft = 21;
+        this.imageLeft = 16;
         this.offsetFromImage = getOffsetFromImage(false);
         this.textView.setText(str);
         this.textView.setRightDrawable((Drawable) null);
@@ -519,7 +519,7 @@ public class TextCell extends FrameLayout {
     }
 
     public void setTextAndCheckAndColorfulIcon(CharSequence charSequence, boolean z, int i, int i2, boolean z2) {
-        this.imageLeft = 21;
+        this.imageLeft = 16;
         this.offsetFromImage = getOffsetFromImage(false);
         this.textView.setText(charSequence);
         this.textView.setRightDrawable((Drawable) null);
@@ -528,17 +528,17 @@ public class TextCell extends FrameLayout {
         this.valueImageView.setVisibility(8);
         setColorfulIcon(i2, i);
         if (this.checkBox == null) {
-            Switch r10 = new Switch(getContext(), this.resourcesProvider);
-            this.checkBox = r10;
+            Switch r11 = new Switch(getContext(), this.resourcesProvider);
+            this.checkBox = r11;
             int i3 = Theme.key_switchTrack;
             int i4 = Theme.key_switchTrackChecked;
             int i5 = Theme.key_windowBackgroundWhite;
-            r10.setColors(i3, i4, i5, i5);
+            r11.setColors(i3, i4, i5, i5);
             addView(this.checkBox, LayoutHelper.createFrame(37, 20.0f, (LocaleController.isRTL ? 3 : 5) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
         }
-        Switch r102 = this.checkBox;
-        if (r102 != null) {
-            r102.setVisibility(0);
+        Switch r112 = this.checkBox;
+        if (r112 != null) {
+            r112.setVisibility(0);
             this.checkBox.setChecked(z, false);
         }
         this.needDivider = z2;
@@ -550,7 +550,7 @@ public class TextCell extends FrameLayout {
     }
 
     public void setTextAndSpoilersValueAndIcon(String str, CharSequence charSequence, int i, boolean z) {
-        this.imageLeft = 21;
+        this.imageLeft = 16;
         this.offsetFromImage = getOffsetFromImage(false);
         this.textView.setText(str);
         this.textView.setRightDrawable((Drawable) null);
@@ -580,7 +580,7 @@ public class TextCell extends FrameLayout {
     }
 
     public void setTextAndValueAndIcon(CharSequence charSequence, CharSequence charSequence2, boolean z, int i, boolean z2) {
-        this.imageLeft = 21;
+        this.imageLeft = 16;
         this.offsetFromImage = getOffsetFromImage(false);
         this.textView.setText(charSequence);
         this.textView.setRightDrawable((Drawable) null);
@@ -646,7 +646,7 @@ public class TextCell extends FrameLayout {
     }
 
     public void setTextAndCheck(CharSequence charSequence, boolean z, boolean z2) {
-        this.imageLeft = 21;
+        this.imageLeft = 16;
         this.offsetFromImage = getOffsetFromImage(false);
         this.textView.setText(charSequence);
         this.textView.setRightDrawable((Drawable) null);
@@ -666,7 +666,7 @@ public class TextCell extends FrameLayout {
     }
 
     public void setTextAndCheckAndIcon(CharSequence charSequence, boolean z, int i, boolean z2) {
-        this.imageLeft = 21;
+        this.imageLeft = 16;
         this.offsetFromImage = getOffsetFromImage(false);
         this.textView.setText(charSequence);
         this.textView.setRightDrawable((Drawable) null);
@@ -690,7 +690,7 @@ public class TextCell extends FrameLayout {
     }
 
     public void setTextAndValueDrawable(CharSequence charSequence, Drawable drawable, boolean z) {
-        this.imageLeft = 21;
+        this.imageLeft = 16;
         this.offsetFromImage = getOffsetFromImage(false);
         this.textView.setText(charSequence);
         this.textView.setRightDrawable((Drawable) null);
@@ -716,7 +716,7 @@ public class TextCell extends FrameLayout {
     }
 
     public void setTextAndSticker(CharSequence charSequence, TLRPC.Document document, boolean z) {
-        this.imageLeft = 21;
+        this.imageLeft = 16;
         this.offsetFromImage = getOffsetFromImage(false);
         this.textView.setText(charSequence);
         this.textView.setRightDrawable((Drawable) null);
@@ -738,7 +738,7 @@ public class TextCell extends FrameLayout {
     }
 
     public void setTextAndSticker(CharSequence charSequence, String str, boolean z) {
-        this.imageLeft = 21;
+        this.imageLeft = 16;
         this.offsetFromImage = getOffsetFromImage(false);
         this.textView.setText(charSequence);
         this.textView.setRightDrawable((Drawable) null);
@@ -847,7 +847,7 @@ public class TextCell extends FrameLayout {
                 dp = 0.0f;
             } else {
                 if (this.imageView.getVisibility() == 0) {
-                    f = this.inDialogs ? 72 : 68;
+                    f = this.inDialogs ? 72 : 58;
                 } else {
                     f = 20.0f;
                 }
@@ -857,7 +857,7 @@ public class TextCell extends FrameLayout {
             int measuredWidth = getMeasuredWidth();
             if (LocaleController.isRTL) {
                 if (this.imageView.getVisibility() == 0) {
-                    f2 = this.inDialogs ? 72 : 68;
+                    f2 = this.inDialogs ? 72 : 58;
                 }
                 i = AndroidUtilities.dp(f2);
             } else {

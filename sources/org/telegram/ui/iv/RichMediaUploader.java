@@ -11,9 +11,11 @@ import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes3.dex */
 public class RichMediaUploader implements NotificationCenter.NotificationCenterDelegate {
+    private final TLRPC.Document audioDocument;
     private boolean cancelled;
     private final int currentAccount;
     private boolean finished;
+    private final boolean isAudio;
     private final boolean isVideo;
     private final Listener listener;
     private final String path;
@@ -24,6 +26,23 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
     private final int videoWidth;
 
     public interface Listener {
+
+        public abstract /* synthetic */ class -CC {
+            public static void $default$onAudioUploaded(Listener listener, TLRPC.Document document) {
+            }
+
+            public static void $default$onPhotoUploaded(Listener listener, TLRPC.Photo photo) {
+            }
+
+            public static void $default$onVideoUploaded(Listener listener, TLRPC.Document document) {
+            }
+
+            public static void $default$onWidthHeightResolved(Listener listener, int i, int i2) {
+            }
+        }
+
+        void onAudioUploaded(TLRPC.Document document);
+
         void onError();
 
         void onPhotoUploaded(TLRPC.Photo photo);
@@ -39,15 +58,34 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
         this.currentAccount = i;
         this.path = str;
         this.isVideo = z;
+        this.isAudio = false;
         this.videoWidth = i2;
         this.videoHeight = i3;
         this.videoDurationSec = i4;
+        this.audioDocument = null;
         this.listener = listener;
+    }
+
+    private RichMediaUploader(int i, String str, TLRPC.Document document, Listener listener) {
+        this.currentAccount = i;
+        this.path = str;
+        this.isVideo = false;
+        this.isAudio = true;
+        this.videoWidth = 0;
+        this.videoHeight = 0;
+        this.videoDurationSec = 0;
+        this.audioDocument = document;
+        this.listener = listener;
+    }
+
+    public static RichMediaUploader forAudio(int i, String str, TLRPC.Document document, Listener listener) {
+        return new RichMediaUploader(i, str, document, listener);
     }
 
     public void start() {
         int i;
         int i2;
+        int i3;
         if (this.started || this.cancelled || this.finished) {
             return;
         }
@@ -64,7 +102,12 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
         notificationCenter.addObserver(this, NotificationCenter.fileUploaded);
         notificationCenter.addObserver(this, NotificationCenter.fileUploadFailed);
         notificationCenter.addObserver(this, NotificationCenter.fileUploadProgressChanged);
-        FileLoader.getInstance(this.currentAccount).uploadFile(this.path, false, true ^ this.isVideo, this.isVideo ? 33554432 : 16777216);
+        if (this.isVideo) {
+            i3 = 33554432;
+        } else {
+            i3 = this.isAudio ? ConnectionsManager.FileTypeAudio : 16777216;
+        }
+        FileLoader.getInstance(this.currentAccount).uploadFile(this.path, false, (this.isVideo || this.isAudio) ? false : true, i3);
     }
 
     public void cancel() {
@@ -132,6 +175,7 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
     }
 
     private void sendUploadMediaRequest(TLRPC.InputFile inputFile) {
+        String str;
         TLRPC.TL_messages_uploadMedia tL_messages_uploadMedia = new TLRPC.TL_messages_uploadMedia();
         tL_messages_uploadMedia.peer = new TLRPC.TL_inputPeerSelf();
         if (this.isVideo) {
@@ -145,6 +189,18 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
             tL_documentAttributeVideo.h = this.videoHeight;
             tL_inputMediaUploadedDocument.attributes.add(tL_documentAttributeVideo);
             tL_messages_uploadMedia.media = tL_inputMediaUploadedDocument;
+        } else if (this.isAudio) {
+            TLRPC.TL_inputMediaUploadedDocument tL_inputMediaUploadedDocument2 = new TLRPC.TL_inputMediaUploadedDocument();
+            tL_inputMediaUploadedDocument2.file = inputFile;
+            TLRPC.Document document = this.audioDocument;
+            if (document == null || (str = document.mime_type) == null) {
+                str = "audio/mpeg";
+            }
+            tL_inputMediaUploadedDocument2.mime_type = str;
+            if (document != null) {
+                tL_inputMediaUploadedDocument2.attributes.addAll(document.attributes);
+            }
+            tL_messages_uploadMedia.media = tL_inputMediaUploadedDocument2;
         } else {
             TLRPC.TL_inputMediaUploadedPhoto tL_inputMediaUploadedPhoto = new TLRPC.TL_inputMediaUploadedPhoto();
             tL_inputMediaUploadedPhoto.file = inputFile;
@@ -170,16 +226,21 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendUploadMediaRequest$0(TLObject tLObject) {
-        TLRPC.Photo photo;
         TLRPC.Document document;
+        TLRPC.Photo photo;
         if (this.cancelled) {
             return;
         }
         this.requestToken = 0;
-        if (this.isVideo) {
+        if (this.isVideo || this.isAudio) {
             if ((tLObject instanceof TLRPC.TL_messageMediaDocument) && (document = ((TLRPC.TL_messageMediaDocument) tLObject).document) != null) {
-                finishWithVideo(document);
-                return;
+                if (this.isAudio) {
+                    finishWithAudio(document);
+                    return;
+                } else {
+                    finishWithVideo(document);
+                    return;
+                }
             }
         } else if ((tLObject instanceof TLRPC.TL_messageMediaPhoto) && (photo = ((TLRPC.TL_messageMediaPhoto) tLObject).photo) != null) {
             finishWithPhoto(photo);
@@ -203,6 +264,15 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
         Listener listener = this.listener;
         if (listener != null) {
             listener.onVideoUploaded(document);
+        }
+    }
+
+    private void finishWithAudio(TLRPC.Document document) {
+        this.finished = true;
+        teardown();
+        Listener listener = this.listener;
+        if (listener != null) {
+            listener.onAudioUploaded(document);
         }
     }
 

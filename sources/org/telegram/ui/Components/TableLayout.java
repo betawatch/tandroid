@@ -104,6 +104,7 @@ public class TableLayout extends View {
 
         void draw(Canvas canvas, View view);
 
+        @Override // org.telegram.ui.Cells.TextSelectionHelper.TextLayoutBlock
         CharSequence getText();
 
         void setRow(int i);

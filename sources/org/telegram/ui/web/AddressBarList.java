@@ -64,7 +64,7 @@ import org.telegram.ui.web.AddressBarList;
 import org.telegram.ui.web.BrowserHistory;
 import org.telegram.ui.web.WebMetadataCache;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AddressBarList extends FrameLayout {
     private int backgroundColor;
     private final BookmarksList bookmarksList;

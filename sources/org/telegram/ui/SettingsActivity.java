@@ -1371,6 +1371,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         private final Background iconBackground;
         private final FrameLayout iconLayout;
         private final ImageView iconView;
+        private final boolean mini;
         private final Theme.ResourcesProvider resourcesProvider;
         private final TextView subtitleView;
         private final LinearLayout textLayout;
@@ -1379,8 +1380,13 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         private final TextView valueView;
 
         public SettingCell(Context context, Theme.ResourcesProvider resourcesProvider) {
+            this(context, resourcesProvider, false);
+        }
+
+        public SettingCell(Context context, Theme.ResourcesProvider resourcesProvider, boolean z) {
             super(context);
             this.resourcesProvider = resourcesProvider;
+            this.mini = z;
             setOrientation(0);
             FrameLayout frameLayout = new FrameLayout(context);
             this.iconLayout = frameLayout;
@@ -1407,11 +1413,11 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             textView3.setTextSize(1, 16.0f);
             if (LocaleController.isRTL) {
                 addView(textView3, LayoutHelper.createLinear(-2, -2, 16, 20, 0, 0, 0));
-                addView(linearLayout, LayoutHelper.createLinear(0, -2, 1.0f, 23, 20, 0, 18, 0));
-                addView(frameLayout, LayoutHelper.createLinear(28, 28, 21, 0, 0, 18, 0));
+                addView(linearLayout, LayoutHelper.createLinear(0, -2, 1.0f, 23, 20, 0, z ? 12 : 18, 0));
+                addView(frameLayout, LayoutHelper.createLinear(28, 28, 21, 0, 0, z ? 9 : 18, 0));
             } else {
-                addView(frameLayout, LayoutHelper.createLinear(28, 28, 19, 18, 0, 0, 0));
-                addView(linearLayout, LayoutHelper.createLinear(0, -2, 1.0f, 23, 18, 0, 20, 0));
+                addView(frameLayout, LayoutHelper.createLinear(28, 28, 19, z ? 9 : 18, 0, 0, 0));
+                addView(linearLayout, LayoutHelper.createLinear(0, -2, 1.0f, 23, z ? 12 : 18, 0, 20, 0));
                 addView(textView3, LayoutHelper.createLinear(-2, -2, 16, 0, 0, 20, 0));
             }
             updateColors();
@@ -1437,15 +1443,19 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             TextView textView = this.subtitleView;
             boolean isEmpty = TextUtils.isEmpty(charSequence2);
             this.twoLines = !isEmpty;
-            textView.setVisibility(!isEmpty ? 0 : 8);
+            textView.setVisibility(isEmpty ? 8 : 0);
             this.subtitleView.setText(charSequence2);
-            this.valueView.setVisibility(TextUtils.isEmpty(charSequence3) ? 8 : 0);
-            this.valueView.setText(charSequence3);
+            setValue(charSequence3);
+        }
+
+        public void setValue(CharSequence charSequence) {
+            this.valueView.setVisibility(!TextUtils.isEmpty(charSequence) ? 0 : 8);
+            this.valueView.setText(charSequence);
         }
 
         @Override // android.widget.LinearLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.twoLines ? 60.0f : 50.0f), TLObject.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.mini ? 44.0f : this.twoLines ? 60.0f : 50.0f), TLObject.FLAG_30));
         }
 
         public static class Background extends Drawable {

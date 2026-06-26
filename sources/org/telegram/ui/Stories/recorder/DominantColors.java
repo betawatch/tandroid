@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import org.telegram.messenger.Utilities;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class DominantColors {
     private static float[] tempHsv;
 

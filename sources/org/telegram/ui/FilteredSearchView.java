@@ -44,10 +44,9 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
@@ -94,6 +93,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
     private int columnsCount;
     private String currentDataQuery;
     boolean currentIncludeFolder;
+    long currentSearchCommunityId;
     long currentSearchDialogId;
     FiltersView.MediaFilterData currentSearchFilter;
     long currentSearchMaxDate;
@@ -197,7 +197,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
                     return true;
                 }
                 FilteredSearchView filteredSearchView = FilteredSearchView.this;
-                filteredSearchView.search(filteredSearchView.currentSearchDialogId, filteredSearchView.currentSearchMinDate, filteredSearchView.currentSearchMaxDate, filteredSearchView.currentSearchFilter, filteredSearchView.currentIncludeFolder, filteredSearchView.lastMessagesSearchString, false);
+                filteredSearchView.search(filteredSearchView.currentSearchDialogId, filteredSearchView.currentSearchCommunityId, filteredSearchView.currentSearchMinDate, filteredSearchView.currentSearchMaxDate, filteredSearchView.currentSearchFilter, filteredSearchView.currentIncludeFolder, filteredSearchView.lastMessagesSearchString, false);
                 return true;
             }
 
@@ -484,7 +484,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onScrolled$0() {
             FilteredSearchView filteredSearchView = FilteredSearchView.this;
-            filteredSearchView.search(filteredSearchView.currentSearchDialogId, filteredSearchView.currentSearchMinDate, filteredSearchView.currentSearchMaxDate, filteredSearchView.currentSearchFilter, filteredSearchView.currentIncludeFolder, filteredSearchView.lastMessagesSearchString, false);
+            filteredSearchView.search(filteredSearchView.currentSearchDialogId, filteredSearchView.currentSearchCommunityId, filteredSearchView.currentSearchMinDate, filteredSearchView.currentSearchMaxDate, filteredSearchView.currentSearchFilter, filteredSearchView.currentIncludeFolder, filteredSearchView.lastMessagesSearchString, false);
         }
     }
 
@@ -598,16 +598,18 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
         return charSequence == null ? "" : charSequence;
     }
 
-    public void search(final long j, final long j2, final long j3, final FiltersView.MediaFilterData mediaFilterData, final boolean z, String str, boolean z2) {
+    public void search(final long j, final long j2, final long j3, final long j4, final FiltersView.MediaFilterData mediaFilterData, final boolean z, String str, boolean z2) {
+        boolean z3 = true;
         final String str2 = str == null ? "" : str;
-        final String format = String.format(Locale.ENGLISH, "%d%d%d%d%s%s", Long.valueOf(j), Long.valueOf(j2), Long.valueOf(j3), Integer.valueOf(mediaFilterData == null ? -1 : mediaFilterData.filterType), str2, Boolean.valueOf(z));
+        final String format = String.format(Locale.ENGLISH, "%d%d%d%d%d%s%s", Long.valueOf(j), Long.valueOf(j2), Long.valueOf(j3), Long.valueOf(j4), Integer.valueOf(mediaFilterData == null ? -1 : mediaFilterData.filterType), str2, Boolean.valueOf(z));
         String str3 = this.lastSearchFilterQueryString;
-        boolean z3 = str3 != null && str3.equals(format);
-        boolean z4 = !z3 && z2;
+        boolean z4 = str3 != null && str3.equals(format);
+        boolean z5 = !z4 && z2;
         this.currentSearchFilter = mediaFilterData;
         this.currentSearchDialogId = j;
-        this.currentSearchMinDate = j2;
-        this.currentSearchMaxDate = j3;
+        this.currentSearchCommunityId = j2;
+        this.currentSearchMinDate = j3;
+        this.currentSearchMaxDate = j4;
         this.currentSearchString = str2;
         this.currentIncludeFolder = z;
         Runnable runnable = this.searchRunnable;
@@ -615,10 +617,10 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
             AndroidUtilities.cancelRunOnUIThread(runnable);
         }
         AndroidUtilities.cancelRunOnUIThread(this.clearCurrentResultsRunnable);
-        if (z3 && z2) {
+        if (z4 && z2) {
             return;
         }
-        if (z4 || (mediaFilterData == null && j == 0 && j2 == 0 && j3 == 0)) {
+        if (z5 || (mediaFilterData == null && j2 == 0 && j == 0 && j3 == 0 && j4 == 0)) {
             this.messages.clear();
             this.sections.clear();
             this.sectionArrays.clear();
@@ -635,20 +637,22 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
             }
             this.localTipChats.clear();
             this.localTipDates.clear();
-            if (!z4) {
+            if (!z5) {
                 return;
+            } else {
+                z3 = true;
             }
         } else if (z2 && !this.messages.isEmpty()) {
             return;
         }
-        this.isLoading = true;
+        this.isLoading = z3;
         RecyclerView.Adapter adapter2 = this.adapter;
         if (adapter2 != null) {
             adapter2.notifyDataSetChanged();
         }
-        if (!z3) {
+        if (!z4) {
             this.clearCurrentResultsRunnable.run();
-            this.emptyView.showProgress(true, !z2);
+            this.emptyView.showProgress(z3, !z2);
         }
         if (TextUtils.isEmpty(str2)) {
             this.localTipDates.clear();
@@ -661,15 +665,15 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
         final int i = this.requestIndex + 1;
         this.requestIndex = i;
         final int i2 = UserConfig.selectedAccount;
-        final boolean z5 = z3;
+        final boolean z6 = z4;
         Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.FilteredSearchView$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                FilteredSearchView.this.lambda$search$4(j, str2, mediaFilterData, i2, j2, j3, z5, z, format, i);
+                FilteredSearchView.this.lambda$search$4(j, j2, str2, mediaFilterData, i2, j3, j4, z6, z, format, i);
             }
         };
         this.searchRunnable = runnable2;
-        AndroidUtilities.runOnUIThread(runnable2, (!z3 || this.messages.isEmpty()) ? 350L : 0L);
+        AndroidUtilities.runOnUIThread(runnable2, (!z4 || this.messages.isEmpty()) ? 350L : 0L);
         if (mediaFilterData == null) {
             this.loadingView.setViewType(1);
             return;
@@ -697,76 +701,73 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ void lambda$search$4(final long j, final String str, final FiltersView.MediaFilterData mediaFilterData, final int i, final long j2, long j3, final boolean z, boolean z2, String str2, final int i2) {
+    public /* synthetic */ void lambda$search$4(final long j, long j2, final String str, final FiltersView.MediaFilterData mediaFilterData, final int i, final long j3, long j4, final boolean z, boolean z2, String str2, final int i2) {
         TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal;
         ArrayList<Object> arrayList = null;
-        if (j != 0) {
+        if (j != 0 && j2 == 0) {
             TLRPC.TL_messages_search tL_messages_search = new TLRPC.TL_messages_search();
             tL_messages_search.q = str;
             tL_messages_search.limit = 20;
             tL_messages_search.filter = mediaFilterData == null ? new TLRPC.TL_inputMessagesFilterEmpty() : mediaFilterData.filter;
             tL_messages_search.peer = AccountInstance.getInstance(i).getMessagesController().getInputPeer(j);
-            if (j2 > 0) {
-                tL_messages_search.min_date = (int) (j2 / 1000);
-            }
             if (j3 > 0) {
-                tL_messages_search.max_date = (int) (j3 / 1000);
+                tL_messages_search.min_date = (int) (j3 / 1000);
+            }
+            if (j4 > 0) {
+                tL_messages_search.max_date = (int) (j4 / 1000);
             }
             if (z && str.equals(this.lastMessagesSearchString) && !this.messages.isEmpty()) {
-                tL_messages_search.offset_id = ((MessageObject) this.messages.get(r0.size() - 1)).getId();
-                tL_messages_searchGlobal = tL_messages_search;
+                tL_messages_search.offset_id = ((MessageObject) this.messages.get(r1.size() - 1)).getId();
             } else {
                 tL_messages_search.offset_id = 0;
-                tL_messages_searchGlobal = tL_messages_search;
             }
+            tL_messages_searchGlobal = tL_messages_search;
         } else {
             if (!TextUtils.isEmpty(str)) {
                 arrayList = new ArrayList<>();
                 MessagesStorage.getInstance(i).localSearch(0, str, arrayList, new ArrayList<>(), new ArrayList<>(), null, z2 ? 1 : 0);
             }
-            TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal2 = new TLRPC.TL_messages_searchGlobal();
-            tL_messages_searchGlobal2.limit = 20;
-            tL_messages_searchGlobal2.q = str;
-            tL_messages_searchGlobal2.filter = mediaFilterData == null ? new TLRPC.TL_inputMessagesFilterEmpty() : mediaFilterData.filter;
-            if (j2 > 0) {
-                tL_messages_searchGlobal2.min_date = (int) (j2 / 1000);
-            }
+            tL_messages_searchGlobal = new TLRPC.TL_messages_searchGlobal();
+            tL_messages_searchGlobal.limit = 20;
+            tL_messages_searchGlobal.q = str;
+            tL_messages_searchGlobal.filter = mediaFilterData == null ? new TLRPC.TL_inputMessagesFilterEmpty() : mediaFilterData.filter;
+            tL_messages_searchGlobal.community = MessagesController.getInstance(i).getInputChannel(j2);
             if (j3 > 0) {
-                tL_messages_searchGlobal2.max_date = (int) (j3 / 1000);
+                tL_messages_searchGlobal.min_date = (int) (j3 / 1000);
+            }
+            if (j4 > 0) {
+                tL_messages_searchGlobal.max_date = (int) (j4 / 1000);
             }
             if (z && str.equals(this.lastMessagesSearchString) && !this.messages.isEmpty()) {
                 MessageObject messageObject = (MessageObject) this.messages.get(r0.size() - 1);
-                tL_messages_searchGlobal2.offset_id = messageObject.getId();
-                tL_messages_searchGlobal2.offset_rate = this.nextSearchRate;
-                tL_messages_searchGlobal2.offset_peer = MessagesController.getInstance(i).getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
+                tL_messages_searchGlobal.offset_id = messageObject.getId();
+                tL_messages_searchGlobal.offset_rate = this.nextSearchRate;
+                tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(i).getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
             } else {
-                tL_messages_searchGlobal2.offset_rate = 0;
-                tL_messages_searchGlobal2.offset_id = 0;
-                tL_messages_searchGlobal2.offset_peer = new TLRPC.TL_inputPeerEmpty();
+                tL_messages_searchGlobal.offset_rate = 0;
+                tL_messages_searchGlobal.offset_id = 0;
+                tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
             }
-            tL_messages_searchGlobal2.flags |= 1;
-            tL_messages_searchGlobal2.folder_id = z2 ? 1 : 0;
-            tL_messages_searchGlobal = tL_messages_searchGlobal2;
+            tL_messages_searchGlobal.flags |= 1;
+            tL_messages_searchGlobal.folder_id = z2 ? 1 : 0;
         }
-        TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal3 = tL_messages_searchGlobal;
         final ArrayList<Object> arrayList2 = arrayList;
         this.lastMessagesSearchString = str;
         this.lastSearchFilterQueryString = str2;
         final ArrayList arrayList3 = new ArrayList();
         FiltersView.fillTipDates(this.lastMessagesSearchString, arrayList3);
-        ConnectionsManager.getInstance(i).sendRequest(tL_messages_searchGlobal3, new RequestDelegate() { // from class: org.telegram.ui.FilteredSearchView$$ExternalSyntheticLambda4
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                FilteredSearchView.this.lambda$search$3(i, str, i2, z, mediaFilterData, j, j2, arrayList2, arrayList3, tLObject, tL_error);
+        ConnectionsManager.getInstance(i).sendRequestTyped(tL_messages_searchGlobal, new Utilities.Callback2() { // from class: org.telegram.ui.FilteredSearchView$$ExternalSyntheticLambda4
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                FilteredSearchView.this.lambda$search$3(i, str, i2, z, mediaFilterData, j, j3, arrayList2, arrayList3, (TLRPC.messages_Messages) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$search$3(final int i, final String str, final int i2, final boolean z, final FiltersView.MediaFilterData mediaFilterData, final long j, final long j2, final ArrayList arrayList, final ArrayList arrayList2, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$search$3(final int i, final String str, final int i2, final boolean z, final FiltersView.MediaFilterData mediaFilterData, final long j, final long j2, final ArrayList arrayList, final ArrayList arrayList2, final TLRPC.messages_Messages messages_messages, final TLRPC.TL_error tL_error) {
         final ArrayList arrayList3 = new ArrayList();
         if (tL_error == null) {
-            TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
             int size = messages_messages.messages.size();
             for (int i3 = 0; i3 < size; i3++) {
                 MessageObject messageObject = new MessageObject(i, messages_messages.messages.get(i3), false, true);
@@ -777,13 +778,13 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.FilteredSearchView$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                FilteredSearchView.this.lambda$search$2(i2, tL_error, tLObject, i, z, str, arrayList3, mediaFilterData, j, j2, arrayList, arrayList2);
+                FilteredSearchView.this.lambda$search$2(i2, tL_error, messages_messages, i, z, str, arrayList3, mediaFilterData, j, j2, arrayList, arrayList2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$search$2(int i, TLRPC.TL_error tL_error, TLObject tLObject, int i2, boolean z, String str, ArrayList arrayList, FiltersView.MediaFilterData mediaFilterData, long j, long j2, ArrayList arrayList2, ArrayList arrayList3) {
+    public /* synthetic */ void lambda$search$2(int i, TLRPC.TL_error tL_error, TLRPC.messages_Messages messages_messages, int i2, boolean z, String str, ArrayList arrayList, FiltersView.MediaFilterData mediaFilterData, long j, long j2, ArrayList arrayList2, ArrayList arrayList3) {
         String string;
         if (i != this.requestIndex) {
             return;
@@ -797,7 +798,6 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
             return;
         }
         this.emptyView.showProgress(false);
-        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
         this.nextSearchRate = messages_messages.next_rate;
         MessagesStorage.getInstance(i2).putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
         MessagesController.getInstance(i2).putUsers(messages_messages.users, false);

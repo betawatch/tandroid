@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class VideoTimeView extends View {
     private final Paint backgroundPaint;
     private boolean shown;

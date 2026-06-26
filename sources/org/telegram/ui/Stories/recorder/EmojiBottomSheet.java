@@ -120,7 +120,7 @@ import org.telegram.ui.Stories.recorder.EmojiBottomSheet;
 import org.telegram.ui.Stories.recorder.Weather;
 import org.telegram.ui.WrappedResourceProvider;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
     public static int savedPosition = 1;
     private int categoryIndex;
@@ -1270,8 +1270,8 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             }
 
             /* JADX INFO: Access modifiers changed from: private */
-            /* JADX WARN: Removed duplicated region for block: B:72:0x02b8  */
-            /* JADX WARN: Removed duplicated region for block: B:92:0x0346 A[SYNTHETIC] */
+            /* JADX WARN: Removed duplicated region for block: B:72:0x02b9  */
+            /* JADX WARN: Removed duplicated region for block: B:92:0x0347 A[SYNTHETIC] */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */

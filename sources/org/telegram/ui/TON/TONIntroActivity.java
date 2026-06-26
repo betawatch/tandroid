@@ -67,7 +67,7 @@ import org.telegram.ui.Stories.recorder.HintView2;
 import org.telegram.ui.TON.TONIntroActivity;
 import org.telegram.ui.bots.ChannelAffiliateProgramsFragment;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TONIntroActivity extends GradientHeaderActivity implements NotificationCenter.NotificationCenterDelegate {
     private FrameLayout aboveTitleView;
     private UniversalAdapter adapter;

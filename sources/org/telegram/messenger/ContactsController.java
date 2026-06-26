@@ -747,20 +747,20 @@ public class ContactsController extends BaseController {
         return i > 3;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:200:0x0303, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:201:0x0305, code lost:
     
         if (r6.contains(r5.last_name) != false) goto L156;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x056b A[Catch: all -> 0x056f, TRY_LEAVE, TryCatch #7 {all -> 0x056f, blocks: (B:100:0x0566, B:102:0x056b), top: B:99:0x0566 }] */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x0582  */
-    /* JADX WARN: Removed duplicated region for block: B:109:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0574 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x0307 A[Catch: all -> 0x02ec, TryCatch #5 {all -> 0x02ec, blocks: (B:170:0x033a, B:176:0x02d5, B:178:0x02db, B:180:0x02e3, B:184:0x0307, B:185:0x030c, B:187:0x0312, B:189:0x031a, B:190:0x0331, B:192:0x0335, B:193:0x0338, B:194:0x030a, B:195:0x02ef, B:197:0x02f5, B:199:0x02fd, B:209:0x0344), top: B:175:0x02d5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x0312 A[Catch: all -> 0x02ec, TryCatch #5 {all -> 0x02ec, blocks: (B:170:0x033a, B:176:0x02d5, B:178:0x02db, B:180:0x02e3, B:184:0x0307, B:185:0x030c, B:187:0x0312, B:189:0x031a, B:190:0x0331, B:192:0x0335, B:193:0x0338, B:194:0x030a, B:195:0x02ef, B:197:0x02f5, B:199:0x02fd, B:209:0x0344), top: B:175:0x02d5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:192:0x0335 A[Catch: all -> 0x02ec, TryCatch #5 {all -> 0x02ec, blocks: (B:170:0x033a, B:176:0x02d5, B:178:0x02db, B:180:0x02e3, B:184:0x0307, B:185:0x030c, B:187:0x0312, B:189:0x031a, B:190:0x0331, B:192:0x0335, B:193:0x0338, B:194:0x030a, B:195:0x02ef, B:197:0x02f5, B:199:0x02fd, B:209:0x0344), top: B:175:0x02d5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x0338 A[Catch: all -> 0x02ec, TryCatch #5 {all -> 0x02ec, blocks: (B:170:0x033a, B:176:0x02d5, B:178:0x02db, B:180:0x02e3, B:184:0x0307, B:185:0x030c, B:187:0x0312, B:189:0x031a, B:190:0x0331, B:192:0x0335, B:193:0x0338, B:194:0x030a, B:195:0x02ef, B:197:0x02f5, B:199:0x02fd, B:209:0x0344), top: B:175:0x02d5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x030a A[Catch: all -> 0x02ec, TryCatch #5 {all -> 0x02ec, blocks: (B:170:0x033a, B:176:0x02d5, B:178:0x02db, B:180:0x02e3, B:184:0x0307, B:185:0x030c, B:187:0x0312, B:189:0x031a, B:190:0x0331, B:192:0x0335, B:193:0x0338, B:194:0x030a, B:195:0x02ef, B:197:0x02f5, B:199:0x02fd, B:209:0x0344), top: B:175:0x02d5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0571 A[Catch: all -> 0x0575, TRY_LEAVE, TryCatch #10 {all -> 0x0575, blocks: (B:101:0x056c, B:103:0x0571), top: B:100:0x056c }] */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0588  */
+    /* JADX WARN: Removed duplicated region for block: B:110:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x057a A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x0309 A[Catch: all -> 0x02ee, TryCatch #6 {all -> 0x02ee, blocks: (B:171:0x033c, B:177:0x02d7, B:179:0x02dd, B:181:0x02e5, B:185:0x0309, B:186:0x030e, B:188:0x0314, B:190:0x031c, B:191:0x0333, B:193:0x0337, B:194:0x033a, B:195:0x030c, B:196:0x02f1, B:198:0x02f7, B:200:0x02ff, B:210:0x0346), top: B:176:0x02d7 }] */
+    /* JADX WARN: Removed duplicated region for block: B:188:0x0314 A[Catch: all -> 0x02ee, TryCatch #6 {all -> 0x02ee, blocks: (B:171:0x033c, B:177:0x02d7, B:179:0x02dd, B:181:0x02e5, B:185:0x0309, B:186:0x030e, B:188:0x0314, B:190:0x031c, B:191:0x0333, B:193:0x0337, B:194:0x033a, B:195:0x030c, B:196:0x02f1, B:198:0x02f7, B:200:0x02ff, B:210:0x0346), top: B:176:0x02d7 }] */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0337 A[Catch: all -> 0x02ee, TryCatch #6 {all -> 0x02ee, blocks: (B:171:0x033c, B:177:0x02d7, B:179:0x02dd, B:181:0x02e5, B:185:0x0309, B:186:0x030e, B:188:0x0314, B:190:0x031c, B:191:0x0333, B:193:0x0337, B:194:0x033a, B:195:0x030c, B:196:0x02f1, B:198:0x02f7, B:200:0x02ff, B:210:0x0346), top: B:176:0x02d7 }] */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x033a A[Catch: all -> 0x02ee, TryCatch #6 {all -> 0x02ee, blocks: (B:171:0x033c, B:177:0x02d7, B:179:0x02dd, B:181:0x02e5, B:185:0x0309, B:186:0x030e, B:188:0x0314, B:190:0x031c, B:191:0x0333, B:193:0x0337, B:194:0x033a, B:195:0x030c, B:196:0x02f1, B:198:0x02f7, B:200:0x02ff, B:210:0x0346), top: B:176:0x02d7 }] */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x030c A[Catch: all -> 0x02ee, TryCatch #6 {all -> 0x02ee, blocks: (B:171:0x033c, B:177:0x02d7, B:179:0x02dd, B:181:0x02e5, B:185:0x0309, B:186:0x030e, B:188:0x0314, B:190:0x031c, B:191:0x0333, B:193:0x0337, B:194:0x033a, B:195:0x030c, B:196:0x02f1, B:198:0x02f7, B:200:0x02ff, B:210:0x0346), top: B:176:0x02d7 }] */
     /* JADX WARN: Type inference failed for: r0v37, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r0v51 */
     /* JADX WARN: Type inference failed for: r0v57 */
@@ -796,6 +796,7 @@ public class ContactsController extends BaseController {
         ContactsController contactsController;
         Cursor cursor6;
         HashMap hashMap3;
+        long currentTimeMillis;
         String str4;
         ContactsController contactsController2 = this;
         if (!getUserConfig().syncContacts) {
@@ -817,7 +818,7 @@ public class ContactsController extends BaseController {
             ArrayList arrayList = new ArrayList();
             Cursor query = contentResolver3.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, projectionPhones, null, null, null);
             try {
-                long currentTimeMillis = System.currentTimeMillis();
+                long currentTimeMillis2 = System.currentTimeMillis();
                 String str5 = "+";
                 ?? r5 = 1;
                 if (query != 0) {
@@ -838,11 +839,11 @@ public class ContactsController extends BaseController {
                                         String stripExceptNumbers = PhoneFormat.stripExceptNumbers(string, r5);
                                         if (!TextUtils.isEmpty(stripExceptNumbers)) {
                                             if (stripExceptNumbers.startsWith(str5)) {
-                                                j2 = currentTimeMillis;
+                                                j2 = currentTimeMillis2;
                                                 str2 = str5;
                                                 str3 = stripExceptNumbers.substring(r5);
                                             } else {
-                                                j2 = currentTimeMillis;
+                                                j2 = currentTimeMillis2;
                                                 str2 = str5;
                                                 str3 = stripExceptNumbers;
                                             }
@@ -862,7 +863,7 @@ public class ContactsController extends BaseController {
                                                     contact.provider = string2;
                                                 }
                                                 str5 = str2;
-                                                currentTimeMillis = j2;
+                                                currentTimeMillis2 = j2;
                                                 r5 = 1;
                                             } else {
                                                 if (!arrayList.contains(sb3)) {
@@ -917,7 +918,7 @@ public class ContactsController extends BaseController {
                                                     hashMap4.put(str3, contact2);
                                                     contactsController2 = this;
                                                     str5 = str2;
-                                                    currentTimeMillis = j2;
+                                                    currentTimeMillis2 = j2;
                                                     sb2 = sb;
                                                     contentResolver3 = contentResolver2;
                                                     r5 = 1;
@@ -932,7 +933,7 @@ public class ContactsController extends BaseController {
                                                     hashMap4.put(str3, contact2);
                                                     contactsController2 = this;
                                                     str5 = str2;
-                                                    currentTimeMillis = j2;
+                                                    currentTimeMillis2 = j2;
                                                     sb2 = sb;
                                                     contentResolver3 = contentResolver2;
                                                     r5 = 1;
@@ -940,17 +941,17 @@ public class ContactsController extends BaseController {
                                                 hashMap4.put(str3, contact2);
                                                 contactsController2 = this;
                                                 str5 = str2;
-                                                currentTimeMillis = j2;
+                                                currentTimeMillis2 = j2;
                                                 sb2 = sb;
                                                 contentResolver3 = contentResolver2;
                                                 r5 = 1;
                                             }
                                         }
                                     }
-                                    j2 = currentTimeMillis;
+                                    j2 = currentTimeMillis2;
                                     str2 = str5;
                                     str5 = str2;
-                                    currentTimeMillis = j2;
+                                    currentTimeMillis2 = j2;
                                     r5 = 1;
                                 } catch (Throwable th) {
                                     th = th;
@@ -979,7 +980,7 @@ public class ContactsController extends BaseController {
                                 }
                             }
                             contentResolver = contentResolver3;
-                            j = currentTimeMillis;
+                            j = currentTimeMillis2;
                             str = str5;
                             z = true;
                             i = 0;
@@ -987,7 +988,7 @@ public class ContactsController extends BaseController {
                             i3 = 3;
                         } else {
                             contentResolver = contentResolver3;
-                            j = currentTimeMillis;
+                            j = currentTimeMillis2;
                             str = "+";
                             z = true;
                             i = 0;
@@ -1036,7 +1037,7 @@ public class ContactsController extends BaseController {
                     r0 = z;
                 } else {
                     contentResolver = contentResolver3;
-                    j = currentTimeMillis;
+                    j = currentTimeMillis2;
                     str = "+";
                     r0 = 1;
                     i = 0;
@@ -1161,7 +1162,7 @@ public class ContactsController extends BaseController {
                         sb4.append(" contactsSize = ");
                         sb4.append(hashMap == null ? 0 : hashMap.size());
                         FileLog.d(sb4.toString());
-                        long currentTimeMillis2 = System.currentTimeMillis();
+                        long currentTimeMillis3 = System.currentTimeMillis();
                         HashMap hashMap5 = new HashMap();
                         ArrayList arrayList3 = new ArrayList();
                         HashMap hashMap6 = hashMap5;
@@ -1186,8 +1187,8 @@ public class ContactsController extends BaseController {
                         } else {
                             hashMap3 = hashMap6;
                         }
-                        FileLog.d("loading contacts 2 query time = " + (System.currentTimeMillis() - currentTimeMillis2) + " phoneBookConacts size = " + arrayList3.size());
-                        long currentTimeMillis3 = System.currentTimeMillis();
+                        FileLog.d("loading contacts 2 query time = " + (System.currentTimeMillis() - currentTimeMillis3) + " phoneBookConacts size = " + arrayList3.size());
+                        currentTimeMillis = System.currentTimeMillis();
                         if (arrayList3.isEmpty()) {
                             cursor = cursor6;
                         } else {
@@ -1265,34 +1266,34 @@ public class ContactsController extends BaseController {
                             }
                             cursor = query4;
                         }
-                        try {
-                            FileLog.d("loading contacts 3 query time = " + (System.currentTimeMillis() - currentTimeMillis3));
-                            if (cursor != null) {
-                                try {
-                                    cursor.close();
-                                } catch (Exception e3) {
-                                    e = e3;
-                                    FileLog.e(e);
-                                    if (hashMap == null) {
-                                    }
+                    } catch (Throwable th7) {
+                        th = th7;
+                        cursor = cursor6;
+                    }
+                    try {
+                        FileLog.d("loading contacts 3 query time = " + (System.currentTimeMillis() - currentTimeMillis));
+                        if (cursor != null) {
+                            try {
+                                cursor.close();
+                            } catch (Exception e3) {
+                                e = e3;
+                                FileLog.e(e);
+                                if (hashMap == null) {
                                 }
-                            }
-                        } catch (Throwable th7) {
-                            th = th7;
-                            cursor2 = cursor;
-                            hashMap2 = hashMap;
-                            FileLog.e(th);
-                            if (hashMap2 != null) {
-                            }
-                            if (cursor2 != null) {
-                            }
-                            hashMap = hashMap2;
-                            if (hashMap == null) {
                             }
                         }
                     } catch (Throwable th8) {
                         th = th8;
-                        cursor = cursor6;
+                        cursor2 = cursor;
+                        hashMap2 = hashMap;
+                        FileLog.e(th);
+                        if (hashMap2 != null) {
+                        }
+                        if (cursor2 != null) {
+                        }
+                        hashMap = hashMap2;
+                        if (hashMap == null) {
+                        }
                     }
                 } catch (Throwable th9) {
                     th = th9;
@@ -1419,8 +1420,8 @@ public class ContactsController extends BaseController {
      */
     /* JADX WARN: Removed duplicated region for block: B:102:0x027d  */
     /* JADX WARN: Removed duplicated region for block: B:190:0x04e0  */
-    /* JADX WARN: Removed duplicated region for block: B:192:0x050c  */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x051e  */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x050d  */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x051f  */
     /* JADX WARN: Removed duplicated region for block: B:74:0x01f5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

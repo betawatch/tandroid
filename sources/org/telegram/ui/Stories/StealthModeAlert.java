@@ -33,7 +33,7 @@ import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
 import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StealthModeAlert extends BottomSheet {
     private final PremiumButtonView button;
     private Listener listener;

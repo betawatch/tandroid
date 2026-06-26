@@ -27,15 +27,15 @@ public class VideoFramesRewinder {
     int h;
     private boolean isPreparing;
     private long lastSeek;
+    private AnimatedFileNative mDecoder;
     private int maxFrameSide;
     private int maxFramesCount;
     private View parentView;
     private long prepareToMs;
     private float prepareWithSpeed;
-    private long ptr;
     int w;
     private final Paint paint = new Paint(2);
-    private final int[] meta = new int[6];
+    private final int[] meta = new int[7];
     private final ArrayList<Frame> freeFrames = new ArrayList<>();
     private final TreeSet<Frame> frames = new TreeSet<>(new Comparator() { // from class: org.telegram.messenger.video.VideoFramesRewinder$$ExternalSyntheticLambda1
         @Override // java.util.Comparator
@@ -72,7 +72,7 @@ public class VideoFramesRewinder {
     public void draw(Canvas canvas, int i, int i2) {
         this.w = i;
         this.h = i2;
-        if (this.ptr == 0 || this.currentFrame == null) {
+        if (this.mDecoder == null || this.currentFrame == null) {
             return;
         }
         canvas.save();
@@ -82,7 +82,7 @@ public class VideoFramesRewinder {
     }
 
     public boolean isReady() {
-        return this.ptr != 0;
+        return this.mDecoder != null;
     }
 
     public void setup(File file) {
@@ -90,7 +90,7 @@ public class VideoFramesRewinder {
             release();
         } else {
             this.stop.set(false);
-            this.ptr = AnimatedFileNative.createDecoder(file.getAbsolutePath(), this.meta, UserConfig.selectedAccount, 0L, null, true);
+            this.mDecoder = AnimatedFileNative.createDecoderFrom(file.getAbsolutePath(), this.meta, UserConfig.selectedAccount, 0L, null, true);
         }
     }
 
@@ -127,7 +127,7 @@ public class VideoFramesRewinder {
             min = (int) (min * max);
             min2 = (int) (min2 * max);
         }
-        AnimatedFileNative.seekToMs(this.ptr, this.prepareToMs - ((long) (this.prepareWithSpeed * 350.0f)), this.meta, false);
+        this.mDecoder.seekToMs(this.prepareToMs - ((long) (this.prepareWithSpeed * 350.0f)), false);
         long j = this.meta[3];
         int i7 = 0;
         int i8 = 0;
@@ -156,12 +156,12 @@ public class VideoFramesRewinder {
                 if (this.meta[3] + ((long) Math.ceil(f)) >= j3) {
                     break;
                 }
-                AnimatedFileNative.getVideoFrame(this.ptr, null, this.meta, true, 0.0f, r8[4], false);
+                this.mDecoder.getVideoFrame(null, true, 0.0f, this.meta[4], false);
                 i4 = i2;
                 i7 = i;
                 min2 = i3;
             }
-            if (AnimatedFileNative.getVideoFrame(this.ptr, frame.bitmap, this.meta, true, 0.0f, r9[4], false) == 0) {
+            if (this.mDecoder.getVideoFrame(frame.bitmap, true, 0.0f, this.meta[4], false) == 0) {
                 i8++;
                 if (i8 > 6) {
                     break;
@@ -229,7 +229,7 @@ public class VideoFramesRewinder {
     }
 
     public void seek(long j, float f) {
-        if (this.ptr == 0) {
+        if (this.mDecoder == null) {
             return;
         }
         this.lastSeek = j;
@@ -285,8 +285,11 @@ public class VideoFramesRewinder {
             this.destroyAfterPrepare = true;
             return;
         }
-        AnimatedFileNative.destroyDecoder(this.ptr);
-        this.ptr = 0L;
+        AnimatedFileNative animatedFileNative = this.mDecoder;
+        if (animatedFileNative != null) {
+            animatedFileNative.recycle();
+            this.mDecoder = null;
+        }
         this.destroyAfterPrepare = false;
         clearCurrent();
         this.until.set(0L);

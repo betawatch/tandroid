@@ -18,8 +18,8 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda50;
-import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda515;
+import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda527;
+import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda54;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
@@ -38,7 +38,7 @@ import org.telegram.ui.Stars.StarsReactionsSheet;
 import org.telegram.ui.Stories.LiveCommentsView;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class HighlightMessageSheet {
     public static int TIER_COLOR1 = 3;
     public static int TIER_COLOR2 = 4;
@@ -200,7 +200,7 @@ public abstract class HighlightMessageSheet {
             return getDefaultTiers();
         }
         try {
-            return DesugarArrays.stream(str.split(",")).mapToInt(new MessagesController$$ExternalSyntheticLambda50()).toArray();
+            return DesugarArrays.stream(str.split(",")).mapToInt(new MessagesController$$ExternalSyntheticLambda54()).toArray();
         } catch (Exception e) {
             FileLog.e(e);
             return getDefaultTiers();
@@ -208,7 +208,7 @@ public abstract class HighlightMessageSheet {
     }
 
     public static String tiersToString(int[] iArr) {
-        return (String) DesugarArrays.stream(iArr).mapToObj(new MessagesController$$ExternalSyntheticLambda515()).collect(Collectors.joining(","));
+        return (String) DesugarArrays.stream(iArr).mapToObj(new MessagesController$$ExternalSyntheticLambda527()).collect(Collectors.joining(","));
     }
 
     public static int getTierOption(int i, int i2, int i3) {

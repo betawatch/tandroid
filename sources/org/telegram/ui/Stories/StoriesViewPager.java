@@ -20,7 +20,7 @@ import org.telegram.ui.Stories.StoriesController;
 import org.telegram.ui.Stories.StoriesViewPager;
 import org.telegram.ui.Stories.StoryViewer;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class StoriesViewPager extends ViewPager {
     int currentAccount;
     public int currentState;

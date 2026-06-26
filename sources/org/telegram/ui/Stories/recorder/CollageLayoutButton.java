@@ -30,7 +30,7 @@ import org.telegram.ui.GradientClip;
 import org.telegram.ui.Stories.recorder.CollageLayout;
 import org.telegram.ui.Stories.recorder.CollageLayoutButton;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class CollageLayoutButton extends ToggleButton2 {
     public CollageLayoutButton(Context context) {
         super(context);

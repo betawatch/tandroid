@@ -18,7 +18,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Stories.DarkThemeResourceProvider;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class GallerySheet extends BottomSheet {
     private Boolean galleryListViewOpening;
     private ValueAnimator galleryOpenCloseAnimator;

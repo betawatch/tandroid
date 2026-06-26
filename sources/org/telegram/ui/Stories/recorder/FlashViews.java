@@ -27,7 +27,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class FlashViews {
     public static final int[] COLORS = {-1, -70004, -7544833};
     private ValueAnimator animator;

@@ -2,7 +2,7 @@ package org.webrtc;
 
 import android.view.Choreographer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final /* synthetic */ class RenderSynchronizer$$ExternalSyntheticLambda2 implements Choreographer.FrameCallback {
     public final /* synthetic */ RenderSynchronizer f$0;
 

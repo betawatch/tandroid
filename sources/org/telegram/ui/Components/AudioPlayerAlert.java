@@ -96,7 +96,7 @@ import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.CastSync;
 import org.telegram.ui.Cells.AudioPlayerCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda350;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda392;
 import org.telegram.ui.ChooseQualityLayout$QualityIcon;
 import org.telegram.ui.Components.AnimationProperties;
 import org.telegram.ui.Components.AudioPlayerAlert;
@@ -3445,7 +3445,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             TLRPC.Document document = messageObject.getDocument();
             long j = document != null ? document.id : 0L;
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda350(makeOptions));
+            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda392(makeOptions));
             makeSwipeback.addGap();
             makeSwipeback.addIf(!savedMusicIds.ids.contains(Long.valueOf(j)), R.drawable.left_status_profile, LocaleController.getString(R.string.AudioSaveToMyProfile), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda29
                 @Override // java.lang.Runnable

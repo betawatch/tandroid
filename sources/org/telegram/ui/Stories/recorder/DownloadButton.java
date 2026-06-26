@@ -40,7 +40,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Stories.recorder.DownloadButton;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class DownloadButton extends ImageView {
     private BuildingVideo buildingVideo;
     private FrameLayout container;

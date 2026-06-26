@@ -22,11 +22,12 @@ import org.telegram.ui.Components.inset.WindowInsetsProvider;
 /* loaded from: classes5.dex */
 public class ChatInputViewsContainer extends FrameLayout {
     private BlurredBackgroundWithFadeDrawable backgroundWithFadeDrawable;
-    private BlurredBackgroundDrawable blurredBackgroundDrawable;
+    public BlurredBackgroundDrawable blurredBackgroundDrawable;
     private float blurredBottomHeight;
     private float bubbleInputTranlationY;
     private boolean captured;
     private int currentBlurredHeight;
+    public boolean drawInputBackground;
     private final View fadeView;
     private float imeBottomInset;
     private final FrameLayout inAppKeyboardBubbleContainer;
@@ -45,6 +46,7 @@ public class ChatInputViewsContainer extends FrameLayout {
 
     public ChatInputViewsContainer(Context context) {
         super(context);
+        this.drawInputBackground = true;
         this.underKeyboardPath = new Path();
         this.tmpRect = new Rect();
         this.tmpRectF = new RectF();
@@ -243,7 +245,9 @@ public class ChatInputViewsContainer extends FrameLayout {
         this.tmpRect.inset(0, -AndroidUtilities.dp(7.0f));
         this.tmpRect.offset(0, measuredHeight + ((int) this.bubbleInputTranlationY));
         this.blurredBackgroundDrawable.setBounds(this.tmpRect);
-        this.blurredBackgroundDrawable.draw(canvas);
+        if (this.drawInputBackground) {
+            this.blurredBackgroundDrawable.draw(canvas);
+        }
         if (this.needDrawInAppKeyboard) {
             this.underKeyboardBackgroundDrawable.draw(canvas);
         }

@@ -69,7 +69,7 @@ import org.telegram.ui.Stories.recorder.PreviewView;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 import org.telegram.ui.Stories.recorder.TimelineView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class PreviewView extends FrameLayout {
     private boolean allowCropping;
     private boolean allowRotation;
@@ -806,7 +806,7 @@ public abstract class PreviewView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0092  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0093  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2198,15 +2198,15 @@ public abstract class PreviewView extends FrameLayout {
         return getBackgroundDrawable(drawable, i, wallPaper, z);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0093  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00a8  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00d0  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00f6  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0096  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00ab  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00d3  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x00f9  */
     /* JADX WARN: Removed duplicated region for block: B:52:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x00d4  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00ad  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0098  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00d7  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00b0  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x009b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

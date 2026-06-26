@@ -8,7 +8,7 @@ import org.webrtc.GlGenericDrawer;
 import org.webrtc.RendererCommon;
 import org.webrtc.VideoFrame;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class VideoFrameDrawer {
     public static final String TAG = "VideoFrameDrawer";
     static final float[] srcPoints = {0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f};

@@ -3,7 +3,7 @@ package ru.noties.jlatexmath.swing;
 import ru.noties.jlatexmath.awt.Component;
 import ru.noties.jlatexmath.awt.Graphics;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface Icon {
     int getIconHeight();
 

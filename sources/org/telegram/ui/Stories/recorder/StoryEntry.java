@@ -57,7 +57,7 @@ import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Stories.recorder.CollageLayout;
 import org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StoryEntry {
     public HashSet albums;
     public boolean allowScreenshots;

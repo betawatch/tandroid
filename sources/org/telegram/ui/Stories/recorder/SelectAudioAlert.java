@@ -65,7 +65,7 @@ import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
 import org.telegram.ui.Components.blur3.utils.Blur3Utils;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class SelectAudioAlert extends BottomSheetWithRecyclerListView implements NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener, FactorAnimator.Target {
     private UniversalAdapter adapter;
     private final BoolAnimator animatorFadeVisible;

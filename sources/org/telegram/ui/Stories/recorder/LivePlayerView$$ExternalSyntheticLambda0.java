@@ -2,7 +2,7 @@ package org.telegram.ui.Stories.recorder;
 
 import org.telegram.ui.Stories.LivePlayer;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class LivePlayerView$$ExternalSyntheticLambda0 implements Runnable {
     public final /* synthetic */ LivePlayer f$0;
 

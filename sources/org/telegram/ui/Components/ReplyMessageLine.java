@@ -236,9 +236,9 @@ public class ReplyMessageLine {
         return this.nameColorAnimated.set(this.nameColor);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:69:0x03ca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x0409, code lost:
     
-        if (r21 == 2) goto L243;
+        if (r21 == 2) goto L259;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -262,13 +262,27 @@ public class ReplyMessageLine {
         TLRPC.TL_peerColorCollectible tL_peerColorCollectible;
         TLRPC.User user2 = user;
         boolean isDark = resourcesProvider != null ? resourcesProvider.isDark() : Theme.isCurrentThemeDark();
-        if (!messageObject.isOutOwner() && i != 2 && (tL_peerColorCollectible = messageObject.overrideLinkPeerColor) != null) {
+        if (messageObject != null && !messageObject.isOutOwner() && i != 2 && (tL_peerColorCollectible = messageObject.overrideLinkPeerColor) != null) {
             return resolveCollectionColor(messageObject, tL_peerColorCollectible, resourcesProvider);
         }
         this.reversedOut = false;
         this.emojiDocumentId = 0L;
         this.stickerDocumentId = 0L;
-        this.sponsored = messageObject.isSponsored();
+        this.sponsored = messageObject != null && messageObject.isSponsored();
+        if (messageObject == null) {
+            this.hasColor3 = false;
+            this.hasColor2 = false;
+            int color = Theme.getColor(Theme.key_chat_inReplyLine, resourcesProvider);
+            this.color3 = color;
+            this.color2 = color;
+            this.color1 = color;
+            this.backgroundColor = Theme.multAlpha(color, isDark ? 0.12f : 0.1f);
+            this.emojiColor = getColor();
+            AnimatedColor animatedColor = this.nameColorAnimated;
+            int color2 = Theme.getColor(Theme.key_chat_inReplyNameText, resourcesProvider);
+            this.nameColor = color2;
+            return animatedColor.set(color2);
+        }
         if (i == 4 && (message4 = messageObject.messageOwner) != null && MessageObject.getMedia(message4) != null && (MessageObject.getMedia(messageObject.messageOwner) instanceof TLRPC.TL_messageMediaContact)) {
             long j = MessageObject.getMedia(messageObject.messageOwner).user_id;
             TLRPC.User user3 = j != 0 ? MessagesController.getInstance(messageObject.currentAccount).getUser(Long.valueOf(j)) : null;
@@ -439,11 +453,11 @@ public class ReplyMessageLine {
         } else {
             this.hasColor2 = false;
             this.hasColor3 = false;
-            int color = Theme.getColor(Theme.key_chat_inReplyLine, resourcesProvider);
-            this.color3 = color;
-            this.color2 = color;
-            this.color1 = color;
-            this.backgroundColor = Theme.multAlpha(color, 0.1f);
+            int color3 = Theme.getColor(Theme.key_chat_inReplyLine, resourcesProvider);
+            this.color3 = color3;
+            this.color2 = color3;
+            this.color1 = color3;
+            this.backgroundColor = Theme.multAlpha(color3, 0.1f);
             this.nameColor = Theme.getColor(Theme.key_chat_inReplyNameText, resourcesProvider);
         }
         if (messageObject.shouldDrawWithoutBackground()) {
@@ -457,15 +471,15 @@ public class ReplyMessageLine {
         } else {
             int i7 = !messageObject.isOutOwner() ? 2 : 2;
             if (i == i7 && !messageObject.isOutOwner()) {
-                int color2 = Theme.getColor(Theme.key_chat_inCodeBackground, resourcesProvider);
-                this.color3 = color2;
-                this.color2 = color2;
-                this.color1 = color2;
+                int color4 = Theme.getColor(Theme.key_chat_inCodeBackground, resourcesProvider);
+                this.color3 = color4;
+                this.color2 = color4;
+                this.color1 = color4;
             } else {
-                int color3 = Theme.getColor((this.hasColor2 || this.hasColor3) ? Theme.key_chat_outReplyLine2 : Theme.key_chat_outReplyLine, resourcesProvider);
-                this.color3 = color3;
-                this.color2 = color3;
-                this.color1 = color3;
+                int color5 = Theme.getColor((this.hasColor2 || this.hasColor3) ? Theme.key_chat_outReplyLine2 : Theme.key_chat_outReplyLine, resourcesProvider);
+                this.color3 = color5;
+                this.color2 = color5;
+                this.color1 = color5;
             }
             if (this.hasColor3) {
                 this.reversedOut = true;

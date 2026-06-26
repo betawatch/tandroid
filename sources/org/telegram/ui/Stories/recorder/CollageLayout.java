@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.BuildVars;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class CollageLayout {
     private static ArrayList layouts;
     public final int[] columns;

@@ -4,7 +4,7 @@ import org.webrtc.VideoFrame;
 import org.webrtc.VideoProcessor;
 import org.webrtc.VideoSource;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 class NativeAndroidVideoTrackSource {
     private final long nativeAndroidVideoTrackSource;
 

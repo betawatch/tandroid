@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class MHTML {
     public final String boundary;
     public final ArrayList entries;

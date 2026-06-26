@@ -34,7 +34,7 @@ import org.telegram.ui.Components.EmojiPacksAlert;
 import org.telegram.ui.Components.LoadingDrawable;
 import org.telegram.ui.Components.TypefaceSpan;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StoryContainsEmojiButton extends View {
     private static Object lastRequestParentObject;
     private static Vector lastResponse;

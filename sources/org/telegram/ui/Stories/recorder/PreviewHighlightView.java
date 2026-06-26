@@ -29,7 +29,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Stories.PeerStoriesView;
 import org.telegram.ui.Stories.StoryCaptionView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PreviewHighlightView extends FrameLayout {
     private final FrameLayout bottom;
     private int currentAccount;

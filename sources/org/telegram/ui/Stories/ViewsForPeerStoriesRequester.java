@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ViewsForPeerStoriesRequester {
     private static long lastRequestTime;
     final int currentAccount;

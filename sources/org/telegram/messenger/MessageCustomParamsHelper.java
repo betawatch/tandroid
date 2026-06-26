@@ -6,11 +6,12 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
 /* loaded from: classes3.dex */
 public class MessageCustomParamsHelper {
     public static boolean isEmpty(TLRPC.Message message) {
-        return message.voiceTranscription == null && message.translatedVoiceTranscription == null && !message.voiceTranscriptionOpen && !message.summarizedOpen && message.summaryText == null && message.translatedSummaryLanguage == null && message.translatedSummaryText == null && !message.voiceTranscriptionFinal && !message.voiceTranscriptionRated && !message.voiceTranscriptionForce && message.voiceTranscriptionId == 0 && !message.premiumEffectWasPlayed && message.originalLanguage == null && message.translatedToLanguage == null && message.translatedPoll == null && message.translatedText == null && message.errorAllowedPriceStars == 0 && message.errorNewPriceStars == 0;
+        return message.voiceTranscription == null && message.translatedVoiceTranscription == null && !message.voiceTranscriptionOpen && !message.summarizedOpen && message.summaryText == null && message.translatedSummaryLanguage == null && message.translatedSummaryText == null && !message.voiceTranscriptionFinal && !message.voiceTranscriptionRated && !message.voiceTranscriptionForce && message.voiceTranscriptionId == 0 && !message.premiumEffectWasPlayed && message.originalLanguage == null && message.translatedToLanguage == null && message.translatedPoll == null && message.translatedText == null && message.translatedRichMessage == null && message.errorAllowedPriceStars == 0 && message.errorNewPriceStars == 0;
     }
 
     public static void copyParams(TLRPC.Message message, TLRPC.Message message2) {
@@ -25,6 +26,7 @@ public class MessageCustomParamsHelper {
         message2.translatedToLanguage = message.translatedToLanguage;
         message2.translatedPoll = message.translatedPoll;
         message2.translatedText = message.translatedText;
+        message2.translatedRichMessage = message.translatedRichMessage;
         message2.errorAllowedPriceStars = message.errorAllowedPriceStars;
         message2.errorNewPriceStars = message.errorNewPriceStars;
         message2.translatedVoiceTranscription = message.translatedVoiceTranscription;
@@ -90,7 +92,9 @@ public class MessageCustomParamsHelper {
             this.flags = flag;
             int flag2 = TLObject.setFlag(flag, 2048, message.translatedSummaryText != null);
             this.flags = flag2;
-            this.flags = TLObject.setFlag(flag2, 4096, message.translatedSummaryLanguage != null);
+            int flag3 = TLObject.setFlag(flag2, 4096, message.translatedSummaryLanguage != null);
+            this.flags = flag3;
+            this.flags = TLObject.setFlag(flag3, 8192, message.translatedRichMessage != null);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -140,6 +144,9 @@ public class MessageCustomParamsHelper {
             if (TLObject.hasFlag(this.flags, 4096)) {
                 outputSerializedData.writeString(this.message.translatedSummaryLanguage);
             }
+            if (TLObject.hasFlag(this.flags, 8192)) {
+                this.message.translatedRichMessage.serializeToStream(outputSerializedData);
+            }
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -187,6 +194,9 @@ public class MessageCustomParamsHelper {
             }
             if (TLObject.hasFlag(this.flags, 4096)) {
                 this.message.translatedSummaryLanguage = inputSerializedData.readString(z);
+            }
+            if (TLObject.hasFlag(this.flags, 8192)) {
+                this.message.translatedRichMessage = TL_iv.RichMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
         }
     }

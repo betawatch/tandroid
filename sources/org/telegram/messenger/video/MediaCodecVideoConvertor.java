@@ -58,7 +58,7 @@ public class MediaCodecVideoConvertor {
     /* JADX WARN: Finally extract failed */
     private boolean convertVideoInternal(org.telegram.messenger.video.MediaCodecVideoConvertor.ConvertVideoParams r93, boolean r94, int r95) {
         /*
-            Method dump skipped, instructions count: 7706
+            Method dump skipped, instructions count: 7710
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.video.MediaCodecVideoConvertor.convertVideoInternal(org.telegram.messenger.video.MediaCodecVideoConvertor$ConvertVideoParams, boolean, int):boolean");
@@ -211,15 +211,15 @@ public class MediaCodecVideoConvertor {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x0116, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x0118, code lost:
     
         if (r13[r6 + 3] != 1) goto L74;
      */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x01c9  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00de  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x01c4  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x01e2  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x01ec  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x01cb  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00e0  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x01c6  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x01e4  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x01ee  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

@@ -85,7 +85,7 @@ import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.StickerEmptyView;
 import org.telegram.ui.Stories.recorder.GalleryListView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class GalleryListView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private static final MediaController.AlbumEntry draftsAlbum = new MediaController.AlbumEntry(-1, null, null);
     private final float ASPECT_RATIO;

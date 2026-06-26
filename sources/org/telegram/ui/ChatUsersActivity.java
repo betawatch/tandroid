@@ -145,6 +145,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
     private int initialSlowmode;
     private long initialStarsPrice;
     private boolean isChannel;
+    private boolean isCommunity;
     private boolean isEnabledNotRestrictBoosters;
     private boolean isForum;
     private LinearLayoutManager layoutManager;
@@ -154,6 +155,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
     private int loadingProgressRow;
     private int loadingUserCellRow;
     private boolean loadingUsers;
+    private int manageLinkedPeersRow;
     private int manageTopicsRow;
     private int membersHeaderRow;
     private boolean needOpenSearch;
@@ -303,6 +305,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             tL_chatBannedRights2.invite_users = tL_chatBannedRights.invite_users;
             tL_chatBannedRights2.manage_topics = tL_chatBannedRights.manage_topics;
             tL_chatBannedRights2.change_info = tL_chatBannedRights.change_info;
+            tL_chatBannedRights2.manage_linked_peers = tL_chatBannedRights.manage_linked_peers;
             boolean z3 = tL_chatBannedRights.send_photos;
             tL_chatBannedRights2.send_photos = z3;
             boolean z4 = tL_chatBannedRights.send_videos;
@@ -326,7 +329,8 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             }
         }
         this.initialBannedRights = ChatObject.getBannedRightsString(this.defaultBannedRights);
-        if (ChatObject.isChannel(this.currentChat) && !this.currentChat.megagroup) {
+        this.isCommunity = ChatObject.isCommunity(this.currentChat);
+        if (ChatObject.isChannel(this.currentChat) && !this.currentChat.megagroup && !this.isCommunity) {
             z = true;
         }
         this.isChannel = z;
@@ -343,16 +347,10 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:113:0x01a2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x01c0, code lost:
     
-        if (org.telegram.messenger.ChatObject.canBlockUsers(r1) != false) goto L55;
+        if (org.telegram.messenger.ChatObject.canBlockUsers(r1) != false) goto L67;
      */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x0275  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x01c5  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x01f2  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0222  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x0242  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0262  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -400,6 +398,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         this.sendPollsRow = -1;
         this.embedLinksRow = -1;
         this.addUsersRow = -1;
+        this.manageLinkedPeersRow = -1;
         this.manageTopicsRow = -1;
         this.pinMessagesRow = -1;
         this.editTagRow = -1;
@@ -440,234 +439,207 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         int i2 = 1;
         if (i == 3) {
             int i3 = this.rowCount;
-            this.permissionsSectionRow = i3;
-            this.sendMessagesRow = i3 + 1;
-            int i4 = i3 + 3;
+            int i4 = i3 + 1;
             this.rowCount = i4;
-            this.sendMediaRow = i3 + 2;
-            if (this.sendMediaExpanded) {
-                this.sendMediaPhotosRow = i4;
-                this.sendMediaVideosRow = i3 + 4;
-                this.sendMediaStickerGifsRow = i3 + 5;
-                this.sendMediaMusicRow = i3 + 6;
-                this.sendMediaFilesRow = i3 + 7;
-                this.sendMediaVoiceMessagesRow = i3 + 8;
-                this.sendMediaVideoMessagesRow = i3 + 9;
-                this.sendMediaEmbededLinksRow = i3 + 10;
-                this.sendPollsRow = i3 + 11;
-                this.rowCount = i3 + 13;
-                this.sendReactionsRow = i3 + 12;
+            this.permissionsSectionRow = i3;
+            boolean z5 = this.isCommunity;
+            if (!z5) {
+                this.sendMessagesRow = i4;
+                int i5 = i3 + 3;
+                this.rowCount = i5;
+                this.sendMediaRow = i3 + 2;
+                if (this.sendMediaExpanded) {
+                    this.sendMediaPhotosRow = i5;
+                    this.sendMediaVideosRow = i3 + 4;
+                    this.sendMediaStickerGifsRow = i3 + 5;
+                    this.sendMediaMusicRow = i3 + 6;
+                    this.sendMediaFilesRow = i3 + 7;
+                    this.sendMediaVoiceMessagesRow = i3 + 8;
+                    this.sendMediaVideoMessagesRow = i3 + 9;
+                    this.sendMediaEmbededLinksRow = i3 + 10;
+                    this.sendPollsRow = i3 + 11;
+                    this.rowCount = i3 + 13;
+                    this.sendReactionsRow = i3 + 12;
+                }
+                int i6 = this.rowCount;
+                this.addUsersRow = i6;
+                this.pinMessagesRow = i6 + 1;
+                this.rowCount = i6 + 3;
+                this.editTagRow = i6 + 2;
             }
-            int i5 = this.rowCount;
-            this.addUsersRow = i5;
-            this.pinMessagesRow = i5 + 1;
-            this.editTagRow = i5 + 2;
-            int i6 = i5 + 4;
-            this.rowCount = i6;
-            this.changeInfoRow = i5 + 3;
-            if (this.isForum) {
-                this.rowCount = i5 + 5;
-                this.manageTopicsRow = i6;
+            int i7 = this.rowCount;
+            int i8 = i7 + 1;
+            this.rowCount = i8;
+            this.changeInfoRow = i7;
+            if (z5) {
+                this.rowCount = i7 + 2;
+                this.manageLinkedPeersRow = i8;
+            } else if (this.isForum) {
+                this.rowCount = i7 + 2;
+                this.manageTopicsRow = i8;
             }
             if (ChatObject.isChannel(this.currentChat)) {
                 TLRPC.Chat chat3 = this.currentChat;
-                if (chat3.creator && chat3.megagroup && !chat3.gigagroup) {
-                    int i7 = chat3.participants_count;
+                if (chat3.creator && chat3.megagroup && !chat3.gigagroup && !this.isCommunity) {
+                    int i9 = chat3.participants_count;
                     TLRPC.ChatFull chatFull4 = this.info;
-                    if (Math.max(i7, chatFull4 != null ? chatFull4.participants_count : 0) >= getMessagesController().maxMegagroupCount - 1000) {
-                        int i8 = this.rowCount;
-                        this.participantsDivider2Row = i8;
-                        this.gigaHeaderRow = i8 + 1;
-                        this.gigaConvertRow = i8 + 2;
-                        this.rowCount = i8 + 4;
-                        this.gigaInfoRow = i8 + 3;
+                    if (Math.max(i9, chatFull4 != null ? chatFull4.participants_count : 0) >= getMessagesController().maxMegagroupCount - 1000) {
+                        int i10 = this.rowCount;
+                        this.participantsDivider2Row = i10;
+                        this.gigaHeaderRow = i10 + 1;
+                        this.gigaConvertRow = i10 + 2;
+                        this.rowCount = i10 + 4;
+                        this.gigaInfoRow = i10 + 3;
                     }
                 }
             }
             TLRPC.ChatFull chatFull5 = this.info;
-            if (chatFull5 != null && chatFull5.paid_messages_available && ChatObject.canUserDoAction(this.currentChat, 2) && (ChatObject.isChannel(this.currentChat) || ((chat = this.currentChat) != null && chat.creator))) {
+            if (chatFull5 != null && chatFull5.paid_messages_available && !this.isCommunity && ChatObject.canUserDoAction(this.currentChat, 2) && (ChatObject.isChannel(this.currentChat) || ((chat = this.currentChat) != null && chat.creator))) {
                 if (this.participantsDivider2Row == -1) {
-                    int i9 = this.rowCount;
-                    this.rowCount = i9 + 1;
-                    this.participantsDivider2Row = i9;
+                    int i11 = this.rowCount;
+                    this.rowCount = i11 + 1;
+                    this.participantsDivider2Row = i11;
                 }
-                int i10 = this.rowCount;
-                this.payRow = i10;
-                int i11 = i10 + 2;
-                this.rowCount = i11;
-                this.payInfoRow = i10 + 1;
+                int i12 = this.rowCount;
+                this.payRow = i12;
+                int i13 = i12 + 2;
+                this.rowCount = i13;
+                this.payInfoRow = i12 + 1;
                 if (this.enablePrice) {
-                    this.priceHeaderRow = i11;
-                    this.priceRow = i10 + 3;
-                    this.rowCount = i10 + 5;
-                    this.priceInfoRow = i10 + 4;
+                    this.priceHeaderRow = i13;
+                    this.priceRow = i12 + 3;
+                    this.rowCount = i12 + 5;
+                    this.priceInfoRow = i12 + 4;
                 }
             }
-            if (ChatObject.isChannel(this.currentChat) || !this.currentChat.creator) {
-                TLRPC.Chat chat4 = this.currentChat;
-                if (chat4.megagroup) {
-                    if (!chat4.gigagroup) {
+            if (!this.isCommunity) {
+                if (ChatObject.isChannel(this.currentChat) || !this.currentChat.creator) {
+                    TLRPC.Chat chat4 = this.currentChat;
+                    if (chat4.megagroup) {
+                        if (!chat4.gigagroup) {
+                        }
                     }
                 }
-                if (isNotRestrictBoostersVisible()) {
-                    if (this.participantsDivider2Row == -1) {
-                        int i12 = this.rowCount;
-                        this.rowCount = i12 + 1;
-                        this.participantsDivider2Row = i12;
-                    }
-                    int i13 = this.rowCount;
-                    int i14 = i13 + 1;
-                    this.rowCount = i14;
-                    this.dontRestrictBoostersRow = i13;
-                    if (this.isEnabledNotRestrictBoosters) {
-                        this.rowCount = i13 + 2;
-                        this.dontRestrictBoostersSliderRow = i14;
-                    }
-                    int i15 = this.rowCount;
-                    this.rowCount = i15 + 1;
-                    this.dontRestrictBoostersInfoRow = i15;
+                if (this.participantsDivider2Row == -1) {
+                    int i14 = this.rowCount;
+                    this.rowCount = i14 + 1;
+                    this.participantsDivider2Row = i14;
                 }
-                if (ChatObject.isChannel(this.currentChat)) {
-                    if (this.participantsDivider2Row == -1) {
-                        int i16 = this.rowCount;
-                        this.rowCount = i16 + 1;
-                        this.participantsDivider2Row = i16;
-                    }
-                    int i17 = this.rowCount;
-                    this.rowCount = i17 + 1;
-                    this.removedUsersRow = i17;
+                int i15 = this.rowCount;
+                this.slowmodeRow = i15;
+                this.slowmodeSelectRow = i15 + 1;
+                this.rowCount = i15 + 3;
+                this.slowmodeInfoRow = i15 + 2;
+            }
+            if (isNotRestrictBoostersVisible() && !this.isCommunity) {
+                if (this.participantsDivider2Row == -1) {
+                    int i16 = this.rowCount;
+                    this.rowCount = i16 + 1;
+                    this.participantsDivider2Row = i16;
                 }
-                if ((this.slowmodeInfoRow == -1 && this.gigaHeaderRow == -1) || this.removedUsersRow != -1) {
-                    int i18 = this.rowCount;
-                    this.rowCount = i18 + 1;
-                    this.participantsDividerRow = i18;
+                int i17 = this.rowCount;
+                int i18 = i17 + 1;
+                this.rowCount = i18;
+                this.dontRestrictBoostersRow = i17;
+                if (this.isEnabledNotRestrictBoosters) {
+                    this.rowCount = i17 + 2;
+                    this.dontRestrictBoostersSliderRow = i18;
                 }
-                if (ChatObject.canBlockUsers(this.currentChat) && getParticipantsCount() > 1 && (ChatObject.isChannel(this.currentChat) || this.currentChat.creator)) {
-                    int i19 = this.rowCount;
-                    this.rowCount = i19 + 1;
-                    this.addNewRow = i19;
-                }
-                if (!this.loadingUsers && !(z4 = this.firstLoaded)) {
-                    if (z4 || (chatFull3 = this.info) == null || chatFull3.banned_count <= 0) {
-                        return;
-                    }
+                int i19 = this.rowCount;
+                this.rowCount = i19 + 1;
+                this.dontRestrictBoostersInfoRow = i19;
+            }
+            if (ChatObject.isChannel(this.currentChat) && !this.isCommunity) {
+                if (this.participantsDivider2Row == -1) {
                     int i20 = this.rowCount;
                     this.rowCount = i20 + 1;
-                    this.loadingUserCellRow = i20;
-                    return;
+                    this.participantsDivider2Row = i20;
                 }
-                if (!this.participants.isEmpty()) {
-                    int i21 = this.rowCount;
-                    this.participantsStartRow = i21;
-                    int size = i21 + this.participants.size();
-                    this.rowCount = size;
-                    this.participantsEndRow = size;
-                }
-                if (this.addNewRow == -1 || this.participantsStartRow != -1) {
-                    int i22 = this.rowCount;
-                    this.rowCount = i22 + 1;
-                    this.addNewSectionRow = i22;
-                    return;
-                }
-                return;
+                int i21 = this.rowCount;
+                this.rowCount = i21 + 1;
+                this.removedUsersRow = i21;
             }
-            if (this.participantsDivider2Row == -1) {
+            if ((this.slowmodeInfoRow == -1 && this.gigaHeaderRow == -1) || this.removedUsersRow != -1) {
+                int i22 = this.rowCount;
+                this.rowCount = i22 + 1;
+                this.participantsDividerRow = i22;
+            }
+            if (ChatObject.canBlockUsers(this.currentChat) && !this.isCommunity && getParticipantsCount() > 1 && (ChatObject.isChannel(this.currentChat) || this.currentChat.creator)) {
                 int i23 = this.rowCount;
                 this.rowCount = i23 + 1;
-                this.participantsDivider2Row = i23;
+                this.addNewRow = i23;
             }
-            int i24 = this.rowCount;
-            this.slowmodeRow = i24;
-            this.slowmodeSelectRow = i24 + 1;
-            this.rowCount = i24 + 3;
-            this.slowmodeInfoRow = i24 + 2;
-            if (isNotRestrictBoostersVisible()) {
-            }
-            if (ChatObject.isChannel(this.currentChat)) {
-            }
-            if (this.slowmodeInfoRow == -1) {
-                int i182 = this.rowCount;
-                this.rowCount = i182 + 1;
-                this.participantsDividerRow = i182;
-                if (ChatObject.canBlockUsers(this.currentChat)) {
-                    int i192 = this.rowCount;
-                    this.rowCount = i192 + 1;
-                    this.addNewRow = i192;
+            if (this.loadingUsers && !(z4 = this.firstLoaded)) {
+                if (z4 || (chatFull3 = this.info) == null || chatFull3.banned_count <= 0) {
+                    return;
                 }
-                if (!this.loadingUsers) {
-                }
-                if (!this.participants.isEmpty()) {
-                }
-                if (this.addNewRow == -1) {
-                }
-                int i222 = this.rowCount;
-                this.rowCount = i222 + 1;
-                this.addNewSectionRow = i222;
+                int i24 = this.rowCount;
+                this.rowCount = i24 + 1;
+                this.loadingUserCellRow = i24;
                 return;
             }
-            int i1822 = this.rowCount;
-            this.rowCount = i1822 + 1;
-            this.participantsDividerRow = i1822;
-            if (ChatObject.canBlockUsers(this.currentChat)) {
-            }
-            if (!this.loadingUsers) {
-            }
             if (!this.participants.isEmpty()) {
+                int i25 = this.rowCount;
+                this.participantsStartRow = i25;
+                int size = i25 + this.participants.size();
+                this.rowCount = size;
+                this.participantsEndRow = size;
             }
-            if (this.addNewRow == -1) {
+            if (this.addNewRow == -1 && this.participantsStartRow == -1) {
+                return;
             }
-            int i2222 = this.rowCount;
-            this.rowCount = i2222 + 1;
-            this.addNewSectionRow = i2222;
+            int i26 = this.rowCount;
+            this.rowCount = i26 + 1;
+            this.addNewSectionRow = i26;
             return;
         }
         if (i == 0) {
             if (ChatObject.canBlockUsers(this.currentChat)) {
-                int i25 = this.rowCount;
-                this.rowCount = i25 + 1;
-                this.addNewRow = i25;
+                int i27 = this.rowCount;
+                this.rowCount = i27 + 1;
+                this.addNewRow = i27;
                 if (!this.participants.isEmpty() || (this.loadingUsers && !this.firstLoaded && (chatFull2 = this.info) != null && chatFull2.kicked_count > 0)) {
-                    int i26 = this.rowCount;
-                    this.rowCount = i26 + 1;
-                    this.participantsInfoRow = i26;
+                    int i28 = this.rowCount;
+                    this.rowCount = i28 + 1;
+                    this.participantsInfoRow = i28;
                 }
             }
             if (this.loadingUsers && !(z3 = this.firstLoaded)) {
                 if (z3) {
                     return;
                 }
-                int i27 = this.rowCount;
-                this.restricted1SectionRow = i27;
-                this.rowCount = i27 + 2;
-                this.loadingUserCellRow = i27 + 1;
+                int i29 = this.rowCount;
+                this.restricted1SectionRow = i29;
+                this.rowCount = i29 + 2;
+                this.loadingUserCellRow = i29 + 1;
                 return;
             }
             if (!this.participants.isEmpty()) {
-                int i28 = this.rowCount;
-                int i29 = i28 + 1;
-                this.rowCount = i29;
-                this.restricted1SectionRow = i28;
-                this.participantsStartRow = i29;
-                int size2 = i29 + this.participants.size();
+                int i30 = this.rowCount;
+                int i31 = i30 + 1;
+                this.rowCount = i31;
+                this.restricted1SectionRow = i30;
+                this.participantsStartRow = i31;
+                int size2 = i31 + this.participants.size();
                 this.rowCount = size2;
                 this.participantsEndRow = size2;
             }
             if (this.participantsStartRow != -1) {
                 if (this.participantsInfoRow == -1) {
-                    int i30 = this.rowCount;
-                    this.rowCount = i30 + 1;
-                    this.participantsInfoRow = i30;
+                    int i32 = this.rowCount;
+                    this.rowCount = i32 + 1;
+                    this.participantsInfoRow = i32;
                     return;
                 } else {
-                    int i31 = this.rowCount;
-                    this.rowCount = i31 + 1;
-                    this.addNewSectionRow = i31;
+                    int i33 = this.rowCount;
+                    this.rowCount = i33 + 1;
+                    this.addNewSectionRow = i33;
                     return;
                 }
             }
-            int i32 = this.rowCount;
-            this.rowCount = i32 + 1;
-            this.blockedEmptyRow = i32;
+            int i34 = this.rowCount;
+            this.rowCount = i34 + 1;
+            this.blockedEmptyRow = i34;
             return;
         }
         if (i == 1) {
@@ -675,94 +647,96 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 TLRPC.Chat chat5 = this.currentChat;
                 if (chat5.megagroup && !chat5.gigagroup && ((chatFull = this.info) == null || chatFull.participants_count <= 200 || (!this.isChannel && chatFull.can_set_stickers))) {
                     if (ChatObject.hasAdminRights(chat5)) {
-                        int i33 = this.rowCount;
-                        this.antiSpamRow = i33;
-                        this.rowCount = i33 + 2;
-                        this.antiSpamInfoRow = i33 + 1;
+                        int i35 = this.rowCount;
+                        this.antiSpamRow = i35;
+                        this.rowCount = i35 + 2;
+                        this.antiSpamInfoRow = i35 + 1;
                     } else {
-                        int i34 = this.rowCount;
-                        this.rowCount = i34 + 1;
-                        this.addNewSectionRow = i34;
+                        int i36 = this.rowCount;
+                        this.rowCount = i36 + 1;
+                        this.addNewSectionRow = i36;
                     }
                 }
             }
             if (ChatObject.canAddAdmins(this.currentChat)) {
-                int i35 = this.rowCount;
-                this.rowCount = i35 + 1;
-                this.addNewRow = i35;
+                int i37 = this.rowCount;
+                this.rowCount = i37 + 1;
+                this.addNewRow = i37;
             }
             if (!this.loadingUsers || (z2 = this.firstLoaded)) {
                 if (!this.participants.isEmpty()) {
-                    int i36 = this.rowCount;
-                    this.participantsStartRow = i36;
-                    int size3 = i36 + this.participants.size();
+                    int i38 = this.rowCount;
+                    this.participantsStartRow = i38;
+                    int size3 = i38 + this.participants.size();
                     this.rowCount = size3;
                     this.participantsEndRow = size3;
                 }
-                int i37 = this.rowCount;
-                this.rowCount = i37 + 1;
-                this.participantsInfoRow = i37;
-            } else if (!z2) {
-                int i38 = this.rowCount;
-                this.rowCount = i38 + 1;
-                this.loadingUserCellRow = i38;
-            }
-            if (!this.transfer && ChatObject.isChannelAndNotMegaGroup(this.currentChat) && ChatObject.hasAdminRights(this.currentChat)) {
-                int i39 = this.rowCount;
-                int i40 = i39 + 1;
-                this.rowCount = i40;
-                this.signMessagesRow = i39;
-                if (this.signatures) {
-                    this.signMessagesProfilesRow = i40;
-                    this.rowCount = i39 + 3;
-                    this.signMessagesInfoRow = i39 + 2;
-                    return;
-                } else {
-                    this.rowCount = i39 + 2;
-                    this.signMessagesInfoRow = i40;
-                    return;
+                if (!this.isCommunity) {
+                    int i39 = this.rowCount;
+                    this.rowCount = i39 + 1;
+                    this.participantsInfoRow = i39;
                 }
+            } else if (!z2) {
+                int i40 = this.rowCount;
+                this.rowCount = i40 + 1;
+                this.loadingUserCellRow = i40;
             }
-            return;
+            if (this.transfer || !ChatObject.isChannelAndNotMegaGroup(this.currentChat) || !ChatObject.hasAdminRights(this.currentChat) || this.isCommunity) {
+                return;
+            }
+            int i41 = this.rowCount;
+            int i42 = i41 + 1;
+            this.rowCount = i42;
+            this.signMessagesRow = i41;
+            if (this.signatures) {
+                this.signMessagesProfilesRow = i42;
+                this.rowCount = i41 + 3;
+                this.signMessagesInfoRow = i41 + 2;
+                return;
+            } else {
+                this.rowCount = i41 + 2;
+                this.signMessagesInfoRow = i42;
+                return;
+            }
         }
         if (i == 2) {
             if (ChatObject.isChannel(this.currentChat) && !ChatObject.isChannelAndNotMegaGroup(this.currentChat) && !this.needOpenSearch) {
-                int i41 = this.rowCount;
-                this.hideMembersRow = i41;
-                this.rowCount = i41 + 2;
-                this.hideMembersInfoRow = i41 + 1;
+                int i43 = this.rowCount;
+                this.hideMembersRow = i43;
+                this.rowCount = i43 + 2;
+                this.hideMembersInfoRow = i43 + 1;
             }
             if (this.selectType == 0 && ChatObject.canAddUsers(this.currentChat)) {
-                int i42 = this.rowCount;
-                this.rowCount = i42 + 1;
-                this.addNewRow = i42;
+                int i44 = this.rowCount;
+                this.rowCount = i44 + 1;
+                this.addNewRow = i44;
             }
             if (this.selectType == 0 && ChatObject.canUserDoAdminAction(this.currentChat, 3)) {
-                int i43 = this.rowCount;
-                this.rowCount = i43 + 1;
-                this.addNew2Row = i43;
+                int i45 = this.rowCount;
+                this.rowCount = i45 + 1;
+                this.addNew2Row = i45;
             }
             if (this.loadingUsers && !(z = this.firstLoaded)) {
                 if (z) {
                     return;
                 }
                 if (this.selectType == 0) {
-                    int i44 = this.rowCount;
-                    this.rowCount = i44 + 1;
-                    this.loadingHeaderRow = i44;
+                    int i46 = this.rowCount;
+                    this.rowCount = i46 + 1;
+                    this.loadingHeaderRow = i46;
                 }
-                int i45 = this.rowCount;
-                this.rowCount = i45 + 1;
-                this.loadingUserCellRow = i45;
+                int i47 = this.rowCount;
+                this.rowCount = i47 + 1;
+                this.loadingUserCellRow = i47;
                 return;
             }
             if (!this.contacts.isEmpty()) {
-                int i46 = this.rowCount;
-                int i47 = i46 + 1;
-                this.rowCount = i47;
-                this.contactsHeaderRow = i46;
-                this.contactsStartRow = i47;
-                int size4 = i47 + this.contacts.size();
+                int i48 = this.rowCount;
+                int i49 = i48 + 1;
+                this.rowCount = i49;
+                this.contactsHeaderRow = i48;
+                this.contactsStartRow = i49;
+                int size4 = i49 + this.contacts.size();
                 this.rowCount = size4;
                 this.contactsEndRow = size4;
                 r1 = 1;
@@ -770,31 +744,31 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             if (this.bots.isEmpty()) {
                 i2 = r1;
             } else {
-                int i48 = this.rowCount;
-                int i49 = i48 + 1;
-                this.rowCount = i49;
-                this.botHeaderRow = i48;
-                this.botStartRow = i49;
-                int size5 = i49 + this.bots.size();
+                int i50 = this.rowCount;
+                int i51 = i50 + 1;
+                this.rowCount = i51;
+                this.botHeaderRow = i50;
+                this.botStartRow = i51;
+                int size5 = i51 + this.bots.size();
                 this.rowCount = size5;
                 this.botEndRow = size5;
             }
             if (!this.participants.isEmpty()) {
                 if (i2 != 0) {
-                    int i50 = this.rowCount;
-                    this.rowCount = i50 + 1;
-                    this.membersHeaderRow = i50;
+                    int i52 = this.rowCount;
+                    this.rowCount = i52 + 1;
+                    this.membersHeaderRow = i52;
                 }
-                int i51 = this.rowCount;
-                this.participantsStartRow = i51;
-                int size6 = i51 + this.participants.size();
+                int i53 = this.rowCount;
+                this.participantsStartRow = i53;
+                int size6 = i53 + this.participants.size();
                 this.rowCount = size6;
                 this.participantsEndRow = size6;
             }
-            int i52 = this.rowCount;
-            if (i52 != 0) {
-                this.rowCount = i52 + 1;
-                this.participantsInfoRow = i52;
+            int i54 = this.rowCount;
+            if (i54 != 0) {
+                this.rowCount = i54 + 1;
+                this.participantsInfoRow = i54;
             }
         }
     }
@@ -1361,7 +1335,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                             }
                             return;
                         }
-                        if (i > this.permissionsSectionRow && i <= Math.max(this.manageTopicsRow, this.changeInfoRow)) {
+                        if ((i > this.permissionsSectionRow && i <= Math.max(this.manageTopicsRow, this.changeInfoRow)) || i == this.manageLinkedPeersRow) {
                             TextCheckCell2 textCheckCell22 = (TextCheckCell2) view;
                             if (textCheckCell22.isEnabled()) {
                                 if (textCheckCell22.hasIcon()) {
@@ -1386,6 +1360,10 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                                 textCheckCell22.setChecked(!textCheckCell22.isChecked());
                                 if (i == this.changeInfoRow) {
                                     this.defaultBannedRights.change_info = !r0.change_info;
+                                    return;
+                                }
+                                if (i == this.manageLinkedPeersRow) {
+                                    this.defaultBannedRights.manage_linked_peers = !r0.manage_linked_peers;
                                     return;
                                 }
                                 if (i == this.addUsersRow) {
@@ -3170,7 +3148,9 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
     }
 
     private void loadChatParticipants(int i, int i2, boolean z) {
+        TLRPC.ChatFull chatFull;
         LongSparseArray longSparseArray;
+        TLRPC.ChatParticipants chatParticipants;
         int i3 = 0;
         if (!ChatObject.isChannel(this.currentChat)) {
             this.loadingUsers = false;
@@ -3182,9 +3162,9 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             this.botsMap.clear();
             int i4 = this.type;
             if (i4 == 1) {
-                TLRPC.ChatFull chatFull = this.info;
-                if (chatFull != null) {
-                    int size = chatFull.participants.participants.size();
+                TLRPC.ChatFull chatFull2 = this.info;
+                if (chatFull2 != null && (chatParticipants = chatFull2.participants) != null) {
+                    int size = chatParticipants.participants.size();
                     while (i3 < size) {
                         TLRPC.ChatParticipant chatParticipant = this.info.participants.participants.get(i3);
                         if ((chatParticipant instanceof TLRPC.TL_chatParticipantCreator) || (chatParticipant instanceof TLRPC.TL_chatParticipantAdmin)) {
@@ -3194,7 +3174,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                         i3++;
                     }
                 }
-            } else if (i4 == 2 && this.info != null) {
+            } else if (i4 == 2 && (chatFull = this.info) != null && chatFull.participants != null) {
                 long j = getUserConfig().clientUserId;
                 int size2 = this.info.participants.participants.size();
                 while (i3 < size2) {
@@ -4477,20 +4457,20 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             ChatUsersActivity.this.notRestrictBoosters = i + 1;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:458:0x0aca, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:469:0x0afa, code lost:
         
-            if (r19.this$0.currentChat.megagroup == false) goto L403;
+            if (r19.this$0.currentChat.megagroup == false) goto L414;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:459:0x0af9, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:470:0x0b29, code lost:
         
             r7 = true;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:536:0x0af7, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:547:0x0b27, code lost:
         
-            if (r19.this$0.currentChat.megagroup == false) goto L403;
+            if (r19.this$0.currentChat.megagroup == false) goto L414;
          */
-        /* JADX WARN: Removed duplicated region for block: B:496:0x0c07  */
-        /* JADX WARN: Removed duplicated region for block: B:499:0x0c0a  */
+        /* JADX WARN: Removed duplicated region for block: B:507:0x0c37  */
+        /* JADX WARN: Removed duplicated region for block: B:510:0x0c3a  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -4829,7 +4809,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                             break;
                         }
                     } else {
-                        headerCell.setText(LocaleController.getString(R.string.ChannelPermissionsHeader));
+                        headerCell.setText(LocaleController.getString(ChatUsersActivity.this.isCommunity ? R.string.CommunityPermissionsHeader : R.string.ChannelPermissionsHeader));
                         break;
                     }
                     break;
@@ -4848,7 +4828,9 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                     boolean z11 = textCheckCell2.getTag() != null && ((Integer) textCheckCell2.getTag()).intValue() == i;
                     textCheckCell2.setTag(Integer.valueOf(i));
                     if (i == ChatUsersActivity.this.changeInfoRow) {
-                        textCheckCell2.setTextAndCheck(LocaleController.getString("UserRestrictionsChangeInfo", R.string.UserRestrictionsChangeInfo), (ChatUsersActivity.this.defaultBannedRights.change_info || ChatObject.isPublic(ChatUsersActivity.this.currentChat)) ? false : true, ChatUsersActivity.this.manageTopicsRow != -1, z11);
+                        textCheckCell2.setTextAndCheck(LocaleController.getString(ChatUsersActivity.this.isCommunity ? R.string.CommunityAdminRightEditCommunityName : R.string.UserRestrictionsChangeInfo), (ChatUsersActivity.this.defaultBannedRights.change_info || ChatObject.isPublic(ChatUsersActivity.this.currentChat)) ? false : true, ChatUsersActivity.this.manageTopicsRow != -1, z11);
+                    } else if (i == ChatUsersActivity.this.manageLinkedPeersRow) {
+                        textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.CommunityAdminRightEditGroupList), !ChatUsersActivity.this.defaultBannedRights.manage_linked_peers, false, z11);
                     } else if (i == ChatUsersActivity.this.addUsersRow) {
                         textCheckCell2.setTextAndCheck(LocaleController.getString("UserRestrictionsInviteUsers", R.string.UserRestrictionsInviteUsers), !ChatUsersActivity.this.defaultBannedRights.invite_users, true, z11);
                     } else if (i == ChatUsersActivity.this.pinMessagesRow) {
@@ -5075,7 +5057,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             if (i == ChatUsersActivity.this.removedUsersRow) {
                 return 6;
             }
-            if (i == ChatUsersActivity.this.changeInfoRow || i == ChatUsersActivity.this.addUsersRow || i == ChatUsersActivity.this.pinMessagesRow || i == ChatUsersActivity.this.editTagRow || i == ChatUsersActivity.this.sendMessagesRow || i == ChatUsersActivity.this.sendStickersRow || i == ChatUsersActivity.this.embedLinksRow || i == ChatUsersActivity.this.manageTopicsRow || i == ChatUsersActivity.this.dontRestrictBoostersRow) {
+            if (i == ChatUsersActivity.this.changeInfoRow || i == ChatUsersActivity.this.addUsersRow || i == ChatUsersActivity.this.manageLinkedPeersRow || i == ChatUsersActivity.this.pinMessagesRow || i == ChatUsersActivity.this.editTagRow || i == ChatUsersActivity.this.sendMessagesRow || i == ChatUsersActivity.this.sendStickersRow || i == ChatUsersActivity.this.embedLinksRow || i == ChatUsersActivity.this.manageTopicsRow || i == ChatUsersActivity.this.dontRestrictBoostersRow) {
                 return 7;
             }
             if (i == ChatUsersActivity.this.membersHeaderRow || i == ChatUsersActivity.this.contactsHeaderRow || i == ChatUsersActivity.this.botHeaderRow || i == ChatUsersActivity.this.loadingHeaderRow) {
@@ -5255,7 +5237,6 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         }
 
         public void fillPositions(SparseIntArray sparseIntArray) {
-            int i;
             sparseIntArray.clear();
             put(1, ChatUsersActivity.this.recentActionsRow, sparseIntArray);
             put(2, ChatUsersActivity.this.addNewRow, sparseIntArray);
@@ -5276,14 +5257,14 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             put(17, ChatUsersActivity.this.sendPollsRow, sparseIntArray);
             put(18, ChatUsersActivity.this.embedLinksRow, sparseIntArray);
             put(19, ChatUsersActivity.this.addUsersRow, sparseIntArray);
-            put(20, ChatUsersActivity.this.pinMessagesRow, sparseIntArray);
-            put(21, ChatUsersActivity.this.editTagRow, sparseIntArray);
-            put(22, ChatUsersActivity.this.sendReactionsRow, sparseIntArray);
+            put(20, ChatUsersActivity.this.manageLinkedPeersRow, sparseIntArray);
+            put(21, ChatUsersActivity.this.pinMessagesRow, sparseIntArray);
+            put(22, ChatUsersActivity.this.editTagRow, sparseIntArray);
+            int i = 23;
+            put(23, ChatUsersActivity.this.sendReactionsRow, sparseIntArray);
             if (ChatUsersActivity.this.isForum) {
-                i = 23;
-                put(23, ChatUsersActivity.this.manageTopicsRow, sparseIntArray);
-            } else {
-                i = 22;
+                i = 24;
+                put(24, ChatUsersActivity.this.manageTopicsRow, sparseIntArray);
             }
             put(i + 1, ChatUsersActivity.this.changeInfoRow, sparseIntArray);
             put(i + 2, ChatUsersActivity.this.removedUsersRow, sparseIntArray);

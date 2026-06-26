@@ -12,7 +12,7 @@ import org.webrtc.DataChannel;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.RtpTransceiver;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PeerConnection {
     private final List<MediaStream> localStreams;
     private final long nativePeerConnection;

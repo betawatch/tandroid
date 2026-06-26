@@ -5,7 +5,7 @@ import android.os.Build;
 import java.util.HashMap;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 class MediaCodecUtils {
     static final String EXYNOS_PREFIX = "OMX.Exynos.";
     static final String INTEL_PREFIX = "OMX.Intel.";

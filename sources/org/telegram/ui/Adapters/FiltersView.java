@@ -26,6 +26,7 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
@@ -652,8 +653,9 @@ public class FiltersView extends RecyclerListView {
                         this.avatarImageView.getImageReceiver().setForUserOrChat(user, this.thumbDrawable);
                     }
                 } else if (tLObject instanceof TLRPC.Chat) {
-                    this.avatarImageView.getImageReceiver().setRoundRadius(AndroidUtilities.dp(16.0f));
-                    this.avatarImageView.getImageReceiver().setForUserOrChat((TLRPC.Chat) tLObject, this.thumbDrawable);
+                    TLRPC.Chat chat = (TLRPC.Chat) tLObject;
+                    this.avatarImageView.getImageReceiver().setRoundRadius(AndroidUtilities.dp(ChatObject.isCommunity(chat) ? 10.0f : 16.0f));
+                    this.avatarImageView.getImageReceiver().setForUserOrChat(chat, this.thumbDrawable);
                 }
             } else {
                 this.avatarImageView.setImageDrawable(this.thumbDrawable);
@@ -681,6 +683,7 @@ public class FiltersView extends RecyclerListView {
         public TLRPC.MessagesFilter filter;
         public int filterType;
         public int iconResFilled;
+        public boolean limitWidth;
         public ReactionsLayoutInBubble.VisibleReaction reaction;
         public boolean removable = true;
         private String title;
@@ -707,6 +710,10 @@ public class FiltersView extends RecyclerListView {
 
         public void setUser(TLObject tLObject) {
             this.chat = tLObject;
+        }
+
+        public void setLimitWidth() {
+            this.limitWidth = true;
         }
 
         public boolean isSameType(MediaFilterData mediaFilterData) {

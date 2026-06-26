@@ -28,7 +28,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Stories.DialogStoriesCell;
 import org.telegram.ui.Stories.StoryViewer;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StoriesListPlaceProvider implements StoryViewer.PlaceProvider {
     public int addBottomClip;
     int[] clipPoint;

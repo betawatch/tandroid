@@ -3728,41 +3728,45 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
         return view.getY() + view.getHeight();
     }
 
-    public Drawable getClipBackground(final View view) {
-        boolean z;
+    public Drawable getClipBackground(View view) {
+        return getClipBackground(view, false);
+    }
+
+    public Drawable getClipBackground(final View view, boolean z) {
         boolean z2;
+        boolean z3;
         if (view.getParent() != this || !hasSections() || !((Boolean) this.sectionsItemDecoration.isSectionItem.run(view)).booleanValue()) {
             return null;
         }
         int childAdapterPosition = getChildAdapterPosition(view);
         if (childAdapterPosition == -1) {
+            z3 = false;
             z2 = false;
-            z = false;
         } else {
             View findViewByPosition = findViewByPosition(childAdapterPosition - 1);
             View findViewByPosition2 = findViewByPosition(childAdapterPosition + 1);
-            z = findViewByPosition != null && ((Boolean) this.sectionsItemDecoration.isSectionItem.run(findViewByPosition)).booleanValue();
-            z2 = findViewByPosition2 != null && ((Boolean) this.sectionsItemDecoration.isSectionItem.run(findViewByPosition2)).booleanValue();
+            z2 = findViewByPosition != null && ((Boolean) this.sectionsItemDecoration.isSectionItem.run(findViewByPosition)).booleanValue();
+            z3 = findViewByPosition2 != null && ((Boolean) this.sectionsItemDecoration.isSectionItem.run(findViewByPosition2)).booleanValue();
         }
         final RectF rectF = new RectF();
         rectF.set(view.getX(), Math.max(this.applyPaddingToSections ? getPaddingTop() : 0.0f, top(view)), view.getX() + view.getWidth(), Math.min(getHeight() - (this.applyPaddingToSections ? getPaddingBottom() : 0), bottom(view)));
-        if (z && z2) {
-            z = top(view) >= rectF.top;
-            boolean z3 = bottom(view) <= rectF.bottom;
-            if (z && z3) {
+        if (z2 && z3 && !z) {
+            z2 = top(view) >= rectF.top;
+            boolean z4 = bottom(view) <= rectF.bottom;
+            if (z2 && z4) {
                 return Theme.createRoundRectDrawable(0, Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider));
             }
-            z2 = z3;
+            z3 = z4;
         }
         final Path path = new Path();
-        if (!z && !z2) {
+        if ((!z2 && !z3) || z) {
             path.rewind();
             float f = this.sectionRadius;
             path.addRoundRect(rectF, f, f, Path.Direction.CW);
-        } else if (!z) {
+        } else if (!z2) {
             path.rewind();
             path.addRoundRect(rectF, this.sectionRadiusTop, Path.Direction.CW);
-        } else if (!z2) {
+        } else if (!z3) {
             path.rewind();
             path.addRoundRect(rectF, this.sectionRadiusBottom, Path.Direction.CW);
         }

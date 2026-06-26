@@ -15,10 +15,13 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
+import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.TextStyleSpan;
 
@@ -33,6 +36,7 @@ public class CodeHighlighting {
     public static final int MATCH_OPERATOR = 2;
     public static final int MATCH_STRING = 4;
     private static HashMap<String, TokenPattern[]> compiledPatterns;
+    private static HashSet<String> languages;
     private static final ConcurrentHashMap<String, Highlighting> processedHighlighting = new ConcurrentHashMap<>();
 
     public static int getTextSizeDecrement(int i) {
@@ -235,20 +239,97 @@ public class CodeHighlighting {
         return highlighting.result;
     }
 
-    public static void highlight(final Spannable spannable, final int i, final int i2, final String str, int i3, TextStyleSpan.TextStyleRun textStyleRun, boolean z) {
-        if (spannable == null) {
+    public static void highlightEditable(CharSequence charSequence, final String str, final Utilities.Callback<SpannableString> callback) {
+        if (callback == null) {
             return;
         }
-        Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.CodeHighlighting$$ExternalSyntheticLambda0
+        if (charSequence == null) {
+            charSequence = "";
+        }
+        final SpannableString spannableString = new SpannableString(charSequence);
+        if (TextUtils.isEmpty(str) || spannableString.length() == 0) {
+            callback.run(spannableString);
+        } else {
+            final String spannableString2 = spannableString.toString();
+            Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.CodeHighlighting$$ExternalSyntheticLambda2
+                @Override // java.lang.Runnable
+                public final void run() {
+                    CodeHighlighting.lambda$highlightEditable$1(spannableString2, str, spannableString, callback);
+                }
+            });
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$highlightEditable$1(String str, String str2, final SpannableString spannableString, final Utilities.Callback callback) {
+        if (compiledPatterns == null) {
+            parse();
+        }
+        final ArrayList arrayList = new ArrayList();
+        try {
+            HashMap<String, TokenPattern[]> hashMap = compiledPatterns;
+            colorize(spannableString, 0, spannableString.length(), tokenize(str, hashMap == null ? null : hashMap.get(str2), 0).toArray(), -1, arrayList);
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.CodeHighlighting$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                CodeHighlighting.lambda$highlight$2(spannable, i, i2, str);
+                CodeHighlighting.lambda$highlightEditable$0(arrayList, spannableString, callback);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$highlight$2(final Spannable spannable, int i, int i2, String str) {
+    public static /* synthetic */ void lambda$highlightEditable$0(ArrayList arrayList, SpannableString spannableString, Utilities.Callback callback) {
+        for (int i = 0; i < arrayList.size(); i++) {
+            CachedToSpan cachedToSpan = (CachedToSpan) arrayList.get(i);
+            spannableString.setSpan(new ColorSpan(cachedToSpan.group), cachedToSpan.start, cachedToSpan.end, 33);
+        }
+        callback.run(spannableString);
+    }
+
+    public static void prepare() {
+        if (compiledPatterns != null) {
+            return;
+        }
+        Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.CodeHighlighting$$ExternalSyntheticLambda3
+            @Override // java.lang.Runnable
+            public final void run() {
+                CodeHighlighting.lambda$prepare$2();
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$prepare$2() {
+        if (compiledPatterns == null) {
+            parse();
+        }
+    }
+
+    public static Set<String> getLanguages() {
+        HashSet<String> hashSet = languages;
+        if (hashSet == null) {
+            return null;
+        }
+        return hashSet;
+    }
+
+    public static void highlight(final Spannable spannable, final int i, final int i2, final String str, int i3, TextStyleSpan.TextStyleRun textStyleRun, boolean z) {
+        if (spannable == null) {
+            return;
+        }
+        Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.CodeHighlighting$$ExternalSyntheticLambda1
+            @Override // java.lang.Runnable
+            public final void run() {
+                CodeHighlighting.lambda$highlight$5(spannable, i, i2, str);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$highlight$5(final Spannable spannable, int i, int i2, String str) {
         if (compiledPatterns == null) {
             parse();
         }
@@ -276,30 +357,30 @@ public class CodeHighlighting {
                 spannable.setSpan(new ColorSpan(cachedToSpan.group), cachedToSpan.start, cachedToSpan.end, 33);
             }
             FileLog.d("[CodeHighlighter] applying " + arrayList.size() + " colorize spans took " + (System.currentTimeMillis() - currentTimeMillis3) + "ms in another thread");
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.CodeHighlighting$$ExternalSyntheticLambda1
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.CodeHighlighting$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CodeHighlighting.lambda$highlight$0(spannable);
+                    CodeHighlighting.lambda$highlight$3(spannable);
                 }
             });
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.CodeHighlighting$$ExternalSyntheticLambda2
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.CodeHighlighting$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                CodeHighlighting.lambda$highlight$1(arrayList, spannable);
+                CodeHighlighting.lambda$highlight$4(arrayList, spannable);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$highlight$0(Spannable spannable) {
+    public static /* synthetic */ void lambda$highlight$3(Spannable spannable) {
         ((LockedSpannableString) spannable).unlock();
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.emojiLoaded, new Object[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$highlight$1(ArrayList arrayList, Spannable spannable) {
+    public static /* synthetic */ void lambda$highlight$4(ArrayList arrayList, Spannable spannable) {
         long currentTimeMillis = System.currentTimeMillis();
         for (int i = 0; i < arrayList.size(); i++) {
             CachedToSpan cachedToSpan = (CachedToSpan) arrayList.get(i);
@@ -674,10 +755,10 @@ public class CodeHighlighting {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0139 A[Catch: Exception -> 0x0135, TryCatch #7 {Exception -> 0x0135, blocks: (B:82:0x0131, B:71:0x0139, B:73:0x013e), top: B:81:0x0131 }] */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x013e A[Catch: Exception -> 0x0135, TRY_LEAVE, TryCatch #7 {Exception -> 0x0135, blocks: (B:82:0x0131, B:71:0x0139, B:73:0x013e), top: B:81:0x0131 }] */
-    /* JADX WARN: Removed duplicated region for block: B:80:? A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x0131 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x016d A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0175 A[Catch: Exception -> 0x0171, TryCatch #10 {Exception -> 0x0171, blocks: (B:101:0x016d, B:90:0x0175, B:92:0x017a), top: B:100:0x016d }] */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x017a A[Catch: Exception -> 0x0171, TRY_LEAVE, TryCatch #10 {Exception -> 0x0171, blocks: (B:101:0x016d, B:90:0x0175, B:92:0x017a), top: B:100:0x016d }] */
+    /* JADX WARN: Removed duplicated region for block: B:99:? A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -687,6 +768,7 @@ public class CodeHighlighting {
         BufferedInputStream bufferedInputStream;
         BufferedInputStream bufferedInputStream2;
         GZIPInputStream gZIPInputStream2;
+        long currentTimeMillis;
         BufferedInputStream bufferedInputStream3;
         BufferedInputStream bufferedInputStream4;
         1 r1 = null;
@@ -695,141 +777,152 @@ public class CodeHighlighting {
         GZIPInputStream gZIPInputStream3 = null;
         try {
             try {
-                long currentTimeMillis = System.currentTimeMillis();
+                currentTimeMillis = System.currentTimeMillis();
                 inputStream = ApplicationLoader.applicationContext.getAssets().open("codelng.gzip");
+            } catch (Exception e) {
+                FileLog.e(e);
+                return;
+            }
+        } catch (Exception e2) {
+            e = e2;
+            inputStream = null;
+            bufferedInputStream = null;
+        } catch (Throwable th) {
+            th = th;
+            gZIPInputStream = null;
+            inputStream = null;
+        }
+        try {
+            gZIPInputStream2 = new GZIPInputStream(inputStream, 65536);
+            try {
+                bufferedInputStream4 = new BufferedInputStream(gZIPInputStream2, 65536);
+            } catch (Exception e3) {
+                e = e3;
+                bufferedInputStream3 = null;
+            } catch (Throwable th2) {
+                th = th2;
+                bufferedInputStream2 = null;
+            }
+            try {
+                StreamReader streamReader = new StreamReader(bufferedInputStream4);
+                HashMap hashMap = new HashMap();
+                int readUint8 = streamReader.readUint8();
+                for (int i = 0; i < readUint8; i++) {
+                    int readUint82 = streamReader.readUint8();
+                    int readUint83 = streamReader.readUint8();
+                    String[] strArr = new String[readUint83];
+                    for (int i2 = 0; i2 < readUint83; i2++) {
+                        strArr[i2] = streamReader.readString();
+                    }
+                    hashMap.put(Integer.valueOf(readUint82), strArr);
+                }
+                int readUint16 = streamReader.readUint16();
+                ParsedPattern[] parsedPatternArr = new ParsedPattern[readUint16];
+                for (int i3 = 0; i3 < readUint16; i3++) {
+                    parsedPatternArr[i3] = new ParsedPattern();
+                    int readUint84 = streamReader.readUint8();
+                    ParsedPattern parsedPattern = parsedPatternArr[i3];
+                    parsedPattern.multiline = (readUint84 & 1) != 0;
+                    parsedPattern.caseInsensitive = (readUint84 & 2) != 0;
+                    parsedPattern.pattern = streamReader.readString();
+                }
+                if (compiledPatterns == null) {
+                    compiledPatterns = new HashMap<>();
+                }
+                if (languages == null) {
+                    languages = new HashSet<>();
+                }
+                int i4 = 0;
+                while (i4 < readUint8) {
+                    int readUint85 = streamReader.readUint8();
+                    TokenPattern[] readTokens = readTokens(streamReader, parsedPatternArr, hashMap);
+                    String[] strArr2 = (String[]) hashMap.get(Integer.valueOf(readUint85));
+                    int length = strArr2.length;
+                    int i5 = 0;
+                    while (i5 < length) {
+                        compiledPatterns.put(strArr2[i5], readTokens);
+                        i5++;
+                        streamReader = streamReader;
+                    }
+                    StreamReader streamReader2 = streamReader;
+                    if (strArr2.length > 0 && !"plain".equals(strArr2[0]) && !strArr2[0].endsWith("like") && !strArr2[0].startsWith("markup")) {
+                        languages.add(strArr2[0]);
+                    }
+                    i4++;
+                    streamReader = streamReader2;
+                }
+                FileLog.d("[CodeHighlighter] Successfully read " + readUint8 + " languages, " + readUint16 + " patterns in " + (System.currentTimeMillis() - currentTimeMillis) + "ms from codelng.gzip");
+                gZIPInputStream2.close();
+                bufferedInputStream4.close();
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+            } catch (Exception e4) {
+                e = e4;
+                bufferedInputStream3 = bufferedInputStream4;
+                gZIPInputStream3 = gZIPInputStream2;
+                bufferedInputStream = bufferedInputStream3;
                 try {
-                    gZIPInputStream2 = new GZIPInputStream(inputStream, 65536);
-                    try {
-                        bufferedInputStream4 = new BufferedInputStream(gZIPInputStream2, 65536);
-                    } catch (Exception e) {
-                        e = e;
-                        bufferedInputStream3 = null;
-                    } catch (Throwable th) {
-                        th = th;
-                        bufferedInputStream2 = null;
+                    FileLog.e(e);
+                    if (gZIPInputStream3 != null) {
+                        gZIPInputStream3.close();
                     }
-                    try {
-                        StreamReader streamReader = new StreamReader(bufferedInputStream4);
-                        HashMap hashMap = new HashMap();
-                        int readUint8 = streamReader.readUint8();
-                        for (int i = 0; i < readUint8; i++) {
-                            int readUint82 = streamReader.readUint8();
-                            int readUint83 = streamReader.readUint8();
-                            String[] strArr = new String[readUint83];
-                            for (int i2 = 0; i2 < readUint83; i2++) {
-                                strArr[i2] = streamReader.readString();
-                            }
-                            hashMap.put(Integer.valueOf(readUint82), strArr);
-                        }
-                        int readUint16 = streamReader.readUint16();
-                        ParsedPattern[] parsedPatternArr = new ParsedPattern[readUint16];
-                        for (int i3 = 0; i3 < readUint16; i3++) {
-                            parsedPatternArr[i3] = new ParsedPattern();
-                            int readUint84 = streamReader.readUint8();
-                            ParsedPattern parsedPattern = parsedPatternArr[i3];
-                            parsedPattern.multiline = (readUint84 & 1) != 0;
-                            parsedPattern.caseInsensitive = (readUint84 & 2) != 0;
-                            parsedPattern.pattern = streamReader.readString();
-                        }
-                        if (compiledPatterns == null) {
-                            compiledPatterns = new HashMap<>();
-                        }
-                        for (int i4 = 0; i4 < readUint8; i4++) {
-                            int readUint85 = streamReader.readUint8();
-                            TokenPattern[] readTokens = readTokens(streamReader, parsedPatternArr, hashMap);
-                            String[] strArr2 = (String[]) hashMap.get(Integer.valueOf(readUint85));
-                            int length = strArr2.length;
-                            int i5 = 0;
-                            while (i5 < length) {
-                                compiledPatterns.put(strArr2[i5], readTokens);
-                                i5++;
-                                streamReader = streamReader;
-                            }
-                        }
-                        FileLog.d("[CodeHighlighter] Successfully read " + readUint8 + " languages, " + readUint16 + " patterns in " + (System.currentTimeMillis() - currentTimeMillis) + "ms from codelng.gzip");
-                        gZIPInputStream2.close();
-                        bufferedInputStream4.close();
-                        if (inputStream != null) {
-                            inputStream.close();
-                        }
-                    } catch (Exception e2) {
-                        e = e2;
-                        bufferedInputStream3 = bufferedInputStream4;
-                        gZIPInputStream3 = gZIPInputStream2;
-                        bufferedInputStream = bufferedInputStream3;
-                        try {
-                            FileLog.e(e);
-                            if (gZIPInputStream3 != null) {
-                                gZIPInputStream3.close();
-                            }
-                            if (bufferedInputStream != null) {
-                                bufferedInputStream.close();
-                            }
-                            if (inputStream != null) {
-                                inputStream.close();
-                            }
-                        } catch (Throwable th2) {
-                            th = th2;
-                            gZIPInputStream = gZIPInputStream3;
-                            r1 = bufferedInputStream;
-                            bufferedInputStream2 = r1;
-                            gZIPInputStream2 = gZIPInputStream;
-                            Throwable th3 = th;
-                            if (gZIPInputStream2 != null) {
-                                try {
-                                    gZIPInputStream2.close();
-                                } catch (Exception e3) {
-                                    FileLog.e(e3);
-                                    throw th3;
-                                }
-                            }
-                            if (bufferedInputStream2 != null) {
-                                bufferedInputStream2.close();
-                            }
-                            if (inputStream != null) {
-                                inputStream.close();
-                                throw th3;
-                            }
-                            throw th3;
-                        }
-                    } catch (Throwable th4) {
-                        th = th4;
-                        bufferedInputStream2 = bufferedInputStream4;
-                        Throwable th32 = th;
-                        if (gZIPInputStream2 != null) {
-                        }
-                        if (bufferedInputStream2 != null) {
-                        }
-                        if (inputStream != null) {
-                        }
-                    }
-                } catch (Exception e4) {
-                    e = e4;
-                    bufferedInputStream = null;
-                } catch (Throwable th5) {
-                    th = th5;
-                    gZIPInputStream = null;
-                    bufferedInputStream2 = r1;
-                    gZIPInputStream2 = gZIPInputStream;
-                    Throwable th322 = th;
-                    if (gZIPInputStream2 != null) {
-                    }
-                    if (bufferedInputStream2 != null) {
+                    if (bufferedInputStream != null) {
+                        bufferedInputStream.close();
                     }
                     if (inputStream != null) {
+                        inputStream.close();
                     }
+                } catch (Throwable th3) {
+                    th = th3;
+                    gZIPInputStream = gZIPInputStream3;
+                    r1 = bufferedInputStream;
+                    bufferedInputStream2 = r1;
+                    gZIPInputStream2 = gZIPInputStream;
+                    Throwable th4 = th;
+                    if (gZIPInputStream2 != null) {
+                        try {
+                            gZIPInputStream2.close();
+                        } catch (Exception e5) {
+                            FileLog.e(e5);
+                            throw th4;
+                        }
+                    }
+                    if (bufferedInputStream2 != null) {
+                        bufferedInputStream2.close();
+                    }
+                    if (inputStream != null) {
+                        inputStream.close();
+                        throw th4;
+                    }
+                    throw th4;
                 }
-            } catch (Exception e5) {
-                FileLog.e(e5);
+            } catch (Throwable th5) {
+                th = th5;
+                bufferedInputStream2 = bufferedInputStream4;
+                Throwable th42 = th;
+                if (gZIPInputStream2 != null) {
+                }
+                if (bufferedInputStream2 != null) {
+                }
+                if (inputStream != null) {
+                }
             }
         } catch (Exception e6) {
             e = e6;
-            inputStream = null;
             bufferedInputStream = null;
         } catch (Throwable th6) {
             th = th6;
             gZIPInputStream = null;
-            inputStream = null;
+            bufferedInputStream2 = r1;
+            gZIPInputStream2 = gZIPInputStream;
+            Throwable th422 = th;
+            if (gZIPInputStream2 != null) {
+            }
+            if (bufferedInputStream2 != null) {
+            }
+            if (inputStream != null) {
+            }
         }
     }
 

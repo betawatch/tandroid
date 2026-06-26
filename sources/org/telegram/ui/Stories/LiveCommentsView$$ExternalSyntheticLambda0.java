@@ -3,7 +3,7 @@ package org.telegram.ui.Stories;
 import java.util.Comparator;
 import org.telegram.ui.Stories.LiveCommentsView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class LiveCommentsView$$ExternalSyntheticLambda0 implements Comparator {
     public final /* synthetic */ LiveCommentsView f$0;
 

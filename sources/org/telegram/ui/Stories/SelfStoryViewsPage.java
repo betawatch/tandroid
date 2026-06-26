@@ -88,7 +88,7 @@ import org.telegram.ui.Stories.StoriesListPlaceProvider;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 import org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class SelfStoryViewsPage extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private int TOP_PADDING;
     private boolean checkAutoscroll;

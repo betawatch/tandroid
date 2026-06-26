@@ -133,7 +133,7 @@ public abstract class SelectorSearchCell extends ScrollView {
         this.editText.setHandlesColor(Theme.getColor(i, resourcesProvider));
         this.editText.setCursorWidth(1.5f);
         EditTextBoldCursor editTextBoldCursor3 = this.editText;
-        editTextBoldCursor3.setInputType(editTextBoldCursor3.getInputType() | NotificationCenter.liveStoryUpdated);
+        editTextBoldCursor3.setInputType(editTextBoldCursor3.getInputType() | 176);
         this.editText.setSingleLine(true);
         this.editText.setBackgroundDrawable(null);
         this.editText.setVerticalScrollBarEnabled(false);

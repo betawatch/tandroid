@@ -14,7 +14,7 @@ import org.telegram.ui.Components.Reactions.ReactionImageHolder;
 import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Stories.recorder.Weather;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StoryWidgetsImageDecorator extends ImageReceiver.Decorator {
     ArrayList drawingObjects;
     float imageH;

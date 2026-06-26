@@ -93,7 +93,7 @@ import org.telegram.ui.Stars.StarsReactionsSheet;
 import org.telegram.ui.Stories.LiveCommentsView;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class LiveCommentsView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private final UniversalAdapter adapter;
     private boolean allowTouches;
@@ -1915,9 +1915,9 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             }
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:44:0x022d  */
-        /* JADX WARN: Removed duplicated region for block: B:53:0x0276  */
-        /* JADX WARN: Removed duplicated region for block: B:70:0x0355  */
+        /* JADX WARN: Removed duplicated region for block: B:44:0x022e  */
+        /* JADX WARN: Removed duplicated region for block: B:53:0x0277  */
+        /* JADX WARN: Removed duplicated region for block: B:70:0x0357  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */

@@ -49,7 +49,7 @@ import org.telegram.ui.GradientClip;
 import org.telegram.ui.web.WebActionBar;
 import org.telegram.ui.web.WebInstantView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class WebActionBar extends FrameLayout {
     private ValueAnimator addressAnimator;
     public int addressBackgroundColor;

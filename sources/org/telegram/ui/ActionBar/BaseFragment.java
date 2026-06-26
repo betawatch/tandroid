@@ -373,6 +373,50 @@ public abstract class BaseFragment {
         this.inTransitionAnimation = false;
         this.arguments = bundle;
         this.classGuid = ConnectionsManager.generateClassGuid();
+        Bulletin.addDelegate(this, new Bulletin.Delegate() { // from class: org.telegram.ui.ActionBar.BaseFragment.1
+            @Override // org.telegram.ui.Components.Bulletin.Delegate
+            public /* synthetic */ boolean allowLayoutChanges() {
+                return Bulletin.Delegate.-CC.$default$allowLayoutChanges(this);
+            }
+
+            @Override // org.telegram.ui.Components.Bulletin.Delegate
+            public /* synthetic */ boolean bottomOffsetAnimated() {
+                return Bulletin.Delegate.-CC.$default$bottomOffsetAnimated(this);
+            }
+
+            @Override // org.telegram.ui.Components.Bulletin.Delegate
+            public /* synthetic */ boolean clipWithGradient(int i) {
+                return Bulletin.Delegate.-CC.$default$clipWithGradient(this, i);
+            }
+
+            @Override // org.telegram.ui.Components.Bulletin.Delegate
+            public /* synthetic */ int getTopOffset(int i) {
+                return Bulletin.Delegate.-CC.$default$getTopOffset(this, i);
+            }
+
+            @Override // org.telegram.ui.Components.Bulletin.Delegate
+            public /* synthetic */ void onBottomOffsetChange(float f) {
+                Bulletin.Delegate.-CC.$default$onBottomOffsetChange(this, f);
+            }
+
+            @Override // org.telegram.ui.Components.Bulletin.Delegate
+            public /* synthetic */ void onHide(Bulletin bulletin) {
+                Bulletin.Delegate.-CC.$default$onHide(this, bulletin);
+            }
+
+            @Override // org.telegram.ui.Components.Bulletin.Delegate
+            public /* synthetic */ void onShow(Bulletin bulletin) {
+                Bulletin.Delegate.-CC.$default$onShow(this, bulletin);
+            }
+
+            @Override // org.telegram.ui.Components.Bulletin.Delegate
+            public int getBottomOffset(int i) {
+                if (BaseFragment.this.isSupportEdgeToEdge()) {
+                    return AndroidUtilities.navigationBarHeight;
+                }
+                return 0;
+            }
+        });
     }
 
     public void setCurrentAccount(int i) {
@@ -1067,7 +1111,7 @@ public abstract class BaseFragment {
         iNavigationLayoutArr[0].setIsSheet(true);
         LaunchActivity.instance.sheetFragmentsStack.add(iNavigationLayoutArr[0]);
         baseFragment.onTransitionAnimationStart(true, false);
-        1 r15 = new 1(getParentActivity(), true, baseFragment.getResourceProvider(), bottomSheetParams, iNavigationLayoutArr, baseFragment, r13);
+        2 r15 = new 2(getParentActivity(), true, baseFragment.getResourceProvider(), bottomSheetParams, iNavigationLayoutArr, baseFragment, r13);
         final BottomSheet[] bottomSheetArr = {r15};
         if (bottomSheetParams != null) {
             r15.setAllowNestedScroll(bottomSheetParams.allowNestedScroll);
@@ -1084,7 +1128,7 @@ public abstract class BaseFragment {
         return bottomSheetArr[0];
     }
 
-    class 1 extends BottomSheet {
+    class 2 extends BottomSheet {
         final /* synthetic */ INavigationLayout[] val$actionBarLayout;
         final /* synthetic */ BottomSheet[] val$bottomSheet;
         final /* synthetic */ BaseFragment val$fragment;
@@ -1096,7 +1140,7 @@ public abstract class BaseFragment {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        1(Context context, boolean z, Theme.ResourcesProvider resourcesProvider, final BottomSheetParams bottomSheetParams, INavigationLayout[] iNavigationLayoutArr, final BaseFragment baseFragment, BottomSheet[] bottomSheetArr) {
+        2(Context context, boolean z, Theme.ResourcesProvider resourcesProvider, final BottomSheetParams bottomSheetParams, INavigationLayout[] iNavigationLayoutArr, final BaseFragment baseFragment, BottomSheet[] bottomSheetArr) {
             super(context, z, resourcesProvider);
             this.val$params = bottomSheetParams;
             this.val$actionBarLayout = iNavigationLayoutArr;
@@ -1113,10 +1157,10 @@ public abstract class BaseFragment {
             view.setPadding(i, 0, i, 0);
             this.containerView = iNavigationLayoutArr[0].getView();
             setApplyBottomPadding(false);
-            setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ActionBar.BaseFragment$1$$ExternalSyntheticLambda0
+            setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ActionBar.BaseFragment$2$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    BaseFragment.1.lambda$new$0(BaseFragment.this, bottomSheetParams, dialogInterface);
+                    BaseFragment.2.lambda$new$0(BaseFragment.this, bottomSheetParams, dialogInterface);
                 }
             });
         }

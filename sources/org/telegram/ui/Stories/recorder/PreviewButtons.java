@@ -37,7 +37,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Stories.recorder.PreviewButtons;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PreviewButtons extends FrameLayout {
     private ValueAnimator appearAnimator;
     private float appearT;

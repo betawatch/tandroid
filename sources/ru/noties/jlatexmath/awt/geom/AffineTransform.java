@@ -2,7 +2,7 @@ package ru.noties.jlatexmath.awt.geom;
 
 import android.graphics.Canvas;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AffineTransform implements Cloneable {
     private final Canvas canvas;
     private final AffineTransform parent;

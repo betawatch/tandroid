@@ -48,7 +48,7 @@ import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.Stories.recorder.MultipleStoriesSelector;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class MultipleStoriesSelector extends FrameLayout {
     private AnimatedFloat animatedHint;
     private final BlurringShader.StoryBlurDrawer backgroundBlur;

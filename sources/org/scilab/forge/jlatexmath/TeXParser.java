@@ -291,7 +291,7 @@ public class TeXParser {
         ((ArrayOfAtoms) this.formula).addRow();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x054c  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x054f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -765,8 +765,8 @@ public class TeXParser {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0072  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0078  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0073  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0079  */
     /* JADX WARN: Removed duplicated region for block: B:28:0x0059  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

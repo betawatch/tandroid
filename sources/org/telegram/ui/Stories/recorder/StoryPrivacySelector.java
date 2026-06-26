@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class StoryPrivacySelector extends View {
     private static StoryPrivacyBottomSheet.StoryPrivacy read(AbstractSerializedData abstractSerializedData) {
         int readInt32 = abstractSerializedData.readInt32(true);

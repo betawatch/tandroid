@@ -1,6 +1,6 @@
 package org.webrtc;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class Dav1dDecoder extends WrappedNativeVideoDecoder {
     static native long nativeCreateDecoder();
 

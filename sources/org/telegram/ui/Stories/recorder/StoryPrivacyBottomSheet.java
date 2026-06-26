@@ -107,7 +107,7 @@ import org.telegram.ui.Stories.DarkThemeResourceProvider;
 import org.telegram.ui.Stories.StoriesController;
 import org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StoryPrivacyBottomSheet extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
     private int activePage;
     private boolean allowComments;
@@ -4255,7 +4255,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
             this.editText.setHandlesColor(Theme.getColor(i, resourcesProvider));
             this.editText.setCursorWidth(1.5f);
             EditTextBoldCursor editTextBoldCursor3 = this.editText;
-            editTextBoldCursor3.setInputType(editTextBoldCursor3.getInputType() | NotificationCenter.liveStoryUpdated);
+            editTextBoldCursor3.setInputType(editTextBoldCursor3.getInputType() | 176);
             this.editText.setSingleLine(true);
             this.editText.setBackgroundDrawable(null);
             this.editText.setVerticalScrollBarEnabled(false);

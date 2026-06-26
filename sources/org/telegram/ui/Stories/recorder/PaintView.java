@@ -157,7 +157,7 @@ import org.telegram.ui.Stories.recorder.StoryRecorder;
 import org.telegram.ui.Stories.recorder.Weather;
 import org.telegram.ui.WrappedResourceProvider;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements IPhotoPaintView, PaintToolsView.Delegate, EntityView.EntityViewDelegate, PaintTextOptionsView.Delegate, SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate, StoryRecorder.Touchable {
     private float baseScale;
     private Bitmap bitmapToEdit;

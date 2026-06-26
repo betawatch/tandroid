@@ -37,6 +37,7 @@ import org.telegram.ui.Cells.GraySectionCell;
 import org.telegram.ui.Cells.HeaderCell;
 import org.telegram.ui.Cells.NotificationsCheckCell;
 import org.telegram.ui.Cells.ProfileSearchCell;
+import org.telegram.ui.Cells.RadioButtonCell;
 import org.telegram.ui.Cells.SlideIntChooseView;
 import org.telegram.ui.Cells.TextCell;
 import org.telegram.ui.Cells.TextCheckCell;
@@ -194,12 +195,9 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
         if (reorderSectionId < 0 || reorderSectionId != reorderSectionId2) {
             return;
         }
-        UItem uItem = (UItem) this.items.get(i);
-        UItem uItem2 = (UItem) this.items.get(i2);
         boolean hasDivider = hasDivider(i);
         boolean hasDivider2 = hasDivider(i2);
-        this.items.set(i, uItem2);
-        this.items.set(i2, uItem);
+        this.items.add(i2, (UItem) this.items.remove(i));
         notifyItemMoved(i, i2);
         if (hasDivider(i2) != hasDivider) {
             notifyItemChanged(i2, 3);
@@ -345,6 +343,7 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
             case 41:
             case 42:
             case 43:
+            case 44:
                 return true;
             case -2:
             case -1:
@@ -515,7 +514,6 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                         view = new GraySectionCell(this.context, this.resourcesProvider);
                         break;
                     }
-                    break;
                 case 32:
                     view = new ProfileSearchCell(this.context);
                     break;
@@ -547,6 +545,9 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     break;
                 case 43:
                     view = new TextSettingsCell(this.context, this.resourcesProvider);
+                    break;
+                case 44:
+                    view = new RadioButtonCell(this.context);
                     break;
             }
         }
@@ -580,9 +581,11 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x01cf  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0223  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x020f  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x0268  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x026b  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0245  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0207  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0259  */
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -977,13 +980,13 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                                 } else if (obj8 instanceof TLRPC.User) {
                                     str = UserObject.getUserName((TLRPC.User) obj8);
                                 }
-                                CharSequence charSequence4 = charSequence;
                                 String str2 = str;
                                 boolean z5 = item.locked;
                                 Object obj9 = item.object2;
                                 profileSearchCell.allowBotOpenButton(z5, obj9 instanceof Utilities.Callback ? (Utilities.Callback) obj9 : null);
                                 profileSearchCell.setRectangularAvatar(item.red);
-                                profileSearchCell.setData(obj8, null, str2, charSequence4, false, false);
+                                CharSequence charSequence4 = item.subtext;
+                                profileSearchCell.setData(obj8, null, str2, charSequence4 == null ? charSequence4 : charSequence, false, false);
                                 profileSearchCell.setChecked(item.checked, false);
                                 profileSearchCell.useSeparator = hasDivider;
                                 break;
@@ -992,13 +995,13 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                         charSequence = "";
                         if (!(obj8 instanceof TLRPC.Chat)) {
                         }
-                        CharSequence charSequence42 = charSequence;
                         String str22 = str;
                         boolean z52 = item.locked;
                         Object obj92 = item.object2;
                         profileSearchCell.allowBotOpenButton(z52, obj92 instanceof Utilities.Callback ? (Utilities.Callback) obj92 : null);
                         profileSearchCell.setRectangularAvatar(item.red);
-                        profileSearchCell.setData(obj8, null, str22, charSequence42, false, false);
+                        CharSequence charSequence42 = item.subtext;
+                        profileSearchCell.setData(obj8, null, str22, charSequence42 == null ? charSequence42 : charSequence, false, false);
                         profileSearchCell.setChecked(item.checked, false);
                         profileSearchCell.useSeparator = hasDivider;
                     } else {
@@ -1006,26 +1009,26 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                             charSequence = LocaleController.formatPluralStringSpaced("BotUsers", i3);
                             if (!(obj8 instanceof TLRPC.Chat)) {
                             }
-                            CharSequence charSequence422 = charSequence;
                             String str222 = str;
                             boolean z522 = item.locked;
                             Object obj922 = item.object2;
                             profileSearchCell.allowBotOpenButton(z522, obj922 instanceof Utilities.Callback ? (Utilities.Callback) obj922 : null);
                             profileSearchCell.setRectangularAvatar(item.red);
-                            profileSearchCell.setData(obj8, null, str222, charSequence422, false, false);
+                            CharSequence charSequence422 = item.subtext;
+                            profileSearchCell.setData(obj8, null, str222, charSequence422 == null ? charSequence422 : charSequence, false, false);
                             profileSearchCell.setChecked(item.checked, false);
                             profileSearchCell.useSeparator = hasDivider;
                         }
                         charSequence = "";
                         if (!(obj8 instanceof TLRPC.Chat)) {
                         }
-                        CharSequence charSequence4222 = charSequence;
                         String str2222 = str;
                         boolean z5222 = item.locked;
                         Object obj9222 = item.object2;
                         profileSearchCell.allowBotOpenButton(z5222, obj9222 instanceof Utilities.Callback ? (Utilities.Callback) obj9222 : null);
                         profileSearchCell.setRectangularAvatar(item.red);
-                        profileSearchCell.setData(obj8, null, str2222, charSequence4222, false, false);
+                        CharSequence charSequence4222 = item.subtext;
+                        profileSearchCell.setData(obj8, null, str2222, charSequence4222 == null ? charSequence4222 : charSequence, false, false);
                         profileSearchCell.setChecked(item.checked, false);
                         profileSearchCell.useSeparator = hasDivider;
                     }
@@ -1070,6 +1073,12 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                 case 40:
                     final TextCheckCell2 textCheckCell2 = (TextCheckCell2) viewHolder.itemView;
                     textCheckCell2.setTextAndCheck(item.text.toString(), item.checked, hasDivider, textCheckCell2.id == item.id);
+                    textCheckCell2.getCheckBox().setDrawIconType(item.intValue);
+                    Switch checkBox = textCheckCell2.getCheckBox();
+                    int i10 = item.intValue == 0 ? Theme.key_switchTrack : Theme.key_fill_RedNormal;
+                    int i11 = Theme.key_switchTrackChecked;
+                    int i12 = Theme.key_windowBackgroundWhite;
+                    checkBox.setColors(i10, i11, i12, i12);
                     textCheckCell2.id = item.id;
                     textCheckCell2.setIcon(item.locked ? R.drawable.permission_locked : 0);
                     if (itemViewType == 40) {
@@ -1105,6 +1114,11 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                         }
                     }
                     textSettingsCell.setIcon(item.iconResId);
+                    break;
+                case 44:
+                    RadioButtonCell radioButtonCell = (RadioButtonCell) viewHolder.itemView;
+                    radioButtonCell.setTextAndValue(item.text.toString(), item.textValue.toString(), hasDivider, item.checked);
+                    radioButtonCell.itemId = item.id;
                     break;
             }
         }
@@ -1206,7 +1220,7 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
         UItem.UItemFactory findFactory;
         int itemViewType = viewHolder.getItemViewType();
         UItem item = getItem(viewHolder.getAdapterPosition());
-        if (itemViewType < UItem.factoryViewTypeStartsWith ? itemViewType == 3 || itemViewType == 5 || itemViewType == 6 || itemViewType == 30 || itemViewType == 4 || itemViewType == 10 || itemViewType == 11 || itemViewType == 12 || itemViewType == 17 || itemViewType == 16 || itemViewType == 29 || itemViewType == 25 || itemViewType == 27 || itemViewType == 32 || itemViewType == 33 || itemViewType == 35 || itemViewType == 36 || itemViewType == 37 || itemViewType == 41 || itemViewType == 39 || itemViewType == 40 || itemViewType == 38 : (findFactory = UItem.findFactory(itemViewType)) != null && findFactory.isClickable()) {
+        if (itemViewType < UItem.factoryViewTypeStartsWith ? itemViewType == 3 || itemViewType == 5 || itemViewType == 6 || itemViewType == 30 || itemViewType == 4 || itemViewType == 10 || itemViewType == 44 || itemViewType == 11 || itemViewType == 12 || itemViewType == 17 || itemViewType == 16 || itemViewType == 29 || itemViewType == 25 || itemViewType == 27 || itemViewType == 32 || itemViewType == 33 || itemViewType == 35 || itemViewType == 36 || itemViewType == 37 || itemViewType == 41 || itemViewType == 39 || itemViewType == 40 || itemViewType == 38 : (findFactory = UItem.findFactory(itemViewType)) != null && findFactory.isClickable()) {
             if (item == null || item.enabled) {
                 return true;
             }

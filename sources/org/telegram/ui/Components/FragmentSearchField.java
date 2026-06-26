@@ -32,7 +32,6 @@ import me.vkryl.android.animator.FactorAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
 import org.telegram.ui.ActionBar.Theme;
@@ -107,7 +106,7 @@ public class FragmentSearchField extends FrameLayout implements FactorAnimator.T
         this.editText = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 15.0f);
         editTextBoldCursor.setCursorWidth(1.5f);
-        editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | NotificationCenter.liveStoryUpdated);
+        editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | 176);
         editTextBoldCursor.setSingleLine(true);
         editTextBoldCursor.setBackground(null);
         editTextBoldCursor.setVerticalScrollBarEnabled(false);
@@ -490,9 +489,9 @@ public class FragmentSearchField extends FrameLayout implements FactorAnimator.T
         for (int i2 = 0; i2 < arrayList.size(); i2++) {
             FiltersView.MediaFilterData mediaFilterData = (FiltersView.MediaFilterData) arrayList.get(i2);
             if (mediaFilterData.reaction != null) {
-                searchFilterView = new ActionBarMenuItem.ReactionFilterView(getContext(), this.resourcesProvider, true);
+                searchFilterView = new ActionBarMenuItem.ReactionFilterView(getContext(), this.resourcesProvider, false);
             } else {
-                searchFilterView = new ActionBarMenuItem.SearchFilterView(getContext(), this.resourcesProvider, true);
+                searchFilterView = new ActionBarMenuItem.SearchFilterView(getContext(), this.resourcesProvider, false);
             }
             searchFilterView.setData(mediaFilterData);
             searchFilterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentSearchField$$ExternalSyntheticLambda0

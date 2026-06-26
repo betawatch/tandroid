@@ -252,7 +252,7 @@ public class BotDownloads {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* JADX WARN: Code restructure failed: missing block: B:36:0x00b3, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:36:0x00b4, code lost:
         
             if (0 == 0) goto L33;
          */

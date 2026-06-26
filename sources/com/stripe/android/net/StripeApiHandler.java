@@ -129,8 +129,8 @@ public abstract class StripeApiHandler {
         return httpURLConnection;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0095  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0026 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0096  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0027 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

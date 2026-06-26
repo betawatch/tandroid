@@ -3929,6 +3929,12 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
 
     private void dispatchApplyWindowInsetsInternal(View view, WindowInsetsCompat windowInsetsCompat) {
         if (this.isLayersLayout) {
+            if ((view instanceof LayoutContainer) && ((LayoutContainer) view).isSupportEdgeToEdge) {
+                int i = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.ime()).bottom;
+                View view2 = getParent() instanceof View ? (View) getParent() : null;
+                ViewCompat.dispatchApplyWindowInsets(view, new WindowInsetsCompat.Builder(WindowInsetsCompat.CONSUMED).setInsets(WindowInsetsCompat.Type.ime(), Insets.of(0, 0, 0, Math.max(0, i - (view2 != null ? Math.max(0, view2.getHeight() - getBottom()) : 0)))).build());
+                return;
+            }
             ViewCompat.dispatchApplyWindowInsets(view, WindowInsetsCompat.CONSUMED);
             return;
         }
@@ -3936,10 +3942,10 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         Insets insets2 = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.ime() | WindowInsetsCompat.Type.displayCutout());
         if (view instanceof BottomSheetTabs) {
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-            int i = marginLayoutParams.bottomMargin;
-            int i2 = insets.bottom;
-            if (i != i2) {
-                marginLayoutParams.bottomMargin = i2;
+            int i2 = marginLayoutParams.bottomMargin;
+            int i3 = insets.bottom;
+            if (i2 != i3) {
+                marginLayoutParams.bottomMargin = i3;
                 view.requestLayout();
                 return;
             }
@@ -3949,16 +3955,16 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
             LayoutContainer layoutContainer = (LayoutContainer) view;
             int bottomTabsHeight = getBottomTabsHeight(false);
-            int i3 = bottomTabsHeight > 0 ? insets.bottom + bottomTabsHeight : 0;
+            int i4 = bottomTabsHeight > 0 ? insets.bottom + bottomTabsHeight : 0;
             if (layoutContainer.isSupportEdgeToEdge) {
-                if (marginLayoutParams2.bottomMargin != i3) {
-                    marginLayoutParams2.bottomMargin = i3;
+                if (marginLayoutParams2.bottomMargin != i4) {
+                    marginLayoutParams2.bottomMargin = i4;
                     view.requestLayout();
                 }
                 ViewCompat.dispatchApplyWindowInsets(view, windowInsetsCompat.inset(0, 0, 0, marginLayoutParams2.bottomMargin));
                 return;
             }
-            int max = Math.max(i3, insets2.bottom);
+            int max = Math.max(i4, insets2.bottom);
             if (marginLayoutParams2.bottomMargin != max) {
                 marginLayoutParams2.bottomMargin = max;
                 view.requestLayout();

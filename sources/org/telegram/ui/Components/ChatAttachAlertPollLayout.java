@@ -72,7 +72,7 @@ import org.telegram.ui.Cells.TextCell;
 import org.telegram.ui.Cells.TextCheckCell;
 import org.telegram.ui.Cells.TextInfoPrivacyCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda324;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda270;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.ChatActivityEnterViewAnimatedIconView;
 import org.telegram.ui.Components.ChatAttachAlert;
@@ -3603,7 +3603,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             }
         });
         ScrimOptions scrimOptions = new ScrimOptions(getContext(), this.resourcesProvider);
-        add.setOnDismiss(new ChatActivity$$ExternalSyntheticLambda324(scrimOptions));
+        add.setOnDismiss(new ChatActivity$$ExternalSyntheticLambda270(scrimOptions));
         add.setMinWidth(AndroidUtilities.dp(185.0f));
         add.setupSelectors();
         scrimOptions.setItemOptions(add);
@@ -3782,7 +3782,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         });
         chatAttachAlert.getPhotoLayout().loadGalleryPhotos();
         chatAttachAlert.setMaxSelectedPhotos(1, true);
-        chatAttachAlert.enablePollAttachMode(i, i2);
+        chatAttachAlert.enablePollAttachMode(i2);
         chatAttachAlert.setLocationActivityDelegate(new ChatAttachAlertLocationLayout.LocationActivityDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda23
             @Override // org.telegram.ui.Components.ChatAttachAlertLocationLayout.LocationActivityDelegate
             public final void didSelectLocation(TLRPC.MessageMedia messageMedia, int i3, boolean z2, int i4, long j) {

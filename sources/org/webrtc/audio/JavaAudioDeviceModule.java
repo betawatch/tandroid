@@ -11,7 +11,7 @@ import org.webrtc.Logging;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.audio.AudioDeviceModule;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class JavaAudioDeviceModule implements AudioDeviceModule {
     private static final String TAG = "JavaAudioDeviceModule";
     private final WebRtcAudioRecord audioInput;

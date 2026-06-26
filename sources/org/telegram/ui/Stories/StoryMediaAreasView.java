@@ -56,7 +56,7 @@ import org.telegram.ui.Stories.recorder.HintView2;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 import org.telegram.ui.Stories.recorder.Weather;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class StoryMediaAreasView extends FrameLayout implements View.OnClickListener {
     private final Path clipPath;
     private final Paint cutPaint;
@@ -216,22 +216,22 @@ public abstract class StoryMediaAreasView extends FrameLayout implements View.On
         setMeasuredDimension(size, size2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:47:0x021b  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0227  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x024d  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0259  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0276  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0287  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x02a4  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x02a7  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x0308  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x031b  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x02a9  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x028a  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x025c  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0250  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x022a  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x021e  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x021c  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0228  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x024e  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x025a  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0277  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0288  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x02a5  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x02a8  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0309  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x031c  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x02aa  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x028b  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x025d  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0251  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x022b  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x021f  */
     @Override // android.view.View.OnClickListener
     /*
         Code decompiled incorrectly, please refer to instructions dump.

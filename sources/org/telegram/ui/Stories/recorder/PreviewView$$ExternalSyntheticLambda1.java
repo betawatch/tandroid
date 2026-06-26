@@ -1,6 +1,6 @@
 package org.telegram.ui.Stories.recorder;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class PreviewView$$ExternalSyntheticLambda1 implements Runnable {
     public final /* synthetic */ PreviewView f$0;
 

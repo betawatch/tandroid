@@ -54,7 +54,7 @@ import org.telegram.ui.Components.Scroller;
 import org.telegram.ui.Components.Text;
 import org.telegram.ui.Stories.recorder.TimelineView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TimelineView extends View {
     private Runnable askExactSeek;
     private StaticLayout audioAuthor;
@@ -4184,8 +4184,8 @@ public class TimelineView extends View {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* JADX WARN: Removed duplicated region for block: B:37:0x00ff  */
-        /* JADX WARN: Removed duplicated region for block: B:46:0x00fa A[SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:37:0x0101  */
+        /* JADX WARN: Removed duplicated region for block: B:46:0x00fc A[SYNTHETIC] */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */

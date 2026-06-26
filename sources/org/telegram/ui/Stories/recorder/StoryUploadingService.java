@@ -14,7 +14,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.UserConfig;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StoryUploadingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private NotificationCompat.Builder builder;
     private int currentAccount = -1;

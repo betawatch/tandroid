@@ -4,6 +4,8 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 
 /* loaded from: classes3.dex */
 public abstract class DrawableUtils {
@@ -33,6 +35,17 @@ public abstract class DrawableUtils {
         }
     }
 
+    public static void drawCommunityCardDrawable(Canvas canvas, Drawable drawable, float f, float f2, float f3) {
+        float dpf2 = f - AndroidUtilities.dpf2(36.0f);
+        float dpf22 = f2 - AndroidUtilities.dpf2(36.0f);
+        float dpf23 = f3 / AndroidUtilities.dpf2(72.0f);
+        setBounds(drawable, dpf2 + AndroidUtilities.dpf2(9.66f), dpf22 + AndroidUtilities.dpf2(4.66f), 53);
+        canvas.save();
+        canvas.scale(dpf23, dpf23, f, f2);
+        drawable.draw(canvas);
+        canvas.restore();
+    }
+
     public static void setBounds(Drawable drawable, float f, float f2, int i) {
         if (drawable == null) {
             return;
@@ -40,12 +53,25 @@ public abstract class DrawableUtils {
         setBounds(drawable, f, f2, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), i);
     }
 
+    public static void setBounds(ImageReceiver imageReceiver, float f, float f2, int i, int i2, int i3) {
+        if (imageReceiver != null) {
+            Rect rect = tmpRect;
+            setBounds(rect, f, f2, i, i2, i3);
+            imageReceiver.setImageCoords(rect);
+        }
+    }
+
     public static void setBounds(Drawable drawable, float f, float f2, int i, int i2, int i3) {
+        if (drawable != null) {
+            Rect rect = tmpRect;
+            setBounds(rect, f, f2, i, i2, i3);
+            drawable.setBounds(rect);
+        }
+    }
+
+    public static void setBounds(Rect rect, float f, float f2, int i, int i2, int i3) {
         int round;
         int round2;
-        if (drawable == null) {
-            return;
-        }
         int i4 = i3 & 7;
         if (i4 == 3) {
             round = Math.round(f);
@@ -62,6 +88,6 @@ public abstract class DrawableUtils {
         } else {
             round2 = Math.round(f2 - (i2 / 2.0f));
         }
-        drawable.setBounds(round, round2, i + round, i2 + round2);
+        rect.set(round, round2, i + round, i2 + round2);
     }
 }

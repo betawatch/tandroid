@@ -2,7 +2,7 @@ package org.webrtc;
 
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface NetworkChangeDetector {
 
     public enum ConnectionType {

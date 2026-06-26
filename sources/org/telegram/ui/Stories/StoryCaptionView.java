@@ -81,7 +81,7 @@ import org.telegram.ui.Stories.StoriesController;
 import org.telegram.ui.Stories.StoryCaptionView;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StoryCaptionView extends NestedScrollView implements ItemOptions.ScrimView {
     private Method abortAnimatedScrollMethod;
     private float backgroundAlpha;

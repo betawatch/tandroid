@@ -51,6 +51,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import org.json.JSONObject;
+import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.BotFullscreenButtons;
@@ -91,7 +92,7 @@ import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ArticleViewer;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda350;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda392;
 import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -220,7 +221,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     private static int shownLockedBots = 0;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openOptions$33() {
+    public static /* synthetic */ void lambda$openOptions$34() {
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheetTabsOverlay.Sheet
@@ -265,7 +266,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         } else {
             formatString = LocaleController.formatString(R.string.BotAttachMenuShortcatAddedAttach, user.first_name);
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda54
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda55
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$showJustAddedBulletin$1(formatString);
@@ -275,7 +276,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showJustAddedBulletin$1(final String str) {
-        showBulletin(new Utilities.CallbackReturn() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda55
+        showBulletin(new Utilities.CallbackReturn() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda56
             @Override // org.telegram.messenger.Utilities.CallbackReturn
             public final Object run(Object obj) {
                 Bulletin lambda$showJustAddedBulletin$0;
@@ -323,7 +324,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             tL_inputReplyToMonoForum.monoforum_peer_id = MessagesController.getInstance(this.currentAccount).getInputPeer(this.monoforumTopicId);
             tL_messages_prolongWebView.flags |= 1;
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_prolongWebView, new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda47
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_prolongWebView, new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda48
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 BotWebViewSheet.this.lambda$new$5(tLObject, tL_error);
@@ -333,7 +334,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$5(TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda48
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda49
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$new$4(tL_error);
@@ -347,7 +348,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             return;
         }
         if (tL_error != null) {
-            lambda$openOptions$40();
+            lambda$openOptions$41();
         } else {
             AndroidUtilities.runOnUIThread(this.pollRunnable, 60000L);
         }
@@ -507,7 +508,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         this.dimPaint = new Paint();
         this.backgroundPaint = new Paint(1);
         this.actionBarPaint = new Paint(1);
-        this.pollRunnable = new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda13
+        this.pollRunnable = new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$new$6();
@@ -654,7 +655,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         AndroidUtilities.setNavigationBarColor((Dialog) this, color, false);
         WindowView windowView = new WindowView(context);
         this.windowView = windowView;
-        windowView.setDelegate(new SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda18
+        windowView.setDelegate(new SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda19
             @Override // org.telegram.ui.Components.SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate
             public final void onSizeChanged(int i2, boolean z) {
                 BotWebViewSheet.this.lambda$new$7(i2, z);
@@ -681,13 +682,13 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             }
         };
         this.botButtons = botButtons;
-        botButtons.setOnButtonClickListener(new Utilities.Callback() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda19
+        botButtons.setOnButtonClickListener(new Utilities.Callback() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda20
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 BotWebViewSheet.this.lambda$new$8((Boolean) obj);
             }
         });
-        this.botButtons.setOnResizeListener(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda20
+        this.botButtons.setOnResizeListener(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda21
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$new$9();
@@ -706,19 +707,19 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         this.fullscreenBlur = z;
         this.fullscreenButtons.setParentRenderNode(z ? this.swipeContainer.getRenderNode() : null);
         this.windowView.addView(this.fullscreenButtons, LayoutHelper.createFrame(-1, -1, 119));
-        this.fullscreenButtons.setOnCloseClickListener(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda21
+        this.fullscreenButtons.setOnCloseClickListener(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda22
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$new$10();
             }
         });
-        this.fullscreenButtons.setOnCollapseClickListener(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda22
+        this.fullscreenButtons.setOnCollapseClickListener(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda23
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$new$11();
             }
         });
-        this.fullscreenButtons.setOnMenuClickListener(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda23
+        this.fullscreenButtons.setOnMenuClickListener(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda24
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.openOptions();
@@ -772,32 +773,32 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         };
         this.progressView = webProgressView;
         windowView6.addView(webProgressView, LayoutHelper.createFrame(-1, -2.0f, 81, 0.0f, 0.0f, 0.0f, 0.0f));
-        this.webViewContainer.setWebViewProgressListener(new Consumer() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda24
+        this.webViewContainer.setWebViewProgressListener(new Consumer() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda25
             @Override // androidx.core.util.Consumer
             public final void accept(Object obj) {
                 BotWebViewSheet.this.lambda$new$13((Float) obj);
             }
         });
         this.swipeContainer.addView(this.webViewContainer, LayoutHelper.createFrame(-1, -1.0f));
-        this.swipeContainer.setScrollListener(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda25
+        this.swipeContainer.setScrollListener(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda26
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$new$14();
             }
         });
-        this.swipeContainer.setScrollEndListener(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda26
+        this.swipeContainer.setScrollEndListener(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda27
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$new$15();
             }
         });
-        this.swipeContainer.setDelegate(new ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer.Delegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda14
+        this.swipeContainer.setDelegate(new ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer.Delegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda15
             @Override // org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer.Delegate
             public final void onDismiss(boolean z2) {
                 BotWebViewSheet.this.lambda$new$16(z2);
             }
         });
-        this.swipeContainer.setIsKeyboardVisible(new GenericProvider() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda15
+        this.swipeContainer.setIsKeyboardVisible(new GenericProvider() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda16
             @Override // org.telegram.messenger.GenericProvider
             public final Object provide(Object obj) {
                 Boolean lambda$new$17;
@@ -816,12 +817,12 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         if (bottomSheetTabs != null) {
             final WindowView windowView7 = this.windowView;
             Objects.requireNonNull(windowView7);
-            bottomSheetTabs.listen(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda16
+            bottomSheetTabs.listen(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda17
                 @Override // java.lang.Runnable
                 public final void run() {
                     BotWebViewSheet.WindowView.this.invalidate();
                 }
-            }, new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda17
+            }, new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda18
                 @Override // java.lang.Runnable
                 public final void run() {
                     BotWebViewSheet.this.relayout();
@@ -945,7 +946,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$3$$ExternalSyntheticLambda10
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BotWebViewSheet.this.lambda$openOptions$40();
+                    BotWebViewSheet.this.lambda$openOptions$41();
                 }
             });
         }
@@ -1207,7 +1208,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                     BaseFragment lastFragment = ((LaunchActivity) BotWebViewSheet.this.parentActivity).getActionBarLayout().getLastFragment();
                     if (lastFragment instanceof ChatActivity) {
                         ((ChatActivity) lastFragment).getChatActivityEnterView().setFieldText("@" + UserObject.getPublicUsername(user) + " " + str);
-                        BotWebViewSheet.this.lambda$openOptions$40();
+                        BotWebViewSheet.this.lambda$openOptions$41();
                         return;
                     }
                     return;
@@ -1370,7 +1371,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         if (f.floatValue() == 1.0f) {
             ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(200L);
             duration.setInterpolator(CubicBezierInterpolator.DEFAULT);
-            duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda31
+            duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda32
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     BotWebViewSheet.this.lambda$new$12(valueAnimator);
@@ -1704,7 +1705,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         try {
             JSONObject jSONObject = new JSONObject();
             final int blendOver = Theme.blendOver(-16777216, Theme.getColor(Theme.key_dialogBackground, resourcesProvider));
-            Utilities.CallbackReturn callbackReturn = new Utilities.CallbackReturn() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda28
+            Utilities.CallbackReturn callbackReturn = new Utilities.CallbackReturn() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda29
                 @Override // org.telegram.messenger.Utilities.CallbackReturn
                 public final Object run(Object obj) {
                     Object lambda$makeThemeParams$19;
@@ -1947,7 +1948,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                 tL_dataJSON.data = makeThemeParams.toString();
                 tL_messages_requestWebView.flags |= 4;
             }
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_requestWebView, new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda9
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_requestWebView, new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda10
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     BotWebViewSheet.this.lambda$requestWebView$28(tLObject, tL_error);
@@ -1978,7 +1979,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                 tL_messages_requestSimpleWebView.start_param = webViewRequestProps.startParam;
                 tL_messages_requestSimpleWebView.flags |= 16;
             }
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_requestSimpleWebView, new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda8
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_requestSimpleWebView, new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda9
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     BotWebViewSheet.this.lambda$requestWebView$26(tLObject, tL_error);
@@ -2001,7 +2002,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                 tL_dataJSON3.data = makeThemeParams.toString();
                 tL_messages_requestWebView2.flags |= 4;
             }
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_requestWebView2, new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda7
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_requestWebView2, new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda8
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     BotWebViewSheet.this.lambda$requestWebView$24(tLObject, tL_error);
@@ -2010,78 +2011,95 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.webViewResultSent);
             return;
         }
-        if (i2 != 3) {
-            if (i2 != 4) {
-                return;
-            }
-            TLRPC.TL_messages_requestMainWebView tL_messages_requestMainWebView = new TLRPC.TL_messages_requestMainWebView();
-            tL_messages_requestMainWebView.bot = MessagesController.getInstance(this.currentAccount).getInputUser(webViewRequestProps.botId);
-            tL_messages_requestMainWebView.platform = "android";
+        if (i2 == 3) {
+            TLRPC.TL_messages_requestAppWebView tL_messages_requestAppWebView = new TLRPC.TL_messages_requestAppWebView();
+            TLRPC.TL_inputBotAppID tL_inputBotAppID = new TLRPC.TL_inputBotAppID();
+            TLRPC.BotApp botApp = webViewRequestProps.app;
+            tL_inputBotAppID.id = botApp.id;
+            tL_inputBotAppID.access_hash = botApp.access_hash;
+            tL_messages_requestAppWebView.app = tL_inputBotAppID;
+            tL_messages_requestAppWebView.write_allowed = webViewRequestProps.allowWrite;
+            tL_messages_requestAppWebView.platform = "android";
             if (baseFragment instanceof ChatActivity) {
                 ChatActivity chatActivity = (ChatActivity) baseFragment;
-                inputPeer2 = chatActivity.getCurrentUser() != null ? MessagesController.getInputPeer(chatActivity.getCurrentUser()) : MessagesController.getInputPeer(chatActivity.getCurrentChat());
+                inputPeer = chatActivity.getCurrentUser() != null ? MessagesController.getInputPeer(chatActivity.getCurrentUser()) : MessagesController.getInputPeer(chatActivity.getCurrentChat());
             } else {
-                inputPeer2 = MessagesController.getInstance(this.currentAccount).getInputPeer(webViewRequestProps.peerId);
+                inputPeer = MessagesController.getInputPeer(webViewRequestProps.botUser);
             }
-            tL_messages_requestMainWebView.peer = inputPeer2;
-            tL_messages_requestMainWebView.compact = webViewRequestProps.compact;
-            tL_messages_requestMainWebView.fullscreen = webViewRequestProps.fullscreen;
+            tL_messages_requestAppWebView.peer = inputPeer;
+            tL_messages_requestAppWebView.compact = webViewRequestProps.compact;
+            tL_messages_requestAppWebView.fullscreen = webViewRequestProps.fullscreen;
             if (!TextUtils.isEmpty(webViewRequestProps.startParam)) {
-                tL_messages_requestMainWebView.start_param = webViewRequestProps.startParam;
-                tL_messages_requestMainWebView.flags |= 2;
+                tL_messages_requestAppWebView.start_param = webViewRequestProps.startParam;
+                tL_messages_requestAppWebView.flags |= 2;
             }
             if (makeThemeParams != null) {
                 TLRPC.TL_dataJSON tL_dataJSON4 = new TLRPC.TL_dataJSON();
-                tL_messages_requestMainWebView.theme_params = tL_dataJSON4;
+                tL_messages_requestAppWebView.theme_params = tL_dataJSON4;
                 tL_dataJSON4.data = makeThemeParams.toString();
-                tL_messages_requestMainWebView.flags |= 1;
+                tL_messages_requestAppWebView.flags |= 4;
             }
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_requestMainWebView, new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda5
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_requestAppWebView, new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda7
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    BotWebViewSheet.this.lambda$requestWebView$32(tLObject, tL_error);
+                    BotWebViewSheet.this.lambda$requestWebView$30(tLObject, tL_error);
                 }
             }, 66);
             return;
         }
-        TLRPC.TL_messages_requestAppWebView tL_messages_requestAppWebView = new TLRPC.TL_messages_requestAppWebView();
-        TLRPC.TL_inputBotAppID tL_inputBotAppID = new TLRPC.TL_inputBotAppID();
-        TLRPC.BotApp botApp = webViewRequestProps.app;
-        tL_inputBotAppID.id = botApp.id;
-        tL_inputBotAppID.access_hash = botApp.access_hash;
-        tL_messages_requestAppWebView.app = tL_inputBotAppID;
-        tL_messages_requestAppWebView.write_allowed = webViewRequestProps.allowWrite;
-        tL_messages_requestAppWebView.platform = "android";
+        if (i2 != 4) {
+            if (i2 != 5) {
+                return;
+            }
+            TLRPC.TL_messages_requestChatJoinWebView tL_messages_requestChatJoinWebView = new TLRPC.TL_messages_requestChatJoinWebView();
+            tL_messages_requestChatJoinWebView.platform = "android";
+            tL_messages_requestChatJoinWebView.query_id = webViewRequestProps.queryId;
+            if (makeThemeParams != null) {
+                TLRPC.TL_dataJSON tL_dataJSON5 = new TLRPC.TL_dataJSON();
+                tL_messages_requestChatJoinWebView.theme_params = tL_dataJSON5;
+                tL_dataJSON5.data = makeThemeParams.toString();
+            }
+            ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_requestChatJoinWebView, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda5
+                @Override // org.telegram.messenger.Utilities.Callback2
+                public final void run(Object obj, Object obj2) {
+                    BotWebViewSheet.this.lambda$requestWebView$33((TLRPC.TL_webViewResultUrl) obj, (TLRPC.TL_error) obj2);
+                }
+            }, 66);
+            return;
+        }
+        TLRPC.TL_messages_requestMainWebView tL_messages_requestMainWebView = new TLRPC.TL_messages_requestMainWebView();
+        tL_messages_requestMainWebView.bot = MessagesController.getInstance(this.currentAccount).getInputUser(webViewRequestProps.botId);
+        tL_messages_requestMainWebView.platform = "android";
         if (baseFragment instanceof ChatActivity) {
             ChatActivity chatActivity2 = (ChatActivity) baseFragment;
-            inputPeer = chatActivity2.getCurrentUser() != null ? MessagesController.getInputPeer(chatActivity2.getCurrentUser()) : MessagesController.getInputPeer(chatActivity2.getCurrentChat());
+            inputPeer2 = chatActivity2.getCurrentUser() != null ? MessagesController.getInputPeer(chatActivity2.getCurrentUser()) : MessagesController.getInputPeer(chatActivity2.getCurrentChat());
         } else {
-            inputPeer = MessagesController.getInputPeer(webViewRequestProps.botUser);
+            inputPeer2 = MessagesController.getInstance(this.currentAccount).getInputPeer(webViewRequestProps.peerId);
         }
-        tL_messages_requestAppWebView.peer = inputPeer;
-        tL_messages_requestAppWebView.compact = webViewRequestProps.compact;
-        tL_messages_requestAppWebView.fullscreen = webViewRequestProps.fullscreen;
+        tL_messages_requestMainWebView.peer = inputPeer2;
+        tL_messages_requestMainWebView.compact = webViewRequestProps.compact;
+        tL_messages_requestMainWebView.fullscreen = webViewRequestProps.fullscreen;
         if (!TextUtils.isEmpty(webViewRequestProps.startParam)) {
-            tL_messages_requestAppWebView.start_param = webViewRequestProps.startParam;
-            tL_messages_requestAppWebView.flags |= 2;
+            tL_messages_requestMainWebView.start_param = webViewRequestProps.startParam;
+            tL_messages_requestMainWebView.flags |= 2;
         }
         if (makeThemeParams != null) {
-            TLRPC.TL_dataJSON tL_dataJSON5 = new TLRPC.TL_dataJSON();
-            tL_messages_requestAppWebView.theme_params = tL_dataJSON5;
-            tL_dataJSON5.data = makeThemeParams.toString();
-            tL_messages_requestAppWebView.flags |= 4;
+            TLRPC.TL_dataJSON tL_dataJSON6 = new TLRPC.TL_dataJSON();
+            tL_messages_requestMainWebView.theme_params = tL_dataJSON6;
+            tL_dataJSON6.data = makeThemeParams.toString();
+            tL_messages_requestMainWebView.flags |= 1;
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_requestAppWebView, new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda6
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_requestMainWebView, new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                BotWebViewSheet.this.lambda$requestWebView$30(tLObject, tL_error);
+                BotWebViewSheet.this.lambda$requestWebView$32(tLObject, tL_error);
             }
         }, 66);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$requestWebView$21(final TLRPC.UserFull userFull) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda30
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda31
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$requestWebView$20(userFull);
@@ -2106,7 +2124,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$requestWebView$24(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda32
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda33
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$requestWebView$23(tL_error, tLObject);
@@ -2125,7 +2143,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$requestWebView$26(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda46
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda47
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$requestWebView$25(tL_error, tLObject);
@@ -2144,7 +2162,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$requestWebView$28(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda27
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda28
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$requestWebView$27(tL_error, tLObject);
@@ -2163,7 +2181,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$requestWebView$30(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda41
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda42
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$requestWebView$29(tL_error, tLObject);
@@ -2182,7 +2200,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$requestWebView$32(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda45
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda46
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$requestWebView$31(tL_error, tLObject);
@@ -2195,6 +2213,15 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         WebViewRequestProps webViewRequestProps;
         if (tL_error == null && (webViewRequestProps = this.requestProps) != null) {
             webViewRequestProps.applyResponse(tLObject);
+            loadFromResponse();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$requestWebView$33(TLRPC.TL_webViewResultUrl tL_webViewResultUrl, TLRPC.TL_error tL_error) {
+        WebViewRequestProps webViewRequestProps;
+        if (tL_error == null && (webViewRequestProps = this.requestProps) != null) {
+            webViewRequestProps.applyResponse(tL_webViewResultUrl);
             loadFromResponse();
         }
     }
@@ -2225,21 +2252,21 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         this.fileItems.clear();
         if (botDownloads.hasFiles()) {
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda350(makeOptions));
+            makeSwipeback.add(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda392(makeOptions));
             makeSwipeback.addGap();
             Iterator it2 = botDownloads.getFiles().iterator();
             while (it2.hasNext()) {
                 BotDownloads.FileDownload fileDownload = (BotDownloads.FileDownload) it2.next();
-                this.fileItems.put(fileDownload, makeSwipeback.add(fileDownload.file_name, "", new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda33
+                this.fileItems.put(fileDownload, makeSwipeback.add(fileDownload.file_name, "", new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda34
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BotWebViewSheet.lambda$openOptions$33();
+                        BotWebViewSheet.lambda$openOptions$34();
                     }
                 }).getLast());
             }
             updateDownloadBulletin();
             makeSwipeback.setMinWidth(AndroidUtilities.dp(180.0f));
-            makeOptions.add(R.drawable.menu_download_round, LocaleController.getString(R.string.BotDownloads), new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda34
+            makeOptions.add(R.drawable.menu_download_round, LocaleController.getString(R.string.BotDownloads), new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda35
                 @Override // java.lang.Runnable
                 public final void run() {
                     ItemOptions.this.openSwipeback(makeSwipeback);
@@ -2247,35 +2274,35 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             });
             makeOptions.addGap();
         }
-        makeOptions.addIf(this.onVerifiedAge == null, R.drawable.msg_bot, LocaleController.getString(R.string.BotWebViewOpenBot), new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda35
-            @Override // java.lang.Runnable
-            public final void run() {
-                BotWebViewSheet.this.lambda$openOptions$35();
-            }
-        }).addIf(this.onVerifiedAge == null && this.hasSettings, R.drawable.msg_settings, LocaleController.getString(R.string.BotWebViewSettings), new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda36
+        makeOptions.addIf(this.onVerifiedAge == null, R.drawable.msg_bot, LocaleController.getString(R.string.BotWebViewOpenBot), new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda36
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$openOptions$36();
             }
-        }).add(R.drawable.msg_retry, LocaleController.getString(R.string.BotWebViewReloadPage), new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda37
+        }).addIf(this.onVerifiedAge == null && this.hasSettings, R.drawable.msg_settings, LocaleController.getString(R.string.BotWebViewSettings), new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda37
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$openOptions$37();
             }
-        }).addIf(this.onVerifiedAge == null && user != null && user.bot_has_main_app, R.drawable.msg_home, LocaleController.getString(R.string.AddShortcut), new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda38
+        }).add(R.drawable.msg_retry, LocaleController.getString(R.string.BotWebViewReloadPage), new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda38
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$openOptions$38();
             }
-        }).addIf(this.onVerifiedAge == null, R.drawable.menu_intro, LocaleController.getString(R.string.BotWebViewToS), new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda39
+        }).addIf(this.onVerifiedAge == null && user != null && user.bot_has_main_app, R.drawable.msg_home, LocaleController.getString(R.string.AddShortcut), new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda39
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewSheet.this.lambda$openOptions$39();
             }
-        }).addIf(this.onVerifiedAge == null && tL_attachMenuBot != null && (tL_attachMenuBot.show_in_side_menu || tL_attachMenuBot.show_in_attach_menu), R.drawable.msg_delete, LocaleController.getString(R.string.BotWebViewDeleteBot), new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda40
+        }).addIf(this.onVerifiedAge == null, R.drawable.menu_intro, LocaleController.getString(R.string.BotWebViewToS), new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda40
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewSheet.this.lambda$openOptions$41();
+                BotWebViewSheet.this.lambda$openOptions$40();
+            }
+        }).addIf(this.onVerifiedAge == null && tL_attachMenuBot != null && (tL_attachMenuBot.show_in_side_menu || tL_attachMenuBot.show_in_attach_menu), R.drawable.msg_delete, LocaleController.getString(R.string.BotWebViewDeleteBot), new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda41
+            @Override // java.lang.Runnable
+            public final void run() {
+                BotWebViewSheet.this.lambda$openOptions$42();
             }
         });
         if (this.actionBarColor != Theme.getColor(Theme.key_windowBackgroundWhite)) {
@@ -2297,7 +2324,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openOptions$35() {
+    public /* synthetic */ void lambda$openOptions$36() {
         Activity activity = this.parentActivity;
         if (activity instanceof LaunchActivity) {
             ((LaunchActivity) activity).lambda$runLinkRequest$100(ChatActivity.of(this.botId));
@@ -2306,12 +2333,12 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openOptions$36() {
+    public /* synthetic */ void lambda$openOptions$37() {
         this.webViewContainer.onSettingsButtonPressed();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openOptions$37() {
+    public /* synthetic */ void lambda$openOptions$38() {
         if (this.webViewContainer.getWebView() != null) {
             this.webViewContainer.getWebView().animate().cancel();
             this.webViewContainer.getWebView().animate().alpha(0.0f).start();
@@ -2325,21 +2352,21 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openOptions$38() {
+    public /* synthetic */ void lambda$openOptions$39() {
         MediaDataController.getInstance(this.currentAccount).installShortcut(this.botId, MediaDataController.SHORTCUT_TYPE_ATTACHED_BOT);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openOptions$39() {
+    public /* synthetic */ void lambda$openOptions$40() {
         Browser.openUrl(getContext(), LocaleController.getString(R.string.BotWebViewToSLink));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openOptions$41() {
+    public /* synthetic */ void lambda$openOptions$42() {
         deleteBot(this.currentAccount, this.botId, new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda50
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewSheet.this.lambda$openOptions$40();
+                BotWebViewSheet.this.lambda$openOptions$41();
             }
         });
     }
@@ -2427,10 +2454,10 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                 actionBarMenuSubItem.setRightIcon(0);
                 actionBarMenuSubItem.subtextView.setPadding(0, 0, 0, 0);
             }
-            actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda11
+            actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda12
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    BotWebViewSheet.this.lambda$updateDownloadBulletin$42(fileDownload, view);
+                    BotWebViewSheet.this.lambda$updateDownloadBulletin$43(fileDownload, view);
                 }
             });
         }
@@ -2439,7 +2466,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateDownloadBulletin$42(BotDownloads.FileDownload fileDownload, View view) {
+    public /* synthetic */ void lambda$updateDownloadBulletin$43(BotDownloads.FileDownload fileDownload, View view) {
         if (fileDownload.isDownloading()) {
             fileDownload.cancel();
         } else {
@@ -2533,23 +2560,23 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         if (tL_attachMenuBot == null) {
             return;
         }
-        new AlertDialog.Builder(LaunchActivity.getLastFragment().getContext()).setTitle(LocaleController.getString(R.string.BotRemoveFromMenuTitle)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotRemoveFromMenu, tL_attachMenuBot.short_name))).setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda49
+        new AlertDialog.Builder(LaunchActivity.getLastFragment().getContext()).setTitle(LocaleController.getString(R.string.BotRemoveFromMenuTitle)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotRemoveFromMenu, tL_attachMenuBot.short_name))).setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda51
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i2) {
-                BotWebViewSheet.lambda$deleteBot$45(i, j, tL_attachMenuBot, runnable, alertDialog, i2);
+                BotWebViewSheet.lambda$deleteBot$46(i, j, tL_attachMenuBot, runnable, alertDialog, i2);
             }
         }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$deleteBot$45(final int i, long j, TLRPC.TL_attachMenuBot tL_attachMenuBot, Runnable runnable, AlertDialog alertDialog, int i2) {
+    public static /* synthetic */ void lambda$deleteBot$46(final int i, long j, TLRPC.TL_attachMenuBot tL_attachMenuBot, Runnable runnable, AlertDialog alertDialog, int i2) {
         TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
         tL_messages_toggleBotInAttachMenu.bot = MessagesController.getInstance(i).getInputUser(j);
         tL_messages_toggleBotInAttachMenu.enabled = false;
-        ConnectionsManager.getInstance(i).sendRequest(tL_messages_toggleBotInAttachMenu, new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda52
+        ConnectionsManager.getInstance(i).sendRequest(tL_messages_toggleBotInAttachMenu, new RequestDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda53
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                BotWebViewSheet.lambda$deleteBot$44(i, tLObject, tL_error);
+                BotWebViewSheet.lambda$deleteBot$45(i, tLObject, tL_error);
             }
         }, 66);
         tL_attachMenuBot.show_in_side_menu = false;
@@ -2561,17 +2588,17 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$deleteBot$44(final int i, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda53
+    public static /* synthetic */ void lambda$deleteBot$45(final int i, TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda54
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewSheet.lambda$deleteBot$43(i);
+                BotWebViewSheet.lambda$deleteBot$44(i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$deleteBot$43(int i) {
+    public static /* synthetic */ void lambda$deleteBot$44(int i) {
         MediaDataController.getInstance(i).loadAttachMenuBots(false, true);
     }
 
@@ -2660,30 +2687,30 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
 
     @Override // android.app.Dialog, android.content.DialogInterface
     /* renamed from: dismiss, reason: merged with bridge method [inline-methods] */
-    public void lambda$openOptions$40() {
+    public void lambda$openOptions$41() {
         dismiss((Runnable) null);
     }
 
     public boolean onCheckDismissByUser() {
         if (this.needCloseConfirmation) {
             TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.botId));
-            AlertDialog create = new AlertDialog.Builder(getContext()).setTitle(user != null ? ContactsController.formatName(user.first_name, user.last_name) : null).setMessage(LocaleController.getString(R.string.BotWebViewChangesMayNotBeSaved)).setPositiveButton(LocaleController.getString(R.string.BotWebViewCloseAnyway), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda44
+            AlertDialog create = new AlertDialog.Builder(getContext()).setTitle(user != null ? ContactsController.formatName(user.first_name, user.last_name) : null).setMessage(LocaleController.getString(R.string.BotWebViewChangesMayNotBeSaved)).setPositiveButton(LocaleController.getString(R.string.BotWebViewCloseAnyway), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda45
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    BotWebViewSheet.this.lambda$onCheckDismissByUser$46(alertDialog, i);
+                    BotWebViewSheet.this.lambda$onCheckDismissByUser$47(alertDialog, i);
                 }
             }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).create();
             create.show();
             ((TextView) create.getButton(-1)).setTextColor(getColor(Theme.key_text_RedBold));
             return false;
         }
-        lambda$openOptions$40();
+        lambda$openOptions$41();
         return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onCheckDismissByUser$46(AlertDialog alertDialog, int i) {
-        lambda$openOptions$40();
+    public /* synthetic */ void lambda$onCheckDismissByUser$47(AlertDialog alertDialog, int i) {
+        lambda$openOptions$41();
     }
 
     public void dismiss(Runnable runnable) {
@@ -2725,10 +2752,10 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             BotButtons botButtons2 = this.botButtons;
             int totalHeight = height + (botButtons2 != null ? botButtons2.getTotalHeight() : 0);
             Rect rect = this.insets;
-            webViewSwipeContainer.stickTo(totalHeight + rect.top + rect.bottom + this.windowView.measureKeyboardHeight() + (isFullSize() ? AndroidUtilities.dp(200.0f) : 0), true, new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda12
+            webViewSwipeContainer.stickTo(totalHeight + rect.top + rect.bottom + this.windowView.measureKeyboardHeight() + (isFullSize() ? AndroidUtilities.dp(200.0f) : 0), true, new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda13
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BotWebViewSheet.this.lambda$dismiss$47(runnable);
+                    BotWebViewSheet.this.lambda$dismiss$48(runnable);
                 }
             });
         }
@@ -2736,7 +2763,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$dismiss$47(Runnable runnable) {
+    public /* synthetic */ void lambda$dismiss$48(Runnable runnable) {
         if (!this.superDismissed) {
             super.dismiss();
             this.superDismissed = true;
@@ -2776,10 +2803,10 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                 BotWebViewSheet.this.checkNavBarColor();
             }
         });
-        this.openAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda10
+        this.openAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda11
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                BotWebViewSheet.this.lambda$setOpen$48(valueAnimator2);
+                BotWebViewSheet.this.lambda$setOpen$49(valueAnimator2);
             }
         });
         this.openAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -2788,7 +2815,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setOpen$48(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$setOpen$49(ValueAnimator valueAnimator) {
         this.openedProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         checkNavBarColor();
     }
@@ -2797,7 +2824,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     public void didReceivedNotification(int i, int i2, Object... objArr) {
         if (i == NotificationCenter.webViewResultSent) {
             if (this.queryId == ((Long) objArr[0]).longValue()) {
-                lambda$openOptions$40();
+                lambda$openOptions$41();
                 return;
             }
             return;
@@ -2829,10 +2856,10 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(200L);
             this.backgroundColorAnimator = duration;
             duration.setInterpolator(CubicBezierInterpolator.DEFAULT);
-            this.backgroundColorAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda29
+            this.backgroundColorAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda30
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    BotWebViewSheet.this.lambda$setBackgroundColor$49(color, i, valueAnimator2);
+                    BotWebViewSheet.this.lambda$setBackgroundColor$50(color, i, valueAnimator2);
                 }
             });
             this.backgroundColorAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.bots.BotWebViewSheet.13
@@ -2863,7 +2890,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setBackgroundColor$49(int i, int i2, ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$setBackgroundColor$50(int i, int i2, ValueAnimator valueAnimator) {
         this.backgroundPaint.setColor(ColorUtils.blendARGB(i, i2, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
         updateActionBarColors();
         this.windowView.invalidate();
@@ -3028,10 +3055,10 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         if (z) {
             ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(200L);
             duration.setInterpolator(CubicBezierInterpolator.DEFAULT);
-            duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda42
+            duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda43
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    BotWebViewSheet.this.lambda$setNavigationBarColor$50(i2, i, valueAnimator);
+                    BotWebViewSheet.this.lambda$setNavigationBarColor$51(i2, i, valueAnimator);
                 }
             });
             duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.bots.BotWebViewSheet.16
@@ -3050,7 +3077,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setNavigationBarColor$50(int i, int i2, ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$setNavigationBarColor$51(int i, int i2, ValueAnimator valueAnimator) {
         this.navBarColor = ColorUtils.blendARGB(i, i2, ((Float) valueAnimator.getAnimatedValue()).floatValue());
         checkNavBarColor();
     }
@@ -3066,10 +3093,10 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         if (z2) {
             ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(200L);
             duration.setInterpolator(CubicBezierInterpolator.DEFAULT);
-            duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda43
+            duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda44
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    BotWebViewSheet.this.lambda$setActionBarColor$51(i2, i, botWebViewMenuContainer$ActionBarColorsAnimating, valueAnimator);
+                    BotWebViewSheet.this.lambda$setActionBarColor$52(i2, i, botWebViewMenuContainer$ActionBarColorsAnimating, valueAnimator);
                 }
             });
             duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.bots.BotWebViewSheet.17
@@ -3098,7 +3125,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setActionBarColor$51(int i, int i2, BotWebViewMenuContainer$ActionBarColorsAnimating botWebViewMenuContainer$ActionBarColorsAnimating, ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$setActionBarColor$52(int i, int i2, BotWebViewMenuContainer$ActionBarColorsAnimating botWebViewMenuContainer$ActionBarColorsAnimating, ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         this.actionBarColor = ColorUtils.blendARGB(i, i2, floatValue);
         checkNavBarColor();
@@ -3390,10 +3417,10 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             this.errorContainer = errorContainer;
             webViewSwipeContainer.addView(errorContainer, LayoutHelper.createFrame(-1, -1.0f));
             this.errorContainer.setTranslationY(-1.0f);
-            this.errorContainer.buttonView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda51
+            this.errorContainer.buttonView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda52
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    BotWebViewSheet.this.lambda$createErrorContainer$52(view);
+                    BotWebViewSheet.this.lambda$createErrorContainer$53(view);
                 }
             });
             this.errorContainer.setBackgroundColor(this.backgroundPaint.getColor());
@@ -3403,7 +3430,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createErrorContainer$52(View view) {
+    public /* synthetic */ void lambda$createErrorContainer$53(View view) {
         BotWebViewContainer.MyWebView webView = this.webViewContainer.getWebView();
         if (webView != null) {
             webView.reload();

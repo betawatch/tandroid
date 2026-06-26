@@ -130,7 +130,7 @@ public class MatroskaExtractor implements Extractor {
             case NotificationCenter.httpFileDidFailedLoad /* 136 */:
             case NotificationCenter.recordStarted /* 155 */:
             case NotificationCenter.recordResumed /* 159 */:
-            case NotificationCenter.liveStoryUpdated /* 176 */:
+            case 176:
             case NotificationCenter.configLoaded /* 179 */:
             case NotificationCenter.suggestedFiltersLoaded /* 186 */:
             case NotificationCenter.customStickerCreated /* 215 */:
@@ -510,7 +510,7 @@ public class MatroskaExtractor implements Extractor {
             case NotificationCenter.recordResumed /* 159 */:
                 getCurrentTrack(i).channelCount = (int) j;
                 return;
-            case NotificationCenter.liveStoryUpdated /* 176 */:
+            case 176:
                 getCurrentTrack(i).width = (int) j;
                 return;
             case NotificationCenter.configLoaded /* 179 */:

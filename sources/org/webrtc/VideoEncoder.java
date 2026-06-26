@@ -2,7 +2,7 @@ package org.webrtc;
 
 import org.webrtc.EncodedImage;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface VideoEncoder {
 
     public interface Callback {

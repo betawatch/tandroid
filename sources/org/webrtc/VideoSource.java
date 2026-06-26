@@ -3,7 +3,7 @@ package org.webrtc;
 import org.webrtc.VideoProcessor;
 import org.webrtc.VideoSink;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class VideoSource extends MediaSource {
     private final CapturerObserver capturerObserver;
     private boolean isCapturerRunning;

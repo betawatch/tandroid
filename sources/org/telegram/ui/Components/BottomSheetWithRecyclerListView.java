@@ -33,6 +33,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
     protected boolean actionBarIgnoreTouchEvents;
     protected AnimatedFloat actionBarSlideProgress;
     private ActionBarType actionBarType;
+    protected int additionalTitleX;
     private BaseFragment baseFragment;
     protected boolean centerTitle;
     protected boolean clipToActionBar;
@@ -731,7 +732,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
             this.actionBar.backButtonImageView.setPivotY(r6.getMeasuredHeight() / 2.0f);
             this.actionBar.backButtonImageView.setScaleY(f4);
             SimpleTextView titleTextView = this.actionBar.getTitleTextView();
-            titleTextView.setTranslationX(AndroidUtilities.lerp(AndroidUtilities.dp(21.0f) - titleTextView.getLeft(), 0.0f, f4));
+            titleTextView.setTranslationX(AndroidUtilities.lerp(AndroidUtilities.dp(21.0f) - titleTextView.getLeft(), 0.0f, f4) + this.additionalTitleX);
             if (this.centerTitle) {
                 titleTextView.setTranslationX(((this.actionBar.getMeasuredWidth() - titleTextView.getTextWidth()) / 2.0f) - titleTextView.getLeft());
             }

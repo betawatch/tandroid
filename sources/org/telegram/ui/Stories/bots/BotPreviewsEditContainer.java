@@ -73,7 +73,7 @@ import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 import org.telegram.ui.Stories.recorder.StoryRecorder;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class BotPreviewsEditContainer extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private static LongSparseArray attachedContainers;
     private static LongSparseArray cachedLists;

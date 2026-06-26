@@ -150,7 +150,7 @@ public class EditTextCell extends FrameLayout {
             @Override // org.telegram.ui.Components.EditTextCaption, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.EditTextEffects, android.widget.TextView, android.view.View
             protected void onDraw(Canvas canvas) {
                 canvas.save();
-                canvas.clipRect(getScrollX() + getPaddingLeft(), 0, (getScrollX() + getWidth()) - getPaddingRight(), getHeight());
+                canvas.clipRect(getScrollX() + getPaddingLeft(), getScrollY(), (getScrollX() + getWidth()) - getPaddingRight(), getScrollY() + getHeight());
                 super.onDraw(canvas);
                 canvas.restore();
             }

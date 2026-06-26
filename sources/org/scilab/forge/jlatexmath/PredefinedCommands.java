@@ -183,8 +183,8 @@ final class PredefinedCommands {
         MacroInfo.Commands.put("raisebox", new PredefMacroInfo(NotificationCenter.groupCallTypingsUpdated, 2, 2));
         MacroInfo.Commands.put("shadowbox", new PredefMacroInfo(NotificationCenter.didEndCall, 1));
         MacroInfo.Commands.put("ovalbox", new PredefMacroInfo(NotificationCenter.closeInCallActivity, 1));
-        MacroInfo.Commands.put("doublebox", new PredefMacroInfo(175, 1));
-        MacroInfo.Commands.put("phantom", new PredefMacroInfo(NotificationCenter.liveStoryUpdated, 1));
+        MacroInfo.Commands.put("doublebox", new PredefMacroInfo(NotificationCenter.groupCallVisibilityChanged, 1));
+        MacroInfo.Commands.put("phantom", new PredefMacroInfo(176, 1));
         MacroInfo.Commands.put("hphantom", new PredefMacroInfo(NotificationCenter.liveStoryMessageUpdate, 1));
         MacroInfo.Commands.put("vphantom", new PredefMacroInfo(NotificationCenter.appDidLogout, 1));
         MacroInfo.Commands.put("sp@breve", new PredefMacroInfo(NotificationCenter.configLoaded, 0));
@@ -235,8 +235,8 @@ final class PredefinedCommands {
         MacroInfo.Commands.put("ratio", new PredefMacroInfo(NotificationCenter.factCheckLoaded, 0));
         MacroInfo.Commands.put("smallfrowneq", new PredefMacroInfo(NotificationCenter.botStarsUpdated, 0));
         MacroInfo.Commands.put("geoprop", new PredefMacroInfo(NotificationCenter.botStarsTransactionsLoaded, 0));
-        MacroInfo.Commands.put("minuscolon", new PredefMacroInfo(227, 0));
-        MacroInfo.Commands.put("minuscoloncolon", new PredefMacroInfo(NotificationCenter.updateAllMessages, 0));
+        MacroInfo.Commands.put("minuscolon", new PredefMacroInfo(NotificationCenter.channelStarsUpdated, 0));
+        MacroInfo.Commands.put("minuscoloncolon", new PredefMacroInfo(228, 0));
         MacroInfo.Commands.put("simcolon", new PredefMacroInfo(NotificationCenter.starGiftsLoaded, 0));
         MacroInfo.Commands.put("simcoloncolon", new PredefMacroInfo(NotificationCenter.starUserGiftsLoaded, 0));
         MacroInfo.Commands.put("approxcolon", new PredefMacroInfo(NotificationCenter.starUserGiftCollectionsLoaded, 0));

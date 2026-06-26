@@ -34,7 +34,7 @@ public enum zzhy implements zzak {
     zzB(NotificationCenter.groupCallTypingsUpdated),
     zzC(NotificationCenter.didEndCall),
     zzD(NotificationCenter.closeInCallActivity),
-    zzE(175),
+    zzE(NotificationCenter.groupCallVisibilityChanged),
     zzF(NotificationCenter.activeAuctionsUpdated),
     zzG(NotificationCenter.conferenceEmojiUpdated),
     zzH(NotificationCenter.contentSettingsLoaded),

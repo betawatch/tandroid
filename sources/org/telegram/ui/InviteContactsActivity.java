@@ -715,7 +715,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             editTextBoldCursor.setHint(LocaleController.getString(R.string.Search));
             editTextBoldCursor.setTextSize(1, 15.0f);
             editTextBoldCursor.setCursorWidth(1.5f);
-            editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | NotificationCenter.liveStoryUpdated);
+            editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | 176);
             editTextBoldCursor.setSingleLine(true);
             editTextBoldCursor.setBackground(null);
             editTextBoldCursor.setVerticalScrollBarEnabled(false);

@@ -1,6 +1,6 @@
 package ru.noties.jlatexmath.awt.geom;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class Rectangle2D {
     public abstract float getHeight();
 

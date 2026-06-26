@@ -437,39 +437,71 @@ public class ImageLocation {
     }
 
     public static String getStrippedKey(Object obj, Object obj2, Object obj3) {
-        if ((obj instanceof TLRPC.WebPage) || ((obj instanceof MessageObject) && ((MessageObject) obj).type == 29)) {
-            if (obj2 instanceof ImageLocation) {
-                ImageLocation imageLocation = (ImageLocation) obj2;
-                Object obj4 = imageLocation.document;
-                if (obj4 == null && (obj4 = imageLocation.photoSize) == null) {
-                    TLRPC.Photo photo = imageLocation.photo;
-                    if (photo != null) {
-                        obj2 = photo;
+        TLRPC.Message message;
+        String strippedKeyInternal = getStrippedKeyInternal(obj, obj2, obj3);
+        if (BuildVars.LOGS_ENABLED && (obj instanceof MessageObject) && (message = ((MessageObject) obj).messageOwner) != null && message.rich_message != null) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("[richmedia] strippedKey=");
+            sb.append(strippedKeyInternal);
+            sb.append(" fullObject=");
+            sb.append(obj2 == null ? "null" : obj2.getClass().getSimpleName());
+            sb.append(" stripped=");
+            sb.append(obj3 != null ? obj3.getClass().getSimpleName() : "null");
+            FileLog.d(sb.toString());
+        }
+        return strippedKeyInternal;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x001a, code lost:
+    
+        if (r0.rich_message == null) goto L47;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private static String getStrippedKeyInternal(Object obj, Object obj2, Object obj3) {
+        if (!(obj instanceof TLRPC.WebPage)) {
+            if (obj instanceof MessageObject) {
+                MessageObject messageObject = (MessageObject) obj;
+                if (messageObject.type != 29) {
+                    TLRPC.Message message = messageObject.messageOwner;
+                    if (message != null) {
                     }
-                } else {
-                    obj2 = obj4;
                 }
             }
-            if (obj2 == null) {
-                return "stripped" + FileRefController.getKeyForParentObject(obj) + "_" + obj3;
-            }
-            if (obj2 instanceof TLRPC.Document) {
-                return "stripped" + FileRefController.getKeyForParentObject(obj) + "_" + ((TLRPC.Document) obj2).id;
-            }
-            if (obj2 instanceof TLRPC.Photo) {
-                return "stripped" + FileRefController.getKeyForParentObject(obj) + "_" + ((TLRPC.Photo) obj2).id;
-            }
-            if (obj2 instanceof TLRPC.PhotoSize) {
-                TLRPC.PhotoSize photoSize = (TLRPC.PhotoSize) obj2;
-                if (photoSize.location != null) {
-                    return "stripped" + FileRefController.getKeyForParentObject(obj) + "_" + photoSize.location.local_id + "_" + photoSize.location.volume_id;
+            return "stripped" + FileRefController.getKeyForParentObject(obj);
+        }
+        if (obj2 instanceof ImageLocation) {
+            ImageLocation imageLocation = (ImageLocation) obj2;
+            Object obj4 = imageLocation.document;
+            if (obj4 == null && (obj4 = imageLocation.photoSize) == null) {
+                TLRPC.Photo photo = imageLocation.photo;
+                if (photo != null) {
+                    obj2 = photo;
                 }
-                return "stripped" + FileRefController.getKeyForParentObject(obj);
+            } else {
+                obj2 = obj4;
             }
-            if (obj2 instanceof TLRPC.FileLocation) {
-                TLRPC.FileLocation fileLocation = (TLRPC.FileLocation) obj2;
-                return "stripped" + FileRefController.getKeyForParentObject(obj) + "_" + fileLocation.local_id + "_" + fileLocation.volume_id;
+        }
+        if (obj2 == null) {
+            return "stripped" + FileRefController.getKeyForParentObject(obj) + "_" + obj3;
+        }
+        if (obj2 instanceof TLRPC.Document) {
+            return "stripped" + FileRefController.getKeyForParentObject(obj) + "_" + ((TLRPC.Document) obj2).id;
+        }
+        if (obj2 instanceof TLRPC.Photo) {
+            return "stripped" + FileRefController.getKeyForParentObject(obj) + "_" + ((TLRPC.Photo) obj2).id;
+        }
+        if (obj2 instanceof TLRPC.PhotoSize) {
+            TLRPC.PhotoSize photoSize = (TLRPC.PhotoSize) obj2;
+            if (photoSize.location != null) {
+                return "stripped" + FileRefController.getKeyForParentObject(obj) + "_" + photoSize.location.local_id + "_" + photoSize.location.volume_id;
             }
+            return "stripped" + FileRefController.getKeyForParentObject(obj);
+        }
+        if (obj2 instanceof TLRPC.FileLocation) {
+            TLRPC.FileLocation fileLocation = (TLRPC.FileLocation) obj2;
+            return "stripped" + FileRefController.getKeyForParentObject(obj) + "_" + fileLocation.local_id + "_" + fileLocation.volume_id;
         }
         return "stripped" + FileRefController.getKeyForParentObject(obj);
     }

@@ -37,9 +37,9 @@ final class JobSupport$children$1 extends RestrictedSuspendLambda implements Fun
         return ((JobSupport$children$1) create(sequenceScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0069  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:10:0x006b -> B:6:0x0081). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:12:0x007e -> B:6:0x0081). Please report as a decompilation issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x006a  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:10:0x006c -> B:6:0x0082). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:12:0x007f -> B:6:0x0082). Please report as a decompilation issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.

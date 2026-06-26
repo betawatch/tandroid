@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class DarkThemeResourceProvider implements Theme.ResourcesProvider {
     Paint actionPaint;
     ColorFilter animatedEmojiColorFilter;

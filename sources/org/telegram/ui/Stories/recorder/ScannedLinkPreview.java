@@ -39,7 +39,7 @@ import org.telegram.ui.Components.Text;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Stories.recorder.ScannedLinkPreview;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ScannedLinkPreview extends View {
     private final AnimatedFloat animatedAlpha;
     private final Paint backgroundPaint;

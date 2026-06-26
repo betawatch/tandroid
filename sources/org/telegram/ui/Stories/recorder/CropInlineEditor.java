@@ -25,7 +25,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Paint.Views.EntityView;
 import org.telegram.ui.Components.Paint.Views.PhotoView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class CropInlineEditor extends FrameLayout {
     private final AnimatedFloat animatedMirror;
     private final AnimatedFloat animatedOrientation;

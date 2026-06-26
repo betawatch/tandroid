@@ -22,7 +22,7 @@ import org.telegram.ui.Components.Crop.CropView;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class CropEditor extends FrameLayout {
     private final AnimatedFloat animatedMirror;
     private final AnimatedFloat animatedOrientation;

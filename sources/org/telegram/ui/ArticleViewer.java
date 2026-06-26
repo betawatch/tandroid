@@ -105,6 +105,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BotGuardHelper;
+import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.CodeHighlighting;
 import org.telegram.messenger.DownloadController;
@@ -566,6 +567,11 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
         private int lastLineBoundRight = -1;
         public int emojiCacheType = 0;
 
+        @Override // org.telegram.ui.Cells.TextSelectionHelper.TextLayoutBlock
+        public /* synthetic */ Rect getSelectionBounds() {
+            return TextSelectionHelper.TextLayoutBlock.-CC.$default$getSelectionBounds(this);
+        }
+
         public DrawingText(IArticleViewer iArticleViewer) {
             this.parent = iArticleViewer;
         }
@@ -678,7 +684,7 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
             view.invalidate();
         }
 
-        @Override // org.telegram.ui.Components.TableLayout.CellText
+        @Override // org.telegram.ui.Cells.TextSelectionHelper.TextLayoutBlock
         public CharSequence getText() {
             return this.textLayout.getText();
         }
@@ -7097,7 +7103,7 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$joinChannel$62(int i, TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView, TLRPC.Chat chat) {
         MessagesController.getInstance(i).putUsers(tL_chatInviteJoinResultWebView.users, false);
-        BotGuardHelper.getInstance(i).openGuardBotWebApp(-chat.id, tL_chatInviteJoinResultWebView.bot_id, tL_chatInviteJoinResultWebView.webview);
+        BotGuardHelper.getInstance(i).openGuardBotWebApp(-chat.id, tL_chatInviteJoinResultWebView.bot_id, tL_chatInviteJoinResultWebView.query_id);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -7279,11 +7285,36 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
         }
 
         public static boolean isVideo(TL_iv.RichMessage richMessage, TL_iv.PageBlock pageBlock) {
-            TLRPC.Document documentWithId;
-            if (!(pageBlock instanceof TL_iv.pageBlockVideo) || (documentWithId = getDocumentWithId(richMessage, ((TL_iv.pageBlockVideo) pageBlock).video_id)) == null) {
+            String str;
+            if (!(pageBlock instanceof TL_iv.pageBlockVideo)) {
                 return false;
             }
-            return MessageObject.isVideoDocument(documentWithId);
+            TL_iv.pageBlockVideo pageblockvideo = (TL_iv.pageBlockVideo) pageBlock;
+            TLRPC.Document documentWithId = getDocumentWithId(richMessage, pageblockvideo.video_id);
+            if (BuildVars.LOGS_ENABLED) {
+                StringBuilder sb = new StringBuilder();
+                if (documentWithId != null) {
+                    Iterator<TLRPC.DocumentAttribute> it = documentWithId.attributes.iterator();
+                    while (it.hasNext()) {
+                        sb.append(it.next().getClass().getSimpleName());
+                        sb.append(",");
+                    }
+                }
+                StringBuilder sb2 = new StringBuilder();
+                sb2.append("[richmedia] WebPageUtils.isVideo video_id=");
+                sb2.append(pageblockvideo.video_id);
+                if (documentWithId == null) {
+                    str = " doc=NOT_FOUND documents.size=" + richMessage.documents.size();
+                } else {
+                    str = " doc=" + documentWithId.id + " mime=" + documentWithId.mime_type + " attrs=[" + ((Object) sb) + "] isVideoDocument=" + MessageObject.isVideoDocument(documentWithId) + " isGifDocument=" + MessageObject.isGifDocument(documentWithId);
+                }
+                sb2.append(str);
+                FileLog.d(sb2.toString());
+            }
+            if (documentWithId != null) {
+                return MessageObject.isVideoDocument(documentWithId);
+            }
+            return false;
         }
 
         public static boolean isVideo(TLRPC.WebPage webPage, TL_iv.PageBlock pageBlock) {

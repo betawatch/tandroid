@@ -61,7 +61,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.StoriesController;
 import org.telegram.ui.Stories.StoriesUtilities;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class StoriesUtilities {
     public static GradientTools closeFriendsGradientTools;
     public static GradientTools errorGradientTools;

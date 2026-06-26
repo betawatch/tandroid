@@ -20,7 +20,7 @@ import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraSession;
 import org.webrtc.VideoSink;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 class Camera2Session implements CameraSession {
     private static final String TAG = "Camera2Session";
     private final Context applicationContext;

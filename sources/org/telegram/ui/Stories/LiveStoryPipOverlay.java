@@ -57,7 +57,7 @@ import org.telegram.ui.Stories.LiveStoryPipOverlay;
 import org.telegram.ui.Stories.StoryViewer;
 import org.telegram.ui.Stories.recorder.LivePlayerView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class LiveStoryPipOverlay implements NotificationCenter.NotificationCenterDelegate, IPipSourceDelegate {
     private static final FloatPropertyCompat PIP_X_PROPERTY = new SimpleFloatPropertyCompat("pipX", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.Stories.LiveStoryPipOverlay$$ExternalSyntheticLambda0
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Getter

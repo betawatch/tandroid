@@ -21,7 +21,7 @@ import org.webrtc.ThreadUtils;
 import org.webrtc.VideoEncoder;
 import org.webrtc.VideoFrame;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 class HardwareVideoEncoder implements VideoEncoder {
     private static final int DEQUEUE_OUTPUT_BUFFER_TIMEOUT_US = 100000;
     private static final int MAX_ENCODER_Q_SIZE = 2;
@@ -164,8 +164,8 @@ class HardwareVideoEncoder implements VideoEncoder {
         return initEncodeInternal();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x009c  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00b3 A[Catch: IllegalStateException -> 0x008b, IllegalArgumentException -> 0x008e, TryCatch #3 {IllegalArgumentException -> 0x008e, IllegalStateException -> 0x008b, blocks: (B:9:0x0029, B:11:0x0063, B:15:0x0073, B:23:0x009e, B:24:0x00b3, B:25:0x0082, B:28:0x0091, B:31:0x00c2, B:33:0x00cc, B:34:0x00d2, B:36:0x00d8, B:37:0x00e0, B:39:0x00fe, B:40:0x011a), top: B:8:0x0029 }] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x009b  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00b2 A[Catch: IllegalStateException -> 0x008a, IllegalArgumentException -> 0x008d, TryCatch #3 {IllegalArgumentException -> 0x008d, IllegalStateException -> 0x008a, blocks: (B:9:0x0029, B:11:0x0063, B:15:0x0072, B:23:0x009d, B:24:0x00b2, B:25:0x0081, B:28:0x0090, B:31:0x00c0, B:33:0x00ca, B:34:0x00cf, B:36:0x00d5, B:37:0x00dc, B:39:0x00fa, B:40:0x0116), top: B:8:0x0029 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

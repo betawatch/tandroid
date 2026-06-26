@@ -1,6 +1,6 @@
 package ru.noties.jlatexmath.android;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class R {
 
     public static final class attr {

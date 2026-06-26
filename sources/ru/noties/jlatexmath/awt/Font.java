@@ -4,7 +4,7 @@ import android.graphics.Typeface;
 import java.io.InputStream;
 import java.util.Locale;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class Font {
     public static final int BOLD = 1;
     public static final int ITALIC = 2;

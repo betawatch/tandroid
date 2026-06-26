@@ -20,6 +20,7 @@ import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawableRender
 public class BlurredBackgroundSourceRenderNode implements BlurredBackgroundSource {
     private final BlurredBackgroundSource fallbackSource;
     private boolean inRecording;
+    private boolean noClip;
     private Runnable onDrawablesRelativePositionChangeListener;
     private RecordingCanvas recordingCanvas;
     private RenderNodeWithHash renderNodeWithHash;
@@ -58,6 +59,19 @@ public class BlurredBackgroundSourceRenderNode implements BlurredBackgroundSourc
 
     public void setBlur(float f) {
         this.renderNode.setRenderEffect(f > 0.0f ? RenderEffect.createBlurEffect(f, f, Shader.TileMode.CLAMP) : null);
+    }
+
+    public void setBlur(float f, RenderEffect renderEffect) {
+        RenderEffect createBlurEffect;
+        RenderEffect createChainEffect;
+        RenderNode renderNode = this.renderNode;
+        createBlurEffect = RenderEffect.createBlurEffect(f, f, Shader.TileMode.CLAMP);
+        createChainEffect = RenderEffect.createChainEffect(createBlurEffect, renderEffect);
+        renderNode.setRenderEffect(createChainEffect);
+    }
+
+    public void noClip() {
+        this.noClip = true;
     }
 
     public boolean needUpdateDisplayList(int i, int i2) {
@@ -125,7 +139,9 @@ public class BlurredBackgroundSourceRenderNode implements BlurredBackgroundSourc
             blurredBackgroundSource2.draw(canvas, f, f2, f3, f4);
         }
         canvas.save();
-        canvas.clipRect(f, f2, f3, f4);
+        if (!this.noClip) {
+            canvas.clipRect(f, f2, f3, f4);
+        }
         if (Build.VERSION.SDK_INT >= 31 && (downscaleScrollableNoiseSuppressor = this.scrollableNoiseSuppressor) != null) {
             downscaleScrollableNoiseSuppressor.drawInline(canvas, this.scrollableNoiseSuppressorIndex);
         } else {

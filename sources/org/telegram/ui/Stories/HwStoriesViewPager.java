@@ -3,7 +3,7 @@ package org.telegram.ui.Stories;
 import android.content.Context;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 abstract class HwStoriesViewPager extends StoriesViewPager {
     public HwStoriesViewPager(int i, Context context, StoryViewer storyViewer, Theme.ResourcesProvider resourcesProvider) {
         super(i, context, storyViewer, resourcesProvider);

@@ -1499,12 +1499,18 @@ public class DatabaseMigrationHelper {
             sQLiteDatabase2.executeFast("PRAGMA user_version = 174").stepThis().dispose();
             i5 = NotificationCenter.closeInCallActivity;
         }
-        if (i5 != 174) {
+        if (i5 == 174) {
+            sQLiteDatabase2.executeFast("CREATE INDEX IF NOT EXISTS uid_type_date_mid_idx_media_v4 ON media_v4(uid, type, date DESC, mid DESC);").stepThis().dispose();
+            sQLiteDatabase2.executeFast("PRAGMA user_version = 175").stepThis().dispose();
+            i5 = NotificationCenter.groupCallVisibilityChanged;
+        }
+        if (i5 != 175) {
             return i5;
         }
-        sQLiteDatabase2.executeFast("CREATE INDEX IF NOT EXISTS uid_type_date_mid_idx_media_v4 ON media_v4(uid, type, date DESC, mid DESC);").stepThis().dispose();
-        sQLiteDatabase2.executeFast("PRAGMA user_version = 175").stepThis().dispose();
-        return 175;
+        sQLiteDatabase2.executeFast("CREATE TABLE ephemeral_messages (id INTEGER, dialog_id INTEGER, topic_id INTEGER, date INTEGER, data BLOB, PRIMARY KEY(dialog_id, id));").stepThis().dispose();
+        sQLiteDatabase2.executeFast("CREATE INDEX IF NOT EXISTS ephemeral_messages_date_idx ON ephemeral_messages(date);").stepThis().dispose();
+        sQLiteDatabase2.executeFast("PRAGMA user_version = 176").stepThis().dispose();
+        return 176;
     }
 
     private static void executeNoException(SQLiteDatabase sQLiteDatabase, String str) {
@@ -1515,8 +1521,8 @@ public class DatabaseMigrationHelper {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:60:0x02c0 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x02c2 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x02ca A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x02cc A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1566,7 +1572,7 @@ public class DatabaseMigrationHelper {
             e = e4;
             j = 0;
         }
-        if (intValue != 175) {
+        if (intValue != 176) {
             FileLog.e("can't restore database from version " + intValue);
             return false;
         }

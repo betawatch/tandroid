@@ -53,7 +53,7 @@ import org.telegram.ui.Components.UniversalFragment;
 import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.web.BrowserHistory;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class WebBrowserSettings extends UniversalFragment implements NotificationCenter.NotificationCenterDelegate {
     private Drawable addIcon;
     private long cacheSize;

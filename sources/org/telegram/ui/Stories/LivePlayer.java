@@ -43,7 +43,7 @@ import org.webrtc.VideoFrame;
 import org.webrtc.VideoSink;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class LivePlayer implements NotificationCenter.NotificationCenterDelegate, AudioManager.OnAudioFocusChangeListener {
     public static LivePlayer recording;
     private TLRPC.GroupCall call;

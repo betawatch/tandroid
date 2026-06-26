@@ -35,7 +35,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.DarkThemeResourceProvider;
 import org.telegram.ui.Stories.recorder.Weather;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class Weather {
     private static String cacheKey;
     private static State cacheValue;

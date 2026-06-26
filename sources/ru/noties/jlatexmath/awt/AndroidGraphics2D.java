@@ -10,7 +10,7 @@ import ru.noties.jlatexmath.awt.geom.Line2D;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 import ru.noties.jlatexmath.awt.geom.RoundRectangle2D;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AndroidGraphics2D implements Graphics2D {
     private Canvas canvas;
     private Color color;

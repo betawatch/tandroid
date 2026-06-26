@@ -1,6 +1,6 @@
 package org.webrtc;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 class NativeLibrary {
     private static String TAG = "NativeLibrary";
     private static boolean libraryLoaded;

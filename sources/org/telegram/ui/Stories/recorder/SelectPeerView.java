@@ -19,7 +19,7 @@ import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class SelectPeerView extends FrameLayout {
     private final AvatarDrawable avatarDrawable;
     private final int currentAccount;

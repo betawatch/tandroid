@@ -7310,7 +7310,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00f3  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00f4  */
     /* JADX WARN: Removed duplicated region for block: B:39:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

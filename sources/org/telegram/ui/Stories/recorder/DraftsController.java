@@ -30,7 +30,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Stories.recorder.CollageLayout;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class DraftsController {
     public final int currentAccount;
     public final ArrayList drafts = new ArrayList();

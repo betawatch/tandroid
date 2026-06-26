@@ -85,7 +85,7 @@ import org.telegram.ui.Stories.StoriesUtilities;
 import org.telegram.ui.Stories.recorder.HintView2;
 import org.telegram.ui.Stories.recorder.StoryRecorder;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class DialogStoriesCell extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, FactorAnimator.Target {
     public float K;
     private ActionBar actionBar;

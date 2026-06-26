@@ -68,6 +68,9 @@ public class TL_aicompose {
             if (i == 125026432) {
                 return new inputAiComposeToneID();
             }
+            if (i == 235681199) {
+                return new inputAiComposeToneSingleUse();
+            }
             if (i == 530584407) {
                 return new inputAiComposeToneSlug();
             }
@@ -126,6 +129,22 @@ public class TL_aicompose {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.slug = inputSerializedData.readString(z);
+        }
+    }
+
+    public static class inputAiComposeToneSingleUse extends InputAiComposeTone {
+        public static final int constructor = 235681199;
+        public String custom_prompt;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeString(this.custom_prompt);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.custom_prompt = inputSerializedData.readString(z);
         }
     }
 

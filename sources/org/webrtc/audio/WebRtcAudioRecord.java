@@ -25,7 +25,7 @@ import org.webrtc.Logging;
 import org.webrtc.ThreadUtils;
 import org.webrtc.audio.JavaAudioDeviceModule;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class WebRtcAudioRecord {
     private static final int AUDIO_RECORD_START = 0;
     private static final int AUDIO_RECORD_STOP = 1;

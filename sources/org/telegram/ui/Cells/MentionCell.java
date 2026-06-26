@@ -3,6 +3,7 @@ package org.telegram.ui.Cells;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -11,6 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
@@ -19,6 +21,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.BackupImageView;
+import org.telegram.ui.Components.ColoredImageSpan;
 import org.telegram.ui.Components.LayoutHelper;
 
 /* loaded from: classes4.dex */
@@ -43,7 +46,7 @@ public class MentionCell extends LinearLayout {
         BackupImageView backupImageView = new BackupImageView(context);
         this.imageView = backupImageView;
         backupImageView.setRoundRadius(AndroidUtilities.dp(14.0f));
-        addView(backupImageView, LayoutHelper.createLinear(28, 28, 12.0f, 4.0f, 0.0f, 0.0f));
+        addView(backupImageView, LayoutHelper.createLinear(28, 28, 8.0f, 4.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context) { // from class: org.telegram.ui.Cells.MentionCell.1
             @Override // android.widget.TextView
             public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
@@ -226,7 +229,7 @@ public class MentionCell extends LinearLayout {
         }
     }
 
-    public void setBotCommand(String str, String str2, TLRPC.User user) {
+    public void setBotCommand(String str, String str2, TLRPC.User user, boolean z) {
         resetEmojiSuggestion();
         if (user != null) {
             this.imageView.setVisibility(0);
@@ -241,7 +244,17 @@ public class MentionCell extends LinearLayout {
             this.imageView.setVisibility(4);
         }
         this.usernameTextView.setVisibility(0);
-        this.nameTextView.setText(str);
+        if (z) {
+            ColoredImageSpan coloredImageSpan = new ColoredImageSpan(R.drawable.mini_ephemeral_hidden_14);
+            coloredImageSpan.setColorKey(Theme.key_windowBackgroundWhiteGrayText3);
+            coloredImageSpan.setTopOffset(1);
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
+            spannableStringBuilder.append((CharSequence) " *");
+            spannableStringBuilder.setSpan(coloredImageSpan, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+            this.nameTextView.setText(spannableStringBuilder);
+        } else {
+            this.nameTextView.setText(str);
+        }
         TextView textView = this.usernameTextView;
         textView.setText(Emoji.replaceEmoji(str2, textView.getPaint().getFontMetricsInt(), false));
     }

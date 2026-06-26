@@ -39,7 +39,7 @@ import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.Text;
 import org.telegram.ui.Stories.recorder.CaptionContainerView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class CaptionStory extends CaptionContainerView {
     public static final int[] periods = {21600, 43200, 86400, 172800};
     private float amplitude;

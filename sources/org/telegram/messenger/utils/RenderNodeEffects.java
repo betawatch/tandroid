@@ -18,4 +18,12 @@ public abstract class RenderNodeEffects {
         }
         return saturationUpX3Effect;
     }
+
+    public static RenderEffect createSaturationXRenderEffect(float f) {
+        RenderEffect createColorFilterEffect;
+        ColorMatrix colorMatrix = new ColorMatrix();
+        colorMatrix.setSaturation(f);
+        createColorFilterEffect = RenderEffect.createColorFilterEffect(new ColorMatrixColorFilter(colorMatrix));
+        return createColorFilterEffect;
+    }
 }

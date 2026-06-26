@@ -3,6 +3,7 @@ package org.telegram.tgnet.tl;
 import android.graphics.Bitmap;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Iterator;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLMethod;
@@ -341,6 +342,8 @@ public class TL_iv {
 
         private static RichText fromConstructor(int i) {
             switch (i) {
+                case textDiff.constructor /* -1769551024 */:
+                    return new textDiff();
                 case textStrike.constructor /* -1678197867 */:
                     return new textStrike();
                 case textMath.constructor /* -1657885545 */:
@@ -550,12 +553,7 @@ public class TL_iv {
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.texts = Vector.deserialize(inputSerializedData, new Vector.TLDeserializer() { // from class: org.telegram.tgnet.tl.TL_iv$textConcat$$ExternalSyntheticLambda0
-                @Override // org.telegram.tgnet.Vector.TLDeserializer
-                public final TLObject deserialize(InputSerializedData inputSerializedData2, int i, boolean z2) {
-                    return TL_iv.RichText.TLdeserialize(inputSerializedData2, i, z2);
-                }
-            }, z);
+            this.texts = Vector.deserialize(inputSerializedData, new TL_iv$pageBlockList_layer82$$ExternalSyntheticLambda0(), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -908,6 +906,25 @@ public class TL_iv {
         }
     }
 
+    public static class textDiff extends RichText {
+        public static final int constructor = -1769551024;
+        public RichText old_text;
+        public RichText text;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.old_text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.text.serializeToStream(outputSerializedData);
+            this.old_text.serializeToStream(outputSerializedData);
+        }
+    }
+
     public static abstract class PageBlock extends TLObject {
         public boolean bottom;
         public int cachedHeight;
@@ -1243,21 +1260,11 @@ public class TL_iv {
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockList, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.ordered = inputSerializedData.readBool(z);
-            int readInt32 = inputSerializedData.readInt32(z);
-            if (readInt32 != 481674261) {
-                if (z) {
-                    throw new RuntimeException(String.format("wrong Vector magic, got %x", Integer.valueOf(readInt32)));
-                }
-                return;
-            }
-            int readInt322 = inputSerializedData.readInt32(z);
-            for (int i = 0; i < readInt322; i++) {
-                RichText TLdeserialize = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-                if (TLdeserialize == null) {
-                    return;
-                }
+            Iterator it = Vector.deserialize(inputSerializedData, new TL_iv$pageBlockList_layer82$$ExternalSyntheticLambda0(), z).iterator();
+            while (it.hasNext()) {
+                RichText richText = (RichText) it.next();
                 TL_pageListItemText tL_pageListItemText = new TL_pageListItemText();
-                tL_pageListItemText.text = TLdeserialize;
+                tL_pageListItemText.text = richText;
                 this.items.add(tL_pageListItemText);
             }
         }
@@ -1266,12 +1273,15 @@ public class TL_iv {
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
             outputSerializedData.writeBool(this.ordered);
-            outputSerializedData.writeInt32(Vector.constructor);
-            int size = this.items.size();
-            outputSerializedData.writeInt32(size);
-            for (int i = 0; i < size; i++) {
-                ((TL_pageListItemText) this.items.get(i)).text.serializeToStream(outputSerializedData);
+            ArrayList arrayList = new ArrayList(this.items.size());
+            Iterator<PageListItem> it = this.items.iterator();
+            while (it.hasNext()) {
+                PageListItem next = it.next();
+                if (next instanceof TL_pageListItemText) {
+                    arrayList.add(((TL_pageListItemText) next).text);
+                }
             }
+            Vector.serialize(outputSerializedData, arrayList);
         }
     }
 

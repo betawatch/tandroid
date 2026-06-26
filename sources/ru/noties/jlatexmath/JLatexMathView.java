@@ -12,7 +12,7 @@ import java.lang.annotation.RetentionPolicy;
 import ru.noties.jlatexmath.android.R;
 import ru.noties.jlatexmath.awt.Color;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class JLatexMathView extends View {
     public static final int ALIGN_CENTER = 1;
     public static final int ALIGN_END = 2;

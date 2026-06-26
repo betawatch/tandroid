@@ -4507,7 +4507,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         MessagesController.getInstance(this.currentAccount).putUsers(tL_chatInviteJoinResultWebView.users, false);
         BotGuardHelper botGuardHelper = BotGuardHelper.getInstance(this.currentAccount);
         long j = tL_chatInviteJoinResultWebView.bot_id;
-        botGuardHelper.openGuardBotWebApp(j, j, tL_chatInviteJoinResultWebView.webview);
+        botGuardHelper.openGuardBotWebApp(j, j, tL_chatInviteJoinResultWebView.query_id);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

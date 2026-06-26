@@ -53,7 +53,7 @@ import org.telegram.ui.Stories.recorder.CollageLayout;
 import org.telegram.ui.Stories.recorder.CollageLayoutView2;
 import org.telegram.ui.Stories.recorder.QRScanner;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class CollageLayoutView2 extends FrameLayout implements ItemOptions.ScrimView {
     private final AnimatedFloat[] animatedColumns;
     private final AnimatedFloat animatedReordering;

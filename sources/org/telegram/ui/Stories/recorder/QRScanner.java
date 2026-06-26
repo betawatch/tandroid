@@ -25,7 +25,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class QRScanner {
     private Bitmap cacheBitmap;
     private CameraView cameraView;

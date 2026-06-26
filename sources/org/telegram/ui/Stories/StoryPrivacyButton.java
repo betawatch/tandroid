@@ -26,7 +26,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Stories.StoriesController;
 import org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StoryPrivacyButton extends View {
     private final Paint arrowPaint;
     private final Path arrowPath;

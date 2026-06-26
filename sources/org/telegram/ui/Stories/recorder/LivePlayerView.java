@@ -40,7 +40,7 @@ import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class LivePlayerView extends FrameLayout implements RendererCommon.RendererEvents, NotificationCenter.NotificationCenterDelegate {
     private final TextureView blurRenderer;
     private int currentAccount;

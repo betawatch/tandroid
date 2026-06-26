@@ -25,7 +25,7 @@ import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.blur3.StrokeDrawable;
 import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class CommentButton extends FrameLayout {
     private final ImageView arrowImage;
     private final Paint backgroundPaint;

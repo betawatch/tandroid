@@ -28,7 +28,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RLottieDrawable;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StoriesIntro extends FrameLayout {
     private int current;
     private final ArrayList items;

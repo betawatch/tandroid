@@ -10,7 +10,7 @@ import org.webrtc.PeerConnection;
 import org.webrtc.audio.AudioDeviceModule;
 import org.webrtc.audio.JavaAudioDeviceModule;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PeerConnectionFactory {
     private static final String TAG = "PeerConnectionFactory";
     public static final String TRIAL_ENABLED = "Enabled";

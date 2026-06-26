@@ -79,7 +79,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.DarkThemeResourceProvider;
 import org.telegram.ui.Stories.recorder.CaptionContainerView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class CaptionContainerView extends FrameLayout {
     public ImageView applyButton;
     private Drawable applyButtonCheck;

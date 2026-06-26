@@ -21,7 +21,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Stories.recorder.FlashViews;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class StoryModeTabs extends FrameLayout implements FlashViews.Invertable {
     private ValueAnimator animator;
     private float invert;

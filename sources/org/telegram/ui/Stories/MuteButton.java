@@ -19,7 +19,7 @@ import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.blur3.StrokeDrawable;
 import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class MuteButton extends FrameLayout {
     private ValueAnimator animator;
     private final StrokeDrawable background;

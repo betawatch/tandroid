@@ -5,7 +5,7 @@ import android.graphics.Typeface;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class JLatexMathAndroid {
     private static final String BASE = "org/scilab/forge/jlatexmath/";
     private static Context sContext;

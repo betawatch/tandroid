@@ -51,7 +51,7 @@ import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements NotificationCenter.NotificationCenterDelegate {
     private UniversalAdapter adapter;
     private ButtonWithCounterView button;

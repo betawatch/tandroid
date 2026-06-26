@@ -4,16 +4,18 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.Theme;
@@ -27,61 +29,41 @@ import ru.noties.jlatexmath.JLatexMathDrawable;
 
 /* loaded from: classes3.dex */
 public class RichMathCell extends FrameLayout implements Theme.Colorable, TextSelectionHelper.ArticleSelectableView {
-    private final Paint backgroundPaint;
     private Bitmap bitmap;
-    private final View clickView;
     private BlockRow currentRow;
     private Delegate delegate;
-    private final Paint mathPaint;
+    private final ImageView image;
     private int paintColor;
-    private final TextPaint placeholderPaint;
+    private final int[] rect;
     private final Theme.ResourcesProvider resourcesProvider;
+    private final HorizontalScrollView scrollView;
     private final Paint selectionPaint;
-    private Layout stubLayout;
-    private final TextPaint stubPaint;
 
     public interface Delegate {
         TextSelectionHelper.ArticleTextSelectionHelper getSelectionHelper();
-
-        void onEditMath(BlockRow blockRow);
     }
 
     public RichMathCell(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        this.mathPaint = new Paint(1);
-        this.backgroundPaint = new Paint(1);
         this.selectionPaint = new Paint(1);
-        TextPaint textPaint = new TextPaint();
-        this.stubPaint = textPaint;
-        TextPaint textPaint2 = new TextPaint(1);
-        this.placeholderPaint = textPaint2;
         this.paintColor = 0;
+        this.rect = new int[4];
         this.resourcesProvider = resourcesProvider;
         setWillNotDraw(false);
-        textPaint.setTextSize(1.0f);
-        textPaint2.setTextSize(AndroidUtilities.dp(15.0f));
-        textPaint2.setTextAlign(Paint.Align.CENTER);
         setPadding(0, AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f));
-        View view = new View(context);
-        this.clickView = view;
-        view.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichMathCell$$ExternalSyntheticLambda0
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                RichMathCell.this.lambda$new$0(view2);
-            }
-        });
-        addView(view, LayoutHelper.createFrame(-1, -1, 119));
+        ImageView imageView = new ImageView(context);
+        this.image = imageView;
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.addView(imageView, new FrameLayout.LayoutParams(-2, -2, 17));
+        HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
+        this.scrollView = horizontalScrollView;
+        horizontalScrollView.setHorizontalScrollBarEnabled(false);
+        horizontalScrollView.setClipToPadding(false);
+        horizontalScrollView.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
+        horizontalScrollView.setFillViewport(true);
+        horizontalScrollView.addView(frameLayout, new FrameLayout.LayoutParams(-2, -2));
+        addView(horizontalScrollView, LayoutHelper.createFrame(-1, -2, 16));
         updateColors();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(View view) {
-        Delegate delegate;
-        BlockRow blockRow = this.currentRow;
-        if (blockRow == null || (delegate = this.delegate) == null) {
-            return;
-        }
-        delegate.onEditMath(blockRow);
     }
 
     public void bind(BlockRow blockRow, Delegate delegate) {
@@ -108,10 +90,11 @@ public class RichMathCell extends FrameLayout implements Theme.Colorable, TextSe
 
     public void rebuild() {
         this.bitmap = null;
+        this.scrollView.scrollTo(0, 0);
         String source = getSource();
         if (!TextUtils.isEmpty(source)) {
             try {
-                JLatexMathDrawable build = JLatexMathDrawable.builder(source).textSize(AndroidUtilities.dp(20.0f)).build();
+                JLatexMathDrawable build = JLatexMathDrawable.builder(source).textSize(AndroidUtilities.dp(SharedConfig.fontSize + 4)).build();
                 int intrinsicWidth = build.getIntrinsicWidth();
                 int intrinsicHeight = build.getIntrinsicHeight();
                 if (intrinsicWidth > 0 && intrinsicHeight > 0) {
@@ -124,57 +107,52 @@ public class RichMathCell extends FrameLayout implements Theme.Colorable, TextSe
                 FileLog.e(e);
             }
         }
-        requestLayout();
+        this.image.setImageBitmap(this.bitmap);
         invalidate();
     }
 
     @Override // org.telegram.ui.ActionBar.Theme.Colorable
     public void updateColors() {
-        this.backgroundPaint.setColor(Theme.getColor(Theme.key_chat_inFileBackground, this.resourcesProvider));
         this.selectionPaint.setColor(Theme.getColor(Theme.key_chat_inTextSelectionHighlight, this.resourcesProvider));
-        this.placeholderPaint.setColor(Theme.multAlpha(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider), 0.5f));
-        this.paintColor = 0;
+        this.paintColor = Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider);
+        this.image.setColorFilter(new PorterDuffColorFilter(this.paintColor, PorterDuff.Mode.SRC_IN));
         invalidate();
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    protected void onMeasure(int i, int i2) {
-        int dp;
-        int paddingBottom;
-        int size = View.MeasureSpec.getSize(i);
-        Bitmap bitmap = this.bitmap;
-        if (bitmap != null) {
-            dp = bitmap.getHeight() + getPaddingTop();
-            paddingBottom = getPaddingBottom();
-        } else {
-            dp = AndroidUtilities.dp(64.0f) + getPaddingTop();
-            paddingBottom = getPaddingBottom();
+    private boolean isScrollable() {
+        return this.bitmap != null && this.image.getWidth() > this.scrollView.getWidth();
+    }
+
+    private void selectionRect(int[] iArr) {
+        int paddingTop = getPaddingTop();
+        int height = getHeight() - getPaddingBottom();
+        if (isScrollable()) {
+            iArr[0] = getPaddingLeft();
+            iArr[1] = paddingTop;
+            iArr[2] = getWidth() - getPaddingRight();
+            iArr[3] = height;
+            return;
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp + paddingBottom, TLObject.FLAG_30));
+        Bitmap bitmap = this.bitmap;
+        int width = bitmap != null ? bitmap.getWidth() : Math.max(1, getWidth() / 2);
+        int width2 = (getWidth() - width) / 2;
+        iArr[0] = width2 - AndroidUtilities.dp(4.0f);
+        iArr[1] = paddingTop;
+        iArr[2] = width2 + width + AndroidUtilities.dp(4.0f);
+        iArr[3] = height;
     }
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
-        int paddingTop = getPaddingTop();
-        int measuredHeight = getMeasuredHeight() - getPaddingBottom();
-        if (this.bitmap != null) {
-            int i = this.paintColor;
-            int i2 = Theme.key_windowBackgroundWhiteBlackText;
-            if (i != Theme.getColor(i2, this.resourcesProvider)) {
-                Paint paint = this.mathPaint;
-                int color = Theme.getColor(i2, this.resourcesProvider);
-                this.paintColor = color;
-                paint.setColor(color);
-            }
-            canvas.drawBitmap(this.bitmap, (getMeasuredWidth() - this.bitmap.getWidth()) / 2.0f, paddingTop, this.mathPaint);
-        } else {
-            float f = paddingTop;
-            canvas.drawRect(AndroidUtilities.dp(16.0f), f, getMeasuredWidth() - AndroidUtilities.dp(16.0f), measuredHeight, this.backgroundPaint);
-            canvas.drawText("Tap to add an equation", getMeasuredWidth() / 2.0f, (f + ((measuredHeight - paddingTop) / 2.0f)) - ((this.placeholderPaint.descent() + this.placeholderPaint.ascent()) / 2.0f), this.placeholderPaint);
+        if (this.paintColor != Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider)) {
+            updateColors();
         }
-        if (isCellSelected()) {
-            canvas.drawRect(AndroidUtilities.dp(16.0f), paddingTop, getMeasuredWidth() - AndroidUtilities.dp(16.0f), measuredHeight, this.selectionPaint);
+        if (this.bitmap == null || !isCellSelected()) {
+            return;
         }
+        selectionRect(this.rect);
+        int[] iArr = this.rect;
+        canvas.drawRoundRect(iArr[0], iArr[1], iArr[2], iArr[3], AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), this.selectionPaint);
     }
 
     private boolean isCellSelected() {
@@ -186,42 +164,14 @@ public class RichMathCell extends FrameLayout implements Theme.Colorable, TextSe
 
     @Override // org.telegram.ui.Cells.TextSelectionHelper.ArticleSelectableView
     public void fillTextLayoutBlocks(ArrayList arrayList) {
-        if (this.stubLayout == null) {
-            this.stubLayout = new StaticLayout("•", this.stubPaint, Math.max(1, getMeasuredWidth()), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        }
-        final Layout layout = this.stubLayout;
-        arrayList.add(new TextSelectionHelper.TextLayoutBlock() { // from class: org.telegram.ui.iv.RichMathCell.1
-            @Override // org.telegram.ui.Cells.TextSelectionHelper.TextLayoutBlock
-            public /* synthetic */ CharSequence getPrefix() {
-                return TextSelectionHelper.TextLayoutBlock.-CC.$default$getPrefix(this);
-            }
-
-            @Override // org.telegram.ui.Cells.TextSelectionHelper.TextLayoutBlock
-            public int getRow() {
-                return 0;
-            }
-
-            @Override // org.telegram.ui.Cells.TextSelectionHelper.TextLayoutBlock
-            public int getX() {
-                return 0;
-            }
-
-            @Override // org.telegram.ui.Cells.TextSelectionHelper.TextLayoutBlock
-            public int getY() {
-                return 0;
-            }
-
-            @Override // org.telegram.ui.Cells.TextSelectionHelper.TextLayoutBlock
-            public Layout getLayout() {
-                return layout;
-            }
-        });
+        selectionRect(this.rect);
+        int[] iArr = this.rect;
+        arrayList.add(RichBlockSelection.of(iArr[0], iArr[1], iArr[2], iArr[3]));
     }
 
-    @Override // android.view.View
-    protected void onSizeChanged(int i, int i2, int i3, int i4) {
-        super.onSizeChanged(i, i2, i3, i4);
-        this.stubLayout = null;
+    @Override // android.widget.FrameLayout, android.view.View
+    protected void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
     }
 
     public static final class Factory extends UItem.UItemFactory {

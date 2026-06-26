@@ -137,7 +137,7 @@ import org.telegram.ui.Cells.SharedPhotoVideoCell2;
 import org.telegram.ui.Cells.TextSelectionHelper;
 import org.telegram.ui.Cells.UserCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda350;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda392;
 import org.telegram.ui.ChatActivityContainer;
 import org.telegram.ui.Components.Forum.ForumUtilities;
 import org.telegram.ui.Components.FragmentContextView;
@@ -1217,19 +1217,21 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                     int currentAccount = baseFragment != null ? baseFragment.getCurrentAccount() : -1;
                     for (int i16 = 0; i16 < arrayList.size(); i16++) {
                         MessageObject messageObject = (MessageObject) arrayList.get(i16);
-                        long j3 = this.topicId;
-                        if ((j3 == 0 || j3 == MessageObject.getTopicId(currentAccount, messageObject.messageOwner, true)) && MessageObject.getMedia(messageObject.messageOwner) != null && !messageObject.needDrawBluredPreview() && (mediaType = MediaDataController.getMediaType(messageObject.messageOwner)) != -1 && ((mediaType != 0 || this.sharedMediaData[0].filterType != 2 || messageObject.isVideo()) && (mediaType != 0 || this.sharedMediaData[0].filterType != 1 || !messageObject.isVideo()))) {
-                            SharedMediaData sharedMediaData = this.sharedMediaData[mediaType];
-                            if (sharedMediaData.startReached) {
-                                sharedMediaData.addMessage(messageObject, i15, true, isEncryptedDialog);
-                            }
-                            if (this.topicId == 0) {
-                                int[] iArr3 = this.sharedMediaData[mediaType].totalCount;
-                                iArr3[i15] = iArr3[i15] + 1;
-                            }
-                            if (i15 == 0) {
-                                for (int i17 = 0; i17 < this.sharedMediaData[mediaType].fastScrollPeriods.size(); i17++) {
-                                    ((Period) this.sharedMediaData[mediaType].fastScrollPeriods.get(i17)).startOffset++;
+                        if (!messageObject.isEphemeral()) {
+                            long j3 = this.topicId;
+                            if ((j3 == 0 || j3 == MessageObject.getTopicId(currentAccount, messageObject.messageOwner, true)) && MessageObject.getMedia(messageObject.messageOwner) != null && !messageObject.needDrawBluredPreview() && (mediaType = MediaDataController.getMediaType(messageObject.messageOwner)) != -1 && ((mediaType != 0 || this.sharedMediaData[0].filterType != 2 || messageObject.isVideo()) && (mediaType != 0 || this.sharedMediaData[0].filterType != 1 || !messageObject.isVideo()))) {
+                                SharedMediaData sharedMediaData = this.sharedMediaData[mediaType];
+                                if (sharedMediaData.startReached) {
+                                    sharedMediaData.addMessage(messageObject, i15, true, isEncryptedDialog);
+                                }
+                                if (this.topicId == 0) {
+                                    int[] iArr3 = this.sharedMediaData[mediaType].totalCount;
+                                    iArr3[i15] = iArr3[i15] + 1;
+                                }
+                                if (i15 == 0) {
+                                    for (int i17 = 0; i17 < this.sharedMediaData[mediaType].fastScrollPeriods.size(); i17++) {
+                                        ((Period) this.sharedMediaData[mediaType].fastScrollPeriods.get(i17)).startOffset++;
+                                    }
                                 }
                             }
                         }
@@ -4472,7 +4474,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                     public void onTransitionAnimationStart(boolean z, boolean z2) {
                         if (this.firstCreateView) {
                             if (this.searchItem != null) {
-                                lambda$openSearchWithText$364("");
+                                lambda$openSearchWithText$366("");
                                 this.searchItem.setSearchFieldText(SharedMediaLayout.this.savedMessagesSearchAdapter.lastQuery, false);
                             }
                             SearchTagsList searchTagsList = this.actionBarSearchTags;
@@ -9462,7 +9464,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             boolean isStoryAlbumPageType = isStoryAlbumPageType(getClosestTab());
             final ItemOptions makeOptions = ItemOptions.makeOptions(this.profileActivity, view, true);
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda350(makeOptions));
+            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda392(makeOptions));
             makeSwipeback.addGap();
             ItemOptions.addAlbumsItemOptions(makeSwipeback, getStoriesController().getStoryAlbumsList(this.dialog_id), hashSet, true, new Runnable() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda24
                 @Override // java.lang.Runnable

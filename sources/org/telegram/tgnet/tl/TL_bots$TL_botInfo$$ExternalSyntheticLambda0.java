@@ -9,6 +9,6 @@ import org.telegram.tgnet.Vector;
 public final /* synthetic */ class TL_bots$TL_botInfo$$ExternalSyntheticLambda0 implements Vector.TLDeserializer {
     @Override // org.telegram.tgnet.Vector.TLDeserializer
     public final TLObject deserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-        return TLRPC.TL_botCommand.TLdeserialize(inputSerializedData, i, z);
+        return TLRPC.BotCommand.TLdeserialize(inputSerializedData, i, z);
     }
 }

@@ -14,7 +14,7 @@ import ru.noties.jlatexmath.awt.AndroidGraphics2D;
 import ru.noties.jlatexmath.awt.Color;
 import ru.noties.jlatexmath.awt.Insets;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class JLatexMathDrawable extends Drawable {
     public static final int ALIGN_CENTER = 1;
     public static final int ALIGN_LEFT = 0;

@@ -47,7 +47,7 @@ import org.telegram.ui.Stories.StoriesController;
 import org.telegram.ui.Stories.StoriesUtilities;
 import org.telegram.ui.Stories.StoryViewer;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class ProfileStoriesView extends View implements NotificationCenter.NotificationCenterDelegate {
     private float actionBarProgress;
     private boolean attached;

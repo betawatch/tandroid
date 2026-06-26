@@ -7,7 +7,7 @@ import javax.microedition.khronos.egl.EGLContext;
 import org.webrtc.EglBase10;
 import org.webrtc.EglBase14;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface EglBase {
     public static final int EGL_OPENGL_ES2_BIT = 4;
     public static final int EGL_OPENGL_ES3_BIT = 64;

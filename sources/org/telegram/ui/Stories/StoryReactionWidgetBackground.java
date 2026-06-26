@@ -14,7 +14,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StoryReactionWidgetBackground extends Drawable {
     Paint backgroundPaint;
     private boolean mirror;

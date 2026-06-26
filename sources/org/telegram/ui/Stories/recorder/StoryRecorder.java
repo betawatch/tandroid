@@ -175,7 +175,7 @@ import org.telegram.ui.Stories.recorder.StoryRecorder;
 import org.telegram.ui.Stories.recorder.TimelineView;
 import org.telegram.ui.WrappedResourceProvider;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StoryRecorder implements NotificationCenter.NotificationCenterDelegate {
     private static boolean firstOpen = true;
     private static StoryRecorder instance;
@@ -4629,8 +4629,8 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* JADX WARN: Removed duplicated region for block: B:21:0x0098  */
-        /* JADX WARN: Removed duplicated region for block: B:27:0x00cd  */
+        /* JADX WARN: Removed duplicated region for block: B:21:0x0099  */
+        /* JADX WARN: Removed duplicated region for block: B:27:0x00ce  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -7367,28 +7367,28 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x00df, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x00e0, code lost:
     
         if (r5.isRecycled() == false) goto L38;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x00f1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x00f2, code lost:
     
         r17 = r4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:80:0x00ee, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x00ef, code lost:
     
         r5.recycle();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:90:0x00ec, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:90:0x00ed, code lost:
     
         if (r5.isRecycled() != false) goto L39;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0173 A[LOOP:0: B:48:0x016c->B:50:0x0173, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x01f8  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0240  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0272  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x023c  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0174 A[LOOP:0: B:48:0x016d->B:50:0x0174, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x01f9  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0241  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0273  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x023d  */
     /* JADX WARN: Type inference failed for: r5v10, types: [org.telegram.messenger.ImageReceiver] */
     /* JADX WARN: Type inference failed for: r5v19 */
     /* JADX WARN: Type inference failed for: r5v9 */
@@ -7438,14 +7438,14 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
                     try {
                         try {
                             createBitmap.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(makeCacheFile));
-                        } catch (Throwable th) {
-                            if (!createBitmap.isRecycled()) {
-                                createBitmap.recycle();
-                            }
-                            throw th;
+                        } catch (Exception e) {
+                            FileLog.e(e);
                         }
-                    } catch (Exception e) {
-                        FileLog.e(e);
+                    } catch (Throwable th) {
+                        if (!createBitmap.isRecycled()) {
+                            createBitmap.recycle();
+                        }
+                        throw th;
                     }
                 }
                 File file6 = file;
@@ -7684,11 +7684,11 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00f6  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0133 A[LOOP:0: B:38:0x012c->B:40:0x0133, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x01c6  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0237 A[LOOP:1: B:50:0x0231->B:52:0x0237, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x020f  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00f8  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0135 A[LOOP:0: B:38:0x012e->B:40:0x0135, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x01c8  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0239 A[LOOP:1: B:50:0x0233->B:52:0x0239, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0211  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -8081,15 +8081,15 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x015d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x015e, code lost:
     
         if (r2.isRecycled() == false) goto L63;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x016c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x016d, code lost:
     
         r2.recycle();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:63:0x016a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x016b, code lost:
     
         if (r2.isRecycled() != false) goto L68;
      */

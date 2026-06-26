@@ -6,7 +6,7 @@ import ru.noties.jlatexmath.awt.Font;
 import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class TextLayout {
     private final Rectangle2D bounds;
     private final char[] chars;

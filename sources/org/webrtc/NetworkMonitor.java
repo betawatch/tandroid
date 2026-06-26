@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.webrtc.NetworkChangeDetector;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class NetworkMonitor {
     private static final String TAG = "NetworkMonitor";
     private volatile NetworkChangeDetector.ConnectionType currentConnectionType;

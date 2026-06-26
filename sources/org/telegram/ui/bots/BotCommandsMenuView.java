@@ -8,6 +8,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.Layout;
+import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
@@ -28,6 +29,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.MenuDrawable;
 import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.ColoredImageSpan;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RLottieDrawable;
@@ -289,6 +291,7 @@ public class BotCommandsMenuView extends View {
     public static class BotCommandsAdapter extends RecyclerListView.SelectionAdapter {
         ArrayList newResult = new ArrayList();
         ArrayList newResultHelp = new ArrayList();
+        ArrayList newResultEphemeral = new ArrayList();
 
         @Override // org.telegram.ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
@@ -305,9 +308,20 @@ public class BotCommandsMenuView extends View {
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
             BotCommandView botCommandView = (BotCommandView) viewHolder.itemView;
-            botCommandView.command.setText((CharSequence) this.newResult.get(i));
+            String str = (String) this.newResult.get(i);
+            if (((Boolean) this.newResultEphemeral.get(i)).booleanValue()) {
+                ColoredImageSpan coloredImageSpan = new ColoredImageSpan(R.drawable.mini_ephemeral_hidden_14);
+                coloredImageSpan.setColorKey(Theme.key_windowBackgroundWhiteGrayText3);
+                coloredImageSpan.setTopOffset(1);
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
+                spannableStringBuilder.append((CharSequence) " *");
+                spannableStringBuilder.setSpan(coloredImageSpan, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+                botCommandView.command.setText(spannableStringBuilder);
+            } else {
+                botCommandView.command.setText(str);
+            }
             botCommandView.description.setText((CharSequence) this.newResultHelp.get(i));
-            botCommandView.commandStr = (String) this.newResult.get(i);
+            botCommandView.commandStr = str;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -318,13 +332,15 @@ public class BotCommandsMenuView extends View {
         public void setBotInfo(LongSparseArray longSparseArray) {
             this.newResult.clear();
             this.newResultHelp.clear();
+            this.newResultEphemeral.clear();
             for (int i = 0; i < longSparseArray.size(); i++) {
                 TL_bots.BotInfo botInfo = (TL_bots.BotInfo) longSparseArray.valueAt(i);
                 for (int i2 = 0; i2 < botInfo.commands.size(); i2++) {
-                    TLRPC.TL_botCommand tL_botCommand = botInfo.commands.get(i2);
-                    if (tL_botCommand != null && tL_botCommand.command != null) {
-                        this.newResult.add("/" + tL_botCommand.command);
-                        this.newResultHelp.add(tL_botCommand.description);
+                    TLRPC.BotCommand botCommand = botInfo.commands.get(i2);
+                    if (botCommand != null && botCommand.command != null) {
+                        this.newResult.add("/" + botCommand.command);
+                        this.newResultHelp.add(botCommand.description);
+                        this.newResultEphemeral.add(Boolean.valueOf(botCommand.ephemeral));
                     }
                 }
             }

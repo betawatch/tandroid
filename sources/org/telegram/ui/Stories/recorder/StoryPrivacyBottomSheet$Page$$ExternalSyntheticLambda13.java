@@ -1,6 +1,6 @@
 package org.telegram.ui.Stories.recorder;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class StoryPrivacyBottomSheet$Page$$ExternalSyntheticLambda13 implements Runnable {
     public final /* synthetic */ StoryPrivacyBottomSheet f$0;
 

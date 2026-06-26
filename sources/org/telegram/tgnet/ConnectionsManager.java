@@ -243,7 +243,7 @@ public class ConnectionsManager extends BaseController {
     }
 
     public void discardConnection(final int i, final int i2) {
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda17
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda18
             @Override // java.lang.Runnable
             public final void run() {
                 ConnectionsManager.this.lambda$discardConnection$0(i, i2);
@@ -257,7 +257,7 @@ public class ConnectionsManager extends BaseController {
     }
 
     public void failNotRunningRequest(final int i) {
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda9
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
                 ConnectionsManager.this.lambda$failNotRunningRequest$1(i);
@@ -360,7 +360,7 @@ public class ConnectionsManager extends BaseController {
             sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig" + this.currentAccount, 0);
         }
         this.forceTryIpV6 = sharedPreferences.getBoolean("forceTryIpV6", false);
-        init(SharedConfig.buildVersion(), 227, BuildVars.APP_ID, str3, str9, str2, str4, str8, file2, FileLog.getNetworkLogPath(), regId, certificateSHA256Fingerprint, rawOffset, getUserConfig().getClientUserId(), getUserConfig().getCurrentUser() != null ? getUserConfig().getCurrentUser().premium : false, isPushConnectionEnabled);
+        init(SharedConfig.buildVersion(), 228, BuildVars.APP_ID, str3, str9, str2, str4, str8, file2, FileLog.getNetworkLogPath(), regId, certificateSHA256Fingerprint, rawOffset, getUserConfig().getClientUserId(), getUserConfig().getCurrentUser() != null ? getUserConfig().getCurrentUser().premium : false, isPushConnectionEnabled);
     }
 
     private String getRegId() {
@@ -420,7 +420,7 @@ public class ConnectionsManager extends BaseController {
     }
 
     public <T extends TLObject> int sendRequestTyped(TLMethod<T> tLMethod, final Executor executor, final Utilities.Callback2<T, TLRPC.TL_error> callback2, int i, int i2) {
-        return sendRequest(tLMethod, new RequestDelegate() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda6
+        return sendRequest(tLMethod, new RequestDelegate() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda7
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 ConnectionsManager.lambda$sendRequestTyped$3(executor, callback2, tLObject, tL_error);
@@ -431,7 +431,7 @@ public class ConnectionsManager extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$sendRequestTyped$3(Executor executor, final Utilities.Callback2 callback2, final TLObject tLObject, final TLRPC.TL_error tL_error) {
         if (executor != null) {
-            executor.execute(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda24
+            executor.execute(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda27
                 @Override // java.lang.Runnable
                 public final void run() {
                     Utilities.Callback2.this.run(tLObject, tL_error);
@@ -439,6 +439,36 @@ public class ConnectionsManager extends BaseController {
             });
         } else {
             callback2.run(tLObject, tL_error);
+        }
+    }
+
+    public int sendRequestTypedAndProcessUpdates(TLMethod<TLRPC.Updates> tLMethod, Executor executor, Utilities.Callback2<TLRPC.Updates, TLRPC.TL_error> callback2) {
+        return sendRequestTypedAndProcessUpdates(tLMethod, executor, callback2, DEFAULT_DATACENTER_ID, 0);
+    }
+
+    public int sendRequestTypedAndProcessUpdates(TLMethod<TLRPC.Updates> tLMethod, final Executor executor, final Utilities.Callback2<TLRPC.Updates, TLRPC.TL_error> callback2, int i, int i2) {
+        return sendRequestTyped(tLMethod, null, new Utilities.Callback2() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda21
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                ConnectionsManager.this.lambda$sendRequestTypedAndProcessUpdates$5(executor, callback2, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+            }
+        }, i, i2);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$sendRequestTypedAndProcessUpdates$5(Executor executor, final Utilities.Callback2 callback2, final TLRPC.Updates updates, final TLRPC.TL_error tL_error) {
+        if (updates != null) {
+            getMessagesController().processUpdates(updates, false);
+        }
+        if (executor != null) {
+            executor.execute(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda9
+                @Override // java.lang.Runnable
+                public final void run() {
+                    Utilities.Callback2.this.run(updates, tL_error);
+                }
+            });
+        } else {
+            callback2.run(updates, tL_error);
         }
     }
 
@@ -468,7 +498,7 @@ public class ConnectionsManager extends BaseController {
 
     public int sendRequestSync(TLObject tLObject, RequestDelegate requestDelegate, QuickAckDelegate quickAckDelegate, WriteToSocketDelegate writeToSocketDelegate, int i, int i2, int i3, boolean z) {
         int andIncrement = this.lastRequestToken.getAndIncrement();
-        lambda$sendRequest$4(tLObject, requestDelegate, null, quickAckDelegate, writeToSocketDelegate, i, i2, i3, z, andIncrement);
+        lambda$sendRequest$6(tLObject, requestDelegate, null, quickAckDelegate, writeToSocketDelegate, i, i2, i3, z, andIncrement);
         return andIncrement;
     }
 
@@ -477,7 +507,7 @@ public class ConnectionsManager extends BaseController {
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda23
             @Override // java.lang.Runnable
             public final void run() {
-                ConnectionsManager.this.lambda$sendRequest$4(tLObject, requestDelegate, requestDelegateTimestamp, quickAckDelegate, writeToSocketDelegate, i, i2, i3, z, andIncrement);
+                ConnectionsManager.this.lambda$sendRequest$6(tLObject, requestDelegate, requestDelegateTimestamp, quickAckDelegate, writeToSocketDelegate, i, i2, i3, z, andIncrement);
             }
         });
         return andIncrement;
@@ -485,7 +515,7 @@ public class ConnectionsManager extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: sendRequestInternal, reason: merged with bridge method [inline-methods] */
-    public void lambda$sendRequest$4(final TLObject tLObject, final RequestDelegate requestDelegate, final RequestDelegateTimestamp requestDelegateTimestamp, final QuickAckDelegate quickAckDelegate, final WriteToSocketDelegate writeToSocketDelegate, final int i, final int i2, final int i3, final boolean z, final int i4) {
+    public void lambda$sendRequest$6(final TLObject tLObject, final RequestDelegate requestDelegate, final RequestDelegateTimestamp requestDelegateTimestamp, final QuickAckDelegate quickAckDelegate, final WriteToSocketDelegate writeToSocketDelegate, final int i, final int i2, final int i3, final boolean z, final int i4) {
         long j;
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("send request " + tLObject + " with token = " + i4);
@@ -499,10 +529,10 @@ public class ConnectionsManager extends BaseController {
                 }
                 j = System.currentTimeMillis();
                 final long j2 = j;
-                listen(i4, new RequestDelegateInternal() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda13
+                listen(i4, new RequestDelegateInternal() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda15
                     @Override // org.telegram.tgnet.RequestDelegateInternal
                     public final void run(long j3, int i5, String str, int i6, long j4, long j5, int i7) {
-                        ConnectionsManager.this.lambda$sendRequestInternal$6(tLObject, i3, j2, requestDelegate, requestDelegateTimestamp, quickAckDelegate, writeToSocketDelegate, i, i2, z, i4, j3, i5, str, i6, j4, j5, i7);
+                        ConnectionsManager.this.lambda$sendRequestInternal$8(tLObject, i3, j2, requestDelegate, requestDelegateTimestamp, quickAckDelegate, writeToSocketDelegate, i, i2, z, i4, j3, i5, str, i6, j4, j5, i7);
                     }
                 }, quickAckDelegate, writeToSocketDelegate);
                 native_sendRequest(this.currentAccount, nativeByteBuffer.address, i, i2, i3, z, i4);
@@ -510,20 +540,20 @@ public class ConnectionsManager extends BaseController {
             if ((i3 & 2) == 0) {
                 j = 0;
                 final long j22 = j;
-                listen(i4, new RequestDelegateInternal() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda13
+                listen(i4, new RequestDelegateInternal() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda15
                     @Override // org.telegram.tgnet.RequestDelegateInternal
                     public final void run(long j3, int i5, String str, int i6, long j4, long j5, int i7) {
-                        ConnectionsManager.this.lambda$sendRequestInternal$6(tLObject, i3, j22, requestDelegate, requestDelegateTimestamp, quickAckDelegate, writeToSocketDelegate, i, i2, z, i4, j3, i5, str, i6, j4, j5, i7);
+                        ConnectionsManager.this.lambda$sendRequestInternal$8(tLObject, i3, j22, requestDelegate, requestDelegateTimestamp, quickAckDelegate, writeToSocketDelegate, i, i2, z, i4, j3, i5, str, i6, j4, j5, i7);
                     }
                 }, quickAckDelegate, writeToSocketDelegate);
                 native_sendRequest(this.currentAccount, nativeByteBuffer.address, i, i2, i3, z, i4);
             }
             j = System.currentTimeMillis();
             final long j222 = j;
-            listen(i4, new RequestDelegateInternal() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda13
+            listen(i4, new RequestDelegateInternal() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda15
                 @Override // org.telegram.tgnet.RequestDelegateInternal
                 public final void run(long j3, int i5, String str, int i6, long j4, long j5, int i7) {
-                    ConnectionsManager.this.lambda$sendRequestInternal$6(tLObject, i3, j222, requestDelegate, requestDelegateTimestamp, quickAckDelegate, writeToSocketDelegate, i, i2, z, i4, j3, i5, str, i6, j4, j5, i7);
+                    ConnectionsManager.this.lambda$sendRequestInternal$8(tLObject, i3, j222, requestDelegate, requestDelegateTimestamp, quickAckDelegate, writeToSocketDelegate, i, i2, z, i4, j3, i5, str, i6, j4, j5, i7);
                 }
             }, quickAckDelegate, writeToSocketDelegate);
             native_sendRequest(this.currentAccount, nativeByteBuffer.address, i, i2, i3, z, i4);
@@ -533,7 +563,7 @@ public class ConnectionsManager extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendRequestInternal$6(TLObject tLObject, int i, long j, final RequestDelegate requestDelegate, final RequestDelegateTimestamp requestDelegateTimestamp, QuickAckDelegate quickAckDelegate, WriteToSocketDelegate writeToSocketDelegate, int i2, int i3, boolean z, int i4, long j2, int i5, String str, int i6, final long j3, long j4, int i7) {
+    public /* synthetic */ void lambda$sendRequestInternal$8(TLObject tLObject, int i, long j, final RequestDelegate requestDelegate, final RequestDelegateTimestamp requestDelegateTimestamp, QuickAckDelegate quickAckDelegate, WriteToSocketDelegate writeToSocketDelegate, int i2, int i3, boolean z, int i4, long j2, int i5, String str, int i6, final long j3, long j4, int i7) {
         TLObject tLObject2;
         TLRPC.TL_error tL_error;
         int i8;
@@ -601,10 +631,10 @@ public class ConnectionsManager extends BaseController {
             }
             final TLObject tLObject3 = tLObject2;
             final TLRPC.TL_error tL_error3 = tL_error;
-            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda10
+            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda14
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ConnectionsManager.this.lambda$sendRequestInternal$5(requestDelegate, tLObject3, tL_error3, requestDelegateTimestamp, j3);
+                    ConnectionsManager.this.lambda$sendRequestInternal$7(requestDelegate, tLObject3, tL_error3, requestDelegateTimestamp, j3);
                 }
             });
         } catch (Exception e2) {
@@ -613,7 +643,7 @@ public class ConnectionsManager extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendRequestInternal$5(RequestDelegate requestDelegate, TLObject tLObject, TLRPC.TL_error tL_error, RequestDelegateTimestamp requestDelegateTimestamp, long j) {
+    public /* synthetic */ void lambda$sendRequestInternal$7(RequestDelegate requestDelegate, TLObject tLObject, TLRPC.TL_error tL_error, RequestDelegateTimestamp requestDelegateTimestamp, long j) {
         if (requestDelegate != null) {
             requestDelegate.run(tLObject, tL_error);
         } else if (requestDelegateTimestamp != null) {
@@ -709,21 +739,21 @@ public class ConnectionsManager extends BaseController {
     }
 
     public void cancelRequest(final int i, final boolean z, final Runnable runnable) {
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda11
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                ConnectionsManager.this.lambda$cancelRequest$8(runnable, i, z);
+                ConnectionsManager.this.lambda$cancelRequest$10(runnable, i, z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$cancelRequest$8(final Runnable runnable, int i, boolean z) {
+    public /* synthetic */ void lambda$cancelRequest$10(final Runnable runnable, int i, boolean z) {
         if (runnable != null) {
-            listenCancel(i, new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda26
+            listenCancel(i, new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ConnectionsManager.lambda$cancelRequest$7(runnable);
+                    ConnectionsManager.lambda$cancelRequest$9(runnable);
                 }
             });
         }
@@ -731,7 +761,7 @@ public class ConnectionsManager extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$cancelRequest$7(Runnable runnable) {
+    public static /* synthetic */ void lambda$cancelRequest$9(Runnable runnable) {
         Utilities.stageQueue.postRunnable(runnable);
     }
 
@@ -740,16 +770,16 @@ public class ConnectionsManager extends BaseController {
     }
 
     public void cancelRequestsForGuid(final int i) {
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda5
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                ConnectionsManager.this.lambda$cancelRequestsForGuid$9(i);
+                ConnectionsManager.this.lambda$cancelRequestsForGuid$11(i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$cancelRequestsForGuid$9(int i) {
+    public /* synthetic */ void lambda$cancelRequestsForGuid$11(int i) {
         native_cancelRequestsForGuid(this.currentAccount, i);
     }
 
@@ -790,14 +820,14 @@ public class ConnectionsManager extends BaseController {
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(12:0|1|(1:5)|(2:6|7)|(9:9|(8:11|(2:26|27)|(1:14)(1:25)|15|16|(1:18)(1:22)|19|20)|31|(0)(0)|15|16|(0)(0)|19|20)(1:32)|28|(0)(0)|15|16|(0)(0)|19|20) */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0088, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0089, code lost:
     
         r1 = "";
      */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x007c  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x008c  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x007f  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x007d  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0090  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0080  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -963,10 +993,10 @@ public class ConnectionsManager extends BaseController {
                     FileLog.d("java received " + TLdeserialize);
                 }
                 KeepAliveJob.finishJob();
-                Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda4
+                Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ConnectionsManager.lambda$onUnparsedMessageReceived$10(i, TLdeserialize);
+                        ConnectionsManager.lambda$onUnparsedMessageReceived$12(i, TLdeserialize);
                     }
                 });
                 return;
@@ -980,12 +1010,12 @@ public class ConnectionsManager extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onUnparsedMessageReceived$10(int i, TLObject tLObject) {
+    public static /* synthetic */ void lambda$onUnparsedMessageReceived$12(int i, TLObject tLObject) {
         AccountInstance.getInstance(i).getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onUpdate$11(int i) {
+    public static /* synthetic */ void lambda$onUpdate$13(int i) {
         AccountInstance.getInstance(i).getMessagesController().updateTimerProc();
     }
 
@@ -993,51 +1023,51 @@ public class ConnectionsManager extends BaseController {
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                ConnectionsManager.lambda$onUpdate$11(i);
+                ConnectionsManager.lambda$onUpdate$13(i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onSessionCreated$12(int i) {
+    public static /* synthetic */ void lambda$onSessionCreated$14(int i) {
         AccountInstance.getInstance(i).getMessagesController().getDifference();
     }
 
     public static void onSessionCreated(final int i) {
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda3
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                ConnectionsManager.lambda$onSessionCreated$12(i);
+                ConnectionsManager.lambda$onSessionCreated$14(i);
             }
         });
     }
 
     public static void onConnectionStateChanged(final int i, final int i2) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda8
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                ConnectionsManager.lambda$onConnectionStateChanged$13(i2, i);
+                ConnectionsManager.lambda$onConnectionStateChanged$15(i2, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onConnectionStateChanged$13(int i, int i2) {
+    public static /* synthetic */ void lambda$onConnectionStateChanged$15(int i, int i2) {
         getInstance(i).connectionState = i2;
         AccountInstance.getInstance(i).getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateConnectionState, new Object[0]);
     }
 
     public static void onLogout(final int i) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda7
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                ConnectionsManager.lambda$onLogout$14(i);
+                ConnectionsManager.lambda$onLogout$16(i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onLogout$14(int i) {
+    public static /* synthetic */ void lambda$onLogout$16(int i) {
         AccountInstance accountInstance = AccountInstance.getInstance(i);
         if (accountInstance.getUserConfig().getClientUserId() != 0) {
             accountInstance.getUserConfig().clearConfig();
@@ -1064,27 +1094,27 @@ public class ConnectionsManager extends BaseController {
     }
 
     public static void onRequestNewServerIpAndPort(final int i, final int i2) {
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda25
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda28
             @Override // java.lang.Runnable
             public final void run() {
-                ConnectionsManager.lambda$onRequestNewServerIpAndPort$16(i, i2);
+                ConnectionsManager.lambda$onRequestNewServerIpAndPort$18(i, i2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onRequestNewServerIpAndPort$16(final int i, final int i2) {
+    public static /* synthetic */ void lambda$onRequestNewServerIpAndPort$18(final int i, final int i2) {
         final boolean isNetworkOnline = ApplicationLoader.isNetworkOnline();
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda14
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda24
             @Override // java.lang.Runnable
             public final void run() {
-                ConnectionsManager.lambda$onRequestNewServerIpAndPort$15(i, isNetworkOnline, i2);
+                ConnectionsManager.lambda$onRequestNewServerIpAndPort$17(i, isNetworkOnline, i2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onRequestNewServerIpAndPort$15(int i, boolean z, int i2) {
+    public static /* synthetic */ void lambda$onRequestNewServerIpAndPort$17(int i, boolean z, int i2) {
         FileLog.d("13. currentTask == " + currentTask);
         if (currentTask != null || ((i == 0 && Math.abs(lastDnsRequestTime - System.currentTimeMillis()) < 10000) || !z)) {
             if (BuildVars.LOGS_ENABLED) {
@@ -1124,30 +1154,30 @@ public class ConnectionsManager extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onProxyError$17() {
+    public static /* synthetic */ void lambda$onProxyError$19() {
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needShowAlert, 3);
     }
 
     public static void onProxyError() {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda16
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda17
             @Override // java.lang.Runnable
             public final void run() {
-                ConnectionsManager.lambda$onProxyError$17();
+                ConnectionsManager.lambda$onProxyError$19();
             }
         });
     }
 
     public static void getHostByName(final String str, final long j) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda2
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                ConnectionsManager.lambda$getHostByName$18(str, j);
+                ConnectionsManager.lambda$getHostByName$20(str, j);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$getHostByName$18(String str, long j) {
+    public static /* synthetic */ void lambda$getHostByName$20(String str, long j) {
         ResolvedDomain resolvedDomain = dnsCache.get(str);
         if (resolvedDomain != null && SystemClock.elapsedRealtime() - resolvedDomain.ttl < 300000) {
             native_onHostNameResolved(str, j, resolvedDomain.getAddress());
@@ -1182,10 +1212,10 @@ public class ConnectionsManager extends BaseController {
             wrap.reused = true;
             final TLRPC.TL_config TLdeserialize = TLRPC.TL_config.TLdeserialize(wrap, wrap.readInt32(true), true);
             if (TLdeserialize != null) {
-                Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda18
+                Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda19
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ConnectionsManager.lambda$onUpdateConfig$19(i, TLdeserialize);
+                        ConnectionsManager.lambda$onUpdateConfig$21(i, TLdeserialize);
                     }
                 });
             }
@@ -1195,7 +1225,7 @@ public class ConnectionsManager extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onUpdateConfig$19(int i, TLRPC.TL_config tL_config) {
+    public static /* synthetic */ void lambda$onUpdateConfig$21(int i, TLRPC.TL_config tL_config) {
         AccountInstance.getInstance(i).getMessagesController().updateConfig(tL_config);
     }
 
@@ -1243,13 +1273,13 @@ public class ConnectionsManager extends BaseController {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda22
             @Override // java.lang.Runnable
             public final void run() {
-                ConnectionsManager.this.lambda$setIsUpdating$20(z);
+                ConnectionsManager.this.lambda$setIsUpdating$22(z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setIsUpdating$20(boolean z) {
+    public /* synthetic */ void lambda$setIsUpdating$22(boolean z) {
         if (this.isUpdating == z) {
             return;
         }
@@ -1910,29 +1940,29 @@ public class ConnectionsManager extends BaseController {
     }
 
     public static void onPremiumFloodWait(final int i, final int i2, final boolean z) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda12
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
-                ConnectionsManager.lambda$onPremiumFloodWait$22(i, z, i2);
+                ConnectionsManager.lambda$onPremiumFloodWait$24(i, z, i2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onPremiumFloodWait$22(final int i, final boolean z, final int i2) {
+    public static /* synthetic */ void lambda$onPremiumFloodWait$24(final int i, final boolean z, final int i2) {
         if (UserConfig.selectedAccount != i) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda15
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda16
             @Override // java.lang.Runnable
             public final void run() {
-                ConnectionsManager.lambda$onPremiumFloodWait$21(z, i, i2);
+                ConnectionsManager.lambda$onPremiumFloodWait$23(z, i, i2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onPremiumFloodWait$21(boolean z, int i, int i2) {
+    public static /* synthetic */ void lambda$onPremiumFloodWait$23(boolean z, int i, int i2) {
         boolean z2;
         if (z) {
             FileUploadOperation findUploadOperationByRequestToken = FileLoader.getInstance(i).findUploadOperationByRequestToken(i2);
@@ -1955,28 +1985,28 @@ public class ConnectionsManager extends BaseController {
     }
 
     public static void onIntegrityCheckClassic(final int i, final int i2, final String str, final String str2) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda19
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda20
             @Override // java.lang.Runnable
             public final void run() {
-                ConnectionsManager.lambda$onIntegrityCheckClassic$25(i, str, str2, i2);
+                ConnectionsManager.lambda$onIntegrityCheckClassic$27(i, str, str2, i2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onIntegrityCheckClassic$25(final int i, String str, final String str2, final int i2) {
+    public static /* synthetic */ void lambda$onIntegrityCheckClassic$27(final int i, String str, final String str2, final int i2) {
         final long currentTimeMillis = System.currentTimeMillis();
         FileLog.d("account" + i + ": server requests integrity classic check with project = " + str + " nonce = " + str2);
         try {
-            IntegrityManagerFactory.create(ApplicationLoader.applicationContext).requestIntegrityToken(IntegrityTokenRequest.builder().setNonce(str2).setCloudProjectNumber(Long.parseLong(str)).build()).addOnSuccessListener(new OnSuccessListener() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda20
+            IntegrityManagerFactory.create(ApplicationLoader.applicationContext).requestIntegrityToken(IntegrityTokenRequest.builder().setNonce(str2).setCloudProjectNumber(Long.parseLong(str)).build()).addOnSuccessListener(new OnSuccessListener() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda25
                 @Override // com.google.android.gms.tasks.OnSuccessListener
                 public final void onSuccess(Object obj) {
-                    ConnectionsManager.lambda$onIntegrityCheckClassic$23(i, currentTimeMillis, i2, str2, (IntegrityTokenResponse) obj);
+                    ConnectionsManager.lambda$onIntegrityCheckClassic$25(i, currentTimeMillis, i2, str2, (IntegrityTokenResponse) obj);
                 }
-            }).addOnFailureListener(new OnFailureListener() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda21
+            }).addOnFailureListener(new OnFailureListener() { // from class: org.telegram.tgnet.ConnectionsManager$$ExternalSyntheticLambda26
                 @Override // com.google.android.gms.tasks.OnFailureListener
                 public final void onFailure(Exception exc) {
-                    ConnectionsManager.lambda$onIntegrityCheckClassic$24(i, currentTimeMillis, i2, str2, exc);
+                    ConnectionsManager.lambda$onIntegrityCheckClassic$26(i, currentTimeMillis, i2, str2, exc);
                 }
             });
         } catch (Exception unused) {
@@ -1986,7 +2016,7 @@ public class ConnectionsManager extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onIntegrityCheckClassic$23(int i, long j, int i2, String str, IntegrityTokenResponse integrityTokenResponse) {
+    public static /* synthetic */ void lambda$onIntegrityCheckClassic$25(int i, long j, int i2, String str, IntegrityTokenResponse integrityTokenResponse) {
         String str2 = integrityTokenResponse.token();
         if (str2 == null) {
             FileLog.e("account" + i + ": integrity check gave null token in " + (System.currentTimeMillis() - j) + "ms");
@@ -2002,7 +2032,7 @@ public class ConnectionsManager extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onIntegrityCheckClassic$24(int i, long j, int i2, String str, Exception exc) {
+    public static /* synthetic */ void lambda$onIntegrityCheckClassic$26(int i, long j, int i2, String str, Exception exc) {
         FileLog.e("account" + i + ": integrity check failed to give a token in " + (System.currentTimeMillis() - j) + "ms", exc);
         StringBuilder sb = new StringBuilder();
         sb.append("PLAYINTEGRITY_FAILED_EXCEPTION_");

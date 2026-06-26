@@ -56,7 +56,7 @@ import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.TypefaceSpan;
 import org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda66;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class HintView2 extends View {
     private float arrowHalfWidth;
     private float arrowHeight;

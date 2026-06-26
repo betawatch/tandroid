@@ -4115,7 +4115,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             if (view instanceof FilteredSearchView) {
                 FilteredSearchView filteredSearchView = (FilteredSearchView) view;
                 filteredSearchView.setKeyboardHeight(this.keyboardSize, false);
-                filteredSearchView.search(-TopicsFragment.this.chatId, 0L, 0L, FiltersView.filters[((Item) this.viewPagerAdapter.items.get(i)).filterIndex], false, str, z);
+                filteredSearchView.search(-TopicsFragment.this.chatId, 0L, 0L, 0L, FiltersView.filters[((Item) this.viewPagerAdapter.items.get(i)).filterIndex], false, str, z);
                 return;
             }
             if (view instanceof SearchDownloadsContainer) {

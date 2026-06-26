@@ -48,7 +48,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Stories.recorder.FlashViews;
 import org.telegram.ui.Stories.recorder.RecordControl;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RecordControl extends View implements FlashViews.Invertable {
     private final float HALF_PI;
     private boolean a11yPrevCheck;

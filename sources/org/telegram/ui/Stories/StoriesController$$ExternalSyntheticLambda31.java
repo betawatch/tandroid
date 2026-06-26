@@ -1,6 +1,6 @@
 package org.telegram.ui.Stories;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class StoriesController$$ExternalSyntheticLambda31 implements Runnable {
     public final /* synthetic */ StoriesController f$0;
 

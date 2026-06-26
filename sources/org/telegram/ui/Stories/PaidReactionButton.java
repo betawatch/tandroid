@@ -39,7 +39,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stars.StarsReactionsSheet;
 import org.telegram.ui.Stories.PaidReactionButton;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PaidReactionButton extends View {
     private float accumulatedRippleIntensity;
     private final AnimatedFloat animatedFilled;

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class RenderSynchronizer {
     private static final float DEFAULT_TARGET_FPS = 30.0f;
     private static final String TAG = "RenderSynchronizer";

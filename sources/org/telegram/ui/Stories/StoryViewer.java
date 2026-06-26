@@ -84,7 +84,7 @@ import org.telegram.ui.Stories.StoryViewer;
 import org.telegram.ui.Stories.recorder.LivePlayerView;
 import org.webrtc.MediaStreamTrack;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StoryViewer implements NotificationCenter.NotificationCenterDelegate, BaseFragment.AttachedSheet, IPipSourceDelegate {
     public static boolean animationInProgress;
     private static boolean isInSilentMode;
@@ -378,7 +378,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
         open(UserConfig.selectedAccount, context, storyItem, arrayList, i, storiesList, peerStories, placeProvider, z);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:89:0x0256, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x0257, code lost:
     
         r0 = r23.windowView.findOnBackInvokedDispatcher();
      */

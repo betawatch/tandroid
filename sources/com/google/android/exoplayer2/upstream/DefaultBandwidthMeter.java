@@ -2026,7 +2026,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{4, 4, 2, 3, 2, 2};
             case 24:
             case NotificationCenter.didGenerateFingerprintKeyPair /* 132 */:
-            case 175:
+            case NotificationCenter.groupCallVisibilityChanged /* 175 */:
                 return new int[]{1, 2, 2, 2, 2, 2};
             case 26:
                 return new int[]{3, 2, 0, 1, 2, 2};
@@ -2284,7 +2284,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{1, 0, 0, 0, 1, 2};
             case NotificationCenter.closeInCallActivity /* 174 */:
                 return new int[]{2, 2, 4, 2, 2, 2};
-            case NotificationCenter.liveStoryUpdated /* 176 */:
+            case 176:
                 return new int[]{1, 4, 4, 4, 4, 2};
             case NotificationCenter.liveStoryMessageUpdate /* 177 */:
                 return new int[]{1, 2, 2, 3, 1, 2};
@@ -2340,9 +2340,9 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{2, 2, 3, 4, 3, 2};
             case NotificationCenter.botStarsTransactionsLoaded /* 226 */:
                 return new int[]{2, 2, 0, 1, 2, 2};
-            case 227:
+            case NotificationCenter.channelStarsUpdated /* 227 */:
                 return new int[]{0, 2, 1, 2, 2, 2};
-            case NotificationCenter.updateAllMessages /* 228 */:
+            case 228:
                 return new int[]{0, 0, 1, 2, 2, 1};
             case NotificationCenter.starGiftsLoaded /* 229 */:
                 return new int[]{4, 3, 3, 1, 2, 2};

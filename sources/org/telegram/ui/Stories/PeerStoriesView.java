@@ -216,7 +216,7 @@ import org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet;
 import org.telegram.ui.Stories.recorder.StoryRecorder;
 import org.telegram.ui.WrappedResourceProvider;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static boolean DISABLE_STORY_REPOSTING = false;
     private static int activeCount;
@@ -6553,58 +6553,58 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         updatePosition(false);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:90:0x093c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:90:0x093e, code lost:
     
         if (r1.captionTranslated == (r5 == null && r5.translated && r5.translatedText != null && android.text.TextUtils.equals(r5.translatedLng, org.telegram.ui.Components.TranslateAlert2.getToLanguage()))) goto L377;
      */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x0982  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x09c1  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x09dc  */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x0b5c  */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x0b79  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x0ba7  */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x0bf5  */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x0c4e  */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x0c9a  */
-    /* JADX WARN: Removed duplicated region for block: B:247:0x0cc8  */
-    /* JADX WARN: Removed duplicated region for block: B:257:0x0d13  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0984  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x09c3  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x09de  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x0b5e  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x0b7b  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x0ba9  */
+    /* JADX WARN: Removed duplicated region for block: B:200:0x0bf7  */
+    /* JADX WARN: Removed duplicated region for block: B:224:0x0c50  */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x0c9c  */
+    /* JADX WARN: Removed duplicated region for block: B:247:0x0cca  */
+    /* JADX WARN: Removed duplicated region for block: B:257:0x0d15  */
     /* JADX WARN: Removed duplicated region for block: B:25:0x00a9  */
-    /* JADX WARN: Removed duplicated region for block: B:262:0x0d26  */
-    /* JADX WARN: Removed duplicated region for block: B:284:0x0db9  */
-    /* JADX WARN: Removed duplicated region for block: B:287:0x0dd8  */
-    /* JADX WARN: Removed duplicated region for block: B:292:0x0ded  */
-    /* JADX WARN: Removed duplicated region for block: B:301:0x0e07 A[EDGE_INSN: B:301:0x0e07->B:302:0x0e07 BREAK  A[LOOP:0: B:290:0x0de1->B:299:0x0e04], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:304:0x0e15  */
-    /* JADX WARN: Removed duplicated region for block: B:307:0x0e24  */
-    /* JADX WARN: Removed duplicated region for block: B:316:0x0e71  */
-    /* JADX WARN: Removed duplicated region for block: B:325:0x0eb7  */
-    /* JADX WARN: Removed duplicated region for block: B:328:0x0ec6  */
-    /* JADX WARN: Removed duplicated region for block: B:336:0x0eec  */
-    /* JADX WARN: Removed duplicated region for block: B:345:0x0f8b  */
-    /* JADX WARN: Removed duplicated region for block: B:350:0x0fc5  */
-    /* JADX WARN: Removed duplicated region for block: B:353:0x0fda  */
-    /* JADX WARN: Removed duplicated region for block: B:358:0x1002  */
-    /* JADX WARN: Removed duplicated region for block: B:369:0x1022  */
-    /* JADX WARN: Removed duplicated region for block: B:374:0x1059  */
+    /* JADX WARN: Removed duplicated region for block: B:262:0x0d28  */
+    /* JADX WARN: Removed duplicated region for block: B:284:0x0dbb  */
+    /* JADX WARN: Removed duplicated region for block: B:287:0x0dda  */
+    /* JADX WARN: Removed duplicated region for block: B:292:0x0def  */
+    /* JADX WARN: Removed duplicated region for block: B:301:0x0e09 A[EDGE_INSN: B:301:0x0e09->B:302:0x0e09 BREAK  A[LOOP:0: B:290:0x0de3->B:299:0x0e06], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:304:0x0e17  */
+    /* JADX WARN: Removed duplicated region for block: B:307:0x0e26  */
+    /* JADX WARN: Removed duplicated region for block: B:316:0x0e73  */
+    /* JADX WARN: Removed duplicated region for block: B:325:0x0eb9  */
+    /* JADX WARN: Removed duplicated region for block: B:328:0x0ec8  */
+    /* JADX WARN: Removed duplicated region for block: B:336:0x0eee  */
+    /* JADX WARN: Removed duplicated region for block: B:345:0x0f8d  */
+    /* JADX WARN: Removed duplicated region for block: B:350:0x0fc7  */
+    /* JADX WARN: Removed duplicated region for block: B:353:0x0fdc  */
+    /* JADX WARN: Removed duplicated region for block: B:358:0x1004  */
+    /* JADX WARN: Removed duplicated region for block: B:369:0x1024  */
+    /* JADX WARN: Removed duplicated region for block: B:374:0x105c  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x04e7 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:387:0x107a  */
+    /* JADX WARN: Removed duplicated region for block: B:387:0x107d  */
     /* JADX WARN: Removed duplicated region for block: B:395:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:402:0x1049  */
-    /* JADX WARN: Removed duplicated region for block: B:407:0x0f36  */
-    /* JADX WARN: Removed duplicated region for block: B:415:0x0ec0  */
-    /* JADX WARN: Removed duplicated region for block: B:417:0x0e83  */
+    /* JADX WARN: Removed duplicated region for block: B:402:0x104c  */
+    /* JADX WARN: Removed duplicated region for block: B:407:0x0f38  */
+    /* JADX WARN: Removed duplicated region for block: B:415:0x0ec2  */
+    /* JADX WARN: Removed duplicated region for block: B:417:0x0e85  */
     /* JADX WARN: Removed duplicated region for block: B:41:0x04fd  */
-    /* JADX WARN: Removed duplicated region for block: B:436:0x0e66  */
-    /* JADX WARN: Removed duplicated region for block: B:439:0x0d67  */
-    /* JADX WARN: Removed duplicated region for block: B:456:0x0c9d  */
+    /* JADX WARN: Removed duplicated region for block: B:436:0x0e68  */
+    /* JADX WARN: Removed duplicated region for block: B:439:0x0d69  */
+    /* JADX WARN: Removed duplicated region for block: B:456:0x0c9f  */
     /* JADX WARN: Removed duplicated region for block: B:45:0x0515 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:461:0x0cb1  */
-    /* JADX WARN: Removed duplicated region for block: B:463:0x0a0b  */
+    /* JADX WARN: Removed duplicated region for block: B:461:0x0cb3  */
+    /* JADX WARN: Removed duplicated region for block: B:463:0x0a0d  */
     /* JADX WARN: Removed duplicated region for block: B:52:0x052d  */
     /* JADX WARN: Removed duplicated region for block: B:576:0x0635  */
-    /* JADX WARN: Removed duplicated region for block: B:581:0x08ca  */
-    /* JADX WARN: Removed duplicated region for block: B:596:0x090d  */
-    /* JADX WARN: Removed duplicated region for block: B:599:0x0914  */
+    /* JADX WARN: Removed duplicated region for block: B:581:0x08cb  */
+    /* JADX WARN: Removed duplicated region for block: B:596:0x090f  */
+    /* JADX WARN: Removed duplicated region for block: B:599:0x0916  */
     /* JADX WARN: Removed duplicated region for block: B:601:0x0652  */
     /* JADX WARN: Removed duplicated region for block: B:61:0x0546  */
     /* JADX WARN: Removed duplicated region for block: B:666:0x057c  */
@@ -6615,9 +6615,9 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
     /* JADX WARN: Removed duplicated region for block: B:68:0x055a  */
     /* JADX WARN: Removed duplicated region for block: B:694:0x0168  */
     /* JADX WARN: Removed duplicated region for block: B:74:0x0611 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x091d  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0949  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x095d  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x091f  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x094b  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x095f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -8492,7 +8492,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x00a2  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x01d7 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x01d8 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -8778,7 +8778,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0196  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0197  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -8810,54 +8810,54 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                         storyItem2.dialogId = this.dialogId;
                         try {
                             document2 = storyItem2.media.getDocument();
-                            try {
-                                TL_stories.StoryItem storyItem3 = this.currentStory.storyItem;
-                                if (storyItem3.fileReference == 0) {
-                                    storyItem3.fileReference = FileLoader.getInstance(this.currentAccount).getFileReference(this.currentStory.storyItem);
-                                }
-                                StringBuilder sb = new StringBuilder();
-                                sb.append("?account=");
-                                sb.append(this.currentAccount);
-                                sb.append("&id=");
-                                sb.append(document2.id);
-                                sb.append("&hash=");
-                                sb.append(document2.access_hash);
-                                sb.append("&dc=");
-                                sb.append(document2.dc_id);
-                                sb.append("&size=");
-                                sb.append(document2.size);
-                                sb.append("&mime=");
-                                sb.append(URLEncoder.encode(document2.mime_type, "UTF-8"));
-                                sb.append("&rid=");
-                                sb.append(this.currentStory.storyItem.fileReference);
-                                sb.append("&name=");
-                                sb.append(URLEncoder.encode(FileLoader.getDocumentFileName(document2), "UTF-8"));
-                                sb.append("&reference=");
-                                byte[] bArr = document2.file_reference;
-                                if (bArr == null) {
-                                    bArr = new byte[0];
-                                }
-                                sb.append(Utilities.bytesToHex(bArr));
-                                sb.append("&sid=");
-                                sb.append(this.currentStory.storyItem.id);
-                                sb.append("&did=");
-                                sb.append(this.currentStory.storyItem.dialogId);
-                                Uri parse = Uri.parse("tg://" + FileLoader.getAttachFileName(document2) + sb.toString());
-                                FileLog.d("StoryViewer requestVideoPlayer(" + j + "): playing from " + parse);
-                                this.videoDuration = (long) (MessageObject.getDocumentDuration(document2) * 1000.0d);
-                                uri = parse;
-                                document = document2;
-                            } catch (Exception unused) {
-                                document = document2;
-                                uri = null;
-                                if (uri == null) {
-                                }
-                                this.delegate.requestPlayer(document, uri, j, this.playerSharedScope);
-                                this.storyContainer.invalidate();
-                                return;
-                            }
-                        } catch (Exception unused2) {
+                        } catch (Exception unused) {
                             document2 = null;
+                        }
+                        try {
+                            TL_stories.StoryItem storyItem3 = this.currentStory.storyItem;
+                            if (storyItem3.fileReference == 0) {
+                                storyItem3.fileReference = FileLoader.getInstance(this.currentAccount).getFileReference(this.currentStory.storyItem);
+                            }
+                            StringBuilder sb = new StringBuilder();
+                            sb.append("?account=");
+                            sb.append(this.currentAccount);
+                            sb.append("&id=");
+                            sb.append(document2.id);
+                            sb.append("&hash=");
+                            sb.append(document2.access_hash);
+                            sb.append("&dc=");
+                            sb.append(document2.dc_id);
+                            sb.append("&size=");
+                            sb.append(document2.size);
+                            sb.append("&mime=");
+                            sb.append(URLEncoder.encode(document2.mime_type, "UTF-8"));
+                            sb.append("&rid=");
+                            sb.append(this.currentStory.storyItem.fileReference);
+                            sb.append("&name=");
+                            sb.append(URLEncoder.encode(FileLoader.getDocumentFileName(document2), "UTF-8"));
+                            sb.append("&reference=");
+                            byte[] bArr = document2.file_reference;
+                            if (bArr == null) {
+                                bArr = new byte[0];
+                            }
+                            sb.append(Utilities.bytesToHex(bArr));
+                            sb.append("&sid=");
+                            sb.append(this.currentStory.storyItem.id);
+                            sb.append("&did=");
+                            sb.append(this.currentStory.storyItem.dialogId);
+                            Uri parse = Uri.parse("tg://" + FileLoader.getAttachFileName(document2) + sb.toString());
+                            FileLog.d("StoryViewer requestVideoPlayer(" + j + "): playing from " + parse);
+                            this.videoDuration = (long) (MessageObject.getDocumentDuration(document2) * 1000.0d);
+                            uri = parse;
+                            document = document2;
+                        } catch (Exception unused2) {
+                            document = document2;
+                            uri = null;
+                            if (uri == null) {
+                            }
+                            this.delegate.requestPlayer(document, uri, j, this.playerSharedScope);
+                            this.storyContainer.invalidate();
+                            return;
                         }
                     } else {
                         document = null;

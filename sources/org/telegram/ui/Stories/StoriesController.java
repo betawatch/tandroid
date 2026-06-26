@@ -84,7 +84,7 @@ import org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet;
 import org.telegram.ui.Stories.recorder.StoryRecorder;
 import org.telegram.ui.Stories.recorder.StoryUploadingService;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StoriesController {
     public static final Comparator storiesComparator = Comparator$-CC.comparingInt(new ToIntFunction() { // from class: org.telegram.ui.Stories.StoriesController$$ExternalSyntheticLambda4
         @Override // java.util.function.ToIntFunction
@@ -932,7 +932,7 @@ public class StoriesController {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:46:0x01f0  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x020d  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x020e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2508,17 +2508,17 @@ public class StoriesController {
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:69:0x0179, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:69:0x017b, code lost:
         
             if (r14.isEmpty() == false) goto L73;
          */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Removed duplicated region for block: B:141:0x02eb  */
-        /* JADX WARN: Removed duplicated region for block: B:186:0x01b3  */
+        /* JADX WARN: Removed duplicated region for block: B:141:0x02ed  */
+        /* JADX WARN: Removed duplicated region for block: B:186:0x01b5  */
         /* JADX WARN: Removed duplicated region for block: B:23:0x0076  */
-        /* JADX WARN: Removed duplicated region for block: B:59:0x0139  */
-        /* JADX WARN: Removed duplicated region for block: B:77:0x01a6  */
-        /* JADX WARN: Removed duplicated region for block: B:80:0x01c5  */
+        /* JADX WARN: Removed duplicated region for block: B:59:0x013a  */
+        /* JADX WARN: Removed duplicated region for block: B:77:0x01a8  */
+        /* JADX WARN: Removed duplicated region for block: B:80:0x01c7  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -4439,7 +4439,7 @@ public class StoriesController {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* JADX WARN: Code restructure failed: missing block: B:19:0x00e6, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:18:0x00e9, code lost:
         
             if (r3 != null) goto L25;
          */
@@ -4448,73 +4448,71 @@ public class StoriesController {
         */
         public /* synthetic */ void lambda$saveCache$8(ArrayList arrayList, MessagesStorage messagesStorage, ArrayList arrayList2) {
             SQLitePreparedStatement sQLitePreparedStatement;
-            SQLiteDatabase database;
-            SQLitePreparedStatement executeFast;
             FileLog.d("StoriesList " + this.type + "{" + this.dialogId + "} saveCache {" + StoriesController.storyItemMessageIds(arrayList) + "}");
             SQLitePreparedStatement sQLitePreparedStatement2 = null;
             try {
-                database = messagesStorage.getDatabase();
-                executeFast = database.executeFast("REPLACE INTO profile_stories VALUES(?, ?, ?, ?, ?, ?)");
-            } catch (Throwable th) {
-                th = th;
-                sQLitePreparedStatement = null;
-            }
-            try {
-                database.executeFast(String.format(Locale.US, "DELETE FROM profile_stories_albums_links WHERE dialog_id = %d AND album_id = %d", Long.valueOf(this.dialogId), Integer.valueOf(this.albumId))).stepThis().dispose();
-                sQLitePreparedStatement2 = database.executeFast("REPLACE INTO profile_stories_albums_links VALUES(?, ?, ?, ?)");
-                for (int i = 0; i < arrayList.size(); i++) {
-                    TL_stories.StoryItem storyItem = ((MessageObject) arrayList.get(i)).storyItem;
-                    if (storyItem != null) {
-                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(storyItem.getObjectSize());
-                        storyItem.serializeToStream(nativeByteBuffer);
-                        executeFast.requery();
-                        executeFast.bindLong(1, this.dialogId);
-                        executeFast.bindInteger(2, storyItem.id);
-                        executeFast.bindByteBuffer(3, nativeByteBuffer);
-                        executeFast.bindInteger(4, this.type);
-                        executeFast.bindInteger(5, this.seenStories.contains(Integer.valueOf(storyItem.id)) ? 1 : 0);
-                        executeFast.bindInteger(6, arrayList2.indexOf(Integer.valueOf(storyItem.id)) + 1);
-                        executeFast.step();
-                        nativeByteBuffer.reuse();
-                        sQLitePreparedStatement2.requery();
-                        sQLitePreparedStatement2.bindLong(1, this.dialogId);
-                        sQLitePreparedStatement2.bindInteger(2, this.albumId);
-                        sQLitePreparedStatement2.bindInteger(3, storyItem.id);
-                        sQLitePreparedStatement2.bindInteger(4, i);
-                        sQLitePreparedStatement2.step();
-                    }
-                }
-                if (executeFast != null) {
-                    executeFast.dispose();
-                }
-            } catch (Throwable th2) {
-                th = th2;
-                sQLitePreparedStatement = sQLitePreparedStatement2;
-                sQLitePreparedStatement2 = executeFast;
+                SQLiteDatabase database = messagesStorage.getDatabase();
+                SQLitePreparedStatement executeFast = database.executeFast("REPLACE INTO profile_stories VALUES(?, ?, ?, ?, ?, ?)");
                 try {
-                    messagesStorage.checkSQLException(th);
-                    if (sQLitePreparedStatement2 != null) {
-                        sQLitePreparedStatement2.dispose();
-                    }
-                    if (sQLitePreparedStatement != null) {
-                        sQLitePreparedStatement2 = sQLitePreparedStatement;
-                        sQLitePreparedStatement2.dispose();
-                    }
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.StoriesController$StoriesList$$ExternalSyntheticLambda11
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            StoriesController.StoriesList.this.lambda$saveCache$7();
+                    database.executeFast(String.format(Locale.US, "DELETE FROM profile_stories_albums_links WHERE dialog_id = %d AND album_id = %d", Long.valueOf(this.dialogId), Integer.valueOf(this.albumId))).stepThis().dispose();
+                    sQLitePreparedStatement2 = database.executeFast("REPLACE INTO profile_stories_albums_links VALUES(?, ?, ?, ?)");
+                    for (int i = 0; i < arrayList.size(); i++) {
+                        TL_stories.StoryItem storyItem = ((MessageObject) arrayList.get(i)).storyItem;
+                        if (storyItem != null) {
+                            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(storyItem.getObjectSize());
+                            storyItem.serializeToStream(nativeByteBuffer);
+                            executeFast.requery();
+                            executeFast.bindLong(1, this.dialogId);
+                            executeFast.bindInteger(2, storyItem.id);
+                            executeFast.bindByteBuffer(3, nativeByteBuffer);
+                            executeFast.bindInteger(4, this.type);
+                            executeFast.bindInteger(5, this.seenStories.contains(Integer.valueOf(storyItem.id)) ? 1 : 0);
+                            executeFast.bindInteger(6, arrayList2.indexOf(Integer.valueOf(storyItem.id)) + 1);
+                            executeFast.step();
+                            nativeByteBuffer.reuse();
+                            sQLitePreparedStatement2.requery();
+                            sQLitePreparedStatement2.bindLong(1, this.dialogId);
+                            sQLitePreparedStatement2.bindInteger(2, this.albumId);
+                            sQLitePreparedStatement2.bindInteger(3, storyItem.id);
+                            sQLitePreparedStatement2.bindInteger(4, i);
+                            sQLitePreparedStatement2.step();
                         }
-                    });
-                } catch (Throwable th3) {
-                    if (sQLitePreparedStatement2 != null) {
-                        sQLitePreparedStatement2.dispose();
                     }
-                    if (sQLitePreparedStatement != null) {
-                        sQLitePreparedStatement.dispose();
+                    if (executeFast != null) {
+                        executeFast.dispose();
                     }
-                    throw th3;
+                } catch (Throwable th) {
+                    th = th;
+                    sQLitePreparedStatement = sQLitePreparedStatement2;
+                    sQLitePreparedStatement2 = executeFast;
+                    try {
+                        messagesStorage.checkSQLException(th);
+                        if (sQLitePreparedStatement2 != null) {
+                            sQLitePreparedStatement2.dispose();
+                        }
+                        if (sQLitePreparedStatement != null) {
+                            sQLitePreparedStatement2 = sQLitePreparedStatement;
+                            sQLitePreparedStatement2.dispose();
+                        }
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.StoriesController$StoriesList$$ExternalSyntheticLambda11
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                StoriesController.StoriesList.this.lambda$saveCache$7();
+                            }
+                        });
+                    } catch (Throwable th2) {
+                        if (sQLitePreparedStatement2 != null) {
+                            sQLitePreparedStatement2.dispose();
+                        }
+                        if (sQLitePreparedStatement != null) {
+                            sQLitePreparedStatement.dispose();
+                        }
+                        throw th2;
+                    }
                 }
+            } catch (Throwable th3) {
+                th = th3;
+                sQLitePreparedStatement = null;
             }
         }
 
@@ -5503,7 +5501,7 @@ public class StoriesController {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0098  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x009a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -6132,7 +6130,7 @@ public class StoriesController {
     }
 
     public void checkUnsupportedStory(final long j, final int i) {
-        final String str = "227:" + j + ":" + i;
+        final String str = "228:" + j + ":" + i;
         if (this.requestingUnsupportedStories.contains(str) || this.unsupportedStoriesChecked.contains(str)) {
             return;
         }
