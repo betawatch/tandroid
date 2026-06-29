@@ -35,6 +35,7 @@ import org.telegram.ui.Components.JoinGroupAlert;
 
 /* loaded from: classes5.dex */
 public class JoinGroupAlert extends BottomSheet {
+    private BulletinFactory bulletinFactory;
     private TLRPC.ChatInvite chatInvite;
     private TLRPC.Chat currentChat;
     private final BaseFragment fragment;
@@ -355,7 +356,7 @@ public class JoinGroupAlert extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$2(boolean z, DialogInterface dialogInterface) {
-        showBulletin(getContext(), this.fragment, z);
+        showBulletin(getContext(), this.fragment, this.bulletinFactory, z);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -408,7 +409,7 @@ public class JoinGroupAlert extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$5(boolean z, DialogInterface dialogInterface) {
-        showBulletin(getContext(), this.fragment, z);
+        showBulletin(getContext(), this.fragment, this.bulletinFactory, z);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -484,11 +485,20 @@ public class JoinGroupAlert extends BottomSheet {
         }
     }
 
+    public JoinGroupAlert setBulletinFactory(BulletinFactory bulletinFactory) {
+        this.bulletinFactory = bulletinFactory;
+        return this;
+    }
+
     private Drawable getVerifiedCrossfadeDrawable() {
         return new CombinedDrawable(Theme.dialogs_verifiedDrawable, Theme.dialogs_verifiedCheckDrawable);
     }
 
     public static void showBulletin(Context context, BaseFragment baseFragment, boolean z) {
+        showBulletin(context, baseFragment, BulletinFactory.of(baseFragment), z);
+    }
+
+    public static void showBulletin(Context context, BaseFragment baseFragment, BulletinFactory bulletinFactory, boolean z) {
         String string;
         if (context == null) {
             if (baseFragment != null) {
@@ -496,6 +506,9 @@ public class JoinGroupAlert extends BottomSheet {
                 return;
             }
             return;
+        }
+        if (bulletinFactory == null) {
+            bulletinFactory = BulletinFactory.of(baseFragment);
         }
         Bulletin.TwoLineLottieLayout twoLineLottieLayout = new Bulletin.TwoLineLottieLayout(context, baseFragment.getResourceProvider());
         twoLineLottieLayout.imageView.setAnimation(R.raw.timer_3, 28, 28);
@@ -506,7 +519,7 @@ public class JoinGroupAlert extends BottomSheet {
             string = LocaleController.getString(R.string.RequestToJoinGroupSentDescription);
         }
         twoLineLottieLayout.subtitleTextView.setText(string);
-        Bulletin.make(baseFragment, twoLineLottieLayout, 2750).show();
+        bulletinFactory.create(twoLineLottieLayout, 2750).show();
     }
 
     private CharSequence ellipsize(TextView textView, TLRPC.ChatInvite chatInvite, int i) {

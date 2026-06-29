@@ -104,12 +104,12 @@ public abstract class StoriesUtilities {
         drawAvatarWithStory(j, canvas, imageReceiver, UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId() != j && MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController().hasStories(j), avatarStoryParams);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:153:0x0466  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x046d  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x0489  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x04ab  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x047b  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x0482  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x049e  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x04c0  */
     /* JADX WARN: Removed duplicated region for block: B:169:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x0468  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x047d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -215,7 +215,10 @@ public abstract class StoriesUtilities {
         avatarStoryParams.showProgress = isLoading;
         if (avatarStoryParams.currentState == 0 && avatarStoryParams.progressToSate == 1.0f) {
             imageReceiver.setImageCoords(avatarStoryParams.originalAvatarRect);
+            canvas.save();
+            canvas.scale(scale, scale, avatarStoryParams.originalAvatarRect.centerX(), avatarStoryParams.originalAvatarRect.centerY());
             imageReceiver.draw(canvas);
+            canvas.restore();
             return;
         }
         int save = canvas.save();
@@ -1350,6 +1353,14 @@ public abstract class StoriesUtilities {
         public int unreadState;
         public boolean useArcProgress;
 
+        public boolean isAvatarClickable(long j, TLRPC.Chat chat) {
+            return false;
+        }
+
+        public boolean onAvatarClick(View view, long j) {
+            return false;
+        }
+
         public void onLongPress() {
         }
 
@@ -1396,10 +1407,15 @@ public abstract class StoriesUtilities {
             this.globalAngle += 1.152f;
         }
 
+        /* JADX WARN: Removed duplicated region for block: B:18:0x00c0  */
+        /* JADX WARN: Removed duplicated region for block: B:21:0x00ed  */
+        /* JADX WARN: Removed duplicated region for block: B:25:0x00cc  */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
         public boolean checkOnTouchEvent(MotionEvent motionEvent, final View view) {
             TLRPC.User user;
-            TLRPC.TL_recentStory tL_recentStory;
-            TLRPC.TL_recentStory tL_recentStory2;
+            ButtonBounce buttonBounce;
             this.child = view;
             StoriesController storiesController = MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController();
             boolean z = false;
@@ -1411,17 +1427,43 @@ public abstract class StoriesUtilities {
                     user = null;
                     chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-this.dialogId));
                 }
-                if (this.drawHiddenStoriesAsSegments) {
-                    z = storiesController.hasHiddenStories();
-                } else if (this.dialogId <= 0 ? MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController().hasStories(this.dialogId) || (chat != null && !chat.stories_unavailable && (tL_recentStory = chat.stories_max_id) != null && tL_recentStory.max_id > 0) : MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController().hasStories(this.dialogId) || (user != null && !user.stories_unavailable && (tL_recentStory2 = user.stories_max_id) != null && tL_recentStory2.max_id > 0)) {
-                    z = true;
+                if (!isAvatarClickable(this.dialogId, chat)) {
+                    if (this.drawHiddenStoriesAsSegments) {
+                        z = storiesController.hasHiddenStories();
+                    } else if (this.dialogId <= 0) {
+                    }
+                    if (this.dialogId != UserConfig.getInstance(UserConfig.selectedAccount).clientUserId && z) {
+                        buttonBounce = this.buttonBounce;
+                        if (buttonBounce != null) {
+                            this.buttonBounce = new ButtonBounce(view, 1.5f, 5.0f);
+                        } else {
+                            buttonBounce.setView(view);
+                        }
+                        view.getParent().requestDisallowInterceptTouchEvent(true);
+                        this.buttonBounce.setPressed(true);
+                        this.pressed = true;
+                        this.startX = motionEvent.getX();
+                        this.startY = motionEvent.getY();
+                        if (this.allowLongress) {
+                            Runnable runnable = this.longPressRunnable;
+                            if (runnable != null) {
+                                AndroidUtilities.cancelRunOnUIThread(runnable);
+                            }
+                            Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Stories.StoriesUtilities$AvatarStoryParams$$ExternalSyntheticLambda0
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    StoriesUtilities.AvatarStoryParams.this.lambda$checkOnTouchEvent$0(view);
+                                }
+                            };
+                            this.longPressRunnable = runnable2;
+                            AndroidUtilities.runOnUIThread(runnable2, ViewConfiguration.getLongPressTimeout());
+                        }
+                    }
                 }
-                if (this.dialogId != UserConfig.getInstance(UserConfig.selectedAccount).clientUserId && z) {
-                    ButtonBounce buttonBounce = this.buttonBounce;
-                    if (buttonBounce == null) {
-                        this.buttonBounce = new ButtonBounce(view, 1.5f, 5.0f);
-                    } else {
-                        buttonBounce.setView(view);
+                z = true;
+                if (this.dialogId != UserConfig.getInstance(UserConfig.selectedAccount).clientUserId) {
+                    buttonBounce = this.buttonBounce;
+                    if (buttonBounce != null) {
                     }
                     view.getParent().requestDisallowInterceptTouchEvent(true);
                     this.buttonBounce.setPressed(true);
@@ -1429,18 +1471,6 @@ public abstract class StoriesUtilities {
                     this.startX = motionEvent.getX();
                     this.startY = motionEvent.getY();
                     if (this.allowLongress) {
-                        Runnable runnable = this.longPressRunnable;
-                        if (runnable != null) {
-                            AndroidUtilities.cancelRunOnUIThread(runnable);
-                        }
-                        Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Stories.StoriesUtilities$AvatarStoryParams$$ExternalSyntheticLambda0
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                StoriesUtilities.AvatarStoryParams.this.lambda$checkOnTouchEvent$0(view);
-                            }
-                        };
-                        this.longPressRunnable = runnable2;
-                        AndroidUtilities.runOnUIThread(runnable2, ViewConfiguration.getLongPressTimeout());
                     }
                 }
             } else if (motionEvent.getAction() == 2 && this.pressed) {
@@ -1500,6 +1530,9 @@ public abstract class StoriesUtilities {
         private void processOpenStory(View view) {
             TLRPC.TL_recentStory tL_recentStory;
             TLRPC.TL_recentStory tL_recentStory2;
+            if (onAvatarClick(view, this.dialogId)) {
+                return;
+            }
             MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
             StoriesController storiesController = messagesController.getStoriesController();
             if (this.drawHiddenStoriesAsSegments) {

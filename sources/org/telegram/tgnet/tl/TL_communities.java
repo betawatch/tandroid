@@ -1,13 +1,13 @@
 package org.telegram.tgnet.tl;
 
 import java.util.ArrayList;
-import org.telegram.messenger.MessagesStorage$$ExternalSyntheticLambda210;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1;
+import org.telegram.tgnet.TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_communities;
 
@@ -31,7 +31,7 @@ public class TL_communities {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.creator_chat_ids = Vector.deserializeLong(inputSerializedData, z);
             this.joined_chat_ids = Vector.deserializeLong(inputSerializedData, z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -71,7 +71,7 @@ public class TL_communities {
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.next_offset = inputSerializedData.readString(z);
             }
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -164,6 +164,7 @@ public class TL_communities {
         public static final int constructor = -1506256404;
         public String about;
         public int flags;
+        public boolean hidden;
         public TLRPC.InputPeer peer;
         public String title;
 
@@ -175,9 +176,11 @@ public class TL_communities {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.about != null);
+            int flag = TLObject.setFlag(this.flags, 2, this.hidden);
             this.flags = flag;
-            outputSerializedData.writeInt32(flag);
+            int flag2 = TLObject.setFlag(flag, 1, this.about != null);
+            this.flags = flag2;
+            outputSerializedData.writeInt32(flag2);
             outputSerializedData.writeString(this.title);
             if (TLObject.hasFlag(this.flags, 1)) {
                 outputSerializedData.writeString(this.about);

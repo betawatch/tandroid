@@ -490,14 +490,14 @@ public class ItemOptions {
         actionBarMenuSubItem.setColors(intValue, num2 != null ? num2.intValue() : Theme.getColor(i3, this.resourcesProvider));
         Integer num3 = this.selectorColor;
         actionBarMenuSubItem.setSelectorColor(num3 != null ? num3.intValue() : Theme.multAlpha(Theme.getColor(i2, this.resourcesProvider), 0.12f));
-        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda14
+        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ItemOptions.this.lambda$addChecked$2(runnable, view);
             }
         });
         if (runnable2 != null) {
-            actionBarMenuSubItem.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda15
+            actionBarMenuSubItem.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda12
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
                     boolean lambda$addChecked$3;
@@ -973,7 +973,7 @@ public class ItemOptions {
         textView2.setTextSize(1, 13.0f);
         textView2.setText(AndroidUtilities.replaceArrows(charSequence, false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(0.66f)));
         frameLayout.addView(textView2, LayoutHelper.createFrame(-2, -2.0f, 55, 59.0f, 27.0f, 16.0f, 0.0f));
-        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda13
+        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda15
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ItemOptions.this.lambda$addProfile$12(runnable, view);
@@ -1672,14 +1672,14 @@ public class ItemOptions {
         }
         this.followingView = view;
         view.getLocationOnScreen(this.followLoc);
-        this.followScrollListener = new ViewTreeObserver.OnScrollChangedListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda11
+        this.followScrollListener = new ViewTreeObserver.OnScrollChangedListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda13
             @Override // android.view.ViewTreeObserver.OnScrollChangedListener
             public final void onScrollChanged() {
                 ItemOptions.this.lambda$installFollowListeners$16();
             }
         };
         this.followingView.getViewTreeObserver().addOnScrollChangedListener(this.followScrollListener);
-        View.OnLayoutChangeListener onLayoutChangeListener = new View.OnLayoutChangeListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda12
+        View.OnLayoutChangeListener onLayoutChangeListener = new View.OnLayoutChangeListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda14
             @Override // android.view.View.OnLayoutChangeListener
             public final void onLayoutChange(View view2, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
                 ItemOptions.this.lambda$installFollowListeners$17(view2, i, i2, i3, i4, i5, i6, i7, i8);

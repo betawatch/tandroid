@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Point;
@@ -26,6 +25,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import androidx.core.content.ContextCompat;
 import java.util.concurrent.atomic.AtomicReference;
+import me.vkryl.android.animator.BoolAnimator;
+import me.vkryl.android.animator.FactorAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.ChatObject;
@@ -63,11 +64,12 @@ import org.telegram.ui.TopicsFragment;
 import org.telegram.ui.community.CommunityArrowDrawable;
 
 /* loaded from: classes5.dex */
-public class ChatAvatarContainer extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.Target, NotificationCenter.NotificationCenterDelegate {
     private ActionBar actionBar;
     public boolean allowDrawStories;
     public boolean allowShorterStatus;
     private AnimatedTextView animatedSubtitleTextView;
+    private final BoolAnimator animatorTimeVisible;
     private AvatarDrawable avatarDrawable;
     public BackupImageView avatarImageView;
     private int avatarSizeInDp;
@@ -128,6 +130,11 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         return false;
     }
 
+    @Override // me.vkryl.android.animator.FactorAnimator.Target
+    public /* synthetic */ void onFactorChangeFinished(int i, float f, FactorAnimator factorAnimator) {
+        FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i, f, factorAnimator);
+    }
+
     protected void openSearch() {
     }
 
@@ -178,15 +185,27 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         this(context, baseFragment, z, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x0342, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x0369, code lost:
     
-        if (r2.isComments == false) goto L80;
+        if (r4.isComments == false) goto L88;
      */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r2v34 */
+    /* JADX WARN: Type inference failed for: r2v35, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r2v40 */
+    /* JADX WARN: Type inference failed for: r8v1 */
+    /* JADX WARN: Type inference failed for: r8v2, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r8v3 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public ChatAvatarContainer(Context context, BaseFragment baseFragment, boolean z, final Theme.ResourcesProvider resourcesProvider) {
         super(context);
+        ?? r2;
+        int i;
+        ?? r8;
+        CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
+        this.animatorTimeVisible = new BoolAnimator(0, this, cubicBezierInterpolator, 320L);
         this.avatarSizeInDp = 42;
         this.titleTextLargerCopyView = new AtomicReference();
         this.subtitleTextLargerCopyView = new AtomicReference();
@@ -237,6 +256,11 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         this.avatarImageView.setRoundRadius(AndroidUtilities.dp(21.0f));
         addView(this.avatarImageView);
         if (z3) {
+            ChatActivity chatActivity4 = this.parentFragment;
+            TLRPC.Chat currentChat = chatActivity4 != null ? chatActivity4.getCurrentChat() : null;
+            if (currentChat != null && currentChat.linked_community_id != 0) {
+                ScaleStateListAnimator.apply(this.avatarImageView, 0.05f, 1.2f);
+            }
             this.avatarImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAvatarContainer$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -259,25 +283,31 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         if (useAnimatedSubtitle()) {
             AnimatedTextView animatedTextView = new AnimatedTextView(context, true, true, true);
             this.animatedSubtitleTextView = animatedTextView;
-            animatedTextView.setAnimationProperties(0.3f, 0L, 320L, CubicBezierInterpolator.EASE_OUT_QUINT);
+            r2 = 0;
+            i = 8;
+            r8 = 1;
+            animatedTextView.setAnimationProperties(0.3f, 0L, 320L, cubicBezierInterpolator);
             this.animatedSubtitleTextView.setEllipsizeByGradient(true);
             AnimatedTextView animatedTextView2 = this.animatedSubtitleTextView;
-            int i = Theme.key_actionBarDefaultSubtitle;
-            animatedTextView2.setTextColor(getThemedColor(i));
-            this.animatedSubtitleTextView.setTag(Integer.valueOf(i));
+            int i2 = Theme.key_actionBarDefaultSubtitle;
+            animatedTextView2.setTextColor(getThemedColor(i2));
+            this.animatedSubtitleTextView.setTag(Integer.valueOf(i2));
             this.animatedSubtitleTextView.setTextSize(AndroidUtilities.dp(14.0f));
             this.animatedSubtitleTextView.setGravity(3);
             this.animatedSubtitleTextView.setPadding(0, 0, AndroidUtilities.dp(10.0f), 0);
             this.animatedSubtitleTextView.setTranslationY(-AndroidUtilities.dp(1.0f));
             addView(this.animatedSubtitleTextView);
         } else {
+            r2 = 0;
+            i = 8;
+            r8 = 1;
             SimpleTextConnectedView simpleTextConnectedView2 = new SimpleTextConnectedView(context, this.subtitleTextLargerCopyView);
             this.subtitleTextView = simpleTextConnectedView2;
             simpleTextConnectedView2.setEllipsizeByGradient(true);
             SimpleTextView simpleTextView = this.subtitleTextView;
-            int i2 = Theme.key_actionBarDefaultSubtitle;
-            simpleTextView.setTextColor(getThemedColor(i2));
-            this.subtitleTextView.setTag(Integer.valueOf(i2));
+            int i3 = Theme.key_actionBarDefaultSubtitle;
+            simpleTextView.setTextColor(getThemedColor(i3));
+            this.subtitleTextView.setTag(Integer.valueOf(i3));
             this.subtitleTextView.setTextSize(14);
             this.subtitleTextView.setGravity(3);
             this.subtitleTextView.setPadding(0, 0, AndroidUtilities.dp(10.0f), 0);
@@ -288,21 +318,18 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
             this.communityItem = imageView;
             ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
             imageView.setScaleType(scaleType);
-            this.communityItem.setVisibility(8);
+            this.communityItem.setVisibility(i);
             this.communityItem.setImageDrawable(new CommunityArrowDrawable());
             addView(this.communityItem);
             ImageView imageView2 = new ImageView(context);
             this.timeItem = imageView2;
             imageView2.setScaleType(scaleType);
-            this.timeItem.setAlpha(0.0f);
-            this.timeItem.setScaleY(0.0f);
-            this.timeItem.setScaleX(0.0f);
-            this.timeItem.setVisibility(8);
+            this.timeItem.setVisibility(i);
             ImageView imageView3 = this.timeItem;
             TimerDrawable timerDrawable = new TimerDrawable(context, resourcesProvider);
             this.timerDrawable = timerDrawable;
             imageView3.setImageDrawable(timerDrawable);
-            this.timerDrawable.setBackgroundColor(0);
+            this.timerDrawable.setBackgroundColor(r2);
             addView(this.timeItem);
             this.secretChatTimer = z;
             this.timeItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAvatarContainer$$ExternalSyntheticLambda6
@@ -334,11 +361,11 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
             this.starFgItem.setScaleX(0.0f);
             addView(this.starFgItem);
         }
-        ChatActivity chatActivity4 = this.parentFragment;
-        if (chatActivity4 != null && (chatActivity4.getChatMode() == 0 || this.parentFragment.getChatMode() == 8 || this.parentFragment.getChatMode() == 3)) {
+        ChatActivity chatActivity5 = this.parentFragment;
+        if (chatActivity5 != null && (chatActivity5.getChatMode() == 0 || this.parentFragment.getChatMode() == i || this.parentFragment.getChatMode() == 3)) {
             if (this.parentFragment.isThreadChat()) {
-                ChatActivity chatActivity5 = this.parentFragment;
-                if (!chatActivity5.isTopic) {
+                ChatActivity chatActivity6 = this.parentFragment;
+                if (!chatActivity6.isTopic) {
                 }
             }
             if (!UserObject.isReplyUser(this.parentFragment.getCurrentUser()) && (this.parentFragment.getCurrentUser() == null || this.parentFragment.getCurrentUser().id != UserObject.VERIFY)) {
@@ -349,21 +376,21 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
                     }
                 });
             }
-            TLRPC.Chat currentChat = this.parentFragment.getCurrentChat();
-            this.statusDrawables[0] = new TypingDotsDrawable(true);
-            this.statusDrawables[1] = new RecordStatusDrawable(true);
-            this.statusDrawables[2] = new SendingFileDrawable(true);
-            this.statusDrawables[3] = new PlayingGameDrawable(false, resourcesProvider);
-            this.statusDrawables[4] = new RoundStatusDrawable(true);
-            this.statusDrawables[5] = new ChoosingStickerStatusDrawable(true);
-            int i3 = 0;
+            TLRPC.Chat currentChat2 = this.parentFragment.getCurrentChat();
+            this.statusDrawables[r2] = new TypingDotsDrawable(r8);
+            this.statusDrawables[r8] = new RecordStatusDrawable(r8);
+            this.statusDrawables[2] = new SendingFileDrawable(r8);
+            this.statusDrawables[3] = new PlayingGameDrawable(r2, resourcesProvider);
+            this.statusDrawables[4] = new RoundStatusDrawable(r8);
+            this.statusDrawables[5] = new ChoosingStickerStatusDrawable(r8);
+            int i4 = 0;
             while (true) {
                 StatusDrawable[] statusDrawableArr = this.statusDrawables;
-                if (i3 >= statusDrawableArr.length) {
+                if (i4 >= statusDrawableArr.length) {
                     break;
                 }
-                statusDrawableArr[i3].setIsChat(currentChat != null);
-                i3++;
+                statusDrawableArr[i4].setIsChat(currentChat2 != null);
+                i4++;
             }
         }
         this.emojiStatusDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(this.titleTextView, AndroidUtilities.dp(24.0f));
@@ -589,7 +616,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         }
         TLRPC.Chat currentChat = this.parentFragment.getCurrentChat();
         if (currentChat != null && !ChatObject.canUserDoAdminAction(currentChat, 13)) {
-            if (this.timeItem.getTag() != null) {
+            if (this.animatorTimeVisible.getValue()) {
                 this.parentFragment.showTimerHint();
             }
             return false;
@@ -981,11 +1008,11 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         }
         ImageView imageView = this.communityItem;
         if (imageView != null) {
-            imageView.layout(this.leftPadding + AndroidUtilities.dp(36.0f), AndroidUtilities.dp(34.33f) + currentActionBarHeight, this.leftPadding + AndroidUtilities.dp(36.0f) + this.communityItem.getWidth(), AndroidUtilities.dp(34.33f) + currentActionBarHeight + this.communityItem.getHeight());
+            imageView.layout(this.leftPadding + AndroidUtilities.dp(29.0f), AndroidUtilities.dp(27.33f) + currentActionBarHeight, this.leftPadding + AndroidUtilities.dp(29.0f) + this.communityItem.getMeasuredWidth(), AndroidUtilities.dp(27.33f) + currentActionBarHeight + this.communityItem.getMeasuredHeight());
         }
         ImageView imageView2 = this.timeItem;
         if (imageView2 != null) {
-            imageView2.layout(this.leftPadding + AndroidUtilities.dp(19.333f), AndroidUtilities.dp(-8.0f) + currentActionBarHeight, this.leftPadding + AndroidUtilities.dp(53.333f), AndroidUtilities.dp(26.0f) + currentActionBarHeight);
+            imageView2.layout(this.leftPadding + AndroidUtilities.dp(19.333f), currentActionBarHeight - AndroidUtilities.dp(8.0f), this.leftPadding + AndroidUtilities.dp(19.333f) + this.timeItem.getMeasuredWidth(), (currentActionBarHeight - AndroidUtilities.dp(8.0f)) + this.timeItem.getMeasuredHeight());
         }
         ImageView imageView3 = this.starBgItem;
         if (imageView3 != null) {
@@ -1029,63 +1056,25 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         }
     }
 
-    public void showTimeItem(boolean z) {
-        ImageView imageView = this.timeItem;
-        if (imageView != null && imageView.getTag() == null && this.avatarImageView.getVisibility() == 0) {
-            this.timeItem.clearAnimation();
-            this.timeItem.setVisibility(0);
-            this.timeItem.setTag(1);
-            if (z) {
-                this.timeItem.animate().setDuration(180L).alpha(0.85f).scaleX(0.85f).scaleY(1.0f).setListener(null).setUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAvatarContainer$$ExternalSyntheticLambda8
-                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        ChatAvatarContainer.this.lambda$showTimeItem$6(valueAnimator);
-                    }
-                }).start();
-                return;
-            }
-            this.timeItem.setAlpha(1.0f);
-            this.timeItem.setScaleY(0.85f);
-            this.timeItem.setScaleX(0.85f);
+    @Override // me.vkryl.android.animator.FactorAnimator.Target
+    public void onFactorChanged(int i, float f, float f2, FactorAnimator factorAnimator) {
+        ImageView imageView;
+        if (i != 0 || (imageView = this.timeItem) == null) {
+            return;
         }
+        imageView.setAlpha(f);
+        float f3 = 0.85f * f;
+        this.timeItem.setScaleX(f3);
+        this.timeItem.setScaleY(f3);
+        this.timeItem.setVisibility(f > 0.0f ? 0 : 8);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showTimeItem$6(ValueAnimator valueAnimator) {
-        invalidate();
+    public void showTimeItem(boolean z) {
+        this.animatorTimeVisible.setValue(true, z);
     }
 
     public void hideTimeItem(boolean z) {
-        ImageView imageView = this.timeItem;
-        if (imageView == null || imageView.getTag() == null) {
-            return;
-        }
-        this.timeItem.clearAnimation();
-        this.timeItem.setTag(null);
-        if (z) {
-            this.timeItem.animate().setDuration(180L).alpha(0.0f).scaleX(0.0f).scaleY(0.0f).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAvatarContainer.4
-                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                public void onAnimationEnd(Animator animator) {
-                    ChatAvatarContainer.this.timeItem.setVisibility(8);
-                    super.onAnimationEnd(animator);
-                }
-            }).setUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAvatarContainer$$ExternalSyntheticLambda9
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    ChatAvatarContainer.this.lambda$hideTimeItem$7(valueAnimator);
-                }
-            }).start();
-            return;
-        }
-        this.timeItem.setVisibility(8);
-        this.timeItem.setAlpha(0.0f);
-        this.timeItem.setScaleY(0.0f);
-        this.timeItem.setScaleX(0.0f);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hideTimeItem$7(ValueAnimator valueAnimator) {
-        invalidate();
+        this.animatorTimeVisible.setValue(false, z);
     }
 
     public void setTime(int i, boolean z) {
@@ -1127,19 +1116,19 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         this.starBgItem.animate().alpha(z ? 1.0f : 0.0f).scaleX(z ? 1.1f : 0.0f).scaleY(z ? 1.1f : 0.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.ChatAvatarContainer$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                ChatAvatarContainer.this.lambda$setStars$8(z);
+                ChatAvatarContainer.this.lambda$setStars$6(z);
             }
         }).start();
         this.starFgItem.animate().alpha(z ? 1.0f : 0.0f).scaleX(z ? 1.0f : 0.0f).scaleY(z ? 1.0f : 0.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.ChatAvatarContainer$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                ChatAvatarContainer.this.lambda$setStars$9(z);
+                ChatAvatarContainer.this.lambda$setStars$7(z);
             }
         }).start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setStars$8(boolean z) {
+    public /* synthetic */ void lambda$setStars$6(boolean z) {
         if (z) {
             return;
         }
@@ -1147,7 +1136,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setStars$9(boolean z) {
+    public /* synthetic */ void lambda$setStars$7(boolean z) {
         if (z) {
             return;
         }
@@ -1406,7 +1395,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
                     AnimatorSet animatorSet2 = new AnimatorSet();
                     this.titleAnimation = animatorSet2;
                     animatorSet2.playTogether(ObjectAnimator.ofFloat(this.titleTextView, (Property<SimpleTextView, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(9.7f)), ObjectAnimator.ofFloat(getSubtitleTextView(), (Property<View, Float>) View.ALPHA, 0.0f));
-                    this.titleAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAvatarContainer.5
+                    this.titleAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAvatarContainer.4
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationCancel(Animator animator) {
                             ChatAvatarContainer.this.titleAnimation = null;
@@ -1508,7 +1497,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
                     AnimatorSet animatorSet4 = new AnimatorSet();
                     this.titleAnimation = animatorSet4;
                     animatorSet4.playTogether(ObjectAnimator.ofFloat(this.titleTextView, (Property<SimpleTextView, Float>) View.TRANSLATION_Y, 0.0f), ObjectAnimator.ofFloat(getSubtitleTextView(), (Property<View, Float>) View.ALPHA, 1.0f));
-                    this.titleAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAvatarContainer.6
+                    this.titleAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatAvatarContainer.5
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
                             ChatAvatarContainer.this.titleAnimation = null;

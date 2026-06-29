@@ -186,7 +186,7 @@ public class CommunityCreateActivity extends BaseFragment implements Notificatio
             AlertsCreator.createSimpleTextInputAlert(getContext(), this, LocaleController.getString(R.string.CommunityNewCommunityTitle), null, LocaleController.getString(R.string.CommunityNewCommunityNameHint), null, ConnectionsManager.DEFAULT_DATACENTER_ID, LocaleController.getString(R.string.Create), this.resourceProvider, new MessagesStorage.StringCallback() { // from class: org.telegram.ui.community.CommunityCreateActivity$$ExternalSyntheticLambda4
                 @Override // org.telegram.messenger.MessagesStorage.StringCallback
                 public final void run(String str) {
-                    CommunityCreateActivity.this.createNewCommunity(str);
+                    CommunityCreateActivity.this.lambda$onClick$2(str);
                 }
             });
         }
@@ -196,51 +196,65 @@ public class CommunityCreateActivity extends BaseFragment implements Notificatio
             showDialog(new CommunityAddOptionsSheet(getContext(), chat, getMessagesController().getChat(Long.valueOf(-this.dialogId)), new Utilities.Callback() { // from class: org.telegram.ui.community.CommunityCreateActivity$$ExternalSyntheticLambda5
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj2) {
-                    CommunityCreateActivity.this.lambda$onClick$1(chat, (Boolean) obj2);
+                    CommunityCreateActivity.this.lambda$onClick$3(chat, (Boolean) obj2);
                 }
             }));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$1(TLRPC.Chat chat, Boolean bool) {
-        linkToCommunity(chat.id, bool.booleanValue());
+    public /* synthetic */ void lambda$onClick$2(final String str) {
+        showDialog(new CommunityAddOptionsSheet(getContext(), null, getMessagesController().getChat(Long.valueOf(-this.dialogId)), new Utilities.Callback() { // from class: org.telegram.ui.community.CommunityCreateActivity$$ExternalSyntheticLambda6
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                CommunityCreateActivity.this.lambda$onClick$1(str, (Boolean) obj);
+            }
+        }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void createNewCommunity(final String str) {
+    public /* synthetic */ void lambda$onClick$1(String str, Boolean bool) {
+        createNewCommunity(str, bool.booleanValue());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onClick$3(TLRPC.Chat chat, Boolean bool) {
+        linkToCommunity(chat.id, bool.booleanValue());
+    }
+
+    private void createNewCommunity(final String str, final boolean z) {
         if (!ChatObject.isChannel(this.currentChat)) {
             final AlertDialog alertDialog = new AlertDialog(getContext(), 3);
             alertDialog.showDelayed(250L);
-            getMessagesController().convertToMegaGroup(getParentActivity(), -this.dialogId, this, new MessagesStorage.LongCallback() { // from class: org.telegram.ui.community.CommunityCreateActivity$$ExternalSyntheticLambda7
+            getMessagesController().convertToMegaGroup(getParentActivity(), -this.dialogId, this, new MessagesStorage.LongCallback() { // from class: org.telegram.ui.community.CommunityCreateActivity$$ExternalSyntheticLambda8
                 @Override // org.telegram.messenger.MessagesStorage.LongCallback
                 public final void run(long j) {
-                    CommunityCreateActivity.this.lambda$createNewCommunity$2(alertDialog, str, j);
+                    CommunityCreateActivity.this.lambda$createNewCommunity$4(alertDialog, str, z, j);
                 }
             });
             return;
         }
-        getMessagesController().createCommunity(str, this.dialogId, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunityCreateActivity$$ExternalSyntheticLambda8
+        getMessagesController().createCommunity(str, this.dialogId, z, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunityCreateActivity$$ExternalSyntheticLambda9
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                CommunityCreateActivity.this.lambda$createNewCommunity$3((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                CommunityCreateActivity.this.lambda$createNewCommunity$5((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createNewCommunity$2(AlertDialog alertDialog, String str, long j) {
+    public /* synthetic */ void lambda$createNewCommunity$4(AlertDialog alertDialog, String str, boolean z, long j) {
         alertDialog.dismiss();
         if (j == 0) {
             return;
         }
         this.dialogId = -j;
         this.currentChat = getMessagesController().getChat(Long.valueOf(j));
-        createNewCommunity(str);
+        createNewCommunity(str, z);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createNewCommunity$3(TLRPC.Bool bool, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$createNewCommunity$5(TLRPC.Bool bool, TLRPC.TL_error tL_error) {
         if (tL_error != null) {
             BulletinFactory.of(this).showForError(tL_error);
         } else {
@@ -252,10 +266,10 @@ public class CommunityCreateActivity extends BaseFragment implements Notificatio
         if (!ChatObject.isChannel(this.currentChat)) {
             final AlertDialog alertDialog = new AlertDialog(getContext(), 3);
             alertDialog.showDelayed(250L);
-            getMessagesController().convertToMegaGroup(getParentActivity(), -this.dialogId, this, new MessagesStorage.LongCallback() { // from class: org.telegram.ui.community.CommunityCreateActivity$$ExternalSyntheticLambda6
+            getMessagesController().convertToMegaGroup(getParentActivity(), -this.dialogId, this, new MessagesStorage.LongCallback() { // from class: org.telegram.ui.community.CommunityCreateActivity$$ExternalSyntheticLambda7
                 @Override // org.telegram.messenger.MessagesStorage.LongCallback
                 public final void run(long j2) {
-                    CommunityCreateActivity.this.lambda$linkToCommunity$4(alertDialog, j, z, j2);
+                    CommunityCreateActivity.this.lambda$linkToCommunity$6(alertDialog, j, z, j2);
                 }
             });
             return;
@@ -264,7 +278,7 @@ public class CommunityCreateActivity extends BaseFragment implements Notificatio
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$linkToCommunity$4(AlertDialog alertDialog, long j, boolean z, long j2) {
+    public /* synthetic */ void lambda$linkToCommunity$6(AlertDialog alertDialog, long j, boolean z, long j2) {
         alertDialog.dismiss();
         if (j2 == 0) {
             return;

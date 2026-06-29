@@ -17,6 +17,7 @@ import org.telegram.ui.ActionBar.Theme;
 public class CommunityArrowDrawable extends Drawable {
     private int alpha = NotificationCenter.didReceiveSmsCode;
     private final Drawable arrowDrawable = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.settings_arrow).mutate();
+    private boolean drawCircle;
     private int lastColor;
 
     @Override // android.graphics.drawable.Drawable
@@ -26,6 +27,11 @@ public class CommunityArrowDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public void setColorFilter(ColorFilter colorFilter) {
+    }
+
+    public CommunityArrowDrawable withCircle() {
+        this.drawCircle = true;
+        return this;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -38,6 +44,7 @@ public class CommunityArrowDrawable extends Drawable {
             this.lastColor = color2;
             this.arrowDrawable.setColorFilter(new PorterDuffColorFilter(color2, PorterDuff.Mode.SRC_IN));
         }
+        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(7.6666665f), Theme.fillingPaint(ColorUtils.setAlphaComponent(color2, this.alpha)));
         canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(6.6666665f), Theme.fillingPaint(ColorUtils.setAlphaComponent(color, this.alpha)));
         DrawableUtils.setBounds(this.arrowDrawable, exactCenterX, exactCenterY, 17);
         canvas.translate(0.0f, AndroidUtilities.dp(0.66f));

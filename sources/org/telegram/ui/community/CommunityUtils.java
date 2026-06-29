@@ -12,7 +12,6 @@ import com.google.firebase.sessions.SessionDetails$$ExternalSyntheticBackport0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.messenger.AiTonesController$$ExternalSyntheticLambda0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
@@ -46,111 +45,55 @@ import org.telegram.ui.community.sheet.CommunityChatsToAddSheet;
 
 /* loaded from: classes3.dex */
 public abstract class CommunityUtils {
-    public static ArrayList updateCommunityCollapsedDialogs(int i, ArrayList arrayList) {
-        ArrayList arrayList2 = new ArrayList(arrayList.size());
-        LongSparseArray longSparseArray = new LongSparseArray();
-        int size = arrayList.size();
-        for (int i2 = 0; i2 < size; i2++) {
-            TLRPC.Dialog dialog = (TLRPC.Dialog) arrayList.get(i2);
-            long j = dialog.id;
-            if (j >= 0) {
-                arrayList2.add(dialog);
-            } else {
-                long j2 = -j;
-                TLRPC.Chat chat = MessagesController.getInstance(i).getChat(Long.valueOf(j2));
-                if (ChatObject.isCommunity(chat)) {
-                    if (!longSparseArray.containsKey(j2)) {
-                        longSparseArray.put(j2, dialog);
-                        arrayList2.add(dialog);
-                    }
-                } else if (ChatObject.isChatCollapsedInCommunity(i, chat)) {
-                    long j3 = chat.linked_community_id;
-                    if (!longSparseArray.containsKey(j3)) {
-                        long j4 = -j3;
-                        TLRPC.Dialog dialog2 = (TLRPC.Dialog) MessagesController.getInstance(i).dialogs_dict.get(j4);
-                        if (dialog2 == null) {
-                            dialog2 = new TLRPC.TL_dialogCommunity();
-                            dialog2.community_id = j3;
-                            dialog2.notify_settings = new TLRPC.TL_peerNotifySettings();
-                            DialogObject.initDialog(dialog2);
-                            MessagesController.getInstance(i).dialogs_dict.put(j4, dialog2);
-                        }
-                        longSparseArray.put(j3, dialog2);
-                        arrayList2.add(dialog2);
-                    }
-                } else {
-                    arrayList2.add(dialog);
-                }
-            }
-        }
-        return arrayList2;
-    }
-
-    public static void fillLinkedPeers(int i, ArrayList arrayList, ArrayList arrayList2, boolean z) {
+    public static void fillLinkedPeers(int i, ArrayList arrayList, long j, boolean z) {
         boolean z2;
-        ArrayList arrayList3 = new ArrayList();
-        ArrayList arrayList4 = new ArrayList();
-        ArrayList arrayList5 = new ArrayList();
-        ArrayList arrayList6 = new ArrayList();
-        Iterator it = arrayList2.iterator();
-        while (it.hasNext()) {
-            TL_communities.CommunityPeer communityPeer = (TL_communities.CommunityPeer) it.next();
-            TLRPC.Chat chat = MessagesController.getInstance(i).getChat(Long.valueOf(-DialogObject.getPeerDialogId(communityPeer.peer)));
-            if (chat != null) {
-                if (ChatObject.isInChat(chat)) {
-                    arrayList3.add(chat);
-                } else if (ChatObject.isPublic(chat) || communityPeer.can_view_history) {
-                    arrayList4.add(chat);
-                } else if (ChatObject.isCommunityPeerHidden(communityPeer)) {
-                    arrayList6.add(chat);
-                } else {
-                    arrayList5.add(chat);
-                }
-            }
+        MessagesController.CommunityPeersDialog buildCommunityPeers = MessagesController.getInstance(i).buildCommunityPeers(j);
+        if (buildCommunityPeers == null) {
+            return;
         }
-        if (arrayList3.isEmpty()) {
+        if (buildCommunityPeers.chatsYouAreIn.isEmpty()) {
             z2 = false;
         } else {
             arrayList.add(UItem.asHeader(21, LocaleController.getString(R.string.CommunitySectionChatsYouAreIn)));
-            Iterator it2 = arrayList3.iterator();
-            while (it2.hasNext()) {
-                arrayList.add(DialogCellFactory.asCell((TLRPC.Chat) it2.next()));
+            Iterator<MessagesController.CommunityPeerDialog> it = buildCommunityPeers.chatsYouAreIn.iterator();
+            while (it.hasNext()) {
+                arrayList.add(DialogCellFactory.asCell(it.next().chat));
             }
             z2 = z;
         }
-        if (!arrayList4.isEmpty()) {
+        if (!buildCommunityPeers.chatsYouCanView.isEmpty()) {
             if (z2) {
                 arrayList.add(UItem.asSpace(22, AndroidUtilities.dp(12.0f)));
             }
             arrayList.add(UItem.asHeader(23, LocaleController.getString(R.string.CommunitySectionChatsYouCanView)));
-            Iterator it3 = arrayList4.iterator();
-            while (it3.hasNext()) {
-                arrayList.add(DialogCellFactory.asCell((TLRPC.Chat) it3.next()));
+            Iterator<MessagesController.CommunityPeerDialog> it2 = buildCommunityPeers.chatsYouCanView.iterator();
+            while (it2.hasNext()) {
+                arrayList.add(DialogCellFactory.asCell(it2.next().chat));
             }
             z2 = z;
         }
-        if (arrayList5.isEmpty()) {
+        if (buildCommunityPeers.chatsYouCanJoin.isEmpty()) {
             z = z2;
         } else {
             if (z2) {
                 arrayList.add(UItem.asSpace(24, AndroidUtilities.dp(12.0f)));
             }
             arrayList.add(UItem.asHeader(25, LocaleController.getString(R.string.CommunitySectionChatsYouCanRequestToJoin)));
-            Iterator it4 = arrayList5.iterator();
-            while (it4.hasNext()) {
-                arrayList.add(DialogCellFactory.asCell((TLRPC.Chat) it4.next()));
+            Iterator<MessagesController.CommunityPeerDialog> it3 = buildCommunityPeers.chatsYouCanJoin.iterator();
+            while (it3.hasNext()) {
+                arrayList.add(DialogCellFactory.asCell(it3.next().chat));
             }
         }
-        if (arrayList6.isEmpty()) {
+        if (buildCommunityPeers.chatsOther.isEmpty()) {
             return;
         }
         if (z) {
             arrayList.add(UItem.asSpace(26, AndroidUtilities.dp(12.0f)));
         }
         arrayList.add(UItem.asHeader(27, LocaleController.getString(R.string.CommunitySectionHiddenChats)));
-        Iterator it5 = arrayList6.iterator();
-        while (it5.hasNext()) {
-            arrayList.add(DialogCellFactory.asCell((TLRPC.Chat) it5.next()));
+        Iterator<MessagesController.CommunityPeerDialog> it4 = buildCommunityPeers.chatsOther.iterator();
+        while (it4.hasNext()) {
+            arrayList.add(DialogCellFactory.asCell(it4.next().chat));
         }
     }
 
@@ -272,7 +215,7 @@ public abstract class CommunityUtils {
                 return;
             }
             this.loading = true;
-            MessagesController.getInstance(this.currentAccount).fetchCommunityPendingJoinRequests(this.communityId, this.nextOffset, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunityUtils$PendingRequests$$ExternalSyntheticLambda3
+            MessagesController.getInstance(this.currentAccount).fetchCommunityPendingJoinRequests(this.communityId, this.nextOffset, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunityUtils$PendingRequests$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     CommunityUtils.PendingRequests.this.lambda$loadNext$0((TL_communities.PeerLinkRequests) obj, (TLRPC.TL_error) obj2);
@@ -429,7 +372,7 @@ public abstract class CommunityUtils {
             TextView textView;
             if (this.progressDialog == null && this.reqId == 0) {
                 if (z2) {
-                    AlertDialog createSimpleConfirmAlert = AlertsCreator.createSimpleConfirmAlert(this.context, this.resourcesProvider, LocaleController.getString(z ? R.string.CommunityAddAllChatsTitle : R.string.CommunityDeclineAllTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralString(z ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", this.totalCount, new Object[0])), LocaleController.getString(z ? R.string.Add : R.string.Decline), new Runnable() { // from class: org.telegram.ui.community.CommunityUtils$PendingRequests$$ExternalSyntheticLambda0
+                    AlertDialog createSimpleConfirmAlert = AlertsCreator.createSimpleConfirmAlert(this.context, this.resourcesProvider, LocaleController.getString(z ? R.string.CommunityAddAllChatsTitle : R.string.CommunityDeclineAllTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralString(z ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", this.totalCount, new Object[0])), LocaleController.getString(z ? R.string.Add : R.string.Decline), new Runnable() { // from class: org.telegram.ui.community.CommunityUtils$PendingRequests$$ExternalSyntheticLambda1
                         @Override // java.lang.Runnable
                         public final void run() {
                             CommunityUtils.PendingRequests.this.lambda$onResolveAllJoinRequests$4(z);
@@ -445,14 +388,14 @@ public abstract class CommunityUtils {
                 commit();
                 AlertDialog alertDialog = new AlertDialog(this.context, 3, this.resourcesProvider);
                 this.progressDialog = alertDialog;
-                alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.community.CommunityUtils$PendingRequests$$ExternalSyntheticLambda1
+                alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.community.CommunityUtils$PendingRequests$$ExternalSyntheticLambda2
                     @Override // android.content.DialogInterface.OnCancelListener
                     public final void onCancel(DialogInterface dialogInterface) {
                         CommunityUtils.PendingRequests.this.lambda$onResolveAllJoinRequests$5(dialogInterface);
                     }
                 });
                 this.progressDialog.showDelayed(500L);
-                this.reqId = MessagesController.getInstance(this.currentAccount).resolveCommunityAllJoinPendingRequests(this.communityId, !z, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunityUtils$PendingRequests$$ExternalSyntheticLambda2
+                this.reqId = MessagesController.getInstance(this.currentAccount).resolveCommunityAllJoinPendingRequests(this.communityId, !z, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunityUtils$PendingRequests$$ExternalSyntheticLambda3
                     @Override // org.telegram.messenger.Utilities.Callback2
                     public final void run(Object obj, Object obj2) {
                         CommunityUtils.PendingRequests.this.lambda$onResolveAllJoinRequests$6((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
@@ -511,28 +454,26 @@ public abstract class CommunityUtils {
         if (alertDialogArr[0] != null) {
             return;
         }
-        TLRPC.TL_channels_getAdminedPublicChannels tL_channels_getAdminedPublicChannels = new TLRPC.TL_channels_getAdminedPublicChannels();
-        tL_channels_getAdminedPublicChannels.for_community_peer = true;
-        final int sendRequestTyped = ConnectionsManager.getInstance(i).sendRequestTyped(tL_channels_getAdminedPublicChannels, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunityUtils$$ExternalSyntheticLambda0
+        final int fetchChatsToAddToCommunity = MessagesController.getInstance(i).fetchChatsToAddToCommunity(new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunityUtils$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                CommunityUtils.lambda$showChatsToAddToCommunity$0(alertDialogArr, baseFragment, i, chat, (TLRPC.messages_Chats) obj, (TLRPC.TL_error) obj2);
+                CommunityUtils.lambda$showChatsToAddToCommunity$0(alertDialogArr, baseFragment, i, chat, (ArrayList) obj, (TLRPC.TL_error) obj2);
             }
         });
-        ConnectionsManager.getInstance(i).bindRequestToGuid(sendRequestTyped, baseFragment.getClassGuid());
+        ConnectionsManager.getInstance(i).bindRequestToGuid(fetchChatsToAddToCommunity, baseFragment.getClassGuid());
         AlertDialog alertDialog = new AlertDialog(baseFragment.getContext(), 3);
         alertDialogArr[0] = alertDialog;
         alertDialog.showDelayed(500L);
         alertDialogArr[0].setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.community.CommunityUtils$$ExternalSyntheticLambda1
             @Override // android.content.DialogInterface.OnCancelListener
             public final void onCancel(DialogInterface dialogInterface) {
-                CommunityUtils.lambda$showChatsToAddToCommunity$1(i, sendRequestTyped, alertDialogArr, dialogInterface);
+                CommunityUtils.lambda$showChatsToAddToCommunity$1(i, fetchChatsToAddToCommunity, alertDialogArr, dialogInterface);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showChatsToAddToCommunity$0(AlertDialog[] alertDialogArr, BaseFragment baseFragment, int i, TLRPC.Chat chat, TLRPC.messages_Chats messages_chats, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void lambda$showChatsToAddToCommunity$0(AlertDialog[] alertDialogArr, BaseFragment baseFragment, int i, TLRPC.Chat chat, ArrayList arrayList, TLRPC.TL_error tL_error) {
         AlertDialog alertDialog = alertDialogArr[0];
         if (alertDialog != null) {
             alertDialog.dismiss();
@@ -540,9 +481,12 @@ public abstract class CommunityUtils {
         }
         if (tL_error != null) {
             BulletinFactory.of(baseFragment).showForError(tL_error);
-        } else if (messages_chats != null) {
-            MessagesController.getInstance(i).putChats(messages_chats.chats, true);
-            showChatsToAddSheet(baseFragment, i, chat, messages_chats.chats);
+        } else if (arrayList != null) {
+            if (arrayList.isEmpty()) {
+                BulletinFactory.of(baseFragment).createSimpleBulletin(R.raw.info, LocaleController.getString(R.string.CommunityNoChatsToAdd)).show();
+            } else {
+                showChatsToAddSheet(baseFragment, i, chat, arrayList);
+            }
         }
     }
 
@@ -700,6 +644,37 @@ public abstract class CommunityUtils {
         bulletinFactory.createSimpleBulletin(i2, string, i3).show();
     }
 
+    public static CommunityChatType getCommunityChatType(int i, TLRPC.Chat chat) {
+        TLRPC.ChatFull chatFull;
+        ArrayList<TL_communities.CommunityPeer> arrayList;
+        if (chat != null && chat.linked_community_id != 0 && (chatFull = MessagesController.getInstance(i).getChatFull(chat.linked_community_id)) != null && (arrayList = chatFull.linked_peers) != null) {
+            Iterator<TL_communities.CommunityPeer> it = arrayList.iterator();
+            while (it.hasNext()) {
+                TL_communities.CommunityPeer next = it.next();
+                if (DialogObject.getPeerDialogId(next.peer) == (-chat.id)) {
+                    return getCommunityChatType(chat, next);
+                }
+            }
+        }
+        return null;
+    }
+
+    public static CommunityChatType getCommunityChatType(TLRPC.Chat chat, TL_communities.CommunityPeer communityPeer) {
+        if (chat == null || communityPeer == null) {
+            return null;
+        }
+        if (ChatObject.isInChat(chat)) {
+            return CommunityChatType.YouAreIn;
+        }
+        if (ChatObject.isPublic(chat) || communityPeer.can_view_history) {
+            return CommunityChatType.YouCanView;
+        }
+        if (ChatObject.isCommunityPeerHidden(communityPeer)) {
+            return CommunityChatType.HiddenUnavailable;
+        }
+        return CommunityChatType.YouCanSendJoinRequest;
+    }
+
     public static class DialogCellFactory extends UItem.UItemFactory {
         static {
             UItem.UItemFactory.setup(new DialogCellFactory());
@@ -728,6 +703,7 @@ public abstract class CommunityUtils {
             TLRPC.Chat chat = (TLRPC.Chat) uItem.object;
             dialogCell.isHiddenInCommunity = ChatObject.isChatHiddenInCommunity(UserConfig.selectedAccount, chat);
             TLRPC.Dialog dialog = MessagesController.getInstance(UserConfig.selectedAccount).getDialog(-chat.id);
+            dialogCell.insideCommunityListNoDialog = dialog == null;
             if (dialog != null) {
                 dialogCell.setCustomMessageWithoutRebuild(null);
                 dialogCell.setDialog(dialog, 0, 0);

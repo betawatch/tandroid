@@ -21,7 +21,6 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage$$ExternalSyntheticLambda113;
-import org.telegram.messenger.MessagesStorage$$ExternalSyntheticLambda210;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.TranslateController;
 import org.telegram.messenger.TranslateController$PollText$$ExternalSyntheticLambda0;
@@ -876,7 +875,7 @@ public class TLRPC {
                     return TLRPC.TL_sponsoredPeer.TLdeserialize(inputSerializedData2, i, z2);
                 }
             }, z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -3628,7 +3627,7 @@ public class TLRPC {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.quick_replies = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_quickReplies$$ExternalSyntheticLambda0(), z);
             this.messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -3761,7 +3760,7 @@ public class TLRPC {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.dialogs = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_savedDialogs$$ExternalSyntheticLambda0(), z);
             this.messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -3804,7 +3803,7 @@ public class TLRPC {
             this.count = inputSerializedData.readInt32(z);
             this.dialogs = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_savedDialogs$$ExternalSyntheticLambda0(), z);
             this.messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -4152,7 +4151,7 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, 2)) {
                 this.used_date = inputSerializedData.readInt32(z);
             }
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -6659,7 +6658,7 @@ public class TLRPC {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.full_chat = ChatFull.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -8561,7 +8560,7 @@ public class TLRPC {
             }
             this.messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
             this.topics = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda1(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -8607,7 +8606,7 @@ public class TLRPC {
                 this.search_flood = SearchPostsFlood.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             this.messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -8649,7 +8648,7 @@ public class TLRPC {
                 this.offset_id_offset = inputSerializedData.readInt32(z);
             }
             this.messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -8679,7 +8678,7 @@ public class TLRPC {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
             this.topics = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda1(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -8699,7 +8698,7 @@ public class TLRPC {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -8727,7 +8726,7 @@ public class TLRPC {
             }
             this.messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
             this.topics = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda1(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -10042,7 +10041,7 @@ public class TLRPC {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.participant = ChannelParticipant.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -10171,7 +10170,7 @@ public class TLRPC {
             this.new_messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
             this.new_encrypted_messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_updates_difference$$ExternalSyntheticLambda0(), z);
             this.other_updates = Vector.deserialize(inputSerializedData, new TLRPC$TL_updates$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
             this.state = TL_updates_state.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
         }
@@ -10196,7 +10195,7 @@ public class TLRPC {
             this.new_messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
             this.new_encrypted_messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_updates_difference$$ExternalSyntheticLambda0(), z);
             this.other_updates = Vector.deserialize(inputSerializedData, new TLRPC$TL_updates$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
             this.intermediate_state = TL_updates_state.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
         }
@@ -12437,7 +12436,7 @@ public class TLRPC {
                     return TLRPC.TL_channelAdminLogEvent.TLdeserialize(inputSerializedData2, i, z2);
                 }
             }, z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -14663,7 +14662,7 @@ public class TLRPC {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.blocked = Vector.deserialize(inputSerializedData, new TLRPC$TL_contacts_blocked$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -14683,7 +14682,7 @@ public class TLRPC {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.count = inputSerializedData.readInt32(z);
             this.blocked = Vector.deserialize(inputSerializedData, new TLRPC$TL_contacts_blocked$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -15848,7 +15847,7 @@ public class TLRPC {
                     return TLRPC.TL_sponsoredMessage.TLdeserialize(inputSerializedData2, i, z2);
                 }
             }, z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -26552,7 +26551,7 @@ public class TLRPC {
                 this.read_outbox_max_id = inputSerializedData.readInt32(z);
             }
             this.unread_count = inputSerializedData.readInt32(z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -36085,7 +36084,7 @@ public class TLRPC {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.full_user = UserFull.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -37132,7 +37131,7 @@ public class TLRPC {
                     return TLRPC.MessagePeerVote.TLdeserialize(inputSerializedData2, i, z2);
                 }
             }, z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.next_offset = inputSerializedData.readString(z);
@@ -38622,7 +38621,7 @@ public class TLRPC {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.settings = PeerSettings.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -39323,7 +39322,7 @@ public class TLRPC {
                     return TLRPC.TL_messageViews.TLdeserialize(inputSerializedData2, i, z2);
                 }
             }, z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -41748,7 +41747,7 @@ public class TLRPC {
                     return TLRPC.TL_topPeerCategoryPeers.TLdeserialize(inputSerializedData2, i, z2);
                 }
             }, z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -41826,7 +41825,7 @@ public class TLRPC {
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -41842,7 +41841,7 @@ public class TLRPC {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.count = inputSerializedData.readInt32(z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -43044,7 +43043,7 @@ public class TLRPC {
             }
             this.new_messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
             this.other_updates = Vector.deserialize(inputSerializedData, new TLRPC$TL_updates$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -43078,7 +43077,7 @@ public class TLRPC {
             }
             this.dialog = Dialog.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             this.messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -43325,7 +43324,7 @@ public class TLRPC {
                     return TLRPC.RecentMeUrl.TLdeserialize(inputSerializedData2, i, z2);
                 }
             }, z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -43409,7 +43408,7 @@ public class TLRPC {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.peer = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -43701,7 +43700,7 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, 16)) {
                 this.custom_pending_suggestion = TL_pendingSuggestion.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -43770,7 +43769,7 @@ public class TLRPC {
             this.proxy = TLObject.hasFlag(readInt32, 1);
             this.expires = inputSerializedData.readInt32(z);
             this.peer = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
             if (TLObject.hasFlag(this.flags, 2)) {
                 this.psa_type = inputSerializedData.readString(z);
@@ -44704,7 +44703,7 @@ public class TLRPC {
                     return TLRPC.ChannelParticipant.TLdeserialize(inputSerializedData2, i, z2);
                 }
             }, z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -44971,7 +44970,7 @@ public class TLRPC {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.my_results = Vector.deserialize(inputSerializedData, new TLRPC$TL_contacts_found$$ExternalSyntheticLambda0(), z);
             this.results = Vector.deserialize(inputSerializedData, new TLRPC$TL_contacts_found$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -44994,31 +44993,26 @@ public class TLRPC {
         public int version;
 
         public static ChatParticipants TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-            TLObject tL_chatParticipantsForbidden;
+            return (ChatParticipants) TLObject.TLdeserialize(ChatParticipants.class, fromConstructor(i), inputSerializedData, i, z);
+        }
+
+        private static ChatParticipants fromConstructor(int i) {
             switch (i) {
                 case TL_chatParticipantsForbidden.constructor /* -2023500831 */:
-                    tL_chatParticipantsForbidden = new TL_chatParticipantsForbidden();
-                    break;
+                    return new TL_chatParticipantsForbidden();
                 case TL_chatParticipantsForbidden_layer131.constructor /* -57668565 */:
-                    tL_chatParticipantsForbidden = new TL_chatParticipantsForbidden_layer131();
-                    break;
+                    return new TL_chatParticipantsForbidden_layer131();
                 case TL_chatParticipantsForbidden_old.constructor /* 265468810 */:
-                    tL_chatParticipantsForbidden = new TL_chatParticipantsForbidden_old();
-                    break;
+                    return new TL_chatParticipantsForbidden_old();
                 case TL_chatParticipants.constructor /* 1018991608 */:
-                    tL_chatParticipantsForbidden = new TL_chatParticipants();
-                    break;
+                    return new TL_chatParticipants();
                 case TL_chatParticipants_layer131.constructor /* 1061556205 */:
-                    tL_chatParticipantsForbidden = new TL_chatParticipants_layer131();
-                    break;
+                    return new TL_chatParticipants_layer131();
                 case TL_chatParticipants_old.constructor /* 2017571861 */:
-                    tL_chatParticipantsForbidden = new TL_chatParticipants_old();
-                    break;
+                    return new TL_chatParticipants_old();
                 default:
-                    tL_chatParticipantsForbidden = null;
-                    break;
+                    return null;
             }
-            return (ChatParticipants) TLObject.TLdeserialize(ChatParticipants.class, tL_chatParticipantsForbidden, inputSerializedData, i, z);
         }
     }
 
@@ -47636,7 +47630,7 @@ public class TLRPC {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.dates = Vector.deserializeInt(inputSerializedData, z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -48744,7 +48738,7 @@ public class TLRPC {
             this.creator = TLObject.hasFlag(this.flags, 1);
             this.left = TLObject.hasFlag(this.flags, 4);
             this.min = TLObject.hasFlag(this.flags, 4096);
-            this.collapsed_in_dialogs = false;
+            this.collapsed_in_dialogs = TLObject.hasFlag(this.flags2, 1048576);
             this.id = inputSerializedData.readInt64(z);
             if (TLObject.hasFlag(this.flags, 8192)) {
                 this.access_hash = inputSerializedData.readInt64(z);
@@ -58462,7 +58456,7 @@ public class TLRPC {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.updates = Vector.deserialize(inputSerializedData, new TLRPC$TL_updates$$ExternalSyntheticLambda0(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.date = inputSerializedData.readInt32(z);
             this.seq = inputSerializedData.readInt32(z);
         }
@@ -58671,7 +58665,7 @@ public class TLRPC {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.updates = Vector.deserialize(inputSerializedData, new TLRPC$TL_updates$$ExternalSyntheticLambda0(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.date = inputSerializedData.readInt32(z);
             this.seq_start = inputSerializedData.readInt32(z);
             this.seq = inputSerializedData.readInt32(z);
@@ -59316,7 +59310,7 @@ public class TLRPC {
             this.flags = inputSerializedData.readInt32(z);
             this.count = inputSerializedData.readInt32(z);
             this.reactions = Vector.deserialize(inputSerializedData, new TLRPC$TL_messageReactions$$ExternalSyntheticLambda1(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.next_offset = inputSerializedData.readString(z);
@@ -60154,7 +60148,7 @@ public class TLRPC {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.dialogs = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_dialogs$$ExternalSyntheticLambda0(), z);
             this.messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
             this.state = TL_updates_state.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
         }
@@ -60220,7 +60214,7 @@ public class TLRPC {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.dialogs = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_dialogs$$ExternalSyntheticLambda0(), z);
             this.messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -60242,7 +60236,7 @@ public class TLRPC {
             this.count = inputSerializedData.readInt32(z);
             this.dialogs = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_dialogs$$ExternalSyntheticLambda0(), z);
             this.messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -65252,7 +65246,7 @@ public class TLRPC {
                 }
             }, z);
             this.messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -67753,7 +67747,7 @@ public class TLRPC {
                     return TLRPC.TL_sendAsPeer.TLdeserialize(inputSerializedData2, i, z2);
                 }
             }, z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 
@@ -74071,7 +74065,7 @@ public class TLRPC {
             this.count = inputSerializedData.readInt32(z);
             this.topics = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda1(), z);
             this.messages = Vector.deserialize(inputSerializedData, new TLRPC$TL_messages_channelMessages$$ExternalSyntheticLambda0(), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
             this.pts = inputSerializedData.readInt32(z);
         }
@@ -75326,7 +75320,7 @@ public class TLRPC {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.webpage = WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.chats = Vector.deserialize(inputSerializedData, new MessagesStorage$$ExternalSyntheticLambda210(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
 

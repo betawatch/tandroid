@@ -20909,7 +20909,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendSecretMediaDelete$149(long j, MessageObject messageObject) {
-        getMessagesController().lambda$checkDeletingTask$83(j, this.dialog_id, messageObject.getId());
+        getMessagesController().lambda$checkDeletingTask$84(j, this.dialog_id, messageObject.getId());
     }
 
     private void clearChatData(boolean z) {
@@ -41761,7 +41761,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         int i3 = this.chatMode;
         if (i3 == 0 || ((i3 == 3 && getUserConfig().getClientUserId() == getSavedDialogId()) || (this.chatMode == 8 && ChatObject.isMonoForum(this.currentChat)))) {
             saveDraft();
-            getMessagesController().lambda$sendTyping$170(0, this.dialog_id, this.threadMessageId);
+            getMessagesController().lambda$sendTyping$171(0, this.dialog_id, this.threadMessageId);
         }
         int i4 = this.chatMode;
         if (i4 == 0 || i4 == 3) {
@@ -42578,162 +42578,154 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:1184:0x0912, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1196:0x0948, code lost:
     
-        if (r7.paid_reactions_available != false) goto L472;
+        if (r7.paid_reactions_available != false) goto L509;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1202:0x0946, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1202:0x0972, code lost:
     
-        if (r7.paid_reactions_available != false) goto L513;
+        if (org.telegram.messenger.ChatObject.canUserDoAction(r87.currentChat, 26) == false) goto L516;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1208:0x0970, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1205:0x0952, code lost:
     
-        if (org.telegram.messenger.ChatObject.canUserDoAction(r88.currentChat, 26) == false) goto L520;
+        if (org.telegram.messenger.ChatObject.isChannel(r87.currentChat) == false) goto L509;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1211:0x0950, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1209:0x095e, code lost:
     
-        if (org.telegram.messenger.ChatObject.isChannel(r88.currentChat) == false) goto L513;
+        if (org.telegram.messenger.ChatObject.isMonoForum(r87.currentChat) != false) goto L509;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1215:0x095c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:553:0x0b35, code lost:
     
-        if (org.telegram.messenger.ChatObject.isMonoForum(r88.currentChat) != false) goto L513;
+        if (r7.startsWith(r10.toString()) == false) goto L652;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:553:0x0b37, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:718:0x13c0, code lost:
     
-        if (r7.startsWith(r10.toString()) == false) goto L657;
+        if (r0.startsWith(r79 + getMessagesController().linkPrefix) == false) goto L834;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:718:0x13a8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:773:0x1834, code lost:
     
-        if (r0.startsWith(r80 + getMessagesController().linkPrefix) == false) goto L839;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:774:0x181d, code lost:
-    
-        if (r13.chatMode == 5) goto L951;
+        if (r13.chatMode == 5) goto L943;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:1087:0x16dd  */
-    /* JADX WARN: Removed duplicated region for block: B:1136:0x136f  */
-    /* JADX WARN: Removed duplicated region for block: B:1143:0x0e4a  */
-    /* JADX WARN: Removed duplicated region for block: B:1147:0x0c9d  */
-    /* JADX WARN: Removed duplicated region for block: B:1148:0x0c8f  */
-    /* JADX WARN: Removed duplicated region for block: B:1149:0x0c4f  */
-    /* JADX WARN: Removed duplicated region for block: B:1152:0x0c16  */
-    /* JADX WARN: Removed duplicated region for block: B:1157:0x1a8c  */
-    /* JADX WARN: Removed duplicated region for block: B:1205:0x0962  */
-    /* JADX WARN: Removed duplicated region for block: B:1235:0x0395 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x0377  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x038b  */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x03a3 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:175:0x03e2  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x0403 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:188:0x040e  */
-    /* JADX WARN: Removed duplicated region for block: B:199:0x0431  */
-    /* JADX WARN: Removed duplicated region for block: B:229:0x048f  */
-    /* JADX WARN: Removed duplicated region for block: B:236:0x04a4  */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x04ba  */
-    /* JADX WARN: Removed duplicated region for block: B:245:0x04bf  */
-    /* JADX WARN: Removed duplicated region for block: B:302:0x063b A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:303:0x063c  */
-    /* JADX WARN: Removed duplicated region for block: B:469:0x0a0b A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:482:0x0a41 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:526:0x0ad3 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:541:0x0b02 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:556:0x0b44 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:559:0x0b4d A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:1086:0x16f5  */
+    /* JADX WARN: Removed duplicated region for block: B:1133:0x1387  */
+    /* JADX WARN: Removed duplicated region for block: B:1140:0x0e55  */
+    /* JADX WARN: Removed duplicated region for block: B:1144:0x0c9d  */
+    /* JADX WARN: Removed duplicated region for block: B:1145:0x0c8f  */
+    /* JADX WARN: Removed duplicated region for block: B:1146:0x0c4f  */
+    /* JADX WARN: Removed duplicated region for block: B:1149:0x0c16  */
+    /* JADX WARN: Removed duplicated region for block: B:1154:0x1aa3  */
+    /* JADX WARN: Removed duplicated region for block: B:1199:0x0964  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x03a7 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x03e6  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x0407 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:188:0x0412  */
+    /* JADX WARN: Removed duplicated region for block: B:199:0x0435  */
+    /* JADX WARN: Removed duplicated region for block: B:229:0x0493  */
+    /* JADX WARN: Removed duplicated region for block: B:236:0x04a8  */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x04be  */
+    /* JADX WARN: Removed duplicated region for block: B:245:0x04c3 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:301:0x063d A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:302:0x063e  */
+    /* JADX WARN: Removed duplicated region for block: B:469:0x0a0d A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:482:0x0a3f A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:526:0x0ad1 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:541:0x0b00 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:556:0x0b42 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:559:0x0b4b A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:564:0x0b96  */
     /* JADX WARN: Removed duplicated region for block: B:590:0x0bfc  */
     /* JADX WARN: Removed duplicated region for block: B:598:0x0c48  */
     /* JADX WARN: Removed duplicated region for block: B:601:0x0c8d  */
     /* JADX WARN: Removed duplicated region for block: B:604:0x0c97  */
-    /* JADX WARN: Removed duplicated region for block: B:608:0x0cb8  */
-    /* JADX WARN: Removed duplicated region for block: B:667:0x10da  */
-    /* JADX WARN: Removed duplicated region for block: B:699:0x1178  */
-    /* JADX WARN: Removed duplicated region for block: B:701:0x1190  */
-    /* JADX WARN: Removed duplicated region for block: B:704:0x11da  */
-    /* JADX WARN: Removed duplicated region for block: B:706:0x11e8  */
-    /* JADX WARN: Removed duplicated region for block: B:722:0x15ef  */
-    /* JADX WARN: Removed duplicated region for block: B:741:0x16f5  */
-    /* JADX WARN: Removed duplicated region for block: B:784:0x1856  */
-    /* JADX WARN: Removed duplicated region for block: B:788:0x189b  */
-    /* JADX WARN: Removed duplicated region for block: B:847:0x1aa4  */
-    /* JADX WARN: Removed duplicated region for block: B:852:0x1afb  */
-    /* JADX WARN: Removed duplicated region for block: B:855:0x1f38  */
-    /* JADX WARN: Removed duplicated region for block: B:858:0x1f60 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:864:0x1fd1  */
-    /* JADX WARN: Removed duplicated region for block: B:867:0x1ffe  */
-    /* JADX WARN: Removed duplicated region for block: B:870:0x2029  */
-    /* JADX WARN: Removed duplicated region for block: B:873:0x2042  */
-    /* JADX WARN: Removed duplicated region for block: B:879:0x20ce  */
-    /* JADX WARN: Removed duplicated region for block: B:882:0x20eb  */
-    /* JADX WARN: Removed duplicated region for block: B:885:0x20f2  */
-    /* JADX WARN: Removed duplicated region for block: B:888:0x20f9  */
-    /* JADX WARN: Removed duplicated region for block: B:893:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:894:0x20d2  */
-    /* JADX WARN: Removed duplicated region for block: B:898:0x20a4  */
-    /* JADX WARN: Removed duplicated region for block: B:902:0x1fd6  */
-    /* JADX WARN: Removed duplicated region for block: B:906:0x1b03  */
+    /* JADX WARN: Removed duplicated region for block: B:608:0x0cbb  */
+    /* JADX WARN: Removed duplicated region for block: B:667:0x10ee  */
+    /* JADX WARN: Removed duplicated region for block: B:699:0x118c  */
+    /* JADX WARN: Removed duplicated region for block: B:701:0x11a4  */
+    /* JADX WARN: Removed duplicated region for block: B:704:0x11ee  */
+    /* JADX WARN: Removed duplicated region for block: B:706:0x11fc  */
+    /* JADX WARN: Removed duplicated region for block: B:722:0x1607  */
+    /* JADX WARN: Removed duplicated region for block: B:741:0x170d  */
+    /* JADX WARN: Removed duplicated region for block: B:783:0x186d  */
+    /* JADX WARN: Removed duplicated region for block: B:787:0x18b2  */
+    /* JADX WARN: Removed duplicated region for block: B:846:0x1abc  */
+    /* JADX WARN: Removed duplicated region for block: B:851:0x1b13  */
+    /* JADX WARN: Removed duplicated region for block: B:854:0x1f51  */
+    /* JADX WARN: Removed duplicated region for block: B:857:0x1f79 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:863:0x1fea  */
+    /* JADX WARN: Removed duplicated region for block: B:866:0x2017  */
+    /* JADX WARN: Removed duplicated region for block: B:869:0x2042  */
+    /* JADX WARN: Removed duplicated region for block: B:872:0x205b  */
+    /* JADX WARN: Removed duplicated region for block: B:878:0x20e7  */
+    /* JADX WARN: Removed duplicated region for block: B:881:0x2104  */
+    /* JADX WARN: Removed duplicated region for block: B:884:0x210b  */
+    /* JADX WARN: Removed duplicated region for block: B:887:0x2112  */
+    /* JADX WARN: Removed duplicated region for block: B:892:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:893:0x20eb  */
+    /* JADX WARN: Removed duplicated region for block: B:897:0x20bd  */
+    /* JADX WARN: Removed duplicated region for block: B:901:0x1fef  */
+    /* JADX WARN: Removed duplicated region for block: B:905:0x1b1b  */
     /* JADX WARN: Type inference failed for: r10v20 */
     /* JADX WARN: Type inference failed for: r10v21, types: [org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout] */
-    /* JADX WARN: Type inference failed for: r10v68 */
-    /* JADX WARN: Type inference failed for: r12v63 */
+    /* JADX WARN: Type inference failed for: r10v30, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout, org.telegram.ui.Components.ReactedUsersListView$ContainerLinerLayout] */
+    /* JADX WARN: Type inference failed for: r10v95 */
+    /* JADX WARN: Type inference failed for: r12v74 */
     /* JADX WARN: Type inference failed for: r12v8 */
     /* JADX WARN: Type inference failed for: r12v9, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r1v228, types: [android.view.View, org.telegram.ui.Components.AnimatedEmojiSpan$TextViewEmojis] */
-    /* JADX WARN: Type inference failed for: r2v224, types: [int] */
-    /* JADX WARN: Type inference failed for: r2v236 */
-    /* JADX WARN: Type inference failed for: r2v237, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r2v258 */
-    /* JADX WARN: Type inference failed for: r2v289 */
-    /* JADX WARN: Type inference failed for: r2v290 */
-    /* JADX WARN: Type inference failed for: r2v291 */
-    /* JADX WARN: Type inference failed for: r4v130, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r6v44, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout] */
-    /* JADX WARN: Type inference failed for: r7v33, types: [org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout] */
-    /* JADX WARN: Type inference failed for: r7v55, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout, org.telegram.ui.Components.ReactedUsersListView$ContainerLinerLayout] */
+    /* JADX WARN: Type inference failed for: r1v270, types: [android.view.View, org.telegram.ui.Components.AnimatedEmojiSpan$TextViewEmojis] */
+    /* JADX WARN: Type inference failed for: r1v280, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v410 */
+    /* JADX WARN: Type inference failed for: r1v411 */
+    /* JADX WARN: Type inference failed for: r1v412 */
+    /* JADX WARN: Type inference failed for: r2v182 */
+    /* JADX WARN: Type inference failed for: r2v183, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r2v205 */
+    /* JADX WARN: Type inference failed for: r4v109, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r6v43, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout] */
+    /* JADX WARN: Type inference failed for: r7v29, types: [org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public boolean createMenu(final View view, boolean z, boolean z2, float f, float f2, boolean z3, boolean z4, boolean z5) {
-        final MessageObject messageObject;
-        MessageObject messageObject2;
+        MessageObject messageObject;
+        final MessageObject messageObject2;
         MessageObject messageObject3;
+        String str;
+        String str2;
         boolean z6;
         boolean z7;
-        boolean z8;
         TLRPC.Chat chat;
         TLRPC.Chat chat2;
         TLRPC.Chat chat3;
-        int i;
+        MessageObject.GroupedMessages groupedMessages;
+        MessageObject.GroupedMessages groupedMessages2;
         MessageObject messageObject4;
         ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout;
-        String str;
+        boolean z8;
         boolean z9;
         boolean z10;
-        ArrayList arrayList;
+        String str3;
         boolean z11;
-        boolean z12;
-        String str2;
-        boolean z13;
-        Rect rect;
         MessageObject messageObject5;
         AtomicBoolean atomicBoolean;
-        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout2;
+        Rect rect;
         MessageObject messageObject6;
-        Rect rect2;
+        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout2;
         ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout3;
         final ChatActivity chatActivity;
-        int i2;
-        int i3;
         AtomicReference atomicReference;
+        Rect rect2;
+        int i;
+        int i2;
         MessageObject messageObject7;
         ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout4;
         final ReactionsContainerLayout reactionsContainerLayout;
         MessageObject messageObject8;
-        int i4;
+        int i3;
         ChatScrimPopupContainerLayout chatScrimPopupContainerLayout;
         ChatScrimPopupContainerLayout chatScrimPopupContainerLayout2;
-        int i5;
-        boolean z14;
+        int i4;
+        boolean z12;
         TLRPC.Message message;
         String string;
         TLRPC.User user;
@@ -42743,45 +42735,46 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         int measuredHeight;
         int measureKeyboardHeight;
         View view2;
-        int i6;
+        int i5;
         UndoView undoView;
         UndoView undoView2;
         ChatActivityEnterView chatActivityEnterView;
-        ArrayList arrayList2;
-        AtomicReference atomicReference2;
-        String str3;
+        ArrayList arrayList;
         final ?? r10;
-        MessageObject.GroupedMessages groupedMessages;
+        String str4;
+        MessageObject.GroupedMessages groupedMessages3;
         final ChatActivity chatActivity2;
-        ArrayList arrayList3;
+        AtomicReference atomicReference2;
+        ArrayList arrayList2;
+        int i6;
         ?? r12;
         int i7;
         int i8;
+        ArrayList arrayList3;
         final MessageObject messageObject9;
-        int i9;
         final MessageObject messageObject10;
-        boolean z15;
-        int i10;
-        boolean z16;
+        boolean z13;
+        int i9;
+        boolean z14;
         MessageObject messageObject11;
         MessageObject messageObject12;
         MessageObject messageObject13;
         int size;
-        final int i11;
+        final int i10;
         ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout5;
         MessageObject messageObject14;
         TLRPC.Message message2;
-        MessageObject messageObject15;
         final ArrayList arrayList4;
         ArrayList arrayList5;
         ArrayList arrayList6;
-        final int i12;
-        int i13;
+        final int i11;
+        int i12;
         ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout6;
+        MessageObject messageObject15;
         final AtomicReference atomicReference3;
         MessageObject messageObject16;
         int[] iArr;
-        String str4;
+        String str5;
         TLRPC.InputPeer inputPeer;
         MessageObject messageObject17;
         TL_iv.RichMessage richMessage;
@@ -42790,26 +42783,31 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         TLRPC.Message message4;
         MessageObject messageObject18;
         float f3;
+        int i13;
         int i14;
         int i15;
         int i16;
         int i17;
-        TLRPC.Message message5;
-        boolean z17;
         int i18;
-        final boolean z18;
+        int i19;
+        int i20;
+        TLRPC.Message message5;
+        boolean z15;
+        int i21;
+        final boolean z16;
         final View view3;
         ?? r2;
-        AtomicBoolean atomicBoolean2;
-        int i19;
-        ViewGroup viewGroup;
+        ArrayList arrayList7;
+        int i22;
         MessageObject messageObject19;
-        boolean z19;
+        ViewGroup viewGroup;
+        boolean z17;
         final int[] iArr2;
         final ReactedUsersListView onHeightChangedListener;
         ReactedHeaderView reactedHeaderView;
         final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout7;
-        int[] iArr3;
+        final HorizontalScrollView horizontalScrollView;
+        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout8;
         MessageObject messageObject20;
         MessageObject messageObject21;
         TLRPC.User user3;
@@ -42818,19 +42816,21 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         TLRPC.UserFull userFull;
         TLRPC.ChatFull chatFull;
         TLRPC.Chat chat5;
-        int i20;
+        int i23;
         TLRPC.Chat chat6;
+        int i24;
         TLRPC.Message message6;
         TLRPC.Peer peer;
-        ArrayList arrayList7;
+        ArrayList arrayList8;
         ChatActivityChannelButtonsLayout chatActivityChannelButtonsLayout;
         MessageObject messageObject22;
         int size2;
-        int i21;
-        int i22;
+        int i25;
+        int i26;
         TLRPC.MessageAction messageAction;
         TLRPC.UserFull userFull2;
-        ArrayList arrayList8;
+        ArrayList arrayList9;
+        int i27 = 2;
         if (this.actionBar.isActionModeShowed() || isReport()) {
             return false;
         }
@@ -42841,19 +42841,16 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         if (view instanceof ChatMessageCell) {
             ChatMessageCell chatMessageCell = (ChatMessageCell) view;
             MessageObject messageObject23 = chatMessageCell.getMessageObject();
-            messageObject2 = chatMessageCell.getPrimaryMessageObject();
-            messageObject = messageObject23;
-        } else if (view instanceof ChatActionCell) {
-            messageObject2 = ((ChatActionCell) view).getMessageObject();
-            messageObject = messageObject2;
+            messageObject = chatMessageCell.getPrimaryMessageObject();
+            messageObject2 = messageObject23;
         } else {
-            messageObject = null;
-            messageObject2 = null;
+            messageObject = view instanceof ChatActionCell ? ((ChatActionCell) view).getMessageObject() : null;
+            messageObject2 = messageObject;
         }
-        if (messageObject == null) {
+        if (messageObject2 == null) {
             return false;
         }
-        if (!z && TlUtils.isInstance(messageObject.messageOwner.action, TLRPC.TL_messageActionGiftPremium.class, TLRPC.TL_messageActionGiftCode.class, TLRPC.TL_messageActionGiftStars.class)) {
+        if (!z && TlUtils.isInstance(messageObject2.messageOwner.action, TLRPC.TL_messageActionChangeCommunity.class, TLRPC.TL_messageActionGiftPremium.class, TLRPC.TL_messageActionGiftCode.class, TLRPC.TL_messageActionGiftStars.class)) {
             return false;
         }
         HintView2 hintView2 = this.factCheckHint;
@@ -42862,19 +42859,29 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
         StringBuilder sb = new StringBuilder();
         sb.append("open menu msg_id=");
-        sb.append(messageObject.getId());
-        sb.append(messageObject.getDocument() != null ? " doc_id=" + messageObject.getDocument().id : "");
+        sb.append(messageObject2.getId());
+        if (messageObject2.getDocument() != null) {
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(" doc_id=");
+            messageObject3 = messageObject;
+            sb2.append(messageObject2.getDocument().id);
+            str = sb2.toString();
+        } else {
+            messageObject3 = messageObject;
+            str = "";
+        }
+        sb.append(str);
         FileLog.d(sb.toString());
-        int messageType = getMessageType(messageObject);
+        int messageType = getMessageType(messageObject2);
         if (z) {
-            TLRPC.MessageAction messageAction2 = messageObject.messageOwner.action;
-            boolean z20 = messageAction2 instanceof TLRPC.TL_messageActionGiveawayResults;
+            TLRPC.MessageAction messageAction2 = messageObject2.messageOwner.action;
+            boolean z18 = messageAction2 instanceof TLRPC.TL_messageActionGiveawayResults;
             if (messageAction2 instanceof TLRPC.TL_messageActionPollAppendAnswer) {
-                if (messageObject.getReplyMsgId() != 0) {
+                if (messageObject2.getReplyMsgId() != 0) {
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda202
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ChatActivity.this.lambda$createMenu$250(messageObject);
+                            ChatActivity.this.lambda$createMenu$250(messageObject2);
                         }
                     });
                 } else {
@@ -42883,11 +42890,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 return true;
             }
             if (messageAction2 instanceof TLRPC.TL_messageActionPollDeleteAnswer) {
-                if (messageObject.getReplyMsgId() != 0) {
+                if (messageObject2.getReplyMsgId() != 0) {
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda213
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ChatActivity.this.lambda$createMenu$251(messageObject);
+                            ChatActivity.this.lambda$createMenu$251(messageObject2);
                         }
                     });
                 } else {
@@ -42895,12 +42902,12 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 }
                 return true;
             }
-            if ((messageAction2 instanceof TLRPC.TL_messageActionPinMessage) || z20) {
-                if (messageObject.getReplyMsgId() != 0) {
+            if ((messageAction2 instanceof TLRPC.TL_messageActionPinMessage) || z18) {
+                if (messageObject2.getReplyMsgId() != 0) {
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda234
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ChatActivity.this.lambda$createMenu$252(messageObject);
+                            ChatActivity.this.lambda$createMenu$252(messageObject2);
                         }
                     });
                 } else {
@@ -42910,8 +42917,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
             if (!z4 && (messageAction2 instanceof TLRPC.TL_messageActionPaymentSent)) {
                 TLRPC.TL_payments_getPaymentReceipt tL_payments_getPaymentReceipt = new TLRPC.TL_payments_getPaymentReceipt();
-                tL_payments_getPaymentReceipt.msg_id = messageObject.getId();
-                tL_payments_getPaymentReceipt.peer = getMessagesController().getInputPeer(messageObject.messageOwner.peer_id);
+                tL_payments_getPaymentReceipt.msg_id = messageObject2.getId();
+                tL_payments_getPaymentReceipt.peer = getMessagesController().getInputPeer(messageObject2.messageOwner.peer_id);
                 getConnectionsManager().sendRequest(tL_payments_getPaymentReceipt, new RequestDelegate() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda224
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -42921,7 +42928,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 return true;
             }
             if (!z4 && (messageAction2 instanceof TLRPC.TL_messageActionPaymentRefunded)) {
-                StarsIntroActivity.showTransactionSheet(getContext(), this.currentAccount, messageObject.messageOwner.date, (TLRPC.TL_messageActionPaymentRefunded) messageAction2, this.resourceProvider);
+                StarsIntroActivity.showTransactionSheet(getContext(), this.currentAccount, messageObject2.messageOwner.date, (TLRPC.TL_messageActionPaymentRefunded) messageAction2, this.resourceProvider);
                 return true;
             }
             if ((messageAction2 instanceof TLRPC.TL_messageActionGroupCall) || (messageAction2 instanceof TLRPC.TL_messageActionInviteToGroupCall) || (messageAction2 instanceof TLRPC.TL_messageActionGroupCallScheduled)) {
@@ -42931,7 +42938,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 VoIPService sharedInstance = VoIPService.getSharedInstance();
                 if (sharedInstance != null) {
                     ChatObject.Call call = sharedInstance.groupCall;
-                    if (call != null && messageObject.messageOwner.action.call.id == call.call.id) {
+                    if (call != null && messageObject2.messageOwner.action.call.id == call.call.id) {
                         if (getParentActivity() instanceof LaunchActivity) {
                             GroupCallActivity.create((LaunchActivity) getParentActivity(), AccountInstance.getInstance(this.currentAccount), null, null, false, null);
                         } else {
@@ -42940,9 +42947,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             getParentActivity().startActivity(action);
                         }
                     } else {
-                        boolean z21 = getGroupCall() == null;
-                        this.createGroupCall = z21;
-                        VoIPHelper.startCall(this.currentChat, null, null, z21, getParentActivity(), this, getAccountInstance());
+                        boolean z19 = getGroupCall() == null;
+                        this.createGroupCall = z19;
+                        VoIPHelper.startCall(this.currentChat, null, null, z19, getParentActivity(), this, getAccountInstance());
                     }
                     return true;
                 }
@@ -42967,30 +42974,30 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 return true;
             }
         }
-        boolean z22 = (messageObject.isSponsored() || !((arrayList8 = this.threadMessageObjects) == null || !arrayList8.contains(messageObject) || isThreadChat())) ? true : z;
+        boolean z20 = (messageObject2.isSponsored() || !((arrayList9 = this.threadMessageObjects) == null || !arrayList9.contains(messageObject2) || isThreadChat())) ? true : z;
         this.selectedObject = null;
         this.selectedObjectGroup = null;
         this.forwardingMessage = null;
         this.forwardingMessageGroup = null;
         this.selectedObjectToEditCaption = null;
-        for (int i23 = 1; i23 >= 0; i23--) {
-            this.selectedMessagesCanCopyIds[i23].clear();
-            this.selectedMessagesCanStarIds[i23].clear();
-            this.selectedMessagesIds[i23].clear();
+        for (int i28 = 1; i28 >= 0; i28--) {
+            this.selectedMessagesCanCopyIds[i28].clear();
+            this.selectedMessagesCanStarIds[i28].clear();
+            this.selectedMessagesIds[i28].clear();
         }
         hideActionMode();
-        MessageObject.GroupedMessages validGroupedMessage = z3 ? getValidGroupedMessage(messageObject) : null;
-        int i24 = this.chatMode;
-        if (i24 == 3 || i24 == 5 || i24 == 1 || (isThreadChat() && !this.isTopic)) {
-            messageObject3 = messageObject2;
+        MessageObject.GroupedMessages validGroupedMessage = z3 ? getValidGroupedMessage(messageObject2) : null;
+        int i29 = this.chatMode;
+        if (i29 == 3 || i29 == 5 || i29 == 1 || (isThreadChat() && !this.isTopic)) {
+            str2 = "https://";
         } else {
             if (this.currentChat != null) {
-                messageObject3 = messageObject2;
-                if (messageObject.getDialogId() != this.mergeDialogId && ChatObject.canPinMessages(this.currentChat) && !this.currentChat.monoforum) {
+                str2 = "https://";
+                if (messageObject2.getDialogId() != this.mergeDialogId && ChatObject.canPinMessages(this.currentChat) && !this.currentChat.monoforum) {
                     z6 = true;
                 }
             } else {
-                messageObject3 = messageObject2;
+                str2 = "https://";
                 if (this.currentEncryptedChat == null && !UserObject.isDeleted(this.currentUser) && (userFull2 = this.userInfo) != null) {
                     z6 = userFull2.can_pin_message;
                 }
@@ -42998,2532 +43005,1841 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             if (!UserObject.isReplyUser(this.dialog_id) || this.dialog_id == UserObject.VERIFY) {
                 z6 = false;
             }
-            if (!z6 && messageObject.getId() > 0 && (((messageAction = messageObject.messageOwner.action) == null || (messageAction instanceof TLRPC.TL_messageActionEmpty)) && !messageObject.isExpiredStory())) {
-                if (messageObject.type != 24) {
-                    z7 = true;
-                    if ((!isPeerNoForwards() || messageObject.messageOwner.noforwards || getDialogId() == UserObject.VERIFY) && messageObject.type != 29) {
-                        z8 = false;
-                        if (messageObject.getDialogId() != this.mergeDialogId && z7 && (this.pinnedMessageObjects.containsKey(Integer.valueOf(messageObject.getId())) || (validGroupedMessage != null && !validGroupedMessage.messages.isEmpty() && this.pinnedMessageObjects.containsKey(Integer.valueOf(validGroupedMessage.messages.get(0).getId()))))) {
-                            messageObject.isExpiredStory();
+            boolean z21 = (z6 || messageObject2.getId() <= 0 || ((messageAction = messageObject2.messageOwner.action) != null && !(messageAction instanceof TLRPC.TL_messageActionEmpty)) || messageObject2.isExpiredStory() || messageObject2.type == 24) ? false : true;
+            if (!(!isPeerNoForwards() || messageObject2.messageOwner.noforwards || getDialogId() == UserObject.VERIFY) && messageObject2.type != 29) {
+                z7 = false;
+                if (messageObject2.getDialogId() != this.mergeDialogId && z21 && (this.pinnedMessageObjects.containsKey(Integer.valueOf(messageObject2.getId())) || (validGroupedMessage != null && !validGroupedMessage.messages.isEmpty() && this.pinnedMessageObjects.containsKey(Integer.valueOf(validGroupedMessage.messages.get(0).getId()))))) {
+                    messageObject2.isExpiredStory();
+                }
+                if (((messageObject2.canEditMessage(this.currentChat) || this.chatActivityEnterView.hasAudioToSend() || messageObject2.getDialogId() == this.mergeDialogId || (i26 = messageObject2.type) == 23 || i26 == 17) ? false : true) && validGroupedMessage != null) {
+                    size2 = validGroupedMessage.messages.size();
+                    for (i25 = 0; i25 < size2; i25++) {
+                        MessageObject messageObject24 = validGroupedMessage.messages.get(i25);
+                        if (i25 == 0 || !TextUtils.isEmpty(messageObject24.caption)) {
+                            this.selectedObjectToEditCaption = messageObject24;
+                            TextUtils.isEmpty(messageObject24.caption);
                         }
-                        if (((messageObject.canEditMessage(this.currentChat) || this.chatActivityEnterView.hasAudioToSend() || messageObject.getDialogId() == this.mergeDialogId || (i22 = messageObject.type) == 23 || i22 == 17) ? false : true) && validGroupedMessage != null) {
-                            size2 = validGroupedMessage.messages.size();
-                            for (i21 = 0; i21 < size2; i21++) {
-                                MessageObject messageObject24 = validGroupedMessage.messages.get(i21);
-                                if (i21 == 0 || !TextUtils.isEmpty(messageObject24.caption)) {
-                                    this.selectedObjectToEditCaption = messageObject24;
-                                    TextUtils.isEmpty(messageObject24.caption);
-                                }
-                            }
+                    }
+                }
+                if (!messageObject2.isExpiredStory() && this.chatMode != 1 && (((arrayList8 = this.threadMessageObjects) == null || !arrayList8.contains(messageObject2)) && !messageObject2.isSponsored() && ((messageType != 1 || messageObject2.getDialogId() != this.mergeDialogId) && !(messageObject2.messageOwner.action instanceof TLRPC.TL_messageActionSecureValuesSent) && ((this.currentEncryptedChat != null || messageObject2.getId() >= 0) && (chatActivityChannelButtonsLayout = this.bottomChannelButtonsLayout) != null && chatActivityChannelButtonsLayout.getVisibility() == 0 && this.bottomOverlayChatWaitsReply && (messageObject22 = this.selectedObject) != null && MessageObject.getTopicId(this.currentAccount, messageObject22.messageOwner, ChatObject.isForum(this.currentChat)) == 0)))) {
+                    boolean z22 = this.selectedObject.wasJustSent;
+                }
+                chat = this.currentChat;
+                if (chat != null && ChatObject.isNotInChat(chat) && !ChatObject.isMonoForum(this.currentChat)) {
+                    isThreadChat();
+                }
+                chat2 = this.currentChat;
+                if (chat2 != null && ChatObject.isChannel(chat2) && !ChatObject.canPost(this.currentChat)) {
+                    boolean z23 = this.currentChat.megagroup;
+                }
+                chat3 = this.currentChat;
+                if (chat3 != null) {
+                    ChatObject.canSendMessages(chat3);
+                }
+                if (!z20 || messageType < 2 || messageType == 20) {
+                    if (getParentActivity() != null) {
+                        return false;
+                    }
+                    ArrayList arrayList10 = new ArrayList();
+                    ArrayList arrayList11 = new ArrayList();
+                    ArrayList arrayList12 = new ArrayList();
+                    if (!AndroidUtilities.isAccessibilityScreenReaderEnabled() || (message6 = messageObject2.messageOwner) == null || (peer = message6.from_id) == null) {
+                        groupedMessages = validGroupedMessage;
+                    } else {
+                        groupedMessages = validGroupedMessage;
+                        if (peer.user_id != getUserConfig().clientUserId && this.chatMode != 3) {
+                            arrayList11.add(LocaleController.getString(R.string.OpenProfile));
+                            arrayList12.add(104);
+                            arrayList10.add(Integer.valueOf(R.drawable.msg_user_search));
                         }
-                        if (!messageObject.isExpiredStory() && this.chatMode != 1 && (((arrayList7 = this.threadMessageObjects) == null || !arrayList7.contains(messageObject)) && !messageObject.isSponsored() && ((messageType != 1 || messageObject.getDialogId() != this.mergeDialogId) && !(messageObject.messageOwner.action instanceof TLRPC.TL_messageActionSecureValuesSent) && ((this.currentEncryptedChat != null || messageObject.getId() >= 0) && (chatActivityChannelButtonsLayout = this.bottomChannelButtonsLayout) != null && chatActivityChannelButtonsLayout.getVisibility() == 0 && this.bottomOverlayChatWaitsReply && (messageObject22 = this.selectedObject) != null && MessageObject.getTopicId(this.currentAccount, messageObject22.messageOwner, ChatObject.isForum(this.currentChat)) == 0)))) {
-                            boolean z23 = this.selectedObject.wasJustSent;
-                        }
-                        chat = this.currentChat;
-                        if (chat != null && ChatObject.isNotInChat(chat) && !ChatObject.isMonoForum(this.currentChat)) {
-                            isThreadChat();
-                        }
-                        chat2 = this.currentChat;
-                        if (chat2 != null && ChatObject.isChannel(chat2) && !ChatObject.canPost(this.currentChat)) {
-                            boolean z24 = this.currentChat.megagroup;
-                        }
-                        chat3 = this.currentChat;
-                        if (chat3 != null) {
-                            ChatObject.canSendMessages(chat3);
-                        }
-                        if (!z22 || messageType < 2 || messageType == 20) {
-                            if (getParentActivity() == null) {
-                                return false;
-                            }
-                            ArrayList arrayList9 = new ArrayList();
-                            ArrayList arrayList10 = new ArrayList();
-                            ArrayList arrayList11 = new ArrayList();
-                            if (!AndroidUtilities.isAccessibilityScreenReaderEnabled() || (message6 = messageObject.messageOwner) == null || (peer = message6.from_id) == null) {
-                                i = messageType;
-                            } else {
-                                i = messageType;
-                                if (peer.user_id != getUserConfig().clientUserId && this.chatMode != 3) {
-                                    arrayList10.add(LocaleController.getString(R.string.OpenProfile));
-                                    arrayList11.add(104);
-                                    arrayList9.add(Integer.valueOf(R.drawable.msg_user_search));
-                                }
-                            }
-                            if (!getUserConfig().isPremium() && !getMessagesController().premiumFeaturesBlocked() && messageObject.getDocument() != null && messageObject.getDocument().size >= 157286400 && FileLoader.getInstance(this.currentAccount).isLoadingFile(FileLoader.getAttachFileName(messageObject.getDocument())) && this.chatMode != 3) {
-                                arrayList10.add(LocaleController.getString(R.string.PremiumSpeedPromo));
-                                arrayList11.add(103);
-                                arrayList9.add(Integer.valueOf(R.drawable.msg_speed));
-                                if (SharedConfig.getDevicePerformanceClass() != 0) {
-                                    TLRPC.TL_help_premiumPromo premiumPromo = MediaDataController.getInstance(this.currentAccount).getPremiumPromo();
-                                    String featureTypeToServerString = PremiumPreviewFragment.featureTypeToServerString(2);
-                                    if (premiumPromo != null) {
-                                        int i25 = 0;
-                                        while (true) {
-                                            if (i25 >= premiumPromo.video_sections.size()) {
-                                                i25 = -1;
-                                                break;
-                                            }
-                                            if (premiumPromo.video_sections.get(i25).equals(featureTypeToServerString)) {
-                                                break;
-                                            }
-                                            i25++;
-                                        }
-                                        if (i25 != -1) {
-                                            FileLoader.getInstance(this.currentAccount).loadFile(premiumPromo.videos.get(i25), premiumPromo, 3, 0);
-                                        }
+                    }
+                    if (!getUserConfig().isPremium() && !getMessagesController().premiumFeaturesBlocked() && messageObject2.getDocument() != null && messageObject2.getDocument().size >= 157286400 && FileLoader.getInstance(this.currentAccount).isLoadingFile(FileLoader.getAttachFileName(messageObject2.getDocument())) && this.chatMode != 3) {
+                        arrayList11.add(LocaleController.getString(R.string.PremiumSpeedPromo));
+                        arrayList12.add(103);
+                        arrayList10.add(Integer.valueOf(R.drawable.msg_speed));
+                        if (SharedConfig.getDevicePerformanceClass() != 0) {
+                            TLRPC.TL_help_premiumPromo premiumPromo = MediaDataController.getInstance(this.currentAccount).getPremiumPromo();
+                            String featureTypeToServerString = PremiumPreviewFragment.featureTypeToServerString(2);
+                            if (premiumPromo != null) {
+                                int i30 = 0;
+                                while (true) {
+                                    if (i30 >= premiumPromo.video_sections.size()) {
+                                        i24 = -1;
+                                        i30 = -1;
+                                        break;
                                     }
+                                    if (premiumPromo.video_sections.get(i30).equals(featureTypeToServerString)) {
+                                        i24 = -1;
+                                        break;
+                                    }
+                                    i30++;
+                                }
+                                if (i30 != i24) {
+                                    FileLoader.getInstance(this.currentAccount).loadFile(premiumPromo.videos.get(i30), premiumPromo, 3, 0);
                                 }
                             }
-                            if ((messageObject.messageOwner.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && z22 && (this.dialog_id >= 0 || ((chat6 = this.currentChat) != null && ChatObject.canUserDoAdminAction(chat6, 13)))) {
-                                AutoDeletePopupWrapper autoDeletePopupWrapper = new AutoDeletePopupWrapper(this.contentView.getContext(), null, new AutoDeletePopupWrapper.Callback() { // from class: org.telegram.ui.ChatActivity.104
-                                    @Override // org.telegram.ui.Components.AutoDeletePopupWrapper.Callback
-                                    public /* synthetic */ void showGlobalAutoDeleteScreen() {
-                                        AutoDeletePopupWrapper.Callback.-CC.$default$showGlobalAutoDeleteScreen(this);
-                                    }
+                        }
+                    }
+                    if ((messageObject2.messageOwner.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && z20 && (this.dialog_id >= 0 || ((chat6 = this.currentChat) != null && ChatObject.canUserDoAdminAction(chat6, 13)))) {
+                        AutoDeletePopupWrapper autoDeletePopupWrapper = new AutoDeletePopupWrapper(this.contentView.getContext(), null, new AutoDeletePopupWrapper.Callback() { // from class: org.telegram.ui.ChatActivity.104
+                            @Override // org.telegram.ui.Components.AutoDeletePopupWrapper.Callback
+                            public /* synthetic */ void showGlobalAutoDeleteScreen() {
+                                AutoDeletePopupWrapper.Callback.-CC.$default$showGlobalAutoDeleteScreen(this);
+                            }
 
-                                    @Override // org.telegram.ui.Components.AutoDeletePopupWrapper.Callback
-                                    public void dismiss() {
-                                        ActionBarPopupWindow actionBarPopupWindow = ChatActivity.this.scrimPopupWindow;
-                                        if (actionBarPopupWindow != null) {
-                                            actionBarPopupWindow.dismiss();
-                                        }
-                                    }
+                            @Override // org.telegram.ui.Components.AutoDeletePopupWrapper.Callback
+                            public void dismiss() {
+                                ActionBarPopupWindow actionBarPopupWindow = ChatActivity.this.scrimPopupWindow;
+                                if (actionBarPopupWindow != null) {
+                                    actionBarPopupWindow.dismiss();
+                                }
+                            }
 
-                                    @Override // org.telegram.ui.Components.AutoDeletePopupWrapper.Callback
-                                    public void setAutoDeleteHistory(int i26, int i27) {
-                                        ChatActivity.this.getMessagesController().setDialogHistoryTTL(ChatActivity.this.dialog_id, i26);
-                                        ChatActivity chatActivity3 = ChatActivity.this;
-                                        if (chatActivity3.userInfo == null && chatActivity3.chatInfo == null) {
-                                            return;
-                                        }
-                                        chatActivity3.createUndoView();
-                                        if (ChatActivity.this.undoView == null) {
-                                            return;
-                                        }
-                                        UndoView undoView3 = ChatActivity.this.undoView;
-                                        long j = ChatActivity.this.dialog_id;
-                                        ChatActivity chatActivity4 = ChatActivity.this;
-                                        TLRPC.User user6 = chatActivity4.currentUser;
-                                        TLRPC.UserFull userFull3 = chatActivity4.userInfo;
-                                        undoView3.showWithAction(j, i27, user6, Integer.valueOf(userFull3 != null ? userFull3.ttl_period : chatActivity4.chatInfo.ttl_period), (Runnable) null, (Runnable) null);
-                                    }
-                                }, true, 0, getResourceProvider());
-                                TLRPC.UserFull userFull3 = this.userInfo;
-                                autoDeletePopupWrapper.lambda$updateItems$7(userFull3 != null ? userFull3.ttl_period : this.chatInfo.ttl_period);
-                                actionBarPopupWindowLayout = autoDeletePopupWrapper.windowLayout;
-                                messageObject4 = messageObject3;
-                            } else {
-                                if (i >= 0 || (i == -1 && z22 && ((messageObject.isSending() || messageObject.isEditing()) && this.currentEncryptedChat == null))) {
-                                    this.selectedObject = messageObject;
-                                    this.selectedObjectGroup = validGroupedMessage;
-                                    messageObject4 = messageObject3;
-                                    fillMessageMenu(messageObject4, arrayList9, arrayList10, arrayList11);
-                                } else {
-                                    messageObject4 = messageObject3;
+                            @Override // org.telegram.ui.Components.AutoDeletePopupWrapper.Callback
+                            public void setAutoDeleteHistory(int i31, int i32) {
+                                ChatActivity.this.getMessagesController().setDialogHistoryTTL(ChatActivity.this.dialog_id, i31);
+                                ChatActivity chatActivity3 = ChatActivity.this;
+                                if (chatActivity3.userInfo == null && chatActivity3.chatInfo == null) {
+                                    return;
                                 }
-                                actionBarPopupWindowLayout = null;
-                            }
-                            MessageObject messageObject25 = this.selectedObject;
-                            if (messageObject25 != null && messageObject25.isHiddenSensitive() && !this.selectedObject.isMediaSpoilersRevealed) {
-                                int i26 = 0;
-                                while (i26 < arrayList11.size()) {
-                                    int intValue = ((Integer) arrayList11.get(i26)).intValue();
-                                    if (intValue == 2 || intValue == 4 || intValue == 10 || intValue == 6 || intValue == 7 || intValue == 8) {
-                                        arrayList11.remove(i26);
-                                        arrayList10.remove(i26);
-                                        arrayList9.remove(i26);
-                                        i26--;
-                                    }
-                                    i26++;
+                                chatActivity3.createUndoView();
+                                if (ChatActivity.this.undoView == null) {
+                                    return;
                                 }
+                                UndoView undoView3 = ChatActivity.this.undoView;
+                                long j = ChatActivity.this.dialog_id;
+                                ChatActivity chatActivity4 = ChatActivity.this;
+                                TLRPC.User user6 = chatActivity4.currentUser;
+                                TLRPC.UserFull userFull3 = chatActivity4.userInfo;
+                                undoView3.showWithAction(j, i32, user6, Integer.valueOf(userFull3 != null ? userFull3.ttl_period : chatActivity4.chatInfo.ttl_period), (Runnable) null, (Runnable) null);
                             }
-                            if (z5) {
-                                arrayList10.clear();
-                                arrayList11.clear();
-                                arrayList9.clear();
-                                MessageObject messageObject26 = this.selectedObject;
-                                if (messageObject26 != null && ((i20 = messageObject26.type) == 0 || i20 == 1 || i20 == 3)) {
-                                    arrayList10.add(LocaleController.getString(R.string.EditOfferMessage));
-                                    arrayList11.add(113);
-                                    arrayList9.add(Integer.valueOf(R.drawable.msg_edit));
-                                }
-                                arrayList10.add(LocaleController.getString(R.string.EditOfferPrice));
-                                arrayList11.add(111);
-                                arrayList9.add(Integer.valueOf(R.drawable.menu_edit_price));
-                                arrayList10.add(LocaleController.getString(R.string.EditOfferTime));
-                                arrayList11.add(112);
-                                arrayList9.add(Integer.valueOf(R.drawable.msg_calendar2));
+                        }, true, 0, getResourceProvider());
+                        TLRPC.UserFull userFull3 = this.userInfo;
+                        autoDeletePopupWrapper.lambda$updateItems$7(userFull3 != null ? userFull3.ttl_period : this.chatInfo.ttl_period);
+                        groupedMessages2 = groupedMessages;
+                        actionBarPopupWindowLayout = autoDeletePopupWrapper.windowLayout;
+                        messageObject4 = messageObject3;
+                    } else {
+                        if (messageType >= 0 || (messageType == -1 && z20 && ((messageObject2.isSending() || messageObject2.isEditing()) && this.currentEncryptedChat == null))) {
+                            this.selectedObject = messageObject2;
+                            groupedMessages2 = groupedMessages;
+                            this.selectedObjectGroup = groupedMessages2;
+                            messageObject4 = messageObject3;
+                            fillMessageMenu(messageObject4, arrayList10, arrayList11, arrayList12);
+                        } else {
+                            groupedMessages2 = groupedMessages;
+                            messageObject4 = messageObject3;
+                        }
+                        actionBarPopupWindowLayout = null;
+                    }
+                    MessageObject messageObject25 = this.selectedObject;
+                    if (messageObject25 != null && messageObject25.isHiddenSensitive() && !this.selectedObject.isMediaSpoilersRevealed) {
+                        int i31 = 0;
+                        while (i31 < arrayList12.size()) {
+                            int intValue = ((Integer) arrayList12.get(i31)).intValue();
+                            if (intValue == i27 || intValue == 4 || intValue == 10 || intValue == 6 || intValue == 7 || intValue == 8) {
+                                arrayList12.remove(i31);
+                                arrayList11.remove(i31);
+                                arrayList10.remove(i31);
+                                i31--;
                             }
-                            if (arrayList11.isEmpty() && actionBarPopupWindowLayout == null) {
-                                return false;
-                            }
-                            if (this.scrimPopupWindow != null) {
-                                closeMenu();
-                                this.menuDeleteItem = null;
-                                this.scrimPopupWindowItems = null;
-                                return false;
-                            }
-                            AtomicBoolean atomicBoolean3 = new AtomicBoolean(false);
-                            AtomicReference atomicReference4 = new AtomicReference(null);
-                            Rect rect3 = new Rect();
-                            List<TLRPC.TL_availableReaction> enabledReactionsList = getMediaDataController().getEnabledReactionsList();
-                            boolean isEphemeral = messageObject.isEphemeral();
-                            boolean z25 = (isEphemeral || z5 || isSecretChat() || isInScheduleMode() || this.currentUser != null || !messageObject4.hasReactions() || (ChatObject.isChannel(this.currentChat) && !this.currentChat.megagroup) || ChatObject.isMonoForum(this.currentChat) || enabledReactionsList.isEmpty() || !messageObject4.messageOwner.reactions.can_see_list || messageObject4.isSecretMedia()) ? false : true;
-                            if (z5 || isEphemeral) {
-                                str = "https://";
-                            } else {
-                                if (messageObject.isForwardedChannelPost()) {
-                                    str = "https://";
-                                    TLRPC.ChatFull chatFull2 = getMessagesController().getChatFull(-messageObject.getFromChatId());
-                                    if (chatFull2 != null) {
-                                        if (!isSecretChat()) {
-                                            if (this.chatMode != 5) {
-                                                if (!isInScheduleMode()) {
-                                                    if (messageObject4.isReactionsAvailable()) {
-                                                        if (!enabledReactionsList.isEmpty()) {
-                                                            if (chatFull2.available_reactions instanceof TLRPC.TL_chatReactionsNone) {
-                                                            }
+                            i31++;
+                            i27 = 2;
+                        }
+                    }
+                    if (z5) {
+                        arrayList11.clear();
+                        arrayList12.clear();
+                        arrayList10.clear();
+                        MessageObject messageObject26 = this.selectedObject;
+                        if (messageObject26 != null && ((i23 = messageObject26.type) == 0 || i23 == 1 || i23 == 3)) {
+                            arrayList11.add(LocaleController.getString(R.string.EditOfferMessage));
+                            arrayList12.add(113);
+                            arrayList10.add(Integer.valueOf(R.drawable.msg_edit));
+                        }
+                        arrayList11.add(LocaleController.getString(R.string.EditOfferPrice));
+                        arrayList12.add(111);
+                        arrayList10.add(Integer.valueOf(R.drawable.menu_edit_price));
+                        arrayList11.add(LocaleController.getString(R.string.EditOfferTime));
+                        arrayList12.add(112);
+                        arrayList10.add(Integer.valueOf(R.drawable.msg_calendar2));
+                    }
+                    if (arrayList12.isEmpty() && actionBarPopupWindowLayout == null) {
+                        return false;
+                    }
+                    if (this.scrimPopupWindow != null) {
+                        closeMenu();
+                        this.menuDeleteItem = null;
+                        this.scrimPopupWindowItems = null;
+                        return false;
+                    }
+                    AtomicBoolean atomicBoolean2 = new AtomicBoolean(false);
+                    AtomicReference atomicReference4 = new AtomicReference(null);
+                    Rect rect3 = new Rect();
+                    List<TLRPC.TL_availableReaction> enabledReactionsList = getMediaDataController().getEnabledReactionsList();
+                    boolean isEphemeral = messageObject2.isEphemeral();
+                    boolean z24 = (isEphemeral || z5 || isSecretChat() || isInScheduleMode() || this.currentUser != null || !messageObject4.hasReactions() || (ChatObject.isChannel(this.currentChat) && !this.currentChat.megagroup) || ChatObject.isMonoForum(this.currentChat) || enabledReactionsList.isEmpty() || !messageObject4.messageOwner.reactions.can_see_list || messageObject4.isSecretMedia()) ? false : true;
+                    if (!z5 && !isEphemeral) {
+                        if (messageObject2.isForwardedChannelPost()) {
+                            TLRPC.ChatFull chatFull2 = getMessagesController().getChatFull(-messageObject2.getFromChatId());
+                            z8 = chatFull2 == null || !(isSecretChat() || this.chatMode == 5 || isInScheduleMode() || !messageObject4.isReactionsAvailable() || enabledReactionsList.isEmpty() || ((chatFull2.available_reactions instanceof TLRPC.TL_chatReactionsNone) && !chatFull2.paid_reactions_available));
+                        } else if (!isSecretChat()) {
+                            if (this.chatMode != 5) {
+                                if (!isInScheduleMode()) {
+                                    if (messageObject4.isReactionsAvailable()) {
+                                        if (!enabledReactionsList.isEmpty()) {
+                                            if (!messageObject2.isSecretMedia()) {
+                                                TLRPC.ChatFull chatFull3 = this.chatInfo;
+                                                if (chatFull3 != null) {
+                                                    if (chatFull3.available_reactions instanceof TLRPC.TL_chatReactionsNone) {
+                                                    }
+                                                    chat5 = this.currentChat;
+                                                    if (chat5 != null) {
+                                                        if (!ChatObject.isChannelAndNotMegaGroup(chat5)) {
                                                         }
                                                     }
                                                 }
-                                            }
-                                            z9 = false;
-                                        }
-                                    }
-                                    z9 = true;
-                                } else {
-                                    str = "https://";
-                                    if (!isSecretChat()) {
-                                        if (this.chatMode != 5) {
-                                            if (!isInScheduleMode()) {
-                                                if (messageObject4.isReactionsAvailable()) {
-                                                    if (!enabledReactionsList.isEmpty()) {
-                                                        if (!messageObject.isSecretMedia()) {
-                                                            TLRPC.ChatFull chatFull3 = this.chatInfo;
-                                                            if (chatFull3 != null) {
-                                                                if (chatFull3.available_reactions instanceof TLRPC.TL_chatReactionsNone) {
-                                                                }
-                                                                chat5 = this.currentChat;
-                                                                if (chat5 != null) {
-                                                                    if (!ChatObject.isChannelAndNotMegaGroup(chat5)) {
-                                                                    }
-                                                                }
-                                                                z9 = true;
-                                                            }
-                                                            if (chatFull3 == null) {
-                                                            }
-                                                            if (this.currentUser == null) {
-                                                            }
-                                                            chat5 = this.currentChat;
-                                                            if (chat5 != null) {
-                                                            }
-                                                            z9 = true;
-                                                        }
-                                                    }
+                                                if (chatFull3 == null) {
+                                                }
+                                                if (this.currentUser == null) {
+                                                }
+                                                chat5 = this.currentChat;
+                                                if (chat5 != null) {
                                                 }
                                             }
                                         }
-                                        z9 = false;
                                     }
                                 }
-                                if (z5 && !isEphemeral && !z25 && !isInScheduleMode() && this.currentChat != null && messageObject.isOutOwner() && messageObject.isSent() && !messageObject.isEditing() && !messageObject.isSending() && !messageObject.isSendError() && !messageObject.isContentUnread() && !messageObject.isUnread() && ConnectionsManager.getInstance(this.currentAccount).getCurrentTime() - messageObject.messageOwner.date < getMessagesController().chatReadMarkExpirePeriod && ((ChatObject.isMegagroup(this.currentChat) || !ChatObject.isChannel(this.currentChat)) && (chatFull = this.chatInfo) != null && chatFull.participants_count <= getMessagesController().chatReadMarkSizeThreshold && !(messageObject.messageOwner.action instanceof TLRPC.TL_messageActionChatJoinedByRequest))) {
-                                    if (this.chatMode != 3 && messageObject.canSetReaction() && !ChatObject.isMonoForum(this.currentChat)) {
+                            }
+                        }
+                        if (z5 && !isEphemeral && !z24 && !isInScheduleMode() && this.currentChat != null && messageObject2.isOutOwner() && messageObject2.isSent() && !messageObject2.isEditing() && !messageObject2.isSending() && !messageObject2.isSendError() && !messageObject2.isContentUnread() && !messageObject2.isUnread() && ConnectionsManager.getInstance(this.currentAccount).getCurrentTime() - messageObject2.messageOwner.date < getMessagesController().chatReadMarkExpirePeriod && ((ChatObject.isMegagroup(this.currentChat) || !ChatObject.isChannel(this.currentChat)) && (chatFull = this.chatInfo) != null && chatFull.participants_count <= getMessagesController().chatReadMarkSizeThreshold && !(messageObject2.messageOwner.action instanceof TLRPC.TL_messageActionChatJoinedByRequest))) {
+                            if (this.chatMode != 3 && messageObject2.canSetReaction() && !ChatObject.isMonoForum(this.currentChat)) {
+                                z9 = true;
+                                boolean z25 = z5 && !isEphemeral && this.currentChat != null && !messageObject2.isOut() && ChatObject.isMonoForum(this.currentChat) && ChatObject.canManageMonoForum(this.currentAccount, this.currentChat) && (-this.currentChat.linked_monoforum_id) == messageObject2.getFromChatId();
+                                if (!z5 && !isEphemeral && !z24 && this.currentChat == null && this.currentEncryptedChat == null && (user4 = this.currentUser) != null && !UserObject.isUserSelf(user4) && !UserObject.isReplyUser(this.currentUser) && !UserObject.isAnonymous(this.currentUser)) {
+                                    user5 = this.currentUser;
+                                    if (!user5.bot && !UserObject.isService(user5.id) && (((userFull = this.userInfo) == null || !userFull.read_dates_private) && !isInScheduleMode() && messageObject2.isOutOwner() && messageObject2.isSent() && !messageObject2.isEditing() && !messageObject2.isSending() && !messageObject2.isSendError() && !messageObject2.isContentUnread() && !messageObject2.isUnread() && ConnectionsManager.getInstance(this.currentAccount).getCurrentTime() - messageObject2.messageOwner.date < getMessagesController().pmReadDateExpirePeriod && !(messageObject2.messageOwner.action instanceof TLRPC.TL_messageActionChatJoinedByRequest))) {
                                         z10 = true;
-                                        if (!z5 || isEphemeral || this.currentChat == null || messageObject.isOut() || !ChatObject.isMonoForum(this.currentChat) || !ChatObject.canManageMonoForum(this.currentAccount, this.currentChat)) {
-                                            arrayList = arrayList11;
-                                        } else {
-                                            arrayList = arrayList11;
-                                            if ((-this.currentChat.linked_monoforum_id) == messageObject.getFromChatId()) {
-                                                z11 = true;
-                                                if (!z5 && !isEphemeral && !z25 && this.currentChat == null && this.currentEncryptedChat == null && (user4 = this.currentUser) != null && !UserObject.isUserSelf(user4) && !UserObject.isReplyUser(this.currentUser) && !UserObject.isAnonymous(this.currentUser)) {
-                                                    user5 = this.currentUser;
-                                                    if (!user5.bot && !UserObject.isService(user5.id) && (((userFull = this.userInfo) == null || !userFull.read_dates_private) && !isInScheduleMode() && messageObject.isOutOwner() && messageObject.isSent() && !messageObject.isEditing() && !messageObject.isSending() && !messageObject.isSendError() && !messageObject.isContentUnread() && !messageObject.isUnread() && ConnectionsManager.getInstance(this.currentAccount).getCurrentTime() - messageObject.messageOwner.date < getMessagesController().pmReadDateExpirePeriod && !(messageObject.messageOwner.action instanceof TLRPC.TL_messageActionChatJoinedByRequest))) {
-                                                        z12 = true;
-                                                        boolean z26 = z5 && !isEphemeral && ((user3 = this.currentUser) == null || !(UserObject.isReplyUser(user3) || UserObject.isAnonymous(this.currentUser))) && !isInScheduleMode() && messageObject.isEdited() && !(messageObject.messageOwner.action instanceof TLRPC.TL_messageActionChatJoinedByRequest);
-                                                        if (!z5 && !isEphemeral && (messageObject20 = this.selectedObject) != null && messageObject20.isSponsored()) {
-                                                            messageObject21 = this.selectedObject;
-                                                            if (messageObject21.sponsoredInfo == null || messageObject21.sponsoredAdditionalInfo != null) {
-                                                                str2 = str;
+                                        boolean z26 = z5 && !isEphemeral && ((user3 = this.currentUser) == null || !(UserObject.isReplyUser(user3) || UserObject.isAnonymous(this.currentUser))) && !isInScheduleMode() && messageObject2.isEdited() && !(messageObject2.messageOwner.action instanceof TLRPC.TL_messageActionChatJoinedByRequest);
+                                        if (!z5 && !isEphemeral && (messageObject20 = this.selectedObject) != null && messageObject20.isSponsored()) {
+                                            messageObject21 = this.selectedObject;
+                                            if (messageObject21.sponsoredInfo == null || messageObject21.sponsoredAdditionalInfo != null) {
+                                                str3 = str2;
+                                            } else {
+                                                String str6 = messageObject21.sponsoredUrl;
+                                                if (str6 != null) {
+                                                    StringBuilder sb3 = new StringBuilder();
+                                                    str3 = str2;
+                                                    sb3.append(str3);
+                                                    sb3.append(getMessagesController().linkPrefix);
+                                                }
+                                            }
+                                            z11 = true;
+                                            boolean z27 = z5 && z8;
+                                            int i32 = (!z24 || z9 || z11) ? 1 : 0;
+                                            Activity parentActivity = getParentActivity();
+                                            int i33 = R.drawable.popup_fixed_alert4;
+                                            final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout9 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity, i33, this.themeDelegate, i32);
+                                            actionBarPopupWindowLayout9.setMinimumWidth(AndroidUtilities.dp(200.0f));
+                                            Rect rect4 = new Rect();
+                                            getParentActivity().getResources().getDrawable(i33).mutate().getPadding(rect4);
+                                            actionBarPopupWindowLayout9.setBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
+                                            if (actionBarPopupWindowLayout == null) {
+                                                if (z24) {
+                                                    ReactedHeaderView reactedHeaderView2 = new ReactedHeaderView(this.contentView.getContext(), this.currentAccount, messageObject4, this.dialog_id);
+                                                    TLRPC.TL_messageReactions tL_messageReactions = messageObject4.messageOwner.reactions;
+                                                    if (tL_messageReactions != null) {
+                                                        Iterator<TLRPC.ReactionCount> it = tL_messageReactions.results.iterator();
+                                                        z15 = false;
+                                                        int i34 = 0;
+                                                        while (it.hasNext()) {
+                                                            TLRPC.ReactionCount next = it.next();
+                                                            int i35 = next.count;
+                                                            i34 += i35;
+                                                            Iterator<TLRPC.ReactionCount> it2 = it;
+                                                            if (i35 > 1 || !next.chosen) {
+                                                                it = it2;
+                                                                z15 = true;
                                                             } else {
-                                                                String str5 = messageObject21.sponsoredUrl;
-                                                                if (str5 != null) {
-                                                                    StringBuilder sb2 = new StringBuilder();
-                                                                    str2 = str;
-                                                                    sb2.append(str2);
-                                                                    sb2.append(getMessagesController().linkPrefix);
-                                                                }
+                                                                it = it2;
                                                             }
-                                                            z13 = true;
-                                                            boolean z27 = z5 && z9;
-                                                            int i27 = (!z25 || z10 || z13) ? 1 : 0;
-                                                            Activity parentActivity = getParentActivity();
-                                                            ArrayList arrayList12 = arrayList10;
-                                                            int i28 = R.drawable.popup_fixed_alert4;
-                                                            final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout8 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity, i28, this.themeDelegate, i27);
-                                                            actionBarPopupWindowLayout8.setMinimumWidth(AndroidUtilities.dp(200.0f));
-                                                            Rect rect4 = new Rect();
-                                                            getParentActivity().getResources().getDrawable(i28).mutate().getPadding(rect4);
-                                                            actionBarPopupWindowLayout8.setBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
-                                                            if (actionBarPopupWindowLayout != null) {
-                                                                if (z25) {
-                                                                    ReactedHeaderView reactedHeaderView2 = new ReactedHeaderView(this.contentView.getContext(), this.currentAccount, messageObject4, this.dialog_id);
-                                                                    TLRPC.TL_messageReactions tL_messageReactions = messageObject4.messageOwner.reactions;
-                                                                    if (tL_messageReactions != null) {
-                                                                        Iterator<TLRPC.ReactionCount> it = tL_messageReactions.results.iterator();
-                                                                        z17 = false;
-                                                                        int i29 = 0;
-                                                                        while (it.hasNext()) {
-                                                                            TLRPC.ReactionCount next = it.next();
-                                                                            int i30 = next.count;
-                                                                            i29 += i30;
-                                                                            Iterator<TLRPC.ReactionCount> it2 = it;
-                                                                            if (i30 > 1 || !next.chosen) {
-                                                                                it = it2;
-                                                                                z17 = true;
-                                                                            } else {
-                                                                                it = it2;
-                                                                            }
-                                                                        }
-                                                                        i18 = i29;
-                                                                    } else {
-                                                                        z17 = false;
-                                                                        i18 = 0;
-                                                                    }
-                                                                    if (z17 && ChatObject.canUserDoAdminAction(this.currentChat, 13)) {
-                                                                        z18 = true;
-                                                                        if (z18) {
-                                                                            view3 = null;
-                                                                        } else {
-                                                                            view3 = createMenuTextOption(getContext(), this.themeDelegate, LocaleController.getString(R.string.TapAndHoldToDeleteReaction));
-                                                                            view3.setMinimumHeight(AndroidUtilities.dp(32.0f));
-                                                                        }
-                                                                        if (i18 > 10 && messageObject4.messageOwner.reactions.results.size() > 1) {
-                                                                            r2 = 1;
-                                                                            MessageObject messageObject27 = messageObject;
-                                                                            ?? containerLinerLayout = new ReactedUsersListView.ContainerLinerLayout(this.contentView.getContext());
-                                                                            containerLinerLayout.hasHeader = r2;
-                                                                            containerLinerLayout.setOrientation(1);
-                                                                            atomicReference2 = atomicReference4;
-                                                                            int dp = AndroidUtilities.dp(200.0f);
-                                                                            if (r2 == 0) {
-                                                                                atomicBoolean2 = atomicBoolean3;
-                                                                                i19 = 96;
-                                                                            } else {
-                                                                                atomicBoolean2 = atomicBoolean3;
-                                                                                i19 = 44;
-                                                                            }
-                                                                            containerLinerLayout.setLayoutParams(new FrameLayout.LayoutParams(dp, AndroidUtilities.dp(i19 + NotificationCenter.dialogsUnreadPollVotesCounterChanged) + (r2 ^ 1)));
-                                                                            ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout9 = actionBarPopupWindowLayout;
-                                                                            ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem((Context) getParentActivity(), true, false, (Theme.ResourcesProvider) this.themeDelegate);
-                                                                            actionBarMenuSubItem.setItemHeight(44);
-                                                                            actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back);
-                                                                            actionBarMenuSubItem.getTextView().setPadding(!LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), 0, !LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, 0);
-                                                                            actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda235
-                                                                                @Override // android.view.View.OnClickListener
-                                                                                public final void onClick(View view4) {
-                                                                                    ChatActivity.lambda$createMenu$255(ActionBarPopupWindow.ActionBarPopupWindowLayout.this, view4);
-                                                                                }
-                                                                            });
-                                                                            containerLinerLayout.addView(actionBarMenuSubItem, LayoutHelper.createLinear(-1, -2));
-                                                                            int[] iArr4 = new int[1];
-                                                                            if (r2 == 0) {
-                                                                                ArrayList<TLRPC.ReactionCount> arrayList13 = messageObject4.messageOwner.reactions.results;
-                                                                                final LinearLayout linearLayout = new LinearLayout(this.contentView.getContext());
-                                                                                linearLayout.setOrientation(0);
-                                                                                final ViewPager viewPager = new ViewPager(this.contentView.getContext());
-                                                                                final HorizontalScrollView horizontalScrollView = new HorizontalScrollView(this.contentView.getContext());
-                                                                                final AtomicBoolean atomicBoolean4 = new AtomicBoolean();
-                                                                                int i31 = arrayList13.size() > 1 ? 1 : 0;
-                                                                                int size3 = arrayList13.size() + i31;
-                                                                                int i32 = 0;
-                                                                                while (i32 < size3) {
-                                                                                    int i33 = size3;
-                                                                                    final ReactionTabHolderView reactionTabHolderView = new ReactionTabHolderView(this.contentView.getContext());
-                                                                                    int i34 = i31 != 0 ? i32 - 1 : i32;
-                                                                                    if (i34 < 0) {
-                                                                                        reactionTabHolderView.setCounter(i18);
-                                                                                        iArr3 = iArr4;
-                                                                                    } else {
-                                                                                        iArr3 = iArr4;
-                                                                                        reactionTabHolderView.setCounter(this.currentAccount, arrayList13.get(i34));
-                                                                                    }
-                                                                                    final int i35 = i32;
-                                                                                    reactionTabHolderView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda236
-                                                                                        @Override // android.view.View.OnClickListener
-                                                                                        public final void onClick(View view4) {
-                                                                                            ChatActivity.lambda$createMenu$257(ViewPager.this, i35, linearLayout, atomicBoolean4, horizontalScrollView, reactionTabHolderView, view4);
-                                                                                        }
-                                                                                    });
-                                                                                    linearLayout.addView(reactionTabHolderView, LayoutHelper.createFrameRelatively(-2.0f, -1.0f, 16, i32 == 0 ? 6.0f : 0.0f, 6.0f, 6.0f, 6.0f));
-                                                                                    i32++;
-                                                                                    size3 = i33;
-                                                                                    iArr4 = iArr3;
-                                                                                }
-                                                                                final int i36 = size3;
-                                                                                final int[] iArr5 = iArr4;
-                                                                                horizontalScrollView.setHorizontalScrollBarEnabled(false);
-                                                                                horizontalScrollView.addView(linearLayout);
-                                                                                containerLinerLayout.addView(horizontalScrollView, LayoutHelper.createLinear(-1, 44));
-                                                                                FrameLayout frameLayout = new FrameLayout(this.contentView.getContext());
-                                                                                frameLayout.setBackgroundColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuSeparator));
-                                                                                containerLinerLayout.addView(frameLayout, new LinearLayout.LayoutParams(-1, (int) Theme.dividerPaint.getStrokeWidth()));
-                                                                                int dp2 = AndroidUtilities.dp(88.0f) + 1;
-                                                                                SparseArray sparseArray = new SparseArray();
-                                                                                final SparseIntArray sparseIntArray = new SparseIntArray();
-                                                                                for (int i37 = 0; i37 < arrayList13.size() + 1; i37++) {
-                                                                                    sparseIntArray.put(i37, dp2 + AndroidUtilities.dp(300.0f));
-                                                                                }
-                                                                                arrayList3 = arrayList9;
-                                                                                rect = rect3;
-                                                                                messageObject19 = messageObject27;
-                                                                                atomicBoolean = atomicBoolean2;
-                                                                                i3 = 24;
-                                                                                actionBarPopupWindowLayout2 = actionBarPopupWindowLayout9;
-                                                                                MessageObject messageObject28 = messageObject4;
-                                                                                rect2 = rect4;
-                                                                                str3 = str2;
-                                                                                arrayList2 = arrayList;
-                                                                                groupedMessages = validGroupedMessage;
-                                                                                viewPager.setAdapter(new 105(i36, sparseArray, i31, arrayList13, messageObject19, reactedHeaderView2, messageObject4, sparseIntArray, dp2, viewPager, actionBarPopupWindowLayout8, iArr5, i18));
-                                                                                viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: org.telegram.ui.ChatActivity.106
-                                                                                    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
-                                                                                    public void onPageScrolled(int i38, float f4, int i39) {
-                                                                                        float f5;
-                                                                                        if (atomicBoolean4.get()) {
-                                                                                            return;
-                                                                                        }
-                                                                                        int i40 = 0;
-                                                                                        float f6 = -1.0f;
-                                                                                        float f7 = -1.0f;
-                                                                                        while (i40 < linearLayout.getChildCount()) {
-                                                                                            ReactionTabHolderView reactionTabHolderView2 = (ReactionTabHolderView) linearLayout.getChildAt(i40);
-                                                                                            if (i40 == i38) {
-                                                                                                f5 = 1.0f - f4;
-                                                                                            } else {
-                                                                                                f5 = i40 == (i38 + 1) % i36 ? f4 : 0.0f;
-                                                                                            }
-                                                                                            reactionTabHolderView2.setOutlineProgress(f5);
-                                                                                            if (i40 == i38) {
-                                                                                                f6 = reactionTabHolderView2.getX() - ((horizontalScrollView.getWidth() - reactionTabHolderView2.getWidth()) / 2.0f);
-                                                                                            }
-                                                                                            if (i40 == i38 + 1) {
-                                                                                                f7 = reactionTabHolderView2.getX() - ((horizontalScrollView.getWidth() - reactionTabHolderView2.getWidth()) / 2.0f);
-                                                                                            }
-                                                                                            i40++;
-                                                                                        }
-                                                                                        if (f6 != -1.0f && f7 != -1.0f) {
-                                                                                            horizontalScrollView.setScrollX((int) (f6 + ((f7 - f6) * f4)));
-                                                                                        }
-                                                                                        actionBarPopupWindowLayout8.getSwipeBack().setNewForegroundHeight(iArr5[0], (int) ((sparseIntArray.get(i38, 0) * (1.0f - f4)) + (sparseIntArray.get(i38 + 1, 0) * f4)), false);
-                                                                                    }
-
-                                                                                    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
-                                                                                    public void onPageSelected(int i38) {
-                                                                                        actionBarPopupWindowLayout8.getSwipeBack().setNewForegroundHeight(iArr5[0], sparseIntArray.get(i38), true);
-                                                                                    }
-
-                                                                                    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
-                                                                                    public void onPageScrollStateChanged(int i38) {
-                                                                                        if (i38 == 0) {
-                                                                                            atomicBoolean4.set(false);
-                                                                                        }
-                                                                                    }
-                                                                                });
-                                                                                z19 = false;
-                                                                                viewGroup = containerLinerLayout;
-                                                                                viewGroup.addView(viewPager, LayoutHelper.createLinear(-1, 0, 1.0f));
-                                                                                onHeightChangedListener = null;
-                                                                                i9 = -2;
-                                                                                i7 = -1;
-                                                                                i8 = 8;
-                                                                                chatActivity2 = this;
-                                                                                messageObject9 = messageObject28;
-                                                                                reactedHeaderView = reactedHeaderView2;
-                                                                                actionBarPopupWindowLayout7 = actionBarPopupWindowLayout8;
-                                                                                iArr2 = iArr5;
-                                                                            } else {
-                                                                                arrayList2 = arrayList;
-                                                                                viewGroup = containerLinerLayout;
-                                                                                MessageObject messageObject29 = messageObject4;
-                                                                                rect2 = rect4;
-                                                                                str3 = str2;
-                                                                                groupedMessages = validGroupedMessage;
-                                                                                messageObject19 = messageObject27;
-                                                                                atomicBoolean = atomicBoolean2;
-                                                                                actionBarPopupWindowLayout2 = actionBarPopupWindowLayout9;
-                                                                                arrayList3 = arrayList9;
-                                                                                rect = rect3;
-                                                                                z19 = false;
-                                                                                z19 = false;
-                                                                                i3 = 24;
-                                                                                i7 = -1;
-                                                                                chatActivity2 = this;
-                                                                                i8 = 8;
-                                                                                viewGroup.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(-1, 8));
-                                                                                messageObject9 = messageObject29;
-                                                                                final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout10 = actionBarPopupWindowLayout8;
-                                                                                iArr2 = iArr4;
-                                                                                onHeightChangedListener = new ReactedUsersListView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate, chatActivity2.currentAccount, messageObject29, null, false, true).setSeenUsers(reactedHeaderView2.getSeenUsers()).setOnCustomEmojiSelectedListener(new ReactedUsersListView.OnCustomEmojiSelectedListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda237
-                                                                                    @Override // org.telegram.ui.Components.ReactedUsersListView.OnCustomEmojiSelectedListener
-                                                                                    public final void showCustomEmojiAlert(ReactedUsersListView reactedUsersListView, ArrayList arrayList14) {
-                                                                                        ChatActivity.this.lambda$createMenu$258(reactedUsersListView, arrayList14);
-                                                                                    }
-                                                                                }).setOnProfileSelectedListener(new ReactedUsersListView.OnProfileSelectedListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda238
-                                                                                    @Override // org.telegram.ui.Components.ReactedUsersListView.OnProfileSelectedListener
-                                                                                    public final void onProfileSelected(ReactedUsersListView reactedUsersListView, long j, TLRPC.MessagePeerReaction messagePeerReaction) {
-                                                                                        ChatActivity.this.lambda$createMenu$259(messageObject9, reactedUsersListView, j, messagePeerReaction);
-                                                                                    }
-                                                                                }).setOnProfileLongSelectedListener(new ReactedUsersListView.OnProfileSelectedListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda239
-                                                                                    @Override // org.telegram.ui.Components.ReactedUsersListView.OnProfileSelectedListener
-                                                                                    public final void onProfileSelected(ReactedUsersListView reactedUsersListView, long j, TLRPC.MessagePeerReaction messagePeerReaction) {
-                                                                                        ChatActivity.this.lambda$createMenu$262(z18, messageObject9, reactedUsersListView, j, messagePeerReaction);
-                                                                                    }
-                                                                                }).setOnHeightChangedListener(new ReactedUsersListView.OnHeightChangedListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda240
-                                                                                    @Override // org.telegram.ui.Components.ReactedUsersListView.OnHeightChangedListener
-                                                                                    public final void onHeightChanged(ReactedUsersListView reactedUsersListView, int i38) {
-                                                                                        ChatActivity.lambda$createMenu$263(view3, actionBarPopupWindowLayout10, iArr2, reactedUsersListView, i38);
-                                                                                    }
-                                                                                });
-                                                                                Objects.requireNonNull(onHeightChangedListener);
-                                                                                reactedHeaderView = reactedHeaderView2;
-                                                                                reactedHeaderView.setSeenCallback(new ChatActivity$$ExternalSyntheticLambda203(onHeightChangedListener));
-                                                                                viewGroup.addView(onHeightChangedListener, LayoutHelper.createLinear(-1, 0, 1.0f));
-                                                                                if (view3 != null) {
-                                                                                    viewGroup.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(-1, 8));
-                                                                                    i9 = -2;
-                                                                                    viewGroup.addView(view3, LayoutHelper.createLinear(-1, -2));
-                                                                                    actionBarPopupWindowLayout7 = actionBarPopupWindowLayout10;
-                                                                                } else {
-                                                                                    i9 = -2;
-                                                                                    actionBarPopupWindowLayout7 = actionBarPopupWindowLayout10;
-                                                                                }
-                                                                            }
-                                                                            iArr2[z19 ? 1 : 0] = actionBarPopupWindowLayout7.addViewToSwipeBack(viewGroup);
-                                                                            reactedHeaderView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda204
-                                                                                @Override // android.view.View.OnClickListener
-                                                                                public final void onClick(View view4) {
-                                                                                    ChatActivity.lambda$createMenu$264(ReactedUsersListView.this, actionBarPopupWindowLayout7, iArr2, view4);
-                                                                                }
-                                                                            });
-                                                                            actionBarPopupWindowLayout7.addView((View) reactedHeaderView, LayoutHelper.createLinear(i7, 48));
-                                                                            messageObject10 = messageObject19;
-                                                                            z15 = true;
-                                                                            r10 = actionBarPopupWindowLayout7;
-                                                                            r12 = z19;
-                                                                        }
-                                                                        r2 = 0;
-                                                                        MessageObject messageObject272 = messageObject;
-                                                                        ?? containerLinerLayout2 = new ReactedUsersListView.ContainerLinerLayout(this.contentView.getContext());
-                                                                        containerLinerLayout2.hasHeader = r2;
-                                                                        containerLinerLayout2.setOrientation(1);
-                                                                        atomicReference2 = atomicReference4;
-                                                                        int dp3 = AndroidUtilities.dp(200.0f);
-                                                                        if (r2 == 0) {
-                                                                        }
-                                                                        containerLinerLayout2.setLayoutParams(new FrameLayout.LayoutParams(dp3, AndroidUtilities.dp(i19 + NotificationCenter.dialogsUnreadPollVotesCounterChanged) + (r2 ^ 1)));
-                                                                        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout92 = actionBarPopupWindowLayout;
-                                                                        ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem((Context) getParentActivity(), true, false, (Theme.ResourcesProvider) this.themeDelegate);
-                                                                        actionBarMenuSubItem2.setItemHeight(44);
-                                                                        actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back);
-                                                                        actionBarMenuSubItem2.getTextView().setPadding(!LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), 0, !LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, 0);
-                                                                        actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda235
-                                                                            @Override // android.view.View.OnClickListener
-                                                                            public final void onClick(View view4) {
-                                                                                ChatActivity.lambda$createMenu$255(ActionBarPopupWindow.ActionBarPopupWindowLayout.this, view4);
-                                                                            }
-                                                                        });
-                                                                        containerLinerLayout2.addView(actionBarMenuSubItem2, LayoutHelper.createLinear(-1, -2));
-                                                                        int[] iArr42 = new int[1];
-                                                                        if (r2 == 0) {
-                                                                        }
-                                                                        iArr2[z19 ? 1 : 0] = actionBarPopupWindowLayout7.addViewToSwipeBack(viewGroup);
-                                                                        reactedHeaderView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda204
-                                                                            @Override // android.view.View.OnClickListener
-                                                                            public final void onClick(View view4) {
-                                                                                ChatActivity.lambda$createMenu$264(ReactedUsersListView.this, actionBarPopupWindowLayout7, iArr2, view4);
-                                                                            }
-                                                                        });
-                                                                        actionBarPopupWindowLayout7.addView((View) reactedHeaderView, LayoutHelper.createLinear(i7, 48));
-                                                                        messageObject10 = messageObject19;
-                                                                        z15 = true;
-                                                                        r10 = actionBarPopupWindowLayout7;
-                                                                        r12 = z19;
-                                                                    }
-                                                                    z18 = false;
-                                                                    if (z18) {
-                                                                    }
-                                                                    if (i18 > 10) {
-                                                                        r2 = 1;
-                                                                        MessageObject messageObject2722 = messageObject;
-                                                                        ?? containerLinerLayout22 = new ReactedUsersListView.ContainerLinerLayout(this.contentView.getContext());
-                                                                        containerLinerLayout22.hasHeader = r2;
-                                                                        containerLinerLayout22.setOrientation(1);
-                                                                        atomicReference2 = atomicReference4;
-                                                                        int dp32 = AndroidUtilities.dp(200.0f);
-                                                                        if (r2 == 0) {
-                                                                        }
-                                                                        containerLinerLayout22.setLayoutParams(new FrameLayout.LayoutParams(dp32, AndroidUtilities.dp(i19 + NotificationCenter.dialogsUnreadPollVotesCounterChanged) + (r2 ^ 1)));
-                                                                        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout922 = actionBarPopupWindowLayout;
-                                                                        ActionBarMenuSubItem actionBarMenuSubItem22 = new ActionBarMenuSubItem((Context) getParentActivity(), true, false, (Theme.ResourcesProvider) this.themeDelegate);
-                                                                        actionBarMenuSubItem22.setItemHeight(44);
-                                                                        actionBarMenuSubItem22.setTextAndIcon(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back);
-                                                                        actionBarMenuSubItem22.getTextView().setPadding(!LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), 0, !LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, 0);
-                                                                        actionBarMenuSubItem22.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda235
-                                                                            @Override // android.view.View.OnClickListener
-                                                                            public final void onClick(View view4) {
-                                                                                ChatActivity.lambda$createMenu$255(ActionBarPopupWindow.ActionBarPopupWindowLayout.this, view4);
-                                                                            }
-                                                                        });
-                                                                        containerLinerLayout22.addView(actionBarMenuSubItem22, LayoutHelper.createLinear(-1, -2));
-                                                                        int[] iArr422 = new int[1];
-                                                                        if (r2 == 0) {
-                                                                        }
-                                                                        iArr2[z19 ? 1 : 0] = actionBarPopupWindowLayout7.addViewToSwipeBack(viewGroup);
-                                                                        reactedHeaderView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda204
-                                                                            @Override // android.view.View.OnClickListener
-                                                                            public final void onClick(View view4) {
-                                                                                ChatActivity.lambda$createMenu$264(ReactedUsersListView.this, actionBarPopupWindowLayout7, iArr2, view4);
-                                                                            }
-                                                                        });
-                                                                        actionBarPopupWindowLayout7.addView((View) reactedHeaderView, LayoutHelper.createLinear(i7, 48));
-                                                                        messageObject10 = messageObject19;
-                                                                        z15 = true;
-                                                                        r10 = actionBarPopupWindowLayout7;
-                                                                        r12 = z19;
-                                                                    }
-                                                                    r2 = 0;
-                                                                    MessageObject messageObject27222 = messageObject;
-                                                                    ?? containerLinerLayout222 = new ReactedUsersListView.ContainerLinerLayout(this.contentView.getContext());
-                                                                    containerLinerLayout222.hasHeader = r2;
-                                                                    containerLinerLayout222.setOrientation(1);
-                                                                    atomicReference2 = atomicReference4;
-                                                                    int dp322 = AndroidUtilities.dp(200.0f);
-                                                                    if (r2 == 0) {
-                                                                    }
-                                                                    containerLinerLayout222.setLayoutParams(new FrameLayout.LayoutParams(dp322, AndroidUtilities.dp(i19 + NotificationCenter.dialogsUnreadPollVotesCounterChanged) + (r2 ^ 1)));
-                                                                    ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout9222 = actionBarPopupWindowLayout;
-                                                                    ActionBarMenuSubItem actionBarMenuSubItem222 = new ActionBarMenuSubItem((Context) getParentActivity(), true, false, (Theme.ResourcesProvider) this.themeDelegate);
-                                                                    actionBarMenuSubItem222.setItemHeight(44);
-                                                                    actionBarMenuSubItem222.setTextAndIcon(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back);
-                                                                    actionBarMenuSubItem222.getTextView().setPadding(!LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), 0, !LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, 0);
-                                                                    actionBarMenuSubItem222.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda235
-                                                                        @Override // android.view.View.OnClickListener
-                                                                        public final void onClick(View view4) {
-                                                                            ChatActivity.lambda$createMenu$255(ActionBarPopupWindow.ActionBarPopupWindowLayout.this, view4);
-                                                                        }
-                                                                    });
-                                                                    containerLinerLayout222.addView(actionBarMenuSubItem222, LayoutHelper.createLinear(-1, -2));
-                                                                    int[] iArr4222 = new int[1];
-                                                                    if (r2 == 0) {
-                                                                    }
-                                                                    iArr2[z19 ? 1 : 0] = actionBarPopupWindowLayout7.addViewToSwipeBack(viewGroup);
-                                                                    reactedHeaderView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda204
-                                                                        @Override // android.view.View.OnClickListener
-                                                                        public final void onClick(View view4) {
-                                                                            ChatActivity.lambda$createMenu$264(ReactedUsersListView.this, actionBarPopupWindowLayout7, iArr2, view4);
-                                                                        }
-                                                                    });
-                                                                    actionBarPopupWindowLayout7.addView((View) reactedHeaderView, LayoutHelper.createLinear(i7, 48));
-                                                                    messageObject10 = messageObject19;
-                                                                    z15 = true;
-                                                                    r10 = actionBarPopupWindowLayout7;
-                                                                    r12 = z19;
-                                                                } else {
-                                                                    arrayList2 = arrayList;
-                                                                    rect = rect3;
-                                                                    atomicReference2 = atomicReference4;
-                                                                    atomicBoolean = atomicBoolean3;
-                                                                    actionBarPopupWindowLayout2 = actionBarPopupWindowLayout;
-                                                                    rect2 = rect4;
-                                                                    str3 = str2;
-                                                                    r10 = actionBarPopupWindowLayout8;
-                                                                    groupedMessages = validGroupedMessage;
-                                                                    chatActivity2 = this;
-                                                                    arrayList3 = arrayList9;
-                                                                    r12 = 0;
-                                                                    i7 = -1;
-                                                                    i8 = 8;
-                                                                    i3 = 24;
-                                                                    messageObject9 = messageObject4;
-                                                                    i9 = -2;
-                                                                    messageObject10 = messageObject;
-                                                                    z15 = false;
-                                                                }
-                                                                TLRPC.Message message7 = messageObject10.messageOwner;
-                                                                if (message7 != null) {
-                                                                    TLRPC.MessageMedia messageMedia = message7.media;
-                                                                    if (messageMedia instanceof TLRPC.TL_messageMediaPoll) {
-                                                                        TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) messageMedia;
-                                                                        TLRPC.Poll poll = tL_messageMediaPoll.poll;
-                                                                        if (poll.hide_results_until_close && !poll.closed && !poll.creator) {
-                                                                            r10.addView(createMenuTextOption(getContext(), chatActivity2.themeDelegate, LocaleController.getString(R.string.PollResultsWillLater)));
-                                                                            r10.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(i7, i8));
-                                                                        }
-                                                                        TLRPC.Poll poll2 = tL_messageMediaPoll.poll;
-                                                                        if (!poll2.closed) {
-                                                                            boolean z28 = poll2.subscribers_only;
-                                                                            ArrayList<String> arrayList14 = poll2.countries_iso2;
-                                                                            ?? r22 = z28;
-                                                                            if (arrayList14 != null) {
-                                                                                r22 = z28;
-                                                                                if (!arrayList14.isEmpty()) {
-                                                                                    r22 = (z28 ? 1 : 0) | 4;
-                                                                                }
-                                                                            }
-                                                                            if (r22 != 0) {
-                                                                                CharSequence voteRestrictedToastText = PollUtils.getVoteRestrictedToastText(messageObject10, r22);
-                                                                                if (!TextUtils.isEmpty(voteRestrictedToastText)) {
-                                                                                    r10.addView(createMenuTextOption(getContext(), chatActivity2.themeDelegate, voteRestrictedToastText));
-                                                                                    r10.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(i7, i8));
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                }
-                                                                if (z10) {
-                                                                    final MessageSeenView messageSeenView = new MessageSeenView(chatActivity2.contentView.getContext(), chatActivity2.currentAccount, messageObject10, chatActivity2.currentChat);
-                                                                    FrameLayout frameLayout2 = new FrameLayout(chatActivity2.contentView.getContext());
-                                                                    frameLayout2.addView(messageSeenView, LayoutHelper.createFrame(i7, -2.0f));
-                                                                    ActionBarMenuSubItem actionBarMenuSubItem3 = new ActionBarMenuSubItem((Context) getParentActivity(), true, (boolean) r12, (Theme.ResourcesProvider) chatActivity2.themeDelegate);
-                                                                    actionBarMenuSubItem3.setItemHeight(44);
-                                                                    actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back);
-                                                                    actionBarMenuSubItem3.getTextView().setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), r12, LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, r12);
-                                                                    FrameLayout frameLayout3 = new FrameLayout(chatActivity2.contentView.getContext());
-                                                                    final LinearLayout linearLayout2 = new LinearLayout(chatActivity2.contentView.getContext());
-                                                                    linearLayout2.setBackgroundColor(chatActivity2.getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
-                                                                    linearLayout2.setOrientation(1);
-                                                                    final RecyclerListView createListView = messageSeenView.createListView();
-                                                                    frameLayout3.addView(actionBarMenuSubItem3);
-                                                                    linearLayout2.addView(frameLayout3);
-                                                                    linearLayout2.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(i7, i8));
-                                                                    frameLayout3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity.108
-                                                                        @Override // android.view.View.OnClickListener
-                                                                        public void onClick(View view4) {
-                                                                            Bulletin.hideVisible();
-                                                                            r10.getSwipeBack().closeForeground();
-                                                                        }
-                                                                    });
-                                                                    final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout11 = r10;
-                                                                    messageSeenView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity.109
-                                                                        @Override // android.view.View.OnClickListener
-                                                                        public void onClick(View view4) {
-                                                                            if (ChatActivity.this.scrimPopupWindow == null || messageSeenView.users.isEmpty()) {
-                                                                                return;
-                                                                            }
-                                                                            if (messageSeenView.users.size() == 1 && (messageSeenView.dates.size() <= 0 || ((Integer) messageSeenView.dates.get(0)).intValue() <= 0)) {
-                                                                                TLObject tLObject = (TLObject) messageSeenView.users.get(0);
-                                                                                if (tLObject == null) {
-                                                                                    return;
-                                                                                }
-                                                                                Bundle bundle = new Bundle();
-                                                                                if (tLObject instanceof TLRPC.User) {
-                                                                                    bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
-                                                                                } else if (tLObject instanceof TLRPC.Chat) {
-                                                                                    bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
-                                                                                }
-                                                                                ChatActivity.this.presentFragment(new ProfileActivity(bundle));
-                                                                                ChatActivity.this.closeMenu();
-                                                                                return;
-                                                                            }
-                                                                            if (SharedConfig.messageSeenHintCount > 0 && ChatActivity.this.contentView.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
-                                                                                ChatActivity chatActivity3 = ChatActivity.this;
-                                                                                chatActivity3.messageSeenPrivacyBulletin = BulletinFactory.of(Bulletin.BulletinWindow.make(chatActivity3.getContext()), ChatActivity.this.themeDelegate).createErrorBulletin(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)));
-                                                                                ChatActivity.this.messageSeenPrivacyBulletin.setDuration(4000);
-                                                                                ChatActivity.this.messageSeenPrivacyBulletin.show();
-                                                                                SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
-                                                                            }
-                                                                            createListView.requestLayout();
-                                                                            linearLayout2.requestLayout();
-                                                                            createListView.getAdapter().notifyDataSetChanged();
-                                                                            actionBarPopupWindowLayout11.getSwipeBack().openForeground(r6[0]);
-                                                                        }
-                                                                    });
-                                                                    linearLayout2.addView(createListView, LayoutHelper.createLinear(i7, i9));
-                                                                    createListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda205
-                                                                        @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-                                                                        public final void onItemClick(View view4, int i38) {
-                                                                            ChatActivity.this.lambda$createMenu$265(messageSeenView, view4, i38);
-                                                                        }
-                                                                    });
-                                                                    final int[] iArr6 = {r10.addViewToSwipeBack(linearLayout2)};
-                                                                    r10.addView(frameLayout2, LayoutHelper.createLinear(i7, 44));
-                                                                    z15 = true;
-                                                                } else if (z12) {
-                                                                    i10 = 36;
-                                                                    r10.addView(new MessagePrivateSeenView(getContext(), 0, messageObject10, new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda206
-                                                                        @Override // java.lang.Runnable
-                                                                        public final void run() {
-                                                                            ChatActivity.this.lambda$createMenu$266();
-                                                                        }
-                                                                    }, chatActivity2.themeDelegate), LayoutHelper.createLinear(i7, 36));
-                                                                    z15 = true;
-                                                                    if (z26) {
-                                                                        r10.addView(new MessagePrivateSeenView(getContext(), 1, messageObject10, new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda207
-                                                                            @Override // java.lang.Runnable
-                                                                            public final void run() {
-                                                                                ChatActivity.this.lambda$createMenu$267();
-                                                                            }
-                                                                        }, chatActivity2.themeDelegate), LayoutHelper.createLinear(i7, i10));
-                                                                        z15 = true;
-                                                                    }
-                                                                    MessageObject messageObject30 = chatActivity2.selectedObject;
-                                                                    z16 = (messageObject30 != null || !messageObject30.isVoice() || chatActivity2.selectedObject.messageOwner == null || !getUserConfig().isPremium() || TextUtils.isEmpty(chatActivity2.selectedObject.messageOwner.voiceTranscription) || (message5 = chatActivity2.selectedObject.messageOwner) == null || message5.voiceTranscriptionRated || message5.voiceTranscriptionId == 0 || !message5.voiceTranscriptionOpen) ? false : true;
-                                                                    if (!z16 && messageObject10.probablyRingtone() && chatActivity2.currentEncryptedChat == null) {
-                                                                        ActionBarMenuSubItem actionBarMenuSubItem4 = new ActionBarMenuSubItem((Context) getParentActivity(), z12 && !z26, false, (Theme.ResourcesProvider) chatActivity2.themeDelegate);
-                                                                        actionBarMenuSubItem4.setMinimumWidth(AndroidUtilities.dp(200.0f));
-                                                                        actionBarMenuSubItem4.setTextAndIcon(LocaleController.getString(R.string.SaveForNotifications), R.drawable.msg_tone_add);
-                                                                        r10.addView(actionBarMenuSubItem4);
-                                                                        actionBarMenuSubItem4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda208
-                                                                            @Override // android.view.View.OnClickListener
-                                                                            public final void onClick(View view4) {
-                                                                                ChatActivity.this.lambda$createMenu$269(messageObject10, view4);
-                                                                            }
-                                                                        });
-                                                                        z15 = true;
-                                                                    }
-                                                                    if (z15) {
-                                                                        r10.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(i7, 8));
-                                                                    }
-                                                                    if (z11) {
-                                                                        MessageAuthorView messageAuthorView = new MessageAuthorView(chatActivity2.contentView.getContext(), chatActivity2.currentAccount, messageObject10, chatActivity2.currentChat) { // from class: org.telegram.ui.ChatActivity.111
-                                                                            @Override // org.telegram.ui.MessageAuthorView
-                                                                            /* renamed from: openUser */
-                                                                            protected void lambda$updateView$2(long j) {
-                                                                                ChatActivity.this.closeMenu(true);
-                                                                                Bundle bundle = new Bundle();
-                                                                                bundle.putLong("user_id", j);
-                                                                                if (j == ChatActivity.this.getUserConfig().getClientUserId()) {
-                                                                                    bundle.putBoolean("my_profile", true);
-                                                                                }
-                                                                                ChatActivity.this.presentFragment(new ProfileActivity(bundle));
-                                                                            }
-                                                                        };
-                                                                        FrameLayout frameLayout4 = new FrameLayout(chatActivity2.contentView.getContext());
-                                                                        frameLayout4.addView(messageAuthorView, LayoutHelper.createFrame(i7, -2.0f));
-                                                                        r10.addView(frameLayout4, LayoutHelper.createLinear(i7, i10));
-                                                                        r10.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(i7, 8));
-                                                                    }
-                                                                    if (r10.getSwipeBack() != null) {
-                                                                        r10.getSwipeBack().setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda209
-                                                                            @Override // android.view.View.OnClickListener
-                                                                            public final void onClick(View view4) {
-                                                                                ChatActivity.this.lambda$createMenu$270(view4);
-                                                                            }
-                                                                        });
-                                                                    }
-                                                                    if (z16) {
-                                                                        messageObject11 = messageObject10;
-                                                                        messageObject12 = messageObject9;
-                                                                    } else {
-                                                                        ?? linearLayout3 = new LinearLayout(chatActivity2.contentView.getContext());
-                                                                        linearLayout3.setOrientation(1);
-                                                                        LinearLayout.LayoutParams createLinear = LayoutHelper.createLinear(i7, 89);
-                                                                        FrameLayout frameLayout5 = new FrameLayout(chatActivity2.contentView.getContext());
-                                                                        FrameLayout frameLayout6 = new FrameLayout(chatActivity2.contentView.getContext());
-                                                                        frameLayout6.setBackgroundColor(chatActivity2.getThemedColor(Theme.key_actionBarDefaultSubmenuSeparator));
-                                                                        TextView textView = new TextView(chatActivity2.contentView.getContext());
-                                                                        textView.setTextColor(chatActivity2.getThemedColor(Theme.key_windowBackgroundWhiteGrayText));
-                                                                        textView.setGravity(1);
-                                                                        textView.setText(LocaleController.getString(R.string.RateTranscription));
-                                                                        frameLayout5.addView(textView, LayoutHelper.createFrame(-1, -2.0f, 48, 0.0f, 12.0f, 0.0f, 0.0f));
-                                                                        final boolean[] zArr = new boolean[1];
-                                                                        final boolean[] zArr2 = new boolean[1];
-                                                                        final ImageView imageView = new ImageView(chatActivity2.contentView.getContext());
-                                                                        int i38 = Theme.key_dialogButtonSelector;
-                                                                        imageView.setBackground(Theme.createCircleSelectorDrawable(chatActivity2.getThemedColor(i38), 0, 0));
-                                                                        Drawable mutate = chatActivity2.contentView.getContext().getResources().getDrawable(R.drawable.msg_rate_up).mutate();
-                                                                        int i39 = Theme.key_actionBarDefaultSubmenuItemIcon;
-                                                                        int themedColor = chatActivity2.getThemedColor(i39);
-                                                                        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-                                                                        mutate.setColorFilter(new PorterDuffColorFilter(themedColor, mode));
-                                                                        messageObject12 = messageObject9;
-                                                                        messageObject11 = messageObject10;
-                                                                        imageView.setImageDrawable(new CrossfadeDrawable(mutate, new CircularProgressDrawable(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(1.5f), chatActivity2.getThemedColor(i39))));
-                                                                        imageView.setContentDescription(LocaleController.getString(R.string.AccDescrRateTranscriptionUp));
-                                                                        frameLayout5.addView(imageView, LayoutHelper.createFrame(33, 33.0f, 49, -42.0f, 39.0f, 0.0f, 0.0f));
-                                                                        final ImageView imageView2 = new ImageView(chatActivity2.contentView.getContext());
-                                                                        imageView2.setBackground(Theme.createCircleSelectorDrawable(chatActivity2.getThemedColor(i38), 0, 0));
-                                                                        Drawable mutate2 = chatActivity2.contentView.getContext().getResources().getDrawable(R.drawable.msg_rate_down).mutate();
-                                                                        mutate2.setColorFilter(new PorterDuffColorFilter(chatActivity2.getThemedColor(i39), mode));
-                                                                        imageView2.setImageDrawable(new CrossfadeDrawable(mutate2, new CircularProgressDrawable(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(1.5f), chatActivity2.getThemedColor(i39))));
-                                                                        imageView2.setContentDescription(LocaleController.getString(R.string.AccDescrRateTranscriptionDown));
-                                                                        frameLayout5.addView(imageView2, LayoutHelper.createFrame(33, 33.0f, 49, 42.0f, 39.0f, 0.0f, 0.0f));
-                                                                        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda210
-                                                                            @Override // java.lang.Runnable
-                                                                            public final void run() {
-                                                                                ChatActivity.this.lambda$createMenu$275(zArr2, zArr, imageView, imageView2);
-                                                                            }
-                                                                        };
-                                                                        imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda211
-                                                                            @Override // android.view.View.OnClickListener
-                                                                            public final void onClick(View view4) {
-                                                                                ChatActivity.lambda$createMenu$276(zArr, runnable, view4);
-                                                                            }
-                                                                        });
-                                                                        imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda212
-                                                                            @Override // android.view.View.OnClickListener
-                                                                            public final void onClick(View view4) {
-                                                                                ChatActivity.lambda$createMenu$277(zArr, runnable, view4);
-                                                                            }
-                                                                        });
-                                                                        linearLayout3.addView(frameLayout5, LayoutHelper.createLinear(-1, 81));
-                                                                        linearLayout3.addView(frameLayout6, LayoutHelper.createLinear(-1, 8));
-                                                                        r10.addView(linearLayout3, createLinear);
-                                                                    }
-                                                                    messageObject13 = chatActivity2.selectedObject;
-                                                                    if (messageObject13 == null && messageObject13.isSponsored()) {
-                                                                        MessageObject messageObject31 = chatActivity2.selectedObject;
-                                                                        if (messageObject31.sponsoredInfo == null && messageObject31.sponsoredAdditionalInfo == null) {
-                                                                            String str6 = messageObject31.sponsoredUrl;
-                                                                            if (str6 != null) {
-                                                                            }
-                                                                            f3 = 14.0f;
-                                                                            if (chatActivity2.selectedObject.sponsoredCanReport) {
-                                                                                FrameLayout frameLayout7 = new FrameLayout(getParentActivity());
-                                                                                frameLayout7.setMinimumHeight(AndroidUtilities.dp(56.0f));
-                                                                                int themedColor2 = chatActivity2.getThemedColor(Theme.key_dialogButtonSelector);
-                                                                                if (r10.getItemsCount() <= 0) {
-                                                                                    i16 = 0;
-                                                                                    i17 = 6;
-                                                                                } else {
-                                                                                    i16 = 0;
-                                                                                    i17 = 0;
-                                                                                }
-                                                                                frameLayout7.setBackground(Theme.createRadSelectorDrawable(themedColor2, i17, i16));
-                                                                                frameLayout7.setPadding(AndroidUtilities.dp(18.0f), i16, AndroidUtilities.dp(18.0f), i16);
-                                                                                ImageView imageView3 = new ImageView(getParentActivity());
-                                                                                imageView3.setScaleType(ImageView.ScaleType.CENTER);
-                                                                                imageView3.setColorFilter(new PorterDuffColorFilter(chatActivity2.getThemedColor(Theme.key_actionBarDefaultSubmenuItemIcon), PorterDuff.Mode.MULTIPLY));
-                                                                                imageView3.setImageResource(R.drawable.msg_info);
-                                                                                frameLayout7.addView(imageView3, LayoutHelper.createFrame(-2, 40, (LocaleController.isRTL ? 5 : 3) | 16));
-                                                                                TextView textView2 = new TextView(getParentActivity()) { // from class: org.telegram.ui.ChatActivity.112
-                                                                                    @Override // android.widget.TextView, android.view.View
-                                                                                    protected void onMeasure(int i40, int i41) {
-                                                                                        if (View.MeasureSpec.getMode(i40) == Integer.MIN_VALUE && getLayout() != null) {
-                                                                                            Layout layout = getLayout();
-                                                                                            int i42 = 0;
-                                                                                            for (int i43 = 0; i43 < layout.getLineCount(); i43++) {
-                                                                                                i42 = Math.max(i42, (int) Math.ceil(layout.getLineWidth(i43)));
-                                                                                            }
-                                                                                            i40 = View.MeasureSpec.makeMeasureSpec(getPaddingLeft() + i42 + getPaddingRight(), TLObject.FLAG_30);
-                                                                                        }
-                                                                                        super.onMeasure(i40, i41);
-                                                                                    }
-                                                                                };
-                                                                                textView2.setMaxLines(3);
-                                                                                textView2.setGravity(3);
-                                                                                textView2.setEllipsize(TextUtils.TruncateAt.END);
-                                                                                textView2.setTextColor(chatActivity2.getThemedColor(Theme.key_actionBarDefaultSubmenuItem));
-                                                                                textView2.setTextSize(1, f3);
-                                                                                textView2.setMaxWidth(AndroidUtilities.dp(240.0f));
-                                                                                textView2.setText(LocaleController.getString(R.string.SponsoredMessageInfo));
-                                                                                textView2.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(43.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(43.0f) : 0, 0);
-                                                                                frameLayout7.addView(textView2, LayoutHelper.createFrame(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
-                                                                                r10.addView(frameLayout7);
-                                                                                frameLayout7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda220
-                                                                                    @Override // android.view.View.OnClickListener
-                                                                                    public final void onClick(View view4) {
-                                                                                        ChatActivity.this.lambda$createMenu$284(view4);
-                                                                                    }
-                                                                                });
-                                                                                r10.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(-1, 8));
-                                                                            }
-                                                                        }
-                                                                        LinearLayout linearLayout4 = new LinearLayout(getParentActivity());
-                                                                        linearLayout4.setOrientation(1);
-                                                                        ActionBarMenuSubItem actionBarMenuSubItem5 = new ActionBarMenuSubItem((Context) getParentActivity(), true, false, (Theme.ResourcesProvider) chatActivity2.themeDelegate);
-                                                                        actionBarMenuSubItem5.setItemHeight(44);
-                                                                        actionBarMenuSubItem5.setTextAndIcon(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back);
-                                                                        actionBarMenuSubItem5.getTextView().setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, 0);
-                                                                        actionBarMenuSubItem5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda214
-                                                                            @Override // android.view.View.OnClickListener
-                                                                            public final void onClick(View view4) {
-                                                                                ChatActivity.lambda$createMenu$278(ActionBarPopupWindow.ActionBarPopupWindowLayout.this, view4);
-                                                                            }
-                                                                        });
-                                                                        linearLayout4.addView(actionBarMenuSubItem5, LayoutHelper.createLinear(-1, -2));
-                                                                        linearLayout4.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(-1, 8));
-                                                                        ArrayList arrayList15 = new ArrayList();
-                                                                        String str7 = chatActivity2.selectedObject.sponsoredUrl;
-                                                                        if (str7 == null || str7.startsWith(getMessagesController().linkPrefix)) {
-                                                                            f3 = 14.0f;
-                                                                        } else {
-                                                                            TextView textView3 = new TextView(getParentActivity());
-                                                                            textView3.setTextColor(chatActivity2.getThemedColor(Theme.key_chat_messageLinkIn));
-                                                                            f3 = 14.0f;
-                                                                            textView3.setTextSize(1, 14.0f);
-                                                                            textView3.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f));
-                                                                            textView3.setMaxWidth(AndroidUtilities.dp(300.0f));
-                                                                            Uri parse = Uri.parse(chatActivity2.selectedObject.sponsoredUrl);
-                                                                            textView3.setText(Browser.replaceHostname(parse, Browser.IDN_toUnicode(parse.getHost()), null));
-                                                                            textView3.setBackground(Theme.createRadSelectorDrawable(chatActivity2.getThemedColor(Theme.key_dialogButtonSelector), 0, chatActivity2.selectedObject.sponsoredAdditionalInfo == null ? 6 : 0));
-                                                                            textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda215
-                                                                                @Override // android.view.View.OnClickListener
-                                                                                public final void onClick(View view4) {
-                                                                                    ChatActivity.this.lambda$createMenu$279(view4);
-                                                                                }
-                                                                            });
-                                                                            textView3.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda216
-                                                                                @Override // android.view.View.OnLongClickListener
-                                                                                public final boolean onLongClick(View view4) {
-                                                                                    boolean lambda$createMenu$280;
-                                                                                    lambda$createMenu$280 = ChatActivity.this.lambda$createMenu$280(view4);
-                                                                                    return lambda$createMenu$280;
-                                                                                }
-                                                                            });
-                                                                            arrayList15.add(textView3);
-                                                                        }
-                                                                        if (chatActivity2.selectedObject.sponsoredInfo != null) {
-                                                                            TextView textView4 = new TextView(getParentActivity());
-                                                                            textView4.setTextColor(chatActivity2.getThemedColor(Theme.key_actionBarDefaultSubmenuItem));
-                                                                            textView4.setTextSize(1, f3);
-                                                                            textView4.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f));
-                                                                            textView4.setMaxWidth(AndroidUtilities.dp(300.0f));
-                                                                            textView4.setText(chatActivity2.selectedObject.sponsoredInfo);
-                                                                            textView4.setBackground(Theme.createRadSelectorDrawable(chatActivity2.getThemedColor(Theme.key_dialogButtonSelector), 0, chatActivity2.selectedObject.sponsoredAdditionalInfo == null ? 6 : 0));
-                                                                            textView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda217
-                                                                                @Override // android.view.View.OnClickListener
-                                                                                public final void onClick(View view4) {
-                                                                                    ChatActivity.this.lambda$createMenu$281(view4);
-                                                                                }
-                                                                            });
-                                                                            arrayList15.add(textView4);
-                                                                        }
-                                                                        if (chatActivity2.selectedObject.sponsoredAdditionalInfo != null) {
-                                                                            TextView textView5 = new TextView(getParentActivity());
-                                                                            textView5.setTextColor(chatActivity2.getThemedColor(Theme.key_actionBarDefaultSubmenuItem));
-                                                                            textView5.setTextSize(1, f3);
-                                                                            textView5.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f));
-                                                                            textView5.setMaxWidth(AndroidUtilities.dp(300.0f));
-                                                                            textView5.setText(chatActivity2.selectedObject.sponsoredAdditionalInfo);
-                                                                            textView5.setBackground(Theme.createRadSelectorDrawable(chatActivity2.getThemedColor(Theme.key_dialogButtonSelector), 0, 6));
-                                                                            textView5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda218
-                                                                                @Override // android.view.View.OnClickListener
-                                                                                public final void onClick(View view4) {
-                                                                                    ChatActivity.this.lambda$createMenu$282(view4);
-                                                                                }
-                                                                            });
-                                                                            arrayList15.add(textView5);
-                                                                        }
-                                                                        for (int i40 = 0; i40 < arrayList15.size(); i40 += i14) {
-                                                                            View view4 = (View) arrayList15.get(i40);
-                                                                            if (i40 > 0) {
-                                                                                FrameLayout frameLayout8 = new FrameLayout(getParentActivity());
-                                                                                frameLayout8.setBackgroundColor(chatActivity2.getThemedColor(Theme.key_divider));
-                                                                                i14 = 1;
-                                                                                i15 = -1;
-                                                                                LinearLayout.LayoutParams createLinear2 = LayoutHelper.createLinear(-1, 1);
-                                                                                createLinear2.height = 1;
-                                                                                linearLayout4.addView(frameLayout8, createLinear2);
-                                                                            } else {
-                                                                                i14 = 1;
-                                                                                i15 = -1;
-                                                                            }
-                                                                            linearLayout4.addView(view4, LayoutHelper.createLinear(i15, -2));
-                                                                        }
-                                                                        final int addViewToSwipeBack = r10.addViewToSwipeBack(linearLayout4);
-                                                                        ActionBarMenuSubItem actionBarMenuSubItem6 = new ActionBarMenuSubItem((Context) getParentActivity(), true, true, (Theme.ResourcesProvider) chatActivity2.themeDelegate);
-                                                                        actionBarMenuSubItem6.setTextAndIcon(LocaleController.getString(chatActivity2.selectedObject.sponsoredCanReport ? R.string.SponsoredMessageSponsorReportable : R.string.SponsoredMessageSponsor), R.drawable.msg_channel);
-                                                                        r10.addView(actionBarMenuSubItem6);
-                                                                        actionBarMenuSubItem6.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda219
-                                                                            @Override // android.view.View.OnClickListener
-                                                                            public final void onClick(View view5) {
-                                                                                ChatActivity.this.lambda$createMenu$283(r10, addViewToSwipeBack, view5);
-                                                                            }
-                                                                        });
-                                                                        r10.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(-1, 8));
-                                                                        if (chatActivity2.selectedObject.sponsoredCanReport) {
-                                                                        }
-                                                                    }
-                                                                    chatActivity2.scrimPopupWindowItems = new ActionBarMenuSubItem[arrayList12.size()];
-                                                                    size = arrayList12.size();
-                                                                    i11 = 0;
-                                                                    ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout12 = r10;
-                                                                    while (i11 < size) {
-                                                                        final ActionBarMenuSubItem actionBarMenuSubItem7 = new ActionBarMenuSubItem(getParentActivity(), i11 == 0, i11 == size + (-1), chatActivity2.themeDelegate);
-                                                                        actionBarMenuSubItem7.setMinimumWidth(AndroidUtilities.dp(200.0f));
-                                                                        ArrayList arrayList16 = arrayList12;
-                                                                        ArrayList arrayList17 = arrayList3;
-                                                                        actionBarMenuSubItem7.setTextAndIcon((CharSequence) arrayList16.get(i11), ((Integer) arrayList17.get(i11)).intValue());
-                                                                        final ArrayList arrayList18 = arrayList2;
-                                                                        Integer num = (Integer) arrayList18.get(i11);
-                                                                        if (num.intValue() == 1 && (messageObject18 = chatActivity2.selectedObject) != null) {
-                                                                            if (messageObject18.messageOwner.ttl_period != 0) {
-                                                                                chatActivity2.menuDeleteItem = actionBarMenuSubItem7;
-                                                                                chatActivity2.updateDeleteItemRunnable.run();
-                                                                                actionBarMenuSubItem7.setSubtextColor(chatActivity2.getThemedColor(Theme.key_windowBackgroundWhiteGrayText6));
-                                                                            } else if (messageObject18.isPaidSuggestedPostProtected()) {
-                                                                                actionBarMenuSubItem7.setSubtext(LocaleController.formatString(R.string.SuggestedOfferPaidUntil, LocaleController.formatDateTime(chatActivity2.selectedObject.messageOwner.date + getMessagesController().config.starsSuggestedPostAgeMin.get(TimeUnit.SECONDS), false)));
-                                                                                actionBarMenuSubItem7.setSubtextColor(chatActivity2.getThemedColor(Theme.key_windowBackgroundWhiteGrayText6));
-                                                                            }
-                                                                        }
-                                                                        chatActivity2.scrimPopupWindowItems[i11] = actionBarMenuSubItem7;
-                                                                        if (num.intValue() == 35) {
-                                                                            actionBarPopupWindowLayout12.addView((View) new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(-1, 8));
-                                                                        }
-                                                                        actionBarPopupWindowLayout12.addView(actionBarMenuSubItem7);
-                                                                        actionBarMenuSubItem7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda221
-                                                                            @Override // android.view.View.OnClickListener
-                                                                            public final void onClick(View view5) {
-                                                                                ChatActivity.this.lambda$createMenu$285(i11, arrayList18, view5);
-                                                                            }
-                                                                        });
-                                                                        if (num.intValue() == 29) {
-                                                                            final boolean isContextTranslateEnabled = getMessagesController().getTranslateController().isContextTranslateEnabled();
-                                                                            final String language = LocaleController.getInstance().getCurrentLocale().getLanguage();
-                                                                            String toLanguage = TranslateAlert2.getToLanguage();
-                                                                            int[] iArr7 = {messageObject11.getId()};
-                                                                            MessageObject.GroupedMessages groupedMessages2 = groupedMessages;
-                                                                            final CharSequence messageTextToTranslate = messageObject11.getMessageTextToTranslate(groupedMessages2, iArr7);
-                                                                            final Utilities.CallbackReturn callbackReturn = new Utilities.CallbackReturn() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda222
-                                                                                @Override // org.telegram.messenger.Utilities.CallbackReturn
-                                                                                public final Object run(Object obj) {
-                                                                                    Boolean lambda$createMenu$286;
-                                                                                    lambda$createMenu$286 = ChatActivity.this.lambda$createMenu$286(view, (URLSpan) obj);
-                                                                                    return lambda$createMenu$286;
-                                                                                }
-                                                                            };
-                                                                            MessageObject messageObject32 = chatActivity2.selectedObject;
-                                                                            if (messageObject32 != null) {
-                                                                                if (messageObject32.isPoll() || chatActivity2.selectedObject.isVoiceTranscriptionOpen() || chatActivity2.selectedObject.isSponsored() || chatActivity2.selectedObject.scheduled) {
-                                                                                    groupedMessages = groupedMessages2;
-                                                                                } else {
-                                                                                    groupedMessages = groupedMessages2;
-                                                                                }
-                                                                                iArr = iArr7;
-                                                                                str4 = toLanguage;
-                                                                                inputPeer = null;
-                                                                                messageObject17 = chatActivity2.selectedObject;
-                                                                                if (messageObject17 != null && messageObject17.type == 36 && (message4 = messageObject17.messageOwner) != null) {
-                                                                                    richMessage = message4.rich_message;
-                                                                                    if (richMessage == null) {
-                                                                                        final String str8 = messageObject17.messageOwner.originalLanguage;
-                                                                                        actionBarMenuSubItem7.setVisibility(0);
-                                                                                        final int[] iArr8 = iArr;
-                                                                                        final int i41 = i11;
-                                                                                        arrayList4 = arrayList18;
-                                                                                        arrayList5 = arrayList17;
-                                                                                        arrayList6 = arrayList16;
-                                                                                        final String str9 = str4;
-                                                                                        i12 = i11;
-                                                                                        final TLRPC.InputPeer inputPeer2 = inputPeer;
-                                                                                        i13 = size;
-                                                                                        final TL_iv.RichMessage richMessage2 = richMessage;
-                                                                                        actionBarPopupWindowLayout6 = actionBarPopupWindowLayout12;
-                                                                                        final boolean z29 = z8;
-                                                                                        messageObject15 = messageObject11;
-                                                                                        messageObject16 = messageObject12;
-                                                                                        actionBarMenuSubItem7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda223
-                                                                                            @Override // android.view.View.OnClickListener
-                                                                                            public final void onClick(View view5) {
-                                                                                                ChatActivity.this.lambda$createMenu$288(i41, arrayList18, str8, str9, language, inputPeer2, iArr8, richMessage2, z29, callbackReturn, view5);
-                                                                                            }
-                                                                                        });
-                                                                                    } else {
-                                                                                        final int[] iArr9 = iArr;
-                                                                                        messageObject15 = messageObject11;
-                                                                                        arrayList4 = arrayList18;
-                                                                                        arrayList5 = arrayList17;
-                                                                                        arrayList6 = arrayList16;
-                                                                                        i12 = i11;
-                                                                                        i13 = size;
-                                                                                        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout13 = actionBarPopupWindowLayout12;
-                                                                                        messageObject16 = messageObject12;
-                                                                                        if (messageObject17 != null && (message3 = messageObject17.messageOwner) != null && message3.originalLanguage != null) {
-                                                                                            AtomicBoolean atomicBoolean5 = atomicBoolean;
-                                                                                            atomicBoolean5.set(false);
-                                                                                            final String str10 = chatActivity2.selectedObject.messageOwner.originalLanguage;
-                                                                                            final String str11 = str4;
-                                                                                            actionBarMenuSubItem7.setVisibility((str10 == null || (str10.equals(str11) && str10.equals(language) && !str10.equals(TranslateController.UNKNOWN_LANGUAGE)) || ((!isContextTranslateEnabled || RestrictedLanguagesSelectActivity.getRestrictedLanguages().contains(str10)) && ((((chat4 = chatActivity2.currentChat) == null || !(chat4.has_link || ChatObject.isPublic(chat4))) && chatActivity2.selectedObject.messageOwner.fwd_from == null) || !("uk".equals(str10) || "ru".equals(str10))))) ? 8 : 0);
-                                                                                            final TLRPC.InputPeer inputPeer3 = inputPeer;
-                                                                                            final boolean z30 = z8;
-                                                                                            actionBarMenuSubItem7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda225
-                                                                                                @Override // android.view.View.OnClickListener
-                                                                                                public final void onClick(View view5) {
-                                                                                                    ChatActivity.this.lambda$createMenu$290(i12, arrayList4, str10, str11, language, inputPeer3, iArr9, messageTextToTranslate, z30, callbackReturn, view5);
-                                                                                                }
-                                                                                            });
-                                                                                            atomicBoolean = atomicBoolean5;
-                                                                                            actionBarPopupWindowLayout6 = actionBarPopupWindowLayout13;
-                                                                                        } else {
-                                                                                            final String str12 = str4;
-                                                                                            final AtomicBoolean atomicBoolean6 = atomicBoolean;
-                                                                                            if (LanguageDetector.hasSupport()) {
-                                                                                                final String[] strArr = {null};
-                                                                                                actionBarMenuSubItem7.setVisibility(8);
-                                                                                                atomicBoolean6.set(true);
-                                                                                                final AtomicReference atomicReference5 = atomicReference2;
-                                                                                                LanguageDetector.detectLanguage(messageTextToTranslate.toString(), new LanguageDetector.StringCallback() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda226
-                                                                                                    @Override // org.telegram.messenger.LanguageDetector.StringCallback
-                                                                                                    public final void run(String str13) {
-                                                                                                        ChatActivity.this.lambda$createMenu$291(strArr, str12, language, isContextTranslateEnabled, actionBarMenuSubItem7, atomicBoolean6, atomicReference5, str13);
-                                                                                                    }
-                                                                                                }, new LanguageDetector.ExceptionCallback() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda227
-                                                                                                    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
-                                                                                                    public final void run(Exception exc) {
-                                                                                                        ChatActivity.lambda$createMenu$292(atomicBoolean6, atomicReference5, exc);
-                                                                                                    }
-                                                                                                });
-                                                                                                final TLRPC.InputPeer inputPeer4 = inputPeer;
-                                                                                                final boolean z31 = z8;
-                                                                                                atomicBoolean = atomicBoolean6;
-                                                                                                atomicReference3 = atomicReference5;
-                                                                                                actionBarMenuSubItem7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda228
-                                                                                                    @Override // android.view.View.OnClickListener
-                                                                                                    public final void onClick(View view5) {
-                                                                                                        ChatActivity.this.lambda$createMenu$294(i12, arrayList4, strArr, str12, language, inputPeer4, iArr9, messageTextToTranslate, z31, callbackReturn, view5);
-                                                                                                    }
-                                                                                                });
-                                                                                                actionBarMenuSubItem7.postDelayed(new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda229
-                                                                                                    @Override // java.lang.Runnable
-                                                                                                    public final void run() {
-                                                                                                        ChatActivity.lambda$createMenu$295(atomicReference3);
-                                                                                                    }
-                                                                                                }, 250L);
-                                                                                                actionBarPopupWindowLayout6 = actionBarPopupWindowLayout13;
-                                                                                            } else {
-                                                                                                atomicBoolean = atomicBoolean6;
-                                                                                                atomicReference3 = atomicReference2;
-                                                                                                if (isContextTranslateEnabled) {
-                                                                                                    final TLRPC.InputPeer inputPeer5 = inputPeer;
-                                                                                                    final boolean z32 = z8;
-                                                                                                    actionBarMenuSubItem7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda230
-                                                                                                        @Override // android.view.View.OnClickListener
-                                                                                                        public final void onClick(View view5) {
-                                                                                                            ChatActivity.this.lambda$createMenu$297(i12, arrayList4, inputPeer5, iArr9, str12, messageTextToTranslate, z32, callbackReturn, view5);
-                                                                                                        }
-                                                                                                    });
-                                                                                                    actionBarPopupWindowLayout6 = actionBarPopupWindowLayout13;
-                                                                                                } else {
-                                                                                                    actionBarMenuSubItem7.setVisibility(8);
-                                                                                                    actionBarPopupWindowLayout6 = actionBarPopupWindowLayout13;
-                                                                                                }
-                                                                                            }
-                                                                                        }
-                                                                                    }
-                                                                                    atomicReference3 = atomicReference2;
-                                                                                    i11 = i12 + 1;
-                                                                                    chatActivity2 = this;
-                                                                                    atomicReference2 = atomicReference3;
-                                                                                    arrayList2 = arrayList4;
-                                                                                    arrayList3 = arrayList5;
-                                                                                    arrayList12 = arrayList6;
-                                                                                    size = i13;
-                                                                                    actionBarPopupWindowLayout12 = actionBarPopupWindowLayout6;
-                                                                                    messageObject11 = messageObject15;
-                                                                                    messageObject12 = messageObject16;
-                                                                                }
-                                                                                richMessage = null;
-                                                                                if (richMessage == null) {
-                                                                                }
-                                                                                atomicReference3 = atomicReference2;
-                                                                                i11 = i12 + 1;
-                                                                                chatActivity2 = this;
-                                                                                atomicReference2 = atomicReference3;
-                                                                                arrayList2 = arrayList4;
-                                                                                arrayList3 = arrayList5;
-                                                                                arrayList12 = arrayList6;
-                                                                                size = i13;
-                                                                                actionBarPopupWindowLayout12 = actionBarPopupWindowLayout6;
-                                                                                messageObject11 = messageObject15;
-                                                                                messageObject12 = messageObject16;
-                                                                            } else {
-                                                                                groupedMessages = groupedMessages2;
-                                                                            }
-                                                                            iArr = iArr7;
-                                                                            str4 = toLanguage;
-                                                                            inputPeer = getMessagesController().getInputPeer(chatActivity2.dialog_id);
-                                                                            messageObject17 = chatActivity2.selectedObject;
-                                                                            if (messageObject17 != null) {
-                                                                                richMessage = message4.rich_message;
-                                                                                if (richMessage == null) {
-                                                                                }
-                                                                                atomicReference3 = atomicReference2;
-                                                                                i11 = i12 + 1;
-                                                                                chatActivity2 = this;
-                                                                                atomicReference2 = atomicReference3;
-                                                                                arrayList2 = arrayList4;
-                                                                                arrayList3 = arrayList5;
-                                                                                arrayList12 = arrayList6;
-                                                                                size = i13;
-                                                                                actionBarPopupWindowLayout12 = actionBarPopupWindowLayout6;
-                                                                                messageObject11 = messageObject15;
-                                                                                messageObject12 = messageObject16;
-                                                                            }
-                                                                            richMessage = null;
-                                                                            if (richMessage == null) {
-                                                                            }
-                                                                            atomicReference3 = atomicReference2;
-                                                                            i11 = i12 + 1;
-                                                                            chatActivity2 = this;
-                                                                            atomicReference2 = atomicReference3;
-                                                                            arrayList2 = arrayList4;
-                                                                            arrayList3 = arrayList5;
-                                                                            arrayList12 = arrayList6;
-                                                                            size = i13;
-                                                                            actionBarPopupWindowLayout12 = actionBarPopupWindowLayout6;
-                                                                            messageObject11 = messageObject15;
-                                                                            messageObject12 = messageObject16;
-                                                                        } else {
-                                                                            messageObject15 = messageObject11;
-                                                                            arrayList4 = arrayList18;
-                                                                            arrayList5 = arrayList17;
-                                                                            arrayList6 = arrayList16;
-                                                                            i12 = i11;
-                                                                            i13 = size;
-                                                                            actionBarPopupWindowLayout6 = actionBarPopupWindowLayout12;
-                                                                            atomicReference3 = atomicReference2;
-                                                                            messageObject16 = messageObject12;
-                                                                        }
-                                                                        i11 = i12 + 1;
-                                                                        chatActivity2 = this;
-                                                                        atomicReference2 = atomicReference3;
-                                                                        arrayList2 = arrayList4;
-                                                                        arrayList3 = arrayList5;
-                                                                        arrayList12 = arrayList6;
-                                                                        size = i13;
-                                                                        actionBarPopupWindowLayout12 = actionBarPopupWindowLayout6;
-                                                                        messageObject11 = messageObject15;
-                                                                        messageObject12 = messageObject16;
-                                                                    }
-                                                                    messageObject5 = messageObject11;
-                                                                    actionBarPopupWindowLayout5 = actionBarPopupWindowLayout12;
-                                                                    chatActivity = chatActivity2;
-                                                                    atomicReference = atomicReference2;
-                                                                    messageObject6 = messageObject12;
-                                                                    messageObject14 = chatActivity.selectedObject;
-                                                                    if (messageObject14 == null && (message2 = messageObject14.messageOwner) != null && message2.video_processing_pending) {
-                                                                        ?? r7 = actionBarPopupWindowLayout5;
-                                                                        r7.addView(new ActionBarPopupWindow.GapView(chatActivity.contentView.getContext(), chatActivity.themeDelegate), LayoutHelper.createLinear(-1, 8));
-                                                                        FrameLayout frameLayout9 = new FrameLayout(getParentActivity());
-                                                                        TextView textView6 = new TextView(getParentActivity()) { // from class: org.telegram.ui.ChatActivity.113
-                                                                            @Override // android.widget.TextView, android.view.View
-                                                                            protected void onMeasure(int i42, int i43) {
-                                                                                if (View.MeasureSpec.getMode(i42) == Integer.MIN_VALUE && getLayout() != null) {
-                                                                                    Layout layout = getLayout();
-                                                                                    int i44 = 0;
-                                                                                    for (int i45 = 0; i45 < layout.getLineCount(); i45++) {
-                                                                                        i44 = Math.max(i44, (int) Math.ceil(layout.getLineWidth(i45)));
-                                                                                    }
-                                                                                    i42 = View.MeasureSpec.makeMeasureSpec(getPaddingLeft() + i44 + getPaddingRight(), TLObject.FLAG_30);
-                                                                                }
-                                                                                super.onMeasure(i42, i43);
-                                                                            }
-                                                                        };
-                                                                        textView6.setMaxLines(6);
-                                                                        i2 = 3;
-                                                                        textView6.setGravity(3);
-                                                                        textView6.setEllipsize(TextUtils.TruncateAt.END);
-                                                                        textView6.setTextColor(chatActivity.getThemedColor(Theme.key_actionBarDefaultSubmenuItem));
-                                                                        textView6.setTextSize(1, 13.0f);
-                                                                        textView6.setMaxWidth(AndroidUtilities.dp(240.0f));
-                                                                        textView6.setText(LocaleController.getString(R.string.VideoConversionInfo));
-                                                                        textView6.setPadding(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
-                                                                        frameLayout9.addView(textView6, LayoutHelper.createFrame(-2, -2, 119));
-                                                                        r7.addView(frameLayout9);
-                                                                        actionBarPopupWindowLayout3 = r7;
-                                                                    } else {
-                                                                        actionBarPopupWindowLayout3 = actionBarPopupWindowLayout5;
-                                                                        i2 = 3;
-                                                                    }
-                                                                }
-                                                                i10 = 36;
-                                                                if (z26) {
-                                                                }
-                                                                MessageObject messageObject302 = chatActivity2.selectedObject;
-                                                                if (messageObject302 != null) {
-                                                                }
-                                                                if (!z16) {
-                                                                    ActionBarMenuSubItem actionBarMenuSubItem42 = new ActionBarMenuSubItem((Context) getParentActivity(), z12 && !z26, false, (Theme.ResourcesProvider) chatActivity2.themeDelegate);
-                                                                    actionBarMenuSubItem42.setMinimumWidth(AndroidUtilities.dp(200.0f));
-                                                                    actionBarMenuSubItem42.setTextAndIcon(LocaleController.getString(R.string.SaveForNotifications), R.drawable.msg_tone_add);
-                                                                    r10.addView(actionBarMenuSubItem42);
-                                                                    actionBarMenuSubItem42.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda208
-                                                                        @Override // android.view.View.OnClickListener
-                                                                        public final void onClick(View view42) {
-                                                                            ChatActivity.this.lambda$createMenu$269(messageObject10, view42);
-                                                                        }
-                                                                    });
-                                                                    z15 = true;
-                                                                }
-                                                                if (z15) {
-                                                                }
-                                                                if (z11) {
-                                                                }
-                                                                if (r10.getSwipeBack() != null) {
-                                                                }
-                                                                if (z16) {
-                                                                }
-                                                                messageObject13 = chatActivity2.selectedObject;
-                                                                if (messageObject13 == null) {
-                                                                }
-                                                                chatActivity2.scrimPopupWindowItems = new ActionBarMenuSubItem[arrayList12.size()];
-                                                                size = arrayList12.size();
-                                                                i11 = 0;
-                                                                ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout122 = r10;
-                                                                while (i11 < size) {
-                                                                }
-                                                                messageObject5 = messageObject11;
-                                                                actionBarPopupWindowLayout5 = actionBarPopupWindowLayout122;
-                                                                chatActivity = chatActivity2;
-                                                                atomicReference = atomicReference2;
-                                                                messageObject6 = messageObject12;
-                                                                messageObject14 = chatActivity.selectedObject;
-                                                                if (messageObject14 == null) {
-                                                                }
-                                                                actionBarPopupWindowLayout3 = actionBarPopupWindowLayout5;
-                                                                i2 = 3;
+                                                        }
+                                                        i21 = i34;
+                                                    } else {
+                                                        z15 = false;
+                                                        i21 = 0;
+                                                    }
+                                                    if (z15 && ChatObject.canUserDoAdminAction(this.currentChat, 13)) {
+                                                        z16 = true;
+                                                        if (z16) {
+                                                            view3 = null;
+                                                        } else {
+                                                            view3 = createMenuTextOption(getContext(), this.themeDelegate, LocaleController.getString(R.string.TapAndHoldToDeleteReaction));
+                                                            view3.setMinimumHeight(AndroidUtilities.dp(32.0f));
+                                                        }
+                                                        if (i21 > 10 && messageObject4.messageOwner.reactions.results.size() > 1) {
+                                                            r2 = 1;
+                                                            ?? containerLinerLayout = new ReactedUsersListView.ContainerLinerLayout(this.contentView.getContext());
+                                                            containerLinerLayout.hasHeader = r2;
+                                                            containerLinerLayout.setOrientation(1);
+                                                            int dp = AndroidUtilities.dp(200.0f);
+                                                            if (r2 == 0) {
+                                                                arrayList7 = arrayList10;
+                                                                i22 = 96;
                                                             } else {
-                                                                rect = rect3;
-                                                                messageObject5 = messageObject;
-                                                                atomicBoolean = atomicBoolean3;
-                                                                actionBarPopupWindowLayout2 = actionBarPopupWindowLayout;
-                                                                messageObject6 = messageObject4;
-                                                                rect2 = rect4;
-                                                                actionBarPopupWindowLayout3 = actionBarPopupWindowLayout8;
-                                                                chatActivity = this;
-                                                                i2 = 3;
-                                                                i3 = 24;
-                                                                atomicReference = atomicReference4;
+                                                                arrayList7 = arrayList10;
+                                                                i22 = 44;
                                                             }
-                                                            messageObject7 = chatActivity.selectedObject;
-                                                            if (messageObject7 != null && messageObject7.isEphemeral()) {
-                                                                actionBarPopupWindowLayout3.addView((View) new ActionBarPopupWindow.GapView(chatActivity.contentView.getContext(), chatActivity.themeDelegate), LayoutHelper.createLinear(-1, 8));
-                                                                View createMenuTextOption = createMenuTextOption(getContext(), chatActivity.themeDelegate, LocaleController.getString(R.string.EphemeralMessageMenuHint), 13);
-                                                                createMenuTextOption.setMinimumHeight(AndroidUtilities.dp(32.0f));
-                                                                actionBarPopupWindowLayout3.addView(createMenuTextOption, LayoutHelper.createLinear(-1, -2));
-                                                            }
-                                                            ChatScrimPopupContainerLayout chatScrimPopupContainerLayout3 = new ChatScrimPopupContainerLayout(chatActivity.contentView.getContext()) { // from class: org.telegram.ui.ChatActivity.114
-                                                                @Override // android.view.ViewGroup, android.view.View
-                                                                public boolean dispatchKeyEvent(KeyEvent keyEvent) {
-                                                                    if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
-                                                                        ChatActivity.this.closeMenu();
-                                                                    }
-                                                                    return super.dispatchKeyEvent(keyEvent);
-                                                                }
-
-                                                                @Override // android.view.ViewGroup, android.view.View
-                                                                public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-                                                                    boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
-                                                                    if (motionEvent.getAction() == 0 && !dispatchTouchEvent) {
-                                                                        ChatActivity.this.closeMenu();
-                                                                    }
-                                                                    return dispatchTouchEvent;
-                                                                }
-                                                            };
-                                                            final Rect rect5 = rect;
-                                                            chatScrimPopupContainerLayout3.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChatActivity.115
-                                                                private int[] pos = new int[2];
-
-                                                                @Override // android.view.View.OnTouchListener
-                                                                public boolean onTouch(View view5, MotionEvent motionEvent) {
-                                                                    if (motionEvent.getActionMasked() == 0) {
-                                                                        ActionBarPopupWindow actionBarPopupWindow = ChatActivity.this.scrimPopupWindow;
-                                                                        if (actionBarPopupWindow != null && actionBarPopupWindow.isShowing()) {
-                                                                            View contentView = ChatActivity.this.scrimPopupWindow.getContentView();
-                                                                            contentView.getLocationInWindow(this.pos);
-                                                                            Rect rect6 = rect5;
-                                                                            int[] iArr10 = this.pos;
-                                                                            int i42 = iArr10[0];
-                                                                            rect6.set(i42, iArr10[1], contentView.getMeasuredWidth() + i42, this.pos[1] + contentView.getMeasuredHeight());
-                                                                            if (!rect5.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                                                                                ChatActivity.this.closeMenu();
-                                                                            }
-                                                                        }
-                                                                    } else if (motionEvent.getActionMasked() == 4) {
-                                                                        ChatActivity.this.closeMenu();
-                                                                    }
-                                                                    return false;
+                                                            containerLinerLayout.setLayoutParams(new FrameLayout.LayoutParams(dp, AndroidUtilities.dp(i22 + NotificationCenter.dialogsUnreadPollVotesCounterChanged) + (r2 ^ 1)));
+                                                            String str7 = str3;
+                                                            ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem((Context) getParentActivity(), true, false, (Theme.ResourcesProvider) this.themeDelegate);
+                                                            actionBarMenuSubItem.setItemHeight(44);
+                                                            actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back);
+                                                            actionBarMenuSubItem.getTextView().setPadding(!LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), 0, !LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, 0);
+                                                            actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda235
+                                                                @Override // android.view.View.OnClickListener
+                                                                public final void onClick(View view4) {
+                                                                    ChatActivity.lambda$createMenu$255(ActionBarPopupWindow.ActionBarPopupWindowLayout.this, view4);
                                                                 }
                                                             });
-                                                            actionBarPopupWindowLayout4 = actionBarPopupWindowLayout2;
-                                                            if (actionBarPopupWindowLayout4 == null) {
-                                                                chatScrimPopupContainerLayout3.addView(actionBarPopupWindowLayout4);
-                                                                chatScrimPopupContainerLayout = chatScrimPopupContainerLayout3;
-                                                                reactionsContainerLayout = null;
-                                                            } else {
-                                                                boolean z33 = getUserConfig().getClientUserId() == getDialogId();
-                                                                reactionsContainerLayout = new ReactionsContainerLayout(z33 ? 3 : 0, this, chatActivity.contentView.getContext(), chatActivity.currentAccount, getResourceProvider());
-                                                                if (z33) {
-                                                                    reactionsContainerLayout.setHint(getUserConfig().isPremium() ? LocaleController.getString(R.string.SavedTagReactionsHint2) : AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.SavedTagReactionsPremiumHint), Theme.key_windowBackgroundWhiteBlueText2, 0, new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda231
-                                                                        @Override // java.lang.Runnable
-                                                                        public final void run() {
-                                                                            ChatActivity.this.lambda$createMenu$299();
-                                                                        }
-                                                                    }));
-                                                                }
-                                                                if (!z9 || (z33 && getMessagesController().premiumFeaturesBlocked())) {
-                                                                    messageObject8 = messageObject5;
-                                                                } else {
-                                                                    int dp4 = AndroidUtilities.dp(4.0f) + (LocaleController.isRTL ? 0 : 24);
-                                                                    int dp5 = AndroidUtilities.dp(4.0f);
-                                                                    int dp6 = AndroidUtilities.dp(4.0f);
-                                                                    if (!LocaleController.isRTL) {
-                                                                        i3 = 0;
+                                                            containerLinerLayout.addView(actionBarMenuSubItem, LayoutHelper.createLinear(-1, -2));
+                                                            int[] iArr3 = new int[1];
+                                                            if (r2 == 0) {
+                                                                ArrayList<TLRPC.ReactionCount> arrayList13 = messageObject4.messageOwner.reactions.results;
+                                                                final LinearLayout linearLayout = new LinearLayout(this.contentView.getContext());
+                                                                linearLayout.setOrientation(0);
+                                                                final ViewPager viewPager = new ViewPager(this.contentView.getContext());
+                                                                final HorizontalScrollView horizontalScrollView2 = new HorizontalScrollView(this.contentView.getContext());
+                                                                final AtomicBoolean atomicBoolean3 = new AtomicBoolean();
+                                                                int i36 = arrayList13.size() > 1 ? 1 : 0;
+                                                                final int size3 = arrayList13.size() + i36;
+                                                                int i37 = 0;
+                                                                while (i37 < size3) {
+                                                                    MessageObject messageObject27 = messageObject4;
+                                                                    int[] iArr4 = iArr3;
+                                                                    final ReactionTabHolderView reactionTabHolderView = new ReactionTabHolderView(this.contentView.getContext());
+                                                                    int i38 = i36 != 0 ? i37 - 1 : i37;
+                                                                    if (i38 < 0) {
+                                                                        reactionTabHolderView.setCounter(i21);
+                                                                        actionBarPopupWindowLayout8 = actionBarPopupWindowLayout9;
+                                                                    } else {
+                                                                        actionBarPopupWindowLayout8 = actionBarPopupWindowLayout9;
+                                                                        reactionTabHolderView.setCounter(this.currentAccount, arrayList13.get(i38));
                                                                     }
-                                                                    float f4 = 22;
-                                                                    reactionsContainerLayout.setPadding(dp4, dp5, dp6 + i3, AndroidUtilities.dp(f4));
-                                                                    final MessageObject messageObject33 = messageObject6;
-                                                                    reactionsContainerLayout.setDelegate(new ReactionsContainerLayout.ReactionsContainerDelegate() { // from class: org.telegram.ui.ChatActivity.116
-                                                                        @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
-                                                                        public /* synthetic */ boolean allowLongPress() {
-                                                                            return ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$allowLongPress(this);
-                                                                        }
-
-                                                                        @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
-                                                                        public /* synthetic */ boolean drawBackground() {
-                                                                            return ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$drawBackground(this);
-                                                                        }
-
-                                                                        @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
-                                                                        public /* synthetic */ void drawRoundRect(Canvas canvas, RectF rectF, float f5, float f6, float f7, int i42, boolean z34) {
-                                                                            ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$drawRoundRect(this, canvas, rectF, f5, f6, f7, i42, z34);
-                                                                        }
-
-                                                                        @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
-                                                                        public /* synthetic */ boolean needEnterText() {
-                                                                            return ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$needEnterText(this);
-                                                                        }
-
-                                                                        @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
-                                                                        public /* synthetic */ void onEmojiWindowDismissed() {
-                                                                            ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$onEmojiWindowDismissed(this);
-                                                                        }
-
-                                                                        @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
-                                                                        public void onReactionClicked(View view5, ReactionsLayoutInBubble.VisibleReaction visibleReaction, boolean z34, boolean z35) {
-                                                                            float f5;
-                                                                            float f6;
-                                                                            int i42;
-                                                                            float f7;
-                                                                            BaseCell findMessageCell = ChatActivity.this.findMessageCell(messageObject33.getId(), true);
-                                                                            if (findMessageCell instanceof ChatMessageCell) {
-                                                                                ChatMessageCell chatMessageCell2 = (ChatMessageCell) findMessageCell;
-                                                                                ReactionsLayoutInBubble.ReactionButton reactionButton = chatMessageCell2.reactionsLayoutInBubble.getReactionButton(visibleReaction);
-                                                                                if (reactionButton != null) {
-                                                                                    f5 = r1.x + reactionButton.x + (reactionButton.width / 2.0f);
-                                                                                    f6 = chatMessageCell2.reactionsLayoutInBubble.y + reactionButton.y;
-                                                                                    i42 = reactionButton.height;
-                                                                                    f7 = f6 + (i42 / 2.0f);
-                                                                                }
-                                                                                f5 = 0.0f;
-                                                                                f7 = 0.0f;
-                                                                            } else {
-                                                                                if (findMessageCell instanceof ChatActionCell) {
-                                                                                    ChatActionCell chatActionCell = (ChatActionCell) findMessageCell;
-                                                                                    ReactionsLayoutInBubble.ReactionButton reactionButton2 = chatActionCell.reactionsLayoutInBubble.getReactionButton(visibleReaction);
-                                                                                    if (reactionButton2 != null) {
-                                                                                        f5 = r1.x + reactionButton2.x + (reactionButton2.width / 2.0f);
-                                                                                        f6 = chatActionCell.reactionsLayoutInBubble.y + reactionButton2.y;
-                                                                                        i42 = reactionButton2.height;
-                                                                                        f7 = f6 + (i42 / 2.0f);
-                                                                                    }
-                                                                                }
-                                                                                f5 = 0.0f;
-                                                                                f7 = 0.0f;
-                                                                            }
-                                                                            ChatActivity.this.selectReaction(findMessageCell, messageObject33, reactionsContainerLayout, view5, f5, f7, visibleReaction, false, (visibleReaction == null || !visibleReaction.isStar) ? z34 : true, z35, false);
+                                                                    final int i39 = i37;
+                                                                    reactionTabHolderView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda236
+                                                                        @Override // android.view.View.OnClickListener
+                                                                        public final void onClick(View view4) {
+                                                                            ChatActivity.lambda$createMenu$257(ViewPager.this, i39, linearLayout, atomicBoolean3, horizontalScrollView2, reactionTabHolderView, view4);
                                                                         }
                                                                     });
-                                                                    chatScrimPopupContainerLayout3.addView(reactionsContainerLayout, LayoutHelper.createLinear(-1, (int) ((reactionsContainerLayout.getTopOffset() / AndroidUtilities.density) + 52.0f + f4), 5, 0, 50, 0, -20));
-                                                                    chatScrimPopupContainerLayout3.setReactionsLayout(reactionsContainerLayout);
-                                                                    chatScrimPopupContainerLayout3.setClipChildren(false);
-                                                                    messageObject8 = messageObject5;
-                                                                    MessageObject.GroupedMessages validGroupedMessage2 = chatActivity.getValidGroupedMessage(messageObject8);
-                                                                    reactionsContainerLayout.setMessage(validGroupedMessage2 != null ? validGroupedMessage2.findPrimaryMessageObject() : messageObject8, chatActivity.chatInfo, true);
-                                                                    reactionsContainerLayout.setTransitionProgress(0.0f);
-                                                                    if (actionBarPopupWindowLayout3.getSwipeBack() != null) {
-                                                                        actionBarPopupWindowLayout3.getSwipeBack().addOnSwipeBackProgressListener(new PopupSwipeBackLayout.OnSwipeBackProgressListener() { // from class: org.telegram.ui.ChatActivity.117
-                                                                            boolean isEnter = true;
-
-                                                                            @Override // org.telegram.ui.Components.PopupSwipeBackLayout.OnSwipeBackProgressListener
-                                                                            public void onSwipeBackProgress(PopupSwipeBackLayout popupSwipeBackLayout, float f5, float f6) {
-                                                                                if (f5 == 0.0f && !this.isEnter) {
-                                                                                    reactionsContainerLayout.startEnterAnimation(false);
-                                                                                    this.isEnter = true;
-                                                                                } else if (f5 == 1.0f && this.isEnter) {
-                                                                                    reactionsContainerLayout.setAlpha(1.0f - f6);
-                                                                                    if (f6 == 1.0f) {
-                                                                                        this.isEnter = false;
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        });
-                                                                    }
+                                                                    linearLayout.addView(reactionTabHolderView, LayoutHelper.createFrameRelatively(-2.0f, -1.0f, 16, i37 == 0 ? 6.0f : 0.0f, 6.0f, 6.0f, 6.0f));
+                                                                    i37++;
+                                                                    messageObject4 = messageObject27;
+                                                                    iArr3 = iArr4;
+                                                                    actionBarPopupWindowLayout9 = actionBarPopupWindowLayout8;
                                                                 }
-                                                                boolean z34 = ((!isPeerNoForwards() && (!messageObject8.messageOwner.noforwards || (user2 = chatActivity.currentUser) == null || !user2.bot)) || messageObject8.messageOwner.action != null || !messageObject8.isSent() || messageObject8.isEditing() || (i4 = chatActivity.chatMode) == 1 || i4 == i2 || getDialogId() == UserObject.VERIFY) ? false : true;
-                                                                chatScrimPopupContainerLayout3.addView(actionBarPopupWindowLayout3, LayoutHelper.createLinearRelatively(-2.0f, -2.0f, 3, z9 ? 16.0f : 0.0f, 0.0f, z9 ? 36.0f : 0.0f, 0.0f));
-                                                                chatScrimPopupContainerLayout3.setPopupWindowLayout(actionBarPopupWindowLayout3);
-                                                                if (z34) {
-                                                                    actionBarPopupWindowLayout3.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
-                                                                    boolean z35 = ChatObject.isChannel(chatActivity.currentChat) && !chatActivity.currentChat.megagroup;
-                                                                    TextView textView7 = new TextView(chatActivity.contentView.getContext());
-                                                                    textView7.setTextSize(1, 14.0f);
-                                                                    textView7.setTextColor(chatActivity.getThemedColor(Theme.key_actionBarDefaultSubmenuItem));
-                                                                    if (isPeerNoForwards()) {
-                                                                        if (getDialogId() > 0) {
-                                                                            TLRPC.UserFull userFull4 = chatActivity.userInfo;
-                                                                            if (userFull4 != null && (user = chatActivity.currentUser) != null && userFull4.noforwards_peer_enabled) {
-                                                                                string = LocaleController.formatString(R.string.ForwardsRestrictedInfoUserBecauseUser, DialogObject.getShortName(user));
-                                                                            } else if (userFull4 != null && chatActivity.currentUser != null && userFull4.noforwards_my_enabled) {
-                                                                                string = LocaleController.getString(R.string.ForwardsRestrictedInfoUserBecauseYou);
+                                                                MessageObject messageObject28 = messageObject4;
+                                                                final int[] iArr5 = iArr3;
+                                                                final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout10 = actionBarPopupWindowLayout9;
+                                                                horizontalScrollView2.setHorizontalScrollBarEnabled(false);
+                                                                horizontalScrollView2.addView(linearLayout);
+                                                                containerLinerLayout.addView(horizontalScrollView2, LayoutHelper.createLinear(-1, 44));
+                                                                FrameLayout frameLayout = new FrameLayout(this.contentView.getContext());
+                                                                frameLayout.setBackgroundColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuSeparator));
+                                                                containerLinerLayout.addView(frameLayout, new LinearLayout.LayoutParams(-1, (int) Theme.dividerPaint.getStrokeWidth()));
+                                                                int dp2 = AndroidUtilities.dp(88.0f) + 1;
+                                                                SparseArray sparseArray = new SparseArray();
+                                                                final SparseIntArray sparseIntArray = new SparseIntArray();
+                                                                int i40 = 0;
+                                                                HorizontalScrollView horizontalScrollView3 = horizontalScrollView2;
+                                                                while (true) {
+                                                                    horizontalScrollView = horizontalScrollView3;
+                                                                    if (i40 >= arrayList13.size() + 1) {
+                                                                        break;
+                                                                    }
+                                                                    sparseIntArray.put(i40, dp2 + AndroidUtilities.dp(300.0f));
+                                                                    i40++;
+                                                                    horizontalScrollView3 = horizontalScrollView;
+                                                                }
+                                                                atomicReference2 = atomicReference4;
+                                                                arrayList2 = arrayList12;
+                                                                arrayList3 = arrayList11;
+                                                                atomicBoolean = atomicBoolean2;
+                                                                arrayList = arrayList7;
+                                                                rect = rect4;
+                                                                i2 = 24;
+                                                                messageObject19 = messageObject2;
+                                                                str4 = str7;
+                                                                actionBarPopupWindowLayout3 = actionBarPopupWindowLayout;
+                                                                groupedMessages3 = groupedMessages2;
+                                                                rect2 = rect3;
+                                                                viewPager.setAdapter(new 105(size3, sparseArray, i36, arrayList13, messageObject2, reactedHeaderView2, messageObject28, sparseIntArray, dp2, viewPager, actionBarPopupWindowLayout10, iArr5, i21));
+                                                                viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: org.telegram.ui.ChatActivity.106
+                                                                    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
+                                                                    public void onPageScrolled(int i41, float f4, int i42) {
+                                                                        float f5;
+                                                                        if (atomicBoolean3.get()) {
+                                                                            return;
+                                                                        }
+                                                                        int i43 = 0;
+                                                                        float f6 = -1.0f;
+                                                                        float f7 = -1.0f;
+                                                                        while (i43 < linearLayout.getChildCount()) {
+                                                                            ReactionTabHolderView reactionTabHolderView2 = (ReactionTabHolderView) linearLayout.getChildAt(i43);
+                                                                            if (i43 == i41) {
+                                                                                f5 = 1.0f - f4;
                                                                             } else {
-                                                                                string = LocaleController.getString(R.string.ForwardsRestrictedInfoUser);
+                                                                                f5 = i43 == (i41 + 1) % size3 ? f4 : 0.0f;
                                                                             }
-                                                                        } else {
-                                                                            string = LocaleController.getString(z35 ? R.string.ForwardsRestrictedInfoChannel : R.string.ForwardsRestrictedInfoGroup);
-                                                                        }
-                                                                        textView7.setText(AndroidUtilities.replaceTags((CharSequence) string));
-                                                                    } else {
-                                                                        textView7.setText(LocaleController.getString(R.string.ForwardsRestrictedInfoBot));
-                                                                    }
-                                                                    textView7.setMaxWidth(actionBarPopupWindowLayout3.getMeasuredWidth() - AndroidUtilities.dp(38.0f));
-                                                                    Drawable mutate3 = ContextCompat.getDrawable(chatActivity.contentView.getContext(), R.drawable.popup_fixed_alert4).mutate();
-                                                                    mutate3.setColorFilter(new PorterDuffColorFilter(chatActivity.getThemedColor(Theme.key_actionBarDefaultSubmenuBackground), PorterDuff.Mode.MULTIPLY));
-                                                                    FrameLayout frameLayout10 = new FrameLayout(chatActivity.contentView.getContext());
-                                                                    frameLayout10.setBackground(mutate3);
-                                                                    frameLayout10.addView(textView7, LayoutHelper.createFrame(-1, -2.0f, 0, 11.0f, 11.0f, 11.0f, 11.0f));
-                                                                    chatScrimPopupContainerLayout3.addView(frameLayout10, LayoutHelper.createLinear(-1, -2, 3, z9 ? 16 : 0, -8, z9 ? 36 : 0, 0));
-                                                                    chatScrimPopupContainerLayout3.applyViewBottom(frameLayout10);
-                                                                }
-                                                                if (messageObject8.isSendError() && (message = messageObject8.messageOwner) != null && message.errorNewPriceStars > 0) {
-                                                                    actionBarPopupWindowLayout3.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
-                                                                    TextView textView8 = new TextView(chatActivity.contentView.getContext());
-                                                                    textView8.setTextSize(1, 14.0f);
-                                                                    textView8.setTextColor(chatActivity.getThemedColor(Theme.key_actionBarDefaultSubmenuItem));
-                                                                    SpannableStringBuilder replaceStars = StarsIntroActivity.replaceStars(LocaleController.formatPluralString("PaidMessagesSendErrorState1", (int) messageObject8.messageOwner.errorAllowedPriceStars, new Object[0]));
-                                                                    SpannableStringBuilder replaceStars2 = StarsIntroActivity.replaceStars(LocaleController.formatPluralString("PaidMessagesSendErrorState2", (int) messageObject8.messageOwner.errorNewPriceStars, new Object[0]));
-                                                                    CharSequence[] charSequenceArr = new CharSequence[i2];
-                                                                    charSequenceArr[0] = replaceStars;
-                                                                    charSequenceArr[1] = " ";
-                                                                    charSequenceArr[2] = replaceStars2;
-                                                                    textView8.setText(TextUtils.concat(charSequenceArr));
-                                                                    textView8.setMaxWidth(actionBarPopupWindowLayout3.getMeasuredWidth() - AndroidUtilities.dp(38.0f));
-                                                                    Drawable mutate4 = ContextCompat.getDrawable(chatActivity.contentView.getContext(), R.drawable.popup_fixed_alert4).mutate();
-                                                                    mutate4.setColorFilter(new PorterDuffColorFilter(chatActivity.getThemedColor(Theme.key_actionBarDefaultSubmenuBackground), PorterDuff.Mode.MULTIPLY));
-                                                                    FrameLayout frameLayout11 = new FrameLayout(chatActivity.contentView.getContext());
-                                                                    frameLayout11.setBackground(mutate4);
-                                                                    frameLayout11.addView(textView8, LayoutHelper.createFrame(-1, -2.0f, 0, 11.0f, 11.0f, 11.0f, 11.0f));
-                                                                    chatScrimPopupContainerLayout3.addView(frameLayout11, LayoutHelper.createLinear(-1, -2, 3, z9 ? 16 : 0, -8, z9 ? 36 : 0, 0));
-                                                                    chatScrimPopupContainerLayout3.applyViewBottom(frameLayout11);
-                                                                }
-                                                                if (messageObject8.contentType == 0) {
-                                                                    CharSequence charSequence = messageObject8.messageText;
-                                                                    AnimatedEmojiSpan[] animatedEmojiSpanArr = charSequence instanceof Spanned ? (AnimatedEmojiSpan[]) ((Spanned) charSequence).getSpans(0, charSequence.length(), AnimatedEmojiSpan.class) : null;
-                                                                    CharSequence messageCaption = chatActivity.getMessageCaption(chatActivity.selectedObject, chatActivity.selectedObjectGroup);
-                                                                    AnimatedEmojiSpan[] animatedEmojiSpanArr2 = messageCaption instanceof Spanned ? (AnimatedEmojiSpan[]) ((Spanned) messageCaption).getSpans(0, messageCaption.length(), AnimatedEmojiSpan.class) : null;
-                                                                    int length = (animatedEmojiSpanArr == null ? 0 : animatedEmojiSpanArr.length) + (animatedEmojiSpanArr2 == null ? 0 : animatedEmojiSpanArr2.length);
-                                                                    if (length > 0) {
-                                                                        final ArrayList arrayList19 = new ArrayList();
-                                                                        int length2 = animatedEmojiSpanArr == null ? 0 : animatedEmojiSpanArr.length;
-                                                                        int i42 = 0;
-                                                                        ChatScrimPopupContainerLayout chatScrimPopupContainerLayout4 = chatScrimPopupContainerLayout3;
-                                                                        while (i42 < length) {
-                                                                            AnimatedEmojiSpan animatedEmojiSpan = i42 < length2 ? animatedEmojiSpanArr[i42] : animatedEmojiSpanArr2[i42 - length2];
-                                                                            if (animatedEmojiSpan != null && !animatedEmojiSpan.standard) {
-                                                                                TLRPC.Document document = animatedEmojiSpan.document;
-                                                                                if (document == null) {
-                                                                                    document = AnimatedEmojiDrawable.findDocument(chatActivity.currentAccount, animatedEmojiSpan.documentId);
-                                                                                }
-                                                                                TLRPC.InputStickerSet inputStickerSet = MessageObject.getInputStickerSet(document);
-                                                                                if (inputStickerSet != null) {
-                                                                                    int i43 = 0;
-                                                                                    ChatScrimPopupContainerLayout chatScrimPopupContainerLayout5 = chatScrimPopupContainerLayout4;
-                                                                                    while (true) {
-                                                                                        if (i43 >= arrayList19.size()) {
-                                                                                            chatScrimPopupContainerLayout2 = chatScrimPopupContainerLayout5;
-                                                                                            i5 = 1;
-                                                                                            z14 = false;
-                                                                                            break;
-                                                                                        }
-                                                                                        ChatScrimPopupContainerLayout chatScrimPopupContainerLayout6 = chatScrimPopupContainerLayout5;
-                                                                                        i5 = 1;
-                                                                                        if (((TLRPC.InputStickerSet) arrayList19.get(i43)).id == inputStickerSet.id) {
-                                                                                            z14 = true;
-                                                                                            chatScrimPopupContainerLayout2 = chatScrimPopupContainerLayout6;
-                                                                                            break;
-                                                                                        }
-                                                                                        i43++;
-                                                                                        chatScrimPopupContainerLayout5 = chatScrimPopupContainerLayout6;
-                                                                                    }
-                                                                                    if (!z14) {
-                                                                                        arrayList19.add(inputStickerSet);
-                                                                                    }
-                                                                                    i42 += i5;
-                                                                                    chatScrimPopupContainerLayout4 = chatScrimPopupContainerLayout2;
-                                                                                }
+                                                                            reactionTabHolderView2.setOutlineProgress(f5);
+                                                                            if (i43 == i41) {
+                                                                                f6 = reactionTabHolderView2.getX() - ((horizontalScrollView.getWidth() - reactionTabHolderView2.getWidth()) / 2.0f);
                                                                             }
-                                                                            chatScrimPopupContainerLayout2 = chatScrimPopupContainerLayout4;
-                                                                            i5 = 1;
-                                                                            i42 += i5;
-                                                                            chatScrimPopupContainerLayout4 = chatScrimPopupContainerLayout2;
+                                                                            if (i43 == i41 + 1) {
+                                                                                f7 = reactionTabHolderView2.getX() - ((horizontalScrollView.getWidth() - reactionTabHolderView2.getWidth()) / 2.0f);
+                                                                            }
+                                                                            i43++;
                                                                         }
-                                                                        chatScrimPopupContainerLayout = chatScrimPopupContainerLayout4;
-                                                                        if (arrayList19.size() > 0 && !getMessagesController().premiumFeaturesBlocked()) {
-                                                                            FrameLayout frameLayout12 = new FrameLayout(chatActivity.contentView.getContext());
-                                                                            frameLayout12.setBackgroundColor(chatActivity.getThemedColor(Theme.key_actionBarDefaultSubmenuSeparator));
-                                                                            actionBarPopupWindowLayout3.addView((View) frameLayout12, LayoutHelper.createLinear(-1, 8));
-                                                                            MessageContainsEmojiButton messageContainsEmojiButton = new MessageContainsEmojiButton(chatActivity.currentAccount, chatActivity.contentView.getContext(), chatActivity.themeDelegate, arrayList19, 0);
-                                                                            messageContainsEmojiButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda232
-                                                                                @Override // android.view.View.OnClickListener
-                                                                                public final void onClick(View view5) {
-                                                                                    ChatActivity.this.lambda$createMenu$300(arrayList19, view5);
-                                                                                }
-                                                                            });
-                                                                            actionBarPopupWindowLayout3.addView((View) messageContainsEmojiButton, LayoutHelper.createLinear(-1, -2));
-                                                                            actionBarPopupWindowLayout3.precalculateHeight();
+                                                                        if (f6 != -1.0f && f7 != -1.0f) {
+                                                                            horizontalScrollView.setScrollX((int) (f6 + ((f7 - f6) * f4)));
                                                                         }
+                                                                        actionBarPopupWindowLayout10.getSwipeBack().setNewForegroundHeight(iArr5[0], (int) ((sparseIntArray.get(i41, 0) * (1.0f - f4)) + (sparseIntArray.get(i41 + 1, 0) * f4)), false);
                                                                     }
-                                                                }
-                                                                chatScrimPopupContainerLayout = chatScrimPopupContainerLayout3;
-                                                            }
-                                                            ChatScrimPopupContainerLayout chatScrimPopupContainerLayout7 = chatScrimPopupContainerLayout;
-                                                            if (reactionsContainerLayout != null) {
-                                                                reactionsContainerLayout.setParentLayout(chatScrimPopupContainerLayout7);
-                                                            }
-                                                            final ReactionsContainerLayout reactionsContainerLayout2 = reactionsContainerLayout;
-                                                            ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(chatScrimPopupContainerLayout7, -2, -2) { // from class: org.telegram.ui.ChatActivity.119
-                                                                @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
-                                                                public void dismiss() {
-                                                                    super.dismiss();
-                                                                    if (ChatActivity.this.scrimPopupWindow != this) {
-                                                                        return;
-                                                                    }
-                                                                    Bulletin visibleBulletin = Bulletin.getVisibleBulletin();
-                                                                    Bulletin bulletin = ChatActivity.this.messageSeenPrivacyBulletin;
-                                                                    if (visibleBulletin == bulletin && bulletin != null) {
-                                                                        bulletin.hide();
-                                                                        ChatActivity.this.messageSeenPrivacyBulletin = null;
-                                                                    }
-                                                                    ChatActivity chatActivity3 = ChatActivity.this;
-                                                                    chatActivity3.scrimPopupWindow = null;
-                                                                    chatActivity3.menuDeleteItem = null;
-                                                                    ChatActivity.this.scrimPopupWindowItems = null;
-                                                                    ChatActivity.this.chatLayoutManager.setCanScrollVertically(true);
-                                                                    if (!ChatActivity.this.scrimPopupWindowHideDimOnDismiss) {
-                                                                        ChatActivity.this.scrimPopupWindowHideDimOnDismiss = true;
-                                                                    } else {
-                                                                        ChatActivity.this.dimBehindView(false);
-                                                                    }
-                                                                    ChatActivityEnterView chatActivityEnterView3 = ChatActivity.this.chatActivityEnterView;
-                                                                    if (chatActivityEnterView3 == null || chatActivityEnterView3.getEditField() == null) {
-                                                                        return;
-                                                                    }
-                                                                    ChatActivity.this.chatActivityEnterView.getEditField().setAllowDrawCursor(true);
-                                                                }
 
-                                                                @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow
-                                                                public void dismiss(boolean z36) {
-                                                                    super.dismiss(z36);
-                                                                    ReactionsContainerLayout reactionsContainerLayout3 = reactionsContainerLayout2;
-                                                                    if (reactionsContainerLayout3 != null) {
-                                                                        reactionsContainerLayout3.dismissParent(z36);
+                                                                    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
+                                                                    public void onPageSelected(int i41) {
+                                                                        actionBarPopupWindowLayout10.getSwipeBack().setNewForegroundHeight(iArr5[0], sparseIntArray.get(i41), true);
                                                                     }
-                                                                }
-                                                            };
-                                                            chatActivity.scrimPopupWindow = actionBarPopupWindow;
-                                                            actionBarPopupWindow.setPauseNotifications(true);
-                                                            chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starGiveawayOptionsLoaded);
-                                                            chatActivity.scrimPopupWindow.setOutsideTouchable(true);
-                                                            chatActivity.scrimPopupWindow.setClippingEnabled(true);
-                                                            if (z9 || reactionsContainerLayout == null || !ReactionsContainerLayout.allowSmoothEnterTransition()) {
-                                                                chatActivity.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
+
+                                                                    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
+                                                                    public void onPageScrollStateChanged(int i41) {
+                                                                        if (i41 == 0) {
+                                                                            atomicBoolean3.set(false);
+                                                                        }
+                                                                    }
+                                                                });
+                                                                z17 = false;
+                                                                viewGroup = containerLinerLayout;
+                                                                viewGroup.addView(viewPager, LayoutHelper.createLinear(-1, 0, 1.0f));
+                                                                onHeightChangedListener = null;
+                                                                i6 = -2;
+                                                                i7 = -1;
+                                                                i8 = 8;
+                                                                chatActivity2 = this;
+                                                                reactedHeaderView = reactedHeaderView2;
+                                                                messageObject9 = messageObject28;
+                                                                iArr2 = iArr5;
+                                                                actionBarPopupWindowLayout7 = actionBarPopupWindowLayout10;
                                                             } else {
-                                                                chatActivity.scrimPopupWindow.setAnimationStyle(0);
-                                                            }
-                                                            chatActivity.scrimPopupWindow.setFocusable(true);
-                                                            chatScrimPopupContainerLayout7.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
-                                                            chatActivity.scrimPopupWindow.setInputMethodMode(2);
-                                                            chatActivity.scrimPopupWindow.setSoftInputMode(48);
-                                                            chatActivity.scrimPopupWindow.getContentView().setFocusableInTouchMode(true);
-                                                            actionBarPopupWindowLayout3.setFitItems(true);
-                                                            Rect rect6 = rect2;
-                                                            left = (((view.getLeft() + ((int) f)) - chatScrimPopupContainerLayout7.getMeasuredWidth()) + rect6.left) - AndroidUtilities.dp(28.0f);
-                                                            if (left >= AndroidUtilities.dp(6.0f)) {
-                                                                left = AndroidUtilities.dp(6.0f);
-                                                            } else if (left > (chatActivity.chatListView.getMeasuredWidth() - AndroidUtilities.dp(6.0f)) - chatScrimPopupContainerLayout7.getMeasuredWidth()) {
-                                                                left = (chatActivity.chatListView.getMeasuredWidth() - AndroidUtilities.dp(6.0f)) - chatScrimPopupContainerLayout7.getMeasuredWidth();
-                                                            }
-                                                            if (AndroidUtilities.isTablet()) {
-                                                                int[] iArr10 = new int[2];
-                                                                chatActivity.fragmentView.getLocationInWindow(iArr10);
-                                                                left += iArr10[0];
-                                                            }
-                                                            height = chatActivity.contentView.getHeight();
-                                                            measuredHeight = chatScrimPopupContainerLayout7.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
-                                                            measureKeyboardHeight = chatActivity.contentView.measureKeyboardHeight();
-                                                            if (measureKeyboardHeight > AndroidUtilities.dp(20.0f)) {
-                                                                height += measureKeyboardHeight;
-                                                            }
-                                                            int y = (int) (chatActivity.chatListView.getY() + AndroidUtilities.dp(24.0f));
-                                                            int dp7 = (height - measuredHeight) - AndroidUtilities.dp(8.0f);
-                                                            if (measuredHeight >= height) {
-                                                                int y2 = (int) (chatActivity.chatListView.getY() + view.getTop() + f2);
-                                                                if (chatActivity.isInsideContainer) {
-                                                                    int[] iArr11 = new int[2];
-                                                                    view2 = view;
-                                                                    view2.getLocationInWindow(iArr11);
-                                                                    chatActivity.chatListView.getLocationInWindow(iArr11);
-                                                                    y2 = (int) (iArr11[1] + f2);
-                                                                    y = AndroidUtilities.dp(24.0f);
-                                                                    dp7 = (Math.min(iArr11[1] + chatActivity.chatListView.getMeasuredHeight(), AndroidUtilities.displaySize.y) - AndroidUtilities.dp(8.0f)) - measuredHeight;
+                                                                MessageObject messageObject29 = messageObject4;
+                                                                messageObject19 = messageObject2;
+                                                                viewGroup = containerLinerLayout;
+                                                                actionBarPopupWindowLayout3 = actionBarPopupWindowLayout;
+                                                                groupedMessages3 = groupedMessages2;
+                                                                atomicBoolean = atomicBoolean2;
+                                                                arrayList = arrayList7;
+                                                                rect = rect4;
+                                                                str4 = str7;
+                                                                atomicReference2 = atomicReference4;
+                                                                arrayList2 = arrayList12;
+                                                                rect2 = rect3;
+                                                                arrayList3 = arrayList11;
+                                                                z17 = false;
+                                                                z17 = false;
+                                                                i2 = 24;
+                                                                i7 = -1;
+                                                                chatActivity2 = this;
+                                                                i8 = 8;
+                                                                viewGroup.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(-1, 8));
+                                                                messageObject9 = messageObject29;
+                                                                iArr2 = iArr3;
+                                                                final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout11 = actionBarPopupWindowLayout9;
+                                                                onHeightChangedListener = new ReactedUsersListView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate, chatActivity2.currentAccount, messageObject29, null, false, true).setSeenUsers(reactedHeaderView2.getSeenUsers()).setOnCustomEmojiSelectedListener(new ReactedUsersListView.OnCustomEmojiSelectedListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda237
+                                                                    @Override // org.telegram.ui.Components.ReactedUsersListView.OnCustomEmojiSelectedListener
+                                                                    public final void showCustomEmojiAlert(ReactedUsersListView reactedUsersListView, ArrayList arrayList14) {
+                                                                        ChatActivity.this.lambda$createMenu$258(reactedUsersListView, arrayList14);
+                                                                    }
+                                                                }).setOnProfileSelectedListener(new ReactedUsersListView.OnProfileSelectedListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda238
+                                                                    @Override // org.telegram.ui.Components.ReactedUsersListView.OnProfileSelectedListener
+                                                                    public final void onProfileSelected(ReactedUsersListView reactedUsersListView, long j, TLRPC.MessagePeerReaction messagePeerReaction) {
+                                                                        ChatActivity.this.lambda$createMenu$259(messageObject9, reactedUsersListView, j, messagePeerReaction);
+                                                                    }
+                                                                }).setOnProfileLongSelectedListener(new ReactedUsersListView.OnProfileSelectedListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda239
+                                                                    @Override // org.telegram.ui.Components.ReactedUsersListView.OnProfileSelectedListener
+                                                                    public final void onProfileSelected(ReactedUsersListView reactedUsersListView, long j, TLRPC.MessagePeerReaction messagePeerReaction) {
+                                                                        ChatActivity.this.lambda$createMenu$262(z16, messageObject9, reactedUsersListView, j, messagePeerReaction);
+                                                                    }
+                                                                }).setOnHeightChangedListener(new ReactedUsersListView.OnHeightChangedListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda240
+                                                                    @Override // org.telegram.ui.Components.ReactedUsersListView.OnHeightChangedListener
+                                                                    public final void onHeightChanged(ReactedUsersListView reactedUsersListView, int i41) {
+                                                                        ChatActivity.lambda$createMenu$263(view3, actionBarPopupWindowLayout11, iArr2, reactedUsersListView, i41);
+                                                                    }
+                                                                });
+                                                                Objects.requireNonNull(onHeightChangedListener);
+                                                                reactedHeaderView = reactedHeaderView2;
+                                                                reactedHeaderView.setSeenCallback(new ChatActivity$$ExternalSyntheticLambda203(onHeightChangedListener));
+                                                                viewGroup.addView(onHeightChangedListener, LayoutHelper.createLinear(-1, 0, 1.0f));
+                                                                if (view3 != null) {
+                                                                    viewGroup.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(-1, 8));
+                                                                    i6 = -2;
+                                                                    viewGroup.addView(view3, LayoutHelper.createLinear(-1, -2));
+                                                                    actionBarPopupWindowLayout7 = actionBarPopupWindowLayout11;
                                                                 } else {
-                                                                    view2 = view;
-                                                                    if ((measuredHeight - rect6.top) - rect6.bottom > AndroidUtilities.dp(240.0f)) {
-                                                                        y2 += AndroidUtilities.dp(240.0f) - measuredHeight;
-                                                                    }
+                                                                    i6 = -2;
+                                                                    actionBarPopupWindowLayout7 = actionBarPopupWindowLayout11;
                                                                 }
-                                                                i6 = Utilities.clamp(y2, dp7, y);
-                                                            } else {
-                                                                view2 = view;
-                                                                i6 = chatActivity.inBubbleMode ? 0 : AndroidUtilities.statusBarHeight;
                                                             }
-                                                            chatActivity.scrimPopupX = left;
-                                                            chatActivity.scrimPopupY = i6;
-                                                            chatScrimPopupContainerLayout7.setMaxHeight((dp7 + measuredHeight) - i6);
-                                                            final int i44 = left;
-                                                            final int i45 = i6;
-                                                            final boolean z36 = z27;
-                                                            final ReactionsContainerLayout reactionsContainerLayout3 = reactionsContainerLayout;
-                                                            Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda233
-                                                                @Override // java.lang.Runnable
-                                                                public final void run() {
-                                                                    ChatActivity.this.lambda$createMenu$302(i44, i45, z36, reactionsContainerLayout3);
+                                                            iArr2[z17 ? 1 : 0] = actionBarPopupWindowLayout7.addViewToSwipeBack(viewGroup);
+                                                            reactedHeaderView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda204
+                                                                @Override // android.view.View.OnClickListener
+                                                                public final void onClick(View view4) {
+                                                                    ChatActivity.lambda$createMenu$264(ReactedUsersListView.this, actionBarPopupWindowLayout7, iArr2, view4);
                                                                 }
-                                                            };
-                                                            if (!atomicBoolean.get()) {
-                                                                atomicReference.set(runnable2);
-                                                            } else {
-                                                                runnable2.run();
-                                                            }
-                                                            chatActivity.chatListView.stopScroll();
-                                                            chatActivity.chatLayoutManager.setCanScrollVertically(false);
-                                                            chatActivity.dimBehindView(view2, true);
-                                                            chatActivity.hideHints(false);
-                                                            undoView = chatActivity.topUndoView;
-                                                            if (undoView != null) {
-                                                                undoView.hide(true, 1);
-                                                            }
-                                                            undoView2 = chatActivity.undoView;
-                                                            if (undoView2 != null) {
-                                                                undoView2.hide(true, 1);
-                                                            }
-                                                            chatActivityEnterView = chatActivity.chatActivityEnterView;
-                                                            if (chatActivityEnterView == null && chatActivityEnterView.getEditField() != null) {
-                                                                chatActivity.chatActivityEnterView.getEditField().setAllowDrawCursor(false);
-                                                                return true;
-                                                            }
+                                                            });
+                                                            actionBarPopupWindowLayout7.addView((View) reactedHeaderView, LayoutHelper.createLinear(i7, 48));
+                                                            messageObject10 = messageObject19;
+                                                            z13 = true;
+                                                            r10 = actionBarPopupWindowLayout7;
+                                                            r12 = z17;
                                                         }
-                                                        str2 = str;
-                                                        z13 = false;
-                                                        if (z5) {
+                                                        r2 = 0;
+                                                        ?? containerLinerLayout2 = new ReactedUsersListView.ContainerLinerLayout(this.contentView.getContext());
+                                                        containerLinerLayout2.hasHeader = r2;
+                                                        containerLinerLayout2.setOrientation(1);
+                                                        int dp3 = AndroidUtilities.dp(200.0f);
+                                                        if (r2 == 0) {
                                                         }
-                                                        if (z25) {
-                                                        }
-                                                        Activity parentActivity2 = getParentActivity();
-                                                        ArrayList arrayList122 = arrayList10;
-                                                        int i282 = R.drawable.popup_fixed_alert4;
-                                                        final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout82 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity2, i282, this.themeDelegate, i27);
-                                                        actionBarPopupWindowLayout82.setMinimumWidth(AndroidUtilities.dp(200.0f));
-                                                        Rect rect42 = new Rect();
-                                                        getParentActivity().getResources().getDrawable(i282).mutate().getPadding(rect42);
-                                                        actionBarPopupWindowLayout82.setBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
-                                                        if (actionBarPopupWindowLayout != null) {
-                                                        }
-                                                        messageObject7 = chatActivity.selectedObject;
-                                                        if (messageObject7 != null) {
-                                                            actionBarPopupWindowLayout3.addView((View) new ActionBarPopupWindow.GapView(chatActivity.contentView.getContext(), chatActivity.themeDelegate), LayoutHelper.createLinear(-1, 8));
-                                                            View createMenuTextOption2 = createMenuTextOption(getContext(), chatActivity.themeDelegate, LocaleController.getString(R.string.EphemeralMessageMenuHint), 13);
-                                                            createMenuTextOption2.setMinimumHeight(AndroidUtilities.dp(32.0f));
-                                                            actionBarPopupWindowLayout3.addView(createMenuTextOption2, LayoutHelper.createLinear(-1, -2));
-                                                        }
-                                                        ChatScrimPopupContainerLayout chatScrimPopupContainerLayout32 = new ChatScrimPopupContainerLayout(chatActivity.contentView.getContext()) { // from class: org.telegram.ui.ChatActivity.114
-                                                            @Override // android.view.ViewGroup, android.view.View
-                                                            public boolean dispatchKeyEvent(KeyEvent keyEvent) {
-                                                                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
-                                                                    ChatActivity.this.closeMenu();
-                                                                }
-                                                                return super.dispatchKeyEvent(keyEvent);
-                                                            }
-
-                                                            @Override // android.view.ViewGroup, android.view.View
-                                                            public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-                                                                boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
-                                                                if (motionEvent.getAction() == 0 && !dispatchTouchEvent) {
-                                                                    ChatActivity.this.closeMenu();
-                                                                }
-                                                                return dispatchTouchEvent;
-                                                            }
-                                                        };
-                                                        final Rect rect52 = rect;
-                                                        chatScrimPopupContainerLayout32.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChatActivity.115
-                                                            private int[] pos = new int[2];
-
-                                                            @Override // android.view.View.OnTouchListener
-                                                            public boolean onTouch(View view5, MotionEvent motionEvent) {
-                                                                if (motionEvent.getActionMasked() == 0) {
-                                                                    ActionBarPopupWindow actionBarPopupWindow2 = ChatActivity.this.scrimPopupWindow;
-                                                                    if (actionBarPopupWindow2 != null && actionBarPopupWindow2.isShowing()) {
-                                                                        View contentView = ChatActivity.this.scrimPopupWindow.getContentView();
-                                                                        contentView.getLocationInWindow(this.pos);
-                                                                        Rect rect62 = rect52;
-                                                                        int[] iArr102 = this.pos;
-                                                                        int i422 = iArr102[0];
-                                                                        rect62.set(i422, iArr102[1], contentView.getMeasuredWidth() + i422, this.pos[1] + contentView.getMeasuredHeight());
-                                                                        if (!rect52.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                                                                            ChatActivity.this.closeMenu();
-                                                                        }
-                                                                    }
-                                                                } else if (motionEvent.getActionMasked() == 4) {
-                                                                    ChatActivity.this.closeMenu();
-                                                                }
-                                                                return false;
+                                                        containerLinerLayout2.setLayoutParams(new FrameLayout.LayoutParams(dp3, AndroidUtilities.dp(i22 + NotificationCenter.dialogsUnreadPollVotesCounterChanged) + (r2 ^ 1)));
+                                                        String str72 = str3;
+                                                        ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem((Context) getParentActivity(), true, false, (Theme.ResourcesProvider) this.themeDelegate);
+                                                        actionBarMenuSubItem2.setItemHeight(44);
+                                                        actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back);
+                                                        actionBarMenuSubItem2.getTextView().setPadding(!LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), 0, !LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, 0);
+                                                        actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda235
+                                                            @Override // android.view.View.OnClickListener
+                                                            public final void onClick(View view4) {
+                                                                ChatActivity.lambda$createMenu$255(ActionBarPopupWindow.ActionBarPopupWindowLayout.this, view4);
                                                             }
                                                         });
-                                                        actionBarPopupWindowLayout4 = actionBarPopupWindowLayout2;
-                                                        if (actionBarPopupWindowLayout4 == null) {
+                                                        containerLinerLayout2.addView(actionBarMenuSubItem2, LayoutHelper.createLinear(-1, -2));
+                                                        int[] iArr32 = new int[1];
+                                                        if (r2 == 0) {
                                                         }
-                                                        View chatScrimPopupContainerLayout72 = chatScrimPopupContainerLayout;
-                                                        if (reactionsContainerLayout != null) {
-                                                        }
-                                                        final ReactionsContainerLayout reactionsContainerLayout22 = reactionsContainerLayout;
-                                                        ActionBarPopupWindow actionBarPopupWindow2 = new ActionBarPopupWindow(chatScrimPopupContainerLayout72, -2, -2) { // from class: org.telegram.ui.ChatActivity.119
-                                                            @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
-                                                            public void dismiss() {
-                                                                super.dismiss();
-                                                                if (ChatActivity.this.scrimPopupWindow != this) {
-                                                                    return;
-                                                                }
-                                                                Bulletin visibleBulletin = Bulletin.getVisibleBulletin();
-                                                                Bulletin bulletin = ChatActivity.this.messageSeenPrivacyBulletin;
-                                                                if (visibleBulletin == bulletin && bulletin != null) {
-                                                                    bulletin.hide();
-                                                                    ChatActivity.this.messageSeenPrivacyBulletin = null;
-                                                                }
-                                                                ChatActivity chatActivity3 = ChatActivity.this;
-                                                                chatActivity3.scrimPopupWindow = null;
-                                                                chatActivity3.menuDeleteItem = null;
-                                                                ChatActivity.this.scrimPopupWindowItems = null;
-                                                                ChatActivity.this.chatLayoutManager.setCanScrollVertically(true);
-                                                                if (!ChatActivity.this.scrimPopupWindowHideDimOnDismiss) {
-                                                                    ChatActivity.this.scrimPopupWindowHideDimOnDismiss = true;
-                                                                } else {
-                                                                    ChatActivity.this.dimBehindView(false);
-                                                                }
-                                                                ChatActivityEnterView chatActivityEnterView3 = ChatActivity.this.chatActivityEnterView;
-                                                                if (chatActivityEnterView3 == null || chatActivityEnterView3.getEditField() == null) {
-                                                                    return;
-                                                                }
-                                                                ChatActivity.this.chatActivityEnterView.getEditField().setAllowDrawCursor(true);
+                                                        iArr2[z17 ? 1 : 0] = actionBarPopupWindowLayout7.addViewToSwipeBack(viewGroup);
+                                                        reactedHeaderView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda204
+                                                            @Override // android.view.View.OnClickListener
+                                                            public final void onClick(View view4) {
+                                                                ChatActivity.lambda$createMenu$264(ReactedUsersListView.this, actionBarPopupWindowLayout7, iArr2, view4);
                                                             }
-
-                                                            @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow
-                                                            public void dismiss(boolean z362) {
-                                                                super.dismiss(z362);
-                                                                ReactionsContainerLayout reactionsContainerLayout32 = reactionsContainerLayout22;
-                                                                if (reactionsContainerLayout32 != null) {
-                                                                    reactionsContainerLayout32.dismissParent(z362);
-                                                                }
+                                                        });
+                                                        actionBarPopupWindowLayout7.addView((View) reactedHeaderView, LayoutHelper.createLinear(i7, 48));
+                                                        messageObject10 = messageObject19;
+                                                        z13 = true;
+                                                        r10 = actionBarPopupWindowLayout7;
+                                                        r12 = z17;
+                                                    }
+                                                    z16 = false;
+                                                    if (z16) {
+                                                    }
+                                                    if (i21 > 10) {
+                                                        r2 = 1;
+                                                        ?? containerLinerLayout22 = new ReactedUsersListView.ContainerLinerLayout(this.contentView.getContext());
+                                                        containerLinerLayout22.hasHeader = r2;
+                                                        containerLinerLayout22.setOrientation(1);
+                                                        int dp32 = AndroidUtilities.dp(200.0f);
+                                                        if (r2 == 0) {
+                                                        }
+                                                        containerLinerLayout22.setLayoutParams(new FrameLayout.LayoutParams(dp32, AndroidUtilities.dp(i22 + NotificationCenter.dialogsUnreadPollVotesCounterChanged) + (r2 ^ 1)));
+                                                        String str722 = str3;
+                                                        ActionBarMenuSubItem actionBarMenuSubItem22 = new ActionBarMenuSubItem((Context) getParentActivity(), true, false, (Theme.ResourcesProvider) this.themeDelegate);
+                                                        actionBarMenuSubItem22.setItemHeight(44);
+                                                        actionBarMenuSubItem22.setTextAndIcon(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back);
+                                                        actionBarMenuSubItem22.getTextView().setPadding(!LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), 0, !LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, 0);
+                                                        actionBarMenuSubItem22.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda235
+                                                            @Override // android.view.View.OnClickListener
+                                                            public final void onClick(View view4) {
+                                                                ChatActivity.lambda$createMenu$255(ActionBarPopupWindow.ActionBarPopupWindowLayout.this, view4);
                                                             }
-                                                        };
-                                                        chatActivity.scrimPopupWindow = actionBarPopupWindow2;
-                                                        actionBarPopupWindow2.setPauseNotifications(true);
-                                                        chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starGiveawayOptionsLoaded);
-                                                        chatActivity.scrimPopupWindow.setOutsideTouchable(true);
-                                                        chatActivity.scrimPopupWindow.setClippingEnabled(true);
-                                                        if (z9) {
+                                                        });
+                                                        containerLinerLayout22.addView(actionBarMenuSubItem22, LayoutHelper.createLinear(-1, -2));
+                                                        int[] iArr322 = new int[1];
+                                                        if (r2 == 0) {
                                                         }
-                                                        chatActivity.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
-                                                        chatActivity.scrimPopupWindow.setFocusable(true);
-                                                        chatScrimPopupContainerLayout72.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
-                                                        chatActivity.scrimPopupWindow.setInputMethodMode(2);
-                                                        chatActivity.scrimPopupWindow.setSoftInputMode(48);
-                                                        chatActivity.scrimPopupWindow.getContentView().setFocusableInTouchMode(true);
-                                                        actionBarPopupWindowLayout3.setFitItems(true);
-                                                        Rect rect62 = rect2;
-                                                        left = (((view.getLeft() + ((int) f)) - chatScrimPopupContainerLayout72.getMeasuredWidth()) + rect62.left) - AndroidUtilities.dp(28.0f);
-                                                        if (left >= AndroidUtilities.dp(6.0f)) {
-                                                        }
-                                                        if (AndroidUtilities.isTablet()) {
-                                                        }
-                                                        height = chatActivity.contentView.getHeight();
-                                                        measuredHeight = chatScrimPopupContainerLayout72.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
-                                                        measureKeyboardHeight = chatActivity.contentView.measureKeyboardHeight();
-                                                        if (measureKeyboardHeight > AndroidUtilities.dp(20.0f)) {
-                                                        }
-                                                        int y3 = (int) (chatActivity.chatListView.getY() + AndroidUtilities.dp(24.0f));
-                                                        int dp72 = (height - measuredHeight) - AndroidUtilities.dp(8.0f);
-                                                        if (measuredHeight >= height) {
-                                                        }
-                                                        chatActivity.scrimPopupX = left;
-                                                        chatActivity.scrimPopupY = i6;
-                                                        chatScrimPopupContainerLayout72.setMaxHeight((dp72 + measuredHeight) - i6);
-                                                        final int i442 = left;
-                                                        final int i452 = i6;
-                                                        final boolean z362 = z27;
-                                                        final ReactionsContainerLayout reactionsContainerLayout32 = reactionsContainerLayout;
-                                                        Runnable runnable22 = new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda233
-                                                            @Override // java.lang.Runnable
-                                                            public final void run() {
-                                                                ChatActivity.this.lambda$createMenu$302(i442, i452, z362, reactionsContainerLayout32);
+                                                        iArr2[z17 ? 1 : 0] = actionBarPopupWindowLayout7.addViewToSwipeBack(viewGroup);
+                                                        reactedHeaderView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda204
+                                                            @Override // android.view.View.OnClickListener
+                                                            public final void onClick(View view4) {
+                                                                ChatActivity.lambda$createMenu$264(ReactedUsersListView.this, actionBarPopupWindowLayout7, iArr2, view4);
                                                             }
-                                                        };
-                                                        if (!atomicBoolean.get()) {
-                                                        }
-                                                        chatActivity.chatListView.stopScroll();
-                                                        chatActivity.chatLayoutManager.setCanScrollVertically(false);
-                                                        chatActivity.dimBehindView(view2, true);
-                                                        chatActivity.hideHints(false);
-                                                        undoView = chatActivity.topUndoView;
-                                                        if (undoView != null) {
-                                                        }
-                                                        undoView2 = chatActivity.undoView;
-                                                        if (undoView2 != null) {
-                                                        }
-                                                        chatActivityEnterView = chatActivity.chatActivityEnterView;
-                                                        return chatActivityEnterView == null ? true : true;
+                                                        });
+                                                        actionBarPopupWindowLayout7.addView((View) reactedHeaderView, LayoutHelper.createLinear(i7, 48));
+                                                        messageObject10 = messageObject19;
+                                                        z13 = true;
+                                                        r10 = actionBarPopupWindowLayout7;
+                                                        r12 = z17;
                                                     }
-                                                }
-                                                z12 = false;
-                                                if (z5) {
-                                                }
-                                                if (!z5) {
-                                                    messageObject21 = this.selectedObject;
-                                                    if (messageObject21.sponsoredInfo == null) {
+                                                    r2 = 0;
+                                                    ?? containerLinerLayout222 = new ReactedUsersListView.ContainerLinerLayout(this.contentView.getContext());
+                                                    containerLinerLayout222.hasHeader = r2;
+                                                    containerLinerLayout222.setOrientation(1);
+                                                    int dp322 = AndroidUtilities.dp(200.0f);
+                                                    if (r2 == 0) {
                                                     }
-                                                    str2 = str;
-                                                    z13 = true;
-                                                    if (z5) {
-                                                    }
-                                                    if (z25) {
-                                                    }
-                                                    Activity parentActivity22 = getParentActivity();
-                                                    ArrayList arrayList1222 = arrayList10;
-                                                    int i2822 = R.drawable.popup_fixed_alert4;
-                                                    final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout822 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity22, i2822, this.themeDelegate, i27);
-                                                    actionBarPopupWindowLayout822.setMinimumWidth(AndroidUtilities.dp(200.0f));
-                                                    Rect rect422 = new Rect();
-                                                    getParentActivity().getResources().getDrawable(i2822).mutate().getPadding(rect422);
-                                                    actionBarPopupWindowLayout822.setBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
-                                                    if (actionBarPopupWindowLayout != null) {
-                                                    }
-                                                    messageObject7 = chatActivity.selectedObject;
-                                                    if (messageObject7 != null) {
-                                                    }
-                                                    ChatScrimPopupContainerLayout chatScrimPopupContainerLayout322 = new ChatScrimPopupContainerLayout(chatActivity.contentView.getContext()) { // from class: org.telegram.ui.ChatActivity.114
-                                                        @Override // android.view.ViewGroup, android.view.View
-                                                        public boolean dispatchKeyEvent(KeyEvent keyEvent) {
-                                                            if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
-                                                                ChatActivity.this.closeMenu();
-                                                            }
-                                                            return super.dispatchKeyEvent(keyEvent);
-                                                        }
-
-                                                        @Override // android.view.ViewGroup, android.view.View
-                                                        public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-                                                            boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
-                                                            if (motionEvent.getAction() == 0 && !dispatchTouchEvent) {
-                                                                ChatActivity.this.closeMenu();
-                                                            }
-                                                            return dispatchTouchEvent;
-                                                        }
-                                                    };
-                                                    final Rect rect522 = rect;
-                                                    chatScrimPopupContainerLayout322.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChatActivity.115
-                                                        private int[] pos = new int[2];
-
-                                                        @Override // android.view.View.OnTouchListener
-                                                        public boolean onTouch(View view5, MotionEvent motionEvent) {
-                                                            if (motionEvent.getActionMasked() == 0) {
-                                                                ActionBarPopupWindow actionBarPopupWindow22 = ChatActivity.this.scrimPopupWindow;
-                                                                if (actionBarPopupWindow22 != null && actionBarPopupWindow22.isShowing()) {
-                                                                    View contentView = ChatActivity.this.scrimPopupWindow.getContentView();
-                                                                    contentView.getLocationInWindow(this.pos);
-                                                                    Rect rect622 = rect522;
-                                                                    int[] iArr102 = this.pos;
-                                                                    int i422 = iArr102[0];
-                                                                    rect622.set(i422, iArr102[1], contentView.getMeasuredWidth() + i422, this.pos[1] + contentView.getMeasuredHeight());
-                                                                    if (!rect522.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                                                                        ChatActivity.this.closeMenu();
-                                                                    }
-                                                                }
-                                                            } else if (motionEvent.getActionMasked() == 4) {
-                                                                ChatActivity.this.closeMenu();
-                                                            }
-                                                            return false;
+                                                    containerLinerLayout222.setLayoutParams(new FrameLayout.LayoutParams(dp322, AndroidUtilities.dp(i22 + NotificationCenter.dialogsUnreadPollVotesCounterChanged) + (r2 ^ 1)));
+                                                    String str7222 = str3;
+                                                    ActionBarMenuSubItem actionBarMenuSubItem222 = new ActionBarMenuSubItem((Context) getParentActivity(), true, false, (Theme.ResourcesProvider) this.themeDelegate);
+                                                    actionBarMenuSubItem222.setItemHeight(44);
+                                                    actionBarMenuSubItem222.setTextAndIcon(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back);
+                                                    actionBarMenuSubItem222.getTextView().setPadding(!LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), 0, !LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, 0);
+                                                    actionBarMenuSubItem222.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda235
+                                                        @Override // android.view.View.OnClickListener
+                                                        public final void onClick(View view4) {
+                                                            ChatActivity.lambda$createMenu$255(ActionBarPopupWindow.ActionBarPopupWindowLayout.this, view4);
                                                         }
                                                     });
-                                                    actionBarPopupWindowLayout4 = actionBarPopupWindowLayout2;
-                                                    if (actionBarPopupWindowLayout4 == null) {
+                                                    containerLinerLayout222.addView(actionBarMenuSubItem222, LayoutHelper.createLinear(-1, -2));
+                                                    int[] iArr3222 = new int[1];
+                                                    if (r2 == 0) {
                                                     }
-                                                    View chatScrimPopupContainerLayout722 = chatScrimPopupContainerLayout;
-                                                    if (reactionsContainerLayout != null) {
+                                                    iArr2[z17 ? 1 : 0] = actionBarPopupWindowLayout7.addViewToSwipeBack(viewGroup);
+                                                    reactedHeaderView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda204
+                                                        @Override // android.view.View.OnClickListener
+                                                        public final void onClick(View view4) {
+                                                            ChatActivity.lambda$createMenu$264(ReactedUsersListView.this, actionBarPopupWindowLayout7, iArr2, view4);
+                                                        }
+                                                    });
+                                                    actionBarPopupWindowLayout7.addView((View) reactedHeaderView, LayoutHelper.createLinear(i7, 48));
+                                                    messageObject10 = messageObject19;
+                                                    z13 = true;
+                                                    r10 = actionBarPopupWindowLayout7;
+                                                    r12 = z17;
+                                                } else {
+                                                    atomicBoolean = atomicBoolean2;
+                                                    arrayList = arrayList10;
+                                                    rect = rect4;
+                                                    r10 = actionBarPopupWindowLayout9;
+                                                    str4 = str3;
+                                                    actionBarPopupWindowLayout3 = actionBarPopupWindowLayout;
+                                                    groupedMessages3 = groupedMessages2;
+                                                    chatActivity2 = this;
+                                                    atomicReference2 = atomicReference4;
+                                                    arrayList2 = arrayList12;
+                                                    rect2 = rect3;
+                                                    i6 = -2;
+                                                    r12 = 0;
+                                                    i7 = -1;
+                                                    i8 = 8;
+                                                    i2 = 24;
+                                                    arrayList3 = arrayList11;
+                                                    messageObject9 = messageObject4;
+                                                    messageObject10 = messageObject2;
+                                                    z13 = false;
+                                                }
+                                                TLRPC.Message message7 = messageObject10.messageOwner;
+                                                if (message7 != null) {
+                                                    TLRPC.MessageMedia messageMedia = message7.media;
+                                                    if (messageMedia instanceof TLRPC.TL_messageMediaPoll) {
+                                                        TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) messageMedia;
+                                                        TLRPC.Poll poll = tL_messageMediaPoll.poll;
+                                                        if (poll.hide_results_until_close && !poll.closed && !poll.creator) {
+                                                            r10.addView(createMenuTextOption(getContext(), chatActivity2.themeDelegate, LocaleController.getString(R.string.PollResultsWillLater)));
+                                                            r10.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(i7, i8));
+                                                        }
+                                                        TLRPC.Poll poll2 = tL_messageMediaPoll.poll;
+                                                        if (!poll2.closed) {
+                                                            boolean z28 = poll2.subscribers_only;
+                                                            ArrayList<String> arrayList14 = poll2.countries_iso2;
+                                                            ?? r1 = z28;
+                                                            if (arrayList14 != null) {
+                                                                r1 = z28;
+                                                                if (!arrayList14.isEmpty()) {
+                                                                    r1 = (z28 ? 1 : 0) | 4;
+                                                                }
+                                                            }
+                                                            if (r1 != 0) {
+                                                                CharSequence voteRestrictedToastText = PollUtils.getVoteRestrictedToastText(messageObject10, r1);
+                                                                if (!TextUtils.isEmpty(voteRestrictedToastText)) {
+                                                                    r10.addView(createMenuTextOption(getContext(), chatActivity2.themeDelegate, voteRestrictedToastText));
+                                                                    r10.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(i7, i8));
+                                                                }
+                                                            }
+                                                        }
                                                     }
-                                                    final ReactionsContainerLayout reactionsContainerLayout222 = reactionsContainerLayout;
-                                                    ActionBarPopupWindow actionBarPopupWindow22 = new ActionBarPopupWindow(chatScrimPopupContainerLayout722, -2, -2) { // from class: org.telegram.ui.ChatActivity.119
-                                                        @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
-                                                        public void dismiss() {
-                                                            super.dismiss();
-                                                            if (ChatActivity.this.scrimPopupWindow != this) {
+                                                }
+                                                if (z9) {
+                                                    final MessageSeenView messageSeenView = new MessageSeenView(chatActivity2.contentView.getContext(), chatActivity2.currentAccount, messageObject10, chatActivity2.currentChat);
+                                                    FrameLayout frameLayout2 = new FrameLayout(chatActivity2.contentView.getContext());
+                                                    frameLayout2.addView(messageSeenView, LayoutHelper.createFrame(i7, -2.0f));
+                                                    ActionBarMenuSubItem actionBarMenuSubItem3 = new ActionBarMenuSubItem((Context) getParentActivity(), true, (boolean) r12, (Theme.ResourcesProvider) chatActivity2.themeDelegate);
+                                                    actionBarMenuSubItem3.setItemHeight(44);
+                                                    actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back);
+                                                    actionBarMenuSubItem3.getTextView().setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), r12, LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, r12);
+                                                    FrameLayout frameLayout3 = new FrameLayout(chatActivity2.contentView.getContext());
+                                                    final LinearLayout linearLayout2 = new LinearLayout(chatActivity2.contentView.getContext());
+                                                    linearLayout2.setBackgroundColor(chatActivity2.getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
+                                                    linearLayout2.setOrientation(1);
+                                                    final RecyclerListView createListView = messageSeenView.createListView();
+                                                    frameLayout3.addView(actionBarMenuSubItem3);
+                                                    linearLayout2.addView(frameLayout3);
+                                                    linearLayout2.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(i7, i8));
+                                                    frameLayout3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity.108
+                                                        @Override // android.view.View.OnClickListener
+                                                        public void onClick(View view4) {
+                                                            Bulletin.hideVisible();
+                                                            r10.getSwipeBack().closeForeground();
+                                                        }
+                                                    });
+                                                    final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout12 = r10;
+                                                    messageSeenView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity.109
+                                                        @Override // android.view.View.OnClickListener
+                                                        public void onClick(View view4) {
+                                                            if (ChatActivity.this.scrimPopupWindow == null || messageSeenView.users.isEmpty()) {
                                                                 return;
                                                             }
-                                                            Bulletin visibleBulletin = Bulletin.getVisibleBulletin();
-                                                            Bulletin bulletin = ChatActivity.this.messageSeenPrivacyBulletin;
-                                                            if (visibleBulletin == bulletin && bulletin != null) {
-                                                                bulletin.hide();
-                                                                ChatActivity.this.messageSeenPrivacyBulletin = null;
-                                                            }
-                                                            ChatActivity chatActivity3 = ChatActivity.this;
-                                                            chatActivity3.scrimPopupWindow = null;
-                                                            chatActivity3.menuDeleteItem = null;
-                                                            ChatActivity.this.scrimPopupWindowItems = null;
-                                                            ChatActivity.this.chatLayoutManager.setCanScrollVertically(true);
-                                                            if (!ChatActivity.this.scrimPopupWindowHideDimOnDismiss) {
-                                                                ChatActivity.this.scrimPopupWindowHideDimOnDismiss = true;
-                                                            } else {
-                                                                ChatActivity.this.dimBehindView(false);
-                                                            }
-                                                            ChatActivityEnterView chatActivityEnterView3 = ChatActivity.this.chatActivityEnterView;
-                                                            if (chatActivityEnterView3 == null || chatActivityEnterView3.getEditField() == null) {
+                                                            if (messageSeenView.users.size() == 1 && (messageSeenView.dates.size() <= 0 || ((Integer) messageSeenView.dates.get(0)).intValue() <= 0)) {
+                                                                TLObject tLObject = (TLObject) messageSeenView.users.get(0);
+                                                                if (tLObject == null) {
+                                                                    return;
+                                                                }
+                                                                Bundle bundle = new Bundle();
+                                                                if (tLObject instanceof TLRPC.User) {
+                                                                    bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+                                                                } else if (tLObject instanceof TLRPC.Chat) {
+                                                                    bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+                                                                }
+                                                                ChatActivity.this.presentFragment(new ProfileActivity(bundle));
+                                                                ChatActivity.this.closeMenu();
                                                                 return;
                                                             }
-                                                            ChatActivity.this.chatActivityEnterView.getEditField().setAllowDrawCursor(true);
-                                                        }
-
-                                                        @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow
-                                                        public void dismiss(boolean z3622) {
-                                                            super.dismiss(z3622);
-                                                            ReactionsContainerLayout reactionsContainerLayout322 = reactionsContainerLayout222;
-                                                            if (reactionsContainerLayout322 != null) {
-                                                                reactionsContainerLayout322.dismissParent(z3622);
+                                                            if (SharedConfig.messageSeenHintCount > 0 && ChatActivity.this.contentView.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
+                                                                ChatActivity chatActivity3 = ChatActivity.this;
+                                                                chatActivity3.messageSeenPrivacyBulletin = BulletinFactory.of(Bulletin.BulletinWindow.make(chatActivity3.getContext()), ChatActivity.this.themeDelegate).createErrorBulletin(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)));
+                                                                ChatActivity.this.messageSeenPrivacyBulletin.setDuration(4000);
+                                                                ChatActivity.this.messageSeenPrivacyBulletin.show();
+                                                                SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
                                                             }
+                                                            createListView.requestLayout();
+                                                            linearLayout2.requestLayout();
+                                                            createListView.getAdapter().notifyDataSetChanged();
+                                                            actionBarPopupWindowLayout12.getSwipeBack().openForeground(r6[0]);
                                                         }
-                                                    };
-                                                    chatActivity.scrimPopupWindow = actionBarPopupWindow22;
-                                                    actionBarPopupWindow22.setPauseNotifications(true);
-                                                    chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starGiveawayOptionsLoaded);
-                                                    chatActivity.scrimPopupWindow.setOutsideTouchable(true);
-                                                    chatActivity.scrimPopupWindow.setClippingEnabled(true);
-                                                    if (z9) {
-                                                    }
-                                                    chatActivity.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
-                                                    chatActivity.scrimPopupWindow.setFocusable(true);
-                                                    chatScrimPopupContainerLayout722.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
-                                                    chatActivity.scrimPopupWindow.setInputMethodMode(2);
-                                                    chatActivity.scrimPopupWindow.setSoftInputMode(48);
-                                                    chatActivity.scrimPopupWindow.getContentView().setFocusableInTouchMode(true);
-                                                    actionBarPopupWindowLayout3.setFitItems(true);
-                                                    Rect rect622 = rect2;
-                                                    left = (((view.getLeft() + ((int) f)) - chatScrimPopupContainerLayout722.getMeasuredWidth()) + rect622.left) - AndroidUtilities.dp(28.0f);
-                                                    if (left >= AndroidUtilities.dp(6.0f)) {
-                                                    }
-                                                    if (AndroidUtilities.isTablet()) {
-                                                    }
-                                                    height = chatActivity.contentView.getHeight();
-                                                    measuredHeight = chatScrimPopupContainerLayout722.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
-                                                    measureKeyboardHeight = chatActivity.contentView.measureKeyboardHeight();
-                                                    if (measureKeyboardHeight > AndroidUtilities.dp(20.0f)) {
-                                                    }
-                                                    int y32 = (int) (chatActivity.chatListView.getY() + AndroidUtilities.dp(24.0f));
-                                                    int dp722 = (height - measuredHeight) - AndroidUtilities.dp(8.0f);
-                                                    if (measuredHeight >= height) {
-                                                    }
-                                                    chatActivity.scrimPopupX = left;
-                                                    chatActivity.scrimPopupY = i6;
-                                                    chatScrimPopupContainerLayout722.setMaxHeight((dp722 + measuredHeight) - i6);
-                                                    final int i4422 = left;
-                                                    final int i4522 = i6;
-                                                    final boolean z3622 = z27;
-                                                    final ReactionsContainerLayout reactionsContainerLayout322 = reactionsContainerLayout;
-                                                    Runnable runnable222 = new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda233
+                                                    });
+                                                    linearLayout2.addView(createListView, LayoutHelper.createLinear(i7, i6));
+                                                    createListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda205
+                                                        @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
+                                                        public final void onItemClick(View view4, int i41) {
+                                                            ChatActivity.this.lambda$createMenu$265(messageSeenView, view4, i41);
+                                                        }
+                                                    });
+                                                    final int[] iArr6 = {r10.addViewToSwipeBack(linearLayout2)};
+                                                    r10.addView(frameLayout2, LayoutHelper.createLinear(i7, 44));
+                                                    z13 = true;
+                                                } else if (z10) {
+                                                    i9 = 36;
+                                                    r10.addView(new MessagePrivateSeenView(getContext(), 0, messageObject10, new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda206
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
-                                                            ChatActivity.this.lambda$createMenu$302(i4422, i4522, z3622, reactionsContainerLayout322);
+                                                            ChatActivity.this.lambda$createMenu$266();
                                                         }
-                                                    };
-                                                    if (!atomicBoolean.get()) {
+                                                    }, chatActivity2.themeDelegate), LayoutHelper.createLinear(i7, 36));
+                                                    z13 = true;
+                                                    if (z26) {
+                                                        r10.addView(new MessagePrivateSeenView(getContext(), 1, messageObject10, new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda207
+                                                            @Override // java.lang.Runnable
+                                                            public final void run() {
+                                                                ChatActivity.this.lambda$createMenu$267();
+                                                            }
+                                                        }, chatActivity2.themeDelegate), LayoutHelper.createLinear(i7, i9));
+                                                        z13 = true;
                                                     }
-                                                    chatActivity.chatListView.stopScroll();
-                                                    chatActivity.chatLayoutManager.setCanScrollVertically(false);
-                                                    chatActivity.dimBehindView(view2, true);
-                                                    chatActivity.hideHints(false);
-                                                    undoView = chatActivity.topUndoView;
-                                                    if (undoView != null) {
+                                                    MessageObject messageObject30 = chatActivity2.selectedObject;
+                                                    z14 = (messageObject30 != null || !messageObject30.isVoice() || chatActivity2.selectedObject.messageOwner == null || !getUserConfig().isPremium() || TextUtils.isEmpty(chatActivity2.selectedObject.messageOwner.voiceTranscription) || (message5 = chatActivity2.selectedObject.messageOwner) == null || message5.voiceTranscriptionRated || message5.voiceTranscriptionId == 0 || !message5.voiceTranscriptionOpen) ? false : true;
+                                                    if (!z14 && messageObject10.probablyRingtone() && chatActivity2.currentEncryptedChat == null) {
+                                                        ActionBarMenuSubItem actionBarMenuSubItem4 = new ActionBarMenuSubItem((Context) getParentActivity(), z10 && !z26, false, (Theme.ResourcesProvider) chatActivity2.themeDelegate);
+                                                        actionBarMenuSubItem4.setMinimumWidth(AndroidUtilities.dp(200.0f));
+                                                        actionBarMenuSubItem4.setTextAndIcon(LocaleController.getString(R.string.SaveForNotifications), R.drawable.msg_tone_add);
+                                                        r10.addView(actionBarMenuSubItem4);
+                                                        actionBarMenuSubItem4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda208
+                                                            @Override // android.view.View.OnClickListener
+                                                            public final void onClick(View view4) {
+                                                                ChatActivity.this.lambda$createMenu$269(messageObject10, view4);
+                                                            }
+                                                        });
+                                                        z13 = true;
                                                     }
-                                                    undoView2 = chatActivity.undoView;
-                                                    if (undoView2 != null) {
+                                                    if (z13) {
+                                                        r10.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(i7, 8));
                                                     }
-                                                    chatActivityEnterView = chatActivity.chatActivityEnterView;
-                                                    if (chatActivityEnterView == null) {
+                                                    if (z25) {
+                                                        MessageAuthorView messageAuthorView = new MessageAuthorView(chatActivity2.contentView.getContext(), chatActivity2.currentAccount, messageObject10, chatActivity2.currentChat) { // from class: org.telegram.ui.ChatActivity.111
+                                                            @Override // org.telegram.ui.MessageAuthorView
+                                                            /* renamed from: openUser */
+                                                            protected void lambda$updateView$2(long j) {
+                                                                ChatActivity.this.closeMenu(true);
+                                                                Bundle bundle = new Bundle();
+                                                                bundle.putLong("user_id", j);
+                                                                if (j == ChatActivity.this.getUserConfig().getClientUserId()) {
+                                                                    bundle.putBoolean("my_profile", true);
+                                                                }
+                                                                ChatActivity.this.presentFragment(new ProfileActivity(bundle));
+                                                            }
+                                                        };
+                                                        FrameLayout frameLayout4 = new FrameLayout(chatActivity2.contentView.getContext());
+                                                        frameLayout4.addView(messageAuthorView, LayoutHelper.createFrame(i7, -2.0f));
+                                                        r10.addView(frameLayout4, LayoutHelper.createLinear(i7, i9));
+                                                        r10.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(i7, 8));
+                                                    }
+                                                    if (r10.getSwipeBack() != null) {
+                                                        r10.getSwipeBack().setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda209
+                                                            @Override // android.view.View.OnClickListener
+                                                            public final void onClick(View view4) {
+                                                                ChatActivity.this.lambda$createMenu$270(view4);
+                                                            }
+                                                        });
+                                                    }
+                                                    if (z14) {
+                                                        messageObject11 = messageObject10;
+                                                        messageObject12 = messageObject9;
+                                                    } else {
+                                                        ?? linearLayout3 = new LinearLayout(chatActivity2.contentView.getContext());
+                                                        linearLayout3.setOrientation(1);
+                                                        LinearLayout.LayoutParams createLinear = LayoutHelper.createLinear(i7, 89);
+                                                        FrameLayout frameLayout5 = new FrameLayout(chatActivity2.contentView.getContext());
+                                                        FrameLayout frameLayout6 = new FrameLayout(chatActivity2.contentView.getContext());
+                                                        frameLayout6.setBackgroundColor(chatActivity2.getThemedColor(Theme.key_actionBarDefaultSubmenuSeparator));
+                                                        TextView textView = new TextView(chatActivity2.contentView.getContext());
+                                                        textView.setTextColor(chatActivity2.getThemedColor(Theme.key_windowBackgroundWhiteGrayText));
+                                                        textView.setGravity(1);
+                                                        textView.setText(LocaleController.getString(R.string.RateTranscription));
+                                                        frameLayout5.addView(textView, LayoutHelper.createFrame(-1, -2.0f, 48, 0.0f, 12.0f, 0.0f, 0.0f));
+                                                        final boolean[] zArr = new boolean[1];
+                                                        final boolean[] zArr2 = new boolean[1];
+                                                        final ImageView imageView = new ImageView(chatActivity2.contentView.getContext());
+                                                        int i41 = Theme.key_dialogButtonSelector;
+                                                        imageView.setBackground(Theme.createCircleSelectorDrawable(chatActivity2.getThemedColor(i41), 0, 0));
+                                                        Drawable mutate = chatActivity2.contentView.getContext().getResources().getDrawable(R.drawable.msg_rate_up).mutate();
+                                                        int i42 = Theme.key_actionBarDefaultSubmenuItemIcon;
+                                                        int themedColor = chatActivity2.getThemedColor(i42);
+                                                        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+                                                        mutate.setColorFilter(new PorterDuffColorFilter(themedColor, mode));
+                                                        messageObject12 = messageObject9;
+                                                        messageObject11 = messageObject10;
+                                                        imageView.setImageDrawable(new CrossfadeDrawable(mutate, new CircularProgressDrawable(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(1.5f), chatActivity2.getThemedColor(i42))));
+                                                        imageView.setContentDescription(LocaleController.getString(R.string.AccDescrRateTranscriptionUp));
+                                                        frameLayout5.addView(imageView, LayoutHelper.createFrame(33, 33.0f, 49, -42.0f, 39.0f, 0.0f, 0.0f));
+                                                        final ImageView imageView2 = new ImageView(chatActivity2.contentView.getContext());
+                                                        imageView2.setBackground(Theme.createCircleSelectorDrawable(chatActivity2.getThemedColor(i41), 0, 0));
+                                                        Drawable mutate2 = chatActivity2.contentView.getContext().getResources().getDrawable(R.drawable.msg_rate_down).mutate();
+                                                        mutate2.setColorFilter(new PorterDuffColorFilter(chatActivity2.getThemedColor(i42), mode));
+                                                        imageView2.setImageDrawable(new CrossfadeDrawable(mutate2, new CircularProgressDrawable(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(1.5f), chatActivity2.getThemedColor(i42))));
+                                                        imageView2.setContentDescription(LocaleController.getString(R.string.AccDescrRateTranscriptionDown));
+                                                        frameLayout5.addView(imageView2, LayoutHelper.createFrame(33, 33.0f, 49, 42.0f, 39.0f, 0.0f, 0.0f));
+                                                        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda210
+                                                            @Override // java.lang.Runnable
+                                                            public final void run() {
+                                                                ChatActivity.this.lambda$createMenu$275(zArr2, zArr, imageView, imageView2);
+                                                            }
+                                                        };
+                                                        imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda211
+                                                            @Override // android.view.View.OnClickListener
+                                                            public final void onClick(View view4) {
+                                                                ChatActivity.lambda$createMenu$276(zArr, runnable, view4);
+                                                            }
+                                                        });
+                                                        imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda212
+                                                            @Override // android.view.View.OnClickListener
+                                                            public final void onClick(View view4) {
+                                                                ChatActivity.lambda$createMenu$277(zArr, runnable, view4);
+                                                            }
+                                                        });
+                                                        linearLayout3.addView(frameLayout5, LayoutHelper.createLinear(-1, 81));
+                                                        linearLayout3.addView(frameLayout6, LayoutHelper.createLinear(-1, 8));
+                                                        r10.addView(linearLayout3, createLinear);
+                                                    }
+                                                    messageObject13 = chatActivity2.selectedObject;
+                                                    if (messageObject13 == null && messageObject13.isSponsored()) {
+                                                        MessageObject messageObject31 = chatActivity2.selectedObject;
+                                                        if (messageObject31.sponsoredInfo == null && messageObject31.sponsoredAdditionalInfo == null) {
+                                                            String str8 = messageObject31.sponsoredUrl;
+                                                            if (str8 != null) {
+                                                            }
+                                                            f3 = 14.0f;
+                                                            if (chatActivity2.selectedObject.sponsoredCanReport) {
+                                                                FrameLayout frameLayout7 = new FrameLayout(getParentActivity());
+                                                                frameLayout7.setMinimumHeight(AndroidUtilities.dp(56.0f));
+                                                                int themedColor2 = chatActivity2.getThemedColor(Theme.key_dialogButtonSelector);
+                                                                if (r10.getItemsCount() <= 0) {
+                                                                    i19 = 0;
+                                                                    i20 = 6;
+                                                                } else {
+                                                                    i19 = 0;
+                                                                    i20 = 0;
+                                                                }
+                                                                frameLayout7.setBackground(Theme.createRadSelectorDrawable(themedColor2, i20, i19));
+                                                                frameLayout7.setPadding(AndroidUtilities.dp(18.0f), i19, AndroidUtilities.dp(18.0f), i19);
+                                                                ImageView imageView3 = new ImageView(getParentActivity());
+                                                                imageView3.setScaleType(ImageView.ScaleType.CENTER);
+                                                                imageView3.setColorFilter(new PorterDuffColorFilter(chatActivity2.getThemedColor(Theme.key_actionBarDefaultSubmenuItemIcon), PorterDuff.Mode.MULTIPLY));
+                                                                imageView3.setImageResource(R.drawable.msg_info);
+                                                                frameLayout7.addView(imageView3, LayoutHelper.createFrame(-2, 40, (LocaleController.isRTL ? 5 : 3) | 16));
+                                                                TextView textView2 = new TextView(getParentActivity()) { // from class: org.telegram.ui.ChatActivity.112
+                                                                    @Override // android.widget.TextView, android.view.View
+                                                                    protected void onMeasure(int i43, int i44) {
+                                                                        if (View.MeasureSpec.getMode(i43) == Integer.MIN_VALUE && getLayout() != null) {
+                                                                            Layout layout = getLayout();
+                                                                            int i45 = 0;
+                                                                            for (int i46 = 0; i46 < layout.getLineCount(); i46++) {
+                                                                                i45 = Math.max(i45, (int) Math.ceil(layout.getLineWidth(i46)));
+                                                                            }
+                                                                            i43 = View.MeasureSpec.makeMeasureSpec(getPaddingLeft() + i45 + getPaddingRight(), TLObject.FLAG_30);
+                                                                        }
+                                                                        super.onMeasure(i43, i44);
+                                                                    }
+                                                                };
+                                                                textView2.setMaxLines(3);
+                                                                textView2.setGravity(3);
+                                                                textView2.setEllipsize(TextUtils.TruncateAt.END);
+                                                                textView2.setTextColor(chatActivity2.getThemedColor(Theme.key_actionBarDefaultSubmenuItem));
+                                                                textView2.setTextSize(1, f3);
+                                                                textView2.setMaxWidth(AndroidUtilities.dp(240.0f));
+                                                                textView2.setText(LocaleController.getString(R.string.SponsoredMessageInfo));
+                                                                textView2.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(43.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(43.0f) : 0, 0);
+                                                                frameLayout7.addView(textView2, LayoutHelper.createFrame(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
+                                                                r10.addView(frameLayout7);
+                                                                frameLayout7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda220
+                                                                    @Override // android.view.View.OnClickListener
+                                                                    public final void onClick(View view4) {
+                                                                        ChatActivity.this.lambda$createMenu$284(view4);
+                                                                    }
+                                                                });
+                                                                r10.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(-1, 8));
+                                                            }
+                                                        }
+                                                        LinearLayout linearLayout4 = new LinearLayout(getParentActivity());
+                                                        linearLayout4.setOrientation(1);
+                                                        ActionBarMenuSubItem actionBarMenuSubItem5 = new ActionBarMenuSubItem((Context) getParentActivity(), true, false, (Theme.ResourcesProvider) chatActivity2.themeDelegate);
+                                                        actionBarMenuSubItem5.setItemHeight(44);
+                                                        actionBarMenuSubItem5.setTextAndIcon(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back);
+                                                        actionBarMenuSubItem5.getTextView().setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, 0);
+                                                        actionBarMenuSubItem5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda214
+                                                            @Override // android.view.View.OnClickListener
+                                                            public final void onClick(View view4) {
+                                                                ChatActivity.lambda$createMenu$278(ActionBarPopupWindow.ActionBarPopupWindowLayout.this, view4);
+                                                            }
+                                                        });
+                                                        linearLayout4.addView(actionBarMenuSubItem5, LayoutHelper.createLinear(-1, -2));
+                                                        linearLayout4.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(-1, 8));
+                                                        ArrayList arrayList15 = new ArrayList();
+                                                        String str9 = chatActivity2.selectedObject.sponsoredUrl;
+                                                        if (str9 == null || str9.startsWith(getMessagesController().linkPrefix)) {
+                                                            f3 = 14.0f;
+                                                        } else {
+                                                            TextView textView3 = new TextView(getParentActivity());
+                                                            textView3.setTextColor(chatActivity2.getThemedColor(Theme.key_chat_messageLinkIn));
+                                                            f3 = 14.0f;
+                                                            textView3.setTextSize(1, 14.0f);
+                                                            textView3.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f));
+                                                            textView3.setMaxWidth(AndroidUtilities.dp(300.0f));
+                                                            Uri parse = Uri.parse(chatActivity2.selectedObject.sponsoredUrl);
+                                                            textView3.setText(Browser.replaceHostname(parse, Browser.IDN_toUnicode(parse.getHost()), null));
+                                                            int themedColor3 = chatActivity2.getThemedColor(Theme.key_dialogButtonSelector);
+                                                            if (chatActivity2.selectedObject.sponsoredAdditionalInfo == null) {
+                                                                i17 = 0;
+                                                                i18 = 6;
+                                                            } else {
+                                                                i17 = 0;
+                                                                i18 = 0;
+                                                            }
+                                                            textView3.setBackground(Theme.createRadSelectorDrawable(themedColor3, i17, i18));
+                                                            textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda215
+                                                                @Override // android.view.View.OnClickListener
+                                                                public final void onClick(View view4) {
+                                                                    ChatActivity.this.lambda$createMenu$279(view4);
+                                                                }
+                                                            });
+                                                            textView3.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda216
+                                                                @Override // android.view.View.OnLongClickListener
+                                                                public final boolean onLongClick(View view4) {
+                                                                    boolean lambda$createMenu$280;
+                                                                    lambda$createMenu$280 = ChatActivity.this.lambda$createMenu$280(view4);
+                                                                    return lambda$createMenu$280;
+                                                                }
+                                                            });
+                                                            arrayList15.add(textView3);
+                                                        }
+                                                        if (chatActivity2.selectedObject.sponsoredInfo != null) {
+                                                            TextView textView4 = new TextView(getParentActivity());
+                                                            textView4.setTextColor(chatActivity2.getThemedColor(Theme.key_actionBarDefaultSubmenuItem));
+                                                            textView4.setTextSize(1, f3);
+                                                            textView4.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f));
+                                                            textView4.setMaxWidth(AndroidUtilities.dp(300.0f));
+                                                            textView4.setText(chatActivity2.selectedObject.sponsoredInfo);
+                                                            int themedColor4 = chatActivity2.getThemedColor(Theme.key_dialogButtonSelector);
+                                                            if (chatActivity2.selectedObject.sponsoredAdditionalInfo == null) {
+                                                                i15 = 0;
+                                                                i16 = 6;
+                                                            } else {
+                                                                i15 = 0;
+                                                                i16 = 0;
+                                                            }
+                                                            textView4.setBackground(Theme.createRadSelectorDrawable(themedColor4, i15, i16));
+                                                            textView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda217
+                                                                @Override // android.view.View.OnClickListener
+                                                                public final void onClick(View view4) {
+                                                                    ChatActivity.this.lambda$createMenu$281(view4);
+                                                                }
+                                                            });
+                                                            arrayList15.add(textView4);
+                                                        }
+                                                        if (chatActivity2.selectedObject.sponsoredAdditionalInfo != null) {
+                                                            TextView textView5 = new TextView(getParentActivity());
+                                                            textView5.setTextColor(chatActivity2.getThemedColor(Theme.key_actionBarDefaultSubmenuItem));
+                                                            textView5.setTextSize(1, f3);
+                                                            textView5.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f));
+                                                            textView5.setMaxWidth(AndroidUtilities.dp(300.0f));
+                                                            textView5.setText(chatActivity2.selectedObject.sponsoredAdditionalInfo);
+                                                            textView5.setBackground(Theme.createRadSelectorDrawable(chatActivity2.getThemedColor(Theme.key_dialogButtonSelector), 0, 6));
+                                                            textView5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda218
+                                                                @Override // android.view.View.OnClickListener
+                                                                public final void onClick(View view4) {
+                                                                    ChatActivity.this.lambda$createMenu$282(view4);
+                                                                }
+                                                            });
+                                                            arrayList15.add(textView5);
+                                                        }
+                                                        for (int i43 = 0; i43 < arrayList15.size(); i43 += i13) {
+                                                            View view4 = (View) arrayList15.get(i43);
+                                                            if (i43 > 0) {
+                                                                FrameLayout frameLayout8 = new FrameLayout(getParentActivity());
+                                                                frameLayout8.setBackgroundColor(chatActivity2.getThemedColor(Theme.key_divider));
+                                                                i13 = 1;
+                                                                i14 = -1;
+                                                                LinearLayout.LayoutParams createLinear2 = LayoutHelper.createLinear(-1, 1);
+                                                                createLinear2.height = 1;
+                                                                linearLayout4.addView(frameLayout8, createLinear2);
+                                                            } else {
+                                                                i13 = 1;
+                                                                i14 = -1;
+                                                            }
+                                                            linearLayout4.addView(view4, LayoutHelper.createLinear(i14, -2));
+                                                        }
+                                                        final int addViewToSwipeBack = r10.addViewToSwipeBack(linearLayout4);
+                                                        ActionBarMenuSubItem actionBarMenuSubItem6 = new ActionBarMenuSubItem((Context) getParentActivity(), true, true, (Theme.ResourcesProvider) chatActivity2.themeDelegate);
+                                                        actionBarMenuSubItem6.setTextAndIcon(LocaleController.getString(chatActivity2.selectedObject.sponsoredCanReport ? R.string.SponsoredMessageSponsorReportable : R.string.SponsoredMessageSponsor), R.drawable.msg_channel);
+                                                        r10.addView(actionBarMenuSubItem6);
+                                                        actionBarMenuSubItem6.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda219
+                                                            @Override // android.view.View.OnClickListener
+                                                            public final void onClick(View view5) {
+                                                                ChatActivity.this.lambda$createMenu$283(r10, addViewToSwipeBack, view5);
+                                                            }
+                                                        });
+                                                        r10.addView(new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(-1, 8));
+                                                        if (chatActivity2.selectedObject.sponsoredCanReport) {
+                                                        }
+                                                    }
+                                                    chatActivity2.scrimPopupWindowItems = new ActionBarMenuSubItem[arrayList3.size()];
+                                                    size = arrayList3.size();
+                                                    i10 = 0;
+                                                    ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout13 = r10;
+                                                    while (i10 < size) {
+                                                        final ActionBarMenuSubItem actionBarMenuSubItem7 = new ActionBarMenuSubItem(getParentActivity(), i10 == 0, i10 == size + (-1), chatActivity2.themeDelegate);
+                                                        actionBarMenuSubItem7.setMinimumWidth(AndroidUtilities.dp(200.0f));
+                                                        ArrayList arrayList16 = arrayList3;
+                                                        ArrayList arrayList17 = arrayList;
+                                                        actionBarMenuSubItem7.setTextAndIcon((CharSequence) arrayList16.get(i10), ((Integer) arrayList17.get(i10)).intValue());
+                                                        final ArrayList arrayList18 = arrayList2;
+                                                        Integer num = (Integer) arrayList18.get(i10);
+                                                        if (num.intValue() == 1 && (messageObject18 = chatActivity2.selectedObject) != null) {
+                                                            if (messageObject18.messageOwner.ttl_period != 0) {
+                                                                chatActivity2.menuDeleteItem = actionBarMenuSubItem7;
+                                                                chatActivity2.updateDeleteItemRunnable.run();
+                                                                actionBarMenuSubItem7.setSubtextColor(chatActivity2.getThemedColor(Theme.key_windowBackgroundWhiteGrayText6));
+                                                            } else if (messageObject18.isPaidSuggestedPostProtected()) {
+                                                                actionBarMenuSubItem7.setSubtext(LocaleController.formatString(R.string.SuggestedOfferPaidUntil, LocaleController.formatDateTime(chatActivity2.selectedObject.messageOwner.date + getMessagesController().config.starsSuggestedPostAgeMin.get(TimeUnit.SECONDS), false)));
+                                                                actionBarMenuSubItem7.setSubtextColor(chatActivity2.getThemedColor(Theme.key_windowBackgroundWhiteGrayText6));
+                                                            }
+                                                        }
+                                                        chatActivity2.scrimPopupWindowItems[i10] = actionBarMenuSubItem7;
+                                                        if (num.intValue() == 35) {
+                                                            actionBarPopupWindowLayout13.addView((View) new ActionBarPopupWindow.GapView(chatActivity2.contentView.getContext(), chatActivity2.themeDelegate), LayoutHelper.createLinear(-1, 8));
+                                                        }
+                                                        actionBarPopupWindowLayout13.addView(actionBarMenuSubItem7);
+                                                        actionBarMenuSubItem7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda221
+                                                            @Override // android.view.View.OnClickListener
+                                                            public final void onClick(View view5) {
+                                                                ChatActivity.this.lambda$createMenu$285(i10, arrayList18, view5);
+                                                            }
+                                                        });
+                                                        if (num.intValue() == 29) {
+                                                            final boolean isContextTranslateEnabled = getMessagesController().getTranslateController().isContextTranslateEnabled();
+                                                            final String language = LocaleController.getInstance().getCurrentLocale().getLanguage();
+                                                            String toLanguage = TranslateAlert2.getToLanguage();
+                                                            int[] iArr7 = {messageObject11.getId()};
+                                                            MessageObject.GroupedMessages groupedMessages4 = groupedMessages3;
+                                                            final CharSequence messageTextToTranslate = messageObject11.getMessageTextToTranslate(groupedMessages4, iArr7);
+                                                            final Utilities.CallbackReturn callbackReturn = new Utilities.CallbackReturn() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda222
+                                                                @Override // org.telegram.messenger.Utilities.CallbackReturn
+                                                                public final Object run(Object obj) {
+                                                                    Boolean lambda$createMenu$286;
+                                                                    lambda$createMenu$286 = ChatActivity.this.lambda$createMenu$286(view, (URLSpan) obj);
+                                                                    return lambda$createMenu$286;
+                                                                }
+                                                            };
+                                                            MessageObject messageObject32 = chatActivity2.selectedObject;
+                                                            if (messageObject32 != null) {
+                                                                if (messageObject32.isPoll() || chatActivity2.selectedObject.isVoiceTranscriptionOpen() || chatActivity2.selectedObject.isSponsored() || chatActivity2.selectedObject.scheduled) {
+                                                                    groupedMessages3 = groupedMessages4;
+                                                                } else {
+                                                                    groupedMessages3 = groupedMessages4;
+                                                                }
+                                                                iArr = iArr7;
+                                                                str5 = toLanguage;
+                                                                inputPeer = null;
+                                                                messageObject17 = chatActivity2.selectedObject;
+                                                                if (messageObject17 != null && messageObject17.type == 36 && (message4 = messageObject17.messageOwner) != null) {
+                                                                    richMessage = message4.rich_message;
+                                                                    if (richMessage == null) {
+                                                                        final String str10 = messageObject17.messageOwner.originalLanguage;
+                                                                        actionBarMenuSubItem7.setVisibility(0);
+                                                                        final int[] iArr8 = iArr;
+                                                                        final int i44 = i10;
+                                                                        arrayList4 = arrayList18;
+                                                                        arrayList5 = arrayList17;
+                                                                        arrayList6 = arrayList16;
+                                                                        final String str11 = str5;
+                                                                        i11 = i10;
+                                                                        final TLRPC.InputPeer inputPeer2 = inputPeer;
+                                                                        i12 = size;
+                                                                        final TL_iv.RichMessage richMessage2 = richMessage;
+                                                                        actionBarPopupWindowLayout6 = actionBarPopupWindowLayout13;
+                                                                        final boolean z29 = z7;
+                                                                        messageObject16 = messageObject11;
+                                                                        messageObject15 = messageObject12;
+                                                                        actionBarMenuSubItem7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda223
+                                                                            @Override // android.view.View.OnClickListener
+                                                                            public final void onClick(View view5) {
+                                                                                ChatActivity.this.lambda$createMenu$288(i44, arrayList18, str10, str11, language, inputPeer2, iArr8, richMessage2, z29, callbackReturn, view5);
+                                                                            }
+                                                                        });
+                                                                    } else {
+                                                                        final int[] iArr9 = iArr;
+                                                                        arrayList4 = arrayList18;
+                                                                        arrayList5 = arrayList17;
+                                                                        arrayList6 = arrayList16;
+                                                                        i11 = i10;
+                                                                        i12 = size;
+                                                                        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout14 = actionBarPopupWindowLayout13;
+                                                                        messageObject15 = messageObject12;
+                                                                        messageObject16 = messageObject11;
+                                                                        if (messageObject17 != null && (message3 = messageObject17.messageOwner) != null && message3.originalLanguage != null) {
+                                                                            AtomicBoolean atomicBoolean4 = atomicBoolean;
+                                                                            atomicBoolean4.set(false);
+                                                                            final String str12 = chatActivity2.selectedObject.messageOwner.originalLanguage;
+                                                                            final String str13 = str5;
+                                                                            actionBarMenuSubItem7.setVisibility((str12 == null || (str12.equals(str13) && str12.equals(language) && !str12.equals(TranslateController.UNKNOWN_LANGUAGE)) || ((!isContextTranslateEnabled || RestrictedLanguagesSelectActivity.getRestrictedLanguages().contains(str12)) && ((((chat4 = chatActivity2.currentChat) == null || !(chat4.has_link || ChatObject.isPublic(chat4))) && chatActivity2.selectedObject.messageOwner.fwd_from == null) || !("uk".equals(str12) || "ru".equals(str12))))) ? 8 : 0);
+                                                                            final TLRPC.InputPeer inputPeer3 = inputPeer;
+                                                                            final boolean z30 = z7;
+                                                                            actionBarMenuSubItem7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda225
+                                                                                @Override // android.view.View.OnClickListener
+                                                                                public final void onClick(View view5) {
+                                                                                    ChatActivity.this.lambda$createMenu$290(i11, arrayList4, str12, str13, language, inputPeer3, iArr9, messageTextToTranslate, z30, callbackReturn, view5);
+                                                                                }
+                                                                            });
+                                                                            atomicBoolean = atomicBoolean4;
+                                                                            actionBarPopupWindowLayout6 = actionBarPopupWindowLayout14;
+                                                                        } else {
+                                                                            final String str14 = str5;
+                                                                            final AtomicBoolean atomicBoolean5 = atomicBoolean;
+                                                                            if (LanguageDetector.hasSupport()) {
+                                                                                final String[] strArr = {null};
+                                                                                actionBarMenuSubItem7.setVisibility(8);
+                                                                                atomicBoolean5.set(true);
+                                                                                final AtomicReference atomicReference5 = atomicReference2;
+                                                                                LanguageDetector.detectLanguage(messageTextToTranslate.toString(), new LanguageDetector.StringCallback() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda226
+                                                                                    @Override // org.telegram.messenger.LanguageDetector.StringCallback
+                                                                                    public final void run(String str15) {
+                                                                                        ChatActivity.this.lambda$createMenu$291(strArr, str14, language, isContextTranslateEnabled, actionBarMenuSubItem7, atomicBoolean5, atomicReference5, str15);
+                                                                                    }
+                                                                                }, new LanguageDetector.ExceptionCallback() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda227
+                                                                                    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
+                                                                                    public final void run(Exception exc) {
+                                                                                        ChatActivity.lambda$createMenu$292(atomicBoolean5, atomicReference5, exc);
+                                                                                    }
+                                                                                });
+                                                                                final TLRPC.InputPeer inputPeer4 = inputPeer;
+                                                                                final boolean z31 = z7;
+                                                                                atomicBoolean = atomicBoolean5;
+                                                                                atomicReference3 = atomicReference5;
+                                                                                actionBarMenuSubItem7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda228
+                                                                                    @Override // android.view.View.OnClickListener
+                                                                                    public final void onClick(View view5) {
+                                                                                        ChatActivity.this.lambda$createMenu$294(i11, arrayList4, strArr, str14, language, inputPeer4, iArr9, messageTextToTranslate, z31, callbackReturn, view5);
+                                                                                    }
+                                                                                });
+                                                                                actionBarMenuSubItem7.postDelayed(new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda229
+                                                                                    @Override // java.lang.Runnable
+                                                                                    public final void run() {
+                                                                                        ChatActivity.lambda$createMenu$295(atomicReference3);
+                                                                                    }
+                                                                                }, 250L);
+                                                                                actionBarPopupWindowLayout6 = actionBarPopupWindowLayout14;
+                                                                            } else {
+                                                                                atomicBoolean = atomicBoolean5;
+                                                                                atomicReference3 = atomicReference2;
+                                                                                if (isContextTranslateEnabled) {
+                                                                                    final TLRPC.InputPeer inputPeer5 = inputPeer;
+                                                                                    final boolean z32 = z7;
+                                                                                    actionBarMenuSubItem7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda230
+                                                                                        @Override // android.view.View.OnClickListener
+                                                                                        public final void onClick(View view5) {
+                                                                                            ChatActivity.this.lambda$createMenu$297(i11, arrayList4, inputPeer5, iArr9, str14, messageTextToTranslate, z32, callbackReturn, view5);
+                                                                                        }
+                                                                                    });
+                                                                                    actionBarPopupWindowLayout6 = actionBarPopupWindowLayout14;
+                                                                                } else {
+                                                                                    actionBarMenuSubItem7.setVisibility(8);
+                                                                                    actionBarPopupWindowLayout6 = actionBarPopupWindowLayout14;
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    atomicReference3 = atomicReference2;
+                                                                    i10 = i11 + 1;
+                                                                    chatActivity2 = this;
+                                                                    atomicReference2 = atomicReference3;
+                                                                    arrayList2 = arrayList4;
+                                                                    arrayList = arrayList5;
+                                                                    arrayList3 = arrayList6;
+                                                                    size = i12;
+                                                                    actionBarPopupWindowLayout13 = actionBarPopupWindowLayout6;
+                                                                    messageObject11 = messageObject16;
+                                                                    messageObject12 = messageObject15;
+                                                                }
+                                                                richMessage = null;
+                                                                if (richMessage == null) {
+                                                                }
+                                                                atomicReference3 = atomicReference2;
+                                                                i10 = i11 + 1;
+                                                                chatActivity2 = this;
+                                                                atomicReference2 = atomicReference3;
+                                                                arrayList2 = arrayList4;
+                                                                arrayList = arrayList5;
+                                                                arrayList3 = arrayList6;
+                                                                size = i12;
+                                                                actionBarPopupWindowLayout13 = actionBarPopupWindowLayout6;
+                                                                messageObject11 = messageObject16;
+                                                                messageObject12 = messageObject15;
+                                                            } else {
+                                                                groupedMessages3 = groupedMessages4;
+                                                            }
+                                                            iArr = iArr7;
+                                                            str5 = toLanguage;
+                                                            inputPeer = getMessagesController().getInputPeer(chatActivity2.dialog_id);
+                                                            messageObject17 = chatActivity2.selectedObject;
+                                                            if (messageObject17 != null) {
+                                                                richMessage = message4.rich_message;
+                                                                if (richMessage == null) {
+                                                                }
+                                                                atomicReference3 = atomicReference2;
+                                                                i10 = i11 + 1;
+                                                                chatActivity2 = this;
+                                                                atomicReference2 = atomicReference3;
+                                                                arrayList2 = arrayList4;
+                                                                arrayList = arrayList5;
+                                                                arrayList3 = arrayList6;
+                                                                size = i12;
+                                                                actionBarPopupWindowLayout13 = actionBarPopupWindowLayout6;
+                                                                messageObject11 = messageObject16;
+                                                                messageObject12 = messageObject15;
+                                                            }
+                                                            richMessage = null;
+                                                            if (richMessage == null) {
+                                                            }
+                                                            atomicReference3 = atomicReference2;
+                                                            i10 = i11 + 1;
+                                                            chatActivity2 = this;
+                                                            atomicReference2 = atomicReference3;
+                                                            arrayList2 = arrayList4;
+                                                            arrayList = arrayList5;
+                                                            arrayList3 = arrayList6;
+                                                            size = i12;
+                                                            actionBarPopupWindowLayout13 = actionBarPopupWindowLayout6;
+                                                            messageObject11 = messageObject16;
+                                                            messageObject12 = messageObject15;
+                                                        } else {
+                                                            arrayList4 = arrayList18;
+                                                            arrayList5 = arrayList17;
+                                                            arrayList6 = arrayList16;
+                                                            i11 = i10;
+                                                            i12 = size;
+                                                            actionBarPopupWindowLayout6 = actionBarPopupWindowLayout13;
+                                                            messageObject15 = messageObject12;
+                                                            atomicReference3 = atomicReference2;
+                                                            messageObject16 = messageObject11;
+                                                        }
+                                                        i10 = i11 + 1;
+                                                        chatActivity2 = this;
+                                                        atomicReference2 = atomicReference3;
+                                                        arrayList2 = arrayList4;
+                                                        arrayList = arrayList5;
+                                                        arrayList3 = arrayList6;
+                                                        size = i12;
+                                                        actionBarPopupWindowLayout13 = actionBarPopupWindowLayout6;
+                                                        messageObject11 = messageObject16;
+                                                        messageObject12 = messageObject15;
+                                                    }
+                                                    actionBarPopupWindowLayout5 = actionBarPopupWindowLayout13;
+                                                    chatActivity = chatActivity2;
+                                                    messageObject5 = messageObject12;
+                                                    atomicReference = atomicReference2;
+                                                    messageObject6 = messageObject11;
+                                                    messageObject14 = chatActivity.selectedObject;
+                                                    if (messageObject14 == null && (message2 = messageObject14.messageOwner) != null && message2.video_processing_pending) {
+                                                        ?? r7 = actionBarPopupWindowLayout5;
+                                                        r7.addView(new ActionBarPopupWindow.GapView(chatActivity.contentView.getContext(), chatActivity.themeDelegate), LayoutHelper.createLinear(-1, 8));
+                                                        FrameLayout frameLayout9 = new FrameLayout(getParentActivity());
+                                                        TextView textView6 = new TextView(getParentActivity()) { // from class: org.telegram.ui.ChatActivity.113
+                                                            @Override // android.widget.TextView, android.view.View
+                                                            protected void onMeasure(int i45, int i46) {
+                                                                if (View.MeasureSpec.getMode(i45) == Integer.MIN_VALUE && getLayout() != null) {
+                                                                    Layout layout = getLayout();
+                                                                    int i47 = 0;
+                                                                    for (int i48 = 0; i48 < layout.getLineCount(); i48++) {
+                                                                        i47 = Math.max(i47, (int) Math.ceil(layout.getLineWidth(i48)));
+                                                                    }
+                                                                    i45 = View.MeasureSpec.makeMeasureSpec(getPaddingLeft() + i47 + getPaddingRight(), TLObject.FLAG_30);
+                                                                }
+                                                                super.onMeasure(i45, i46);
+                                                            }
+                                                        };
+                                                        textView6.setMaxLines(6);
+                                                        i = 3;
+                                                        textView6.setGravity(3);
+                                                        textView6.setEllipsize(TextUtils.TruncateAt.END);
+                                                        textView6.setTextColor(chatActivity.getThemedColor(Theme.key_actionBarDefaultSubmenuItem));
+                                                        textView6.setTextSize(1, 13.0f);
+                                                        textView6.setMaxWidth(AndroidUtilities.dp(240.0f));
+                                                        textView6.setText(LocaleController.getString(R.string.VideoConversionInfo));
+                                                        textView6.setPadding(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
+                                                        frameLayout9.addView(textView6, LayoutHelper.createFrame(-2, -2, 119));
+                                                        r7.addView(frameLayout9);
+                                                        actionBarPopupWindowLayout2 = r7;
+                                                    } else {
+                                                        actionBarPopupWindowLayout2 = actionBarPopupWindowLayout5;
+                                                        i = 3;
                                                     }
                                                 }
-                                                str2 = str;
-                                                z13 = false;
-                                                if (z5) {
+                                                i9 = 36;
+                                                if (z26) {
+                                                }
+                                                MessageObject messageObject302 = chatActivity2.selectedObject;
+                                                if (messageObject302 != null) {
+                                                }
+                                                if (!z14) {
+                                                    ActionBarMenuSubItem actionBarMenuSubItem42 = new ActionBarMenuSubItem((Context) getParentActivity(), z10 && !z26, false, (Theme.ResourcesProvider) chatActivity2.themeDelegate);
+                                                    actionBarMenuSubItem42.setMinimumWidth(AndroidUtilities.dp(200.0f));
+                                                    actionBarMenuSubItem42.setTextAndIcon(LocaleController.getString(R.string.SaveForNotifications), R.drawable.msg_tone_add);
+                                                    r10.addView(actionBarMenuSubItem42);
+                                                    actionBarMenuSubItem42.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda208
+                                                        @Override // android.view.View.OnClickListener
+                                                        public final void onClick(View view42) {
+                                                            ChatActivity.this.lambda$createMenu$269(messageObject10, view42);
+                                                        }
+                                                    });
+                                                    z13 = true;
+                                                }
+                                                if (z13) {
                                                 }
                                                 if (z25) {
                                                 }
-                                                Activity parentActivity222 = getParentActivity();
-                                                ArrayList arrayList12222 = arrayList10;
-                                                int i28222 = R.drawable.popup_fixed_alert4;
-                                                final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout8222 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity222, i28222, this.themeDelegate, i27);
-                                                actionBarPopupWindowLayout8222.setMinimumWidth(AndroidUtilities.dp(200.0f));
-                                                Rect rect4222 = new Rect();
-                                                getParentActivity().getResources().getDrawable(i28222).mutate().getPadding(rect4222);
-                                                actionBarPopupWindowLayout8222.setBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
-                                                if (actionBarPopupWindowLayout != null) {
+                                                if (r10.getSwipeBack() != null) {
                                                 }
-                                                messageObject7 = chatActivity.selectedObject;
-                                                if (messageObject7 != null) {
+                                                if (z14) {
                                                 }
-                                                ChatScrimPopupContainerLayout chatScrimPopupContainerLayout3222 = new ChatScrimPopupContainerLayout(chatActivity.contentView.getContext()) { // from class: org.telegram.ui.ChatActivity.114
-                                                    @Override // android.view.ViewGroup, android.view.View
-                                                    public boolean dispatchKeyEvent(KeyEvent keyEvent) {
-                                                        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
-                                                            ChatActivity.this.closeMenu();
-                                                        }
-                                                        return super.dispatchKeyEvent(keyEvent);
+                                                messageObject13 = chatActivity2.selectedObject;
+                                                if (messageObject13 == null) {
+                                                }
+                                                chatActivity2.scrimPopupWindowItems = new ActionBarMenuSubItem[arrayList3.size()];
+                                                size = arrayList3.size();
+                                                i10 = 0;
+                                                ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout132 = r10;
+                                                while (i10 < size) {
+                                                }
+                                                actionBarPopupWindowLayout5 = actionBarPopupWindowLayout132;
+                                                chatActivity = chatActivity2;
+                                                messageObject5 = messageObject12;
+                                                atomicReference = atomicReference2;
+                                                messageObject6 = messageObject11;
+                                                messageObject14 = chatActivity.selectedObject;
+                                                if (messageObject14 == null) {
+                                                }
+                                                actionBarPopupWindowLayout2 = actionBarPopupWindowLayout5;
+                                                i = 3;
+                                            } else {
+                                                messageObject5 = messageObject4;
+                                                atomicBoolean = atomicBoolean2;
+                                                rect = rect4;
+                                                messageObject6 = messageObject2;
+                                                actionBarPopupWindowLayout2 = actionBarPopupWindowLayout9;
+                                                actionBarPopupWindowLayout3 = actionBarPopupWindowLayout;
+                                                chatActivity = this;
+                                                atomicReference = atomicReference4;
+                                                rect2 = rect3;
+                                                i = 3;
+                                                i2 = 24;
+                                            }
+                                            messageObject7 = chatActivity.selectedObject;
+                                            if (messageObject7 != null && messageObject7.isEphemeral()) {
+                                                actionBarPopupWindowLayout2.addView((View) new ActionBarPopupWindow.GapView(chatActivity.contentView.getContext(), chatActivity.themeDelegate), LayoutHelper.createLinear(-1, 8));
+                                                View createMenuTextOption = createMenuTextOption(getContext(), chatActivity.themeDelegate, LocaleController.getString(R.string.EphemeralMessageMenuHint), 13);
+                                                createMenuTextOption.setMinimumHeight(AndroidUtilities.dp(32.0f));
+                                                actionBarPopupWindowLayout2.addView(createMenuTextOption, LayoutHelper.createLinear(-1, -2));
+                                            }
+                                            ChatScrimPopupContainerLayout chatScrimPopupContainerLayout3 = new ChatScrimPopupContainerLayout(chatActivity.contentView.getContext()) { // from class: org.telegram.ui.ChatActivity.114
+                                                @Override // android.view.ViewGroup, android.view.View
+                                                public boolean dispatchKeyEvent(KeyEvent keyEvent) {
+                                                    if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
+                                                        ChatActivity.this.closeMenu();
                                                     }
+                                                    return super.dispatchKeyEvent(keyEvent);
+                                                }
 
-                                                    @Override // android.view.ViewGroup, android.view.View
-                                                    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-                                                        boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
-                                                        if (motionEvent.getAction() == 0 && !dispatchTouchEvent) {
-                                                            ChatActivity.this.closeMenu();
-                                                        }
-                                                        return dispatchTouchEvent;
+                                                @Override // android.view.ViewGroup, android.view.View
+                                                public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+                                                    boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+                                                    if (motionEvent.getAction() == 0 && !dispatchTouchEvent) {
+                                                        ChatActivity.this.closeMenu();
                                                     }
-                                                };
-                                                final Rect rect5222 = rect;
-                                                chatScrimPopupContainerLayout3222.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChatActivity.115
-                                                    private int[] pos = new int[2];
+                                                    return dispatchTouchEvent;
+                                                }
+                                            };
+                                            final Rect rect5 = rect2;
+                                            chatScrimPopupContainerLayout3.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChatActivity.115
+                                                private int[] pos = new int[2];
 
-                                                    @Override // android.view.View.OnTouchListener
-                                                    public boolean onTouch(View view5, MotionEvent motionEvent) {
-                                                        if (motionEvent.getActionMasked() == 0) {
-                                                            ActionBarPopupWindow actionBarPopupWindow222 = ChatActivity.this.scrimPopupWindow;
-                                                            if (actionBarPopupWindow222 != null && actionBarPopupWindow222.isShowing()) {
-                                                                View contentView = ChatActivity.this.scrimPopupWindow.getContentView();
-                                                                contentView.getLocationInWindow(this.pos);
-                                                                Rect rect6222 = rect5222;
-                                                                int[] iArr102 = this.pos;
-                                                                int i422 = iArr102[0];
-                                                                rect6222.set(i422, iArr102[1], contentView.getMeasuredWidth() + i422, this.pos[1] + contentView.getMeasuredHeight());
-                                                                if (!rect5222.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                                                                    ChatActivity.this.closeMenu();
+                                                @Override // android.view.View.OnTouchListener
+                                                public boolean onTouch(View view5, MotionEvent motionEvent) {
+                                                    if (motionEvent.getActionMasked() == 0) {
+                                                        ActionBarPopupWindow actionBarPopupWindow = ChatActivity.this.scrimPopupWindow;
+                                                        if (actionBarPopupWindow != null && actionBarPopupWindow.isShowing()) {
+                                                            View contentView = ChatActivity.this.scrimPopupWindow.getContentView();
+                                                            contentView.getLocationInWindow(this.pos);
+                                                            Rect rect6 = rect5;
+                                                            int[] iArr10 = this.pos;
+                                                            int i45 = iArr10[0];
+                                                            rect6.set(i45, iArr10[1], contentView.getMeasuredWidth() + i45, this.pos[1] + contentView.getMeasuredHeight());
+                                                            if (!rect5.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                                                                ChatActivity.this.closeMenu();
+                                                            }
+                                                        }
+                                                    } else if (motionEvent.getActionMasked() == 4) {
+                                                        ChatActivity.this.closeMenu();
+                                                    }
+                                                    return false;
+                                                }
+                                            });
+                                            actionBarPopupWindowLayout4 = actionBarPopupWindowLayout3;
+                                            if (actionBarPopupWindowLayout4 != null) {
+                                                chatScrimPopupContainerLayout3.addView(actionBarPopupWindowLayout4);
+                                                chatScrimPopupContainerLayout = chatScrimPopupContainerLayout3;
+                                                reactionsContainerLayout = null;
+                                            } else {
+                                                boolean z33 = getUserConfig().getClientUserId() == getDialogId();
+                                                reactionsContainerLayout = new ReactionsContainerLayout(z33 ? 3 : 0, this, chatActivity.contentView.getContext(), chatActivity.currentAccount, getResourceProvider());
+                                                if (z33) {
+                                                    reactionsContainerLayout.setHint(getUserConfig().isPremium() ? LocaleController.getString(R.string.SavedTagReactionsHint2) : AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.SavedTagReactionsPremiumHint), Theme.key_windowBackgroundWhiteBlueText2, 0, new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda231
+                                                        @Override // java.lang.Runnable
+                                                        public final void run() {
+                                                            ChatActivity.this.lambda$createMenu$299();
+                                                        }
+                                                    }));
+                                                }
+                                                if (!z8 || (z33 && getMessagesController().premiumFeaturesBlocked())) {
+                                                    messageObject8 = messageObject6;
+                                                } else {
+                                                    int dp4 = AndroidUtilities.dp(4.0f) + (LocaleController.isRTL ? 0 : 24);
+                                                    int dp5 = AndroidUtilities.dp(4.0f);
+                                                    int dp6 = AndroidUtilities.dp(4.0f);
+                                                    if (!LocaleController.isRTL) {
+                                                        i2 = 0;
+                                                    }
+                                                    float f4 = 22;
+                                                    reactionsContainerLayout.setPadding(dp4, dp5, dp6 + i2, AndroidUtilities.dp(f4));
+                                                    final MessageObject messageObject33 = messageObject5;
+                                                    reactionsContainerLayout.setDelegate(new ReactionsContainerLayout.ReactionsContainerDelegate() { // from class: org.telegram.ui.ChatActivity.116
+                                                        @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
+                                                        public /* synthetic */ boolean allowLongPress() {
+                                                            return ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$allowLongPress(this);
+                                                        }
+
+                                                        @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
+                                                        public /* synthetic */ boolean drawBackground() {
+                                                            return ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$drawBackground(this);
+                                                        }
+
+                                                        @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
+                                                        public /* synthetic */ void drawRoundRect(Canvas canvas, RectF rectF, float f5, float f6, float f7, int i45, boolean z34) {
+                                                            ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$drawRoundRect(this, canvas, rectF, f5, f6, f7, i45, z34);
+                                                        }
+
+                                                        @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
+                                                        public /* synthetic */ boolean needEnterText() {
+                                                            return ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$needEnterText(this);
+                                                        }
+
+                                                        @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
+                                                        public /* synthetic */ void onEmojiWindowDismissed() {
+                                                            ReactionsContainerLayout.ReactionsContainerDelegate.-CC.$default$onEmojiWindowDismissed(this);
+                                                        }
+
+                                                        @Override // org.telegram.ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
+                                                        public void onReactionClicked(View view5, ReactionsLayoutInBubble.VisibleReaction visibleReaction, boolean z34, boolean z35) {
+                                                            float f5;
+                                                            float f6;
+                                                            int i45;
+                                                            float f7;
+                                                            BaseCell findMessageCell = ChatActivity.this.findMessageCell(messageObject33.getId(), true);
+                                                            if (findMessageCell instanceof ChatMessageCell) {
+                                                                ChatMessageCell chatMessageCell2 = (ChatMessageCell) findMessageCell;
+                                                                ReactionsLayoutInBubble.ReactionButton reactionButton = chatMessageCell2.reactionsLayoutInBubble.getReactionButton(visibleReaction);
+                                                                if (reactionButton != null) {
+                                                                    f5 = r1.x + reactionButton.x + (reactionButton.width / 2.0f);
+                                                                    f6 = chatMessageCell2.reactionsLayoutInBubble.y + reactionButton.y;
+                                                                    i45 = reactionButton.height;
+                                                                    f7 = f6 + (i45 / 2.0f);
+                                                                }
+                                                                f5 = 0.0f;
+                                                                f7 = 0.0f;
+                                                            } else {
+                                                                if (findMessageCell instanceof ChatActionCell) {
+                                                                    ChatActionCell chatActionCell = (ChatActionCell) findMessageCell;
+                                                                    ReactionsLayoutInBubble.ReactionButton reactionButton2 = chatActionCell.reactionsLayoutInBubble.getReactionButton(visibleReaction);
+                                                                    if (reactionButton2 != null) {
+                                                                        f5 = r1.x + reactionButton2.x + (reactionButton2.width / 2.0f);
+                                                                        f6 = chatActionCell.reactionsLayoutInBubble.y + reactionButton2.y;
+                                                                        i45 = reactionButton2.height;
+                                                                        f7 = f6 + (i45 / 2.0f);
+                                                                    }
+                                                                }
+                                                                f5 = 0.0f;
+                                                                f7 = 0.0f;
+                                                            }
+                                                            ChatActivity.this.selectReaction(findMessageCell, messageObject33, reactionsContainerLayout, view5, f5, f7, visibleReaction, false, (visibleReaction == null || !visibleReaction.isStar) ? z34 : true, z35, false);
+                                                        }
+                                                    });
+                                                    chatScrimPopupContainerLayout3.addView(reactionsContainerLayout, LayoutHelper.createLinear(-1, (int) ((reactionsContainerLayout.getTopOffset() / AndroidUtilities.density) + 52.0f + f4), 5, 0, 50, 0, -20));
+                                                    chatScrimPopupContainerLayout3.setReactionsLayout(reactionsContainerLayout);
+                                                    chatScrimPopupContainerLayout3.setClipChildren(false);
+                                                    messageObject8 = messageObject6;
+                                                    MessageObject.GroupedMessages validGroupedMessage2 = chatActivity.getValidGroupedMessage(messageObject8);
+                                                    reactionsContainerLayout.setMessage(validGroupedMessage2 != null ? validGroupedMessage2.findPrimaryMessageObject() : messageObject8, chatActivity.chatInfo, true);
+                                                    reactionsContainerLayout.setTransitionProgress(0.0f);
+                                                    if (actionBarPopupWindowLayout2.getSwipeBack() != null) {
+                                                        actionBarPopupWindowLayout2.getSwipeBack().addOnSwipeBackProgressListener(new PopupSwipeBackLayout.OnSwipeBackProgressListener() { // from class: org.telegram.ui.ChatActivity.117
+                                                            boolean isEnter = true;
+
+                                                            @Override // org.telegram.ui.Components.PopupSwipeBackLayout.OnSwipeBackProgressListener
+                                                            public void onSwipeBackProgress(PopupSwipeBackLayout popupSwipeBackLayout, float f5, float f6) {
+                                                                if (f5 == 0.0f && !this.isEnter) {
+                                                                    reactionsContainerLayout.startEnterAnimation(false);
+                                                                    this.isEnter = true;
+                                                                } else if (f5 == 1.0f && this.isEnter) {
+                                                                    reactionsContainerLayout.setAlpha(1.0f - f6);
+                                                                    if (f6 == 1.0f) {
+                                                                        this.isEnter = false;
+                                                                    }
                                                                 }
                                                             }
-                                                        } else if (motionEvent.getActionMasked() == 4) {
-                                                            ChatActivity.this.closeMenu();
-                                                        }
-                                                        return false;
+                                                        });
                                                     }
-                                                });
-                                                actionBarPopupWindowLayout4 = actionBarPopupWindowLayout2;
-                                                if (actionBarPopupWindowLayout4 == null) {
                                                 }
-                                                View chatScrimPopupContainerLayout7222 = chatScrimPopupContainerLayout;
-                                                if (reactionsContainerLayout != null) {
-                                                }
-                                                final ReactionsContainerLayout reactionsContainerLayout2222 = reactionsContainerLayout;
-                                                ActionBarPopupWindow actionBarPopupWindow222 = new ActionBarPopupWindow(chatScrimPopupContainerLayout7222, -2, -2) { // from class: org.telegram.ui.ChatActivity.119
-                                                    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
-                                                    public void dismiss() {
-                                                        super.dismiss();
-                                                        if (ChatActivity.this.scrimPopupWindow != this) {
-                                                            return;
-                                                        }
-                                                        Bulletin visibleBulletin = Bulletin.getVisibleBulletin();
-                                                        Bulletin bulletin = ChatActivity.this.messageSeenPrivacyBulletin;
-                                                        if (visibleBulletin == bulletin && bulletin != null) {
-                                                            bulletin.hide();
-                                                            ChatActivity.this.messageSeenPrivacyBulletin = null;
-                                                        }
-                                                        ChatActivity chatActivity3 = ChatActivity.this;
-                                                        chatActivity3.scrimPopupWindow = null;
-                                                        chatActivity3.menuDeleteItem = null;
-                                                        ChatActivity.this.scrimPopupWindowItems = null;
-                                                        ChatActivity.this.chatLayoutManager.setCanScrollVertically(true);
-                                                        if (!ChatActivity.this.scrimPopupWindowHideDimOnDismiss) {
-                                                            ChatActivity.this.scrimPopupWindowHideDimOnDismiss = true;
+                                                boolean z34 = ((!isPeerNoForwards() && (!messageObject8.messageOwner.noforwards || (user2 = chatActivity.currentUser) == null || !user2.bot)) || messageObject8.messageOwner.action != null || !messageObject8.isSent() || messageObject8.isEditing() || (i3 = chatActivity.chatMode) == 1 || i3 == i || getDialogId() == UserObject.VERIFY) ? false : true;
+                                                chatScrimPopupContainerLayout3.addView(actionBarPopupWindowLayout2, LayoutHelper.createLinearRelatively(-2.0f, -2.0f, 3, z8 ? 16.0f : 0.0f, 0.0f, z8 ? 36.0f : 0.0f, 0.0f));
+                                                chatScrimPopupContainerLayout3.setPopupWindowLayout(actionBarPopupWindowLayout2);
+                                                if (z34) {
+                                                    actionBarPopupWindowLayout2.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
+                                                    boolean z35 = ChatObject.isChannel(chatActivity.currentChat) && !chatActivity.currentChat.megagroup;
+                                                    TextView textView7 = new TextView(chatActivity.contentView.getContext());
+                                                    textView7.setTextSize(1, 14.0f);
+                                                    textView7.setTextColor(chatActivity.getThemedColor(Theme.key_actionBarDefaultSubmenuItem));
+                                                    if (isPeerNoForwards()) {
+                                                        if (getDialogId() > 0) {
+                                                            TLRPC.UserFull userFull4 = chatActivity.userInfo;
+                                                            if (userFull4 != null && (user = chatActivity.currentUser) != null && userFull4.noforwards_peer_enabled) {
+                                                                string = LocaleController.formatString(R.string.ForwardsRestrictedInfoUserBecauseUser, DialogObject.getShortName(user));
+                                                            } else if (userFull4 != null && chatActivity.currentUser != null && userFull4.noforwards_my_enabled) {
+                                                                string = LocaleController.getString(R.string.ForwardsRestrictedInfoUserBecauseYou);
+                                                            } else {
+                                                                string = LocaleController.getString(R.string.ForwardsRestrictedInfoUser);
+                                                            }
                                                         } else {
-                                                            ChatActivity.this.dimBehindView(false);
+                                                            string = LocaleController.getString(z35 ? R.string.ForwardsRestrictedInfoChannel : R.string.ForwardsRestrictedInfoGroup);
                                                         }
-                                                        ChatActivityEnterView chatActivityEnterView3 = ChatActivity.this.chatActivityEnterView;
-                                                        if (chatActivityEnterView3 == null || chatActivityEnterView3.getEditField() == null) {
-                                                            return;
-                                                        }
-                                                        ChatActivity.this.chatActivityEnterView.getEditField().setAllowDrawCursor(true);
+                                                        textView7.setText(AndroidUtilities.replaceTags((CharSequence) string));
+                                                    } else {
+                                                        textView7.setText(LocaleController.getString(R.string.ForwardsRestrictedInfoBot));
                                                     }
+                                                    textView7.setMaxWidth(actionBarPopupWindowLayout2.getMeasuredWidth() - AndroidUtilities.dp(38.0f));
+                                                    Drawable mutate3 = ContextCompat.getDrawable(chatActivity.contentView.getContext(), R.drawable.popup_fixed_alert4).mutate();
+                                                    mutate3.setColorFilter(new PorterDuffColorFilter(chatActivity.getThemedColor(Theme.key_actionBarDefaultSubmenuBackground), PorterDuff.Mode.MULTIPLY));
+                                                    FrameLayout frameLayout10 = new FrameLayout(chatActivity.contentView.getContext());
+                                                    frameLayout10.setBackground(mutate3);
+                                                    frameLayout10.addView(textView7, LayoutHelper.createFrame(-1, -2.0f, 0, 11.0f, 11.0f, 11.0f, 11.0f));
+                                                    chatScrimPopupContainerLayout3.addView(frameLayout10, LayoutHelper.createLinear(-1, -2, 3, z8 ? 16 : 0, -8, z8 ? 36 : 0, 0));
+                                                    chatScrimPopupContainerLayout3.applyViewBottom(frameLayout10);
+                                                }
+                                                if (messageObject8.isSendError() && (message = messageObject8.messageOwner) != null && message.errorNewPriceStars > 0) {
+                                                    actionBarPopupWindowLayout2.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
+                                                    TextView textView8 = new TextView(chatActivity.contentView.getContext());
+                                                    textView8.setTextSize(1, 14.0f);
+                                                    textView8.setTextColor(chatActivity.getThemedColor(Theme.key_actionBarDefaultSubmenuItem));
+                                                    SpannableStringBuilder replaceStars = StarsIntroActivity.replaceStars(LocaleController.formatPluralString("PaidMessagesSendErrorState1", (int) messageObject8.messageOwner.errorAllowedPriceStars, new Object[0]));
+                                                    SpannableStringBuilder replaceStars2 = StarsIntroActivity.replaceStars(LocaleController.formatPluralString("PaidMessagesSendErrorState2", (int) messageObject8.messageOwner.errorNewPriceStars, new Object[0]));
+                                                    CharSequence[] charSequenceArr = new CharSequence[i];
+                                                    charSequenceArr[0] = replaceStars;
+                                                    charSequenceArr[1] = " ";
+                                                    charSequenceArr[2] = replaceStars2;
+                                                    textView8.setText(TextUtils.concat(charSequenceArr));
+                                                    textView8.setMaxWidth(actionBarPopupWindowLayout2.getMeasuredWidth() - AndroidUtilities.dp(38.0f));
+                                                    Drawable mutate4 = ContextCompat.getDrawable(chatActivity.contentView.getContext(), R.drawable.popup_fixed_alert4).mutate();
+                                                    mutate4.setColorFilter(new PorterDuffColorFilter(chatActivity.getThemedColor(Theme.key_actionBarDefaultSubmenuBackground), PorterDuff.Mode.MULTIPLY));
+                                                    FrameLayout frameLayout11 = new FrameLayout(chatActivity.contentView.getContext());
+                                                    frameLayout11.setBackground(mutate4);
+                                                    frameLayout11.addView(textView8, LayoutHelper.createFrame(-1, -2.0f, 0, 11.0f, 11.0f, 11.0f, 11.0f));
+                                                    chatScrimPopupContainerLayout3.addView(frameLayout11, LayoutHelper.createLinear(-1, -2, 3, z8 ? 16 : 0, -8, z8 ? 36 : 0, 0));
+                                                    chatScrimPopupContainerLayout3.applyViewBottom(frameLayout11);
+                                                }
+                                                if (messageObject8.contentType == 0) {
+                                                    CharSequence charSequence = messageObject8.messageText;
+                                                    AnimatedEmojiSpan[] animatedEmojiSpanArr = charSequence instanceof Spanned ? (AnimatedEmojiSpan[]) ((Spanned) charSequence).getSpans(0, charSequence.length(), AnimatedEmojiSpan.class) : null;
+                                                    CharSequence messageCaption = chatActivity.getMessageCaption(chatActivity.selectedObject, chatActivity.selectedObjectGroup);
+                                                    AnimatedEmojiSpan[] animatedEmojiSpanArr2 = messageCaption instanceof Spanned ? (AnimatedEmojiSpan[]) ((Spanned) messageCaption).getSpans(0, messageCaption.length(), AnimatedEmojiSpan.class) : null;
+                                                    int length = (animatedEmojiSpanArr == null ? 0 : animatedEmojiSpanArr.length) + (animatedEmojiSpanArr2 == null ? 0 : animatedEmojiSpanArr2.length);
+                                                    if (length > 0) {
+                                                        final ArrayList arrayList19 = new ArrayList();
+                                                        int length2 = animatedEmojiSpanArr == null ? 0 : animatedEmojiSpanArr.length;
+                                                        int i45 = 0;
+                                                        ChatScrimPopupContainerLayout chatScrimPopupContainerLayout4 = chatScrimPopupContainerLayout3;
+                                                        while (i45 < length) {
+                                                            AnimatedEmojiSpan animatedEmojiSpan = i45 < length2 ? animatedEmojiSpanArr[i45] : animatedEmojiSpanArr2[i45 - length2];
+                                                            if (animatedEmojiSpan != null && !animatedEmojiSpan.standard) {
+                                                                TLRPC.Document document = animatedEmojiSpan.document;
+                                                                if (document == null) {
+                                                                    document = AnimatedEmojiDrawable.findDocument(chatActivity.currentAccount, animatedEmojiSpan.documentId);
+                                                                }
+                                                                TLRPC.InputStickerSet inputStickerSet = MessageObject.getInputStickerSet(document);
+                                                                if (inputStickerSet != null) {
+                                                                    int i46 = 0;
+                                                                    ChatScrimPopupContainerLayout chatScrimPopupContainerLayout5 = chatScrimPopupContainerLayout4;
+                                                                    while (true) {
+                                                                        if (i46 >= arrayList19.size()) {
+                                                                            chatScrimPopupContainerLayout2 = chatScrimPopupContainerLayout5;
+                                                                            i4 = 1;
+                                                                            z12 = false;
+                                                                            break;
+                                                                        }
+                                                                        ChatScrimPopupContainerLayout chatScrimPopupContainerLayout6 = chatScrimPopupContainerLayout5;
+                                                                        i4 = 1;
+                                                                        if (((TLRPC.InputStickerSet) arrayList19.get(i46)).id == inputStickerSet.id) {
+                                                                            z12 = true;
+                                                                            chatScrimPopupContainerLayout2 = chatScrimPopupContainerLayout6;
+                                                                            break;
+                                                                        }
+                                                                        i46++;
+                                                                        chatScrimPopupContainerLayout5 = chatScrimPopupContainerLayout6;
+                                                                    }
+                                                                    if (!z12) {
+                                                                        arrayList19.add(inputStickerSet);
+                                                                    }
+                                                                    i45 += i4;
+                                                                    chatScrimPopupContainerLayout4 = chatScrimPopupContainerLayout2;
+                                                                }
+                                                            }
+                                                            chatScrimPopupContainerLayout2 = chatScrimPopupContainerLayout4;
+                                                            i4 = 1;
+                                                            i45 += i4;
+                                                            chatScrimPopupContainerLayout4 = chatScrimPopupContainerLayout2;
+                                                        }
+                                                        chatScrimPopupContainerLayout = chatScrimPopupContainerLayout4;
+                                                        if (arrayList19.size() > 0 && !getMessagesController().premiumFeaturesBlocked()) {
+                                                            FrameLayout frameLayout12 = new FrameLayout(chatActivity.contentView.getContext());
+                                                            frameLayout12.setBackgroundColor(chatActivity.getThemedColor(Theme.key_actionBarDefaultSubmenuSeparator));
+                                                            actionBarPopupWindowLayout2.addView((View) frameLayout12, LayoutHelper.createLinear(-1, 8));
+                                                            MessageContainsEmojiButton messageContainsEmojiButton = new MessageContainsEmojiButton(chatActivity.currentAccount, chatActivity.contentView.getContext(), chatActivity.themeDelegate, arrayList19, 0);
+                                                            messageContainsEmojiButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda232
+                                                                @Override // android.view.View.OnClickListener
+                                                                public final void onClick(View view5) {
+                                                                    ChatActivity.this.lambda$createMenu$300(arrayList19, view5);
+                                                                }
+                                                            });
+                                                            actionBarPopupWindowLayout2.addView((View) messageContainsEmojiButton, LayoutHelper.createLinear(-1, -2));
+                                                            actionBarPopupWindowLayout2.precalculateHeight();
+                                                        }
+                                                    }
+                                                }
+                                                chatScrimPopupContainerLayout = chatScrimPopupContainerLayout3;
+                                            }
+                                            ChatScrimPopupContainerLayout chatScrimPopupContainerLayout7 = chatScrimPopupContainerLayout;
+                                            if (reactionsContainerLayout != null) {
+                                                reactionsContainerLayout.setParentLayout(chatScrimPopupContainerLayout7);
+                                            }
+                                            final ReactionsContainerLayout reactionsContainerLayout2 = reactionsContainerLayout;
+                                            ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(chatScrimPopupContainerLayout7, -2, -2) { // from class: org.telegram.ui.ChatActivity.119
+                                                @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
+                                                public void dismiss() {
+                                                    super.dismiss();
+                                                    if (ChatActivity.this.scrimPopupWindow != this) {
+                                                        return;
+                                                    }
+                                                    Bulletin visibleBulletin = Bulletin.getVisibleBulletin();
+                                                    Bulletin bulletin = ChatActivity.this.messageSeenPrivacyBulletin;
+                                                    if (visibleBulletin == bulletin && bulletin != null) {
+                                                        bulletin.hide();
+                                                        ChatActivity.this.messageSeenPrivacyBulletin = null;
+                                                    }
+                                                    ChatActivity chatActivity3 = ChatActivity.this;
+                                                    chatActivity3.scrimPopupWindow = null;
+                                                    chatActivity3.menuDeleteItem = null;
+                                                    ChatActivity.this.scrimPopupWindowItems = null;
+                                                    ChatActivity.this.chatLayoutManager.setCanScrollVertically(true);
+                                                    if (!ChatActivity.this.scrimPopupWindowHideDimOnDismiss) {
+                                                        ChatActivity.this.scrimPopupWindowHideDimOnDismiss = true;
+                                                    } else {
+                                                        ChatActivity.this.dimBehindView(false);
+                                                    }
+                                                    ChatActivityEnterView chatActivityEnterView3 = ChatActivity.this.chatActivityEnterView;
+                                                    if (chatActivityEnterView3 == null || chatActivityEnterView3.getEditField() == null) {
+                                                        return;
+                                                    }
+                                                    ChatActivity.this.chatActivityEnterView.getEditField().setAllowDrawCursor(true);
+                                                }
 
-                                                    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow
-                                                    public void dismiss(boolean z36222) {
-                                                        super.dismiss(z36222);
-                                                        ReactionsContainerLayout reactionsContainerLayout3222 = reactionsContainerLayout2222;
-                                                        if (reactionsContainerLayout3222 != null) {
-                                                            reactionsContainerLayout3222.dismissParent(z36222);
-                                                        }
+                                                @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow
+                                                public void dismiss(boolean z36) {
+                                                    super.dismiss(z36);
+                                                    ReactionsContainerLayout reactionsContainerLayout3 = reactionsContainerLayout2;
+                                                    if (reactionsContainerLayout3 != null) {
+                                                        reactionsContainerLayout3.dismissParent(z36);
                                                     }
-                                                };
-                                                chatActivity.scrimPopupWindow = actionBarPopupWindow222;
-                                                actionBarPopupWindow222.setPauseNotifications(true);
-                                                chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starGiveawayOptionsLoaded);
-                                                chatActivity.scrimPopupWindow.setOutsideTouchable(true);
-                                                chatActivity.scrimPopupWindow.setClippingEnabled(true);
-                                                if (z9) {
                                                 }
+                                            };
+                                            chatActivity.scrimPopupWindow = actionBarPopupWindow;
+                                            actionBarPopupWindow.setPauseNotifications(true);
+                                            chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starGiveawayOptionsLoaded);
+                                            chatActivity.scrimPopupWindow.setOutsideTouchable(true);
+                                            chatActivity.scrimPopupWindow.setClippingEnabled(true);
+                                            if (z8 || reactionsContainerLayout == null || !ReactionsContainerLayout.allowSmoothEnterTransition()) {
                                                 chatActivity.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
-                                                chatActivity.scrimPopupWindow.setFocusable(true);
-                                                chatScrimPopupContainerLayout7222.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
-                                                chatActivity.scrimPopupWindow.setInputMethodMode(2);
-                                                chatActivity.scrimPopupWindow.setSoftInputMode(48);
-                                                chatActivity.scrimPopupWindow.getContentView().setFocusableInTouchMode(true);
-                                                actionBarPopupWindowLayout3.setFitItems(true);
-                                                Rect rect6222 = rect2;
-                                                left = (((view.getLeft() + ((int) f)) - chatScrimPopupContainerLayout7222.getMeasuredWidth()) + rect6222.left) - AndroidUtilities.dp(28.0f);
-                                                if (left >= AndroidUtilities.dp(6.0f)) {
-                                                }
-                                                if (AndroidUtilities.isTablet()) {
-                                                }
-                                                height = chatActivity.contentView.getHeight();
-                                                measuredHeight = chatScrimPopupContainerLayout7222.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
-                                                measureKeyboardHeight = chatActivity.contentView.measureKeyboardHeight();
-                                                if (measureKeyboardHeight > AndroidUtilities.dp(20.0f)) {
-                                                }
-                                                int y322 = (int) (chatActivity.chatListView.getY() + AndroidUtilities.dp(24.0f));
-                                                int dp7222 = (height - measuredHeight) - AndroidUtilities.dp(8.0f);
-                                                if (measuredHeight >= height) {
-                                                }
-                                                chatActivity.scrimPopupX = left;
-                                                chatActivity.scrimPopupY = i6;
-                                                chatScrimPopupContainerLayout7222.setMaxHeight((dp7222 + measuredHeight) - i6);
-                                                final int i44222 = left;
-                                                final int i45222 = i6;
-                                                final boolean z36222 = z27;
-                                                final ReactionsContainerLayout reactionsContainerLayout3222 = reactionsContainerLayout;
-                                                Runnable runnable2222 = new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda233
-                                                    @Override // java.lang.Runnable
-                                                    public final void run() {
-                                                        ChatActivity.this.lambda$createMenu$302(i44222, i45222, z36222, reactionsContainerLayout3222);
+                                            } else {
+                                                chatActivity.scrimPopupWindow.setAnimationStyle(0);
+                                            }
+                                            chatActivity.scrimPopupWindow.setFocusable(true);
+                                            chatScrimPopupContainerLayout7.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
+                                            chatActivity.scrimPopupWindow.setInputMethodMode(2);
+                                            chatActivity.scrimPopupWindow.setSoftInputMode(48);
+                                            chatActivity.scrimPopupWindow.getContentView().setFocusableInTouchMode(true);
+                                            actionBarPopupWindowLayout2.setFitItems(true);
+                                            Rect rect6 = rect;
+                                            left = (((view.getLeft() + ((int) f)) - chatScrimPopupContainerLayout7.getMeasuredWidth()) + rect6.left) - AndroidUtilities.dp(28.0f);
+                                            if (left < AndroidUtilities.dp(6.0f)) {
+                                                left = AndroidUtilities.dp(6.0f);
+                                            } else if (left > (chatActivity.chatListView.getMeasuredWidth() - AndroidUtilities.dp(6.0f)) - chatScrimPopupContainerLayout7.getMeasuredWidth()) {
+                                                left = (chatActivity.chatListView.getMeasuredWidth() - AndroidUtilities.dp(6.0f)) - chatScrimPopupContainerLayout7.getMeasuredWidth();
+                                            }
+                                            if (AndroidUtilities.isTablet()) {
+                                                int[] iArr10 = new int[2];
+                                                chatActivity.fragmentView.getLocationInWindow(iArr10);
+                                                left += iArr10[0];
+                                            }
+                                            height = chatActivity.contentView.getHeight();
+                                            measuredHeight = chatScrimPopupContainerLayout7.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
+                                            measureKeyboardHeight = chatActivity.contentView.measureKeyboardHeight();
+                                            if (measureKeyboardHeight > AndroidUtilities.dp(20.0f)) {
+                                                height += measureKeyboardHeight;
+                                            }
+                                            int y = (int) (chatActivity.chatListView.getY() + AndroidUtilities.dp(24.0f));
+                                            int dp7 = (height - measuredHeight) - AndroidUtilities.dp(8.0f);
+                                            if (measuredHeight < height) {
+                                                int y2 = (int) (chatActivity.chatListView.getY() + view.getTop() + f2);
+                                                if (chatActivity.isInsideContainer) {
+                                                    int[] iArr11 = new int[2];
+                                                    view2 = view;
+                                                    view2.getLocationInWindow(iArr11);
+                                                    chatActivity.chatListView.getLocationInWindow(iArr11);
+                                                    y2 = (int) (iArr11[1] + f2);
+                                                    y = AndroidUtilities.dp(24.0f);
+                                                    dp7 = (Math.min(iArr11[1] + chatActivity.chatListView.getMeasuredHeight(), AndroidUtilities.displaySize.y) - AndroidUtilities.dp(8.0f)) - measuredHeight;
+                                                } else {
+                                                    view2 = view;
+                                                    if ((measuredHeight - rect6.top) - rect6.bottom > AndroidUtilities.dp(240.0f)) {
+                                                        y2 += AndroidUtilities.dp(240.0f) - measuredHeight;
                                                     }
-                                                };
-                                                if (!atomicBoolean.get()) {
                                                 }
-                                                chatActivity.chatListView.stopScroll();
-                                                chatActivity.chatLayoutManager.setCanScrollVertically(false);
-                                                chatActivity.dimBehindView(view2, true);
-                                                chatActivity.hideHints(false);
-                                                undoView = chatActivity.topUndoView;
-                                                if (undoView != null) {
+                                                i5 = Utilities.clamp(y2, dp7, y);
+                                            } else {
+                                                view2 = view;
+                                                i5 = chatActivity.inBubbleMode ? 0 : AndroidUtilities.statusBarHeight;
+                                            }
+                                            chatActivity.scrimPopupX = left;
+                                            chatActivity.scrimPopupY = i5;
+                                            chatScrimPopupContainerLayout7.setMaxHeight((dp7 + measuredHeight) - i5);
+                                            final int i47 = left;
+                                            final int i48 = i5;
+                                            final boolean z36 = z27;
+                                            final ReactionsContainerLayout reactionsContainerLayout3 = reactionsContainerLayout;
+                                            Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda233
+                                                @Override // java.lang.Runnable
+                                                public final void run() {
+                                                    ChatActivity.this.lambda$createMenu$302(i47, i48, z36, reactionsContainerLayout3);
                                                 }
-                                                undoView2 = chatActivity.undoView;
-                                                if (undoView2 != null) {
-                                                }
-                                                chatActivityEnterView = chatActivity.chatActivityEnterView;
-                                                if (chatActivityEnterView == null) {
-                                                }
+                                            };
+                                            if (atomicBoolean.get()) {
+                                                atomicReference.set(runnable2);
+                                            } else {
+                                                runnable2.run();
+                                            }
+                                            chatActivity.chatListView.stopScroll();
+                                            chatActivity.chatLayoutManager.setCanScrollVertically(false);
+                                            chatActivity.dimBehindView(view2, true);
+                                            chatActivity.hideHints(false);
+                                            undoView = chatActivity.topUndoView;
+                                            if (undoView != null) {
+                                                undoView.hide(true, 1);
+                                            }
+                                            undoView2 = chatActivity.undoView;
+                                            if (undoView2 != null) {
+                                                undoView2.hide(true, 1);
+                                            }
+                                            chatActivityEnterView = chatActivity.chatActivityEnterView;
+                                            if (chatActivityEnterView != null && chatActivityEnterView.getEditField() != null) {
+                                                chatActivity.chatActivityEnterView.getEditField().setAllowDrawCursor(false);
+                                                return true;
                                             }
                                         }
+                                        str3 = str2;
                                         z11 = false;
-                                        if (!z5) {
-                                            user5 = this.currentUser;
-                                            if (!user5.bot) {
-                                                z12 = true;
-                                                if (z5) {
-                                                }
-                                                if (!z5) {
-                                                }
-                                                str2 = str;
-                                                z13 = false;
-                                                if (z5) {
-                                                }
-                                                if (z25) {
-                                                }
-                                                Activity parentActivity2222 = getParentActivity();
-                                                ArrayList arrayList122222 = arrayList10;
-                                                int i282222 = R.drawable.popup_fixed_alert4;
-                                                final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout82222 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity2222, i282222, this.themeDelegate, i27);
-                                                actionBarPopupWindowLayout82222.setMinimumWidth(AndroidUtilities.dp(200.0f));
-                                                Rect rect42222 = new Rect();
-                                                getParentActivity().getResources().getDrawable(i282222).mutate().getPadding(rect42222);
-                                                actionBarPopupWindowLayout82222.setBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
-                                                if (actionBarPopupWindowLayout != null) {
-                                                }
-                                                messageObject7 = chatActivity.selectedObject;
-                                                if (messageObject7 != null) {
-                                                }
-                                                ChatScrimPopupContainerLayout chatScrimPopupContainerLayout32222 = new ChatScrimPopupContainerLayout(chatActivity.contentView.getContext()) { // from class: org.telegram.ui.ChatActivity.114
-                                                    @Override // android.view.ViewGroup, android.view.View
-                                                    public boolean dispatchKeyEvent(KeyEvent keyEvent) {
-                                                        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
-                                                            ChatActivity.this.closeMenu();
-                                                        }
-                                                        return super.dispatchKeyEvent(keyEvent);
-                                                    }
-
-                                                    @Override // android.view.ViewGroup, android.view.View
-                                                    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-                                                        boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
-                                                        if (motionEvent.getAction() == 0 && !dispatchTouchEvent) {
-                                                            ChatActivity.this.closeMenu();
-                                                        }
-                                                        return dispatchTouchEvent;
-                                                    }
-                                                };
-                                                final Rect rect52222 = rect;
-                                                chatScrimPopupContainerLayout32222.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChatActivity.115
-                                                    private int[] pos = new int[2];
-
-                                                    @Override // android.view.View.OnTouchListener
-                                                    public boolean onTouch(View view5, MotionEvent motionEvent) {
-                                                        if (motionEvent.getActionMasked() == 0) {
-                                                            ActionBarPopupWindow actionBarPopupWindow2222 = ChatActivity.this.scrimPopupWindow;
-                                                            if (actionBarPopupWindow2222 != null && actionBarPopupWindow2222.isShowing()) {
-                                                                View contentView = ChatActivity.this.scrimPopupWindow.getContentView();
-                                                                contentView.getLocationInWindow(this.pos);
-                                                                Rect rect62222 = rect52222;
-                                                                int[] iArr102 = this.pos;
-                                                                int i422 = iArr102[0];
-                                                                rect62222.set(i422, iArr102[1], contentView.getMeasuredWidth() + i422, this.pos[1] + contentView.getMeasuredHeight());
-                                                                if (!rect52222.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                                                                    ChatActivity.this.closeMenu();
-                                                                }
-                                                            }
-                                                        } else if (motionEvent.getActionMasked() == 4) {
-                                                            ChatActivity.this.closeMenu();
-                                                        }
-                                                        return false;
-                                                    }
-                                                });
-                                                actionBarPopupWindowLayout4 = actionBarPopupWindowLayout2;
-                                                if (actionBarPopupWindowLayout4 == null) {
-                                                }
-                                                View chatScrimPopupContainerLayout72222 = chatScrimPopupContainerLayout;
-                                                if (reactionsContainerLayout != null) {
-                                                }
-                                                final ReactionsContainerLayout reactionsContainerLayout22222 = reactionsContainerLayout;
-                                                ActionBarPopupWindow actionBarPopupWindow2222 = new ActionBarPopupWindow(chatScrimPopupContainerLayout72222, -2, -2) { // from class: org.telegram.ui.ChatActivity.119
-                                                    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
-                                                    public void dismiss() {
-                                                        super.dismiss();
-                                                        if (ChatActivity.this.scrimPopupWindow != this) {
-                                                            return;
-                                                        }
-                                                        Bulletin visibleBulletin = Bulletin.getVisibleBulletin();
-                                                        Bulletin bulletin = ChatActivity.this.messageSeenPrivacyBulletin;
-                                                        if (visibleBulletin == bulletin && bulletin != null) {
-                                                            bulletin.hide();
-                                                            ChatActivity.this.messageSeenPrivacyBulletin = null;
-                                                        }
-                                                        ChatActivity chatActivity3 = ChatActivity.this;
-                                                        chatActivity3.scrimPopupWindow = null;
-                                                        chatActivity3.menuDeleteItem = null;
-                                                        ChatActivity.this.scrimPopupWindowItems = null;
-                                                        ChatActivity.this.chatLayoutManager.setCanScrollVertically(true);
-                                                        if (!ChatActivity.this.scrimPopupWindowHideDimOnDismiss) {
-                                                            ChatActivity.this.scrimPopupWindowHideDimOnDismiss = true;
-                                                        } else {
-                                                            ChatActivity.this.dimBehindView(false);
-                                                        }
-                                                        ChatActivityEnterView chatActivityEnterView3 = ChatActivity.this.chatActivityEnterView;
-                                                        if (chatActivityEnterView3 == null || chatActivityEnterView3.getEditField() == null) {
-                                                            return;
-                                                        }
-                                                        ChatActivity.this.chatActivityEnterView.getEditField().setAllowDrawCursor(true);
-                                                    }
-
-                                                    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow
-                                                    public void dismiss(boolean z362222) {
-                                                        super.dismiss(z362222);
-                                                        ReactionsContainerLayout reactionsContainerLayout32222 = reactionsContainerLayout22222;
-                                                        if (reactionsContainerLayout32222 != null) {
-                                                            reactionsContainerLayout32222.dismissParent(z362222);
-                                                        }
-                                                    }
-                                                };
-                                                chatActivity.scrimPopupWindow = actionBarPopupWindow2222;
-                                                actionBarPopupWindow2222.setPauseNotifications(true);
-                                                chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starGiveawayOptionsLoaded);
-                                                chatActivity.scrimPopupWindow.setOutsideTouchable(true);
-                                                chatActivity.scrimPopupWindow.setClippingEnabled(true);
-                                                if (z9) {
-                                                }
-                                                chatActivity.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
-                                                chatActivity.scrimPopupWindow.setFocusable(true);
-                                                chatScrimPopupContainerLayout72222.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
-                                                chatActivity.scrimPopupWindow.setInputMethodMode(2);
-                                                chatActivity.scrimPopupWindow.setSoftInputMode(48);
-                                                chatActivity.scrimPopupWindow.getContentView().setFocusableInTouchMode(true);
-                                                actionBarPopupWindowLayout3.setFitItems(true);
-                                                Rect rect62222 = rect2;
-                                                left = (((view.getLeft() + ((int) f)) - chatScrimPopupContainerLayout72222.getMeasuredWidth()) + rect62222.left) - AndroidUtilities.dp(28.0f);
-                                                if (left >= AndroidUtilities.dp(6.0f)) {
-                                                }
-                                                if (AndroidUtilities.isTablet()) {
-                                                }
-                                                height = chatActivity.contentView.getHeight();
-                                                measuredHeight = chatScrimPopupContainerLayout72222.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
-                                                measureKeyboardHeight = chatActivity.contentView.measureKeyboardHeight();
-                                                if (measureKeyboardHeight > AndroidUtilities.dp(20.0f)) {
-                                                }
-                                                int y3222 = (int) (chatActivity.chatListView.getY() + AndroidUtilities.dp(24.0f));
-                                                int dp72222 = (height - measuredHeight) - AndroidUtilities.dp(8.0f);
-                                                if (measuredHeight >= height) {
-                                                }
-                                                chatActivity.scrimPopupX = left;
-                                                chatActivity.scrimPopupY = i6;
-                                                chatScrimPopupContainerLayout72222.setMaxHeight((dp72222 + measuredHeight) - i6);
-                                                final int i442222 = left;
-                                                final int i452222 = i6;
-                                                final boolean z362222 = z27;
-                                                final ReactionsContainerLayout reactionsContainerLayout32222 = reactionsContainerLayout;
-                                                Runnable runnable22222 = new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda233
-                                                    @Override // java.lang.Runnable
-                                                    public final void run() {
-                                                        ChatActivity.this.lambda$createMenu$302(i442222, i452222, z362222, reactionsContainerLayout32222);
-                                                    }
-                                                };
-                                                if (!atomicBoolean.get()) {
-                                                }
-                                                chatActivity.chatListView.stopScroll();
-                                                chatActivity.chatLayoutManager.setCanScrollVertically(false);
-                                                chatActivity.dimBehindView(view2, true);
-                                                chatActivity.hideHints(false);
-                                                undoView = chatActivity.topUndoView;
-                                                if (undoView != null) {
-                                                }
-                                                undoView2 = chatActivity.undoView;
-                                                if (undoView2 != null) {
-                                                }
-                                                chatActivityEnterView = chatActivity.chatActivityEnterView;
-                                                if (chatActivityEnterView == null) {
-                                                }
-                                            }
-                                        }
-                                        z12 = false;
                                         if (z5) {
                                         }
-                                        if (!z5) {
+                                        if (z24) {
                                         }
-                                        str2 = str;
-                                        z13 = false;
-                                        if (z5) {
-                                        }
-                                        if (z25) {
-                                        }
-                                        Activity parentActivity22222 = getParentActivity();
-                                        ArrayList arrayList1222222 = arrayList10;
-                                        int i2822222 = R.drawable.popup_fixed_alert4;
-                                        final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout822222 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity22222, i2822222, this.themeDelegate, i27);
-                                        actionBarPopupWindowLayout822222.setMinimumWidth(AndroidUtilities.dp(200.0f));
-                                        Rect rect422222 = new Rect();
-                                        getParentActivity().getResources().getDrawable(i2822222).mutate().getPadding(rect422222);
-                                        actionBarPopupWindowLayout822222.setBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
-                                        if (actionBarPopupWindowLayout != null) {
+                                        Activity parentActivity2 = getParentActivity();
+                                        int i332 = R.drawable.popup_fixed_alert4;
+                                        final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout92 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity2, i332, this.themeDelegate, i32);
+                                        actionBarPopupWindowLayout92.setMinimumWidth(AndroidUtilities.dp(200.0f));
+                                        Rect rect42 = new Rect();
+                                        getParentActivity().getResources().getDrawable(i332).mutate().getPadding(rect42);
+                                        actionBarPopupWindowLayout92.setBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
+                                        if (actionBarPopupWindowLayout == null) {
                                         }
                                         messageObject7 = chatActivity.selectedObject;
                                         if (messageObject7 != null) {
+                                            actionBarPopupWindowLayout2.addView((View) new ActionBarPopupWindow.GapView(chatActivity.contentView.getContext(), chatActivity.themeDelegate), LayoutHelper.createLinear(-1, 8));
+                                            View createMenuTextOption2 = createMenuTextOption(getContext(), chatActivity.themeDelegate, LocaleController.getString(R.string.EphemeralMessageMenuHint), 13);
+                                            createMenuTextOption2.setMinimumHeight(AndroidUtilities.dp(32.0f));
+                                            actionBarPopupWindowLayout2.addView(createMenuTextOption2, LayoutHelper.createLinear(-1, -2));
                                         }
-                                        ChatScrimPopupContainerLayout chatScrimPopupContainerLayout322222 = new ChatScrimPopupContainerLayout(chatActivity.contentView.getContext()) { // from class: org.telegram.ui.ChatActivity.114
+                                        ChatScrimPopupContainerLayout chatScrimPopupContainerLayout32 = new ChatScrimPopupContainerLayout(chatActivity.contentView.getContext()) { // from class: org.telegram.ui.ChatActivity.114
                                             @Override // android.view.ViewGroup, android.view.View
                                             public boolean dispatchKeyEvent(KeyEvent keyEvent) {
                                                 if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
@@ -45541,22 +44857,22 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                                 return dispatchTouchEvent;
                                             }
                                         };
-                                        final Rect rect522222 = rect;
-                                        chatScrimPopupContainerLayout322222.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChatActivity.115
+                                        final Rect rect52 = rect2;
+                                        chatScrimPopupContainerLayout32.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChatActivity.115
                                             private int[] pos = new int[2];
 
                                             @Override // android.view.View.OnTouchListener
                                             public boolean onTouch(View view5, MotionEvent motionEvent) {
                                                 if (motionEvent.getActionMasked() == 0) {
-                                                    ActionBarPopupWindow actionBarPopupWindow22222 = ChatActivity.this.scrimPopupWindow;
-                                                    if (actionBarPopupWindow22222 != null && actionBarPopupWindow22222.isShowing()) {
+                                                    ActionBarPopupWindow actionBarPopupWindow2 = ChatActivity.this.scrimPopupWindow;
+                                                    if (actionBarPopupWindow2 != null && actionBarPopupWindow2.isShowing()) {
                                                         View contentView = ChatActivity.this.scrimPopupWindow.getContentView();
                                                         contentView.getLocationInWindow(this.pos);
-                                                        Rect rect622222 = rect522222;
+                                                        Rect rect62 = rect52;
                                                         int[] iArr102 = this.pos;
-                                                        int i422 = iArr102[0];
-                                                        rect622222.set(i422, iArr102[1], contentView.getMeasuredWidth() + i422, this.pos[1] + contentView.getMeasuredHeight());
-                                                        if (!rect522222.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                                                        int i452 = iArr102[0];
+                                                        rect62.set(i452, iArr102[1], contentView.getMeasuredWidth() + i452, this.pos[1] + contentView.getMeasuredHeight());
+                                                        if (!rect52.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                                                             ChatActivity.this.closeMenu();
                                                         }
                                                     }
@@ -45566,14 +44882,14 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                                 return false;
                                             }
                                         });
-                                        actionBarPopupWindowLayout4 = actionBarPopupWindowLayout2;
-                                        if (actionBarPopupWindowLayout4 == null) {
+                                        actionBarPopupWindowLayout4 = actionBarPopupWindowLayout3;
+                                        if (actionBarPopupWindowLayout4 != null) {
                                         }
-                                        View chatScrimPopupContainerLayout722222 = chatScrimPopupContainerLayout;
+                                        View chatScrimPopupContainerLayout72 = chatScrimPopupContainerLayout;
                                         if (reactionsContainerLayout != null) {
                                         }
-                                        final ReactionsContainerLayout reactionsContainerLayout222222 = reactionsContainerLayout;
-                                        ActionBarPopupWindow actionBarPopupWindow22222 = new ActionBarPopupWindow(chatScrimPopupContainerLayout722222, -2, -2) { // from class: org.telegram.ui.ChatActivity.119
+                                        final ReactionsContainerLayout reactionsContainerLayout22 = reactionsContainerLayout;
+                                        ActionBarPopupWindow actionBarPopupWindow2 = new ActionBarPopupWindow(chatScrimPopupContainerLayout72, -2, -2) { // from class: org.telegram.ui.ChatActivity.119
                                             @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
                                             public void dismiss() {
                                                 super.dismiss();
@@ -45604,57 +44920,57 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                             }
 
                                             @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow
-                                            public void dismiss(boolean z3622222) {
-                                                super.dismiss(z3622222);
-                                                ReactionsContainerLayout reactionsContainerLayout322222 = reactionsContainerLayout222222;
-                                                if (reactionsContainerLayout322222 != null) {
-                                                    reactionsContainerLayout322222.dismissParent(z3622222);
+                                            public void dismiss(boolean z362) {
+                                                super.dismiss(z362);
+                                                ReactionsContainerLayout reactionsContainerLayout32 = reactionsContainerLayout22;
+                                                if (reactionsContainerLayout32 != null) {
+                                                    reactionsContainerLayout32.dismissParent(z362);
                                                 }
                                             }
                                         };
-                                        chatActivity.scrimPopupWindow = actionBarPopupWindow22222;
-                                        actionBarPopupWindow22222.setPauseNotifications(true);
+                                        chatActivity.scrimPopupWindow = actionBarPopupWindow2;
+                                        actionBarPopupWindow2.setPauseNotifications(true);
                                         chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starGiveawayOptionsLoaded);
                                         chatActivity.scrimPopupWindow.setOutsideTouchable(true);
                                         chatActivity.scrimPopupWindow.setClippingEnabled(true);
-                                        if (z9) {
+                                        if (z8) {
                                         }
                                         chatActivity.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
                                         chatActivity.scrimPopupWindow.setFocusable(true);
-                                        chatScrimPopupContainerLayout722222.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
+                                        chatScrimPopupContainerLayout72.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
                                         chatActivity.scrimPopupWindow.setInputMethodMode(2);
                                         chatActivity.scrimPopupWindow.setSoftInputMode(48);
                                         chatActivity.scrimPopupWindow.getContentView().setFocusableInTouchMode(true);
-                                        actionBarPopupWindowLayout3.setFitItems(true);
-                                        Rect rect622222 = rect2;
-                                        left = (((view.getLeft() + ((int) f)) - chatScrimPopupContainerLayout722222.getMeasuredWidth()) + rect622222.left) - AndroidUtilities.dp(28.0f);
-                                        if (left >= AndroidUtilities.dp(6.0f)) {
+                                        actionBarPopupWindowLayout2.setFitItems(true);
+                                        Rect rect62 = rect;
+                                        left = (((view.getLeft() + ((int) f)) - chatScrimPopupContainerLayout72.getMeasuredWidth()) + rect62.left) - AndroidUtilities.dp(28.0f);
+                                        if (left < AndroidUtilities.dp(6.0f)) {
                                         }
                                         if (AndroidUtilities.isTablet()) {
                                         }
                                         height = chatActivity.contentView.getHeight();
-                                        measuredHeight = chatScrimPopupContainerLayout722222.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
+                                        measuredHeight = chatScrimPopupContainerLayout72.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
                                         measureKeyboardHeight = chatActivity.contentView.measureKeyboardHeight();
                                         if (measureKeyboardHeight > AndroidUtilities.dp(20.0f)) {
                                         }
-                                        int y32222 = (int) (chatActivity.chatListView.getY() + AndroidUtilities.dp(24.0f));
-                                        int dp722222 = (height - measuredHeight) - AndroidUtilities.dp(8.0f);
-                                        if (measuredHeight >= height) {
+                                        int y3 = (int) (chatActivity.chatListView.getY() + AndroidUtilities.dp(24.0f));
+                                        int dp72 = (height - measuredHeight) - AndroidUtilities.dp(8.0f);
+                                        if (measuredHeight < height) {
                                         }
                                         chatActivity.scrimPopupX = left;
-                                        chatActivity.scrimPopupY = i6;
-                                        chatScrimPopupContainerLayout722222.setMaxHeight((dp722222 + measuredHeight) - i6);
-                                        final int i4422222 = left;
-                                        final int i4522222 = i6;
-                                        final boolean z3622222 = z27;
-                                        final ReactionsContainerLayout reactionsContainerLayout322222 = reactionsContainerLayout;
-                                        Runnable runnable222222 = new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda233
+                                        chatActivity.scrimPopupY = i5;
+                                        chatScrimPopupContainerLayout72.setMaxHeight((dp72 + measuredHeight) - i5);
+                                        final int i472 = left;
+                                        final int i482 = i5;
+                                        final boolean z362 = z27;
+                                        final ReactionsContainerLayout reactionsContainerLayout32 = reactionsContainerLayout;
+                                        Runnable runnable22 = new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda233
                                             @Override // java.lang.Runnable
                                             public final void run() {
-                                                ChatActivity.this.lambda$createMenu$302(i4422222, i4522222, z3622222, reactionsContainerLayout322222);
+                                                ChatActivity.this.lambda$createMenu$302(i472, i482, z362, reactionsContainerLayout32);
                                             }
                                         };
-                                        if (!atomicBoolean.get()) {
+                                        if (atomicBoolean.get()) {
                                         }
                                         chatActivity.chatListView.stopScroll();
                                         chatActivity.chatLayoutManager.setCanScrollVertically(false);
@@ -45667,42 +44983,200 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                         if (undoView2 != null) {
                                         }
                                         chatActivityEnterView = chatActivity.chatActivityEnterView;
-                                        if (chatActivityEnterView == null) {
-                                        }
+                                        return chatActivityEnterView != null ? true : true;
                                     }
                                 }
                                 z10 = false;
                                 if (z5) {
                                 }
-                                arrayList = arrayList11;
+                                if (!z5) {
+                                    messageObject21 = this.selectedObject;
+                                    if (messageObject21.sponsoredInfo == null) {
+                                    }
+                                    str3 = str2;
+                                    z11 = true;
+                                    if (z5) {
+                                    }
+                                    if (z24) {
+                                    }
+                                    Activity parentActivity22 = getParentActivity();
+                                    int i3322 = R.drawable.popup_fixed_alert4;
+                                    final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout922 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity22, i3322, this.themeDelegate, i32);
+                                    actionBarPopupWindowLayout922.setMinimumWidth(AndroidUtilities.dp(200.0f));
+                                    Rect rect422 = new Rect();
+                                    getParentActivity().getResources().getDrawable(i3322).mutate().getPadding(rect422);
+                                    actionBarPopupWindowLayout922.setBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
+                                    if (actionBarPopupWindowLayout == null) {
+                                    }
+                                    messageObject7 = chatActivity.selectedObject;
+                                    if (messageObject7 != null) {
+                                    }
+                                    ChatScrimPopupContainerLayout chatScrimPopupContainerLayout322 = new ChatScrimPopupContainerLayout(chatActivity.contentView.getContext()) { // from class: org.telegram.ui.ChatActivity.114
+                                        @Override // android.view.ViewGroup, android.view.View
+                                        public boolean dispatchKeyEvent(KeyEvent keyEvent) {
+                                            if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
+                                                ChatActivity.this.closeMenu();
+                                            }
+                                            return super.dispatchKeyEvent(keyEvent);
+                                        }
+
+                                        @Override // android.view.ViewGroup, android.view.View
+                                        public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+                                            boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+                                            if (motionEvent.getAction() == 0 && !dispatchTouchEvent) {
+                                                ChatActivity.this.closeMenu();
+                                            }
+                                            return dispatchTouchEvent;
+                                        }
+                                    };
+                                    final Rect rect522 = rect2;
+                                    chatScrimPopupContainerLayout322.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChatActivity.115
+                                        private int[] pos = new int[2];
+
+                                        @Override // android.view.View.OnTouchListener
+                                        public boolean onTouch(View view5, MotionEvent motionEvent) {
+                                            if (motionEvent.getActionMasked() == 0) {
+                                                ActionBarPopupWindow actionBarPopupWindow22 = ChatActivity.this.scrimPopupWindow;
+                                                if (actionBarPopupWindow22 != null && actionBarPopupWindow22.isShowing()) {
+                                                    View contentView = ChatActivity.this.scrimPopupWindow.getContentView();
+                                                    contentView.getLocationInWindow(this.pos);
+                                                    Rect rect622 = rect522;
+                                                    int[] iArr102 = this.pos;
+                                                    int i452 = iArr102[0];
+                                                    rect622.set(i452, iArr102[1], contentView.getMeasuredWidth() + i452, this.pos[1] + contentView.getMeasuredHeight());
+                                                    if (!rect522.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                                                        ChatActivity.this.closeMenu();
+                                                    }
+                                                }
+                                            } else if (motionEvent.getActionMasked() == 4) {
+                                                ChatActivity.this.closeMenu();
+                                            }
+                                            return false;
+                                        }
+                                    });
+                                    actionBarPopupWindowLayout4 = actionBarPopupWindowLayout3;
+                                    if (actionBarPopupWindowLayout4 != null) {
+                                    }
+                                    View chatScrimPopupContainerLayout722 = chatScrimPopupContainerLayout;
+                                    if (reactionsContainerLayout != null) {
+                                    }
+                                    final ReactionsContainerLayout reactionsContainerLayout222 = reactionsContainerLayout;
+                                    ActionBarPopupWindow actionBarPopupWindow22 = new ActionBarPopupWindow(chatScrimPopupContainerLayout722, -2, -2) { // from class: org.telegram.ui.ChatActivity.119
+                                        @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
+                                        public void dismiss() {
+                                            super.dismiss();
+                                            if (ChatActivity.this.scrimPopupWindow != this) {
+                                                return;
+                                            }
+                                            Bulletin visibleBulletin = Bulletin.getVisibleBulletin();
+                                            Bulletin bulletin = ChatActivity.this.messageSeenPrivacyBulletin;
+                                            if (visibleBulletin == bulletin && bulletin != null) {
+                                                bulletin.hide();
+                                                ChatActivity.this.messageSeenPrivacyBulletin = null;
+                                            }
+                                            ChatActivity chatActivity3 = ChatActivity.this;
+                                            chatActivity3.scrimPopupWindow = null;
+                                            chatActivity3.menuDeleteItem = null;
+                                            ChatActivity.this.scrimPopupWindowItems = null;
+                                            ChatActivity.this.chatLayoutManager.setCanScrollVertically(true);
+                                            if (!ChatActivity.this.scrimPopupWindowHideDimOnDismiss) {
+                                                ChatActivity.this.scrimPopupWindowHideDimOnDismiss = true;
+                                            } else {
+                                                ChatActivity.this.dimBehindView(false);
+                                            }
+                                            ChatActivityEnterView chatActivityEnterView3 = ChatActivity.this.chatActivityEnterView;
+                                            if (chatActivityEnterView3 == null || chatActivityEnterView3.getEditField() == null) {
+                                                return;
+                                            }
+                                            ChatActivity.this.chatActivityEnterView.getEditField().setAllowDrawCursor(true);
+                                        }
+
+                                        @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow
+                                        public void dismiss(boolean z3622) {
+                                            super.dismiss(z3622);
+                                            ReactionsContainerLayout reactionsContainerLayout322 = reactionsContainerLayout222;
+                                            if (reactionsContainerLayout322 != null) {
+                                                reactionsContainerLayout322.dismissParent(z3622);
+                                            }
+                                        }
+                                    };
+                                    chatActivity.scrimPopupWindow = actionBarPopupWindow22;
+                                    actionBarPopupWindow22.setPauseNotifications(true);
+                                    chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starGiveawayOptionsLoaded);
+                                    chatActivity.scrimPopupWindow.setOutsideTouchable(true);
+                                    chatActivity.scrimPopupWindow.setClippingEnabled(true);
+                                    if (z8) {
+                                    }
+                                    chatActivity.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
+                                    chatActivity.scrimPopupWindow.setFocusable(true);
+                                    chatScrimPopupContainerLayout722.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
+                                    chatActivity.scrimPopupWindow.setInputMethodMode(2);
+                                    chatActivity.scrimPopupWindow.setSoftInputMode(48);
+                                    chatActivity.scrimPopupWindow.getContentView().setFocusableInTouchMode(true);
+                                    actionBarPopupWindowLayout2.setFitItems(true);
+                                    Rect rect622 = rect;
+                                    left = (((view.getLeft() + ((int) f)) - chatScrimPopupContainerLayout722.getMeasuredWidth()) + rect622.left) - AndroidUtilities.dp(28.0f);
+                                    if (left < AndroidUtilities.dp(6.0f)) {
+                                    }
+                                    if (AndroidUtilities.isTablet()) {
+                                    }
+                                    height = chatActivity.contentView.getHeight();
+                                    measuredHeight = chatScrimPopupContainerLayout722.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
+                                    measureKeyboardHeight = chatActivity.contentView.measureKeyboardHeight();
+                                    if (measureKeyboardHeight > AndroidUtilities.dp(20.0f)) {
+                                    }
+                                    int y32 = (int) (chatActivity.chatListView.getY() + AndroidUtilities.dp(24.0f));
+                                    int dp722 = (height - measuredHeight) - AndroidUtilities.dp(8.0f);
+                                    if (measuredHeight < height) {
+                                    }
+                                    chatActivity.scrimPopupX = left;
+                                    chatActivity.scrimPopupY = i5;
+                                    chatScrimPopupContainerLayout722.setMaxHeight((dp722 + measuredHeight) - i5);
+                                    final int i4722 = left;
+                                    final int i4822 = i5;
+                                    final boolean z3622 = z27;
+                                    final ReactionsContainerLayout reactionsContainerLayout322 = reactionsContainerLayout;
+                                    Runnable runnable222 = new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda233
+                                        @Override // java.lang.Runnable
+                                        public final void run() {
+                                            ChatActivity.this.lambda$createMenu$302(i4722, i4822, z3622, reactionsContainerLayout322);
+                                        }
+                                    };
+                                    if (atomicBoolean.get()) {
+                                    }
+                                    chatActivity.chatListView.stopScroll();
+                                    chatActivity.chatLayoutManager.setCanScrollVertically(false);
+                                    chatActivity.dimBehindView(view2, true);
+                                    chatActivity.hideHints(false);
+                                    undoView = chatActivity.topUndoView;
+                                    if (undoView != null) {
+                                    }
+                                    undoView2 = chatActivity.undoView;
+                                    if (undoView2 != null) {
+                                    }
+                                    chatActivityEnterView = chatActivity.chatActivityEnterView;
+                                    if (chatActivityEnterView != null) {
+                                    }
+                                }
+                                str3 = str2;
                                 z11 = false;
-                                if (!z5) {
-                                }
-                                z12 = false;
                                 if (z5) {
                                 }
-                                if (!z5) {
+                                if (z24) {
                                 }
-                                str2 = str;
-                                z13 = false;
-                                if (z5) {
-                                }
-                                if (z25) {
-                                }
-                                Activity parentActivity222222 = getParentActivity();
-                                ArrayList arrayList12222222 = arrayList10;
-                                int i28222222 = R.drawable.popup_fixed_alert4;
-                                final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout8222222 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity222222, i28222222, this.themeDelegate, i27);
-                                actionBarPopupWindowLayout8222222.setMinimumWidth(AndroidUtilities.dp(200.0f));
-                                Rect rect4222222 = new Rect();
-                                getParentActivity().getResources().getDrawable(i28222222).mutate().getPadding(rect4222222);
-                                actionBarPopupWindowLayout8222222.setBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
-                                if (actionBarPopupWindowLayout != null) {
+                                Activity parentActivity222 = getParentActivity();
+                                int i33222 = R.drawable.popup_fixed_alert4;
+                                final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout9222 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity222, i33222, this.themeDelegate, i32);
+                                actionBarPopupWindowLayout9222.setMinimumWidth(AndroidUtilities.dp(200.0f));
+                                Rect rect4222 = new Rect();
+                                getParentActivity().getResources().getDrawable(i33222).mutate().getPadding(rect4222);
+                                actionBarPopupWindowLayout9222.setBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
+                                if (actionBarPopupWindowLayout == null) {
                                 }
                                 messageObject7 = chatActivity.selectedObject;
                                 if (messageObject7 != null) {
                                 }
-                                ChatScrimPopupContainerLayout chatScrimPopupContainerLayout3222222 = new ChatScrimPopupContainerLayout(chatActivity.contentView.getContext()) { // from class: org.telegram.ui.ChatActivity.114
+                                ChatScrimPopupContainerLayout chatScrimPopupContainerLayout3222 = new ChatScrimPopupContainerLayout(chatActivity.contentView.getContext()) { // from class: org.telegram.ui.ChatActivity.114
                                     @Override // android.view.ViewGroup, android.view.View
                                     public boolean dispatchKeyEvent(KeyEvent keyEvent) {
                                         if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
@@ -45720,22 +45194,22 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                         return dispatchTouchEvent;
                                     }
                                 };
-                                final Rect rect5222222 = rect;
-                                chatScrimPopupContainerLayout3222222.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChatActivity.115
+                                final Rect rect5222 = rect2;
+                                chatScrimPopupContainerLayout3222.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChatActivity.115
                                     private int[] pos = new int[2];
 
                                     @Override // android.view.View.OnTouchListener
                                     public boolean onTouch(View view5, MotionEvent motionEvent) {
                                         if (motionEvent.getActionMasked() == 0) {
-                                            ActionBarPopupWindow actionBarPopupWindow222222 = ChatActivity.this.scrimPopupWindow;
-                                            if (actionBarPopupWindow222222 != null && actionBarPopupWindow222222.isShowing()) {
+                                            ActionBarPopupWindow actionBarPopupWindow222 = ChatActivity.this.scrimPopupWindow;
+                                            if (actionBarPopupWindow222 != null && actionBarPopupWindow222.isShowing()) {
                                                 View contentView = ChatActivity.this.scrimPopupWindow.getContentView();
                                                 contentView.getLocationInWindow(this.pos);
-                                                Rect rect6222222 = rect5222222;
+                                                Rect rect6222 = rect5222;
                                                 int[] iArr102 = this.pos;
-                                                int i422 = iArr102[0];
-                                                rect6222222.set(i422, iArr102[1], contentView.getMeasuredWidth() + i422, this.pos[1] + contentView.getMeasuredHeight());
-                                                if (!rect5222222.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                                                int i452 = iArr102[0];
+                                                rect6222.set(i452, iArr102[1], contentView.getMeasuredWidth() + i452, this.pos[1] + contentView.getMeasuredHeight());
+                                                if (!rect5222.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                                                     ChatActivity.this.closeMenu();
                                                 }
                                             }
@@ -45745,14 +45219,14 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                         return false;
                                     }
                                 });
-                                actionBarPopupWindowLayout4 = actionBarPopupWindowLayout2;
-                                if (actionBarPopupWindowLayout4 == null) {
+                                actionBarPopupWindowLayout4 = actionBarPopupWindowLayout3;
+                                if (actionBarPopupWindowLayout4 != null) {
                                 }
-                                View chatScrimPopupContainerLayout7222222 = chatScrimPopupContainerLayout;
+                                View chatScrimPopupContainerLayout7222 = chatScrimPopupContainerLayout;
                                 if (reactionsContainerLayout != null) {
                                 }
-                                final ReactionsContainerLayout reactionsContainerLayout2222222 = reactionsContainerLayout;
-                                ActionBarPopupWindow actionBarPopupWindow222222 = new ActionBarPopupWindow(chatScrimPopupContainerLayout7222222, -2, -2) { // from class: org.telegram.ui.ChatActivity.119
+                                final ReactionsContainerLayout reactionsContainerLayout2222 = reactionsContainerLayout;
+                                ActionBarPopupWindow actionBarPopupWindow222 = new ActionBarPopupWindow(chatScrimPopupContainerLayout7222, -2, -2) { // from class: org.telegram.ui.ChatActivity.119
                                     @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
                                     public void dismiss() {
                                         super.dismiss();
@@ -45783,57 +45257,57 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                     }
 
                                     @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow
-                                    public void dismiss(boolean z36222222) {
-                                        super.dismiss(z36222222);
-                                        ReactionsContainerLayout reactionsContainerLayout3222222 = reactionsContainerLayout2222222;
-                                        if (reactionsContainerLayout3222222 != null) {
-                                            reactionsContainerLayout3222222.dismissParent(z36222222);
+                                    public void dismiss(boolean z36222) {
+                                        super.dismiss(z36222);
+                                        ReactionsContainerLayout reactionsContainerLayout3222 = reactionsContainerLayout2222;
+                                        if (reactionsContainerLayout3222 != null) {
+                                            reactionsContainerLayout3222.dismissParent(z36222);
                                         }
                                     }
                                 };
-                                chatActivity.scrimPopupWindow = actionBarPopupWindow222222;
-                                actionBarPopupWindow222222.setPauseNotifications(true);
+                                chatActivity.scrimPopupWindow = actionBarPopupWindow222;
+                                actionBarPopupWindow222.setPauseNotifications(true);
                                 chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starGiveawayOptionsLoaded);
                                 chatActivity.scrimPopupWindow.setOutsideTouchable(true);
                                 chatActivity.scrimPopupWindow.setClippingEnabled(true);
-                                if (z9) {
+                                if (z8) {
                                 }
                                 chatActivity.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
                                 chatActivity.scrimPopupWindow.setFocusable(true);
-                                chatScrimPopupContainerLayout7222222.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
+                                chatScrimPopupContainerLayout7222.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
                                 chatActivity.scrimPopupWindow.setInputMethodMode(2);
                                 chatActivity.scrimPopupWindow.setSoftInputMode(48);
                                 chatActivity.scrimPopupWindow.getContentView().setFocusableInTouchMode(true);
-                                actionBarPopupWindowLayout3.setFitItems(true);
-                                Rect rect6222222 = rect2;
-                                left = (((view.getLeft() + ((int) f)) - chatScrimPopupContainerLayout7222222.getMeasuredWidth()) + rect6222222.left) - AndroidUtilities.dp(28.0f);
-                                if (left >= AndroidUtilities.dp(6.0f)) {
+                                actionBarPopupWindowLayout2.setFitItems(true);
+                                Rect rect6222 = rect;
+                                left = (((view.getLeft() + ((int) f)) - chatScrimPopupContainerLayout7222.getMeasuredWidth()) + rect6222.left) - AndroidUtilities.dp(28.0f);
+                                if (left < AndroidUtilities.dp(6.0f)) {
                                 }
                                 if (AndroidUtilities.isTablet()) {
                                 }
                                 height = chatActivity.contentView.getHeight();
-                                measuredHeight = chatScrimPopupContainerLayout7222222.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
+                                measuredHeight = chatScrimPopupContainerLayout7222.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
                                 measureKeyboardHeight = chatActivity.contentView.measureKeyboardHeight();
                                 if (measureKeyboardHeight > AndroidUtilities.dp(20.0f)) {
                                 }
-                                int y322222 = (int) (chatActivity.chatListView.getY() + AndroidUtilities.dp(24.0f));
-                                int dp7222222 = (height - measuredHeight) - AndroidUtilities.dp(8.0f);
-                                if (measuredHeight >= height) {
+                                int y322 = (int) (chatActivity.chatListView.getY() + AndroidUtilities.dp(24.0f));
+                                int dp7222 = (height - measuredHeight) - AndroidUtilities.dp(8.0f);
+                                if (measuredHeight < height) {
                                 }
                                 chatActivity.scrimPopupX = left;
-                                chatActivity.scrimPopupY = i6;
-                                chatScrimPopupContainerLayout7222222.setMaxHeight((dp7222222 + measuredHeight) - i6);
-                                final int i44222222 = left;
-                                final int i45222222 = i6;
-                                final boolean z36222222 = z27;
-                                final ReactionsContainerLayout reactionsContainerLayout3222222 = reactionsContainerLayout;
-                                Runnable runnable2222222 = new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda233
+                                chatActivity.scrimPopupY = i5;
+                                chatScrimPopupContainerLayout7222.setMaxHeight((dp7222 + measuredHeight) - i5);
+                                final int i47222 = left;
+                                final int i48222 = i5;
+                                final boolean z36222 = z27;
+                                final ReactionsContainerLayout reactionsContainerLayout3222 = reactionsContainerLayout;
+                                Runnable runnable2222 = new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda233
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        ChatActivity.this.lambda$createMenu$302(i44222222, i45222222, z36222222, reactionsContainerLayout3222222);
+                                        ChatActivity.this.lambda$createMenu$302(i47222, i48222, z36222, reactionsContainerLayout3222);
                                     }
                                 };
-                                if (!atomicBoolean.get()) {
+                                if (atomicBoolean.get()) {
                                 }
                                 chatActivity.chatListView.stopScroll();
                                 chatActivity.chatLayoutManager.setCanScrollVertically(false);
@@ -45846,311 +45320,638 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 if (undoView2 != null) {
                                 }
                                 chatActivityEnterView = chatActivity.chatActivityEnterView;
-                                if (chatActivityEnterView == null) {
+                                if (chatActivityEnterView != null) {
                                 }
                             }
-                            z9 = false;
-                            if (z5) {
-                            }
-                            z10 = false;
-                            if (z5) {
-                            }
-                            arrayList = arrayList11;
-                            z11 = false;
-                            if (!z5) {
-                            }
-                            z12 = false;
-                            if (z5) {
-                            }
-                            if (!z5) {
-                            }
-                            str2 = str;
-                            z13 = false;
-                            if (z5) {
-                            }
-                            if (z25) {
-                            }
-                            Activity parentActivity2222222 = getParentActivity();
-                            ArrayList arrayList122222222 = arrayList10;
-                            int i282222222 = R.drawable.popup_fixed_alert4;
-                            final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout82222222 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity2222222, i282222222, this.themeDelegate, i27);
-                            actionBarPopupWindowLayout82222222.setMinimumWidth(AndroidUtilities.dp(200.0f));
-                            Rect rect42222222 = new Rect();
-                            getParentActivity().getResources().getDrawable(i282222222).mutate().getPadding(rect42222222);
-                            actionBarPopupWindowLayout82222222.setBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
-                            if (actionBarPopupWindowLayout != null) {
-                            }
-                            messageObject7 = chatActivity.selectedObject;
-                            if (messageObject7 != null) {
-                            }
-                            ChatScrimPopupContainerLayout chatScrimPopupContainerLayout32222222 = new ChatScrimPopupContainerLayout(chatActivity.contentView.getContext()) { // from class: org.telegram.ui.ChatActivity.114
-                                @Override // android.view.ViewGroup, android.view.View
-                                public boolean dispatchKeyEvent(KeyEvent keyEvent) {
-                                    if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
-                                        ChatActivity.this.closeMenu();
-                                    }
-                                    return super.dispatchKeyEvent(keyEvent);
+                        }
+                        z9 = false;
+                        if (z5) {
+                        }
+                        if (!z5) {
+                            user5 = this.currentUser;
+                            if (!user5.bot) {
+                                z10 = true;
+                                if (z5) {
                                 }
-
-                                @Override // android.view.ViewGroup, android.view.View
-                                public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-                                    boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
-                                    if (motionEvent.getAction() == 0 && !dispatchTouchEvent) {
-                                        ChatActivity.this.closeMenu();
-                                    }
-                                    return dispatchTouchEvent;
+                                if (!z5) {
                                 }
-                            };
-                            final Rect rect52222222 = rect;
-                            chatScrimPopupContainerLayout32222222.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChatActivity.115
-                                private int[] pos = new int[2];
-
-                                @Override // android.view.View.OnTouchListener
-                                public boolean onTouch(View view5, MotionEvent motionEvent) {
-                                    if (motionEvent.getActionMasked() == 0) {
-                                        ActionBarPopupWindow actionBarPopupWindow2222222 = ChatActivity.this.scrimPopupWindow;
-                                        if (actionBarPopupWindow2222222 != null && actionBarPopupWindow2222222.isShowing()) {
-                                            View contentView = ChatActivity.this.scrimPopupWindow.getContentView();
-                                            contentView.getLocationInWindow(this.pos);
-                                            Rect rect62222222 = rect52222222;
-                                            int[] iArr102 = this.pos;
-                                            int i422 = iArr102[0];
-                                            rect62222222.set(i422, iArr102[1], contentView.getMeasuredWidth() + i422, this.pos[1] + contentView.getMeasuredHeight());
-                                            if (!rect52222222.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                                                ChatActivity.this.closeMenu();
-                                            }
+                                str3 = str2;
+                                z11 = false;
+                                if (z5) {
+                                }
+                                if (z24) {
+                                }
+                                Activity parentActivity2222 = getParentActivity();
+                                int i332222 = R.drawable.popup_fixed_alert4;
+                                final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout92222 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity2222, i332222, this.themeDelegate, i32);
+                                actionBarPopupWindowLayout92222.setMinimumWidth(AndroidUtilities.dp(200.0f));
+                                Rect rect42222 = new Rect();
+                                getParentActivity().getResources().getDrawable(i332222).mutate().getPadding(rect42222);
+                                actionBarPopupWindowLayout92222.setBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
+                                if (actionBarPopupWindowLayout == null) {
+                                }
+                                messageObject7 = chatActivity.selectedObject;
+                                if (messageObject7 != null) {
+                                }
+                                ChatScrimPopupContainerLayout chatScrimPopupContainerLayout32222 = new ChatScrimPopupContainerLayout(chatActivity.contentView.getContext()) { // from class: org.telegram.ui.ChatActivity.114
+                                    @Override // android.view.ViewGroup, android.view.View
+                                    public boolean dispatchKeyEvent(KeyEvent keyEvent) {
+                                        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
+                                            ChatActivity.this.closeMenu();
                                         }
-                                    } else if (motionEvent.getActionMasked() == 4) {
+                                        return super.dispatchKeyEvent(keyEvent);
+                                    }
+
+                                    @Override // android.view.ViewGroup, android.view.View
+                                    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+                                        boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+                                        if (motionEvent.getAction() == 0 && !dispatchTouchEvent) {
+                                            ChatActivity.this.closeMenu();
+                                        }
+                                        return dispatchTouchEvent;
+                                    }
+                                };
+                                final Rect rect52222 = rect2;
+                                chatScrimPopupContainerLayout32222.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChatActivity.115
+                                    private int[] pos = new int[2];
+
+                                    @Override // android.view.View.OnTouchListener
+                                    public boolean onTouch(View view5, MotionEvent motionEvent) {
+                                        if (motionEvent.getActionMasked() == 0) {
+                                            ActionBarPopupWindow actionBarPopupWindow2222 = ChatActivity.this.scrimPopupWindow;
+                                            if (actionBarPopupWindow2222 != null && actionBarPopupWindow2222.isShowing()) {
+                                                View contentView = ChatActivity.this.scrimPopupWindow.getContentView();
+                                                contentView.getLocationInWindow(this.pos);
+                                                Rect rect62222 = rect52222;
+                                                int[] iArr102 = this.pos;
+                                                int i452 = iArr102[0];
+                                                rect62222.set(i452, iArr102[1], contentView.getMeasuredWidth() + i452, this.pos[1] + contentView.getMeasuredHeight());
+                                                if (!rect52222.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                                                    ChatActivity.this.closeMenu();
+                                                }
+                                            }
+                                        } else if (motionEvent.getActionMasked() == 4) {
+                                            ChatActivity.this.closeMenu();
+                                        }
+                                        return false;
+                                    }
+                                });
+                                actionBarPopupWindowLayout4 = actionBarPopupWindowLayout3;
+                                if (actionBarPopupWindowLayout4 != null) {
+                                }
+                                View chatScrimPopupContainerLayout72222 = chatScrimPopupContainerLayout;
+                                if (reactionsContainerLayout != null) {
+                                }
+                                final ReactionsContainerLayout reactionsContainerLayout22222 = reactionsContainerLayout;
+                                ActionBarPopupWindow actionBarPopupWindow2222 = new ActionBarPopupWindow(chatScrimPopupContainerLayout72222, -2, -2) { // from class: org.telegram.ui.ChatActivity.119
+                                    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
+                                    public void dismiss() {
+                                        super.dismiss();
+                                        if (ChatActivity.this.scrimPopupWindow != this) {
+                                            return;
+                                        }
+                                        Bulletin visibleBulletin = Bulletin.getVisibleBulletin();
+                                        Bulletin bulletin = ChatActivity.this.messageSeenPrivacyBulletin;
+                                        if (visibleBulletin == bulletin && bulletin != null) {
+                                            bulletin.hide();
+                                            ChatActivity.this.messageSeenPrivacyBulletin = null;
+                                        }
+                                        ChatActivity chatActivity3 = ChatActivity.this;
+                                        chatActivity3.scrimPopupWindow = null;
+                                        chatActivity3.menuDeleteItem = null;
+                                        ChatActivity.this.scrimPopupWindowItems = null;
+                                        ChatActivity.this.chatLayoutManager.setCanScrollVertically(true);
+                                        if (!ChatActivity.this.scrimPopupWindowHideDimOnDismiss) {
+                                            ChatActivity.this.scrimPopupWindowHideDimOnDismiss = true;
+                                        } else {
+                                            ChatActivity.this.dimBehindView(false);
+                                        }
+                                        ChatActivityEnterView chatActivityEnterView3 = ChatActivity.this.chatActivityEnterView;
+                                        if (chatActivityEnterView3 == null || chatActivityEnterView3.getEditField() == null) {
+                                            return;
+                                        }
+                                        ChatActivity.this.chatActivityEnterView.getEditField().setAllowDrawCursor(true);
+                                    }
+
+                                    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow
+                                    public void dismiss(boolean z362222) {
+                                        super.dismiss(z362222);
+                                        ReactionsContainerLayout reactionsContainerLayout32222 = reactionsContainerLayout22222;
+                                        if (reactionsContainerLayout32222 != null) {
+                                            reactionsContainerLayout32222.dismissParent(z362222);
+                                        }
+                                    }
+                                };
+                                chatActivity.scrimPopupWindow = actionBarPopupWindow2222;
+                                actionBarPopupWindow2222.setPauseNotifications(true);
+                                chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starGiveawayOptionsLoaded);
+                                chatActivity.scrimPopupWindow.setOutsideTouchable(true);
+                                chatActivity.scrimPopupWindow.setClippingEnabled(true);
+                                if (z8) {
+                                }
+                                chatActivity.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
+                                chatActivity.scrimPopupWindow.setFocusable(true);
+                                chatScrimPopupContainerLayout72222.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
+                                chatActivity.scrimPopupWindow.setInputMethodMode(2);
+                                chatActivity.scrimPopupWindow.setSoftInputMode(48);
+                                chatActivity.scrimPopupWindow.getContentView().setFocusableInTouchMode(true);
+                                actionBarPopupWindowLayout2.setFitItems(true);
+                                Rect rect62222 = rect;
+                                left = (((view.getLeft() + ((int) f)) - chatScrimPopupContainerLayout72222.getMeasuredWidth()) + rect62222.left) - AndroidUtilities.dp(28.0f);
+                                if (left < AndroidUtilities.dp(6.0f)) {
+                                }
+                                if (AndroidUtilities.isTablet()) {
+                                }
+                                height = chatActivity.contentView.getHeight();
+                                measuredHeight = chatScrimPopupContainerLayout72222.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
+                                measureKeyboardHeight = chatActivity.contentView.measureKeyboardHeight();
+                                if (measureKeyboardHeight > AndroidUtilities.dp(20.0f)) {
+                                }
+                                int y3222 = (int) (chatActivity.chatListView.getY() + AndroidUtilities.dp(24.0f));
+                                int dp72222 = (height - measuredHeight) - AndroidUtilities.dp(8.0f);
+                                if (measuredHeight < height) {
+                                }
+                                chatActivity.scrimPopupX = left;
+                                chatActivity.scrimPopupY = i5;
+                                chatScrimPopupContainerLayout72222.setMaxHeight((dp72222 + measuredHeight) - i5);
+                                final int i472222 = left;
+                                final int i482222 = i5;
+                                final boolean z362222 = z27;
+                                final ReactionsContainerLayout reactionsContainerLayout32222 = reactionsContainerLayout;
+                                Runnable runnable22222 = new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda233
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        ChatActivity.this.lambda$createMenu$302(i472222, i482222, z362222, reactionsContainerLayout32222);
+                                    }
+                                };
+                                if (atomicBoolean.get()) {
+                                }
+                                chatActivity.chatListView.stopScroll();
+                                chatActivity.chatLayoutManager.setCanScrollVertically(false);
+                                chatActivity.dimBehindView(view2, true);
+                                chatActivity.hideHints(false);
+                                undoView = chatActivity.topUndoView;
+                                if (undoView != null) {
+                                }
+                                undoView2 = chatActivity.undoView;
+                                if (undoView2 != null) {
+                                }
+                                chatActivityEnterView = chatActivity.chatActivityEnterView;
+                                if (chatActivityEnterView != null) {
+                                }
+                            }
+                        }
+                        z10 = false;
+                        if (z5) {
+                        }
+                        if (!z5) {
+                        }
+                        str3 = str2;
+                        z11 = false;
+                        if (z5) {
+                        }
+                        if (z24) {
+                        }
+                        Activity parentActivity22222 = getParentActivity();
+                        int i3322222 = R.drawable.popup_fixed_alert4;
+                        final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout922222 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity22222, i3322222, this.themeDelegate, i32);
+                        actionBarPopupWindowLayout922222.setMinimumWidth(AndroidUtilities.dp(200.0f));
+                        Rect rect422222 = new Rect();
+                        getParentActivity().getResources().getDrawable(i3322222).mutate().getPadding(rect422222);
+                        actionBarPopupWindowLayout922222.setBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
+                        if (actionBarPopupWindowLayout == null) {
+                        }
+                        messageObject7 = chatActivity.selectedObject;
+                        if (messageObject7 != null) {
+                        }
+                        ChatScrimPopupContainerLayout chatScrimPopupContainerLayout322222 = new ChatScrimPopupContainerLayout(chatActivity.contentView.getContext()) { // from class: org.telegram.ui.ChatActivity.114
+                            @Override // android.view.ViewGroup, android.view.View
+                            public boolean dispatchKeyEvent(KeyEvent keyEvent) {
+                                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
+                                    ChatActivity.this.closeMenu();
+                                }
+                                return super.dispatchKeyEvent(keyEvent);
+                            }
+
+                            @Override // android.view.ViewGroup, android.view.View
+                            public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+                                boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+                                if (motionEvent.getAction() == 0 && !dispatchTouchEvent) {
+                                    ChatActivity.this.closeMenu();
+                                }
+                                return dispatchTouchEvent;
+                            }
+                        };
+                        final Rect rect522222 = rect2;
+                        chatScrimPopupContainerLayout322222.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChatActivity.115
+                            private int[] pos = new int[2];
+
+                            @Override // android.view.View.OnTouchListener
+                            public boolean onTouch(View view5, MotionEvent motionEvent) {
+                                if (motionEvent.getActionMasked() == 0) {
+                                    ActionBarPopupWindow actionBarPopupWindow22222 = ChatActivity.this.scrimPopupWindow;
+                                    if (actionBarPopupWindow22222 != null && actionBarPopupWindow22222.isShowing()) {
+                                        View contentView = ChatActivity.this.scrimPopupWindow.getContentView();
+                                        contentView.getLocationInWindow(this.pos);
+                                        Rect rect622222 = rect522222;
+                                        int[] iArr102 = this.pos;
+                                        int i452 = iArr102[0];
+                                        rect622222.set(i452, iArr102[1], contentView.getMeasuredWidth() + i452, this.pos[1] + contentView.getMeasuredHeight());
+                                        if (!rect522222.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                                            ChatActivity.this.closeMenu();
+                                        }
+                                    }
+                                } else if (motionEvent.getActionMasked() == 4) {
+                                    ChatActivity.this.closeMenu();
+                                }
+                                return false;
+                            }
+                        });
+                        actionBarPopupWindowLayout4 = actionBarPopupWindowLayout3;
+                        if (actionBarPopupWindowLayout4 != null) {
+                        }
+                        View chatScrimPopupContainerLayout722222 = chatScrimPopupContainerLayout;
+                        if (reactionsContainerLayout != null) {
+                        }
+                        final ReactionsContainerLayout reactionsContainerLayout222222 = reactionsContainerLayout;
+                        ActionBarPopupWindow actionBarPopupWindow22222 = new ActionBarPopupWindow(chatScrimPopupContainerLayout722222, -2, -2) { // from class: org.telegram.ui.ChatActivity.119
+                            @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
+                            public void dismiss() {
+                                super.dismiss();
+                                if (ChatActivity.this.scrimPopupWindow != this) {
+                                    return;
+                                }
+                                Bulletin visibleBulletin = Bulletin.getVisibleBulletin();
+                                Bulletin bulletin = ChatActivity.this.messageSeenPrivacyBulletin;
+                                if (visibleBulletin == bulletin && bulletin != null) {
+                                    bulletin.hide();
+                                    ChatActivity.this.messageSeenPrivacyBulletin = null;
+                                }
+                                ChatActivity chatActivity3 = ChatActivity.this;
+                                chatActivity3.scrimPopupWindow = null;
+                                chatActivity3.menuDeleteItem = null;
+                                ChatActivity.this.scrimPopupWindowItems = null;
+                                ChatActivity.this.chatLayoutManager.setCanScrollVertically(true);
+                                if (!ChatActivity.this.scrimPopupWindowHideDimOnDismiss) {
+                                    ChatActivity.this.scrimPopupWindowHideDimOnDismiss = true;
+                                } else {
+                                    ChatActivity.this.dimBehindView(false);
+                                }
+                                ChatActivityEnterView chatActivityEnterView3 = ChatActivity.this.chatActivityEnterView;
+                                if (chatActivityEnterView3 == null || chatActivityEnterView3.getEditField() == null) {
+                                    return;
+                                }
+                                ChatActivity.this.chatActivityEnterView.getEditField().setAllowDrawCursor(true);
+                            }
+
+                            @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow
+                            public void dismiss(boolean z3622222) {
+                                super.dismiss(z3622222);
+                                ReactionsContainerLayout reactionsContainerLayout322222 = reactionsContainerLayout222222;
+                                if (reactionsContainerLayout322222 != null) {
+                                    reactionsContainerLayout322222.dismissParent(z3622222);
+                                }
+                            }
+                        };
+                        chatActivity.scrimPopupWindow = actionBarPopupWindow22222;
+                        actionBarPopupWindow22222.setPauseNotifications(true);
+                        chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starGiveawayOptionsLoaded);
+                        chatActivity.scrimPopupWindow.setOutsideTouchable(true);
+                        chatActivity.scrimPopupWindow.setClippingEnabled(true);
+                        if (z8) {
+                        }
+                        chatActivity.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
+                        chatActivity.scrimPopupWindow.setFocusable(true);
+                        chatScrimPopupContainerLayout722222.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
+                        chatActivity.scrimPopupWindow.setInputMethodMode(2);
+                        chatActivity.scrimPopupWindow.setSoftInputMode(48);
+                        chatActivity.scrimPopupWindow.getContentView().setFocusableInTouchMode(true);
+                        actionBarPopupWindowLayout2.setFitItems(true);
+                        Rect rect622222 = rect;
+                        left = (((view.getLeft() + ((int) f)) - chatScrimPopupContainerLayout722222.getMeasuredWidth()) + rect622222.left) - AndroidUtilities.dp(28.0f);
+                        if (left < AndroidUtilities.dp(6.0f)) {
+                        }
+                        if (AndroidUtilities.isTablet()) {
+                        }
+                        height = chatActivity.contentView.getHeight();
+                        measuredHeight = chatScrimPopupContainerLayout722222.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
+                        measureKeyboardHeight = chatActivity.contentView.measureKeyboardHeight();
+                        if (measureKeyboardHeight > AndroidUtilities.dp(20.0f)) {
+                        }
+                        int y32222 = (int) (chatActivity.chatListView.getY() + AndroidUtilities.dp(24.0f));
+                        int dp722222 = (height - measuredHeight) - AndroidUtilities.dp(8.0f);
+                        if (measuredHeight < height) {
+                        }
+                        chatActivity.scrimPopupX = left;
+                        chatActivity.scrimPopupY = i5;
+                        chatScrimPopupContainerLayout722222.setMaxHeight((dp722222 + measuredHeight) - i5);
+                        final int i4722222 = left;
+                        final int i4822222 = i5;
+                        final boolean z3622222 = z27;
+                        final ReactionsContainerLayout reactionsContainerLayout322222 = reactionsContainerLayout;
+                        Runnable runnable222222 = new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda233
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                ChatActivity.this.lambda$createMenu$302(i4722222, i4822222, z3622222, reactionsContainerLayout322222);
+                            }
+                        };
+                        if (atomicBoolean.get()) {
+                        }
+                        chatActivity.chatListView.stopScroll();
+                        chatActivity.chatLayoutManager.setCanScrollVertically(false);
+                        chatActivity.dimBehindView(view2, true);
+                        chatActivity.hideHints(false);
+                        undoView = chatActivity.topUndoView;
+                        if (undoView != null) {
+                        }
+                        undoView2 = chatActivity.undoView;
+                        if (undoView2 != null) {
+                        }
+                        chatActivityEnterView = chatActivity.chatActivityEnterView;
+                        if (chatActivityEnterView != null) {
+                        }
+                    }
+                    if (z5) {
+                    }
+                    z9 = false;
+                    if (z5) {
+                    }
+                    if (!z5) {
+                    }
+                    z10 = false;
+                    if (z5) {
+                    }
+                    if (!z5) {
+                    }
+                    str3 = str2;
+                    z11 = false;
+                    if (z5) {
+                    }
+                    if (z24) {
+                    }
+                    Activity parentActivity222222 = getParentActivity();
+                    int i33222222 = R.drawable.popup_fixed_alert4;
+                    final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout9222222 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(parentActivity222222, i33222222, this.themeDelegate, i32);
+                    actionBarPopupWindowLayout9222222.setMinimumWidth(AndroidUtilities.dp(200.0f));
+                    Rect rect4222222 = new Rect();
+                    getParentActivity().getResources().getDrawable(i33222222).mutate().getPadding(rect4222222);
+                    actionBarPopupWindowLayout9222222.setBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
+                    if (actionBarPopupWindowLayout == null) {
+                    }
+                    messageObject7 = chatActivity.selectedObject;
+                    if (messageObject7 != null) {
+                    }
+                    ChatScrimPopupContainerLayout chatScrimPopupContainerLayout3222222 = new ChatScrimPopupContainerLayout(chatActivity.contentView.getContext()) { // from class: org.telegram.ui.ChatActivity.114
+                        @Override // android.view.ViewGroup, android.view.View
+                        public boolean dispatchKeyEvent(KeyEvent keyEvent) {
+                            if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
+                                ChatActivity.this.closeMenu();
+                            }
+                            return super.dispatchKeyEvent(keyEvent);
+                        }
+
+                        @Override // android.view.ViewGroup, android.view.View
+                        public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+                            boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+                            if (motionEvent.getAction() == 0 && !dispatchTouchEvent) {
+                                ChatActivity.this.closeMenu();
+                            }
+                            return dispatchTouchEvent;
+                        }
+                    };
+                    final Rect rect5222222 = rect2;
+                    chatScrimPopupContainerLayout3222222.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ChatActivity.115
+                        private int[] pos = new int[2];
+
+                        @Override // android.view.View.OnTouchListener
+                        public boolean onTouch(View view5, MotionEvent motionEvent) {
+                            if (motionEvent.getActionMasked() == 0) {
+                                ActionBarPopupWindow actionBarPopupWindow222222 = ChatActivity.this.scrimPopupWindow;
+                                if (actionBarPopupWindow222222 != null && actionBarPopupWindow222222.isShowing()) {
+                                    View contentView = ChatActivity.this.scrimPopupWindow.getContentView();
+                                    contentView.getLocationInWindow(this.pos);
+                                    Rect rect6222222 = rect5222222;
+                                    int[] iArr102 = this.pos;
+                                    int i452 = iArr102[0];
+                                    rect6222222.set(i452, iArr102[1], contentView.getMeasuredWidth() + i452, this.pos[1] + contentView.getMeasuredHeight());
+                                    if (!rect5222222.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                                         ChatActivity.this.closeMenu();
                                     }
-                                    return false;
                                 }
-                            });
-                            actionBarPopupWindowLayout4 = actionBarPopupWindowLayout2;
-                            if (actionBarPopupWindowLayout4 == null) {
-                            }
-                            View chatScrimPopupContainerLayout72222222 = chatScrimPopupContainerLayout;
-                            if (reactionsContainerLayout != null) {
-                            }
-                            final ReactionsContainerLayout reactionsContainerLayout22222222 = reactionsContainerLayout;
-                            ActionBarPopupWindow actionBarPopupWindow2222222 = new ActionBarPopupWindow(chatScrimPopupContainerLayout72222222, -2, -2) { // from class: org.telegram.ui.ChatActivity.119
-                                @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
-                                public void dismiss() {
-                                    super.dismiss();
-                                    if (ChatActivity.this.scrimPopupWindow != this) {
-                                        return;
-                                    }
-                                    Bulletin visibleBulletin = Bulletin.getVisibleBulletin();
-                                    Bulletin bulletin = ChatActivity.this.messageSeenPrivacyBulletin;
-                                    if (visibleBulletin == bulletin && bulletin != null) {
-                                        bulletin.hide();
-                                        ChatActivity.this.messageSeenPrivacyBulletin = null;
-                                    }
-                                    ChatActivity chatActivity3 = ChatActivity.this;
-                                    chatActivity3.scrimPopupWindow = null;
-                                    chatActivity3.menuDeleteItem = null;
-                                    ChatActivity.this.scrimPopupWindowItems = null;
-                                    ChatActivity.this.chatLayoutManager.setCanScrollVertically(true);
-                                    if (!ChatActivity.this.scrimPopupWindowHideDimOnDismiss) {
-                                        ChatActivity.this.scrimPopupWindowHideDimOnDismiss = true;
-                                    } else {
-                                        ChatActivity.this.dimBehindView(false);
-                                    }
-                                    ChatActivityEnterView chatActivityEnterView3 = ChatActivity.this.chatActivityEnterView;
-                                    if (chatActivityEnterView3 == null || chatActivityEnterView3.getEditField() == null) {
-                                        return;
-                                    }
-                                    ChatActivity.this.chatActivityEnterView.getEditField().setAllowDrawCursor(true);
-                                }
-
-                                @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow
-                                public void dismiss(boolean z362222222) {
-                                    super.dismiss(z362222222);
-                                    ReactionsContainerLayout reactionsContainerLayout32222222 = reactionsContainerLayout22222222;
-                                    if (reactionsContainerLayout32222222 != null) {
-                                        reactionsContainerLayout32222222.dismissParent(z362222222);
-                                    }
-                                }
-                            };
-                            chatActivity.scrimPopupWindow = actionBarPopupWindow2222222;
-                            actionBarPopupWindow2222222.setPauseNotifications(true);
-                            chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starGiveawayOptionsLoaded);
-                            chatActivity.scrimPopupWindow.setOutsideTouchable(true);
-                            chatActivity.scrimPopupWindow.setClippingEnabled(true);
-                            if (z9) {
-                            }
-                            chatActivity.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
-                            chatActivity.scrimPopupWindow.setFocusable(true);
-                            chatScrimPopupContainerLayout72222222.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
-                            chatActivity.scrimPopupWindow.setInputMethodMode(2);
-                            chatActivity.scrimPopupWindow.setSoftInputMode(48);
-                            chatActivity.scrimPopupWindow.getContentView().setFocusableInTouchMode(true);
-                            actionBarPopupWindowLayout3.setFitItems(true);
-                            Rect rect62222222 = rect2;
-                            left = (((view.getLeft() + ((int) f)) - chatScrimPopupContainerLayout72222222.getMeasuredWidth()) + rect62222222.left) - AndroidUtilities.dp(28.0f);
-                            if (left >= AndroidUtilities.dp(6.0f)) {
-                            }
-                            if (AndroidUtilities.isTablet()) {
-                            }
-                            height = chatActivity.contentView.getHeight();
-                            measuredHeight = chatScrimPopupContainerLayout72222222.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
-                            measureKeyboardHeight = chatActivity.contentView.measureKeyboardHeight();
-                            if (measureKeyboardHeight > AndroidUtilities.dp(20.0f)) {
-                            }
-                            int y3222222 = (int) (chatActivity.chatListView.getY() + AndroidUtilities.dp(24.0f));
-                            int dp72222222 = (height - measuredHeight) - AndroidUtilities.dp(8.0f);
-                            if (measuredHeight >= height) {
-                            }
-                            chatActivity.scrimPopupX = left;
-                            chatActivity.scrimPopupY = i6;
-                            chatScrimPopupContainerLayout72222222.setMaxHeight((dp72222222 + measuredHeight) - i6);
-                            final int i442222222 = left;
-                            final int i452222222 = i6;
-                            final boolean z362222222 = z27;
-                            final ReactionsContainerLayout reactionsContainerLayout32222222 = reactionsContainerLayout;
-                            Runnable runnable22222222 = new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda233
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    ChatActivity.this.lambda$createMenu$302(i442222222, i452222222, z362222222, reactionsContainerLayout32222222);
-                                }
-                            };
-                            if (!atomicBoolean.get()) {
-                            }
-                            chatActivity.chatListView.stopScroll();
-                            chatActivity.chatLayoutManager.setCanScrollVertically(false);
-                            chatActivity.dimBehindView(view2, true);
-                            chatActivity.hideHints(false);
-                            undoView = chatActivity.topUndoView;
-                            if (undoView != null) {
-                            }
-                            undoView2 = chatActivity.undoView;
-                            if (undoView2 != null) {
-                            }
-                            chatActivityEnterView = chatActivity.chatActivityEnterView;
-                            if (chatActivityEnterView == null) {
-                            }
-                        } else {
-                            ChatActivityEnterView chatActivityEnterView3 = this.chatActivityEnterView;
-                            if ((chatActivityEnterView3 == null || (!chatActivityEnterView3.isRecordingAudioVideo() && !this.chatActivityEnterView.isRecordLocked())) && messageObject.type != 27 && !messageObject.isEphemeral()) {
-                                createActionMode();
-                                this.actionBar.createActionMode().setItemVisibility(12, 0);
-                                this.actionsButtonsLayout.bringToFront();
-                                this.bottomViewsVisibilityController.setViewVisible(5, true, true);
-                                this.chatActivityEnterView.getMeasuredHeight();
-                                AndroidUtilities.dp(51.0f);
-                                createActionMode();
-                                if (this.chatActivityEnterView.getVisibility() == 0) {
-                                    ArrayList arrayList20 = new ArrayList();
-                                    MentionsContainerView mentionsContainerView = this.mentionContainer;
-                                    if (mentionsContainerView != null && mentionsContainerView.getVisibility() == 0) {
-                                        arrayList20.add(this.mentionContainer);
-                                    }
-                                    SuggestEmojiView suggestEmojiView = this.suggestEmojiPanel;
-                                    if (suggestEmojiView != null && suggestEmojiView.getVisibility() == 0) {
-                                        arrayList20.add(this.suggestEmojiPanel);
-                                    }
-                                    this.actionBar.showActionMode(true, null, null, (View[]) arrayList20.toArray(new View[0]), new boolean[]{false, true, true}, null, 0);
-                                    if (getParentActivity() instanceof LaunchActivity) {
-                                        ((LaunchActivity) getParentActivity()).hideVisibleActionMode();
-                                    }
-                                    ChatActivityEnterView chatActivityEnterView4 = this.chatActivityEnterView;
-                                    if (chatActivityEnterView4 != null && chatActivityEnterView4.getEditField() != null) {
-                                        this.chatActivityEnterView.getEditField().setAllowDrawCursor(false);
-                                    }
-                                } else if (this.bottomChannelButtonsLayout.getVisibility() == 0) {
-                                    this.actionBar.showActionMode(true, null, null, null, new boolean[]{true}, null, 0);
-                                } else {
-                                    this.actionBar.showActionMode(true, null, null, null, null, null, 0);
-                                }
-                                closeMenu();
-                                this.chatLayoutManager.setCanScrollVertically(true);
-                                updatePinnedMessageView(true);
-                                AnimatorSet animatorSet = new AnimatorSet();
-                                ArrayList arrayList21 = new ArrayList();
-                                for (int i46 = 0; i46 < this.actionModeViews.size(); i46++) {
-                                    View view5 = (View) this.actionModeViews.get(i46);
-                                    AndroidUtilities.clearDrawableAnimation(view5);
-                                    arrayList21.add(ObjectAnimator.ofFloat(view5, (Property<View, Float>) View.SCALE_Y, 0.1f, 1.0f));
-                                }
-                                animatorSet.playTogether(arrayList21);
-                                animatorSet.setDuration(250L);
-                                animatorSet.start();
-                                addToSelectedMessages(messageObject, z2);
-                                ChatActivityEnterView chatActivityEnterView5 = this.chatActivityEnterView;
-                                if (chatActivityEnterView5 != null) {
-                                    chatActivityEnterView5.preventInput = true;
-                                }
-                                AnimatedTextView animatedTextView = this.selectedMessagesCountTextView;
-                                if (animatedTextView != null) {
-                                    animatedTextView.setText(LocaleController.formatPluralString("MessagesSelected", this.selectedMessagesIds[0].size() + this.selectedMessagesIds[1].size(), new Object[0]), false);
-                                }
-                                updateVisibleRows();
-                                ChatActivityEnterView chatActivityEnterView6 = this.chatActivityEnterView;
-                                if (chatActivityEnterView6 != null) {
-                                    chatActivityEnterView6.hideBotCommands();
-                                }
+                            } else if (motionEvent.getActionMasked() == 4) {
+                                ChatActivity.this.closeMenu();
                             }
                             return false;
                         }
+                    });
+                    actionBarPopupWindowLayout4 = actionBarPopupWindowLayout3;
+                    if (actionBarPopupWindowLayout4 != null) {
                     }
-                    z8 = true;
-                    if (messageObject.getDialogId() != this.mergeDialogId) {
-                        messageObject.isExpiredStory();
+                    View chatScrimPopupContainerLayout7222222 = chatScrimPopupContainerLayout;
+                    if (reactionsContainerLayout != null) {
                     }
-                    if ((messageObject.canEditMessage(this.currentChat) || this.chatActivityEnterView.hasAudioToSend() || messageObject.getDialogId() == this.mergeDialogId || (i22 = messageObject.type) == 23 || i22 == 17) ? false : true) {
-                        size2 = validGroupedMessage.messages.size();
-                        while (i21 < size2) {
+                    final ReactionsContainerLayout reactionsContainerLayout2222222 = reactionsContainerLayout;
+                    ActionBarPopupWindow actionBarPopupWindow222222 = new ActionBarPopupWindow(chatScrimPopupContainerLayout7222222, -2, -2) { // from class: org.telegram.ui.ChatActivity.119
+                        @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
+                        public void dismiss() {
+                            super.dismiss();
+                            if (ChatActivity.this.scrimPopupWindow != this) {
+                                return;
+                            }
+                            Bulletin visibleBulletin = Bulletin.getVisibleBulletin();
+                            Bulletin bulletin = ChatActivity.this.messageSeenPrivacyBulletin;
+                            if (visibleBulletin == bulletin && bulletin != null) {
+                                bulletin.hide();
+                                ChatActivity.this.messageSeenPrivacyBulletin = null;
+                            }
+                            ChatActivity chatActivity3 = ChatActivity.this;
+                            chatActivity3.scrimPopupWindow = null;
+                            chatActivity3.menuDeleteItem = null;
+                            ChatActivity.this.scrimPopupWindowItems = null;
+                            ChatActivity.this.chatLayoutManager.setCanScrollVertically(true);
+                            if (!ChatActivity.this.scrimPopupWindowHideDimOnDismiss) {
+                                ChatActivity.this.scrimPopupWindowHideDimOnDismiss = true;
+                            } else {
+                                ChatActivity.this.dimBehindView(false);
+                            }
+                            ChatActivityEnterView chatActivityEnterView3 = ChatActivity.this.chatActivityEnterView;
+                            if (chatActivityEnterView3 == null || chatActivityEnterView3.getEditField() == null) {
+                                return;
+                            }
+                            ChatActivity.this.chatActivityEnterView.getEditField().setAllowDrawCursor(true);
+                        }
+
+                        @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow
+                        public void dismiss(boolean z36222222) {
+                            super.dismiss(z36222222);
+                            ReactionsContainerLayout reactionsContainerLayout3222222 = reactionsContainerLayout2222222;
+                            if (reactionsContainerLayout3222222 != null) {
+                                reactionsContainerLayout3222222.dismissParent(z36222222);
+                            }
+                        }
+                    };
+                    chatActivity.scrimPopupWindow = actionBarPopupWindow222222;
+                    actionBarPopupWindow222222.setPauseNotifications(true);
+                    chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starGiveawayOptionsLoaded);
+                    chatActivity.scrimPopupWindow.setOutsideTouchable(true);
+                    chatActivity.scrimPopupWindow.setClippingEnabled(true);
+                    if (z8) {
+                    }
+                    chatActivity.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
+                    chatActivity.scrimPopupWindow.setFocusable(true);
+                    chatScrimPopupContainerLayout7222222.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
+                    chatActivity.scrimPopupWindow.setInputMethodMode(2);
+                    chatActivity.scrimPopupWindow.setSoftInputMode(48);
+                    chatActivity.scrimPopupWindow.getContentView().setFocusableInTouchMode(true);
+                    actionBarPopupWindowLayout2.setFitItems(true);
+                    Rect rect6222222 = rect;
+                    left = (((view.getLeft() + ((int) f)) - chatScrimPopupContainerLayout7222222.getMeasuredWidth()) + rect6222222.left) - AndroidUtilities.dp(28.0f);
+                    if (left < AndroidUtilities.dp(6.0f)) {
+                    }
+                    if (AndroidUtilities.isTablet()) {
+                    }
+                    height = chatActivity.contentView.getHeight();
+                    measuredHeight = chatScrimPopupContainerLayout7222222.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
+                    measureKeyboardHeight = chatActivity.contentView.measureKeyboardHeight();
+                    if (measureKeyboardHeight > AndroidUtilities.dp(20.0f)) {
+                    }
+                    int y322222 = (int) (chatActivity.chatListView.getY() + AndroidUtilities.dp(24.0f));
+                    int dp7222222 = (height - measuredHeight) - AndroidUtilities.dp(8.0f);
+                    if (measuredHeight < height) {
+                    }
+                    chatActivity.scrimPopupX = left;
+                    chatActivity.scrimPopupY = i5;
+                    chatScrimPopupContainerLayout7222222.setMaxHeight((dp7222222 + measuredHeight) - i5);
+                    final int i47222222 = left;
+                    final int i48222222 = i5;
+                    final boolean z36222222 = z27;
+                    final ReactionsContainerLayout reactionsContainerLayout3222222 = reactionsContainerLayout;
+                    Runnable runnable2222222 = new Runnable() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda233
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            ChatActivity.this.lambda$createMenu$302(i47222222, i48222222, z36222222, reactionsContainerLayout3222222);
+                        }
+                    };
+                    if (atomicBoolean.get()) {
+                    }
+                    chatActivity.chatListView.stopScroll();
+                    chatActivity.chatLayoutManager.setCanScrollVertically(false);
+                    chatActivity.dimBehindView(view2, true);
+                    chatActivity.hideHints(false);
+                    undoView = chatActivity.topUndoView;
+                    if (undoView != null) {
+                    }
+                    undoView2 = chatActivity.undoView;
+                    if (undoView2 != null) {
+                    }
+                    chatActivityEnterView = chatActivity.chatActivityEnterView;
+                    if (chatActivityEnterView != null) {
+                    }
+                } else {
+                    ChatActivityEnterView chatActivityEnterView3 = this.chatActivityEnterView;
+                    if ((chatActivityEnterView3 == null || (!chatActivityEnterView3.isRecordingAudioVideo() && !this.chatActivityEnterView.isRecordLocked())) && messageObject2.type != 27 && !messageObject2.isEphemeral()) {
+                        createActionMode();
+                        this.actionBar.createActionMode().setItemVisibility(12, 0);
+                        this.actionsButtonsLayout.bringToFront();
+                        this.bottomViewsVisibilityController.setViewVisible(5, true, true);
+                        this.chatActivityEnterView.getMeasuredHeight();
+                        AndroidUtilities.dp(51.0f);
+                        createActionMode();
+                        if (this.chatActivityEnterView.getVisibility() == 0) {
+                            ArrayList arrayList20 = new ArrayList();
+                            MentionsContainerView mentionsContainerView = this.mentionContainer;
+                            if (mentionsContainerView != null && mentionsContainerView.getVisibility() == 0) {
+                                arrayList20.add(this.mentionContainer);
+                            }
+                            SuggestEmojiView suggestEmojiView = this.suggestEmojiPanel;
+                            if (suggestEmojiView != null && suggestEmojiView.getVisibility() == 0) {
+                                arrayList20.add(this.suggestEmojiPanel);
+                            }
+                            this.actionBar.showActionMode(true, null, null, (View[]) arrayList20.toArray(new View[0]), new boolean[]{false, true, true}, null, 0);
+                            if (getParentActivity() instanceof LaunchActivity) {
+                                ((LaunchActivity) getParentActivity()).hideVisibleActionMode();
+                            }
+                            ChatActivityEnterView chatActivityEnterView4 = this.chatActivityEnterView;
+                            if (chatActivityEnterView4 != null && chatActivityEnterView4.getEditField() != null) {
+                                this.chatActivityEnterView.getEditField().setAllowDrawCursor(false);
+                            }
+                        } else if (this.bottomChannelButtonsLayout.getVisibility() == 0) {
+                            this.actionBar.showActionMode(true, null, null, null, new boolean[]{true}, null, 0);
+                        } else {
+                            this.actionBar.showActionMode(true, null, null, null, null, null, 0);
+                        }
+                        closeMenu();
+                        this.chatLayoutManager.setCanScrollVertically(true);
+                        updatePinnedMessageView(true);
+                        AnimatorSet animatorSet = new AnimatorSet();
+                        ArrayList arrayList21 = new ArrayList();
+                        for (int i49 = 0; i49 < this.actionModeViews.size(); i49++) {
+                            View view5 = (View) this.actionModeViews.get(i49);
+                            AndroidUtilities.clearDrawableAnimation(view5);
+                            arrayList21.add(ObjectAnimator.ofFloat(view5, (Property<View, Float>) View.SCALE_Y, 0.1f, 1.0f));
+                        }
+                        animatorSet.playTogether(arrayList21);
+                        animatorSet.setDuration(250L);
+                        animatorSet.start();
+                        addToSelectedMessages(messageObject2, z2);
+                        ChatActivityEnterView chatActivityEnterView5 = this.chatActivityEnterView;
+                        if (chatActivityEnterView5 != null) {
+                            chatActivityEnterView5.preventInput = true;
+                        }
+                        AnimatedTextView animatedTextView = this.selectedMessagesCountTextView;
+                        if (animatedTextView != null) {
+                            animatedTextView.setText(LocaleController.formatPluralString("MessagesSelected", this.selectedMessagesIds[0].size() + this.selectedMessagesIds[1].size(), new Object[0]), false);
+                        }
+                        updateVisibleRows();
+                        ChatActivityEnterView chatActivityEnterView6 = this.chatActivityEnterView;
+                        if (chatActivityEnterView6 != null) {
+                            chatActivityEnterView6.hideBotCommands();
                         }
                     }
-                    if (!messageObject.isExpiredStory()) {
-                        boolean z232 = this.selectedObject.wasJustSent;
-                    }
-                    chat = this.currentChat;
-                    if (chat != null) {
-                        isThreadChat();
-                    }
-                    chat2 = this.currentChat;
-                    if (chat2 != null) {
-                        boolean z242 = this.currentChat.megagroup;
-                    }
-                    chat3 = this.currentChat;
-                    if (chat3 != null) {
-                    }
-                    if (!z22) {
-                    }
-                    if (getParentActivity() == null) {
-                    }
+                    return false;
                 }
             }
+            z7 = true;
+            if (messageObject2.getDialogId() != this.mergeDialogId) {
+                messageObject2.isExpiredStory();
+            }
+            if ((messageObject2.canEditMessage(this.currentChat) || this.chatActivityEnterView.hasAudioToSend() || messageObject2.getDialogId() == this.mergeDialogId || (i26 = messageObject2.type) == 23 || i26 == 17) ? false : true) {
+                size2 = validGroupedMessage.messages.size();
+                while (i25 < size2) {
+                }
+            }
+            if (!messageObject2.isExpiredStory()) {
+                boolean z222 = this.selectedObject.wasJustSent;
+            }
+            chat = this.currentChat;
+            if (chat != null) {
+                isThreadChat();
+            }
+            chat2 = this.currentChat;
+            if (chat2 != null) {
+                boolean z232 = this.currentChat.megagroup;
+            }
+            chat3 = this.currentChat;
+            if (chat3 != null) {
+            }
+            if (!z20) {
+            }
+            if (getParentActivity() != null) {
+            }
+        }
+        z6 = false;
+        if (!UserObject.isReplyUser(this.dialog_id)) {
+        }
+        z6 = false;
+        if (z6) {
+        }
+        if (!(!isPeerNoForwards() || messageObject2.messageOwner.noforwards || getDialogId() == UserObject.VERIFY)) {
             z7 = false;
-            if (!isPeerNoForwards() || messageObject.messageOwner.noforwards || getDialogId() == UserObject.VERIFY) {
-                z8 = false;
-                if (messageObject.getDialogId() != this.mergeDialogId) {
-                }
-                if ((messageObject.canEditMessage(this.currentChat) || this.chatActivityEnterView.hasAudioToSend() || messageObject.getDialogId() == this.mergeDialogId || (i22 = messageObject.type) == 23 || i22 == 17) ? false : true) {
-                }
-                if (!messageObject.isExpiredStory()) {
-                }
-                chat = this.currentChat;
-                if (chat != null) {
-                }
-                chat2 = this.currentChat;
-                if (chat2 != null) {
-                }
-                chat3 = this.currentChat;
-                if (chat3 != null) {
-                }
-                if (!z22) {
-                }
-                if (getParentActivity() == null) {
-                }
+            if (messageObject2.getDialogId() != this.mergeDialogId) {
             }
-            z8 = true;
-            if (messageObject.getDialogId() != this.mergeDialogId) {
+            if ((messageObject2.canEditMessage(this.currentChat) || this.chatActivityEnterView.hasAudioToSend() || messageObject2.getDialogId() == this.mergeDialogId || (i26 = messageObject2.type) == 23 || i26 == 17) ? false : true) {
             }
-            if ((messageObject.canEditMessage(this.currentChat) || this.chatActivityEnterView.hasAudioToSend() || messageObject.getDialogId() == this.mergeDialogId || (i22 = messageObject.type) == 23 || i22 == 17) ? false : true) {
-            }
-            if (!messageObject.isExpiredStory()) {
+            if (!messageObject2.isExpiredStory()) {
             }
             chat = this.currentChat;
             if (chat != null) {
@@ -46161,26 +45962,17 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             chat3 = this.currentChat;
             if (chat3 != null) {
             }
-            if (!z22) {
+            if (!z20) {
             }
-            if (getParentActivity() == null) {
+            if (getParentActivity() != null) {
             }
         }
-        z6 = false;
-        if (!UserObject.isReplyUser(this.dialog_id)) {
+        z7 = true;
+        if (messageObject2.getDialogId() != this.mergeDialogId) {
         }
-        z6 = false;
-        if (!z6) {
+        if ((messageObject2.canEditMessage(this.currentChat) || this.chatActivityEnterView.hasAudioToSend() || messageObject2.getDialogId() == this.mergeDialogId || (i26 = messageObject2.type) == 23 || i26 == 17) ? false : true) {
         }
-        z7 = false;
-        if (!isPeerNoForwards() || messageObject.messageOwner.noforwards || getDialogId() == UserObject.VERIFY) {
-        }
-        z8 = true;
-        if (messageObject.getDialogId() != this.mergeDialogId) {
-        }
-        if ((messageObject.canEditMessage(this.currentChat) || this.chatActivityEnterView.hasAudioToSend() || messageObject.getDialogId() == this.mergeDialogId || (i22 = messageObject.type) == 23 || i22 == 17) ? false : true) {
-        }
-        if (!messageObject.isExpiredStory()) {
+        if (!messageObject2.isExpiredStory()) {
         }
         chat = this.currentChat;
         if (chat != null) {
@@ -46191,9 +45983,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         chat3 = this.currentChat;
         if (chat3 != null) {
         }
-        if (!z22) {
+        if (!z20) {
         }
-        if (getParentActivity() == null) {
+        if (getParentActivity() != null) {
         }
     }
 
@@ -64014,9 +63806,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     
         if (r5.edit_messages != false) goto L559;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:586:0x0fda, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:588:0x0fde, code lost:
     
-        if (r6.translated == false) goto L750;
+        if (r6.translated == false) goto L752;
      */
     /* JADX WARN: Removed duplicated region for block: B:100:0x0189  */
     /* JADX WARN: Removed duplicated region for block: B:103:0x0192  */
@@ -64029,22 +63821,22 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     /* JADX WARN: Removed duplicated region for block: B:156:0x02e0  */
     /* JADX WARN: Removed duplicated region for block: B:160:0x02f7  */
     /* JADX WARN: Removed duplicated region for block: B:177:0x0358  */
-    /* JADX WARN: Removed duplicated region for block: B:567:0x0f6a  */
-    /* JADX WARN: Removed duplicated region for block: B:581:0x0fd0  */
-    /* JADX WARN: Removed duplicated region for block: B:588:0x0ff9  */
-    /* JADX WARN: Removed duplicated region for block: B:611:0x1087  */
-    /* JADX WARN: Removed duplicated region for block: B:623:0x10b0  */
-    /* JADX WARN: Removed duplicated region for block: B:625:0x10b3  */
-    /* JADX WARN: Removed duplicated region for block: B:628:0x10d3  */
-    /* JADX WARN: Removed duplicated region for block: B:646:0x1137  */
-    /* JADX WARN: Removed duplicated region for block: B:649:0x1142  */
-    /* JADX WARN: Removed duplicated region for block: B:662:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:663:0x1139  */
-    /* JADX WARN: Removed duplicated region for block: B:664:0x108c  */
-    /* JADX WARN: Removed duplicated region for block: B:665:0x0f86  */
+    /* JADX WARN: Removed duplicated region for block: B:569:0x0f6e  */
+    /* JADX WARN: Removed duplicated region for block: B:583:0x0fd4  */
+    /* JADX WARN: Removed duplicated region for block: B:590:0x0ffd  */
+    /* JADX WARN: Removed duplicated region for block: B:613:0x108b  */
+    /* JADX WARN: Removed duplicated region for block: B:625:0x10b4  */
+    /* JADX WARN: Removed duplicated region for block: B:627:0x10b7  */
+    /* JADX WARN: Removed duplicated region for block: B:630:0x10d7  */
+    /* JADX WARN: Removed duplicated region for block: B:648:0x113b  */
+    /* JADX WARN: Removed duplicated region for block: B:651:0x1146  */
+    /* JADX WARN: Removed duplicated region for block: B:664:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:665:0x113d  */
+    /* JADX WARN: Removed duplicated region for block: B:666:0x1090  */
+    /* JADX WARN: Removed duplicated region for block: B:667:0x0f8a  */
     /* JADX WARN: Removed duplicated region for block: B:82:0x0151 A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:85:0x015d  */
-    /* JADX WARN: Removed duplicated region for block: B:899:0x02e4  */
+    /* JADX WARN: Removed duplicated region for block: B:901:0x02e4  */
     /* JADX WARN: Removed duplicated region for block: B:99:0x0187  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -64574,7 +64366,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                             arrayList.add(Integer.valueOf(R.drawable.msg_shareout));
                                         }
                                     }
-                                    if (!this.selectedObject.isSponsored() && (i5 = this.chatMode) != 5 && i5 != 1 && ((!this.selectedObject.needDrawBluredPreview() || this.selectedObject.hasExtendedMediaPreview()) && !this.selectedObject.isLiveLocation() && (i6 = (messageObject4 = this.selectedObject).type) != 16 && !z6 && i6 != 35 && i6 != 18 && i6 != 33 && i6 != 34 && i6 != 25 && i6 != 21 && !messageObject4.isWallpaperAction() && !messageObject6.isExpiredStory() && (i7 = messageObject6.type) != i4 && i7 != 30)) {
+                                    if (!this.selectedObject.isSponsored() && (i5 = this.chatMode) != 5 && i5 != 1 && ((!this.selectedObject.needDrawBluredPreview() || this.selectedObject.hasExtendedMediaPreview()) && !this.selectedObject.isLiveLocation() && (i6 = (messageObject4 = this.selectedObject).type) != 16 && !z6 && i6 != 35 && i6 != 18 && i6 != 33 && i6 != 37 && i6 != 34 && i6 != 25 && i6 != 21 && !messageObject4.isWallpaperAction() && !messageObject6.isExpiredStory() && (i7 = messageObject6.type) != i4 && i7 != 30)) {
                                         arrayList2.add(LocaleController.getString(R.string.Forward));
                                         arrayList3.add(2);
                                         arrayList.add(Integer.valueOf(R.drawable.msg_forward));
