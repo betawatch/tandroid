@@ -493,6 +493,7 @@ public class FragmentSearchField extends FrameLayout implements FactorAnimator.T
             } else {
                 searchFilterView = new ActionBarMenuItem.SearchFilterView(getContext(), this.resourcesProvider, false);
             }
+            searchFilterView.setGlass();
             searchFilterView.setData(mediaFilterData);
             searchFilterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentSearchField$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener

@@ -24,6 +24,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
+import org.telegram.messenger.utils.DrawableUtils;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -45,7 +46,7 @@ import org.telegram.ui.Stories.StoriesListPlaceProvider;
 import org.telegram.ui.Stories.StoriesUtilities;
 
 /* loaded from: classes4.dex */
-public class UserCell extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+public class UserCell extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, Theme.Colorable {
     private TextView addButton;
     private TextView adminTextView;
     protected AvatarDrawable avatarDrawable;
@@ -56,6 +57,7 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
     private ImageView checkBox3;
     private CheckBoxSquare checkBoxBig;
     private ImageView closeView;
+    private Drawable communityCardsDrawable;
     private int currentAccount;
     private int currentDrawable;
     private int currentId;
@@ -67,6 +69,7 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
     private TLRPC.EncryptedChat encryptedChat;
     private ImageView imageView;
     private boolean isAdmin;
+    private boolean isCommunity;
     private boolean isOwner;
     private TLRPC.FileLocation lastAvatar;
     private String lastName;
@@ -555,6 +558,14 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
         }
     }
 
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:193:0x014c, code lost:
+    
+        if (r3.equals("groups") == false) goto L68;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void update(int i) {
         TLRPC.User user;
         TLRPC.Chat chat;
@@ -563,8 +574,11 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
         long botVerificationIcon;
         TLRPC.UserStatus userStatus;
         TextView textView;
+        int dp;
         TLRPC.FileLocation fileLocation2;
+        char c = 1;
         this.dialogId = 0L;
+        this.isCommunity = false;
         Object obj = this.currentObject;
         if (obj instanceof TLRPC.User) {
             user = (TLRPC.User) obj;
@@ -578,6 +592,7 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
             TLRPC.ChatPhoto chatPhoto = chat2.photo;
             TLRPC.FileLocation fileLocation4 = chatPhoto != null ? chatPhoto.photo_small : null;
             this.dialogId = chat2.id;
+            this.isCommunity = ChatObject.isCommunity(chat2);
             fileLocation = fileLocation4;
             chat = chat2;
             user = null;
@@ -616,35 +631,105 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
             ((FrameLayout.LayoutParams) this.nameTextView.getLayoutParams()).topMargin = AndroidUtilities.dp(19.0f);
             String str2 = (String) this.currentObject;
             str2.hashCode();
-            switch (str2) {
-                case "archived":
+            switch (str2.hashCode()) {
+                case -1716307998:
+                    if (str2.equals("archived")) {
+                        c = 0;
+                        break;
+                    }
+                    c = 65535;
+                    break;
+                case -1237460524:
+                    break;
+                case -1197490811:
+                    if (str2.equals("non_contacts")) {
+                        c = 2;
+                        break;
+                    }
+                    c = 65535;
+                    break;
+                case -567451565:
+                    if (str2.equals("contacts")) {
+                        c = 3;
+                        break;
+                    }
+                    c = 65535;
+                    break;
+                case -268161860:
+                    if (str2.equals("new_chats")) {
+                        c = 4;
+                        break;
+                    }
+                    c = 65535;
+                    break;
+                case 3029900:
+                    if (str2.equals("bots")) {
+                        c = 5;
+                        break;
+                    }
+                    c = 65535;
+                    break;
+                case 3496342:
+                    if (str2.equals("read")) {
+                        c = 6;
+                        break;
+                    }
+                    c = 65535;
+                    break;
+                case 104264043:
+                    if (str2.equals("muted")) {
+                        c = 7;
+                        break;
+                    }
+                    c = 65535;
+                    break;
+                case 151051367:
+                    if (str2.equals("existing_chats")) {
+                        c = '\b';
+                        break;
+                    }
+                    c = 65535;
+                    break;
+                case 1432626128:
+                    if (str2.equals("channels")) {
+                        c = '\t';
+                        break;
+                    }
+                    c = 65535;
+                    break;
+                default:
+                    c = 65535;
+                    break;
+            }
+            switch (c) {
+                case 0:
                     this.avatarDrawable.setAvatarType(11);
                     break;
-                case "groups":
+                case 1:
                     this.avatarDrawable.setAvatarType(6);
                     break;
-                case "non_contacts":
+                case 2:
                     this.avatarDrawable.setAvatarType(5);
                     break;
-                case "contacts":
+                case 3:
                     this.avatarDrawable.setAvatarType(4);
                     break;
-                case "new_chats":
+                case 4:
                     this.avatarDrawable.setAvatarType(24);
                     break;
-                case "bots":
+                case 5:
                     this.avatarDrawable.setAvatarType(8);
                     break;
-                case "read":
+                case 6:
                     this.avatarDrawable.setAvatarType(10);
                     break;
-                case "muted":
+                case 7:
                     this.avatarDrawable.setAvatarType(9);
                     break;
-                case "existing_chats":
+                case '\b':
                     this.avatarDrawable.setAvatarType(23);
                     break;
-                case "channels":
+                case '\t':
                     this.avatarDrawable.setAvatarType(7);
                     break;
             }
@@ -793,8 +878,34 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
         } else {
             this.avatarImageView.setImageDrawable(this.avatarDrawable);
         }
-        this.avatarImageView.setRoundRadius(AndroidUtilities.dp((chat == null || !chat.forum) ? 24.0f : 14.0f));
+        BackupImageView backupImageView = this.avatarImageView;
+        if (this.isCommunity) {
+            dp = AndroidUtilities.dp(12.777778f);
+        } else {
+            dp = AndroidUtilities.dp((chat == null || !chat.forum) ? 24.0f : 14.0f);
+        }
+        backupImageView.setRoundRadius(dp);
         this.nameTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider));
+    }
+
+    @Override // android.view.ViewGroup
+    protected boolean drawChild(Canvas canvas, View view, long j) {
+        if (this.isCommunity && view == this.avatarImageView) {
+            if (this.communityCardsDrawable == null) {
+                this.communityCardsDrawable = getContext().getResources().getDrawable(R.drawable.community_cards).mutate();
+                updateColors();
+            }
+            DrawableUtils.drawCommunityCardDrawable(canvas, this.communityCardsDrawable, view.getX() + (view.getWidth() / 2.0f), view.getY() + (view.getHeight() / 2.0f), view.getHeight());
+        }
+        return super.drawChild(canvas, view, j);
+    }
+
+    @Override // org.telegram.ui.ActionBar.Theme.Colorable
+    public void updateColors() {
+        Drawable drawable = this.communityCardsDrawable;
+        if (drawable != null) {
+            drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider), PorterDuff.Mode.MULTIPLY));
+        }
     }
 
     public void setSelfAsSavedMessages(boolean z) {

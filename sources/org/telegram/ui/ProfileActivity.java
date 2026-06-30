@@ -3805,6 +3805,12 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         }
                     }
 
+                    @Override // org.telegram.ui.ActionBar.SimpleTextView
+                    public boolean setText(CharSequence charSequence) {
+                        AndroidUtilities.printStackTrace("WTF_DEBUG  " + ((Object) charSequence));
+                        return super.setText(charSequence);
+                    }
+
                     @Override // org.telegram.ui.ActionBar.SimpleTextView, android.view.View
                     protected void onDraw(Canvas canvas) {
                         int rightDrawableX = getRightDrawableX();

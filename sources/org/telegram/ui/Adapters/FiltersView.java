@@ -683,7 +683,6 @@ public class FiltersView extends RecyclerListView {
         public TLRPC.MessagesFilter filter;
         public int filterType;
         public int iconResFilled;
-        public boolean limitWidth;
         public ReactionsLayoutInBubble.VisibleReaction reaction;
         public boolean removable = true;
         private String title;
@@ -710,10 +709,6 @@ public class FiltersView extends RecyclerListView {
 
         public void setUser(TLObject tLObject) {
             this.chat = tLObject;
-        }
-
-        public void setLimitWidth() {
-            this.limitWidth = true;
         }
 
         public boolean isSameType(MediaFilterData mediaFilterData) {

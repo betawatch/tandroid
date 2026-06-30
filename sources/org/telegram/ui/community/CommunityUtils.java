@@ -215,7 +215,7 @@ public abstract class CommunityUtils {
                 return;
             }
             this.loading = true;
-            MessagesController.getInstance(this.currentAccount).fetchCommunityPendingJoinRequests(this.communityId, this.nextOffset, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunityUtils$PendingRequests$$ExternalSyntheticLambda0
+            MessagesController.getInstance(this.currentAccount).fetchCommunityPendingJoinRequests(this.communityId, this.nextOffset, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunityUtils$PendingRequests$$ExternalSyntheticLambda3
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     CommunityUtils.PendingRequests.this.lambda$loadNext$0((TL_communities.PeerLinkRequests) obj, (TLRPC.TL_error) obj2);
@@ -372,7 +372,7 @@ public abstract class CommunityUtils {
             TextView textView;
             if (this.progressDialog == null && this.reqId == 0) {
                 if (z2) {
-                    AlertDialog createSimpleConfirmAlert = AlertsCreator.createSimpleConfirmAlert(this.context, this.resourcesProvider, LocaleController.getString(z ? R.string.CommunityAddAllChatsTitle : R.string.CommunityDeclineAllTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralString(z ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", this.totalCount, new Object[0])), LocaleController.getString(z ? R.string.Add : R.string.Decline), new Runnable() { // from class: org.telegram.ui.community.CommunityUtils$PendingRequests$$ExternalSyntheticLambda1
+                    AlertDialog createSimpleConfirmAlert = AlertsCreator.createSimpleConfirmAlert(this.context, this.resourcesProvider, LocaleController.getString(z ? R.string.CommunityAddAllChatsTitle : R.string.CommunityDeclineAllTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralString(z ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", this.totalCount, new Object[0])), LocaleController.getString(z ? R.string.Add : R.string.Decline), new Runnable() { // from class: org.telegram.ui.community.CommunityUtils$PendingRequests$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
                             CommunityUtils.PendingRequests.this.lambda$onResolveAllJoinRequests$4(z);
@@ -388,14 +388,14 @@ public abstract class CommunityUtils {
                 commit();
                 AlertDialog alertDialog = new AlertDialog(this.context, 3, this.resourcesProvider);
                 this.progressDialog = alertDialog;
-                alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.community.CommunityUtils$PendingRequests$$ExternalSyntheticLambda2
+                alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.community.CommunityUtils$PendingRequests$$ExternalSyntheticLambda1
                     @Override // android.content.DialogInterface.OnCancelListener
                     public final void onCancel(DialogInterface dialogInterface) {
                         CommunityUtils.PendingRequests.this.lambda$onResolveAllJoinRequests$5(dialogInterface);
                     }
                 });
                 this.progressDialog.showDelayed(500L);
-                this.reqId = MessagesController.getInstance(this.currentAccount).resolveCommunityAllJoinPendingRequests(this.communityId, !z, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunityUtils$PendingRequests$$ExternalSyntheticLambda3
+                this.reqId = MessagesController.getInstance(this.currentAccount).resolveCommunityAllJoinPendingRequests(this.communityId, !z, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunityUtils$PendingRequests$$ExternalSyntheticLambda2
                     @Override // org.telegram.messenger.Utilities.Callback2
                     public final void run(Object obj, Object obj2) {
                         CommunityUtils.PendingRequests.this.lambda$onResolveAllJoinRequests$6((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);

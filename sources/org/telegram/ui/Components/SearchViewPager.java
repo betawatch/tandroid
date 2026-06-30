@@ -264,12 +264,21 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         recyclerListView.addEdgeEffectListener(new SearchViewPager$$ExternalSyntheticLambda1(this));
         FilteredSearchView filteredSearchView = new FilteredSearchView(this.parent);
         this.noMediaFiltersSearchView = filteredSearchView;
-        filteredSearchView.setUiCallback(this);
+        filteredSearchView.recyclerListView.setClipToPadding(false);
+        this.noMediaFiltersSearchView.recyclerListView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.SearchViewPager.4
+            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
+            public void onScrolled(RecyclerView recyclerView, int i6, int i7) {
+                super.onScrolled(recyclerView, i6, i7);
+                SearchViewPager.this.onPageScrolled(i6, i7);
+            }
+        });
+        this.noMediaFiltersSearchView.recyclerListView.addEdgeEffectListener(new SearchViewPager$$ExternalSyntheticLambda1(this));
+        this.noMediaFiltersSearchView.setUiCallback(this);
         this.noMediaFiltersSearchView.setVisibility(8);
         this.noMediaFiltersSearchView.setChatPreviewDelegate(chatPreviewDelegate);
         FlickerLoadingView flickerLoadingView = new FlickerLoadingView(context);
         flickerLoadingView.setViewType(1);
-        StickerEmptyView stickerEmptyView = new StickerEmptyView(context, flickerLoadingView, i4) { // from class: org.telegram.ui.Components.SearchViewPager.4
+        StickerEmptyView stickerEmptyView = new StickerEmptyView(context, flickerLoadingView, i4) { // from class: org.telegram.ui.Components.SearchViewPager.5
             @Override // org.telegram.ui.Components.StickerEmptyView, android.view.View
             public void setVisibility(int i6) {
                 if (SearchViewPager.this.noMediaFiltersSearchView.getTag() != null) {
@@ -294,7 +303,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         this.searchContainer.addView(this.noMediaFiltersSearchView);
         recyclerListView.setEmptyView(this.emptyView);
         this.channelsSearchContainer = new FrameLayout(context);
-        DefaultItemAnimator defaultItemAnimator2 = new DefaultItemAnimator() { // from class: org.telegram.ui.Components.SearchViewPager.5
+        DefaultItemAnimator defaultItemAnimator2 = new DefaultItemAnimator() { // from class: org.telegram.ui.Components.SearchViewPager.6
             @Override // androidx.recyclerview.widget.DefaultItemAnimator
             protected void onMoveAnimationUpdate(RecyclerView.ViewHolder viewHolder) {
                 super.onMoveAnimationUpdate(viewHolder);
@@ -322,7 +331,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         recyclerListView2.setClipToPadding(false);
         FlickerLoadingView flickerLoadingView2 = new FlickerLoadingView(context);
         flickerLoadingView2.setViewType(1);
-        StickerEmptyView stickerEmptyView2 = new StickerEmptyView(context, flickerLoadingView2, i4) { // from class: org.telegram.ui.Components.SearchViewPager.6
+        StickerEmptyView stickerEmptyView2 = new StickerEmptyView(context, flickerLoadingView2, i4) { // from class: org.telegram.ui.Components.SearchViewPager.7
             @Override // org.telegram.ui.Components.StickerEmptyView, android.view.View
             public void setVisibility(int i7) {
                 if (SearchViewPager.this.noMediaFiltersSearchView.getTag() != null) {
@@ -341,7 +350,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         this.channelsSearchContainer.addView(this.channelsEmptyView);
         this.channelsSearchContainer.addView(recyclerListView2);
         recyclerListView2.setEmptyView(this.channelsEmptyView);
-        DialogsChannelsAdapter dialogsChannelsAdapter = new DialogsChannelsAdapter(recyclerListView2, context, this.currentAccount, i3, null) { // from class: org.telegram.ui.Components.SearchViewPager.7
+        DialogsChannelsAdapter dialogsChannelsAdapter = new DialogsChannelsAdapter(recyclerListView2, context, this.currentAccount, i3, null) { // from class: org.telegram.ui.Components.SearchViewPager.8
             @Override // org.telegram.ui.Components.UniversalAdapter
             public void update(boolean z) {
                 ArrayList arrayList2;
@@ -367,7 +376,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         };
         this.channelsSearchAdapter = dialogsChannelsAdapter;
         recyclerListView2.setAdapter(dialogsChannelsAdapter);
-        recyclerListView2.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.SearchViewPager.8
+        recyclerListView2.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.SearchViewPager.9
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView, int i7) {
                 if (i7 == 1) {
@@ -383,7 +392,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         });
         recyclerListView2.addEdgeEffectListener(new SearchViewPager$$ExternalSyntheticLambda1(this));
         this.botsSearchContainer = new FrameLayout(context);
-        DefaultItemAnimator defaultItemAnimator4 = new DefaultItemAnimator() { // from class: org.telegram.ui.Components.SearchViewPager.9
+        DefaultItemAnimator defaultItemAnimator4 = new DefaultItemAnimator() { // from class: org.telegram.ui.Components.SearchViewPager.10
             @Override // androidx.recyclerview.widget.DefaultItemAnimator
             protected void onMoveAnimationUpdate(RecyclerView.ViewHolder viewHolder) {
                 super.onMoveAnimationUpdate(viewHolder);
@@ -410,7 +419,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         recyclerListView3.setAnimateEmptyView(true, 0);
         FlickerLoadingView flickerLoadingView3 = new FlickerLoadingView(context);
         flickerLoadingView3.setViewType(1);
-        StickerEmptyView stickerEmptyView3 = new StickerEmptyView(context, flickerLoadingView3, i7) { // from class: org.telegram.ui.Components.SearchViewPager.10
+        StickerEmptyView stickerEmptyView3 = new StickerEmptyView(context, flickerLoadingView3, i7) { // from class: org.telegram.ui.Components.SearchViewPager.11
             @Override // org.telegram.ui.Components.StickerEmptyView, android.view.View
             public void setVisibility(int i8) {
                 if (SearchViewPager.this.noMediaFiltersSearchView.getTag() != null) {
@@ -429,7 +438,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         this.botsSearchContainer.addView(this.botsEmptyView);
         this.botsSearchContainer.addView(recyclerListView3);
         recyclerListView3.setEmptyView(this.botsEmptyView);
-        DialogsBotsAdapter dialogsBotsAdapter = new DialogsBotsAdapter(recyclerListView3, context, this.currentAccount, i3, false, null) { // from class: org.telegram.ui.Components.SearchViewPager.11
+        DialogsBotsAdapter dialogsBotsAdapter = new DialogsBotsAdapter(recyclerListView3, context, this.currentAccount, i3, false, null) { // from class: org.telegram.ui.Components.SearchViewPager.12
             @Override // org.telegram.ui.Components.UniversalAdapter
             public void update(boolean z) {
                 ArrayList arrayList2;
@@ -441,7 +450,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         };
         this.botsSearchAdapter = dialogsBotsAdapter;
         recyclerListView3.setAdapter(dialogsBotsAdapter);
-        recyclerListView3.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.SearchViewPager.12
+        recyclerListView3.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.SearchViewPager.13
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView, int i8) {
                 if (i8 == 1) {
@@ -457,7 +466,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         });
         recyclerListView3.addEdgeEffectListener(new SearchViewPager$$ExternalSyntheticLambda1(this));
         this.hashtagSearchContainer = new FrameLayout(context);
-        DefaultItemAnimator defaultItemAnimator5 = new DefaultItemAnimator() { // from class: org.telegram.ui.Components.SearchViewPager.13
+        DefaultItemAnimator defaultItemAnimator5 = new DefaultItemAnimator() { // from class: org.telegram.ui.Components.SearchViewPager.14
             @Override // androidx.recyclerview.widget.DefaultItemAnimator
             protected void onMoveAnimationUpdate(RecyclerView.ViewHolder viewHolder) {
                 super.onMoveAnimationUpdate(viewHolder);
@@ -484,7 +493,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         recyclerListView4.setClipToPadding(false);
         FlickerLoadingView flickerLoadingView4 = new FlickerLoadingView(context);
         flickerLoadingView4.setViewType(1);
-        StickerEmptyView stickerEmptyView4 = new StickerEmptyView(context, flickerLoadingView4, i8) { // from class: org.telegram.ui.Components.SearchViewPager.14
+        StickerEmptyView stickerEmptyView4 = new StickerEmptyView(context, flickerLoadingView4, i8) { // from class: org.telegram.ui.Components.SearchViewPager.15
             @Override // org.telegram.ui.Components.StickerEmptyView, android.view.View
             public void setVisibility(int i9) {
                 if (SearchViewPager.this.noMediaFiltersSearchView.getTag() != null) {
@@ -503,7 +512,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         this.hashtagSearchContainer.addView(this.hashtagEmptyView);
         this.hashtagSearchContainer.addView(recyclerListView4);
         recyclerListView4.setEmptyView(this.hashtagEmptyView);
-        HashtagsSearchAdapter hashtagsSearchAdapter = new HashtagsSearchAdapter(recyclerListView4, context, this.currentAccount, i3, null) { // from class: org.telegram.ui.Components.SearchViewPager.15
+        HashtagsSearchAdapter hashtagsSearchAdapter = new HashtagsSearchAdapter(recyclerListView4, context, this.currentAccount, i3, null) { // from class: org.telegram.ui.Components.SearchViewPager.16
             @Override // org.telegram.ui.Components.UniversalAdapter
             public void update(boolean z) {
                 super.update(z);
@@ -522,7 +531,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         };
         this.hashtagSearchAdapter = hashtagsSearchAdapter;
         recyclerListView4.setAdapter(hashtagsSearchAdapter);
-        recyclerListView4.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.SearchViewPager.16
+        recyclerListView4.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.SearchViewPager.17
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView, int i9) {
                 if (i9 == 1) {
@@ -542,7 +551,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         PostsSearchContainer postsSearchContainer = new PostsSearchContainer(context, dialogsActivity);
         this.postsSearchContainer = postsSearchContainer;
         postsSearchContainer.listView.setClipToPadding(false);
-        postsSearchContainer.listView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.SearchViewPager.17
+        postsSearchContainer.listView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.SearchViewPager.18
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i9, int i10) {
                 super.onScrolled(recyclerView, i9, i10);
@@ -845,7 +854,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
                 if (z) {
                     this.noMediaFiltersSearchView.setVisibility(8);
                 } else if (this.noMediaFiltersSearchView.getVisibility() != 8) {
-                    this.noMediaFiltersSearchView.animate().alpha(0.0f).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.SearchViewPager.18
+                    this.noMediaFiltersSearchView.animate().alpha(0.0f).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.SearchViewPager.19
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
                             SearchViewPager.this.noMediaFiltersSearchView.setVisibility(8);
@@ -1173,6 +1182,11 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
 
     @Override // org.telegram.ui.FilteredSearchView.UiCallback
     public void goToMessage(MessageObject messageObject) {
+        this.parent.presentFragment(createFragmentFromMessage(this.currentAccount, messageObject));
+        showActionMode(false);
+    }
+
+    public static BaseFragment createFragmentFromMessage(int i, MessageObject messageObject) {
         Bundle bundle = new Bundle();
         long dialogId = messageObject.getDialogId();
         if (DialogObject.isEncryptedDialog(dialogId)) {
@@ -1180,7 +1194,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
         } else if (DialogObject.isUserDialog(dialogId)) {
             bundle.putLong("user_id", dialogId);
         } else {
-            TLRPC.Chat chat = AccountInstance.getInstance(this.currentAccount).getMessagesController().getChat(Long.valueOf(-dialogId));
+            TLRPC.Chat chat = AccountInstance.getInstance(i).getMessagesController().getChat(Long.valueOf(-dialogId));
             if (chat != null && chat.migrated_to != null) {
                 bundle.putLong("migrated_to", dialogId);
                 dialogId = -chat.migrated_to.channel_id;
@@ -1188,8 +1202,7 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
             bundle.putLong("chat_id", -dialogId);
         }
         bundle.putInt("message_id", messageObject.getId());
-        this.parent.presentFragment(new ChatActivity(bundle));
-        showActionMode(false);
+        return new ChatActivity(bundle);
     }
 
     public int getFolderId() {
@@ -1436,7 +1449,16 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
     public void setPagesPadding(int i, int i2, boolean z) {
         this.pagesPaddingTop = i;
         this.pagesPaddingBottom = i2;
-        setPagesPaddings(this.searchContainer, this.searchListView, i, i2, z);
+        this.searchListView.setPadding(0, i, 0, i2, z);
+        this.noMediaFiltersSearchView.setPagesPaddings(this.pagesPaddingTop, this.pagesPaddingBottom, z);
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.emptyView.getLayoutParams();
+        int i3 = marginLayoutParams.topMargin;
+        int i4 = this.pagesPaddingTop;
+        if (i3 != i4 || marginLayoutParams.bottomMargin != this.pagesPaddingBottom) {
+            marginLayoutParams.topMargin = i4;
+            marginLayoutParams.bottomMargin = this.pagesPaddingBottom;
+            this.emptyView.requestLayout();
+        }
         setPagesPaddings(this.channelsSearchContainer, this.channelsSearchListView, this.pagesPaddingTop, this.pagesPaddingBottom, z);
         setPagesPaddings(this.botsSearchContainer, this.botsSearchListView, this.pagesPaddingTop, this.pagesPaddingBottom, z);
         setPagesPaddings(this.hashtagSearchContainer, this.hashtagSearchListView, this.pagesPaddingTop, this.pagesPaddingBottom, z);
@@ -1446,15 +1468,15 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
             searchDownloadsContainer.setPagesPaddings(this.pagesPaddingTop, this.pagesPaddingBottom, z);
         }
         int size = this.viewsByType.size();
-        for (int i3 = 0; i3 < size; i3++) {
-            View view = (View) this.viewsByType.valueAt(i3);
+        for (int i5 = 0; i5 < size; i5++) {
+            View view = (View) this.viewsByType.valueAt(i5);
             if (view instanceof FilteredSearchView) {
                 ((FilteredSearchView) view).setPagesPaddings(this.pagesPaddingTop, this.pagesPaddingBottom, z);
             }
         }
-        for (int i4 = 0; i4 < getChildCount(); i4++) {
-            if (getChildAt(i4) instanceof FilteredSearchView) {
-                ((FilteredSearchView) getChildAt(i4)).setPagesPaddings(this.pagesPaddingTop, this.pagesPaddingBottom, z);
+        for (int i6 = 0; i6 < getChildCount(); i6++) {
+            if (getChildAt(i6) instanceof FilteredSearchView) {
+                ((FilteredSearchView) getChildAt(i6)).setPagesPaddings(this.pagesPaddingTop, this.pagesPaddingBottom, z);
             }
         }
     }
@@ -1683,6 +1705,10 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
             RecyclerListView recyclerViewFromPage = getRecyclerViewFromPage(view);
             if (recyclerViewFromPage != null) {
                 Blur3Utils.captureRelativeParent(recyclerViewFromPage, canvas, rectF, recyclerViewFromPage, this);
+            }
+            if (view == this.searchContainer && this.noMediaFiltersSearchView.getVisibility() == 0) {
+                RecyclerListView recyclerListView = this.noMediaFiltersSearchView.recyclerListView;
+                Blur3Utils.captureRelativeParent(recyclerListView, canvas, rectF, recyclerListView, this);
             }
         }
     }

@@ -12,7 +12,6 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
 import android.os.Build;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -46,8 +45,12 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import java.util.ArrayList;
 import java.util.HashMap;
+import me.vkryl.android.animator.BoolAnimator;
+import me.vkryl.android.animator.FactorAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
@@ -1265,7 +1268,7 @@ public class ActionBarMenuItem extends FrameLayout {
             return;
         }
         if (searchFilterView.getFilter().removable) {
-            if (!searchFilterView.selectedForDelete) {
+            if (!searchFilterView.isSelectedForDelete()) {
                 searchFilterView.setSelectedForDelete(true);
                 return;
             }
@@ -2268,7 +2271,7 @@ public class ActionBarMenuItem extends FrameLayout {
             }
         }
 
-        @Override // android.widget.FrameLayout, android.view.View
+        @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.SearchFilterView, android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
             setMeasuredDimension(AndroidUtilities.dp(49.0f), AndroidUtilities.dp(32.0f));
         }
@@ -2307,28 +2310,38 @@ public class ActionBarMenuItem extends FrameLayout {
         }
     }
 
-    public static class SearchFilterView extends FrameLayout {
+    public static class SearchFilterView extends FrameLayout implements FactorAnimator.Target {
+        private final BoolAnimator animatorIsSelected;
         BackupImageView avatarImageView;
         ImageView closeIconView;
         FiltersView.MediaFilterData data;
+        private boolean glass;
+        private boolean isCommunity;
+        private int mBackgroundColor;
+        private int mBackgroundRadius;
         Runnable removeSelectionRunnable;
         protected final Theme.ResourcesProvider resourcesProvider;
-        ValueAnimator selectAnimator;
-        private boolean selectedForDelete;
-        private float selectedProgress;
-        ShapeDrawable shapeDrawable;
         Drawable thumbDrawable;
         TextView titleView;
         private final boolean whiteBg;
 
+        @Override // me.vkryl.android.animator.FactorAnimator.Target
+        public /* synthetic */ void onFactorChangeFinished(int i, float f, FactorAnimator factorAnimator) {
+            FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i, f, factorAnimator);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$new$0() {
+            setSelectedForDelete(false);
+        }
+
         public SearchFilterView(Context context, Theme.ResourcesProvider resourcesProvider, boolean z) {
             super(context);
-            this.removeSelectionRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem.SearchFilterView.1
+            this.animatorIsSelected = new BoolAnimator(0, this, CubicBezierInterpolator.EASE_OUT_QUINT, 380L);
+            this.removeSelectionRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$SearchFilterView$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
-                public void run() {
-                    if (SearchFilterView.this.selectedForDelete) {
-                        SearchFilterView.this.setSelectedForDelete(false);
-                    }
+                public final void run() {
+                    ActionBarMenuItem.SearchFilterView.this.lambda$new$0();
                 }
             };
             this.resourcesProvider = resourcesProvider;
@@ -2342,33 +2355,63 @@ public class ActionBarMenuItem extends FrameLayout {
             addView(this.closeIconView, LayoutHelper.createFrame(24, 24.0f, 16, 8.0f, 0.0f, 0.0f, 0.0f));
             TextView textView = new TextView(context);
             this.titleView = textView;
-            textView.setTextSize(1, 14.0f);
-            addView(this.titleView, LayoutHelper.createFrame(-2, -2.0f, 16, 38.0f, 0.0f, 16.0f, 0.0f));
-            ShapeDrawable createRoundRectDrawable = Theme.createRoundRectDrawable(AndroidUtilities.dp(28.0f), -12292204);
-            this.shapeDrawable = createRoundRectDrawable;
-            setBackground(createRoundRectDrawable);
+            textView.setSingleLine();
+            this.titleView.setEllipsize(TextUtils.TruncateAt.END);
+            this.titleView.setTextSize(1, 14.0f);
+            addView(this.titleView, LayoutHelper.createFrame(-2, -2.0f, 16, 38.0f, 0.0f, 12.0f, 0.0f));
+            this.mBackgroundRadius = AndroidUtilities.dp(28.0f);
             updateColors();
         }
 
+        public void setGlass() {
+            this.glass = true;
+            updateColors();
+        }
+
+        @Override // android.widget.FrameLayout, android.view.View
+        protected void onMeasure(int i, int i2) {
+            if (this.isCommunity) {
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(135.0f), TLObject.FLAG_31), i2);
+            } else {
+                super.onMeasure(i, i2);
+            }
+        }
+
+        @Override // android.view.ViewGroup, android.view.View
+        protected void dispatchDraw(Canvas canvas) {
+            float width = getWidth();
+            float height = getHeight();
+            float f = this.mBackgroundRadius;
+            canvas.drawRoundRect(0.0f, 0.0f, width, height, f, f, Theme.fillingPaint(this.mBackgroundColor));
+            super.dispatchDraw(canvas);
+        }
+
         public void updateColors() {
-            int themedColor = getThemedColor(this.whiteBg ? Theme.key_windowBackgroundWhite : Theme.key_groupcreate_spanBackground);
+            int themedColor;
+            float floatValue = this.animatorIsSelected.getFloatValue();
+            if (this.glass) {
+                themedColor = Theme.multAlpha(getThemedColor(Theme.key_windowBackgroundWhiteBlackText), 0.075f);
+            } else {
+                themedColor = getThemedColor(this.whiteBg ? Theme.key_windowBackgroundWhite : Theme.key_groupcreate_spanBackground);
+            }
             int i = Theme.key_featuredStickers_addButton;
             int themedColor2 = getThemedColor(i);
             int themedColor3 = getThemedColor(Theme.key_windowBackgroundWhiteBlackText);
             int i2 = Theme.key_featuredStickers_buttonText;
             int themedColor4 = getThemedColor(i2);
-            this.shapeDrawable.getPaint().setColor(ColorUtils.blendARGB(themedColor, themedColor2, this.selectedProgress));
-            this.titleView.setTextColor(ColorUtils.blendARGB(themedColor3, themedColor4, this.selectedProgress));
+            this.mBackgroundColor = ColorUtils.blendARGB(themedColor, themedColor2, floatValue);
+            this.titleView.setTextColor(ColorUtils.blendARGB(themedColor3, themedColor4, floatValue));
             this.closeIconView.setColorFilter(themedColor4);
-            this.closeIconView.setAlpha(this.selectedProgress);
-            this.closeIconView.setScaleX(this.selectedProgress * 0.82f);
-            this.closeIconView.setScaleY(this.selectedProgress * 0.82f);
+            this.closeIconView.setAlpha(floatValue);
+            float f = 0.82f * floatValue;
+            this.closeIconView.setScaleX(f);
+            this.closeIconView.setScaleY(f);
             Drawable drawable = this.thumbDrawable;
             if (drawable != null) {
                 Theme.setCombinedDrawableColor(drawable, getThemedColor(i), false);
                 Theme.setCombinedDrawableColor(this.thumbDrawable, getThemedColor(i2), true);
             }
-            this.avatarImageView.setAlpha(1.0f - this.selectedProgress);
+            this.avatarImageView.setAlpha(1.0f - floatValue);
             FiltersView.MediaFilterData mediaFilterData = this.data;
             if (mediaFilterData != null && mediaFilterData.filterType == 7) {
                 setData(mediaFilterData);
@@ -2377,11 +2420,12 @@ public class ActionBarMenuItem extends FrameLayout {
         }
 
         public boolean isSelectedForDelete() {
-            return this.selectedForDelete;
+            return this.animatorIsSelected.getValue();
         }
 
         public void setData(FiltersView.MediaFilterData mediaFilterData) {
             this.data = mediaFilterData;
+            this.isCommunity = false;
             this.titleView.setText(mediaFilterData.getTitle());
             CombinedDrawable createCircleDrawableWithIcon = Theme.createCircleDrawableWithIcon(AndroidUtilities.dp(32.0f), mediaFilterData.iconResFilled);
             this.thumbDrawable = createCircleDrawableWithIcon;
@@ -2419,8 +2463,13 @@ public class ActionBarMenuItem extends FrameLayout {
                 return;
             }
             if (tLObject instanceof TLRPC.Chat) {
-                this.avatarImageView.getImageReceiver().setRoundRadius(AndroidUtilities.dp(16.0f));
-                this.avatarImageView.getImageReceiver().setForUserOrChat((TLRPC.Chat) tLObject, this.thumbDrawable);
+                TLRPC.Chat chat = (TLRPC.Chat) tLObject;
+                this.isCommunity = ChatObject.isCommunity(chat);
+                ImageReceiver imageReceiver = this.avatarImageView.getImageReceiver();
+                int dp = AndroidUtilities.dp(this.isCommunity ? 10.0f : 16.0f);
+                this.mBackgroundRadius = dp;
+                imageReceiver.setRoundRadius(dp);
+                this.avatarImageView.getImageReceiver().setForUserOrChat(chat, this.thumbDrawable);
             }
         }
 
@@ -2433,42 +2482,15 @@ public class ActionBarMenuItem extends FrameLayout {
             }
         }
 
-        public void setSelectedForDelete(final boolean z) {
-            if (this.selectedForDelete == z) {
+        public void setSelectedForDelete(boolean z) {
+            if (this.animatorIsSelected.getValue() == z) {
                 return;
             }
             AndroidUtilities.cancelRunOnUIThread(this.removeSelectionRunnable);
-            this.selectedForDelete = z;
-            ValueAnimator valueAnimator = this.selectAnimator;
-            if (valueAnimator != null) {
-                valueAnimator.removeAllListeners();
-                this.selectAnimator.cancel();
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.selectedProgress, z ? 1.0f : 0.0f);
-            this.selectAnimator = ofFloat;
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$SearchFilterView$$ExternalSyntheticLambda0
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    ActionBarMenuItem.SearchFilterView.this.lambda$setSelectedForDelete$0(valueAnimator2);
-                }
-            });
-            this.selectAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem.SearchFilterView.2
-                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                public void onAnimationEnd(Animator animator) {
-                    SearchFilterView.this.selectedProgress = z ? 1.0f : 0.0f;
-                    SearchFilterView.this.updateColors();
-                }
-            });
-            this.selectAnimator.setDuration(150L).start();
-            if (this.selectedForDelete) {
+            this.animatorIsSelected.setValue(z, true);
+            if (z) {
                 AndroidUtilities.runOnUIThread(this.removeSelectionRunnable, 2000L);
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setSelectedForDelete$0(ValueAnimator valueAnimator) {
-            this.selectedProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            updateColors();
         }
 
         public FiltersView.MediaFilterData getFilter() {
@@ -2477,6 +2499,14 @@ public class ActionBarMenuItem extends FrameLayout {
 
         protected int getThemedColor(int i) {
             return Theme.getColor(i, this.resourcesProvider);
+        }
+
+        @Override // me.vkryl.android.animator.FactorAnimator.Target
+        public void onFactorChanged(int i, float f, float f2, FactorAnimator factorAnimator) {
+            if (i == 0) {
+                updateColors();
+                invalidate();
+            }
         }
     }
 
