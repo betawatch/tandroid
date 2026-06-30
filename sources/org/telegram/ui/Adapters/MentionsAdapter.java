@@ -1091,39 +1091,39 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
         return new ArrayList(linkedHashMap.values());
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:247:0x06d3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:247:0x06d5, code lost:
     
         if (r6.user_id == r0.id) goto L385;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:479:0x040f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:479:0x0411, code lost:
     
         if (r3 != ':') goto L230;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:495:0x042b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:495:0x042d, code lost:
     
         if (r30.info != null) goto L245;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:496:0x042d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:496:0x042f, code lost:
     
         if (r12 == 0) goto L245;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:497:0x042f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:497:0x0431, code lost:
     
         r30.lastText = r0;
         r30.lastPosition = r32;
         r30.messages = r33;
         r30.delegate.needChangePanelVisibility(false);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:498:0x043b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:498:0x043d, code lost:
     
         return;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x0517  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x0522  */
-    /* JADX WARN: Removed duplicated region for block: B:221:0x0717  */
-    /* JADX WARN: Removed duplicated region for block: B:461:0x0505  */
-    /* JADX WARN: Removed duplicated region for block: B:464:0x050e  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0519  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x0524  */
+    /* JADX WARN: Removed duplicated region for block: B:221:0x0719  */
+    /* JADX WARN: Removed duplicated region for block: B:461:0x0507  */
+    /* JADX WARN: Removed duplicated region for block: B:464:0x0510  */
     /* JADX WARN: Type inference failed for: r0v144 */
     /* JADX WARN: Type inference failed for: r0v67, types: [org.telegram.tgnet.TLRPC$User] */
     /* JADX WARN: Type inference failed for: r0v80 */
@@ -1227,7 +1227,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             AndroidUtilities.cancelRunOnUIThread(runnable3);
             this.checkAgainRunnable = null;
         }
-        if (TextUtils.isEmpty(charSequence2) || charSequence2.length() > MessagesController.getInstance(this.currentAccount).maxMessageLength) {
+        if (TextUtils.isEmpty(charSequence2) || charSequence2.length() > MessagesController.getInstance(this.currentAccount).getMaxMessageLength()) {
             searchForContextBot(null, null);
             this.delegate.needChangePanelVisibility(false);
             this.lastText = null;

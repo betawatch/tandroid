@@ -223,7 +223,9 @@ public class StarParticlesView extends View {
         public RectF rect = new RectF();
         public RectF rect2 = new RectF();
         public RectF excludeRect = new RectF();
-        private final Bitmap[] stars = new Bitmap[3];
+        private Bitmap[] stars = new Bitmap[3];
+        public boolean[] svg = new boolean[3];
+        public boolean[] flip = new boolean[3];
         public Paint paint = new Paint();
         public float excludeRadius = 0.0f;
         public float centerOffsetX = 0.0f;
@@ -250,8 +252,6 @@ public class StarParticlesView extends View {
         public boolean roundEffect = true;
         public int type = -1;
         public int colorKey = Theme.key_premiumStartSmallStarsColor;
-        public final boolean[] svg = new boolean[3];
-        public final boolean[] flip = new boolean[3];
         private int lastParticleI = 0;
 
         static /* synthetic */ int access$208(Drawable drawable) {
@@ -288,135 +288,176 @@ public class StarParticlesView extends View {
             }
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:101:0x02cf A[SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:107:0x0284  */
-        /* JADX WARN: Removed duplicated region for block: B:87:0x0220  */
-        /* JADX WARN: Removed duplicated region for block: B:99:0x02a7  */
+        /* JADX WARN: Removed duplicated region for block: B:113:0x027b  */
+        /* JADX WARN: Removed duplicated region for block: B:125:0x0313  */
+        /* JADX WARN: Removed duplicated region for block: B:127:0x033b A[SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:133:0x02ee  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         private void generateBitmaps() {
-            int dp;
             int i;
+            int dp;
             int i2;
+            Bitmap bitmap;
             int i3;
+            Canvas canvas;
             int i4;
             int i5;
             int i6;
             int i7;
-            for (int i8 = 0; i8 < 3; i8++) {
+            int i8;
+            int i9;
+            int i10;
+            int i11;
+            int i12 = 6;
+            int i13 = 3;
+            int i14 = 43;
+            if (this.type == 43) {
+                if (this.stars.length != 6) {
+                    this.stars = new Bitmap[6];
+                }
+                if (this.svg.length != 6) {
+                    this.svg = new boolean[6];
+                }
+                if (this.flip.length != 6) {
+                    this.flip = new boolean[6];
+                }
+                i = 6;
+            } else {
+                i = 3;
+            }
+            int i15 = 0;
+            int i16 = 0;
+            while (i16 < i) {
                 float f = this.k1;
-                if (i8 == 0) {
+                if (i16 == 0) {
                     dp = AndroidUtilities.dp(this.size1);
-                } else if (i8 == 1) {
+                } else if (i16 == 1) {
                     f = this.k2;
                     dp = AndroidUtilities.dp(this.size2);
                 } else {
                     f = this.k3;
                     dp = AndroidUtilities.dp(this.size3);
                 }
-                int i9 = dp;
-                int i10 = this.type;
-                if (i10 == 9) {
-                    if (i8 == 0) {
-                        i7 = R.raw.premium_object_folder;
-                    } else if (i8 == 1) {
-                        i7 = R.raw.premium_object_bubble;
+                int i17 = dp;
+                int i18 = this.type;
+                if (i18 == 9) {
+                    if (i16 == 0) {
+                        i11 = R.raw.premium_object_folder;
+                    } else if (i16 == 1) {
+                        i11 = R.raw.premium_object_bubble;
                     } else {
-                        i7 = R.raw.premium_object_settings;
+                        i11 = R.raw.premium_object_settings;
                     }
-                    this.stars[i8] = SvgHelper.getBitmap(i7, i9, i9, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
-                    this.svg[i8] = true;
-                } else if (i10 == 27) {
-                    if (i8 == 0) {
-                        i6 = R.raw.filled_messages_paid;
-                    } else if (i8 == 1) {
-                        i6 = R.raw.filled_crown_on;
+                    this.stars[i16] = SvgHelper.getBitmap(i11, i17, i17, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
+                    this.svg[i16] = true;
+                } else if (i18 == 27) {
+                    if (i16 == 0) {
+                        i10 = R.raw.filled_messages_paid;
+                    } else if (i16 == 1) {
+                        i10 = R.raw.filled_crown_on;
                     } else {
-                        i6 = R.raw.premium_object_star2;
+                        i10 = R.raw.premium_object_star2;
                     }
-                    this.stars[i8] = SvgHelper.getBitmap(i6, i9, i9, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
-                    this.svg[i8] = true;
-                } else if (i10 == 11 || i10 == 4) {
-                    if (i8 == 0) {
-                        i = R.raw.premium_object_smile1;
-                    } else if (i8 == 1) {
-                        i = R.raw.premium_object_smile2;
+                    this.stars[i16] = SvgHelper.getBitmap(i10, i17, i17, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
+                    this.svg[i16] = true;
+                } else if (i18 == 11 || i18 == 4) {
+                    if (i16 == 0) {
+                        i2 = R.raw.premium_object_smile1;
+                    } else if (i16 == 1) {
+                        i2 = R.raw.premium_object_smile2;
                     } else {
-                        i = R.raw.premium_object_like;
+                        i2 = R.raw.premium_object_like;
                     }
-                    this.stars[i8] = SvgHelper.getBitmap(i, i9, i9, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
-                    this.svg[i8] = true;
-                } else if (i10 == 22) {
-                    if (i8 == 0) {
-                        i5 = R.raw.premium_object_user;
-                    } else if (i8 == 1) {
-                        i5 = R.raw.cache_photos;
+                    this.stars[i16] = SvgHelper.getBitmap(i2, i17, i17, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
+                    this.svg[i16] = true;
+                } else if (i18 == 22) {
+                    if (i16 == 0) {
+                        i9 = R.raw.premium_object_user;
+                    } else if (i16 == 1) {
+                        i9 = R.raw.cache_photos;
                     } else {
-                        i5 = R.raw.cache_profile_photos;
+                        i9 = R.raw.cache_profile_photos;
                     }
-                    this.stars[i8] = SvgHelper.getBitmap(i5, i9, i9, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
-                    this.svg[i8] = true;
-                } else if (i10 == 3) {
-                    if (i8 == 0) {
-                        i4 = R.raw.premium_object_adsbubble;
-                    } else if (i8 == 1) {
-                        i4 = R.raw.premium_object_like;
+                    this.stars[i16] = SvgHelper.getBitmap(i9, i17, i17, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
+                    this.svg[i16] = true;
+                } else if (i18 == i13) {
+                    if (i16 == 0) {
+                        i8 = R.raw.premium_object_adsbubble;
+                    } else if (i16 == 1) {
+                        i8 = R.raw.premium_object_like;
                     } else {
-                        i4 = R.raw.premium_object_noads;
+                        i8 = R.raw.premium_object_noads;
                     }
-                    this.stars[i8] = SvgHelper.getBitmap(i4, i9, i9, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
-                    this.svg[i8] = true;
-                } else if (i10 == 7) {
-                    if (i8 == 0) {
-                        i3 = R.raw.premium_object_video2;
-                    } else if (i8 == 1) {
-                        i3 = R.raw.premium_object_video;
+                    this.stars[i16] = SvgHelper.getBitmap(i8, i17, i17, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
+                    this.svg[i16] = true;
+                } else if (i18 == 7) {
+                    if (i16 == 0) {
+                        i7 = R.raw.premium_object_video2;
+                    } else if (i16 == 1) {
+                        i7 = R.raw.premium_object_video;
                     } else {
-                        i3 = R.raw.premium_object_user;
+                        i7 = R.raw.premium_object_user;
                     }
-                    this.stars[i8] = SvgHelper.getBitmap(i3, i9, i9, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
-                    this.svg[i8] = true;
-                } else if (i10 == 1001) {
-                    this.stars[i8] = SvgHelper.getBitmap(R.raw.premium_object_fire, i9, i9, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
-                    this.svg[i8] = true;
-                } else if (i10 == 1002) {
-                    this.stars[i8] = SvgHelper.getBitmap(R.raw.premium_object_star2, i9, i9, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
-                    this.svg[i8] = true;
-                } else if (i10 == 24) {
-                    if (i8 == 0) {
-                        i2 = R.raw.premium_object_tag;
-                    } else if (i8 == 1) {
-                        i2 = R.raw.premium_object_check;
+                    this.stars[i16] = SvgHelper.getBitmap(i7, i17, i17, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
+                    this.svg[i16] = true;
+                } else if (i18 == i14) {
+                    if (i16 == 0) {
+                        i6 = R.raw.premium_object_list;
+                    } else if (i16 == 1) {
+                        i6 = R.raw.premium_object_math;
+                    } else if (i16 == 2) {
+                        i6 = R.raw.premium_object_table;
+                    } else if (i16 == i13) {
+                        i6 = R.raw.premium_object_superscript;
+                    } else if (i16 == 4) {
+                        i6 = R.raw.premium_object_bold;
                     } else {
-                        i2 = R.raw.premium_object_star;
+                        i6 = R.raw.premium_object_code;
                     }
-                    this.stars[i8] = SvgHelper.getBitmap(i2, i9, i9, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
-                    this.svg[i8] = true;
-                } else if (i10 == 28) {
-                    if (i8 == 0) {
-                        this.stars[i8] = SvgHelper.getBitmap(R.raw.filled_premium_dollar, i9, i9, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), NotificationCenter.didReceiveSmsCode));
-                        this.flip[i8] = true;
+                    this.stars[i16] = SvgHelper.getBitmap(i6, i17, i17, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
+                    this.svg[i16] = true;
+                } else if (i18 == 1001) {
+                    this.stars[i16] = SvgHelper.getBitmap(R.raw.premium_object_fire, i17, i17, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
+                    this.svg[i16] = true;
+                } else if (i18 == 1002) {
+                    this.stars[i16] = SvgHelper.getBitmap(R.raw.premium_object_star2, i17, i17, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
+                    this.svg[i16] = true;
+                } else if (i18 == 24) {
+                    if (i16 == 0) {
+                        i5 = R.raw.premium_object_tag;
+                    } else if (i16 == 1) {
+                        i5 = R.raw.premium_object_check;
+                    } else {
+                        i5 = R.raw.premium_object_star;
                     }
-                    Bitmap createBitmap = Bitmap.createBitmap(i9, i9, Bitmap.Config.ARGB_8888);
-                    this.stars[i8] = createBitmap;
-                    Canvas canvas = new Canvas(createBitmap);
-                    if (this.type != 6 && (i8 == 1 || i8 == 2)) {
+                    this.stars[i16] = SvgHelper.getBitmap(i5, i17, i17, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
+                    this.svg[i16] = true;
+                } else if (i18 == 28) {
+                    if (i16 == 0) {
+                        this.stars[i16] = SvgHelper.getBitmap(R.raw.filled_premium_dollar, i17, i17, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), NotificationCenter.didReceiveSmsCode));
+                        this.flip[i16] = true;
+                    }
+                    Bitmap createBitmap = Bitmap.createBitmap(i17, i17, Bitmap.Config.ARGB_8888);
+                    this.stars[i16] = createBitmap;
+                    Canvas canvas2 = new Canvas(createBitmap);
+                    if (this.type != i12 && (i16 == 1 || i16 == 2)) {
                         android.graphics.drawable.Drawable drawable = ContextCompat.getDrawable(ApplicationLoader.applicationContext, R.drawable.msg_premium_liststar);
                         drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(this.colorKey, this.resourcesProvider), PorterDuff.Mode.MULTIPLY));
-                        drawable.setBounds(0, 0, i9, i9);
-                        drawable.draw(canvas);
+                        drawable.setBounds(i15, i15, i17, i17);
+                        drawable.draw(canvas2);
                     } else {
                         Path path = new Path();
-                        float f2 = i9 >> 1;
-                        int i11 = (int) (f * f2);
+                        float f2 = i17 >> 1;
+                        int i19 = (int) (f * f2);
                         path.moveTo(0.0f, f2);
-                        float f3 = i11;
+                        float f3 = i19;
                         path.lineTo(f3, f3);
                         path.lineTo(f2, 0.0f);
-                        float f4 = i9 - i11;
+                        float f4 = i17 - i19;
                         path.lineTo(f4, f3);
-                        float f5 = i9;
+                        float f5 = i17;
                         path.lineTo(f5, f2);
                         path.lineTo(f4, f4);
                         path.lineTo(f2, f5);
@@ -425,17 +466,23 @@ public class StarParticlesView extends View {
                         path.close();
                         Paint paint = new Paint();
                         if (!this.useGradient) {
-                            if (i9 >= AndroidUtilities.dp(10.0f)) {
-                                PremiumGradient.getInstance().updateMainGradientMatrix(0, 0, i9, i9, i9 * (-2), 0.0f);
+                            if (i17 >= AndroidUtilities.dp(10.0f)) {
+                                canvas = canvas2;
+                                bitmap = createBitmap;
+                                i4 = NotificationCenter.didReceiveSmsCode;
+                                PremiumGradient.getInstance().updateMainGradientMatrix(0, 0, i17, i17, i17 * (-2), 0.0f);
                             } else {
-                                PremiumGradient.getInstance().updateMainGradientMatrix(0, 0, i9, i9, i9 * (-4), 0.0f);
+                                canvas = canvas2;
+                                bitmap = createBitmap;
+                                i4 = NotificationCenter.didReceiveSmsCode;
+                                PremiumGradient.getInstance().updateMainGradientMatrix(0, 0, i17, i17, i17 * (-4), 0.0f);
                             }
                             Paint mainGradientPaint = PremiumGradient.getInstance().getMainGradientPaint();
                             if (this.roundEffect) {
                                 mainGradientPaint.setPathEffect(new CornerPathEffect(AndroidUtilities.dpf2(this.size1 / 5.0f)));
                             }
                             if (this.forceMaxAlpha) {
-                                mainGradientPaint.setAlpha(NotificationCenter.didReceiveSmsCode);
+                                mainGradientPaint.setAlpha(i4);
                             } else if (this.useBlur) {
                                 mainGradientPaint.setAlpha(60);
                             } else {
@@ -443,37 +490,40 @@ public class StarParticlesView extends View {
                             }
                             canvas.drawPath(path, mainGradientPaint);
                             mainGradientPaint.setPathEffect(null);
-                            mainGradientPaint.setAlpha(NotificationCenter.didReceiveSmsCode);
+                            mainGradientPaint.setAlpha(i4);
+                            i3 = 2;
                         } else {
-                            paint.setColor(getPathColor(i8));
+                            bitmap = createBitmap;
+                            i3 = 2;
+                            paint.setColor(getPathColor(i16));
                             if (this.roundEffect) {
                                 paint.setPathEffect(new CornerPathEffect(AndroidUtilities.dpf2(this.size1 / 5.0f)));
                             }
-                            canvas.drawPath(path, paint);
+                            canvas2.drawPath(path, paint);
                         }
                         if (!this.useBlur) {
-                            Utilities.stackBlurBitmap(createBitmap, 2);
+                            Utilities.stackBlurBitmap(bitmap, i3);
                         }
                     }
                 } else {
-                    if (i10 == 105 && i8 == 0) {
-                        this.stars[i8] = SvgHelper.getBitmap(R.raw.premium_object_star2, i9, i9, getPathColor(i8));
+                    if (i18 == 105 && i16 == 0) {
+                        this.stars[i16] = SvgHelper.getBitmap(R.raw.premium_object_star2, i17, i17, getPathColor(i16));
                     }
-                    Bitmap createBitmap2 = Bitmap.createBitmap(i9, i9, Bitmap.Config.ARGB_8888);
-                    this.stars[i8] = createBitmap2;
-                    Canvas canvas2 = new Canvas(createBitmap2);
-                    if (this.type != 6) {
+                    Bitmap createBitmap2 = Bitmap.createBitmap(i17, i17, Bitmap.Config.ARGB_8888);
+                    this.stars[i16] = createBitmap2;
+                    Canvas canvas22 = new Canvas(createBitmap2);
+                    if (this.type != i12) {
                     }
                     Path path2 = new Path();
-                    float f22 = i9 >> 1;
-                    int i112 = (int) (f * f22);
+                    float f22 = i17 >> 1;
+                    int i192 = (int) (f * f22);
                     path2.moveTo(0.0f, f22);
-                    float f32 = i112;
+                    float f32 = i192;
                     path2.lineTo(f32, f32);
                     path2.lineTo(f22, 0.0f);
-                    float f42 = i9 - i112;
+                    float f42 = i17 - i192;
                     path2.lineTo(f42, f32);
-                    float f52 = i9;
+                    float f52 = i17;
                     path2.lineTo(f52, f22);
                     path2.lineTo(f42, f42);
                     path2.lineTo(f22, f52);
@@ -486,6 +536,11 @@ public class StarParticlesView extends View {
                     if (!this.useBlur) {
                     }
                 }
+                i16++;
+                i12 = 6;
+                i13 = 3;
+                i14 = 43;
+                i15 = 0;
             }
         }
 

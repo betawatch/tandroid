@@ -18,6 +18,7 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewPropertyAnimator;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
@@ -36,7 +37,6 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
@@ -52,16 +52,20 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.EditTextCell;
 import org.telegram.ui.Cells.TextSelectionHelper;
 import org.telegram.ui.ChatActivity;
+import org.telegram.ui.Components.AIEditorAlert;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
+import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ChatAttachAlert;
 import org.telegram.ui.Components.ChatAttachAlertAudioLayout;
 import org.telegram.ui.Components.ChatAttachAlertLocationLayout;
+import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.EmojiView;
 import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
 import org.telegram.ui.Components.TrendingStickersLayout;
 import org.telegram.ui.MessageSendPreview;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
@@ -72,7 +76,7 @@ import org.telegram.ui.iv.RichEditorToolbar;
 import ru.noties.jlatexmath.JLatexMathDrawable;
 
 /* loaded from: classes3.dex */
-public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout {
+public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout implements NotificationCenter.NotificationCenterDelegate {
     private static final int[] STYLE_FLAGS = {1, 2, 16, 8, 256, 4, 16384, 32768};
     private boolean attachButtonsShown;
     private int attachRaise;
@@ -80,12 +84,17 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
     private final int currentAccount;
     private int currentItemTop;
     private int emojiPadding;
+    private boolean emojiSearchOpened;
+    private RichEditText emojiTargetEditText;
+    private int emojiTargetSelection;
     private EmojiView emojiView;
     private boolean emojiViewVisible;
     private boolean ignoreLayout;
     private boolean keyboardVisible;
+    private int lastAttachRise;
     private final Runnable limitCheckRunnable;
     private final RichEditorListView listView;
+    private ItemOptions menu;
     private MessageSendPreview messageSendPreview;
     private boolean sendButtonShown;
     private RichEditorToolbar toolbar;
@@ -136,6 +145,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         this.toolbar = richEditorToolbar;
         richEditorToolbar.setBackVisible(false);
         this.toolbar.setTopGradientVisible(false);
+        updateSendButtonLocked();
         addView(this.toolbar, LayoutHelper.createFrame(-1, -1, 119));
         updateHistoryButtons();
         updateToolbarBlockType();
@@ -157,7 +167,8 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
 
         @Override // org.telegram.ui.iv.RichEditorListView.Delegate
         public ItemOptions makeMenu(View view) {
-            return ItemOptions.makeOptions(ChatAttachAlertRichLayout.this, this.val$resourcesProvider, view, false, false, true);
+            ChatAttachAlertRichLayout chatAttachAlertRichLayout = ChatAttachAlertRichLayout.this;
+            return chatAttachAlertRichLayout.menu = ItemOptions.makeOptions(chatAttachAlertRichLayout, this.val$resourcesProvider, view, false, false, true);
         }
 
         @Override // org.telegram.ui.iv.RichEditorListView.Delegate
@@ -206,13 +217,15 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ ItemOptions lambda$onSlashSuggest$0(Theme.ResourcesProvider resourcesProvider, View view) {
-            return ItemOptions.makeOptions(ChatAttachAlertRichLayout.this, resourcesProvider, view, false, false, true);
+            ChatAttachAlertRichLayout chatAttachAlertRichLayout = ChatAttachAlertRichLayout.this;
+            return chatAttachAlertRichLayout.menu = ItemOptions.makeOptions(chatAttachAlertRichLayout, resourcesProvider, view, false, false, true);
         }
 
         @Override // org.telegram.ui.iv.RichEditorListView.Delegate
         public void onListScrolled(int i) {
             ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertRichLayout.this).parentAlert.updateLayout(ChatAttachAlertRichLayout.this, true, i);
             ChatAttachAlertRichLayout.this.updateToolbarTopOffset();
+            ChatAttachAlertRichLayout.this.updateAttachRaise();
         }
 
         @Override // org.telegram.ui.iv.RichEditorListView.Delegate
@@ -221,6 +234,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
                 ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertRichLayout.this).parentAlert.updateLayout(ChatAttachAlertRichLayout.this, true, 0);
             }
             ChatAttachAlertRichLayout.this.updateToolbarTopOffset();
+            ChatAttachAlertRichLayout.this.updateAttachRaise();
         }
 
         @Override // org.telegram.ui.iv.RichEditorListView.Delegate
@@ -288,7 +302,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
 
         @Override // org.telegram.ui.iv.RichEditorToolbar.Delegate
         public void onAi() {
-            new RichAIComposeSheet(ChatAttachAlertRichLayout.this.getContext(), ChatAttachAlertRichLayout.this.currentAccount, ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertRichLayout.this).resourcesProvider, new Utilities.Callback() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$2$$ExternalSyntheticLambda0
+            new RichAIComposeSheet(ChatAttachAlertRichLayout.this.getContext(), ChatAttachAlertRichLayout.this.currentAccount, ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertRichLayout.this).resourcesProvider, new Utilities.Callback() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$2$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     ChatAttachAlertRichLayout.2.this.lambda$onAi$0((TL_iv.RichMessage) obj);
@@ -335,6 +349,16 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         @Override // org.telegram.ui.iv.RichEditorToolbar.Delegate
         public void onMath() {
             ChatAttachAlertRichLayout.this.listView.onMathClicked();
+        }
+
+        @Override // org.telegram.ui.iv.RichEditorToolbar.Delegate
+        public void onAiStyle() {
+            TL_iv.RichMessage extractRichMessage;
+            RichEditorListView.SelectionEdit beginSelectionEdit = ChatAttachAlertRichLayout.this.listView.beginSelectionEdit();
+            if (beginSelectionEdit == null || (extractRichMessage = beginSelectionEdit.extractRichMessage()) == null || extractRichMessage.blocks.isEmpty()) {
+                return;
+            }
+            new AIEditorAlert(ChatAttachAlertRichLayout.this.getContext(), ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertRichLayout.this).resourcesProvider).setText(extractRichMessage).setOnUseRich(new ChatAttachAlertRichLayout$2$$ExternalSyntheticLambda0(beginSelectionEdit)).show();
         }
     }
 
@@ -398,18 +422,22 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         this.parentAlert.lambda$new$0();
     }
 
-    private void persistDraft() {
+    private boolean persistDraft() {
         BaseFragment baseFragment = this.parentAlert.baseFragment;
-        if (baseFragment instanceof ChatActivity) {
-            ChatActivity chatActivity = (ChatActivity) baseFragment;
-            if (this.listView.canUndo()) {
-                TL_iv.RichMessage buildDraftRichMessage = this.listView.buildDraftRichMessage();
-                AccountInstance.getInstance(this.currentAccount).getMediaDataController().saveDraft(chatActivity.getDialogId(), chatActivity.getDraftThreadId(), "", null, null, null, null, 0L, false, false, buildDraftRichMessage);
-                if (chatActivity.getChatActivityEnterView() != null) {
-                    chatActivity.getChatActivityEnterView().setRichDraftPreview(buildDraftRichMessage);
-                }
-            }
+        if (!(baseFragment instanceof ChatActivity)) {
+            return false;
         }
+        ChatActivity chatActivity = (ChatActivity) baseFragment;
+        if (!this.listView.canUndo()) {
+            return false;
+        }
+        TL_iv.RichMessage buildDraftRichMessage = this.listView.buildDraftRichMessage();
+        AccountInstance.getInstance(this.currentAccount).getMediaDataController().saveDraft(chatActivity.getDialogId(), chatActivity.getDraftThreadId(), "", null, null, null, null, 0L, false, false, buildDraftRichMessage);
+        if (chatActivity.getChatActivityEnterView() == null) {
+            return true;
+        }
+        chatActivity.getChatActivityEnterView().setRichDraftPreview(buildDraftRichMessage);
+        return true;
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
@@ -499,6 +527,10 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
     }
 
     private void showTextTypeMenu(final BlockRow blockRow, View view) {
+        ItemOptions itemOptions = this.menu;
+        if (itemOptions != null) {
+            itemOptions.dismiss();
+        }
         final ItemOptions dontFocus = ItemOptions.makeOptions((ViewGroup) this, this.resourcesProvider, view, true).dontFocus();
         final ItemOptions makeSwipeback = dontFocus.makeSwipeback();
         makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new Runnable() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda27
@@ -552,7 +584,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
                 ChatAttachAlertRichLayout.this.lambda$showTextTypeMenu$10(blockRow);
             }
         });
-        dontFocus.show();
+        this.menu = dontFocus.show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -598,6 +630,10 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
     }
 
     private void showListMenu(final BlockRow blockRow, View view) {
+        ItemOptions itemOptions = this.menu;
+        if (itemOptions != null) {
+            itemOptions.dismiss();
+        }
         final ItemOptions dontFocus = ItemOptions.makeOptions(this, this.resourcesProvider, view).dontFocus();
         boolean z = false;
         ItemOptions addChecked = dontFocus.addChecked(blockRow == null || !blockRow.isInList(), R.drawable.field_carret_empty, LocaleController.getString(R.string.ArticleNone), new Runnable() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda20
@@ -652,7 +688,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
                 });
             }
         }
-        dontFocus.forceTop(true).show();
+        this.menu = dontFocus.forceTop(true).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -735,7 +771,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         } else {
             i = 0;
         }
-        this.toolbar.setFormattingState(i, z && this.listView.isLinkApplied(startCell, startOffset, endCell, endOffset), z && this.listView.isDateApplied(startCell, startOffset, endCell, endOffset), z && startCell == endCell);
+        this.toolbar.setFormattingState(i, z && this.listView.isLinkApplied(startCell, startOffset, endCell, endOffset), z && this.listView.isDateApplied(startCell, startOffset, endCell, endOffset), z && startCell == endCell, !this.listView.isSelectionAllHeadings());
     }
 
     private void updateFormattingButtonsTable() {
@@ -747,21 +783,27 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         int endOffset = textSelectionHelper.getEndOffset();
         int[] iArr = STYLE_FLAGS;
         int length = iArr.length;
+        boolean z = false;
         int i = 0;
         int i2 = 0;
-        while (i2 < length) {
-            int i3 = iArr[i2];
+        while (i < length) {
+            int i3 = iArr[i];
             int i4 = i;
-            int i5 = i2;
-            i = this.listView.isStyleFullyAppliedTable(i3, startCell, startChildPosition, startOffset, endChildPosition, endOffset) ? i4 | i3 : i4;
-            i2 = i5 + 1;
+            if (this.listView.isStyleFullyAppliedTable(i3, startCell, startChildPosition, startOffset, endChildPosition, endOffset)) {
+                i2 |= i3;
+            }
+            i = i4 + 1;
         }
-        int i6 = i;
-        boolean z = startChildPosition == endChildPosition;
-        RichEditText tableEditText = z ? this.listView.tableEditText(startCell, startChildPosition) : null;
+        boolean z2 = startChildPosition == endChildPosition;
+        RichEditText tableEditText = z2 ? this.listView.tableEditText(startCell, startChildPosition) : null;
         int max = Math.max(0, Math.min(startOffset, endOffset));
         int max2 = tableEditText == null ? 0 : Math.max(0, Math.min(Math.max(startOffset, endOffset), tableEditText.length()));
-        this.toolbar.setFormattingState(i6, tableEditText != null && max < max2 && RichTextStyle.hasLink(tableEditText.getText(), max, max2), tableEditText != null && max < max2 && RichTextStyle.hasDate(tableEditText.getText(), max, max2), z);
+        RichEditorToolbar richEditorToolbar = this.toolbar;
+        boolean z3 = tableEditText != null && max < max2 && RichTextStyle.hasLink(tableEditText.getText(), max, max2);
+        if (tableEditText != null && max < max2 && RichTextStyle.hasDate(tableEditText.getText(), max, max2)) {
+            z = true;
+        }
+        richEditorToolbar.setFormattingState(i2, z3, z, z2, true);
     }
 
     private void updateFormattingButtonsCaption() {
@@ -770,29 +812,24 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         RichEditText captionEditText = this.listView.captionEditText(textSelectionHelper.getStartCell());
         int startOffset = textSelectionHelper.getStartOffset();
         int endOffset = textSelectionHelper.getEndOffset();
-        boolean z = false;
         int max = captionEditText == null ? 0 : Math.max(0, Math.min(Math.min(startOffset, endOffset), captionEditText.length()));
         int max2 = captionEditText == null ? 0 : Math.max(0, Math.min(Math.max(startOffset, endOffset), captionEditText.length()));
         if (captionEditText == null || max >= max2) {
             i = 0;
         } else {
-            i = 0;
-            for (int i2 : STYLE_FLAGS) {
-                if ((captionEditText.getCurrentStyle(max, max2) & i2) != 0) {
-                    i |= i2;
+            int i2 = 0;
+            for (int i3 : STYLE_FLAGS) {
+                if ((captionEditText.getCurrentStyle(max, max2) & i3) != 0) {
+                    i2 |= i3;
                 }
             }
+            i = i2;
         }
-        RichEditorToolbar richEditorToolbar = this.toolbar;
-        boolean z2 = captionEditText != null && max < max2 && RichTextStyle.hasLink(captionEditText.getText(), max, max2);
-        if (captionEditText != null && max < max2 && RichTextStyle.hasDate(captionEditText.getText(), max, max2)) {
-            z = true;
-        }
-        richEditorToolbar.setFormattingState(i, z2, z, true);
+        this.toolbar.setFormattingState(i, captionEditText != null && max < max2 && RichTextStyle.hasLink(captionEditText.getText(), max, max2), captionEditText != null && max < max2 && RichTextStyle.hasDate(captionEditText.getText(), max, max2), true, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x0076, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x0076, code lost:
     
         if ((r1 instanceof org.telegram.tgnet.tl.TL_iv.pageBlockPullquote) == false) goto L45;
      */
@@ -855,6 +892,8 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
                                         i2 = R.drawable.iv_quote;
                                     } else if (pageBlock3 instanceof TL_iv.pageBlockPullquote) {
                                         i2 = R.drawable.iv_pullquote;
+                                    } else if (pageBlock3 instanceof TL_iv.pageBlockFooter) {
+                                        i2 = R.drawable.iv_footer;
                                     }
                                 } else if (i == 2) {
                                     if (findFocusedRow.isChecklist()) {
@@ -893,13 +932,32 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
     }
 
     private void updateAttachButtons(boolean z) {
-        boolean hasAnyText = this.listView.hasAnyText();
-        this.parentAlert.setTypeButtonsHidden(hasAnyText, z);
-        this.attachRaise = hasAnyText ? 0 : this.parentAlert.getTypeButtonsHeight();
-        syncBottomOffset(z);
-        if (this.attachButtonsShown == hasAnyText) {
-            this.attachButtonsShown = !hasAnyText;
+        boolean z2 = this.listView.hasAnyText() || this.emojiViewVisible;
+        this.parentAlert.setTypeButtonsHidden(z2, z);
+        this.attachRaise = attachRaiseTarget(z2);
+        layoutBottomPanels();
+        if (this.attachButtonsShown == z2) {
+            this.attachButtonsShown = !z2;
             requestLayout();
+        }
+    }
+
+    private int attachRaiseTarget(boolean z) {
+        if (!z) {
+            ChatAttachAlert chatAttachAlert = this.parentAlert;
+            if (!chatAttachAlert.pinnedToTop) {
+                return chatAttachAlert.getTypeButtonsHeight();
+            }
+        }
+        return 0;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateAttachRaise() {
+        int attachRaiseTarget = attachRaiseTarget(this.listView.hasAnyText() || this.emojiViewVisible);
+        if (this.attachRaise != attachRaiseTarget) {
+            this.attachRaise = attachRaiseTarget;
+            layoutBottomPanels();
         }
     }
 
@@ -910,23 +968,44 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         return AndroidUtilities.navigationBarHeight;
     }
 
-    private void syncBottomOffset(boolean z) {
-        if (this.toolbar == null) {
-            return;
+    private int emojiVisibleHeight() {
+        return this.emojiSearchOpened ? AndroidUtilities.dp(245.0f) : this.emojiPadding;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void layoutBottomPanels() {
+        int emojiVisibleHeight = emojiVisibleHeight();
+        EmojiView emojiView = this.emojiView;
+        if (emojiView != null) {
+            if (this.emojiViewVisible) {
+                r3 = (this.emojiSearchOpened ? -this.parentAlert.currentPanTranslationY : 0.0f) + (this.emojiPadding - emojiVisibleHeight);
+            }
+            emojiView.setTranslationY(r3);
         }
-        int bottomNavInset = bottomNavInset() + this.attachRaise;
-        int i = this.emojiPadding;
-        int i2 = -(bottomNavInset + i);
-        if (z && i == 0) {
-            this.toolbar.getBottomContainer().animate().translationY(i2).setDuration(180L).start();
-        } else {
+        if (this.toolbar != null) {
+            if (!this.emojiViewVisible) {
+                emojiVisibleHeight = bottomNavInset();
+            }
+            float f = emojiVisibleHeight;
+            if (!this.emojiViewVisible || this.emojiSearchOpened) {
+                f += this.parentAlert.currentPanTranslationY;
+            }
             this.toolbar.getBottomContainer().animate().cancel();
-            this.toolbar.getBottomContainer().setTranslationY(i2 - this.parentAlert.currentPanTranslationY);
+            this.toolbar.getBottomContainer().setTranslationY(-f);
+            if (this.lastAttachRise != this.attachRaise) {
+                ViewPropertyAnimator animate = this.toolbar.getBottomInnerContainer().animate();
+                this.lastAttachRise = this.attachRaise;
+                animate.translationY(-r1).setDuration(320L).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).start();
+            }
         }
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
     public boolean onBackPressed() {
+        if (this.emojiSearchOpened) {
+            closeEmojiSearch();
+            return false;
+        }
         if (this.emojiViewVisible) {
             hideEmojiPopup();
             return false;
@@ -997,7 +1076,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         super.requestLayout();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0043  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0055  */
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1005,9 +1084,15 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
     public void onPreMeasure(int i, int i2) {
         int dp;
         int i3;
-        boolean z = this.parentAlert.sizeNotifierFrameLayout.measureKeyboardHeight() > AndroidUtilities.dp(20.0f);
-        this.keyboardVisible = z;
-        if (z || this.emojiPadding > AndroidUtilities.dp(20.0f)) {
+        ItemOptions itemOptions;
+        boolean z = this.keyboardVisible;
+        boolean z2 = this.parentAlert.sizeNotifierFrameLayout.measureKeyboardHeight() > AndroidUtilities.dp(20.0f);
+        this.keyboardVisible = z2;
+        if (!z2 && z && (itemOptions = this.menu) != null) {
+            itemOptions.dismiss();
+            this.menu = null;
+        }
+        if (this.keyboardVisible || this.emojiPadding > AndroidUtilities.dp(20.0f)) {
             dp = AndroidUtilities.dp(52.0f);
             this.parentAlert.setAllowNestedScroll(false);
         } else {
@@ -1029,7 +1114,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
             this.parentAlert.setAllowNestedScroll(true);
         }
         int currentActionBarHeight = dp + AndroidUtilities.statusBarHeight + ActionBar.getCurrentActionBarHeight();
-        int bottomNavInset = bottomNavInset() + AndroidUtilities.dp(110.0f) + (this.listView.hasAnyText() ? 0 : this.parentAlert.getTypeButtonsHeight()) + this.emojiPadding;
+        int bottomNavInset = bottomNavInset() + AndroidUtilities.dp(110.0f) + ((this.listView.hasAnyText() || this.emojiViewVisible) ? 0 : this.parentAlert.getTypeButtonsHeight()) + this.emojiPadding;
         if (this.listView.getPaddingTop() != currentActionBarHeight || this.listView.getPaddingBottom() != bottomNavInset) {
             this.ignoreLayout = true;
             this.listView.setPaddingWithoutRequestLayout(0, currentActionBarHeight, 0, bottomNavInset);
@@ -1054,8 +1139,8 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
     public void onPanTransitionStart(boolean z, int i) {
         super.onPanTransitionStart(z, i);
         this.keyboardVisible = z;
-        syncBottomOffset(false);
-        if (z && this.emojiViewVisible) {
+        layoutBottomPanels();
+        if (z && this.emojiViewVisible && !this.emojiSearchOpened) {
             hideEmojiPopup();
         }
         updateToolbarTopOffset();
@@ -1064,40 +1149,52 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
     public void onContainerTranslationUpdated(float f) {
         super.onContainerTranslationUpdated(f);
-        syncBottomOffset(false);
+        layoutBottomPanels();
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
     public void onPanTransitionEnd() {
         super.onPanTransitionEnd();
         this.keyboardVisible = this.parentAlert.sizeNotifierFrameLayout.measureKeyboardHeight() > AndroidUtilities.dp(20.0f);
-        syncBottomOffset(false);
+        layoutBottomPanels();
         updateToolbarTopOffset();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        EmojiView emojiView;
         if (this.listView.textSelectionHelper.isInSelectionMode() && this.listView.textSelectionOverlay.onTouchEvent(motionEvent)) {
             return true;
         }
-        if (motionEvent.getAction() == 0 && this.emojiViewVisible && motionEvent.getY() < (getHeight() - AndroidUtilities.dp(60.0f)) - this.emojiPadding) {
+        int height = (((!this.emojiSearchOpened || (emojiView = this.emojiView) == null) ? getHeight() - this.emojiPadding : (int) emojiView.getY()) - AndroidUtilities.dp(60.0f)) - this.attachRaise;
+        if (motionEvent.getAction() == 0 && this.emojiViewVisible && motionEvent.getY() < height) {
             hideEmojiPopup();
         }
-        if ((motionEvent.getAction() != 0 || (motionEvent.getY() > AndroidUtilities.dp(60.0f) && motionEvent.getY() < (getHeight() - AndroidUtilities.dp(60.0f)) - this.emojiPadding)) && this.listView.textSelectionOverlay.checkOnTap(motionEvent)) {
+        if ((motionEvent.getAction() != 0 || (motionEvent.getY() > AndroidUtilities.dp(60.0f) && motionEvent.getY() < height)) && this.listView.textSelectionOverlay.checkOnTap(motionEvent)) {
             motionEvent.setAction(3);
         }
-        if ((!this.emojiViewVisible || motionEvent.getY() < (getHeight() - AndroidUtilities.dp(60.0f)) - this.emojiPadding) && this.listView.handleSelectionTouch(motionEvent)) {
-            return true;
+        if (motionEvent.getY() >= height || !this.listView.handleSelectionTouch(motionEvent)) {
+            return super.dispatchTouchEvent(motionEvent);
         }
-        return super.dispatchTouchEvent(motionEvent);
+        return true;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        if (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 47 && keyEvent.isCtrlPressed()) {
+            saveDraftWithBulletin();
+            return true;
+        }
         if (this.listView.handleKeyEvent(keyEvent)) {
             return true;
         }
         return super.dispatchKeyEvent(keyEvent);
+    }
+
+    private void saveDraftWithBulletin() {
+        if ((this.parentAlert.baseFragment instanceof ChatActivity) && this.listView.canUndo() && persistDraft()) {
+            BulletinFactory.of(this.toolbar, this.resourcesProvider).createSimpleBulletin(R.raw.contact_check, LocaleController.getString(R.string.RichEditorDraftSaved)).show();
+        }
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
@@ -1130,10 +1227,12 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
     public boolean sendSelectedItems(boolean z, int i, int i2, long j, boolean z2) {
-        MessageObject messageObject;
-        MessageObject messageObject2;
-        long j2;
-        int i3;
+        if (!MessagesController.getInstance(this.currentAccount).richEditorAllowed()) {
+            if (!UserConfig.getInstance(this.currentAccount).isPremium()) {
+                new PremiumFeatureBottomSheet(this.parentAlert.baseFragment, getContext(), this.currentAccount, 43, true).show();
+            }
+            return false;
+        }
         if (!this.listView.hasAnyText() || this.listView.hasPendingUploads()) {
             return false;
         }
@@ -1141,35 +1240,29 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
             updateSendButtonEnabled();
             return false;
         }
-        ArrayList flattenRowsToBlocks = this.listView.flattenRowsToBlocks();
-        if (flattenRowsToBlocks.isEmpty()) {
+        if (this.listView.flattenRowsToBlocks().isEmpty()) {
             return false;
         }
-        ArrayList collectPhotos = this.listView.collectPhotos();
-        ArrayList collectDocuments = this.listView.collectDocuments();
+        this.listView.collectPhotos();
+        this.listView.collectDocuments();
         BaseFragment baseFragment = this.parentAlert.baseFragment;
         if (baseFragment instanceof ChatActivity) {
             ChatActivity chatActivity = (ChatActivity) baseFragment;
-            MessageObject replyMessage = chatActivity.getReplyMessage();
-            MessageObject threadMessage = chatActivity.getThreadMessage();
-            long sendMonoForumPeerId = chatActivity.getSendMonoForumPeerId();
-            i3 = chatActivity.getQuickReplyId();
-            messageObject = replyMessage;
-            messageObject2 = threadMessage;
-            j2 = sendMonoForumPeerId;
-        } else {
-            messageObject = null;
-            messageObject2 = null;
-            j2 = 0;
-            i3 = 0;
+            chatActivity.getReplyMessage();
+            chatActivity.getThreadMessage();
+            chatActivity.getSendMonoForumPeerId();
+            chatActivity.getQuickReplyId();
         }
-        SendMessagesHelper.prepareSendingArticle(AccountInstance.getInstance(this.parentAlert.currentAccount), flattenRowsToBlocks, collectPhotos, collectDocuments, null, false, this.parentAlert.getDialogId(), messageObject, messageObject2, z, i, i2, null, i3, j, j2, 0L);
         this.parentAlert.dismiss(true);
         return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean showSendPreview(View view) {
+        if (!UserConfig.getInstance(this.currentAccount).isPremium()) {
+            new PremiumFeatureBottomSheet(this.parentAlert.baseFragment, getContext(), this.currentAccount, 43, true).show();
+            return true;
+        }
         boolean z = false;
         if (!this.listView.hasAnyText() || this.listView.hasPendingUploads()) {
             return false;
@@ -1577,6 +1670,33 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         }
     }
 
+    private void updateSendButtonLocked() {
+        RichEditorToolbar richEditorToolbar = this.toolbar;
+        if (richEditorToolbar != null) {
+            richEditorToolbar.getSendButton().setLocked(!MessagesController.getInstance(this.currentAccount).richEditorAllowed());
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
+        updateSendButtonLocked();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == NotificationCenter.currentUserPremiumStatusChanged) {
+            updateSendButtonLocked();
+        }
+    }
+
     private int getEmojiPanelHeight() {
         int measureKeyboardHeight = this.parentAlert.sizeNotifierFrameLayout.measureKeyboardHeight();
         if (measureKeyboardHeight <= 0) {
@@ -1584,7 +1704,10 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
             Point point = AndroidUtilities.displaySize;
             measureKeyboardHeight = globalEmojiSettings.getInt(point.x > point.y ? "kbd_height_land3" : "kbd_height", AndroidUtilities.dp(200.0f));
         }
-        return measureKeyboardHeight <= 0 ? AndroidUtilities.dp(200.0f) : measureKeyboardHeight;
+        if (measureKeyboardHeight <= 0) {
+            measureKeyboardHeight = AndroidUtilities.dp(200.0f);
+        }
+        return measureKeyboardHeight + AndroidUtilities.navigationBarHeight;
     }
 
     private void createEmojiView() {
@@ -1597,6 +1720,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         EmojiView emojiView2 = this.emojiView;
         emojiView2.fixBottomTabContainerTranslation = false;
         emojiView2.setBottomInset(AndroidUtilities.navigationBarHeight);
+        this.emojiView.hideBottomTabContainerBackground();
         this.emojiView.setDelegate(new EmojiView.EmojiViewDelegate() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout.6
             @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ boolean canAddCaptionToGif(TLRPC.Document document) {
@@ -1639,11 +1763,6 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
             }
 
             @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-            public /* synthetic */ boolean isSearchOpened() {
-                return EmojiView.EmojiViewDelegate.-CC.$default$isSearchOpened(this);
-            }
-
-            @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ boolean isUserSelf() {
                 return EmojiView.EmojiViewDelegate.-CC.$default$isUserSelf(this);
             }
@@ -1671,11 +1790,6 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
             @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void onGifSelectedForAddCaption(View view, Object obj, String str, Object obj2, boolean z, int i, int i2) {
                 EmojiView.EmojiViewDelegate.-CC.$default$onGifSelectedForAddCaption(this, view, obj, str, obj2, z, i, i2);
-            }
-
-            @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-            public /* synthetic */ void onSearchOpenClose(int i) {
-                EmojiView.EmojiViewDelegate.-CC.$default$onSearchOpenClose(this, i);
             }
 
             @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
@@ -1719,27 +1833,46 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
             }
 
             @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+            public void onSearchOpenClose(int i) {
+                RichEditText focusedEditTextOrNull;
+                if (i != 0 && (focusedEditTextOrNull = ChatAttachAlertRichLayout.this.listView.getFocusedEditTextOrNull()) != null) {
+                    ChatAttachAlertRichLayout.this.emojiTargetEditText = focusedEditTextOrNull;
+                    ChatAttachAlertRichLayout.this.emojiTargetSelection = Math.max(0, focusedEditTextOrNull.getSelectionEnd());
+                }
+                ChatAttachAlertRichLayout.this.emojiSearchOpened = i != 0;
+                ChatAttachAlertRichLayout.this.layoutBottomPanels();
+            }
+
+            @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+            public boolean isSearchOpened() {
+                return ChatAttachAlertRichLayout.this.emojiSearchOpened;
+            }
+
+            @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
             public boolean onBackspace() {
-                RichEditText findFocusedEditText = ChatAttachAlertRichLayout.this.listView.findFocusedEditText();
-                if (findFocusedEditText == null || findFocusedEditText.length() == 0) {
+                RichEditText resolveEmojiTarget = ChatAttachAlertRichLayout.this.resolveEmojiTarget();
+                if (resolveEmojiTarget == null || resolveEmojiTarget.length() == 0) {
                     return false;
                 }
-                findFocusedEditText.dispatchKeyEvent(new KeyEvent(0, 67));
+                resolveEmojiTarget.dispatchKeyEvent(new KeyEvent(0, 67));
                 return true;
             }
 
             @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
             public void onEmojiSelected(String str) {
-                RichEditText findFocusedEditText = ChatAttachAlertRichLayout.this.listView.findFocusedEditText();
-                if (findFocusedEditText == null) {
+                RichEditText resolveEmojiTarget = ChatAttachAlertRichLayout.this.resolveEmojiTarget();
+                if (resolveEmojiTarget == null) {
                     return;
                 }
-                int max = Math.max(0, findFocusedEditText.getSelectionEnd());
+                int resolveEmojiTargetOffset = ChatAttachAlertRichLayout.this.resolveEmojiTargetOffset(resolveEmojiTarget);
                 try {
-                    CharSequence replaceEmoji = Emoji.replaceEmoji((CharSequence) str, findFocusedEditText.getPaint().getFontMetricsInt(), false, (int[]) null);
-                    findFocusedEditText.setText(findFocusedEditText.getText().insert(max, replaceEmoji));
-                    int length = max + replaceEmoji.length();
-                    findFocusedEditText.setSelection(length, length);
+                    CharSequence replaceEmoji = Emoji.replaceEmoji((CharSequence) str, resolveEmojiTarget.getPaint().getFontMetricsInt(), false, (int[]) null);
+                    resolveEmojiTarget.setText(resolveEmojiTarget.getText().insert(resolveEmojiTargetOffset, replaceEmoji));
+                    int length = resolveEmojiTargetOffset + replaceEmoji.length();
+                    resolveEmojiTarget.setSelection(length, length);
+                    if (resolveEmojiTarget == ChatAttachAlertRichLayout.this.emojiTargetEditText) {
+                        ChatAttachAlertRichLayout.this.emojiTargetSelection = length;
+                    }
                 } catch (Exception unused) {
                 }
             }
@@ -1747,26 +1880,29 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
             @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
             public void onCustomEmojiSelected(long j, TLRPC.Document document, String str, boolean z) {
                 AnimatedEmojiSpan animatedEmojiSpan;
-                RichEditText findFocusedEditText = ChatAttachAlertRichLayout.this.listView.findFocusedEditText();
-                if (findFocusedEditText == null) {
+                RichEditText resolveEmojiTarget = ChatAttachAlertRichLayout.this.resolveEmojiTarget();
+                if (resolveEmojiTarget == null) {
                     return;
                 }
-                int max = Math.max(0, findFocusedEditText.getSelectionEnd());
+                int resolveEmojiTargetOffset = ChatAttachAlertRichLayout.this.resolveEmojiTargetOffset(resolveEmojiTarget);
                 try {
                     if (str == null) {
                         str = "😀";
                     }
                     SpannableString spannableString = new SpannableString(str);
                     if (document != null) {
-                        animatedEmojiSpan = new AnimatedEmojiSpan(document, findFocusedEditText.getPaint().getFontMetricsInt());
+                        animatedEmojiSpan = new AnimatedEmojiSpan(document, resolveEmojiTarget.getPaint().getFontMetricsInt());
                     } else {
-                        animatedEmojiSpan = new AnimatedEmojiSpan(j, findFocusedEditText.getPaint().getFontMetricsInt());
+                        animatedEmojiSpan = new AnimatedEmojiSpan(j, resolveEmojiTarget.getPaint().getFontMetricsInt());
                     }
                     animatedEmojiSpan.cacheType = AnimatedEmojiDrawable.getCacheTypeForEnterView();
                     spannableString.setSpan(animatedEmojiSpan, 0, spannableString.length(), 33);
-                    findFocusedEditText.setText(findFocusedEditText.getText().insert(max, spannableString));
-                    int length = max + spannableString.length();
-                    findFocusedEditText.setSelection(length, length);
+                    resolveEmojiTarget.setText(resolveEmojiTarget.getText().insert(resolveEmojiTargetOffset, spannableString));
+                    int length = resolveEmojiTargetOffset + spannableString.length();
+                    resolveEmojiTarget.setSelection(length, length);
+                    if (resolveEmojiTarget == ChatAttachAlertRichLayout.this.emojiTargetEditText) {
+                        ChatAttachAlertRichLayout.this.emojiTargetSelection = length;
+                    }
                 } catch (Exception unused) {
                 }
             }
@@ -1775,15 +1911,34 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public RichEditText resolveEmojiTarget() {
+        RichEditText focusedEditTextOrNull = this.listView.getFocusedEditTextOrNull();
+        if (focusedEditTextOrNull != null) {
+            this.emojiTargetEditText = focusedEditTextOrNull;
+            this.emojiTargetSelection = Math.max(0, focusedEditTextOrNull.getSelectionEnd());
+            return focusedEditTextOrNull;
+        }
+        RichEditText richEditText = this.emojiTargetEditText;
+        return richEditText != null ? richEditText : this.listView.findFocusedEditText();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public int resolveEmojiTargetOffset(RichEditText richEditText) {
+        if (richEditText == this.emojiTargetEditText && this.listView.getFocusedEditTextOrNull() != richEditText) {
+            return Math.min(this.emojiTargetSelection, richEditText.length());
+        }
+        return Math.max(0, richEditText.getSelectionEnd());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public void toggleEmojiPopup() {
         if (this.emojiViewVisible) {
-            hideEmojiPopup();
             RichEditText findFocusedEditText = this.listView.findFocusedEditText();
             if (findFocusedEditText != null) {
                 findFocusedEditText.requestEditFocus();
                 AndroidUtilities.showKeyboard(findFocusedEditText);
-                return;
             }
+            hideEmojiPopup(true);
             return;
         }
         showEmojiPopup();
@@ -1795,6 +1950,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.emojiView.getLayoutParams();
         layoutParams.height = emojiPanelHeight;
         this.emojiView.setLayoutParams(layoutParams);
+        this.emojiView.setTranslationY(0.0f);
         this.emojiView.setVisibility(0);
         this.emojiViewVisible = true;
         this.emojiPadding = emojiPanelHeight;
@@ -1806,14 +1962,30 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         if (richEditorToolbar != null) {
             richEditorToolbar.setEmojiOpened(true);
         }
-        syncBottomOffset(false);
+        updateAttachButtons(false);
         requestLayout();
     }
 
     private void hideEmojiPopup() {
-        EmojiView emojiView = this.emojiView;
-        if (emojiView != null) {
-            emojiView.setVisibility(8);
+        hideEmojiPopup(false);
+    }
+
+    private void hideEmojiPopup(boolean z) {
+        if (this.emojiSearchOpened) {
+            this.emojiSearchOpened = false;
+            EmojiView emojiView = this.emojiView;
+            if (emojiView != null) {
+                emojiView.closeSearch(false);
+                if (!z) {
+                    this.emojiView.hideSearchKeyboard();
+                }
+            }
+        }
+        this.emojiTargetEditText = null;
+        EmojiView emojiView2 = this.emojiView;
+        if (emojiView2 != null) {
+            emojiView2.setTranslationY(0.0f);
+            this.emojiView.setVisibility(8);
         }
         this.emojiViewVisible = false;
         this.emojiPadding = 0;
@@ -1821,8 +1993,20 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         if (richEditorToolbar != null) {
             richEditorToolbar.setEmojiOpened(false);
         }
-        syncBottomOffset(false);
+        updateAttachButtons(false);
         requestLayout();
+    }
+
+    private void closeEmojiSearch() {
+        if (this.emojiSearchOpened) {
+            this.emojiSearchOpened = false;
+            EmojiView emojiView = this.emojiView;
+            if (emojiView != null) {
+                emojiView.closeSearch(false);
+                this.emojiView.hideSearchKeyboard();
+            }
+            layoutBottomPanels();
+        }
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout

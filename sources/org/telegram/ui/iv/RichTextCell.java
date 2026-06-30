@@ -588,7 +588,14 @@ public class RichTextCell extends FrameLayout implements Theme.Colorable, TextSe
         applyListDecoration(blockRow);
         updateLanguageButton(blockRow.block, false);
         if (!String.valueOf(this.editText.getText()).equals(readPlainText(blockRow.block))) {
-            this.editText.setTextSilently(Emoji.replaceEmoji(readStyledText(blockRow.block), this.editText.getPaint().getFontMetricsInt(), false));
+            CharSequence readStyledText = readStyledText(blockRow.block);
+            if (RichEditorListView.isHeading(blockRow.block)) {
+                SpannableString spannableString = new SpannableString(readStyledText);
+                RichTextStyle.setStyle(spannableString, 0, spannableString.length(), 1, false);
+                RichTextStyle.setStyle(spannableString, 0, spannableString.length(), 2, false);
+                readStyledText = spannableString;
+            }
+            this.editText.setTextSilently(Emoji.replaceEmoji(readStyledText, this.editText.getPaint().getFontMetricsInt(), false));
             this.editText.invalidateEffects();
             this.highlightedSnapshot = null;
         }
@@ -1601,12 +1608,18 @@ public class RichTextCell extends FrameLayout implements Theme.Colorable, TextSe
                 RectF rectF2 = AndroidUtilities.rectTmp;
                 rectF2.set(dp, AndroidUtilities.dp(6.0f), dp2, getHeight());
                 this.quoteLine.drawBackground(canvas, rectF2, floor2, floor2, floor2, 1.0f);
+                canvas.save();
                 int i3 = (int) dp;
                 this.quoteIcon.setBounds(AndroidUtilities.dp(8.0f) + i3, AndroidUtilities.dp(13.0f), i3 + AndroidUtilities.dp(8.0f) + this.quoteIcon.getIntrinsicWidth(), AndroidUtilities.dp(13.0f) + this.quoteIcon.getIntrinsicHeight());
+                canvas.scale(-1.0f, -1.0f, this.quoteIcon.getBounds().centerX(), this.quoteIcon.getBounds().centerY());
                 this.quoteIcon.draw(canvas);
+                canvas.restore();
+                canvas.save();
                 int i4 = (int) dp2;
                 this.quoteIcon.setBounds((i4 - AndroidUtilities.dp(8.0f)) - this.quoteIcon.getIntrinsicWidth(), (getHeight() - AndroidUtilities.dp(7.0f)) - this.quoteIcon.getIntrinsicHeight(), i4 - AndroidUtilities.dp(8.0f), getHeight() - AndroidUtilities.dp(7.0f));
+                canvas.scale(1.0f, -1.0f, this.quoteIcon.getBounds().centerX(), this.quoteIcon.getBounds().centerY());
                 this.quoteIcon.draw(canvas);
+                canvas.restore();
             }
         }
         if (this.showCommandBackground) {

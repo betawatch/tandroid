@@ -35,6 +35,7 @@ import org.telegram.ui.iv.RichEditorToolbar;
 public class RichEditorToolbar extends FrameLayout {
     private final ImageView addButton;
     private final ImageView aiButton;
+    private final RichEditor.Button aiStyleButton;
     private final ImageView backButton;
     private final ArrayList blockButtons;
     private final LinearLayout blocksLayout;
@@ -47,6 +48,7 @@ public class RichEditorToolbar extends FrameLayout {
     private final Delegate delegate;
     private final ChatActivityEnterViewAnimatedIconView emojiButton;
     private final ArrayList formattingButtons;
+    private LinearLayout formattingLayout1;
     private LinearLayout formattingLayout2;
     private LinearLayout formattingLayout3;
     private final LinearLayout formattingPanel;
@@ -73,6 +75,8 @@ public class RichEditorToolbar extends FrameLayout {
         Theme.ResourcesProvider getResourcesProvider();
 
         void onAi();
+
+        void onAiStyle();
 
         void onAttach();
 
@@ -131,12 +135,13 @@ public class RichEditorToolbar extends FrameLayout {
         imageView.setImageResource(R.drawable.ic_ab_back);
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        int color = color(i);
-        int color2 = color(i);
-        int i2 = Theme.key_listSelector;
-        imageView.setBackground(RichEditor.withShadow(Theme.createRadSelectorDrawable(color, Theme.blendOver(color2, color(i2)), AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f))));
-        int i3 = Theme.key_windowBackgroundWhiteBlackText;
-        int color3 = color(i3);
+        int i2 = Theme.key_glass_targetMainTabs;
+        int color = color(i2);
+        int color2 = color(i2);
+        int i3 = Theme.key_listSelector;
+        imageView.setBackground(RichEditor.withShadow(Theme.createRadSelectorDrawable(color, Theme.blendOver(color2, color(i3)), AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f))));
+        int i4 = Theme.key_windowBackgroundWhiteBlackText;
+        int color3 = color(i4);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(color3, mode));
         ScaleStateListAnimator.apply(imageView);
@@ -150,16 +155,17 @@ public class RichEditorToolbar extends FrameLayout {
         LinearLayout linearLayout = new LinearLayout(context);
         this.historyButtons = linearLayout;
         linearLayout.setOrientation(0);
-        linearLayout.setBackground(RichEditor.withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), color(i))));
+        linearLayout.setBackground(RichEditor.withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), color(i2))));
         frameLayout.addView(linearLayout, LayoutHelper.createFrame(82, 44.0f, 53, 8.0f, 8.0f, 8.0f, 8.0f));
         ImageView imageView2 = new ImageView(context);
         this.undoButton = imageView2;
         imageView2.setImageResource(R.drawable.iv_undo);
         imageView2.setScaleType(scaleType);
-        imageView2.setBackground(Theme.createSelectorDrawable(color(i2)));
-        imageView2.setColorFilter(new PorterDuffColorFilter(color(i3), mode));
+        imageView2.setBackground(Theme.createSelectorDrawable(color(i3)));
+        imageView2.setColorFilter(new PorterDuffColorFilter(color(i4), mode));
         ScaleStateListAnimator.apply(imageView2);
-        imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda2
+        imageView2.setContentDescription("Undo");
+        imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 RichEditorToolbar.Delegate.this.onUndo();
@@ -170,10 +176,11 @@ public class RichEditorToolbar extends FrameLayout {
         this.redoButton = imageView3;
         imageView3.setImageResource(R.drawable.iv_redo);
         imageView3.setScaleType(scaleType);
-        imageView3.setBackground(Theme.createSelectorDrawable(color(i2)));
-        imageView3.setColorFilter(new PorterDuffColorFilter(color(i3), mode));
+        imageView3.setBackground(Theme.createSelectorDrawable(color(i3)));
+        imageView3.setColorFilter(new PorterDuffColorFilter(color(i4), mode));
         ScaleStateListAnimator.apply(imageView3);
-        imageView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda3
+        imageView3.setContentDescription("Redo");
+        imageView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 RichEditorToolbar.Delegate.this.onRedo();
@@ -184,7 +191,7 @@ public class RichEditorToolbar extends FrameLayout {
         this.bottomContainer = frameLayout2;
         frameLayout2.setClipChildren(false);
         frameLayout2.setClipToPadding(false);
-        addView(frameLayout2, LayoutHelper.createFrame(-1, 60, 87));
+        addView(frameLayout2, LayoutHelper.createFrame(-1, -1, 87));
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.bottomInnerContainer = frameLayout3;
         frameLayout3.setClipChildren(false);
@@ -199,12 +206,13 @@ public class RichEditorToolbar extends FrameLayout {
         ChatActivityEnterViewAnimatedIconView chatActivityEnterViewAnimatedIconView = new ChatActivityEnterViewAnimatedIconView(context, 24);
         this.emojiButton = chatActivityEnterViewAnimatedIconView;
         chatActivityEnterViewAnimatedIconView.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
-        chatActivityEnterViewAnimatedIconView.setColorFilter(new PorterDuffColorFilter(color(i3), mode));
-        chatActivityEnterViewAnimatedIconView.setBackground(RichEditor.withShadow(Theme.createRadSelectorDrawable(color(i), Theme.blendOver(color(i), color(i2)), AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f))));
+        chatActivityEnterViewAnimatedIconView.setColorFilter(new PorterDuffColorFilter(color(i4), mode));
+        chatActivityEnterViewAnimatedIconView.setBackground(RichEditor.withShadow(Theme.createRadSelectorDrawable(color(i2), Theme.blendOver(color(i2), color(i3)), AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f))));
         chatActivityEnterViewAnimatedIconView.setState(ChatActivityEnterViewAnimatedIconView.State.SMILE, false);
         linearLayout2.addView(chatActivityEnterViewAnimatedIconView, LayoutHelper.createLinear(44, 44, 0.0f, 19, 0, 0, 8, 0));
         ScaleStateListAnimator.apply(chatActivityEnterViewAnimatedIconView);
-        chatActivityEnterViewAnimatedIconView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda4
+        chatActivityEnterViewAnimatedIconView.setContentDescription("Emoji");
+        chatActivityEnterViewAnimatedIconView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 RichEditorToolbar.Delegate.this.onEmoji();
@@ -214,11 +222,12 @@ public class RichEditorToolbar extends FrameLayout {
         this.aiButton = imageView4;
         imageView4.setImageDrawable(new AiButtonDrawable(context));
         imageView4.setScaleType(scaleType);
-        imageView4.setColorFilter(new PorterDuffColorFilter(color(i3), mode));
-        imageView4.setBackground(RichEditor.withShadow(Theme.createRadSelectorDrawable(color(i), Theme.blendOver(color(i), color(i2)), AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f))));
+        imageView4.setColorFilter(new PorterDuffColorFilter(color(i4), mode));
+        imageView4.setBackground(RichEditor.withShadow(Theme.createRadSelectorDrawable(color(i2), Theme.blendOver(color(i2), color(i3)), AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f))));
         linearLayout2.addView(imageView4, LayoutHelper.createLinear(44, 44, 0.0f, 19, 0, 0, 8, 0));
         ScaleStateListAnimator.apply(imageView4);
-        imageView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda5
+        imageView4.setContentDescription("AI");
+        imageView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 RichEditorToolbar.Delegate.this.onAi();
@@ -228,18 +237,18 @@ public class RichEditorToolbar extends FrameLayout {
         frameLayout4.setClipToPadding(false);
         frameLayout4.setClipChildren(false);
         FrameLayout frameLayout5 = new FrameLayout(context);
-        frameLayout5.setBackground(RichEditor.withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), color(i))));
+        frameLayout5.setBackground(RichEditor.withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), color(i2))));
         frameLayout4.addView(frameLayout5, LayoutHelper.createFrame(-2, 44, 81));
         HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context) { // from class: org.telegram.ui.iv.RichEditorToolbar.1
             @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
-            protected void onMeasure(int i4, int i5) {
-                int mode2 = View.MeasureSpec.getMode(i4);
-                int size = View.MeasureSpec.getSize(i4);
+            protected void onMeasure(int i5, int i6) {
+                int mode2 = View.MeasureSpec.getMode(i5);
+                int size = View.MeasureSpec.getSize(i5);
                 if (mode2 == 1073741824) {
-                    super.onMeasure(i4, i5);
+                    super.onMeasure(i5, i6);
                     return;
                 }
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 0), i5);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 0), i6);
                 int measuredWidth = getMeasuredWidth();
                 if (mode2 == Integer.MIN_VALUE) {
                     measuredWidth = Math.min(measuredWidth, size);
@@ -264,18 +273,19 @@ public class RichEditorToolbar extends FrameLayout {
         addBlockButton(R.drawable.iv_text, 1);
         addBlockButton(R.drawable.iv_lists, 2);
         addBlockButton(R.drawable.iv_table, 4);
-        int i4 = R.drawable.iv_math;
-        addBlockButton(i4, 7);
+        int i5 = R.drawable.iv_math;
+        addBlockButton(i5, 7);
         linearLayout2.addView(frameLayout4, LayoutHelper.createLinear(0, 44, 1.0f));
         ImageView imageView5 = new ImageView(context);
         this.addButton = imageView5;
         imageView5.setImageResource(R.drawable.outline_poll_attach_24);
         imageView5.setScaleType(scaleType);
-        imageView5.setColorFilter(new PorterDuffColorFilter(color(i3), mode));
-        imageView5.setBackground(RichEditor.withShadow(Theme.createRadSelectorDrawable(color(i), Theme.blendOver(color(i), color(i2)), AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f))));
+        imageView5.setColorFilter(new PorterDuffColorFilter(color(i4), mode));
+        imageView5.setBackground(RichEditor.withShadow(Theme.createRadSelectorDrawable(color(i2), Theme.blendOver(color(i2), color(i3)), AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f))));
         linearLayout2.addView(imageView5, LayoutHelper.createLinear(44, 44, 0.0f, 21, 8, 0, 0, 0));
         ScaleStateListAnimator.apply(imageView5);
-        imageView5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda6
+        imageView5.setContentDescription("Attach");
+        imageView5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 RichEditorToolbar.Delegate.this.onAttach();
@@ -283,21 +293,26 @@ public class RichEditorToolbar extends FrameLayout {
         });
         LinearLayout linearLayout4 = new LinearLayout(context) { // from class: org.telegram.ui.iv.RichEditorToolbar.3
             @Override // android.widget.LinearLayout, android.view.View
-            protected void onMeasure(int i5, int i6) {
-                int size = View.MeasureSpec.getSize(i5);
+            protected void onMeasure(int i6, int i7) {
+                int size = View.MeasureSpec.getSize(i6);
                 int paddingLeft = getPaddingLeft() + getPaddingRight();
+                if (RichEditorToolbar.this.formattingLayout1 != null) {
+                    RichEditorToolbar.this.formattingLayout1.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
+                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) RichEditorToolbar.this.formattingLayout1.getLayoutParams();
+                    paddingLeft += RichEditorToolbar.this.formattingLayout1.getMeasuredWidth() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin;
+                }
                 if (RichEditorToolbar.this.formattingLayout2 != null) {
                     RichEditorToolbar.this.formattingLayout2.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
-                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) RichEditorToolbar.this.formattingLayout2.getLayoutParams();
-                    paddingLeft += RichEditorToolbar.this.formattingLayout2.getMeasuredWidth() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin;
+                    ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) RichEditorToolbar.this.formattingLayout2.getLayoutParams();
+                    paddingLeft += RichEditorToolbar.this.formattingLayout2.getMeasuredWidth() + marginLayoutParams2.leftMargin + marginLayoutParams2.rightMargin;
                 }
                 if (RichEditorToolbar.this.formattingLayout3 != null) {
                     RichEditorToolbar.this.formattingLayout3.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
-                    ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) RichEditorToolbar.this.formattingLayout3.getLayoutParams();
-                    paddingLeft += RichEditorToolbar.this.formattingLayout3.getMeasuredWidth() + marginLayoutParams2.leftMargin + marginLayoutParams2.rightMargin;
+                    ViewGroup.MarginLayoutParams marginLayoutParams3 = (ViewGroup.MarginLayoutParams) RichEditorToolbar.this.formattingLayout3.getLayoutParams();
+                    paddingLeft += RichEditorToolbar.this.formattingLayout3.getMeasuredWidth() + marginLayoutParams3.leftMargin + marginLayoutParams3.rightMargin;
                 }
                 RichEditorToolbar.this.formattingScrollMaxWidth = Math.max(0, size - paddingLeft);
-                super.onMeasure(i5, i6);
+                super.onMeasure(i6, i7);
             }
         };
         this.formattingPanel = linearLayout4;
@@ -322,27 +337,27 @@ public class RichEditorToolbar extends FrameLayout {
             animatedDrawable.setCustomEndFrame(0);
         }
         rLottieImageView.setScaleType(scaleType);
-        rLottieImageView.setColorFilter(new PorterDuffColorFilter(color(i3), mode));
-        rLottieImageView.setBackground(RichEditor.withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), color(i))));
+        rLottieImageView.setColorFilter(new PorterDuffColorFilter(color(i4), mode));
+        rLottieImageView.setBackground(RichEditor.withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), color(i2))));
         frameLayout6.addView(rLottieImageView, LayoutHelper.createFrame(-1, -1, 119));
         FrameLayout frameLayout7 = new FrameLayout(context);
-        frameLayout7.setBackground(RichEditor.withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), color(i))));
+        frameLayout7.setBackground(RichEditor.withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), color(i2))));
         linearLayout4.addView(frameLayout7, LayoutHelper.createFrame(-2, 44.0f));
         HorizontalScrollView horizontalScrollView2 = new HorizontalScrollView(context) { // from class: org.telegram.ui.iv.RichEditorToolbar.4
             @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
-            protected void onMeasure(int i5, int i6) {
-                int mode2 = View.MeasureSpec.getMode(i5);
+            protected void onMeasure(int i6, int i7) {
+                int mode2 = View.MeasureSpec.getMode(i6);
                 if (mode2 == 1073741824) {
-                    super.onMeasure(i5, i6);
+                    super.onMeasure(i6, i7);
                     return;
                 }
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i5), 0), i6);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i6), 0), i7);
                 int measuredWidth = getMeasuredWidth();
-                int i7 = RichEditorToolbar.this.formattingScrollMaxWidth;
+                int i8 = RichEditorToolbar.this.formattingScrollMaxWidth;
                 if (mode2 == Integer.MIN_VALUE) {
-                    i7 = Math.min(i7, View.MeasureSpec.getSize(i5));
+                    i8 = Math.min(i8, View.MeasureSpec.getSize(i6));
                 }
-                setMeasuredDimension(Math.min(measuredWidth, i7), getMeasuredHeight());
+                setMeasuredDimension(Math.min(measuredWidth, i8), getMeasuredHeight());
             }
         };
         this.formattingScrollView = horizontalScrollView2;
@@ -372,11 +387,12 @@ public class RichEditorToolbar extends FrameLayout {
         this.formattingLayout2 = linearLayout6;
         linearLayout6.setOrientation(0);
         this.formattingLayout2.setPadding(AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f));
-        this.formattingLayout2.setBackground(RichEditor.withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), color(i))));
+        this.formattingLayout2.setBackground(RichEditor.withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), color(i2))));
         linearLayout4.addView(this.formattingLayout2, LayoutHelper.createFrame(-2, 44.0f, 80, 8.0f, 0.0f, 0.0f, 0.0f));
         RichEditor.Button button = new RichEditor.Button(context, R.drawable.media_link_24, resourcesProvider);
         this.linkButton = button;
-        button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda7
+        button.setBackgroundColorKey(i2);
+        button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 RichEditorToolbar.Delegate.this.onLink();
@@ -385,7 +401,8 @@ public class RichEditorToolbar extends FrameLayout {
         this.formattingLayout2.addView(button, LayoutHelper.createLinear(41, 41));
         RichEditor.Button button2 = new RichEditor.Button(context, R.drawable.msg_calendar2, resourcesProvider);
         this.dateButton = button2;
-        button2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda8
+        button2.setBackgroundColorKey(i2);
+        button2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 RichEditorToolbar.Delegate.this.onDate();
@@ -396,17 +413,34 @@ public class RichEditorToolbar extends FrameLayout {
         this.formattingLayout3 = linearLayout7;
         linearLayout7.setOrientation(0);
         this.formattingLayout3.setPadding(AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f));
-        this.formattingLayout3.setBackground(RichEditor.withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), color(i))));
+        this.formattingLayout3.setBackground(RichEditor.withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), color(i2))));
         linearLayout4.addView(this.formattingLayout3, LayoutHelper.createFrame(-2, 44.0f, 80, 8.0f, 0.0f, 0.0f, 0.0f));
-        RichEditor.Button button3 = new RichEditor.Button(context, i4, resourcesProvider);
+        RichEditor.Button button3 = new RichEditor.Button(context, i5, resourcesProvider);
         this.mathButton = button3;
-        button3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda9
+        button3.setBackgroundColorKey(i2);
+        button3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 RichEditorToolbar.Delegate.this.onMath();
             }
         });
         this.formattingLayout3.addView(button3, LayoutHelper.createLinear(41, 41));
+        LinearLayout linearLayout8 = new LinearLayout(context);
+        this.formattingLayout1 = linearLayout8;
+        linearLayout8.setOrientation(0);
+        this.formattingLayout1.setPadding(AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f));
+        this.formattingLayout1.setBackground(RichEditor.withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), color(i2))));
+        linearLayout4.addView(this.formattingLayout1, 0, LayoutHelper.createFrame(-2, 44.0f, 80, 0.0f, 0.0f, 8.0f, 0.0f));
+        RichEditor.Button button4 = new RichEditor.Button(context, R.drawable.input_ai, resourcesProvider);
+        this.aiStyleButton = button4;
+        button4.setBackgroundColorKey(i2);
+        button4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda11
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view3) {
+                RichEditorToolbar.Delegate.this.onAiStyle();
+            }
+        });
+        this.formattingLayout1.addView(button4, LayoutHelper.createLinear(41, 41));
         ChatActivityEnterView.SendButton sendButton = new ChatActivityEnterView.SendButton(context, R.drawable.send_plane_24, resourcesProvider, true) { // from class: org.telegram.ui.iv.RichEditorToolbar.6
             @Override // org.telegram.ui.Components.ChatActivityEnterView.SendButton
             public boolean isOpen() {
@@ -414,16 +448,17 @@ public class RichEditorToolbar extends FrameLayout {
             }
         };
         this.sendButton = sendButton;
-        sendButton.setBackground(RichEditor.withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), color(Theme.key_featuredStickers_addButton))));
+        sendButton.setBackground(RichEditor.withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), color(Theme.key_chat_messagePanelSend))));
         ScaleStateListAnimator.apply(sendButton);
         linearLayout2.addView(sendButton, LayoutHelper.createLinear(44, 44, 0.0f, 5, 8, 0, 0, 0));
-        sendButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda10
+        sendButton.setContentDescription("Send");
+        sendButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 RichEditorToolbar.Delegate.this.onSend();
             }
         });
-        sendButton.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda1
+        sendButton.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda2
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view3) {
                 boolean onSendLongClick;
@@ -436,11 +471,12 @@ public class RichEditorToolbar extends FrameLayout {
 
     private RichEditor.Button addBlockButton(int i, final int i2) {
         RichEditor.Button button = new RichEditor.Button(this.blocksLayout.getContext(), i, this.resourcesProvider);
+        button.setBackgroundColorKey(Theme.key_glass_targetMainTabs);
         button.setTag(Integer.valueOf(i2));
-        button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda15
+        button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda16
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RichEditorToolbar.this.lambda$addBlockButton$11(i2, view);
+                RichEditorToolbar.this.lambda$addBlockButton$12(i2, view);
             }
         });
         this.blockButtons.add(button);
@@ -450,17 +486,18 @@ public class RichEditorToolbar extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$addBlockButton$11(int i, View view) {
+    public /* synthetic */ void lambda$addBlockButton$12(int i, View view) {
         this.delegate.onBlockButton(i, view);
     }
 
     private void addFormattingButton(int i, final int i2) {
         RichEditor.Button button = new RichEditor.Button(getContext(), i, this.resourcesProvider);
+        button.setBackgroundColorKey(Theme.key_glass_targetMainTabs);
         button.setTag(Integer.valueOf(i2));
-        button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda14
+        button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda15
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RichEditorToolbar.this.lambda$addFormattingButton$12(i2, view);
+                RichEditorToolbar.this.lambda$addFormattingButton$13(i2, view);
             }
         });
         this.formattingButtons.add(button);
@@ -469,7 +506,7 @@ public class RichEditorToolbar extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$addFormattingButton$12(int i, View view) {
+    public /* synthetic */ void lambda$addFormattingButton$13(int i, View view) {
         this.delegate.onFormatting(i);
     }
 
@@ -524,11 +561,15 @@ public class RichEditorToolbar extends FrameLayout {
         }
     }
 
-    public void setFormattingState(int i, boolean z, boolean z2, boolean z3) {
+    public void setFormattingState(int i, boolean z, boolean z2, boolean z3, boolean z4) {
         Iterator it = this.formattingButtons.iterator();
         while (it.hasNext()) {
             RichEditor.Button button = (RichEditor.Button) it.next();
-            button.setSelected((((Integer) button.getTag()).intValue() & i) != 0);
+            int intValue = ((Integer) button.getTag()).intValue();
+            button.setSelected((i & intValue) != 0);
+            if (intValue == 1 || intValue == 2) {
+                button.setEnabled(z4);
+            }
         }
         this.linkButton.setSelected(z);
         this.dateButton.setSelected(z2);
@@ -554,24 +595,24 @@ public class RichEditorToolbar extends FrameLayout {
             this.bottomPanel.setVisibility(0);
             ViewPropertyAnimator duration = this.bottomPanel.animate().alpha(i == 0 ? 1.0f : 0.0f).scaleX(i == 0 ? 1.0f : 0.8f).scaleY(i == 0 ? 1.0f : 0.8f).translationY(i == 0 ? 0.0f : AndroidUtilities.dp(30.0f)).setDuration(420L);
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
-            duration.setInterpolator(cubicBezierInterpolator).withEndAction(new Runnable() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda11
-                @Override // java.lang.Runnable
-                public final void run() {
-                    RichEditorToolbar.this.lambda$updatePanel$13();
-                }
-            }).start();
-            this.formattingPanel.setVisibility(0);
-            this.formattingPanel.animate().alpha(i == 1 ? 1.0f : 0.0f).scaleX(i == 1 ? 1.0f : 0.8f).scaleY(i == 1 ? 1.0f : 0.8f).translationY(i == 1 ? 0.0f : AndroidUtilities.dp(30.0f)).setDuration(420L).setInterpolator(cubicBezierInterpolator).withEndAction(new Runnable() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda12
+            duration.setInterpolator(cubicBezierInterpolator).withEndAction(new Runnable() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda12
                 @Override // java.lang.Runnable
                 public final void run() {
                     RichEditorToolbar.this.lambda$updatePanel$14();
                 }
             }).start();
-            this.trashPanel.setVisibility(0);
-            this.trashPanel.animate().alpha(i == 2 ? 1.0f : 0.0f).scaleX(i == 2 ? 1.0f : 0.8f).scaleY(i == 2 ? 1.0f : 0.8f).setDuration(420L).setInterpolator(cubicBezierInterpolator).withEndAction(new Runnable() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda13
+            this.formattingPanel.setVisibility(0);
+            this.formattingPanel.animate().alpha(i == 1 ? 1.0f : 0.0f).scaleX(i == 1 ? 1.0f : 0.8f).scaleY(i == 1 ? 1.0f : 0.8f).translationY(i == 1 ? 0.0f : AndroidUtilities.dp(30.0f)).setDuration(420L).setInterpolator(cubicBezierInterpolator).withEndAction(new Runnable() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda13
                 @Override // java.lang.Runnable
                 public final void run() {
                     RichEditorToolbar.this.lambda$updatePanel$15();
+                }
+            }).start();
+            this.trashPanel.setVisibility(0);
+            this.trashPanel.animate().alpha(i == 2 ? 1.0f : 0.0f).scaleX(i == 2 ? 1.0f : 0.8f).scaleY(i == 2 ? 1.0f : 0.8f).setDuration(420L).setInterpolator(cubicBezierInterpolator).withEndAction(new Runnable() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda14
+                @Override // java.lang.Runnable
+                public final void run() {
+                    RichEditorToolbar.this.lambda$updatePanel$16();
                 }
             }).start();
             return;
@@ -593,21 +634,21 @@ public class RichEditorToolbar extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updatePanel$13() {
+    public /* synthetic */ void lambda$updatePanel$14() {
         if (this.panelType != 0) {
             this.bottomPanel.setVisibility(8);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updatePanel$14() {
+    public /* synthetic */ void lambda$updatePanel$15() {
         if (this.panelType != 1) {
             this.formattingPanel.setVisibility(8);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updatePanel$15() {
+    public /* synthetic */ void lambda$updatePanel$16() {
         if (this.panelType != 2) {
             this.trashPanel.setVisibility(8);
         }
@@ -695,6 +736,7 @@ public class RichEditorToolbar extends FrameLayout {
 
     public void setEmojiOpened(boolean z) {
         this.emojiButton.setState(z ? ChatActivityEnterViewAnimatedIconView.State.KEYBOARD : ChatActivityEnterViewAnimatedIconView.State.SMILE, true);
+        this.emojiButton.setContentDescription(z ? "Keyboard" : "Emoji");
     }
 
     public ChatActivityEnterView.SendButton getSendButton() {
@@ -715,6 +757,10 @@ public class RichEditorToolbar extends FrameLayout {
 
     public FrameLayout getBottomContainer() {
         return this.bottomContainer;
+    }
+
+    public FrameLayout getBottomInnerContainer() {
+        return this.bottomInnerContainer;
     }
 
     private int color(int i) {

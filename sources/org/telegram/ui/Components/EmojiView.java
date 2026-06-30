@@ -3533,6 +3533,13 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
         }
     }
 
+    public void hideBottomTabContainerBackground() {
+        View view = this.bottomTabContainerBackground;
+        if (view != null) {
+            view.setVisibility(8);
+        }
+    }
+
     public void setBlurredBackgroundDrawableFactory(BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory) {
         ImageView imageView = this.backspaceButton;
         if (imageView != null) {

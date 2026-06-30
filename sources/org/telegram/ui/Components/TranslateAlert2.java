@@ -1361,6 +1361,28 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
         }
 
         @Override // android.view.ViewGroup, android.view.View
+        public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+            if (TranslateAlert2.this.textSelectionHelper != null && TranslateAlert2.this.textSelectionOverlay != null) {
+                if (motionEvent.getAction() == 0 || motionEvent.getAction() == 1) {
+                    Log.d("TA2", "container dispatch act=" + motionEvent.getAction() + " inSel=" + TranslateAlert2.this.textSelectionHelper.isInSelectionMode());
+                }
+                if (!TranslateAlert2.this.textSelectionHelper.isInSelectionMode() || !TranslateAlert2.this.textSelectionOverlay.onTouchEvent(motionEvent)) {
+                    boolean checkOnTap = TranslateAlert2.this.textSelectionOverlay.checkOnTap(motionEvent);
+                    if (motionEvent.getAction() == 1) {
+                        Log.d("TA2", "checkOnTap=" + checkOnTap);
+                    }
+                    if (checkOnTap) {
+                        motionEvent.setAction(3);
+                    }
+                } else {
+                    Log.d("TA2", "overlay consumed (handle)");
+                    return true;
+                }
+            }
+            return super.dispatchTouchEvent(motionEvent);
+        }
+
+        @Override // android.view.ViewGroup, android.view.View
         protected void dispatchDraw(Canvas canvas) {
             float sheetTop = TranslateAlert2.this.getSheetTop();
             float lerp = AndroidUtilities.lerp(0, AndroidUtilities.dp(12.0f), MathUtils.clamp(sheetTop / AndroidUtilities.dpf2(24.0f), 0.0f, 1.0f));

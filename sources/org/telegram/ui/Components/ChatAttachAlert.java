@@ -4139,7 +4139,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$12(final AttachBotButton attachBotButton, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda71
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda72
             @Override // java.lang.Runnable
             public final void run() {
                 ChatAttachAlert.this.lambda$new$11(attachBotButton);
@@ -5187,7 +5187,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         if (this.editingMessageObject == null) {
             BaseFragment baseFragment2 = this.baseFragment;
             if ((baseFragment2 instanceof ChatActivity) && ((ChatActivity) baseFragment2).isInScheduleMode()) {
-                AlertsCreator.createScheduleDatePickerDialog(getContext(), ((ChatActivity) this.baseFragment).getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda65
+                AlertsCreator.createScheduleDatePickerDialog(getContext(), ((ChatActivity) this.baseFragment).getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda66
                     @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
                     public final void didSelectDate(boolean z, int i, int i2) {
                         ChatAttachAlert.this.lambda$new$27(selectedEffect, z, i, i2);
@@ -5252,7 +5252,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$31(long j, Theme.ResourcesProvider resourcesProvider) {
-        AlertsCreator.createScheduleDatePickerDialog(getContext(), j, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda67
+        AlertsCreator.createScheduleDatePickerDialog(getContext(), j, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda68
             @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
             public final void didSelectDate(boolean z, int i, int i2) {
                 ChatAttachAlert.this.lambda$new$30(z, i, i2);
@@ -5292,7 +5292,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         if (messageSuggestionParams == null) {
             messageSuggestionParams = MessageSuggestionParams.empty();
         }
-        new MessageSuggestionOfferSheet(context, i, j, messageSuggestionParams, chatActivity, resourcesProvider, 0, new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda66
+        new MessageSuggestionOfferSheet(context, i, j, messageSuggestionParams, chatActivity, resourcesProvider, 0, new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda67
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ChatAttachAlert.this.lambda$new$32(chatActivity, (MessageSuggestionParams) obj);
@@ -5616,7 +5616,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
             tL_messages_toggleBotInAttachMenu.bot = MessagesController.getInstance(this.currentAccount).getInputUser(user);
             tL_messages_toggleBotInAttachMenu.enabled = false;
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_toggleBotInAttachMenu, new RequestDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda69
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_toggleBotInAttachMenu, new RequestDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda70
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     ChatAttachAlert.this.lambda$onLongClickBotButton$41(tL_attachMenuBot, tLObject, tL_error);
@@ -5729,7 +5729,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         int i3 = this.currentAccount;
         long dialogId = getDialogId();
         AttachAlertLayout attachAlertLayout = this.currentAttachLayout;
-        return AlertsCreator.ensurePaidMessageConfirmation(i3, dialogId, (attachAlertLayout != null ? attachAlertLayout.getSelectedItemsCount() : 1) + getAdditionalMessagesCount(), new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda68
+        return AlertsCreator.ensurePaidMessageConfirmation(i3, dialogId, (attachAlertLayout != null ? attachAlertLayout.getSelectedItemsCount() : 1) + getAdditionalMessagesCount(), new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda69
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ChatAttachAlert.this.lambda$sendPressed$43(z, i, i2, j, z2, (Long) obj);
@@ -5841,7 +5841,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             ChatAttachAlertPollLayout chatAttachAlertPollLayout = new ChatAttachAlertPollLayout(this, getContext(), false, this.resourcesProvider, bool);
             this.pollLayout = chatAttachAlertPollLayout;
             attachAlertLayoutArr[1] = chatAttachAlertPollLayout;
-            chatAttachAlertPollLayout.setDelegate(new ChatAttachAlertPollLayout.PollCreateActivityDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda70
+            chatAttachAlertPollLayout.setDelegate(new ChatAttachAlertPollLayout.PollCreateActivityDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda71
                 @Override // org.telegram.ui.Components.ChatAttachAlertPollLayout.PollCreateActivityDelegate
                 public final void sendPoll(TLRPC.MessageMedia messageMedia, CharSequence charSequence, PollAttachedMediaPack pollAttachedMediaPack, ArrayList arrayList, boolean z2, int i, long j) {
                     ChatAttachAlert.this.lambda$showPollLayout$45(messageMedia, charSequence, pollAttachedMediaPack, arrayList, z2, i, j);
@@ -7991,7 +7991,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 this.buttonsRecyclerViewWrapper.setVisibility(0);
             }
             if (z2) {
-                this.buttonsRecyclerViewWrapper.animate().alpha(z ? 0.0f : 1.0f).translationY(z ? AndroidUtilities.dp(48.0f) : 0.0f).setDuration(180L).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda72
+                this.buttonsRecyclerViewWrapper.animate().alpha(z ? 0.0f : 1.0f).translationY(z ? AndroidUtilities.dp(48.0f) : 0.0f).setDuration(180L).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda65
                     @Override // java.lang.Runnable
                     public final void run() {
                         ChatAttachAlert.this.lambda$setTypeButtonsHidden$62(z);
@@ -8197,9 +8197,9 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             return new RecyclerListView.Holder(attachButton);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:21:0x01c9  */
-        /* JADX WARN: Removed duplicated region for block: B:24:0x01d4  */
-        /* JADX WARN: Removed duplicated region for block: B:29:0x01cc  */
+        /* JADX WARN: Removed duplicated region for block: B:21:0x01cd  */
+        /* JADX WARN: Removed duplicated region for block: B:24:0x01d8  */
+        /* JADX WARN: Removed duplicated region for block: B:29:0x01d0  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -8270,7 +8270,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         attachButton.setTextAndIcon(14, LocaleController.getString(R.string.ChatEmoji), GlassTabView.TabAnimation.EMOJI);
                         attachButton.setTag(14);
                     } else if (i == this.richButton) {
-                        attachButton.setTextAndIcon(16, "Article", GlassTabView.TabAnimation.ARTICLE);
+                        attachButton.setTextAndIcon(16, LocaleController.getString(R.string.AttachArticle), GlassTabView.TabAnimation.ARTICLE);
                         attachButton.setTag(16);
                     }
                     z = false;
@@ -8425,7 +8425,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         this.buttonsCount = i13 + 1;
                         this.locationButton = i13;
                     }
-                    if (ChatAttachAlert.this.plainTextEnabled) {
+                    if (ChatAttachAlert.this.plainTextEnabled && MessagesController.getInstance(ChatAttachAlert.this.currentAccount).richEditorAvailable()) {
                         int i14 = this.buttonsCount;
                         this.buttonsCount = i14 + 1;
                         this.richButton = i14;

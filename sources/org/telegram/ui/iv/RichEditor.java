@@ -64,11 +64,13 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ArticleViewer$$ExternalSyntheticLambda23;
 import org.telegram.ui.Cells.TextSelectionHelper;
 import org.telegram.ui.ChatActivity;
+import org.telegram.ui.Components.AIEditorAlert;
 import org.telegram.ui.Components.AiButtonDrawable;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AnimatedFloat;
+import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ChatActivityEnterViewAnimatedIconView;
 import org.telegram.ui.Components.ChatAttachAlert;
@@ -78,6 +80,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.EmojiView;
 import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RLottieImageView;
 import org.telegram.ui.Components.ScaleStateListAnimator;
@@ -92,9 +95,10 @@ import org.telegram.ui.iv.RichEditor;
 import org.telegram.ui.iv.RichEditorListView;
 
 /* loaded from: classes3.dex */
-public class RichEditor extends BaseFragment {
+public class RichEditor extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
     private ImageView addButton;
     private ImageView aiButton;
+    private Button aiStyleButton;
     private ChatActivityEnterView animateEnterView;
     private int[] animateEnterViewFrom;
     private int[] animateEnterViewTo;
@@ -113,6 +117,7 @@ public class RichEditor extends BaseFragment {
     private int bottomInset;
     private LinearLayout bottomPanel;
     private int bottomPanelType;
+    private FrameLayout bulletinContainer;
     private ChatActivity chatActivity;
     private RichCommandSuggestions commandSuggestions;
     private SizeNotifierFrameLayout container;
@@ -129,6 +134,7 @@ public class RichEditor extends BaseFragment {
     private EmojiView emojiView;
     private boolean emojiViewVisible;
     private final ArrayList formattingButtons;
+    private LinearLayout formattingLayout1;
     private LinearLayout formattingLayout2;
     private LinearLayout formattingLayout3;
     private LinearLayout formattingPanel;
@@ -276,7 +282,7 @@ public class RichEditor extends BaseFragment {
             this.container.invalidate();
             this.topGradient.setVisibility(4);
             this.bottomGradient.setVisibility(4);
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda19
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda20
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     RichEditor.this.lambda$onCustomTransitionAnimation$0(valueAnimator);
@@ -387,10 +393,14 @@ public class RichEditor extends BaseFragment {
 
             @Override // android.view.ViewGroup, android.view.View
             public boolean dispatchKeyEvent(KeyEvent keyEvent) {
-                if (RichEditor.this.listView.handleKeyEvent(keyEvent)) {
-                    return true;
+                if (keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 47 || !keyEvent.isCtrlPressed()) {
+                    if (RichEditor.this.listView.handleKeyEvent(keyEvent)) {
+                        return true;
+                    }
+                    return super.dispatchKeyEvent(keyEvent);
                 }
-                return super.dispatchKeyEvent(keyEvent);
+                RichEditor.this.saveDraftWithBulletin();
+                return true;
             }
 
             @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.view.ViewGroup, android.view.View
@@ -420,7 +430,7 @@ public class RichEditor extends BaseFragment {
                         canvas.restore();
                         canvas.save();
                         canvas.translate(AndroidUtilities.lerp(this.rect.right, (((RichEditor.this.bottomContainer.getX() + RichEditor.this.bottomInnerContainer.getX()) + RichEditor.this.bottomPanel.getX()) + RichEditor.this.sendButton.getX()) + RichEditor.this.sendButton.getWidth(), RichEditor.this.animateOpenProgress) - RichEditor.this.animateEnterView.sendButtonContainer.getWidth(), AndroidUtilities.lerp(this.rect.bottom, (((RichEditor.this.bottomContainer.getY() + RichEditor.this.bottomInnerContainer.getY()) + RichEditor.this.bottomPanel.getY()) + RichEditor.this.sendButton.getY()) + RichEditor.this.sendButton.getHeight(), RichEditor.this.animateOpenProgress) - RichEditor.this.animateEnterView.sendButtonContainer.getHeight());
-                        canvas.saveLayerAlpha(0.0f, 0.0f, RichEditor.this.animateEnterView.sendButtonContainer.getWidth(), RichEditor.this.animateEnterView.sendButtonContainer.getHeight(), (int) ((1.0f - RichEditor.this.animateOpenProgress) * 255.0f), 31);
+                        canvas.saveLayerAlpha(-AndroidUtilities.dp(6.0f), -AndroidUtilities.dp(6.0f), RichEditor.this.animateEnterView.sendButtonContainer.getWidth(), RichEditor.this.animateEnterView.sendButtonContainer.getHeight(), (int) ((1.0f - RichEditor.this.animateOpenProgress) * 255.0f), 31);
                         RichEditor.this.animateEnterView.sendButtonContainer.draw(canvas);
                         canvas.restore();
                         canvas.restore();
@@ -444,7 +454,7 @@ public class RichEditor extends BaseFragment {
         }
         this.keyboardHeight = MessagesController.getGlobalEmojiSettings().getInt("kbd_height", AndroidUtilities.dp(200.0f));
         this.keyboardHeightLand = MessagesController.getGlobalEmojiSettings().getInt("kbd_height_land3", AndroidUtilities.dp(200.0f));
-        SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate sizeNotifierFrameLayoutDelegate = new SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda10
+        SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate sizeNotifierFrameLayoutDelegate = new SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda11
             @Override // org.telegram.ui.Components.SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate
             public final void onSizeChanged(int i, boolean z) {
                 RichEditor.this.onKeyboardSizeChanged(i, z);
@@ -497,7 +507,7 @@ public class RichEditor extends BaseFragment {
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView4.setColorFilter(new PorterDuffColorFilter(themedColor3, mode));
         ScaleStateListAnimator.apply(this.backButton);
-        this.backButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda11
+        this.backButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 RichEditor.this.lambda$createView$1(view3);
@@ -516,7 +526,7 @@ public class RichEditor extends BaseFragment {
         this.undoButton.setBackground(Theme.createSelectorDrawable(getThemedColor(i2)));
         this.undoButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(i3), mode));
         ScaleStateListAnimator.apply(this.undoButton);
-        this.undoButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda12
+        this.undoButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 RichEditor.this.lambda$createView$2(view3);
@@ -530,7 +540,7 @@ public class RichEditor extends BaseFragment {
         this.redoButton.setBackground(Theme.createSelectorDrawable(getThemedColor(i2)));
         this.redoButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(i3), mode));
         ScaleStateListAnimator.apply(this.redoButton);
-        this.redoButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda13
+        this.redoButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda14
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 RichEditor.this.lambda$createView$3(view3);
@@ -541,18 +551,21 @@ public class RichEditor extends BaseFragment {
         this.bottomContainer = frameLayout2;
         frameLayout2.setClipChildren(false);
         this.bottomContainer.setClipToPadding(false);
-        this.container.addView(this.bottomContainer, LayoutHelper.createFrame(-1, 60, 87));
+        this.container.addView(this.bottomContainer, LayoutHelper.createFrame(-1, NotificationCenter.screenshotTook, 87));
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.bottomInnerContainer = frameLayout3;
         frameLayout3.setClipChildren(false);
         this.bottomInnerContainer.setClipToPadding(false);
-        this.bottomContainer.addView(this.bottomInnerContainer, LayoutHelper.createFrame(-1, 60, 87));
+        this.bottomContainer.addView(this.bottomInnerContainer, LayoutHelper.createFrame(-1, NotificationCenter.screenshotTook, 87));
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.bottomPanel = linearLayout2;
         linearLayout2.setClipToPadding(false);
         this.bottomPanel.setClipChildren(false);
         this.bottomPanel.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         this.bottomInnerContainer.addView(this.bottomPanel, LayoutHelper.createFrame(-1, 60, 87));
+        FrameLayout frameLayout4 = new FrameLayout(context);
+        this.bulletinContainer = frameLayout4;
+        this.bottomInnerContainer.addView(frameLayout4, LayoutHelper.createFrame(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, 60.0f));
         ChatActivityEnterViewAnimatedIconView chatActivityEnterViewAnimatedIconView = new ChatActivityEnterViewAnimatedIconView(context, 24);
         this.emojiButton = chatActivityEnterViewAnimatedIconView;
         chatActivityEnterViewAnimatedIconView.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
@@ -561,7 +574,7 @@ public class RichEditor extends BaseFragment {
         this.emojiButton.setState(ChatActivityEnterViewAnimatedIconView.State.SMILE, false);
         this.bottomPanel.addView(this.emojiButton, LayoutHelper.createLinear(44, 44, 0.0f, 19, 0, 0, 8, 0));
         ScaleStateListAnimator.apply(this.emojiButton);
-        this.emojiButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda14
+        this.emojiButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda15
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 RichEditor.this.lambda$createView$4(view3);
@@ -575,18 +588,18 @@ public class RichEditor extends BaseFragment {
         this.aiButton.setBackground(withShadow(Theme.createRadSelectorDrawable(getThemedColor(i), Theme.blendOver(getThemedColor(i), getThemedColor(i2)), AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f))));
         this.bottomPanel.addView(this.aiButton, LayoutHelper.createLinear(44, 44, 0.0f, 19, 0, 0, 8, 0));
         ScaleStateListAnimator.apply(this.aiButton);
-        this.aiButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda15
+        this.aiButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda16
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 RichEditor.this.lambda$createView$6(view3);
             }
         });
-        FrameLayout frameLayout4 = new FrameLayout(context);
-        frameLayout4.setClipToPadding(false);
-        frameLayout4.setClipChildren(false);
         FrameLayout frameLayout5 = new FrameLayout(context);
-        frameLayout5.setBackground(withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), getThemedColor(i))));
-        frameLayout4.addView(frameLayout5, LayoutHelper.createFrame(-2, 44, 81));
+        frameLayout5.setClipToPadding(false);
+        frameLayout5.setClipChildren(false);
+        FrameLayout frameLayout6 = new FrameLayout(context);
+        frameLayout6.setBackground(withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), getThemedColor(i))));
+        frameLayout5.addView(frameLayout6, LayoutHelper.createFrame(-2, 44, 81));
         HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context) { // from class: org.telegram.ui.iv.RichEditor.4
             @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i4, int i5) {
@@ -617,20 +630,20 @@ public class RichEditor extends BaseFragment {
         linearLayout3.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
         this.blocksLayout.setOrientation(0);
         this.blocksScrollView.addView(this.blocksLayout);
-        frameLayout5.addView(this.blocksScrollView, LayoutHelper.createFrame(-1, -1.0f));
-        addBlockButton(R.drawable.iv_text, 1).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda16
+        frameLayout6.addView(this.blocksScrollView, LayoutHelper.createFrame(-1, -1.0f));
+        addBlockButton(R.drawable.iv_text, 1).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda17
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 RichEditor.this.lambda$createView$20(view3);
             }
         });
-        addBlockButton(R.drawable.iv_lists, 2).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda17
+        addBlockButton(R.drawable.iv_lists, 2).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda18
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 RichEditor.this.lambda$createView$27(view3);
             }
         });
-        addBlockButton(R.drawable.iv_table, 4).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda18
+        addBlockButton(R.drawable.iv_table, 4).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda19
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 RichEditor.this.lambda$createView$28(view3);
@@ -643,7 +656,7 @@ public class RichEditor extends BaseFragment {
                 RichEditor.this.lambda$createView$30(view3);
             }
         });
-        this.bottomPanel.addView(frameLayout4, LayoutHelper.createLinear(0, 44, 1.0f));
+        this.bottomPanel.addView(frameLayout5, LayoutHelper.createLinear(0, 44, 1.0f));
         ImageView imageView8 = new ImageView(context);
         this.addButton = imageView8;
         imageView8.setImageResource(R.drawable.outline_poll_attach_24);
@@ -663,15 +676,20 @@ public class RichEditor extends BaseFragment {
             protected void onMeasure(int i5, int i6) {
                 int size = View.MeasureSpec.getSize(i5);
                 int paddingLeft = getPaddingLeft() + getPaddingRight();
+                if (RichEditor.this.formattingLayout1 != null) {
+                    RichEditor.this.formattingLayout1.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
+                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) RichEditor.this.formattingLayout1.getLayoutParams();
+                    paddingLeft += RichEditor.this.formattingLayout1.getMeasuredWidth() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin;
+                }
                 if (RichEditor.this.formattingLayout2 != null) {
                     RichEditor.this.formattingLayout2.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
-                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) RichEditor.this.formattingLayout2.getLayoutParams();
-                    paddingLeft += RichEditor.this.formattingLayout2.getMeasuredWidth() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin;
+                    ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) RichEditor.this.formattingLayout2.getLayoutParams();
+                    paddingLeft += RichEditor.this.formattingLayout2.getMeasuredWidth() + marginLayoutParams2.leftMargin + marginLayoutParams2.rightMargin;
                 }
                 if (RichEditor.this.formattingLayout3 != null) {
                     RichEditor.this.formattingLayout3.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
-                    ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) RichEditor.this.formattingLayout3.getLayoutParams();
-                    paddingLeft += RichEditor.this.formattingLayout3.getMeasuredWidth() + marginLayoutParams2.leftMargin + marginLayoutParams2.rightMargin;
+                    ViewGroup.MarginLayoutParams marginLayoutParams3 = (ViewGroup.MarginLayoutParams) RichEditor.this.formattingLayout3.getLayoutParams();
+                    paddingLeft += RichEditor.this.formattingLayout3.getMeasuredWidth() + marginLayoutParams3.leftMargin + marginLayoutParams3.rightMargin;
                 }
                 RichEditor.this.formattingScrollMaxWidth = Math.max(0, size - paddingLeft);
                 super.onMeasure(i5, i6);
@@ -683,9 +701,9 @@ public class RichEditor extends BaseFragment {
         this.formattingPanel.setClipChildren(false);
         this.formattingPanel.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         this.bottomContainer.addView(this.formattingPanel, LayoutHelper.createFrame(-2, 60, 81));
-        FrameLayout frameLayout6 = new FrameLayout(context);
-        this.trashPanel = frameLayout6;
-        frameLayout6.setClipChildren(false);
+        FrameLayout frameLayout7 = new FrameLayout(context);
+        this.trashPanel = frameLayout7;
+        frameLayout7.setClipChildren(false);
         this.trashPanel.setClipToPadding(false);
         this.trashPanel.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         this.bottomContainer.addView(this.trashPanel, LayoutHelper.createFrame(80, 60, 81));
@@ -702,9 +720,9 @@ public class RichEditor extends BaseFragment {
         this.trashPanelIcon.setColorFilter(new PorterDuffColorFilter(getThemedColor(i3), mode));
         this.trashPanelIcon.setBackground(withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), getThemedColor(i))));
         this.trashPanel.addView(this.trashPanelIcon, LayoutHelper.createFrame(-1, -1, 119));
-        FrameLayout frameLayout7 = new FrameLayout(context);
-        frameLayout7.setBackground(withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), getThemedColor(i))));
-        this.formattingPanel.addView(frameLayout7, LayoutHelper.createFrame(-2, 44.0f));
+        FrameLayout frameLayout8 = new FrameLayout(context);
+        frameLayout8.setBackground(withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), getThemedColor(i))));
+        this.formattingPanel.addView(frameLayout8, LayoutHelper.createFrame(-2, 44.0f));
         HorizontalScrollView horizontalScrollView2 = new HorizontalScrollView(context) { // from class: org.telegram.ui.iv.RichEditor.7
             @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i5, int i6) {
@@ -731,7 +749,7 @@ public class RichEditor extends BaseFragment {
                 outline.setRoundRect(0, 0, view3.getWidth(), view3.getHeight(), AndroidUtilities.dp(22.0f));
             }
         });
-        frameLayout7.addView(this.formattingScrollView, LayoutHelper.createFrame(-1, -1.0f));
+        frameLayout8.addView(this.formattingScrollView, LayoutHelper.createFrame(-1, -1.0f));
         LinearLayout linearLayout5 = new LinearLayout(context);
         this.formattingPanelLayout = linearLayout5;
         linearLayout5.setOrientation(0);
@@ -784,6 +802,22 @@ public class RichEditor extends BaseFragment {
             }
         });
         this.formattingLayout3.addView(this.mathButton, LayoutHelper.createLinear(41, 41));
+        LinearLayout linearLayout8 = new LinearLayout(context);
+        this.formattingLayout1 = linearLayout8;
+        linearLayout8.setOrientation(0);
+        this.formattingLayout1.setPadding(AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f));
+        this.formattingLayout1.setBackground(withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), getThemedColor(i))));
+        this.formattingPanel.addView(this.formattingLayout1, 0, LayoutHelper.createFrame(-2, 44.0f, 80, 0.0f, 0.0f, 8.0f, 0.0f));
+        Button button4 = new Button(context, 0, getResourceProvider());
+        this.aiStyleButton = button4;
+        button4.setImageDrawable(new AiButtonDrawable(context));
+        this.aiStyleButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda7
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view3) {
+                RichEditor.this.lambda$createView$35(view3);
+            }
+        });
+        this.formattingLayout1.addView(this.aiStyleButton, LayoutHelper.createLinear(41, 41));
         ChatActivityEnterView.SendButton sendButton = new ChatActivityEnterView.SendButton(context, this.editingMessageObject != null ? R.drawable.input_done : isInScheduleMode() ? R.drawable.input_schedule : R.drawable.send_plane_24, getResourceProvider(), true) { // from class: org.telegram.ui.iv.RichEditor.9
             @Override // org.telegram.ui.Components.ChatActivityEnterView.SendButton
             public boolean isOpen() {
@@ -796,16 +830,16 @@ public class RichEditor extends BaseFragment {
             }
         };
         this.sendButton = sendButton;
-        sendButton.setBackground(withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), getThemedColor(Theme.key_featuredStickers_addButton))));
+        sendButton.setBackground(withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), getThemedColor(Theme.key_chat_messagePanelSend))));
         ScaleStateListAnimator.apply(this.sendButton);
         this.bottomPanel.addView(this.sendButton, LayoutHelper.createLinear(44, 44, 0.0f, 5, 8, 0, 0, 0));
-        this.sendButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda7
+        this.sendButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                RichEditor.this.lambda$createView$35(view3);
+                RichEditor.this.lambda$createView$36(view3);
             }
         });
-        this.sendButton.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda8
+        this.sendButton.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda9
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view3) {
                 boolean onSendLongClick;
@@ -813,14 +847,15 @@ public class RichEditor extends BaseFragment {
                 return onSendLongClick;
             }
         });
+        this.sendButton.setLocked(!MessagesController.getInstance(this.currentAccount).richEditorAllowed());
         this.container.setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
         checkUI_listViewPadding();
         updateBottomPanel(0, false);
         updateHistoryButtons();
-        this.container.getViewTreeObserver().addOnGlobalFocusChangeListener(new ViewTreeObserver.OnGlobalFocusChangeListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda9
+        this.container.getViewTreeObserver().addOnGlobalFocusChangeListener(new ViewTreeObserver.OnGlobalFocusChangeListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda10
             @Override // android.view.ViewTreeObserver.OnGlobalFocusChangeListener
             public final void onGlobalFocusChanged(View view3, View view4) {
-                RichEditor.this.lambda$createView$36(view3, view4);
+                RichEditor.this.lambda$createView$37(view3, view4);
             }
         });
         SizeNotifierFrameLayout sizeNotifierFrameLayout = this.container;
@@ -945,18 +980,22 @@ public class RichEditor extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$5(TL_iv.RichMessage richMessage) {
-        this.listView.addRichMessage(richMessage);
+    public /* synthetic */ void lambda$createView$6(View view) {
+        if (this.listView.isInSelectionMode()) {
+            onAiStyleSelection();
+        } else {
+            new RichAIComposeSheet(getContext(), this.currentAccount, getResourceProvider(), new Utilities.Callback() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda44
+                @Override // org.telegram.messenger.Utilities.Callback
+                public final void run(Object obj) {
+                    RichEditor.this.lambda$createView$5((TL_iv.RichMessage) obj);
+                }
+            }).show();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$6(View view) {
-        new RichAIComposeSheet(getContext(), this.currentAccount, getResourceProvider(), new Utilities.Callback() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda43
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                RichEditor.this.lambda$createView$5((TL_iv.RichMessage) obj);
-            }
-        }).show();
+    public /* synthetic */ void lambda$createView$5(TL_iv.RichMessage richMessage) {
+        this.listView.addRichMessage(richMessage);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -969,14 +1008,14 @@ public class RichEditor extends BaseFragment {
         final BlockRow findFocusedRow = this.listView.findFocusedRow();
         final ItemOptions dontFocus = ItemOptions.makeOptions((BaseFragment) this, view, true).dontFocus();
         final ItemOptions makeSwipeback = dontFocus.makeSwipeback();
-        makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda24
+        makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda25
             @Override // java.lang.Runnable
             public final void run() {
                 ItemOptions.this.closeSwipeback();
             }
         });
         makeSwipeback.addGap();
-        makeSwipeback.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockHeading1), R.drawable.iv_h1, LocaleController.getString(R.string.ArticleHeading1), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda28
+        makeSwipeback.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockHeading1), R.drawable.iv_h1, LocaleController.getString(R.string.ArticleHeading1), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda29
             @Override // java.lang.Runnable
             public final void run() {
                 RichEditor.this.lambda$createView$8(findFocusedRow, dontFocus);
@@ -984,7 +1023,7 @@ public class RichEditor extends BaseFragment {
         });
         makeSwipeback.getLast().textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD));
         makeSwipeback.getLast().textView.setTextSize(1, SharedConfig.fontSize + 2);
-        makeSwipeback.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockHeading2), R.drawable.iv_h2, LocaleController.getString(R.string.ArticleHeading2), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda29
+        makeSwipeback.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockHeading2), R.drawable.iv_h2, LocaleController.getString(R.string.ArticleHeading2), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda30
             @Override // java.lang.Runnable
             public final void run() {
                 RichEditor.this.lambda$createView$9(findFocusedRow, dontFocus);
@@ -992,7 +1031,7 @@ public class RichEditor extends BaseFragment {
         });
         makeSwipeback.getLast().textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD));
         makeSwipeback.getLast().textView.setTextSize(1, SharedConfig.fontSize + 1);
-        makeSwipeback.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockHeading3), R.drawable.iv_h3, LocaleController.getString(R.string.ArticleHeading3), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda30
+        makeSwipeback.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockHeading3), R.drawable.iv_h3, LocaleController.getString(R.string.ArticleHeading3), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda31
             @Override // java.lang.Runnable
             public final void run() {
                 RichEditor.this.lambda$createView$10(findFocusedRow, dontFocus);
@@ -1000,7 +1039,7 @@ public class RichEditor extends BaseFragment {
         });
         makeSwipeback.getLast().textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD));
         makeSwipeback.getLast().textView.setTextSize(1, SharedConfig.fontSize);
-        makeSwipeback.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockHeading4), R.drawable.iv_h4, LocaleController.getString(R.string.ArticleHeading4), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda31
+        makeSwipeback.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockHeading4), R.drawable.iv_h4, LocaleController.getString(R.string.ArticleHeading4), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda32
             @Override // java.lang.Runnable
             public final void run() {
                 RichEditor.this.lambda$createView$11(findFocusedRow, dontFocus);
@@ -1008,7 +1047,7 @@ public class RichEditor extends BaseFragment {
         });
         makeSwipeback.getLast().textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD));
         makeSwipeback.getLast().textView.setTextSize(1, SharedConfig.fontSize - 1);
-        makeSwipeback.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockHeading5), R.drawable.iv_h5, LocaleController.getString(R.string.ArticleHeading5), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda32
+        makeSwipeback.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockHeading5), R.drawable.iv_h5, LocaleController.getString(R.string.ArticleHeading5), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda33
             @Override // java.lang.Runnable
             public final void run() {
                 RichEditor.this.lambda$createView$12(findFocusedRow, dontFocus);
@@ -1016,7 +1055,7 @@ public class RichEditor extends BaseFragment {
         });
         makeSwipeback.getLast().textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD));
         makeSwipeback.getLast().textView.setTextSize(1, SharedConfig.fontSize - 2);
-        makeSwipeback.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockHeading6), R.drawable.iv_h6, LocaleController.getString(R.string.ArticleHeading6), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda33
+        makeSwipeback.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockHeading6), R.drawable.iv_h6, LocaleController.getString(R.string.ArticleHeading6), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda34
             @Override // java.lang.Runnable
             public final void run() {
                 RichEditor.this.lambda$createView$13(findFocusedRow, dontFocus);
@@ -1024,38 +1063,38 @@ public class RichEditor extends BaseFragment {
         });
         makeSwipeback.getLast().textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD));
         makeSwipeback.getLast().textView.setTextSize(1, SharedConfig.fontSize - 3);
-        dontFocus.addChecked(findFocusedRow != null && RichEditorListView.isHeading(findFocusedRow.block), R.drawable.iv_h, LocaleController.getString(R.string.ArticleHeading), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda34
+        dontFocus.addChecked(findFocusedRow != null && RichEditorListView.isHeading(findFocusedRow.block), R.drawable.iv_h, LocaleController.getString(R.string.ArticleHeading), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda35
             @Override // java.lang.Runnable
             public final void run() {
                 ItemOptions.this.openSwipeback(makeSwipeback);
             }
         });
         dontFocus.getLast().textView.setTypeface(AndroidUtilities.bold());
-        dontFocus.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockParagraph), R.drawable.iv_text2, LocaleController.getString(R.string.ArticleText), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda35
+        dontFocus.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockParagraph), R.drawable.iv_text2, LocaleController.getString(R.string.ArticleText), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda36
             @Override // java.lang.Runnable
             public final void run() {
                 RichEditor.this.lambda$createView$15(findFocusedRow);
             }
         });
-        dontFocus.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockBlockquote), R.drawable.iv_quote, LocaleController.getString(R.string.ArticleQuote), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda36
+        dontFocus.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockBlockquote), R.drawable.iv_quote, LocaleController.getString(R.string.ArticleQuote), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda37
             @Override // java.lang.Runnable
             public final void run() {
                 RichEditor.this.lambda$createView$16(findFocusedRow);
             }
         });
-        dontFocus.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockPullquote), R.drawable.iv_pullquote, LocaleController.getString(R.string.ArticlePullquote), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda25
+        dontFocus.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockPullquote), R.drawable.iv_pullquote, LocaleController.getString(R.string.ArticlePullquote), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda26
             @Override // java.lang.Runnable
             public final void run() {
                 RichEditor.this.lambda$createView$17(findFocusedRow);
             }
         });
-        dontFocus.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockPreformatted), R.drawable.iv_code, LocaleController.getString(R.string.ArticleCode), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda26
+        dontFocus.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockPreformatted), R.drawable.iv_code, LocaleController.getString(R.string.ArticleCode), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda27
             @Override // java.lang.Runnable
             public final void run() {
                 RichEditor.this.lambda$createView$18(findFocusedRow);
             }
         });
-        dontFocus.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockFooter), R.drawable.iv_footer, LocaleController.getString(R.string.ArticleFooter), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda27
+        dontFocus.addChecked(findFocusedRow != null && (findFocusedRow.block instanceof TL_iv.pageBlockFooter), R.drawable.iv_footer, LocaleController.getString(R.string.ArticleFooter), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda28
             @Override // java.lang.Runnable
             public final void run() {
                 RichEditor.this.lambda$createView$19(findFocusedRow);
@@ -1135,22 +1174,22 @@ public class RichEditor extends BaseFragment {
         final ItemOptions dontFocus = ItemOptions.makeOptions(this, view).dontFocus();
         final BlockRow findFocusedRow = this.listView.findFocusedRow();
         boolean z = false;
-        ItemOptions addChecked = dontFocus.addChecked(findFocusedRow == null || !findFocusedRow.isInList(), R.drawable.field_carret_empty, LocaleController.getString(R.string.ArticleNone), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda44
+        ItemOptions addChecked = dontFocus.addChecked(findFocusedRow == null || !findFocusedRow.isInList(), R.drawable.field_carret_empty, LocaleController.getString(R.string.ArticleNone), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda45
             @Override // java.lang.Runnable
             public final void run() {
                 RichEditor.this.lambda$createView$21(findFocusedRow);
             }
-        }).addChecked((findFocusedRow == null || !findFocusedRow.isInList() || findFocusedRow.isChecklist() || findFocusedRow.isOrdered()) ? false : true, R.drawable.iv_list, LocaleController.getString(R.string.ArticleListBulletedList), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda45
+        }).addChecked((findFocusedRow == null || !findFocusedRow.isInList() || findFocusedRow.isChecklist() || findFocusedRow.isOrdered()) ? false : true, R.drawable.iv_list, LocaleController.getString(R.string.ArticleListBulletedList), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda46
             @Override // java.lang.Runnable
             public final void run() {
                 RichEditor.this.lambda$createView$22(findFocusedRow);
             }
-        }).addChecked(findFocusedRow != null && findFocusedRow.isInList() && !findFocusedRow.isChecklist() && findFocusedRow.isOrdered(), R.drawable.iv_ordered_list, LocaleController.getString(R.string.ArticleListNumberedList), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda46
+        }).addChecked(findFocusedRow != null && findFocusedRow.isInList() && !findFocusedRow.isChecklist() && findFocusedRow.isOrdered(), R.drawable.iv_ordered_list, LocaleController.getString(R.string.ArticleListNumberedList), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda47
             @Override // java.lang.Runnable
             public final void run() {
                 RichEditor.this.lambda$createView$23(findFocusedRow);
             }
-        }).addChecked(findFocusedRow != null && findFocusedRow.isInList() && findFocusedRow.isChecklist() && !findFocusedRow.isOrdered(), R.drawable.iv_todo, LocaleController.getString(R.string.ArticleListChecklist), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda47
+        }).addChecked(findFocusedRow != null && findFocusedRow.isInList() && findFocusedRow.isChecklist() && !findFocusedRow.isOrdered(), R.drawable.iv_todo, LocaleController.getString(R.string.ArticleListChecklist), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda48
             @Override // java.lang.Runnable
             public final void run() {
                 RichEditor.this.lambda$createView$24(findFocusedRow);
@@ -1171,7 +1210,7 @@ public class RichEditor extends BaseFragment {
         if (z4 || z) {
             dontFocus.addGap();
             if (z4) {
-                dontFocus.add(R.drawable.iv_list_tab, LocaleController.getString(R.string.ArticleIndent), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda48
+                dontFocus.add(R.drawable.iv_list_tab, LocaleController.getString(R.string.ArticleIndent), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda49
                     @Override // java.lang.Runnable
                     public final void run() {
                         RichEditor.this.lambda$createView$25(findFocusedRow, dontFocus);
@@ -1179,7 +1218,7 @@ public class RichEditor extends BaseFragment {
                 });
             }
             if (z) {
-                dontFocus.add(R.drawable.iv_list_untab, LocaleController.getString(R.string.ArticleOutdent), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda49
+                dontFocus.add(R.drawable.iv_list_untab, LocaleController.getString(R.string.ArticleOutdent), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda50
                     @Override // java.lang.Runnable
                     public final void run() {
                         RichEditor.this.lambda$createView$26(findFocusedRow, dontFocus);
@@ -1259,7 +1298,7 @@ public class RichEditor extends BaseFragment {
                 pageblockmath = (TL_iv.pageBlockMath) pageBlock;
             }
         }
-        ChatAttachAlertRichLayout.showEditLatexSheet(getContext(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new Utilities.Callback() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda42
+        ChatAttachAlertRichLayout.showEditLatexSheet(getContext(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new Utilities.Callback() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda43
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 RichEditor.this.lambda$createView$29(pageblockmath, (String) obj);
@@ -1302,11 +1341,16 @@ public class RichEditor extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$35(View view) {
+        onAiStyleSelection();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$createView$36(View view) {
         sendMessage();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$36(View view, View view2) {
+    public /* synthetic */ void lambda$createView$37(View view, View view2) {
         updateBlockButtons();
     }
 
@@ -1360,24 +1404,24 @@ public class RichEditor extends BaseFragment {
             this.bottomPanel.setVisibility(0);
             ViewPropertyAnimator duration = this.bottomPanel.animate().alpha(this.bottomPanelType == 0 ? 1.0f : 0.0f).scaleX(this.bottomPanelType == 0 ? 1.0f : 0.8f).scaleY(this.bottomPanelType == 0 ? 1.0f : 0.8f).translationY(this.bottomPanelType == 0 ? 0.0f : AndroidUtilities.dp(30.0f)).setDuration(420L);
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
-            duration.setInterpolator(cubicBezierInterpolator).withEndAction(new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda20
-                @Override // java.lang.Runnable
-                public final void run() {
-                    RichEditor.this.lambda$updateBottomPanel$37();
-                }
-            }).start();
-            this.formattingPanel.setVisibility(0);
-            this.formattingPanel.animate().alpha(this.bottomPanelType == 1 ? 1.0f : 0.0f).scaleX(this.bottomPanelType == 1 ? 1.0f : 0.8f).scaleY(this.bottomPanelType == 1 ? 1.0f : 0.8f).translationY(this.bottomPanelType == 1 ? 0.0f : AndroidUtilities.dp(30.0f)).setDuration(420L).setInterpolator(cubicBezierInterpolator).withEndAction(new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda21
+            duration.setInterpolator(cubicBezierInterpolator).withEndAction(new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda21
                 @Override // java.lang.Runnable
                 public final void run() {
                     RichEditor.this.lambda$updateBottomPanel$38();
                 }
             }).start();
-            this.trashPanel.setVisibility(0);
-            this.trashPanel.animate().alpha(this.bottomPanelType == 2 ? 1.0f : 0.0f).scaleX(this.bottomPanelType == 2 ? 1.0f : 0.8f).scaleY(this.bottomPanelType == 2 ? 1.0f : 0.8f).setDuration(420L).setInterpolator(cubicBezierInterpolator).withEndAction(new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda22
+            this.formattingPanel.setVisibility(0);
+            this.formattingPanel.animate().alpha(this.bottomPanelType == 1 ? 1.0f : 0.0f).scaleX(this.bottomPanelType == 1 ? 1.0f : 0.8f).scaleY(this.bottomPanelType == 1 ? 1.0f : 0.8f).translationY(this.bottomPanelType == 1 ? 0.0f : AndroidUtilities.dp(30.0f)).setDuration(420L).setInterpolator(cubicBezierInterpolator).withEndAction(new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda22
                 @Override // java.lang.Runnable
                 public final void run() {
                     RichEditor.this.lambda$updateBottomPanel$39();
+                }
+            }).start();
+            this.trashPanel.setVisibility(0);
+            this.trashPanel.animate().alpha(this.bottomPanelType == 2 ? 1.0f : 0.0f).scaleX(this.bottomPanelType == 2 ? 1.0f : 0.8f).scaleY(this.bottomPanelType == 2 ? 1.0f : 0.8f).setDuration(420L).setInterpolator(cubicBezierInterpolator).withEndAction(new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda23
+                @Override // java.lang.Runnable
+                public final void run() {
+                    RichEditor.this.lambda$updateBottomPanel$40();
                 }
             }).start();
             return;
@@ -1399,21 +1443,21 @@ public class RichEditor extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateBottomPanel$37() {
+    public /* synthetic */ void lambda$updateBottomPanel$38() {
         if (this.bottomPanelType != 0) {
             this.bottomPanel.setVisibility(8);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateBottomPanel$38() {
+    public /* synthetic */ void lambda$updateBottomPanel$39() {
         if (this.bottomPanelType != 1) {
             this.formattingPanel.setVisibility(8);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateBottomPanel$39() {
+    public /* synthetic */ void lambda$updateBottomPanel$40() {
         if (this.bottomPanelType != 2) {
             this.trashPanel.setVisibility(8);
         }
@@ -1428,6 +1472,7 @@ public class RichEditor extends BaseFragment {
                 RichEditor.DraggingDrawable.this.invalidateSelf();
             }
         }, 0, 420, CubicBezierInterpolator.EASE_OUT_QUINT);
+        private int alpha = NotificationCenter.didReceiveSmsCode;
 
         @Override // android.graphics.drawable.Drawable
         public int getOpacity() {
@@ -1456,6 +1501,7 @@ public class RichEditor extends BaseFragment {
             if (f <= 0.0f) {
                 return;
             }
+            this.paint.setAlpha((int) (this.alpha * f));
             this.paint.setShadowLayer(AndroidUtilities.dp(12.0f) * f, 0.0f, AndroidUtilities.dp(3.0f), Theme.multAlpha(805306368, f));
             Rect bounds = getBounds();
             float dp = AndroidUtilities.dp(8.0f) * f;
@@ -1466,7 +1512,7 @@ public class RichEditor extends BaseFragment {
 
         @Override // android.graphics.drawable.Drawable
         public void setAlpha(int i) {
-            this.paint.setAlpha(i);
+            this.alpha = i;
         }
 
         @Override // android.graphics.drawable.Drawable
@@ -1549,7 +1595,7 @@ public class RichEditor extends BaseFragment {
                                         } else if (pageBlock2 instanceof TL_iv.pageBlockPullquote) {
                                             button.updateIcon(R.drawable.iv_pullquote);
                                         } else if (pageBlock2 instanceof TL_iv.pageBlockFooter) {
-                                            button.updateIcon(R.drawable.iv_code);
+                                            button.updateIcon(R.drawable.iv_footer);
                                         } else {
                                             button.resetIcon();
                                         }
@@ -1593,10 +1639,10 @@ public class RichEditor extends BaseFragment {
     private void addFormattingButton(Context context, int i, final int i2) {
         Button button = new Button(context, i, getResourceProvider());
         button.setTag(Integer.valueOf(i2));
-        button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda50
+        button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda51
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RichEditor.this.lambda$addFormattingButton$40(i2, view);
+                RichEditor.this.lambda$addFormattingButton$41(i2, view);
             }
         });
         this.formattingButtons.add(button);
@@ -1605,7 +1651,7 @@ public class RichEditor extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$addFormattingButton$40(int i, View view) {
+    public /* synthetic */ void lambda$addFormattingButton$41(int i, View view) {
         this.listView.onFormattingClicked(i);
     }
 
@@ -1634,6 +1680,7 @@ public class RichEditor extends BaseFragment {
             Button button = (Button) it.next();
             button.setSelected(z2 && this.listView.isStyleFullyApplied(((Integer) button.getTag()).intValue(), startCell, startOffset, endCell, endOffset));
         }
+        setBoldItalicEnabled(!this.listView.isSelectionAllHeadings());
         Button button2 = this.linkButton;
         if (button2 != null) {
             button2.setSelected(z2 && this.listView.isLinkApplied(startCell, startOffset, endCell, endOffset));
@@ -1646,6 +1693,17 @@ public class RichEditor extends BaseFragment {
             z = true;
         }
         setInlineButtonsEnabled(z);
+    }
+
+    private void setBoldItalicEnabled(boolean z) {
+        Iterator it = this.formattingButtons.iterator();
+        while (it.hasNext()) {
+            Button button = (Button) it.next();
+            int intValue = ((Integer) button.getTag()).intValue();
+            if (intValue == 1 || intValue == 2) {
+                button.setEnabled(z);
+            }
+        }
     }
 
     private void setInlineButtonsEnabled(boolean z) {
@@ -1663,6 +1721,15 @@ public class RichEditor extends BaseFragment {
         }
     }
 
+    private void onAiStyleSelection() {
+        TL_iv.RichMessage extractRichMessage;
+        RichEditorListView.SelectionEdit beginSelectionEdit = this.listView.beginSelectionEdit();
+        if (beginSelectionEdit == null || (extractRichMessage = beginSelectionEdit.extractRichMessage()) == null || extractRichMessage.blocks.isEmpty()) {
+            return;
+        }
+        new AIEditorAlert(getContext(), getResourceProvider()).setText(extractRichMessage).setOnUseRich(new ChatAttachAlertRichLayout$2$$ExternalSyntheticLambda0(beginSelectionEdit)).show();
+    }
+
     private void updateFormattingButtonsTable() {
         TextSelectionHelper.ArticleTextSelectionHelper textSelectionHelper = this.listView.getTextSelectionHelper();
         int startCell = textSelectionHelper.getStartCell();
@@ -1675,8 +1742,9 @@ public class RichEditor extends BaseFragment {
             Button button = (Button) it.next();
             button.setSelected(this.listView.isStyleFullyAppliedTable(((Integer) button.getTag()).intValue(), startCell, startChildPosition, startOffset, endChildPosition, endOffset));
         }
-        boolean z = startChildPosition == endChildPosition;
-        RichEditText tableEditText = z ? this.listView.tableEditText(startCell, startChildPosition) : null;
+        boolean z = false;
+        boolean z2 = startChildPosition == endChildPosition;
+        RichEditText tableEditText = z2 ? this.listView.tableEditText(startCell, startChildPosition) : null;
         int max = Math.max(0, Math.min(startOffset, endOffset));
         int max2 = tableEditText == null ? 0 : Math.max(0, Math.min(Math.max(startOffset, endOffset), tableEditText.length()));
         Button button2 = this.linkButton;
@@ -1685,9 +1753,13 @@ public class RichEditor extends BaseFragment {
         }
         Button button3 = this.dateButton;
         if (button3 != null) {
-            button3.setSelected(tableEditText != null && max < max2 && RichTextStyle.hasDate(tableEditText.getText(), max, max2));
+            if (tableEditText != null && max < max2 && RichTextStyle.hasDate(tableEditText.getText(), max, max2)) {
+                z = true;
+            }
+            button3.setSelected(z);
         }
-        setInlineButtonsEnabled(z);
+        setBoldItalicEnabled(true);
+        setInlineButtonsEnabled(z2);
     }
 
     private void updateFormattingButtonsCaption() {
@@ -1722,11 +1794,13 @@ public class RichEditor extends BaseFragment {
             }
             button3.setSelected(z);
         }
+        setBoldItalicEnabled(true);
         setInlineButtonsEnabled(true);
     }
 
     public static class Button extends ImageView implements Theme.Colorable {
         private boolean accent;
+        private int backgroundColorKey;
         private int currentIcon;
         private boolean enabled;
         private Theme.ResourcesProvider resourcesProvider;
@@ -1737,12 +1811,15 @@ public class RichEditor extends BaseFragment {
         public Button(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
             super(context);
             this.roundRadius = 20;
+            this.backgroundColorKey = Theme.key_windowBackgroundWhite;
             this.enabled = true;
             this.accent = true;
             this.currentIcon = i;
             this.startIcon = i;
             this.resourcesProvider = resourcesProvider;
-            setImageResource(i);
+            if (i != 0) {
+                setImageResource(i);
+            }
             setScaleType(ImageView.ScaleType.CENTER);
             ScaleStateListAnimator.apply(this);
             updateColors();
@@ -1795,14 +1872,23 @@ public class RichEditor extends BaseFragment {
             return this;
         }
 
+        public Button setBackgroundColorKey(int i) {
+            if (this.backgroundColorKey == i) {
+                return this;
+            }
+            this.backgroundColorKey = i;
+            updateColors();
+            return this;
+        }
+
         @Override // org.telegram.ui.ActionBar.Theme.Colorable
         public void updateColors() {
             if (this.selected) {
                 int color = Theme.getColor(this.accent ? Theme.key_featuredStickers_addButton : Theme.key_windowBackgroundWhiteBlackText);
-                setBackground(Theme.createRadSelectorDrawable(Theme.blendOver(Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider), Theme.multAlpha(color, 0.1f)), Theme.multAlpha(color, 0.1f), AndroidUtilities.dp(this.roundRadius), AndroidUtilities.dp(this.roundRadius)));
+                setBackground(Theme.createRadSelectorDrawable(Theme.blendOver(Theme.getColor(this.backgroundColorKey, this.resourcesProvider), Theme.multAlpha(color, 0.1f)), Theme.multAlpha(color, 0.1f), AndroidUtilities.dp(this.roundRadius), AndroidUtilities.dp(this.roundRadius)));
                 setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
             } else {
-                setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider), Theme.getColor(Theme.key_listSelector, this.resourcesProvider), AndroidUtilities.dp(this.roundRadius), AndroidUtilities.dp(this.roundRadius)));
+                setBackground(Theme.createRadSelectorDrawable(Theme.getColor(this.backgroundColorKey, this.resourcesProvider), Theme.getColor(Theme.key_listSelector, this.resourcesProvider), AndroidUtilities.dp(this.roundRadius), AndroidUtilities.dp(this.roundRadius)));
                 setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider), PorterDuff.Mode.SRC_IN));
             }
         }
@@ -2027,16 +2113,16 @@ public class RichEditor extends BaseFragment {
         chatAttachAlert.getPhotoLayout().loadGalleryPhotos();
         chatAttachAlert.setMaxSelectedPhotos(1, true);
         chatAttachAlert.enablePollAttachMode(i);
-        chatAttachAlert.setLocationActivityDelegate(new ChatAttachAlertLocationLayout.LocationActivityDelegate() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda51
+        chatAttachAlert.setLocationActivityDelegate(new ChatAttachAlertLocationLayout.LocationActivityDelegate() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda52
             @Override // org.telegram.ui.Components.ChatAttachAlertLocationLayout.LocationActivityDelegate
             public final void didSelectLocation(TLRPC.MessageMedia messageMedia, int i3, boolean z, int i4, long j) {
-                RichEditor.this.lambda$openAttach$41(chatAttachAlert, messageMedia, i3, z, i4, j);
+                RichEditor.this.lambda$openAttach$42(chatAttachAlert, messageMedia, i3, z, i4, j);
             }
         });
-        chatAttachAlert.setAudioSelectDelegate(new ChatAttachAlertAudioLayout.AudioSelectDelegate() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda52
+        chatAttachAlert.setAudioSelectDelegate(new ChatAttachAlertAudioLayout.AudioSelectDelegate() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda53
             @Override // org.telegram.ui.Components.ChatAttachAlertAudioLayout.AudioSelectDelegate
             public final void didSelectAudio(ArrayList arrayList, CharSequence charSequence, boolean z, int i3, int i4, long j, boolean z2, long j2) {
-                RichEditor.this.lambda$openAttach$42(chatAttachAlert, arrayList, charSequence, z, i3, i4, j, z2, j2);
+                RichEditor.this.lambda$openAttach$43(chatAttachAlert, arrayList, charSequence, z, i3, i4, j, z2, j2);
             }
         });
         chatAttachAlert.init();
@@ -2048,7 +2134,7 @@ public class RichEditor extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openAttach$41(ChatAttachAlert chatAttachAlert, TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
+    public /* synthetic */ void lambda$openAttach$42(ChatAttachAlert chatAttachAlert, TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
         if (messageMedia == null || messageMedia.geo == null) {
             chatAttachAlert.dismiss(true);
             return;
@@ -2063,7 +2149,7 @@ public class RichEditor extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openAttach$42(ChatAttachAlert chatAttachAlert, ArrayList arrayList, CharSequence charSequence, boolean z, int i, int i2, long j, boolean z2, long j2) {
+    public /* synthetic */ void lambda$openAttach$43(ChatAttachAlert chatAttachAlert, ArrayList arrayList, CharSequence charSequence, boolean z, int i, int i2, long j, boolean z2, long j2) {
         if (arrayList != null && !arrayList.isEmpty()) {
             this.listView.attachAudio((MessageObject) arrayList.get(0));
         }
@@ -2159,10 +2245,10 @@ public class RichEditor extends BaseFragment {
                 }
             });
             chatAttachAlert.setLocationPicker();
-            chatAttachAlert.setLocationActivityDelegate(new ChatAttachAlertLocationLayout.LocationActivityDelegate() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda53
+            chatAttachAlert.setLocationActivityDelegate(new ChatAttachAlertLocationLayout.LocationActivityDelegate() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda54
                 @Override // org.telegram.ui.Components.ChatAttachAlertLocationLayout.LocationActivityDelegate
                 public final void didSelectLocation(TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
-                    RichEditor.this.lambda$openLocationPicker$44(blockRow, chatAttachAlert, messageMedia, i, z, i2, j);
+                    RichEditor.this.lambda$openLocationPicker$45(blockRow, chatAttachAlert, messageMedia, i, z, i2, j);
                 }
             });
             chatAttachAlert.init();
@@ -2171,7 +2257,7 @@ public class RichEditor extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openLocationPicker$44(final BlockRow blockRow, ChatAttachAlert chatAttachAlert, TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
+    public /* synthetic */ void lambda$openLocationPicker$45(final BlockRow blockRow, ChatAttachAlert chatAttachAlert, TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
         if (messageMedia == null || messageMedia.geo == null) {
             return;
         }
@@ -2191,16 +2277,16 @@ public class RichEditor extends BaseFragment {
             richEditorHistory2.record();
         }
         chatAttachAlert.dismiss(true);
-        this.listView.post(new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda54
+        this.listView.post(new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda55
             @Override // java.lang.Runnable
             public final void run() {
-                RichEditor.this.lambda$openLocationPicker$43(blockRow);
+                RichEditor.this.lambda$openLocationPicker$44(blockRow);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openLocationPicker$43(BlockRow blockRow) {
+    public /* synthetic */ void lambda$openLocationPicker$44(BlockRow blockRow) {
         View findViewByItemObject = this.listView.findViewByItemObject(blockRow);
         if (findViewByItemObject instanceof RichMapCell) {
             ((RichMapCell) findViewByItemObject).bind(blockRow, this.listView.getMapDelegate());
@@ -2216,7 +2302,12 @@ public class RichEditor extends BaseFragment {
     }
 
     private void sendMessage() {
-        if (isInScheduleMode()) {
+        if (!MessagesController.getInstance(this.currentAccount).richEditorAllowed()) {
+            if (UserConfig.getInstance(this.currentAccount).isPremium()) {
+                return;
+            }
+            showDialog(new PremiumFeatureBottomSheet(this, 43, true));
+        } else if (isInScheduleMode()) {
             AlertsCreator.createScheduleDatePickerDialog(getParentActivity(), this.chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.iv.RichEditor.12
                 @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
                 public void didSelectDate(boolean z, int i, int i2) {
@@ -2230,6 +2321,13 @@ public class RichEditor extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void sendMessage(final boolean z, final int i, final int i2) {
+        if (!MessagesController.getInstance(this.currentAccount).richEditorAllowed()) {
+            if (UserConfig.getInstance(this.currentAccount).isPremium()) {
+                return;
+            }
+            showDialog(new PremiumFeatureBottomSheet(this, 43, true));
+            return;
+        }
         if (this.chatActivity == null || !this.listView.hasAnyText() || this.listView.hasPendingUploads()) {
             return;
         }
@@ -2252,10 +2350,10 @@ public class RichEditor extends BaseFragment {
         final String str = chatActivity.quickReplyShortcut;
         final int quickReplyId = chatActivity.getQuickReplyId();
         final MessageObject messageObject = this.editingMessageObject;
-        Runnable runnable = new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda23
+        Runnable runnable = new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda24
             @Override // java.lang.Runnable
             public final void run() {
-                RichEditor.this.lambda$sendMessage$45(messageObject, flattenRowsToBlocks, collectPhotos, collectDocuments, dialogId, replyMessage, threadMessage, z, i, i2, str, quickReplyId, sendMonoForumPeerId);
+                RichEditor.this.lambda$sendMessage$46(messageObject, flattenRowsToBlocks, collectPhotos, collectDocuments, dialogId, replyMessage, threadMessage, z, i, i2, str, quickReplyId, sendMonoForumPeerId);
             }
         };
         Runnable runnable2 = this.onSentCallback;
@@ -2272,7 +2370,7 @@ public class RichEditor extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendMessage$45(MessageObject messageObject, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z, int i, int i2, String str, int i3, long j2) {
+    public /* synthetic */ void lambda$sendMessage$46(MessageObject messageObject, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z, int i, int i2, String str, int i3, long j2) {
         if (messageObject != null) {
             SendMessagesHelper.prepareEditingArticle(AccountInstance.getInstance(this.currentAccount), messageObject, arrayList, arrayList2, arrayList3, null, false, this.chatActivity);
         } else {
@@ -2301,10 +2399,10 @@ public class RichEditor extends BaseFragment {
         }
         MessageSendPreview messageSendPreview2 = new MessageSendPreview(getContext(), getResourceProvider());
         this.messageSendPreview = messageSendPreview2;
-        messageSendPreview2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda37
+        messageSendPreview2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda38
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                RichEditor.this.lambda$onSendLongClick$46(dialogInterface);
+                RichEditor.this.lambda$onSendLongClick$47(dialogInterface);
             }
         });
         final long dialogId = this.chatActivity.getDialogId();
@@ -2339,10 +2437,10 @@ public class RichEditor extends BaseFragment {
         this.messageSendPreview.setMessageObjects(arrayList);
         this.sendButton.setScaleX(1.0f);
         this.sendButton.setScaleY(1.0f);
-        ChatActivityEnterView.SendButton sendButton = this.messageSendPreview.setSendButton(this.sendButton, true, new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda38
+        ChatActivityEnterView.SendButton sendButton = this.messageSendPreview.setSendButton(this.sendButton, true, new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda39
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                RichEditor.this.lambda$onSendLongClick$47(view2);
+                RichEditor.this.lambda$onSendLongClick$48(view2);
             }
         });
         if (sendButton != null) {
@@ -2352,26 +2450,26 @@ public class RichEditor extends BaseFragment {
         ItemOptions makeOptions = ItemOptions.makeOptions(this, this.sendButton);
         boolean isUserSelf = UserObject.isUserSelf(this.chatActivity.getCurrentUser());
         if (this.chatActivity.canScheduleMessage()) {
-            makeOptions.add(R.drawable.msg_calendar2, LocaleController.getString(isUserSelf ? R.string.SetReminder : R.string.ScheduleMessage), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda39
+            makeOptions.add(R.drawable.msg_calendar2, LocaleController.getString(isUserSelf ? R.string.SetReminder : R.string.ScheduleMessage), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda40
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RichEditor.this.lambda$onSendLongClick$48(dialogId);
+                    RichEditor.this.lambda$onSendLongClick$49(dialogId);
                 }
             });
             if (!isUserSelf && dialogId > 0) {
-                makeOptions.add(R.drawable.msg_online, LocaleController.getString(R.string.SendWhenOnline), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda40
+                makeOptions.add(R.drawable.msg_online, LocaleController.getString(R.string.SendWhenOnline), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda41
                     @Override // java.lang.Runnable
                     public final void run() {
-                        RichEditor.this.lambda$onSendLongClick$49();
+                        RichEditor.this.lambda$onSendLongClick$50();
                     }
                 });
             }
         }
         if (!isUserSelf) {
-            makeOptions.add(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda41
+            makeOptions.add(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new Runnable() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda42
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RichEditor.this.lambda$onSendLongClick$50();
+                    RichEditor.this.lambda$onSendLongClick$51();
                 }
             });
         }
@@ -2386,12 +2484,12 @@ public class RichEditor extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$46(DialogInterface dialogInterface) {
+    public /* synthetic */ void lambda$onSendLongClick$47(DialogInterface dialogInterface) {
         this.messageSendPreview = null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$47(View view) {
+    public /* synthetic */ void lambda$onSendLongClick$48(View view) {
         sendMessage();
         MessageSendPreview messageSendPreview = this.messageSendPreview;
         if (messageSendPreview != null) {
@@ -2401,7 +2499,7 @@ public class RichEditor extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$48(long j) {
+    public /* synthetic */ void lambda$onSendLongClick$49(long j) {
         AlertsCreator.createScheduleDatePickerDialog(getParentActivity(), j, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.iv.RichEditor.13
             @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
             public void didSelectDate(boolean z, int i, int i2) {
@@ -2415,7 +2513,7 @@ public class RichEditor extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$49() {
+    public /* synthetic */ void lambda$onSendLongClick$50() {
         sendMessage(true, 2147483646, 0);
         MessageSendPreview messageSendPreview = this.messageSendPreview;
         if (messageSendPreview != null) {
@@ -2425,7 +2523,7 @@ public class RichEditor extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$50() {
+    public /* synthetic */ void lambda$onSendLongClick$51() {
         sendMessage(false, 0, 0);
         MessageSendPreview messageSendPreview = this.messageSendPreview;
         if (messageSendPreview != null) {
@@ -2434,14 +2532,24 @@ public class RichEditor extends BaseFragment {
         }
     }
 
-    private void persistDraft() {
-        if (this.chatActivity != null && this.editingMessageObject == null && this.listView.canUndo()) {
-            TL_iv.RichMessage buildDraftRichMessage = this.sent ? null : this.listView.buildDraftRichMessage();
-            getMediaDataController().saveDraft(this.chatActivity.getDialogId(), this.chatActivity.getDraftThreadId(), "", null, null, null, null, 0L, false, false, buildDraftRichMessage);
-            if (this.chatActivity.getChatActivityEnterView() != null) {
-                this.chatActivity.getChatActivityEnterView().setRichDraftPreview(buildDraftRichMessage);
-            }
+    /* JADX INFO: Access modifiers changed from: private */
+    public void saveDraftWithBulletin() {
+        if (persistDraft()) {
+            BulletinFactory.of(this.bulletinContainer, getResourceProvider()).createSimpleBulletin(R.raw.contact_check, LocaleController.getString(R.string.RichEditorDraftSaved)).show();
         }
+    }
+
+    private boolean persistDraft() {
+        if (this.chatActivity == null || this.editingMessageObject != null || !this.listView.canUndo()) {
+            return false;
+        }
+        TL_iv.RichMessage buildDraftRichMessage = this.sent ? null : this.listView.buildDraftRichMessage();
+        getMediaDataController().saveDraft(this.chatActivity.getDialogId(), this.chatActivity.getDraftThreadId(), "", null, null, null, null, 0L, false, false, buildDraftRichMessage);
+        if (this.chatActivity.getChatActivityEnterView() == null) {
+            return true;
+        }
+        this.chatActivity.getChatActivityEnterView().setRichDraftPreview(buildDraftRichMessage);
+        return true;
     }
 
     private void toggleEmojiPopup() {
@@ -2538,7 +2646,7 @@ public class RichEditor extends BaseFragment {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                RichEditor.this.lambda$animateEmojiSearch$51(valueAnimator2);
+                RichEditor.this.lambda$animateEmojiSearch$52(valueAnimator2);
             }
         });
         this.emojiSearchAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -2547,7 +2655,7 @@ public class RichEditor extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateEmojiSearch$51(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$animateEmojiSearch$52(ValueAnimator valueAnimator) {
         this.emojiSearchProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         applyEmojiSearchOffset();
     }
@@ -2880,9 +2988,23 @@ public class RichEditor extends BaseFragment {
         return super.onBackPressed(z);
     }
 
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == NotificationCenter.currentUserPremiumStatusChanged) {
+            this.sendButton.setLocked(!MessagesController.getInstance(this.currentAccount).richEditorAllowed());
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean onFragmentCreate() {
+        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
+        return super.onFragmentCreate();
+    }
+
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate sizeNotifierFrameLayoutDelegate;
+        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
         persistDraft();
         Runnable runnable = this.pendingSend;
         if (runnable != null) {

@@ -166,6 +166,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
     private String currentItemName;
     private TL_account.Password currentPassword;
     private int currentStep;
+    private Utilities.Callback customAnyResultReceiver;
     private Utilities.CallbackReturn customErrorReceiver;
     private Utilities.Callback customResultReceiver;
     private PaymentFormActivityDelegate delegate;
@@ -3117,6 +3118,8 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$17(View view) {
         PaymentFormActivity paymentFormActivity = new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, 0, this.requestedInfo, this.shippingOption, this.tipAmount, null, this.cardName, this.validateRequest, this.saveCardInfo, null, this.parentFragment, this.allowUnregistered);
+        paymentFormActivity.setCustomResultReceiver(this.customResultReceiver);
+        paymentFormActivity.setCustomAnyResultReceiver(this.customAnyResultReceiver);
         paymentFormActivity.setDelegate(new PaymentFormActivityDelegate() { // from class: org.telegram.ui.PaymentFormActivity.14
             @Override // org.telegram.ui.PaymentFormActivity.PaymentFormActivityDelegate
             public /* synthetic */ void currentPasswordUpdated(TL_account.Password password) {
@@ -3146,6 +3149,8 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$18(View view) {
         PaymentFormActivity paymentFormActivity = new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, 0, this.requestedInfo, this.shippingOption, this.tipAmount, null, this.cardName, this.validateRequest, this.saveCardInfo, null, this.parentFragment, this.allowUnregistered);
+        paymentFormActivity.setCustomResultReceiver(this.customResultReceiver);
+        paymentFormActivity.setCustomAnyResultReceiver(this.customAnyResultReceiver);
         paymentFormActivity.setDelegate(new PaymentFormActivityDelegate() { // from class: org.telegram.ui.PaymentFormActivity.15
             @Override // org.telegram.ui.PaymentFormActivity.PaymentFormActivityDelegate
             public /* synthetic */ void currentPasswordUpdated(TL_account.Password password) {
@@ -3175,6 +3180,8 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$19(View view) {
         PaymentFormActivity paymentFormActivity = new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, 0, this.requestedInfo, this.shippingOption, this.tipAmount, null, this.cardName, this.validateRequest, this.saveCardInfo, null, this.parentFragment, this.allowUnregistered);
+        paymentFormActivity.setCustomResultReceiver(this.customResultReceiver);
+        paymentFormActivity.setCustomAnyResultReceiver(this.customAnyResultReceiver);
         paymentFormActivity.setDelegate(new PaymentFormActivityDelegate() { // from class: org.telegram.ui.PaymentFormActivity.16
             @Override // org.telegram.ui.PaymentFormActivity.PaymentFormActivityDelegate
             public /* synthetic */ void currentPasswordUpdated(TL_account.Password password) {
@@ -3204,6 +3211,8 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$20(View view) {
         PaymentFormActivity paymentFormActivity = new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, 0, this.requestedInfo, this.shippingOption, this.tipAmount, null, this.cardName, this.validateRequest, this.saveCardInfo, null, this.parentFragment, this.allowUnregistered);
+        paymentFormActivity.setCustomResultReceiver(this.customResultReceiver);
+        paymentFormActivity.setCustomAnyResultReceiver(this.customAnyResultReceiver);
         paymentFormActivity.setDelegate(new PaymentFormActivityDelegate() { // from class: org.telegram.ui.PaymentFormActivity.17
             @Override // org.telegram.ui.PaymentFormActivity.PaymentFormActivityDelegate
             public /* synthetic */ void currentPasswordUpdated(TL_account.Password password) {
@@ -3291,7 +3300,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                             showChoosePaymentMethod(new EmbedBottomSheet$$ExternalSyntheticLambda6(view));
                             return;
                         } else {
-                            presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, i, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, null, this.parentFragment, this.allowUnregistered));
+                            presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, i, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, null, this.parentFragment, this.allowUnregistered).setCustomResultReceiver(this.customResultReceiver).setCustomAnyResultReceiver(this.customAnyResultReceiver));
                             return;
                         }
                     }
@@ -3299,7 +3308,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                 i = (this.savedCredentialsCard == null && this.paymentJson == null && this.googlePayCredentials == null) ? 2 : 1;
                 if (i != 2) {
                 }
-                presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, i, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, null, this.parentFragment, this.allowUnregistered));
+                presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, i, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, null, this.parentFragment, this.allowUnregistered).setCustomResultReceiver(this.customResultReceiver).setCustomAnyResultReceiver(this.customAnyResultReceiver));
                 return;
             }
             if (this.savedCredentialsCard == null) {
@@ -3316,7 +3325,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             }
             if (UserConfig.getInstance(this.currentAccount).tmpPassword == null) {
                 this.needPayAfterTransition = true;
-                presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, 3, this.requestedInfo, this.shippingOption, this.tipAmount, null, this.cardName, this.validateRequest, this.saveCardInfo, null, this.parentFragment, this.allowUnregistered));
+                presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, 3, this.requestedInfo, this.shippingOption, this.tipAmount, null, this.cardName, this.validateRequest, this.saveCardInfo, null, this.parentFragment, this.allowUnregistered).setCustomResultReceiver(this.customResultReceiver).setCustomAnyResultReceiver(this.customAnyResultReceiver));
                 this.needPayAfterTransition = false;
                 return;
             } else if (this.isCheckoutPreview) {
@@ -3616,20 +3625,24 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard2 = (TLRPC.TL_paymentSavedCredentialsCard) list.get(i - i2);
             this.savedCredentialsCard = tL_paymentSavedCredentialsCard2;
             paymentFormActivityDelegate.didSelectNewCard(null, tL_paymentSavedCredentialsCard2.title, true, null, tL_paymentSavedCredentialsCard2);
-        } else {
-            if (i < list2.size() - 1) {
-                TLRPC.TL_paymentFormMethod tL_paymentFormMethod = this.paymentForm.additional_methods.get((i - list.size()) - i2);
-                PaymentFormActivity paymentFormActivity = new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, 2, this.requestedInfo, this.shippingOption, this.tipAmount, null, this.cardName, this.validateRequest, this.saveCardInfo, null, this.parentFragment, this.allowUnregistered);
-                paymentFormActivity.setPaymentMethod(tL_paymentFormMethod);
-                paymentFormActivity.setDelegate(paymentFormActivityDelegate);
-                presentFragment(paymentFormActivity);
-                return;
-            }
-            if (i == list2.size() - 1) {
-                PaymentFormActivity paymentFormActivity2 = new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, 2, this.requestedInfo, this.shippingOption, this.tipAmount, null, this.cardName, this.validateRequest, this.saveCardInfo, null, this.parentFragment, this.allowUnregistered);
-                paymentFormActivity2.setDelegate(paymentFormActivityDelegate);
-                presentFragment(paymentFormActivity2);
-            }
+            return;
+        }
+        if (i < list2.size() - 1) {
+            TLRPC.TL_paymentFormMethod tL_paymentFormMethod = this.paymentForm.additional_methods.get((i - list.size()) - i2);
+            PaymentFormActivity paymentFormActivity = new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, 2, this.requestedInfo, this.shippingOption, this.tipAmount, null, this.cardName, this.validateRequest, this.saveCardInfo, null, this.parentFragment, this.allowUnregistered);
+            paymentFormActivity.setCustomResultReceiver(this.customResultReceiver);
+            paymentFormActivity.setCustomAnyResultReceiver(this.customAnyResultReceiver);
+            paymentFormActivity.setPaymentMethod(tL_paymentFormMethod);
+            paymentFormActivity.setDelegate(paymentFormActivityDelegate);
+            presentFragment(paymentFormActivity);
+            return;
+        }
+        if (i == list2.size() - 1) {
+            PaymentFormActivity paymentFormActivity2 = new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, 2, this.requestedInfo, this.shippingOption, this.tipAmount, null, this.cardName, this.validateRequest, this.saveCardInfo, null, this.parentFragment, this.allowUnregistered);
+            paymentFormActivity2.setCustomResultReceiver(this.customResultReceiver);
+            paymentFormActivity2.setCustomAnyResultReceiver(this.customAnyResultReceiver);
+            paymentFormActivity2.setDelegate(paymentFormActivityDelegate);
+            presentFragment(paymentFormActivity2);
         }
     }
 
@@ -4305,7 +4318,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                 });
                 return;
             } else {
-                presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, i, this.requestedInfo, null, null, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, this.googlePayCredentials, this.parentFragment, this.allowUnregistered), this.isWebView);
+                presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, i, this.requestedInfo, null, null, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, this.googlePayCredentials, this.parentFragment, this.allowUnregistered).setCustomResultReceiver(this.customResultReceiver).setCustomAnyResultReceiver(this.customAnyResultReceiver), this.isWebView);
                 return;
             }
         }
@@ -4331,14 +4344,14 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                     });
                     return;
                 } else {
-                    presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, i2, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, this.googlePayCredentials, this.parentFragment, this.allowUnregistered), this.isWebView);
+                    presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, i2, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, this.googlePayCredentials, this.parentFragment, this.allowUnregistered).setCustomResultReceiver(this.customResultReceiver).setCustomAnyResultReceiver(this.customAnyResultReceiver), this.isWebView);
                     return;
                 }
             }
             i2 = 4;
             if (i2 != 2) {
             }
-            presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, i2, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, this.googlePayCredentials, this.parentFragment, this.allowUnregistered), this.isWebView);
+            presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, i2, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, this.googlePayCredentials, this.parentFragment, this.allowUnregistered).setCustomResultReceiver(this.customResultReceiver).setCustomAnyResultReceiver(this.customAnyResultReceiver), this.isWebView);
             return;
         }
         if (i3 == 2) {
@@ -4346,7 +4359,9 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             if (paymentForm.password_missing && (z = this.saveCardInfo)) {
                 PaymentFormActivity paymentFormActivity = new PaymentFormActivity(this.invoiceInput, paymentForm, this.messageObject, this.invoiceSlug, 6, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, z, this.googlePayCredentials, this.parentFragment, this.allowUnregistered);
                 this.passwordFragment = paymentFormActivity;
-                paymentFormActivity.setCurrentPassword(this.currentPassword);
+                paymentFormActivity.setCustomResultReceiver(this.customResultReceiver);
+                this.passwordFragment.setCustomAnyResultReceiver(this.customAnyResultReceiver);
+                this.passwordFragment.setCurrentPassword(this.currentPassword);
                 this.passwordFragment.setDelegate(new PaymentFormActivityDelegate() { // from class: org.telegram.ui.PaymentFormActivity.25
                     @Override // org.telegram.ui.PaymentFormActivity.PaymentFormActivityDelegate
                     public /* synthetic */ void didSelectNewAddress(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
@@ -4383,12 +4398,12 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                 finishFragment();
                 return;
             } else {
-                presentFragment(new PaymentFormActivity(this.invoiceInput, paymentForm, this.messageObject, this.invoiceSlug, 4, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, this.googlePayCredentials, this.parentFragment, this.allowUnregistered), this.isWebView);
+                presentFragment(new PaymentFormActivity(this.invoiceInput, paymentForm, this.messageObject, this.invoiceSlug, 4, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, this.googlePayCredentials, this.parentFragment, this.allowUnregistered).setCustomResultReceiver(this.customResultReceiver).setCustomAnyResultReceiver(this.customAnyResultReceiver), this.isWebView);
                 return;
             }
         }
         if (i3 == 3) {
-            presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, this.passwordOk ? 4 : 2, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, this.googlePayCredentials, this.parentFragment, this.allowUnregistered), true);
+            presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, this.passwordOk ? 4 : 2, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, this.googlePayCredentials, this.parentFragment, this.allowUnregistered).setCustomResultReceiver(this.customResultReceiver).setCustomAnyResultReceiver(this.customAnyResultReceiver), true);
             return;
         }
         if (i3 != 4) {
@@ -4396,7 +4411,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                 return;
             }
             if (!this.delegate.didSelectNewCard(this.paymentJson, this.cardName, this.saveCardInfo, this.googlePayCredentials, this.savedCredentialsCard)) {
-                presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, 4, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, this.googlePayCredentials, this.parentFragment, false), true);
+                presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, 4, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, this.googlePayCredentials, this.parentFragment, false).setCustomResultReceiver(this.customResultReceiver).setCustomAnyResultReceiver(this.customAnyResultReceiver), true);
                 return;
             } else {
                 finishFragment();
@@ -5304,8 +5319,14 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
         }
     }
 
-    public void setCustomResultReceiver(Utilities.Callback callback) {
+    public PaymentFormActivity setCustomResultReceiver(Utilities.Callback callback) {
         this.customResultReceiver = callback;
+        return this;
+    }
+
+    public PaymentFormActivity setCustomAnyResultReceiver(Utilities.Callback callback) {
+        this.customAnyResultReceiver = callback;
+        return this;
     }
 
     public void setCustomErrorReceiver(Utilities.CallbackReturn callbackReturn) {
@@ -5585,11 +5606,15 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
         BaseFragment.BottomSheetParams bottomSheetParams = new BaseFragment.BottomSheetParams();
         bottomSheetParams.transitionFromLeft = true;
         bottomSheetParams.allowNestedScroll = false;
-        lastFragment.showAsSheet(new PaymentFormActivity((TLRPC.PaymentReceipt) tLObject), bottomSheetParams);
+        lastFragment.showAsSheet(new PaymentFormActivity((TLRPC.PaymentReceipt) tLObject).setCustomResultReceiver(this.customResultReceiver).setCustomAnyResultReceiver(this.customAnyResultReceiver), bottomSheetParams);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendData$67(TLObject tLObject) {
+        Utilities.Callback callback = this.customAnyResultReceiver;
+        if (callback != null) {
+            callback.run((TLRPC.TL_payments_paymentVerificationNeeded) tLObject);
+        }
         setDonePressed(false);
         this.webviewLoading = true;
         showEditDoneProgress(true, true);
@@ -5785,7 +5810,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
         BaseFragment.BottomSheetParams bottomSheetParams = new BaseFragment.BottomSheetParams();
         bottomSheetParams.transitionFromLeft = true;
         bottomSheetParams.allowNestedScroll = false;
-        lastFragment.showAsSheet(new PaymentFormActivity((TLRPC.PaymentReceipt) tLObject), bottomSheetParams);
+        lastFragment.showAsSheet(new PaymentFormActivity((TLRPC.PaymentReceipt) tLObject).setCustomResultReceiver(this.customResultReceiver).setCustomAnyResultReceiver(this.customAnyResultReceiver), bottomSheetParams);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

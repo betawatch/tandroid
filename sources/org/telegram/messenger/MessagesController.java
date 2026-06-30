@@ -1006,6 +1006,10 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
+    public int getMaxMessageLength() {
+        return (getUserConfig().isPremium() ? this.config.messageLengthLimitPremium : this.config.messageLengthLimitDefault).get();
+    }
+
     public boolean starsPurchaseAvailable() {
         return !this.starsLocked;
     }
@@ -37884,6 +37888,36 @@ public class MessagesController extends BaseController implements NotificationCe
     public boolean storiesEnabled() {
         char c;
         String str = this.storiesPosting;
+        int hashCode = str.hashCode();
+        if (hashCode == -1609594047) {
+            if (str.equals("enabled")) {
+                c = 1;
+            }
+            c = 65535;
+        } else if (hashCode != -318452137) {
+            if (hashCode == 270940796 && str.equals("disabled")) {
+                c = 3;
+            }
+            c = 65535;
+        } else {
+            if (str.equals("premium")) {
+                c = 0;
+            }
+            c = 65535;
+        }
+        if (c != 0) {
+            return c == 1;
+        }
+        return getUserConfig().isPremium();
+    }
+
+    public boolean richEditorAvailable() {
+        return !TextUtils.equals("disabled", this.config.richMessagePosting.get());
+    }
+
+    public boolean richEditorAllowed() {
+        char c;
+        String str = this.config.richMessagePosting.get();
         int hashCode = str.hashCode();
         if (hashCode == -1609594047) {
             if (str.equals("enabled")) {

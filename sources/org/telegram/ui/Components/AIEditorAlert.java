@@ -49,6 +49,8 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.TranslateController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
@@ -58,6 +60,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
+import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
@@ -80,6 +83,7 @@ import org.telegram.ui.SelectAnimatedEmojiDialog;
 import org.telegram.ui.Stars.StarsController;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.Stories.recorder.HintView2;
+import org.telegram.ui.iv.RichTextStyle;
 
 /* loaded from: classes5.dex */
 public class AIEditorAlert extends BottomSheetWithRecyclerListView implements NotificationCenter.NotificationCenterDelegate {
@@ -95,24 +99,36 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
     private long dialogId;
     private boolean editing;
     private boolean emojify;
+    private boolean errored;
     private CharSequence fixedText;
     private boolean fixedTextLoading;
+    private TL_iv.RichMessage fixedTextRich;
     private CharSequence fixedTextToCopy;
     private String from_lang;
     private final boolean[] genitive;
     private TLRPC.TL_messages_composeMessageWithAI[] lastRequest;
+    private TLRPC.TL_messages_composeRichMessageWithAI[] lastRequestRich;
     private boolean loading;
+    private boolean newPrompt;
     private Utilities.Callback4 onSendListener;
+    private Utilities.Callback4 onSendRichListener;
     private Utilities.Callback onUseListener;
+    private Utilities.Callback onUseRichListener;
+    private final FrameLayout promptBox;
+    private final EditTextCell promptCell;
+    private String promptText;
     private int requestId;
     private final ButtonWithCounterView sendButton;
+    private boolean showLimit;
     private HintView2 styleHint;
     private final Tabs styleTabs;
     private CharSequence styledText;
     private boolean styledTextLoading;
+    private TL_iv.RichMessage styledTextRich;
     private final Tabs tabs;
     private final FrameLayout tabsContainer;
     private CharSequence text;
+    private TL_iv.RichMessage textRich;
     private CharSequence title;
     private RLottieDrawable titleLoadingDrawable;
     private String to_lang;
@@ -121,14 +137,19 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
     private String translateToneTitle;
     private CharSequence translatedText;
     private boolean translatedTextLoading;
+    private TL_iv.RichMessage translatedTextRich;
+
+    public static class PromptTone extends TL_aicompose.AiComposeTone {
+    }
 
     public AIEditorAlert(final Context context, final Theme.ResourcesProvider resourcesProvider) {
-        super(context, null, false, false, false, false, BottomSheetWithRecyclerListView.ActionBarType.SLIDING, resourcesProvider);
+        super(context, null, true, false, false, false, BottomSheetWithRecyclerListView.ActionBarType.SLIDING, resourcesProvider);
         this.accusative = new boolean[1];
         this.genitive = new boolean[1];
         this.collapsed = true;
         this.requestId = -1;
         this.lastRequest = new TLRPC.TL_messages_composeMessageWithAI[3];
+        this.lastRequestRich = new TLRPC.TL_messages_composeRichMessageWithAI[3];
         AiTonesController tonesController = MessagesController.getInstance(this.currentAccount).getTonesController();
         this.tonesController = tonesController;
         tonesController.load();
@@ -142,7 +163,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         imageView.setBackground(Theme.createSelectorDrawable(Theme.multAlpha(getThemedColor(i), 0.1f)));
         this.actionBar.addView(imageView, LayoutHelper.createFrame(54, 54.0f, 85, 0.0f, 0.0f, 8.0f, 0.0f));
         ScaleStateListAnimator.apply(imageView, 0.1f, 1.5f);
-        imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda1
+        imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AIEditorAlert.this.lambda$new$0(view);
@@ -153,21 +174,23 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         Tabs tabs = new Tabs(context, this.currentAccount, false, resourcesProvider);
         this.tabs = tabs;
         tabs.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
-        tabs.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(28.0f), Theme.getColor(Theme.key_windowBackgroundWhite, resourcesProvider)));
+        int dp = AndroidUtilities.dp(28.0f);
+        int i2 = Theme.key_windowBackgroundWhite;
+        tabs.setBackground(Theme.createRoundRectDrawable(dp, Theme.getColor(i2, resourcesProvider)));
         tabs.setRoundRadius(28);
-        tabs.addTab(R.drawable.outline_ai_translate2, LocaleController.getString(R.string.AIEditorTabTranslate), new Utilities.Callback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda2
+        tabs.addTab(R.drawable.outline_ai_translate2, LocaleController.getString(R.string.AIEditorTabTranslate), new Utilities.Callback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 AIEditorAlert.this.selectTab(((Integer) obj).intValue());
             }
         });
-        tabs.addTab(R.drawable.menu_rewrite, LocaleController.getString(R.string.AIEditorTabStyle), new Utilities.Callback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda2
+        tabs.addTab(R.drawable.menu_rewrite, LocaleController.getString(R.string.AIEditorTabStyle), new Utilities.Callback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 AIEditorAlert.this.selectTab(((Integer) obj).intValue());
             }
         });
-        tabs.addTab(R.drawable.menu_proofread, LocaleController.getString(R.string.AIEditorTabFix), new Utilities.Callback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda2
+        tabs.addTab(R.drawable.menu_proofread, LocaleController.getString(R.string.AIEditorTabFix), new Utilities.Callback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 AIEditorAlert.this.selectTab(((Integer) obj).intValue());
@@ -175,12 +198,40 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         });
         tabs.selectTab(1);
         frameLayout.addView(tabs, LayoutHelper.createFrame(-1, -1.0f, 119, 12.0f, 0.0f, 12.0f, 0.0f));
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        this.promptBox = frameLayout2;
+        EditTextCell editTextCell = new EditTextCell(context, LocaleController.getString(R.string.ArticleAIPrompt), true, false, MessagesController.getInstance(this.currentAccount).config.aicomposeTonePromptLengthMax.get(), resourcesProvider);
+        this.promptCell = editTextCell;
+        editTextCell.editText.setImeOptions(6);
+        editTextCell.editText.setMaxLines(5);
+        editTextCell.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(20.0f), Theme.getColor(i2, resourcesProvider)));
+        editTextCell.editText.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.Components.AIEditorAlert.1
+            @Override // android.text.TextWatcher
+            public void beforeTextChanged(CharSequence charSequence, int i3, int i4, int i5) {
+            }
+
+            @Override // android.text.TextWatcher
+            public void onTextChanged(CharSequence charSequence, int i3, int i4, int i5) {
+            }
+
+            @Override // android.text.TextWatcher
+            public void afterTextChanged(Editable editable) {
+                if ((AIEditorAlert.this.tabs != null ? AIEditorAlert.this.tabs.getSelectedTab() : 0) == 1 && AIEditorAlert.this.styleTabs != null && (AIEditorAlert.this.styleTabs.getSelectedTone() instanceof PromptTone)) {
+                    AIEditorAlert.this.cancelRequest();
+                    AIEditorAlert.this.updatePromptEditText();
+                    AIEditorAlert.this.updateButton();
+                }
+            }
+        });
+        frameLayout2.addView(editTextCell, LayoutHelper.createFrame(-1, -2.0f));
+        frameLayout2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), 0);
+        editTextCell.editText.setPadding(AndroidUtilities.dp(11.0f), AndroidUtilities.dp(15.0f), AndroidUtilities.dp(53.0f), AndroidUtilities.dp(15.0f));
         Tabs tabs2 = new Tabs(context, this.currentAccount, true, resourcesProvider);
         this.styleTabs = tabs2;
         tabs2.setDivider(true);
         tabs2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         tabs2.setRoundRadius(12);
-        tabs2.setOnItemLongClick(new Utilities.CallbackReturn() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda3
+        tabs2.setOnItemLongClick(new Utilities.CallbackReturn() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.Utilities.CallbackReturn
             public final Object run(Object obj) {
                 Boolean lambda$new$8;
@@ -198,26 +249,25 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         this.ignoreTouchActionBar = false;
         this.headerMoveTop = AndroidUtilities.dp(12.0f);
         this.topPadding = 0.35f;
-        int i2 = Theme.key_windowBackgroundGray;
-        setBackgroundColor(getThemedColor(i2));
+        int i3 = Theme.key_windowBackgroundGray;
+        setBackgroundColor(getThemedColor(i3));
         LinearLayout linearLayout = new LinearLayout(context);
         this.buttonContainer = linearLayout;
         linearLayout.setOrientation(0);
         linearLayout.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
-        linearLayout.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{Theme.multAlpha(getThemedColor(i2), 0.0f), getThemedColor(i2), getThemedColor(i2)}));
+        linearLayout.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{Theme.multAlpha(getThemedColor(i3), 0.0f), getThemedColor(i3), getThemedColor(i3)}));
         ButtonWithCounterView round = new ButtonWithCounterView(context, resourcesProvider).setRound();
         this.button = round;
-        round.setText(LocaleController.getString(R.string.OK));
         linearLayout.addView(round, LayoutHelper.createLinear(-1, 48, 1.0f, 119));
         ButtonWithCounterView round2 = new ButtonWithCounterView(context, resourcesProvider).setRound();
         this.sendButton = round2;
-        round2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda4
+        round2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AIEditorAlert.this.lambda$new$9(view);
             }
         });
-        round2.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda5
+        round2.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda6
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
                 boolean lambda$new$12;
@@ -234,46 +284,46 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         spannableStringBuilder.append((CharSequence) "x50");
         spannableStringBuilder.setSpan(new LimitSpan("x50"), length, spannableStringBuilder.length(), 33);
         round3.setText(spannableStringBuilder);
-        round3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda6
+        round3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AIEditorAlert.this.lambda$new$13(resourcesProvider, view);
             }
         });
         FrameLayout.LayoutParams createFrame = LayoutHelper.createFrame(-1, -2, 80);
-        int i3 = createFrame.leftMargin;
-        int i4 = this.backgroundPaddingLeft;
-        createFrame.leftMargin = i3 + i4;
-        createFrame.rightMargin += i4;
+        int i4 = createFrame.leftMargin;
+        int i5 = this.backgroundPaddingLeft;
+        createFrame.leftMargin = i4 + i5;
+        createFrame.rightMargin += i5;
         this.containerView.addView(linearLayout, createFrame);
         FrameLayout.LayoutParams createFrame2 = LayoutHelper.createFrame(-1, 48.0f, 80, 12.0f, 6.0f, 12.0f, 12.0f);
-        int i5 = createFrame2.leftMargin;
-        int i6 = this.backgroundPaddingLeft;
-        createFrame2.leftMargin = i5 + i6;
-        createFrame2.rightMargin += i6;
+        int i6 = createFrame2.leftMargin;
+        int i7 = this.backgroundPaddingLeft;
+        createFrame2.leftMargin = i6 + i7;
+        createFrame2.rightMargin += i7;
         this.containerView.addView(round3, createFrame2);
-        FrameLayout frameLayout2 = new FrameLayout(context);
-        this.bulletinContainer = frameLayout2;
+        FrameLayout frameLayout3 = new FrameLayout(context);
+        this.bulletinContainer = frameLayout3;
         FrameLayout.LayoutParams createFrame3 = LayoutHelper.createFrame(-1, 200.0f, 80, 0.0f, 0.0f, 0.0f, 60.0f);
-        int i7 = createFrame3.leftMargin;
-        int i8 = this.backgroundPaddingLeft;
-        createFrame3.leftMargin = i7 + i8;
-        createFrame3.rightMargin += i8;
-        this.containerView.addView(frameLayout2, createFrame3);
-        updateButton(false, false);
-        RecyclerListView recyclerListView = this.recyclerListView;
+        int i8 = createFrame3.leftMargin;
         int i9 = this.backgroundPaddingLeft;
-        recyclerListView.setPadding(i9, 0, i9, AndroidUtilities.dp(66.0f));
+        createFrame3.leftMargin = i8 + i9;
+        createFrame3.rightMargin += i9;
+        this.containerView.addView(frameLayout3, createFrame3);
+        updateButton(false);
+        RecyclerListView recyclerListView = this.recyclerListView;
+        int i10 = this.backgroundPaddingLeft;
+        recyclerListView.setPadding(i10, 0, i10, AndroidUtilities.dp(66.0f));
         this.recyclerListView.setClipToPadding(false);
         this.recyclerListView.setSections();
-        this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda7
+        this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda8
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i10) {
-                AIEditorAlert.this.lambda$new$14(view, i10);
+            public final void onItemClick(View view, int i11) {
+                AIEditorAlert.this.lambda$new$14(view, i11);
             }
         });
         this.takeTranslationIntoAccount = true;
-        DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator() { // from class: org.telegram.ui.Components.AIEditorAlert.3
+        DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator() { // from class: org.telegram.ui.Components.AIEditorAlert.4
             @Override // androidx.recyclerview.widget.DefaultItemAnimator
             protected void onMoveAnimationUpdate(RecyclerView.ViewHolder viewHolder) {
                 ((BottomSheet) AIEditorAlert.this).containerView.invalidate();
@@ -284,14 +334,14 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         defaultItemAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
         defaultItemAnimator.setDurations(350L);
         this.recyclerListView.setItemAnimator(defaultItemAnimator);
-        this.recyclerListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.AIEditorAlert.4
+        this.recyclerListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.AIEditorAlert.5
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i10, int i11) {
+            public void onScrolled(RecyclerView recyclerView, int i11, int i12) {
                 AIEditorAlert.this.updateStyleHintY();
             }
         });
         this.adapter.update(false);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda8
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 AIEditorAlert.this.showStyleHint();
@@ -310,12 +360,12 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         TL_aicompose.AiComposeTone aiComposeTone = tab.tone;
         if (aiComposeTone instanceof TL_aicompose.TL_aiComposeTone) {
             final TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) aiComposeTone;
-            ItemOptions add = ItemOptions.makeOptions(this.container, resourcesProvider, tab).setScrimViewBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(12.0f), Theme.getColor(Theme.key_windowBackgroundWhite, resourcesProvider))).addIf(tL_aiComposeTone.creator, R.drawable.msg_edit, LocaleController.getString(R.string.AIEditorEditStyle), new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda20
+            ItemOptions add = ItemOptions.makeOptions(this.container, resourcesProvider, tab).setScrimViewBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(12.0f), Theme.getColor(Theme.key_windowBackgroundWhite, resourcesProvider))).addIf(tL_aiComposeTone.creator, R.drawable.msg_edit, LocaleController.getString(R.string.AIEditorEditStyle), new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda25
                 @Override // java.lang.Runnable
                 public final void run() {
                     AIEditorAlert.this.lambda$new$2(resourcesProvider, tL_aiComposeTone);
                 }
-            }).add(R.drawable.msg_share, LocaleController.getString(R.string.AIEditorShareStyle), new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda21
+            }).add(R.drawable.msg_share, LocaleController.getString(R.string.AIEditorShareStyle), new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda26
                 @Override // java.lang.Runnable
                 public final void run() {
                     AIEditorAlert.this.lambda$new$3(tL_aiComposeTone, context, resourcesProvider);
@@ -323,12 +373,12 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
             });
             boolean z = !tL_aiComposeTone.creator;
             int i = R.drawable.msg_delete;
-            add.addIf(z, i, (CharSequence) LocaleController.getString(R.string.AIEditorRemoveStyle), true, new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda22
+            add.addIf(z, i, (CharSequence) LocaleController.getString(R.string.AIEditorRemoveStyle), true, new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda27
                 @Override // java.lang.Runnable
                 public final void run() {
                     AIEditorAlert.this.lambda$new$4(tL_aiComposeTone);
                 }
-            }).addIf(tL_aiComposeTone.creator, i, (CharSequence) LocaleController.getString(R.string.AIEditorDeleteStyle), true, new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda23
+            }).addIf(tL_aiComposeTone.creator, i, (CharSequence) LocaleController.getString(R.string.AIEditorDeleteStyle), true, new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda28
                 @Override // java.lang.Runnable
                 public final void run() {
                     AIEditorAlert.this.lambda$new$7(resourcesProvider, tL_aiComposeTone);
@@ -341,7 +391,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$2(Theme.ResourcesProvider resourcesProvider, TL_aicompose.TL_aiComposeTone tL_aiComposeTone) {
-        new CreateAiStyleAlert(getContext(), resourcesProvider).setEditing(tL_aiComposeTone).setOnToneEdited(new Utilities.Callback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda30
+        new CreateAiStyleAlert(getContext(), resourcesProvider).setEditing(tL_aiComposeTone).setOnToneEdited(new Utilities.Callback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda37
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 AIEditorAlert.this.lambda$new$1((TL_aicompose.AiComposeTone) obj);
@@ -360,7 +410,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$3(TL_aicompose.TL_aiComposeTone tL_aiComposeTone, Context context, Theme.ResourcesProvider resourcesProvider) {
         String str = "https://t.me/addstyle/" + tL_aiComposeTone.slug;
-        new ShareAlert(context, null, str, false, str, false, resourcesProvider) { // from class: org.telegram.ui.Components.AIEditorAlert.1
+        new ShareAlert(context, null, str, false, str, false, resourcesProvider) { // from class: org.telegram.ui.Components.AIEditorAlert.2
             @Override // org.telegram.ui.Components.ShareAlert
             protected void onSend(LongSparseArray longSparseArray, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
                 BulletinFactory of;
@@ -393,7 +443,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$7(Theme.ResourcesProvider resourcesProvider, final TL_aicompose.TL_aiComposeTone tL_aiComposeTone) {
-        new AlertDialog.Builder(getContext(), resourcesProvider).setTitle(LocaleController.getString(R.string.AIEditorDeleteStyle)).setMessage(LocaleController.getString(R.string.AIEditorDeleteStyleText)).setNegativeButton(LocaleController.getString(R.string.Cancel), null).setPositiveButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda31
+        new AlertDialog.Builder(getContext(), resourcesProvider).setTitle(LocaleController.getString(R.string.AIEditorDeleteStyle)).setMessage(LocaleController.getString(R.string.AIEditorDeleteStyleText)).setNegativeButton(LocaleController.getString(R.string.Cancel), null).setPositiveButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda38
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
                 AIEditorAlert.this.lambda$new$6(tL_aiComposeTone, alertDialog, i);
@@ -407,7 +457,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         makeButtonLoading.init();
         TL_aicompose.deleteTone deletetone = new TL_aicompose.deleteTone();
         deletetone.tone = TL_aicompose.InputAiComposeTone.from(tL_aiComposeTone);
-        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(deletetone, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda34
+        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(deletetone, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda39
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 AIEditorAlert.this.lambda$new$5(makeButtonLoading, tL_aiComposeTone, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
@@ -424,24 +474,22 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$9(View view) {
-        if (this.onSendListener != null && getResultText() != null) {
-            this.onSendListener.run(getResultText(), 0, 0, Boolean.TRUE);
-        }
+        runSend(0, 0, true);
         lambda$new$0();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ boolean lambda$new$12(final Theme.ResourcesProvider resourcesProvider, final Context context, View view) {
-        if (this.editing || this.onSendListener == null || getResultText() == null) {
+        if (this.editing || !hasSendResult()) {
             return false;
         }
         boolean z = this.dialogId == UserConfig.getInstance(this.currentAccount).getClientUserId();
-        ItemOptions.makeOptions(this.container, resourcesProvider, this.sendButton).addIf(!z, R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda25
+        ItemOptions.makeOptions(this.container, resourcesProvider, this.sendButton).addIf(!z, R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda31
             @Override // java.lang.Runnable
             public final void run() {
                 AIEditorAlert.this.lambda$new$10();
             }
-        }).add(R.drawable.msg_calendar2, LocaleController.getString(z ? R.string.SetReminder : R.string.ScheduleMessage), new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda26
+        }).add(R.drawable.msg_calendar2, LocaleController.getString(z ? R.string.SetReminder : R.string.ScheduleMessage), new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda32
             @Override // java.lang.Runnable
             public final void run() {
                 AIEditorAlert.this.lambda$new$11(context, resourcesProvider);
@@ -452,16 +500,16 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$10() {
-        this.onSendListener.run(getResultText(), 0, 0, Boolean.FALSE);
+        runSend(0, 0, false);
         lambda$new$0();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$11(Context context, Theme.ResourcesProvider resourcesProvider) {
-        AlertsCreator.createScheduleDatePickerDialog(context, this.dialogId, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.AIEditorAlert.2
+        AlertsCreator.createScheduleDatePickerDialog(context, this.dialogId, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.AIEditorAlert.3
             @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
             public void didSelectDate(boolean z, int i, int i2) {
-                AIEditorAlert.this.onSendListener.run(AIEditorAlert.this.getResultText(), Integer.valueOf(i), Integer.valueOf(i2), Boolean.valueOf(z));
+                AIEditorAlert.this.runSend(i, i2, z);
                 AIEditorAlert.this.lambda$new$0();
             }
         }, resourcesProvider);
@@ -475,6 +523,11 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$14(View view, int i) {
         this.adapter.getItem(i - 1);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateButton() {
+        updateButton(true);
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
@@ -498,7 +551,15 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
     private void updateStyles() {
         TL_aicompose.AiComposeTone selectedTone = this.styleTabs.getSelectedTone();
         this.styleTabs.clearTabs();
-        this.styleTabs.addTab(null, new Utilities.Callback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda0
+        if (isRich()) {
+            this.styleTabs.addTab(new PromptTone(), new Utilities.Callback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda1
+                @Override // org.telegram.messenger.Utilities.Callback
+                public final void run(Object obj) {
+                    AIEditorAlert.this.selectStyle((TL_aicompose.AiComposeTone) obj);
+                }
+            });
+        }
+        this.styleTabs.addTab(null, new Utilities.Callback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 AIEditorAlert.this.selectStyle((TL_aicompose.AiComposeTone) obj);
@@ -506,7 +567,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         });
         Iterator<TL_aicompose.AiComposeTone> it = this.tonesController.tones.iterator();
         while (it.hasNext()) {
-            this.styleTabs.addTab(it.next(), new Utilities.Callback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda0
+            this.styleTabs.addTab(it.next(), new Utilities.Callback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     AIEditorAlert.this.selectStyle((TL_aicompose.AiComposeTone) obj);
@@ -519,7 +580,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
     }
 
     private void updateSendButtonIcon() {
-        this.sendButton.setVisibility(this.editing ? 8 : 0);
+        this.sendButton.setVisibility((this.editing || !hasSend()) ? 8 : 0);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.Send));
         ColoredImageSpan coloredImageSpan = new ColoredImageSpan(this.editing ? R.drawable.filled_profile_edit_24 : R.drawable.send_plane_24);
         coloredImageSpan.setTranslateY(AndroidUtilities.dp(1.0f));
@@ -527,51 +588,130 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         this.sendButton.setText(spannableStringBuilder);
     }
 
-    private void updateButton(boolean z) {
-        updateButton(z, true);
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updatePromptEditText() {
+        boolean equals = TextUtils.equals(this.promptText, this.promptCell.editText.getText().toString());
+        boolean z = !equals;
+        if (this.newPrompt == z) {
+            return;
+        }
+        ViewPropertyAnimator animate = this.promptCell.editText.animate();
+        this.newPrompt = z;
+        animate.alpha(!equals ? 1.0f : 0.5f).setDuration(320L).start();
+        this.adapter.update(true);
     }
 
-    private void updateButton(final boolean z, boolean z2) {
-        if (z2 && this.buttonShowLimit == z) {
+    private void updateButton(boolean z) {
+        if (this.errored) {
+            this.button.setText(LocaleController.getString(R.string.OK));
+            this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda12
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    AIEditorAlert.this.lambda$updateButton$15(view);
+                }
+            });
+        } else {
+            Tabs tabs = this.tabs;
+            if ((tabs != null ? tabs.getSelectedTab() : 0) == 1 && (this.styleTabs.getSelectedTone() instanceof PromptTone) && !TextUtils.equals(this.promptCell.getText().toString(), this.promptText)) {
+                this.button.setText(LocaleController.getString(R.string.ArticleAIGenerate));
+                this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda13
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        AIEditorAlert.this.lambda$updateButton$16(view);
+                    }
+                });
+            } else if (this.onUseRichListener != null || this.onUseListener != null) {
+                this.button.setText(LocaleController.getString(R.string.AIEditorApply));
+                this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda15
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        AIEditorAlert.this.lambda$updateButton$17(view);
+                    }
+                });
+            } else {
+                this.button.setText(LocaleController.getString(R.string.OK));
+                this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda14
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        AIEditorAlert.this.lambda$updateButton$18(view);
+                    }
+                });
+            }
+        }
+        this.button.setLoading(this.loading);
+        if (z && this.buttonShowLimit == this.showLimit) {
             return;
         }
-        this.buttonShowLimit = z;
-        if (z2) {
+        boolean z2 = this.showLimit;
+        this.buttonShowLimit = z2;
+        if (z) {
             this.allButton.setVisibility(0);
             this.buttonContainer.setVisibility(0);
-            ViewPropertyAnimator alpha = this.allButton.animate().alpha(z ? 1.0f : 0.0f);
+            ViewPropertyAnimator alpha = this.allButton.animate().alpha(this.showLimit ? 1.0f : 0.0f);
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
-            alpha.setInterpolator(cubicBezierInterpolator).setDuration(320L).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda13
+            alpha.setInterpolator(cubicBezierInterpolator).setDuration(320L).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda16
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AIEditorAlert.this.lambda$updateButton$15(z);
+                    AIEditorAlert.this.lambda$updateButton$19();
                 }
             }).start();
-            this.buttonContainer.animate().alpha(z ? 0.0f : 1.0f).setInterpolator(cubicBezierInterpolator).setDuration(320L).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda14
+            this.buttonContainer.animate().alpha(this.showLimit ? 0.0f : 1.0f).setInterpolator(cubicBezierInterpolator).setDuration(320L).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda17
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AIEditorAlert.this.lambda$updateButton$16(z);
+                    AIEditorAlert.this.lambda$updateButton$20();
                 }
             }).start();
             return;
         }
-        this.allButton.setVisibility(z ? 0 : 8);
-        this.allButton.setAlpha(z ? 1.0f : 0.0f);
-        this.buttonContainer.setVisibility(z ? 8 : 0);
-        this.buttonContainer.setAlpha(z ? 0.0f : 1.0f);
+        this.allButton.setVisibility(z2 ? 0 : 8);
+        this.allButton.setAlpha(this.showLimit ? 1.0f : 0.0f);
+        this.buttonContainer.setVisibility(this.showLimit ? 8 : 0);
+        this.buttonContainer.setAlpha(this.showLimit ? 0.0f : 1.0f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateButton$15(boolean z) {
-        if (z) {
+    public /* synthetic */ void lambda$updateButton$15(View view) {
+        lambda$new$0();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$updateButton$16(View view) {
+        AndroidUtilities.hideKeyboard(this.promptCell.editText);
+        this.promptText = this.promptCell.getText().toString();
+        updatePromptEditText();
+        updateButton(true);
+        request();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$updateButton$17(View view) {
+        if (this.onUseRichListener != null) {
+            TL_iv.RichMessage resultRich = getResultRich();
+            if (resultRich != null) {
+                this.onUseRichListener.run(resultRich);
+            }
+        } else if (this.onUseListener != null && getResultText() != null) {
+            this.onUseListener.run(getResultText());
+        }
+        lambda$new$0();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$updateButton$18(View view) {
+        lambda$new$0();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$updateButton$19() {
+        if (this.showLimit) {
             return;
         }
         this.allButton.setVisibility(8);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateButton$16(boolean z) {
-        if (z) {
+    public /* synthetic */ void lambda$updateButton$20() {
+        if (this.showLimit) {
             this.buttonContainer.setVisibility(8);
         }
     }
@@ -654,22 +794,37 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         } else {
             formatString = LocaleController.formatString(R.string.AIEditorStyleLimitText, Integer.valueOf(messagesController.config.aicomposeToneSavedLimitPremium.get()));
         }
-        bulletinFactory.createSimpleBulletin(i2, string, AndroidUtilities.replaceSingleTag(formatString, new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda27
+        bulletinFactory.createSimpleBulletin(i2, string, AndroidUtilities.replaceSingleTag(formatString, new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda34
             @Override // java.lang.Runnable
             public final void run() {
-                AIEditorAlert.lambda$showStylesLimitToast$17(BulletinFactory.this);
+                AIEditorAlert.lambda$showStylesLimitToast$21(BulletinFactory.this);
             }
         })).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showStylesLimitToast$17(BulletinFactory bulletinFactory) {
+    public static /* synthetic */ void lambda$showStylesLimitToast$21(BulletinFactory bulletinFactory) {
         new PremiumFeatureBottomSheet(bulletinFactory.getContext(), 42, true, bulletinFactory.getResourcesProvider()).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void selectStyle(TL_aicompose.AiComposeTone aiComposeTone) {
         int i;
+        HintView2 hintView2 = this.styleHint;
+        if (hintView2 != null) {
+            hintView2.hide();
+        }
+        if (aiComposeTone instanceof PromptTone) {
+            this.styleTabs.selectTone(aiComposeTone);
+            this.adapter.update(true);
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda29
+                @Override // java.lang.Runnable
+                public final void run() {
+                    AIEditorAlert.this.lambda$selectStyle$22();
+                }
+            }, 16L);
+            return;
+        }
         if (aiComposeTone == null) {
             int savedTonesCount = this.tonesController.getSavedTonesCount() + 1;
             if (UserConfig.getInstance(this.currentAccount).isPremium()) {
@@ -681,10 +836,10 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
                 showStylesLimitToast(BulletinFactory.of(this.bulletinContainer, this.resourcesProvider), this.currentAccount);
                 return;
             } else {
-                new CreateAiStyleAlert(getContext(), this.resourcesProvider).setOnToneCreated(new Utilities.Callback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda24
+                new CreateAiStyleAlert(getContext(), this.resourcesProvider).setOnToneCreated(new Utilities.Callback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda30
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        AIEditorAlert.this.lambda$selectStyle$18((TL_aicompose.AiComposeTone) obj);
+                        AIEditorAlert.this.lambda$selectStyle$23((TL_aicompose.AiComposeTone) obj);
                     }
                 }).show();
                 return;
@@ -693,17 +848,18 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         if (this.styleTabs.getSelectedTone() == aiComposeTone) {
             return;
         }
-        HintView2 hintView2 = this.styleHint;
-        if (hintView2 != null) {
-            hintView2.hide();
-        }
         this.styleTabs.selectTone(aiComposeTone);
         request();
         this.adapter.update(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$selectStyle$18(TL_aicompose.AiComposeTone aiComposeTone) {
+    public /* synthetic */ void lambda$selectStyle$22() {
+        AndroidUtilities.showKeyboard(this.promptCell.editText);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$selectStyle$23(TL_aicompose.AiComposeTone aiComposeTone) {
         this.tonesController.tones.add(0, aiComposeTone);
         updateStyles();
         BulletinFactory.of(this.bulletinContainer, this.resourcesProvider).createEmojiBulletin(aiComposeTone.emoji_id, LocaleController.formatString(R.string.AIEditorToneCreatedTitle, aiComposeTone.title), LocaleController.getString(R.string.AIEditorToneCreatedText)).show();
@@ -743,15 +899,273 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         return spannableStringBuilder;
     }
 
+    public AIEditorAlert setText(TL_iv.RichMessage richMessage) {
+        this.textRich = richMessage;
+        if (LanguageDetector.hasSupport()) {
+            LanguageDetector.detectLanguage(format(this.textRich), new LanguageDetector.StringCallback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda19
+                @Override // org.telegram.messenger.LanguageDetector.StringCallback
+                public final void run(String str) {
+                    AIEditorAlert.this.lambda$setText$24(str);
+                }
+            }, new LanguageDetector.ExceptionCallback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda20
+                @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
+                public final void run(Exception exc) {
+                    FileLog.e(exc);
+                }
+            });
+        }
+        updateStyles();
+        return this;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setText$24(String str) {
+        this.from_lang = str;
+        this.adapter.update(true);
+    }
+
+    private static String format(TL_iv.RichMessage richMessage) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < richMessage.blocks.size(); i++) {
+            if (i > 0) {
+                sb.append("\n");
+            }
+            format(richMessage.blocks.get(i), sb);
+        }
+        return sb.toString();
+    }
+
+    private static void format(TL_iv.RichText richText, StringBuilder sb) {
+        if (richText instanceof TL_iv.textPlain) {
+            sb.append(((TL_iv.textPlain) richText).text);
+            return;
+        }
+        if (!(richText instanceof TL_iv.textConcat)) {
+            if (richText != null) {
+                format(richText.text, sb);
+            }
+        } else {
+            TL_iv.textConcat textconcat = (TL_iv.textConcat) richText;
+            for (int i = 0; i < textconcat.texts.size(); i++) {
+                format(textconcat.texts.get(i), sb);
+            }
+        }
+    }
+
+    private static void format(TL_iv.PageBlock pageBlock, StringBuilder sb) {
+        if ((pageBlock instanceof TL_iv.pageBlockHeading1) || (pageBlock instanceof TL_iv.pageBlockHeading2) || (pageBlock instanceof TL_iv.pageBlockHeading3) || (pageBlock instanceof TL_iv.pageBlockHeading4) || (pageBlock instanceof TL_iv.pageBlockHeading5) || (pageBlock instanceof TL_iv.pageBlockHeading6) || (pageBlock instanceof TL_iv.pageBlockParagraph) || (pageBlock instanceof TL_iv.pageBlockPreformatted) || (pageBlock instanceof TL_iv.pageBlockFooter)) {
+            format(pageBlock.text, sb);
+            return;
+        }
+        if ((pageBlock instanceof TL_iv.pageBlockMap) || (pageBlock instanceof TL_iv.pageBlockAudio) || (pageBlock instanceof TL_iv.pageBlockVideo) || (pageBlock instanceof TL_iv.pageBlockPhoto) || (pageBlock instanceof TL_iv.pageBlockSlideshow) || (pageBlock instanceof TL_iv.pageBlockCollage)) {
+            TL_iv.PageCaption pageCaption = pageBlock.caption;
+            if (pageCaption != null) {
+                format(pageCaption.text, sb);
+                return;
+            }
+            return;
+        }
+        if (pageBlock instanceof TL_iv.pageBlockTable) {
+            TL_iv.RichText richText = ((TL_iv.pageBlockTable) pageBlock).title;
+            if (richText != null) {
+                format(richText, sb);
+                return;
+            }
+            return;
+        }
+        if (pageBlock instanceof TL_iv.pageBlockList) {
+            TL_iv.pageBlockList pageblocklist = (TL_iv.pageBlockList) pageBlock;
+            for (int i = 0; i < pageblocklist.items.size(); i++) {
+                if (i > 0) {
+                    sb.append("\n");
+                }
+                TL_iv.PageListItem pageListItem = pageblocklist.items.get(i);
+                if (pageListItem instanceof TL_iv.TL_pageListItemText) {
+                    format(((TL_iv.TL_pageListItemText) pageListItem).text, sb);
+                } else if (pageListItem instanceof TL_iv.TL_pageListItemBlocks) {
+                    ArrayList<TL_iv.PageBlock> arrayList = ((TL_iv.TL_pageListItemBlocks) pageListItem).blocks;
+                    for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                        if (i2 > 0) {
+                            sb.append("\n");
+                        }
+                        format(arrayList.get(i2), sb);
+                    }
+                }
+            }
+            return;
+        }
+        if (pageBlock instanceof TL_iv.pageBlockOrderedList) {
+            TL_iv.pageBlockOrderedList pageblockorderedlist = (TL_iv.pageBlockOrderedList) pageBlock;
+            for (int i3 = 0; i3 < pageblockorderedlist.items.size(); i3++) {
+                if (i3 > 0) {
+                    sb.append("\n");
+                }
+                TL_iv.PageListOrderedItem pageListOrderedItem = pageblockorderedlist.items.get(i3);
+                if (pageListOrderedItem instanceof TL_iv.TL_pageListOrderedItemText) {
+                    format(((TL_iv.TL_pageListOrderedItemText) pageListOrderedItem).text, sb);
+                } else if (pageListOrderedItem instanceof TL_iv.TL_pageListOrderedItemBlocks) {
+                    ArrayList<TL_iv.PageBlock> arrayList2 = ((TL_iv.TL_pageListOrderedItemBlocks) pageListOrderedItem).blocks;
+                    for (int i4 = 0; i4 < arrayList2.size(); i4++) {
+                        if (i4 > 0) {
+                            sb.append("\n");
+                        }
+                        format(arrayList2.get(i4), sb);
+                    }
+                }
+            }
+        }
+    }
+
+    public static CharSequence formatStyled(TL_iv.RichMessage richMessage) {
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        if (richMessage == null) {
+            return spannableStringBuilder;
+        }
+        for (int i = 0; i < richMessage.blocks.size(); i++) {
+            if (i > 0) {
+                spannableStringBuilder.append((CharSequence) "\n");
+            }
+            formatStyled(richMessage.blocks.get(i), spannableStringBuilder);
+        }
+        return spannableStringBuilder;
+    }
+
+    private static void appendStyled(TL_iv.RichText richText, SpannableStringBuilder spannableStringBuilder) {
+        if (richText != null) {
+            spannableStringBuilder.append(RichTextStyle.toSpannable(richText));
+        }
+    }
+
+    private static void formatStyled(TL_iv.PageBlock pageBlock, SpannableStringBuilder spannableStringBuilder) {
+        if ((pageBlock instanceof TL_iv.pageBlockHeading1) || (pageBlock instanceof TL_iv.pageBlockHeading2) || (pageBlock instanceof TL_iv.pageBlockHeading3) || (pageBlock instanceof TL_iv.pageBlockHeading4) || (pageBlock instanceof TL_iv.pageBlockHeading5) || (pageBlock instanceof TL_iv.pageBlockHeading6) || (pageBlock instanceof TL_iv.pageBlockParagraph) || (pageBlock instanceof TL_iv.pageBlockPreformatted) || (pageBlock instanceof TL_iv.pageBlockFooter)) {
+            appendStyled(pageBlock.text, spannableStringBuilder);
+            return;
+        }
+        if ((pageBlock instanceof TL_iv.pageBlockMap) || (pageBlock instanceof TL_iv.pageBlockAudio) || (pageBlock instanceof TL_iv.pageBlockVideo) || (pageBlock instanceof TL_iv.pageBlockPhoto) || (pageBlock instanceof TL_iv.pageBlockSlideshow) || (pageBlock instanceof TL_iv.pageBlockCollage)) {
+            TL_iv.PageCaption pageCaption = pageBlock.caption;
+            if (pageCaption != null) {
+                appendStyled(pageCaption.text, spannableStringBuilder);
+                return;
+            }
+            return;
+        }
+        if (pageBlock instanceof TL_iv.pageBlockTable) {
+            TL_iv.RichText richText = ((TL_iv.pageBlockTable) pageBlock).title;
+            if (richText != null) {
+                appendStyled(richText, spannableStringBuilder);
+                return;
+            }
+            return;
+        }
+        if (pageBlock instanceof TL_iv.pageBlockList) {
+            TL_iv.pageBlockList pageblocklist = (TL_iv.pageBlockList) pageBlock;
+            for (int i = 0; i < pageblocklist.items.size(); i++) {
+                if (i > 0) {
+                    spannableStringBuilder.append("\n");
+                }
+                TL_iv.PageListItem pageListItem = pageblocklist.items.get(i);
+                if (pageListItem instanceof TL_iv.TL_pageListItemText) {
+                    appendStyled(((TL_iv.TL_pageListItemText) pageListItem).text, spannableStringBuilder);
+                } else if (pageListItem instanceof TL_iv.TL_pageListItemBlocks) {
+                    ArrayList<TL_iv.PageBlock> arrayList = ((TL_iv.TL_pageListItemBlocks) pageListItem).blocks;
+                    for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                        if (i2 > 0) {
+                            spannableStringBuilder.append("\n");
+                        }
+                        formatStyled(arrayList.get(i2), spannableStringBuilder);
+                    }
+                }
+            }
+            return;
+        }
+        if (pageBlock instanceof TL_iv.pageBlockOrderedList) {
+            TL_iv.pageBlockOrderedList pageblockorderedlist = (TL_iv.pageBlockOrderedList) pageBlock;
+            for (int i3 = 0; i3 < pageblockorderedlist.items.size(); i3++) {
+                if (i3 > 0) {
+                    spannableStringBuilder.append("\n");
+                }
+                TL_iv.PageListOrderedItem pageListOrderedItem = pageblockorderedlist.items.get(i3);
+                if (pageListOrderedItem instanceof TL_iv.TL_pageListOrderedItemText) {
+                    appendStyled(((TL_iv.TL_pageListOrderedItemText) pageListOrderedItem).text, spannableStringBuilder);
+                } else if (pageListOrderedItem instanceof TL_iv.TL_pageListOrderedItemBlocks) {
+                    ArrayList<TL_iv.PageBlock> arrayList2 = ((TL_iv.TL_pageListOrderedItemBlocks) pageListOrderedItem).blocks;
+                    for (int i4 = 0; i4 < arrayList2.size(); i4++) {
+                        if (i4 > 0) {
+                            spannableStringBuilder.append("\n");
+                        }
+                        formatStyled(arrayList2.get(i4), spannableStringBuilder);
+                    }
+                }
+            }
+        }
+    }
+
+    private static TL_iv.TL_inputRichMessage toInput(TL_iv.RichMessage richMessage) {
+        TL_iv.TL_inputRichMessage tL_inputRichMessage = new TL_iv.TL_inputRichMessage();
+        if (richMessage == null) {
+            return tL_inputRichMessage;
+        }
+        tL_inputRichMessage.rtl = richMessage.rtl;
+        tL_inputRichMessage.blocks = new ArrayList<>(richMessage.blocks.size());
+        for (int i = 0; i < richMessage.blocks.size(); i++) {
+            tL_inputRichMessage.blocks.add(SendMessagesHelper.toInputPageBlock(richMessage.blocks.get(i)));
+        }
+        ArrayList<TLRPC.Photo> arrayList = richMessage.photos;
+        if (arrayList != null && !arrayList.isEmpty()) {
+            tL_inputRichMessage.flags |= 4;
+            Iterator<TLRPC.Photo> it = richMessage.photos.iterator();
+            while (it.hasNext()) {
+                TLRPC.Photo next = it.next();
+                TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
+                tL_inputPhoto.id = next.id;
+                tL_inputPhoto.access_hash = next.access_hash;
+                byte[] bArr = next.file_reference;
+                if (bArr == null) {
+                    bArr = new byte[0];
+                }
+                tL_inputPhoto.file_reference = bArr;
+                tL_inputRichMessage.photos.add(tL_inputPhoto);
+            }
+        }
+        ArrayList<TLRPC.Document> arrayList2 = richMessage.documents;
+        if (arrayList2 != null && !arrayList2.isEmpty()) {
+            tL_inputRichMessage.flags |= 8;
+            Iterator<TLRPC.Document> it2 = richMessage.documents.iterator();
+            while (it2.hasNext()) {
+                TLRPC.Document next2 = it2.next();
+                TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
+                tL_inputDocument.id = next2.id;
+                tL_inputDocument.access_hash = next2.access_hash;
+                byte[] bArr2 = next2.file_reference;
+                if (bArr2 == null) {
+                    bArr2 = new byte[0];
+                }
+                tL_inputDocument.file_reference = bArr2;
+                tL_inputRichMessage.documents.add(tL_inputDocument);
+            }
+        }
+        return tL_inputRichMessage;
+    }
+
+    private UItem previewItem(int i, TL_iv.RichMessage richMessage, boolean z) {
+        if (richMessage == null) {
+            richMessage = this.textRich;
+        }
+        UItem of = RichMessageLayout.PreviewView.Factory.of(richMessage);
+        of.id = i;
+        of.checked = z;
+        return of;
+    }
+
     public AIEditorAlert setText(CharSequence charSequence) {
         this.text = copy(charSequence);
         if (LanguageDetector.hasSupport()) {
-            LanguageDetector.detectLanguage(charSequence.toString(), new LanguageDetector.StringCallback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda9
+            LanguageDetector.detectLanguage(charSequence.toString(), new LanguageDetector.StringCallback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda10
                 @Override // org.telegram.messenger.LanguageDetector.StringCallback
                 public final void run(String str) {
-                    AIEditorAlert.this.lambda$setText$19(str);
+                    AIEditorAlert.this.lambda$setText$26(str);
                 }
-            }, new LanguageDetector.ExceptionCallback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda10
+            }, new LanguageDetector.ExceptionCallback() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda11
                 @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
                 public final void run(Exception exc) {
                     FileLog.e(exc);
@@ -762,7 +1176,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setText$19(String str) {
+    public /* synthetic */ void lambda$setText$26(String str) {
         this.from_lang = str;
         this.adapter.update(true);
     }
@@ -772,11 +1186,50 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         return this;
     }
 
+    public AIEditorAlert setOnUseRich(Utilities.Callback callback) {
+        this.onUseRichListener = callback;
+        return this;
+    }
+
+    private boolean isRich() {
+        return this.textRich != null;
+    }
+
     public AIEditorAlert setOnSend(long j, boolean z, Utilities.Callback4 callback4) {
         this.dialogId = j;
         this.editing = z;
         this.onSendListener = callback4;
         return this;
+    }
+
+    public AIEditorAlert setOnSendRich(long j, Utilities.Callback4 callback4) {
+        this.dialogId = j;
+        this.onSendRichListener = callback4;
+        return this;
+    }
+
+    private boolean hasSend() {
+        return (this.onSendRichListener == null && this.onSendListener == null) ? false : true;
+    }
+
+    private boolean hasSendResult() {
+        return this.onSendRichListener == null ? !(this.onSendListener == null || getResultText() == null) : getResultRich() != null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void runSend(int i, int i2, boolean z) {
+        if (this.onSendRichListener != null) {
+            TL_iv.RichMessage resultRich = getResultRich();
+            if (resultRich != null) {
+                this.onSendRichListener.run(resultRich, Integer.valueOf(i), Integer.valueOf(i2), Boolean.valueOf(z));
+                return;
+            }
+            return;
+        }
+        if (this.onSendListener == null || getResultText() == null) {
+            return;
+        }
+        this.onSendListener.run(getResultText(), Integer.valueOf(i), Integer.valueOf(i2), Boolean.valueOf(z));
     }
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
@@ -793,7 +1246,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
     protected RecyclerListView.SelectionAdapter createAdapter(RecyclerListView recyclerListView) {
-        UniversalAdapter universalAdapter = new UniversalAdapter(recyclerListView, getContext(), this.currentAccount, 0, true, new Utilities.Callback2() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda11
+        UniversalAdapter universalAdapter = new UniversalAdapter(recyclerListView, getContext(), this.currentAccount, 0, true, new Utilities.Callback2() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda18
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 AIEditorAlert.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
@@ -816,8 +1269,14 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public CharSequence getResultText() {
+    private CharSequence getResultText() {
+        if (isRich()) {
+            TL_iv.RichMessage resultRich = getResultRich();
+            if (resultRich == null) {
+                return null;
+            }
+            return formatStyled(resultRich);
+        }
         if (this.loading) {
             return null;
         }
@@ -841,6 +1300,30 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         return charSequence == null ? this.text : charSequence;
     }
 
+    private TL_iv.RichMessage getResultRich() {
+        if (this.loading) {
+            return null;
+        }
+        int selectedTab = this.tabs.getSelectedTab();
+        if (selectedTab == 0) {
+            if (this.translatedTextLoading) {
+                return null;
+            }
+            return this.translatedTextRich;
+        }
+        if (selectedTab == 2) {
+            if (this.fixedTextLoading) {
+                return null;
+            }
+            return this.fixedTextRich;
+        }
+        if (this.styledTextLoading) {
+            return null;
+        }
+        TL_iv.RichMessage richMessage = this.styledTextRich;
+        return richMessage == null ? this.textRich : richMessage;
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public void copyResult(View view) {
         if (this.loading) {
@@ -859,8 +1342,15 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
 
     /* JADX INFO: Access modifiers changed from: private */
     public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
+        UItem of;
+        TL_iv.RichMessage richMessage;
+        UItem of2;
+        TL_iv.RichMessage richMessage2;
+        UItem of3;
         String substring;
         String str;
+        UItem of4;
+        TL_iv.RichMessage richMessage3;
         String substring2;
         String substring3;
         arrayList.add(UItem.asShadow(null));
@@ -892,7 +1382,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
             } else {
                 arrayList.add(TranslateAlert3.Header.Factory.of(3, LocaleController.getString(R.string.AIEditorOriginalText), null, null, null));
             }
-            arrayList.add(TranslateAlert3.Text.Factory.of(4, this.text, this.collapsed, false, new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda15
+            arrayList.add(isRich() ? previewItem(4, this.textRich, false) : TranslateAlert3.Text.Factory.of(4, this.text, this.collapsed, false, new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda21
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     AIEditorAlert.this.collapse(view);
@@ -919,66 +1409,104 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
                 str3 = " (" + this.translateToneTitle + ")";
             }
             sb.append(str3);
-            arrayList.add(TranslateAlert3.Header.Factory.of(5, str, sb.toString(), substring, new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda16
+            arrayList.add(TranslateAlert3.Header.Factory.of(5, str, sb.toString(), substring, new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda22
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     AIEditorAlert.this.onToLangMenu(view);
                 }
-            }, this.emojify, new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda17
+            }, this.emojify, new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda23
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     AIEditorAlert.this.toggleEmojify(view);
                 }
             }, null));
-            boolean z = this.translatedTextLoading;
-            arrayList.add(TranslateAlert3.Text.Factory.of(z ? 7 : 6, this.translatedText, false, false, null, null, !z ? new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda18
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    AIEditorAlert.this.copyResult(view);
+            if (isRich()) {
+                boolean z = this.translatedTextLoading;
+                if (z || (richMessage3 = this.translatedTextRich) == null) {
+                    richMessage3 = this.textRich;
                 }
-            } : null));
-        } else if (selectedTab == 1) {
-            arrayList.add(UItem.asCustom(this.styleTabs));
-            Tabs tabs2 = this.styleTabs;
-            if (tabs2 != null && tabs2.getSelectedTab() < 0 && !this.emojify) {
-                arrayList.add(TranslateAlert3.Header.Factory.of(5, LocaleController.getString(R.string.AIEditorOriginal), null, null, null, this.emojify, new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda17
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        AIEditorAlert.this.toggleEmojify(view);
-                    }
-                }, null));
-                arrayList.add(TranslateAlert3.Text.Factory.of(this.styledTextLoading ? 7 : 6, this.text, false, false, null, null, null));
+                of4 = previewItem(6, richMessage3, z);
             } else {
-                arrayList.add(TranslateAlert3.Header.Factory.of(5, LocaleController.getString(R.string.AIEditorResult), null, null, null, this.emojify, new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda17
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        AIEditorAlert.this.toggleEmojify(view);
-                    }
-                }, null));
-                boolean z2 = this.styledTextLoading;
-                arrayList.add(TranslateAlert3.Text.Factory.of(z2 ? 7 : 6, this.styledText, false, false, null, null, !z2 ? new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda18
+                boolean z2 = this.translatedTextLoading;
+                of4 = TranslateAlert3.Text.Factory.of(z2 ? 7 : 6, this.translatedText, false, false, null, null, !z2 ? new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda24
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         AIEditorAlert.this.copyResult(view);
                     }
-                } : null));
+                } : null);
+            }
+            arrayList.add(of4);
+        } else if (selectedTab == 1) {
+            arrayList.add(UItem.asCustom(this.styleTabs));
+            if (this.styleTabs.getSelectedTone() instanceof PromptTone) {
+                arrayList.add(UItem.asCustom(10, this.promptBox));
+                universalAdapter.whiteSectionEnd();
+                arrayList.add(UItem.asShadow(11, null));
+                universalAdapter.whiteSectionStart();
+            }
+            Tabs tabs2 = this.styleTabs;
+            if ((tabs2 != null && tabs2.getSelectedTab() < 0 && !this.emojify) || ((this.styleTabs.getSelectedTone() instanceof PromptTone) && !TextUtils.equals(this.promptCell.getText().toString(), this.promptText))) {
+                arrayList.add(TranslateAlert3.Header.Factory.of(5, LocaleController.getString(R.string.AIEditorOriginal), null, null, null, this.emojify, new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda23
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        AIEditorAlert.this.toggleEmojify(view);
+                    }
+                }, null));
+                if (isRich()) {
+                    of3 = previewItem(6, this.textRich, false);
+                } else {
+                    of3 = TranslateAlert3.Text.Factory.of(this.styledTextLoading ? 7 : 6, this.text, false, false, null, null, null);
+                }
+                arrayList.add(of3);
+            } else {
+                arrayList.add(TranslateAlert3.Header.Factory.of(7, LocaleController.getString(R.string.AIEditorResult), null, null, null, this.emojify, new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda23
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        AIEditorAlert.this.toggleEmojify(view);
+                    }
+                }, null));
+                if (isRich()) {
+                    boolean z3 = this.styledTextLoading;
+                    if (z3 || (richMessage2 = this.styledTextRich) == null) {
+                        richMessage2 = this.textRich;
+                    }
+                    of2 = previewItem(8, richMessage2, z3);
+                } else {
+                    boolean z4 = this.styledTextLoading;
+                    of2 = TranslateAlert3.Text.Factory.of(z4 ? 7 : 6, this.styledText, false, false, null, null, !z4 ? new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda24
+                        @Override // android.view.View.OnClickListener
+                        public final void onClick(View view) {
+                            AIEditorAlert.this.copyResult(view);
+                        }
+                    } : null);
+                }
+                arrayList.add(of2);
             }
         } else if (selectedTab == 2) {
             arrayList.add(TranslateAlert3.Header.Factory.of(3, LocaleController.getString(R.string.AIEditorOriginal), null, null, null));
-            arrayList.add(TranslateAlert3.Text.Factory.of(4, this.text, this.collapsed, false, new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda15
+            arrayList.add(isRich() ? previewItem(4, this.textRich, false) : TranslateAlert3.Text.Factory.of(4, this.text, this.collapsed, false, new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda21
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     AIEditorAlert.this.collapse(view);
                 }
             }, null, null));
             arrayList.add(TranslateAlert3.Header.Factory.of(5, LocaleController.getString(R.string.AIEditorResult), null, null, null));
-            boolean z3 = this.fixedTextLoading;
-            arrayList.add(TranslateAlert3.Text.Factory.of(z3 ? 7 : 6, this.fixedText, false, false, null, null, !z3 ? new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda18
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    AIEditorAlert.this.copyResult(view);
+            if (isRich()) {
+                boolean z5 = this.fixedTextLoading;
+                if (z5 || (richMessage = this.fixedTextRich) == null) {
+                    richMessage = this.textRich;
                 }
-            } : null));
+                of = previewItem(6, richMessage, z5);
+            } else {
+                boolean z6 = this.fixedTextLoading;
+                of = TranslateAlert3.Text.Factory.of(z6 ? 7 : 6, this.fixedText, false, false, null, null, !z6 ? new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda24
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        AIEditorAlert.this.copyResult(view);
+                    }
+                } : null);
+            }
+            arrayList.add(of);
         }
         universalAdapter.whiteSectionEnd();
         arrayList.add(UItem.asShadow(null));
@@ -994,23 +1522,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         updateSendButtonIcon();
         this.adapter.update(false);
         request();
-        if (this.onUseListener != null) {
-            this.button.setText(LocaleController.getString(R.string.AIEditorApply));
-            this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda12
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    AIEditorAlert.this.lambda$show$21(view);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$21(View view) {
-        if (this.onUseListener != null && getResultText() != null) {
-            this.onUseListener.run(getResultText());
-        }
-        lambda$new$0();
+        updateButton();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1033,10 +1545,10 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         while (it.hasNext()) {
             final TranslateController.Language next = it.next();
             if (!TextUtils.equals(next.code, this.to_lang)) {
-                addChecked(makeOptions, linearLayout, false, next.displayName, new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda28
+                addChecked(makeOptions, linearLayout, false, next.displayName, new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda35
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AIEditorAlert.this.lambda$onToLangMenu$22(next);
+                        AIEditorAlert.this.lambda$onToLangMenu$28(next);
                     }
                 });
             }
@@ -1047,10 +1559,10 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         Iterator<TranslateController.Language> it2 = languages.iterator();
         while (it2.hasNext()) {
             final TranslateController.Language next2 = it2.next();
-            addChecked(makeOptions, linearLayout, TextUtils.equals(next2.code, this.to_lang), next2.displayName, new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda29
+            addChecked(makeOptions, linearLayout, TextUtils.equals(next2.code, this.to_lang), next2.displayName, new Runnable() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda36
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AIEditorAlert.this.lambda$onToLangMenu$23(next2);
+                    AIEditorAlert.this.lambda$onToLangMenu$29(next2);
                 }
             });
         }
@@ -1058,7 +1570,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onToLangMenu$22(TranslateController.Language language) {
+    public /* synthetic */ void lambda$onToLangMenu$28(TranslateController.Language language) {
         cancelRequest();
         String str = language.code;
         this.to_lang = str;
@@ -1067,7 +1579,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onToLangMenu$23(TranslateController.Language language) {
+    public /* synthetic */ void lambda$onToLangMenu$29(TranslateController.Language language) {
         cancelRequest();
         String str = language.code;
         this.to_lang = str;
@@ -1084,17 +1596,17 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         actionBarMenuSubItem.setChecked(z);
         actionBarMenuSubItem.setColors(Theme.getColor(i, this.resourcesProvider), Theme.getColor(i2, this.resourcesProvider));
         actionBarMenuSubItem.setSelectorColor(Theme.multAlpha(Theme.getColor(i, this.resourcesProvider), 0.12f));
-        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda35
+        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda40
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AIEditorAlert.lambda$addChecked$24(ItemOptions.this, z, runnable, view);
+                AIEditorAlert.lambda$addChecked$30(ItemOptions.this, z, runnable, view);
             }
         });
         linearLayout.addView(actionBarMenuSubItem, LayoutHelper.createLinear(-1, -2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$addChecked$24(ItemOptions itemOptions, boolean z, Runnable runnable, View view) {
+    public static /* synthetic */ void lambda$addChecked$30(ItemOptions itemOptions, boolean z, Runnable runnable, View view) {
         itemOptions.dismiss();
         if (z || runnable == null) {
             return;
@@ -1123,6 +1635,10 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
     }
 
     private void request() {
+        if (isRich()) {
+            requestRich();
+            return;
+        }
         TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
         CharSequence[] charSequenceArr = {this.text};
         tL_textWithEntities.entities = MediaDataController.getInstance(this.currentAccount).getEntities(charSequenceArr, true);
@@ -1137,7 +1653,11 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
             tL_messages_composeMessageWithAI.emojify = this.emojify;
         } else if (selectedTab == 1) {
             TL_aicompose.AiComposeTone selectedTone = this.styleTabs.getSelectedTone();
-            if (selectedTone instanceof TL_aicompose.TL_aiComposeTone) {
+            if (selectedTone instanceof PromptTone) {
+                TL_aicompose.inputAiComposeToneSingleUse inputaicomposetonesingleuse = new TL_aicompose.inputAiComposeToneSingleUse();
+                inputaicomposetonesingleuse.custom_prompt = TextUtils.isEmpty(this.promptText) ? "" : this.promptText;
+                tL_messages_composeMessageWithAI.tone = inputaicomposetonesingleuse;
+            } else if (selectedTone instanceof TL_aicompose.TL_aiComposeTone) {
                 TL_aicompose.inputAiComposeToneID inputaicomposetoneid = new TL_aicompose.inputAiComposeToneID();
                 TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) selectedTone;
                 inputaicomposetoneid.id = tL_aiComposeTone.id;
@@ -1157,9 +1677,9 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
             return;
         }
         if (tL_messages_composeMessageWithAI.emojify || tL_messages_composeMessageWithAI.proofread || tL_messages_composeMessageWithAI.tone != null || tL_messages_composeMessageWithAI.translate_to_lang != null) {
-            ButtonWithCounterView buttonWithCounterView = this.button;
             this.loading = true;
-            buttonWithCounterView.setLoading(true);
+            this.errored = false;
+            updateButton();
             final SimpleTextView titleTextView = this.actionBar.getTitleTextView();
             titleTextView.setRightDrawable(this.titleLoadingDrawable);
             this.titleLoadingDrawable.start();
@@ -1184,10 +1704,10 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
                 this.fixedTextLoading = true;
                 this.fixedText = spannableStringBuilder;
             }
-            this.requestId = ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_composeMessageWithAI, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda19
+            this.requestId = ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_composeMessageWithAI, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    AIEditorAlert.this.lambda$request$27(titleTextView, selectedTab, tL_messages_composeMessageWithAI, (TLRPC.TL_composedMessageWithAI) obj, (TLRPC.TL_error) obj2);
+                    AIEditorAlert.this.lambda$request$31(titleTextView, selectedTab, tL_messages_composeMessageWithAI, (TLRPC.TL_composedMessageWithAI) obj, (TLRPC.TL_error) obj2);
                 }
             });
             this.adapter.update(true);
@@ -1195,43 +1715,33 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$request$27(SimpleTextView simpleTextView, int i, TLRPC.TL_messages_composeMessageWithAI tL_messages_composeMessageWithAI, TLRPC.TL_composedMessageWithAI tL_composedMessageWithAI, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$request$31(SimpleTextView simpleTextView, int i, TLRPC.TL_messages_composeMessageWithAI tL_messages_composeMessageWithAI, TLRPC.TL_composedMessageWithAI tL_composedMessageWithAI, TLRPC.TL_error tL_error) {
         this.requestId = -1;
-        ButtonWithCounterView buttonWithCounterView = this.button;
         this.loading = false;
-        buttonWithCounterView.setLoading(false);
         if (tL_error != null && ("SUMMARY_FLOOD_PREMIUM".equalsIgnoreCase(tL_error.text) || "AICOMPOSE_FLOOD_PREMIUM".equalsIgnoreCase(tL_error.text))) {
             BulletinFactory.of(this.bulletinContainer, this.resourcesProvider).createSimpleBulletin(R.raw.star_premium_2, LocaleController.getString(R.string.AIEditorLimitTitle), AndroidUtilities.replaceTags(LocaleController.getString(R.string.AIEditorLimitText))).show();
-            updateButton(true);
+            this.showLimit = true;
+            updateButton();
             return;
         }
         if (tL_error != null) {
             BulletinFactory.of(this.bulletinContainer, this.resourcesProvider).showForError(tL_error);
             simpleTextView.setRightDrawable((Drawable) null);
-            this.button.setText(LocaleController.getString(R.string.OK));
-            this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda32
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    AIEditorAlert.this.lambda$request$25(view);
-                }
-            });
-            updateButton(false);
+            this.errored = true;
+            this.showLimit = false;
+            updateButton();
             return;
         }
         if (tL_composedMessageWithAI == null) {
             simpleTextView.setRightDrawable((Drawable) null);
-            this.button.setText(LocaleController.getString(R.string.OK));
-            this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda33
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    AIEditorAlert.this.lambda$request$26(view);
-                }
-            });
-            updateButton(false);
+            this.errored = true;
+            this.showLimit = false;
+            updateButton();
             return;
         }
         simpleTextView.setRightDrawable((Drawable) null);
-        updateButton(false);
+        this.showLimit = false;
+        updateButton();
         this.lastRequest[i] = tL_messages_composeMessageWithAI;
         if (i == 0) {
             this.translatedTextLoading = false;
@@ -1254,17 +1764,108 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
         this.adapter.update(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$request$25(View view) {
-        lambda$new$0();
+    private void requestRich() {
+        final int selectedTab = this.tabs.getSelectedTab();
+        final TLRPC.TL_messages_composeRichMessageWithAI tL_messages_composeRichMessageWithAI = new TLRPC.TL_messages_composeRichMessageWithAI();
+        tL_messages_composeRichMessageWithAI.flags |= 16;
+        tL_messages_composeRichMessageWithAI.text = toInput(this.textRich);
+        if (selectedTab == 0) {
+            tL_messages_composeRichMessageWithAI.translate_to_lang = TranslateController.normalizeLanguage(this.to_lang);
+            tL_messages_composeRichMessageWithAI.tone = TL_aicompose.InputAiComposeTone.fromDefault(this.translateTone);
+            tL_messages_composeRichMessageWithAI.emojify = this.emojify;
+        } else if (selectedTab == 1) {
+            TL_aicompose.AiComposeTone selectedTone = this.styleTabs.getSelectedTone();
+            if (selectedTone instanceof PromptTone) {
+                TL_aicompose.inputAiComposeToneSingleUse inputaicomposetonesingleuse = new TL_aicompose.inputAiComposeToneSingleUse();
+                inputaicomposetonesingleuse.custom_prompt = TextUtils.isEmpty(this.promptText) ? "" : this.promptText;
+                tL_messages_composeRichMessageWithAI.tone = inputaicomposetonesingleuse;
+            } else if (selectedTone instanceof TL_aicompose.TL_aiComposeTone) {
+                TL_aicompose.inputAiComposeToneID inputaicomposetoneid = new TL_aicompose.inputAiComposeToneID();
+                TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) selectedTone;
+                inputaicomposetoneid.id = tL_aiComposeTone.id;
+                inputaicomposetoneid.access_hash = tL_aiComposeTone.access_hash;
+                tL_messages_composeRichMessageWithAI.tone = inputaicomposetoneid;
+            } else if (selectedTone instanceof TL_aicompose.TL_aiComposeToneDefault) {
+                TL_aicompose.inputAiComposeToneDefault inputaicomposetonedefault = new TL_aicompose.inputAiComposeToneDefault();
+                inputaicomposetonedefault.tone = ((TL_aicompose.TL_aiComposeToneDefault) selectedTone).tone;
+                tL_messages_composeRichMessageWithAI.tone = inputaicomposetonedefault;
+            }
+            tL_messages_composeRichMessageWithAI.emojify = this.emojify;
+        } else if (selectedTab == 2) {
+            tL_messages_composeRichMessageWithAI.proofread = true;
+        }
+        TLRPC.TL_messages_composeRichMessageWithAI tL_messages_composeRichMessageWithAI2 = this.lastRequestRich[selectedTab];
+        if (tL_messages_composeRichMessageWithAI2 != null && tL_messages_composeRichMessageWithAI2.proofread == tL_messages_composeRichMessageWithAI.proofread && tL_messages_composeRichMessageWithAI2.emojify == tL_messages_composeRichMessageWithAI.emojify && TL_aicompose.InputAiComposeTone.equals(tL_messages_composeRichMessageWithAI2.tone, tL_messages_composeRichMessageWithAI.tone) && TextUtils.equals(tL_messages_composeRichMessageWithAI2.translate_to_lang, tL_messages_composeRichMessageWithAI.translate_to_lang)) {
+            return;
+        }
+        if (tL_messages_composeRichMessageWithAI.emojify || tL_messages_composeRichMessageWithAI.proofread || tL_messages_composeRichMessageWithAI.tone != null || tL_messages_composeRichMessageWithAI.translate_to_lang != null) {
+            this.loading = true;
+            this.errored = false;
+            updateButton();
+            final SimpleTextView titleTextView = this.actionBar.getTitleTextView();
+            titleTextView.setRightDrawable(this.titleLoadingDrawable);
+            this.titleLoadingDrawable.start();
+            if (selectedTab == 0) {
+                this.translatedTextLoading = true;
+            } else if (selectedTab == 1) {
+                this.styledTextLoading = true;
+            } else if (selectedTab == 2) {
+                this.fixedTextLoading = true;
+            }
+            this.requestId = ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_composeRichMessageWithAI, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.AIEditorAlert$$ExternalSyntheticLambda33
+                @Override // org.telegram.messenger.Utilities.Callback2
+                public final void run(Object obj, Object obj2) {
+                    AIEditorAlert.this.lambda$requestRich$32(titleTextView, selectedTab, tL_messages_composeRichMessageWithAI, (TLRPC.TL_composedRichMessageWithAI) obj, (TLRPC.TL_error) obj2);
+                }
+            });
+            this.adapter.update(true);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$request$26(View view) {
-        lambda$new$0();
+    public /* synthetic */ void lambda$requestRich$32(SimpleTextView simpleTextView, int i, TLRPC.TL_messages_composeRichMessageWithAI tL_messages_composeRichMessageWithAI, TLRPC.TL_composedRichMessageWithAI tL_composedRichMessageWithAI, TLRPC.TL_error tL_error) {
+        this.requestId = -1;
+        this.loading = false;
+        if (tL_error != null && ("SUMMARY_FLOOD_PREMIUM".equalsIgnoreCase(tL_error.text) || "AICOMPOSE_FLOOD_PREMIUM".equalsIgnoreCase(tL_error.text))) {
+            BulletinFactory.of(this.bulletinContainer, this.resourcesProvider).createSimpleBulletin(R.raw.star_premium_2, LocaleController.getString(R.string.AIEditorLimitTitle), AndroidUtilities.replaceTags(LocaleController.getString(R.string.AIEditorLimitText))).show();
+            this.showLimit = true;
+            updateButton();
+            return;
+        }
+        if (tL_error != null) {
+            BulletinFactory.of(this.bulletinContainer, this.resourcesProvider).showForError(tL_error);
+            simpleTextView.setRightDrawable((Drawable) null);
+            this.errored = true;
+            this.showLimit = false;
+            updateButton();
+            return;
+        }
+        if (tL_composedRichMessageWithAI == null) {
+            simpleTextView.setRightDrawable((Drawable) null);
+            this.errored = true;
+            this.showLimit = false;
+            updateButton();
+            return;
+        }
+        simpleTextView.setRightDrawable((Drawable) null);
+        this.showLimit = false;
+        updateButton();
+        this.lastRequestRich[i] = tL_messages_composeRichMessageWithAI;
+        if (i == 0) {
+            this.translatedTextLoading = false;
+            this.translatedTextRich = tL_composedRichMessageWithAI.result;
+        } else if (i == 1) {
+            this.styledTextLoading = false;
+            this.styledTextRich = tL_composedRichMessageWithAI.result;
+        } else if (i == 2) {
+            this.fixedTextLoading = false;
+            this.fixedTextRich = tL_composedRichMessageWithAI.result;
+        }
+        this.adapter.update(true);
     }
 
-    private void cancelRequest() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void cancelRequest() {
         if (this.requestId >= 0) {
             ConnectionsManager.getInstance(this.currentAccount).cancelRequest(this.requestId, true);
             this.requestId = -1;
@@ -1437,6 +2038,10 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
                 tab.accent = false;
                 tab.updateColors();
                 tab.set(R.drawable.tone_create, LocaleController.getString(R.string.AIEditorStyleNewCreate));
+            } else if (aiComposeTone instanceof PromptTone) {
+                tab.accent = false;
+                tab.updateColors();
+                tab.set(R.drawable.msg_edit, LocaleController.getString(R.string.AIEditorStylePrompt));
             } else {
                 tab.set(null, aiComposeTone.title, Long.valueOf(aiComposeTone.emoji_id));
             }

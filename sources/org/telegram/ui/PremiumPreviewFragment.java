@@ -531,23 +531,30 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                 }
                 c = 65535;
                 break;
+            case 1488814760:
+                if (str.equals("rich_formatting")) {
+                    c = '(';
+                    break;
+                }
+                c = 65535;
+                break;
             case 1537309393:
                 if (str.equals("saved_tags")) {
-                    c = '(';
+                    c = ')';
                     break;
                 }
                 c = 65535;
                 break;
             case 1832801148:
                 if (str.equals("app_icons")) {
-                    c = ')';
+                    c = '*';
                     break;
                 }
                 c = 65535;
                 break;
             case 2013274756:
                 if (str.equals("last_seen")) {
-                    c = '*';
+                    c = '+';
                     break;
                 }
                 c = 65535;
@@ -638,10 +645,12 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             case '\'':
                 return 16;
             case '(':
-                return 24;
+                return 43;
             case ')':
-                return 10;
+                return 24;
             case '*':
+                return 10;
+            case '+':
                 return 26;
             default:
                 return -1;
@@ -736,6 +745,8 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                 return "pm_noforwards";
             case 42:
                 return "ai_compose";
+            case 43:
+                return "rich_formatting";
             default:
                 return null;
         }
@@ -1410,6 +1421,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         arrayList.add(new PremiumFeatureData(39, i3, LocaleController.getString(R.string.PremiumPreviewTodo), LocaleController.getString(R.string.PremiumPreviewTodoDescription)));
         arrayList.add(new PremiumFeatureData(41, R.drawable.filled_sharing_off2_24, LocaleController.getString(R.string.PremiumPreviewSharingDisable), LocaleController.getString(R.string.PremiumPreviewSharingDisableDescription)));
         arrayList.add(new PremiumFeatureData(42, R.drawable.premium_ai_editor, LocaleController.getString(R.string.PremiumPreviewAIEditor), LocaleController.getString(R.string.PremiumPreviewAIEditorDescription)));
+        arrayList.add(new PremiumFeatureData(43, R.drawable.premium_rich_editor, LocaleController.getString(R.string.PremiumPreviewRichEditor), LocaleController.getString(R.string.PremiumPreviewRichEditorDescription)));
         if (messagesController.premiumFeaturesTypesToPosition.size() > 0) {
             while (i2 < arrayList.size()) {
                 if (messagesController.premiumFeaturesTypesToPosition.get(((PremiumFeatureData) arrayList.get(i2)).type, -1) == -1 && !BuildVars.DEBUG_PRIVATE_VERSION) {

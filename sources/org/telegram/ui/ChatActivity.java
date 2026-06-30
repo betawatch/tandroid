@@ -5475,7 +5475,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
                     @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
                     public void sendSticker(TLRPC.Document document, String str3, Object obj, boolean z5, int i23, int i24) {
-                        ChatActivity.this.chatActivityEnterView.lambda$onStickerSelected$89(document, str3, obj, null, true, z5, i23, i24);
+                        ChatActivity.this.chatActivityEnterView.lambda$onStickerSelected$90(document, str3, obj, null, true, z5, i23, i24);
                     }
 
                     @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -7306,7 +7306,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
             @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public void sendSticker(TLRPC.Document document, String str3, Object obj, boolean z52, int i232, int i242) {
-                ChatActivity.this.chatActivityEnterView.lambda$onStickerSelected$89(document, str3, obj, null, true, z52, i232, i242);
+                ChatActivity.this.chatActivityEnterView.lambda$onStickerSelected$90(document, str3, obj, null, true, z52, i232, i242);
             }
 
             @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
