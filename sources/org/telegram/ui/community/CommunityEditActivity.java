@@ -541,15 +541,23 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean onLongClick(UItem uItem, View view, int i, float f, float f2) {
+        int i2;
         Object obj = uItem.object;
         if (!(obj instanceof TLRPC.Chat)) {
             return false;
         }
         TLRPC.Chat chat = (TLRPC.Chat) obj;
         final long j = -chat.id;
+        final boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
         boolean canRemoveChatFromCommunity = ChatObject.canRemoveChatFromCommunity(chat, this.currentChat);
         ItemOptions makeOptions = ItemOptions.makeOptions(this.containerView, view);
-        makeOptions.add(R.drawable.msg_viewintopic, LocaleController.getString(R.string.CommunityMenuViewGroup), new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda8
+        int i3 = R.drawable.msg_viewintopic;
+        if (isChannelAndNotMegaGroup) {
+            i2 = R.string.CommunityMenuViewChannel;
+        } else {
+            i2 = R.string.CommunityMenuViewGroup;
+        }
+        makeOptions.add(i3, LocaleController.getString(i2), new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
                 CommunityEditActivity.this.lambda$onLongClick$2(j);
@@ -558,7 +566,7 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
         makeOptions.addIf(canRemoveChatFromCommunity, R.drawable.msg_cancel, (CharSequence) LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), true, new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                CommunityEditActivity.this.lambda$onLongClick$5(j);
+                CommunityEditActivity.this.lambda$onLongClick$5(isChannelAndNotMegaGroup, j);
             }
         });
         makeOptions.setScrimViewBackground(this.listView.getClipBackground(view, true));
@@ -572,8 +580,15 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLongClick$5(final long j) {
-        AlertsCreator.showSimpleConfirmAlert(this, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), LocaleController.getString(R.string.CommunityMenuRemoveFromCommunityConfirm), LocaleController.getString(R.string.Remove), true, new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda10
+    public /* synthetic */ void lambda$onLongClick$5(boolean z, final long j) {
+        int i;
+        String string = LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity);
+        if (z) {
+            i = R.string.CommunityMenuRemoveChannelFromCommunityConfirm;
+        } else {
+            i = R.string.CommunityMenuRemoveGroupFromCommunityConfirm;
+        }
+        AlertsCreator.showSimpleConfirmAlert(this, string, LocaleController.getString(i), LocaleController.getString(R.string.Remove), true, new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
                 CommunityEditActivity.this.lambda$onLongClick$4(j);

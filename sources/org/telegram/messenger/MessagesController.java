@@ -36132,21 +36132,27 @@ public class MessagesController extends BaseController implements NotificationCe
                     this.allDialogs.remove(i);
                     i--;
                     size--;
+                    i++;
                 } else {
                     this.dialogsCommunityFoundCommunities.put(j, dialog);
+                    i++;
                 }
             } else {
                 long j2 = dialog.id;
                 if (j2 < 0) {
                     TLRPC.Chat chat2 = getChat(Long.valueOf(-j2));
-                    if (ChatObject.isChatCollapsedInCommunity(this.currentAccount, chat2)) {
+                    if (ChatObject.isCommunity(chat2)) {
+                        this.allDialogs.remove(i);
+                        i--;
+                        size--;
+                    } else if (ChatObject.isChatCollapsedInCommunity(this.currentAccount, chat2)) {
                         long j3 = chat2.linked_community_id;
                         LongSparseIntArray longSparseIntArray = this.dialogsCommunityLastMessageDate;
                         longSparseIntArray.put(j3, Math.max(longSparseIntArray.get(j3), dialog.last_message_date));
                     }
                 }
+                i++;
             }
-            i++;
         }
         int size2 = this.dialogsCommunityLastMessageDate.size();
         TLRPC.TL_messages_dialogs tL_messages_dialogs = null;

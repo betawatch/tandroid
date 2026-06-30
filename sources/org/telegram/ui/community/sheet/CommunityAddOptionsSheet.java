@@ -30,6 +30,7 @@ public class CommunityAddOptionsSheet extends BottomSheetWithRecyclerListView {
     private FrameLayout cell;
     private TLRPC.Chat chat;
     private TLRPC.ChatFull chatFull;
+    private final boolean isChannel;
     private boolean isHidden;
     private ProfileSearchCell searchCell;
     private int visibleRow;
@@ -38,6 +39,7 @@ public class CommunityAddOptionsSheet extends BottomSheetWithRecyclerListView {
         super(context, null, false, true, false, false, false, BottomSheetWithRecyclerListView.ActionBarType.SLIDING, null);
         this.chat = chat2;
         this.chatFull = chat2 != null ? MessagesController.getInstance(this.currentAccount).getChatFull(chat2.id) : null;
+        this.isChannel = ChatObject.isChannelAndNotMegaGroup(chat2);
         this.ignoreTouchActionBar = false;
         this.headerMoveTop = AndroidUtilities.dp(12.0f);
         this.actionBar.setTitle(getTitle());
@@ -96,17 +98,26 @@ public class CommunityAddOptionsSheet extends BottomSheetWithRecyclerListView {
     }
 
     private void apply(final Utilities.Callback callback, final boolean z, boolean z2) {
+        int i;
         if (z2 && !z) {
-            AlertsCreator.showSimpleConfirmAlert(getContext(), this.resourcesProvider, LocaleController.getString(R.string.CommunityAddToCommunityTitle), LocaleController.getString(R.string.CommunityAddToCommunityGroupMessage), LocaleController.getString(R.string.Add), false, new Runnable() { // from class: org.telegram.ui.community.sheet.CommunityAddOptionsSheet$$ExternalSyntheticLambda3
+            Context context = getContext();
+            Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
+            String string = LocaleController.getString(R.string.CommunityAddToCommunityTitle);
+            if (this.isChannel) {
+                i = R.string.CommunityAddToCommunityChannelMessage;
+            } else {
+                i = R.string.CommunityAddToCommunityGroupMessage;
+            }
+            AlertsCreator.showSimpleConfirmAlert(context, resourcesProvider, string, LocaleController.getString(i), LocaleController.getString(R.string.Add), false, new Runnable() { // from class: org.telegram.ui.community.sheet.CommunityAddOptionsSheet$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
                     CommunityAddOptionsSheet.this.lambda$apply$2(callback, z);
                 }
             });
-        } else {
-            callback.run(Boolean.valueOf(z));
-            lambda$new$0();
+            return;
         }
+        callback.run(Boolean.valueOf(z));
+        lambda$new$0();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

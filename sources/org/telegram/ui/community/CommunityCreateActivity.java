@@ -95,6 +95,7 @@ public class CommunityCreateActivity extends BaseFragment implements Notificatio
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
+        int i;
         setHasOwnBackground(true);
         this.actionBar.setAddToContainer(false);
         this.actionBar.setAllowOverlayTitle(false);
@@ -102,8 +103,8 @@ public class CommunityCreateActivity extends BaseFragment implements Notificatio
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.community.CommunityCreateActivity.1
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
-            public void onItemClick(int i) {
-                if (i == -1) {
+            public void onItemClick(int i2) {
+                if (i2 == -1) {
                     CommunityCreateActivity.this.finishFragment();
                 }
             }
@@ -121,7 +122,13 @@ public class CommunityCreateActivity extends BaseFragment implements Notificatio
         CommunityHeaderView communityHeaderView = new CommunityHeaderView(context, this.resourceProvider);
         this.communityHeaderView = communityHeaderView;
         communityHeaderView.setTitle(LocaleController.getString(R.string.CommunityTitle));
-        this.communityHeaderView.setSubtitle(LocaleController.getString(R.string.CommunityDescription));
+        CommunityHeaderView communityHeaderView2 = this.communityHeaderView;
+        if (ChatObject.isChannelAndNotMegaGroup(this.currentChat)) {
+            i = R.string.CommunityDescriptionChannel;
+        } else {
+            i = R.string.CommunityDescriptionGroup;
+        }
+        communityHeaderView2.setSubtitle(LocaleController.getString(i));
         this.communityHeaderView.setTag(-33024);
         this.communityHeaderView.avatarView.setForUserOrChat(chat, new AvatarDrawable(chat));
         UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(this, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunityCreateActivity$$ExternalSyntheticLambda0

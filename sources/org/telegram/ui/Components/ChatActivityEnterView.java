@@ -5357,11 +5357,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Can't wrap try/catch for region: R(15:162|(1:244)(1:166)|167|(8:169|(1:197)(1:173)|(1:196)(1:179)|180|(4:182|(1:184)(1:190)|185|(1:189))|(1:192)|193|(1:195))|198|(3:200|(1:202)(1:204)|203)|205|(4:207|(1:209)(1:225)|(2:213|(1:223))|224)|226|(4:228|(1:242)(1:232)|233|(5:235|236|237|238|239))|243|236|237|238|239) */
-    /* JADX WARN: Can't wrap try/catch for region: R(31:13|(1:15)|16|(1:151)(1:22)|23|(3:25|(1:29)|30)(2:107|(3:109|(1:113)|114)(1:(9:116|(1:118)(1:143)|119|(3:123|(1:125)|126)|127|(3:129|(1:135)|136)|137|(1:141)|142)(2:144|(20:150|32|(1:36)|37|(1:106)|40|(1:103)(1:44)|45|(1:102)(1:49)|(1:101)|(4:56|(1:58)(1:64)|59|(1:63))|65|(1:71)|(1:73)|74|(4:76|(1:78)|(2:82|(1:92))|93)|94|95|96|97))))|31|32|(2:34|36)|37|(0)|104|106|40|(1:42)|103|45|(1:47)|102|(2:51|53)|101|(0)|65|(3:67|69|71)|(0)|74|(0)|94|95|96|97) */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x02a8  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x02ff  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0316  */
+    /* JADX WARN: Can't wrap try/catch for region: R(15:164|(1:246)(1:168)|169|(8:171|(1:199)(1:175)|(1:198)(1:181)|182|(4:184|(1:186)(1:192)|187|(1:191))|(1:194)|195|(1:197))|200|(3:202|(1:204)(1:206)|205)|207|(4:209|(1:211)(1:227)|(2:215|(1:225))|226)|228|(4:230|(1:244)(1:234)|235|(5:237|238|239|240|241))|245|238|239|240|241) */
+    /* JADX WARN: Can't wrap try/catch for region: R(31:15|(1:17)|18|(1:153)(1:24)|25|(3:27|(1:31)|32)(2:109|(3:111|(1:115)|116)(1:(9:118|(1:120)(1:145)|121|(3:125|(1:127)|128)|129|(3:131|(1:137)|138)|139|(1:143)|144)(2:146|(20:152|34|(1:38)|39|(1:108)|42|(1:105)(1:46)|47|(1:104)(1:51)|(1:103)|(4:58|(1:60)(1:66)|61|(1:65))|67|(1:73)|(1:75)|76|(4:78|(1:80)|(2:84|(1:94))|95)|96|97|98|99))))|33|34|(2:36|38)|39|(0)|106|108|42|(1:44)|105|47|(1:49)|104|(2:53|55)|103|(0)|67|(3:69|71|73)|(0)|76|(0)|96|97|98|99) */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x02b0  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0307  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x031e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -5382,7 +5382,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         ChatActivity chatActivity3;
         EditTextCaption editTextCaption2;
         boolean z4 = true;
-        if (isInScheduleMode() || ((chatActivity = this.parentFragment) != null && chatActivity.getChatMode() == 5)) {
+        if (isInScheduleMode() || (((chatActivity = this.parentFragment) != null && chatActivity.getChatMode() == 5) || this.animatorEphemeralMessageVisibility.getValue())) {
             return false;
         }
         if (this.isStories || (((editTextCaption = this.messageEditText) == null || TextUtils.isEmpty(editTextCaption.getText())) && (chatActivity2 = this.parentFragment) != null && (messagePreviewParams = chatActivity2.messagePreviewParams) != null && (messages = messagePreviewParams.forwardMessages) != null && (arrayList = messages.messages) != null && !arrayList.isEmpty())) {

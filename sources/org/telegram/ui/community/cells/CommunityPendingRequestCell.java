@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
@@ -254,11 +255,18 @@ public class CommunityPendingRequestCell extends FrameLayout implements Theme.Co
 
     /* JADX INFO: Access modifiers changed from: private */
     public void set(TLRPC.Chat chat, TLRPC.ChatFull chatFull, TLRPC.User user, ClickDelegate clickDelegate, boolean z, boolean z2) {
+        int i;
         this.delegate = clickDelegate;
         this.groupDialogId = -chat.id;
         this.userDialogId = user.id;
         this.titleView.setText(DialogObject.getName(chat));
-        this.subtitleView.setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.CommunityPendingRequestSuggestedGroup, DialogObject.getShortName(user)), Theme.getColor(Theme.key_telegram_color_text), new Runnable() { // from class: org.telegram.ui.community.cells.CommunityPendingRequestCell$$ExternalSyntheticLambda4
+        TextView textView = this.subtitleView;
+        if (ChatObject.isChannelAndNotMegaGroup(chat)) {
+            i = R.string.CommunityPendingRequestSuggestedChannel;
+        } else {
+            i = R.string.CommunityPendingRequestSuggestedGroup;
+        }
+        textView.setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(i, DialogObject.getShortName(user)), Theme.getColor(Theme.key_telegram_color_text), new Runnable() { // from class: org.telegram.ui.community.cells.CommunityPendingRequestCell$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
                 CommunityPendingRequestCell.lambda$set$4();

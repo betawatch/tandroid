@@ -133,6 +133,7 @@ import org.telegram.ui.Stories.UploadingDotsSpannable;
 import org.telegram.ui.Stories.recorder.HintView2;
 import org.telegram.ui.Stories.recorder.PreviewView;
 import org.telegram.ui.community.CommunitySheet;
+import org.telegram.ui.community.CommunityUtils;
 
 /* loaded from: classes4.dex */
 public class ChatActionCell extends BaseCell implements DownloadController.FileDownloadProgressListener, NotificationCenter.NotificationCenterDelegate, IMessageCell {
@@ -2492,7 +2493,6 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         TLRPC.TL_textWithEntities tL_textWithEntities;
         CharSequence charSequence4;
         String formatString2;
-        String formatString3;
         int i;
         char c;
         long j;
@@ -2920,11 +2920,11 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 String str2 = ((TLRPC.TL_chatThemeUniqueGift) ((TLRPC.TL_messageActionSetChatTheme) message3.action).theme).gift.title + " #" + LocaleController.formatNumber(r0.num, ',');
                 long fromChatId2 = messageObject.getFromChatId();
                 if (UserConfig.getInstance(this.currentAccount).getClientUserId() == fromChatId2) {
-                    formatString3 = LocaleController.formatString(org.telegram.messenger.R.string.GiftThemesSetByYou, str2);
+                    formatString2 = LocaleController.formatString(org.telegram.messenger.R.string.GiftThemesSetByYou, str2);
                 } else {
-                    formatString3 = LocaleController.formatString(org.telegram.messenger.R.string.GiftThemesSetByOther, DialogObject.getShortName(this.currentAccount, fromChatId2), str2);
+                    formatString2 = LocaleController.formatString(org.telegram.messenger.R.string.GiftThemesSetByOther, DialogObject.getShortName(this.currentAccount, fromChatId2), str2);
                 }
-                createGiftPremiumLayouts(null, null, null, AndroidUtilities.replaceTags(formatString3), false, LocaleController.getString(org.telegram.messenger.R.string.GiftThemesSetActionView), 11, null, this.giftRectSize, true, false);
+                createGiftPremiumLayouts(null, null, null, AndroidUtilities.replaceTags(formatString2), false, LocaleController.getString(org.telegram.messenger.R.string.GiftThemesSetActionView), 11, null, this.giftRectSize, true, false);
                 this.textLayout = null;
                 this.textHeight = 0;
                 this.titleLayout = null;
@@ -2932,22 +2932,11 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 this.textY = 0;
             } else if (i3 == 37) {
                 TLRPC.TL_messageActionChangeCommunity tL_messageActionChangeCommunity = (TLRPC.TL_messageActionChangeCommunity) message3.action;
-                String shortName2 = DialogObject.getShortName(this.currentAccount, DialogObject.getPeerDialogId(message3.peer_id));
+                boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(-DialogObject.getPeerDialogId(message3.peer_id), this.currentAccount);
+                String shortName2 = DialogObject.getShortName(this.currentAccount, DialogObject.getPeerDialogId(messageObject.messageOwner.from_id));
                 String shortName3 = DialogObject.getShortName(this.currentAccount, -tL_messageActionChangeCommunity.community_id);
-                boolean z6 = tL_messageActionChangeCommunity.community_id == 0;
                 SpannableStringBuilder spannableStringBuilder8 = new SpannableStringBuilder();
-                if (messageObject.isOut()) {
-                    if (z6) {
-                        formatString2 = LocaleController.getString(org.telegram.messenger.R.string.CommunityServiceMessageGroupYouRemoved);
-                    } else {
-                        formatString2 = LocaleController.formatString(org.telegram.messenger.R.string.CommunityServiceMessageGroupYouAdded, shortName3);
-                    }
-                } else if (z6) {
-                    formatString2 = LocaleController.formatString(org.telegram.messenger.R.string.CommunityServiceMessageGroupRemoved, shortName2);
-                } else {
-                    formatString2 = LocaleController.formatString(org.telegram.messenger.R.string.CommunityServiceMessageGroupAdded, shortName2, shortName3);
-                }
-                spannableStringBuilder8.append((CharSequence) AndroidUtilities.replaceTags(formatString2));
+                spannableStringBuilder8.append(CommunityUtils.buildServiceMessageText(messageObject, shortName3, shortName2, isChannelAndNotMegaGroup));
                 createGiftPremiumLayouts(null, null, null, spannableStringBuilder8, false, LocaleController.getString(org.telegram.messenger.R.string.GiftThemesSetActionView), 11, null, this.giftRectSize, true, false);
                 this.textLayout = null;
                 this.textHeight = 0;
@@ -2973,15 +2962,15 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
             } else if (i3 == 21) {
                 TLRPC.TL_messageActionSuggestProfilePhoto tL_messageActionSuggestProfilePhoto = (TLRPC.TL_messageActionSuggestProfilePhoto) message3.action;
                 TLRPC.User user3 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.isOutOwner() ? 0L : messageObject.getDialogId()));
-                boolean z7 = tL_messageActionSuggestProfilePhoto.video || !((photo = tL_messageActionSuggestProfilePhoto.photo) == null || (arrayList2 = photo.video_sizes) == null || arrayList2.isEmpty());
+                boolean z6 = tL_messageActionSuggestProfilePhoto.video || !((photo = tL_messageActionSuggestProfilePhoto.photo) == null || (arrayList2 = photo.video_sizes) == null || arrayList2.isEmpty());
                 if (user3.id == UserConfig.getInstance(this.currentAccount).clientUserId) {
                     TLRPC.User user4 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.getDialogId()));
-                    if (z7) {
+                    if (z6) {
                         formatString = LocaleController.formatString(org.telegram.messenger.R.string.ActionSuggestVideoFromYouDescription, user4.first_name);
                     } else {
                         formatString = LocaleController.formatString(org.telegram.messenger.R.string.ActionSuggestPhotoFromYouDescription, user4.first_name);
                     }
-                } else if (z7) {
+                } else if (z6) {
                     formatString = LocaleController.formatString(org.telegram.messenger.R.string.ActionSuggestVideoToYouDescription, user3.first_name);
                 } else {
                     formatString = LocaleController.formatString(org.telegram.messenger.R.string.ActionSuggestPhotoToYouDescription, user3.first_name);
