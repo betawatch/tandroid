@@ -37923,6 +37923,9 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public boolean richEditorAvailable() {
+        if (BuildVars.DEBUG_VERSION) {
+            return true;
+        }
         return !TextUtils.equals("disabled", this.config.richMessagePosting.get());
     }
 
