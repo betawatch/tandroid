@@ -913,8 +913,8 @@ public class EditTextBoldCursor extends EditTextEffects {
         this.hintLayout.draw(canvas);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:130:0x014c A[Catch: all -> 0x00c0, TryCatch #0 {all -> 0x00c0, blocks: (B:111:0x009e, B:113:0x00a2, B:115:0x00a6, B:117:0x00b8, B:120:0x00c9, B:123:0x00cf, B:125:0x00d6, B:127:0x00de, B:128:0x0104, B:130:0x014c, B:132:0x014f, B:133:0x0154, B:136:0x00f1, B:138:0x00f9, B:140:0x00c5), top: B:110:0x009e }] */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0205 A[Catch: all -> 0x01a7, TryCatch #1 {all -> 0x01a7, blocks: (B:88:0x0185, B:90:0x018c, B:92:0x0194, B:93:0x01bd, B:95:0x0205, B:97:0x0208, B:98:0x020d, B:101:0x01aa, B:103:0x01b2), top: B:87:0x0185 }] */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x014c A[Catch: all -> 0x00c0, TryCatch #0 {all -> 0x00c0, blocks: (B:113:0x009e, B:115:0x00a2, B:117:0x00a6, B:119:0x00b8, B:122:0x00c9, B:125:0x00cf, B:127:0x00d6, B:129:0x00de, B:130:0x0104, B:132:0x014c, B:134:0x014f, B:135:0x0154, B:138:0x00f1, B:140:0x00f9, B:142:0x00c5), top: B:112:0x009e }] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0209 A[Catch: all -> 0x01ab, TryCatch #2 {all -> 0x01ab, blocks: (B:33:0x0189, B:35:0x0190, B:37:0x0198, B:38:0x01c1, B:40:0x0209, B:42:0x020c, B:43:0x0211, B:46:0x01ae, B:48:0x01b6), top: B:32:0x0189 }] */
     @Override // org.telegram.ui.Components.EditTextEffects, android.widget.TextView, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1102,7 +1102,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                     RuntimeException runtimeException = new RuntimeException(th);
                 }
             }
-        } else if (this.cursorDrawn) {
+        } else if (this.cursorDrawn && this.allowDrawCursor) {
             try {
                 canvas.save();
                 if (getVerticalOffsetMethod != null) {

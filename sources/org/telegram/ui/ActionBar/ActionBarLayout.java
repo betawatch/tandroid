@@ -13,6 +13,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Matrix;
+import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
@@ -31,6 +32,7 @@ import android.view.RoundedCorner;
 import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewOutlineProvider;
 import android.view.Window;
 import android.view.WindowInsets;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -66,6 +68,7 @@ import org.telegram.ui.ActionBar.BottomSheetTabs;
 import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
+import org.telegram.ui.ChatActivity;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.BackButtonMenu;
 import org.telegram.ui.Components.Bulletin;
@@ -2354,7 +2357,28 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         setInnerTranslationX(0.0f);
         this.containerView.setTranslationY(0.0f);
         if (z5) {
-            view.setOutlineProvider(ViewOutlineProviderImpl.boundsWithPaddingRoundRect(0, AndroidUtilities.dp(actionBarPopupWindowLayout == null ? 24.0f : 12.0f)));
+            if (!(baseFragment2 instanceof ChatActivity)) {
+                view.setOutlineProvider(ViewOutlineProviderImpl.boundsWithPaddingRoundRect(0, AndroidUtilities.dp(actionBarPopupWindowLayout == null ? 24.0f : 12.0f)));
+            } else if (actionBarPopupWindowLayout != null) {
+                view.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.4
+                    private final Path path = new Path();
+
+                    @Override // android.view.ViewOutlineProvider
+                    public void getOutline(View view2, Outline outline) {
+                        float dp3 = AndroidUtilities.dp(29.0f);
+                        float dp4 = AndroidUtilities.dp(12.0f);
+                        this.path.rewind();
+                        this.path.addRoundRect(0.0f, 0.0f, view2.getWidth(), view2.getHeight(), new float[]{dp3, dp3, dp3, dp3, dp4, dp4, dp4, dp4}, Path.Direction.CW);
+                        if (Build.VERSION.SDK_INT >= 30) {
+                            outline.setPath(this.path);
+                        } else {
+                            outline.setConvexPath(this.path);
+                        }
+                    }
+                });
+            } else {
+                view.setOutlineProvider(ViewOutlineProviderImpl.boundsWithPaddingRoundRect(0, AndroidUtilities.dp(29.0f)));
+            }
             view.setClipToOutline(true);
             view.setElevation(AndroidUtilities.dp(4.0f));
             if (Build.VERSION.SDK_INT >= 28) {
@@ -2413,7 +2437,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 animatorSet.playTogether(arrayList);
                 this.currentAnimation.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
                 this.currentAnimation.setDuration(200L);
-                this.currentAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.4
+                this.currentAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.5
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         ActionBarLayout.this.onAnimationEndCheck(false);
@@ -2473,7 +2497,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                             baseFragment.saveKeyboardPositionBeforeTransition();
                         }
                         final BaseFragment baseFragment4 = baseFragment;
-                        this.waitingForKeyboardCloseRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.5
+                        this.waitingForKeyboardCloseRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.6
                             @Override // java.lang.Runnable
                             public void run() {
                                 if (ActionBarLayout.this.waitingForKeyboardCloseRunnable != this) {
@@ -2502,7 +2526,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                             }
                         };
                         if (baseFragment2.needDelayOpenAnimation()) {
-                            this.delayedOpenAnimationRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.6
+                            this.delayedOpenAnimationRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.7
                                 @Override // java.lang.Runnable
                                 public void run() {
                                     if (ActionBarLayout.this.delayedOpenAnimationRunnable != this) {
@@ -2520,7 +2544,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                         }
                         AndroidUtilities.runOnUIThread(this.waitingForKeyboardCloseRunnable, 250L);
                     } else if (baseFragment2.needDelayOpenAnimation()) {
-                        Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.7
+                        Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.8
                             @Override // java.lang.Runnable
                             public void run() {
                                 if (ActionBarLayout.this.delayedOpenAnimationRunnable != this) {
@@ -2803,7 +2827,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         animatorSet.playTogether(ObjectAnimator.ofFloat(baseFragment2.fragmentView, (Property<View, Float>) View.SCALE_X, 1.0f, 1.05f, 1.0f), ObjectAnimator.ofFloat(baseFragment2.fragmentView, (Property<View, Float>) View.SCALE_Y, 1.0f, 1.05f, 1.0f));
         animatorSet.setDuration(200L);
         animatorSet.setInterpolator(new CubicBezierInterpolator(0.42d, 0.0d, 0.58d, 1.0d));
-        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.8
+        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.9
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 ActionBarLayout.this.previewOpenAnimationInProgress = false;
@@ -2945,7 +2969,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     }
                     if (animatorSet == null) {
                         if (!this.inPreviewMode && (this.containerView.isKeyboardVisible || this.containerViewBack.isKeyboardVisible)) {
-                            Runnable runnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.9
+                            Runnable runnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.10
                                 @Override // java.lang.Runnable
                                 public void run() {
                                     if (ActionBarLayout.this.waitingForKeyboardCloseRunnable != this) {
@@ -2997,7 +3021,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 animatorSet2.playTogether(arrayList);
                 this.currentAnimation.setInterpolator(this.accelerateDecelerateInterpolator);
                 this.currentAnimation.setDuration(200L);
-                this.currentAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.10
+                this.currentAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.11
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationStart(Animator animator) {
                         ActionBarLayout.this.transitionAnimationStartTime = System.currentTimeMillis();
@@ -3430,7 +3454,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             this.notificationsLocker.lock();
             AnimatorSet animatorSet = new AnimatorSet();
             this.themeAnimatorSet = animatorSet;
-            animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.11
+            animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.12
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     ActionBarLayout.this.notificationsLocker.unlock();
@@ -3670,7 +3694,6 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         this.drawerLayoutContainer = drawerLayoutContainer;
     }
 
-    @Override // org.telegram.ui.ActionBar.INavigationLayout
     public DrawerLayoutContainer getDrawerLayoutContainer() {
         return this.drawerLayoutContainer;
     }

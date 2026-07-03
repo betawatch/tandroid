@@ -2,9 +2,6 @@ package org.telegram.ui.community.cells;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -28,7 +25,6 @@ import org.telegram.ui.Components.LayoutHelper;
 public class CommunityLinkView extends FrameLayout implements Theme.Colorable {
     private final ImageView arrowView;
     public final BackupImageView avatarView;
-    private final Drawable communityCardsDrawable;
     public final Theme.ResourcesProvider resourcesProvider;
     public final TextView subtitleView;
     public final TextView titleView;
@@ -36,7 +32,6 @@ public class CommunityLinkView extends FrameLayout implements Theme.Colorable {
     public CommunityLinkView(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.resourcesProvider = resourcesProvider;
-        this.communityCardsDrawable = context.getResources().getDrawable(R.drawable.community_cards).mutate();
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarView = backupImageView;
         backupImageView.setRoundRadius(AndroidUtilities.dp(9.0f));
@@ -74,7 +69,7 @@ public class CommunityLinkView extends FrameLayout implements Theme.Colorable {
 
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
-        DrawableUtils.drawCommunityCardDrawable(canvas, this.communityCardsDrawable, this.avatarView.getLeft() + (this.avatarView.getWidth() / 2.0f), this.avatarView.getTop() + (this.avatarView.getHeight() / 2.0f), this.avatarView.getHeight());
+        DrawableUtils.drawCommunityCardDrawable(canvas, Theme.dialogs_communityCardsDrawable, this.avatarView.getLeft() + (this.avatarView.getWidth() / 2.0f), this.avatarView.getTop() + (this.avatarView.getHeight() / 2.0f), this.avatarView.getHeight());
         super.dispatchDraw(canvas);
     }
 
@@ -101,10 +96,7 @@ public class CommunityLinkView extends FrameLayout implements Theme.Colorable {
         ImageView imageView = this.arrowView;
         int i = Theme.key_windowBackgroundWhiteGrayText2;
         imageView.setColorFilter(Theme.getColor(i, this.resourcesProvider));
-        TextView textView = this.titleView;
-        int i2 = Theme.key_windowBackgroundWhiteBlackText;
-        textView.setTextColor(Theme.getColor(i2, this.resourcesProvider));
+        this.titleView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider));
         this.subtitleView.setTextColor(Theme.getColor(i, this.resourcesProvider));
-        this.communityCardsDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2, this.resourcesProvider), PorterDuff.Mode.MULTIPLY));
     }
 }

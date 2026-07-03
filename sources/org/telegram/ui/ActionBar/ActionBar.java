@@ -58,6 +58,7 @@ import org.telegram.ui.Components.SectionsScrollView;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.SnowflakesEffect;
 import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
 
 /* loaded from: classes4.dex */
@@ -112,10 +113,11 @@ public class ActionBar extends FrameLayout implements FactorAnimator.Target, The
     private boolean forceSkipTouches;
     private int forcedMenuWidth;
     private boolean fromBottom;
-    private Drawable glassDrawable;
+    private BlurredBackgroundDrawable glassDrawable;
     private Drawable glassDrawableBack;
     private Drawable glassDrawableMenu;
     private boolean glassMode;
+    private boolean glassModeIsForum;
     private boolean glassOnlyBack;
     private boolean hasForcedMenuWidth;
     private boolean ignoreLayoutRequest;
@@ -241,10 +243,21 @@ public class ActionBar extends FrameLayout implements FactorAnimator.Target, The
     }
 
     public void setupGlass(BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory, BlurredBackgroundColorProvider blurredBackgroundColorProvider) {
+        setupGlass(blurredBackgroundDrawableViewFactory, blurredBackgroundColorProvider, false);
+    }
+
+    public void setupGlass(BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory, BlurredBackgroundColorProvider blurredBackgroundColorProvider, boolean z) {
         setBackground(null);
         setClipChildren(false);
         this.glassMode = true;
-        this.glassDrawable = blurredBackgroundDrawableViewFactory.create(this).setColorProvider(blurredBackgroundColorProvider).setRadius(AndroidUtilities.dp(23.0f)).setPadding(AndroidUtilities.dp(6.0f));
+        this.glassModeIsForum = z;
+        BlurredBackgroundDrawable padding = blurredBackgroundDrawableViewFactory.create(this).setColorProvider(blurredBackgroundColorProvider).setPadding(AndroidUtilities.dp(6.0f));
+        this.glassDrawable = padding;
+        if (z) {
+            padding.setRadius(AndroidUtilities.dp(18.33f), AndroidUtilities.dp(23.0f), AndroidUtilities.dp(23.0f), AndroidUtilities.dp(18.33f));
+        } else {
+            padding.setRadius(AndroidUtilities.dp(23.0f));
+        }
         this.glassDrawableBack = blurredBackgroundDrawableViewFactory.create(this).setColorProvider(blurredBackgroundColorProvider).setRadius(AndroidUtilities.dp(23.0f)).setPadding(AndroidUtilities.dp(6.0f));
         this.glassDrawableMenu = blurredBackgroundDrawableViewFactory.create(this).setColorProvider(blurredBackgroundColorProvider).setRadius(AndroidUtilities.dp(23.0f)).setPadding(AndroidUtilities.dp(6.0f));
         ActionBarMenu actionBarMenu = this.menu;
@@ -1354,6 +1367,12 @@ public class ActionBar extends FrameLayout implements FactorAnimator.Target, The
     public /* synthetic */ void lambda$onSearchFieldVisibilityChanged$4(ValueAnimator valueAnimator) {
         ActionBarMenu actionBarMenu;
         this.searchFieldVisibleAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        if (this.glassDrawable != null && this.glassModeIsForum) {
+            float dp = AndroidUtilities.dp(23.0f);
+            float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(18.33f), AndroidUtilities.dp(23.0f), this.searchFieldVisibleAlpha);
+            this.glassDrawable.setRadius(lerp, dp, dp, lerp);
+            invalidate();
+        }
         if (this.glassMode && (actionBarMenu = this.menu) != null) {
             actionBarMenu.setTranslationX(-AndroidUtilities.lerp(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f), this.searchFieldVisibleAlpha));
         }

@@ -20,8 +20,6 @@ import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes4.dex */
 public class DrawerLayoutContainer extends FrameLayout {
-    private final Paint backgroundPaint;
-    private int behindKeyboardColor;
     private boolean firstLayout;
     private boolean hasCutout;
     private int imeHeight;
@@ -47,7 +45,6 @@ public class DrawerLayoutContainer extends FrameLayout {
 
     public DrawerLayoutContainer(Context context) {
         super(context);
-        this.backgroundPaint = new Paint();
         this.firstLayout = true;
         this.internalNavbarPaint = new Paint(1);
         ViewCompat.setOnApplyWindowInsetsListener(this, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ActionBar.DrawerLayoutContainer$$ExternalSyntheticLambda0
@@ -169,11 +166,6 @@ public class DrawerLayoutContainer extends FrameLayout {
         }
     }
 
-    public void setBehindKeyboardColor(int i) {
-        this.behindKeyboardColor = i;
-        invalidate();
-    }
-
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         WindowInsetsCompat windowInsetsCompat = this.lastWindowInsetsCompat;
@@ -182,18 +174,16 @@ public class DrawerLayoutContainer extends FrameLayout {
         }
         Insets insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.ime() | WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
         if (insets.bottom > 0) {
-            this.backgroundPaint.setColor(this.behindKeyboardColor);
             canvas.drawRect(0.0f, getMeasuredHeight() - insets.bottom, getMeasuredWidth(), getMeasuredHeight(), this.internalNavbarPaint);
         }
         if (this.hasCutout) {
-            this.backgroundPaint.setColor(-16777216);
             int i = insets.left;
             if (i != 0) {
-                canvas.drawRect(0.0f, 0.0f, i, getMeasuredHeight(), this.backgroundPaint);
+                canvas.drawRect(0.0f, 0.0f, i, getMeasuredHeight(), Theme.fillingPaint(-16777216));
             }
             int i2 = insets.right;
             if (i2 != 0) {
-                canvas.drawRect(i2, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.backgroundPaint);
+                canvas.drawRect(i2, 0.0f, getMeasuredWidth(), getMeasuredHeight(), Theme.fillingPaint(-16777216));
             }
         }
     }

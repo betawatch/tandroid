@@ -99,11 +99,12 @@ public class FormattedDateSpan extends URLSpan {
                         charSequence = new SpannableStringBuilder(spanned);
                         r4 = charSequence;
                     }
-                    r4.replace(r4.getSpanStart(formattedDateSpan), r4.getSpanEnd(formattedDateSpan), z ? LocaleController.formatEntityFormattedDate(formattedDateSpan.entity) : formattedDateSpan.originalText);
                     int spanStart = r4.getSpanStart(formattedDateSpan);
                     int spanEnd = r4.getSpanEnd(formattedDateSpan);
+                    String formatEntityFormattedDate = z ? LocaleController.formatEntityFormattedDate(formattedDateSpan.entity) : formattedDateSpan.originalText;
                     r4.removeSpan(formattedDateSpan);
-                    r4.setSpan(new FormattedDateSpan(formattedDateSpan, z), spanStart, spanEnd, 33);
+                    r4.replace(spanStart, spanEnd, formatEntityFormattedDate);
+                    r4.setSpan(new FormattedDateSpan(formattedDateSpan, z), spanStart, formatEntityFormattedDate.length() + spanStart, 33);
                 }
                 i++;
                 r4 = r4;

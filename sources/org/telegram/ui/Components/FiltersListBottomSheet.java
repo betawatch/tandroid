@@ -135,9 +135,9 @@ public class FiltersListBottomSheet extends BottomSheet implements NotificationC
                 super.requestLayout();
             }
 
-            /* JADX WARN: Removed duplicated region for block: B:11:0x0094  */
-            /* JADX WARN: Removed duplicated region for block: B:13:0x00e7  */
-            /* JADX WARN: Removed duplicated region for block: B:16:0x0118  */
+            /* JADX WARN: Removed duplicated region for block: B:11:0x0091  */
+            /* JADX WARN: Removed duplicated region for block: B:13:0x00e4  */
+            /* JADX WARN: Removed duplicated region for block: B:16:0x0115  */
             @Override // android.view.View
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -146,31 +146,29 @@ public class FiltersListBottomSheet extends BottomSheet implements NotificationC
                 float f;
                 int i2;
                 int dp = (FiltersListBottomSheet.this.scrollOffsetY - ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop) - AndroidUtilities.dp(8.0f);
-                int measuredHeight = getMeasuredHeight() + AndroidUtilities.dp(36.0f) + ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop;
-                int i3 = AndroidUtilities.statusBarHeight;
-                int i4 = dp + i3;
-                int i5 = measuredHeight - i3;
+                getMeasuredHeight();
+                AndroidUtilities.dp(36.0f);
+                int unused = ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop;
+                int i3 = dp + AndroidUtilities.statusBarHeight;
                 if (this.fullHeight) {
-                    int i6 = ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop + i4;
-                    int i7 = AndroidUtilities.statusBarHeight;
-                    int i8 = i7 * 2;
-                    if (i6 < i8) {
-                        int min = Math.min(i7, (i8 - i4) - ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop);
-                        i4 -= min;
-                        i5 += min;
-                        f = 1.0f - Math.min(1.0f, (min * 2) / AndroidUtilities.statusBarHeight);
+                    int i4 = ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop + i3;
+                    int i5 = AndroidUtilities.statusBarHeight;
+                    int i6 = i5 * 2;
+                    if (i4 < i6) {
+                        i3 -= Math.min(i5, (i6 - i3) - ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop);
+                        f = 1.0f - Math.min(1.0f, (r1 * 2) / AndroidUtilities.statusBarHeight);
                     } else {
                         f = 1.0f;
                     }
-                    int i9 = ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop + i4;
-                    int i10 = AndroidUtilities.statusBarHeight;
-                    if (i9 < i10) {
-                        i2 = Math.min(i10, (i10 - i4) - ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop);
-                        ((BottomSheet) FiltersListBottomSheet.this).shadowDrawable.setBounds(0, i4, getMeasuredWidth(), i5);
+                    int i7 = ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop + i3;
+                    int i8 = AndroidUtilities.statusBarHeight;
+                    if (i7 < i8) {
+                        i2 = Math.min(i8, (i8 - i3) - ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop);
+                        ((BottomSheet) FiltersListBottomSheet.this).shadowDrawable.setBounds(0, i3, getMeasuredWidth(), getMeasuredHeight());
                         ((BottomSheet) FiltersListBottomSheet.this).shadowDrawable.draw(canvas);
                         if (f != 1.0f) {
                             Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor(Theme.key_dialogBackground));
-                            this.rect.set(((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop + i4, getMeasuredWidth() - ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop + i4 + AndroidUtilities.dp(24.0f));
+                            this.rect.set(((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingLeft, ((BottomSheet) FiltersListBottomSheet.this).backgroundPaddingTop + i3 + AndroidUtilities.dp(24.0f));
                             canvas.drawRoundRect(this.rect, AndroidUtilities.dp(12.0f) * f, AndroidUtilities.dp(12.0f) * f, Theme.dialogs_onlineCirclePaint);
                         }
                         if (i2 > 0) {
@@ -183,7 +181,7 @@ public class FiltersListBottomSheet extends BottomSheet implements NotificationC
                     f = 1.0f;
                 }
                 i2 = 0;
-                ((BottomSheet) FiltersListBottomSheet.this).shadowDrawable.setBounds(0, i4, getMeasuredWidth(), i5);
+                ((BottomSheet) FiltersListBottomSheet.this).shadowDrawable.setBounds(0, i3, getMeasuredWidth(), getMeasuredHeight());
                 ((BottomSheet) FiltersListBottomSheet.this).shadowDrawable.draw(canvas);
                 if (f != 1.0f) {
                 }

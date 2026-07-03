@@ -1,6 +1,8 @@
 package org.telegram.ui.iv;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.os.Build;
 import android.text.Editable;
 import android.text.InputFilter;
@@ -21,8 +23,11 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.FloatingActionMode;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.EditTextCaption;
+import org.telegram.ui.Components.LinkPath;
+import org.telegram.ui.Components.TextStyleSpan;
 
 /* loaded from: classes3.dex */
 public class RichEditText extends EditTextCaption {
@@ -32,9 +37,14 @@ public class RichEditText extends EditTextCaption {
     private boolean centerEmptyHint;
     private boolean ignoreTextChange;
     private boolean insertingNewline;
+    private Layout lastMarkLayout;
+    private int lastMarkTextLength;
     private Listener listener;
     private boolean locked;
     private final InputFilter lockingFilter;
+    private Paint markPaint;
+    private LinkPath markPath;
+    private boolean markPathDirty;
     private long mathDownTime;
     private float mathDownX;
     private float mathDownY;
@@ -89,11 +99,6 @@ public class RichEditText extends EditTextCaption {
         void onTextChanged(RichEditText richEditText, Editable editable);
 
         void onTextWillChange(RichEditText richEditText, int i, int i2);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$new$1(View view) {
-        return true;
     }
 
     @Override // org.telegram.ui.Components.EditTextBoldCursor
@@ -167,6 +172,8 @@ public class RichEditText extends EditTextCaption {
 
     public RichEditText(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context, resourcesProvider);
+        this.lastMarkTextLength = -1;
+        this.markPathDirty = true;
         this.lockingFilter = new InputFilter() { // from class: org.telegram.ui.iv.RichEditText$$ExternalSyntheticLambda1
             @Override // android.text.InputFilter
             public final CharSequence filter(CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
@@ -202,19 +209,48 @@ public class RichEditText extends EditTextCaption {
                 return false;
             }
         };
+        ActionMode.Callback callback2 = new ActionMode.Callback() { // from class: org.telegram.ui.iv.RichEditText.2
+            @Override // android.view.ActionMode.Callback
+            public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+                return false;
+            }
+
+            @Override // android.view.ActionMode.Callback
+            public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+                return true;
+            }
+
+            @Override // android.view.ActionMode.Callback
+            public void onDestroyActionMode(ActionMode actionMode) {
+            }
+
+            @Override // android.view.ActionMode.Callback
+            public boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+                if (RichEditText.this.length() != 0) {
+                    return false;
+                }
+                for (int size = menu.size() - 1; size >= 0; size--) {
+                    int itemId = menu.getItem(size).getItemId();
+                    if (itemId != 16908322 && itemId != 16908337) {
+                        menu.removeItem(itemId);
+                    }
+                }
+                return true;
+            }
+        };
         setCustomSelectionActionModeCallback(callback);
         if (Build.VERSION.SDK_INT >= 23) {
-            setCustomInsertionActionModeCallback(callback);
+            setCustomInsertionActionModeCallback(callback2);
         }
         setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.iv.RichEditText$$ExternalSyntheticLambda2
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
                 boolean lambda$new$1;
-                lambda$new$1 = RichEditText.lambda$new$1(view);
+                lambda$new$1 = RichEditText.this.lambda$new$1(view);
                 return lambda$new$1;
             }
         });
-        setLongClickable(false);
+        updateLongClickForEmpty();
         setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.iv.RichEditText$$ExternalSyntheticLambda3
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
@@ -223,7 +259,7 @@ public class RichEditText extends EditTextCaption {
                 return lambda$new$2;
             }
         });
-        addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.iv.RichEditText.2
+        addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.iv.RichEditText.3
             @Override // android.text.TextWatcher
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
                 if (RichEditText.this.ignoreTextChange || RichEditText.this.listener == null) {
@@ -234,7 +270,9 @@ public class RichEditText extends EditTextCaption {
 
             @Override // android.text.TextWatcher
             public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+                RichEditText.this.markPathDirty = true;
                 RichEditText.this.refreshEmptyHintGravity();
+                RichEditText.this.updateLongClickForEmpty();
             }
 
             @Override // android.text.TextWatcher
@@ -263,6 +301,11 @@ public class RichEditText extends EditTextCaption {
             }
         });
         updateColors();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ boolean lambda$new$1(View view) {
+        return length() != 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -373,7 +416,9 @@ public class RichEditText extends EditTextCaption {
             inputFilterArr[filters.length] = this.lockingFilter;
             setFilters(inputFilterArr);
         }
-        setCursorVisible(!z);
+        boolean z3 = !z;
+        setAllowDrawCursor(z3);
+        setCursorVisible(z3);
     }
 
     public void requestEditFocus() {
@@ -383,6 +428,31 @@ public class RichEditText extends EditTextCaption {
         }
         requestFocus();
         AndroidUtilities.showKeyboard(this);
+    }
+
+    public void requestEditFocusRebuild() {
+        finishActionMode();
+        if (isFocused()) {
+            clearFocus();
+        }
+        requestEditFocus();
+        finishActionMode();
+        post(new Runnable() { // from class: org.telegram.ui.iv.RichEditText$$ExternalSyntheticLambda5
+            @Override // java.lang.Runnable
+            public final void run() {
+                RichEditText.this.finishActionMode();
+            }
+        });
+    }
+
+    public void finishActionMode() {
+        FloatingActionMode floatingActionMode = this.floatingActionMode;
+        if (floatingActionMode != null) {
+            try {
+                floatingActionMode.finish();
+            } catch (Exception unused) {
+            }
+        }
     }
 
     @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
@@ -534,6 +604,98 @@ public class RichEditText extends EditTextCaption {
             return true;
         }
         return super.onTextContextMenuItem(i);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateLongClickForEmpty() {
+        setLongClickable(length() == 0);
+    }
+
+    @Override // org.telegram.ui.Components.EditTextCaption
+    protected void notifySpansChanged() {
+        super.notifySpansChanged();
+        this.markPathDirty = true;
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.Components.EditTextCaption, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.EditTextEffects, android.widget.TextView, android.view.View
+    protected void onDraw(Canvas canvas) {
+        buildMarkPath();
+        if (this.markPath != null) {
+            if (this.markPaint == null) {
+                Paint paint = new Paint(1);
+                this.markPaint = paint;
+                paint.setPathEffect(LinkPath.getRoundedEffect());
+            }
+            this.markPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteLinkSelection, this.resourcesProvider) & 872415231);
+            canvas.save();
+            canvas.translate(getPaddingLeft(), this.offsetY);
+            canvas.drawPath(this.markPath, this.markPaint);
+            canvas.restore();
+        }
+        super.onDraw(canvas);
+    }
+
+    private void buildMarkPath() {
+        int dp;
+        int i;
+        Layout layout = getLayout();
+        LinkPath linkPath = null;
+        if (layout == null) {
+            this.markPath = null;
+            this.lastMarkLayout = null;
+            this.lastMarkTextLength = -1;
+            return;
+        }
+        CharSequence text = layout.getText();
+        if (!this.markPathDirty && layout == this.lastMarkLayout && text.length() == this.lastMarkTextLength) {
+            return;
+        }
+        this.markPathDirty = false;
+        this.lastMarkLayout = layout;
+        this.lastMarkTextLength = text.length();
+        this.markPath = null;
+        if (text instanceof Spanned) {
+            Spanned spanned = (Spanned) text;
+            TextStyleSpan[] textStyleSpanArr = (TextStyleSpan[]) spanned.getSpans(0, spanned.length(), TextStyleSpan.class);
+            int length = textStyleSpanArr.length;
+            int i2 = 0;
+            while (i2 < length) {
+                TextStyleSpan textStyleSpan = textStyleSpanArr[i2];
+                int styleFlags = textStyleSpan.getStyleFlags();
+                if ((65536 & styleFlags) != 0) {
+                    int spanStart = spanned.getSpanStart(textStyleSpan);
+                    int spanEnd = spanned.getSpanEnd(textStyleSpan);
+                    linkPath = linkPath;
+                    if (spanStart >= 0 && spanEnd > spanStart) {
+                        if (linkPath == null) {
+                            LinkPath linkPath2 = new LinkPath(true);
+                            linkPath2.setAllowReset(false);
+                            linkPath = linkPath2;
+                        }
+                        linkPath.setCurrentLayout(layout, spanStart, 0.0f);
+                        if ((32768 & styleFlags) != 0) {
+                            dp = -AndroidUtilities.dp(6.0f);
+                        } else {
+                            dp = (styleFlags & 16384) != 0 ? AndroidUtilities.dp(2.0f) : 0;
+                        }
+                        if (dp != 0) {
+                            i = dp + AndroidUtilities.dp(dp > 0 ? 5.0f : -2.0f);
+                        } else {
+                            i = 0;
+                        }
+                        linkPath.setBaselineShift(i);
+                        layout.getSelectionPath(spanStart, spanEnd, linkPath);
+                    }
+                }
+                i2++;
+                linkPath = linkPath;
+            }
+            if (linkPath != null) {
+                linkPath.setAllowReset(true);
+            }
+            this.markPath = linkPath;
+        }
     }
 
     @Override // org.telegram.ui.Components.EditTextEffects, android.widget.TextView

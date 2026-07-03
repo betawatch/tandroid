@@ -165,7 +165,6 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     private boolean canDrawInParent;
     private GiftSheet.CardBackground cardBackground;
     private Path clipPath;
-    private Drawable communityCardDrawable;
     private int currentAccount;
     private MessageObject currentMessageObject;
     private ImageLocation currentVideoLocation;
@@ -756,13 +755,13 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     /* JADX WARN: Removed duplicated region for block: B:131:0x02aa  */
     /* JADX WARN: Removed duplicated region for block: B:132:0x02b6  */
     /* JADX WARN: Removed duplicated region for block: B:134:0x0211  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x04f6  */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x0512  */
-    /* JADX WARN: Removed duplicated region for block: B:251:0x0800  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x0896  */
-    /* JADX WARN: Removed duplicated region for block: B:294:0x0926  */
-    /* JADX WARN: Type inference failed for: r2v189 */
-    /* JADX WARN: Type inference failed for: r2v190 */
+    /* JADX WARN: Removed duplicated region for block: B:222:0x04da  */
+    /* JADX WARN: Removed duplicated region for block: B:223:0x04f6  */
+    /* JADX WARN: Removed duplicated region for block: B:248:0x07e4  */
+    /* JADX WARN: Removed duplicated region for block: B:271:0x087a  */
+    /* JADX WARN: Removed duplicated region for block: B:291:0x090a  */
+    /* JADX WARN: Type inference failed for: r2v186 */
+    /* JADX WARN: Type inference failed for: r2v187 */
     /* JADX WARN: Type inference failed for: r2v37, types: [org.telegram.tgnet.TLRPC$messages_StickerSet] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1284,11 +1283,6 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     }
                 } else if (i2 == 37) {
                     TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(((TLRPC.TL_messageActionChangeCommunity) messageObject.messageOwner.action).community_id));
-                    if (this.communityCardDrawable == null) {
-                        Drawable drawable2 = getContext().getDrawable(org.telegram.messenger.R.drawable.community_cards);
-                        this.communityCardDrawable = drawable2;
-                        drawable2.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-                    }
                     this.imageReceiver.setAllowStartLottieAnimation(true);
                     this.imageReceiver.setDelegate(null);
                     this.imageReceiver.setRoundRadius(AndroidUtilities.dp(14.0f));
@@ -3461,7 +3455,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 this.imageReceiver.draw(canvas);
             }
             if (messageObject.type == 37) {
-                DrawableUtils.drawCommunityCardDrawable(canvas, this.communityCardDrawable, this.imageReceiver.getImageX() + AndroidUtilities.dp(26.0f), this.imageReceiver.getImageY() + AndroidUtilities.dp(26.0f), AndroidUtilities.dp(52.0f));
+                DrawableUtils.drawCommunityCardDrawable(canvas, Theme.dialogs_communityCardsDrawable, this.imageReceiver.getImageX() + AndroidUtilities.dp(26.0f), this.imageReceiver.getImageY() + AndroidUtilities.dp(26.0f), AndroidUtilities.dp(52.0f));
             }
             this.radialProgress.setProgressRect(this.imageReceiver.getImageX(), this.imageReceiver.getImageY(), this.imageReceiver.getImageX() + this.imageReceiver.getImageWidth(), this.imageReceiver.getImageY() + this.imageReceiver.getImageHeight());
             int i14 = messageObject.type;

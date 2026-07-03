@@ -605,6 +605,11 @@ public class SecretVoicePlayer extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ boolean canToggleRichMessageCheckbox(ChatMessageCell chatMessageCell6) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$canToggleRichMessageCheckbox(this, chatMessageCell6);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didLongPress(ChatMessageCell chatMessageCell6, float f, float f2) {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPress(this, chatMessageCell6, f, f2);
                 }
@@ -877,6 +882,11 @@ public class SecretVoicePlayer extends Dialog {
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didTogglePollPreview(ChatMessageCell chatMessageCell6) {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didTogglePollPreview(this, chatMessageCell6);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void didToggleRichMessageCheckbox(ChatMessageCell chatMessageCell6, boolean z, Runnable runnable3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didToggleRichMessageCheckbox(this, chatMessageCell6, z, runnable3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

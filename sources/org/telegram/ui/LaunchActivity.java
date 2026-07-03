@@ -495,7 +495,6 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         this.drawerLayoutContainer = r4;
         r4.setClipChildren(false);
         this.drawerLayoutContainer.setClipToPadding(false);
-        this.drawerLayoutContainer.setBehindKeyboardColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         this.frameLayout.addView(this.drawerLayoutContainer, LayoutHelper.createFrame(-1, -1.0f));
         ImageView imageView2 = new ImageView(this) { // from class: org.telegram.ui.LaunchActivity.5
             @Override // android.widget.ImageView, android.view.View
@@ -963,7 +962,6 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         if (ArticleViewer.hasInstance() && ArticleViewer.getInstance().isVisible()) {
             ArticleViewer.getInstance().updateThemeColors(f);
         }
-        this.drawerLayoutContainer.setBehindKeyboardColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         if (PhotoViewer.hasInstance()) {
             PhotoViewer.getInstance().updateColors();
         }
@@ -7126,10 +7124,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         if (((org.telegram.ui.ProfileActivity) r1.get(r1.size() - 1)).isSettings() == false) goto L113;
      */
     /* JADX WARN: Removed duplicated region for block: B:118:0x02b7  */
-    /* JADX WARN: Removed duplicated region for block: B:235:0x0602  */
-    /* JADX WARN: Removed duplicated region for block: B:238:0x060e A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:239:0x060f  */
-    /* JADX WARN: Removed duplicated region for block: B:250:0x0609  */
+    /* JADX WARN: Removed duplicated region for block: B:235:0x05f7  */
+    /* JADX WARN: Removed duplicated region for block: B:238:0x0603 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:239:0x0604  */
+    /* JADX WARN: Removed duplicated region for block: B:250:0x05fe  */
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -7383,7 +7381,6 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 } catch (Exception unused) {
                 }
             }
-            this.drawerLayoutContainer.setBehindKeyboardColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             boolean booleanValue3 = objArr.length > 1 ? ((Boolean) objArr[1]).booleanValue() : true;
             boolean z4 = objArr.length > 2 && ((Boolean) objArr[2]).booleanValue();
             if (booleanValue3 && !this.isNavigationBarColorFrozen && !this.actionBarLayout.isTransitionAnimationInProgress()) {

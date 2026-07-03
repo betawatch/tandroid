@@ -20,7 +20,7 @@ import org.telegram.ui.Components.URLSpanReplacement;
 
 /* loaded from: classes3.dex */
 public abstract class RichTextStyle {
-    private static final int[] STYLE_FLAGS = {1, 2, 16, 8, 4, 256, 16384, 32768};
+    private static final int[] STYLE_FLAGS = {1, 2, 16, 8, 4, 256, 16384, 32768, 65536};
 
     public static CharSequence toSpannable(TL_iv.RichText richText) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
@@ -140,7 +140,10 @@ public abstract class RichTextStyle {
         if (richText instanceof TL_iv.textSubscript) {
             return 16384;
         }
-        return richText instanceof TL_iv.textSuperscript ? 32768 : 0;
+        if (richText instanceof TL_iv.textSuperscript) {
+            return 32768;
+        }
+        return richText instanceof TL_iv.textMarked ? 65536 : 0;
     }
 
     public static String plainOf(TL_iv.RichText richText) {
@@ -249,8 +252,11 @@ public abstract class RichTextStyle {
         if ((i & 16384) != 0) {
             customEmojiNode = wrapOne(new TL_iv.textSubscript(), customEmojiNode);
         }
-        if ((i & 32768) != 0) {
+        if ((32768 & i) != 0) {
             customEmojiNode = wrapOne(new TL_iv.textSuperscript(), customEmojiNode);
+        }
+        if ((i & 65536) != 0) {
+            customEmojiNode = wrapOne(new TL_iv.textMarked(), customEmojiNode);
         }
         if (run.url != null) {
             TL_iv.textUrl texturl = new TL_iv.textUrl();
@@ -438,7 +444,7 @@ public abstract class RichTextStyle {
             }
             i3 |= styleFlags;
         }
-        return 49439 & i3;
+        return 114975 & i3;
     }
 
     private static Run runAt(Spanned spanned, int i, int i2) {
@@ -466,7 +472,7 @@ public abstract class RichTextStyle {
     private static TextStyleSpan spanFor(int i) {
         TextStyleSpan.TextStyleRun textStyleRun = new TextStyleSpan.TextStyleRun();
         textStyleRun.flags = i;
-        return new TextStyleSpan(textStyleRun, AndroidUtilities.dp(SharedConfig.fontSize));
+        return new TextStyleSpan(textStyleRun);
     }
 
     private static class Run {

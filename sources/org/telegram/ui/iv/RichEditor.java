@@ -88,6 +88,7 @@ import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.TrendingStickersLayout;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.Components.chat.ChatInputViewsContainer;
+import org.telegram.ui.GradientClip;
 import org.telegram.ui.MessageSendPreview;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.iv.RichCommandSuggestions;
@@ -156,8 +157,10 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
     private int[] location;
     private Button mathButton;
     private MessageSendPreview messageSendPreview;
+    private Runnable onClearedCallback;
     private Runnable onSentCallback;
     private Runnable pendingSend;
+    private boolean persistedDraftOnEnd;
     private ImageView redoButton;
     private int reorderSavedPanelType;
     private ChatActivityEnterView.SendButton sendButton;
@@ -266,6 +269,10 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public AnimatorSet onCustomTransitionAnimation(boolean z, final Runnable runnable) {
+        if (!z && !this.persistedDraftOnEnd) {
+            persistDraft();
+            this.persistedDraftOnEnd = true;
+        }
         if (!AndroidUtilities.isTablet() && this.animateInputView != null && this.animateEnterView != null) {
             AnimatorSet animatorSet = new AnimatorSet();
             ChatInputViewsContainer chatInputViewsContainer = this.animateInputView;
@@ -280,8 +287,6 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
             ValueAnimator ofFloat = ValueAnimator.ofFloat(f, z ? 1.0f : 0.0f);
             this.animatingOpen = true;
             this.container.invalidate();
-            this.topGradient.setVisibility(4);
-            this.bottomGradient.setVisibility(4);
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda20
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
@@ -294,8 +299,6 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
                     RichEditor.this.animatingOpen = false;
                     RichEditor.this.animateEnterView.setAlpha(1.0f);
                     RichEditor.this.animateEnterView.sendButtonContainer.setVisibility(0);
-                    RichEditor.this.topGradient.setVisibility(0);
-                    RichEditor.this.bottomGradient.setVisibility(0);
                     RichEditor.this.animateInputBackground.setRadius(AndroidUtilities.dp(22.0f));
                     RichEditor.this.animateInputBackground.setAlpha(NotificationCenter.didReceiveSmsCode);
                     RichEditor.this.animateInputView.drawInputBackground = true;
@@ -309,14 +312,14 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
                 ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) property, 0.0f);
                 FrameLayout frameLayout2 = this.topPanel;
                 Property property2 = View.TRANSLATION_Y;
-                animatorSet.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(frameLayout2, (Property<FrameLayout, Float>) property2, -AndroidUtilities.dp(16.0f)), ObjectAnimator.ofFloat(this.bottomInnerContainer, (Property<FrameLayout, Float>) property, 0.0f), ObjectAnimator.ofFloat(this.bottomInnerContainer, (Property<FrameLayout, Float>) property2, AndroidUtilities.dp(16.0f), 0.0f), ObjectAnimator.ofFloat(this.listView, (Property<RichEditorListView, Float>) property, 1.0f, 0.0f));
+                animatorSet.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(frameLayout2, (Property<FrameLayout, Float>) property2, -AndroidUtilities.dp(16.0f)), ObjectAnimator.ofFloat(this.bottomInnerContainer, (Property<FrameLayout, Float>) property, 0.0f), ObjectAnimator.ofFloat(this.bottomInnerContainer, (Property<FrameLayout, Float>) property2, AndroidUtilities.dp(16.0f), 0.0f), ObjectAnimator.ofFloat(this.listView, (Property<RichEditorListView, Float>) property, 1.0f, 0.0f), ObjectAnimator.ofFloat(this.topGradient, (Property<View, Float>) property, 1.0f, 0.0f), ObjectAnimator.ofFloat(this.bottomGradient, (Property<View, Float>) property, 1.0f, 0.0f));
             } else {
                 FrameLayout frameLayout3 = this.topPanel;
                 Property property3 = View.ALPHA;
                 ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(frameLayout3, (Property<FrameLayout, Float>) property3, 0.0f, 1.0f);
                 FrameLayout frameLayout4 = this.topPanel;
                 Property property4 = View.TRANSLATION_Y;
-                animatorSet.playTogether(ofFloat, ofFloat3, ObjectAnimator.ofFloat(frameLayout4, (Property<FrameLayout, Float>) property4, -AndroidUtilities.dp(16.0f), 0.0f), ObjectAnimator.ofFloat(this.bottomInnerContainer, (Property<FrameLayout, Float>) property3, 0.0f, 1.0f), ObjectAnimator.ofFloat(this.bottomInnerContainer, (Property<FrameLayout, Float>) property4, AndroidUtilities.dp(16.0f), 0.0f), ObjectAnimator.ofFloat(this.listView, (Property<RichEditorListView, Float>) property3, 0.0f, 1.0f));
+                animatorSet.playTogether(ofFloat, ofFloat3, ObjectAnimator.ofFloat(frameLayout4, (Property<FrameLayout, Float>) property4, -AndroidUtilities.dp(16.0f), 0.0f), ObjectAnimator.ofFloat(this.bottomInnerContainer, (Property<FrameLayout, Float>) property3, 0.0f, 1.0f), ObjectAnimator.ofFloat(this.bottomInnerContainer, (Property<FrameLayout, Float>) property4, AndroidUtilities.dp(16.0f), 0.0f), ObjectAnimator.ofFloat(this.listView, (Property<RichEditorListView, Float>) property3, 0.0f, 1.0f), ObjectAnimator.ofFloat(this.topGradient, (Property<View, Float>) property3, 0.0f, 1.0f), ObjectAnimator.ofFloat(this.bottomGradient, (Property<View, Float>) property3, 0.0f, 1.0f));
             }
             animatorSet.setDuration(420L);
             animatorSet.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -356,6 +359,11 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
 
     public RichEditor setChatActivity(ChatActivity chatActivity) {
         this.chatActivity = chatActivity;
+        return this;
+    }
+
+    public RichEditor setOnCleared(Runnable runnable) {
+        this.onClearedCallback = runnable;
         return this;
     }
 
@@ -438,6 +446,7 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
                     canvas.save();
                     this.clipPath.rewind();
                     this.clipPath.addRoundRect(this.rect, lerp, lerp, Path.Direction.CW);
+                    canvas.clipPath(this.clipPath);
                     super.dispatchDraw(canvas);
                     canvas.restore();
                     return;
@@ -724,6 +733,16 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
         frameLayout8.setBackground(withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), getThemedColor(i))));
         this.formattingPanel.addView(frameLayout8, LayoutHelper.createFrame(-2, 44.0f));
         HorizontalScrollView horizontalScrollView2 = new HorizontalScrollView(context) { // from class: org.telegram.ui.iv.RichEditor.7
+            private final GradientClip clip = new GradientClip();
+            private final AnimatedFloat leftGradientAlpha;
+            private final AnimatedFloat rightGradientAlpha;
+
+            {
+                CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
+                this.leftGradientAlpha = new AnimatedFloat(this, 300L, cubicBezierInterpolator);
+                this.rightGradientAlpha = new AnimatedFloat(this, 300L, cubicBezierInterpolator);
+            }
+
             @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i5, int i6) {
                 int mode2 = View.MeasureSpec.getMode(i5);
@@ -739,6 +758,30 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
                 }
                 setMeasuredDimension(Math.min(measuredWidth, i7), getMeasuredHeight());
             }
+
+            @Override // android.view.ViewGroup, android.view.View
+            protected void dispatchDraw(Canvas canvas) {
+                float f = this.leftGradientAlpha.set(canScrollHorizontally(-1));
+                float f2 = this.rightGradientAlpha.set(canScrollHorizontally(1));
+                if (f > 0.0f || f2 > 0.0f) {
+                    canvas.saveLayerAlpha(getScrollX(), 0.0f, getScrollX() + getWidth(), getHeight(), NotificationCenter.didReceiveSmsCode, 31);
+                }
+                super.dispatchDraw(canvas);
+                if (f > 0.0f || f2 > 0.0f) {
+                    canvas.save();
+                    if (f > 0.0f) {
+                        RectF rectF = AndroidUtilities.rectTmp;
+                        rectF.set(getScrollX(), 0.0f, getScrollX() + AndroidUtilities.dp(48.0f), getHeight());
+                        this.clip.draw(canvas, rectF, 0, f);
+                    }
+                    if (f2 > 0.0f) {
+                        RectF rectF2 = AndroidUtilities.rectTmp;
+                        rectF2.set((getScrollX() + getWidth()) - AndroidUtilities.dp(48.0f), 0.0f, getScrollX() + getWidth(), getHeight());
+                        this.clip.draw(canvas, rectF2, 2, f2);
+                    }
+                    canvas.restore();
+                }
+            }
         };
         this.formattingScrollView = horizontalScrollView2;
         horizontalScrollView2.setHorizontalScrollBarEnabled(false);
@@ -753,7 +796,7 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
         LinearLayout linearLayout5 = new LinearLayout(context);
         this.formattingPanelLayout = linearLayout5;
         linearLayout5.setOrientation(0);
-        this.formattingPanelLayout.setPadding(AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f));
+        this.formattingPanelLayout.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
         this.formattingScrollView.addView(this.formattingPanelLayout, new FrameLayout.LayoutParams(-2, -1));
         addFormattingButton(context, R.drawable.formatting_bold, 1);
         addFormattingButton(context, R.drawable.formatting_italic, 2);
@@ -761,12 +804,13 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
         addFormattingButton(context, R.drawable.formatting_strikethrough, 8);
         addFormattingButton(context, R.drawable.formatting_spoiler, 256);
         addFormattingButton(context, R.drawable.iv_code, 4);
+        addFormattingButton(context, R.drawable.formatting_marked, 65536);
         addFormattingButton(context, R.drawable.iv_sub, 16384);
         addFormattingButton(context, R.drawable.iv_super, 32768);
         LinearLayout linearLayout6 = new LinearLayout(context);
         this.formattingLayout2 = linearLayout6;
         linearLayout6.setOrientation(0);
-        this.formattingLayout2.setPadding(AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f));
+        this.formattingLayout2.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
         this.formattingLayout2.setBackground(withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), getThemedColor(i))));
         this.formattingPanel.addView(this.formattingLayout2, LayoutHelper.createFrame(-2, 44.0f, 80, 8.0f, 0.0f, 0.0f, 0.0f));
         Button button = new Button(context, R.drawable.media_link_24, getResourceProvider());
@@ -777,7 +821,7 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
                 RichEditor.this.lambda$createView$32(view3);
             }
         });
-        this.formattingLayout2.addView(this.linkButton, LayoutHelper.createLinear(41, 41));
+        this.formattingLayout2.addView(this.linkButton, LayoutHelper.createLinear(38, 38, 16));
         Button button2 = new Button(context, R.drawable.msg_calendar2, getResourceProvider());
         this.dateButton = button2;
         button2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditor$$ExternalSyntheticLambda5
@@ -786,11 +830,11 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
                 RichEditor.this.lambda$createView$33(view3);
             }
         });
-        this.formattingLayout2.addView(this.dateButton, LayoutHelper.createLinear(41, 41));
+        this.formattingLayout2.addView(this.dateButton, LayoutHelper.createLinear(38, 38, 16));
         LinearLayout linearLayout7 = new LinearLayout(context);
         this.formattingLayout3 = linearLayout7;
         linearLayout7.setOrientation(0);
-        this.formattingLayout3.setPadding(AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f));
+        this.formattingLayout3.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
         this.formattingLayout3.setBackground(withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), getThemedColor(i))));
         this.formattingPanel.addView(this.formattingLayout3, LayoutHelper.createFrame(-2, 44.0f, 80, 8.0f, 0.0f, 0.0f, 0.0f));
         Button button3 = new Button(context, i4, getResourceProvider());
@@ -801,11 +845,11 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
                 RichEditor.this.lambda$createView$34(view3);
             }
         });
-        this.formattingLayout3.addView(this.mathButton, LayoutHelper.createLinear(41, 41));
+        this.formattingLayout3.addView(this.mathButton, LayoutHelper.createLinear(38, 38, 16));
         LinearLayout linearLayout8 = new LinearLayout(context);
         this.formattingLayout1 = linearLayout8;
         linearLayout8.setOrientation(0);
-        this.formattingLayout1.setPadding(AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f));
+        this.formattingLayout1.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
         this.formattingLayout1.setBackground(withShadow(Theme.createRoundRectDrawable(AndroidUtilities.dp(22.0f), getThemedColor(i))));
         this.formattingPanel.addView(this.formattingLayout1, 0, LayoutHelper.createFrame(-2, 44.0f, 80, 0.0f, 0.0f, 8.0f, 0.0f));
         Button button4 = new Button(context, 0, getResourceProvider());
@@ -817,7 +861,7 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
                 RichEditor.this.lambda$createView$35(view3);
             }
         });
-        this.formattingLayout1.addView(this.aiStyleButton, LayoutHelper.createLinear(41, 41));
+        this.formattingLayout1.addView(this.aiStyleButton, LayoutHelper.createLinear(38, 38, 16));
         ChatActivityEnterView.SendButton sendButton = new ChatActivityEnterView.SendButton(context, this.editingMessageObject != null ? R.drawable.input_done : isInScheduleMode() ? R.drawable.input_schedule : R.drawable.send_plane_24, getResourceProvider(), true) { // from class: org.telegram.ui.iv.RichEditor.9
             @Override // org.telegram.ui.Components.ChatActivityEnterView.SendButton
             public boolean isOpen() {
@@ -1200,7 +1244,7 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
         String string = LocaleController.getString(R.string.ArticleToggleBlock);
         RichEditorListView richEditorListView = this.listView;
         Objects.requireNonNull(richEditorListView);
-        addChecked.addChecked(z2, i, string, new ChatAttachAlertRichLayout$$ExternalSyntheticLambda24(richEditorListView));
+        addChecked.addChecked(z2, i, string, new ChatAttachAlertRichLayout$$ExternalSyntheticLambda28(richEditorListView));
         int indexOf = findFocusedRow != null ? this.listView.rows.indexOf(findFocusedRow) : -1;
         boolean z3 = findFocusedRow != null && findFocusedRow.isInList();
         boolean z4 = z3 && this.listView.canIndentRow(indexOf);
@@ -1647,7 +1691,7 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
         });
         this.formattingButtons.add(button);
         LinearLayout linearLayout = this.formattingPanelLayout;
-        linearLayout.addView(button, LayoutHelper.createLinear(41, 41, linearLayout.getChildCount() > 0 ? 2.0f : 0.0f, 0.0f, 0.0f, 0.0f));
+        linearLayout.addView(button, LayoutHelper.createLinear(38, 38, 16, linearLayout.getChildCount() > 0 ? 2 : 0, 0, 0, 0));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2540,10 +2584,14 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
     }
 
     private boolean persistDraft() {
+        Runnable runnable;
         if (this.chatActivity == null || this.editingMessageObject != null || !this.listView.canUndo()) {
             return false;
         }
         TL_iv.RichMessage buildDraftRichMessage = this.sent ? null : this.listView.buildDraftRichMessage();
+        if (buildDraftRichMessage == null && (runnable = this.onClearedCallback) != null) {
+            runnable.run();
+        }
         getMediaDataController().saveDraft(this.chatActivity.getDialogId(), this.chatActivity.getDraftThreadId(), "", null, null, null, null, 0L, false, false, buildDraftRichMessage);
         if (this.chatActivity.getChatActivityEnterView() == null) {
             return true;
@@ -2747,6 +2795,9 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public void onInsets(int i, int i2, int i3, int i4) {
         this.bottomInset = i4;
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.bottomGradient.getLayoutParams();
+        layoutParams.height = AndroidUtilities.dp(68.0f) + this.bottomInset;
+        this.bottomGradient.setLayoutParams(layoutParams);
         checkUI_listViewPadding();
     }
 
@@ -2762,9 +2813,11 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
             }
         }
         applyEmojiSearchOffset();
-        this.listView.setPadding(0, AndroidUtilities.dp(60.0f), 0, AndroidUtilities.dp(110.0f) + Math.max(Math.max(this.emojiPadding, this.bottomInset), this.imeInset));
+        int max = Math.max(Math.max(this.emojiPadding, this.bottomInset), this.imeInset);
+        this.listView.setPadding(0, AndroidUtilities.dp(60.0f), 0, AndroidUtilities.dp(110.0f) + max);
         this.listView.setInsets(this.bottomInset, this.imeInset, this.emojiPadding);
-        this.bottomContainer.setTranslationY(-r0);
+        this.bottomContainer.setTranslationY(-max);
+        this.bottomGradient.setTranslationY(r0 + this.bottomInset);
     }
 
     private void createEmojiView() {
@@ -3005,7 +3058,10 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
     public void onFragmentDestroy() {
         SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate sizeNotifierFrameLayoutDelegate;
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
-        persistDraft();
+        if (!this.persistedDraftOnEnd) {
+            persistDraft();
+            this.persistedDraftOnEnd = true;
+        }
         Runnable runnable = this.pendingSend;
         if (runnable != null) {
             this.pendingSend = null;

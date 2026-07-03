@@ -31,6 +31,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.utils.DrawableUtils;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -648,32 +649,32 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
                 charSequence = null;
             }
         } else {
-            if (ChatObject.isChannel(chat5)) {
+            if (ChatObject.isCommunity(chat5)) {
+                charSequence = LocaleController.getString(R.string.Community).toLowerCase();
+            } else if (ChatObject.isChannelAndNotMegaGroup(this.chat)) {
                 TLRPC.Chat chat6 = this.chat;
-                if (!chat6.megagroup) {
-                    int i5 = chat6.participants_count;
-                    if (i5 != 0) {
-                        charSequence = LocaleController.formatPluralStringComma("Subscribers", i5);
-                    } else if (!ChatObject.isPublic(chat6)) {
-                        charSequence = LocaleController.getString(R.string.ChannelPrivate).toLowerCase();
-                    } else {
-                        charSequence = LocaleController.getString(R.string.ChannelPublic).toLowerCase();
-                    }
-                    this.nameTop = AndroidUtilities.dp(19.0f);
+                int i5 = chat6.participants_count;
+                if (i5 != 0) {
+                    charSequence = LocaleController.formatPluralStringComma("Subscribers", i5);
+                } else if (!ChatObject.isPublic(chat6)) {
+                    charSequence = LocaleController.getString(R.string.ChannelPrivate).toLowerCase();
+                } else {
+                    charSequence = LocaleController.getString(R.string.ChannelPublic).toLowerCase();
                 }
-            }
-            TLRPC.Chat chat7 = this.chat;
-            int i6 = chat7.participants_count;
-            if (i6 != 0) {
-                charSequence = LocaleController.formatPluralStringComma("Members", i6);
-            } else if (chat7.has_geo) {
-                charSequence = LocaleController.getString(R.string.MegaLocation);
-            } else if (ChatObject.isMonoForum(chat7)) {
-                charSequence = LocaleController.getString(R.string.MonoforumMessages);
-            } else if (!ChatObject.isPublic(this.chat)) {
-                charSequence = LocaleController.getString(R.string.MegaPrivate).toLowerCase();
             } else {
-                charSequence = LocaleController.getString(R.string.MegaPublic).toLowerCase();
+                TLRPC.Chat chat7 = this.chat;
+                int i6 = chat7.participants_count;
+                if (i6 != 0) {
+                    charSequence = LocaleController.formatPluralStringComma("Members", i6);
+                } else if (chat7.has_geo) {
+                    charSequence = LocaleController.getString(R.string.MegaLocation);
+                } else if (ChatObject.isMonoForum(chat7)) {
+                    charSequence = LocaleController.getString(R.string.MonoforumMessages);
+                } else if (!ChatObject.isPublic(this.chat)) {
+                    charSequence = LocaleController.getString(R.string.MegaPrivate).toLowerCase();
+                } else {
+                    charSequence = LocaleController.getString(R.string.MegaPublic).toLowerCase();
+                }
             }
             this.nameTop = AndroidUtilities.dp(19.0f);
         }
@@ -798,8 +799,8 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         this.rectangularAvatar = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:138:0x0084  */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x008c  */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x008c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -871,11 +872,15 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
             }
         }
         ImageReceiver imageReceiver = this.avatarImage;
-        TLRPC.Chat chat2 = this.chat;
-        if (chat2 == null || !chat2.monoforum) {
-            dp = AndroidUtilities.dp(this.rectangularAvatar ? 10.0f : (chat2 == null || !chat2.forum) ? 23.0f : 16.0f);
+        if (ChatObject.isCommunity(this.chat)) {
+            dp = DrawableUtils.getCommunityCardDrawableRadius(AndroidUtilities.dp(46.0f));
         } else {
-            dp = 0;
+            TLRPC.Chat chat2 = this.chat;
+            if (chat2 == null || !chat2.monoforum) {
+                dp = AndroidUtilities.dp(this.rectangularAvatar ? 10.0f : (chat2 == null || !chat2.forum) ? 23.0f : 16.0f);
+            } else {
+                dp = 0;
+            }
         }
         imageReceiver.setRoundRadius(dp);
         if (i != 0) {
@@ -1058,7 +1063,10 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
                 if (user != null) {
                     StoriesUtilities.drawAvatarWithStory(user.id, canvas, this.avatarImage, this.avatarStoryParams);
                 } else if (chat != null) {
-                    StoriesUtilities.drawAvatarWithStory(-chat.id, canvas, this.avatarImage, this.avatarStoryParams);
+                    if (ChatObject.isCommunity(chat)) {
+                        DrawableUtils.drawCommunityCardDrawable(canvas, Theme.dialogs_communityCardsDrawable, this.avatarStoryParams.originalAvatarRect.centerX(), this.avatarStoryParams.originalAvatarRect.centerY(), this.avatarStoryParams.originalAvatarRect.width());
+                    }
+                    StoriesUtilities.drawAvatarWithStory(-this.chat.id, canvas, this.avatarImage, this.avatarStoryParams);
                 } else {
                     this.avatarImage.setImageCoords(this.avatarStoryParams.originalAvatarRect);
                     this.avatarImage.draw(canvas);

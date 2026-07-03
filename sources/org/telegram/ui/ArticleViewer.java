@@ -7353,12 +7353,22 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
                 if (photoWithId == null || (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photoWithId.sizes, AndroidUtilities.getPhotoSize())) == null) {
                     return null;
                 }
-                return FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(closestPhotoSizeWithSize, true);
+                return getExistingPathToAttach(closestPhotoSizeWithSize);
             }
             if (!(pageBlock instanceof TL_iv.pageBlockVideo) || (documentWithId = getDocumentWithId(webPage, ((TL_iv.pageBlockVideo) pageBlock).video_id)) == null) {
                 return null;
             }
-            return FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(documentWithId, true);
+            return getExistingPathToAttach(documentWithId);
+        }
+
+        private static File getExistingPathToAttach(TLObject tLObject) {
+            FileLoader fileLoader = FileLoader.getInstance(UserConfig.selectedAccount);
+            File pathToAttach = fileLoader.getPathToAttach(tLObject, false);
+            if (pathToAttach != null && pathToAttach.exists()) {
+                return pathToAttach;
+            }
+            File pathToAttach2 = fileLoader.getPathToAttach(tLObject, true);
+            return ((pathToAttach2 == null || !pathToAttach2.exists()) && pathToAttach != null) ? pathToAttach : pathToAttach2;
         }
 
         public static File getMediaFile(TL_iv.RichMessage richMessage, TL_iv.PageBlock pageBlock) {
@@ -7369,12 +7379,12 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
                 if (photoWithId == null || (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photoWithId.sizes, AndroidUtilities.getPhotoSize())) == null) {
                     return null;
                 }
-                return FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(closestPhotoSizeWithSize, true);
+                return getExistingPathToAttach(closestPhotoSizeWithSize);
             }
             if (!(pageBlock instanceof TL_iv.pageBlockVideo) || (documentWithId = getDocumentWithId(richMessage, ((TL_iv.pageBlockVideo) pageBlock).video_id)) == null) {
                 return null;
             }
-            return FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(documentWithId, true);
+            return getExistingPathToAttach(documentWithId);
         }
     }
 

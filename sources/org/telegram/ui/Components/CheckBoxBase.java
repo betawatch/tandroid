@@ -135,6 +135,14 @@ public class CheckBoxBase {
         invalidate();
     }
 
+    public void setParentView(View view) {
+        this.parentView = view;
+    }
+
+    public View getParentView() {
+        return this.parentView;
+    }
+
     public void setResourcesProvider(Theme.ResourcesProvider resourcesProvider) {
         if (this.resourcesProvider == resourcesProvider) {
             return;

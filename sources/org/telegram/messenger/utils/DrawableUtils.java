@@ -35,6 +35,10 @@ public abstract class DrawableUtils {
         }
     }
 
+    public static int getCommunityCardDrawableRadius(int i) {
+        return (i * 20) / 72;
+    }
+
     public static void drawCommunityCardDrawable(Canvas canvas, Drawable drawable, float f, float f2, float f3) {
         float dpf2 = f - AndroidUtilities.dpf2(36.0f);
         float dpf22 = f2 - AndroidUtilities.dpf2(36.0f);

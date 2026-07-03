@@ -131,7 +131,8 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
     public boolean occupyNavigationBarWithoutKeyboard;
     private DialogInterface.OnClickListener onClickListener;
     private DialogInterface.OnDismissListener onHideListener;
-    protected Interpolator openInterpolator;
+    public int openDuration;
+    public Interpolator openInterpolator;
     private boolean openNoDelay;
     protected int openedLayerNum;
     private int overlayDrawNavBarColor;
@@ -1570,6 +1571,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         this.canDismissWithTouchOutside = true;
         this.allowCustomAnimation = true;
         this.statusBarHeight = AndroidUtilities.statusBarHeight;
+        this.openDuration = 400;
         this.openInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
         this.focusableSoftInputMode = 16;
         this.dimBehind = true;
@@ -2187,7 +2189,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             this.currentSheetAnimation.setDuration(250L);
             this.currentSheetAnimation.setInterpolator(CubicBezierInterpolator.DEFAULT);
         } else {
-            this.currentSheetAnimation.setDuration(400L);
+            this.currentSheetAnimation.setDuration(this.openDuration);
             this.currentSheetAnimation.setInterpolator(this.openInterpolator);
         }
         this.currentSheetAnimation.setStartDelay(this.waitingKeyboard ? 0L : 20L);
@@ -2701,7 +2703,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
 
     public static class Builder {
         public static int CELL_TYPE_CALL = 4;
-        private BottomSheet bottomSheet;
+        public BottomSheet bottomSheet;
 
         public Builder(Context context) {
             this(context, false);

@@ -517,8 +517,11 @@ public abstract class RichHtml {
         if ((i & 16384) != 0) {
             sb.append("<sub>");
         }
-        if ((i & 32768) != 0) {
+        if ((32768 & i) != 0) {
             sb.append("<sup>");
+        }
+        if ((i & 65536) != 0) {
+            sb.append("<mark>");
         }
         if (str != null) {
             sb.append("<a href=\"");
@@ -538,6 +541,9 @@ public abstract class RichHtml {
         }
         if (str != null) {
             sb.append("</a>");
+        }
+        if ((65536 & i) != 0) {
+            sb.append("</mark>");
         }
         if ((32768 & i) != 0) {
             sb.append("</sup>");
@@ -1144,7 +1150,7 @@ public abstract class RichHtml {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0131  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0144  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1152,6 +1158,7 @@ public abstract class RichHtml {
         int i2;
         String str2;
         long j2;
+        int i3;
         String str3 = node.tag;
         str3.hashCode();
         switch (str3) {
@@ -1247,7 +1254,18 @@ public abstract class RichHtml {
                 appendChildrenInline(spannableStringBuilder, node, i2, str2, j2);
                 break;
             case "sup":
-                i |= 32768;
+                i3 = 32768;
+                i |= i3;
+                i2 = i;
+                str2 = str;
+                j2 = j;
+                if (node.children.isEmpty()) {
+                }
+                appendChildrenInline(spannableStringBuilder, node, i2, str2, j2);
+                break;
+            case "mark":
+                i3 = 65536;
+                i |= i3;
                 i2 = i;
                 str2 = str;
                 j2 = j;
@@ -1293,7 +1311,7 @@ public abstract class RichHtml {
         }
         if (i != 0) {
             TextStyleSpan.TextStyleRun textStyleRun = new TextStyleSpan.TextStyleRun();
-            textStyleRun.flags = i & 49439;
+            textStyleRun.flags = i & 114975;
             spannableStringBuilder.setSpan(new TextStyleSpan(textStyleRun, AndroidUtilities.dp(SharedConfig.fontSize)), length, length2, 33);
         }
         if (str != null) {

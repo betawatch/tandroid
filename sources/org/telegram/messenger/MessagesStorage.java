@@ -48,6 +48,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
@@ -13191,434 +13192,370 @@ public class MessagesStorage extends BaseController {
         }
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(11:132|(3:145|146|(6:148|104|(6:106|(1:108)(1:126)|109|110|111|(3:113|(2:115|116)|118))(1:128)|119|44|45))(1:134)|135|136|137|138|104|(0)(0)|119|44|45) */
-    /* JADX WARN: Can't wrap try/catch for region: R(42:0|1|(3:2|3|(3:5|6|7))|(3:308|309|(40:311|312|313|314|10|11|12|13|(3:15|(4:19|20|16|17)|21)(2:221|(41:223|224|225|226|(9:229|230|(2:264|265)(1:232)|233|(1:235)(1:263)|(4:237|238|239|(1:241))(1:262)|(4:244|(1:246)|247|248)|249|227)|272|273|274|(4:278|279|275|276)|280|281|23|(3:206|207|(1:209))|(2:30|(3:33|34|31))|58|59|60|61|62|63|64|65|(8:69|70|71|72|73|74|66|67)|86|87|88|89|90|91|92|(5:94|95|96|97|(10:99|100|101|(3:129|130|(11:132|(3:145|146|(6:148|104|(6:106|(1:108)(1:126)|109|110|111|(3:113|(2:115|116)|118))(1:128)|119|44|45))(1:134)|135|136|137|138|104|(0)(0)|119|44|45))|103|104|(0)(0)|119|44|45))(1:169)|162|100|101|(0)|103|104|(0)(0)|119|44|45))|22|23|(0)|(4:26|28|30|(1:31))|58|59|60|61|62|63|64|65|(2:66|67)|86|87|88|89|90|91|92|(0)(0)|162|100|101|(0)|103|104|(0)(0)|119|44|45))|9|10|11|12|13|(0)(0)|22|23|(0)|(0)|58|59|60|61|62|63|64|65|(2:66|67)|86|87|88|89|90|91|92|(0)(0)|162|100|101|(0)|103|104|(0)(0)|119|44|45|(1:(0))) */
-    /* JADX WARN: Can't wrap try/catch for region: R(44:0|1|2|3|(3:5|6|7)|(3:308|309|(40:311|312|313|314|10|11|12|13|(3:15|(4:19|20|16|17)|21)(2:221|(41:223|224|225|226|(9:229|230|(2:264|265)(1:232)|233|(1:235)(1:263)|(4:237|238|239|(1:241))(1:262)|(4:244|(1:246)|247|248)|249|227)|272|273|274|(4:278|279|275|276)|280|281|23|(3:206|207|(1:209))|(2:30|(3:33|34|31))|58|59|60|61|62|63|64|65|(8:69|70|71|72|73|74|66|67)|86|87|88|89|90|91|92|(5:94|95|96|97|(10:99|100|101|(3:129|130|(11:132|(3:145|146|(6:148|104|(6:106|(1:108)(1:126)|109|110|111|(3:113|(2:115|116)|118))(1:128)|119|44|45))(1:134)|135|136|137|138|104|(0)(0)|119|44|45))|103|104|(0)(0)|119|44|45))(1:169)|162|100|101|(0)|103|104|(0)(0)|119|44|45))|22|23|(0)|(4:26|28|30|(1:31))|58|59|60|61|62|63|64|65|(2:66|67)|86|87|88|89|90|91|92|(0)(0)|162|100|101|(0)|103|104|(0)(0)|119|44|45))|9|10|11|12|13|(0)(0)|22|23|(0)|(0)|58|59|60|61|62|63|64|65|(2:66|67)|86|87|88|89|90|91|92|(0)(0)|162|100|101|(0)|103|104|(0)(0)|119|44|45|(1:(0))) */
-    /* JADX WARN: Can't wrap try/catch for region: R(46:0|1|2|3|5|6|7|(3:308|309|(40:311|312|313|314|10|11|12|13|(3:15|(4:19|20|16|17)|21)(2:221|(41:223|224|225|226|(9:229|230|(2:264|265)(1:232)|233|(1:235)(1:263)|(4:237|238|239|(1:241))(1:262)|(4:244|(1:246)|247|248)|249|227)|272|273|274|(4:278|279|275|276)|280|281|23|(3:206|207|(1:209))|(2:30|(3:33|34|31))|58|59|60|61|62|63|64|65|(8:69|70|71|72|73|74|66|67)|86|87|88|89|90|91|92|(5:94|95|96|97|(10:99|100|101|(3:129|130|(11:132|(3:145|146|(6:148|104|(6:106|(1:108)(1:126)|109|110|111|(3:113|(2:115|116)|118))(1:128)|119|44|45))(1:134)|135|136|137|138|104|(0)(0)|119|44|45))|103|104|(0)(0)|119|44|45))(1:169)|162|100|101|(0)|103|104|(0)(0)|119|44|45))|22|23|(0)|(4:26|28|30|(1:31))|58|59|60|61|62|63|64|65|(2:66|67)|86|87|88|89|90|91|92|(0)(0)|162|100|101|(0)|103|104|(0)(0)|119|44|45))|9|10|11|12|13|(0)(0)|22|23|(0)|(0)|58|59|60|61|62|63|64|65|(2:66|67)|86|87|88|89|90|91|92|(0)(0)|162|100|101|(0)|103|104|(0)(0)|119|44|45|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:140:0x030b, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(45:0|1|(3:2|3|(3:5|6|7))|(3:292|293|(46:295|296|297|298|299|300|301|10|11|13|14|15|16|(2:18|(3:20|(3:22|(2:24|25)(2:27|28)|26)|29))(2:201|(3:203|(2:206|204)|207)(2:208|(44:210|211|212|213|214|215|(11:218|219|220|(1:222)(1:250)|223|224|(1:226)(1:249)|(4:228|229|230|(1:232))(1:248)|(4:235|(1:237)|238|239)|240|216)|254|255|256|(3:259|260|257)|261|262|(3:197|198|(1:200))|(2:37|(3:40|41|38))|64|65|66|67|68|69|(8:73|74|75|76|77|78|70|71)|90|91|92|93|94|95|96|97|98|100|101|(6:103|104|105|106|107|(10:109|110|111|(3:128|129|(10:131|(3:138|139|(6:141|114|(4:116|(1:118)|119|(3:121|(2:123|124)|126))|127|51|52))(1:133)|134|135|136|114|(0)|127|51|52))|113|114|(0)|127|51|52))(1:162)|155|110|111|(0)|113|114|(0)|127|51|52)))|30|(0)|(4:33|35|37|(1:38))|64|65|66|67|68|69|(2:70|71)|90|91|92|93|94|95|96|97|98|100|101|(0)(0)|155|110|111|(0)|113|114|(0)|127|51|52))|9|10|11|13|14|15|16|(0)(0)|30|(0)|(0)|64|65|66|67|68|69|(2:70|71)|90|91|92|93|94|95|96|97|98|100|101|(0)(0)|155|110|111|(0)|113|114|(0)|127|51|52|(1:(0))) */
+    /* JADX WARN: Can't wrap try/catch for region: R(47:0|1|2|3|(3:5|6|7)|(3:292|293|(46:295|296|297|298|299|300|301|10|11|13|14|15|16|(2:18|(3:20|(3:22|(2:24|25)(2:27|28)|26)|29))(2:201|(3:203|(2:206|204)|207)(2:208|(44:210|211|212|213|214|215|(11:218|219|220|(1:222)(1:250)|223|224|(1:226)(1:249)|(4:228|229|230|(1:232))(1:248)|(4:235|(1:237)|238|239)|240|216)|254|255|256|(3:259|260|257)|261|262|(3:197|198|(1:200))|(2:37|(3:40|41|38))|64|65|66|67|68|69|(8:73|74|75|76|77|78|70|71)|90|91|92|93|94|95|96|97|98|100|101|(6:103|104|105|106|107|(10:109|110|111|(3:128|129|(10:131|(3:138|139|(6:141|114|(4:116|(1:118)|119|(3:121|(2:123|124)|126))|127|51|52))(1:133)|134|135|136|114|(0)|127|51|52))|113|114|(0)|127|51|52))(1:162)|155|110|111|(0)|113|114|(0)|127|51|52)))|30|(0)|(4:33|35|37|(1:38))|64|65|66|67|68|69|(2:70|71)|90|91|92|93|94|95|96|97|98|100|101|(0)(0)|155|110|111|(0)|113|114|(0)|127|51|52))|9|10|11|13|14|15|16|(0)(0)|30|(0)|(0)|64|65|66|67|68|69|(2:70|71)|90|91|92|93|94|95|96|97|98|100|101|(0)(0)|155|110|111|(0)|113|114|(0)|127|51|52|(1:(0))) */
+    /* JADX WARN: Can't wrap try/catch for region: R(49:0|1|2|3|5|6|7|(3:292|293|(46:295|296|297|298|299|300|301|10|11|13|14|15|16|(2:18|(3:20|(3:22|(2:24|25)(2:27|28)|26)|29))(2:201|(3:203|(2:206|204)|207)(2:208|(44:210|211|212|213|214|215|(11:218|219|220|(1:222)(1:250)|223|224|(1:226)(1:249)|(4:228|229|230|(1:232))(1:248)|(4:235|(1:237)|238|239)|240|216)|254|255|256|(3:259|260|257)|261|262|(3:197|198|(1:200))|(2:37|(3:40|41|38))|64|65|66|67|68|69|(8:73|74|75|76|77|78|70|71)|90|91|92|93|94|95|96|97|98|100|101|(6:103|104|105|106|107|(10:109|110|111|(3:128|129|(10:131|(3:138|139|(6:141|114|(4:116|(1:118)|119|(3:121|(2:123|124)|126))|127|51|52))(1:133)|134|135|136|114|(0)|127|51|52))|113|114|(0)|127|51|52))(1:162)|155|110|111|(0)|113|114|(0)|127|51|52)))|30|(0)|(4:33|35|37|(1:38))|64|65|66|67|68|69|(2:70|71)|90|91|92|93|94|95|96|97|98|100|101|(0)(0)|155|110|111|(0)|113|114|(0)|127|51|52))|9|10|11|13|14|15|16|(0)(0)|30|(0)|(0)|64|65|66|67|68|69|(2:70|71)|90|91|92|93|94|95|96|97|98|100|101|(0)(0)|155|110|111|(0)|113|114|(0)|127|51|52|(1:(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:153:0x034f, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:141:0x030c, code lost:
-    
-        r4 = r8;
-        r19 = r15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:142:0x0304, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:154:0x0347, code lost:
     
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:143:0x0305, code lost:
-    
-        r14 = r7;
-        r4 = r8;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:158:0x0364, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:164:0x039d, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:159:0x0365, code lost:
-    
-        r19 = r15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:160:0x0360, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:166:0x0397, code lost:
     
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:172:0x0383, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:167:0x0398, code lost:
+    
+        r19 = r2;
+        r2 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:168:0x03a3, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:173:0x0384, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:169:0x03a4, code lost:
     
-        r19 = r15;
         r2 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:174:0x037a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:170:0x03a0, code lost:
+    
+        r0 = th;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:171:0x03a1, code lost:
+    
+        r2 = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:173:0x03ab, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:174:0x03ac, code lost:
+    
+        r2 = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:176:0x03a7, code lost:
+    
+        r0 = th;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:177:0x03a8, code lost:
+    
+        r2 = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:178:0x03a9, code lost:
     
         r4 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:176:0x037e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:180:0x03b2, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:181:0x03b0, code lost:
     
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:177:0x037f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:189:0x03c9, code lost:
     
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:190:0x03ca, code lost:
+    
+        r11 = r30;
         r2 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:178:0x0373, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:191:0x03c4, code lost:
     
+        r0 = th;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:192:0x03c5, code lost:
+    
+        r11 = r30;
+        r2 = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:193:0x03c0, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:194:0x03c1, code lost:
+    
+        r11 = r30;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:195:0x03bc, code lost:
+    
+        r0 = th;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:196:0x03bd, code lost:
+    
+        r11 = r30;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:277:0x00d0, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:279:0x00c9, code lost:
+    
+        r0 = th;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:282:0x03d4, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:283:0x03d5, code lost:
+    
+        r11 = r30;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:284:0x03ce, code lost:
+    
+        r0 = th;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:285:0x03cf, code lost:
+    
+        r11 = r30;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:286:0x03e5, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:287:0x03e6, code lost:
+    
+        r11 = r30;
+        r3 = r9;
         r4 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:180:0x0377, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:288:0x03ee, code lost:
     
-        r0 = e;
+        r2 = r3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:181:0x0378, code lost:
-    
-        r19 = r15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:182:0x0370, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:289:0x03da, code lost:
     
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:193:0x03ac, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:290:0x03db, code lost:
     
-        r0 = e;
+        r11 = r30;
+        r3 = r9;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:194:0x03ad, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:291:0x03e3, code lost:
     
-        r7 = r19;
-        r2 = null;
+        r2 = r3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:195:0x03a0, code lost:
-    
-        r0 = th;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:196:0x03a1, code lost:
-    
-        r2 = null;
-        r4 = false;
-        r14 = r19;
-        r15 = r15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:197:0x039b, code lost:
-    
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:198:0x039c, code lost:
-    
-        r7 = r19;
-        r2 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:199:0x0396, code lost:
-    
-        r0 = th;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:200:0x0397, code lost:
-    
-        r7 = r19;
-        r2 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:202:0x03b5, code lost:
-    
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:204:0x03b1, code lost:
-    
-        r0 = th;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:299:0x03c6, code lost:
-    
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:300:0x03c7, code lost:
-    
-        r7 = r10;
-        r4 = false;
-        r8 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:301:0x03bd, code lost:
-    
-        r0 = th;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:302:0x03be, code lost:
-    
-        r7 = r10;
-        r8 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:304:0x03d5, code lost:
-    
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:305:0x03d6, code lost:
-    
-        r7 = r10;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:306:0x03cf, code lost:
-    
-        r0 = th;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:307:0x03d0, code lost:
-    
-        r7 = r10;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x0324 A[Catch: all -> 0x0360, Exception -> 0x0364, TRY_LEAVE, TryCatch #43 {Exception -> 0x0364, all -> 0x0360, blocks: (B:101:0x02bd, B:104:0x031e, B:106:0x0324), top: B:100:0x02bd }] */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x0368  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x02c2 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x02bb  */
-    /* JADX WARN: Removed duplicated region for block: B:206:0x01cc A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:221:0x00b2 A[Catch: all -> 0x03bd, Exception -> 0x03c6, TRY_ENTER, TRY_LEAVE, TryCatch #41 {Exception -> 0x03c6, all -> 0x03bd, blocks: (B:13:0x007c, B:221:0x00b2), top: B:12:0x007c }] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x01f2 A[Catch: all -> 0x01da, Exception -> 0x01e4, TryCatch #42 {Exception -> 0x01e4, all -> 0x01da, blocks: (B:207:0x01cc, B:209:0x01d2, B:26:0x01f2, B:28:0x01f6, B:31:0x01fd, B:33:0x0209), top: B:206:0x01cc }] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0209 A[Catch: all -> 0x01da, Exception -> 0x01e4, TRY_LEAVE, TryCatch #42 {Exception -> 0x01e4, all -> 0x01da, blocks: (B:207:0x01cc, B:209:0x01d2, B:26:0x01f2, B:28:0x01f6, B:31:0x01fd, B:33:0x0209), top: B:206:0x01cc }] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0405  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0426  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0247 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x029c A[Catch: all -> 0x0260, Exception -> 0x0267, TRY_ENTER, TRY_LEAVE, TryCatch #45 {Exception -> 0x0267, all -> 0x0260, blocks: (B:73:0x0251, B:94:0x029c), top: B:72:0x0251 }] */
-    /* JADX WARN: Type inference failed for: r2v0 */
-    /* JADX WARN: Type inference failed for: r2v12, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r2v20 */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x02e1 A[Catch: all -> 0x02a6, Exception -> 0x02ad, TRY_ENTER, TRY_LEAVE, TryCatch #49 {Exception -> 0x02ad, all -> 0x02a6, blocks: (B:77:0x0297, B:103:0x02e1), top: B:76:0x0297 }] */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0365 A[Catch: all -> 0x0347, Exception -> 0x034f, TryCatch #38 {Exception -> 0x034f, all -> 0x0347, blocks: (B:111:0x0302, B:114:0x035f, B:116:0x0365, B:119:0x036d, B:121:0x0377, B:123:0x037d, B:136:0x0343), top: B:110:0x0302 }] */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x0307 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x0300  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00a4 A[Catch: all -> 0x00c9, Exception -> 0x00d0, TRY_ENTER, TryCatch #37 {Exception -> 0x00d0, all -> 0x00c9, blocks: (B:18:0x00a4, B:20:0x00a8, B:22:0x00af, B:24:0x00c1, B:26:0x00e0, B:27:0x00d8, B:201:0x00ea, B:204:0x00ef, B:206:0x00f9, B:208:0x010e, B:210:0x0112), top: B:16:0x00a2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:197:0x020c A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:201:0x00ea A[Catch: all -> 0x00c9, Exception -> 0x00d0, TryCatch #37 {Exception -> 0x00d0, all -> 0x00c9, blocks: (B:18:0x00a4, B:20:0x00a8, B:22:0x00af, B:24:0x00c1, B:26:0x00e0, B:27:0x00d8, B:201:0x00ea, B:204:0x00ef, B:206:0x00f9, B:208:0x010e, B:210:0x0112), top: B:16:0x00a2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x022e A[Catch: all -> 0x021a, Exception -> 0x0223, TryCatch #29 {Exception -> 0x0223, all -> 0x021a, blocks: (B:198:0x020c, B:200:0x0212, B:33:0x022e, B:35:0x0232, B:38:0x0239, B:40:0x0246), top: B:197:0x020c }] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0246 A[Catch: all -> 0x021a, Exception -> 0x0223, TRY_LEAVE, TryCatch #29 {Exception -> 0x0223, all -> 0x021a, blocks: (B:198:0x020c, B:200:0x0212, B:33:0x022e, B:35:0x0232, B:38:0x0239, B:40:0x0246), top: B:197:0x020c }] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x041c  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x043b  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x028d A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private TLRPC.ChatFull loadChatInfoInternal(long j, boolean z, boolean z2, boolean z3, int i) {
-        ArrayList<Integer> arrayList;
         SQLiteCursor sQLiteCursor;
         TLRPC.ChatFull chatFull;
-        ArrayList<Integer> arrayList2;
         boolean z4;
-        ArrayList<Integer> arrayList3;
         TLRPC.ChatFull chatFull2;
         int i2;
         boolean z5;
         SQLiteCursor sQLiteCursor2;
         int i3;
-        SQLiteCursor sQLiteCursor3;
         boolean z6;
         int i4;
-        int i5;
-        NativeByteBuffer byteBufferValue;
-        ArrayList<Long> arrayList4;
-        ArrayList<Integer> arrayList5;
-        ArrayList<Long> arrayList6;
-        TLRPC.User TLdeserialize;
-        TLRPC.ChannelParticipant channelParticipant;
         TLRPC.ChatFull chatFull3;
-        SQLiteCursor sQLiteCursor4;
+        SQLiteCursor queryFinalized;
+        NativeByteBuffer byteBufferValue;
+        ArrayList<Integer> arrayList;
+        ArrayList<Long> arrayList2;
+        ArrayList arrayList3;
         long j2;
-        int i6;
+        ArrayList<Long> arrayList4;
+        ArrayList<Long> arrayList5;
+        TLRPC.User user;
+        TLRPC.ChannelParticipant channelParticipant;
+        long j3;
+        int i5;
         boolean z7;
+        int i6;
+        ArrayList<Long> arrayList6;
         int i7;
-        int intValue;
-        ArrayList<Long> arrayList7;
-        int i8;
-        long j3 = j;
-        ?? r2 = 0;
-        ArrayList<TLRPC.User> arrayList8 = new ArrayList<>();
+        ArrayList<TLRPC.User> arrayList7 = new ArrayList<>();
+        ArrayList<TLRPC.Chat> arrayList8 = new ArrayList<>();
         HashMap<Integer, MessageObject> hashMap = new HashMap<>();
         ArrayList<Integer> arrayList9 = new ArrayList<>();
         try {
-            sQLiteCursor = this.database.queryFinalized("SELECT info, pinned, online, inviter, links FROM chat_settings_v2 WHERE uid = " + j3, new Object[0]);
+            queryFinalized = this.database.queryFinalized("SELECT info, pinned, online, inviter, links FROM chat_settings_v2 WHERE uid = " + j, new Object[0]);
             try {
-                i5 = 2;
             } catch (Exception e) {
                 e = e;
-                arrayList2 = arrayList9;
+                SQLiteCursor sQLiteCursor3 = queryFinalized;
                 z4 = false;
                 chatFull = null;
             } catch (Throwable th) {
                 th = th;
-                arrayList = arrayList9;
+                SQLiteCursor sQLiteCursor4 = queryFinalized;
                 chatFull = null;
             }
         } catch (Exception e2) {
             e = e2;
-            arrayList2 = arrayList9;
-            z4 = false;
             sQLiteCursor = null;
+            z4 = false;
             chatFull = null;
         } catch (Throwable th2) {
             th = th2;
-            arrayList = arrayList9;
             sQLiteCursor = null;
             chatFull = null;
         }
-        if (sQLiteCursor.next()) {
+        if (queryFinalized.next()) {
             try {
-                byteBufferValue = sQLiteCursor.byteBufferValue(0);
+                byteBufferValue = queryFinalized.byteBufferValue(0);
             } catch (Exception e3) {
                 e = e3;
-                arrayList2 = arrayList9;
+                sQLiteCursor = queryFinalized;
                 chatFull = null;
             } catch (Throwable th3) {
                 th = th3;
-                arrayList = arrayList9;
+                sQLiteCursor = queryFinalized;
                 chatFull = null;
             }
             if (byteBufferValue != null) {
-                TLRPC.ChatFull TLdeserialize2 = TLRPC.ChatFull.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
+                TLRPC.ChatFull TLdeserialize = TLRPC.ChatFull.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
                 try {
                     byteBufferValue.reuse();
-                    TLdeserialize2.pinned_msg_id = sQLiteCursor.intValue(1);
-                    TLdeserialize2.online_count = sQLiteCursor.intValue(2);
-                    TLdeserialize2.inviterId = sQLiteCursor.longValue(3);
-                    TLdeserialize2.invitesCount = sQLiteCursor.intValue(4);
-                    chatFull = TLdeserialize2;
-                    sQLiteCursor.dispose();
-                    arrayList4 = new ArrayList<>();
-                } catch (Exception e4) {
-                    e = e4;
-                    arrayList2 = arrayList9;
-                    chatFull = TLdeserialize2;
-                    z4 = false;
-                    sQLiteCursor2 = sQLiteCursor;
-                    i3 = 0;
-                    try {
-                        checkSQLException(e);
-                        if (sQLiteCursor2 != null) {
-                        }
-                        i4 = i3;
-                        z6 = z4;
-                        getMessagesController().processChatInfo(j, chatFull, arrayList8, true, z2, z3, arrayList2, hashMap, i4, z6);
-                        return chatFull;
-                    } catch (Throwable th4) {
-                        th = th4;
-                        arrayList3 = arrayList2;
-                        sQLiteCursor3 = sQLiteCursor2;
-                        i2 = i3;
-                        z5 = z4;
-                        sQLiteCursor = sQLiteCursor3;
-                        chatFull2 = chatFull;
-                        if (sQLiteCursor != null) {
-                        }
-                        getMessagesController().processChatInfo(j, chatFull2, arrayList8, true, z2, z3, arrayList3, hashMap, i2, z5);
-                        throw th;
-                    }
-                } catch (Throwable th5) {
-                    th = th5;
+                    TLdeserialize.pinned_msg_id = queryFinalized.intValue(1);
+                    TLdeserialize.online_count = queryFinalized.intValue(2);
                     arrayList = arrayList9;
-                    chatFull = TLdeserialize2;
-                    arrayList3 = arrayList;
-                    chatFull2 = chatFull;
-                    i2 = 0;
-                    z5 = false;
-                    if (sQLiteCursor != null) {
-                    }
-                    getMessagesController().processChatInfo(j, chatFull2, arrayList8, true, z2, z3, arrayList3, hashMap, i2, z5);
-                    throw th;
-                }
-                if (!(chatFull instanceof TLRPC.TL_chatFull)) {
-                    for (int i9 = 0; i9 < chatFull.participants.participants.size(); i9++) {
+                    try {
+                        TLdeserialize.inviterId = queryFinalized.longValue(3);
+                        TLdeserialize.invitesCount = queryFinalized.intValue(4);
+                        chatFull = TLdeserialize;
+                        queryFinalized.dispose();
+                        arrayList2 = new ArrayList<>();
+                        arrayList3 = new ArrayList();
+                    } catch (Exception e4) {
+                        e = e4;
+                        arrayList9 = arrayList;
+                        sQLiteCursor = queryFinalized;
+                        chatFull = TLdeserialize;
+                        z4 = false;
+                        sQLiteCursor2 = sQLiteCursor;
+                        i3 = 0;
                         try {
-                            arrayList4.add(Long.valueOf(chatFull.participants.participants.get(i9).user_id));
-                        } catch (Exception e5) {
-                            e = e5;
-                            arrayList2 = arrayList9;
-                            sQLiteCursor = null;
-                            z4 = false;
-                            sQLiteCursor2 = sQLiteCursor;
-                            i3 = 0;
                             checkSQLException(e);
                             if (sQLiteCursor2 != null) {
                             }
                             i4 = i3;
                             z6 = z4;
-                            getMessagesController().processChatInfo(j, chatFull, arrayList8, true, z2, z3, arrayList2, hashMap, i4, z6);
-                            return chatFull;
-                        } catch (Throwable th6) {
-                            th = th6;
-                            arrayList = arrayList9;
-                            sQLiteCursor = null;
-                            arrayList3 = arrayList;
+                            chatFull3 = chatFull;
+                            getMessagesController().processChatInfo(j, chatFull3, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i4, z6);
+                            return chatFull3;
+                        } catch (Throwable th4) {
+                            th = th4;
+                            i2 = i3;
+                            z5 = z4;
                             chatFull2 = chatFull;
-                            i2 = 0;
-                            z5 = false;
+                            sQLiteCursor = sQLiteCursor2;
                             if (sQLiteCursor != null) {
+                                sQLiteCursor.dispose();
                             }
-                            getMessagesController().processChatInfo(j, chatFull2, arrayList8, true, z2, z3, arrayList3, hashMap, i2, z5);
+                            getMessagesController().processChatInfo(j, chatFull2, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i2, z5);
                             throw th;
                         }
+                    } catch (Throwable th5) {
+                        th = th5;
+                        arrayList9 = arrayList;
+                        sQLiteCursor = queryFinalized;
+                        chatFull = TLdeserialize;
+                        chatFull2 = chatFull;
+                        i2 = 0;
+                        z5 = false;
+                        if (sQLiteCursor != null) {
+                        }
+                        getMessagesController().processChatInfo(j, chatFull2, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i2, z5);
+                        throw th;
+                    }
+                } catch (Exception e5) {
+                    e = e5;
+                } catch (Throwable th6) {
+                    th = th6;
+                }
+                if (!(chatFull instanceof TLRPC.TL_communityFull)) {
+                    ArrayList<TL_communities.CommunityPeer> arrayList10 = chatFull.linked_peers;
+                    if (arrayList10 != null) {
+                        int size = arrayList10.size();
+                        for (int i8 = 0; i8 < size; i8++) {
+                            long peerDialogId = DialogObject.getPeerDialogId(chatFull.linked_peers.get(i8).peer);
+                            if (peerDialogId > 0) {
+                                arrayList2.add(Long.valueOf(peerDialogId));
+                            } else {
+                                arrayList3.add(Long.valueOf(-peerDialogId));
+                            }
+                        }
+                    }
+                } else if (chatFull instanceof TLRPC.TL_chatFull) {
+                    for (int i9 = 0; i9 < chatFull.participants.participants.size(); i9++) {
+                        arrayList2.add(Long.valueOf(chatFull.participants.participants.get(i9).user_id));
                     }
                 } else if (chatFull instanceof TLRPC.TL_channelFull) {
+                    SQLiteDatabase sQLiteDatabase = this.database;
+                    StringBuilder sb = new StringBuilder();
+                    sb.append("SELECT us.data, us.status, cu.data, cu.date FROM channel_users_v2 as cu LEFT JOIN users as us ON us.uid = cu.uid WHERE cu.did = ");
+                    ArrayList<Long> arrayList11 = arrayList2;
+                    j2 = j;
                     try {
-                        SQLiteDatabase sQLiteDatabase = this.database;
-                        StringBuilder sb = new StringBuilder();
-                        sb.append("SELECT us.data, us.status, cu.data, cu.date FROM channel_users_v2 as cu LEFT JOIN users as us ON us.uid = cu.uid WHERE cu.did = ");
-                        ArrayList<Long> arrayList10 = arrayList4;
-                        sb.append(-j3);
+                        sb.append(-j2);
                         sb.append(" ORDER BY cu.date DESC");
-                        SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized(sb.toString(), new Object[0]);
+                        sQLiteCursor = sQLiteDatabase.queryFinalized(sb.toString(), new Object[0]);
                         try {
                             try {
                                 chatFull.participants = new TLRPC.TL_chatParticipants();
-                                while (queryFinalized.next()) {
+                                while (sQLiteCursor.next()) {
                                     try {
-                                        NativeByteBuffer byteBufferValue2 = queryFinalized.byteBufferValue(r2);
-                                        if (byteBufferValue2 != 0) {
-                                            try {
-                                                TLdeserialize = TLRPC.User.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(r2), r2);
-                                                byteBufferValue2.reuse();
-                                            } catch (Throwable th7) {
-                                                th = th7;
-                                                sQLiteCursor = queryFinalized;
-                                                arrayList = arrayList9;
-                                                arrayList3 = arrayList;
-                                                chatFull2 = chatFull;
-                                                i2 = 0;
-                                                z5 = false;
-                                                if (sQLiteCursor != null) {
-                                                }
-                                                getMessagesController().processChatInfo(j, chatFull2, arrayList8, true, z2, z3, arrayList3, hashMap, i2, z5);
-                                                throw th;
-                                            }
+                                        NativeByteBuffer byteBufferValue2 = sQLiteCursor.byteBufferValue(0);
+                                        if (byteBufferValue2 != null) {
+                                            TLRPC.User TLdeserialize2 = TLRPC.User.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), false);
+                                            byteBufferValue2.reuse();
+                                            user = TLdeserialize2;
                                         } else {
-                                            TLdeserialize = null;
+                                            user = null;
                                         }
-                                        NativeByteBuffer byteBufferValue3 = queryFinalized.byteBufferValue(i5);
-                                        if (byteBufferValue3 != 0) {
-                                            channelParticipant = TLRPC.ChannelParticipant.TLdeserialize(byteBufferValue3, byteBufferValue3.readInt32(r2), r2);
+                                        NativeByteBuffer byteBufferValue3 = sQLiteCursor.byteBufferValue(2);
+                                        if (byteBufferValue3 != null) {
+                                            channelParticipant = TLRPC.ChannelParticipant.TLdeserialize(byteBufferValue3, byteBufferValue3.readInt32(false), false);
                                             byteBufferValue3.reuse();
                                         } else {
                                             channelParticipant = null;
                                         }
                                         if (channelParticipant != null) {
-                                            arrayList5 = arrayList9;
+                                            arrayList5 = arrayList11;
                                             try {
-                                                try {
-                                                    if (channelParticipant.user_id == getUserConfig().clientUserId) {
-                                                        TLdeserialize = getUserConfig().getCurrentUser();
-                                                    }
-                                                } catch (Throwable th8) {
-                                                    th = th8;
-                                                    sQLiteCursor = queryFinalized;
-                                                    arrayList = arrayList5;
-                                                    arrayList3 = arrayList;
-                                                    chatFull2 = chatFull;
-                                                    i2 = 0;
-                                                    z5 = false;
-                                                    if (sQLiteCursor != null) {
-                                                        sQLiteCursor.dispose();
-                                                    }
-                                                    getMessagesController().processChatInfo(j, chatFull2, arrayList8, true, z2, z3, arrayList3, hashMap, i2, z5);
-                                                    throw th;
+                                                if (channelParticipant.user_id == getUserConfig().clientUserId) {
+                                                    user = getUserConfig().getCurrentUser();
                                                 }
                                             } catch (Exception e6) {
                                                 e = e6;
-                                                try {
-                                                    checkSQLException(e);
-                                                    j3 = j;
-                                                    arrayList9 = arrayList5;
-                                                    r2 = 0;
-                                                    i5 = 2;
-                                                } catch (Exception e7) {
-                                                    e = e7;
-                                                    sQLiteCursor = queryFinalized;
-                                                    arrayList2 = arrayList5;
-                                                    z4 = false;
-                                                    sQLiteCursor2 = sQLiteCursor;
-                                                    i3 = 0;
-                                                    checkSQLException(e);
-                                                    if (sQLiteCursor2 != null) {
-                                                        sQLiteCursor2.dispose();
-                                                    }
-                                                    i4 = i3;
-                                                    z6 = z4;
-                                                    getMessagesController().processChatInfo(j, chatFull, arrayList8, true, z2, z3, arrayList2, hashMap, i4, z6);
-                                                    return chatFull;
-                                                }
+                                                checkSQLException(e);
+                                                arrayList11 = arrayList5;
                                             }
                                         } else {
-                                            arrayList5 = arrayList9;
+                                            arrayList5 = arrayList11;
                                         }
-                                        if (TLdeserialize != null && channelParticipant != null) {
-                                            TLRPC.UserStatus userStatus = TLdeserialize.status;
+                                        if (user != null && channelParticipant != null) {
+                                            TLRPC.UserStatus userStatus = user.status;
                                             if (userStatus != null) {
-                                                userStatus.expires = queryFinalized.intValue(1);
+                                                userStatus.expires = sQLiteCursor.intValue(1);
                                             }
-                                            arrayList8.add(TLdeserialize);
-                                            channelParticipant.date = queryFinalized.intValue(3);
+                                            arrayList7.add(user);
+                                            channelParticipant.date = sQLiteCursor.intValue(3);
                                             TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
                                             tL_chatChannelParticipant.user_id = MessageObject.getPeerId(channelParticipant.peer);
                                             tL_chatChannelParticipant.date = channelParticipant.date;
@@ -13626,463 +13563,434 @@ public class MessagesStorage extends BaseController {
                                             tL_chatChannelParticipant.channelParticipant = channelParticipant;
                                             chatFull.participants.participants.add(tL_chatChannelParticipant);
                                         }
-                                    } catch (Exception e8) {
-                                        e = e8;
-                                        arrayList5 = arrayList9;
+                                    } catch (Exception e7) {
+                                        e = e7;
+                                        arrayList5 = arrayList11;
                                     }
-                                    j3 = j;
-                                    arrayList9 = arrayList5;
-                                    r2 = 0;
-                                    i5 = 2;
+                                    arrayList11 = arrayList5;
                                 }
-                                arrayList5 = arrayList9;
-                                queryFinalized.dispose();
+                                ArrayList<Long> arrayList12 = arrayList11;
+                                sQLiteCursor.dispose();
                                 int i10 = 0;
                                 while (i10 < chatFull.bot_info.size()) {
-                                    try {
-                                        ArrayList<Long> arrayList11 = arrayList10;
-                                        arrayList11.add(Long.valueOf(chatFull.bot_info.get(i10).user_id));
-                                        i10++;
-                                        arrayList10 = arrayList11;
-                                    } catch (Exception e9) {
-                                        e = e9;
-                                        arrayList2 = arrayList5;
-                                        z4 = false;
-                                        sQLiteCursor = null;
-                                        sQLiteCursor2 = sQLiteCursor;
-                                        i3 = 0;
-                                        checkSQLException(e);
-                                        if (sQLiteCursor2 != null) {
-                                        }
-                                        i4 = i3;
-                                        z6 = z4;
-                                        getMessagesController().processChatInfo(j, chatFull, arrayList8, true, z2, z3, arrayList2, hashMap, i4, z6);
-                                        return chatFull;
-                                    } catch (Throwable th9) {
-                                        th = th9;
-                                        arrayList = arrayList5;
-                                        sQLiteCursor = null;
-                                        arrayList3 = arrayList;
-                                        chatFull2 = chatFull;
-                                        i2 = 0;
-                                        z5 = false;
-                                        if (sQLiteCursor != null) {
-                                        }
-                                        getMessagesController().processChatInfo(j, chatFull2, arrayList8, true, z2, z3, arrayList3, hashMap, i2, z5);
-                                        throw th;
-                                    }
+                                    ArrayList<Long> arrayList13 = arrayList12;
+                                    arrayList13.add(Long.valueOf(chatFull.bot_info.get(i10).user_id));
+                                    i10++;
+                                    arrayList12 = arrayList13;
                                 }
-                                arrayList6 = arrayList10;
+                                arrayList4 = arrayList12;
                                 if (chatFull != null) {
                                     try {
                                         long j4 = chatFull.inviterId;
                                         if (j4 != 0) {
-                                            arrayList6.add(Long.valueOf(j4));
+                                            arrayList4.add(Long.valueOf(j4));
                                         }
-                                    } catch (Exception e10) {
-                                        e = e10;
-                                        arrayList2 = arrayList5;
+                                    } catch (Exception e8) {
+                                        e = e8;
+                                        arrayList9 = arrayList;
                                         i3 = 0;
-                                        sQLiteCursor2 = null;
                                         z4 = false;
-                                        chatFull3 = chatFull;
-                                        chatFull = chatFull3;
+                                        sQLiteCursor2 = null;
                                         checkSQLException(e);
                                         if (sQLiteCursor2 != null) {
                                         }
                                         i4 = i3;
                                         z6 = z4;
-                                        getMessagesController().processChatInfo(j, chatFull, arrayList8, true, z2, z3, arrayList2, hashMap, i4, z6);
-                                        return chatFull;
-                                    } catch (Throwable th10) {
-                                        th = th10;
-                                        arrayList3 = arrayList5;
+                                        chatFull3 = chatFull;
+                                        getMessagesController().processChatInfo(j, chatFull3, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i4, z6);
+                                        return chatFull3;
+                                    } catch (Throwable th7) {
+                                        th = th7;
+                                        arrayList9 = arrayList;
                                         i3 = 0;
                                         z4 = false;
-                                        sQLiteCursor3 = null;
+                                        sQLiteCursor2 = null;
                                         i2 = i3;
                                         z5 = z4;
-                                        sQLiteCursor = sQLiteCursor3;
                                         chatFull2 = chatFull;
+                                        sQLiteCursor = sQLiteCursor2;
                                         if (sQLiteCursor != null) {
                                         }
-                                        getMessagesController().processChatInfo(j, chatFull2, arrayList8, true, z2, z3, arrayList3, hashMap, i2, z5);
+                                        getMessagesController().processChatInfo(j, chatFull2, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i2, z5);
                                         throw th;
                                     }
                                 }
-                                if (chatFull != null && (arrayList7 = chatFull.recent_requesters) != null && !arrayList7.isEmpty()) {
-                                    for (i8 = 0; i8 < Math.min(3, chatFull.recent_requesters.size()); i8++) {
-                                        ArrayList<Long> arrayList12 = chatFull.recent_requesters;
-                                        arrayList6.add(arrayList12.get((arrayList12.size() - 1) - i8));
+                                if (chatFull != null && (arrayList6 = chatFull.recent_requesters) != null && !arrayList6.isEmpty()) {
+                                    for (i7 = 0; i7 < Math.min(3, chatFull.recent_requesters.size()); i7++) {
+                                        ArrayList<Long> arrayList14 = chatFull.recent_requesters;
+                                        arrayList4.add(arrayList14.get((arrayList14.size() - 1) - i7));
                                     }
                                 }
-                                getUsersInternal(arrayList6, arrayList8);
-                                j2 = -j;
+                                getUsersInternal(arrayList4, arrayList7);
+                                getChatsInternal(TextUtils.join(",", arrayList3), arrayList8);
+                                j3 = -j2;
                                 int i11 = 0;
-                                sQLiteCursor4 = getMessagesStorage().getDatabase().queryFinalized(String.format(Locale.US, "SELECT mid FROM chat_pinned_v2 WHERE uid = %d ORDER BY mid DESC", Long.valueOf(j2)), new Object[0]);
-                                while (sQLiteCursor4.next()) {
+                                sQLiteCursor = getMessagesStorage().getDatabase().queryFinalized(String.format(Locale.US, "SELECT mid FROM chat_pinned_v2 WHERE uid = %d ORDER BY mid DESC", Long.valueOf(j3)), new Object[0]);
+                                while (sQLiteCursor.next()) {
                                     try {
                                         try {
-                                            intValue = sQLiteCursor4.intValue(i11);
-                                            arrayList2 = arrayList5;
-                                        } catch (Exception e11) {
-                                            e = e11;
-                                            arrayList2 = arrayList5;
-                                            sQLiteCursor2 = sQLiteCursor4;
-                                            chatFull3 = chatFull;
+                                            int intValue = sQLiteCursor.intValue(i11);
+                                            arrayList9 = arrayList;
+                                            try {
+                                                arrayList9.add(Integer.valueOf(intValue));
+                                                hashMap.put(Integer.valueOf(intValue), null);
+                                                arrayList = arrayList9;
+                                                i11 = 0;
+                                            } catch (Exception e9) {
+                                                e = e9;
+                                                sQLiteCursor2 = sQLiteCursor;
+                                                i3 = 0;
+                                                z4 = false;
+                                                checkSQLException(e);
+                                                if (sQLiteCursor2 != null) {
+                                                }
+                                                i4 = i3;
+                                                z6 = z4;
+                                                chatFull3 = chatFull;
+                                                getMessagesController().processChatInfo(j, chatFull3, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i4, z6);
+                                                return chatFull3;
+                                            } catch (Throwable th8) {
+                                                th = th8;
+                                                sQLiteCursor2 = sQLiteCursor;
+                                                i3 = 0;
+                                                z4 = false;
+                                                i2 = i3;
+                                                z5 = z4;
+                                                chatFull2 = chatFull;
+                                                sQLiteCursor = sQLiteCursor2;
+                                                if (sQLiteCursor != null) {
+                                                }
+                                                getMessagesController().processChatInfo(j, chatFull2, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i2, z5);
+                                                throw th;
+                                            }
+                                        } catch (Exception e10) {
+                                            e = e10;
+                                            arrayList9 = arrayList;
+                                            sQLiteCursor2 = sQLiteCursor;
                                             i3 = 0;
                                             z4 = false;
-                                            chatFull = chatFull3;
                                             checkSQLException(e);
                                             if (sQLiteCursor2 != null) {
                                             }
                                             i4 = i3;
                                             z6 = z4;
-                                            getMessagesController().processChatInfo(j, chatFull, arrayList8, true, z2, z3, arrayList2, hashMap, i4, z6);
-                                            return chatFull;
-                                        } catch (Throwable th11) {
-                                            th = th11;
-                                            arrayList2 = arrayList5;
-                                            arrayList3 = arrayList2;
-                                            z4 = false;
-                                            sQLiteCursor3 = sQLiteCursor4;
-                                            i3 = 0;
-                                            i2 = i3;
-                                            z5 = z4;
-                                            sQLiteCursor = sQLiteCursor3;
-                                            chatFull2 = chatFull;
-                                            if (sQLiteCursor != null) {
-                                            }
-                                            getMessagesController().processChatInfo(j, chatFull2, arrayList8, true, z2, z3, arrayList3, hashMap, i2, z5);
-                                            throw th;
-                                        }
-                                        try {
-                                            arrayList2.add(Integer.valueOf(intValue));
-                                            hashMap.put(Integer.valueOf(intValue), null);
-                                            arrayList5 = arrayList2;
-                                            i11 = 0;
-                                        } catch (Exception e12) {
-                                            e = e12;
-                                            sQLiteCursor2 = sQLiteCursor4;
                                             chatFull3 = chatFull;
+                                            getMessagesController().processChatInfo(j, chatFull3, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i4, z6);
+                                            return chatFull3;
+                                        } catch (Throwable th9) {
+                                            th = th9;
+                                            arrayList9 = arrayList;
+                                            sQLiteCursor2 = sQLiteCursor;
                                             i3 = 0;
                                             z4 = false;
-                                            chatFull = chatFull3;
-                                            checkSQLException(e);
-                                            if (sQLiteCursor2 != null) {
-                                            }
-                                            i4 = i3;
-                                            z6 = z4;
-                                            getMessagesController().processChatInfo(j, chatFull, arrayList8, true, z2, z3, arrayList2, hashMap, i4, z6);
-                                            return chatFull;
-                                        } catch (Throwable th12) {
-                                            th = th12;
-                                            arrayList3 = arrayList2;
-                                            z4 = false;
-                                            sQLiteCursor3 = sQLiteCursor4;
-                                            i3 = 0;
                                             i2 = i3;
                                             z5 = z4;
-                                            sQLiteCursor = sQLiteCursor3;
                                             chatFull2 = chatFull;
+                                            sQLiteCursor = sQLiteCursor2;
                                             if (sQLiteCursor != null) {
                                             }
-                                            getMessagesController().processChatInfo(j, chatFull2, arrayList8, true, z2, z3, arrayList3, hashMap, i2, z5);
+                                            getMessagesController().processChatInfo(j, chatFull2, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i2, z5);
                                             throw th;
                                         }
-                                    } catch (Exception e13) {
-                                        e = e13;
-                                        arrayList2 = arrayList5;
-                                        z4 = false;
-                                        chatFull3 = chatFull;
-                                        sQLiteCursor2 = sQLiteCursor4;
-                                        i3 = 0;
-                                        chatFull = chatFull3;
-                                        checkSQLException(e);
-                                        if (sQLiteCursor2 != null) {
-                                        }
-                                        i4 = i3;
-                                        z6 = z4;
-                                        getMessagesController().processChatInfo(j, chatFull, arrayList8, true, z2, z3, arrayList2, hashMap, i4, z6);
-                                        return chatFull;
-                                    } catch (Throwable th13) {
-                                        th = th13;
-                                        arrayList2 = arrayList5;
-                                        z4 = false;
-                                        arrayList3 = arrayList2;
-                                        sQLiteCursor3 = sQLiteCursor4;
-                                        i3 = 0;
-                                        i2 = i3;
-                                        z5 = z4;
-                                        sQLiteCursor = sQLiteCursor3;
-                                        chatFull2 = chatFull;
-                                        if (sQLiteCursor != null) {
-                                        }
-                                        getMessagesController().processChatInfo(j, chatFull2, arrayList8, true, z2, z3, arrayList3, hashMap, i2, z5);
-                                        throw th;
+                                    } catch (Exception e11) {
+                                        e = e11;
+                                        arrayList9 = arrayList;
+                                    } catch (Throwable th10) {
+                                        th = th10;
+                                        arrayList9 = arrayList;
                                     }
                                 }
-                                arrayList2 = arrayList5;
-                                sQLiteCursor4.dispose();
-                                sQLiteCursor4 = this.database.queryFinalized("SELECT count, end FROM chat_pinned_count WHERE uid = " + j2, new Object[0]);
-                            } catch (Throwable th14) {
-                                th = th14;
-                                arrayList5 = arrayList9;
+                                arrayList9 = arrayList;
+                                sQLiteCursor.dispose();
+                                z4 = false;
+                                sQLiteCursor = this.database.queryFinalized("SELECT count, end FROM chat_pinned_count WHERE uid = " + j3, new Object[0]);
+                            } catch (Throwable th11) {
+                                th = th11;
+                                arrayList9 = arrayList;
+                                chatFull2 = chatFull;
+                                i2 = 0;
+                                z5 = false;
+                                if (sQLiteCursor != null) {
+                                }
+                                getMessagesController().processChatInfo(j, chatFull2, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i2, z5);
+                                throw th;
                             }
+                        } catch (Exception e12) {
+                            e = e12;
+                            arrayList9 = arrayList;
+                            z4 = false;
+                            sQLiteCursor2 = sQLiteCursor;
+                            i3 = 0;
+                            checkSQLException(e);
+                            if (sQLiteCursor2 != null) {
+                                sQLiteCursor2.dispose();
+                            }
+                            i4 = i3;
+                            z6 = z4;
+                            chatFull3 = chatFull;
+                            getMessagesController().processChatInfo(j, chatFull3, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i4, z6);
+                            return chatFull3;
+                        }
+                    } catch (Exception e13) {
+                        e = e13;
+                        arrayList9 = arrayList;
+                        sQLiteCursor = null;
+                        z4 = false;
+                        sQLiteCursor2 = sQLiteCursor;
+                        i3 = 0;
+                        checkSQLException(e);
+                        if (sQLiteCursor2 != null) {
+                        }
+                        i4 = i3;
+                        z6 = z4;
+                        chatFull3 = chatFull;
+                        getMessagesController().processChatInfo(j, chatFull3, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i4, z6);
+                        return chatFull3;
+                    } catch (Throwable th12) {
+                        th = th12;
+                        arrayList9 = arrayList;
+                        sQLiteCursor = null;
+                        chatFull2 = chatFull;
+                        i2 = 0;
+                        z5 = false;
+                        if (sQLiteCursor != null) {
+                        }
+                        getMessagesController().processChatInfo(j, chatFull2, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i2, z5);
+                        throw th;
+                    }
+                    if (sQLiteCursor.next()) {
+                        int intValue2 = sQLiteCursor.intValue(0);
+                        try {
+                            i5 = intValue2;
                         } catch (Exception e14) {
                             e = e14;
-                            arrayList5 = arrayList9;
-                        }
-                    } catch (Exception e15) {
-                        e = e15;
-                        arrayList5 = arrayList9;
-                    } catch (Throwable th15) {
-                        th = th15;
-                        arrayList5 = arrayList9;
-                    }
-                    if (sQLiteCursor4.next()) {
-                        int intValue2 = sQLiteCursor4.intValue(0);
-                        try {
-                            i6 = intValue2;
-                        } catch (Exception e16) {
-                            e = e16;
-                            sQLiteCursor2 = sQLiteCursor4;
-                            chatFull3 = chatFull;
+                            sQLiteCursor2 = sQLiteCursor;
                             i3 = intValue2;
                             z4 = false;
-                            chatFull = chatFull3;
                             checkSQLException(e);
                             if (sQLiteCursor2 != null) {
                             }
                             i4 = i3;
                             z6 = z4;
-                            getMessagesController().processChatInfo(j, chatFull, arrayList8, true, z2, z3, arrayList2, hashMap, i4, z6);
-                            return chatFull;
-                        } catch (Throwable th16) {
-                            th = th16;
-                            arrayList3 = arrayList2;
-                            z4 = false;
-                            sQLiteCursor3 = sQLiteCursor4;
+                            chatFull3 = chatFull;
+                            getMessagesController().processChatInfo(j, chatFull3, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i4, z6);
+                            return chatFull3;
+                        } catch (Throwable th13) {
+                            th = th13;
+                            sQLiteCursor2 = sQLiteCursor;
                             i3 = intValue2;
+                            z4 = false;
                             i2 = i3;
                             z5 = z4;
-                            sQLiteCursor = sQLiteCursor3;
                             chatFull2 = chatFull;
+                            sQLiteCursor = sQLiteCursor2;
                             if (sQLiteCursor != null) {
                             }
-                            getMessagesController().processChatInfo(j, chatFull2, arrayList8, true, z2, z3, arrayList3, hashMap, i2, z5);
+                            getMessagesController().processChatInfo(j, chatFull2, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i2, z5);
                             throw th;
                         }
-                        if (sQLiteCursor4.intValue(1) != 0) {
+                        if (sQLiteCursor.intValue(1) != 0) {
                             z7 = true;
-                            sQLiteCursor4.dispose();
+                            sQLiteCursor.dispose();
                             if (chatFull != null) {
                                 try {
-                                } catch (Exception e17) {
-                                    e = e17;
-                                    sQLiteCursor4 = null;
-                                } catch (Throwable th17) {
-                                    th = th17;
-                                    sQLiteCursor4 = null;
+                                } catch (Exception e15) {
+                                    e = e15;
+                                    sQLiteCursor = null;
+                                    sQLiteCursor2 = sQLiteCursor;
+                                    i3 = i5;
+                                    z4 = z7;
+                                    checkSQLException(e);
+                                    if (sQLiteCursor2 != null) {
+                                    }
+                                    i4 = i3;
+                                    z6 = z4;
+                                    chatFull3 = chatFull;
+                                    getMessagesController().processChatInfo(j, chatFull3, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i4, z6);
+                                    return chatFull3;
+                                } catch (Throwable th14) {
+                                    th = th14;
+                                    sQLiteCursor = null;
+                                    sQLiteCursor2 = sQLiteCursor;
+                                    i3 = i5;
+                                    z4 = z7;
+                                    i2 = i3;
+                                    z5 = z4;
+                                    chatFull2 = chatFull;
+                                    sQLiteCursor = sQLiteCursor2;
+                                    if (sQLiteCursor != null) {
+                                    }
+                                    getMessagesController().processChatInfo(j, chatFull2, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i2, z5);
+                                    throw th;
                                 }
                                 if (chatFull.pinned_msg_id != 0) {
-                                    if (arrayList2.isEmpty()) {
-                                        i7 = 0;
+                                    if (arrayList9.isEmpty()) {
+                                        i6 = 0;
                                     } else {
                                         try {
-                                            i7 = 0;
-                                        } catch (Exception e18) {
-                                            e = e18;
-                                            i3 = i6;
+                                            i6 = 0;
+                                        } catch (Exception e16) {
+                                            e = e16;
+                                            i3 = i5;
                                             z4 = z7;
-                                            chatFull3 = chatFull;
                                             sQLiteCursor2 = null;
-                                            chatFull = chatFull3;
                                             checkSQLException(e);
                                             if (sQLiteCursor2 != null) {
                                             }
                                             i4 = i3;
                                             z6 = z4;
-                                            getMessagesController().processChatInfo(j, chatFull, arrayList8, true, z2, z3, arrayList2, hashMap, i4, z6);
-                                            return chatFull;
-                                        } catch (Throwable th18) {
-                                            th = th18;
-                                            i3 = i6;
-                                            arrayList3 = arrayList2;
+                                            chatFull3 = chatFull;
+                                            getMessagesController().processChatInfo(j, chatFull3, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i4, z6);
+                                            return chatFull3;
+                                        } catch (Throwable th15) {
+                                            th = th15;
+                                            i3 = i5;
                                             z4 = z7;
-                                            sQLiteCursor3 = null;
+                                            sQLiteCursor2 = null;
                                             i2 = i3;
                                             z5 = z4;
-                                            sQLiteCursor = sQLiteCursor3;
                                             chatFull2 = chatFull;
+                                            sQLiteCursor = sQLiteCursor2;
                                             if (sQLiteCursor != null) {
                                             }
-                                            getMessagesController().processChatInfo(j, chatFull2, arrayList8, true, z2, z3, arrayList3, hashMap, i2, z5);
+                                            getMessagesController().processChatInfo(j, chatFull2, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i2, z5);
                                             throw th;
                                         }
-                                        if (chatFull.pinned_msg_id <= arrayList2.get(0).intValue()) {
-                                            sQLiteCursor4 = null;
-                                            if (arrayList2.isEmpty()) {
-                                                chatFull3 = chatFull;
-                                                try {
-                                                    ArrayList<MessageObject> loadPinnedMessages = getMediaDataController().loadPinnedMessages(j2, z ? j : 0L, arrayList2, false);
-                                                    if (loadPinnedMessages != null) {
-                                                        int size = loadPinnedMessages.size();
-                                                        while (i7 < size) {
-                                                            MessageObject messageObject = loadPinnedMessages.get(i7);
-                                                            hashMap.put(Integer.valueOf(messageObject.getId()), messageObject);
-                                                            i7++;
-                                                        }
+                                        if (chatFull.pinned_msg_id <= arrayList9.get(0).intValue()) {
+                                            sQLiteCursor = null;
+                                            if (!arrayList9.isEmpty()) {
+                                                ArrayList<MessageObject> loadPinnedMessages = getMediaDataController().loadPinnedMessages(j3, z ? j2 : 0L, arrayList9, false);
+                                                if (loadPinnedMessages != null) {
+                                                    int size2 = loadPinnedMessages.size();
+                                                    while (i6 < size2) {
+                                                        MessageObject messageObject = loadPinnedMessages.get(i6);
+                                                        hashMap.put(Integer.valueOf(messageObject.getId()), messageObject);
+                                                        i6++;
                                                     }
-                                                } catch (Exception e19) {
-                                                    e = e19;
-                                                    z4 = z7;
-                                                    int i12 = i6;
-                                                    sQLiteCursor2 = sQLiteCursor4;
-                                                    i3 = i12;
-                                                    chatFull = chatFull3;
-                                                    checkSQLException(e);
-                                                    if (sQLiteCursor2 != null) {
-                                                    }
-                                                    i4 = i3;
-                                                    z6 = z4;
-                                                    getMessagesController().processChatInfo(j, chatFull, arrayList8, true, z2, z3, arrayList2, hashMap, i4, z6);
-                                                    return chatFull;
-                                                } catch (Throwable th19) {
-                                                    th = th19;
-                                                    arrayList3 = arrayList2;
-                                                    z4 = z7;
-                                                    chatFull = chatFull3;
-                                                    sQLiteCursor3 = sQLiteCursor4;
-                                                    i3 = i6;
-                                                    i2 = i3;
-                                                    z5 = z4;
-                                                    sQLiteCursor = sQLiteCursor3;
-                                                    chatFull2 = chatFull;
-                                                    if (sQLiteCursor != null) {
-                                                    }
-                                                    getMessagesController().processChatInfo(j, chatFull2, arrayList8, true, z2, z3, arrayList3, hashMap, i2, z5);
-                                                    throw th;
                                                 }
-                                            } else {
-                                                chatFull3 = chatFull;
                                             }
-                                            i4 = i6;
+                                            i4 = i5;
+                                            chatFull3 = chatFull;
                                             z6 = z7;
-                                            chatFull = chatFull3;
-                                            getMessagesController().processChatInfo(j, chatFull, arrayList8, true, z2, z3, arrayList2, hashMap, i4, z6);
-                                            return chatFull;
+                                            getMessagesController().processChatInfo(j, chatFull3, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i4, z6);
+                                            return chatFull3;
                                         }
                                     }
-                                    arrayList2.clear();
-                                    arrayList2.add(Integer.valueOf(chatFull.pinned_msg_id));
-                                    sQLiteCursor4 = null;
+                                    arrayList9.clear();
+                                    arrayList9.add(Integer.valueOf(chatFull.pinned_msg_id));
+                                    sQLiteCursor = null;
                                     hashMap.put(Integer.valueOf(chatFull.pinned_msg_id), null);
-                                    if (arrayList2.isEmpty()) {
+                                    if (!arrayList9.isEmpty()) {
                                     }
-                                    i4 = i6;
+                                    i4 = i5;
+                                    chatFull3 = chatFull;
                                     z6 = z7;
-                                    chatFull = chatFull3;
-                                    getMessagesController().processChatInfo(j, chatFull, arrayList8, true, z2, z3, arrayList2, hashMap, i4, z6);
-                                    return chatFull;
+                                    getMessagesController().processChatInfo(j, chatFull3, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i4, z6);
+                                    return chatFull3;
                                 }
                             }
-                            sQLiteCursor4 = null;
-                            i7 = 0;
-                            if (arrayList2.isEmpty()) {
+                            sQLiteCursor = null;
+                            i6 = 0;
+                            if (!arrayList9.isEmpty()) {
                             }
-                            i4 = i6;
+                            i4 = i5;
+                            chatFull3 = chatFull;
                             z6 = z7;
-                            chatFull = chatFull3;
-                            getMessagesController().processChatInfo(j, chatFull, arrayList8, true, z2, z3, arrayList2, hashMap, i4, z6);
-                            return chatFull;
+                            getMessagesController().processChatInfo(j, chatFull3, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i4, z6);
+                            return chatFull3;
                         }
                     } else {
-                        i6 = 0;
+                        i5 = 0;
                     }
                     z7 = false;
-                    sQLiteCursor4.dispose();
+                    sQLiteCursor.dispose();
                     if (chatFull != null) {
                     }
-                    sQLiteCursor4 = null;
-                    i7 = 0;
-                    if (arrayList2.isEmpty()) {
+                    sQLiteCursor = null;
+                    i6 = 0;
+                    if (!arrayList9.isEmpty()) {
                     }
-                    i4 = i6;
+                    i4 = i5;
+                    chatFull3 = chatFull;
                     z6 = z7;
-                    chatFull = chatFull3;
-                    getMessagesController().processChatInfo(j, chatFull, arrayList8, true, z2, z3, arrayList2, hashMap, i4, z6);
-                    return chatFull;
+                    getMessagesController().processChatInfo(j, chatFull3, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i4, z6);
+                    return chatFull3;
                 }
-                arrayList6 = arrayList4;
-                arrayList5 = arrayList9;
+                arrayList4 = arrayList2;
+                j2 = j;
                 if (chatFull != null) {
                 }
                 if (chatFull != null) {
-                    while (i8 < Math.min(3, chatFull.recent_requesters.size())) {
+                    while (i7 < Math.min(3, chatFull.recent_requesters.size())) {
                     }
                 }
-                getUsersInternal(arrayList6, arrayList8);
-                j2 = -j;
+                getUsersInternal(arrayList4, arrayList7);
+                getChatsInternal(TextUtils.join(",", arrayList3), arrayList8);
+                j3 = -j2;
                 int i112 = 0;
-                sQLiteCursor4 = getMessagesStorage().getDatabase().queryFinalized(String.format(Locale.US, "SELECT mid FROM chat_pinned_v2 WHERE uid = %d ORDER BY mid DESC", Long.valueOf(j2)), new Object[0]);
-                while (sQLiteCursor4.next()) {
+                sQLiteCursor = getMessagesStorage().getDatabase().queryFinalized(String.format(Locale.US, "SELECT mid FROM chat_pinned_v2 WHERE uid = %d ORDER BY mid DESC", Long.valueOf(j3)), new Object[0]);
+                while (sQLiteCursor.next()) {
                 }
-                arrayList2 = arrayList5;
-                sQLiteCursor4.dispose();
-                sQLiteCursor4 = this.database.queryFinalized("SELECT count, end FROM chat_pinned_count WHERE uid = " + j2, new Object[0]);
-                if (sQLiteCursor4.next()) {
+                arrayList9 = arrayList;
+                sQLiteCursor.dispose();
+                z4 = false;
+                sQLiteCursor = this.database.queryFinalized("SELECT count, end FROM chat_pinned_count WHERE uid = " + j3, new Object[0]);
+                if (sQLiteCursor.next()) {
                 }
                 z7 = false;
-                sQLiteCursor4.dispose();
+                sQLiteCursor.dispose();
                 if (chatFull != null) {
                 }
-                sQLiteCursor4 = null;
-                i7 = 0;
-                if (arrayList2.isEmpty()) {
+                sQLiteCursor = null;
+                i6 = 0;
+                if (!arrayList9.isEmpty()) {
                 }
-                i4 = i6;
+                i4 = i5;
+                chatFull3 = chatFull;
                 z6 = z7;
-                chatFull = chatFull3;
-                getMessagesController().processChatInfo(j, chatFull, arrayList8, true, z2, z3, arrayList2, hashMap, i4, z6);
-                return chatFull;
+                getMessagesController().processChatInfo(j, chatFull3, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i4, z6);
+                return chatFull3;
             }
         }
+        arrayList = arrayList9;
         chatFull = null;
-        sQLiteCursor.dispose();
-        arrayList4 = new ArrayList<>();
-        if (!(chatFull instanceof TLRPC.TL_chatFull)) {
+        queryFinalized.dispose();
+        arrayList2 = new ArrayList<>();
+        arrayList3 = new ArrayList();
+        if (!(chatFull instanceof TLRPC.TL_communityFull)) {
         }
-        arrayList6 = arrayList4;
-        arrayList5 = arrayList9;
+        arrayList4 = arrayList2;
+        j2 = j;
         if (chatFull != null) {
         }
         if (chatFull != null) {
         }
-        getUsersInternal(arrayList6, arrayList8);
-        j2 = -j;
+        getUsersInternal(arrayList4, arrayList7);
+        getChatsInternal(TextUtils.join(",", arrayList3), arrayList8);
+        j3 = -j2;
         int i1122 = 0;
-        sQLiteCursor4 = getMessagesStorage().getDatabase().queryFinalized(String.format(Locale.US, "SELECT mid FROM chat_pinned_v2 WHERE uid = %d ORDER BY mid DESC", Long.valueOf(j2)), new Object[0]);
-        while (sQLiteCursor4.next()) {
+        sQLiteCursor = getMessagesStorage().getDatabase().queryFinalized(String.format(Locale.US, "SELECT mid FROM chat_pinned_v2 WHERE uid = %d ORDER BY mid DESC", Long.valueOf(j3)), new Object[0]);
+        while (sQLiteCursor.next()) {
         }
-        arrayList2 = arrayList5;
-        sQLiteCursor4.dispose();
-        sQLiteCursor4 = this.database.queryFinalized("SELECT count, end FROM chat_pinned_count WHERE uid = " + j2, new Object[0]);
-        if (sQLiteCursor4.next()) {
+        arrayList9 = arrayList;
+        sQLiteCursor.dispose();
+        z4 = false;
+        sQLiteCursor = this.database.queryFinalized("SELECT count, end FROM chat_pinned_count WHERE uid = " + j3, new Object[0]);
+        if (sQLiteCursor.next()) {
         }
         z7 = false;
-        sQLiteCursor4.dispose();
+        sQLiteCursor.dispose();
         if (chatFull != null) {
         }
-        sQLiteCursor4 = null;
-        i7 = 0;
-        if (arrayList2.isEmpty()) {
+        sQLiteCursor = null;
+        i6 = 0;
+        if (!arrayList9.isEmpty()) {
         }
-        i4 = i6;
+        i4 = i5;
+        chatFull3 = chatFull;
         z6 = z7;
-        chatFull = chatFull3;
-        getMessagesController().processChatInfo(j, chatFull, arrayList8, true, z2, z3, arrayList2, hashMap, i4, z6);
-        return chatFull;
+        getMessagesController().processChatInfo(j, chatFull3, arrayList7, arrayList8, true, z2, z3, arrayList9, hashMap, i4, z6);
+        return chatFull3;
     }
 
     public TLRPC.ChatFull loadChatInfo(long j, boolean z, CountDownLatch countDownLatch, boolean z2, boolean z3) {
@@ -18901,7 +18809,7 @@ public class MessagesStorage extends BaseController {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v35 ?? I:??[OBJECT, ARRAY]), method size: 9122
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v9 ??), method size: 9122
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)

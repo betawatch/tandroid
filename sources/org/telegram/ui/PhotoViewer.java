@@ -20,7 +20,6 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
-import android.graphics.Insets;
 import android.graphics.LinearGradient;
 import android.graphics.Matrix;
 import android.graphics.Outline;
@@ -85,7 +84,6 @@ import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
 import android.view.ViewPropertyAnimator;
 import android.view.ViewTreeObserver;
-import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
@@ -110,6 +108,9 @@ import androidx.collection.LongSparseArray;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 import androidx.core.graphics.ColorUtils;
+import androidx.core.graphics.Insets;
+import androidx.core.view.OnApplyWindowInsetsListener;
+import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.widget.NestedScrollView;
 import androidx.dynamicanimation.animation.DynamicAnimation;
@@ -5528,12 +5529,11 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         this.iBlur3FactoryFrostedLiquidGlass.setLinkedViewsRef(this.glassAttachedViews);
         this.shadowBlurer = new BlurringShader.StoryBlurDrawer(this.blurManager, this.containerView, 6);
         this.windowView.addView(this.containerView, LayoutHelper.createFrame(-1, -1, 51));
-        this.containerView.setFitsSystemWindows(true);
-        this.containerView.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.PhotoViewer$$ExternalSyntheticLambda13
-            @Override // android.view.View.OnApplyWindowInsetsListener
-            public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-                WindowInsets lambda$setParentActivity$6;
-                lambda$setParentActivity$6 = PhotoViewer.this.lambda$setParentActivity$6(view, windowInsets);
+        ViewCompat.setOnApplyWindowInsetsListener(this.containerView, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.PhotoViewer$$ExternalSyntheticLambda13
+            @Override // androidx.core.view.OnApplyWindowInsetsListener
+            public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
+                WindowInsetsCompat lambda$setParentActivity$6;
+                lambda$setParentActivity$6 = PhotoViewer.this.lambda$setParentActivity$6(view, windowInsetsCompat);
                 return lambda$setParentActivity$6;
             }
         });
@@ -7233,35 +7233,19 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ WindowInsets lambda$setParentActivity$6(View view, WindowInsets windowInsets) {
-        WindowInsets windowInsets2;
-        Insets insets;
-        int i;
-        int i2;
-        int i3;
-        int i4;
+    public /* synthetic */ WindowInsetsCompat lambda$setParentActivity$6(View view, WindowInsetsCompat windowInsetsCompat) {
         Rect rect = new Rect(this.insets);
-        int i5 = Build.VERSION.SDK_INT;
-        if (i5 >= 30) {
-            insets = windowInsets.getInsets(WindowInsetsCompat.Type.displayCutout() | WindowInsetsCompat.Type.systemBars());
-            Rect rect2 = this.insets;
-            i = insets.left;
-            i2 = insets.top;
-            i3 = insets.right;
-            i4 = insets.bottom;
-            rect2.set(i, i2, i3, i4);
-        } else {
-            this.insets.set(windowInsets.getStableInsetLeft(), windowInsets.getStableInsetTop(), windowInsets.getStableInsetRight(), windowInsets.getStableInsetBottom());
-        }
-        int i6 = this.insets.top;
+        Insets insetsIgnoringVisibility = windowInsetsCompat.getInsetsIgnoringVisibility(WindowInsetsCompat.Type.displayCutout() | WindowInsetsCompat.Type.systemBars());
+        this.insets.set(insetsIgnoringVisibility.left, insetsIgnoringVisibility.top, insetsIgnoringVisibility.right, insetsIgnoringVisibility.bottom);
+        int i = this.insets.top;
         Activity activity = this.parentActivity;
-        if ((activity instanceof LaunchActivity) && ((i6 != 0 || AndroidUtilities.isInMultiwindow) && !this.inBubbleMode && AndroidUtilities.statusBarHeight != i6)) {
-            AndroidUtilities.statusBarHeight = i6;
+        if ((activity instanceof LaunchActivity) && ((i != 0 || AndroidUtilities.isInMultiwindow) && !this.inBubbleMode && AndroidUtilities.statusBarHeight != i)) {
+            AndroidUtilities.statusBarHeight = i;
             ((LaunchActivity) activity).drawerLayoutContainer.requestLayout();
         }
-        if (!rect.equals(windowInsets)) {
-            int i7 = this.animationInProgress;
-            if (i7 == 1 || i7 == 3) {
+        if (!rect.equals(this.insets)) {
+            int i2 = this.animationInProgress;
+            if (i2 == 1 || i2 == 3) {
                 ClippingImageView clippingImageView = this.animatingImageView;
                 clippingImageView.setTranslationX(clippingImageView.getTranslationX() - getLeftInset());
                 this.animationValues[0][2] = this.animatingImageView.getTranslationX();
@@ -7275,23 +7259,19 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         if (view2 != null) {
             this.navigationBarHeight = this.insets.bottom;
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view2.getLayoutParams();
-            int i8 = this.navigationBarHeight;
-            marginLayoutParams.height = i8;
-            marginLayoutParams.bottomMargin = (-i8) / 2;
+            int i3 = this.navigationBarHeight;
+            marginLayoutParams.height = i3;
+            marginLayoutParams.bottomMargin = (-i3) / 2;
             this.navigationBar.setLayoutParams(marginLayoutParams);
         }
-        this.containerView.setPadding(windowInsets.getSystemWindowInsetLeft(), 0, windowInsets.getSystemWindowInsetRight(), 0);
+        this.containerView.setPadding(insetsIgnoringVisibility.left, 0, insetsIgnoringVisibility.right, 0);
         if (this.actionBar != null) {
             AndroidUtilities.cancelRunOnUIThread(this.updateContainerFlagsRunnable);
             if (this.isVisible && this.animationInProgress == 0) {
                 AndroidUtilities.runOnUIThread(this.updateContainerFlagsRunnable, 200L);
             }
         }
-        if (i5 >= 30) {
-            windowInsets2 = WindowInsets.CONSUMED;
-            return windowInsets2;
-        }
-        return windowInsets.consumeSystemWindowInsets();
+        return WindowInsetsCompat.CONSUMED;
     }
 
     class 18 extends ActionBar.ActionBarMenuOnItemClick {

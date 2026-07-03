@@ -822,7 +822,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
                 public final void run() {
                     AIEditorAlert.this.lambda$selectStyle$22();
                 }
-            }, 16L);
+            }, 150L);
             return;
         }
         if (aiComposeTone == null) {
@@ -2041,7 +2041,7 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
             } else if (aiComposeTone instanceof PromptTone) {
                 tab.accent = false;
                 tab.updateColors();
-                tab.set(R.drawable.msg_edit, LocaleController.getString(R.string.AIEditorStylePrompt));
+                tab.set(R.drawable.iv_prompt, LocaleController.getString(R.string.AIEditorStylePrompt));
             } else {
                 tab.set(null, aiComposeTone.title, Long.valueOf(aiComposeTone.emoji_id));
             }

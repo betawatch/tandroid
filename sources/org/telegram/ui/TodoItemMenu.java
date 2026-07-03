@@ -434,6 +434,11 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ boolean canToggleRichMessageCheckbox(ChatMessageCell chatMessageCell3) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$canToggleRichMessageCheckbox(this, chatMessageCell3);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didLongPress(ChatMessageCell chatMessageCell3, float f, float f2) {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPress(this, chatMessageCell3, f, f2);
                 }
@@ -704,6 +709,11 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void didToggleRichMessageCheckbox(ChatMessageCell chatMessageCell3, boolean z, Runnable runnable) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didToggleRichMessageCheckbox(this, chatMessageCell3, z, runnable);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ boolean doNotShowLoadingReply(MessageObject messageObject2) {
                     return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$doNotShowLoadingReply(this, messageObject2);
                 }
@@ -909,6 +919,11 @@ public class TodoItemMenu extends Dialog {
                     boolean canPerformActions;
                     canPerformActions = canPerformActions();
                     return canPerformActions;
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ boolean canToggleRichMessageCheckbox(ChatMessageCell chatMessageCell6) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$canToggleRichMessageCheckbox(this, chatMessageCell6);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1184,6 +1199,11 @@ public class TodoItemMenu extends Dialog {
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didTogglePollPreview(ChatMessageCell chatMessageCell6) {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didTogglePollPreview(this, chatMessageCell6);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void didToggleRichMessageCheckbox(ChatMessageCell chatMessageCell6, boolean z, Runnable runnable) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didToggleRichMessageCheckbox(this, chatMessageCell6, z, runnable);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

@@ -10,9 +10,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -843,13 +840,15 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
 
     private static class CommunityHeaderView extends FrameLayout implements Theme.Colorable {
         public final BackupImageView avatarView;
-        private final Drawable communityCardsDrawable;
         private final Theme.ResourcesProvider resourcesProvider;
+
+        @Override // org.telegram.ui.ActionBar.Theme.Colorable
+        public void updateColors() {
+        }
 
         public CommunityHeaderView(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context);
             this.resourcesProvider = resourcesProvider;
-            this.communityCardsDrawable = context.getResources().getDrawable(R.drawable.community_cards).mutate();
             BackupImageView backupImageView = new BackupImageView(context);
             this.avatarView = backupImageView;
             backupImageView.setRoundRadius(AndroidUtilities.dp(20.0f));
@@ -860,17 +859,12 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
         @Override // android.view.ViewGroup, android.view.View
         protected void dispatchDraw(Canvas canvas) {
             super.dispatchDraw(canvas);
-            DrawableUtils.drawCommunityCardDrawable(canvas, this.communityCardsDrawable, this.avatarView.getLeft() + (this.avatarView.getWidth() / 2.0f), this.avatarView.getTop() + (this.avatarView.getHeight() / 2.0f), this.avatarView.getHeight());
+            DrawableUtils.drawCommunityCardDrawable(canvas, Theme.dialogs_communityCardsDrawable, this.avatarView.getLeft() + (this.avatarView.getWidth() / 2.0f), this.avatarView.getTop() + (this.avatarView.getHeight() / 2.0f), this.avatarView.getHeight());
         }
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
             super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(136.0f), TLObject.FLAG_30));
-        }
-
-        @Override // org.telegram.ui.ActionBar.Theme.Colorable
-        public void updateColors() {
-            this.communityCardsDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider), PorterDuff.Mode.MULTIPLY));
         }
     }
 

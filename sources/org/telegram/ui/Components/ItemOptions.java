@@ -85,6 +85,7 @@ public class ItemOptions {
     private boolean allowCenter;
     private boolean allowMoveScrim;
     private int allowMoveScrimGravity;
+    private boolean allowShowingOnTopOfKeyboard;
     private int animateToHeight;
     private int animateToWidth;
     private boolean blur;
@@ -1276,6 +1277,11 @@ public class ItemOptions {
         return null;
     }
 
+    public ItemOptions allowShowingOnTopOfKeyboard() {
+        this.allowShowingOnTopOfKeyboard = true;
+        return this;
+    }
+
     public void setupSelectors() {
         if (this.layout == null) {
             return;
@@ -1314,11 +1320,11 @@ public class ItemOptions {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x03fc  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x043e  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x044f  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x04c4  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x03ea A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x03ff A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0411  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x0453  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x0464  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x04d9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1327,6 +1333,7 @@ public class ItemOptions {
         float f2;
         int i;
         int width;
+        int i2;
         int height;
         boolean z;
         DimView dimView;
@@ -1340,28 +1347,28 @@ public class ItemOptions {
         }
         setupSelectors();
         if (this.fixedWidthDp > 0) {
-            int i2 = 0;
-            while (i2 < this.layout.getChildCount() - 1) {
-                View childAt = i2 == this.layout.getChildCount() - 1 ? this.lastLayout : this.layout.getChildAt(i2);
+            int i3 = 0;
+            while (i3 < this.layout.getChildCount() - 1) {
+                View childAt = i3 == this.layout.getChildCount() - 1 ? this.lastLayout : this.layout.getChildAt(i3);
                 if (childAt instanceof ActionBarPopupWindow.ActionBarPopupWindowLayout) {
                     ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout2 = (ActionBarPopupWindow.ActionBarPopupWindowLayout) childAt;
-                    for (int i3 = 0; i3 < actionBarPopupWindowLayout2.getItemsCount(); i3++) {
-                        actionBarPopupWindowLayout2.getItemAt(i3).getLayoutParams().width = AndroidUtilities.dp(this.fixedWidthDp);
+                    for (int i4 = 0; i4 < actionBarPopupWindowLayout2.getItemsCount(); i4++) {
+                        actionBarPopupWindowLayout2.getItemAt(i4).getLayoutParams().width = AndroidUtilities.dp(this.fixedWidthDp);
                     }
                 }
-                i2++;
+                i3++;
             }
         } else if (this.minWidthDp > 0) {
-            int i4 = 0;
-            while (i4 < this.layout.getChildCount() - 1) {
-                View childAt2 = i4 == this.layout.getChildCount() - 1 ? this.lastLayout : this.layout.getChildAt(i4);
+            int i5 = 0;
+            while (i5 < this.layout.getChildCount() - 1) {
+                View childAt2 = i5 == this.layout.getChildCount() - 1 ? this.lastLayout : this.layout.getChildAt(i5);
                 if (childAt2 instanceof ActionBarPopupWindow.ActionBarPopupWindowLayout) {
                     ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout3 = (ActionBarPopupWindow.ActionBarPopupWindowLayout) childAt2;
-                    for (int i5 = 0; i5 < actionBarPopupWindowLayout3.getItemsCount(); i5++) {
-                        actionBarPopupWindowLayout3.getItemAt(i5).setMinimumWidth(AndroidUtilities.dp(this.minWidthDp));
+                    for (int i6 = 0; i6 < actionBarPopupWindowLayout3.getItemsCount(); i6++) {
+                        actionBarPopupWindowLayout3.getItemAt(i6).setMinimumWidth(AndroidUtilities.dp(this.minWidthDp));
                     }
                 }
-                i4++;
+                i5++;
             }
         }
         if (this.blur && this.scrimBlur3SourceBitmap == null) {
@@ -1395,9 +1402,9 @@ public class ItemOptions {
             if (view2 instanceof ScrimView) {
                 ((ScrimView) view2).getBounds(rectF);
             } else {
-                int i6 = this.animateToWidth;
-                if (i6 != 0 && (i = this.animateToHeight) != 0) {
-                    rectF.set(0.0f, 0.0f, i6, i);
+                int i7 = this.animateToWidth;
+                if (i7 != 0 && (i = this.animateToHeight) != 0) {
+                    rectF.set(0.0f, 0.0f, i7, i);
                 } else {
                     rectF.set(0.0f, 0.0f, view2.getMeasuredWidth(), this.scrimView.getMeasuredHeight());
                 }
@@ -1498,7 +1505,10 @@ public class ItemOptions {
             this.actionBarPopupWindow.setFocusable(!this.dontFocus);
             this.actionBarPopupWindow.setBackgroundDrawable(new ColorDrawable(0));
             this.actionBarPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
-            if (this.dontFocus) {
+            if (this.allowShowingOnTopOfKeyboard) {
+                this.actionBarPopupWindow.setInputMethodMode(2);
+                this.actionBarPopupWindow.setSoftInputMode(0);
+            } else if (this.dontFocus) {
                 this.actionBarPopupWindow.setInputMethodMode(1);
                 this.actionBarPopupWindow.setSoftInputMode(32);
             } else if (this.needsFocus) {
@@ -1513,14 +1523,14 @@ public class ItemOptions {
                 f8 -= viewGroup2.getPaddingLeft();
             }
             if (this.scrimView != null) {
-                int i7 = this.gravity;
-                if (i7 == 3) {
+                int i8 = this.gravity;
+                if (i8 == 3) {
                     f4 = viewGroup2.getX() + f8;
                 } else {
-                    if (i7 == 5) {
+                    if (i8 == 5) {
                         x = viewGroup2.getX() + f8 + rectF.width();
                         f3 = rectF2.right;
-                    } else if (i7 == 1) {
+                    } else if (i8 == 1) {
                         x = viewGroup2.getX() + f8 + (rectF.width() / 2.0f);
                         f3 = this.layout.getMeasuredWidth() / 2.0f;
                     } else if (f8 + rectF2.width() > viewGroup2.getWidth()) {
@@ -1536,16 +1546,21 @@ public class ItemOptions {
             } else {
                 width = (viewGroup2.getWidth() - this.layout.getMeasuredWidth()) / 2;
             }
-            Rect rect = new Rect();
-            View rootView = viewGroup2.getRootView();
-            viewGroup2.getWindowVisibleDisplayFrame(rect);
-            int max = (AndroidUtilities.displaySize.y - AndroidUtilities.navigationBarHeight) - Math.max(0, ((rootView.getHeight() - (rect.top != 0 ? AndroidUtilities.statusBarHeight : 0)) - AndroidUtilities.getViewInset(rootView)) - (rect.bottom - rect.top));
+            if (this.allowShowingOnTopOfKeyboard) {
+                i2 = 0;
+            } else {
+                Rect rect = new Rect();
+                View rootView = viewGroup2.getRootView();
+                viewGroup2.getWindowVisibleDisplayFrame(rect);
+                i2 = Math.max(0, ((rootView.getHeight() - (rect.top != 0 ? AndroidUtilities.statusBarHeight : 0)) - AndroidUtilities.getViewInset(rootView)) - (rect.bottom - rect.top));
+            }
+            int i9 = (AndroidUtilities.displaySize.y - AndroidUtilities.navigationBarHeight) - i2;
             float height2 = this.onTopOfScrim ? 0.0f : rectF.height();
             if (this.forceBottom) {
                 float f9 = f7 + height2;
-                height = this.allowMoveScrim ? (int) f9 : (int) ((Math.min(f9, max) - this.layout.getMeasuredHeight()) + viewGroup2.getY());
+                height = this.allowMoveScrim ? (int) f9 : (int) ((Math.min(f9, i9) - this.layout.getMeasuredHeight()) + viewGroup2.getY());
             } else if (this.scrimView != null) {
-                if (this.forceTop || f7 + height2 + this.layout.getMeasuredHeight() + AndroidUtilities.dp(16.0f) > max) {
+                if (this.forceTop || f7 + height2 + this.layout.getMeasuredHeight() + AndroidUtilities.dp(16.0f) > i9) {
                     f7 = (f7 - height2) - this.layout.getMeasuredHeight();
                     if (this.allowCenter && Math.max(0.0f, f7 + height2) + this.layout.getMeasuredHeight() > this.point[1] + rectF.top && rectF.height() == this.scrimView.getHeight()) {
                         f7 = (((viewGroup2.getHeight() - this.layout.getMeasuredHeight()) / 2.0f) - height2) - viewGroup2.getY();
