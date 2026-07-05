@@ -11,7 +11,6 @@ import androidx.core.graphics.ColorUtils;
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.utils.DrawableUtils;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
@@ -98,6 +97,6 @@ public class FoundStickerPackCell extends FrameLayout implements FactorAnimator.
             this.bgSelected = createRoundRectDrawable;
             createRoundRectDrawable.setAlpha((int) (this.isSelected.getFloatValue() * 255.0f));
         }
-        this.textView.setTextColor(ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_glass_defaultIcon, this.resourcesProvider), NotificationCenter.starGiftsLoaded));
+        this.textView.setTextColor(ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_glass_defaultIcon, this.resourcesProvider), 229));
     }
 }

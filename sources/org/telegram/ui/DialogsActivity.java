@@ -10259,7 +10259,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                                                 communityChatType = null;
                                             } else {
                                                 chat2 = chat;
-                                                communityChatType = CommunityUtils.getCommunityChatType(this.currentAccount, chat2);
+                                                communityChatType = CommunityUtils.getCommunityChatType(this.currentAccount, -chat2.id);
                                             }
                                             if (communityChatType == CommunityChatType.YouCanSendJoinRequest) {
                                                 showDialog(new JoinGroupAlert(getContext(), chat2, null, this, this.resourceProvider));
@@ -10719,7 +10719,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
 
     /* JADX WARN: Code restructure failed: missing block: B:40:0x0122, code lost:
     
-        if ((r1.alwaysShow.size() + r21.size()) > 100) goto L53;
+        if ((r1.alwaysShow.size() + r21.size()) > 100) goto L54;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v14 */
@@ -10731,11 +10731,11 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     /* JADX WARN: Type inference failed for: r16v12 */
     /* JADX WARN: Type inference failed for: r16v3 */
     /* JADX WARN: Type inference failed for: r16v4 */
-    /* JADX WARN: Type inference failed for: r1v29 */
-    /* JADX WARN: Type inference failed for: r1v32, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r1v33, types: [int] */
-    /* JADX WARN: Type inference failed for: r1v58 */
-    /* JADX WARN: Type inference failed for: r1v60 */
+    /* JADX WARN: Type inference failed for: r1v32 */
+    /* JADX WARN: Type inference failed for: r1v35, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r1v36, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v61 */
+    /* JADX WARN: Type inference failed for: r1v63 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -10789,10 +10789,10 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         if (DialogObject.isUserDialog(dialogId)) {
             bundle3.putLong("user_id", dialogId);
         } else {
-            TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(-dialogId));
-            if (dialogsActivity2.communityId != 0 && ((communityChatType = CommunityUtils.getCommunityChatType(dialogsActivity2.currentAccount, chat)) == CommunityChatType.HiddenUnavailable || communityChatType == CommunityChatType.YouCanSendJoinRequest)) {
+            if (dialogsActivity2.communityId != 0 && ((communityChatType = CommunityUtils.getCommunityChatType(dialogsActivity2.currentAccount, dialogId)) == CommunityChatType.HiddenUnavailable || communityChatType == CommunityChatType.YouCanSendJoinRequest)) {
                 return false;
             }
+            TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(-dialogId));
             if (messageId == 0 || chat == null || chat.migrated_to == null) {
                 j = dialogId;
             } else {

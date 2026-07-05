@@ -33,6 +33,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.utils.FBool;
 import org.telegram.messenger.utils.GradientProtectionDrawable;
@@ -432,7 +433,7 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
         Object obj = uItem.object;
         if (obj instanceof TLRPC.Chat) {
             final TLRPC.Chat chat = (TLRPC.Chat) obj;
-            new CommunityAddOptionsSheet(getContext(), this.currentChat, chat, new Utilities.Callback() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda6
+            new CommunityAddOptionsSheet(getContext(), this.currentChat, -chat.id, new Utilities.Callback() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda6
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj2) {
                     CommunitySheet.this.lambda$onClickChatToAdd$2(chat, (Boolean) obj2);
@@ -448,12 +449,14 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
 
     /* JADX INFO: Access modifiers changed from: private */
     public void onClickCommunity(UItem uItem, View view, int i, float f, float f2) {
-        TLRPC.Chat currentChat;
+        long j;
+        TLRPC.Chat chat;
         int i2;
         if (checkPendingRequestClick(uItem)) {
             return;
         }
         int i3 = uItem.id;
+        boolean z = false;
         if (i3 == 101) {
             this.collapsedInDialogs = !this.collapsedInDialogs;
             MessagesController.getInstance(this.currentAccount).toggleCommunityCollapsedInDialogs(this.communityId, this.collapsedInDialogs);
@@ -472,78 +475,120 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
         }
         Object obj = uItem.object;
         if (obj instanceof TLRPC.Chat) {
-            TLRPC.Chat chat = (TLRPC.Chat) obj;
-            boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
-            CommunityChatType communityChatType = CommunityUtils.getCommunityChatType(this.currentAccount, chat);
-            if (communityChatType == CommunityChatType.YouAreIn || communityChatType == CommunityChatType.YouCanView) {
-                BaseFragment baseFragment = this.parentFragment;
-                if ((baseFragment instanceof ChatActivity) && (currentChat = ((ChatActivity) baseFragment).getCurrentChat()) != null && currentChat.id == chat.id) {
+            chat = (TLRPC.Chat) obj;
+            z = ChatObject.isChannelAndNotMegaGroup(chat);
+            j = -chat.id;
+        } else {
+            if (!(obj instanceof TLRPC.User)) {
+                return;
+            }
+            j = ((TLRPC.User) obj).id;
+            chat = null;
+        }
+        TLRPC.Chat chat2 = chat;
+        CommunityChatType communityChatType = CommunityUtils.getCommunityChatType(this.currentAccount, j);
+        if (communityChatType == CommunityChatType.YouAreIn || communityChatType == CommunityChatType.YouCanView) {
+            BaseFragment baseFragment = this.parentFragment;
+            if (baseFragment instanceof ChatActivity) {
+                TLRPC.Chat currentChat = ((ChatActivity) baseFragment).getCurrentChat();
+                TLRPC.User currentUser = ((ChatActivity) this.parentFragment).getCurrentUser();
+                if ((currentChat != null && currentChat.id == (-j)) || (currentUser != null && currentUser.id == j)) {
                     lambda$new$0();
                     return;
                 }
-                Bundle bundle = new Bundle();
-                bundle.putLong("chat_id", chat.id);
-                if (ChatObject.isForum(chat)) {
-                    if (ChatObject.areTabsEnabled(chat)) {
-                        ChatActivity chatActivity = new ChatActivity(bundle);
-                        ForumUtilities.applyTopic(chatActivity, MessagesStorage.TopicKey.of(-chat.id, MessagesController.getInstance(this.currentAccount).getForumLastTopicId(chat.id)));
-                        this.parentFragment.presentFragment(chatActivity);
-                    } else {
-                        this.parentFragment.presentFragment(new TopicsFragment(bundle));
-                    }
+            }
+            Bundle bundle = new Bundle();
+            if (j > 0) {
+                bundle.putLong("user_id", j);
+            } else {
+                bundle.putLong("chat_id", -j);
+            }
+            if (ChatObject.isForum(chat2)) {
+                if (ChatObject.areTabsEnabled(chat2)) {
+                    ChatActivity chatActivity = new ChatActivity(bundle);
+                    ForumUtilities.applyTopic(chatActivity, MessagesStorage.TopicKey.of(j, MessagesController.getInstance(this.currentAccount).getForumLastTopicId(chat2.id)));
+                    this.parentFragment.presentFragment(chatActivity);
                 } else {
-                    this.parentFragment.presentFragment(new ChatActivity(bundle));
+                    this.parentFragment.presentFragment(new TopicsFragment(bundle));
                 }
-                lambda$new$0();
-                return;
+            } else {
+                this.parentFragment.presentFragment(new ChatActivity(bundle));
             }
-            if (communityChatType == CommunityChatType.YouCanSendJoinRequest) {
-                new JoinGroupAlert(getContext(), chat, null, this.parentFragment, this.resourcesProvider).setBulletinFactory(BulletinFactory.of((FrameLayout) this.containerView, this.resourcesProvider)).show();
-                return;
+            lambda$new$0();
+            return;
+        }
+        if (communityChatType == CommunityChatType.YouCanSendJoinRequest) {
+            new JoinGroupAlert(getContext(), chat2, null, this.parentFragment, this.resourcesProvider).setBulletinFactory(BulletinFactory.of((FrameLayout) this.containerView, this.resourcesProvider)).show();
+            return;
+        }
+        if (communityChatType == CommunityChatType.HiddenUnavailable) {
+            BulletinFactory of = BulletinFactory.of((FrameLayout) this.containerView, this.resourcesProvider);
+            int i4 = R.raw.e_hand_2;
+            if (z) {
+                i2 = R.string.CommunityHiddenChannelUnavailable;
+            } else {
+                i2 = R.string.CommunityHiddenGroupUnavailable;
             }
-            if (communityChatType == CommunityChatType.HiddenUnavailable) {
-                BulletinFactory of = BulletinFactory.of((FrameLayout) this.containerView, this.resourcesProvider);
-                int i4 = R.raw.e_hand_2;
-                if (isChannelAndNotMegaGroup) {
-                    i2 = R.string.CommunityHiddenChannelUnavailable;
-                } else {
-                    i2 = R.string.CommunityHiddenGroupUnavailable;
-                }
-                of.createSimpleBulletin(i4, LocaleController.getString(i2)).show();
-            }
+            of.createSimpleBulletin(i4, LocaleController.getString(i2)).show();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean onLongClickCommunity(UItem uItem, View view, int i, float f, float f2) {
+        boolean canRemoveBotFromCommunity;
+        final boolean z;
+        final long j;
+        final boolean z2;
         Object obj = uItem.object;
-        boolean z = false;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
-            final long j = -chat.id;
-            boolean canRemoveChatFromCommunity = ChatObject.canRemoveChatFromCommunity(chat, this.currentChat);
-            if (!canRemoveChatFromCommunity) {
+            long j2 = -chat.id;
+            boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
+            canRemoveBotFromCommunity = ChatObject.canRemoveChatFromCommunity(chat, this.currentChat);
+            z2 = isChannelAndNotMegaGroup;
+            j = j2;
+            z = false;
+        } else {
+            if (!(obj instanceof TLRPC.User)) {
                 return false;
             }
-            ItemOptions makeOptions = ItemOptions.makeOptions(this.container, view);
-            z = true;
-            if (canRemoveChatFromCommunity) {
-                makeOptions.add(R.drawable.msg_cancel, (CharSequence) LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), true, new Runnable() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda5
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        CommunitySheet.this.lambda$onLongClickCommunity$5(j);
-                    }
-                });
-            }
-            makeOptions.setScrimViewBackground(this.communityPage.listView.getClipBackground(view, true));
-            makeOptions.show();
+            TLRPC.User user = (TLRPC.User) obj;
+            long j3 = user.id;
+            boolean isBot = UserObject.isBot(user);
+            canRemoveBotFromCommunity = ChatObject.canRemoveBotFromCommunity(user, this.currentChat);
+            z = isBot;
+            j = j3;
+            z2 = false;
         }
-        return z;
+        if (!canRemoveBotFromCommunity) {
+            return false;
+        }
+        ItemOptions makeOptions = ItemOptions.makeOptions(this.container, view);
+        makeOptions.add(R.drawable.msg_cancel, (CharSequence) LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), true, new Runnable() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda5
+            @Override // java.lang.Runnable
+            public final void run() {
+                CommunitySheet.this.lambda$onLongClickCommunity$5(z, z2, j);
+            }
+        });
+        makeOptions.setScrimViewBackground(this.communityPage.listView.getClipBackground(view, true));
+        makeOptions.show();
+        return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLongClickCommunity$5(final long j) {
-        AlertsCreator.showSimpleConfirmAlert(getContext(), this.resourcesProvider, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), LocaleController.getString(R.string.CommunityMenuRemoveGroupFromCommunityConfirm), LocaleController.getString(R.string.Remove), true, new Runnable() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda9
+    public /* synthetic */ void lambda$onLongClickCommunity$5(boolean z, boolean z2, final long j) {
+        int i;
+        Context context = getContext();
+        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
+        String string = LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity);
+        if (z) {
+            i = R.string.CommunityMenuRemoveBotFromCommunityConfirm;
+        } else if (z2) {
+            i = R.string.CommunityMenuRemoveChannelFromCommunityConfirm;
+        } else {
+            i = R.string.CommunityMenuRemoveGroupFromCommunityConfirm;
+        }
+        AlertsCreator.showSimpleConfirmAlert(context, resourcesProvider, string, LocaleController.getString(i), LocaleController.getString(R.string.Remove), true, new Runnable() { // from class: org.telegram.ui.community.CommunitySheet$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 CommunitySheet.this.lambda$onLongClickCommunity$4(j);
@@ -579,7 +624,12 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             return false;
         }
         final CommunityPendingRequestCell.Data data = (CommunityPendingRequestCell.Data) obj;
-        TLRPC.Chat chat = data.chatToAdd;
+        TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-data.dialogToAdd));
+        TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(data.dialogToAdd));
+        if (user != null) {
+            this.parentFragment.presentFragment(ChatActivity.of(user.id));
+            return true;
+        }
         if (ChatObject.isPublic(chat) || ChatObject.isInChat(chat)) {
             this.parentFragment.presentFragment(ChatActivity.of(-chat.id));
             return true;

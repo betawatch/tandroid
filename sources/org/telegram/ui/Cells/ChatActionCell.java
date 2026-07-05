@@ -2926,11 +2926,13 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 this.textY = 0;
             } else if (i3 == 37) {
                 TLRPC.TL_messageActionChangeCommunity tL_messageActionChangeCommunity = (TLRPC.TL_messageActionChangeCommunity) message3.action;
-                boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(-DialogObject.getPeerDialogId(message3.peer_id), this.currentAccount);
+                long peerDialogId2 = DialogObject.getPeerDialogId(message3.peer_id);
+                boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(-peerDialogId2, this.currentAccount);
+                boolean z6 = peerDialogId2 > 0;
                 String shortName2 = DialogObject.getShortName(this.currentAccount, DialogObject.getPeerDialogId(messageObject.messageOwner.from_id));
                 String shortName3 = DialogObject.getShortName(this.currentAccount, -tL_messageActionChangeCommunity.community_id);
                 SpannableStringBuilder spannableStringBuilder8 = new SpannableStringBuilder();
-                spannableStringBuilder8.append(CommunityUtils.buildServiceMessageText(messageObject, shortName3, shortName2, isChannelAndNotMegaGroup));
+                spannableStringBuilder8.append(CommunityUtils.buildServiceMessageText(messageObject, shortName3, shortName2, isChannelAndNotMegaGroup, z6));
                 createGiftPremiumLayouts(null, null, null, spannableStringBuilder8, false, LocaleController.getString(org.telegram.messenger.R.string.GiftThemesSetActionView), 11, null, this.giftRectSize, true, false);
                 this.textLayout = null;
                 this.textHeight = 0;
@@ -2956,15 +2958,15 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
             } else if (i3 == 21) {
                 TLRPC.TL_messageActionSuggestProfilePhoto tL_messageActionSuggestProfilePhoto = (TLRPC.TL_messageActionSuggestProfilePhoto) message3.action;
                 TLRPC.User user3 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.isOutOwner() ? 0L : messageObject.getDialogId()));
-                boolean z6 = tL_messageActionSuggestProfilePhoto.video || !((photo = tL_messageActionSuggestProfilePhoto.photo) == null || (arrayList2 = photo.video_sizes) == null || arrayList2.isEmpty());
+                boolean z7 = tL_messageActionSuggestProfilePhoto.video || !((photo = tL_messageActionSuggestProfilePhoto.photo) == null || (arrayList2 = photo.video_sizes) == null || arrayList2.isEmpty());
                 if (user3.id == UserConfig.getInstance(this.currentAccount).clientUserId) {
                     TLRPC.User user4 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.getDialogId()));
-                    if (z6) {
+                    if (z7) {
                         formatString = LocaleController.formatString(org.telegram.messenger.R.string.ActionSuggestVideoFromYouDescription, user4.first_name);
                     } else {
                         formatString = LocaleController.formatString(org.telegram.messenger.R.string.ActionSuggestPhotoFromYouDescription, user4.first_name);
                     }
-                } else if (z6) {
+                } else if (z7) {
                     formatString = LocaleController.formatString(org.telegram.messenger.R.string.ActionSuggestVideoToYouDescription, user3.first_name);
                 } else {
                     formatString = LocaleController.formatString(org.telegram.messenger.R.string.ActionSuggestPhotoToYouDescription, user3.first_name);

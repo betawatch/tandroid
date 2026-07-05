@@ -238,6 +238,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         TL_chatlists.TL_chatlists_chatlistUpdates chatlistUpdates;
         TLRPC.TL_contact contact;
         TLRPC.Dialog dialog;
+        private long dialogId;
         private int emptyType;
         private boolean isFolder;
         boolean isForumCell;
@@ -245,6 +246,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         TLRPC.RecentMeUrl recentMeUrl;
         private final int stableId;
         private String title;
+        private TLRPC.User user;
 
         public ItemInternal(TL_chatlists.TL_chatlists_chatlistUpdates tL_chatlists_chatlistUpdates) {
             super(17, true);
@@ -268,10 +270,28 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             this.title = str;
         }
 
+        public ItemInternal(int i, TLRPC.User user) {
+            super(i, false);
+            this.user = user;
+            long j = user.id;
+            this.dialogId = j;
+            int i2 = DialogsAdapter.this.dialogsStableIds.get(j, -1);
+            if (i2 >= 0) {
+                this.stableId = i2;
+                return;
+            }
+            int i3 = DialogsAdapter.this.stableIdPointer;
+            DialogsAdapter.this.stableIdPointer = i3 + 1;
+            this.stableId = i3;
+            DialogsAdapter.this.dialogsStableIds.put(user.id, i3);
+        }
+
         public ItemInternal(int i, TLRPC.Chat chat) {
             super(i, false);
             this.chat = chat;
-            int i2 = DialogsAdapter.this.dialogsStableIds.get(-chat.id, -1);
+            long j = -chat.id;
+            this.dialogId = j;
+            int i2 = DialogsAdapter.this.dialogsStableIds.get(j, -1);
             if (i2 >= 0) {
                 this.stableId = i2;
                 return;
@@ -407,6 +427,9 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             }
             if (itemInternal.chat != null) {
                 return itemInternal.chat;
+            }
+            if (itemInternal.user != null) {
+                return itemInternal.user;
             }
             TLRPC.Dialog dialog = itemInternal.dialog;
             if (dialog != null) {
@@ -906,9 +929,9 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x049a  */
-    /* JADX WARN: Removed duplicated region for block: B:199:0x04bf  */
-    /* JADX WARN: Removed duplicated region for block: B:201:0x049c  */
+    /* JADX WARN: Removed duplicated region for block: B:199:0x04bc  */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x04e1  */
+    /* JADX WARN: Removed duplicated region for block: B:204:0x04be  */
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -994,7 +1017,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 profileSearchCell.setChecked(this.selectedDialogs.contains(Long.valueOf(profileSearchCell.getDialogId())), dialogId == profileSearchCell.getDialogId());
             } else {
                 DialogCell dialogCell = (DialogCell) viewHolder.itemView;
-                dialogCell.isHiddenInCommunity = this.communityId != 0 && ChatObject.isChatHiddenInCommunity(this.currentAccount, -dialog.id);
+                dialogCell.isHiddenInCommunity = this.communityId != 0 && ChatObject.isHiddenInCommunity(this.currentAccount, dialog.id);
                 dialogCell.useSeparator = false;
                 dialogCell.fullSeparator = false;
                 if (this.dialogsType == 0 && AndroidUtilities.isTablet()) {
@@ -1165,12 +1188,21 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                             ((HeaderCell) viewHolder.itemView).setText((String) getItem(i));
                             break;
                         case 23:
-                            TLRPC.Chat chat4 = (TLRPC.Chat) getItem(i);
+                            Object item2 = getItem(i);
                             DialogCell dialogCell3 = (DialogCell) viewHolder.itemView;
-                            dialogCell3.isHiddenInCommunity = ChatObject.isChatHiddenInCommunity(this.currentAccount, chat4);
-                            dialogCell3.setCustomMessageWithoutRebuild(LocaleController.formatPluralString("Members", chat4.participants_count, new Object[0]));
-                            dialogCell3.setDialog(-chat4.id, null, 0, false, false);
-                            break;
+                            if (item2 instanceof TLRPC.Chat) {
+                                TLRPC.Chat chat4 = (TLRPC.Chat) item2;
+                                dialogCell3.isHiddenInCommunity = ChatObject.isHiddenInCommunity(this.currentAccount, chat4);
+                                dialogCell3.setCustomMessageWithoutRebuild(LocaleController.formatPluralString("Members", chat4.participants_count, new Object[0]));
+                                dialogCell3.setDialog(-chat4.id, null, 0, false, false);
+                                break;
+                            } else {
+                                TLRPC.User user2 = (TLRPC.User) item2;
+                                dialogCell3.isHiddenInCommunity = ChatObject.isHiddenInCommunity(this.currentAccount, user2);
+                                dialogCell3.setCustomMessageWithoutRebuild(LocaleController.getString(R.string.Bot));
+                                dialogCell3.setDialog(user2.id, null, 0, false, false);
+                                break;
+                            }
                     }
             }
         } else {
@@ -1641,6 +1673,11 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                         TLRPC.Chat chat = communityPeerDialog.chat;
                         if (chat != null) {
                             this.itemInternals.add(new ItemInternal(23, chat));
+                        } else {
+                            TLRPC.User user = communityPeerDialog.user;
+                            if (user != null) {
+                                this.itemInternals.add(new ItemInternal(23, user));
+                            }
                         }
                     }
                 }

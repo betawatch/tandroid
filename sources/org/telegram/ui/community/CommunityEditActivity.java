@@ -37,6 +37,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.utils.DrawableUtils;
 import org.telegram.messenger.utils.GradientProtectionDrawable;
@@ -426,7 +427,7 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
         }
         Iterator<TL_communities.CommunityPeer> it = arrayList2.iterator();
         while (it.hasNext()) {
-            arrayList.add(UItem.asProfileCell(getMessagesStorage().getChat(-DialogObject.getPeerDialogId(it.next().peer))));
+            arrayList.add(UItem.asProfileCell(getMessagesController().getUserOrChat(DialogObject.getPeerDialogId(it.next().peer))));
         }
     }
 
@@ -511,6 +512,8 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
         Object obj = uItem.object;
         if (obj instanceof TLRPC.Chat) {
             presentFragment(ChatActivity.of(-((TLRPC.Chat) obj).id));
+        } else if (obj instanceof TLRPC.User) {
+            presentFragment(ChatActivity.of(((TLRPC.User) obj).id));
         }
     }
 
@@ -538,32 +541,56 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean onLongClick(UItem uItem, View view, int i, float f, float f2) {
+        boolean canRemoveBotFromCommunity;
+        final boolean z;
+        final long j;
+        final boolean z2;
         int i2;
         Object obj = uItem.object;
-        if (!(obj instanceof TLRPC.Chat)) {
+        if (obj instanceof TLRPC.Chat) {
+            TLRPC.Chat chat = (TLRPC.Chat) obj;
+            long j2 = -chat.id;
+            boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
+            canRemoveBotFromCommunity = ChatObject.canRemoveChatFromCommunity(chat, this.currentChat);
+            z2 = isChannelAndNotMegaGroup;
+            j = j2;
+            z = false;
+        } else {
+            if (!(obj instanceof TLRPC.User)) {
+                return false;
+            }
+            TLRPC.User user = (TLRPC.User) obj;
+            long j3 = user.id;
+            boolean isBot = UserObject.isBot(user);
+            canRemoveBotFromCommunity = ChatObject.canRemoveBotFromCommunity(user, this.currentChat);
+            z = isBot;
+            j = j3;
+            z2 = false;
+        }
+        CommunityChatType communityChatType = CommunityUtils.getCommunityChatType(this.currentAccount, j);
+        boolean z3 = communityChatType == CommunityChatType.YouAreIn || communityChatType == CommunityChatType.YouCanView;
+        if (!canRemoveBotFromCommunity && !z3) {
             return false;
         }
-        TLRPC.Chat chat = (TLRPC.Chat) obj;
-        final long j = -chat.id;
-        final boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
-        boolean canRemoveChatFromCommunity = ChatObject.canRemoveChatFromCommunity(chat, this.currentChat);
         ItemOptions makeOptions = ItemOptions.makeOptions(this.containerView, view);
         int i3 = R.drawable.msg_viewintopic;
-        if (isChannelAndNotMegaGroup) {
+        if (z) {
+            i2 = R.string.CommunityMenuViewBot;
+        } else if (z2) {
             i2 = R.string.CommunityMenuViewChannel;
         } else {
             i2 = R.string.CommunityMenuViewGroup;
         }
-        makeOptions.add(i3, LocaleController.getString(i2), new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda8
+        makeOptions.addIf(z3, i3, LocaleController.getString(i2), new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
                 CommunityEditActivity.this.lambda$onLongClick$2(j);
             }
         });
-        makeOptions.addIf(canRemoveChatFromCommunity, R.drawable.msg_cancel, (CharSequence) LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), true, new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda9
+        makeOptions.addIf(canRemoveBotFromCommunity, R.drawable.msg_cancel, (CharSequence) LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), true, new Runnable() { // from class: org.telegram.ui.community.CommunityEditActivity$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                CommunityEditActivity.this.lambda$onLongClick$5(isChannelAndNotMegaGroup, j);
+                CommunityEditActivity.this.lambda$onLongClick$5(z, z2, j);
             }
         });
         makeOptions.setScrimViewBackground(this.listView.getClipBackground(view, true));
@@ -577,10 +604,12 @@ public class CommunityEditActivity extends BaseFragment implements ImageUpdater.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onLongClick$5(boolean z, final long j) {
+    public /* synthetic */ void lambda$onLongClick$5(boolean z, boolean z2, final long j) {
         int i;
         String string = LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity);
         if (z) {
+            i = R.string.CommunityMenuRemoveBotFromCommunityConfirm;
+        } else if (z2) {
             i = R.string.CommunityMenuRemoveChannelFromCommunityConfirm;
         } else {
             i = R.string.CommunityMenuRemoveGroupFromCommunityConfirm;

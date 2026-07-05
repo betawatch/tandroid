@@ -4350,12 +4350,18 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             @Override // org.telegram.ui.Components.ChatAvatarContainer
             protected boolean onAvatarClick() {
                 ChatActivity chatActivity = ChatActivity.this;
+                TLRPC.User user4 = chatActivity.currentUser;
+                if (user4 != null && user4.linked_community_id != 0) {
+                    ChatActivity chatActivity2 = ChatActivity.this;
+                    chatActivity.showDialog(new CommunitySheet(chatActivity2, chatActivity2.currentUser.linked_community_id));
+                    return true;
+                }
                 TLRPC.Chat chat3 = chatActivity.currentChat;
                 if (chat3 == null || chat3.linked_community_id == 0) {
                     return false;
                 }
-                ChatActivity chatActivity2 = ChatActivity.this;
-                chatActivity.showDialog(new CommunitySheet(chatActivity2, chatActivity2.currentChat.linked_community_id));
+                ChatActivity chatActivity3 = ChatActivity.this;
+                chatActivity.showDialog(new CommunitySheet(chatActivity3, chatActivity3.currentChat.linked_community_id));
                 return true;
             }
 
@@ -25322,6 +25328,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         TLRPC.UserFull userFull;
         TLRPC.ChatFull chatFull;
         TLRPC.ChatFull chatFull2;
+        TLRPC.User user2;
         TLRPC.EncryptedChat encryptedChat = this.currentEncryptedChat;
         if ((encryptedChat != null && !(encryptedChat instanceof TLRPC.TL_encryptedChat)) || ((this.currentChat != null && (this.chatMode != 0 || this.threadMessageId != 0 || (chatFull = this.chatInfo) == null || chatFull.ttl_period == 0)) || ((user = this.currentUser) != null && (UserObject.isDeleted(user) || (this.currentEncryptedChat == null && ((userFull = this.userInfo) == null || userFull.ttl_period == 0)))))) {
             ActionBarMenuItem.Item item = this.timeItem2;
@@ -25351,7 +25358,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         boolean z2 = true;
         if (chatAvatarContainer3 != null) {
             TLRPC.Chat chat2 = this.currentChat;
-            chatAvatarContainer3.setCommunityItemVisible((chat2 == null || chat2.linked_community_id == 0) ? false : true);
+            chatAvatarContainer3.setCommunityItemVisible(((chat2 == null || chat2.linked_community_id == 0) && ((user2 = this.currentUser) == null || user2.linked_community_id == 0)) ? false : true);
             ChatAvatarContainer chatAvatarContainer4 = this.avatarContainer;
             TLRPC.Chat chat3 = this.currentChat;
             chatAvatarContainer4.setStars((chat3 == null || (chat3.flags2 & 2048) == 0) ? false : true, z);
@@ -26175,7 +26182,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     }
 
     private void updateTitleIcons(boolean z) {
-        Drawable themedDrawable;
+        Drawable mutate;
         ActionBarMenuItem.Item item;
         if (this.avatarContainer != null) {
             int i = this.chatMode;
@@ -26185,11 +26192,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     isDialogMuted = !isDialogMuted;
                 }
                 Drawable drawable = null;
-                if (ChatObject.isChatHiddenInCommunity(this.currentAccount, this.currentChat)) {
-                    themedDrawable = getContext().getResources().getDrawable(R.drawable.mini_ephemeral_hidden_14).mutate();
-                    themedDrawable.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_windowBackgroundWhiteHintText), PorterDuff.Mode.SRC_IN));
+                if (ChatObject.isHiddenInCommunity(this.currentAccount, this.currentChat) || ChatObject.isHiddenInCommunity(this.currentAccount, this.currentUser)) {
+                    mutate = getContext().getResources().getDrawable(R.drawable.mini_ephemeral_hidden_14).mutate();
+                    mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_windowBackgroundWhiteHintText), PorterDuff.Mode.SRC_IN));
                 } else {
-                    themedDrawable = (UserObject.isReplyUser(this.currentUser) || (isThreadChat() && !this.isTopic) || !isDialogMuted) ? null : getThemedDrawable("drawableMuteIcon");
+                    mutate = (UserObject.isReplyUser(this.currentUser) || (isThreadChat() && !this.isTopic) || !isDialogMuted) ? null : getThemedDrawable("drawableMuteIcon");
                 }
                 if (this.currentEncryptedChat != null) {
                     drawable = getThemedDrawable("drawableLockIcon");
@@ -26204,7 +26211,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         }
                     }
                 }
-                this.avatarContainer.setTitleIcons(drawable, themedDrawable);
+                this.avatarContainer.setTitleIcons(drawable, mutate);
                 if (!z && (item = this.muteItem) != null) {
                     if (isDialogMuted) {
                         item.setRightIconVisibility(8);
@@ -55371,7 +55378,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         public boolean canToggleRichMessageCheckbox(ChatMessageCell chatMessageCell) {
             MessageObject messageObject;
             TLRPC.Message message;
-            if (chatMessageCell == null || ChatActivity.this.getParentActivity() == null || !MessagesController.getInstance(((BaseFragment) ChatActivity.this).currentAccount).richEditorAllowed() || (messageObject = chatMessageCell.getMessageObject()) == null || (message = messageObject.messageOwner) == null || message.rich_message == null) {
+            if (chatMessageCell == null || ChatActivity.this.getParentActivity() == null || (messageObject = chatMessageCell.getMessageObject()) == null || (message = messageObject.messageOwner) == null || message.rich_message == null) {
                 return false;
             }
             if (!messageObject.translated || message.translatedRichMessage == null) {

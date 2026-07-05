@@ -46,7 +46,7 @@ import org.telegram.ui.Stories.MessageMediaStoryFull_old;
 
 /* loaded from: classes3.dex */
 public class TLRPC {
-    public static final int LAYER = 228;
+    public static final int LAYER = 229;
     public static final int MESSAGE_FLAG_EDITED = 32768;
     public static final int MESSAGE_FLAG_FWD = 4;
     public static final int MESSAGE_FLAG_HAS_BOT_ID = 2048;
@@ -2999,6 +2999,53 @@ public class TLRPC {
         }
     }
 
+    public static class TL_messageMediaPaidMedia extends MessageMedia {
+        public static final int constructor = -1467669359;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.stars_amount = inputSerializedData.readInt64(z);
+            this.extended_media = Vector.deserialize(inputSerializedData, new TLRPC$TL_messageMediaPaidMedia$$ExternalSyntheticLambda0(), z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt64(this.stars_amount);
+            Vector.serialize(outputSerializedData, this.extended_media);
+        }
+    }
+
+    public static class TL_messageMediaToDo extends MessageMedia {
+        public static final int constructor = -1974226924;
+        public ArrayList<TodoCompletion> completions = new ArrayList<>();
+        public TodoList todo;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.flags = inputSerializedData.readInt32(z);
+            this.todo = TodoList.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                this.completions = Vector.deserialize(inputSerializedData, new Vector.TLDeserializer() { // from class: org.telegram.tgnet.TLRPC$TL_messageMediaToDo$$ExternalSyntheticLambda0
+                    @Override // org.telegram.tgnet.Vector.TLDeserializer
+                    public final TLObject deserialize(InputSerializedData inputSerializedData2, int i, boolean z2) {
+                        return TLRPC.TodoCompletion.TLdeserialize(inputSerializedData2, i, z2);
+                    }
+                }, z);
+            }
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt32(this.flags);
+            this.todo.serializeToStream(outputSerializedData);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                Vector.serialize(outputSerializedData, this.completions);
+            }
+        }
+    }
+
     public static class TL_messages_addPollAnswer extends TLMethod<Updates> {
         public static final int constructor = 431770477;
         public PollAnswer answer;
@@ -4110,6 +4157,38 @@ public class TLRPC {
         }
     }
 
+    public static class TL_payments_applyGiftCode extends TLObject {
+        public static final int constructor = -152934316;
+        public String slug;
+
+        @Override // org.telegram.tgnet.TLObject
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return Updates.TLdeserialize(inputSerializedData, i, z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeString(this.slug);
+        }
+    }
+
+    public static class TL_payments_checkGiftCode extends TLObject {
+        public static final int constructor = -1907247935;
+        public String slug;
+
+        @Override // org.telegram.tgnet.TLObject
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TL_payments_checkedGiftCode.TLdeserialize(inputSerializedData, i, z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeString(this.slug);
+        }
+    }
+
     public static class TL_payments_checkedGiftCode extends TLObject {
         public static final long NO_USER_ID = -1;
         public static final int constructor = -342343793;
@@ -4195,6 +4274,31 @@ public class TLRPC {
             outputSerializedData.writeInt32(constructor);
             this.peer.serializeToStream(outputSerializedData);
             outputSerializedData.writeInt32(this.msg_id);
+        }
+    }
+
+    public static class TL_payments_getPremiumGiftCodeOptions extends TLObject {
+        public static final int constructor = 660060756;
+        public InputPeer boost_peer;
+        public int flags;
+
+        @Override // org.telegram.tgnet.TLObject
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
+            return Vector.TLDeserialize(inputSerializedData, i, z, new Vector.TLDeserializer() { // from class: org.telegram.tgnet.TLRPC$TL_payments_getPremiumGiftCodeOptions$$ExternalSyntheticLambda0
+                @Override // org.telegram.tgnet.Vector.TLDeserializer
+                public final TLObject deserialize(InputSerializedData inputSerializedData2, int i2, boolean z2) {
+                    return TLRPC.TL_premiumGiftCodeOption.TLdeserialize(inputSerializedData2, i2, z2);
+                }
+            });
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt32(this.flags);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                this.boost_peer.serializeToStream(outputSerializedData);
+            }
         }
     }
 
@@ -4310,6 +4414,61 @@ public class TLRPC {
             }
             if (TLObject.hasFlag(this.flags, 16)) {
                 outputSerializedData.writeString(this.disallowed_country);
+            }
+        }
+    }
+
+    public static class TL_payments_giveawayInfoResults extends payments_GiveawayInfo {
+        public static final int constructor = -512366993;
+        public int activated_count;
+        public int finish_date;
+        public int flags;
+        public String gift_code_slug;
+        public boolean refunded;
+        public long stars_prize;
+        public int start_date;
+        public boolean winner;
+        public int winners_count;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z);
+            this.flags = readInt32;
+            this.winner = TLObject.hasFlag(readInt32, 1);
+            this.refunded = TLObject.hasFlag(this.flags, 2);
+            this.start_date = inputSerializedData.readInt32(z);
+            if (TLObject.hasFlag(this.flags, 8)) {
+                this.gift_code_slug = inputSerializedData.readString(z);
+            }
+            if (TLObject.hasFlag(this.flags, 16)) {
+                this.stars_prize = inputSerializedData.readInt64(z);
+            }
+            this.finish_date = inputSerializedData.readInt32(z);
+            this.winners_count = inputSerializedData.readInt32(z);
+            if (TLObject.hasFlag(this.flags, 4)) {
+                this.activated_count = inputSerializedData.readInt32(z);
+            }
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 1, this.winner);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 2, this.refunded);
+            this.flags = flag2;
+            outputSerializedData.writeInt32(flag2);
+            outputSerializedData.writeInt32(this.start_date);
+            if (TLObject.hasFlag(this.flags, 8)) {
+                outputSerializedData.writeString(this.gift_code_slug);
+            }
+            if (TLObject.hasFlag(this.flags, 16)) {
+                outputSerializedData.writeInt64(this.stars_prize);
+            }
+            outputSerializedData.writeInt32(this.finish_date);
+            outputSerializedData.writeInt32(this.winners_count);
+            if (TLObject.hasFlag(this.flags, 4)) {
+                outputSerializedData.writeInt32(this.activated_count);
             }
         }
     }
@@ -4509,6 +4668,52 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags, 2)) {
                 Vector.serializeInt(outputSerializedData, this.dark_colors);
             }
+        }
+    }
+
+    public static class TL_premiumGiftCodeOption extends TLObject {
+        public static final int constructor = 629052971;
+        public long amount;
+        public String currency;
+        public int flags;
+        public int months;
+        public String store_product;
+        public int store_quantity;
+        public int users;
+
+        public static TL_premiumGiftCodeOption TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+            return (TL_premiumGiftCodeOption) TLObject.TLdeserialize(TL_premiumGiftCodeOption.class, 629052971 != i ? null : new TL_premiumGiftCodeOption(), inputSerializedData, i, z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.flags = inputSerializedData.readInt32(z);
+            this.users = inputSerializedData.readInt32(z);
+            this.months = inputSerializedData.readInt32(z);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                this.store_product = inputSerializedData.readString(z);
+            }
+            if (TLObject.hasFlag(this.flags, 2)) {
+                this.store_quantity = inputSerializedData.readInt32(z);
+            }
+            this.currency = inputSerializedData.readString(z);
+            this.amount = inputSerializedData.readInt64(z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt32(this.flags);
+            outputSerializedData.writeInt32(this.users);
+            outputSerializedData.writeInt32(this.months);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                outputSerializedData.writeString(this.store_product);
+            }
+            if (TLObject.hasFlag(this.flags, 2)) {
+                outputSerializedData.writeInt32(this.store_quantity);
+            }
+            outputSerializedData.writeString(this.currency);
+            outputSerializedData.writeInt64(this.amount);
         }
     }
 
@@ -28822,6 +29027,7 @@ public class TLRPC {
         public boolean inactive;
         public String lang_code;
         public String last_name;
+        public long linked_community_id;
         public boolean min;
         public boolean mutual_contact;
         public String phone;
@@ -28843,97 +29049,72 @@ public class TLRPC {
         public ArrayList<TL_username> usernames = new ArrayList<>();
 
         public static User TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-            TLObject tL_user_layer195;
+            return (User) TLObject.TLdeserialize(User.class, fromConstructor(i), inputSerializedData, i, z);
+        }
+
+        private static User fromConstructor(int i) {
             switch (i) {
                 case TL_user_layer195.constructor /* -2093920310 */:
-                    tL_user_layer195 = new TL_user_layer195();
-                    break;
+                    return new TL_user_layer195();
                 case TL_user_layer159.constructor /* -1885878744 */:
-                    tL_user_layer195 = new TL_user_layer159();
-                    break;
+                    return new TL_user_layer159();
                 case TL_user_layer131.constructor /* -1820043071 */:
-                    tL_user_layer195 = new TL_user_layer131();
-                    break;
+                    return new TL_user_layer131();
                 case TL_user_layer165.constructor /* -1414139616 */:
-                    tL_user_layer195 = new TL_user_layer165();
-                    break;
+                    return new TL_user_layer165();
+                case TL_user.constructor /* -1313289085 */:
+                    return new TL_user();
                 case TL_userDeleted_old.constructor /* -1298475060 */:
-                    tL_user_layer195 = new TL_userDeleted_old();
-                    break;
+                    return new TL_userDeleted_old();
                 case TL_userContact_old2.constructor /* -894214632 */:
-                    tL_user_layer195 = new TL_userContact_old2();
-                    break;
+                    return new TL_userContact_old2();
                 case TL_user_layer65.constructor /* -787638374 */:
-                    tL_user_layer195 = new TL_user_layer65();
-                    break;
+                    return new TL_user_layer65();
                 case TL_userEmpty.constructor /* -742634630 */:
-                    tL_user_layer195 = new TL_userEmpty();
-                    break;
+                    return new TL_userEmpty();
                 case TL_userDeleted_old2.constructor /* -704549510 */:
-                    tL_user_layer195 = new TL_userDeleted_old2();
-                    break;
+                    return new TL_userDeleted_old2();
                 case TL_userRequest_old2.constructor /* -640891665 */:
-                    tL_user_layer195 = new TL_userRequest_old2();
-                    break;
+                    return new TL_userRequest_old2();
                 case TL_user_layer166.constructor /* -346018011 */:
-                    tL_user_layer195 = new TL_user_layer166();
-                    break;
+                    return new TL_user_layer166();
                 case TL_userContact_old.constructor /* -218397927 */:
-                    tL_user_layer195 = new TL_userContact_old();
-                    break;
+                    return new TL_userContact_old();
                 case TL_user_layer216.constructor /* 34280482 */:
-                    tL_user_layer195 = new TL_user_layer216();
-                    break;
+                    return new TL_user_layer216();
                 case TL_userForeign_old2.constructor /* 123533224 */:
-                    tL_user_layer195 = new TL_userForeign_old2();
-                    break;
+                    return new TL_userForeign_old2();
                 case TL_userSelf_old3.constructor /* 476112392 */:
-                    tL_user_layer195 = new TL_userSelf_old3();
-                    break;
+                    return new TL_userSelf_old3();
                 case TL_userEmpty_layer131.constructor /* 537022650 */:
-                    tL_user_layer195 = new TL_userEmpty_layer131();
-                    break;
+                    return new TL_userEmpty_layer131();
                 case TL_user_layer184.constructor /* 559694904 */:
-                    tL_user_layer195 = new TL_user_layer184();
-                    break;
+                    return new TL_user_layer184();
                 case TL_user_old.constructor /* 585404530 */:
-                    tL_user_layer195 = new TL_user_old();
-                    break;
+                    return new TL_user_old();
                 case TL_userRequest_old.constructor /* 585682608 */:
-                    tL_user_layer195 = new TL_userRequest_old();
-                    break;
+                    return new TL_userRequest_old();
                 case TL_user_layer104.constructor /* 773059779 */:
-                    tL_user_layer195 = new TL_user_layer104();
-                    break;
-                case TL_user.constructor /* 829899656 */:
-                    tL_user_layer195 = new TL_user();
-                    break;
+                    return new TL_user_layer104();
+                case TL_user_layer218.constructor /* 829899656 */:
+                    return new TL_user_layer218();
                 case TL_user_layer144.constructor /* 1073147056 */:
-                    tL_user_layer195 = new TL_user_layer144();
-                    break;
+                    return new TL_user_layer144();
                 case TL_user_layer199.constructor /* 1262928766 */:
-                    tL_user_layer195 = new TL_user_layer199();
-                    break;
+                    return new TL_user_layer199();
                 case TL_user_layer185.constructor /* 1340722400 */:
-                    tL_user_layer195 = new TL_user_layer185();
-                    break;
+                    return new TL_user_layer185();
                 case TL_userForeign_old.constructor /* 1377093789 */:
-                    tL_user_layer195 = new TL_userForeign_old();
-                    break;
+                    return new TL_userForeign_old();
                 case TL_user_layer147.constructor /* 1570352622 */:
-                    tL_user_layer195 = new TL_user_layer147();
-                    break;
+                    return new TL_user_layer147();
                 case TL_userSelf_old2.constructor /* 1879553105 */:
-                    tL_user_layer195 = new TL_userSelf_old2();
-                    break;
+                    return new TL_userSelf_old2();
                 case TL_userSelf_old.constructor /* 1912944108 */:
-                    tL_user_layer195 = new TL_userSelf_old();
-                    break;
+                    return new TL_userSelf_old();
                 default:
-                    tL_user_layer195 = null;
-                    break;
+                    return null;
             }
-            return (User) TLObject.TLdeserialize(User.class, tL_user_layer195, inputSerializedData, i, z);
         }
     }
 
@@ -29041,7 +29222,7 @@ public class TLRPC {
     }
 
     public static class TL_user extends User {
-        public static final int constructor = 829899656;
+        public static final int constructor = -1313289085;
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
@@ -29141,9 +29322,253 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags2, 32768)) {
                 this.send_paid_messages_stars = inputSerializedData.readInt64(z);
             }
+            if (TLObject.hasFlag(this.flags2, TLObject.FLAG_21)) {
+                this.linked_community_id = inputSerializedData.readInt64(z);
+            }
         }
 
         @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            if (this.username == null) {
+                this.flags &= -9;
+            }
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 1024, this.self);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 2048, this.contact);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 4096, this.mutual_contact);
+            this.flags = flag3;
+            int flag4 = TLObject.setFlag(flag3, 8192, this.deleted);
+            this.flags = flag4;
+            int flag5 = TLObject.setFlag(flag4, 16384, this.bot);
+            this.flags = flag5;
+            int flag6 = TLObject.setFlag(flag5, 32768, this.bot_chat_history);
+            this.flags = flag6;
+            int flag7 = TLObject.setFlag(flag6, 65536, this.bot_nochats);
+            this.flags = flag7;
+            int flag8 = TLObject.setFlag(flag7, 131072, this.verified);
+            this.flags = flag8;
+            int flag9 = TLObject.setFlag(flag8, 262144, this.restricted);
+            this.flags = flag9;
+            int flag10 = TLObject.setFlag(flag9, 1048576, this.min);
+            this.flags = flag10;
+            int flag11 = TLObject.setFlag(flag10, TLObject.FLAG_21, this.bot_inline_geo);
+            this.flags = flag11;
+            int flag12 = TLObject.setFlag(flag11, TLObject.FLAG_23, this.support);
+            this.flags = flag12;
+            int flag13 = TLObject.setFlag(flag12, 16777216, this.scam);
+            this.flags = flag13;
+            int flag14 = TLObject.setFlag(flag13, 33554432, this.apply_min_photo);
+            this.flags = flag14;
+            int flag15 = TLObject.setFlag(flag14, 67108864, this.fake);
+            this.flags = flag15;
+            int flag16 = TLObject.setFlag(flag15, TLObject.FLAG_27, this.bot_attach_menu);
+            this.flags = flag16;
+            int flag17 = TLObject.setFlag(flag16, TLObject.FLAG_28, this.premium);
+            this.flags = flag17;
+            int flag18 = TLObject.setFlag(flag17, TLObject.FLAG_29, this.attach_menu_enabled);
+            this.flags = flag18;
+            outputSerializedData.writeInt32(flag18);
+            int flag19 = TLObject.setFlag(this.flags2, 2, this.bot_can_edit);
+            this.flags2 = flag19;
+            int flag20 = TLObject.setFlag(flag19, 4, this.close_friend);
+            this.flags2 = flag20;
+            int flag21 = TLObject.setFlag(flag20, 8, this.stories_hidden);
+            this.flags2 = flag21;
+            int flag22 = TLObject.setFlag(flag21, 16, this.stories_unavailable);
+            this.flags2 = flag22;
+            int flag23 = TLObject.setFlag(flag22, 1024, this.contact_require_premium);
+            this.flags2 = flag23;
+            int flag24 = TLObject.setFlag(flag23, 2048, this.bot_business);
+            this.flags2 = flag24;
+            int flag25 = TLObject.setFlag(flag24, 8192, this.bot_has_main_app);
+            this.flags2 = flag25;
+            int flag26 = TLObject.setFlag(flag25, 65536, this.bot_forum_view);
+            this.flags2 = flag26;
+            int flag27 = TLObject.setFlag(flag26, 131072, this.bot_forum_can_manage_topics);
+            this.flags2 = flag27;
+            int flag28 = TLObject.setFlag(flag27, 262144, this.bot_can_manage_bots);
+            this.flags2 = flag28;
+            int flag29 = TLObject.setFlag(flag28, TLObject.FLAG_19, this.bot_guestchat);
+            this.flags2 = flag29;
+            int flag30 = TLObject.setFlag(flag29, 1048576, this.bot_guard);
+            this.flags2 = flag30;
+            outputSerializedData.writeInt32(flag30);
+            outputSerializedData.writeInt64(this.id);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                outputSerializedData.writeInt64(this.access_hash);
+            }
+            if (TLObject.hasFlag(this.flags, 2)) {
+                outputSerializedData.writeString(this.first_name);
+            }
+            if (TLObject.hasFlag(this.flags, 4)) {
+                outputSerializedData.writeString(this.last_name);
+            }
+            if (TLObject.hasFlag(this.flags, 8)) {
+                outputSerializedData.writeString(this.username);
+            }
+            if (TLObject.hasFlag(this.flags, 16)) {
+                outputSerializedData.writeString(this.phone);
+            }
+            if (TLObject.hasFlag(this.flags, 32)) {
+                this.photo.serializeToStream(outputSerializedData);
+            }
+            if (TLObject.hasFlag(this.flags, 64)) {
+                this.status.serializeToStream(outputSerializedData);
+            }
+            if (TLObject.hasFlag(this.flags, 16384)) {
+                outputSerializedData.writeInt32(this.bot_info_version);
+            }
+            if (TLObject.hasFlag(this.flags, 262144)) {
+                Vector.serialize(outputSerializedData, this.restriction_reason);
+            }
+            if (TLObject.hasFlag(this.flags, TLObject.FLAG_19)) {
+                outputSerializedData.writeString(this.bot_inline_placeholder);
+            }
+            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
+                outputSerializedData.writeString(this.lang_code);
+            }
+            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
+                this.emoji_status.serializeToStream(outputSerializedData);
+            }
+            if (TLObject.hasFlag(this.flags2, 1)) {
+                Vector.serialize(outputSerializedData, this.usernames);
+            }
+            if (TLObject.hasFlag(this.flags2, 32)) {
+                this.stories_max_id.serializeToStream(outputSerializedData);
+            }
+            if (TLObject.hasFlag(this.flags2, 256)) {
+                if (this.color == null) {
+                    this.color = new PeerColor();
+                }
+                this.color.serializeToStream(outputSerializedData);
+            }
+            if (TLObject.hasFlag(this.flags2, 512)) {
+                if (this.profile_color == null) {
+                    this.profile_color = new PeerColor();
+                }
+                this.profile_color.serializeToStream(outputSerializedData);
+            }
+            if (TLObject.hasFlag(this.flags2, 4096)) {
+                outputSerializedData.writeInt32(this.bot_active_users);
+            }
+            if (TLObject.hasFlag(this.flags2, 16384)) {
+                outputSerializedData.writeInt64(this.bot_verification_icon);
+            }
+            if (TLObject.hasFlag(this.flags2, 32768)) {
+                outputSerializedData.writeInt64(this.send_paid_messages_stars);
+            }
+            if (TLObject.hasFlag(this.flags2, TLObject.FLAG_21)) {
+                outputSerializedData.writeInt64(this.linked_community_id);
+            }
+        }
+    }
+
+    public static class TL_user_layer218 extends TL_user {
+        public static final int constructor = 829899656;
+
+        @Override // org.telegram.tgnet.TLRPC.TL_user, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z);
+            this.flags = readInt32;
+            this.self = TLObject.hasFlag(readInt32, 1024);
+            this.contact = TLObject.hasFlag(this.flags, 2048);
+            this.mutual_contact = TLObject.hasFlag(this.flags, 4096);
+            this.deleted = TLObject.hasFlag(this.flags, 8192);
+            this.bot = TLObject.hasFlag(this.flags, 16384);
+            this.bot_chat_history = TLObject.hasFlag(this.flags, 32768);
+            this.bot_nochats = TLObject.hasFlag(this.flags, 65536);
+            this.verified = TLObject.hasFlag(this.flags, 131072);
+            this.restricted = TLObject.hasFlag(this.flags, 262144);
+            this.min = TLObject.hasFlag(this.flags, 1048576);
+            this.bot_inline_geo = TLObject.hasFlag(this.flags, TLObject.FLAG_21);
+            this.support = TLObject.hasFlag(this.flags, TLObject.FLAG_23);
+            this.scam = TLObject.hasFlag(this.flags, 16777216);
+            this.apply_min_photo = TLObject.hasFlag(this.flags, 33554432);
+            this.fake = TLObject.hasFlag(this.flags, 67108864);
+            this.bot_attach_menu = TLObject.hasFlag(this.flags, TLObject.FLAG_27);
+            this.premium = TLObject.hasFlag(this.flags, TLObject.FLAG_28);
+            this.attach_menu_enabled = TLObject.hasFlag(this.flags, TLObject.FLAG_29);
+            int readInt322 = inputSerializedData.readInt32(z);
+            this.flags2 = readInt322;
+            this.bot_can_edit = TLObject.hasFlag(readInt322, 2);
+            this.close_friend = TLObject.hasFlag(this.flags2, 4);
+            this.stories_hidden = TLObject.hasFlag(this.flags2, 8);
+            this.stories_unavailable = TLObject.hasFlag(this.flags2, 16);
+            this.contact_require_premium = TLObject.hasFlag(this.flags2, 1024);
+            this.bot_business = TLObject.hasFlag(this.flags2, 2048);
+            this.bot_has_main_app = TLObject.hasFlag(this.flags2, 8192);
+            this.bot_forum_view = TLObject.hasFlag(this.flags2, 65536);
+            this.bot_forum_can_manage_topics = TLObject.hasFlag(this.flags2, 131072);
+            this.bot_can_manage_bots = TLObject.hasFlag(this.flags2, 262144);
+            this.bot_guestchat = TLObject.hasFlag(this.flags2, TLObject.FLAG_19);
+            this.bot_guard = TLObject.hasFlag(this.flags2, 1048576);
+            this.id = inputSerializedData.readInt64(z);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                this.access_hash = inputSerializedData.readInt64(z);
+            }
+            if (TLObject.hasFlag(this.flags, 2)) {
+                this.first_name = inputSerializedData.readString(z);
+            }
+            if (TLObject.hasFlag(this.flags, 4)) {
+                this.last_name = inputSerializedData.readString(z);
+            }
+            if (TLObject.hasFlag(this.flags, 8)) {
+                this.username = inputSerializedData.readString(z);
+            }
+            if (TLObject.hasFlag(this.flags, 16)) {
+                this.phone = inputSerializedData.readString(z);
+            }
+            if (TLObject.hasFlag(this.flags, 32)) {
+                this.photo = UserProfilePhoto.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+            if (TLObject.hasFlag(this.flags, 64)) {
+                this.status = UserStatus.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+            if (TLObject.hasFlag(this.flags, 16384)) {
+                this.bot_info_version = inputSerializedData.readInt32(z);
+            }
+            if (TLObject.hasFlag(this.flags, 262144)) {
+                this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
+            }
+            if (TLObject.hasFlag(this.flags, TLObject.FLAG_19)) {
+                this.bot_inline_placeholder = inputSerializedData.readString(z);
+            }
+            if (TLObject.hasFlag(this.flags, TLObject.FLAG_22)) {
+                this.lang_code = inputSerializedData.readString(z);
+            }
+            if (TLObject.hasFlag(this.flags, TLObject.FLAG_30)) {
+                this.emoji_status = EmojiStatus.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+            if (TLObject.hasFlag(this.flags2, 1)) {
+                this.usernames = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda1(), z);
+            }
+            try {
+                if (TLObject.hasFlag(this.flags2, 32)) {
+                    this.stories_max_id = TL_recentStory.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+                }
+            } catch (Throwable th) {
+                FileLog.e(th);
+            }
+            if (TLObject.hasFlag(this.flags2, 256)) {
+                this.color = PeerColor.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+            if (TLObject.hasFlag(this.flags2, 512)) {
+                this.profile_color = PeerColor.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+            if (TLObject.hasFlag(this.flags2, 4096)) {
+                this.bot_active_users = inputSerializedData.readInt32(z);
+            }
+            if (TLObject.hasFlag(this.flags2, 16384)) {
+                this.bot_verification_icon = inputSerializedData.readInt64(z);
+            }
+            if (TLObject.hasFlag(this.flags2, 32768)) {
+                this.send_paid_messages_stars = inputSerializedData.readInt64(z);
+            }
+        }
+
+        @Override // org.telegram.tgnet.TLRPC.TL_user, org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             if (this.username == null) {
                 this.flags &= -9;
@@ -68526,8 +68951,8 @@ public class TLRPC {
                 if (this.params == null) {
                     this.params = new HashMap<>();
                 }
-                this.layer = 228;
-                this.params.put("legacy_layer", "228");
+                this.layer = 229;
+                this.params.put("legacy_layer", "229");
             }
             SparseArray<String> sparseArray = this.pollMediaAttachPaths;
             if (sparseArray == null || sparseArray.size() <= 0 || !(this.media instanceof TL_messageMediaPoll)) {
@@ -76280,20 +76705,6 @@ public class TLRPC {
         public static final int constructor = 1478887012;
 
         @Override // org.telegram.tgnet.TLRPC.TL_messageMediaGiveaway, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            int readInt32 = inputSerializedData.readInt32(z);
-            this.flags = readInt32;
-            this.only_new_subscribers = TLObject.hasFlag(readInt32, 1);
-            this.channels = Vector.deserializeLong(inputSerializedData, z);
-            if (TLObject.hasFlag(this.flags, 2)) {
-                this.countries_iso2 = Vector.deserializeString(inputSerializedData, z);
-            }
-            this.quantity = inputSerializedData.readInt32(z);
-            this.months = inputSerializedData.readInt32(z);
-            this.until_date = inputSerializedData.readInt32(z);
-        }
-
-        @Override // org.telegram.tgnet.TLRPC.TL_messageMediaGiveaway, org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
             int flag = TLObject.setFlag(this.flags, 1, this.only_new_subscribers);
@@ -76307,210 +76718,19 @@ public class TLRPC {
             outputSerializedData.writeInt32(this.months);
             outputSerializedData.writeInt32(this.until_date);
         }
-    }
 
-    public static class TL_messageMediaPaidMedia extends MessageMedia {
-        public static final int constructor = -1467669359;
-
-        @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.stars_amount = inputSerializedData.readInt64(z);
-            this.extended_media = Vector.deserialize(inputSerializedData, new TLRPC$TL_messageMediaPaidMedia$$ExternalSyntheticLambda0(), z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeInt64(this.stars_amount);
-            Vector.serialize(outputSerializedData, this.extended_media);
-        }
-    }
-
-    public static class TL_messageMediaToDo extends MessageMedia {
-        public static final int constructor = -1974226924;
-        public ArrayList<TodoCompletion> completions = new ArrayList<>();
-        public TodoList todo;
-
-        @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.flags = inputSerializedData.readInt32(z);
-            this.todo = TodoList.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            if (TLObject.hasFlag(this.flags, 1)) {
-                this.completions = Vector.deserialize(inputSerializedData, new Vector.TLDeserializer() { // from class: org.telegram.tgnet.TLRPC$TL_messageMediaToDo$$ExternalSyntheticLambda0
-                    @Override // org.telegram.tgnet.Vector.TLDeserializer
-                    public final TLObject deserialize(InputSerializedData inputSerializedData2, int i, boolean z2) {
-                        return TLRPC.TodoCompletion.TLdeserialize(inputSerializedData2, i, z2);
-                    }
-                }, z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeInt32(this.flags);
-            this.todo.serializeToStream(outputSerializedData);
-            if (TLObject.hasFlag(this.flags, 1)) {
-                Vector.serialize(outputSerializedData, this.completions);
-            }
-        }
-    }
-
-    public static class TL_premiumGiftCodeOption extends TLObject {
-        public static final int constructor = 629052971;
-        public long amount;
-        public String currency;
-        public int flags;
-        public int months;
-        public String store_product;
-        public int store_quantity;
-        public int users;
-
-        public static TL_premiumGiftCodeOption TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-            return (TL_premiumGiftCodeOption) TLObject.TLdeserialize(TL_premiumGiftCodeOption.class, 629052971 != i ? null : new TL_premiumGiftCodeOption(), inputSerializedData, i, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.flags = inputSerializedData.readInt32(z);
-            this.users = inputSerializedData.readInt32(z);
-            this.months = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 1)) {
-                this.store_product = inputSerializedData.readString(z);
-            }
-            if (TLObject.hasFlag(this.flags, 2)) {
-                this.store_quantity = inputSerializedData.readInt32(z);
-            }
-            this.currency = inputSerializedData.readString(z);
-            this.amount = inputSerializedData.readInt64(z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeInt32(this.flags);
-            outputSerializedData.writeInt32(this.users);
-            outputSerializedData.writeInt32(this.months);
-            if (TLObject.hasFlag(this.flags, 1)) {
-                outputSerializedData.writeString(this.store_product);
-            }
-            if (TLObject.hasFlag(this.flags, 2)) {
-                outputSerializedData.writeInt32(this.store_quantity);
-            }
-            outputSerializedData.writeString(this.currency);
-            outputSerializedData.writeInt64(this.amount);
-        }
-    }
-
-    public static class TL_payments_getPremiumGiftCodeOptions extends TLObject {
-        public static final int constructor = 660060756;
-        public InputPeer boost_peer;
-        public int flags;
-
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
-            return Vector.TLDeserialize(inputSerializedData, i, z, new Vector.TLDeserializer() { // from class: org.telegram.tgnet.TLRPC$TL_payments_getPremiumGiftCodeOptions$$ExternalSyntheticLambda0
-                @Override // org.telegram.tgnet.Vector.TLDeserializer
-                public final TLObject deserialize(InputSerializedData inputSerializedData2, int i2, boolean z2) {
-                    return TLRPC.TL_premiumGiftCodeOption.TLdeserialize(inputSerializedData2, i2, z2);
-                }
-            });
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeInt32(this.flags);
-            if (TLObject.hasFlag(this.flags, 1)) {
-                this.boost_peer.serializeToStream(outputSerializedData);
-            }
-        }
-    }
-
-    public static class TL_payments_checkGiftCode extends TLObject {
-        public static final int constructor = -1907247935;
-        public String slug;
-
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
-            return TL_payments_checkedGiftCode.TLdeserialize(inputSerializedData, i, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeString(this.slug);
-        }
-    }
-
-    public static class TL_payments_applyGiftCode extends TLObject {
-        public static final int constructor = -152934316;
-        public String slug;
-
-        @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
-            return Updates.TLdeserialize(inputSerializedData, i, z);
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeString(this.slug);
-        }
-    }
-
-    public static class TL_payments_giveawayInfoResults extends payments_GiveawayInfo {
-        public static final int constructor = -512366993;
-        public int activated_count;
-        public int finish_date;
-        public int flags;
-        public String gift_code_slug;
-        public boolean refunded;
-        public long stars_prize;
-        public int start_date;
-        public boolean winner;
-        public int winners_count;
-
-        @Override // org.telegram.tgnet.TLObject
+        @Override // org.telegram.tgnet.TLRPC.TL_messageMediaGiveaway, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
-            this.winner = TLObject.hasFlag(readInt32, 1);
-            this.refunded = TLObject.hasFlag(this.flags, 2);
-            this.start_date = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 8)) {
-                this.gift_code_slug = inputSerializedData.readString(z);
+            this.only_new_subscribers = TLObject.hasFlag(readInt32, 1);
+            this.channels = Vector.deserializeLong(inputSerializedData, z);
+            if (TLObject.hasFlag(this.flags, 2)) {
+                this.countries_iso2 = Vector.deserializeString(inputSerializedData, z);
             }
-            if (TLObject.hasFlag(this.flags, 16)) {
-                this.stars_prize = inputSerializedData.readInt64(z);
-            }
-            this.finish_date = inputSerializedData.readInt32(z);
-            this.winners_count = inputSerializedData.readInt32(z);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                this.activated_count = inputSerializedData.readInt32(z);
-            }
-        }
-
-        @Override // org.telegram.tgnet.TLObject
-        public void serializeToStream(OutputSerializedData outputSerializedData) {
-            outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.winner);
-            this.flags = flag;
-            int flag2 = TLObject.setFlag(flag, 2, this.refunded);
-            this.flags = flag2;
-            outputSerializedData.writeInt32(flag2);
-            outputSerializedData.writeInt32(this.start_date);
-            if (TLObject.hasFlag(this.flags, 8)) {
-                outputSerializedData.writeString(this.gift_code_slug);
-            }
-            if (TLObject.hasFlag(this.flags, 16)) {
-                outputSerializedData.writeInt64(this.stars_prize);
-            }
-            outputSerializedData.writeInt32(this.finish_date);
-            outputSerializedData.writeInt32(this.winners_count);
-            if (TLObject.hasFlag(this.flags, 4)) {
-                outputSerializedData.writeInt32(this.activated_count);
-            }
+            this.quantity = inputSerializedData.readInt32(z);
+            this.months = inputSerializedData.readInt32(z);
+            this.until_date = inputSerializedData.readInt32(z);
         }
     }
 }

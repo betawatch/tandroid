@@ -1353,7 +1353,7 @@ public abstract class StoriesUtilities {
         public int unreadState;
         public boolean useArcProgress;
 
-        public boolean isAvatarClickable(long j, TLRPC.Chat chat) {
+        public boolean isAvatarClickable(long j, TLRPC.Chat chat, TLRPC.User user) {
             return false;
         }
 
@@ -1427,7 +1427,7 @@ public abstract class StoriesUtilities {
                     user = null;
                     chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-this.dialogId));
                 }
-                if (!isAvatarClickable(this.dialogId, chat)) {
+                if (!isAvatarClickable(this.dialogId, chat, user)) {
                     if (this.drawHiddenStoriesAsSegments) {
                         z = storiesController.hasHiddenStories();
                     } else if (this.dialogId <= 0) {

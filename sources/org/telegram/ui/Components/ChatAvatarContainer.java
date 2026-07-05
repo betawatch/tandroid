@@ -71,6 +71,7 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
     private AnimatedTextView animatedSubtitleTextView;
     private final BoolAnimator animatorTimeVisible;
     private AvatarDrawable avatarDrawable;
+    private boolean avatarImageIsHidden;
     public BackupImageView avatarImageView;
     private int avatarSizeInDp;
     private final AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable botVerificationDrawable;
@@ -185,14 +186,14 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
         this(context, baseFragment, z, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x0369, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x0370, code lost:
     
-        if (r4.isComments == false) goto L88;
+        if (r4.isComments == false) goto L92;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v34 */
-    /* JADX WARN: Type inference failed for: r2v35, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r2v40 */
+    /* JADX WARN: Type inference failed for: r2v37 */
+    /* JADX WARN: Type inference failed for: r2v38, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r2v43 */
     /* JADX WARN: Type inference failed for: r8v1 */
     /* JADX WARN: Type inference failed for: r8v2, types: [boolean] */
     /* JADX WARN: Type inference failed for: r8v3 */
@@ -248,7 +249,9 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
                 this.sharedMediaPreloader = new SharedMediaLayout.SharedMediaPreloader(baseFragment);
             }
             ChatActivity chatActivity3 = this.parentFragment;
-            if (chatActivity3 != null && (chatActivity3.isThreadChat() || this.parentFragment.getChatMode() == 2 || this.parentFragment.getChatMode() == 5 || this.parentFragment.getChatMode() == 6)) {
+            boolean z4 = chatActivity3 != null && (chatActivity3.isThreadChat() || this.parentFragment.getChatMode() == 2 || this.parentFragment.getChatMode() == 5 || this.parentFragment.getChatMode() == 6);
+            this.avatarImageIsHidden = z4;
+            if (z4) {
                 this.avatarImageView.setVisibility(8);
             }
         }
@@ -1052,7 +1055,7 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
     public void setCommunityItemVisible(boolean z) {
         ImageView imageView = this.communityItem;
         if (imageView != null) {
-            imageView.setVisibility(z ? 0 : 8);
+            imageView.setVisibility((!z || this.avatarImageIsHidden) ? 8 : 0);
         }
     }
 

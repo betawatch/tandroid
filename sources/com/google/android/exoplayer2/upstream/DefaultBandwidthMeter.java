@@ -2342,9 +2342,9 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{2, 2, 0, 1, 2, 2};
             case NotificationCenter.channelStarsUpdated /* 227 */:
                 return new int[]{0, 2, 1, 2, 2, 2};
-            case 228:
+            case NotificationCenter.updateAllMessages /* 228 */:
                 return new int[]{0, 0, 1, 2, 2, 1};
-            case NotificationCenter.starGiftsLoaded /* 229 */:
+            case 229:
                 return new int[]{4, 3, 3, 1, 2, 2};
             case NotificationCenter.starGiftSoldOut /* 232 */:
                 return new int[]{1, 2, 1, 1, 2, 2};

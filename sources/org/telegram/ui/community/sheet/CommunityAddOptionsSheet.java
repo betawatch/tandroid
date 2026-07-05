@@ -7,10 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
@@ -27,18 +29,29 @@ import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 /* loaded from: classes3.dex */
 public class CommunityAddOptionsSheet extends BottomSheetWithRecyclerListView {
     private UniversalAdapter adapter;
-    private FrameLayout cell;
-    private TLRPC.Chat chat;
-    private TLRPC.ChatFull chatFull;
+    private final FrameLayout cell;
+    private final TLRPC.Chat chat;
+    private final boolean isBot;
     private final boolean isChannel;
     private boolean isHidden;
-    private ProfileSearchCell searchCell;
+    private final ProfileSearchCell searchCell;
+    private final TLRPC.User user;
     private int visibleRow;
 
-    public CommunityAddOptionsSheet(Context context, final TLRPC.Chat chat, TLRPC.Chat chat2, final Utilities.Callback callback) {
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0103  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x00f0  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public CommunityAddOptionsSheet(Context context, final TLRPC.Chat chat, long j, final Utilities.Callback callback) {
         super(context, null, false, true, false, false, false, BottomSheetWithRecyclerListView.ActionBarType.SLIDING, null);
+        ProfileSearchCell profileSearchCell;
+        int i;
+        TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j));
+        this.user = user;
+        TLRPC.Chat chat2 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j));
         this.chat = chat2;
-        this.chatFull = chat2 != null ? MessagesController.getInstance(this.currentAccount).getChatFull(chat2.id) : null;
+        this.isBot = UserObject.isBot(user);
         this.isChannel = ChatObject.isChannelAndNotMegaGroup(chat2);
         this.ignoreTouchActionBar = false;
         this.headerMoveTop = AndroidUtilities.dp(12.0f);
@@ -47,38 +60,68 @@ public class CommunityAddOptionsSheet extends BottomSheetWithRecyclerListView {
         FrameLayout frameLayout = new FrameLayout(context);
         this.cell = frameLayout;
         frameLayout.setPadding(0, AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f));
-        this.cell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-        ProfileSearchCell profileSearchCell = new ProfileSearchCell(context);
-        this.searchCell = profileSearchCell;
+        frameLayout.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
+        ProfileSearchCell profileSearchCell2 = new ProfileSearchCell(context);
+        this.searchCell = profileSearchCell2;
         if (chat2 != null) {
-            profileSearchCell.setData(chat2, null, chat2.title, LocaleController.formatPluralStringSpaced("Members", chat2.participants_count), false, false);
+            profileSearchCell2.setData(chat2, null, chat2.title, LocaleController.formatPluralStringSpaced("Members", chat2.participants_count), false, false);
+        } else if (user != null) {
+            profileSearchCell = profileSearchCell2;
+            i = -1;
+            profileSearchCell2.setData(user, null, DialogObject.getName(user), LocaleController.getString(R.string.Bot), false, false);
+            frameLayout.addView(profileSearchCell, LayoutHelper.createFrame(i, -2.0f));
+            RecyclerListView recyclerListView = this.recyclerListView;
+            int i2 = this.backgroundPaddingLeft;
+            recyclerListView.setPadding(i2, 0, i2, AndroidUtilities.navigationBarHeight + AndroidUtilities.dp(64.0f));
+            this.recyclerListView.setSections();
+            this.recyclerListView.setClipToPadding(false);
+            this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.community.sheet.CommunityAddOptionsSheet$$ExternalSyntheticLambda0
+                @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
+                public final void onItemClick(View view, int i3) {
+                    CommunityAddOptionsSheet.this.lambda$new$0(view, i3);
+                }
+            });
+            ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, this.resourcesProvider);
+            if (chat == null) {
+                buttonWithCounterView.setText(LocaleController.getString(ChatObject.canAddChatToCommunity(chat) ? R.string.CommunityAddToCommunityButton : R.string.CommunityAddToCommunityRequestButton));
+            } else {
+                buttonWithCounterView.setText(LocaleController.getString(R.string.CommunityCreateCommunity));
+            }
+            buttonWithCounterView.setRound();
+            buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.community.sheet.CommunityAddOptionsSheet$$ExternalSyntheticLambda1
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    CommunityAddOptionsSheet.this.lambda$new$1(callback, chat, view);
+                }
+            });
+            this.containerView.addView(buttonWithCounterView, LayoutHelper.createFrameMarginPx(-1, 48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
+            this.adapter.update(false);
         }
-        this.cell.addView(this.searchCell, LayoutHelper.createFrame(-1, -2.0f));
-        RecyclerListView recyclerListView = this.recyclerListView;
-        int i = this.backgroundPaddingLeft;
-        recyclerListView.setPadding(i, 0, i, AndroidUtilities.navigationBarHeight + AndroidUtilities.dp(64.0f));
+        profileSearchCell = profileSearchCell2;
+        i = -1;
+        frameLayout.addView(profileSearchCell, LayoutHelper.createFrame(i, -2.0f));
+        RecyclerListView recyclerListView2 = this.recyclerListView;
+        int i22 = this.backgroundPaddingLeft;
+        recyclerListView2.setPadding(i22, 0, i22, AndroidUtilities.navigationBarHeight + AndroidUtilities.dp(64.0f));
         this.recyclerListView.setSections();
         this.recyclerListView.setClipToPadding(false);
         this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.community.sheet.CommunityAddOptionsSheet$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i2) {
-                CommunityAddOptionsSheet.this.lambda$new$0(view, i2);
+            public final void onItemClick(View view, int i3) {
+                CommunityAddOptionsSheet.this.lambda$new$0(view, i3);
             }
         });
-        ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, this.resourcesProvider);
-        if (chat != null) {
-            buttonWithCounterView.setText(LocaleController.getString(ChatObject.canAddChatToCommunity(chat) ? R.string.CommunityAddToCommunityButton : R.string.CommunityAddToCommunityRequestButton));
-        } else {
-            buttonWithCounterView.setText(LocaleController.getString(R.string.CommunityCreateCommunity));
+        ButtonWithCounterView buttonWithCounterView2 = new ButtonWithCounterView(context, this.resourcesProvider);
+        if (chat == null) {
         }
-        buttonWithCounterView.setRound();
-        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.community.sheet.CommunityAddOptionsSheet$$ExternalSyntheticLambda1
+        buttonWithCounterView2.setRound();
+        buttonWithCounterView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.community.sheet.CommunityAddOptionsSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CommunityAddOptionsSheet.this.lambda$new$1(callback, chat, view);
             }
         });
-        this.containerView.addView(buttonWithCounterView, LayoutHelper.createFrameMarginPx(-1, 48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
+        this.containerView.addView(buttonWithCounterView2, LayoutHelper.createFrameMarginPx(-1, 48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
         this.adapter.update(false);
     }
 
@@ -99,7 +142,7 @@ public class CommunityAddOptionsSheet extends BottomSheetWithRecyclerListView {
 
     private void apply(final Utilities.Callback callback, final boolean z, boolean z2) {
         int i;
-        if (z2 && !z) {
+        if (z2 && !z && !this.isBot) {
             Context context = getContext();
             Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
             String string = LocaleController.getString(R.string.CommunityAddToCommunityTitle);
@@ -151,7 +194,7 @@ public class CommunityAddOptionsSheet extends BottomSheetWithRecyclerListView {
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
     protected CharSequence getTitle() {
-        return LocaleController.getString(R.string.CommunityAddChatTitle);
+        return LocaleController.getString(this.isBot ? R.string.CommunityAddBotTitle : R.string.CommunityAddChatTitle);
     }
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
@@ -174,8 +217,8 @@ public class CommunityAddOptionsSheet extends BottomSheetWithRecyclerListView {
         arrayList.add(UItem.asSpace(2, AndroidUtilities.dp(12.0f)));
         arrayList.add(UItem.asHeader(3, LocaleController.getString(R.string.CommunityChatVisibilitySection)));
         this.visibleRow = arrayList.size();
-        arrayList.add(UItem.asRadio2(NotificationCenter.messagePlayingDidStart, LocaleController.getString(R.string.CommunityChatVisibilityVisible), LocaleController.getString(R.string.CommunityChatVisibilityVisibleInfo)).setChecked(!this.isHidden));
-        arrayList.add(UItem.asRadio2(150, LocaleController.getString(R.string.CommunityChatVisibilityHidden), LocaleController.getString(R.string.CommunityChatVisibilityHiddenInfo)).setChecked(this.isHidden));
+        arrayList.add(UItem.asRadio2(NotificationCenter.messagePlayingDidStart, LocaleController.getString(R.string.CommunityChatVisibilityVisible), LocaleController.getString(this.isBot ? R.string.CommunityChatVisibilityVisibleBotInfo : R.string.CommunityChatVisibilityVisibleInfo)).setChecked(!this.isHidden));
+        arrayList.add(UItem.asRadio2(150, LocaleController.getString(R.string.CommunityChatVisibilityHidden), LocaleController.getString(this.isBot ? R.string.CommunityChatVisibilityHiddenBotInfo : R.string.CommunityChatVisibilityHiddenInfo)).setChecked(this.isHidden));
         arrayList.add(UItem.asShadow(6, LocaleController.getString(R.string.CommunityChatVisibilityCannotChange)));
     }
 }

@@ -15367,7 +15367,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     }
 
     private CharSequence appendCommunityHiddenRow(CharSequence charSequence) {
-        if (!ChatObject.isChatHiddenInCommunity(this.currentAccount, this.currentChat)) {
+        if (!ChatObject.isHiddenInCommunity(this.currentAccount, this.dialogId)) {
             return charSequence;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();

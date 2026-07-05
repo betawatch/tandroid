@@ -236,8 +236,8 @@ final class PredefinedCommands {
         MacroInfo.Commands.put("smallfrowneq", new PredefMacroInfo(NotificationCenter.botStarsUpdated, 0));
         MacroInfo.Commands.put("geoprop", new PredefMacroInfo(NotificationCenter.botStarsTransactionsLoaded, 0));
         MacroInfo.Commands.put("minuscolon", new PredefMacroInfo(NotificationCenter.channelStarsUpdated, 0));
-        MacroInfo.Commands.put("minuscoloncolon", new PredefMacroInfo(228, 0));
-        MacroInfo.Commands.put("simcolon", new PredefMacroInfo(NotificationCenter.starGiftsLoaded, 0));
+        MacroInfo.Commands.put("minuscoloncolon", new PredefMacroInfo(NotificationCenter.updateAllMessages, 0));
+        MacroInfo.Commands.put("simcolon", new PredefMacroInfo(229, 0));
         MacroInfo.Commands.put("simcoloncolon", new PredefMacroInfo(NotificationCenter.starUserGiftsLoaded, 0));
         MacroInfo.Commands.put("approxcolon", new PredefMacroInfo(NotificationCenter.starUserGiftCollectionsLoaded, 0));
         MacroInfo.Commands.put("approxcoloncolon", new PredefMacroInfo(NotificationCenter.starGiftSoldOut, 0));

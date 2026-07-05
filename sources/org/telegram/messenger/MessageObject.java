@@ -5540,15 +5540,15 @@ public class MessageObject {
         updateMessageText(MessagesController.getInstance(this.currentAccount).getUsers(), MessagesController.getInstance(this.currentAccount).getChats(), null, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:1438:0x24ea, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1447:0x24f8, code lost:
     
-        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r5).flags & 4) != 0) goto L1418;
+        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r5).flags & 4) != 0) goto L1427;
      */
-    /* JADX WARN: Removed duplicated region for block: B:1342:0x22d9  */
-    /* JADX WARN: Removed duplicated region for block: B:1360:0x2341  */
-    /* JADX WARN: Removed duplicated region for block: B:1362:0x2344  */
-    /* JADX WARN: Removed duplicated region for block: B:1538:0x003d  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x2773  */
+    /* JADX WARN: Removed duplicated region for block: B:1351:0x22e7  */
+    /* JADX WARN: Removed duplicated region for block: B:1369:0x234f  */
+    /* JADX WARN: Removed duplicated region for block: B:1371:0x2352  */
+    /* JADX WARN: Removed duplicated region for block: B:1547:0x003d  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x2781  */
     /* JADX WARN: Removed duplicated region for block: B:306:0x0872  */
     /* JADX WARN: Removed duplicated region for block: B:315:0x0891  */
     /* JADX WARN: Removed duplicated region for block: B:333:0x08cf  */
@@ -6973,17 +6973,19 @@ public class MessageObject {
                                                             spannableStringBuilder7.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i2, shortName2, ofSafe2.asFormatString(), str15)));
                                                             this.messageText = spannableStringBuilder7;
                                                         } else if (messageAction6 instanceof TLRPC.TL_messageActionChangeCommunity) {
+                                                            TLRPC.TL_messageActionChangeCommunity tL_messageActionChangeCommunity = (TLRPC.TL_messageActionChangeCommunity) messageAction6;
                                                             long peerDialogId7 = DialogObject.getPeerDialogId(message4.peer_id);
                                                             long peerDialogId8 = DialogObject.getPeerDialogId(this.messageOwner.from_id);
-                                                            boolean isChannelAndNotMegaGroup5 = ChatObject.isChannelAndNotMegaGroup(getChat(abstractMap2, longSparseArray2, -peerDialogId7));
-                                                            String shortName3 = DialogObject.getShortName(getChat(abstractMap2, longSparseArray2, ((TLRPC.TL_messageActionChangeCommunity) messageAction6).community_id));
-                                                            if (peerDialogId7 > 0) {
+                                                            boolean z10 = peerDialogId7 < 0 && ChatObject.isChannelAndNotMegaGroup(getChat(abstractMap2, longSparseArray2, -peerDialogId7));
+                                                            boolean z11 = peerDialogId7 > 0;
+                                                            String shortName3 = DialogObject.getShortName(getChat(abstractMap2, longSparseArray2, tL_messageActionChangeCommunity.community_id));
+                                                            if (peerDialogId8 > 0) {
                                                                 shortName = DialogObject.getShortName(getUser(abstractMap, longSparseArray, peerDialogId8));
                                                             } else {
                                                                 shortName = DialogObject.getShortName(getChat(abstractMap2, longSparseArray2, -peerDialogId8));
                                                             }
                                                             SpannableStringBuilder spannableStringBuilder8 = new SpannableStringBuilder();
-                                                            spannableStringBuilder8.append(CommunityUtils.buildServiceMessageText(this, shortName3, shortName, isChannelAndNotMegaGroup5));
+                                                            spannableStringBuilder8.append(CommunityUtils.buildServiceMessageText(this, shortName3, shortName, z10, z11));
                                                             this.messageText = spannableStringBuilder8;
                                                         } else if (messageAction6 instanceof TLRPC.TL_messageActionStarGiftPurchaseOfferDeclined) {
                                                             TLRPC.TL_messageActionStarGiftPurchaseOfferDeclined tL_messageActionStarGiftPurchaseOfferDeclined = (TLRPC.TL_messageActionStarGiftPurchaseOfferDeclined) messageAction6;
@@ -7019,9 +7021,9 @@ public class MessageObject {
                                                             }
                                                         } else if (messageAction6 instanceof TLRPC.TL_messageActionNoForwardsToggle) {
                                                             TLRPC.TL_messageActionNoForwardsToggle tL_messageActionNoForwardsToggle = (TLRPC.TL_messageActionNoForwardsToggle) messageAction6;
-                                                            boolean z10 = tL_messageActionNoForwardsToggle.new_value;
-                                                            if (z10 == tL_messageActionNoForwardsToggle.prev_value) {
-                                                                this.messageText = LocaleController.getString(z10 ? R.string.DisableSharingActionStillDisabled : R.string.DisableSharingActionStillEnabled);
+                                                            boolean z12 = tL_messageActionNoForwardsToggle.new_value;
+                                                            if (z12 == tL_messageActionNoForwardsToggle.prev_value) {
+                                                                this.messageText = LocaleController.getString(z12 ? R.string.DisableSharingActionStillDisabled : R.string.DisableSharingActionStillEnabled);
                                                             } else if (isOut()) {
                                                                 this.messageText = LocaleController.getString(tL_messageActionNoForwardsToggle.new_value ? R.string.DisableSharingActionYou : R.string.EnableSharingActionYou);
                                                             } else {
@@ -7114,24 +7116,24 @@ public class MessageObject {
                             } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPaidMedia) {
                                 TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = (TLRPC.TL_messageMediaPaidMedia) getMedia(this.messageOwner);
                                 int size2 = tL_messageMediaPaidMedia.extended_media.size();
-                                boolean z11 = false;
+                                boolean z13 = false;
                                 for (int i23 = 0; i23 < size2; i23++) {
                                     TLRPC.MessageExtendedMedia messageExtendedMedia = tL_messageMediaPaidMedia.extended_media.get(i23);
                                     if (messageExtendedMedia instanceof TLRPC.TL_messageExtendedMedia) {
                                         TLRPC.MessageMedia messageMedia = ((TLRPC.TL_messageExtendedMedia) messageExtendedMedia).media;
-                                        z11 = (messageMedia instanceof TLRPC.TL_messageMediaDocument) && isVideoDocument(messageMedia.document);
+                                        z13 = (messageMedia instanceof TLRPC.TL_messageMediaDocument) && isVideoDocument(messageMedia.document);
                                     } else if (!(messageExtendedMedia instanceof TLRPC.TL_messageExtendedMediaPreview)) {
                                     }
-                                    if (z11) {
+                                    if (z13) {
                                         break;
                                     }
                                 }
                                 if (size2 == 1) {
-                                    formatPluralString = LocaleController.getString(z11 ? R.string.AttachVideo : R.string.AttachPhoto);
+                                    formatPluralString = LocaleController.getString(z13 ? R.string.AttachVideo : R.string.AttachPhoto);
                                     c = 0;
                                 } else {
                                     c = 0;
-                                    formatPluralString = LocaleController.formatPluralString(z11 ? "Media" : "Photos", size2, new Object[0]);
+                                    formatPluralString = LocaleController.formatPluralString(z13 ? "Media" : "Photos", size2, new Object[0]);
                                 }
                                 this.messageText = formatPluralString;
                                 int i24 = R.string.AttachPaidMedia;
