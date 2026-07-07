@@ -435,9 +435,9 @@ class PredefMacroInfo extends MacroInfo {
                     return PredefMacros.geoprop_macro(teXParser, strArr);
                 case NotificationCenter.channelStarsUpdated /* 227 */:
                     return PredefMacros.minuscolon_macro(teXParser, strArr);
-                case NotificationCenter.updateAllMessages /* 228 */:
+                case 228:
                     return PredefMacros.minuscoloncolon_macro(teXParser, strArr);
-                case 229:
+                case NotificationCenter.starGiftsLoaded /* 229 */:
                     return PredefMacros.simcolon_macro(teXParser, strArr);
                 case NotificationCenter.starUserGiftsLoaded /* 230 */:
                     return PredefMacros.simcoloncolon_macro(teXParser, strArr);

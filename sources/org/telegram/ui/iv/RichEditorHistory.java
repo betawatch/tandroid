@@ -62,8 +62,9 @@ public class RichEditorHistory {
         final MediaUploadState media;
         final ArrayList medias;
         final int num;
+        final ArrayList quoteIds;
 
-        RowState(long j, byte[] bArr, int i, int i2, boolean z, boolean z2, boolean z3, MediaUploadState mediaUploadState, ArrayList arrayList) {
+        RowState(long j, byte[] bArr, int i, int i2, boolean z, boolean z2, boolean z3, MediaUploadState mediaUploadState, ArrayList arrayList, ArrayList arrayList2) {
             this.id = j;
             this.blockData = bArr;
             this.level = i;
@@ -73,6 +74,7 @@ public class RichEditorHistory {
             this.detailsEnd = z3;
             this.media = mediaUploadState;
             this.medias = arrayList;
+            this.quoteIds = arrayList2;
         }
     }
 
@@ -184,6 +186,10 @@ public class RichEditorHistory {
             blockRow.detailsEnd = rowState.detailsEnd;
             blockRow.media = rowState.media;
             blockRow.medias = rowState.medias != null ? new ArrayList(rowState.medias) : null;
+            ArrayList arrayList2 = rowState.quoteIds;
+            if (arrayList2 != null) {
+                blockRow.quoteIds.addAll(arrayList2);
+            }
             arrayList.add(blockRow);
         }
         this.delegate.restoreRows(arrayList, snapshot.focus);
@@ -193,29 +199,47 @@ public class RichEditorHistory {
 
     private Snapshot capture() {
         ArrayList arrayList;
+        HashMap hashMap;
+        ArrayList arrayList2;
         ArrayList rows = this.delegate.getRows();
-        HashMap hashMap = new HashMap();
+        HashMap hashMap2 = new HashMap();
         Snapshot snapshot = this.baseline;
         int i = 0;
         if (snapshot != null) {
             for (RowState rowState : snapshot.rows) {
-                hashMap.put(Long.valueOf(rowState.id), rowState);
+                hashMap2.put(Long.valueOf(rowState.id), rowState);
             }
         }
         RowState[] rowStateArr = new RowState[rows.size()];
         while (i < rows.size()) {
             BlockRow blockRow = (BlockRow) rows.get(i);
             byte[] serializeBlock = serializeBlock(blockRow.block);
-            RowState rowState2 = (RowState) hashMap.get(Long.valueOf(blockRow.id));
-            if (rowState2 != null && rowState2.level == blockRow.level && rowState2.num == blockRow.num && rowState2.checkbox == blockRow.checkbox && rowState2.checked == blockRow.checked && rowState2.detailsEnd == blockRow.detailsEnd && rowState2.media == blockRow.media && sameMedias(rowState2.medias, blockRow.medias) && Arrays.equals(rowState2.blockData, serializeBlock)) {
+            RowState rowState2 = (RowState) hashMap2.get(Long.valueOf(blockRow.id));
+            if (rowState2 != null && rowState2.level == blockRow.level && rowState2.num == blockRow.num && rowState2.checkbox == blockRow.checkbox && rowState2.checked == blockRow.checked && rowState2.detailsEnd == blockRow.detailsEnd && rowState2.media == blockRow.media && sameMedias(rowState2.medias, blockRow.medias) && rowState2.quoteIds.equals(blockRow.quoteIds) && Arrays.equals(rowState2.blockData, serializeBlock)) {
                 rowStateArr[i] = rowState2;
                 arrayList = rows;
+                hashMap = hashMap2;
             } else {
+                long j = blockRow.id;
+                int i2 = blockRow.level;
+                int i3 = blockRow.num;
+                boolean z = blockRow.checkbox;
+                boolean z2 = blockRow.checked;
+                boolean z3 = blockRow.detailsEnd;
+                MediaUploadState mediaUploadState = blockRow.media;
                 arrayList = rows;
-                rowStateArr[i] = new RowState(blockRow.id, serializeBlock, blockRow.level, blockRow.num, blockRow.checkbox, blockRow.checked, blockRow.detailsEnd, blockRow.media, blockRow.medias != null ? new ArrayList(blockRow.medias) : null);
+                if (blockRow.medias != null) {
+                    hashMap = hashMap2;
+                    arrayList2 = new ArrayList(blockRow.medias);
+                } else {
+                    hashMap = hashMap2;
+                    arrayList2 = null;
+                }
+                rowStateArr[i] = new RowState(j, serializeBlock, i2, i3, z, z2, z3, mediaUploadState, arrayList2, new ArrayList(blockRow.quoteIds));
             }
             i++;
             rows = arrayList;
+            hashMap2 = hashMap;
         }
         return new Snapshot(rowStateArr, this.delegate.captureFocus());
     }

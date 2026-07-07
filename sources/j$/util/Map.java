@@ -57,6 +57,36 @@ public interface Map<K, V> {
             Object obj4 = map.get(obj);
             return (obj4 != null || map.containsKey(obj)) ? obj4 : obj2;
         }
+
+        /* JADX WARN: Multi-variable type inference failed */
+        public static Object merge(java.util.Map map, Object obj, Object obj2, BiFunction biFunction) {
+            if (map instanceof Map) {
+                return ((Map) map).merge(obj, obj2, biFunction);
+            }
+            if (!(map instanceof ConcurrentMap)) {
+                return -CC.$default$merge(map, obj, obj2, biFunction);
+            }
+            ConcurrentMap concurrentMap = (ConcurrentMap) map;
+            Objects.requireNonNull(biFunction);
+            Objects.requireNonNull(obj2);
+            while (true) {
+                Object obj3 = concurrentMap.get(obj);
+                while (obj3 == null) {
+                    obj3 = concurrentMap.putIfAbsent(obj, obj2);
+                    if (obj3 == null) {
+                        return obj2;
+                    }
+                }
+                Object apply = biFunction.apply(obj3, obj2);
+                if (apply != null) {
+                    if (concurrentMap.replace(obj, obj3, apply)) {
+                        return apply;
+                    }
+                } else if (concurrentMap.remove(obj, obj3)) {
+                    return null;
+                }
+            }
+        }
     }
 
     public final /* synthetic */ class -CC {

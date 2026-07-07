@@ -8,7 +8,6 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.view.View;
-import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
@@ -30,13 +29,12 @@ import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.iv.RichCaptionController;
 
 /* loaded from: classes3.dex */
-public class RichMapCell extends FrameLayout implements Theme.Colorable, TextSelectionHelper.ArticleSelectableView, RichCaptionHost {
+public class RichMapCell extends RichBlockCell implements Theme.Colorable, TextSelectionHelper.ArticleSelectableView, RichCaptionHost {
     private final Paint backgroundPaint;
     private final RichCaptionController caption;
     private final View clickView;
     private final int currentAccount;
     private int currentMapProvider;
-    private BlockRow currentRow;
     private Delegate delegate;
     private final TextPaint hintPaint;
     private final ImageReceiver imageReceiver;
@@ -82,7 +80,7 @@ public class RichMapCell extends FrameLayout implements Theme.Colorable, TextSel
         textPaint.setTextAlign(Paint.Align.CENTER);
         this.imageReceiver = new ImageReceiver(this);
         this.placeholderIcon = getContext().getResources().getDrawable(R.drawable.msg_map).mutate();
-        setPadding(0, AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(4.0f));
+        setBlockPadding(0, AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(4.0f));
         View view = new View(context);
         this.clickView = view;
         view.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichMapCell$$ExternalSyntheticLambda0
@@ -173,9 +171,15 @@ public class RichMapCell extends FrameLayout implements Theme.Colorable, TextSel
         delegate.onPickLocation(blockRow);
     }
 
+    @Override // org.telegram.ui.iv.RichBlockCell
+    protected int nestedContentMargin() {
+        return AndroidUtilities.dp(16.0f);
+    }
+
     public void bind(BlockRow blockRow, Delegate delegate) {
         this.currentRow = blockRow;
         this.delegate = delegate;
+        bindBlockInset(blockRow);
         this.loadedKey = null;
         this.caption.bind();
         loadMapImage();
@@ -286,23 +290,29 @@ public class RichMapCell extends FrameLayout implements Theme.Colorable, TextSel
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         int size = View.MeasureSpec.getSize(i);
+        int paddingLeft = getPaddingLeft();
+        int paddingRight = getPaddingRight();
+        int max = Math.max(0, (size - paddingLeft) - paddingRight);
         TL_iv.pageBlockMap map = getMap();
         if (map != null && map.w > 0 && map.h > 0) {
-            this.mapImageH = Math.max(Math.min((int) (((size - AndroidUtilities.dp(32.0f)) * map.h) / map.w), AndroidUtilities.dp(420.0f)), AndroidUtilities.dp(120.0f));
+            this.mapImageH = Math.max(Math.min((int) (((max - AndroidUtilities.dp(32.0f)) * map.h) / map.w), AndroidUtilities.dp(420.0f)), AndroidUtilities.dp(120.0f));
         } else {
             this.mapImageH = (AndroidUtilities.dp(200.0f) - getPaddingTop()) - getPaddingBottom();
         }
-        int measure = this.caption.measure(size);
-        this.clickView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.mapImageH, TLObject.FLAG_30));
+        int measure = this.caption.measure(paddingLeft, paddingRight, size);
+        this.clickView.measure(View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.mapImageH, TLObject.FLAG_30));
         setMeasuredDimension(size, getPaddingTop() + this.mapImageH + measure + getPaddingBottom());
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        int paddingLeft = getPaddingLeft();
+        int paddingRight = getPaddingRight();
         int i5 = i3 - i;
-        this.imageReceiver.setImageCoords(0.0f, getPaddingTop(), i5, this.mapImageH);
-        this.clickView.layout(0, getPaddingTop(), i5, getPaddingTop() + this.mapImageH);
-        this.caption.layout(i5, getPaddingTop() + this.mapImageH);
+        int max = Math.max(0, (i5 - paddingLeft) - paddingRight);
+        this.imageReceiver.setImageCoords(paddingLeft, getPaddingTop(), max, this.mapImageH);
+        this.clickView.layout(paddingLeft, getPaddingTop(), max + paddingLeft, getPaddingTop() + this.mapImageH);
+        this.caption.layout(paddingLeft, paddingRight, i5, getPaddingTop() + this.mapImageH);
         loadMapImage();
     }
 

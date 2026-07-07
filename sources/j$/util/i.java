@@ -352,62 +352,13 @@ final class i implements java.util.Map, Serializable, Map {
         return $default$compute;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x0022, code lost:
-    
-        r3 = r7.apply(r2, r6);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0026, code lost:
-    
-        if (r3 == null) goto L31;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0034, code lost:
-    
-        if (r1.remove(r5, r2) == false) goto L37;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0036, code lost:
-    
-        r6 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x002c, code lost:
-    
-        if (r1.replace(r5, r2, r3) == false) goto L38;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x002e, code lost:
-    
-        r6 = r3;
-     */
     @Override // java.util.Map, j$.util.Map
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final Object merge(Object obj, Object obj2, BiFunction biFunction) {
-        Object $default$merge;
+        Object merge;
         synchronized (this.b) {
-            java.util.Map map = this.a;
-            if (map instanceof Map) {
-                $default$merge = ((Map) map).merge(obj, obj2, biFunction);
-            } else if (map instanceof ConcurrentMap) {
-                ConcurrentMap concurrentMap = (ConcurrentMap) map;
-                Objects.requireNonNull(biFunction);
-                Objects.requireNonNull(obj2);
-                loop0: while (true) {
-                    Object obj3 = concurrentMap.get(obj);
-                    while (true) {
-                        if (obj3 != null) {
-                            break;
-                        }
-                        obj3 = concurrentMap.putIfAbsent(obj, obj2);
-                        if (obj3 == null) {
-                            break loop0;
-                        }
-                    }
-                }
-                $default$merge = obj2;
-            } else {
-                $default$merge = Map.-CC.$default$merge(map, obj, obj2, biFunction);
-            }
+            merge = Map.-EL.merge(this.a, obj, obj2, biFunction);
         }
-        return $default$merge;
+        return merge;
     }
 
     private void writeObject(ObjectOutputStream objectOutputStream) {

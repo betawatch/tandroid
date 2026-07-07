@@ -209,14 +209,14 @@ class RichCaptionController {
         this.editText.setHintTextColor(Theme.multAlpha(color, 0.35f));
     }
 
-    int measure(int i) {
-        this.editText.measure(View.MeasureSpec.makeMeasureSpec(Math.max(0, i - (AndroidUtilities.dp(16.0f) * 2)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+    int measure(int i, int i2, int i3) {
+        this.editText.measure(View.MeasureSpec.makeMeasureSpec(Math.max(0, ((i3 - i) - i2) - (AndroidUtilities.dp(16.0f) * 2)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
         return this.editText.getMeasuredHeight();
     }
 
-    void layout(int i, int i2) {
-        int dp = AndroidUtilities.dp(16.0f);
-        this.editText.layout(dp, i2, Math.max(dp, i - AndroidUtilities.dp(16.0f)), this.editText.getMeasuredHeight() + i2);
+    void layout(int i, int i2, int i3, int i4) {
+        int dp = i + AndroidUtilities.dp(16.0f);
+        this.editText.layout(dp, i4, Math.max(dp, (i3 - i2) - AndroidUtilities.dp(16.0f)), this.editText.getMeasuredHeight() + i4);
     }
 
     void fillTextLayoutBlocks(ArrayList arrayList) {

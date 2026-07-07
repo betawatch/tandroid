@@ -20413,11 +20413,11 @@ public class MessagesController extends BaseController implements NotificationCe
 
     /* JADX WARN: Code restructure failed: missing block: B:165:0x0555, code lost:
     
-        if (org.telegram.messenger.MessageObject.getMedia(r0).bytes[0] >= 229) goto L216;
+        if (org.telegram.messenger.MessageObject.getMedia(r0).bytes[0] >= 228) goto L216;
      */
     /* JADX WARN: Code restructure failed: missing block: B:170:0x056d, code lost:
     
-        if (org.telegram.messenger.Utilities.bytesToInt(org.telegram.messenger.MessageObject.getMedia(r0).bytes) < 229) goto L222;
+        if (org.telegram.messenger.Utilities.bytesToInt(org.telegram.messenger.MessageObject.getMedia(r0).bytes) < 228) goto L222;
      */
     /* JADX WARN: Code restructure failed: missing block: B:290:0x0210, code lost:
     
@@ -20738,7 +20738,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     messageObject.scheduled = i11 == 1;
                     arrayList.add(messageObject);
                     if (z) {
-                        if (message4.legacy && message4.layer < 229) {
+                        if (message4.legacy && message4.layer < 228) {
                             arrayList2.add(Integer.valueOf(message4.id));
                         } else if ((MessageObject.getMedia(message4) instanceof TLRPC.TL_messageMediaUnsupported) && MessageObject.getMedia(message4).bytes != null) {
                             if (MessageObject.getMedia(message4).bytes.length != 0) {
@@ -38041,6 +38041,9 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public boolean richEditorAvailable() {
+        if (BuildVars.DEBUG_VERSION) {
+            return true;
+        }
         return !TextUtils.equals("disabled", this.config.richMessagePosting.get());
     }
 

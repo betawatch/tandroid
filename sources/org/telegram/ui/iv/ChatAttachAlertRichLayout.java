@@ -353,6 +353,12 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         }
 
         @Override // org.telegram.ui.iv.RichEditorToolbar.Delegate
+        public void onQuote() {
+            ChatAttachAlertRichLayout.this.listView.toggleQuoteOnSelection();
+            ChatAttachAlertRichLayout.this.updateFormattingButtons();
+        }
+
+        @Override // org.telegram.ui.iv.RichEditorToolbar.Delegate
         public void onAiStyle() {
             TL_iv.RichMessage extractRichMessage;
             RichEditorListView.SelectionEdit beginSelectionEdit = ChatAttachAlertRichLayout.this.listView.beginSelectionEdit();
@@ -484,7 +490,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
                 TL_iv.PageBlock pageBlock = findFocusedRow.block;
                 if (pageBlock instanceof TL_iv.pageBlockMath) {
                     pageblockmath = (TL_iv.pageBlockMath) pageBlock;
-                    showEditLatexSheet(getContext(), (pageblockmath != null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new Utilities.Callback() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda23
+                    showEditLatexSheet(getContext(), (pageblockmath != null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new Utilities.Callback() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda22
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             ChatAttachAlertRichLayout.this.lambda$onBlockButtonClicked$3(pageblockmath, (String) obj);
@@ -494,7 +500,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
                 }
             }
             pageblockmath = null;
-            showEditLatexSheet(getContext(), (pageblockmath != null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new Utilities.Callback() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda23
+            showEditLatexSheet(getContext(), (pageblockmath != null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new Utilities.Callback() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda22
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     ChatAttachAlertRichLayout.this.lambda$onBlockButtonClicked$3(pageblockmath, (String) obj);
@@ -590,7 +596,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showTextTypeMenu$6(BlockRow blockRow) {
-        this.listView.turnInto(blockRow, new TL_iv.pageBlockParagraph(), 0, 0, false, false);
+        this.listView.turnIntoKeepList(blockRow, new TL_iv.pageBlockParagraph());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -605,12 +611,12 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showTextTypeMenu$9(BlockRow blockRow) {
-        this.listView.turnInto(blockRow, new TL_iv.pageBlockPreformatted(), 0, 0, false, false);
+        this.listView.turnIntoKeepList(blockRow, new TL_iv.pageBlockPreformatted());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showTextTypeMenu$10(BlockRow blockRow) {
-        this.listView.turnInto(blockRow, new TL_iv.pageBlockFooter(), 0, 0, false, false);
+        this.listView.turnIntoKeepList(blockRow, new TL_iv.pageBlockFooter());
     }
 
     private void addHeadingItem(ItemOptions itemOptions, final BlockRow blockRow, final TL_iv.PageBlock pageBlock, int i, String str, int i2, final ItemOptions itemOptions2) {
@@ -626,7 +632,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addHeadingItem$11(BlockRow blockRow, TL_iv.PageBlock pageBlock, ItemOptions itemOptions) {
-        this.listView.turnInto(blockRow, pageBlock, 0, 0, false, false);
+        this.listView.turnIntoKeepList(blockRow, pageBlock);
         itemOptions.dismiss();
     }
 
@@ -658,33 +664,31 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
                 ChatAttachAlertRichLayout.this.lambda$showListMenu$15(blockRow);
             }
         });
-        boolean z2 = blockRow != null && (blockRow.block instanceof TL_iv.pageBlockDetails);
+        if (blockRow != null && (blockRow.block instanceof TL_iv.pageBlockDetails)) {
+            z = true;
+        }
         int i = R.drawable.iv_details;
         String string = LocaleController.getString(R.string.ArticleToggleBlock);
         RichEditorListView richEditorListView = this.listView;
         Objects.requireNonNull(richEditorListView);
-        addChecked.addChecked(z2, i, string, new ChatAttachAlertRichLayout$$ExternalSyntheticLambda28(richEditorListView));
-        int indexOf = blockRow != null ? this.listView.rows.indexOf(blockRow) : -1;
-        boolean z3 = blockRow != null && blockRow.isInList();
-        boolean z4 = z3 && this.listView.canIndentRow(indexOf);
-        if (z3 && this.listView.canOutdentRow(indexOf) && ((BlockRow) this.listView.rows.get(indexOf)).level > 1) {
-            z = true;
-        }
-        if (z4 || z) {
+        addChecked.addChecked(z, i, string, new ChatAttachAlertRichLayout$$ExternalSyntheticLambda28(richEditorListView));
+        boolean canIndentSelection = this.listView.canIndentSelection();
+        boolean canOutdentSelection = this.listView.canOutdentSelection();
+        if (canIndentSelection || canOutdentSelection) {
             dontFocus.addGap();
-            if (z4) {
+            if (canIndentSelection) {
                 dontFocus.add(R.drawable.iv_list_tab, LocaleController.getString(R.string.ArticleIndent), new Runnable() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda29
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatAttachAlertRichLayout.this.lambda$showListMenu$16(blockRow, dontFocus);
+                        ChatAttachAlertRichLayout.this.lambda$showListMenu$16(dontFocus);
                     }
                 });
             }
-            if (z) {
+            if (canOutdentSelection) {
                 dontFocus.add(R.drawable.iv_list_untab, LocaleController.getString(R.string.ArticleOutdent), new Runnable() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda30
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatAttachAlertRichLayout.this.lambda$showListMenu$17(blockRow, dontFocus);
+                        ChatAttachAlertRichLayout.this.lambda$showListMenu$17(dontFocus);
                     }
                 });
             }
@@ -713,14 +717,14 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showListMenu$16(BlockRow blockRow, ItemOptions itemOptions) {
-        this.listView.onCellIndent(blockRow, false);
+    public /* synthetic */ void lambda$showListMenu$16(ItemOptions itemOptions) {
+        this.listView.indentSelection(false);
         itemOptions.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showListMenu$17(BlockRow blockRow, ItemOptions itemOptions) {
-        this.listView.onCellIndent(blockRow, true);
+    public /* synthetic */ void lambda$showListMenu$17(ItemOptions itemOptions) {
+        this.listView.indentSelection(true);
         itemOptions.dismiss();
     }
 
@@ -736,12 +740,14 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         }
     }
 
-    private void updateFormattingButtons() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateFormattingButtons() {
         int i;
         TextSelectionHelper.ArticleTextSelectionHelper textSelectionHelper = this.listView.getTextSelectionHelper();
         if (this.toolbar == null || textSelectionHelper == null || !textSelectionHelper.isInSelectionMode()) {
             return;
         }
+        this.toolbar.setQuoteState(this.listView.isSelectionQuoted());
         if (this.listView.isTableSelection()) {
             updateFormattingButtonsTable();
             return;
@@ -1299,7 +1305,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         }
         MessageSendPreview messageSendPreview2 = new MessageSendPreview(getContext(), this.resourcesProvider);
         this.messageSendPreview = messageSendPreview2;
-        messageSendPreview2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda15
+        messageSendPreview2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda12
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 ChatAttachAlertRichLayout.this.lambda$showSendPreview$18(dialogInterface);
@@ -1338,7 +1344,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         ChatActivityEnterView.SendButton sendButton = this.toolbar.getSendButton();
         sendButton.setScaleX(1.0f);
         sendButton.setScaleY(1.0f);
-        ChatActivityEnterView.SendButton sendButton2 = this.messageSendPreview.setSendButton(sendButton, true, new View.OnClickListener() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda16
+        ChatActivityEnterView.SendButton sendButton2 = this.messageSendPreview.setSendButton(sendButton, true, new View.OnClickListener() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 ChatAttachAlertRichLayout.this.lambda$showSendPreview$19(view2);
@@ -1353,14 +1359,14 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
             z = true;
         }
         if (chatActivity != null && chatActivity.canScheduleMessage()) {
-            makeOptions.add(R.drawable.msg_calendar2, LocaleController.getString(z ? R.string.SetReminder : R.string.ScheduleMessage), new Runnable() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda17
+            makeOptions.add(R.drawable.msg_calendar2, LocaleController.getString(z ? R.string.SetReminder : R.string.ScheduleMessage), new Runnable() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda14
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatAttachAlertRichLayout.this.lambda$showSendPreview$20(dialogId);
                 }
             });
             if (!z && dialogId > 0) {
-                makeOptions.add(R.drawable.msg_online, LocaleController.getString(R.string.SendWhenOnline), new Runnable() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda18
+                makeOptions.add(R.drawable.msg_online, LocaleController.getString(R.string.SendWhenOnline), new Runnable() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda15
                     @Override // java.lang.Runnable
                     public final void run() {
                         ChatAttachAlertRichLayout.this.lambda$showSendPreview$21();
@@ -1369,7 +1375,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
             }
         }
         if (!z) {
-            makeOptions.add(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new Runnable() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda19
+            makeOptions.add(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new Runnable() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda16
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatAttachAlertRichLayout.this.lambda$showSendPreview$22();
@@ -1486,7 +1492,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
                 }
             });
             chatAttachAlert.setLocationPicker();
-            chatAttachAlert.setLocationActivityDelegate(new ChatAttachAlertLocationLayout.LocationActivityDelegate() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda13
+            chatAttachAlert.setLocationActivityDelegate(new ChatAttachAlertLocationLayout.LocationActivityDelegate() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda20
                 @Override // org.telegram.ui.Components.ChatAttachAlertLocationLayout.LocationActivityDelegate
                 public final void didSelectLocation(TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
                     ChatAttachAlertRichLayout.this.lambda$openLocationPicker$24(blockRow, chatAttachAlert, messageMedia, i, z, i2, j);
@@ -1519,7 +1525,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         }
         updateSendButton(true);
         chatAttachAlert.dismiss(true);
-        this.listView.post(new Runnable() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda21
+        this.listView.post(new Runnable() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda23
             @Override // java.lang.Runnable
             public final void run() {
                 ChatAttachAlertRichLayout.this.lambda$openLocationPicker$23(blockRow);
@@ -1611,13 +1617,13 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         chatAttachAlert.getPhotoLayout().loadGalleryPhotos();
         chatAttachAlert.setMaxSelectedPhotos(1, true);
         chatAttachAlert.enablePollAttachMode(i);
-        chatAttachAlert.setLocationActivityDelegate(new ChatAttachAlertLocationLayout.LocationActivityDelegate() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda11
+        chatAttachAlert.setLocationActivityDelegate(new ChatAttachAlertLocationLayout.LocationActivityDelegate() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda18
             @Override // org.telegram.ui.Components.ChatAttachAlertLocationLayout.LocationActivityDelegate
             public final void didSelectLocation(TLRPC.MessageMedia messageMedia, int i3, boolean z, int i4, long j) {
                 ChatAttachAlertRichLayout.this.lambda$openAttach$25(chatAttachAlert, messageMedia, i3, z, i4, j);
             }
         });
-        chatAttachAlert.setAudioSelectDelegate(new ChatAttachAlertAudioLayout.AudioSelectDelegate() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda12
+        chatAttachAlert.setAudioSelectDelegate(new ChatAttachAlertAudioLayout.AudioSelectDelegate() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda19
             @Override // org.telegram.ui.Components.ChatAttachAlertAudioLayout.AudioSelectDelegate
             public final void didSelectAudio(ArrayList arrayList, CharSequence charSequence, boolean z, int i3, int i4, long j, boolean z2, long j2) {
                 ChatAttachAlertRichLayout.this.lambda$openAttach$26(chatAttachAlert, arrayList, charSequence, z, i3, i4, j, z2, j2);
@@ -2129,7 +2135,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$showEditLatexSheet$29(final String[] strArr, String str, final Utilities.Callback2 callback2) {
-        Utilities.themeQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda14
+        Utilities.themeQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
                 ChatAttachAlertRichLayout.lambda$showEditLatexSheet$28(strArr, callback2);
@@ -2170,7 +2176,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
                 FileLog.e(e2);
             }
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda22
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda21
             @Override // java.lang.Runnable
             public final void run() {
                 ChatAttachAlertRichLayout.lambda$showEditLatexSheet$27(Utilities.Callback2.this, bitmap, z);
@@ -2191,7 +2197,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         } else {
             final boolean z = zArr[0];
             final String str = strArr[0];
-            callback2.run(str, new Utilities.Callback2() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda20
+            callback2.run(str, new Utilities.Callback2() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda17
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     ChatAttachAlertRichLayout.lambda$showEditLatexSheet$30(str, strArr, imageView, resourcesProvider, z, iArr, buttonWithCounterView, horizontalScrollView, zArr, (Bitmap) obj, (Boolean) obj2);

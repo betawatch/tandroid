@@ -1,9 +1,14 @@
 package org.telegram.ui.iv;
 
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import java.io.File;
+import java.io.FileOutputStream;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -21,6 +26,7 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
     private final String path;
     private int requestToken;
     private boolean started;
+    private volatile String uploadPath;
     private final int videoDurationSec;
     private final int videoHeight;
     private final int videoWidth;
@@ -85,29 +91,100 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
     public void start() {
         int i;
         int i2;
-        int i3;
         if (this.started || this.cancelled || this.finished) {
             return;
         }
         this.started = true;
-        if (!this.isVideo) {
-            resolvePhotoDimensions();
-        } else {
+        if (this.isVideo) {
             Listener listener = this.listener;
             if (listener != null && (i = this.videoWidth) > 0 && (i2 = this.videoHeight) > 0) {
                 listener.onWidthHeightResolved(i, i2);
             }
+            beginUpload(this.path);
+            return;
         }
+        if (this.isAudio) {
+            beginUpload(this.path);
+        } else {
+            resolvePhotoDimensions();
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.iv.RichMediaUploader$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    RichMediaUploader.this.lambda$start$1();
+                }
+            });
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$start$1() {
+        final String ensureJpegPath = ensureJpegPath(this.path);
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.iv.RichMediaUploader$$ExternalSyntheticLambda3
+            @Override // java.lang.Runnable
+            public final void run() {
+                RichMediaUploader.this.lambda$start$0(ensureJpegPath);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$start$0(String str) {
+        if (this.cancelled || this.finished) {
+            return;
+        }
+        beginUpload(str);
+    }
+
+    private void beginUpload(String str) {
+        int i;
+        if (this.cancelled || this.finished) {
+            return;
+        }
+        this.uploadPath = str;
         NotificationCenter notificationCenter = NotificationCenter.getInstance(this.currentAccount);
         notificationCenter.addObserver(this, NotificationCenter.fileUploaded);
         notificationCenter.addObserver(this, NotificationCenter.fileUploadFailed);
         notificationCenter.addObserver(this, NotificationCenter.fileUploadProgressChanged);
         if (this.isVideo) {
-            i3 = 33554432;
+            i = 33554432;
         } else {
-            i3 = this.isAudio ? ConnectionsManager.FileTypeAudio : 16777216;
+            i = this.isAudio ? ConnectionsManager.FileTypeAudio : 16777216;
         }
-        FileLoader.getInstance(this.currentAccount).uploadFile(this.path, false, (this.isVideo || this.isAudio) ? false : true, i3);
+        FileLoader.getInstance(this.currentAccount).uploadFile(this.uploadPath, false, (this.isVideo || this.isAudio) ? false : true, i);
+    }
+
+    private String ensureJpegPath(String str) {
+        try {
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inJustDecodeBounds = true;
+            BitmapFactory.decodeFile(str, options);
+            String str2 = options.outMimeType;
+            if (str2 != null && (str2.equalsIgnoreCase("image/jpeg") || str2.equalsIgnoreCase("image/jpg"))) {
+                return str;
+            }
+            float photoSize = AndroidUtilities.getPhotoSize();
+            Bitmap loadBitmap = ImageLoader.loadBitmap(str, null, photoSize, photoSize, true);
+            if (loadBitmap == null) {
+                loadBitmap = ImageLoader.loadBitmap(str, null, 800.0f, 800.0f, true);
+            }
+            if (loadBitmap == null) {
+                return str;
+            }
+            File file = new File(FileLoader.getDirectory(4), "rich_jpeg_" + Math.abs(str.hashCode()) + ".jpg");
+            try {
+                FileOutputStream fileOutputStream = new FileOutputStream(file);
+                try {
+                    boolean compress = loadBitmap.compress(Bitmap.CompressFormat.JPEG, 89, fileOutputStream);
+                    fileOutputStream.close();
+                    return (!compress || file.length() <= 0) ? str : file.getAbsolutePath();
+                } finally {
+                }
+            } finally {
+                loadBitmap.recycle();
+            }
+        } catch (Throwable unused) {
+            return str;
+        }
     }
 
     public void cancel() {
@@ -116,7 +193,9 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
         }
         this.cancelled = true;
         try {
-            FileLoader.getInstance(this.currentAccount).cancelFileUpload(this.path, false);
+            if (this.uploadPath != null) {
+                FileLoader.getInstance(this.currentAccount).cancelFileUpload(this.uploadPath, false);
+            }
         } catch (Throwable unused) {
         }
         if (this.requestToken != 0) {
@@ -154,22 +233,24 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
         if (i2 != this.currentAccount || this.cancelled || this.finished) {
             return;
         }
-        if (this.path.equals((String) objArr[0])) {
-            if (i == NotificationCenter.fileUploaded) {
-                sendUploadMediaRequest((TLRPC.InputFile) objArr[1]);
-                return;
-            }
-            if (i == NotificationCenter.fileUploadFailed) {
-                finishWithError();
-                return;
-            }
-            if (i == NotificationCenter.fileUploadProgressChanged) {
-                long longValue = ((Long) objArr[1]).longValue();
-                long longValue2 = ((Long) objArr[2]).longValue();
-                Listener listener = this.listener;
-                if (listener != null) {
-                    listener.onProgress(longValue2 > 0 ? longValue / longValue2 : 0.0f);
-                }
+        String str = (String) objArr[0];
+        if (this.uploadPath == null || !this.uploadPath.equals(str)) {
+            return;
+        }
+        if (i == NotificationCenter.fileUploaded) {
+            sendUploadMediaRequest((TLRPC.InputFile) objArr[1]);
+            return;
+        }
+        if (i == NotificationCenter.fileUploadFailed) {
+            finishWithError();
+            return;
+        }
+        if (i == NotificationCenter.fileUploadProgressChanged) {
+            long longValue = ((Long) objArr[1]).longValue();
+            long longValue2 = ((Long) objArr[2]).longValue();
+            Listener listener = this.listener;
+            if (listener != null) {
+                listener.onProgress(longValue2 > 0 ? longValue / longValue2 : 0.0f);
             }
         }
     }
@@ -206,26 +287,26 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
             tL_inputMediaUploadedPhoto.file = inputFile;
             tL_messages_uploadMedia.media = tL_inputMediaUploadedPhoto;
         }
-        this.requestToken = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_uploadMedia, new RequestDelegate() { // from class: org.telegram.ui.iv.RichMediaUploader$$ExternalSyntheticLambda0
+        this.requestToken = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_uploadMedia, new RequestDelegate() { // from class: org.telegram.ui.iv.RichMediaUploader$$ExternalSyntheticLambda1
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                RichMediaUploader.this.lambda$sendUploadMediaRequest$1(tLObject, tL_error);
+                RichMediaUploader.this.lambda$sendUploadMediaRequest$3(tLObject, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendUploadMediaRequest$1(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.iv.RichMediaUploader$$ExternalSyntheticLambda1
+    public /* synthetic */ void lambda$sendUploadMediaRequest$3(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.iv.RichMediaUploader$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                RichMediaUploader.this.lambda$sendUploadMediaRequest$0(tLObject);
+                RichMediaUploader.this.lambda$sendUploadMediaRequest$2(tLObject);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendUploadMediaRequest$0(TLObject tLObject) {
+    public /* synthetic */ void lambda$sendUploadMediaRequest$2(TLObject tLObject) {
         TLRPC.Document document;
         TLRPC.Photo photo;
         if (this.cancelled) {

@@ -2564,6 +2564,27 @@ public abstract class TextSelectionHelper {
             return chatMessageCell.getMessageObject().messageText;
         }
 
+        @Override // org.telegram.ui.Cells.TextSelectionHelper
+        protected boolean onCopyOverride() {
+            SelectableView selectableView;
+            RichMessageLayout richMessageLayout;
+            CharSequence selectedText;
+            String str;
+            if (this.isRich && (selectableView = this.selectedView) != null && ((ChatMessageCell) selectableView).getMessageObject() != null && (richMessageLayout = ((ChatMessageCell) this.selectedView).getMessageObject().richLayout) != null && !richMessageLayout.textBlocks.isEmpty() && (selectedText = getSelectedText()) != null && selectedText.length() != 0) {
+                try {
+                    str = richMessageLayout.getSelectionHtml(this.selectionStart, this.selectionEnd);
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    str = null;
+                }
+                if (str != null && str.length() != 0) {
+                    AndroidUtilities.addToClipboard(selectedText, str);
+                    return true;
+                }
+            }
+            return false;
+        }
+
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // org.telegram.ui.Cells.TextSelectionHelper
         public void onTextSelected(ChatMessageCell chatMessageCell, ChatMessageCell chatMessageCell2) {

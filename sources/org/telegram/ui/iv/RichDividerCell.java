@@ -16,8 +16,8 @@ import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
 
 /* loaded from: classes3.dex */
-public class RichDividerCell extends View implements Theme.Colorable, TextSelectionHelper.ArticleSelectableView {
-    private BlockRow currentRow;
+public class RichDividerCell extends RichBlockCell implements Theme.Colorable, TextSelectionHelper.ArticleSelectableView {
+    private boolean blockRtl;
     private Delegate delegate;
     private final Paint paint;
     private final Theme.ResourcesProvider resourcesProvider;
@@ -32,12 +32,31 @@ public class RichDividerCell extends View implements Theme.Colorable, TextSelect
         this.paint = new Paint(1);
         this.selectionPaint = new Paint(1);
         this.resourcesProvider = resourcesProvider;
+        setWillNotDraw(false);
         updateColors();
+    }
+
+    @Override // org.telegram.ui.iv.RichBlockCell
+    protected void onBlockInsetChanged(int i) {
+        invalidate();
     }
 
     public void bind(BlockRow blockRow, Delegate delegate) {
         this.currentRow = blockRow;
         this.delegate = delegate;
+        this.blockRtl = RichBlockChrome.rtl();
+        bindBlockInset(blockRow);
+    }
+
+    private int regionLo() {
+        if (this.blockRtl) {
+            return 0;
+        }
+        return blockInset();
+    }
+
+    private int regionHi() {
+        return getMeasuredWidth() - (this.blockRtl ? blockInset() : 0);
     }
 
     public BlockRow getRow() {
@@ -52,11 +71,12 @@ public class RichDividerCell extends View implements Theme.Colorable, TextSelect
 
     @Override // org.telegram.ui.Cells.TextSelectionHelper.ArticleSelectableView
     public void fillTextLayoutBlocks(ArrayList arrayList) {
-        int max = Math.max(1, getMeasuredWidth() / 3);
-        arrayList.add(RichBlockSelection.of(max - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(2.0f), (max * 2) + AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f)));
+        int regionLo = regionLo();
+        int max = Math.max(1, (regionHi() - regionLo) / 3);
+        arrayList.add(RichBlockSelection.of((regionLo + max) - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(2.0f), regionLo + (max * 2) + AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f)));
     }
 
-    @Override // android.view.View
+    @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.dp(18.0f));
     }
@@ -70,13 +90,16 @@ public class RichDividerCell extends View implements Theme.Colorable, TextSelect
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
-        int measuredWidth = getMeasuredWidth() / 3;
+        int regionLo = regionLo();
+        int max = Math.max(1, (regionHi() - regionLo) / 3);
+        int i = regionLo + max;
+        int i2 = regionLo + (max * 2);
         this.paint.setColor(Theme.multAlpha(Theme.getColor(Theme.key_chat_inReplyMessageText, this.resourcesProvider), 0.2f));
         if (isCellSelected()) {
-            canvas.drawRoundRect(measuredWidth - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(2.0f), (measuredWidth * 2) + AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.selectionPaint);
+            canvas.drawRoundRect(i - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(12.0f) + i2, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.selectionPaint);
         }
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(measuredWidth, AndroidUtilities.dp(8.0f), measuredWidth * 2, AndroidUtilities.dp(10.0f));
+        rectF.set(i, AndroidUtilities.dp(8.0f), i2, AndroidUtilities.dp(10.0f));
         canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), this.paint);
     }
 

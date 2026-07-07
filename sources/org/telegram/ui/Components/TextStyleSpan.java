@@ -17,6 +17,7 @@ public class TextStyleSpan extends MetricAffectingSpan {
     public static class TextStyleRun {
         public int end;
         public int flags;
+        public boolean header;
         public int start;
         public TLRPC.MessageEntity urlEntity;
 
@@ -28,6 +29,7 @@ public class TextStyleSpan extends MetricAffectingSpan {
             this.start = textStyleRun.start;
             this.end = textStyleRun.end;
             this.urlEntity = textStyleRun.urlEntity;
+            this.header = textStyleRun.header;
         }
 
         public void merge(TextStyleRun textStyleRun) {
@@ -72,6 +74,12 @@ public class TextStyleSpan extends MetricAffectingSpan {
         }
 
         public Typeface getTypeface() {
+            if (this.header) {
+                if ((this.flags & 2) != 0) {
+                    return AndroidUtilities.getTypeface("fonts/mw_bolditalic.ttf");
+                }
+                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
+            }
             int i = this.flags;
             if ((i & 4) != 0 || (i & 2048) != 0) {
                 return Typeface.MONOSPACE;

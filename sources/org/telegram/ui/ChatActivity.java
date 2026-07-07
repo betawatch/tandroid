@@ -479,6 +479,7 @@ import org.telegram.ui.iv.ChatAttachAlertRichLayout;
 import org.telegram.ui.iv.RichEditor;
 import org.telegram.ui.iv.RichEditorListView;
 import org.telegram.ui.iv.RichHtml;
+import org.telegram.ui.iv.RichMediaClipboard;
 import org.webrtc.MediaStreamTrack;
 
 /* loaded from: classes4.dex */
@@ -47746,8 +47747,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
      */
     /* JADX WARN: Removed duplicated region for block: B:217:0x06a4  */
     /* JADX WARN: Removed duplicated region for block: B:429:0x0b0c  */
-    /* JADX WARN: Removed duplicated region for block: B:553:0x0ddf  */
-    /* JADX WARN: Removed duplicated region for block: B:554:0x0de3  */
+    /* JADX WARN: Removed duplicated region for block: B:531:0x0e36  */
+    /* JADX WARN: Removed duplicated region for block: B:556:0x0df7  */
+    /* JADX WARN: Removed duplicated region for block: B:557:0x0dfb  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -47756,7 +47758,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         String str;
         RichMessageLayout richMessageLayout;
         CharSequence messageContent;
-        ArrayList flattenForCopy;
+        UndoView undoView;
         BulletinFactory.FileType fileType;
         int checkSelfPermission;
         File file;
@@ -47847,30 +47849,44 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         AndroidUtilities.addToClipboard(this.selectedObject.getDiceEmoji());
                     } else if (richMessage != null) {
                         try {
-                            flattenForCopy = RichEditorListView.flattenForCopy(richMessage);
-                        } catch (Exception e) {
-                            FileLog.e(e);
-                        }
-                        if (!flattenForCopy.isEmpty()) {
-                            str = RichHtml.serialize(flattenForCopy, 0, flattenForCopy.size() - 1, 0, ConnectionsManager.DEFAULT_DATACENTER_ID);
-                            richMessageLayout = this.selectedObject.richLayout;
-                            if (richMessageLayout == null && !TextUtils.isEmpty(richMessageLayout.joinedText)) {
-                                messageContent = this.selectedObject.richLayout.joinedText;
+                            HashMap hashMap = new HashMap();
+                            ArrayList flattenForCopy = RichEditorListView.flattenForCopy(richMessage, hashMap);
+                            if (flattenForCopy.isEmpty()) {
+                                str = null;
                             } else {
-                                messageContent = getMessageContent(this.selectedObject, 0L, false);
+                                str = RichHtml.serialize(flattenForCopy, 0, flattenForCopy.size() - 1, 0, ConnectionsManager.DEFAULT_DATACENTER_ID, hashMap);
+                                try {
+                                    RichMediaClipboard.set(richMessage.photos, richMessage.documents);
+                                } catch (Exception e) {
+                                    e = e;
+                                    FileLog.e(e);
+                                    richMessageLayout = this.selectedObject.richLayout;
+                                    if (richMessageLayout == null) {
+                                    }
+                                    messageContent = getMessageContent(this.selectedObject, 0L, false);
+                                    if (TextUtils.isEmpty(str)) {
+                                    }
+                                    createUndoView();
+                                    undoView = this.undoView;
+                                    if (undoView != null) {
+                                        return;
+                                    }
+                                }
                             }
-                            if (TextUtils.isEmpty(str)) {
-                                AndroidUtilities.addToClipboard(messageContent, str);
-                            } else {
-                                AndroidUtilities.addToClipboard(messageContent);
-                            }
+                        } catch (Exception e2) {
+                            e = e2;
+                            str = null;
                         }
-                        str = null;
                         richMessageLayout = this.selectedObject.richLayout;
-                        if (richMessageLayout == null) {
+                        if (richMessageLayout == null && !TextUtils.isEmpty(richMessageLayout.joinedText)) {
+                            messageContent = this.selectedObject.richLayout.joinedText;
+                        } else {
+                            messageContent = getMessageContent(this.selectedObject, 0L, false);
                         }
-                        messageContent = getMessageContent(this.selectedObject, 0L, false);
                         if (TextUtils.isEmpty(str)) {
+                            AndroidUtilities.addToClipboard(messageContent, str);
+                        } else {
+                            AndroidUtilities.addToClipboard(messageContent);
                         }
                     } else {
                         RichMessageLayout richMessageLayout2 = this.selectedObject.richLayout;
@@ -47886,7 +47902,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         }
                     }
                     createUndoView();
-                    UndoView undoView = this.undoView;
+                    undoView = this.undoView;
                     if (undoView != null) {
                         undoView.showWithAction(0L, 52, (Runnable) null);
                         break;
@@ -48364,8 +48380,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         intent2.addFlags(TLObject.FLAG_28);
                         getParentActivity().startActivityForResult(intent2, 500);
                         break;
-                    } catch (Exception e2) {
-                        FileLog.e(e2);
+                    } catch (Exception e3) {
+                        FileLog.e(e3);
                         break;
                     }
                 case 18:
@@ -55378,7 +55394,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         public boolean canToggleRichMessageCheckbox(ChatMessageCell chatMessageCell) {
             MessageObject messageObject;
             TLRPC.Message message;
-            if (chatMessageCell == null || ChatActivity.this.getParentActivity() == null || (messageObject = chatMessageCell.getMessageObject()) == null || (message = messageObject.messageOwner) == null || message.rich_message == null) {
+            if (chatMessageCell == null || ChatActivity.this.getParentActivity() == null || !MessagesController.getInstance(((BaseFragment) ChatActivity.this).currentAccount).richEditorAllowed() || (messageObject = chatMessageCell.getMessageObject()) == null || (message = messageObject.messageOwner) == null || message.rich_message == null) {
                 return false;
             }
             if (!messageObject.translated || message.translatedRichMessage == null) {
