@@ -1648,14 +1648,15 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         MessagesController.CommunityPeersDialog buildCommunityPeers = MessagesController.getInstance(this.currentAccount).buildCommunityPeers(this.communityId);
         this.dialogsCount = buildCommunityPeers.getDialogsCount();
         this.isEmpty = false;
-        for (int i = 0; i < 4; i++) {
-            if (i == 0) {
+        int i = this.dialogsType == 3 ? 2 : 4;
+        for (int i2 = 0; i2 < i; i2++) {
+            if (i2 == 0) {
                 arrayList = buildCommunityPeers.chatsYouAreIn;
                 string = LocaleController.getString(R.string.CommunitySectionChatsYouAreIn);
-            } else if (i == 1) {
+            } else if (i2 == 1) {
                 arrayList = buildCommunityPeers.chatsYouCanView;
                 string = LocaleController.getString(R.string.CommunitySectionChatsYouCanView);
-            } else if (i == 2) {
+            } else if (i2 == 2) {
                 arrayList = buildCommunityPeers.chatsYouCanJoin;
                 string = LocaleController.getString(R.string.CommunitySectionChatsYouCanRequestToJoin);
             } else {
@@ -1664,8 +1665,8 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             }
             if (!arrayList.isEmpty()) {
                 this.itemInternals.add(new ItemInternal(22, string));
-                for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                    MessagesController.CommunityPeerDialog communityPeerDialog = arrayList.get(i2);
+                for (int i3 = 0; i3 < arrayList.size(); i3++) {
+                    MessagesController.CommunityPeerDialog communityPeerDialog = arrayList.get(i3);
                     TLRPC.Dialog dialog = communityPeerDialog.dialog;
                     if (dialog != null) {
                         this.itemInternals.add(new ItemInternal(0, dialog));

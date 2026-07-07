@@ -789,7 +789,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$39600(ProfileActivity profileActivity, View view) {
+    public static /* synthetic */ void access$39700(ProfileActivity profileActivity, View view) {
         profileActivity.onTextDetailCellImageClicked(view);
     }
 
@@ -5977,6 +5977,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$29(final Context context, long j, final View view, int i, float f, float f2) {
+        TLRPC.User user;
         TLRPC.ChatParticipant chatParticipant;
         ListAdapter listAdapter;
         if (getParentActivity() == null) {
@@ -5984,7 +5985,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         }
         this.listView.stopScroll();
         if (i == this.affiliateRow) {
-            TLRPC.User user = getMessagesController().getUser(Long.valueOf(this.userId));
+            TLRPC.User user2 = getMessagesController().getUser(Long.valueOf(this.userId));
             TLRPC.UserFull userFull = this.userInfo;
             if (userFull != null && userFull.starref_program != null) {
                 final long clientUserId = getUserConfig().getClientUserId();
@@ -5996,7 +5997,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 });
                 return;
             } else {
-                if (user == null || !user.bot_can_edit) {
+                if (user2 == null || !user2.bot_can_edit) {
                     return;
                 }
                 presentFragment(new AffiliateProgramFragment(this.userId));
@@ -6016,14 +6017,14 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             return;
         }
         if (i == this.addToContactsRow) {
-            TLRPC.User user2 = getMessagesController().getUser(Long.valueOf(this.userId));
+            TLRPC.User user3 = getMessagesController().getUser(Long.valueOf(this.userId));
             Bundle bundle = new Bundle();
-            bundle.putLong("user_id", user2.id);
+            bundle.putLong("user_id", user3.id);
             bundle.putBoolean("addContact", true);
             bundle.putString("phone", this.vcardPhone);
             bundle.putString("first_name_card", this.vcardFirstName);
             bundle.putString("last_name_card", this.vcardLastName);
-            openAddToContact(user2, bundle);
+            openAddToContact(user3, bundle);
             return;
         }
         if (i == this.deleteReactionRow) {
@@ -6141,8 +6142,13 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             if (this.currentChat != null) {
                 showDialog(new CommunitySheet(this, this.currentChat.linked_community_id));
                 return;
+            } else {
+                if (this.userId == 0 || (user = getMessagesController().getUser(Long.valueOf(this.userId))) == null) {
+                    return;
+                }
+                showDialog(new CommunitySheet(this, user.linked_community_id));
+                return;
             }
-            return;
         }
         if (i == this.locationRow) {
             if (this.chatInfo.location instanceof TLRPC.TL_channelLocation) {
@@ -11174,6 +11180,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         TLRPC.ChatParticipant chatParticipant;
         ListAdapter listAdapter;
         TLRPC.ChatFull chatFull;
+        TLRPC.User user;
         TLRPC.ChatFull chatFull2;
         TLRPC.ChatFull chatFull3;
         TLRPC.InputGroupCall inputGroupCall;
@@ -11329,6 +11336,9 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         }
         if (i == NotificationCenter.chatInfoDidLoad) {
             TLRPC.ChatFull chatFull7 = (TLRPC.ChatFull) objArr[0];
+            if (this.userId != 0 && (user = getMessagesController().getUser(Long.valueOf(this.userId))) != null && chatFull7.id == user.linked_community_id) {
+                updateListAnimated(true);
+            }
             TLRPC.Chat chat3 = this.currentChat;
             if (chat3 != null && chatFull7.id == chat3.linked_community_id) {
                 updateListAnimated(true);
@@ -12899,18 +12909,18 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     
         if ((r3 instanceof org.telegram.tgnet.TLRPC.TL_fileLocationToBeDeprecated) == false) goto L91;
      */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x0aef  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x0afb  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x0b12  */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x0b2e  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x0b37  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x0b3f  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x0b01  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x0b0d  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x0b24  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x0b40  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x0b49  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x0b51  */
     /* JADX WARN: Removed duplicated region for block: B:179:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x0b0d  */
-    /* JADX WARN: Removed duplicated region for block: B:383:0x067d  */
-    /* JADX WARN: Removed duplicated region for block: B:530:0x08eb  */
-    /* JADX WARN: Removed duplicated region for block: B:578:0x0ae1  */
-    /* JADX WARN: Removed duplicated region for block: B:606:0x0a1e  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x0b1f  */
+    /* JADX WARN: Removed duplicated region for block: B:387:0x068f  */
+    /* JADX WARN: Removed duplicated region for block: B:534:0x08fd  */
+    /* JADX WARN: Removed duplicated region for block: B:582:0x0af3  */
+    /* JADX WARN: Removed duplicated region for block: B:610:0x0a30  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -13307,13 +13317,19 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
                 int i37 = this.rowCount;
                 this.infoEndRow = i37 - 1;
-                this.rowCount = i37 + 1;
+                int i38 = i37 + 1;
+                this.rowCount = i38;
                 this.infoSectionRow = i37;
+                if (user != null && user.linked_community_id != 0) {
+                    this.linkedCommunityRow = i38;
+                    this.rowCount = i37 + 3;
+                    this.linkedCommunityDividerRow = i37 + 2;
+                }
                 if (z6 && (userFull2 = this.userInfo) != null && (starrefprogram = userFull2.starref_program) != null && (starrefprogram.flags & 2) == 0 && getMessagesController().starrefConnectAllowed) {
-                    int i38 = this.rowCount;
-                    this.affiliateRow = i38;
-                    this.rowCount = i38 + 2;
-                    this.infoAffiliateRow = i38 + 1;
+                    int i39 = this.rowCount;
+                    this.affiliateRow = i39;
+                    this.rowCount = i39 + 2;
+                    this.infoAffiliateRow = i39 + 1;
                 }
                 if (this.isBot) {
                     if (this.botLocation == null && getContext() != null) {
@@ -13329,110 +13345,110 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     TLRPC.UserFull userFull12 = this.userInfo;
                     boolean z9 = (userFull12 != null && userFull12.bot_can_manage_emoji_status) || SetupEmojiStatusSheet.getAccessRequested(getContext(), this.currentAccount, this.userId);
                     if (z9 || z7 || z8) {
-                        int i39 = this.rowCount;
-                        int i40 = i39 + 1;
-                        this.rowCount = i40;
-                        this.botPermissionsHeader = i39;
+                        int i40 = this.rowCount;
+                        int i41 = i40 + 1;
+                        this.rowCount = i41;
+                        this.botPermissionsHeader = i40;
                         if (z9) {
-                            this.rowCount = i39 + 2;
-                            this.botPermissionEmojiStatus = i40;
+                            this.rowCount = i40 + 2;
+                            this.botPermissionEmojiStatus = i41;
                         }
                         if (z7) {
-                            int i41 = this.rowCount;
-                            this.rowCount = i41 + 1;
-                            this.botPermissionLocation = i41;
-                        }
-                        if (z8) {
                             int i42 = this.rowCount;
                             this.rowCount = i42 + 1;
-                            this.botPermissionBiometry = i42;
+                            this.botPermissionLocation = i42;
                         }
-                        int i43 = this.rowCount;
-                        this.rowCount = i43 + 1;
-                        this.botPermissionsDivider = i43;
+                        if (z8) {
+                            int i43 = this.rowCount;
+                            this.rowCount = i43 + 1;
+                            this.botPermissionBiometry = i43;
+                        }
+                        int i44 = this.rowCount;
+                        this.rowCount = i44 + 1;
+                        this.botPermissionsDivider = i44;
                     }
                 }
                 TLRPC.EncryptedChat encryptedChat = this.currentEncryptedChat;
                 if (encryptedChat instanceof TLRPC.TL_encryptedChat) {
-                    int i44 = this.rowCount;
-                    this.settingsTimerRow = i44;
-                    this.settingsKeyRow = i44 + 1;
-                    this.rowCount = i44 + 3;
-                    this.secretSettingsSectionRow = i44 + 2;
+                    int i45 = this.rowCount;
+                    this.settingsTimerRow = i45;
+                    this.settingsKeyRow = i45 + 1;
+                    this.rowCount = i45 + 3;
+                    this.secretSettingsSectionRow = i45 + 2;
                 }
                 if (user != null && !this.isBot && encryptedChat == null && user.id != getUserConfig().getClientUserId() && this.userBlocked) {
-                    int i45 = this.rowCount;
-                    this.unblockRow = i45;
-                    this.rowCount = i45 + 2;
-                    this.lastSectionRow = i45 + 1;
+                    int i46 = this.rowCount;
+                    this.unblockRow = i46;
+                    this.rowCount = i46 + 2;
+                    this.lastSectionRow = i46 + 1;
                 }
                 if (user != null && user.bot) {
                     TLRPC.UserFull userFull13 = this.userInfo;
                     if (userFull13 != null && userFull13.can_view_revenue && BotStarsController.getInstance(this.currentAccount).getTONBalance(this.userId) > 0) {
-                        int i46 = this.rowCount;
-                        this.rowCount = i46 + 1;
-                        this.botTonBalanceRow = i46;
-                    }
-                    if (BotStarsController.getInstance(this.currentAccount).getBotStarsBalance(this.userId).amount > 0 || BotStarsController.getInstance(this.currentAccount).hasTransactions(this.userId)) {
                         int i47 = this.rowCount;
                         this.rowCount = i47 + 1;
-                        this.botStarsBalanceRow = i47;
+                        this.botTonBalanceRow = i47;
+                    }
+                    if (BotStarsController.getInstance(this.currentAccount).getBotStarsBalance(this.userId).amount > 0 || BotStarsController.getInstance(this.currentAccount).hasTransactions(this.userId)) {
+                        int i48 = this.rowCount;
+                        this.rowCount = i48 + 1;
+                        this.botStarsBalanceRow = i48;
                     }
                 }
                 if (user != null && this.isBot && !user.bot_nochats) {
-                    int i48 = this.rowCount;
-                    this.addToGroupButtonRow = i48;
-                    this.rowCount = i48 + 2;
-                    this.addToGroupInfoRow = i48 + 1;
+                    int i49 = this.rowCount;
+                    this.addToGroupButtonRow = i49;
+                    this.rowCount = i49 + 2;
+                    this.addToGroupInfoRow = i49 + 1;
                 } else if (this.botStarsBalanceRow >= 0) {
                     z2 = true;
                     if (!this.myProfile && this.showAddToContacts && user != null && !user.contact && !user.bot && !UserObject.isService(user.id)) {
-                        int i49 = this.rowCount;
-                        this.rowCount = i49 + 1;
-                        this.addToContactsRow = i49;
+                        int i50 = this.rowCount;
+                        this.rowCount = i50 + 1;
+                        this.addToContactsRow = i50;
                         z2 = true;
                     }
                     if (!this.myProfile && this.reportReactionMessageId != 0 && this.reportReactionFromDialogId < 0 && ChatObject.canUserDoAdminAction(getMessagesController().getChat(Long.valueOf(-this.reportReactionFromDialogId)), 13)) {
-                        int i50 = this.rowCount;
-                        this.rowCount = i50 + 1;
-                        this.deleteReactionRow = i50;
+                        int i51 = this.rowCount;
+                        this.rowCount = i51 + 1;
+                        this.deleteReactionRow = i51;
                         z2 = true;
                     }
                     if (!this.myProfile || this.reportReactionMessageId == 0 || ContactsController.getInstance(this.currentAccount).isContact(this.userId)) {
                         z3 = z2;
                     } else {
-                        int i51 = this.rowCount;
-                        this.rowCount = i51 + 1;
-                        this.reportReactionRow = i51;
-                    }
-                    if (z3) {
                         int i52 = this.rowCount;
                         this.rowCount = i52 + 1;
-                        this.reportDividerRow = i52;
+                        this.reportReactionRow = i52;
                     }
-                    if (!z || ((user != null && user.bot && user.bot_can_edit && user.bot_has_main_app) || (((userFull = this.userInfo) != null && userFull.common_chats_count != 0) || this.myProfile))) {
+                    if (z3) {
                         int i53 = this.rowCount;
                         this.rowCount = i53 + 1;
-                        this.sharedMediaRow = i53;
-                    } else if (this.lastSectionRow == -1 && this.needSendMessage) {
+                        this.reportDividerRow = i53;
+                    }
+                    if (!z || ((user != null && user.bot && user.bot_can_edit && user.bot_has_main_app) || (((userFull = this.userInfo) != null && userFull.common_chats_count != 0) || this.myProfile))) {
                         int i54 = this.rowCount;
-                        this.sendMessageRow = i54;
-                        this.reportRow = i54 + 1;
-                        this.rowCount = i54 + 3;
-                        this.lastSectionRow = i54 + 2;
+                        this.rowCount = i54 + 1;
+                        this.sharedMediaRow = i54;
+                    } else if (this.lastSectionRow == -1 && this.needSendMessage) {
+                        int i55 = this.rowCount;
+                        this.sendMessageRow = i55;
+                        this.reportRow = i55 + 1;
+                        this.rowCount = i55 + 3;
+                        this.lastSectionRow = i55 + 2;
                     }
                 }
                 z2 = false;
                 if (!this.myProfile) {
-                    int i492 = this.rowCount;
-                    this.rowCount = i492 + 1;
-                    this.addToContactsRow = i492;
+                    int i502 = this.rowCount;
+                    this.rowCount = i502 + 1;
+                    this.addToContactsRow = i502;
                     z2 = true;
                 }
                 if (!this.myProfile) {
-                    int i502 = this.rowCount;
-                    this.rowCount = i502 + 1;
-                    this.deleteReactionRow = i502;
+                    int i512 = this.rowCount;
+                    this.rowCount = i512 + 1;
+                    this.deleteReactionRow = i512;
                     z2 = true;
                 }
                 if (this.myProfile) {
@@ -13442,108 +13458,108 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
                 if (!z) {
                 }
-                int i532 = this.rowCount;
-                this.rowCount = i532 + 1;
-                this.sharedMediaRow = i532;
+                int i542 = this.rowCount;
+                this.rowCount = i542 + 1;
+                this.sharedMediaRow = i542;
             }
         } else if (this.isTopic) {
             if (this.emptyRow < 0 && this.emptyRow2 < 0) {
                 if (this.hasMusic || this.peerColor != null || this.actionsView == null) {
-                    int i55 = this.rowCount;
-                    this.rowCount = i55 + 1;
-                    this.emptyRow2 = i55;
-                } else {
                     int i56 = this.rowCount;
                     this.rowCount = i56 + 1;
-                    this.emptyRow = i56;
+                    this.emptyRow2 = i56;
+                } else {
+                    int i57 = this.rowCount;
+                    this.rowCount = i57 + 1;
+                    this.emptyRow = i57;
                 }
             }
-            int i57 = this.rowCount;
-            int i58 = i57 + 1;
-            this.rowCount = i58;
-            this.usernameRow = i57;
+            int i58 = this.rowCount;
+            int i59 = i58 + 1;
+            this.rowCount = i59;
+            this.usernameRow = i58;
             if (this.actionsView == null) {
-                this.rowCount = i57 + 2;
-                this.notificationsSimpleRow = i58;
+                this.rowCount = i58 + 2;
+                this.notificationsSimpleRow = i59;
             }
-            int i59 = this.rowCount;
-            int i60 = i59 + 1;
-            this.rowCount = i60;
-            this.infoSectionRow = i59;
+            int i60 = this.rowCount;
+            int i61 = i60 + 1;
+            this.rowCount = i61;
+            this.infoSectionRow = i60;
             if (z) {
-                this.rowCount = i59 + 2;
-                this.sharedMediaRow = i60;
+                this.rowCount = i60 + 2;
+                this.sharedMediaRow = i61;
             }
         } else if (this.chatId != 0) {
             TLRPC.ChatFull chatFull7 = this.chatInfo;
             if ((chatFull7 != null && (!TextUtils.isEmpty(chatFull7.about) || (this.chatInfo.location instanceof TLRPC.TL_channelLocation))) || ChatObject.isPublic(this.currentChat)) {
                 if (this.emptyRow < 0 && this.emptyRow2 < 0) {
                     if (this.hasMusic || this.peerColor != null || this.actionsView == null) {
-                        int i61 = this.rowCount;
-                        this.rowCount = i61 + 1;
-                        this.emptyRow2 = i61;
-                    } else {
                         int i62 = this.rowCount;
                         this.rowCount = i62 + 1;
-                        this.emptyRow = i62;
+                        this.emptyRow2 = i62;
+                    } else {
+                        int i63 = this.rowCount;
+                        this.rowCount = i63 + 1;
+                        this.emptyRow = i63;
                     }
                 }
                 if (this.actionsView == null) {
-                    int i63 = this.rowCount;
-                    this.rowCount = i63 + 1;
-                    this.infoHeaderRow = i63;
+                    int i64 = this.rowCount;
+                    this.rowCount = i64 + 1;
+                    this.infoHeaderRow = i64;
                 }
                 TLRPC.ChatFull chatFull8 = this.chatInfo;
                 if (chatFull8 != null) {
                     if (!TextUtils.isEmpty(chatFull8.about)) {
-                        int i64 = this.rowCount;
-                        this.rowCount = i64 + 1;
-                        this.channelInfoRow = i64;
-                    }
-                    if (this.chatInfo.location instanceof TLRPC.TL_channelLocation) {
                         int i65 = this.rowCount;
                         this.rowCount = i65 + 1;
-                        this.locationRow = i65;
+                        this.channelInfoRow = i65;
+                    }
+                    if (this.chatInfo.location instanceof TLRPC.TL_channelLocation) {
+                        int i66 = this.rowCount;
+                        this.rowCount = i66 + 1;
+                        this.locationRow = i66;
                     }
                 }
                 if (ChatObject.isPublic(this.currentChat)) {
-                    int i66 = this.rowCount;
-                    this.rowCount = i66 + 1;
-                    this.usernameRow = i66;
+                    int i67 = this.rowCount;
+                    this.rowCount = i67 + 1;
+                    this.usernameRow = i67;
                 }
             }
             if (this.emptyRow < 0 && this.emptyRow2 < 0) {
                 if (this.hasMusic || this.peerColor != null || this.actionsView == null) {
-                    int i67 = this.rowCount;
-                    this.rowCount = i67 + 1;
-                    this.emptyRow2 = i67;
-                } else {
                     int i68 = this.rowCount;
                     this.rowCount = i68 + 1;
-                    this.emptyRow = i68;
+                    this.emptyRow2 = i68;
+                } else {
+                    int i69 = this.rowCount;
+                    this.rowCount = i69 + 1;
+                    this.emptyRow = i69;
                 }
             }
             if (this.actionsView == null) {
                 if (this.infoHeaderRow != -1) {
-                    int i69 = this.rowCount;
-                    this.rowCount = i69 + 1;
-                    this.notificationsDividerRow = i69;
+                    int i70 = this.rowCount;
+                    this.rowCount = i70 + 1;
+                    this.notificationsDividerRow = i70;
                 }
-                int i70 = this.rowCount;
-                this.rowCount = i70 + 1;
-                this.notificationsRow = i70;
-            }
-            int i71 = this.rowCount;
-            if (i71 > 0) {
+                int i71 = this.rowCount;
                 this.rowCount = i71 + 1;
-                this.infoSectionRow = i71;
+                this.notificationsRow = i71;
+            }
+            int i72 = this.rowCount;
+            if (i72 > 0) {
+                this.rowCount = i72 + 1;
+                this.infoSectionRow = i72;
             }
             TLRPC.Chat chat2 = this.currentChat;
             if (chat2 != null && chat2.linked_community_id != 0) {
-                int i72 = this.rowCount;
-                this.linkedCommunityRow = i72;
-                this.rowCount = i72 + 2;
-                this.linkedCommunityDividerRow = i72 + 1;
+                int i73 = this.rowCount;
+                this.linkedCommunityRow = i73;
+                this.rowCount = i73 + 2;
+                this.linkedCommunityDividerRow = i73 + 1;
             }
             if (ChatObject.isChannel(chat2)) {
                 TLRPC.Chat chat3 = this.currentChat;
@@ -13551,56 +13567,56 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     TLRPC.ChatFull chatFull9 = this.chatInfo;
                     if (chatFull9 != null && (chat3.creator || chatFull9.can_view_participants)) {
                         if (this.actionsView == null) {
-                            int i73 = this.rowCount;
-                            this.rowCount = i73 + 1;
-                            this.membersHeaderRow = i73;
+                            int i74 = this.rowCount;
+                            this.rowCount = i74 + 1;
+                            this.membersHeaderRow = i74;
                         }
-                        int i74 = this.rowCount;
-                        int i75 = i74 + 1;
-                        this.rowCount = i75;
-                        this.subscribersRow = i74;
+                        int i75 = this.rowCount;
+                        int i76 = i75 + 1;
+                        this.rowCount = i76;
+                        this.subscribersRow = i75;
                         if (chatFull9.requests_pending > 0) {
-                            this.rowCount = i74 + 2;
-                            this.subscribersRequestsRow = i75;
+                            this.rowCount = i75 + 2;
+                            this.subscribersRequestsRow = i76;
                         }
-                        int i76 = this.rowCount;
-                        int i77 = i76 + 1;
-                        this.rowCount = i77;
-                        this.administratorsRow = i76;
+                        int i77 = this.rowCount;
+                        int i78 = i77 + 1;
+                        this.rowCount = i78;
+                        this.administratorsRow = i77;
                         if (chatFull9.banned_count != 0 || chatFull9.kicked_count != 0) {
-                            this.rowCount = i76 + 2;
-                            this.blockedUsersRow = i77;
+                            this.rowCount = i77 + 2;
+                            this.blockedUsersRow = i78;
                         }
                         if ((chatFull9.can_view_stars_revenue && (BotStarsController.getInstance(this.currentAccount).getBotStarsBalance(-this.chatId).amount > 0 || BotStarsController.getInstance(this.currentAccount).hasTransactions(-this.chatId))) || ((chatFull4 = this.chatInfo) != null && chatFull4.can_view_revenue && BotStarsController.getInstance(this.currentAccount).getTONBalance(-this.chatId) > 0)) {
-                            int i78 = this.rowCount;
-                            this.rowCount = i78 + 1;
-                            this.channelBalanceRow = i78;
+                            int i79 = this.rowCount;
+                            this.rowCount = i79 + 1;
+                            this.channelBalanceRow = i79;
                         }
-                        int i79 = this.rowCount;
-                        this.settingsRow = i79;
-                        this.rowCount = i79 + 2;
-                        this.channelBalanceSectionRow = i79 + 1;
+                        int i80 = this.rowCount;
+                        this.settingsRow = i80;
+                        this.rowCount = i80 + 2;
+                        this.channelBalanceSectionRow = i80 + 1;
                     }
                     if (!ChatObject.isChannel(this.currentChat)) {
                         if (!this.isTopic && (chatFull3 = this.chatInfo) != null && this.currentChat.megagroup && (chatParticipants2 = chatFull3.participants) != null && (arrayList = chatParticipants2.participants) != null && !arrayList.isEmpty()) {
                             if (!ChatObject.isNotInChat(this.currentChat) && ChatObject.canAddUsers(this.currentChat) && this.chatInfo.participants_count < getMessagesController().maxMegagroupCount) {
-                                int i80 = this.rowCount;
-                                this.rowCount = i80 + 1;
-                                this.addMemberRow = i80;
+                                int i81 = this.rowCount;
+                                this.rowCount = i81 + 1;
+                                this.addMemberRow = i81;
                             }
                             int size = this.chatInfo.participants.participants.size();
                             if ((size <= 5 || !z || this.usersForceShowingIn == 1) && this.usersForceShowingIn != 2) {
                                 if (this.addMemberRow == -1 && this.actionsView == null) {
-                                    int i81 = this.rowCount;
-                                    this.rowCount = i81 + 1;
-                                    this.membersHeaderRow = i81;
+                                    int i82 = this.rowCount;
+                                    this.rowCount = i82 + 1;
+                                    this.membersHeaderRow = i82;
                                 }
-                                int i82 = this.rowCount;
-                                this.membersStartRow = i82;
-                                int i83 = i82 + size;
-                                this.membersEndRow = i83;
-                                this.rowCount = i83 + 1;
-                                this.membersSectionRow = i83;
+                                int i83 = this.rowCount;
+                                this.membersStartRow = i83;
+                                int i84 = i83 + size;
+                                this.membersEndRow = i84;
+                                this.rowCount = i84 + 1;
+                                this.membersSectionRow = i84;
                                 this.visibleChatParticipants.addAll(this.chatInfo.participants.participants);
                                 ArrayList arrayList2 = this.sortedUsers;
                                 if (arrayList2 != null) {
@@ -13613,9 +13629,9 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                 }
                             } else {
                                 if (this.addMemberRow != -1) {
-                                    int i84 = this.rowCount;
-                                    this.rowCount = i84 + 1;
-                                    this.membersSectionRow = i84;
+                                    int i85 = this.rowCount;
+                                    this.rowCount = i85 + 1;
+                                    this.membersSectionRow = i85;
                                 }
                                 if (this.sharedMediaLayout != null) {
                                     if (!this.sortedUsers.isEmpty()) {
@@ -13626,10 +13642,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                             }
                         } else {
                             if (!ChatObject.isNotInChat(this.currentChat) && ChatObject.canAddUsers(this.currentChat) && (chatFull2 = this.chatInfo) != null && chatFull2.participants_hidden) {
-                                int i85 = this.rowCount;
-                                this.addMemberRow = i85;
-                                this.rowCount = i85 + 2;
-                                this.membersSectionRow = i85 + 1;
+                                int i86 = this.rowCount;
+                                this.addMemberRow = i86;
+                                this.rowCount = i86 + 2;
+                                this.membersSectionRow = i86 + 1;
                             }
                             SharedMediaLayout sharedMediaLayout2 = this.sharedMediaLayout;
                             if (sharedMediaLayout2 != null) {
@@ -13643,20 +13659,20 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                 if (j3 <= 0 || System.currentTimeMillis() - j3 >= 120000) {
                                     ProfileActionsView profileActionsView2 = this.actionsView;
                                     if (profileActionsView2 == null || !profileActionsView2.canHaveJoinAction()) {
-                                        int i86 = this.rowCount;
-                                        this.joinRow = i86;
-                                        this.rowCount = i86 + 2;
-                                        this.lastSectionRow = i86 + 1;
+                                        int i87 = this.rowCount;
+                                        this.joinRow = i87;
+                                        this.rowCount = i87 + 2;
+                                        this.lastSectionRow = i87 + 1;
                                     }
                                     if (z) {
-                                        int i87 = this.rowCount;
-                                        this.rowCount = i87 + 1;
-                                        this.sharedMediaRow = i87;
-                                    }
-                                    if (this.sharedMediaRow == -1) {
                                         int i88 = this.rowCount;
                                         this.rowCount = i88 + 1;
-                                        this.bottomPaddingRow = i88;
+                                        this.sharedMediaRow = i88;
+                                    }
+                                    if (this.sharedMediaRow == -1) {
+                                        int i89 = this.rowCount;
+                                        this.rowCount = i89 + 1;
+                                        this.bottomPaddingRow = i89;
                                     }
                                     if (this.actionBar == null) {
                                         i = ActionBar.getCurrentActionBarHeight() + (this.actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0);
@@ -13692,19 +13708,19 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         if (chatFull10 != null) {
                             if (!this.isTopic && (chatParticipants = chatFull10.participants) != null && chatParticipants.participants != null && !(chatParticipants instanceof TLRPC.TL_chatParticipantsForbidden)) {
                                 if (ChatObject.canAddUsers(this.currentChat) || (tL_chatBannedRights = this.currentChat.default_banned_rights) == null || !tL_chatBannedRights.invite_users) {
-                                    int i89 = this.rowCount;
-                                    this.rowCount = i89 + 1;
-                                    this.addMemberRow = i89;
+                                    int i90 = this.rowCount;
+                                    this.rowCount = i90 + 1;
+                                    this.addMemberRow = i90;
                                 }
                                 if (this.chatInfo.participants.participants.size() <= 5 || !z) {
                                     if (this.addMemberRow == -1 && this.actionsView == null) {
-                                        int i90 = this.rowCount;
-                                        this.rowCount = i90 + 1;
-                                        this.membersHeaderRow = i90;
+                                        int i91 = this.rowCount;
+                                        this.rowCount = i91 + 1;
+                                        this.membersHeaderRow = i91;
                                     }
-                                    int i91 = this.rowCount;
-                                    this.membersStartRow = i91;
-                                    int size2 = i91 + this.chatInfo.participants.participants.size();
+                                    int i92 = this.rowCount;
+                                    this.membersStartRow = i92;
+                                    int size2 = i92 + this.chatInfo.participants.participants.size();
                                     this.membersEndRow = size2;
                                     this.rowCount = size2 + 1;
                                     this.membersSectionRow = size2;
@@ -13719,9 +13735,9 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                     }
                                 } else {
                                     if (this.addMemberRow != -1) {
-                                        int i92 = this.rowCount;
-                                        this.rowCount = i92 + 1;
-                                        this.membersSectionRow = i92;
+                                        int i93 = this.rowCount;
+                                        this.rowCount = i93 + 1;
+                                        this.membersSectionRow = i93;
                                     }
                                     SharedMediaLayout sharedMediaLayout4 = this.sharedMediaLayout;
                                     if (sharedMediaLayout4 != null) {
@@ -13730,10 +13746,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                 }
                             } else {
                                 if (!ChatObject.isNotInChat(this.currentChat) && ChatObject.canAddUsers(this.currentChat) && this.chatInfo.participants_hidden) {
-                                    int i93 = this.rowCount;
-                                    this.addMemberRow = i93;
-                                    this.rowCount = i93 + 2;
-                                    this.membersSectionRow = i93 + 1;
+                                    int i94 = this.rowCount;
+                                    this.addMemberRow = i94;
+                                    this.rowCount = i94 + 2;
+                                    this.membersSectionRow = i94 + 1;
                                 }
                                 SharedMediaLayout sharedMediaLayout5 = this.sharedMediaLayout;
                                 if (sharedMediaLayout5 != null) {
@@ -13765,10 +13781,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             }
             TLRPC.ChatFull chatFull11 = this.chatInfo;
             if ((chatFull11 != null && chatFull11.can_view_stars_revenue && (BotStarsController.getInstance(this.currentAccount).getBotStarsBalance(-this.chatId).amount > 0 || BotStarsController.getInstance(this.currentAccount).hasTransactions(-this.chatId))) || ((chatFull = this.chatInfo) != null && chatFull.can_view_revenue && BotStarsController.getInstance(this.currentAccount).getTONBalance(-this.chatId) > 0)) {
-                int i94 = this.rowCount;
-                this.channelBalanceRow = i94;
-                this.rowCount = i94 + 2;
-                this.channelBalanceSectionRow = i94 + 1;
+                int i95 = this.rowCount;
+                this.channelBalanceRow = i95;
+                this.rowCount = i95 + 2;
+                this.channelBalanceSectionRow = i95 + 1;
             }
             if (!ChatObject.isChannel(this.currentChat)) {
             }
@@ -17282,38 +17298,38 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:186:0x04d7, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:193:0x0510, code lost:
         
-            if (r1.promoted_by == r28.this$0.getUserConfig().getClientUserId()) goto L173;
+            if (r1.promoted_by == r28.this$0.getUserConfig().getClientUserId()) goto L177;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:187:0x0519, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:194:0x0552, code lost:
         
             r14 = r3;
             r7 = false;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:188:0x0515, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:195:0x054e, code lost:
         
             r15 = true;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:190:0x0513, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:197:0x054c, code lost:
         
             r14 = r3;
             r7 = true;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:203:0x0511, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:210:0x054a, code lost:
         
-            if (r0.inviter_id == r28.this$0.getUserConfig().getClientUserId()) goto L173;
+            if (r0.inviter_id == r28.this$0.getUserConfig().getClientUserId()) goto L177;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:617:0x118f, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:624:0x11c8, code lost:
         
-            if (r0.getMessagesController().premiumPurchaseBlocked() == false) goto L616;
+            if (r0.getMessagesController().premiumPurchaseBlocked() == false) goto L620;
          */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Removed duplicated region for block: B:254:0x06c8 A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:257:0x06d3  */
-        /* JADX WARN: Removed duplicated region for block: B:259:0x06da  */
-        /* JADX WARN: Removed duplicated region for block: B:620:0x1582  */
-        /* JADX WARN: Removed duplicated region for block: B:626:0x15ca  */
+        /* JADX WARN: Removed duplicated region for block: B:261:0x0701 A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:264:0x070c  */
+        /* JADX WARN: Removed duplicated region for block: B:266:0x0713  */
+        /* JADX WARN: Removed duplicated region for block: B:627:0x15bb  */
+        /* JADX WARN: Removed duplicated region for block: B:633:0x1603  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -17348,6 +17364,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             boolean z5;
             boolean z6;
             TLRPC.User user;
+            TLRPC.User user2;
             String str13 = "";
             switch (viewHolder.getItemViewType()) {
                 case 1:
@@ -17416,13 +17433,13 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                             }
                         }
                     } else if (i == profileActivity2.phoneRow) {
-                        TLRPC.User user2 = ProfileActivity.this.getMessagesController().getUser(Long.valueOf(ProfileActivity.this.userId));
-                        if (user2 != null && !TextUtils.isEmpty(ProfileActivity.this.vcardPhone)) {
+                        TLRPC.User user3 = ProfileActivity.this.getMessagesController().getUser(Long.valueOf(ProfileActivity.this.userId));
+                        if (user3 != null && !TextUtils.isEmpty(ProfileActivity.this.vcardPhone)) {
                             string4 = PhoneFormat.getInstance().format("+" + ProfileActivity.this.vcardPhone);
                             str10 = ProfileActivity.this.vcardPhone;
-                        } else if (user2 != null && !TextUtils.isEmpty(user2.phone)) {
-                            String format = PhoneFormat.getInstance().format("+" + user2.phone);
-                            str10 = user2.phone;
+                        } else if (user3 != null && !TextUtils.isEmpty(user3.phone)) {
+                            String format = PhoneFormat.getInstance().format("+" + user3.phone);
+                            str10 = user3.phone;
                             string4 = format;
                         } else {
                             string4 = LocaleController.getString(R.string.PhoneHidden);
@@ -17491,18 +17508,18 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     } else {
                         ArrayList arrayList = new ArrayList();
                         if (ProfileActivity.this.userId != 0) {
-                            TLRPC.User user3 = ProfileActivity.this.getMessagesController().getUser(Long.valueOf(ProfileActivity.this.userId));
-                            if (user3 != null) {
-                                arrayList.addAll(user3.usernames);
+                            TLRPC.User user4 = ProfileActivity.this.getMessagesController().getUser(Long.valueOf(ProfileActivity.this.userId));
+                            if (user4 != null) {
+                                arrayList.addAll(user4.usernames);
                             }
-                            if (user3 == null || TextUtils.isEmpty(user3.username)) {
+                            if (user4 == null || TextUtils.isEmpty(user4.username)) {
                                 tL_username = null;
                                 str8 = null;
                             } else {
-                                tL_username = DialogObject.findUsername(user3.username, (ArrayList<TLRPC.TL_username>) arrayList);
-                                str8 = user3.username;
+                                tL_username = DialogObject.findUsername(user4.username, (ArrayList<TLRPC.TL_username>) arrayList);
+                                str8 = user4.username;
                             }
-                            ArrayList arrayList2 = user3 == null ? new ArrayList() : new ArrayList(user3.usernames);
+                            ArrayList arrayList2 = user4 == null ? new ArrayList() : new ArrayList(user4.usernames);
                             if (TextUtils.isEmpty(str8)) {
                                 int i3 = 0;
                                 while (true) {
@@ -17593,7 +17610,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                     textDetailCell.setImageClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$$ExternalSyntheticLambda6
                                         @Override // android.view.View.OnClickListener
                                         public final void onClick(View view) {
-                                            ProfileActivity.access$39600(ProfileActivity.this, view);
+                                            ProfileActivity.access$39700(ProfileActivity.this, view);
                                         }
                                     });
                                 }
@@ -17606,7 +17623,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                 textDetailCell.setImageClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$$ExternalSyntheticLambda7
                                     @Override // android.view.View.OnClickListener
                                     public final void onClick(View view) {
-                                        ProfileActivity.access$39600(ProfileActivity.this, view);
+                                        ProfileActivity.access$39700(ProfileActivity.this, view);
                                     }
                                 });
                             } else {
@@ -17639,8 +17656,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 case 3:
                     AboutLinkCell aboutLinkCell = (AboutLinkCell) viewHolder.itemView;
                     if (i == ProfileActivity.this.userInfoRow) {
-                        TLRPC.User user4 = ProfileActivity.this.userInfo.user != null ? ProfileActivity.this.userInfo.user : ProfileActivity.this.getMessagesController().getUser(Long.valueOf(ProfileActivity.this.userInfo.id));
-                        if (!ProfileActivity.this.isBot && (user4 == null || !user4.premium || ProfileActivity.this.userInfo.about == null)) {
+                        TLRPC.User user5 = ProfileActivity.this.userInfo.user != null ? ProfileActivity.this.userInfo.user : ProfileActivity.this.getMessagesController().getUser(Long.valueOf(ProfileActivity.this.userInfo.id));
+                        if (!ProfileActivity.this.isBot && (user5 == null || !user5.premium || ProfileActivity.this.userInfo.about == null)) {
                             r2 = false;
                         }
                         aboutLinkCell.setTextAndValue(ProfileActivity.this.userInfo.about, LocaleController.getString(R.string.UserBio), r2);
@@ -18075,17 +18092,17 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                 z6 = false;
                             }
                         }
-                        final TLRPC.User user5 = ProfileActivity.this.getMessagesController().getUser(Long.valueOf(chatParticipant.user_id));
+                        final TLRPC.User user6 = ProfileActivity.this.getMessagesController().getUser(Long.valueOf(chatParticipant.user_id));
                         final String str18 = str12;
                         final boolean z10 = z5;
                         final boolean z11 = z6;
-                        userCell.setAdminRole(str12, z5, z6, UserObject.isUserSelf(user5) && ChatObject.canManageMyTag(ProfileActivity.this.getMessagesController().getChat(Long.valueOf(ProfileActivity.this.chatId))), new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$$ExternalSyntheticLambda4
+                        userCell.setAdminRole(str12, z5, z6, UserObject.isUserSelf(user6) && ChatObject.canManageMyTag(ProfileActivity.this.getMessagesController().getChat(Long.valueOf(ProfileActivity.this.chatId))), new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$$ExternalSyntheticLambda4
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
-                                ProfileActivity.ListAdapter.this.lambda$onBindViewHolder$6(user5, str18, z10, z11, z4, view);
+                                ProfileActivity.ListAdapter.this.lambda$onBindViewHolder$6(user6, str18, z10, z11, z4, view);
                             }
                         });
-                        userCell.setData(user5, null, null, 0, i != ProfileActivity.this.membersEndRow - 1);
+                        userCell.setData(user6, null, null, 0, i != ProfileActivity.this.membersEndRow - 1);
                         break;
                     }
                     break;
@@ -18145,14 +18162,14 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     textInfoPrivacyCell.setLinkTextRippleColor(null);
                     if (i != ProfileActivity.this.infoSectionRow) {
                         if (i == ProfileActivity.this.infoAffiliateRow) {
-                            TLRPC.User user6 = ProfileActivity.this.getMessagesController().getUser(Long.valueOf(ProfileActivity.this.userId));
-                            if (user6 != null && user6.bot && user6.bot_can_edit) {
+                            TLRPC.User user7 = ProfileActivity.this.getMessagesController().getUser(Long.valueOf(ProfileActivity.this.userId));
+                            if (user7 != null && user7.bot && user7.bot_can_edit) {
                                 textInfoPrivacyCell.setFixedSize(0);
-                                textInfoPrivacyCell.setText(LocaleController.formatString(R.string.ProfileBotAffiliateProgramInfoOwner, UserObject.getUserName(user6), AffiliateProgramFragment.percents((ProfileActivity.this.userInfo == null || ProfileActivity.this.userInfo.starref_program == null) ? 0 : ProfileActivity.this.userInfo.starref_program.commission_permille)));
+                                textInfoPrivacyCell.setText(LocaleController.formatString(R.string.ProfileBotAffiliateProgramInfoOwner, UserObject.getUserName(user7), AffiliateProgramFragment.percents((ProfileActivity.this.userInfo == null || ProfileActivity.this.userInfo.starref_program == null) ? 0 : ProfileActivity.this.userInfo.starref_program.commission_permille)));
                                 break;
                             } else {
                                 textInfoPrivacyCell.setFixedSize(0);
-                                textInfoPrivacyCell.setText(LocaleController.formatString(R.string.ProfileBotAffiliateProgramInfo, UserObject.getUserName(user6), AffiliateProgramFragment.percents((ProfileActivity.this.userInfo == null || ProfileActivity.this.userInfo.starref_program == null) ? 0 : ProfileActivity.this.userInfo.starref_program.commission_permille)));
+                                textInfoPrivacyCell.setText(LocaleController.formatString(R.string.ProfileBotAffiliateProgramInfo, UserObject.getUserName(user7), AffiliateProgramFragment.percents((ProfileActivity.this.userInfo == null || ProfileActivity.this.userInfo.starref_program == null) ? 0 : ProfileActivity.this.userInfo.starref_program.commission_permille)));
                                 break;
                             }
                         }
@@ -18162,8 +18179,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         final Long valueOf = (ProfileActivity.this.userInfo == null || !TLObject.hasFlag(ProfileActivity.this.userInfo.flags2, 33554432)) ? null : Long.valueOf(ProfileActivity.this.userInfo.bot_manager_id);
                         if (ProfileActivity.this.botAppRow >= 0 || botverification != null || valueOf != null) {
                             textInfoPrivacyCell.setFixedSize(0);
-                            TLRPC.User user7 = ProfileActivity.this.getMessagesController().getUser(Long.valueOf(ProfileActivity.this.userId));
-                            final boolean z14 = user7 != null && user7.bot && user7.bot_can_edit;
+                            TLRPC.User user8 = ProfileActivity.this.getMessagesController().getUser(Long.valueOf(ProfileActivity.this.userId));
+                            final boolean z14 = user8 != null && user8.bot && user8.bot_can_edit;
                             SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder();
                             if (ProfileActivity.this.botAppRow >= 0) {
                                 spannableStringBuilder4.append(AndroidUtilities.replaceSingleTag(LocaleController.getString(z14 ? R.string.ProfileBotOpenAppInfoOwner : R.string.ProfileBotOpenAppInfo), new Runnable() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$$ExternalSyntheticLambda1
@@ -18247,7 +18264,14 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     }
                     break;
                 case 33:
-                    ((CommunityLinkView) viewHolder.itemView).setChat(((BaseFragment) ProfileActivity.this).currentAccount, ProfileActivity.this.getMessagesController().getChat(Long.valueOf(ProfileActivity.this.currentChat != null ? ProfileActivity.this.currentChat.linked_community_id : 0L)));
+                    CommunityLinkView communityLinkView = (CommunityLinkView) viewHolder.itemView;
+                    if (ProfileActivity.this.currentChat != null) {
+                        communityLinkView.setChat(((BaseFragment) ProfileActivity.this).currentAccount, ProfileActivity.this.getMessagesController().getChat(Long.valueOf(ProfileActivity.this.currentChat.linked_community_id)));
+                        break;
+                    } else if (ProfileActivity.this.userId != 0 && (user2 = ProfileActivity.this.getMessagesController().getUser(Long.valueOf(ProfileActivity.this.userId))) != null) {
+                        communityLinkView.setChat(((BaseFragment) ProfileActivity.this).currentAccount, ProfileActivity.this.getMessagesController().getChat(Long.valueOf(user2.linked_community_id)));
+                        break;
+                    }
                     break;
             }
         }

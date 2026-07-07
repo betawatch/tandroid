@@ -4144,44 +4144,34 @@ public class MessagesStorage extends BaseController {
         return i < i2 ? -1 : 0;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x02df  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0796  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x0342 A[Catch: all -> 0x0031, Exception -> 0x0037, TryCatch #15 {Exception -> 0x0037, all -> 0x0031, blocks: (B:7:0x000a, B:99:0x0178, B:101:0x0182, B:103:0x01a4, B:106:0x01ae, B:107:0x01b5, B:109:0x01bb, B:110:0x01f3, B:112:0x01c6, B:114:0x01ca, B:115:0x01d5, B:117:0x01d9, B:120:0x01de, B:121:0x01e9, B:127:0x020f, B:129:0x0228, B:131:0x0235, B:133:0x024d, B:135:0x0259, B:140:0x026f, B:142:0x028a, B:145:0x0294, B:146:0x029b, B:148:0x029f, B:151:0x02a4, B:152:0x02ba, B:154:0x02b0, B:160:0x02e3, B:162:0x02f3, B:164:0x02ff, B:166:0x0305, B:168:0x0312, B:170:0x032c, B:174:0x0342, B:177:0x0351, B:178:0x0359, B:181:0x0394, B:184:0x0362, B:186:0x036a, B:187:0x0375, B:189:0x037b, B:191:0x037f, B:192:0x038a, B:197:0x039a, B:211:0x03ce, B:216:0x03e7, B:220:0x0405, B:222:0x040a, B:224:0x0416, B:225:0x0420, B:227:0x0425, B:229:0x0436, B:234:0x0444, B:236:0x0449, B:238:0x0457, B:239:0x045c, B:241:0x0461, B:243:0x0472, B:248:0x047b, B:250:0x0480, B:252:0x048e, B:253:0x0493, B:255:0x0498, B:257:0x04a9, B:262:0x04b2, B:264:0x04b7, B:266:0x04c5, B:267:0x04ca, B:269:0x04cf, B:271:0x04e0, B:276:0x04e9, B:278:0x04ee, B:280:0x04fc, B:281:0x0501, B:283:0x0506, B:285:0x0517, B:287:0x051d, B:289:0x0523, B:291:0x0539, B:298:0x0552, B:306:0x0576, B:310:0x0592, B:312:0x0596, B:313:0x05a7, B:316:0x05cf, B:318:0x05d7, B:319:0x05ae, B:321:0x05b3, B:324:0x05c2, B:326:0x05c7, B:331:0x0599, B:333:0x059d, B:336:0x05a2, B:337:0x05a5, B:338:0x0585, B:349:0x05e6, B:351:0x05f6, B:353:0x05fc, B:355:0x0600, B:356:0x0605, B:361:0x0609, B:363:0x060e, B:365:0x0617, B:368:0x0623, B:370:0x0628, B:374:0x0603, B:393:0x068b, B:413:0x0692, B:416:0x0697, B:504:0x03ee, B:506:0x03f6, B:507:0x03f9), top: B:6:0x000a }] */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x0351 A[Catch: all -> 0x0031, Exception -> 0x0037, TryCatch #15 {Exception -> 0x0037, all -> 0x0031, blocks: (B:7:0x000a, B:99:0x0178, B:101:0x0182, B:103:0x01a4, B:106:0x01ae, B:107:0x01b5, B:109:0x01bb, B:110:0x01f3, B:112:0x01c6, B:114:0x01ca, B:115:0x01d5, B:117:0x01d9, B:120:0x01de, B:121:0x01e9, B:127:0x020f, B:129:0x0228, B:131:0x0235, B:133:0x024d, B:135:0x0259, B:140:0x026f, B:142:0x028a, B:145:0x0294, B:146:0x029b, B:148:0x029f, B:151:0x02a4, B:152:0x02ba, B:154:0x02b0, B:160:0x02e3, B:162:0x02f3, B:164:0x02ff, B:166:0x0305, B:168:0x0312, B:170:0x032c, B:174:0x0342, B:177:0x0351, B:178:0x0359, B:181:0x0394, B:184:0x0362, B:186:0x036a, B:187:0x0375, B:189:0x037b, B:191:0x037f, B:192:0x038a, B:197:0x039a, B:211:0x03ce, B:216:0x03e7, B:220:0x0405, B:222:0x040a, B:224:0x0416, B:225:0x0420, B:227:0x0425, B:229:0x0436, B:234:0x0444, B:236:0x0449, B:238:0x0457, B:239:0x045c, B:241:0x0461, B:243:0x0472, B:248:0x047b, B:250:0x0480, B:252:0x048e, B:253:0x0493, B:255:0x0498, B:257:0x04a9, B:262:0x04b2, B:264:0x04b7, B:266:0x04c5, B:267:0x04ca, B:269:0x04cf, B:271:0x04e0, B:276:0x04e9, B:278:0x04ee, B:280:0x04fc, B:281:0x0501, B:283:0x0506, B:285:0x0517, B:287:0x051d, B:289:0x0523, B:291:0x0539, B:298:0x0552, B:306:0x0576, B:310:0x0592, B:312:0x0596, B:313:0x05a7, B:316:0x05cf, B:318:0x05d7, B:319:0x05ae, B:321:0x05b3, B:324:0x05c2, B:326:0x05c7, B:331:0x0599, B:333:0x059d, B:336:0x05a2, B:337:0x05a5, B:338:0x0585, B:349:0x05e6, B:351:0x05f6, B:353:0x05fc, B:355:0x0600, B:356:0x0605, B:361:0x0609, B:363:0x060e, B:365:0x0617, B:368:0x0623, B:370:0x0628, B:374:0x0603, B:393:0x068b, B:413:0x0692, B:416:0x0697, B:504:0x03ee, B:506:0x03f6, B:507:0x03f9), top: B:6:0x000a }] */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x035f  */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x0362 A[Catch: all -> 0x0031, Exception -> 0x0037, TryCatch #15 {Exception -> 0x0037, all -> 0x0031, blocks: (B:7:0x000a, B:99:0x0178, B:101:0x0182, B:103:0x01a4, B:106:0x01ae, B:107:0x01b5, B:109:0x01bb, B:110:0x01f3, B:112:0x01c6, B:114:0x01ca, B:115:0x01d5, B:117:0x01d9, B:120:0x01de, B:121:0x01e9, B:127:0x020f, B:129:0x0228, B:131:0x0235, B:133:0x024d, B:135:0x0259, B:140:0x026f, B:142:0x028a, B:145:0x0294, B:146:0x029b, B:148:0x029f, B:151:0x02a4, B:152:0x02ba, B:154:0x02b0, B:160:0x02e3, B:162:0x02f3, B:164:0x02ff, B:166:0x0305, B:168:0x0312, B:170:0x032c, B:174:0x0342, B:177:0x0351, B:178:0x0359, B:181:0x0394, B:184:0x0362, B:186:0x036a, B:187:0x0375, B:189:0x037b, B:191:0x037f, B:192:0x038a, B:197:0x039a, B:211:0x03ce, B:216:0x03e7, B:220:0x0405, B:222:0x040a, B:224:0x0416, B:225:0x0420, B:227:0x0425, B:229:0x0436, B:234:0x0444, B:236:0x0449, B:238:0x0457, B:239:0x045c, B:241:0x0461, B:243:0x0472, B:248:0x047b, B:250:0x0480, B:252:0x048e, B:253:0x0493, B:255:0x0498, B:257:0x04a9, B:262:0x04b2, B:264:0x04b7, B:266:0x04c5, B:267:0x04ca, B:269:0x04cf, B:271:0x04e0, B:276:0x04e9, B:278:0x04ee, B:280:0x04fc, B:281:0x0501, B:283:0x0506, B:285:0x0517, B:287:0x051d, B:289:0x0523, B:291:0x0539, B:298:0x0552, B:306:0x0576, B:310:0x0592, B:312:0x0596, B:313:0x05a7, B:316:0x05cf, B:318:0x05d7, B:319:0x05ae, B:321:0x05b3, B:324:0x05c2, B:326:0x05c7, B:331:0x0599, B:333:0x059d, B:336:0x05a2, B:337:0x05a5, B:338:0x0585, B:349:0x05e6, B:351:0x05f6, B:353:0x05fc, B:355:0x0600, B:356:0x0605, B:361:0x0609, B:363:0x060e, B:365:0x0617, B:368:0x0623, B:370:0x0628, B:374:0x0603, B:393:0x068b, B:413:0x0692, B:416:0x0697, B:504:0x03ee, B:506:0x03f6, B:507:0x03f9), top: B:6:0x000a }] */
-    /* JADX WARN: Removed duplicated region for block: B:18:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x034d  */
-    /* JADX WARN: Removed duplicated region for block: B:205:0x03c0  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x079f  */
-    /* JADX WARN: Removed duplicated region for block: B:25:? A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x0549 A[Catch: all -> 0x0747, Exception -> 0x074a, TRY_ENTER, TRY_LEAVE, TryCatch #17 {Exception -> 0x074a, all -> 0x0747, blocks: (B:31:0x0040, B:95:0x014f, B:124:0x0207, B:157:0x02d9, B:201:0x03b5, B:217:0x0400, B:231:0x043f, B:245:0x0476, B:259:0x04ad, B:273:0x04e4, B:295:0x0549, B:378:0x0647, B:380:0x0650, B:502:0x03ea, B:508:0x03fe, B:509:0x03fc), top: B:30:0x0040 }] */
-    /* JADX WARN: Removed duplicated region for block: B:483:0x0756  */
-    /* JADX WARN: Type inference failed for: r2v119 */
-    /* JADX WARN: Type inference failed for: r2v17, types: [int] */
-    /* JADX WARN: Type inference failed for: r2v18 */
-    /* JADX WARN: Type inference failed for: r2v2 */
-    /* JADX WARN: Type inference failed for: r2v21 */
-    /* JADX WARN: Type inference failed for: r2v22 */
-    /* JADX WARN: Type inference failed for: r2v3 */
-    /* JADX WARN: Type inference failed for: r2v31 */
-    /* JADX WARN: Type inference failed for: r2v32 */
-    /* JADX WARN: Type inference failed for: r2v36, types: [org.telegram.messenger.MessagesStorage] */
-    /* JADX WARN: Type inference failed for: r2v42 */
-    /* JADX WARN: Type inference failed for: r2v43 */
-    /* JADX WARN: Type inference failed for: r2v44 */
-    /* JADX WARN: Type inference failed for: r2v45 */
-    /* JADX WARN: Type inference failed for: r2v47 */
+    /* JADX WARN: Code restructure failed: missing block: B:309:0x059b, code lost:
+    
+        if (r23 == 0) goto L261;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:389:0x0692, code lost:
+    
+        if (r22 == 0) goto L329;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0766  */
+    /* JADX WARN: Removed duplicated region for block: B:140:0x02d5 A[Catch: all -> 0x0031, Exception -> 0x0036, TryCatch #7 {Exception -> 0x0036, all -> 0x0031, blocks: (B:7:0x000a, B:27:0x003b, B:29:0x003e, B:76:0x0145, B:78:0x016d, B:80:0x0178, B:82:0x019a, B:85:0x01a4, B:86:0x01ab, B:88:0x01b1, B:90:0x01e9, B:91:0x01bc, B:93:0x01c0, B:95:0x01cb, B:97:0x01cf, B:100:0x01d4, B:102:0x01df, B:105:0x01f9, B:108:0x0205, B:110:0x021e, B:112:0x022b, B:114:0x0243, B:116:0x024f, B:120:0x02be, B:121:0x0265, B:123:0x0280, B:126:0x028a, B:127:0x0291, B:129:0x0295, B:132:0x029a, B:133:0x02b0, B:135:0x02a6, B:138:0x02cf, B:140:0x02d5, B:142:0x02e9, B:146:0x03b9, B:147:0x0304, B:149:0x030a, B:151:0x0310, B:153:0x031f, B:155:0x0339, B:159:0x0351, B:162:0x0360, B:163:0x0368, B:166:0x03a3, B:168:0x0371, B:170:0x0379, B:171:0x0384, B:173:0x038a, B:175:0x038e, B:176:0x0399, B:181:0x03a9, B:184:0x03c4, B:185:0x03cd, B:189:0x03d6, B:193:0x03df, B:198:0x03f7, B:199:0x0410, B:201:0x0415, B:203:0x041a, B:205:0x0426, B:206:0x0430, B:208:0x0435, B:210:0x0446, B:211:0x044f, B:213:0x0454, B:215:0x0459, B:217:0x0467, B:218:0x046c, B:220:0x0471, B:222:0x0482, B:223:0x0486, B:225:0x048b, B:227:0x0490, B:229:0x049e, B:230:0x04a3, B:232:0x04a8, B:234:0x04b9, B:235:0x04bd, B:237:0x04c2, B:239:0x04c7, B:241:0x04d5, B:242:0x04da, B:244:0x04df, B:246:0x04f0, B:247:0x04f4, B:249:0x04f9, B:251:0x04fe, B:253:0x050c, B:254:0x0511, B:256:0x0516, B:258:0x0527, B:260:0x052d, B:262:0x0533, B:264:0x0549, B:267:0x0559, B:269:0x0562, B:276:0x0585, B:280:0x05a1, B:282:0x05a5, B:283:0x05b6, B:286:0x05de, B:288:0x05e4, B:289:0x05bd, B:291:0x05c2, B:294:0x05d1, B:296:0x05d6, B:301:0x05a8, B:303:0x05ac, B:306:0x05b1, B:307:0x05b4, B:308:0x0594, B:317:0x0642, B:318:0x05f5, B:320:0x0605, B:322:0x060b, B:324:0x060f, B:325:0x0614, B:328:0x0640, B:330:0x0618, B:332:0x061d, B:334:0x0626, B:337:0x0632, B:339:0x0637, B:343:0x0612, B:346:0x064f, B:348:0x065f, B:355:0x067c, B:359:0x0698, B:361:0x069c, B:362:0x06ad, B:366:0x06d7, B:367:0x06b0, B:369:0x06b5, B:372:0x06c4, B:374:0x06c9, B:377:0x06d1, B:381:0x069f, B:383:0x06a3, B:386:0x06a8, B:387:0x06ab, B:388:0x068b, B:395:0x072e, B:396:0x06e5, B:398:0x06f3, B:400:0x06f9, B:402:0x06fd, B:403:0x0702, B:405:0x0705, B:407:0x070a, B:410:0x0713, B:412:0x0718, B:414:0x0721, B:417:0x072c, B:420:0x0700, B:423:0x0735, B:425:0x073b, B:430:0x0748, B:432:0x074c, B:436:0x0751, B:438:0x0755, B:445:0x03fa, B:447:0x03fe, B:449:0x0406, B:450:0x0409, B:451:0x040e, B:452:0x040c), top: B:6:0x000a }] */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x0351 A[Catch: all -> 0x0031, Exception -> 0x0036, TryCatch #7 {Exception -> 0x0036, all -> 0x0031, blocks: (B:7:0x000a, B:27:0x003b, B:29:0x003e, B:76:0x0145, B:78:0x016d, B:80:0x0178, B:82:0x019a, B:85:0x01a4, B:86:0x01ab, B:88:0x01b1, B:90:0x01e9, B:91:0x01bc, B:93:0x01c0, B:95:0x01cb, B:97:0x01cf, B:100:0x01d4, B:102:0x01df, B:105:0x01f9, B:108:0x0205, B:110:0x021e, B:112:0x022b, B:114:0x0243, B:116:0x024f, B:120:0x02be, B:121:0x0265, B:123:0x0280, B:126:0x028a, B:127:0x0291, B:129:0x0295, B:132:0x029a, B:133:0x02b0, B:135:0x02a6, B:138:0x02cf, B:140:0x02d5, B:142:0x02e9, B:146:0x03b9, B:147:0x0304, B:149:0x030a, B:151:0x0310, B:153:0x031f, B:155:0x0339, B:159:0x0351, B:162:0x0360, B:163:0x0368, B:166:0x03a3, B:168:0x0371, B:170:0x0379, B:171:0x0384, B:173:0x038a, B:175:0x038e, B:176:0x0399, B:181:0x03a9, B:184:0x03c4, B:185:0x03cd, B:189:0x03d6, B:193:0x03df, B:198:0x03f7, B:199:0x0410, B:201:0x0415, B:203:0x041a, B:205:0x0426, B:206:0x0430, B:208:0x0435, B:210:0x0446, B:211:0x044f, B:213:0x0454, B:215:0x0459, B:217:0x0467, B:218:0x046c, B:220:0x0471, B:222:0x0482, B:223:0x0486, B:225:0x048b, B:227:0x0490, B:229:0x049e, B:230:0x04a3, B:232:0x04a8, B:234:0x04b9, B:235:0x04bd, B:237:0x04c2, B:239:0x04c7, B:241:0x04d5, B:242:0x04da, B:244:0x04df, B:246:0x04f0, B:247:0x04f4, B:249:0x04f9, B:251:0x04fe, B:253:0x050c, B:254:0x0511, B:256:0x0516, B:258:0x0527, B:260:0x052d, B:262:0x0533, B:264:0x0549, B:267:0x0559, B:269:0x0562, B:276:0x0585, B:280:0x05a1, B:282:0x05a5, B:283:0x05b6, B:286:0x05de, B:288:0x05e4, B:289:0x05bd, B:291:0x05c2, B:294:0x05d1, B:296:0x05d6, B:301:0x05a8, B:303:0x05ac, B:306:0x05b1, B:307:0x05b4, B:308:0x0594, B:317:0x0642, B:318:0x05f5, B:320:0x0605, B:322:0x060b, B:324:0x060f, B:325:0x0614, B:328:0x0640, B:330:0x0618, B:332:0x061d, B:334:0x0626, B:337:0x0632, B:339:0x0637, B:343:0x0612, B:346:0x064f, B:348:0x065f, B:355:0x067c, B:359:0x0698, B:361:0x069c, B:362:0x06ad, B:366:0x06d7, B:367:0x06b0, B:369:0x06b5, B:372:0x06c4, B:374:0x06c9, B:377:0x06d1, B:381:0x069f, B:383:0x06a3, B:386:0x06a8, B:387:0x06ab, B:388:0x068b, B:395:0x072e, B:396:0x06e5, B:398:0x06f3, B:400:0x06f9, B:402:0x06fd, B:403:0x0702, B:405:0x0705, B:407:0x070a, B:410:0x0713, B:412:0x0718, B:414:0x0721, B:417:0x072c, B:420:0x0700, B:423:0x0735, B:425:0x073b, B:430:0x0748, B:432:0x074c, B:436:0x0751, B:438:0x0755, B:445:0x03fa, B:447:0x03fe, B:449:0x0406, B:450:0x0409, B:451:0x040e, B:452:0x040c), top: B:6:0x000a }] */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x0360 A[Catch: all -> 0x0031, Exception -> 0x0036, TryCatch #7 {Exception -> 0x0036, all -> 0x0031, blocks: (B:7:0x000a, B:27:0x003b, B:29:0x003e, B:76:0x0145, B:78:0x016d, B:80:0x0178, B:82:0x019a, B:85:0x01a4, B:86:0x01ab, B:88:0x01b1, B:90:0x01e9, B:91:0x01bc, B:93:0x01c0, B:95:0x01cb, B:97:0x01cf, B:100:0x01d4, B:102:0x01df, B:105:0x01f9, B:108:0x0205, B:110:0x021e, B:112:0x022b, B:114:0x0243, B:116:0x024f, B:120:0x02be, B:121:0x0265, B:123:0x0280, B:126:0x028a, B:127:0x0291, B:129:0x0295, B:132:0x029a, B:133:0x02b0, B:135:0x02a6, B:138:0x02cf, B:140:0x02d5, B:142:0x02e9, B:146:0x03b9, B:147:0x0304, B:149:0x030a, B:151:0x0310, B:153:0x031f, B:155:0x0339, B:159:0x0351, B:162:0x0360, B:163:0x0368, B:166:0x03a3, B:168:0x0371, B:170:0x0379, B:171:0x0384, B:173:0x038a, B:175:0x038e, B:176:0x0399, B:181:0x03a9, B:184:0x03c4, B:185:0x03cd, B:189:0x03d6, B:193:0x03df, B:198:0x03f7, B:199:0x0410, B:201:0x0415, B:203:0x041a, B:205:0x0426, B:206:0x0430, B:208:0x0435, B:210:0x0446, B:211:0x044f, B:213:0x0454, B:215:0x0459, B:217:0x0467, B:218:0x046c, B:220:0x0471, B:222:0x0482, B:223:0x0486, B:225:0x048b, B:227:0x0490, B:229:0x049e, B:230:0x04a3, B:232:0x04a8, B:234:0x04b9, B:235:0x04bd, B:237:0x04c2, B:239:0x04c7, B:241:0x04d5, B:242:0x04da, B:244:0x04df, B:246:0x04f0, B:247:0x04f4, B:249:0x04f9, B:251:0x04fe, B:253:0x050c, B:254:0x0511, B:256:0x0516, B:258:0x0527, B:260:0x052d, B:262:0x0533, B:264:0x0549, B:267:0x0559, B:269:0x0562, B:276:0x0585, B:280:0x05a1, B:282:0x05a5, B:283:0x05b6, B:286:0x05de, B:288:0x05e4, B:289:0x05bd, B:291:0x05c2, B:294:0x05d1, B:296:0x05d6, B:301:0x05a8, B:303:0x05ac, B:306:0x05b1, B:307:0x05b4, B:308:0x0594, B:317:0x0642, B:318:0x05f5, B:320:0x0605, B:322:0x060b, B:324:0x060f, B:325:0x0614, B:328:0x0640, B:330:0x0618, B:332:0x061d, B:334:0x0626, B:337:0x0632, B:339:0x0637, B:343:0x0612, B:346:0x064f, B:348:0x065f, B:355:0x067c, B:359:0x0698, B:361:0x069c, B:362:0x06ad, B:366:0x06d7, B:367:0x06b0, B:369:0x06b5, B:372:0x06c4, B:374:0x06c9, B:377:0x06d1, B:381:0x069f, B:383:0x06a3, B:386:0x06a8, B:387:0x06ab, B:388:0x068b, B:395:0x072e, B:396:0x06e5, B:398:0x06f3, B:400:0x06f9, B:402:0x06fd, B:403:0x0702, B:405:0x0705, B:407:0x070a, B:410:0x0713, B:412:0x0718, B:414:0x0721, B:417:0x072c, B:420:0x0700, B:423:0x0735, B:425:0x073b, B:430:0x0748, B:432:0x074c, B:436:0x0751, B:438:0x0755, B:445:0x03fa, B:447:0x03fe, B:449:0x0406, B:450:0x0409, B:451:0x040e, B:452:0x040c), top: B:6:0x000a }] */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x036e  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x0371 A[Catch: all -> 0x0031, Exception -> 0x0036, TryCatch #7 {Exception -> 0x0036, all -> 0x0031, blocks: (B:7:0x000a, B:27:0x003b, B:29:0x003e, B:76:0x0145, B:78:0x016d, B:80:0x0178, B:82:0x019a, B:85:0x01a4, B:86:0x01ab, B:88:0x01b1, B:90:0x01e9, B:91:0x01bc, B:93:0x01c0, B:95:0x01cb, B:97:0x01cf, B:100:0x01d4, B:102:0x01df, B:105:0x01f9, B:108:0x0205, B:110:0x021e, B:112:0x022b, B:114:0x0243, B:116:0x024f, B:120:0x02be, B:121:0x0265, B:123:0x0280, B:126:0x028a, B:127:0x0291, B:129:0x0295, B:132:0x029a, B:133:0x02b0, B:135:0x02a6, B:138:0x02cf, B:140:0x02d5, B:142:0x02e9, B:146:0x03b9, B:147:0x0304, B:149:0x030a, B:151:0x0310, B:153:0x031f, B:155:0x0339, B:159:0x0351, B:162:0x0360, B:163:0x0368, B:166:0x03a3, B:168:0x0371, B:170:0x0379, B:171:0x0384, B:173:0x038a, B:175:0x038e, B:176:0x0399, B:181:0x03a9, B:184:0x03c4, B:185:0x03cd, B:189:0x03d6, B:193:0x03df, B:198:0x03f7, B:199:0x0410, B:201:0x0415, B:203:0x041a, B:205:0x0426, B:206:0x0430, B:208:0x0435, B:210:0x0446, B:211:0x044f, B:213:0x0454, B:215:0x0459, B:217:0x0467, B:218:0x046c, B:220:0x0471, B:222:0x0482, B:223:0x0486, B:225:0x048b, B:227:0x0490, B:229:0x049e, B:230:0x04a3, B:232:0x04a8, B:234:0x04b9, B:235:0x04bd, B:237:0x04c2, B:239:0x04c7, B:241:0x04d5, B:242:0x04da, B:244:0x04df, B:246:0x04f0, B:247:0x04f4, B:249:0x04f9, B:251:0x04fe, B:253:0x050c, B:254:0x0511, B:256:0x0516, B:258:0x0527, B:260:0x052d, B:262:0x0533, B:264:0x0549, B:267:0x0559, B:269:0x0562, B:276:0x0585, B:280:0x05a1, B:282:0x05a5, B:283:0x05b6, B:286:0x05de, B:288:0x05e4, B:289:0x05bd, B:291:0x05c2, B:294:0x05d1, B:296:0x05d6, B:301:0x05a8, B:303:0x05ac, B:306:0x05b1, B:307:0x05b4, B:308:0x0594, B:317:0x0642, B:318:0x05f5, B:320:0x0605, B:322:0x060b, B:324:0x060f, B:325:0x0614, B:328:0x0640, B:330:0x0618, B:332:0x061d, B:334:0x0626, B:337:0x0632, B:339:0x0637, B:343:0x0612, B:346:0x064f, B:348:0x065f, B:355:0x067c, B:359:0x0698, B:361:0x069c, B:362:0x06ad, B:366:0x06d7, B:367:0x06b0, B:369:0x06b5, B:372:0x06c4, B:374:0x06c9, B:377:0x06d1, B:381:0x069f, B:383:0x06a3, B:386:0x06a8, B:387:0x06ab, B:388:0x068b, B:395:0x072e, B:396:0x06e5, B:398:0x06f3, B:400:0x06f9, B:402:0x06fd, B:403:0x0702, B:405:0x0705, B:407:0x070a, B:410:0x0713, B:412:0x0718, B:414:0x0721, B:417:0x072c, B:420:0x0700, B:423:0x0735, B:425:0x073b, B:430:0x0748, B:432:0x074c, B:436:0x0751, B:438:0x0755, B:445:0x03fa, B:447:0x03fe, B:449:0x0406, B:450:0x0409, B:451:0x040e, B:452:0x040c), top: B:6:0x000a }] */
+    /* JADX WARN: Removed duplicated region for block: B:16:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x035c  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x03d1  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x076e  */
+    /* JADX WARN: Removed duplicated region for block: B:23:? A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:267:0x0559 A[Catch: all -> 0x0031, Exception -> 0x0036, TryCatch #7 {Exception -> 0x0036, all -> 0x0031, blocks: (B:7:0x000a, B:27:0x003b, B:29:0x003e, B:76:0x0145, B:78:0x016d, B:80:0x0178, B:82:0x019a, B:85:0x01a4, B:86:0x01ab, B:88:0x01b1, B:90:0x01e9, B:91:0x01bc, B:93:0x01c0, B:95:0x01cb, B:97:0x01cf, B:100:0x01d4, B:102:0x01df, B:105:0x01f9, B:108:0x0205, B:110:0x021e, B:112:0x022b, B:114:0x0243, B:116:0x024f, B:120:0x02be, B:121:0x0265, B:123:0x0280, B:126:0x028a, B:127:0x0291, B:129:0x0295, B:132:0x029a, B:133:0x02b0, B:135:0x02a6, B:138:0x02cf, B:140:0x02d5, B:142:0x02e9, B:146:0x03b9, B:147:0x0304, B:149:0x030a, B:151:0x0310, B:153:0x031f, B:155:0x0339, B:159:0x0351, B:162:0x0360, B:163:0x0368, B:166:0x03a3, B:168:0x0371, B:170:0x0379, B:171:0x0384, B:173:0x038a, B:175:0x038e, B:176:0x0399, B:181:0x03a9, B:184:0x03c4, B:185:0x03cd, B:189:0x03d6, B:193:0x03df, B:198:0x03f7, B:199:0x0410, B:201:0x0415, B:203:0x041a, B:205:0x0426, B:206:0x0430, B:208:0x0435, B:210:0x0446, B:211:0x044f, B:213:0x0454, B:215:0x0459, B:217:0x0467, B:218:0x046c, B:220:0x0471, B:222:0x0482, B:223:0x0486, B:225:0x048b, B:227:0x0490, B:229:0x049e, B:230:0x04a3, B:232:0x04a8, B:234:0x04b9, B:235:0x04bd, B:237:0x04c2, B:239:0x04c7, B:241:0x04d5, B:242:0x04da, B:244:0x04df, B:246:0x04f0, B:247:0x04f4, B:249:0x04f9, B:251:0x04fe, B:253:0x050c, B:254:0x0511, B:256:0x0516, B:258:0x0527, B:260:0x052d, B:262:0x0533, B:264:0x0549, B:267:0x0559, B:269:0x0562, B:276:0x0585, B:280:0x05a1, B:282:0x05a5, B:283:0x05b6, B:286:0x05de, B:288:0x05e4, B:289:0x05bd, B:291:0x05c2, B:294:0x05d1, B:296:0x05d6, B:301:0x05a8, B:303:0x05ac, B:306:0x05b1, B:307:0x05b4, B:308:0x0594, B:317:0x0642, B:318:0x05f5, B:320:0x0605, B:322:0x060b, B:324:0x060f, B:325:0x0614, B:328:0x0640, B:330:0x0618, B:332:0x061d, B:334:0x0626, B:337:0x0632, B:339:0x0637, B:343:0x0612, B:346:0x064f, B:348:0x065f, B:355:0x067c, B:359:0x0698, B:361:0x069c, B:362:0x06ad, B:366:0x06d7, B:367:0x06b0, B:369:0x06b5, B:372:0x06c4, B:374:0x06c9, B:377:0x06d1, B:381:0x069f, B:383:0x06a3, B:386:0x06a8, B:387:0x06ab, B:388:0x068b, B:395:0x072e, B:396:0x06e5, B:398:0x06f3, B:400:0x06f9, B:402:0x06fd, B:403:0x0702, B:405:0x0705, B:407:0x070a, B:410:0x0713, B:412:0x0718, B:414:0x0721, B:417:0x072c, B:420:0x0700, B:423:0x0735, B:425:0x073b, B:430:0x0748, B:432:0x074c, B:436:0x0751, B:438:0x0755, B:445:0x03fa, B:447:0x03fe, B:449:0x0406, B:450:0x0409, B:451:0x040e, B:452:0x040c), top: B:6:0x000a }] */
+    /* JADX WARN: Removed duplicated region for block: B:428:0x073e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private void calcUnreadCounters(boolean z) {
-        ?? r2;
         Throwable th;
         SQLiteCursor sQLiteCursor;
         Exception exc;
-        MessagesStorage messagesStorage;
         int i;
         LongSparseArray longSparseArray;
         LongSparseArray longSparseArray2;
@@ -4193,68 +4183,66 @@ public class MessagesStorage extends BaseController {
         MessagesController.DialogFilter dialogFilter;
         int i5;
         int i6;
+        int i7;
         LongSparseArray longSparseArray4;
         LongSparseArray longSparseArray5;
-        MessagesStorage messagesStorage2;
-        int i7;
-        LongSparseIntArray longSparseIntArray;
-        boolean z2;
         int i8;
-        LongSparseIntArray longSparseIntArray2;
-        MessagesStorage messagesStorage3;
-        boolean z3;
         int i9;
         int i10;
         int i11;
-        LongSparseArray longSparseArray6;
-        LongSparseArray longSparseArray7;
         int i12;
         int i13;
         int i14;
-        LongSparseArray longSparseArray8;
         int i15;
         int i16;
         int i17;
-        ArrayList<TLRPC.Chat> arrayList;
-        LongSparseArray longSparseArray9;
         int i18;
         int i19;
-        char c;
+        LongSparseArray longSparseArray6;
         int i20;
-        String str;
+        LongSparseArray longSparseArray7;
         int i21;
+        int i22;
+        int i23;
+        int i24;
+        HashSet hashSet;
+        int i25;
+        ArrayList<TLRPC.Chat> arrayList;
+        LongSparseArray longSparseArray8;
+        char c;
+        int i26;
+        String str;
+        int i27;
         ArrayList<TLRPC.EncryptedChat> arrayList2;
         int intValue;
-        int i22;
-        MessagesStorage messagesStorage4 = this;
-        for (int i23 = 0; i23 < 2; i23++) {
-            for (int i24 = 0; i24 < 2; i24++) {
+        int i28;
+        for (int i29 = 0; i29 < 2; i29++) {
+            for (int i30 = 0; i30 < 2; i30++) {
                 try {
-                    int[] iArr = messagesStorage4.contacts[i23];
-                    int[] iArr2 = messagesStorage4.nonContacts[i23];
-                    int[] iArr3 = messagesStorage4.bots[i23];
-                    int[] iArr4 = messagesStorage4.channels[i23];
-                    int[] iArr5 = messagesStorage4.groups[i23];
-                    messagesStorage4.communities[i23][i24] = 0;
-                    iArr5[i24] = 0;
-                    iArr4[i24] = 0;
-                    iArr3[i24] = 0;
-                    iArr2[i24] = 0;
-                    iArr[i24] = 0;
+                    int[] iArr = this.contacts[i29];
+                    int[] iArr2 = this.nonContacts[i29];
+                    int[] iArr3 = this.bots[i29];
+                    int[] iArr4 = this.channels[i29];
+                    int[] iArr5 = this.groups[i29];
+                    this.communities[i29][i30] = 0;
+                    iArr5[i30] = 0;
+                    iArr4[i30] = 0;
+                    iArr3[i30] = 0;
+                    iArr2[i30] = 0;
+                    iArr[i30] = 0;
                 } catch (Exception e) {
-                    e = e;
-                    messagesStorage3 = messagesStorage4;
-                    sQLiteCursor = null;
                     exc = e;
-                    messagesStorage = messagesStorage3;
+                    sQLiteCursor = null;
                     try {
-                        messagesStorage.checkSQLException(exc);
-                        if (sQLiteCursor != null) {
+                        checkSQLException(exc);
+                        if (sQLiteCursor == null) {
+                            sQLiteCursor.dispose();
+                            return;
                         }
+                        return;
                     } catch (Throwable th2) {
                         th = th2;
-                        th = th;
-                        if (sQLiteCursor == null) {
+                        if (sQLiteCursor != null) {
                             sQLiteCursor.dispose();
                             throw th;
                         }
@@ -4263,754 +4251,638 @@ public class MessagesStorage extends BaseController {
                 } catch (Throwable th3) {
                     th = th3;
                     sQLiteCursor = null;
-                    th = th;
-                    if (sQLiteCursor == null) {
+                    if (sQLiteCursor != null) {
                     }
                 }
             }
         }
-        try {
-            messagesStorage4.dialogsWithMentions.clear();
-            messagesStorage4.dialogsWithUnread.clear();
-            ArrayList<TLRPC.User> arrayList3 = new ArrayList<>();
-            ArrayList<TLRPC.User> arrayList4 = new ArrayList<>();
-            ArrayList<TLRPC.Chat> arrayList5 = new ArrayList<>();
-            ArrayList<Long> arrayList6 = new ArrayList<>();
-            ArrayList arrayList7 = new ArrayList();
-            ArrayList arrayList8 = new ArrayList();
-            LongSparseIntArray longSparseIntArray3 = new LongSparseIntArray();
-            LongSparseIntArray longSparseIntArray4 = new LongSparseIntArray();
-            SQLiteCursor queryFinalized = messagesStorage4.database.queryFinalized("SELECT DISTINCT did FROM topics WHERE unread_count > 0 OR unread_mentions > 0", new Object[0]);
-            while (true) {
-                try {
-                    i = 13;
-                    if (!queryFinalized.next()) {
-                        break;
-                    }
-                    try {
-                        long longValue = queryFinalized.longValue(0);
-                        if (messagesStorage4.isForum(longValue, 13)) {
-                            longSparseIntArray4.put(longValue, 1);
-                        }
-                    } catch (Exception e2) {
-                        e = e2;
-                        messagesStorage3 = messagesStorage4;
-                        sQLiteCursor = queryFinalized;
-                        exc = e;
-                        messagesStorage = messagesStorage3;
-                        messagesStorage.checkSQLException(exc);
-                        if (sQLiteCursor != null) {
-                        }
-                    } catch (Throwable th4) {
-                        th = th4;
-                        sQLiteCursor = queryFinalized;
-                        th = th;
-                        if (sQLiteCursor == null) {
-                        }
-                    }
-                } catch (Exception e3) {
-                    messagesStorage = messagesStorage4;
-                    exc = e3;
-                    sQLiteCursor = queryFinalized;
-                } catch (Throwable th5) {
-                    th = th5;
-                    sQLiteCursor = queryFinalized;
+        this.dialogsWithMentions.clear();
+        this.dialogsWithUnread.clear();
+        ArrayList<TLRPC.User> arrayList3 = new ArrayList<>();
+        ArrayList<TLRPC.User> arrayList4 = new ArrayList<>();
+        ArrayList<TLRPC.Chat> arrayList5 = new ArrayList<>();
+        ArrayList<Long> arrayList6 = new ArrayList<>();
+        HashSet hashSet2 = new HashSet();
+        ArrayList arrayList7 = new ArrayList();
+        LongSparseIntArray longSparseIntArray = new LongSparseIntArray();
+        LongSparseIntArray longSparseIntArray2 = new LongSparseIntArray();
+        SQLiteCursor queryFinalized = this.database.queryFinalized("SELECT DISTINCT did FROM topics WHERE unread_count > 0 OR unread_mentions > 0", new Object[0]);
+        while (true) {
+            try {
+                i = 13;
+                if (!queryFinalized.next()) {
+                    break;
                 }
-            }
-            queryFinalized.dispose();
-            SQLiteCursor queryFinalized2 = messagesStorage4.database.queryFinalized("SELECT did, folder_id, unread_count, unread_count_i FROM dialogs WHERE unread_count > 0 OR flags > 0 UNION ALL SELECT did, folder_id, unread_count, unread_count_i FROM dialogs WHERE unread_count_i > 0", new Object[0]);
-            while (queryFinalized2.next()) {
-                try {
-                    try {
-                        int intValue2 = queryFinalized2.intValue(1);
-                        ArrayList<TLRPC.User> arrayList9 = arrayList4;
-                        long longValue2 = queryFinalized2.longValue(0);
-                        if (messagesStorage4.isForum(longValue2, i)) {
-                            i22 = longSparseIntArray4.get(longValue2, 0);
-                            if (i22 == 0) {
-                                arrayList4 = arrayList9;
-                            } else {
-                                intValue = 0;
-                            }
-                        } else {
-                            int intValue3 = queryFinalized2.intValue(2);
-                            intValue = queryFinalized2.intValue(3);
-                            i22 = intValue3;
-                        }
-                        if (i22 > 0) {
-                            messagesStorage4.dialogsWithUnread.put(longValue2, Integer.valueOf(i22));
-                        }
-                        if (intValue > 0) {
-                            messagesStorage4.dialogsWithMentions.put(longValue2, Integer.valueOf(intValue));
-                        }
-                        longSparseIntArray3.put(longValue2, intValue2);
-                        if (DialogObject.isEncryptedDialog(longValue2)) {
-                            int encryptedChatId = DialogObject.getEncryptedChatId(longValue2);
-                            if (!arrayList8.contains(Integer.valueOf(encryptedChatId))) {
-                                arrayList8.add(Integer.valueOf(encryptedChatId));
-                            }
-                        } else if (DialogObject.isUserDialog(longValue2)) {
-                            if (!arrayList6.contains(Long.valueOf(longValue2))) {
-                                arrayList6.add(Long.valueOf(longValue2));
-                            }
-                        } else {
-                            long j = -longValue2;
-                            if (!arrayList7.contains(Long.valueOf(j))) {
-                                arrayList7.add(Long.valueOf(j));
-                            }
-                        }
-                        arrayList4 = arrayList9;
-                        i = 13;
-                    } catch (Exception e4) {
-                        e = e4;
-                        messagesStorage3 = messagesStorage4;
-                        sQLiteCursor = queryFinalized2;
-                        exc = e;
-                        messagesStorage = messagesStorage3;
-                        messagesStorage.checkSQLException(exc);
-                        if (sQLiteCursor != null) {
-                        }
-                    } catch (Throwable th6) {
-                        th = th6;
-                        sQLiteCursor = queryFinalized2;
-                        th = th;
-                        if (sQLiteCursor == null) {
-                        }
-                    }
-                } catch (Exception e5) {
-                    messagesStorage = messagesStorage4;
-                    exc = e5;
-                    sQLiteCursor = queryFinalized2;
-                    messagesStorage.checkSQLException(exc);
-                    if (sQLiteCursor != null) {
-                    }
-                } catch (Throwable th7) {
-                    th = th7;
-                    sQLiteCursor = queryFinalized2;
-                    if (sQLiteCursor == null) {
-                    }
+                long longValue = queryFinalized.longValue(0);
+                if (isForum(longValue, 13)) {
+                    longSparseIntArray2.put(longValue, 1);
                 }
+            } catch (Exception e2) {
+                exc = e2;
+                sQLiteCursor = queryFinalized;
+            } catch (Throwable th4) {
+                th = th4;
+                sQLiteCursor = queryFinalized;
             }
-            ArrayList<TLRPC.User> arrayList10 = arrayList4;
-            queryFinalized2.dispose();
-            LongSparseArray longSparseArray10 = new LongSparseArray();
-            LongSparseArray longSparseArray11 = new LongSparseArray();
-            LongSparseArray longSparseArray12 = new LongSparseArray();
-            LongSparseIntArray longSparseIntArray5 = new LongSparseIntArray();
-            LongSparseArray longSparseArray13 = new LongSparseArray();
-            LongSparseArray longSparseArray14 = new LongSparseArray();
-            LongSparseArray longSparseArray15 = longSparseArray12;
-            if (!arrayList6.isEmpty()) {
-                messagesStorage4.getUsersInternal(arrayList6, arrayList3, true);
-                int size2 = arrayList3.size();
-                int i25 = 0;
-                while (i25 < size2) {
-                    TLRPC.User user = arrayList3.get(i25);
-                    int i26 = size2;
-                    ArrayList arrayList11 = arrayList7;
-                    ArrayList arrayList12 = arrayList8;
-                    boolean isDialogMuted = getMessagesController().isDialogMuted(user.id, 0L);
-                    int i27 = longSparseIntArray3.get(user.id);
-                    if (isDialogMuted) {
-                        longSparseArray13.put(user.id, Boolean.TRUE);
-                    }
-                    if (i27 == 1) {
-                        longSparseArray14.put(user.id, Boolean.TRUE);
-                    }
-                    if (messagesStorage4.isUserCollapsedInCommunity(longSparseArray11, user)) {
-                        int[] iArr6 = messagesStorage4.communities[i27];
-                        iArr6[isDialogMuted ? 1 : 0] = iArr6[isDialogMuted ? 1 : 0] + 1;
-                    } else if (user.bot) {
-                        int[] iArr7 = messagesStorage4.bots[i27];
-                        iArr7[isDialogMuted ? 1 : 0] = iArr7[isDialogMuted ? 1 : 0] + 1;
+        }
+        queryFinalized.dispose();
+        SQLiteCursor queryFinalized2 = this.database.queryFinalized("SELECT did, folder_id, unread_count, unread_count_i FROM dialogs WHERE unread_count > 0 OR flags > 0 UNION ALL SELECT did, folder_id, unread_count, unread_count_i FROM dialogs WHERE unread_count_i > 0", new Object[0]);
+        while (queryFinalized2.next()) {
+            try {
+                int intValue2 = queryFinalized2.intValue(1);
+                ArrayList<TLRPC.User> arrayList8 = arrayList4;
+                long longValue2 = queryFinalized2.longValue(0);
+                if (isForum(longValue2, i)) {
+                    i28 = longSparseIntArray2.get(longValue2, 0);
+                    if (i28 == 0) {
+                        arrayList4 = arrayList8;
                     } else {
-                        if (!user.self && !user.contact) {
-                            int[] iArr8 = messagesStorage4.nonContacts[i27];
-                            iArr8[isDialogMuted ? 1 : 0] = iArr8[isDialogMuted ? 1 : 0] + 1;
-                        }
-                        int[] iArr9 = messagesStorage4.contacts[i27];
-                        iArr9[isDialogMuted ? 1 : 0] = iArr9[isDialogMuted ? 1 : 0] + 1;
+                        intValue = 0;
                     }
-                    longSparseArray10.put(user.id, user);
-                    i25++;
-                    size2 = i26;
-                    arrayList7 = arrayList11;
-                    arrayList8 = arrayList12;
+                } else {
+                    int intValue3 = queryFinalized2.intValue(2);
+                    intValue = queryFinalized2.intValue(3);
+                    i28 = intValue3;
+                }
+                if (i28 > 0) {
+                    this.dialogsWithUnread.put(longValue2, Integer.valueOf(i28));
+                }
+                if (intValue > 0) {
+                    this.dialogsWithMentions.put(longValue2, Integer.valueOf(intValue));
+                }
+                longSparseIntArray.put(longValue2, intValue2);
+                if (DialogObject.isEncryptedDialog(longValue2)) {
+                    int encryptedChatId = DialogObject.getEncryptedChatId(longValue2);
+                    if (!arrayList7.contains(Integer.valueOf(encryptedChatId))) {
+                        arrayList7.add(Integer.valueOf(encryptedChatId));
+                    }
+                } else if (DialogObject.isUserDialog(longValue2)) {
+                    if (!arrayList6.contains(Long.valueOf(longValue2))) {
+                        arrayList6.add(Long.valueOf(longValue2));
+                    }
+                } else {
+                    hashSet2.add(Long.valueOf(-longValue2));
+                }
+                arrayList4 = arrayList8;
+                i = 13;
+            } catch (Exception e3) {
+                exc = e3;
+                sQLiteCursor = queryFinalized2;
+                checkSQLException(exc);
+                if (sQLiteCursor == null) {
+                }
+            } catch (Throwable th5) {
+                th = th5;
+                sQLiteCursor = queryFinalized2;
+                if (sQLiteCursor != null) {
                 }
             }
-            ArrayList arrayList13 = arrayList7;
-            ArrayList arrayList14 = arrayList8;
-            String str2 = ",";
-            if (!arrayList14.isEmpty()) {
-                ArrayList<Long> arrayList15 = new ArrayList<>();
-                ArrayList<TLRPC.EncryptedChat> arrayList16 = new ArrayList<>();
-                messagesStorage4.getEncryptedChatsInternal(TextUtils.join(",", arrayList14), arrayList16, arrayList15);
-                if (!arrayList15.isEmpty()) {
-                    messagesStorage4.getUsersInternal(arrayList15, arrayList10, true);
-                    int size3 = arrayList10.size();
-                    int i28 = 0;
-                    while (i28 < size3) {
-                        TLRPC.User user2 = arrayList10.get(i28);
-                        LongSparseArray longSparseArray16 = longSparseArray15;
-                        longSparseArray16.put(user2.id, user2);
-                        i28++;
-                        longSparseArray10 = longSparseArray10;
-                        longSparseArray15 = longSparseArray16;
-                        longSparseArray11 = longSparseArray11;
+        }
+        ArrayList<TLRPC.User> arrayList9 = arrayList4;
+        queryFinalized2.dispose();
+        LongSparseArray longSparseArray9 = new LongSparseArray();
+        LongSparseArray longSparseArray10 = new LongSparseArray();
+        LongSparseArray longSparseArray11 = new LongSparseArray();
+        LongSparseIntArray longSparseIntArray3 = new LongSparseIntArray();
+        LongSparseArray longSparseArray12 = new LongSparseArray();
+        LongSparseArray longSparseArray13 = new LongSparseArray();
+        LongSparseArray longSparseArray14 = longSparseArray11;
+        if (!arrayList6.isEmpty()) {
+            getUsersInternal(arrayList6, arrayList3, true);
+            int size2 = arrayList3.size();
+            int i31 = 0;
+            while (i31 < size2) {
+                TLRPC.User user = arrayList3.get(i31);
+                int i32 = size2;
+                HashSet hashSet3 = hashSet2;
+                ArrayList arrayList10 = arrayList7;
+                boolean isDialogMuted = getMessagesController().isDialogMuted(user.id, 0L);
+                int i33 = longSparseIntArray.get(user.id);
+                if (isDialogMuted) {
+                    longSparseArray12.put(user.id, Boolean.TRUE);
+                }
+                if (i33 == 1) {
+                    longSparseArray13.put(user.id, Boolean.TRUE);
+                }
+                if (isUserCollapsedInCommunity(longSparseArray10, user)) {
+                    int[] iArr6 = this.communities[i33];
+                    iArr6[isDialogMuted ? 1 : 0] = iArr6[isDialogMuted ? 1 : 0] + 1;
+                } else if (user.bot) {
+                    int[] iArr7 = this.bots[i33];
+                    iArr7[isDialogMuted ? 1 : 0] = iArr7[isDialogMuted ? 1 : 0] + 1;
+                } else {
+                    if (!user.self && !user.contact) {
+                        int[] iArr8 = this.nonContacts[i33];
+                        iArr8[isDialogMuted ? 1 : 0] = iArr8[isDialogMuted ? 1 : 0] + 1;
                     }
-                    longSparseArray = longSparseArray10;
-                    longSparseArray2 = longSparseArray11;
-                    longSparseArray3 = longSparseArray15;
-                    int size4 = arrayList16.size();
-                    int i29 = 0;
-                    while (i29 < size4) {
-                        TLRPC.User user3 = (TLRPC.User) longSparseArray3.get(arrayList16.get(i29).user_id);
-                        if (user3 == null) {
-                            i20 = size4;
-                            str = str2;
-                            arrayList2 = arrayList16;
-                        } else {
-                            long makeEncryptedDialogId = DialogObject.makeEncryptedDialogId(r5.id);
-                            i20 = size4;
-                            str = str2;
-                            boolean isDialogMuted2 = getMessagesController().isDialogMuted(makeEncryptedDialogId, 0L);
-                            int i30 = longSparseIntArray3.get(makeEncryptedDialogId);
-                            if (isDialogMuted2) {
-                                longSparseArray13.put(user3.id, Boolean.TRUE);
-                            }
-                            if (i30 == 1) {
-                                longSparseArray14.put(user3.id, Boolean.TRUE);
-                            }
-                            if (!user3.self && !user3.contact) {
-                                int[] iArr10 = messagesStorage4.nonContacts[i30];
-                                iArr10[isDialogMuted2 ? 1 : 0] = iArr10[isDialogMuted2 ? 1 : 0] + 1;
-                                i21 = 1;
-                                arrayList2 = arrayList16;
-                                longSparseIntArray5.put(user3.id, longSparseIntArray5.get(user3.id, 0) + i21);
-                            }
-                            int[] iArr11 = messagesStorage4.contacts[i30];
-                            i21 = 1;
-                            iArr11[isDialogMuted2 ? 1 : 0] = iArr11[isDialogMuted2 ? 1 : 0] + 1;
-                            arrayList2 = arrayList16;
-                            longSparseIntArray5.put(user3.id, longSparseIntArray5.get(user3.id, 0) + i21);
+                    int[] iArr9 = this.contacts[i33];
+                    iArr9[isDialogMuted ? 1 : 0] = iArr9[isDialogMuted ? 1 : 0] + 1;
+                }
+                longSparseArray9.put(user.id, user);
+                i31++;
+                size2 = i32;
+                hashSet2 = hashSet3;
+                arrayList7 = arrayList10;
+            }
+        }
+        HashSet hashSet4 = hashSet2;
+        ArrayList arrayList11 = arrayList7;
+        String str2 = ",";
+        if (!arrayList11.isEmpty()) {
+            ArrayList<Long> arrayList12 = new ArrayList<>();
+            ArrayList<TLRPC.EncryptedChat> arrayList13 = new ArrayList<>();
+            getEncryptedChatsInternal(TextUtils.join(",", arrayList11), arrayList13, arrayList12);
+            if (!arrayList12.isEmpty()) {
+                getUsersInternal(arrayList12, arrayList9, true);
+                int size3 = arrayList9.size();
+                int i34 = 0;
+                while (i34 < size3) {
+                    TLRPC.User user2 = arrayList9.get(i34);
+                    LongSparseArray longSparseArray15 = longSparseArray14;
+                    longSparseArray15.put(user2.id, user2);
+                    i34++;
+                    longSparseArray9 = longSparseArray9;
+                    longSparseArray14 = longSparseArray15;
+                    longSparseArray10 = longSparseArray10;
+                }
+                longSparseArray = longSparseArray9;
+                longSparseArray2 = longSparseArray10;
+                longSparseArray3 = longSparseArray14;
+                int size4 = arrayList13.size();
+                int i35 = 0;
+                while (i35 < size4) {
+                    TLRPC.User user3 = (TLRPC.User) longSparseArray3.get(arrayList13.get(i35).user_id);
+                    if (user3 == null) {
+                        i26 = size4;
+                        str = str2;
+                        arrayList2 = arrayList13;
+                    } else {
+                        long makeEncryptedDialogId = DialogObject.makeEncryptedDialogId(r5.id);
+                        i26 = size4;
+                        str = str2;
+                        boolean isDialogMuted2 = getMessagesController().isDialogMuted(makeEncryptedDialogId, 0L);
+                        int i36 = longSparseIntArray.get(makeEncryptedDialogId);
+                        if (isDialogMuted2) {
+                            longSparseArray12.put(user3.id, Boolean.TRUE);
                         }
-                        i29++;
-                        arrayList16 = arrayList2;
-                        str2 = str;
-                        size4 = i20;
+                        if (i36 == 1) {
+                            longSparseArray13.put(user3.id, Boolean.TRUE);
+                        }
+                        if (!user3.self && !user3.contact) {
+                            int[] iArr10 = this.nonContacts[i36];
+                            iArr10[isDialogMuted2 ? 1 : 0] = iArr10[isDialogMuted2 ? 1 : 0] + 1;
+                            i27 = 1;
+                            arrayList2 = arrayList13;
+                            longSparseIntArray3.put(user3.id, longSparseIntArray3.get(user3.id, 0) + i27);
+                        }
+                        int[] iArr11 = this.contacts[i36];
+                        i27 = 1;
+                        iArr11[isDialogMuted2 ? 1 : 0] = iArr11[isDialogMuted2 ? 1 : 0] + 1;
+                        arrayList2 = arrayList13;
+                        longSparseIntArray3.put(user3.id, longSparseIntArray3.get(user3.id, 0) + i27);
                     }
-                    String str3 = str2;
-                    if (!arrayList13.isEmpty()) {
-                        ArrayList<TLRPC.Chat> arrayList17 = arrayList5;
-                        messagesStorage4.getChatsInternal(TextUtils.join(str3, arrayList13), arrayList17);
-                        int size5 = arrayList17.size();
-                        int i31 = 0;
-                        while (i31 < size5) {
-                            TLRPC.Chat chat = arrayList17.get(i31);
-                            if ((chat.migrated_to instanceof TLRPC.TL_inputChannel) || ChatObject.isNotInChat(chat) || ChatObject.isCommunity(chat)) {
-                                arrayList = arrayList17;
-                                longSparseArray9 = longSparseArray2;
-                                i18 = size5;
-                                messagesStorage4.dialogsWithUnread.remove(-chat.id);
-                                messagesStorage4.dialogsWithMentions.remove(-chat.id);
-                            } else {
-                                boolean isDialogMuted3 = getMessagesController().isDialogMuted(-chat.id, 0L, chat);
-                                int i32 = longSparseIntArray3.get(-chat.id);
-                                if (isDialogMuted3) {
-                                    i19 = size5;
-                                    arrayList = arrayList17;
-                                    if (messagesStorage4.dialogsWithMentions.indexOfKey(-chat.id) < 0) {
-                                        c = 1;
-                                        if (isDialogMuted3) {
-                                            i18 = i19;
-                                        } else {
-                                            i18 = i19;
-                                            longSparseArray13.put(-chat.id, Boolean.TRUE);
-                                        }
-                                        if (i32 == 1) {
-                                            longSparseArray14.put(-chat.id, Boolean.TRUE);
-                                        }
-                                        if (ChatObject.isCommunity(chat)) {
-                                            longSparseArray9 = longSparseArray2;
-                                            if (messagesStorage4.isChatCollapsedInCommunity(longSparseArray9, chat)) {
-                                                int[] iArr12 = messagesStorage4.communities[i32];
-                                                iArr12[c] = iArr12[c] + 1;
-                                            } else if (ChatObject.isChannel(chat) && !chat.megagroup) {
-                                                int[] iArr13 = messagesStorage4.channels[i32];
-                                                iArr13[c] = iArr13[c] + 1;
-                                            } else {
-                                                int[] iArr14 = messagesStorage4.groups[i32];
-                                                iArr14[c] = iArr14[c] + 1;
-                                            }
-                                        } else {
-                                            longSparseArray9 = longSparseArray2;
-                                        }
-                                        longSparseArray9.put(chat.id, chat);
+                    i35++;
+                    arrayList13 = arrayList2;
+                    str2 = str;
+                    size4 = i26;
+                }
+                String str3 = str2;
+                if (!hashSet4.isEmpty()) {
+                    HashSet hashSet5 = hashSet4;
+                    ArrayList<TLRPC.Chat> arrayList14 = arrayList5;
+                    getChatsInternal(TextUtils.join(str3, hashSet5), arrayList14);
+                    int size5 = arrayList14.size();
+                    int i37 = 0;
+                    while (i37 < size5) {
+                        TLRPC.Chat chat = arrayList14.get(i37);
+                        if (!hashSet5.contains(Long.valueOf(chat.id))) {
+                            hashSet = hashSet5;
+                            i25 = size5;
+                            arrayList = arrayList14;
+                            longSparseArray8 = longSparseArray2;
+                        } else if ((chat.migrated_to instanceof TLRPC.TL_inputChannel) || ChatObject.isNotInChat(chat) || ChatObject.isCommunity(chat)) {
+                            hashSet = hashSet5;
+                            i25 = size5;
+                            arrayList = arrayList14;
+                            longSparseArray8 = longSparseArray2;
+                            this.dialogsWithUnread.remove(-chat.id);
+                            this.dialogsWithMentions.remove(-chat.id);
+                        } else {
+                            boolean isDialogMuted3 = getMessagesController().isDialogMuted(-chat.id, 0L, chat);
+                            int i38 = longSparseIntArray.get(-chat.id);
+                            if (isDialogMuted3) {
+                                hashSet = hashSet5;
+                                i25 = size5;
+                                if (this.dialogsWithMentions.indexOfKey(-chat.id) < 0) {
+                                    c = 1;
+                                    if (isDialogMuted3) {
+                                        arrayList = arrayList14;
+                                    } else {
+                                        arrayList = arrayList14;
+                                        longSparseArray12.put(-chat.id, Boolean.TRUE);
                                     }
-                                } else {
-                                    i19 = size5;
-                                    arrayList = arrayList17;
+                                    if (i38 == 1) {
+                                        longSparseArray13.put(-chat.id, Boolean.TRUE);
+                                    }
+                                    if (ChatObject.isCommunity(chat)) {
+                                        longSparseArray8 = longSparseArray2;
+                                        if (isChatCollapsedInCommunity(longSparseArray8, chat)) {
+                                            int[] iArr12 = this.communities[i38];
+                                            iArr12[c] = iArr12[c] + 1;
+                                        } else if (ChatObject.isChannel(chat) && !chat.megagroup) {
+                                            int[] iArr13 = this.channels[i38];
+                                            iArr13[c] = iArr13[c] + 1;
+                                        } else {
+                                            int[] iArr14 = this.groups[i38];
+                                            iArr14[c] = iArr14[c] + 1;
+                                        }
+                                    } else {
+                                        longSparseArray8 = longSparseArray2;
+                                    }
+                                    longSparseArray8.put(chat.id, chat);
                                 }
-                                c = 0;
-                                if (isDialogMuted3) {
-                                }
-                                if (i32 == 1) {
-                                }
-                                if (ChatObject.isCommunity(chat)) {
-                                }
-                                longSparseArray9.put(chat.id, chat);
+                            } else {
+                                hashSet = hashSet5;
+                                i25 = size5;
                             }
-                            i31++;
-                            size5 = i18;
-                            longSparseArray2 = longSparseArray9;
-                            arrayList17 = arrayList;
+                            c = 0;
+                            if (isDialogMuted3) {
+                            }
+                            if (i38 == 1) {
+                            }
+                            if (ChatObject.isCommunity(chat)) {
+                            }
+                            longSparseArray8.put(chat.id, chat);
                         }
+                        i37++;
+                        longSparseArray2 = longSparseArray8;
+                        arrayList14 = arrayList;
+                        size5 = i25;
+                        hashSet5 = hashSet;
                     }
-                    LongSparseArray longSparseArray17 = longSparseArray2;
-                    size = messagesStorage4.dialogFilters.size();
-                    i2 = 0;
-                    while (i2 < size + 2) {
-                        boolean z4 = i2 == size;
-                        boolean z5 = i2 == size + 1;
-                        if (i2 < size) {
-                            dialogFilter = messagesStorage4.dialogFilters.get(i2);
-                            if (dialogFilter.pendingUnreadCount >= 0) {
-                                i6 = size;
-                                longSparseArray4 = longSparseArray;
-                                longSparseArray5 = longSparseArray3;
-                                messagesStorage2 = messagesStorage4;
-                                i7 = i2;
-                                longSparseIntArray = longSparseIntArray5;
-                                i2 = i7 + 1;
-                                messagesStorage4 = messagesStorage2;
-                                longSparseIntArray5 = longSparseIntArray;
-                                size = i6;
-                                longSparseArray = longSparseArray4;
-                                longSparseArray3 = longSparseArray5;
-                            } else {
-                                i4 = dialogFilter.flags;
-                            }
+                }
+                LongSparseArray longSparseArray16 = longSparseArray2;
+                size = this.dialogFilters.size();
+                i2 = 0;
+                while (i2 < size + 2) {
+                    boolean z2 = i2 == size;
+                    boolean z3 = i2 == size + 1;
+                    if (i2 < size) {
+                        dialogFilter = this.dialogFilters.get(i2);
+                        if (dialogFilter.pendingUnreadCount >= 0) {
+                            i6 = size;
+                            i7 = i2;
+                            longSparseArray4 = longSparseArray;
+                            longSparseArray5 = longSparseArray3;
+                            i2 = i7 + 1;
+                            longSparseArray = longSparseArray4;
+                            size = i6;
+                            longSparseArray3 = longSparseArray5;
                         } else {
-                            int i33 = MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS;
-                            if (i2 == size) {
-                                if (!getNotificationsController().showBadgeMuted) {
-                                    i33 |= MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED;
-                                }
-                                i3 = MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED;
-                            } else {
-                                i3 = MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED;
-                            }
-                            i4 = i3 | i33;
-                            dialogFilter = null;
+                            i4 = dialogFilter.flags;
                         }
-                        if ((MessagesController.DIALOG_FILTER_FLAG_CONTACTS & i4) != 0) {
-                            if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i4) == 0) {
-                                int[] iArr15 = messagesStorage4.contacts[0];
-                                i5 = iArr15[0];
-                                if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) == 0) {
-                                    i5 += iArr15[1];
-                                }
-                            } else {
-                                i5 = 0;
+                    } else {
+                        int i39 = MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS;
+                        if (i2 == size) {
+                            if (!getNotificationsController().showBadgeMuted) {
+                                i39 |= MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED;
                             }
-                            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i4) == 0) {
-                                int[] iArr16 = messagesStorage4.contacts[1];
-                                i5 += iArr16[0];
-                                if ((i4 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
-                                    i5 += iArr16[1];
-                                }
+                            i3 = MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED;
+                        } else {
+                            i3 = MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED;
+                        }
+                        i4 = i3 | i39;
+                        dialogFilter = null;
+                    }
+                    if ((MessagesController.DIALOG_FILTER_FLAG_CONTACTS & i4) != 0) {
+                        if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i4) == 0) {
+                            int[] iArr15 = this.contacts[0];
+                            i5 = iArr15[0];
+                            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) == 0) {
+                                i5 += iArr15[1];
                             }
                         } else {
                             i5 = 0;
                         }
-                        if ((MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS & i4) != 0) {
-                            if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i4) == 0) {
-                                int[] iArr17 = messagesStorage4.nonContacts[0];
-                                i5 += iArr17[0];
-                                if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) == 0) {
-                                    i5 += iArr17[1];
-                                }
-                            }
-                            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i4) == 0) {
-                                int[] iArr18 = messagesStorage4.nonContacts[1];
-                                i5 += iArr18[0];
-                                if ((i4 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
-                                    i5 += iArr18[1];
-                                }
+                        if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i4) == 0) {
+                            int[] iArr16 = this.contacts[1];
+                            i5 += iArr16[0];
+                            if ((i4 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
+                                i5 += iArr16[1];
                             }
                         }
-                        if ((MessagesController.DIALOG_FILTER_FLAG_GROUPS & i4) != 0) {
-                            if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i4) == 0) {
-                                int[] iArr19 = messagesStorage4.groups[0];
-                                i5 += iArr19[0];
-                                if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) == 0) {
-                                    i5 += iArr19[1];
-                                }
-                            }
-                            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i4) == 0) {
-                                int[] iArr20 = messagesStorage4.groups[1];
-                                i5 += iArr20[0];
-                                if ((i4 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
-                                    i5 += iArr20[1];
-                                }
+                    } else {
+                        i5 = 0;
+                    }
+                    if ((MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS & i4) != 0) {
+                        if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i4) == 0) {
+                            int[] iArr17 = this.nonContacts[0];
+                            i5 += iArr17[0];
+                            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) == 0) {
+                                i5 += iArr17[1];
                             }
                         }
-                        if ((MessagesController.DIALOG_FILTER_FLAG_CHANNELS & i4) != 0) {
-                            if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i4) == 0) {
-                                int[] iArr21 = messagesStorage4.channels[0];
-                                i5 += iArr21[0];
-                                if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) == 0) {
-                                    i5 += iArr21[1];
-                                }
-                            }
-                            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i4) == 0) {
-                                int[] iArr22 = messagesStorage4.channels[1];
-                                i5 += iArr22[0];
-                                if ((i4 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
-                                    i5 += iArr22[1];
-                                }
+                        if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i4) == 0) {
+                            int[] iArr18 = this.nonContacts[1];
+                            i5 += iArr18[0];
+                            if ((i4 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
+                                i5 += iArr18[1];
                             }
                         }
-                        if ((MessagesController.DIALOG_FILTER_FLAG_BOTS & i4) != 0) {
-                            if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i4) == 0) {
-                                int[] iArr23 = messagesStorage4.bots[0];
-                                i5 += iArr23[0];
-                                if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) == 0) {
-                                    i5 += iArr23[1];
-                                }
-                            }
-                            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i4) == 0) {
-                                int[] iArr24 = messagesStorage4.bots[1];
-                                i5 += iArr24[0];
-                                if ((i4 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
-                                    i5 += iArr24[1];
-                                }
+                    }
+                    if ((MessagesController.DIALOG_FILTER_FLAG_GROUPS & i4) != 0) {
+                        if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i4) == 0) {
+                            int[] iArr19 = this.groups[0];
+                            i5 += iArr19[0];
+                            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) == 0) {
+                                i5 += iArr19[1];
                             }
                         }
-                        if (!z5) {
-                            int i34 = MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS;
-                            if ((i4 & i34) == i34) {
-                                int[][] iArr25 = messagesStorage4.communities;
-                                int[] iArr26 = iArr25[0];
-                                int i35 = i5 + iArr26[0];
-                                int[] iArr27 = iArr25[1];
-                                i5 = i35 + iArr27[0];
-                                if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) == 0) {
-                                    i5 = i5 + iArr26[1] + iArr27[1];
-                                }
-                                int i36 = i5;
-                                if (dialogFilter == null) {
-                                    int size6 = dialogFilter.alwaysShow.size();
-                                    int i37 = 0;
-                                    while (i37 < size6) {
-                                        int i38 = size;
-                                        int i39 = size6;
-                                        long longValue3 = dialogFilter.alwaysShow.get(i37).longValue();
-                                        if (DialogObject.isUserDialog(longValue3)) {
-                                            int i40 = i36;
-                                            longSparseArray6 = longSparseArray;
-                                            int i41 = 0;
-                                            while (i41 < 2) {
-                                                LongSparseArray longSparseArray18 = longSparseArray3;
-                                                TLRPC.User user4 = (TLRPC.User) (i41 == 0 ? longSparseArray6 : longSparseArray18).get(longValue3);
-                                                if (user4 != null) {
-                                                    if (i41 == 0) {
-                                                        longSparseArray8 = longSparseArray18;
-                                                        i16 = 1;
-                                                    } else {
-                                                        longSparseArray8 = longSparseArray18;
-                                                        i16 = longSparseIntArray5.get(longValue3, 0);
-                                                        if (i16 == 0) {
-                                                            i14 = i37;
-                                                        }
-                                                    }
-                                                    if (user4.bot) {
-                                                        i17 = MessagesController.DIALOG_FILTER_FLAG_BOTS;
-                                                    } else {
-                                                        if (!user4.self && !user4.contact) {
-                                                            i17 = MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS;
-                                                        }
-                                                        i17 = MessagesController.DIALOG_FILTER_FLAG_CONTACTS;
-                                                    }
-                                                    if ((i17 & i4) == 0) {
-                                                        i14 = i37;
-                                                        i15 = i2;
-                                                    } else {
-                                                        if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) != 0) {
-                                                            i14 = i37;
-                                                            i15 = i2;
-                                                            if (longSparseArray13.indexOfKey(user4.id) >= 0) {
-                                                            }
-                                                        } else {
-                                                            i14 = i37;
-                                                            i15 = i2;
-                                                        }
-                                                        if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i4) != 0) {
-                                                            if (longSparseArray14.indexOfKey(user4.id) < 0) {
-                                                            }
-                                                        }
-                                                        i41++;
-                                                        i2 = i15;
-                                                        longSparseArray3 = longSparseArray8;
-                                                        i37 = i14;
-                                                    }
-                                                    i40 += i16;
-                                                    i41++;
-                                                    i2 = i15;
-                                                    longSparseArray3 = longSparseArray8;
-                                                    i37 = i14;
+                        if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i4) == 0) {
+                            int[] iArr20 = this.groups[1];
+                            i5 += iArr20[0];
+                            if ((i4 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
+                                i5 += iArr20[1];
+                            }
+                        }
+                    }
+                    if ((MessagesController.DIALOG_FILTER_FLAG_CHANNELS & i4) != 0) {
+                        if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i4) == 0) {
+                            int[] iArr21 = this.channels[0];
+                            i5 += iArr21[0];
+                            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) == 0) {
+                                i5 += iArr21[1];
+                            }
+                        }
+                        if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i4) == 0) {
+                            int[] iArr22 = this.channels[1];
+                            i5 += iArr22[0];
+                            if ((i4 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
+                                i5 += iArr22[1];
+                            }
+                        }
+                    }
+                    if ((MessagesController.DIALOG_FILTER_FLAG_BOTS & i4) != 0) {
+                        if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i4) == 0) {
+                            int[] iArr23 = this.bots[0];
+                            i5 += iArr23[0];
+                            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) == 0) {
+                                i5 += iArr23[1];
+                            }
+                        }
+                        if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i4) == 0) {
+                            int[] iArr24 = this.bots[1];
+                            i5 += iArr24[0];
+                            if ((i4 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
+                                i5 += iArr24[1];
+                            }
+                        }
+                    }
+                    if (!z3) {
+                        int i40 = MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS;
+                        if ((i4 & i40) == i40) {
+                            int[][] iArr25 = this.communities;
+                            int[] iArr26 = iArr25[0];
+                            int i41 = i5 + iArr26[0];
+                            int[] iArr27 = iArr25[1];
+                            i5 = i41 + iArr27[0];
+                            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) == 0) {
+                                i5 = i5 + iArr26[1] + iArr27[1];
+                            }
+                            int i42 = i5;
+                            if (dialogFilter == null) {
+                                int size6 = dialogFilter.alwaysShow.size();
+                                int i43 = 0;
+                                while (i43 < size6) {
+                                    LongSparseArray longSparseArray17 = longSparseArray;
+                                    long longValue3 = dialogFilter.alwaysShow.get(i43).longValue();
+                                    if (DialogObject.isUserDialog(longValue3)) {
+                                        i17 = size;
+                                        int i44 = i42;
+                                        int i45 = 0;
+                                        for (int i46 = 2; i45 < i46; i46 = 2) {
+                                            LongSparseArray longSparseArray18 = longSparseArray3;
+                                            TLRPC.User user4 = (TLRPC.User) (i45 == 0 ? longSparseArray17 : longSparseArray18).get(longValue3);
+                                            if (user4 != null) {
+                                                if (i45 == 0) {
+                                                    longSparseArray7 = longSparseArray18;
+                                                    i23 = 1;
                                                 } else {
-                                                    i14 = i37;
-                                                    longSparseArray8 = longSparseArray18;
+                                                    longSparseArray7 = longSparseArray18;
+                                                    i23 = longSparseIntArray3.get(longValue3, 0);
                                                 }
-                                                i15 = i2;
-                                                i41++;
-                                                i2 = i15;
-                                                longSparseArray3 = longSparseArray8;
-                                                i37 = i14;
-                                            }
-                                            i11 = i37;
-                                            i12 = i2;
-                                            longSparseArray7 = longSparseArray3;
-                                            i36 = i40;
-                                        } else {
-                                            i11 = i37;
-                                            longSparseArray6 = longSparseArray;
-                                            longSparseArray7 = longSparseArray3;
-                                            i12 = i2;
-                                            TLRPC.Chat chat2 = (TLRPC.Chat) longSparseArray17.get(-longValue3);
-                                            if (chat2 != null) {
-                                                if (ChatObject.isChannel(chat2) && !chat2.megagroup) {
-                                                    i13 = MessagesController.DIALOG_FILTER_FLAG_CHANNELS;
+                                                if (user4.bot) {
+                                                    i24 = MessagesController.DIALOG_FILTER_FLAG_BOTS;
                                                 } else {
-                                                    i13 = MessagesController.DIALOG_FILTER_FLAG_GROUPS;
+                                                    if (!user4.self && !user4.contact) {
+                                                        i24 = MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS;
+                                                    }
+                                                    i24 = MessagesController.DIALOG_FILTER_FLAG_CONTACTS;
                                                 }
-                                                if ((i13 & i4) != 0) {
+                                                if ((i24 & i4) == 0) {
+                                                    i21 = size6;
+                                                    i22 = i2;
+                                                } else {
                                                     if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) != 0) {
-                                                        if (longSparseArray13.indexOfKey(-chat2.id) >= 0 && messagesStorage4.dialogsWithMentions.indexOfKey(-chat2.id) < 0) {
+                                                        i21 = size6;
+                                                        i22 = i2;
+                                                        if (longSparseArray12.indexOfKey(user4.id) >= 0) {
                                                         }
+                                                    } else {
+                                                        i21 = size6;
+                                                        i22 = i2;
                                                     }
                                                     if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i4) != 0) {
-                                                        if (longSparseArray14.indexOfKey(-chat2.id) < 0) {
+                                                        if (longSparseArray13.indexOfKey(user4.id) < 0) {
                                                         }
                                                     }
+                                                    i45++;
+                                                    i2 = i22;
+                                                    longSparseArray3 = longSparseArray7;
+                                                    size6 = i21;
                                                 }
-                                                i36++;
+                                                i44 += i23;
+                                                i45++;
+                                                i2 = i22;
+                                                longSparseArray3 = longSparseArray7;
+                                                size6 = i21;
+                                            } else {
+                                                longSparseArray7 = longSparseArray18;
                                             }
+                                            i21 = size6;
+                                            i22 = i2;
+                                            i45++;
+                                            i2 = i22;
+                                            longSparseArray3 = longSparseArray7;
+                                            size6 = i21;
                                         }
-                                        i37 = i11 + 1;
-                                        i2 = i12;
-                                        size = i38;
-                                        size6 = i39;
-                                        longSparseArray = longSparseArray6;
-                                        longSparseArray3 = longSparseArray7;
+                                        i18 = size6;
+                                        i19 = i2;
+                                        longSparseArray6 = longSparseArray3;
+                                        i42 = i44;
+                                    } else {
+                                        i17 = size;
+                                        i18 = size6;
+                                        i19 = i2;
+                                        longSparseArray6 = longSparseArray3;
+                                        TLRPC.Chat chat2 = (TLRPC.Chat) longSparseArray16.get(-longValue3);
+                                        if (chat2 != null) {
+                                            if (ChatObject.isChannel(chat2) && !chat2.megagroup) {
+                                                i20 = MessagesController.DIALOG_FILTER_FLAG_CHANNELS;
+                                            } else {
+                                                i20 = MessagesController.DIALOG_FILTER_FLAG_GROUPS;
+                                            }
+                                            if ((i20 & i4) != 0) {
+                                                if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) != 0) {
+                                                    if (longSparseArray12.indexOfKey(-chat2.id) >= 0 && this.dialogsWithMentions.indexOfKey(-chat2.id) < 0) {
+                                                    }
+                                                }
+                                                if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i4) != 0) {
+                                                    if (longSparseArray13.indexOfKey(-chat2.id) < 0) {
+                                                    }
+                                                }
+                                            }
+                                            i42++;
+                                        }
                                     }
-                                    i6 = size;
-                                    longSparseArray4 = longSparseArray;
-                                    longSparseArray5 = longSparseArray3;
-                                    i7 = i2;
-                                    r2 = dialogFilter.neverShow.size();
-                                    int i42 = 0;
-                                    while (i42 < r2) {
-                                        long longValue4 = dialogFilter.neverShow.get(i42).longValue();
-                                        if (DialogObject.isUserDialog(longValue4)) {
-                                            int i43 = i36;
-                                            int i44 = 0;
-                                            int i45 = 2;
-                                            boolean z6 = r2;
-                                            while (i44 < i45) {
-                                                try {
-                                                    TLRPC.User user5 = (TLRPC.User) (i44 == 0 ? longSparseArray4 : longSparseArray5).get(longValue4);
-                                                    if (user5 != null) {
-                                                        if (i44 == 0) {
-                                                            z3 = z6;
-                                                            i9 = 1;
-                                                        } else {
-                                                            z3 = z6;
-                                                            i9 = longSparseIntArray5.get(longValue4, 0);
-                                                            z3 = z3;
-                                                            if (i9 == 0) {
-                                                            }
-                                                        }
-                                                        if (user5.bot) {
-                                                            i10 = MessagesController.DIALOG_FILTER_FLAG_BOTS;
-                                                        } else {
-                                                            if (!user5.self && !user5.contact) {
-                                                                i10 = MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS;
-                                                            }
-                                                            i10 = MessagesController.DIALOG_FILTER_FLAG_CONTACTS;
-                                                        }
-                                                        if ((i10 & i4) != 0) {
-                                                            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i4) != 0 && longSparseArray14.indexOfKey(user5.id) >= 0) {
-                                                            }
-                                                            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) == 0 || longSparseArray13.indexOfKey(user5.id) < 0) {
-                                                                i43 -= i9;
-                                                            }
+                                    i43++;
+                                    i2 = i19;
+                                    longSparseArray = longSparseArray17;
+                                    size = i17;
+                                    longSparseArray3 = longSparseArray6;
+                                    size6 = i18;
+                                }
+                                i6 = size;
+                                int i47 = i2;
+                                longSparseArray4 = longSparseArray;
+                                longSparseArray5 = longSparseArray3;
+                                int size7 = dialogFilter.neverShow.size();
+                                int i48 = 0;
+                                while (i48 < size7) {
+                                    long longValue4 = dialogFilter.neverShow.get(i48).longValue();
+                                    if (DialogObject.isUserDialog(longValue4)) {
+                                        int i49 = 0;
+                                        while (i49 < 2) {
+                                            TLRPC.User user5 = (TLRPC.User) (i49 == 0 ? longSparseArray4 : longSparseArray5).get(longValue4);
+                                            if (user5 != null) {
+                                                if (i49 == 0) {
+                                                    i12 = i47;
+                                                    i15 = 1;
+                                                } else {
+                                                    i12 = i47;
+                                                    i15 = longSparseIntArray3.get(longValue4, 0);
+                                                }
+                                                if (user5.bot) {
+                                                    i16 = MessagesController.DIALOG_FILTER_FLAG_BOTS;
+                                                } else {
+                                                    if (!user5.self && !user5.contact) {
+                                                        i16 = MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS;
+                                                    }
+                                                    i16 = MessagesController.DIALOG_FILTER_FLAG_CONTACTS;
+                                                }
+                                                if ((i16 & i4) != 0) {
+                                                    if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i4) != 0) {
+                                                        i14 = size7;
+                                                        i13 = i48;
+                                                        if (longSparseArray13.indexOfKey(user5.id) >= 0) {
+                                                            i49++;
+                                                            size7 = i14;
+                                                            i47 = i12;
+                                                            i48 = i13;
                                                         }
                                                     } else {
-                                                        z3 = z6;
+                                                        i14 = size7;
+                                                        i13 = i48;
                                                     }
-                                                    i44++;
-                                                    i45 = 2;
-                                                    z6 = z3;
-                                                } catch (Exception e6) {
-                                                    e = e6;
-                                                    sQLiteCursor = null;
-                                                    messagesStorage3 = this;
-                                                    exc = e;
-                                                    messagesStorage = messagesStorage3;
-                                                    messagesStorage.checkSQLException(exc);
-                                                    if (sQLiteCursor != null) {
+                                                    if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) == 0 || longSparseArray12.indexOfKey(user5.id) < 0) {
+                                                        i42 -= i15;
                                                     }
-                                                } catch (Throwable th8) {
-                                                    th = th8;
-                                                    sQLiteCursor = null;
-                                                    th = th;
-                                                    if (sQLiteCursor == null) {
-                                                    }
+                                                    i49++;
+                                                    size7 = i14;
+                                                    i47 = i12;
+                                                    i48 = i13;
                                                 }
+                                            } else {
+                                                i12 = i47;
                                             }
-                                            z2 = z6;
-                                            r2 = this;
-                                            i36 = i43;
-                                        } else {
-                                            z2 = r2 == true ? 1 : 0;
-                                            try {
-                                                TLRPC.Chat chat3 = (TLRPC.Chat) longSparseArray17.get(-longValue4);
-                                                if (chat3 != null) {
-                                                    if (ChatObject.isChannel(chat3) && !chat3.megagroup) {
-                                                        i8 = MessagesController.DIALOG_FILTER_FLAG_CHANNELS;
-                                                    } else {
-                                                        i8 = MessagesController.DIALOG_FILTER_FLAG_GROUPS;
-                                                    }
-                                                    if ((i8 & i4) != 0 && ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i4) == 0 || longSparseArray14.indexOfKey(-chat3.id) < 0)) {
-                                                        if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) == 0 || longSparseArray13.indexOfKey(-chat3.id) < 0) {
-                                                            r2 = this;
-                                                            longSparseIntArray2 = longSparseIntArray5;
-                                                        } else {
-                                                            r2 = this;
-                                                            try {
-                                                                longSparseIntArray2 = longSparseIntArray5;
-                                                                if (r2.dialogsWithMentions.indexOfKey(-chat3.id) >= 0) {
-                                                                    r2 = r2;
-                                                                } else {
-                                                                    i42++;
-                                                                    messagesStorage4 = r2;
-                                                                    longSparseIntArray5 = longSparseIntArray2;
-                                                                    r2 = z2;
-                                                                }
-                                                            } catch (Exception e7) {
-                                                                e = e7;
-                                                                exc = e;
-                                                                sQLiteCursor = null;
-                                                                messagesStorage = r2;
-                                                                messagesStorage.checkSQLException(exc);
-                                                                if (sQLiteCursor != null) {
-                                                                    sQLiteCursor.dispose();
-                                                                    return;
-                                                                }
-                                                                return;
-                                                            } catch (Throwable th9) {
-                                                                th = th9;
-                                                                th = th;
-                                                                sQLiteCursor = null;
-                                                                if (sQLiteCursor == null) {
-                                                                }
-                                                            }
-                                                        }
-                                                        i36--;
-                                                        i42++;
-                                                        messagesStorage4 = r2;
-                                                        longSparseIntArray5 = longSparseIntArray2;
-                                                        r2 = z2;
-                                                    }
-                                                }
-                                                r2 = this;
-                                                z2 = z2;
-                                            } catch (Exception e8) {
-                                                e = e8;
-                                                r2 = this;
-                                                exc = e;
-                                                sQLiteCursor = null;
-                                                messagesStorage = r2;
-                                                messagesStorage.checkSQLException(exc);
-                                                if (sQLiteCursor != null) {
-                                                }
-                                            } catch (Throwable th10) {
-                                                th = th10;
-                                                th = th;
-                                                sQLiteCursor = null;
-                                                if (sQLiteCursor == null) {
-                                                }
+                                            i14 = size7;
+                                            i13 = i48;
+                                            i49++;
+                                            size7 = i14;
+                                            i47 = i12;
+                                            i48 = i13;
+                                        }
+                                        i8 = i47;
+                                        i9 = size7;
+                                        i10 = i48;
+                                    } else {
+                                        i8 = i47;
+                                        i9 = size7;
+                                        i10 = i48;
+                                        TLRPC.Chat chat3 = (TLRPC.Chat) longSparseArray16.get(-longValue4);
+                                        if (chat3 != null) {
+                                            if (ChatObject.isChannel(chat3) && !chat3.megagroup) {
+                                                i11 = MessagesController.DIALOG_FILTER_FLAG_CHANNELS;
+                                            } else {
+                                                i11 = MessagesController.DIALOG_FILTER_FLAG_GROUPS;
+                                            }
+                                            if ((i11 & i4) != 0 && (((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i4) == 0 || longSparseArray13.indexOfKey(-chat3.id) < 0) && ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i4) == 0 || longSparseArray12.indexOfKey(-chat3.id) < 0 || this.dialogsWithMentions.indexOfKey(-chat3.id) >= 0))) {
+                                                i42--;
                                             }
                                         }
-                                        longSparseIntArray2 = longSparseIntArray5;
-                                        i42++;
-                                        messagesStorage4 = r2;
-                                        longSparseIntArray5 = longSparseIntArray2;
-                                        r2 = z2;
                                     }
-                                    messagesStorage2 = messagesStorage4;
-                                    longSparseIntArray = longSparseIntArray5;
-                                    dialogFilter.pendingUnreadCount = i36;
+                                    i48 = i10 + 1;
+                                    size7 = i9;
+                                    i47 = i8;
+                                }
+                                i7 = i47;
+                                dialogFilter.pendingUnreadCount = i42;
+                                if (z) {
+                                    dialogFilter.unreadCount = i42;
+                                }
+                            } else {
+                                i6 = size;
+                                i7 = i2;
+                                longSparseArray4 = longSparseArray;
+                                longSparseArray5 = longSparseArray3;
+                                if (z2) {
+                                    this.pendingMainUnreadCount = i42;
                                     if (z) {
-                                        dialogFilter.unreadCount = i36;
+                                        this.mainUnreadCount = i42;
                                     }
-                                } else {
-                                    i6 = size;
-                                    longSparseArray4 = longSparseArray;
-                                    longSparseArray5 = longSparseArray3;
-                                    messagesStorage2 = messagesStorage4;
-                                    i7 = i2;
-                                    longSparseIntArray = longSparseIntArray5;
-                                    if (z4) {
-                                        messagesStorage2.pendingMainUnreadCount = i36;
-                                        if (z) {
-                                            messagesStorage2.mainUnreadCount = i36;
-                                        }
-                                    } else if (z5) {
-                                        messagesStorage2.pendingArchiveUnreadCount = i36;
-                                        if (z) {
-                                            messagesStorage2.archiveUnreadCount = i36;
-                                        }
+                                } else if (z3) {
+                                    this.pendingArchiveUnreadCount = i42;
+                                    if (z) {
+                                        this.archiveUnreadCount = i42;
                                     }
                                 }
-                                i2 = i7 + 1;
-                                messagesStorage4 = messagesStorage2;
-                                longSparseIntArray5 = longSparseIntArray;
-                                size = i6;
-                                longSparseArray = longSparseArray4;
-                                longSparseArray3 = longSparseArray5;
                             }
+                            i2 = i7 + 1;
+                            longSparseArray = longSparseArray4;
+                            size = i6;
+                            longSparseArray3 = longSparseArray5;
                         }
-                        int i362 = i5;
-                        if (dialogFilter == null) {
-                        }
-                        i2 = i7 + 1;
-                        messagesStorage4 = messagesStorage2;
-                        longSparseIntArray5 = longSparseIntArray;
-                        size = i6;
-                        longSparseArray = longSparseArray4;
-                        longSparseArray3 = longSparseArray5;
                     }
+                    int i422 = i5;
+                    if (dialogFilter == null) {
+                    }
+                    i2 = i7 + 1;
+                    longSparseArray = longSparseArray4;
+                    size = i6;
+                    longSparseArray3 = longSparseArray5;
                 }
             }
-            longSparseArray = longSparseArray10;
-            longSparseArray2 = longSparseArray11;
-            longSparseArray3 = longSparseArray15;
-            String str32 = str2;
-            if (!arrayList13.isEmpty()) {
-            }
-            LongSparseArray longSparseArray172 = longSparseArray2;
-            size = messagesStorage4.dialogFilters.size();
-            i2 = 0;
-            while (i2 < size + 2) {
-            }
-        } catch (Exception e9) {
-            e = e9;
-            r2 = messagesStorage4;
-        } catch (Throwable th11) {
-            th = th11;
+        }
+        longSparseArray = longSparseArray9;
+        longSparseArray2 = longSparseArray10;
+        longSparseArray3 = longSparseArray14;
+        String str32 = str2;
+        if (!hashSet4.isEmpty()) {
+        }
+        LongSparseArray longSparseArray162 = longSparseArray2;
+        size = this.dialogFilters.size();
+        i2 = 0;
+        while (i2 < size + 2) {
         }
     }
 
@@ -10949,25 +10821,38 @@ public class MessagesStorage extends BaseController {
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagesReadContent, Long.valueOf(j), arrayList);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:210:0x0451, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:211:0x0459, code lost:
     
-        if (r1.indexOfKey(-r3.id) >= 0) goto L200;
+        if (r8.indexOfKey(-r4.id) >= 0) goto L202;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:377:0x070e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:606:0x0a28, code lost:
     
-        if (r1.dialogsWithMentions.indexOfKey(-r0.id) < 0) goto L376;
+        if (r12.indexOfKey(r8.id) >= 0) goto L592;
      */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x034b  */
-    /* JADX WARN: Removed duplicated region for block: B:221:0x0494  */
-    /* JADX WARN: Removed duplicated region for block: B:241:0x0503  */
-    /* JADX WARN: Removed duplicated region for block: B:254:0x053b  */
-    /* JADX WARN: Removed duplicated region for block: B:301:0x05f9  */
-    /* JADX WARN: Removed duplicated region for block: B:472:0x0b29  */
-    /* JADX WARN: Removed duplicated region for block: B:474:0x0b32  */
-    /* JADX WARN: Removed duplicated region for block: B:496:0x087a  */
-    /* JADX WARN: Removed duplicated region for block: B:509:0x08ac  */
-    /* JADX WARN: Removed duplicated region for block: B:556:0x0958  */
-    /* JADX WARN: Removed duplicated region for block: B:567:0x098d  */
+    /* JADX WARN: Code restructure failed: missing block: B:617:0x0a78, code lost:
+    
+        if (r12.indexOfKey(r2.id) >= 0) goto L618;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:645:0x0a4b, code lost:
+    
+        r4 = r4 + 1;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x0340  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x03de  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x03ef  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x0404  */
+    /* JADX WARN: Removed duplicated region for block: B:212:0x03ea  */
+    /* JADX WARN: Removed duplicated region for block: B:221:0x049e  */
+    /* JADX WARN: Removed duplicated region for block: B:241:0x050d  */
+    /* JADX WARN: Removed duplicated region for block: B:254:0x0545  */
+    /* JADX WARN: Removed duplicated region for block: B:301:0x0603  */
+    /* JADX WARN: Removed duplicated region for block: B:472:0x0b45  */
+    /* JADX WARN: Removed duplicated region for block: B:474:0x0b4c  */
+    /* JADX WARN: Removed duplicated region for block: B:494:0x0876  */
+    /* JADX WARN: Removed duplicated region for block: B:507:0x08a8  */
+    /* JADX WARN: Removed duplicated region for block: B:554:0x0954  */
+    /* JADX WARN: Removed duplicated region for block: B:565:0x0989  */
+    /* JADX WARN: Removed duplicated region for block: B:690:0x0b3f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -10982,16 +10867,19 @@ public class MessagesStorage extends BaseController {
         int i5;
         MessagesController.DialogFilter dialogFilter;
         int i6;
-        LongSparseArray longSparseArray3;
         int i7;
         int i8;
+        LongSparseArray longSparseArray3;
         LongSparseArray longSparseArray4;
         LongSparseArray longSparseArray5;
         LongSparseArray longSparseArray6;
         LongSparseArray longSparseArray7;
-        int i9;
         LongSparseArray longSparseArray8;
         LongSparseArray longSparseArray9;
+        int i9;
+        LongSparseArray longSparseArray10;
+        LongSparseArray longSparseArray11;
+        LongSparseArray longSparseArray12;
         int i10;
         char c;
         char c2;
@@ -11004,19 +10892,17 @@ public class MessagesStorage extends BaseController {
         char c5;
         int i15;
         int i16;
-        MessagesStorage messagesStorage;
         int i17;
         int i18;
         int i19;
         int intValue;
         int i20;
-        LongSparseArray longSparseArray10;
-        LongSparseArray longSparseArray11;
-        LongSparseArray longSparseArray12;
-        int i21;
-        MessagesStorage messagesStorage2;
         LongSparseArray longSparseArray13;
         LongSparseArray longSparseArray14;
+        LongSparseArray longSparseArray15;
+        int i21;
+        LongSparseArray longSparseArray16;
+        LongSparseArray longSparseArray17;
         int intValue2;
         int i22;
         char c6;
@@ -11028,364 +10914,382 @@ public class MessagesStorage extends BaseController {
         int i26;
         char c9;
         char c10;
+        HashSet hashSet;
         int i27;
         ArrayList<TLRPC.Chat> arrayList;
-        LongSparseArray longSparseArray15;
-        LongSparseArray longSparseArray16;
-        LongSparseArray longSparseArray17;
-        String str;
-        ArrayList<TLRPC.EncryptedChat> arrayList2;
         int i28;
         LongSparseArray longSparseArray18;
-        ArrayList<TLRPC.User> arrayList3;
         LongSparseArray longSparseArray19;
+        LongSparseArray longSparseArray20;
+        String str;
+        ArrayList<TLRPC.EncryptedChat> arrayList2;
+        int i29;
+        LongSparseArray longSparseArray21;
+        ArrayList<TLRPC.User> arrayList3;
+        LongSparseArray longSparseArray22;
         LongSparseIntArray longSparseIntArray3;
-        MessagesStorage messagesStorage3 = this;
         if ((longSparseIntArray == null || longSparseIntArray.size() == 0) && (longSparseIntArray2 == null || longSparseIntArray2.size() == 0)) {
             return;
         }
-        int i29 = 0;
+        int i30 = 0;
         while (true) {
-            if (i29 >= 2) {
+            if (i30 >= 2) {
                 break;
             }
-            for (int i30 = 0; i30 < 2; i30++) {
-                int[] iArr = messagesStorage3.contacts[i29];
-                int[] iArr2 = messagesStorage3.nonContacts[i29];
-                int[] iArr3 = messagesStorage3.bots[i29];
-                int[] iArr4 = messagesStorage3.channels[i29];
-                int[] iArr5 = messagesStorage3.groups[i29];
-                messagesStorage3.communities[i29][i30] = 0;
-                iArr5[i30] = 0;
-                iArr4[i30] = 0;
-                iArr3[i30] = 0;
-                iArr2[i30] = 0;
-                iArr[i30] = 0;
+            for (int i31 = 0; i31 < 2; i31++) {
+                int[] iArr = this.contacts[i30];
+                int[] iArr2 = this.nonContacts[i30];
+                int[] iArr3 = this.bots[i30];
+                int[] iArr4 = this.channels[i30];
+                int[] iArr5 = this.groups[i30];
+                this.communities[i30][i31] = 0;
+                iArr5[i31] = 0;
+                iArr4[i31] = 0;
+                iArr3[i31] = 0;
+                iArr2[i31] = 0;
+                iArr[i31] = 0;
             }
-            int[] iArr6 = messagesStorage3.mentionChannels;
-            messagesStorage3.mentionGroups[i29] = 0;
-            iArr6[i29] = 0;
-            i29++;
+            int[] iArr6 = this.mentionChannels;
+            this.mentionGroups[i30] = 0;
+            iArr6[i30] = 0;
+            i30++;
         }
         ArrayList<TLRPC.User> arrayList4 = new ArrayList<>();
         ArrayList<TLRPC.User> arrayList5 = new ArrayList<>();
         ArrayList<TLRPC.Chat> arrayList6 = new ArrayList<>();
         ArrayList<Long> arrayList7 = new ArrayList<>();
+        HashSet hashSet2 = new HashSet();
         ArrayList arrayList8 = new ArrayList();
-        ArrayList arrayList9 = new ArrayList();
-        LongSparseArray longSparseArray20 = new LongSparseArray();
-        LongSparseArray longSparseArray21 = new LongSparseArray();
-        int i31 = 0;
-        for (i = 2; i31 < i; i = 2) {
-            LongSparseIntArray longSparseIntArray4 = i31 == 0 ? longSparseIntArray : longSparseIntArray2;
+        LongSparseArray longSparseArray23 = new LongSparseArray();
+        LongSparseArray longSparseArray24 = new LongSparseArray();
+        int i32 = 0;
+        for (i = 2; i32 < i; i = 2) {
+            LongSparseIntArray longSparseIntArray4 = i32 == 0 ? longSparseIntArray : longSparseIntArray2;
             if (longSparseIntArray4 != null) {
-                int i32 = 0;
-                while (i32 < longSparseIntArray4.size()) {
-                    int valueAt = longSparseIntArray4.valueAt(i32);
+                int i33 = 0;
+                while (i33 < longSparseIntArray4.size()) {
+                    int valueAt = longSparseIntArray4.valueAt(i33);
                     Integer valueOf = Integer.valueOf(valueAt);
                     if ((!z || valueAt == 0) && (z || valueAt != 0)) {
                         arrayList3 = arrayList4;
-                        long keyAt = longSparseIntArray4.keyAt(i32);
+                        long keyAt = longSparseIntArray4.keyAt(i33);
                         if (!z) {
-                            if (messagesStorage3.dialogsWithMentions.indexOfKey(keyAt) < 0 && messagesStorage3.dialogsWithUnread.indexOfKey(keyAt) < 0) {
-                                longSparseArray21.put(keyAt, valueOf);
+                            if (this.dialogsWithMentions.indexOfKey(keyAt) < 0 && this.dialogsWithUnread.indexOfKey(keyAt) < 0) {
+                                longSparseArray24.put(keyAt, valueOf);
                             }
-                            if (i31 == 0) {
-                                messagesStorage3.dialogsWithUnread.put(keyAt, valueOf);
+                            if (i32 == 0) {
+                                this.dialogsWithUnread.put(keyAt, valueOf);
                             } else {
-                                messagesStorage3.dialogsWithMentions.put(keyAt, valueOf);
+                                this.dialogsWithMentions.put(keyAt, valueOf);
                             }
-                        } else if (i31 == 0) {
-                            messagesStorage3.dialogsWithUnread.remove(keyAt);
+                        } else if (i32 == 0) {
+                            this.dialogsWithUnread.remove(keyAt);
                         } else {
-                            messagesStorage3.dialogsWithMentions.remove(keyAt);
+                            this.dialogsWithMentions.remove(keyAt);
                         }
-                        if (longSparseArray20.indexOfKey(keyAt) < 0) {
-                            SQLiteDatabase sQLiteDatabase = messagesStorage3.database;
+                        if (longSparseArray23.indexOfKey(keyAt) < 0) {
+                            SQLiteDatabase sQLiteDatabase = this.database;
                             StringBuilder sb = new StringBuilder();
                             longSparseIntArray3 = longSparseIntArray4;
                             sb.append("SELECT folder_id FROM dialogs WHERE did = ");
                             sb.append(keyAt);
-                            longSparseArray19 = longSparseArray21;
+                            longSparseArray22 = longSparseArray24;
                             SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized(sb.toString(), new Object[0]);
                             int intValue3 = queryFinalized.next() ? queryFinalized.intValue(0) : 0;
                             queryFinalized.dispose();
-                            longSparseArray20.put(keyAt, Integer.valueOf(intValue3));
+                            longSparseArray23.put(keyAt, Integer.valueOf(intValue3));
                         } else {
-                            longSparseArray19 = longSparseArray21;
+                            longSparseArray22 = longSparseArray24;
                             longSparseIntArray3 = longSparseIntArray4;
                         }
                         if (DialogObject.isEncryptedDialog(keyAt)) {
                             int encryptedChatId = DialogObject.getEncryptedChatId(keyAt);
-                            if (!arrayList9.contains(Integer.valueOf(encryptedChatId))) {
-                                arrayList9.add(Integer.valueOf(encryptedChatId));
+                            if (!arrayList8.contains(Integer.valueOf(encryptedChatId))) {
+                                arrayList8.add(Integer.valueOf(encryptedChatId));
                             }
                         } else if (DialogObject.isUserDialog(keyAt)) {
                             if (!arrayList7.contains(Long.valueOf(keyAt))) {
                                 arrayList7.add(Long.valueOf(keyAt));
                             }
                         } else {
-                            long j = -keyAt;
-                            if (!arrayList8.contains(Long.valueOf(j))) {
-                                arrayList8.add(Long.valueOf(j));
-                            }
+                            hashSet2.add(Long.valueOf(-keyAt));
                         }
                     } else {
                         arrayList3 = arrayList4;
-                        longSparseArray19 = longSparseArray21;
+                        longSparseArray22 = longSparseArray24;
                         longSparseIntArray3 = longSparseIntArray4;
                     }
-                    i32++;
+                    i33++;
                     arrayList4 = arrayList3;
-                    longSparseArray21 = longSparseArray19;
+                    longSparseArray24 = longSparseArray22;
                     longSparseIntArray4 = longSparseIntArray3;
                 }
             }
-            i31++;
+            i32++;
             arrayList4 = arrayList4;
-            longSparseArray21 = longSparseArray21;
+            longSparseArray24 = longSparseArray24;
         }
-        ArrayList<TLRPC.User> arrayList10 = arrayList4;
-        LongSparseArray longSparseArray22 = longSparseArray21;
-        LongSparseArray longSparseArray23 = new LongSparseArray();
-        LongSparseArray longSparseArray24 = new LongSparseArray();
-        LongSparseArray longSparseArray25 = new LongSparseArray();
+        ArrayList<TLRPC.User> arrayList9 = arrayList4;
+        LongSparseArray longSparseArray25 = longSparseArray24;
         LongSparseArray longSparseArray26 = new LongSparseArray();
         LongSparseArray longSparseArray27 = new LongSparseArray();
         LongSparseArray longSparseArray28 = new LongSparseArray();
+        LongSparseArray longSparseArray29 = new LongSparseArray();
+        LongSparseArray longSparseArray30 = new LongSparseArray();
+        LongSparseArray longSparseArray31 = new LongSparseArray();
         if (!arrayList7.isEmpty()) {
-            messagesStorage3.getUsersInternal(arrayList7, arrayList10);
-            int size2 = arrayList10.size();
-            int i33 = 0;
-            while (i33 < size2) {
-                TLRPC.User user = arrayList10.get(i33);
-                ArrayList<TLRPC.Chat> arrayList11 = arrayList6;
-                int i34 = size2;
-                ArrayList arrayList12 = arrayList8;
-                ArrayList arrayList13 = arrayList9;
+            getUsersInternal(arrayList7, arrayList9);
+            int size2 = arrayList9.size();
+            int i34 = 0;
+            while (i34 < size2) {
+                TLRPC.User user = arrayList9.get(i34);
+                ArrayList<TLRPC.Chat> arrayList10 = arrayList6;
+                int i35 = size2;
+                HashSet hashSet3 = hashSet2;
+                ArrayList arrayList11 = arrayList8;
                 boolean isDialogMuted = getMessagesController().isDialogMuted(user.id, 0L);
-                Integer num = (Integer) longSparseArray20.get(user.id);
+                Integer num = (Integer) longSparseArray23.get(user.id);
                 int intValue4 = (num == null || num.intValue() < 0 || num.intValue() > 1) ? 0 : num.intValue();
                 if (isDialogMuted) {
-                    longSparseArray27.put(user.id, Boolean.TRUE);
+                    longSparseArray30.put(user.id, Boolean.TRUE);
                 }
                 if (intValue4 == 1) {
-                    longSparseArray28.put(user.id, Boolean.TRUE);
+                    longSparseArray31.put(user.id, Boolean.TRUE);
                 }
-                if (messagesStorage3.isUserCollapsedInCommunity(longSparseArray24, user)) {
-                    int[] iArr7 = messagesStorage3.communities[intValue4];
+                if (isUserCollapsedInCommunity(longSparseArray27, user)) {
+                    int[] iArr7 = this.communities[intValue4];
                     iArr7[isDialogMuted ? 1 : 0] = iArr7[isDialogMuted ? 1 : 0] + 1;
                 } else if (user.bot) {
-                    int[] iArr8 = messagesStorage3.bots[intValue4];
+                    int[] iArr8 = this.bots[intValue4];
                     iArr8[isDialogMuted ? 1 : 0] = iArr8[isDialogMuted ? 1 : 0] + 1;
                 } else if (user.self || user.contact) {
-                    int[] iArr9 = messagesStorage3.contacts[intValue4];
+                    int[] iArr9 = this.contacts[intValue4];
                     iArr9[isDialogMuted ? 1 : 0] = iArr9[isDialogMuted ? 1 : 0] + 1;
                 } else {
-                    int[] iArr10 = messagesStorage3.nonContacts[intValue4];
+                    int[] iArr10 = this.nonContacts[intValue4];
                     iArr10[isDialogMuted ? 1 : 0] = iArr10[isDialogMuted ? 1 : 0] + 1;
                 }
-                longSparseArray23.put(user.id, user);
-                i33++;
-                arrayList6 = arrayList11;
-                size2 = i34;
-                arrayList8 = arrayList12;
-                arrayList9 = arrayList13;
+                longSparseArray26.put(user.id, user);
+                i34++;
+                arrayList6 = arrayList10;
+                size2 = i35;
+                hashSet2 = hashSet3;
+                arrayList8 = arrayList11;
             }
         }
-        ArrayList<TLRPC.Chat> arrayList14 = arrayList6;
-        ArrayList arrayList15 = arrayList8;
-        ArrayList arrayList16 = arrayList9;
+        ArrayList<TLRPC.Chat> arrayList12 = arrayList6;
+        HashSet hashSet4 = hashSet2;
+        ArrayList arrayList13 = arrayList8;
         String str2 = ",";
-        if (!arrayList16.isEmpty()) {
-            ArrayList<Long> arrayList17 = new ArrayList<>();
-            ArrayList<TLRPC.EncryptedChat> arrayList18 = new ArrayList<>();
-            messagesStorage3.getEncryptedChatsInternal(TextUtils.join(",", arrayList16), arrayList18, arrayList17);
-            if (!arrayList17.isEmpty()) {
-                messagesStorage3.getUsersInternal(arrayList17, arrayList5);
+        if (!arrayList13.isEmpty()) {
+            ArrayList<Long> arrayList14 = new ArrayList<>();
+            ArrayList<TLRPC.EncryptedChat> arrayList15 = new ArrayList<>();
+            getEncryptedChatsInternal(TextUtils.join(",", arrayList13), arrayList15, arrayList14);
+            if (!arrayList14.isEmpty()) {
+                getUsersInternal(arrayList14, arrayList5);
                 int size3 = arrayList5.size();
-                int i35 = 0;
-                while (i35 < size3) {
-                    TLRPC.User user2 = arrayList5.get(i35);
-                    longSparseArray25.put(user2.id, user2);
-                    i35++;
-                    longSparseArray23 = longSparseArray23;
-                }
-                longSparseArray = longSparseArray25;
-                longSparseArray2 = longSparseArray23;
-                int size4 = arrayList18.size();
                 int i36 = 0;
-                while (i36 < size4) {
-                    TLRPC.User user3 = (TLRPC.User) longSparseArray.get(arrayList18.get(i36).user_id);
+                while (i36 < size3) {
+                    TLRPC.User user2 = arrayList5.get(i36);
+                    longSparseArray28.put(user2.id, user2);
+                    i36++;
+                    longSparseArray26 = longSparseArray26;
+                }
+                longSparseArray = longSparseArray28;
+                longSparseArray2 = longSparseArray26;
+                int size4 = arrayList15.size();
+                int i37 = 0;
+                while (i37 < size4) {
+                    TLRPC.User user3 = (TLRPC.User) longSparseArray.get(arrayList15.get(i37).user_id);
                     if (user3 == null) {
                         str = str2;
-                        arrayList2 = arrayList18;
-                        longSparseArray18 = longSparseArray24;
+                        arrayList2 = arrayList15;
+                        longSparseArray21 = longSparseArray27;
                     } else {
                         long makeEncryptedDialogId = DialogObject.makeEncryptedDialogId(r2.id);
                         str = str2;
-                        arrayList2 = arrayList18;
+                        arrayList2 = arrayList15;
                         boolean isDialogMuted2 = getMessagesController().isDialogMuted(makeEncryptedDialogId, 0L);
-                        Integer num2 = (Integer) longSparseArray20.get(makeEncryptedDialogId);
+                        Integer num2 = (Integer) longSparseArray23.get(makeEncryptedDialogId);
                         int intValue5 = (num2 == null || num2.intValue() < 0 || num2.intValue() > 1) ? 0 : num2.intValue();
                         if (isDialogMuted2) {
-                            longSparseArray27.put(user3.id, Boolean.TRUE);
+                            longSparseArray30.put(user3.id, Boolean.TRUE);
                         }
                         if (intValue5 == 1) {
-                            longSparseArray28.put(user3.id, Boolean.TRUE);
+                            longSparseArray31.put(user3.id, Boolean.TRUE);
                         }
                         if (user3.self || user3.contact) {
-                            i28 = 1;
-                            int[] iArr11 = messagesStorage3.contacts[intValue5];
+                            i29 = 1;
+                            int[] iArr11 = this.contacts[intValue5];
                             iArr11[isDialogMuted2 ? 1 : 0] = iArr11[isDialogMuted2 ? 1 : 0] + 1;
                         } else {
-                            int[] iArr12 = messagesStorage3.nonContacts[intValue5];
-                            i28 = 1;
+                            int[] iArr12 = this.nonContacts[intValue5];
+                            i29 = 1;
                             iArr12[isDialogMuted2 ? 1 : 0] = iArr12[isDialogMuted2 ? 1 : 0] + 1;
                         }
-                        longSparseArray18 = longSparseArray24;
-                        longSparseArray26.put(user3.id, Integer.valueOf(((Integer) longSparseArray26.get(user3.id, 0)).intValue() + i28));
+                        longSparseArray21 = longSparseArray27;
+                        longSparseArray29.put(user3.id, Integer.valueOf(((Integer) longSparseArray29.get(user3.id, 0)).intValue() + i29));
                     }
-                    i36++;
+                    i37++;
                     str2 = str;
-                    longSparseArray24 = longSparseArray18;
-                    arrayList18 = arrayList2;
+                    longSparseArray27 = longSparseArray21;
+                    arrayList15 = arrayList2;
                 }
-                LongSparseArray longSparseArray29 = longSparseArray24;
+                LongSparseArray longSparseArray32 = longSparseArray27;
                 String str3 = str2;
-                if (!arrayList15.isEmpty()) {
-                    ArrayList<TLRPC.Chat> arrayList19 = arrayList14;
-                    messagesStorage3.getChatsInternal(TextUtils.join(str3, arrayList15), arrayList19);
-                    int size5 = arrayList19.size();
-                    int i37 = 0;
-                    while (i37 < size5) {
-                        TLRPC.Chat chat = arrayList19.get(i37);
-                        if ((chat.migrated_to instanceof TLRPC.TL_inputChannel) || ChatObject.isNotInChat(chat) || ChatObject.isCommunity(chat)) {
+                if (!hashSet4.isEmpty()) {
+                    HashSet hashSet5 = hashSet4;
+                    ArrayList<TLRPC.Chat> arrayList16 = arrayList12;
+                    getChatsInternal(TextUtils.join(str3, hashSet5), arrayList16);
+                    int size5 = arrayList16.size();
+                    int i38 = 0;
+                    while (i38 < size5) {
+                        TLRPC.Chat chat = arrayList16.get(i38);
+                        if (!hashSet5.contains(Long.valueOf(chat.id)) || (chat.migrated_to instanceof TLRPC.TL_inputChannel) || ChatObject.isNotInChat(chat) || ChatObject.isCommunity(chat)) {
+                            hashSet = hashSet5;
                             i27 = size5;
-                            arrayList = arrayList19;
-                            longSparseArray15 = longSparseArray20;
-                            longSparseArray16 = longSparseArray22;
-                            longSparseArray17 = longSparseArray2;
+                            arrayList = arrayList16;
+                            longSparseArray18 = longSparseArray23;
+                            longSparseArray20 = longSparseArray25;
+                            longSparseArray19 = longSparseArray2;
                         } else {
                             boolean isDialogMuted3 = getMessagesController().isDialogMuted(-chat.id, 0L, chat);
-                            boolean z2 = messagesStorage3.dialogsWithUnread.indexOfKey(-chat.id) >= 0;
+                            hashSet = hashSet5;
                             i27 = size5;
-                            arrayList = arrayList19;
-                            boolean z3 = messagesStorage3.dialogsWithMentions.indexOfKey(-chat.id) >= 0;
-                            Integer num3 = (Integer) longSparseArray20.get(-chat.id);
-                            int intValue6 = (num3 == null || num3.intValue() < 0 || num3.intValue() > 1) ? 0 : num3.intValue();
-                            if (isDialogMuted3) {
-                                longSparseArray15 = longSparseArray20;
-                                longSparseArray27.put(-chat.id, Boolean.TRUE);
+                            boolean z2 = this.dialogsWithUnread.indexOfKey(-chat.id) >= 0;
+                            boolean z3 = this.dialogsWithMentions.indexOfKey(-chat.id) >= 0;
+                            Integer num3 = (Integer) longSparseArray23.get(-chat.id);
+                            if (num3 == null || num3.intValue() < 0) {
+                                arrayList = arrayList16;
                             } else {
-                                longSparseArray15 = longSparseArray20;
-                            }
-                            if (intValue6 == 1) {
-                                longSparseArray28.put(-chat.id, Boolean.TRUE);
-                            }
-                            if (!ChatObject.isCommunity(chat)) {
-                                if (messagesStorage3.isChatCollapsedInCommunity(longSparseArray29, chat)) {
-                                    int[] iArr13 = messagesStorage3.communities[intValue6];
-                                    iArr13[isDialogMuted3 ? 1 : 0] = iArr13[isDialogMuted3 ? 1 : 0] + 1;
-                                } else {
-                                    longSparseArray17 = longSparseArray2;
-                                    if (isDialogMuted3 && longSparseIntArray2 != null && longSparseIntArray2.indexOfKey(-chat.id) >= 0) {
-                                        if (ChatObject.isChannel(chat) && !chat.megagroup) {
-                                            int[] iArr14 = messagesStorage3.mentionChannels;
-                                            iArr14[intValue6] = iArr14[intValue6] + 1;
+                                arrayList = arrayList16;
+                                if (num3.intValue() <= 1) {
+                                    i28 = num3.intValue();
+                                    if (isDialogMuted3) {
+                                        longSparseArray18 = longSparseArray23;
+                                    } else {
+                                        longSparseArray18 = longSparseArray23;
+                                        longSparseArray30.put(-chat.id, Boolean.TRUE);
+                                    }
+                                    if (i28 == 1) {
+                                        longSparseArray31.put(-chat.id, Boolean.TRUE);
+                                    }
+                                    if (!ChatObject.isCommunity(chat)) {
+                                        if (isChatCollapsedInCommunity(longSparseArray32, chat)) {
+                                            int[] iArr13 = this.communities[i28];
+                                            iArr13[isDialogMuted3 ? 1 : 0] = iArr13[isDialogMuted3 ? 1 : 0] + 1;
                                         } else {
-                                            int[] iArr15 = messagesStorage3.mentionGroups;
-                                            iArr15[intValue6] = iArr15[intValue6] + 1;
+                                            longSparseArray19 = longSparseArray2;
+                                            if (isDialogMuted3 && longSparseIntArray2 != null && longSparseIntArray2.indexOfKey(-chat.id) >= 0) {
+                                                if (ChatObject.isChannel(chat) && !chat.megagroup) {
+                                                    int[] iArr14 = this.mentionChannels;
+                                                    iArr14[i28] = iArr14[i28] + 1;
+                                                } else {
+                                                    int[] iArr15 = this.mentionGroups;
+                                                    iArr15[i28] = iArr15[i28] + 1;
+                                                }
+                                            }
+                                            if (!z || z2 || z3) {
+                                                if (!z) {
+                                                    longSparseArray20 = longSparseArray25;
+                                                }
+                                                longSparseArray20 = longSparseArray25;
+                                                longSparseArray32.put(chat.id, chat);
+                                            } else {
+                                                longSparseArray20 = longSparseArray25;
+                                            }
+                                            if (ChatObject.isChannel(chat) && !chat.megagroup) {
+                                                int[] iArr16 = this.channels[i28];
+                                                iArr16[isDialogMuted3 ? 1 : 0] = iArr16[isDialogMuted3 ? 1 : 0] + 1;
+                                            } else {
+                                                int[] iArr17 = this.groups[i28];
+                                                iArr17[isDialogMuted3 ? 1 : 0] = iArr17[isDialogMuted3 ? 1 : 0] + 1;
+                                            }
+                                            longSparseArray32.put(chat.id, chat);
                                         }
                                     }
-                                    if (!z || z2 || z3) {
-                                        if (!z) {
-                                            longSparseArray16 = longSparseArray22;
-                                        }
-                                        longSparseArray16 = longSparseArray22;
-                                        longSparseArray29.put(chat.id, chat);
-                                    } else {
-                                        longSparseArray16 = longSparseArray22;
-                                    }
-                                    if (ChatObject.isChannel(chat) && !chat.megagroup) {
-                                        int[] iArr16 = messagesStorage3.channels[intValue6];
-                                        iArr16[isDialogMuted3 ? 1 : 0] = iArr16[isDialogMuted3 ? 1 : 0] + 1;
-                                    } else {
-                                        int[] iArr17 = messagesStorage3.groups[intValue6];
-                                        iArr17[isDialogMuted3 ? 1 : 0] = iArr17[isDialogMuted3 ? 1 : 0] + 1;
-                                    }
-                                    longSparseArray29.put(chat.id, chat);
+                                    longSparseArray19 = longSparseArray2;
+                                    longSparseArray20 = longSparseArray25;
+                                    longSparseArray32.put(chat.id, chat);
                                 }
                             }
-                            longSparseArray17 = longSparseArray2;
-                            longSparseArray16 = longSparseArray22;
-                            longSparseArray29.put(chat.id, chat);
+                            i28 = 0;
+                            if (isDialogMuted3) {
+                            }
+                            if (i28 == 1) {
+                            }
+                            if (!ChatObject.isCommunity(chat)) {
+                            }
+                            longSparseArray19 = longSparseArray2;
+                            longSparseArray20 = longSparseArray25;
+                            longSparseArray32.put(chat.id, chat);
                         }
-                        i37++;
-                        longSparseArray22 = longSparseArray16;
-                        longSparseArray2 = longSparseArray17;
-                        longSparseArray20 = longSparseArray15;
-                        arrayList19 = arrayList;
+                        i38++;
                         size5 = i27;
+                        longSparseArray25 = longSparseArray20;
+                        longSparseArray2 = longSparseArray19;
+                        longSparseArray23 = longSparseArray18;
+                        arrayList16 = arrayList;
+                        hashSet5 = hashSet;
                     }
                 }
-                LongSparseArray longSparseArray30 = longSparseArray2;
-                LongSparseArray longSparseArray31 = longSparseArray22;
-                size = messagesStorage3.dialogFilters.size();
+                LongSparseArray longSparseArray33 = longSparseArray2;
+                LongSparseArray longSparseArray34 = longSparseArray25;
+                size = this.dialogFilters.size();
                 i2 = 0;
                 while (i2 < size + 2) {
                     boolean z4 = i2 == size + 1;
                     if (i2 < size) {
-                        dialogFilter = messagesStorage3.dialogFilters.get(i2);
+                        dialogFilter = this.dialogFilters.get(i2);
                         if (dialogFilter.pendingUnreadCount < 0) {
-                            messagesStorage = messagesStorage3;
-                            longSparseArray3 = longSparseArray31;
-                            i15 = size;
                             i16 = i2;
-                            longSparseArray6 = longSparseArray;
-                            longSparseArray7 = longSparseArray30;
-                            i2 = i16 + 1;
-                            longSparseArray30 = longSparseArray7;
-                            longSparseArray = longSparseArray6;
+                            longSparseArray8 = longSparseArray33;
+                            longSparseArray6 = longSparseArray31;
+                            i15 = size;
+                            longSparseArray7 = longSparseArray;
+                            longSparseArray9 = longSparseArray34;
+                            longSparseArray34 = longSparseArray9;
+                            longSparseArray33 = longSparseArray8;
+                            longSparseArray31 = longSparseArray6;
+                            longSparseArray = longSparseArray7;
                             size = i15;
-                            messagesStorage3 = messagesStorage;
-                            longSparseArray31 = longSparseArray3;
+                            i2 = i16 + 1;
                         } else {
                             i6 = dialogFilter.pendingUnreadCount;
                             i5 = dialogFilter.flags;
                         }
                     } else {
-                        int i38 = MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS;
+                        int i39 = MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS;
                         if (i2 == size) {
-                            i3 = messagesStorage3.pendingMainUnreadCount;
-                            i38 |= MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED;
+                            i3 = this.pendingMainUnreadCount;
+                            i39 |= MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED;
                             if (!getNotificationsController().showBadgeMuted) {
                                 i4 = MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED;
                             }
-                            int i39 = i3;
-                            i5 = i38;
+                            int i40 = i3;
+                            i5 = i39;
                             dialogFilter = null;
-                            i6 = i39;
+                            i6 = i40;
                         } else {
-                            i3 = messagesStorage3.pendingArchiveUnreadCount;
+                            i3 = this.pendingArchiveUnreadCount;
                             i4 = MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED;
                         }
-                        i38 |= i4;
-                        int i392 = i3;
-                        i5 = i38;
+                        i39 |= i4;
+                        int i402 = i3;
+                        i5 = i39;
                         dialogFilter = null;
-                        i6 = i392;
+                        i6 = i402;
                     }
                     if (z) {
                         if ((MessagesController.DIALOG_FILTER_FLAG_CONTACTS & i5) != 0) {
                             if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i5) == 0) {
-                                int[] iArr18 = messagesStorage3.contacts[0];
+                                int[] iArr18 = this.contacts[0];
                                 i6 -= iArr18[0];
                                 if ((i5 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
                                     c10 = 1;
                                     i6 -= iArr18[1];
                                     if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) == 0) {
-                                        int[] iArr19 = messagesStorage3.contacts[c10];
+                                        int[] iArr19 = this.contacts[c10];
                                         i6 -= iArr19[0];
                                         if ((i5 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
                                             i6 -= iArr19[c10];
@@ -11399,13 +11303,13 @@ public class MessagesStorage extends BaseController {
                         }
                         if ((MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS & i5) != 0) {
                             if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i5) == 0) {
-                                int[] iArr20 = messagesStorage3.nonContacts[0];
+                                int[] iArr20 = this.nonContacts[0];
                                 i6 -= iArr20[0];
                                 if ((i5 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
                                     c9 = 1;
                                     i6 -= iArr20[1];
                                     if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) == 0) {
-                                        int[] iArr21 = messagesStorage3.nonContacts[c9];
+                                        int[] iArr21 = this.nonContacts[c9];
                                         i6 -= iArr21[0];
                                         if ((i5 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
                                             i6 -= iArr21[c9];
@@ -11420,62 +11324,62 @@ public class MessagesStorage extends BaseController {
                         if ((MessagesController.DIALOG_FILTER_FLAG_GROUPS & i5) != 0) {
                             if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i5) == 0) {
                                 c8 = 0;
-                                int[] iArr22 = messagesStorage3.groups[0];
-                                int i40 = i6 - iArr22[0];
+                                int[] iArr22 = this.groups[0];
+                                int i41 = i6 - iArr22[0];
                                 if ((i5 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
                                     i26 = iArr22[1];
                                 } else {
-                                    i26 = messagesStorage3.mentionGroups[0];
+                                    i26 = this.mentionGroups[0];
                                 }
-                                i6 = i40 - i26;
+                                i6 = i41 - i26;
                             } else {
                                 c8 = 0;
                             }
                             if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) == 0) {
-                                int[] iArr23 = messagesStorage3.groups[1];
-                                int i41 = i6 - iArr23[c8];
+                                int[] iArr23 = this.groups[1];
+                                int i42 = i6 - iArr23[c8];
                                 if ((i5 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
                                     i25 = iArr23[1];
                                 } else {
-                                    i25 = messagesStorage3.mentionGroups[1];
+                                    i25 = this.mentionGroups[1];
                                 }
-                                i6 = i41 - i25;
+                                i6 = i42 - i25;
                             }
                         }
                         if ((MessagesController.DIALOG_FILTER_FLAG_CHANNELS & i5) != 0) {
                             if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i5) == 0) {
                                 c7 = 0;
-                                int[] iArr24 = messagesStorage3.channels[0];
-                                int i42 = i6 - iArr24[0];
+                                int[] iArr24 = this.channels[0];
+                                int i43 = i6 - iArr24[0];
                                 if ((i5 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
                                     i24 = iArr24[1];
                                 } else {
-                                    i24 = messagesStorage3.mentionChannels[0];
+                                    i24 = this.mentionChannels[0];
                                 }
-                                i6 = i42 - i24;
+                                i6 = i43 - i24;
                             } else {
                                 c7 = 0;
                             }
                             if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) == 0) {
-                                int[] iArr25 = messagesStorage3.channels[1];
-                                int i43 = i6 - iArr25[c7];
+                                int[] iArr25 = this.channels[1];
+                                int i44 = i6 - iArr25[c7];
                                 if ((i5 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
                                     i23 = iArr25[1];
                                 } else {
-                                    i23 = messagesStorage3.mentionChannels[1];
+                                    i23 = this.mentionChannels[1];
                                 }
-                                i6 = i43 - i23;
+                                i6 = i44 - i23;
                             }
                         }
                         if ((MessagesController.DIALOG_FILTER_FLAG_BOTS & i5) != 0) {
                             if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i5) == 0) {
-                                int[] iArr26 = messagesStorage3.bots[0];
+                                int[] iArr26 = this.bots[0];
                                 i6 -= iArr26[0];
                                 if ((i5 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
                                     c6 = 1;
                                     i6 -= iArr26[1];
                                     if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) == 0) {
-                                        int[] iArr27 = messagesStorage3.bots[c6];
+                                        int[] iArr27 = this.bots[c6];
                                         i6 -= iArr27[0];
                                         if ((i5 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
                                             i6 -= iArr27[c6];
@@ -11488,13 +11392,13 @@ public class MessagesStorage extends BaseController {
                             }
                         }
                         if (!z4) {
-                            int i44 = MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS;
-                            if ((i5 & i44) == i44) {
-                                int[][] iArr28 = messagesStorage3.communities;
+                            int i45 = MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS;
+                            if ((i5 & i45) == i45) {
+                                int[][] iArr28 = this.communities;
                                 int[] iArr29 = iArr28[0];
-                                int i45 = i6 - iArr29[0];
+                                int i46 = i6 - iArr29[0];
                                 int[] iArr30 = iArr28[1];
-                                i6 = i45 - iArr30[0];
+                                i6 = i46 - iArr30[0];
                                 if ((i5 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) == 0) {
                                     i6 = (i6 - iArr29[1]) - iArr30[1];
                                 }
@@ -11502,26 +11406,26 @@ public class MessagesStorage extends BaseController {
                         }
                         if (dialogFilter != null) {
                             int size6 = dialogFilter.alwaysShow.size();
-                            int i46 = 0;
-                            while (i46 < size6) {
-                                int i47 = size6;
-                                int i48 = size;
-                                int i49 = i2;
-                                long longValue = dialogFilter.alwaysShow.get(i46).longValue();
+                            int i47 = 0;
+                            while (i47 < size6) {
+                                int i48 = size6;
+                                int i49 = size;
+                                int i50 = i2;
+                                long longValue = dialogFilter.alwaysShow.get(i47).longValue();
                                 if (DialogObject.isUserDialog(longValue)) {
-                                    longSparseArray12 = longSparseArray;
-                                    int i50 = 0;
-                                    while (i50 < 2) {
-                                        TLRPC.User user4 = (TLRPC.User) (i50 == 0 ? longSparseArray30 : longSparseArray12).get(longValue);
+                                    longSparseArray15 = longSparseArray;
+                                    int i51 = 0;
+                                    while (i51 < 2) {
+                                        TLRPC.User user4 = (TLRPC.User) (i51 == 0 ? longSparseArray33 : longSparseArray15).get(longValue);
                                         if (user4 != null) {
-                                            if (i50 == 0) {
-                                                longSparseArray13 = longSparseArray31;
-                                                longSparseArray14 = longSparseArray30;
+                                            if (i51 == 0) {
+                                                longSparseArray16 = longSparseArray34;
+                                                longSparseArray17 = longSparseArray33;
                                                 intValue2 = 1;
                                             } else {
-                                                longSparseArray14 = longSparseArray30;
-                                                intValue2 = ((Integer) longSparseArray26.get(longValue, 0)).intValue();
-                                                longSparseArray13 = longSparseArray31;
+                                                longSparseArray17 = longSparseArray33;
+                                                intValue2 = ((Integer) longSparseArray29.get(longValue, 0)).intValue();
+                                                longSparseArray16 = longSparseArray34;
                                                 if (intValue2 == 0) {
                                                 }
                                             }
@@ -11532,194 +11436,156 @@ public class MessagesStorage extends BaseController {
                                             } else {
                                                 i22 = MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS;
                                             }
-                                            if ((i22 & i5) == 0 || (((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) != 0 && longSparseArray27.indexOfKey(user4.id) >= 0) || ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) != 0 && longSparseArray28.indexOfKey(user4.id) >= 0))) {
+                                            if ((i22 & i5) == 0 || (((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) != 0 && longSparseArray30.indexOfKey(user4.id) >= 0) || ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) != 0 && longSparseArray31.indexOfKey(user4.id) >= 0))) {
                                                 i6 -= intValue2;
                                             }
                                         } else {
-                                            longSparseArray13 = longSparseArray31;
-                                            longSparseArray14 = longSparseArray30;
+                                            longSparseArray16 = longSparseArray34;
+                                            longSparseArray17 = longSparseArray33;
                                         }
-                                        i50++;
-                                        longSparseArray30 = longSparseArray14;
-                                        longSparseArray31 = longSparseArray13;
+                                        i51++;
+                                        longSparseArray33 = longSparseArray17;
+                                        longSparseArray34 = longSparseArray16;
                                     }
-                                    longSparseArray10 = longSparseArray31;
-                                    longSparseArray11 = longSparseArray30;
+                                    longSparseArray13 = longSparseArray34;
+                                    longSparseArray14 = longSparseArray33;
                                 } else {
-                                    longSparseArray10 = longSparseArray31;
-                                    longSparseArray11 = longSparseArray30;
-                                    longSparseArray12 = longSparseArray;
-                                    TLRPC.Chat chat2 = (TLRPC.Chat) longSparseArray29.get(-longValue);
+                                    longSparseArray13 = longSparseArray34;
+                                    longSparseArray14 = longSparseArray33;
+                                    longSparseArray15 = longSparseArray;
+                                    TLRPC.Chat chat2 = (TLRPC.Chat) longSparseArray32.get(-longValue);
                                     if (chat2 != null) {
                                         if (ChatObject.isChannel(chat2) && !chat2.megagroup) {
                                             i21 = MessagesController.DIALOG_FILTER_FLAG_CHANNELS;
                                         } else {
                                             i21 = MessagesController.DIALOG_FILTER_FLAG_GROUPS;
                                         }
-                                        if ((i21 & i5) == 0) {
-                                            messagesStorage2 = this;
-                                        } else {
-                                            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0 || longSparseArray27.indexOfKey(-chat2.id) < 0) {
-                                                messagesStorage2 = this;
-                                            } else {
-                                                messagesStorage2 = this;
-                                            }
-                                            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) != 0) {
-                                                if (longSparseArray28.indexOfKey(-chat2.id) < 0) {
-                                                }
-                                            }
-                                            i46++;
-                                            size6 = i47;
-                                            messagesStorage3 = messagesStorage2;
-                                            size = i48;
-                                            i2 = i49;
-                                            longSparseArray = longSparseArray12;
-                                            longSparseArray30 = longSparseArray11;
-                                            longSparseArray31 = longSparseArray10;
+                                        if ((i21 & i5) == 0 || (((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) != 0 && longSparseArray30.indexOfKey(-chat2.id) >= 0 && this.dialogsWithMentions.indexOfKey(-chat2.id) < 0) || ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) != 0 && longSparseArray31.indexOfKey(-chat2.id) >= 0))) {
+                                            i6--;
                                         }
-                                        i6--;
-                                        i46++;
-                                        size6 = i47;
-                                        messagesStorage3 = messagesStorage2;
-                                        size = i48;
-                                        i2 = i49;
-                                        longSparseArray = longSparseArray12;
-                                        longSparseArray30 = longSparseArray11;
-                                        longSparseArray31 = longSparseArray10;
                                     }
                                 }
-                                messagesStorage2 = this;
-                                i46++;
-                                size6 = i47;
-                                messagesStorage3 = messagesStorage2;
-                                size = i48;
-                                i2 = i49;
-                                longSparseArray = longSparseArray12;
-                                longSparseArray30 = longSparseArray11;
-                                longSparseArray31 = longSparseArray10;
+                                i47++;
+                                size6 = i48;
+                                size = i49;
+                                i2 = i50;
+                                longSparseArray = longSparseArray15;
+                                longSparseArray33 = longSparseArray14;
+                                longSparseArray34 = longSparseArray13;
                             }
-                            longSparseArray3 = longSparseArray31;
                             i7 = size;
                             i8 = i2;
-                            longSparseArray4 = longSparseArray30;
+                            longSparseArray3 = longSparseArray34;
+                            longSparseArray4 = longSparseArray33;
                             longSparseArray5 = longSparseArray;
                             int size7 = dialogFilter.neverShow.size();
-                            int i51 = 0;
-                            while (i51 < size7) {
-                                long longValue2 = dialogFilter.neverShow.get(i51).longValue();
-                                if (longSparseIntArray2 != null && longSparseIntArray2.indexOfKey(longValue2) >= 0 && longSparseArray27.indexOfKey(longValue2) < 0) {
-                                    i17 = size7;
-                                } else if (DialogObject.isUserDialog(longValue2)) {
-                                    int i52 = 0;
-                                    int i53 = 2;
-                                    while (i52 < i53) {
-                                        TLRPC.User user5 = (TLRPC.User) (i52 == 0 ? longSparseArray4 : longSparseArray5).get(longValue2);
-                                        if (user5 != null) {
-                                            if (i52 == 0) {
-                                                i19 = size7;
-                                                intValue = 1;
-                                            } else {
-                                                intValue = ((Integer) longSparseArray26.get(longValue2, 0)).intValue();
-                                                if (intValue != 0) {
+                            int i52 = 0;
+                            while (i52 < size7) {
+                                long longValue2 = dialogFilter.neverShow.get(i52).longValue();
+                                if (longSparseIntArray2 == null || longSparseIntArray2.indexOfKey(longValue2) < 0 || longSparseArray30.indexOfKey(longValue2) >= 0) {
+                                    if (DialogObject.isUserDialog(longValue2)) {
+                                        int i53 = 0;
+                                        while (i53 < 2) {
+                                            TLRPC.User user5 = (TLRPC.User) (i53 == 0 ? longSparseArray4 : longSparseArray5).get(longValue2);
+                                            if (user5 != null) {
+                                                if (i53 == 0) {
                                                     i19 = size7;
+                                                    intValue = 1;
+                                                } else {
+                                                    intValue = ((Integer) longSparseArray29.get(longValue2, 0)).intValue();
+                                                    if (intValue != 0) {
+                                                        i19 = size7;
+                                                    }
                                                 }
+                                                if (user5.bot) {
+                                                    i20 = MessagesController.DIALOG_FILTER_FLAG_BOTS;
+                                                } else if (user5.self || user5.contact) {
+                                                    i20 = MessagesController.DIALOG_FILTER_FLAG_CONTACTS;
+                                                } else {
+                                                    i20 = MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS;
+                                                }
+                                                if ((i20 & i5) != 0 && (((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) == 0 || longSparseArray31.indexOfKey(user5.id) < 0) && ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0 || longSparseArray30.indexOfKey(user5.id) < 0))) {
+                                                    i6 += intValue;
+                                                }
+                                                i53++;
+                                                size7 = i19;
                                             }
-                                            if (user5.bot) {
-                                                i20 = MessagesController.DIALOG_FILTER_FLAG_BOTS;
-                                            } else if (user5.self || user5.contact) {
-                                                i20 = MessagesController.DIALOG_FILTER_FLAG_CONTACTS;
-                                            } else {
-                                                i20 = MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS;
-                                            }
-                                            if ((i20 & i5) != 0 && (((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) == 0 || longSparseArray28.indexOfKey(user5.id) < 0) && ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0 || longSparseArray27.indexOfKey(user5.id) < 0))) {
-                                                i6 += intValue;
-                                            }
-                                            i52++;
-                                            i53 = 2;
+                                            i19 = size7;
+                                            i53++;
                                             size7 = i19;
                                         }
-                                        i19 = size7;
-                                        i52++;
-                                        i53 = 2;
-                                        size7 = i19;
-                                    }
-                                    i17 = size7;
-                                } else {
-                                    i17 = size7;
-                                    TLRPC.Chat chat3 = (TLRPC.Chat) longSparseArray29.get(-longValue2);
-                                    if (chat3 != null) {
-                                        if (ChatObject.isChannel(chat3) && !chat3.megagroup) {
-                                            i18 = MessagesController.DIALOG_FILTER_FLAG_CHANNELS;
-                                        } else {
-                                            i18 = MessagesController.DIALOG_FILTER_FLAG_GROUPS;
-                                        }
-                                        if ((i18 & i5) != 0 && ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) == 0 || longSparseArray28.indexOfKey(-chat3.id) < 0)) {
-                                            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) != 0 && longSparseArray27.indexOfKey(-chat3.id) >= 0) {
-                                                if (this.dialogsWithMentions.indexOfKey(-chat3.id) < 0) {
-                                                }
+                                    } else {
+                                        i17 = size7;
+                                        TLRPC.Chat chat3 = (TLRPC.Chat) longSparseArray32.get(-longValue2);
+                                        if (chat3 != null) {
+                                            if (ChatObject.isChannel(chat3) && !chat3.megagroup) {
+                                                i18 = MessagesController.DIALOG_FILTER_FLAG_CHANNELS;
+                                            } else {
+                                                i18 = MessagesController.DIALOG_FILTER_FLAG_GROUPS;
                                             }
-                                            i6++;
+                                            if ((i18 & i5) != 0 && (((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) == 0 || longSparseArray31.indexOfKey(-chat3.id) < 0) && ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0 || longSparseArray30.indexOfKey(-chat3.id) < 0 || this.dialogsWithMentions.indexOfKey(-chat3.id) >= 0))) {
+                                                i6++;
+                                            }
                                         }
+                                        i52++;
+                                        size7 = i17;
                                     }
                                 }
-                                i51++;
+                                i17 = size7;
+                                i52++;
                                 size7 = i17;
                             }
                         } else {
-                            longSparseArray3 = longSparseArray31;
                             i7 = size;
                             i8 = i2;
-                            longSparseArray4 = longSparseArray30;
+                            longSparseArray3 = longSparseArray34;
+                            longSparseArray4 = longSparseArray33;
                             longSparseArray5 = longSparseArray;
                         }
                         int i54 = i6;
+                        longSparseArray6 = longSparseArray31;
                         if (i54 < 0) {
-                            longSparseArray6 = longSparseArray5;
-                            longSparseArray7 = longSparseArray4;
+                            longSparseArray7 = longSparseArray5;
+                            longSparseArray8 = longSparseArray4;
+                            longSparseArray9 = longSparseArray3;
                             i6 = 0;
                             if (dialogFilter != null) {
                                 dialogFilter.pendingUnreadCount = i6;
-                                messagesStorage = this;
                                 i15 = i7;
                                 i16 = i8;
                             } else {
                                 i15 = i7;
                                 i16 = i8;
                                 if (i16 == i15) {
-                                    messagesStorage = this;
-                                    messagesStorage.pendingMainUnreadCount = i6;
-                                } else {
-                                    messagesStorage = this;
-                                    if (z4) {
-                                        messagesStorage.pendingArchiveUnreadCount = i6;
-                                    }
+                                    this.pendingMainUnreadCount = i6;
+                                } else if (z4) {
+                                    this.pendingArchiveUnreadCount = i6;
                                 }
                             }
-                            i2 = i16 + 1;
-                            longSparseArray30 = longSparseArray7;
-                            longSparseArray = longSparseArray6;
+                            longSparseArray34 = longSparseArray9;
+                            longSparseArray33 = longSparseArray8;
+                            longSparseArray31 = longSparseArray6;
+                            longSparseArray = longSparseArray7;
                             size = i15;
-                            messagesStorage3 = messagesStorage;
-                            longSparseArray31 = longSparseArray3;
+                            i2 = i16 + 1;
                         } else {
                             i6 = i54;
                         }
                     } else {
-                        longSparseArray3 = longSparseArray31;
                         i7 = size;
                         i8 = i2;
-                        longSparseArray4 = longSparseArray30;
+                        longSparseArray3 = longSparseArray34;
+                        longSparseArray4 = longSparseArray33;
                         longSparseArray5 = longSparseArray;
-                        MessagesStorage messagesStorage4 = messagesStorage3;
                         if ((MessagesController.DIALOG_FILTER_FLAG_CONTACTS & i5) != 0) {
                             if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i5) == 0) {
-                                int[] iArr31 = messagesStorage4.contacts[0];
+                                int[] iArr31 = this.contacts[0];
                                 i6 += iArr31[0];
                                 if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0) {
                                     c5 = 1;
                                     i6 += iArr31[1];
                                     if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) == 0) {
-                                        int[] iArr32 = messagesStorage4.contacts[c5];
+                                        int[] iArr32 = this.contacts[c5];
                                         i6 += iArr32[0];
                                         if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0) {
                                             i6 += iArr32[c5];
@@ -11733,13 +11599,13 @@ public class MessagesStorage extends BaseController {
                         }
                         if ((MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS & i5) != 0) {
                             if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i5) == 0) {
-                                int[] iArr33 = messagesStorage4.nonContacts[0];
+                                int[] iArr33 = this.nonContacts[0];
                                 i6 += iArr33[0];
                                 if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0) {
                                     c4 = 1;
                                     i6 += iArr33[1];
                                     if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) == 0) {
-                                        int[] iArr34 = messagesStorage4.nonContacts[c4];
+                                        int[] iArr34 = this.nonContacts[c4];
                                         i6 += iArr34[0];
                                         if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0) {
                                             i6 += iArr34[c4];
@@ -11754,24 +11620,24 @@ public class MessagesStorage extends BaseController {
                         if ((MessagesController.DIALOG_FILTER_FLAG_GROUPS & i5) != 0) {
                             if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i5) == 0) {
                                 c3 = 0;
-                                int[] iArr35 = messagesStorage4.groups[0];
+                                int[] iArr35 = this.groups[0];
                                 int i55 = i6 + iArr35[0];
                                 if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0) {
                                     i14 = iArr35[1];
                                 } else {
-                                    i14 = messagesStorage4.mentionGroups[0];
+                                    i14 = this.mentionGroups[0];
                                 }
                                 i6 = i55 + i14;
                             } else {
                                 c3 = 0;
                             }
                             if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) == 0) {
-                                int[] iArr36 = messagesStorage4.groups[1];
+                                int[] iArr36 = this.groups[1];
                                 int i56 = i6 + iArr36[c3];
                                 if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0) {
                                     i13 = iArr36[1];
                                 } else {
-                                    i13 = messagesStorage4.mentionGroups[1];
+                                    i13 = this.mentionGroups[1];
                                 }
                                 i6 = i56 + i13;
                             }
@@ -11779,37 +11645,37 @@ public class MessagesStorage extends BaseController {
                         if ((MessagesController.DIALOG_FILTER_FLAG_CHANNELS & i5) != 0) {
                             if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i5) == 0) {
                                 c2 = 0;
-                                int[] iArr37 = messagesStorage4.channels[0];
+                                int[] iArr37 = this.channels[0];
                                 int i57 = i6 + iArr37[0];
                                 if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0) {
                                     i12 = iArr37[1];
                                 } else {
-                                    i12 = messagesStorage4.mentionChannels[0];
+                                    i12 = this.mentionChannels[0];
                                 }
                                 i6 = i57 + i12;
                             } else {
                                 c2 = 0;
                             }
                             if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) == 0) {
-                                int[] iArr38 = messagesStorage4.channels[1];
+                                int[] iArr38 = this.channels[1];
                                 int i58 = i6 + iArr38[c2];
                                 if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0) {
                                     i11 = iArr38[1];
                                 } else {
-                                    i11 = messagesStorage4.mentionChannels[1];
+                                    i11 = this.mentionChannels[1];
                                 }
                                 i6 = i58 + i11;
                             }
                         }
                         if ((MessagesController.DIALOG_FILTER_FLAG_BOTS & i5) != 0) {
                             if ((MessagesController.DIALOG_FILTER_FLAG_ONLY_ARCHIVED & i5) == 0) {
-                                int[] iArr39 = messagesStorage4.bots[0];
+                                int[] iArr39 = this.bots[0];
                                 i6 += iArr39[0];
                                 if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0) {
                                     c = 1;
                                     i6 += iArr39[1];
                                     if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED & i5) == 0) {
-                                        int[] iArr40 = messagesStorage4.bots[c];
+                                        int[] iArr40 = this.bots[c];
                                         i6 += iArr40[0];
                                         if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0) {
                                             i6 += iArr40[c];
@@ -11824,7 +11690,7 @@ public class MessagesStorage extends BaseController {
                         if (!z4) {
                             int i59 = MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS;
                             if ((i5 & i59) == i59) {
-                                int[][] iArr41 = messagesStorage4.communities;
+                                int[][] iArr41 = this.communities;
                                 int[] iArr42 = iArr41[0];
                                 int i60 = i6 + iArr42[0];
                                 int[] iArr43 = iArr41[1];
@@ -11832,73 +11698,80 @@ public class MessagesStorage extends BaseController {
                                 if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0) {
                                     i6 = i6 + iArr42[1] + iArr43[1];
                                 }
-                                if (dialogFilter != null) {
+                                if (dialogFilter == null) {
                                     if (!dialogFilter.alwaysShow.isEmpty()) {
                                         if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) != 0 && longSparseIntArray2 != null) {
                                             int size8 = longSparseIntArray2.size();
-                                            while (i10 < size8) {
-                                                long keyAt2 = longSparseIntArray2.keyAt(i10);
-                                                TLRPC.Chat chat4 = (TLRPC.Chat) longSparseArray29.get(-keyAt2);
-                                                if (ChatObject.isChannel(chat4) && !chat4.megagroup) {
-                                                    if ((MessagesController.DIALOG_FILTER_FLAG_CHANNELS & i5) == 0) {
-                                                    }
-                                                    if (longSparseArray27.indexOfKey(keyAt2) >= 0) {
-                                                        i6--;
-                                                    }
-                                                } else {
-                                                    i10 = (MessagesController.DIALOG_FILTER_FLAG_GROUPS & i5) == 0 ? i10 + 1 : 0;
-                                                    if (longSparseArray27.indexOfKey(keyAt2) >= 0 && dialogFilter.alwaysShow.contains(Long.valueOf(keyAt2))) {
-                                                        i6--;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        int size9 = dialogFilter.alwaysShow.size();
-                                        int i61 = 0;
-                                        while (i61 < size9) {
-                                            long longValue3 = dialogFilter.alwaysShow.get(i61).longValue();
-                                            LongSparseArray longSparseArray32 = longSparseArray3;
-                                            if (longSparseArray32.indexOfKey(longValue3) < 0) {
-                                                i9 = size9;
-                                                longSparseArray3 = longSparseArray32;
-                                                longSparseArray8 = longSparseArray5;
-                                                longSparseArray9 = longSparseArray4;
-                                            } else if (DialogObject.isUserDialog(longValue3)) {
-                                                longSparseArray9 = longSparseArray4;
-                                                TLRPC.User user6 = (TLRPC.User) longSparseArray9.get(longValue3);
-                                                if (user6 != null) {
-                                                    i9 = size9;
-                                                    if (((i5 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) != 0 && longSparseArray27.indexOfKey(user6.id) >= 0) || (!user6.bot ? !(user6.self || user6.contact ? (MessagesController.DIALOG_FILTER_FLAG_CONTACTS & i5) != 0 : (MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS & i5) != 0) : (MessagesController.DIALOG_FILTER_FLAG_BOTS & i5) == 0)) {
-                                                        i6++;
-                                                    }
-                                                } else {
-                                                    i9 = size9;
-                                                }
-                                                longSparseArray8 = longSparseArray5;
-                                                TLRPC.User user7 = (TLRPC.User) longSparseArray8.get(longValue3);
-                                                longSparseArray3 = longSparseArray32;
-                                                if (user7 != null) {
-                                                    int intValue7 = ((Integer) longSparseArray26.get(longValue3, 0)).intValue();
-                                                    if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0 || longSparseArray27.indexOfKey(user7.id) < 0) {
-                                                        if (user7.bot) {
-                                                            if ((MessagesController.DIALOG_FILTER_FLAG_BOTS & i5) != 0) {
-                                                            }
-                                                        } else if (user7.self || user7.contact) {
-                                                            if ((MessagesController.DIALOG_FILTER_FLAG_CONTACTS & i5) != 0) {
-                                                            }
-                                                        } else if ((MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS & i5) != 0) {
+                                            for (int i61 = 0; i61 < size8; i61++) {
+                                                long keyAt2 = longSparseIntArray2.keyAt(i61);
+                                                MessagesController.DialogFilter dialogFilter2 = dialogFilter;
+                                                TLRPC.Chat chat4 = (TLRPC.Chat) longSparseArray32.get(-keyAt2);
+                                                if (!ChatObject.isChannel(chat4) || chat4.megagroup ? (MessagesController.DIALOG_FILTER_FLAG_GROUPS & i5) != 0 : (MessagesController.DIALOG_FILTER_FLAG_CHANNELS & i5) != 0) {
+                                                    if (longSparseArray30.indexOfKey(keyAt2) >= 0) {
+                                                        dialogFilter = dialogFilter2;
+                                                        if (dialogFilter.alwaysShow.contains(Long.valueOf(keyAt2))) {
+                                                            i6--;
                                                         }
                                                     }
-                                                    i6 += intValue7;
+                                                }
+                                                dialogFilter = dialogFilter2;
+                                            }
+                                        }
+                                        int i62 = 0;
+                                        for (int size9 = dialogFilter.alwaysShow.size(); i62 < size9; size9 = i9) {
+                                            long longValue3 = dialogFilter.alwaysShow.get(i62).longValue();
+                                            LongSparseArray longSparseArray35 = longSparseArray3;
+                                            if (longSparseArray35.indexOfKey(longValue3) < 0) {
+                                                i9 = size9;
+                                                longSparseArray10 = longSparseArray31;
+                                                longSparseArray11 = longSparseArray5;
+                                                longSparseArray12 = longSparseArray4;
+                                            } else if (DialogObject.isUserDialog(longValue3)) {
+                                                longSparseArray12 = longSparseArray4;
+                                                TLRPC.User user6 = (TLRPC.User) longSparseArray12.get(longValue3);
+                                                if (user6 != null) {
+                                                    if ((i5 & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) != 0) {
+                                                        i9 = size9;
+                                                    } else {
+                                                        i9 = size9;
+                                                    }
+                                                    if (!user6.bot) {
+                                                    }
+                                                } else {
+                                                    i9 = size9;
+                                                }
+                                                longSparseArray11 = longSparseArray5;
+                                                TLRPC.User user7 = (TLRPC.User) longSparseArray11.get(longValue3);
+                                                longSparseArray10 = longSparseArray31;
+                                                if (user7 != null) {
+                                                    int intValue6 = ((Integer) longSparseArray29.get(longValue3, 0)).intValue();
+                                                    if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) != 0) {
+                                                        i10 = intValue6;
+                                                    } else {
+                                                        i10 = intValue6;
+                                                    }
+                                                    if (user7.bot) {
+                                                        if ((MessagesController.DIALOG_FILTER_FLAG_BOTS & i5) != 0) {
+                                                        }
+                                                        i6 += i10;
+                                                    } else if (user7.self || user7.contact) {
+                                                        if ((MessagesController.DIALOG_FILTER_FLAG_CONTACTS & i5) != 0) {
+                                                        }
+                                                        i6 += i10;
+                                                    } else {
+                                                        if ((MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS & i5) != 0) {
+                                                        }
+                                                        i6 += i10;
+                                                    }
                                                 }
                                             } else {
                                                 i9 = size9;
-                                                longSparseArray3 = longSparseArray32;
-                                                longSparseArray8 = longSparseArray5;
-                                                longSparseArray9 = longSparseArray4;
-                                                TLRPC.Chat chat5 = (TLRPC.Chat) longSparseArray29.get(-longValue3);
+                                                longSparseArray10 = longSparseArray31;
+                                                longSparseArray11 = longSparseArray5;
+                                                longSparseArray12 = longSparseArray4;
+                                                TLRPC.Chat chat5 = (TLRPC.Chat) longSparseArray32.get(-longValue3);
                                                 if (chat5 != null) {
-                                                    if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0 || longSparseArray27.indexOfKey(-chat5.id) < 0) {
+                                                    if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED & i5) == 0 || longSparseArray30.indexOfKey(-chat5.id) < 0) {
                                                         if (ChatObject.isChannel(chat5) && !chat5.megagroup) {
                                                             if ((MessagesController.DIALOG_FILTER_FLAG_CHANNELS & i5) != 0) {
                                                             }
@@ -11908,54 +11781,61 @@ public class MessagesStorage extends BaseController {
                                                     i6++;
                                                 }
                                             }
-                                            i61++;
-                                            longSparseArray5 = longSparseArray8;
-                                            longSparseArray4 = longSparseArray9;
-                                            size9 = i9;
+                                            i62++;
+                                            longSparseArray5 = longSparseArray11;
+                                            longSparseArray3 = longSparseArray35;
+                                            longSparseArray4 = longSparseArray12;
+                                            longSparseArray31 = longSparseArray10;
                                         }
                                     }
-                                    longSparseArray6 = longSparseArray5;
-                                    longSparseArray7 = longSparseArray4;
+                                    longSparseArray6 = longSparseArray31;
+                                    longSparseArray7 = longSparseArray5;
+                                    longSparseArray8 = longSparseArray4;
+                                    longSparseArray9 = longSparseArray3;
                                     int size10 = dialogFilter.neverShow.size();
-                                    for (int i62 = 0; i62 < size10; i62++) {
-                                        long longValue4 = dialogFilter.neverShow.get(i62).longValue();
+                                    int i63 = i6;
+                                    for (int i64 = 0; i64 < size10; i64++) {
+                                        long longValue4 = dialogFilter.neverShow.get(i64).longValue();
                                         if (DialogObject.isUserDialog(longValue4)) {
+                                            if (((TLRPC.User) longSparseArray8.get(longValue4)) != null) {
+                                                i63--;
+                                            }
                                             if (((TLRPC.User) longSparseArray7.get(longValue4)) != null) {
-                                                i6--;
+                                                i63 -= ((Integer) longSparseArray29.get(longValue4, 0)).intValue();
                                             }
-                                            if (((TLRPC.User) longSparseArray6.get(longValue4)) != null) {
-                                                i6 -= ((Integer) longSparseArray26.get(longValue4, 0)).intValue();
-                                            }
-                                        } else if (((TLRPC.Chat) longSparseArray29.get(-longValue4)) != null) {
-                                            i6--;
+                                        } else if (((TLRPC.Chat) longSparseArray32.get(-longValue4)) != null) {
+                                            i63--;
                                         }
                                     }
+                                    i6 = i63;
                                     if (dialogFilter != null) {
                                     }
-                                    i2 = i16 + 1;
-                                    longSparseArray30 = longSparseArray7;
-                                    longSparseArray = longSparseArray6;
+                                    longSparseArray34 = longSparseArray9;
+                                    longSparseArray33 = longSparseArray8;
+                                    longSparseArray31 = longSparseArray6;
+                                    longSparseArray = longSparseArray7;
                                     size = i15;
-                                    messagesStorage3 = messagesStorage;
-                                    longSparseArray31 = longSparseArray3;
+                                    i2 = i16 + 1;
+                                } else {
+                                    longSparseArray6 = longSparseArray31;
                                 }
                             }
                         }
-                        if (dialogFilter != null) {
+                        if (dialogFilter == null) {
                         }
                     }
-                    longSparseArray6 = longSparseArray5;
-                    longSparseArray7 = longSparseArray4;
+                    longSparseArray7 = longSparseArray5;
+                    longSparseArray8 = longSparseArray4;
+                    longSparseArray9 = longSparseArray3;
                     if (dialogFilter != null) {
                     }
-                    i2 = i16 + 1;
-                    longSparseArray30 = longSparseArray7;
-                    longSparseArray = longSparseArray6;
+                    longSparseArray34 = longSparseArray9;
+                    longSparseArray33 = longSparseArray8;
+                    longSparseArray31 = longSparseArray6;
+                    longSparseArray = longSparseArray7;
                     size = i15;
-                    messagesStorage3 = messagesStorage;
-                    longSparseArray31 = longSparseArray3;
+                    i2 = i16 + 1;
                 }
-                final MessagesStorage messagesStorage5 = messagesStorage3;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesStorage$$ExternalSyntheticLambda214
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -11964,19 +11844,18 @@ public class MessagesStorage extends BaseController {
                 });
             }
         }
-        longSparseArray = longSparseArray25;
-        longSparseArray2 = longSparseArray23;
-        LongSparseArray longSparseArray292 = longSparseArray24;
+        longSparseArray = longSparseArray28;
+        longSparseArray2 = longSparseArray26;
+        LongSparseArray longSparseArray322 = longSparseArray27;
         String str32 = str2;
-        if (!arrayList15.isEmpty()) {
+        if (!hashSet4.isEmpty()) {
         }
-        LongSparseArray longSparseArray302 = longSparseArray2;
-        LongSparseArray longSparseArray312 = longSparseArray22;
-        size = messagesStorage3.dialogFilters.size();
+        LongSparseArray longSparseArray332 = longSparseArray2;
+        LongSparseArray longSparseArray342 = longSparseArray25;
+        size = this.dialogFilters.size();
         i2 = 0;
         while (i2 < size + 2) {
         }
-        final MessagesStorage messagesStorage52 = messagesStorage3;
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesStorage$$ExternalSyntheticLambda214
             @Override // java.lang.Runnable
             public final void run() {
@@ -16201,10 +16080,10 @@ public class MessagesStorage extends BaseController {
         	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
         */
     /* JADX WARN: Unreachable blocks removed: 2, instructions: 3 */
-    /* JADX WARN: Unreachable blocks removed: 2, instructions: 5 */
-    public java.lang.Runnable getMessagesInternal(long r65, long r67, int r69, int r70, int r71, int r72, int r73, int r74, int r75, long r76, int r78, boolean r79, boolean r80, org.telegram.messenger.Timer r81) {
+    /* JADX WARN: Unreachable blocks removed: 2, instructions: 8 */
+    public java.lang.Runnable getMessagesInternal(long r66, long r68, int r70, int r71, int r72, int r73, int r74, int r75, int r76, long r77, int r79, boolean r80, boolean r81, org.telegram.messenger.Timer r82) {
         /*
-            Method dump skipped, instructions count: 9471
+            Method dump skipped, instructions count: 9464
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.MessagesStorage.getMessagesInternal(long, long, int, int, int, int, int, int, int, long, int, boolean, boolean, org.telegram.messenger.Timer):java.lang.Runnable");
@@ -19596,7 +19475,7 @@ public class MessagesStorage extends BaseController {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v139 ??), method size: 9122
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v35 ?? I:??[OBJECT, ARRAY]), method size: 9122
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)

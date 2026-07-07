@@ -870,7 +870,7 @@ public class SelectChatUserSheet extends BottomSheetWithRecyclerListView {
         if (safeLastFragment3 == null) {
             return;
         }
-        AlertsCreator.showAddUserAlert(tL_error, safeLastFragment3, ChatObject.isChannelAndNotMegaGroup(this.chat), tL_channels_editCreator);
+        AlertsCreator.showAddUserAlert(tL_error, safeLastFragment3, ChatObject.isChannelAndNotMegaGroup(this.chat), ChatObject.isCommunity(this.chat), tL_channels_editCreator);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
