@@ -19,6 +19,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Region;
 import android.graphics.Shader;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -105,6 +106,7 @@ import org.telegram.ui.Components.URLSpanUserMention;
 import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.Components.spoilers.SpoilerEffect;
+import org.telegram.ui.Components.spoilers.SpoilerEffect2;
 import org.telegram.ui.GradientClip;
 import org.telegram.ui.MultiLayoutTypingAnimator;
 import org.telegram.ui.iv.RichHtml;
@@ -164,6 +166,7 @@ public class RichMessageLayout {
     private Paint showMorePaint;
     private boolean showMorePressed;
     private org.telegram.ui.Components.Text showMoreText;
+    private SpoilerEffect2 spoilerEffect2;
     private AnimatedFloat translationLoadingFloat;
     public float translationLoadingValue;
     public MultiLayoutTypingAnimator typingAnimator;
@@ -425,16 +428,20 @@ public class RichMessageLayout {
                             sb.append("</li>");
                         } else {
                             closeLists(sb, arrayList2);
-                            if (i8 < 0) {
-                                i3 = i4;
-                                appendSelectionPiece(sb, text, i6, i7, false);
+                            if (richBlock instanceof RichPreformattedBlock) {
+                                sb.append(RichHtml.preToHtml(toRichHtmlSpannable(text.subSequence(i6, i7)), ((RichPreformattedBlock) richBlock).language));
                             } else {
-                                i3 = i4;
-                                appendSelectionPiece(sb, text, i6, Math.min(i7, i8 > 0 ? i8 - 1 : 0), false);
-                                appendSelectionPiece(sb, text, Math.max(i6, i8), i7, true);
+                                if (i8 < 0) {
+                                    i3 = i4;
+                                    appendSelectionPiece(sb, text, i6, i7, false);
+                                } else {
+                                    i3 = i4;
+                                    appendSelectionPiece(sb, text, i6, Math.min(i7, i8 > 0 ? i8 - 1 : 0), false);
+                                    appendSelectionPiece(sb, text, Math.max(i6, i8), i7, true);
+                                }
+                                i4 = i3;
+                                i5++;
                             }
-                            i4 = i3;
-                            i5++;
                         }
                     } else if (intValue2 != i4) {
                         closeLists(sb, arrayList2);
@@ -603,6 +610,11 @@ public class RichMessageLayout {
     public void detach(View view) {
         View view2 = this.view;
         if (view2 == view && view2 != null) {
+            SpoilerEffect2 spoilerEffect2 = this.spoilerEffect2;
+            if (spoilerEffect2 != null) {
+                spoilerEffect2.detach(view);
+                this.spoilerEffect2 = null;
+            }
             this.view = null;
             for (int i = 0; i < this.blocks.size(); i++) {
                 this.blocks.get(i).detach(view);
@@ -616,6 +628,20 @@ public class RichMessageLayout {
 
     public boolean isAttached() {
         return this.view != null;
+    }
+
+    public SpoilerEffect2 getMediaSpoilerEffect() {
+        if (this.view == null || !SpoilerEffect2.supports()) {
+            return null;
+        }
+        SpoilerEffect2 spoilerEffect2 = this.spoilerEffect2;
+        if (spoilerEffect2 != null && spoilerEffect2.destroyed) {
+            this.spoilerEffect2 = null;
+        }
+        if (this.spoilerEffect2 == null) {
+            this.spoilerEffect2 = SpoilerEffect2.getInstance(this.view);
+        }
+        return this.spoilerEffect2;
     }
 
     public static class QuoteBackground {
@@ -4096,6 +4122,7 @@ public class RichMessageLayout {
         private float downX;
         private boolean dragging;
         private final Runnable flingTick;
+        public final String language;
         private int maxFlingVelocity;
         private final int maxScrollX;
         private int minFlingVelocity;
@@ -4140,6 +4167,7 @@ public class RichMessageLayout {
                 }
             };
             this.viewportWidth = this.maxWidth;
+            this.language = pageblockpreformatted.language;
             String string = RichMessageLayout.getString(pageblockpreformatted.text);
             this.plain = string;
             if (string == null) {
@@ -4841,6 +4869,75 @@ public class RichMessageLayout {
         }
     }
 
+    static final class SpoilerReveal {
+        private ValueAnimator animator;
+        private float cx;
+        private float cy;
+        private float maxR;
+        private final Path path = new Path();
+        float progress;
+        boolean revealed;
+
+        SpoilerReveal() {
+        }
+
+        boolean fullyRevealed() {
+            return this.revealed && this.progress >= 1.0f;
+        }
+
+        boolean isRevealing() {
+            return this.revealed || this.animator != null;
+        }
+
+        void start(final View view, float f, float f2, float f3, float f4) {
+            if (this.revealed || this.animator != null) {
+                return;
+            }
+            this.cx = f;
+            this.cy = f2;
+            this.maxR = (float) Math.sqrt((f3 * f3) + (f4 * f4));
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.animator = ofFloat;
+            ofFloat.setDuration((long) Utilities.clamp(this.maxR * 0.3f, 550.0f, 250.0f));
+            this.animator.setInterpolator(CubicBezierInterpolator.EASE_BOTH);
+            this.animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.messenger.RichMessageLayout$SpoilerReveal$$ExternalSyntheticLambda0
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    RichMessageLayout.SpoilerReveal.this.lambda$start$0(view, valueAnimator);
+                }
+            });
+            this.animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.messenger.RichMessageLayout.SpoilerReveal.1
+                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                public void onAnimationEnd(Animator animator) {
+                    SpoilerReveal spoilerReveal = SpoilerReveal.this;
+                    spoilerReveal.revealed = true;
+                    spoilerReveal.animator = null;
+                    View view2 = view;
+                    if (view2 != null) {
+                        view2.invalidate();
+                    }
+                }
+            });
+            this.animator.start();
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$start$0(View view, ValueAnimator valueAnimator) {
+            this.progress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            if (view != null) {
+                view.invalidate();
+            }
+        }
+
+        void clipOut(Canvas canvas) {
+            if (this.progress > 0.0f) {
+                this.path.rewind();
+                this.path.addCircle(this.cx, this.cy, this.maxR * this.progress, Path.Direction.CW);
+                canvas.clipPath(this.path, Region.Op.DIFFERENCE);
+            }
+        }
+    }
+
     public static abstract class RichMediaBlock extends RichBlock implements DownloadController.FileDownloadProgressListener {
         private static ColorMatrixColorFilter fancyBlurFilter;
         private static Paint mediaBgPaint;
@@ -4860,6 +4957,7 @@ public class RichMessageLayout {
         private final int observerTag;
         private boolean photoPressed;
         protected RadialProgress2 radialProgress;
+        private final SpoilerReveal spoilerReveal;
 
         protected boolean allowAutoplay() {
             return true;
@@ -4881,6 +4979,10 @@ public class RichMessageLayout {
             return false;
         }
 
+        protected boolean isSpoiler() {
+            return false;
+        }
+
         @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
         public void onProgressUpload(String str, long j, long j2, boolean z) {
         }
@@ -4894,6 +4996,7 @@ public class RichMessageLayout {
             this.buttonState = -1;
             this.buttonSize = AndroidUtilities.dp(48.0f);
             this.clipPath = new Path();
+            this.spoilerReveal = new SpoilerReveal();
             this.observerTag = DownloadController.getInstance(richMessageLayout.currentAccount).generateObserverTag();
             imageReceiver.setAllowLoadingOnAttachedOnly(true);
             imageReceiver2.setAllowLoadingOnAttachedOnly(true);
@@ -4999,7 +5102,9 @@ public class RichMessageLayout {
                 this.imageReceiver.setImageCoords(-i2, 0.0f, i2 + i + i3, this.imgHeight);
             }
             this.imageReceiver.draw(canvas);
-            if (this.radialProgress != null && this.buttonState != -1) {
+            if (isSpoiler() && !this.spoilerReveal.fullyRevealed()) {
+                drawMediaSpoiler(canvas);
+            } else if (this.radialProgress != null && this.buttonState != -1) {
                 int imageLeft = getImageLeft();
                 RadialProgress2 radialProgress2 = this.radialProgress;
                 int i4 = imageLeft + this.buttonX;
@@ -5010,6 +5115,44 @@ public class RichMessageLayout {
             }
             if (isInQuote) {
                 canvas.restore();
+            }
+        }
+
+        private void startSpoilerReveal() {
+            float imageWidth = this.imageReceiver.getImageWidth();
+            float imageHeight = this.imageReceiver.getImageHeight();
+            this.spoilerReveal.start(this.view, this.imageReceiver.getImageX() + (imageWidth / 2.0f), this.imageReceiver.getImageY() + (imageHeight / 2.0f), imageWidth, imageHeight);
+        }
+
+        private void drawMediaSpoiler(Canvas canvas) {
+            if (this.spoilerReveal.fullyRevealed()) {
+                return;
+            }
+            prepareBlurImage();
+            float imageX = this.imageReceiver.getImageX();
+            float imageY = this.imageReceiver.getImageY();
+            float imageWidth = this.imageReceiver.getImageWidth();
+            float imageHeight = this.imageReceiver.getImageHeight();
+            if (imageWidth <= 0.0f || imageHeight <= 0.0f) {
+                return;
+            }
+            canvas.save();
+            canvas.clipRect(imageX, imageY, imageX + imageWidth, imageY + imageHeight);
+            this.spoilerReveal.clipOut(canvas);
+            if (this.blurImageReceiver.getBitmap() != null) {
+                this.blurImageReceiver.setImageCoords(imageX, imageY, imageWidth, imageHeight);
+                this.blurImageReceiver.setAlpha(this.imageReceiver.getCurrentAlpha());
+                this.blurImageReceiver.draw(canvas);
+            }
+            SpoilerEffect2 mediaSpoilerEffect = this.root.getMediaSpoilerEffect();
+            if (mediaSpoilerEffect != null) {
+                canvas.translate(imageX, imageY);
+                mediaSpoilerEffect.draw(canvas, this.view, Math.round(imageWidth), Math.round(imageHeight), this.imageReceiver.getCurrentAlpha());
+            }
+            canvas.restore();
+            View view = this.view;
+            if (view != null) {
+                view.invalidate();
             }
         }
 
@@ -5089,8 +5232,12 @@ public class RichMessageLayout {
                                     if (view3 != null) {
                                         view3.playSoundEffect(0);
                                     }
-                                    if (this.root.delegate != null) {
-                                        this.root.delegate.openArticlePhoto(this.root.cell, getBlock());
+                                    if (!isSpoiler() || this.spoilerReveal.isRevealing()) {
+                                        if (this.root.delegate != null) {
+                                            this.root.delegate.openArticlePhoto(this.root.cell, getBlock());
+                                        }
+                                    } else {
+                                        startSpoilerReveal();
                                     }
                                     return true;
                                 }
@@ -5381,6 +5528,12 @@ public class RichMessageLayout {
         public TL_iv.PageBlock getBlock() {
             return this.block;
         }
+
+        @Override // org.telegram.messenger.RichMessageLayout.RichMediaBlock
+        protected boolean isSpoiler() {
+            TL_iv.pageBlockPhoto pageblockphoto = this.block;
+            return pageblockphoto != null && pageblockphoto.spoiler;
+        }
     }
 
     public static class RichVideoBlock extends RichMediaBlock {
@@ -5509,6 +5662,12 @@ public class RichMessageLayout {
         @Override // org.telegram.messenger.RichMessageLayout.RichMediaBlock
         public TL_iv.PageBlock getBlock() {
             return this.block;
+        }
+
+        @Override // org.telegram.messenger.RichMessageLayout.RichMediaBlock
+        protected boolean isSpoiler() {
+            TL_iv.pageBlockVideo pageblockvideo = this.block;
+            return pageblockvideo != null && pageblockvideo.spoiler;
         }
     }
 
@@ -6143,8 +6302,11 @@ public class RichMessageLayout {
     }
 
     public static class MediaCell implements DownloadController.FileDownloadProgressListener {
+        private static ColorMatrixColorFilter fancyBlurFilter;
         public final float aspectRatio;
         public boolean autoDownload;
+        public final ImageReceiver blurImageReceiver;
+        private Bitmap blurSource;
         private boolean buttonPressed;
         private final int buttonSize;
         private int buttonState;
@@ -6165,6 +6327,7 @@ public class RichMessageLayout {
         public final boolean realVideo;
         public final RichMessageLayout root;
         public final TLRPC.PhotoSize sizeFull;
+        private final SpoilerReveal spoilerReveal;
         public final TLRPC.PhotoSize strippedSize;
         public final TLRPC.PhotoSize strippedThumb;
         public int w;
@@ -6189,8 +6352,11 @@ public class RichMessageLayout {
             int i;
             ImageReceiver imageReceiver = new ImageReceiver();
             this.imageReceiver = imageReceiver;
+            ImageReceiver imageReceiver2 = new ImageReceiver();
+            this.blurImageReceiver = imageReceiver2;
             this.buttonState = -1;
             this.buttonSize = AndroidUtilities.dp(48.0f);
+            this.spoilerReveal = new SpoilerReveal();
             this.root = richMessageLayout;
             this.pageBlock = pageblockphoto;
             TLRPC.Photo photo = richMessageLayout.getPhoto(pageblockphoto.photo_id);
@@ -6211,14 +6377,17 @@ public class RichMessageLayout {
             this.aspectRatio = (photoSize == null || (i = photoSize.h) <= 0) ? 1.0f : photoSize.w / i;
             this.observerTag = DownloadController.getInstance(richMessageLayout.currentAccount).generateObserverTag();
             imageReceiver.setAllowLoadingOnAttachedOnly(true);
+            imageReceiver2.setAllowLoadingOnAttachedOnly(true);
         }
 
         private MediaCell(RichMessageLayout richMessageLayout, TL_iv.pageBlockVideo pageblockvideo) {
             float f;
             int i;
             this.imageReceiver = new ImageReceiver();
+            this.blurImageReceiver = new ImageReceiver();
             this.buttonState = -1;
             this.buttonSize = AndroidUtilities.dp(48.0f);
+            this.spoilerReveal = new SpoilerReveal();
             this.root = richMessageLayout;
             this.pageBlock = pageblockvideo;
             this.photo = null;
@@ -6249,6 +6418,7 @@ public class RichMessageLayout {
             this.aspectRatio = f;
             this.observerTag = DownloadController.getInstance(richMessageLayout.currentAccount).generateObserverTag();
             this.imageReceiver.setAllowLoadingOnAttachedOnly(true);
+            this.blurImageReceiver.setAllowLoadingOnAttachedOnly(true);
             this.imageReceiver.setDelegate(new ImageReceiver.ImageReceiverDelegate() { // from class: org.telegram.messenger.RichMessageLayout.MediaCell.1
                 @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
                 public void didSetImage(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
@@ -6427,13 +6597,46 @@ public class RichMessageLayout {
             this.parentView = view;
             this.imageReceiver.setParentView(view);
             this.imageReceiver.onAttachedToWindow();
+            this.blurImageReceiver.setParentView(view);
+            this.blurImageReceiver.onAttachedToWindow();
             ensureProgress(view);
             updateButtonState(view, false);
         }
 
         public void detach() {
             this.imageReceiver.onDetachedFromWindow();
+            this.blurImageReceiver.onDetachedFromWindow();
+            this.blurSource = null;
             DownloadController.getInstance(this.root.currentAccount).removeLoadingFileObserver(this);
+        }
+
+        private boolean isSpoiler() {
+            TL_iv.PageBlock pageBlock = this.pageBlock;
+            if (pageBlock instanceof TL_iv.pageBlockPhoto) {
+                return ((TL_iv.pageBlockPhoto) pageBlock).spoiler;
+            }
+            if (pageBlock instanceof TL_iv.pageBlockVideo) {
+                return ((TL_iv.pageBlockVideo) pageBlock).spoiler;
+            }
+            return false;
+        }
+
+        private void prepareBlurImage() {
+            Bitmap bitmap;
+            if ((this.blurImageReceiver.getBitmap() != null && this.imageReceiver.getAnimation() != null) || (bitmap = this.imageReceiver.getBitmap()) == null || bitmap.isRecycled()) {
+                return;
+            }
+            if (bitmap != this.blurSource || this.blurImageReceiver.getBitmap() == null) {
+                this.blurSource = bitmap;
+                this.blurImageReceiver.setImageBitmap(Utilities.stackBlurBitmapMax(bitmap, false));
+                if (fancyBlurFilter == null) {
+                    ColorMatrix colorMatrix = new ColorMatrix();
+                    AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, 0.9f);
+                    AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, 0.6f);
+                    fancyBlurFilter = new ColorMatrixColorFilter(colorMatrix);
+                }
+                this.blurImageReceiver.setColorFilter(fancyBlurFilter);
+            }
         }
 
         public void updateButtonState(View view, boolean z) {
@@ -6629,8 +6832,14 @@ public class RichMessageLayout {
                     if (view != null) {
                         view.playSoundEffect(0);
                     }
-                    if (this.root.delegate != null) {
-                        this.root.delegate.openArticlePhoto(this.root.cell, this.pageBlock);
+                    if (!isSpoiler() || this.spoilerReveal.isRevealing()) {
+                        if (this.root.delegate != null) {
+                            this.root.delegate.openArticlePhoto(this.root.cell, this.pageBlock);
+                        }
+                    } else {
+                        float imageWidth = this.imageReceiver.getImageWidth();
+                        float imageHeight = this.imageReceiver.getImageHeight();
+                        this.spoilerReveal.start(view, this.imageReceiver.getImageX() + (imageWidth / 2.0f), this.imageReceiver.getImageY() + (imageHeight / 2.0f), imageWidth, imageHeight);
                     }
                     return true;
                 }
@@ -6640,11 +6849,44 @@ public class RichMessageLayout {
 
         public void draw(Canvas canvas) {
             this.imageReceiver.draw(canvas);
+            if (isSpoiler() && !this.spoilerReveal.fullyRevealed()) {
+                drawSpoiler(canvas);
+                return;
+            }
             RadialProgress2 radialProgress2 = this.radialProgress;
             if (radialProgress2 == null || this.buttonState == -1) {
                 return;
             }
             radialProgress2.draw(canvas);
+        }
+
+        private void drawSpoiler(Canvas canvas) {
+            prepareBlurImage();
+            float imageX = this.imageReceiver.getImageX();
+            float imageY = this.imageReceiver.getImageY();
+            float imageWidth = this.imageReceiver.getImageWidth();
+            float imageHeight = this.imageReceiver.getImageHeight();
+            if (imageWidth <= 0.0f || imageHeight <= 0.0f) {
+                return;
+            }
+            canvas.save();
+            canvas.clipRect(imageX, imageY, imageX + imageWidth, imageY + imageHeight);
+            this.spoilerReveal.clipOut(canvas);
+            if (this.blurImageReceiver.getBitmap() != null) {
+                this.blurImageReceiver.setImageCoords(imageX, imageY, imageWidth, imageHeight);
+                this.blurImageReceiver.setAlpha(this.imageReceiver.getCurrentAlpha());
+                this.blurImageReceiver.draw(canvas);
+            }
+            SpoilerEffect2 mediaSpoilerEffect = this.root.getMediaSpoilerEffect();
+            if (mediaSpoilerEffect != null) {
+                canvas.translate(imageX, imageY);
+                mediaSpoilerEffect.draw(canvas, this.parentView, Math.round(imageWidth), Math.round(imageHeight), this.imageReceiver.getCurrentAlpha());
+            }
+            canvas.restore();
+            View view = this.parentView;
+            if (view != null) {
+                view.invalidate();
+            }
         }
 
         @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
@@ -8065,6 +8307,10 @@ public class RichMessageLayout {
     public static class PreviewView extends View implements TextSelectionHelper.ArticleSelectableView {
         private boolean allowActions;
         private final int currentAccount;
+        private int insetBottom;
+        private int insetLeft;
+        private int insetRight;
+        private int insetTop;
         private RichMessageLayout layout;
         private int maxHeight;
         private MessageObject messageObject;
@@ -8097,6 +8343,19 @@ public class RichMessageLayout {
             }
         }
 
+        @Override // android.view.View
+        public void setPadding(int i, int i2, int i3, int i4) {
+            if (this.insetLeft == i && this.insetTop == i2 && this.insetRight == i3 && this.insetBottom == i4) {
+                return;
+            }
+            this.insetLeft = i;
+            this.insetTop = i2;
+            this.insetRight = i3;
+            this.insetBottom = i4;
+            requestLayout();
+            invalidate();
+        }
+
         public void setTranslationLoading(boolean z) {
             this.translationLoading = z;
             RichMessageLayout richMessageLayout = this.layout;
@@ -8109,10 +8368,10 @@ public class RichMessageLayout {
         @Override // org.telegram.ui.Cells.TextSelectionHelper.ArticleSelectableView
         public void fillTextLayoutBlocks(ArrayList<TextSelectionHelper.TextLayoutBlock> arrayList) {
             if (this.layout != null) {
-                int paddingLeft = getPaddingLeft();
-                int paddingTop = getPaddingTop();
-                for (int i = 0; i < this.layout.textBlocks.size(); i++) {
-                    arrayList.add(new PaddedTextLayoutBlock(this.layout.textBlocks.get(i), paddingLeft, paddingTop));
+                int i = this.insetLeft;
+                int i2 = this.insetTop;
+                for (int i3 = 0; i3 < this.layout.textBlocks.size(); i3++) {
+                    arrayList.add(new PaddedTextLayoutBlock(this.layout.textBlocks.get(i3), i, i2));
                 }
             }
         }
@@ -8178,9 +8437,9 @@ public class RichMessageLayout {
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
             int size = View.MeasureSpec.getSize(i);
-            buildLayout((size - getPaddingLeft()) - getPaddingRight());
+            buildLayout((size - this.insetLeft) - this.insetRight);
             RichMessageLayout richMessageLayout = this.layout;
-            int height = (richMessageLayout != null ? richMessageLayout.getHeight() : 0) + getPaddingTop() + getPaddingBottom();
+            int height = (richMessageLayout != null ? richMessageLayout.getHeight() : 0) + this.insetTop + this.insetBottom;
             int i3 = this.maxHeight;
             if (i3 > 0 && height > i3) {
                 height = i3;
@@ -8203,21 +8462,22 @@ public class RichMessageLayout {
             if (this.layout == null) {
                 return;
             }
-            float height = (getHeight() - getPaddingTop()) - getPaddingBottom();
-            boolean z = this.layout.getHeight() > (getHeight() - getPaddingTop()) - getPaddingBottom();
+            float height = (getHeight() - this.insetTop) - this.insetBottom;
+            boolean z = this.layout.getHeight() > (getHeight() - this.insetTop) - this.insetBottom;
             canvas.save();
-            canvas.translate(getPaddingLeft(), getPaddingTop());
             if (z) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, (getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom(), NotificationCenter.didReceiveSmsCode, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReceiveSmsCode, 31);
             }
-            this.layout.draw(canvas, getPaddingLeft(), Math.max(0, (getWidth() - this.layout.getMinWidth()) - getPaddingLeft()), null, 0.0f, height);
+            canvas.translate(this.insetLeft, this.insetTop);
+            this.layout.draw(canvas, this.insetLeft, Math.max(0, (getWidth() - this.layout.getMinWidth()) - this.insetLeft), null, 0.0f, height);
             if (this.layout.hasOverlay()) {
                 this.layout.drawOverlay(canvas, null);
             }
             if (z) {
+                canvas.translate(-this.insetLeft, -this.insetTop);
                 canvas.save();
                 RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(0.0f, ((getHeight() - getPaddingBottom()) - getPaddingTop()) - AndroidUtilities.dp(24.0f), (getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingBottom()) - getPaddingTop());
+                rectF.set(0.0f, getHeight() - AndroidUtilities.dp(24.0f), getWidth(), getHeight());
                 this.layout.clip.draw(canvas, rectF, 3, 1.0f);
                 canvas.restore();
                 canvas.restore();
@@ -8227,13 +8487,13 @@ public class RichMessageLayout {
             if (articleTextSelectionHelper == null || !articleTextSelectionHelper.isInSelectionMode()) {
                 return;
             }
-            int paddingLeft = getPaddingLeft();
-            int paddingTop = getPaddingTop();
-            for (int i = 0; i < this.layout.textBlocks.size(); i++) {
-                TextSelectionHelper.TextLayoutBlock textLayoutBlock = this.layout.textBlocks.get(i);
+            int i = this.insetLeft;
+            int i2 = this.insetTop;
+            for (int i3 = 0; i3 < this.layout.textBlocks.size(); i3++) {
+                TextSelectionHelper.TextLayoutBlock textLayoutBlock = this.layout.textBlocks.get(i3);
                 canvas.save();
-                canvas.translate(textLayoutBlock.getX() + paddingLeft, textLayoutBlock.getY() + paddingTop);
-                this.textSelectionHelper.draw(canvas, this, i);
+                canvas.translate(textLayoutBlock.getX() + i, textLayoutBlock.getY() + i2);
+                this.textSelectionHelper.draw(canvas, this, i3);
                 canvas.restore();
             }
         }
@@ -8286,9 +8546,9 @@ public class RichMessageLayout {
                 }
             }
             if (this.layout != null) {
-                motionEvent.offsetLocation(-getPaddingLeft(), -getPaddingTop());
+                motionEvent.offsetLocation(-this.insetLeft, -this.insetTop);
                 boolean onTouchEvent = this.layout.onTouchEvent(motionEvent);
-                motionEvent.offsetLocation(getPaddingLeft(), getPaddingTop());
+                motionEvent.offsetLocation(this.insetLeft, this.insetTop);
                 if (onTouchEvent) {
                     return true;
                 }

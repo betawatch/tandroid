@@ -12222,64 +12222,74 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         hideActionMode(true);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00cd  */
-    /* JADX WARN: Removed duplicated region for block: B:33:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00f4  */
+    /* JADX WARN: Removed duplicated region for block: B:44:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private void markAsRead(long j) {
         int i;
         TLRPC.Dialog dialog = (TLRPC.Dialog) getMessagesController().dialogs_dict.get(j);
-        MessagesController.DialogFilter dialogFilter = null;
-        if ((this.viewPages[0].dialogsType == 7 || this.viewPages[0].dialogsType == 8) && (!this.actionBar.isActionModeShowed() || this.actionBar.isActionModeShowed(null))) {
-            dialogFilter = getMessagesController().selectedDialogFilter[this.viewPages[0].dialogsType == 8 ? (char) 1 : (char) 0];
-        }
-        this.debugLastUpdateAction = 2;
-        int i2 = -1;
-        if (dialogFilter != null && (dialogFilter.flags & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_READ) != 0 && !dialogFilter.alwaysShow(this.currentAccount, dialog)) {
-            setDialogsListFrozen(true);
-            checkAnimationFinished();
-            if (this.frozenDialogsList != null) {
-                int i3 = 0;
-                while (true) {
-                    if (i3 >= this.frozenDialogsList.size()) {
-                        break;
+        if (!(dialog instanceof TLRPC.TL_dialogCommunity)) {
+            MessagesController.DialogFilter dialogFilter = null;
+            if ((this.viewPages[0].dialogsType == 7 || this.viewPages[0].dialogsType == 8) && (!this.actionBar.isActionModeShowed() || this.actionBar.isActionModeShowed(null))) {
+                dialogFilter = getMessagesController().selectedDialogFilter[this.viewPages[0].dialogsType == 8 ? (char) 1 : (char) 0];
+            }
+            this.debugLastUpdateAction = 2;
+            int i2 = -1;
+            if (dialogFilter != null && (dialogFilter.flags & MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_READ) != 0 && !dialogFilter.alwaysShow(this.currentAccount, dialog)) {
+                setDialogsListFrozen(true);
+                checkAnimationFinished();
+                if (this.frozenDialogsList != null) {
+                    int i3 = 0;
+                    while (true) {
+                        if (i3 >= this.frozenDialogsList.size()) {
+                            break;
+                        }
+                        if (((TLRPC.Dialog) this.frozenDialogsList.get(i3)).id == j) {
+                            i2 = i3;
+                            break;
+                        }
+                        i3++;
                     }
-                    if (((TLRPC.Dialog) this.frozenDialogsList.get(i3)).id == j) {
-                        i2 = i3;
-                        break;
+                    if (i2 < 0) {
+                        setDialogsListFrozen(false, false);
                     }
-                    i3++;
-                }
-                if (i2 < 0) {
-                    setDialogsListFrozen(false, false);
-                }
-                i = i2;
-                if (!getMessagesController().isForum(j) || getMessagesController().isMonoForumWithManageRights(j)) {
-                    getMessagesController().markAllTopicsAsRead(j);
-                }
-                getMessagesController().markMentionsAsRead(j, 0L);
-                MessagesController messagesController = getMessagesController();
-                int i4 = dialog.top_message;
-                messagesController.markDialogAsRead(j, i4, i4, dialog.last_message_date, false, 0L, 0, true, 0);
-                if (i < 0) {
-                    this.frozenDialogsList.remove(i);
-                    this.viewPages[0].dialogsItemAnimator.prepareForRemove();
-                    this.viewPages[0].updateList(true);
+                    i = i2;
+                    if (!getMessagesController().isForum(j) || getMessagesController().isMonoForumWithManageRights(j)) {
+                        getMessagesController().markAllTopicsAsRead(j);
+                    }
+                    getMessagesController().markMentionsAsRead(j, 0L);
+                    MessagesController messagesController = getMessagesController();
+                    int i4 = dialog.top_message;
+                    messagesController.markDialogAsRead(j, i4, i4, dialog.last_message_date, false, 0L, 0, true, 0);
+                    if (i < 0) {
+                        this.frozenDialogsList.remove(i);
+                        this.viewPages[0].dialogsItemAnimator.prepareForRemove();
+                        this.viewPages[0].updateList(true);
+                        return;
+                    }
                     return;
                 }
-                return;
             }
-        }
-        i = -1;
-        if (!getMessagesController().isForum(j)) {
-        }
-        getMessagesController().markAllTopicsAsRead(j);
-        getMessagesController().markMentionsAsRead(j, 0L);
-        MessagesController messagesController2 = getMessagesController();
-        int i42 = dialog.top_message;
-        messagesController2.markDialogAsRead(j, i42, i42, dialog.last_message_date, false, 0L, 0, true, 0);
-        if (i < 0) {
+            i = -1;
+            if (!getMessagesController().isForum(j)) {
+            }
+            getMessagesController().markAllTopicsAsRead(j);
+            getMessagesController().markMentionsAsRead(j, 0L);
+            MessagesController messagesController2 = getMessagesController();
+            int i42 = dialog.top_message;
+            messagesController2.markDialogAsRead(j, i42, i42, dialog.last_message_date, false, 0L, 0, true, 0);
+            if (i < 0) {
+            }
+        } else {
+            ArrayList<TLRPC.Dialog> dialogsByCommunity = getMessagesController().getDialogsByCommunity(dialog.community_id);
+            if (dialogsByCommunity != null) {
+                Iterator<TLRPC.Dialog> it = dialogsByCommunity.iterator();
+                while (it.hasNext()) {
+                    markAsRead(it.next().id);
+                }
+            }
         }
     }
 
@@ -12713,7 +12723,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     if (this.canReadCount != 0) {
                         actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(R.string.MarkAsRead), R.drawable.msg_markread);
                         this.readItem.setVisibility(0);
-                    } else if (this.forumCount == 0) {
+                    } else if (this.forumCount == 0 && i6 == 0) {
                         actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(R.string.MarkAsUnread), R.drawable.msg_markunread);
                         this.readItem.setVisibility(0);
                     } else {

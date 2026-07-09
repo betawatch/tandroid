@@ -5485,7 +5485,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
                     @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
                     public void sendSticker(TLRPC.Document document, String str3, Object obj2, boolean z4, int i22, int i23) {
-                        ChatActivity.this.chatActivityEnterView.lambda$onStickerSelected$91(document, str3, obj2, null, true, z4, i22, i23);
+                        ChatActivity.this.chatActivityEnterView.lambda$onStickerSelected$94(document, str3, obj2, null, true, z4, i22, i23);
                     }
 
                     @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -7316,7 +7316,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
             @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public void sendSticker(TLRPC.Document document, String str3, Object obj2, boolean z42, int i222, int i232) {
-                ChatActivity.this.chatActivityEnterView.lambda$onStickerSelected$91(document, str3, obj2, null, true, z42, i222, i232);
+                ChatActivity.this.chatActivityEnterView.lambda$onStickerSelected$94(document, str3, obj2, null, true, z42, i222, i232);
             }
 
             @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -41698,7 +41698,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             CharSequence[] charSequenceArr = {charSequence};
             MediaDataController mediaDataController = getMediaDataController();
             TLRPC.EncryptedChat encryptedChat = this.currentEncryptedChat;
-            ArrayList<TLRPC.MessageEntity> entities = mediaDataController.getEntities(charSequenceArr, encryptedChat == null || AndroidUtilities.getPeerLayerVersion(encryptedChat.layer) >= 101);
+            ArrayList<TLRPC.MessageEntity> entities = mediaDataController.getEntities(charSequenceArr, encryptedChat == null || AndroidUtilities.getPeerLayerVersion(encryptedChat.layer) >= 101, false);
             long computeDraftThreadId = computeDraftThreadId(messageObject);
             TLRPC.DraftMessage draft = getMediaDataController().getDraft(this.dialog_id, computeDraftThreadId);
             TL_iv.RichMessage richMessage = draft != null ? draft.rich_message : null;

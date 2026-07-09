@@ -106,7 +106,7 @@ public class RichDetailsCell extends FrameLayout implements Theme.Colorable, Tex
         this.editText = richEditText;
         richEditText.setAllowNewlines(false);
         richEditText.setTextSize(1, SharedConfig.fontSize);
-        richEditText.setHint(LocaleController.getString(R.string.ArticleHintTitle));
+        richEditText.setHint(LocaleController.getString(R.string.ArticleHintDetailsTitle));
         richEditText.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(10.0f));
         richEditText.setListener(new 3());
         richEditText.setDelegate(new EditTextCaption.EditTextCaptionDelegate() { // from class: org.telegram.ui.iv.RichDetailsCell$$ExternalSyntheticLambda1

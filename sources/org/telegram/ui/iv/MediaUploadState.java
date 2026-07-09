@@ -8,6 +8,7 @@ public class MediaUploadState {
     public TLRPC.Document audioDisplayDocument;
     public TLRPC.Document document;
     public int duration;
+    public boolean hasSpoiler;
     public int height;
     public int invert;
     public boolean isAudio;

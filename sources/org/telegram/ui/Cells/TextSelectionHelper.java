@@ -3254,7 +3254,7 @@ public abstract class TextSelectionHelper {
             } else {
                 i = this.startPeek ? this.startViewChildPosition : this.endViewChildPosition;
             }
-            if (this.arrayList.isEmpty() || i < 0) {
+            if (this.arrayList.isEmpty() || i < 0 || i >= this.arrayList.size()) {
                 return "";
             }
             return ((TextLayoutBlock) this.arrayList.get(i)).getLayout().getText();
@@ -3276,32 +3276,34 @@ public abstract class TextSelectionHelper {
             } else {
                 i5 = this.startPeek ? this.startViewChildPosition : this.endViewChildPosition;
             }
-            Layout layout = ((TextLayoutBlock) this.arrayList.get(i5)).getLayout();
-            if (i6 < 0) {
-                i6 = 1;
-            }
-            if (i7 < 0) {
-                i7 = 1;
-            }
-            if (i6 > layout.getWidth()) {
-                i6 = layout.getWidth();
-            }
-            if (i7 > layout.getLineBottom(layout.getLineCount() - 1)) {
-                i7 = layout.getLineBottom(layout.getLineCount() - 1) - 1;
-            }
-            int i8 = 0;
-            while (true) {
-                if (i8 >= layout.getLineCount()) {
-                    i8 = -1;
-                    break;
+            if (i5 >= 0 && i5 < this.arrayList.size()) {
+                Layout layout = ((TextLayoutBlock) this.arrayList.get(i5)).getLayout();
+                if (i6 < 0) {
+                    i6 = 1;
                 }
-                if (i7 >= layout.getLineTop(i8) && i7 <= layout.getLineBottom(i8)) {
-                    break;
+                if (i7 < 0) {
+                    i7 = 1;
                 }
-                i8++;
-            }
-            if (i8 >= 0) {
-                return layout.getOffsetForHorizontal(i8, i6);
+                if (i6 > layout.getWidth()) {
+                    i6 = layout.getWidth();
+                }
+                if (i7 > layout.getLineBottom(layout.getLineCount() - 1)) {
+                    i7 = layout.getLineBottom(layout.getLineCount() - 1) - 1;
+                }
+                int i8 = 0;
+                while (true) {
+                    if (i8 >= layout.getLineCount()) {
+                        i8 = -1;
+                        break;
+                    }
+                    if (i7 >= layout.getLineTop(i8) && i7 <= layout.getLineBottom(i8)) {
+                        break;
+                    }
+                    i8++;
+                }
+                if (i8 >= 0) {
+                    return layout.getOffsetForHorizontal(i8, i6);
+                }
             }
             return -1;
         }
@@ -4056,7 +4058,8 @@ public abstract class TextSelectionHelper {
                     }
                     this.arrayList.clear();
                     ((ArticleSelectableView) this.selectedView).fillTextLayoutBlocks(this.arrayList);
-                    if (this.arrayList.isEmpty()) {
+                    int i2 = this.endViewChildPosition;
+                    if (i2 < 0 || i2 >= this.arrayList.size()) {
                         return;
                     }
                     this.textX = ((TextLayoutBlock) this.arrayList.get(this.endViewChildPosition)).getX();
@@ -4093,7 +4096,8 @@ public abstract class TextSelectionHelper {
                     this.selectionStart = this.startViewOffset;
                     this.arrayList.clear();
                     ((ArticleSelectableView) this.selectedView).fillTextLayoutBlocks(this.arrayList);
-                    if (this.arrayList.isEmpty()) {
+                    int i2 = this.startViewChildPosition;
+                    if (i2 < 0 || i2 >= this.arrayList.size()) {
                         return;
                     }
                     this.textX = ((TextLayoutBlock) this.arrayList.get(this.startViewChildPosition)).getX();

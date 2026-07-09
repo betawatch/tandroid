@@ -8233,9 +8233,9 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             return new RecyclerListView.Holder(attachButton);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:21:0x01cd  */
-        /* JADX WARN: Removed duplicated region for block: B:24:0x01d8  */
-        /* JADX WARN: Removed duplicated region for block: B:29:0x01d0  */
+        /* JADX WARN: Removed duplicated region for block: B:21:0x01dd  */
+        /* JADX WARN: Removed duplicated region for block: B:24:0x01e8  */
+        /* JADX WARN: Removed duplicated region for block: B:29:0x01e0  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -8308,21 +8308,25 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                     } else if (i == this.richButton) {
                         attachButton.setTextAndIcon(16, LocaleController.getString(R.string.AttachArticle), GlassTabView.TabAnimation.ARTICLE);
                         attachButton.setTag(16);
+                        z = !MessagesController.getInstance(ChatAttachAlert.this.currentAccount).storyEntitiesAllowed();
+                        z2 = false;
+                        attachButton.glassTabView.setCounter(!z2 ? "!" : null, z2, false);
+                        attachButton.glassTabView.setPremiumBadge((z || UserConfig.getInstance(ChatAttachAlert.this.currentAccount).isPremium()) ? false : true);
                     }
-                    z = false;
-                    z2 = true;
-                    attachButton.glassTabView.setCounter(z ? "!" : null, z, false);
-                    attachButton.glassTabView.setPremiumBadge((z2 || UserConfig.getInstance(ChatAttachAlert.this.currentAccount).isPremium()) ? false : true);
+                    z2 = false;
+                    z = true;
+                    attachButton.glassTabView.setCounter(!z2 ? "!" : null, z2, false);
+                    attachButton.glassTabView.setPremiumBadge((z || UserConfig.getInstance(ChatAttachAlert.this.currentAccount).isPremium()) ? false : true);
                 }
-                z = false;
                 z2 = false;
-                attachButton.glassTabView.setCounter(z ? "!" : null, z, false);
-                attachButton.glassTabView.setPremiumBadge((z2 || UserConfig.getInstance(ChatAttachAlert.this.currentAccount).isPremium()) ? false : true);
+                z = false;
+                attachButton.glassTabView.setCounter(!z2 ? "!" : null, z2, false);
+                attachButton.glassTabView.setPremiumBadge((z || UserConfig.getInstance(ChatAttachAlert.this.currentAccount).isPremium()) ? false : true);
             }
-            z = !checkContactsPermission;
-            z2 = false;
-            attachButton.glassTabView.setCounter(z ? "!" : null, z, false);
-            attachButton.glassTabView.setPremiumBadge((z2 || UserConfig.getInstance(ChatAttachAlert.this.currentAccount).isPremium()) ? false : true);
+            z2 = !checkContactsPermission;
+            z = false;
+            attachButton.glassTabView.setCounter(!z2 ? "!" : null, z2, false);
+            attachButton.glassTabView.setPremiumBadge((z || UserConfig.getInstance(ChatAttachAlert.this.currentAccount).isPremium()) ? false : true);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter

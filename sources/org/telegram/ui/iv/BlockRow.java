@@ -11,6 +11,7 @@ public class BlockRow {
     public boolean checkbox;
     public boolean checked;
     public boolean detailsEnd;
+    public boolean firstBlock;
     public final long id;
     public boolean itemStart;
     public int level;
@@ -23,6 +24,7 @@ public class BlockRow {
     public final ArrayList quoteIds;
     public boolean quoteLast;
     public int quoteTopEdge;
+    public boolean singleParagraph;
 
     public BlockRow(TL_iv.PageBlock pageBlock) {
         this(pageBlock, 0, 0);

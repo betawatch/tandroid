@@ -214,6 +214,10 @@ public class SpoilerEffect2 {
         if (num == null) {
             num = 0;
         }
+        if (i > i3 || i2 > i4) {
+            float max = Math.max(i / i3, i2 / i4);
+            canvas.scale(max, max);
+        }
         if (num.intValue() % 4 == 1) {
             canvas.rotate(180.0f, i3 / 2.0f, i4 / 2.0f);
         }
@@ -222,10 +226,6 @@ public class SpoilerEffect2 {
         }
         if (num.intValue() % 4 == 3) {
             canvas.scale(1.0f, -1.0f, i3 / 2.0f, i4 / 2.0f);
-        }
-        if (i > i3 || i2 > i4) {
-            float max = Math.max(i / i3, i2 / i4);
-            canvas.scale(max, max);
         }
         if (z) {
             Bitmap bitmap = this.textureView.getBitmap();

@@ -140,7 +140,6 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
     public Theme.MessageDrawable messageDrawableOutMediaStart;
     public Theme.MessageDrawable messageDrawableOutStart;
     private int navigationBarInsetHeight;
-    private int navigationBarWithImeInsetHeight;
     private BaseFragment newFragment;
     AnimationNotificationsLocker notificationsLocker;
     private BaseFragment oldFragment;
@@ -1344,7 +1343,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     int alpha = internalNavbarPaint.getAlpha();
                     internalNavbarPaint.setAlpha((int) (view.getAlpha() * 255.0f));
                     float max = Math.max(view.getTranslationX(), paddingRight);
-                    canvas.drawRect(max, getMeasuredHeight() - this.navigationBarWithImeInsetHeight, max + view.getMeasuredWidth(), getMeasuredHeight(), internalNavbarPaint);
+                    canvas.drawRect(max, getMeasuredHeight() - this.navigationBarInsetHeight, max + view.getMeasuredWidth(), getMeasuredHeight(), internalNavbarPaint);
                     internalNavbarPaint.setAlpha(alpha);
                 }
                 if (this.drawerLayoutContainer != null && !this.isLayersLayout && view == (layoutContainer3 = this.containerViewBack) && !layoutContainer3.isSupportEdgeToEdge && this.lastWindowInsetsCompat != null && (lastFragment = getLastFragment()) != null && !lastFragment.isSupportEdgeToEdge() && !lastFragment.inPreviewMode) {
@@ -1412,7 +1411,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 int alpha4 = internalNavbarPaint4.getAlpha();
                 internalNavbarPaint4.setAlpha((int) (view.getAlpha() * 255.0f));
                 float max2 = Math.max(view.getTranslationX(), paddingRight);
-                canvas.drawRect(max2, getMeasuredHeight() - this.navigationBarWithImeInsetHeight, max2 + view.getMeasuredWidth(), getMeasuredHeight(), internalNavbarPaint4);
+                canvas.drawRect(max2, getMeasuredHeight() - this.navigationBarInsetHeight, max2 + view.getMeasuredWidth(), getMeasuredHeight(), internalNavbarPaint4);
                 internalNavbarPaint4.setAlpha(alpha4);
             }
             if (this.drawerLayoutContainer != null) {
@@ -3999,12 +3998,10 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
 
     /* JADX INFO: Access modifiers changed from: private */
     public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
-        Insets insetsIgnoringVisibility = windowInsetsCompat.getInsetsIgnoringVisibility(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
-        Insets max = Insets.max(insetsIgnoringVisibility, windowInsetsCompat.getInsets(WindowInsetsCompat.Type.ime()));
+        Insets insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars());
         this.lastWindowInsetsCompat = windowInsetsCompat;
-        this.navigationBarInsetHeight = insetsIgnoringVisibility.bottom;
-        this.statusBarInsetHeight = insetsIgnoringVisibility.top;
-        this.navigationBarWithImeInsetHeight = max.bottom;
+        this.navigationBarInsetHeight = insets.bottom;
+        this.statusBarInsetHeight = insets.top;
         int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
             dispatchApplyWindowInsetsInternal(getChildAt(i), windowInsetsCompat);

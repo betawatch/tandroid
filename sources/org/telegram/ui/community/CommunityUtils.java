@@ -43,7 +43,6 @@ import org.telegram.ui.DialogsActivity;
 import org.telegram.ui.community.CommunityUtils;
 import org.telegram.ui.community.cells.CommunityPendingRequestCell;
 import org.telegram.ui.community.sheet.CommunityAddOptionsSheet;
-import org.telegram.ui.community.sheet.CommunityChatsToAddSheet;
 
 /* loaded from: classes3.dex */
 public abstract class CommunityUtils {
@@ -499,7 +498,7 @@ public abstract class CommunityUtils {
 
     private static void showChatsToAddSheet(final BaseFragment baseFragment, final int i, final TLRPC.Chat chat, ArrayList arrayList) {
         if (!arrayList.isEmpty()) {
-            baseFragment.showDialog(new CommunityChatsToAddSheet(baseFragment.getContext(), arrayList, new Utilities.Callback() { // from class: org.telegram.ui.community.CommunityUtils$$ExternalSyntheticLambda2
+            baseFragment.showDialog(new CommunitySheet(baseFragment, 0L, arrayList, new Utilities.Callback() { // from class: org.telegram.ui.community.CommunityUtils$$ExternalSyntheticLambda2
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     CommunityUtils.lambda$showChatsToAddSheet$3(BaseFragment.this, chat, i, (TLRPC.Chat) obj);

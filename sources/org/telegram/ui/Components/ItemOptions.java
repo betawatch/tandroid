@@ -467,11 +467,19 @@ public class ItemOptions {
         return addChecked(z, i, charSequence, runnable, null);
     }
 
+    public ItemOptions addChecked(boolean z, Drawable drawable, CharSequence charSequence, Runnable runnable) {
+        return addChecked(z, 0, drawable, charSequence, runnable, null);
+    }
+
     public ItemOptions addChecked(boolean z, CharSequence charSequence, Runnable runnable, Runnable runnable2) {
         return addChecked(z, 0, charSequence, runnable, runnable2);
     }
 
-    public ItemOptions addChecked(boolean z, int i, CharSequence charSequence, final Runnable runnable, final Runnable runnable2) {
+    public ItemOptions addChecked(boolean z, int i, CharSequence charSequence, Runnable runnable, Runnable runnable2) {
+        return addChecked(z, i, null, charSequence, runnable, runnable2);
+    }
+
+    public ItemOptions addChecked(boolean z, int i, Drawable drawable, CharSequence charSequence, final Runnable runnable, final Runnable runnable2) {
         if (this.context == null) {
             return this;
         }
@@ -479,7 +487,9 @@ public class ItemOptions {
         int i3 = Theme.key_actionBarDefaultSubmenuItemIcon;
         ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(this.context, i != 0 ? 2 : 1, false, false, this.resourcesProvider);
         actionBarMenuSubItem.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-        if (i != 0) {
+        if (drawable != null) {
+            actionBarMenuSubItem.setTextAndIcon(charSequence, 0, drawable);
+        } else if (i != 0) {
             actionBarMenuSubItem.setTextAndIcon(charSequence, i);
         } else {
             actionBarMenuSubItem.setText(charSequence);
@@ -491,14 +501,14 @@ public class ItemOptions {
         actionBarMenuSubItem.setColors(intValue, num2 != null ? num2.intValue() : Theme.getColor(i3, this.resourcesProvider));
         Integer num3 = this.selectorColor;
         actionBarMenuSubItem.setSelectorColor(num3 != null ? num3.intValue() : Theme.multAlpha(Theme.getColor(i2, this.resourcesProvider), 0.12f));
-        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda11
+        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ItemOptions.this.lambda$addChecked$2(runnable, view);
             }
         });
         if (runnable2 != null) {
-            actionBarMenuSubItem.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda12
+            actionBarMenuSubItem.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda9
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
                     boolean lambda$addChecked$3;
@@ -600,13 +610,13 @@ public class ItemOptions {
         actionBarMenuSubItem.setIconColorImage(num4 != null ? num4.intValue() : Theme.getColor(i, this.resourcesProvider));
         Integer num5 = this.selectorColor;
         actionBarMenuSubItem.setSelectorColor(num5 != null ? num5.intValue() : Theme.multAlpha(Theme.getColor(i2, this.resourcesProvider), 0.12f));
-        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda8
+        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ItemOptions.this.lambda$addBot$4(runnable, view);
             }
         });
-        actionBarMenuSubItem.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda9
+        actionBarMenuSubItem.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda11
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
                 boolean lambda$addBot$5;
@@ -786,7 +796,7 @@ public class ItemOptions {
         actionBarMenuSubItem.setColors(intValue, num2 != null ? num2.intValue() : Theme.getColor(Theme.key_actionBarDefaultSubmenuItemIcon, this.resourcesProvider));
         Integer num3 = this.selectorColor;
         actionBarMenuSubItem.setSelectorColor(num3 != null ? num3.intValue() : Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, this.resourcesProvider), 0.12f));
-        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda10
+        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ItemOptions.this.lambda$add$8(runnable, view);
@@ -1320,11 +1330,11 @@ public class ItemOptions {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x03ff A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0411  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x0453  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x0464  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x04d9  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x041d  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x045f  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0470  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x04e5  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x040b A[ADDED_TO_REGION] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1371,7 +1381,7 @@ public class ItemOptions {
                 i5++;
             }
         }
-        if (this.blur && this.scrimBlur3SourceBitmap == null) {
+        if ((this.blur || this.blurForMenu) && this.scrimBlur3SourceBitmap == null) {
             this.scrimBlur3SourceBitmap = new BlurredBackgroundSourceBitmap();
         }
         ViewGroup viewGroup = this.container;
@@ -1415,7 +1425,7 @@ public class ItemOptions {
                 this.point[0] = 0.0f;
                 f6 = 0.0f;
             }
-            if (this.dimAlpha > 0) {
+            if (this.dimAlpha > 0 || this.blur || this.blurForMenu) {
                 final DimView dimView3 = new DimView(this.context);
                 this.dimView = dimView3;
                 this.preDrawListener = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda3
@@ -2206,7 +2216,7 @@ public class ItemOptions {
                 this.cachedBitmapPaint = null;
                 this.cachedBitmap = null;
             }
-            if (ItemOptions.this.blur) {
+            if (ItemOptions.this.blur || ItemOptions.this.blurForMenu) {
                 this.blurPaint = new Paint(3);
                 ItemOptions.this.scrimView.setAlpha(0.0f);
                 ScrimOptions.makeGlobalBlurBitmaps(ItemOptions.this.pointContainer, new Utilities.Callback2() { // from class: org.telegram.ui.Components.ItemOptions$DimView$$ExternalSyntheticLambda3
@@ -2221,7 +2231,9 @@ public class ItemOptions {
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$new$0(Bitmap bitmap, Bitmap bitmap2) {
             ItemOptions.this.scrimView.setAlpha(1.0f);
-            this.blurBitmap = bitmap;
+            if (ItemOptions.this.blur) {
+                this.blurBitmap = bitmap;
+            }
             if (ItemOptions.this.scrimBlur3SourceBitmap != null) {
                 ItemOptions.this.scrimBlur3SourceBitmap.setBitmap(bitmap2);
                 Blur3Utils.checkBitmapSourceMatrixScale(ItemOptions.this.scrimBlur3SourceBitmap, this);

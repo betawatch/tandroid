@@ -117,7 +117,7 @@ public class StarParticlesView extends View {
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        int measuredWidth = getMeasuredWidth() << (getMeasuredHeight() + 16);
+        int measuredWidth = (getMeasuredWidth() << 16) + getMeasuredHeight();
         this.drawable.rect.set(0.0f, 0.0f, getStarsRectWidth(), AndroidUtilities.dp(140.0f));
         this.drawable.rect.offset((getMeasuredWidth() - this.drawable.rect.width()) / 2.0f, (getMeasuredHeight() - this.drawable.rect.height()) / 2.0f);
         this.drawable.rect2.set(-AndroidUtilities.dp(15.0f), -AndroidUtilities.dp(15.0f), getMeasuredWidth() + AndroidUtilities.dp(15.0f), getMeasuredHeight() + AndroidUtilities.dp(15.0f));
@@ -198,24 +198,19 @@ public class StarParticlesView extends View {
     }
 
     public static class Drawable {
-        float a;
-        float a1;
-        float a2;
         public final int count;
         public boolean distributionAlgorithm;
         public Utilities.CallbackReturn getPaint;
         private int lastColor;
+        Matrix[] matrices;
         public Paint overridePaint;
         public boolean paused;
         public long pausedTime;
-        float[] points1;
-        float[] points2;
-        float[] points3;
-        int pointsCount1;
-        int pointsCount2;
-        int pointsCount3;
+        float[][] points;
+        int[] pointsCount;
         private long prevTime;
         public Theme.ResourcesProvider resourcesProvider;
+        float[] rotationAngles;
         public boolean startFromCenter;
         public boolean useGradient;
         public boolean useRotate;
@@ -241,9 +236,6 @@ public class StarParticlesView extends View {
         public long minLifeTime = 2000;
         public int randLifeTime = MediaDataController.MAX_STYLE_RUNS_COUNT;
         private final float dt = 1000.0f / AndroidUtilities.screenRefreshRate;
-        Matrix matrix = new Matrix();
-        Matrix matrix2 = new Matrix();
-        Matrix matrix3 = new Matrix();
         public boolean checkBounds = false;
         public boolean checkTime = true;
         public boolean isCircle = true;
@@ -266,17 +258,26 @@ public class StarParticlesView extends View {
         }
 
         public void init() {
-            if (this.useRotate) {
-                int i = this.count * 2;
-                this.points1 = new float[i];
-                this.points2 = new float[i];
-                this.points3 = new float[i];
-            }
             generateBitmaps();
+            if (this.useRotate) {
+                initRotationArrays();
+            }
             if (this.particles.isEmpty()) {
-                for (int i2 = 0; i2 < this.count; i2++) {
+                for (int i = 0; i < this.count; i++) {
                     this.particles.add(new Particle());
                 }
+            }
+        }
+
+        private void initRotationArrays() {
+            int length = this.stars.length;
+            this.matrices = new Matrix[length];
+            this.points = new float[length][];
+            this.pointsCount = new int[length];
+            this.rotationAngles = new float[length];
+            for (int i = 0; i < length; i++) {
+                this.matrices[i] = new Matrix();
+                this.points[i] = new float[this.count * 2];
             }
         }
 
@@ -566,36 +567,39 @@ public class StarParticlesView extends View {
             long currentTimeMillis = System.currentTimeMillis();
             long clamp = MathUtils.clamp(currentTimeMillis - this.prevTime, 4L, 50L);
             if (this.useRotate) {
-                this.matrix.reset();
-                float f2 = clamp;
-                float f3 = this.a + ((f2 / 40000.0f) * 360.0f);
-                this.a = f3;
-                this.a1 += (f2 / 50000.0f) * 360.0f;
-                this.a2 += (f2 / 60000.0f) * 360.0f;
-                this.matrix.setRotate(f3, this.rect.centerX() + this.centerOffsetX, this.rect.centerY() + this.centerOffsetY);
-                this.matrix2.setRotate(this.a1, this.rect.centerX() + this.centerOffsetX, this.rect.centerY() + this.centerOffsetY);
-                this.matrix3.setRotate(this.a2, this.rect.centerX() + this.centerOffsetX, this.rect.centerY() + this.centerOffsetY);
-                this.pointsCount1 = 0;
-                this.pointsCount2 = 0;
-                this.pointsCount3 = 0;
-                for (int i = 0; i < this.particles.size(); i++) {
-                    ((Particle) this.particles.get(i)).updatePoint();
+                float centerX = this.rect.centerX() + this.centerOffsetX;
+                float centerY = this.rect.centerY() + this.centerOffsetY;
+                int i = 0;
+                while (true) {
+                    Matrix[] matrixArr = this.matrices;
+                    if (i >= matrixArr.length) {
+                        break;
+                    }
+                    float[] fArr = this.rotationAngles;
+                    float f2 = fArr[i] + ((clamp / ((i * 10000.0f) + 40000.0f)) * 360.0f);
+                    fArr[i] = f2;
+                    matrixArr[i].setRotate(f2, centerX, centerY);
+                    this.pointsCount[i] = 0;
+                    i++;
                 }
-                Matrix matrix = this.matrix;
-                float[] fArr = this.points1;
-                matrix.mapPoints(fArr, 0, fArr, 0, this.pointsCount1);
-                Matrix matrix2 = this.matrix2;
-                float[] fArr2 = this.points2;
-                matrix2.mapPoints(fArr2, 0, fArr2, 0, this.pointsCount2);
-                Matrix matrix3 = this.matrix3;
-                float[] fArr3 = this.points3;
-                matrix3.mapPoints(fArr3, 0, fArr3, 0, this.pointsCount3);
-                this.pointsCount1 = 0;
-                this.pointsCount2 = 0;
-                this.pointsCount3 = 0;
+                for (int i2 = 0; i2 < this.particles.size(); i2++) {
+                    ((Particle) this.particles.get(i2)).updatePoint();
+                }
+                int i3 = 0;
+                while (true) {
+                    Matrix[] matrixArr2 = this.matrices;
+                    if (i3 >= matrixArr2.length) {
+                        break;
+                    }
+                    Matrix matrix = matrixArr2[i3];
+                    float[] fArr2 = this.points[i3];
+                    matrix.mapPoints(fArr2, 0, fArr2, 0, this.pointsCount[i3]);
+                    this.pointsCount[i3] = 0;
+                    i3++;
+                }
             }
-            for (int i2 = 0; i2 < this.particles.size(); i2++) {
-                Particle particle = (Particle) this.particles.get(i2);
+            for (int i4 = 0; i4 < this.particles.size(); i4++) {
+                Particle particle = (Particle) this.particles.get(i4);
                 if (this.paused) {
                     particle.draw(canvas, this.pausedTime, f);
                 } else {
@@ -635,41 +639,20 @@ public class StarParticlesView extends View {
             }
 
             public void updatePoint() {
+                Drawable drawable = Drawable.this;
+                int[] iArr = drawable.pointsCount;
                 int i = this.starIndex;
-                if (i == 0) {
-                    Drawable drawable = Drawable.this;
-                    float[] fArr = drawable.points1;
-                    int i2 = drawable.pointsCount1;
-                    int i3 = i2 * 2;
-                    fArr[i3] = this.x;
-                    fArr[i3 + 1] = this.y;
-                    drawable.pointsCount1 = i2 + 1;
-                    return;
-                }
-                if (i == 1) {
-                    Drawable drawable2 = Drawable.this;
-                    float[] fArr2 = drawable2.points2;
-                    int i4 = drawable2.pointsCount2;
-                    int i5 = i4 * 2;
-                    fArr2[i5] = this.x;
-                    fArr2[i5 + 1] = this.y;
-                    drawable2.pointsCount2 = i4 + 1;
-                    return;
-                }
-                if (i == 2) {
-                    Drawable drawable3 = Drawable.this;
-                    float[] fArr3 = drawable3.points3;
-                    int i6 = drawable3.pointsCount3;
-                    int i7 = i6 * 2;
-                    fArr3[i7] = this.x;
-                    fArr3[i7 + 1] = this.y;
-                    drawable3.pointsCount3 = i6 + 1;
-                }
+                int i2 = iArr[i];
+                float[] fArr = drawable.points[i];
+                int i3 = i2 * 2;
+                fArr[i3] = this.x;
+                fArr[i3 + 1] = this.y;
+                iArr[i] = i2 + 1;
             }
 
-            /* JADX WARN: Removed duplicated region for block: B:40:0x00e1  */
-            /* JADX WARN: Removed duplicated region for block: B:43:0x010e  */
-            /* JADX WARN: Removed duplicated region for block: B:49:0x013f  */
+            /* JADX WARN: Removed duplicated region for block: B:38:0x00b9  */
+            /* JADX WARN: Removed duplicated region for block: B:41:0x00e6  */
+            /* JADX WARN: Removed duplicated region for block: B:47:0x0117  */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
@@ -681,29 +664,14 @@ public class StarParticlesView extends View {
                 float f4;
                 Drawable drawable2 = Drawable.this;
                 if (drawable2.useRotate) {
+                    int[] iArr = drawable2.pointsCount;
                     int i = this.starIndex;
-                    if (i == 0) {
-                        float[] fArr = drawable2.points1;
-                        int i2 = drawable2.pointsCount1;
-                        int i3 = i2 * 2;
-                        this.drawingX = fArr[i3];
-                        this.drawingY = fArr[i3 + 1];
-                        drawable2.pointsCount1 = i2 + 1;
-                    } else if (i == 1) {
-                        float[] fArr2 = drawable2.points2;
-                        int i4 = drawable2.pointsCount2;
-                        int i5 = i4 * 2;
-                        this.drawingX = fArr2[i5];
-                        this.drawingY = fArr2[i5 + 1];
-                        drawable2.pointsCount2 = i4 + 1;
-                    } else if (i == 2) {
-                        float[] fArr3 = drawable2.points3;
-                        int i6 = drawable2.pointsCount3;
-                        int i7 = i6 * 2;
-                        this.drawingX = fArr3[i7];
-                        this.drawingY = fArr3[i7 + 1];
-                        drawable2.pointsCount3 = i6 + 1;
-                    }
+                    int i2 = iArr[i];
+                    float[] fArr = drawable2.points[i];
+                    int i3 = i2 * 2;
+                    this.drawingX = fArr[i3];
+                    this.drawingY = fArr[i3 + 1];
+                    iArr[i] = i2 + 1;
                 } else {
                     this.drawingX = this.x;
                     this.drawingY = this.y;
