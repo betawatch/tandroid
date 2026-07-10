@@ -343,6 +343,10 @@ public class CommunityCreateActivity extends BaseFragment implements Notificatio
         private final TextView subtitleView;
         private final TextView titleView;
 
+        public /* bridge */ /* synthetic */ int[] getColorKeys() {
+            return Theme.Colorable.-CC.$default$getColorKeys(this);
+        }
+
         public CommunityHeaderView(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context);
             this.resourcesProvider = resourcesProvider;

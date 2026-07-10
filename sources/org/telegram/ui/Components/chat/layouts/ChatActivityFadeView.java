@@ -20,6 +20,10 @@ public class ChatActivityFadeView extends View implements Theme.Colorable {
     private int fadeZoneTop;
     private BlurredBackgroundSourceColor sourceColor;
 
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return Theme.Colorable.-CC.$default$getColorKeys(this);
+    }
+
     public ChatActivityFadeView(Context context) {
         super(context);
     }

@@ -86,6 +86,10 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
     private boolean storiable;
     public StoriesUtilities.AvatarStoryParams storyParams;
 
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return Theme.Colorable.-CC.$default$getColorKeys(this);
+    }
+
     @Override // android.view.View
     public boolean hasOverlappingRendering() {
         return false;

@@ -129,6 +129,10 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
     public boolean useSeparator;
     private TLRPC.User user;
 
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return Theme.Colorable.-CC.$default$getColorKeys(this);
+    }
+
     public ProfileSearchCell(Context context) {
         this(context, null);
     }

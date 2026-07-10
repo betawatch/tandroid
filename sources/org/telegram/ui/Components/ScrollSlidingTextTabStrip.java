@@ -110,6 +110,10 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements T
         boolean showOptions(int i, View view);
     }
 
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return Theme.Colorable.-CC.$default$getColorKeys(this);
+    }
+
     protected int processColor(int i) {
         return i;
     }

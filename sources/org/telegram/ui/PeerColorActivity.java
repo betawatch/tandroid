@@ -2599,6 +2599,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                     this.lock = new LevelLock(context, true, Math.max(i5, min8), resourcesProvider);
                 }
             }
+            setContentDescription(string);
             if (z && this.lock == null) {
                 string = TextCell.applyNewSpan(string);
             }

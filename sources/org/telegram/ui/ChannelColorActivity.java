@@ -1826,6 +1826,10 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
         public TextView textInfo2;
         public SimpleTextView title;
 
+        public /* bridge */ /* synthetic */ int[] getColorKeys() {
+            return Theme.Colorable.-CC.$default$getColorKeys(this);
+        }
+
         public void setTitleSize() {
             float f;
             boolean z = getResources().getConfiguration().orientation == 2;

@@ -31,6 +31,10 @@ public class CommunityRequestsCell extends LinearLayout implements Theme.Colorab
     private final TextView titleView;
     private final TextView valueView;
 
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return Theme.Colorable.-CC.$default$getColorKeys(this);
+    }
+
     public CommunityRequestsCell(Context context, Theme.ResourcesProvider resourcesProvider) {
         this(context, resourcesProvider, false);
     }

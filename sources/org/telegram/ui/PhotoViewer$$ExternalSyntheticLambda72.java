@@ -1,10 +1,10 @@
 package org.telegram.ui;
 
 /* loaded from: classes4.dex */
-public final /* synthetic */ class PhotoViewer$$ExternalSyntheticLambda71 implements Runnable {
+public final /* synthetic */ class PhotoViewer$$ExternalSyntheticLambda72 implements Runnable {
     public final /* synthetic */ PhotoViewer f$0;
 
-    public /* synthetic */ PhotoViewer$$ExternalSyntheticLambda71(PhotoViewer photoViewer) {
+    public /* synthetic */ PhotoViewer$$ExternalSyntheticLambda72(PhotoViewer photoViewer) {
         this.f$0 = photoViewer;
     }
 

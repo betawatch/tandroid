@@ -596,6 +596,10 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
         public final TextView text2View;
         public final TextView text3View;
 
+        public /* bridge */ /* synthetic */ int[] getColorKeys() {
+            return Theme.Colorable.-CC.$default$getColorKeys(this);
+        }
+
         public Header(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context);
             this.resourcesProvider = resourcesProvider;
@@ -799,6 +803,10 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
         public SpoilersTextView textView;
         private FrameLayout.LayoutParams textViewLayoutParams;
 
+        public /* bridge */ /* synthetic */ int[] getColorKeys() {
+            return Theme.Colorable.-CC.$default$getColorKeys(this);
+        }
+
         public Text(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context);
             this.clipHeight = -1;
@@ -860,6 +868,7 @@ public class TranslateAlert3 extends BottomSheetWithRecyclerListView {
             this.copyButton = imageView;
             imageView.setImageResource(R.drawable.msg_copy);
             imageView.setScaleType(ImageView.ScaleType.CENTER);
+            imageView.setContentDescription(LocaleController.getString(R.string.Copy));
             ScaleStateListAnimator.apply(imageView);
             addView(imageView, LayoutHelper.createFrame(38, 38.0f, 85, 0.0f, 0.0f, -16.0f, -12.0f));
             imageView.setVisibility(8);

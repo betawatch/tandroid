@@ -7,6 +7,7 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.os.Bundle;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextUtils;
@@ -1381,6 +1382,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
 
     @Override // android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        String string;
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         StringBuilder sb = new StringBuilder();
         switch (this.documentAttachType) {
@@ -1432,11 +1434,34 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         }
         accessibilityNodeInfo.setText(sb);
         CheckBox2 checkBox2 = this.checkBox;
-        if (checkBox2 == null || !checkBox2.isChecked()) {
-            return;
+        if (checkBox2 != null && checkBox2.isChecked()) {
+            accessibilityNodeInfo.setCheckable(true);
+            accessibilityNodeInfo.setChecked(true);
         }
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(true);
+        int i = this.documentAttachType;
+        if (i == 3 || i == 5) {
+            int iconForCurrentState = getIconForCurrentState();
+            if (iconForCurrentState == 1) {
+                string = LocaleController.getString("AccActionPause", R.string.AccActionPause);
+            } else if (iconForCurrentState == 2) {
+                string = LocaleController.getString("AccActionDownload", R.string.AccActionDownload);
+            } else if (iconForCurrentState == 3) {
+                string = LocaleController.getString("AccActionCancelDownload", R.string.AccActionCancelDownload);
+            } else {
+                string = LocaleController.getString("AccActionPlay", R.string.AccActionPlay);
+            }
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, string));
+        }
+    }
+
+    @Override // android.view.View
+    public boolean performAccessibilityAction(int i, Bundle bundle) {
+        int i2;
+        if (i == 16 && ((i2 = this.documentAttachType) == 3 || i2 == 5)) {
+            didPressedButton();
+            return true;
+        }
+        return super.performAccessibilityAction(i, bundle);
     }
 
     public void setChecked(final boolean z, boolean z2) {

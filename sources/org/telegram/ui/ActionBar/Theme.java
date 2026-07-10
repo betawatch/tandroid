@@ -1300,6 +1300,13 @@ public abstract class Theme {
     }
 
     public interface Colorable {
+
+        public abstract /* synthetic */ class -CC {
+            public static int[] $default$getColorKeys(Colorable colorable) {
+                return null;
+            }
+        }
+
         void updateColors();
     }
 

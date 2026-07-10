@@ -16705,6 +16705,10 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
         private final IArticleViewer parent;
         private int width;
 
+        public /* bridge */ /* synthetic */ int[] getColorKeys() {
+            return Theme.Colorable.-CC.$default$getColorKeys(this);
+        }
+
         public BlockMathCell(Context context, IArticleViewer iArticleViewer, WebpageAdapter webpageAdapter) {
             super(context);
             this.parent = iArticleViewer;

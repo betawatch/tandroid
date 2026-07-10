@@ -705,6 +705,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                 PeerStoriesView.this.lambda$new$1(view);
             }
         });
+        imageView.setContentDescription(LocaleController.getString(R.string.ShareFile));
         ScaleStateListAnimator.apply(imageView);
         if (!DISABLE_STORY_REPOSTING) {
             ImageView imageView2 = new ImageView(context);
@@ -838,12 +839,14 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         imageView3.setImageDrawable(sharedResources.optionsDrawable);
         imageView3.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         imageView3.setBackground(Theme.createSelectorDrawable(-1));
+        imageView3.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
         this.storyContainer.addView(imageView3, LayoutHelper.createFrame(40, 40.0f, 53, 2.0f, 15.0f, 2.0f, 0.0f));
         ImageView imageView4 = new ImageView(context);
         this.pipIconView = imageView4;
         imageView4.setImageDrawable(sharedResources.pipDrawable);
         imageView4.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         imageView4.setBackground(Theme.createSelectorDrawable(-1));
+        imageView4.setContentDescription(LocaleController.getString(R.string.AccDescrPipMode));
         this.storyContainer.addView(imageView4, LayoutHelper.createFrame(40, 40.0f, 53, 2.0f, 15.0f, 42.0f, 0.0f));
         imageView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.PeerStoriesView$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
@@ -3545,8 +3548,8 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
             storyViewer.toggleSilentMode();
             if (storyViewer.soundEnabled()) {
                 MessagesController.getGlobalMainSettings().edit().putInt("taptostorysoundhint", 3).apply();
-                return;
             }
+            this.muteIconContainer.setContentDescription(LocaleController.getString(storyViewer.soundEnabled() ? R.string.Mute : R.string.Unmute));
             return;
         }
         showNoSoundHint(true);
@@ -3785,10 +3788,12 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         TL_stories.StoryItem storyItem2 = this.currentStory.storyItem;
         if (storyItem2 == null || (reaction = storyItem2.sent_reaction) == null) {
             this.storiesLikeButton.setReaction(null);
+            this.likeButtonContainer.setContentDescription(LocaleController.getString(R.string.AccDescrLike));
             z = false;
         } else {
             z2 = !z2;
             this.storiesLikeButton.setReaction(ReactionsLayoutInBubble.VisibleReaction.fromTL(reaction));
+            this.likeButtonContainer.setContentDescription(LocaleController.getString(R.string.AccDescrLiked));
             try {
                 performHapticFeedback(3);
             } catch (Exception unused) {
@@ -6576,44 +6581,44 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
     /* JADX WARN: Removed duplicated region for block: B:301:0x0e09 A[EDGE_INSN: B:301:0x0e09->B:302:0x0e09 BREAK  A[LOOP:0: B:290:0x0de3->B:299:0x0e06], SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:304:0x0e17  */
     /* JADX WARN: Removed duplicated region for block: B:307:0x0e26  */
-    /* JADX WARN: Removed duplicated region for block: B:316:0x0e73  */
-    /* JADX WARN: Removed duplicated region for block: B:325:0x0eb9  */
-    /* JADX WARN: Removed duplicated region for block: B:328:0x0ec8  */
-    /* JADX WARN: Removed duplicated region for block: B:336:0x0eee  */
-    /* JADX WARN: Removed duplicated region for block: B:345:0x0f8d  */
-    /* JADX WARN: Removed duplicated region for block: B:350:0x0fc7  */
-    /* JADX WARN: Removed duplicated region for block: B:353:0x0fdc  */
-    /* JADX WARN: Removed duplicated region for block: B:358:0x1004  */
-    /* JADX WARN: Removed duplicated region for block: B:369:0x1024  */
-    /* JADX WARN: Removed duplicated region for block: B:374:0x105c  */
+    /* JADX WARN: Removed duplicated region for block: B:319:0x0e94  */
+    /* JADX WARN: Removed duplicated region for block: B:328:0x0eda  */
+    /* JADX WARN: Removed duplicated region for block: B:331:0x0ee9  */
+    /* JADX WARN: Removed duplicated region for block: B:339:0x0f0f  */
+    /* JADX WARN: Removed duplicated region for block: B:348:0x0fae  */
+    /* JADX WARN: Removed duplicated region for block: B:353:0x0fe8  */
+    /* JADX WARN: Removed duplicated region for block: B:356:0x0ffd  */
+    /* JADX WARN: Removed duplicated region for block: B:361:0x1025  */
+    /* JADX WARN: Removed duplicated region for block: B:372:0x1045  */
+    /* JADX WARN: Removed duplicated region for block: B:377:0x107d  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x04e7 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:387:0x107d  */
-    /* JADX WARN: Removed duplicated region for block: B:395:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:402:0x104c  */
-    /* JADX WARN: Removed duplicated region for block: B:407:0x0f38  */
-    /* JADX WARN: Removed duplicated region for block: B:415:0x0ec2  */
-    /* JADX WARN: Removed duplicated region for block: B:417:0x0e85  */
+    /* JADX WARN: Removed duplicated region for block: B:390:0x109e  */
+    /* JADX WARN: Removed duplicated region for block: B:398:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:405:0x106d  */
+    /* JADX WARN: Removed duplicated region for block: B:410:0x0f59  */
+    /* JADX WARN: Removed duplicated region for block: B:418:0x0ee3  */
     /* JADX WARN: Removed duplicated region for block: B:41:0x04fd  */
-    /* JADX WARN: Removed duplicated region for block: B:436:0x0e68  */
-    /* JADX WARN: Removed duplicated region for block: B:439:0x0d69  */
-    /* JADX WARN: Removed duplicated region for block: B:456:0x0c9f  */
+    /* JADX WARN: Removed duplicated region for block: B:420:0x0ea6  */
+    /* JADX WARN: Removed duplicated region for block: B:440:0x0e89  */
+    /* JADX WARN: Removed duplicated region for block: B:443:0x0d69  */
     /* JADX WARN: Removed duplicated region for block: B:45:0x0515 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:461:0x0cb3  */
-    /* JADX WARN: Removed duplicated region for block: B:463:0x0a0d  */
+    /* JADX WARN: Removed duplicated region for block: B:460:0x0c9f  */
+    /* JADX WARN: Removed duplicated region for block: B:465:0x0cb3  */
+    /* JADX WARN: Removed duplicated region for block: B:467:0x0a0d  */
     /* JADX WARN: Removed duplicated region for block: B:52:0x052d  */
-    /* JADX WARN: Removed duplicated region for block: B:576:0x0635  */
-    /* JADX WARN: Removed duplicated region for block: B:581:0x08cb  */
-    /* JADX WARN: Removed duplicated region for block: B:596:0x090f  */
-    /* JADX WARN: Removed duplicated region for block: B:599:0x0916  */
-    /* JADX WARN: Removed duplicated region for block: B:601:0x0652  */
+    /* JADX WARN: Removed duplicated region for block: B:580:0x0635  */
+    /* JADX WARN: Removed duplicated region for block: B:585:0x08cb  */
+    /* JADX WARN: Removed duplicated region for block: B:600:0x090f  */
+    /* JADX WARN: Removed duplicated region for block: B:603:0x0916  */
+    /* JADX WARN: Removed duplicated region for block: B:605:0x0652  */
     /* JADX WARN: Removed duplicated region for block: B:61:0x0546  */
-    /* JADX WARN: Removed duplicated region for block: B:666:0x057c  */
-    /* JADX WARN: Removed duplicated region for block: B:675:0x05d2  */
-    /* JADX WARN: Removed duplicated region for block: B:678:0x05e5  */
-    /* JADX WARN: Removed duplicated region for block: B:683:0x05f8  */
-    /* JADX WARN: Removed duplicated region for block: B:686:0x05c9  */
+    /* JADX WARN: Removed duplicated region for block: B:670:0x057c  */
+    /* JADX WARN: Removed duplicated region for block: B:679:0x05d2  */
+    /* JADX WARN: Removed duplicated region for block: B:682:0x05e5  */
+    /* JADX WARN: Removed duplicated region for block: B:687:0x05f8  */
     /* JADX WARN: Removed duplicated region for block: B:68:0x055a  */
-    /* JADX WARN: Removed duplicated region for block: B:694:0x0168  */
+    /* JADX WARN: Removed duplicated region for block: B:690:0x05c9  */
+    /* JADX WARN: Removed duplicated region for block: B:698:0x0168  */
     /* JADX WARN: Removed duplicated region for block: B:74:0x0611 A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:79:0x091f  */
     /* JADX WARN: Removed duplicated region for block: B:93:0x094b  */
@@ -7685,9 +7690,11 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                                                     if (this.currentStory.hasSound()) {
                                                         this.muteIconView.setVisibility(0);
                                                         this.noSoundIconView.setVisibility(8);
+                                                        this.muteIconContainer.setContentDescription(LocaleController.getString(this.storyViewer.soundEnabled() ? R.string.Mute : R.string.Unmute));
                                                     } else {
                                                         this.muteIconView.setVisibility(8);
                                                         this.noSoundIconView.setVisibility(0);
+                                                        this.muteIconContainer.setContentDescription(LocaleController.getString(R.string.NoSound));
                                                     }
                                                     this.muteIconContainer.setAlpha(this.muteIconViewAlpha * (1.0f - this.outT));
                                                 } else {

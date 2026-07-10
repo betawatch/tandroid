@@ -1897,6 +1897,18 @@ public class MessageObject {
             }
         }
 
+        public int getMaxEditDate() {
+            TLRPC.Message message;
+            int i = 0;
+            for (int i2 = 0; i2 < this.messages.size(); i2++) {
+                MessageObject messageObject = this.messages.get(i2);
+                if (messageObject != null && (message = messageObject.messageOwner) != null) {
+                    i = Math.max(i, message.edit_date);
+                }
+            }
+            return i;
+        }
+
         public MessageObject findPrimaryMessageObject() {
             return findMessageWithFlags(this.reversed ? 10 : 5);
         }
@@ -5540,15 +5552,15 @@ public class MessageObject {
         updateMessageText(MessagesController.getInstance(this.currentAccount).getUsers(), MessagesController.getInstance(this.currentAccount).getChats(), null, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:1447:0x24f8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1447:0x24fe, code lost:
     
         if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r5).flags & 4) != 0) goto L1427;
      */
     /* JADX WARN: Removed duplicated region for block: B:1351:0x22e7  */
-    /* JADX WARN: Removed duplicated region for block: B:1369:0x234f  */
-    /* JADX WARN: Removed duplicated region for block: B:1371:0x2352  */
+    /* JADX WARN: Removed duplicated region for block: B:1369:0x2355  */
+    /* JADX WARN: Removed duplicated region for block: B:1371:0x2358  */
     /* JADX WARN: Removed duplicated region for block: B:1547:0x003d  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x2781  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x2787  */
     /* JADX WARN: Removed duplicated region for block: B:306:0x0872  */
     /* JADX WARN: Removed duplicated region for block: B:315:0x0891  */
     /* JADX WARN: Removed duplicated region for block: B:333:0x08cf  */
@@ -7064,7 +7076,9 @@ public class MessageObject {
                     } else {
                         TL_iv.RichMessage richMessage = this.messageOwner.rich_message;
                         if (richMessage != null) {
-                            this.messageText = formatRichMessage(richMessage, isOutOwner());
+                            CharSequence formatRichMessage = formatRichMessage(richMessage, isOutOwner());
+                            this.messageText = formatRichMessage;
+                            this.messageText = AndroidUtilities.replaceNewLines(formatRichMessage);
                         } else if (!isMediaEmpty() && !isSponsored()) {
                             if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGiveaway) {
                                 TLRPC.MessageFwdHeader messageFwdHeader = this.messageOwner.fwd_from;
@@ -7471,14 +7485,14 @@ public class MessageObject {
                     TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = (TLRPC.TL_documentAttributeFilename) AndroidUtilities.find(document.attributes, TLRPC.TL_documentAttributeFilename.class);
                     if (tL_documentAttributeAudio != null) {
                         if (!TextUtils.isEmpty(tL_documentAttributeAudio.title) && !TextUtils.isEmpty(tL_documentAttributeAudio.performer)) {
-                            spannableStringBuilder.append("🎵 ").append((CharSequence) tL_documentAttributeAudio.performer).append(" – ").append((CharSequence) tL_documentAttributeAudio.title);
+                            spannableStringBuilder.append((CharSequence) span("🎵", R.drawable.iv_audio_preview)).append(" ").append((CharSequence) tL_documentAttributeAudio.performer).append(" – ").append((CharSequence) tL_documentAttributeAudio.title);
                         } else if (!TextUtils.isEmpty(tL_documentAttributeAudio.title)) {
-                            spannableStringBuilder.append("🎵 ").append((CharSequence) tL_documentAttributeAudio.title);
+                            spannableStringBuilder.append((CharSequence) span("🎵", R.drawable.iv_audio_preview)).append(" ").append((CharSequence) tL_documentAttributeAudio.title);
                         } else if (tL_documentAttributeFilename != null && tL_documentAttributeFilename.file_name != null) {
-                            spannableStringBuilder.append("🎵 ").append((CharSequence) tL_documentAttributeFilename.file_name);
+                            spannableStringBuilder.append((CharSequence) span("🎵", R.drawable.iv_audio_preview)).append(" ").append((CharSequence) tL_documentAttributeFilename.file_name);
                         }
                     } else if (tL_documentAttributeFilename != null && tL_documentAttributeFilename.file_name != null) {
-                        spannableStringBuilder.append("🎵 ").append((CharSequence) tL_documentAttributeFilename.file_name);
+                        spannableStringBuilder.append((CharSequence) span("🎵", R.drawable.iv_audio_preview)).append(" ").append((CharSequence) tL_documentAttributeFilename.file_name);
                     }
                 }
             } else if (pageBlock instanceof TL_iv.pageBlockCover) {

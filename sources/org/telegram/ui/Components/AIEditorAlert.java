@@ -2156,6 +2156,10 @@ public class AIEditorAlert extends BottomSheetWithRecyclerListView implements No
             private final TextView textView;
             public TL_aicompose.AiComposeTone tone;
 
+            public /* bridge */ /* synthetic */ int[] getColorKeys() {
+                return Theme.Colorable.-CC.$default$getColorKeys(this);
+            }
+
             public Tab(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
                 super(context);
                 this.accent = true;

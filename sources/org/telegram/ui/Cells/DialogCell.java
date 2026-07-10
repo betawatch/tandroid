@@ -475,6 +475,10 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
         return false;
     }
 
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return Theme.Colorable.-CC.$default$getColorKeys(this);
+    }
+
     @Override // org.telegram.ui.ActionBar.Theme.Colorable
     public void updateColors() {
     }

@@ -82,6 +82,10 @@ public class RichAudioCell extends RichBlockCell implements Theme.Colorable, Tex
         void onRequestWindowFocusable(RichEditText richEditText, boolean z);
     }
 
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return Theme.Colorable.-CC.$default$getColorKeys(this);
+    }
+
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
     public void onProgressUpload(String str, long j, long j2, boolean z) {
     }

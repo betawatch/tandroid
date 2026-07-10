@@ -386,7 +386,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString(R.string.Search));
         ActionBarMenuItem addItem = createMenu.addItem(1, R.drawable.ic_ab_other);
         this.otherItem = addItem;
-        addItem.addSubItem(2, R.drawable.msg_leave, LocaleController.getString(R.string.LogOut));
+        addItem.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
+        this.otherItem.addSubItem(2, R.drawable.msg_leave, LocaleController.getString(R.string.LogOut));
         ProfileActivity.SearchAdapter searchAdapter = new ProfileActivity.SearchAdapter(this, context) { // from class: org.telegram.ui.SettingsActivity.4
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public void notifyDataSetChanged() {
@@ -1199,6 +1200,10 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         private final Theme.ResourcesProvider resourcesProvider;
         private SimpleTextView textView;
 
+        public /* bridge */ /* synthetic */ int[] getColorKeys() {
+            return Theme.Colorable.-CC.$default$getColorKeys(this);
+        }
+
         public AccountCell(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context);
             this.resourcesProvider = resourcesProvider;
@@ -1378,6 +1383,10 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         private final TextView titleView;
         private boolean twoLines;
         private final TextView valueView;
+
+        public /* bridge */ /* synthetic */ int[] getColorKeys() {
+            return Theme.Colorable.-CC.$default$getColorKeys(this);
+        }
 
         public SettingCell(Context context, Theme.ResourcesProvider resourcesProvider) {
             this(context, resourcesProvider, false);
@@ -1572,6 +1581,10 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         private LinkSpanDrawable.LinksTextView textView;
         private LinkSpanDrawable.LinksTextView titleView;
         private ButtonWithCounterView yes;
+
+        public /* bridge */ /* synthetic */ int[] getColorKeys() {
+            return Theme.Colorable.-CC.$default$getColorKeys(this);
+        }
 
         public SuggestionCell(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context);

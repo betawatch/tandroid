@@ -113,6 +113,10 @@ public class RichTextCell extends FrameLayout implements Theme.Colorable, TextSe
         return true;
     }
 
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return Theme.Colorable.-CC.$default$getColorKeys(this);
+    }
+
     public RichTextCell(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.tmpBlocks = new ArrayList();

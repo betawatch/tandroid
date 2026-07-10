@@ -54,6 +54,10 @@ public abstract class ProfileChannelCell extends FrameLayout implements Theme.Co
     private boolean set;
     private final AnimatedTextView subscribersView;
 
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return Theme.Colorable.-CC.$default$getColorKeys(this);
+    }
+
     public abstract int processColor(int i);
 
     public ProfileChannelCell(final BaseFragment baseFragment) {

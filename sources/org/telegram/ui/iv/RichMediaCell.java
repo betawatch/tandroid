@@ -120,6 +120,10 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
         void onToggleSpoiler(BlockRow blockRow, MediaUploadState mediaUploadState);
     }
 
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return Theme.Colorable.-CC.$default$getColorKeys(this);
+    }
+
     public RichMediaCell(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.backgroundPaint = new Paint(1);

@@ -93,6 +93,7 @@ import org.telegram.messenger.BotForumHelper;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.ChatMessageSharedResources;
 import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.CodeHighlighting;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.DocumentObject;
@@ -35507,11 +35508,19 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         } else {
             int dp6 = AndroidUtilities.dp(8.0f) + this.namesOffset;
             this.textY = dp6;
-            if (this.currentMessageObject.hasCodeAtTop && (i = SharedConfig.bubbleRadius) > 10) {
-                this.textY = dp6 + AndroidUtilities.dp(i < 15 ? 1.0f : 2.0f);
-            }
-            if (this.currentMessageObject.hasCodeAtTop && this.namesOffset > 0) {
-                this.textY += AndroidUtilities.dp(5.0f);
+            MessageObject messageObject = this.currentMessageObject;
+            if (messageObject.type == 36) {
+                RichMessageLayout richMessageLayout = messageObject.richLayout;
+                if (richMessageLayout != null && richMessageLayout.startsWithMedia()) {
+                    this.textY -= AndroidUtilities.dp(3.0f);
+                }
+            } else {
+                if (messageObject.hasCodeAtTop && (i = SharedConfig.bubbleRadius) > 10) {
+                    this.textY = dp6 + AndroidUtilities.dp(i < 15 ? 1.0f : 2.0f);
+                }
+                if (this.currentMessageObject.hasCodeAtTop && this.namesOffset > 0) {
+                    this.textY += AndroidUtilities.dp(5.0f);
+                }
             }
         }
         if (this.currentMessageObject.isSponsored()) {
@@ -35538,10 +35547,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             return;
         }
         int dp7 = this.backgroundWidth - AndroidUtilities.dp(31.0f);
-        MessageObject messageObject = this.currentMessageObject;
-        int i2 = dp7 - messageObject.textWidth;
+        MessageObject messageObject2 = this.currentMessageObject;
+        int i2 = dp7 - messageObject2.textWidth;
         if (!this.hasNewLineForTime) {
-            i2 -= this.timeWidth + AndroidUtilities.dp((messageObject.isOutOwner() ? 20 : 0) + 4);
+            i2 -= this.timeWidth + AndroidUtilities.dp((messageObject2.isOutOwner() ? 20 : 0) + 4);
         }
         if (i2 > 0) {
             this.textX += i2 - getExtraTimeX();
@@ -37866,34 +37875,34 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         this.allowAssistant = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:101:0x04b0  */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x04ca  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x04ee  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0546  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x05a1  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x0609  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0621  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x065a  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x0678  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0681  */
-    /* JADX WARN: Removed duplicated region for block: B:178:0x06f2  */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x0703  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x04ba  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x04d4  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x04f8  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0550  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x05ab  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x0613  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x062b  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x0664  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x0682  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x068b  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x06fc  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x070d  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0110  */
-    /* JADX WARN: Removed duplicated region for block: B:204:0x078d  */
-    /* JADX WARN: Removed duplicated region for block: B:206:0x067b  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x04b2  */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x0364  */
-    /* JADX WARN: Removed duplicated region for block: B:219:0x030a  */
+    /* JADX WARN: Removed duplicated region for block: B:204:0x0797  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x0685  */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x04bc  */
+    /* JADX WARN: Removed duplicated region for block: B:212:0x036e  */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x0314  */
     /* JADX WARN: Removed duplicated region for block: B:220:0x0200  */
     /* JADX WARN: Removed duplicated region for block: B:56:0x01d0  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x02b5  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x02c2  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0319  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x035f  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x036a  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x03a5  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x03ae  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x03c9  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x02bf  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x02cc  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0323  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0369  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0374  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x03af  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x03b8  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x03d3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -37976,7 +37985,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     } else if (messageObject4.isRepostPreview) {
                         str2 = LocaleController.formatSmallDateChat(messageObject.messageOwner.date) + ", " + LocaleController.getInstance().getFormatterDay().format(messageObject.messageOwner.date * 1000);
                     } else if (this.edited) {
-                        str2 = AppGlobalConfig.getInstance(this.currentAccount).messagePrimaryEditedDate.get() ? LocaleController.formatPmEditedDate(messageObject.messageOwner.edit_date) : LocaleController.getString(org.telegram.messenger.R.string.EditedMessage) + " " + LocaleController.getInstance().getFormatterDay().format(messageObject.messageOwner.date * 1000);
+                        if (AppGlobalConfig.getInstance(this.currentAccount).messagePrimaryEditedDate.get()) {
+                            str2 = LocaleController.formatPmEditedDate(this.currentMessagesGroup != null ? r6.getMaxEditDate() : messageObject.messageOwner.edit_date);
+                        } else {
+                            str2 = LocaleController.getString(org.telegram.messenger.R.string.EditedMessage) + " " + LocaleController.getInstance().getFormatterDay().format(messageObject.messageOwner.date * 1000);
+                        }
                     } else if (messageObject4.isSaved && (messageFwdHeader = messageObject4.messageOwner.fwd_from) != null && ((i2 = messageFwdHeader.date) != 0 || messageFwdHeader.saved_date != 0)) {
                         int i5 = messageFwdHeader.saved_date;
                         if (i5 != 0) {
@@ -50044,9 +50057,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
 
     @Override // android.view.View
     public boolean performAccessibilityAction(int i, Bundle bundle) {
-        ChatMessageCellDelegate chatMessageCellDelegate;
-        ChatMessageCellDelegate chatMessageCellDelegate2 = this.delegate;
-        if (chatMessageCellDelegate2 != null && chatMessageCellDelegate2.onAccessibilityAction(i, bundle)) {
+        ArrayList<MessageObject.TextLayoutBlock> arrayList;
+        ChatMessageCellDelegate chatMessageCellDelegate = this.delegate;
+        if (chatMessageCellDelegate != null && chatMessageCellDelegate.onAccessibilityAction(i, bundle)) {
             return false;
         }
         if (i == 16) {
@@ -50063,24 +50076,44 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         if (i == org.telegram.messenger.R.id.acc_action_small_button) {
             didPressMiniButton(true);
         } else if (i == org.telegram.messenger.R.id.acc_action_msg_options) {
-            ChatMessageCellDelegate chatMessageCellDelegate3 = this.delegate;
-            if (chatMessageCellDelegate3 != null) {
+            ChatMessageCellDelegate chatMessageCellDelegate2 = this.delegate;
+            if (chatMessageCellDelegate2 != null) {
                 if (this.currentMessageObject.type == 16) {
-                    chatMessageCellDelegate3.didLongPress(this, 0.0f, 0.0f);
+                    chatMessageCellDelegate2.didLongPress(this, 0.0f, 0.0f);
                 } else {
-                    chatMessageCellDelegate3.didPressOther(this, this.otherX, this.otherY);
+                    chatMessageCellDelegate2.didPressOther(this, this.otherX, this.otherY);
                 }
             }
-        } else if (i == org.telegram.messenger.R.id.acc_action_open_forwarded_origin && (chatMessageCellDelegate = this.delegate) != null) {
-            TLRPC.Chat chat = this.currentForwardChannel;
-            if (chat != null) {
-                chatMessageCellDelegate.didPressChannelAvatar(this, chat, this.currentMessageObject.messageOwner.fwd_from.channel_post, this.lastTouchX, this.lastTouchY, false);
-            } else {
-                TLRPC.User user = this.currentForwardUser;
-                if (user != null) {
-                    chatMessageCellDelegate.didPressUserAvatar(this, user, this.lastTouchX, this.lastTouchY, false);
-                } else if (this.currentForwardName != null) {
-                    chatMessageCellDelegate.didPressHiddenForward(this);
+        } else if (i == org.telegram.messenger.R.id.acc_action_open_forwarded_origin) {
+            ChatMessageCellDelegate chatMessageCellDelegate3 = this.delegate;
+            if (chatMessageCellDelegate3 != null) {
+                TLRPC.Chat chat = this.currentForwardChannel;
+                if (chat != null) {
+                    chatMessageCellDelegate3.didPressChannelAvatar(this, chat, this.currentMessageObject.messageOwner.fwd_from.channel_post, this.lastTouchX, this.lastTouchY, false);
+                } else {
+                    TLRPC.User user = this.currentForwardUser;
+                    if (user != null) {
+                        chatMessageCellDelegate3.didPressUserAvatar(this, user, this.lastTouchX, this.lastTouchY, false);
+                    } else if (this.currentForwardName != null) {
+                        chatMessageCellDelegate3.didPressHiddenForward(this);
+                    }
+                }
+            }
+        } else if (i == org.telegram.messenger.R.id.acc_action_summarize) {
+            ChatMessageCellDelegate chatMessageCellDelegate4 = this.delegate;
+            if (chatMessageCellDelegate4 != null) {
+                chatMessageCellDelegate4.didPressSummarize(this, this.drawSummaryReply);
+            }
+        } else if (i == org.telegram.messenger.R.id.acc_action_copy_code && this.delegate != null && (arrayList = this.currentMessageObject.textLayoutBlocks) != null) {
+            Iterator<MessageObject.TextLayoutBlock> it = arrayList.iterator();
+            while (true) {
+                if (!it.hasNext()) {
+                    break;
+                }
+                MessageObject.TextLayoutBlock next = it.next();
+                if (next.hasCodeCopyButton) {
+                    this.delegate.didPressCodeCopy(this, next);
+                    break;
                 }
             }
         }
@@ -50475,7 +50508,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         return this.seekBarWaveform;
     }
 
-    private class MessageAccessibilityNodeProvider extends AccessibilityNodeProvider {
+    /* JADX INFO: Access modifiers changed from: private */
+    class MessageAccessibilityNodeProvider extends AccessibilityNodeProvider {
         private Path linkPath;
         private Rect rect;
         private RectF rectF;
@@ -50501,7 +50535,51 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             }
         }
 
+        private RichMessageLayout.RichBlock resolveRichElement(int i, int[] iArr) {
+            int i2;
+            if (ChatMessageCell.this.currentMessageObject == null || ChatMessageCell.this.currentMessageObject.richLayout == null || i - 6000 < 0) {
+                return null;
+            }
+            RichMessageLayout richMessageLayout = ChatMessageCell.this.currentMessageObject.richLayout;
+            int i3 = 0;
+            for (int i4 = 0; i4 < richMessageLayout.blocks.size(); i4++) {
+                RichMessageLayout.RichBlock richBlock = richMessageLayout.blocks.get(i4);
+                if (richBlock.isVisible()) {
+                    int accessibilityElementCount = richBlock.getAccessibilityElementCount() + i3;
+                    if (i2 < accessibilityElementCount) {
+                        iArr[0] = i2 - i3;
+                        return richBlock;
+                    }
+                    i3 = accessibilityElementCount;
+                }
+            }
+            return null;
+        }
+
+        /* JADX WARN: Removed duplicated region for block: B:281:0x0282  */
+        /* JADX WARN: Removed duplicated region for block: B:293:0x02bd  */
+        /* JADX WARN: Removed duplicated region for block: B:295:0x02c4  */
+        /* JADX WARN: Removed duplicated region for block: B:297:0x02c7  */
+        /* JADX WARN: Removed duplicated region for block: B:298:0x02c0  */
+        /* JADX WARN: Removed duplicated region for block: B:301:0x02fb  */
+        /* JADX WARN: Removed duplicated region for block: B:304:0x0397  */
+        /* JADX WARN: Removed duplicated region for block: B:320:0x0407  */
+        /* JADX WARN: Removed duplicated region for block: B:330:0x0454  */
+        /* JADX WARN: Removed duplicated region for block: B:333:0x049b  */
+        /* JADX WARN: Removed duplicated region for block: B:340:0x05b0  */
+        /* JADX WARN: Removed duplicated region for block: B:345:0x05d9  */
+        /* JADX WARN: Removed duplicated region for block: B:349:0x05fc  */
+        /* JADX WARN: Removed duplicated region for block: B:371:0x06bc  */
+        /* JADX WARN: Removed duplicated region for block: B:388:0x0733  */
+        /* JADX WARN: Removed duplicated region for block: B:391:0x075f A[LOOP:11: B:390:0x075d->B:391:0x075f, LOOP_END] */
+        /* JADX WARN: Removed duplicated region for block: B:394:0x074d  */
+        /* JADX WARN: Removed duplicated region for block: B:409:0x0576  */
+        /* JADX WARN: Removed duplicated region for block: B:410:0x0465  */
+        /* JADX WARN: Removed duplicated region for block: B:415:0x033e  */
         @Override // android.view.accessibility.AccessibilityNodeProvider
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
         public AccessibilityNodeInfo createAccessibilityNodeInfo(int i) {
             boolean z;
             int i2;
@@ -50517,6 +50595,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             String str3;
             AccessibilityNodeInfo accessibilityNodeInfo;
             long j2;
+            Spanned spanned;
+            long j3;
+            String formatString;
             CharSequence charSequence2;
             int i4;
             boolean z4;
@@ -50527,6 +50608,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             AccessibilityNodeInfo accessibilityNodeInfo2;
             String str5;
             String string2;
+            int i6;
             int[] iArr = {0, 0};
             ChatMessageCell.this.getLocationOnScreen(iArr);
             if (i == -1) {
@@ -50557,13 +50639,13 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         str3 = "AccActionDownload";
                     }
                     if (ChatMessageCell.this.drawForwardedName) {
-                        int i6 = 0;
-                        while (i6 < 2) {
-                            if (ChatMessageCell.this.forwardedNameLayout[i6] != null && ChatMessageCell.this.forwardedNameLayout[i6].getText() != null) {
-                                spannableStringBuilder.append(ChatMessageCell.this.forwardedNameLayout[i6].getText());
-                                spannableStringBuilder.append(i6 == 0 ? " " : "\n");
+                        int i7 = 0;
+                        while (i7 < 2) {
+                            if (ChatMessageCell.this.forwardedNameLayout[i7] != null && ChatMessageCell.this.forwardedNameLayout[i7].getText() != null) {
+                                spannableStringBuilder.append(ChatMessageCell.this.forwardedNameLayout[i7].getText());
+                                spannableStringBuilder.append(i7 == 0 ? " " : "\n");
                             }
-                            i6++;
+                            i7++;
                         }
                     }
                     if (ChatMessageCell.this.documentAttach != null && ChatMessageCell.this.documentAttachType == 1) {
@@ -50572,196 +50654,316 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             spannableStringBuilder.append((CharSequence) LocaleController.formatString(org.telegram.messenger.R.string.AccDescrDocumentType, attachFileName.substring(attachFileName.lastIndexOf(46) + 1).toUpperCase(Locale.ROOT)));
                         }
                     }
-                    if (!TextUtils.isEmpty(ChatMessageCell.this.currentMessageObject.messageText)) {
-                        spannableStringBuilder.append(ChatMessageCell.this.currentMessageObject.messageText);
-                    }
-                    if (ChatMessageCell.this.documentAttach == null || !((ChatMessageCell.this.documentAttachType == 1 || ChatMessageCell.this.documentAttachType == 2 || ChatMessageCell.this.documentAttachType == 4) && ChatMessageCell.this.buttonState == 1 && ChatMessageCell.this.loadingProgressLayout != null)) {
-                        accessibilityNodeInfo = obtain;
-                        j2 = j;
+                    if (ChatMessageCell.this.currentMessageObject.richLayout == null || ChatMessageCell.this.currentMessageObject.richLayout.blocks.isEmpty()) {
+                        if (!TextUtils.isEmpty(ChatMessageCell.this.currentMessageObject.messageText)) {
+                            CharSequence charSequence3 = ChatMessageCell.this.currentMessageObject.messageText;
+                            if (charSequence3 instanceof Spanned) {
+                                final Spanned spanned2 = (Spanned) charSequence3;
+                                accessibilityNodeInfo = obtain;
+                                CodeHighlighting.Span[] spanArr = (CodeHighlighting.Span[]) spanned2.getSpans(0, spanned2.length(), CodeHighlighting.Span.class);
+                                if (spanArr != null && spanArr.length > 0) {
+                                    SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(charSequence3);
+                                    Arrays.sort(spanArr, new Comparator() { // from class: org.telegram.ui.Cells.ChatMessageCell$MessageAccessibilityNodeProvider$$ExternalSyntheticLambda0
+                                        @Override // java.util.Comparator
+                                        public final int compare(Object obj, Object obj2) {
+                                            int lambda$createAccessibilityNodeInfo$0;
+                                            lambda$createAccessibilityNodeInfo$0 = ChatMessageCell.MessageAccessibilityNodeProvider.lambda$createAccessibilityNodeInfo$0(spanned2, (CodeHighlighting.Span) obj, (CodeHighlighting.Span) obj2);
+                                            return lambda$createAccessibilityNodeInfo$0;
+                                        }
+                                    });
+                                    int length = spanArr.length;
+                                    int i8 = 0;
+                                    while (i8 < length) {
+                                        int i9 = length;
+                                        CodeHighlighting.Span span = spanArr[i8];
+                                        CodeHighlighting.Span[] spanArr2 = spanArr;
+                                        int spanStart = spanned2.getSpanStart(span);
+                                        if (spanStart < 0) {
+                                            spanned = spanned2;
+                                            j3 = j;
+                                        } else {
+                                            spanned = spanned2;
+                                            if (TextUtils.isEmpty(span.lng)) {
+                                                formatString = LocaleController.getString(org.telegram.messenger.R.string.AccDescrCodeBlock);
+                                                j3 = j;
+                                            } else {
+                                                j3 = j;
+                                                formatString = LocaleController.formatString(org.telegram.messenger.R.string.AccDescrCodeBlockLanguage, MessageObject.TextLayoutBlock.capitalizeLanguage(span.lng));
+                                            }
+                                            spannableStringBuilder2.insert(spanStart, (CharSequence) (((Object) formatString) + ". "));
+                                        }
+                                        i8++;
+                                        length = i9;
+                                        spanArr = spanArr2;
+                                        spanned2 = spanned;
+                                        j = j3;
+                                    }
+                                    j2 = j;
+                                    charSequence3 = spannableStringBuilder2;
+                                    spannableStringBuilder.append(charSequence3);
+                                    if (ChatMessageCell.this.documentAttach != null && ((ChatMessageCell.this.documentAttachType == 1 || ChatMessageCell.this.documentAttachType == 2 || ChatMessageCell.this.documentAttachType == 4) && ChatMessageCell.this.buttonState == 1 && ChatMessageCell.this.loadingProgressLayout != null)) {
+                                        spannableStringBuilder.append((CharSequence) "\n");
+                                        boolean isSending = ChatMessageCell.this.currentMessageObject.isSending();
+                                        spannableStringBuilder.append((CharSequence) LocaleController.formatString(!isSending ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", !isSending ? org.telegram.messenger.R.string.AccDescrUploadProgress : org.telegram.messenger.R.string.AccDescrDownloadProgress, AndroidUtilities.formatFileSize(ChatMessageCell.this.currentMessageObject.loadedFileSize), AndroidUtilities.formatFileSize(ChatMessageCell.this.lastLoadingSizeTotal)));
+                                    }
+                                    if (!ChatMessageCell.this.currentMessageObject.isMusic()) {
+                                        charSequence2 = charSequence;
+                                        if (ChatMessageCell.this.currentMessageObject.isVoice() || ChatMessageCell.this.isRoundVideo) {
+                                            spannableStringBuilder.append(charSequence2);
+                                            spannableStringBuilder.append((CharSequence) LocaleController.formatDuration((int) ChatMessageCell.this.currentMessageObject.getDuration()));
+                                            spannableStringBuilder.append(charSequence2);
+                                            if (ChatMessageCell.this.currentMessageObject.isContentUnread()) {
+                                                spannableStringBuilder.append((CharSequence) LocaleController.getString("AccDescrMsgNotPlayed", org.telegram.messenger.R.string.AccDescrMsgNotPlayed));
+                                            } else {
+                                                spannableStringBuilder.append((CharSequence) LocaleController.getString("AccDescrMsgPlayed", org.telegram.messenger.R.string.AccDescrMsgPlayed));
+                                            }
+                                        }
+                                    } else {
+                                        spannableStringBuilder.append((CharSequence) "\n");
+                                        spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrMusicInfo", org.telegram.messenger.R.string.AccDescrMusicInfo, ChatMessageCell.this.currentMessageObject.getMusicAuthor(), ChatMessageCell.this.currentMessageObject.getMusicTitle()));
+                                        charSequence2 = charSequence;
+                                        spannableStringBuilder.append(charSequence2);
+                                        spannableStringBuilder.append((CharSequence) LocaleController.formatDuration((int) ChatMessageCell.this.currentMessageObject.getDuration()));
+                                    }
+                                    if (ChatMessageCell.this.lastPoll != null) {
+                                        spannableStringBuilder.append(charSequence2);
+                                        spannableStringBuilder.append((CharSequence) ChatMessageCell.this.lastPoll.question.text);
+                                        spannableStringBuilder.append(charSequence2);
+                                        if (!ChatMessageCell.this.pollClosed) {
+                                            if (ChatMessageCell.this.lastPoll.quiz) {
+                                                if (ChatMessageCell.this.lastPoll.public_voters) {
+                                                    string = LocaleController.getString("QuizPoll", org.telegram.messenger.R.string.QuizPoll);
+                                                } else {
+                                                    string = LocaleController.getString("AnonymousQuizPoll", org.telegram.messenger.R.string.AnonymousQuizPoll);
+                                                }
+                                            } else if (ChatMessageCell.this.lastPoll.public_voters) {
+                                                string = LocaleController.getString("PublicPoll", org.telegram.messenger.R.string.PublicPoll);
+                                            } else {
+                                                string = LocaleController.getString("AnonymousPoll", org.telegram.messenger.R.string.AnonymousPoll);
+                                            }
+                                        } else {
+                                            string = LocaleController.getString("FinalResults", org.telegram.messenger.R.string.FinalResults);
+                                        }
+                                        spannableStringBuilder.append((CharSequence) string);
+                                    }
+                                    if (ChatMessageCell.this.documentAttach != null) {
+                                        if (ChatMessageCell.this.documentAttachType == 4) {
+                                            spannableStringBuilder.append(charSequence2);
+                                            spannableStringBuilder.append((CharSequence) LocaleController.formatDuration((int) ChatMessageCell.this.currentMessageObject.getDuration()));
+                                        }
+                                        if (ChatMessageCell.this.buttonState == 0 || ChatMessageCell.this.documentAttachType == 1) {
+                                            spannableStringBuilder.append(charSequence2);
+                                            spannableStringBuilder.append((CharSequence) AndroidUtilities.formatFileSize(ChatMessageCell.this.documentAttach.size));
+                                        }
+                                    }
+                                    if (!ChatMessageCell.this.currentMessageObject.isVoiceTranscriptionOpen()) {
+                                        if (MessageObject.getMedia(ChatMessageCell.this.currentMessageObject.messageOwner) != null && !TextUtils.isEmpty(ChatMessageCell.this.currentMessageObject.caption)) {
+                                            spannableStringBuilder.append((CharSequence) "\n");
+                                            spannableStringBuilder.append(ChatMessageCell.this.currentMessageObject.caption);
+                                        }
+                                    } else {
+                                        spannableStringBuilder.append((CharSequence) "\n");
+                                        spannableStringBuilder.append(ChatMessageCell.this.currentMessageObject.getVoiceTranscription());
+                                    }
+                                    if (ChatMessageCell.this.currentMessageObject.isOut()) {
+                                        if (!ChatMessageCell.this.currentMessageObject.isSent()) {
+                                            if (!ChatMessageCell.this.currentMessageObject.isSending()) {
+                                                if (ChatMessageCell.this.currentMessageObject.isSendError()) {
+                                                    spannableStringBuilder.append((CharSequence) "\n");
+                                                    spannableStringBuilder.append((CharSequence) LocaleController.getString("AccDescrMsgSendingError", org.telegram.messenger.R.string.AccDescrMsgSendingError));
+                                                }
+                                            } else {
+                                                spannableStringBuilder.append((CharSequence) "\n");
+                                                spannableStringBuilder.append((CharSequence) LocaleController.getString("AccDescrMsgSending", org.telegram.messenger.R.string.AccDescrMsgSending));
+                                                float progress = ChatMessageCell.this.radialProgress.getProgress();
+                                                if (progress > 0.0f) {
+                                                    spannableStringBuilder.append((CharSequence) Integer.toString(Math.round(progress * 100.0f))).append((CharSequence) "%");
+                                                }
+                                            }
+                                        } else {
+                                            spannableStringBuilder.append((CharSequence) "\n");
+                                            if (ChatMessageCell.this.currentMessageObject.scheduled) {
+                                                spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrScheduledDate", org.telegram.messenger.R.string.AccDescrScheduledDate, ChatMessageCell.this.currentTimeString));
+                                            } else {
+                                                spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrSentDate", org.telegram.messenger.R.string.AccDescrSentDate, LocaleController.getString("TodayAt", org.telegram.messenger.R.string.TodayAt) + " " + ((Object) ChatMessageCell.this.currentTimeString)));
+                                                spannableStringBuilder.append(charSequence2);
+                                                if (ChatMessageCell.this.currentMessageObject.isUnread()) {
+                                                    i5 = org.telegram.messenger.R.string.AccDescrMsgUnread;
+                                                    str4 = "AccDescrMsgUnread";
+                                                } else {
+                                                    i5 = org.telegram.messenger.R.string.AccDescrMsgRead;
+                                                    str4 = "AccDescrMsgRead";
+                                                }
+                                                spannableStringBuilder.append((CharSequence) LocaleController.getString(str4, i5));
+                                            }
+                                        }
+                                    } else {
+                                        spannableStringBuilder.append((CharSequence) "\n");
+                                        spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrReceivedDate", org.telegram.messenger.R.string.AccDescrReceivedDate, LocaleController.getString("TodayAt", org.telegram.messenger.R.string.TodayAt) + " " + ((Object) ChatMessageCell.this.currentTimeString)));
+                                    }
+                                    if (ChatMessageCell.this.getRepliesCount() > 0 && !ChatMessageCell.this.hasCommentLayout()) {
+                                        spannableStringBuilder.append((CharSequence) "\n");
+                                        spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString("AccDescrNumberOfReplies", ChatMessageCell.this.getRepliesCount(), new Object[0]));
+                                    }
+                                    if (ChatMessageCell.this.currentMessageObject.messageOwner.reactions != null && ChatMessageCell.this.currentMessageObject.messageOwner.reactions.results != null) {
+                                        String str6 = "";
+                                        if (ChatMessageCell.this.currentMessageObject.messageOwner.reactions.results.size() != 1) {
+                                            TLRPC.ReactionCount reactionCount = ChatMessageCell.this.currentMessageObject.messageOwner.reactions.results.get(0);
+                                            TLRPC.Reaction reaction = reactionCount.reaction;
+                                            String str7 = reaction instanceof TLRPC.TL_reactionEmoji ? ((TLRPC.TL_reactionEmoji) reaction).emoticon : "";
+                                            int i10 = reactionCount.count;
+                                            if (i10 == 1) {
+                                                spannableStringBuilder.append((CharSequence) "\n");
+                                                if (ChatMessageCell.this.currentMessageObject.messageOwner.reactions.recent_reactions == null || ChatMessageCell.this.currentMessageObject.messageOwner.reactions.recent_reactions.size() != 1 || (messagePeerReaction = ChatMessageCell.this.currentMessageObject.messageOwner.reactions.recent_reactions.get(0)) == null) {
+                                                    z4 = false;
+                                                } else {
+                                                    TLRPC.User user = MessagesController.getInstance(ChatMessageCell.this.currentAccount).getUser(Long.valueOf(MessageObject.getPeerId(messagePeerReaction.peer_id)));
+                                                    z4 = UserObject.isUserSelf(user);
+                                                    if (user != null) {
+                                                        str6 = UserObject.getFirstName(user);
+                                                    }
+                                                }
+                                                if (z4) {
+                                                    spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrYouReactedWith", org.telegram.messenger.R.string.AccDescrYouReactedWith, str7));
+                                                } else {
+                                                    spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrReactedWith", org.telegram.messenger.R.string.AccDescrReactedWith, str6, str7));
+                                                }
+                                            } else if (i10 > 1) {
+                                                spannableStringBuilder.append((CharSequence) "\n");
+                                                spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString("AccDescrNumberOfPeopleReactions", reactionCount.count, str7));
+                                            }
+                                        } else {
+                                            spannableStringBuilder.append((CharSequence) LocaleController.getString("Reactions", org.telegram.messenger.R.string.Reactions)).append((CharSequence) ": ");
+                                            int size = ChatMessageCell.this.currentMessageObject.messageOwner.reactions.results.size();
+                                            int i11 = 0;
+                                            while (i11 < size) {
+                                                TLRPC.ReactionCount reactionCount2 = ChatMessageCell.this.currentMessageObject.messageOwner.reactions.results.get(i11);
+                                                TLRPC.Reaction reaction2 = reactionCount2.reaction;
+                                                spannableStringBuilder.append((CharSequence) (reaction2 instanceof TLRPC.TL_reactionEmoji ? ((TLRPC.TL_reactionEmoji) reaction2).emoticon : "")).append((CharSequence) " ").append((CharSequence) (reactionCount2.count + ""));
+                                                i11++;
+                                                if (i11 < size) {
+                                                    spannableStringBuilder.append(charSequence2);
+                                                }
+                                            }
+                                            spannableStringBuilder.append((CharSequence) "\n");
+                                        }
+                                    }
+                                    if ((ChatMessageCell.this.currentMessageObject.messageOwner.flags & 1024) != 0) {
+                                        spannableStringBuilder.append((CharSequence) "\n");
+                                        i4 = 0;
+                                        spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString("AccDescrNumberOfViews", ChatMessageCell.this.currentMessageObject.messageOwner.views, new Object[0]));
+                                    } else {
+                                        i4 = 0;
+                                    }
+                                    spannableStringBuilder.append((CharSequence) "\n");
+                                    for (final CharacterStyle characterStyle : (CharacterStyle[]) spannableStringBuilder.getSpans(i4, spannableStringBuilder.length(), ClickableSpan.class)) {
+                                        int spanStart2 = spannableStringBuilder.getSpanStart(characterStyle);
+                                        int spanEnd = spannableStringBuilder.getSpanEnd(characterStyle);
+                                        spannableStringBuilder.removeSpan(characterStyle);
+                                        spannableStringBuilder.setSpan(new ClickableSpan() { // from class: org.telegram.ui.Cells.ChatMessageCell.MessageAccessibilityNodeProvider.1
+                                            @Override // android.text.style.ClickableSpan
+                                            public void onClick(View view) {
+                                                CharacterStyle characterStyle2 = characterStyle;
+                                                if (!(characterStyle2 instanceof ProfileSpan)) {
+                                                    if (ChatMessageCell.this.delegate != null) {
+                                                        ChatMessageCell.this.delegate.didPressUrl(ChatMessageCell.this, characterStyle, false);
+                                                        return;
+                                                    }
+                                                    return;
+                                                }
+                                                ((ProfileSpan) characterStyle2).onClick(view);
+                                            }
+                                        }, spanStart2, spanEnd, 33);
+                                    }
+                                    ChatMessageCell chatMessageCell3 = ChatMessageCell.this;
+                                    chatMessageCell3.accessibilityText = spannableStringBuilder;
+                                    chatMessageCell3.accessibilityTextUnread = z5;
+                                    ChatMessageCell.this.accessibilityTextContentUnread = z6;
+                                    ChatMessageCell.this.accessibilityTextFileSize = j2;
+                                }
+                            } else {
+                                accessibilityNodeInfo = obtain;
+                            }
+                            j2 = j;
+                            spannableStringBuilder.append(charSequence3);
+                            if (ChatMessageCell.this.documentAttach != null) {
+                                spannableStringBuilder.append((CharSequence) "\n");
+                                boolean isSending2 = ChatMessageCell.this.currentMessageObject.isSending();
+                                spannableStringBuilder.append((CharSequence) LocaleController.formatString(!isSending2 ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", !isSending2 ? org.telegram.messenger.R.string.AccDescrUploadProgress : org.telegram.messenger.R.string.AccDescrDownloadProgress, AndroidUtilities.formatFileSize(ChatMessageCell.this.currentMessageObject.loadedFileSize), AndroidUtilities.formatFileSize(ChatMessageCell.this.lastLoadingSizeTotal)));
+                            }
+                            if (!ChatMessageCell.this.currentMessageObject.isMusic()) {
+                            }
+                            if (ChatMessageCell.this.lastPoll != null) {
+                            }
+                            if (ChatMessageCell.this.documentAttach != null) {
+                            }
+                            if (!ChatMessageCell.this.currentMessageObject.isVoiceTranscriptionOpen()) {
+                            }
+                            if (ChatMessageCell.this.currentMessageObject.isOut()) {
+                            }
+                            if (ChatMessageCell.this.getRepliesCount() > 0) {
+                                spannableStringBuilder.append((CharSequence) "\n");
+                                spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString("AccDescrNumberOfReplies", ChatMessageCell.this.getRepliesCount(), new Object[0]));
+                            }
+                            if (ChatMessageCell.this.currentMessageObject.messageOwner.reactions != null) {
+                                String str62 = "";
+                                if (ChatMessageCell.this.currentMessageObject.messageOwner.reactions.results.size() != 1) {
+                                }
+                            }
+                            if ((ChatMessageCell.this.currentMessageObject.messageOwner.flags & 1024) != 0) {
+                            }
+                            spannableStringBuilder.append((CharSequence) "\n");
+                            while (r6 < r2) {
+                            }
+                            ChatMessageCell chatMessageCell32 = ChatMessageCell.this;
+                            chatMessageCell32.accessibilityText = spannableStringBuilder;
+                            chatMessageCell32.accessibilityTextUnread = z5;
+                            ChatMessageCell.this.accessibilityTextContentUnread = z6;
+                            ChatMessageCell.this.accessibilityTextFileSize = j2;
+                        }
                     } else {
-                        spannableStringBuilder.append((CharSequence) "\n");
-                        boolean isSending = ChatMessageCell.this.currentMessageObject.isSending();
-                        accessibilityNodeInfo = obtain;
-                        j2 = j;
-                        spannableStringBuilder.append((CharSequence) LocaleController.formatString(isSending ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", isSending ? org.telegram.messenger.R.string.AccDescrUploadProgress : org.telegram.messenger.R.string.AccDescrDownloadProgress, AndroidUtilities.formatFileSize(ChatMessageCell.this.currentMessageObject.loadedFileSize), AndroidUtilities.formatFileSize(ChatMessageCell.this.lastLoadingSizeTotal)));
+                        Iterator<RichMessageLayout.RichBlock> it = ChatMessageCell.this.currentMessageObject.richLayout.blocks.iterator();
+                        while (it.hasNext()) {
+                            RichMessageLayout.RichBlock next = it.next();
+                            if (next.isVisible()) {
+                                int length2 = spannableStringBuilder.length();
+                                next.appendAccessibilityText(spannableStringBuilder);
+                                if (spannableStringBuilder.length() > length2 && spannableStringBuilder.charAt(spannableStringBuilder.length() - 1) != '\n') {
+                                    spannableStringBuilder.append('\n');
+                                }
+                            }
+                        }
+                    }
+                    accessibilityNodeInfo = obtain;
+                    j2 = j;
+                    if (ChatMessageCell.this.documentAttach != null) {
                     }
                     if (!ChatMessageCell.this.currentMessageObject.isMusic()) {
-                        charSequence2 = charSequence;
-                        if (ChatMessageCell.this.currentMessageObject.isVoice() || ChatMessageCell.this.isRoundVideo) {
-                            spannableStringBuilder.append(charSequence2);
-                            spannableStringBuilder.append((CharSequence) LocaleController.formatDuration((int) ChatMessageCell.this.currentMessageObject.getDuration()));
-                            spannableStringBuilder.append(charSequence2);
-                            if (ChatMessageCell.this.currentMessageObject.isContentUnread()) {
-                                spannableStringBuilder.append((CharSequence) LocaleController.getString("AccDescrMsgNotPlayed", org.telegram.messenger.R.string.AccDescrMsgNotPlayed));
-                            } else {
-                                spannableStringBuilder.append((CharSequence) LocaleController.getString("AccDescrMsgPlayed", org.telegram.messenger.R.string.AccDescrMsgPlayed));
-                            }
-                        }
-                    } else {
-                        spannableStringBuilder.append((CharSequence) "\n");
-                        spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrMusicInfo", org.telegram.messenger.R.string.AccDescrMusicInfo, ChatMessageCell.this.currentMessageObject.getMusicAuthor(), ChatMessageCell.this.currentMessageObject.getMusicTitle()));
-                        charSequence2 = charSequence;
-                        spannableStringBuilder.append(charSequence2);
-                        spannableStringBuilder.append((CharSequence) LocaleController.formatDuration((int) ChatMessageCell.this.currentMessageObject.getDuration()));
                     }
                     if (ChatMessageCell.this.lastPoll != null) {
-                        spannableStringBuilder.append(charSequence2);
-                        spannableStringBuilder.append((CharSequence) ChatMessageCell.this.lastPoll.question.text);
-                        spannableStringBuilder.append(charSequence2);
-                        if (!ChatMessageCell.this.pollClosed) {
-                            if (ChatMessageCell.this.lastPoll.quiz) {
-                                if (ChatMessageCell.this.lastPoll.public_voters) {
-                                    string = LocaleController.getString("QuizPoll", org.telegram.messenger.R.string.QuizPoll);
-                                } else {
-                                    string = LocaleController.getString("AnonymousQuizPoll", org.telegram.messenger.R.string.AnonymousQuizPoll);
-                                }
-                            } else if (ChatMessageCell.this.lastPoll.public_voters) {
-                                string = LocaleController.getString("PublicPoll", org.telegram.messenger.R.string.PublicPoll);
-                            } else {
-                                string = LocaleController.getString("AnonymousPoll", org.telegram.messenger.R.string.AnonymousPoll);
-                            }
-                        } else {
-                            string = LocaleController.getString("FinalResults", org.telegram.messenger.R.string.FinalResults);
-                        }
-                        spannableStringBuilder.append((CharSequence) string);
                     }
                     if (ChatMessageCell.this.documentAttach != null) {
-                        if (ChatMessageCell.this.documentAttachType == 4) {
-                            spannableStringBuilder.append(charSequence2);
-                            spannableStringBuilder.append((CharSequence) LocaleController.formatDuration((int) ChatMessageCell.this.currentMessageObject.getDuration()));
-                        }
-                        if (ChatMessageCell.this.buttonState == 0 || ChatMessageCell.this.documentAttachType == 1) {
-                            spannableStringBuilder.append(charSequence2);
-                            spannableStringBuilder.append((CharSequence) AndroidUtilities.formatFileSize(ChatMessageCell.this.documentAttach.size));
-                        }
                     }
                     if (!ChatMessageCell.this.currentMessageObject.isVoiceTranscriptionOpen()) {
-                        if (MessageObject.getMedia(ChatMessageCell.this.currentMessageObject.messageOwner) != null && !TextUtils.isEmpty(ChatMessageCell.this.currentMessageObject.caption)) {
-                            spannableStringBuilder.append((CharSequence) "\n");
-                            spannableStringBuilder.append(ChatMessageCell.this.currentMessageObject.caption);
-                        }
-                    } else {
-                        spannableStringBuilder.append((CharSequence) "\n");
-                        spannableStringBuilder.append(ChatMessageCell.this.currentMessageObject.getVoiceTranscription());
                     }
                     if (ChatMessageCell.this.currentMessageObject.isOut()) {
-                        if (!ChatMessageCell.this.currentMessageObject.isSent()) {
-                            if (!ChatMessageCell.this.currentMessageObject.isSending()) {
-                                if (ChatMessageCell.this.currentMessageObject.isSendError()) {
-                                    spannableStringBuilder.append((CharSequence) "\n");
-                                    spannableStringBuilder.append((CharSequence) LocaleController.getString("AccDescrMsgSendingError", org.telegram.messenger.R.string.AccDescrMsgSendingError));
-                                }
-                            } else {
-                                spannableStringBuilder.append((CharSequence) "\n");
-                                spannableStringBuilder.append((CharSequence) LocaleController.getString("AccDescrMsgSending", org.telegram.messenger.R.string.AccDescrMsgSending));
-                                float progress = ChatMessageCell.this.radialProgress.getProgress();
-                                if (progress > 0.0f) {
-                                    spannableStringBuilder.append((CharSequence) Integer.toString(Math.round(progress * 100.0f))).append((CharSequence) "%");
-                                }
-                            }
-                        } else {
-                            spannableStringBuilder.append((CharSequence) "\n");
-                            if (ChatMessageCell.this.currentMessageObject.scheduled) {
-                                spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrScheduledDate", org.telegram.messenger.R.string.AccDescrScheduledDate, ChatMessageCell.this.currentTimeString));
-                            } else {
-                                spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrSentDate", org.telegram.messenger.R.string.AccDescrSentDate, LocaleController.getString("TodayAt", org.telegram.messenger.R.string.TodayAt) + " " + ((Object) ChatMessageCell.this.currentTimeString)));
-                                spannableStringBuilder.append(charSequence2);
-                                if (ChatMessageCell.this.currentMessageObject.isUnread()) {
-                                    i5 = org.telegram.messenger.R.string.AccDescrMsgUnread;
-                                    str4 = "AccDescrMsgUnread";
-                                } else {
-                                    i5 = org.telegram.messenger.R.string.AccDescrMsgRead;
-                                    str4 = "AccDescrMsgRead";
-                                }
-                                spannableStringBuilder.append((CharSequence) LocaleController.getString(str4, i5));
-                            }
-                        }
-                    } else {
-                        spannableStringBuilder.append((CharSequence) "\n");
-                        spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrReceivedDate", org.telegram.messenger.R.string.AccDescrReceivedDate, LocaleController.getString("TodayAt", org.telegram.messenger.R.string.TodayAt) + " " + ((Object) ChatMessageCell.this.currentTimeString)));
                     }
-                    if (ChatMessageCell.this.getRepliesCount() > 0 && !ChatMessageCell.this.hasCommentLayout()) {
-                        spannableStringBuilder.append((CharSequence) "\n");
-                        spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString("AccDescrNumberOfReplies", ChatMessageCell.this.getRepliesCount(), new Object[0]));
+                    if (ChatMessageCell.this.getRepliesCount() > 0) {
                     }
-                    if (ChatMessageCell.this.currentMessageObject.messageOwner.reactions != null && ChatMessageCell.this.currentMessageObject.messageOwner.reactions.results != null) {
-                        String str6 = "";
-                        if (ChatMessageCell.this.currentMessageObject.messageOwner.reactions.results.size() == 1) {
-                            TLRPC.ReactionCount reactionCount = ChatMessageCell.this.currentMessageObject.messageOwner.reactions.results.get(0);
-                            TLRPC.Reaction reaction = reactionCount.reaction;
-                            String str7 = reaction instanceof TLRPC.TL_reactionEmoji ? ((TLRPC.TL_reactionEmoji) reaction).emoticon : "";
-                            int i7 = reactionCount.count;
-                            if (i7 == 1) {
-                                spannableStringBuilder.append((CharSequence) "\n");
-                                if (ChatMessageCell.this.currentMessageObject.messageOwner.reactions.recent_reactions == null || ChatMessageCell.this.currentMessageObject.messageOwner.reactions.recent_reactions.size() != 1 || (messagePeerReaction = ChatMessageCell.this.currentMessageObject.messageOwner.reactions.recent_reactions.get(0)) == null) {
-                                    z4 = false;
-                                } else {
-                                    TLRPC.User user = MessagesController.getInstance(ChatMessageCell.this.currentAccount).getUser(Long.valueOf(MessageObject.getPeerId(messagePeerReaction.peer_id)));
-                                    z4 = UserObject.isUserSelf(user);
-                                    if (user != null) {
-                                        str6 = UserObject.getFirstName(user);
-                                    }
-                                }
-                                if (z4) {
-                                    spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrYouReactedWith", org.telegram.messenger.R.string.AccDescrYouReactedWith, str7));
-                                } else {
-                                    spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrReactedWith", org.telegram.messenger.R.string.AccDescrReactedWith, str6, str7));
-                                }
-                            } else if (i7 > 1) {
-                                spannableStringBuilder.append((CharSequence) "\n");
-                                spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString("AccDescrNumberOfPeopleReactions", reactionCount.count, str7));
-                            }
-                        } else {
-                            spannableStringBuilder.append((CharSequence) LocaleController.getString("Reactions", org.telegram.messenger.R.string.Reactions)).append((CharSequence) ": ");
-                            int size = ChatMessageCell.this.currentMessageObject.messageOwner.reactions.results.size();
-                            int i8 = 0;
-                            while (i8 < size) {
-                                TLRPC.ReactionCount reactionCount2 = ChatMessageCell.this.currentMessageObject.messageOwner.reactions.results.get(i8);
-                                TLRPC.Reaction reaction2 = reactionCount2.reaction;
-                                spannableStringBuilder.append((CharSequence) (reaction2 instanceof TLRPC.TL_reactionEmoji ? ((TLRPC.TL_reactionEmoji) reaction2).emoticon : "")).append((CharSequence) " ").append((CharSequence) (reactionCount2.count + ""));
-                                i8++;
-                                if (i8 < size) {
-                                    spannableStringBuilder.append(charSequence2);
-                                }
-                            }
-                            spannableStringBuilder.append((CharSequence) "\n");
-                        }
+                    if (ChatMessageCell.this.currentMessageObject.messageOwner.reactions != null) {
                     }
                     if ((ChatMessageCell.this.currentMessageObject.messageOwner.flags & 1024) != 0) {
-                        spannableStringBuilder.append((CharSequence) "\n");
-                        i4 = 0;
-                        spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString("AccDescrNumberOfViews", ChatMessageCell.this.currentMessageObject.messageOwner.views, new Object[0]));
-                    } else {
-                        i4 = 0;
                     }
                     spannableStringBuilder.append((CharSequence) "\n");
-                    for (final CharacterStyle characterStyle : (CharacterStyle[]) spannableStringBuilder.getSpans(i4, spannableStringBuilder.length(), ClickableSpan.class)) {
-                        int spanStart = spannableStringBuilder.getSpanStart(characterStyle);
-                        int spanEnd = spannableStringBuilder.getSpanEnd(characterStyle);
-                        spannableStringBuilder.removeSpan(characterStyle);
-                        spannableStringBuilder.setSpan(new ClickableSpan() { // from class: org.telegram.ui.Cells.ChatMessageCell.MessageAccessibilityNodeProvider.1
-                            @Override // android.text.style.ClickableSpan
-                            public void onClick(View view) {
-                                CharacterStyle characterStyle2 = characterStyle;
-                                if (!(characterStyle2 instanceof ProfileSpan)) {
-                                    if (ChatMessageCell.this.delegate != null) {
-                                        ChatMessageCell.this.delegate.didPressUrl(ChatMessageCell.this, characterStyle, false);
-                                        return;
-                                    }
-                                    return;
-                                }
-                                ((ProfileSpan) characterStyle2).onClick(view);
-                            }
-                        }, spanStart, spanEnd, 33);
+                    while (r6 < r2) {
                     }
-                    ChatMessageCell chatMessageCell3 = ChatMessageCell.this;
-                    chatMessageCell3.accessibilityText = spannableStringBuilder;
-                    chatMessageCell3.accessibilityTextUnread = z5;
+                    ChatMessageCell chatMessageCell322 = ChatMessageCell.this;
+                    chatMessageCell322.accessibilityText = spannableStringBuilder;
+                    chatMessageCell322.accessibilityTextUnread = z5;
                     ChatMessageCell.this.accessibilityTextContentUnread = z6;
                     ChatMessageCell.this.accessibilityTextFileSize = j2;
                 }
-                int i9 = Build.VERSION.SDK_INT;
-                if (i9 < 24) {
+                if (Build.VERSION.SDK_INT < 24) {
                     accessibilityNodeInfo2 = accessibilityNodeInfo;
                     accessibilityNodeInfo2.setContentDescription(ChatMessageCell.this.accessibilityText.toString());
                 } else {
@@ -50804,6 +51006,21 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 if (ChatMessageCell.this.getMiniIconForCurrentState() == 2) {
                     accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(org.telegram.messenger.R.id.acc_action_small_button, LocaleController.getString(str5, org.telegram.messenger.R.string.AccActionDownload)));
                 }
+                if (ChatMessageCell.this.drawSummarizeButton || ChatMessageCell.this.drawSummaryReply) {
+                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(org.telegram.messenger.R.id.acc_action_summarize, LocaleController.getString("SummaryTitle", org.telegram.messenger.R.string.SummaryTitle)));
+                }
+                if (ChatMessageCell.this.currentMessageObject.textLayoutBlocks != null) {
+                    Iterator<MessageObject.TextLayoutBlock> it2 = ChatMessageCell.this.currentMessageObject.textLayoutBlocks.iterator();
+                    while (true) {
+                        if (!it2.hasNext()) {
+                            break;
+                        }
+                        if (it2.next().hasCodeCopyButton) {
+                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(org.telegram.messenger.R.id.acc_action_copy_code, LocaleController.getString("CopyCode", org.telegram.messenger.R.string.CopyCode)));
+                            break;
+                        }
+                    }
+                }
                 if ((ChatMessageCell.this.currentMessageObject.isVoice() || ChatMessageCell.this.currentMessageObject.isRoundVideo() || ChatMessageCell.this.currentMessageObject.isMusic()) && MediaController.getInstance().isPlayingMessage(ChatMessageCell.this.currentMessageObject)) {
                     ChatMessageCell.this.seekBarAccessibilityDelegate.onInitializeAccessibilityNodeInfoInternal(accessibilityNodeInfo2);
                 }
@@ -50813,45 +51030,45 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         accessibilityNodeInfo2.addChild(chatMessageCell4, 493);
                     }
                 }
-                if (i9 < 24) {
+                if (Build.VERSION.SDK_INT < 24) {
                     ChatMessageCell chatMessageCell5 = ChatMessageCell.this;
                     if (chatMessageCell5.isChat && chatMessageCell5.currentUser != null && !ChatMessageCell.this.currentMessageObject.isOut()) {
                         accessibilityNodeInfo2.addChild(ChatMessageCell.this, 5000);
                     }
                     if (ChatMessageCell.this.currentMessageObject.messageText instanceof Spannable) {
                         Spannable spannable = (Spannable) ChatMessageCell.this.currentMessageObject.messageText;
-                        int i10 = 0;
+                        int i12 = 0;
                         for (CharacterStyle characterStyle2 : (CharacterStyle[]) spannable.getSpans(0, spannable.length(), ClickableSpan.class)) {
-                            accessibilityNodeInfo2.addChild(ChatMessageCell.this, i10 + 2000);
-                            i10++;
+                            accessibilityNodeInfo2.addChild(ChatMessageCell.this, i12 + 2000);
+                            i12++;
                         }
                     }
                     if (ChatMessageCell.this.currentMessageObject.caption instanceof Spannable) {
                         ChatMessageCell chatMessageCell6 = ChatMessageCell.this;
                         if (chatMessageCell6.captionLayout != null) {
                             Spannable spannable2 = (Spannable) chatMessageCell6.currentMessageObject.caption;
-                            int i11 = 0;
+                            int i13 = 0;
                             for (CharacterStyle characterStyle3 : (CharacterStyle[]) spannable2.getSpans(0, spannable2.length(), ClickableSpan.class)) {
-                                accessibilityNodeInfo2.addChild(ChatMessageCell.this, i11 + 3000);
-                                i11++;
+                                accessibilityNodeInfo2.addChild(ChatMessageCell.this, i13 + 3000);
+                                i13++;
                             }
                         }
                     }
                 }
-                Iterator it = ChatMessageCell.this.botButtons.iterator();
-                int i12 = 0;
-                while (it.hasNext()) {
-                    accessibilityNodeInfo2.addChild(ChatMessageCell.this, i12 + MediaDataController.MAX_STYLE_RUNS_COUNT);
-                    i12++;
+                Iterator it3 = ChatMessageCell.this.botButtons.iterator();
+                int i14 = 0;
+                while (it3.hasNext()) {
+                    accessibilityNodeInfo2.addChild(ChatMessageCell.this, i14 + MediaDataController.MAX_STYLE_RUNS_COUNT);
+                    i14++;
                 }
                 if (ChatMessageCell.this.hintButtonVisible && ChatMessageCell.this.pollHintX != -1 && ChatMessageCell.this.currentMessageObject.isPoll()) {
                     accessibilityNodeInfo2.addChild(ChatMessageCell.this, 495);
                 }
-                Iterator it2 = ChatMessageCell.this.pollButtons.iterator();
-                int i13 = 0;
-                while (it2.hasNext()) {
-                    accessibilityNodeInfo2.addChild(ChatMessageCell.this, i13 + 500);
-                    i13++;
+                Iterator it4 = ChatMessageCell.this.pollButtons.iterator();
+                int i15 = 0;
+                while (it4.hasNext()) {
+                    accessibilityNodeInfo2.addChild(ChatMessageCell.this, i15 + 500);
+                    i15++;
                 }
                 if (ChatMessageCell.this.drawInstantView && !ChatMessageCell.this.instantButtonRect.isEmpty()) {
                     accessibilityNodeInfo2.addChild(ChatMessageCell.this, 499);
@@ -50859,9 +51076,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 if (ChatMessageCell.this.drawContact && ChatMessageCell.this.contactRect != null && !ChatMessageCell.this.contactRect.isEmpty()) {
                     accessibilityNodeInfo2.addChild(ChatMessageCell.this, 492);
                     if (ChatMessageCell.this.contactButtons != null && ChatMessageCell.this.contactButtons.size() > 1) {
-                        Iterator it3 = ChatMessageCell.this.contactButtons.iterator();
-                        while (it3.hasNext()) {
-                            InstantViewButton instantViewButton = (InstantViewButton) it3.next();
+                        Iterator it5 = ChatMessageCell.this.contactButtons.iterator();
+                        while (it5.hasNext()) {
+                            InstantViewButton instantViewButton = (InstantViewButton) it5.next();
                             if (ChatMessageCell.this.drawContactView && instantViewButton.type == 5 && !instantViewButton.rect.isEmpty()) {
                                 accessibilityNodeInfo2.addChild(ChatMessageCell.this, 491);
                             }
@@ -50883,6 +51100,25 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 ChatMessageCell chatMessageCell7 = ChatMessageCell.this;
                 if (chatMessageCell7.replyNameLayout != null) {
                     accessibilityNodeInfo2.addChild(chatMessageCell7, 497);
+                }
+                if (ChatMessageCell.this.currentMessageObject != null && ChatMessageCell.this.currentMessageObject.richLayout != null) {
+                    RichMessageLayout richMessageLayout = ChatMessageCell.this.currentMessageObject.richLayout;
+                    int i16 = 0;
+                    int i17 = 0;
+                    while (i16 < richMessageLayout.blocks.size()) {
+                        RichMessageLayout.RichBlock richBlock = richMessageLayout.blocks.get(i16);
+                        if (richBlock.isVisible()) {
+                            int accessibilityElementCount = richBlock.getAccessibilityElementCount();
+                            for (int i18 = 0; i18 < accessibilityElementCount; i18++) {
+                                accessibilityNodeInfo2.addChild(ChatMessageCell.this, i17 + 6000 + i18);
+                            }
+                            i6 = 1;
+                            i17 += accessibilityElementCount;
+                        } else {
+                            i6 = 1;
+                        }
+                        i16 += i6;
+                    }
                 }
                 if (ChatMessageCell.this.forwardedNameLayout[0] != null && ChatMessageCell.this.forwardedNameLayout[1] != null) {
                     accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(org.telegram.messenger.R.id.acc_action_open_forwarded_origin, LocaleController.getString("AccActionOpenForwardedOrigin", org.telegram.messenger.R.string.AccActionOpenForwardedOrigin)));
@@ -50914,46 +51150,67 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 obtain2.setLongClickable(true);
                 obtain2.addAction(16);
                 obtain2.addAction(32);
+            } else if (i >= 6000) {
+                int[] iArr2 = {0};
+                RichMessageLayout.RichBlock resolveRichElement = resolveRichElement(i, iArr2);
+                if (resolveRichElement == null) {
+                    return null;
+                }
+                obtain2.setText(resolveRichElement.getAccessibilityElementText(iArr2[0]));
+                resolveRichElement.getAccessibilityElementBounds(iArr2[0], this.rect);
+                Rect rect = this.rect;
+                ChatMessageCell chatMessageCell8 = ChatMessageCell.this;
+                rect.offset(chatMessageCell8.textX, chatMessageCell8.textY);
+                obtain2.setBoundsInParent(this.rect);
+                if (ChatMessageCell.this.accessibilityVirtualViewBounds.get(i) == null) {
+                    ChatMessageCell.this.accessibilityVirtualViewBounds.put(i, new Rect(this.rect));
+                }
+                this.rect.offset(iArr[0], iArr[1]);
+                obtain2.setBoundsInScreen(this.rect);
+                obtain2.setClassName("android.widget.ImageView");
+                obtain2.setEnabled(true);
+                obtain2.setClickable(true);
+                obtain2.addAction(16);
             } else if (i >= 3000) {
                 if (!(ChatMessageCell.this.currentMessageObject.caption instanceof Spannable)) {
                     return null;
                 }
-                ChatMessageCell chatMessageCell8 = ChatMessageCell.this;
-                if (chatMessageCell8.captionLayout == null) {
+                ChatMessageCell chatMessageCell9 = ChatMessageCell.this;
+                if (chatMessageCell9.captionLayout == null) {
                     return null;
                 }
-                Spannable spannable3 = (Spannable) chatMessageCell8.currentMessageObject.caption;
+                Spannable spannable3 = (Spannable) chatMessageCell9.currentMessageObject.caption;
                 ClickableSpan linkById = getLinkById(i, false);
                 if (linkById == null) {
                     return null;
                 }
                 int[] realSpanStartAndEnd = ChatMessageCell.this.getRealSpanStartAndEnd(spannable3, linkById);
                 obtain2.setText(spannable3.subSequence(realSpanStartAndEnd[0], realSpanStartAndEnd[1]).toString());
-                Iterator<MessageObject.TextLayoutBlock> it4 = ChatMessageCell.this.captionLayout.textLayoutBlocks.iterator();
+                Iterator<MessageObject.TextLayoutBlock> it6 = ChatMessageCell.this.captionLayout.textLayoutBlocks.iterator();
                 while (true) {
-                    if (!it4.hasNext()) {
+                    if (!it6.hasNext()) {
                         z3 = true;
                         break;
                     }
-                    MessageObject.TextLayoutBlock next = it4.next();
-                    int length = next.textLayout.getText().length();
-                    int i14 = next.charactersOffset;
-                    int i15 = realSpanStartAndEnd[0];
-                    if (i14 <= i15) {
-                        int i16 = length + i14;
-                        int i17 = realSpanStartAndEnd[1];
-                        if (i16 >= i17) {
-                            next.textLayout.getSelectionPath(i15 - i14, i17 - i14, this.linkPath);
+                    MessageObject.TextLayoutBlock next2 = it6.next();
+                    int length3 = next2.textLayout.getText().length();
+                    int i19 = next2.charactersOffset;
+                    int i20 = realSpanStartAndEnd[0];
+                    if (i19 <= i20) {
+                        int i21 = length3 + i19;
+                        int i22 = realSpanStartAndEnd[1];
+                        if (i21 >= i22) {
+                            next2.textLayout.getSelectionPath(i20 - i19, i22 - i19, this.linkPath);
                             this.linkPath.computeBounds(this.rectF, true);
-                            Rect rect = this.rect;
-                            RectF rectF = this.rectF;
-                            rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
                             Rect rect2 = this.rect;
-                            ChatMessageCell chatMessageCell9 = ChatMessageCell.this;
-                            rect2.offset(0, (int) next.textYOffset(chatMessageCell9.captionLayout.textLayoutBlocks, chatMessageCell9.transitionParams));
+                            RectF rectF = this.rectF;
+                            rect2.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
                             Rect rect3 = this.rect;
                             ChatMessageCell chatMessageCell10 = ChatMessageCell.this;
-                            rect3.offset(chatMessageCell10.textX, chatMessageCell10.textY);
+                            rect3.offset(0, (int) next2.textYOffset(chatMessageCell10.captionLayout.textLayoutBlocks, chatMessageCell10.transitionParams));
+                            Rect rect4 = this.rect;
+                            ChatMessageCell chatMessageCell11 = ChatMessageCell.this;
+                            rect4.offset(chatMessageCell11.textX, chatMessageCell11.textY);
                             obtain2.setBoundsInParent(this.rect);
                             if (ChatMessageCell.this.accessibilityVirtualViewBounds.get(i) == null) {
                                 ChatMessageCell.this.accessibilityVirtualViewBounds.put(i, new Rect(this.rect));
@@ -50981,29 +51238,29 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 }
                 int[] realSpanStartAndEnd2 = ChatMessageCell.this.getRealSpanStartAndEnd(spannable4, linkById2);
                 obtain2.setText(spannable4.subSequence(realSpanStartAndEnd2[0], realSpanStartAndEnd2[1]).toString());
-                Iterator<MessageObject.TextLayoutBlock> it5 = ChatMessageCell.this.currentMessageObject.textLayoutBlocks.iterator();
+                Iterator<MessageObject.TextLayoutBlock> it7 = ChatMessageCell.this.currentMessageObject.textLayoutBlocks.iterator();
                 while (true) {
-                    if (!it5.hasNext()) {
+                    if (!it7.hasNext()) {
                         z2 = true;
                         break;
                     }
-                    MessageObject.TextLayoutBlock next2 = it5.next();
-                    int length2 = next2.textLayout.getText().length();
-                    int i18 = next2.charactersOffset;
-                    int i19 = realSpanStartAndEnd2[0];
-                    if (i18 <= i19) {
-                        int i20 = length2 + i18;
-                        int i21 = realSpanStartAndEnd2[1];
-                        if (i20 >= i21) {
-                            next2.textLayout.getSelectionPath(i19 - i18, i21 - i18, this.linkPath);
+                    MessageObject.TextLayoutBlock next3 = it7.next();
+                    int length4 = next3.textLayout.getText().length();
+                    int i23 = next3.charactersOffset;
+                    int i24 = realSpanStartAndEnd2[0];
+                    if (i23 <= i24) {
+                        int i25 = length4 + i23;
+                        int i26 = realSpanStartAndEnd2[1];
+                        if (i25 >= i26) {
+                            next3.textLayout.getSelectionPath(i24 - i23, i26 - i23, this.linkPath);
                             this.linkPath.computeBounds(this.rectF, true);
-                            Rect rect4 = this.rect;
-                            RectF rectF2 = this.rectF;
-                            rect4.set((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
-                            this.rect.offset(0, (int) next2.textYOffset(ChatMessageCell.this.currentMessageObject.textLayoutBlocks, ChatMessageCell.this.transitionParams));
                             Rect rect5 = this.rect;
-                            ChatMessageCell chatMessageCell11 = ChatMessageCell.this;
-                            rect5.offset(chatMessageCell11.textX, chatMessageCell11.textY);
+                            RectF rectF2 = this.rectF;
+                            rect5.set((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
+                            this.rect.offset(0, (int) next3.textYOffset(ChatMessageCell.this.currentMessageObject.textLayoutBlocks, ChatMessageCell.this.transitionParams));
+                            Rect rect6 = this.rect;
+                            ChatMessageCell chatMessageCell12 = ChatMessageCell.this;
+                            rect6.offset(chatMessageCell12.textX, chatMessageCell12.textY);
                             obtain2.setBoundsInParent(this.rect);
                             if (ChatMessageCell.this.accessibilityVirtualViewBounds.get(i) == null) {
                                 ChatMessageCell.this.accessibilityVirtualViewBounds.put(i, new Rect(this.rect));
@@ -51021,11 +51278,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 obtain2.addAction(16);
                 obtain2.addAction(32);
             } else if (i >= 1000) {
-                int i22 = i - 1000;
-                if (i22 >= ChatMessageCell.this.botButtons.size()) {
+                int i27 = i - 1000;
+                if (i27 >= ChatMessageCell.this.botButtons.size()) {
                     return null;
                 }
-                BotButton botButton = (BotButton) ChatMessageCell.this.botButtons.get(i22);
+                BotButton botButton = (BotButton) ChatMessageCell.this.botButtons.get(i27);
                 if (botButton.isSeparator) {
                     return null;
                 }
@@ -51048,11 +51305,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 this.rect.offset(iArr[0], iArr[1]);
                 obtain2.setBoundsInScreen(this.rect);
             } else if (i >= 500) {
-                int i23 = i - 500;
-                if (i23 >= ChatMessageCell.this.pollButtons.size()) {
+                int i28 = i - 500;
+                if (i28 >= ChatMessageCell.this.pollButtons.size()) {
                     return null;
                 }
-                PollButton pollButton = (PollButton) ChatMessageCell.this.pollButtons.get(i23);
+                PollButton pollButton = (PollButton) ChatMessageCell.this.pollButtons.get(i28);
                 StringBuilder sb = new StringBuilder(pollButton.title.getText());
                 if (ChatMessageCell.this.pollVoted) {
                     obtain2.setSelected(pollButton.chosen);
@@ -51076,13 +51333,13 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 obtain2.setText(sb);
                 obtain2.setEnabled(true);
                 obtain2.addAction(16);
-                int i24 = pollButton.y;
-                ChatMessageCell chatMessageCell12 = ChatMessageCell.this;
-                int i25 = i24 + chatMessageCell12.namesOffset;
-                int dp2 = chatMessageCell12.backgroundWidth - AndroidUtilities.dp(76.0f);
-                Rect rect6 = this.rect;
-                int i26 = pollButton.x;
-                rect6.set(i26, i25, dp2 + i26, pollButton.height + i25);
+                int i29 = pollButton.y;
+                ChatMessageCell chatMessageCell13 = ChatMessageCell.this;
+                int i30 = i29 + chatMessageCell13.namesOffset;
+                int dp2 = chatMessageCell13.backgroundWidth - AndroidUtilities.dp(76.0f);
+                Rect rect7 = this.rect;
+                int i31 = pollButton.x;
+                rect7.set(i31, i30, dp2 + i31, pollButton.height + i30);
                 obtain2.setBoundsInParent(this.rect);
                 if (ChatMessageCell.this.accessibilityVirtualViewBounds.get(i) == null) {
                     ChatMessageCell.this.accessibilityVirtualViewBounds.put(i, new Rect(this.rect));
@@ -51129,8 +51386,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 if (ChatMessageCell.this.contactButtons != null && ChatMessageCell.this.contactButtons.size() > 1) {
                     InstantViewButton instantViewButton2 = (InstantViewButton) ChatMessageCell.this.contactButtons.get(0);
                     if (!instantViewButton2.rect.isEmpty()) {
-                        Rect rect7 = this.rect;
-                        rect7.set(rect7.left, rect7.top, rect7.right, (int) (rect7.bottom - instantViewButton2.rect.height()));
+                        Rect rect8 = this.rect;
+                        rect8.set(rect8.left, rect8.top, rect8.right, (int) (rect8.bottom - instantViewButton2.rect.height()));
                     }
                 }
                 obtain2.setBoundsInParent(this.rect);
@@ -51141,10 +51398,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 obtain2.setBoundsInScreen(this.rect);
                 obtain2.setClickable(true);
             } else if (i == 491 || i == 490 || i == 489) {
-                int i27 = i == 491 ? 5 : i == 490 ? 31 : 30;
-                for (int i28 = 0; i28 < ChatMessageCell.this.contactButtons.size(); i28++) {
-                    InstantViewButton instantViewButton3 = (InstantViewButton) ChatMessageCell.this.contactButtons.get(i28);
-                    if (instantViewButton3.type == i27) {
+                int i32 = i == 491 ? 5 : i == 490 ? 31 : 30;
+                for (int i33 = 0; i33 < ChatMessageCell.this.contactButtons.size(); i33++) {
+                    InstantViewButton instantViewButton3 = (InstantViewButton) ChatMessageCell.this.contactButtons.get(i33);
+                    if (instantViewButton3.type == i32) {
                         obtain2.setClassName("android.widget.Button");
                         obtain2.setEnabled(true);
                         if (instantViewButton3.layout != null) {
@@ -51168,8 +51425,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             } else if (i == 498) {
                 obtain2.setClassName("android.widget.ImageButton");
                 obtain2.setEnabled(true);
-                ChatMessageCell chatMessageCell13 = ChatMessageCell.this;
-                if (chatMessageCell13.isOpenChatByShare(chatMessageCell13.currentMessageObject)) {
+                ChatMessageCell chatMessageCell14 = ChatMessageCell.this;
+                if (chatMessageCell14.isOpenChatByShare(chatMessageCell14.currentMessageObject)) {
                     obtain2.setContentDescription(LocaleController.getString("AccDescrOpenChat", org.telegram.messenger.R.string.AccDescrOpenChat));
                 } else {
                     obtain2.setContentDescription(LocaleController.getString("ShareFile", org.telegram.messenger.R.string.ShareFile));
@@ -51199,13 +51456,13 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 }
                 obtain2.setContentDescription(sb2.toString());
                 obtain2.addAction(16);
-                Rect rect8 = this.rect;
-                ChatMessageCell chatMessageCell14 = ChatMessageCell.this;
-                int i29 = chatMessageCell14.replyStartX;
-                int i30 = chatMessageCell14.replyStartY;
-                int max = Math.max(chatMessageCell14.replyNameWidth, ChatMessageCell.this.replyTextWidth) + i29;
+                Rect rect9 = this.rect;
                 ChatMessageCell chatMessageCell15 = ChatMessageCell.this;
-                rect8.set(i29, i30, max, chatMessageCell15.replyStartY + ((int) chatMessageCell15.replyHeight));
+                int i34 = chatMessageCell15.replyStartX;
+                int i35 = chatMessageCell15.replyStartY;
+                int max = Math.max(chatMessageCell15.replyNameWidth, ChatMessageCell.this.replyTextWidth) + i34;
+                ChatMessageCell chatMessageCell16 = ChatMessageCell.this;
+                rect9.set(i34, i35, max, chatMessageCell16.replyStartY + ((int) chatMessageCell16.replyHeight));
                 obtain2.setBoundsInParent(this.rect);
                 if (ChatMessageCell.this.accessibilityVirtualViewBounds.get(i) == null || !((Rect) ChatMessageCell.this.accessibilityVirtualViewBounds.get(i)).equals(this.rect)) {
                     ChatMessageCell.this.accessibilityVirtualViewBounds.put(i, new Rect(this.rect));
@@ -51217,11 +51474,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 obtain2.setEnabled(true);
                 StringBuilder sb3 = new StringBuilder();
                 if (ChatMessageCell.this.forwardedNameLayout[0] != null && ChatMessageCell.this.forwardedNameLayout[1] != null) {
-                    int i31 = 0;
-                    while (i31 < 2) {
-                        sb3.append(ChatMessageCell.this.forwardedNameLayout[i31].getText());
-                        sb3.append(i31 == 0 ? " " : "\n");
-                        i31++;
+                    int i36 = 0;
+                    while (i36 < 2) {
+                        sb3.append(ChatMessageCell.this.forwardedNameLayout[i36].getText());
+                        sb3.append(i36 == 0 ? " " : "\n");
+                        i36++;
                     }
                 }
                 obtain2.setContentDescription(sb3.toString());
@@ -51272,9 +51529,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 }
                 obtain2.setText(LocaleController.getString(str, i2));
                 obtain2.addAction(16);
-                ChatMessageCell chatMessageCell16 = ChatMessageCell.this;
-                if (chatMessageCell16.transcribeButton != null) {
-                    this.rect.set((int) chatMessageCell16.transcribeX, (int) ChatMessageCell.this.transcribeY, (int) (ChatMessageCell.this.transcribeX + ChatMessageCell.this.transcribeButton.width()), (int) (ChatMessageCell.this.transcribeY + ChatMessageCell.this.transcribeButton.height()));
+                ChatMessageCell chatMessageCell17 = ChatMessageCell.this;
+                if (chatMessageCell17.transcribeButton != null) {
+                    this.rect.set((int) chatMessageCell17.transcribeX, (int) ChatMessageCell.this.transcribeY, (int) (ChatMessageCell.this.transcribeX + ChatMessageCell.this.transcribeButton.width()), (int) (ChatMessageCell.this.transcribeY + ChatMessageCell.this.transcribeButton.height()));
                 }
                 obtain2.setBoundsInParent(this.rect);
                 this.rect.offset(iArr[0], iArr[1]);
@@ -51287,9 +51544,14 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             return obtain2;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:102:0x0209, code lost:
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ int lambda$createAccessibilityNodeInfo$0(Spanned spanned, CodeHighlighting.Span span, CodeHighlighting.Span span2) {
+            return spanned.getSpanStart(span2) - spanned.getSpanStart(span);
+        }
+
+        /* JADX WARN: Code restructure failed: missing block: B:109:0x0228, code lost:
         
-            if (r9.this$0.currentMessageObject.messageOwner.reply_to.reply_from == null) goto L138;
+            if (r9.this$0.currentMessageObject.messageOwner.reply_to.reply_from == null) goto L145;
          */
         @Override // android.view.accessibility.AccessibilityNodeProvider
         /*
@@ -51308,6 +51570,12 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             ChatMessageCellDelegate chatMessageCellDelegate = ChatMessageCell.this.delegate;
                             ChatMessageCell chatMessageCell = ChatMessageCell.this;
                             chatMessageCellDelegate.didPressUserAvatar(chatMessageCell, chatMessageCell.currentUser, 0.0f, 0.0f, false);
+                        }
+                    } else if (i >= 6000) {
+                        int[] iArr = {0};
+                        RichMessageLayout.RichBlock resolveRichElement = resolveRichElement(i, iArr);
+                        if (resolveRichElement != null && resolveRichElement.onAccessibilityElementClick(iArr[0], ChatMessageCell.this)) {
+                            ChatMessageCell.this.sendAccessibilityEventForVirtualView(i, 1);
                         }
                     } else if (i >= 3000) {
                         ClickableSpan linkById = getLinkById(i, true);

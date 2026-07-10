@@ -159,9 +159,7 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
             options.inJustDecodeBounds = true;
             BitmapFactory.decodeFile(str, options);
             String str2 = options.outMimeType;
-            if (str2 != null && (str2.equalsIgnoreCase("image/jpeg") || str2.equalsIgnoreCase("image/jpg"))) {
-                return str;
-            }
+            boolean z = str2 != null && (str2.equalsIgnoreCase("image/jpeg") || str2.equalsIgnoreCase("image/jpg"));
             float photoSize = AndroidUtilities.getPhotoSize();
             Bitmap loadBitmap = ImageLoader.loadBitmap(str, null, photoSize, photoSize, true);
             if (loadBitmap == null) {
@@ -176,7 +174,16 @@ public class RichMediaUploader implements NotificationCenter.NotificationCenterD
                 try {
                     boolean compress = loadBitmap.compress(Bitmap.CompressFormat.JPEG, 89, fileOutputStream);
                     fileOutputStream.close();
-                    return (!compress || file.length() <= 0) ? str : file.getAbsolutePath();
+                    if (compress && file.length() > 0) {
+                        if (z) {
+                            long length = new File(str).length();
+                            if (length > 0 && file.length() >= length) {
+                                return str;
+                            }
+                        }
+                        return file.getAbsolutePath();
+                    }
+                    return str;
                 } finally {
                 }
             } finally {

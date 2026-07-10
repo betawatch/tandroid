@@ -50,6 +50,9 @@ public abstract class CustomPopupMenu {
         this.popupWindow.setInputMethodMode(2);
         this.popupWindow.setSoftInputMode(0);
         this.popupWindow.getContentView().setFocusableInTouchMode(true);
+        if (AndroidUtilities.isAccessibilityTouchExplorationEnabled()) {
+            this.popupWindow.setFocusable(true);
+        }
         this.popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.Components.CustomPopupMenu$$ExternalSyntheticLambda2
             @Override // android.widget.PopupWindow.OnDismissListener
             public final void onDismiss() {

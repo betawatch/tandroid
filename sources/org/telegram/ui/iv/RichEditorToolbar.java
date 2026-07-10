@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
@@ -151,6 +152,7 @@ public class RichEditorToolbar extends FrameLayout {
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(color3, mode));
         ScaleStateListAnimator.apply(imageView);
+        imageView.setContentDescription(LocaleController.getString(R.string.AccDescrGoBack));
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
@@ -392,6 +394,7 @@ public class RichEditorToolbar extends FrameLayout {
         RichEditor.Button button = new RichEditor.Button(context, R.drawable.iv_quote, resourcesProvider);
         this.quoteButton = button;
         button.setBackgroundColorKey(i2);
+        button.setContentDescription(LocaleController.getString(R.string.Quote));
         button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
@@ -408,6 +411,7 @@ public class RichEditorToolbar extends FrameLayout {
         RichEditor.Button button2 = new RichEditor.Button(context, R.drawable.media_link_24, resourcesProvider);
         this.linkButton = button2;
         button2.setBackgroundColorKey(i2);
+        button2.setContentDescription(LocaleController.getString(R.string.CreateLink));
         button2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
@@ -418,6 +422,7 @@ public class RichEditorToolbar extends FrameLayout {
         RichEditor.Button button3 = new RichEditor.Button(context, R.drawable.msg_calendar2, resourcesProvider);
         this.dateButton = button3;
         button3.setBackgroundColorKey(i2);
+        button3.setContentDescription(LocaleController.getString(R.string.AccDescrIVInsertDate));
         button3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
@@ -436,6 +441,7 @@ public class RichEditorToolbar extends FrameLayout {
         button4.setBackgroundColorKey(i2);
         button4.setPremium();
         arrayList.add(button4);
+        button4.setContentDescription(LocaleController.getString(R.string.AccDescrIVFormula));
         button4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
@@ -453,6 +459,7 @@ public class RichEditorToolbar extends FrameLayout {
         this.aiStyleButton = button5;
         button5.setImageDrawable(new AiButtonDrawable(context));
         button5.setBackgroundColorKey(i2);
+        button5.setContentDescription(LocaleController.getString(R.string.AIEditor));
         button5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
@@ -496,6 +503,7 @@ public class RichEditorToolbar extends FrameLayout {
             this.premiumButtons.add(button);
         }
         button.setTag(Integer.valueOf(i2));
+        button.setContentDescription(RichEditor.blockButtonContentDescription(i2));
         button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda17
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -525,6 +533,7 @@ public class RichEditorToolbar extends FrameLayout {
             this.premiumButtons.add(button);
         }
         button.setTag(Integer.valueOf(i2));
+        button.setContentDescription(RichEditor.formattingButtonContentDescription(i2));
         button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichEditorToolbar$$ExternalSyntheticLambda16
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -799,6 +808,10 @@ public class RichEditorToolbar extends FrameLayout {
 
     public FrameLayout getBottomContainer() {
         return this.bottomContainer;
+    }
+
+    public void setBottomGradientTranslationY(float f) {
+        this.bottomGradient.setTranslationY(f);
     }
 
     public FrameLayout getBottomInnerContainer() {

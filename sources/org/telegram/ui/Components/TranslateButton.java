@@ -54,6 +54,10 @@ public abstract class TranslateButton extends FrameLayout implements Theme.Color
     private final Drawable translateDrawable;
     public final SpannableString translateIcon;
 
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return Theme.Colorable.-CC.$default$getColorKeys(this);
+    }
+
     protected abstract void onButtonClick();
 
     protected abstract void onCloseClick();
