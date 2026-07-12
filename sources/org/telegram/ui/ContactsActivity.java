@@ -1661,7 +1661,7 @@ public class ContactsActivity extends BaseFragment implements FactorAnimator.Tar
 
     /* JADX INFO: Access modifiers changed from: private */
     public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
-        this.navigationBarHeight = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
+        this.navigationBarHeight = AndroidUtilities.getDefaultWindowInsets(windowInsetsCompat, false).bottom;
         checkUi_listViewPadding();
         checkUi_floatingButtonPosition();
         checkUi_emptyView();

@@ -127,12 +127,12 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$3000(CommunitySheet communitySheet, UItem uItem, View view, int i, float f, float f2) {
+    public static /* synthetic */ void access$3100(CommunitySheet communitySheet, UItem uItem, View view, int i, float f, float f2) {
         communitySheet.onClickCommunity(uItem, view, i, f, f2);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$3100(CommunitySheet communitySheet, ArrayList arrayList, UniversalAdapter universalAdapter) {
+    public static /* synthetic */ void access$3200(CommunitySheet communitySheet, ArrayList arrayList, UniversalAdapter universalAdapter) {
         communitySheet.fillItemsCommunity(arrayList, universalAdapter);
     }
 
@@ -242,7 +242,9 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i2, int i3) {
                 super.onScrolled(recyclerView, i2, i3);
-                AndroidUtilities.hideKeyboard(CommunitySheet.this.chatsSearchView.editText);
+                if (CommunitySheet.this.foundChatsView.scrollingByUser) {
+                    AndroidUtilities.hideKeyboard(CommunitySheet.this.chatsSearchView.editText);
+                }
             }
         });
         universalRecyclerView.setClipToPadding(false);
@@ -859,12 +861,12 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(context, ((BottomSheet) CommunitySheet.this).currentAccount, 0, new Utilities.Callback2() { // from class: org.telegram.ui.community.CommunitySheet$CommunityPage$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    CommunitySheet.access$3100(CommunitySheet.this, (ArrayList) obj, (UniversalAdapter) obj2);
+                    CommunitySheet.access$3200(CommunitySheet.this, (ArrayList) obj, (UniversalAdapter) obj2);
                 }
             }, new Utilities.Callback5() { // from class: org.telegram.ui.community.CommunitySheet$CommunityPage$$ExternalSyntheticLambda1
                 @Override // org.telegram.messenger.Utilities.Callback5
                 public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-                    CommunitySheet.access$3000(CommunitySheet.this, (UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
+                    CommunitySheet.access$3100(CommunitySheet.this, (UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
                 }
             }, new Utilities.Callback5Return() { // from class: org.telegram.ui.community.CommunitySheet$CommunityPage$$ExternalSyntheticLambda2
                 @Override // org.telegram.messenger.Utilities.Callback5Return

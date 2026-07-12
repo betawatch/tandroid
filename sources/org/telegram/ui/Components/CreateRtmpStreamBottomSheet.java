@@ -76,7 +76,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
             final ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, resourcesProvider);
             buttonWithCounterView.setText(LocaleController.getString(R.string.LiveStoryRTMPEnable), false);
             this.containerView.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, (this.hasRevokeButton ? 52 : 0) + 12));
-            buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda0
+            buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda13
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     CreateRtmpStreamBottomSheet.this.lambda$new$2(callback, buttonWithCounterView, view);
@@ -87,7 +87,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
                 buttonWithCounterView2.setColor(Theme.getColor(Theme.key_fill_RedNormal));
                 buttonWithCounterView2.text.setTypeface(AndroidUtilities.bold());
                 buttonWithCounterView2.setText(LocaleController.getString(R.string.LiveStoryRTMPRevoke), false);
-                buttonWithCounterView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda1
+                buttonWithCounterView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda14
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         CreateRtmpStreamBottomSheet.this.lambda$new$6(context, resourcesProvider, buttonWithCounterView2, getgroupcallstreamrtmpurl, i, view);
@@ -125,12 +125,12 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$2(Utilities.Callback callback, final ButtonWithCounterView buttonWithCounterView, View view) {
-        callback.run(new Browser.Progress(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda3
+        callback.run(new Browser.Progress(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 ButtonWithCounterView.this.setLoading(true);
             }
-        }, new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda4
+        }, new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 CreateRtmpStreamBottomSheet.this.lambda$new$1(buttonWithCounterView);
@@ -146,7 +146,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$6(Context context, Theme.ResourcesProvider resourcesProvider, final ButtonWithCounterView buttonWithCounterView, final TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, final int i, View view) {
-        new AlertDialog.Builder(context, resourcesProvider).setTitle(LocaleController.getString(R.string.LiveStoryRTMPRevokeTitle)).setMessage(LocaleController.getString(R.string.LiveStoryRTMPRevokeText)).setPositiveButton(LocaleController.getString(R.string.RevokeButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda2
+        new AlertDialog.Builder(context, resourcesProvider).setTitle(LocaleController.getString(R.string.LiveStoryRTMPRevokeTitle)).setMessage(LocaleController.getString(R.string.LiveStoryRTMPRevokeText)).setPositiveButton(LocaleController.getString(R.string.RevokeButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i2) {
                 CreateRtmpStreamBottomSheet.this.lambda$new$5(buttonWithCounterView, getgroupcallstreamrtmpurl, i, alertDialog, i2);
@@ -161,7 +161,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         }
         buttonWithCounterView.setLoading(true);
         getgroupcallstreamrtmpurl.revoke = true;
-        ConnectionsManager.getInstance(i).sendRequest(getgroupcallstreamrtmpurl, new RequestDelegate() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda5
+        ConnectionsManager.getInstance(i).sendRequest(getgroupcallstreamrtmpurl, new RequestDelegate() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda3
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 CreateRtmpStreamBottomSheet.this.lambda$new$4(buttonWithCounterView, tLObject, tL_error);
@@ -171,7 +171,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$4(final ButtonWithCounterView buttonWithCounterView, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda6
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
                 CreateRtmpStreamBottomSheet.this.lambda$new$3(buttonWithCounterView, tLObject);
@@ -210,7 +210,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         textView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText, this.resourcesProvider));
         textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(8.0f), Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider), ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_windowBackgroundWhite), 120)));
         this.containerView.addView(textView, LayoutHelper.createFrame(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, (isCreator ? 52 : 0) + 12));
-        textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda8
+        textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CreateRtmpStreamBottomSheet.this.lambda$new$7(peer, view);
@@ -221,7 +221,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
             buttonWithCounterView.setColor(Theme.getColor(Theme.key_fill_RedNormal));
             buttonWithCounterView.text.setTypeface(AndroidUtilities.bold());
             buttonWithCounterView.setText(LocaleController.getString(R.string.LiveStoryRTMPRevoke), false);
-            buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda9
+            buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     CreateRtmpStreamBottomSheet.this.lambda$new$11(context, buttonWithCounterView, j, view);
@@ -243,7 +243,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = new TL_phone.getGroupCallStreamRtmpUrl();
         getgroupcallstreamrtmpurl.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(j);
         getgroupcallstreamrtmpurl.revoke = false;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallstreamrtmpurl, new RequestDelegate() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda10
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallstreamrtmpurl, new RequestDelegate() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda8
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 CreateRtmpStreamBottomSheet.this.lambda$new$13(tLObject, tL_error);
@@ -259,7 +259,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$11(Context context, final ButtonWithCounterView buttonWithCounterView, final long j, View view) {
-        new AlertDialog.Builder(context, this.resourcesProvider).setTitle(LocaleController.getString(R.string.LiveStoryRTMPRevokeTitle)).setMessage(LocaleController.getString(R.string.LiveStoryRTMPRevokeText)).setPositiveButton(LocaleController.getString(R.string.RevokeButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda12
+        new AlertDialog.Builder(context, this.resourcesProvider).setTitle(LocaleController.getString(R.string.LiveStoryRTMPRevokeTitle)).setMessage(LocaleController.getString(R.string.LiveStoryRTMPRevokeText)).setPositiveButton(LocaleController.getString(R.string.RevokeButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda10
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
                 CreateRtmpStreamBottomSheet.this.lambda$new$10(buttonWithCounterView, j, alertDialog, i);
@@ -276,7 +276,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = new TL_phone.getGroupCallStreamRtmpUrl();
         getgroupcallstreamrtmpurl.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(j);
         getgroupcallstreamrtmpurl.revoke = true;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallstreamrtmpurl, new RequestDelegate() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda13
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallstreamrtmpurl, new RequestDelegate() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda11
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 CreateRtmpStreamBottomSheet.this.lambda$new$9(buttonWithCounterView, tLObject, tL_error);
@@ -286,7 +286,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$9(final ButtonWithCounterView buttonWithCounterView, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda14
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
                 CreateRtmpStreamBottomSheet.this.lambda$new$8(buttonWithCounterView, tLObject);
@@ -309,7 +309,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$13(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda11
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 CreateRtmpStreamBottomSheet.this.lambda$new$12(tLObject);
@@ -352,7 +352,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
     public RecyclerListView.SelectionAdapter createAdapter(RecyclerListView recyclerListView) {
-        UniversalAdapter universalAdapter = new UniversalAdapter(recyclerListView, getContext(), this.currentAccount, 0, true, new Utilities.Callback2() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda7
+        UniversalAdapter universalAdapter = new UniversalAdapter(recyclerListView, getContext(), this.currentAccount, 0, true, new Utilities.Callback2() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 CreateRtmpStreamBottomSheet.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);

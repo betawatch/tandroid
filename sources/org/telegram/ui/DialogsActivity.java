@@ -57,6 +57,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
+import androidx.core.graphics.Insets;
 import androidx.core.math.MathUtils;
 import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
@@ -14915,6 +14916,10 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         return this.folderId == 1;
     }
 
+    public boolean isCommunity() {
+        return this.communityId != 0;
+    }
+
     public void setInitialSearchType(int i) {
         this.initialSearchType = i;
     }
@@ -17805,8 +17810,9 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     /* JADX INFO: Access modifiers changed from: private */
     public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
         this.windowInsetsStateHolder.setInsets(windowInsetsCompat);
-        this.statusBarHeight = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars()).top;
-        this.navigationBarHeight = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
+        Insets defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(windowInsetsCompat, false);
+        this.statusBarHeight = defaultWindowInsets.top;
+        this.navigationBarHeight = defaultWindowInsets.bottom;
         int i = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.ime()).bottom;
         if (this.imeInsetHeight != i) {
             this.imeInsetHeight = i;

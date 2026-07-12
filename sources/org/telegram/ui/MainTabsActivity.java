@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import androidx.core.graphics.ColorUtils;
+import androidx.core.graphics.Insets;
 import androidx.core.math.MathUtils;
 import androidx.core.view.WindowInsetsCompat;
 import java.util.ArrayList;
@@ -42,6 +44,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.EdgeToEdgeSupportMode;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.Components.AvatarDrawable;
@@ -78,6 +81,8 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     private NotificationCenter.ObserversGroup globalObserversGroup;
     private final BlurredBackgroundSourceColor iBlur3SourceColor;
     private final BlurredBackgroundSourceRenderNode iBlur3SourceTabGlass;
+    private int insetLeft;
+    private int insetRight;
     private int navigationBarHeight;
     private NotificationCenter.ObserversGroup observersGroup;
     private Integer pendingFolderId;
@@ -241,6 +246,13 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
 
             @Override // android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
+                int blendARGB = ColorUtils.blendARGB(MainTabsActivity.this.getThemedColor(Theme.key_windowBackgroundGray), MainTabsActivity.this.getThemedColor(Theme.key_windowBackgroundWhite), MainTabsActivity.this.viewPager.getPositionVisibility(0));
+                if (MainTabsActivity.this.insetLeft != 0) {
+                    canvas.drawRect(0.0f, 0.0f, MainTabsActivity.this.insetLeft, getHeight(), Theme.fillingPaint(blendARGB));
+                }
+                if (MainTabsActivity.this.insetRight != 0) {
+                    canvas.drawRect(getWidth() - MainTabsActivity.this.insetRight, 0.0f, getWidth(), getHeight(), Theme.fillingPaint(blendARGB));
+                }
                 super.dispatchDraw(canvas);
                 MainTabsActivity.this.blur3_invalidateBlur();
             }
@@ -756,6 +768,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         }
         checkUi_fadeView();
         blur3_invalidateBlur();
+        this.contentView.invalidate();
     }
 
     @Override // org.telegram.ui.ViewPagerActivity, org.telegram.ui.ActionBar.BaseFragment
@@ -865,7 +878,10 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
 
     @Override // org.telegram.ui.ViewPagerActivity
     protected WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
-        this.navigationBarHeight = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
+        Insets defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(windowInsetsCompat, false);
+        this.insetLeft = defaultWindowInsets.left;
+        this.insetRight = defaultWindowInsets.right;
+        this.navigationBarHeight = defaultWindowInsets.bottom;
         boolean isUpdateLayoutVisible = this.updateLayoutWrapper.isUpdateLayoutVisible();
         int dp = isUpdateLayoutVisible ? AndroidUtilities.dp(44.0f) : 0;
         this.updateLayoutWrapper.setPadding(0, 0, 0, this.navigationBarHeight);
@@ -880,11 +896,13 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             i = Math.max(i, this.navigationBarHeight + AndroidUtilities.dp(72.0f));
         }
         ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) this.viewPager.getLayoutParams();
-        if (marginLayoutParams2.bottomMargin != i) {
+        if (marginLayoutParams2.bottomMargin != i || marginLayoutParams2.leftMargin != defaultWindowInsets.left || marginLayoutParams2.rightMargin != defaultWindowInsets.right) {
+            marginLayoutParams2.leftMargin = defaultWindowInsets.left;
+            marginLayoutParams2.rightMargin = defaultWindowInsets.right;
             marginLayoutParams2.bottomMargin = i;
             this.viewPager.setLayoutParams(marginLayoutParams2);
         }
-        this.tabsViewWrapper.setPadding(0, 0, 0, this.navigationBarHeight);
+        this.tabsViewWrapper.setPadding(defaultWindowInsets.left, 0, defaultWindowInsets.right, this.navigationBarHeight);
         if (isUpdateLayoutVisible) {
             windowInsetsCompat = windowInsetsCompat.inset(0, 0, 0, this.navigationBarHeight);
         }
@@ -1193,5 +1211,10 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
                 glassTabView.updateColorsLottie();
             }
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public EdgeToEdgeSupportMode getEdgeToEdgeSupportMode() {
+        return EdgeToEdgeSupportMode.FULL;
     }
 }

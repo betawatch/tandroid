@@ -250,10 +250,10 @@ public class QrActivity extends BaseFragment {
                 if (QrActivity.this.themeLayout.getVisibility() == 0) {
                     if (z5) {
                         int width3 = (getWidth() - QrActivity.this.themeLayout.getMeasuredWidth()) / 2;
-                        QrActivity.this.themeLayout.layout(width3, i4 - measuredHeight, QrActivity.this.themeLayout.getMeasuredWidth() + width3, i4);
+                        QrActivity.this.themeLayout.layout(width3, getMeasuredHeight() - measuredHeight, QrActivity.this.themeLayout.getMeasuredWidth() + width3, getMeasuredHeight());
                     } else {
                         int height2 = (getHeight() - QrActivity.this.themeLayout.getMeasuredHeight()) / 2;
-                        QrActivity.this.themeLayout.layout(i3 - QrActivity.this.themeLayout.getMeasuredWidth(), height2, i3, QrActivity.this.themeLayout.getMeasuredHeight() + height2);
+                        QrActivity.this.themeLayout.layout(getMeasuredWidth() - QrActivity.this.themeLayout.getMeasuredWidth(), height2, getMeasuredWidth(), QrActivity.this.themeLayout.getMeasuredHeight() + height2);
                     }
                 }
                 QrActivity.this.logoImageView.layout(QrActivity.this.logoRect.left + width, QrActivity.this.logoRect.top + height, width + QrActivity.this.logoRect.right, height + QrActivity.this.logoRect.bottom);
@@ -271,13 +271,9 @@ public class QrActivity extends BaseFragment {
                 }
                 QrActivity.this.currMotionDrawable.setBounds(0, 0, getWidth(), getHeight());
                 if (QrActivity.this.prevMotionDrawable != null) {
-                    QrActivity.this.prevMotionDrawable.drawBackground(canvas);
+                    QrActivity.this.prevMotionDrawable.draw(canvas);
                 }
-                QrActivity.this.currMotionDrawable.drawBackground(canvas);
-                if (QrActivity.this.prevMotionDrawable != null) {
-                    QrActivity.this.prevMotionDrawable.drawPattern(canvas);
-                }
-                QrActivity.this.currMotionDrawable.drawPattern(canvas);
+                QrActivity.this.currMotionDrawable.draw(canvas);
                 super.onDraw(canvas);
             }
         };

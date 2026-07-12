@@ -2206,7 +2206,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
 
     /* JADX INFO: Access modifiers changed from: private */
     public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
-        int i = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
+        int i = AndroidUtilities.getDefaultWindowInsets(windowInsetsCompat, false).bottom;
         this.navigationBarHeight = i;
         FrameLayout frameLayout = this.buttonsContainer;
         if (frameLayout != null) {

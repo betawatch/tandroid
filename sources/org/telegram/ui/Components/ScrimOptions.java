@@ -20,7 +20,6 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -161,8 +160,8 @@ public class ScrimOptions extends Dialog {
         ViewCompat.setOnApplyWindowInsetsListener(frameLayout, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.Components.ScrimOptions.2
             @Override // androidx.core.view.OnApplyWindowInsetsListener
             public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
-                Insets insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.displayCutout() | WindowInsetsCompat.Type.systemBars());
-                ScrimOptions.this.containerView.setPadding(insets.left, insets.top, insets.right, insets.bottom);
+                Insets defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(windowInsetsCompat, false);
+                ScrimOptions.this.containerView.setPadding(defaultWindowInsets.left, defaultWindowInsets.top, defaultWindowInsets.right, defaultWindowInsets.bottom);
                 ScrimOptions.this.windowView.requestLayout();
                 return WindowInsetsCompat.CONSUMED;
             }
@@ -327,9 +326,7 @@ public class ScrimOptions extends Dialog {
         int i = attributes.flags & (-3);
         attributes.softInputMode = 16;
         attributes.flags = i | (-1945959040);
-        if (Build.VERSION.SDK_INT >= 28) {
-            attributes.layoutInDisplayCutoutMode = 1;
-        }
+        AndroidUtilities.applyEdgeToEdgeLayoutParams(attributes);
         window.setAttributes(attributes);
         this.windowView.setSystemUiVisibility(256);
         AndroidUtilities.setLightNavigationBar(this.windowView, !Theme.isCurrentThemeDark());

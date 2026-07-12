@@ -513,7 +513,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         this.originalBitmapRotation = i2;
         UndoStore undoStore = new UndoStore();
         this.undoStore = undoStore;
-        undoStore.setDelegate(new UndoStore.UndoStoreDelegate() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda18
+        undoStore.setDelegate(new UndoStore.UndoStoreDelegate() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda19
             @Override // org.telegram.ui.Components.Paint.UndoStore.UndoStoreDelegate
             public final void historyChanged() {
                 PaintView.this.lambda$new$0();
@@ -813,7 +813,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         imageView.setImageResource(R.drawable.photo_undo2);
         this.undoButton.setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
         this.undoButton.setBackground(Theme.createSelectorDrawable(1090519039));
-        this.undoButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda22
+        this.undoButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda23
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 PaintView.this.lambda$new$1(view3);
@@ -839,7 +839,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         this.zoomOutButton.addView(this.zoomOutImage, LayoutHelper.createLinear(24, 24, 16, 0, 0, 8, 0));
         this.zoomOutButton.addView(this.zoomOutText, LayoutHelper.createLinear(-2, -2, 16));
         this.zoomOutButton.setAlpha(0.0f);
-        this.zoomOutButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda23
+        this.zoomOutButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda24
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 PaintView.lambda$new$2(view3);
@@ -855,7 +855,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         this.undoAllButton.setTextColor(-1);
         this.undoAllButton.setTypeface(AndroidUtilities.bold());
         this.undoAllButton.setTextSize(1, 16.0f);
-        this.undoAllButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda24
+        this.undoAllButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda25
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 PaintView.this.lambda$new$3(view3);
@@ -872,7 +872,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         this.cancelTextButton.setTextColor(-1);
         this.cancelTextButton.setTypeface(AndroidUtilities.bold());
         this.cancelTextButton.setTextSize(1, 16.0f);
-        this.cancelTextButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda25
+        this.cancelTextButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda26
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 PaintView.this.lambda$new$4(view3);
@@ -890,7 +890,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         this.doneTextButton.setTextColor(-1);
         this.doneTextButton.setTypeface(AndroidUtilities.bold());
         this.doneTextButton.setTextSize(1, 16.0f);
-        this.doneTextButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda26
+        this.doneTextButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda27
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 PaintView.this.lambda$new$5(view3);
@@ -1011,7 +1011,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         paintTextOptionsView.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(8.0f), 0);
         this.textOptionsView.setVisibility(8);
         this.textOptionsView.setDelegate(this);
-        post(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda27
+        post(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda28
             @Override // java.lang.Runnable
             public final void run() {
                 PaintView.this.lambda$new$6(i);
@@ -1055,7 +1055,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         PaintTypefaceListView paintTypefaceListView = new PaintTypefaceListView(context);
         this.typefaceListView = paintTypefaceListView;
         paintTypefaceListView.setVisibility(8);
-        this.typefaceListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda28
+        this.typefaceListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda29
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view3, int i6) {
                 PaintView.this.lambda$new$7(view3, i6);
@@ -1085,7 +1085,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         this.colorsListView = paintColorsListView;
         paintColorsListView.setVisibility(8);
         this.colorsListView.setColorPalette(PersistColorPalette.getInstance(i));
-        this.colorsListView.setColorListener(new Consumer() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda29
+        this.colorsListView.setColorListener(new Consumer() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda30
             @Override // androidx.core.util.Consumer
             public final void accept(Object obj) {
                 PaintView.this.lambda$new$8((Integer) obj);
@@ -1098,7 +1098,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         paintCancelView.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         this.cancelButton.setBackground(Theme.createSelectorDrawable(1090519039));
         this.bottomLayout.addView(this.cancelButton, LayoutHelper.createFrame(32, 32.0f, 83, 12.0f, 0.0f, 0.0f, 4.0f));
-        this.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda30
+        this.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda31
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 PaintView.this.lambda$new$9(view3);
@@ -1108,7 +1108,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         this.doneButton = paintDoneView;
         paintDoneView.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         this.doneButton.setBackground(Theme.createSelectorDrawable(1090519039));
-        this.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda19
+        this.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda20
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 PaintView.this.lambda$new$11(context, bitmap3, persistColorPalette, view3);
@@ -1121,7 +1121,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         this.weightChooserView.setRenderView(this.renderView);
         this.weightChooserView.setValueOverride(valueOverride);
         this.colorSwatch.brushWeight = valueOverride.get();
-        this.weightChooserView.setOnUpdate(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda20
+        this.weightChooserView.setOnUpdate(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda21
             @Override // java.lang.Runnable
             public final void run() {
                 PaintView.this.lambda$new$12(i);
@@ -1142,7 +1142,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         } else {
             i5 = 1;
         }
-        this.keyboardNotifier = new KeyboardNotifier(windowView, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda21
+        this.keyboardNotifier = new KeyboardNotifier(windowView, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda22
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 PaintView.this.lambda$new$13(windowView, (Integer) obj);
@@ -1471,7 +1471,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         swatch.color = i;
         setCurrentSwatch(swatch, true, null, true);
         ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
-        duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda1
+        duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                 PaintView.this.lambda$setNewColor$14(i2, i, valueAnimator);
@@ -1598,7 +1598,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         PointF startPositionRelativeToEntity = startPositionRelativeToEntity(null);
         TextPaintView textPaintView = new TextPaintView(getContext(), startPositionRelativeToEntity, (int) (paintingSize.width / 9.0f), "", this.colorSwatch, this.selectedTextType);
         float f = paintingSize.width / 9.0f;
-        textPaintView.setMinMaxFontSize((int) (0.5f * f), (int) (f * 2.0f), new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda33
+        textPaintView.setMinMaxFontSize((int) (0.5f * f), (int) (f * 2.0f), new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda34
             @Override // java.lang.Runnable
             public final void run() {
                 PaintView.this.lambda$createText$15();
@@ -1952,7 +1952,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
                     this.parent.invalidate();
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(this.reactionShowProgress, z ? 1.0f : 0.0f);
                     this.reactionLayout.setTransitionProgress(this.reactionShowProgress);
-                    ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda3
+                    ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda4
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                             PaintView.this.lambda$showReactionsLayout$16(valueAnimator);
@@ -2077,7 +2077,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         this.drawTab.setGravity(1);
         this.drawTab.setTypeface(AndroidUtilities.bold());
         this.drawTab.setSingleLine();
-        this.drawTab.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda9
+        this.drawTab.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PaintView.this.lambda$setupTabsLayout$17(view);
@@ -2089,7 +2089,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         textView3.setText(LocaleController.getString(R.string.PhotoEditorSticker).toUpperCase());
         this.stickerTab.setBackground(Theme.createSelectorDrawable(getThemedColor(i), 7));
         this.stickerTab.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        this.stickerTab.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda10
+        this.stickerTab.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PaintView.this.lambda$setupTabsLayout$18(view);
@@ -2113,7 +2113,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         this.textTab.setTypeface(AndroidUtilities.bold());
         this.textTab.setAlpha(0.6f);
         this.textTab.setSingleLine();
-        this.textTab.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda11
+        this.textTab.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PaintView.this.lambda$setupTabsLayout$19(view);
@@ -2175,7 +2175,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(300L);
         this.tabsSelectionAnimator = duration;
         duration.setInterpolator(CubicBezierInterpolator.DEFAULT);
-        this.tabsSelectionAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda17
+        this.tabsSelectionAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda18
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                 PaintView.this.lambda$switchTab$20(barView, barView2, valueAnimator2);
@@ -2249,7 +2249,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
     private void openStickersView() {
         final int i = this.tabsSelectedIndex;
         switchTab(1);
-        postDelayed(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda4
+        postDelayed(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
                 PaintView.this.lambda$openStickersView$21();
@@ -2318,20 +2318,20 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         this.emojiPopup = emojiBottomSheet;
         final StoryRecorder.WindowView windowView = this.parent;
         Objects.requireNonNull(windowView);
-        emojiBottomSheet.setBlurDelegate(new Utilities.Callback2() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda5
+        emojiBottomSheet.setBlurDelegate(new Utilities.Callback2() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda6
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 StoryRecorder.WindowView.this.drawBlurBitmap((Bitmap) obj, ((Float) obj2).floatValue());
             }
         });
         final boolean[] zArr = {true};
-        emojiBottomSheet.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda6
+        emojiBottomSheet.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda7
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 PaintView.this.lambda$openStickersView$22(zArr, i, dialogInterface);
             }
         });
-        emojiBottomSheet.whenDocumentSelected(new Utilities.Callback3Return() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda7
+        emojiBottomSheet.whenDocumentSelected(new Utilities.Callback3Return() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda8
             @Override // org.telegram.messenger.Utilities.Callback3Return
             public final Object run(Object obj, Object obj2, Object obj3) {
                 Boolean lambda$openStickersView$23;
@@ -2339,7 +2339,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
                 return lambda$openStickersView$23;
             }
         });
-        emojiBottomSheet.whenWidgetSelected(new Utilities.CallbackReturn() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda8
+        emojiBottomSheet.whenWidgetSelected(new Utilities.CallbackReturn() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda9
             @Override // org.telegram.messenger.Utilities.CallbackReturn
             public final Object run(Object obj) {
                 Boolean lambda$openStickersView$27;
@@ -3014,7 +3014,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         this.renderView.shutdown();
         this.entitiesView.setVisibility(8);
         this.selectionContainerView.setVisibility(8);
-        this.queue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda16
+        this.queue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda17
             @Override // java.lang.Runnable
             public final void run() {
                 PaintView.lambda$shutdown$33();
@@ -4177,13 +4177,13 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
             final float translationY = this.bottomLayout.getTranslationY();
             final float alpha = this.doneButton.getAlpha();
             final ViewGroup barView = getBarView();
-            this.toolsTransformAnimation.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda14
+            this.toolsTransformAnimation.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda15
                 @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
                 public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f, float f2) {
                     PaintView.this.lambda$showColorList$38(barView, z, zArr, alpha, translationY, dynamicAnimation, f, f2);
                 }
             });
-            this.toolsTransformAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda15
+            this.toolsTransformAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda16
                 @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
                 public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z2, float f, float f2) {
                     PaintView.this.lambda$showColorList$39(z, dynamicAnimation, z2, f, f2);
@@ -4259,7 +4259,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
             final int i = this.colorSwatch.color;
             if (num != null && num.intValue() != i) {
                 ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
-                duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda13
+                duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda14
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                         PaintView.this.lambda$setCurrentSwatch$40(num, i, valueAnimator);
@@ -4659,7 +4659,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
             return;
         }
         int[] centerLocationInWindow = getCenterLocationInWindow(entityView);
-        showPopup(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda35
+        showPopup(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda36
             @Override // java.lang.Runnable
             public final void run() {
                 PaintView.this.lambda$showMenuForEntity$55(entityView);
@@ -5086,7 +5086,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
             PopupWindowLayout popupWindowLayout = new PopupWindowLayout(getContext());
             this.popupLayout = popupWindowLayout;
             popupWindowLayout.setAnimationEnabled(true);
-            this.popupLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda36
+            this.popupLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda37
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view2, MotionEvent motionEvent) {
                     boolean lambda$showPopup$56;
@@ -5094,7 +5094,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
                     return lambda$showPopup$56;
                 }
             });
-            this.popupLayout.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda37
+            this.popupLayout.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda38
                 @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow.OnDispatchKeyEventListener
                 public final void onDispatchKeyEvent(KeyEvent keyEvent) {
                     PaintView.this.lambda$showPopup$57(keyEvent);
@@ -5116,7 +5116,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
             this.popupWindow.setInputMethodMode(2);
             this.popupWindow.setSoftInputMode(0);
             this.popupWindow.getContentView().setFocusableInTouchMode(true);
-            this.popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda38
+            this.popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda39
                 @Override // android.widget.PopupWindow.OnDismissListener
                 public final void onDismiss() {
                     PaintView.this.lambda$showPopup$58();
@@ -5233,7 +5233,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         view.setScaleX(scaleX * 0.5f);
         view.setScaleY(0.5f * scaleY);
         view.setAlpha(0.0f);
-        view.animate().scaleX(scaleX).scaleY(scaleY).alpha(1.0f).setInterpolator(new OvershootInterpolator(3.0f)).setDuration(240L).withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda31
+        view.animate().scaleX(scaleX).scaleY(scaleY).alpha(1.0f).setInterpolator(new OvershootInterpolator(3.0f)).setDuration(240L).withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda32
             @Override // java.lang.Runnable
             public final void run() {
                 PaintView.this.lambda$appearAnimation$59(view);
@@ -5363,7 +5363,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
                 if (this.currentEntityView == childAt) {
                     lambda$createRound$61(null);
                 }
-                childAt.animate().scaleX(0.0f).scaleY(0.0f).setDuration(280L).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda12
+                childAt.animate().scaleX(0.0f).scaleY(0.0f).setDuration(280L).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda13
                     @Override // java.lang.Runnable
                     public final void run() {
                         PaintView.this.lambda$deleteRound$60(childAt);
@@ -5390,7 +5390,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         checkEntitiesIsVideo();
         if (z) {
             registerRemovalUndo(roundView);
-            post(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda39
+            post(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
                     PaintView.this.lambda$createRound$61(roundView);
@@ -5582,7 +5582,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         if (entityView == null) {
             return;
         }
-        this.undoStore.registerUndo(entityView.getUUID(), new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda32
+        this.undoStore.registerUndo(entityView.getUUID(), new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda33
             @Override // java.lang.Runnable
             public final void run() {
                 PaintView.this.lambda$registerRemovalUndo$62(entityView);
@@ -5729,7 +5729,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
                     this.translateBottomPanelAfterResize = true;
                 } else {
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(this.emojiPadding, 0.0f);
-                    ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda2
+                    ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda3
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                             PaintView.this.lambda$showEmojiPopup$63(valueAnimator);
@@ -5781,7 +5781,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
             EmojiView emojiView = this.emojiView;
             if (emojiView != null && emojiView.getVisibility() == 0 && !this.waitingForKeyboardOpen) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, this.emojiView.getMeasuredHeight());
-                ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda0
+                ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda1
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                         PaintView.this.lambda$hideEmojiPopup$64(valueAnimator);
@@ -5891,7 +5891,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         final boolean z = (this.currentEntityView instanceof TextPaintView) && (this.keyboardNotifier.keyboardVisible() || this.emojiPadding > 0) && !this.keyboardNotifier.ignoring;
         this.textDim.animate().cancel();
         this.textDim.setVisibility(0);
-        this.textDim.animate().alpha(z ? 1.0f : 0.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda34
+        this.textDim.animate().alpha(z ? 1.0f : 0.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda35
             @Override // java.lang.Runnable
             public final void run() {
                 PaintView.this.lambda$updateTextDim$65(z);

@@ -31598,17 +31598,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         if (messageObject != null && messageObject.preview) {
             parentWidth = this.parentWidth;
         }
-        if (AndroidUtilities.isInMultiwindow || !AndroidUtilities.isTablet()) {
-            return parentWidth;
-        }
-        if (AndroidUtilities.isSmallTablet() && getResources().getConfiguration().orientation != 2) {
-            return parentWidth;
-        }
-        int i = (parentWidth / 100) * 35;
-        if (i < AndroidUtilities.dp(320.0f)) {
-            i = AndroidUtilities.dp(320.0f);
-        }
-        return parentWidth - i;
+        return (AndroidUtilities.isInMultiwindow || !AndroidUtilities.isTablet()) ? parentWidth : (!AndroidUtilities.isSmallTablet() || getResources().getConfiguration().orientation == 2) ? parentWidth - AndroidUtilities.getTabletLeftFragmentSize(parentWidth, 0, 0) : parentWidth;
     }
 
     int getExtraTextX() {

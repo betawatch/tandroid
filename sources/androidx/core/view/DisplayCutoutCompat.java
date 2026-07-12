@@ -3,8 +3,6 @@ package androidx.core.view;
 import android.os.Build;
 import android.view.DisplayCutout;
 import androidx.core.util.ObjectsCompat;
-import java.util.Collections;
-import java.util.List;
 
 /* loaded from: classes.dex */
 public final class DisplayCutoutCompat {
@@ -40,13 +38,6 @@ public final class DisplayCutoutCompat {
             return Api28Impl.getSafeInsetRight(this.mDisplayCutout);
         }
         return 0;
-    }
-
-    public List getBoundingRects() {
-        if (Build.VERSION.SDK_INT >= 28) {
-            return Api28Impl.getBoundingRects(this.mDisplayCutout);
-        }
-        return Collections.emptyList();
     }
 
     public boolean equals(Object obj) {
@@ -95,10 +86,6 @@ public final class DisplayCutoutCompat {
 
         static int getSafeInsetRight(DisplayCutout displayCutout) {
             return displayCutout.getSafeInsetRight();
-        }
-
-        static List getBoundingRects(DisplayCutout displayCutout) {
-            return displayCutout.getBoundingRects();
         }
     }
 }

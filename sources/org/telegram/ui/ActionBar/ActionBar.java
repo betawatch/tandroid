@@ -1623,22 +1623,22 @@ public class ActionBar extends FrameLayout implements FactorAnimator.Target, The
         this.isMenuOffsetSuppressed = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:114:0x02a4  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x02b3  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x02aa  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x02b9  */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int dp;
+        int measuredWidth;
         int i5;
         int i6;
         int i7;
         int i8;
         int i9;
-        int i10;
         int currentActionBarHeight;
-        int i11 = this.occupyStatusBar ? AndroidUtilities.statusBarHeight : 0;
+        int i10 = this.occupyStatusBar ? AndroidUtilities.statusBarHeight : 0;
         if (this.prevWidth != getMeasuredWidth()) {
             this.prevWidth = getMeasuredWidth();
             checkAvatarContainerWidth(this.animatorAvatarContainerWidth.isAnimating());
@@ -1646,111 +1646,111 @@ public class ActionBar extends FrameLayout implements FactorAnimator.Target, The
         ImageView imageView = this.backButtonImageView;
         if (imageView != null && imageView.getVisibility() != 8) {
             ImageView imageView2 = this.backButtonImageView;
-            imageView2.layout(0, i11, imageView2.getMeasuredWidth(), this.backButtonImageView.getMeasuredHeight() + i11);
+            imageView2.layout(0, i10, imageView2.getMeasuredWidth(), this.backButtonImageView.getMeasuredHeight() + i10);
             dp = AndroidUtilities.dp(this.glassMode ? 76.0f : AndroidUtilities.isTablet() ? 80.0f : 72.0f);
         } else {
             dp = AndroidUtilities.dp(this.glassMode ? 24.0f : AndroidUtilities.isTablet() ? 26.0f : 18.0f);
         }
-        int i12 = dp + this.additionalTextLeft;
+        int i11 = dp + this.additionalTextLeft;
         ActionBarMenu actionBarMenu = this.menu;
         if (actionBarMenu != null && actionBarMenu.getVisibility() != 8) {
-            int dp2 = this.menu.searchFieldVisible() ? AndroidUtilities.dp(this.menuOccupyBack ? 0.0f : AndroidUtilities.isTablet() ? 74.0f : 66.0f) : (i3 - i) - this.menu.getMeasuredWidth();
+            int dp2 = this.menu.searchFieldVisible() ? AndroidUtilities.dp(this.menuOccupyBack ? 0.0f : AndroidUtilities.isTablet() ? 74.0f : 66.0f) : getMeasuredWidth() - this.menu.getMeasuredWidth();
             ActionBarMenu actionBarMenu2 = this.menu;
-            actionBarMenu2.layout(dp2, i11, actionBarMenu2.getMeasuredWidth() + dp2, this.menu.getMeasuredHeight() + i11);
+            actionBarMenu2.layout(dp2, i10, actionBarMenu2.getMeasuredWidth() + dp2, this.menu.getMeasuredHeight() + i10);
         }
-        int i13 = 0;
+        int i12 = 0;
         while (true) {
-            if (i13 >= 2) {
+            if (i12 >= 2) {
                 break;
             }
-            SimpleTextView simpleTextView = this.titleTextView[i13];
+            SimpleTextView simpleTextView = this.titleTextView[i12];
             if (simpleTextView != null && simpleTextView.getVisibility() != 8) {
                 boolean z2 = this.fromBottom;
-                if (((z2 && i13 == 0) || (!z2 && i13 == 1)) && this.overlayTitleAnimation && this.titleAnimationRunning) {
-                    currentActionBarHeight = (getCurrentActionBarHeight() - this.titleTextView[i13].getTextHeight()) / 2;
+                if (((z2 && i12 == 0) || (!z2 && i12 == 1)) && this.overlayTitleAnimation && this.titleAnimationRunning) {
+                    currentActionBarHeight = (getCurrentActionBarHeight() - this.titleTextView[i12].getTextHeight()) / 2;
                 } else {
                     SimpleTextView simpleTextView2 = this.subtitleTextView;
                     if (simpleTextView2 != null && simpleTextView2.getVisibility() != 8) {
-                        currentActionBarHeight = AndroidUtilities.dp((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 3.0f : 2.0f) + (((getCurrentActionBarHeight() / 2) - this.titleTextView[i13].getTextHeight()) / 2) + AndroidUtilities.dp(2.0f);
+                        currentActionBarHeight = AndroidUtilities.dp((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 3.0f : 2.0f) + (((getCurrentActionBarHeight() / 2) - this.titleTextView[i12].getTextHeight()) / 2) + AndroidUtilities.dp(2.0f);
                     } else {
-                        currentActionBarHeight = (getCurrentActionBarHeight() - this.titleTextView[i13].getTextHeight()) / 2;
+                        currentActionBarHeight = (getCurrentActionBarHeight() - this.titleTextView[i12].getTextHeight()) / 2;
                     }
                 }
-                SimpleTextView simpleTextView3 = this.titleTextView[i13];
-                int i14 = currentActionBarHeight + i11;
-                simpleTextView3.layout(i12, i14 - simpleTextView3.getPaddingTop(), this.titleTextView[i13].getMeasuredWidth() + i12, ((i14 + this.titleTextView[i13].getTextHeight()) - this.titleTextView[i13].getPaddingTop()) + this.titleTextView[i13].getPaddingBottom());
+                SimpleTextView simpleTextView3 = this.titleTextView[i12];
+                int i13 = currentActionBarHeight + i10;
+                simpleTextView3.layout(i11, i13 - simpleTextView3.getPaddingTop(), this.titleTextView[i12].getMeasuredWidth() + i11, ((i13 + this.titleTextView[i12].getTextHeight()) - this.titleTextView[i12].getPaddingTop()) + this.titleTextView[i12].getPaddingBottom());
             }
-            i13++;
+            i12++;
         }
         if (this.additionalSubTitleOverlayContainer != null) {
             int currentActionBarHeight2 = ((getCurrentActionBarHeight() / 2) + (((getCurrentActionBarHeight() / 2) - this.additionalSubTitleOverlayContainer.getMeasuredHeight()) / 2)) - AndroidUtilities.dp(2.0f);
             ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = this.additionalSubTitleOverlayContainer;
-            int i15 = currentActionBarHeight2 + i11;
-            actionBarAnimatedSubtitleOverlayContainer.layout(i12, i15, actionBarAnimatedSubtitleOverlayContainer.getMeasuredWidth() + i12, this.additionalSubTitleOverlayContainer.getMeasuredHeight() + i15);
+            int i14 = currentActionBarHeight2 + i10;
+            actionBarAnimatedSubtitleOverlayContainer.layout(i11, i14, actionBarAnimatedSubtitleOverlayContainer.getMeasuredWidth() + i11, this.additionalSubTitleOverlayContainer.getMeasuredHeight() + i14);
         }
         SimpleTextView simpleTextView4 = this.subtitleTextView;
         if (simpleTextView4 != null && simpleTextView4.getVisibility() != 8) {
             int currentActionBarHeight3 = ((getCurrentActionBarHeight() / 2) + (((getCurrentActionBarHeight() / 2) - this.subtitleTextView.getTextHeight()) / 2)) - AndroidUtilities.dp(2.0f);
             SimpleTextView simpleTextView5 = this.subtitleTextView;
-            int i16 = currentActionBarHeight3 + i11;
-            simpleTextView5.layout(i12, i16, simpleTextView5.getMeasuredWidth() + i12, this.subtitleTextView.getTextHeight() + i16);
+            int i15 = currentActionBarHeight3 + i10;
+            simpleTextView5.layout(i11, i15, simpleTextView5.getMeasuredWidth() + i11, this.subtitleTextView.getTextHeight() + i15);
         }
         SimpleTextView simpleTextView6 = this.additionalSubtitleTextView;
         if (simpleTextView6 != null && simpleTextView6.getVisibility() != 8) {
             int currentActionBarHeight4 = (getCurrentActionBarHeight() / 2) + (((getCurrentActionBarHeight() / 2) - this.additionalSubtitleTextView.getTextHeight()) / 2);
             if (!AndroidUtilities.isTablet()) {
-                int i17 = getResources().getConfiguration().orientation;
+                int i16 = getResources().getConfiguration().orientation;
             }
             int dp3 = currentActionBarHeight4 - AndroidUtilities.dp(1.0f);
             SimpleTextView simpleTextView7 = this.additionalSubtitleTextView;
-            int i18 = dp3 + i11;
-            simpleTextView7.layout(i12, i18, simpleTextView7.getMeasuredWidth() + i12, this.additionalSubtitleTextView.getTextHeight() + i18);
+            int i17 = dp3 + i10;
+            simpleTextView7.layout(i11, i17, simpleTextView7.getMeasuredWidth() + i11, this.additionalSubtitleTextView.getTextHeight() + i17);
         }
         BackupImageView backupImageView = this.avatarSearchImageView;
         if (backupImageView != null) {
-            backupImageView.layout(AndroidUtilities.dp(64.0f), ((getCurrentActionBarHeight() - this.avatarSearchImageView.getMeasuredHeight()) / 2) + i11, AndroidUtilities.dp(64.0f) + this.avatarSearchImageView.getMeasuredWidth(), i11 + ((getCurrentActionBarHeight() + this.avatarSearchImageView.getMeasuredHeight()) / 2));
+            backupImageView.layout(AndroidUtilities.dp(64.0f), ((getCurrentActionBarHeight() - this.avatarSearchImageView.getMeasuredHeight()) / 2) + i10, AndroidUtilities.dp(64.0f) + this.avatarSearchImageView.getMeasuredWidth(), i10 + ((getCurrentActionBarHeight() + this.avatarSearchImageView.getMeasuredHeight()) / 2));
         }
         int childCount = getChildCount();
-        for (int i19 = 0; i19 < childCount; i19++) {
-            View childAt = getChildAt(i19);
+        for (int i18 = 0; i18 < childCount; i18++) {
+            View childAt = getChildAt(i18);
             if (childAt.getVisibility() != 8) {
                 SimpleTextView[] simpleTextViewArr = this.titleTextView;
                 if (childAt != simpleTextViewArr[0] && childAt != simpleTextViewArr[1] && childAt != this.additionalSubTitleOverlayContainer && childAt != this.subtitleTextView && childAt != this.menu && childAt != this.backButtonImageView && childAt != this.additionalSubtitleTextView && childAt != this.avatarSearchImageView) {
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
-                    int measuredWidth = childAt.getMeasuredWidth();
+                    int measuredWidth2 = childAt.getMeasuredWidth();
                     int measuredHeight = childAt.getMeasuredHeight();
-                    int i20 = layoutParams.gravity;
-                    if (i20 == -1) {
-                        i20 = 51;
+                    int i19 = layoutParams.gravity;
+                    if (i19 == -1) {
+                        i19 = 51;
                     }
-                    int i21 = i20 & 112;
-                    int i22 = i20 & 7;
-                    if (i22 == 1) {
-                        i5 = (((i3 - i) - measuredWidth) / 2) + layoutParams.leftMargin;
-                        i6 = layoutParams.rightMargin;
-                    } else if (i22 == 5) {
-                        i5 = i3 - measuredWidth;
-                        i6 = layoutParams.rightMargin;
+                    int i20 = i19 & 112;
+                    int i21 = i19 & 7;
+                    if (i21 == 1) {
+                        measuredWidth = ((getMeasuredWidth() - measuredWidth2) / 2) + layoutParams.leftMargin;
+                        i5 = layoutParams.rightMargin;
+                    } else if (i21 == 5) {
+                        measuredWidth = getMeasuredWidth() - measuredWidth2;
+                        i5 = layoutParams.rightMargin;
                     } else {
-                        i7 = layoutParams.leftMargin;
-                        if (i21 != 16) {
-                            i8 = (((i4 - i2) - measuredHeight) / 2) + layoutParams.topMargin;
-                            i9 = layoutParams.bottomMargin;
-                        } else if (i21 == 80) {
-                            i8 = (i4 - i2) - measuredHeight;
-                            i9 = layoutParams.bottomMargin;
+                        i6 = layoutParams.leftMargin;
+                        if (i20 != 16) {
+                            i7 = (((i4 - i2) - measuredHeight) / 2) + layoutParams.topMargin;
+                            i8 = layoutParams.bottomMargin;
+                        } else if (i20 == 80) {
+                            i7 = (i4 - i2) - measuredHeight;
+                            i8 = layoutParams.bottomMargin;
                         } else {
-                            i10 = layoutParams.topMargin;
-                            childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
+                            i9 = layoutParams.topMargin;
+                            childAt.layout(i6, i9, measuredWidth2 + i6, measuredHeight + i9);
                         }
-                        i10 = i8 - i9;
-                        childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
+                        i9 = i7 - i8;
+                        childAt.layout(i6, i9, measuredWidth2 + i6, measuredHeight + i9);
                     }
-                    i7 = i5 - i6;
-                    if (i21 != 16) {
+                    i6 = measuredWidth - i5;
+                    if (i20 != 16) {
                     }
-                    i10 = i8 - i9;
-                    childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
+                    i9 = i7 - i8;
+                    childAt.layout(i6, i9, measuredWidth2 + i6, measuredHeight + i9);
                 }
             }
         }

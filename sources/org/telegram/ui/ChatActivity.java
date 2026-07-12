@@ -92,6 +92,7 @@ import androidx.collection.LongSparseArray;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 import androidx.core.graphics.ColorUtils;
+import androidx.core.graphics.Insets;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.math.MathUtils;
 import androidx.core.util.Consumer;
@@ -239,6 +240,7 @@ import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BackDrawable;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
+import org.telegram.ui.ActionBar.EdgeToEdgeSupportMode;
 import org.telegram.ui.ActionBar.EmojiThemes;
 import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.SimpleTextView;
@@ -789,6 +791,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private long inlineReturn;
     private float inputIslandHeightCurrent;
     private float inputIslandHeightTarget;
+    private int insetSystemLeft;
+    private int insetSystemRight;
     public InstantCameraView instantCameraView;
     private OnPostDrawView invalidateBlurredSourcesView;
     private boolean invalidateChatListViewTopPadding;
@@ -1329,11 +1333,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$52900(ChatActivity chatActivity) {
+    public static /* synthetic */ void access$53100(ChatActivity chatActivity) {
         chatActivity.resetProgressDialogLoading();
     }
 
-    static /* synthetic */ int access$57710(ChatActivity chatActivity) {
+    static /* synthetic */ int access$57910(ChatActivity chatActivity) {
         int i = chatActivity.newMentionsCount;
         chatActivity.newMentionsCount = i - 1;
         return i;
@@ -12675,7 +12679,19 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     /* JADX INFO: Access modifiers changed from: private */
     public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
+        Insets defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(windowInsetsCompat, false);
+        int i = defaultWindowInsets.left;
+        int i2 = defaultWindowInsets.right;
+        if (this.insetSystemLeft != i || this.insetSystemRight != i2) {
+            this.insetSystemLeft = i;
+            this.insetSystemRight = i2;
+            this.contentView.requestLayout();
+        }
         this.windowInsetsStateHolder.setInsets(windowInsetsCompat);
+        ChatActivitySearchContainer chatActivitySearchContainer = this.messagesSearchListContainer;
+        if (chatActivitySearchContainer != null) {
+            chatActivitySearchContainer.setPadding(i, 0, i2, 0);
+        }
         checkUi_chatListViewPaddings();
         checkUi_messagesSearchListPadding();
         boolean isVisible = windowInsetsCompat.isVisible(WindowInsetsCompat.Type.ime());
@@ -21478,7 +21494,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                             messageObject7 = messageObject8;
                                             z11 = chatMessageCell.topicSeparator == null;
                                             chatMessageCell.setParentBounds(0.0f, this.chatListView.getMeasuredHeight());
-                                            chatMessageCell.setVisiblePart(i39, measuredHeight - i39, measuredHeight3, 0.0f, ((childAt.getY() + (!isKeyboardVisible() ? this.chatListView.getTop() : this.actionBar.getMeasuredHeight())) - this.contentView.getBackgroundTranslationY()) - ((1.0f - this.contentPanTranslationT) * this.chatListViewPaddingTop), this.contentView.getMeasuredWidth(), this.contentView.getBackgroundSizeY(), this.blurredViewTopOffset, this.blurredViewBottomOffset, y - ((int) this.chatListViewPaddingTop));
+                                            chatMessageCell.setVisiblePart(i39, measuredHeight - i39, measuredHeight3, 0.0f, ((childAt.getY() + (!isKeyboardVisible() ? this.chatListView.getTop() : this.actionBar.getMeasuredHeight())) - this.contentView.getBackgroundTranslationY()) - ((1.0f - this.contentPanTranslationT) * this.chatListViewPaddingTop), this.chatListView.getMeasuredWidth(), this.contentView.getBackgroundSizeY(), this.blurredViewTopOffset, this.blurredViewBottomOffset, y - ((int) this.chatListViewPaddingTop));
                                             if (messageObject8.isSponsored()) {
                                                 boolean z18 = messageObject8.viewsReloaded || ViewPositionWatcher.computeYCoordinateInParent(chatMessageCell, this.contentView) < ((((float) (this.contentView.getMeasuredHeight() - AndroidUtilities.dp(41.0f))) - this.windowInsetsStateHolder.getAnimatedMaxBottomInset()) - getTopicTabsSideSize(TopicsTabsView.Position.BOTTOM)) - this.inputIslandHeightCurrent;
                                                 chatMessageCell.setSponsoredMessageVisible(z18, z18);
@@ -21637,7 +21653,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                     if (chatMessageCell.topicSeparator == null) {
                                     }
                                     chatMessageCell.setParentBounds(0.0f, this.chatListView.getMeasuredHeight());
-                                    chatMessageCell.setVisiblePart(i39, measuredHeight - i39, measuredHeight3, 0.0f, ((childAt.getY() + (!isKeyboardVisible() ? this.chatListView.getTop() : this.actionBar.getMeasuredHeight())) - this.contentView.getBackgroundTranslationY()) - ((1.0f - this.contentPanTranslationT) * this.chatListViewPaddingTop), this.contentView.getMeasuredWidth(), this.contentView.getBackgroundSizeY(), this.blurredViewTopOffset, this.blurredViewBottomOffset, y - ((int) this.chatListViewPaddingTop));
+                                    chatMessageCell.setVisiblePart(i39, measuredHeight - i39, measuredHeight3, 0.0f, ((childAt.getY() + (!isKeyboardVisible() ? this.chatListView.getTop() : this.actionBar.getMeasuredHeight())) - this.contentView.getBackgroundTranslationY()) - ((1.0f - this.contentPanTranslationT) * this.chatListViewPaddingTop), this.chatListView.getMeasuredWidth(), this.contentView.getBackgroundSizeY(), this.blurredViewTopOffset, this.blurredViewBottomOffset, y - ((int) this.chatListViewPaddingTop));
                                     if (messageObject8.isSponsored()) {
                                     }
                                     if (!this.threadMessageVisible) {
@@ -24534,11 +24550,23 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:106:0x0369  */
-        /* JADX WARN: Removed duplicated region for block: B:111:0x0387  */
-        /* JADX WARN: Removed duplicated region for block: B:121:0x03ae  */
-        /* JADX WARN: Removed duplicated region for block: B:230:0x0663  */
-        /* JADX WARN: Removed duplicated region for block: B:233:0x06ab  */
+        private boolean isFullSizeIgnoreInsersChild(View view) {
+            if (view != null) {
+                if (view != this.backgroundView && view != ChatActivity.this.blurredView && view != ChatActivity.this.searchViewPager) {
+                    ChatActivity chatActivity = ChatActivity.this;
+                    if (view == chatActivity.fireworksOverlay || view == chatActivity.chatActivityFadeView || view == ChatActivity.this.messagesSearchListContainer) {
+                    }
+                }
+                return true;
+            }
+            return false;
+        }
+
+        /* JADX WARN: Removed duplicated region for block: B:122:0x0383  */
+        /* JADX WARN: Removed duplicated region for block: B:127:0x03a1  */
+        /* JADX WARN: Removed duplicated region for block: B:136:0x03c6  */
+        /* JADX WARN: Removed duplicated region for block: B:229:0x0691  */
+        /* JADX WARN: Removed duplicated region for block: B:232:0x06dd  */
         @Override // android.widget.FrameLayout, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -24547,24 +24575,27 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             int childCount;
             int i3;
             int i4;
+            int i5;
             int childAdapterPosition;
             ChatActivity chatActivity;
             TLRPC.User user;
             ChatActivity.this.invalidateBlurredSourcesView.bringToFrontIfNeeded();
             int size = View.MeasureSpec.getSize(i);
             int size2 = View.MeasureSpec.getSize(i2);
+            int i6 = (size - ChatActivity.this.insetSystemLeft) - ChatActivity.this.insetSystemRight;
+            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30);
             if (ChatActivity.this.navbarContentSourceWallpaper.getSource() instanceof BlurredBackgroundSourceBitmap) {
-                ((BlurredBackgroundSourceBitmap) ChatActivity.this.navbarContentSourceWallpaper.getSource()).setParentSize(size, size2, 0);
+                ((BlurredBackgroundSourceBitmap) ChatActivity.this.navbarContentSourceWallpaper.getSource()).setParentSize(i6, size2, 0);
             }
-            int i5 = 8;
-            if (this.lastWidth != size) {
+            int i7 = 8;
+            if (this.lastWidth != i6) {
                 ChatActivity.this.globalIgnoreLayout = false;
-                this.lastWidth = i;
+                this.lastWidth = makeMeasureSpec;
                 if (((BaseFragment) ChatActivity.this).inPreviewMode || (user = (chatActivity = ChatActivity.this).currentUser) == null || !user.self) {
                     ChatActivity.this.showSearchAsIcon = false;
                 } else {
                     SimpleTextView titleTextView = chatActivity.avatarContainer.getTitleTextView();
-                    if (size - AndroidUtilities.dp(152.0f) <= ((int) titleTextView.getPaint().measureText(titleTextView.getText(), 0, titleTextView.getText().length())) + AndroidUtilities.dp(10.0f)) {
+                    if (i6 - AndroidUtilities.dp(152.0f) <= ((int) titleTextView.getPaint().measureText(titleTextView.getText(), 0, titleTextView.getText().length())) + AndroidUtilities.dp(10.0f)) {
                         ChatActivity.this.showSearchAsIcon = false;
                     } else {
                         ChatActivity.this.showSearchAsIcon = !r0.showAudioCallAsIcon;
@@ -24616,12 +24647,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 ((FrameLayout.LayoutParams) textView.getLayoutParams()).topMargin = AndroidUtilities.statusBarHeight;
                 ChatActivity.this.webBotTitle.setTextSize((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 20.0f : 18.0f);
             }
-            measureChildWithMargins(((BaseFragment) ChatActivity.this).actionBar, i, 0, i2, 0);
+            measureChildWithMargins(((BaseFragment) ChatActivity.this).actionBar, makeMeasureSpec, 0, i2, 0);
             int measuredHeight = ((BaseFragment) ChatActivity.this).actionBar.getMeasuredHeight();
             if (((BaseFragment) ChatActivity.this).actionBar.getVisibility() == 0) {
                 paddingTop -= measuredHeight;
             }
-            int i6 = this.keyboardHeight + ChatActivity.this.chatEmojiViewPadding;
+            int i8 = paddingTop;
+            int i9 = this.keyboardHeight + ChatActivity.this.chatEmojiViewPadding;
             boolean z = this.keyboardHeight + ChatActivity.this.chatEmojiViewPadding >= AndroidUtilities.dp(20.0f);
             if (this.lastHeight != size2) {
                 measureKeyboardHeight();
@@ -24639,17 +24671,17 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             setEmojiKeyboardHeight(ChatActivity.this.chatEmojiViewPadding);
             boolean z2 = this.keyboardHeight + ChatActivity.this.chatEmojiViewPadding >= AndroidUtilities.dp(20.0f);
             if (MediaController.getInstance().getPlayingMessageObject() != null && MediaController.getInstance().getPlayingMessageObject().isRoundVideo() && z != z2) {
-                for (int i7 = 0; i7 < ChatActivity.this.chatListView.getChildCount(); i7++) {
-                    View childAt = ChatActivity.this.chatListView.getChildAt(i7);
+                for (int i10 = 0; i10 < ChatActivity.this.chatListView.getChildCount(); i10++) {
+                    View childAt = ChatActivity.this.chatListView.getChildAt(i10);
                     if (childAt instanceof ChatMessageCell) {
                         MessageObject messageObject = ((ChatMessageCell) childAt).getMessageObject();
                         if (messageObject.isRoundVideo() && MediaController.getInstance().isPlayingMessage(messageObject) && (childAdapterPosition = ChatActivity.this.chatListView.getChildAdapterPosition(childAt)) >= 0) {
-                            ChatActivity.this.chatLayoutManager.scrollToPositionWithOffset(childAdapterPosition, (int) (((((ChatActivity.this.chatListView.getMeasuredHeight() - ChatActivity.this.chatListViewPaddingTop) - r12.blurredViewBottomOffset) + ((this.keyboardHeight + r12.chatEmojiViewPadding) - i6)) - (z2 ? AndroidUtilities.roundMessageSize : AndroidUtilities.roundPlayingMessageSize(ChatActivity.this.isSideMenued()))) / 2.0f), false);
+                            ChatActivity.this.chatLayoutManager.scrollToPositionWithOffset(childAdapterPosition, (int) (((((ChatActivity.this.chatListView.getMeasuredHeight() - ChatActivity.this.chatListViewPaddingTop) - r15.blurredViewBottomOffset) + ((this.keyboardHeight + r15.chatEmojiViewPadding) - i9)) - (z2 ? AndroidUtilities.roundMessageSize : AndroidUtilities.roundPlayingMessageSize(ChatActivity.this.isSideMenued()))) / 2.0f), false);
                             ChatActivity.this.chatAdapter.notifyItemChanged(childAdapterPosition);
                             this.adjustPanLayoutHelper.delayAnimation();
                             childCount = getChildCount();
-                            int i8 = keyboardHeight;
-                            measureChildWithMargins(ChatActivity.this.chatActivityEnterView, i, 0, i2, 0);
+                            int i11 = i8;
+                            measureChildWithMargins(ChatActivity.this.chatActivityEnterView, makeMeasureSpec, 0, i2, 0);
                             if (!((BaseFragment) ChatActivity.this).inPreviewMode) {
                                 ChatActivity chatActivity4 = ChatActivity.this;
                                 if (!chatActivity4.isInsideContainer) {
@@ -24669,103 +24701,111 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                     i3 = 0;
                                     while (i3 < childCount) {
                                         View childAt2 = getChildAt(i3);
-                                        if (childAt2 != null && childAt2.getVisibility() != i5) {
+                                        if (childAt2 != null && childAt2.getVisibility() != i7) {
                                             ChatActivity chatActivity9 = ChatActivity.this;
                                             if (childAt2 != chatActivity9.chatActivityEnterView && childAt2 != ((BaseFragment) chatActivity9).actionBar) {
-                                                if (childAt2 != this.backgroundView && childAt2 != ChatActivity.this.blurredView && childAt2 != ChatActivity.this.searchViewPager) {
+                                                if (!isFullSizeIgnoreInsersChild(childAt2)) {
                                                     if (childAt2 != ChatActivity.this.chatListView && childAt2 != ChatActivity.this.chatListThanosEffect && !(childAt2 instanceof TextSelectionHelper.TextSelectionOverlay)) {
                                                         if (childAt2 == ChatActivity.this.progressView) {
-                                                            childAt2.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), ((paddingTop - this.inputFieldHeight) - (((BaseFragment) ChatActivity.this).inPreviewMode ? AndroidUtilities.statusBarHeight : 0)) + AndroidUtilities.dp((ChatActivity.this.chatActivityEnterView.isTopViewVisible() ? 48 : 0) + 2)), TLObject.FLAG_30));
+                                                            i5 = i11;
+                                                            childAt2.measure(View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), ((i5 - this.inputFieldHeight) - (((BaseFragment) ChatActivity.this).inPreviewMode ? AndroidUtilities.statusBarHeight : 0)) + AndroidUtilities.dp((ChatActivity.this.chatActivityEnterView.isTopViewVisible() ? 48 : 0) + 2)), TLObject.FLAG_30));
                                                         } else {
+                                                            i5 = i11;
                                                             ChatActivity chatActivity10 = ChatActivity.this;
                                                             if (childAt2 != chatActivity10.instantCameraView) {
                                                                 if (childAt2 != chatActivity10.overlayView) {
                                                                     if (childAt2 == ChatActivity.this.emptyViewContainer) {
-                                                                        childAt2.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(paddingTop, TLObject.FLAG_30));
+                                                                        childAt2.measure(View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i5, TLObject.FLAG_30));
                                                                     } else if (!ChatActivity.this.chatActivityEnterView.isPopupView(childAt2)) {
                                                                         if (childAt2 == ChatActivity.this.mentionContainer) {
                                                                             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) ChatActivity.this.mentionContainer.getLayoutParams();
                                                                             if (!ChatActivity.this.mentionContainer.getAdapter().isBannedInline()) {
                                                                                 ChatActivity.this.mentionContainer.setIgnoreLayout(true);
-                                                                                layoutParams.height = paddingTop;
+                                                                                layoutParams.height = i5;
                                                                                 layoutParams.topMargin = 0;
                                                                                 ChatActivity.this.mentionContainer.setIgnoreLayout(false);
-                                                                                childAt2.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(layoutParams.height, TLObject.FLAG_30));
+                                                                                childAt2.measure(View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(layoutParams.height, TLObject.FLAG_30));
                                                                             } else {
-                                                                                childAt2.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(paddingTop, TLObject.FLAG_31));
+                                                                                childAt2.measure(View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i5, TLObject.FLAG_31));
                                                                             }
+                                                                        } else if (childAt2 == ChatActivity.this.textSelectionHelper.getOverlayView(getContext())) {
+                                                                            int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30);
+                                                                            int i12 = ChatActivity.this.blurredViewTopOffset + i5;
+                                                                            if (keyboardHeight > AndroidUtilities.dp(20.0f) && getLayoutParams().height < 0) {
+                                                                                ChatActivity chatActivity11 = ChatActivity.this;
+                                                                                if (!chatActivity11.isInsideContainer) {
+                                                                                    i12 += keyboardHeight;
+                                                                                    chatActivity11.textSelectionHelper.setKeyboardSize(keyboardHeight);
+                                                                                    childAt2.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30));
+                                                                                }
+                                                                            }
+                                                                            ChatActivity.this.textSelectionHelper.setKeyboardSize(0);
+                                                                            childAt2.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30));
+                                                                        } else if (childAt2 instanceof MessagePreviewView) {
+                                                                            childAt2.measure(View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((size2 - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight, TLObject.FLAG_30));
                                                                         } else {
-                                                                            if (childAt2 == ChatActivity.this.textSelectionHelper.getOverlayView(getContext())) {
-                                                                                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
-                                                                                int i9 = ChatActivity.this.blurredViewTopOffset + paddingTop;
-                                                                                i4 = i8;
-                                                                                if (i4 > AndroidUtilities.dp(20.0f) && getLayoutParams().height < 0) {
-                                                                                    ChatActivity chatActivity11 = ChatActivity.this;
-                                                                                    if (!chatActivity11.isInsideContainer) {
-                                                                                        i9 += i4;
-                                                                                        chatActivity11.textSelectionHelper.setKeyboardSize(i4);
-                                                                                        childAt2.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i9, TLObject.FLAG_30));
-                                                                                    }
-                                                                                }
-                                                                                ChatActivity.this.textSelectionHelper.setKeyboardSize(0);
-                                                                                childAt2.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i9, TLObject.FLAG_30));
+                                                                            ChatActivity chatActivity12 = ChatActivity.this;
+                                                                            if (childAt2 == chatActivity12.topicsTabs) {
+                                                                                childAt2.measure(View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(((BaseFragment) chatActivity12).actionBar.getVisibility() == 0 ? size2 - ((BaseFragment) ChatActivity.this).actionBar.getMeasuredHeight() : size2, TLObject.FLAG_30));
                                                                             } else {
-                                                                                i4 = i8;
-                                                                                if (childAt2 instanceof MessagePreviewView) {
-                                                                                    childAt2.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((size2 - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight, TLObject.FLAG_30));
-                                                                                } else {
-                                                                                    ChatActivity chatActivity12 = ChatActivity.this;
-                                                                                    if (childAt2 == chatActivity12.topicsTabs) {
-                                                                                        childAt2.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(((BaseFragment) chatActivity12).actionBar.getVisibility() == 0 ? size2 - ((BaseFragment) ChatActivity.this).actionBar.getMeasuredHeight() : size2, TLObject.FLAG_30));
-                                                                                    } else {
-                                                                                        i8 = i4;
-                                                                                        measureChildWithMargins(childAt2, i, 0, i2, 0);
-                                                                                    }
-                                                                                }
+                                                                                i4 = i5;
+                                                                                measureChildWithMargins(childAt2, makeMeasureSpec, 0, i2, 0);
+                                                                                i3++;
+                                                                                i11 = i4;
+                                                                                i7 = 8;
                                                                             }
-                                                                            i8 = i4;
                                                                         }
                                                                     } else {
                                                                         int popupViewHeight = ChatActivity.this.chatActivityEnterView.getPopupViewHeight(childAt2);
                                                                         if (((BaseFragment) ChatActivity.this).inBubbleMode) {
-                                                                            int paddingTop2 = (paddingTop - this.inputFieldHeight) + measuredHeight + getPaddingTop();
+                                                                            int paddingTop2 = (i5 - this.inputFieldHeight) + measuredHeight + getPaddingTop();
                                                                             if (popupViewHeight < 0) {
                                                                                 popupViewHeight = Math.max(Math.min(paddingTop2, AndroidUtilities.dp(350.0f)), paddingTop2 / 2);
                                                                             }
-                                                                            childAt2.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(popupViewHeight, TLObject.FLAG_30));
+                                                                            childAt2.measure(View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(popupViewHeight, TLObject.FLAG_30));
                                                                         } else if (AndroidUtilities.isInMultiwindow) {
-                                                                            int paddingTop3 = (((paddingTop - this.inputFieldHeight) + measuredHeight) - AndroidUtilities.statusBarHeight) + getPaddingTop();
+                                                                            int paddingTop3 = (((i5 - this.inputFieldHeight) + measuredHeight) - AndroidUtilities.statusBarHeight) + getPaddingTop();
                                                                             if (popupViewHeight < 0) {
                                                                                 popupViewHeight = Math.max(Math.min(paddingTop3, AndroidUtilities.dp(350.0f)), paddingTop3 / 2);
                                                                             }
-                                                                            childAt2.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(popupViewHeight, TLObject.FLAG_30));
+                                                                            childAt2.measure(View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(popupViewHeight, TLObject.FLAG_30));
                                                                         } else {
-                                                                            childAt2.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt2.getLayoutParams().height, TLObject.FLAG_30));
+                                                                            childAt2.measure(View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt2.getLayoutParams().height, TLObject.FLAG_30));
                                                                         }
                                                                     }
                                                                 } else {
-                                                                    childAt2.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(((size2 - ChatActivity.this.windowInsetsStateHolder.getCurrentMaxBottomInset()) - ((int) ChatActivity.this.inputIslandHeightTarget)) - AndroidUtilities.dp(12.0f), TLObject.FLAG_30));
+                                                                    childAt2.measure(View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(((size2 - ChatActivity.this.windowInsetsStateHolder.getCurrentMaxBottomInset()) - ((int) ChatActivity.this.inputIslandHeightTarget)) - AndroidUtilities.dp(12.0f), TLObject.FLAG_30));
                                                                 }
                                                             } else {
-                                                                int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
-                                                                int makeMeasureSpec3 = View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30);
+                                                                int makeMeasureSpec3 = View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30);
+                                                                int makeMeasureSpec4 = View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30);
                                                                 ChatActivity chatActivity13 = ChatActivity.this;
                                                                 chatActivity13.instantCameraView.setInternalPadding(chatActivity13.windowInsetsStateHolder.getCurrentMaxBottomInset() + ((int) ChatActivity.this.inputIslandHeightTarget) + AndroidUtilities.dp(12.0f));
-                                                                childAt2.measure(makeMeasureSpec2, makeMeasureSpec3);
+                                                                childAt2.measure(makeMeasureSpec3, makeMeasureSpec4);
                                                             }
                                                         }
+                                                        i4 = i5;
+                                                        i3++;
+                                                        i11 = i4;
+                                                        i7 = 8;
                                                     } else {
-                                                        int makeMeasureSpec4 = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
+                                                        i4 = i11;
+                                                        int makeMeasureSpec5 = View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30);
                                                         ChatActivity chatActivity14 = ChatActivity.this;
-                                                        childAt2.measure(makeMeasureSpec4, View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), chatActivity14.blurredViewTopOffset + size2 + chatActivity14.blurredViewBottomOffset), TLObject.FLAG_30));
+                                                        childAt2.measure(makeMeasureSpec5, View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), chatActivity14.blurredViewTopOffset + size2 + chatActivity14.blurredViewBottomOffset), TLObject.FLAG_30));
+                                                        i3++;
+                                                        i11 = i4;
+                                                        i7 = 8;
                                                     }
                                                 } else {
                                                     childAt2.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
                                                 }
                                             }
                                         }
+                                        i4 = i11;
                                         i3++;
-                                        i5 = 8;
+                                        i11 = i4;
+                                        i7 = 8;
                                     }
                                     if (ChatActivity.this.fixPaddingsInLayout) {
                                         ChatActivity.this.globalIgnoreLayout = true;
@@ -24776,11 +24816,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                         ChatActivity.this.globalIgnoreLayout = false;
                                     }
                                     if (ChatActivity.this.scrollToPositionOnRecreate != -1) {
-                                        final int i10 = ChatActivity.this.scrollToPositionOnRecreate;
+                                        final int i13 = ChatActivity.this.scrollToPositionOnRecreate;
                                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatActivityFragmentView$$ExternalSyntheticLambda1
                                             @Override // java.lang.Runnable
                                             public final void run() {
-                                                ChatActivity.ChatActivityFragmentView.this.lambda$onMeasure$1(i10);
+                                                ChatActivity.ChatActivityFragmentView.this.lambda$onMeasure$1(i13);
                                             }
                                         });
                                         ChatActivity.this.scrollToPositionOnRecreate = -1;
@@ -24812,8 +24852,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
             ChatActivity.this.chatActivityEnterView.runEmojiPanelAnimation();
             childCount = getChildCount();
-            int i82 = keyboardHeight;
-            measureChildWithMargins(ChatActivity.this.chatActivityEnterView, i, 0, i2, 0);
+            int i112 = i8;
+            measureChildWithMargins(ChatActivity.this.chatActivityEnterView, makeMeasureSpec, 0, i2, 0);
             if (!((BaseFragment) ChatActivity.this).inPreviewMode) {
             }
             this.inputFieldHeight = 0;
@@ -24855,13 +24895,14 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             return super.getKeyboardHeight();
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:126:0x0256, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:117:0x025f, code lost:
         
-            if (r2 != r10.this$0.pollAddOptionFieldLayout) goto L146;
+            if (r2 != r10.this$0.pollAddOptionFieldLayout) goto L137;
          */
-        /* JADX WARN: Removed duplicated region for block: B:137:0x0089  */
-        /* JADX WARN: Removed duplicated region for block: B:17:0x004f  */
-        /* JADX WARN: Removed duplicated region for block: B:24:0x009c  */
+        /* JADX WARN: Removed duplicated region for block: B:128:0x00b0  */
+        /* JADX WARN: Removed duplicated region for block: B:17:0x0076  */
+        /* JADX WARN: Removed duplicated region for block: B:24:0x00c1  */
+        /* JADX WARN: Removed duplicated region for block: B:28:0x00c5  */
         @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -24879,41 +24920,46 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             int currentMaxBottomInset;
             int dp2;
             int childCount = getChildCount();
-            for (int i13 = 0; i13 < childCount; i13++) {
-                View childAt = getChildAt(i13);
+            int measuredWidth = getMeasuredWidth();
+            int i13 = (measuredWidth - ChatActivity.this.insetSystemLeft) - ChatActivity.this.insetSystemRight;
+            for (int i14 = 0; i14 < childCount; i14++) {
+                View childAt = getChildAt(i14);
                 if (childAt != null && childAt.getVisibility() != 8) {
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
-                    int measuredWidth = childAt.getMeasuredWidth();
+                    int measuredWidth2 = childAt.getMeasuredWidth();
                     int measuredHeight = childAt.getMeasuredHeight();
-                    int i14 = layoutParams.gravity;
-                    if (i14 == -1) {
-                        i14 = 51;
+                    int i15 = layoutParams.gravity;
+                    if (i15 == -1) {
+                        i15 = 51;
                     }
-                    int i15 = i14 & 112;
-                    int i16 = i14 & 7;
-                    if (i16 == 1) {
-                        i5 = (((i3 - i) - measuredWidth) / 2) + layoutParams.leftMargin;
+                    int i16 = i15 & 112;
+                    int i17 = i15 & 7;
+                    if (i17 == 1) {
+                        i5 = ChatActivity.this.insetSystemLeft + ((i13 - measuredWidth2) / 2) + layoutParams.leftMargin;
                         i6 = layoutParams.rightMargin;
-                    } else if (i16 == 5) {
-                        i5 = i3 - measuredWidth;
-                        i6 = layoutParams.rightMargin;
-                    } else {
-                        i7 = layoutParams.leftMargin;
-                        if (i15 == 16) {
-                            if (i15 == 48) {
+                    } else if (i17 != 5) {
+                        i7 = ChatActivity.this.insetSystemLeft + layoutParams.leftMargin;
+                        if (i16 != 16) {
+                            i8 = (((i4 - i2) - measuredHeight) / 2) + layoutParams.topMargin;
+                            i9 = layoutParams.bottomMargin;
+                        } else {
+                            if (i16 == 48) {
                                 i10 = layoutParams.topMargin + getPaddingTop();
                                 if (childAt != ((BaseFragment) ChatActivity.this).actionBar && ((BaseFragment) ChatActivity.this).actionBar.getVisibility() == 0) {
                                     i10 += ((BaseFragment) ChatActivity.this).actionBar.getMeasuredHeight();
                                 }
-                            } else if (i15 == 80) {
+                            } else if (i16 == 80) {
                                 i8 = (i4 - i2) - measuredHeight;
                                 i9 = layoutParams.bottomMargin;
                             } else {
                                 i10 = layoutParams.topMargin;
                             }
-                            if (childAt != ChatActivity.this.blurredView) {
+                            if (isFullSizeIgnoreInsersChild(childAt)) {
+                                i10 = 0;
+                                i7 = 0;
+                            } else {
                                 ChatActivity chatActivity = ChatActivity.this;
-                                if (childAt != chatActivity.messageEnterTransitionContainer && childAt != chatActivity.fireworksOverlay && childAt != chatActivity.messagesSearchListContainer && childAt != ChatActivity.this.chatActivityFadeView && childAt != this.backgroundView && childAt != ChatActivity.this.quickShareSelectorOverlay) {
+                                if (childAt != chatActivity.messageEnterTransitionContainer && childAt != chatActivity.quickShareSelectorOverlay) {
                                     ChatActivity chatActivity2 = ChatActivity.this;
                                     if (childAt != chatActivity2.chatInputViewsContainer && !(childAt instanceof HintView) && !(childAt instanceof ChecksHintView)) {
                                         if (!(childAt instanceof TextSelectionHelper.TextSelectionOverlay)) {
@@ -24925,7 +24971,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                                     dp = AndroidUtilities.dp(1.0f);
                                                 } else {
                                                     i10 = ChatActivity.this.chatActivityEnterView.getBottom();
-                                                    childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
                                                 }
                                             } else {
                                                 ChatActivityEnterView chatActivityEnterView = ChatActivity.this.chatActivityEnterView;
@@ -24947,10 +24992,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                                                                 ChatActivity chatActivity4 = ChatActivity.this;
                                                                                 if (childAt != chatActivity4.instantCameraView && childAt != chatActivity4.overlayView && childAt != ChatActivity.this.animatingImageView) {
                                                                                     if (!(childAt instanceof MessagePreviewView)) {
-                                                                                        if (childAt != ChatActivity.this.searchViewPager) {
-                                                                                            if (childAt != ChatActivity.this.roundVideoRecordBackground) {
-                                                                                                if (childAt != ChatActivity.this.messageMetricsView) {
-                                                                                                }
+                                                                                        if (childAt != ChatActivity.this.roundVideoRecordBackground) {
+                                                                                            if (childAt != ChatActivity.this.messageMetricsView) {
                                                                                             }
                                                                                         }
                                                                                     } else {
@@ -24985,38 +25028,33 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                                     i10 -= ChatActivity.this.windowInsetsStateHolder.getCurrentMaxBottomInset() + AndroidUtilities.dp(7.0f);
                                                     i7 -= AndroidUtilities.dp(3.0f);
                                                 }
-                                                childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
                                             }
                                             i10 += dp;
-                                            childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
                                         } else {
                                             i12 = chatActivity2.blurredViewTopOffset;
                                         }
                                         i10 = -i12;
-                                        childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
                                     }
                                 }
+                                i10 = 0;
                             }
-                            i10 = 0;
-                            childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
-                        } else {
-                            i8 = (((i4 - i2) - measuredHeight) / 2) + layoutParams.topMargin;
-                            i9 = layoutParams.bottomMargin;
+                            childAt.layout(i7, i10, measuredWidth2 + i7, measuredHeight + i10);
                         }
                         i10 = i8 - i9;
-                        if (childAt != ChatActivity.this.blurredView) {
+                        if (isFullSizeIgnoreInsersChild(childAt)) {
                         }
-                        i10 = 0;
-                        childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
+                        childAt.layout(i7, i10, measuredWidth2 + i7, measuredHeight + i10);
+                    } else {
+                        i5 = (measuredWidth - ChatActivity.this.insetSystemRight) - measuredWidth2;
+                        i6 = layoutParams.rightMargin;
                     }
                     i7 = i5 - i6;
-                    if (i15 == 16) {
+                    if (i16 != 16) {
                     }
                     i10 = i8 - i9;
-                    if (childAt != ChatActivity.this.blurredView) {
+                    if (isFullSizeIgnoreInsersChild(childAt)) {
                     }
-                    i10 = 0;
-                    childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
+                    childAt.layout(i7, i10, measuredWidth2 + i7, measuredHeight + i10);
                 }
             }
             if (ChatActivity.this.floatingTopicSeparator != null) {
@@ -54495,7 +54533,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 return;
             }
             if (!((BaseFragment) ChatActivity.this).inPreviewMode && ChatActivity.this.chatMode == 0 && !messageObject2.isVoice() && !messageObject2.isRoundVideo()) {
-                ChatActivity.access$57710(ChatActivity.this);
+                ChatActivity.access$57910(ChatActivity.this);
                 if (ChatActivity.this.newMentionsCount <= 0) {
                     ChatActivity.this.newMentionsCount = 0;
                     ChatActivity.this.hasAllMentionsLocal = true;
@@ -57300,7 +57338,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$5$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$52900(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -57633,7 +57671,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$6$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$52900(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -58460,7 +58498,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$13$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$52900(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -58540,7 +58578,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$14$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$52900(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -58746,7 +58784,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$15$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$52900(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -58776,7 +58814,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$16$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$52900(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -58806,7 +58844,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$17$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$52900(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -58883,7 +58921,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$18$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$52900(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -58913,7 +58951,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$19$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$52900(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -64758,6 +64796,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         if (mentionsContainerView != null) {
             mentionsContainerView.setTranslationY(mentionsContainerView.isReversed() ? AndroidUtilities.dp(5.0f) : -animatedMaxBottomInset);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public EdgeToEdgeSupportMode getEdgeToEdgeSupportMode() {
+        return EdgeToEdgeSupportMode.FULL;
     }
 
     private float calculateInputIslandHeight(boolean z) {

@@ -32,6 +32,7 @@ import android.widget.FrameLayout;
 import android.window.OnBackInvokedCallback;
 import android.window.OnBackInvokedDispatcher;
 import androidx.core.graphics.ColorUtils;
+import androidx.core.graphics.Insets;
 import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -378,9 +379,9 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
         open(UserConfig.selectedAccount, context, storyItem, arrayList, i, storiesList, peerStories, placeProvider, z);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:89:0x0257, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:86:0x024f, code lost:
     
-        r0 = r23.windowView.findOnBackInvokedDispatcher();
+        r0 = r22.windowView.findOnBackInvokedDispatcher();
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -440,11 +441,8 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
         layoutParams.gravity = 51;
         layoutParams.type = 99;
         layoutParams.softInputMode = 16;
-        int i3 = Build.VERSION.SDK_INT;
-        if (i3 >= 28) {
-            layoutParams.layoutInDisplayCutoutMode = 1;
-        }
-        layoutParams.flags = -2147417728;
+        AndroidUtilities.applyEdgeToEdgeLayoutParams(layoutParams);
+        this.windowLayoutParams.flags = -2147417728;
         this.isClosed = false;
         this.unreadStateChanged = false;
         BaseFragment lastFragment = LaunchActivity.getLastFragment();
@@ -595,32 +593,32 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                 }
 
                 @Override // android.widget.FrameLayout, android.view.View
-                protected void onMeasure(int i4, int i5) {
-                    int size = View.MeasureSpec.getSize(i5);
+                protected void onMeasure(int i3, int i4) {
+                    int size = View.MeasureSpec.getSize(i4);
                     StoryViewer storyViewer = StoryViewer.this;
                     if (!storyViewer.ATTACH_TO_FRAGMENT || storyViewer.ATTACHED_FRAGMENT_IS_EDGE_TO_EDGE) {
                         storyViewer.setKeyboardHeightFromParent(measureKeyboardHeight());
                         size += StoryViewer.this.realKeyboardHeight;
                     }
-                    int size2 = View.MeasureSpec.getSize(i4);
-                    int i6 = (int) ((size2 * 16.0f) / 9.0f);
-                    if (size > i6) {
+                    int size2 = View.MeasureSpec.getSize(i3);
+                    int i5 = (int) ((size2 * 16.0f) / 9.0f);
+                    if (size > i5) {
                         StoryViewer.this.storiesViewPager.getLayoutParams().width = -1;
-                        size = i6;
+                        size = i5;
                     } else {
-                        int i7 = (int) ((size / 16.0f) * 9.0f);
-                        StoryViewer.this.storiesViewPager.getLayoutParams().width = i7;
-                        size2 = i7;
+                        int i6 = (int) ((size / 16.0f) * 9.0f);
+                        StoryViewer.this.storiesViewPager.getLayoutParams().width = i6;
+                        size2 = i6;
                     }
                     StoryViewer.this.aspectRatioFrameLayout.getLayoutParams().height = size + 1;
                     StoryViewer.this.aspectRatioFrameLayout.getLayoutParams().width = size2;
                     ((FrameLayout.LayoutParams) StoryViewer.this.aspectRatioFrameLayout.getLayoutParams()).topMargin = AndroidUtilities.statusBarHeight;
-                    super.onMeasure(i4, i5);
+                    super.onMeasure(i3, i4);
                 }
 
                 @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-                protected void onLayout(boolean z3, int i4, int i5, int i6, int i7) {
-                    super.onLayout(z3, i4, i5, i6, i7);
+                protected void onLayout(boolean z3, int i3, int i4, int i5, int i6) {
+                    super.onLayout(z3, i3, i4, i5, i6);
                 }
 
                 @Override // android.view.ViewGroup, android.view.View
@@ -758,7 +756,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
             this.containerView.setSystemUiVisibility(1792);
             AndroidUtilities.setPreferredMaxRefreshRate(this.windowManager, this.windowView, this.windowLayoutParams);
             this.windowManager.addView(this.windowView, this.windowLayoutParams);
-            if (i3 >= 33 && findOnBackInvokedDispatcher != null) {
+            if (Build.VERSION.SDK_INT >= 33 && findOnBackInvokedDispatcher != null) {
                 findOnBackInvokedDispatcher.registerOnBackInvokedCallback(0, new OnBackInvokedCallback() { // from class: org.telegram.ui.Stories.StoryViewer$$ExternalSyntheticLambda6
                     @Override // android.window.OnBackInvokedCallback
                     public final void onBackInvoked() {
@@ -2282,6 +2280,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ WindowInsetsCompat lambda$open$1(View view, WindowInsetsCompat windowInsetsCompat) {
         int systemWindowInsetBottom;
+        Insets defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(windowInsetsCompat, false);
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.containerView.getLayoutParams();
         marginLayoutParams.topMargin = this.ATTACHED_FRAGMENT_IS_EDGE_TO_EDGE ? 0 : windowInsetsCompat.getSystemWindowInsetTop();
         if (this.ATTACHED_FRAGMENT_IS_EDGE_TO_EDGE) {
@@ -2290,8 +2289,8 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
             systemWindowInsetBottom = windowInsetsCompat.getSystemWindowInsetBottom();
         }
         marginLayoutParams.bottomMargin = systemWindowInsetBottom;
-        marginLayoutParams.leftMargin = windowInsetsCompat.getSystemWindowInsetLeft();
-        marginLayoutParams.rightMargin = windowInsetsCompat.getSystemWindowInsetRight();
+        marginLayoutParams.leftMargin = defaultWindowInsets.left;
+        marginLayoutParams.rightMargin = defaultWindowInsets.right;
         SizeNotifierFrameLayout sizeNotifierFrameLayout = this.windowView;
         if (sizeNotifierFrameLayout != null) {
             sizeNotifierFrameLayout.requestLayout();

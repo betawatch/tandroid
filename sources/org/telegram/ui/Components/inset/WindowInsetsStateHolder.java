@@ -113,19 +113,19 @@ public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInse
 
     private void setInsets(WindowInsetsCompat windowInsetsCompat, boolean z) {
         this.lastInsets = windowInsetsCompat;
-        Insets insets = windowInsetsCompat != null ? windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars()) : Insets.NONE;
-        Insets insets2 = windowInsetsCompat != null ? windowInsetsCompat.getInsets(WindowInsetsCompat.Type.ime()) : Insets.NONE;
+        Insets insetsIgnoringVisibility = windowInsetsCompat != null ? windowInsetsCompat.getInsetsIgnoringVisibility(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout()) : Insets.NONE;
+        Insets insets = windowInsetsCompat != null ? windowInsetsCompat.getInsets(WindowInsetsCompat.Type.ime()) : Insets.NONE;
         KeyboardState.State state = this.keyboardState.getState();
-        KeyboardState.State keyboardVisibility = this.keyboardState.setKeyboardVisibility(insets2.bottom > 0, !z, false);
+        KeyboardState.State keyboardVisibility = this.keyboardState.setKeyboardVisibility(insets.bottom > 0, !z, false);
         int i = this.inAppKeyboardState;
         if (i == 2) {
             this.inAppKeyboardHeight = 0;
         }
-        if (i == 3 && insets2.bottom > 0) {
+        if (i == 3 && insets.bottom > 0) {
             this.inAppKeyboardHeight = 0;
         }
-        Insets max = Insets.max(insets2, Insets.of(0, 0, 0, this.inAppKeyboardHeight));
-        Insets max2 = Insets.max(insets, max);
+        Insets max = Insets.max(insets, Insets.of(0, 0, 0, this.inAppKeyboardHeight));
+        Insets max2 = Insets.max(insetsIgnoringVisibility, max);
         if (z) {
             if (this.keyboardVisibility.differs(max.bottom > 0 ? 1.0f : 0.0f) || this.insetsMaxRect.differs(max2.left, max2.top, max2.right, max2.bottom) || this.insetsImeRect.differs(max.left, max.top, max.right, max.bottom)) {
                 this.insetsAnimator.cancel();
