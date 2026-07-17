@@ -248,6 +248,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
     private ButtonBounce adminLayoutBounce;
     private boolean adminLayoutIsAdmin;
     private boolean adminLayoutIsOwner;
+    private boolean adminLayoutIsTag;
     private RectF adminLayoutRect;
     private boolean allowAssistant;
     private float alphaInternal;
@@ -2428,6 +2429,28 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             this.boostCounterPressed = false;
         }
         return this.boostCounterPressed;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public CharSequence getAdminAccessibilityText() {
+        StaticLayout staticLayout = this.adminLayout;
+        if (staticLayout == null || TextUtils.isEmpty(staticLayout.getText())) {
+            return null;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.adminLayout.getText());
+        BoostCounterSpan[] boostCounterSpanArr = (BoostCounterSpan[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), BoostCounterSpan.class);
+        for (int length = boostCounterSpanArr.length - 1; length >= 0; length--) {
+            int spanStart = spannableStringBuilder.getSpanStart(boostCounterSpanArr[length]);
+            int spanEnd = spannableStringBuilder.getSpanEnd(boostCounterSpanArr[length]);
+            if (spanStart >= 0 && spanEnd >= spanStart) {
+                spannableStringBuilder.delete(spanStart, spanEnd);
+            }
+        }
+        String trim = spannableStringBuilder.toString().trim();
+        if (TextUtils.isEmpty(trim)) {
+            return null;
+        }
+        return trim;
     }
 
     private boolean checkNameMotionEvent(MotionEvent motionEvent) {
@@ -7918,39 +7941,39 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(3:(5:2584|2585|(4:2590|(1:2592)(1:2599)|(1:2594)(1:2598)|(1:2596)(1:2597))(1:2587)|2588|2589)|2581|2582) */
-    /* JADX WARN: Code restructure failed: missing block: B:1071:0x7863, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1071:0x7865, code lost:
     
         if (r2.button.url.startsWith("tg://resolve") != false) goto L6548;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1861:0x6510, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1861:0x6512, code lost:
     
         if (r0.equals("donate") == false) goto L5432;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1948:0x6154, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1948:0x6156, code lost:
     
         if (r0.revealingMediaSpoilers != false) goto L5282;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:2494:0x5456, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:2494:0x5458, code lost:
     
         if (r8.isSmallImage != false) goto L4562;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:2642:0x502f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:2642:0x5031, code lost:
     
         if (r8.isSmallImage != false) goto L4357;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:2657:0x508b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:2657:0x508d, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:2658:0x508c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:2658:0x508e, code lost:
     
         r79 = r11;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:2790:0x4c46, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:2790:0x4c48, code lost:
     
         if (r7 == false) goto L4112;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:2814:0x4c40, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:2814:0x4c42, code lost:
     
         if (r1 == 85) goto L4108;
      */
@@ -7958,371 +7981,371 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
     
         if (r8.isPlayingRound == ((!org.telegram.messenger.MediaController.getInstance().isPlayingMessage(r8.currentMessageObject) || (r4 = r8.delegate) == null || r4.keyboardIsOpened()) ? false : true)) goto L47;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:3501:0x1168, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:3501:0x116a, code lost:
     
         if (r1.isSmall != false) goto L1245;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:3980:0x174c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:3980:0x174e, code lost:
     
         if (r1.revealingMediaSpoilers != false) goto L1602;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:4721:0x2988, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:4721:0x298a, code lost:
     
         if (r1 >= (r8.timeWidth + org.telegram.messenger.AndroidUtilities.dp((!r90.isOutOwner() ? 0 : 20) + 20))) goto L2304;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:5099:0x32f3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:5099:0x32f5, code lost:
     
         if (r90.getSavedDialogId() == org.telegram.messenger.UserObject.ANONYMOUS) goto L2797;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:517:0x67b9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:517:0x67bb, code lost:
     
         if (r0.isDocument() == false) goto L5549;
      */
     /* JADX WARN: Multi-variable search skipped. Vars limit reached: 9321 (expected less than 5000) */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:1001:0x7672  */
-    /* JADX WARN: Removed duplicated region for block: B:1006:0x76cf  */
-    /* JADX WARN: Removed duplicated region for block: B:1011:0x76e6  */
-    /* JADX WARN: Removed duplicated region for block: B:1014:0x76ff  */
-    /* JADX WARN: Removed duplicated region for block: B:1019:0x771c A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:1023:0x7765  */
-    /* JADX WARN: Removed duplicated region for block: B:1028:0x777a  */
+    /* JADX WARN: Removed duplicated region for block: B:1001:0x7674  */
+    /* JADX WARN: Removed duplicated region for block: B:1006:0x76d1  */
+    /* JADX WARN: Removed duplicated region for block: B:1011:0x76e8  */
+    /* JADX WARN: Removed duplicated region for block: B:1014:0x7701  */
+    /* JADX WARN: Removed duplicated region for block: B:1019:0x771e A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:1023:0x7767  */
+    /* JADX WARN: Removed duplicated region for block: B:1028:0x777c  */
     /* JADX WARN: Removed duplicated region for block: B:102:0x01c8  */
-    /* JADX WARN: Removed duplicated region for block: B:1031:0x77a9  */
-    /* JADX WARN: Removed duplicated region for block: B:1038:0x77cb  */
-    /* JADX WARN: Removed duplicated region for block: B:1043:0x77ec  */
-    /* JADX WARN: Removed duplicated region for block: B:1066:0x784b  */
-    /* JADX WARN: Removed duplicated region for block: B:1067:0x784c A[Catch: Exception -> 0x77e9, TryCatch #3 {Exception -> 0x77e9, blocks: (B:1046:0x77f3, B:1050:0x7868, B:1051:0x780a, B:1054:0x7824, B:1058:0x782d, B:1061:0x7836, B:1064:0x783f, B:1067:0x784c, B:1070:0x7859, B:1072:0x7817), top: B:1045:0x77f3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:1077:0x77ce  */
-    /* JADX WARN: Removed duplicated region for block: B:1079:0x777c  */
-    /* JADX WARN: Removed duplicated region for block: B:1080:0x771e  */
-    /* JADX WARN: Removed duplicated region for block: B:1084:0x76e9  */
-    /* JADX WARN: Removed duplicated region for block: B:1085:0x76db  */
-    /* JADX WARN: Removed duplicated region for block: B:1086:0x76d1  */
-    /* JADX WARN: Removed duplicated region for block: B:1087:0x76c6  */
-    /* JADX WARN: Removed duplicated region for block: B:1088:0x7679  */
-    /* JADX WARN: Removed duplicated region for block: B:1089:0x766a  */
-    /* JADX WARN: Removed duplicated region for block: B:1090:0x7647  */
-    /* JADX WARN: Removed duplicated region for block: B:1092:0x761f  */
-    /* JADX WARN: Removed duplicated region for block: B:1119:0x6d2b  */
-    /* JADX WARN: Removed duplicated region for block: B:1121:0x6cb8  */
-    /* JADX WARN: Removed duplicated region for block: B:1122:0x6c45  */
-    /* JADX WARN: Removed duplicated region for block: B:1124:0x6c09  */
-    /* JADX WARN: Removed duplicated region for block: B:1127:0x67c3  */
-    /* JADX WARN: Removed duplicated region for block: B:1146:0x684b  */
+    /* JADX WARN: Removed duplicated region for block: B:1031:0x77ab  */
+    /* JADX WARN: Removed duplicated region for block: B:1038:0x77cd  */
+    /* JADX WARN: Removed duplicated region for block: B:1043:0x77ee  */
+    /* JADX WARN: Removed duplicated region for block: B:1066:0x784d  */
+    /* JADX WARN: Removed duplicated region for block: B:1067:0x784e A[Catch: Exception -> 0x77eb, TryCatch #4 {Exception -> 0x77eb, blocks: (B:1046:0x77f5, B:1050:0x786a, B:1051:0x780c, B:1054:0x7826, B:1058:0x782f, B:1061:0x7838, B:1064:0x7841, B:1067:0x784e, B:1070:0x785b, B:1072:0x7819), top: B:1045:0x77f5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:1077:0x77d0  */
+    /* JADX WARN: Removed duplicated region for block: B:1079:0x777e  */
+    /* JADX WARN: Removed duplicated region for block: B:1080:0x7720  */
+    /* JADX WARN: Removed duplicated region for block: B:1084:0x76eb  */
+    /* JADX WARN: Removed duplicated region for block: B:1085:0x76dd  */
+    /* JADX WARN: Removed duplicated region for block: B:1086:0x76d3  */
+    /* JADX WARN: Removed duplicated region for block: B:1087:0x76c8  */
+    /* JADX WARN: Removed duplicated region for block: B:1088:0x767b  */
+    /* JADX WARN: Removed duplicated region for block: B:1089:0x766c  */
+    /* JADX WARN: Removed duplicated region for block: B:1090:0x7649  */
+    /* JADX WARN: Removed duplicated region for block: B:1092:0x7621  */
+    /* JADX WARN: Removed duplicated region for block: B:1119:0x6d2d  */
+    /* JADX WARN: Removed duplicated region for block: B:1121:0x6cba  */
+    /* JADX WARN: Removed duplicated region for block: B:1122:0x6c47  */
+    /* JADX WARN: Removed duplicated region for block: B:1124:0x6c0b  */
+    /* JADX WARN: Removed duplicated region for block: B:1127:0x67c5  */
+    /* JADX WARN: Removed duplicated region for block: B:1146:0x684d  */
     /* JADX WARN: Removed duplicated region for block: B:114:0x01eb  */
-    /* JADX WARN: Removed duplicated region for block: B:1152:0x690d  */
-    /* JADX WARN: Removed duplicated region for block: B:1157:0x6926  */
-    /* JADX WARN: Removed duplicated region for block: B:1161:0x6956  */
-    /* JADX WARN: Removed duplicated region for block: B:1168:0x6a7a  */
-    /* JADX WARN: Removed duplicated region for block: B:1177:0x78db A[LOOP:9: B:1175:0x6a95->B:1177:0x78db, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:1182:0x696b A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:1185:0x69a2 A[Catch: Exception -> 0x69b8, TryCatch #2 {Exception -> 0x69b8, blocks: (B:1180:0x6965, B:1183:0x6997, B:1185:0x69a2, B:1190:0x69c8, B:1193:0x69d5, B:1243:0x69cd, B:1244:0x69ab, B:1246:0x69bd, B:1247:0x696c, B:1250:0x6971), top: B:1179:0x6965 }] */
-    /* JADX WARN: Removed duplicated region for block: B:1189:0x69c7  */
-    /* JADX WARN: Removed duplicated region for block: B:1190:0x69c8 A[Catch: Exception -> 0x69b8, TryCatch #2 {Exception -> 0x69b8, blocks: (B:1180:0x6965, B:1183:0x6997, B:1185:0x69a2, B:1190:0x69c8, B:1193:0x69d5, B:1243:0x69cd, B:1244:0x69ab, B:1246:0x69bd, B:1247:0x696c, B:1250:0x6971), top: B:1179:0x6965 }] */
-    /* JADX WARN: Removed duplicated region for block: B:1246:0x69bd A[Catch: Exception -> 0x69b8, TryCatch #2 {Exception -> 0x69b8, blocks: (B:1180:0x6965, B:1183:0x6997, B:1185:0x69a2, B:1190:0x69c8, B:1193:0x69d5, B:1243:0x69cd, B:1244:0x69ab, B:1246:0x69bd, B:1247:0x696c, B:1250:0x6971), top: B:1179:0x6965 }] */
-    /* JADX WARN: Removed duplicated region for block: B:1247:0x696c A[Catch: Exception -> 0x69b8, TryCatch #2 {Exception -> 0x69b8, blocks: (B:1180:0x6965, B:1183:0x6997, B:1185:0x69a2, B:1190:0x69c8, B:1193:0x69d5, B:1243:0x69cd, B:1244:0x69ab, B:1246:0x69bd, B:1247:0x696c, B:1250:0x6971), top: B:1179:0x6965 }] */
-    /* JADX WARN: Removed duplicated region for block: B:1257:0x693d  */
-    /* JADX WARN: Removed duplicated region for block: B:1271:0x687e  */
-    /* JADX WARN: Removed duplicated region for block: B:1282:0x68c1  */
-    /* JADX WARN: Removed duplicated region for block: B:1295:0x6881  */
-    /* JADX WARN: Removed duplicated region for block: B:1296:0x684d  */
-    /* JADX WARN: Removed duplicated region for block: B:1303:0x6802  */
-    /* JADX WARN: Removed duplicated region for block: B:1311:0x681c  */
-    /* JADX WARN: Removed duplicated region for block: B:1318:0x0b7e  */
+    /* JADX WARN: Removed duplicated region for block: B:1152:0x690f  */
+    /* JADX WARN: Removed duplicated region for block: B:1157:0x6928  */
+    /* JADX WARN: Removed duplicated region for block: B:1161:0x6958  */
+    /* JADX WARN: Removed duplicated region for block: B:1168:0x6a7c  */
+    /* JADX WARN: Removed duplicated region for block: B:1177:0x78dd A[LOOP:9: B:1175:0x6a97->B:1177:0x78dd, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:1182:0x696d A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:1185:0x69a4 A[Catch: Exception -> 0x69ba, TryCatch #33 {Exception -> 0x69ba, blocks: (B:1180:0x6967, B:1183:0x6999, B:1185:0x69a4, B:1190:0x69ca, B:1193:0x69d7, B:1243:0x69cf, B:1244:0x69ad, B:1246:0x69bf, B:1247:0x696e, B:1250:0x6973), top: B:1179:0x6967 }] */
+    /* JADX WARN: Removed duplicated region for block: B:1189:0x69c9  */
+    /* JADX WARN: Removed duplicated region for block: B:1190:0x69ca A[Catch: Exception -> 0x69ba, TryCatch #33 {Exception -> 0x69ba, blocks: (B:1180:0x6967, B:1183:0x6999, B:1185:0x69a4, B:1190:0x69ca, B:1193:0x69d7, B:1243:0x69cf, B:1244:0x69ad, B:1246:0x69bf, B:1247:0x696e, B:1250:0x6973), top: B:1179:0x6967 }] */
+    /* JADX WARN: Removed duplicated region for block: B:1246:0x69bf A[Catch: Exception -> 0x69ba, TryCatch #33 {Exception -> 0x69ba, blocks: (B:1180:0x6967, B:1183:0x6999, B:1185:0x69a4, B:1190:0x69ca, B:1193:0x69d7, B:1243:0x69cf, B:1244:0x69ad, B:1246:0x69bf, B:1247:0x696e, B:1250:0x6973), top: B:1179:0x6967 }] */
+    /* JADX WARN: Removed duplicated region for block: B:1247:0x696e A[Catch: Exception -> 0x69ba, TryCatch #33 {Exception -> 0x69ba, blocks: (B:1180:0x6967, B:1183:0x6999, B:1185:0x69a4, B:1190:0x69ca, B:1193:0x69d7, B:1243:0x69cf, B:1244:0x69ad, B:1246:0x69bf, B:1247:0x696e, B:1250:0x6973), top: B:1179:0x6967 }] */
+    /* JADX WARN: Removed duplicated region for block: B:1257:0x693f  */
+    /* JADX WARN: Removed duplicated region for block: B:1271:0x6880  */
+    /* JADX WARN: Removed duplicated region for block: B:1282:0x68c3  */
+    /* JADX WARN: Removed duplicated region for block: B:1295:0x6883  */
+    /* JADX WARN: Removed duplicated region for block: B:1296:0x684f  */
+    /* JADX WARN: Removed duplicated region for block: B:1303:0x6804  */
+    /* JADX WARN: Removed duplicated region for block: B:1311:0x681e  */
+    /* JADX WARN: Removed duplicated region for block: B:1318:0x0b80  */
     /* JADX WARN: Removed duplicated region for block: B:133:0x021f A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:1437:0x479b  */
-    /* JADX WARN: Removed duplicated region for block: B:1440:0x47a5  */
-    /* JADX WARN: Removed duplicated region for block: B:1446:0x481d  */
-    /* JADX WARN: Removed duplicated region for block: B:1449:0x4876  */
-    /* JADX WARN: Removed duplicated region for block: B:1459:0x4910  */
-    /* JADX WARN: Removed duplicated region for block: B:1464:0x4949  */
-    /* JADX WARN: Removed duplicated region for block: B:1479:0x4991  */
-    /* JADX WARN: Removed duplicated region for block: B:1482:0x499f  */
-    /* JADX WARN: Removed duplicated region for block: B:1489:0x49d9  */
-    /* JADX WARN: Removed duplicated region for block: B:1496:0x4a08  */
-    /* JADX WARN: Removed duplicated region for block: B:1501:0x4a19  */
-    /* JADX WARN: Removed duplicated region for block: B:1507:0x4a37  */
-    /* JADX WARN: Removed duplicated region for block: B:1511:0x6794  */
-    /* JADX WARN: Removed duplicated region for block: B:1515:0x4a4c  */
-    /* JADX WARN: Removed duplicated region for block: B:1525:0x4a90  */
+    /* JADX WARN: Removed duplicated region for block: B:1437:0x479d  */
+    /* JADX WARN: Removed duplicated region for block: B:1440:0x47a7  */
+    /* JADX WARN: Removed duplicated region for block: B:1446:0x481f  */
+    /* JADX WARN: Removed duplicated region for block: B:1449:0x4878  */
+    /* JADX WARN: Removed duplicated region for block: B:1459:0x4912  */
+    /* JADX WARN: Removed duplicated region for block: B:1464:0x494b  */
+    /* JADX WARN: Removed duplicated region for block: B:1479:0x4993  */
+    /* JADX WARN: Removed duplicated region for block: B:1482:0x49a1  */
+    /* JADX WARN: Removed duplicated region for block: B:1489:0x49db  */
+    /* JADX WARN: Removed duplicated region for block: B:1496:0x4a0a  */
+    /* JADX WARN: Removed duplicated region for block: B:1501:0x4a1b  */
+    /* JADX WARN: Removed duplicated region for block: B:1507:0x4a39  */
+    /* JADX WARN: Removed duplicated region for block: B:1511:0x6796  */
+    /* JADX WARN: Removed duplicated region for block: B:1515:0x4a4e  */
+    /* JADX WARN: Removed duplicated region for block: B:1525:0x4a92  */
     /* JADX WARN: Removed duplicated region for block: B:152:0x0268  */
-    /* JADX WARN: Removed duplicated region for block: B:1534:0x4ab7  */
-    /* JADX WARN: Removed duplicated region for block: B:1548:0x4e8b  */
-    /* JADX WARN: Removed duplicated region for block: B:1562:0x4eea  */
-    /* JADX WARN: Removed duplicated region for block: B:1565:0x4ef5  */
-    /* JADX WARN: Removed duplicated region for block: B:1568:0x4eff  */
-    /* JADX WARN: Removed duplicated region for block: B:1571:0x4f0c A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:1575:0x4f55  */
-    /* JADX WARN: Removed duplicated region for block: B:1579:0x515b  */
+    /* JADX WARN: Removed duplicated region for block: B:1534:0x4ab9  */
+    /* JADX WARN: Removed duplicated region for block: B:1548:0x4e8d  */
+    /* JADX WARN: Removed duplicated region for block: B:1562:0x4eec  */
+    /* JADX WARN: Removed duplicated region for block: B:1565:0x4ef7  */
+    /* JADX WARN: Removed duplicated region for block: B:1568:0x4f01  */
+    /* JADX WARN: Removed duplicated region for block: B:1571:0x4f0e A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:1575:0x4f57  */
+    /* JADX WARN: Removed duplicated region for block: B:1579:0x515d  */
     /* JADX WARN: Removed duplicated region for block: B:157:0x0280  */
-    /* JADX WARN: Removed duplicated region for block: B:1581:0x525b  */
-    /* JADX WARN: Removed duplicated region for block: B:1585:0x526a A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:1589:0x5273  */
-    /* JADX WARN: Removed duplicated region for block: B:1604:0x5313 A[Catch: Exception -> 0x5311, TryCatch #15 {Exception -> 0x5311, blocks: (B:1601:0x52d8, B:1602:0x52e4, B:1620:0x52ec, B:1604:0x5313, B:1607:0x5334, B:1609:0x531d, B:1616:0x532c), top: B:1600:0x52d8 }] */
+    /* JADX WARN: Removed duplicated region for block: B:1581:0x525d  */
+    /* JADX WARN: Removed duplicated region for block: B:1585:0x526c A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:1589:0x5275  */
+    /* JADX WARN: Removed duplicated region for block: B:1604:0x5315 A[Catch: Exception -> 0x5313, TryCatch #16 {Exception -> 0x5313, blocks: (B:1601:0x52da, B:1602:0x52e6, B:1620:0x52ee, B:1604:0x5315, B:1607:0x5336, B:1609:0x531f, B:1616:0x532e), top: B:1600:0x52da }] */
     /* JADX WARN: Removed duplicated region for block: B:162:0x0266 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:1635:0x5274 A[Catch: Exception -> 0x52be, TRY_LEAVE, TryCatch #36 {Exception -> 0x52be, blocks: (B:1587:0x526f, B:1595:0x5298, B:1627:0x52a0, B:1635:0x5274), top: B:1586:0x526f }] */
-    /* JADX WARN: Removed duplicated region for block: B:1640:0x5356  */
-    /* JADX WARN: Removed duplicated region for block: B:1642:0x5476  */
-    /* JADX WARN: Removed duplicated region for block: B:1648:0x5488  */
-    /* JADX WARN: Removed duplicated region for block: B:1651:0x548f  */
+    /* JADX WARN: Removed duplicated region for block: B:1635:0x5276 A[Catch: Exception -> 0x52c0, TRY_LEAVE, TryCatch #36 {Exception -> 0x52c0, blocks: (B:1587:0x5271, B:1595:0x529a, B:1627:0x52a2, B:1635:0x5276), top: B:1586:0x5271 }] */
+    /* JADX WARN: Removed duplicated region for block: B:1640:0x5358  */
+    /* JADX WARN: Removed duplicated region for block: B:1642:0x5478  */
+    /* JADX WARN: Removed duplicated region for block: B:1648:0x548a  */
+    /* JADX WARN: Removed duplicated region for block: B:1651:0x5491  */
     /* JADX WARN: Removed duplicated region for block: B:165:0x0296 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:1660:0x5bc8  */
-    /* JADX WARN: Removed duplicated region for block: B:1665:0x5bdd  */
-    /* JADX WARN: Removed duplicated region for block: B:1687:0x65ff  */
+    /* JADX WARN: Removed duplicated region for block: B:1660:0x5bca  */
+    /* JADX WARN: Removed duplicated region for block: B:1665:0x5bdf  */
+    /* JADX WARN: Removed duplicated region for block: B:1687:0x6601  */
     /* JADX WARN: Removed duplicated region for block: B:168:0x02a2  */
-    /* JADX WARN: Removed duplicated region for block: B:1691:0x6610  */
-    /* JADX WARN: Removed duplicated region for block: B:1697:0x6697  */
-    /* JADX WARN: Removed duplicated region for block: B:1700:0x66aa  */
-    /* JADX WARN: Removed duplicated region for block: B:1712:0x6713  */
-    /* JADX WARN: Removed duplicated region for block: B:1717:0x6733  */
+    /* JADX WARN: Removed duplicated region for block: B:1691:0x6612  */
+    /* JADX WARN: Removed duplicated region for block: B:1697:0x6699  */
+    /* JADX WARN: Removed duplicated region for block: B:1700:0x66ac  */
+    /* JADX WARN: Removed duplicated region for block: B:1712:0x6715  */
+    /* JADX WARN: Removed duplicated region for block: B:1717:0x6735  */
     /* JADX WARN: Removed duplicated region for block: B:171:0x02b0  */
     /* JADX WARN: Removed duplicated region for block: B:172:0x02b2  */
-    /* JADX WARN: Removed duplicated region for block: B:1734:0x676c  */
-    /* JADX WARN: Removed duplicated region for block: B:1736:0x676f  */
-    /* JADX WARN: Removed duplicated region for block: B:1737:0x66e7  */
+    /* JADX WARN: Removed duplicated region for block: B:1734:0x676e  */
+    /* JADX WARN: Removed duplicated region for block: B:1736:0x6771  */
+    /* JADX WARN: Removed duplicated region for block: B:1737:0x66e9  */
     /* JADX WARN: Removed duplicated region for block: B:173:0x02a4  */
-    /* JADX WARN: Removed duplicated region for block: B:1742:0x6699  */
-    /* JADX WARN: Removed duplicated region for block: B:1744:0x6628  */
+    /* JADX WARN: Removed duplicated region for block: B:1742:0x669b  */
+    /* JADX WARN: Removed duplicated region for block: B:1744:0x662a  */
     /* JADX WARN: Removed duplicated region for block: B:175:0x02b6  */
     /* JADX WARN: Removed duplicated region for block: B:180:0x02ca  */
     /* JADX WARN: Removed duplicated region for block: B:183:0x02d6 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:197:0x7392  */
-    /* JADX WARN: Removed duplicated region for block: B:2127:0x6570  */
-    /* JADX WARN: Removed duplicated region for block: B:2151:0x54ff  */
-    /* JADX WARN: Removed duplicated region for block: B:2155:0x551b  */
-    /* JADX WARN: Removed duplicated region for block: B:2156:0x5502  */
-    /* JADX WARN: Removed duplicated region for block: B:2416:0x5afb  */
-    /* JADX WARN: Removed duplicated region for block: B:242:0x7441  */
-    /* JADX WARN: Removed duplicated region for block: B:2456:0x535a  */
-    /* JADX WARN: Removed duplicated region for block: B:2465:0x538f  */
-    /* JADX WARN: Removed duplicated region for block: B:2470:0x53a2 A[Catch: Exception -> 0x5395, TryCatch #19 {Exception -> 0x5395, blocks: (B:2467:0x5391, B:2468:0x539c, B:2470:0x53a2, B:2475:0x53ba, B:2478:0x53c5, B:2479:0x53f7, B:2480:0x5428, B:2496:0x5430, B:2482:0x543f, B:2485:0x545a, B:2486:0x545c, B:2493:0x5454, B:2498:0x53c1, B:2499:0x53b6, B:2501:0x53d5), top: B:2466:0x5391 }] */
-    /* JADX WARN: Removed duplicated region for block: B:2477:0x53be  */
-    /* JADX WARN: Removed duplicated region for block: B:2482:0x543f A[Catch: Exception -> 0x5395, TryCatch #19 {Exception -> 0x5395, blocks: (B:2467:0x5391, B:2468:0x539c, B:2470:0x53a2, B:2475:0x53ba, B:2478:0x53c5, B:2479:0x53f7, B:2480:0x5428, B:2496:0x5430, B:2482:0x543f, B:2485:0x545a, B:2486:0x545c, B:2493:0x5454, B:2498:0x53c1, B:2499:0x53b6, B:2501:0x53d5), top: B:2466:0x5391 }] */
-    /* JADX WARN: Removed duplicated region for block: B:2498:0x53c1 A[Catch: Exception -> 0x5395, TryCatch #19 {Exception -> 0x5395, blocks: (B:2467:0x5391, B:2468:0x539c, B:2470:0x53a2, B:2475:0x53ba, B:2478:0x53c5, B:2479:0x53f7, B:2480:0x5428, B:2496:0x5430, B:2482:0x543f, B:2485:0x545a, B:2486:0x545c, B:2493:0x5454, B:2498:0x53c1, B:2499:0x53b6, B:2501:0x53d5), top: B:2466:0x5391 }] */
-    /* JADX WARN: Removed duplicated region for block: B:2503:0x53ae  */
-    /* JADX WARN: Removed duplicated region for block: B:2507:0x5398  */
-    /* JADX WARN: Removed duplicated region for block: B:2515:0x5160  */
-    /* JADX WARN: Removed duplicated region for block: B:255:0x747e  */
-    /* JADX WARN: Removed duplicated region for block: B:2563:0x510d A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:2568:0x4f60 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:260:0x7493  */
-    /* JADX WARN: Removed duplicated region for block: B:268:0x74bb  */
-    /* JADX WARN: Removed duplicated region for block: B:2691:0x4edf  */
-    /* JADX WARN: Removed duplicated region for block: B:270:0x74be  */
-    /* JADX WARN: Removed duplicated region for block: B:2719:0x4ba1  */
-    /* JADX WARN: Removed duplicated region for block: B:2721:0x4bb2 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:2731:0x4bf6  */
-    /* JADX WARN: Removed duplicated region for block: B:2734:0x4c50  */
-    /* JADX WARN: Removed duplicated region for block: B:273:0x74d4  */
-    /* JADX WARN: Removed duplicated region for block: B:2741:0x4c6e  */
-    /* JADX WARN: Removed duplicated region for block: B:2744:0x4c9e  */
-    /* JADX WARN: Removed duplicated region for block: B:2749:0x4caa A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:2768:0x4c71  */
-    /* JADX WARN: Removed duplicated region for block: B:2786:0x4bfc  */
-    /* JADX WARN: Removed duplicated region for block: B:2815:0x4bc8 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:2818:0x4be2  */
-    /* JADX WARN: Removed duplicated region for block: B:2820:0x4ba4  */
+    /* JADX WARN: Removed duplicated region for block: B:197:0x7394  */
+    /* JADX WARN: Removed duplicated region for block: B:2127:0x6572  */
+    /* JADX WARN: Removed duplicated region for block: B:2151:0x5501  */
+    /* JADX WARN: Removed duplicated region for block: B:2155:0x551d  */
+    /* JADX WARN: Removed duplicated region for block: B:2156:0x5504  */
+    /* JADX WARN: Removed duplicated region for block: B:2416:0x5afd  */
+    /* JADX WARN: Removed duplicated region for block: B:242:0x7443  */
+    /* JADX WARN: Removed duplicated region for block: B:2456:0x535c  */
+    /* JADX WARN: Removed duplicated region for block: B:2465:0x5391  */
+    /* JADX WARN: Removed duplicated region for block: B:2470:0x53a4 A[Catch: Exception -> 0x5397, TryCatch #20 {Exception -> 0x5397, blocks: (B:2467:0x5393, B:2468:0x539e, B:2470:0x53a4, B:2475:0x53bc, B:2478:0x53c7, B:2479:0x53f9, B:2480:0x542a, B:2496:0x5432, B:2482:0x5441, B:2485:0x545c, B:2486:0x545e, B:2493:0x5456, B:2498:0x53c3, B:2499:0x53b8, B:2501:0x53d7), top: B:2466:0x5393 }] */
+    /* JADX WARN: Removed duplicated region for block: B:2477:0x53c0  */
+    /* JADX WARN: Removed duplicated region for block: B:2482:0x5441 A[Catch: Exception -> 0x5397, TryCatch #20 {Exception -> 0x5397, blocks: (B:2467:0x5393, B:2468:0x539e, B:2470:0x53a4, B:2475:0x53bc, B:2478:0x53c7, B:2479:0x53f9, B:2480:0x542a, B:2496:0x5432, B:2482:0x5441, B:2485:0x545c, B:2486:0x545e, B:2493:0x5456, B:2498:0x53c3, B:2499:0x53b8, B:2501:0x53d7), top: B:2466:0x5393 }] */
+    /* JADX WARN: Removed duplicated region for block: B:2498:0x53c3 A[Catch: Exception -> 0x5397, TryCatch #20 {Exception -> 0x5397, blocks: (B:2467:0x5393, B:2468:0x539e, B:2470:0x53a4, B:2475:0x53bc, B:2478:0x53c7, B:2479:0x53f9, B:2480:0x542a, B:2496:0x5432, B:2482:0x5441, B:2485:0x545c, B:2486:0x545e, B:2493:0x5456, B:2498:0x53c3, B:2499:0x53b8, B:2501:0x53d7), top: B:2466:0x5393 }] */
+    /* JADX WARN: Removed duplicated region for block: B:2503:0x53b0  */
+    /* JADX WARN: Removed duplicated region for block: B:2507:0x539a  */
+    /* JADX WARN: Removed duplicated region for block: B:2515:0x5162  */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x7480  */
+    /* JADX WARN: Removed duplicated region for block: B:2563:0x510f A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:2568:0x4f62 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:260:0x7495  */
+    /* JADX WARN: Removed duplicated region for block: B:268:0x74bd  */
+    /* JADX WARN: Removed duplicated region for block: B:2691:0x4ee1  */
+    /* JADX WARN: Removed duplicated region for block: B:270:0x74c0  */
+    /* JADX WARN: Removed duplicated region for block: B:2719:0x4ba3  */
+    /* JADX WARN: Removed duplicated region for block: B:2721:0x4bb4 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:2731:0x4bf8  */
+    /* JADX WARN: Removed duplicated region for block: B:2734:0x4c52  */
+    /* JADX WARN: Removed duplicated region for block: B:273:0x74d6  */
+    /* JADX WARN: Removed duplicated region for block: B:2741:0x4c70  */
+    /* JADX WARN: Removed duplicated region for block: B:2744:0x4ca0  */
+    /* JADX WARN: Removed duplicated region for block: B:2749:0x4cac A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:2768:0x4c73  */
+    /* JADX WARN: Removed duplicated region for block: B:2786:0x4bfe  */
+    /* JADX WARN: Removed duplicated region for block: B:2815:0x4bca A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:2818:0x4be4  */
+    /* JADX WARN: Removed duplicated region for block: B:2820:0x4ba6  */
     /* JADX WARN: Removed duplicated region for block: B:286:0x0310  */
-    /* JADX WARN: Removed duplicated region for block: B:2884:0x4ddf  */
+    /* JADX WARN: Removed duplicated region for block: B:2884:0x4de1  */
     /* JADX WARN: Removed duplicated region for block: B:289:0x0324 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:2924:0x4a87  */
-    /* JADX WARN: Removed duplicated region for block: B:2926:0x493a  */
-    /* JADX WARN: Removed duplicated region for block: B:2932:0x48cc  */
-    /* JADX WARN: Removed duplicated region for block: B:2942:0x4827  */
+    /* JADX WARN: Removed duplicated region for block: B:2924:0x4a89  */
+    /* JADX WARN: Removed duplicated region for block: B:2926:0x493c  */
+    /* JADX WARN: Removed duplicated region for block: B:2932:0x48ce  */
+    /* JADX WARN: Removed duplicated region for block: B:2942:0x4829  */
     /* JADX WARN: Removed duplicated region for block: B:298:0x0351  */
     /* JADX WARN: Removed duplicated region for block: B:306:0x0382  */
-    /* JADX WARN: Removed duplicated region for block: B:3078:0x4433 A[Catch: Exception -> 0x44ef, TryCatch #6 {Exception -> 0x44ef, blocks: (B:3078:0x4433, B:3081:0x443b, B:3084:0x4443, B:3087:0x4479, B:3090:0x44a0, B:3093:0x44c7, B:3094:0x44a9, B:3097:0x44b6, B:3098:0x4482, B:3101:0x448f, B:3102:0x445c, B:3105:0x4467, B:3106:0x44f2, B:3109:0x452e, B:3112:0x4555, B:3115:0x457c, B:3117:0x4583, B:3118:0x458f, B:3119:0x458a, B:3120:0x455e, B:3123:0x456b, B:3124:0x4537, B:3127:0x4544, B:3128:0x450b, B:3131:0x4516, B:3140:0x442f), top: B:3139:0x442f }] */
-    /* JADX WARN: Removed duplicated region for block: B:3106:0x44f2 A[Catch: Exception -> 0x44ef, TryCatch #6 {Exception -> 0x44ef, blocks: (B:3078:0x4433, B:3081:0x443b, B:3084:0x4443, B:3087:0x4479, B:3090:0x44a0, B:3093:0x44c7, B:3094:0x44a9, B:3097:0x44b6, B:3098:0x4482, B:3101:0x448f, B:3102:0x445c, B:3105:0x4467, B:3106:0x44f2, B:3109:0x452e, B:3112:0x4555, B:3115:0x457c, B:3117:0x4583, B:3118:0x458f, B:3119:0x458a, B:3120:0x455e, B:3123:0x456b, B:3124:0x4537, B:3127:0x4544, B:3128:0x450b, B:3131:0x4516, B:3140:0x442f), top: B:3139:0x442f }] */
+    /* JADX WARN: Removed duplicated region for block: B:3078:0x4435 A[Catch: Exception -> 0x44f1, TryCatch #0 {Exception -> 0x44f1, blocks: (B:3078:0x4435, B:3081:0x443d, B:3084:0x4445, B:3087:0x447b, B:3090:0x44a2, B:3093:0x44c9, B:3094:0x44ab, B:3097:0x44b8, B:3098:0x4484, B:3101:0x4491, B:3102:0x445e, B:3105:0x4469, B:3106:0x44f4, B:3109:0x4530, B:3112:0x4557, B:3115:0x457e, B:3117:0x4585, B:3118:0x4591, B:3119:0x458c, B:3120:0x4560, B:3123:0x456d, B:3124:0x4539, B:3127:0x4546, B:3128:0x450d, B:3131:0x4518, B:3140:0x4431), top: B:3139:0x4431 }] */
+    /* JADX WARN: Removed duplicated region for block: B:3106:0x44f4 A[Catch: Exception -> 0x44f1, TryCatch #0 {Exception -> 0x44f1, blocks: (B:3078:0x4435, B:3081:0x443d, B:3084:0x4445, B:3087:0x447b, B:3090:0x44a2, B:3093:0x44c9, B:3094:0x44ab, B:3097:0x44b8, B:3098:0x4484, B:3101:0x4491, B:3102:0x445e, B:3105:0x4469, B:3106:0x44f4, B:3109:0x4530, B:3112:0x4557, B:3115:0x457e, B:3117:0x4585, B:3118:0x4591, B:3119:0x458c, B:3120:0x4560, B:3123:0x456d, B:3124:0x4539, B:3127:0x4546, B:3128:0x450d, B:3131:0x4518, B:3140:0x4431), top: B:3139:0x4431 }] */
     /* JADX WARN: Removed duplicated region for block: B:317:0x03a0  */
     /* JADX WARN: Removed duplicated region for block: B:325:0x03c1  */
     /* JADX WARN: Removed duplicated region for block: B:336:0x0428  */
-    /* JADX WARN: Removed duplicated region for block: B:3391:0x0e77  */
-    /* JADX WARN: Removed duplicated region for block: B:3394:0x0e81  */
+    /* JADX WARN: Removed duplicated region for block: B:3391:0x0e79  */
+    /* JADX WARN: Removed duplicated region for block: B:3394:0x0e83  */
     /* JADX WARN: Removed duplicated region for block: B:339:0x0441  */
-    /* JADX WARN: Removed duplicated region for block: B:3447:0x0ffe A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:3450:0x100e  */
-    /* JADX WARN: Removed duplicated region for block: B:3455:0x102b  */
-    /* JADX WARN: Removed duplicated region for block: B:3459:0x1053  */
-    /* JADX WARN: Removed duplicated region for block: B:3466:0x106f  */
-    /* JADX WARN: Removed duplicated region for block: B:3469:0x10a5  */
-    /* JADX WARN: Removed duplicated region for block: B:3472:0x10cc  */
-    /* JADX WARN: Removed duplicated region for block: B:3475:0x10d7  */
-    /* JADX WARN: Removed duplicated region for block: B:3478:0x10e6  */
-    /* JADX WARN: Removed duplicated region for block: B:3481:0x10ed  */
+    /* JADX WARN: Removed duplicated region for block: B:3447:0x1000 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:3450:0x1010  */
+    /* JADX WARN: Removed duplicated region for block: B:3455:0x102d  */
+    /* JADX WARN: Removed duplicated region for block: B:3459:0x1055  */
+    /* JADX WARN: Removed duplicated region for block: B:3466:0x1071  */
+    /* JADX WARN: Removed duplicated region for block: B:3469:0x10a7  */
+    /* JADX WARN: Removed duplicated region for block: B:3472:0x10ce  */
+    /* JADX WARN: Removed duplicated region for block: B:3475:0x10d9  */
+    /* JADX WARN: Removed duplicated region for block: B:3478:0x10e8  */
+    /* JADX WARN: Removed duplicated region for block: B:3481:0x10ef  */
     /* JADX WARN: Removed duplicated region for block: B:348:0x045d  */
-    /* JADX WARN: Removed duplicated region for block: B:3494:0x1149  */
-    /* JADX WARN: Removed duplicated region for block: B:3506:0x1182  */
-    /* JADX WARN: Removed duplicated region for block: B:3513:0x1407  */
-    /* JADX WARN: Removed duplicated region for block: B:3521:0x1431  */
-    /* JADX WARN: Removed duplicated region for block: B:3567:0x154f A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:3571:0x157f  */
-    /* JADX WARN: Removed duplicated region for block: B:3578:0x1657  */
-    /* JADX WARN: Removed duplicated region for block: B:3582:0x1673  */
-    /* JADX WARN: Removed duplicated region for block: B:3585:0x16e5  */
-    /* JADX WARN: Removed duplicated region for block: B:3595:0x1706 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:3494:0x114b  */
+    /* JADX WARN: Removed duplicated region for block: B:3506:0x1184  */
+    /* JADX WARN: Removed duplicated region for block: B:3513:0x1409  */
+    /* JADX WARN: Removed duplicated region for block: B:3521:0x1433  */
+    /* JADX WARN: Removed duplicated region for block: B:3567:0x1551 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:3571:0x1581  */
+    /* JADX WARN: Removed duplicated region for block: B:3578:0x1659  */
+    /* JADX WARN: Removed duplicated region for block: B:3582:0x1675  */
+    /* JADX WARN: Removed duplicated region for block: B:3585:0x16e7  */
+    /* JADX WARN: Removed duplicated region for block: B:3595:0x1708 A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:359:0x049d  */
-    /* JADX WARN: Removed duplicated region for block: B:3605:0x179f  */
-    /* JADX WARN: Removed duplicated region for block: B:3608:0x17aa  */
-    /* JADX WARN: Removed duplicated region for block: B:3620:0x2fb4  */
-    /* JADX WARN: Removed duplicated region for block: B:3631:0x2ffc  */
-    /* JADX WARN: Removed duplicated region for block: B:3639:0x3037  */
-    /* JADX WARN: Removed duplicated region for block: B:3642:0x3054  */
-    /* JADX WARN: Removed duplicated region for block: B:3645:0x3063  */
-    /* JADX WARN: Removed duplicated region for block: B:3648:0x3094  */
-    /* JADX WARN: Removed duplicated region for block: B:3651:0x30ac  */
-    /* JADX WARN: Removed duplicated region for block: B:3655:0x30f4  */
-    /* JADX WARN: Removed duplicated region for block: B:3658:0x310a  */
-    /* JADX WARN: Removed duplicated region for block: B:3661:0x3114  */
-    /* JADX WARN: Removed duplicated region for block: B:3670:0x313b  */
-    /* JADX WARN: Removed duplicated region for block: B:3673:0x3199  */
-    /* JADX WARN: Removed duplicated region for block: B:3701:0x3204  */
-    /* JADX WARN: Removed duplicated region for block: B:3706:0x323a  */
-    /* JADX WARN: Removed duplicated region for block: B:3714:0x3260  */
-    /* JADX WARN: Removed duplicated region for block: B:3718:0x3245  */
-    /* JADX WARN: Removed duplicated region for block: B:3720:0x313d  */
-    /* JADX WARN: Removed duplicated region for block: B:3740:0x30f6  */
-    /* JADX WARN: Removed duplicated region for block: B:3743:0x30b9  */
-    /* JADX WARN: Removed duplicated region for block: B:3755:0x3066  */
-    /* JADX WARN: Removed duplicated region for block: B:3765:0x3012  */
-    /* JADX WARN: Removed duplicated region for block: B:3955:0x1d6d  */
-    /* JADX WARN: Removed duplicated region for block: B:395:0x05c5  */
-    /* JADX WARN: Removed duplicated region for block: B:3966:0x17a2  */
-    /* JADX WARN: Removed duplicated region for block: B:3967:0x171c  */
-    /* JADX WARN: Removed duplicated region for block: B:3975:0x173c  */
-    /* JADX WARN: Removed duplicated region for block: B:4003:0x16f6 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:4008:0x1689  */
-    /* JADX WARN: Removed duplicated region for block: B:400:0x05e0  */
-    /* JADX WARN: Removed duplicated region for block: B:4021:0x159f A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:4029:0x15f5  */
-    /* JADX WARN: Removed duplicated region for block: B:4036:0x15e0  */
-    /* JADX WARN: Removed duplicated region for block: B:4037:0x1551  */
-    /* JADX WARN: Removed duplicated region for block: B:4044:0x156a  */
-    /* JADX WARN: Removed duplicated region for block: B:4046:0x1418  */
-    /* JADX WARN: Removed duplicated region for block: B:4049:0x1332 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:406:0x062a  */
-    /* JADX WARN: Removed duplicated region for block: B:4098:0x118e  */
-    /* JADX WARN: Removed duplicated region for block: B:4145:0x123c  */
-    /* JADX WARN: Removed duplicated region for block: B:4154:0x129a  */
-    /* JADX WARN: Removed duplicated region for block: B:4157:0x12a7  */
-    /* JADX WARN: Removed duplicated region for block: B:4162:0x12c6  */
-    /* JADX WARN: Removed duplicated region for block: B:4172:0x12e1  */
-    /* JADX WARN: Removed duplicated region for block: B:4176:0x1e5d  */
-    /* JADX WARN: Removed duplicated region for block: B:417:0x064d  */
-    /* JADX WARN: Removed duplicated region for block: B:420:0x06b3  */
-    /* JADX WARN: Removed duplicated region for block: B:426:0x06d7 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:4275:0x1314  */
-    /* JADX WARN: Removed duplicated region for block: B:4280:0x131f  */
-    /* JADX WARN: Removed duplicated region for block: B:4283:0x129c  */
-    /* JADX WARN: Removed duplicated region for block: B:4289:0x127d  */
-    /* JADX WARN: Removed duplicated region for block: B:4290:0x1283  */
-    /* JADX WARN: Removed duplicated region for block: B:4291:0x1248  */
-    /* JADX WARN: Removed duplicated region for block: B:4300:0x1125  */
-    /* JADX WARN: Removed duplicated region for block: B:4305:0x10d9  */
-    /* JADX WARN: Removed duplicated region for block: B:4306:0x10cf  */
-    /* JADX WARN: Removed duplicated region for block: B:4307:0x1077  */
-    /* JADX WARN: Removed duplicated region for block: B:4325:0x0faf  */
-    /* JADX WARN: Removed duplicated region for block: B:434:0x0759  */
-    /* JADX WARN: Removed duplicated region for block: B:4363:0x0efb  */
-    /* JADX WARN: Removed duplicated region for block: B:437:0x0766  */
-    /* JADX WARN: Removed duplicated region for block: B:442:0x0776  */
-    /* JADX WARN: Removed duplicated region for block: B:4446:0x21eb  */
-    /* JADX WARN: Removed duplicated region for block: B:4449:0x2200  */
-    /* JADX WARN: Removed duplicated region for block: B:445:0x077e  */
-    /* JADX WARN: Removed duplicated region for block: B:4467:0x243a  */
-    /* JADX WARN: Removed duplicated region for block: B:4471:0x25ba  */
-    /* JADX WARN: Removed duplicated region for block: B:4474:0x2616  */
-    /* JADX WARN: Removed duplicated region for block: B:4484:0x25bc  */
-    /* JADX WARN: Removed duplicated region for block: B:448:0x0793  */
-    /* JADX WARN: Removed duplicated region for block: B:4495:0x2463  */
-    /* JADX WARN: Removed duplicated region for block: B:4534:0x2426  */
-    /* JADX WARN: Removed duplicated region for block: B:4559:0x238b  */
-    /* JADX WARN: Removed duplicated region for block: B:456:0x07c0 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:4572:0x21ee  */
+    /* JADX WARN: Removed duplicated region for block: B:3605:0x17a1  */
+    /* JADX WARN: Removed duplicated region for block: B:3608:0x17ac  */
+    /* JADX WARN: Removed duplicated region for block: B:3620:0x2fb6  */
+    /* JADX WARN: Removed duplicated region for block: B:3631:0x2ffe  */
+    /* JADX WARN: Removed duplicated region for block: B:3639:0x3039  */
+    /* JADX WARN: Removed duplicated region for block: B:3642:0x3056  */
+    /* JADX WARN: Removed duplicated region for block: B:3645:0x3065  */
+    /* JADX WARN: Removed duplicated region for block: B:3648:0x3096  */
+    /* JADX WARN: Removed duplicated region for block: B:3651:0x30ae  */
+    /* JADX WARN: Removed duplicated region for block: B:3655:0x30f6  */
+    /* JADX WARN: Removed duplicated region for block: B:3658:0x310c  */
+    /* JADX WARN: Removed duplicated region for block: B:3661:0x3116  */
+    /* JADX WARN: Removed duplicated region for block: B:3670:0x313d  */
+    /* JADX WARN: Removed duplicated region for block: B:3673:0x319b  */
+    /* JADX WARN: Removed duplicated region for block: B:3701:0x3206  */
+    /* JADX WARN: Removed duplicated region for block: B:3706:0x323c  */
+    /* JADX WARN: Removed duplicated region for block: B:3714:0x3262  */
+    /* JADX WARN: Removed duplicated region for block: B:3718:0x3247  */
+    /* JADX WARN: Removed duplicated region for block: B:3720:0x313f  */
+    /* JADX WARN: Removed duplicated region for block: B:3740:0x30f8  */
+    /* JADX WARN: Removed duplicated region for block: B:3743:0x30bb  */
+    /* JADX WARN: Removed duplicated region for block: B:3755:0x3068  */
+    /* JADX WARN: Removed duplicated region for block: B:3765:0x3014  */
+    /* JADX WARN: Removed duplicated region for block: B:3955:0x1d6f  */
+    /* JADX WARN: Removed duplicated region for block: B:395:0x05c7  */
+    /* JADX WARN: Removed duplicated region for block: B:3966:0x17a4  */
+    /* JADX WARN: Removed duplicated region for block: B:3967:0x171e  */
+    /* JADX WARN: Removed duplicated region for block: B:3975:0x173e  */
+    /* JADX WARN: Removed duplicated region for block: B:4003:0x16f8 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:4008:0x168b  */
+    /* JADX WARN: Removed duplicated region for block: B:400:0x05e2  */
+    /* JADX WARN: Removed duplicated region for block: B:4021:0x15a1 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:4029:0x15f7  */
+    /* JADX WARN: Removed duplicated region for block: B:4036:0x15e2  */
+    /* JADX WARN: Removed duplicated region for block: B:4037:0x1553  */
+    /* JADX WARN: Removed duplicated region for block: B:4044:0x156c  */
+    /* JADX WARN: Removed duplicated region for block: B:4046:0x141a  */
+    /* JADX WARN: Removed duplicated region for block: B:4049:0x1334 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:406:0x062c  */
+    /* JADX WARN: Removed duplicated region for block: B:4098:0x1190  */
+    /* JADX WARN: Removed duplicated region for block: B:4145:0x123e  */
+    /* JADX WARN: Removed duplicated region for block: B:4154:0x129c  */
+    /* JADX WARN: Removed duplicated region for block: B:4157:0x12a9  */
+    /* JADX WARN: Removed duplicated region for block: B:4162:0x12c8  */
+    /* JADX WARN: Removed duplicated region for block: B:4172:0x12e3  */
+    /* JADX WARN: Removed duplicated region for block: B:4176:0x1e5f  */
+    /* JADX WARN: Removed duplicated region for block: B:417:0x064f  */
+    /* JADX WARN: Removed duplicated region for block: B:420:0x06b5  */
+    /* JADX WARN: Removed duplicated region for block: B:426:0x06d9 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:4275:0x1316  */
+    /* JADX WARN: Removed duplicated region for block: B:4280:0x1321  */
+    /* JADX WARN: Removed duplicated region for block: B:4283:0x129e  */
+    /* JADX WARN: Removed duplicated region for block: B:4289:0x127f  */
+    /* JADX WARN: Removed duplicated region for block: B:4290:0x1285  */
+    /* JADX WARN: Removed duplicated region for block: B:4291:0x124a  */
+    /* JADX WARN: Removed duplicated region for block: B:4300:0x1127  */
+    /* JADX WARN: Removed duplicated region for block: B:4305:0x10db  */
+    /* JADX WARN: Removed duplicated region for block: B:4306:0x10d1  */
+    /* JADX WARN: Removed duplicated region for block: B:4307:0x1079  */
+    /* JADX WARN: Removed duplicated region for block: B:4325:0x0fb1  */
+    /* JADX WARN: Removed duplicated region for block: B:434:0x075b  */
+    /* JADX WARN: Removed duplicated region for block: B:4363:0x0efd  */
+    /* JADX WARN: Removed duplicated region for block: B:437:0x0768  */
+    /* JADX WARN: Removed duplicated region for block: B:442:0x0778  */
+    /* JADX WARN: Removed duplicated region for block: B:4446:0x21ed  */
+    /* JADX WARN: Removed duplicated region for block: B:4449:0x2202  */
+    /* JADX WARN: Removed duplicated region for block: B:445:0x0780  */
+    /* JADX WARN: Removed duplicated region for block: B:4467:0x243c  */
+    /* JADX WARN: Removed duplicated region for block: B:4471:0x25bc  */
+    /* JADX WARN: Removed duplicated region for block: B:4474:0x2618  */
+    /* JADX WARN: Removed duplicated region for block: B:4484:0x25be  */
+    /* JADX WARN: Removed duplicated region for block: B:448:0x0795  */
+    /* JADX WARN: Removed duplicated region for block: B:4495:0x2465  */
+    /* JADX WARN: Removed duplicated region for block: B:4534:0x2428  */
+    /* JADX WARN: Removed duplicated region for block: B:4559:0x238d  */
+    /* JADX WARN: Removed duplicated region for block: B:456:0x07c2 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:4572:0x21f0  */
     /* JADX WARN: Removed duplicated region for block: B:45:0x00fb  */
-    /* JADX WARN: Removed duplicated region for block: B:4609:0x2744  */
-    /* JADX WARN: Removed duplicated region for block: B:4625:0x2bc3  */
-    /* JADX WARN: Removed duplicated region for block: B:4628:0x2bee  */
-    /* JADX WARN: Removed duplicated region for block: B:4639:0x2c32  */
-    /* JADX WARN: Removed duplicated region for block: B:463:0x082c  */
-    /* JADX WARN: Removed duplicated region for block: B:4641:0x2c35  */
-    /* JADX WARN: Removed duplicated region for block: B:4644:0x2c4f  */
-    /* JADX WARN: Removed duplicated region for block: B:4659:0x2d19  */
-    /* JADX WARN: Removed duplicated region for block: B:4673:0x2cb9  */
-    /* JADX WARN: Removed duplicated region for block: B:4674:0x2bcf  */
-    /* JADX WARN: Removed duplicated region for block: B:470:0x083f  */
-    /* JADX WARN: Removed duplicated region for block: B:4733:0x299e  */
-    /* JADX WARN: Removed duplicated region for block: B:478:0x0866  */
+    /* JADX WARN: Removed duplicated region for block: B:4609:0x2746  */
+    /* JADX WARN: Removed duplicated region for block: B:4625:0x2bc5  */
+    /* JADX WARN: Removed duplicated region for block: B:4628:0x2bf0  */
+    /* JADX WARN: Removed duplicated region for block: B:4639:0x2c34  */
+    /* JADX WARN: Removed duplicated region for block: B:463:0x082e  */
+    /* JADX WARN: Removed duplicated region for block: B:4641:0x2c37  */
+    /* JADX WARN: Removed duplicated region for block: B:4644:0x2c51  */
+    /* JADX WARN: Removed duplicated region for block: B:4659:0x2d1b  */
+    /* JADX WARN: Removed duplicated region for block: B:4673:0x2cbb  */
+    /* JADX WARN: Removed duplicated region for block: B:4674:0x2bd1  */
+    /* JADX WARN: Removed duplicated region for block: B:470:0x0841  */
+    /* JADX WARN: Removed duplicated region for block: B:4733:0x29a0  */
+    /* JADX WARN: Removed duplicated region for block: B:478:0x0868  */
     /* JADX WARN: Removed duplicated region for block: B:47:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:480:0x089a  */
-    /* JADX WARN: Removed duplicated region for block: B:489:0x08b8  */
-    /* JADX WARN: Removed duplicated region for block: B:4939:0x332d  */
-    /* JADX WARN: Removed duplicated region for block: B:4942:0x335d  */
-    /* JADX WARN: Removed duplicated region for block: B:4947:0x3388  */
-    /* JADX WARN: Removed duplicated region for block: B:494:0x08df A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:4950:0x3393  */
-    /* JADX WARN: Removed duplicated region for block: B:4959:0x34a3  */
-    /* JADX WARN: Removed duplicated region for block: B:4964:0x34c4  */
-    /* JADX WARN: Removed duplicated region for block: B:4967:0x34e9  */
-    /* JADX WARN: Removed duplicated region for block: B:4970:0x3502  */
-    /* JADX WARN: Removed duplicated region for block: B:4976:0x3518  */
-    /* JADX WARN: Removed duplicated region for block: B:4979:0x3534  */
-    /* JADX WARN: Removed duplicated region for block: B:4982:0x3542  */
-    /* JADX WARN: Removed duplicated region for block: B:4985:0x3553  */
-    /* JADX WARN: Removed duplicated region for block: B:5005:0x35cc  */
-    /* JADX WARN: Removed duplicated region for block: B:5012:0x35e3  */
-    /* JADX WARN: Removed duplicated region for block: B:5016:0x35f0  */
-    /* JADX WARN: Removed duplicated region for block: B:5018:0x35f2  */
-    /* JADX WARN: Removed duplicated region for block: B:5021:0x35ff  */
-    /* JADX WARN: Removed duplicated region for block: B:5024:0x3626  */
-    /* JADX WARN: Removed duplicated region for block: B:5035:0x3649  */
-    /* JADX WARN: Removed duplicated region for block: B:5039:0x360f  */
-    /* JADX WARN: Removed duplicated region for block: B:5041:0x33c6 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:504:0x0b46  */
-    /* JADX WARN: Removed duplicated region for block: B:5086:0x33a7  */
-    /* JADX WARN: Removed duplicated region for block: B:5087:0x3395  */
-    /* JADX WARN: Removed duplicated region for block: B:5088:0x338b  */
-    /* JADX WARN: Removed duplicated region for block: B:512:0x67a3  */
-    /* JADX WARN: Removed duplicated region for block: B:516:0x67b5  */
-    /* JADX WARN: Removed duplicated region for block: B:521:0x6aa7  */
-    /* JADX WARN: Removed duplicated region for block: B:5286:0x3afb  */
-    /* JADX WARN: Removed duplicated region for block: B:5289:0x3b11  */
-    /* JADX WARN: Removed duplicated region for block: B:530:0x6b28 A[Catch: Exception -> 0x6b26, TRY_LEAVE, TryCatch #11 {Exception -> 0x6b26, blocks: (B:527:0x6ad7, B:528:0x6b06, B:533:0x6b0e, B:530:0x6b28), top: B:526:0x6ad7 }] */
-    /* JADX WARN: Removed duplicated region for block: B:5315:0x3c42  */
-    /* JADX WARN: Removed duplicated region for block: B:5318:0x3c50  */
-    /* JADX WARN: Removed duplicated region for block: B:5324:0x3c62  */
-    /* JADX WARN: Removed duplicated region for block: B:5329:0x3c96  */
-    /* JADX WARN: Removed duplicated region for block: B:5333:0x3cc0  */
-    /* JADX WARN: Removed duplicated region for block: B:5343:0x3b76  */
-    /* JADX WARN: Removed duplicated region for block: B:5344:0x3b79  */
-    /* JADX WARN: Removed duplicated region for block: B:5349:0x3b5a  */
-    /* JADX WARN: Removed duplicated region for block: B:5350:0x3b04  */
-    /* JADX WARN: Removed duplicated region for block: B:538:0x6b45  */
-    /* JADX WARN: Removed duplicated region for block: B:542:0x6b97 A[Catch: Exception -> 0x6b95, TryCatch #21 {Exception -> 0x6b95, blocks: (B:536:0x6b3f, B:539:0x6b4f, B:540:0x6b86, B:565:0x6b91, B:542:0x6b97, B:547:0x6ba8, B:549:0x6bac, B:550:0x6bb4, B:567:0x6b46), top: B:535:0x6b3f }] */
-    /* JADX WARN: Removed duplicated region for block: B:5451:0x091a  */
-    /* JADX WARN: Removed duplicated region for block: B:5455:0x0974  */
-    /* JADX WARN: Removed duplicated region for block: B:5458:0x0985  */
-    /* JADX WARN: Removed duplicated region for block: B:5485:0x0a91  */
-    /* JADX WARN: Removed duplicated region for block: B:5488:0x0a94  */
-    /* JADX WARN: Removed duplicated region for block: B:5499:0x0af2  */
-    /* JADX WARN: Removed duplicated region for block: B:5505:0x0afe  */
-    /* JADX WARN: Removed duplicated region for block: B:5507:0x0b05  */
-    /* JADX WARN: Removed duplicated region for block: B:5520:0x0aa5  */
-    /* JADX WARN: Removed duplicated region for block: B:5528:0x0966  */
-    /* JADX WARN: Removed duplicated region for block: B:5530:0x0968  */
-    /* JADX WARN: Removed duplicated region for block: B:5531:0x0926 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:5538:0x086e  */
-    /* JADX WARN: Removed duplicated region for block: B:553:0x6b90  */
-    /* JADX WARN: Removed duplicated region for block: B:5551:0x081a  */
-    /* JADX WARN: Removed duplicated region for block: B:5560:0x07d5 A[LOOP:41: B:5558:0x07cf->B:5560:0x07d5, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:5563:0x0780  */
-    /* JADX WARN: Removed duplicated region for block: B:5565:0x06ee  */
-    /* JADX WARN: Removed duplicated region for block: B:5571:0x06be  */
-    /* JADX WARN: Removed duplicated region for block: B:5572:0x064f  */
-    /* JADX WARN: Removed duplicated region for block: B:5573:0x0617  */
+    /* JADX WARN: Removed duplicated region for block: B:480:0x089c  */
+    /* JADX WARN: Removed duplicated region for block: B:489:0x08ba  */
+    /* JADX WARN: Removed duplicated region for block: B:4939:0x332f  */
+    /* JADX WARN: Removed duplicated region for block: B:4942:0x335f  */
+    /* JADX WARN: Removed duplicated region for block: B:4947:0x338a  */
+    /* JADX WARN: Removed duplicated region for block: B:494:0x08e1 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:4950:0x3395  */
+    /* JADX WARN: Removed duplicated region for block: B:4959:0x34a5  */
+    /* JADX WARN: Removed duplicated region for block: B:4964:0x34c6  */
+    /* JADX WARN: Removed duplicated region for block: B:4967:0x34eb  */
+    /* JADX WARN: Removed duplicated region for block: B:4970:0x3504  */
+    /* JADX WARN: Removed duplicated region for block: B:4976:0x351a  */
+    /* JADX WARN: Removed duplicated region for block: B:4979:0x3536  */
+    /* JADX WARN: Removed duplicated region for block: B:4982:0x3544  */
+    /* JADX WARN: Removed duplicated region for block: B:4985:0x3555  */
+    /* JADX WARN: Removed duplicated region for block: B:5005:0x35ce  */
+    /* JADX WARN: Removed duplicated region for block: B:5012:0x35e5  */
+    /* JADX WARN: Removed duplicated region for block: B:5016:0x35f2  */
+    /* JADX WARN: Removed duplicated region for block: B:5018:0x35f4  */
+    /* JADX WARN: Removed duplicated region for block: B:5021:0x3601  */
+    /* JADX WARN: Removed duplicated region for block: B:5024:0x3628  */
+    /* JADX WARN: Removed duplicated region for block: B:5035:0x364b  */
+    /* JADX WARN: Removed duplicated region for block: B:5039:0x3611  */
+    /* JADX WARN: Removed duplicated region for block: B:5041:0x33c8 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:504:0x0b48  */
+    /* JADX WARN: Removed duplicated region for block: B:5086:0x33a9  */
+    /* JADX WARN: Removed duplicated region for block: B:5087:0x3397  */
+    /* JADX WARN: Removed duplicated region for block: B:5088:0x338d  */
+    /* JADX WARN: Removed duplicated region for block: B:512:0x67a5  */
+    /* JADX WARN: Removed duplicated region for block: B:516:0x67b7  */
+    /* JADX WARN: Removed duplicated region for block: B:521:0x6aa9  */
+    /* JADX WARN: Removed duplicated region for block: B:5286:0x3afd  */
+    /* JADX WARN: Removed duplicated region for block: B:5289:0x3b13  */
+    /* JADX WARN: Removed duplicated region for block: B:530:0x6b2a A[Catch: Exception -> 0x6b28, TRY_LEAVE, TryCatch #10 {Exception -> 0x6b28, blocks: (B:527:0x6ad9, B:528:0x6b08, B:533:0x6b10, B:530:0x6b2a), top: B:526:0x6ad9 }] */
+    /* JADX WARN: Removed duplicated region for block: B:5315:0x3c44  */
+    /* JADX WARN: Removed duplicated region for block: B:5318:0x3c52  */
+    /* JADX WARN: Removed duplicated region for block: B:5324:0x3c64  */
+    /* JADX WARN: Removed duplicated region for block: B:5329:0x3c98  */
+    /* JADX WARN: Removed duplicated region for block: B:5333:0x3cc2  */
+    /* JADX WARN: Removed duplicated region for block: B:5343:0x3b78  */
+    /* JADX WARN: Removed duplicated region for block: B:5344:0x3b7b  */
+    /* JADX WARN: Removed duplicated region for block: B:5349:0x3b5c  */
+    /* JADX WARN: Removed duplicated region for block: B:5350:0x3b06  */
+    /* JADX WARN: Removed duplicated region for block: B:538:0x6b47  */
+    /* JADX WARN: Removed duplicated region for block: B:542:0x6b99 A[Catch: Exception -> 0x6b97, TryCatch #22 {Exception -> 0x6b97, blocks: (B:536:0x6b41, B:539:0x6b51, B:540:0x6b88, B:565:0x6b93, B:542:0x6b99, B:547:0x6baa, B:549:0x6bae, B:550:0x6bb6, B:567:0x6b48), top: B:535:0x6b41 }] */
+    /* JADX WARN: Removed duplicated region for block: B:5451:0x091c  */
+    /* JADX WARN: Removed duplicated region for block: B:5455:0x0976  */
+    /* JADX WARN: Removed duplicated region for block: B:5458:0x0987  */
+    /* JADX WARN: Removed duplicated region for block: B:5485:0x0a93  */
+    /* JADX WARN: Removed duplicated region for block: B:5488:0x0a96  */
+    /* JADX WARN: Removed duplicated region for block: B:5499:0x0af4  */
+    /* JADX WARN: Removed duplicated region for block: B:5505:0x0b00  */
+    /* JADX WARN: Removed duplicated region for block: B:5507:0x0b07  */
+    /* JADX WARN: Removed duplicated region for block: B:5520:0x0aa7  */
+    /* JADX WARN: Removed duplicated region for block: B:5528:0x0968  */
+    /* JADX WARN: Removed duplicated region for block: B:5530:0x096a  */
+    /* JADX WARN: Removed duplicated region for block: B:5531:0x0928 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:5538:0x0870  */
+    /* JADX WARN: Removed duplicated region for block: B:553:0x6b92  */
+    /* JADX WARN: Removed duplicated region for block: B:5551:0x081c  */
+    /* JADX WARN: Removed duplicated region for block: B:5560:0x07d7 A[LOOP:41: B:5558:0x07d1->B:5560:0x07d7, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:5563:0x0782  */
+    /* JADX WARN: Removed duplicated region for block: B:5565:0x06f0  */
+    /* JADX WARN: Removed duplicated region for block: B:5571:0x06c0  */
+    /* JADX WARN: Removed duplicated region for block: B:5572:0x0651  */
+    /* JADX WARN: Removed duplicated region for block: B:5573:0x0619  */
     /* JADX WARN: Removed duplicated region for block: B:5612:0x0565  */
     /* JADX WARN: Removed duplicated region for block: B:5615:0x0475  */
-    /* JADX WARN: Removed duplicated region for block: B:561:0x6be0  */
+    /* JADX WARN: Removed duplicated region for block: B:561:0x6be2  */
     /* JADX WARN: Removed duplicated region for block: B:5622:0x042a  */
     /* JADX WARN: Removed duplicated region for block: B:5627:0x035e  */
     /* JADX WARN: Removed duplicated region for block: B:5631:0x037b  */
@@ -8331,60 +8354,60 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
     /* JADX WARN: Removed duplicated region for block: B:5637:0x01ae  */
     /* JADX WARN: Removed duplicated region for block: B:5641:0x018a  */
     /* JADX WARN: Removed duplicated region for block: B:5644:0x00fd  */
-    /* JADX WARN: Removed duplicated region for block: B:565:0x6b91 A[Catch: Exception -> 0x6b95, TryCatch #21 {Exception -> 0x6b95, blocks: (B:536:0x6b3f, B:539:0x6b4f, B:540:0x6b86, B:565:0x6b91, B:542:0x6b97, B:547:0x6ba8, B:549:0x6bac, B:550:0x6bb4, B:567:0x6b46), top: B:535:0x6b3f }] */
-    /* JADX WARN: Removed duplicated region for block: B:567:0x6b46 A[Catch: Exception -> 0x6b95, TryCatch #21 {Exception -> 0x6b95, blocks: (B:536:0x6b3f, B:539:0x6b4f, B:540:0x6b86, B:565:0x6b91, B:542:0x6b97, B:547:0x6ba8, B:549:0x6bac, B:550:0x6bb4, B:567:0x6b46), top: B:535:0x6b3f }] */
-    /* JADX WARN: Removed duplicated region for block: B:578:0x78b5  */
+    /* JADX WARN: Removed duplicated region for block: B:565:0x6b93 A[Catch: Exception -> 0x6b97, TryCatch #22 {Exception -> 0x6b97, blocks: (B:536:0x6b41, B:539:0x6b51, B:540:0x6b88, B:565:0x6b93, B:542:0x6b99, B:547:0x6baa, B:549:0x6bae, B:550:0x6bb6, B:567:0x6b48), top: B:535:0x6b41 }] */
+    /* JADX WARN: Removed duplicated region for block: B:567:0x6b48 A[Catch: Exception -> 0x6b97, TryCatch #22 {Exception -> 0x6b97, blocks: (B:536:0x6b41, B:539:0x6b51, B:540:0x6b88, B:565:0x6b93, B:542:0x6b99, B:547:0x6baa, B:549:0x6bae, B:550:0x6bb6, B:567:0x6b48), top: B:535:0x6b41 }] */
+    /* JADX WARN: Removed duplicated region for block: B:578:0x78b7  */
     /* JADX WARN: Removed duplicated region for block: B:58:0x0127  */
-    /* JADX WARN: Removed duplicated region for block: B:590:0x6c1d  */
-    /* JADX WARN: Removed duplicated region for block: B:600:0x6c3f  */
-    /* JADX WARN: Removed duplicated region for block: B:608:0x6d4c  */
-    /* JADX WARN: Removed duplicated region for block: B:615:0x6d6a  */
-    /* JADX WARN: Removed duplicated region for block: B:619:0x6d77  */
-    /* JADX WARN: Removed duplicated region for block: B:622:0x6d7a  */
-    /* JADX WARN: Removed duplicated region for block: B:625:0x6d8e  */
-    /* JADX WARN: Removed duplicated region for block: B:630:0x6dca  */
-    /* JADX WARN: Removed duplicated region for block: B:641:0x6dfb  */
-    /* JADX WARN: Removed duplicated region for block: B:651:0x6e36  */
-    /* JADX WARN: Removed duplicated region for block: B:654:0x6e45  */
-    /* JADX WARN: Removed duplicated region for block: B:657:0x6e96  */
-    /* JADX WARN: Removed duplicated region for block: B:719:0x6f54  */
-    /* JADX WARN: Removed duplicated region for block: B:720:0x6f56  */
-    /* JADX WARN: Removed duplicated region for block: B:729:0x6f6e  */
-    /* JADX WARN: Removed duplicated region for block: B:730:0x6f70  */
-    /* JADX WARN: Removed duplicated region for block: B:747:0x6fa8  */
-    /* JADX WARN: Removed duplicated region for block: B:749:0x6fae  */
-    /* JADX WARN: Removed duplicated region for block: B:760:0x6fbf  */
-    /* JADX WARN: Removed duplicated region for block: B:765:0x6fd4  */
-    /* JADX WARN: Removed duplicated region for block: B:770:0x6fe4  */
-    /* JADX WARN: Removed duplicated region for block: B:781:0x728f  */
-    /* JADX WARN: Removed duplicated region for block: B:791:0x72c4  */
+    /* JADX WARN: Removed duplicated region for block: B:590:0x6c1f  */
+    /* JADX WARN: Removed duplicated region for block: B:600:0x6c41  */
+    /* JADX WARN: Removed duplicated region for block: B:608:0x6d4e  */
+    /* JADX WARN: Removed duplicated region for block: B:615:0x6d6c  */
+    /* JADX WARN: Removed duplicated region for block: B:619:0x6d79  */
+    /* JADX WARN: Removed duplicated region for block: B:622:0x6d7c  */
+    /* JADX WARN: Removed duplicated region for block: B:625:0x6d90  */
+    /* JADX WARN: Removed duplicated region for block: B:630:0x6dcc  */
+    /* JADX WARN: Removed duplicated region for block: B:641:0x6dfd  */
+    /* JADX WARN: Removed duplicated region for block: B:651:0x6e38  */
+    /* JADX WARN: Removed duplicated region for block: B:654:0x6e47  */
+    /* JADX WARN: Removed duplicated region for block: B:657:0x6e98  */
+    /* JADX WARN: Removed duplicated region for block: B:719:0x6f56  */
+    /* JADX WARN: Removed duplicated region for block: B:720:0x6f58  */
+    /* JADX WARN: Removed duplicated region for block: B:729:0x6f70  */
+    /* JADX WARN: Removed duplicated region for block: B:730:0x6f72  */
+    /* JADX WARN: Removed duplicated region for block: B:747:0x6faa  */
+    /* JADX WARN: Removed duplicated region for block: B:749:0x6fb0  */
+    /* JADX WARN: Removed duplicated region for block: B:760:0x6fc1  */
+    /* JADX WARN: Removed duplicated region for block: B:765:0x6fd6  */
+    /* JADX WARN: Removed duplicated region for block: B:770:0x6fe6  */
+    /* JADX WARN: Removed duplicated region for block: B:781:0x7291  */
+    /* JADX WARN: Removed duplicated region for block: B:791:0x72c6  */
     /* JADX WARN: Removed duplicated region for block: B:79:0x0163  */
-    /* JADX WARN: Removed duplicated region for block: B:805:0x72fe  */
-    /* JADX WARN: Removed duplicated region for block: B:808:0x731c  */
-    /* JADX WARN: Removed duplicated region for block: B:813:0x7340  */
-    /* JADX WARN: Removed duplicated region for block: B:817:0x7361  */
-    /* JADX WARN: Removed duplicated region for block: B:828:0x7384  */
-    /* JADX WARN: Removed duplicated region for block: B:833:0x7327  */
-    /* JADX WARN: Removed duplicated region for block: B:838:0x72e8  */
-    /* JADX WARN: Removed duplicated region for block: B:839:0x7165  */
+    /* JADX WARN: Removed duplicated region for block: B:805:0x7300  */
+    /* JADX WARN: Removed duplicated region for block: B:808:0x731e  */
+    /* JADX WARN: Removed duplicated region for block: B:813:0x7342  */
+    /* JADX WARN: Removed duplicated region for block: B:817:0x7363  */
+    /* JADX WARN: Removed duplicated region for block: B:828:0x7386  */
+    /* JADX WARN: Removed duplicated region for block: B:833:0x7329  */
+    /* JADX WARN: Removed duplicated region for block: B:838:0x72ea  */
+    /* JADX WARN: Removed duplicated region for block: B:839:0x7167  */
     /* JADX WARN: Removed duplicated region for block: B:83:0x0172  */
-    /* JADX WARN: Removed duplicated region for block: B:858:0x7040  */
+    /* JADX WARN: Removed duplicated region for block: B:858:0x7042  */
     /* JADX WARN: Removed duplicated region for block: B:87:0x0186  */
-    /* JADX WARN: Removed duplicated region for block: B:888:0x6ff2  */
-    /* JADX WARN: Removed duplicated region for block: B:895:0x7005  */
-    /* JADX WARN: Removed duplicated region for block: B:913:0x6e4b  */
-    /* JADX WARN: Removed duplicated region for block: B:921:0x6d94  */
-    /* JADX WARN: Removed duplicated region for block: B:930:0x6db2  */
-    /* JADX WARN: Removed duplicated region for block: B:931:0x6c6a  */
-    /* JADX WARN: Removed duplicated region for block: B:946:0x7890  */
-    /* JADX WARN: Removed duplicated region for block: B:955:0x6cb5  */
-    /* JADX WARN: Removed duplicated region for block: B:958:0x6cc5  */
+    /* JADX WARN: Removed duplicated region for block: B:888:0x6ff4  */
+    /* JADX WARN: Removed duplicated region for block: B:895:0x7007  */
+    /* JADX WARN: Removed duplicated region for block: B:913:0x6e4d  */
+    /* JADX WARN: Removed duplicated region for block: B:921:0x6d96  */
+    /* JADX WARN: Removed duplicated region for block: B:930:0x6db4  */
+    /* JADX WARN: Removed duplicated region for block: B:931:0x6c6c  */
+    /* JADX WARN: Removed duplicated region for block: B:946:0x7892  */
+    /* JADX WARN: Removed duplicated region for block: B:955:0x6cb7  */
+    /* JADX WARN: Removed duplicated region for block: B:958:0x6cc7  */
     /* JADX WARN: Removed duplicated region for block: B:95:0x01ab  */
     /* JADX WARN: Removed duplicated region for block: B:97:0x01ba  */
-    /* JADX WARN: Removed duplicated region for block: B:980:0x7501  */
-    /* JADX WARN: Removed duplicated region for block: B:992:0x7603  */
-    /* JADX WARN: Removed duplicated region for block: B:996:0x7644  */
-    /* JADX WARN: Removed duplicated region for block: B:999:0x7663  */
+    /* JADX WARN: Removed duplicated region for block: B:980:0x7503  */
+    /* JADX WARN: Removed duplicated region for block: B:992:0x7605  */
+    /* JADX WARN: Removed duplicated region for block: B:996:0x7646  */
+    /* JADX WARN: Removed duplicated region for block: B:999:0x7665  */
     /* JADX WARN: Type inference failed for: r0v1583, types: [org.telegram.ui.Components.RadialProgress2] */
     /* JADX WARN: Type inference failed for: r0v1688, types: [org.telegram.ui.Components.RadialProgress2] */
     /* JADX WARN: Type inference failed for: r0v1689, types: [org.telegram.messenger.ImageReceiver] */
@@ -9263,6 +9286,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 chatMessageCell9.adminLayout = null;
                 chatMessageCell9.ephemeralLayout = null;
                 chatMessageCell9.ephemeralWidth = 0;
+                chatMessageCell9.adminLayoutIsTag = false;
                 chatMessageCell9.adminLayoutIsOwner = false;
                 chatMessageCell9.adminLayoutIsAdmin = false;
                 chatMessageCell9.boostCounterBounds = null;
@@ -9850,9 +9874,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                             setMessageObjectInternal(messageObject);
                                             chatMessageCell9.giveawayMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
                                             chatMessageCell9.giveawayResultsMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
-                                            if (messageObject21.type != 36) {
+                                            if (messageObject21.type == 36) {
                                             }
-                                            if (!messageObject.isSponsored()) {
+                                            if (messageObject.isSponsored()) {
                                             }
                                             if (!chatMessageCell9.reactionsLayoutInBubble.isSmall) {
                                             }
@@ -9870,17 +9894,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                             if (chatMessageCell9.hasLinkPreview) {
                                             }
                                             messageObject11 = chatMessageCell9.currentMessageObject;
-                                            if (!messageObject11.isRepostPreview) {
+                                            if (messageObject11.isRepostPreview) {
                                             }
                                             if (chatMessageCell9.drawSideButton != 0) {
                                             }
                                             int dp29 = AndroidUtilities.dp(48.0f);
                                             int dp30 = AndroidUtilities.dp(10.0f);
-                                            if (!messageObject.isSponsored()) {
+                                            if (messageObject.isSponsored()) {
                                             }
                                             i67 = chatMessageCell9.drawInstantViewType;
                                             WebFile webFile6 = webFile;
-                                            if (i67 != 18) {
+                                            if (i67 == 18) {
                                             }
                                             if (starGift != null) {
                                             }
@@ -9899,26 +9923,26 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                             chatMessageCell9.totalHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
                                             chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
                                             int max9 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
-                                            if (string4 != null) {
+                                            if (string4 == null) {
                                             }
                                             max6 = 0;
                                             if (str6 != null) {
                                             }
-                                            if (str10 != null) {
+                                            if (str10 == null) {
                                             }
                                             if (z38) {
                                             }
                                             if (str11 != null) {
                                             }
                                             int i155 = i74;
-                                            if (str9 != null) {
+                                            if (str9 == null) {
                                             }
                                             if (z36) {
                                             }
                                             z40 = z36;
                                             if (!z40) {
                                             }
-                                            if (chatMessageCell9.drawInstantViewType != 17) {
+                                            if (chatMessageCell9.drawInstantViewType == 17) {
                                             }
                                             i86 = i83;
                                             photo6 = photo5;
@@ -9973,6 +9997,126 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                 i157++;
                                             }
                                         }
+                                        document2 = null;
+                                        tL_webPageAttributeStarGiftAuction = null;
+                                        storyItem3 = null;
+                                        z33 = false;
+                                        z32 = false;
+                                        if (messageObject21.isRepostPreview) {
+                                        }
+                                        chatMessageCell9.backgroundWidth = i153;
+                                        if (chatMessageCell9.hasLinkPreview) {
+                                        }
+                                        document3 = document2;
+                                        int max82 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
+                                        chatMessageCell9.backgroundWidth = max82;
+                                        chatMessageCell9.backgroundWidth = Math.max(max82, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
+                                        chatMessageCell9.availableTimeWidth = chatMessageCell9.backgroundWidth - AndroidUtilities.dp(31.0f);
+                                        if (messageObject.isRoundVideo()) {
+                                        }
+                                        setMessageObjectInternal(messageObject);
+                                        chatMessageCell9.giveawayMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
+                                        chatMessageCell9.giveawayResultsMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
+                                        if (messageObject21.type == 36) {
+                                        }
+                                        if (messageObject.isSponsored()) {
+                                        }
+                                        if (!chatMessageCell9.reactionsLayoutInBubble.isSmall) {
+                                        }
+                                        if (chatMessageCell9.drawPinnedTop) {
+                                        }
+                                        messageObject10 = chatMessageCell9.currentMessageObject;
+                                        if (messageObject10 != null) {
+                                        }
+                                        max4 = Math.max(Math.max(Math.max(Math.max(Math.max(chatMessageCell9.backgroundWidth, chatMessageCell9.nameWidth), chatMessageCell9.sideNameWidth), chatMessageCell9.forwardedNameWidth), chatMessageCell9.replyNameWidth), chatMessageCell9.ephemeralWidth);
+                                        if (chatMessageCell9.drawSummaryReply) {
+                                        }
+                                        max5 = Math.max(max4, chatMessageCell9.replyTextWidth);
+                                        if (chatMessageCell9.commentLayout != null) {
+                                        }
+                                        if (chatMessageCell9.hasLinkPreview) {
+                                        }
+                                        messageObject11 = chatMessageCell9.currentMessageObject;
+                                        if (messageObject11.isRepostPreview) {
+                                        }
+                                        if (chatMessageCell9.drawSideButton != 0) {
+                                        }
+                                        int dp292 = AndroidUtilities.dp(48.0f);
+                                        int dp302 = AndroidUtilities.dp(10.0f);
+                                        if (messageObject.isSponsored()) {
+                                        }
+                                        i67 = chatMessageCell9.drawInstantViewType;
+                                        WebFile webFile62 = webFile;
+                                        if (i67 == 18) {
+                                        }
+                                        if (starGift != null) {
+                                        }
+                                        int dp312 = AndroidUtilities.dp(20.0f);
+                                        if (chatMessageCell9.hasInvoicePreview) {
+                                        }
+                                        TL_stars.StarGift starGift22 = starGift;
+                                        if (chatMessageCell9.drawInstantViewType == 17) {
+                                        }
+                                        int i1542 = maxMessageTextWidth - dp312;
+                                        messageObject12 = chatMessageCell9.currentMessageObject;
+                                        if (messageObject12.photoThumbs == null) {
+                                        }
+                                        chatMessageCell9.totalHeight += chatMessageCell9.giveawayMessageCell.getMeasuredHeight();
+                                        chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayMessageCell.getMeasuredHeight();
+                                        chatMessageCell9.totalHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
+                                        chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
+                                        int max92 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
+                                        if (string4 == null) {
+                                        }
+                                        max6 = 0;
+                                        if (str6 != null) {
+                                        }
+                                        if (str10 == null) {
+                                        }
+                                        if (z38) {
+                                        }
+                                        if (str11 != null) {
+                                        }
+                                        int i1552 = i74;
+                                        if (str9 == null) {
+                                        }
+                                        if (z36) {
+                                        }
+                                        z40 = z36;
+                                        if (!z40) {
+                                        }
+                                        if (chatMessageCell9.drawInstantViewType == 17) {
+                                        }
+                                        i86 = i83;
+                                        photo6 = photo5;
+                                        max92 = i85;
+                                        webFile2 = webFile62;
+                                        i87 = chatMessageCell9.documentAttachType;
+                                        if (i87 == 5) {
+                                        }
+                                        i88 = i86;
+                                        max5 = max92;
+                                        chatMessageCell2 = chatMessageCell9;
+                                        i89 = i84;
+                                        i3 = 4;
+                                        f3 = 1.0f;
+                                        i4 = 3;
+                                        i5 = -1;
+                                        z41 = true;
+                                        if (!chatMessageCell2.hasInvoicePreview) {
+                                        }
+                                        if (!chatMessageCell2.hasInvoicePreview) {
+                                        }
+                                        int i1562 = chatMessageCell2.totalHeight;
+                                        if (chatMessageCell2.drawInstantView) {
+                                        }
+                                        chatMessageCell2.totalHeight = i1562 + AndroidUtilities.dp(i91 + i90);
+                                        createInstantViewButton();
+                                        z18 = z41;
+                                        chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
+                                        if (chatMessageCell2.hasFactCheck) {
+                                        }
+                                        c = 0;
                                     } else if ("telegram_megagroup".equals(str24)) {
                                         chatMessageCell9.drawInstantView = true;
                                         chatMessageCell9.drawInstantViewType = 2;
@@ -10052,18 +10196,18 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         if (chatMessageCell9.hasLinkPreview) {
                                         }
                                         document3 = document2;
-                                        int max82 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
-                                        chatMessageCell9.backgroundWidth = max82;
-                                        chatMessageCell9.backgroundWidth = Math.max(max82, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
+                                        int max822 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
+                                        chatMessageCell9.backgroundWidth = max822;
+                                        chatMessageCell9.backgroundWidth = Math.max(max822, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
                                         chatMessageCell9.availableTimeWidth = chatMessageCell9.backgroundWidth - AndroidUtilities.dp(31.0f);
                                         if (messageObject.isRoundVideo()) {
                                         }
                                         setMessageObjectInternal(messageObject);
                                         chatMessageCell9.giveawayMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
                                         chatMessageCell9.giveawayResultsMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
-                                        if (messageObject21.type != 36) {
+                                        if (messageObject21.type == 36) {
                                         }
-                                        if (!messageObject.isSponsored()) {
+                                        if (messageObject.isSponsored()) {
                                         }
                                         if (!chatMessageCell9.reactionsLayoutInBubble.isSmall) {
                                         }
@@ -10081,27 +10225,27 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         if (chatMessageCell9.hasLinkPreview) {
                                         }
                                         messageObject11 = chatMessageCell9.currentMessageObject;
-                                        if (!messageObject11.isRepostPreview) {
+                                        if (messageObject11.isRepostPreview) {
                                         }
                                         if (chatMessageCell9.drawSideButton != 0) {
                                         }
-                                        int dp292 = AndroidUtilities.dp(48.0f);
-                                        int dp302 = AndroidUtilities.dp(10.0f);
-                                        if (!messageObject.isSponsored()) {
+                                        int dp2922 = AndroidUtilities.dp(48.0f);
+                                        int dp3022 = AndroidUtilities.dp(10.0f);
+                                        if (messageObject.isSponsored()) {
                                         }
                                         i67 = chatMessageCell9.drawInstantViewType;
-                                        WebFile webFile62 = webFile;
-                                        if (i67 != 18) {
+                                        WebFile webFile622 = webFile;
+                                        if (i67 == 18) {
                                         }
                                         if (starGift != null) {
                                         }
-                                        int dp312 = AndroidUtilities.dp(20.0f);
+                                        int dp3122 = AndroidUtilities.dp(20.0f);
                                         if (chatMessageCell9.hasInvoicePreview) {
                                         }
-                                        TL_stars.StarGift starGift22 = starGift;
+                                        TL_stars.StarGift starGift222 = starGift;
                                         if (chatMessageCell9.drawInstantViewType == 17) {
                                         }
-                                        int i1542 = maxMessageTextWidth - dp312;
+                                        int i15422 = maxMessageTextWidth - dp3122;
                                         messageObject12 = chatMessageCell9.currentMessageObject;
                                         if (messageObject12.photoThumbs == null) {
                                         }
@@ -10109,37 +10253,37 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayMessageCell.getMeasuredHeight();
                                         chatMessageCell9.totalHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
                                         chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
-                                        int max92 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
-                                        if (string4 != null) {
+                                        int max922 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
+                                        if (string4 == null) {
                                         }
                                         max6 = 0;
                                         if (str6 != null) {
                                         }
-                                        if (str10 != null) {
+                                        if (str10 == null) {
                                         }
                                         if (z38) {
                                         }
                                         if (str11 != null) {
                                         }
-                                        int i1552 = i74;
-                                        if (str9 != null) {
+                                        int i15522 = i74;
+                                        if (str9 == null) {
                                         }
                                         if (z36) {
                                         }
                                         z40 = z36;
                                         if (!z40) {
                                         }
-                                        if (chatMessageCell9.drawInstantViewType != 17) {
+                                        if (chatMessageCell9.drawInstantViewType == 17) {
                                         }
                                         i86 = i83;
                                         photo6 = photo5;
-                                        max92 = i85;
-                                        webFile2 = webFile62;
+                                        max922 = i85;
+                                        webFile2 = webFile622;
                                         i87 = chatMessageCell9.documentAttachType;
                                         if (i87 == 5) {
                                         }
                                         i88 = i86;
-                                        max5 = max92;
+                                        max5 = max922;
                                         chatMessageCell2 = chatMessageCell9;
                                         i89 = i84;
                                         i3 = 4;
@@ -10151,10 +10295,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         }
                                         if (!chatMessageCell2.hasInvoicePreview) {
                                         }
-                                        int i1562 = chatMessageCell2.totalHeight;
+                                        int i15622 = chatMessageCell2.totalHeight;
                                         if (chatMessageCell2.drawInstantView) {
                                         }
-                                        chatMessageCell2.totalHeight = i1562 + AndroidUtilities.dp(i91 + i90);
+                                        chatMessageCell2.totalHeight = i15622 + AndroidUtilities.dp(i91 + i90);
                                         createInstantViewButton();
                                         z18 = z41;
                                         chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -10270,18 +10414,18 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             if (chatMessageCell9.hasLinkPreview) {
                                                             }
                                                             document3 = document2;
-                                                            int max822 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
-                                                            chatMessageCell9.backgroundWidth = max822;
-                                                            chatMessageCell9.backgroundWidth = Math.max(max822, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
+                                                            int max8222 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
+                                                            chatMessageCell9.backgroundWidth = max8222;
+                                                            chatMessageCell9.backgroundWidth = Math.max(max8222, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
                                                             chatMessageCell9.availableTimeWidth = chatMessageCell9.backgroundWidth - AndroidUtilities.dp(31.0f);
                                                             if (messageObject.isRoundVideo()) {
                                                             }
                                                             setMessageObjectInternal(messageObject);
                                                             chatMessageCell9.giveawayMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
                                                             chatMessageCell9.giveawayResultsMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
-                                                            if (messageObject21.type != 36) {
+                                                            if (messageObject21.type == 36) {
                                                             }
-                                                            if (!messageObject.isSponsored()) {
+                                                            if (messageObject.isSponsored()) {
                                                             }
                                                             if (!chatMessageCell9.reactionsLayoutInBubble.isSmall) {
                                                             }
@@ -10299,27 +10443,27 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             if (chatMessageCell9.hasLinkPreview) {
                                                             }
                                                             messageObject11 = chatMessageCell9.currentMessageObject;
-                                                            if (!messageObject11.isRepostPreview) {
+                                                            if (messageObject11.isRepostPreview) {
                                                             }
                                                             if (chatMessageCell9.drawSideButton != 0) {
                                                             }
-                                                            int dp2922 = AndroidUtilities.dp(48.0f);
-                                                            int dp3022 = AndroidUtilities.dp(10.0f);
-                                                            if (!messageObject.isSponsored()) {
+                                                            int dp29222 = AndroidUtilities.dp(48.0f);
+                                                            int dp30222 = AndroidUtilities.dp(10.0f);
+                                                            if (messageObject.isSponsored()) {
                                                             }
                                                             i67 = chatMessageCell9.drawInstantViewType;
-                                                            WebFile webFile622 = webFile;
-                                                            if (i67 != 18) {
+                                                            WebFile webFile6222 = webFile;
+                                                            if (i67 == 18) {
                                                             }
                                                             if (starGift != null) {
                                                             }
-                                                            int dp3122 = AndroidUtilities.dp(20.0f);
+                                                            int dp31222 = AndroidUtilities.dp(20.0f);
                                                             if (chatMessageCell9.hasInvoicePreview) {
                                                             }
-                                                            TL_stars.StarGift starGift222 = starGift;
+                                                            TL_stars.StarGift starGift2222 = starGift;
                                                             if (chatMessageCell9.drawInstantViewType == 17) {
                                                             }
-                                                            int i15422 = maxMessageTextWidth - dp3122;
+                                                            int i154222 = maxMessageTextWidth - dp31222;
                                                             messageObject12 = chatMessageCell9.currentMessageObject;
                                                             if (messageObject12.photoThumbs == null) {
                                                             }
@@ -10327,37 +10471,37 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayMessageCell.getMeasuredHeight();
                                                             chatMessageCell9.totalHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
                                                             chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
-                                                            int max922 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
-                                                            if (string4 != null) {
+                                                            int max9222 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
+                                                            if (string4 == null) {
                                                             }
                                                             max6 = 0;
                                                             if (str6 != null) {
                                                             }
-                                                            if (str10 != null) {
+                                                            if (str10 == null) {
                                                             }
                                                             if (z38) {
                                                             }
                                                             if (str11 != null) {
                                                             }
-                                                            int i15522 = i74;
-                                                            if (str9 != null) {
+                                                            int i155222 = i74;
+                                                            if (str9 == null) {
                                                             }
                                                             if (z36) {
                                                             }
                                                             z40 = z36;
                                                             if (!z40) {
                                                             }
-                                                            if (chatMessageCell9.drawInstantViewType != 17) {
+                                                            if (chatMessageCell9.drawInstantViewType == 17) {
                                                             }
                                                             i86 = i83;
                                                             photo6 = photo5;
-                                                            max922 = i85;
-                                                            webFile2 = webFile622;
+                                                            max9222 = i85;
+                                                            webFile2 = webFile6222;
                                                             i87 = chatMessageCell9.documentAttachType;
                                                             if (i87 == 5) {
                                                             }
                                                             i88 = i86;
-                                                            max5 = max922;
+                                                            max5 = max9222;
                                                             chatMessageCell2 = chatMessageCell9;
                                                             i89 = i84;
                                                             i3 = 4;
@@ -10369,10 +10513,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             }
                                                             if (!chatMessageCell2.hasInvoicePreview) {
                                                             }
-                                                            int i15622 = chatMessageCell2.totalHeight;
+                                                            int i156222 = chatMessageCell2.totalHeight;
                                                             if (chatMessageCell2.drawInstantView) {
                                                             }
-                                                            chatMessageCell2.totalHeight = i15622 + AndroidUtilities.dp(i91 + i90);
+                                                            chatMessageCell2.totalHeight = i156222 + AndroidUtilities.dp(i91 + i90);
                                                             createInstantViewButton();
                                                             z18 = z41;
                                                             chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -10534,18 +10678,18 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                     chatMessageCell9.backgroundWidth = i153;
                                                     if (chatMessageCell9.hasLinkPreview) {
                                                         document3 = document2;
-                                                        int max8222 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
-                                                        chatMessageCell9.backgroundWidth = max8222;
-                                                        chatMessageCell9.backgroundWidth = Math.max(max8222, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
+                                                        int max82222 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
+                                                        chatMessageCell9.backgroundWidth = max82222;
+                                                        chatMessageCell9.backgroundWidth = Math.max(max82222, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
                                                         chatMessageCell9.availableTimeWidth = chatMessageCell9.backgroundWidth - AndroidUtilities.dp(31.0f);
                                                         if (messageObject.isRoundVideo()) {
                                                         }
                                                         setMessageObjectInternal(messageObject);
                                                         chatMessageCell9.giveawayMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
                                                         chatMessageCell9.giveawayResultsMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
-                                                        if (messageObject21.type != 36) {
+                                                        if (messageObject21.type == 36) {
                                                         }
-                                                        if (!messageObject.isSponsored()) {
+                                                        if (messageObject.isSponsored()) {
                                                         }
                                                         if (!chatMessageCell9.reactionsLayoutInBubble.isSmall) {
                                                         }
@@ -10584,27 +10728,27 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             c = 0;
                                                         }
                                                         messageObject11 = chatMessageCell9.currentMessageObject;
-                                                        if (!messageObject11.isRepostPreview) {
+                                                        if (messageObject11.isRepostPreview) {
                                                         }
                                                         if (chatMessageCell9.drawSideButton != 0) {
                                                         }
-                                                        int dp29222 = AndroidUtilities.dp(48.0f);
-                                                        int dp30222 = AndroidUtilities.dp(10.0f);
-                                                        if (!messageObject.isSponsored()) {
+                                                        int dp292222 = AndroidUtilities.dp(48.0f);
+                                                        int dp302222 = AndroidUtilities.dp(10.0f);
+                                                        if (messageObject.isSponsored()) {
                                                         }
                                                         i67 = chatMessageCell9.drawInstantViewType;
-                                                        WebFile webFile6222 = webFile;
-                                                        if (i67 != 18) {
+                                                        WebFile webFile62222 = webFile;
+                                                        if (i67 == 18) {
                                                         }
                                                         if (starGift != null) {
                                                         }
-                                                        int dp31222 = AndroidUtilities.dp(20.0f);
+                                                        int dp312222 = AndroidUtilities.dp(20.0f);
                                                         if (chatMessageCell9.hasInvoicePreview) {
                                                         }
-                                                        TL_stars.StarGift starGift2222 = starGift;
+                                                        TL_stars.StarGift starGift22222 = starGift;
                                                         if (chatMessageCell9.drawInstantViewType == 17) {
                                                         }
-                                                        int i154222 = maxMessageTextWidth - dp31222;
+                                                        int i1542222 = maxMessageTextWidth - dp312222;
                                                         messageObject12 = chatMessageCell9.currentMessageObject;
                                                         if (messageObject12.photoThumbs == null) {
                                                             messageObject12.generateThumbs(true);
@@ -10613,37 +10757,37 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayMessageCell.getMeasuredHeight();
                                                         chatMessageCell9.totalHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
                                                         chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
-                                                        int max9222 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
-                                                        if (string4 != null) {
+                                                        int max92222 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
+                                                        if (string4 == null) {
                                                         }
                                                         max6 = 0;
                                                         if (str6 != null) {
                                                         }
-                                                        if (str10 != null) {
+                                                        if (str10 == null) {
                                                         }
                                                         if (z38) {
                                                         }
                                                         if (str11 != null) {
                                                         }
-                                                        int i155222 = i74;
-                                                        if (str9 != null) {
+                                                        int i1552222 = i74;
+                                                        if (str9 == null) {
                                                         }
                                                         if (z36) {
                                                         }
                                                         z40 = z36;
                                                         if (!z40) {
                                                         }
-                                                        if (chatMessageCell9.drawInstantViewType != 17) {
+                                                        if (chatMessageCell9.drawInstantViewType == 17) {
                                                         }
                                                         i86 = i83;
                                                         photo6 = photo5;
-                                                        max9222 = i85;
-                                                        webFile2 = webFile6222;
+                                                        max92222 = i85;
+                                                        webFile2 = webFile62222;
                                                         i87 = chatMessageCell9.documentAttachType;
                                                         if (i87 == 5) {
                                                         }
                                                         i88 = i86;
-                                                        max5 = max9222;
+                                                        max5 = max92222;
                                                         chatMessageCell2 = chatMessageCell9;
                                                         i89 = i84;
                                                         i3 = 4;
@@ -10655,10 +10799,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         }
                                                         if (!chatMessageCell2.hasInvoicePreview) {
                                                         }
-                                                        int i156222 = chatMessageCell2.totalHeight;
+                                                        int i1562222 = chatMessageCell2.totalHeight;
                                                         if (chatMessageCell2.drawInstantView) {
                                                         }
-                                                        chatMessageCell2.totalHeight = i156222 + AndroidUtilities.dp(i91 + i90);
+                                                        chatMessageCell2.totalHeight = i1562222 + AndroidUtilities.dp(i91 + i90);
                                                         createInstantViewButton();
                                                         z18 = z41;
                                                         chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -10667,18 +10811,18 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         c = 0;
                                                     }
                                                     document3 = document2;
-                                                    int max82222 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
-                                                    chatMessageCell9.backgroundWidth = max82222;
-                                                    chatMessageCell9.backgroundWidth = Math.max(max82222, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
+                                                    int max822222 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
+                                                    chatMessageCell9.backgroundWidth = max822222;
+                                                    chatMessageCell9.backgroundWidth = Math.max(max822222, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
                                                     chatMessageCell9.availableTimeWidth = chatMessageCell9.backgroundWidth - AndroidUtilities.dp(31.0f);
                                                     if (messageObject.isRoundVideo()) {
                                                     }
                                                     setMessageObjectInternal(messageObject);
                                                     chatMessageCell9.giveawayMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
                                                     chatMessageCell9.giveawayResultsMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
-                                                    if (messageObject21.type != 36) {
+                                                    if (messageObject21.type == 36) {
                                                     }
-                                                    if (!messageObject.isSponsored()) {
+                                                    if (messageObject.isSponsored()) {
                                                     }
                                                     if (!chatMessageCell9.reactionsLayoutInBubble.isSmall) {
                                                     }
@@ -10696,27 +10840,27 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                     if (chatMessageCell9.hasLinkPreview) {
                                                     }
                                                     messageObject11 = chatMessageCell9.currentMessageObject;
-                                                    if (!messageObject11.isRepostPreview) {
+                                                    if (messageObject11.isRepostPreview) {
                                                     }
                                                     if (chatMessageCell9.drawSideButton != 0) {
                                                     }
-                                                    int dp292222 = AndroidUtilities.dp(48.0f);
-                                                    int dp302222 = AndroidUtilities.dp(10.0f);
-                                                    if (!messageObject.isSponsored()) {
+                                                    int dp2922222 = AndroidUtilities.dp(48.0f);
+                                                    int dp3022222 = AndroidUtilities.dp(10.0f);
+                                                    if (messageObject.isSponsored()) {
                                                     }
                                                     i67 = chatMessageCell9.drawInstantViewType;
-                                                    WebFile webFile62222 = webFile;
-                                                    if (i67 != 18) {
+                                                    WebFile webFile622222 = webFile;
+                                                    if (i67 == 18) {
                                                     }
                                                     if (starGift != null) {
                                                     }
-                                                    int dp312222 = AndroidUtilities.dp(20.0f);
+                                                    int dp3122222 = AndroidUtilities.dp(20.0f);
                                                     if (chatMessageCell9.hasInvoicePreview) {
                                                     }
-                                                    TL_stars.StarGift starGift22222 = starGift;
+                                                    TL_stars.StarGift starGift222222 = starGift;
                                                     if (chatMessageCell9.drawInstantViewType == 17) {
                                                     }
-                                                    int i1542222 = maxMessageTextWidth - dp312222;
+                                                    int i15422222 = maxMessageTextWidth - dp3122222;
                                                     messageObject12 = chatMessageCell9.currentMessageObject;
                                                     if (messageObject12.photoThumbs == null) {
                                                     }
@@ -10724,37 +10868,37 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                     chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayMessageCell.getMeasuredHeight();
                                                     chatMessageCell9.totalHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
                                                     chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
-                                                    int max92222 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
-                                                    if (string4 != null) {
+                                                    int max922222 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
+                                                    if (string4 == null) {
                                                     }
                                                     max6 = 0;
                                                     if (str6 != null) {
                                                     }
-                                                    if (str10 != null) {
+                                                    if (str10 == null) {
                                                     }
                                                     if (z38) {
                                                     }
                                                     if (str11 != null) {
                                                     }
-                                                    int i1552222 = i74;
-                                                    if (str9 != null) {
+                                                    int i15522222 = i74;
+                                                    if (str9 == null) {
                                                     }
                                                     if (z36) {
                                                     }
                                                     z40 = z36;
                                                     if (!z40) {
                                                     }
-                                                    if (chatMessageCell9.drawInstantViewType != 17) {
+                                                    if (chatMessageCell9.drawInstantViewType == 17) {
                                                     }
                                                     i86 = i83;
                                                     photo6 = photo5;
-                                                    max92222 = i85;
-                                                    webFile2 = webFile62222;
+                                                    max922222 = i85;
+                                                    webFile2 = webFile622222;
                                                     i87 = chatMessageCell9.documentAttachType;
                                                     if (i87 == 5) {
                                                     }
                                                     i88 = i86;
-                                                    max5 = max92222;
+                                                    max5 = max922222;
                                                     chatMessageCell2 = chatMessageCell9;
                                                     i89 = i84;
                                                     i3 = 4;
@@ -10766,10 +10910,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                     }
                                                     if (!chatMessageCell2.hasInvoicePreview) {
                                                     }
-                                                    int i1562222 = chatMessageCell2.totalHeight;
+                                                    int i15622222 = chatMessageCell2.totalHeight;
                                                     if (chatMessageCell2.drawInstantView) {
                                                     }
-                                                    chatMessageCell2.totalHeight = i1562222 + AndroidUtilities.dp(i91 + i90);
+                                                    chatMessageCell2.totalHeight = i15622222 + AndroidUtilities.dp(i91 + i90);
                                                     createInstantViewButton();
                                                     z18 = z41;
                                                     chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -10799,18 +10943,18 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                             if (chatMessageCell9.hasLinkPreview) {
                                             }
                                             document3 = document2;
-                                            int max822222 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
-                                            chatMessageCell9.backgroundWidth = max822222;
-                                            chatMessageCell9.backgroundWidth = Math.max(max822222, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
+                                            int max8222222 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
+                                            chatMessageCell9.backgroundWidth = max8222222;
+                                            chatMessageCell9.backgroundWidth = Math.max(max8222222, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
                                             chatMessageCell9.availableTimeWidth = chatMessageCell9.backgroundWidth - AndroidUtilities.dp(31.0f);
                                             if (messageObject.isRoundVideo()) {
                                             }
                                             setMessageObjectInternal(messageObject);
                                             chatMessageCell9.giveawayMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
                                             chatMessageCell9.giveawayResultsMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
-                                            if (messageObject21.type != 36) {
+                                            if (messageObject21.type == 36) {
                                             }
-                                            if (!messageObject.isSponsored()) {
+                                            if (messageObject.isSponsored()) {
                                             }
                                             if (!chatMessageCell9.reactionsLayoutInBubble.isSmall) {
                                             }
@@ -10828,27 +10972,27 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                             if (chatMessageCell9.hasLinkPreview) {
                                             }
                                             messageObject11 = chatMessageCell9.currentMessageObject;
-                                            if (!messageObject11.isRepostPreview) {
+                                            if (messageObject11.isRepostPreview) {
                                             }
                                             if (chatMessageCell9.drawSideButton != 0) {
                                             }
-                                            int dp2922222 = AndroidUtilities.dp(48.0f);
-                                            int dp3022222 = AndroidUtilities.dp(10.0f);
-                                            if (!messageObject.isSponsored()) {
+                                            int dp29222222 = AndroidUtilities.dp(48.0f);
+                                            int dp30222222 = AndroidUtilities.dp(10.0f);
+                                            if (messageObject.isSponsored()) {
                                             }
                                             i67 = chatMessageCell9.drawInstantViewType;
-                                            WebFile webFile622222 = webFile;
-                                            if (i67 != 18) {
+                                            WebFile webFile6222222 = webFile;
+                                            if (i67 == 18) {
                                             }
                                             if (starGift != null) {
                                             }
-                                            int dp3122222 = AndroidUtilities.dp(20.0f);
+                                            int dp31222222 = AndroidUtilities.dp(20.0f);
                                             if (chatMessageCell9.hasInvoicePreview) {
                                             }
-                                            TL_stars.StarGift starGift222222 = starGift;
+                                            TL_stars.StarGift starGift2222222 = starGift;
                                             if (chatMessageCell9.drawInstantViewType == 17) {
                                             }
-                                            int i15422222 = maxMessageTextWidth - dp3122222;
+                                            int i154222222 = maxMessageTextWidth - dp31222222;
                                             messageObject12 = chatMessageCell9.currentMessageObject;
                                             if (messageObject12.photoThumbs == null) {
                                             }
@@ -10856,37 +11000,37 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                             chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayMessageCell.getMeasuredHeight();
                                             chatMessageCell9.totalHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
                                             chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
-                                            int max922222 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
-                                            if (string4 != null) {
+                                            int max9222222 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
+                                            if (string4 == null) {
                                             }
                                             max6 = 0;
                                             if (str6 != null) {
                                             }
-                                            if (str10 != null) {
+                                            if (str10 == null) {
                                             }
                                             if (z38) {
                                             }
                                             if (str11 != null) {
                                             }
-                                            int i15522222 = i74;
-                                            if (str9 != null) {
+                                            int i155222222 = i74;
+                                            if (str9 == null) {
                                             }
                                             if (z36) {
                                             }
                                             z40 = z36;
                                             if (!z40) {
                                             }
-                                            if (chatMessageCell9.drawInstantViewType != 17) {
+                                            if (chatMessageCell9.drawInstantViewType == 17) {
                                             }
                                             i86 = i83;
                                             photo6 = photo5;
-                                            max922222 = i85;
-                                            webFile2 = webFile622222;
+                                            max9222222 = i85;
+                                            webFile2 = webFile6222222;
                                             i87 = chatMessageCell9.documentAttachType;
                                             if (i87 == 5) {
                                             }
                                             i88 = i86;
-                                            max5 = max922222;
+                                            max5 = max9222222;
                                             chatMessageCell2 = chatMessageCell9;
                                             i89 = i84;
                                             i3 = 4;
@@ -10898,10 +11042,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                             }
                                             if (!chatMessageCell2.hasInvoicePreview) {
                                             }
-                                            int i15622222 = chatMessageCell2.totalHeight;
+                                            int i156222222 = chatMessageCell2.totalHeight;
                                             if (chatMessageCell2.drawInstantView) {
                                             }
-                                            chatMessageCell2.totalHeight = i15622222 + AndroidUtilities.dp(i91 + i90);
+                                            chatMessageCell2.totalHeight = i156222222 + AndroidUtilities.dp(i91 + i90);
                                             createInstantViewButton();
                                             z18 = z41;
                                             chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -10917,18 +11061,18 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         if (chatMessageCell9.hasLinkPreview) {
                                         }
                                         document3 = document2;
-                                        int max8222222 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
-                                        chatMessageCell9.backgroundWidth = max8222222;
-                                        chatMessageCell9.backgroundWidth = Math.max(max8222222, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
+                                        int max82222222 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
+                                        chatMessageCell9.backgroundWidth = max82222222;
+                                        chatMessageCell9.backgroundWidth = Math.max(max82222222, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
                                         chatMessageCell9.availableTimeWidth = chatMessageCell9.backgroundWidth - AndroidUtilities.dp(31.0f);
                                         if (messageObject.isRoundVideo()) {
                                         }
                                         setMessageObjectInternal(messageObject);
                                         chatMessageCell9.giveawayMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
                                         chatMessageCell9.giveawayResultsMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
-                                        if (messageObject21.type != 36) {
+                                        if (messageObject21.type == 36) {
                                         }
-                                        if (!messageObject.isSponsored()) {
+                                        if (messageObject.isSponsored()) {
                                         }
                                         if (!chatMessageCell9.reactionsLayoutInBubble.isSmall) {
                                         }
@@ -10946,27 +11090,27 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         if (chatMessageCell9.hasLinkPreview) {
                                         }
                                         messageObject11 = chatMessageCell9.currentMessageObject;
-                                        if (!messageObject11.isRepostPreview) {
+                                        if (messageObject11.isRepostPreview) {
                                         }
                                         if (chatMessageCell9.drawSideButton != 0) {
                                         }
-                                        int dp29222222 = AndroidUtilities.dp(48.0f);
-                                        int dp30222222 = AndroidUtilities.dp(10.0f);
-                                        if (!messageObject.isSponsored()) {
+                                        int dp292222222 = AndroidUtilities.dp(48.0f);
+                                        int dp302222222 = AndroidUtilities.dp(10.0f);
+                                        if (messageObject.isSponsored()) {
                                         }
                                         i67 = chatMessageCell9.drawInstantViewType;
-                                        WebFile webFile6222222 = webFile;
-                                        if (i67 != 18) {
+                                        WebFile webFile62222222 = webFile;
+                                        if (i67 == 18) {
                                         }
                                         if (starGift != null) {
                                         }
-                                        int dp31222222 = AndroidUtilities.dp(20.0f);
+                                        int dp312222222 = AndroidUtilities.dp(20.0f);
                                         if (chatMessageCell9.hasInvoicePreview) {
                                         }
-                                        TL_stars.StarGift starGift2222222 = starGift;
+                                        TL_stars.StarGift starGift22222222 = starGift;
                                         if (chatMessageCell9.drawInstantViewType == 17) {
                                         }
-                                        int i154222222 = maxMessageTextWidth - dp31222222;
+                                        int i1542222222 = maxMessageTextWidth - dp312222222;
                                         messageObject12 = chatMessageCell9.currentMessageObject;
                                         if (messageObject12.photoThumbs == null) {
                                         }
@@ -10974,37 +11118,37 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayMessageCell.getMeasuredHeight();
                                         chatMessageCell9.totalHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
                                         chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
-                                        int max9222222 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
-                                        if (string4 != null) {
+                                        int max92222222 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
+                                        if (string4 == null) {
                                         }
                                         max6 = 0;
                                         if (str6 != null) {
                                         }
-                                        if (str10 != null) {
+                                        if (str10 == null) {
                                         }
                                         if (z38) {
                                         }
                                         if (str11 != null) {
                                         }
-                                        int i155222222 = i74;
-                                        if (str9 != null) {
+                                        int i1552222222 = i74;
+                                        if (str9 == null) {
                                         }
                                         if (z36) {
                                         }
                                         z40 = z36;
                                         if (!z40) {
                                         }
-                                        if (chatMessageCell9.drawInstantViewType != 17) {
+                                        if (chatMessageCell9.drawInstantViewType == 17) {
                                         }
                                         i86 = i83;
                                         photo6 = photo5;
-                                        max9222222 = i85;
-                                        webFile2 = webFile6222222;
+                                        max92222222 = i85;
+                                        webFile2 = webFile62222222;
                                         i87 = chatMessageCell9.documentAttachType;
                                         if (i87 == 5) {
                                         }
                                         i88 = i86;
-                                        max5 = max9222222;
+                                        max5 = max92222222;
                                         chatMessageCell2 = chatMessageCell9;
                                         i89 = i84;
                                         i3 = 4;
@@ -11016,10 +11160,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         }
                                         if (!chatMessageCell2.hasInvoicePreview) {
                                         }
-                                        int i156222222 = chatMessageCell2.totalHeight;
+                                        int i1562222222 = chatMessageCell2.totalHeight;
                                         if (chatMessageCell2.drawInstantView) {
                                         }
-                                        chatMessageCell2.totalHeight = i156222222 + AndroidUtilities.dp(i91 + i90);
+                                        chatMessageCell2.totalHeight = i1562222222 + AndroidUtilities.dp(i91 + i90);
                                         createInstantViewButton();
                                         z18 = z41;
                                         chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -11042,18 +11186,18 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     if (chatMessageCell9.hasLinkPreview) {
                                     }
                                     document3 = document2;
-                                    int max82222222 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
-                                    chatMessageCell9.backgroundWidth = max82222222;
-                                    chatMessageCell9.backgroundWidth = Math.max(max82222222, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
+                                    int max822222222 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
+                                    chatMessageCell9.backgroundWidth = max822222222;
+                                    chatMessageCell9.backgroundWidth = Math.max(max822222222, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
                                     chatMessageCell9.availableTimeWidth = chatMessageCell9.backgroundWidth - AndroidUtilities.dp(31.0f);
                                     if (messageObject.isRoundVideo()) {
                                     }
                                     setMessageObjectInternal(messageObject);
                                     chatMessageCell9.giveawayMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
                                     chatMessageCell9.giveawayResultsMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
-                                    if (messageObject21.type != 36) {
+                                    if (messageObject21.type == 36) {
                                     }
-                                    if (!messageObject.isSponsored()) {
+                                    if (messageObject.isSponsored()) {
                                     }
                                     if (!chatMessageCell9.reactionsLayoutInBubble.isSmall) {
                                     }
@@ -11071,27 +11215,27 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     if (chatMessageCell9.hasLinkPreview) {
                                     }
                                     messageObject11 = chatMessageCell9.currentMessageObject;
-                                    if (!messageObject11.isRepostPreview) {
+                                    if (messageObject11.isRepostPreview) {
                                     }
                                     if (chatMessageCell9.drawSideButton != 0) {
                                     }
-                                    int dp292222222 = AndroidUtilities.dp(48.0f);
-                                    int dp302222222 = AndroidUtilities.dp(10.0f);
-                                    if (!messageObject.isSponsored()) {
+                                    int dp2922222222 = AndroidUtilities.dp(48.0f);
+                                    int dp3022222222 = AndroidUtilities.dp(10.0f);
+                                    if (messageObject.isSponsored()) {
                                     }
                                     i67 = chatMessageCell9.drawInstantViewType;
-                                    WebFile webFile62222222 = webFile;
-                                    if (i67 != 18) {
+                                    WebFile webFile622222222 = webFile;
+                                    if (i67 == 18) {
                                     }
                                     if (starGift != null) {
                                     }
-                                    int dp312222222 = AndroidUtilities.dp(20.0f);
+                                    int dp3122222222 = AndroidUtilities.dp(20.0f);
                                     if (chatMessageCell9.hasInvoicePreview) {
                                     }
-                                    TL_stars.StarGift starGift22222222 = starGift;
+                                    TL_stars.StarGift starGift222222222 = starGift;
                                     if (chatMessageCell9.drawInstantViewType == 17) {
                                     }
-                                    int i1542222222 = maxMessageTextWidth - dp312222222;
+                                    int i15422222222 = maxMessageTextWidth - dp3122222222;
                                     messageObject12 = chatMessageCell9.currentMessageObject;
                                     if (messageObject12.photoThumbs == null) {
                                     }
@@ -11099,37 +11243,37 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayMessageCell.getMeasuredHeight();
                                     chatMessageCell9.totalHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
                                     chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
-                                    int max92222222 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
-                                    if (string4 != null) {
+                                    int max922222222 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
+                                    if (string4 == null) {
                                     }
                                     max6 = 0;
                                     if (str6 != null) {
                                     }
-                                    if (str10 != null) {
+                                    if (str10 == null) {
                                     }
                                     if (z38) {
                                     }
                                     if (str11 != null) {
                                     }
-                                    int i1552222222 = i74;
-                                    if (str9 != null) {
+                                    int i15522222222 = i74;
+                                    if (str9 == null) {
                                     }
                                     if (z36) {
                                     }
                                     z40 = z36;
                                     if (!z40) {
                                     }
-                                    if (chatMessageCell9.drawInstantViewType != 17) {
+                                    if (chatMessageCell9.drawInstantViewType == 17) {
                                     }
                                     i86 = i83;
                                     photo6 = photo5;
-                                    max92222222 = i85;
-                                    webFile2 = webFile62222222;
+                                    max922222222 = i85;
+                                    webFile2 = webFile622222222;
                                     i87 = chatMessageCell9.documentAttachType;
                                     if (i87 == 5) {
                                     }
                                     i88 = i86;
-                                    max5 = max92222222;
+                                    max5 = max922222222;
                                     chatMessageCell2 = chatMessageCell9;
                                     i89 = i84;
                                     i3 = 4;
@@ -11141,10 +11285,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     }
                                     if (!chatMessageCell2.hasInvoicePreview) {
                                     }
-                                    int i1562222222 = chatMessageCell2.totalHeight;
+                                    int i15622222222 = chatMessageCell2.totalHeight;
                                     if (chatMessageCell2.drawInstantView) {
                                     }
-                                    chatMessageCell2.totalHeight = i1562222222 + AndroidUtilities.dp(i91 + i90);
+                                    chatMessageCell2.totalHeight = i15622222222 + AndroidUtilities.dp(i91 + i90);
                                     createInstantViewButton();
                                     z18 = z41;
                                     chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -11183,9 +11327,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         chatMessageCell9.backgroundWidth = i153;
                                         if ((chatMessageCell9.hasLinkPreview && !chatMessageCell9.linkPreviewAbove) || chatMessageCell9.hasGamePreview || chatMessageCell9.hasInvoicePreview || i153 - messageObject.getLastLineWidth() < extraTimeX) {
                                             document3 = document2;
-                                            int max822222222 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
-                                            chatMessageCell9.backgroundWidth = max822222222;
-                                            chatMessageCell9.backgroundWidth = Math.max(max822222222, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
+                                            int max8222222222 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
+                                            chatMessageCell9.backgroundWidth = max8222222222;
+                                            chatMessageCell9.backgroundWidth = Math.max(max8222222222, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
                                         } else {
                                             int lastLineWidth = chatMessageCell9.backgroundWidth - messageObject.getLastLineWidth();
                                             if (lastLineWidth >= 0 && lastLineWidth <= extraTimeX) {
@@ -11198,12 +11342,6 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         }
                                         chatMessageCell9.availableTimeWidth = chatMessageCell9.backgroundWidth - AndroidUtilities.dp(31.0f);
                                         if (messageObject.isRoundVideo()) {
-                                            arrayList4 = arrayList3;
-                                            z17 = z71;
-                                            j3 = j2;
-                                            tL_webPageAttributeStarGiftAuction2 = tL_webPageAttributeStarGiftAuction;
-                                            str3 = str24;
-                                        } else {
                                             tL_webPageAttributeStarGiftAuction2 = tL_webPageAttributeStarGiftAuction;
                                             double d = chatMessageCell9.availableTimeWidth;
                                             z17 = z71;
@@ -11219,11 +11357,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                 arrayList4 = arrayList3;
                                             }
                                             chatMessageCell9.availableTimeWidth = (int) (d - (ceil3 + i61));
+                                        } else {
+                                            arrayList4 = arrayList3;
+                                            z17 = z71;
+                                            j3 = j2;
+                                            tL_webPageAttributeStarGiftAuction2 = tL_webPageAttributeStarGiftAuction;
+                                            str3 = str24;
                                         }
                                         setMessageObjectInternal(messageObject);
                                         chatMessageCell9.giveawayMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
                                         chatMessageCell9.giveawayResultsMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
-                                        if (messageObject21.type != 36) {
+                                        if (messageObject21.type == 36) {
                                             if (messageObject21.richLayout == null) {
                                                 messageObject21.richLayout = new RichMessageLayout(messageObject21, i153, null);
                                             }
@@ -11243,7 +11387,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         } else {
                                             chatMessageCell9.backgroundWidth = Math.min(getParentWidth() - AndroidUtilities.dp(50.0f), AndroidUtilities.dp(270.0f));
                                         }
-                                        if (!messageObject.isSponsored()) {
+                                        if (messageObject.isSponsored()) {
                                             chatMessageCell9.totalHeight = AndroidUtilities.dp(22.5f);
                                         } else if (messageObject21.type == 36) {
                                             chatMessageCell9.totalHeight = messageObject21.richLayout.getHeight() + AndroidUtilities.dp(19.5f) + chatMessageCell9.namesOffset;
@@ -11285,7 +11429,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         }
                                         if (chatMessageCell9.hasLinkPreview || chatMessageCell9.hasGamePreview || chatMessageCell9.hasInvoicePreview) {
                                             messageObject11 = chatMessageCell9.currentMessageObject;
-                                            if (!messageObject11.isRepostPreview) {
+                                            if (messageObject11.isRepostPreview) {
                                                 maxMessageTextWidth = messageObject11.getMaxMessageTextWidth();
                                             } else {
                                                 if (AndroidUtilities.isTablet()) {
@@ -11301,9 +11445,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                 MessageObject messageObject26 = chatMessageCell9.currentMessageObject;
                                                 maxMessageTextWidth -= AndroidUtilities.dp((messageObject26.isSaved && messageObject26.isOutOwner()) ? 25.0f : 20.0f);
                                             }
-                                            int dp2922222222 = AndroidUtilities.dp(48.0f);
-                                            int dp3022222222 = AndroidUtilities.dp(10.0f);
-                                            if (!messageObject.isSponsored()) {
+                                            int dp29222222222 = AndroidUtilities.dp(48.0f);
+                                            int dp30222222222 = AndroidUtilities.dp(10.0f);
+                                            if (messageObject.isSponsored()) {
                                                 int i165 = maxMessageTextWidth;
                                                 if (messageObject21.sponsoredCanReport) {
                                                     string = LocaleController.getString(org.telegram.messenger.R.string.SponsoredMessageAd);
@@ -12017,8 +12161,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                 }
                                             }
                                             i67 = chatMessageCell9.drawInstantViewType;
-                                            WebFile webFile622222222 = webFile;
-                                            if (i67 != 18) {
+                                            WebFile webFile6222222222 = webFile;
+                                            if (i67 == 18) {
                                                 string4 = LocaleController.getString("BoostChannel", org.telegram.messenger.R.string.BoostChannel);
                                             } else if (i67 == 22) {
                                                 string4 = LocaleController.getString("BoostGroup", org.telegram.messenger.R.string.BoostGroup);
@@ -12036,15 +12180,15 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                             if (starGift != null) {
                                                 str9 = null;
                                             }
-                                            int dp3122222222 = AndroidUtilities.dp(20.0f);
+                                            int dp31222222222 = AndroidUtilities.dp(20.0f);
                                             if (chatMessageCell9.hasInvoicePreview) {
-                                                dp3122222222 = 0;
+                                                dp31222222222 = 0;
                                             }
-                                            TL_stars.StarGift starGift222222222 = starGift;
+                                            TL_stars.StarGift starGift2222222222 = starGift;
                                             if (chatMessageCell9.drawInstantViewType == 17) {
-                                                dp3122222222 += AndroidUtilities.dp(20.0f);
+                                                dp31222222222 += AndroidUtilities.dp(20.0f);
                                             }
-                                            int i15422222222 = maxMessageTextWidth - dp3122222222;
+                                            int i154222222222 = maxMessageTextWidth - dp31222222222;
                                             messageObject12 = chatMessageCell9.currentMessageObject;
                                             if (messageObject12.photoThumbs == null && photo != null) {
                                                 messageObject12.generateThumbs(true);
@@ -12053,8 +12197,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                             chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayMessageCell.getMeasuredHeight();
                                             chatMessageCell9.totalHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
                                             chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
-                                            int max922222222 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
-                                            if (string4 != null) {
+                                            int max9222222222 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
+                                            if (string4 == null) {
                                                 photo3 = photo;
                                                 str12 = string4;
                                                 charSequence5 = charSequence4;
@@ -12069,7 +12213,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         if (!chatMessageCell9.isSmallImage) {
                                                             i68 = 3;
                                                             try {
-                                                                chatMessageCell9.siteNameLayout = new StaticLayout(str12, Theme.chat_replyNamePaint, Math.min(ceil4, i15422222222), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                                                                chatMessageCell9.siteNameLayout = new StaticLayout(str12, Theme.chat_replyNamePaint, Math.min(ceil4, i154222222222), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                                                                 i70 = 0;
                                                             } catch (Exception e) {
                                                                 e = e;
@@ -12081,31 +12225,31 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 max6 = 0;
                                                                 if (str6 != null) {
                                                                 }
-                                                                if (str10 != null) {
+                                                                if (str10 == null) {
                                                                 }
                                                                 if (z38) {
                                                                 }
                                                                 if (str11 != null) {
                                                                 }
-                                                                int i15522222222 = i74;
-                                                                if (str9 != null) {
+                                                                int i155222222222 = i74;
+                                                                if (str9 == null) {
                                                                 }
                                                                 if (z36) {
                                                                 }
                                                                 z40 = z36;
                                                                 if (!z40) {
                                                                 }
-                                                                if (chatMessageCell9.drawInstantViewType != 17) {
+                                                                if (chatMessageCell9.drawInstantViewType == 17) {
                                                                 }
                                                                 i86 = i83;
                                                                 photo6 = photo5;
-                                                                max922222222 = i85;
-                                                                webFile2 = webFile622222222;
+                                                                max9222222222 = i85;
+                                                                webFile2 = webFile6222222222;
                                                                 i87 = chatMessageCell9.documentAttachType;
                                                                 if (i87 == 5) {
                                                                 }
                                                                 i88 = i86;
-                                                                max5 = max922222222;
+                                                                max5 = max9222222222;
                                                                 chatMessageCell2 = chatMessageCell9;
                                                                 i89 = i84;
                                                                 i3 = 4;
@@ -12117,10 +12261,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 }
                                                                 if (!chatMessageCell2.hasInvoicePreview) {
                                                                 }
-                                                                int i15622222222 = chatMessageCell2.totalHeight;
+                                                                int i156222222222 = chatMessageCell2.totalHeight;
                                                                 if (chatMessageCell2.drawInstantView) {
                                                                 }
-                                                                chatMessageCell2.totalHeight = i15622222222 + AndroidUtilities.dp(i91 + i90);
+                                                                chatMessageCell2.totalHeight = i156222222222 + AndroidUtilities.dp(i91 + i90);
                                                                 createInstantViewButton();
                                                                 z18 = z41;
                                                                 chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -12247,7 +12391,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 i68 = 3;
                                                             }
                                                             try {
-                                                                StaticLayout generateStaticLayout = generateStaticLayout(r60, Theme.chat_replyNamePaint, i15422222222, (i15422222222 - dp2922222222) - dp3022222222, 3, 1);
+                                                                StaticLayout generateStaticLayout = generateStaticLayout(r60, Theme.chat_replyNamePaint, i154222222222, (i154222222222 - dp29222222222) - dp30222222222, 3, 1);
                                                                 chatMessageCell9.siteNameLayout = generateStaticLayout;
                                                                 i68 = 3 - generateStaticLayout.getLineCount();
                                                                 i70 = 3;
@@ -12262,31 +12406,31 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 max6 = 0;
                                                                 if (str6 != null) {
                                                                 }
-                                                                if (str10 != null) {
+                                                                if (str10 == null) {
                                                                 }
                                                                 if (z38) {
                                                                 }
                                                                 if (str11 != null) {
                                                                 }
-                                                                int i155222222222 = i74;
-                                                                if (str9 != null) {
+                                                                int i1552222222222 = i74;
+                                                                if (str9 == null) {
                                                                 }
                                                                 if (z36) {
                                                                 }
                                                                 z40 = z36;
                                                                 if (!z40) {
                                                                 }
-                                                                if (chatMessageCell9.drawInstantViewType != 17) {
+                                                                if (chatMessageCell9.drawInstantViewType == 17) {
                                                                 }
                                                                 i86 = i83;
                                                                 photo6 = photo5;
-                                                                max922222222 = i85;
-                                                                webFile2 = webFile622222222;
+                                                                max9222222222 = i85;
+                                                                webFile2 = webFile6222222222;
                                                                 i87 = chatMessageCell9.documentAttachType;
                                                                 if (i87 == 5) {
                                                                 }
                                                                 i88 = i86;
-                                                                max5 = max922222222;
+                                                                max5 = max9222222222;
                                                                 chatMessageCell2 = chatMessageCell9;
                                                                 i89 = i84;
                                                                 i3 = 4;
@@ -12298,10 +12442,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 }
                                                                 if (!chatMessageCell2.hasInvoicePreview) {
                                                                 }
-                                                                int i156222222222 = chatMessageCell2.totalHeight;
+                                                                int i1562222222222 = chatMessageCell2.totalHeight;
                                                                 if (chatMessageCell2.drawInstantView) {
                                                                 }
-                                                                chatMessageCell2.totalHeight = i156222222222 + AndroidUtilities.dp(i91 + i90);
+                                                                chatMessageCell2.totalHeight = i1562222222222 + AndroidUtilities.dp(i91 + i90);
                                                                 createInstantViewButton();
                                                                 z18 = z41;
                                                                 chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -12431,31 +12575,31 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         max6 = 0;
                                                         if (str6 != null) {
                                                         }
-                                                        if (str10 != null) {
+                                                        if (str10 == null) {
                                                         }
                                                         if (z38) {
                                                         }
                                                         if (str11 != null) {
                                                         }
-                                                        int i1552222222222 = i74;
-                                                        if (str9 != null) {
+                                                        int i15522222222222 = i74;
+                                                        if (str9 == null) {
                                                         }
                                                         if (z36) {
                                                         }
                                                         z40 = z36;
                                                         if (!z40) {
                                                         }
-                                                        if (chatMessageCell9.drawInstantViewType != 17) {
+                                                        if (chatMessageCell9.drawInstantViewType == 17) {
                                                         }
                                                         i86 = i83;
                                                         photo6 = photo5;
-                                                        max922222222 = i85;
-                                                        webFile2 = webFile622222222;
+                                                        max9222222222 = i85;
+                                                        webFile2 = webFile6222222222;
                                                         i87 = chatMessageCell9.documentAttachType;
                                                         if (i87 == 5) {
                                                         }
                                                         i88 = i86;
-                                                        max5 = max922222222;
+                                                        max5 = max9222222222;
                                                         chatMessageCell2 = chatMessageCell9;
                                                         i89 = i84;
                                                         i3 = 4;
@@ -12467,10 +12611,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         }
                                                         if (!chatMessageCell2.hasInvoicePreview) {
                                                         }
-                                                        int i1562222222222 = chatMessageCell2.totalHeight;
+                                                        int i15622222222222 = chatMessageCell2.totalHeight;
                                                         if (chatMessageCell2.drawInstantView) {
                                                         }
-                                                        chatMessageCell2.totalHeight = i1562222222222 + AndroidUtilities.dp(i91 + i90);
+                                                        chatMessageCell2.totalHeight = i15622222222222 + AndroidUtilities.dp(i91 + i90);
                                                         createInstantViewButton();
                                                         z18 = z41;
                                                         chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -12596,7 +12740,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         int i174 = i163;
                                                         while (i173 < chatMessageCell9.siteNameLayout.getLineCount()) {
                                                             try {
-                                                                int i175 = max922222222;
+                                                                int i175 = max9222222222;
                                                                 photo3 = photo;
                                                                 charSequence5 = charSequence4;
                                                                 document6 = document5;
@@ -12609,7 +12753,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 chatMessageCell9.siteNameLeft = Math.min(chatMessageCell9.siteNameLeft, lineLeft);
                                                                 chatMessageCell9.siteNameLayoutWidth = Math.max(chatMessageCell9.siteNameLayoutWidth, chatMessageCell9.siteNameLayout.getLineWidth(i173));
                                                                 i173++;
-                                                                max922222222 = i175 == true ? 1 : 0;
+                                                                max9222222222 = i175 == true ? 1 : 0;
                                                                 photo = photo3;
                                                                 document5 = document6;
                                                                 charSequence4 = charSequence5;
@@ -12617,37 +12761,37 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             } catch (Exception e5) {
                                                                 e = e5;
                                                                 i68 = i71;
-                                                                max922222222 = i174;
+                                                                max9222222222 = i174;
                                                                 FileLog.e(e);
                                                                 i69 = i68;
                                                                 max6 = 0;
                                                                 if (str6 != null) {
                                                                 }
-                                                                if (str10 != null) {
+                                                                if (str10 == null) {
                                                                 }
                                                                 if (z38) {
                                                                 }
                                                                 if (str11 != null) {
                                                                 }
-                                                                int i15522222222222 = i74;
-                                                                if (str9 != null) {
+                                                                int i155222222222222 = i74;
+                                                                if (str9 == null) {
                                                                 }
                                                                 if (z36) {
                                                                 }
                                                                 z40 = z36;
                                                                 if (!z40) {
                                                                 }
-                                                                if (chatMessageCell9.drawInstantViewType != 17) {
+                                                                if (chatMessageCell9.drawInstantViewType == 17) {
                                                                 }
                                                                 i86 = i83;
                                                                 photo6 = photo5;
-                                                                max922222222 = i85;
-                                                                webFile2 = webFile622222222;
+                                                                max9222222222 = i85;
+                                                                webFile2 = webFile6222222222;
                                                                 i87 = chatMessageCell9.documentAttachType;
                                                                 if (i87 == 5) {
                                                                 }
                                                                 i88 = i86;
-                                                                max5 = max922222222;
+                                                                max5 = max9222222222;
                                                                 chatMessageCell2 = chatMessageCell9;
                                                                 i89 = i84;
                                                                 i3 = 4;
@@ -12659,10 +12803,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 }
                                                                 if (!chatMessageCell2.hasInvoicePreview) {
                                                                 }
-                                                                int i15622222222222 = chatMessageCell2.totalHeight;
+                                                                int i156222222222222 = chatMessageCell2.totalHeight;
                                                                 if (chatMessageCell2.drawInstantView) {
                                                                 }
-                                                                chatMessageCell2.totalHeight = i15622222222222 + AndroidUtilities.dp(i91 + i90);
+                                                                chatMessageCell2.totalHeight = i156222222222222 + AndroidUtilities.dp(i91 + i90);
                                                                 createInstantViewButton();
                                                                 z18 = z41;
                                                                 chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -12789,7 +12933,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         i72 = 0;
                                                         while (i176 < chatMessageCell9.siteNameLayout.getLineCount()) {
                                                             try {
-                                                                i174 = max922222222;
+                                                                i174 = max9222222222;
                                                                 try {
                                                                     int max10 = (int) Math.max(0.0f, chatMessageCell9.siteNameLayout.getLineLeft(i176));
                                                                     if (max10 != 0) {
@@ -12801,7 +12945,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                             if (i176 >= i70) {
                                                                                 if (max10 == 0) {
                                                                                 }
-                                                                                i73 = i15422222222;
+                                                                                i73 = i154222222222;
                                                                                 document6 = document5;
                                                                                 charSequence5 = charSequence4;
                                                                                 width = (int) Math.min(i73, Math.ceil(chatMessageCell9.siteNameLayout.getLineWidth(i176)));
@@ -12812,37 +12956,37 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                             e = e6;
                                                                             charSequence5 = charSequence4;
                                                                             i68 = i71;
-                                                                            max922222222 = i174;
+                                                                            max9222222222 = i174;
                                                                             FileLog.e(e);
                                                                             i69 = i68;
                                                                             max6 = 0;
                                                                             if (str6 != null) {
                                                                             }
-                                                                            if (str10 != null) {
+                                                                            if (str10 == null) {
                                                                             }
                                                                             if (z38) {
                                                                             }
                                                                             if (str11 != null) {
                                                                             }
-                                                                            int i155222222222222 = i74;
-                                                                            if (str9 != null) {
+                                                                            int i1552222222222222 = i74;
+                                                                            if (str9 == null) {
                                                                             }
                                                                             if (z36) {
                                                                             }
                                                                             z40 = z36;
                                                                             if (!z40) {
                                                                             }
-                                                                            if (chatMessageCell9.drawInstantViewType != 17) {
+                                                                            if (chatMessageCell9.drawInstantViewType == 17) {
                                                                             }
                                                                             i86 = i83;
                                                                             photo6 = photo5;
-                                                                            max922222222 = i85;
-                                                                            webFile2 = webFile622222222;
+                                                                            max9222222222 = i85;
+                                                                            webFile2 = webFile6222222222;
                                                                             i87 = chatMessageCell9.documentAttachType;
                                                                             if (i87 == 5) {
                                                                             }
                                                                             i88 = i86;
-                                                                            max5 = max922222222;
+                                                                            max5 = max9222222222;
                                                                             chatMessageCell2 = chatMessageCell9;
                                                                             i89 = i84;
                                                                             i3 = 4;
@@ -12854,10 +12998,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                             }
                                                                             if (!chatMessageCell2.hasInvoicePreview) {
                                                                             }
-                                                                            int i156222222222222 = chatMessageCell2.totalHeight;
+                                                                            int i1562222222222222 = chatMessageCell2.totalHeight;
                                                                             if (chatMessageCell2.drawInstantView) {
                                                                             }
-                                                                            chatMessageCell2.totalHeight = i156222222222222 + AndroidUtilities.dp(i91 + i90);
+                                                                            chatMessageCell2.totalHeight = i1562222222222222 + AndroidUtilities.dp(i91 + i90);
                                                                             createInstantViewButton();
                                                                             z18 = z41;
                                                                             chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -12975,7 +13119,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                             chatMessageCell2.highlightCaptionToSetStart = i5;
                                                                             updateFlagSecure();
                                                                         }
-                                                                        i73 = i15422222222 - (dp2922222222 + dp3022222222);
+                                                                        i73 = i154222222222 - (dp29222222222 + dp30222222222);
                                                                         document6 = document5;
                                                                     }
                                                                     if (i176 >= i70) {
@@ -12985,14 +13129,14 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                         }
                                                                         i72 = Math.max(i72, width);
                                                                         i176++;
-                                                                        max922222222 = i174 == true ? 1 : 0;
+                                                                        max9222222222 = i174 == true ? 1 : 0;
                                                                         document5 = document6;
                                                                         charSequence4 = charSequence5;
                                                                     }
-                                                                    width += dp2922222222 + dp3022222222;
+                                                                    width += dp29222222222 + dp30222222222;
                                                                     i72 = Math.max(i72, width);
                                                                     i176++;
-                                                                    max922222222 = i174 == true ? 1 : 0;
+                                                                    max9222222222 = i174 == true ? 1 : 0;
                                                                     document5 = document6;
                                                                     charSequence4 = charSequence5;
                                                                 } catch (Exception e7) {
@@ -13014,31 +13158,31 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         max6 = 0;
                                                         if (str6 != null) {
                                                         }
-                                                        if (str10 != null) {
+                                                        if (str10 == null) {
                                                         }
                                                         if (z38) {
                                                         }
                                                         if (str11 != null) {
                                                         }
-                                                        int i1552222222222222 = i74;
-                                                        if (str9 != null) {
+                                                        int i15522222222222222 = i74;
+                                                        if (str9 == null) {
                                                         }
                                                         if (z36) {
                                                         }
                                                         z40 = z36;
                                                         if (!z40) {
                                                         }
-                                                        if (chatMessageCell9.drawInstantViewType != 17) {
+                                                        if (chatMessageCell9.drawInstantViewType == 17) {
                                                         }
                                                         i86 = i83;
                                                         photo6 = photo5;
-                                                        max922222222 = i85;
-                                                        webFile2 = webFile622222222;
+                                                        max9222222222 = i85;
+                                                        webFile2 = webFile6222222222;
                                                         i87 = chatMessageCell9.documentAttachType;
                                                         if (i87 == 5) {
                                                         }
                                                         i88 = i86;
-                                                        max5 = max922222222;
+                                                        max5 = max9222222222;
                                                         chatMessageCell2 = chatMessageCell9;
                                                         i89 = i84;
                                                         i3 = 4;
@@ -13050,10 +13194,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         }
                                                         if (!chatMessageCell2.hasInvoicePreview) {
                                                         }
-                                                        int i1562222222222222 = chatMessageCell2.totalHeight;
+                                                        int i15622222222222222 = chatMessageCell2.totalHeight;
                                                         if (chatMessageCell2.drawInstantView) {
                                                         }
-                                                        chatMessageCell2.totalHeight = i1562222222222222 + AndroidUtilities.dp(i91 + i90);
+                                                        chatMessageCell2.totalHeight = i15622222222222222 + AndroidUtilities.dp(i91 + i90);
                                                         createInstantViewButton();
                                                         z18 = z41;
                                                         chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -13173,8 +13317,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                     }
                                                     try {
                                                         chatMessageCell9.siteNameWidth = i72;
-                                                        int i177 = i72 + dp3122222222;
-                                                        max922222222 = Math.max(max922222222, i177);
+                                                        int i177 = i72 + dp31222222222;
+                                                        max9222222222 = Math.max(max9222222222, i177);
                                                         max6 = Math.max(0, i177);
                                                         charSequence5 = charSequence4;
                                                         document6 = document5;
@@ -13189,31 +13333,31 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         max6 = 0;
                                                         if (str6 != null) {
                                                         }
-                                                        if (str10 != null) {
+                                                        if (str10 == null) {
                                                         }
                                                         if (z38) {
                                                         }
                                                         if (str11 != null) {
                                                         }
-                                                        int i15522222222222222 = i74;
-                                                        if (str9 != null) {
+                                                        int i155222222222222222 = i74;
+                                                        if (str9 == null) {
                                                         }
                                                         if (z36) {
                                                         }
                                                         z40 = z36;
                                                         if (!z40) {
                                                         }
-                                                        if (chatMessageCell9.drawInstantViewType != 17) {
+                                                        if (chatMessageCell9.drawInstantViewType == 17) {
                                                         }
                                                         i86 = i83;
                                                         photo6 = photo5;
-                                                        max922222222 = i85;
-                                                        webFile2 = webFile622222222;
+                                                        max9222222222 = i85;
+                                                        webFile2 = webFile6222222222;
                                                         i87 = chatMessageCell9.documentAttachType;
                                                         if (i87 == 5) {
                                                         }
                                                         i88 = i86;
-                                                        max5 = max922222222;
+                                                        max5 = max9222222222;
                                                         chatMessageCell2 = chatMessageCell9;
                                                         i89 = i84;
                                                         i3 = 4;
@@ -13225,10 +13369,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         }
                                                         if (!chatMessageCell2.hasInvoicePreview) {
                                                         }
-                                                        int i15622222222222222 = chatMessageCell2.totalHeight;
+                                                        int i156222222222222222 = chatMessageCell2.totalHeight;
                                                         if (chatMessageCell2.drawInstantView) {
                                                         }
-                                                        chatMessageCell2.totalHeight = i15622222222222222 + AndroidUtilities.dp(i91 + i90);
+                                                        chatMessageCell2.totalHeight = i156222222222222222 + AndroidUtilities.dp(i91 + i90);
                                                         createInstantViewButton();
                                                         z18 = z41;
                                                         chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -13354,17 +13498,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                 if (str6 != null) {
                                                     try {
                                                         int ceil5 = (int) Math.ceil(Theme.chat_titleLabelTextPaint.measureText(str6.toString()));
-                                                        StaticLayout staticLayout2 = new StaticLayout(str6, Theme.chat_titleLabelTextPaint, Math.min(ceil5, i15422222222), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                                                        StaticLayout staticLayout2 = new StaticLayout(str6, Theme.chat_titleLabelTextPaint, Math.min(ceil5, i154222222222), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                                                         chatMessageCell9.titleLabelLayout = staticLayout2;
                                                         chatMessageCell9.titleLabelLayoutWidth = staticLayout2.getLineWidth(0);
                                                         chatMessageCell9.titleLabelLayoutHeight = chatMessageCell9.titleLabelLayout.getLineBottom(0);
-                                                        max922222222 = Math.max(max922222222, chatMessageCell9.siteNameWidth + ceil5 + dp3122222222);
-                                                        max6 = Math.max(max6, chatMessageCell9.siteNameWidth + ceil5 + dp3122222222);
+                                                        max9222222222 = Math.max(max9222222222, chatMessageCell9.siteNameWidth + ceil5 + dp31222222222);
+                                                        max6 = Math.max(max6, chatMessageCell9.siteNameWidth + ceil5 + dp31222222222);
                                                     } catch (Exception e12) {
                                                         FileLog.e(e12);
                                                     }
                                                 }
-                                                if (str10 != null) {
+                                                if (str10 == null) {
                                                     i74 = i69;
                                                     i75 = max6;
                                                     z38 = false;
@@ -13383,11 +13527,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         }
                                                         int i179 = !chatMessageCell9.currentMessageObject.isRepostPreview ? 4 : 1;
                                                         if (!chatMessageCell9.isSmallImage) {
-                                                            chatMessageCell9.titleLayout = StaticLayoutEx.createStaticLayout(str13, Theme.chat_replyNamePaint, i15422222222, Layout.Alignment.ALIGN_NORMAL, 1.0f, AndroidUtilities.dp(1.0f), false, TextUtils.TruncateAt.END, i15422222222, i179);
+                                                            chatMessageCell9.titleLayout = StaticLayoutEx.createStaticLayout(str13, Theme.chat_replyNamePaint, i154222222222, Layout.Alignment.ALIGN_NORMAL, 1.0f, AndroidUtilities.dp(1.0f), false, TextUtils.TruncateAt.END, i154222222222, i179);
                                                             i76 = 0;
                                                             i77 = 0;
                                                         } else {
-                                                            StaticLayout generateStaticLayout2 = generateStaticLayout(str13, Theme.chat_replyNamePaint, i15422222222, (i15422222222 - dp2922222222) - dp3022222222, i69, i179);
+                                                            StaticLayout generateStaticLayout2 = generateStaticLayout(str13, Theme.chat_replyNamePaint, i154222222222, (i154222222222 - dp29222222222) - dp30222222222, i69, i179);
                                                             chatMessageCell9.titleLayout = generateStaticLayout2;
                                                             i77 = 0;
                                                             int i180 = i69;
@@ -13406,11 +13550,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 }
                                                                 chatMessageCell9.titleLayoutWidth = (int) Math.max(chatMessageCell9.titleLayoutWidth, lineWidth);
                                                             }
-                                                            lineWidth += dp2922222222 + dp3022222222;
+                                                            lineWidth += dp29222222222 + dp30222222222;
                                                             chatMessageCell9.titleLayoutWidth = (int) Math.max(chatMessageCell9.titleLayoutWidth, lineWidth);
                                                         }
-                                                        max922222222 = Math.max(max922222222, chatMessageCell9.titleLayoutWidth + dp3122222222);
-                                                        max6 = Math.max(max6, chatMessageCell9.titleLayoutWidth + dp3122222222);
+                                                        max9222222222 = Math.max(max9222222222, chatMessageCell9.titleLayoutWidth + dp31222222222);
+                                                        max6 = Math.max(max6, chatMessageCell9.titleLayoutWidth + dp31222222222);
                                                         z37 = chatMessageCell9.titleLayoutLeft != 0;
                                                         try {
                                                             StaticLayout staticLayout3 = chatMessageCell9.titleLayout;
@@ -13427,25 +13571,25 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             }
                                                             if (str11 != null) {
                                                             }
-                                                            int i155222222222222222 = i74;
-                                                            if (str9 != null) {
+                                                            int i1552222222222222222 = i74;
+                                                            if (str9 == null) {
                                                             }
                                                             if (z36) {
                                                             }
                                                             z40 = z36;
                                                             if (!z40) {
                                                             }
-                                                            if (chatMessageCell9.drawInstantViewType != 17) {
+                                                            if (chatMessageCell9.drawInstantViewType == 17) {
                                                             }
                                                             i86 = i83;
                                                             photo6 = photo5;
-                                                            max922222222 = i85;
-                                                            webFile2 = webFile622222222;
+                                                            max9222222222 = i85;
+                                                            webFile2 = webFile6222222222;
                                                             i87 = chatMessageCell9.documentAttachType;
                                                             if (i87 == 5) {
                                                             }
                                                             i88 = i86;
-                                                            max5 = max922222222;
+                                                            max5 = max9222222222;
                                                             chatMessageCell2 = chatMessageCell9;
                                                             i89 = i84;
                                                             i3 = 4;
@@ -13457,10 +13601,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             }
                                                             if (!chatMessageCell2.hasInvoicePreview) {
                                                             }
-                                                            int i156222222222222222 = chatMessageCell2.totalHeight;
+                                                            int i1562222222222222222 = chatMessageCell2.totalHeight;
                                                             if (chatMessageCell2.drawInstantView) {
                                                             }
-                                                            chatMessageCell2.totalHeight = i156222222222222222 + AndroidUtilities.dp(i91 + i90);
+                                                            chatMessageCell2.totalHeight = i1562222222222222222 + AndroidUtilities.dp(i91 + i90);
                                                             createInstantViewButton();
                                                             z18 = z41;
                                                             chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -13587,7 +13731,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                     z38 = z37;
                                                 }
                                                 if (z38 && chatMessageCell9.isSmallImage) {
-                                                    i15422222222 -= AndroidUtilities.dp(48.0f);
+                                                    i154222222222 -= AndroidUtilities.dp(48.0f);
                                                 }
                                                 if (str11 != null && str10 == null) {
                                                     try {
@@ -13605,12 +13749,12 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         try {
                                                             if (i74 == 3 && (!chatMessageCell9.isSmallImage || str9 == null)) {
                                                                 CharSequence charSequence14 = i74;
-                                                                chatMessageCell9.authorLayout = new StaticLayout(charSequence8, Theme.chat_replyNamePaint, i15422222222, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                                                                chatMessageCell9.authorLayout = new StaticLayout(charSequence8, Theme.chat_replyNamePaint, i154222222222, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                                                                 i74 = charSequence14;
                                                                 charSequence7 = charSequence14;
                                                             } else {
                                                                 ?? r7 = i74;
-                                                                StaticLayout generateStaticLayout3 = generateStaticLayout(charSequence8, Theme.chat_replyNamePaint, i15422222222, (i15422222222 - dp2922222222) - dp3022222222, i74, 1);
+                                                                StaticLayout generateStaticLayout3 = generateStaticLayout(charSequence8, Theme.chat_replyNamePaint, i154222222222, (i154222222222 - dp29222222222) - dp30222222222, i74, 1);
                                                                 chatMessageCell9.authorLayout = generateStaticLayout3;
                                                                 i74 = (r7 == true ? 1 : 0) - generateStaticLayout3.getLineCount();
                                                                 charSequence7 = r7;
@@ -13632,30 +13776,30 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 int lineBottom3 = staticLayout4.getLineBottom(staticLayout4.getLineCount() - 1);
                                                                 chatMessageCell9.linkPreviewHeight += lineBottom3;
                                                                 chatMessageCell9.totalHeight += lineBottom3;
-                                                                max922222222 = Math.max(max922222222, chatMessageCell9.authorLayoutWidth + dp3122222222);
-                                                                Math.max(i75, chatMessageCell9.authorLayoutWidth + dp3122222222);
+                                                                max9222222222 = Math.max(max9222222222, chatMessageCell9.authorLayoutWidth + dp31222222222);
+                                                                Math.max(i75, chatMessageCell9.authorLayoutWidth + dp31222222222);
                                                             } catch (Exception e15) {
                                                                 e = e15;
                                                                 FileLog.e(e);
-                                                                int i1552222222222222222 = i74;
-                                                                if (str9 != null) {
+                                                                int i15522222222222222222 = i74;
+                                                                if (str9 == null) {
                                                                 }
                                                                 if (z36) {
                                                                 }
                                                                 z40 = z36;
                                                                 if (!z40) {
                                                                 }
-                                                                if (chatMessageCell9.drawInstantViewType != 17) {
+                                                                if (chatMessageCell9.drawInstantViewType == 17) {
                                                                 }
                                                                 i86 = i83;
                                                                 photo6 = photo5;
-                                                                max922222222 = i85;
-                                                                webFile2 = webFile622222222;
+                                                                max9222222222 = i85;
+                                                                webFile2 = webFile6222222222;
                                                                 i87 = chatMessageCell9.documentAttachType;
                                                                 if (i87 == 5) {
                                                                 }
                                                                 i88 = i86;
-                                                                max5 = max922222222;
+                                                                max5 = max9222222222;
                                                                 chatMessageCell2 = chatMessageCell9;
                                                                 i89 = i84;
                                                                 i3 = 4;
@@ -13667,10 +13811,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 }
                                                                 if (!chatMessageCell2.hasInvoicePreview) {
                                                                 }
-                                                                int i1562222222222222222 = chatMessageCell2.totalHeight;
+                                                                int i15622222222222222222 = chatMessageCell2.totalHeight;
                                                                 if (chatMessageCell2.drawInstantView) {
                                                                 }
-                                                                chatMessageCell2.totalHeight = i1562222222222222222 + AndroidUtilities.dp(i91 + i90);
+                                                                chatMessageCell2.totalHeight = i15622222222222222222 + AndroidUtilities.dp(i91 + i90);
                                                                 createInstantViewButton();
                                                                 z18 = z41;
                                                                 chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -13796,8 +13940,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         e = e17;
                                                     }
                                                 }
-                                                int i15522222222222222222 = i74;
-                                                if (str9 != null) {
+                                                int i155222222222222222222 = i74;
+                                                if (str9 == null) {
                                                     messageObject4 = messageObject;
                                                 } else {
                                                     try {
@@ -13823,17 +13967,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                         z40 = z36;
                                                                         if (!z40) {
                                                                         }
-                                                                        if (chatMessageCell9.drawInstantViewType != 17) {
+                                                                        if (chatMessageCell9.drawInstantViewType == 17) {
                                                                         }
                                                                         i86 = i83;
                                                                         photo6 = photo5;
-                                                                        max922222222 = i85;
-                                                                        webFile2 = webFile622222222;
+                                                                        max9222222222 = i85;
+                                                                        webFile2 = webFile6222222222;
                                                                         i87 = chatMessageCell9.documentAttachType;
                                                                         if (i87 == 5) {
                                                                         }
                                                                         i88 = i86;
-                                                                        max5 = max922222222;
+                                                                        max5 = max9222222222;
                                                                         chatMessageCell2 = chatMessageCell9;
                                                                         i89 = i84;
                                                                         i3 = 4;
@@ -13845,10 +13989,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                         }
                                                                         if (!chatMessageCell2.hasInvoicePreview) {
                                                                         }
-                                                                        int i15622222222222222222 = chatMessageCell2.totalHeight;
+                                                                        int i156222222222222222222 = chatMessageCell2.totalHeight;
                                                                         if (chatMessageCell2.drawInstantView) {
                                                                         }
-                                                                        chatMessageCell2.totalHeight = i15622222222222222222 + AndroidUtilities.dp(i91 + i90);
+                                                                        chatMessageCell2.totalHeight = i156222222222222222222 + AndroidUtilities.dp(i91 + i90);
                                                                         createInstantViewButton();
                                                                         z18 = z41;
                                                                         chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -13981,8 +14125,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                     i78 = 3;
                                                                     i79 = 6;
                                                                 }
-                                                                if (i15522222222222222222 == i78 && !chatMessageCell9.isSmallImage) {
-                                                                    chatMessageCell9.descriptionLayout = StaticLayoutEx.createStaticLayout(charSequence6, Theme.chat_replyTextPaint, i15422222222, Layout.Alignment.ALIGN_NORMAL, 1.0f, AndroidUtilities.dp(1.0f), false, TextUtils.TruncateAt.END, i15422222222, i79);
+                                                                if (i155222222222222222222 == i78 && !chatMessageCell9.isSmallImage) {
+                                                                    chatMessageCell9.descriptionLayout = StaticLayoutEx.createStaticLayout(charSequence6, Theme.chat_replyTextPaint, i154222222222, Layout.Alignment.ALIGN_NORMAL, 1.0f, AndroidUtilities.dp(1.0f), false, TextUtils.TruncateAt.END, i154222222222, i79);
                                                                     i80 = 0;
                                                                     chatMessageCell9.animatedEmojiDescriptionStack = AnimatedEmojiSpan.update(0, (View) chatMessageCell9, false, chatMessageCell9.animatedEmojiDescriptionStack, chatMessageCell9.descriptionLayout);
                                                                     StaticLayout staticLayout5 = chatMessageCell9.descriptionLayout;
@@ -14002,16 +14146,16 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                             i82 = 0;
                                                                             i183 = (int) Math.max(i183, chatMessageCell9.descriptionLayout.getLineRight(i81) + i82);
                                                                         }
-                                                                        i82 = dp2922222222 + dp3022222222;
+                                                                        i82 = dp29222222222 + dp30222222222;
                                                                         i183 = (int) Math.max(i183, chatMessageCell9.descriptionLayout.getLineRight(i81) + i82);
                                                                     }
                                                                     int abs = Math.abs(i183 - width3);
                                                                     chatMessageCell9.descriptionLayoutWidth = abs;
                                                                     chatMessageCell9.descriptionLayoutLeft = width3;
-                                                                    max922222222 = Math.max(max922222222, abs + dp3122222222);
+                                                                    max9222222222 = Math.max(max9222222222, abs + dp31222222222);
                                                                 }
-                                                                chatMessageCell9.descriptionLayout = generateStaticLayout(charSequence6, Theme.chat_replyTextPaint, i15422222222 - (isRTL ? 0 : (dp3022222222 * 2) + dp2922222222), (i15422222222 - dp2922222222) - (dp3022222222 * 2), i15522222222222222222, i79);
-                                                                i80 = i15522222222222222222;
+                                                                chatMessageCell9.descriptionLayout = generateStaticLayout(charSequence6, Theme.chat_replyTextPaint, i154222222222 - (isRTL ? 0 : (dp30222222222 * 2) + dp29222222222), (i154222222222 - dp29222222222) - (dp30222222222 * 2), i155222222222222222222, i79);
+                                                                i80 = i155222222222222222222;
                                                                 chatMessageCell9.animatedEmojiDescriptionStack = AnimatedEmojiSpan.update(0, (View) chatMessageCell9, false, chatMessageCell9.animatedEmojiDescriptionStack, chatMessageCell9.descriptionLayout);
                                                                 StaticLayout staticLayout52 = chatMessageCell9.descriptionLayout;
                                                                 int lineBottom42 = staticLayout52.getLineBottom(staticLayout52.getLineCount() - 1);
@@ -14025,7 +14169,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 int abs2 = Math.abs(i1832 - width32);
                                                                 chatMessageCell9.descriptionLayoutWidth = abs2;
                                                                 chatMessageCell9.descriptionLayoutLeft = width32;
-                                                                max922222222 = Math.max(max922222222, abs2 + dp3122222222);
+                                                                max9222222222 = Math.max(max9222222222, abs2 + dp31222222222);
                                                             }
                                                         }
                                                         z39 = false;
@@ -14034,8 +14178,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         boolean isRTL2 = AndroidUtilities.isRTL(charSequence6);
                                                         if (!z39) {
                                                         }
-                                                        if (i15522222222222222222 == i78) {
-                                                            chatMessageCell9.descriptionLayout = StaticLayoutEx.createStaticLayout(charSequence6, Theme.chat_replyTextPaint, i15422222222, Layout.Alignment.ALIGN_NORMAL, 1.0f, AndroidUtilities.dp(1.0f), false, TextUtils.TruncateAt.END, i15422222222, i79);
+                                                        if (i155222222222222222222 == i78) {
+                                                            chatMessageCell9.descriptionLayout = StaticLayoutEx.createStaticLayout(charSequence6, Theme.chat_replyTextPaint, i154222222222, Layout.Alignment.ALIGN_NORMAL, 1.0f, AndroidUtilities.dp(1.0f), false, TextUtils.TruncateAt.END, i154222222222, i79);
                                                             i80 = 0;
                                                             chatMessageCell9.animatedEmojiDescriptionStack = AnimatedEmojiSpan.update(0, (View) chatMessageCell9, false, chatMessageCell9.animatedEmojiDescriptionStack, chatMessageCell9.descriptionLayout);
                                                             StaticLayout staticLayout522 = chatMessageCell9.descriptionLayout;
@@ -14050,10 +14194,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             int abs22 = Math.abs(i18322 - width322);
                                                             chatMessageCell9.descriptionLayoutWidth = abs22;
                                                             chatMessageCell9.descriptionLayoutLeft = width322;
-                                                            max922222222 = Math.max(max922222222, abs22 + dp3122222222);
+                                                            max9222222222 = Math.max(max9222222222, abs22 + dp31222222222);
                                                         }
-                                                        chatMessageCell9.descriptionLayout = generateStaticLayout(charSequence6, Theme.chat_replyTextPaint, i15422222222 - (isRTL2 ? 0 : (dp3022222222 * 2) + dp2922222222), (i15422222222 - dp2922222222) - (dp3022222222 * 2), i15522222222222222222, i79);
-                                                        i80 = i15522222222222222222;
+                                                        chatMessageCell9.descriptionLayout = generateStaticLayout(charSequence6, Theme.chat_replyTextPaint, i154222222222 - (isRTL2 ? 0 : (dp30222222222 * 2) + dp29222222222), (i154222222222 - dp29222222222) - (dp30222222222 * 2), i155222222222222222222, i79);
+                                                        i80 = i155222222222222222222;
                                                         chatMessageCell9.animatedEmojiDescriptionStack = AnimatedEmojiSpan.update(0, (View) chatMessageCell9, false, chatMessageCell9.animatedEmojiDescriptionStack, chatMessageCell9.descriptionLayout);
                                                         StaticLayout staticLayout5222 = chatMessageCell9.descriptionLayout;
                                                         int lineBottom4222 = staticLayout5222.getLineBottom(staticLayout5222.getLineCount() - 1);
@@ -14067,7 +14211,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         int abs222 = Math.abs(i183222 - width3222);
                                                         chatMessageCell9.descriptionLayoutWidth = abs222;
                                                         chatMessageCell9.descriptionLayoutLeft = width3222;
-                                                        max922222222 = Math.max(max922222222, abs222 + dp3122222222);
+                                                        max9222222222 = Math.max(max9222222222, abs222 + dp31222222222);
                                                     } catch (Exception e19) {
                                                         e = e19;
                                                         messageObject4 = messageObject;
@@ -14080,18 +14224,18 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                     z40 = z36;
                                                 }
                                                 if (!z40) {
-                                                    dp2922222222 = i15422222222;
+                                                    dp29222222222 = i154222222222;
                                                 }
-                                                if (chatMessageCell9.drawInstantViewType != 17) {
+                                                if (chatMessageCell9.drawInstantViewType == 17) {
                                                     photo4 = photo2;
                                                     i83 = i66;
                                                     i84 = i63;
                                                     str14 = str8;
                                                     photo5 = photo3;
                                                     document7 = document6;
-                                                    i85 = max922222222;
+                                                    i85 = max9222222222;
                                                     if (storyItem != null && (messageMedia = (storyItem2 = storyItem).media) != null) {
-                                                        int i184 = (int) ((dp2922222222 * 16.0f) / 9.0f);
+                                                        int i184 = (int) ((dp29222222222 * 16.0f) / 9.0f);
                                                         TLRPC.Document document14 = messageMedia.document;
                                                         if (document14 != null) {
                                                             chatMessageCell9.currentPhotoObject = FileLoader.getClosestPhotoSizeWithSize(document14.thumbs, i184);
@@ -14150,7 +14294,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             if (str14.equals("photo")) {
                                                                 z43 = true;
                                                                 ArrayList<TLRPC.PhotoSize> arrayList12 = messageObject4.photoThumbs;
-                                                                int photoSize11 = (!z43 && z40) ? dp2922222222 : AndroidUtilities.getPhotoSize();
+                                                                int photoSize11 = (!z43 && z40) ? dp29222222222 : AndroidUtilities.getPhotoSize();
                                                                 boolean z76 = !z43;
                                                                 chatMessageCell9.currentPhotoObject = FileLoader.getClosestPhotoSizeWithSize(arrayList12, photoSize11, z76);
                                                                 chatMessageCell9.photoParentObject = messageObject4.photoThumbsObject;
@@ -14164,7 +14308,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 if (chatMessageCell9.currentPhotoObjectThumb == chatMessageCell9.currentPhotoObject) {
                                                                     chatMessageCell9.currentPhotoObjectThumb = null;
                                                                 }
-                                                                webFile622222222 = webFile622222222;
+                                                                webFile6222222222 = webFile6222222222;
                                                                 photo4 = photo2;
                                                                 i83 = i66;
                                                                 i84 = i63;
@@ -14182,7 +14326,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             }
                                                             if (chatMessageCell9.currentPhotoObjectThumb == chatMessageCell9.currentPhotoObject) {
                                                             }
-                                                            webFile622222222 = webFile622222222;
+                                                            webFile6222222222 = webFile6222222222;
                                                             photo4 = photo2;
                                                             i83 = i66;
                                                             i84 = i63;
@@ -14196,18 +14340,18 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         }
                                                         if (chatMessageCell9.currentPhotoObjectThumb == chatMessageCell9.currentPhotoObject) {
                                                         }
-                                                        webFile622222222 = webFile622222222;
+                                                        webFile6222222222 = webFile6222222222;
                                                         photo4 = photo2;
                                                         i83 = i66;
                                                         i84 = i63;
-                                                    } else if (webFile622222222 == null) {
+                                                    } else if (webFile6222222222 == null) {
                                                         photo4 = photo2;
                                                         i83 = i66;
                                                         i84 = i63;
                                                         str14 = str8;
                                                     } else {
-                                                        if (webFile622222222.mime_type.startsWith("image/")) {
-                                                            webFile5 = webFile622222222;
+                                                        if (webFile6222222222.mime_type.startsWith("image/")) {
+                                                            webFile5 = webFile6222222222;
                                                             z44 = false;
                                                         } else {
                                                             z44 = false;
@@ -14224,7 +14368,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         i87 = chatMessageCell9.documentAttachType;
                                                         if (i87 == 5 || i87 == 3 || i87 == 1) {
                                                             i88 = i86;
-                                                            max5 = max922222222;
+                                                            max5 = max9222222222;
                                                             chatMessageCell2 = chatMessageCell9;
                                                             i89 = i84;
                                                             i3 = 4;
@@ -14233,7 +14377,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             i5 = -1;
                                                             z41 = true;
                                                         } else {
-                                                            if (starGift222222222 == null) {
+                                                            if (starGift2222222222 == null) {
                                                                 i92 = i86;
                                                                 chatMessageCell2 = chatMessageCell9;
                                                                 i93 = i84;
@@ -14251,12 +14395,12 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 }
                                                                 chatMessageCell2.totalHeight += AndroidUtilities.dp(12.0f) + dp32;
                                                                 chatMessageCell2.linkPreviewHeight += dp32;
-                                                                max922222222 = Math.max(max922222222, dp3122222222 + dp32);
+                                                                max9222222222 = Math.max(max9222222222, dp31222222222 + dp32);
                                                                 float f14 = dp32;
                                                                 chatMessageCell2.photoImage.setImageCoords(0.0f, 0.0f, f14, f14);
                                                                 chatMessageCell2.currentPhotoFilter = "220_220";
                                                                 chatMessageCell2.currentPhotoFilterThumb = "220_220_b";
-                                                                StarGiftSheet.StarGiftDrawableIcon patternsType = new StarGiftSheet.StarGiftDrawableIcon(chatMessageCell2, starGift222222222, NotificationCenter.starGiveawayOptionsLoaded, 1.0f).setRounding(AndroidUtilities.dp(12.0f)).setPatternsType(3);
+                                                                StarGiftSheet.StarGiftDrawableIcon patternsType = new StarGiftSheet.StarGiftDrawableIcon(chatMessageCell2, starGift2222222222, NotificationCenter.starGiveawayOptionsLoaded, 1.0f).setRounding(AndroidUtilities.dp(12.0f)).setPatternsType(3);
                                                                 if (tL_webPageAttributeStarGiftAuction2 != null) {
                                                                     TLRPC.TL_webPageAttributeStarGiftAuction tL_webPageAttributeStarGiftAuction4 = tL_webPageAttributeStarGiftAuction2;
                                                                     patternsType.setGradient(tL_webPageAttributeStarGiftAuction4.center_color, tL_webPageAttributeStarGiftAuction4.edge_color);
@@ -14277,15 +14421,15 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 }
                                                                 if (j3 != 0) {
                                                                     i95 = i84;
-                                                                    dp2922222222 = AndroidUtilities.dp(45.0f);
+                                                                    dp29222222222 = AndroidUtilities.dp(45.0f);
                                                                 } else if (chatMessageCell9.imageBackgroundSideColor != 0) {
                                                                     i95 = i84;
-                                                                    dp2922222222 = AndroidUtilities.dp(208.0f);
+                                                                    dp29222222222 = AndroidUtilities.dp(208.0f);
                                                                 } else {
                                                                     TLRPC.PhotoSize photoSize12 = chatMessageCell9.currentPhotoObject;
                                                                     i95 = i84;
                                                                     if ((photoSize12 instanceof TLRPC.TL_photoSizeEmpty) && (i102 = photoSize12.w) != 0) {
-                                                                        dp2922222222 = i102;
+                                                                        dp29222222222 = i102;
                                                                     } else {
                                                                         int i188 = chatMessageCell9.documentAttachType;
                                                                         if (i188 == 6 || i188 == 8 || i188 == 9) {
@@ -14294,19 +14438,19 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                             } else {
                                                                                 minTabletSide7 = getParentWidth();
                                                                             }
-                                                                            dp2922222222 = (int) (minTabletSide7 * 0.5f);
+                                                                            dp29222222222 = (int) (minTabletSide7 * 0.5f);
                                                                         } else if (i188 == 7) {
-                                                                            dp2922222222 = AndroidUtilities.roundMessageSize;
+                                                                            dp29222222222 = AndroidUtilities.roundMessageSize;
                                                                             chatMessageCell9.photoImage.setAllowDecodeSingleFrame(true);
                                                                         } else if (i188 == 10) {
-                                                                            dp2922222222 /= 2;
+                                                                            dp29222222222 /= 2;
                                                                         }
                                                                     }
                                                                 }
-                                                                if (chatMessageCell9.hasInvoicePreview && dp2922222222 < (i101 = messageObject4.textWidth)) {
-                                                                    dp2922222222 = AndroidUtilities.dp(22.0f) + i101;
+                                                                if (chatMessageCell9.hasInvoicePreview && dp29222222222 < (i101 = messageObject4.textWidth)) {
+                                                                    dp29222222222 = AndroidUtilities.dp(22.0f) + i101;
                                                                 }
-                                                                int max11 = Math.max(max922222222, (dp2922222222 - (!chatMessageCell9.hasInvoicePreview ? 0 : AndroidUtilities.dp(12.0f))) + dp3122222222);
+                                                                int max11 = Math.max(max9222222222, (dp29222222222 - (!chatMessageCell9.hasInvoicePreview ? 0 : AndroidUtilities.dp(12.0f))) + dp31222222222);
                                                                 TLRPC.PhotoSize photoSize13 = chatMessageCell9.currentPhotoObject;
                                                                 if (photoSize13 != null) {
                                                                     photoSize13.size = -1;
@@ -14322,7 +14466,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 }
                                                                 if (z40 || chatMessageCell9.documentAttachType == 7) {
                                                                     chatMessageCell9.photoImage.setInvalidateAll(true);
-                                                                    i98 = dp2922222222;
+                                                                    i98 = dp29222222222;
                                                                 } else if (chatMessageCell9.hasGamePreview || chatMessageCell9.hasInvoicePreview) {
                                                                     if (chatMessageCell9.hasInvoicePreview) {
                                                                         int size7 = webFile2.attributes.size();
@@ -14338,9 +14482,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                     i99 = 640;
                                                                     i100 = 360;
                                                                     float f15 = i99;
-                                                                    float dp33 = f15 / (dp2922222222 - AndroidUtilities.dp(2.0f));
+                                                                    float dp33 = f15 / (dp29222222222 - AndroidUtilities.dp(2.0f));
                                                                     int i190 = (int) (f15 / dp33);
-                                                                    dp2922222222 = (int) (i100 / dp33);
+                                                                    dp29222222222 = (int) (i100 / dp33);
                                                                     i98 = i190;
                                                                 } else {
                                                                     if (chatMessageCell9.drawInstantViewType != 7) {
@@ -14357,7 +14501,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                         i97 = 560;
                                                                     }
                                                                     float f16 = i97;
-                                                                    float dp34 = f16 / (dp2922222222 - AndroidUtilities.dp(2.0f));
+                                                                    float dp34 = f16 / (dp29222222222 - AndroidUtilities.dp(2.0f));
                                                                     i98 = (int) (f16 / dp34);
                                                                     int i191 = (int) (i96 / dp34);
                                                                     if (str12 == null || (!str12.toString().toLowerCase().equals("instagram") && chatMessageCell9.documentAttachType == 0)) {
@@ -14377,9 +14521,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                         i191 = (int) (f17 / dp35);
                                                                         i98 = (int) (i98 / dp35);
                                                                     }
-                                                                    dp2922222222 = i191;
-                                                                    if (dp2922222222 < AndroidUtilities.dp(60.0f)) {
-                                                                        dp2922222222 = AndroidUtilities.dp(60.0f);
+                                                                    dp29222222222 = i191;
+                                                                    if (dp29222222222 < AndroidUtilities.dp(60.0f)) {
+                                                                        dp29222222222 = AndroidUtilities.dp(60.0f);
                                                                     }
                                                                 }
                                                                 if (chatMessageCell9.isSmallImage) {
@@ -14389,17 +14533,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                     }
                                                                     chatMessageCell9.linkPreviewHeight -= AndroidUtilities.dp(8.0f);
                                                                 } else {
-                                                                    chatMessageCell9.totalHeight += AndroidUtilities.dp(12.0f) + dp2922222222;
-                                                                    chatMessageCell9.linkPreviewHeight += dp2922222222;
+                                                                    chatMessageCell9.totalHeight += AndroidUtilities.dp(12.0f) + dp29222222222;
+                                                                    chatMessageCell9.linkPreviewHeight += dp29222222222;
                                                                 }
                                                                 if (chatMessageCell9.documentAttachType == 8 && chatMessageCell9.imageBackgroundSideColor == 0) {
-                                                                    chatMessageCell9.photoImage.setImageCoords(0.0f, 0.0f, Math.max(max11 - AndroidUtilities.dp(13.0f), i98), dp2922222222);
+                                                                    chatMessageCell9.photoImage.setImageCoords(0.0f, 0.0f, Math.max(max11 - AndroidUtilities.dp(13.0f), i98), dp29222222222);
                                                                 } else {
-                                                                    chatMessageCell9.photoImage.setImageCoords(0.0f, 0.0f, i98, dp2922222222);
+                                                                    chatMessageCell9.photoImage.setImageCoords(0.0f, 0.0f, i98, dp29222222222);
                                                                 }
                                                                 float f18 = AndroidUtilities.density;
                                                                 int i194 = (int) (i98 / f18);
-                                                                int i195 = (int) (dp2922222222 / f18);
+                                                                int i195 = (int) (dp29222222222 / f18);
                                                                 Locale locale = Locale.US;
                                                                 chatMessageCell9.currentPhotoFilter = String.format(locale, "%d_%d", Integer.valueOf(i194), Integer.valueOf(i195));
                                                                 i92 = i86;
@@ -14656,7 +14800,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                                     chatMessageCell2.durationWidth = (int) Math.ceil(Theme.chat_gamePaint.measureText(upperCase2));
                                                                                     chatMessageCell2.videoInfoLayout = new StaticLayout(upperCase2, Theme.chat_gamePaint, chatMessageCell2.durationWidth, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                                                                                 }
-                                                                                max922222222 = max11;
+                                                                                max9222222222 = max11;
                                                                                 f3 = 1.0f;
                                                                                 if (chatMessageCell2.hasInvoicePreview && chatMessageCell2.hasInvoicePrice) {
                                                                                     if ((MessageObject.getMedia(messageObject4.messageOwner).flags & i3) != 0) {
@@ -14677,18 +14821,18 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                                         int i200 = dp36 + i199;
                                                                                         i88 = i92;
                                                                                         if (i200 > i88) {
-                                                                                            max922222222 = Math.max(i199, max922222222);
+                                                                                            max9222222222 = Math.max(i199, max9222222222);
                                                                                             chatMessageCell2.totalHeight += AndroidUtilities.dp(12.0f);
                                                                                         } else {
-                                                                                            max922222222 = Math.max(i200, max922222222);
+                                                                                            max9222222222 = Math.max(i200, max9222222222);
                                                                                         }
                                                                                         if (chatMessageCell2.hasGamePreview && messageObject4.textHeight(chatMessageCell2.transitionParams) != 0) {
                                                                                             chatMessageCell2.linkPreviewHeight += messageObject4.textHeight(chatMessageCell2.transitionParams) + AndroidUtilities.dp(6.0f);
                                                                                             chatMessageCell2.totalHeight += AndroidUtilities.dp(4.0f);
                                                                                         }
                                                                                         i89 = i93;
-                                                                                        chatMessageCell2.calcBackgroundWidth(i88, i89, max922222222);
-                                                                                        max5 = max922222222;
+                                                                                        chatMessageCell2.calcBackgroundWidth(i88, i89, max9222222222);
+                                                                                        max5 = max9222222222;
                                                                                     }
                                                                                 }
                                                                                 i88 = i92;
@@ -14697,8 +14841,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                                     chatMessageCell2.totalHeight += AndroidUtilities.dp(4.0f);
                                                                                 }
                                                                                 i89 = i93;
-                                                                                chatMessageCell2.calcBackgroundWidth(i88, i89, max922222222);
-                                                                                max5 = max922222222;
+                                                                                chatMessageCell2.calcBackgroundWidth(i88, i89, max9222222222);
+                                                                                max5 = max9222222222;
                                                                             }
                                                                         } else {
                                                                             str15 = str14;
@@ -14734,7 +14878,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                     String formatShortDuration2 = AndroidUtilities.formatShortDuration(i64);
                                                                     chatMessageCell2.durationWidth = (int) Math.ceil(Theme.chat_durationPaint.measureText(formatShortDuration2));
                                                                     chatMessageCell2.videoInfoLayout = new StaticLayout(formatShortDuration2, Theme.chat_durationPaint, chatMessageCell2.durationWidth, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                                                                    max922222222 = max11;
+                                                                    max9222222222 = max11;
                                                                     f3 = 1.0f;
                                                                     if (chatMessageCell2.hasInvoicePreview) {
                                                                         if ((MessageObject.getMedia(messageObject4.messageOwner).flags & i3) != 0) {
@@ -14752,13 +14896,13 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                     if (chatMessageCell2.hasGamePreview) {
                                                                     }
                                                                     i89 = i93;
-                                                                    chatMessageCell2.calcBackgroundWidth(i88, i89, max922222222);
-                                                                    max5 = max922222222;
+                                                                    chatMessageCell2.calcBackgroundWidth(i88, i89, max9222222222);
+                                                                    max5 = max9222222222;
                                                                 }
                                                                 String formatShortDuration22 = AndroidUtilities.formatShortDuration(i64);
                                                                 chatMessageCell2.durationWidth = (int) Math.ceil(Theme.chat_durationPaint.measureText(formatShortDuration22));
                                                                 chatMessageCell2.videoInfoLayout = new StaticLayout(formatShortDuration22, Theme.chat_durationPaint, chatMessageCell2.durationWidth, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                                                                max922222222 = max11;
+                                                                max9222222222 = max11;
                                                                 f3 = 1.0f;
                                                                 if (chatMessageCell2.hasInvoicePreview) {
                                                                 }
@@ -14766,8 +14910,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 if (chatMessageCell2.hasGamePreview) {
                                                                 }
                                                                 i89 = i93;
-                                                                chatMessageCell2.calcBackgroundWidth(i88, i89, max922222222);
-                                                                max5 = max922222222;
+                                                                chatMessageCell2.calcBackgroundWidth(i88, i89, max9222222222);
+                                                                max5 = max9222222222;
                                                             } else {
                                                                 chatMessageCell9.photoImage.setImageBitmap((Drawable) null);
                                                                 clearBlurredImage(chatMessageCell9.blurredPhotoImage);
@@ -14788,8 +14932,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             if (chatMessageCell2.hasGamePreview) {
                                                             }
                                                             i89 = i93;
-                                                            chatMessageCell2.calcBackgroundWidth(i88, i89, max922222222);
-                                                            max5 = max922222222;
+                                                            chatMessageCell2.calcBackgroundWidth(i88, i89, max9222222222);
+                                                            max5 = max9222222222;
                                                         }
                                                         if (!chatMessageCell2.hasInvoicePreview && !chatMessageCell2.currentMessageObject.isGiveawayOrGiveawayResults()) {
                                                             chatMessageCell2.linkPreviewHeight += AndroidUtilities.dp(6.0f);
@@ -14798,21 +14942,21 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         if (!chatMessageCell2.hasInvoicePreview && !chatMessageCell2.currentMessageObject.isGiveawayOrGiveawayResults() && ((chatMessageCell2.currentPhotoObject != null || chatMessageCell2.documentAttachType == i3) && (chatMessageCell2.authorLayout != null || chatMessageCell2.descriptionLayout != null || chatMessageCell2.titleLayout != null || chatMessageCell2.siteNameLayout != null))) {
                                                             chatMessageCell2.linkPreviewHeight += AndroidUtilities.dp(2.66f);
                                                         }
-                                                        int i156222222222222222222 = chatMessageCell2.totalHeight;
+                                                        int i1562222222222222222222 = chatMessageCell2.totalHeight;
                                                         if (chatMessageCell2.drawInstantView) {
                                                             i90 = 2;
-                                                            i91 = 4;
+                                                            i91 = 0;
                                                         } else {
                                                             i90 = 2;
-                                                            i91 = 0;
+                                                            i91 = 4;
                                                         }
-                                                        chatMessageCell2.totalHeight = i156222222222222222222 + AndroidUtilities.dp(i91 + i90);
+                                                        chatMessageCell2.totalHeight = i1562222222222222222222 + AndroidUtilities.dp(i91 + i90);
                                                         createInstantViewButton();
                                                         z18 = z41;
                                                     }
                                                     photo5 = photo3;
                                                     document7 = document6;
-                                                    i85 = max922222222;
+                                                    i85 = max9222222222;
                                                 } else {
                                                     str14 = str8;
                                                     if (MessageObject.isRoundVideoDocument(document6)) {
@@ -14826,16 +14970,16 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         chatMessageCell9.documentAttachType = 7;
                                                         i86 = i66;
                                                         photo6 = photo3;
-                                                        webFile2 = webFile622222222;
+                                                        webFile2 = webFile6222222222;
                                                     } else {
                                                         document7 = document6;
                                                         if (MessageObject.isGifDocument(document7, messageObject.hasValidGroupId())) {
-                                                            webFile622222222 = webFile622222222;
+                                                            webFile6222222222 = webFile6222222222;
                                                             photo4 = photo2;
                                                             i83 = i66;
                                                             i84 = i63;
                                                             photo5 = photo3;
-                                                            i85 = max922222222;
+                                                            i85 = max9222222222;
                                                             if (!messageObject.isGame() && (!SharedConfig.isAutoplayGifs() || messageObject4.isRepostPreview)) {
                                                                 f8 = 1.0f;
                                                                 messageObject4.gifState = 1.0f;
@@ -14872,7 +15016,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             chatMessageCell9.documentAttach = document7;
                                                             chatMessageCell9.documentAttachType = 2;
                                                         } else if (MessageObject.isVideoDocument(document7)) {
-                                                            webFile622222222 = webFile622222222;
+                                                            webFile6222222222 = webFile6222222222;
                                                             i83 = i66;
                                                             i84 = i63;
                                                             if (photo2 != null) {
@@ -14928,7 +15072,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                             int i203 = documentAttribute4.w;
                                                                             float max12 = Math.max(i203, i203) / 50.0f;
                                                                             TLRPC.PhotoSize photoSize29 = chatMessageCell9.currentPhotoObject;
-                                                                            i85 = max922222222;
+                                                                            i85 = max9222222222;
                                                                             photoSize29.w = (int) (documentAttribute4.w / max12);
                                                                             photoSize29.h = (int) (documentAttribute4.h / max12);
                                                                         } else {
@@ -14939,7 +15083,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                         i202++;
                                                                     }
                                                                 }
-                                                                i85 = max922222222;
+                                                                i85 = max9222222222;
                                                                 TLRPC.PhotoSize photoSize30 = chatMessageCell9.currentPhotoObject;
                                                                 if (photoSize30.w == 0 || photoSize30.h == 0) {
                                                                     int dp38 = AndroidUtilities.dp(150.0f);
@@ -14947,12 +15091,12 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                     photoSize30.w = dp38;
                                                                 }
                                                             } else {
-                                                                i85 = max922222222;
+                                                                i85 = max9222222222;
                                                             }
                                                             chatMessageCell9.createDocumentLayout(0, messageObject4);
                                                         } else {
                                                             if (MessageObject.isStickerDocument(document7) || MessageObject.isAnimatedStickerDocument(document7, true)) {
-                                                                webFile3 = webFile622222222;
+                                                                webFile3 = webFile6222222222;
                                                                 i104 = i66;
                                                                 i84 = i63;
                                                                 TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document7.thumbs, 90);
@@ -14986,7 +15130,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             } else {
                                                                 int i205 = chatMessageCell9.drawInstantViewType;
                                                                 if (i205 == 6) {
-                                                                    webFile3 = webFile622222222;
+                                                                    webFile3 = webFile6222222222;
                                                                     i104 = i66;
                                                                     i84 = i63;
                                                                     TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(document7.thumbs, NotificationCenter.onDatabaseReset);
@@ -15021,7 +15165,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                     chatMessageCell9.durationWidth = (int) Math.ceil(Theme.chat_durationPaint.measureText(formatFileSize));
                                                                     chatMessageCell9.videoInfoLayout = new StaticLayout(formatFileSize, Theme.chat_durationPaint, chatMessageCell9.durationWidth, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                                                                 } else if (i205 == 7) {
-                                                                    webFile3 = webFile622222222;
+                                                                    webFile3 = webFile6222222222;
                                                                     i104 = i66;
                                                                     i84 = i63;
                                                                     chatMessageCell9.currentPhotoObject = FileLoader.getClosestPhotoSizeWithSize(document7.thumbs, 700);
@@ -15061,49 +15205,49 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                 } else {
                                                                     i83 = i66;
                                                                     i84 = i63;
-                                                                    chatMessageCell9.calcBackgroundWidth(i83, i84, max922222222);
+                                                                    chatMessageCell9.calcBackgroundWidth(i83, i84, max9222222222);
                                                                     if (chatMessageCell9.backgroundWidth < AndroidUtilities.dp(20.0f) + i83) {
                                                                         chatMessageCell9.backgroundWidth = AndroidUtilities.dp(20.0f) + i83;
                                                                     }
                                                                     if (MessageObject.isVoiceDocument(document7)) {
-                                                                        webFile4 = webFile622222222;
+                                                                        webFile4 = webFile6222222222;
                                                                         chatMessageCell9.createDocumentLayout(chatMessageCell9.backgroundWidth - AndroidUtilities.dp(10.0f), messageObject4);
                                                                         chatMessageCell9.mediaOffsetY = (!chatMessageCell9.linkPreviewAbove ? chatMessageCell9.currentMessageObject.textHeight(chatMessageCell9.transitionParams) : 0) + AndroidUtilities.dp(8.0f) + chatMessageCell9.linkPreviewHeight;
                                                                         chatMessageCell9.totalHeight += AndroidUtilities.dp(44 + (!chatMessageCell9.hasLinkPreview ? !chatMessageCell9.linkPreviewAbove ? 0 : -4 : 4));
                                                                         chatMessageCell9.linkPreviewHeight += AndroidUtilities.dp((!chatMessageCell9.hasLinkPreview ? 0 : 4) + 44);
                                                                         i86 = i83 - AndroidUtilities.dp(86.0f);
-                                                                        max922222222 = AndroidUtilities.isTablet() ? Math.max(max922222222, (Math.min(AndroidUtilities.getMinTabletSide() - AndroidUtilities.dp(!chatMessageCell9.isSideMenued ? !z9 ? 0.0f : 52.0f : 71.0f), AndroidUtilities.dp(220.0f)) - AndroidUtilities.dp(30.0f)) + dp3122222222) : Math.max(max922222222, (Math.min(getParentWidth() - AndroidUtilities.dp(!chatMessageCell9.isSideMenued ? !z9 ? 0.0f : 52.0f : 71.0f), AndroidUtilities.dp(220.0f)) - AndroidUtilities.dp(30.0f)) + dp3122222222);
-                                                                        chatMessageCell9.calcBackgroundWidth(i86, i84, max922222222);
+                                                                        max9222222222 = AndroidUtilities.isTablet() ? Math.max(max9222222222, (Math.min(AndroidUtilities.getMinTabletSide() - AndroidUtilities.dp(!chatMessageCell9.isSideMenued ? !z9 ? 0.0f : 52.0f : 71.0f), AndroidUtilities.dp(220.0f)) - AndroidUtilities.dp(30.0f)) + dp31222222222) : Math.max(max9222222222, (Math.min(getParentWidth() - AndroidUtilities.dp(!chatMessageCell9.isSideMenued ? !z9 ? 0.0f : 52.0f : 71.0f), AndroidUtilities.dp(220.0f)) - AndroidUtilities.dp(30.0f)) + dp31222222222);
+                                                                        chatMessageCell9.calcBackgroundWidth(i86, i84, max9222222222);
                                                                     } else if (MessageObject.isMusicDocument(document7)) {
-                                                                        webFile4 = webFile622222222;
+                                                                        webFile4 = webFile6222222222;
                                                                         int createDocumentLayout = chatMessageCell9.createDocumentLayout(chatMessageCell9.backgroundWidth - AndroidUtilities.dp(10.0f), messageObject4);
                                                                         chatMessageCell9.mediaOffsetY = (!chatMessageCell9.linkPreviewAbove ? chatMessageCell9.currentMessageObject.textHeight(chatMessageCell9.transitionParams) : 0) + AndroidUtilities.dp(8.0f) + chatMessageCell9.linkPreviewHeight;
                                                                         chatMessageCell9.totalHeight += AndroidUtilities.dp((!chatMessageCell9.linkPreviewAbove ? 0 : -4) + 56);
                                                                         chatMessageCell9.linkPreviewHeight += AndroidUtilities.dp(60.0f);
                                                                         int dp42 = i83 - AndroidUtilities.dp(86.0f);
-                                                                        int max13 = Math.max(max922222222, createDocumentLayout + dp3122222222 + AndroidUtilities.dp(94.0f));
+                                                                        int max13 = Math.max(max9222222222, createDocumentLayout + dp31222222222 + AndroidUtilities.dp(94.0f));
                                                                         StaticLayout staticLayout7 = chatMessageCell9.songLayout;
                                                                         if (staticLayout7 != null && staticLayout7.getLineCount() > 0) {
-                                                                            max13 = (int) Math.max(max13, chatMessageCell9.songLayout.getLineWidth(0) + dp3122222222 + AndroidUtilities.dp(86.0f));
+                                                                            max13 = (int) Math.max(max13, chatMessageCell9.songLayout.getLineWidth(0) + dp31222222222 + AndroidUtilities.dp(86.0f));
                                                                         }
                                                                         StaticLayout staticLayout8 = chatMessageCell9.performerLayout;
                                                                         if (staticLayout8 != null && staticLayout8.getLineCount() > 0) {
-                                                                            max13 = (int) Math.max(max13, chatMessageCell9.performerLayout.getLineWidth(0) + dp3122222222 + AndroidUtilities.dp(86.0f));
+                                                                            max13 = (int) Math.max(max13, chatMessageCell9.performerLayout.getLineWidth(0) + dp31222222222 + AndroidUtilities.dp(86.0f));
                                                                         }
-                                                                        max922222222 = max13;
-                                                                        chatMessageCell9.calcBackgroundWidth(dp42, i84, max922222222);
+                                                                        max9222222222 = max13;
+                                                                        chatMessageCell9.calcBackgroundWidth(dp42, i84, max9222222222);
                                                                         i86 = dp42;
                                                                     } else {
                                                                         chatMessageCell9.createDocumentLayout(chatMessageCell9.backgroundWidth - AndroidUtilities.dp(168.0f), messageObject4);
                                                                         chatMessageCell9.drawImageButton = true;
                                                                         if (chatMessageCell9.drawPhotoImage) {
-                                                                            webFile622222222 = webFile622222222;
+                                                                            webFile6222222222 = webFile6222222222;
                                                                             chatMessageCell9.totalHeight += AndroidUtilities.dp(100.0f);
                                                                             chatMessageCell9.linkPreviewHeight += AndroidUtilities.dp(86.0f);
                                                                             chatMessageCell9.photoImage.setImageCoords(0.0f, chatMessageCell9.totalHeight + chatMessageCell9.namesOffset, AndroidUtilities.dp(86.0f), AndroidUtilities.dp(86.0f));
                                                                         } else {
                                                                             chatMessageCell9.mediaOffsetY = (!chatMessageCell9.linkPreviewAbove ? chatMessageCell9.currentMessageObject.textHeight(chatMessageCell9.transitionParams) : 0) + AndroidUtilities.dp(8.0f) + chatMessageCell9.linkPreviewHeight;
-                                                                            webFile622222222 = webFile622222222;
+                                                                            webFile6222222222 = webFile6222222222;
                                                                             chatMessageCell9.photoImage.setImageCoords(0.0f, (chatMessageCell9.totalHeight + chatMessageCell9.namesOffset) - AndroidUtilities.dp(14.0f), AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
                                                                             chatMessageCell9.totalHeight += AndroidUtilities.dp((!chatMessageCell9.linkPreviewAbove ? 0 : -4) + 64);
                                                                             chatMessageCell9.linkPreviewHeight += AndroidUtilities.dp(50.0f);
@@ -15116,14 +15260,14 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                         }
                                                                         photo4 = photo2;
                                                                         photo5 = photo3;
-                                                                        i85 = max922222222;
+                                                                        i85 = max9222222222;
                                                                     }
                                                                     photo4 = photo2;
                                                                     webFile2 = webFile4;
                                                                     photo6 = photo3;
                                                                     i87 = chatMessageCell9.documentAttachType;
                                                                     if (i87 == 5) {
-                                                                        if (starGift222222222 == null) {
+                                                                        if (starGift2222222222 == null) {
                                                                         }
                                                                         z41 = true;
                                                                         if (chatMessageCell2.hasInvoicePreview) {
@@ -15132,8 +15276,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                         if (chatMessageCell2.hasGamePreview) {
                                                                         }
                                                                         i89 = i93;
-                                                                        chatMessageCell2.calcBackgroundWidth(i88, i89, max922222222);
-                                                                        max5 = max922222222;
+                                                                        chatMessageCell2.calcBackgroundWidth(i88, i89, max9222222222);
+                                                                        max5 = max9222222222;
                                                                         if (!chatMessageCell2.hasInvoicePreview) {
                                                                             chatMessageCell2.linkPreviewHeight += AndroidUtilities.dp(6.0f);
                                                                             chatMessageCell2.totalHeight += AndroidUtilities.dp(6.0f);
@@ -15141,15 +15285,15 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                         if (!chatMessageCell2.hasInvoicePreview) {
                                                                             chatMessageCell2.linkPreviewHeight += AndroidUtilities.dp(2.66f);
                                                                         }
-                                                                        int i1562222222222222222222 = chatMessageCell2.totalHeight;
+                                                                        int i15622222222222222222222 = chatMessageCell2.totalHeight;
                                                                         if (chatMessageCell2.drawInstantView) {
                                                                         }
-                                                                        chatMessageCell2.totalHeight = i1562222222222222222222 + AndroidUtilities.dp(i91 + i90);
+                                                                        chatMessageCell2.totalHeight = i15622222222222222222222 + AndroidUtilities.dp(i91 + i90);
                                                                         createInstantViewButton();
                                                                         z18 = z41;
                                                                     }
                                                                     i88 = i86;
-                                                                    max5 = max922222222;
+                                                                    max5 = max9222222222;
                                                                     chatMessageCell2 = chatMessageCell9;
                                                                     i89 = i84;
                                                                     i3 = 4;
@@ -15161,10 +15305,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                     }
                                                                     if (!chatMessageCell2.hasInvoicePreview) {
                                                                     }
-                                                                    int i15622222222222222222222 = chatMessageCell2.totalHeight;
+                                                                    int i156222222222222222222222 = chatMessageCell2.totalHeight;
                                                                     if (chatMessageCell2.drawInstantView) {
                                                                     }
-                                                                    chatMessageCell2.totalHeight = i15622222222222222222222 + AndroidUtilities.dp(i91 + i90);
+                                                                    chatMessageCell2.totalHeight = i156222222222222222222222 + AndroidUtilities.dp(i91 + i90);
                                                                     createInstantViewButton();
                                                                     z18 = z41;
                                                                 }
@@ -15180,7 +15324,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                     if (i87 == 5) {
                                                     }
                                                     i88 = i86;
-                                                    max5 = max922222222;
+                                                    max5 = max9222222222;
                                                     chatMessageCell2 = chatMessageCell9;
                                                     i89 = i84;
                                                     i3 = 4;
@@ -15192,105 +15336,22 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                     }
                                                     if (!chatMessageCell2.hasInvoicePreview) {
                                                     }
-                                                    int i156222222222222222222222 = chatMessageCell2.totalHeight;
+                                                    int i1562222222222222222222222 = chatMessageCell2.totalHeight;
                                                     if (chatMessageCell2.drawInstantView) {
                                                     }
-                                                    chatMessageCell2.totalHeight = i156222222222222222222222 + AndroidUtilities.dp(i91 + i90);
+                                                    chatMessageCell2.totalHeight = i1562222222222222222222222 + AndroidUtilities.dp(i91 + i90);
                                                     createInstantViewButton();
                                                     z18 = z41;
                                                 }
                                                 i86 = i83;
                                                 photo6 = photo5;
-                                                max922222222 = i85;
-                                                webFile2 = webFile622222222;
+                                                max9222222222 = i85;
+                                                webFile2 = webFile6222222222;
                                                 i87 = chatMessageCell9.documentAttachType;
                                                 if (i87 == 5) {
                                                 }
                                                 i88 = i86;
-                                                max5 = max922222222;
-                                                chatMessageCell2 = chatMessageCell9;
-                                                i89 = i84;
-                                                i3 = 4;
-                                                f3 = 1.0f;
-                                                i4 = 3;
-                                                i5 = -1;
-                                                z41 = true;
-                                                if (!chatMessageCell2.hasInvoicePreview) {
-                                                }
-                                                if (!chatMessageCell2.hasInvoicePreview) {
-                                                }
-                                                int i1562222222222222222222222 = chatMessageCell2.totalHeight;
-                                                if (chatMessageCell2.drawInstantView) {
-                                                }
-                                                chatMessageCell2.totalHeight = i1562222222222222222222222 + AndroidUtilities.dp(i91 + i90);
-                                                createInstantViewButton();
-                                                z18 = z41;
-                                            }
-                                            max6 = 0;
-                                            if (str6 != null) {
-                                            }
-                                            if (str10 != null) {
-                                            }
-                                            if (z38) {
-                                                i15422222222 -= AndroidUtilities.dp(48.0f);
-                                            }
-                                            if (str11 != null) {
-                                                i105 = chatMessageCell9.linkPreviewHeight;
-                                                if (i105 == 0) {
-                                                }
-                                                charSequence7 = Emoji.replaceEmoji(str11, Theme.chat_replyNamePaint.getFontMetricsInt(), false);
-                                                charSequence8 = charSequence7;
-                                                if (i74 == 3) {
-                                                    CharSequence charSequence142 = i74;
-                                                    chatMessageCell9.authorLayout = new StaticLayout(charSequence8, Theme.chat_replyNamePaint, i15422222222, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                                                    i74 = charSequence142;
-                                                    charSequence7 = charSequence142;
-                                                    chatMessageCell9.authorLayoutLeft = chatMessageCell9.authorLayout.getWidth();
-                                                    chatMessageCell9.authorLayoutWidth = 0;
-                                                    while (i106 < chatMessageCell9.authorLayout.getLineCount()) {
-                                                    }
-                                                    StaticLayout staticLayout42 = chatMessageCell9.authorLayout;
-                                                    int lineBottom32 = staticLayout42.getLineBottom(staticLayout42.getLineCount() - 1);
-                                                    chatMessageCell9.linkPreviewHeight += lineBottom32;
-                                                    chatMessageCell9.totalHeight += lineBottom32;
-                                                    max922222222 = Math.max(max922222222, chatMessageCell9.authorLayoutWidth + dp3122222222);
-                                                    Math.max(i75, chatMessageCell9.authorLayoutWidth + dp3122222222);
-                                                }
-                                                ?? r72 = i74;
-                                                StaticLayout generateStaticLayout32 = generateStaticLayout(charSequence8, Theme.chat_replyNamePaint, i15422222222, (i15422222222 - dp2922222222) - dp3022222222, i74, 1);
-                                                chatMessageCell9.authorLayout = generateStaticLayout32;
-                                                i74 = (r72 == true ? 1 : 0) - generateStaticLayout32.getLineCount();
-                                                charSequence7 = r72;
-                                                chatMessageCell9.authorLayoutLeft = chatMessageCell9.authorLayout.getWidth();
-                                                chatMessageCell9.authorLayoutWidth = 0;
-                                                while (i106 < chatMessageCell9.authorLayout.getLineCount()) {
-                                                }
-                                                StaticLayout staticLayout422 = chatMessageCell9.authorLayout;
-                                                int lineBottom322 = staticLayout422.getLineBottom(staticLayout422.getLineCount() - 1);
-                                                chatMessageCell9.linkPreviewHeight += lineBottom322;
-                                                chatMessageCell9.totalHeight += lineBottom322;
-                                                max922222222 = Math.max(max922222222, chatMessageCell9.authorLayoutWidth + dp3122222222);
-                                                Math.max(i75, chatMessageCell9.authorLayoutWidth + dp3122222222);
-                                            }
-                                            int i155222222222222222222 = i74;
-                                            if (str9 != null) {
-                                            }
-                                            if (z36) {
-                                                chatMessageCell9.isSmallImage = false;
-                                                z40 = false;
-                                                if (!z40) {
-                                                }
-                                                if (chatMessageCell9.drawInstantViewType != 17) {
-                                                }
-                                                i86 = i83;
-                                                photo6 = photo5;
-                                                max922222222 = i85;
-                                                webFile2 = webFile622222222;
-                                                i87 = chatMessageCell9.documentAttachType;
-                                                if (i87 == 5) {
-                                                }
-                                                i88 = i86;
-                                                max5 = max922222222;
+                                                max5 = max9222222222;
                                                 chatMessageCell2 = chatMessageCell9;
                                                 i89 = i84;
                                                 i3 = 4;
@@ -15309,20 +15370,103 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                 createInstantViewButton();
                                                 z18 = z41;
                                             }
+                                            max6 = 0;
+                                            if (str6 != null) {
+                                            }
+                                            if (str10 == null) {
+                                            }
+                                            if (z38) {
+                                                i154222222222 -= AndroidUtilities.dp(48.0f);
+                                            }
+                                            if (str11 != null) {
+                                                i105 = chatMessageCell9.linkPreviewHeight;
+                                                if (i105 == 0) {
+                                                }
+                                                charSequence7 = Emoji.replaceEmoji(str11, Theme.chat_replyNamePaint.getFontMetricsInt(), false);
+                                                charSequence8 = charSequence7;
+                                                if (i74 == 3) {
+                                                    CharSequence charSequence142 = i74;
+                                                    chatMessageCell9.authorLayout = new StaticLayout(charSequence8, Theme.chat_replyNamePaint, i154222222222, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                                                    i74 = charSequence142;
+                                                    charSequence7 = charSequence142;
+                                                    chatMessageCell9.authorLayoutLeft = chatMessageCell9.authorLayout.getWidth();
+                                                    chatMessageCell9.authorLayoutWidth = 0;
+                                                    while (i106 < chatMessageCell9.authorLayout.getLineCount()) {
+                                                    }
+                                                    StaticLayout staticLayout42 = chatMessageCell9.authorLayout;
+                                                    int lineBottom32 = staticLayout42.getLineBottom(staticLayout42.getLineCount() - 1);
+                                                    chatMessageCell9.linkPreviewHeight += lineBottom32;
+                                                    chatMessageCell9.totalHeight += lineBottom32;
+                                                    max9222222222 = Math.max(max9222222222, chatMessageCell9.authorLayoutWidth + dp31222222222);
+                                                    Math.max(i75, chatMessageCell9.authorLayoutWidth + dp31222222222);
+                                                }
+                                                ?? r72 = i74;
+                                                StaticLayout generateStaticLayout32 = generateStaticLayout(charSequence8, Theme.chat_replyNamePaint, i154222222222, (i154222222222 - dp29222222222) - dp30222222222, i74, 1);
+                                                chatMessageCell9.authorLayout = generateStaticLayout32;
+                                                i74 = (r72 == true ? 1 : 0) - generateStaticLayout32.getLineCount();
+                                                charSequence7 = r72;
+                                                chatMessageCell9.authorLayoutLeft = chatMessageCell9.authorLayout.getWidth();
+                                                chatMessageCell9.authorLayoutWidth = 0;
+                                                while (i106 < chatMessageCell9.authorLayout.getLineCount()) {
+                                                }
+                                                StaticLayout staticLayout422 = chatMessageCell9.authorLayout;
+                                                int lineBottom322 = staticLayout422.getLineBottom(staticLayout422.getLineCount() - 1);
+                                                chatMessageCell9.linkPreviewHeight += lineBottom322;
+                                                chatMessageCell9.totalHeight += lineBottom322;
+                                                max9222222222 = Math.max(max9222222222, chatMessageCell9.authorLayoutWidth + dp31222222222);
+                                                Math.max(i75, chatMessageCell9.authorLayoutWidth + dp31222222222);
+                                            }
+                                            int i1552222222222222222222 = i74;
+                                            if (str9 == null) {
+                                            }
+                                            if (z36) {
+                                                chatMessageCell9.isSmallImage = false;
+                                                z40 = false;
+                                                if (!z40) {
+                                                }
+                                                if (chatMessageCell9.drawInstantViewType == 17) {
+                                                }
+                                                i86 = i83;
+                                                photo6 = photo5;
+                                                max9222222222 = i85;
+                                                webFile2 = webFile6222222222;
+                                                i87 = chatMessageCell9.documentAttachType;
+                                                if (i87 == 5) {
+                                                }
+                                                i88 = i86;
+                                                max5 = max9222222222;
+                                                chatMessageCell2 = chatMessageCell9;
+                                                i89 = i84;
+                                                i3 = 4;
+                                                f3 = 1.0f;
+                                                i4 = 3;
+                                                i5 = -1;
+                                                z41 = true;
+                                                if (!chatMessageCell2.hasInvoicePreview) {
+                                                }
+                                                if (!chatMessageCell2.hasInvoicePreview) {
+                                                }
+                                                int i156222222222222222222222222 = chatMessageCell2.totalHeight;
+                                                if (chatMessageCell2.drawInstantView) {
+                                                }
+                                                chatMessageCell2.totalHeight = i156222222222222222222222222 + AndroidUtilities.dp(i91 + i90);
+                                                createInstantViewButton();
+                                                z18 = z41;
+                                            }
                                             z40 = z36;
                                             if (!z40) {
                                             }
-                                            if (chatMessageCell9.drawInstantViewType != 17) {
+                                            if (chatMessageCell9.drawInstantViewType == 17) {
                                             }
                                             i86 = i83;
                                             photo6 = photo5;
-                                            max922222222 = i85;
-                                            webFile2 = webFile622222222;
+                                            max9222222222 = i85;
+                                            webFile2 = webFile6222222222;
                                             i87 = chatMessageCell9.documentAttachType;
                                             if (i87 == 5) {
                                             }
                                             i88 = i86;
-                                            max5 = max922222222;
+                                            max5 = max9222222222;
                                             chatMessageCell2 = chatMessageCell9;
                                             i89 = i84;
                                             i3 = 4;
@@ -15334,10 +15478,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                             }
                                             if (!chatMessageCell2.hasInvoicePreview) {
                                             }
-                                            int i156222222222222222222222222 = chatMessageCell2.totalHeight;
+                                            int i1562222222222222222222222222 = chatMessageCell2.totalHeight;
                                             if (chatMessageCell2.drawInstantView) {
                                             }
-                                            chatMessageCell2.totalHeight = i156222222222222222222222222 + AndroidUtilities.dp(i91 + i90);
+                                            chatMessageCell2.totalHeight = i1562222222222222222222222222 + AndroidUtilities.dp(i91 + i90);
                                             createInstantViewButton();
                                             z18 = z41;
                                         } else {
@@ -15379,18 +15523,18 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 if (chatMessageCell9.hasLinkPreview) {
                                 }
                                 document3 = document2;
-                                int max8222222222 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
-                                chatMessageCell9.backgroundWidth = max8222222222;
-                                chatMessageCell9.backgroundWidth = Math.max(max8222222222, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
+                                int max82222222222 = Math.max(chatMessageCell9.backgroundWidth, messageObject.getLastLineWidth()) + AndroidUtilities.dp(31.0f);
+                                chatMessageCell9.backgroundWidth = max82222222222;
+                                chatMessageCell9.backgroundWidth = Math.max(max82222222222, chatMessageCell9.timeWidth + AndroidUtilities.dp(31.0f));
                                 chatMessageCell9.availableTimeWidth = chatMessageCell9.backgroundWidth - AndroidUtilities.dp(31.0f);
                                 if (messageObject.isRoundVideo()) {
                                 }
                                 setMessageObjectInternal(messageObject);
                                 chatMessageCell9.giveawayMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
                                 chatMessageCell9.giveawayResultsMessageCell.setMessageContent(messageObject21, getParentWidth(), chatMessageCell9.forwardedNameWidth);
-                                if (messageObject21.type != 36) {
+                                if (messageObject21.type == 36) {
                                 }
-                                if (!messageObject.isSponsored()) {
+                                if (messageObject.isSponsored()) {
                                 }
                                 if (!chatMessageCell9.reactionsLayoutInBubble.isSmall) {
                                 }
@@ -15408,27 +15552,27 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 if (chatMessageCell9.hasLinkPreview) {
                                 }
                                 messageObject11 = chatMessageCell9.currentMessageObject;
-                                if (!messageObject11.isRepostPreview) {
+                                if (messageObject11.isRepostPreview) {
                                 }
                                 if (chatMessageCell9.drawSideButton != 0) {
                                 }
-                                int dp29222222222 = AndroidUtilities.dp(48.0f);
-                                int dp30222222222 = AndroidUtilities.dp(10.0f);
-                                if (!messageObject.isSponsored()) {
+                                int dp292222222222 = AndroidUtilities.dp(48.0f);
+                                int dp302222222222 = AndroidUtilities.dp(10.0f);
+                                if (messageObject.isSponsored()) {
                                 }
                                 i67 = chatMessageCell9.drawInstantViewType;
-                                WebFile webFile6222222222 = webFile;
-                                if (i67 != 18) {
+                                WebFile webFile62222222222 = webFile;
+                                if (i67 == 18) {
                                 }
                                 if (starGift != null) {
                                 }
-                                int dp31222222222 = AndroidUtilities.dp(20.0f);
+                                int dp312222222222 = AndroidUtilities.dp(20.0f);
                                 if (chatMessageCell9.hasInvoicePreview) {
                                 }
-                                TL_stars.StarGift starGift2222222222 = starGift;
+                                TL_stars.StarGift starGift22222222222 = starGift;
                                 if (chatMessageCell9.drawInstantViewType == 17) {
                                 }
-                                int i154222222222 = maxMessageTextWidth - dp31222222222;
+                                int i1542222222222 = maxMessageTextWidth - dp312222222222;
                                 messageObject12 = chatMessageCell9.currentMessageObject;
                                 if (messageObject12.photoThumbs == null) {
                                 }
@@ -15436,37 +15580,37 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayMessageCell.getMeasuredHeight();
                                 chatMessageCell9.totalHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
                                 chatMessageCell9.linkPreviewHeight += chatMessageCell9.giveawayResultsMessageCell.getMeasuredHeight();
-                                int max9222222222 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
-                                if (string4 != null) {
+                                int max92222222222 = Math.max(Math.max(max5, chatMessageCell9.giveawayMessageCell.getMeasuredWidth()), chatMessageCell9.giveawayResultsMessageCell.getMeasuredWidth());
+                                if (string4 == null) {
                                 }
                                 max6 = 0;
                                 if (str6 != null) {
                                 }
-                                if (str10 != null) {
+                                if (str10 == null) {
                                 }
                                 if (z38) {
                                 }
                                 if (str11 != null) {
                                 }
-                                int i1552222222222222222222 = i74;
-                                if (str9 != null) {
+                                int i15522222222222222222222 = i74;
+                                if (str9 == null) {
                                 }
                                 if (z36) {
                                 }
                                 z40 = z36;
                                 if (!z40) {
                                 }
-                                if (chatMessageCell9.drawInstantViewType != 17) {
+                                if (chatMessageCell9.drawInstantViewType == 17) {
                                 }
                                 i86 = i83;
                                 photo6 = photo5;
-                                max9222222222 = i85;
-                                webFile2 = webFile6222222222;
+                                max92222222222 = i85;
+                                webFile2 = webFile62222222222;
                                 i87 = chatMessageCell9.documentAttachType;
                                 if (i87 == 5) {
                                 }
                                 i88 = i86;
-                                max5 = max9222222222;
+                                max5 = max92222222222;
                                 chatMessageCell2 = chatMessageCell9;
                                 i89 = i84;
                                 i3 = 4;
@@ -15478,10 +15622,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 }
                                 if (!chatMessageCell2.hasInvoicePreview) {
                                 }
-                                int i1562222222222222222222222222 = chatMessageCell2.totalHeight;
+                                int i15622222222222222222222222222 = chatMessageCell2.totalHeight;
                                 if (chatMessageCell2.drawInstantView) {
                                 }
-                                chatMessageCell2.totalHeight = i1562222222222222222222222222 + AndroidUtilities.dp(i91 + i90);
+                                chatMessageCell2.totalHeight = i15622222222222222222222222222 + AndroidUtilities.dp(i91 + i90);
                                 createInstantViewButton();
                                 z18 = z41;
                                 chatMessageCell2.totalHeight += chatMessageCell2.layoutFactCheck(i88 - AndroidUtilities.dp(30.0f));
@@ -21860,6 +22004,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         chatMessageCell9.adminLayout = null;
                                                         chatMessageCell9.ephemeralLayout = null;
                                                         chatMessageCell9.ephemeralWidth = 0;
+                                                        chatMessageCell9.adminLayoutIsTag = false;
                                                         chatMessageCell9.adminLayoutIsOwner = false;
                                                         chatMessageCell9.adminLayoutIsAdmin = false;
                                                         chatMessageCell9.boostCounterBounds = null;
@@ -23733,6 +23878,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                     chatMessageCell9.adminLayout = null;
                                                     chatMessageCell9.ephemeralLayout = null;
                                                     chatMessageCell9.ephemeralWidth = 0;
+                                                    chatMessageCell9.adminLayoutIsTag = false;
                                                     chatMessageCell9.adminLayoutIsOwner = false;
                                                     chatMessageCell9.adminLayoutIsAdmin = false;
                                                     chatMessageCell9.boostCounterBounds = null;
@@ -24106,6 +24252,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                 chatMessageCell9.adminLayout = null;
                                                 chatMessageCell9.ephemeralLayout = null;
                                                 chatMessageCell9.ephemeralWidth = 0;
+                                                chatMessageCell9.adminLayoutIsTag = false;
                                                 chatMessageCell9.adminLayoutIsOwner = false;
                                                 chatMessageCell9.adminLayoutIsAdmin = false;
                                                 chatMessageCell9.boostCounterBounds = null;
@@ -24480,6 +24627,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                             chatMessageCell9.adminLayout = null;
                                             chatMessageCell9.ephemeralLayout = null;
                                             chatMessageCell9.ephemeralWidth = 0;
+                                            chatMessageCell9.adminLayoutIsTag = false;
                                             chatMessageCell9.adminLayoutIsOwner = false;
                                             chatMessageCell9.adminLayoutIsAdmin = false;
                                             chatMessageCell9.boostCounterBounds = null;
@@ -24876,6 +25024,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         chatMessageCell9.adminLayout = null;
                                         chatMessageCell9.ephemeralLayout = null;
                                         chatMessageCell9.ephemeralWidth = 0;
+                                        chatMessageCell9.adminLayoutIsTag = false;
                                         chatMessageCell9.adminLayoutIsOwner = false;
                                         chatMessageCell9.adminLayoutIsAdmin = false;
                                         chatMessageCell9.boostCounterBounds = null;
@@ -25274,6 +25423,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     chatMessageCell9.adminLayout = null;
                                     chatMessageCell9.ephemeralLayout = null;
                                     chatMessageCell9.ephemeralWidth = 0;
+                                    chatMessageCell9.adminLayoutIsTag = false;
                                     chatMessageCell9.adminLayoutIsOwner = false;
                                     chatMessageCell9.adminLayoutIsAdmin = false;
                                     chatMessageCell9.boostCounterBounds = null;
@@ -25673,6 +25823,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 chatMessageCell9.adminLayout = null;
                                 chatMessageCell9.ephemeralLayout = null;
                                 chatMessageCell9.ephemeralWidth = 0;
+                                chatMessageCell9.adminLayoutIsTag = false;
                                 chatMessageCell9.adminLayoutIsOwner = false;
                                 chatMessageCell9.adminLayoutIsAdmin = false;
                                 chatMessageCell9.boostCounterBounds = null;
@@ -26072,6 +26223,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             chatMessageCell9.adminLayout = null;
                             chatMessageCell9.ephemeralLayout = null;
                             chatMessageCell9.ephemeralWidth = 0;
+                            chatMessageCell9.adminLayoutIsTag = false;
                             chatMessageCell9.adminLayoutIsOwner = false;
                             chatMessageCell9.adminLayoutIsAdmin = false;
                             chatMessageCell9.boostCounterBounds = null;
@@ -26476,6 +26628,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         chatMessageCell9.adminLayout = null;
                         chatMessageCell9.ephemeralLayout = null;
                         chatMessageCell9.ephemeralWidth = 0;
+                        chatMessageCell9.adminLayoutIsTag = false;
                         chatMessageCell9.adminLayoutIsOwner = false;
                         chatMessageCell9.adminLayoutIsAdmin = false;
                         chatMessageCell9.boostCounterBounds = null;
@@ -26929,6 +27082,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     chatMessageCell9.adminLayout = null;
                     chatMessageCell9.ephemeralLayout = null;
                     chatMessageCell9.ephemeralWidth = 0;
+                    chatMessageCell9.adminLayoutIsTag = false;
                     chatMessageCell9.adminLayoutIsOwner = false;
                     chatMessageCell9.adminLayoutIsAdmin = false;
                     chatMessageCell9.boostCounterBounds = null;
@@ -27370,6 +27524,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 chatMessageCell9.adminLayout = null;
                 chatMessageCell9.ephemeralLayout = null;
                 chatMessageCell9.ephemeralWidth = 0;
+                chatMessageCell9.adminLayoutIsTag = false;
                 chatMessageCell9.adminLayoutIsOwner = false;
                 chatMessageCell9.adminLayoutIsAdmin = false;
                 chatMessageCell9.boostCounterBounds = null;
@@ -27815,6 +27970,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             chatMessageCell9.adminLayout = null;
             chatMessageCell9.ephemeralLayout = null;
             chatMessageCell9.ephemeralWidth = 0;
+            chatMessageCell9.adminLayoutIsTag = false;
             chatMessageCell9.adminLayoutIsOwner = false;
             chatMessageCell9.adminLayoutIsAdmin = false;
             chatMessageCell9.boostCounterBounds = null;
@@ -28267,6 +28423,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         chatMessageCell9.adminLayout = null;
         chatMessageCell9.ephemeralLayout = null;
         chatMessageCell9.ephemeralWidth = 0;
+        chatMessageCell9.adminLayoutIsTag = false;
         chatMessageCell9.adminLayoutIsOwner = false;
         chatMessageCell9.adminLayoutIsAdmin = false;
         chatMessageCell9.boostCounterBounds = null;
@@ -38503,145 +38660,137 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         }
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(48:297|(2:301|(1:(1:915))(1:305))|306|(1:913)(1:310)|311|(5:313|(1:315)|316|(3:903|(1:909)(1:907)|908)|320)(2:910|(1:912))|321|(1:902)(1:327)|328|(1:901)(1:332)|333|(1:900)(1:337)|(1:342)|343|(1:899)(1:347)|348|349|(2:524|(7:602|603|(1:605)(1:896)|606|(7:608|(3:610|(3:612|(1:614)(1:892)|615)(1:893)|616)(1:894)|(2:618|(3:620|(1:624)|(2:626|(7:628|(1:886)(1:632)|633|(1:885)(1:636)|637|638|(1:640))(2:887|(4:889|890|638|(0))))))|891|890|638|(0))(1:895)|641|(2:846|(10:862|(1:864)(1:884)|865|(1:867)(7:873|(1:875)(1:883)|876|877|(1:879)(1:882)|880|881)|868|(1:870)(1:872)|871|839|652|(5:654|(3:776|(1:778)|779)(1:658)|(1:660)|661|(2:684|(28:705|(2:773|(1:775))(2:(2:723|(4:730|(1:732)|734|(1:736)(2:737|(1:739)(2:740|(3:755|(8:761|(1:763)|764|(1:766)|767|(1:769)|770|(1:772))|683)(6:744|(1:746)|747|(1:749)|750|(2:752|(1:754))))))(1:729))(3:718|(1:720)(1:722)|721)|677)|361|362|363|(1:365)|366|(1:368)(1:516)|369|370|(1:372)|373|(1:375)|376|(1:378)(1:512)|379|(2:381|(1:383))|384|(1:511)(3:389|(1:391)(1:510)|392)|393|(1:395)|397|398|(1:400)(1:507)|401|(24:403|(3:405|(2:407|408)(1:410)|409)|411|412|(1:416)|417|(1:505)(2:(1:424)|425)|(1:427)|504|429|(4:431|(1:502)(1:435)|436|(4:438|(2:440|(2:442|443))|444|443))(1:503)|445|(1:449)|450|(4:452|(4:455|(1:469)(4:457|(1:459)(1:468)|(1:461)(1:467)|(2:463|464)(1:466))|465|453)|470|471)|472|(1:474)|475|(2:482|483)|491|492|493|494|483)(1:506)|484|(1:486))(29:692|(3:694|(2:696|(1:698))|699)(3:700|(1:704)|683)|361|362|363|(0)|366|(0)(0)|369|370|(0)|373|(0)|376|(0)(0)|379|(0)|384|(0)|511|393|(0)|397|398|(0)(0)|401|(0)(0)|484|(0)))(2:669|(31:671|(2:673|(1:675))|676|677|361|362|363|(0)|366|(0)(0)|369|370|(0)|373|(0)|376|(0)(0)|379|(0)|384|(0)|511|393|(0)|397|398|(0)(0)|401|(0)(0)|484|(0))(30:678|(28:682|361|362|363|(0)|366|(0)(0)|369|370|(0)|373|(0)|376|(0)(0)|379|(0)|384|(0)|511|393|(0)|397|398|(0)(0)|401|(0)(0)|484|(0))|683|361|362|363|(0)|366|(0)(0)|369|370|(0)|373|(0)|376|(0)(0)|379|(0)|384|(0)|511|393|(0)|397|398|(0)(0)|401|(0)(0)|484|(0))))(38:780|(2:785|(2:787|(2:789|(3:791|(1:793)|779)(1:794))(1:795))(2:796|(1:798)(2:799|(2:(3:807|(1:809)(1:827)|(2:811|(2:813|(1:815))(1:(2:817|(1:819))(2:820|(1:826)))))|779)(1:805))))(1:784)|(0)|661|(1:663)|684|(1:686)|705|(3:707|709|711)|773|(0)|361|362|363|(0)|366|(0)(0)|369|370|(0)|373|(0)|376|(0)(0)|379|(0)|384|(0)|511|393|(0)|397|398|(0)(0)|401|(0)(0)|484|(0)))(3:849|652|(0)(0)))(3:647|(1:649)(2:843|(1:845))|(3:651|652|(0)(0))(11:828|(1:830)(1:842)|831|(1:833)(1:841)|834|835|(1:837)(1:840)|838|839|652|(0)(0))))(4:542|(4:544|(1:546)(2:550|(1:552)(2:553|(1:555)))|547|(1:549))|556|(17:563|(1:565)(1:601)|566|(2:568|(1:570)(1:596))(2:597|(1:599)(12:600|572|(1:574)(1:595)|575|(1:577)(1:594)|578|(1:580)(1:593)|581|(1:585)|586|(1:592)(1:590)|591))|571|572|(0)(0)|575|(0)(0)|578|(0)(0)|581|(2:583|585)|586|(1:588)|592|591)(30:562|359|360|361|362|363|(0)|366|(0)(0)|369|370|(0)|373|(0)|376|(0)(0)|379|(0)|384|(0)|511|393|(0)|397|398|(0)(0)|401|(0)(0)|484|(0))))(2:353|(31:(1:520)(1:523)|521|522|360|361|362|363|(0)|366|(0)(0)|369|370|(0)|373|(0)|376|(0)(0)|379|(0)|384|(0)|511|393|(0)|397|398|(0)(0)|401|(0)(0)|484|(0))(1:357))|358|359|360|361|362|363|(0)|366|(0)(0)|369|370|(0)|373|(0)|376|(0)(0)|379|(0)|384|(0)|511|393|(0)|397|398|(0)(0)|401|(0)(0)|484|(0)) */
-    /* JADX WARN: Can't wrap try/catch for region: R(54:49|50|(1:1146)(1:68)|69|(1:71)|72|(1:74)|75|(1:1145)(2:81|(44:83|84|85|(5:(1:88)|89|(1:1100)(1:92)|93|(1:95)(1:1099))(1:1101)|(3:97|(1:1097)|100)(1:1098)|101|102|(1:104)(1:(1:1095)(1:1096))|105|(1:107)(1:1093)|108|109|110|111|(1:114)|115|(1:117)|(1:119)|120|(1:122)(1:1090)|123|(3:125|(1:127)(2:1063|(1:1065)(1:1066))|128)(3:1067|(7:1069|(1:1071)|1072|(1:1074)(3:1084|(1:1086)(1:1088)|1087)|1075|(3:1077|(1:1079)|1080)(1:1083)|1081)(1:1089)|1082)|129|130|(3:132|(1:134)|135)(1:1059)|136|(1:138)|139|(1:142)|143|(1:145)|146|(6:148|(4:152|153|(3:155|(1:157)(1:1051)|158)(3:1052|(1:1054)(1:1056)|1055)|159)|1057|153|(0)(0)|159)(1:1058)|160|(2:164|(1:166))|167|(2:169|(1:171)(2:172|(1:174)(2:175|(1:177))))|178|(2:182|(1:184))|185|(2:187|(1:189)(1:1049))(1:1050)|190|(1:192)|193))|1102|(3:1109|(5:1122|(1:1124)(1:1144)|1125|(1:1127)|(49:1129|(1:1131)(1:1143)|1132|(1:1134)(1:1142)|1135|(2:(1:1138)(1:1140)|1139)|1141|85|(0)(0)|(0)(0)|101|102|(0)(0)|105|(0)(0)|108|109|110|111|(1:114)|115|(0)|(0)|120|(0)(0)|123|(0)(0)|129|130|(0)(0)|136|(0)|139|(1:142)|143|(0)|146|(0)(0)|160|(3:162|164|(0))|167|(0)|178|(3:180|182|(0))|185|(0)(0)|190|(0)|193))|1113)(1:1108)|84|85|(0)(0)|(0)(0)|101|102|(0)(0)|105|(0)(0)|108|109|110|111|(0)|115|(0)|(0)|120|(0)(0)|123|(0)(0)|129|130|(0)(0)|136|(0)|139|(0)|143|(0)|146|(0)(0)|160|(0)|167|(0)|178|(0)|185|(0)(0)|190|(0)|193) */
-    /* JADX WARN: Code restructure failed: missing block: B:1060:0x0666, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(41:297|(2:301|(1:(1:916))(1:305))|306|(1:914)(1:310)|311|(5:313|(1:315)|316|(3:904|(1:910)(1:908)|909)|320)(2:911|(1:913))|321|(1:903)(1:327)|328|(1:902)(1:332)|333|(1:901)(1:337)|(1:342)|343|(1:900)(1:347)|348|349|(8:(2:524|(7:602|603|(1:605)(1:897)|606|(7:608|(3:610|(3:612|(1:614)(1:893)|615)(1:894)|616)(1:895)|(2:618|(3:620|(1:624)|(2:626|(7:628|(1:887)(1:632)|633|(1:886)(1:636)|637|638|(1:640)(1:885))(2:888|(4:890|891|638|(0)(0))))))|892|891|638|(0)(0))(1:896)|641|(2:846|(10:862|(1:864)(1:884)|865|(1:867)(7:873|(1:875)(1:883)|876|877|(1:879)(1:882)|880|881)|868|(1:870)(1:872)|871|839|652|(5:654|(3:776|(1:778)|779)(1:658)|(1:660)|661|(2:684|(28:705|(2:773|(1:775))(2:(2:723|(4:730|(1:732)|734|(1:736)(2:737|(1:739)(2:740|(3:755|(8:761|(1:763)|764|(1:766)|767|(1:769)|770|(1:772))|683)(6:744|(1:746)|747|(1:749)|750|(2:752|(1:754))))))(1:729))(3:718|(1:720)(1:722)|721)|677)|361|362|363|(1:365)|366|(1:368)(1:516)|369|370|(1:372)|373|(1:375)|376|(1:378)(1:512)|379|(2:381|(1:383))|384|(1:511)(3:389|(1:391)(1:510)|392)|393|(1:395)|397|398|(1:400)(1:507)|401|(24:403|(3:405|(2:407|408)(1:410)|409)|411|412|(1:416)|417|(1:505)(2:(1:424)|425)|(1:427)|504|429|(4:431|(1:502)(1:435)|436|(4:438|(2:440|(2:442|443))|444|443))(1:503)|445|(1:449)|450|(4:452|(4:455|(1:469)(4:457|(1:459)(1:468)|(1:461)(1:467)|(2:463|464)(1:466))|465|453)|470|471)|472|(1:474)|475|(2:482|483)|491|492|493|494|483)(1:506)|484|(1:486))(29:692|(3:694|(2:696|(1:698))|699)(3:700|(1:704)|683)|361|362|363|(0)|366|(0)(0)|369|370|(0)|373|(0)|376|(0)(0)|379|(0)|384|(0)|511|393|(0)|397|398|(0)(0)|401|(0)(0)|484|(0)))(2:669|(31:671|(2:673|(1:675))|676|677|361|362|363|(0)|366|(0)(0)|369|370|(0)|373|(0)|376|(0)(0)|379|(0)|384|(0)|511|393|(0)|397|398|(0)(0)|401|(0)(0)|484|(0))(30:678|(28:682|361|362|363|(0)|366|(0)(0)|369|370|(0)|373|(0)|376|(0)(0)|379|(0)|384|(0)|511|393|(0)|397|398|(0)(0)|401|(0)(0)|484|(0))|683|361|362|363|(0)|366|(0)(0)|369|370|(0)|373|(0)|376|(0)(0)|379|(0)|384|(0)|511|393|(0)|397|398|(0)(0)|401|(0)(0)|484|(0))))(38:780|(2:785|(2:787|(2:789|(3:791|(1:793)|779)(1:794))(1:795))(2:796|(1:798)(2:799|(2:(3:807|(1:809)(1:827)|(2:811|(2:813|(1:815))(1:(2:817|(1:819))(2:820|(1:826)))))|779)(1:805))))(1:784)|(0)|661|(1:663)|684|(1:686)|705|(3:707|709|711)|773|(0)|361|362|363|(0)|366|(0)(0)|369|370|(0)|373|(0)|376|(0)(0)|379|(0)|384|(0)|511|393|(0)|397|398|(0)(0)|401|(0)(0)|484|(0)))(3:849|652|(0)(0)))(3:647|(1:649)(2:843|(1:845))|(3:651|652|(0)(0))(11:828|(1:830)(1:842)|831|(1:833)(1:841)|834|835|(1:837)(1:840)|838|839|652|(0)(0))))(4:542|(4:544|(1:546)(2:550|(1:552)(2:553|(1:555)))|547|(1:549))|556|(17:563|(1:565)(1:601)|566|(2:568|(1:570)(1:596))(2:597|(1:599)(12:600|572|(1:574)(1:595)|575|(1:577)(1:594)|578|(1:580)(1:593)|581|(1:585)|586|(1:592)(1:590)|591))|571|572|(0)(0)|575|(0)(0)|578|(0)(0)|581|(2:583|585)|586|(1:588)|592|591)(30:562|359|360|361|362|363|(0)|366|(0)(0)|369|370|(0)|373|(0)|376|(0)(0)|379|(0)|384|(0)|511|393|(0)|397|398|(0)(0)|401|(0)(0)|484|(0))))(2:353|(31:(1:520)(1:523)|521|522|360|361|362|363|(0)|366|(0)(0)|369|370|(0)|373|(0)|376|(0)(0)|379|(0)|384|(0)|511|393|(0)|397|398|(0)(0)|401|(0)(0)|484|(0))(1:357))|397|398|(0)(0)|401|(0)(0)|484|(0))|358|359|360|361|362|363|(0)|366|(0)(0)|369|370|(0)|373|(0)|376|(0)(0)|379|(0)|384|(0)|511|393|(0)) */
+    /* JADX WARN: Code restructure failed: missing block: B:267:0x19b6, code lost:
+    
+        if ((r0.action instanceof org.telegram.tgnet.TLRPC.TL_messageActionTopicCreate) == false) goto L1142;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:428:0x17f4, code lost:
+    
+        if (r72.isReplyQuote == false) goto L1052;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:513:0x1690, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:1062:0x0741, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:515:0x1751, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:267:0x199f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:733:0x1505, code lost:
     
-        if ((r0.action instanceof org.telegram.tgnet.TLRPC.TL_messageActionTopicCreate) == false) goto L1141;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:428:0x17dd, code lost:
-    
-        if (r71.isReplyQuote == false) goto L1051;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:513:0x1679, code lost:
-    
-        r0 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:515:0x173a, code lost:
-    
-        org.telegram.messenger.FileLog.e(r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:733:0x14ee, code lost:
-    
-        if (r5 != null) goto L875;
+        if (r5 != null) goto L876;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:1016:0x09e3  */
-    /* JADX WARN: Removed duplicated region for block: B:1019:0x09f3  */
-    /* JADX WARN: Removed duplicated region for block: B:1022:0x0a15  */
-    /* JADX WARN: Removed duplicated region for block: B:1025:0x0a30  */
-    /* JADX WARN: Removed duplicated region for block: B:1038:0x0a7b  */
-    /* JADX WARN: Removed duplicated region for block: B:1039:0x0a19  */
-    /* JADX WARN: Removed duplicated region for block: B:1040:0x09f6  */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x03db  */
-    /* JADX WARN: Removed duplicated region for block: B:1050:0x07bc  */
-    /* JADX WARN: Removed duplicated region for block: B:1052:0x0702 A[Catch: Exception -> 0x0666, TryCatch #7 {Exception -> 0x0666, blocks: (B:130:0x061f, B:132:0x0645, B:134:0x065c, B:135:0x0669, B:136:0x067b, B:138:0x067f, B:139:0x068b, B:142:0x0691, B:143:0x069a, B:145:0x06a2, B:146:0x06ab, B:148:0x06b2, B:153:0x06d7, B:155:0x06e1, B:157:0x06ed, B:158:0x06f5, B:159:0x072e, B:1052:0x0702, B:1054:0x0717, B:1055:0x071f, B:1058:0x0736, B:1059:0x0673), top: B:129:0x061f }] */
-    /* JADX WARN: Removed duplicated region for block: B:1058:0x0736 A[Catch: Exception -> 0x0666, TRY_LEAVE, TryCatch #7 {Exception -> 0x0666, blocks: (B:130:0x061f, B:132:0x0645, B:134:0x065c, B:135:0x0669, B:136:0x067b, B:138:0x067f, B:139:0x068b, B:142:0x0691, B:143:0x069a, B:145:0x06a2, B:146:0x06ab, B:148:0x06b2, B:153:0x06d7, B:155:0x06e1, B:157:0x06ed, B:158:0x06f5, B:159:0x072e, B:1052:0x0702, B:1054:0x0717, B:1055:0x071f, B:1058:0x0736, B:1059:0x0673), top: B:129:0x061f }] */
-    /* JADX WARN: Removed duplicated region for block: B:1059:0x0673 A[Catch: Exception -> 0x0666, TryCatch #7 {Exception -> 0x0666, blocks: (B:130:0x061f, B:132:0x0645, B:134:0x065c, B:135:0x0669, B:136:0x067b, B:138:0x067f, B:139:0x068b, B:142:0x0691, B:143:0x069a, B:145:0x06a2, B:146:0x06ab, B:148:0x06b2, B:153:0x06d7, B:155:0x06e1, B:157:0x06ed, B:158:0x06f5, B:159:0x072e, B:1052:0x0702, B:1054:0x0717, B:1055:0x071f, B:1058:0x0736, B:1059:0x0673), top: B:129:0x061f }] */
-    /* JADX WARN: Removed duplicated region for block: B:1067:0x04ee  */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x03fd  */
-    /* JADX WARN: Removed duplicated region for block: B:1090:0x045f  */
-    /* JADX WARN: Removed duplicated region for block: B:1093:0x0400  */
-    /* JADX WARN: Removed duplicated region for block: B:1094:0x03de  */
-    /* JADX WARN: Removed duplicated region for block: B:1098:0x03cd  */
-    /* JADX WARN: Removed duplicated region for block: B:1101:0x0398  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x042c A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x043f  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x044a  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x045c  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x046a  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x0645 A[Catch: Exception -> 0x0666, TryCatch #7 {Exception -> 0x0666, blocks: (B:130:0x061f, B:132:0x0645, B:134:0x065c, B:135:0x0669, B:136:0x067b, B:138:0x067f, B:139:0x068b, B:142:0x0691, B:143:0x069a, B:145:0x06a2, B:146:0x06ab, B:148:0x06b2, B:153:0x06d7, B:155:0x06e1, B:157:0x06ed, B:158:0x06f5, B:159:0x072e, B:1052:0x0702, B:1054:0x0717, B:1055:0x071f, B:1058:0x0736, B:1059:0x0673), top: B:129:0x061f }] */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x067f A[Catch: Exception -> 0x0666, TryCatch #7 {Exception -> 0x0666, blocks: (B:130:0x061f, B:132:0x0645, B:134:0x065c, B:135:0x0669, B:136:0x067b, B:138:0x067f, B:139:0x068b, B:142:0x0691, B:143:0x069a, B:145:0x06a2, B:146:0x06ab, B:148:0x06b2, B:153:0x06d7, B:155:0x06e1, B:157:0x06ed, B:158:0x06f5, B:159:0x072e, B:1052:0x0702, B:1054:0x0717, B:1055:0x071f, B:1058:0x0736, B:1059:0x0673), top: B:129:0x061f }] */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x068f A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x06a2 A[Catch: Exception -> 0x0666, TryCatch #7 {Exception -> 0x0666, blocks: (B:130:0x061f, B:132:0x0645, B:134:0x065c, B:135:0x0669, B:136:0x067b, B:138:0x067f, B:139:0x068b, B:142:0x0691, B:143:0x069a, B:145:0x06a2, B:146:0x06ab, B:148:0x06b2, B:153:0x06d7, B:155:0x06e1, B:157:0x06ed, B:158:0x06f5, B:159:0x072e, B:1052:0x0702, B:1054:0x0717, B:1055:0x071f, B:1058:0x0736, B:1059:0x0673), top: B:129:0x061f }] */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x06b2 A[Catch: Exception -> 0x0666, TryCatch #7 {Exception -> 0x0666, blocks: (B:130:0x061f, B:132:0x0645, B:134:0x065c, B:135:0x0669, B:136:0x067b, B:138:0x067f, B:139:0x068b, B:142:0x0691, B:143:0x069a, B:145:0x06a2, B:146:0x06ab, B:148:0x06b2, B:153:0x06d7, B:155:0x06e1, B:157:0x06ed, B:158:0x06f5, B:159:0x072e, B:1052:0x0702, B:1054:0x0717, B:1055:0x071f, B:1058:0x0736, B:1059:0x0673), top: B:129:0x061f }] */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x06e1 A[Catch: Exception -> 0x0666, TryCatch #7 {Exception -> 0x0666, blocks: (B:130:0x061f, B:132:0x0645, B:134:0x065c, B:135:0x0669, B:136:0x067b, B:138:0x067f, B:139:0x068b, B:142:0x0691, B:143:0x069a, B:145:0x06a2, B:146:0x06ab, B:148:0x06b2, B:153:0x06d7, B:155:0x06e1, B:157:0x06ed, B:158:0x06f5, B:159:0x072e, B:1052:0x0702, B:1054:0x0717, B:1055:0x071f, B:1058:0x0736, B:1059:0x0673), top: B:129:0x061f }] */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x0748  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x075c  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x0763  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x0789  */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x07a1  */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x07a8  */
-    /* JADX WARN: Removed duplicated region for block: B:192:0x07c5  */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x1a4b  */
-    /* JADX WARN: Removed duplicated region for block: B:263:0x1993  */
-    /* JADX WARN: Removed duplicated region for block: B:278:0x19db  */
-    /* JADX WARN: Removed duplicated region for block: B:281:0x19f0  */
-    /* JADX WARN: Removed duplicated region for block: B:284:0x1a28  */
-    /* JADX WARN: Removed duplicated region for block: B:285:0x19f8  */
-    /* JADX WARN: Removed duplicated region for block: B:365:0x164d  */
-    /* JADX WARN: Removed duplicated region for block: B:368:0x1657  */
-    /* JADX WARN: Removed duplicated region for block: B:372:0x1671 A[Catch: Exception -> 0x1679, TryCatch #3 {Exception -> 0x1679, blocks: (B:370:0x166d, B:372:0x1671, B:373:0x167c, B:375:0x1692, B:376:0x1699, B:378:0x16a1, B:379:0x16b5, B:381:0x16ba, B:383:0x16d9, B:384:0x16f8, B:387:0x16fe, B:389:0x1702, B:392:0x170b, B:393:0x1726, B:395:0x172e, B:511:0x171d), top: B:369:0x166d }] */
-    /* JADX WARN: Removed duplicated region for block: B:375:0x1692 A[Catch: Exception -> 0x1679, TryCatch #3 {Exception -> 0x1679, blocks: (B:370:0x166d, B:372:0x1671, B:373:0x167c, B:375:0x1692, B:376:0x1699, B:378:0x16a1, B:379:0x16b5, B:381:0x16ba, B:383:0x16d9, B:384:0x16f8, B:387:0x16fe, B:389:0x1702, B:392:0x170b, B:393:0x1726, B:395:0x172e, B:511:0x171d), top: B:369:0x166d }] */
-    /* JADX WARN: Removed duplicated region for block: B:378:0x16a1 A[Catch: Exception -> 0x1679, TryCatch #3 {Exception -> 0x1679, blocks: (B:370:0x166d, B:372:0x1671, B:373:0x167c, B:375:0x1692, B:376:0x1699, B:378:0x16a1, B:379:0x16b5, B:381:0x16ba, B:383:0x16d9, B:384:0x16f8, B:387:0x16fe, B:389:0x1702, B:392:0x170b, B:393:0x1726, B:395:0x172e, B:511:0x171d), top: B:369:0x166d }] */
-    /* JADX WARN: Removed duplicated region for block: B:381:0x16ba A[Catch: Exception -> 0x1679, TryCatch #3 {Exception -> 0x1679, blocks: (B:370:0x166d, B:372:0x1671, B:373:0x167c, B:375:0x1692, B:376:0x1699, B:378:0x16a1, B:379:0x16b5, B:381:0x16ba, B:383:0x16d9, B:384:0x16f8, B:387:0x16fe, B:389:0x1702, B:392:0x170b, B:393:0x1726, B:395:0x172e, B:511:0x171d), top: B:369:0x166d }] */
-    /* JADX WARN: Removed duplicated region for block: B:386:0x16fc A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:395:0x172e A[Catch: Exception -> 0x1679, TRY_LEAVE, TryCatch #3 {Exception -> 0x1679, blocks: (B:370:0x166d, B:372:0x1671, B:373:0x167c, B:375:0x1692, B:376:0x1699, B:378:0x16a1, B:379:0x16b5, B:381:0x16ba, B:383:0x16d9, B:384:0x16f8, B:387:0x16fe, B:389:0x1702, B:392:0x170b, B:393:0x1726, B:395:0x172e, B:511:0x171d), top: B:369:0x166d }] */
-    /* JADX WARN: Removed duplicated region for block: B:400:0x1745 A[Catch: Exception -> 0x174c, TryCatch #1 {Exception -> 0x174c, blocks: (B:398:0x173d, B:400:0x1745, B:401:0x1752, B:403:0x1757, B:405:0x176d, B:407:0x1779, B:409:0x177d, B:412:0x177f, B:414:0x1789, B:416:0x1791, B:417:0x1796, B:419:0x179a, B:421:0x179e, B:425:0x17a6, B:427:0x17db, B:429:0x17e6, B:431:0x17ee, B:433:0x1807, B:435:0x180d, B:436:0x1819, B:438:0x1825, B:440:0x182b, B:443:0x183b, B:445:0x1860, B:447:0x186c, B:449:0x1880, B:450:0x189e, B:452:0x18a6, B:453:0x18b0, B:455:0x18b8, B:457:0x18d6, B:463:0x18e4, B:465:0x18ea, B:471:0x18f4, B:472:0x18fe, B:474:0x1902, B:475:0x190b, B:477:0x1914, B:479:0x191c, B:491:0x192a, B:496:0x1870, B:498:0x1876, B:500:0x187a, B:503:0x183e, B:504:0x17df), top: B:397:0x173d }] */
-    /* JADX WARN: Removed duplicated region for block: B:403:0x1757 A[Catch: Exception -> 0x174c, TryCatch #1 {Exception -> 0x174c, blocks: (B:398:0x173d, B:400:0x1745, B:401:0x1752, B:403:0x1757, B:405:0x176d, B:407:0x1779, B:409:0x177d, B:412:0x177f, B:414:0x1789, B:416:0x1791, B:417:0x1796, B:419:0x179a, B:421:0x179e, B:425:0x17a6, B:427:0x17db, B:429:0x17e6, B:431:0x17ee, B:433:0x1807, B:435:0x180d, B:436:0x1819, B:438:0x1825, B:440:0x182b, B:443:0x183b, B:445:0x1860, B:447:0x186c, B:449:0x1880, B:450:0x189e, B:452:0x18a6, B:453:0x18b0, B:455:0x18b8, B:457:0x18d6, B:463:0x18e4, B:465:0x18ea, B:471:0x18f4, B:472:0x18fe, B:474:0x1902, B:475:0x190b, B:477:0x1914, B:479:0x191c, B:491:0x192a, B:496:0x1870, B:498:0x1876, B:500:0x187a, B:503:0x183e, B:504:0x17df), top: B:397:0x173d }] */
-    /* JADX WARN: Removed duplicated region for block: B:486:0x1958 A[Catch: Exception -> 0x194e, TRY_LEAVE, TryCatch #0 {Exception -> 0x194e, blocks: (B:483:0x193f, B:484:0x1952, B:486:0x1958, B:494:0x193c), top: B:493:0x193c }] */
-    /* JADX WARN: Removed duplicated region for block: B:506:0x1950  */
-    /* JADX WARN: Removed duplicated region for block: B:507:0x1751  */
-    /* JADX WARN: Removed duplicated region for block: B:512:0x16b4  */
-    /* JADX WARN: Removed duplicated region for block: B:516:0x165a  */
-    /* JADX WARN: Removed duplicated region for block: B:574:0x0f02  */
-    /* JADX WARN: Removed duplicated region for block: B:577:0x0f14  */
-    /* JADX WARN: Removed duplicated region for block: B:580:0x0f27  */
-    /* JADX WARN: Removed duplicated region for block: B:593:0x0f2b  */
-    /* JADX WARN: Removed duplicated region for block: B:594:0x0f17  */
-    /* JADX WARN: Removed duplicated region for block: B:595:0x0f05  */
-    /* JADX WARN: Removed duplicated region for block: B:640:0x1091  */
-    /* JADX WARN: Removed duplicated region for block: B:654:0x1212  */
-    /* JADX WARN: Removed duplicated region for block: B:660:0x136f  */
-    /* JADX WARN: Removed duplicated region for block: B:775:0x1622  */
-    /* JADX WARN: Removed duplicated region for block: B:780:0x1264  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x035c  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x039c  */
+    /* JADX WARN: Removed duplicated region for block: B:1017:0x09f2  */
+    /* JADX WARN: Removed duplicated region for block: B:1020:0x0a02  */
+    /* JADX WARN: Removed duplicated region for block: B:1023:0x0a24  */
+    /* JADX WARN: Removed duplicated region for block: B:1026:0x0a3f  */
+    /* JADX WARN: Removed duplicated region for block: B:1039:0x0a8a  */
+    /* JADX WARN: Removed duplicated region for block: B:1040:0x0a28  */
+    /* JADX WARN: Removed duplicated region for block: B:1041:0x0a05  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x03e5  */
+    /* JADX WARN: Removed duplicated region for block: B:1051:0x07cb  */
+    /* JADX WARN: Removed duplicated region for block: B:1053:0x070f A[Catch: Exception -> 0x066f, TryCatch #2 {Exception -> 0x066f, blocks: (B:130:0x0628, B:132:0x064e, B:134:0x0665, B:135:0x0672, B:136:0x0684, B:138:0x0688, B:139:0x0694, B:142:0x069a, B:143:0x06a3, B:145:0x06ab, B:146:0x06b4, B:148:0x06bb, B:153:0x06e0, B:155:0x06ee, B:157:0x06fa, B:158:0x0702, B:159:0x073b, B:1053:0x070f, B:1055:0x0724, B:1056:0x072c, B:1059:0x0743, B:1060:0x067c), top: B:129:0x0628 }] */
+    /* JADX WARN: Removed duplicated region for block: B:1059:0x0743 A[Catch: Exception -> 0x066f, TRY_LEAVE, TryCatch #2 {Exception -> 0x066f, blocks: (B:130:0x0628, B:132:0x064e, B:134:0x0665, B:135:0x0672, B:136:0x0684, B:138:0x0688, B:139:0x0694, B:142:0x069a, B:143:0x06a3, B:145:0x06ab, B:146:0x06b4, B:148:0x06bb, B:153:0x06e0, B:155:0x06ee, B:157:0x06fa, B:158:0x0702, B:159:0x073b, B:1053:0x070f, B:1055:0x0724, B:1056:0x072c, B:1059:0x0743, B:1060:0x067c), top: B:129:0x0628 }] */
+    /* JADX WARN: Removed duplicated region for block: B:1060:0x067c A[Catch: Exception -> 0x066f, TryCatch #2 {Exception -> 0x066f, blocks: (B:130:0x0628, B:132:0x064e, B:134:0x0665, B:135:0x0672, B:136:0x0684, B:138:0x0688, B:139:0x0694, B:142:0x069a, B:143:0x06a3, B:145:0x06ab, B:146:0x06b4, B:148:0x06bb, B:153:0x06e0, B:155:0x06ee, B:157:0x06fa, B:158:0x0702, B:159:0x073b, B:1053:0x070f, B:1055:0x0724, B:1056:0x072c, B:1059:0x0743, B:1060:0x067c), top: B:129:0x0628 }] */
+    /* JADX WARN: Removed duplicated region for block: B:1068:0x04f7  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x0407  */
+    /* JADX WARN: Removed duplicated region for block: B:1091:0x0468  */
+    /* JADX WARN: Removed duplicated region for block: B:1094:0x040a  */
+    /* JADX WARN: Removed duplicated region for block: B:1095:0x03e8  */
+    /* JADX WARN: Removed duplicated region for block: B:1099:0x03d4  */
+    /* JADX WARN: Removed duplicated region for block: B:1102:0x039d  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0434 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x0448  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x0453  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0465  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x0473  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x064e A[Catch: Exception -> 0x066f, TryCatch #2 {Exception -> 0x066f, blocks: (B:130:0x0628, B:132:0x064e, B:134:0x0665, B:135:0x0672, B:136:0x0684, B:138:0x0688, B:139:0x0694, B:142:0x069a, B:143:0x06a3, B:145:0x06ab, B:146:0x06b4, B:148:0x06bb, B:153:0x06e0, B:155:0x06ee, B:157:0x06fa, B:158:0x0702, B:159:0x073b, B:1053:0x070f, B:1055:0x0724, B:1056:0x072c, B:1059:0x0743, B:1060:0x067c), top: B:129:0x0628 }] */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x0688 A[Catch: Exception -> 0x066f, TryCatch #2 {Exception -> 0x066f, blocks: (B:130:0x0628, B:132:0x064e, B:134:0x0665, B:135:0x0672, B:136:0x0684, B:138:0x0688, B:139:0x0694, B:142:0x069a, B:143:0x06a3, B:145:0x06ab, B:146:0x06b4, B:148:0x06bb, B:153:0x06e0, B:155:0x06ee, B:157:0x06fa, B:158:0x0702, B:159:0x073b, B:1053:0x070f, B:1055:0x0724, B:1056:0x072c, B:1059:0x0743, B:1060:0x067c), top: B:129:0x0628 }] */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x0698 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x06ab A[Catch: Exception -> 0x066f, TryCatch #2 {Exception -> 0x066f, blocks: (B:130:0x0628, B:132:0x064e, B:134:0x0665, B:135:0x0672, B:136:0x0684, B:138:0x0688, B:139:0x0694, B:142:0x069a, B:143:0x06a3, B:145:0x06ab, B:146:0x06b4, B:148:0x06bb, B:153:0x06e0, B:155:0x06ee, B:157:0x06fa, B:158:0x0702, B:159:0x073b, B:1053:0x070f, B:1055:0x0724, B:1056:0x072c, B:1059:0x0743, B:1060:0x067c), top: B:129:0x0628 }] */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x06bb A[Catch: Exception -> 0x066f, TryCatch #2 {Exception -> 0x066f, blocks: (B:130:0x0628, B:132:0x064e, B:134:0x0665, B:135:0x0672, B:136:0x0684, B:138:0x0688, B:139:0x0694, B:142:0x069a, B:143:0x06a3, B:145:0x06ab, B:146:0x06b4, B:148:0x06bb, B:153:0x06e0, B:155:0x06ee, B:157:0x06fa, B:158:0x0702, B:159:0x073b, B:1053:0x070f, B:1055:0x0724, B:1056:0x072c, B:1059:0x0743, B:1060:0x067c), top: B:129:0x0628 }] */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x06ee A[Catch: Exception -> 0x066f, TryCatch #2 {Exception -> 0x066f, blocks: (B:130:0x0628, B:132:0x064e, B:134:0x0665, B:135:0x0672, B:136:0x0684, B:138:0x0688, B:139:0x0694, B:142:0x069a, B:143:0x06a3, B:145:0x06ab, B:146:0x06b4, B:148:0x06bb, B:153:0x06e0, B:155:0x06ee, B:157:0x06fa, B:158:0x0702, B:159:0x073b, B:1053:0x070f, B:1055:0x0724, B:1056:0x072c, B:1059:0x0743, B:1060:0x067c), top: B:129:0x0628 }] */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x0757  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x076b  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x0772  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x0798  */
+    /* JADX WARN: Removed duplicated region for block: B:184:0x07b0  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x07b7  */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x07d4  */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x1a62  */
+    /* JADX WARN: Removed duplicated region for block: B:263:0x19aa  */
+    /* JADX WARN: Removed duplicated region for block: B:278:0x19f2  */
+    /* JADX WARN: Removed duplicated region for block: B:281:0x1a07  */
+    /* JADX WARN: Removed duplicated region for block: B:284:0x1a3f  */
+    /* JADX WARN: Removed duplicated region for block: B:285:0x1a0f  */
+    /* JADX WARN: Removed duplicated region for block: B:365:0x1664  */
+    /* JADX WARN: Removed duplicated region for block: B:368:0x166e  */
+    /* JADX WARN: Removed duplicated region for block: B:372:0x1688 A[Catch: Exception -> 0x1690, TryCatch #0 {Exception -> 0x1690, blocks: (B:370:0x1684, B:372:0x1688, B:373:0x1693, B:375:0x16a9, B:376:0x16b0, B:378:0x16b8, B:379:0x16cc, B:381:0x16d1, B:383:0x16f0, B:384:0x170f, B:387:0x1715, B:389:0x1719, B:392:0x1722, B:393:0x173d, B:395:0x1745, B:511:0x1734), top: B:369:0x1684 }] */
+    /* JADX WARN: Removed duplicated region for block: B:375:0x16a9 A[Catch: Exception -> 0x1690, TryCatch #0 {Exception -> 0x1690, blocks: (B:370:0x1684, B:372:0x1688, B:373:0x1693, B:375:0x16a9, B:376:0x16b0, B:378:0x16b8, B:379:0x16cc, B:381:0x16d1, B:383:0x16f0, B:384:0x170f, B:387:0x1715, B:389:0x1719, B:392:0x1722, B:393:0x173d, B:395:0x1745, B:511:0x1734), top: B:369:0x1684 }] */
+    /* JADX WARN: Removed duplicated region for block: B:378:0x16b8 A[Catch: Exception -> 0x1690, TryCatch #0 {Exception -> 0x1690, blocks: (B:370:0x1684, B:372:0x1688, B:373:0x1693, B:375:0x16a9, B:376:0x16b0, B:378:0x16b8, B:379:0x16cc, B:381:0x16d1, B:383:0x16f0, B:384:0x170f, B:387:0x1715, B:389:0x1719, B:392:0x1722, B:393:0x173d, B:395:0x1745, B:511:0x1734), top: B:369:0x1684 }] */
+    /* JADX WARN: Removed duplicated region for block: B:381:0x16d1 A[Catch: Exception -> 0x1690, TryCatch #0 {Exception -> 0x1690, blocks: (B:370:0x1684, B:372:0x1688, B:373:0x1693, B:375:0x16a9, B:376:0x16b0, B:378:0x16b8, B:379:0x16cc, B:381:0x16d1, B:383:0x16f0, B:384:0x170f, B:387:0x1715, B:389:0x1719, B:392:0x1722, B:393:0x173d, B:395:0x1745, B:511:0x1734), top: B:369:0x1684 }] */
+    /* JADX WARN: Removed duplicated region for block: B:386:0x1713 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:395:0x1745 A[Catch: Exception -> 0x1690, TRY_LEAVE, TryCatch #0 {Exception -> 0x1690, blocks: (B:370:0x1684, B:372:0x1688, B:373:0x1693, B:375:0x16a9, B:376:0x16b0, B:378:0x16b8, B:379:0x16cc, B:381:0x16d1, B:383:0x16f0, B:384:0x170f, B:387:0x1715, B:389:0x1719, B:392:0x1722, B:393:0x173d, B:395:0x1745, B:511:0x1734), top: B:369:0x1684 }] */
+    /* JADX WARN: Removed duplicated region for block: B:400:0x175c A[Catch: Exception -> 0x1763, TryCatch #7 {Exception -> 0x1763, blocks: (B:398:0x1754, B:400:0x175c, B:401:0x1769, B:403:0x176e, B:405:0x1784, B:407:0x1790, B:409:0x1794, B:412:0x1796, B:414:0x17a0, B:416:0x17a8, B:417:0x17ad, B:419:0x17b1, B:421:0x17b5, B:425:0x17bd, B:427:0x17f2, B:429:0x17fd, B:431:0x1805, B:433:0x181e, B:435:0x1824, B:436:0x1830, B:438:0x183c, B:440:0x1842, B:443:0x1852, B:445:0x1877, B:447:0x1883, B:449:0x1897, B:450:0x18b5, B:452:0x18bd, B:453:0x18c7, B:455:0x18cf, B:457:0x18ed, B:463:0x18fb, B:465:0x1901, B:471:0x190b, B:472:0x1915, B:474:0x1919, B:475:0x1922, B:477:0x192b, B:479:0x1933, B:491:0x1941, B:496:0x1887, B:498:0x188d, B:500:0x1891, B:503:0x1855, B:504:0x17f6), top: B:397:0x1754 }] */
+    /* JADX WARN: Removed duplicated region for block: B:403:0x176e A[Catch: Exception -> 0x1763, TryCatch #7 {Exception -> 0x1763, blocks: (B:398:0x1754, B:400:0x175c, B:401:0x1769, B:403:0x176e, B:405:0x1784, B:407:0x1790, B:409:0x1794, B:412:0x1796, B:414:0x17a0, B:416:0x17a8, B:417:0x17ad, B:419:0x17b1, B:421:0x17b5, B:425:0x17bd, B:427:0x17f2, B:429:0x17fd, B:431:0x1805, B:433:0x181e, B:435:0x1824, B:436:0x1830, B:438:0x183c, B:440:0x1842, B:443:0x1852, B:445:0x1877, B:447:0x1883, B:449:0x1897, B:450:0x18b5, B:452:0x18bd, B:453:0x18c7, B:455:0x18cf, B:457:0x18ed, B:463:0x18fb, B:465:0x1901, B:471:0x190b, B:472:0x1915, B:474:0x1919, B:475:0x1922, B:477:0x192b, B:479:0x1933, B:491:0x1941, B:496:0x1887, B:498:0x188d, B:500:0x1891, B:503:0x1855, B:504:0x17f6), top: B:397:0x1754 }] */
+    /* JADX WARN: Removed duplicated region for block: B:486:0x196f A[Catch: Exception -> 0x1965, TRY_LEAVE, TryCatch #6 {Exception -> 0x1965, blocks: (B:483:0x1956, B:484:0x1969, B:486:0x196f, B:494:0x1953), top: B:493:0x1953 }] */
+    /* JADX WARN: Removed duplicated region for block: B:506:0x1967  */
+    /* JADX WARN: Removed duplicated region for block: B:507:0x1768  */
+    /* JADX WARN: Removed duplicated region for block: B:512:0x16cb  */
+    /* JADX WARN: Removed duplicated region for block: B:516:0x1671  */
+    /* JADX WARN: Removed duplicated region for block: B:574:0x0f13  */
+    /* JADX WARN: Removed duplicated region for block: B:577:0x0f25  */
+    /* JADX WARN: Removed duplicated region for block: B:580:0x0f38  */
+    /* JADX WARN: Removed duplicated region for block: B:593:0x0f3c  */
+    /* JADX WARN: Removed duplicated region for block: B:594:0x0f28  */
+    /* JADX WARN: Removed duplicated region for block: B:595:0x0f16  */
+    /* JADX WARN: Removed duplicated region for block: B:640:0x10a1  */
+    /* JADX WARN: Removed duplicated region for block: B:654:0x1229  */
+    /* JADX WARN: Removed duplicated region for block: B:660:0x1386  */
+    /* JADX WARN: Removed duplicated region for block: B:775:0x1639  */
+    /* JADX WARN: Removed duplicated region for block: B:780:0x127b  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x035f  */
+    /* JADX WARN: Removed duplicated region for block: B:885:0x10a4  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x03a3  */
     /* JADX WARN: Type inference failed for: r0v11, types: [android.text.StaticLayout[]] */
-    /* JADX WARN: Type inference failed for: r10v107 */
-    /* JADX WARN: Type inference failed for: r10v108 */
-    /* JADX WARN: Type inference failed for: r10v109 */
-    /* JADX WARN: Type inference failed for: r10v110 */
-    /* JADX WARN: Type inference failed for: r10v111 */
-    /* JADX WARN: Type inference failed for: r10v112 */
-    /* JADX WARN: Type inference failed for: r10v113 */
-    /* JADX WARN: Type inference failed for: r10v114 */
-    /* JADX WARN: Type inference failed for: r10v116 */
-    /* JADX WARN: Type inference failed for: r10v117 */
-    /* JADX WARN: Type inference failed for: r10v118 */
+    /* JADX WARN: Type inference failed for: r10v100 */
+    /* JADX WARN: Type inference failed for: r10v102 */
+    /* JADX WARN: Type inference failed for: r10v103 */
+    /* JADX WARN: Type inference failed for: r10v104 */
     /* JADX WARN: Type inference failed for: r10v21, types: [boolean] */
     /* JADX WARN: Type inference failed for: r10v22 */
+    /* JADX WARN: Type inference failed for: r10v80 */
+    /* JADX WARN: Type inference failed for: r10v93 */
+    /* JADX WARN: Type inference failed for: r10v94 */
+    /* JADX WARN: Type inference failed for: r10v95 */
+    /* JADX WARN: Type inference failed for: r10v96 */
     /* JADX WARN: Type inference failed for: r10v97 */
-    /* JADX WARN: Type inference failed for: r14v11, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r10v98 */
+    /* JADX WARN: Type inference failed for: r10v99 */
+    /* JADX WARN: Type inference failed for: r14v31, types: [java.lang.CharSequence] */
     /* JADX WARN: Type inference failed for: r1v1 */
     /* JADX WARN: Type inference failed for: r1v2, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r1v239 */
-    /* JADX WARN: Type inference failed for: r1v56, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r1v73, types: [java.lang.String] */
-    /* JADX WARN: Type inference failed for: r2v128 */
-    /* JADX WARN: Type inference failed for: r2v146 */
-    /* JADX WARN: Type inference failed for: r2v36, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r2v44 */
-    /* JADX WARN: Type inference failed for: r3v305 */
+    /* JADX WARN: Type inference failed for: r1v225 */
+    /* JADX WARN: Type inference failed for: r2v174 */
+    /* JADX WARN: Type inference failed for: r2v192 */
+    /* JADX WARN: Type inference failed for: r2v28, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r2v37 */
+    /* JADX WARN: Type inference failed for: r3v102, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r3v119, types: [java.lang.String] */
+    /* JADX WARN: Type inference failed for: r3v362 */
     /* JADX WARN: Type inference failed for: r3v6 */
     /* JADX WARN: Type inference failed for: r3v7, types: [java.lang.String, org.telegram.tgnet.TLRPC$Chat, org.telegram.tgnet.TLRPC$User] */
-    /* JADX WARN: Type inference failed for: r5v119, types: [android.text.SpannableStringBuilder] */
-    /* JADX WARN: Type inference failed for: r5v129, types: [org.telegram.ui.Components.CheckBoxBase] */
-    /* JADX WARN: Type inference failed for: r5v130, types: [org.telegram.ui.Components.CheckBoxBase] */
+    /* JADX WARN: Type inference failed for: r5v106, types: [org.telegram.ui.Components.CheckBoxBase] */
+    /* JADX WARN: Type inference failed for: r5v107, types: [org.telegram.ui.Components.CheckBoxBase] */
+    /* JADX WARN: Type inference failed for: r5v96, types: [android.text.SpannableStringBuilder] */
     /* JADX WARN: Type inference failed for: r8v81, types: [org.telegram.ui.Components.CheckBoxBase] */
     /* JADX WARN: Type inference failed for: r8v82, types: [org.telegram.ui.Components.CheckBoxBase] */
-    /* JADX WARN: Type inference failed for: r9v54 */
-    /* JADX WARN: Type inference failed for: r9v55 */
-    /* JADX WARN: Type inference failed for: r9v56, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r9v58 */
+    /* JADX WARN: Type inference failed for: r9v173 */
+    /* JADX WARN: Type inference failed for: r9v203 */
+    /* JADX WARN: Type inference failed for: r9v43, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r9v51 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -38651,8 +38800,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         SpannableStringBuilder replaceTags;
         String str3;
         SpannableStringBuilder spannableStringBuilder;
-        CharSequence charSequence;
         String str4;
+        CharSequence charSequence;
         String str5;
         String str6;
         String str7;
@@ -38678,10 +38827,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         MessageObject messageObject3;
         ChatMessageCellDelegate chatMessageCellDelegate;
         StaticLayout staticLayout;
+        TLRPC.PhotoSize photoSize;
         TLObject tLObject;
         boolean z5;
         int i4;
-        TLRPC.PhotoSize photoSize;
         TLRPC.PhotoSize photoSize2;
         ImageLocation imageLocation;
         SvgHelper.SvgDrawable svgDrawable;
@@ -38692,6 +38841,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         String str13;
         boolean z6;
         char c;
+        boolean z7;
         long j;
         MessageObject messageObject4;
         CharSequence charSequence4;
@@ -38715,6 +38865,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         TLRPC.TL_textWithEntities tL_textWithEntities2;
         TLRPC.MessageReplyHeader messageReplyHeader6;
         TLRPC.MessageMedia messageMedia2;
+        TLRPC.PhotoSize photoSize3;
+        TLRPC.PhotoSize photoSize4;
         int i6;
         ImageLocation imageLocation2;
         SvgHelper.SvgDrawable svgDrawable2;
@@ -38722,11 +38874,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         TLRPC.PhotoSize closestPhotoSizeWithSize;
         int i7;
         TLRPC.MessageReplyHeader messageReplyHeader7;
-        boolean z7;
+        boolean z8;
         SpannableStringBuilder spannableStringBuilder3;
         int i8;
         int i9;
-        boolean z8;
+        boolean z9;
         int i10;
         String ellipsize;
         int i11;
@@ -38742,9 +38894,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         StaticLayout.Builder alignment;
         StaticLayout.Builder includePad;
         StaticLayout build;
-        boolean z9;
-        StaticLayout.Builder maxLines;
         boolean z10;
+        StaticLayout.Builder maxLines;
+        boolean z11;
         int i18;
         CharSequence createExpiredStoryString;
         MessageObject.GroupedMessagePosition groupedMessagePosition2;
@@ -38753,19 +38905,22 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         boolean isOwner;
         boolean isAdmin;
         SpannableStringBuilder spannableStringBuilder4;
+        boolean z12;
+        SpannableStringBuilder spannableStringBuilder5;
         int i19;
         int i20;
         String str15;
-        boolean z11;
-        boolean z12;
+        int dp;
+        boolean z13;
+        boolean z14;
         CharSequence charSequence8;
         int themedColor;
-        SpannableStringBuilder spannableStringBuilder5;
+        SpannableStringBuilder spannableStringBuilder6;
         AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable;
         AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable2;
         String str16;
         StaticLayout staticLayout3;
-        boolean z13;
+        boolean z15;
         int i21;
         TLRPC.Chat chat2;
         MessageObject.GroupedMessagePosition groupedMessagePosition3;
@@ -38787,7 +38942,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         if (messageObject.isEphemeral()) {
             ColoredImageSpan coloredImageSpan = new ColoredImageSpan(org.telegram.messenger.R.drawable.mini_ephemeral_hidden_14);
             coloredImageSpan.setColorKey(messageObject.shouldDrawWithoutBackground() ? getThemedColor(Theme.key_chat_stickerReplyNameText) : (!messageObject.isOut() || ((resourcesProvider = this.resourcesProvider) == null ? !Theme.isCurrentThemeDark() : !resourcesProvider.isDark())) ? Theme.key_chat_tagAdmin : Theme.key_chat_messageLinkOut);
-            SpannableStringBuilder spannableStringBuilder6 = new SpannableStringBuilder("* ");
+            SpannableStringBuilder spannableStringBuilder7 = new SpannableStringBuilder("* ");
             if (messageObject.isOut()) {
                 long ephemeralReceiverBotId = messageObject.getEphemeralReceiverBotId();
                 String publicUsername = ephemeralReceiverBotId != 0 ? UserObject.getPublicUsername(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(ephemeralReceiverBotId))) : "";
@@ -38796,16 +38951,16 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 }
                 str = "A ";
                 i23 = 0;
-                spannableStringBuilder6.append((CharSequence) LocaleController.formatString(org.telegram.messenger.R.string.EphemeralMessageVisibleToOther, publicUsername));
+                spannableStringBuilder7.append((CharSequence) LocaleController.formatString(org.telegram.messenger.R.string.EphemeralMessageVisibleToOther, publicUsername));
             } else {
                 str = "A ";
                 i23 = 0;
-                spannableStringBuilder6.append((CharSequence) LocaleController.getString(org.telegram.messenger.R.string.EphemeralMessageVisibleToYou));
+                spannableStringBuilder7.append((CharSequence) LocaleController.getString(org.telegram.messenger.R.string.EphemeralMessageVisibleToYou));
             }
-            spannableStringBuilder6.setSpan(coloredImageSpan, i23, 1, 33);
+            spannableStringBuilder7.setSpan(coloredImageSpan, i23, 1, 33);
             this.totalHeight += AndroidUtilities.dp(25.0f - (messageObject.isReply() ? 4 : 0));
             this.namesOffset += AndroidUtilities.dp(25.0f - (messageObject.isReply() ? 4 : 0));
-            StaticLayout staticLayout4 = new StaticLayout(spannableStringBuilder6, Theme.chat_ephemeralPaint, AndroidUtilities.dp(300.0f), Layout.Alignment.ALIGN_NORMAL, 0.0f, 0.0f, false);
+            StaticLayout staticLayout4 = new StaticLayout(spannableStringBuilder7, Theme.chat_ephemeralPaint, AndroidUtilities.dp(300.0f), Layout.Alignment.ALIGN_NORMAL, 0.0f, 0.0f, false);
             this.ephemeralLayout = staticLayout4;
             this.ephemeralWidth = staticLayout4.getLineCount() > 0 ? ((int) this.ephemeralLayout.getLineWidth(0)) + AndroidUtilities.dp(10.0f) : 0;
         } else {
@@ -38834,17 +38989,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         }
         boolean isNeedAuthorName = isNeedAuthorName();
         TLRPC.Message message3 = messageObject.messageOwner;
-        boolean z14 = (message3.fwd_from == null || messageObject.type == 14) && str2 != null;
-        boolean z15 = message3.guestchat_via_from != null;
-        if (this.hasPsaHint || (!isNeedAuthorName && !z14 && !z15)) {
+        boolean z16 = (message3.fwd_from == null || messageObject.type == 14) && str2 != null;
+        boolean z17 = message3.guestchat_via_from != null;
+        if (this.hasPsaHint || (!isNeedAuthorName && !z16 && !z17)) {
             str3 = "\n";
             spannableStringBuilder = replaceTags;
+            str4 = str2;
             charSequence = "* ";
-            str4 = "%s (%s)";
-            str5 = "ViaBot";
-            str6 = "";
-            str7 = "Loading";
-            str8 = str2;
+            str5 = "%s (%s)";
+            str6 = "ViaBot";
+            str7 = "";
+            str8 = "Loading";
             r3 = 0;
             this.currentNameString = null;
             this.nameLayout = null;
@@ -38871,20 +39026,21 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 spannableStringBuilder = replaceTags;
                 str14 = str2;
                 if (chat2.id == (-this.currentMessageObject.getFromChatId())) {
-                    spannableStringBuilder4 = new SpannableStringBuilder(messageObject.messageOwner.post_author.replace("\n", ""));
+                    spannableStringBuilder5 = new SpannableStringBuilder(messageObject.messageOwner.post_author.replace("\n", ""));
+                    spannableStringBuilder4 = spannableStringBuilder5;
+                    z12 = false;
                     isOwner = false;
                     isAdmin = false;
                     i19 = this.currentMessageObject.messageOwner.from_boosts_applied;
                     if (i19 <= 0) {
-                        str3 = "\n";
-                    } else {
                         if (spannableStringBuilder4 == null) {
                             spannableStringBuilder4 = new SpannableStringBuilder();
                         }
+                        str3 = "\n";
                         Pair create = BoostCounterSpan.create(this, Theme.chat_namePaint, i19);
                         BoostCounterSpan boostCounterSpan = (BoostCounterSpan) create.second;
                         this.boostCounterSpan = boostCounterSpan;
-                        str3 = "\n";
+                        str8 = "Loading";
                         boostCounterSpan.isRtl = AndroidUtilities.isRTL(spannableStringBuilder4);
                         BoostCounterSpan boostCounterSpan2 = this.boostCounterSpan;
                         boostCounterSpan2.margin = isAdmin || isOwner;
@@ -38893,8 +39049,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         } else {
                             spannableStringBuilder4.append((CharSequence) create.first);
                         }
+                    } else {
+                        str3 = "\n";
+                        str8 = "Loading";
                     }
-                    if (spannableStringBuilder4 != null) {
+                    if (spannableStringBuilder4 == null) {
                         i20 = (int) new StaticLayout(spannableStringBuilder4, Theme.chat_adminPaint, AndroidUtilities.dp(300.0f), Layout.Alignment.ALIGN_NORMAL, 0.0f, 0.0f, false).getLineWidth(0);
                         if (isAdmin || isOwner) {
                             i20 += AndroidUtilities.dp(12.0f);
@@ -38905,9 +39064,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     }
                     this.currentNameStatus = null;
                     this.nameStatusSlug = null;
+                    boolean z18 = z12;
+                    boolean z19 = isOwner;
                     this.currentNameBotVerificationId = 0L;
                     str15 = messageObject.customName;
-                    if (str15 != null) {
+                    if (str15 == null) {
                         this.currentNameString = str15;
                     } else if (isNeedAuthorName) {
                         this.currentNameString = getAuthorName();
@@ -38916,11 +39077,13 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     } else {
                         this.currentNameString = "";
                     }
-                    int dp = AndroidUtilities.dp(this.currentMessageObject.isSponsored() ? -24.0f : 0.0f);
-                    str6 = "";
+                    dp = AndroidUtilities.dp(!this.currentMessageObject.isSponsored() ? -24.0f : 0.0f);
                     CharSequence removeDiacritics2 = AndroidUtilities.removeDiacritics(this.currentNameString.replace('\n', ' ').replace((char) 8207, ' '));
-                    removeDiacritics2 = Emoji.replaceEmoji(removeDiacritics2, Theme.chat_namePaint.getFontMetricsInt(), false);
-                    if (this.currentNameStatus != null && !z14) {
+                    try {
+                        removeDiacritics2 = Emoji.replaceEmoji(removeDiacritics2, Theme.chat_namePaint.getFontMetricsInt(), false);
+                    } catch (Exception unused) {
+                    }
+                    if (this.currentNameStatus != null && !z16) {
                         this.nameWidth -= AndroidUtilities.dp(20.0f);
                     }
                     if (this.currentNameBotVerificationId != 0) {
@@ -38930,37 +39093,14 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         this.nameWidth -= AndroidUtilities.dp(8.0f);
                     }
                     TextPaint textPaint2 = Theme.chat_namePaint;
-                    str7 = "Loading";
-                    float f = (this.nameWidth + dp) - (z14 ? this.viaWidth : 0);
+                    str7 = "";
+                    float f = (this.nameWidth + dp) - (!z16 ? this.viaWidth : 0);
                     TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
                     CharSequence ellipsize2 = TextUtils.ellipsize(removeDiacritics2, textPaint2, f, truncateAt);
-                    if (z15) {
-                        if (this.currentMessageObject.shouldDrawWithoutBackground()) {
-                            i21 = Theme.key_chat_stickerViaBotNameText;
-                        } else if (this.currentMessageObject.isOutOwner()) {
-                            i21 = Theme.key_chat_outViaBotNameText;
-                        } else {
-                            i21 = Theme.key_chat_inViaBotNameText;
-                        }
-                        SpannableStringBuilder spannableStringBuilder7 = new SpannableStringBuilder();
-                        spannableStringBuilder7.append((CharSequence) DialogObject.getShortName(DialogObject.getPeerDialogId(messageObject.messageOwner.from_id)));
-                        int length = spannableStringBuilder7.length();
-                        spannableStringBuilder7.append((CharSequence) " ");
-                        spannableStringBuilder7.append((CharSequence) LocaleController.getString(org.telegram.messenger.R.string.GuestBotFor));
-                        spannableStringBuilder7.append((CharSequence) " ");
-                        spannableStringBuilder7.append((CharSequence) DialogObject.getShortName(DialogObject.getPeerDialogId(messageObject.messageOwner.guestchat_via_from)));
-                        str5 = "ViaBot";
-                        str4 = "%s (%s)";
-                        spannableStringBuilder7.setSpan(new TypefaceSpan(Typeface.DEFAULT, 0), length, spannableStringBuilder7.length(), 33);
-                        spannableStringBuilder7.setSpan(new ForegroundColorSpanThemable(i21), 0, spannableStringBuilder7.length(), 33);
-                        z11 = isAdmin;
-                        charSequence8 = TextUtils.ellipsize(spannableStringBuilder7, Theme.chat_namePaint, this.nameWidth + dp, truncateAt);
-                        str8 = str14;
-                        z12 = isOwner;
-                    } else {
-                        str4 = "%s (%s)";
-                        str5 = "ViaBot";
-                        if (z14) {
+                    if (z17) {
+                        str5 = "%s (%s)";
+                        str6 = "ViaBot";
+                        if (z16) {
                             int ceil = (int) Math.ceil(Theme.chat_namePaint.measureText(ellipsize2, 0, ellipsize2.length()));
                             this.viaNameWidth = ceil;
                             if (ceil != 0) {
@@ -38974,12 +39114,12 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             String string = LocaleController.getString(org.telegram.messenger.R.string.ViaBot);
                             if (this.currentNameString.length() > 0) {
                                 SpannableStringBuilder spannableStringBuilder8 = new SpannableStringBuilder();
-                                str8 = str14;
-                                spannableStringBuilder8.append(ellipsize2).append((CharSequence) " ").append((CharSequence) string).append((CharSequence) " ").append((CharSequence) str8);
-                                z12 = isOwner;
+                                str4 = str14;
+                                spannableStringBuilder8.append(ellipsize2).append((CharSequence) " ").append((CharSequence) string).append((CharSequence) " ").append((CharSequence) str4);
+                                z14 = z19;
                                 TypefaceSpan typefaceSpan = new TypefaceSpan(Typeface.DEFAULT, 0, themedColor);
                                 this.viaSpan1 = typefaceSpan;
-                                z11 = isAdmin;
+                                z13 = isAdmin;
                                 spannableStringBuilder8.setSpan(typefaceSpan, ellipsize2.length() + 1, ellipsize2.length() + 1 + string.length(), 33);
                                 if (this.currentNameStatus != null) {
                                     this.viaNameWidth += AndroidUtilities.dp(28.0f);
@@ -38988,83 +39128,113 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 TypefaceSpan typefaceSpan2 = new TypefaceSpan(AndroidUtilities.bold(), 0, themedColor);
                                 this.viaSpan2 = typefaceSpan2;
                                 spannableStringBuilder8.setSpan(typefaceSpan2, ellipsize2.length() + 2 + string.length(), spannableStringBuilder8.length(), 33);
-                                spannableStringBuilder5 = spannableStringBuilder8;
+                                spannableStringBuilder6 = spannableStringBuilder8;
                             } else {
-                                z11 = isAdmin;
-                                str8 = str14;
-                                z12 = isOwner;
+                                z13 = isAdmin;
+                                str4 = str14;
+                                z14 = z19;
                                 this.viaOnly = true;
                                 SpannableStringBuilder spannableStringBuilder9 = new SpannableStringBuilder();
-                                spannableStringBuilder9.append((CharSequence) string).append((CharSequence) " ").append((CharSequence) str8);
+                                spannableStringBuilder9.append((CharSequence) string).append((CharSequence) " ").append((CharSequence) str4);
                                 TypefaceSpan typefaceSpan3 = new TypefaceSpan(Typeface.DEFAULT, 0, themedColor);
                                 this.viaSpan1 = typefaceSpan3;
                                 spannableStringBuilder9.setSpan(typefaceSpan3, 0, string.length() + 1, 33);
                                 TypefaceSpan typefaceSpan4 = new TypefaceSpan(AndroidUtilities.bold(), 0, themedColor);
                                 this.viaSpan2 = typefaceSpan4;
                                 spannableStringBuilder9.setSpan(typefaceSpan4, string.length() + 1, spannableStringBuilder9.length(), 33);
-                                spannableStringBuilder5 = spannableStringBuilder9;
+                                spannableStringBuilder6 = spannableStringBuilder9;
                             }
-                            ellipsize2 = TextUtils.ellipsize(spannableStringBuilder5, Theme.chat_namePaint, this.nameWidth + dp, truncateAt);
+                            ellipsize2 = TextUtils.ellipsize(spannableStringBuilder6, Theme.chat_namePaint, this.nameWidth + dp, truncateAt);
                         } else {
-                            z11 = isAdmin;
-                            str8 = str14;
-                            z12 = isOwner;
+                            z13 = isAdmin;
+                            str4 = str14;
+                            z14 = z19;
                         }
                         charSequence8 = ellipsize2;
-                    }
-                    TextPaint textPaint3 = Theme.chat_namePaint;
-                    int dp2 = this.nameWidth + dp + AndroidUtilities.dp(2.0f);
-                    Layout.Alignment alignment2 = Layout.Alignment.ALIGN_NORMAL;
-                    staticLayout3 = new StaticLayout(charSequence8, textPaint3, dp2, alignment2, 1.0f, 0.0f, false);
-                    this.nameLayout = staticLayout3;
-                    if (staticLayout3.getLineCount() > 0) {
-                        int ceil2 = (int) Math.ceil(this.nameLayout.getLineWidth(0));
-                        this.nameLayoutWidth = ceil2;
-                        this.nameWidth = ceil2;
-                        if (!messageObject.isAnyKindOfSticker()) {
-                            this.namesOffset += getNameHeight();
-                        }
-                        this.nameOffsetX = this.nameLayout.getLineLeft(0);
                     } else {
-                        this.nameLayoutWidth = 0;
-                        this.nameWidth = 0;
-                        this.nameOffsetX = 0.0f;
+                        if (this.currentMessageObject.shouldDrawWithoutBackground()) {
+                            i21 = Theme.key_chat_stickerViaBotNameText;
+                        } else if (this.currentMessageObject.isOutOwner()) {
+                            i21 = Theme.key_chat_outViaBotNameText;
+                        } else {
+                            i21 = Theme.key_chat_inViaBotNameText;
+                        }
+                        SpannableStringBuilder spannableStringBuilder10 = new SpannableStringBuilder();
+                        spannableStringBuilder10.append((CharSequence) DialogObject.getShortName(DialogObject.getPeerDialogId(messageObject.messageOwner.from_id)));
+                        int length = spannableStringBuilder10.length();
+                        spannableStringBuilder10.append((CharSequence) " ");
+                        spannableStringBuilder10.append((CharSequence) LocaleController.getString(org.telegram.messenger.R.string.GuestBotFor));
+                        spannableStringBuilder10.append((CharSequence) " ");
+                        spannableStringBuilder10.append((CharSequence) DialogObject.getShortName(DialogObject.getPeerDialogId(messageObject.messageOwner.guestchat_via_from)));
+                        str6 = "ViaBot";
+                        str5 = "%s (%s)";
+                        spannableStringBuilder10.setSpan(new TypefaceSpan(Typeface.DEFAULT, 0), length, spannableStringBuilder10.length(), 33);
+                        spannableStringBuilder10.setSpan(new ForegroundColorSpanThemable(i21), 0, spannableStringBuilder10.length(), 33);
+                        charSequence8 = TextUtils.ellipsize(spannableStringBuilder10, Theme.chat_namePaint, this.nameWidth + dp, truncateAt);
+                        z13 = isAdmin;
+                        str4 = str14;
+                        z14 = z19;
                     }
-                    if (this.drawNameAvatar) {
-                        this.nameWidth += AndroidUtilities.dp(36.33f);
-                    }
-                    if (this.currentNameStatus != null && !z14) {
-                        this.nameWidth += AndroidUtilities.dp(20.0f);
-                    }
-                    if (this.currentNameBotVerificationId != 0) {
-                        this.nameWidth += AndroidUtilities.dp(20.0f);
-                    }
-                    this.nameWidth -= dp;
-                    if (spannableStringBuilder4 != null) {
-                        StaticLayout staticLayout5 = new StaticLayout(spannableStringBuilder4, Theme.chat_adminPaint, i20 + AndroidUtilities.dp(2.0f), alignment2, 1.0f, 0.0f, false);
-                        this.adminLayout = staticLayout5;
-                        if (!z11 && !z12) {
-                            z13 = false;
-                            this.adminLayoutIsAdmin = z13;
-                            this.adminLayoutIsOwner = z12;
+                    try {
+                        TextPaint textPaint3 = Theme.chat_namePaint;
+                        int dp2 = this.nameWidth + dp + AndroidUtilities.dp(2.0f);
+                        Layout.Alignment alignment2 = Layout.Alignment.ALIGN_NORMAL;
+                        staticLayout3 = new StaticLayout(charSequence8, textPaint3, dp2, alignment2, 1.0f, 0.0f, false);
+                        this.nameLayout = staticLayout3;
+                        if (staticLayout3.getLineCount() <= 0) {
+                            int ceil2 = (int) Math.ceil(this.nameLayout.getLineWidth(0));
+                            this.nameLayoutWidth = ceil2;
+                            this.nameWidth = ceil2;
+                            if (!messageObject.isAnyKindOfSticker()) {
+                                this.namesOffset += getNameHeight();
+                            }
+                            this.nameOffsetX = this.nameLayout.getLineLeft(0);
+                        } else {
+                            this.nameLayoutWidth = 0;
+                            this.nameWidth = 0;
+                            this.nameOffsetX = 0.0f;
+                        }
+                        if (this.drawNameAvatar) {
+                            this.nameWidth += AndroidUtilities.dp(36.33f);
+                        }
+                        if (this.currentNameStatus != null && !z16) {
+                            this.nameWidth += AndroidUtilities.dp(20.0f);
+                        }
+                        if (this.currentNameBotVerificationId != 0) {
+                            this.nameWidth += AndroidUtilities.dp(20.0f);
+                        }
+                        this.nameWidth -= dp;
+                        if (spannableStringBuilder4 == null) {
+                            StaticLayout staticLayout5 = new StaticLayout(spannableStringBuilder4, Theme.chat_adminPaint, i20 + AndroidUtilities.dp(2.0f), alignment2, 1.0f, 0.0f, false);
+                            this.adminLayout = staticLayout5;
+                            if (!z13 && !z14) {
+                                z15 = false;
+                                this.adminLayoutIsAdmin = z15;
+                                this.adminLayoutIsOwner = z14;
+                                this.adminLayoutIsTag = z18;
+                                if (this.drawNameAvatar) {
+                                    this.nameWidth = (int) (this.nameWidth + staticLayout5.getLineWidth(0) + (this.adminLayoutIsAdmin ? AndroidUtilities.dp(12.0f) : 0) + AndroidUtilities.dp(8.0f));
+                                } else {
+                                    this.nameWidth = (int) Math.max(this.nameWidth, AndroidUtilities.dp(32.33f) + this.adminLayout.getLineWidth(0) + (z13 ? AndroidUtilities.dp(12.0f) : 0) + AndroidUtilities.dp(8.0f));
+                                }
+                                this.boostCounterBounds = new RectF();
+                            }
+                            z15 = true;
+                            this.adminLayoutIsAdmin = z15;
+                            this.adminLayoutIsOwner = z14;
+                            this.adminLayoutIsTag = z18;
                             if (this.drawNameAvatar) {
-                                this.nameWidth = (int) (this.nameWidth + staticLayout5.getLineWidth(0) + (this.adminLayoutIsAdmin ? AndroidUtilities.dp(12.0f) : 0) + AndroidUtilities.dp(8.0f));
-                            } else {
-                                this.nameWidth = (int) Math.max(this.nameWidth, AndroidUtilities.dp(32.33f) + this.adminLayout.getLineWidth(0) + (z11 ? AndroidUtilities.dp(12.0f) : 0) + AndroidUtilities.dp(8.0f));
                             }
                             this.boostCounterBounds = new RectF();
+                        } else {
+                            this.adminLayout = null;
+                            this.adminLayoutIsAdmin = false;
+                            this.adminLayoutIsOwner = false;
+                            this.adminLayoutIsTag = false;
+                            this.boostCounterBounds = null;
                         }
-                        z13 = true;
-                        this.adminLayoutIsAdmin = z13;
-                        this.adminLayoutIsOwner = z12;
-                        if (this.drawNameAvatar) {
-                        }
-                        this.boostCounterBounds = new RectF();
-                    } else {
-                        this.adminLayout = null;
-                        this.adminLayoutIsAdmin = false;
-                        this.adminLayoutIsOwner = false;
-                        this.boostCounterBounds = null;
+                    } catch (Exception e) {
+                        FileLog.e(e);
                     }
                     if (this.currentNameStatusDrawable == null && this.currentNameStatus != null) {
                         AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable3 = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable((View) this, true, AndroidUtilities.dp(20.0f));
@@ -39092,7 +39262,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         }
                     }
                     swapAnimatedEmojiDrawable2 = this.currentNameEmojiStatusDrawable;
-                    if (swapAnimatedEmojiDrawable2 != null) {
+                    if (swapAnimatedEmojiDrawable2 == null) {
                         long j2 = this.currentNameBotVerificationId;
                         if (j2 == 0) {
                             str16 = null;
@@ -39112,7 +39282,70 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 }
             }
             if (this.isMegagroup && this.currentChat != null && this.currentMessageObject.isForwardedChannelPost()) {
-                spannableStringBuilder4 = new SpannableStringBuilder(LocaleController.getString(org.telegram.messenger.R.string.DiscussChannel));
+                spannableStringBuilder5 = new SpannableStringBuilder(LocaleController.getString(org.telegram.messenger.R.string.DiscussChannel));
+                spannableStringBuilder4 = spannableStringBuilder5;
+                z12 = false;
+                isOwner = false;
+                isAdmin = false;
+                i19 = this.currentMessageObject.messageOwner.from_boosts_applied;
+                if (i19 <= 0) {
+                }
+                if (spannableStringBuilder4 == null) {
+                }
+                this.currentNameStatus = null;
+                this.nameStatusSlug = null;
+                boolean z182 = z12;
+                boolean z192 = isOwner;
+                this.currentNameBotVerificationId = 0L;
+                str15 = messageObject.customName;
+                if (str15 == null) {
+                }
+                dp = AndroidUtilities.dp(!this.currentMessageObject.isSponsored() ? -24.0f : 0.0f);
+                CharSequence removeDiacritics22 = AndroidUtilities.removeDiacritics(this.currentNameString.replace('\n', ' ').replace((char) 8207, ' '));
+                removeDiacritics22 = Emoji.replaceEmoji(removeDiacritics22, Theme.chat_namePaint.getFontMetricsInt(), false);
+                if (this.currentNameStatus != null) {
+                }
+                if (this.currentNameBotVerificationId != 0) {
+                }
+                if (spannableStringBuilder4 != null) {
+                }
+                TextPaint textPaint22 = Theme.chat_namePaint;
+                str7 = "";
+                float f2 = (this.nameWidth + dp) - (!z16 ? this.viaWidth : 0);
+                TextUtils.TruncateAt truncateAt2 = TextUtils.TruncateAt.END;
+                CharSequence ellipsize22 = TextUtils.ellipsize(removeDiacritics22, textPaint22, f2, truncateAt2);
+                if (z17) {
+                }
+                TextPaint textPaint32 = Theme.chat_namePaint;
+                int dp22 = this.nameWidth + dp + AndroidUtilities.dp(2.0f);
+                Layout.Alignment alignment22 = Layout.Alignment.ALIGN_NORMAL;
+                staticLayout3 = new StaticLayout(charSequence8, textPaint32, dp22, alignment22, 1.0f, 0.0f, false);
+                this.nameLayout = staticLayout3;
+                if (staticLayout3.getLineCount() <= 0) {
+                }
+                if (this.drawNameAvatar) {
+                }
+                if (this.currentNameStatus != null) {
+                }
+                if (this.currentNameBotVerificationId != 0) {
+                }
+                this.nameWidth -= dp;
+                if (spannableStringBuilder4 == null) {
+                }
+                if (this.currentNameStatusDrawable == null) {
+                }
+                swapAnimatedEmojiDrawable = this.currentNameStatusDrawable;
+                if (swapAnimatedEmojiDrawable != null) {
+                }
+                if (this.currentNameEmojiStatusDrawable == null) {
+                }
+                swapAnimatedEmojiDrawable2 = this.currentNameEmojiStatusDrawable;
+                if (swapAnimatedEmojiDrawable2 == null) {
+                }
+                if (this.currentNameString.length() == 0) {
+                }
+                r1 = 0;
+                r3 = str16;
             } else {
                 if ((this.currentUser != null || this.currentChat != null) && !this.currentMessageObject.isOutOwner() && !this.currentMessageObject.isAnyKindOfSticker() && this.currentMessageObject.type != 5 && (chatMessageCellDelegate2 = this.delegate) != null) {
                     TLRPC.User user2 = this.currentUser;
@@ -39132,21 +39365,23 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             adminRank = LocaleController.getString(isOwner ? org.telegram.messenger.R.string.ChatTagOwner : org.telegram.messenger.R.string.ChatTagAdmin);
                         }
                         spannableStringBuilder4 = new SpannableStringBuilder(adminRank);
+                        z12 = true;
                         i19 = this.currentMessageObject.messageOwner.from_boosts_applied;
                         if (i19 <= 0) {
                         }
-                        if (spannableStringBuilder4 != null) {
+                        if (spannableStringBuilder4 == null) {
                         }
                         this.currentNameStatus = null;
                         this.nameStatusSlug = null;
+                        boolean z1822 = z12;
+                        boolean z1922 = isOwner;
                         this.currentNameBotVerificationId = 0L;
                         str15 = messageObject.customName;
-                        if (str15 != null) {
+                        if (str15 == null) {
                         }
-                        int dp3 = AndroidUtilities.dp(this.currentMessageObject.isSponsored() ? -24.0f : 0.0f);
-                        str6 = "";
-                        CharSequence removeDiacritics22 = AndroidUtilities.removeDiacritics(this.currentNameString.replace('\n', ' ').replace((char) 8207, ' '));
-                        removeDiacritics22 = Emoji.replaceEmoji(removeDiacritics22, Theme.chat_namePaint.getFontMetricsInt(), false);
+                        dp = AndroidUtilities.dp(!this.currentMessageObject.isSponsored() ? -24.0f : 0.0f);
+                        CharSequence removeDiacritics222 = AndroidUtilities.removeDiacritics(this.currentNameString.replace('\n', ' ').replace((char) 8207, ' '));
+                        removeDiacritics222 = Emoji.replaceEmoji(removeDiacritics222, Theme.chat_namePaint.getFontMetricsInt(), false);
                         if (this.currentNameStatus != null) {
                             this.nameWidth -= AndroidUtilities.dp(20.0f);
                         }
@@ -39154,19 +39389,19 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         }
                         if (spannableStringBuilder4 != null) {
                         }
-                        TextPaint textPaint22 = Theme.chat_namePaint;
-                        str7 = "Loading";
-                        float f2 = (this.nameWidth + dp3) - (z14 ? this.viaWidth : 0);
-                        TextUtils.TruncateAt truncateAt2 = TextUtils.TruncateAt.END;
-                        CharSequence ellipsize22 = TextUtils.ellipsize(removeDiacritics22, textPaint22, f2, truncateAt2);
-                        if (z15) {
+                        TextPaint textPaint222 = Theme.chat_namePaint;
+                        str7 = "";
+                        float f22 = (this.nameWidth + dp) - (!z16 ? this.viaWidth : 0);
+                        TextUtils.TruncateAt truncateAt22 = TextUtils.TruncateAt.END;
+                        CharSequence ellipsize222 = TextUtils.ellipsize(removeDiacritics222, textPaint222, f22, truncateAt22);
+                        if (z17) {
                         }
-                        TextPaint textPaint32 = Theme.chat_namePaint;
-                        int dp22 = this.nameWidth + dp3 + AndroidUtilities.dp(2.0f);
-                        Layout.Alignment alignment22 = Layout.Alignment.ALIGN_NORMAL;
-                        staticLayout3 = new StaticLayout(charSequence8, textPaint32, dp22, alignment22, 1.0f, 0.0f, false);
+                        TextPaint textPaint322 = Theme.chat_namePaint;
+                        int dp222 = this.nameWidth + dp + AndroidUtilities.dp(2.0f);
+                        Layout.Alignment alignment222 = Layout.Alignment.ALIGN_NORMAL;
+                        staticLayout3 = new StaticLayout(charSequence8, textPaint322, dp222, alignment222, 1.0f, 0.0f, false);
                         this.nameLayout = staticLayout3;
-                        if (staticLayout3.getLineCount() > 0) {
+                        if (staticLayout3.getLineCount() <= 0) {
                         }
                         if (this.drawNameAvatar) {
                         }
@@ -39175,8 +39410,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         }
                         if (this.currentNameBotVerificationId != 0) {
                         }
-                        this.nameWidth -= dp3;
-                        if (spannableStringBuilder4 != null) {
+                        this.nameWidth -= dp;
+                        if (spannableStringBuilder4 == null) {
                         }
                         if (this.currentNameStatusDrawable == null) {
                             AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable32 = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable((View) this, true, AndroidUtilities.dp(20.0f));
@@ -39194,7 +39429,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             }
                         }
                         swapAnimatedEmojiDrawable2 = this.currentNameEmojiStatusDrawable;
-                        if (swapAnimatedEmojiDrawable2 != null) {
+                        if (swapAnimatedEmojiDrawable2 == null) {
                         }
                         if (this.currentNameString.length() == 0) {
                         }
@@ -39202,68 +39437,70 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         r3 = str16;
                     }
                 }
+                z12 = false;
+                isOwner = false;
+                isAdmin = false;
                 spannableStringBuilder4 = null;
+                i19 = this.currentMessageObject.messageOwner.from_boosts_applied;
+                if (i19 <= 0) {
+                }
+                if (spannableStringBuilder4 == null) {
+                }
+                this.currentNameStatus = null;
+                this.nameStatusSlug = null;
+                boolean z18222 = z12;
+                boolean z19222 = isOwner;
+                this.currentNameBotVerificationId = 0L;
+                str15 = messageObject.customName;
+                if (str15 == null) {
+                }
+                dp = AndroidUtilities.dp(!this.currentMessageObject.isSponsored() ? -24.0f : 0.0f);
+                CharSequence removeDiacritics2222 = AndroidUtilities.removeDiacritics(this.currentNameString.replace('\n', ' ').replace((char) 8207, ' '));
+                removeDiacritics2222 = Emoji.replaceEmoji(removeDiacritics2222, Theme.chat_namePaint.getFontMetricsInt(), false);
+                if (this.currentNameStatus != null) {
+                }
+                if (this.currentNameBotVerificationId != 0) {
+                }
+                if (spannableStringBuilder4 != null) {
+                }
+                TextPaint textPaint2222 = Theme.chat_namePaint;
+                str7 = "";
+                float f222 = (this.nameWidth + dp) - (!z16 ? this.viaWidth : 0);
+                TextUtils.TruncateAt truncateAt222 = TextUtils.TruncateAt.END;
+                CharSequence ellipsize2222 = TextUtils.ellipsize(removeDiacritics2222, textPaint2222, f222, truncateAt222);
+                if (z17) {
+                }
+                TextPaint textPaint3222 = Theme.chat_namePaint;
+                int dp2222 = this.nameWidth + dp + AndroidUtilities.dp(2.0f);
+                Layout.Alignment alignment2222 = Layout.Alignment.ALIGN_NORMAL;
+                staticLayout3 = new StaticLayout(charSequence8, textPaint3222, dp2222, alignment2222, 1.0f, 0.0f, false);
+                this.nameLayout = staticLayout3;
+                if (staticLayout3.getLineCount() <= 0) {
+                }
+                if (this.drawNameAvatar) {
+                }
+                if (this.currentNameStatus != null) {
+                }
+                if (this.currentNameBotVerificationId != 0) {
+                }
+                this.nameWidth -= dp;
+                if (spannableStringBuilder4 == null) {
+                }
+                if (this.currentNameStatusDrawable == null) {
+                }
+                swapAnimatedEmojiDrawable = this.currentNameStatusDrawable;
+                if (swapAnimatedEmojiDrawable != null) {
+                }
+                if (this.currentNameEmojiStatusDrawable == null) {
+                }
+                swapAnimatedEmojiDrawable2 = this.currentNameEmojiStatusDrawable;
+                if (swapAnimatedEmojiDrawable2 == null) {
+                }
+                if (this.currentNameString.length() == 0) {
+                }
+                r1 = 0;
+                r3 = str16;
             }
-            isOwner = false;
-            isAdmin = false;
-            i19 = this.currentMessageObject.messageOwner.from_boosts_applied;
-            if (i19 <= 0) {
-            }
-            if (spannableStringBuilder4 != null) {
-            }
-            this.currentNameStatus = null;
-            this.nameStatusSlug = null;
-            this.currentNameBotVerificationId = 0L;
-            str15 = messageObject.customName;
-            if (str15 != null) {
-            }
-            int dp32 = AndroidUtilities.dp(this.currentMessageObject.isSponsored() ? -24.0f : 0.0f);
-            str6 = "";
-            CharSequence removeDiacritics222 = AndroidUtilities.removeDiacritics(this.currentNameString.replace('\n', ' ').replace((char) 8207, ' '));
-            removeDiacritics222 = Emoji.replaceEmoji(removeDiacritics222, Theme.chat_namePaint.getFontMetricsInt(), false);
-            if (this.currentNameStatus != null) {
-            }
-            if (this.currentNameBotVerificationId != 0) {
-            }
-            if (spannableStringBuilder4 != null) {
-            }
-            TextPaint textPaint222 = Theme.chat_namePaint;
-            str7 = "Loading";
-            float f22 = (this.nameWidth + dp32) - (z14 ? this.viaWidth : 0);
-            TextUtils.TruncateAt truncateAt22 = TextUtils.TruncateAt.END;
-            CharSequence ellipsize222 = TextUtils.ellipsize(removeDiacritics222, textPaint222, f22, truncateAt22);
-            if (z15) {
-            }
-            TextPaint textPaint322 = Theme.chat_namePaint;
-            int dp222 = this.nameWidth + dp32 + AndroidUtilities.dp(2.0f);
-            Layout.Alignment alignment222 = Layout.Alignment.ALIGN_NORMAL;
-            staticLayout3 = new StaticLayout(charSequence8, textPaint322, dp222, alignment222, 1.0f, 0.0f, false);
-            this.nameLayout = staticLayout3;
-            if (staticLayout3.getLineCount() > 0) {
-            }
-            if (this.drawNameAvatar) {
-            }
-            if (this.currentNameStatus != null) {
-            }
-            if (this.currentNameBotVerificationId != 0) {
-            }
-            this.nameWidth -= dp32;
-            if (spannableStringBuilder4 != null) {
-            }
-            if (this.currentNameStatusDrawable == null) {
-            }
-            swapAnimatedEmojiDrawable = this.currentNameStatusDrawable;
-            if (swapAnimatedEmojiDrawable != null) {
-            }
-            if (this.currentNameEmojiStatusDrawable == null) {
-            }
-            swapAnimatedEmojiDrawable2 = this.currentNameEmojiStatusDrawable;
-            if (swapAnimatedEmojiDrawable2 != null) {
-            }
-            if (this.currentNameString.length() == 0) {
-            }
-            r1 = 0;
-            r3 = str16;
         }
         this.currentForwardUser = r3;
         this.currentForwardNameString = r3;
@@ -39319,28 +39556,28 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         z3 = false;
                     }
                     StringBuilder sb = new StringBuilder();
-                    sb.append(z3 ? str : str6);
+                    sb.append(z3 ? str : str7);
                     sb.append(removeDiacritics3);
-                    SpannableStringBuilder spannableStringBuilder10 = new SpannableStringBuilder(sb.toString());
-                    spannableStringBuilder10.setSpan(new TypefaceSpan(AndroidUtilities.bold()), 0, spannableStringBuilder10.length(), 33);
+                    SpannableStringBuilder spannableStringBuilder11 = new SpannableStringBuilder(sb.toString());
+                    spannableStringBuilder11.setSpan(new TypefaceSpan(AndroidUtilities.bold()), 0, spannableStringBuilder11.length(), 33);
                     if (z3) {
-                        spannableStringBuilder10.setSpan(this.forwardAvatar, 0, 1, 33);
+                        spannableStringBuilder11.setSpan(this.forwardAvatar, 0, 1, 33);
                     }
                     this.forwardedNameWidth = getMaxNameWidth();
-                    str9 = str4;
+                    str9 = str5;
                     z2 = false;
-                    charSequence2 = spannableStringBuilder10;
+                    charSequence2 = spannableStringBuilder11;
                 } else {
                     TLRPC.Chat chat4 = this.currentForwardChannel;
                     if (chat4 != null) {
                         TLRPC.User user6 = this.currentForwardUser;
                         if (user6 != null) {
                             Object[] objArr = {chat4.title, UserObject.getUserName(user6)};
-                            str9 = str4;
+                            str9 = str5;
                             this.currentForwardNameString = String.format(str9, objArr);
                             this.forwardAvatar.setUser(this.currentForwardUser);
                         } else {
-                            str9 = str4;
+                            str9 = str5;
                             if (!TextUtils.isEmpty(messageObject.messageOwner.fwd_from.post_author)) {
                                 this.currentForwardNameString = String.format(str9, this.currentForwardChannel.title, messageObject.messageOwner.fwd_from.post_author);
                                 this.forwardAvatar.setChat(this.currentForwardChannel);
@@ -39351,7 +39588,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             }
                         }
                     } else {
-                        str9 = str4;
+                        str9 = str5;
                         TLRPC.User user7 = this.currentForwardUser;
                         if (user7 != null) {
                             this.currentForwardNameString = UserObject.getUserName(user7);
@@ -39365,17 +39602,15 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 this.forwardedNameWidth -= AndroidUtilities.dp(36.0f);
                             }
                             StringBuilder sb2 = new StringBuilder();
-                            sb2.append(!z ? str : str6);
+                            sb2.append(!z ? str : str7);
                             sb2.append(this.currentForwardNameString.replace('\n', ' '));
                             String removeDiacritics4 = AndroidUtilities.removeDiacritics(TextUtils.ellipsize(sb2.toString(), Theme.chat_replyNamePaint, (this.forwardedNameWidth - this.viaWidth) - AndroidUtilities.dp(!z ? 17.33f : 0.0f), TextUtils.TruncateAt.END).toString());
                             if (spannableStringBuilder == null) {
-                                spannableStringBuilder2 = new SpannableStringBuilder(String.format("%s %s %s", removeDiacritics4, LocaleController.getString(str5, org.telegram.messenger.R.string.ViaBot), str8));
+                                spannableStringBuilder2 = new SpannableStringBuilder(String.format("%s %s %s", removeDiacritics4, LocaleController.getString(str6, org.telegram.messenger.R.string.ViaBot), str4));
                                 this.viaNameWidth = (int) Math.ceil(Theme.chat_forwardNamePaint.measureText(removeDiacritics4));
-                                TypefaceSpan typefaceSpan5 = new TypefaceSpan(AndroidUtilities.bold());
-                                int length2 = spannableStringBuilder2.length() - str8.length();
                                 i = 1;
                                 i2 = 33;
-                                spannableStringBuilder2.setSpan(typefaceSpan5, length2 - 1, spannableStringBuilder2.length(), 33);
+                                spannableStringBuilder2.setSpan(new TypefaceSpan(AndroidUtilities.bold()), (spannableStringBuilder2.length() - str4.length()) - 1, spannableStringBuilder2.length(), 33);
                             } else {
                                 i = 1;
                                 i2 = 33;
@@ -39404,7 +39639,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     if (this.hasPsaHint) {
                     }
                     StringBuilder sb22 = new StringBuilder();
-                    sb22.append(!z ? str : str6);
+                    sb22.append(!z ? str : str7);
                     sb22.append(this.currentForwardNameString.replace('\n', ' '));
                     String removeDiacritics42 = AndroidUtilities.removeDiacritics(TextUtils.ellipsize(sb22.toString(), Theme.chat_replyNamePaint, (this.forwardedNameWidth - this.viaWidth) - AndroidUtilities.dp(!z ? 17.33f : 0.0f), TextUtils.TruncateAt.END).toString());
                     if (spannableStringBuilder == null) {
@@ -39422,7 +39657,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 }
                 try {
                     charSequence2 = Emoji.replaceEmoji(charSequence2, Theme.chat_forwardNamePaint.getFontMetricsInt(), z2);
-                } catch (Exception unused) {
+                } catch (Exception unused2) {
                 }
                 TextPaint textPaint4 = Theme.chat_forwardNamePaint;
                 float f3 = this.forwardedNameWidth;
@@ -39431,9 +39666,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 try {
                     StaticLayout[] staticLayoutArr = this.forwardedNameLayout;
                     TextPaint textPaint5 = Theme.chat_forwardNamePaint;
-                    int dp4 = this.forwardedNameWidth + AndroidUtilities.dp(2.0f);
+                    int dp3 = this.forwardedNameWidth + AndroidUtilities.dp(2.0f);
                     Layout.Alignment alignment3 = Layout.Alignment.ALIGN_NORMAL;
-                    staticLayoutArr[1] = new StaticLayout(ellipsize3, textPaint5, dp4, alignment3, 1.0f, 0.0f, false);
+                    staticLayoutArr[1] = new StaticLayout(ellipsize3, textPaint5, dp3, alignment3, 1.0f, 0.0f, false);
                     this.forwardedNameLayout[0] = new StaticLayout(TextUtils.ellipsize(AndroidUtilities.replaceTags(str10), Theme.chat_forwardNamePaint, this.forwardedNameWidth, truncateAt3), Theme.chat_forwardNamePaint, this.forwardedNameWidth + AndroidUtilities.dp(2.0f), alignment3, 1.0f, 0.0f, false);
                     if (this.forwardBg == null) {
                         this.forwardBg = new ForwardBackground(this);
@@ -39447,26 +39682,26 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     this.forwardNameOffsetX[0] = this.forwardedNameLayout[0].getLineLeft(0);
                     this.forwardNameOffsetX[1] = this.forwardedNameLayout[1].getLineLeft(0);
                     if ((this.isSideMenued && !this.drawBackground) || ((messageObject.type != 5 && !messageObject.isAnyKindOfSticker()) || messageObject.type == 19)) {
-                        int dp5 = (int) (this.namesOffset + AndroidUtilities.dp(8.0f) + (Theme.chat_forwardNamePaint.getTextSize() * 2.0f));
-                        this.namesOffset = dp5;
+                        int dp4 = (int) (this.namesOffset + AndroidUtilities.dp(8.0f) + (Theme.chat_forwardNamePaint.getTextSize() * 2.0f));
+                        this.namesOffset = dp4;
                         if (messageObject.type == 19) {
-                            this.namesOffset = dp5 + AndroidUtilities.dp(8.0f);
+                            this.namesOffset = dp4 + AndroidUtilities.dp(8.0f);
                         }
                     }
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e2) {
+                    FileLog.e(e2);
                 }
                 if (((messageObject.isGiveawayResults() && ((!this.isThreadChat || messageObject.isQuickReply() || this.isSavedChat || messageObject.getReplyTopMsgId(this.isForum) != 0 || this.isForumGeneral || this.isMonoForum) && messageObject.hasValidReplyMessageObject())) || ((messageObject.messageOwner.fwd_from != null && messageObject.isDice()) || ((messageReplyHeader = messageObject.messageOwner.reply_to) != null && (messageReplyHeader.story_id != 0 || !TextUtils.isEmpty(messageReplyHeader.quote_text) || messageObject.messageOwner.reply_to.reply_from != null)))) && !messageObject.isRepostPreview) {
                     MessageObject.GroupedMessagePosition groupedMessagePosition4 = this.currentPosition;
                     if (groupedMessagePosition4 == null || groupedMessagePosition4.minY == 0) {
                         if ((this.isSideMenued && !this.drawBackground) || ((!messageObject.isAnyKindOfSticker() && messageObject.type != 5) || messageObject.type == 19)) {
-                            int dp6 = (int) (this.namesOffset + AndroidUtilities.dp(20.0f) + Theme.chat_replyTextPaint.getTextSize() + Theme.chat_replyNamePaint.getTextSize());
-                            this.namesOffset = dp6;
+                            int dp5 = (int) (this.namesOffset + AndroidUtilities.dp(20.0f) + Theme.chat_replyTextPaint.getTextSize() + Theme.chat_replyNamePaint.getTextSize());
+                            this.namesOffset = dp5;
                             int i25 = messageObject.type;
                             if (i25 == 19 && !this.drawForwardedName) {
-                                this.namesOffset = dp6 + AndroidUtilities.dp(12.0f);
+                                this.namesOffset = dp5 + AndroidUtilities.dp(12.0f);
                             } else if (i25 != 0) {
-                                this.namesOffset = dp6 + AndroidUtilities.dp(5.0f);
+                                this.namesOffset = dp5 + AndroidUtilities.dp(5.0f);
                             }
                         }
                         if (this.drawForwardedName && this.forwardedNameLayout[0] != null) {
@@ -39482,12 +39717,12 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             maxNameWidth2 += AndroidUtilities.dp(13.0f);
                         }
                         TLRPC.MessageReplyHeader messageReplyHeader8 = messageObject.messageOwner.reply_to;
-                        boolean z16 = (messageReplyHeader8 == null || (messageReplyHeader8.flags & 64) == 0 || messageReplyHeader8.quote_text == null) ? false : true;
-                        this.hasReplyQuote = z16;
-                        boolean z17 = z16 && messageReplyHeader8.quote;
-                        this.isReplyQuote = z17;
-                        boolean z18 = z17 && messageReplyHeader8.quote;
-                        if (z17 && z18 && this.replyQuoteDrawable == null) {
+                        boolean z20 = (messageReplyHeader8 == null || (messageReplyHeader8.flags & 64) == 0 || messageReplyHeader8.quote_text == null) ? false : true;
+                        this.hasReplyQuote = z20;
+                        boolean z21 = z20 && messageReplyHeader8.quote;
+                        this.isReplyQuote = z21;
+                        boolean z22 = z21 && messageReplyHeader8.quote;
+                        if (z21 && z22 && this.replyQuoteDrawable == null) {
                             this.replyQuoteDrawable = getContext().getResources().getDrawable(org.telegram.messenger.R.drawable.mini_quote).mutate();
                             this.replyQuoteDrawableColor = -1;
                         }
@@ -39495,24 +39730,25 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         TLRPC.MessageReplyHeader messageReplyHeader9 = messageObject.messageOwner.reply_to;
                         try {
                             if (messageReplyHeader9 != null && messageReplyHeader9.story_id != 0) {
-                                removeDiacritics = AndroidUtilities.removeDiacritics(getNameFromDialogId(DialogObject.getPeerDialogId(messageReplyHeader9.peer)));
+                                String removeDiacritics5 = AndroidUtilities.removeDiacritics(getNameFromDialogId(DialogObject.getPeerDialogId(messageReplyHeader9.peer)));
                                 TL_stories.StoryItem storyItem = messageObject.messageOwner.replyStory;
                                 if (storyItem == null || (storyItem instanceof TL_stories.TL_storyItemDeleted)) {
                                     if (storyItem == null) {
-                                        createExpiredStoryString = LocaleController.getString(str7, org.telegram.messenger.R.string.Loading);
+                                        createExpiredStoryString = LocaleController.getString(str8, org.telegram.messenger.R.string.Loading);
                                     } else {
                                         createExpiredStoryString = StoriesUtilities.createExpiredStoryString();
                                     }
-                                    z10 = false;
+                                    z11 = false;
                                     this.needReplyImage = false;
+                                    removeDiacritics = removeDiacritics5;
                                     charSequence3 = " ";
                                     replaceEmoji = createExpiredStoryString;
                                     textPaint = textPaint6;
-                                    str13 = str6;
+                                    str13 = str7;
                                     i18 = 1;
                                     i10 = i18;
-                                    z8 = z10;
-                                    removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z8);
+                                    z9 = z11;
+                                    removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z9);
                                     if (this.isReplyQuote) {
                                     }
                                     int i26 = maxNameWidth2;
@@ -39535,7 +39771,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     if (replaceEmoji != null) {
                                     }
                                     i13 = this.replyNameWidth;
-                                    z4 = z8;
+                                    z4 = z9;
                                     r10 = i12;
                                     if (i13 > this.replyTextWidth) {
                                     }
@@ -39544,11 +39780,12 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     StoriesUtilities.setStoryMiniImage(this.replyImageReceiver, storyItem);
                                     CharSequence createReplyStoryString = StoriesUtilities.createReplyStoryString();
                                     maxNameWidth2 = (int) (maxNameWidth2 - (AndroidUtilities.dp(16.0f) + (textPaint6.getTextSize() + Theme.chat_replyNamePaint.getTextSize())));
+                                    removeDiacritics = removeDiacritics5;
                                     charSequence3 = " ";
                                     replaceEmoji = createReplyStoryString;
                                 }
                             } else {
-                                String str18 = str7;
+                                String str18 = str8;
                                 if (((!this.isThreadChat || this.isMonoForum || messageObject.isQuickReply() || this.isSavedChat || messageObject.getReplyTopMsgId(this.isForum) != 0 || this.isForumGeneral) && messageObject.hasValidReplyMessageObject()) || this.hasReplyQuote || ((messageReplyHeader7 = messageObject.messageOwner.reply_to) != null && messageReplyHeader7.reply_from != null)) {
                                     MessageObject messageObject9 = messageObject.replyMessageObject;
                                     this.lastReplyMessage = messageObject9 == null ? null : messageObject9.messageOwner;
@@ -39569,18 +39806,18 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                 i7 = 1;
                                                 i4 = 0;
                                             }
-                                            photoSize2 = FileLoader.getClosestPhotoSizeWithSize(messageObject.replyMessageObject.photoThumbs, 40);
-                                            TLRPC.PhotoSize photoSize3 = closestPhotoSizeWithSize;
+                                            photoSize4 = FileLoader.getClosestPhotoSizeWithSize(messageObject.replyMessageObject.photoThumbs, 40);
+                                            TLRPC.PhotoSize photoSize5 = closestPhotoSizeWithSize;
                                             i6 = i7;
                                             tLObject = messageObject.replyMessageObject.photoThumbsObject;
-                                            photoSize = photoSize3;
+                                            photoSize3 = photoSize5;
                                         } else {
-                                            photoSize = closestPhotoSizeWithSize2;
-                                            photoSize2 = closestPhotoSizeWithSize3;
+                                            photoSize3 = closestPhotoSizeWithSize2;
+                                            photoSize4 = closestPhotoSizeWithSize3;
                                             i6 = 1;
                                             i4 = 0;
                                         }
-                                        if (photoSize == null) {
+                                        if (photoSize3 == null) {
                                             TLRPC.MessageMedia media = MessageObject.getMedia(messageObject.replyMessageObject);
                                             if (media instanceof TLRPC.TL_messageMediaPoll) {
                                                 TLRPC.MessageMedia messageMedia3 = ((TLRPC.TL_messageMediaPoll) media).attached_media;
@@ -39591,14 +39828,14 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                 if (messageMedia3 != null) {
                                                     TLRPC.Document document = messageMedia3.document;
                                                     if (document != null) {
-                                                        boolean z19 = MessageObject.isStickerDocument(document) || MessageObject.isVideoSticker(messageMedia3.document);
+                                                        boolean z23 = MessageObject.isStickerDocument(document) || MessageObject.isVideoSticker(messageMedia3.document);
                                                         boolean isAnimatedStickerDocument = MessageObject.isAnimatedStickerDocument(messageMedia3.document, true);
-                                                        if (z19 || isAnimatedStickerDocument) {
+                                                        if (z23 || isAnimatedStickerDocument) {
                                                             svgDrawable2 = DocumentObject.getSvgThumb(messageMedia3.document, Theme.key_chat_serviceBackground, 1.0f);
                                                             imageLocation2 = ImageLocation.getForDocument(messageMedia3.document);
                                                         } else {
-                                                            photoSize2 = FileLoader.getClosestPhotoSizeWithSize(messageMedia3.document.thumbs, 40);
-                                                            photoSize = FileLoader.getClosestPhotoSizeWithSize(messageMedia3.document.thumbs, NotificationCenter.onDatabaseReset, false, null, true);
+                                                            photoSize4 = FileLoader.getClosestPhotoSizeWithSize(messageMedia3.document.thumbs, 40);
+                                                            photoSize3 = FileLoader.getClosestPhotoSizeWithSize(messageMedia3.document.thumbs, NotificationCenter.onDatabaseReset, false, null, true);
                                                             imageLocation2 = null;
                                                             svgDrawable2 = null;
                                                         }
@@ -39606,8 +39843,12 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         imageLocation = imageLocation2;
                                                         svgDrawable = svgDrawable2;
                                                         i5 = i6;
-                                                        if (photoSize2 == photoSize) {
-                                                            photoSize2 = null;
+                                                        if (photoSize4 == photoSize3) {
+                                                            photoSize2 = photoSize3;
+                                                            photoSize = null;
+                                                        } else {
+                                                            photoSize = photoSize4;
+                                                            photoSize2 = photoSize3;
                                                         }
                                                     } else {
                                                         TLRPC.Photo photo = messageMedia3.photo;
@@ -39615,14 +39856,14 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             TLRPC.PhotoSize closestPhotoSizeWithSize5 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 40);
                                                             TLRPC.PhotoSize closestPhotoSizeWithSize6 = FileLoader.getClosestPhotoSizeWithSize(messageMedia3.photo.sizes, NotificationCenter.onDatabaseReset, false, null, true);
                                                             tLObject = messageObject.replyMessageObject.messageOwner;
-                                                            photoSize = closestPhotoSizeWithSize6;
-                                                            photoSize2 = closestPhotoSizeWithSize5;
+                                                            photoSize3 = closestPhotoSizeWithSize6;
+                                                            photoSize4 = closestPhotoSizeWithSize5;
                                                             imageLocation2 = null;
                                                             svgDrawable2 = null;
                                                             imageLocation = imageLocation2;
                                                             svgDrawable = svgDrawable2;
                                                             i5 = i6;
-                                                            if (photoSize2 == photoSize) {
+                                                            if (photoSize4 == photoSize3) {
                                                             }
                                                         }
                                                     }
@@ -39634,13 +39875,13 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         imageLocation = imageLocation2;
                                         svgDrawable = svgDrawable2;
                                         i5 = i6;
-                                        if (photoSize2 == photoSize) {
+                                        if (photoSize4 == photoSize3) {
                                         }
                                     } else {
+                                        photoSize = null;
                                         tLObject = null;
                                         z5 = false;
                                         i4 = 0;
-                                        photoSize = null;
                                         photoSize2 = null;
                                         imageLocation = null;
                                         svgDrawable = null;
@@ -39651,15 +39892,16 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         charSequence3 = " ";
                                         str12 = str18;
                                         textPaint = textPaint6;
-                                        str13 = str6;
+                                        str13 = str7;
                                         z6 = true;
                                         r2 = 1;
                                         c = ' ';
+                                        z7 = false;
+                                        r9 = 0;
                                         j = 0;
-                                        if ((photoSize == null && imageLocation == null) || (messageObject4 = messageObject.replyMessageObject) == null || messageObject4.isAnyKindOfSticker() || ((messageObject.isAnyKindOfSticker() && !AndroidUtilities.isTablet()) || messageObject.replyMessageObject.isSecretMedia() || messageObject.replyMessageObject.isWebpageDocument())) {
+                                        if ((photoSize2 == null && imageLocation == null) || (messageObject4 = messageObject.replyMessageObject) == null || messageObject4.isAnyKindOfSticker() || ((messageObject.isAnyKindOfSticker() && !AndroidUtilities.isTablet()) || messageObject.replyMessageObject.isSecretMedia() || messageObject.replyMessageObject.isWebpageDocument())) {
                                             charSequence4 = null;
                                             this.replyImageReceiver.setImageBitmap((Drawable) null);
-                                            r9 = 0;
                                             this.needReplyImage = false;
                                             if (!DialogObject.isEncryptedDialog(messageObject.getDialogId())) {
                                             }
@@ -39669,17 +39911,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                             } else {
                                                 this.replyImageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
                                             }
-                                            this.currentReplyPhoto = photoSize;
+                                            this.currentReplyPhoto = photoSize2;
                                             if (imageLocation != null) {
                                                 this.replyImageReceiver.setImage(imageLocation, "50_50", svgDrawable, 0L, (String) null, messageObject.replyMessageObject, i5);
                                             } else {
-                                                this.replyImageReceiver.setImage(ImageLocation.getForObject(photoSize, tLObject), z5 ? "5_5_b" : "50_50", ImageLocation.getForObject(photoSize2, tLObject), z5 ? "50_50_b4" : "50_50_b", i4, null, messageObject.replyMessageObject, i5);
+                                                this.replyImageReceiver.setImage(ImageLocation.getForObject(photoSize2, tLObject), z5 ? "5_5_b" : "50_50", ImageLocation.getForObject(photoSize, tLObject), z5 ? "50_50_b4" : "50_50_b", i4, null, messageObject.replyMessageObject, i5);
                                             }
                                             this.needReplyImage = true;
                                             maxNameWidth2 = (int) (maxNameWidth2 - ((AndroidUtilities.dp(this.isReplyQuote ? 3.0f : 7.0f) + Theme.chat_replyNamePaint.getTextSize()) + Theme.chat_replyTextPaint.getTextSize()));
-                                            r9 = 0;
                                             charSequence4 = null;
                                             r2 = z6;
+                                            r9 = z7;
                                             if (!DialogObject.isEncryptedDialog(messageObject.getDialogId())) {
                                                 MessageObject messageObject11 = messageObject.replyMessageObject;
                                                 if (messageObject11 != null && messageObject11.isOutOwner()) {
@@ -39715,8 +39957,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         charSequence6 = formatTextWithEntities;
                                                         replaceEmoji = charSequence6;
                                                         i10 = r2;
-                                                        z8 = r9;
-                                                        removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z8);
+                                                        z9 = r9;
+                                                        removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z9);
                                                         if (this.isReplyQuote) {
                                                         }
                                                         int i262 = maxNameWidth2;
@@ -39739,7 +39981,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         if (replaceEmoji != null) {
                                                         }
                                                         i13 = this.replyNameWidth;
-                                                        z4 = z8;
+                                                        z4 = z9;
                                                         r10 = i12;
                                                         if (i13 > this.replyTextWidth) {
                                                         }
@@ -39748,8 +39990,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         if (todoList != null && (tL_textWithEntities2 = todoList.title) != null) {
                                                             replaceEmoji = MessageObject.formatTextWithEntities(tL_textWithEntities2, messageObject.isOutOwner(), textPaint);
                                                             i10 = r2;
-                                                            z8 = r9;
-                                                            removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z8);
+                                                            z9 = r9;
+                                                            removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z9);
                                                             if (this.isReplyQuote) {
                                                             }
                                                             int i2622 = maxNameWidth2;
@@ -39772,15 +40014,15 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             if (replaceEmoji != null) {
                                                             }
                                                             i13 = this.replyNameWidth;
-                                                            z4 = z8;
+                                                            z4 = z9;
                                                             r10 = i12;
                                                             if (i13 > this.replyTextWidth) {
                                                             }
                                                         }
                                                         replaceEmoji = charSequence4;
                                                         i10 = r2;
-                                                        z8 = r9;
-                                                        removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z8);
+                                                        z9 = r9;
+                                                        removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z9);
                                                         if (this.isReplyQuote) {
                                                         }
                                                         int i26222 = maxNameWidth2;
@@ -39803,7 +40045,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         if (replaceEmoji != null) {
                                                         }
                                                         i13 = this.replyNameWidth;
-                                                        z4 = z8;
+                                                        z4 = z9;
                                                         r10 = i12;
                                                         if (i13 > this.replyTextWidth) {
                                                         }
@@ -39828,19 +40070,19 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             this.replyTaskCheckbox.setCuttingCheck(Theme.isCurrentThemeDark());
                                                             this.replyTaskCheckbox.setChecked(r2, r2);
                                                             i10 = r2;
-                                                            z8 = r9;
+                                                            z9 = r9;
                                                         } else {
                                                             TLRPC.Poll poll = ((TLRPC.TL_messageMediaPoll) MessageObject.getMedia(messageObject.replyMessageObject)).poll;
                                                             if (poll != null && (tL_textWithEntities = poll.question) != null) {
                                                                 replaceEmoji = MessageObject.formatTextWithEntities(tL_textWithEntities, messageObject.isOutOwner(), textPaint);
                                                                 i10 = r2;
-                                                                z8 = r9;
+                                                                z9 = r9;
                                                             }
                                                             replaceEmoji = charSequence4;
                                                             i10 = r2;
-                                                            z8 = r9;
+                                                            z9 = r9;
                                                         }
-                                                        removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z8);
+                                                        removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z9);
                                                         if (this.isReplyQuote) {
                                                         }
                                                         int i262222 = maxNameWidth2;
@@ -39863,7 +40105,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         if (replaceEmoji != null) {
                                                         }
                                                         i13 = this.replyNameWidth;
-                                                        z4 = z8;
+                                                        z4 = z9;
                                                         r10 = i12;
                                                         if (i13 > this.replyTextWidth) {
                                                         }
@@ -39871,17 +40113,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         if (this.hasReplyQuote && ((messageReplyHeader5 = messageObject.messageOwner.reply_to) == null || messageReplyHeader5.quote_text == null || messageReplyHeader5.reply_from == null)) {
                                                             if (messageReplyHeader5 != null && (messageObject5 = messageObject.replyMessageObject) != null && (MessageObject.getMedia(messageObject5) instanceof TLRPC.TL_messageMediaPoll)) {
                                                                 TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) MessageObject.getMedia(messageObject.replyMessageObject);
-                                                                ?? spannableStringBuilder11 = new SpannableStringBuilder();
-                                                                spannableStringBuilder11.append(charSequence);
-                                                                spannableStringBuilder11.setSpan(new ColoredImageSpan(org.telegram.messenger.R.drawable.mini_reply_poll_16), r9, r2, 33);
-                                                                spannableStringBuilder11.append(LocaleController.getString(tL_messageMediaPoll.poll.quiz ? org.telegram.messenger.R.string.QuizPoll : org.telegram.messenger.R.string.Poll));
-                                                                charSequence6 = spannableStringBuilder11;
+                                                                ?? spannableStringBuilder12 = new SpannableStringBuilder();
+                                                                spannableStringBuilder12.append(charSequence);
+                                                                spannableStringBuilder12.setSpan(new ColoredImageSpan(org.telegram.messenger.R.drawable.mini_reply_poll_16), r9, r2, 33);
+                                                                spannableStringBuilder12.append(LocaleController.getString(tL_messageMediaPoll.poll.quiz ? org.telegram.messenger.R.string.QuizPoll : org.telegram.messenger.R.string.Poll));
+                                                                charSequence6 = spannableStringBuilder12;
                                                             } else {
                                                                 TLRPC.MessageReplyHeader messageReplyHeader10 = messageObject.messageOwner.reply_to;
                                                                 if (messageReplyHeader10 != null && messageReplyHeader10.reply_from != null && (messageMedia = messageReplyHeader10.reply_media) != null) {
                                                                     replaceEmoji = messageObject.getMediaTitle(messageMedia);
                                                                     i10 = r2;
-                                                                    z8 = r9;
+                                                                    z9 = r9;
                                                                 } else {
                                                                     MessageObject messageObject12 = messageObject.replyMessageObject;
                                                                     if (messageObject12 != null) {
@@ -39891,18 +40133,18 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                     if (MessageObject.getMedia(messageObject12) instanceof TLRPC.TL_messageMediaGame) {
                                                                         replaceEmoji = TextUtils.ellipsize(Emoji.replaceEmoji(MessageObject.getMedia(messageObject.replyMessageObject).game.title, textPaint.getFontMetricsInt(), r9), textPaint, maxNameWidth2, TextUtils.TruncateAt.END);
                                                                         i10 = r2;
-                                                                        z8 = r9;
+                                                                        z9 = r9;
                                                                     } else if (MessageObject.getMedia(messageObject.replyMessageObject) instanceof TLRPC.TL_messageMediaInvoice) {
                                                                         replaceEmoji = TextUtils.ellipsize(Emoji.replaceEmoji(MessageObject.getMedia(messageObject.replyMessageObject).title, textPaint.getFontMetricsInt(), r9), textPaint, maxNameWidth2, TextUtils.TruncateAt.END);
                                                                         i10 = r2;
-                                                                        z8 = r9;
+                                                                        z9 = r9;
                                                                     } else {
                                                                         MessageObject messageObject13 = messageObject.replyMessageObject;
                                                                         if (messageObject13 != null && !TextUtils.isEmpty(messageObject13.caption)) {
                                                                             ?? charSequence10 = messageObject.replyMessageObject.caption.toString();
-                                                                            int length3 = charSequence10.length();
+                                                                            int length2 = charSequence10.length();
                                                                             String str19 = charSequence10;
-                                                                            if (length3 > 150) {
+                                                                            if (length2 > 150) {
                                                                                 str19 = charSequence10.substring(r9, 150);
                                                                             }
                                                                             CharSequence replaceEmoji2 = Emoji.replaceEmoji(str19.replace('\n', c), textPaint.getFontMetricsInt(), r2);
@@ -39914,31 +40156,31 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                             TextUtils.TruncateAt truncateAt4 = TextUtils.TruncateAt.END;
                                                                             replaceEmoji = TextUtils.ellipsize(replaceEmoji2, textPaint, f4, truncateAt4);
                                                                             i10 = r2;
-                                                                            z8 = r9;
+                                                                            z9 = r9;
                                                                             if (replaceEmoji instanceof Spannable) {
                                                                                 MessageObject messageObject14 = messageObject.replyMessageObject;
                                                                                 TLRPC.Message message6 = messageObject14.messageOwner;
                                                                                 i10 = r2;
-                                                                                z8 = r9;
+                                                                                z9 = r9;
                                                                                 if (message6 != null) {
                                                                                     MediaDataController.addTextStyleRuns(message6.entities, messageObject14.caption, (Spannable) replaceEmoji);
                                                                                     replaceEmoji = TextUtils.ellipsize(replaceEmoji, textPaint, f4, truncateAt4);
                                                                                     i10 = r2;
-                                                                                    z8 = r9;
+                                                                                    z9 = r9;
                                                                                 }
                                                                             }
                                                                         } else {
                                                                             MessageObject messageObject15 = messageObject.replyMessageObject;
                                                                             if (messageObject15 != null && (charSequence5 = messageObject15.messageText) != null && charSequence5.length() > 0) {
-                                                                                ?? r12 = messageObject.replyMessageObject.messageText;
-                                                                                int length4 = r12.length();
-                                                                                CharSequence charSequence11 = r12;
-                                                                                if (length4 > 150) {
-                                                                                    charSequence11 = r12.subSequence(r9, 150);
+                                                                                ?? r32 = messageObject.replyMessageObject.messageText;
+                                                                                int length3 = r32.length();
+                                                                                CharSequence charSequence11 = r32;
+                                                                                if (length3 > 150) {
+                                                                                    charSequence11 = r32.subSequence(r9, 150);
                                                                                 }
-                                                                                boolean z20 = charSequence11 instanceof SpannableStringBuilder;
+                                                                                boolean z24 = charSequence11 instanceof SpannableStringBuilder;
                                                                                 CharSequence charSequence12 = charSequence11;
-                                                                                if (!z20) {
+                                                                                if (!z24) {
                                                                                     charSequence12 = new SpannableStringBuilder(charSequence11);
                                                                                 }
                                                                                 CharSequence replaceEmoji3 = Emoji.replaceEmoji(AndroidUtilities.replaceNewLines(AndroidUtilities.removeSpans(AndroidUtilities.removeSpans(charSequence12, QuoteSpan.class), QuoteSpan.QuoteStyleSpan.class)), textPaint.getFontMetricsInt(), r2);
@@ -39950,37 +40192,37 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                                 TextUtils.TruncateAt truncateAt5 = TextUtils.TruncateAt.END;
                                                                                 replaceEmoji = TextUtils.ellipsize(replaceEmoji3, textPaint, f5, truncateAt5);
                                                                                 i10 = r2;
-                                                                                z8 = r9;
+                                                                                z9 = r9;
                                                                                 if (replaceEmoji instanceof Spannable) {
                                                                                     MediaDataController.addTextStyleRuns(messageObject.replyMessageObject, (Spannable) replaceEmoji);
                                                                                     replaceEmoji = TextUtils.ellipsize(replaceEmoji, textPaint, f5, truncateAt5);
                                                                                     i10 = r2;
-                                                                                    z8 = r9;
+                                                                                    z9 = r9;
                                                                                 }
                                                                             }
                                                                             replaceEmoji = charSequence4;
                                                                             i10 = r2;
-                                                                            z8 = r9;
+                                                                            z9 = r9;
                                                                         }
                                                                     }
                                                                 }
                                                             }
                                                             replaceEmoji = charSequence6;
                                                             i10 = r2;
-                                                            z8 = r9;
+                                                            z9 = r9;
                                                         } else {
                                                             replaceEmoji = Emoji.replaceEmoji(new SpannableStringBuilder(messageObject.messageOwner.reply_to.quote_text.replace('\n', c)), textPaint.getFontMetricsInt(), r9);
                                                             arrayList = messageObject.messageOwner.reply_to.quote_entities;
                                                             i10 = r2;
-                                                            z8 = r9;
+                                                            z9 = r9;
                                                             if (arrayList != null) {
                                                                 replaceEmoji = MessageObject.replaceAnimatedEmoji(replaceEmoji, arrayList, textPaint.getFontMetricsInt(), r2);
                                                                 MessageObject.addEntitiesToText(replaceEmoji, messageObject.messageOwner.reply_to.quote_entities, this.currentMessageObject.isOutOwner(), false, false, false);
                                                                 i10 = r2;
-                                                                z8 = r9;
+                                                                z9 = r9;
                                                             }
                                                         }
-                                                        removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z8);
+                                                        removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z9);
                                                         if (this.isReplyQuote) {
                                                             maxNameWidth2 -= AndroidUtilities.dp(24.0f);
                                                         }
@@ -39998,11 +40240,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             StaticLayout staticLayout6 = new StaticLayout(ellipsize, Theme.chat_replyNamePaint, i2622222 + AndroidUtilities.dp(6.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                                                             this.replyNameLayout = staticLayout6;
                                                             if (staticLayout6.getLineCount() > 0) {
-                                                                this.replyNameWidth += ((int) Math.ceil(this.replyNameLayout.getLineWidth(z8 ? 1 : 0))) + AndroidUtilities.dp(4.0f);
-                                                                this.replyNameOffset = (int) this.replyNameLayout.getLineLeft(z8 ? 1 : 0);
+                                                                this.replyNameWidth += ((int) Math.ceil(this.replyNameLayout.getLineWidth(z9 ? 1 : 0))) + AndroidUtilities.dp(4.0f);
+                                                                this.replyNameOffset = (int) this.replyNameLayout.getLineLeft(z9 ? 1 : 0);
                                                             }
                                                         }
-                                                        if (this.isReplyQuote || !z18 || this.replyQuoteDrawable == null) {
+                                                        if (this.isReplyQuote || !z22 || this.replyQuoteDrawable == null) {
                                                             this.replyNameWidth += AndroidUtilities.dp(3.0f);
                                                         } else {
                                                             this.replyNameWidth += AndroidUtilities.dp((!this.drawPinnedTop ? 2 : 0) + 6) + this.replyQuoteDrawable.getIntrinsicWidth();
@@ -40012,40 +40254,40 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                         }
                                                         this.replyTextWidth = AndroidUtilities.dp(4.0f) + (this.needReplyImage ? AndroidUtilities.dp(33.0f) : 0);
                                                         if (replaceEmoji != null) {
-                                                            SpannableStringBuilder spannableStringBuilder12 = new SpannableStringBuilder(replaceEmoji);
-                                                            TextStyleSpan[] textStyleSpanArr = (TextStyleSpan[]) spannableStringBuilder12.getSpans(z8 ? 1 : 0, spannableStringBuilder12.length(), TextStyleSpan.class);
-                                                            int length5 = textStyleSpanArr.length;
-                                                            boolean z21 = false;
-                                                            for (int i27 = 0; i27 < length5; i27 += i10) {
+                                                            SpannableStringBuilder spannableStringBuilder13 = new SpannableStringBuilder(replaceEmoji);
+                                                            TextStyleSpan[] textStyleSpanArr = (TextStyleSpan[]) spannableStringBuilder13.getSpans(z9 ? 1 : 0, spannableStringBuilder13.length(), TextStyleSpan.class);
+                                                            int length4 = textStyleSpanArr.length;
+                                                            boolean z25 = false;
+                                                            for (int i27 = 0; i27 < length4; i27 += i10) {
                                                                 TextStyleSpan textStyleSpan = textStyleSpanArr[i27];
                                                                 if ((textStyleSpan.getTextStyleRun().flags & 4) != 0) {
-                                                                    spannableStringBuilder12.removeSpan(textStyleSpan);
-                                                                    z21 = true;
+                                                                    spannableStringBuilder13.removeSpan(textStyleSpan);
+                                                                    z25 = true;
                                                                 }
                                                             }
-                                                            this.replyTextRTL = AndroidUtilities.isRTL(spannableStringBuilder12);
+                                                            this.replyTextRTL = AndroidUtilities.isRTL(spannableStringBuilder13);
                                                             if (this.isReplyQuote && !this.currentMessageObject.shouldDrawWithoutBackground()) {
                                                                 i2622222 += AndroidUtilities.dp(36.0f);
                                                             }
-                                                            boolean z22 = this.isReplyQuote;
-                                                            if (z22 && this.needReplyImage && !this.replyTextRTL) {
-                                                                float dp7 = AndroidUtilities.dp(z22 ? 3.0f : 7.0f) + Theme.chat_replyNamePaint.getTextSize() + Theme.chat_replyTextPaint.getTextSize();
-                                                                spannableStringBuilder12.setSpan(new LeadingMarginSpan.Standard(((int) dp7) + AndroidUtilities.dp(4.0f), z8 ? 1 : 0), z8 ? 1 : 0, spannableStringBuilder12.length(), 33);
-                                                                this.replyTextWidth = (int) (this.replyTextWidth - dp7);
-                                                                i14 = (int) (i2622222 + dp7);
+                                                            boolean z26 = this.isReplyQuote;
+                                                            if (z26 && this.needReplyImage && !this.replyTextRTL) {
+                                                                float dp6 = AndroidUtilities.dp(z26 ? 3.0f : 7.0f) + Theme.chat_replyNamePaint.getTextSize() + Theme.chat_replyTextPaint.getTextSize();
+                                                                spannableStringBuilder13.setSpan(new LeadingMarginSpan.Standard(((int) dp6) + AndroidUtilities.dp(4.0f), z9 ? 1 : 0), z9 ? 1 : 0, spannableStringBuilder13.length(), 33);
+                                                                this.replyTextWidth = (int) (this.replyTextWidth - dp6);
+                                                                i14 = (int) (i2622222 + dp6);
                                                             } else {
                                                                 i14 = i2622222;
                                                             }
-                                                            if (!z21) {
-                                                                charSequence7 = spannableStringBuilder12;
+                                                            if (!z25) {
+                                                                charSequence7 = spannableStringBuilder13;
                                                             }
-                                                            charSequence7 = TextUtils.ellipsize(spannableStringBuilder12, textPaint, i14, TextUtils.TruncateAt.END);
-                                                            this.replyTextOffset = z8 ? 1 : 0;
+                                                            charSequence7 = TextUtils.ellipsize(spannableStringBuilder13, textPaint, i14, TextUtils.TruncateAt.END);
+                                                            this.replyTextOffset = z9 ? 1 : 0;
                                                             if (Build.VERSION.SDK_INT >= 23) {
-                                                                obtain = StaticLayout.Builder.obtain(charSequence7, z8 ? 1 : 0, charSequence7.length(), textPaint, i14);
+                                                                obtain = StaticLayout.Builder.obtain(charSequence7, z9 ? 1 : 0, charSequence7.length(), textPaint, i14);
                                                                 alignment = obtain.setAlignment(Layout.Alignment.ALIGN_NORMAL);
-                                                                includePad = alignment.setIncludePad(z8);
-                                                                includePad.setBreakStrategy(z8 ? 1 : 0);
+                                                                includePad = alignment.setIncludePad(z9);
+                                                                includePad.setBreakStrategy(z9 ? 1 : 0);
                                                                 if (!this.isReplyQuote || this.currentMessageObject.replyTextRevealed) {
                                                                     i15 = 5;
                                                                 } else {
@@ -40060,12 +40302,12 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                     if (build.getLineCount() > 0) {
                                                                         StaticLayout staticLayout7 = this.replyTextLayout;
                                                                         if (staticLayout7.getEllipsisCount(staticLayout7.getLineCount() - i10) > 0) {
-                                                                            z9 = true;
-                                                                            messageObject16.replyTextEllipsized = z9;
+                                                                            z10 = true;
+                                                                            messageObject16.replyTextEllipsized = z10;
                                                                         }
                                                                     }
-                                                                    z9 = false;
-                                                                    messageObject16.replyTextEllipsized = z9;
+                                                                    z10 = false;
+                                                                    messageObject16.replyTextEllipsized = z10;
                                                                 }
                                                             } else {
                                                                 i15 = 5;
@@ -40100,21 +40342,21 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                     i17 = 1;
                                                                     AnimatedEmojiSpan.EmojiGroupedSpans emojiGroupedSpans = this.animatedEmojiReplyStack;
                                                                     Layout[] layoutArr = new Layout[i17];
-                                                                    layoutArr[z8 ? 1 : 0] = this.replyTextLayout;
-                                                                    this.animatedEmojiReplyStack = AnimatedEmojiSpan.update(z8 ? 1 : 0, this, z8, emojiGroupedSpans, layoutArr);
+                                                                    layoutArr[z9 ? 1 : 0] = this.replyTextLayout;
+                                                                    this.animatedEmojiReplyStack = AnimatedEmojiSpan.update(z9 ? 1 : 0, this, z9, emojiGroupedSpans, layoutArr);
                                                                     i12 = i17;
                                                                 }
                                                                 SpoilerEffect.addSpoilers(this, staticLayout2, i16, i16 + this.replyTextWidth, this.replySpoilersPool, this.replySpoilers);
                                                                 AnimatedEmojiSpan.EmojiGroupedSpans emojiGroupedSpans2 = this.animatedEmojiReplyStack;
                                                                 Layout[] layoutArr2 = new Layout[i17];
-                                                                layoutArr2[z8 ? 1 : 0] = this.replyTextLayout;
-                                                                this.animatedEmojiReplyStack = AnimatedEmojiSpan.update(z8 ? 1 : 0, this, z8, emojiGroupedSpans2, layoutArr2);
+                                                                layoutArr2[z9 ? 1 : 0] = this.replyTextLayout;
+                                                                this.animatedEmojiReplyStack = AnimatedEmojiSpan.update(z9 ? 1 : 0, this, z9, emojiGroupedSpans2, layoutArr2);
                                                                 i12 = i17;
-                                                            } catch (Exception e2) {
-                                                                e = e2;
+                                                            } catch (Exception e3) {
+                                                                e = e3;
                                                                 i11 = i12;
                                                                 FileLog.e(e);
-                                                                z4 = z8;
+                                                                z4 = z9;
                                                                 r10 = i11;
                                                                 if (!messageObject2.summarized) {
                                                                 }
@@ -40131,11 +40373,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                             i12 = 1;
                                                         }
                                                         i13 = this.replyNameWidth;
-                                                        z4 = z8;
+                                                        z4 = z9;
                                                         r10 = i12;
                                                         if (i13 > this.replyTextWidth) {
                                                             this.replyNameWidth = i13 + AndroidUtilities.dp(Math.max(2.0f, SharedConfig.bubbleRadius / 4.0f));
-                                                            z4 = z8;
+                                                            z4 = z9;
                                                             r10 = i12;
                                                         }
                                                     }
@@ -40204,10 +40446,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                 replaceEmoji = Emoji.replaceEmoji(new SpannableStringBuilder(messageObject.messageOwner.reply_to.quote_text.replace('\n', c)), textPaint.getFontMetricsInt(), r9);
                                                 arrayList = messageObject.messageOwner.reply_to.quote_entities;
                                                 i10 = r2;
-                                                z8 = r9;
+                                                z9 = r9;
                                                 if (arrayList != null) {
                                                 }
-                                                removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z8);
+                                                removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z9);
                                                 if (this.isReplyQuote) {
                                                 }
                                                 int i26222222 = maxNameWidth2;
@@ -40230,7 +40472,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                 if (replaceEmoji != null) {
                                                 }
                                                 i13 = this.replyNameWidth;
-                                                z4 = z8;
+                                                z4 = z9;
                                                 r10 = i12;
                                                 if (i13 > this.replyTextWidth) {
                                                 }
@@ -40239,22 +40481,22 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     } else {
                                         TLRPC.Document document2 = messageMedia2.document;
                                         if (document2 != null) {
-                                            photoSize = FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, NotificationCenter.onDatabaseReset);
+                                            photoSize2 = FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, NotificationCenter.onDatabaseReset);
                                             tLObject = document2;
                                         } else {
                                             TLRPC.Photo photo2 = messageMedia2.photo;
                                             if (photo2 != null) {
-                                                photoSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, NotificationCenter.onDatabaseReset);
+                                                photoSize2 = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, NotificationCenter.onDatabaseReset);
                                                 tLObject = photo2;
                                             }
                                         }
-                                        if (photoSize == null) {
+                                        if (photoSize2 == null) {
                                             this.replyImageReceiver.setImageBitmap((Drawable) null);
                                             this.needReplyImage = false;
                                             charSequence3 = " ";
                                             str12 = str18;
                                             textPaint = textPaint6;
-                                            str13 = str6;
+                                            str13 = str7;
                                             r2 = 1;
                                             c = ' ';
                                             r9 = 0;
@@ -40263,20 +40505,21 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                             if (!DialogObject.isEncryptedDialog(messageObject.getDialogId())) {
                                             }
                                         } else {
-                                            this.currentReplyPhoto = photoSize;
+                                            this.currentReplyPhoto = photoSize2;
                                             j = 0;
                                             charSequence3 = " ";
                                             textPaint = textPaint6;
-                                            str13 = str6;
-                                            str12 = str18;
+                                            str13 = str7;
                                             z6 = true;
-                                            this.replyImageReceiver.setImage(ImageLocation.getForObject(photoSize, tLObject), z5 ? "5_5_b" : "50_50", ImageLocation.getForObject(photoSize2, tLObject), z5 ? "50_50_b4" : "50_50_b", i4, null, messageObject, i5);
+                                            this.replyImageReceiver.setImage(ImageLocation.getForObject(photoSize2, tLObject), z5 ? "5_5_b" : "50_50", ImageLocation.getForObject(photoSize, tLObject), z5 ? "50_50_b4" : "50_50_b", i4, null, messageObject, i5);
                                             this.needReplyImage = true;
                                             maxNameWidth2 = (int) (maxNameWidth2 - ((AndroidUtilities.dp(this.isReplyQuote ? 3.0f : 7.0f) + Theme.chat_replyNamePaint.getTextSize()) + Theme.chat_replyTextPaint.getTextSize()));
+                                            str12 = str18;
                                             c = ' ';
-                                            r9 = 0;
+                                            z7 = false;
                                             charSequence4 = null;
                                             r2 = z6;
+                                            r9 = z7;
                                             if (!DialogObject.isEncryptedDialog(messageObject.getDialogId())) {
                                             }
                                         }
@@ -40324,20 +40567,20 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                 this.forwardAvatar.setUser(this.currentForwardUser);
                                             } else {
                                                 this.currentForwardNameString = this.currentForwardName;
-                                                z7 = false;
+                                                z8 = false;
                                                 String forwardedMessageText3 = getForwardedMessageText(messageObject);
                                                 String str22 = this.currentForwardNameString;
-                                                String replace = str22 != null ? str6 : str22.replace('\n', ' ');
+                                                String replace = str22 != null ? str7 : str22.replace('\n', ' ');
                                                 StringBuilder sb3 = new StringBuilder();
-                                                sb3.append(!z7 ? str : str6);
+                                                sb3.append(!z8 ? str : str7);
                                                 sb3.append((Object) replace);
                                                 String sb4 = sb3.toString();
                                                 TextPaint textPaint7 = Theme.chat_replyNamePaint;
-                                                float dp8 = maxNameWidth2 - AndroidUtilities.dp(!z7 ? 17.33f : 0.0f);
+                                                float dp7 = maxNameWidth2 - AndroidUtilities.dp(!z8 ? 17.33f : 0.0f);
                                                 TextUtils.TruncateAt truncateAt6 = TextUtils.TruncateAt.END;
-                                                CharSequence ellipsize4 = TextUtils.ellipsize(sb4, textPaint7, dp8, truncateAt6);
+                                                CharSequence ellipsize4 = TextUtils.ellipsize(sb4, textPaint7, dp7, truncateAt6);
                                                 spannableStringBuilder3 = new SpannableStringBuilder(ellipsize4);
-                                                if (z7 && spannableStringBuilder3.length() > 1) {
+                                                if (z8 && spannableStringBuilder3.length() > 1) {
                                                     spannableStringBuilder3.setSpan(this.forwardAvatar, 0, 1, 33);
                                                 }
                                                 if (this.currentForwardName == null && messageObject.messageOwner.fwd_from.from_id == null) {
@@ -40346,51 +40589,49 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                     i8 = 0;
                                                     spannableStringBuilder3.setSpan(new TypefaceSpan(AndroidUtilities.bold()), 0, ellipsize4.length(), 33);
                                                 }
-                                                CharSequence ellipsize5 = TextUtils.ellipsize(spannableStringBuilder3, textPaint6, maxNameWidth2, truncateAt6);
+                                                replaceEmoji = TextUtils.ellipsize(spannableStringBuilder3, textPaint6, maxNameWidth2, truncateAt6);
                                                 this.forwardNameCenterX = ((int) Math.ceil(Theme.chat_replyNamePaint.measureText(ellipsize4, i8, ellipsize4.length()))) / 2;
-                                                replaceEmoji = ellipsize5;
                                                 charSequence3 = " ";
                                                 removeDiacritics = forwardedMessageText3;
                                             }
                                         }
-                                        z7 = true;
+                                        z8 = true;
                                         String forwardedMessageText32 = getForwardedMessageText(messageObject);
                                         String str222 = this.currentForwardNameString;
                                         if (str222 != null) {
                                         }
                                         StringBuilder sb32 = new StringBuilder();
-                                        sb32.append(!z7 ? str : str6);
+                                        sb32.append(!z8 ? str : str7);
                                         sb32.append((Object) replace);
                                         String sb42 = sb32.toString();
                                         TextPaint textPaint72 = Theme.chat_replyNamePaint;
-                                        float dp82 = maxNameWidth2 - AndroidUtilities.dp(!z7 ? 17.33f : 0.0f);
+                                        float dp72 = maxNameWidth2 - AndroidUtilities.dp(!z8 ? 17.33f : 0.0f);
                                         TextUtils.TruncateAt truncateAt62 = TextUtils.TruncateAt.END;
-                                        CharSequence ellipsize42 = TextUtils.ellipsize(sb42, textPaint72, dp82, truncateAt62);
+                                        CharSequence ellipsize42 = TextUtils.ellipsize(sb42, textPaint72, dp72, truncateAt62);
                                         spannableStringBuilder3 = new SpannableStringBuilder(ellipsize42);
-                                        if (z7) {
+                                        if (z8) {
                                             spannableStringBuilder3.setSpan(this.forwardAvatar, 0, 1, 33);
                                         }
                                         if (this.currentForwardName == null) {
                                         }
                                         i8 = 0;
                                         spannableStringBuilder3.setSpan(new TypefaceSpan(AndroidUtilities.bold()), 0, ellipsize42.length(), 33);
-                                        CharSequence ellipsize52 = TextUtils.ellipsize(spannableStringBuilder3, textPaint6, maxNameWidth2, truncateAt62);
+                                        replaceEmoji = TextUtils.ellipsize(spannableStringBuilder3, textPaint6, maxNameWidth2, truncateAt62);
                                         this.forwardNameCenterX = ((int) Math.ceil(Theme.chat_replyNamePaint.measureText(ellipsize42, i8, ellipsize42.length()))) / 2;
-                                        replaceEmoji = ellipsize52;
                                         charSequence3 = " ";
                                         removeDiacritics = forwardedMessageText32;
                                     } else {
                                         charSequence3 = " ";
                                         textPaint = textPaint6;
-                                        str13 = str6;
-                                        replaceEmoji = null;
-                                        i9 = 1;
+                                        str13 = str7;
                                         removeDiacritics = null;
-                                        z10 = false;
+                                        i9 = 1;
+                                        replaceEmoji = null;
+                                        z11 = false;
                                         i18 = i9;
                                         i10 = i18;
-                                        z8 = z10;
-                                        removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z8);
+                                        z9 = z11;
+                                        removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z9);
                                         if (this.isReplyQuote) {
                                         }
                                         int i262222222 = maxNameWidth2;
@@ -40413,7 +40654,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         if (replaceEmoji != null) {
                                         }
                                         i13 = this.replyNameWidth;
-                                        z4 = z8;
+                                        z4 = z9;
                                         r10 = i12;
                                         if (i13 > this.replyTextWidth) {
                                         }
@@ -40424,23 +40665,23 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             if (replaceEmoji != null) {
                             }
                             i13 = this.replyNameWidth;
-                            z4 = z8;
+                            z4 = z9;
                             r10 = i12;
                             if (i13 > this.replyTextWidth) {
                             }
-                        } catch (Exception e3) {
-                            e = e3;
+                        } catch (Exception e4) {
+                            e = e4;
                             messageObject2 = messageObject;
                             i11 = 1;
                         }
                         textPaint = textPaint6;
-                        str13 = str6;
+                        str13 = str7;
                         i9 = 1;
-                        z10 = false;
+                        z11 = false;
                         i18 = i9;
                         i10 = i18;
-                        z8 = z10;
-                        removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z8);
+                        z9 = z11;
+                        removeDiacritics = Emoji.replaceEmoji(removeDiacritics, Theme.chat_replyNamePaint.getFontMetricsInt(), z9);
                         if (this.isReplyQuote) {
                         }
                         int i2622222222 = maxNameWidth2;
@@ -40466,7 +40707,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     }
                 } else {
                     messageObject2 = messageObject;
-                    String str23 = str7;
+                    String str23 = str8;
                     z4 = false;
                     z4 = false;
                     z4 = false;
@@ -40497,10 +40738,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         chatMessageCellDelegate = this.delegate;
                         if (chatMessageCellDelegate != null || chatMessageCellDelegate.doNotShowLoadingReply(messageObject2)) {
                             if ((this.isSideMenued && !this.drawBackground) || (!messageObject.isAnyKindOfSticker() && messageObject2.type != 5)) {
-                                int dp9 = (int) (this.namesOffset + AndroidUtilities.dp(18.0f) + Theme.chat_replyTextPaint.getTextSize() + Theme.chat_replyNamePaint.getTextSize());
-                                this.namesOffset = dp9;
+                                int dp8 = (int) (this.namesOffset + AndroidUtilities.dp(18.0f) + Theme.chat_replyTextPaint.getTextSize() + Theme.chat_replyNamePaint.getTextSize());
+                                this.namesOffset = dp8;
                                 if (messageObject2.type != 0) {
-                                    this.namesOffset = dp9 + AndroidUtilities.dp(5.0f);
+                                    this.namesOffset = dp8 + AndroidUtilities.dp(5.0f);
                                 }
                             }
                             this.needReplyImage = false;
@@ -40534,11 +40775,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 requestLayout();
             }
         }
-        str9 = str4;
+        str9 = str5;
         if (messageObject.isGiveawayResults()) {
         }
         messageObject2 = messageObject;
-        String str232 = str7;
+        String str232 = str8;
         z4 = false;
         z4 = false;
         z4 = false;
@@ -40566,8 +40807,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         if (chatMessageCellDelegate != null) {
         }
         if (this.isSideMenued) {
-            int dp92 = (int) (this.namesOffset + AndroidUtilities.dp(18.0f) + Theme.chat_replyTextPaint.getTextSize() + Theme.chat_replyNamePaint.getTextSize());
-            this.namesOffset = dp92;
+            int dp82 = (int) (this.namesOffset + AndroidUtilities.dp(18.0f) + Theme.chat_replyTextPaint.getTextSize() + Theme.chat_replyNamePaint.getTextSize());
+            this.namesOffset = dp82;
             if (messageObject2.type != 0) {
             }
             this.needReplyImage = false;
@@ -40583,8 +40824,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             this.drawSummaryReply = z4;
             requestLayout();
         }
-        int dp922 = (int) (this.namesOffset + AndroidUtilities.dp(18.0f) + Theme.chat_replyTextPaint.getTextSize() + Theme.chat_replyNamePaint.getTextSize());
-        this.namesOffset = dp922;
+        int dp822 = (int) (this.namesOffset + AndroidUtilities.dp(18.0f) + Theme.chat_replyTextPaint.getTextSize() + Theme.chat_replyNamePaint.getTextSize());
+        this.namesOffset = dp822;
         if (messageObject2.type != 0) {
         }
         this.needReplyImage = false;
@@ -50546,26 +50787,26 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             return null;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:281:0x0282  */
-        /* JADX WARN: Removed duplicated region for block: B:293:0x02bd  */
-        /* JADX WARN: Removed duplicated region for block: B:295:0x02c4  */
-        /* JADX WARN: Removed duplicated region for block: B:297:0x02c7  */
-        /* JADX WARN: Removed duplicated region for block: B:298:0x02c0  */
-        /* JADX WARN: Removed duplicated region for block: B:301:0x02fb  */
-        /* JADX WARN: Removed duplicated region for block: B:304:0x0397  */
-        /* JADX WARN: Removed duplicated region for block: B:320:0x0407  */
-        /* JADX WARN: Removed duplicated region for block: B:330:0x0454  */
-        /* JADX WARN: Removed duplicated region for block: B:333:0x049b  */
-        /* JADX WARN: Removed duplicated region for block: B:340:0x05b0  */
-        /* JADX WARN: Removed duplicated region for block: B:345:0x05d9  */
-        /* JADX WARN: Removed duplicated region for block: B:349:0x05fc  */
-        /* JADX WARN: Removed duplicated region for block: B:371:0x06bc  */
-        /* JADX WARN: Removed duplicated region for block: B:388:0x0733  */
-        /* JADX WARN: Removed duplicated region for block: B:391:0x075f A[LOOP:11: B:390:0x075d->B:391:0x075f, LOOP_END] */
-        /* JADX WARN: Removed duplicated region for block: B:394:0x074d  */
-        /* JADX WARN: Removed duplicated region for block: B:409:0x0576  */
-        /* JADX WARN: Removed duplicated region for block: B:410:0x0465  */
-        /* JADX WARN: Removed duplicated region for block: B:415:0x033e  */
+        /* JADX WARN: Removed duplicated region for block: B:303:0x02fc  */
+        /* JADX WARN: Removed duplicated region for block: B:315:0x0337  */
+        /* JADX WARN: Removed duplicated region for block: B:317:0x033e  */
+        /* JADX WARN: Removed duplicated region for block: B:319:0x0341  */
+        /* JADX WARN: Removed duplicated region for block: B:320:0x033a  */
+        /* JADX WARN: Removed duplicated region for block: B:323:0x0375  */
+        /* JADX WARN: Removed duplicated region for block: B:326:0x040d  */
+        /* JADX WARN: Removed duplicated region for block: B:342:0x047d  */
+        /* JADX WARN: Removed duplicated region for block: B:352:0x04ca  */
+        /* JADX WARN: Removed duplicated region for block: B:355:0x0511  */
+        /* JADX WARN: Removed duplicated region for block: B:362:0x0628  */
+        /* JADX WARN: Removed duplicated region for block: B:367:0x0651  */
+        /* JADX WARN: Removed duplicated region for block: B:371:0x0674  */
+        /* JADX WARN: Removed duplicated region for block: B:393:0x0734  */
+        /* JADX WARN: Removed duplicated region for block: B:410:0x07ab  */
+        /* JADX WARN: Removed duplicated region for block: B:413:0x07d7 A[LOOP:11: B:412:0x07d5->B:413:0x07d7, LOOP_END] */
+        /* JADX WARN: Removed duplicated region for block: B:416:0x07c5  */
+        /* JADX WARN: Removed duplicated region for block: B:431:0x05ee  */
+        /* JADX WARN: Removed duplicated region for block: B:432:0x04db  */
+        /* JADX WARN: Removed duplicated region for block: B:437:0x03b6  */
         @Override // android.view.accessibility.AccessibilityNodeProvider
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -50582,13 +50823,12 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             boolean z3;
             CharSequence charSequence;
             long j;
-            String str3;
             AccessibilityNodeInfo accessibilityNodeInfo;
+            String str3;
             long j2;
             Spanned spanned;
             long j3;
             String formatString;
-            CharSequence charSequence2;
             int i4;
             boolean z4;
             TLRPC.MessagePeerReaction messagePeerReaction;
@@ -50607,10 +50847,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 boolean z5 = ChatMessageCell.this.currentMessageObject != null && ChatMessageCell.this.currentMessageObject.isOut() && !ChatMessageCell.this.currentMessageObject.scheduled && ChatMessageCell.this.currentMessageObject.isUnread();
                 boolean z6 = ChatMessageCell.this.currentMessageObject != null && ChatMessageCell.this.currentMessageObject.isContentUnread();
                 if (ChatMessageCell.this.currentMessageObject != null) {
-                    charSequence = ", ";
+                    charSequence = "%";
                     j = ChatMessageCell.this.currentMessageObject.loadedFileSize;
                 } else {
-                    charSequence = ", ";
+                    charSequence = "%";
                     j = 0;
                 }
                 ChatMessageCell chatMessageCell = ChatMessageCell.this;
@@ -50624,8 +50864,19 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         spannableStringBuilder.append((CharSequence) UserObject.getUserName(ChatMessageCell.this.currentUser));
                         str3 = "AccActionDownload";
                         spannableStringBuilder.setSpan(new ProfileSpan(ChatMessageCell.this.currentUser), 0, spannableStringBuilder.length(), 33);
+                        CharSequence adminAccessibilityText = ChatMessageCell.this.getAdminAccessibilityText();
+                        if (TextUtils.isEmpty(adminAccessibilityText)) {
+                            accessibilityNodeInfo = obtain;
+                        } else if (ChatMessageCell.this.adminLayoutIsTag) {
+                            accessibilityNodeInfo = obtain;
+                            spannableStringBuilder.append(' ').append((CharSequence) LocaleController.formatString(ChatMessageCell.this.adminLayoutIsAdmin ? org.telegram.messenger.R.string.AccDescrWithAdminTag : org.telegram.messenger.R.string.AccDescrWithMemberTag, adminAccessibilityText));
+                        } else {
+                            accessibilityNodeInfo = obtain;
+                            spannableStringBuilder.append((CharSequence) ", ").append(adminAccessibilityText);
+                        }
                         spannableStringBuilder.append('\n');
                     } else {
+                        accessibilityNodeInfo = obtain;
                         str3 = "AccActionDownload";
                     }
                     if (ChatMessageCell.this.drawForwardedName) {
@@ -50646,13 +50897,12 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     }
                     if (ChatMessageCell.this.currentMessageObject.richLayout == null || ChatMessageCell.this.currentMessageObject.richLayout.blocks.isEmpty()) {
                         if (!TextUtils.isEmpty(ChatMessageCell.this.currentMessageObject.messageText)) {
-                            CharSequence charSequence3 = ChatMessageCell.this.currentMessageObject.messageText;
-                            if (charSequence3 instanceof Spanned) {
-                                final Spanned spanned2 = (Spanned) charSequence3;
-                                accessibilityNodeInfo = obtain;
+                            CharSequence charSequence2 = ChatMessageCell.this.currentMessageObject.messageText;
+                            if (charSequence2 instanceof Spanned) {
+                                final Spanned spanned2 = (Spanned) charSequence2;
                                 CodeHighlighting.Span[] spanArr = (CodeHighlighting.Span[]) spanned2.getSpans(0, spanned2.length(), CodeHighlighting.Span.class);
                                 if (spanArr != null && spanArr.length > 0) {
-                                    SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(charSequence3);
+                                    SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(charSequence2);
                                     Arrays.sort(spanArr, new Comparator() { // from class: org.telegram.ui.Cells.ChatMessageCell$MessageAccessibilityNodeProvider$$ExternalSyntheticLambda0
                                         @Override // java.util.Comparator
                                         public final int compare(Object obj, Object obj2) {
@@ -50689,19 +50939,18 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                         j = j3;
                                     }
                                     j2 = j;
-                                    charSequence3 = spannableStringBuilder2;
-                                    spannableStringBuilder.append(charSequence3);
+                                    charSequence2 = spannableStringBuilder2;
+                                    spannableStringBuilder.append(charSequence2);
                                     if (ChatMessageCell.this.documentAttach != null && ((ChatMessageCell.this.documentAttachType == 1 || ChatMessageCell.this.documentAttachType == 2 || ChatMessageCell.this.documentAttachType == 4) && ChatMessageCell.this.buttonState == 1 && ChatMessageCell.this.loadingProgressLayout != null)) {
                                         spannableStringBuilder.append((CharSequence) "\n");
                                         boolean isSending = ChatMessageCell.this.currentMessageObject.isSending();
                                         spannableStringBuilder.append((CharSequence) LocaleController.formatString(!isSending ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", !isSending ? org.telegram.messenger.R.string.AccDescrUploadProgress : org.telegram.messenger.R.string.AccDescrDownloadProgress, AndroidUtilities.formatFileSize(ChatMessageCell.this.currentMessageObject.loadedFileSize), AndroidUtilities.formatFileSize(ChatMessageCell.this.lastLoadingSizeTotal)));
                                     }
                                     if (!ChatMessageCell.this.currentMessageObject.isMusic()) {
-                                        charSequence2 = charSequence;
                                         if (ChatMessageCell.this.currentMessageObject.isVoice() || ChatMessageCell.this.isRoundVideo) {
-                                            spannableStringBuilder.append(charSequence2);
+                                            spannableStringBuilder.append((CharSequence) ", ");
                                             spannableStringBuilder.append((CharSequence) LocaleController.formatDuration((int) ChatMessageCell.this.currentMessageObject.getDuration()));
-                                            spannableStringBuilder.append(charSequence2);
+                                            spannableStringBuilder.append((CharSequence) ", ");
                                             if (ChatMessageCell.this.currentMessageObject.isContentUnread()) {
                                                 spannableStringBuilder.append((CharSequence) LocaleController.getString("AccDescrMsgNotPlayed", org.telegram.messenger.R.string.AccDescrMsgNotPlayed));
                                             } else {
@@ -50711,14 +50960,13 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     } else {
                                         spannableStringBuilder.append((CharSequence) "\n");
                                         spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrMusicInfo", org.telegram.messenger.R.string.AccDescrMusicInfo, ChatMessageCell.this.currentMessageObject.getMusicAuthor(), ChatMessageCell.this.currentMessageObject.getMusicTitle()));
-                                        charSequence2 = charSequence;
-                                        spannableStringBuilder.append(charSequence2);
+                                        spannableStringBuilder.append((CharSequence) ", ");
                                         spannableStringBuilder.append((CharSequence) LocaleController.formatDuration((int) ChatMessageCell.this.currentMessageObject.getDuration()));
                                     }
                                     if (ChatMessageCell.this.lastPoll != null) {
-                                        spannableStringBuilder.append(charSequence2);
+                                        spannableStringBuilder.append((CharSequence) ", ");
                                         spannableStringBuilder.append((CharSequence) ChatMessageCell.this.lastPoll.question.text);
-                                        spannableStringBuilder.append(charSequence2);
+                                        spannableStringBuilder.append((CharSequence) ", ");
                                         if (!ChatMessageCell.this.pollClosed) {
                                             if (ChatMessageCell.this.lastPoll.quiz) {
                                                 if (ChatMessageCell.this.lastPoll.public_voters) {
@@ -50738,11 +50986,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     }
                                     if (ChatMessageCell.this.documentAttach != null) {
                                         if (ChatMessageCell.this.documentAttachType == 4) {
-                                            spannableStringBuilder.append(charSequence2);
+                                            spannableStringBuilder.append((CharSequence) ", ");
                                             spannableStringBuilder.append((CharSequence) LocaleController.formatDuration((int) ChatMessageCell.this.currentMessageObject.getDuration()));
                                         }
                                         if (ChatMessageCell.this.buttonState == 0 || ChatMessageCell.this.documentAttachType == 1) {
-                                            spannableStringBuilder.append(charSequence2);
+                                            spannableStringBuilder.append((CharSequence) ", ");
                                             spannableStringBuilder.append((CharSequence) AndroidUtilities.formatFileSize(ChatMessageCell.this.documentAttach.size));
                                         }
                                     }
@@ -50767,7 +51015,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                 spannableStringBuilder.append((CharSequence) LocaleController.getString("AccDescrMsgSending", org.telegram.messenger.R.string.AccDescrMsgSending));
                                                 float progress = ChatMessageCell.this.radialProgress.getProgress();
                                                 if (progress > 0.0f) {
-                                                    spannableStringBuilder.append((CharSequence) Integer.toString(Math.round(progress * 100.0f))).append((CharSequence) "%");
+                                                    spannableStringBuilder.append((CharSequence) Integer.toString(Math.round(progress * 100.0f))).append(charSequence);
                                                 }
                                             }
                                         } else {
@@ -50776,7 +51024,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                 spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrScheduledDate", org.telegram.messenger.R.string.AccDescrScheduledDate, ChatMessageCell.this.currentTimeString));
                                             } else {
                                                 spannableStringBuilder.append((CharSequence) LocaleController.formatString("AccDescrSentDate", org.telegram.messenger.R.string.AccDescrSentDate, LocaleController.getString("TodayAt", org.telegram.messenger.R.string.TodayAt) + " " + ((Object) ChatMessageCell.this.currentTimeString)));
-                                                spannableStringBuilder.append(charSequence2);
+                                                spannableStringBuilder.append((CharSequence) ", ");
                                                 if (ChatMessageCell.this.currentMessageObject.isUnread()) {
                                                     i5 = org.telegram.messenger.R.string.AccDescrMsgUnread;
                                                     str4 = "AccDescrMsgUnread";
@@ -50832,7 +51080,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                 spannableStringBuilder.append((CharSequence) (reaction2 instanceof TLRPC.TL_reactionEmoji ? ((TLRPC.TL_reactionEmoji) reaction2).emoticon : "")).append((CharSequence) " ").append((CharSequence) (reactionCount2.count + ""));
                                                 i11++;
                                                 if (i11 < size) {
-                                                    spannableStringBuilder.append(charSequence2);
+                                                    spannableStringBuilder.append((CharSequence) ", ");
                                                 }
                                             }
                                             spannableStringBuilder.append((CharSequence) "\n");
@@ -50871,11 +51119,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     ChatMessageCell.this.accessibilityTextContentUnread = z6;
                                     ChatMessageCell.this.accessibilityTextFileSize = j2;
                                 }
-                            } else {
-                                accessibilityNodeInfo = obtain;
                             }
                             j2 = j;
-                            spannableStringBuilder.append(charSequence3);
+                            spannableStringBuilder.append(charSequence2);
                             if (ChatMessageCell.this.documentAttach != null) {
                                 spannableStringBuilder.append((CharSequence) "\n");
                                 boolean isSending2 = ChatMessageCell.this.currentMessageObject.isSending();
@@ -50903,7 +51149,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             if ((ChatMessageCell.this.currentMessageObject.messageOwner.flags & 1024) != 0) {
                             }
                             spannableStringBuilder.append((CharSequence) "\n");
-                            while (r6 < r2) {
+                            while (r7 < r2) {
                             }
                             ChatMessageCell chatMessageCell32 = ChatMessageCell.this;
                             chatMessageCell32.accessibilityText = spannableStringBuilder;
@@ -50917,14 +51163,29 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             RichMessageLayout.RichBlock next = it.next();
                             if (next.isVisible()) {
                                 int length2 = spannableStringBuilder.length();
-                                next.appendAccessibilityText(spannableStringBuilder);
+                                SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
+                                next.appendAccessibilityText(spannableStringBuilder3);
+                                CharSequence accessibilityLabel = next.getAccessibilityLabel();
+                                CharSequence accessibilityListMarker = next.getAccessibilityListMarker();
+                                if (!TextUtils.isEmpty(accessibilityListMarker)) {
+                                    spannableStringBuilder.append(accessibilityListMarker);
+                                    if (!TextUtils.isEmpty(accessibilityLabel) || spannableStringBuilder3.length() > 0) {
+                                        spannableStringBuilder.append(' ');
+                                    }
+                                }
+                                if (!TextUtils.isEmpty(accessibilityLabel)) {
+                                    spannableStringBuilder.append(accessibilityLabel);
+                                    if (spannableStringBuilder3.length() > 0) {
+                                        spannableStringBuilder.append((CharSequence) ", ");
+                                    }
+                                }
+                                spannableStringBuilder.append((CharSequence) spannableStringBuilder3);
                                 if (spannableStringBuilder.length() > length2 && spannableStringBuilder.charAt(spannableStringBuilder.length() - 1) != '\n') {
                                     spannableStringBuilder.append('\n');
                                 }
                             }
                         }
                     }
-                    accessibilityNodeInfo = obtain;
                     j2 = j;
                     if (ChatMessageCell.this.documentAttach != null) {
                     }
@@ -50945,7 +51206,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     if ((ChatMessageCell.this.currentMessageObject.messageOwner.flags & 1024) != 0) {
                     }
                     spannableStringBuilder.append((CharSequence) "\n");
-                    while (r6 < r2) {
+                    while (r7 < r2) {
                     }
                     ChatMessageCell chatMessageCell322 = ChatMessageCell.this;
                     chatMessageCell322.accessibilityText = spannableStringBuilder;
@@ -51157,10 +51418,24 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 }
                 this.rect.offset(iArr[0], iArr[1]);
                 obtain2.setBoundsInScreen(this.rect);
-                obtain2.setClassName("android.widget.ImageView");
+                boolean isAccessibilityElementCheckbox = resolveRichElement.isAccessibilityElementCheckbox(iArr2[0]);
+                if (isAccessibilityElementCheckbox) {
+                    obtain2.setClassName("android.widget.CheckBox");
+                } else if (resolveRichElement.isAccessibilityElementText(iArr2[0])) {
+                    obtain2.setClassName("android.widget.TextView");
+                } else {
+                    obtain2.setClassName("android.widget.ImageView");
+                }
                 obtain2.setEnabled(true);
-                obtain2.setClickable(true);
-                obtain2.addAction(16);
+                if (isAccessibilityElementCheckbox) {
+                    obtain2.setCheckable(true);
+                    obtain2.setChecked(resolveRichElement.isAccessibilityElementChecked(iArr2[0]));
+                }
+                boolean isAccessibilityElementClickable = resolveRichElement.isAccessibilityElementClickable(iArr2[0]);
+                obtain2.setClickable(isAccessibilityElementClickable);
+                if (isAccessibilityElementClickable) {
+                    obtain2.addAction(16);
+                }
             } else if (i >= 3000) {
                 if (!(ChatMessageCell.this.currentMessageObject.caption instanceof Spannable)) {
                     return null;
@@ -51388,7 +51663,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 obtain2.setBoundsInScreen(this.rect);
                 obtain2.setClickable(true);
             } else if (i == 491 || i == 490 || i == 489) {
-                int i32 = i == 491 ? 5 : i == 490 ? 31 : 30;
+                int i32 = i != 491 ? i == 490 ? 31 : 30 : 5;
                 for (int i33 = 0; i33 < ChatMessageCell.this.contactButtons.size(); i33++) {
                     InstantViewButton instantViewButton3 = (InstantViewButton) ChatMessageCell.this.contactButtons.get(i33);
                     if (instantViewButton3.type == i32) {
@@ -51539,7 +51814,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             return spanned.getSpanStart(span2) - spanned.getSpanStart(span);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:109:0x0228, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:109:0x0231, code lost:
         
             if (r9.this$0.currentMessageObject.messageOwner.reply_to.reply_from == null) goto L145;
          */
@@ -51566,6 +51841,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         RichMessageLayout.RichBlock resolveRichElement = resolveRichElement(i, iArr);
                         if (resolveRichElement != null && resolveRichElement.onAccessibilityElementClick(iArr[0], ChatMessageCell.this)) {
                             ChatMessageCell.this.sendAccessibilityEventForVirtualView(i, 1);
+                            AndroidUtilities.makeAccessibilityAnnouncement(resolveRichElement.getAccessibilityElementStateDescription(iArr[0]));
                         }
                     } else if (i >= 3000) {
                         ClickableSpan linkById = getLinkById(i, true);

@@ -28,11 +28,6 @@ public class WallpaperBitmapProvider {
             blurBitmap = WallpaperBitmapProvider.blurBitmap(bitmap);
             return blurBitmap;
         }
-
-        @Override // org.telegram.ui.Components.blur3.utils.BitmapMemoizedMetadata.Provider
-        public /* synthetic */ boolean isValid(Object obj) {
-            return BitmapMemoizedMetadata.Provider.-CC.$default$isValid(this, obj);
-        }
     });
     private final BitmapMemoizedMetadata navbarColorFromBitmap = new BitmapMemoizedMetadata(new BitmapMemoizedMetadata.Provider() { // from class: org.telegram.ui.Components.chat.WallpaperBitmapProvider$$ExternalSyntheticLambda1
         @Override // org.telegram.ui.Components.blur3.utils.BitmapMemoizedMetadata.Provider
@@ -41,11 +36,6 @@ public class WallpaperBitmapProvider {
             averageBottomColor = WallpaperBitmapProvider.averageBottomColor(bitmap);
             return Integer.valueOf(averageBottomColor);
         }
-
-        @Override // org.telegram.ui.Components.blur3.utils.BitmapMemoizedMetadata.Provider
-        public /* synthetic */ boolean isValid(Object obj) {
-            return BitmapMemoizedMetadata.Provider.-CC.$default$isValid(this, obj);
-        }
     });
     private final BitmapMemoizedMetadata statusBarColorFromBitmap = new BitmapMemoizedMetadata(new BitmapMemoizedMetadata.Provider() { // from class: org.telegram.ui.Components.chat.WallpaperBitmapProvider$$ExternalSyntheticLambda2
         @Override // org.telegram.ui.Components.blur3.utils.BitmapMemoizedMetadata.Provider
@@ -53,11 +43,6 @@ public class WallpaperBitmapProvider {
             int averageTopColor;
             averageTopColor = WallpaperBitmapProvider.averageTopColor(bitmap);
             return Integer.valueOf(averageTopColor);
-        }
-
-        @Override // org.telegram.ui.Components.blur3.utils.BitmapMemoizedMetadata.Provider
-        public /* synthetic */ boolean isValid(Object obj) {
-            return BitmapMemoizedMetadata.Provider.-CC.$default$isValid(this, obj);
         }
     });
 

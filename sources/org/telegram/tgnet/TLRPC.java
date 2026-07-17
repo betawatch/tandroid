@@ -16127,31 +16127,26 @@ public class TLRPC {
         public boolean single_use;
 
         public static ReplyMarkup TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-            TLObject tL_replyKeyboardMarkup;
+            return (ReplyMarkup) TLObject.TLdeserialize(ReplyMarkup.class, fromConstructor(i), inputSerializedData, i, z);
+        }
+
+        private static ReplyMarkup fromConstructor(int i) {
             switch (i) {
                 case TL_replyKeyboardMarkup.constructor /* -2049074735 */:
-                    tL_replyKeyboardMarkup = new TL_replyKeyboardMarkup();
-                    break;
+                    return new TL_replyKeyboardMarkup();
                 case TL_replyKeyboardForceReply.constructor /* -2035021048 */:
-                    tL_replyKeyboardMarkup = new TL_replyKeyboardForceReply();
-                    break;
+                    return new TL_replyKeyboardForceReply();
                 case TL_replyKeyboardHide.constructor /* -1606526075 */:
-                    tL_replyKeyboardMarkup = new TL_replyKeyboardHide();
-                    break;
+                    return new TL_replyKeyboardHide();
                 case TL_replyKeyboardForceReply_layer129.constructor /* -200242528 */:
-                    tL_replyKeyboardMarkup = new TL_replyKeyboardForceReply_layer129();
-                    break;
+                    return new TL_replyKeyboardForceReply_layer129();
                 case TL_replyKeyboardMarkup_layer129.constructor /* 889353612 */:
-                    tL_replyKeyboardMarkup = new TL_replyKeyboardMarkup_layer129();
-                    break;
+                    return new TL_replyKeyboardMarkup_layer129();
                 case TL_replyInlineMarkup.constructor /* 1218642516 */:
-                    tL_replyKeyboardMarkup = new TL_replyInlineMarkup();
-                    break;
+                    return new TL_replyInlineMarkup();
                 default:
-                    tL_replyKeyboardMarkup = null;
-                    break;
+                    return null;
             }
-            return (ReplyMarkup) TLObject.TLdeserialize(ReplyMarkup.class, tL_replyKeyboardMarkup, inputSerializedData, i, z);
         }
     }
 

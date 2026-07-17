@@ -19400,7 +19400,7 @@ public class MessagesStorage extends BaseController {
         }
     }
 
-    private boolean isValidKeyboardToSave(TLRPC.Message message) {
+    public static boolean isValidKeyboardToSave(TLRPC.Message message) {
         TLRPC.ReplyMarkup replyMarkup = message.reply_markup;
         return (replyMarkup == null || (replyMarkup instanceof TLRPC.TL_replyInlineMarkup) || (replyMarkup.selective && !message.mentioned)) ? false : true;
     }
@@ -19475,7 +19475,7 @@ public class MessagesStorage extends BaseController {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v156 ?? I:??[OBJECT, ARRAY]), method size: 9122
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v35 ?? I:??[OBJECT, ARRAY]), method size: 9122
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
@@ -19658,46 +19658,93 @@ public class MessagesStorage extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:14:? A[RETURN, SYNTHETIC] */
     /* renamed from: deleteEphemeralMessagesInternal, reason: merged with bridge method [inline-methods] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void lambda$deleteEphemeralMessages$202(LongSparseArray longSparseArray, boolean z) {
+        SQLitePreparedStatement executeFast;
         SQLitePreparedStatement sQLitePreparedStatement = null;
-        if (z) {
-            try {
+        SQLitePreparedStatement sQLitePreparedStatement2 = null;
+        ArrayList<Integer> arrayList = null;
+        try {
+            if (z) {
                 try {
                     this.database.beginTransaction();
                 } catch (Exception e) {
+                    e = e;
                     checkSQLException(e);
-                    if (sQLitePreparedStatement == null) {
-                        return;
+                    if (sQLitePreparedStatement2 == null) {
+                        executeFast = sQLitePreparedStatement2;
+                        executeFast.dispose();
+                    }
+                    return;
+                }
+            }
+            try {
+                executeFast = this.database.executeFast("DELETE FROM ephemeral_messages WHERE dialog_id = ? AND id = ?;");
+                for (int i = 0; i < longSparseArray.size(); i++) {
+                    try {
+                        long keyAt = longSparseArray.keyAt(i);
+                        ArrayList arrayList2 = (ArrayList) longSparseArray.valueAt(i);
+                        if (arrayList2 != null) {
+                            for (int i2 = 0; i2 < arrayList2.size(); i2++) {
+                                executeFast.requery();
+                                executeFast.bindLong(1, keyAt);
+                                executeFast.bindInteger(2, ((Integer) arrayList2.get(i2)).intValue());
+                                executeFast.step();
+                            }
+                        }
+                    } catch (Exception e2) {
+                        e = e2;
+                        sQLitePreparedStatement2 = executeFast;
+                        checkSQLException(e);
+                        if (sQLitePreparedStatement2 == null) {
+                        }
+                    } catch (Throwable th) {
+                        th = th;
+                        sQLitePreparedStatement = executeFast;
+                        if (sQLitePreparedStatement != null) {
+                            sQLitePreparedStatement.dispose();
+                        }
+                        throw th;
                     }
                 }
-            } catch (Throwable th) {
-                if (sQLitePreparedStatement != null) {
-                    sQLitePreparedStatement.dispose();
+                int i3 = 0;
+                while (i3 < longSparseArray.size()) {
+                    long keyAt2 = longSparseArray.keyAt(i3);
+                    ArrayList arrayList3 = (ArrayList) longSparseArray.valueAt(i3);
+                    getMediaDataController().clearBotKeyboard(TopicKey.of(keyAt2, 0L), arrayList);
+                    Iterator it = arrayList3.iterator();
+                    while (it.hasNext()) {
+                        ((Integer) it.next()).intValue();
+                        SQLiteDatabase sQLiteDatabase = this.database;
+                        Locale locale = Locale.US;
+                        sQLiteDatabase.executeFast(String.format(locale, "DELETE FROM bot_keyboard WHERE mid IN(%s) AND uid = %d", arrayList3, Long.valueOf(keyAt2))).stepThis().dispose();
+                        this.database.executeFast(String.format(locale, "DELETE FROM bot_keyboard_topics WHERE mid IN(%s) AND uid = %d", arrayList3, Long.valueOf(keyAt2))).stepThis().dispose();
+                    }
+                    i3++;
+                    arrayList = null;
                 }
-                throw th;
-            }
-        }
-        sQLitePreparedStatement = this.database.executeFast("DELETE FROM ephemeral_messages WHERE dialog_id = ? AND id = ?;");
-        for (int i = 0; i < longSparseArray.size(); i++) {
-            long keyAt = longSparseArray.keyAt(i);
-            ArrayList arrayList = (ArrayList) longSparseArray.valueAt(i);
-            if (arrayList != null) {
-                for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                    sQLitePreparedStatement.requery();
-                    sQLitePreparedStatement.bindLong(1, keyAt);
-                    sQLitePreparedStatement.bindInteger(2, ((Integer) arrayList.get(i2)).intValue());
-                    sQLitePreparedStatement.step();
+                if (z) {
+                    this.database.commitTransaction();
                 }
+                if (executeFast == null) {
+                    return;
+                }
+            } catch (Exception e3) {
+                e = e3;
+                sQLitePreparedStatement2 = null;
+            } catch (Throwable th2) {
+                th = th2;
+                sQLitePreparedStatement = null;
             }
+            executeFast.dispose();
+        } catch (Throwable th3) {
+            th = th3;
         }
-        if (z) {
-            this.database.commitTransaction();
-        }
-        if (sQLitePreparedStatement == null) {
-            return;
-        }
-        sQLitePreparedStatement.dispose();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

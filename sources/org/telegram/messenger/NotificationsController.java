@@ -1875,15 +1875,15 @@ public class NotificationsController extends BaseController implements Notificat
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0074 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x008d  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0094  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00a0 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00c8  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x013a  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x00ae  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x005d  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x007a A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x009a  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00a6 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00ce  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0140  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x00b4  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x00c3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1904,7 +1904,7 @@ public class NotificationsController extends BaseController implements Notificat
             int i4 = longSparseIntArray.get(keyAt);
             if (DialogObject.isChatDialog(keyAt)) {
                 TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(-keyAt));
-                if (chat == null || chat.min || ChatObject.isNotInChat(chat)) {
+                if (chat == null || chat.min || ChatObject.isNotInChat(chat) || ChatObject.isCommunity(chat)) {
                     i4 = 0;
                 }
                 if (chat != null) {
@@ -2341,7 +2341,14 @@ public class NotificationsController extends BaseController implements Notificat
                                 int size2 = arrayList.size();
                                 for (int i3 = 0; i3 < size2; i3++) {
                                     TLRPC.Dialog dialog = (TLRPC.Dialog) arrayList.get(i3);
-                                    if ((dialog == null || !DialogObject.isChatDialog(dialog.id) || !ChatObject.isNotInChat(getMessagesController().getChat(Long.valueOf(-dialog.id)))) && dialog != null) {
+                                    if (dialog != null && DialogObject.isChatDialog(dialog.id)) {
+                                        TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(-dialog.id));
+                                        if (!ChatObject.isNotInChat(chat)) {
+                                            if (ChatObject.isCommunity(chat)) {
+                                            }
+                                        }
+                                    }
+                                    if (dialog != null) {
                                         i += MessagesController.getInstance(i2).getDialogUnreadCount(dialog);
                                     }
                                 }
@@ -2356,7 +2363,14 @@ public class NotificationsController extends BaseController implements Notificat
                             int size3 = MessagesController.getInstance(i2).allDialogs.size();
                             for (int i4 = 0; i4 < size3; i4++) {
                                 TLRPC.Dialog dialog2 = MessagesController.getInstance(i2).allDialogs.get(i4);
-                                if ((!DialogObject.isChatDialog(dialog2.id) || !ChatObject.isNotInChat(getMessagesController().getChat(Long.valueOf(-dialog2.id)))) && MessagesController.getInstance(i2).getDialogUnreadCount(dialog2) != 0) {
+                                if (DialogObject.isChatDialog(dialog2.id)) {
+                                    TLRPC.Chat chat2 = getMessagesController().getChat(Long.valueOf(-dialog2.id));
+                                    if (!ChatObject.isNotInChat(chat2)) {
+                                        if (ChatObject.isCommunity(chat2)) {
+                                        }
+                                    }
+                                }
+                                if (MessagesController.getInstance(i2).getDialogUnreadCount(dialog2) != 0) {
                                     i++;
                                 }
                             }

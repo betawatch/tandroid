@@ -2,7 +2,6 @@ package org.telegram.ui;
 
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -436,7 +435,6 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public void onResume() {
-        Activity parentActivity;
         super.onResume();
         if (this.justCreated) {
             if (LocaleController.isRTL) {
@@ -448,20 +446,13 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
             }
             this.justCreated = false;
         }
-        if (AndroidUtilities.isTablet() || (parentActivity = getParentActivity()) == null) {
-            return;
-        }
-        parentActivity.setRequestedOrientation(1);
+        AndroidUtilities.lockOrientation(getParentActivity(), 1);
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public void onPause() {
-        Activity parentActivity;
         super.onPause();
-        if (AndroidUtilities.isTablet() || (parentActivity = getParentActivity()) == null) {
-            return;
-        }
-        parentActivity.setRequestedOrientation(-1);
+        AndroidUtilities.unlockOrientation(getParentActivity());
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

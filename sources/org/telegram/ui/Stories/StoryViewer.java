@@ -616,11 +616,6 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                     super.onMeasure(i3, i4);
                 }
 
-                @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-                protected void onLayout(boolean z3, int i3, int i4, int i5, int i6) {
-                    super.onLayout(z3, i3, i4, i5, i6);
-                }
-
                 @Override // android.view.ViewGroup, android.view.View
                 protected void dispatchDraw(Canvas canvas) {
                     PeerStoriesView currentPeerView = StoryViewer.this.storiesViewPager.getCurrentPeerView();

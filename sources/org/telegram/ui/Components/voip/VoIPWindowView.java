@@ -21,7 +21,6 @@ public abstract class VoIPWindowView extends FrameLayout {
     boolean finished;
     protected boolean lockOnScreen;
     private AnimationNotificationsLocker notificationsLocker;
-    private int orientationBefore;
     boolean runEnterTransition;
     boolean startDragging;
     float startX;
@@ -33,9 +32,7 @@ public abstract class VoIPWindowView extends FrameLayout {
         this.notificationsLocker = new AnimationNotificationsLocker();
         this.activity = activity;
         setSystemUiVisibility(1792);
-        setFitsSystemWindows(true);
-        this.orientationBefore = activity.getRequestedOrientation();
-        activity.setRequestedOrientation(1);
+        AndroidUtilities.lockOrientation(activity, 1);
         OrientationHelper.cameraRotationDisabled = true;
         if (z) {
             return;
@@ -130,9 +127,8 @@ public abstract class VoIPWindowView extends FrameLayout {
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     VoIPWindowView.this.notificationsLocker.unlock();
+                    AndroidUtilities.unlockOrientation(VoIPWindowView.this.activity);
                     if (VoIPWindowView.this.getParent() != null) {
-                        VoIPWindowView voIPWindowView = VoIPWindowView.this;
-                        voIPWindowView.activity.setRequestedOrientation(voIPWindowView.orientationBefore);
                         WindowManager windowManager = (WindowManager) VoIPWindowView.this.activity.getSystemService("window");
                         VoIPWindowView.this.setVisibility(8);
                         try {
@@ -186,7 +182,7 @@ public abstract class VoIPWindowView extends FrameLayout {
 
     public void finishImmediate() {
         if (getParent() != null) {
-            this.activity.setRequestedOrientation(this.orientationBefore);
+            AndroidUtilities.unlockOrientation(this.activity);
             WindowManager windowManager = (WindowManager) this.activity.getSystemService("window");
             setVisibility(8);
             windowManager.removeView(this);

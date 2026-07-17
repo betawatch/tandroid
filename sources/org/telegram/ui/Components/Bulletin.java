@@ -34,15 +34,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.Window;
-import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import androidx.core.graphics.Insets;
 import androidx.core.math.MathUtils;
 import androidx.core.util.Consumer;
+import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.dynamicanimation.animation.DynamicAnimation;
 import androidx.dynamicanimation.animation.FloatPropertyCompat;
 import androidx.dynamicanimation.animation.FloatValueHolder;
@@ -2705,20 +2707,19 @@ public class Bulletin {
 
         private BulletinWindow(Context context, final Delegate delegate) {
             super(context);
+            AndroidUtilities.enableEdgeToEdge(getWindow());
             BulletinWindowLayout bulletinWindowLayout = new BulletinWindowLayout(context);
             this.container = bulletinWindowLayout;
             setContentView(bulletinWindowLayout, new ViewGroup.LayoutParams(-1, -1));
-            int i = Build.VERSION.SDK_INT;
-            boolean z = true;
-            bulletinWindowLayout.setFitsSystemWindows(true);
-            bulletinWindowLayout.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.Components.Bulletin$BulletinWindow$$ExternalSyntheticLambda0
-                @Override // android.view.View.OnApplyWindowInsetsListener
-                public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-                    WindowInsets lambda$new$0;
-                    lambda$new$0 = Bulletin.BulletinWindow.this.lambda$new$0(view, windowInsets);
+            ViewCompat.setOnApplyWindowInsetsListener(bulletinWindowLayout, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.Components.Bulletin$BulletinWindow$$ExternalSyntheticLambda0
+                @Override // androidx.core.view.OnApplyWindowInsetsListener
+                public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
+                    WindowInsetsCompat lambda$new$0;
+                    lambda$new$0 = Bulletin.BulletinWindow.this.lambda$new$0(view, windowInsetsCompat);
                     return lambda$new$0;
                 }
             });
+            int i = Build.VERSION.SDK_INT;
             if (i >= 30) {
                 bulletinWindowLayout.setSystemUiVisibility(1792);
             } else {
@@ -2782,6 +2783,7 @@ public class Bulletin {
                 attributes.gravity = 51;
                 attributes.dimAmount = 0.0f;
                 attributes.flags = ((attributes.flags & (-3)) | (-1946091240)) & (-1025);
+                boolean z = true;
                 if (i >= 28) {
                     attributes.layoutInDisplayCutoutMode = 1;
                 }
@@ -2795,15 +2797,10 @@ public class Bulletin {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ WindowInsets lambda$new$0(View view, WindowInsets windowInsets) {
-            WindowInsets windowInsets2;
-            applyInsets(windowInsets);
+        public /* synthetic */ WindowInsetsCompat lambda$new$0(View view, WindowInsetsCompat windowInsetsCompat) {
+            applyInsets(AndroidUtilities.getDefaultWindowInsets(windowInsetsCompat, false));
             view.requestLayout();
-            if (Build.VERSION.SDK_INT >= 30) {
-                windowInsets2 = WindowInsets.CONSUMED;
-                return windowInsets2;
-            }
-            return windowInsets.consumeSystemWindowInsets();
+            return WindowInsetsCompat.CONSUMED;
         }
 
         @Override // android.app.Dialog
@@ -2813,10 +2810,10 @@ public class Bulletin {
             }
         }
 
-        private void applyInsets(WindowInsets windowInsets) {
+        private void applyInsets(Insets insets) {
             BulletinWindowLayout bulletinWindowLayout = this.container;
             if (bulletinWindowLayout != null) {
-                bulletinWindowLayout.setPadding(windowInsets.getSystemWindowInsetLeft(), windowInsets.getSystemWindowInsetTop(), windowInsets.getSystemWindowInsetRight(), windowInsets.getSystemWindowInsetBottom());
+                bulletinWindowLayout.setPadding(insets.left, insets.top, insets.right, insets.bottom);
             }
         }
 

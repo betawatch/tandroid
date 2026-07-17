@@ -11,9 +11,9 @@ import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.view.MotionEvent;
+import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.ImageView;
@@ -24,10 +24,12 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.Theme;
@@ -51,8 +53,7 @@ import org.telegram.ui.iv.RichEditor;
 
 /* loaded from: classes3.dex */
 public class RichMediaCell extends RichBlockCell implements Theme.Colorable, TextSelectionHelper.ArticleSelectableView, RichCaptionHost {
-    private static Drawable slideDotBigDrawable;
-    private static Drawable slideDotDrawable;
+    private static Paint slideDotPaint;
     private final ImageView addButton;
     private boolean attached;
     private final Paint backgroundPaint;
@@ -75,7 +76,9 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
     private final ArrayList itemRects;
     private final ArrayList items;
     private int lastSwitchIconRes;
+    private int maxFlingVelocity;
     private final ArrayList menuButtons;
+    private int minFlingVelocity;
     private final AnimatedFloat modeProgress;
     private float pageOffset;
     private int pressedItem;
@@ -87,6 +90,7 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
     private SpoilerEffect2 spoilerEffect;
     private final ImageView switchModeButton;
     private int touchSlop;
+    private VelocityTracker velocityTracker;
 
     public interface Delegate {
         TextSelectionHelper.ArticleTextSelectionHelper getSelectionHelper();
@@ -396,6 +400,14 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
             valueAnimator.cancel();
             this.settleAnimator = null;
         }
+        if (getParent() != null) {
+            getParent().requestDisallowInterceptTouchEvent(false);
+        }
+        VelocityTracker velocityTracker = this.velocityTracker;
+        if (velocityTracker != null) {
+            velocityTracker.recycle();
+            this.velocityTracker = null;
+        }
         this.currentPage = 0;
         this.pageOffset = 0.0f;
         updateSwitchButton(true);
@@ -421,7 +433,7 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
         while (this.menuButtons.size() < medias.size()) {
             ImageView createCircleButton = createCircleButton();
             createCircleButton.setImageResource(R.drawable.iv_media_dots);
-            createCircleButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichMediaCell$$ExternalSyntheticLambda1
+            createCircleButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.iv.RichMediaCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     RichMediaCell.this.lambda$rebuildItems$2(view);
@@ -547,6 +559,15 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.attached = false;
+        if (getParent() != null) {
+            getParent().requestDisallowInterceptTouchEvent(false);
+        }
+        VelocityTracker velocityTracker = this.velocityTracker;
+        if (velocityTracker != null) {
+            velocityTracker.recycle();
+            this.velocityTracker = null;
+        }
+        this.dragging = false;
         for (int i = 0; i < this.items.size(); i++) {
             ((RichMediaItem) this.items.get(i)).detach();
         }
@@ -857,6 +878,7 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
     }
 
     private void drawMedia(Canvas canvas) {
+        int i;
         int paddingTop = getPaddingTop();
         int paddingLeft = getPaddingLeft();
         int max = Math.max(0, (getWidth() - paddingLeft) - getPaddingRight());
@@ -869,6 +891,11 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
         } else {
             canvas.clipRect(0, paddingTop, max, this.imageH + paddingTop);
         }
+        boolean z = isSlideshow() && this.items.size() >= 2;
+        int dp = RichBlockChrome.quoteDepth(this.currentRow) > 0 ? AndroidUtilities.dp(8.0f) : 0;
+        if (z && (((i = this.currentPage) == 0 && this.pageOffset < 0.0f) || (i == this.items.size() - 1 && this.pageOffset > 0.0f))) {
+            canvas.drawRect(0.0f, paddingTop, max, this.imageH + paddingTop, this.backgroundPaint);
+        }
         if (this.items.size() == 1 && this.itemRects.size() == 1) {
             RectF rectF = (RectF) this.itemRects.get(0);
             if (rectF.left > 0.5f || rectF.right < max - 0.5f) {
@@ -877,9 +904,15 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
                 ((RichMediaItem) this.items.get(0)).drawBlurBackground(canvas, rectF2);
             }
         }
-        for (int i = 0; i < this.items.size() && i < this.itemRects.size(); i++) {
-            RichMediaItem richMediaItem = (RichMediaItem) this.items.get(i);
-            RectF rectF3 = (RectF) this.itemRects.get(i);
+        int i2 = 0;
+        while (i2 < this.items.size() && i2 < this.itemRects.size()) {
+            RichMediaItem richMediaItem = (RichMediaItem) this.items.get(i2);
+            RectF rectF3 = (RectF) this.itemRects.get(i2);
+            if (z) {
+                richMediaItem.setRoundRadius(i2 == 0 ? dp : 0, i2 == this.items.size() - 1 ? dp : 0, i2 == this.items.size() - 1 ? dp : 0, i2 == 0 ? dp : 0);
+            } else {
+                richMediaItem.setRoundRadius(0, 0, 0, 0);
+            }
             if (!richMediaItem.hasImage()) {
                 canvas.drawRect(rectF3, this.backgroundPaint);
             }
@@ -888,6 +921,7 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
             if (media != null && media.hasSpoiler && richMediaItem.hasImage()) {
                 richMediaItem.drawSpoiler(canvas, rectF3, getSpoilerEffect(), this);
             }
+            i2++;
         }
         canvas.restore();
     }
@@ -929,29 +963,38 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
     }
 
     private void drawDots(Canvas canvas, float f) {
-        if (slideDotDrawable == null) {
-            slideDotDrawable = getResources().getDrawable(R.drawable.slide_dot_small);
-            slideDotBigDrawable = getResources().getDrawable(R.drawable.slide_dot_big);
+        float clamp;
+        if (slideDotPaint == null) {
+            Paint paint = new Paint(1);
+            slideDotPaint = paint;
+            paint.setColor(-1);
         }
         int size = this.items.size();
-        int i = (int) (f * 255.0f);
-        int paddingTop = (getPaddingTop() + this.imageH) - AndroidUtilities.dp(23.0f);
+        float paddingTop = ((getPaddingTop() + this.imageH) - AndroidUtilities.dp(23.0f)) + AndroidUtilities.dp(5.0f);
         int dp = (AndroidUtilities.dp(7.0f) * size) + ((size - 1) * AndroidUtilities.dp(6.0f)) + AndroidUtilities.dp(4.0f);
         int paddingLeft = getPaddingLeft();
-        int i2 = 0;
-        int max = paddingLeft + ((Math.max(0, (getWidth() - paddingLeft) - getPaddingRight()) - dp) / 2);
-        while (i2 < size) {
-            int dp2 = AndroidUtilities.dp(4.0f) + max + (AndroidUtilities.dp(13.0f) * i2);
-            Drawable drawable = this.currentPage == i2 ? slideDotBigDrawable : slideDotDrawable;
-            drawable.setAlpha(i);
-            drawable.setBounds(dp2 - AndroidUtilities.dp(5.0f), paddingTop, dp2 + AndroidUtilities.dp(5.0f), AndroidUtilities.dp(10.0f) + paddingTop);
-            drawable.draw(canvas);
-            i2++;
+        int max = Math.max(0, (getWidth() - paddingLeft) - getPaddingRight());
+        float f2 = this.currentPage + this.pageOffset;
+        if (dp < max) {
+            clamp = paddingLeft + ((max - dp) / 2.0f);
+        } else {
+            float dp2 = AndroidUtilities.dp(4.0f) + paddingLeft;
+            int dp3 = AndroidUtilities.dp(13.0f);
+            clamp = dp2 - (Utilities.clamp(f2 - (((max - AndroidUtilities.dp(8.0f)) / 2) / dp3), Math.max(0, (size - (r13 * 2)) - 1), 0.0f) * dp3);
         }
+        canvas.save();
+        canvas.clipRect(paddingLeft, (getPaddingTop() + this.imageH) - AndroidUtilities.dp(23.0f), max + paddingLeft, getPaddingTop() + this.imageH);
+        for (int i = 0; i < size; i++) {
+            float max2 = Math.max(0.0f, 1.0f - Math.abs(i - f2));
+            slideDotPaint.setAlpha((int) (((max2 * 95.0f) + 160.0f) * f));
+            canvas.drawCircle(AndroidUtilities.dp(4.0f) + clamp + (AndroidUtilities.dp(13.0f) * i), paddingTop, AndroidUtilities.dp(2.0f) + (AndroidUtilities.dp(1.0f) * max2), slideDotPaint);
+        }
+        canvas.restore();
     }
 
     @Override // android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
+        VelocityTracker velocityTracker;
         float x = motionEvent.getX();
         float y = motionEvent.getY();
         int actionMasked = motionEvent.getActionMasked();
@@ -986,11 +1029,24 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
                 return super.onTouchEvent(motionEvent);
             }
             if (this.touchSlop == 0) {
-                this.touchSlop = ViewConfiguration.get(getContext()).getScaledTouchSlop();
+                ViewConfiguration viewConfiguration = ViewConfiguration.get(getContext());
+                this.touchSlop = viewConfiguration.getScaledTouchSlop();
+                this.minFlingVelocity = viewConfiguration.getScaledMinimumFlingVelocity();
+                this.maxFlingVelocity = viewConfiguration.getScaledMaximumFlingVelocity();
             }
             this.downX = x;
             this.downY = y;
             this.dragging = false;
+            VelocityTracker velocityTracker2 = this.velocityTracker;
+            if (velocityTracker2 == null) {
+                this.velocityTracker = VelocityTracker.obtain();
+            } else {
+                velocityTracker2.clear();
+            }
+            this.velocityTracker.addMovement(motionEvent);
+            if (getParent() != null) {
+                getParent().requestDisallowInterceptTouchEvent(true);
+            }
             ValueAnimator valueAnimator = this.settleAnimator;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
@@ -999,66 +1055,130 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
             this.pressedItem = this.currentPage;
             return true;
         }
-        if (actionMasked != 2) {
-            if (actionMasked != 1 && actionMasked != 3) {
-                return true;
+        float f = 0.0f;
+        if (actionMasked == 2) {
+            VelocityTracker velocityTracker3 = this.velocityTracker;
+            if (velocityTracker3 != null) {
+                velocityTracker3.addMovement(motionEvent);
+            }
+            float f2 = x - this.downX;
+            float f3 = y - this.downY;
+            if (!this.dragging && Math.abs(f2) > this.touchSlop && Math.abs(f2) > Math.abs(f3)) {
+                this.dragging = true;
+                this.pressedItem = -1;
             }
             if (this.dragging) {
-                this.dragging = false;
-                if (getParent() != null) {
-                    getParent().requestDisallowInterceptTouchEvent(false);
+                float f4 = (-f2) / this.slideW;
+                int i2 = this.currentPage;
+                if (i2 == 0 && f4 < 0.0f) {
+                    f4 *= 0.3f;
                 }
-                settle();
-            } else if (actionMasked == 1) {
-                int i2 = this.pressedItem;
-                int i3 = this.currentPage;
-                if (i2 == i3) {
-                    handleTap(i3);
+                if (i2 == this.items.size() - 1 && f4 > 0.0f) {
+                    f4 *= 0.3f;
                 }
+                this.pageOffset = f4;
+                requestLayout();
+                invalidate();
             }
-            this.pressedItem = -1;
             return true;
         }
-        float f = x - this.downX;
-        float f2 = y - this.downY;
-        if (!this.dragging && Math.abs(f) > this.touchSlop && Math.abs(f) > Math.abs(f2)) {
-            this.dragging = true;
-            this.pressedItem = -1;
-            if (getParent() != null) {
-                getParent().requestDisallowInterceptTouchEvent(true);
+        if (actionMasked != 1 && actionMasked != 3) {
+            return true;
+        }
+        if (actionMasked == 1 && (velocityTracker = this.velocityTracker) != null) {
+            velocityTracker.addMovement(motionEvent);
+            this.velocityTracker.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT, this.maxFlingVelocity);
+            float xVelocity = this.velocityTracker.getXVelocity();
+            float yVelocity = this.velocityTracker.getYVelocity();
+            if (Math.abs(xVelocity) >= this.minFlingVelocity && Math.abs(xVelocity) > Math.abs(yVelocity)) {
+                f = xVelocity;
             }
+        }
+        VelocityTracker velocityTracker4 = this.velocityTracker;
+        if (velocityTracker4 != null) {
+            velocityTracker4.recycle();
+            this.velocityTracker = null;
+        }
+        if (getParent() != null) {
+            getParent().requestDisallowInterceptTouchEvent(false);
         }
         if (this.dragging) {
-            float f3 = (-f) / this.slideW;
+            this.dragging = false;
+            settle(f);
+        } else if (actionMasked == 1) {
+            int i3 = this.pressedItem;
             int i4 = this.currentPage;
-            if (i4 == 0 && f3 < 0.0f) {
-                f3 *= 0.3f;
+            if (i3 == i4) {
+                handleTap(i4);
             }
-            if (i4 == this.items.size() - 1 && f3 > 0.0f) {
-                f3 *= 0.3f;
-            }
-            this.pageOffset = f3;
-            requestLayout();
-            invalidate();
         }
+        this.pressedItem = -1;
         return true;
     }
 
-    private void settle() {
+    private void settle(float f) {
         int i;
         int size = this.items.size();
-        float f = this.pageOffset;
-        if (f <= 0.5f || this.currentPage >= size - 1) {
-            i = (f >= -0.5f || this.currentPage <= 0) ? 0 : -1;
-        } else {
-            i = 1;
+        if (f >= 0.0f || this.currentPage >= size - 1) {
+            if (f <= 0.0f || this.currentPage <= 0) {
+                float f2 = this.pageOffset;
+                if (f2 <= 0.5f || this.currentPage >= size - 1) {
+                    if (f2 >= -0.5f || this.currentPage <= 0) {
+                        i = 0;
+                        final int i2 = i + this.currentPage;
+                        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.pageOffset, i2 - r1);
+                        this.settleAnimator = ofFloat;
+                        ofFloat.setDuration(220L);
+                        this.settleAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
+                        this.settleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.iv.RichMediaCell$$ExternalSyntheticLambda1
+                            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                                RichMediaCell.this.lambda$settle$5(valueAnimator);
+                            }
+                        });
+                        this.settleAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.iv.RichMediaCell.3
+                            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                            public void onAnimationEnd(Animator animator) {
+                                RichMediaCell.this.currentPage = i2;
+                                RichMediaCell.this.pageOffset = 0.0f;
+                                RichMediaCell.this.requestLayout();
+                                RichMediaCell.this.invalidate();
+                            }
+                        });
+                        this.settleAnimator.start();
+                    }
+                }
+            }
+            i = -1;
+            final int i22 = i + this.currentPage;
+            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.pageOffset, i22 - r1);
+            this.settleAnimator = ofFloat2;
+            ofFloat2.setDuration(220L);
+            this.settleAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
+            this.settleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.iv.RichMediaCell$$ExternalSyntheticLambda1
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    RichMediaCell.this.lambda$settle$5(valueAnimator);
+                }
+            });
+            this.settleAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.iv.RichMediaCell.3
+                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                public void onAnimationEnd(Animator animator) {
+                    RichMediaCell.this.currentPage = i22;
+                    RichMediaCell.this.pageOffset = 0.0f;
+                    RichMediaCell.this.requestLayout();
+                    RichMediaCell.this.invalidate();
+                }
+            });
+            this.settleAnimator.start();
         }
-        final int i2 = i + this.currentPage;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(f, i2 - r4);
-        this.settleAnimator = ofFloat;
-        ofFloat.setDuration(220L);
+        i = 1;
+        final int i222 = i + this.currentPage;
+        ValueAnimator ofFloat22 = ValueAnimator.ofFloat(this.pageOffset, i222 - r1);
+        this.settleAnimator = ofFloat22;
+        ofFloat22.setDuration(220L);
         this.settleAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
-        this.settleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.iv.RichMediaCell$$ExternalSyntheticLambda0
+        this.settleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.iv.RichMediaCell$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                 RichMediaCell.this.lambda$settle$5(valueAnimator);
@@ -1067,7 +1187,7 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
         this.settleAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.iv.RichMediaCell.3
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
-                RichMediaCell.this.currentPage = i2;
+                RichMediaCell.this.currentPage = i222;
                 RichMediaCell.this.pageOffset = 0.0f;
                 RichMediaCell.this.requestLayout();
                 RichMediaCell.this.invalidate();

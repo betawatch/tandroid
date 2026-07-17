@@ -1260,14 +1260,14 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             }
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:17:0x0057  */
-        /* JADX WARN: Removed duplicated region for block: B:24:0x0087  */
-        /* JADX WARN: Removed duplicated region for block: B:28:0x0096  */
-        /* JADX WARN: Removed duplicated region for block: B:55:0x010c  */
-        /* JADX WARN: Removed duplicated region for block: B:62:0x0123  */
-        /* JADX WARN: Removed duplicated region for block: B:67:0x0136  */
-        /* JADX WARN: Removed duplicated region for block: B:72:0x0173  */
-        /* JADX WARN: Removed duplicated region for block: B:76:0x0072  */
+        /* JADX WARN: Removed duplicated region for block: B:17:0x005f  */
+        /* JADX WARN: Removed duplicated region for block: B:24:0x008d  */
+        /* JADX WARN: Removed duplicated region for block: B:28:0x009c  */
+        /* JADX WARN: Removed duplicated region for block: B:54:0x0112  */
+        /* JADX WARN: Removed duplicated region for block: B:61:0x0129  */
+        /* JADX WARN: Removed duplicated region for block: B:66:0x013c  */
+        /* JADX WARN: Removed duplicated region for block: B:71:0x0179  */
+        /* JADX WARN: Removed duplicated region for block: B:75:0x0079  */
         @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -1281,17 +1281,18 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             int i10;
             DialogsActivity dialogsActivity;
             DialogStoriesCell dialogStoriesCell;
-            int dp;
             DialogsActivity dialogsActivity2;
             int childCount = getChildCount();
             int measureKeyboardHeight = measureKeyboardHeight();
             setBottomClip(0);
+            int measuredWidth = getMeasuredWidth();
+            int measuredHeight = getMeasuredHeight();
             for (int i11 = 0; i11 < childCount; i11++) {
                 View childAt = getChildAt(i11);
                 if (childAt != null && childAt.getVisibility() != 8) {
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
-                    int measuredWidth = childAt.getMeasuredWidth();
-                    int measuredHeight = childAt.getMeasuredHeight();
+                    int measuredWidth2 = childAt.getMeasuredWidth();
+                    int measuredHeight2 = childAt.getMeasuredHeight();
                     int i12 = layoutParams.gravity;
                     if (i12 == -1) {
                         i12 = 51;
@@ -1299,10 +1300,10 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     int i13 = i12 & 112;
                     int i14 = i12 & 7;
                     if (i14 == 1) {
-                        i5 = (((i3 - i) - measuredWidth) / 2) + layoutParams.leftMargin;
+                        i5 = ((measuredWidth - measuredWidth2) / 2) + layoutParams.leftMargin;
                         i6 = layoutParams.rightMargin;
                     } else if (i14 == 5) {
-                        i5 = i3 - measuredWidth;
+                        i5 = measuredWidth - measuredWidth2;
                         i6 = layoutParams.rightMargin;
                     } else {
                         i7 = layoutParams.leftMargin;
@@ -1310,7 +1311,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                             if (i13 == 48) {
                                 i10 = layoutParams.topMargin + getPaddingTop();
                             } else if (i13 == 80) {
-                                i8 = (i4 - i2) - measuredHeight;
+                                i8 = measuredHeight - measuredHeight2;
                                 i9 = layoutParams.bottomMargin;
                             } else {
                                 i10 = layoutParams.topMargin;
@@ -1325,15 +1326,13 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                                     } else if (childAt instanceof ViewPage) {
                                         i10 = 0;
                                     } else if (childAt == DialogsActivity.this.topPanelLayout || childAt == DialogsActivity.this.topBubblesFadeView || childAt == DialogsActivity.this.filterTabsView) {
-                                        i10 += ((BaseFragment) DialogsActivity.this).actionBar.getMeasuredHeight();
-                                        dp = AndroidUtilities.dp(48.0f);
-                                        i10 += dp;
+                                        i10 = i10 + ((BaseFragment) DialogsActivity.this).actionBar.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
                                     } else {
                                         DialogStoriesCell dialogStoriesCell2 = DialogsActivity.this.dialogStoriesCell;
                                         if (dialogStoriesCell2 != null && dialogStoriesCell2.getPremiumHint() == childAt) {
                                         }
                                     }
-                                    childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
+                                    childAt.layout(i7, i10, measuredWidth2 + i7, measuredHeight2 + i10);
                                 }
                             }
                             i10 = ((BaseFragment) DialogsActivity.this).actionBar.getMeasuredHeight();
@@ -1349,16 +1348,15 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                             }
                             dialogStoriesCell = DialogsActivity.this.dialogStoriesCell;
                             if (childAt == dialogStoriesCell && dialogStoriesCell.getPremiumHint() != null) {
-                                DialogsActivity.this.dialogStoriesCell.getPremiumHint().layout(i7, (i10 - AndroidUtilities.dp(54.0f)) + measuredHeight, i7 + measuredWidth, (i10 - AndroidUtilities.dp(54.0f)) + measuredHeight + DialogsActivity.this.dialogStoriesCell.getPremiumHint().getMeasuredHeight());
+                                DialogsActivity.this.dialogStoriesCell.getPremiumHint().layout(i7, (i10 - AndroidUtilities.dp(54.0f)) + measuredHeight2, i7 + measuredWidth2, (i10 - AndroidUtilities.dp(54.0f)) + measuredHeight2 + DialogsActivity.this.dialogStoriesCell.getPremiumHint().getMeasuredHeight());
                             }
                             SearchTabsAndFiltersLayout unused = DialogsActivity.this.searchTabsAndFiltersLayout;
                             if (childAt == DialogsActivity.this.fragmentSearchField) {
-                                dp = AndroidUtilities.dp(2.0f);
-                                i10 += dp;
+                                i10 += AndroidUtilities.dp(2.0f);
                             }
-                            childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
+                            childAt.layout(i7, i10, measuredWidth2 + i7, measuredHeight2 + i10);
                         } else {
-                            i8 = (((i4 - i2) - measuredHeight) / 2) + layoutParams.topMargin;
+                            i8 = ((measuredHeight - measuredHeight2) / 2) + layoutParams.topMargin;
                             i9 = layoutParams.bottomMargin;
                         }
                         i10 = i8 - i9;
@@ -1376,12 +1374,12 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                         }
                         dialogStoriesCell = DialogsActivity.this.dialogStoriesCell;
                         if (childAt == dialogStoriesCell) {
-                            DialogsActivity.this.dialogStoriesCell.getPremiumHint().layout(i7, (i10 - AndroidUtilities.dp(54.0f)) + measuredHeight, i7 + measuredWidth, (i10 - AndroidUtilities.dp(54.0f)) + measuredHeight + DialogsActivity.this.dialogStoriesCell.getPremiumHint().getMeasuredHeight());
+                            DialogsActivity.this.dialogStoriesCell.getPremiumHint().layout(i7, (i10 - AndroidUtilities.dp(54.0f)) + measuredHeight2, i7 + measuredWidth2, (i10 - AndroidUtilities.dp(54.0f)) + measuredHeight2 + DialogsActivity.this.dialogStoriesCell.getPremiumHint().getMeasuredHeight());
                         }
                         SearchTabsAndFiltersLayout unused2 = DialogsActivity.this.searchTabsAndFiltersLayout;
                         if (childAt == DialogsActivity.this.fragmentSearchField) {
                         }
-                        childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
+                        childAt.layout(i7, i10, measuredWidth2 + i7, measuredHeight2 + i10);
                     }
                     i7 = i5 - i6;
                     if (i13 == 16) {
@@ -1401,7 +1399,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     SearchTabsAndFiltersLayout unused22 = DialogsActivity.this.searchTabsAndFiltersLayout;
                     if (childAt == DialogsActivity.this.fragmentSearchField) {
                     }
-                    childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
+                    childAt.layout(i7, i10, measuredWidth2 + i7, measuredHeight2 + i10);
                 }
             }
             if (DialogsActivity.this.searchViewPager != null) {
@@ -3407,18 +3405,18 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         if (r40.communityId != 0) goto L100;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x0c91  */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x0cdd  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x0d0d  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x0d4f  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x0d67  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x0d8f  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x0e04  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x0e4a  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x0ea6  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x0edf  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x0e65  */
-    /* JADX WARN: Removed duplicated region for block: B:198:0x0d15  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x0c94  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0ce0  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x0d10  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x0d52  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x0d6a  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x0d92  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x0e07  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x0e4d  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x0ea9  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x0ee2  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x0e68  */
+    /* JADX WARN: Removed duplicated region for block: B:198:0x0d18  */
     /* JADX WARN: Type inference failed for: r0v138, types: [org.telegram.ui.ActionBar.ActionBar] */
     /* JADX WARN: Type inference failed for: r0v24, types: [android.widget.EditText, org.telegram.ui.Components.EditTextBoldCursor] */
     /* JADX WARN: Type inference failed for: r0v278, types: [android.view.ViewGroup, org.telegram.ui.ActionBar.ActionBarMenuItem] */
@@ -3432,7 +3430,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     /* JADX WARN: Type inference failed for: r15v0 */
     /* JADX WARN: Type inference failed for: r15v1, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r15v4 */
-    /* JADX WARN: Type inference failed for: r1v222, types: [org.telegram.ui.Components.RecyclerListView, org.telegram.ui.DialogsActivity$DialogsRecyclerView] */
+    /* JADX WARN: Type inference failed for: r1v223, types: [org.telegram.ui.Components.RecyclerListView, org.telegram.ui.DialogsActivity$DialogsRecyclerView] */
     /* JADX WARN: Type inference failed for: r1v35, types: [org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory] */
     /* JADX WARN: Type inference failed for: r4v33, types: [org.telegram.ui.Components.RecyclerListView, org.telegram.ui.DialogsActivity$DialogsRecyclerView] */
     /* JADX WARN: Type inference failed for: r4v34, types: [org.telegram.ui.Components.RecyclerListView, org.telegram.ui.DialogsActivity$DialogsRecyclerView] */
@@ -4303,7 +4301,6 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 }
             };
             this.fragmentLocationContextView = fragmentContextView;
-            fragmentContextView.isInsideBubble = true;
             this.fragmentLocationContextViewWrapper.addView(fragmentContextView);
             FragmentContextView fragmentContextView2 = new FragmentContextView(context, this, false) { // from class: org.telegram.ui.DialogsActivity.21
                 @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
@@ -4312,8 +4309,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 }
             };
             this.fragmentContextView = fragmentContextView2;
-            fragmentContextView2.isInsideBubble = true;
             this.fragmentContextViewWrapper.addView(fragmentContextView2);
+            this.topPanelLayout.setCallFragmentContextView(this.fragmentContextView);
             DialogsHintCell dialogsHintCell = new DialogsHintCell(context);
             this.dialogsHintCell = dialogsHintCell;
             dialogsHintCell.setBackground(Theme.getSelectorDrawable(false));
@@ -9923,19 +9920,19 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:130:0x049f  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x04b6  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x04fa  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x051e  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x041b  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x04a7  */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x04be  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x0502  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x0526  */
     /* JADX WARN: Removed duplicated region for block: B:21:0x0059  */
-    /* JADX WARN: Removed duplicated region for block: B:244:0x03c8  */
-    /* JADX WARN: Removed duplicated region for block: B:264:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:246:0x03d0  */
+    /* JADX WARN: Removed duplicated region for block: B:266:0x0067  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0285 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:28:0x0286  */
-    /* JADX WARN: Removed duplicated region for block: B:336:0x0254  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x03c1  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x03e6  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0413  */
+    /* JADX WARN: Removed duplicated region for block: B:338:0x0254  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x03c9  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x03ee  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -10128,7 +10125,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     }
                     if (this.onlySelect) {
                         if (validateSlowModeDialog(j2)) {
-                            if ((!getMessagesController().isForum(j2) || isBotForumWithEmptyTopics(j2)) && (!this.selectedDialogs.isEmpty() || (this.initialDialogsType == 3 && this.selectAlertString != null))) {
+                            if (((!getMessagesController().isForum(j2) && !getMessagesController().isCommunity(j2)) || isBotForumWithEmptyTopics(j2)) && (!this.selectedDialogs.isEmpty() || (this.initialDialogsType == 3 && this.selectAlertString != null))) {
                                 if (this.selectedDialogs.contains(Long.valueOf(j2)) || checkCanWrite(j2)) {
                                     boolean addOrRemoveSelectedDialog = addOrRemoveSelectedDialog(j2, view);
                                     SearchViewPager searchViewPager5 = this.searchViewPager;

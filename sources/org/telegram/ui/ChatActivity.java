@@ -4157,31 +4157,31 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     /* JADX WARN: Removed duplicated region for block: B:353:0x0e23  */
     /* JADX WARN: Removed duplicated region for block: B:356:0x0e3d  */
     /* JADX WARN: Removed duplicated region for block: B:359:0x0e66  */
-    /* JADX WARN: Removed duplicated region for block: B:364:0x0f67  */
-    /* JADX WARN: Removed duplicated region for block: B:372:0x10fa  */
-    /* JADX WARN: Removed duplicated region for block: B:375:0x111a  */
-    /* JADX WARN: Removed duplicated region for block: B:382:0x1154  */
-    /* JADX WARN: Removed duplicated region for block: B:391:0x119e  */
-    /* JADX WARN: Removed duplicated region for block: B:403:0x11f8  */
-    /* JADX WARN: Removed duplicated region for block: B:406:0x1236  */
-    /* JADX WARN: Removed duplicated region for block: B:409:0x129d  */
-    /* JADX WARN: Removed duplicated region for block: B:422:0x13a3  */
-    /* JADX WARN: Removed duplicated region for block: B:454:0x16db  */
-    /* JADX WARN: Removed duplicated region for block: B:465:0x1781  */
-    /* JADX WARN: Removed duplicated region for block: B:468:0x179b  */
-    /* JADX WARN: Removed duplicated region for block: B:483:0x1831  */
-    /* JADX WARN: Removed duplicated region for block: B:486:0x1880  */
-    /* JADX WARN: Removed duplicated region for block: B:493:0x18ff  */
-    /* JADX WARN: Removed duplicated region for block: B:496:0x19aa  */
-    /* JADX WARN: Removed duplicated region for block: B:497:0x1907  */
-    /* JADX WARN: Removed duplicated region for block: B:500:0x19fd  */
-    /* JADX WARN: Removed duplicated region for block: B:503:0x1a71  */
-    /* JADX WARN: Removed duplicated region for block: B:513:0x1ab5  */
-    /* JADX WARN: Removed duplicated region for block: B:523:0x1892  */
-    /* JADX WARN: Removed duplicated region for block: B:533:0x1125  */
-    /* JADX WARN: Removed duplicated region for block: B:534:0x10fc  */
-    /* JADX WARN: Removed duplicated region for block: B:535:0x0f69  */
-    /* JADX WARN: Removed duplicated region for block: B:536:0x0f02  */
+    /* JADX WARN: Removed duplicated region for block: B:364:0x0f68  */
+    /* JADX WARN: Removed duplicated region for block: B:372:0x10fb  */
+    /* JADX WARN: Removed duplicated region for block: B:375:0x111b  */
+    /* JADX WARN: Removed duplicated region for block: B:382:0x1155  */
+    /* JADX WARN: Removed duplicated region for block: B:391:0x119f  */
+    /* JADX WARN: Removed duplicated region for block: B:403:0x11f9  */
+    /* JADX WARN: Removed duplicated region for block: B:406:0x1237  */
+    /* JADX WARN: Removed duplicated region for block: B:409:0x129e  */
+    /* JADX WARN: Removed duplicated region for block: B:422:0x13a4  */
+    /* JADX WARN: Removed duplicated region for block: B:454:0x16dc  */
+    /* JADX WARN: Removed duplicated region for block: B:465:0x1782  */
+    /* JADX WARN: Removed duplicated region for block: B:468:0x179c  */
+    /* JADX WARN: Removed duplicated region for block: B:483:0x1832  */
+    /* JADX WARN: Removed duplicated region for block: B:486:0x1881  */
+    /* JADX WARN: Removed duplicated region for block: B:493:0x1900  */
+    /* JADX WARN: Removed duplicated region for block: B:496:0x19ab  */
+    /* JADX WARN: Removed duplicated region for block: B:497:0x1908  */
+    /* JADX WARN: Removed duplicated region for block: B:500:0x19fe  */
+    /* JADX WARN: Removed duplicated region for block: B:503:0x1a72  */
+    /* JADX WARN: Removed duplicated region for block: B:513:0x1ab6  */
+    /* JADX WARN: Removed duplicated region for block: B:523:0x1893  */
+    /* JADX WARN: Removed duplicated region for block: B:533:0x1126  */
+    /* JADX WARN: Removed duplicated region for block: B:534:0x10fd  */
+    /* JADX WARN: Removed duplicated region for block: B:535:0x0f6a  */
+    /* JADX WARN: Removed duplicated region for block: B:536:0x0f03  */
     /* JADX WARN: Removed duplicated region for block: B:537:0x0e40  */
     /* JADX WARN: Removed duplicated region for block: B:538:0x0e25  */
     /* JADX WARN: Removed duplicated region for block: B:540:0x0dc6  */
@@ -5584,9 +5584,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         }
                     };
                     this.fragmentContextView = fragmentContextView;
-                    fragmentContextView.isInsideBubble = true;
-                    this.fragmentLocationContextView.isInsideBubble = true;
-                    this.fragmentContextViewWrapper.addView(fragmentContextView);
+                    this.topPanelLayout.setCallFragmentContextView(fragmentContextView);
+                    this.fragmentContextViewWrapper.addView(this.fragmentContextView);
                     this.fragmentLocationContextViewWrapper.addView(this.fragmentLocationContextView);
                     this.fragmentContextView.setEnabled(!this.inPreviewMode);
                     this.fragmentLocationContextView.setEnabled(!this.inPreviewMode);
@@ -12694,6 +12693,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
         checkUi_chatListViewPaddings();
         checkUi_messagesSearchListPadding();
+        invalidateClipRectForBackgroundAndChatList();
         boolean isVisible = windowInsetsCompat.isVisible(WindowInsetsCompat.Type.ime());
         if (this.lastImeVisible != isVisible) {
             this.lastImeVisible = isVisible;
@@ -27148,9 +27148,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     }
                     motionBackgroundDrawable.setIndeterminateAnimation(z2);
                     motionBackgroundDrawable.setIndeterminateSpeedScale(z2 ? 1.5f : 1.0f);
-                    motionBackgroundDrawable.lambda$new$0();
+                    motionBackgroundDrawable.updateAnimation();
                 } else if (z2) {
-                    motionBackgroundDrawable.lambda$new$0();
+                    motionBackgroundDrawable.updateAnimation();
                 }
             }
         }
@@ -65732,6 +65732,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         if (this.contentView == null) {
             return;
         }
+        boolean z = this.insetSystemLeft > 0 || this.insetSystemRight > 0;
         int max = (int) Math.max(0.0f, (this.windowInsetsStateHolder.getAnimatedImeBottomInset() * this.windowInsetsStateHolder.getAnimatedKeyboardVisibility()) - AndroidUtilities.dp(29.0f));
         ChatActivityFragmentView chatActivityFragmentView = this.contentView;
         if (chatActivityFragmentView.backgroundView != null) {
@@ -65746,7 +65747,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
         if (this.chatActivityFadeView != null) {
             this.clipBoundsTmp.set(0, 0, this.contentView.getMeasuredWidth(), this.contentView.getMeasuredHeight() - ((int) Math.max(0.0f, Math.min(this.windowInsetsStateHolder.getInAppKeyboardHeight(), this.windowInsetsStateHolder.getAnimatedImeBottomInset() * this.windowInsetsStateHolder.getAnimatedKeyboardVisibility()) - AndroidUtilities.dp(29.0f))));
-            this.chatActivityFadeView.setClipBounds(this.clipBoundsTmp);
+            this.chatActivityFadeView.setClipBounds(z ? null : this.clipBoundsTmp);
         }
     }
 

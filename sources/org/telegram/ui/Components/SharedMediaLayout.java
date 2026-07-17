@@ -1688,7 +1688,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
     /* JADX WARN: Removed duplicated region for block: B:168:0x0d3a A[EDGE_INSN: B:168:0x0d3a->B:169:0x0d3a BREAK  A[LOOP:3: B:140:0x09c9->B:164:0x0c32], SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:171:0x0d40  */
     /* JADX WARN: Removed duplicated region for block: B:174:0x0db5  */
-    /* JADX WARN: Removed duplicated region for block: B:181:0x0f2a  */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x0f2e  */
     /* JADX WARN: Type inference failed for: r10v10 */
     /* JADX WARN: Type inference failed for: r10v15 */
     /* JADX WARN: Type inference failed for: r10v6, types: [boolean, int] */
@@ -3136,8 +3136,8 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                     }
                 };
                 this.fragmentContextView = fragmentContextView;
-                fragmentContextView.isInsideBubble = true;
                 this.fragmentContextViewWrapper.addView(fragmentContextView);
+                this.topPanelLayout.setCallFragmentContextView(this.fragmentContextView);
                 addView(this.topPanelLayout, LayoutHelper.createFrame(-1, -2.0f, 48, 0.0f, 34.0f, 0.0f, 0.0f));
                 this.fragmentContextView.setDelegate(new FragmentContextView.FragmentContextViewDelegate() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda12
                     @Override // org.telegram.ui.Components.FragmentContextView.FragmentContextViewDelegate

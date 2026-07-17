@@ -214,8 +214,8 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
             }
         };
         this.fragmentContextView = fragmentContextView;
-        fragmentContextView.isInsideBubble = true;
         this.fragmentContextViewWrapper.addView(fragmentContextView);
+        this.topPanelLayout.setCallFragmentContextView(this.fragmentContextView);
         FrameLayout.LayoutParams createFrame2 = LayoutHelper.createFrame(-1, -2.0f, 51, 0.0f, 8.0f, 0.0f, 4.0f);
         ((ViewGroup.MarginLayoutParams) createFrame2).topMargin += AndroidUtilities.statusBarHeight + AndroidUtilities.dp(27.0f);
         frameLayout.addView(this.topPanelLayout, createFrame2);

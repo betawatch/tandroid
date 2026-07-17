@@ -2024,7 +2024,7 @@ public class AndroidUtilities {
     }
 
     public static void lockOrientation(Activity activity) {
-        if (activity == null || prevOrientation != -10) {
+        if (activity == null || prevOrientation != -10 || isTabletInternal()) {
             return;
         }
         try {
@@ -2063,7 +2063,7 @@ public class AndroidUtilities {
     }
 
     public static void lockOrientation(Activity activity, int i) {
-        if (activity == null) {
+        if (activity == null || isTabletInternal()) {
             return;
         }
         try {

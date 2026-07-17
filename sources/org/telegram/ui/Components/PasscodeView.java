@@ -1015,7 +1015,7 @@ public class PasscodeView extends FrameLayout implements NotificationCenter.Noti
         this.backgroundAnimationSpring.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Components.PasscodeView$$ExternalSyntheticLambda16
             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
             public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f, float f2) {
-                MotionBackgroundDrawable.this.lambda$new$0();
+                MotionBackgroundDrawable.this.updateAnimation();
             }
         });
         this.backgroundAnimationSpring.start();

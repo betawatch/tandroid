@@ -14,6 +14,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
@@ -43,6 +44,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.RecyclerListView$$ExternalSyntheticLambda1;
 import org.telegram.ui.Components.SimpleThemeDescription;
 import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Components.chat.ViewPositionWatcher;
 import org.telegram.ui.Stories.recorder.HintView2;
 
 /* loaded from: classes4.dex */
@@ -130,13 +132,13 @@ public abstract class GradientHeaderActivity extends BaseFragment {
         return i;
     }
 
-    static /* synthetic */ float access$1516(GradientHeaderActivity gradientHeaderActivity, float f) {
+    static /* synthetic */ float access$1716(GradientHeaderActivity gradientHeaderActivity, float f) {
         float f2 = gradientHeaderActivity.progress + f;
         gradientHeaderActivity.progress = f2;
         return f2;
     }
 
-    static /* synthetic */ float access$1524(GradientHeaderActivity gradientHeaderActivity, float f) {
+    static /* synthetic */ float access$1724(GradientHeaderActivity gradientHeaderActivity, float f) {
         float f2 = gradientHeaderActivity.progress - f;
         gradientHeaderActivity.progress = f2;
         return f2;
@@ -295,6 +297,7 @@ public abstract class GradientHeaderActivity extends BaseFragment {
         private final Paint backgroundGradientPaint;
         private final Paint backgroundPaint;
         boolean bottomInterceptedTouch;
+        boolean isTouchedActionBarBackButton;
         int lastSize;
         private Boolean lightStatusBar;
         boolean subtitleInterceptedTouch;
@@ -334,6 +337,19 @@ public abstract class GradientHeaderActivity extends BaseFragment {
 
         @Override // android.view.ViewGroup, android.view.View
         public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+            ImageView backButton;
+            if (((BaseFragment) GradientHeaderActivity.this).actionBar != null && (backButton = ((BaseFragment) GradientHeaderActivity.this).actionBar.getBackButton()) != null && backButton.getVisibility() == 0) {
+                if (motionEvent.getAction() == 0 && ViewPositionWatcher.computeRectInParent(backButton, this, AndroidUtilities.rectTmp)) {
+                    this.isTouchedActionBarBackButton = true;
+                }
+                if (this.isTouchedActionBarBackButton) {
+                    boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+                    if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                        this.isTouchedActionBarBackButton = false;
+                    }
+                    return dispatchTouchEvent;
+                }
+            }
             BackgroundView backgroundView = GradientHeaderActivity.this.backgroundView;
             float x = backgroundView.getX() + backgroundView.subtitleView.getX();
             float y = backgroundView.getY() + backgroundView.subtitleView.getY();
@@ -393,12 +409,12 @@ public abstract class GradientHeaderActivity extends BaseFragment {
             BackgroundView backgroundView = gradientHeaderActivity.backgroundView;
             if (!gradientHeaderActivity.isDialogVisible) {
                 if (GradientHeaderActivity.this.inc) {
-                    GradientHeaderActivity.access$1516(GradientHeaderActivity.this, 0.016f);
+                    GradientHeaderActivity.access$1716(GradientHeaderActivity.this, 0.016f);
                     if (GradientHeaderActivity.this.progress > 3.0f) {
                         GradientHeaderActivity.this.inc = false;
                     }
                 } else {
-                    GradientHeaderActivity.access$1524(GradientHeaderActivity.this, 0.016f);
+                    GradientHeaderActivity.access$1724(GradientHeaderActivity.this, 0.016f);
                     if (GradientHeaderActivity.this.progress < 1.0f) {
                         GradientHeaderActivity.this.inc = true;
                     }

@@ -49,7 +49,9 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
+import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -384,11 +386,11 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         voIPFragment4.screenWasWakeup = !isInteractive;
         voIPWindowView2.setLockOnScreen(voIPFragment4.deviceIsLocked);
         voIPFragment3.windowView = voIPWindowView2;
-        voIPWindowView2.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda2
-            @Override // android.view.View.OnApplyWindowInsetsListener
-            public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-                WindowInsets lambda$show$3;
-                lambda$show$3 = VoIPFragment.lambda$show$3(VoIPFragment.this, view, windowInsets);
+        ViewCompat.setOnApplyWindowInsetsListener(voIPWindowView2, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda2
+            @Override // androidx.core.view.OnApplyWindowInsetsListener
+            public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
+                WindowInsetsCompat lambda$show$3;
+                lambda$show$3 = VoIPFragment.lambda$show$3(VoIPFragment.this, view, windowInsetsCompat);
                 return lambda$show$3;
             }
         });
@@ -409,15 +411,9 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ WindowInsets lambda$show$3(VoIPFragment voIPFragment, View view, WindowInsets windowInsets) {
-        WindowInsets windowInsets2;
-        int i = Build.VERSION.SDK_INT;
-        voIPFragment.setInsets(windowInsets);
-        if (i >= 30) {
-            windowInsets2 = WindowInsets.CONSUMED;
-            return windowInsets2;
-        }
-        return windowInsets.consumeSystemWindowInsets();
+    public static /* synthetic */ WindowInsetsCompat lambda$show$3(VoIPFragment voIPFragment, View view, WindowInsetsCompat windowInsetsCompat) {
+        voIPFragment.setInsets(windowInsetsCompat.toWindowInsets());
+        return WindowInsetsCompat.CONSUMED;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -851,7 +847,6 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         frameLayout.setBackgroundColor(-16777216);
         updateSystemBarColors();
         this.fragmentView = frameLayout;
-        frameLayout.setFitsSystemWindows(true);
         VoIPServiceState sharedState = VoIPService.getSharedState();
         this.gradientLayout = new VoIpGradientLayout(context, sharedState != null && sharedState.isConference(), this.backgroundProvider);
         VoIPTextureView voIPTextureView = new VoIPTextureView(context, false, true, false, false);
@@ -3214,7 +3209,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void setVideoAction(VoIpSwitchLayout voIpSwitchLayout, final VoIPService voIPService, boolean z) {
+    public void setVideoAction(VoIpSwitchLayout voIpSwitchLayout, VoIPService voIPService, boolean z) {
         if ((this.currentUserIsVideo || this.callingUserIsVideo) ? true : voIPService.isVideoAvailable()) {
             if (this.currentUserIsVideo) {
                 if (voIPService.isScreencast()) {
@@ -3228,7 +3223,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
             voIpSwitchLayout.setOnBtnClickedListener(new VoIpSwitchLayout.VoIpButtonView.OnBtnClickedListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda44
                 @Override // org.telegram.ui.Components.voip.VoIpSwitchLayout.VoIpButtonView.OnBtnClickedListener
                 public final void onClicked(View view) {
-                    VoIPFragment.this.lambda$setVideoAction$38(voIPService, view);
+                    VoIPFragment.this.lambda$setVideoAction$37(view);
                 }
             });
             voIpSwitchLayout.setEnabled(true);
@@ -3240,7 +3235,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setVideoAction$38(VoIPService voIPService, View view) {
+    public /* synthetic */ void lambda$setVideoAction$37(View view) {
         int checkSelfPermission;
         AndroidUtilities.cancelRunOnUIThread(this.hideUIRunnable);
         this.hideUiRunnableWaiting = false;
@@ -3293,13 +3288,13 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         voIpSwitchLayout.setOnBtnClickedListener(new VoIpSwitchLayout.VoIpButtonView.OnBtnClickedListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda36
             @Override // org.telegram.ui.Components.voip.VoIpSwitchLayout.VoIpButtonView.OnBtnClickedListener
             public final void onClicked(View view) {
-                VoIPFragment.this.lambda$setSpeakerPhoneAction$39(i, voIpSwitchLayout, voIPService, view);
+                VoIPFragment.this.lambda$setSpeakerPhoneAction$38(i, voIpSwitchLayout, voIPService, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setSpeakerPhoneAction$39(int i, VoIpSwitchLayout voIpSwitchLayout, VoIPService voIPService, View view) {
+    public /* synthetic */ void lambda$setSpeakerPhoneAction$38(int i, VoIpSwitchLayout voIpSwitchLayout, VoIPService voIPService, View view) {
         if (VoIPService.getSharedInstance() != null) {
             AndroidUtilities.cancelRunOnUIThread(this.hideUIRunnable);
             this.hideUiRunnableWaiting = false;
@@ -3323,14 +3318,14 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
             voIpSwitchLayout.setOnBtnClickedListener(new VoIpSwitchLayout.VoIpButtonView.OnBtnClickedListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda43
                 @Override // org.telegram.ui.Components.voip.VoIpSwitchLayout.VoIpButtonView.OnBtnClickedListener
                 public final void onClicked(View view) {
-                    VoIPFragment.this.lambda$setFrontalCameraAction$40(voIPService, voIpSwitchLayout, view);
+                    VoIPFragment.this.lambda$setFrontalCameraAction$39(voIPService, voIpSwitchLayout, view);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setFrontalCameraAction$40(VoIPService voIPService, VoIpSwitchLayout voIpSwitchLayout, View view) {
+    public /* synthetic */ void lambda$setFrontalCameraAction$39(VoIPService voIPService, VoIpSwitchLayout voIpSwitchLayout, View view) {
         String string;
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null) {
@@ -3462,7 +3457,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
                 runAcceptCallAnimation(new Runnable() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        VoIPFragment.lambda$onRequestPermissionsResultInternal$41();
+                        VoIPFragment.lambda$onRequestPermissionsResultInternal$40();
                     }
                 });
             } else {
@@ -3474,7 +3469,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
                     VoIPHelper.permissionDenied(this.activity, new Runnable() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            VoIPFragment.this.lambda$onRequestPermissionsResultInternal$42();
+                            VoIPFragment.this.lambda$onRequestPermissionsResultInternal$41();
                         }
                     }, i);
                     return;
@@ -3494,14 +3489,14 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onRequestPermissionsResultInternal$41() {
+    public static /* synthetic */ void lambda$onRequestPermissionsResultInternal$40() {
         if (VoIPService.getSharedState() != null) {
             VoIPService.getSharedState().acceptIncomingCall();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onRequestPermissionsResultInternal$42() {
+    public /* synthetic */ void lambda$onRequestPermissionsResultInternal$41() {
         this.windowView.finish();
     }
 
@@ -3582,13 +3577,13 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         show.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda39
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                VoIPFragment.this.lambda$showErrorDialog$43(dialogInterface);
+                VoIPFragment.this.lambda$showErrorDialog$42(dialogInterface);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showErrorDialog$43(DialogInterface dialogInterface) {
+    public /* synthetic */ void lambda$showErrorDialog$42(DialogInterface dialogInterface) {
         this.windowView.finish();
     }
 
@@ -3596,13 +3591,13 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
         AlertsCreator.createDrawOverlayPermissionDialog(this.activity, new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda10
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                VoIPFragment.this.lambda$requestInlinePermissions$44(alertDialog, i);
+                VoIPFragment.this.lambda$requestInlinePermissions$43(alertDialog, i);
             }
         }, true).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$requestInlinePermissions$44(AlertDialog alertDialog, int i) {
+    public /* synthetic */ void lambda$requestInlinePermissions$43(AlertDialog alertDialog, int i) {
         VoIPWindowView voIPWindowView = this.windowView;
         if (voIPWindowView != null) {
             voIPWindowView.finish();
@@ -3625,7 +3620,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
                     TLRPC.TL_messages_stickerSet stickerSet = MediaDataController.getInstance(this.currentAccount).getStickerSet(tL_inputStickerSetShortName, 0, false, true, new Utilities.Callback() { // from class: org.telegram.ui.VoIPFragment$$ExternalSyntheticLambda9
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
-                            VoIPFragment.this.lambda$replaceEmojiToLottieFrame$45((TLRPC.TL_messages_stickerSet) obj);
+                            VoIPFragment.this.lambda$replaceEmojiToLottieFrame$44((TLRPC.TL_messages_stickerSet) obj);
                         }
                     });
                     if (stickerSet == null) {
@@ -3653,7 +3648,7 @@ public class VoIPFragment implements VoIPService.StateListener, NotificationCent
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$replaceEmojiToLottieFrame$45(TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+    public /* synthetic */ void lambda$replaceEmojiToLottieFrame$44(TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
         updateKeyView(true);
     }
 

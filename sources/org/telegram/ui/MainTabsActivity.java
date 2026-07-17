@@ -246,17 +246,26 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
 
             @Override // android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
-                int blendARGB = ColorUtils.blendARGB(MainTabsActivity.this.getThemedColor(Theme.key_windowBackgroundGray), MainTabsActivity.this.getThemedColor(Theme.key_windowBackgroundWhite), MainTabsActivity.this.viewPager.getPositionVisibility(0));
+                int estBackgroundColor = MainTabsActivity.this.getEstBackgroundColor();
                 if (MainTabsActivity.this.insetLeft != 0) {
-                    canvas.drawRect(0.0f, 0.0f, MainTabsActivity.this.insetLeft, getHeight(), Theme.fillingPaint(blendARGB));
+                    canvas.drawRect(0.0f, 0.0f, MainTabsActivity.this.insetLeft, getHeight(), Theme.fillingPaint(estBackgroundColor));
                 }
                 if (MainTabsActivity.this.insetRight != 0) {
-                    canvas.drawRect(getWidth() - MainTabsActivity.this.insetRight, 0.0f, getWidth(), getHeight(), Theme.fillingPaint(blendARGB));
+                    canvas.drawRect(getWidth() - MainTabsActivity.this.insetRight, 0.0f, getWidth(), getHeight(), Theme.fillingPaint(estBackgroundColor));
                 }
                 super.dispatchDraw(canvas);
                 MainTabsActivity.this.blur3_invalidateBlur();
+                MainTabsActivity.this.blur3_updateFadeColors();
             }
         };
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public int getEstBackgroundColor() {
+        int themedColor = getThemedColor(Theme.key_windowBackgroundGray);
+        int themedColor2 = getThemedColor(Theme.key_windowBackgroundWhite);
+        ViewPagerActivity.ViewPagerActivityPagerLayout viewPagerActivityPagerLayout = this.viewPager;
+        return ColorUtils.blendARGB(themedColor, themedColor2, viewPagerActivityPagerLayout != null ? viewPagerActivityPagerLayout.getPositionVisibility(0) : 1.0f);
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -1190,8 +1199,17 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public void blur3_updateFadeColors() {
+        this.iBlur3SourceColor.setColor(getEstBackgroundColor());
+        View view = this.fadeView;
+        if (view != null) {
+            view.invalidate();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public void blur3_updateColors() {
-        this.iBlur3SourceColor.setColor(getThemedColor(Theme.key_windowBackgroundWhite));
+        blur3_updateFadeColors();
         BlurredBackgroundDrawable blurredBackgroundDrawable = this.tabsViewBackground;
         if (blurredBackgroundDrawable != null) {
             blurredBackgroundDrawable.updateColors();

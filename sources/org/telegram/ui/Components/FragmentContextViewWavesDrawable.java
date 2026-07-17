@@ -5,7 +5,6 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RadialGradient;
-import android.graphics.RectF;
 import android.graphics.Shader;
 import android.os.SystemClock;
 import android.view.View;
@@ -35,12 +34,7 @@ public class FragmentContextViewWavesDrawable {
     float progressToState = 1.0f;
     ArrayList parents = new ArrayList();
     Paint paint = new Paint(1);
-    LineBlobDrawable lineBlobDrawable = new LineBlobDrawable(5);
-    LineBlobDrawable lineBlobDrawable1 = new LineBlobDrawable(7);
-    LineBlobDrawable lineBlobDrawable2 = new LineBlobDrawable(8);
-    RectF rect = new RectF();
     Path path = new Path();
-    private final Paint selectedPaint = new Paint(1);
 
     public FragmentContextViewWavesDrawable() {
         for (int i = 0; i < 4; i++) {
@@ -48,7 +42,7 @@ public class FragmentContextViewWavesDrawable {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x006b  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x006a  */
     /* JADX WARN: Removed duplicated region for block: B:59:0x00d0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -59,7 +53,6 @@ public class FragmentContextViewWavesDrawable {
         long j2;
         int i;
         float f6;
-        int i2;
         checkColors();
         boolean z2 = fragmentContextView != null && this.parents.size() > 0;
         if (f2 > f4) {
@@ -77,56 +70,51 @@ public class FragmentContextViewWavesDrawable {
             if (j < 3) {
                 j2 = j;
                 z = false;
-                float f7 = 1.0f;
-                float f8 = 0.0f;
                 if (z) {
-                    float f9 = this.animateToAmplitude;
-                    float f10 = this.amplitude;
-                    if (f9 != f10) {
-                        float f11 = this.animateAmplitudeDiff;
-                        float f12 = f10 + (j2 * f11);
-                        this.amplitude = f12;
-                        if (f11 > 0.0f) {
-                            if (f12 > f9) {
-                                this.amplitude = f9;
+                    float f7 = this.animateToAmplitude;
+                    float f8 = this.amplitude;
+                    if (f7 != f8) {
+                        float f9 = this.animateAmplitudeDiff;
+                        float f10 = f8 + (j2 * f9);
+                        this.amplitude = f10;
+                        if (f9 > 0.0f) {
+                            if (f10 > f7) {
+                                this.amplitude = f7;
                             }
-                        } else if (f12 < f9) {
-                            this.amplitude = f9;
+                        } else if (f10 < f7) {
+                            this.amplitude = f7;
                         }
                         fragmentContextView.invalidate();
                     }
-                    float f13 = this.animateToAmplitude;
-                    float f14 = this.amplitude2;
-                    if (f13 != f14) {
-                        float f15 = this.animateAmplitudeDiff2;
-                        float f16 = f14 + (j2 * f15);
-                        this.amplitude2 = f16;
-                        if (f15 > 0.0f) {
-                            if (f16 > f13) {
-                                this.amplitude2 = f13;
+                    float f11 = this.animateToAmplitude;
+                    float f12 = this.amplitude2;
+                    if (f11 != f12) {
+                        float f13 = this.animateAmplitudeDiff2;
+                        float f14 = f12 + (j2 * f13);
+                        this.amplitude2 = f14;
+                        if (f13 > 0.0f) {
+                            if (f14 > f11) {
+                                this.amplitude2 = f11;
                             }
-                        } else if (f16 < f13) {
-                            this.amplitude2 = f13;
+                        } else if (f14 < f11) {
+                            this.amplitude2 = f11;
                         }
                         fragmentContextView.invalidate();
                     }
                     if (this.previousState != null) {
-                        float f17 = this.progressToState + (j2 / 250.0f);
-                        this.progressToState = f17;
-                        if (f17 > 1.0f) {
+                        float f15 = this.progressToState + (j2 / 250.0f);
+                        this.progressToState = f15;
+                        if (f15 > 1.0f) {
                             this.progressToState = 1.0f;
                             this.previousState = null;
                         }
                         fragmentContextView.invalidate();
                     }
                 }
-                i = 0;
-                while (i < 2) {
-                    if (i == 0 && this.previousState == null) {
-                        i2 = i;
-                    } else {
+                for (i = 0; i < 2; i++) {
+                    if (i != 0 || this.previousState != null) {
                         if (i == 0) {
-                            f6 = f7 - this.progressToState;
+                            f6 = 1.0f - this.progressToState;
                             this.previousState.setToPaint(this.paint);
                         } else {
                             WeavingState weavingState2 = this.currentState;
@@ -139,54 +127,24 @@ public class FragmentContextViewWavesDrawable {
                             }
                             this.currentState.setToPaint(this.paint);
                         }
-                        float f18 = f6;
-                        LineBlobDrawable lineBlobDrawable = this.lineBlobDrawable;
-                        lineBlobDrawable.minRadius = f8;
-                        lineBlobDrawable.maxRadius = AndroidUtilities.dp(2.0f) + (AndroidUtilities.dp(2.0f) * this.amplitude);
-                        this.lineBlobDrawable1.minRadius = AndroidUtilities.dp(f8);
-                        this.lineBlobDrawable1.maxRadius = AndroidUtilities.dp(3.0f) + (AndroidUtilities.dp(9.0f) * this.amplitude);
-                        this.lineBlobDrawable2.minRadius = AndroidUtilities.dp(f8);
-                        LineBlobDrawable lineBlobDrawable2 = this.lineBlobDrawable2;
-                        float dp = AndroidUtilities.dp(3.0f);
-                        float dp2 = AndroidUtilities.dp(9.0f);
-                        float f19 = this.amplitude;
-                        lineBlobDrawable2.maxRadius = dp + (dp2 * f19);
-                        if (i == 1 && z) {
-                            this.lineBlobDrawable.update(f19, 0.3f);
-                            this.lineBlobDrawable1.update(this.amplitude, 0.7f);
-                            this.lineBlobDrawable2.update(this.amplitude, 0.7f);
-                        }
-                        if (LiteMode.isEnabled(512)) {
-                            this.paint.setAlpha((int) (76.0f * f18));
-                            float dp3 = AndroidUtilities.dp(6.0f) * this.amplitude2;
-                            float dp4 = AndroidUtilities.dp(6.0f) * this.amplitude2;
-                            i2 = i;
-                            this.lineBlobDrawable1.draw(f, f2 - dp3, f3, f4, canvas, this.paint, f2, f5);
-                            this.lineBlobDrawable2.draw(f, f2 - dp4, f3, f4, canvas, this.paint, f2, f5);
-                        } else {
-                            i2 = i;
-                        }
-                        if (i2 == 1 && z3) {
+                        if (i == 1 && z3) {
                             this.paint.setAlpha(NotificationCenter.didReceiveSmsCode);
-                        } else if (i2 == 1) {
-                            this.paint.setAlpha((int) (255.0f * f18));
+                        } else if (i == 1) {
+                            this.paint.setAlpha((int) (255.0f * f6));
                         } else {
                             this.paint.setAlpha(NotificationCenter.didReceiveSmsCode);
                         }
-                        if (i2 == 1 && z3) {
-                            this.path.reset();
-                            this.path.addCircle(f3 - AndroidUtilities.dp(18.0f), f2 + ((f4 - f2) / 2.0f), (f3 - f) * 1.1f * f18, Path.Direction.CW);
+                        if (i == 1 && z3) {
+                            this.path.rewind();
+                            this.path.addCircle(f3 - AndroidUtilities.dp(18.0f), f2 + ((f4 - f2) / 2.0f), (f3 - f) * 1.1f * f6, Path.Direction.CW);
                             canvas.save();
                             canvas.clipPath(this.path);
-                            this.lineBlobDrawable.draw(f, f2, f3, f4, canvas, this.paint, f2, f5);
+                            canvas.drawRoundRect(f, f2, f3, f4, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), this.paint);
                             canvas.restore();
                         } else {
-                            this.lineBlobDrawable.draw(f, f2, f3, f4, canvas, this.paint, f2, f5);
+                            canvas.drawRoundRect(f, f2, f3, f4, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), this.paint);
                         }
                     }
-                    i = i2 + 1;
-                    f8 = 0.0f;
-                    f7 = 1.0f;
                 }
             }
         } else {
@@ -194,11 +152,8 @@ public class FragmentContextViewWavesDrawable {
         }
         z = z2;
         j2 = j;
-        float f72 = 1.0f;
-        float f82 = 0.0f;
         if (z) {
         }
-        i = 0;
         while (i < 2) {
         }
     }

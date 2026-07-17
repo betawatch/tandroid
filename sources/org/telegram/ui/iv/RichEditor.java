@@ -1496,6 +1496,15 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
         updateBlockButtons();
     }
 
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
+        RichEditorListView richEditorListView = this.listView;
+        if (richEditorListView == null || !richEditorListView.textSelectionHelper.isInSelectionMode()) {
+            return super.isSwipeBackEnabled(motionEvent);
+        }
+        return false;
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public boolean isOverTrash(float f) {
         FrameLayout frameLayout = this.trashPanel;

@@ -29,6 +29,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import androidx.core.graphics.Insets;
 import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -127,11 +128,9 @@ public class ContentPreviewViewer {
     private boolean isStickerEditor;
     private boolean isVisible;
     private int keyboardHeight;
-    private WindowInsetsCompat lastInsets;
     private float lastTouchY;
     private long lastUpdateTime;
     private boolean menuVisible;
-    private float moveY = 0.0f;
     private Runnable openPreviewRunnable;
     private final Paint paint;
     public PaintingOverlay paintingOverlay;
@@ -159,6 +158,8 @@ public class ContentPreviewViewer {
     VibrationEffect vibrationEffect;
     private WindowManager.LayoutParams windowLayoutParams;
     private FrameLayout windowView;
+    private float moveY = 0.0f;
+    private Insets lastInsets = Insets.NONE;
 
     public interface ContentPreviewViewerDelegate {
 
@@ -627,22 +628,12 @@ public class ContentPreviewViewer {
         @Override // java.lang.Runnable
         public void run() {
             boolean z;
-            int i;
-            int i2;
-            int i3;
-            int i4;
-            int i5;
-            int i6;
-            int i7;
-            int i8;
             ItemOptions customItemOptions;
-            int i9;
-            int i10;
             if (ContentPreviewViewer.this.parentActivity == null || ContentPreviewViewer.this.isPhotoEditor) {
                 return;
             }
             ContentPreviewViewer.this.closeOnDismiss = true;
-            int i11 = -2;
+            int i = -2;
             if (ContentPreviewViewer.this.delegate != null && (customItemOptions = ContentPreviewViewer.this.delegate.getCustomItemOptions(ContentPreviewViewer.this.containerView, ContentPreviewViewer.this.containerView)) != null) {
                 customItemOptions.setBlurBackground(ContentPreviewViewer.this.scrimBlur3Factory, BlurredBackgroundProviderImpl.scrimMenuBackground(ContentPreviewViewer.this.resourcesProvider), true);
                 customItemOptions.setDrawScrim(false);
@@ -654,7 +645,7 @@ public class ContentPreviewViewer {
                     }
                 });
                 ViewGroup layout = customItemOptions.getLayout();
-                ContentPreviewViewer.this.popupWindow = new ActionBarPopupWindow(layout, i11, i11) { // from class: org.telegram.ui.ContentPreviewViewer.1.1
+                ContentPreviewViewer.this.popupWindow = new ActionBarPopupWindow(layout, i, i) { // from class: org.telegram.ui.ContentPreviewViewer.1.1
                     @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
                     public void dismiss() {
                         super.dismiss();
@@ -676,15 +667,10 @@ public class ContentPreviewViewer {
                 layout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
                 ContentPreviewViewer.this.popupWindow.setInputMethodMode(2);
                 ContentPreviewViewer.this.popupWindow.getContentView().setFocusableInTouchMode(true);
-                if (ContentPreviewViewer.this.lastInsets != null) {
-                    i10 = ContentPreviewViewer.this.lastInsets.getStableInsetBottom() + ContentPreviewViewer.this.lastInsets.getStableInsetTop();
-                    i9 = ContentPreviewViewer.this.lastInsets.getStableInsetTop();
-                } else {
-                    i9 = AndroidUtilities.statusBarHeight;
-                    i10 = 0;
-                }
-                int min = (Math.min(ContentPreviewViewer.this.containerView.getWidth(), ContentPreviewViewer.this.containerView.getHeight() - i10) - AndroidUtilities.dp(40.0f)) / 2;
-                int max = (int) (((int) (ContentPreviewViewer.this.moveY + Math.max(i9 + min + (ContentPreviewViewer.this.stickerEmojiLayout != null ? AndroidUtilities.dp(40.0f) : 0), ((ContentPreviewViewer.this.containerView.getHeight() - i10) - ContentPreviewViewer.this.keyboardHeight) / 2) + min)) + (AndroidUtilities.dp(24.0f) - ContentPreviewViewer.this.moveY));
+                int i2 = ContentPreviewViewer.this.lastInsets.bottom + ContentPreviewViewer.this.lastInsets.top;
+                int i3 = ContentPreviewViewer.this.lastInsets.top;
+                int min = (Math.min(ContentPreviewViewer.this.containerView.getWidth(), ContentPreviewViewer.this.containerView.getHeight() - i2) - AndroidUtilities.dp(40.0f)) / 2;
+                int max = (int) (((int) (ContentPreviewViewer.this.moveY + Math.max(i3 + min + (ContentPreviewViewer.this.stickerEmojiLayout != null ? AndroidUtilities.dp(40.0f) : 0), ((ContentPreviewViewer.this.containerView.getHeight() - i2) - ContentPreviewViewer.this.keyboardHeight) / 2) + min)) + (AndroidUtilities.dp(24.0f) - ContentPreviewViewer.this.moveY));
                 ContentPreviewViewer contentPreviewViewer = ContentPreviewViewer.this;
                 contentPreviewViewer.popupWindow.showAtLocation(contentPreviewViewer.containerView, 0, (int) ((ContentPreviewViewer.this.containerView.getMeasuredWidth() - layout.getMeasuredWidth()) / 2.0f), max);
                 try {
@@ -780,17 +766,17 @@ public class ContentPreviewViewer {
                         ContentPreviewViewer.this.containerView.invalidate();
                         2 r1 = new 2(arrayList2, isStickerInFavorites);
                         ContentPreviewViewer.this.addVoteOptions(actionBarPopupWindowLayout);
-                        for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                            ActionBarMenuSubItem addItem = ActionBarMenuItem.addItem(actionBarPopupWindowLayout, ((Integer) arrayList3.get(i12)).intValue(), (CharSequence) arrayList.get(i12), false, ContentPreviewViewer.this.resourcesProvider);
-                            addItem.setTag(Integer.valueOf(i12));
+                        for (int i4 = 0; i4 < arrayList.size(); i4++) {
+                            ActionBarMenuSubItem addItem = ActionBarMenuItem.addItem(actionBarPopupWindowLayout, ((Integer) arrayList3.get(i4)).intValue(), (CharSequence) arrayList.get(i4), false, ContentPreviewViewer.this.resourcesProvider);
+                            addItem.setTag(Integer.valueOf(i4));
                             addItem.setOnClickListener(r1);
-                            if (((Integer) arrayList2.get(i12)).intValue() == 8) {
+                            if (((Integer) arrayList2.get(i4)).intValue() == 8) {
                                 int themedColor = ContentPreviewViewer.this.getThemedColor(Theme.key_text_RedBold);
                                 addItem.setColors(themedColor, themedColor);
                                 addItem.setSelectorColor(Theme.multAlpha(themedColor, 0.1f));
                             }
                         }
-                        ContentPreviewViewer.this.popupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout, i11, i11) { // from class: org.telegram.ui.ContentPreviewViewer.1.3
+                        ContentPreviewViewer.this.popupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout, i, i) { // from class: org.telegram.ui.ContentPreviewViewer.1.3
                             @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
                             public void dismiss() {
                                 super.dismiss();
@@ -822,14 +808,9 @@ public class ContentPreviewViewer {
                         actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
                         ContentPreviewViewer.this.popupWindow.setInputMethodMode(2);
                         ContentPreviewViewer.this.popupWindow.getContentView().setFocusableInTouchMode(true);
-                        if (ContentPreviewViewer.this.lastInsets != null) {
-                            i6 = ContentPreviewViewer.this.lastInsets.getStableInsetBottom() + ContentPreviewViewer.this.lastInsets.getStableInsetTop();
-                            i5 = ContentPreviewViewer.this.lastInsets.getStableInsetTop();
-                        } else {
-                            i5 = AndroidUtilities.statusBarHeight;
-                            i6 = 0;
-                        }
-                        int max2 = ((int) (ContentPreviewViewer.this.moveY + Math.max(i5 + r2 + (ContentPreviewViewer.this.stickerEmojiLayout != null ? AndroidUtilities.dp(40.0f) : 0), ((ContentPreviewViewer.this.containerView.getHeight() - i6) - ContentPreviewViewer.this.keyboardHeight) / 2) + ((ContentPreviewViewer.this.currentContentType == 1 ? Math.min(ContentPreviewViewer.this.containerView.getWidth(), ContentPreviewViewer.this.containerView.getHeight() - i6) - AndroidUtilities.dp(40.0f) : (int) (ContentPreviewViewer.this.drawEffect ? Math.min(ContentPreviewViewer.this.containerView.getWidth(), ContentPreviewViewer.this.containerView.getHeight() - i6) - AndroidUtilities.dpf2(40.0f) : Math.min(ContentPreviewViewer.this.containerView.getWidth(), ContentPreviewViewer.this.containerView.getHeight() - i6) / 1.8f)) / 2))) + AndroidUtilities.dp(24.0f);
+                        int i5 = ContentPreviewViewer.this.lastInsets.bottom + ContentPreviewViewer.this.lastInsets.top;
+                        int i6 = ContentPreviewViewer.this.lastInsets.top;
+                        int max2 = ((int) (ContentPreviewViewer.this.moveY + Math.max(i6 + r2 + (ContentPreviewViewer.this.stickerEmojiLayout != null ? AndroidUtilities.dp(40.0f) : 0), ((ContentPreviewViewer.this.containerView.getHeight() - i5) - ContentPreviewViewer.this.keyboardHeight) / 2) + ((ContentPreviewViewer.this.currentContentType == 1 ? Math.min(ContentPreviewViewer.this.containerView.getWidth(), ContentPreviewViewer.this.containerView.getHeight() - i5) - AndroidUtilities.dp(40.0f) : (int) (ContentPreviewViewer.this.drawEffect ? Math.min(ContentPreviewViewer.this.containerView.getWidth(), ContentPreviewViewer.this.containerView.getHeight() - i5) - AndroidUtilities.dpf2(40.0f) : Math.min(ContentPreviewViewer.this.containerView.getWidth(), ContentPreviewViewer.this.containerView.getHeight() - i5) / 1.8f)) / 2))) + AndroidUtilities.dp(24.0f);
                         if (ContentPreviewViewer.this.drawEffect) {
                             max2 += AndroidUtilities.dp(24.0f);
                         }
@@ -895,8 +876,8 @@ public class ContentPreviewViewer {
                         ContentPreviewViewer.this.menuVisible = true;
                         ContentPreviewViewer.this.containerView.invalidate();
                         int[] iArr = new int[arrayList6.size()];
-                        for (int i13 = 0; i13 < arrayList6.size(); i13++) {
-                            iArr[i13] = ((Integer) arrayList6.get(i13)).intValue();
+                        for (int i7 = 0; i7 < arrayList6.size(); i7++) {
+                            iArr[i7] = ((Integer) arrayList6.get(i7)).intValue();
                         }
                         View.OnClickListener onClickListener = new View.OnClickListener() { // from class: org.telegram.ui.ContentPreviewViewer$1$$ExternalSyntheticLambda7
                             @Override // android.view.View.OnClickListener
@@ -904,15 +885,15 @@ public class ContentPreviewViewer {
                                 ContentPreviewViewer.1.this.lambda$run$10(arrayList5, view);
                             }
                         };
-                        for (int i14 = 0; i14 < arrayList4.size(); i14++) {
-                            ActionBarMenuSubItem addItem2 = ActionBarMenuItem.addItem(actionBarPopupWindowLayout, ((Integer) arrayList6.get(i14)).intValue(), (CharSequence) arrayList4.get(i14), false, ContentPreviewViewer.this.resourcesProvider);
-                            addItem2.setTag(Integer.valueOf(i14));
+                        for (int i8 = 0; i8 < arrayList4.size(); i8++) {
+                            ActionBarMenuSubItem addItem2 = ActionBarMenuItem.addItem(actionBarPopupWindowLayout, ((Integer) arrayList6.get(i8)).intValue(), (CharSequence) arrayList4.get(i8), false, ContentPreviewViewer.this.resourcesProvider);
+                            addItem2.setTag(Integer.valueOf(i8));
                             addItem2.setOnClickListener(onClickListener);
-                            if (z && i14 == arrayList4.size() - 1) {
+                            if (z && i8 == arrayList4.size() - 1) {
                                 addItem2.setColors(ContentPreviewViewer.this.getThemedColor(Theme.key_text_RedBold), ContentPreviewViewer.this.getThemedColor(Theme.key_text_RedRegular));
                             }
                         }
-                        ContentPreviewViewer.this.popupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout, i11, i11) { // from class: org.telegram.ui.ContentPreviewViewer.1.5
+                        ContentPreviewViewer.this.popupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout, i, i) { // from class: org.telegram.ui.ContentPreviewViewer.1.5
                             @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
                             public void dismiss() {
                                 super.dismiss();
@@ -934,15 +915,10 @@ public class ContentPreviewViewer {
                         actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
                         ContentPreviewViewer.this.popupWindow.setInputMethodMode(2);
                         ContentPreviewViewer.this.popupWindow.getContentView().setFocusableInTouchMode(true);
-                        if (ContentPreviewViewer.this.lastInsets != null) {
-                            i2 = ContentPreviewViewer.this.lastInsets.getStableInsetBottom() + ContentPreviewViewer.this.lastInsets.getStableInsetTop();
-                            i = ContentPreviewViewer.this.lastInsets.getStableInsetTop();
-                        } else {
-                            i = AndroidUtilities.statusBarHeight;
-                            i2 = 0;
-                        }
-                        int min2 = (Math.min(ContentPreviewViewer.this.containerView.getWidth(), ContentPreviewViewer.this.containerView.getHeight() - i2) - AndroidUtilities.dp(40.0f)) / 2;
-                        int max3 = (int) (((int) (ContentPreviewViewer.this.moveY + Math.max(i + min2 + (ContentPreviewViewer.this.stickerEmojiLayout != null ? AndroidUtilities.dp(40.0f) : 0), ((ContentPreviewViewer.this.containerView.getHeight() - i2) - ContentPreviewViewer.this.keyboardHeight) / 2) + min2)) + (AndroidUtilities.dp(24.0f) - ContentPreviewViewer.this.moveY));
+                        int i9 = ContentPreviewViewer.this.lastInsets.bottom + ContentPreviewViewer.this.lastInsets.top;
+                        int i10 = ContentPreviewViewer.this.lastInsets.top;
+                        int min2 = (Math.min(ContentPreviewViewer.this.containerView.getWidth(), ContentPreviewViewer.this.containerView.getHeight() - i9) - AndroidUtilities.dp(40.0f)) / 2;
+                        int max3 = (int) (((int) (ContentPreviewViewer.this.moveY + Math.max(i10 + min2 + (ContentPreviewViewer.this.stickerEmojiLayout != null ? AndroidUtilities.dp(40.0f) : 0), ((ContentPreviewViewer.this.containerView.getHeight() - i9) - ContentPreviewViewer.this.keyboardHeight) / 2) + min2)) + (AndroidUtilities.dp(24.0f) - ContentPreviewViewer.this.moveY));
                         ContentPreviewViewer contentPreviewViewer4 = ContentPreviewViewer.this;
                         contentPreviewViewer4.popupWindow.showAtLocation(contentPreviewViewer4.containerView, 0, (int) ((ContentPreviewViewer.this.containerView.getMeasuredWidth() - actionBarPopupWindowLayout.getMeasuredWidth()) / 2.0f), max3);
                         try {
@@ -1010,8 +986,8 @@ public class ContentPreviewViewer {
                     ContentPreviewViewer.this.menuVisible = true;
                     ContentPreviewViewer.this.containerView.invalidate();
                     int[] iArr2 = new int[arrayList9.size()];
-                    for (int i15 = 0; i15 < arrayList9.size(); i15++) {
-                        iArr2[i15] = ((Integer) arrayList9.get(i15)).intValue();
+                    for (int i11 = 0; i11 < arrayList9.size(); i11++) {
+                        iArr2[i11] = ((Integer) arrayList9.get(i11)).intValue();
                     }
                     View.OnClickListener onClickListener2 = new View.OnClickListener() { // from class: org.telegram.ui.ContentPreviewViewer$1$$ExternalSyntheticLambda5
                         @Override // android.view.View.OnClickListener
@@ -1020,18 +996,18 @@ public class ContentPreviewViewer {
                         }
                     };
                     boolean addVoteOptions = ContentPreviewViewer.this.addVoteOptions(actionBarPopupWindowLayout);
-                    int i16 = 0;
-                    while (i16 < arrayList7.size()) {
-                        ActionBarMenuSubItem addItem3 = ActionBarMenuItem.addItem(!addVoteOptions && i16 == 0, i16 == arrayList7.size() - 1, actionBarPopupWindowLayout, ((Integer) arrayList9.get(i16)).intValue(), (CharSequence) arrayList7.get(i16), false, ContentPreviewViewer.this.resourcesProvider);
-                        if (((Integer) arrayList8.get(i16)).intValue() == 4) {
+                    int i12 = 0;
+                    while (i12 < arrayList7.size()) {
+                        ActionBarMenuSubItem addItem3 = ActionBarMenuItem.addItem(!addVoteOptions && i12 == 0, i12 == arrayList7.size() - 1, actionBarPopupWindowLayout, ((Integer) arrayList9.get(i12)).intValue(), (CharSequence) arrayList7.get(i12), false, ContentPreviewViewer.this.resourcesProvider);
+                        if (((Integer) arrayList8.get(i12)).intValue() == 4) {
                             addItem3.setIconColor(ContentPreviewViewer.this.getThemedColor(Theme.key_text_RedRegular));
                             addItem3.setTextColor(ContentPreviewViewer.this.getThemedColor(Theme.key_text_RedBold));
                         }
-                        addItem3.setTag(Integer.valueOf(i16));
+                        addItem3.setTag(Integer.valueOf(i12));
                         addItem3.setOnClickListener(onClickListener2);
-                        i16++;
+                        i12++;
                     }
-                    ContentPreviewViewer.this.popupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout, i11, i11) { // from class: org.telegram.ui.ContentPreviewViewer.1.4
+                    ContentPreviewViewer.this.popupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout, i, i) { // from class: org.telegram.ui.ContentPreviewViewer.1.4
                         @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
                         public void dismiss() {
                             super.dismiss();
@@ -1053,15 +1029,10 @@ public class ContentPreviewViewer {
                     actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
                     ContentPreviewViewer.this.popupWindow.setInputMethodMode(2);
                     ContentPreviewViewer.this.popupWindow.getContentView().setFocusableInTouchMode(true);
-                    if (ContentPreviewViewer.this.lastInsets != null) {
-                        i4 = ContentPreviewViewer.this.lastInsets.getStableInsetBottom() + ContentPreviewViewer.this.lastInsets.getStableInsetTop();
-                        i3 = ContentPreviewViewer.this.lastInsets.getStableInsetTop();
-                    } else {
-                        i3 = AndroidUtilities.statusBarHeight;
-                        i4 = 0;
-                    }
-                    int min3 = (Math.min(ContentPreviewViewer.this.containerView.getWidth(), ContentPreviewViewer.this.containerView.getHeight() - i4) - AndroidUtilities.dp(40.0f)) / 2;
-                    int max4 = (int) (((int) (ContentPreviewViewer.this.moveY + Math.max(i3 + min3 + (ContentPreviewViewer.this.stickerEmojiLayout != null ? AndroidUtilities.dp(40.0f) : 0), ((ContentPreviewViewer.this.containerView.getHeight() - i4) - ContentPreviewViewer.this.keyboardHeight) / 2) + min3)) + (AndroidUtilities.dp(24.0f) - ContentPreviewViewer.this.moveY));
+                    int i13 = ContentPreviewViewer.this.lastInsets.bottom + ContentPreviewViewer.this.lastInsets.top;
+                    int i14 = ContentPreviewViewer.this.lastInsets.top;
+                    int min3 = (Math.min(ContentPreviewViewer.this.containerView.getWidth(), ContentPreviewViewer.this.containerView.getHeight() - i13) - AndroidUtilities.dp(40.0f)) / 2;
+                    int max4 = (int) (((int) (ContentPreviewViewer.this.moveY + Math.max(i14 + min3 + (ContentPreviewViewer.this.stickerEmojiLayout != null ? AndroidUtilities.dp(40.0f) : 0), ((ContentPreviewViewer.this.containerView.getHeight() - i13) - ContentPreviewViewer.this.keyboardHeight) / 2) + min3)) + (AndroidUtilities.dp(24.0f) - ContentPreviewViewer.this.moveY));
                     ContentPreviewViewer contentPreviewViewer6 = ContentPreviewViewer.this;
                     contentPreviewViewer6.popupWindow.showAtLocation(contentPreviewViewer6.containerView, 0, (int) ((ContentPreviewViewer.this.containerView.getMeasuredWidth() - actionBarPopupWindowLayout.getMeasuredWidth()) / 2.0f), max4);
                     ActionBarPopupWindow.startAnimation(actionBarPopupWindowLayout);
@@ -1123,8 +1094,8 @@ public class ContentPreviewViewer {
                 final RecyclerListView createMyStickerPacksListView = ContentPreviewViewer.this.createMyStickerPacksListView();
                 createMyStickerPacksListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.ContentPreviewViewer$1$$ExternalSyntheticLambda2
                     @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-                    public final void onItemClick(View view, int i17) {
-                        ContentPreviewViewer.1.this.lambda$run$4(view, i17);
+                    public final void onItemClick(View view, int i15) {
+                        ContentPreviewViewer.1.this.lambda$run$4(view, i15);
                     }
                 });
                 frameLayout.addView(actionBarMenuSubItem);
@@ -1136,9 +1107,9 @@ public class ContentPreviewViewer {
                         ContentPreviewViewer.1.this.lambda$run$5(arrayList11, createMyStickerPacksListView, linearLayout, actionBarPopupWindowLayout, view);
                     }
                 };
-                for (int i17 = 0; i17 < arrayList10.size(); i17++) {
-                    ActionBarMenuSubItem addItem4 = ActionBarMenuItem.addItem(actionBarPopupWindowLayout, ((Integer) arrayList12.get(i17)).intValue(), (CharSequence) arrayList10.get(i17), false, ContentPreviewViewer.this.resourcesProvider);
-                    addItem4.setTag(Integer.valueOf(i17));
+                for (int i15 = 0; i15 < arrayList10.size(); i15++) {
+                    ActionBarMenuSubItem addItem4 = ActionBarMenuItem.addItem(actionBarPopupWindowLayout, ((Integer) arrayList12.get(i15)).intValue(), (CharSequence) arrayList10.get(i15), false, ContentPreviewViewer.this.resourcesProvider);
+                    addItem4.setTag(Integer.valueOf(i15));
                     addItem4.setOnClickListener(onClickListener3);
                 }
                 actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
@@ -1150,15 +1121,10 @@ public class ContentPreviewViewer {
                         ContentPreviewViewer.1.lambda$run$6(ActionBarPopupWindow.ActionBarPopupWindowLayout.this, view);
                     }
                 });
-                if (ContentPreviewViewer.this.lastInsets != null) {
-                    i8 = ContentPreviewViewer.this.lastInsets.getStableInsetBottom() + ContentPreviewViewer.this.lastInsets.getStableInsetTop();
-                    i7 = ContentPreviewViewer.this.lastInsets.getStableInsetTop();
-                } else {
-                    i7 = AndroidUtilities.statusBarHeight;
-                    i8 = 0;
-                }
-                int min4 = ((int) (Math.min(ContentPreviewViewer.this.containerView.getWidth(), ContentPreviewViewer.this.containerView.getHeight() - i8) / 1.8f)) / 2;
-                ContentPreviewViewer.this.containerView.addView(actionBarPopupWindowLayout, LayoutHelper.createFrame(-2, -2.0f, 49, 0.0f, (((int) ((ContentPreviewViewer.this.moveY + Math.max(i7 + min4, ((ContentPreviewViewer.this.containerView.getHeight() - i8) - ContentPreviewViewer.this.keyboardHeight) / 2)) + min4)) + AndroidUtilities.dp(84.0f)) / AndroidUtilities.density, 0.0f, 0.0f));
+                int i16 = ContentPreviewViewer.this.lastInsets.bottom + ContentPreviewViewer.this.lastInsets.top;
+                int i17 = ContentPreviewViewer.this.lastInsets.top;
+                int min4 = ((int) (Math.min(ContentPreviewViewer.this.containerView.getWidth(), ContentPreviewViewer.this.containerView.getHeight() - i16) / 1.8f)) / 2;
+                ContentPreviewViewer.this.containerView.addView(actionBarPopupWindowLayout, LayoutHelper.createFrame(-2, -2.0f, 49, 0.0f, (((int) ((ContentPreviewViewer.this.moveY + Math.max(i17 + min4, ((ContentPreviewViewer.this.containerView.getHeight() - i16) - ContentPreviewViewer.this.keyboardHeight) / 2)) + min4)) + AndroidUtilities.dp(84.0f)) / AndroidUtilities.density, 0.0f, 0.0f));
                 ContentPreviewViewer.this.popupLayout = actionBarPopupWindowLayout;
                 ContentPreviewViewer.this.popupLayout.setTranslationY(-AndroidUtilities.dp(12.0f));
                 ContentPreviewViewer.this.popupLayout.setAlpha(0.0f);
@@ -2115,10 +2081,7 @@ public class ContentPreviewViewer {
         layoutParams.gravity = 48;
         layoutParams.type = 99;
         layoutParams.flags = -2147286784;
-        int i2 = Build.VERSION.SDK_INT;
-        if (i2 >= 28) {
-            layoutParams.layoutInDisplayCutoutMode = i2 >= 30 ? 3 : 1;
-        }
+        AndroidUtilities.applyEdgeToEdgeLayoutParams(layoutParams);
         this.centerImage.setAspectFit(true);
         this.centerImage.setInvalidateAll(true);
         this.centerImage.setParentView(this.containerView);
@@ -2129,7 +2092,7 @@ public class ContentPreviewViewer {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ WindowInsetsCompat lambda$setParentActivity$11(View view, WindowInsetsCompat windowInsetsCompat) {
-        this.lastInsets = windowInsetsCompat;
+        this.lastInsets = AndroidUtilities.getDefaultWindowInsets(windowInsetsCompat, false);
         return windowInsetsCompat;
     }
 
@@ -2425,10 +2388,8 @@ public class ContentPreviewViewer {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void onDraw(Canvas canvas) {
-        int i;
-        int i2;
         float min;
-        int i3;
+        int i;
         Drawable drawable;
         float f;
         if (this.containerView == null || this.backgroundDrawable == null) {
@@ -2481,35 +2442,31 @@ public class ContentPreviewViewer {
         this.backgroundDrawable.setBounds(0, 0, this.containerView.getWidth(), this.containerView.getHeight());
         this.backgroundDrawable.draw(canvas);
         canvas.save();
-        WindowInsetsCompat windowInsetsCompat = this.lastInsets;
-        if (windowInsetsCompat != null) {
-            i2 = windowInsetsCompat.getStableInsetBottom() + this.lastInsets.getStableInsetTop();
-            i = this.lastInsets.getStableInsetTop();
-        } else {
-            i = AndroidUtilities.statusBarHeight;
-            i2 = 0;
-        }
+        Insets insets = this.lastInsets;
+        int i2 = insets.bottom;
+        int i3 = insets.top;
+        int i4 = i2 + i3;
         if (this.currentContentType == 1) {
-            i3 = Math.min(this.containerView.getWidth(), this.containerView.getHeight() - i2) - AndroidUtilities.dp(40.0f);
+            i = Math.min(this.containerView.getWidth(), this.containerView.getHeight() - i4) - AndroidUtilities.dp(40.0f);
         } else {
             if (this.drawEffect) {
-                min = Math.min(this.containerView.getWidth(), this.containerView.getHeight() - i2) - AndroidUtilities.dpf2(40.0f);
+                min = Math.min(this.containerView.getWidth(), this.containerView.getHeight() - i4) - AndroidUtilities.dpf2(40.0f);
             } else {
-                min = Math.min(this.containerView.getWidth(), this.containerView.getHeight() - i2) / 1.8f;
+                min = Math.min(this.containerView.getWidth(), this.containerView.getHeight() - i4) / 1.8f;
             }
-            i3 = (int) min;
+            i = (int) min;
         }
-        float max = Math.max((i3 / 2) + i + (this.stickerEmojiLayout != null ? AndroidUtilities.dp(40.0f) : 0), ((this.containerView.getHeight() - i2) - this.keyboardHeight) / 2);
+        float max = Math.max((i / 2) + i3 + (this.stickerEmojiLayout != null ? AndroidUtilities.dp(40.0f) : 0), ((this.containerView.getHeight() - i4) - this.keyboardHeight) / 2);
         if (this.drawEffect) {
             max += AndroidUtilities.dp(40.0f);
         }
         canvas.translate(this.containerView.getWidth() / 2, this.moveY + max);
-        int i4 = (int) (i3 * ((this.showProgress * 0.8f) / 0.8f));
+        int i5 = (int) (i * ((this.showProgress * 0.8f) / 0.8f));
         if (this.currentContentType == 3) {
             canvas.translate(0.0f, AndroidUtilities.dp(70.0f));
         }
         if (this.drawEffect) {
-            float f6 = i4;
+            float f6 = i5;
             float f7 = 0.6669f * f6;
             this.centerImage.setAlpha(this.showProgress);
             float f8 = f6 - f7;
@@ -2517,21 +2474,21 @@ public class ContentPreviewViewer {
             this.centerImage.setImageCoords((f8 - f9) - (0.0546875f * f6), (f8 / 2.0f) - f9, f7, f7);
             this.centerImage.draw(canvas);
             this.effectImage.setAlpha(this.showProgress);
-            float f10 = (-i4) / 2.0f;
+            float f10 = (-i5) / 2.0f;
             this.effectImage.setImageCoords(f10, f10, f6, f6);
             this.effectImage.draw(canvas);
         } else {
             this.centerImage.setAlpha(this.showProgress);
-            float f11 = (-i4) / 2.0f;
-            float f12 = i4;
+            float f11 = (-i5) / 2.0f;
+            float f12 = i5;
             this.centerImage.setImageCoords(f11, f11, f12, f12);
             this.centerImage.draw(canvas);
         }
         if (this.paintingOverlay != null) {
             canvas.save();
-            float f13 = (-i4) / 2.0f;
+            float f13 = (-i5) / 2.0f;
             canvas.translate(f13, f13);
-            float f14 = i4;
+            float f14 = i5;
             canvas.scale(f14 / this.paintingOverlay.getWidth(), f14 / this.paintingOverlay.getHeight());
             this.paintingOverlay.setAlpha(this.showProgress);
             if (this.paintingOverlayClipPath == null) {

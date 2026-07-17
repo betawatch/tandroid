@@ -1288,6 +1288,7 @@ public class TL_iv {
     public static class pageBlockBlockquote extends PageBlock {
         public static final int constructor = 641563686;
         public RichText caption;
+        public boolean collapsed;
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {

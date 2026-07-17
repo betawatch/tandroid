@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationBadge;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.MotionBackgroundPaint$RuntimeShaderState$$ExternalSyntheticApiModelOutline0;
+import org.telegram.ui.Components.MotionBackgroundPaint$AgslImpl$RuntimeShaderState$$ExternalSyntheticApiModelOutline0;
 
 /* loaded from: classes5.dex */
 public class SuperRipple extends ISuperRipple {
@@ -55,7 +55,7 @@ public class SuperRipple extends ISuperRipple {
         this.centerX = new float[7];
         this.centerY = new float[7];
         this.intensity = new float[7];
-        RuntimeShader m = MotionBackgroundPaint$RuntimeShaderState$$ExternalSyntheticApiModelOutline0.m(AndroidUtilities.readRes(R.raw.superripple_effect));
+        RuntimeShader m = MotionBackgroundPaint$AgslImpl$RuntimeShaderState$$ExternalSyntheticApiModelOutline0.m(AndroidUtilities.readRes(R.raw.superripple_effect));
         this.shader = m;
         setupSizeUniforms(true);
         createRuntimeShaderEffect = RenderEffect.createRuntimeShaderEffect(m, "img");

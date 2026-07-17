@@ -11815,37 +11815,36 @@ public class MediaDataController extends BaseController {
             }
             int intValue = queryFinalized.next() ? queryFinalized.intValue(0) : 0;
             queryFinalized.dispose();
-            if (intValue >= message.id) {
-                return;
-            }
-            if (topicKey.topicId != 0) {
-                executeFast = getMessagesStorage().getDatabase().executeFast("REPLACE INTO bot_keyboard_topics VALUES(?, ?, ?, ?)");
-            } else {
-                executeFast = getMessagesStorage().getDatabase().executeFast("REPLACE INTO bot_keyboard VALUES(?, ?, ?)");
-            }
-            executeFast.requery();
-            MessageObject.normalizeFlags(message);
-            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(message.getObjectSize());
-            message.serializeToStream(nativeByteBuffer);
-            if (topicKey.topicId != 0) {
-                executeFast.bindLong(1, topicKey.dialogId);
-                executeFast.bindLong(2, topicKey.topicId);
-                executeFast.bindInteger(3, message.id);
-                executeFast.bindByteBuffer(4, nativeByteBuffer);
-            } else {
-                executeFast.bindLong(1, topicKey.dialogId);
-                executeFast.bindInteger(2, message.id);
-                executeFast.bindByteBuffer(3, nativeByteBuffer);
-            }
-            executeFast.step();
-            nativeByteBuffer.reuse();
-            executeFast.dispose();
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MediaDataController$$ExternalSyntheticLambda101
-                @Override // java.lang.Runnable
-                public final void run() {
-                    MediaDataController.this.lambda$putBotKeyboard$200(topicKey, message);
+            if (intValue < message.id || MessageObject.isEphemeralMessageId(intValue) || MessageObject.isEphemeralMessageId(message.id)) {
+                if (topicKey.topicId != 0) {
+                    executeFast = getMessagesStorage().getDatabase().executeFast("REPLACE INTO bot_keyboard_topics VALUES(?, ?, ?, ?)");
+                } else {
+                    executeFast = getMessagesStorage().getDatabase().executeFast("REPLACE INTO bot_keyboard VALUES(?, ?, ?)");
                 }
-            });
+                executeFast.requery();
+                MessageObject.normalizeFlags(message);
+                NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(message.getObjectSize());
+                message.serializeToStream(nativeByteBuffer);
+                if (topicKey.topicId != 0) {
+                    executeFast.bindLong(1, topicKey.dialogId);
+                    executeFast.bindLong(2, topicKey.topicId);
+                    executeFast.bindInteger(3, message.id);
+                    executeFast.bindByteBuffer(4, nativeByteBuffer);
+                } else {
+                    executeFast.bindLong(1, topicKey.dialogId);
+                    executeFast.bindInteger(2, message.id);
+                    executeFast.bindByteBuffer(3, nativeByteBuffer);
+                }
+                executeFast.step();
+                nativeByteBuffer.reuse();
+                executeFast.dispose();
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MediaDataController$$ExternalSyntheticLambda101
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        MediaDataController.this.lambda$putBotKeyboard$200(topicKey, message);
+                    }
+                });
+            }
         } catch (Exception e) {
             FileLog.e(e);
         }
