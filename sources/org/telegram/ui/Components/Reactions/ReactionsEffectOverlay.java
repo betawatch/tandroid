@@ -421,7 +421,7 @@ public class ReactionsEffectOverlay {
                                             r14 = 0;
                                         }
                                         if (animationView.getImageReceiver().getLottieAnimation() != null) {
-                                            animationView.getImageReceiver().getLottieAnimation().setCurrentFrame(r14, r14);
+                                            animationView.getImageReceiver().getLottieAnimation().setCurrentFrame((int) r14, (boolean) r14);
                                             animationView.getImageReceiver().getLottieAnimation().start();
                                         }
                                         i22 = 2;
@@ -487,9 +487,9 @@ public class ReactionsEffectOverlay {
                                         animationView2.getImageReceiver().setAllowStartAnimation(r3);
                                         if (animationView2.getImageReceiver().getLottieAnimation() != null) {
                                             if (i7 == 2) {
-                                                animationView2.getImageReceiver().getLottieAnimation().setCurrentFrame(animationView2.getImageReceiver().getLottieAnimation().getFramesCount() - 1, r3);
+                                                animationView2.getImageReceiver().getLottieAnimation().setCurrentFrame(animationView2.getImageReceiver().getLottieAnimation().getFramesCount() - 1, (boolean) r3);
                                             } else {
-                                                animationView2.getImageReceiver().getLottieAnimation().setCurrentFrame(r3, r3);
+                                                animationView2.getImageReceiver().getLottieAnimation().setCurrentFrame((int) r3, (boolean) r3);
                                                 animationView2.getImageReceiver().getLottieAnimation().start();
                                             }
                                         }

@@ -73,19 +73,7 @@ public class BotCommandsMenuView extends View {
         };
         this.backDrawable = menuDrawable;
         int i = R.raw.bot_webview_sheet_to_cross;
-        this.webViewAnimation = new RLottieDrawable(i, String.valueOf(i) + hashCode(), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f)) { // from class: org.telegram.ui.bots.BotCommandsMenuView.2
-            @Override // android.graphics.drawable.Drawable
-            public void invalidateSelf() {
-                super.invalidateSelf();
-                BotCommandsMenuView.this.invalidate();
-            }
-
-            @Override // org.telegram.ui.Components.RLottieDrawable
-            protected void invalidateInternal() {
-                super.invalidateInternal();
-                BotCommandsMenuView.this.invalidate();
-            }
-        };
+        this.webViewAnimation = new RLottieDrawable(i, String.valueOf(i) + hashCode(), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f));
         this.menuText = LocaleController.getString(R.string.BotsMenuTitle);
         this.drawBackgroundDrawable = true;
         updateColors();
@@ -98,24 +86,14 @@ public class BotCommandsMenuView extends View {
         Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(16.0f), 0, Theme.getColor(Theme.key_featuredStickers_addButtonPressed));
         this.backgroundDrawable = createSimpleSelectorRoundRectDrawable;
         createSimpleSelectorRoundRectDrawable.setCallback(this);
+        this.webViewAnimation.setCallback(this);
+        this.webViewAnimation.setMasterParent(this);
         setContentDescription(LocaleController.getString("AccDescrBotMenu", R.string.AccDescrBotMenu));
     }
 
     public void setDrawBackgroundDrawable(boolean z) {
         this.drawBackgroundDrawable = z;
         invalidate();
-    }
-
-    @Override // android.view.View
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.webViewAnimation.setMasterParent(this);
-    }
-
-    @Override // android.view.View
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.webViewAnimation.setMasterParent(this);
     }
 
     public void setWebView(boolean z) {

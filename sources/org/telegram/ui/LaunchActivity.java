@@ -8082,7 +8082,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         UndoView undoView = null;
         if (baseFragment instanceof ChatActivity) {
             ChatActivity chatActivity = (ChatActivity) baseFragment;
-            if (chatActivity.getDialogId() == (-chat.id)) {
+            if (chat != null && chatActivity.getDialogId() == (-chat.id)) {
                 chat = null;
             }
             undoView = chatActivity.getUndoView();

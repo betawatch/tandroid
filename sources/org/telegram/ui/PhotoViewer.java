@@ -229,6 +229,7 @@ import org.telegram.ui.ChooseDownloadQualityLayout;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AnimatedFileDrawable;
+import org.telegram.ui.Components.AnimatedFileNative;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.AnimationProperties;
@@ -8715,7 +8716,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             return;
         }
         int[] iArr = new int[11];
-        AnimatedFileDrawable.getVideoInfo(photoEntry2.path, iArr, 0L);
+        AnimatedFileNative.getVideoInfo(photoEntry2.path, iArr, 0L);
         int max = Math.max(iArr[1], photoEntry2.width);
         int max2 = Math.max(iArr[2], photoEntry2.height);
         if ((iArr[8] / 90) % 2 == 1) {
@@ -28741,7 +28742,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             }
             int videoBitrate = MediaController.getVideoBitrate(this.val$videoPath);
             final int[] iArr = new int[11];
-            AnimatedFileDrawable.getVideoInfo(this.val$videoPath, iArr, this.val$videoPathOffset);
+            AnimatedFileNative.getVideoInfo(this.val$videoPath, iArr, this.val$videoPathOffset);
             boolean z = false;
             boolean z2 = iArr[10] != 0;
             PhotoViewer photoViewer = PhotoViewer.this;

@@ -41,6 +41,10 @@ public class AnimatedFileNative {
         return new AnimatedFileNative(createDecoder, iArr);
     }
 
+    public boolean isLastFrameOpaque() {
+        return this.mMetaData[6] == 1;
+    }
+
     public void stopDecoder() {
         checkNotDestroyed();
         stopDecoder(this.mNativePtr);

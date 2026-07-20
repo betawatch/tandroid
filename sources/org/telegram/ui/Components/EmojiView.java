@@ -3838,6 +3838,7 @@ public class EmojiView extends FrameLayout implements FactorAnimator.Target, Not
                     drawingInBackgroundLine.draw(canvas, currentTimeMillis, measuredWidth, measuredHeight, 1.0f);
                 }
                 canvas.restore();
+                invalidate();
                 i3++;
             }
             for (int i6 = 0; i6 < this.lineDrawablesTmp.size(); i6++) {

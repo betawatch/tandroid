@@ -1162,8 +1162,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 }
             }
             DialogsActivity dialogsActivity8 = DialogsActivity.this;
-            if (!dialogsActivity8.hasMainTabs) {
-                AndroidUtilities.drawNavigationBarProtection(canvas, this, dialogsActivity8.getThemedColor(Theme.key_windowBackgroundWhite), DialogsActivity.this.navigationBarHeight);
+            if (!dialogsActivity8.hasMainTabs && dialogsActivity8.communityId == 0) {
+                AndroidUtilities.drawNavigationBarProtection(canvas, this, DialogsActivity.this.getThemedColor(Theme.key_windowBackgroundWhite), DialogsActivity.this.navigationBarHeight);
             }
             DialogsActivity.this.wasDrawn = true;
         }

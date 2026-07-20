@@ -1336,18 +1336,23 @@ public class ImageLoader {
             this.cacheImage = cacheImage;
         }
 
-        /*  JADX ERROR: JadxRuntimeException in pass: SSATransform
-            jadx.core.utils.exceptions.JadxRuntimeException: PHI empty after try-catch fix!
-            	at jadx.core.dex.visitors.ssa.SSATransform.fixPhiInTryCatch(SSATransform.java:222)
-            	at jadx.core.dex.visitors.ssa.SSATransform.fixLastAssignInTry(SSATransform.java:202)
-            	at jadx.core.dex.visitors.ssa.SSATransform.process(SSATransform.java:58)
-            	at jadx.core.dex.visitors.ssa.SSATransform.visit(SSATransform.java:44)
+        /*  JADX ERROR: JadxRuntimeException in pass: ConstructorVisitor
+            jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r0v155 ??, still in use, count: 2, list:
+              (r0v155 ?? I:org.telegram.ui.Components.AnimatedFileDrawable) from 0x0b14: INVOKE (r3v47 ?? I:android.graphics.Bitmap) = (r0v155 ?? I:org.telegram.ui.Components.AnimatedFileDrawable), (r12v29 ?? I:long), (r11v45 ?? I:boolean) VIRTUAL call: org.telegram.ui.Components.AnimatedFileDrawable.getFrameAtTime(long, boolean):android.graphics.Bitmap A[Catch: all -> 0x0aa9, MD:(long, boolean):android.graphics.Bitmap (m)] (LINE:1464)
+              (r0v155 ?? I:org.telegram.ui.Components.AnimatedFileDrawable) from 0x0b18: INVOKE (r0v155 ?? I:org.telegram.ui.Components.AnimatedFileDrawable) VIRTUAL call: org.telegram.ui.Components.AnimatedFileDrawable.recycle():void A[Catch: all -> 0x0aa9, MD:():void (m)] (LINE:1465)
+            	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
+            	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
+            	at jadx.core.utils.InsnRemover.lambda$unbindInsns$1(InsnRemover.java:99)
+            	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+            	at jadx.core.utils.InsnRemover.unbindInsns(InsnRemover.java:98)
+            	at jadx.core.utils.InsnRemover.perform(InsnRemover.java:73)
+            	at jadx.core.dex.visitors.ConstructorVisitor.replaceInvoke(ConstructorVisitor.java:59)
+            	at jadx.core.dex.visitors.ConstructorVisitor.visit(ConstructorVisitor.java:42)
             */
-        /* JADX WARN: Not initialized variable reg: 37, insn: 0x08ef: MOVE (r3 I:??[OBJECT, ARRAY]) = (r37 I:??[OBJECT, ARRAY]), block:B:774:0x08ef */
         @Override // java.lang.Runnable
         public void run() {
             /*
-                Method dump skipped, instructions count: 3754
+                Method dump skipped, instructions count: 3713
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.ImageLoader.CacheOutTask.run():void");
@@ -2274,8 +2279,7 @@ public class ImageLoader {
     /* JADX INFO: Access modifiers changed from: private */
     public int sizeOfBitmapDrawable(BitmapDrawable bitmapDrawable) {
         if (bitmapDrawable instanceof AnimatedFileDrawable) {
-            AnimatedFileDrawable animatedFileDrawable = (AnimatedFileDrawable) bitmapDrawable;
-            return Math.max(animatedFileDrawable.getIntrinsicHeight() * bitmapDrawable.getIntrinsicWidth() * 12, animatedFileDrawable.getRenderingHeight() * animatedFileDrawable.getRenderingWidth() * 12);
+            return ((AnimatedFileDrawable) bitmapDrawable).estimateSizeInCache();
         }
         if (bitmapDrawable instanceof RLottieDrawable) {
             return bitmapDrawable.getIntrinsicWidth() * bitmapDrawable.getIntrinsicHeight() * 8;

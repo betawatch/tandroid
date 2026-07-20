@@ -176,6 +176,7 @@ import org.telegram.ui.Components.Premium.boosts.cells.msg.GiveawayMessageCell;
 import org.telegram.ui.Components.Premium.boosts.cells.msg.GiveawayResultsMessageCell;
 import org.telegram.ui.Components.QuoteHighlight;
 import org.telegram.ui.Components.QuoteSpan;
+import org.telegram.ui.Components.RLottieDiceDrawable;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
@@ -33725,9 +33726,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             return;
         }
         Drawable drawable = this.photoImage.getDrawable();
-        if (drawable instanceof RLottieDrawable) {
-            RLottieDrawable rLottieDrawable = (RLottieDrawable) drawable;
-            if (rLottieDrawable.isDice() && rLottieDrawable.hasBaseDice() && !this.playedDice && rLottieDrawable.isDiceRevealed()) {
+        if (drawable instanceof RLottieDiceDrawable) {
+            RLottieDiceDrawable rLottieDiceDrawable = (RLottieDiceDrawable) drawable;
+            if (rLottieDiceDrawable.hasBaseDice() && !this.playedDice && rLottieDiceDrawable.isDiceRevealed()) {
                 this.playedDice = true;
                 ChatMessageCellDelegate chatMessageCellDelegate = this.delegate;
                 if (chatMessageCellDelegate != null) {
@@ -37800,10 +37801,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             return false;
         }
         Drawable drawable = this.photoImage.getDrawable();
-        if (!(drawable instanceof RLottieDrawable)) {
+        if (!(drawable instanceof RLottieDiceDrawable)) {
             return false;
         }
-        RLottieDrawable rLottieDrawable = (RLottieDrawable) drawable;
+        RLottieDiceDrawable rLottieDiceDrawable = (RLottieDiceDrawable) drawable;
         String diceEmoji = this.currentMessageObject.getDiceEmoji();
         TLRPC.TL_messages_stickerSet stickerSetByEmojiOrName = MediaDataController.getInstance(this.currentAccount).getStickerSetByEmojiOrName(diceEmoji);
         if (stickerSetByEmojiOrName == null) {
@@ -37813,19 +37814,19 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         int diceValue = this.currentMessageObject.getDiceValue();
         if ("🎰".equals(this.currentMessageObject.getDiceEmoji())) {
             if (diceValue >= 0 && diceValue <= 64) {
-                ((SlotsDrawable) rLottieDrawable).setDiceNumber(this, diceValue, stickerSetByEmojiOrName, z);
+                ((SlotsDrawable) rLottieDiceDrawable).setDiceNumber(this, diceValue, stickerSetByEmojiOrName, z);
                 if (this.currentMessageObject.isOut()) {
-                    rLottieDrawable.setOnFinishCallback(this.diceFinishCallback, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    rLottieDiceDrawable.setOnFinishCallback(this.diceFinishCallback, ConnectionsManager.DEFAULT_DATACENTER_ID);
                 }
                 this.currentMessageObject.wasUnread = false;
             }
-            if (!rLottieDrawable.hasBaseDice() && stickerSetByEmojiOrName.documents.size() > 0) {
-                ((SlotsDrawable) rLottieDrawable).setBaseDice(this, stickerSetByEmojiOrName);
+            if (!rLottieDiceDrawable.hasBaseDice() && stickerSetByEmojiOrName.documents.size() > 0) {
+                ((SlotsDrawable) rLottieDiceDrawable).setBaseDice(this, stickerSetByEmojiOrName);
             }
         } else {
-            if (!rLottieDrawable.hasBaseDice() && stickerSetByEmojiOrName.documents.size() > 0) {
+            if (!rLottieDiceDrawable.hasBaseDice() && stickerSetByEmojiOrName.documents.size() > 0) {
                 TLRPC.Document document = stickerSetByEmojiOrName.documents.get(0);
-                if (rLottieDrawable.setBaseDice(FileLoader.getInstance(this.currentAccount).getPathToAttach(document, true))) {
+                if (rLottieDiceDrawable.setBaseDice(FileLoader.getInstance(this.currentAccount).getPathToAttach(document, true))) {
                     DownloadController.getInstance(this.currentAccount).removeLoadingFileObserver(this);
                 } else {
                     DownloadController.getInstance(this.currentAccount).addLoadingFileObserver(FileLoader.getAttachFileName(document), this.currentMessageObject, this);
@@ -37834,10 +37835,10 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             }
             if (diceValue >= 0 && diceValue < stickerSetByEmojiOrName.documents.size()) {
                 if (!z && this.currentMessageObject.isOut() && (diceFrameSuccess = MessagesController.getInstance(this.currentAccount).diceSuccess.get(diceEmoji)) != null && diceFrameSuccess.num == diceValue) {
-                    rLottieDrawable.setOnFinishCallback(this.diceFinishCallback, diceFrameSuccess.frame);
+                    rLottieDiceDrawable.setOnFinishCallback(this.diceFinishCallback, diceFrameSuccess.frame);
                 }
                 TLRPC.Document document2 = stickerSetByEmojiOrName.documents.get(Math.max(diceValue, 0));
-                if (rLottieDrawable.setDiceNumber(FileLoader.getInstance(this.currentAccount).getPathToAttach(document2, true), z)) {
+                if (rLottieDiceDrawable.setDiceNumber(FileLoader.getInstance(this.currentAccount).getPathToAttach(document2, true), z)) {
                     DownloadController.getInstance(this.currentAccount).removeLoadingFileObserver(this);
                 } else {
                     DownloadController.getInstance(this.currentAccount).addLoadingFileObserver(FileLoader.getAttachFileName(document2), this.currentMessageObject, this);

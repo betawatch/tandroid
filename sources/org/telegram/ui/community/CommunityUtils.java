@@ -46,7 +46,7 @@ import org.telegram.ui.community.sheet.CommunityAddOptionsSheet;
 
 /* loaded from: classes3.dex */
 public abstract class CommunityUtils {
-    public static void fillLinkedPeers(int i, ArrayList arrayList, long j, boolean z) {
+    public static void fillLinkedPeers(int i, ArrayList arrayList, DialogCell.DialogCellDelegate dialogCellDelegate, long j, boolean z) {
         boolean z2;
         MessagesController.CommunityPeersDialog buildCommunityPeers = MessagesController.getInstance(i).buildCommunityPeers(j);
         if (buildCommunityPeers == null) {
@@ -58,7 +58,7 @@ public abstract class CommunityUtils {
             arrayList.add(UItem.asHeader(21, LocaleController.getString(R.string.CommunitySectionChatsYouAreIn)));
             Iterator<MessagesController.CommunityPeerDialog> it = buildCommunityPeers.chatsYouAreIn.iterator();
             while (it.hasNext()) {
-                arrayList.add(DialogCellFactory.asCell(it.next()));
+                arrayList.add(DialogCellFactory.asCell(it.next(), dialogCellDelegate));
             }
             z2 = z;
         }
@@ -69,7 +69,7 @@ public abstract class CommunityUtils {
             arrayList.add(UItem.asHeader(23, LocaleController.getString(R.string.CommunitySectionChatsYouCanView)));
             Iterator<MessagesController.CommunityPeerDialog> it2 = buildCommunityPeers.chatsYouCanView.iterator();
             while (it2.hasNext()) {
-                arrayList.add(DialogCellFactory.asCell(it2.next()));
+                arrayList.add(DialogCellFactory.asCell(it2.next(), dialogCellDelegate));
             }
             z2 = z;
         }
@@ -82,7 +82,7 @@ public abstract class CommunityUtils {
             arrayList.add(UItem.asHeader(25, LocaleController.getString(R.string.CommunitySectionChatsYouCanRequestToJoin)));
             Iterator<MessagesController.CommunityPeerDialog> it3 = buildCommunityPeers.chatsYouCanJoin.iterator();
             while (it3.hasNext()) {
-                arrayList.add(DialogCellFactory.asCell(it3.next()));
+                arrayList.add(DialogCellFactory.asCell(it3.next(), dialogCellDelegate));
             }
         }
         if (buildCommunityPeers.chatsOther.isEmpty()) {
@@ -94,7 +94,7 @@ public abstract class CommunityUtils {
         arrayList.add(UItem.asHeader(27, LocaleController.getString(R.string.CommunitySectionHiddenChats)));
         Iterator<MessagesController.CommunityPeerDialog> it4 = buildCommunityPeers.chatsOther.iterator();
         while (it4.hasNext()) {
-            arrayList.add(DialogCellFactory.asCell(it4.next()));
+            arrayList.add(DialogCellFactory.asCell(it4.next(), dialogCellDelegate));
         }
     }
 
@@ -803,6 +803,7 @@ public abstract class CommunityUtils {
         @Override // org.telegram.ui.Components.UItem.UItemFactory
         public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
             DialogCell dialogCell = (DialogCell) view;
+            dialogCell.setDialogCellDelegate((DialogCell.DialogCellDelegate) uItem.object2);
             Object obj = uItem.object;
             if (obj instanceof TLRPC.Chat) {
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
@@ -834,26 +835,28 @@ public abstract class CommunityUtils {
             }
         }
 
-        public static UItem asCell(MessagesController.CommunityPeerDialog communityPeerDialog) {
+        public static UItem asCell(MessagesController.CommunityPeerDialog communityPeerDialog, DialogCell.DialogCellDelegate dialogCellDelegate) {
             TLRPC.User user = communityPeerDialog.user;
-            return user != null ? asCell(user) : asCell(communityPeerDialog.chat);
+            return user != null ? asCell(user, dialogCellDelegate) : asCell(communityPeerDialog.chat, dialogCellDelegate);
         }
 
-        public static UItem asCell(TLRPC.User user) {
+        public static UItem asCell(TLRPC.User user, DialogCell.DialogCellDelegate dialogCellDelegate) {
             UItem ofFactory = UItem.ofFactory(DialogCellFactory.class);
             long j = user != null ? user.id : 0L;
             ofFactory.longValue = j;
             ofFactory.id = SessionDetails$$ExternalSyntheticBackport0.m(j);
             ofFactory.object = user;
+            ofFactory.object2 = dialogCellDelegate;
             return ofFactory;
         }
 
-        public static UItem asCell(TLRPC.Chat chat) {
+        public static UItem asCell(TLRPC.Chat chat, DialogCell.DialogCellDelegate dialogCellDelegate) {
             UItem ofFactory = UItem.ofFactory(DialogCellFactory.class);
             long j = chat != null ? -chat.id : 0L;
             ofFactory.longValue = j;
             ofFactory.id = SessionDetails$$ExternalSyntheticBackport0.m(j);
             ofFactory.object = chat;
+            ofFactory.object2 = dialogCellDelegate;
             return ofFactory;
         }
     }

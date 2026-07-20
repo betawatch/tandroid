@@ -73,6 +73,7 @@ import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.Components.ViewPagerFixed;
 import org.telegram.ui.Components.chat.layouts.ChatActivityFadeView;
 import org.telegram.ui.FilteredSearchView;
+import org.telegram.ui.Stories.StoriesListPlaceProvider;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.TopicsFragment;
 import org.telegram.ui.community.CommunitySheet;
@@ -83,7 +84,7 @@ import org.telegram.ui.community.sheet.CommunityAddOptionsSheet;
 import org.telegram.ui.community.sheet.CommunityInviteOnlySheet;
 
 /* loaded from: classes3.dex */
-public class CommunitySheet extends BottomSheet implements NotificationCenter.NotificationCenterDelegate, FactorAnimator.Target {
+public class CommunitySheet extends BottomSheet implements NotificationCenter.NotificationCenterDelegate, FactorAnimator.Target, DialogCell.DialogCellDelegate {
     private ButtonWithCounterView addChatToCommunityButton;
     private final BoolAnimator animatorSearchChatsVisible;
     private final BoolAnimator animatorSearchMessagesVisible;
@@ -116,14 +117,31 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
     private Insets systemInsets;
     private ViewPagerFixed viewPager;
 
+    @Override // org.telegram.ui.Cells.DialogCell.DialogCellDelegate
+    public boolean canClickButtonInside() {
+        return true;
+    }
+
     @Override // org.telegram.ui.ActionBar.BottomSheet
     protected boolean canSwipeToBack(MotionEvent motionEvent) {
         return false;
     }
 
+    @Override // org.telegram.ui.Cells.DialogCell.DialogCellDelegate
+    public void onButtonLongPress(DialogCell dialogCell) {
+    }
+
     @Override // me.vkryl.android.animator.FactorAnimator.Target
     public /* synthetic */ void onFactorChangeFinished(int i, float f, FactorAnimator factorAnimator) {
         FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i, f, factorAnimator);
+    }
+
+    @Override // org.telegram.ui.Cells.DialogCell.DialogCellDelegate
+    public void openHiddenStories() {
+    }
+
+    @Override // org.telegram.ui.Cells.DialogCell.DialogCellDelegate
+    public void showChatPreview(DialogCell dialogCell) {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -465,7 +483,7 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             arrayList.add(CommunityRequestsCell.Factory.of(100, iconBackgroundColors, i, formatPluralString, unreadCount > 0 ? Integer.toString(unreadCount) : null, true));
             arrayList.add(UItem.asSpace(5, AndroidUtilities.dp(14.33f)));
         }
-        CommunityUtils.fillLinkedPeers(this.currentAccount, arrayList, this.communityId, true);
+        CommunityUtils.fillLinkedPeers(this.currentAccount, arrayList, this, this.communityId, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1524,6 +1542,23 @@ public class CommunitySheet extends BottomSheet implements NotificationCenter.No
             CommunitySheet.this.gradientProtectionDrawableBottom.setBounds(0, getHeight() - lerp2, getWidth(), getHeight());
             CommunitySheet.this.gradientProtectionDrawableBottom.setColor(Theme.multAlpha(CommunitySheet.this.getThemedColor(i), lerp3));
             CommunitySheet.this.gradientProtectionDrawableBottom.draw(canvas);
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.DialogCell.DialogCellDelegate
+    public void onButtonClicked(DialogCell dialogCell) {
+        TLRPC.TL_forumTopic findTopic;
+        if (dialogCell.getMessage() == null || (findTopic = MessagesController.getInstance(this.currentAccount).getTopicsController().findTopic(-dialogCell.getDialogId(), MessageObject.getTopicId(this.currentAccount, dialogCell.getMessage().messageOwner, true))) == null) {
+            return;
+        }
+        ForumUtilities.openTopic(this.parentFragment, -dialogCell.getDialogId(), findTopic, 0);
+    }
+
+    @Override // org.telegram.ui.Cells.DialogCell.DialogCellDelegate
+    public void openStory(DialogCell dialogCell, Runnable runnable) {
+        if (MessagesController.getInstance(this.currentAccount).getStoriesController().hasStories(dialogCell.getDialogId())) {
+            this.parentFragment.getOrCreateStoryViewer().doOnAnimationReady(runnable);
+            this.parentFragment.getOrCreateStoryViewer().open(this.parentFragment.getContext(), dialogCell.getDialogId(), StoriesListPlaceProvider.of((RecyclerListView) dialogCell.getParent()));
         }
     }
 }
