@@ -17,6 +17,7 @@ import android.media.RemoteControlClient;
 import android.media.session.MediaSession;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.media.MediaMetadataCompat;
 import android.support.v4.media.session.MediaSessionCompat;
@@ -30,6 +31,7 @@ import org.telegram.messenger.audioinfo.AudioInfo;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AudioPlayerAlert;
 import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
@@ -64,7 +66,6 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
     private int notificationMessageID;
     private PlaybackStateCompat.Builder playbackState;
     private RemoteControlClient remoteControlClient;
-    private TelegramMediaSession sessionHolder;
 
     @Override // android.app.Service
     public IBinder onBind(Intent intent) {
@@ -98,14 +99,107 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                 ImageReceiver.ImageReceiverDelegate.-CC.$default$onAnimationReady(this, imageReceiver2);
             }
         });
-        TelegramMediaSession telegramMediaSession = TelegramMediaSession.getInstance(getApplicationContext());
-        this.sessionHolder = telegramMediaSession;
-        this.mediaSession = telegramMediaSession.getSession();
+        this.mediaSession = new MediaSessionCompat(this, "telegramAudioPlayer");
         this.playbackState = new PlaybackStateCompat.Builder();
         this.albumArtPlaceholder = Bitmap.createBitmap(AndroidUtilities.dp(102.0f), AndroidUtilities.dp(102.0f), Bitmap.Config.ARGB_8888);
         Drawable drawable = getResources().getDrawable(R.drawable.nocover_big);
         drawable.setBounds(0, 0, this.albumArtPlaceholder.getWidth(), this.albumArtPlaceholder.getHeight());
         drawable.draw(new Canvas(this.albumArtPlaceholder));
+        this.mediaSession.setCallback(new MediaSessionCompat.Callback() { // from class: org.telegram.messenger.MusicPlayerService.2
+            @Override // android.support.v4.media.session.MediaSessionCompat.Callback
+            public void onStop() {
+            }
+
+            @Override // android.support.v4.media.session.MediaSessionCompat.Callback
+            public void onPlay() {
+                MediaController.getInstance().playMessage(MediaController.getInstance().getPlayingMessageObject());
+            }
+
+            @Override // android.support.v4.media.session.MediaSessionCompat.Callback
+            public void onPause() {
+                MediaController.getInstance().lambda$startAudioAgain$7(MediaController.getInstance().getPlayingMessageObject());
+            }
+
+            @Override // android.support.v4.media.session.MediaSessionCompat.Callback
+            public void onSkipToNext() {
+                MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
+                if (playingMessageObject == null || !playingMessageObject.isMusic()) {
+                    return;
+                }
+                MediaController.getInstance().playNextMessage();
+            }
+
+            @Override // android.support.v4.media.session.MediaSessionCompat.Callback
+            public void onSkipToPrevious() {
+                MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
+                if (playingMessageObject == null || !playingMessageObject.isMusic()) {
+                    return;
+                }
+                MediaController.getInstance().playPreviousMessage();
+            }
+
+            @Override // android.support.v4.media.session.MediaSessionCompat.Callback
+            public void onSeekTo(long j) {
+                MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
+                if (playingMessageObject != null) {
+                    MediaController.getInstance().seekToProgress(playingMessageObject, (j / 1000) / ((float) playingMessageObject.getDuration()));
+                    MusicPlayerService.this.updatePlaybackState(j);
+                }
+            }
+
+            @Override // android.support.v4.media.session.MediaSessionCompat.Callback
+            public void onSetRepeatMode(int i2) {
+                SharedConfig.setRepeatMode(i2 != 1 ? (i2 == 2 || i2 == 3) ? 1 : 0 : 2);
+                MusicPlayerService.this.updateRepeatMode();
+                MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
+                if (playingMessageObject != null) {
+                    MusicPlayerService.this.createNotification(playingMessageObject, false);
+                }
+            }
+
+            @Override // android.support.v4.media.session.MediaSessionCompat.Callback
+            public void onSetShuffleMode(int i2) {
+                if (i2 == 1 || i2 == 2) {
+                    if (!SharedConfig.shuffleMusic) {
+                        MediaController.getInstance().setPlaybackOrderType(2);
+                    }
+                } else if (SharedConfig.shuffleMusic) {
+                    MediaController.getInstance().setPlaybackOrderType(0);
+                }
+                MusicPlayerService.this.updateShuffleMode();
+                MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
+                if (playingMessageObject != null) {
+                    MusicPlayerService.this.createNotification(playingMessageObject, false);
+                }
+            }
+
+            @Override // android.support.v4.media.session.MediaSessionCompat.Callback
+            public void onCustomAction(String str, Bundle bundle) {
+                if (MusicPlayerService.NOTIFY_REPEAT.equals(str)) {
+                    SharedConfig.setRepeatMode((SharedConfig.repeatMode + 1) % 3);
+                    MusicPlayerService.this.updateRepeatMode();
+                    AudioPlayerAlert audioPlayerAlert = AudioPlayerAlert.instance;
+                    if (audioPlayerAlert != null) {
+                        audioPlayerAlert.updateRepeatButton();
+                    }
+                } else if (MusicPlayerService.NOTIFY_SHUFFLE.equals(str)) {
+                    if (SharedConfig.shuffleMusic) {
+                        MediaController.getInstance().setPlaybackOrderType(0);
+                    } else {
+                        MediaController.getInstance().setPlaybackOrderType(2);
+                    }
+                    MusicPlayerService.this.updateShuffleMode();
+                    AudioPlayerAlert audioPlayerAlert2 = AudioPlayerAlert.instance;
+                    if (audioPlayerAlert2 != null) {
+                        audioPlayerAlert2.updateRepeatButton();
+                    }
+                }
+                MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
+                if (playingMessageObject != null) {
+                    MusicPlayerService.this.createNotification(playingMessageObject, false);
+                }
+            }
+        });
         this.mediaSession.setActive(true);
         updateRepeatMode();
         updateShuffleMode();
@@ -244,7 +338,8 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         return createBitmap;
     }
 
-    private void createNotification(MessageObject messageObject, boolean z) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void createNotification(MessageObject messageObject, boolean z) {
         long j;
         Bitmap avatarBitmap;
         Bitmap avatarBitmap2;
@@ -476,7 +571,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                     }
                 }
                 editMetadata.apply();
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MusicPlayerService.2
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MusicPlayerService.3
                     @Override // java.lang.Runnable
                     public void run() {
                         if (MusicPlayerService.this.remoteControlClient == null || MediaController.getInstance().getPlayingMessageObject() == null) {
@@ -504,7 +599,8 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         }
     }
 
-    private void updatePlaybackState(long j) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updatePlaybackState(long j) {
         long j2;
         int i;
         this.playbackState = new PlaybackStateCompat.Builder();
@@ -536,7 +632,8 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         this.mediaSession.setPlaybackState(this.playbackState.build());
     }
 
-    private void updateRepeatMode() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateRepeatMode() {
         MediaSessionCompat mediaSessionCompat = this.mediaSession;
         if (mediaSessionCompat != null) {
             int i = SharedConfig.repeatMode;
@@ -544,7 +641,8 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         }
     }
 
-    private void updateShuffleMode() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateShuffleMode() {
         MediaSessionCompat mediaSessionCompat = this.mediaSession;
         if (mediaSessionCompat != null) {
             mediaSessionCompat.setShuffleMode(SharedConfig.shuffleMusic ? 1 : 0);
@@ -587,6 +685,10 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             editMetadata.clear();
             editMetadata.apply();
             this.audioManager.unregisterRemoteControlClient(this.remoteControlClient);
+        }
+        MediaSessionCompat mediaSessionCompat = this.mediaSession;
+        if (mediaSessionCompat != null) {
+            mediaSessionCompat.release();
         }
         for (int i = 0; i < 4; i++) {
             NotificationCenter.getInstance(i).removeObserver(this, NotificationCenter.messagePlayingDidSeek);
