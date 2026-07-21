@@ -17,7 +17,6 @@ import java.io.FileReader;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -76,6 +75,8 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     private volatile boolean isPaused;
     protected volatile boolean isRecycled;
     protected volatile boolean isRunning;
+    private boolean isSingleChannel;
+    private final HashMap layerColors;
     protected final Runnable loadFrameRunnable;
     protected Runnable loadFrameTask;
     private final Choreographer60FpsContent.FrameCallback mUiThreadChoreographerCallback;
@@ -294,13 +295,13 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:107:0x0166  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x0178  */
     /* JADX WARN: Removed duplicated region for block: B:109:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0037  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0090 A[Catch: Exception -> 0x0076, TryCatch #2 {Exception -> 0x0076, blocks: (B:19:0x003a, B:22:0x0044, B:24:0x0049, B:38:0x0081, B:40:0x0086, B:42:0x008c, B:44:0x0090, B:45:0x0097, B:47:0x009b, B:49:0x009f, B:50:0x00be, B:52:0x00c2, B:55:0x00d0, B:57:0x00d9, B:60:0x00dd, B:62:0x00e5, B:64:0x00e9, B:66:0x00ed, B:68:0x00f0, B:69:0x00f6, B:70:0x00fc, B:72:0x00ff, B:73:0x0104, B:74:0x010a, B:78:0x0116, B:80:0x011b, B:81:0x0123, B:82:0x0128, B:84:0x012c, B:86:0x0134, B:87:0x0138, B:89:0x013c, B:91:0x0142, B:93:0x014f, B:94:0x0154, B:95:0x0110, B:97:0x0072, B:100:0x0079), top: B:18:0x003a }] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x009b A[Catch: Exception -> 0x0076, TryCatch #2 {Exception -> 0x0076, blocks: (B:19:0x003a, B:22:0x0044, B:24:0x0049, B:38:0x0081, B:40:0x0086, B:42:0x008c, B:44:0x0090, B:45:0x0097, B:47:0x009b, B:49:0x009f, B:50:0x00be, B:52:0x00c2, B:55:0x00d0, B:57:0x00d9, B:60:0x00dd, B:62:0x00e5, B:64:0x00e9, B:66:0x00ed, B:68:0x00f0, B:69:0x00f6, B:70:0x00fc, B:72:0x00ff, B:73:0x0104, B:74:0x010a, B:78:0x0116, B:80:0x011b, B:81:0x0123, B:82:0x0128, B:84:0x012c, B:86:0x0134, B:87:0x0138, B:89:0x013c, B:91:0x0142, B:93:0x014f, B:94:0x0154, B:95:0x0110, B:97:0x0072, B:100:0x0079), top: B:18:0x003a }] */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00d0 A[Catch: Exception -> 0x0076, TryCatch #2 {Exception -> 0x0076, blocks: (B:19:0x003a, B:22:0x0044, B:24:0x0049, B:38:0x0081, B:40:0x0086, B:42:0x008c, B:44:0x0090, B:45:0x0097, B:47:0x009b, B:49:0x009f, B:50:0x00be, B:52:0x00c2, B:55:0x00d0, B:57:0x00d9, B:60:0x00dd, B:62:0x00e5, B:64:0x00e9, B:66:0x00ed, B:68:0x00f0, B:69:0x00f6, B:70:0x00fc, B:72:0x00ff, B:73:0x0104, B:74:0x010a, B:78:0x0116, B:80:0x011b, B:81:0x0123, B:82:0x0128, B:84:0x012c, B:86:0x0134, B:87:0x0138, B:89:0x013c, B:91:0x0142, B:93:0x014f, B:94:0x0154, B:95:0x0110, B:97:0x0072, B:100:0x0079), top: B:18:0x003a }] */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00dd A[Catch: Exception -> 0x0076, TryCatch #2 {Exception -> 0x0076, blocks: (B:19:0x003a, B:22:0x0044, B:24:0x0049, B:38:0x0081, B:40:0x0086, B:42:0x008c, B:44:0x0090, B:45:0x0097, B:47:0x009b, B:49:0x009f, B:50:0x00be, B:52:0x00c2, B:55:0x00d0, B:57:0x00d9, B:60:0x00dd, B:62:0x00e5, B:64:0x00e9, B:66:0x00ed, B:68:0x00f0, B:69:0x00f6, B:70:0x00fc, B:72:0x00ff, B:73:0x0104, B:74:0x010a, B:78:0x0116, B:80:0x011b, B:81:0x0123, B:82:0x0128, B:84:0x012c, B:86:0x0134, B:87:0x0138, B:89:0x013c, B:91:0x0142, B:93:0x014f, B:94:0x0154, B:95:0x0110, B:97:0x0072, B:100:0x0079), top: B:18:0x003a }] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x003f  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0098 A[Catch: Exception -> 0x007e, TryCatch #0 {Exception -> 0x007e, blocks: (B:19:0x0042, B:22:0x004c, B:24:0x0051, B:38:0x0089, B:40:0x008e, B:42:0x0094, B:44:0x0098, B:45:0x009f, B:47:0x00a3, B:49:0x00a7, B:50:0x00d0, B:52:0x00d4, B:55:0x00e2, B:57:0x00eb, B:60:0x00ef, B:62:0x00f7, B:64:0x00fb, B:66:0x00ff, B:68:0x0102, B:69:0x0108, B:70:0x010e, B:72:0x0111, B:73:0x0116, B:74:0x011c, B:78:0x0128, B:80:0x012d, B:81:0x0135, B:82:0x013a, B:84:0x013e, B:86:0x0146, B:87:0x014a, B:89:0x014e, B:91:0x0154, B:93:0x0161, B:94:0x0166, B:95:0x0122, B:97:0x007a, B:100:0x0081), top: B:18:0x0042 }] */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00a3 A[Catch: Exception -> 0x007e, TryCatch #0 {Exception -> 0x007e, blocks: (B:19:0x0042, B:22:0x004c, B:24:0x0051, B:38:0x0089, B:40:0x008e, B:42:0x0094, B:44:0x0098, B:45:0x009f, B:47:0x00a3, B:49:0x00a7, B:50:0x00d0, B:52:0x00d4, B:55:0x00e2, B:57:0x00eb, B:60:0x00ef, B:62:0x00f7, B:64:0x00fb, B:66:0x00ff, B:68:0x0102, B:69:0x0108, B:70:0x010e, B:72:0x0111, B:73:0x0116, B:74:0x011c, B:78:0x0128, B:80:0x012d, B:81:0x0135, B:82:0x013a, B:84:0x013e, B:86:0x0146, B:87:0x014a, B:89:0x014e, B:91:0x0154, B:93:0x0161, B:94:0x0166, B:95:0x0122, B:97:0x007a, B:100:0x0081), top: B:18:0x0042 }] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00e2 A[Catch: Exception -> 0x007e, TryCatch #0 {Exception -> 0x007e, blocks: (B:19:0x0042, B:22:0x004c, B:24:0x0051, B:38:0x0089, B:40:0x008e, B:42:0x0094, B:44:0x0098, B:45:0x009f, B:47:0x00a3, B:49:0x00a7, B:50:0x00d0, B:52:0x00d4, B:55:0x00e2, B:57:0x00eb, B:60:0x00ef, B:62:0x00f7, B:64:0x00fb, B:66:0x00ff, B:68:0x0102, B:69:0x0108, B:70:0x010e, B:72:0x0111, B:73:0x0116, B:74:0x011c, B:78:0x0128, B:80:0x012d, B:81:0x0135, B:82:0x013a, B:84:0x013e, B:86:0x0146, B:87:0x014a, B:89:0x014e, B:91:0x0154, B:93:0x0161, B:94:0x0166, B:95:0x0122, B:97:0x007a, B:100:0x0081), top: B:18:0x0042 }] */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00ef A[Catch: Exception -> 0x007e, TryCatch #0 {Exception -> 0x007e, blocks: (B:19:0x0042, B:22:0x004c, B:24:0x0051, B:38:0x0089, B:40:0x008e, B:42:0x0094, B:44:0x0098, B:45:0x009f, B:47:0x00a3, B:49:0x00a7, B:50:0x00d0, B:52:0x00d4, B:55:0x00e2, B:57:0x00eb, B:60:0x00ef, B:62:0x00f7, B:64:0x00fb, B:66:0x00ff, B:68:0x0102, B:69:0x0108, B:70:0x010e, B:72:0x0111, B:73:0x0116, B:74:0x011c, B:78:0x0128, B:80:0x012d, B:81:0x0135, B:82:0x013a, B:84:0x013e, B:86:0x0146, B:87:0x014a, B:89:0x014e, B:91:0x0154, B:93:0x0161, B:94:0x0166, B:95:0x0122, B:97:0x007a, B:100:0x0081), top: B:18:0x0042 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -323,7 +324,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         }
         if (this.backgroundBitmap == null) {
             try {
-                this.backgroundBitmap = Bitmap.createBitmap(this.width, this.height, Bitmap.Config.ARGB_8888);
+                this.backgroundBitmap = Bitmap.createBitmap(this.width, this.height, this.isSingleChannel ? Bitmap.Config.ALPHA_8 : Bitmap.Config.ARGB_8888);
                 z = false;
             } catch (Throwable th) {
                 FileLog.e(th);
@@ -372,7 +373,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                             if (this.nativePtr == null) {
                                 String file = this.args.file.toString();
                                 NativePtrArgs nativePtrArgs = this.args;
-                                this.nativePtr = RLottieNative.createFromFile(file, nativePtrArgs.json, this.width, this.height, false, nativePtrArgs.colorReplacement, false, nativePtrArgs.fitzModifier);
+                                this.nativePtr = RLottieNative.createFromFile(file, nativePtrArgs.json, this.width, this.height, null, false, nativePtrArgs.colorReplacement, false, nativePtrArgs.fitzModifier, this.layerColors);
                             }
                             if (this.nativePtr != null) {
                                 frame = this.nativePtr.getFrame(this.currentFrame, this.backgroundBitmap, z);
@@ -474,32 +475,48 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     }
 
     private void applyPendingColorsUpdates() {
+        RLottieNative createFromRawJson;
         RLottieNative rLottieNative = this.nativePtr;
         if (rLottieNative == null) {
             return;
         }
         try {
-            if (!this.pendingColorUpdates.isEmpty()) {
-                for (Map.Entry entry : this.pendingColorUpdates.entrySet()) {
-                    rLottieNative.setLayerColor((String) entry.getKey(), ((Integer) entry.getValue()).intValue());
-                }
-                this.pendingColorUpdates.clear();
+            if (this.pendingColorUpdates.isEmpty() && this.pendingReplaceColors == null) {
+                return;
             }
+            this.layerColors.putAll(this.pendingColorUpdates);
             int[] iArr = this.pendingReplaceColors;
             if (iArr != null) {
-                rLottieNative.replaceColors(iArr);
+                this.args.colorReplacement = (int[]) iArr.clone();
+            }
+            NativePtrArgs nativePtrArgs = this.args;
+            File file = nativePtrArgs.file;
+            if (file != null) {
+                String absolutePath = file.getAbsolutePath();
+                NativePtrArgs nativePtrArgs2 = this.args;
+                createFromRawJson = RLottieNative.createFromFile(absolutePath, nativePtrArgs2.json, this.width, this.height, this.metaData, false, nativePtrArgs2.colorReplacement, this.shouldLimitFps, nativePtrArgs2.fitzModifier, this.layerColors);
+            } else {
+                createFromRawJson = RLottieNative.createFromRawJson(nativePtrArgs.json, nativePtrArgs.name, this.metaData, nativePtrArgs.colorReplacement, this.layerColors);
+            }
+            if (createFromRawJson != null) {
+                this.nativePtr = createFromRawJson;
+                rLottieNative.recycle();
+                this.pendingColorUpdates.clear();
                 this.pendingReplaceColors = null;
             }
         } catch (Exception unused) {
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public RLottieDrawable(File file, String str, int i, int i2, BitmapsCache.CacheOptions cacheOptions, boolean z, int[] iArr, int i3) {
         int[] iArr2 = new int[3];
         this.metaData = iArr2;
         this.customEndFrame = -1;
         this.newColorUpdates = new HashMap();
         this.pendingColorUpdates = new HashMap();
+        HashMap hashMap = new HashMap();
+        this.layerColors = hashMap;
         this.resetVibrationAfterRestart = false;
         this.allowVibration = true;
         this.speedMultiply = 1.0f;
@@ -554,6 +571,13 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.precache = cacheOptions != null;
         this.fallbackCache = str == null && cacheOptions != null && cacheOptions.fallback;
         this.createdForFirstFrame = cacheOptions != null && cacheOptions.firstFrame;
+        NativePtrArgs nativePtrArgs = new NativePtrArgs();
+        this.args = nativePtrArgs;
+        nativePtrArgs.file = file.getAbsoluteFile();
+        NativePtrArgs nativePtrArgs2 = this.args;
+        nativePtrArgs2.json = str;
+        nativePtrArgs2.colorReplacement = iArr != null ? (int[]) iArr.clone() : null;
+        this.args.fitzModifier = i3;
         getPaint().setFlags(2);
         if (str == null) {
             this.file = file;
@@ -562,13 +586,6 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
             createCacheGenQueue();
         }
         if (this.precache) {
-            NativePtrArgs nativePtrArgs = new NativePtrArgs();
-            this.args = nativePtrArgs;
-            nativePtrArgs.file = file.getAbsoluteFile();
-            NativePtrArgs nativePtrArgs2 = this.args;
-            nativePtrArgs2.json = str;
-            nativePtrArgs2.colorReplacement = iArr;
-            nativePtrArgs2.fitzModifier = i3;
             if (this.createdForFirstFrame) {
                 return;
             }
@@ -576,10 +593,10 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
             if (this.shouldLimitFps && iArr2[1] < 60) {
                 this.shouldLimitFps = false;
             }
-            this.bitmapsCache = new BitmapsCache(file, this, cacheOptions, i, i2, !z);
+            this.bitmapsCache = new BitmapsCache(file, this, cacheOptions, i, i2, !z, i3);
             return;
         }
-        this.nativePtr = RLottieNative.createFromFile(file.getAbsolutePath(), str, i, i2, iArr2, this.precache, iArr, this.shouldLimitFps, i3);
+        this.nativePtr = RLottieNative.createFromFile(file.getAbsolutePath(), str, i, i2, iArr2, this.precache, this.args.colorReplacement, this.shouldLimitFps, i3, hashMap);
         if (this.nativePtr == null) {
             FileLog.d("RLottieDrawable nativePtr == 0 " + file.getAbsolutePath() + " remove file");
             file.delete();
@@ -588,6 +605,10 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
             return;
         }
         this.shouldLimitFps = false;
+    }
+
+    public final void setIsSingleChannel(boolean z) {
+        this.isSingleChannel = z;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x006b A[SYNTHETIC] */
@@ -655,7 +676,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
             int i = this.width;
             int i2 = this.height;
             NativePtrArgs nativePtrArgs = this.args;
-            RLottieNative createFromFile = RLottieNative.createFromFile(absolutePath, str, i, i2, iArr, false, nativePtrArgs.colorReplacement, this.shouldLimitFps, nativePtrArgs.fitzModifier);
+            RLottieNative createFromFile = RLottieNative.createFromFile(absolutePath, str, i, i2, iArr, false, nativePtrArgs.colorReplacement, this.shouldLimitFps, nativePtrArgs.fitzModifier, this.layerColors);
             if (createFromFile != null) {
                 createFromFile.recycle();
             }
@@ -667,6 +688,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.customEndFrame = -1;
         this.newColorUpdates = new HashMap();
         this.pendingColorUpdates = new HashMap();
+        this.layerColors = new HashMap();
         this.resetVibrationAfterRestart = false;
         this.allowVibration = true;
         this.speedMultiply = 1.0f;
@@ -735,12 +757,15 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this(i, str, i2, i3, true, null);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public RLottieDrawable(int i, String str, int i2, int i3, boolean z, int[] iArr) {
         int[] iArr2 = new int[3];
         this.metaData = iArr2;
         this.customEndFrame = -1;
         this.newColorUpdates = new HashMap();
         this.pendingColorUpdates = new HashMap();
+        HashMap hashMap = new HashMap();
+        this.layerColors = hashMap;
         this.resetVibrationAfterRestart = false;
         this.allowVibration = true;
         this.speedMultiply = 1.0f;
@@ -797,7 +822,12 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
             return;
         }
         getPaint().setFlags(2);
-        this.nativePtr = RLottieNative.createFromRawJson(readRes, str, iArr2, iArr);
+        NativePtrArgs nativePtrArgs = new NativePtrArgs();
+        this.args = nativePtrArgs;
+        nativePtrArgs.json = readRes;
+        nativePtrArgs.name = str;
+        nativePtrArgs.colorReplacement = iArr != null ? (int[]) iArr.clone() : null;
+        this.nativePtr = RLottieNative.createFromRawJson(readRes, str, iArr2, this.args.colorReplacement, hashMap);
         if (z) {
             setAllowDecodeSingleFrame(true);
         }
@@ -1360,7 +1390,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         File file;
         String file2 = this.args.file.toString();
         NativePtrArgs nativePtrArgs = this.args;
-        RLottieNative createFromFile = RLottieNative.createFromFile(file2, nativePtrArgs.json, this.width, this.height, this.createdForFirstFrame ? this.metaData : null, false, nativePtrArgs.colorReplacement, false, nativePtrArgs.fitzModifier);
+        RLottieNative createFromFile = RLottieNative.createFromFile(file2, nativePtrArgs.json, this.width, this.height, this.createdForFirstFrame ? this.metaData : null, false, nativePtrArgs.colorReplacement, false, nativePtrArgs.fitzModifier, this.layerColors);
         this.generateCacheNative = createFromFile;
         this.generateCacheFramePointer = 0;
         if (createFromFile != null || (file = this.file) == null) {
@@ -1437,6 +1467,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         File file;
         public int fitzModifier;
         String json;
+        String name;
 
         private NativePtrArgs() {
         }
@@ -1444,6 +1475,11 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
 
     public final void setAllowDrawFramesWhileCacheGenerating(boolean z) {
         this.allowDrawFramesWhileCacheGenerating = z;
+    }
+
+    public int estimateSizeInCache() {
+        int intrinsicWidth = getIntrinsicWidth() * getIntrinsicHeight();
+        return this.isSingleChannel ? intrinsicWidth * 2 : intrinsicWidth * 8;
     }
 
     private void checkChoreographerAfterFrameCall() {

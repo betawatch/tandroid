@@ -35,6 +35,7 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AppGlobalConfig;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BirthdayController;
@@ -995,6 +996,17 @@ public class StarsController {
         safeLastFragment.presentFragment(new StarsIntroActivity());
     }
 
+    private boolean isInvoiceBillingDisabled(TLRPC.InputPeer inputPeer) {
+        return AppGlobalConfig.getInstance(this.currentAccount).starsSpendTopUpInvoiceDisabled.get() && inputPeer != null;
+    }
+
+    public boolean canBuy(TLRPC.InputPeer inputPeer) {
+        if (inputPeer == null || !isInvoiceBillingDisabled(inputPeer)) {
+            return true;
+        }
+        return BillingController.getInstance().isReady();
+    }
+
     public void buy(final Activity activity, final TL_stars.TL_starsTopupOption tL_starsTopupOption, final Utilities.Callback2 callback2, TLRPC.InputPeer inputPeer) {
         if (activity == null) {
             return;
@@ -1009,7 +1021,8 @@ public class StarsController {
                 return;
             }
         }
-        if (BuildVars.useInvoiceBilling() || !BillingController.getInstance().isReady()) {
+        boolean isInvoiceBillingDisabled = isInvoiceBillingDisabled(inputPeer);
+        if ((BuildVars.useInvoiceBilling() || !BillingController.getInstance().isReady()) && !isInvoiceBillingDisabled) {
             TLRPC.TL_inputStorePaymentStarsTopup tL_inputStorePaymentStarsTopup = new TLRPC.TL_inputStorePaymentStarsTopup();
             tL_inputStorePaymentStarsTopup.stars = tL_starsTopupOption.stars;
             tL_inputStorePaymentStarsTopup.amount = tL_starsTopupOption.amount;
@@ -1026,12 +1039,19 @@ public class StarsController {
                 tL_payments_getPaymentForm.flags |= 1;
             }
             tL_payments_getPaymentForm.invoice = tL_inputInvoiceStars;
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_payments_getPaymentForm, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda69
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_payments_getPaymentForm, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda68
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     StarsController.this.lambda$buy$28(callback2, tL_inputInvoiceStars, tLObject, tL_error);
                 }
             });
+            return;
+        }
+        if (!BillingController.getInstance().isReady()) {
+            if (callback2 != null) {
+                callback2.run(Boolean.FALSE, LocaleController.getString(R.string.PaymentInvoiceDisabledError));
+                return;
+            }
             return;
         }
         final TLRPC.TL_inputStorePaymentStarsTopup tL_inputStorePaymentStarsTopup2 = new TLRPC.TL_inputStorePaymentStarsTopup();
@@ -1040,7 +1060,7 @@ public class StarsController {
         tL_inputStorePaymentStarsTopup2.amount = tL_starsTopupOption.amount;
         QueryProductDetailsParams.Product build = QueryProductDetailsParams.Product.newBuilder().setProductType("inapp").setProductId(tL_starsTopupOption.store_product).build();
         FileLog.d("StarsController.buy starts queryProductDetails");
-        BillingController.getInstance().queryProductDetails(Arrays.asList(build), new ProductDetailsResponseListener() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda68
+        BillingController.getInstance().queryProductDetails(Arrays.asList(build), new ProductDetailsResponseListener() { // from class: org.telegram.ui.Stars.StarsController$$ExternalSyntheticLambda69
             @Override // com.android.billingclient.api.ProductDetailsResponseListener
             public final void onProductDetailsResponse(BillingResult billingResult, List list) {
                 StarsController.lambda$buy$36(Utilities.Callback2.this, tL_inputStorePaymentStarsTopup2, tL_starsTopupOption, activity, billingResult, list);

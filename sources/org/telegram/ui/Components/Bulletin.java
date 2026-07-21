@@ -1811,7 +1811,7 @@ public class Bulletin {
         public void setAnimation(int i, int i2, int i3, String... strArr) {
             this.imageView.setAnimation(i, i2, i3);
             for (String str : strArr) {
-                this.imageView.setLayerColor(str + ".**", this.textColor);
+                this.imageView.setLayerColor(str, this.textColor);
             }
         }
 
@@ -1819,7 +1819,7 @@ public class Bulletin {
             this.imageView.setAutoRepeat(true);
             this.imageView.setAnimation(document, i, i2);
             for (String str : strArr) {
-                this.imageView.setLayerColor(str + ".**", this.textColor);
+                this.imageView.setLayerColor(str, this.textColor);
             }
         }
 
@@ -1931,7 +1931,7 @@ public class Bulletin {
         public void setAnimation(int i, int i2, int i3, String... strArr) {
             this.imageView.setAnimation(i, i2, i3);
             for (String str : strArr) {
-                this.imageView.setLayerColor(str + ".**", this.textColor);
+                this.imageView.setLayerColor(str, this.textColor);
             }
         }
 
@@ -2291,7 +2291,7 @@ public class Bulletin {
         public void setAnimation(int i, int i2, int i3, String... strArr) {
             this.imageView.setAnimation(i, i2, i3);
             for (String str : strArr) {
-                this.imageView.setLayerColor(str + ".**", this.textColor);
+                this.imageView.setLayerColor(str, this.textColor);
             }
         }
 
@@ -2299,7 +2299,7 @@ public class Bulletin {
             this.imageView.setAutoRepeat(true);
             this.imageView.setAnimation(document, i, i2);
             for (String str : strArr) {
-                this.imageView.setLayerColor(str + ".**", this.textColor);
+                this.imageView.setLayerColor(str, this.textColor);
             }
         }
 

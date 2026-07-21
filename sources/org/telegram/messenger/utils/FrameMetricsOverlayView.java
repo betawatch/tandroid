@@ -132,7 +132,7 @@ public final class FrameMetricsOverlayView extends View {
         };
         paint.setColor(-1342177280);
         paint2.setColor(-1);
-        paint2.setTextSize(AndroidUtilities.dp(10.0f));
+        paint2.setTextSize(AndroidUtilities.dp(9.0f));
         paint2.setFakeBoldText(true);
         paint2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
         setWillNotDraw(false);
@@ -289,7 +289,7 @@ public final class FrameMetricsOverlayView extends View {
         long j5;
         int i3 = 3;
         float dp = AndroidUtilities.dp(8.0f);
-        float dp2 = AndroidUtilities.dp(14.0f);
+        float dp2 = AndroidUtilities.dp(11.0f);
         canvas.drawRoundRect(0.0f, 0.0f, getWidth() > 0 ? getWidth() : AndroidUtilities.dp(260.0f), (2.0f * dp) + ((Metric.values().length + 9) * dp2), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), this.bgPaint);
         float f2 = dp + dp2;
         Metric[] values = Metric.values();
@@ -485,6 +485,6 @@ public final class FrameMetricsOverlayView extends View {
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        setMeasuredDimension(AndroidUtilities.dp(260.0f), (AndroidUtilities.dp(8.0f) * 2) + (AndroidUtilities.dp(14.0f) * (Metric.values().length + 9)));
+        setMeasuredDimension(AndroidUtilities.dp(210.0f), (AndroidUtilities.dp(8.0f) * 2) + (AndroidUtilities.dp(11.0f) * (Metric.values().length + 9)));
     }
 }

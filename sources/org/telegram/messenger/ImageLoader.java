@@ -1338,8 +1338,8 @@ public class ImageLoader {
 
         /*  JADX ERROR: JadxRuntimeException in pass: ConstructorVisitor
             jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r0v155 ??, still in use, count: 2, list:
-              (r0v155 ?? I:org.telegram.ui.Components.AnimatedFileDrawable) from 0x0b14: INVOKE (r3v47 ?? I:android.graphics.Bitmap) = (r0v155 ?? I:org.telegram.ui.Components.AnimatedFileDrawable), (r12v29 ?? I:long), (r11v45 ?? I:boolean) VIRTUAL call: org.telegram.ui.Components.AnimatedFileDrawable.getFrameAtTime(long, boolean):android.graphics.Bitmap A[Catch: all -> 0x0aa9, MD:(long, boolean):android.graphics.Bitmap (m)] (LINE:1464)
-              (r0v155 ?? I:org.telegram.ui.Components.AnimatedFileDrawable) from 0x0b18: INVOKE (r0v155 ?? I:org.telegram.ui.Components.AnimatedFileDrawable) VIRTUAL call: org.telegram.ui.Components.AnimatedFileDrawable.recycle():void A[Catch: all -> 0x0aa9, MD:():void (m)] (LINE:1465)
+              (r0v155 ?? I:org.telegram.ui.Components.AnimatedFileDrawable) from 0x0b24: INVOKE (r3v47 ?? I:android.graphics.Bitmap) = (r0v155 ?? I:org.telegram.ui.Components.AnimatedFileDrawable), (r12v29 ?? I:long), (r11v45 ?? I:boolean) VIRTUAL call: org.telegram.ui.Components.AnimatedFileDrawable.getFrameAtTime(long, boolean):android.graphics.Bitmap A[Catch: all -> 0x0ab9, MD:(long, boolean):android.graphics.Bitmap (m)] (LINE:1465)
+              (r0v155 ?? I:org.telegram.ui.Components.AnimatedFileDrawable) from 0x0b28: INVOKE (r0v155 ?? I:org.telegram.ui.Components.AnimatedFileDrawable) VIRTUAL call: org.telegram.ui.Components.AnimatedFileDrawable.recycle():void A[Catch: all -> 0x0ab9, MD:():void (m)] (LINE:1466)
             	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
             	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
             	at jadx.core.utils.InsnRemover.lambda$unbindInsns$1(InsnRemover.java:99)
@@ -1352,7 +1352,7 @@ public class ImageLoader {
         @Override // java.lang.Runnable
         public void run() {
             /*
-                Method dump skipped, instructions count: 3713
+                Method dump skipped, instructions count: 3729
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.ImageLoader.CacheOutTask.run():void");
@@ -2282,7 +2282,7 @@ public class ImageLoader {
             return ((AnimatedFileDrawable) bitmapDrawable).estimateSizeInCache();
         }
         if (bitmapDrawable instanceof RLottieDrawable) {
-            return bitmapDrawable.getIntrinsicWidth() * bitmapDrawable.getIntrinsicHeight() * 8;
+            return ((RLottieDrawable) bitmapDrawable).estimateSizeInCache();
         }
         return bitmapDrawable.getBitmap().getByteCount();
     }

@@ -7198,8 +7198,8 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     if (baseFragment3 != null) {
                         Map hashMap = new HashMap();
                         int i3 = Theme.key_dialogTopBackground;
-                        hashMap.put("info1.**", Integer.valueOf(baseFragment3.getThemedColor(i3)));
-                        hashMap.put("info2.**", Integer.valueOf(baseFragment3.getThemedColor(i3)));
+                        hashMap.put("info1", Integer.valueOf(baseFragment3.getThemedColor(i3)));
+                        hashMap.put("info2", Integer.valueOf(baseFragment3.getThemedColor(i3)));
                         builder.setTopAnimation(R.raw.not_available, 52, false, baseFragment3.getThemedColor(i3), hashMap);
                         builder.setTopAnimationIsNew(true);
                     }

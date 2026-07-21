@@ -31052,8 +31052,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             builder.setTitle(LocaleController.getString(R.string.AppName));
             HashMap hashMap = new HashMap();
             int i8 = Theme.key_dialogTopBackground;
-            hashMap.put("info1.**", Integer.valueOf(getThemedColor(i8)));
-            hashMap.put("info2.**", Integer.valueOf(getThemedColor(i8)));
+            hashMap.put("info1", Integer.valueOf(getThemedColor(i8)));
+            hashMap.put("info2", Integer.valueOf(getThemedColor(i8)));
             builder.setTopAnimation(R.raw.not_available, 52, false, getThemedColor(i8), hashMap);
             builder.setTopAnimationIsNew(true);
             if (intValue == 0) {
