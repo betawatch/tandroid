@@ -17,15 +17,15 @@ public final class RLottieNative {
 
     private static native void nDestroy(long j);
 
-    private static native double nGetDuration(String str, String str2);
-
     private static native int nGetFrame(long j, int i, Bitmap bitmap, boolean z);
-
-    private static native long nGetFramesCount(String str, String str2);
 
     private RLottieNative(long j, int[] iArr) {
         this.mNativePtr = j;
         this.mMetaData = iArr;
+    }
+
+    public static RLottieNative createFromFile(String str, String str2, int i, int i2, boolean z, int[] iArr, boolean z2, int i3) {
+        return createFromFile(str, str2, i, i2, null, z, iArr, z2, i3, null);
     }
 
     public static RLottieNative createFromFile(String str, String str2, int i, int i2, int[] iArr, boolean z, int[] iArr2, boolean z2, int i3, Map map) {
@@ -103,10 +103,6 @@ public final class RLottieNative {
         }
     }
 
-    public static long create(String str, String str2, int i, int i2, int[] iArr, boolean z, int[] iArr2, boolean z2, int i3) {
-        return create(str, str2, i, i2, iArr, z, iArr2, z2, i3, null);
-    }
-
     private static long create(String str, String str2, int i, int i2, int[] iArr, boolean z, int[] iArr2, boolean z2, int i3, Map map) {
         String[] strArr;
         Trace.beginSection("RLottieNative#create");
@@ -149,14 +145,32 @@ public final class RLottieNative {
     }
 
     public static void destroy(long j) {
-        nDestroy(j);
+        Trace.beginSection("RLottieNative#destroy");
+        try {
+            nDestroy(j);
+        } finally {
+            Trace.endSection();
+        }
     }
 
     public static long getFramesCount(String str, String str2) {
-        return nGetFramesCount(str, str2);
+        RLottieNative createFromFile = createFromFile(str, str2, 0, 0, false, null, false, 0);
+        if (createFromFile == null) {
+            return 0L;
+        }
+        int frameCount = createFromFile.getFrameCount();
+        createFromFile.recycle();
+        return frameCount;
     }
 
     public static double getDuration(String str, String str2) {
-        return nGetDuration(str, str2);
+        RLottieNative createFromFile = createFromFile(str, str2, 0, 0, false, null, false, 0);
+        if (createFromFile == null) {
+            return 0.0d;
+        }
+        int frameCount = createFromFile.getFrameCount();
+        int fps = createFromFile.getFps();
+        createFromFile.recycle();
+        return frameCount / fps;
     }
 }

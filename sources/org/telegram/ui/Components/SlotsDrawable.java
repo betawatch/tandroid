@@ -3,7 +3,6 @@ package org.telegram.ui.Components;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
 import java.lang.ref.WeakReference;
-import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
@@ -46,18 +45,12 @@ public final class SlotsDrawable extends RLottieDiceDrawable {
     }
 
     @Override // org.telegram.ui.Components.RLottieDiceDrawable, org.telegram.ui.Components.RLottieDrawable
-    protected void loadFrameRunnableImpl() {
-        int frame;
+    protected int loadFrameRunnableImpl() {
         if (this.isRecycled) {
-            return;
+            return 3;
         }
         if (this.nativePtr == null || (this.isDice == 2 && this.secondNativePtr == null)) {
-            CountDownLatch countDownLatch = this.frameWaitSync;
-            if (countDownLatch != null) {
-                countDownLatch.countDown();
-            }
-            AndroidUtilities.runOnUIThread(this.uiRunnableNoFrame);
-            return;
+            return 2;
         }
         if (this.backgroundBitmap == null) {
             try {
@@ -68,80 +61,80 @@ public final class SlotsDrawable extends RLottieDiceDrawable {
         }
         if (this.backgroundBitmap != null) {
             try {
+                int i = -1;
                 if (this.isDice == 1) {
-                    int i = 0;
-                    frame = -1;
+                    int i2 = 0;
                     while (true) {
                         RLottieNative[] rLottieNativeArr = this.lottieNatives;
-                        if (i >= rLottieNativeArr.length) {
+                        if (i2 >= rLottieNativeArr.length) {
                             break;
                         }
-                        frame = rLottieNativeArr[i].getFrame(this.frameNums[i], this.backgroundBitmap, i == 0);
-                        if (i != 0) {
+                        i = rLottieNativeArr[i2].getFrame(this.frameNums[i2], this.backgroundBitmap, i2 == 0);
+                        if (i2 != 0) {
                             int[] iArr = this.frameNums;
-                            int i2 = iArr[i] + 1;
-                            if (i2 < this.frameCounts[i]) {
-                                iArr[i] = i2;
-                            } else if (i != 4) {
-                                iArr[i] = 0;
+                            int i3 = iArr[i2] + 1;
+                            if (i3 < this.frameCounts[i2]) {
+                                iArr[i2] = i3;
+                            } else if (i2 != 4) {
+                                iArr[i2] = 0;
                                 this.nextFrameIsLast = false;
                                 if (this.secondNativePtr != null) {
                                     this.isDice = 2;
                                 }
                             }
                         }
-                        i++;
+                        i2++;
                     }
                 } else {
                     if (this.setLastFrame) {
-                        int i3 = 0;
+                        int i4 = 0;
                         while (true) {
                             int[] iArr2 = this.secondFrameNums;
-                            if (i3 >= iArr2.length) {
+                            if (i4 >= iArr2.length) {
                                 break;
                             }
-                            iArr2[i3] = this.secondFrameCounts[i3] - 1;
-                            i3++;
+                            iArr2[i4] = this.secondFrameCounts[i4] - 1;
+                            i4++;
                         }
                     }
                     if (this.playWinAnimation) {
                         int[] iArr3 = this.frameNums;
-                        int i4 = iArr3[0] + 1;
-                        if (i4 < this.frameCounts[0]) {
-                            iArr3[0] = i4;
+                        int i5 = iArr3[0] + 1;
+                        if (i5 < this.frameCounts[0]) {
+                            iArr3[0] = i5;
                         } else {
                             iArr3[0] = -1;
                         }
                     }
                     this.lottieNatives[0].getFrame(Math.max(this.frameNums[0], 0), this.backgroundBitmap, true);
-                    int i5 = 0;
+                    int i6 = 0;
                     while (true) {
                         RLottieNative[] rLottieNativeArr2 = this.secondLottieNatives;
-                        if (i5 >= rLottieNativeArr2.length) {
+                        if (i6 >= rLottieNativeArr2.length) {
                             break;
                         }
-                        RLottieNative rLottieNative = rLottieNativeArr2[i5];
-                        int i6 = this.secondFrameNums[i5];
-                        if (i6 < 0) {
-                            i6 = this.secondFrameCounts[i5] - 1;
+                        RLottieNative rLottieNative = rLottieNativeArr2[i6];
+                        int i7 = this.secondFrameNums[i6];
+                        if (i7 < 0) {
+                            i7 = this.secondFrameCounts[i6] - 1;
                         }
-                        rLottieNative.getFrame(i6, this.backgroundBitmap, false);
+                        rLottieNative.getFrame(i7, this.backgroundBitmap, false);
                         if (!this.nextFrameIsLast) {
                             int[] iArr4 = this.secondFrameNums;
-                            int i7 = iArr4[i5] + 1;
-                            if (i7 < this.secondFrameCounts[i5]) {
-                                iArr4[i5] = i7;
+                            int i8 = iArr4[i6] + 1;
+                            if (i8 < this.secondFrameCounts[i6]) {
+                                iArr4[i6] = i8;
                             } else {
-                                iArr4[i5] = -1;
+                                iArr4[i6] = -1;
                             }
                         }
-                        i5++;
+                        i6++;
                     }
-                    frame = this.lottieNatives[4].getFrame(this.frameNums[4], this.backgroundBitmap, false);
+                    int frame = this.lottieNatives[4].getFrame(this.frameNums[4], this.backgroundBitmap, false);
                     int[] iArr5 = this.frameNums;
-                    int i8 = iArr5[4] + 1;
-                    if (i8 < this.frameCounts[4]) {
-                        iArr5[4] = i8;
+                    int i9 = iArr5[4] + 1;
+                    if (i9 < this.frameCounts[4]) {
+                        iArr5[4] = i9;
                     }
                     int[] iArr6 = this.secondFrameNums;
                     if (iArr6[0] == -1 && iArr6[1] == -1 && iArr6[2] == -1) {
@@ -164,26 +157,17 @@ public final class SlotsDrawable extends RLottieDiceDrawable {
                     } else {
                         this.frameNums[0] = -1;
                     }
+                    i = frame;
                 }
-                if (frame == -1) {
-                    AndroidUtilities.runOnUIThread(this.uiRunnableNoFrame);
-                    CountDownLatch countDownLatch2 = this.frameWaitSync;
-                    if (countDownLatch2 != null) {
-                        countDownLatch2.countDown();
-                        return;
-                    }
-                    return;
+                if (i < 0) {
+                    return 2;
                 }
                 this.nextRenderingBitmap = this.backgroundBitmap;
             } catch (Exception e) {
                 FileLog.e(e);
             }
         }
-        AndroidUtilities.runOnUIThread(this.uiRunnable);
-        CountDownLatch countDownLatch3 = this.frameWaitSync;
-        if (countDownLatch3 != null) {
-            countDownLatch3.countDown();
-        }
+        return 1;
     }
 
     private ReelValue reelValue(int i) {

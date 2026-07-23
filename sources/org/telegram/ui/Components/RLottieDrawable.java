@@ -62,7 +62,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     private File file;
     private int finishFrame;
     private boolean forceFrameRedraw;
-    protected CountDownLatch frameWaitSync;
+    private CountDownLatch frameWaitSync;
     private boolean genCacheSend;
     int generateCacheFramePointer;
     private RLottieNative generateCacheNative;
@@ -95,10 +95,9 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     private int[] pendingReplaceColors;
     protected boolean playInDirectionOfCustomEndFrame;
     private boolean precache;
-    private Bitmap rawBackgroundBitmap;
-    private int rawBackgroundBitmapFrame;
     protected volatile Bitmap renderingBitmap;
     protected boolean resetVibrationAfterRestart;
+    private int retryDelay;
     private float scaleX;
     private float scaleY;
     private boolean shouldLimitFps;
@@ -107,10 +106,10 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     private float speedMultiply;
     private boolean swapBuffersAllowedByChoreographer;
     private int ticksWithoutDraw;
-    protected final Runnable uiRunnable;
+    private final Runnable uiRunnable;
     private final Runnable uiRunnableCacheFinished;
     private final Runnable uiRunnableGenerateCache;
-    protected final Runnable uiRunnableNoFrame;
+    private final Runnable uiRunnableNoFrame;
     protected HashMap vibrationPattern;
     protected boolean waitingForNextTask;
     public Runnable whenCacheDone;
@@ -295,32 +294,42 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:107:0x0178  */
-    /* JADX WARN: Removed duplicated region for block: B:109:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x003f  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0098 A[Catch: Exception -> 0x007e, TryCatch #0 {Exception -> 0x007e, blocks: (B:19:0x0042, B:22:0x004c, B:24:0x0051, B:38:0x0089, B:40:0x008e, B:42:0x0094, B:44:0x0098, B:45:0x009f, B:47:0x00a3, B:49:0x00a7, B:50:0x00d0, B:52:0x00d4, B:55:0x00e2, B:57:0x00eb, B:60:0x00ef, B:62:0x00f7, B:64:0x00fb, B:66:0x00ff, B:68:0x0102, B:69:0x0108, B:70:0x010e, B:72:0x0111, B:73:0x0116, B:74:0x011c, B:78:0x0128, B:80:0x012d, B:81:0x0135, B:82:0x013a, B:84:0x013e, B:86:0x0146, B:87:0x014a, B:89:0x014e, B:91:0x0154, B:93:0x0161, B:94:0x0166, B:95:0x0122, B:97:0x007a, B:100:0x0081), top: B:18:0x0042 }] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00a3 A[Catch: Exception -> 0x007e, TryCatch #0 {Exception -> 0x007e, blocks: (B:19:0x0042, B:22:0x004c, B:24:0x0051, B:38:0x0089, B:40:0x008e, B:42:0x0094, B:44:0x0098, B:45:0x009f, B:47:0x00a3, B:49:0x00a7, B:50:0x00d0, B:52:0x00d4, B:55:0x00e2, B:57:0x00eb, B:60:0x00ef, B:62:0x00f7, B:64:0x00fb, B:66:0x00ff, B:68:0x0102, B:69:0x0108, B:70:0x010e, B:72:0x0111, B:73:0x0116, B:74:0x011c, B:78:0x0128, B:80:0x012d, B:81:0x0135, B:82:0x013a, B:84:0x013e, B:86:0x0146, B:87:0x014a, B:89:0x014e, B:91:0x0154, B:93:0x0161, B:94:0x0166, B:95:0x0122, B:97:0x007a, B:100:0x0081), top: B:18:0x0042 }] */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00e2 A[Catch: Exception -> 0x007e, TryCatch #0 {Exception -> 0x007e, blocks: (B:19:0x0042, B:22:0x004c, B:24:0x0051, B:38:0x0089, B:40:0x008e, B:42:0x0094, B:44:0x0098, B:45:0x009f, B:47:0x00a3, B:49:0x00a7, B:50:0x00d0, B:52:0x00d4, B:55:0x00e2, B:57:0x00eb, B:60:0x00ef, B:62:0x00f7, B:64:0x00fb, B:66:0x00ff, B:68:0x0102, B:69:0x0108, B:70:0x010e, B:72:0x0111, B:73:0x0116, B:74:0x011c, B:78:0x0128, B:80:0x012d, B:81:0x0135, B:82:0x013a, B:84:0x013e, B:86:0x0146, B:87:0x014a, B:89:0x014e, B:91:0x0154, B:93:0x0161, B:94:0x0166, B:95:0x0122, B:97:0x007a, B:100:0x0081), top: B:18:0x0042 }] */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00ef A[Catch: Exception -> 0x007e, TryCatch #0 {Exception -> 0x007e, blocks: (B:19:0x0042, B:22:0x004c, B:24:0x0051, B:38:0x0089, B:40:0x008e, B:42:0x0094, B:44:0x0098, B:45:0x009f, B:47:0x00a3, B:49:0x00a7, B:50:0x00d0, B:52:0x00d4, B:55:0x00e2, B:57:0x00eb, B:60:0x00ef, B:62:0x00f7, B:64:0x00fb, B:66:0x00ff, B:68:0x0102, B:69:0x0108, B:70:0x010e, B:72:0x0111, B:73:0x0116, B:74:0x011c, B:78:0x0128, B:80:0x012d, B:81:0x0135, B:82:0x013a, B:84:0x013e, B:86:0x0146, B:87:0x014a, B:89:0x014e, B:91:0x0154, B:93:0x0161, B:94:0x0166, B:95:0x0122, B:97:0x007a, B:100:0x0081), top: B:18:0x0042 }] */
+    /* JADX INFO: Access modifiers changed from: private */
+    public void loadFrameRunnableInternal() {
+        int loadFrameRunnableImpl = loadFrameRunnableImpl();
+        if (loadFrameRunnableImpl == 1) {
+            this.retryDelay = 0;
+            AndroidUtilities.runOnUIThread(this.uiRunnable);
+        } else if (loadFrameRunnableImpl == 2) {
+            AndroidUtilities.runOnUIThread(this.uiRunnableNoFrame, this.retryDelay);
+            this.retryDelay = Math.min((Math.max(this.retryDelay, 2) * 3) / 2, 2000);
+        } else if (loadFrameRunnableImpl == 3) {
+            AndroidUtilities.runOnUIThread(this.uiRunnableNoFrame);
+        }
+        CountDownLatch countDownLatch = this.frameWaitSync;
+        if (countDownLatch != null) {
+            countDownLatch.countDown();
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0035  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x008c A[Catch: Exception -> 0x0073, TryCatch #2 {Exception -> 0x0073, blocks: (B:15:0x0038, B:18:0x0041, B:20:0x0046, B:34:0x007e, B:36:0x0082, B:38:0x0088, B:40:0x008c, B:41:0x0093, B:43:0x0098, B:45:0x009c, B:46:0x00ca, B:48:0x00ce, B:51:0x00db, B:53:0x00e3, B:55:0x00e7, B:57:0x00eb, B:59:0x00ee, B:60:0x00f4, B:61:0x00fa, B:63:0x00fd, B:64:0x0102, B:65:0x0108, B:69:0x0114, B:71:0x0118, B:72:0x0120, B:73:0x0125, B:75:0x0129, B:77:0x0131, B:78:0x0135, B:80:0x0139, B:82:0x013f, B:84:0x014c, B:85:0x0151, B:86:0x010e, B:88:0x006f, B:91:0x0076), top: B:14:0x0038 }] */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0098 A[Catch: Exception -> 0x0073, TryCatch #2 {Exception -> 0x0073, blocks: (B:15:0x0038, B:18:0x0041, B:20:0x0046, B:34:0x007e, B:36:0x0082, B:38:0x0088, B:40:0x008c, B:41:0x0093, B:43:0x0098, B:45:0x009c, B:46:0x00ca, B:48:0x00ce, B:51:0x00db, B:53:0x00e3, B:55:0x00e7, B:57:0x00eb, B:59:0x00ee, B:60:0x00f4, B:61:0x00fa, B:63:0x00fd, B:64:0x0102, B:65:0x0108, B:69:0x0114, B:71:0x0118, B:72:0x0120, B:73:0x0125, B:75:0x0129, B:77:0x0131, B:78:0x0135, B:80:0x0139, B:82:0x013f, B:84:0x014c, B:85:0x0151, B:86:0x010e, B:88:0x006f, B:91:0x0076), top: B:14:0x0038 }] */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x00da A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00db A[Catch: Exception -> 0x0073, TryCatch #2 {Exception -> 0x0073, blocks: (B:15:0x0038, B:18:0x0041, B:20:0x0046, B:34:0x007e, B:36:0x0082, B:38:0x0088, B:40:0x008c, B:41:0x0093, B:43:0x0098, B:45:0x009c, B:46:0x00ca, B:48:0x00ce, B:51:0x00db, B:53:0x00e3, B:55:0x00e7, B:57:0x00eb, B:59:0x00ee, B:60:0x00f4, B:61:0x00fa, B:63:0x00fd, B:64:0x0102, B:65:0x0108, B:69:0x0114, B:71:0x0118, B:72:0x0120, B:73:0x0125, B:75:0x0129, B:77:0x0131, B:78:0x0135, B:80:0x0139, B:82:0x013f, B:84:0x014c, B:85:0x0151, B:86:0x010e, B:88:0x006f, B:91:0x0076), top: B:14:0x0038 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    protected void loadFrameRunnableImpl() {
+    protected int loadFrameRunnableImpl() {
         boolean z;
-        CountDownLatch countDownLatch;
         int frame;
         BitmapsCache bitmapsCache;
         BitmapsCache bitmapsCache2;
         if (this.isRecycled) {
-            return;
+            return 3;
         }
         if (!canLoadFrames()) {
-            CountDownLatch countDownLatch2 = this.frameWaitSync;
-            if (countDownLatch2 != null) {
-                countDownLatch2.countDown();
-            }
-            AndroidUtilities.runOnUIThread(this.uiRunnableNoFrame);
-            return;
+            return 2;
         }
         if (this.backgroundBitmap == null) {
             try {
@@ -353,11 +362,11 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                             if (bitmapsCache != null) {
                                 if (!this.genCacheSend) {
                                 }
+                                frame = -1;
                                 if (this.allowDrawFramesWhileCacheGenerating) {
                                 }
-                                frame = -1;
                             }
-                            if (frame != -1) {
+                            if (frame >= 0) {
                             }
                         }
                     } else {
@@ -369,6 +378,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                             this.genCacheSend = true;
                             AndroidUtilities.runOnUIThread(this.uiRunnableGenerateCache);
                         }
+                        frame = -1;
                         if (this.allowDrawFramesWhileCacheGenerating) {
                             if (this.nativePtr == null) {
                                 String file = this.args.file.toString();
@@ -379,16 +389,9 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                                 frame = this.nativePtr.getFrame(this.currentFrame, this.backgroundBitmap, z);
                             }
                         }
-                        frame = -1;
                     }
-                    if (frame != -1) {
-                        AndroidUtilities.runOnUIThread(this.uiRunnableNoFrame);
-                        CountDownLatch countDownLatch3 = this.frameWaitSync;
-                        if (countDownLatch3 != null) {
-                            countDownLatch3.countDown();
-                            return;
-                        }
-                        return;
+                    if (frame >= 0) {
+                        return 2;
                     }
                     this.nextRenderingBitmap = this.backgroundBitmap;
                     int i2 = this.customEndFrame;
@@ -457,21 +460,12 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                     FileLog.e(e3);
                 }
             }
-            AndroidUtilities.runOnUIThread(this.uiRunnable);
-            countDownLatch = this.frameWaitSync;
-            if (countDownLatch == null) {
-                countDownLatch.countDown();
-                return;
-            }
-            return;
+            return 1;
         }
         z = true;
         if (this.backgroundBitmap != null) {
         }
-        AndroidUtilities.runOnUIThread(this.uiRunnable);
-        countDownLatch = this.frameWaitSync;
-        if (countDownLatch == null) {
-        }
+        return 1;
     }
 
     private void applyPendingColorsUpdates() {
@@ -555,10 +549,9 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.loadFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                RLottieDrawable.this.loadFrameRunnableImpl();
+                RLottieDrawable.this.loadFrameRunnableInternal();
             }
         };
-        this.rawBackgroundBitmapFrame = -1;
         this.mUiThreadChoreographerCallback = new Choreographer60FpsContent.FrameCallback() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.utils.Choreographer60FpsContent.FrameCallback
             public final void doFrame(long j) {
@@ -727,10 +720,9 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.loadFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                RLottieDrawable.this.loadFrameRunnableImpl();
+                RLottieDrawable.this.loadFrameRunnableInternal();
             }
         };
-        this.rawBackgroundBitmapFrame = -1;
         this.mUiThreadChoreographerCallback = new Choreographer60FpsContent.FrameCallback() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.utils.Choreographer60FpsContent.FrameCallback
             public final void doFrame(long j) {
@@ -804,10 +796,9 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.loadFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                RLottieDrawable.this.loadFrameRunnableImpl();
+                RLottieDrawable.this.loadFrameRunnableInternal();
             }
         };
-        this.rawBackgroundBitmapFrame = -1;
         this.mUiThreadChoreographerCallback = new Choreographer60FpsContent.FrameCallback() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.utils.Choreographer60FpsContent.FrameCallback
             public final void doFrame(long j) {
@@ -1059,7 +1050,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     }
 
     protected final boolean scheduleNextGetFrame() {
-        if (this.loadFrameTask != null || this.nextRenderingBitmap != null || !canLoadFrames() || ignoreScheduleNextGetFrame() || this.destroyWhenDone) {
+        if (this.loadFrameTask != null || this.nextRenderingBitmap != null || !canLoadFrames() || ignoreScheduleNextGetFrame() || this.destroyWhenDone || this.isRecycled) {
             return false;
         }
         if (!this.isRunning && (!this.decodeSingleFrame || this.singleFrameDecoded)) {
@@ -1388,9 +1379,10 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     @Override // org.telegram.messenger.utils.BitmapsCache.Cacheable
     public final void prepareForGenerateCache() {
         File file;
-        String file2 = this.args.file.toString();
+        File file2 = this.args.file;
+        String file3 = file2 != null ? file2.toString() : null;
         NativePtrArgs nativePtrArgs = this.args;
-        RLottieNative createFromFile = RLottieNative.createFromFile(file2, nativePtrArgs.json, this.width, this.height, this.createdForFirstFrame ? this.metaData : null, false, nativePtrArgs.colorReplacement, false, nativePtrArgs.fitzModifier, this.layerColors);
+        RLottieNative createFromFile = RLottieNative.createFromFile(file3, nativePtrArgs.json, this.width, this.height, this.createdForFirstFrame ? this.metaData : null, false, nativePtrArgs.colorReplacement, false, nativePtrArgs.fitzModifier, this.layerColors);
         this.generateCacheNative = createFromFile;
         this.generateCacheFramePointer = 0;
         if (createFromFile != null || (file = this.file) == null) {
@@ -1423,26 +1415,6 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         }
         this.generateCacheFramePointer += i;
         return 1;
-    }
-
-    public final void cacheFrame(int i) {
-        if (this.rawBackgroundBitmapFrame != i || this.rawBackgroundBitmap == null) {
-            if (this.rawBackgroundBitmap == null) {
-                this.rawBackgroundBitmap = Bitmap.createBitmap(this.width, this.height, Bitmap.Config.ARGB_8888);
-            }
-            RLottieNative rLottieNative = this.nativePtr;
-            this.rawBackgroundBitmapFrame = i;
-            rLottieNative.getFrame(i, this.rawBackgroundBitmap, true);
-        }
-    }
-
-    public final void drawFrame(Canvas canvas, int i) {
-        cacheFrame(i);
-        if (this.rawBackgroundBitmap != null) {
-            Rect rect = AndroidUtilities.rectTmp2;
-            rect.set(0, 0, this.width, this.height);
-            canvas.drawBitmap(this.rawBackgroundBitmap, rect, getBounds(), getPaint());
-        }
     }
 
     @Override // org.telegram.messenger.utils.BitmapsCache.Cacheable

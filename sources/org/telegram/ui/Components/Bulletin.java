@@ -2782,7 +2782,8 @@ public class Bulletin {
                 attributes.height = -1;
                 attributes.gravity = 51;
                 attributes.dimAmount = 0.0f;
-                attributes.flags = ((attributes.flags & (-3)) | (-1946091240)) & (-1025);
+                attributes.format = -3;
+                attributes.flags = (((-3) & attributes.flags) | (-1946091240)) & (-1025);
                 boolean z = true;
                 if (i >= 28) {
                     attributes.layoutInDisplayCutoutMode = 1;

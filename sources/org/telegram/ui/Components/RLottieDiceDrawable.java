@@ -3,7 +3,6 @@ package org.telegram.ui.Components;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
 import java.io.File;
-import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DispatchQueuePoolBackground;
 import org.telegram.messenger.FileLog;
@@ -169,27 +168,19 @@ public class RLottieDiceDrawable extends RLottieDrawable {
         invalidateInternal();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x00af  */
-    /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0031 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0032 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     @Override // org.telegram.ui.Components.RLottieDrawable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    protected void loadFrameRunnableImpl() {
+    protected int loadFrameRunnableImpl() {
         boolean z;
         RLottieNative rLottieNative;
-        CountDownLatch countDownLatch;
         if (this.isRecycled) {
-            return;
+            return 3;
         }
         if (this.nativePtr == null || (this.isDice == 2 && this.secondNativePtr == null)) {
-            CountDownLatch countDownLatch2 = this.frameWaitSync;
-            if (countDownLatch2 != null) {
-                countDownLatch2.countDown();
-            }
-            AndroidUtilities.runOnUIThread(this.uiRunnableNoFrame);
-            return;
+            return 2;
         }
         if (this.backgroundBitmap == null) {
             try {
@@ -211,14 +202,8 @@ public class RLottieDiceDrawable extends RLottieDrawable {
                     } else {
                         rLottieNative = this.nativePtr;
                     }
-                    if (rLottieNative.getFrame(this.currentFrame, this.backgroundBitmap, z) == -1) {
-                        AndroidUtilities.runOnUIThread(this.uiRunnableNoFrame);
-                        CountDownLatch countDownLatch3 = this.frameWaitSync;
-                        if (countDownLatch3 != null) {
-                            countDownLatch3.countDown();
-                            return;
-                        }
-                        return;
+                    if (rLottieNative.getFrame(this.currentFrame, this.backgroundBitmap, z) < 0) {
+                        return 2;
                     }
                     this.nextRenderingBitmap = this.backgroundBitmap;
                     int i2 = this.isDice;
@@ -254,21 +239,12 @@ public class RLottieDiceDrawable extends RLottieDrawable {
                     FileLog.e(e);
                 }
             }
-            AndroidUtilities.runOnUIThread(this.uiRunnable);
-            countDownLatch = this.frameWaitSync;
-            if (countDownLatch == null) {
-                countDownLatch.countDown();
-                return;
-            }
-            return;
+            return 1;
         }
         z = true;
         if (this.backgroundBitmap != null) {
         }
-        AndroidUtilities.runOnUIThread(this.uiRunnable);
-        countDownLatch = this.frameWaitSync;
-        if (countDownLatch == null) {
-        }
+        return 1;
     }
 
     @Override // org.telegram.ui.Components.RLottieDrawable
