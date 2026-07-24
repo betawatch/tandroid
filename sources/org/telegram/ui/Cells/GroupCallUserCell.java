@@ -703,7 +703,7 @@ public class GroupCallUserCell extends FrameLayout {
             this.grayIconColor = i;
         }
         if (this.currentIconGray) {
-            this.muteButton.setColorFilter(new PorterDuffColorFilter(i2, PorterDuff.Mode.MULTIPLY));
+            this.muteButton.setColorFilter(new PorterDuffColorFilter(i2, PorterDuff.Mode.SRC_IN));
             Theme.setSelectorDrawableColor(this.muteButton.getDrawable(), i2 & 620756991, true);
         }
     }
@@ -1040,7 +1040,7 @@ public class GroupCallUserCell extends FrameLayout {
             }
             RLottieImageView rLottieImageView = this.muteButton;
             this.lastMuteColor = color;
-            rLottieImageView.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY));
+            rLottieImageView.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
             Theme.setSelectorDrawableColor(this.muteButton.getDrawable(), 620756991 & color, true);
         }
         arrayList = null;
@@ -1071,7 +1071,7 @@ public class GroupCallUserCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$applyParticipantChanges$6(int i, int i2, ValueAnimator valueAnimator) {
         int offsetColor = AndroidUtilities.getOffsetColor(i, i2, valueAnimator.getAnimatedFraction(), 1.0f);
-        this.muteButton.setColorFilter(new PorterDuffColorFilter(offsetColor, PorterDuff.Mode.MULTIPLY));
+        this.muteButton.setColorFilter(new PorterDuffColorFilter(offsetColor, PorterDuff.Mode.SRC_IN));
         Theme.setSelectorDrawableColor(this.muteButton.getDrawable(), offsetColor & 620756991, true);
     }
 

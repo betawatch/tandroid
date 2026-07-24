@@ -4127,9 +4127,9 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x0586  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0579  */
     /* JADX WARN: Removed duplicated region for block: B:121:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x0580  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0573  */
     /* JADX WARN: Removed duplicated region for block: B:138:0x02a4  */
     /* JADX WARN: Removed duplicated region for block: B:161:0x0266 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:223:0x0222 A[EXC_TOP_SPLITTER, SYNTHETIC] */
@@ -4140,10 +4140,10 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
     /* JADX WARN: Removed duplicated region for block: B:86:0x03c8  */
     /* JADX WARN: Removed duplicated region for block: B:91:0x03e2  */
     /* JADX WARN: Removed duplicated region for block: B:96:0x03fa  */
-    /* JADX WARN: Type inference failed for: r10v23 */
-    /* JADX WARN: Type inference failed for: r10v24, types: [java.io.File] */
-    /* JADX WARN: Type inference failed for: r10v38 */
-    /* JADX WARN: Type inference failed for: r10v39 */
+    /* JADX WARN: Type inference failed for: r11v23 */
+    /* JADX WARN: Type inference failed for: r11v24, types: [java.io.File] */
+    /* JADX WARN: Type inference failed for: r11v37 */
+    /* JADX WARN: Type inference failed for: r11v38 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -4416,7 +4416,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                             this.dimAmount = f;
                                             this.backgroundImage.draw(canvas2);
                                             this.dimAmount = f4;
-                                            Utilities.blurBitmap(createBitmap2, 3, 1, createBitmap2.getWidth(), createBitmap2.getHeight(), createBitmap2.getRowBytes());
+                                            Utilities.blurBitmap(createBitmap2, 3);
                                             tL_wallPaper8.stripedThumb = createBitmap2;
                                             createServiceMessageLocal(tL_wallPaper8, z);
                                             if (this.dialogId >= 0) {
@@ -4431,14 +4431,11 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                                     chatFull.wallpaper = tL_wallPaper8;
                                                     NotificationCenter notificationCenter = NotificationCenter.getInstance(this.currentAccount);
                                                     int i8 = NotificationCenter.chatInfoDidLoad;
-                                                    z4 = false;
                                                     Boolean bool = Boolean.FALSE;
                                                     notificationCenter.lambda$postNotificationNameOnUIThread$1(i8, chatFull, 0, bool, bool);
                                                 }
                                             }
-                                            z4 = false;
                                         } else {
-                                            z4 = false;
                                             ChatThemeController.getInstance(this.currentAccount).setWallpaperToPeer(this.dialogId, null, overrideWallpaperInfo, this.serverWallpaper, new Runnable() { // from class: org.telegram.ui.ThemePreviewActivity$$ExternalSyntheticLambda27
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
@@ -4453,6 +4450,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                             wallpaperActivityDelegate.didSetNewBackground(tL_wallPaper8);
                                         }
                                         finishFragment();
+                                        z4 = false;
                                         if (z4) {
                                             WallpaperActivityDelegate wallpaperActivityDelegate2 = this.delegate;
                                             if (wallpaperActivityDelegate2 != null) {
@@ -5564,7 +5562,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         drawable.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
         drawable.draw(new Canvas(createBitmap));
         drawable.setColorFilter(colorFilter);
-        Utilities.blurBitmap(createBitmap, 3, 1, createBitmap.getWidth(), createBitmap.getHeight(), createBitmap.getRowBytes());
+        Utilities.blurBitmap(createBitmap, 3);
         BitmapDrawable bitmapDrawable = new BitmapDrawable(getContext().getResources(), createBitmap);
         this.blurredDrawable = bitmapDrawable;
         bitmapDrawable.setFilterBitmap(true);

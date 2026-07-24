@@ -70,6 +70,7 @@ public final class AnimatedFileDrawable extends BitmapDrawable implements Animat
     private volatile boolean isRecycled;
     private boolean isRestarted;
     private volatile boolean isRunning;
+    private boolean isStaticVideoDetected;
     public boolean isWebmSticker;
     private long lastFrameDecodeTime;
     private long lastFrameTime;
@@ -424,6 +425,9 @@ public final class AnimatedFileDrawable extends BitmapDrawable implements Animat
                 AndroidUtilities.runOnUIThread(this.uiRunnableNoFrame);
                 return;
             }
+            if (!this.isStaticVideoDetected) {
+                this.isStaticVideoDetected = this.mDecoder.isStaticVideoDetected();
+            }
             int i3 = this.metaData[3];
             if (i3 < this.lastTimeStamp) {
                 this.isRestarted = true;
@@ -505,7 +509,7 @@ public final class AnimatedFileDrawable extends BitmapDrawable implements Animat
         ?? r12;
         int i6;
         this.invalidateAfter = 50;
-        int[] iArr2 = new int[7];
+        int[] iArr2 = new int[8];
         this.metaData = iArr2;
         this.unusedBuffers = new ArrayList();
         this.pendingSeekTo = -1L;
@@ -941,39 +945,41 @@ public final class AnimatedFileDrawable extends BitmapDrawable implements Animat
         Runnable runnable;
         Runnable runnable2;
         if (this.loadFrameTask == null || z2) {
-            if (((!this.PRERENDER_FRAME || (this.nextRenderingBuffer2 != null && (this.scheduledForSeek || this.pendingSeekToUI < 0))) && this.nextRenderingBuffer != null) || !canLoadFrames() || this.destroyWhenDone) {
+            if ((!this.PRERENDER_FRAME || (this.nextRenderingBuffer2 != null && (this.scheduledForSeek || this.pendingSeekToUI < 0))) && this.nextRenderingBuffer != null) {
                 return;
             }
-            if ((!this.isRunning && (!this.decodeSingleFrame || this.singleFrameDecoded)) || this.parents.isEmpty() || this.generatingCache) {
-                return;
-            }
-            if (this.useSharedQueue) {
-                if (this.limitFps) {
-                    Runnable runnable3 = this.loadFrameRunnable;
-                    this.loadFrameTask = runnable3;
-                    DispatchQueuePoolBackground.execute(runnable3);
-                } else {
-                    if (z2 && (runnable2 = this.loadFrameTask) != null) {
-                        executor.remove(runnable2);
+            if ((this.renderingBuffer == null || !this.isStaticVideoDetected) && canLoadFrames() && !this.destroyWhenDone) {
+                if ((!this.isRunning && (!this.decodeSingleFrame || this.singleFrameDecoded)) || this.parents.isEmpty() || this.generatingCache) {
+                    return;
+                }
+                if (this.useSharedQueue) {
+                    if (this.limitFps) {
+                        Runnable runnable3 = this.loadFrameRunnable;
+                        this.loadFrameTask = runnable3;
+                        DispatchQueuePoolBackground.execute(runnable3);
+                    } else {
+                        if (z2 && (runnable2 = this.loadFrameTask) != null) {
+                            executor.remove(runnable2);
+                        }
+                        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = executor;
+                        Runnable runnable4 = this.loadFrameRunnable;
+                        this.loadFrameTask = runnable4;
+                        scheduledThreadPoolExecutor.execute(runnable4);
                     }
-                    ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = executor;
-                    Runnable runnable4 = this.loadFrameRunnable;
-                    this.loadFrameTask = runnable4;
-                    scheduledThreadPoolExecutor.execute(runnable4);
+                } else {
+                    if (this.decodeQueue == null) {
+                        this.decodeQueue = new DispatchQueue("decodeQueue" + this);
+                    }
+                    if (z2 && (runnable = this.loadFrameTask) != null) {
+                        this.decodeQueue.cancelRunnable(runnable);
+                    }
+                    DispatchQueue dispatchQueue = this.decodeQueue;
+                    Runnable runnable5 = this.loadFrameRunnable;
+                    this.loadFrameTask = runnable5;
+                    dispatchQueue.postRunnable(runnable5, 0L);
                 }
-            } else {
-                if (this.decodeQueue == null) {
-                    this.decodeQueue = new DispatchQueue("decodeQueue" + this);
-                }
-                if (z2 && (runnable = this.loadFrameTask) != null) {
-                    this.decodeQueue.cancelRunnable(runnable);
-                }
-                DispatchQueue dispatchQueue = this.decodeQueue;
-                Runnable runnable5 = this.loadFrameRunnable;
-                this.loadFrameTask = runnable5;
-                dispatchQueue.postRunnable(runnable5, 0L);
+                this.scheduledForSeek = true;
             }
-            this.scheduledForSeek = true;
         }
     }
 
@@ -1538,7 +1544,7 @@ public final class AnimatedFileDrawable extends BitmapDrawable implements Animat
     /* JADX INFO: Access modifiers changed from: private */
     public void checkChoreographerInternal() {
         int i;
-        if (this.isRunning && !this.isPaused) {
+        if (this.isRunning && !this.isPaused && !this.isStaticVideoDetected) {
             if (this.isChoreographerRegistered || (i = this.metaData[5]) <= 0) {
                 return;
             }

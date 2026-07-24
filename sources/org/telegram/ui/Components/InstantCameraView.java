@@ -1114,7 +1114,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         Bitmap createScaledBitmap = Bitmap.createScaledBitmap(this.textureView.getBitmap(), 50, 50, true);
         this.lastBitmap = createScaledBitmap;
         if (createScaledBitmap != null) {
-            Utilities.blurBitmap(createScaledBitmap, 7, 1, createScaledBitmap.getWidth(), this.lastBitmap.getHeight(), this.lastBitmap.getRowBytes());
+            Utilities.blurBitmap(createScaledBitmap, 7);
             try {
                 FileOutputStream fileOutputStream = new FileOutputStream(new File(ApplicationLoader.getFilesDirFixed(), "icthumb.jpg"));
                 this.lastBitmap.compress(Bitmap.CompressFormat.JPEG, 87, fileOutputStream);

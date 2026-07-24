@@ -17659,17 +17659,18 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x049d  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x031a  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x042b  */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x0107  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0436  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x043e  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0447  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x02ef  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x03cc  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x0107  */
     /* JADX WARN: Removed duplicated region for block: B:43:0x0105  */
     /* JADX WARN: Removed duplicated region for block: B:46:0x010e  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0142  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0448 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0452  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x048b  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x0495  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0144  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x03e9 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x03f3  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x042c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -17681,43 +17682,45 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         TLRPC.TL_document tL_document;
         String str7;
         String str8;
-        TLRPC.TL_document tL_document2;
+        String str9;
+        final TLRPC.TL_document tL_document2;
         final Bitmap bitmap;
-        final String str9;
+        final String str10;
         boolean z5;
         int i5;
         TLRPC.PhotoSize fileToSize;
-        String str10;
         String str11;
+        String str12;
+        String str13;
         TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo;
         int i6;
         int i7;
         Object[] sentFile;
-        final String str12 = str;
-        VideoEditedInfo createCompressionSettings = videoEditedInfo != null ? videoEditedInfo : createCompressionSettings(str12, 0L);
+        final String str14 = str;
+        VideoEditedInfo createCompressionSettings = videoEditedInfo != null ? videoEditedInfo : createCompressionSettings(str14, 0L);
         boolean isEncryptedDialog = DialogObject.isEncryptedDialog(j);
         boolean z6 = createCompressionSettings != null && createCompressionSettings.roundVideo;
-        if (createCompressionSettings != null || str12.endsWith("mp4") || z6) {
-            File file = new File(str12);
-            String str13 = str12 + file.length() + "_" + file.lastModified();
+        if (createCompressionSettings != null || str14.endsWith("mp4") || z6) {
+            File file = new File(str14);
+            String str15 = str14 + file.length() + "_" + file.lastModified();
             if (createCompressionSettings != null) {
                 if (!z6) {
                     StringBuilder sb = new StringBuilder();
-                    sb.append(str13);
+                    sb.append(str15);
                     sb.append(createCompressionSettings.estimatedDuration);
                     sb.append("_");
                     sb.append(createCompressionSettings.startTime);
                     sb.append("_");
                     sb.append(createCompressionSettings.endTime);
                     sb.append(createCompressionSettings.muted ? "_m" : "");
-                    str13 = sb.toString();
+                    str15 = sb.toString();
                     if (createCompressionSettings.resultWidth != createCompressionSettings.originalWidth) {
-                        str13 = str13 + "_" + createCompressionSettings.resultWidth;
+                        str15 = str15 + "_" + createCompressionSettings.resultWidth;
                     }
                 }
                 long j6 = createCompressionSettings.startTime;
                 if (j6 >= 0) {
-                    str4 = str13;
+                    str4 = str15;
                     j5 = j6;
                     if (!isEncryptedDialog && i == 0 && (createCompressionSettings == null || (createCompressionSettings.filterState == null && createCompressionSettings.paintPath == null && createCompressionSettings.mediaEntities == null && createCompressionSettings.cropState == null))) {
                         sentFile = accountInstance.getMessagesStorage().getSentFile(str4, isEncryptedDialog ? 2 : 5);
@@ -17725,40 +17728,46 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             Object obj = sentFile[0];
                             if (obj instanceof TLRPC.TL_document) {
                                 TLRPC.TL_document tL_document3 = (TLRPC.TL_document) obj;
-                                String str14 = (String) sentFile[1];
+                                String str16 = (String) sentFile[1];
                                 str5 = "_";
                                 str6 = str4;
                                 ensureMediaThumbExists(accountInstance, isEncryptedDialog, tL_document3, str, null, j5);
                                 tL_document = tL_document3;
-                                str7 = str14;
-                                int i8 = NotificationCenter.onDatabaseReset;
+                                str7 = str16;
                                 if (tL_document == null) {
                                     Bitmap bitmap2 = (createCompressionSettings == null || !createCompressionSettings.notReadyYet) ? null : createCompressionSettings.thumb;
                                     if (bitmap2 == null) {
-                                        bitmap2 = createVideoThumbnailAtTime(str12, j5);
+                                        bitmap2 = createVideoThumbnailAtTime(str14, j5);
                                     }
                                     if (bitmap2 == null) {
-                                        bitmap2 = createVideoThumbnail(str12, 1);
+                                        bitmap2 = createVideoThumbnail(str14, 1);
                                     }
-                                    if (isEncryptedDialog || i != 0) {
-                                        i8 = 90;
-                                    }
+                                    int i8 = (isEncryptedDialog || i != 0) ? 90 : NotificationCenter.onDatabaseReset;
                                     float f = i8;
                                     TLRPC.PhotoSize scaleAndSaveImage = ImageLoader.scaleAndSaveImage(bitmap2, f, f, i8 > 90 ? 80 : 55, isEncryptedDialog);
                                     if (bitmap2 == null || scaleAndSaveImage == null) {
-                                        str11 = null;
+                                        str8 = str7;
+                                        str13 = null;
                                     } else if (!z6) {
-                                        str11 = null;
+                                        str8 = str7;
+                                        str13 = null;
                                         bitmap2 = null;
                                     } else if (isEncryptedDialog) {
                                         bitmap2 = Bitmap.createScaledBitmap(bitmap2, 90, 90, true);
-                                        Utilities.blurBitmap(bitmap2, 7, 1, bitmap2.getWidth(), bitmap2.getHeight(), bitmap2.getRowBytes());
-                                        Utilities.blurBitmap(bitmap2, 7, 1, bitmap2.getWidth(), bitmap2.getHeight(), bitmap2.getRowBytes());
-                                        Utilities.blurBitmap(bitmap2, 7, 1, bitmap2.getWidth(), bitmap2.getHeight(), bitmap2.getRowBytes());
-                                        str11 = String.format(scaleAndSaveImage.location.volume_id + str5 + scaleAndSaveImage.location.local_id + "@%d_%d_b2", Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)), Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)));
+                                        Utilities.blurBitmap(bitmap2, 7);
+                                        Utilities.blurBitmap(bitmap2, 7);
+                                        Utilities.blurBitmap(bitmap2, 7);
+                                        StringBuilder sb2 = new StringBuilder();
+                                        str8 = str7;
+                                        sb2.append(scaleAndSaveImage.location.volume_id);
+                                        sb2.append(str5);
+                                        sb2.append(scaleAndSaveImage.location.local_id);
+                                        sb2.append("@%d_%d_b2");
+                                        str13 = String.format(sb2.toString(), Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)), Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)));
                                     } else {
-                                        Utilities.blurBitmap(bitmap2, 3, 1, bitmap2.getWidth(), bitmap2.getHeight(), bitmap2.getRowBytes());
-                                        str11 = String.format(scaleAndSaveImage.location.volume_id + str5 + scaleAndSaveImage.location.local_id + "@%d_%d_b", Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)), Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)));
+                                        str8 = str7;
+                                        Utilities.blurBitmap(bitmap2, 3);
+                                        str13 = String.format(scaleAndSaveImage.location.volume_id + str5 + scaleAndSaveImage.location.local_id + "@%d_%d_b", Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)), Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)));
                                     }
                                     TLRPC.TL_document tL_document4 = new TLRPC.TL_document();
                                     if (scaleAndSaveImage != null) {
@@ -17788,7 +17797,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     } else if (createCompressionSettings != null && createCompressionSettings.needConvert()) {
                                         if (createCompressionSettings.muted) {
                                             tL_document4.attributes.add(new TLRPC.TL_documentAttributeAnimated());
-                                            fillVideoAttribute(str12, tL_documentAttributeVideo, createCompressionSettings);
+                                            fillVideoAttribute(str14, tL_documentAttributeVideo, createCompressionSettings);
                                             createCompressionSettings.originalWidth = tL_documentAttributeVideo.w;
                                             createCompressionSettings.originalHeight = tL_documentAttributeVideo.h;
                                         } else {
@@ -17816,69 +17825,70 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         if (file.exists()) {
                                             tL_document4.size = (int) file.length();
                                         }
-                                        fillVideoAttribute(str12, tL_documentAttributeVideo, null);
+                                        fillVideoAttribute(str14, tL_documentAttributeVideo, null);
                                     }
-                                    str9 = str11;
+                                    str10 = str13;
                                     tL_document2 = tL_document4;
                                     bitmap = bitmap2;
                                     z5 = false;
-                                    str8 = str2;
+                                    str9 = str2;
                                 } else {
-                                    String str15 = null;
+                                    str8 = str7;
+                                    String str17 = null;
                                     if (tL_document.thumbs.isEmpty()) {
                                         Bitmap bitmap3 = (createCompressionSettings == null || !createCompressionSettings.notReadyYet) ? null : createCompressionSettings.thumb;
                                         if (bitmap3 == null) {
-                                            bitmap3 = createVideoThumbnailAtTime(str12, j5);
+                                            bitmap3 = createVideoThumbnailAtTime(str14, j5);
                                         }
                                         if (bitmap3 == null) {
-                                            bitmap3 = createVideoThumbnail(str12, 1);
+                                            bitmap3 = createVideoThumbnail(str14, 1);
                                         }
-                                        if (isEncryptedDialog || i != 0) {
-                                            i8 = 90;
-                                        }
-                                        float f2 = i8;
-                                        TLRPC.PhotoSize scaleAndSaveImage2 = ImageLoader.scaleAndSaveImage(bitmap3, f2, f2, i8 > 90 ? 80 : 55, isEncryptedDialog);
+                                        int i10 = (isEncryptedDialog || i != 0) ? 90 : NotificationCenter.onDatabaseReset;
+                                        float f2 = i10;
+                                        TLRPC.PhotoSize scaleAndSaveImage2 = ImageLoader.scaleAndSaveImage(bitmap3, f2, f2, i10 > 90 ? 80 : 55, isEncryptedDialog);
                                         if (bitmap3 != null && scaleAndSaveImage2 != null) {
                                             if (!z6) {
                                                 i5 = 1;
                                                 bitmap3 = null;
                                             } else if (isEncryptedDialog) {
                                                 Bitmap createScaledBitmap = Bitmap.createScaledBitmap(bitmap3, 90, 90, true);
-                                                Utilities.blurBitmap(createScaledBitmap, 7, 1, createScaledBitmap.getWidth(), createScaledBitmap.getHeight(), createScaledBitmap.getRowBytes());
-                                                Utilities.blurBitmap(createScaledBitmap, 7, 1, createScaledBitmap.getWidth(), createScaledBitmap.getHeight(), createScaledBitmap.getRowBytes());
-                                                Utilities.blurBitmap(createScaledBitmap, 7, 1, createScaledBitmap.getWidth(), createScaledBitmap.getHeight(), createScaledBitmap.getRowBytes());
+                                                Utilities.blurBitmap(createScaledBitmap, 7);
+                                                Utilities.blurBitmap(createScaledBitmap, 7);
+                                                Utilities.blurBitmap(createScaledBitmap, 7);
                                                 bitmap3 = createScaledBitmap;
-                                                str15 = String.format(scaleAndSaveImage2.location.volume_id + str5 + scaleAndSaveImage2.location.local_id + "@%d_%d_b2", Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)), Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)));
+                                                str17 = String.format(scaleAndSaveImage2.location.volume_id + str5 + scaleAndSaveImage2.location.local_id + "@%d_%d_b2", Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)), Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)));
                                             } else {
-                                                Utilities.blurBitmap(bitmap3, 3, 1, bitmap3.getWidth(), bitmap3.getHeight(), bitmap3.getRowBytes());
+                                                Utilities.blurBitmap(bitmap3, 3);
                                                 i5 = 1;
-                                                str15 = String.format(scaleAndSaveImage2.location.volume_id + str5 + scaleAndSaveImage2.location.local_id + "@%d_%d_b", Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)), Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)));
+                                                str17 = String.format(scaleAndSaveImage2.location.volume_id + str5 + scaleAndSaveImage2.location.local_id + "@%d_%d_b", Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)), Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)));
                                             }
                                             if (scaleAndSaveImage2 != null) {
                                                 tL_document.thumbs.add(scaleAndSaveImage2);
                                                 tL_document.flags |= i5;
                                             }
-                                            str8 = str2;
+                                            str9 = str2;
+                                            str10 = str17;
                                             bitmap = bitmap3;
+                                            z5 = false;
                                             tL_document2 = tL_document;
-                                            str9 = str15;
                                         }
                                         i5 = 1;
                                         if (scaleAndSaveImage2 != null) {
                                         }
-                                        str8 = str2;
+                                        str9 = str2;
+                                        str10 = str17;
                                         bitmap = bitmap3;
+                                        z5 = false;
                                         tL_document2 = tL_document;
-                                        str9 = str15;
                                     } else {
-                                        str8 = str2;
+                                        str9 = str2;
                                         tL_document2 = tL_document;
                                         bitmap = null;
-                                        str9 = null;
+                                        str10 = null;
+                                        z5 = false;
                                     }
-                                    z5 = false;
                                 }
-                                fileToSize = ImageLoader.fileToSize(str8, z5);
+                                fileToSize = ImageLoader.fileToSize(str9, z5);
                                 if (fileToSize == null && photo != null) {
                                     fileToSize = new ImageLoader.PhotoSizeFromPhoto(photo);
                                 }
@@ -17886,24 +17896,26 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 if (createCompressionSettings != null && createCompressionSettings.needConvert()) {
                                     File file2 = new File(FileLoader.getDirectory(4), "-2147483648_" + SharedConfig.getLastLocalId() + ".mp4");
                                     SharedConfig.saveConfig();
-                                    str12 = file2.getAbsolutePath();
+                                    str14 = file2.getAbsolutePath();
                                 }
                                 final HashMap hashMap = new HashMap();
                                 final String charSequence2 = charSequence != null ? charSequence.toString() : "";
-                                str10 = str6;
-                                if (str10 != null) {
-                                    hashMap.put("originalPath", str10);
+                                str11 = str6;
+                                if (str11 != null) {
+                                    hashMap.put("originalPath", str11);
                                 }
-                                if (str7 != null) {
-                                    hashMap.put("parentObject", str7);
+                                if (str8 != null) {
+                                    str12 = str8;
+                                    hashMap.put("parentObject", str12);
+                                } else {
+                                    str12 = str8;
                                 }
                                 final VideoEditedInfo videoEditedInfo2 = createCompressionSettings;
-                                final String str16 = str7;
-                                final TLRPC.TL_document tL_document5 = tL_document2;
+                                final String str18 = str12;
                                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda29
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        SendMessagesHelper.lambda$prepareSendingVideo$136(bitmap, str9, messageObject, accountInstance, videoEditedInfo2, tL_document5, str12, photoSize, hashMap, z, str16, j, messageObject2, messageObject3, charSequence2, arrayList, z2, i2, i3, i, storyItem, replyQuote, i4, str3, j2, j3, j4, messageSuggestionParams, z3);
+                                        SendMessagesHelper.lambda$prepareSendingVideo$136(bitmap, str10, messageObject, accountInstance, videoEditedInfo2, tL_document2, str14, photoSize, hashMap, z, str18, j, messageObject2, messageObject3, charSequence2, arrayList, z2, i2, i3, i, storyItem, replyQuote, i4, str3, j2, j3, j4, messageSuggestionParams, z3);
                                     }
                                 });
                                 return;
@@ -17914,10 +17926,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     str6 = str4;
                     tL_document = null;
                     str7 = null;
-                    int i82 = NotificationCenter.onDatabaseReset;
                     if (tL_document == null) {
                     }
-                    fileToSize = ImageLoader.fileToSize(str8, z5);
+                    fileToSize = ImageLoader.fileToSize(str9, z5);
                     if (fileToSize == null) {
                         fileToSize = new ImageLoader.PhotoSizeFromPhoto(photo);
                     }
@@ -17925,30 +17936,29 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     if (createCompressionSettings != null) {
                         File file22 = new File(FileLoader.getDirectory(4), "-2147483648_" + SharedConfig.getLastLocalId() + ".mp4");
                         SharedConfig.saveConfig();
-                        str12 = file22.getAbsolutePath();
+                        str14 = file22.getAbsolutePath();
                     }
                     final HashMap hashMap2 = new HashMap();
                     if (charSequence != null) {
                     }
-                    str10 = str6;
-                    if (str10 != null) {
+                    str11 = str6;
+                    if (str11 != null) {
                     }
-                    if (str7 != null) {
+                    if (str8 != null) {
                     }
                     final VideoEditedInfo videoEditedInfo22 = createCompressionSettings;
-                    final String str162 = str7;
-                    final TLRPC.TL_document tL_document52 = tL_document2;
+                    final String str182 = str12;
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda29
                         @Override // java.lang.Runnable
                         public final void run() {
-                            SendMessagesHelper.lambda$prepareSendingVideo$136(bitmap, str9, messageObject, accountInstance, videoEditedInfo22, tL_document52, str12, photoSize2, hashMap2, z, str162, j, messageObject2, messageObject3, charSequence2, arrayList, z2, i2, i3, i, storyItem, replyQuote, i4, str3, j2, j3, j4, messageSuggestionParams, z3);
+                            SendMessagesHelper.lambda$prepareSendingVideo$136(bitmap, str10, messageObject, accountInstance, videoEditedInfo22, tL_document2, str14, photoSize2, hashMap2, z, str182, j, messageObject2, messageObject3, charSequence2, arrayList, z2, i2, i3, i, storyItem, replyQuote, i4, str3, j2, j3, j4, messageSuggestionParams, z3);
                         }
                     });
                     return;
                 }
             }
             j5 = 0;
-            str4 = str13;
+            str4 = str15;
             if (!isEncryptedDialog) {
                 sentFile = accountInstance.getMessagesStorage().getSentFile(str4, isEncryptedDialog ? 2 : 5);
                 if (sentFile != null) {
@@ -17958,10 +17968,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             str6 = str4;
             tL_document = null;
             str7 = null;
-            int i822 = NotificationCenter.onDatabaseReset;
             if (tL_document == null) {
             }
-            fileToSize = ImageLoader.fileToSize(str8, z5);
+            fileToSize = ImageLoader.fileToSize(str9, z5);
             if (fileToSize == null) {
             }
             final TLRPC.PhotoSize photoSize22 = fileToSize;
@@ -17970,18 +17979,17 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             final HashMap hashMap22 = new HashMap();
             if (charSequence != null) {
             }
-            str10 = str6;
-            if (str10 != null) {
+            str11 = str6;
+            if (str11 != null) {
             }
-            if (str7 != null) {
+            if (str8 != null) {
             }
             final VideoEditedInfo videoEditedInfo222 = createCompressionSettings;
-            final String str1622 = str7;
-            final TLRPC.TL_document tL_document522 = tL_document2;
+            final String str1822 = str12;
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda29
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendMessagesHelper.lambda$prepareSendingVideo$136(bitmap, str9, messageObject, accountInstance, videoEditedInfo222, tL_document522, str12, photoSize22, hashMap22, z, str1622, j, messageObject2, messageObject3, charSequence2, arrayList, z2, i2, i3, i, storyItem, replyQuote, i4, str3, j2, j3, j4, messageSuggestionParams, z3);
+                    SendMessagesHelper.lambda$prepareSendingVideo$136(bitmap, str10, messageObject, accountInstance, videoEditedInfo222, tL_document2, str14, photoSize22, hashMap22, z, str1822, j, messageObject2, messageObject3, charSequence2, arrayList, z2, i2, i3, i, storyItem, replyQuote, i4, str3, j2, j3, j4, messageSuggestionParams, z3);
                 }
             });
             return;

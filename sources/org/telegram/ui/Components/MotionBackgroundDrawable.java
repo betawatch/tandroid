@@ -203,7 +203,7 @@ public class MotionBackgroundDrawable extends Drawable {
         this.gradientFromBitmap = createBitmap2;
         createBitmap2.setHasAlpha(false);
         this.gradientFromCanvas = new Canvas(this.gradientFromBitmap);
-        Utilities.generateGradient(this.currentBitmap, true, this.phase, this.interpolator.getInterpolation(this.posAnimationProgress), this.currentBitmap.getWidth(), this.currentBitmap.getHeight(), this.currentBitmap.getRowBytes(), this.colors);
+        Utilities.generateGradient(this.currentBitmap, this.phase, this.interpolator.getInterpolation(this.posAnimationProgress), this.colors);
         if (useSoftLight) {
             Paint paint = this.paint2;
             blendMode = BlendMode.SOFT_LIGHT;
@@ -303,7 +303,7 @@ public class MotionBackgroundDrawable extends Drawable {
         } else if (i > 7) {
             this.phase = 7;
         }
-        Utilities.generateGradient(this.currentBitmap, true, this.phase, this.interpolator.getInterpolation(this.posAnimationProgress), this.currentBitmap.getWidth(), this.currentBitmap.getHeight(), this.currentBitmap.getRowBytes(), this.colors);
+        Utilities.generateGradient(this.currentBitmap, this.phase, this.interpolator.getInterpolation(this.posAnimationProgress), this.colors);
     }
 
     public float getPosAnimationProgress() {
@@ -342,7 +342,7 @@ public class MotionBackgroundDrawable extends Drawable {
         int i = -1;
         while (i < 3) {
             int i2 = i + 1;
-            Utilities.generateGradient(i < 0 ? this.gradientFromBitmap : this.gradientToBitmap[i], true, this.phase, i2 / 3.0f, this.currentBitmap.getWidth(), this.currentBitmap.getHeight(), this.currentBitmap.getRowBytes(), this.colors);
+            Utilities.generateGradient(i < 0 ? this.gradientFromBitmap : this.gradientToBitmap[i], this.phase, i2 / 3.0f, this.colors);
             i = i2;
         }
     }
@@ -356,7 +356,7 @@ public class MotionBackgroundDrawable extends Drawable {
         this.rotationBack = true;
         this.posAnimationProgress = 0.0f;
         invalidateParent();
-        Utilities.generateGradient(this.gradientFromBitmap, true, this.phase, 0.0f, this.currentBitmap.getWidth(), this.currentBitmap.getHeight(), this.currentBitmap.getRowBytes(), this.colors);
+        Utilities.generateGradient(this.gradientFromBitmap, this.phase, 0.0f, this.colors);
         generateNextGradient();
     }
 
@@ -382,7 +382,7 @@ public class MotionBackgroundDrawable extends Drawable {
         iArr[1] = i2;
         iArr[2] = i3;
         iArr[3] = i4;
-        Utilities.generateGradient(bitmap, true, this.phase, this.interpolator.getInterpolation(this.posAnimationProgress), this.currentBitmap.getWidth(), this.currentBitmap.getHeight(), this.currentBitmap.getRowBytes(), this.colors);
+        Utilities.generateGradient(bitmap, this.phase, this.interpolator.getInterpolation(this.posAnimationProgress), this.colors);
     }
 
     public void setColors(int i, int i2, int i3, int i4, int i5, boolean z) {
@@ -401,7 +401,7 @@ public class MotionBackgroundDrawable extends Drawable {
         iArr[3] = i4;
         Bitmap bitmap = this.currentBitmap;
         if (bitmap != null) {
-            Utilities.generateGradient(bitmap, true, this.phase, this.interpolator.getInterpolation(this.posAnimationProgress), this.currentBitmap.getWidth(), this.currentBitmap.getHeight(), this.currentBitmap.getRowBytes(), this.colors);
+            Utilities.generateGradient(bitmap, this.phase, this.interpolator.getInterpolation(this.posAnimationProgress), this.colors);
             if (z) {
                 invalidateParent();
             }
@@ -714,7 +714,6 @@ public class MotionBackgroundDrawable extends Drawable {
     public void updateAnimation() {
         float f;
         float f2;
-        float f3;
         long elapsedRealtime = SystemClock.elapsedRealtime();
         long j = elapsedRealtime - this.lastUpdateTime;
         if (j > 20) {
@@ -728,22 +727,22 @@ public class MotionBackgroundDrawable extends Drawable {
         if (z && this.posAnimationProgress == 1.0f) {
             this.posAnimationProgress = 0.0f;
         }
-        float f4 = this.posAnimationProgress;
-        if (f4 < 1.0f) {
+        float f3 = this.posAnimationProgress;
+        if (f3 < 1.0f) {
             boolean z2 = true;
             boolean z3 = this.postInvalidateParent || this.rotatingPreview;
             if (z) {
-                float f5 = f4 + ((j / 12000.0f) * this.indeterminateSpeedScale);
-                this.posAnimationProgress = f5;
-                if (f5 >= 1.0f) {
+                float f4 = f3 + ((j / 12000.0f) * this.indeterminateSpeedScale);
+                this.posAnimationProgress = f4;
+                if (f4 >= 1.0f) {
                     this.posAnimationProgress = 0.0f;
                 }
-                float f6 = this.posAnimationProgress;
-                int i = (int) (f6 / 0.125f);
+                float f5 = this.posAnimationProgress;
+                int i = (int) (f5 / 0.125f);
                 this.phase = i;
-                f2 = 1.0f - ((f6 - (i * 0.125f)) / 0.125f);
+                f = 1.0f - ((f5 - (i * 0.125f)) / 0.125f);
             } else if (this.rotatingPreview) {
-                float interpolation = this.interpolator.getInterpolation(f4);
+                float interpolation = this.interpolator.getInterpolation(f3);
                 char c = interpolation <= 0.25f ? (char) 0 : interpolation <= 0.5f ? (char) 1 : interpolation <= 0.75f ? (char) 2 : (char) 3;
                 GenericProvider genericProvider = this.animationProgressProvider;
                 if (genericProvider != null) {
@@ -755,14 +754,14 @@ public class MotionBackgroundDrawable extends Drawable {
                     this.posAnimationProgress = 1.0f;
                 }
                 if (this.animationProgressProvider == null && !this.ignoreInterpolator) {
-                    f3 = this.interpolator.getInterpolation(this.posAnimationProgress);
+                    f2 = this.interpolator.getInterpolation(this.posAnimationProgress);
                 } else {
-                    f3 = this.posAnimationProgress;
+                    f2 = this.posAnimationProgress;
                 }
-                if (this.ignoreInterpolator && (f3 == 0.0f || f3 == 1.0f)) {
+                if (this.ignoreInterpolator && (f2 == 0.0f || f2 == 1.0f)) {
                     this.ignoreInterpolator = false;
                 }
-                if ((c == 0 && f3 > 0.25f) || ((c == 1 && f3 > 0.5f) || (c == 2 && f3 > 0.75f))) {
+                if ((c == 0 && f2 > 0.25f) || ((c == 1 && f2 > 0.5f) || (c == 2 && f2 > 0.75f))) {
                     if (this.rotationBack) {
                         int i2 = this.phase + 1;
                         this.phase = i2;
@@ -777,10 +776,10 @@ public class MotionBackgroundDrawable extends Drawable {
                         }
                     }
                 }
-                if (f3 > 0.25f) {
-                    f3 = f3 <= 0.5f ? f3 - 0.25f : f3 <= 0.75f ? f3 - 0.5f : f3 - 0.75f;
+                if (f2 > 0.25f) {
+                    f2 = f2 <= 0.5f ? f2 - 0.25f : f2 <= 0.75f ? f2 - 0.5f : f2 - 0.75f;
                 }
-                f = f3 / 0.25f;
+                f = f2 / 0.25f;
                 if (this.rotationBack) {
                     f = 1.0f - f;
                     if (this.posAnimationProgress >= 1.0f) {
@@ -790,17 +789,16 @@ public class MotionBackgroundDrawable extends Drawable {
                             this.phase = 0;
                         }
                         z2 = z3;
-                        f2 = 1.0f;
+                        f = 1.0f;
                     }
                 }
-                f2 = f;
                 z2 = z3;
             } else {
                 GenericProvider genericProvider2 = this.animationProgressProvider;
                 if (genericProvider2 != null) {
                     this.posAnimationProgress = ((Float) genericProvider2.provide(this)).floatValue();
                 } else {
-                    this.posAnimationProgress = f4 + (j / (this.fastAnimation ? 300.0f : 500.0f));
+                    this.posAnimationProgress = f3 + (j / (this.fastAnimation ? 300.0f : 500.0f));
                 }
                 if (this.posAnimationProgress > 1.0f) {
                     this.posAnimationProgress = 1.0f;
@@ -822,23 +820,21 @@ public class MotionBackgroundDrawable extends Drawable {
                             this.phase = 0;
                         }
                         z2 = z3;
-                        f2 = 1.0f;
+                        f = 1.0f;
                     }
                 }
-                f2 = f;
                 z2 = z3;
             }
             if (z2) {
-                Bitmap bitmap = this.currentBitmap;
-                Utilities.generateGradient(bitmap, true, this.phase, f2, bitmap.getWidth(), this.currentBitmap.getHeight(), this.currentBitmap.getRowBytes(), this.colors);
-            } else if (f2 != 1.0f) {
-                int i6 = (int) (f2 / 0.33333334f);
+                Utilities.generateGradient(this.currentBitmap, this.phase, f, this.colors);
+            } else if (f != 1.0f) {
+                int i6 = (int) (f / 0.33333334f);
                 if (i6 == 0) {
                     this.gradientCanvas.drawBitmap(this.gradientFromBitmap, 0.0f, 0.0f, (Paint) null);
                 } else {
                     this.gradientCanvas.drawBitmap(this.gradientToBitmap[i6 - 1], 0.0f, 0.0f, (Paint) null);
                 }
-                this.paint3.setAlpha((int) (((f2 - (i6 * 0.33333334f)) / 0.33333334f) * 255.0f));
+                this.paint3.setAlpha((int) (((f - (i6 * 0.33333334f)) / 0.33333334f) * 255.0f));
                 this.gradientCanvas.drawBitmap(this.gradientToBitmap[i6], 0.0f, 0.0f, this.paint3);
             } else {
                 this.gradientCanvas.drawBitmap(this.gradientToBitmap[2], 0.0f, 0.0f, this.paint3);

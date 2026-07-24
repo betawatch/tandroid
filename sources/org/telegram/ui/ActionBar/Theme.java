@@ -13024,7 +13024,7 @@ public abstract class Theme {
         drawable.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
         drawable.draw(new Canvas(createBitmap));
         drawable.setColorFilter(colorFilter);
-        Utilities.blurBitmap(createBitmap, 3, 1, createBitmap.getWidth(), createBitmap.getHeight(), createBitmap.getRowBytes());
+        Utilities.blurBitmap(createBitmap, 3);
         blurredBitmap = createBitmap;
         return createBitmap;
     }

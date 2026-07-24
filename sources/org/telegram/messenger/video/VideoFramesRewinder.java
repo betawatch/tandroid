@@ -35,7 +35,7 @@ public class VideoFramesRewinder {
     private float prepareWithSpeed;
     int w;
     private final Paint paint = new Paint(2);
-    private final int[] meta = new int[7];
+    private final int[] meta = new int[8];
     private final ArrayList<Frame> freeFrames = new ArrayList<>();
     private final TreeSet<Frame> frames = new TreeSet<>(new Comparator() { // from class: org.telegram.messenger.video.VideoFramesRewinder$$ExternalSyntheticLambda1
         @Override // java.util.Comparator

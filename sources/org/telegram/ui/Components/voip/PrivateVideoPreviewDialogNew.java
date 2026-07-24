@@ -856,7 +856,7 @@ public abstract class PrivateVideoPreviewDialogNew extends FrameLayout implement
                         if (createScaledBitmap != createBitmap) {
                             createBitmap.recycle();
                         }
-                        Utilities.blurBitmap(createScaledBitmap, 7, 1, createScaledBitmap.getWidth(), createScaledBitmap.getHeight(), createScaledBitmap.getRowBytes());
+                        Utilities.blurBitmap(createScaledBitmap, 7);
                         FileOutputStream fileOutputStream = new FileOutputStream(new File(ApplicationLoader.getFilesDirFixed(), "cthumb" + this.visibleCameraPage + ".jpg"));
                         createScaledBitmap.compress(Bitmap.CompressFormat.JPEG, 87, fileOutputStream);
                         fileOutputStream.close();

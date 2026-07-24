@@ -5,6 +5,8 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Animatable;
@@ -27,6 +29,7 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.DispatchQueuePoolBackground;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MonoColorLottieList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.utils.BitmapsCache;
 import org.telegram.messenger.utils.Choreographer60FpsContent;
@@ -75,7 +78,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     private volatile boolean isPaused;
     protected volatile boolean isRecycled;
     protected volatile boolean isRunning;
-    private boolean isSingleChannel;
+    private final boolean isSingleChannel;
     private final HashMap layerColors;
     protected final Runnable loadFrameRunnable;
     protected Runnable loadFrameTask;
@@ -257,7 +260,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         final RLottieNative rLottieNative = this.nativePtr;
         this.nativePtr = null;
         if (rLottieNative != null) {
-            Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda6
+            Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
                     RLottieNative.this.recycle();
@@ -503,7 +506,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public RLottieDrawable(File file, String str, int i, int i2, BitmapsCache.CacheOptions cacheOptions, boolean z, int[] iArr, int i3) {
+    public RLottieDrawable(File file, String str, int i, int i2, BitmapsCache.CacheOptions cacheOptions, boolean z, int[] iArr, int i3, boolean z2) {
         int[] iArr2 = new int[3];
         this.metaData = iArr2;
         this.customEndFrame = -1;
@@ -522,37 +525,37 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.dstRect = new RectF();
         this.dstRectBackground = new RectF[2];
         this.backgroundPaint = new Paint[2];
-        this.uiRunnableNoFrame = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda0
+        this.uiRunnableNoFrame = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 RLottieDrawable.this.uiRunnableNoFrameImpl();
             }
         };
-        this.uiRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda1
+        this.uiRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 RLottieDrawable.this.uiRunnableImpl();
             }
         };
-        this.uiRunnableGenerateCache = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda2
+        this.uiRunnableGenerateCache = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 RLottieDrawable.this.uiRunnableGenerateCacheImpl();
             }
         };
-        this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda3
+        this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
                 RLottieDrawable.this.uiRunnableCacheFinishedImpl();
             }
         };
-        this.loadFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda4
+        this.loadFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
                 RLottieDrawable.this.loadFrameRunnableInternal();
             }
         };
-        this.mUiThreadChoreographerCallback = new Choreographer60FpsContent.FrameCallback() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda5
+        this.mUiThreadChoreographerCallback = new Choreographer60FpsContent.FrameCallback() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda6
             @Override // org.telegram.messenger.utils.Choreographer60FpsContent.FrameCallback
             public final void doFrame(long j) {
                 RLottieDrawable.this.onChoreographerFrame(j);
@@ -561,6 +564,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.width = i;
         this.height = i2;
         this.shouldLimitFps = z;
+        this.isSingleChannel = z2;
         this.precache = cacheOptions != null;
         this.fallbackCache = str == null && cacheOptions != null && cacheOptions.fallback;
         this.createdForFirstFrame = cacheOptions != null && cacheOptions.firstFrame;
@@ -598,10 +602,6 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
             return;
         }
         this.shouldLimitFps = false;
-    }
-
-    public final void setIsSingleChannel(boolean z) {
-        this.isSingleChannel = z;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x006b A[SYNTHETIC] */
@@ -693,37 +693,37 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.dstRect = new RectF();
         this.dstRectBackground = new RectF[2];
         this.backgroundPaint = new Paint[2];
-        this.uiRunnableNoFrame = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda0
+        this.uiRunnableNoFrame = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 RLottieDrawable.this.uiRunnableNoFrameImpl();
             }
         };
-        this.uiRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda1
+        this.uiRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 RLottieDrawable.this.uiRunnableImpl();
             }
         };
-        this.uiRunnableGenerateCache = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda2
+        this.uiRunnableGenerateCache = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 RLottieDrawable.this.uiRunnableGenerateCacheImpl();
             }
         };
-        this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda3
+        this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
                 RLottieDrawable.this.uiRunnableCacheFinishedImpl();
             }
         };
-        this.loadFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda4
+        this.loadFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
                 RLottieDrawable.this.loadFrameRunnableInternal();
             }
         };
-        this.mUiThreadChoreographerCallback = new Choreographer60FpsContent.FrameCallback() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda5
+        this.mUiThreadChoreographerCallback = new Choreographer60FpsContent.FrameCallback() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda6
             @Override // org.telegram.messenger.utils.Choreographer60FpsContent.FrameCallback
             public final void doFrame(long j) {
                 RLottieDrawable.this.onChoreographerFrame(j);
@@ -731,6 +731,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         };
         this.width = i;
         this.height = i2;
+        this.isSingleChannel = false;
     }
 
     private void checkDispatchOnAnimationEnd() {
@@ -769,37 +770,37 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.dstRect = new RectF();
         this.dstRectBackground = new RectF[2];
         this.backgroundPaint = new Paint[2];
-        this.uiRunnableNoFrame = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda0
+        this.uiRunnableNoFrame = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 RLottieDrawable.this.uiRunnableNoFrameImpl();
             }
         };
-        this.uiRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda1
+        this.uiRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 RLottieDrawable.this.uiRunnableImpl();
             }
         };
-        this.uiRunnableGenerateCache = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda2
+        this.uiRunnableGenerateCache = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 RLottieDrawable.this.uiRunnableGenerateCacheImpl();
             }
         };
-        this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda3
+        this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
                 RLottieDrawable.this.uiRunnableCacheFinishedImpl();
             }
         };
-        this.loadFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda4
+        this.loadFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
                 RLottieDrawable.this.loadFrameRunnableInternal();
             }
         };
-        this.mUiThreadChoreographerCallback = new Choreographer60FpsContent.FrameCallback() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda5
+        this.mUiThreadChoreographerCallback = new Choreographer60FpsContent.FrameCallback() { // from class: org.telegram.ui.Components.RLottieDrawable$$ExternalSyntheticLambda6
             @Override // org.telegram.messenger.utils.Choreographer60FpsContent.FrameCallback
             public final void doFrame(long j) {
                 RLottieDrawable.this.onChoreographerFrame(j);
@@ -807,6 +808,11 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         };
         this.width = i2;
         this.height = i3;
+        boolean isMonoColorLottie = MonoColorLottieList.isMonoColorLottie(i);
+        this.isSingleChannel = isMonoColorLottie;
+        if (isMonoColorLottie) {
+            setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        }
         this.autoRepeat = 0;
         String readRes = AndroidUtilities.readRes(i);
         if (TextUtils.isEmpty(readRes)) {
