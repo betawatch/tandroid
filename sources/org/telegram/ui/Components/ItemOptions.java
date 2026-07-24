@@ -121,6 +121,7 @@ public class ItemOptions {
     private ActionBarPopupWindow.ActionBarPopupWindowLayout lastLayout;
     private ViewGroup layout;
     private LinearLayout linearLayout;
+    private boolean longPressSelectionEnabled;
     private int maxHeight;
     private int minWidthDp;
     public boolean needsFocus;
@@ -191,6 +192,11 @@ public class ItemOptions {
         return this;
     }
 
+    public ItemOptions setLongPressSelectionEnabled(boolean z) {
+        this.longPressSelectionEnabled = z;
+        return this;
+    }
+
     public ItemOptions setBlur(boolean z, boolean z2) {
         this.blur = z;
         this.blurForMenu = z2;
@@ -222,6 +228,7 @@ public class ItemOptions {
         this.gravity = 5;
         this.point = new float[2];
         this.drawScrim = true;
+        this.longPressSelectionEnabled = true;
         this.viewAdditionalOffsets = new Rect();
         this.dismissWithButtons = true;
         this.shiftDp = -4;
@@ -250,6 +257,7 @@ public class ItemOptions {
         this.gravity = 5;
         this.point = new float[2];
         this.drawScrim = true;
+        this.longPressSelectionEnabled = true;
         this.viewAdditionalOffsets = new Rect();
         this.dismissWithButtons = true;
         this.shiftDp = -4;
@@ -277,6 +285,7 @@ public class ItemOptions {
         this.gravity = 5;
         this.point = new float[2];
         this.drawScrim = true;
+        this.longPressSelectionEnabled = true;
         this.viewAdditionalOffsets = new Rect();
         this.dismissWithButtons = true;
         this.shiftDp = -4;
@@ -1333,7 +1342,9 @@ public class ItemOptions {
     /* JADX WARN: Removed duplicated region for block: B:102:0x041d  */
     /* JADX WARN: Removed duplicated region for block: B:106:0x045f  */
     /* JADX WARN: Removed duplicated region for block: B:109:0x0470  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x04e5  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x049b  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x050d  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x0514  */
     /* JADX WARN: Removed duplicated region for block: B:94:0x040b A[ADDED_TO_REGION] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1588,6 +1599,14 @@ public class ItemOptions {
                                 width = (int) (this.dimView.moveToX - AndroidUtilities.dp(8.0f));
                             }
                         }
+                        if (!this.longPressSelectionEnabled) {
+                            BaseFragment baseFragment = this.fragment;
+                            if (baseFragment != null && baseFragment.getFragmentView() != null) {
+                                this.fragment.getFragmentView().getRootView().dispatchTouchEvent(AndroidUtilities.emptyMotionEvent());
+                            } else if (this.container != null) {
+                                viewGroup2.dispatchTouchEvent(AndroidUtilities.emptyMotionEvent());
+                            }
+                        }
                         if (this.blurForMenu && this.scrimBlur3SourceBitmap != null) {
                             setGapBackgroundColor(Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, this.resourcesProvider), 0.06f));
                             BlurredBackgroundDrawable radius = new BlurredBackgroundDrawableViewFactory(this.scrimBlur3SourceBitmap).create((View) this.layout, true).setColorProvider(BlurredBackgroundProviderImpl.scrimMenuBackground(this.resourcesProvider)).setPadding(AndroidUtilities.dp(8.0f)).setHasPadding(true).setRadius(AndroidUtilities.dp(12.0f));
@@ -1601,7 +1620,9 @@ public class ItemOptions {
                         float f11 = height + this.translateY;
                         this.offsetY = f11;
                         actionBarPopupWindow2.showAtLocation(viewGroup2, 0, (int) f10, (int) f11);
-                        installHoverReleaseListener();
+                        if (this.longPressSelectionEnabled) {
+                            installHoverReleaseListener();
+                        }
                         if (this.followScrim) {
                             installFollowListeners();
                         }
@@ -1619,6 +1640,8 @@ public class ItemOptions {
                     if (this.allowMoveScrimGravity == 3) {
                     }
                 }
+                if (!this.longPressSelectionEnabled) {
+                }
                 if (this.blurForMenu) {
                     setGapBackgroundColor(Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, this.resourcesProvider), 0.06f));
                     BlurredBackgroundDrawable radius2 = new BlurredBackgroundDrawableViewFactory(this.scrimBlur3SourceBitmap).create((View) this.layout, true).setColorProvider(BlurredBackgroundProviderImpl.scrimMenuBackground(this.resourcesProvider)).setPadding(AndroidUtilities.dp(8.0f)).setHasPadding(true).setRadius(AndroidUtilities.dp(12.0f));
@@ -1632,7 +1655,8 @@ public class ItemOptions {
                 float f112 = height + this.translateY;
                 this.offsetY = f112;
                 actionBarPopupWindow22.showAtLocation(viewGroup2, 0, (int) f102, (int) f112);
-                installHoverReleaseListener();
+                if (this.longPressSelectionEnabled) {
+                }
                 if (this.followScrim) {
                 }
             } else {
@@ -1643,6 +1667,8 @@ public class ItemOptions {
             }
             if (this.allowMoveScrim) {
             }
+            if (!this.longPressSelectionEnabled) {
+            }
             if (this.blurForMenu) {
             }
             this.actionBarPopupWindow.setScaleOut(this.scaleOut);
@@ -1652,7 +1678,8 @@ public class ItemOptions {
             float f1122 = height + this.translateY;
             this.offsetY = f1122;
             actionBarPopupWindow222.showAtLocation(viewGroup2, 0, (int) f1022, (int) f1122);
-            installHoverReleaseListener();
+            if (this.longPressSelectionEnabled) {
+            }
             if (this.followScrim) {
             }
         }

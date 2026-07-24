@@ -5873,6 +5873,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 final TLRPC.User currentUser = getUserConfig().getCurrentUser();
                 if (currentUser != null) {
                     ItemOptions makeOptions = ItemOptions.makeOptions(this, this.actionsView);
+                    makeOptions.setLongPressSelectionEnabled(false);
                     makeOptions.setGravity(3);
                     makeOptions.add(R.drawable.msg_qrcode, LocaleController.getString(R.string.QrCode), new Runnable() { // from class: org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda74
                         @Override // java.lang.Runnable
@@ -8915,7 +8916,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         final String str5 = str;
         final boolean z26 = z9;
         final boolean z27 = z7;
-        ItemOptions.makeOptions(this, view).setScrimViewBackground(view.getParent() instanceof RecyclerListView ? ((RecyclerListView) view.getParent()).getClipBackground(view) : null).addIf(!z14, R.drawable.msg_discussion, LocaleController.getString(R.string.SendMessage), new Runnable() { // from class: org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda101
+        ItemOptions.makeOptions(this, view).setScrimViewBackground(view.getParent() instanceof RecyclerListView ? ((RecyclerListView) view.getParent()).getClipBackground(view) : null).setLongPressSelectionEnabled(false).addIf(!z14, R.drawable.msg_discussion, LocaleController.getString(R.string.SendMessage), new Runnable() { // from class: org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda101
             @Override // java.lang.Runnable
             public final void run() {
                 ProfileActivity.this.lambda$onMemberClick$59(user);
@@ -9219,6 +9220,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
                 ItemOptions makeOptions = ItemOptions.makeOptions(this, view3);
                 makeOptions.setScrimViewBackground(this.listView.getClipBackground(view3));
+                makeOptions.setLongPressSelectionEnabled(false);
                 if (i == this.phoneRow) {
                     TLRPC.UserFull userFull3 = this.userInfo;
                     if (userFull3 != null && userFull3.phone_calls_available) {
@@ -9599,7 +9601,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         if (getParentActivity() == null) {
             return;
         }
-        ItemOptions.makeOptions(this, view).setScrimViewBackground(this.listView.getClipBackground(view)).add(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda145
+        ItemOptions.makeOptions(this, view).setScrimViewBackground(this.listView.getClipBackground(view)).setLongPressSelectionEnabled(false).add(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda145
             @Override // java.lang.Runnable
             public final void run() {
                 ProfileActivity.this.lambda$processOnClickOrPress$78(str, i);
@@ -22099,6 +22101,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     public boolean editNotes(View view, final int i) {
         ItemOptions makeOptions = ItemOptions.makeOptions(this, view);
         makeOptions.setScrimViewBackground(this.listView.getClipBackground(view));
+        makeOptions.setLongPressSelectionEnabled(false);
         makeOptions.addIf(this.userInfo != null, R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda97
             @Override // java.lang.Runnable
             public final void run() {
@@ -22208,6 +22211,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         }
         ItemOptions makeOptions = ItemOptions.makeOptions(this, view);
         makeOptions.setScrimViewBackground(this.listView.getClipBackground(view));
+        makeOptions.setLongPressSelectionEnabled(false);
         makeOptions.setGravity(3);
         if (i == this.bizLocationRow && (tL_businessLocation = userFull.business_location) != null) {
             if (tL_businessLocation.geo_point != null) {
