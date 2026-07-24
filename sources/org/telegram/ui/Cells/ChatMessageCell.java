@@ -1516,6 +1516,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
 
         void forceUpdate(ChatMessageCell chatMessageCell, boolean z);
 
+        void forceUpdate(ChatMessageCell chatMessageCell, boolean z, boolean z2);
+
         void forceUpdateNoAnimation(ChatMessageCell chatMessageCell, boolean z);
 
         int getAddPollOptionInputFieldHeight(ChatMessageCell chatMessageCell);

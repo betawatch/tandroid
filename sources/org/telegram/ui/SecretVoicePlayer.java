@@ -886,6 +886,11 @@ public class SecretVoicePlayer extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void forceUpdate(ChatMessageCell chatMessageCell6, boolean z, boolean z2) {
+                    forceUpdate(chatMessageCell6, z);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void forceUpdateNoAnimation(ChatMessageCell chatMessageCell6, boolean z) {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$forceUpdateNoAnimation(this, chatMessageCell6, z);
                 }

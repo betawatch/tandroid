@@ -16961,18 +16961,17 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             public void didPressedButton(int i, boolean z2, boolean z3, int i2, int i3, long j, boolean z4, boolean z5, long j2) {
                 ChatActivity chatActivity;
                 ChatAttachAlert chatAttachAlert3;
-                int i4;
                 boolean z6;
+                int i4;
                 int i5;
                 int i6;
-                ArrayList<Object> arrayList;
-                boolean z7;
+                int i7;
                 String str;
                 TLRPC.Message message;
                 if (ChatActivity.this.getParentActivity() == null || (chatAttachAlert3 = (chatActivity = ChatActivity.this).chatAttachAlert) == null) {
                     return;
                 }
-                boolean z8 = chatAttachAlert3.isStickerMode;
+                boolean z7 = chatAttachAlert3.isStickerMode;
                 chatActivity.editingMessageObject = chatAttachAlert3.getEditingMessageObject();
                 ChatActivity chatActivity2 = ChatActivity.this;
                 MessageObject messageObject = chatActivity2.editingMessageObject;
@@ -16986,35 +16985,33 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     }
                     HashMap<Object, Object> selectedPhotos = ChatActivity.this.chatAttachAlert.getPhotoLayout().getSelectedPhotos();
                     ArrayList<Object> selectedPhotosOrder = ChatActivity.this.chatAttachAlert.getPhotoLayout().getSelectedPhotosOrder();
-                    if (selectedPhotos.isEmpty()) {
-                        i4 = 0;
-                    } else {
+                    if (!selectedPhotos.isEmpty()) {
                         int ceil = (int) Math.ceil(selectedPhotos.size() / 10.0f);
-                        int i7 = 0;
-                        while (i7 < ceil) {
-                            int i8 = i7 * 10;
-                            int min = Math.min(10, selectedPhotos.size() - i8);
-                            ArrayList arrayList2 = new ArrayList();
-                            int i9 = 0;
-                            while (i9 < min) {
-                                int i10 = i8 + i9;
-                                if (i10 >= selectedPhotosOrder.size()) {
-                                    arrayList = selectedPhotosOrder;
-                                    z7 = z8;
+                        int i8 = 0;
+                        while (i8 < ceil) {
+                            int i9 = i8 * 10;
+                            int min = Math.min(10, selectedPhotos.size() - i9);
+                            ArrayList arrayList = new ArrayList();
+                            int i10 = 0;
+                            while (i10 < min) {
+                                int i11 = i9 + i10;
+                                if (i11 >= selectedPhotosOrder.size()) {
+                                    i6 = min;
+                                    i7 = i9;
                                 } else {
-                                    MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.get(selectedPhotosOrder.get(i10));
+                                    MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.get(selectedPhotosOrder.get(i11));
                                     SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
                                     sendingMediaInfo.imagePath = photoEntry.imagePath;
                                     boolean isLivePhoto = photoEntry.isLivePhoto();
                                     sendingMediaInfo.isLivePhoto = isLivePhoto;
-                                    boolean z9 = photoEntry.isVideo;
-                                    if (z8 && isLivePhoto) {
+                                    boolean z8 = photoEntry.isVideo;
+                                    if (z7 && isLivePhoto) {
                                         sendingMediaInfo.isLivePhoto = false;
-                                        z9 = false;
+                                        z8 = false;
                                     }
-                                    if (!z9 && (str = photoEntry.imagePath) != null) {
+                                    if (!z8 && (str = photoEntry.imagePath) != null) {
                                         sendingMediaInfo.path = str;
-                                        if (photoEntry.isHighQuality()) {
+                                        if (!z7 && photoEntry.isHighQuality()) {
                                             sendingMediaInfo.originalPhotoEntry = photoEntry.clone();
                                         }
                                     } else {
@@ -17026,10 +17023,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                     sendingMediaInfo.thumbPath = photoEntry.thumbPath;
                                     sendingMediaInfo.coverPath = photoEntry.coverPath;
                                     sendingMediaInfo.coverPhoto = photoEntry.coverPhoto;
-                                    sendingMediaInfo.isVideo = z9;
+                                    sendingMediaInfo.isVideo = z8;
                                     sendingMediaInfo.discardLivePhoto = photoEntry.isUnalivePhoto();
-                                    arrayList = selectedPhotosOrder;
-                                    z7 = z8;
+                                    i6 = min;
+                                    i7 = i9;
                                     sendingMediaInfo.livePhotoVideoOffset = photoEntry.livePhotoVideoOffset;
                                     sendingMediaInfo.livePhotoTimestampUs = photoEntry.livePhotoTimestampUs;
                                     CharSequence charSequence = photoEntry.caption;
@@ -17042,19 +17039,17 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                     sendingMediaInfo.updateStickersOrder = SendMessagesHelper.checkUpdateStickersOrder(photoEntry.caption);
                                     sendingMediaInfo.hasMediaSpoilers = photoEntry.hasSpoiler;
                                     sendingMediaInfo.stars = photoEntry.starsAmount;
-                                    sendingMediaInfo.highQuality = photoEntry.isHighQuality();
-                                    arrayList2.add(sendingMediaInfo);
+                                    sendingMediaInfo.highQuality = !z7 && photoEntry.isHighQuality();
+                                    arrayList.add(sendingMediaInfo);
                                     photoEntry.reset();
                                 }
-                                i9++;
-                                z8 = z7;
-                                selectedPhotosOrder = arrayList;
+                                i10++;
+                                i9 = i7;
+                                min = i6;
                             }
-                            ArrayList<Object> arrayList3 = selectedPhotosOrder;
-                            boolean z10 = z8;
-                            if (i7 == 0) {
-                                ChatActivity.this.fillEditingMediaWithCaption(((SendMessagesHelper.SendingMediaInfo) arrayList2.get(0)).caption, ((SendMessagesHelper.SendingMediaInfo) arrayList2.get(0)).entities);
-                                z6 = ((SendMessagesHelper.SendingMediaInfo) arrayList2.get(0)).updateStickersOrder;
+                            if (i8 == 0) {
+                                ChatActivity.this.fillEditingMediaWithCaption(((SendMessagesHelper.SendingMediaInfo) arrayList.get(0)).caption, ((SendMessagesHelper.SendingMediaInfo) arrayList.get(0)).entities);
+                                z6 = ((SendMessagesHelper.SendingMediaInfo) arrayList.get(0)).updateStickersOrder;
                             } else {
                                 z6 = false;
                             }
@@ -17069,39 +17064,36 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 MessageObject messageObject3 = chatActivity4.editingMessageObject;
                                 MessageObject threadMessage = chatActivity4.getThreadMessage();
                                 ReplyQuote replyQuote = ChatActivity.this.replyingQuote;
-                                boolean z11 = i == 4 || z5;
-                                int i11 = ChatActivity.this.chatMode;
+                                boolean z9 = i == 4 || z5;
+                                int i12 = ChatActivity.this.chatMode;
                                 ChatActivity chatActivity5 = ChatActivity.this;
-                                i5 = i7;
-                                i6 = ceil;
-                                SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList2, j3, messageObject3, threadMessage, null, replyQuote, z11, z2, null, z3, i2, i3, i11, z6, null, chatActivity5.quickReplyShortcut, chatActivity5.getQuickReplyId(), j, z4, j2, ChatActivity.this.getSendMonoForumPeerId(), of);
+                                i4 = i8;
+                                i5 = ceil;
+                                SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList, j3, messageObject3, threadMessage, null, replyQuote, z9, z2, null, z3, i2, i3, i12, z6, null, chatActivity5.quickReplyShortcut, chatActivity5.getQuickReplyId(), j, z4, j2, ChatActivity.this.getSendMonoForumPeerId(), of);
                             } else {
-                                i5 = i7;
-                                i6 = ceil;
+                                i4 = i8;
+                                i5 = ceil;
                                 AccountInstance accountInstance2 = ChatActivity.this.getAccountInstance();
                                 long j4 = ChatActivity.this.dialog_id;
                                 MessageObject messageObject4 = ChatActivity.this.replyingMessageObject;
                                 MessageObject threadMessage2 = ChatActivity.this.getThreadMessage();
                                 ReplyQuote replyQuote2 = ChatActivity.this.replyingQuote;
-                                boolean z12 = i == 4 || z5;
+                                boolean z10 = i == 4 || z5;
                                 ChatActivity chatActivity6 = ChatActivity.this;
                                 MessageObject messageObject5 = chatActivity6.editingMessageObject;
-                                int i12 = chatActivity6.chatMode;
+                                int i13 = chatActivity6.chatMode;
                                 ChatActivity chatActivity7 = ChatActivity.this;
-                                SendMessagesHelper.prepareSendingMedia(accountInstance2, arrayList2, j4, messageObject4, threadMessage2, null, replyQuote2, z12, z2, messageObject5, z3, i2, i3, i12, z6, null, chatActivity7.quickReplyShortcut, chatActivity7.getQuickReplyId(), j, z4, j2, ChatActivity.this.getSendMonoForumPeerId(), ChatActivity.this.messageSuggestionParams);
+                                SendMessagesHelper.prepareSendingMedia(accountInstance2, arrayList, j4, messageObject4, threadMessage2, null, replyQuote2, z10, z2, messageObject5, z3, i2, i3, i13, z6, null, chatActivity7.quickReplyShortcut, chatActivity7.getQuickReplyId(), j, z4, j2, ChatActivity.this.getSendMonoForumPeerId(), ChatActivity.this.messageSuggestionParams);
                             }
-                            i7 = i5 + 1;
-                            z8 = z10;
-                            selectedPhotosOrder = arrayList3;
-                            ceil = i6;
+                            i8 = i4 + 1;
+                            ceil = i5;
                         }
-                        i4 = 0;
                         ChatActivity.this.afterMessageSend();
                         ChatActivity.this.chatActivityEnterView.setFieldText("");
                     }
                     if (i2 != 0) {
                         if (ChatActivity.this.scheduledMessagesCount == -1) {
-                            ChatActivity.this.scheduledMessagesCount = i4;
+                            ChatActivity.this.scheduledMessagesCount = 0;
                         }
                         ChatActivity.access$3512(ChatActivity.this, selectedPhotos.size());
                         ChatActivity.this.updateScheduledInterface(true);
@@ -19513,66 +19505,52 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x0f6a  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x0ff3  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x0ff6  */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x0491  */
-    /* JADX WARN: Removed duplicated region for block: B:258:0x04ad  */
-    /* JADX WARN: Removed duplicated region for block: B:268:0x04f5  */
-    /* JADX WARN: Removed duplicated region for block: B:273:0x0501 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:277:0x054a  */
-    /* JADX WARN: Removed duplicated region for block: B:284:0x0568  */
-    /* JADX WARN: Removed duplicated region for block: B:288:0x0666  */
-    /* JADX WARN: Removed duplicated region for block: B:296:0x0787  */
-    /* JADX WARN: Removed duplicated region for block: B:299:0x078f  */
-    /* JADX WARN: Removed duplicated region for block: B:304:0x08ba  */
-    /* JADX WARN: Removed duplicated region for block: B:312:0x07a6  */
-    /* JADX WARN: Removed duplicated region for block: B:316:0x07b9  */
-    /* JADX WARN: Removed duplicated region for block: B:323:0x0816  */
-    /* JADX WARN: Removed duplicated region for block: B:356:0x078a  */
-    /* JADX WARN: Removed duplicated region for block: B:359:0x069f  */
-    /* JADX WARN: Removed duplicated region for block: B:367:0x06d8  */
-    /* JADX WARN: Removed duplicated region for block: B:377:0x06f8  */
-    /* JADX WARN: Removed duplicated region for block: B:384:0x0713  */
-    /* JADX WARN: Removed duplicated region for block: B:389:0x0744  */
-    /* JADX WARN: Removed duplicated region for block: B:395:0x0584  */
-    /* JADX WARN: Removed duplicated region for block: B:426:0x0641  */
-    /* JADX WARN: Removed duplicated region for block: B:431:0x0660  */
-    /* JADX WARN: Removed duplicated region for block: B:437:0x04d5  */
-    /* JADX WARN: Removed duplicated region for block: B:537:0x0c9f  */
-    /* JADX WARN: Removed duplicated region for block: B:543:0x0cb5 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:555:0x0cec  */
-    /* JADX WARN: Removed duplicated region for block: B:558:0x0d00  */
-    /* JADX WARN: Removed duplicated region for block: B:563:0x0d21  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x033d  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x0380  */
-    /* JADX WARN: Type inference failed for: r10v121, types: [org.telegram.ui.Components.ChatActivityEnterView] */
-    /* JADX WARN: Type inference failed for: r10v6, types: [org.telegram.ui.Components.ChatActivityEnterView] */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x0f76  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x0fff  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x1002  */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x0494  */
+    /* JADX WARN: Removed duplicated region for block: B:258:0x04b0  */
+    /* JADX WARN: Removed duplicated region for block: B:268:0x04f8  */
+    /* JADX WARN: Removed duplicated region for block: B:273:0x0504 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:277:0x054d  */
+    /* JADX WARN: Removed duplicated region for block: B:284:0x0571  */
+    /* JADX WARN: Removed duplicated region for block: B:289:0x066d  */
+    /* JADX WARN: Removed duplicated region for block: B:297:0x078c  */
+    /* JADX WARN: Removed duplicated region for block: B:300:0x0794  */
+    /* JADX WARN: Removed duplicated region for block: B:305:0x08c7  */
+    /* JADX WARN: Removed duplicated region for block: B:313:0x07ab  */
+    /* JADX WARN: Removed duplicated region for block: B:317:0x07be  */
+    /* JADX WARN: Removed duplicated region for block: B:324:0x0819  */
+    /* JADX WARN: Removed duplicated region for block: B:358:0x078f  */
+    /* JADX WARN: Removed duplicated region for block: B:361:0x06a6  */
+    /* JADX WARN: Removed duplicated region for block: B:369:0x06df  */
+    /* JADX WARN: Removed duplicated region for block: B:379:0x06ff  */
+    /* JADX WARN: Removed duplicated region for block: B:386:0x071a  */
+    /* JADX WARN: Removed duplicated region for block: B:391:0x0749  */
+    /* JADX WARN: Removed duplicated region for block: B:397:0x058d  */
+    /* JADX WARN: Removed duplicated region for block: B:427:0x0646  */
+    /* JADX WARN: Removed duplicated region for block: B:432:0x0665  */
+    /* JADX WARN: Removed duplicated region for block: B:438:0x056a  */
+    /* JADX WARN: Removed duplicated region for block: B:439:0x04d8  */
+    /* JADX WARN: Removed duplicated region for block: B:539:0x0cad  */
+    /* JADX WARN: Removed duplicated region for block: B:545:0x0cc0 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:557:0x0cf7  */
+    /* JADX WARN: Removed duplicated region for block: B:560:0x0d0b  */
+    /* JADX WARN: Removed duplicated region for block: B:565:0x0d2c  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0341  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x0384  */
     /* JADX WARN: Type inference failed for: r2v31 */
     /* JADX WARN: Type inference failed for: r2v32, types: [org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject$GroupedMessages] */
     /* JADX WARN: Type inference failed for: r2v51 */
     /* JADX WARN: Type inference failed for: r3v10 */
     /* JADX WARN: Type inference failed for: r3v11, types: [org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject$GroupedMessages, org.telegram.tgnet.TLObject, org.telegram.tgnet.TLRPC$PhotoSize, org.telegram.ui.ChatActivity$ReplyQuote] */
     /* JADX WARN: Type inference failed for: r3v22 */
-    /* JADX WARN: Type inference failed for: r3v69, types: [org.telegram.ui.Components.ChatActivityEnterView] */
-    /* JADX WARN: Type inference failed for: r3v88, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r5v4, types: [org.telegram.ui.Components.ChatActivityEnterView] */
-    /* JADX WARN: Type inference failed for: r5v5, types: [org.telegram.ui.Components.ChatActivityEnterView] */
-    /* JADX WARN: Type inference failed for: r5v68, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r5v69, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r5v70, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r5v72, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r5v77, types: [org.telegram.ui.ChatActivity$ReplyQuote] */
-    /* JADX WARN: Type inference failed for: r5v80, types: [android.text.SpannableStringBuilder, java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r5v83, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r5v88, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r6v30, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r6v70 */
-    /* JADX WARN: Type inference failed for: r6v71, types: [org.telegram.messenger.MessageObject, org.telegram.ui.ChatActivity$ReplyQuote] */
-    /* JADX WARN: Type inference failed for: r6v73 */
+    /* JADX WARN: Type inference failed for: r6v89 */
+    /* JADX WARN: Type inference failed for: r6v90, types: [org.telegram.messenger.MessageObject, org.telegram.ui.ChatActivity$ReplyQuote] */
+    /* JADX WARN: Type inference failed for: r6v92 */
     /* JADX WARN: Type inference failed for: r9v12 */
     /* JADX WARN: Type inference failed for: r9v13, types: [org.telegram.messenger.MessageObject, org.telegram.messenger.MessageObject$GroupedMessages] */
-    /* JADX WARN: Type inference failed for: r9v43 */
+    /* JADX WARN: Type inference failed for: r9v70 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -19588,19 +19566,16 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         ColoredImageSpan coloredImageSpan;
         ?? r9;
         SimpleTextView simpleTextView;
-        SimpleTextView simpleTextView2;
         MessageObject messageObject3;
         MessagePreviewParams messagePreviewParams;
-        SimpleTextView simpleTextView3;
         CharSequence spannableStringBuilder;
         CharSequence replaceEmoji;
         boolean z6;
         boolean z7;
+        CharSequence formatPluralString;
         TLRPC.Chat chat;
         TLRPC.User user;
         int i2;
-        SimpleTextView simpleTextView4;
-        String str3;
         long j3;
         long j4;
         int i3;
@@ -19608,20 +19583,22 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         MessageObject messageObject4;
         ?? r2;
         MessageObject.GroupedMessages groupedMessages;
-        ImageView imageView;
+        CharSequence charSequence2;
+        CharSequence charSequence3;
         TLRPC.User user2;
         TLRPC.Chat chat2;
-        CharSequence charSequence2;
         MessagePreviewParams messagePreviewParams2;
         boolean z8;
         CharSequence replaceCharSequence;
         int i4;
-        CharSequence charSequence3;
-        ReplyQuote replyQuote2;
         CharSequence charSequence4;
-        String str4;
+        ReplyQuote replyQuote2;
+        boolean z9;
+        CharSequence charSequence5;
+        CharSequence charSequence6;
+        CharSequence charSequence7;
         ArrayList<TLRPC.MessageEntity> arrayList2;
-        String str5;
+        CharSequence charSequence8;
         TLRPC.Peer peer;
         TLRPC.PhotoSize photoSize;
         TLRPC.PhotoSize photoSize2;
@@ -19629,14 +19606,14 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         int i5;
         int i6;
         ?? r6;
-        boolean z9;
+        boolean z10;
         TLRPC.MessageMedia messageMedia;
         TLRPC.WebPage webPage2;
         char c2;
         ColoredImageSpan coloredImageSpan2;
         String string;
-        String str6;
-        String str7 = "5_5_b";
+        String str3;
+        String str4 = "5_5_b";
         ChatActivityEnterView chatActivityEnterView = this.chatActivityEnterView;
         if (chatActivityEnterView == null) {
             return;
@@ -19730,11 +19707,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 if (i7 != 0 && i7 != 1) {
                     this.replyLayout.switchLayouts();
                 }
-                ImageView imageView2 = this.replyLayout.current().icon;
+                ImageView imageView = this.replyLayout.current().icon;
                 BackupImageView backupImageView = this.replyLayout.current().image;
-                SimpleTextView simpleTextView5 = this.replyLayout.current().name;
-                SimpleTextView simpleTextView6 = this.replyLayout.current().obj;
-                SimpleTextView simpleTextView7 = this.replyLayout.current().objHint;
+                SimpleTextView simpleTextView2 = this.replyLayout.current().name;
+                SimpleTextView simpleTextView3 = this.replyLayout.current().obj;
+                SimpleTextView simpleTextView4 = this.replyLayout.current().objHint;
                 this.forbidForwardingWithDismiss = false;
                 MessagePreviewParams messagePreviewParams5 = this.messagePreviewParams;
                 if (messagePreviewParams5 != null) {
@@ -19753,7 +19730,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     this.chatActivityEnterView.setReplyingMessageObject(r6, r6);
                     updateBottomOverlay();
                 }
-                boolean z10 = this.editingMessageObject == null;
+                boolean z11 = this.editingMessageObject == null;
                 this.editingMessageObject = messageObject2;
                 boolean isMediaEmpty = messageObject2.isMediaEmpty();
                 this.chatActivityEnterView.setEditingMessageObject(messageObject2, getValidGroupedMessage(messageObject2), !isMediaEmpty);
@@ -19766,10 +19743,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 }
                 if (!isMediaEmpty && canEditMedia) {
                     if (messageObject2.isPhoto()) {
-                        str6 = LocaleController.getString(R.string.EditMessageEditPhoto);
+                        str3 = LocaleController.getString(R.string.EditMessageEditPhoto);
                         string = LocaleController.getString(R.string.EditMessageReplacePhoto);
                     } else if (messageObject2.isVideo()) {
-                        str6 = LocaleController.getString(R.string.EditMessageEditVideo);
+                        str3 = LocaleController.getString(R.string.EditMessageEditVideo);
                         string = LocaleController.getString(R.string.EditMessageReplaceVideo);
                     } else {
                         if (messageObject2.isGif()) {
@@ -19779,66 +19756,66 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         } else {
                             string = LocaleController.getString(R.string.EditMessageReplaceFile);
                         }
-                        str6 = null;
+                        str3 = null;
                     }
                     ChatActivityEnterTopView.EditViewButton[] buttons = this.chatActivityEnterTopView.getEditView().getButtons();
-                    buttons[0].setEditButton(str6 != null);
-                    buttons[0].getTextView().setText(str6 != null ? str6 : string);
-                    buttons[0].getImageView().setImageResource(str6 != null ? R.drawable.msg_photoeditor : R.drawable.msg_replace);
-                    buttons[1].setVisibility(str6 == null ? 8 : 0);
-                    if (str6 != null) {
+                    buttons[0].setEditButton(str3 != null);
+                    buttons[0].getTextView().setText(str3 != null ? str3 : string);
+                    buttons[0].getImageView().setImageResource(str3 != null ? R.drawable.msg_photoeditor : R.drawable.msg_replace);
+                    buttons[1].setVisibility(str3 == null ? 8 : 0);
+                    if (str3 != null) {
                         buttons[1].getTextView().setText(string);
                     }
                     this.chatActivityEnterTopView.setEditMode(true);
                 } else {
-                    imageView2.setImageResource(canEditMedia ? R.drawable.nav_edit_attach : R.drawable.group_edit);
-                    imageView2.setContentDescription(LocaleController.getString(R.string.AccDescrEditing));
+                    imageView.setImageResource(canEditMedia ? R.drawable.nav_edit_attach : R.drawable.group_edit);
+                    imageView.setContentDescription(LocaleController.getString(R.string.AccDescrEditing));
                     if (isMediaEmpty || canEditMedia) {
-                        simpleTextView5.setText(LocaleController.getString(R.string.EditMessage));
+                        simpleTextView2.setText(LocaleController.getString(R.string.EditMessage));
                     } else {
-                        simpleTextView5.setText(LocaleController.getString(R.string.EditCaption));
+                        simpleTextView2.setText(LocaleController.getString(R.string.EditCaption));
                     }
                     if (canEditMedia) {
-                        simpleTextView6.setText(LocaleController.getString(isMediaEmpty ? R.string.AddMessageMedia : R.string.EditMessageMedia));
+                        simpleTextView3.setText(LocaleController.getString(isMediaEmpty ? R.string.AddMessageMedia : R.string.EditMessageMedia));
                     } else {
-                        CharSequence charSequence5 = messageObject2.messageText;
-                        if (charSequence5 != null || messageObject2.caption != null) {
-                            CharSequence charSequence6 = messageObject2.caption;
-                            if (charSequence6 != null) {
-                                charSequence5 = charSequence6;
+                        CharSequence charSequence9 = messageObject2.messageText;
+                        if (charSequence9 != null || messageObject2.caption != null) {
+                            CharSequence charSequence10 = messageObject2.caption;
+                            if (charSequence10 != null) {
+                                charSequence9 = charSequence10;
                             }
-                            if (charSequence5.length() > 150) {
-                                z9 = false;
-                                charSequence5 = charSequence5.subSequence(0, 150);
+                            if (charSequence9.length() > 150) {
+                                z10 = false;
+                                charSequence9 = charSequence9.subSequence(0, 150);
                             } else {
-                                z9 = false;
+                                z10 = false;
                             }
-                            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(Emoji.replaceEmoji(AndroidUtilities.replaceNewLines(charSequence5), simpleTextView6.getPaint().getFontMetricsInt(), z9));
+                            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(Emoji.replaceEmoji(AndroidUtilities.replaceNewLines(charSequence9), simpleTextView3.getPaint().getFontMetricsInt(), z10));
                             MediaDataController.addTextStyleRuns(messageObject2, spannableStringBuilder2);
                             TLRPC.Message message2 = messageObject2.messageOwner;
                             Spanned spanned = spannableStringBuilder2;
                             if (message2 != null) {
-                                spanned = MessageObject.replaceAnimatedEmoji(spannableStringBuilder2, message2.entities, simpleTextView6.getPaint().getFontMetricsInt());
+                                spanned = MessageObject.replaceAnimatedEmoji(spannableStringBuilder2, message2.entities, simpleTextView3.getPaint().getFontMetricsInt());
                             }
-                            simpleTextView6.setText(AnimatedEmojiSpan.cloneSpans(spanned));
+                            simpleTextView3.setText(AnimatedEmojiSpan.cloneSpans(spanned, -1, simpleTextView3.getPaint().getFontMetricsInt()));
                         }
                     }
                 }
                 if (this.editingMessageObject.needResendWhenEdit()) {
-                    imageView2.setImageResource(R.drawable.filled_paid_suggest_24);
-                    simpleTextView5.setText(LocaleController.getString(R.string.PostSuggestionsOfferChangeTitle));
+                    imageView.setImageResource(R.drawable.filled_paid_suggest_24);
+                    simpleTextView2.setText(LocaleController.getString(R.string.PostSuggestionsOfferChangeTitle));
                     AmountUtils$Amount amountUtils$Amount = this.messageSuggestionParams.amount;
-                    boolean z11 = amountUtils$Amount != null && amountUtils$Amount.currency == AmountUtils$Currency.TON;
+                    boolean z12 = amountUtils$Amount != null && amountUtils$Amount.currency == AmountUtils$Currency.TON;
                     ColoredImageSpan[] coloredImageSpanArr = new ColoredImageSpan[1];
                     asDecimalString = amountUtils$Amount != null ? amountUtils$Amount.asDecimalString() : "0";
                     if (this.messageSuggestionParams.isEmpty()) {
-                        simpleTextView6.setText(LocaleController.getString(R.string.SuggestAPostBelowSubtitle));
+                        simpleTextView3.setText(LocaleController.getString(R.string.SuggestAPostBelowSubtitle));
                     } else if (this.messageSuggestionParams.time <= 0) {
-                        simpleTextView6.setText(StarsIntroActivity.replaceStarsWithPlain(z11, LocaleController.formatString(R.string.SuggestAPostBelowSubtitleStars, asDecimalString), 0.66f, coloredImageSpanArr));
+                        simpleTextView3.setText(StarsIntroActivity.replaceStarsWithPlain(z12, LocaleController.formatString(R.string.SuggestAPostBelowSubtitleStars, asDecimalString), 0.66f, coloredImageSpanArr));
                     } else {
                         c2 = 0;
-                        simpleTextView6.setText(StarsIntroActivity.replaceStarsWithPlain(z11, LocaleController.formatSpannable(R.string.SuggestAPostBelowSubtitleStarsAndTime, asDecimalString, Emoji.replaceEmoji("📆 " + MessageSuggestionOfferSheet.formatDateTime(this.messageSuggestionParams.time), simpleTextView6.getPaint().getFontMetricsInt(), true)), 0.66f, coloredImageSpanArr));
-                        if (z11 && (coloredImageSpan2 = coloredImageSpanArr[c2]) != null) {
+                        simpleTextView3.setText(StarsIntroActivity.replaceStarsWithPlain(z12, LocaleController.formatSpannable(R.string.SuggestAPostBelowSubtitleStarsAndTime, asDecimalString, Emoji.replaceEmoji("📆 " + MessageSuggestionOfferSheet.formatDateTime(this.messageSuggestionParams.time), simpleTextView3.getPaint().getFontMetricsInt(), true)), 0.66f, coloredImageSpanArr));
+                        if (z12 && (coloredImageSpan2 = coloredImageSpanArr[c2]) != null) {
                             coloredImageSpan2.setColorKey(Theme.key_chat_replyPanelIcons);
                         }
                         if (!this.chatActivityEnterTopView.isEditMode()) {
@@ -19856,13 +19833,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         }
                     }
                     c2 = 0;
-                    if (z11) {
+                    if (z12) {
                         coloredImageSpan2.setColorKey(Theme.key_chat_replyPanelIcons);
                     }
                     if (!this.chatActivityEnterTopView.isEditMode()) {
                     }
                 }
-                if (z10) {
+                if (z11) {
                     TLRPC.Message message3 = messageObject2.messageOwner;
                     if (message3 != null && (messageMedia = message3.media) != null && (webPage2 = messageMedia.webpage) != null) {
                         this.foundWebPage = webPage2;
@@ -19932,223 +19909,259 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 if (i7 != 0 && i7 != 2) {
                                     this.replyLayout.switchLayouts();
                                 }
-                                imageView = this.replyLayout.current().icon;
+                                ImageView imageView2 = this.replyLayout.current().icon;
                                 BackupImageView backupImageView2 = this.replyLayout.current().image;
-                                SimpleTextView simpleTextView8 = this.replyLayout.current().name;
-                                SimpleTextView simpleTextView9 = this.replyLayout.current().obj;
-                                SimpleTextView simpleTextView10 = this.replyLayout.current().objHint;
-                                String restrictionReason = MessagesController.getInstance(this.currentAccount).getRestrictionReason(messageObject.messageOwner.restriction_reason);
+                                SimpleTextView simpleTextView5 = this.replyLayout.current().name;
+                                SimpleTextView simpleTextView6 = this.replyLayout.current().obj;
+                                SimpleTextView simpleTextView7 = this.replyLayout.current().objHint;
+                                CharSequence restrictionReason = MessagesController.getInstance(this.currentAccount).getRestrictionReason(messageObject.messageOwner.restriction_reason);
                                 this.chatActivityEnterView.setForceShowSendButton(false, false);
-                                CharSequence peerNameWithIcon = (messageObject.isForwarded() || messageObject.getDialogId() == this.dialog_id || (peer = messageObject.messageOwner.fwd_from.from_id) == null) ? null : MessageObject.peerNameWithIcon(this.currentAccount, peer);
-                                if (this.currentEncryptedChat != null) {
-                                    if (messageObject.isOutOwner()) {
-                                        charSequence2 = UserObject.getUserName(getUserConfig().getCurrentUser());
-                                    } else {
-                                        charSequence2 = UserObject.getUserName(this.currentUser);
-                                    }
-                                } else if (peerNameWithIcon != null || !messageObject.isFromUser()) {
-                                    CharSequence charSequence7 = charSequence;
-                                    charSequence2 = peerNameWithIcon;
-                                    if (peerNameWithIcon == null) {
-                                        if (ChatObject.isChannel(this.currentChat) && this.currentChat.megagroup && messageObject.isForwardedChannelPost()) {
-                                            chat2 = getMessagesController().getChat(Long.valueOf(messageObject.messageOwner.fwd_from.from_id.channel_id));
-                                        } else {
-                                            long senderId = messageObject.getSenderId();
-                                            if (senderId < 0) {
-                                                chat2 = getMessagesController().getChat(Long.valueOf(-senderId));
+                                if (messageObject.isForwarded()) {
+                                    charSequence2 = restrictionReason;
+                                    if (messageObject.getDialogId() != this.dialog_id && (peer = messageObject.messageOwner.fwd_from.from_id) != null) {
+                                        charSequence3 = MessageObject.peerNameWithIcon(this.currentAccount, peer);
+                                        if (this.currentEncryptedChat == null) {
+                                            if (messageObject.isOutOwner()) {
+                                                charSequence3 = UserObject.getUserName(getUserConfig().getCurrentUser());
                                             } else {
-                                                user2 = getMessagesController().getUser(Long.valueOf(senderId));
-                                                chat2 = null;
-                                                if (chat2 != null && user2 == null) {
+                                                charSequence3 = UserObject.getUserName(this.currentUser);
+                                            }
+                                        } else if (charSequence3 == null && messageObject.isFromUser()) {
+                                            if (messageObject.messageOwner.from_id.channel_id != 0) {
+                                                TLRPC.Chat chat3 = getMessagesController().getChat(Long.valueOf(messageObject.messageOwner.from_id.channel_id));
+                                                if (chat3 == null) {
                                                     return;
-                                                }
-                                                if (chat2 == null) {
-                                                    charSequence2 = new SpannableStringBuilder(ChatObject.isChannelAndNotMegaGroup(chat2) ? MessageObject.channelSpan() : MessageObject.groupSpan()).append(charSequence7).append((CharSequence) chat2.title);
                                                 } else {
-                                                    charSequence2 = UserObject.getUserName(user2);
+                                                    charSequence3 = new SpannableStringBuilder(ChatObject.isChannelAndNotMegaGroup(chat3) ? MessageObject.channelSpan() : MessageObject.groupSpan()).append(charSequence).append((CharSequence) chat3.title);
                                                 }
-                                            }
-                                        }
-                                        user2 = null;
-                                        if (chat2 != null) {
-                                        }
-                                        if (chat2 == null) {
-                                        }
-                                    }
-                                } else if (messageObject.messageOwner.from_id.channel_id != 0) {
-                                    TLRPC.Chat chat3 = getMessagesController().getChat(Long.valueOf(messageObject.messageOwner.from_id.channel_id));
-                                    if (chat3 == null) {
-                                        return;
-                                    } else {
-                                        charSequence2 = new SpannableStringBuilder(ChatObject.isChannelAndNotMegaGroup(chat3) ? MessageObject.channelSpan() : MessageObject.groupSpan()).append(charSequence).append((CharSequence) chat3.title);
-                                    }
-                                } else {
-                                    TLRPC.User user3 = getMessagesController().getUser(Long.valueOf(messageObject.messageOwner.from_id.user_id));
-                                    if (user3 == null) {
-                                        return;
-                                    } else {
-                                        charSequence2 = UserObject.getUserName(user3);
-                                    }
-                                }
-                                if (replyQuote == null && replyQuote.todo) {
-                                    imageView.setImageResource(R.drawable.filled_reply_quote);
-                                    TLRPC.MessageMedia media = MessageObject.getMedia(replyQuote.message);
-                                    if (media instanceof TLRPC.TL_messageMediaToDo) {
-                                        replaceCharSequence = LocaleController.formatSpannable(R.string.ReplyToTaskIn, MessageObject.formatTextWithEntities(((TLRPC.TL_messageMediaToDo) media).todo.title, false, simpleTextView8.getPaint()));
-                                    } else {
-                                        replaceCharSequence = LocaleController.getString(R.string.ReplyToTask);
-                                    }
-                                } else if (replyQuote == null && replyQuote.poll) {
-                                    imageView.setImageResource(R.drawable.filled_reply_quote);
-                                    TLRPC.MessageMedia media2 = MessageObject.getMedia(replyQuote.message);
-                                    if (media2 instanceof TLRPC.TL_messageMediaPoll) {
-                                        replaceCharSequence = LocaleController.formatSpannable(R.string.ReplyToPollIn, MessageObject.formatTextWithEntities(((TLRPC.TL_messageMediaPoll) media2).poll.question, false, simpleTextView8.getPaint()));
-                                    } else {
-                                        replaceCharSequence = LocaleController.getString(R.string.ReplyToPoll);
-                                    }
-                                } else if (replyQuote == null && !replyQuote.todo && !replyQuote.poll) {
-                                    imageView.setImageResource(R.drawable.filled_reply_quote);
-                                    replaceCharSequence = AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(R.string.ReplyToQuote), charSequence2 != null ? charSequence2 : "");
-                                } else {
-                                    messagePreviewParams2 = this.messagePreviewParams;
-                                    if (messagePreviewParams2 != null || messagePreviewParams2.hasSecretMessages || this.chatMode == 5) {
-                                        imageView.setImageResource(R.drawable.ic_ab_reply);
-                                    } else {
-                                        imageView.setImageResource(R.drawable.filled_reply_settings);
-                                    }
-                                    if (messageObject.isEphemeral()) {
-                                        ColoredImageSpan coloredImageSpan3 = new ColoredImageSpan(R.drawable.mini_ephemeral_hidden_14);
-                                        coloredImageSpan3.setColorKey(Theme.key_chat_replyPanelName);
-                                        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
-                                        spannableStringBuilder3.append((CharSequence) "* ");
-                                        if (charSequence2 == null) {
-                                            i4 = 1;
-                                            z8 = false;
-                                            charSequence3 = LocaleController.formatString(R.string.ReplyTo, "");
-                                        } else {
-                                            z8 = false;
-                                            i4 = 1;
-                                            charSequence3 = charSequence2;
-                                        }
-                                        spannableStringBuilder3.append(charSequence3);
-                                        spannableStringBuilder3.setSpan(coloredImageSpan3, z8 ? 1 : 0, i4, 33);
-                                        replaceCharSequence = spannableStringBuilder3;
-                                    } else {
-                                        z8 = false;
-                                        replaceCharSequence = AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(R.string.ReplyTo), charSequence2 != null ? charSequence2 : "");
-                                    }
-                                    simpleTextView8.setText(Emoji.replaceEmoji(replaceCharSequence, simpleTextView8.getPaint().getFontMetricsInt(), z8));
-                                    imageView.setContentDescription(LocaleController.getString(R.string.AccDescrReplying));
-                                    this.replyCloseImageView.setContentDescription(LocaleController.getString(R.string.AccDescrCancelReply));
-                                    simpleTextView10.setText(LocaleController.getString(R.string.TapForReplyOptions));
-                                    z7 = !SharedConfig.replyingOptionsHintShown;
-                                    TLRPC.Message message4 = messageObject.messageOwner;
-                                    ArrayList<TLRPC.MessageEntity> arrayList4 = message4 == null ? message4.entities : null;
-                                    replyQuote2 = this.replyingQuote;
-                                    if (replyQuote2 == null && replyQuote2.todo) {
-                                        str5 = MessageObject.formatTextWithEntities(replyQuote2.task.title, false, simpleTextView9.getPaint());
-                                    } else if (replyQuote2 == null && replyQuote2.poll) {
-                                        str5 = MessageObject.formatTextWithEntities(replyQuote2.answer.text, false, simpleTextView9.getPaint());
-                                    } else if (replyQuote2 == null) {
-                                        if (replyQuote2.outdated) {
-                                            ?? spannableStringBuilder4 = new SpannableStringBuilder(LocaleController.getString(R.string.QuoteOutdated));
-                                            spannableStringBuilder4.setSpan(new TypefaceSpan(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC)), 0, spannableStringBuilder4.length(), 33);
-                                            str5 = spannableStringBuilder4;
-                                        } else {
-                                            SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder(this.replyingQuote.getText());
-                                            ArrayList<TLRPC.MessageEntity> entities = this.replyingQuote.getEntities();
-                                            CharSequence replaceNewLines = AndroidUtilities.replaceNewLines(spannableStringBuilder5);
-                                            if (entities != null) {
-                                                replaceNewLines = MessageObject.replaceAnimatedEmoji(replaceNewLines, entities, simpleTextView9.getPaint().getFontMetricsInt());
-                                            }
-                                            charSequence4 = null;
-                                            str4 = Emoji.replaceEmoji(replaceNewLines, simpleTextView9.getPaint().getFontMetricsInt(), false);
-                                            arrayList4 = entities;
-                                            if (str4 != null) {
-                                                if ((str4 instanceof Spannable) && charSequence4 != null) {
-                                                    MediaDataController.addTextStyleRuns(arrayList4, charSequence4, (Spannable) str4);
-                                                }
-                                                simpleTextView9.setText(AnimatedEmojiSpan.cloneSpans(str4));
-                                            }
-                                            updateBottomOverlay();
-                                            str2 = "5_5_b";
-                                            messageObject3 = messageObject;
-                                        }
-                                    } else {
-                                        if (!TextUtils.isEmpty(restrictionReason)) {
-                                            String str8 = restrictionReason;
-                                            charSequence4 = str8;
-                                            str4 = str8;
-                                        } else if (MessageObject.isTopicActionMessage(messageObject)) {
-                                            ForumUtilities.applyTopicToMessage(messageObject);
-                                            ?? r5 = messageObject.messageTextForReply;
-                                            String str9 = r5;
-                                            if (r5 == 0) {
-                                                str9 = messageObject.messageTextShort;
-                                            }
-                                            AnimatedEmojiSpan.applyFontMetricsForString(str9, simpleTextView9.getPaint());
-                                            str5 = str9;
-                                        } else {
-                                            TLRPC.TL_forumTopic tL_forumTopic = messageObject.replyToForumTopic;
-                                            if (tL_forumTopic != null) {
-                                                str5 = ForumUtilities.getTopicSpannedName(tL_forumTopic, simpleTextView9.getPaint(), false);
                                             } else {
-                                                TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
-                                                if (messageMedia2 instanceof TLRPC.TL_messageMediaGame) {
-                                                    ?? replaceEmoji2 = Emoji.replaceEmoji(messageMedia2.game.title, simpleTextView9.getPaint().getFontMetricsInt(), false);
-                                                    charSequence4 = messageObject.messageOwner.media.game.title;
-                                                    str4 = replaceEmoji2;
+                                                TLRPC.User user3 = getMessagesController().getUser(Long.valueOf(messageObject.messageOwner.from_id.user_id));
+                                                if (user3 == null) {
+                                                    return;
                                                 } else {
-                                                    CharSequence charSequence8 = messageObject.messageText;
-                                                    if (charSequence8 == null && messageObject.caption == null) {
-                                                        str5 = null;
+                                                    charSequence3 = UserObject.getUserName(user3);
+                                                }
+                                            }
+                                        } else if (charSequence3 == null) {
+                                            if (ChatObject.isChannel(this.currentChat) && this.currentChat.megagroup && messageObject.isForwardedChannelPost()) {
+                                                chat2 = getMessagesController().getChat(Long.valueOf(messageObject.messageOwner.fwd_from.from_id.channel_id));
+                                            } else {
+                                                long senderId = messageObject.getSenderId();
+                                                if (senderId < 0) {
+                                                    chat2 = getMessagesController().getChat(Long.valueOf(-senderId));
+                                                } else {
+                                                    user2 = getMessagesController().getUser(Long.valueOf(senderId));
+                                                    chat2 = null;
+                                                    if (chat2 != null && user2 == null) {
+                                                        return;
+                                                    }
+                                                    if (chat2 == null) {
+                                                        charSequence3 = new SpannableStringBuilder(ChatObject.isChannelAndNotMegaGroup(chat2) ? MessageObject.channelSpan() : MessageObject.groupSpan()).append(charSequence).append((CharSequence) chat2.title);
                                                     } else {
-                                                        CharSequence charSequence9 = messageObject.caption;
-                                                        if (charSequence9 != null) {
-                                                            charSequence8 = charSequence9;
-                                                        }
-                                                        CharSequence restoreFormatedDateEntities = FormattedDateSpan.restoreFormatedDateEntities(charSequence8);
-                                                        CharSequence replaceNewLines2 = AndroidUtilities.replaceNewLines(restoreFormatedDateEntities.length() > 150 ? restoreFormatedDateEntities.subSequence(0, 150) : restoreFormatedDateEntities);
-                                                        TLRPC.Message message5 = messageObject.messageOwner;
-                                                        if (message5 != null && (arrayList2 = message5.entities) != null) {
-                                                            replaceNewLines2 = MessageObject.replaceAnimatedEmoji(replaceNewLines2, arrayList2, simpleTextView9.getPaint().getFontMetricsInt());
-                                                        }
-                                                        ?? replaceEmoji3 = Emoji.replaceEmoji(replaceNewLines2, simpleTextView9.getPaint().getFontMetricsInt(), false);
-                                                        charSequence4 = restoreFormatedDateEntities;
-                                                        str4 = replaceEmoji3;
+                                                        charSequence3 = UserObject.getUserName(user2);
                                                     }
                                                 }
                                             }
+                                            user2 = null;
+                                            if (chat2 != null) {
+                                            }
+                                            if (chat2 == null) {
+                                            }
                                         }
-                                        if (str4 != null) {
+                                        if (replyQuote == null && replyQuote.todo) {
+                                            imageView2.setImageResource(R.drawable.filled_reply_quote);
+                                            TLRPC.MessageMedia media = MessageObject.getMedia(replyQuote.message);
+                                            if (media instanceof TLRPC.TL_messageMediaToDo) {
+                                                replaceCharSequence = LocaleController.formatSpannable(R.string.ReplyToTaskIn, MessageObject.formatTextWithEntities(((TLRPC.TL_messageMediaToDo) media).todo.title, false, simpleTextView5.getPaint()));
+                                            } else {
+                                                replaceCharSequence = LocaleController.getString(R.string.ReplyToTask);
+                                            }
+                                        } else if (replyQuote == null && replyQuote.poll) {
+                                            imageView2.setImageResource(R.drawable.filled_reply_quote);
+                                            TLRPC.MessageMedia media2 = MessageObject.getMedia(replyQuote.message);
+                                            if (media2 instanceof TLRPC.TL_messageMediaPoll) {
+                                                replaceCharSequence = LocaleController.formatSpannable(R.string.ReplyToPollIn, MessageObject.formatTextWithEntities(((TLRPC.TL_messageMediaPoll) media2).poll.question, false, simpleTextView5.getPaint()));
+                                            } else {
+                                                replaceCharSequence = LocaleController.getString(R.string.ReplyToPoll);
+                                            }
+                                        } else if (replyQuote == null && !replyQuote.todo && !replyQuote.poll) {
+                                            imageView2.setImageResource(R.drawable.filled_reply_quote);
+                                            replaceCharSequence = AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(R.string.ReplyToQuote), charSequence3 != null ? charSequence3 : "");
+                                        } else {
+                                            messagePreviewParams2 = this.messagePreviewParams;
+                                            if (messagePreviewParams2 != null || messagePreviewParams2.hasSecretMessages || this.chatMode == 5) {
+                                                imageView2.setImageResource(R.drawable.ic_ab_reply);
+                                            } else {
+                                                imageView2.setImageResource(R.drawable.filled_reply_settings);
+                                            }
+                                            if (!messageObject.isEphemeral()) {
+                                                ColoredImageSpan coloredImageSpan3 = new ColoredImageSpan(R.drawable.mini_ephemeral_hidden_14);
+                                                coloredImageSpan3.setColorKey(Theme.key_chat_replyPanelName);
+                                                SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
+                                                spannableStringBuilder3.append((CharSequence) "* ");
+                                                if (charSequence3 == null) {
+                                                    i4 = 1;
+                                                    z8 = false;
+                                                    charSequence4 = LocaleController.formatString(R.string.ReplyTo, "");
+                                                } else {
+                                                    i4 = 1;
+                                                    z8 = false;
+                                                    charSequence4 = charSequence3;
+                                                }
+                                                spannableStringBuilder3.append(charSequence4);
+                                                spannableStringBuilder3.setSpan(coloredImageSpan3, z8 ? 1 : 0, i4, 33);
+                                                replaceCharSequence = spannableStringBuilder3;
+                                            } else {
+                                                z8 = false;
+                                                replaceCharSequence = AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(R.string.ReplyTo), charSequence3 != null ? charSequence3 : "");
+                                            }
+                                            simpleTextView5.setText(Emoji.replaceEmoji(replaceCharSequence, simpleTextView5.getPaint().getFontMetricsInt(), z8));
+                                            imageView2.setContentDescription(LocaleController.getString(R.string.AccDescrReplying));
+                                            this.replyCloseImageView.setContentDescription(LocaleController.getString(R.string.AccDescrCancelReply));
+                                            simpleTextView7.setText(LocaleController.getString(R.string.TapForReplyOptions));
+                                            z7 = !SharedConfig.replyingOptionsHintShown;
+                                            TLRPC.Message message4 = messageObject.messageOwner;
+                                            ArrayList arrayList4 = message4 != null ? message4.entities : null;
+                                            replyQuote2 = this.replyingQuote;
+                                            if (replyQuote2 == null && replyQuote2.todo) {
+                                                charSequence8 = MessageObject.formatTextWithEntities(replyQuote2.task.title, false, simpleTextView6.getPaint());
+                                            } else if (replyQuote2 == null && replyQuote2.poll) {
+                                                charSequence8 = MessageObject.formatTextWithEntities(replyQuote2.answer.text, false, simpleTextView6.getPaint());
+                                            } else if (replyQuote2 != null) {
+                                                if (replyQuote2.outdated) {
+                                                    SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(LocaleController.getString(R.string.QuoteOutdated));
+                                                    spannableStringBuilder4.setSpan(new TypefaceSpan(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC)), 0, spannableStringBuilder4.length(), 33);
+                                                    charSequence8 = spannableStringBuilder4;
+                                                } else {
+                                                    SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder(this.replyingQuote.getText());
+                                                    ArrayList entities = this.replyingQuote.getEntities();
+                                                    CharSequence replaceNewLines = AndroidUtilities.replaceNewLines(spannableStringBuilder5);
+                                                    if (entities != null) {
+                                                        replaceNewLines = MessageObject.replaceAnimatedEmoji(replaceNewLines, entities, simpleTextView6.getPaint().getFontMetricsInt());
+                                                    }
+                                                    charSequence6 = null;
+                                                    charSequence7 = Emoji.replaceEmoji(replaceNewLines, simpleTextView6.getPaint().getFontMetricsInt(), false);
+                                                    arrayList4 = entities;
+                                                    if (charSequence7 != null) {
+                                                        if ((charSequence7 instanceof Spannable) && charSequence6 != null) {
+                                                            MediaDataController.addTextStyleRuns((ArrayList<TLRPC.MessageEntity>) arrayList4, charSequence6, (Spannable) charSequence7);
+                                                        }
+                                                        simpleTextView6.setText(AnimatedEmojiSpan.cloneSpans(charSequence7, -1, simpleTextView6.getPaint().getFontMetricsInt()));
+                                                    }
+                                                    updateBottomOverlay();
+                                                    messageObject3 = messageObject;
+                                                    str2 = "5_5_b";
+                                                }
+                                            } else {
+                                                if (!TextUtils.isEmpty(charSequence2)) {
+                                                    CharSequence charSequence11 = charSequence2;
+                                                    charSequence6 = charSequence11;
+                                                    charSequence7 = charSequence11;
+                                                } else if (MessageObject.isTopicActionMessage(messageObject)) {
+                                                    ForumUtilities.applyTopicToMessage(messageObject);
+                                                    CharSequence charSequence12 = messageObject.messageTextForReply;
+                                                    CharSequence charSequence13 = charSequence12;
+                                                    if (charSequence12 == null) {
+                                                        charSequence13 = messageObject.messageTextShort;
+                                                    }
+                                                    AnimatedEmojiSpan.applyFontMetricsForString(charSequence13, simpleTextView6.getPaint());
+                                                    charSequence8 = charSequence13;
+                                                } else {
+                                                    TLRPC.TL_forumTopic tL_forumTopic = messageObject.replyToForumTopic;
+                                                    if (tL_forumTopic != null) {
+                                                        charSequence8 = ForumUtilities.getTopicSpannedName(tL_forumTopic, simpleTextView6.getPaint(), false);
+                                                    } else {
+                                                        TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
+                                                        if (messageMedia2 instanceof TLRPC.TL_messageMediaGame) {
+                                                            CharSequence replaceEmoji2 = Emoji.replaceEmoji(messageMedia2.game.title, simpleTextView6.getPaint().getFontMetricsInt(), false);
+                                                            charSequence6 = messageObject.messageOwner.media.game.title;
+                                                            charSequence7 = replaceEmoji2;
+                                                        } else if (messageObject.messageText == null && messageObject.caption == null) {
+                                                            charSequence8 = null;
+                                                        } else {
+                                                            CharSequence charSequence14 = messageObject.caption;
+                                                            if (charSequence14 == null) {
+                                                                charSequence14 = messageObject.messageText;
+                                                            }
+                                                            CharSequence restoreFormatedDateEntities = FormattedDateSpan.restoreFormatedDateEntities(new SpannableStringBuilder(charSequence14));
+                                                            if (restoreFormatedDateEntities.length() > 150) {
+                                                                z9 = false;
+                                                                charSequence5 = restoreFormatedDateEntities.subSequence(0, 150);
+                                                            } else {
+                                                                z9 = false;
+                                                                charSequence5 = restoreFormatedDateEntities;
+                                                            }
+                                                            CharSequence replaceEmoji3 = Emoji.replaceEmoji(AndroidUtilities.replaceNewLines(charSequence5), simpleTextView6.getPaint().getFontMetricsInt(), z9);
+                                                            TLRPC.Message message5 = messageObject.messageOwner;
+                                                            CharSequence replaceAnimatedEmoji = (message5 == null || (arrayList2 = message5.entities) == null) ? replaceEmoji3 : MessageObject.replaceAnimatedEmoji(replaceEmoji3, arrayList2, simpleTextView6.getPaint().getFontMetricsInt());
+                                                            charSequence6 = restoreFormatedDateEntities;
+                                                            charSequence7 = replaceAnimatedEmoji;
+                                                        }
+                                                    }
+                                                }
+                                                if (charSequence7 != null) {
+                                                }
+                                                updateBottomOverlay();
+                                                messageObject3 = messageObject;
+                                                str2 = "5_5_b";
+                                            }
+                                            charSequence6 = null;
+                                            charSequence7 = charSequence8;
+                                            if (charSequence7 != null) {
+                                            }
+                                            updateBottomOverlay();
+                                            messageObject3 = messageObject;
+                                            str2 = "5_5_b";
                                         }
-                                        updateBottomOverlay();
-                                        str2 = "5_5_b";
-                                        messageObject3 = messageObject;
+                                        z8 = false;
+                                        simpleTextView5.setText(Emoji.replaceEmoji(replaceCharSequence, simpleTextView5.getPaint().getFontMetricsInt(), z8));
+                                        imageView2.setContentDescription(LocaleController.getString(R.string.AccDescrReplying));
+                                        this.replyCloseImageView.setContentDescription(LocaleController.getString(R.string.AccDescrCancelReply));
+                                        simpleTextView7.setText(LocaleController.getString(R.string.TapForReplyOptions));
+                                        z7 = !SharedConfig.replyingOptionsHintShown;
+                                        TLRPC.Message message42 = messageObject.messageOwner;
+                                        if (message42 != null) {
+                                        }
+                                        replyQuote2 = this.replyingQuote;
+                                        if (replyQuote2 == null) {
+                                        }
+                                        if (replyQuote2 == null) {
+                                        }
+                                        if (replyQuote2 != null) {
+                                        }
                                     }
-                                    charSequence4 = null;
-                                    str4 = str5;
-                                    if (str4 != null) {
-                                    }
-                                    updateBottomOverlay();
-                                    str2 = "5_5_b";
-                                    messageObject3 = messageObject;
+                                } else {
+                                    charSequence2 = restrictionReason;
                                 }
-                                z8 = false;
-                                simpleTextView8.setText(Emoji.replaceEmoji(replaceCharSequence, simpleTextView8.getPaint().getFontMetricsInt(), z8));
-                                imageView.setContentDescription(LocaleController.getString(R.string.AccDescrReplying));
+                                charSequence3 = null;
+                                if (this.currentEncryptedChat == null) {
+                                }
+                                if (replyQuote == null) {
+                                }
+                                if (replyQuote == null) {
+                                }
+                                if (replyQuote == null) {
+                                }
+                                messagePreviewParams2 = this.messagePreviewParams;
+                                if (messagePreviewParams2 != null) {
+                                }
+                                imageView2.setImageResource(R.drawable.ic_ab_reply);
+                                if (!messageObject.isEphemeral()) {
+                                }
+                                simpleTextView5.setText(Emoji.replaceEmoji(replaceCharSequence, simpleTextView5.getPaint().getFontMetricsInt(), z8));
+                                imageView2.setContentDescription(LocaleController.getString(R.string.AccDescrReplying));
                                 this.replyCloseImageView.setContentDescription(LocaleController.getString(R.string.AccDescrCancelReply));
-                                simpleTextView10.setText(LocaleController.getString(R.string.TapForReplyOptions));
+                                simpleTextView7.setText(LocaleController.getString(R.string.TapForReplyOptions));
                                 z7 = !SharedConfig.replyingOptionsHintShown;
-                                TLRPC.Message message42 = messageObject.messageOwner;
-                                if (message42 == null) {
+                                TLRPC.Message message422 = messageObject.messageOwner;
+                                if (message422 != null) {
                                 }
                                 replyQuote2 = this.replyingQuote;
                                 if (replyQuote2 == null) {
                                 }
                                 if (replyQuote2 == null) {
                                 }
-                                if (replyQuote2 == null) {
+                                if (replyQuote2 != null) {
                                 }
                             }
                             messageObject4 = null;
@@ -20175,16 +20188,17 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             if (i7 != 0) {
                                 this.replyLayout.switchLayouts();
                             }
-                            imageView = this.replyLayout.current().icon;
+                            ImageView imageView22 = this.replyLayout.current().icon;
                             BackupImageView backupImageView22 = this.replyLayout.current().image;
-                            SimpleTextView simpleTextView82 = this.replyLayout.current().name;
-                            SimpleTextView simpleTextView92 = this.replyLayout.current().obj;
-                            SimpleTextView simpleTextView102 = this.replyLayout.current().objHint;
-                            String restrictionReason2 = MessagesController.getInstance(this.currentAccount).getRestrictionReason(messageObject.messageOwner.restriction_reason);
+                            SimpleTextView simpleTextView52 = this.replyLayout.current().name;
+                            SimpleTextView simpleTextView62 = this.replyLayout.current().obj;
+                            SimpleTextView simpleTextView72 = this.replyLayout.current().objHint;
+                            CharSequence restrictionReason2 = MessagesController.getInstance(this.currentAccount).getRestrictionReason(messageObject.messageOwner.restriction_reason);
                             this.chatActivityEnterView.setForceShowSendButton(false, false);
                             if (messageObject.isForwarded()) {
                             }
-                            if (this.currentEncryptedChat != null) {
+                            charSequence3 = null;
+                            if (this.currentEncryptedChat == null) {
                             }
                             if (replyQuote == null) {
                             }
@@ -20195,23 +20209,23 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             messagePreviewParams2 = this.messagePreviewParams;
                             if (messagePreviewParams2 != null) {
                             }
-                            imageView.setImageResource(R.drawable.ic_ab_reply);
-                            if (messageObject.isEphemeral()) {
+                            imageView22.setImageResource(R.drawable.ic_ab_reply);
+                            if (!messageObject.isEphemeral()) {
                             }
-                            simpleTextView82.setText(Emoji.replaceEmoji(replaceCharSequence, simpleTextView82.getPaint().getFontMetricsInt(), z8));
-                            imageView.setContentDescription(LocaleController.getString(R.string.AccDescrReplying));
+                            simpleTextView52.setText(Emoji.replaceEmoji(replaceCharSequence, simpleTextView52.getPaint().getFontMetricsInt(), z8));
+                            imageView22.setContentDescription(LocaleController.getString(R.string.AccDescrReplying));
                             this.replyCloseImageView.setContentDescription(LocaleController.getString(R.string.AccDescrCancelReply));
-                            simpleTextView102.setText(LocaleController.getString(R.string.TapForReplyOptions));
+                            simpleTextView72.setText(LocaleController.getString(R.string.TapForReplyOptions));
                             z7 = !SharedConfig.replyingOptionsHintShown;
-                            TLRPC.Message message422 = messageObject.messageOwner;
-                            if (message422 == null) {
+                            TLRPC.Message message4222 = messageObject.messageOwner;
+                            if (message4222 != null) {
                             }
                             replyQuote2 = this.replyingQuote;
                             if (replyQuote2 == null) {
                             }
                             if (replyQuote2 == null) {
                             }
-                            if (replyQuote2 == null) {
+                            if (replyQuote2 != null) {
                             }
                         }
                     }
@@ -20238,16 +20252,17 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     this.fieldPanelShown = 2;
                     if (i7 != 0) {
                     }
-                    imageView = this.replyLayout.current().icon;
+                    ImageView imageView222 = this.replyLayout.current().icon;
                     BackupImageView backupImageView222 = this.replyLayout.current().image;
-                    SimpleTextView simpleTextView822 = this.replyLayout.current().name;
-                    SimpleTextView simpleTextView922 = this.replyLayout.current().obj;
-                    SimpleTextView simpleTextView1022 = this.replyLayout.current().objHint;
-                    String restrictionReason22 = MessagesController.getInstance(this.currentAccount).getRestrictionReason(messageObject.messageOwner.restriction_reason);
+                    SimpleTextView simpleTextView522 = this.replyLayout.current().name;
+                    SimpleTextView simpleTextView622 = this.replyLayout.current().obj;
+                    SimpleTextView simpleTextView722 = this.replyLayout.current().objHint;
+                    CharSequence restrictionReason22 = MessagesController.getInstance(this.currentAccount).getRestrictionReason(messageObject.messageOwner.restriction_reason);
                     this.chatActivityEnterView.setForceShowSendButton(false, false);
                     if (messageObject.isForwarded()) {
                     }
-                    if (this.currentEncryptedChat != null) {
+                    charSequence3 = null;
+                    if (this.currentEncryptedChat == null) {
                     }
                     if (replyQuote == null) {
                     }
@@ -20258,23 +20273,23 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     messagePreviewParams2 = this.messagePreviewParams;
                     if (messagePreviewParams2 != null) {
                     }
-                    imageView.setImageResource(R.drawable.ic_ab_reply);
-                    if (messageObject.isEphemeral()) {
+                    imageView222.setImageResource(R.drawable.ic_ab_reply);
+                    if (!messageObject.isEphemeral()) {
                     }
-                    simpleTextView822.setText(Emoji.replaceEmoji(replaceCharSequence, simpleTextView822.getPaint().getFontMetricsInt(), z8));
-                    imageView.setContentDescription(LocaleController.getString(R.string.AccDescrReplying));
+                    simpleTextView522.setText(Emoji.replaceEmoji(replaceCharSequence, simpleTextView522.getPaint().getFontMetricsInt(), z8));
+                    imageView222.setContentDescription(LocaleController.getString(R.string.AccDescrReplying));
                     this.replyCloseImageView.setContentDescription(LocaleController.getString(R.string.AccDescrCancelReply));
-                    simpleTextView1022.setText(LocaleController.getString(R.string.TapForReplyOptions));
+                    simpleTextView722.setText(LocaleController.getString(R.string.TapForReplyOptions));
                     z7 = !SharedConfig.replyingOptionsHintShown;
-                    TLRPC.Message message4222 = messageObject.messageOwner;
-                    if (message4222 == null) {
+                    TLRPC.Message message42222 = messageObject.messageOwner;
+                    if (message42222 != null) {
                     }
                     replyQuote2 = this.replyingQuote;
                     if (replyQuote2 == null) {
                     }
                     if (replyQuote2 == null) {
                     }
-                    if (replyQuote2 == null) {
+                    if (replyQuote2 != null) {
                     }
                 } else if (arrayList == null) {
                     str2 = "5_5_b";
@@ -20285,9 +20300,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         }
                         ImageView imageView3 = this.replyLayout.current().icon;
                         BackupImageView backupImageView3 = this.replyLayout.current().image;
-                        SimpleTextView simpleTextView11 = this.replyLayout.current().name;
-                        SimpleTextView simpleTextView12 = this.replyLayout.current().obj;
-                        SimpleTextView simpleTextView13 = this.replyLayout.current().objHint;
+                        SimpleTextView simpleTextView8 = this.replyLayout.current().name;
+                        SimpleTextView simpleTextView9 = this.replyLayout.current().obj;
+                        SimpleTextView simpleTextView10 = this.replyLayout.current().objHint;
                         imageView3.setImageResource(R.drawable.filled_link);
                         if (this.messagePreviewParams == null) {
                             MessagePreviewParams messagePreviewParams9 = new MessagePreviewParams(this.currentEncryptedChat != null, isPeerNoForwards(), ChatObject.isMonoForum(this.currentChat));
@@ -20307,33 +20322,33 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             this.messagePreviewParams = null;
                         }
                         if (webPage instanceof TLRPC.TL_webPagePending) {
-                            simpleTextView11.setText(LocaleController.getString(R.string.GettingLinkInfo));
-                            simpleTextView12.setText(this.pendingLinkSearchString);
+                            simpleTextView8.setText(LocaleController.getString(R.string.GettingLinkInfo));
+                            simpleTextView9.setText(this.pendingLinkSearchString);
                         } else {
-                            String str10 = webPage.site_name;
-                            if (str10 != null) {
-                                simpleTextView11.setText(str10);
+                            String str5 = webPage.site_name;
+                            if (str5 != null) {
+                                simpleTextView8.setText(str5);
                             } else {
-                                String str11 = webPage.title;
-                                if (str11 != null) {
-                                    simpleTextView11.setText(str11);
+                                String str6 = webPage.title;
+                                if (str6 != null) {
+                                    simpleTextView8.setText(str6);
                                 } else {
-                                    simpleTextView11.setText(LocaleController.getString(R.string.LinkPreview));
+                                    simpleTextView8.setText(LocaleController.getString(R.string.LinkPreview));
                                 }
                             }
-                            String str12 = webPage.title;
-                            if (str12 != null) {
-                                simpleTextView12.setText(str12);
+                            String str7 = webPage.title;
+                            if (str7 != null) {
+                                simpleTextView9.setText(str7);
                             } else {
-                                String str13 = webPage.description;
-                                if (str13 != null) {
-                                    simpleTextView12.setText(str13);
+                                String str8 = webPage.description;
+                                if (str8 != null) {
+                                    simpleTextView9.setText(str8);
                                 } else {
-                                    String str14 = webPage.author;
-                                    if (str14 != null) {
-                                        simpleTextView12.setText(str14);
+                                    String str9 = webPage.author;
+                                    if (str9 != null) {
+                                        simpleTextView9.setText(str9);
                                     } else {
-                                        simpleTextView12.setText(webPage.display_url);
+                                        simpleTextView9.setText(webPage.display_url);
                                     }
                                 }
                             }
@@ -20348,9 +20363,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         }
                         ImageView imageView4 = this.replyLayout.current().icon;
                         BackupImageView backupImageView4 = this.replyLayout.current().image;
-                        SimpleTextView simpleTextView14 = this.replyLayout.current().name;
-                        SimpleTextView simpleTextView15 = this.replyLayout.current().obj;
-                        SimpleTextView simpleTextView16 = this.replyLayout.current().objHint;
+                        SimpleTextView simpleTextView11 = this.replyLayout.current().name;
+                        SimpleTextView simpleTextView12 = this.replyLayout.current().obj;
+                        SimpleTextView simpleTextView13 = this.replyLayout.current().objHint;
                         if (this.foundWebPage != null) {
                             r3 = 0;
                             this.foundWebPage = null;
@@ -20367,24 +20382,24 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         this.replyImageLocation = r3;
                         this.replyImageLocationObject = r3;
                         imageView4.setImageResource(R.drawable.filled_paid_suggest_24);
-                        simpleTextView14.setText(LocaleController.getString(R.string.SuggestAPostBelow));
+                        simpleTextView11.setText(LocaleController.getString(R.string.SuggestAPostBelow));
                         AmountUtils$Amount amountUtils$Amount2 = messageSuggestionParams.amount;
-                        boolean z12 = amountUtils$Amount2 != null && amountUtils$Amount2.currency == AmountUtils$Currency.TON;
+                        boolean z13 = amountUtils$Amount2 != null && amountUtils$Amount2.currency == AmountUtils$Currency.TON;
                         ColoredImageSpan[] coloredImageSpanArr2 = new ColoredImageSpan[1];
                         asDecimalString = amountUtils$Amount2 != null ? amountUtils$Amount2.asDecimalString() : "0";
                         if (messageSuggestionParams.isEmpty()) {
-                            simpleTextView15.setText(LocaleController.getString(R.string.SuggestAPostBelowSubtitle));
+                            simpleTextView12.setText(LocaleController.getString(R.string.SuggestAPostBelowSubtitle));
                         } else if (messageSuggestionParams.time <= 0) {
-                            simpleTextView15.setText(StarsIntroActivity.replaceStarsWithPlain(z12, LocaleController.formatString(R.string.SuggestAPostBelowSubtitleStars, asDecimalString), 0.66f, coloredImageSpanArr2));
+                            simpleTextView12.setText(StarsIntroActivity.replaceStarsWithPlain(z13, LocaleController.formatString(R.string.SuggestAPostBelowSubtitleStars, asDecimalString), 0.66f, coloredImageSpanArr2));
                         } else {
                             c = 0;
-                            simpleTextView15.setText(StarsIntroActivity.replaceStarsWithPlain(z12, LocaleController.formatSpannable(R.string.SuggestAPostBelowSubtitleStarsAndTime, asDecimalString, Emoji.replaceEmoji("📆 " + MessageSuggestionOfferSheet.formatDateTime(messageSuggestionParams.time), simpleTextView15.getPaint().getFontMetricsInt(), true)), 0.66f, coloredImageSpanArr2));
-                            if (z12 && (coloredImageSpan = coloredImageSpanArr2[c]) != null) {
+                            simpleTextView12.setText(StarsIntroActivity.replaceStarsWithPlain(z13, LocaleController.formatSpannable(R.string.SuggestAPostBelowSubtitleStarsAndTime, asDecimalString, Emoji.replaceEmoji("📆 " + MessageSuggestionOfferSheet.formatDateTime(messageSuggestionParams.time), simpleTextView12.getPaint().getFontMetricsInt(), true)), 0.66f, coloredImageSpanArr2));
+                            if (z13 && (coloredImageSpan = coloredImageSpanArr2[c]) != null) {
                                 coloredImageSpan.setColorKey(Theme.key_chat_replyPanelIcons);
                             }
                         }
                         c = 0;
-                        if (z12) {
+                        if (z13) {
                             coloredImageSpan.setColorKey(Theme.key_chat_replyPanelIcons);
                         }
                     }
@@ -20398,9 +20413,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     }
                     ImageView imageView5 = this.replyLayout.current().icon;
                     BackupImageView backupImageView5 = this.replyLayout.current().image;
-                    SimpleTextView simpleTextView17 = this.replyLayout.current().name;
-                    SimpleTextView simpleTextView18 = this.replyLayout.current().obj;
-                    SimpleTextView simpleTextView19 = this.replyLayout.current().objHint;
+                    SimpleTextView simpleTextView14 = this.replyLayout.current().name;
+                    SimpleTextView simpleTextView15 = this.replyLayout.current().obj;
+                    SimpleTextView simpleTextView16 = this.replyLayout.current().objHint;
                     if (this.messagePreviewParams == null) {
                         MessagePreviewParams messagePreviewParams11 = new MessagePreviewParams(this.currentEncryptedChat != null, isPeerNoForwards(), ChatObject.isMonoForum(this.currentChat));
                         this.messagePreviewParams = messagePreviewParams11;
@@ -20438,11 +20453,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         messageObject9 = (MessageObject) arrayList.get(i11);
                         if (messageObject9.isFromUser()) {
                             j4 = messageObject9.messageOwner.from_id.user_id;
-                            simpleTextView4 = simpleTextView19;
-                            str3 = str7;
                         } else {
-                            simpleTextView4 = simpleTextView19;
-                            str3 = str7;
                             TLRPC.Chat chat5 = getMessagesController().getChat(Long.valueOf(messageObject9.messageOwner.peer_id.channel_id));
                             if (ChatObject.isChannel(chat5) && chat5.megagroup && messageObject9.isForwardedChannelPost()) {
                                 j3 = messageObject9.messageOwner.fwd_from.from_id.channel_id;
@@ -20461,29 +20472,25 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             i3 = 1;
                         }
                         i11 += i3;
-                        str7 = str3;
-                        simpleTextView19 = simpleTextView4;
                     }
-                    SimpleTextView simpleTextView20 = simpleTextView19;
-                    str2 = str7;
                     StringBuilder sb3 = new StringBuilder();
                     int i12 = 0;
                     int i13 = 0;
                     while (true) {
                         if (i12 >= arrayList5.size()) {
-                            simpleTextView = simpleTextView17;
-                            simpleTextView2 = simpleTextView18;
+                            simpleTextView = simpleTextView16;
+                            str2 = str4;
                             break;
                         }
                         Long l = (Long) arrayList5.get(i12);
                         if (l.longValue() > 0) {
                             user = getMessagesController().getUser(l);
-                            simpleTextView = simpleTextView17;
-                            simpleTextView2 = simpleTextView18;
+                            simpleTextView = simpleTextView16;
+                            str2 = str4;
                             chat = null;
                         } else {
-                            simpleTextView = simpleTextView17;
-                            simpleTextView2 = simpleTextView18;
+                            simpleTextView = simpleTextView16;
+                            str2 = str4;
                             chat = getMessagesController().getChat(Long.valueOf(-l.longValue()));
                             user = null;
                         }
@@ -20521,160 +20528,155 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             i13++;
                         }
                         i12 += i2;
-                        simpleTextView17 = simpleTextView;
-                        simpleTextView18 = simpleTextView2;
+                        str4 = str2;
+                        simpleTextView16 = simpleTextView;
                     }
                     this.formwardingNameText = sb3;
                     if (i10 == -1 || i10 == 0 || i10 == 36 || i10 == 10 || i10 == 11 || i10 == 19) {
                         str = LocaleController.formatPluralString("PreviewForwardMessagesCount", arrayList.size(), new Object[0]);
-                    } else if (i10 == 1) {
-                        str = LocaleController.formatPluralString("PreviewForwardPhoto", arrayList.size(), new Object[0]);
-                        if (arrayList.size() == 1) {
-                            messageObject3 = (MessageObject) arrayList.get(0);
-                            simpleTextView.setText(str);
-                            messagePreviewParams = this.messagePreviewParams;
-                            if (messagePreviewParams == null && messagePreviewParams.hideForwardSendersName) {
-                                simpleTextView2.setText(LocaleController.getString(R.string.HiddenSendersNameDescription));
-                                z6 = true;
-                            } else {
-                                simpleTextView3 = simpleTextView2;
-                                if ((i10 != -1 || i10 == 0 || i10 == 10 || i10 == 11 || i10 == 19) && arrayList.size() == 1 && ((MessageObject) arrayList.get(0)).messageText != null) {
+                    } else {
+                        if (i10 == 1) {
+                            formatPluralString = LocaleController.formatPluralString("PreviewForwardPhoto", arrayList.size(), new Object[0]);
+                            messageObject3 = arrayList.size() == 1 ? (MessageObject) arrayList.get(0) : messageObject;
+                        } else if (i10 == 26) {
+                            str = LocaleController.getString(R.string.BoostingGiveaway);
+                        } else if (i10 == 28) {
+                            str = LocaleController.getString(R.string.BoostingGiveawayResults);
+                        } else if (i10 == 4) {
+                            str = LocaleController.formatPluralString("PreviewForwardLocation", arrayList.size(), new Object[0]);
+                        } else if (i10 == 3) {
+                            str = LocaleController.formatPluralString("PreviewForwardVideo", arrayList.size(), new Object[0]);
+                            if (arrayList.size() == 1) {
+                                messageObject3 = (MessageObject) arrayList.get(0);
+                                simpleTextView14.setText(str);
+                                messagePreviewParams = this.messagePreviewParams;
+                                if (messagePreviewParams == null && messagePreviewParams.hideForwardSendersName) {
+                                    simpleTextView15.setText(LocaleController.getString(R.string.HiddenSendersNameDescription));
+                                    z6 = true;
+                                } else if ((i10 != -1 || i10 == 0 || i10 == 10 || i10 == 11 || i10 == 19) && arrayList.size() == 1 && ((MessageObject) arrayList.get(0)).messageText != null) {
                                     MessageObject messageObject10 = (MessageObject) arrayList.get(0);
                                     spannableStringBuilder = new SpannableStringBuilder(messageObject10.messageText.toString());
                                     if (spannableStringBuilder.length() > 150) {
                                         spannableStringBuilder = spannableStringBuilder.subSequence(0, 150);
                                     }
-                                    replaceEmoji = Emoji.replaceEmoji(spannableStringBuilder, simpleTextView3.getPaint().getFontMetricsInt(), false);
+                                    replaceEmoji = Emoji.replaceEmoji(spannableStringBuilder, simpleTextView15.getPaint().getFontMetricsInt(), false);
                                     if (replaceEmoji instanceof Spannable) {
                                         MediaDataController.addTextStyleRuns(messageObject10.messageOwner.entities, messageObject10.messageText, (Spannable) replaceEmoji);
                                         TLRPC.Message message6 = messageObject10.messageOwner;
                                         if (message6 != null) {
-                                            replaceEmoji = MessageObject.replaceAnimatedEmoji(replaceEmoji, message6.entities, simpleTextView3.getPaint().getFontMetricsInt());
+                                            replaceEmoji = MessageObject.replaceAnimatedEmoji(replaceEmoji, message6.entities, simpleTextView15.getPaint().getFontMetricsInt());
                                         }
                                     }
                                     z6 = true;
                                     if (i13 == 1) {
                                         replaceEmoji = TextUtils.concat(sb3, ": ", replaceEmoji);
                                     }
-                                    simpleTextView3.setText(replaceEmoji);
+                                    simpleTextView15.setText(replaceEmoji);
                                 } else {
                                     z6 = true;
-                                    simpleTextView3.setText(LocaleController.formatString("ForwardingFromNames", R.string.ForwardingFromNames, sb3));
+                                    simpleTextView15.setText(LocaleController.formatString("ForwardingFromNames", R.string.ForwardingFromNames, sb3));
                                 }
+                                simpleTextView.setText(LocaleController.getString(R.string.TapForForwardingOptions));
+                                z7 = SharedConfig.forwardingOptionsHintShown ^ z6;
                             }
-                            simpleTextView20.setText(LocaleController.getString(R.string.TapForForwardingOptions));
-                            z7 = SharedConfig.forwardingOptionsHintShown ^ z6;
+                        } else if (i10 == 12) {
+                            str = LocaleController.formatPluralString("PreviewForwardContact", arrayList.size(), new Object[0]);
+                        } else if (i10 == 2) {
+                            str = LocaleController.formatPluralString("PreviewForwardAudio", arrayList.size(), new Object[0]);
+                        } else if (i10 == 5) {
+                            str = LocaleController.formatPluralString("PreviewForwardRound", arrayList.size(), new Object[0]);
+                        } else if (i10 == 14) {
+                            str = LocaleController.formatPluralString("PreviewForwardMusic", arrayList.size(), new Object[0]);
+                        } else if (i10 == 13 || i10 == 15) {
+                            str = LocaleController.formatPluralString("PreviewForwardSticker", arrayList.size(), new Object[0]);
+                        } else if (i10 == 17) {
+                            str = LocaleController.formatPluralString(messageObject9.isTodo() ? "PreviewForwardTodo" : "PreviewForwardPoll", arrayList.size(), new Object[0]);
+                        } else if (i10 == 8 || i10 == 9) {
+                            messageObject3 = (i10 == 9) & (arrayList.size() == 1) ? (MessageObject) arrayList.get(0) : messageObject;
+                            if (arrayList.size() == 1 && i10 == 8) {
+                                str = LocaleController.getString(R.string.AttachGif);
+                                simpleTextView14.setText(str);
+                                messagePreviewParams = this.messagePreviewParams;
+                                if (messagePreviewParams == null) {
+                                }
+                                if (i10 != -1) {
+                                }
+                                MessageObject messageObject102 = (MessageObject) arrayList.get(0);
+                                spannableStringBuilder = new SpannableStringBuilder(messageObject102.messageText.toString());
+                                if (spannableStringBuilder.length() > 150) {
+                                }
+                                replaceEmoji = Emoji.replaceEmoji(spannableStringBuilder, simpleTextView15.getPaint().getFontMetricsInt(), false);
+                                if (replaceEmoji instanceof Spannable) {
+                                }
+                                z6 = true;
+                                if (i13 == 1) {
+                                }
+                                simpleTextView15.setText(replaceEmoji);
+                                simpleTextView.setText(LocaleController.getString(R.string.TapForForwardingOptions));
+                                z7 = SharedConfig.forwardingOptionsHintShown ^ z6;
+                            } else {
+                                formatPluralString = LocaleController.formatPluralString("PreviewForwardFile", arrayList.size(), new Object[0]);
+                            }
+                        } else if (i10 == 23) {
+                            if (arrayList.size() == 1) {
+                                str = LocaleController.getString(R.string.Story);
+                            } else {
+                                str = LocaleController.formatPluralString("Stories", arrayList.size(), new Object[0]);
+                            }
                         }
-                    } else if (i10 == 26) {
-                        str = LocaleController.getString(R.string.BoostingGiveaway);
-                    } else if (i10 == 28) {
-                        str = LocaleController.getString(R.string.BoostingGiveawayResults);
-                    } else if (i10 == 4) {
-                        str = LocaleController.formatPluralString("PreviewForwardLocation", arrayList.size(), new Object[0]);
-                    } else if (i10 == 3) {
-                        str = LocaleController.formatPluralString("PreviewForwardVideo", arrayList.size(), new Object[0]);
-                        if (arrayList.size() == 1) {
-                            messageObject3 = (MessageObject) arrayList.get(0);
-                            simpleTextView.setText(str);
-                            messagePreviewParams = this.messagePreviewParams;
-                            if (messagePreviewParams == null) {
-                            }
-                            simpleTextView3 = simpleTextView2;
-                            if (i10 != -1) {
-                            }
-                            MessageObject messageObject102 = (MessageObject) arrayList.get(0);
-                            spannableStringBuilder = new SpannableStringBuilder(messageObject102.messageText.toString());
-                            if (spannableStringBuilder.length() > 150) {
-                            }
-                            replaceEmoji = Emoji.replaceEmoji(spannableStringBuilder, simpleTextView3.getPaint().getFontMetricsInt(), false);
-                            if (replaceEmoji instanceof Spannable) {
-                            }
-                            z6 = true;
-                            if (i13 == 1) {
-                            }
-                            simpleTextView3.setText(replaceEmoji);
-                            simpleTextView20.setText(LocaleController.getString(R.string.TapForForwardingOptions));
-                            z7 = SharedConfig.forwardingOptionsHintShown ^ z6;
-                        }
-                    } else if (i10 == 12) {
-                        str = LocaleController.formatPluralString("PreviewForwardContact", arrayList.size(), new Object[0]);
-                    } else if (i10 == 2) {
-                        str = LocaleController.formatPluralString("PreviewForwardAudio", arrayList.size(), new Object[0]);
-                    } else if (i10 == 5) {
-                        str = LocaleController.formatPluralString("PreviewForwardRound", arrayList.size(), new Object[0]);
-                    } else if (i10 == 14) {
-                        str = LocaleController.formatPluralString("PreviewForwardMusic", arrayList.size(), new Object[0]);
-                    } else if (i10 == 13 || i10 == 15) {
-                        str = LocaleController.formatPluralString("PreviewForwardSticker", arrayList.size(), new Object[0]);
-                    } else if (i10 == 17) {
-                        str = LocaleController.formatPluralString(messageObject9.isTodo() ? "PreviewForwardTodo" : "PreviewForwardPoll", arrayList.size(), new Object[0]);
-                    } else if (i10 == 8 || i10 == 9) {
-                        messageObject3 = (i10 == 9) & (arrayList.size() == 1) ? (MessageObject) arrayList.get(0) : messageObject;
-                        if (arrayList.size() == 1 && i10 == 8) {
-                            str = LocaleController.getString(R.string.AttachGif);
-                        } else {
-                            str = LocaleController.formatPluralString("PreviewForwardFile", arrayList.size(), new Object[0]);
-                        }
-                        simpleTextView.setText(str);
+                        str = formatPluralString;
+                        simpleTextView14.setText(str);
                         messagePreviewParams = this.messagePreviewParams;
                         if (messagePreviewParams == null) {
                         }
-                        simpleTextView3 = simpleTextView2;
                         if (i10 != -1) {
                         }
                         MessageObject messageObject1022 = (MessageObject) arrayList.get(0);
                         spannableStringBuilder = new SpannableStringBuilder(messageObject1022.messageText.toString());
                         if (spannableStringBuilder.length() > 150) {
                         }
-                        replaceEmoji = Emoji.replaceEmoji(spannableStringBuilder, simpleTextView3.getPaint().getFontMetricsInt(), false);
+                        replaceEmoji = Emoji.replaceEmoji(spannableStringBuilder, simpleTextView15.getPaint().getFontMetricsInt(), false);
                         if (replaceEmoji instanceof Spannable) {
                         }
                         z6 = true;
                         if (i13 == 1) {
                         }
-                        simpleTextView3.setText(replaceEmoji);
-                        simpleTextView20.setText(LocaleController.getString(R.string.TapForForwardingOptions));
+                        simpleTextView15.setText(replaceEmoji);
+                        simpleTextView.setText(LocaleController.getString(R.string.TapForForwardingOptions));
                         z7 = SharedConfig.forwardingOptionsHintShown ^ z6;
-                    } else if (i10 == 23) {
-                        if (arrayList.size() == 1) {
-                            str = LocaleController.getString(R.string.Story);
-                        } else {
-                            str = LocaleController.formatPluralString("Stories", arrayList.size(), new Object[0]);
-                        }
                     }
                     messageObject3 = messageObject;
-                    simpleTextView.setText(str);
+                    simpleTextView14.setText(str);
                     messagePreviewParams = this.messagePreviewParams;
                     if (messagePreviewParams == null) {
                     }
-                    simpleTextView3 = simpleTextView2;
                     if (i10 != -1) {
                     }
                     MessageObject messageObject10222 = (MessageObject) arrayList.get(0);
                     spannableStringBuilder = new SpannableStringBuilder(messageObject10222.messageText.toString());
                     if (spannableStringBuilder.length() > 150) {
                     }
-                    replaceEmoji = Emoji.replaceEmoji(spannableStringBuilder, simpleTextView3.getPaint().getFontMetricsInt(), false);
+                    replaceEmoji = Emoji.replaceEmoji(spannableStringBuilder, simpleTextView15.getPaint().getFontMetricsInt(), false);
                     if (replaceEmoji instanceof Spannable) {
                     }
                     z6 = true;
                     if (i13 == 1) {
                     }
-                    simpleTextView3.setText(replaceEmoji);
-                    simpleTextView20.setText(LocaleController.getString(R.string.TapForForwardingOptions));
+                    simpleTextView15.setText(replaceEmoji);
+                    simpleTextView.setText(LocaleController.getString(R.string.TapForForwardingOptions));
                     z7 = SharedConfig.forwardingOptionsHintShown ^ z6;
                 }
                 ImageView imageView6 = this.replyLayout.current().icon;
                 BackupImageView backupImageView6 = this.replyLayout.current().image;
-                SimpleTextView simpleTextView21 = this.replyLayout.current().name;
-                SimpleTextView simpleTextView22 = this.replyLayout.current().obj;
-                SimpleTextView simpleTextView23 = this.replyLayout.current().objHint;
+                SimpleTextView simpleTextView17 = this.replyLayout.current().name;
+                SimpleTextView simpleTextView18 = this.replyLayout.current().obj;
+                SimpleTextView simpleTextView19 = this.replyLayout.current().objHint;
                 if (messageObject3 == null) {
                     messageObject3 = (messageObject2 == null || this.chatActivityEnterTopView.isEditMode()) ? null : messageObject2;
                 }
-                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) simpleTextView21.getLayoutParams();
-                FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) simpleTextView22.getLayoutParams();
-                FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) simpleTextView23.getLayoutParams();
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) simpleTextView17.getLayoutParams();
+                FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) simpleTextView18.getLayoutParams();
+                FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) simpleTextView19.getLayoutParams();
                 if (messageObject3 == null && TextUtils.isEmpty(MessagesController.getInstance(this.currentAccount).getRestrictionReason(messageObject3.messageOwner.restriction_reason))) {
                     photoSize = FileLoader.getClosestPhotoSizeWithSize(messageObject3.photoThumbs2, NotificationCenter.onDatabaseReset);
                     photoSize2 = FileLoader.getClosestPhotoSizeWithSize(messageObject3.photoThumbs2, AndroidUtilities.dp(40.0f));
@@ -20719,9 +20721,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                     layoutParams2.leftMargin = dp2;
                                     layoutParams.leftMargin = dp2;
                                 }
-                                simpleTextView21.setLayoutParams(layoutParams);
-                                simpleTextView22.setLayoutParams(layoutParams2);
-                                simpleTextView22.setLayoutParams(layoutParams3);
+                                simpleTextView17.setLayoutParams(layoutParams);
+                                simpleTextView18.setLayoutParams(layoutParams2);
+                                simpleTextView18.setLayoutParams(layoutParams3);
                                 this.chatActivityEnterView.showTopView(true, false);
                                 z5 = z7;
                             }
@@ -20744,9 +20746,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         layoutParams3.leftMargin = dp3;
                         layoutParams2.leftMargin = dp3;
                         layoutParams.leftMargin = dp3;
-                        simpleTextView21.setLayoutParams(layoutParams);
-                        simpleTextView22.setLayoutParams(layoutParams2);
-                        simpleTextView22.setLayoutParams(layoutParams3);
+                        simpleTextView17.setLayoutParams(layoutParams);
+                        simpleTextView18.setLayoutParams(layoutParams2);
+                        simpleTextView18.setLayoutParams(layoutParams3);
                         this.chatActivityEnterView.showTopView(true, false);
                         z5 = z7;
                     }
@@ -20768,9 +20770,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 layoutParams3.leftMargin = dp32;
                 layoutParams2.leftMargin = dp32;
                 layoutParams.leftMargin = dp32;
-                simpleTextView21.setLayoutParams(layoutParams);
-                simpleTextView22.setLayoutParams(layoutParams2);
-                simpleTextView22.setLayoutParams(layoutParams3);
+                simpleTextView17.setLayoutParams(layoutParams);
+                simpleTextView18.setLayoutParams(layoutParams2);
+                simpleTextView18.setLayoutParams(layoutParams3);
                 this.chatActivityEnterView.showTopView(true, false);
                 z5 = z7;
             }
@@ -20778,14 +20780,14 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             z7 = false;
             ImageView imageView62 = this.replyLayout.current().icon;
             BackupImageView backupImageView62 = this.replyLayout.current().image;
-            SimpleTextView simpleTextView212 = this.replyLayout.current().name;
-            SimpleTextView simpleTextView222 = this.replyLayout.current().obj;
-            SimpleTextView simpleTextView232 = this.replyLayout.current().objHint;
+            SimpleTextView simpleTextView172 = this.replyLayout.current().name;
+            SimpleTextView simpleTextView182 = this.replyLayout.current().obj;
+            SimpleTextView simpleTextView192 = this.replyLayout.current().objHint;
             if (messageObject3 == null) {
             }
-            FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) simpleTextView212.getLayoutParams();
-            FrameLayout.LayoutParams layoutParams22 = (FrameLayout.LayoutParams) simpleTextView222.getLayoutParams();
-            FrameLayout.LayoutParams layoutParams32 = (FrameLayout.LayoutParams) simpleTextView232.getLayoutParams();
+            FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) simpleTextView172.getLayoutParams();
+            FrameLayout.LayoutParams layoutParams22 = (FrameLayout.LayoutParams) simpleTextView182.getLayoutParams();
+            FrameLayout.LayoutParams layoutParams32 = (FrameLayout.LayoutParams) simpleTextView192.getLayoutParams();
             if (messageObject3 == null) {
             }
             photoSize = null;
@@ -20804,9 +20806,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             layoutParams32.leftMargin = dp322;
             layoutParams22.leftMargin = dp322;
             layoutParams4.leftMargin = dp322;
-            simpleTextView212.setLayoutParams(layoutParams4);
-            simpleTextView222.setLayoutParams(layoutParams22);
-            simpleTextView222.setLayoutParams(layoutParams32);
+            simpleTextView172.setLayoutParams(layoutParams4);
+            simpleTextView182.setLayoutParams(layoutParams22);
+            simpleTextView182.setLayoutParams(layoutParams32);
             this.chatActivityEnterView.showTopView(true, false);
             z5 = z7;
         }
@@ -20822,15 +20824,15 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(runnable, 6000L);
             }
         } else {
-            SimpleTextView simpleTextView24 = this.replyLayout.current().obj;
-            SimpleTextView simpleTextView25 = this.replyLayout.current().objHint;
+            SimpleTextView simpleTextView20 = this.replyLayout.current().obj;
+            SimpleTextView simpleTextView21 = this.replyLayout.current().objHint;
             Runnable runnable2 = this.tapForForwardingOptionsHitRunnable;
             if (runnable2 != null) {
                 AndroidUtilities.cancelRunOnUIThread(runnable2);
                 this.tapForForwardingOptionsHitRunnable = null;
             }
-            simpleTextView24.setAlpha(1.0f);
-            simpleTextView25.setAlpha(0.0f);
+            simpleTextView20.setAlpha(1.0f);
+            simpleTextView21.setAlpha(0.0f);
         }
         ChatActivityEnterView chatActivityEnterView3 = this.chatActivityEnterView;
         if (chatActivityEnterView3 != null) {
@@ -26688,11 +26690,12 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
         PhotoViewer photoViewer = PhotoViewer.getInstance();
         photoViewer.setParentActivity(this);
-        return photoViewer.openPhoto(indexOf, new ChatArticlePageBlocksAdapter(richMessage, arrayList), new ChatArticlePhotoViewerProvider(arrayList));
+        return photoViewer.openPhoto(indexOf, new ChatArticlePageBlocksAdapter(richMessage, arrayList, messageObject), new ChatArticlePhotoViewerProvider(arrayList));
     }
 
     private static class ChatArticlePageBlocksAdapter implements PhotoViewer.PageBlocksAdapter {
         private final List blocks;
+        private final MessageObject messageObject;
         private final TL_iv.RichMessage page;
 
         @Override // org.telegram.ui.PhotoViewer.PageBlocksAdapter
@@ -26705,13 +26708,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             return false;
         }
 
-        @Override // org.telegram.ui.PhotoViewer.PageBlocksAdapter
-        public void updateSlideshowCell(TL_iv.PageBlock pageBlock) {
-        }
-
-        ChatArticlePageBlocksAdapter(TL_iv.RichMessage richMessage, List list) {
+        ChatArticlePageBlocksAdapter(TL_iv.RichMessage richMessage, List list, MessageObject messageObject) {
             this.page = richMessage;
             this.blocks = list;
+            this.messageObject = messageObject;
         }
 
         @Override // org.telegram.ui.PhotoViewer.PageBlocksAdapter
@@ -26794,8 +26794,19 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
 
         @Override // org.telegram.ui.PhotoViewer.PageBlocksAdapter
+        public void updateSlideshowCell(TL_iv.PageBlock pageBlock) {
+            RichMessageLayout richMessageLayout;
+            MessageObject messageObject = this.messageObject;
+            if (messageObject == null || (richMessageLayout = messageObject.richLayout) == null) {
+                return;
+            }
+            richMessageLayout.setSlideshowPage(pageBlock);
+        }
+
+        @Override // org.telegram.ui.PhotoViewer.PageBlocksAdapter
         public Object getParentObject() {
-            return this.page;
+            MessageObject messageObject = this.messageObject;
+            return messageObject != null ? messageObject : this.page;
         }
     }
 
@@ -55639,6 +55650,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             forceUpdate(chatMessageCell, z, true, false);
         }
 
+        @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
         public void forceUpdate(ChatMessageCell chatMessageCell, boolean z, boolean z2) {
             forceUpdate(chatMessageCell, z, false, z2);
         }

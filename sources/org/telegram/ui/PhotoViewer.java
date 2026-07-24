@@ -16127,14 +16127,14 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 cropState = this.editState.cropState;
             }
             MediaController.CropState cropState2 = cropState;
-            KeyboardNotifier keyboardNotifier = new KeyboardNotifier(this.windowView, new Utilities.Callback() { // from class: org.telegram.ui.PhotoViewer$$ExternalSyntheticLambda170
+            KeyboardNotifier useMinusNavbar = new KeyboardNotifier(this.windowView, new Utilities.Callback() { // from class: org.telegram.ui.PhotoViewer$$ExternalSyntheticLambda170
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     PhotoViewer.this.lambda$createPaintView$119((Integer) obj);
                 }
-            });
-            this.paintKeyboardNotifier = keyboardNotifier;
-            keyboardNotifier.ignore(this.currentEditMode != 3);
+            }).useInsets().useMinusNavbar();
+            this.paintKeyboardNotifier = useMinusNavbar;
+            useMinusNavbar.ignore(this.currentEditMode != 3);
             Activity activity = this.parentActivity;
             LPhotoPaintView lPhotoPaintView = new LPhotoPaintView(activity, activity, this.currentAccount, createBitmap, this.isCurrentVideo ? null : this.centerImage.getBitmap(), this.centerImage.getOrientation(), this.editState.mediaEntities, cropState2, new Runnable() { // from class: org.telegram.ui.PhotoViewer$$ExternalSyntheticLambda171
                 @Override // java.lang.Runnable
@@ -21734,7 +21734,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                             iArr[0] = -1;
                         }
                         boolean z6 = (DownloadController.getInstance(this.currentAccount).getAutodownloadMask() & 1) != 0 || this.currentIndex == i || FileLoader.getInstance(this.currentAccount).getPathToAttach(fileLocation, true).exists();
-                        imageReceiver.setImage(z6 ? ImageLocation.getForPhoto(fileLocation, photo3) : null, null, ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(photo3.sizes, 80), photo3), "b", bitmapHolder4 != null ? new BitmapDrawable(bitmapHolder4.bitmap) : null, iArr[0], null, this.pageBlocksAdapter.getParentObject(), 1);
+                        imageReceiver.setImage(z6 ? ImageLocation.getForPhoto(fileLocation, photo3) : null, null, bitmapHolder4 == null ? ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(photo3.sizes, 80), photo3) : null, "b", bitmapHolder4 != null ? new BitmapDrawable(bitmapHolder4.bitmap) : null, iArr[0], null, this.pageBlocksAdapter.getParentObject(), 1);
                         imageReceiver.setMark(z6 ? null : 1);
                         return;
                     }

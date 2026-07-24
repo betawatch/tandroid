@@ -968,6 +968,7 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
             Paint paint = new Paint(1);
             slideDotPaint = paint;
             paint.setColor(-1);
+            slideDotPaint.setShadowLayer(AndroidUtilities.dpf2(3.0f), 0.0f, AndroidUtilities.dpf2(1.0f), TLObject.FLAG_31);
         }
         int size = this.items.size();
         float paddingTop = ((getPaddingTop() + this.imageH) - AndroidUtilities.dp(23.0f)) + AndroidUtilities.dp(5.0f);
@@ -980,7 +981,7 @@ public class RichMediaCell extends RichBlockCell implements Theme.Colorable, Tex
         } else {
             float dp2 = AndroidUtilities.dp(4.0f) + paddingLeft;
             int dp3 = AndroidUtilities.dp(13.0f);
-            clamp = dp2 - (Utilities.clamp(f2 - (((max - AndroidUtilities.dp(8.0f)) / 2) / dp3), Math.max(0, (size - (r13 * 2)) - 1), 0.0f) * dp3);
+            clamp = dp2 - (Utilities.clamp(f2 - (((max - AndroidUtilities.dp(8.0f)) / 2) / dp3), Math.max(0, (size - (r14 * 2)) - 1), 0.0f) * dp3);
         }
         canvas.save();
         canvas.clipRect(paddingLeft, (getPaddingTop() + this.imageH) - AndroidUtilities.dp(23.0f), max + paddingLeft, getPaddingTop() + this.imageH);

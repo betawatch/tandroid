@@ -3,6 +3,8 @@ package org.telegram.ui.Stories.recorder;
 import android.graphics.Rect;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
@@ -13,6 +15,8 @@ public class KeyboardNotifier {
     private int keyboardHeight;
     private int lastKeyboardHeight;
     private final Utilities.Callback listener;
+    private boolean mMinusNavBar;
+    private boolean mUseInsets;
     private final ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener;
     private final View.OnLayoutChangeListener onLayoutChangeListener;
     private View realRootView;
@@ -64,6 +68,16 @@ public class KeyboardNotifier {
         });
     }
 
+    public KeyboardNotifier useInsets() {
+        this.mUseInsets = true;
+        return this;
+    }
+
+    public KeyboardNotifier useMinusNavbar() {
+        this.mMinusNavBar = true;
+        return this;
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
         update();
@@ -74,15 +88,28 @@ public class KeyboardNotifier {
         if (this.ignoring) {
             return;
         }
-        this.rootView.getWindowVisibleDisplayFrame(this.rect);
-        View view = this.realRootView;
-        if (view == null) {
-            view = this.rootView;
+        if (this.mUseInsets) {
+            View view = this.realRootView;
+            if (view == null) {
+                view = this.rootView;
+            }
+            WindowInsetsCompat rootWindowInsets = ViewCompat.getRootWindowInsets(view);
+            this.keyboardHeight = rootWindowInsets != null ? rootWindowInsets.getInsets(WindowInsetsCompat.Type.ime()).bottom : 0;
+        } else {
+            this.rootView.getWindowVisibleDisplayFrame(this.rect);
+            View view2 = this.realRootView;
+            if (view2 == null) {
+                view2 = this.rootView;
+            }
+            this.keyboardHeight = view2.getHeight() - this.rect.bottom;
         }
-        int height = view.getHeight() - this.rect.bottom;
-        this.keyboardHeight = height;
-        boolean z = this.lastKeyboardHeight != height;
-        this.lastKeyboardHeight = height;
+        if (this.mMinusNavBar) {
+            this.keyboardHeight = Math.max(0, this.keyboardHeight - AndroidUtilities.navigationBarHeight);
+        }
+        int i = this.lastKeyboardHeight;
+        int i2 = this.keyboardHeight;
+        boolean z = i != i2;
+        this.lastKeyboardHeight = i2;
         if (z) {
             fire();
         }
