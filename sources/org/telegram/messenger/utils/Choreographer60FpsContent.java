@@ -45,6 +45,20 @@ public final class Choreographer60FpsContent implements Choreographer.FrameCallb
         this.mDrawablesToInvalidate30fps.add(drawable);
     }
 
+    public void addFrameCallbackOnce(Runnable runnable, int i) {
+        checkMainThread();
+        if (runnable == null) {
+            return;
+        }
+        int max = Math.max(1, Math.min(i, 60));
+        removeFrameCallbackOnce(runnable);
+        CallbackGroup orCreateGroup = getOrCreateGroup(max);
+        if (orCreateGroup.runnableCallbacksOnce == null) {
+            orCreateGroup.runnableCallbacksOnce = new ReferenceList();
+        }
+        orCreateGroup.runnableCallbacksOnce.add(runnable);
+    }
+
     public void addFrameCallback(Runnable runnable, int i) {
         checkMainThread();
         if (runnable == null) {
@@ -68,6 +82,19 @@ public final class Choreographer60FpsContent implements Choreographer.FrameCallb
             return;
         }
         for (int i = 0; i < this.mGroups.size() && !((CallbackGroup) this.mGroups.valueAt(i)).runnableCallbacks.remove(runnable); i++) {
+        }
+    }
+
+    public void removeFrameCallbackOnce(Runnable runnable) {
+        checkMainThread();
+        if (runnable == null) {
+            return;
+        }
+        for (int i = 0; i < this.mGroups.size(); i++) {
+            ReferenceList referenceList = ((CallbackGroup) this.mGroups.valueAt(i)).runnableCallbacksOnce;
+            if (referenceList != null && referenceList.remove(runnable)) {
+                return;
+            }
         }
     }
 
@@ -108,13 +135,15 @@ public final class Choreographer60FpsContent implements Choreographer.FrameCallb
         this.mChoreographer.postFrameCallback(this);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0038 A[LOOP:1: B:9:0x0032->B:11:0x0038, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x004e A[LOOP:2: B:14:0x0048->B:16:0x004e, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0030  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0053 A[LOOP:2: B:16:0x004d->B:18:0x0053, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0069 A[LOOP:3: B:21:0x0063->B:23:0x0069, LOOP_END] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private void dispatchFrame(long j) {
         int i;
+        ReferenceList referenceList;
         Iterator it;
         Iterator it2;
         while (i < this.mGroups.size()) {
@@ -122,6 +151,14 @@ public final class Choreographer60FpsContent implements Choreographer.FrameCallb
             int i2 = callbackGroup.stride;
             if (i2 > 0) {
                 i = this.mCounter % i2 != 0 ? i + 1 : 0;
+                referenceList = callbackGroup.runnableCallbacksOnce;
+                if (referenceList != null) {
+                    callbackGroup.runnableCallbacksOnce = null;
+                    Iterator it3 = referenceList.iterator();
+                    while (it3.hasNext()) {
+                        ((Runnable) it3.next()).run();
+                    }
+                }
                 it = callbackGroup.callbacks.iterator();
                 while (it.hasNext()) {
                     ((FrameCallback) it.next()).doFrame(j);
@@ -136,6 +173,9 @@ public final class Choreographer60FpsContent implements Choreographer.FrameCallb
                 long j3 = callbackGroup.intervalNs;
                 if (j2 >= j3) {
                     callbackGroup.accumulatedNs = j2 % j3;
+                    referenceList = callbackGroup.runnableCallbacksOnce;
+                    if (referenceList != null) {
+                    }
                     it = callbackGroup.callbacks.iterator();
                     while (it.hasNext()) {
                     }
@@ -145,25 +185,25 @@ public final class Choreographer60FpsContent implements Choreographer.FrameCallb
                 }
             }
         }
-        Iterator it3 = this.mOneShot.iterator();
-        while (it3.hasNext()) {
-            ((FrameCallback) it3.next()).doFrame(j);
-        }
-        Iterator it4 = this.mViewsToInvalidate.iterator();
+        Iterator it4 = this.mOneShot.iterator();
         while (it4.hasNext()) {
-            ((View) it4.next()).invalidate();
+            ((FrameCallback) it4.next()).doFrame(j);
         }
-        Iterator it5 = this.mDrawablesToInvalidate.iterator();
+        Iterator it5 = this.mViewsToInvalidate.iterator();
         while (it5.hasNext()) {
-            ((Drawable) it5.next()).invalidateSelf();
+            ((View) it5.next()).invalidate();
+        }
+        Iterator it6 = this.mDrawablesToInvalidate.iterator();
+        while (it6.hasNext()) {
+            ((Drawable) it6.next()).invalidateSelf();
         }
         this.mViewsToInvalidate.clear();
         this.mDrawablesToInvalidate.clear();
         this.mOneShot.clear();
         if (this.mCounter % 2 == 0) {
-            Iterator it6 = this.mDrawablesToInvalidate30fps.iterator();
-            while (it6.hasNext()) {
-                ((Drawable) it6.next()).invalidateSelf();
+            Iterator it7 = this.mDrawablesToInvalidate30fps.iterator();
+            while (it7.hasNext()) {
+                ((Drawable) it7.next()).invalidateSelf();
             }
             this.mDrawablesToInvalidate30fps.clear();
         }
@@ -183,6 +223,7 @@ public final class Choreographer60FpsContent implements Choreographer.FrameCallb
     private static final class CallbackGroup {
         long accumulatedNs;
         final long intervalNs;
+        ReferenceList runnableCallbacksOnce;
         final int stride;
         final ReferenceList callbacks = new ReferenceList();
         final ReferenceList runnableCallbacks = new ReferenceList();

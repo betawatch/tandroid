@@ -1080,10 +1080,10 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                         }
                         this.sunDrawable.beginApplyLayerColors();
                         int color = Theme.getColor(Theme.key_chats_menuName);
-                        this.sunDrawable.setLayerColor("Sunny", color);
-                        this.sunDrawable.setLayerColor("Path 6", color);
-                        this.sunDrawable.setLayerColor("Path", color);
-                        this.sunDrawable.setLayerColor("Path 5", color);
+                        this.sunDrawable.setLayerColor("Sunny.**", color);
+                        this.sunDrawable.setLayerColor("Path 6.**", color);
+                        this.sunDrawable.setLayerColor("Path.**", color);
+                        this.sunDrawable.setLayerColor("Path 5.**", color);
                         this.sunDrawable.commitApplyLayerColors();
                     }
                     str = "d";

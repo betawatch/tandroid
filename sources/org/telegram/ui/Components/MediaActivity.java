@@ -705,7 +705,7 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
         this.sharedMediaLayout = sharedMediaLayout;
         sharedMediaLayout.scrollSlidingTextTabStrip.setOpen(true);
         if (this.sharedMediaLayout.getSearchOptionsItem() != null) {
-            this.sharedMediaLayout.getSearchOptionsItem().setColorFilter(new PorterDuffColorFilter(getThemedColor(i9), PorterDuff.Mode.MULTIPLY));
+            this.sharedMediaLayout.getSearchOptionsItem().setColorFilter(new PorterDuffColorFilter(getThemedColor(i9), PorterDuff.Mode.SRC_IN));
         }
         this.sharedMediaLayout.setPinnedToTop(true);
         this.sharedMediaLayout.getSearchItem().setTranslationY(0.0f);
@@ -1430,7 +1430,7 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
     /* JADX INFO: Access modifiers changed from: private */
     public void updateColors() {
         if (this.sharedMediaLayout.getSearchOptionsItem() != null) {
-            this.sharedMediaLayout.getSearchOptionsItem().setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_windowBackgroundWhiteBlackText), PorterDuff.Mode.MULTIPLY));
+            this.sharedMediaLayout.getSearchOptionsItem().setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_windowBackgroundWhiteBlackText), PorterDuff.Mode.SRC_IN));
         }
         this.actionBar.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         ActionBar actionBar = this.actionBar;

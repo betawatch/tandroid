@@ -261,9 +261,8 @@ public class ThemeDescription {
                     } else if (drawable instanceof ScamDrawable) {
                         ((ScamDrawable) drawable).setColor(i);
                     } else if (drawable instanceof RLottieDrawable) {
-                        String str = this.lottieLayerName;
-                        if (str != null) {
-                            ((RLottieDrawable) drawable).setLayerColor(str, i);
+                        if (this.lottieLayerName != null) {
+                            ((RLottieDrawable) drawable).setLayerColor(this.lottieLayerName + ".**", i);
                         }
                     } else if (drawable instanceof CombinedDrawable) {
                         if ((this.changeFlags & FLAG_BACKGROUNDFILTER) != 0) {
@@ -606,9 +605,8 @@ public class ThemeDescription {
                                 if (obj instanceof View) {
                                     ((View) obj).invalidate();
                                 }
-                                String str2 = this.lottieLayerName;
-                                if (str2 != null && (obj instanceof RLottieImageView)) {
-                                    ((RLottieImageView) obj).setLayerColor(str2, i);
+                                if (this.lottieLayerName != null && (obj instanceof RLottieImageView)) {
+                                    ((RLottieImageView) obj).setLayerColor(this.lottieLayerName + ".**", i);
                                 }
                                 if ((this.changeFlags & FLAG_USEBACKGROUNDDRAWABLE) != 0 && (obj instanceof View)) {
                                     obj = ((View) obj).getBackground();

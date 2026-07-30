@@ -806,7 +806,7 @@ public abstract class PreviewView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0095  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -844,20 +844,23 @@ public abstract class PreviewView extends FrameLayout {
                     if (j2 >= 0 && storyEntry.isVideo && storyEntry.thumbPath == null) {
                         invalidate();
                         return;
-                    } else if (bitmapArr[0] == null) {
+                    }
+                    if (bitmapArr[0] == null) {
                         File originalFile = storyEntry.getOriginalFile();
                         if (originalFile == null) {
                             return;
                         }
                         final String path = originalFile.getPath();
-                        bitmapArr[0] = StoryEntry.getScaledBitmap(new StoryEntry.DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda12
+                        StoryEntry.DecodeBitmap decodeBitmap = new StoryEntry.DecodeBitmap() { // from class: org.telegram.ui.Stories.recorder.PreviewView$$ExternalSyntheticLambda12
                             @Override // org.telegram.ui.Stories.recorder.StoryEntry.DecodeBitmap
                             public final Bitmap decode(BitmapFactory.Options options) {
                                 Bitmap lambda$setupImage$3;
                                 lambda$setupImage$3 = PreviewView.this.lambda$setupImage$3(storyEntry, j2, path, options);
                                 return lambda$setupImage$3;
                             }
-                        }, measuredWidth, i, false, false);
+                        };
+                        boolean z = storyEntry.isVideo;
+                        bitmapArr[0] = StoryEntry.getScaledBitmap(decodeBitmap, measuredWidth, i, !z ? storyEntry.orientation : 0, false, !z);
                         zArr[0] = false;
                     }
                 }

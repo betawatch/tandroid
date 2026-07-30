@@ -2072,7 +2072,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             this.optionsSearchImageView.setAnimation(R.raw.options_to_search, 24, 24);
             this.optionsSearchImageView.getAnimatedDrawable().multiplySpeed(2.0f);
             this.optionsSearchImageView.getAnimatedDrawable().setPlayInDirectionOfCustomEndFrame(true);
-            this.optionsSearchImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_actionBarActionModeDefaultIcon), PorterDuff.Mode.MULTIPLY));
+            this.optionsSearchImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_actionBarActionModeDefaultIcon), PorterDuff.Mode.SRC_IN));
             this.optionsSearchImageView.setVisibility(8);
             this.actionBar.addView(this.optionsSearchImageView, LayoutHelper.createFrame(48, 56, 85));
         }

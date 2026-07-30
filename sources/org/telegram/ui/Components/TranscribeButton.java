@@ -303,7 +303,7 @@ public abstract class TranscribeButton {
         }
         if (z2) {
             this.inIconDrawable.beginApplyLayerColors();
-            this.inIconDrawable.setLayerColor("Artboard Outlines", this.iconColor);
+            this.inIconDrawable.setLayerColor("Artboard Outlines.**", this.iconColor);
             this.inIconDrawable.commitApplyLayerColors();
             this.inIconDrawable.setAllowDecodeSingleFrame(true);
             this.inIconDrawable.updateCurrentFrame(0L, false);
@@ -312,7 +312,7 @@ public abstract class TranscribeButton {
             this.inIconDrawableAlpha = alpha;
             rLottieDrawable.setAlpha(alpha);
             this.outIconDrawable.beginApplyLayerColors();
-            this.outIconDrawable.setLayerColor("Artboard Outlines", this.iconColor);
+            this.outIconDrawable.setLayerColor("Artboard Outlines.**", this.iconColor);
             this.outIconDrawable.commitApplyLayerColors();
             this.outIconDrawable.setAllowDecodeSingleFrame(true);
             this.outIconDrawable.updateCurrentFrame(0L, false);
@@ -668,7 +668,7 @@ public abstract class TranscribeButton {
 
         public void setColor(int i) {
             this.lottie.beginApplyLayerColors();
-            this.lottie.setLayerColor("Comp 1", i);
+            this.lottie.setLayerColor("Comp 1.**", i);
             this.lottie.commitApplyLayerColors();
             this.lottie.setAllowDecodeSingleFrame(true);
             this.lottie.updateCurrentFrame(0L, false);

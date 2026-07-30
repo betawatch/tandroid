@@ -5910,16 +5910,16 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                         canvas.drawRect(measuredWidth - AndroidUtilities.dp(8.0f), 0.0f, getMeasuredWidth(), getMeasuredHeight(), Theme.dialogs_pinnedPaint);
                         if (this.currentRevealProgress == 0.0f) {
                             if (Theme.dialogs_archiveDrawableRecolored) {
-                                Theme.dialogs_archiveDrawable.setLayerColor("Arrow", Theme.getNonAnimatedColor(Theme.key_chats_archiveBackground));
+                                Theme.dialogs_archiveDrawable.setLayerColor("Arrow.**", Theme.getNonAnimatedColor(Theme.key_chats_archiveBackground));
                                 Theme.dialogs_archiveDrawableRecolored = false;
                             }
                             if (Theme.dialogs_hidePsaDrawableRecolored) {
                                 Theme.dialogs_hidePsaDrawable.beginApplyLayerColors();
                                 RLottieDrawable rLottieDrawable2 = Theme.dialogs_hidePsaDrawable;
                                 int i25 = Theme.key_chats_archiveBackground;
-                                rLottieDrawable2.setLayerColor("Line 1", Theme.getNonAnimatedColor(i25));
-                                Theme.dialogs_hidePsaDrawable.setLayerColor("Line 2", Theme.getNonAnimatedColor(i25));
-                                Theme.dialogs_hidePsaDrawable.setLayerColor("Line 3", Theme.getNonAnimatedColor(i25));
+                                rLottieDrawable2.setLayerColor("Line 1.**", Theme.getNonAnimatedColor(i25));
+                                Theme.dialogs_hidePsaDrawable.setLayerColor("Line 2.**", Theme.getNonAnimatedColor(i25));
+                                Theme.dialogs_hidePsaDrawable.setLayerColor("Line 3.**", Theme.getNonAnimatedColor(i25));
                                 Theme.dialogs_hidePsaDrawable.commitApplyLayerColors();
                                 Theme.dialogs_hidePsaDrawableRecolored = false;
                             }
@@ -5942,16 +5942,16 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                         canvas.drawCircle(intrinsicWidth, intrinsicHeight, ((float) Math.sqrt((intrinsicWidth * intrinsicWidth) + ((intrinsicHeight - getMeasuredHeight()) * (intrinsicHeight - getMeasuredHeight())))) * AndroidUtilities.accelerateInterpolator.getInterpolation(this.currentRevealProgress), Theme.dialogs_pinnedPaint);
                         canvas.restore();
                         if (!Theme.dialogs_archiveDrawableRecolored) {
-                            Theme.dialogs_archiveDrawable.setLayerColor("Arrow", Theme.getNonAnimatedColor(Theme.key_chats_archivePinBackground));
+                            Theme.dialogs_archiveDrawable.setLayerColor("Arrow.**", Theme.getNonAnimatedColor(Theme.key_chats_archivePinBackground));
                             Theme.dialogs_archiveDrawableRecolored = true;
                         }
                         if (!Theme.dialogs_hidePsaDrawableRecolored) {
                             Theme.dialogs_hidePsaDrawable.beginApplyLayerColors();
                             RLottieDrawable rLottieDrawable3 = Theme.dialogs_hidePsaDrawable;
                             int i26 = Theme.key_chats_archivePinBackground;
-                            rLottieDrawable3.setLayerColor("Line 1", Theme.getNonAnimatedColor(i26));
-                            Theme.dialogs_hidePsaDrawable.setLayerColor("Line 2", Theme.getNonAnimatedColor(i26));
-                            Theme.dialogs_hidePsaDrawable.setLayerColor("Line 3", Theme.getNonAnimatedColor(i26));
+                            rLottieDrawable3.setLayerColor("Line 1.**", Theme.getNonAnimatedColor(i26));
+                            Theme.dialogs_hidePsaDrawable.setLayerColor("Line 2.**", Theme.getNonAnimatedColor(i26));
+                            Theme.dialogs_hidePsaDrawable.setLayerColor("Line 3.**", Theme.getNonAnimatedColor(i26));
                             Theme.dialogs_hidePsaDrawable.commitApplyLayerColors();
                             Theme.dialogs_hidePsaDrawableRecolored = true;
                         }
