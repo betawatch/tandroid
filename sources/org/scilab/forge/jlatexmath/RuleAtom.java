@@ -2,6 +2,7 @@ package org.scilab.forge.jlatexmath;
 
 /* loaded from: classes3.dex */
 public class RuleAtom extends Atom {
+    private static final float MAX_LENGTH = 4096.0f;
     private float h;
     private int hunit;
     private float r;
@@ -20,6 +21,15 @@ public class RuleAtom extends Atom {
 
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
-        return new HorizontalRule(this.h * SpaceAtom.getFactor(this.hunit, teXEnvironment), this.w * SpaceAtom.getFactor(this.wunit, teXEnvironment), this.r * SpaceAtom.getFactor(this.runit, teXEnvironment));
+        float factor = this.w * SpaceAtom.getFactor(this.wunit, teXEnvironment);
+        float factor2 = this.h * SpaceAtom.getFactor(this.hunit, teXEnvironment);
+        float factor3 = this.r * SpaceAtom.getFactor(this.runit, teXEnvironment);
+        if (!DelimiterFactory$$ExternalSyntheticBackport0.m(factor) || factor > MAX_LENGTH) {
+            factor = MAX_LENGTH;
+        }
+        if (!DelimiterFactory$$ExternalSyntheticBackport0.m(factor2) || factor2 > MAX_LENGTH) {
+            factor2 = MAX_LENGTH;
+        }
+        return new HorizontalRule(factor2, factor, factor3);
     }
 }

@@ -7,6 +7,7 @@ import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
 public class ForegroundColorSpanThemable extends CharacterStyle implements UpdateAppearance {
+    private float alpha;
     private int color;
     private int colorKey;
     private final Theme.ResourcesProvider resourcesProvider;
@@ -16,13 +17,22 @@ public class ForegroundColorSpanThemable extends CharacterStyle implements Updat
     }
 
     public ForegroundColorSpanThemable(int i, Theme.ResourcesProvider resourcesProvider) {
+        this.alpha = 1.0f;
         this.colorKey = i;
         this.resourcesProvider = resourcesProvider;
     }
 
+    public void setColorKey(int i) {
+        this.colorKey = i;
+    }
+
+    public void setAlpha(float f) {
+        this.alpha = f;
+    }
+
     @Override // android.text.style.CharacterStyle
     public void updateDrawState(TextPaint textPaint) {
-        this.color = Theme.getColor(this.colorKey, this.resourcesProvider);
+        this.color = Theme.multAlpha(Theme.getColor(this.colorKey, this.resourcesProvider), this.alpha);
         int color = textPaint.getColor();
         int i = this.color;
         if (color != i) {

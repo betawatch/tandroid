@@ -37,6 +37,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.MessageDrawable;
 import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatMessageCell;
@@ -118,7 +119,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         int i2;
         int i3;
         int i4;
-        Theme.MessageDrawable currentBackgroundDrawable;
+        MessageDrawable currentBackgroundDrawable;
         StaticLayout.Builder obtain;
         StaticLayout.Builder breakStrategy;
         StaticLayout.Builder hyphenationFrequency;
@@ -569,7 +570,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         float y3 = ((this.drawableFromTop - this.container.getY()) * f29) + (backgroundDrawableTop * f3);
         float y4 = ((this.drawableFromBottom - this.container.getY()) * f29) + ((backgroundDrawableTop + (this.messageView.getBackgroundDrawableBottom() - this.messageView.getBackgroundDrawableTop())) * f3);
         int backgroundDrawableRight = (int) (this.messageView.getBackgroundDrawableRight() + x2 + (AndroidUtilities.dp(4.0f) * f28));
-        Theme.MessageDrawable currentBackgroundDrawable = !this.currentMessageObject.isAnimatedEmojiStickers() ? this.messageView.getCurrentBackgroundDrawable(true) : null;
+        MessageDrawable currentBackgroundDrawable = !this.currentMessageObject.isAnimatedEmojiStickers() ? this.messageView.getCurrentBackgroundDrawable(true) : null;
         if (currentBackgroundDrawable != null) {
             this.messageView.setBackgroundTopY(this.container.getTop() - this.listView.getTop());
             Drawable shadowDrawable = currentBackgroundDrawable.getShadowDrawable();

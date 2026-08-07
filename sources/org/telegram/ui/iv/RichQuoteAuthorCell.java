@@ -24,7 +24,7 @@ import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.iv.RichEditText;
 import org.telegram.ui.iv.RichQuoteAuthorCell;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RichQuoteAuthorCell extends RichBlockCell implements Theme.Colorable, TextSelectionHelper.ArticleSelectableView {
     final RichEditText authorEditText;
     private Delegate delegate;

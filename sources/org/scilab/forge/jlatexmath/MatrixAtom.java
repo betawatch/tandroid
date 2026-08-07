@@ -105,37 +105,45 @@ public class MatrixAtom extends Atom {
         int length = stringBuffer.length();
         ArrayList arrayList = new ArrayList();
         int i = 0;
+        int i2 = 0;
         while (i < length) {
+            i2++;
+            if (i2 > 100000 || length > 10000) {
+                throw new ParseException("Column specification is too complex");
+            }
             char charAt = stringBuffer.charAt(i);
             if (charAt != '\t' && charAt != ' ') {
                 if (charAt == '*') {
-                    int i2 = i + 1;
-                    TeXParser teXParser = new TeXParser(this.isPartial, stringBuffer.substring(i2), new TeXFormula(), false);
+                    int i3 = i + 1;
+                    TeXParser teXParser = new TeXParser(this.isPartial, stringBuffer.substring(i3), new TeXFormula(), false);
                     String[] optsArgs = teXParser.getOptsArgs(2, 0);
-                    pos = i2 + teXParser.getPos();
+                    pos = i3 + teXParser.getPos();
                     int parseInt = Integer.parseInt(optsArgs[1]);
-                    String str = "";
-                    for (int i3 = 0; i3 < parseInt; i3++) {
-                        str = str + optsArgs[2];
+                    if (parseInt < 0 || parseInt > 4096) {
+                        parseInt = 4096;
                     }
-                    stringBuffer.insert(pos, str);
+                    StringBuilder sb = new StringBuilder(optsArgs[2].length() * parseInt);
+                    for (int i4 = 0; i4 < parseInt; i4++) {
+                        sb.append(optsArgs[2]);
+                    }
+                    stringBuffer.insert(pos, sb.toString());
                     length = stringBuffer.length();
                 } else if (charAt == '@') {
-                    int i4 = i + 1;
-                    TeXParser teXParser2 = new TeXParser(this.isPartial, stringBuffer.substring(i4), new TeXFormula(), false);
+                    int i5 = i + 1;
+                    TeXParser teXParser2 = new TeXParser(this.isPartial, stringBuffer.substring(i5), new TeXFormula(), false);
                     Atom argument = teXParser2.getArgument();
                     this.matrix.col++;
-                    int i5 = 0;
+                    int i6 = 0;
                     while (true) {
                         ArrayOfAtoms arrayOfAtoms = this.matrix;
-                        if (i5 >= arrayOfAtoms.row) {
+                        if (i6 >= arrayOfAtoms.row) {
                             break;
                         }
-                        arrayOfAtoms.array.get(i5).add(arrayList.size(), argument);
-                        i5++;
+                        arrayOfAtoms.array.get(i6).add(arrayList.size(), argument);
+                        i6++;
                     }
                     arrayList.add(5);
-                    pos = i4 + teXParser2.getPos();
+                    pos = i5 + teXParser2.getPos();
                 } else if (charAt == 'c') {
                     arrayList.add(2);
                 } else if (charAt == 'l') {
@@ -143,21 +151,21 @@ public class MatrixAtom extends Atom {
                 } else if (charAt == 'r') {
                     arrayList.add(1);
                 } else if (charAt == '|') {
-                    int i6 = 1;
+                    int i7 = 1;
                     while (true) {
-                        int i7 = i + 1;
-                        if (i7 >= length) {
-                            i = i7;
+                        int i8 = i + 1;
+                        if (i8 >= length) {
+                            i = i8;
                             break;
                         } else {
-                            if (stringBuffer.charAt(i7) != '|') {
+                            if (stringBuffer.charAt(i8) != '|') {
                                 break;
                             }
-                            i6++;
-                            i = i7;
+                            i7++;
+                            i = i8;
                         }
                     }
-                    this.vlines.put(Integer.valueOf(arrayList.size()), new VlineAtom(i6));
+                    this.vlines.put(Integer.valueOf(arrayList.size()), new VlineAtom(i7));
                 } else {
                     arrayList.add(2);
                 }
@@ -171,8 +179,8 @@ public class MatrixAtom extends Atom {
         if (arrayList.size() != 0) {
             Integer[] numArr = (Integer[]) arrayList.toArray(new Integer[0]);
             this.position = new int[numArr.length];
-            for (int i8 = 0; i8 < numArr.length; i8++) {
-                this.position[i8] = numArr[i8].intValue();
+            for (int i9 = 0; i9 < numArr.length; i9++) {
+                this.position[i9] = numArr[i9].intValue();
             }
             return;
         }

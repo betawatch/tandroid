@@ -69,6 +69,7 @@ import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.EmojiThemes;
 import org.telegram.ui.ActionBar.INavigationLayout;
+import org.telegram.ui.ActionBar.MessageDrawable;
 import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeColors;
@@ -132,11 +133,11 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
     protected RecyclerListView listView;
     private SpannableStringBuilder lock;
     protected int messagesPreviewRow;
-    private final Theme.MessageDrawable msgInDrawable;
-    private final Theme.MessageDrawable msgInDrawableSelected;
+    private final MessageDrawable msgInDrawable;
+    private final MessageDrawable msgInDrawableSelected;
     private final Drawable msgOutCheckReadDrawable;
-    private final Theme.MessageDrawable msgOutDrawable;
-    private final Theme.MessageDrawable msgOutDrawableSelected;
+    private final MessageDrawable msgOutDrawable;
+    private final MessageDrawable msgOutDrawableSelected;
     private final Drawable msgOutHalfCheckDrawable;
     protected int packEmojiHintRow;
     protected int packEmojiRow;
@@ -414,10 +415,10 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
             }
         });
         this.resourceProvider = new ThemeDelegate();
-        this.msgInDrawable = new Theme.MessageDrawable(0, false, false, this.resourceProvider);
-        this.msgInDrawableSelected = new Theme.MessageDrawable(0, false, true, this.resourceProvider);
-        this.msgOutDrawable = new Theme.MessageDrawable(0, true, false, this.resourceProvider);
-        this.msgOutDrawableSelected = new Theme.MessageDrawable(0, true, true, this.resourceProvider);
+        this.msgInDrawable = new MessageDrawable(0, false, false, this.resourceProvider);
+        this.msgInDrawableSelected = new MessageDrawable(0, false, true, this.resourceProvider);
+        this.msgOutDrawable = new MessageDrawable(0, true, false, this.resourceProvider);
+        this.msgOutDrawableSelected = new MessageDrawable(0, true, true, this.resourceProvider);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -510,10 +511,10 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
         }
         this.sunDrawable.beginApplyLayerColors();
         int color = Theme.getColor(Theme.key_chats_menuName, this.resourceProvider);
-        this.sunDrawable.setLayerColor("Sunny.**", color);
-        this.sunDrawable.setLayerColor("Path 6.**", color);
-        this.sunDrawable.setLayerColor("Path.**", color);
-        this.sunDrawable.setLayerColor("Path 5.**", color);
+        this.sunDrawable.setLayerColor("Sunny", color);
+        this.sunDrawable.setLayerColor("Path 6", color);
+        this.sunDrawable.setLayerColor("Path", color);
+        this.sunDrawable.setLayerColor("Path 5", color);
         this.dayNightItem = this.actionBar.createMenu().addItem(1, this.sunDrawable);
         FrameLayout frameLayout = new FrameLayout(context);
         updateRows();

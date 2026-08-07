@@ -19,7 +19,7 @@ import org.telegram.ui.Components.TextStyleSpan;
 import org.telegram.ui.Components.URLSpanReplacement;
 import org.webrtc.MediaStreamTrack;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class RichHtml {
     private static boolean isWs(char c) {
         return c == ' ' || c == '\n' || c == '\t' || c == '\r';
@@ -187,6 +187,10 @@ public abstract class RichHtml {
             serializeSingleMedia(sb, MediaStreamTrack.AUDIO_TRACK_KIND, ((TL_iv.pageBlockAudio) pageBlock).audio_id, blockRow.media, pageBlock);
             return;
         }
+        if (pageBlock instanceof TL_iv.pageBlockDocument) {
+            serializeSingleMedia(sb, "document", ((TL_iv.pageBlockDocument) pageBlock).document_id, blockRow.media, pageBlock);
+            return;
+        }
         if (RichEditorListView.isGallery(pageBlock)) {
             serializeGallery(sb, pageBlock, blockRow);
             return;
@@ -227,9 +231,14 @@ public abstract class RichHtml {
             return;
         }
         if (pageBlock instanceof TL_iv.pageBlockBlockquote) {
-            sb.append("<blockquote>");
+            TL_iv.pageBlockBlockquote pageblockblockquote = (TL_iv.pageBlockBlockquote) pageBlock;
+            if (pageblockblockquote.collapsed) {
+                sb.append("<blockquote collapsed>");
+            } else {
+                sb.append("<blockquote>");
+            }
             appendInline(sb, slicedStyled(blockRow, i, i2, i3, i4, i5));
-            appendAuthorCite(sb, authorText(((TL_iv.pageBlockBlockquote) pageBlock).caption));
+            appendAuthorCite(sb, authorText(pageblockblockquote.caption));
             sb.append("</blockquote>");
             return;
         }
@@ -961,6 +970,8 @@ public abstract class RichHtml {
                 return buildAudio(node);
             case "video":
                 return buildPhotoOrVideo(node, true);
+            case "document":
+                return buildDocument(node);
             case "location":
                 return buildMap(node);
             default:
@@ -987,6 +998,17 @@ public abstract class RichHtml {
         pageblockaudio.audio_id = parseLongAttr;
         setEmptyCaption(pageblockaudio);
         return new BlockRow(pageblockaudio);
+    }
+
+    private static BlockRow buildDocument(Node node) {
+        long parseLongAttr = parseLongAttr(node.attr("src"), 0L);
+        if (parseLongAttr <= 0) {
+            return null;
+        }
+        TL_iv.pageBlockDocument pageblockdocument = new TL_iv.pageBlockDocument();
+        pageblockdocument.document_id = parseLongAttr;
+        setEmptyCaption(pageblockdocument);
+        return new BlockRow(pageblockdocument);
     }
 
     private static BlockRow buildMap(Node node) {
@@ -1357,7 +1379,7 @@ public abstract class RichHtml {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0144  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x013b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1522,7 +1544,7 @@ public abstract class RichHtml {
             spannableStringBuilder.setSpan(new TextStyleSpan(textStyleRun, AndroidUtilities.dp(SharedConfig.fontSize)), length, length2, 33);
         }
         if (str != null) {
-            spannableStringBuilder.setSpan(new URLSpanReplacement(str), length, length2, 33);
+            spannableStringBuilder.setSpan(RichTextStyle.linkSpan(str), length, length2, 33);
         }
     }
 

@@ -16,6 +16,7 @@ import org.webrtc.ThreadUtils;
 import org.webrtc.VideoDecoder;
 import org.webrtc.VideoFrame;
 import org.webrtc.VideoSink;
+import ru.noties.jlatexmath.android.BuildConfig;
 
 /* loaded from: classes5.dex */
 class AndroidVideoDecoder implements VideoDecoder, VideoSink {
@@ -228,7 +229,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
 
     @Override // org.webrtc.VideoDecoder
     public VideoCodecStatus release() {
-        Logging.d(TAG, "release");
+        Logging.d(TAG, BuildConfig.BUILD_TYPE);
         VideoCodecStatus releaseInternal = releaseInternal();
         if (this.surface != null) {
             releaseSurface();

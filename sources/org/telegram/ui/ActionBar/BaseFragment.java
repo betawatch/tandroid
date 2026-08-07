@@ -118,7 +118,7 @@ public abstract class BaseFragment {
         return false;
     }
 
-    public View createView(Context context) {
+    protected View createView(Context context) {
         return null;
     }
 
@@ -449,6 +449,10 @@ public abstract class BaseFragment {
 
     public void setFragmentView(View view) {
         this.fragmentView = view;
+    }
+
+    public View performCreateView(Context context) {
+        return createView(context);
     }
 
     public Bundle getArguments() {

@@ -11,7 +11,7 @@ import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RichDetailsEndCell extends View implements Theme.Colorable {
     private BlockRow currentRow;
     private final Paint paint;
@@ -38,7 +38,7 @@ public class RichDetailsEndCell extends View implements Theme.Colorable {
 
     @Override // org.telegram.ui.ActionBar.Theme.Colorable
     public void updateColors() {
-        this.paint.setColor(Theme.getColor(Theme.key_divider, this.resourcesProvider));
+        this.paint.setColor(Theme.getColor(Theme.key_chat_inArticleDetailsLine, this.resourcesProvider));
     }
 
     @Override // android.view.View

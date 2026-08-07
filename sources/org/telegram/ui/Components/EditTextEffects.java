@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.R;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.QuoteSpan;
 import org.telegram.ui.Components.spoilers.SpoilerEffect;
@@ -101,7 +102,7 @@ public abstract class EditTextEffects extends EditText {
     }
 
     public EditTextEffects(Context context) {
-        super(context);
+        super(context, null, 0, R.style.EditTextNoBackgroundStyle);
         this.spoilers = new ArrayList();
         this.spoilersPool = new Stack<>();
         this.quoteBlocks = new ArrayList<>();

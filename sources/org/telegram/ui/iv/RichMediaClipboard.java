@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.tgnet.TLRPC;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class RichMediaClipboard {
     private static final HashMap photos = new HashMap();
     private static final HashMap documents = new HashMap();

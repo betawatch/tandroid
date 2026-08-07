@@ -12,7 +12,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RichEditorHistory {
     private final Delegate delegate;
     private boolean dirty;

@@ -11,7 +11,7 @@ import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.iv.RichCommand;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RichCommandSuggestions {
     private RichTextCell backgroundCell;
     private RichTextCell cell;

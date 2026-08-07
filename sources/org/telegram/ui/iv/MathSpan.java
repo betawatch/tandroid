@@ -5,10 +5,8 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.text.Spanned;
 import android.text.style.ReplacementSpan;
-import org.telegram.messenger.FileLog;
-import ru.noties.jlatexmath.JLatexMathDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class MathSpan extends ReplacementSpan {
     private final Bitmap bitmap;
     private final int depth;
@@ -29,30 +27,11 @@ public class MathSpan extends ReplacementSpan {
     }
 
     public static MathSpan create(String str, int i, float f) {
-        int i2;
-        if (str != null && !str.isEmpty()) {
-            try {
-                JLatexMathDrawable build = JLatexMathDrawable.builder(str).textSize(f).build();
-                int intrinsicWidth = build.getIntrinsicWidth();
-                int intrinsicHeight = build.getIntrinsicHeight();
-                if (intrinsicWidth > 0 && intrinsicHeight > 0) {
-                    Bitmap createBitmap = Bitmap.createBitmap(intrinsicWidth, intrinsicHeight, Bitmap.Config.ALPHA_8);
-                    build.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
-                    build.draw(new Canvas(createBitmap));
-                    try {
-                        i2 = build.icon().getIconDepth();
-                    } catch (Throwable th) {
-                        FileLog.e(th);
-                        i2 = 0;
-                    }
-                    return new MathSpan(str, createBitmap, intrinsicWidth, intrinsicHeight, i, i2);
-                }
-                return null;
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
+        Latex render;
+        if (str == null || str.isEmpty() || (render = Latex.render(str, f, true)) == null) {
+            return null;
         }
-        return null;
+        return new MathSpan(str, render.bitmap, render.width, render.height, i, render.depth);
     }
 
     @Override // android.text.style.ReplacementSpan

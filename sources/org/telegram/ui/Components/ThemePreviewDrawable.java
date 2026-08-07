@@ -18,6 +18,7 @@ import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
+import org.telegram.ui.ActionBar.MessageDrawable;
 import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
@@ -62,19 +63,19 @@ public class ThemePreviewDrawable extends BitmapDrawable {
         Theme.setDrawableColor(mutate3, previewColor4);
         Drawable mutate4 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_mic).mutate();
         Theme.setDrawableColor(mutate4, previewColor4);
-        Theme.MessageDrawable[] messageDrawableArr = new Theme.MessageDrawable[2];
+        MessageDrawable[] messageDrawableArr = new MessageDrawable[2];
         int i7 = 0;
         while (i7 < 2) {
             Drawable drawable = mutate4;
             Drawable drawable2 = mutate;
             Drawable drawable3 = mutate2;
-            Theme.MessageDrawable messageDrawable = new Theme.MessageDrawable(2, i7 == 1, false) { // from class: org.telegram.ui.Components.ThemePreviewDrawable.1
-                @Override // org.telegram.ui.ActionBar.Theme.MessageDrawable
+            MessageDrawable messageDrawable = new MessageDrawable(2, i7 == 1, false) { // from class: org.telegram.ui.Components.ThemePreviewDrawable.1
+                @Override // org.telegram.ui.ActionBar.MessageDrawable
                 protected int getColor(int i8) {
                     return clone.get(i8);
                 }
 
-                @Override // org.telegram.ui.ActionBar.Theme.MessageDrawable
+                @Override // org.telegram.ui.ActionBar.MessageDrawable
                 protected int getCurrentColor(int i8) {
                     return clone.get(i8);
                 }

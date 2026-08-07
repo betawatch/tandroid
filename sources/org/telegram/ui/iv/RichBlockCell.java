@@ -3,7 +3,7 @@ package org.telegram.ui.iv;
 import android.content.Context;
 import android.widget.FrameLayout;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class RichBlockCell extends FrameLayout implements RichInsetCell {
     private int basePadBottom;
     private int basePadLeft;

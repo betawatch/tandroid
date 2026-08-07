@@ -36,7 +36,7 @@ import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RichAIComposeSheet extends BottomSheetWithRecyclerListView {
     private UniversalAdapter adapter;
     private final ButtonWithCounterView button;

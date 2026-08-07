@@ -4325,8 +4325,8 @@ public class AndroidUtilities {
             AlertDialog.Builder builder = new AlertDialog.Builder(activity);
             HashMap hashMap = new HashMap();
             int i = Theme.key_dialogTopBackground;
-            hashMap.put("info1.**", Integer.valueOf(baseFragment.getThemedColor(i)));
-            hashMap.put("info2.**", Integer.valueOf(baseFragment.getThemedColor(i)));
+            hashMap.put("info1", Integer.valueOf(baseFragment.getThemedColor(i)));
+            hashMap.put("info2", Integer.valueOf(baseFragment.getThemedColor(i)));
             builder.setTopAnimation(R.raw.not_available, 52, false, baseFragment.getThemedColor(i), hashMap);
             builder.setTopAnimationIsNew(true);
             builder.setMessage(LocaleController.getString(R.string.IncorrectTheme));
@@ -4382,8 +4382,8 @@ public class AndroidUtilities {
             AlertDialog.Builder builder2 = new AlertDialog.Builder(activity);
             HashMap hashMap2 = new HashMap();
             int i2 = Theme.key_dialogTopBackground;
-            hashMap2.put("info1.**", Integer.valueOf(baseFragment.getThemedColor(i2)));
-            hashMap2.put("info2.**", Integer.valueOf(baseFragment.getThemedColor(i2)));
+            hashMap2.put("info1", Integer.valueOf(baseFragment.getThemedColor(i2)));
+            hashMap2.put("info2", Integer.valueOf(baseFragment.getThemedColor(i2)));
             builder2.setTopAnimation(R.raw.not_available, 52, false, baseFragment.getThemedColor(i2), hashMap2);
             builder2.setTopAnimationIsNew(true);
             builder2.setPositiveButton(LocaleController.getString(R.string.OK), null);

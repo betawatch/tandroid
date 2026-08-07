@@ -39,36 +39,36 @@ public class QuickRepliesEmptyView extends LinearLayout {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x01cb  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x01b6  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x01b1  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public QuickRepliesEmptyView(Context context, int i, long j, long j2, String str, Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        int i2;
-        TextView textView;
         setOrientation(1);
         this.resourcesProvider = resourcesProvider;
-        TextView textView2 = new TextView(context);
-        this.titleView = textView2;
-        textView2.setTextSize(1, 14.0f);
+        TextView textView = new TextView(context);
+        this.titleView = textView;
+        textView.setTextSize(1, 14.0f);
         this.titleView.setTypeface(AndroidUtilities.bold());
         this.titleView.setTextAlignment(4);
+        this.titleView.setLineSpacing(AndroidUtilities.dp(1.66f), 1.0f);
         this.titleView.setGravity(17);
         DotTextView dotTextView = new DotTextView(context);
         this.descriptionView = dotTextView;
         dotTextView.setTextAlignment(4);
         this.descriptionView.setGravity(17);
-        this.descriptionView.setTextSize(1, 13.0f);
+        this.descriptionView.setTextSize(1, 12.0f);
+        this.descriptionView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         this.descriptionView.setGravity(1);
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         this.imageView = rLottieImageView;
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
         this.imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         this.descriptionView.setMaxWidth(AndroidUtilities.dp(160.0f));
-        if ("hello".equalsIgnoreCase(str)) {
+        int i2 = 22;
+        if (i == 9) {
+            this.imageView.setImageResource(R.drawable.large_greeting);
+            this.titleView.setText(LocaleController.getString(R.string.WelcomeMessageEmptyTitle));
+            this.descriptionView.setText(LocaleController.getString(R.string.WelcomeMessageEmptySubtitle));
+            this.descriptionView.setMaxWidth(Math.min(AndroidUtilities.dp(160.0f), HintView2.cutInFancyHalf(this.descriptionView.getText(), this.descriptionView.getPaint())));
+        } else if ("hello".equalsIgnoreCase(str)) {
             this.imageView.setImageResource(R.drawable.large_greeting);
             this.titleView.setText(LocaleController.getString(R.string.BusinessGreetingIntroTitle));
             this.descriptionView.setText(LocaleController.getString(R.string.BusinessGreetingIntro));
@@ -82,12 +82,12 @@ public class QuickRepliesEmptyView extends LinearLayout {
             if (i == 5) {
                 this.imageView.setImageResource(R.drawable.large_quickreplies);
                 QuickRepliesController.QuickReply findReply = QuickRepliesController.getInstance(UserConfig.selectedAccount).findReply(j2);
-                str = findReply != null ? findReply.name : str;
+                String str2 = findReply == null ? str : findReply.name;
                 this.titleView.setText(LocaleController.getString(R.string.BusinessRepliesIntroTitle));
                 this.descriptionView.setMaxWidth(AndroidUtilities.dp(208.0f));
                 this.descriptionView.setTextAlignment(2);
                 this.descriptionView.setGravity(3);
-                this.descriptionView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BusinessRepliesIntro1, str)));
+                this.descriptionView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BusinessRepliesIntro1, str2)));
                 this.descriptionView.setPadding(AndroidUtilities.dp(28.0f), 0, 0, 0);
                 DotTextView dotTextView2 = new DotTextView(context);
                 this.descriptionView2 = dotTextView2;
@@ -99,21 +99,13 @@ public class QuickRepliesEmptyView extends LinearLayout {
                 this.descriptionView2.setPadding(AndroidUtilities.dp(28.0f), 0, 0, 0);
             }
             i2 = 12;
-            addView(this.imageView, LayoutHelper.createLinear(78, 78, 49, 20, 17, 20, 9));
-            addView(this.titleView, LayoutHelper.createLinear(-2, -2, 49, 20, 0, 20, 9));
-            addView(this.descriptionView, LayoutHelper.createLinear(-2, -2, 49, i2, 0, i2, this.descriptionView2 == null ? 9 : 19));
-            textView = this.descriptionView2;
-            if (textView != null) {
-                addView(textView, LayoutHelper.createLinear(-2, -2, 49, 12, 0, 12, 19));
-            }
-            updateColors();
         }
-        i2 = 22;
         addView(this.imageView, LayoutHelper.createLinear(78, 78, 49, 20, 17, 20, 9));
-        addView(this.titleView, LayoutHelper.createLinear(-2, -2, 49, 20, 0, 20, 9));
-        addView(this.descriptionView, LayoutHelper.createLinear(-2, -2, 49, i2, 0, i2, this.descriptionView2 == null ? 9 : 19));
-        textView = this.descriptionView2;
-        if (textView != null) {
+        addView(this.titleView, LayoutHelper.createLinear(-2, -2, 49, 20, 0, 20, 6));
+        addView(this.descriptionView, LayoutHelper.createLinear(-2, -2, 49, i2, 0, i2, this.descriptionView2 == null ? 19 : 9));
+        TextView textView2 = this.descriptionView2;
+        if (textView2 != null) {
+            addView(textView2, LayoutHelper.createLinear(-2, -2, 49, 12, 0, 12, 19));
         }
         updateColors();
     }

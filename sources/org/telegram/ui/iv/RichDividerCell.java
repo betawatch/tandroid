@@ -15,7 +15,7 @@ import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RichDividerCell extends RichBlockCell implements Theme.Colorable, TextSelectionHelper.ArticleSelectableView {
     private boolean blockRtl;
     private Delegate delegate;
@@ -69,20 +69,20 @@ public class RichDividerCell extends RichBlockCell implements Theme.Colorable, T
 
     @Override // org.telegram.ui.ActionBar.Theme.Colorable
     public void updateColors() {
-        this.paint.setColor(Theme.getColor(Theme.key_divider, this.resourcesProvider));
+        this.paint.setColor(Theme.getColor(Theme.key_chat_inDivider, this.resourcesProvider));
         this.selectionPaint.setColor(Theme.getColor(Theme.key_chat_inTextSelectionHighlight, this.resourcesProvider));
     }
 
     @Override // org.telegram.ui.Cells.TextSelectionHelper.ArticleSelectableView
     public void fillTextLayoutBlocks(ArrayList arrayList) {
         int regionLo = regionLo();
-        int max = Math.max(1, (regionHi() - regionLo) / 3);
-        arrayList.add(RichBlockSelection.of((regionLo + max) - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(2.0f), regionLo + (max * 2) + AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f)));
+        int regionHi = (regionHi() - regionLo) / 4;
+        arrayList.add(RichBlockSelection.of((regionLo + regionHi) - AndroidUtilities.dp(12.0f), 0, (regionHi() - regionHi) + AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f)));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.dp(18.0f));
+        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.dp(12.0f));
     }
 
     private boolean isCellSelected() {
@@ -95,16 +95,16 @@ public class RichDividerCell extends RichBlockCell implements Theme.Colorable, T
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         int regionLo = regionLo();
-        int max = Math.max(1, (regionHi() - regionLo) / 3);
-        int i = regionLo + max;
-        int i2 = regionLo + (max * 2);
-        this.paint.setColor(Theme.multAlpha(Theme.getColor(Theme.key_chat_inReplyMessageText, this.resourcesProvider), 0.2f));
+        int regionHi = (regionHi() - regionLo) / 4;
+        int i = regionLo + regionHi;
+        int regionHi2 = regionHi() - regionHi;
         if (isCellSelected()) {
-            canvas.drawRoundRect(i - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(12.0f) + i2, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.selectionPaint);
+            canvas.drawRoundRect(i - AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(12.0f) + regionHi2, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.selectionPaint);
         }
+        float dp = (AndroidUtilities.dp(12.0f) - AndroidUtilities.dp(1.0f)) / 2.0f;
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(i, AndroidUtilities.dp(8.0f), i2, AndroidUtilities.dp(10.0f));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), this.paint);
+        rectF.set(i, dp, regionHi2, AndroidUtilities.dp(1.0f) + dp);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(0.5f), AndroidUtilities.dp(0.5f), this.paint);
     }
 
     public static final class Factory extends UItem.UItemFactory {

@@ -340,9 +340,9 @@ class PredefMacroInfo extends MacroInfo {
                     return PredefMacros.ovalbox_macro(teXParser, strArr);
                 case NotificationCenter.groupCallVisibilityChanged /* 175 */:
                     return PredefMacros.doublebox_macro(teXParser, strArr);
-                case 176:
+                case NotificationCenter.liveStoryUpdated /* 176 */:
                     return PredefMacros.phantom_macro(teXParser, strArr);
-                case NotificationCenter.liveStoryMessageUpdate /* 177 */:
+                case 177:
                     return PredefMacros.hphantom_macro(teXParser, strArr);
                 case NotificationCenter.appDidLogout /* 178 */:
                     return PredefMacros.vphantom_macro(teXParser, strArr);
@@ -435,9 +435,9 @@ class PredefMacroInfo extends MacroInfo {
                     return PredefMacros.geoprop_macro(teXParser, strArr);
                 case NotificationCenter.channelStarsUpdated /* 227 */:
                     return PredefMacros.minuscolon_macro(teXParser, strArr);
-                case 228:
+                case NotificationCenter.updateAllMessages /* 228 */:
                     return PredefMacros.minuscoloncolon_macro(teXParser, strArr);
-                case NotificationCenter.starGiftsLoaded /* 229 */:
+                case 229:
                     return PredefMacros.simcolon_macro(teXParser, strArr);
                 case NotificationCenter.starUserGiftsLoaded /* 230 */:
                     return PredefMacros.simcoloncolon_macro(teXParser, strArr);

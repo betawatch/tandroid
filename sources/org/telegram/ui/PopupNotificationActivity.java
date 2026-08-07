@@ -47,9 +47,11 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.WebFile;
+import org.telegram.messenger.utils.tlutils.TLKeyboardHelper;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
@@ -310,6 +312,11 @@ public class PopupNotificationActivity extends Activity implements NotificationC
 
             @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
             public void didPressAttachButton() {
+            }
+
+            @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
+            public /* synthetic */ void didPressStreamingStop() {
+                ChatActivityEnterView.ChatActivityEnterViewDelegate.-CC.$default$didPressStreamingStop(this);
             }
 
             @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
@@ -914,8 +921,10 @@ public class PopupNotificationActivity extends Activity implements NotificationC
 
     private LinearLayout getButtonsViewForMessage(int i, boolean z) {
         int i2;
+        LinearLayout linearLayout;
+        ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList;
+        LinearLayout linearLayout2;
         int i3 = i;
-        LinearLayout linearLayout = null;
         if (this.popupMessages.size() == 1 && (i3 < 0 || i3 >= this.popupMessages.size())) {
             return null;
         }
@@ -927,41 +936,44 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         }
         final MessageObject messageObject = (MessageObject) this.popupMessages.get(i3);
         TLRPC.ReplyMarkup replyMarkup = messageObject.messageOwner.reply_markup;
-        if (messageObject.getDialogId() != 777000 || replyMarkup == null) {
-            i2 = 0;
-        } else {
-            ArrayList<TLRPC.TL_keyboardButtonRow> arrayList = replyMarkup.rows;
-            int size = arrayList.size();
+        if (messageObject.getDialogId() == 777000 && (replyMarkup instanceof TLRPC.TL_replyInlineMarkup)) {
+            ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList2 = ((TLRPC.TL_replyInlineMarkup) replyMarkup).rows;
+            int size = arrayList2.size();
             i2 = 0;
             for (int i5 = 0; i5 < size; i5++) {
-                TLRPC.TL_keyboardButtonRow tL_keyboardButtonRow = arrayList.get(i5);
-                int size2 = tL_keyboardButtonRow.buttons.size();
+                TL_keyboard.KeyboardInlineButtonRow keyboardInlineButtonRow = arrayList2.get(i5);
+                int size2 = keyboardInlineButtonRow.buttons.size();
                 for (int i6 = 0; i6 < size2; i6++) {
-                    if (tL_keyboardButtonRow.buttons.get(i6) instanceof TLRPC.TL_keyboardButtonCallback) {
+                    if (TLKeyboardHelper.isType(keyboardInlineButtonRow.buttons.get(i6), TL_keyboard.TL_inlineButtonTypeCallback.class)) {
                         i2++;
                     }
                 }
             }
+        } else {
+            i2 = 0;
         }
         final int i7 = messageObject.currentAccount;
-        if (i2 > 0) {
-            ArrayList<TLRPC.TL_keyboardButtonRow> arrayList2 = replyMarkup.rows;
-            int size3 = arrayList2.size();
+        if (i2 <= 0 || !(replyMarkup instanceof TLRPC.TL_replyInlineMarkup)) {
+            linearLayout = null;
+        } else {
+            ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList3 = ((TLRPC.TL_replyInlineMarkup) replyMarkup).rows;
+            int size3 = arrayList3.size();
             int i8 = 0;
+            LinearLayout linearLayout3 = null;
             while (i8 < size3) {
-                TLRPC.TL_keyboardButtonRow tL_keyboardButtonRow2 = arrayList2.get(i8);
-                int size4 = tL_keyboardButtonRow2.buttons.size();
+                TL_keyboard.KeyboardInlineButtonRow keyboardInlineButtonRow2 = arrayList3.get(i8);
+                int size4 = keyboardInlineButtonRow2.buttons.size();
                 int i9 = 0;
                 while (i9 < size4) {
-                    TLRPC.KeyboardButton keyboardButton = tL_keyboardButtonRow2.buttons.get(i9);
-                    if (keyboardButton instanceof TLRPC.TL_keyboardButtonCallback) {
-                        if (linearLayout == null) {
-                            linearLayout = new LinearLayout(this);
-                            linearLayout.setOrientation(i4);
-                            linearLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                            linearLayout.setWeightSum(100.0f);
-                            linearLayout.setTag("b");
-                            linearLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda4
+                    TL_keyboard.KeyboardInlineButton keyboardInlineButton = keyboardInlineButtonRow2.buttons.get(i9);
+                    if (TLKeyboardHelper.isType(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeCallback.class)) {
+                        if (linearLayout3 == null) {
+                            linearLayout2 = new LinearLayout(this);
+                            linearLayout2.setOrientation(i4);
+                            linearLayout2.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+                            linearLayout2.setWeightSum(100.0f);
+                            linearLayout2.setTag("b");
+                            linearLayout2.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda4
                                 @Override // android.view.View.OnTouchListener
                                 public final boolean onTouch(View view, MotionEvent motionEvent) {
                                     boolean lambda$getButtonsViewForMessage$4;
@@ -969,29 +981,37 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                                     return lambda$getButtonsViewForMessage$4;
                                 }
                             });
+                        } else {
+                            linearLayout2 = linearLayout3;
                         }
                         TextView textView = new TextView(this);
+                        arrayList = arrayList3;
                         textView.setTextSize(1, 16.0f);
                         textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText));
                         textView.setTypeface(AndroidUtilities.bold());
-                        textView.setText(keyboardButton.text.toUpperCase());
-                        textView.setTag(keyboardButton);
+                        textView.setText(keyboardInlineButton.text.toUpperCase());
+                        textView.setTag(keyboardInlineButton);
                         textView.setGravity(17);
                         textView.setBackgroundDrawable(Theme.getSelectorDrawable(true));
-                        linearLayout.addView(textView, LayoutHelper.createLinear(-1, -1, 100.0f / i2));
+                        linearLayout2.addView(textView, LayoutHelper.createLinear(-1, -1, 100.0f / i2));
                         textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda5
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
                                 PopupNotificationActivity.lambda$getButtonsViewForMessage$5(i7, messageObject, view);
                             }
                         });
+                        linearLayout3 = linearLayout2;
+                    } else {
+                        arrayList = arrayList3;
                     }
                     i9++;
+                    arrayList3 = arrayList;
                     i4 = 0;
                 }
                 i8++;
                 i4 = 0;
             }
+            linearLayout = linearLayout3;
         }
         if (linearLayout != null) {
             int dp = AndroidUtilities.displaySize.x - AndroidUtilities.dp(24.0f);
@@ -1014,9 +1034,9 @@ public class PopupNotificationActivity extends Activity implements NotificationC
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$getButtonsViewForMessage$5(int i, MessageObject messageObject, View view) {
-        TLRPC.KeyboardButton keyboardButton = (TLRPC.KeyboardButton) view.getTag();
-        if (keyboardButton != null) {
-            SendMessagesHelper.getInstance(i).sendNotificationCallback(messageObject.getDialogId(), messageObject.getId(), keyboardButton.data);
+        TL_keyboard.KeyboardButtonProto keyboardButtonProto = (TL_keyboard.KeyboardButtonProto) view.getTag();
+        if (keyboardButtonProto != null) {
+            SendMessagesHelper.getInstance(i).sendNotificationCallback(messageObject.getDialogId(), messageObject.getId(), keyboardButtonProto.getData());
         }
     }
 

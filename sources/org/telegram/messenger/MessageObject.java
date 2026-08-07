@@ -59,12 +59,14 @@ import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.ringtone.RingtoneDataStore;
 import org.telegram.messenger.utils.tlutils.AmountUtils$Amount;
 import org.telegram.messenger.utils.tlutils.AmountUtils$Currency;
+import org.telegram.messenger.utils.tlutils.TLKeyboardHelper;
 import org.telegram.messenger.utils.tlutils.TlUtils;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.Theme;
@@ -163,6 +165,7 @@ public class MessageObject {
     public static final int TYPE_SUGGEST_BIRTHDAY = 32;
     public static final int TYPE_SUGGEST_PHOTO = 21;
     public static final int TYPE_TEXT = 0;
+    public static final int TYPE_UNSUPPORTED = 38;
     public static final int TYPE_VIDEO = 3;
     public static final int TYPE_VOICE = 2;
     private static CharSequence channelSpan;
@@ -436,6 +439,9 @@ public class MessageObject {
     public int getChatMode() {
         if (this.scheduled) {
             return 1;
+        }
+        if (isWelcomeMessage()) {
+            return 9;
         }
         return isQuickReply() ? 5 : 0;
     }
@@ -5438,7 +5444,7 @@ public class MessageObject {
         TLRPC.Message message;
         if (!this.isRestrictedMessage && !this.isRepostPreview && (message = this.messageOwner) != null) {
             TLRPC.ReplyMarkup replyMarkup = message.reply_markup;
-            if (((replyMarkup instanceof TLRPC.TL_replyInlineMarkup) && !replyMarkup.rows.isEmpty()) || getInlineBotButtons() != null) {
+            if (((replyMarkup instanceof TLRPC.TL_replyInlineMarkup) && !((TLRPC.TL_replyInlineMarkup) replyMarkup).rows.isEmpty()) || getInlineBotButtons() != null) {
                 return true;
             }
         }
@@ -5457,8 +5463,11 @@ public class MessageObject {
         TLRPC.Message message = this.messageOwner;
         if (message != null) {
             TLRPC.ReplyMarkup replyMarkup = message.reply_markup;
-            if ((replyMarkup instanceof TLRPC.TL_replyInlineMarkup) && replyMarkup.rows != null) {
-                builder.addBotKeyboard((TLRPC.TL_replyInlineMarkup) replyMarkup);
+            if (replyMarkup instanceof TLRPC.TL_replyInlineMarkup) {
+                TLRPC.TL_replyInlineMarkup tL_replyInlineMarkup = (TLRPC.TL_replyInlineMarkup) replyMarkup;
+                if (tL_replyInlineMarkup.rows != null) {
+                    builder.addBotKeyboard(tL_replyInlineMarkup);
+                }
             }
         }
         if (hasSuggestionInlineButtons()) {
@@ -5489,7 +5498,7 @@ public class MessageObject {
                 StringBuilder sb2 = this.botButtonsLayout;
                 sb2.append(i);
                 sb2.append(i3);
-                if ((button instanceof BotInlineKeyboard.ButtonBot) && (((BotInlineKeyboard.ButtonBot) button).button instanceof TLRPC.TL_keyboardButtonBuy) && (getMedia(this.messageOwner).flags & 4) != 0) {
+                if ((button instanceof BotInlineKeyboard.ButtonBot) && TLKeyboardHelper.isType(((BotInlineKeyboard.ButtonBot) button).button, TL_keyboard.TL_inlineButtonTypeBuy.class) && (getMedia(this.messageOwner).flags & 4) != 0) {
                     replaceEmoji = LocaleController.getString(R.string.PaymentReceipt);
                 } else {
                     String text = button.getText();
@@ -7323,7 +7332,7 @@ public class MessageObject {
     }
 
     public static boolean isBlueBlock(TL_iv.PageBlock pageBlock) {
-        return (pageBlock instanceof TL_iv.pageBlockTable) || (pageBlock instanceof TL_iv.pageBlockMath) || (pageBlock instanceof TL_iv.pageBlockAudio) || (pageBlock instanceof TL_iv.pageBlockMap) || (pageBlock instanceof TL_iv.pageBlockPhoto) || (pageBlock instanceof TL_iv.pageBlockVideo) || (pageBlock instanceof TL_iv.pageBlockCollage) || (pageBlock instanceof TL_iv.pageBlockSlideshow);
+        return (pageBlock instanceof TL_iv.pageBlockTable) || (pageBlock instanceof TL_iv.pageBlockMath) || (pageBlock instanceof TL_iv.pageBlockAudio) || (pageBlock instanceof TL_iv.pageBlockDocument) || (pageBlock instanceof TL_iv.pageBlockMap) || (pageBlock instanceof TL_iv.pageBlockPhoto) || (pageBlock instanceof TL_iv.pageBlockVideo) || (pageBlock instanceof TL_iv.pageBlockCollage) || (pageBlock instanceof TL_iv.pageBlockSlideshow);
     }
 
     public static SpannableStringBuilder span(String str, int i) {
@@ -7463,7 +7472,7 @@ public class MessageObject {
                 spannableStringBuilder.append((CharSequence) span("⊞", R.drawable.iv_preview_table)).append(" ");
                 TL_iv.RichText richText = ((TL_iv.pageBlockTable) pageBlock).title;
                 if (richText != null && !(richText instanceof TL_iv.textEmpty)) {
-                    formatRichText(richText, z, z2, i, spannableStringBuilder, 1);
+                    formatRichText(richText, z, z2, i, spannableStringBuilder, 0);
                 } else {
                     spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.AccDescrIVTable));
                 }
@@ -7494,6 +7503,16 @@ public class MessageObject {
                     } else if (tL_documentAttributeFilename != null && tL_documentAttributeFilename.file_name != null) {
                         spannableStringBuilder.append((CharSequence) span("🎵", R.drawable.iv_audio_preview)).append(" ").append((CharSequence) tL_documentAttributeFilename.file_name);
                     }
+                }
+            } else if (pageBlock instanceof TL_iv.pageBlockDocument) {
+                TLRPC.Document findDocument = AndroidUtilities.findDocument(richMessage.documents, ((TL_iv.pageBlockDocument) pageBlock).document_id);
+                if (findDocument != null) {
+                    String documentFileName = FileLoader.getDocumentFileName(findDocument);
+                    SpannableStringBuilder append = spannableStringBuilder.append((CharSequence) span("📎", R.drawable.msg_filled_data_files)).append(" ");
+                    if (TextUtils.isEmpty(documentFileName)) {
+                        documentFileName = LocaleController.getString(R.string.AttachDocument);
+                    }
+                    append.append((CharSequence) documentFileName);
                 }
             } else if (pageBlock instanceof TL_iv.pageBlockCover) {
                 formatRichBlock(((TL_iv.pageBlockCover) pageBlock).cover, z, z2, i, spannableStringBuilder, richMessage);
@@ -7821,90 +7840,96 @@ public class MessageObject {
             } else {
                 TLRPC.Message message = this.messageOwner;
                 if ((message instanceof TLRPC.TL_message) || (message instanceof TLRPC.TL_messageForwarded_old2)) {
-                    if (this.isRestrictedMessage) {
+                    if (getMedia(message) instanceof TLRPC.TL_messageMediaUnsupported) {
+                        this.contentType = 10;
+                        this.type = 38;
+                    } else if (this.isRestrictedMessage) {
                         this.type = 0;
-                    } else if (message.rich_message != null) {
-                        this.type = 36;
-                    } else if (this.emojiAnimatedSticker != null || this.emojiAnimatedStickerId != null) {
-                        if (isSticker()) {
-                            this.type = 13;
-                        } else {
-                            this.type = 15;
-                        }
-                    } else if (message.media instanceof TLRPC.TL_messageMediaPaidMedia) {
-                        this.type = 29;
-                    } else if (isMediaEmpty(false) && !isDice() && !isSponsored() && this.emojiOnlyCount >= 1 && !this.hasUnwrappedEmoji && this.messageOwner != null && !hasNonEmojiEntities()) {
-                        this.type = 19;
-                    } else if (isMediaEmpty()) {
-                        this.type = 0;
-                        if (TextUtils.isEmpty(this.messageText) && this.eventId == 0) {
-                            this.messageText = "";
-                        }
-                    } else if (hasExtendedMediaPreview()) {
-                        this.type = 20;
-                    } else if (getMedia(this.messageOwner).ttl_seconds != 0 && ((getMedia(this.messageOwner).photo instanceof TLRPC.TL_photoEmpty) || (getDocument() instanceof TLRPC.TL_documentEmpty) || (((getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDocument) && getDocument() == null) || this.forceExpired))) {
-                        this.contentType = 1;
-                        this.type = 10;
-                    } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGiveaway) {
-                        this.type = 26;
-                    } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGiveawayResults) {
-                        this.type = 28;
-                    } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDice) {
-                        this.type = 15;
-                        if (getMedia(this.messageOwner).document == null) {
-                            getMedia(this.messageOwner).document = new TLRPC.TL_document();
-                            getMedia(this.messageOwner).document.file_reference = new byte[0];
-                            getMedia(this.messageOwner).document.mime_type = "application/x-tgsdice";
-                            getMedia(this.messageOwner).document.dc_id = TLObject.FLAG_31;
-                            getMedia(this.messageOwner).document.id = -2147483648L;
-                            TLRPC.TL_documentAttributeImageSize tL_documentAttributeImageSize = new TLRPC.TL_documentAttributeImageSize();
-                            tL_documentAttributeImageSize.w = 512;
-                            tL_documentAttributeImageSize.h = 512;
-                            getMedia(this.messageOwner).document.attributes.add(tL_documentAttributeImageSize);
-                        }
-                    } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto) {
-                        this.type = isVideo() ? 3 : 1;
-                    } else if ((getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGeo) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaVenue) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGeoLive)) {
-                        this.type = 4;
-                    } else if (isRoundVideo()) {
-                        this.type = 5;
-                    } else if (isVideo()) {
-                        this.type = 3;
-                    } else if (isVoice()) {
-                        this.type = 2;
-                    } else if (isMusic()) {
-                        this.type = 14;
-                    } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaContact) {
-                        this.type = 12;
-                    } else if ((getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPoll) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaToDo)) {
-                        this.type = 17;
-                        this.checkedVotes = new ArrayList<>();
-                    } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaUnsupported) {
-                        this.type = 0;
-                    } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDocument) {
-                        TLRPC.Document document = getDocument();
-                        if (document != null && document.mime_type != null) {
-                            if (isGifDocument(document, hasValidGroupId())) {
-                                this.type = 8;
-                            } else if (isSticker()) {
+                    } else {
+                        TLRPC.Message message2 = this.messageOwner;
+                        if (message2.rich_message != null) {
+                            this.type = 36;
+                        } else if (this.emojiAnimatedSticker != null || this.emojiAnimatedStickerId != null) {
+                            if (isSticker()) {
                                 this.type = 13;
-                            } else if (isAnimatedSticker()) {
+                            } else {
                                 this.type = 15;
+                            }
+                        } else if (message2.media instanceof TLRPC.TL_messageMediaPaidMedia) {
+                            this.type = 29;
+                        } else if (isMediaEmpty(false) && !isDice() && !isSponsored() && this.emojiOnlyCount >= 1 && !this.hasUnwrappedEmoji && this.messageOwner != null && !hasNonEmojiEntities()) {
+                            this.type = 19;
+                        } else if (isMediaEmpty()) {
+                            this.type = 0;
+                            if (TextUtils.isEmpty(this.messageText) && this.eventId == 0) {
+                                this.messageText = "";
+                            }
+                        } else if (hasExtendedMediaPreview()) {
+                            this.type = 20;
+                        } else if (getMedia(this.messageOwner).ttl_seconds != 0 && ((getMedia(this.messageOwner).photo instanceof TLRPC.TL_photoEmpty) || (getDocument() instanceof TLRPC.TL_documentEmpty) || (((getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDocument) && getDocument() == null) || this.forceExpired))) {
+                            this.contentType = 1;
+                            this.type = 10;
+                        } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGiveaway) {
+                            this.type = 26;
+                        } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGiveawayResults) {
+                            this.type = 28;
+                        } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDice) {
+                            this.type = 15;
+                            if (getMedia(this.messageOwner).document == null) {
+                                getMedia(this.messageOwner).document = new TLRPC.TL_document();
+                                getMedia(this.messageOwner).document.file_reference = new byte[0];
+                                getMedia(this.messageOwner).document.mime_type = "application/x-tgsdice";
+                                getMedia(this.messageOwner).document.dc_id = TLObject.FLAG_31;
+                                getMedia(this.messageOwner).document.id = -2147483648L;
+                                TLRPC.TL_documentAttributeImageSize tL_documentAttributeImageSize = new TLRPC.TL_documentAttributeImageSize();
+                                tL_documentAttributeImageSize.w = 512;
+                                tL_documentAttributeImageSize.h = 512;
+                                getMedia(this.messageOwner).document.attributes.add(tL_documentAttributeImageSize);
+                            }
+                        } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto) {
+                            this.type = isVideo() ? 3 : 1;
+                        } else if ((getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGeo) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaVenue) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGeoLive)) {
+                            this.type = 4;
+                        } else if (isRoundVideo()) {
+                            this.type = 5;
+                        } else if (isVideo()) {
+                            this.type = 3;
+                        } else if (isVoice()) {
+                            this.type = 2;
+                        } else if (isMusic()) {
+                            this.type = 14;
+                        } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaContact) {
+                            this.type = 12;
+                        } else if ((getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPoll) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaToDo)) {
+                            this.type = 17;
+                            this.checkedVotes = new ArrayList<>();
+                        } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaUnsupported) {
+                            this.type = 0;
+                        } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDocument) {
+                            TLRPC.Document document = getDocument();
+                            if (document != null && document.mime_type != null) {
+                                if (isGifDocument(document, hasValidGroupId())) {
+                                    this.type = 8;
+                                } else if (isSticker()) {
+                                    this.type = 13;
+                                } else if (isAnimatedSticker()) {
+                                    this.type = 15;
+                                } else {
+                                    this.type = 9;
+                                }
                             } else {
                                 this.type = 9;
                             }
-                        } else {
-                            this.type = 9;
-                        }
-                    } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGame) {
-                        this.type = 0;
-                    } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaInvoice) {
-                        this.type = 0;
-                    } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaStory) {
-                        int i3 = getMedia(this.messageOwner).via_mention ? 24 : 23;
-                        this.type = i3;
-                        if (i3 == 24) {
-                            this.contentType = 1;
+                        } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGame) {
+                            this.type = 0;
+                        } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaInvoice) {
+                            this.type = 0;
+                        } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaStory) {
+                            int i3 = getMedia(this.messageOwner).via_mention ? 24 : 23;
+                            this.type = i3;
+                            if (i3 == 24) {
+                                this.contentType = 1;
+                            }
                         }
                     }
                 } else {
@@ -11613,6 +11638,10 @@ public class MessageObject {
         if (bool != null) {
             return bool.booleanValue();
         }
+        if (isWelcomeMessage()) {
+            this.isOutOwnerCached = Boolean.FALSE;
+            return false;
+        }
         long clientUserId = UserConfig.getInstance(this.currentAccount).getClientUserId();
         if (this.isSaved || getDialogId() == clientUserId) {
             TLRPC.MessageFwdHeader messageFwdHeader = this.messageOwner.fwd_from;
@@ -13948,7 +13977,7 @@ public class MessageObject {
     }
 
     public boolean canEditMessage(TLRPC.Chat chat) {
-        return !isEphemeral() && canEditMessage(this.currentAccount, this.messageOwner, chat, this.scheduled);
+        return !isEphemeralAndNotWelcome() && canEditMessage(this.currentAccount, this.messageOwner, chat, this.scheduled);
     }
 
     public boolean canEditMessageScheduleTime(TLRPC.Chat chat) {
@@ -13961,7 +13990,7 @@ public class MessageObject {
     }
 
     public boolean canEditMedia() {
-        if (!isSecretMedia() && !isEphemeral()) {
+        if (!isSecretMedia() && !isEphemeralAndNotWelcome()) {
             if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto) {
                 return true;
             }
@@ -16072,6 +16101,14 @@ public class MessageObject {
         return isEphemeral(this.messageOwner);
     }
 
+    public boolean isWelcomeMessage() {
+        return isWelcomeMessage(this.messageOwner);
+    }
+
+    public boolean isEphemeralAndNotWelcome() {
+        return isEphemeralAndNotWelcome(this.messageOwner);
+    }
+
     public int getEphemeralId() {
         if (isEphemeral()) {
             return ephemeralMessageIdUnpack(getId());
@@ -16085,6 +16122,14 @@ public class MessageObject {
             return message.ephemeralReceiverBotId;
         }
         return 0L;
+    }
+
+    public static boolean isWelcomeMessage(TLRPC.Message message) {
+        return isEphemeral(message) && message.ephemeralReceiverBotId == -1;
+    }
+
+    public static boolean isEphemeralAndNotWelcome(TLRPC.Message message) {
+        return isEphemeral(message) && !isWelcomeMessage(message);
     }
 
     public static boolean isEphemeral(TLRPC.Message message) {

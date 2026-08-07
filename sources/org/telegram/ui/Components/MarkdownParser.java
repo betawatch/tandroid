@@ -1,7 +1,5 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.text.TextUtils;
 import io.noties.markwon.MarkwonPlugin;
 import io.noties.markwon.ext.latex.JLatexMathBlock;
@@ -72,7 +70,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.MarkdownParser;
-import ru.noties.jlatexmath.JLatexMathDrawable;
+import org.telegram.ui.iv.Latex;
 
 /* loaded from: classes5.dex */
 public abstract class MarkdownParser {
@@ -214,25 +212,12 @@ public abstract class MarkdownParser {
         String trim = str == null ? "" : str.trim();
         textmath.source = trim;
         textmath.tried = true;
-        try {
-            JLatexMathDrawable build = JLatexMathDrawable.builder(trim).textSize(AndroidUtilities.dp(20.0f)).build();
-            int intrinsicWidth = build.getIntrinsicWidth();
-            int intrinsicHeight = build.getIntrinsicHeight();
-            if (intrinsicWidth > 0 && intrinsicHeight > 0) {
-                Bitmap createBitmap = Bitmap.createBitmap(intrinsicWidth, intrinsicHeight, Bitmap.Config.ALPHA_8);
-                build.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
-                build.draw(new Canvas(createBitmap));
-                textmath.w = intrinsicWidth;
-                textmath.h = intrinsicHeight;
-                try {
-                    textmath.depth = build.icon().getIconDepth();
-                } catch (Throwable th) {
-                    FileLog.e(th);
-                }
-                textmath.bitmap = createBitmap;
-            }
-        } catch (Throwable th2) {
-            FileLog.e(th2);
+        Latex render = Latex.render(trim, AndroidUtilities.dp(20.0f), true);
+        if (render != null) {
+            textmath.w = render.width;
+            textmath.h = render.height;
+            textmath.depth = render.depth;
+            textmath.bitmap = render.bitmap;
         }
         return textmath;
     }

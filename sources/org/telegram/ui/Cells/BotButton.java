@@ -15,7 +15,8 @@ import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.utils.tlutils.TLKeyboardHelper;
+import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.LoadingDrawable;
@@ -26,7 +27,7 @@ import org.telegram.ui.LinkManager;
 class BotButton {
     public int angle;
     public AnimatedEmojiDrawable animatedEmojiDrawable;
-    public TLRPC.KeyboardButton button;
+    public TL_keyboard.KeyboardInlineButton button;
     public BotInlineKeyboard.ButtonCustom buttonCustom;
     public BotInlineKeyboard.Button buttonImpl;
     public int height;
@@ -57,8 +58,8 @@ class BotButton {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:64:0x029a  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x02a6  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x02ce  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x02b0  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x02d8  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -164,36 +165,34 @@ class BotButton {
             this.title.ellipsize(Math.max(1.0f, (rectF.width() - AndroidUtilities.dp(15.0f)) - dp3));
             this.title.draw(canvas, width, rectF.centerY(), this.isLocked ? 0.5f : 1.0f);
             canvas.restore();
+            TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = (TL_keyboard.TL_inlineButtonTypeUrl) TLKeyboardHelper.getType(this.button, TL_keyboard.TL_inlineButtonTypeUrl.class);
             if (this.buttonCustom == null) {
                 if (this.isLocked) {
                     Drawable themeDrawable2 = Theme.getThemeDrawable("drawableBotLock", resourcesProvider);
                     BaseCell.setDrawableBounds(themeDrawable2, (((int) rectF.right) - AndroidUtilities.dp(3.0f)) - themeDrawable2.getIntrinsicWidth(), rectF.top + AndroidUtilities.dp(3.0f));
                     themeDrawable2.draw(canvas);
                 }
-            } else {
-                TLRPC.KeyboardButton keyboardButton = this.button;
-                if (keyboardButton instanceof TLRPC.TL_keyboardButtonWebView) {
-                    Drawable themeDrawable3 = Theme.getThemeDrawable("drawableBotWebView", resourcesProvider);
-                    BaseCell.setDrawableBounds(themeDrawable3, (((int) rectF.right) - AndroidUtilities.dp(3.0f)) - themeDrawable3.getIntrinsicWidth(), rectF.top + AndroidUtilities.dp(3.0f));
-                    themeDrawable3.draw(canvas);
-                } else if (keyboardButton instanceof TLRPC.TL_keyboardButtonUrl) {
-                    if (LinkManager.isWebAppLink(keyboardButton.url)) {
-                        themeDrawable = Theme.getThemeDrawable("drawableBotWebView", resourcesProvider);
-                    } else if (this.isInviteButton) {
-                        themeDrawable = Theme.getThemeDrawable("drawable_botInvite", resourcesProvider);
-                    } else {
-                        themeDrawable = Theme.getThemeDrawable("drawableBotLink", resourcesProvider);
-                    }
-                    BaseCell.setDrawableBounds(themeDrawable, (((int) rectF.right) - AndroidUtilities.dp(3.0f)) - themeDrawable.getIntrinsicWidth(), rectF.top + AndroidUtilities.dp(3.0f));
-                    themeDrawable.draw(canvas);
-                } else if ((keyboardButton instanceof TLRPC.TL_keyboardButtonSwitchInline) || (keyboardButton instanceof TLRPC.TL_keyboardButtonRequestPeer)) {
-                    Drawable themeDrawable4 = Theme.getThemeDrawable("drawableBotInline", resourcesProvider);
-                    BaseCell.setDrawableBounds(themeDrawable4, (((int) rectF.right) - AndroidUtilities.dp(3.0f)) - themeDrawable4.getIntrinsicWidth(), rectF.top + AndroidUtilities.dp(3.0f));
-                    themeDrawable4.draw(canvas);
-                } else if ((keyboardButton instanceof TLRPC.TL_keyboardButtonBuy) && z2) {
-                    BaseCell.setDrawableBounds(Theme.chat_botCardDrawable, (((int) rectF.right) - AndroidUtilities.dp(5.0f)) - Theme.chat_botCardDrawable.getIntrinsicWidth(), rectF.top + AndroidUtilities.dp(4.0f));
-                    Theme.chat_botCardDrawable.draw(canvas);
+            } else if (TLKeyboardHelper.isButtonWebView(this.button)) {
+                Drawable themeDrawable3 = Theme.getThemeDrawable("drawableBotWebView", resourcesProvider);
+                BaseCell.setDrawableBounds(themeDrawable3, (((int) rectF.right) - AndroidUtilities.dp(3.0f)) - themeDrawable3.getIntrinsicWidth(), rectF.top + AndroidUtilities.dp(3.0f));
+                themeDrawable3.draw(canvas);
+            } else if (tL_inlineButtonTypeUrl != null) {
+                if (LinkManager.isWebAppLink(tL_inlineButtonTypeUrl.url)) {
+                    themeDrawable = Theme.getThemeDrawable("drawableBotWebView", resourcesProvider);
+                } else if (this.isInviteButton) {
+                    themeDrawable = Theme.getThemeDrawable("drawable_botInvite", resourcesProvider);
+                } else {
+                    themeDrawable = Theme.getThemeDrawable("drawableBotLink", resourcesProvider);
                 }
+                BaseCell.setDrawableBounds(themeDrawable, (((int) rectF.right) - AndroidUtilities.dp(3.0f)) - themeDrawable.getIntrinsicWidth(), rectF.top + AndroidUtilities.dp(3.0f));
+                themeDrawable.draw(canvas);
+            } else if (TLKeyboardHelper.isType(this.button, TL_keyboard.TL_inlineButtonTypeSwitchInline.class) || TLKeyboardHelper.isType(this.button, TL_keyboard.TL_buttonTypeRequestPeer.class)) {
+                Drawable themeDrawable4 = Theme.getThemeDrawable("drawableBotInline", resourcesProvider);
+                BaseCell.setDrawableBounds(themeDrawable4, (((int) rectF.right) - AndroidUtilities.dp(3.0f)) - themeDrawable4.getIntrinsicWidth(), rectF.top + AndroidUtilities.dp(3.0f));
+                themeDrawable4.draw(canvas);
+            } else if (TLKeyboardHelper.isType(this.button, TL_keyboard.TL_inlineButtonTypeBuy.class) && z2) {
+                BaseCell.setDrawableBounds(Theme.chat_botCardDrawable, (((int) rectF.right) - AndroidUtilities.dp(5.0f)) - Theme.chat_botCardDrawable.getIntrinsicWidth(), rectF.top + AndroidUtilities.dp(4.0f));
+                Theme.chat_botCardDrawable.draw(canvas);
             }
             canvas.restore();
             return z3;
@@ -202,6 +201,7 @@ class BotButton {
         this.title.ellipsize(Math.max(1.0f, (rectF.width() - AndroidUtilities.dp(15.0f)) - dp3));
         this.title.draw(canvas, width, rectF.centerY(), this.isLocked ? 0.5f : 1.0f);
         canvas.restore();
+        TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl2 = (TL_keyboard.TL_inlineButtonTypeUrl) TLKeyboardHelper.getType(this.button, TL_keyboard.TL_inlineButtonTypeUrl.class);
         if (this.buttonCustom == null) {
         }
         canvas.restore();

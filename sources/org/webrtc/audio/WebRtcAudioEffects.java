@@ -5,6 +5,7 @@ import android.media.audiofx.AudioEffect;
 import android.media.audiofx.NoiseSuppressor;
 import java.util.UUID;
 import org.webrtc.Logging;
+import ru.noties.jlatexmath.android.BuildConfig;
 
 /* loaded from: classes5.dex */
 class WebRtcAudioEffects {
@@ -121,7 +122,7 @@ class WebRtcAudioEffects {
     }
 
     public void release() {
-        Logging.d(TAG, "release");
+        Logging.d(TAG, BuildConfig.BUILD_TYPE);
         AcousticEchoCanceler acousticEchoCanceler = this.aec;
         if (acousticEchoCanceler != null) {
             acousticEchoCanceler.release();

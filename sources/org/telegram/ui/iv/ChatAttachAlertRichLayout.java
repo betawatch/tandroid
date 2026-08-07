@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -37,6 +36,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.SendMessageChatArguments;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
@@ -61,6 +61,7 @@ import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ChatAttachAlert;
 import org.telegram.ui.Components.ChatAttachAlertAudioLayout;
+import org.telegram.ui.Components.ChatAttachAlertDocumentLayout;
 import org.telegram.ui.Components.ChatAttachAlertLocationLayout;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.EmojiView;
@@ -75,9 +76,8 @@ import org.telegram.ui.iv.RichCommandSuggestions;
 import org.telegram.ui.iv.RichEditor;
 import org.telegram.ui.iv.RichEditorListView;
 import org.telegram.ui.iv.RichEditorToolbar;
-import ru.noties.jlatexmath.JLatexMathDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout implements NotificationCenter.NotificationCenterDelegate {
     private static final int[] STYLE_FLAGS = {1, 2, 16, 8, 256, 4, 16384, 32768};
     private boolean attachButtonsShown;
@@ -318,7 +318,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         @Override // org.telegram.ui.iv.RichEditorToolbar.Delegate
         public void onAttach() {
             ChatAttachAlertRichLayout.this.listView.pendingMediaRow = null;
-            ChatAttachAlertRichLayout.this.openAttach(74, 0);
+            ChatAttachAlertRichLayout.this.openAttach(90, 0);
         }
 
         @Override // org.telegram.ui.iv.RichEditorToolbar.Delegate
@@ -1246,9 +1246,9 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
     public boolean sendSelectedItems(boolean z, int i, int i2, long j, boolean z2) {
         MessageObject messageObject;
-        MessageObject messageObject2;
         long j2;
-        int i3;
+        MessageObject messageObject2;
+        SendMessageChatArguments sendMessageChatArguments;
         ChatActivityEnterView chatActivityEnterView;
         if (isSendLocked()) {
             showConversionSheet();
@@ -1281,18 +1281,17 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
             ChatActivity chatActivity = (ChatActivity) baseFragment2;
             MessageObject replyMessage = chatActivity.getReplyMessage();
             MessageObject threadMessage = chatActivity.getThreadMessage();
-            long sendMonoForumPeerId = chatActivity.getSendMonoForumPeerId();
-            i3 = chatActivity.getQuickReplyId();
+            j2 = chatActivity.getSendMonoForumPeerId();
+            sendMessageChatArguments = chatActivity.getMessageChatSendParams();
             messageObject2 = replyMessage;
             messageObject = threadMessage;
-            j2 = sendMonoForumPeerId;
         } else {
             messageObject = null;
-            messageObject2 = null;
             j2 = 0;
-            i3 = 0;
+            messageObject2 = null;
+            sendMessageChatArguments = null;
         }
-        SendMessagesHelper.prepareSendingArticle(AccountInstance.getInstance(this.parentAlert.currentAccount), flattenRowsToBlocks, collectPhotos, collectDocuments, null, false, this.parentAlert.getDialogId(), messageObject2, messageObject, z, i, i2, null, i3, j, j2, 0L);
+        SendMessagesHelper.prepareSendingArticle(AccountInstance.getInstance(this.parentAlert.currentAccount), flattenRowsToBlocks, collectPhotos, collectDocuments, null, false, this.parentAlert.getDialogId(), messageObject2, messageObject, z, i, i2, sendMessageChatArguments, j, j2, 0L);
         this.parentAlert.dismiss(true);
         return true;
     }
@@ -1648,6 +1647,38 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
                 ChatAttachAlertRichLayout.this.lambda$openAttach$26(chatAttachAlert, arrayList, charSequence, z, i3, i4, j, z2, j2);
             }
         });
+        chatAttachAlert.setDocumentsDelegate(new ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout.6
+            @Override // org.telegram.ui.Components.ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate
+            public /* synthetic */ void didSelectPhotos(ArrayList arrayList, boolean z, int i3, int i4, long j) {
+                ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate.-CC.$default$didSelectPhotos(this, arrayList, z, i3, i4, j);
+            }
+
+            @Override // org.telegram.ui.Components.ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate
+            public /* synthetic */ void startMusicSelectActivity() {
+                ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate.-CC.$default$startMusicSelectActivity(this);
+            }
+
+            @Override // org.telegram.ui.Components.ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate
+            public void didSelectFiles(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i3, int i4, long j, boolean z2, long j2) {
+                if (arrayList != null && !arrayList.isEmpty()) {
+                    ChatAttachAlertRichLayout.this.listView.lambda$attachDocument$38((String) arrayList.get(0));
+                } else if (arrayList3 != null && !arrayList3.isEmpty()) {
+                    ChatAttachAlertRichLayout.this.listView.attachDocument((MessageObject) arrayList3.get(0));
+                }
+                chatAttachAlert.dismiss(true);
+            }
+
+            @Override // org.telegram.ui.Components.ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate
+            public void startDocumentSelectActivity() {
+                try {
+                    Intent intent = new Intent("android.intent.action.GET_CONTENT");
+                    intent.setType("*/*");
+                    ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertRichLayout.this).parentAlert.baseFragment.startActivityForResult(intent, 21);
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+            }
+        });
         chatAttachAlert.init();
         if (i2 != 0) {
             chatAttachAlert.openAttachLayoutForType(i2);
@@ -1685,6 +1716,13 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
             return;
         }
         this.listView.attachExternalMedia(intent.getData());
+    }
+
+    public void onExternalDocumentPicked(Intent intent) {
+        if (intent == null || intent.getData() == null) {
+            return;
+        }
+        this.listView.attachDocument(intent.getData());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1792,7 +1830,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         emojiView2.fixBottomTabContainerTranslation = false;
         emojiView2.setBottomInset(AndroidUtilities.navigationBarHeight);
         this.emojiView.hideBottomTabContainerBackground();
-        this.emojiView.setDelegate(new EmojiView.EmojiViewDelegate() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout.6
+        this.emojiView.setDelegate(new EmojiView.EmojiViewDelegate() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout.7
             @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ boolean canAddCaptionToGif(TLRPC.Document document) {
                 return EmojiView.EmojiViewDelegate.-CC.$default$canAddCaptionToGif(this, document);
@@ -2139,7 +2177,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         editTextCell.editText.setMaxLines(5);
         editTextCell.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(24.0f), Theme.getColor(Theme.key_windowBackgroundWhite, resourcesProvider)));
         editTextCell.setText(strArr[0]);
-        editTextCell.editText.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout.7
+        editTextCell.editText.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout.8
             @Override // android.text.TextWatcher
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
             }
@@ -2195,37 +2233,13 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$showEditLatexSheet$29(String[] strArr, final Utilities.Callback2 callback2) {
-        final boolean z = true;
-        final Bitmap bitmap = null;
-        try {
-            JLatexMathDrawable build = JLatexMathDrawable.builder(strArr[0]).textSize(AndroidUtilities.dp(26.0f)).build();
-            int intrinsicWidth = build.getIntrinsicWidth();
-            int intrinsicHeight = build.getIntrinsicHeight();
-            if (intrinsicWidth > 0 && intrinsicHeight > 0) {
-                Bitmap createBitmap = Bitmap.createBitmap(intrinsicWidth, intrinsicHeight, Bitmap.Config.ALPHA_8);
-                build.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
-                build.draw(new Canvas(createBitmap));
-                bitmap = createBitmap;
-                z = false;
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
+        final boolean z = false;
+        Latex render = Latex.render(strArr[0], AndroidUtilities.dp(26.0f), false);
+        if (render == null) {
+            render = Latex.render(LocaleController.getString(R.string.ArticleLatexError), AndroidUtilities.dp(26.0f), false);
+            z = true;
         }
-        if (z) {
-            try {
-                JLatexMathDrawable build2 = JLatexMathDrawable.builder(LocaleController.getString(R.string.ArticleLatexError)).textSize(AndroidUtilities.dp(26.0f)).build();
-                int intrinsicWidth2 = build2.getIntrinsicWidth();
-                int intrinsicHeight2 = build2.getIntrinsicHeight();
-                if (intrinsicWidth2 > 0 && intrinsicHeight2 > 0) {
-                    Bitmap createBitmap2 = Bitmap.createBitmap(intrinsicWidth2, intrinsicHeight2, Bitmap.Config.ALPHA_8);
-                    build2.setBounds(0, 0, intrinsicWidth2, intrinsicHeight2);
-                    build2.draw(new Canvas(createBitmap2));
-                    bitmap = createBitmap2;
-                }
-            } catch (Exception e2) {
-                FileLog.e(e2);
-            }
-        }
+        final Bitmap bitmap = render != null ? render.bitmap : null;
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.iv.ChatAttachAlertRichLayout$$ExternalSyntheticLambda23
             @Override // java.lang.Runnable
             public final void run() {

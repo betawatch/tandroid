@@ -75,6 +75,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.BaseFragment;
@@ -9582,7 +9583,7 @@ public class MediaDataController extends BaseController {
         int i4;
         ArrayList<TLRPC.Message> arrayList5;
         int i5;
-        ArrayList<TLRPC.EphemeralMessage> ephemeralMessagesInternal;
+        ArrayList<TL_ephemeral.EphemeralMessage> ephemeralMessagesInternal;
         ArrayList<TLRPC.Chat> arrayList6;
         int i6;
         String str;
@@ -9722,7 +9723,7 @@ public class MediaDataController extends BaseController {
                         }
                     }
                     if (!arrayList18.isEmpty() && (ephemeralMessagesInternal = getMessagesStorage().getEphemeralMessagesInternal(j3, arrayList18)) != null) {
-                        Iterator<TLRPC.EphemeralMessage> it2 = ephemeralMessagesInternal.iterator();
+                        Iterator<TL_ephemeral.EphemeralMessage> it2 = ephemeralMessagesInternal.iterator();
                         while (it2.hasNext()) {
                             TLRPC.TL_message convertEphemeralToFakeDefault = EphemeralMessagesHelper.convertEphemeralToFakeDefault(it2.next());
                             MessagesStorage.addUsersAndChatsFromMessage(convertEphemeralToFakeDefault, arrayList13, arrayList14, null);

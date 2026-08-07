@@ -28,8 +28,19 @@ import org.telegram.ui.MultiLayoutTypingAnimator;
 public class BotForumHelper extends BaseController {
     private static volatile BotForumHelper[] Instance = new BotForumHelper[4];
     private final DialogTopicIdKeyMap<BotDraftMessage> botTextDraftsByRandomIds;
+    private final DialogTopicIdKeyMap<Object> botTextDraftsByRandomIdsBlocklist;
     private final LongSparseArray<List<MessagesStorage.IntCallback>> pendingBotTopics;
     private final SharedPreferences preferences;
+
+    public enum SteamingSendButtonState {
+        NO_STREAMING,
+        BLOCKING,
+        STOP
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$stopStreaming$2(TLRPC.Bool bool, TLRPC.TL_error tL_error) {
+    }
 
     private MessageObject createDraftMessage(long j, int i, long j2, int i2, TLRPC.TL_textWithEntities tL_textWithEntities) {
         TLRPC.TL_message tL_message = new TLRPC.TL_message();
@@ -83,33 +94,51 @@ public class BotForumHelper extends BaseController {
         return messageObject;
     }
 
-    public void onBotForumDraftUpdate(final long j, final int i, final long j2, TLRPC.TL_textWithEntities tL_textWithEntities) {
+    public void onBotForumDraftUpdate(long j, int i, TLRPC.TL_sendMessageTextDraftAction tL_sendMessageTextDraftAction) {
+        onBotForumDraftUpdate(j, i, tL_sendMessageTextDraftAction.random_id, tL_sendMessageTextDraftAction.text, tL_sendMessageTextDraftAction.can_stop, tL_sendMessageTextDraftAction.keep_on_stop);
+    }
+
+    public void onBotForumDraftUpdate(long j, int i, TLRPC.TL_sendMessageRichMessageDraftAction tL_sendMessageRichMessageDraftAction) {
+        onBotForumDraftUpdate(j, i, tL_sendMessageRichMessageDraftAction.random_id, tL_sendMessageRichMessageDraftAction.rich_message, tL_sendMessageRichMessageDraftAction.can_stop, tL_sendMessageRichMessageDraftAction.keep_on_stop);
+    }
+
+    private void onBotForumDraftUpdate(final long j, final int i, final long j2, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z, boolean z2) {
         long[] jArr;
-        long[] jArr2;
+        LongSparseArray<BotDraftMessage> longSparseArray;
         BotDraftMessage botDraftMessage;
+        boolean z3;
         int i2;
         FileLog.d("[BotForum] onDraftNewDraft " + j + " " + i + " " + j2);
         long j3 = (long) i;
-        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j, j3);
-        if (longSparseArray == null || longSparseArray.size() <= 0) {
+        if (this.botTextDraftsByRandomIdsBlocklist.get(j, j3, j2) != null) {
+            FileLog.d("[BotForum] onDraftNewDraft ignore " + j + " " + i + " " + j2);
+            return;
+        }
+        LongSparseArray<BotDraftMessage> longSparseArray2 = this.botTextDraftsByRandomIds.get(j, j3);
+        if (longSparseArray2 == null || longSparseArray2.size() <= 0) {
             jArr = null;
         } else {
-            jArr = new long[longSparseArray.size()];
-            int size = longSparseArray.size();
+            jArr = new long[longSparseArray2.size()];
+            int size = longSparseArray2.size();
             for (int i3 = 0; i3 < size; i3++) {
-                jArr[i3] = longSparseArray.keyAt(i3);
+                jArr[i3] = longSparseArray2.keyAt(i3);
             }
         }
-        long[] jArr3 = jArr;
+        long[] jArr2 = jArr;
         BotDraftMessage botDraftMessage2 = this.botTextDraftsByRandomIds.get(j, j3, j2);
         if (botDraftMessage2 == null) {
-            jArr2 = jArr3;
-            botDraftMessage = new BotDraftMessage(j, i, j2, getUserConfig().getNewMessageId());
-            this.botTextDraftsByRandomIds.put(j, j3, j2, botDraftMessage);
+            longSparseArray = longSparseArray2;
+            BotDraftMessage botDraftMessage3 = new BotDraftMessage(j, i, j2, getUserConfig().getNewMessageId());
+            this.botTextDraftsByRandomIds.put(j, j3, j2, botDraftMessage3);
+            z3 = z2;
+            botDraftMessage = botDraftMessage3;
         } else {
-            jArr2 = jArr3;
+            longSparseArray = longSparseArray2;
             botDraftMessage = botDraftMessage2;
+            z3 = z2;
         }
+        botDraftMessage.keepOnStop = z3;
+        botDraftMessage.canStop = z;
         if (jArr2 != null) {
             int length = jArr2.length;
             for (int i4 = 0; i4 < length; i4 = i2 + 1) {
@@ -117,59 +146,68 @@ public class BotForumHelper extends BaseController {
                 if (j4 == j2) {
                     i2 = i4;
                 } else {
-                    BotDraftMessage botDraftMessage3 = longSparseArray.get(j4);
-                    if (botDraftMessage3.selfDestruct != null) {
-                        AndroidUtilities.cancelRunOnUIThread(botDraftMessage3.selfDestruct);
+                    BotDraftMessage botDraftMessage4 = longSparseArray.get(j4);
+                    if (botDraftMessage4.selfDestruct != null) {
+                        AndroidUtilities.cancelRunOnUIThread(botDraftMessage4.selfDestruct);
                     }
                     i2 = i4;
                     lambda$onBotForumDraftUpdate$1(j, i, j4);
                 }
             }
         }
-        boolean z = botDraftMessage.messageObject == null;
+        boolean z4 = botDraftMessage.messageObject == null;
         if (botDraftMessage.selfDestruct != null) {
             AndroidUtilities.cancelRunOnUIThread(botDraftMessage.selfDestruct);
         }
-        botDraftMessage.selfDestruct = new Runnable() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda1
+        botDraftMessage.selfDestruct = new Runnable() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
                 BotForumHelper.this.lambda$onBotForumDraftUpdate$0(j, i, j2);
             }
         };
         botDraftMessage.text = tL_textWithEntities;
-        BotDraftMessage botDraftMessage4 = botDraftMessage;
-        botDraftMessage4.messageObject = createDraftMessage(j, i, j2, botDraftMessage.localMessageId, tL_textWithEntities);
-        AndroidUtilities.runOnUIThread(botDraftMessage4.selfDestruct, getAppGlobalConfig().messageTypingDraftTtl.get(TimeUnit.MILLISECONDS));
-        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.botForumDraftUpdate, new BotForumTextDraftUpdateNotification(j, j3, botDraftMessage4.messageObject, z));
+        botDraftMessage.messageObject = createDraftMessage(j, i, j2, botDraftMessage.localMessageId, tL_textWithEntities);
+        AndroidUtilities.runOnUIThread(botDraftMessage.selfDestruct, getAppGlobalConfig().messageTypingDraftTtl.get(TimeUnit.MILLISECONDS));
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.botForumDraftUpdate, new BotForumTextDraftUpdateNotification(j, j3, botDraftMessage.messageObject, z4));
     }
 
-    public void onBotForumDraftUpdate(final long j, final int i, final long j2, TL_iv.RichMessage richMessage) {
+    private void onBotForumDraftUpdate(final long j, final int i, final long j2, TL_iv.RichMessage richMessage, boolean z, boolean z2) {
         long[] jArr;
-        long[] jArr2;
+        LongSparseArray<BotDraftMessage> longSparseArray;
         BotDraftMessage botDraftMessage;
+        boolean z3;
         int i2;
         FileLog.d("[BotForum] onDraftNewDraft (rich_message) " + j + " " + i + " " + j2);
         long j3 = (long) i;
-        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j, j3);
-        if (longSparseArray == null || longSparseArray.size() <= 0) {
+        if (this.botTextDraftsByRandomIdsBlocklist.get(j, j3, j2) != null) {
+            FileLog.d("[BotForum] onDraftNewDraft (rich_message) ignore " + j + " " + i + " " + j2);
+            return;
+        }
+        LongSparseArray<BotDraftMessage> longSparseArray2 = this.botTextDraftsByRandomIds.get(j, j3);
+        if (longSparseArray2 == null || longSparseArray2.size() <= 0) {
             jArr = null;
         } else {
-            jArr = new long[longSparseArray.size()];
-            int size = longSparseArray.size();
+            jArr = new long[longSparseArray2.size()];
+            int size = longSparseArray2.size();
             for (int i3 = 0; i3 < size; i3++) {
-                jArr[i3] = longSparseArray.keyAt(i3);
+                jArr[i3] = longSparseArray2.keyAt(i3);
             }
         }
-        long[] jArr3 = jArr;
+        long[] jArr2 = jArr;
         BotDraftMessage botDraftMessage2 = this.botTextDraftsByRandomIds.get(j, j3, j2);
         if (botDraftMessage2 == null) {
-            jArr2 = jArr3;
-            botDraftMessage = new BotDraftMessage(j, i, j2, getUserConfig().getNewMessageId());
-            this.botTextDraftsByRandomIds.put(j, j3, j2, botDraftMessage);
+            longSparseArray = longSparseArray2;
+            BotDraftMessage botDraftMessage3 = new BotDraftMessage(j, i, j2, getUserConfig().getNewMessageId());
+            this.botTextDraftsByRandomIds.put(j, j3, j2, botDraftMessage3);
+            z3 = z2;
+            botDraftMessage = botDraftMessage3;
         } else {
-            jArr2 = jArr3;
+            longSparseArray = longSparseArray2;
             botDraftMessage = botDraftMessage2;
+            z3 = z2;
         }
+        botDraftMessage.keepOnStop = z3;
+        botDraftMessage.canStop = z;
         if (jArr2 != null) {
             int length = jArr2.length;
             for (int i4 = 0; i4 < length; i4 = i2 + 1) {
@@ -177,30 +215,69 @@ public class BotForumHelper extends BaseController {
                 if (j4 == j2) {
                     i2 = i4;
                 } else {
-                    BotDraftMessage botDraftMessage3 = longSparseArray.get(j4);
-                    if (botDraftMessage3.selfDestruct != null) {
-                        AndroidUtilities.cancelRunOnUIThread(botDraftMessage3.selfDestruct);
+                    BotDraftMessage botDraftMessage4 = longSparseArray.get(j4);
+                    if (botDraftMessage4.selfDestruct != null) {
+                        AndroidUtilities.cancelRunOnUIThread(botDraftMessage4.selfDestruct);
                     }
                     i2 = i4;
                     lambda$onBotForumDraftUpdate$1(j, i, j4);
                 }
             }
         }
-        boolean z = botDraftMessage.messageObject == null;
+        boolean z4 = botDraftMessage.messageObject == null;
         if (botDraftMessage.selfDestruct != null) {
             AndroidUtilities.cancelRunOnUIThread(botDraftMessage.selfDestruct);
         }
-        botDraftMessage.selfDestruct = new Runnable() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda3
+        botDraftMessage.selfDestruct = new Runnable() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 BotForumHelper.this.lambda$onBotForumDraftUpdate$1(j, i, j2);
             }
         };
         botDraftMessage.richMessage = richMessage;
-        BotDraftMessage botDraftMessage4 = botDraftMessage;
-        botDraftMessage4.messageObject = createDraftMessage(j, i, j2, botDraftMessage.localMessageId, richMessage);
-        AndroidUtilities.runOnUIThread(botDraftMessage4.selfDestruct, getAppGlobalConfig().messageTypingDraftTtl.get(TimeUnit.MILLISECONDS));
-        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.botForumDraftUpdate, new BotForumTextDraftUpdateNotification(j, j3, botDraftMessage4.messageObject, z));
+        botDraftMessage.messageObject = createDraftMessage(j, i, j2, botDraftMessage.localMessageId, richMessage);
+        AndroidUtilities.runOnUIThread(botDraftMessage.selfDestruct, getAppGlobalConfig().messageTypingDraftTtl.get(TimeUnit.MILLISECONDS));
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.botForumDraftUpdate, new BotForumTextDraftUpdateNotification(j, j3, botDraftMessage.messageObject, z4));
+    }
+
+    public SteamingSendButtonState getStreamingSendButtonState(long j, int i) {
+        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j, i);
+        if (longSparseArray == null || longSparseArray.size() <= 0) {
+            return SteamingSendButtonState.NO_STREAMING;
+        }
+        if (longSparseArray.valueAt(0).canStop) {
+            return SteamingSendButtonState.STOP;
+        }
+        return SteamingSendButtonState.BLOCKING;
+    }
+
+    public void stopStreaming(long j, long j2) {
+        LongSparseArray<BotDraftMessage> removeAll = this.botTextDraftsByRandomIds.removeAll(j, j2);
+        if (removeAll == null || removeAll.size() <= 0) {
+            return;
+        }
+        long keyAt = removeAll.keyAt(0);
+        BotDraftMessage valueAt = removeAll.valueAt(0);
+        if (valueAt.selfDestruct != null) {
+            AndroidUtilities.cancelRunOnUIThread(valueAt.selfDestruct);
+        }
+        this.botTextDraftsByRandomIdsBlocklist.put(j, j2, keyAt, new Object());
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.botForumDraftDelete, new BotForumTextDraftDeleteNotification(j, j2, valueAt.localMessageId));
+        TLRPC.TL_sendMessageStopDraftAction tL_sendMessageStopDraftAction = new TLRPC.TL_sendMessageStopDraftAction();
+        tL_sendMessageStopDraftAction.random_id = keyAt;
+        TLRPC.TL_messages_setTyping tL_messages_setTyping = new TLRPC.TL_messages_setTyping();
+        tL_messages_setTyping.peer = getMessagesController().getInputPeer(j);
+        tL_messages_setTyping.action = tL_sendMessageStopDraftAction;
+        if (j2 != 0) {
+            tL_messages_setTyping.flags |= 1;
+            tL_messages_setTyping.top_msg_id = (int) j2;
+        }
+        getConnectionsManager().sendRequestTyped(tL_messages_setTyping, new Utilities.Callback2() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda5
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                BotForumHelper.lambda$stopStreaming$2((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+            }
+        });
     }
 
     public boolean hasBotForumDrafts(long j, int i) {
@@ -255,6 +332,8 @@ public class BotForumHelper extends BaseController {
     }
 
     private static class BotDraftMessage {
+        private boolean canStop;
+        private boolean keepOnStop;
         public final int localMessageId;
         private MessageObject messageObject;
         public final long randomId;
@@ -306,7 +385,7 @@ public class BotForumHelper extends BaseController {
             performSendBotTopicCreate(inputPeerFromSendMessageRequest, messageFromSendMessageRequest, nextRandomId, new MessagesStorage.IntCallback() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.MessagesStorage.IntCallback
                 public final void run(int i2) {
-                    BotForumHelper.this.lambda$beforeSendingFinalRequest$3(tLObject, jArr, peerDialogId, runnable, i2);
+                    BotForumHelper.this.lambda$beforeSendingFinalRequest$4(tLObject, jArr, peerDialogId, runnable, i2);
                 }
             });
             return false;
@@ -315,7 +394,7 @@ public class BotForumHelper extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$beforeSendingFinalRequest$3(TLObject tLObject, final long[] jArr, final long j, final Runnable runnable, final int i) {
+    public /* synthetic */ void lambda$beforeSendingFinalRequest$4(TLObject tLObject, final long[] jArr, final long j, final Runnable runnable, final int i) {
         if (tLObject instanceof TLRPC.TL_messages_forwardMessages) {
             TLRPC.TL_messages_forwardMessages tL_messages_forwardMessages = (TLRPC.TL_messages_forwardMessages) tLObject;
             tL_messages_forwardMessages.top_msg_id = i;
@@ -328,13 +407,13 @@ public class BotForumHelper extends BaseController {
         getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                BotForumHelper.this.lambda$beforeSendingFinalRequest$2(jArr, j, i, runnable);
+                BotForumHelper.this.lambda$beforeSendingFinalRequest$3(jArr, j, i, runnable);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$beforeSendingFinalRequest$2(long[] jArr, long j, int i, Runnable runnable) {
+    public /* synthetic */ void lambda$beforeSendingFinalRequest$3(long[] jArr, long j, int i, Runnable runnable) {
         for (long j2 : jArr) {
             getMessagesStorage().updateMessageTopicId(j, j2, i);
         }
@@ -356,16 +435,16 @@ public class BotForumHelper extends BaseController {
         tL_messages_createForumTopic.title_missing = true;
         tL_messages_createForumTopic.peer = inputPeer;
         tL_messages_createForumTopic.random_id = j;
-        getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda4
+        getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                BotForumHelper.this.lambda$performSendBotTopicCreate$4(peerDialogId, str, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                BotForumHelper.this.lambda$performSendBotTopicCreate$5(peerDialogId, str, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$performSendBotTopicCreate$4(long j, String str, TLRPC.Updates updates, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$performSendBotTopicCreate$5(long j, String str, TLRPC.Updates updates, TLRPC.TL_error tL_error) {
         TL_update.TL_updateMessageID tL_updateMessageID;
         if (updates == null) {
             performSendBotTopicCreateComplete(j, -1);
@@ -480,6 +559,7 @@ public class BotForumHelper extends BaseController {
     private BotForumHelper(int i) {
         super(i);
         this.botTextDraftsByRandomIds = new DialogTopicIdKeyMap<>();
+        this.botTextDraftsByRandomIdsBlocklist = new DialogTopicIdKeyMap<>();
         this.pendingBotTopics = new LongSparseArray<>();
         this.preferences = ApplicationLoader.applicationContext.getSharedPreferences("bot_drafts" + i, 0);
     }
@@ -572,6 +652,16 @@ public class BotForumHelper extends BaseController {
             T t2 = longSparseArray2.get(j3);
             longSparseArray2.put(j3, t);
             return t2;
+        }
+
+        public LongSparseArray<T> removeAll(long j, long j2) {
+            LongSparseArray<LongSparseArray<T>> longSparseArray = this.map.get(j);
+            if (longSparseArray == null) {
+                return null;
+            }
+            LongSparseArray<T> longSparseArray2 = longSparseArray.get(j2);
+            longSparseArray.remove(j2);
+            return longSparseArray2;
         }
 
         public T remove(long j, long j2, long j3) {

@@ -13,7 +13,7 @@ public class ChatActivityEnterViewAnimatedIconView extends RLottieImageView {
     private TransitState animatingState;
     private State currentState;
     private final int sizeDp;
-    private Map stateMap;
+    private final Map stateMap;
 
     public enum State {
         VOICE,
@@ -37,8 +37,11 @@ public class ChatActivityEnterViewAnimatedIconView extends RLottieImageView {
                 if (rLottieDrawable != null) {
                     return rLottieDrawable;
                 }
-                int i2 = ((TransitState) obj).resource;
-                return new RLottieDrawable(i2, String.valueOf(i2), AndroidUtilities.dp(ChatActivityEnterViewAnimatedIconView.this.sizeDp), AndroidUtilities.dp(ChatActivityEnterViewAnimatedIconView.this.sizeDp));
+                TransitState transitState = (TransitState) obj;
+                int i2 = transitState.resource;
+                RLottieDrawable rLottieDrawable2 = new RLottieDrawable(i2, String.valueOf(i2), AndroidUtilities.dp(ChatActivityEnterViewAnimatedIconView.this.sizeDp), AndroidUtilities.dp(ChatActivityEnterViewAnimatedIconView.this.sizeDp));
+                put(transitState, rLottieDrawable2);
+                return rLottieDrawable2;
             }
         };
         this.sizeDp = i;

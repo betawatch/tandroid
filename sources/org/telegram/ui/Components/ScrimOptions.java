@@ -45,6 +45,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.MessageDrawable;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatMessageCell;
 import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
@@ -788,7 +789,7 @@ public class ScrimOptions extends Dialog {
                                             canvas2.translate(iArr3[0], iArr3[1]);
                                             ChatMessageCell chatMessageCell2 = chatMessageCell;
                                             if (chatMessageCell2 != null && chatMessageCell2.drawBackgroundInParent()) {
-                                                Theme.MessageDrawable messageDrawable = chatMessageCell.currentBackgroundDrawable;
+                                                MessageDrawable messageDrawable = chatMessageCell.currentBackgroundDrawable;
                                                 if (messageDrawable != null && messageDrawable.getPaint() != null) {
                                                     canvas2.save();
                                                     chatMessageCell.setBackgroundTopY(true);
@@ -890,7 +891,7 @@ public class ScrimOptions extends Dialog {
                                     canvas2.translate(iArr32[0], iArr32[1]);
                                     ChatMessageCell chatMessageCell2 = chatMessageCell;
                                     if (chatMessageCell2 != null && chatMessageCell2.drawBackgroundInParent()) {
-                                        Theme.MessageDrawable messageDrawable = chatMessageCell.currentBackgroundDrawable;
+                                        MessageDrawable messageDrawable = chatMessageCell.currentBackgroundDrawable;
                                         if (messageDrawable != null && messageDrawable.getPaint() != null) {
                                             canvas2.save();
                                             chatMessageCell.setBackgroundTopY(true);

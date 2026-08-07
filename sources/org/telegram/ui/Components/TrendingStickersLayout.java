@@ -461,7 +461,7 @@ public class TrendingStickersLayout extends FrameLayout implements NotificationC
         StickersAlert stickersAlert = new StickersAlert(getContext(), this.parentFragment, inputStickerSet, null, this.delegate.canSendSticker() ? new StickersAlert.StickersAlertDelegate() { // from class: org.telegram.ui.Components.TrendingStickersLayout.7
             @Override // org.telegram.ui.Components.StickersAlert.StickersAlertDelegate
             /* renamed from: onStickerSelected */
-            public void lambda$onStickerSelected$96(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z, boolean z2, int i, int i2) {
+            public void lambda$onStickerSelected$97(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z, boolean z2, int i, int i2) {
                 TrendingStickersLayout.this.delegate.onStickerSelected(document, obj, z, z2, i);
             }
 

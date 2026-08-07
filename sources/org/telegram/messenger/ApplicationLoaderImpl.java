@@ -59,7 +59,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
             return "standalone";
         }
         if (i == 7) {
-            return "release";
+            return ru.noties.jlatexmath.android.BuildConfig.BUILD_TYPE;
         }
         return "unknown";
     }

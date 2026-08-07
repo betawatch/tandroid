@@ -1949,7 +1949,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$verifyAge$17(int i, BotWebViewSheet botWebViewSheet, Utilities.Callback callback, Boolean bool, Double d, String str, Double d2) {
         boolean booleanValue = d != null ? d.doubleValue() >= ((double) i) : bool.booleanValue();
-        botWebViewSheet.lambda$openOptions$41();
+        botWebViewSheet.lambda$openOptions$42();
         callback.run(Boolean.valueOf(booleanValue));
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (!booleanValue || safeLastFragment == null) {

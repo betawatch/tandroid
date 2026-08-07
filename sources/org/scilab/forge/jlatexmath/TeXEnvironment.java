@@ -4,8 +4,10 @@ import ru.noties.jlatexmath.awt.Color;
 
 /* loaded from: classes3.dex */
 public class TeXEnvironment {
+    private static final int MAX_DEPTH = 64;
     private Color background;
     private Color color;
+    private int depth;
     private float interline;
     private int interlineUnit;
     public boolean isColored;
@@ -39,6 +41,10 @@ public class TeXEnvironment {
     }
 
     private TeXEnvironment(int i, float f, TeXFont teXFont, Color color, Color color2, String str, boolean z) {
+        this(i, f, teXFont, color, color2, str, z, 0);
+    }
+
+    private TeXEnvironment(int i, float f, TeXFont teXFont, Color color, Color color2, String str, boolean z, int i2) {
         this.lastFontId = -1;
         this.textwidth = Float.POSITIVE_INFINITY;
         this.isColored = false;
@@ -47,6 +53,7 @@ public class TeXEnvironment {
         this.tf = teXFont;
         this.textStyle = str;
         this.smallCap = z;
+        this.depth = i2;
         this.background = color;
         this.color = color2;
         setInterline(1, 1.0f);
@@ -78,11 +85,19 @@ public class TeXEnvironment {
     }
 
     protected TeXEnvironment copy() {
-        return new TeXEnvironment(this.style, this.scaleFactor, this.tf, this.background, this.color, this.textStyle, this.smallCap);
+        int i = this.depth;
+        if (i > 64) {
+            throw new DepthLimitExceededException();
+        }
+        return new TeXEnvironment(this.style, this.scaleFactor, this.tf, this.background, this.color, this.textStyle, this.smallCap, i + 1);
     }
 
     protected TeXEnvironment copy(TeXFont teXFont) {
-        TeXEnvironment teXEnvironment = new TeXEnvironment(this.style, this.scaleFactor, teXFont, this.background, this.color, this.textStyle, this.smallCap);
+        int i = this.depth;
+        if (i > 64) {
+            throw new DepthLimitExceededException();
+        }
+        TeXEnvironment teXEnvironment = new TeXEnvironment(this.style, this.scaleFactor, teXFont, this.background, this.color, this.textStyle, this.smallCap, i + 1);
         teXEnvironment.textwidth = this.textwidth;
         teXEnvironment.interline = this.interline;
         teXEnvironment.interlineUnit = this.interlineUnit;

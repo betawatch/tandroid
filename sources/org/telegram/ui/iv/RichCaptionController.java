@@ -17,7 +17,7 @@ import org.telegram.ui.Components.EditTextCaption;
 import org.telegram.ui.iv.RichCaptionController;
 import org.telegram.ui.iv.RichEditText;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 class RichCaptionController {
     final RichEditText editText;
     private boolean hijackingSelection;

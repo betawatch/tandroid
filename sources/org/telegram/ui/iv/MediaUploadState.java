@@ -3,7 +3,7 @@ package org.telegram.ui.iv;
 import android.graphics.Bitmap;
 import org.telegram.tgnet.TLRPC;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class MediaUploadState {
     public TLRPC.Document audioDisplayDocument;
     public TLRPC.Document document;
@@ -12,6 +12,7 @@ public class MediaUploadState {
     public int height;
     public int invert;
     public boolean isAudio;
+    public boolean isDocument;
     public boolean isVideo;
     public String localPath;
     public Bitmap localThumbBitmap;
@@ -25,7 +26,7 @@ public class MediaUploadState {
         if (this.state != 2) {
             return false;
         }
-        if (this.isVideo || this.isAudio) {
+        if (this.isVideo || this.isAudio || this.isDocument) {
             if (this.document == null) {
                 return false;
             }

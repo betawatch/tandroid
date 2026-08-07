@@ -83,7 +83,8 @@ public class TextSettingsCell extends FrameLayout {
         this.valueTextView.setTextSize(AndroidUtilities.dp(16.0f));
         this.valueTextView.setGravity((LocaleController.isRTL ? 3 : 5) | 16);
         this.valueTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteValueText, resourcesProvider));
-        addView(this.valueTextView, LayoutHelper.createFrame(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, f, 0.0f, f, 0.0f));
+        float f2 = i - 4;
+        addView(this.valueTextView, LayoutHelper.createFrame(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, f2, 0.0f, f2, 0.0f));
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         this.imageView = rLottieImageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
@@ -94,7 +95,7 @@ public class TextSettingsCell extends FrameLayout {
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         imageView.setColorFilter(new PorterDuffColorFilter(color, mode));
         this.imageView.setVisibility(8);
-        addView(this.imageView, LayoutHelper.createFrame(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 21.0f, 0.0f, 21.0f, 0.0f));
+        addView(this.imageView, LayoutHelper.createFrame(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.valueImageView = imageView2;
         imageView2.setScaleType(scaleType);
@@ -232,9 +233,9 @@ public class TextSettingsCell extends FrameLayout {
         this.imageView.setBackground(null);
         this.imageView.setVisibility(0);
         if (LocaleController.isRTL) {
-            marginLayoutParams.rightMargin = AndroidUtilities.dp(71.0f);
+            marginLayoutParams.rightMargin = AndroidUtilities.dp(58.0f);
         } else {
-            marginLayoutParams.leftMargin = AndroidUtilities.dp(71.0f);
+            marginLayoutParams.leftMargin = AndroidUtilities.dp(58.0f);
         }
     }
 
@@ -340,7 +341,7 @@ public class TextSettingsCell extends FrameLayout {
         this.valueTextView.setAlpha(1.0f - this.drawLoadingProgress);
         super.dispatchDraw(canvas);
         if (this.needDivider) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(this.imageView.getVisibility() == 0 ? 71.0f : 20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? r0 : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(this.imageView.getVisibility() == 0 ? 58.0f : 20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? r0 : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 
@@ -376,9 +377,8 @@ public class TextSettingsCell extends FrameLayout {
         if (this.valueBackupImageView == null) {
             BackupImageView backupImageView = new BackupImageView(getContext());
             this.valueBackupImageView = backupImageView;
-            int i = (LocaleController.isRTL ? 3 : 5) | 16;
-            float f = this.padding;
-            addView(backupImageView, LayoutHelper.createFrame(24, 24.0f, i, f, 0.0f, f, 0.0f));
+            float f = this.padding - 4;
+            addView(backupImageView, LayoutHelper.createFrame(24, 24.0f, (LocaleController.isRTL ? 3 : 5) | 16, f, 0.0f, f, 0.0f));
         }
         return this.valueBackupImageView;
     }

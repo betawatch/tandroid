@@ -23,6 +23,7 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import androidx.core.math.MathUtils;
 import com.google.android.exoplayer2.util.Consumer;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -635,7 +636,7 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
                 AnimatedEmojiSpan createAnimatedEmojiSpan = ReactionsUtils.createAnimatedEmojiSpan(document, l, ChatCustomReactionsEditActivity.this.editText.getFontMetricsInt());
                 createAnimatedEmojiSpan.cacheType = AnimatedEmojiDrawable.getCacheTypeForEnterView();
                 createAnimatedEmojiSpan.setAdded();
-                ChatCustomReactionsEditActivity.this.selectedEmojisIds.add(editTextSelectionEnd, l);
+                ChatCustomReactionsEditActivity.this.selectedEmojisIds.add(MathUtils.clamp(editTextSelectionEnd, 0, ChatCustomReactionsEditActivity.this.selectedEmojisIds.size()), l);
                 ChatCustomReactionsEditActivity.this.selectedEmojisMap.put(l, createAnimatedEmojiSpan);
                 spannableString.setSpan(createAnimatedEmojiSpan, 0, spannableString.length(), 33);
                 ChatCustomReactionsEditActivity.this.editText.getText().insert(editTextSelectionEnd, spannableString);

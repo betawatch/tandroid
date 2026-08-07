@@ -104,6 +104,7 @@ public class ActionBar extends FrameLayout implements FactorAnimator.Target, The
     private boolean clipContent;
     SizeNotifierFrameLayout contentView;
     private boolean doNotDrawChild;
+    public boolean doNotDrawGlassMenu;
     private Runnable doOnActionModeFactorChanged;
     private boolean drawBackButton;
     EllipsizeSpanAnimator ellipsizeSpanAnimator;
@@ -114,8 +115,8 @@ public class ActionBar extends FrameLayout implements FactorAnimator.Target, The
     private int forcedMenuWidth;
     private boolean fromBottom;
     private BlurredBackgroundDrawable glassDrawable;
-    private Drawable glassDrawableBack;
-    private Drawable glassDrawableMenu;
+    private BlurredBackgroundDrawable glassDrawableBack;
+    private BlurredBackgroundDrawable glassDrawableMenu;
     private boolean glassMode;
     private boolean glassModeIsForum;
     private boolean glassOnlyBack;
@@ -135,6 +136,7 @@ public class ActionBar extends FrameLayout implements FactorAnimator.Target, The
     private Drawable lastRightDrawable;
     private Runnable lastRunnable;
     private CharSequence lastTitle;
+    private boolean mAlwaysApplyColorFilterToBackButton;
     private boolean manualStart;
     public ActionBarMenu menu;
     public boolean menuOccupyBack;
@@ -339,6 +341,9 @@ public class ActionBar extends FrameLayout implements FactorAnimator.Target, The
         } else if ((drawable instanceof BitmapDrawable) || (drawable instanceof VectorDrawable)) {
             this.backButtonImageView.setColorFilter(new PorterDuffColorFilter(this.itemsColor, PorterDuff.Mode.SRC_IN));
         }
+        if (this.mAlwaysApplyColorFilterToBackButton) {
+            this.backButtonImageView.setColorFilter(new PorterDuffColorFilter(this.itemsColor, PorterDuff.Mode.SRC_IN));
+        }
         checkBackButtonLayerType();
     }
 
@@ -492,6 +497,10 @@ public class ActionBar extends FrameLayout implements FactorAnimator.Target, The
         this.backButtonImageView.setImageResource(i);
         this.backButtonImageView.setColorFilter(new PorterDuffColorFilter(this.itemsColor, PorterDuff.Mode.SRC_IN));
         checkBackButtonLayerType();
+    }
+
+    public void alwaysApplyColorFilterToBackButton() {
+        this.mAlwaysApplyColorFilterToBackButton = true;
     }
 
     private void createSubtitleTextView() {
@@ -1954,33 +1963,33 @@ public class ActionBar extends FrameLayout implements FactorAnimator.Target, The
                 Drawable drawable = imageView.getDrawable();
                 if (drawable instanceof BackDrawable) {
                     ((BackDrawable) drawable).setRotatedColor(i);
-                    return;
-                } else {
-                    if ((drawable instanceof BitmapDrawable) || (drawable instanceof VectorDrawable)) {
-                        this.backButtonImageView.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));
-                        return;
-                    }
-                    return;
+                } else if ((drawable instanceof BitmapDrawable) || (drawable instanceof VectorDrawable)) {
+                    this.backButtonImageView.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));
                 }
             }
-            return;
-        }
-        this.itemsColor = i;
-        ImageView imageView2 = this.backButtonImageView;
-        if (imageView2 != null && i != 0) {
-            Drawable drawable2 = imageView2.getDrawable();
-            if (drawable2 instanceof BackDrawable) {
-                ((BackDrawable) drawable2).setColor(i);
-            } else if (drawable2 instanceof MenuDrawable) {
-                ((MenuDrawable) drawable2).setIconColor(i);
-            } else if ((drawable2 instanceof BitmapDrawable) || (drawable2 instanceof VectorDrawable)) {
-                this.backButtonImageView.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));
+        } else {
+            this.itemsColor = i;
+            ImageView imageView2 = this.backButtonImageView;
+            if (imageView2 != null && i != 0) {
+                Drawable drawable2 = imageView2.getDrawable();
+                if (drawable2 instanceof BackDrawable) {
+                    ((BackDrawable) drawable2).setColor(i);
+                } else if (drawable2 instanceof MenuDrawable) {
+                    ((MenuDrawable) drawable2).setIconColor(i);
+                } else if ((drawable2 instanceof BitmapDrawable) || (drawable2 instanceof VectorDrawable)) {
+                    this.backButtonImageView.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));
+                }
+            }
+            ActionBarMenu actionBarMenu2 = this.menu;
+            if (actionBarMenu2 != null) {
+                actionBarMenu2.updateItemsColor();
             }
         }
-        ActionBarMenu actionBarMenu2 = this.menu;
-        if (actionBarMenu2 != null) {
-            actionBarMenu2.updateItemsColor();
+        ImageView imageView3 = this.backButtonImageView;
+        if (imageView3 == null || !this.mAlwaysApplyColorFilterToBackButton) {
+            return;
         }
+        imageView3.setColorFilter(new PorterDuffColorFilter(this.itemsColor, PorterDuff.Mode.SRC_IN));
     }
 
     public void setCastShadows(boolean z) {
@@ -2331,14 +2340,14 @@ public class ActionBar extends FrameLayout implements FactorAnimator.Target, The
             this.glassDrawable.setBounds(lerp2, height, width, i2);
             this.glassDrawable.draw(canvas);
         }
-        Drawable drawable = this.glassDrawableBack;
-        if (drawable != null && z) {
-            drawable.setBounds(0, height, dp2 + i, i2);
+        BlurredBackgroundDrawable blurredBackgroundDrawable = this.glassDrawableBack;
+        if (blurredBackgroundDrawable != null && z) {
+            blurredBackgroundDrawable.setBounds(0, height, dp2 + i, i2);
             this.glassDrawableBack.draw(canvas);
         }
-        Drawable drawable2 = this.glassDrawableMenu;
-        if (drawable2 != null && factor > 0 && !this.glassOnlyBack) {
-            drawable2.setBounds((getWidth() - Math.max(dp2, factor)) - i, height, getWidth(), i2);
+        BlurredBackgroundDrawable blurredBackgroundDrawable2 = this.glassDrawableMenu;
+        if (blurredBackgroundDrawable2 != null && factor > 0 && !this.glassOnlyBack && !this.doNotDrawGlassMenu) {
+            blurredBackgroundDrawable2.setBounds((getWidth() - Math.max(dp2, factor)) - i, height, getWidth(), i2);
             this.glassDrawableMenu.setAlpha(this.hasForcedMenuWidth ? NotificationCenter.didReceiveSmsCode : (int) (this.animatorHasMenuItems.getFloatValue() * 255.0f));
             this.glassDrawableMenu.draw(canvas);
         }
@@ -2395,6 +2404,18 @@ public class ActionBar extends FrameLayout implements FactorAnimator.Target, The
     @Override // org.telegram.ui.ActionBar.Theme.Colorable
     public void updateColors() {
         adaptive_updateColor();
+        BlurredBackgroundDrawable blurredBackgroundDrawable = this.glassDrawable;
+        if (blurredBackgroundDrawable != null) {
+            blurredBackgroundDrawable.updateColors();
+        }
+        BlurredBackgroundDrawable blurredBackgroundDrawable2 = this.glassDrawableMenu;
+        if (blurredBackgroundDrawable2 != null) {
+            blurredBackgroundDrawable2.updateColors();
+        }
+        BlurredBackgroundDrawable blurredBackgroundDrawable3 = this.glassDrawableBack;
+        if (blurredBackgroundDrawable3 != null) {
+            blurredBackgroundDrawable3.updateColors();
+        }
         ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = this.additionalSubTitleOverlayContainer;
         if (actionBarAnimatedSubtitleOverlayContainer != null) {
             actionBarAnimatedSubtitleOverlayContainer.updateColors();

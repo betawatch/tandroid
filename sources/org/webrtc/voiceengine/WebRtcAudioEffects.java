@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.UUID;
 import org.telegram.messenger.SharedConfig;
 import org.webrtc.Logging;
+import ru.noties.jlatexmath.android.BuildConfig;
 
 /* loaded from: classes5.dex */
 public class WebRtcAudioEffects {
@@ -177,7 +178,7 @@ public class WebRtcAudioEffects {
     }
 
     public void release() {
-        Logging.d(TAG, "release");
+        Logging.d(TAG, BuildConfig.BUILD_TYPE);
         AcousticEchoCanceler acousticEchoCanceler = this.aec;
         if (acousticEchoCanceler != null) {
             acousticEchoCanceler.release();

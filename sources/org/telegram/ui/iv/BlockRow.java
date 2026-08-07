@@ -3,7 +3,7 @@ package org.telegram.ui.iv;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BlockRow {
     private static long ID_GEN = 1;
     public long authorQuoteId;
@@ -25,6 +25,8 @@ public class BlockRow {
     public boolean quoteLast;
     public int quoteTopEdge;
     public boolean singleParagraph;
+    public boolean titleAutoBold;
+    public boolean titleAutoBoldInitialized;
 
     public BlockRow(TL_iv.PageBlock pageBlock) {
         this(pageBlock, 0, 0);

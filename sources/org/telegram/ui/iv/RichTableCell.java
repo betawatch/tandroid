@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.text.Editable;
 import android.text.Layout;
+import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -38,7 +39,7 @@ import org.telegram.ui.iv.RichEditor;
 import org.telegram.ui.iv.RichTableCell;
 import org.telegram.ui.iv.RichTableCellGrid;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RichTableCell extends RichBlockCell implements Theme.Colorable, TextSelectionHelper.ArticleSelectableView {
     private boolean blockRtl;
     private CellSelectionListener cellSelectionListener;
@@ -93,13 +94,18 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
             }
         };
         this.resourcesProvider = resourcesProvider;
+        setClipChildren(false);
+        setClipToPadding(false);
         RichEditText richEditText = new RichEditText(context, resourcesProvider);
         this.titleEditText = richEditText;
         richEditText.setAllowNewlines(false);
         richEditText.setInputType(147457);
         richEditText.setGravity(49);
-        richEditText.setTextSize(1, Math.max(8, SharedConfig.fontSize));
-        richEditText.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
+        richEditText.setTextSize(1, Math.max(8, SharedConfig.fontSize - 2));
+        richEditText.setIncludeFontPadding(false);
+        richEditText.setMinHeight(0);
+        richEditText.setBackground(null);
+        richEditText.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f), 0);
         richEditText.setHint(LocaleController.getString(R.string.ArticleTableTitleHint));
         richEditText.setCenterEmptyHint(true);
         richEditText.setListener(new 1());
@@ -122,8 +128,9 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
             }
         };
         this.scrollView = horizontalScrollView;
+        horizontalScrollView.setClipChildren(false);
         horizontalScrollView.setClipToPadding(false);
-        horizontalScrollView.setPadding(AndroidUtilities.dp(16.0f) - AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
+        horizontalScrollView.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
         addView(horizontalScrollView, LayoutHelper.createFrame(-1, -2.0f, 51, 0.0f, 6.0f, 0.0f, 0.0f));
         RichTableCellGrid richTableCellGrid = new RichTableCellGrid(context, resourcesProvider);
         this.grid = richTableCellGrid;
@@ -175,6 +182,7 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
 
         @Override // org.telegram.ui.iv.RichEditText.Listener
         public void onTextChanged(RichEditText richEditText, Editable editable) {
+            RichTableCell.this.rememberTitleAutoBoldState();
             RichTableCell.this.persistTitle();
             if (RichTableCell.this.delegate != null) {
                 RichTableCell richTableCell = RichTableCell.this;
@@ -241,6 +249,7 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0() {
         BlockRow blockRow;
+        rememberTitleAutoBoldState();
         persistTitle();
         Delegate delegate = this.delegate;
         if (delegate == null || (blockRow = this.currentRow) == null) {
@@ -250,19 +259,29 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
     }
 
     private final class ScrollContent extends ViewGroup {
+        private final int startHandleOffset;
+
         ScrollContent(Context context) {
             super(context);
+            this.startHandleOffset = AndroidUtilities.dp(16.0f);
+            setClipChildren(false);
+            setClipToPadding(false);
         }
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            RichTableCell.this.grid.measure(View.MeasureSpec.makeMeasureSpec(Math.max(0, View.MeasureSpec.getSize(i)), TLObject.FLAG_31), i2);
-            setMeasuredDimension(RichTableCell.this.grid.getMeasuredWidth(), RichTableCell.this.grid.getMeasuredHeight());
+            RichTableCell.this.grid.measure(View.MeasureSpec.makeMeasureSpec(Math.max(0, View.MeasureSpec.getSize(i) + this.startHandleOffset), TLObject.FLAG_31), i2);
+            int measuredWidth = RichTableCell.this.grid.getMeasuredWidth();
+            setMeasuredDimension(Math.max(0, measuredWidth - this.startHandleOffset), RichTableCell.this.grid.getMeasuredHeight());
         }
 
         @Override // android.view.ViewGroup, android.view.View
         protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-            RichTableCell.this.grid.layout(0, 0, RichTableCell.this.grid.getMeasuredWidth(), RichTableCell.this.grid.getMeasuredHeight());
+            int measuredWidth = RichTableCell.this.grid.getMeasuredWidth();
+            int measuredHeight = RichTableCell.this.grid.getMeasuredHeight();
+            RichTableCellGrid richTableCellGrid = RichTableCell.this.grid;
+            int i5 = this.startHandleOffset;
+            richTableCellGrid.layout(-i5, 0, measuredWidth - i5, measuredHeight);
         }
     }
 
@@ -272,6 +291,7 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
     }
 
     public void bind(BlockRow blockRow, Delegate delegate) {
+        boolean z = this.currentRow != blockRow;
         this.currentRow = blockRow;
         this.delegate = delegate;
         this.blockRtl = RichBlockChrome.rtl();
@@ -291,13 +311,13 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
                 }
             });
             wireCellListeners();
-            bindTitle();
+            bindTitle(z);
             updateColors();
             this.scrollContent.requestLayout();
         }
     }
 
-    private void bindTitle() {
+    private void bindTitle(boolean z) {
         BlockRow blockRow = this.currentRow;
         if (blockRow != null) {
             TL_iv.PageBlock pageBlock = blockRow.block;
@@ -306,13 +326,39 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
                 if (pageblocktable.title == null) {
                     pageblocktable.title = new TL_iv.textEmpty();
                 }
-                if (String.valueOf(this.titleEditText.getText()).equals(RichTextStyle.plainOf(pageblocktable.title))) {
-                    return;
+                String plainOf = RichTextStyle.plainOf(pageblocktable.title);
+                CharSequence spannable = RichTextStyle.toSpannable(pageblocktable.title);
+                initializeTitleAutoBold(spannable);
+                this.titleEditText.setAutoBold(this.currentRow.titleAutoBold);
+                if (z || !String.valueOf(this.titleEditText.getText()).equals(plainOf)) {
+                    this.titleEditText.setTextSilently(Emoji.replaceEmoji(spannable, this.titleEditText.getPaint().getFontMetricsInt(), false));
+                    this.titleEditText.invalidateEffects();
                 }
-                this.titleEditText.setTextSilently(Emoji.replaceEmoji(RichTextStyle.toSpannable(pageblocktable.title), this.titleEditText.getPaint().getFontMetricsInt(), false));
-                this.titleEditText.invalidateEffects();
             }
         }
+    }
+
+    private void initializeTitleAutoBold(CharSequence charSequence) {
+        BlockRow blockRow = this.currentRow;
+        if (blockRow.titleAutoBoldInitialized) {
+            return;
+        }
+        boolean z = true;
+        blockRow.titleAutoBoldInitialized = true;
+        if (charSequence.length() != 0 && (RichTextStyle.stylesFullyCovering(charSequence, 0, charSequence.length()) & 1) == 0) {
+            z = false;
+        }
+        blockRow.titleAutoBold = z;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void rememberTitleAutoBoldState() {
+        BlockRow blockRow = this.currentRow;
+        if (blockRow == null) {
+            return;
+        }
+        blockRow.titleAutoBoldInitialized = true;
+        blockRow.titleAutoBold = this.titleEditText.isAutoBold();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -432,9 +478,20 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
     }
 
     private void notifyCellSelectionChanged() {
+        updateHandleOverlayLayer();
         CellSelectionListener cellSelectionListener = this.cellSelectionListener;
         if (cellSelectionListener != null) {
             cellSelectionListener.onCellSelectionChanged(this);
+        }
+    }
+
+    private void updateHandleOverlayLayer() {
+        setTranslationZ((!this.selectedCells.isEmpty() || this.grid.hasFocus()) ? AndroidUtilities.dp(1.0f) : 0.0f);
+        invalidate();
+        this.scrollView.invalidate();
+        Object parent = getParent();
+        if (parent instanceof View) {
+            ((View) parent).invalidate();
         }
     }
 
@@ -531,7 +588,7 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
         this.titleEditText.measure(View.MeasureSpec.makeMeasureSpec(Math.max(0, max - (AndroidUtilities.dp(16.0f) * 2)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
         int measuredHeight = this.titleEditText.getMeasuredHeight();
         this.scrollView.measure(View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
-        setMeasuredDimension(size, RichBlockChrome.quoteTopPad(this.currentRow) + RichBlockChrome.quoteBottomPad(this.currentRow) + measuredHeight + AndroidUtilities.dp(2.0f) + this.scrollView.getMeasuredHeight());
+        setMeasuredDimension(size, RichBlockChrome.quoteTopPad(this.currentRow) + RichBlockChrome.quoteBottomPad(this.currentRow) + measuredHeight + AndroidUtilities.dp(9.0f) + this.scrollView.getMeasuredHeight());
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -549,7 +606,7 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
         int i7 = i5 - blockInset;
         int i8 = measuredHeight + quoteTopPad;
         this.titleEditText.layout(AndroidUtilities.dp(16.0f) + i6, quoteTopPad, Math.max(AndroidUtilities.dp(16.0f) + i6, i7 - AndroidUtilities.dp(16.0f)), i8);
-        int dp = i8 + AndroidUtilities.dp(2.0f);
+        int dp = i8 + AndroidUtilities.dp(9.0f);
         HorizontalScrollView horizontalScrollView = this.scrollView;
         horizontalScrollView.layout(i6, dp, i7, horizontalScrollView.getMeasuredHeight() + dp);
     }
@@ -572,6 +629,7 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
     }
 
     private void invalidateGridForFocus() {
+        updateHandleOverlayLayer();
         RichTableCellGrid richTableCellGrid = this.grid;
         if (richTableCellGrid != null) {
             richTableCellGrid.invalidate();
@@ -607,10 +665,19 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
         Iterator it = this.selectedCells.iterator();
         while (it.hasNext()) {
             TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) it.next();
-            TableModel.setHeader(pagetablecell, z);
             RichTableCellHost hostForAnchor = this.grid.hostForAnchor(pagetablecell);
             if (hostForAnchor != null) {
-                hostForAnchor.refreshFromCell();
+                hostForAnchor.applyHeaderWithDefaultBold(z);
+            } else {
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(TableModel.readStyledText(pagetablecell));
+                boolean z2 = spannableStringBuilder.length() > 0 && (RichTextStyle.stylesFullyCovering(spannableStringBuilder, 0, spannableStringBuilder.length()) & 1) != 0;
+                TableModel.setHeader(pagetablecell, z);
+                if (z && spannableStringBuilder.length() > 0) {
+                    RichTextStyle.setStyle(spannableStringBuilder, 0, spannableStringBuilder.length(), 1, true);
+                } else if (!z && z2) {
+                    RichTextStyle.setStyle(spannableStringBuilder, 0, spannableStringBuilder.length(), 1, false);
+                }
+                TableModel.applyStyledText(pagetablecell, spannableStringBuilder);
             }
         }
         this.grid.invalidate();
@@ -1014,6 +1081,7 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
             if (pagetablecell != null) {
                 TableModel.applyStyledText(pagetablecell, editable);
             }
+            RichTableCell.this.grid.requestLayout();
             if (RichTableCell.this.delegate != null) {
                 RichTableCell richTableCell = RichTableCell.this;
                 if (richTableCell.currentRow != null) {

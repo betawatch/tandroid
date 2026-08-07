@@ -11,7 +11,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RichMediaConverter implements NotificationCenter.NotificationCenterDelegate {
     private boolean cancelled;
     private final int currentAccount;

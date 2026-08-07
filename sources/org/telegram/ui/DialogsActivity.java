@@ -6308,6 +6308,11 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         }
 
         @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
+        public /* synthetic */ void didPressStreamingStop() {
+            ChatActivityEnterView.ChatActivityEnterViewDelegate.-CC.$default$didPressStreamingStop(this);
+        }
+
+        @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
         public /* synthetic */ void didPressSuggestionButton() {
             ChatActivityEnterView.ChatActivityEnterViewDelegate.-CC.$default$didPressSuggestionButton(this);
         }

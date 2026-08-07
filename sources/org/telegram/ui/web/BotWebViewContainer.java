@@ -106,12 +106,14 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.browser.Browser;
+import org.telegram.messenger.utils.tlutils.TLKeyboardHelper;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
@@ -718,7 +720,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             consumer.accept(Boolean.TRUE);
             return;
         }
-        this.onPermissionsRequestResultCallback = new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda37
+        this.onPermissionsRequestResultCallback = new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda41
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewContainer.this.lambda$runWithPermissions$0(consumer, strArr);
@@ -1412,7 +1414,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onWebEventReceived$6(final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, final String str, final String str2, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda39
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda43
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewContainer.this.lambda$onWebEventReceived$5(tLObject, tL_messages_requestUrlAuth, str, tL_error, str2);
@@ -3269,7 +3271,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                         ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(getrequestedwebviewbutton, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda26
                             @Override // org.telegram.messenger.Utilities.Callback2
                             public final void run(Object obj2, Object obj3) {
-                                BotWebViewContainer.this.lambda$onEventReceived$57(str7, (TLRPC.KeyboardButton) obj2, (TLRPC.TL_error) obj3);
+                                BotWebViewContainer.this.lambda$onEventReceived$57(str7, (TL_keyboard.KeyboardButton) obj2, (TLRPC.TL_error) obj3);
                             }
                         });
                         break;
@@ -3709,7 +3711,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         BotBiometry botBiometry = this.biometry;
         botBiometry.access_requested = true;
         botBiometry.save();
-        this.biometry.requestToken(null, new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda41
+        this.biometry.requestToken(null, new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda45
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 BotWebViewContainer.this.lambda$onEventReceived$27((Boolean) obj, (String) obj2);
@@ -3912,7 +3914,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         if (this.delegate != null && bool.booleanValue()) {
             this.delegate.onLocationGranted(bool2.booleanValue());
         }
-        this.location.requestObject(new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda40
+        this.location.requestObject(new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda44
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 BotWebViewContainer.this.lambda$onEventReceived$40((JSONObject) obj);
@@ -4008,9 +4010,10 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$57(final String str, TLRPC.KeyboardButton keyboardButton, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$onEventReceived$57(final String str, TL_keyboard.KeyboardButton keyboardButton, TLRPC.TL_error tL_error) {
         int i;
-        if (!(keyboardButton instanceof TLRPC.TL_keyboardButtonRequestPeer)) {
+        final TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer = (TL_keyboard.TL_buttonTypeRequestPeer) TLKeyboardHelper.getType(keyboardButton, TL_keyboard.TL_buttonTypeRequestPeer.class);
+        if (tL_buttonTypeRequestPeer == null) {
             if (tL_error != null) {
                 BulletinFactory.of(this, this.resourcesProvider).showForError(tL_error);
                 notifyEvent("requested_chat_failed", obj("req_id", str));
@@ -4021,33 +4024,32 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 return;
             }
         }
-        final TLRPC.TL_keyboardButtonRequestPeer tL_keyboardButtonRequestPeer = (TLRPC.TL_keyboardButtonRequestPeer) keyboardButton;
-        TLRPC.RequestPeerType requestPeerType = tL_keyboardButtonRequestPeer.peer_type;
+        TLRPC.RequestPeerType requestPeerType = tL_buttonTypeRequestPeer.peer_type;
         if (requestPeerType instanceof TLRPC.TL_requestPeerTypeCreateBot) {
             Context context = getContext();
             int i2 = this.currentAccount;
             TLRPC.User user = this.botUser;
-            Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda42
+            Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda37
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    BotWebViewContainer.this.lambda$onEventReceived$51(str, tL_keyboardButtonRequestPeer, (TLRPC.User) obj);
+                    BotWebViewContainer.this.lambda$onEventReceived$51(str, tL_buttonTypeRequestPeer, (TLRPC.User) obj);
                 }
             };
             Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
             CreateBotAlert.show(context, i2, user, (TLRPC.TL_requestPeerTypeCreateBot) requestPeerType, false, callback, resourcesProvider, BulletinFactory.of(this, resourcesProvider), true);
             return;
         }
-        if ((requestPeerType instanceof TLRPC.TL_requestPeerTypeUser) && (i = tL_keyboardButtonRequestPeer.max_quantity) > 1) {
+        if ((requestPeerType instanceof TLRPC.TL_requestPeerTypeUser) && (i = tL_buttonTypeRequestPeer.max_quantity) > 1) {
             TLRPC.TL_requestPeerTypeUser tL_requestPeerTypeUser = (TLRPC.TL_requestPeerTypeUser) requestPeerType;
             final boolean[] zArr = new boolean[1];
-            MultiContactsSelectorBottomSheet open = MultiContactsSelectorBottomSheet.open(tL_requestPeerTypeUser.bot, tL_requestPeerTypeUser.premium, i, new MultiContactsSelectorBottomSheet.SelectorListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda43
+            MultiContactsSelectorBottomSheet open = MultiContactsSelectorBottomSheet.open(tL_requestPeerTypeUser.bot, tL_requestPeerTypeUser.premium, i, new MultiContactsSelectorBottomSheet.SelectorListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda38
                 @Override // org.telegram.ui.MultiContactsSelectorBottomSheet.SelectorListener
                 public final void onUserSelected(List list) {
-                    BotWebViewContainer.this.lambda$onEventReceived$53(zArr, str, tL_keyboardButtonRequestPeer, list);
+                    BotWebViewContainer.this.lambda$onEventReceived$53(zArr, str, tL_buttonTypeRequestPeer, list);
                 }
             });
             if (open != null) {
-                open.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda44
+                open.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda39
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
                         BotWebViewContainer.this.lambda$onEventReceived$54(zArr, str, dialogInterface);
@@ -4062,8 +4064,8 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         bundle.putInt("dialogsType", 15);
         bundle.putLong("requestPeerBotId", this.botUser.id);
         try {
-            SerializedData serializedData = new SerializedData(tL_keyboardButtonRequestPeer.peer_type.getObjectSize());
-            tL_keyboardButtonRequestPeer.peer_type.serializeToStream(serializedData);
+            SerializedData serializedData = new SerializedData(tL_buttonTypeRequestPeer.peer_type.getObjectSize());
+            tL_buttonTypeRequestPeer.peer_type.serializeToStream(serializedData);
             bundle.putByteArray("requestPeerType", serializedData.toByteArray());
             serializedData.cleanup();
         } catch (Exception e) {
@@ -4082,7 +4084,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 BotWebViewContainer.this.notifyEvent("requested_chat_failed", BotWebViewContainer.obj());
             }
         };
-        dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda45
+        dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda40
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
             public /* synthetic */ boolean canSelectStories() {
                 return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
@@ -4091,7 +4093,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
             public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i3, int i4, TopicsFragment topicsFragment) {
                 boolean lambda$onEventReceived$56;
-                lambda$onEventReceived$56 = BotWebViewContainer.this.lambda$onEventReceived$56(zArr2, str, tL_keyboardButtonRequestPeer, dialogsActivity2, arrayList, charSequence, z, z2, i3, i4, topicsFragment);
+                lambda$onEventReceived$56 = BotWebViewContainer.this.lambda$onEventReceived$56(zArr2, str, tL_buttonTypeRequestPeer, dialogsActivity2, arrayList, charSequence, z, z2, i3, i4, topicsFragment);
                 return lambda$onEventReceived$56;
             }
 
@@ -4111,7 +4113,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$51(final String str, TLRPC.TL_keyboardButtonRequestPeer tL_keyboardButtonRequestPeer, final TLRPC.User user) {
+    public /* synthetic */ void lambda$onEventReceived$51(final String str, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, final TLRPC.User user) {
         if (user == null) {
             notifyEvent("requested_chat_failed", obj("req_id", str));
             return;
@@ -4119,9 +4121,9 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
         tL_messages_sendBotRequestedPeer.peer = MessagesController.getInputPeer(this.botUser);
         tL_messages_sendBotRequestedPeer.webapp_req_id = str;
-        tL_messages_sendBotRequestedPeer.button_id = tL_keyboardButtonRequestPeer.button_id;
+        tL_messages_sendBotRequestedPeer.button_id = tL_buttonTypeRequestPeer.button_id;
         tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInputPeer(user));
-        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_sendBotRequestedPeer, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda59
+        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_sendBotRequestedPeer, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda58
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 BotWebViewContainer.this.lambda$onEventReceived$50(str, user, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
@@ -4198,7 +4200,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onEventReceived$53(boolean[] zArr, final String str, TLRPC.TL_keyboardButtonRequestPeer tL_keyboardButtonRequestPeer, List list) {
+    public /* synthetic */ void lambda$onEventReceived$53(boolean[] zArr, final String str, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, List list) {
         if (list == null || list.isEmpty()) {
             return;
         }
@@ -4207,7 +4209,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         MessagesController.getInstance(this.currentAccount);
         tL_messages_sendBotRequestedPeer.peer = MessagesController.getInputPeer(this.botUser);
         tL_messages_sendBotRequestedPeer.webapp_req_id = str;
-        tL_messages_sendBotRequestedPeer.button_id = tL_keyboardButtonRequestPeer.button_id;
+        tL_messages_sendBotRequestedPeer.button_id = tL_buttonTypeRequestPeer.button_id;
         Iterator it = list.iterator();
         while (it.hasNext()) {
             tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(this.currentAccount).getInputPeer(((Long) it.next()).longValue()));
@@ -4244,14 +4246,14 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$onEventReceived$56(boolean[] zArr, final String str, TLRPC.TL_keyboardButtonRequestPeer tL_keyboardButtonRequestPeer, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
+    public /* synthetic */ boolean lambda$onEventReceived$56(boolean[] zArr, final String str, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
         if (arrayList != null && !arrayList.isEmpty()) {
             zArr[0] = true;
             TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
             MessagesController.getInstance(this.currentAccount);
             tL_messages_sendBotRequestedPeer.peer = MessagesController.getInputPeer(this.botUser);
             tL_messages_sendBotRequestedPeer.webapp_req_id = str;
-            tL_messages_sendBotRequestedPeer.button_id = tL_keyboardButtonRequestPeer.button_id;
+            tL_messages_sendBotRequestedPeer.button_id = tL_buttonTypeRequestPeer.button_id;
             HashSet hashSet = new HashSet();
             Iterator it = arrayList.iterator();
             while (it.hasNext()) {
@@ -4261,7 +4263,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             while (it2.hasNext()) {
                 tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(this.currentAccount).getInputPeer(((Long) it2.next()).longValue()));
             }
-            ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_sendBotRequestedPeer, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda58
+            ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_sendBotRequestedPeer, new AiTonesController$$ExternalSyntheticLambda0(), new Utilities.Callback2() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda59
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     BotWebViewContainer.this.lambda$onEventReceived$55(str, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
@@ -4530,7 +4532,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         if (alertDialog == null || ignoreDialog(i)) {
             return false;
         }
-        alertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda38
+        alertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda42
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 BotWebViewContainer.this.lambda$showDialog$60(runnable, dialogInterface);

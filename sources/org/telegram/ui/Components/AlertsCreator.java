@@ -112,6 +112,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
@@ -575,13 +576,13 @@ public abstract class AlertsCreator {
                                     showSimpleToast(null, LocaleController.getString(R.string.EditMessageError));
                                 }
                             }
-                        } else if (z2 || (tLObject instanceof TLRPC.TL_ephemeral_sendMessage) || (tLObject instanceof TLRPC.TL_messages_sendMedia) || (tLObject instanceof TLRPC.TL_messages_sendInlineBotResult) || (tLObject instanceof TLRPC.TL_messages_forwardMessages) || (tLObject instanceof TLRPC.TL_messages_sendMultiMedia) || (tLObject instanceof TLRPC.TL_messages_sendScheduledMessages)) {
+                        } else if (z2 || (tLObject instanceof TL_ephemeral.TL_sendMessage) || (tLObject instanceof TLRPC.TL_messages_sendMedia) || (tLObject instanceof TLRPC.TL_messages_sendInlineBotResult) || (tLObject instanceof TLRPC.TL_messages_forwardMessages) || (tLObject instanceof TLRPC.TL_messages_sendMultiMedia) || (tLObject instanceof TLRPC.TL_messages_sendScheduledMessages)) {
                             if (z2) {
                                 peerDialogId = DialogObject.getPeerDialogId(((TLRPC.TL_messages_sendMessage) tLObject).peer);
                             } else if (tLObject instanceof TLRPC.TL_messages_sendMedia) {
                                 peerDialogId = DialogObject.getPeerDialogId(((TLRPC.TL_messages_sendMedia) tLObject).peer);
-                            } else if (tLObject instanceof TLRPC.TL_ephemeral_sendMessage) {
-                                peerDialogId = DialogObject.getPeerDialogId(((TLRPC.TL_ephemeral_sendMessage) tLObject).peer);
+                            } else if (tLObject instanceof TL_ephemeral.TL_sendMessage) {
+                                peerDialogId = DialogObject.getPeerDialogId(((TL_ephemeral.TL_sendMessage) tLObject).peer);
                             } else if (tLObject instanceof TLRPC.TL_messages_sendInlineBotResult) {
                                 peerDialogId = DialogObject.getPeerDialogId(((TLRPC.TL_messages_sendInlineBotResult) tLObject).peer);
                             } else if (tLObject instanceof TLRPC.TL_messages_forwardMessages) {
@@ -1072,8 +1073,8 @@ public abstract class AlertsCreator {
         builder.setTitle(str);
         HashMap hashMap = new HashMap();
         int i = Theme.key_dialogTopBackground;
-        hashMap.put("info1.**", Integer.valueOf(Theme.getColor(i, resourcesProvider)));
-        hashMap.put("info2.**", Integer.valueOf(Theme.getColor(i, resourcesProvider)));
+        hashMap.put("info1", Integer.valueOf(Theme.getColor(i, resourcesProvider)));
+        hashMap.put("info2", Integer.valueOf(Theme.getColor(i, resourcesProvider)));
         builder.setTopAnimation(R.raw.not_available, 52, false, Theme.getColor(i, resourcesProvider), hashMap);
         builder.setTopAnimationIsNew(true);
         builder.setPositiveButton(LocaleController.getString(R.string.Close), null);

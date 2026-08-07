@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.QuoteSpan;
 import org.telegram.ui.Components.TextStyleSpan;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class RichMessageConvert {
     public static ArrayList blocksFromCharSequence(CharSequence charSequence) {
         Object blockSpan;
@@ -166,9 +166,9 @@ public abstract class RichMessageConvert {
         if (pageBlock instanceof TL_iv.pageBlockDetails) {
             TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) pageBlock;
             ArrayList arrayList2 = new ArrayList();
-            CharSequence bold = bold(RichTextStyle.toSpannable(pageblockdetails.title));
-            if (!TextUtils.isEmpty(bold)) {
-                arrayList2.add(bold);
+            CharSequence spannable = RichTextStyle.toSpannable(pageblockdetails.title);
+            if (!TextUtils.isEmpty(spannable)) {
+                arrayList2.add(spannable);
             }
             collectBlocks(arrayList2, pageblockdetails.blocks);
             if (arrayList2.isEmpty()) {
@@ -196,11 +196,11 @@ public abstract class RichMessageConvert {
             return "——————————";
         }
         if (isHeading(pageBlock)) {
-            CharSequence bold2 = bold(RichTextStyle.toSpannable(pageBlock.text, pageBlock));
-            if (TextUtils.isEmpty(bold2)) {
+            CharSequence bold = bold(RichTextStyle.toSpannable(pageBlock.text, pageBlock));
+            if (TextUtils.isEmpty(bold)) {
                 return null;
             }
-            return bold2;
+            return bold;
         }
         if (pageBlock instanceof TL_iv.pageBlockAuthorDate) {
             return RichTextStyle.toSpannable(((TL_iv.pageBlockAuthorDate) pageBlock).author);
@@ -253,9 +253,9 @@ public abstract class RichMessageConvert {
 
     private static CharSequence renderTable(TL_iv.pageBlockTable pageblocktable) {
         ArrayList arrayList = new ArrayList();
-        CharSequence bold = bold(RichTextStyle.toSpannable(pageblocktable.title));
-        if (!TextUtils.isEmpty(bold)) {
-            arrayList.add(bold);
+        CharSequence spannable = RichTextStyle.toSpannable(pageblocktable.title);
+        if (!TextUtils.isEmpty(spannable)) {
+            arrayList.add(spannable);
         }
         ArrayList<TL_iv.pageTableRow> arrayList2 = pageblocktable.rows;
         if (arrayList2 != null) {

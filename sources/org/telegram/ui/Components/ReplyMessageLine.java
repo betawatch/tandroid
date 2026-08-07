@@ -1,11 +1,16 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
+import android.graphics.Shader;
 import android.text.TextUtils;
 import android.view.View;
+import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
@@ -13,9 +18,12 @@ import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.utils.RadiiUtils;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatMessageCell;
@@ -26,6 +34,11 @@ public class ReplyMessageLine {
     public int backgroundColor;
     public final AnimatedColor backgroundColorAnimated;
     private LoadingDrawable backgroundLoadingDrawable;
+    private int cachedBar2;
+    private int cachedBar3;
+    private int cachedBarHeight;
+    private int cachedBg;
+    private boolean cachedHasColor3;
     public int color1;
     public final AnimatedColor color1Animated;
     public int color2;
@@ -44,8 +57,6 @@ public class ReplyMessageLine {
     public boolean hasColor2;
     public boolean hasColor3;
     private IconCoords[] iconCoords;
-    private boolean lastHasColor3;
-    private float lastHeight;
     private long lastLoadingTTime;
     private boolean loading;
     public final AnimatedFloat loadingStateT;
@@ -54,6 +65,7 @@ public class ReplyMessageLine {
     public int nameColor;
     public final AnimatedColor nameColorAnimated;
     private final View parentView;
+    private Bitmap patternBitmap;
     private boolean reversedOut;
     private boolean sponsored;
     private AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable sticker;
@@ -63,16 +75,12 @@ public class ReplyMessageLine {
     private int wasColorId;
     private int wasMessageId;
     private final RectF rectF = new RectF();
-    private final Path clipPath = new Path();
     private final Paint color1Paint = new Paint(1);
-    private final Paint color2Paint = new Paint(1);
-    private final Paint color3Paint = new Paint(1);
+    private final Paint patternPaint = new Paint(3);
+    private final Matrix shaderMatrix = new Matrix();
     public final float[] radii = new float[8];
-    private final Path lineClipPath = new Path();
     private final Path backgroundPath = new Path();
     public final Paint backgroundPaint = new Paint();
-    private Path color2Path = new Path();
-    private Path color3Path = new Path();
     private int switchedCount = 0;
     private float emojiAlpha = 1.0f;
 
@@ -124,6 +132,17 @@ public class ReplyMessageLine {
 
     public void setBackgroundColor(int i) {
         this.backgroundColor = i;
+    }
+
+    public void setSimpleColor(int i, boolean z) {
+        this.reversedOut = false;
+        this.hasColor3 = false;
+        this.hasColor2 = false;
+        this.color3 = i;
+        this.color2 = i;
+        this.color1 = i;
+        this.backgroundColor = Theme.multAlpha(i, z ? 0.12f : 0.1f);
+        this.emojiColor = i;
     }
 
     private void resolveColor(MessageObject messageObject, int i, Theme.ResourcesProvider resourcesProvider) {
@@ -587,80 +606,70 @@ public class ReplyMessageLine {
     }
 
     public void drawLine(Canvas canvas, RectF rectF, float f) {
-        boolean z;
         float height;
         int m;
-        canvas.save();
-        this.clipPath.rewind();
         int floor = (int) Math.floor(SharedConfig.bubbleRadius / (this.sponsored ? 2.0f : 3.0f));
-        RectF rectF2 = this.rectF;
-        float f2 = rectF.left;
-        rectF2.set(f2, rectF.top, Math.max(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(floor * 2)) + f2, rectF.bottom);
-        Path path = this.clipPath;
-        RectF rectF3 = this.rectF;
-        float f3 = floor;
-        float dp = AndroidUtilities.dp(f3);
-        float dp2 = AndroidUtilities.dp(f3);
-        Path.Direction direction = Path.Direction.CW;
-        path.addRoundRect(rectF3, dp, dp2, direction);
-        canvas.clipPath(this.clipPath);
-        float f4 = rectF.left;
-        canvas.clipRect(f4, rectF.top, AndroidUtilities.dp(3.0f) + f4, rectF.bottom);
-        this.color1Paint.setColor(Theme.multAlpha(this.color1Animated.set(this.color1), f));
-        this.color2Paint.setColor(Theme.multAlpha(this.color2Animated.set(this.color2), f));
-        this.color3Paint.setColor(Theme.multAlpha(this.color3Animated.set(this.color3), f));
-        float f5 = this.loadingStateT.set(this.loading);
-        if (f5 <= 0.0f || this.hasColor2) {
-            z = false;
-        } else {
-            canvas.save();
+        float max = rectF.left + Math.max(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(floor * 2));
+        int i = this.color1Animated.set(this.color1);
+        this.color1Paint.setColor(Theme.multAlpha(i, f));
+        float f2 = this.loadingStateT.set(this.loading);
+        float f3 = this.color2Alpha.set(this.hasColor2);
+        float f4 = this.color3Alpha.set(this.hasColor3);
+        if (f2 > 0.0f && !this.hasColor2) {
             int alpha = this.color1Paint.getAlpha();
             this.color1Paint.setAlpha((int) (alpha * 0.3f));
-            canvas.drawPaint(this.color1Paint);
+            this.rectF.set(rectF.left, rectF.top, max, rectF.bottom);
+            canvas.save();
+            RectF rectF2 = this.rectF;
+            float f5 = rectF2.left;
+            canvas.clipRect(f5, rectF2.top, AndroidUtilities.dp(3.0f) + f5, this.rectF.bottom);
+            float f6 = floor;
+            canvas.drawRoundRect(this.rectF, AndroidUtilities.dp(f6), AndroidUtilities.dp(f6), this.color1Paint);
             this.color1Paint.setAlpha(alpha);
             incrementLoadingT();
             float pow = ((float) Math.pow((this.loadingT / 240.0f) / 4.0f, 0.8500000238418579d)) * 4.0f;
-            this.rectF.set(rectF.left, rectF.top + (rectF.height() * AndroidUtilities.lerp(0.0f, 1.0f - CubicBezierInterpolator.EASE_IN.getInterpolation(MathUtils.clamp(((Math.max(pow, 0.5f) + 1.5f) % 3.5f) * 0.5f, 0.0f, 1.0f)), f5)), rectF.left + AndroidUtilities.dp(6.0f), rectF.top + (rectF.height() * AndroidUtilities.lerp(1.0f, 1.0f - CubicBezierInterpolator.EASE_OUT.getInterpolation(MathUtils.clamp((((pow + 1.5f) % 3.5f) - 1.5f) * 0.5f, 0.0f, 1.0f)), f5)));
-            this.lineClipPath.rewind();
-            this.lineClipPath.addRoundRect(this.rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), direction);
-            canvas.clipPath(this.lineClipPath);
+            this.rectF.set(rectF.left, rectF.top + (rectF.height() * AndroidUtilities.lerp(0.0f, 1.0f - CubicBezierInterpolator.EASE_IN.getInterpolation(MathUtils.clamp(((Math.max(pow, 0.5f) + 1.5f) % 3.5f) * 0.5f, 0.0f, 1.0f)), f2)), rectF.left + AndroidUtilities.dp(6.0f), rectF.top + (rectF.height() * AndroidUtilities.lerp(1.0f, 1.0f - CubicBezierInterpolator.EASE_OUT.getInterpolation(MathUtils.clamp((((pow + 1.5f) % 3.5f) - 1.5f) * 0.5f, 0.0f, 1.0f)), f2)));
+            canvas.drawRoundRect(this.rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), this.color1Paint);
+            canvas.restore();
             View view = this.parentView;
             if (view != null) {
                 view.invalidate();
+                return;
             }
-            z = true;
+            return;
         }
-        canvas.drawPaint(this.color1Paint);
-        float f6 = this.color2Alpha.set(this.hasColor2);
-        if (f6 > 0.0f) {
+        if (f3 <= 0.0f) {
+            this.rectF.set(rectF.left, rectF.top, max, rectF.bottom);
             canvas.save();
-            canvas.translate(rectF.left, rectF.top);
-            incrementLoadingT();
-            float f7 = this.color3Alpha.set(this.hasColor3);
-            if (this.hasColor3) {
-                height = rectF.height();
-                m = ReplyMessageLine$$ExternalSyntheticBackport0.m((int) rectF.height(), AndroidUtilities.dp(18.99f));
-            } else {
-                height = rectF.height();
-                m = ReplyMessageLine$$ExternalSyntheticBackport0.m((int) rectF.height(), AndroidUtilities.dp(12.66f));
-            }
-            canvas.translate(0.0f, -(((((this.loadingTranslationT + this.switchStateT.set(this.switchedCount * 425)) + (this.reversedOut ? 100 : 0)) / 1000.0f) * AndroidUtilities.dp(30.0f)) % (height - m)));
-            checkColorPathes(rectF.height() * 2.0f);
-            int alpha2 = this.color2Paint.getAlpha();
-            this.color2Paint.setAlpha((int) (alpha2 * f6));
-            canvas.drawPath(this.color2Path, this.color2Paint);
-            this.color2Paint.setAlpha(alpha2);
-            if (f7 > 0.0f) {
-                int alpha3 = this.color3Paint.getAlpha();
-                this.color3Paint.setAlpha((int) (alpha3 * f7));
-                canvas.drawPath(this.color3Path, this.color3Paint);
-                this.color3Paint.setAlpha(alpha3);
-            }
+            RectF rectF3 = this.rectF;
+            float f7 = rectF3.left;
+            canvas.clipRect(f7, rectF3.top, AndroidUtilities.dp(3.0f) + f7, this.rectF.bottom);
+            float f8 = floor;
+            canvas.drawRoundRect(this.rectF, AndroidUtilities.dp(f8), AndroidUtilities.dp(f8), this.color1Paint);
             canvas.restore();
+            return;
         }
-        if (z) {
-            canvas.restore();
+        canvas.save();
+        canvas.translate(rectF.left, rectF.top);
+        incrementLoadingT();
+        if (this.hasColor3) {
+            height = rectF.height();
+            m = ReplyMessageLine$$ExternalSyntheticBackport0.m((int) rectF.height(), AndroidUtilities.dp(18.99f));
+        } else {
+            height = rectF.height();
+            m = ReplyMessageLine$$ExternalSyntheticBackport0.m((int) rectF.height(), AndroidUtilities.dp(12.66f));
         }
+        float dp = ((((this.loadingTranslationT + this.switchStateT.set(this.switchedCount * 425)) + (this.reversedOut ? 100 : 0)) / 1000.0f) * AndroidUtilities.dp(30.0f)) % (height - m);
+        checkPatternBitmap(i, this.color2Animated.set(this.color2), this.color3Animated.set(this.color3), f3, f4, f);
+        this.shaderMatrix.setTranslate(0.0f, -dp);
+        this.patternPaint.getShader().setLocalMatrix(this.shaderMatrix);
+        this.patternPaint.setAlpha(NotificationCenter.didReceiveSmsCode);
+        this.rectF.set(0.0f, 0.0f, max - rectF.left, rectF.bottom - rectF.top);
+        RectF rectF4 = this.rectF;
+        float f9 = rectF4.left;
+        canvas.clipRect(f9, rectF4.top, AndroidUtilities.dp(3.0f) + f9, this.rectF.bottom);
+        float f10 = floor;
+        canvas.drawRoundRect(this.rectF, AndroidUtilities.dp(f10), AndroidUtilities.dp(f10), this.patternPaint);
         canvas.restore();
     }
 
@@ -720,19 +729,22 @@ public class ReplyMessageLine {
 
     public void drawBackground(Canvas canvas, RectF rectF, float f, boolean z, boolean z2) {
         AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable;
-        int i = 0;
         if (!z2) {
-            this.backgroundPath.rewind();
-            this.backgroundPath.addRoundRect(rectF, this.radii, Path.Direction.CW);
-            this.backgroundPaint.setColor(this.backgroundColorAnimated.set(this.backgroundColor));
-            this.backgroundPaint.setAlpha((int) (r5.getAlpha() * f));
-            canvas.drawPath(this.backgroundPath, this.backgroundPaint);
+            this.backgroundPaint.setColor(Theme.multAlpha(this.backgroundColorAnimated.set(this.backgroundColor), f));
+            if (RadiiUtils.radiiAreSame(this.radii)) {
+                float f2 = this.radii[0];
+                canvas.drawRoundRect(rectF, f2, f2, this.backgroundPaint);
+            } else {
+                this.backgroundPath.rewind();
+                this.backgroundPath.addRoundRect(rectF, this.radii, Path.Direction.CW);
+                canvas.drawPath(this.backgroundPath, this.backgroundPaint);
+            }
         }
         if (this.emoji == null) {
             return;
         }
-        float f2 = this.emojiLoadedT.set(isEmojiLoaded());
-        if (f2 <= 0.0f || this.emojiAlpha <= 0.0f) {
+        float f3 = this.emojiLoadedT.set(isEmojiLoaded());
+        if (f3 <= 0.0f || this.emojiAlpha <= 0.0f) {
             return;
         }
         if (this.iconCoords == null) {
@@ -751,6 +763,7 @@ public class ReplyMessageLine {
             swapAnimatedEmojiDrawable2.setAlpha((int) (f * 255.0f));
         }
         this.emoji.setColor(Integer.valueOf(this.emojiColor));
+        int i = 0;
         while (true) {
             IconCoords[] iconCoordsArr = this.iconCoords;
             if (i < iconCoordsArr.length) {
@@ -762,7 +775,7 @@ public class ReplyMessageLine {
                     swapAnimatedEmojiDrawable.setAlpha((int) ((swapAnimatedEmojiDrawable == this.sticker ? 1.0f : 0.3f) * 255.0f * iconCoords.a * this.emojiAlpha));
                     float dp = max - AndroidUtilities.dp(iconCoords.x);
                     float dp2 = AndroidUtilities.dp(iconCoords.y) + min;
-                    float dp3 = AndroidUtilities.dp(10.0f) * iconCoords.s * f2;
+                    float dp3 = AndroidUtilities.dp(10.0f) * iconCoords.s * f3;
                     swapAnimatedEmojiDrawable.setBounds((int) (dp - dp3), (int) (dp2 - dp3), (int) (dp + dp3), (int) (dp2 + dp3));
                     swapAnimatedEmojiDrawable.draw(canvas);
                 }
@@ -835,42 +848,36 @@ public class ReplyMessageLine {
         }
     }
 
-    private void checkColorPathes(float f) {
-        if (Math.abs(this.lastHeight - f) > 3.0f || this.lastHasColor3 != this.hasColor3) {
-            float dpf2 = AndroidUtilities.dpf2(3.0f);
-            float dpf22 = AndroidUtilities.dpf2(6.33f);
-            float dpf23 = AndroidUtilities.dpf2(3.0f);
-            float dpf24 = AndroidUtilities.dpf2(3.33f);
-            float f2 = dpf24 + dpf23;
-            this.color2Path.rewind();
-            float f3 = f2;
-            while (f3 < f) {
-                float f4 = dpf2 + 1.0f;
-                this.color2Path.moveTo(f4, f3 - 1.0f);
-                float f5 = f3 + dpf22;
-                this.color2Path.lineTo(f4, f5);
-                this.color2Path.lineTo(0.0f, f5 + dpf23);
-                this.color2Path.lineTo(0.0f, f3 + dpf23);
-                this.color2Path.close();
-                f3 += dpf22 + dpf23 + dpf24;
-                if (this.hasColor3) {
-                    f3 += dpf22;
-                }
-            }
-            if (this.hasColor3) {
-                this.color3Path.rewind();
-                for (float f6 = f2 + dpf22; f6 < f; f6 += dpf22 + dpf23 + dpf24 + dpf22) {
-                    float f7 = dpf2 + 1.0f;
-                    this.color3Path.moveTo(f7, f6 - 1.0f);
-                    float f8 = f6 + dpf22;
-                    this.color3Path.lineTo(f7, f8);
-                    this.color3Path.lineTo(0.0f, f8 + dpf23);
-                    this.color3Path.lineTo(0.0f, f6 + dpf23);
-                    this.color3Path.close();
-                }
-            }
-            this.lastHeight = f;
-            this.lastHasColor3 = this.hasColor3;
+    private void checkPatternBitmap(int i, int i2, int i3, float f, float f2, float f3) {
+        int dp;
+        int multAlpha = Theme.multAlpha(i, f3);
+        int compositeColors = ColorUtils.compositeColors(Theme.multAlpha(i2, f * f3), multAlpha);
+        int compositeColors2 = this.hasColor3 ? ColorUtils.compositeColors(Theme.multAlpha(i3, f3 * f2), multAlpha) : 0;
+        int round = Math.round(AndroidUtilities.dpf2(6.33f));
+        int max = Math.max(1, AndroidUtilities.dp(3.0f));
+        if (this.hasColor3) {
+            dp = AndroidUtilities.dp(18.99f);
+        } else {
+            dp = AndroidUtilities.dp(12.66f);
         }
+        Bitmap bitmap = this.patternBitmap;
+        if (bitmap != null && this.cachedBg == multAlpha && this.cachedBar2 == compositeColors && this.cachedBar3 == compositeColors2 && this.cachedHasColor3 == this.hasColor3 && this.cachedBarHeight == round && bitmap.getWidth() == max && this.patternBitmap.getHeight() == dp) {
+            return;
+        }
+        this.cachedBg = multAlpha;
+        this.cachedBar2 = compositeColors;
+        this.cachedBar3 = compositeColors2;
+        this.cachedHasColor3 = this.hasColor3;
+        this.cachedBarHeight = round;
+        Bitmap bitmap2 = this.patternBitmap;
+        if (bitmap2 == null || bitmap2.getWidth() != max || this.patternBitmap.getHeight() != dp) {
+            Bitmap bitmap3 = this.patternBitmap;
+            if (bitmap3 != null) {
+                bitmap3.recycle();
+            }
+            this.patternBitmap = Bitmap.createBitmap(max, dp, Bitmap.Config.ARGB_8888);
+            this.patternPaint.setShader(new BitmapShader(this.patternBitmap, Shader.TileMode.CLAMP, Shader.TileMode.REPEAT));
+        }
+        Utilities.drawReplyLinePattern(this.patternBitmap, multAlpha, compositeColors, compositeColors2, round, this.hasColor3);
     }
 }

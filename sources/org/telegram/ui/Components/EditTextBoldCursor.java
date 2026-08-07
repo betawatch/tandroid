@@ -5,10 +5,12 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.ColorFilter;
 import android.graphics.LinearGradient;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.Shader;
@@ -136,7 +138,12 @@ public class EditTextBoldCursor extends EditTextEffects {
     public boolean lineYFix;
     private ViewTreeObserver.OnPreDrawListener listenerFixer;
     private Drawable mCursorDrawable;
+    private int mHandlesColor;
+    private ColorFilter mHandlesColorFilter;
     private Rect mTempRect;
+    private Drawable mTextSelectHandle;
+    private Drawable mTextSelectHandleLeft;
+    private Drawable mTextSelectHandleRight;
     private boolean nextSetTextAnimated;
     private Runnable onPremiumMenuLockClickListener;
     private Rect padding;
@@ -227,7 +234,7 @@ public class EditTextBoldCursor extends EditTextEffects {
 
     public EditTextBoldCursor(Context context) {
         super(context);
-        this.invalidateCallback = new Choreographer60FpsContent.FrameCallback() { // from class: org.telegram.ui.Components.EditTextBoldCursor$$ExternalSyntheticLambda9
+        this.invalidateCallback = new Choreographer60FpsContent.FrameCallback() { // from class: org.telegram.ui.Components.EditTextBoldCursor$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.utils.Choreographer60FpsContent.FrameCallback
             public final void doFrame(long j) {
                 EditTextBoldCursor.this.lambda$new$0(j);
@@ -467,7 +474,7 @@ public class EditTextBoldCursor extends EditTextEffects {
             }
             final ViewTreeObserver.OnPreDrawListener onPreDrawListener = this.listenerFixer;
             Objects.requireNonNull(onPreDrawListener);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.EditTextBoldCursor$$ExternalSyntheticLambda8
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.EditTextBoldCursor$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
                     onPreDrawListener.onPreDraw();
@@ -893,7 +900,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                     } else {
                         Utilities.Callback2<Canvas, Runnable> callback2 = this.drawHint;
                         if (callback2 != null) {
-                            callback2.run(canvas, new Runnable() { // from class: org.telegram.ui.Components.EditTextBoldCursor$$ExternalSyntheticLambda10
+                            callback2.run(canvas, new Runnable() { // from class: org.telegram.ui.Components.EditTextBoldCursor$$ExternalSyntheticLambda4
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     EditTextBoldCursor.this.lambda$drawHint$1(canvas);
@@ -1415,7 +1422,7 @@ public class EditTextBoldCursor extends EditTextEffects {
             FloatingToolbar floatingToolbar = new FloatingToolbar(context, view, getActionModeStyle(), getResourcesProvider(), this.blurredBackgroundDrawableViewFactory);
             this.floatingToolbar = floatingToolbar;
             floatingToolbar.setOnPremiumLockClick(this.onPremiumMenuLockClickListener);
-            this.floatingToolbar.setQuoteShowVisible(new Utilities.Callback0Return() { // from class: org.telegram.ui.Components.EditTextBoldCursor$$ExternalSyntheticLambda11
+            this.floatingToolbar.setQuoteShowVisible(new Utilities.Callback0Return() { // from class: org.telegram.ui.Components.EditTextBoldCursor$$ExternalSyntheticLambda5
                 @Override // org.telegram.messenger.Utilities.Callback0Return
                 public final Object run() {
                     boolean shouldShowQuoteButton;
@@ -1424,7 +1431,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                 }
             });
             this.floatingActionMode = new FloatingActionMode(getContext(), new ActionModeCallback2Wrapper(callback), this, this.floatingToolbar);
-            this.floatingToolbarPreDrawListener = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.Components.EditTextBoldCursor$$ExternalSyntheticLambda12
+            this.floatingToolbarPreDrawListener = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.Components.EditTextBoldCursor$$ExternalSyntheticLambda6
                 @Override // android.view.ViewTreeObserver.OnPreDrawListener
                 public final boolean onPreDraw() {
                     boolean lambda$startActionMode$2;
@@ -1507,26 +1514,73 @@ public class EditTextBoldCursor extends EditTextEffects {
         }
     }
 
+    private Drawable updateHandleDrawable(Drawable drawable, boolean z) {
+        if (drawable != null) {
+            if (z) {
+                drawable = drawable.mutate();
+            }
+            ColorFilter colorFilter = this.mHandlesColorFilter;
+            if (colorFilter != null) {
+                drawable.setColorFilter(colorFilter);
+            }
+        }
+        return drawable;
+    }
+
     public void setHandlesColor(int i) {
-        Drawable textSelectHandleLeft;
-        Drawable textSelectHandle;
-        Drawable textSelectHandleRight;
-        if (Build.VERSION.SDK_INT < 29 || XiaomiUtilities.isMIUI()) {
+        if (Build.VERSION.SDK_INT < 29 || XiaomiUtilities.isMIUI() || this.mHandlesColor == i) {
             return;
         }
-        try {
-            textSelectHandleLeft = getTextSelectHandleLeft();
-            PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-            textSelectHandleLeft.setColorFilter(i, mode);
-            setTextSelectHandleLeft(textSelectHandleLeft);
-            textSelectHandle = getTextSelectHandle();
-            textSelectHandle.setColorFilter(i, mode);
-            setTextSelectHandle(textSelectHandle);
-            textSelectHandleRight = getTextSelectHandleRight();
-            textSelectHandleRight.setColorFilter(i, mode);
-            setTextSelectHandleRight(textSelectHandleRight);
-        } catch (Exception unused) {
+        this.mHandlesColor = i;
+        this.mHandlesColorFilter = new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN);
+        updateHandleDrawable(this.mTextSelectHandleLeft, false);
+        updateHandleDrawable(this.mTextSelectHandleRight, false);
+        updateHandleDrawable(this.mTextSelectHandle, false);
+    }
+
+    @Override // android.widget.TextView
+    public Drawable getTextSelectHandleLeft() {
+        if (this.mTextSelectHandleLeft == null) {
+            this.mTextSelectHandleLeft = updateHandleDrawable(super.getTextSelectHandleLeft(), true);
         }
+        return this.mTextSelectHandleLeft;
+    }
+
+    @Override // android.widget.TextView
+    public Drawable getTextSelectHandleRight() {
+        if (this.mTextSelectHandleRight == null) {
+            this.mTextSelectHandleRight = updateHandleDrawable(super.getTextSelectHandleRight(), true);
+        }
+        return this.mTextSelectHandleRight;
+    }
+
+    @Override // android.widget.TextView
+    public Drawable getTextSelectHandle() {
+        if (this.mTextSelectHandle == null) {
+            this.mTextSelectHandle = updateHandleDrawable(super.getTextSelectHandle(), true);
+        }
+        return this.mTextSelectHandle;
+    }
+
+    @Override // android.widget.TextView
+    public void setTextSelectHandleLeft(Drawable drawable) {
+        Drawable updateHandleDrawable = updateHandleDrawable(drawable, true);
+        this.mTextSelectHandleLeft = updateHandleDrawable;
+        super.setTextSelectHandleLeft(updateHandleDrawable);
+    }
+
+    @Override // android.widget.TextView
+    public void setTextSelectHandleRight(Drawable drawable) {
+        Drawable updateHandleDrawable = updateHandleDrawable(drawable, true);
+        this.mTextSelectHandleRight = updateHandleDrawable;
+        super.setTextSelectHandleRight(updateHandleDrawable);
+    }
+
+    @Override // android.widget.TextView
+    public void setTextSelectHandle(Drawable drawable) {
+        Drawable updateHandleDrawable = updateHandleDrawable(drawable, true);
+        this.mTextSelectHandle = updateHandleDrawable;
+        super.setTextSelectHandle(updateHandleDrawable);
     }
 
     public void setOnPremiumMenuLockClickListener(Runnable runnable) {

@@ -100,6 +100,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenu;
@@ -252,10 +253,10 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
     private FrameLayout messagesPlayAnimationView;
     private AnimatorSet messagesPlayViewAnimator;
     private AnimatorSet motionAnimation;
-    Theme.MessageDrawable msgOutDrawable;
-    Theme.MessageDrawable msgOutDrawableSelected;
-    Theme.MessageDrawable msgOutMediaDrawable;
-    Theme.MessageDrawable msgOutMediaDrawableSelected;
+    org.telegram.ui.ActionBar.MessageDrawable msgOutDrawable;
+    org.telegram.ui.ActionBar.MessageDrawable msgOutDrawableSelected;
+    org.telegram.ui.ActionBar.MessageDrawable msgOutMediaDrawable;
+    org.telegram.ui.ActionBar.MessageDrawable msgOutMediaDrawableSelected;
     private boolean nightTheme;
     private ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener;
     DayNightSwitchDelegate onSwitchDayNightDelegate;
@@ -1080,10 +1081,10 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                         }
                         this.sunDrawable.beginApplyLayerColors();
                         int color = Theme.getColor(Theme.key_chats_menuName);
-                        this.sunDrawable.setLayerColor("Sunny.**", color);
-                        this.sunDrawable.setLayerColor("Path 6.**", color);
-                        this.sunDrawable.setLayerColor("Path.**", color);
-                        this.sunDrawable.setLayerColor("Path 5.**", color);
+                        this.sunDrawable.setLayerColor("Sunny", color);
+                        this.sunDrawable.setLayerColor("Path 6", color);
+                        this.sunDrawable.setLayerColor("Path", color);
+                        this.sunDrawable.setLayerColor("Path 5", color);
                         this.sunDrawable.commitApplyLayerColors();
                     }
                     str = "d";
@@ -7889,6 +7890,11 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ boolean canSaveRichDocument(ChatMessageCell chatMessageCell2) {
+                        return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$canSaveRichDocument(this, chatMessageCell2);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ boolean canToggleRichMessageCheckbox(ChatMessageCell chatMessageCell2) {
                         return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$canToggleRichMessageCheckbox(this, chatMessageCell2);
                     }
@@ -7899,8 +7905,8 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                    public /* synthetic */ void didLongPressBotButton(ChatMessageCell chatMessageCell2, TLRPC.KeyboardButton keyboardButton) {
-                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressBotButton(this, chatMessageCell2, keyboardButton);
+                    public /* synthetic */ void didLongPressBotButton(ChatMessageCell chatMessageCell2, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressBotButton(this, chatMessageCell2, keyboardButtonProto);
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -7949,13 +7955,18 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ void didPressAppUpdateButton() {
+                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAppUpdateButton(this);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ void didPressBoostCounter(ChatMessageCell chatMessageCell2) {
                         ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressBoostCounter(this, chatMessageCell2);
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                    public /* synthetic */ void didPressBotButton(ChatMessageCell chatMessageCell2, TLRPC.KeyboardButton keyboardButton) {
-                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressBotButton(this, chatMessageCell2, keyboardButton);
+                    public /* synthetic */ void didPressBotButton(ChatMessageCell chatMessageCell2, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressBotButton(this, chatMessageCell2, keyboardButtonProto);
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -7999,8 +8010,8 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                    public /* synthetic */ void didPressExtendedMediaPreview(ChatMessageCell chatMessageCell2, TLRPC.KeyboardButton keyboardButton) {
-                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressExtendedMediaPreview(this, chatMessageCell2, keyboardButton);
+                    public /* synthetic */ void didPressExtendedMediaPreview(ChatMessageCell chatMessageCell2, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
+                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressExtendedMediaPreview(this, chatMessageCell2, keyboardInlineButton);
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -8071,6 +8082,11 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ void didPressRevealSensitiveContent(ChatMessageCell chatMessageCell2) {
                         ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressRevealSensitiveContent(this, chatMessageCell2);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ void didPressRichDocumentOptions(ChatMessageCell chatMessageCell2, TLRPC.Document document, float f, float f2) {
+                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressRichDocumentOptions(this, chatMessageCell2, document, f, f2);
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -9018,12 +9034,12 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         }
     }
 
-    private class MessageDrawable extends Theme.MessageDrawable {
+    private class MessageDrawable extends org.telegram.ui.ActionBar.MessageDrawable {
         public MessageDrawable(int i, boolean z, boolean z2) {
             super(i, z, z2);
         }
 
-        @Override // org.telegram.ui.ActionBar.Theme.MessageDrawable
+        @Override // org.telegram.ui.ActionBar.MessageDrawable
         public void setTop(int i, int i2, int i3, boolean z, boolean z2) {
             if (ThemePreviewActivity.this.setupFinished) {
                 return;
@@ -9031,7 +9047,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             super.setTop(i, i2, i3, z, z2);
         }
 
-        @Override // org.telegram.ui.ActionBar.Theme.MessageDrawable
+        @Override // org.telegram.ui.ActionBar.MessageDrawable
         public void setTop(int i, int i2, int i3, int i4, int i5, int i6, boolean z, boolean z2) {
             if (ThemePreviewActivity.this.setupFinished) {
                 return;

@@ -5,7 +5,7 @@ import java.util.Iterator;
 import org.telegram.messenger.AppGlobalConfig;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RichEditorLimits {
     public int blocks;
     public int depth;

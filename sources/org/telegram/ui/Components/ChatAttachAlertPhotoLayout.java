@@ -2053,7 +2053,7 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
     /* JADX INFO: Access modifiers changed from: private */
     public int maxCount() {
         BaseFragment baseFragment = this.parentAlert.baseFragment;
-        return ((baseFragment instanceof ChatActivity) && ((ChatActivity) baseFragment).getChatMode() == 5) ? this.parentAlert.baseFragment.getMessagesController().quickReplyMessagesLimit - ((ChatActivity) this.parentAlert.baseFragment).messages.size() : ConnectionsManager.DEFAULT_DATACENTER_ID;
+        return ((baseFragment instanceof ChatActivity) && ((ChatActivity) baseFragment).getChatMode() == 5) ? this.parentAlert.baseFragment.getMessagesController().config.quickReplyMessagesLimit.get() - ((ChatActivity) this.parentAlert.baseFragment).messages.size() : ConnectionsManager.DEFAULT_DATACENTER_ID;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -5166,7 +5166,7 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
                 }
                 if (ChatAttachAlertPhotoLayout.selectedPhotos.size() + 1 > ChatAttachAlertPhotoLayout.this.maxCount()) {
                     ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ChatAttachAlertPhotoLayout.this;
-                    BulletinFactory.of(chatAttachAlertPhotoLayout.parentAlert.sizeNotifierFrameLayout, chatAttachAlertPhotoLayout.resourcesProvider).createErrorBulletin(AndroidUtilities.replaceTags(LocaleController.formatPluralString("BusinessRepliesToastLimit", ChatAttachAlertPhotoLayout.this.parentAlert.baseFragment.getMessagesController().quickReplyMessagesLimit, new Object[0]))).show();
+                    BulletinFactory.of(chatAttachAlertPhotoLayout.parentAlert.sizeNotifierFrameLayout, chatAttachAlertPhotoLayout.resourcesProvider).createErrorBulletin(AndroidUtilities.replaceTags(LocaleController.formatPluralString("BusinessRepliesToastLimit", ChatAttachAlertPhotoLayout.this.parentAlert.baseFragment.getMessagesController().config.quickReplyMessagesLimit.get(), new Object[0]))).show();
                     return;
                 }
                 boolean containsKey = ChatAttachAlertPhotoLayout.selectedPhotos.containsKey(Integer.valueOf(photoEntry.imageId));

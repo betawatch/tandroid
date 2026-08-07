@@ -72,7 +72,7 @@ import org.telegram.ui.Cells.TextCell;
 import org.telegram.ui.Cells.TextCheckCell;
 import org.telegram.ui.Cells.TextInfoPrivacyCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda270;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda304;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.ChatActivityEnterViewAnimatedIconView;
 import org.telegram.ui.Components.ChatAttachAlert;
@@ -199,7 +199,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
     }
 
     public static int getAllowedLayoutsForIndex(int i) {
-        return (i == -2 || i == -3) ? 90 : 41026;
+        return (i == -2 || i == -3) ? 74 : 41026;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3603,7 +3603,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             }
         });
         ScrimOptions scrimOptions = new ScrimOptions(getContext(), this.resourcesProvider);
-        add.setOnDismiss(new ChatActivity$$ExternalSyntheticLambda270(scrimOptions));
+        add.setOnDismiss(new ChatActivity$$ExternalSyntheticLambda304(scrimOptions));
         add.setMinWidth(AndroidUtilities.dp(185.0f));
         add.setupSelectors();
         scrimOptions.setItemOptions(add);

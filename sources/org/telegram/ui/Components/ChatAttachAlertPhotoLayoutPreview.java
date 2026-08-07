@@ -57,6 +57,7 @@ import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenu;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
 import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.MessageDrawable;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatActionCell;
 import org.telegram.ui.ChatActivity;
@@ -2182,7 +2183,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
 
         /* JADX INFO: Access modifiers changed from: private */
         class PreviewGroupCell {
-            private final Theme.MessageDrawable.PathDrawParams backgroundCacheParams;
+            private final MessageDrawable.PathDrawParams backgroundCacheParams;
             private float bottom;
             private Text buttonText;
             private final Paint buttonTextBgPaint;
@@ -2199,7 +2200,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
             private long lastMediaUpdate;
             private float left;
             public ArrayList media;
-            private final Theme.MessageDrawable messageBackground;
+            private final MessageDrawable messageBackground;
             final int padding;
             private float previousGroupHeight;
             private float previousGroupWidth;
@@ -2227,8 +2228,8 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
                 this.halfGap = dp / 2;
                 this.buttonTextRect = new RectF();
                 this.buttonTextBgPaint = new Paint(1);
-                this.messageBackground = (Theme.MessageDrawable) ChatAttachAlertPhotoLayoutPreview.this.getThemedDrawable("drawableMsgOutMedia");
-                this.backgroundCacheParams = new Theme.MessageDrawable.PathDrawParams();
+                this.messageBackground = (MessageDrawable) ChatAttachAlertPhotoLayoutPreview.this.getThemedDrawable("drawableMsgOutMedia");
+                this.backgroundCacheParams = new MessageDrawable.PathDrawParams();
             }
 
             public void detach() {

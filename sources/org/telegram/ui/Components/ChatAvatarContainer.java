@@ -186,14 +186,14 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
         this(context, baseFragment, z, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x0370, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x0382, code lost:
     
-        if (r4.isComments == false) goto L92;
+        if (r4.isComments == false) goto L96;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v37 */
-    /* JADX WARN: Type inference failed for: r2v38, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r2v43 */
+    /* JADX WARN: Type inference failed for: r2v41 */
+    /* JADX WARN: Type inference failed for: r2v42, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r2v47 */
     /* JADX WARN: Type inference failed for: r8v1 */
     /* JADX WARN: Type inference failed for: r8v2, types: [boolean] */
     /* JADX WARN: Type inference failed for: r8v3 */
@@ -245,11 +245,11 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
         this.avatarImageView = new 1(context, baseFragment, z3, resourcesProvider);
         if (z2 || (baseFragment instanceof TopicsFragment)) {
             ChatActivity chatActivity2 = this.parentFragment;
-            if (chatActivity2 == null || (chatActivity2.getChatMode() != 5 && this.parentFragment.getChatMode() != 6 && this.parentFragment.getChatMode() != 8 && !this.parentFragment.isInBotForumMode())) {
+            if (chatActivity2 == null || (chatActivity2.getChatMode() != 5 && this.parentFragment.getChatMode() != 9 && this.parentFragment.getChatMode() != 6 && this.parentFragment.getChatMode() != 8 && !this.parentFragment.isInBotForumMode())) {
                 this.sharedMediaPreloader = new SharedMediaLayout.SharedMediaPreloader(baseFragment);
             }
             ChatActivity chatActivity3 = this.parentFragment;
-            boolean z4 = chatActivity3 != null && (chatActivity3.isThreadChat() || this.parentFragment.getChatMode() == 2 || this.parentFragment.getChatMode() == 5 || this.parentFragment.getChatMode() == 6);
+            boolean z4 = chatActivity3 != null && (chatActivity3.isThreadChat() || this.parentFragment.getChatMode() == 2 || this.parentFragment.getChatMode() == 5 || this.parentFragment.getChatMode() == 9 || this.parentFragment.getChatMode() == 6);
             this.avatarImageIsHidden = z4;
             if (z4) {
                 this.avatarImageView.setVisibility(8);
@@ -1004,7 +1004,7 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
                 simpleTextView.layout(dp2, AndroidUtilities.dp(1.66f) + currentActionBarHeight, simpleTextView.getMeasuredWidth() + dp2, simpleTextView.getTextHeight() + currentActionBarHeight + AndroidUtilities.dp(1.66f));
             }
         } else {
-            this.titleTextView.layout(dp2, (AndroidUtilities.dp(10.0f) + currentActionBarHeight) - this.titleTextView.getPaddingTop(), this.titleTextView.getMeasuredWidth() + dp2, (((this.titleTextView.getTextHeight() + currentActionBarHeight) + AndroidUtilities.dp(10.0f)) - this.titleTextView.getPaddingTop()) + this.titleTextView.getPaddingBottom());
+            this.titleTextView.layout(dp2, (AndroidUtilities.dp(11.0f) + currentActionBarHeight) - this.titleTextView.getPaddingTop(), this.titleTextView.getMeasuredWidth() + dp2, (((this.titleTextView.getTextHeight() + currentActionBarHeight) + AndroidUtilities.dp(11.0f)) - this.titleTextView.getPaddingTop()) + this.titleTextView.getPaddingBottom());
             if (simpleTextView != null) {
                 simpleTextView.layout(dp2, AndroidUtilities.dp(10.0f) + currentActionBarHeight, simpleTextView.getMeasuredWidth() + dp2, simpleTextView.getTextHeight() + currentActionBarHeight + AndroidUtilities.dp(10.0f));
             }
@@ -2043,9 +2043,9 @@ public class ChatAvatarContainer extends FrameLayout implements FactorAnimator.T
             max = Math.max(max, simpleTextView2.getExactWidthIncludeDrawables());
         }
         if (hasVisibleAvatar()) {
-            dp = AndroidUtilities.dp(64.0f);
+            dp = AndroidUtilities.dp(68.0f);
         } else {
-            dp = AndroidUtilities.dp(30.0f);
+            dp = AndroidUtilities.dp(34.0f);
         }
         return (int) (max + dp);
     }

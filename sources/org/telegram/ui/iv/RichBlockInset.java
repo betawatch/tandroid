@@ -3,7 +3,7 @@ package org.telegram.ui.iv;
 import android.animation.ValueAnimator;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 class RichBlockInset {
     private ValueAnimator animator;
     private long boundRowId = Long.MIN_VALUE;

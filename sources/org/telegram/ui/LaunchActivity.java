@@ -110,6 +110,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.SendMessageChatArguments;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.SharedPrefsHelper;
@@ -5878,21 +5879,21 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:137:0x0271  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x0491  */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x04f7  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x05b5  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x05d8  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x05e7 A[LOOP:3: B:183:0x05df->B:185:0x05e7, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:189:0x0614 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x062c A[ADDED_TO_REGION, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:197:0x05cf  */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x049c  */
-    /* JADX WARN: Removed duplicated region for block: B:206:0x04a6  */
-    /* JADX WARN: Removed duplicated region for block: B:209:0x04b0  */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x04ba  */
-    /* JADX WARN: Removed duplicated region for block: B:213:0x04b5  */
-    /* JADX WARN: Removed duplicated region for block: B:214:0x04ab  */
-    /* JADX WARN: Removed duplicated region for block: B:262:0x03bd  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x0489  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x04ed  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x05ab  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x05ce  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x05dd A[LOOP:3: B:183:0x05d5->B:185:0x05dd, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x060a A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x0622 A[ADDED_TO_REGION, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:197:0x05c5  */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x0494  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x049e  */
+    /* JADX WARN: Removed duplicated region for block: B:209:0x04a8  */
+    /* JADX WARN: Removed duplicated region for block: B:212:0x04b2  */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x04ad  */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x04a3  */
+    /* JADX WARN: Removed duplicated region for block: B:262:0x03b9  */
     /* JADX WARN: Type inference failed for: r2v11 */
     /* JADX WARN: Type inference failed for: r2v20 */
     /* JADX WARN: Type inference failed for: r2v22 */
@@ -6100,7 +6101,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                         if (size + (arrayList2 == null ? arrayList2.size() : 0) == 1) {
                                         }
                                     }
-                                    SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) this.documentsPathsArray, (ArrayList<String>) this.documentsOriginalPathsArray, (ArrayList<Uri>) this.documentsUrisArray, charSequence8, this.documentsMimeType, j, messageObject, messageObject, (TL_stories.StoryItem) null, (ChatActivity.ReplyQuote) null, (MessageObject) null, z10, i3, (InputContentInfoCompat) null, (String) null, 0, 0L, false, 0L);
+                                    SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) this.documentsPathsArray, (ArrayList<String>) this.documentsOriginalPathsArray, (ArrayList<Uri>) this.documentsUrisArray, charSequence8, this.documentsMimeType, j, messageObject, messageObject, (TL_stories.StoryItem) null, (ChatActivity.ReplyQuote) null, (MessageObject) null, z10, i3, (InputContentInfoCompat) null, (SendMessageChatArguments) null, 0L, false, 0L);
                                     CharSequence charSequence10 = charSequence8;
                                     if (this.voicePath != null) {
                                     }
@@ -6143,7 +6144,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                                     this.sendingText = null;
                                                 }
                                             }
-                                            SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) this.documentsPathsArray, (ArrayList<String>) this.documentsOriginalPathsArray, (ArrayList<Uri>) this.documentsUrisArray, charSequence8, this.documentsMimeType, j, messageObject, messageObject, (TL_stories.StoryItem) null, (ChatActivity.ReplyQuote) null, (MessageObject) null, z10, i3, (InputContentInfoCompat) null, (String) null, 0, 0L, false, 0L);
+                                            SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) this.documentsPathsArray, (ArrayList<String>) this.documentsOriginalPathsArray, (ArrayList<Uri>) this.documentsUrisArray, charSequence8, this.documentsMimeType, j, messageObject, messageObject, (TL_stories.StoryItem) null, (ChatActivity.ReplyQuote) null, (MessageObject) null, z10, i3, (InputContentInfoCompat) null, (SendMessageChatArguments) null, 0L, false, 0L);
                                         }
                                         CharSequence charSequence102 = charSequence8;
                                         if (this.voicePath != null) {
@@ -6234,7 +6235,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                             }
                                             ArrayList arrayList16 = new ArrayList();
                                             arrayList16.add(this.videoPath);
-                                            SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList16, (ArrayList<String>) arrayList16, (ArrayList<Uri>) null, charSequence8, (String) null, j, messageObject, messageObject, (TL_stories.StoryItem) null, (ChatActivity.ReplyQuote) null, (MessageObject) null, z10, i3, (InputContentInfoCompat) null, (String) null, 0, 0L, false, 0L);
+                                            SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList16, (ArrayList<String>) arrayList16, (ArrayList<Uri>) null, charSequence8, (String) null, j, messageObject, messageObject, (TL_stories.StoryItem) null, (ChatActivity.ReplyQuote) null, (MessageObject) null, z10, i3, (InputContentInfoCompat) null, (SendMessageChatArguments) null, 0L, false, 0L);
                                         } else {
                                             ArrayList arrayList17 = this.photoPathsArray;
                                             if (arrayList17 != null && arrayList17.size() > 0) {
@@ -6246,7 +6247,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                                     this.sendingText = null;
                                                 }
                                                 ArrayList arrayList18 = this.photoPathsArray;
-                                                SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList18, j, messageObject, messageObject, null, null, false, arrayList18.size() > 1, null, z10, i3, i2, 0, false, null, null, 0, 0L, false, 0L, 0L, null);
+                                                SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList18, j, messageObject, messageObject, null, null, false, arrayList18.size() > 1, null, z10, i3, i2, 0, false, null, null, 0L, false, 0L, 0L, null);
                                             }
                                         }
                                         z5 = z13;
@@ -6262,7 +6263,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                     }
                                     ArrayList arrayList19 = new ArrayList();
                                     arrayList19.add(this.videoPath);
-                                    SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList19, (ArrayList<String>) arrayList19, (ArrayList<Uri>) null, charSequence8, (String) null, j, messageObject, messageObject, (TL_stories.StoryItem) null, (ChatActivity.ReplyQuote) null, (MessageObject) null, z10, i3, (InputContentInfoCompat) null, (String) null, 0, 0L, false, 0L);
+                                    SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList19, (ArrayList<String>) arrayList19, (ArrayList<Uri>) null, charSequence8, (String) null, j, messageObject, messageObject, (TL_stories.StoryItem) null, (ChatActivity.ReplyQuote) null, (MessageObject) null, z10, i3, (InputContentInfoCompat) null, (SendMessageChatArguments) null, 0L, false, 0L);
                                 }
                                 if (this.photoPathsArray != null) {
                                     CharSequence charSequence15 = this.sendingText;
@@ -6273,7 +6274,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                         this.sendingText = null;
                                     }
                                     ArrayList arrayList20 = this.photoPathsArray;
-                                    SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList20, j, messageObject, messageObject, null, null, false, arrayList20.size() > 1, null, z10, i3, i2, 0, false, null, null, 0, 0L, false, 0L, 0L, null);
+                                    SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList20, j, messageObject, messageObject, null, null, false, arrayList20.size() > 1, null, z10, i3, i2, 0, false, null, null, 0L, false, 0L, 0L, null);
                                 }
                                 z5 = z4;
                             }
@@ -6284,7 +6285,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                             charSequence3 = this.sendingText;
                             if (charSequence3 != null) {
                             }
-                            SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) this.documentsPathsArray, (ArrayList<String>) this.documentsOriginalPathsArray, (ArrayList<Uri>) this.documentsUrisArray, charSequence8, this.documentsMimeType, j, messageObject, messageObject, (TL_stories.StoryItem) null, (ChatActivity.ReplyQuote) null, (MessageObject) null, z10, i3, (InputContentInfoCompat) null, (String) null, 0, 0L, false, 0L);
+                            SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) this.documentsPathsArray, (ArrayList<String>) this.documentsOriginalPathsArray, (ArrayList<Uri>) this.documentsUrisArray, charSequence8, this.documentsMimeType, j, messageObject, messageObject, (TL_stories.StoryItem) null, (ChatActivity.ReplyQuote) null, (MessageObject) null, z10, i3, (InputContentInfoCompat) null, (SendMessageChatArguments) null, 0L, false, 0L);
                             CharSequence charSequence1022 = charSequence8;
                             if (this.voicePath != null) {
                             }
@@ -6321,7 +6322,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     charSequence3 = this.sendingText;
                     if (charSequence3 != null) {
                     }
-                    SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) this.documentsPathsArray, (ArrayList<String>) this.documentsOriginalPathsArray, (ArrayList<Uri>) this.documentsUrisArray, charSequence8, this.documentsMimeType, j, messageObject, messageObject, (TL_stories.StoryItem) null, (ChatActivity.ReplyQuote) null, (MessageObject) null, z10, i3, (InputContentInfoCompat) null, (String) null, 0, 0L, false, 0L);
+                    SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) this.documentsPathsArray, (ArrayList<String>) this.documentsOriginalPathsArray, (ArrayList<Uri>) this.documentsUrisArray, charSequence8, this.documentsMimeType, j, messageObject, messageObject, (TL_stories.StoryItem) null, (ChatActivity.ReplyQuote) null, (MessageObject) null, z10, i3, (InputContentInfoCompat) null, (SendMessageChatArguments) null, 0L, false, 0L);
                     CharSequence charSequence10222 = charSequence8;
                     if (this.voicePath != null) {
                     }
@@ -7198,8 +7199,8 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     if (baseFragment3 != null) {
                         Map hashMap = new HashMap();
                         int i3 = Theme.key_dialogTopBackground;
-                        hashMap.put("info1.**", Integer.valueOf(baseFragment3.getThemedColor(i3)));
-                        hashMap.put("info2.**", Integer.valueOf(baseFragment3.getThemedColor(i3)));
+                        hashMap.put("info1", Integer.valueOf(baseFragment3.getThemedColor(i3)));
+                        hashMap.put("info2", Integer.valueOf(baseFragment3.getThemedColor(i3)));
                         builder.setTopAnimation(R.raw.not_available, 52, false, baseFragment3.getThemedColor(i3), hashMap);
                         builder.setTopAnimationIsNew(true);
                     }

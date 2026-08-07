@@ -15,6 +15,7 @@ import org.telegram.tgnet.TLRPC$TL_inputPrivacyValueAllowUsers$$ExternalSyntheti
 import org.telegram.tgnet.TLRPC$TL_photos_photos$$ExternalSyntheticLambda0;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.tl.TL_keyboard;
 
 /* loaded from: classes3.dex */
 public class TL_iv {
@@ -354,6 +355,8 @@ public class TL_iv {
                     return new textDate();
                 case textAutoUrl.constructor /* -1402305622 */:
                     return new textAutoUrl();
+                case textButton.constructor /* -1345872682 */:
+                    return new textButton();
                 case textBankCard.constructor /* -1185513171 */:
                     return new textBankCard();
                 case textUnderline.constructor /* -1054465340 */:
@@ -925,6 +928,60 @@ public class TL_iv {
         }
     }
 
+    public static class textButton extends RichText implements TL_keyboard.KeyboardButtonProto {
+        public static final int constructor = -1345872682;
+        public int flags;
+        public TL_keyboard.RichButtonStyle style;
+        public TL_keyboard.InlineButtonType type;
+
+        @Override // org.telegram.tgnet.tl.TL_keyboard.KeyboardButtonProto
+        public /* synthetic */ byte[] getData() {
+            return TL_keyboard.KeyboardButtonProto.-CC.$default$getData(this);
+        }
+
+        @Override // org.telegram.tgnet.tl.TL_keyboard.KeyboardButtonProto
+        public /* synthetic */ String getUrl() {
+            return TL_keyboard.KeyboardButtonProto.-CC.$default$getUrl(this);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.flags = inputSerializedData.readInt32(z);
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.type = TL_keyboard.InlineButtonType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                this.style = TL_keyboard.RichButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 1, this.style != null);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
+            this.text.serializeToStream(outputSerializedData);
+            this.type.serializeToStream(outputSerializedData);
+            if (TLObject.hasFlag(this.flags, 1)) {
+                this.style.serializeToStream(outputSerializedData);
+            }
+        }
+
+        @Override // org.telegram.tgnet.tl.TL_keyboard.KeyboardButtonProto
+        public TL_keyboard.ButtonTypeProto getType() {
+            return this.type;
+        }
+
+        @Override // org.telegram.tgnet.tl.TL_keyboard.KeyboardButtonProto
+        public String getText() {
+            RichText richText = this.text;
+            if (richText instanceof textPlain) {
+                return ((textPlain) richText).text;
+            }
+            return null;
+        }
+    }
+
     public static abstract class PageBlock extends TLObject {
         public boolean bottom;
         public int cachedHeight;
@@ -1005,12 +1062,14 @@ public class TL_iv {
                     return new pageBlockKicker();
                 case pageBlockOrderedList.constructor /* 534181569 */:
                     return new pageBlockOrderedList();
-                case pageBlockBlockquote.constructor /* 641563686 */:
-                    return new pageBlockBlockquote();
+                case pageBlockBlockquote_layer228.constructor /* 641563686 */:
+                    return new pageBlockBlockquote_layer228();
                 case pageBlockEmbedPost_layer82.constructor /* 690781161 */:
                     return new pageBlockEmbedPost_layer82();
                 case pageBlockAudio_layer82.constructor /* 834148991 */:
                     return new pageBlockAudio_layer82();
+                case pageBlockDocument.constructor /* 955923363 */:
+                    return new pageBlockDocument();
                 case pageBlockCover.constructor /* 972174080 */:
                     return new pageBlockCover();
                 case pageBlockList_layer82.constructor /* 978896884 */:
@@ -1031,10 +1090,14 @@ public class TL_iv {
                     return new pageBlockMath();
                 case pageBlockCollage.constructor /* 1705048653 */:
                     return new pageBlockCollage();
+                case pageBlockBlockquote.constructor /* 1724999435 */:
+                    return new pageBlockBlockquote();
                 case pageBlockHeading3.constructor /* 1743204781 */:
                     return new pageBlockHeading3();
                 case pageBlockHeading6.constructor /* 1747599785 */:
                     return new pageBlockHeading6();
+                case pageBlockButtonRow.constructor /* 1835270936 */:
+                    return new pageBlockButtonRow();
                 case pageBlockTitle.constructor /* 1890305021 */:
                     return new pageBlockTitle();
                 case pageBlockDetails.constructor /* 1987480557 */:
@@ -1057,6 +1120,61 @@ public class TL_iv {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
+        }
+    }
+
+    public static class pageBlockButtonRow extends PageBlock {
+        public static final int constructor = 1835270936;
+        public boolean align_center;
+        public boolean align_left;
+        public boolean align_right;
+        public ArrayList<TL_keyboard.PageButton> buttons = new ArrayList<>();
+        public int flags;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z);
+            this.flags = readInt32;
+            this.align_left = TLObject.hasFlag(readInt32, 1);
+            this.align_center = TLObject.hasFlag(this.flags, 2);
+            this.align_right = TLObject.hasFlag(this.flags, 4);
+            this.buttons = Vector.deserialize(inputSerializedData, new Vector.TLDeserializer() { // from class: org.telegram.tgnet.tl.TL_iv$pageBlockButtonRow$$ExternalSyntheticLambda0
+                @Override // org.telegram.tgnet.Vector.TLDeserializer
+                public final TLObject deserialize(InputSerializedData inputSerializedData2, int i, boolean z2) {
+                    return TL_keyboard.PageButton.TLdeserialize(inputSerializedData2, i, z2);
+                }
+            }, z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 1, this.align_left);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 2, this.align_center);
+            this.flags = flag2;
+            int flag3 = TLObject.setFlag(flag2, 4, this.align_right);
+            this.flags = flag3;
+            outputSerializedData.writeInt32(flag3);
+            Vector.serialize(outputSerializedData, this.buttons);
+        }
+    }
+
+    public static class pageBlockDocument extends PageBlock {
+        public static final int constructor = 955923363;
+        public long document_id;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.document_id = inputSerializedData.readInt64(z);
+            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt64(this.document_id);
+            this.caption.serializeToStream(outputSerializedData);
         }
     }
 
@@ -1286,12 +1404,16 @@ public class TL_iv {
     }
 
     public static class pageBlockBlockquote extends PageBlock {
-        public static final int constructor = 641563686;
+        public static final int constructor = 1724999435;
         public RichText caption;
         public boolean collapsed;
+        public int flags;
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z);
+            this.flags = readInt32;
+            this.collapsed = TLObject.hasFlag(readInt32, 1);
             this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             this.caption = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
         }
@@ -1299,8 +1421,28 @@ public class TL_iv {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 1, this.collapsed);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
             this.text.serializeToStream(outputSerializedData);
             this.caption.serializeToStream(outputSerializedData);
+        }
+    }
+
+    public static class pageBlockBlockquote_layer228 extends pageBlockBlockquote {
+        public static final int constructor = 641563686;
+
+        @Override // org.telegram.tgnet.tl.TL_iv.pageBlockBlockquote, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            ((pageBlockBlockquote) this).caption = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+        }
+
+        @Override // org.telegram.tgnet.tl.TL_iv.pageBlockBlockquote, org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.text.serializeToStream(outputSerializedData);
+            ((pageBlockBlockquote) this).caption.serializeToStream(outputSerializedData);
         }
     }
 

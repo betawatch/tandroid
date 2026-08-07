@@ -90,10 +90,10 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
         if (baseFragment.onFragmentCreate()) {
             baseFragment.setInPreviewMode(true);
             baseFragment.setParentLayout(iNavigationLayout);
-            View createView = baseFragment.createView(getContext());
+            View performCreateView = baseFragment.performCreateView(getContext());
             baseFragment.onResume();
-            this.currentFragmentView = createView;
-            addView(createView);
+            this.currentFragmentView = performCreateView;
+            addView(performCreateView);
             BaseFragment baseFragment2 = this.currentFragment;
             if (baseFragment instanceof BaseFragmentWithFullscreen) {
                 View fullscreenView = ((BaseFragmentWithFullscreen) baseFragment).getFullscreenView();

@@ -35,7 +35,7 @@ import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.iv.RichCaptionController;
 import org.telegram.ui.iv.RichEditor;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RichAudioCell extends RichBlockCell implements Theme.Colorable, TextSelectionHelper.ArticleSelectableView, RichCaptionHost, NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener {
     private boolean attached;
     private final TextPaint audioTimePaint;
@@ -338,7 +338,7 @@ public class RichAudioCell extends RichBlockCell implements Theme.Colorable, Tex
     private void layoutInner() {
         SpannableStringBuilder spannableStringBuilder;
         this.seekBarX = this.buttonX + AndroidUtilities.dp(50.0f) + this.size;
-        this.seekBarWidth = Math.max(0, (((getMeasuredWidth() > 0 ? getMeasuredWidth() : AndroidUtilities.displaySize.x) - this.seekBarX) - AndroidUtilities.dp(18.0f)) - (this.blockRtl ? blockInset() : 0));
+        this.seekBarWidth = Math.max(0, (((getMeasuredWidth() > 0 ? getMeasuredWidth() : AndroidUtilities.displaySize.x) - this.seekBarX) - AndroidUtilities.dp(16.0f)) - (this.blockRtl ? blockInset() : 0));
         String audioAuthor = audioAuthor();
         String audioTitle = audioTitle();
         if (!TextUtils.isEmpty(audioTitle) || !TextUtils.isEmpty(audioAuthor)) {

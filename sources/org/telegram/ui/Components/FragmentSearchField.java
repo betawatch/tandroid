@@ -32,6 +32,7 @@ import me.vkryl.android.animator.FactorAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
 import org.telegram.ui.ActionBar.Theme;
@@ -110,7 +111,7 @@ public class FragmentSearchField extends FrameLayout implements FactorAnimator.T
         this.editText = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 15.0f);
         editTextBoldCursor.setCursorWidth(1.5f);
-        editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | 176);
+        editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | NotificationCenter.liveStoryUpdated);
         editTextBoldCursor.setSingleLine(true);
         editTextBoldCursor.setBackground(null);
         editTextBoldCursor.setVerticalScrollBarEnabled(false);
