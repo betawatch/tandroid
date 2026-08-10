@@ -2523,7 +2523,7 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
             @Override // org.telegram.ui.Components.ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate
             public void didSelectFiles(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i3, int i4, long j, boolean z2, long j2) {
                 if (arrayList != null && !arrayList.isEmpty()) {
-                    RichEditor.this.listView.lambda$attachDocument$46((String) arrayList.get(0));
+                    RichEditor.this.listView.lambda$attachDocument$42((String) arrayList.get(0));
                 } else if (arrayList3 != null && !arrayList3.isEmpty()) {
                     RichEditor.this.listView.attachDocument((MessageObject) arrayList3.get(0));
                 }

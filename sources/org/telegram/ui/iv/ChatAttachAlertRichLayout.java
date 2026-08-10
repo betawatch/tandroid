@@ -132,6 +132,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         this.occupyNavigationBar = true;
         RichEditorListView richEditorListView = new RichEditorListView(context, i, resourcesProvider, new 1(resourcesProvider));
         this.listView = richEditorListView;
+        richEditorListView.setAdaptiveLinkDialogs(false);
         richEditorListView.setAllowTapAboveContent(false);
         addView(richEditorListView, LayoutHelper.createFrame(-1, -1, 119));
         addView(richEditorListView.getOverlayView(), LayoutHelper.createFrame(-1, -1, 119));
@@ -1675,7 +1676,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
             @Override // org.telegram.ui.Components.ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate
             public void didSelectFiles(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i3, int i4, long j, boolean z2, long j2) {
                 if (arrayList != null && !arrayList.isEmpty()) {
-                    ChatAttachAlertRichLayout.this.listView.lambda$attachDocument$46((String) arrayList.get(0));
+                    ChatAttachAlertRichLayout.this.listView.lambda$attachDocument$42((String) arrayList.get(0));
                 } else if (arrayList3 != null && !arrayList3.isEmpty()) {
                     ChatAttachAlertRichLayout.this.listView.attachDocument((MessageObject) arrayList3.get(0));
                 }

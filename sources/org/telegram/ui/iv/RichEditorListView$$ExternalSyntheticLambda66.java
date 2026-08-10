@@ -5,7 +5,7 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 /* loaded from: classes5.dex */
-public final /* synthetic */ class RichEditorListView$$ExternalSyntheticLambda67 implements BiFunction {
+public final /* synthetic */ class RichEditorListView$$ExternalSyntheticLambda66 implements BiFunction {
     public /* synthetic */ BiFunction andThen(Function function) {
         return BiFunction$-CC.$default$andThen(this, function);
     }

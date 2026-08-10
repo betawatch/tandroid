@@ -11946,6 +11946,16 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             super(activity, sizeNotifierFrameLayout, chatActivity, z, resourcesProvider);
         }
 
+        @Override // org.telegram.ui.Components.ChatActivityEnterView, org.telegram.ui.Components.SuggestEmojiView.AnchorViewDelegate
+        public /* bridge */ /* synthetic */ EditTextBoldCursor getEditField() {
+            return super.getEditField();
+        }
+
+        @Override // org.telegram.ui.Components.ChatActivityEnterView, org.telegram.ui.Components.SuggestEmojiView.AnchorViewDelegate
+        public /* bridge */ /* synthetic */ BaseFragment getParentFragment() {
+            return super.getParentFragment();
+        }
+
         @Override // org.telegram.ui.Components.ChatActivityEnterView
         protected void onChangedIslandTotalHeight(float f) {
             ChatActivity.this.checkUi_inputIslandHeight();
