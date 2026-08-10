@@ -1950,7 +1950,7 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
         if (z2 && startCell == endCell) {
             z = true;
         }
-        setInlineButtonsEnabled(z);
+        setInlineButtonsEnabled(z, this.listView.canCreateInlineButtonOnSelection());
     }
 
     private void setBoldEnabled(boolean z) {
@@ -1963,14 +1963,14 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
         }
     }
 
-    private void setInlineButtonsEnabled(boolean z) {
+    private void setInlineButtonsEnabled(boolean z, boolean z2) {
         Button button = this.linkButton;
         if (button != null) {
             button.setEnabled(z);
         }
         Button button2 = this.inlineButton;
         if (button2 != null) {
-            button2.setEnabled(z);
+            button2.setEnabled(z2);
         }
         Button button3 = this.dateButton;
         if (button3 != null) {
@@ -2020,7 +2020,7 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
             button3.setSelected(z);
         }
         setBoldEnabled(true);
-        setInlineButtonsEnabled(z2);
+        setInlineButtonsEnabled(z2, this.listView.canCreateInlineButtonOnSelection());
     }
 
     private void updateFormattingButtonsCaption() {
@@ -2056,7 +2056,7 @@ public class RichEditor extends BaseFragment implements NotificationCenter.Notif
             button3.setSelected(z);
         }
         setBoldEnabled(true);
-        setInlineButtonsEnabled(true);
+        setInlineButtonsEnabled(true, this.listView.canCreateInlineButtonOnSelection());
     }
 
     public static class Button extends ImageView implements Theme.Colorable {

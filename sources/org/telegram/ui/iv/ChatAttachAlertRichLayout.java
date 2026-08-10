@@ -802,7 +802,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         } else {
             i = 0;
         }
-        this.toolbar.setFormattingState(i, z && this.listView.isLinkApplied(startCell, startOffset, endCell, endOffset), z && this.listView.isDateApplied(startCell, startOffset, endCell, endOffset), z && startCell == endCell, !this.listView.isSelectionAllHeadings());
+        this.toolbar.setFormattingState(i, z && this.listView.isLinkApplied(startCell, startOffset, endCell, endOffset), z && this.listView.isDateApplied(startCell, startOffset, endCell, endOffset), z && startCell == endCell, this.listView.canCreateInlineButtonOnSelection(), !this.listView.isSelectionAllHeadings());
     }
 
     private void updateFormattingButtonsTable() {
@@ -814,7 +814,6 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         int endOffset = textSelectionHelper.getEndOffset();
         int[] iArr = STYLE_FLAGS;
         int length = iArr.length;
-        boolean z = false;
         int i = 0;
         int i2 = 0;
         while (i < length) {
@@ -825,16 +824,11 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
             }
             i = i4 + 1;
         }
-        boolean z2 = startChildPosition == endChildPosition;
-        RichEditText tableEditText = z2 ? this.listView.tableEditText(startCell, startChildPosition) : null;
+        boolean z = startChildPosition == endChildPosition;
+        RichEditText tableEditText = z ? this.listView.tableEditText(startCell, startChildPosition) : null;
         int max = Math.max(0, Math.min(startOffset, endOffset));
         int max2 = tableEditText == null ? 0 : Math.max(0, Math.min(Math.max(startOffset, endOffset), tableEditText.length()));
-        RichEditorToolbar richEditorToolbar = this.toolbar;
-        boolean z3 = tableEditText != null && max < max2 && RichTextStyle.hasLink(tableEditText.getText(), max, max2);
-        if (tableEditText != null && max < max2 && RichTextStyle.hasDate(tableEditText.getText(), max, max2)) {
-            z = true;
-        }
-        richEditorToolbar.setFormattingState(i2, z3, z, z2, true);
+        this.toolbar.setFormattingState(i2, tableEditText != null && max < max2 && RichTextStyle.hasLink(tableEditText.getText(), max, max2), tableEditText != null && max < max2 && RichTextStyle.hasDate(tableEditText.getText(), max, max2), z, this.listView.canCreateInlineButtonOnSelection(), true);
     }
 
     private void updateFormattingButtonsCaption() {
@@ -856,7 +850,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
             }
             i = i2;
         }
-        this.toolbar.setFormattingState(i, captionEditText != null && max < max2 && RichTextStyle.hasLink(captionEditText.getText(), max, max2), captionEditText != null && max < max2 && RichTextStyle.hasDate(captionEditText.getText(), max, max2), true, true);
+        this.toolbar.setFormattingState(i, captionEditText != null && max < max2 && RichTextStyle.hasLink(captionEditText.getText(), max, max2), captionEditText != null && max < max2 && RichTextStyle.hasDate(captionEditText.getText(), max, max2), true, this.listView.canCreateInlineButtonOnSelection(), true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
