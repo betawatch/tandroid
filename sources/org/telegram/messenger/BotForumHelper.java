@@ -242,29 +242,58 @@ public class BotForumHelper extends BaseController {
 
     public SteamingSendButtonState getStreamingSendButtonState(long j, int i) {
         LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j, i);
-        if (longSparseArray == null || longSparseArray.size() <= 0) {
-            return SteamingSendButtonState.NO_STREAMING;
+        if (longSparseArray != null && longSparseArray.size() > 0) {
+            int size = longSparseArray.size();
+            BotDraftMessage botDraftMessage = null;
+            for (int i2 = 0; i2 < size; i2++) {
+                botDraftMessage = longSparseArray.valueAt(i2);
+                if (!botDraftMessage.removed) {
+                    break;
+                }
+            }
+            if (botDraftMessage == null || botDraftMessage.removed) {
+                return SteamingSendButtonState.NO_STREAMING;
+            }
+            if (botDraftMessage.canStop) {
+                return SteamingSendButtonState.STOP;
+            }
+            return SteamingSendButtonState.BLOCKING;
         }
-        if (longSparseArray.valueAt(0).canStop) {
-            return SteamingSendButtonState.STOP;
-        }
-        return SteamingSendButtonState.BLOCKING;
+        return SteamingSendButtonState.NO_STREAMING;
     }
 
     public void stopStreaming(long j, long j2) {
-        LongSparseArray<BotDraftMessage> removeAll = this.botTextDraftsByRandomIds.removeAll(j, j2);
-        if (removeAll == null || removeAll.size() <= 0) {
+        LongSparseArray<BotDraftMessage> longSparseArray = this.botTextDraftsByRandomIds.get(j, j2);
+        if (longSparseArray == null || longSparseArray.size() <= 0) {
             return;
         }
-        long keyAt = removeAll.keyAt(0);
-        BotDraftMessage valueAt = removeAll.valueAt(0);
-        if (valueAt.selfDestruct != null) {
-            AndroidUtilities.cancelRunOnUIThread(valueAt.selfDestruct);
+        int size = longSparseArray.size();
+        BotDraftMessage botDraftMessage = null;
+        long j3 = 0;
+        for (int i = 0; i < size; i++) {
+            j3 = longSparseArray.keyAt(i);
+            botDraftMessage = longSparseArray.valueAt(i);
+            if (!botDraftMessage.removed) {
+                break;
+            }
         }
-        this.botTextDraftsByRandomIdsBlocklist.put(j, j2, keyAt, new Object());
-        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.botForumDraftDelete, new BotForumTextDraftDeleteNotification(j, j2, valueAt.localMessageId));
+        BotDraftMessage botDraftMessage2 = botDraftMessage;
+        long j4 = j3;
+        if (botDraftMessage2 == null || botDraftMessage2.removed) {
+            return;
+        }
+        if (botDraftMessage2.selfDestruct != null) {
+            AndroidUtilities.cancelRunOnUIThread(botDraftMessage2.selfDestruct);
+        }
+        this.botTextDraftsByRandomIdsBlocklist.put(j, j2, j4, new Object());
+        if (!botDraftMessage2.keepOnStop) {
+            this.botTextDraftsByRandomIds.remove(j, j2, j4);
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.botForumDraftDelete, new BotForumTextDraftDeleteNotification(j, j2, botDraftMessage2.localMessageId));
+        } else {
+            botDraftMessage2.removed = true;
+        }
         TLRPC.TL_sendMessageStopDraftAction tL_sendMessageStopDraftAction = new TLRPC.TL_sendMessageStopDraftAction();
-        tL_sendMessageStopDraftAction.random_id = keyAt;
+        tL_sendMessageStopDraftAction.random_id = j4;
         TLRPC.TL_messages_setTyping tL_messages_setTyping = new TLRPC.TL_messages_setTyping();
         tL_messages_setTyping.peer = getMessagesController().getInputPeer(j);
         tL_messages_setTyping.action = tL_sendMessageStopDraftAction;
@@ -337,6 +366,7 @@ public class BotForumHelper extends BaseController {
         public final int localMessageId;
         private MessageObject messageObject;
         public final long randomId;
+        private boolean removed;
         private TL_iv.RichMessage richMessage;
         private Runnable selfDestruct;
         private TLRPC.TL_textWithEntities text;

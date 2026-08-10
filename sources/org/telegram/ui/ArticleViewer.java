@@ -564,6 +564,11 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
         private int lastLineBoundRight = -1;
         public int emojiCacheType = 0;
 
+        @Override // org.telegram.ui.Components.TableLayout.CellText
+        public /* synthetic */ int getEmojiOnlyCount() {
+            return TableLayout.CellText.-CC.$default$getEmojiOnlyCount(this);
+        }
+
         @Override // org.telegram.ui.Cells.TextSelectionHelper.TextLayoutBlock
         public /* synthetic */ Rect getSelectionBounds() {
             return TextSelectionHelper.TextLayoutBlock.-CC.$default$getSelectionBounds(this);

@@ -38,10 +38,10 @@ public abstract class R$id {
     public static final int split_action_bar = 2131296662;
     public static final int submenuarrow = 2131296675;
     public static final int submit_area = 2131296676;
-    public static final int textSpacerNoButtons = 2131296702;
-    public static final int textSpacerNoTitle = 2131296703;
-    public static final int title = 2131296710;
-    public static final int titleDividerNoCustom = 2131296711;
-    public static final int title_template = 2131296712;
-    public static final int topPanel = 2131296718;
+    public static final int textSpacerNoButtons = 2131296704;
+    public static final int textSpacerNoTitle = 2131296705;
+    public static final int title = 2131296712;
+    public static final int titleDividerNoCustom = 2131296713;
+    public static final int title_template = 2131296714;
+    public static final int topPanel = 2131296720;
 }

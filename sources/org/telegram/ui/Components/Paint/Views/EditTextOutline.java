@@ -55,7 +55,7 @@ public class EditTextOutline extends EditTextBoldCursor {
         }
     }
 
-    @Override // org.telegram.ui.Components.EditTextEffects, android.widget.TextView
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.EditTextEffects, android.widget.TextView
     protected void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
         super.onTextChanged(charSequence, i, i2, i3);
         this.mUpdateCachedBitmap = true;

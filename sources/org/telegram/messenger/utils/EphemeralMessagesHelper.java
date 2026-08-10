@@ -35,7 +35,9 @@ public class EphemeralMessagesHelper extends BaseController {
             tL_message.flags |= 256;
         }
         tL_message.peer_id = ephemeralMessage.peer_id;
-        if (ephemeralMessage.welcome) {
+        int i = ephemeralMessage.anchor_msg_id;
+        tL_message.ephemeralAnchorMsgId = i;
+        if (ephemeralMessage.welcome || i != 0) {
             tL_message.ephemeralReceiverBotId = -1L;
         } else {
             tL_message.ephemeralReceiverBotId = ephemeralMessage.receiver_id;
@@ -57,7 +59,7 @@ public class EphemeralMessagesHelper extends BaseController {
             tL_message.flags |= 128;
         }
         TLRPC.MessageMedia messageMedia = ephemeralMessage.media;
-        if (messageMedia != null) {
+        if (messageMedia != null && ephemeralMessage.rich_message == null) {
             tL_message.media = messageMedia;
             tL_message.flags |= 512;
         }
@@ -71,14 +73,14 @@ public class EphemeralMessagesHelper extends BaseController {
             if (messageReplyHeader.reply_to_ephemeral) {
                 TLRPC.MessageReplyHeader messageReplyHeader2 = (TLRPC.MessageReplyHeader) TLObject.deepCopy(messageReplyHeader, new Vector.TLDeserializer() { // from class: org.telegram.messenger.utils.EphemeralMessagesHelper$$ExternalSyntheticLambda0
                     @Override // org.telegram.tgnet.Vector.TLDeserializer
-                    public final TLObject deserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-                        return TLRPC.MessageReplyHeader.TLdeserialize(inputSerializedData, i, z);
+                    public final TLObject deserialize(InputSerializedData inputSerializedData, int i2, boolean z) {
+                        return TLRPC.MessageReplyHeader.TLdeserialize(inputSerializedData, i2, z);
                     }
                 });
                 tL_message.reply_to = messageReplyHeader2;
-                int i = messageReplyHeader2.reply_to_msg_id;
-                if (i != 0) {
-                    messageReplyHeader2.reply_to_msg_id = MessageObject.ephemeralMessageIdPack(i);
+                int i2 = messageReplyHeader2.reply_to_msg_id;
+                if (i2 != 0) {
+                    messageReplyHeader2.reply_to_msg_id = MessageObject.ephemeralMessageIdPack(i2);
                 }
             } else {
                 tL_message.reply_to = messageReplyHeader;
@@ -276,6 +278,7 @@ public class EphemeralMessagesHelper extends BaseController {
         public final Struct ephemeralMessagesToEdit = new Struct();
         public final Struct welcomeMessagesToAdd = new Struct();
         public final Struct welcomeMessagesToEdit = new Struct();
+        public final Struct welcomeMessagesAnchor = new Struct();
 
         public static class Struct {
             public final ArrayList messages = new ArrayList();
@@ -305,7 +308,10 @@ public class EphemeralMessagesHelper extends BaseController {
             TL_ephemeral.EphemeralMessage ephemeralMessage = tL_updateNewEphemeralMessage.message;
             TLRPC.TL_message convertEphemeralToFakeDefault = EphemeralMessagesHelper.convertEphemeralToFakeDefault(ephemeralMessage);
             MessageObject messageObject = new MessageObject(i, (TLRPC.Message) convertEphemeralToFakeDefault, (AbstractMap<Long, TLRPC.User>) abstractMap, (AbstractMap<Long, TLRPC.Chat>) abstractMap2, true, true);
-            if (ephemeralMessage.welcome) {
+            boolean z = ephemeralMessage.welcome;
+            if (ephemeralMessage.anchor_msg_id != 0) {
+                this.welcomeMessagesAnchor.put(ephemeralMessage, convertEphemeralToFakeDefault, messageObject);
+            } else if (z) {
                 this.welcomeMessagesToAdd.put(ephemeralMessage, convertEphemeralToFakeDefault, messageObject);
             } else {
                 this.ephemeralMessagesToAdd.put(ephemeralMessage, convertEphemeralToFakeDefault, messageObject);
@@ -319,7 +325,9 @@ public class EphemeralMessagesHelper extends BaseController {
             boolean z = ephemeralMessage.welcome;
             convertEphemeralToFakeDefault.edit_date = ConnectionsManager.getInstance(i).getCurrentTime();
             convertEphemeralToFakeDefault.flags |= 32768;
-            if (z) {
+            if (ephemeralMessage.anchor_msg_id != 0) {
+                this.welcomeMessagesAnchor.put(ephemeralMessage, convertEphemeralToFakeDefault, messageObject);
+            } else if (z) {
                 this.welcomeMessagesToEdit.put(ephemeralMessage, convertEphemeralToFakeDefault, messageObject);
             } else {
                 this.ephemeralMessagesToEdit.put(ephemeralMessage, convertEphemeralToFakeDefault, messageObject);

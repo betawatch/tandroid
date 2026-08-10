@@ -248,6 +248,20 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         }
 
         @Override // org.telegram.ui.iv.RichEditorListView.Delegate
+        public void onInlineButtonEditRequested(RichEditorListView.InlineButtonEdit inlineButtonEdit, View view) {
+            ItemOptions dontFocus = ItemOptions.makeOptions(ChatAttachAlertRichLayout.this, this.val$resourcesProvider, view, false, false, true).dontFocus();
+            ChatAttachAlertRichLayout chatAttachAlertRichLayout = ChatAttachAlertRichLayout.this;
+            chatAttachAlertRichLayout.menu = RichInlineButtonEditor.show(dontFocus, ((ChatAttachAlert.AttachAlertLayout) chatAttachAlertRichLayout).parentAlert.getBaseFragment(), ChatAttachAlertRichLayout.this.getContext(), this.val$resourcesProvider, inlineButtonEdit, true);
+        }
+
+        @Override // org.telegram.ui.iv.RichEditorListView.Delegate
+        public void onBlockButtonEditRequested(RichEditorListView.BlockButtonEdit blockButtonEdit, View view) {
+            ItemOptions dontFocus = ItemOptions.makeOptions(ChatAttachAlertRichLayout.this, this.val$resourcesProvider, view, false, false, true).dontFocus();
+            ChatAttachAlertRichLayout chatAttachAlertRichLayout = ChatAttachAlertRichLayout.this;
+            chatAttachAlertRichLayout.menu = RichInlineButtonEditor.showBlock(dontFocus, ((ChatAttachAlert.AttachAlertLayout) chatAttachAlertRichLayout).parentAlert.getBaseFragment(), ChatAttachAlertRichLayout.this.getContext(), this.val$resourcesProvider, blockButtonEdit, true);
+        }
+
+        @Override // org.telegram.ui.iv.RichEditorListView.Delegate
         public void onReorderStart() {
             if (ChatAttachAlertRichLayout.this.toolbar != null) {
                 ChatAttachAlertRichLayout.this.toolbar.onReorderStart();
@@ -344,6 +358,11 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         @Override // org.telegram.ui.iv.RichEditorToolbar.Delegate
         public void onLink() {
             ChatAttachAlertRichLayout.this.listView.onLinkClicked();
+        }
+
+        @Override // org.telegram.ui.iv.RichEditorToolbar.Delegate
+        public void onButton(View view) {
+            ChatAttachAlertRichLayout.this.listView.onInlineButtonClicked(view);
         }
 
         @Override // org.telegram.ui.iv.RichEditorToolbar.Delegate
@@ -1276,6 +1295,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
         }
         ArrayList collectPhotos = this.listView.collectPhotos();
         ArrayList collectDocuments = this.listView.collectDocuments();
+        ArrayList collect = RichMessageButtonUsers.collect(this.currentAccount, flattenRowsToBlocks);
         BaseFragment baseFragment2 = this.parentAlert.baseFragment;
         if (baseFragment2 instanceof ChatActivity) {
             ChatActivity chatActivity = (ChatActivity) baseFragment2;
@@ -1291,7 +1311,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
             messageObject2 = null;
             sendMessageChatArguments = null;
         }
-        SendMessagesHelper.prepareSendingArticle(AccountInstance.getInstance(this.parentAlert.currentAccount), flattenRowsToBlocks, collectPhotos, collectDocuments, null, false, this.parentAlert.getDialogId(), messageObject2, messageObject, z, i, i2, sendMessageChatArguments, j, j2, 0L);
+        SendMessagesHelper.prepareSendingArticle(AccountInstance.getInstance(this.parentAlert.currentAccount), flattenRowsToBlocks, collectPhotos, collectDocuments, collect, false, this.parentAlert.getDialogId(), messageObject2, messageObject, z, i, i2, sendMessageChatArguments, j, j2, 0L);
         this.parentAlert.dismiss(true);
         return true;
     }
@@ -1661,7 +1681,7 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
             @Override // org.telegram.ui.Components.ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate
             public void didSelectFiles(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i3, int i4, long j, boolean z2, long j2) {
                 if (arrayList != null && !arrayList.isEmpty()) {
-                    ChatAttachAlertRichLayout.this.listView.lambda$attachDocument$38((String) arrayList.get(0));
+                    ChatAttachAlertRichLayout.this.listView.lambda$attachDocument$46((String) arrayList.get(0));
                 } else if (arrayList3 != null && !arrayList3.isEmpty()) {
                     ChatAttachAlertRichLayout.this.listView.attachDocument((MessageObject) arrayList3.get(0));
                 }

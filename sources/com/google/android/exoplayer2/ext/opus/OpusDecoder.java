@@ -45,7 +45,7 @@ public final class OpusDecoder extends SimpleDecoder {
 
     private native int opusSecureDecode(long j, long j2, ByteBuffer byteBuffer, int i, SimpleDecoderOutputBuffer simpleDecoderOutputBuffer, int i2, CryptoConfig cryptoConfig, int i3, byte[] bArr, byte[] bArr2, int i4, int[] iArr, int[] iArr2);
 
-    private native void opusSetFloatOutput();
+    private native void opusSetFloatOutput(long j);
 
     private static int samplesToBytes(int i, int i2, boolean z) {
         return i * i2 * (z ? 4 : 2);
@@ -108,7 +108,7 @@ public final class OpusDecoder extends SimpleDecoder {
         setInitialInputBufferSize(i3);
         this.outputFloat = z;
         if (z) {
-            opusSetFloatOutput();
+            opusSetFloatOutput(opusInit);
         }
     }
 

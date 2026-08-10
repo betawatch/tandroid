@@ -8,6 +8,7 @@ import android.text.style.CharacterStyle;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -23,6 +24,54 @@ import org.telegram.ui.Components.URLSpanReplacement;
 /* loaded from: classes5.dex */
 public abstract class RichTextStyle {
     private static final int[] STYLE_FLAGS = {1, 2, 16, 8, 4, 256, 16384, 32768, 65536};
+
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x008b, code lost:
+    
+        r3 = r3 + 1;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static int emojiOnlyCount(CharSequence charSequence) {
+        int i;
+        if (!(charSequence instanceof Spanned) || charSequence.length() == 0) {
+            return 0;
+        }
+        Spanned spanned = (Spanned) charSequence;
+        ArrayList arrayList = new ArrayList();
+        AnimatedEmojiSpan[] animatedEmojiSpanArr = (AnimatedEmojiSpan[]) spanned.getSpans(0, charSequence.length(), AnimatedEmojiSpan.class);
+        for (AnimatedEmojiSpan animatedEmojiSpan : animatedEmojiSpanArr) {
+            arrayList.add(animatedEmojiSpan);
+        }
+        for (Emoji.EmojiSpan emojiSpan : (Emoji.EmojiSpan[]) spanned.getSpans(0, charSequence.length(), Emoji.EmojiSpan.class)) {
+            int spanStart = spanned.getSpanStart(emojiSpan);
+            int spanEnd = spanned.getSpanEnd(emojiSpan);
+            int length = animatedEmojiSpanArr.length;
+            while (true) {
+                if (i < length) {
+                    AnimatedEmojiSpan animatedEmojiSpan2 = animatedEmojiSpanArr[i];
+                    i = (spanned.getSpanStart(animatedEmojiSpan2) == spanStart && spanned.getSpanEnd(animatedEmojiSpan2) == spanEnd) ? 0 : i + 1;
+                } else {
+                    arrayList.add(emojiSpan);
+                    break;
+                }
+            }
+        }
+        if (arrayList.isEmpty()) {
+            return 0;
+        }
+        int i2 = 0;
+        while (i2 < charSequence.length()) {
+            Iterator it = arrayList.iterator();
+            while (it.hasNext()) {
+                Object next = it.next();
+                if (spanned.getSpanStart(next) > i2 || spanned.getSpanEnd(next) <= i2) {
+                }
+            }
+            return 0;
+        }
+        return arrayList.size();
+    }
 
     public static CharSequence toSpannable(TL_iv.RichText richText) {
         return toSpannable(richText, null);
@@ -126,6 +175,16 @@ public abstract class RichTextStyle {
                 return;
             }
             spannableStringBuilder.setSpan(spanFor(i, pageBlock), length5, spannableStringBuilder.length(), 33);
+            return;
+        }
+        if (richText instanceof TL_iv.textButton) {
+            TL_iv.textButton textbutton = (TL_iv.textButton) richText;
+            int length7 = spannableStringBuilder.length();
+            append(spannableStringBuilder, textbutton.text, i, pageBlock);
+            if (spannableStringBuilder.length() <= length7 || !RichInlineButtonSpan.isSupported(textbutton.type)) {
+                return;
+            }
+            spannableStringBuilder.setSpan(new RichInlineButtonSpan(textbutton), length7, spannableStringBuilder.length(), 33);
             return;
         }
         int flagOf = flagOf(richText);
@@ -295,6 +354,10 @@ public abstract class RichTextStyle {
     }
 
     private static TL_iv.RichText wrap(String str, Run run) {
+        RichInlineButtonSpan richInlineButtonSpan = run.button;
+        if (richInlineButtonSpan != null) {
+            return richInlineButtonSpan.getButton();
+        }
         if (run.mathSource != null) {
             TL_iv.textMath textmath = new TL_iv.textMath();
             textmath.source = run.mathSource;
@@ -551,6 +614,10 @@ public abstract class RichTextStyle {
         if (mathSpanArr.length > 0) {
             run.mathSource = mathSpanArr[0].source;
         }
+        RichInlineButtonSpan[] richInlineButtonSpanArr = (RichInlineButtonSpan[]) spanned.getSpans(i, i2, RichInlineButtonSpan.class);
+        if (richInlineButtonSpanArr.length > 0) {
+            run.button = richInlineButtonSpanArr[0];
+        }
         return run;
     }
 
@@ -562,6 +629,7 @@ public abstract class RichTextStyle {
     }
 
     private static class Run {
+        RichInlineButtonSpan button;
         FormattedDateSpan date;
         long emojiDocId;
         int flags;
@@ -571,19 +639,27 @@ public abstract class RichTextStyle {
         private Run() {
         }
 
+        /* JADX WARN: Code restructure failed: missing block: B:20:0x003e, code lost:
+        
+            if (r7.date != r8.date) goto L29;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:21:?, code lost:
+        
+            return true;
+         */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
         boolean equals(Run run) {
-            if (this.emojiDocId != 0 || run.emojiDocId != 0 || this.mathSource != null || run.mathSource != null || this.flags != run.flags) {
-                return false;
+            RichInlineButtonSpan richInlineButtonSpan = this.button;
+            if (richInlineButtonSpan != null || run.button != null) {
+                return richInlineButtonSpan != null && richInlineButtonSpan == run.button;
             }
-            String str = this.url;
-            if (str == null) {
-                if (run.url != null) {
-                    return false;
+            if (this.emojiDocId == 0 && run.emojiDocId == 0 && this.mathSource == null && run.mathSource == null && this.flags == run.flags) {
+                if ((r0 = this.url) == null) {
                 }
-            } else if (!str.equals(run.url)) {
-                return false;
             }
-            return this.date == run.date;
+            return false;
         }
     }
 }

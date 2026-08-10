@@ -87,7 +87,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda99;
+import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda103;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
@@ -663,15 +663,15 @@ public abstract class Theme {
     public static final int key_chat_msgIvButtonDefaultIn;
     public static final int key_chat_msgIvButtonDefaultInPressed;
     public static final int key_chat_msgIvButtonDefaultInText;
+    public static final int key_chat_msgIvButtonDefaultInlineIn;
+    public static final int key_chat_msgIvButtonDefaultInlineInPressed;
+    public static final int key_chat_msgIvButtonDefaultInlineInText;
+    public static final int key_chat_msgIvButtonDefaultInlineOut;
+    public static final int key_chat_msgIvButtonDefaultInlineOutPressed;
+    public static final int key_chat_msgIvButtonDefaultInlineOutText;
     public static final int key_chat_msgIvButtonDefaultOut;
     public static final int key_chat_msgIvButtonDefaultOutPressed;
     public static final int key_chat_msgIvButtonDefaultOutText;
-    public static final int key_chat_msgIvButtonLinkIn;
-    public static final int key_chat_msgIvButtonLinkInPressed;
-    public static final int key_chat_msgIvButtonLinkInText;
-    public static final int key_chat_msgIvButtonLinkOut;
-    public static final int key_chat_msgIvButtonLinkOutPressed;
-    public static final int key_chat_msgIvButtonLinkOutText;
     public static final int key_chat_msgIvButtonPrimaryIn;
     public static final int key_chat_msgIvButtonPrimaryInPressed;
     public static final int key_chat_msgIvButtonPrimaryInText;
@@ -2952,13 +2952,13 @@ public abstract class Theme {
         key_chat_msgIvButtonSuccessInText = i501;
         int i502 = colorsCount;
         colorsCount = i502 + 1;
-        key_chat_msgIvButtonLinkIn = i502;
+        key_chat_msgIvButtonDefaultInlineIn = i502;
         int i503 = colorsCount;
         colorsCount = i503 + 1;
-        key_chat_msgIvButtonLinkInPressed = i503;
+        key_chat_msgIvButtonDefaultInlineInPressed = i503;
         int i504 = colorsCount;
         colorsCount = i504 + 1;
-        key_chat_msgIvButtonLinkInText = i504;
+        key_chat_msgIvButtonDefaultInlineInText = i504;
         int i505 = colorsCount;
         colorsCount = i505 + 1;
         key_chat_msgIvButtonDefaultOut = i505;
@@ -2997,13 +2997,13 @@ public abstract class Theme {
         key_chat_msgIvButtonSuccessOutText = i516;
         int i517 = colorsCount;
         colorsCount = i517 + 1;
-        key_chat_msgIvButtonLinkOut = i517;
+        key_chat_msgIvButtonDefaultInlineOut = i517;
         int i518 = colorsCount;
         colorsCount = i518 + 1;
-        key_chat_msgIvButtonLinkOutPressed = i518;
+        key_chat_msgIvButtonDefaultInlineOutPressed = i518;
         int i519 = colorsCount;
         colorsCount = i519 + 1;
-        key_chat_msgIvButtonLinkOutText = i519;
+        key_chat_msgIvButtonDefaultInlineOutText = i519;
         int i520 = colorsCount;
         colorsCount = i520 + 1;
         key_voipgroup_listSelector = i520;
@@ -4135,14 +4135,14 @@ public abstract class Theme {
         int i868 = key_chat_msgIvButtonSuccessInText;
         int i869 = key_avatar_nameInMessageGreen;
         sparseIntArray47.put(i868, i869);
-        fallbackKeys.put(key_chat_msgIvButtonLinkInText, i859);
+        fallbackKeys.put(key_chat_msgIvButtonDefaultInlineInText, i859);
         fallbackKeys.put(key_chat_msgIvButtonDefaultOutText, key_chat_messageTextOut);
         fallbackKeys.put(key_chat_msgIvButtonPrimaryOut, i861);
         fallbackKeys.put(key_chat_msgIvButtonPrimaryOutPressed, i863);
         fallbackKeys.put(key_chat_msgIvButtonPrimaryOutText, i865);
         fallbackKeys.put(key_chat_msgIvButtonDangerOutText, i867);
         fallbackKeys.put(key_chat_msgIvButtonSuccessOutText, i869);
-        fallbackKeys.put(key_chat_msgIvButtonLinkOutText, i859);
+        fallbackKeys.put(key_chat_msgIvButtonDefaultInlineOutText, i859);
         int i870 = 0;
         while (true) {
             int[] iArr = keys_avatar_background;
@@ -4706,7 +4706,7 @@ public abstract class Theme {
                 themeInfo3 = currentNightTheme;
             }
             applyTheme(themeInfo3, false, false, needSwitchToTheme == 2);
-            AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda99());
+            AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda103());
             ambientSensorListener = new SensorEventListener() { // from class: org.telegram.ui.ActionBar.Theme.11
                 @Override // android.hardware.SensorEventListener
                 public void onAccuracyChanged(Sensor sensor, int i881) {
@@ -8186,7 +8186,7 @@ public abstract class Theme {
                 if (isCurrentThemeNight()) {
                     switchNightThemeDelay = 2000;
                     lastDelayUpdateTime = SystemClock.elapsedRealtime();
-                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda99(), 2100L);
+                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda103(), 2100L);
                 }
             }
             currentTheme = themeInfo;
@@ -8325,7 +8325,7 @@ public abstract class Theme {
                 if (isCurrentThemeNight()) {
                     switchNightThemeDelay = 2000;
                     lastDelayUpdateTime = SystemClock.elapsedRealtime();
-                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda99(), 2100L);
+                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda103(), 2100L);
                 }
             }
             currentTheme = themeInfo;
@@ -8436,7 +8436,7 @@ public abstract class Theme {
                 if (isCurrentThemeNight()) {
                     switchNightThemeDelay = 2000;
                     lastDelayUpdateTime = SystemClock.elapsedRealtime();
-                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda99(), 2100L);
+                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda103(), 2100L);
                 }
             }
             currentTheme = themeInfo;
@@ -11362,7 +11362,7 @@ public abstract class Theme {
             }
             dialogs_archiveAvatarDrawable = new RLottieDrawable(R.raw.chats_archiveavatar, "chats_archiveavatar", AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
             dialogs_archiveDrawable = new RLottieDrawable(R.raw.chats_archive, "chats_archive", AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            dialogs_unarchiveDrawable = new RLottieDrawable(R.raw.chats_unarchive, "chats_unarchive", AndroidUtilities.dp(AndroidUtilities.dp(36.0f)), AndroidUtilities.dp(36.0f), false, null);
+            dialogs_unarchiveDrawable = new RLottieDrawable(R.raw.chats_unarchive, "chats_unarchive", AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
             dialogs_pinArchiveDrawable = new RLottieDrawable(R.raw.chats_hide, "chats_hide", AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
             dialogs_unpinArchiveDrawable = new RLottieDrawable(R.raw.chats_unhide, "chats_unhide", AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
             dialogs_hidePsaDrawable = new RLottieDrawable(R.raw.chat_audio_record_delete, "chats_psahide", AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f), false, null);
@@ -13957,7 +13957,7 @@ public abstract class Theme {
         PRIMARY(Theme.key_chat_msgIvButtonPrimaryIn, Theme.key_chat_msgIvButtonPrimaryInPressed, Theme.key_chat_msgIvButtonPrimaryInText, Theme.key_chat_msgIvButtonPrimaryOut, Theme.key_chat_msgIvButtonPrimaryOutPressed, Theme.key_chat_msgIvButtonPrimaryOutText),
         DANGER(Theme.key_chat_msgIvButtonDangerIn, Theme.key_chat_msgIvButtonDangerInPressed, Theme.key_chat_msgIvButtonDangerInText, Theme.key_chat_msgIvButtonDangerOut, Theme.key_chat_msgIvButtonDangerOutPressed, Theme.key_chat_msgIvButtonDangerOutText),
         SUCCESS(Theme.key_chat_msgIvButtonSuccessIn, Theme.key_chat_msgIvButtonSuccessInPressed, Theme.key_chat_msgIvButtonSuccessInText, Theme.key_chat_msgIvButtonSuccessOut, Theme.key_chat_msgIvButtonSuccessOutPressed, Theme.key_chat_msgIvButtonSuccessOutText),
-        LINK(Theme.key_chat_msgIvButtonLinkIn, Theme.key_chat_msgIvButtonLinkInPressed, Theme.key_chat_msgIvButtonLinkInText, Theme.key_chat_msgIvButtonLinkOut, Theme.key_chat_msgIvButtonLinkOutPressed, Theme.key_chat_msgIvButtonLinkOutText);
+        DEFAULT_IN_TEXT(Theme.key_chat_msgIvButtonDefaultInlineIn, Theme.key_chat_msgIvButtonDefaultInlineInPressed, Theme.key_chat_msgIvButtonDefaultInlineInText, Theme.key_chat_msgIvButtonDefaultInlineOut, Theme.key_chat_msgIvButtonDefaultInlineOutPressed, Theme.key_chat_msgIvButtonDefaultInlineOutText);
 
         private final int backgroundIn;
         private final int backgroundInPressed;
@@ -13997,9 +13997,6 @@ public abstract class Theme {
                 }
                 if (richButtonStyle.bg_success) {
                     return SUCCESS;
-                }
-                if (richButtonStyle.link) {
-                    return LINK;
                 }
             }
             return DEFAULT;

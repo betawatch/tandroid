@@ -14,6 +14,7 @@ import org.telegram.ui.Components.TextStyleSpan;
 
 /* loaded from: classes5.dex */
 public abstract class RichMessageConvert {
+    /* JADX WARN: Multi-variable type inference failed */
     public static ArrayList blocksFromCharSequence(CharSequence charSequence) {
         Object blockSpan;
         ArrayList arrayList = new ArrayList();
@@ -30,13 +31,11 @@ public abstract class RichMessageConvert {
             i++;
             int i3 = i < lineStarts.length ? lineStarts[i] - 1 : length;
             CodeHighlighting.Span span = spanned == null ? null : (CodeHighlighting.Span) blockSpan(spanned, i2, i3, CodeHighlighting.Span.class);
-            Object obj = (spanned == null || span != null) ? null : (QuoteSpan) blockSpan(spanned, i2, i3, QuoteSpan.class);
-            if (span == null && obj == null) {
+            QuoteSpan quoteSpan = (spanned == null || span != null) ? 0 : (QuoteSpan) blockSpan(spanned, i2, i3, QuoteSpan.class);
+            if (span == null && quoteSpan == 0) {
                 arrayList.add(paragraph(charSequence.subSequence(i2, i3)));
             } else {
-                if (span != null) {
-                    obj = span;
-                }
+                CodeHighlighting.Span span2 = span != null ? span : quoteSpan;
                 while (i < lineStarts.length) {
                     int i4 = lineStarts[i];
                     int i5 = i + 1;
@@ -46,7 +45,7 @@ public abstract class RichMessageConvert {
                     } else {
                         blockSpan = blockSpan(spanned, i4, i6, QuoteSpan.class);
                     }
-                    if (blockSpan != obj) {
+                    if (blockSpan != span2) {
                         break;
                     }
                     i = i5;
@@ -66,6 +65,7 @@ public abstract class RichMessageConvert {
                     TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
                     pageblockblockquote.text = RichTextStyle.fromSpannable(subSequence);
                     pageblockblockquote.caption = new TL_iv.textEmpty();
+                    pageblockblockquote.collapsed = quoteSpan != 0 && quoteSpan.isCollapsing;
                     arrayList.add(pageblockblockquote);
                 }
             }

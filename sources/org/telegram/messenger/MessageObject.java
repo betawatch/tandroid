@@ -9958,7 +9958,7 @@ public class MessageObject {
         return i2 > point.y ? i2 - AndroidUtilities.dp(50.0f) : i2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:39:0x013a  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x013b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -10005,24 +10005,27 @@ public class MessageObject {
             dp = 0;
         }
         if (dp == 0) {
-            dp = this.generatedWithMinSize - AndroidUtilities.dp(this.type == 36 ? 40.0f : 80.0f);
+            boolean needDrawAvatarInternal = needDrawAvatarInternal();
+            int dp4 = this.generatedWithMinSize - AndroidUtilities.dp(this.type == 36 ? 40.0f : 80.0f);
             if (this.sideMenuEnabled) {
                 dp2 = AndroidUtilities.dp(64.0f);
             } else {
-                if (needDrawAvatarInternal() && !isOutOwner() && !this.messageOwner.isThreadMessage) {
+                if (needDrawAvatarInternal && !isOutOwner() && !this.messageOwner.isThreadMessage) {
                     dp2 = AndroidUtilities.dp(52.0f);
                 }
                 if (needDrawShareButton() && (this.isSaved || !isOutOwner())) {
-                    dp -= AndroidUtilities.dp((this.isSaved || !isOutOwner()) ? 14.0f : 40.0f);
+                    dp4 -= AndroidUtilities.dp((this.isSaved || !isOutOwner()) ? 14.0f : 40.0f);
                 }
+                dp = dp4;
                 if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGame) {
                     dp -= AndroidUtilities.dp(10.0f);
                 }
             }
-            dp -= dp2;
+            dp4 -= dp2;
             if (needDrawShareButton()) {
-                dp -= AndroidUtilities.dp((this.isSaved || !isOutOwner()) ? 14.0f : 40.0f);
+                dp4 -= AndroidUtilities.dp((this.isSaved || !isOutOwner()) ? 14.0f : 40.0f);
             }
+            dp = dp4;
             if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGame) {
             }
         }
@@ -11688,16 +11691,39 @@ public class MessageObject {
         return false;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x004f, code lost:
+    
+        if (r0.signature_profiles != false) goto L32;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x005d, code lost:
+    
+        r0 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x005b, code lost:
+    
+        if (getDialogId() == org.telegram.messenger.UserObject.VERIFY) goto L32;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public boolean needDrawAvatar() {
+        boolean z;
         TLRPC.MessageFwdHeader messageFwdHeader;
-        TLRPC.Chat chat;
         if (this.type == 27) {
             return false;
         }
         if (this.isRepostPreview || this.isSaved || this.forceAvatar || this.customAvatarDrawable != null || this.searchType != 0) {
             return true;
         }
-        boolean z = getDialogId() >= 0 ? getDialogId() == UserObject.VERIFY : !((chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-getDialogId()))) == null || !chat.signature_profiles);
+        if (getDialogId() < 0) {
+            TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-getDialogId()));
+            if (isEphemeral() && ChatObject.isChannelAndNotMegaGroup(chat)) {
+                return false;
+            }
+            if (chat != null) {
+            }
+            z = false;
+        }
         if (isSponsored()) {
             return false;
         }
@@ -11705,8 +11731,23 @@ public class MessageObject {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0051, code lost:
+    
+        if (r2.signature_profiles != false) goto L33;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x005f, code lost:
+    
+        r2 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x005d, code lost:
+    
+        if (getDialogId() == org.telegram.messenger.UserObject.VERIFY) goto L33;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public boolean needDrawAvatarInternal() {
-        TLRPC.Chat chat;
+        boolean z;
         if (this.isRepostPreview || this.isSaved || this.forceAvatar || this.customAvatarDrawable != null) {
             return true;
         }
@@ -11714,7 +11755,15 @@ public class MessageObject {
         if ((message != null && message.guestchat_via_from != null) || this.searchType != 0) {
             return true;
         }
-        boolean z = getDialogId() >= 0 ? getDialogId() == UserObject.VERIFY : !((chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-getDialogId()))) == null || !chat.signature_profiles);
+        if (getDialogId() < 0) {
+            TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-getDialogId()));
+            if (isEphemeral() && ChatObject.isChannelAndNotMegaGroup(chat)) {
+                return false;
+            }
+            if (chat != null) {
+            }
+            z = false;
+        }
         if (!isSponsored()) {
             if ((isFromChat() && isFromUser()) || isFromGroup() || z || this.eventId != 0) {
                 return true;
@@ -11997,7 +12046,9 @@ public class MessageObject {
     }
 
     public int getId() {
-        return this.messageOwner.id;
+        TLRPC.Message message = this.messageOwner;
+        int i = message.ephemeralAnchorMsgId;
+        return i != 0 ? i : message.id;
     }
 
     public int getRealId() {
@@ -16105,13 +16156,17 @@ public class MessageObject {
         return isWelcomeMessage(this.messageOwner);
     }
 
+    public boolean isWelcomeAnchored() {
+        return isWelcomeAnchored(this.messageOwner);
+    }
+
     public boolean isEphemeralAndNotWelcome() {
         return isEphemeralAndNotWelcome(this.messageOwner);
     }
 
     public int getEphemeralId() {
         if (isEphemeral()) {
-            return ephemeralMessageIdUnpack(getId());
+            return ephemeralMessageIdUnpack(this.messageOwner.id);
         }
         return 0;
     }
@@ -16125,7 +16180,11 @@ public class MessageObject {
     }
 
     public static boolean isWelcomeMessage(TLRPC.Message message) {
-        return isEphemeral(message) && message.ephemeralReceiverBotId == -1;
+        return isEphemeral(message) && (message.ephemeralReceiverBotId == -1 || message.ephemeralAnchorMsgId != 0);
+    }
+
+    public static boolean isWelcomeAnchored(TLRPC.Message message) {
+        return isEphemeral(message) && message.ephemeralAnchorMsgId != 0;
     }
 
     public static boolean isEphemeralAndNotWelcome(TLRPC.Message message) {

@@ -1689,7 +1689,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
     /* JADX WARN: Removed duplicated region for block: B:168:0x0d3a A[EDGE_INSN: B:168:0x0d3a->B:169:0x0d3a BREAK  A[LOOP:3: B:140:0x09c9->B:164:0x0c32], SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:171:0x0d40  */
     /* JADX WARN: Removed duplicated region for block: B:174:0x0db5  */
-    /* JADX WARN: Removed duplicated region for block: B:181:0x0f2e  */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x0f38  */
     /* JADX WARN: Type inference failed for: r10v10 */
     /* JADX WARN: Type inference failed for: r10v15 */
     /* JADX WARN: Type inference failed for: r10v6, types: [boolean, int] */
@@ -3203,7 +3203,8 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                     }
                 };
                 this.searchTagsList = searchTagsList3;
-                searchTagsList3.setShown(0.0f);
+                searchTagsList3.setBlurredFactory(blurredBackgroundDrawableViewFactory5, BlurredBackgroundProviderImpl.topPanel(resourcesProvider));
+                this.searchTagsList.setShown(0.0f);
                 addView(this.searchTagsList, LayoutHelper.createFrame(-1, 38.0f, 51, 0.0f, 4.0f, 0.0f, 0.0f));
                 addView(this.actionModeLayout, LayoutHelper.createFrame(-1, 48, 51));
             }
@@ -11042,6 +11043,11 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ String getAdminRank(long j) {
                     return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getAdminRank(this, j);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ int getChatMode() {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getChatMode(this);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

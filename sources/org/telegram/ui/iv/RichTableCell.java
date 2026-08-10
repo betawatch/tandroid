@@ -473,6 +473,78 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
         }
     }
 
+    public void selectCellRectangle(TL_iv.pageTableCell pagetablecell, TL_iv.pageTableCell pagetablecell2) {
+        int i;
+        TableModel tableModel = this.model;
+        if (tableModel == null || pagetablecell == null || pagetablecell2 == null) {
+            return;
+        }
+        int anchorRowOf = tableModel.anchorRowOf(pagetablecell);
+        int anchorColOf = this.model.anchorColOf(pagetablecell);
+        int anchorRowOf2 = this.model.anchorRowOf(pagetablecell2);
+        int anchorColOf2 = this.model.anchorColOf(pagetablecell2);
+        if (anchorRowOf < 0 || anchorColOf < 0 || anchorRowOf2 < 0 || anchorColOf2 < 0) {
+            return;
+        }
+        int min = Math.min(anchorRowOf, anchorRowOf2);
+        int min2 = Math.min(anchorColOf, anchorColOf2);
+        int min3 = Math.min(this.model.rowCount - 1, Math.max((anchorRowOf + TableModel.spanRow(pagetablecell)) - 1, (anchorRowOf2 + TableModel.spanRow(pagetablecell2)) - 1));
+        int min4 = Math.min(this.model.colCount - 1, Math.max((anchorColOf + TableModel.spanCol(pagetablecell)) - 1, (anchorColOf2 + TableModel.spanCol(pagetablecell2)) - 1));
+        while (true) {
+            boolean z = false;
+            i = min;
+            while (min <= min3) {
+                int i2 = min2;
+                while (min2 <= min4) {
+                    TableModel tableModel2 = this.model;
+                    TL_iv.pageTableCell pagetablecell3 = tableModel2.grid[min][min2];
+                    int i3 = tableModel2.anchorR[min][min2];
+                    int i4 = tableModel2.anchorC[min][min2];
+                    int min5 = Math.min(tableModel2.rowCount - 1, (TableModel.spanRow(pagetablecell3) + i3) - 1);
+                    int min6 = Math.min(this.model.colCount - 1, (TableModel.spanCol(pagetablecell3) + i4) - 1);
+                    if (i3 < i) {
+                        i = i3;
+                        z = true;
+                    }
+                    if (i4 < i2) {
+                        i2 = i4;
+                        z = true;
+                    }
+                    if (min5 > min3) {
+                        min3 = min5;
+                        z = true;
+                    }
+                    if (min6 > min4) {
+                        min4 = min6;
+                        z = true;
+                    }
+                    min2++;
+                }
+                min++;
+                min2 = i2;
+            }
+            if (!z) {
+                break;
+            } else {
+                min = i;
+            }
+        }
+        LinkedHashSet linkedHashSet = new LinkedHashSet();
+        while (i <= min3) {
+            for (int i5 = min2; i5 <= min4; i5++) {
+                linkedHashSet.add(this.model.grid[i][i5]);
+            }
+            i++;
+        }
+        if (this.selectedCells.equals(linkedHashSet)) {
+            return;
+        }
+        this.selectedCells.clear();
+        this.selectedCells.addAll(linkedHashSet);
+        this.grid.invalidate();
+        notifyCellSelectionChanged();
+    }
+
     public void setCellSelectionListener(CellSelectionListener cellSelectionListener) {
         this.cellSelectionListener = cellSelectionListener;
     }
@@ -535,50 +607,114 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
         return this.grid.colHandleAtGrid(gridX(i), gridY(i2));
     }
 
-    public void selectWholeRow(int i) {
-        TableModel tableModel = this.model;
-        if (tableModel == null || i < 0 || i >= tableModel.rowCount) {
-            return;
-        }
-        this.selectedCells.clear();
-        int i2 = 0;
-        while (true) {
-            TableModel tableModel2 = this.model;
-            if (i2 < tableModel2.colCount) {
-                TL_iv.pageTableCell pagetablecell = tableModel2.grid[i][i2];
-                if (pagetablecell != null) {
-                    this.selectedCells.add(pagetablecell);
-                }
-                i2++;
-            } else {
-                this.grid.invalidate();
-                notifyCellSelectionChanged();
-                return;
-            }
-        }
+    public int rowHandleEnd(int i) {
+        return this.grid.rowHandleEnd(i);
     }
 
-    public void selectWholeColumn(int i) {
+    public int colHandleEnd(int i) {
+        return this.grid.colHandleEnd(i);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0031, code lost:
+    
+        r5 = r5 + 1;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public boolean selectionContainsWholeRows(int i, int i2) {
         TableModel tableModel = this.model;
-        if (tableModel == null || i < 0 || i >= tableModel.colCount) {
+        if (tableModel == null || i < 0 || i2 < i || i2 >= tableModel.rowCount || this.selectedCells.isEmpty()) {
+            return false;
+        }
+        while (i <= i2) {
+            int i3 = 0;
+            while (true) {
+                TableModel tableModel2 = this.model;
+                if (i3 < tableModel2.colCount) {
+                    if (!this.selectedCells.contains(tableModel2.grid[i][i3])) {
+                        return false;
+                    }
+                    i3++;
+                }
+            }
+        }
+        return true;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0031, code lost:
+    
+        r5 = r5 + 1;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public boolean selectionContainsWholeColumns(int i, int i2) {
+        TableModel tableModel = this.model;
+        if (tableModel == null || i < 0 || i2 < i || i2 >= tableModel.colCount || this.selectedCells.isEmpty()) {
+            return false;
+        }
+        while (i <= i2) {
+            int i3 = 0;
+            while (true) {
+                TableModel tableModel2 = this.model;
+                if (i3 < tableModel2.rowCount) {
+                    if (!this.selectedCells.contains(tableModel2.grid[i3][i])) {
+                        return false;
+                    }
+                    i3++;
+                }
+            }
+        }
+        return true;
+    }
+
+    public void selectWholeRows(int i, int i2) {
+        TableModel tableModel = this.model;
+        if (tableModel == null || i < 0 || i2 < i || i2 >= tableModel.rowCount) {
             return;
         }
         this.selectedCells.clear();
-        int i2 = 0;
-        while (true) {
-            TableModel tableModel2 = this.model;
-            if (i2 < tableModel2.rowCount) {
-                TL_iv.pageTableCell pagetablecell = tableModel2.grid[i2][i];
-                if (pagetablecell != null) {
-                    this.selectedCells.add(pagetablecell);
+        while (i <= i2) {
+            int i3 = 0;
+            while (true) {
+                TableModel tableModel2 = this.model;
+                if (i3 < tableModel2.colCount) {
+                    TL_iv.pageTableCell pagetablecell = tableModel2.grid[i][i3];
+                    if (pagetablecell != null) {
+                        this.selectedCells.add(pagetablecell);
+                    }
+                    i3++;
                 }
-                i2++;
-            } else {
-                this.grid.invalidate();
-                notifyCellSelectionChanged();
-                return;
             }
+            i++;
         }
+        this.grid.invalidate();
+        notifyCellSelectionChanged();
+    }
+
+    public void selectWholeColumns(int i, int i2) {
+        TableModel tableModel = this.model;
+        if (tableModel == null || i < 0 || i2 < i || i2 >= tableModel.colCount) {
+            return;
+        }
+        this.selectedCells.clear();
+        while (i <= i2) {
+            int i3 = 0;
+            while (true) {
+                TableModel tableModel2 = this.model;
+                if (i3 < tableModel2.rowCount) {
+                    TL_iv.pageTableCell pagetablecell = tableModel2.grid[i3][i];
+                    if (pagetablecell != null) {
+                        this.selectedCells.add(pagetablecell);
+                    }
+                    i3++;
+                }
+            }
+            i++;
+        }
+        this.grid.invalidate();
+        notifyCellSelectionChanged();
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -724,6 +860,44 @@ public class RichTableCell extends RichBlockCell implements Theme.Colorable, Tex
             return;
         }
         delegate.onTextChanged(blockRow);
+    }
+
+    public void applyBordered(boolean z) {
+        BlockRow blockRow;
+        TableModel tableModel = this.model;
+        if (tableModel != null) {
+            TL_iv.pageBlockTable pageblocktable = tableModel.block;
+            if (pageblocktable.bordered == z) {
+                return;
+            }
+            pageblocktable.bordered = z;
+            this.grid.invalidate();
+            Delegate delegate = this.delegate;
+            if (delegate == null || (blockRow = this.currentRow) == null) {
+                return;
+            }
+            delegate.onTextChanged(blockRow);
+        }
+    }
+
+    public void applyCompact(boolean z) {
+        BlockRow blockRow;
+        TableModel tableModel = this.model;
+        if (tableModel != null) {
+            TL_iv.pageBlockTable pageblocktable = tableModel.block;
+            if (pageblocktable.compact == z) {
+                return;
+            }
+            pageblocktable.compact = z;
+            this.grid.refreshCompact();
+            this.scrollContent.requestLayout();
+            requestLayout();
+            Delegate delegate = this.delegate;
+            if (delegate == null || (blockRow = this.currentRow) == null) {
+                return;
+            }
+            delegate.onTextChanged(blockRow);
+        }
     }
 
     public int commonHorizontalAlign() {

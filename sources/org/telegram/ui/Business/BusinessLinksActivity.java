@@ -108,7 +108,7 @@ public class BusinessLinksActivity extends UniversalFragment implements Notifica
                 return drawable == this.limit || super.verifyDrawable(drawable);
             }
 
-            @Override // org.telegram.ui.Components.EditTextEffects, android.widget.TextView
+            @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.EditTextEffects, android.widget.TextView
             protected void onTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
                 super.onTextChanged(charSequence, i2, i3, i4);
                 if (this.limit != null) {

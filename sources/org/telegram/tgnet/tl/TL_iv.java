@@ -1987,6 +1987,7 @@ public class TL_iv {
     public static class pageBlockTable extends PageBlock {
         public static final int constructor = -1085412734;
         public boolean bordered;
+        public boolean compact;
         public int flags;
         public ArrayList<pageTableRow> rows = new ArrayList<>();
         public boolean striped;
@@ -1998,6 +1999,7 @@ public class TL_iv {
             this.flags = readInt32;
             this.bordered = TLObject.hasFlag(readInt32, 1);
             this.striped = TLObject.hasFlag(this.flags, 2);
+            this.compact = TLObject.hasFlag(this.flags, 4);
             this.title = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             this.rows = Vector.deserialize(inputSerializedData, new Vector.TLDeserializer() { // from class: org.telegram.tgnet.tl.TL_iv$pageBlockTable$$ExternalSyntheticLambda0
                 @Override // org.telegram.tgnet.Vector.TLDeserializer
@@ -2014,7 +2016,9 @@ public class TL_iv {
             this.flags = flag;
             int flag2 = TLObject.setFlag(flag, 2, this.striped);
             this.flags = flag2;
-            outputSerializedData.writeInt32(flag2);
+            int flag3 = TLObject.setFlag(flag2, 4, this.compact);
+            this.flags = flag3;
+            outputSerializedData.writeInt32(flag3);
             this.title.serializeToStream(outputSerializedData);
             Vector.serialize(outputSerializedData, this.rows);
         }

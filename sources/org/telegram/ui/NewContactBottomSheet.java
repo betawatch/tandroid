@@ -155,10 +155,10 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         setTitle(LocaleController.getString(R.string.NewContactTitle), true);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:57:0x062b  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0649  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0646 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0658  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0630  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x064e  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x064b A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x065d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -174,7 +174,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         ScrollView scrollView = new ScrollView(context);
         LinearLayout linearLayout = new LinearLayout(context);
         this.contentLayout = linearLayout;
-        linearLayout.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
+        linearLayout.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
         this.contentLayout.setOrientation(1);
         scrollView.addView(this.contentLayout, LayoutHelper.createScroll(-1, -2, 51));
         this.contentLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.NewContactBottomSheet$$ExternalSyntheticLambda2
@@ -240,9 +240,9 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         this.underPhoneTextView.setLinkTextColor(getThemedColor(Theme.key_chat_messageLinkIn));
         this.contentLayout.addView(this.underPhoneTextView, LayoutHelper.createLinear(-1, -2, 12.0f, 0.0f, 12.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
-        1 r7 = new 1(context);
-        this.countryFlag = r7;
-        r7.setTextSize(1, 16.0f);
+        1 r12 = new 1(context);
+        this.countryFlag = r12;
+        r12.setTextSize(1, 16.0f);
         this.countryFlag.setFocusable(false);
         this.countryFlag.setGravity(17);
         frameLayout2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.NewContactBottomSheet$$ExternalSyntheticLambda6
@@ -596,7 +596,9 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         this.qrButtonSeparator = view;
         view.setBackgroundColor(Theme.getColor(Theme.key_divider, this.resourcesProvider));
         this.qrButtonContainer.addView(this.qrButtonSeparator, LayoutHelper.createFrame(-1, 1.0f / AndroidUtilities.density, 48, 0.0f, 6.0f, 0.0f, 0.0f));
-        this.qrButton = new ButtonWithCounterView(context, false, this.resourcesProvider);
+        ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, false, this.resourcesProvider);
+        this.qrButton = buttonWithCounterView;
+        buttonWithCounterView.setRound();
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("QR");
         spannableStringBuilder.setSpan(new ColoredImageSpan(R.drawable.header_qr_24), 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.append((CharSequence) "  ");
@@ -753,16 +755,17 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         textView4.setTextColor(baseFragment.getThemedColor(i6));
         this.doneButton.setTextSize(1, 15.0f);
         this.doneButton.setTypeface(AndroidUtilities.bold());
+        ScaleStateListAnimator.apply(this.doneButtonContainer, 0.02f, 1.2f);
         RadialProgressView radialProgressView = new RadialProgressView(context);
         this.progressView = radialProgressView;
         radialProgressView.setSize(AndroidUtilities.dp(20.0f));
         this.progressView.setProgressColor(this.parentFragment.getThemedColor(i6));
         this.doneButtonContainer.addView(this.doneButton, LayoutHelper.createFrame(-1, -1.0f));
         this.doneButtonContainer.addView(this.progressView, LayoutHelper.createFrame(40, 40, 17));
-        this.contentLayout.addView(this.doneButtonContainer, LayoutHelper.createLinear(-1, 48, 0, 0, 16, 0, 16));
+        this.contentLayout.addView(this.doneButtonContainer, LayoutHelper.createLinear(-1, 48, 0, 0, 8, 0, 4));
         AndroidUtilities.updateViewVisibilityAnimated(this.doneButton, true, 1.0f, false);
         AndroidUtilities.updateViewVisibilityAnimated(this.progressView, false, 1.0f, false);
-        this.doneButtonContainer.setBackground(Theme.AdaptiveRipple.filledRect(this.parentFragment.getThemedColor(Theme.key_featuredStickers_addButton), 6.0f));
+        this.doneButtonContainer.setBackground(Theme.AdaptiveRipple.filledRect(this.parentFragment.getThemedColor(Theme.key_featuredStickers_addButton), 24.0f));
         this.doneButtonContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.NewContactBottomSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {

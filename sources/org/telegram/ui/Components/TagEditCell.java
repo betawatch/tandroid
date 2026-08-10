@@ -550,6 +550,11 @@ public class TagEditCell extends LinearLayout {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+            public /* synthetic */ int getChatMode() {
+                return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getChatMode(this);
+            }
+
+            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ ChatActivityDraftMessageMeasureController getDraftMessageMeasureController() {
                 return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getDraftMessageMeasureController(this);
             }
@@ -1329,6 +1334,11 @@ public class TagEditCell extends LinearLayout {
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ int getAddPollOptionInputFieldHeight(ChatMessageCell chatMessageCell2) {
                     return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getAddPollOptionInputFieldHeight(this, chatMessageCell2);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ int getChatMode() {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getChatMode(this);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

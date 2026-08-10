@@ -114,34 +114,6 @@ public class UserMetadata {
         return this.rolloutsState.getReportRolloutsState();
     }
 
-    public boolean updateRolloutsState(List list) {
-        synchronized (this.rolloutsState) {
-            try {
-                if (!this.rolloutsState.updateRolloutAssignmentList(list)) {
-                    return false;
-                }
-                final List rolloutAssignmentList = this.rolloutsState.getRolloutAssignmentList();
-                this.backgroundWorker.submit(new Callable() { // from class: com.google.firebase.crashlytics.internal.metadata.UserMetadata$$ExternalSyntheticLambda1
-                    @Override // java.util.concurrent.Callable
-                    public final Object call() {
-                        Object lambda$updateRolloutsState$1;
-                        lambda$updateRolloutsState$1 = UserMetadata.this.lambda$updateRolloutsState$1(rolloutAssignmentList);
-                        return lambda$updateRolloutsState$1;
-                    }
-                });
-                return true;
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$updateRolloutsState$1(List list) {
-        this.metaDataStore.writeRolloutState(this.sessionIdentifier, list);
-        return null;
-    }
-
     private void serializeUserDataIfNeeded() {
         boolean z;
         String str;

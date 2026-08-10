@@ -3598,6 +3598,11 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ int getChatMode() {
+                        return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getChatMode(this);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ ChatActivityDraftMessageMeasureController getDraftMessageMeasureController() {
                         return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getDraftMessageMeasureController(this);
                     }
@@ -4036,6 +4041,11 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ String getAdminRank(long j) {
                 return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getAdminRank(this, j);
+            }
+
+            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+            public /* synthetic */ int getChatMode() {
+                return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getChatMode(this);
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

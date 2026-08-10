@@ -922,6 +922,11 @@ public class SecretVoicePlayer extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ int getChatMode() {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getChatMode(this);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ ChatActivityDraftMessageMeasureController getDraftMessageMeasureController() {
                     return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getDraftMessageMeasureController(this);
                 }
