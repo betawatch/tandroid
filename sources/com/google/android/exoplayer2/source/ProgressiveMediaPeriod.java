@@ -508,7 +508,7 @@ final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutput, Load
 
     @Override // com.google.android.exoplayer2.extractor.ExtractorOutput
     public void seekMap(final SeekMap seekMap) {
-        this.handler.post(new Runnable() { // from class: com.google.android.exoplayer2.source.ProgressiveMediaPeriod$$ExternalSyntheticLambda2
+        this.handler.post(new Runnable() { // from class: com.google.android.exoplayer2.source.ProgressiveMediaPeriod$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 ProgressiveMediaPeriod.this.lambda$seekMap$1(seekMap);
@@ -532,7 +532,7 @@ final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutput, Load
 
     /* JADX INFO: Access modifiers changed from: private */
     public void onLengthKnown() {
-        this.handler.post(new Runnable() { // from class: com.google.android.exoplayer2.source.ProgressiveMediaPeriod$$ExternalSyntheticLambda3
+        this.handler.post(new Runnable() { // from class: com.google.android.exoplayer2.source.ProgressiveMediaPeriod$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 ProgressiveMediaPeriod.this.lambda$onLengthKnown$2();

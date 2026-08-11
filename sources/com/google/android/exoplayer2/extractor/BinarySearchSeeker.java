@@ -6,7 +6,6 @@ import com.google.android.exoplayer2.util.Util;
 
 /* loaded from: classes.dex */
 public abstract class BinarySearchSeeker {
-    private static final long MAX_SKIP_BYTES = 262144;
     private final int minimumSearchRange;
     protected final BinarySearchSeekMap seekMap;
     protected SeekOperationParams seekOperationParams;
@@ -109,7 +108,7 @@ public abstract class BinarySearchSeeker {
 
     protected final boolean skipInputUntilPosition(ExtractorInput extractorInput, long j) {
         long position = j - extractorInput.getPosition();
-        if (position < 0 || position > MAX_SKIP_BYTES) {
+        if (position < 0 || position > 262144) {
             return false;
         }
         extractorInput.skipFully((int) position);

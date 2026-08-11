@@ -29,8 +29,6 @@ public interface ExtractorInput extends DataReader {
 
     void resetPeekPosition();
 
-    void setRetryPosition(long j, Throwable th);
-
     int skip(int i);
 
     void skipFully(int i);

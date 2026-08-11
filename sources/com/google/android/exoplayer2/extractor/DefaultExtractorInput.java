@@ -2,7 +2,6 @@ package com.google.android.exoplayer2.extractor;
 
 import com.google.android.exoplayer2.ExoPlayerLibraryInfo;
 import com.google.android.exoplayer2.upstream.DataReader;
-import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Util;
 import java.io.EOFException;
 import java.io.InterruptedIOException;
@@ -152,13 +151,6 @@ public final class DefaultExtractorInput implements ExtractorInput {
     @Override // com.google.android.exoplayer2.extractor.ExtractorInput
     public long getLength() {
         return this.streamLength;
-    }
-
-    @Override // com.google.android.exoplayer2.extractor.ExtractorInput
-    public void setRetryPosition(long j, Throwable th) {
-        Assertions.checkArgument(j >= 0);
-        this.position = j;
-        throw th;
     }
 
     private void ensureSpaceForPeek(int i) {

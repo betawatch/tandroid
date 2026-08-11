@@ -77,9 +77,4 @@ public abstract class ForwardingExtractorInput implements ExtractorInput {
     public long getLength() {
         return this.input.getLength();
     }
-
-    @Override // com.google.android.exoplayer2.extractor.ExtractorInput
-    public void setRetryPosition(long j, Throwable th) {
-        this.input.setRetryPosition(j, th);
-    }
 }

@@ -1,6 +1,5 @@
 package com.google.android.exoplayer2.extractor.flac;
 
-import com.google.android.exoplayer2.ext.flac.FlacBinarySearchSeeker$$ExternalSyntheticLambda0;
 import com.google.android.exoplayer2.extractor.BinarySearchSeeker;
 import com.google.android.exoplayer2.extractor.ExtractorInput;
 import com.google.android.exoplayer2.extractor.FlacFrameReader;
@@ -10,8 +9,13 @@ import j$.util.Objects;
 /* loaded from: classes.dex */
 final class FlacBinarySearchSeeker extends BinarySearchSeeker {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public FlacBinarySearchSeeker(FlacStreamMetadata flacStreamMetadata, int i, long j, long j2) {
-        super(new FlacBinarySearchSeeker$$ExternalSyntheticLambda0(flacStreamMetadata), new FlacTimestampSeeker(flacStreamMetadata, i), flacStreamMetadata.getDurationUs(), 0L, flacStreamMetadata.totalSamples, j, j2, flacStreamMetadata.getApproxBytesPerFrame(), Math.max(6, flacStreamMetadata.minFrameSize));
+    public FlacBinarySearchSeeker(final FlacStreamMetadata flacStreamMetadata, int i, long j, long j2) {
+        super(new BinarySearchSeeker.SeekTimestampConverter() { // from class: com.google.android.exoplayer2.extractor.flac.FlacBinarySearchSeeker$$ExternalSyntheticLambda0
+            @Override // com.google.android.exoplayer2.extractor.BinarySearchSeeker.SeekTimestampConverter
+            public final long timeUsToTargetTime(long j3) {
+                return FlacStreamMetadata.this.getSampleNumber(j3);
+            }
+        }, new FlacTimestampSeeker(flacStreamMetadata, i), flacStreamMetadata.getDurationUs(), 0L, flacStreamMetadata.totalSamples, j, j2, flacStreamMetadata.getApproxBytesPerFrame(), Math.max(6, flacStreamMetadata.minFrameSize));
         Objects.requireNonNull(flacStreamMetadata);
     }
 

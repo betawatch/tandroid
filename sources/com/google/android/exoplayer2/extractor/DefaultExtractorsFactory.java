@@ -1,7 +1,6 @@
 package com.google.android.exoplayer2.extractor;
 
 import android.net.Uri;
-import com.google.android.exoplayer2.ext.flac.FlacLibrary;
 import com.google.android.exoplayer2.extractor.amr.AmrExtractor;
 import com.google.android.exoplayer2.extractor.avi.AviExtractor;
 import com.google.android.exoplayer2.extractor.flac.FlacExtractor;
@@ -163,13 +162,10 @@ public final class DefaultExtractorsFactory implements ExtractorsFactory {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static Constructor getFlacExtractorConstructor() {
-        Boolean bool = Boolean.TRUE;
-        int i = FlacLibrary.$r8$clinit;
-        if (!bool.equals(FlacLibrary.class.getMethod("isAvailable", null).invoke(null, null))) {
-            return null;
+        if (Boolean.TRUE.equals(Class.forName("com.google.android.exoplayer2.ext.flac.FlacLibrary").getMethod("isAvailable", null).invoke(null, null))) {
+            return Class.forName("com.google.android.exoplayer2.ext.flac.FlacExtractor").asSubclass(Extractor.class).getConstructor(Integer.TYPE);
         }
-        ExtractorsFactory extractorsFactory = com.google.android.exoplayer2.ext.flac.FlacExtractor.FACTORY;
-        return com.google.android.exoplayer2.ext.flac.FlacExtractor.class.asSubclass(Extractor.class).getConstructor(Integer.TYPE);
+        return null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

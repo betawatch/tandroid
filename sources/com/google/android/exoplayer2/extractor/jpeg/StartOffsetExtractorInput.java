@@ -28,9 +28,4 @@ final class StartOffsetExtractorInput extends ForwardingExtractorInput {
     public long getLength() {
         return super.getLength() - this.startOffset;
     }
-
-    @Override // com.google.android.exoplayer2.extractor.ForwardingExtractorInput, com.google.android.exoplayer2.extractor.ExtractorInput
-    public void setRetryPosition(long j, Throwable th) {
-        super.setRetryPosition(j + this.startOffset, th);
-    }
 }
