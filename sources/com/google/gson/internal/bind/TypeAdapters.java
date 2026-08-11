@@ -44,7 +44,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicIntegerArray;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class TypeAdapters {
     public static final TypeAdapter ATOMIC_BOOLEAN;
     public static final TypeAdapterFactory ATOMIC_BOOLEAN_FACTORY;

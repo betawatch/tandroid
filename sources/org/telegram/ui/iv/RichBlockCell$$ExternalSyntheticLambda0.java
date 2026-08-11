@@ -2,7 +2,7 @@ package org.telegram.ui.iv;
 
 import org.telegram.ui.iv.RichBlockInset;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class RichBlockCell$$ExternalSyntheticLambda0 implements RichBlockInset.Applier {
     public final /* synthetic */ RichBlockCell f$0;
 

@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 import java.util.Iterator;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class ReflectionAccessFilterHelper {
     public static ReflectionAccessFilter$FilterResult getFilterResult(List list, Class cls) {
         Iterator it = list.iterator();

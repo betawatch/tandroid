@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class DefaultDateTypeAdapter extends TypeAdapter {
     public static final TypeAdapterFactory DEFAULT_STYLE_FACTORY = new TypeAdapterFactory() { // from class: com.google.gson.internal.bind.DefaultDateTypeAdapter.1
         @Override // com.google.gson.TypeAdapterFactory

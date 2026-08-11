@@ -20,7 +20,7 @@ import org.telegram.ui.Components.TextStyleSpan;
 import org.telegram.ui.Components.URLSpanReplacement;
 import org.webrtc.MediaStreamTrack;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class RichHtml {
     private static boolean isWs(char c) {
         return c == ' ' || c == '\n' || c == '\t' || c == '\r';
@@ -1524,7 +1524,7 @@ public abstract class RichHtml {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0193  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x019c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

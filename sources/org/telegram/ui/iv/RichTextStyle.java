@@ -21,7 +21,7 @@ import org.telegram.ui.Components.TextStyleSpan;
 import org.telegram.ui.Components.URLSpanMono;
 import org.telegram.ui.Components.URLSpanReplacement;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class RichTextStyle {
     private static final int[] STYLE_FLAGS = {1, 2, 16, 8, 4, 256, 16384, 32768, 65536};
 

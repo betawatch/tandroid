@@ -35,7 +35,7 @@ import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.iv.RichCaptionController;
 import org.telegram.ui.iv.RichEditor;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichAudioCell extends RichBlockCell implements Theme.Colorable, TextSelectionHelper.ArticleSelectableView, RichCaptionHost, NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener {
     private boolean attached;
     private final TextPaint audioTimePaint;

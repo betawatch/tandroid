@@ -15,7 +15,7 @@ import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichDividerCell extends RichBlockCell implements Theme.Colorable, TextSelectionHelper.ArticleSelectableView {
     private boolean blockRtl;
     private Delegate delegate;

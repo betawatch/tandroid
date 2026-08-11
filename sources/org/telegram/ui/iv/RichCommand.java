@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.LayoutHelper;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichCommand {
     private static ArrayList cmds;
     public final List commands;

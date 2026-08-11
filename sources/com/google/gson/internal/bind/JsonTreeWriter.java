@@ -12,7 +12,7 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class JsonTreeWriter extends JsonWriter {
     private String pendingName;
     private JsonElement product;

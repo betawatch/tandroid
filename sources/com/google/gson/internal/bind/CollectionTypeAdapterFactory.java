@@ -14,7 +14,7 @@ import java.lang.reflect.Type;
 import java.util.Collection;
 import java.util.Iterator;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CollectionTypeAdapterFactory implements TypeAdapterFactory {
     private final ConstructorConstructor constructorConstructor;
 

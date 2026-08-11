@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichTableCellGrid extends ViewGroup {
     private final RectF arcRect;
     private boolean bottomBulge;

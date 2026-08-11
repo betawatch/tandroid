@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichInlineButtonSpan extends ReplacementSpan {
     private View attachedView;
     private final TL_iv.textButton button;

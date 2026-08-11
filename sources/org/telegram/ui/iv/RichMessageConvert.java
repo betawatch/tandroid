@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.QuoteSpan;
 import org.telegram.ui.Components.TextStyleSpan;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class RichMessageConvert {
     /* JADX WARN: Multi-variable type inference failed */
     public static ArrayList blocksFromCharSequence(CharSequence charSequence) {

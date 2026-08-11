@@ -18,7 +18,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichMediaUploader implements NotificationCenter.NotificationCenterDelegate {
     private final TLRPC.Document audioDocument;
     private boolean cancelled;

@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.text.Spanned;
 import android.text.style.ReplacementSpan;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class MathSpan extends ReplacementSpan {
     private final Bitmap bitmap;
     private final int depth;

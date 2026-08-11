@@ -21,7 +21,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.spoilers.SpoilerEffect2;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichMediaItem {
     private static ColorMatrixColorFilter fancyBlurFilter;
     private boolean attached;

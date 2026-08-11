@@ -32,7 +32,7 @@ import org.telegram.ui.Components.LinkPath;
 import org.telegram.ui.Components.TextStyleSpan;
 import org.telegram.ui.Components.URLSpanReplacement;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichEditText extends EditTextCaption {
     private boolean accentHint;
     private boolean allowNewlines;

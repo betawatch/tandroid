@@ -28,7 +28,7 @@ import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.iv.RichDetailsCell;
 import org.telegram.ui.iv.RichEditText;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichDetailsCell extends FrameLayout implements Theme.Colorable, TextSelectionHelper.ArticleSelectableView {
     private final AnimatedArrowDrawable arrow;
     private final Drawable.Callback arrowCallback;

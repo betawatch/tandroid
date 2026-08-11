@@ -39,7 +39,7 @@ import org.telegram.ui.iv.RichEditor;
 import org.telegram.ui.iv.RichTableCell;
 import org.telegram.ui.iv.RichTableCellGrid;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichTableCell extends RichBlockCell implements Theme.Colorable, TextSelectionHelper.ArticleSelectableView {
     private boolean blockRtl;
     private CellSelectionListener cellSelectionListener;

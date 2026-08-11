@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.LayoutHelper;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichTableCellHost extends FrameLayout {
     public TL_iv.pageTableCell cell;
     public final RichEditText editText;

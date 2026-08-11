@@ -11,7 +11,7 @@ import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichDetailsEndCell extends View implements Theme.Colorable {
     private BlockRow currentRow;
     private final Paint paint;

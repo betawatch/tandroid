@@ -51,7 +51,7 @@ import org.telegram.ui.Components.spoilers.SpoilerEffect2;
 import org.telegram.ui.iv.RichCaptionController;
 import org.telegram.ui.iv.RichEditor;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichMediaCell extends RichBlockCell implements Theme.Colorable, TextSelectionHelper.ArticleSelectableView, RichCaptionHost {
     private static Paint slideDotPaint;
     private final ImageView addButton;

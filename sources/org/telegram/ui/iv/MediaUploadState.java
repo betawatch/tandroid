@@ -3,7 +3,7 @@ package org.telegram.ui.iv;
 import android.graphics.Bitmap;
 import org.telegram.tgnet.TLRPC;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class MediaUploadState {
     public TLRPC.Document audioDisplayDocument;
     public TLRPC.Document document;

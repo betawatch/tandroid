@@ -7,7 +7,7 @@ import org.telegram.messenger.FileLog;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 import ru.noties.jlatexmath.JLatexMathDrawable;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class Latex {
     private static volatile boolean sInitialized = false;
     public final Bitmap bitmap;

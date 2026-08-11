@@ -1,6 +1,6 @@
 package org.telegram.ui.iv;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public interface RichCaptionHost {
     RichEditText getCaptionEditText();
 

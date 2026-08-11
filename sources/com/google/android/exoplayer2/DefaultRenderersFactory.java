@@ -10,7 +10,6 @@ import com.google.android.exoplayer2.audio.AudioSink;
 import com.google.android.exoplayer2.audio.DefaultAudioSink;
 import com.google.android.exoplayer2.audio.MediaCodecAudioRenderer;
 import com.google.android.exoplayer2.ext.ffmpeg.FfmpegAudioRenderer;
-import com.google.android.exoplayer2.ext.opus.LibopusAudioRenderer;
 import com.google.android.exoplayer2.mediacodec.DefaultMediaCodecAdapterFactory;
 import com.google.android.exoplayer2.mediacodec.MediaCodecAdapter;
 import com.google.android.exoplayer2.mediacodec.MediaCodecSelector;
@@ -109,6 +108,7 @@ public class DefaultRenderersFactory implements RenderersFactory {
     protected void buildAudioRenderers(Context context, int i, MediaCodecSelector mediaCodecSelector, boolean z, AudioSink audioSink, Handler handler, AudioRendererEventListener audioRendererEventListener, ArrayList arrayList) {
         int i2;
         int i3;
+        int i4;
         arrayList.add(new MediaCodecAudioRenderer(context, getCodecAdapterFactory(), mediaCodecSelector, z, handler, audioRendererEventListener, audioSink));
         if (i == 0) {
             return;
@@ -128,58 +128,58 @@ public class DefaultRenderersFactory implements RenderersFactory {
                     i2 = size;
                     try {
                         i3 = i2 + 1;
+                        arrayList.add(i2, (Renderer) Class.forName("com.google.android.exoplayer2.ext.opus.LibopusAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
+                        Log.i("DefaultRenderersFactory", "Loaded LibopusAudioRenderer.");
+                    } catch (ClassNotFoundException unused2) {
+                    }
+                    try {
+                        i4 = i3 + 1;
                         try {
-                            arrayList.add(i2, (Renderer) LibopusAudioRenderer.class.getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
-                            Log.i("DefaultRenderersFactory", "Loaded LibopusAudioRenderer.");
-                        } catch (ClassNotFoundException unused2) {
-                            i2 = i3;
-                            i3 = i2;
-                            int i4 = i3 + 1;
                             arrayList.add(i3, (Renderer) Class.forName("com.google.android.exoplayer2.ext.flac.LibflacAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
                             Log.i("DefaultRenderersFactory", "Loaded LibflacAudioRenderer.");
+                        } catch (ClassNotFoundException unused3) {
+                            i3 = i4;
+                            i4 = i3;
                             arrayList.add(i4, (Renderer) FfmpegAudioRenderer.class.getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
                             Log.i("DefaultRenderersFactory", "Loaded FfmpegAudioRenderer.");
                         }
-                    } catch (ClassNotFoundException unused3) {
+                    } catch (ClassNotFoundException unused4) {
                     }
-                    try {
-                        int i42 = i3 + 1;
-                        try {
-                            arrayList.add(i3, (Renderer) Class.forName("com.google.android.exoplayer2.ext.flac.LibflacAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
-                            Log.i("DefaultRenderersFactory", "Loaded LibflacAudioRenderer.");
-                        } catch (ClassNotFoundException unused4) {
-                            i3 = i42;
-                            i42 = i3;
-                            arrayList.add(i42, (Renderer) FfmpegAudioRenderer.class.getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
-                            Log.i("DefaultRenderersFactory", "Loaded FfmpegAudioRenderer.");
-                        }
-                        arrayList.add(i42, (Renderer) FfmpegAudioRenderer.class.getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
-                        Log.i("DefaultRenderersFactory", "Loaded FfmpegAudioRenderer.");
-                    } catch (Exception e) {
-                        throw new RuntimeException("Error instantiating FLAC extension", e);
-                    }
+                    arrayList.add(i4, (Renderer) FfmpegAudioRenderer.class.getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
+                    Log.i("DefaultRenderersFactory", "Loaded FfmpegAudioRenderer.");
                 }
-            } catch (Exception e2) {
-                throw new RuntimeException("Error instantiating MIDI extension", e2);
+            } catch (Exception e) {
+                throw new RuntimeException("Error instantiating MIDI extension", e);
             }
         } catch (ClassNotFoundException unused5) {
         }
         try {
             i3 = i2 + 1;
-            arrayList.add(i2, (Renderer) LibopusAudioRenderer.class.getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
-            Log.i("DefaultRenderersFactory", "Loaded LibopusAudioRenderer.");
             try {
-                int i422 = i3 + 1;
+                try {
+                    arrayList.add(i2, (Renderer) Class.forName("com.google.android.exoplayer2.ext.opus.LibopusAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
+                    Log.i("DefaultRenderersFactory", "Loaded LibopusAudioRenderer.");
+                } catch (ClassNotFoundException unused6) {
+                    i2 = i3;
+                    i3 = i2;
+                    i4 = i3 + 1;
+                    arrayList.add(i3, (Renderer) Class.forName("com.google.android.exoplayer2.ext.flac.LibflacAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
+                    Log.i("DefaultRenderersFactory", "Loaded LibflacAudioRenderer.");
+                    arrayList.add(i4, (Renderer) FfmpegAudioRenderer.class.getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
+                    Log.i("DefaultRenderersFactory", "Loaded FfmpegAudioRenderer.");
+                }
+                i4 = i3 + 1;
                 arrayList.add(i3, (Renderer) Class.forName("com.google.android.exoplayer2.ext.flac.LibflacAudioRenderer").getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
                 Log.i("DefaultRenderersFactory", "Loaded LibflacAudioRenderer.");
-            } catch (ClassNotFoundException unused6) {
-            }
-            try {
-                arrayList.add(i422, (Renderer) FfmpegAudioRenderer.class.getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
-                Log.i("DefaultRenderersFactory", "Loaded FfmpegAudioRenderer.");
-            } catch (ClassNotFoundException unused7) {
+                try {
+                    arrayList.add(i4, (Renderer) FfmpegAudioRenderer.class.getConstructor(Handler.class, AudioRendererEventListener.class, AudioSink.class).newInstance(handler, audioRendererEventListener, audioSink));
+                    Log.i("DefaultRenderersFactory", "Loaded FfmpegAudioRenderer.");
+                } catch (ClassNotFoundException unused7) {
+                } catch (Exception e2) {
+                    throw new RuntimeException("Error instantiating FFmpeg extension", e2);
+                }
             } catch (Exception e3) {
-                throw new RuntimeException("Error instantiating FFmpeg extension", e3);
+                throw new RuntimeException("Error instantiating FLAC extension", e3);
             }
         } catch (Exception e4) {
             throw new RuntimeException("Error instantiating Opus extension", e4);

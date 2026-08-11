@@ -77,7 +77,7 @@ import org.telegram.ui.iv.RichEditor;
 import org.telegram.ui.iv.RichEditorListView;
 import org.telegram.ui.iv.RichEditorToolbar;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout implements NotificationCenter.NotificationCenterDelegate {
     private static final int[] STYLE_FLAGS = {1, 2, 16, 8, 256, 4, 16384, 32768};
     private boolean attachButtonsShown;

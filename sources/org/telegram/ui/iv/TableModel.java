@@ -17,7 +17,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TableModel {
     public int[][] anchorC;
     public int[][] anchorR;

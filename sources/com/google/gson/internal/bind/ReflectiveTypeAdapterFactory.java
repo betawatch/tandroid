@@ -39,7 +39,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
     private final ConstructorConstructor constructorConstructor;
     private final Excluder excluder;

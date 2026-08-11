@@ -31,7 +31,7 @@ import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.iv.RichButtonRowCell;
 import org.telegram.ui.iv.RichEditor;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichButtonRowCell extends RichBlockCell implements Theme.Colorable {
     private final RichEditor.Button addButton;
     private final ArrayList buttonViews;

@@ -25,7 +25,7 @@ import org.telegram.ui.TopicsFragment;
 import org.telegram.ui.iv.RichEditorListView;
 import org.telegram.ui.iv.RichInlineButtonEditor;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class RichInlineButtonEditor {
 
     /* JADX INFO: Access modifiers changed from: private */

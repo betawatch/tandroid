@@ -101,7 +101,7 @@ import org.telegram.ui.iv.RichCommandSuggestions;
 import org.telegram.ui.iv.RichEditor;
 import org.telegram.ui.iv.RichEditorListView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichEditor extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
     private ImageView addButton;
     private ImageView aiButton;

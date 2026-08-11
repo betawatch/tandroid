@@ -4,7 +4,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.iv.RichEditorListView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class ChatAttachAlertRichLayout$2$$ExternalSyntheticLambda0 implements Utilities.Callback {
     public final /* synthetic */ RichEditorListView.SelectionEdit f$0;
 

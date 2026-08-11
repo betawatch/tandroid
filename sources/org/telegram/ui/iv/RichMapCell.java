@@ -28,7 +28,7 @@ import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.iv.RichCaptionController;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichMapCell extends RichBlockCell implements Theme.Colorable, TextSelectionHelper.ArticleSelectableView, RichCaptionHost {
     private final Paint backgroundPaint;
     private final RichCaptionController caption;

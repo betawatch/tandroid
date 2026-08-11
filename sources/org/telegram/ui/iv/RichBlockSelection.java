@@ -6,7 +6,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import org.telegram.ui.Cells.TextSelectionHelper;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 abstract class RichBlockSelection {
     private static Layout placeholder;
 

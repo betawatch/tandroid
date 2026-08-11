@@ -9,7 +9,6 @@ import com.google.android.exoplayer2.PlaybackParameters;
 import com.google.android.exoplayer2.RendererCapabilities;
 import com.google.android.exoplayer2.audio.AudioRendererEventListener;
 import com.google.android.exoplayer2.audio.AudioSink;
-import com.google.android.exoplayer2.audio.DefaultAudioSink;
 import com.google.android.exoplayer2.decoder.CryptoConfig;
 import com.google.android.exoplayer2.decoder.Decoder;
 import com.google.android.exoplayer2.decoder.DecoderCounters;
@@ -24,7 +23,6 @@ import com.google.android.exoplayer2.util.MediaClock;
 import com.google.android.exoplayer2.util.MimeTypes;
 import com.google.android.exoplayer2.util.TraceUtil;
 import com.google.android.exoplayer2.util.Util;
-import com.google.common.base.MoreObjects;
 import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
@@ -70,14 +68,6 @@ public abstract class DecoderAudioRenderer extends BaseRenderer implements Media
     protected abstract Format getOutputFormat(Decoder decoder);
 
     protected abstract int supportsFormatInternal(Format format);
-
-    public DecoderAudioRenderer(Handler handler, AudioRendererEventListener audioRendererEventListener, AudioProcessor... audioProcessorArr) {
-        this(handler, audioRendererEventListener, null, audioProcessorArr);
-    }
-
-    public DecoderAudioRenderer(Handler handler, AudioRendererEventListener audioRendererEventListener, AudioCapabilities audioCapabilities, AudioProcessor... audioProcessorArr) {
-        this(handler, audioRendererEventListener, new DefaultAudioSink.Builder().setAudioCapabilities((AudioCapabilities) MoreObjects.firstNonNull(audioCapabilities, AudioCapabilities.DEFAULT_AUDIO_CAPABILITIES)).setAudioProcessors(audioProcessorArr).build());
-    }
 
     public DecoderAudioRenderer(Handler handler, AudioRendererEventListener audioRendererEventListener, AudioSink audioSink) {
         super(1);

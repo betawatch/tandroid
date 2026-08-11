@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.ReplyMessageLine;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class RichBlockChrome {
     public static void applyEditorQuoteColor(ReplyMessageLine replyMessageLine, Theme.ResourcesProvider resourcesProvider) {
         replyMessageLine.setSimpleColor(Theme.getColor(Theme.key_featuredStickers_addButton, resourcesProvider), resourcesProvider != null ? resourcesProvider.isDark() : Theme.isCurrentThemeDark());

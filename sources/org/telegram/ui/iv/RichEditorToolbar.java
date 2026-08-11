@@ -32,7 +32,7 @@ import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.iv.RichEditor;
 import org.telegram.ui.iv.RichEditorToolbar;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichEditorToolbar extends FrameLayout {
     private final ImageView addButton;
     private final ImageView aiButton;

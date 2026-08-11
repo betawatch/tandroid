@@ -51,7 +51,7 @@ import org.telegram.ui.iv.RichEditText;
 import org.telegram.ui.iv.RichEditor;
 import org.telegram.ui.iv.RichTextCell;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichTextCell extends FrameLayout implements Theme.Colorable, TextSelectionHelper.ArticleSelectableView {
     private boolean applyingCollapsedDecoration;
     private final RichEditText authorEditText;

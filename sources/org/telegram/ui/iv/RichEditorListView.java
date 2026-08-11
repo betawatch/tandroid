@@ -93,7 +93,7 @@ import org.telegram.ui.iv.RichTableCell;
 import org.telegram.ui.iv.RichTextCell;
 import org.webrtc.MediaStreamTrack;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RichEditorListView extends UniversalRecyclerView {
     private static final ArrayList EMPTY_QUOTE_IDS = new ArrayList();
     RichTableCell activeCellSelectionTable;
@@ -7188,11 +7188,11 @@ public class RichEditorListView extends UniversalRecyclerView {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0093 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x008c A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x00a3 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0095 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x008e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00a5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:52:? A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x009c A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x009e A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -10561,8 +10561,8 @@ public class RichEditorListView extends UniversalRecyclerView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x007e  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0047 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x007f  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0048 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
