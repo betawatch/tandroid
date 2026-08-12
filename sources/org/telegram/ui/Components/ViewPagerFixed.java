@@ -13,6 +13,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.SystemClock;
 import android.text.TextPaint;
+import android.text.TextUtils;
 import android.transition.TransitionManager;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
@@ -1591,7 +1592,7 @@ public class ViewPagerFixed extends FrameLayout {
                 this.tabWidth = i20 + i10;
                 int measuredWidth = (getMeasuredWidth() - this.tabWidth) / 2;
                 CharSequence charSequence = this.currentTab.title;
-                if ((charSequence == null && this.currentText != null) || !charSequence.equals(this.currentText)) {
+                if ((charSequence == null && this.currentText != null) || !TextUtils.equals(charSequence, this.currentText)) {
                     Tab tab = this.currentTab;
                     CharSequence replaceEmoji = Emoji.replaceEmoji(tab.title, TabsView.this.textPaint.getFontMetricsInt(), false);
                     tab.title = replaceEmoji;

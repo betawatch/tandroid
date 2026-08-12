@@ -2530,6 +2530,10 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 extendedGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.Components.SharedMediaLayout.18
                     @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
                     public int getSpanSize(int i27) {
+                        return Math.min(getSpanSizeInternal(i27), mediaPage2.layoutManager.getSpanCount());
+                    }
+
+                    private int getSpanSizeInternal(int i27) {
                         int i28 = SharedMediaLayout.this.mediaColumnsCount[SharedMediaLayout.isAnyStoryPageType(mediaPage2.selectedType) ? 1 : 0];
                         if (mediaPage2.listView.getAdapter() == SharedMediaLayout.this.photoVideoAdapter) {
                             if (SharedMediaLayout.this.photoVideoAdapter.getItemViewType(i27) == 2) {

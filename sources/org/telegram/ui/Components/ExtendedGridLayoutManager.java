@@ -15,6 +15,7 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
     private SparseIntArray itemSpans;
     private SparseIntArray itemsToRow;
     private final boolean lastRowFullWidth;
+    private int lastSpanCount;
     private int rowsCount;
 
     @Override // androidx.recyclerview.widget.GridLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
@@ -53,6 +54,7 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
         this.rowsCount = 0;
         this.firstRowMax = 0;
         int flowItemCount = getFlowItemCount();
+        this.lastSpanCount = flowItemCount;
         if (flowItemCount == 0) {
             return;
         }
@@ -164,7 +166,7 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
     }
 
     private void checkLayout() {
-        if (this.itemSpans.size() == getFlowItemCount() && this.calculatedWidth == getWidth()) {
+        if (this.itemSpans.size() == getFlowItemCount() && this.calculatedWidth == getWidth() && this.lastSpanCount == getSpanCount()) {
             return;
         }
         this.calculatedWidth = getWidth();

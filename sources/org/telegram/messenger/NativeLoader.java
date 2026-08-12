@@ -18,8 +18,6 @@ public class NativeLoader {
     public static StringBuilder log = new StringBuilder();
     private static volatile boolean nativeLoaded = false;
 
-    private static native void init(String str, boolean z);
-
     /* JADX WARN: Removed duplicated region for block: B:10:0x0038 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:5:0x0023  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0037 A[RETURN] */

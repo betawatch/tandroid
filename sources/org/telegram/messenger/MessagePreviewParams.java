@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ChatActivity;
 import org.telegram.ui.Components.MessagePreviewView;
@@ -498,7 +499,8 @@ public class MessagePreviewParams {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00e9  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00ee  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00fc  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -573,9 +575,22 @@ public class MessagePreviewParams {
                     tL_message.fwd_from = messageFwdHeader;
                     tL_message.flags |= 4;
                 }
+                if (messageObject.isWelcomeAnchored()) {
+                    tL_message.id = messageObject.getEphemeralId();
+                    TLRPC.MessageFwdHeader messageFwdHeader2 = tL_message.fwd_from;
+                    if (messageFwdHeader2 != null && messageFwdHeader2.from_id != null) {
+                        messageFwdHeader2.from_id = (TLRPC.Peer) TLObject.deepCopy(messageObject.messageOwner.peer_id, new MessagePreviewParams$$ExternalSyntheticLambda0());
+                        long peerDialogId = DialogObject.getPeerDialogId(messageObject.messageOwner.from_id);
+                        if (peerDialogId > 0) {
+                            tL_message.via_bot_id = peerDialogId;
+                        }
+                    }
+                }
             }
             messageFwdHeader = null;
             if (messageFwdHeader != null) {
+            }
+            if (messageObject.isWelcomeAnchored()) {
             }
         }
         MessageObject messageObject3 = new MessageObject(messageObject.currentAccount, tL_message, true, false) { // from class: org.telegram.messenger.MessagePreviewParams.1

@@ -1,13 +1,13 @@
 package org.telegram.tgnet.tl;
 
 import java.util.ArrayList;
+import org.telegram.messenger.MessagePreviewParams$$ExternalSyntheticLambda0;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1;
 import org.telegram.tgnet.TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1;
-import org.telegram.tgnet.TLRPC$TL_contacts_found$$ExternalSyntheticLambda0;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_chatlists;
 
@@ -76,7 +76,7 @@ public class TL_chatlists {
             this.revoked = TLObject.hasFlag(readInt32, 1);
             this.title = inputSerializedData.readString(z);
             this.url = inputSerializedData.readString(z);
-            this.peers = Vector.deserialize(inputSerializedData, new TLRPC$TL_contacts_found$$ExternalSyntheticLambda0(), z);
+            this.peers = Vector.deserialize(inputSerializedData, new MessagePreviewParams$$ExternalSyntheticLambda0(), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -147,8 +147,8 @@ public class TL_chatlists {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.filter_id = inputSerializedData.readInt32(z);
-            this.missing_peers = Vector.deserialize(inputSerializedData, new TLRPC$TL_contacts_found$$ExternalSyntheticLambda0(), z);
-            this.already_peers = Vector.deserialize(inputSerializedData, new TLRPC$TL_contacts_found$$ExternalSyntheticLambda0(), z);
+            this.missing_peers = Vector.deserialize(inputSerializedData, new MessagePreviewParams$$ExternalSyntheticLambda0(), z);
+            this.already_peers = Vector.deserialize(inputSerializedData, new MessagePreviewParams$$ExternalSyntheticLambda0(), z);
             this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
@@ -183,7 +183,7 @@ public class TL_chatlists {
             if ((this.flags & 1) > 0) {
                 this.emoticon = inputSerializedData.readString(z);
             }
-            this.peers = Vector.deserialize(inputSerializedData, new TLRPC$TL_contacts_found$$ExternalSyntheticLambda0(), z);
+            this.peers = Vector.deserialize(inputSerializedData, new MessagePreviewParams$$ExternalSyntheticLambda0(), z);
             this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
@@ -216,7 +216,7 @@ public class TL_chatlists {
             if ((this.flags & 1) > 0) {
                 this.emoticon = inputSerializedData.readString(z);
             }
-            this.peers = Vector.deserialize(inputSerializedData, new TLRPC$TL_contacts_found$$ExternalSyntheticLambda0(), z);
+            this.peers = Vector.deserialize(inputSerializedData, new MessagePreviewParams$$ExternalSyntheticLambda0(), z);
             this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
@@ -247,7 +247,7 @@ public class TL_chatlists {
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.missing_peers = Vector.deserialize(inputSerializedData, new TLRPC$TL_contacts_found$$ExternalSyntheticLambda0(), z);
+            this.missing_peers = Vector.deserialize(inputSerializedData, new MessagePreviewParams$$ExternalSyntheticLambda0(), z);
             this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
             this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
         }
@@ -436,7 +436,7 @@ public class TL_chatlists {
 
         @Override // org.telegram.tgnet.TLObject
         public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i, boolean z) {
-            return Vector.TLDeserialize(inputSerializedData, i, z, new TLRPC$TL_contacts_found$$ExternalSyntheticLambda0());
+            return Vector.TLDeserialize(inputSerializedData, i, z, new MessagePreviewParams$$ExternalSyntheticLambda0());
         }
 
         @Override // org.telegram.tgnet.TLObject

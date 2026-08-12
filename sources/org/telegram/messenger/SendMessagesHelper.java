@@ -2564,52 +2564,55 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         return sendMessage(arrayList, j, z, z2, z3, i, 0, messageObject, i2, j2, 0L, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:264:0x083f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:276:0x088e, code lost:
     
-        if (r14.contains(java.lang.Integer.valueOf(r4.reply_to_msg_id)) != false) goto L353;
+        if (r14.contains(java.lang.Integer.valueOf(r4.reply_to_msg_id)) != false) goto L366;
      */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x04f3  */
-    /* JADX WARN: Removed duplicated region for block: B:218:0x06cc  */
-    /* JADX WARN: Removed duplicated region for block: B:221:0x06d6  */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x06ef  */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x0780  */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x07a7  */
-    /* JADX WARN: Removed duplicated region for block: B:263:0x0835  */
-    /* JADX WARN: Removed duplicated region for block: B:267:0x0858  */
-    /* JADX WARN: Removed duplicated region for block: B:270:0x0866  */
-    /* JADX WARN: Removed duplicated region for block: B:272:0x087a  */
-    /* JADX WARN: Removed duplicated region for block: B:275:0x0892  */
-    /* JADX WARN: Removed duplicated region for block: B:278:0x08b6  */
-    /* JADX WARN: Removed duplicated region for block: B:287:0x08ef  */
-    /* JADX WARN: Removed duplicated region for block: B:290:0x08f9  */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x0949  */
-    /* JADX WARN: Removed duplicated region for block: B:298:0x0960  */
-    /* JADX WARN: Removed duplicated region for block: B:307:0x09b5  */
-    /* JADX WARN: Removed duplicated region for block: B:310:0x09cf  */
-    /* JADX WARN: Removed duplicated region for block: B:313:0x09f3  */
-    /* JADX WARN: Removed duplicated region for block: B:318:0x0a1a  */
-    /* JADX WARN: Removed duplicated region for block: B:320:0x0a28  */
-    /* JADX WARN: Removed duplicated region for block: B:325:0x0a47  */
-    /* JADX WARN: Removed duplicated region for block: B:331:0x0a98  */
-    /* JADX WARN: Removed duplicated region for block: B:336:0x0aae  */
-    /* JADX WARN: Removed duplicated region for block: B:338:0x0aba  */
-    /* JADX WARN: Removed duplicated region for block: B:340:0x0ad8  */
-    /* JADX WARN: Removed duplicated region for block: B:345:0x0afa  */
-    /* JADX WARN: Removed duplicated region for block: B:348:0x0b4e  */
-    /* JADX WARN: Removed duplicated region for block: B:351:0x0b59  */
-    /* JADX WARN: Removed duplicated region for block: B:354:0x0afc  */
-    /* JADX WARN: Removed duplicated region for block: B:355:0x0ad2  */
-    /* JADX WARN: Removed duplicated region for block: B:357:0x0a75  */
-    /* JADX WARN: Removed duplicated region for block: B:358:0x0a3d  */
-    /* JADX WARN: Removed duplicated region for block: B:360:0x09d1  */
-    /* JADX WARN: Removed duplicated region for block: B:361:0x09b8  */
-    /* JADX WARN: Removed duplicated region for block: B:362:0x09a8  */
-    /* JADX WARN: Removed duplicated region for block: B:364:0x08f1  */
-    /* JADX WARN: Removed duplicated region for block: B:367:0x0894  */
-    /* JADX WARN: Removed duplicated region for block: B:378:0x07ab  */
-    /* JADX WARN: Removed duplicated region for block: B:382:0x0751  */
-    /* JADX WARN: Removed duplicated region for block: B:383:0x0763  */
-    /* JADX WARN: Removed duplicated region for block: B:386:0x0718  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x04f8  */
+    /* JADX WARN: Removed duplicated region for block: B:227:0x06fe  */
+    /* JADX WARN: Removed duplicated region for block: B:230:0x0708  */
+    /* JADX WARN: Removed duplicated region for block: B:233:0x0721  */
+    /* JADX WARN: Removed duplicated region for block: B:246:0x07b2  */
+    /* JADX WARN: Removed duplicated region for block: B:249:0x07d0  */
+    /* JADX WARN: Removed duplicated region for block: B:252:0x07f6  */
+    /* JADX WARN: Removed duplicated region for block: B:275:0x0884  */
+    /* JADX WARN: Removed duplicated region for block: B:279:0x08a5  */
+    /* JADX WARN: Removed duplicated region for block: B:282:0x08b3  */
+    /* JADX WARN: Removed duplicated region for block: B:284:0x08c7  */
+    /* JADX WARN: Removed duplicated region for block: B:287:0x08df  */
+    /* JADX WARN: Removed duplicated region for block: B:290:0x0903  */
+    /* JADX WARN: Removed duplicated region for block: B:299:0x0947  */
+    /* JADX WARN: Removed duplicated region for block: B:302:0x0951  */
+    /* JADX WARN: Removed duplicated region for block: B:307:0x09a1  */
+    /* JADX WARN: Removed duplicated region for block: B:310:0x09b8  */
+    /* JADX WARN: Removed duplicated region for block: B:320:0x0a0c  */
+    /* JADX WARN: Removed duplicated region for block: B:323:0x0a26  */
+    /* JADX WARN: Removed duplicated region for block: B:326:0x0a4a  */
+    /* JADX WARN: Removed duplicated region for block: B:331:0x0a71  */
+    /* JADX WARN: Removed duplicated region for block: B:333:0x0a7f  */
+    /* JADX WARN: Removed duplicated region for block: B:338:0x0a9e  */
+    /* JADX WARN: Removed duplicated region for block: B:344:0x0ae7  */
+    /* JADX WARN: Removed duplicated region for block: B:349:0x0b03  */
+    /* JADX WARN: Removed duplicated region for block: B:351:0x0b0f  */
+    /* JADX WARN: Removed duplicated region for block: B:353:0x0b29  */
+    /* JADX WARN: Removed duplicated region for block: B:358:0x0b4d  */
+    /* JADX WARN: Removed duplicated region for block: B:361:0x0ba1  */
+    /* JADX WARN: Removed duplicated region for block: B:364:0x0bae  */
+    /* JADX WARN: Removed duplicated region for block: B:366:0x0b50  */
+    /* JADX WARN: Removed duplicated region for block: B:367:0x0b25  */
+    /* JADX WARN: Removed duplicated region for block: B:369:0x0ac8  */
+    /* JADX WARN: Removed duplicated region for block: B:370:0x0a94  */
+    /* JADX WARN: Removed duplicated region for block: B:372:0x0a28  */
+    /* JADX WARN: Removed duplicated region for block: B:373:0x0a0f  */
+    /* JADX WARN: Removed duplicated region for block: B:374:0x09ff  */
+    /* JADX WARN: Removed duplicated region for block: B:376:0x0949  */
+    /* JADX WARN: Removed duplicated region for block: B:379:0x093d  */
+    /* JADX WARN: Removed duplicated region for block: B:380:0x08e1  */
+    /* JADX WARN: Removed duplicated region for block: B:391:0x07fa  */
+    /* JADX WARN: Removed duplicated region for block: B:392:0x07e4  */
+    /* JADX WARN: Removed duplicated region for block: B:396:0x0783  */
+    /* JADX WARN: Removed duplicated region for block: B:397:0x0795  */
+    /* JADX WARN: Removed duplicated region for block: B:400:0x074a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2635,67 +2638,66 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         boolean z11;
         long j6;
         TLRPC.ChatFull chatFull;
-        int i4;
-        LongSparseArray longSparseArray;
         long j7;
         long j8;
         String str3;
         TLRPC.Chat chat2;
         ArrayList<Long> arrayList2;
         ArrayList<MessageObject> arrayList3;
-        ArrayList<Integer> arrayList4;
-        final LongSparseArray longSparseArray2;
+        ArrayList arrayList4;
+        ArrayList<Integer> arrayList5;
+        final LongSparseArray longSparseArray;
         final TLRPC.Peer peer;
+        LongSparseArray longSparseArray2;
         boolean z12;
         TLRPC.InputPeer inputPeer;
-        LongSparseArray longSparseArray3;
-        ArrayList<Integer> arrayList5;
-        ArrayList<MessageObject> arrayList6;
-        int i5;
+        int i4;
         boolean z13;
         long j9;
         String str4;
         TLRPC.Chat chat3;
-        LongSparseArray longSparseArray4;
+        LongSparseArray longSparseArray3;
         long j10;
-        LongSparseArray longSparseArray5;
+        LongSparseArray longSparseArray4;
         long j11;
-        LongSparseArray longSparseArray6;
+        LongSparseArray longSparseArray5;
         long j12;
         TLRPC.Chat chat4;
         long sendAsPeerId;
         String str5;
-        LongSparseArray longSparseArray7;
-        int currentTime;
+        ArrayList<Integer> arrayList6;
+        TLRPC.Chat chat5;
         boolean z14;
+        LongSparseArray longSparseArray6;
+        int currentTime;
+        boolean z15;
         long j13;
         TLRPC.Message message;
-        ArrayList arrayList7;
-        ArrayList<MessageObject> arrayList8;
-        ArrayList<Long> arrayList9;
-        ArrayList<Integer> arrayList10;
-        int i6;
+        final ArrayList arrayList7;
+        ArrayList<Long> arrayList8;
+        boolean z16;
+        ArrayList<Integer> arrayList9;
+        ArrayList<MessageObject> arrayList10;
+        int i5;
         final TLRPC.TL_messages_forwardMessages tL_messages_forwardMessages;
-        boolean z15;
+        boolean z17;
         TLRPC.InputPeer inputPeer2;
-        int i7;
-        MessageObject messageObject2;
-        long j14;
         final ArrayList arrayList11;
         Runnable runnable;
         TLRPC.Message message2;
         TLRPC.MessageReplyHeader messageReplyHeader;
         TLRPC.Peer peer2;
         TLRPC.MessageReplyHeader messageReplyHeader2;
-        boolean z16;
+        boolean z18;
         TL_keyboard.TL_keyboardInlineButtonRow tL_keyboardInlineButtonRow;
-        TLRPC.User user;
         TLRPC.MessageFwdHeader messageFwdHeader;
+        TLRPC.User user;
+        TLRPC.MessageFwdHeader messageFwdHeader2;
         TLRPC.Peer peer3;
-        int i8;
+        int i6;
         ArrayList<MessageObject> arrayList12 = arrayList;
-        boolean z17 = z;
-        boolean z18 = z2;
+        boolean z19 = z;
+        boolean z20 = z2;
         if (arrayList12 == null || arrayList.isEmpty()) {
             return 0;
         }
@@ -2750,438 +2752,428 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 z10 = true;
                 canSendEmbed = true;
             } else {
-                TLRPC.Chat chat5 = getMessagesController().getChat(Long.valueOf(-j));
-                if (ChatObject.isChannel(chat5)) {
-                    z4 = chat5.signatures;
-                    boolean z19 = chat5.megagroup;
-                    z5 = !z19;
-                    j4 = (z19 || !chat5.has_link || (chatFull = getMessagesController().getChatFull(chat5.id)) == null) ? 0L : chatFull.linked_chat_id;
+                TLRPC.Chat chat6 = getMessagesController().getChat(Long.valueOf(-j));
+                if (ChatObject.isChannel(chat6)) {
+                    z4 = chat6.signatures;
+                    boolean z21 = chat6.megagroup;
+                    z5 = !z21;
+                    j4 = (z21 || !chat6.has_link || (chatFull = getMessagesController().getChatFull(chat6.id)) == null) ? 0L : chatFull.linked_chat_id;
                 } else {
                     j4 = 0;
                     z4 = false;
                     z5 = false;
                 }
-                if (chat5 != null) {
+                if (chat6 != null) {
                     j5 = j4;
-                    str = getMessagesController().getAdminRank(chat5.id, clientUserId);
+                    str = getMessagesController().getAdminRank(chat6.id, clientUserId);
                 } else {
                     j5 = j4;
                     str = null;
                 }
-                boolean canSendStickers = ChatObject.canSendStickers(chat5);
-                boolean canSendPhoto = ChatObject.canSendPhoto(chat5);
-                boolean canSendVideo = ChatObject.canSendVideo(chat5);
-                boolean canSendDocument = ChatObject.canSendDocument(chat5);
+                boolean canSendStickers = ChatObject.canSendStickers(chat6);
+                boolean canSendPhoto = ChatObject.canSendPhoto(chat6);
+                boolean canSendVideo = ChatObject.canSendVideo(chat6);
+                boolean canSendDocument = ChatObject.canSendDocument(chat6);
                 z6 = z4;
                 z7 = canSendStickers;
                 z8 = canSendPhoto;
                 z9 = canSendVideo;
                 z10 = canSendDocument;
-                canSendEmbed = ChatObject.canSendEmbed(chat5);
-                canSendPolls = ChatObject.canSendPolls(chat5);
-                canSendRoundVideo = ChatObject.canSendRoundVideo(chat5);
-                canSendVoice = ChatObject.canSendVoice(chat5);
-                canSendMusic = ChatObject.canSendMusic(chat5);
-                chat = chat5;
+                canSendEmbed = ChatObject.canSendEmbed(chat6);
+                canSendPolls = ChatObject.canSendPolls(chat6);
+                canSendRoundVideo = ChatObject.canSendRoundVideo(chat6);
+                canSendVoice = ChatObject.canSendVoice(chat6);
+                canSendMusic = ChatObject.canSendMusic(chat6);
+                chat = chat6;
                 str2 = str;
-                long j15 = j5;
+                long j14 = j5;
                 z11 = z5;
-                j6 = j15;
+                j6 = j14;
             }
-            LongSparseArray longSparseArray8 = new LongSparseArray();
+            LongSparseArray longSparseArray7 = new LongSparseArray();
             ArrayList<MessageObject> arrayList13 = new ArrayList<>();
             ArrayList arrayList14 = new ArrayList();
             ArrayList<Long> arrayList15 = new ArrayList<>();
             ArrayList<Integer> arrayList16 = new ArrayList<>();
-            LongSparseArray longSparseArray9 = new LongSparseArray();
+            LongSparseArray longSparseArray8 = new LongSparseArray();
             TLRPC.InputPeer inputPeer3 = getMessagesController().getInputPeer(j);
-            boolean z20 = j == clientUserId;
+            boolean z22 = j == clientUserId;
             TLRPC.InputPeer inputPeer4 = inputPeer3;
-            final ArrayList arrayList17 = arrayList14;
+            ArrayList arrayList17 = arrayList14;
             ArrayList<Long> arrayList18 = arrayList15;
             ArrayList<Integer> arrayList19 = arrayList16;
-            LongSparseArray longSparseArray10 = longSparseArray9;
+            LongSparseArray longSparseArray9 = longSparseArray8;
             ArrayList<MessageObject> arrayList20 = arrayList13;
-            int i9 = 0;
-            int i10 = 0;
-            while (i9 < arrayList.size()) {
-                MessageObject messageObject3 = arrayList12.get(i9);
-                if (messageObject3.getId() <= 0 || messageObject3.needDrawBluredPreview()) {
-                    i4 = i9;
-                    longSparseArray = longSparseArray8;
+            int i7 = 0;
+            int i8 = 0;
+            boolean z23 = false;
+            while (i7 < arrayList.size()) {
+                final MessageObject messageObject2 = arrayList12.get(i7);
+                if (messageObject2.getId() <= 0 || messageObject2.needDrawBluredPreview()) {
                     j7 = j6;
                     j8 = clientUserId;
                     str3 = str2;
                     chat2 = chat;
                     arrayList2 = arrayList18;
                     arrayList3 = arrayList20;
-                    arrayList4 = arrayList19;
-                    longSparseArray2 = longSparseArray10;
+                    arrayList4 = arrayList17;
+                    arrayList5 = arrayList19;
+                    longSparseArray = longSparseArray9;
                     peer = peer4;
+                    longSparseArray2 = longSparseArray7;
                     z12 = z11;
                     inputPeer = inputPeer4;
-                    if (messageObject3.type == 0 && !TextUtils.isEmpty(messageObject3.messageText)) {
-                        TLRPC.MessageMedia messageMedia = messageObject3.messageOwner.media;
+                    if (messageObject2.type == 0 && !TextUtils.isEmpty(messageObject2.messageText)) {
+                        TLRPC.MessageMedia messageMedia = messageObject2.messageOwner.media;
                         TLRPC.WebPage webPage = messageMedia != null ? messageMedia.webpage : null;
-                        SendMessageParams of = SendMessageParams.of(messageObject3.messageText.toString(), j, null, messageObject, webPage, webPage != null, messageObject3.messageOwner.entities, null, null, z3, i, i2, null, false);
+                        SendMessageParams of = SendMessageParams.of(messageObject2.messageText.toString(), j, null, messageObject, webPage, webPage != null, messageObject2.messageOwner.entities, null, null, z3, i, i2, null, false);
                         of.suggestionParams = messageSuggestionParams;
                         of.monoForumPeer = j3;
-                        of.quick_reply_shortcut = messageObject3.getQuickReplyName();
-                        of.quick_reply_shortcut_id = messageObject3.getQuickReplyId();
+                        of.quick_reply_shortcut = messageObject2.getQuickReplyName();
+                        of.quick_reply_shortcut_id = messageObject2.getQuickReplyId();
                         sendMessage(of);
-                        longSparseArray3 = longSparseArray2;
                         arrayList18 = arrayList2;
-                        arrayList5 = arrayList4;
-                        arrayList6 = arrayList3;
                     }
-                    longSparseArray3 = longSparseArray2;
                     arrayList18 = arrayList2;
-                    arrayList5 = arrayList4;
-                    arrayList6 = arrayList3;
                 } else {
-                    if (messageObject3.isSticker() || messageObject3.isAnimatedSticker() || messageObject3.isGif() || messageObject3.isGame()) {
-                        i5 = i9;
+                    if (messageObject2.isSticker() || messageObject2.isAnimatedSticker() || messageObject2.isGif() || messageObject2.isGame()) {
+                        i4 = i7;
                         z13 = true;
                     } else {
-                        i5 = i9;
+                        i4 = i7;
                         z13 = false;
                     }
                     if (!z7 && z13) {
-                        if (i10 == 0) {
-                            i8 = ChatObject.isActionBannedByDefault(chat, 8) ? 4 : 1;
-                            i10 = i8;
-                            longSparseArray = longSparseArray8;
+                        if (i8 == 0) {
+                            i6 = ChatObject.isActionBannedByDefault(chat, 8) ? 4 : 1;
+                            i8 = i6;
                             j7 = j6;
                             j8 = clientUserId;
                             str3 = str2;
                             chat2 = chat;
-                            i4 = i5;
+                            i7 = i4;
+                            arrayList3 = arrayList20;
+                            arrayList4 = arrayList17;
                             arrayList5 = arrayList19;
-                            longSparseArray3 = longSparseArray10;
+                            longSparseArray = longSparseArray9;
+                            peer = peer4;
+                            longSparseArray2 = longSparseArray7;
                             z12 = z11;
                             inputPeer = inputPeer4;
-                            ArrayList<MessageObject> arrayList21 = arrayList20;
-                            peer = peer4;
-                            arrayList6 = arrayList21;
                         }
-                        longSparseArray = longSparseArray8;
                         j7 = j6;
                         j8 = clientUserId;
                         str3 = str2;
                         chat2 = chat;
                         arrayList2 = arrayList18;
-                        i4 = i5;
+                        i7 = i4;
                         arrayList3 = arrayList20;
-                        arrayList4 = arrayList19;
-                        longSparseArray2 = longSparseArray10;
+                        arrayList4 = arrayList17;
+                        arrayList5 = arrayList19;
+                        longSparseArray = longSparseArray9;
                         peer = peer4;
+                        longSparseArray2 = longSparseArray7;
                         z12 = z11;
                         inputPeer = inputPeer4;
-                        longSparseArray3 = longSparseArray2;
                         arrayList18 = arrayList2;
-                        arrayList5 = arrayList4;
-                        arrayList6 = arrayList3;
-                    } else if (!z8 && (messageObject3.messageOwner.media instanceof TLRPC.TL_messageMediaPhoto) && !messageObject3.isVideo() && !z13) {
-                        if (i10 == 0) {
-                            i8 = ChatObject.isActionBannedByDefault(chat, 16) ? 10 : 12;
-                            i10 = i8;
-                            longSparseArray = longSparseArray8;
+                    } else if (!z8 && (messageObject2.messageOwner.media instanceof TLRPC.TL_messageMediaPhoto) && !messageObject2.isVideo() && !z13) {
+                        if (i8 == 0) {
+                            i6 = ChatObject.isActionBannedByDefault(chat, 16) ? 10 : 12;
+                            i8 = i6;
                             j7 = j6;
                             j8 = clientUserId;
                             str3 = str2;
                             chat2 = chat;
-                            i4 = i5;
+                            i7 = i4;
+                            arrayList3 = arrayList20;
+                            arrayList4 = arrayList17;
                             arrayList5 = arrayList19;
-                            longSparseArray3 = longSparseArray10;
+                            longSparseArray = longSparseArray9;
+                            peer = peer4;
+                            longSparseArray2 = longSparseArray7;
                             z12 = z11;
                             inputPeer = inputPeer4;
-                            ArrayList<MessageObject> arrayList212 = arrayList20;
-                            peer = peer4;
-                            arrayList6 = arrayList212;
                         }
-                        longSparseArray = longSparseArray8;
                         j7 = j6;
                         j8 = clientUserId;
                         str3 = str2;
                         chat2 = chat;
                         arrayList2 = arrayList18;
-                        i4 = i5;
+                        i7 = i4;
                         arrayList3 = arrayList20;
-                        arrayList4 = arrayList19;
-                        longSparseArray2 = longSparseArray10;
+                        arrayList4 = arrayList17;
+                        arrayList5 = arrayList19;
+                        longSparseArray = longSparseArray9;
                         peer = peer4;
+                        longSparseArray2 = longSparseArray7;
                         z12 = z11;
                         inputPeer = inputPeer4;
-                        longSparseArray3 = longSparseArray2;
                         arrayList18 = arrayList2;
-                        arrayList5 = arrayList4;
-                        arrayList6 = arrayList3;
-                    } else if (!canSendMusic && messageObject3.isMusic()) {
-                        if (i10 == 0) {
-                            i8 = ChatObject.isActionBannedByDefault(chat, 18) ? 19 : 20;
-                            i10 = i8;
-                            longSparseArray = longSparseArray8;
+                    } else if (!canSendMusic && messageObject2.isMusic()) {
+                        if (i8 == 0) {
+                            i6 = ChatObject.isActionBannedByDefault(chat, 18) ? 19 : 20;
+                            i8 = i6;
                             j7 = j6;
                             j8 = clientUserId;
                             str3 = str2;
                             chat2 = chat;
-                            i4 = i5;
+                            i7 = i4;
+                            arrayList3 = arrayList20;
+                            arrayList4 = arrayList17;
                             arrayList5 = arrayList19;
-                            longSparseArray3 = longSparseArray10;
+                            longSparseArray = longSparseArray9;
+                            peer = peer4;
+                            longSparseArray2 = longSparseArray7;
                             z12 = z11;
                             inputPeer = inputPeer4;
-                            ArrayList<MessageObject> arrayList2122 = arrayList20;
-                            peer = peer4;
-                            arrayList6 = arrayList2122;
                         }
-                        longSparseArray = longSparseArray8;
                         j7 = j6;
                         j8 = clientUserId;
                         str3 = str2;
                         chat2 = chat;
                         arrayList2 = arrayList18;
-                        i4 = i5;
+                        i7 = i4;
                         arrayList3 = arrayList20;
-                        arrayList4 = arrayList19;
-                        longSparseArray2 = longSparseArray10;
+                        arrayList4 = arrayList17;
+                        arrayList5 = arrayList19;
+                        longSparseArray = longSparseArray9;
                         peer = peer4;
+                        longSparseArray2 = longSparseArray7;
                         z12 = z11;
                         inputPeer = inputPeer4;
-                        longSparseArray3 = longSparseArray2;
                         arrayList18 = arrayList2;
-                        arrayList5 = arrayList4;
-                        arrayList6 = arrayList3;
-                    } else if (!z9 && (messageObject3.messageOwner.media instanceof TLRPC.TL_messageMediaPhoto) && messageObject3.isVideo() && !z13) {
-                        if (i10 == 0) {
-                            i8 = ChatObject.isActionBannedByDefault(chat, 17) ? 9 : 11;
-                            i10 = i8;
-                            longSparseArray = longSparseArray8;
+                    } else if (!z9 && (messageObject2.messageOwner.media instanceof TLRPC.TL_messageMediaPhoto) && messageObject2.isVideo() && !z13) {
+                        if (i8 == 0) {
+                            i6 = ChatObject.isActionBannedByDefault(chat, 17) ? 9 : 11;
+                            i8 = i6;
                             j7 = j6;
                             j8 = clientUserId;
                             str3 = str2;
                             chat2 = chat;
-                            i4 = i5;
+                            i7 = i4;
+                            arrayList3 = arrayList20;
+                            arrayList4 = arrayList17;
                             arrayList5 = arrayList19;
-                            longSparseArray3 = longSparseArray10;
+                            longSparseArray = longSparseArray9;
+                            peer = peer4;
+                            longSparseArray2 = longSparseArray7;
                             z12 = z11;
                             inputPeer = inputPeer4;
-                            ArrayList<MessageObject> arrayList21222 = arrayList20;
-                            peer = peer4;
-                            arrayList6 = arrayList21222;
                         }
-                        longSparseArray = longSparseArray8;
                         j7 = j6;
                         j8 = clientUserId;
                         str3 = str2;
                         chat2 = chat;
                         arrayList2 = arrayList18;
-                        i4 = i5;
+                        i7 = i4;
                         arrayList3 = arrayList20;
-                        arrayList4 = arrayList19;
-                        longSparseArray2 = longSparseArray10;
+                        arrayList4 = arrayList17;
+                        arrayList5 = arrayList19;
+                        longSparseArray = longSparseArray9;
                         peer = peer4;
+                        longSparseArray2 = longSparseArray7;
                         z12 = z11;
                         inputPeer = inputPeer4;
-                        longSparseArray3 = longSparseArray2;
                         arrayList18 = arrayList2;
-                        arrayList5 = arrayList4;
-                        arrayList6 = arrayList3;
-                    } else if (!canSendPolls && (messageObject3.messageOwner.media instanceof TLRPC.TL_messageMediaPoll)) {
-                        if (i10 == 0) {
-                            i8 = ChatObject.isActionBannedByDefault(chat, 10) ? 6 : 3;
-                            i10 = i8;
-                            longSparseArray = longSparseArray8;
+                    } else if (!canSendPolls && (messageObject2.messageOwner.media instanceof TLRPC.TL_messageMediaPoll)) {
+                        if (i8 == 0) {
+                            i6 = ChatObject.isActionBannedByDefault(chat, 10) ? 6 : 3;
+                            i8 = i6;
                             j7 = j6;
                             j8 = clientUserId;
                             str3 = str2;
                             chat2 = chat;
-                            i4 = i5;
+                            i7 = i4;
+                            arrayList3 = arrayList20;
+                            arrayList4 = arrayList17;
                             arrayList5 = arrayList19;
-                            longSparseArray3 = longSparseArray10;
+                            longSparseArray = longSparseArray9;
+                            peer = peer4;
+                            longSparseArray2 = longSparseArray7;
                             z12 = z11;
                             inputPeer = inputPeer4;
-                            ArrayList<MessageObject> arrayList212222 = arrayList20;
-                            peer = peer4;
-                            arrayList6 = arrayList212222;
                         }
-                        longSparseArray = longSparseArray8;
                         j7 = j6;
                         j8 = clientUserId;
                         str3 = str2;
                         chat2 = chat;
                         arrayList2 = arrayList18;
-                        i4 = i5;
+                        i7 = i4;
                         arrayList3 = arrayList20;
-                        arrayList4 = arrayList19;
-                        longSparseArray2 = longSparseArray10;
+                        arrayList4 = arrayList17;
+                        arrayList5 = arrayList19;
+                        longSparseArray = longSparseArray9;
                         peer = peer4;
+                        longSparseArray2 = longSparseArray7;
                         z12 = z11;
                         inputPeer = inputPeer4;
-                        longSparseArray3 = longSparseArray2;
                         arrayList18 = arrayList2;
-                        arrayList5 = arrayList4;
-                        arrayList6 = arrayList3;
-                    } else if (!canSendPolls && (messageObject3.messageOwner.media instanceof TLRPC.TL_messageMediaToDo)) {
-                        if (i10 == 0) {
-                            i8 = ChatObject.isActionBannedByDefault(chat, 10) ? 21 : 22;
-                            i10 = i8;
-                            longSparseArray = longSparseArray8;
+                    } else if (!canSendPolls && (messageObject2.messageOwner.media instanceof TLRPC.TL_messageMediaToDo)) {
+                        if (i8 == 0) {
+                            i6 = ChatObject.isActionBannedByDefault(chat, 10) ? 21 : 22;
+                            i8 = i6;
                             j7 = j6;
                             j8 = clientUserId;
                             str3 = str2;
                             chat2 = chat;
-                            i4 = i5;
+                            i7 = i4;
+                            arrayList3 = arrayList20;
+                            arrayList4 = arrayList17;
                             arrayList5 = arrayList19;
-                            longSparseArray3 = longSparseArray10;
+                            longSparseArray = longSparseArray9;
+                            peer = peer4;
+                            longSparseArray2 = longSparseArray7;
                             z12 = z11;
                             inputPeer = inputPeer4;
-                            ArrayList<MessageObject> arrayList2122222 = arrayList20;
-                            peer = peer4;
-                            arrayList6 = arrayList2122222;
                         }
-                        longSparseArray = longSparseArray8;
                         j7 = j6;
                         j8 = clientUserId;
                         str3 = str2;
                         chat2 = chat;
                         arrayList2 = arrayList18;
-                        i4 = i5;
+                        i7 = i4;
                         arrayList3 = arrayList20;
-                        arrayList4 = arrayList19;
-                        longSparseArray2 = longSparseArray10;
+                        arrayList4 = arrayList17;
+                        arrayList5 = arrayList19;
+                        longSparseArray = longSparseArray9;
                         peer = peer4;
+                        longSparseArray2 = longSparseArray7;
                         z12 = z11;
                         inputPeer = inputPeer4;
-                        longSparseArray3 = longSparseArray2;
                         arrayList18 = arrayList2;
-                        arrayList5 = arrayList4;
-                        arrayList6 = arrayList3;
-                    } else if (canSendVoice || !MessageObject.isVoiceMessage(messageObject3.messageOwner)) {
-                        if (canSendRoundVideo || !MessageObject.isRoundVideoMessage(messageObject3.messageOwner)) {
-                            if (z10 || !(messageObject3.messageOwner.media instanceof TLRPC.TL_messageMediaDocument) || z13) {
+                    } else if (canSendVoice || !MessageObject.isVoiceMessage(messageObject2.messageOwner)) {
+                        if (canSendRoundVideo || !MessageObject.isRoundVideoMessage(messageObject2.messageOwner)) {
+                            if (z10 || !(messageObject2.messageOwner.media instanceof TLRPC.TL_messageMediaDocument) || z13) {
                                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
-                                if (z17) {
+                                if (z19) {
                                     j9 = j6;
                                     str4 = str2;
                                     chat3 = chat;
-                                    longSparseArray4 = longSparseArray8;
+                                    longSparseArray3 = longSparseArray7;
                                 } else {
-                                    boolean z21 = messageObject3.getDialogId() == clientUserId && messageObject3.isFromUser() && messageObject3.messageOwner.from_id.user_id == clientUserId;
-                                    if (messageObject3.isForwarded()) {
+                                    boolean z24 = messageObject2.getDialogId() == clientUserId && messageObject2.isFromUser() && messageObject2.messageOwner.from_id.user_id == clientUserId;
+                                    if (messageObject2.isForwarded()) {
                                         TLRPC.TL_messageFwdHeader tL_messageFwdHeader = new TLRPC.TL_messageFwdHeader();
                                         tL_message.fwd_from = tL_messageFwdHeader;
-                                        TLRPC.MessageFwdHeader messageFwdHeader2 = messageObject3.messageOwner.fwd_from;
+                                        TLRPC.MessageFwdHeader messageFwdHeader3 = messageObject2.messageOwner.fwd_from;
                                         str4 = str2;
-                                        if ((messageFwdHeader2.flags & 1) != 0) {
+                                        if ((messageFwdHeader3.flags & 1) != 0) {
                                             tL_messageFwdHeader.flags |= 1;
-                                            tL_messageFwdHeader.from_id = messageFwdHeader2.from_id;
+                                            tL_messageFwdHeader.from_id = messageFwdHeader3.from_id;
                                         }
-                                        if ((messageFwdHeader2.flags & 32) != 0) {
+                                        if ((messageFwdHeader3.flags & 32) != 0) {
                                             tL_messageFwdHeader.flags |= 32;
-                                            tL_messageFwdHeader.from_name = messageFwdHeader2.from_name;
+                                            tL_messageFwdHeader.from_name = messageFwdHeader3.from_name;
                                         }
-                                        if ((messageFwdHeader2.flags & 4) != 0) {
+                                        if ((messageFwdHeader3.flags & 4) != 0) {
                                             tL_messageFwdHeader.flags |= 4;
-                                            tL_messageFwdHeader.channel_post = messageFwdHeader2.channel_post;
+                                            tL_messageFwdHeader.channel_post = messageFwdHeader3.channel_post;
                                         }
-                                        if ((messageFwdHeader2.flags & 8) != 0) {
+                                        if ((messageFwdHeader3.flags & 8) != 0) {
                                             tL_messageFwdHeader.flags |= 8;
-                                            tL_messageFwdHeader.post_author = messageFwdHeader2.post_author;
+                                            tL_messageFwdHeader.post_author = messageFwdHeader3.post_author;
                                         }
-                                        if ((j == clientUserId || z11) && (messageFwdHeader2.flags & 16) != 0 && !UserObject.isReplyUser(messageObject3.getDialogId())) {
-                                            TLRPC.MessageFwdHeader messageFwdHeader3 = tL_message.fwd_from;
-                                            messageFwdHeader3.flags |= 16;
-                                            TLRPC.MessageFwdHeader messageFwdHeader4 = messageObject3.messageOwner.fwd_from;
-                                            messageFwdHeader3.saved_from_peer = messageFwdHeader4.saved_from_peer;
-                                            messageFwdHeader3.saved_from_msg_id = messageFwdHeader4.saved_from_msg_id;
+                                        if ((j == clientUserId || z11) && (messageFwdHeader3.flags & 16) != 0 && !UserObject.isReplyUser(messageObject2.getDialogId())) {
+                                            TLRPC.MessageFwdHeader messageFwdHeader4 = tL_message.fwd_from;
+                                            messageFwdHeader4.flags |= 16;
+                                            TLRPC.MessageFwdHeader messageFwdHeader5 = messageObject2.messageOwner.fwd_from;
+                                            messageFwdHeader4.saved_from_peer = messageFwdHeader5.saved_from_peer;
+                                            messageFwdHeader4.saved_from_msg_id = messageFwdHeader5.saved_from_msg_id;
                                         }
-                                        tL_message.fwd_from.date = messageObject3.messageOwner.fwd_from.date;
+                                        tL_message.fwd_from.date = messageObject2.messageOwner.fwd_from.date;
                                         tL_message.flags = 4;
                                     } else {
                                         str4 = str2;
-                                        if (!z21) {
-                                            long fromChatId = messageObject3.getFromChatId();
+                                        if (!z24) {
+                                            long fromChatId = messageObject2.getFromChatId();
                                             TLRPC.TL_messageFwdHeader tL_messageFwdHeader2 = new TLRPC.TL_messageFwdHeader();
                                             tL_message.fwd_from = tL_messageFwdHeader2;
                                             chat3 = chat;
-                                            tL_messageFwdHeader2.channel_post = messageObject3.getId();
+                                            tL_messageFwdHeader2.channel_post = messageObject2.getId();
                                             tL_message.fwd_from.flags |= 4;
-                                            if (messageObject3.isFromUser()) {
-                                                TLRPC.MessageFwdHeader messageFwdHeader5 = tL_message.fwd_from;
-                                                messageFwdHeader5.from_id = messageObject3.messageOwner.from_id;
-                                                messageFwdHeader5.flags |= 1;
+                                            if (messageObject2.isFromUser()) {
+                                                TLRPC.MessageFwdHeader messageFwdHeader6 = tL_message.fwd_from;
+                                                messageFwdHeader6.from_id = messageObject2.messageOwner.from_id;
+                                                messageFwdHeader6.flags |= 1;
                                                 j9 = j6;
-                                                longSparseArray4 = longSparseArray8;
+                                                longSparseArray3 = longSparseArray7;
                                             } else {
                                                 tL_message.fwd_from.from_id = new TLRPC.TL_peerChannel();
-                                                TLRPC.MessageFwdHeader messageFwdHeader6 = tL_message.fwd_from;
-                                                TLRPC.Peer peer5 = messageFwdHeader6.from_id;
-                                                TLRPC.Message message3 = messageObject3.messageOwner;
+                                                TLRPC.MessageFwdHeader messageFwdHeader7 = tL_message.fwd_from;
+                                                TLRPC.Peer peer5 = messageFwdHeader7.from_id;
+                                                TLRPC.Message message3 = messageObject2.messageOwner;
                                                 TLRPC.Peer peer6 = message3.peer_id;
                                                 j9 = j6;
-                                                longSparseArray4 = longSparseArray8;
+                                                longSparseArray3 = longSparseArray7;
                                                 peer5.channel_id = peer6.channel_id;
-                                                messageFwdHeader6.flags |= 1;
+                                                messageFwdHeader7.flags |= 1;
                                                 if (message3.post && fromChatId > 0) {
                                                     TLRPC.Peer peer7 = message3.from_id;
                                                     if (peer7 != null) {
                                                         peer6 = peer7;
                                                     }
-                                                    messageFwdHeader6.from_id = peer6;
+                                                    messageFwdHeader7.from_id = peer6;
                                                 }
                                             }
-                                            if (messageObject3.messageOwner.post_author == null && !messageObject3.isOutOwner() && fromChatId > 0 && messageObject3.messageOwner.post && (user = getMessagesController().getUser(Long.valueOf(fromChatId))) != null) {
+                                            if (messageObject2.messageOwner.post_author == null && !messageObject2.isOutOwner() && fromChatId > 0 && messageObject2.messageOwner.post && (user = getMessagesController().getUser(Long.valueOf(fromChatId))) != null) {
                                                 tL_message.fwd_from.post_author = ContactsController.formatName(user.first_name, user.last_name);
                                                 tL_message.fwd_from.flags |= 8;
                                             }
-                                            tL_message.date = messageObject3.messageOwner.date;
+                                            tL_message.date = messageObject2.messageOwner.date;
                                             tL_message.flags = 4;
-                                            if (j == clientUserId && (messageFwdHeader = tL_message.fwd_from) != null) {
-                                                messageFwdHeader.flags |= 16;
-                                                messageFwdHeader.saved_from_msg_id = messageObject3.getId();
-                                                TLRPC.MessageFwdHeader messageFwdHeader7 = tL_message.fwd_from;
-                                                peer3 = messageObject3.messageOwner.peer_id;
-                                                messageFwdHeader7.saved_from_peer = peer3;
+                                            if (j == clientUserId && (messageFwdHeader2 = tL_message.fwd_from) != null) {
+                                                messageFwdHeader2.flags |= 16;
+                                                messageFwdHeader2.saved_from_msg_id = messageObject2.getId();
+                                                TLRPC.MessageFwdHeader messageFwdHeader8 = tL_message.fwd_from;
+                                                peer3 = messageObject2.messageOwner.peer_id;
+                                                messageFwdHeader8.saved_from_peer = peer3;
                                                 if (peer3.user_id == clientUserId) {
-                                                    peer3.user_id = messageObject3.getDialogId();
+                                                    peer3.user_id = messageObject2.getDialogId();
                                                 }
                                             }
                                         }
                                     }
                                     j9 = j6;
                                     chat3 = chat;
-                                    longSparseArray4 = longSparseArray8;
+                                    longSparseArray3 = longSparseArray7;
                                     if (j == clientUserId) {
-                                        messageFwdHeader.flags |= 16;
-                                        messageFwdHeader.saved_from_msg_id = messageObject3.getId();
-                                        TLRPC.MessageFwdHeader messageFwdHeader72 = tL_message.fwd_from;
-                                        peer3 = messageObject3.messageOwner.peer_id;
-                                        messageFwdHeader72.saved_from_peer = peer3;
+                                        messageFwdHeader2.flags |= 16;
+                                        messageFwdHeader2.saved_from_msg_id = messageObject2.getId();
+                                        TLRPC.MessageFwdHeader messageFwdHeader82 = tL_message.fwd_from;
+                                        peer3 = messageObject2.messageOwner.peer_id;
+                                        messageFwdHeader82.saved_from_peer = peer3;
                                         if (peer3.user_id == clientUserId) {
                                         }
                                     }
                                 }
+                                if (messageObject2.isWelcomeAnchored() && (messageFwdHeader = tL_message.fwd_from) != null && messageFwdHeader.from_id != null) {
+                                    messageFwdHeader.from_id = (TLRPC.Peer) TLObject.deepCopy(messageObject2.messageOwner.peer_id, new MessagePreviewParams$$ExternalSyntheticLambda0());
+                                    long peerDialogId = DialogObject.getPeerDialogId(messageObject2.messageOwner.from_id);
+                                    if (peerDialogId > 0) {
+                                        tL_message.via_bot_id = peerDialogId;
+                                    }
+                                }
                                 HashMap<String, String> hashMap = new HashMap<>();
                                 tL_message.params = hashMap;
-                                hashMap.put("fwd_id", "" + messageObject3.getId());
-                                tL_message.params.put("fwd_peer", "" + messageObject3.getDialogId());
-                                if (!messageObject3.messageOwner.restriction_reason.isEmpty()) {
-                                    tL_message.restriction_reason = messageObject3.messageOwner.restriction_reason;
+                                hashMap.put("fwd_id", "" + messageObject2.getId());
+                                tL_message.params.put("fwd_peer", "" + messageObject2.getDialogId());
+                                if (!messageObject2.messageOwner.restriction_reason.isEmpty()) {
+                                    tL_message.restriction_reason = messageObject2.messageOwner.restriction_reason;
                                     tL_message.flags |= TLObject.FLAG_22;
                                 }
-                                if (!canSendEmbed && (messageObject3.messageOwner.media instanceof TLRPC.TL_messageMediaWebPage)) {
+                                if (!canSendEmbed && (messageObject2.messageOwner.media instanceof TLRPC.TL_messageMediaWebPage)) {
                                     tL_message.media = new TLRPC.TL_messageMediaEmpty();
                                 } else {
-                                    tL_message.media = messageObject3.messageOwner.media;
+                                    tL_message.media = messageObject2.messageOwner.media;
                                 }
-                                TLRPC.Message message4 = messageObject3.messageOwner;
+                                TLRPC.Message message4 = messageObject2.messageOwner;
                                 tL_message.invert_media = message4.invert_media;
                                 if (tL_message.media != null) {
                                     tL_message.flags |= 512;
                                 }
-                                long j16 = message4.via_bot_id;
-                                if (j16 != 0) {
-                                    tL_message.via_bot_id = j16;
+                                long j15 = message4.via_bot_id;
+                                if (j15 != 0) {
+                                    tL_message.via_bot_id = j15;
                                     tL_message.flags |= 2048;
                                 }
                                 if (j9 != 0) {
@@ -3195,10 +3187,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 } else {
                                     j10 = j9;
                                 }
-                                if (!z18 || tL_message.media == null) {
-                                    tL_message.message = messageObject3.messageOwner.message;
+                                if (!z20 || tL_message.media == null) {
+                                    tL_message.message = messageObject2.messageOwner.message;
                                 }
-                                TL_iv.RichMessage richMessage = messageObject3.messageOwner.rich_message;
+                                TL_iv.RichMessage richMessage = messageObject2.messageOwner.rich_message;
                                 if (richMessage != null) {
                                     tL_message.flags2 |= 8192;
                                     tL_message.rich_message = richMessage;
@@ -3206,8 +3198,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 if (tL_message.message == null) {
                                     tL_message.message = "";
                                 }
-                                tL_message.fwd_msg_id = messageObject3.getId();
-                                TLRPC.Message message5 = messageObject3.messageOwner;
+                                tL_message.fwd_msg_id = messageObject2.getId();
+                                TLRPC.Message message5 = messageObject2.messageOwner;
                                 tL_message.attachPath = message5.attachPath;
                                 tL_message.entities = message5.entities;
                                 TLRPC.ReplyMarkup replyMarkup = message5.reply_markup;
@@ -3216,39 +3208,39 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     TLRPC.TL_replyInlineMarkup tL_replyInlineMarkup2 = new TLRPC.TL_replyInlineMarkup();
                                     tL_message.reply_markup = tL_replyInlineMarkup2;
                                     int size = tL_replyInlineMarkup.rows.size();
-                                    int i11 = 0;
-                                    boolean z22 = false;
+                                    int i9 = 0;
+                                    boolean z25 = false;
                                     while (true) {
-                                        longSparseArray5 = longSparseArray4;
-                                        if (i11 >= size) {
+                                        longSparseArray4 = longSparseArray3;
+                                        if (i9 >= size) {
                                             j7 = j10;
                                             break;
                                         }
-                                        TL_keyboard.KeyboardInlineButtonRow keyboardInlineButtonRow = tL_replyInlineMarkup.rows.get(i11);
+                                        TL_keyboard.KeyboardInlineButtonRow keyboardInlineButtonRow = tL_replyInlineMarkup.rows.get(i9);
                                         TLRPC.TL_replyInlineMarkup tL_replyInlineMarkup3 = tL_replyInlineMarkup;
                                         int size2 = keyboardInlineButtonRow.buttons.size();
-                                        int i12 = size;
-                                        int i13 = 0;
+                                        int i10 = size;
+                                        int i11 = 0;
                                         TL_keyboard.TL_keyboardInlineButtonRow tL_keyboardInlineButtonRow2 = null;
                                         while (true) {
-                                            if (i13 >= size2) {
+                                            if (i11 >= size2) {
                                                 j7 = j10;
                                                 break;
                                             }
-                                            int i14 = size2;
-                                            TL_keyboard.KeyboardInlineButton keyboardInlineButton = keyboardInlineButtonRow.buttons.get(i13);
+                                            int i12 = size2;
+                                            TL_keyboard.KeyboardInlineButton keyboardInlineButton = keyboardInlineButtonRow.buttons.get(i11);
                                             TL_keyboard.KeyboardInlineButtonRow keyboardInlineButtonRow2 = keyboardInlineButtonRow;
                                             TL_keyboard.TL_inlineButtonTypeUrlAuth tL_inlineButtonTypeUrlAuth = (TL_keyboard.TL_inlineButtonTypeUrlAuth) TLKeyboardHelper.getType(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrlAuth.class);
                                             j7 = j10;
                                             if (tL_inlineButtonTypeUrlAuth == null && !TLKeyboardHelper.isType(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrl.class) && !TLKeyboardHelper.isType(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeSwitchInline.class) && !TLKeyboardHelper.isType(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeBuy.class)) {
-                                                z22 = true;
+                                                z25 = true;
                                                 break;
                                             }
                                             if (tL_inlineButtonTypeUrlAuth != null) {
                                                 TL_keyboard.TL_keyboardInlineButton tL_keyboardInlineButton = new TL_keyboard.TL_keyboardInlineButton();
                                                 TL_keyboard.TL_inlineButtonTypeUrlAuth tL_inlineButtonTypeUrlAuth2 = new TL_keyboard.TL_inlineButtonTypeUrlAuth();
                                                 tL_keyboardInlineButton.type = tL_inlineButtonTypeUrlAuth2;
-                                                z16 = z22;
+                                                z18 = z25;
                                                 tL_inlineButtonTypeUrlAuth2.flags = tL_inlineButtonTypeUrlAuth.flags;
                                                 tL_keyboardInlineButton.style = keyboardInlineButton.style;
                                                 String str6 = tL_inlineButtonTypeUrlAuth.fwd_text;
@@ -3262,7 +3254,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 tL_inlineButtonTypeUrlAuth2.button_id = tL_inlineButtonTypeUrlAuth.button_id;
                                                 keyboardInlineButton = tL_keyboardInlineButton;
                                             } else {
-                                                z16 = z22;
+                                                z18 = z25;
                                             }
                                             if (tL_keyboardInlineButtonRow2 == null) {
                                                 tL_keyboardInlineButtonRow = new TL_keyboard.TL_keyboardInlineButtonRow();
@@ -3271,24 +3263,24 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 tL_keyboardInlineButtonRow = tL_keyboardInlineButtonRow2;
                                             }
                                             tL_keyboardInlineButtonRow.buttons.add(keyboardInlineButton);
-                                            i13++;
+                                            i11++;
                                             tL_keyboardInlineButtonRow2 = tL_keyboardInlineButtonRow;
-                                            size2 = i14;
+                                            size2 = i12;
                                             keyboardInlineButtonRow = keyboardInlineButtonRow2;
-                                            z22 = z16;
+                                            z25 = z18;
                                             j10 = j7;
                                         }
-                                        if (z22) {
+                                        if (z25) {
                                             break;
                                         }
-                                        i11++;
-                                        longSparseArray4 = longSparseArray5;
+                                        i9++;
+                                        longSparseArray3 = longSparseArray4;
                                         tL_replyInlineMarkup = tL_replyInlineMarkup3;
-                                        size = i12;
+                                        size = i10;
                                         j10 = j7;
                                     }
-                                    if (z22) {
-                                        messageObject3.messageOwner.reply_markup = null;
+                                    if (z25) {
+                                        messageObject2.messageOwner.reply_markup = null;
                                         tL_message.flags &= -65;
                                         if (!tL_message.entities.isEmpty()) {
                                             tL_message.flags |= 128;
@@ -3300,18 +3292,18 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         tL_message.id = newMessageId;
                                         tL_message.local_id = newMessageId;
                                         tL_message.out = true;
-                                        j11 = messageObject3.messageOwner.grouped_id;
+                                        j11 = messageObject2.messageOwner.grouped_id;
                                         if (j11 == 0) {
-                                            longSparseArray6 = longSparseArray5;
-                                            Long l = (Long) longSparseArray6.get(j11);
+                                            longSparseArray5 = longSparseArray4;
+                                            Long l = (Long) longSparseArray5.get(j11);
                                             if (l == null) {
                                                 l = Long.valueOf(Utilities.random.nextLong());
-                                                longSparseArray6.put(messageObject3.messageOwner.grouped_id, l);
+                                                longSparseArray5.put(messageObject2.messageOwner.grouped_id, l);
                                             }
                                             tL_message.grouped_id = l.longValue();
                                             tL_message.flags |= 131072;
                                         } else {
-                                            longSparseArray6 = longSparseArray5;
+                                            longSparseArray5 = longSparseArray4;
                                         }
                                         if (peer4.channel_id == 0 && z11) {
                                             if (z6) {
@@ -3347,26 +3339,36 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         if (tL_message.random_id == 0) {
                                             tL_message.random_id = getNextRandomId();
                                         }
-                                        ArrayList<Long> arrayList22 = arrayList18;
-                                        arrayList22.add(Long.valueOf(tL_message.random_id));
-                                        LongSparseArray longSparseArray11 = longSparseArray10;
-                                        longSparseArray11.put(tL_message.random_id, tL_message);
-                                        ArrayList<Integer> arrayList23 = arrayList19;
-                                        arrayList23.add(Integer.valueOf(tL_message.fwd_msg_id));
+                                        ArrayList<Long> arrayList21 = arrayList18;
+                                        arrayList21.add(Long.valueOf(tL_message.random_id));
+                                        LongSparseArray longSparseArray10 = longSparseArray9;
+                                        longSparseArray10.put(tL_message.random_id, tL_message);
+                                        if (!messageObject2.isEphemeral()) {
+                                            arrayList6 = arrayList19;
+                                            arrayList6.add(Integer.valueOf(messageObject2.getEphemeralId()));
+                                            chat5 = chat4;
+                                            z14 = true;
+                                        } else {
+                                            arrayList6 = arrayList19;
+                                            arrayList6.add(Integer.valueOf(tL_message.fwd_msg_id));
+                                            chat5 = chat4;
+                                            z14 = z23;
+                                        }
+                                        ArrayList<Long> arrayList22 = arrayList21;
                                         if (i == 0) {
-                                            longSparseArray7 = longSparseArray11;
+                                            longSparseArray6 = longSparseArray10;
                                             currentTime = i;
                                         } else {
-                                            longSparseArray7 = longSparseArray11;
+                                            longSparseArray6 = longSparseArray10;
                                             currentTime = getConnectionsManager().getCurrentTime();
                                         }
                                         tL_message.date = currentTime;
-                                        LongSparseArray longSparseArray12 = longSparseArray6;
+                                        LongSparseArray longSparseArray11 = longSparseArray5;
                                         TLRPC.InputPeer inputPeer5 = inputPeer4;
-                                        z14 = inputPeer5 instanceof TLRPC.TL_inputPeerChannel;
-                                        if (z14 || !z11) {
+                                        z15 = inputPeer5 instanceof TLRPC.TL_inputPeerChannel;
+                                        if (z15 || !z11) {
                                             j13 = clientUserId;
-                                            message = messageObject3.messageOwner;
+                                            message = messageObject2.messageOwner;
                                             if ((message.flags & 1024) != 0 && i == 0) {
                                                 tL_message.views = message.views;
                                                 tL_message.flags |= 1024;
@@ -3382,24 +3384,23 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         tL_message.dialog_id = j12;
                                         tL_message.peer_id = peer4;
                                         if (!MessageObject.isVoiceMessage(tL_message) || MessageObject.isRoundVideoMessage(tL_message)) {
-                                            if (!z14 && messageObject3.getChannelId() != 0) {
-                                                tL_message.media_unread = messageObject3.isContentUnread();
+                                            if (!z15 && messageObject2.getChannelId() != 0) {
+                                                tL_message.media_unread = messageObject2.isContentUnread();
                                             } else {
                                                 tL_message.media_unread = true;
                                             }
                                         }
-                                        if (messageObject == null && messageSuggestionParams == null && (messageReplyHeader = (message2 = messageObject3.messageOwner).reply_to) != null) {
+                                        if (messageObject == null && messageSuggestionParams == null && (messageReplyHeader = (message2 = messageObject2.messageOwner).reply_to) != null) {
                                             peer2 = messageReplyHeader.reply_to_peer_id;
                                             if (peer2 != null || MessageObject.peersEqual(peer2, message2.peer_id)) {
-                                                messageReplyHeader2 = messageObject3.messageOwner.reply_to;
+                                                messageReplyHeader2 = messageObject2.messageOwner.reply_to;
                                                 if ((messageReplyHeader2.flags & 16) != 0) {
                                                 }
                                             }
                                             tL_message.flags |= 8;
-                                            tL_message.reply_to = messageObject3.messageOwner.reply_to;
+                                            tL_message.reply_to = messageObject2.messageOwner.reply_to;
                                         }
                                         String str7 = str5;
-                                        TLRPC.Chat chat6 = chat4;
                                         if (j2 > 0) {
                                             tL_message.flags2 |= 64;
                                             tL_message.paid_message_stars = j2;
@@ -3411,38 +3412,47 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         if (messageSuggestionParams != null) {
                                             tL_message.suggested_post = messageSuggestionParams.toTl();
                                         }
-                                        z12 = z11;
                                         TLRPC.Peer peer8 = peer4;
-                                        MessageObject messageObject4 = new MessageObject(this.currentAccount, tL_message, true, true);
-                                        messageObject4.scheduled = i == 0;
-                                        messageObject4.messageOwner.send_state = 1;
-                                        messageObject4.wasJustSent = true;
-                                        ArrayList<MessageObject> arrayList24 = arrayList20;
-                                        arrayList24.add(messageObject4);
+                                        z12 = z11;
+                                        MessageObject messageObject3 = new MessageObject(this.currentAccount, tL_message, true, true);
+                                        messageObject3.scheduled = i == 0;
+                                        messageObject3.messageOwner.send_state = 1;
+                                        messageObject3.wasJustSent = true;
+                                        ArrayList<MessageObject> arrayList23 = arrayList20;
+                                        arrayList23.add(messageObject3);
                                         arrayList7 = arrayList17;
                                         arrayList7.add(tL_message);
-                                        StarsController.getInstance(this.currentAccount).beforeSendingMessage(messageObject4);
-                                        if (messageObject3.replyMessageObject != null) {
-                                            int i15 = 0;
-                                            while (i15 < arrayList.size()) {
-                                                arrayList8 = arrayList;
-                                                arrayList10 = arrayList23;
-                                                arrayList9 = arrayList22;
-                                                if (arrayList8.get(i15).getId() == messageObject3.replyMessageObject.getId()) {
-                                                    TLRPC.Message message6 = messageObject4.messageOwner;
-                                                    MessageObject messageObject5 = messageObject3.replyMessageObject;
-                                                    message6.replyMessage = messageObject5.messageOwner;
-                                                    messageObject4.replyMessageObject = messageObject5;
+                                        StarsController.getInstance(this.currentAccount).beforeSendingMessage(messageObject3);
+                                        if (messageObject2.replyMessageObject == null) {
+                                            z16 = z14;
+                                            int i13 = 0;
+                                            while (true) {
+                                                if (i13 >= arrayList.size()) {
+                                                    arrayList10 = arrayList;
+                                                    arrayList8 = arrayList22;
+                                                    arrayList9 = arrayList6;
                                                     break;
                                                 }
-                                                i15++;
-                                                arrayList22 = arrayList9;
-                                                arrayList23 = arrayList10;
+                                                arrayList10 = arrayList;
+                                                arrayList9 = arrayList6;
+                                                arrayList8 = arrayList22;
+                                                if (arrayList10.get(i13).getId() == messageObject2.replyMessageObject.getId()) {
+                                                    TLRPC.Message message6 = messageObject3.messageOwner;
+                                                    MessageObject messageObject4 = messageObject2.replyMessageObject;
+                                                    message6.replyMessage = messageObject4.messageOwner;
+                                                    messageObject3.replyMessageObject = messageObject4;
+                                                    break;
+                                                }
+                                                i13++;
+                                                arrayList22 = arrayList8;
+                                                arrayList6 = arrayList9;
                                             }
+                                        } else {
+                                            arrayList8 = arrayList22;
+                                            z16 = z14;
+                                            arrayList9 = arrayList6;
+                                            arrayList10 = arrayList;
                                         }
-                                        arrayList8 = arrayList;
-                                        arrayList9 = arrayList22;
-                                        arrayList10 = arrayList23;
                                         putToSendingMessages(tL_message, i == 0);
                                         if (BuildVars.LOGS_ENABLED) {
                                             FileLog.d("forward message user_id = " + inputPeer5.user_id + " chat_id = " + inputPeer5.chat_id + " channel_id = " + inputPeer5.channel_id + " access_hash = " + inputPeer5.access_hash);
@@ -3457,85 +3467,78 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 messageReplyHeader3.forum_topic = true;
                                                 messageReplyHeader3.flags |= 8;
                                                 if (arrayList7.size() != 100) {
-                                                    i6 = i5;
-                                                    if (i6 != arrayList.size() - 1 && (i6 == arrayList.size() - 1 || arrayList8.get(i6 + 1).getDialogId() == messageObject3.getDialogId())) {
-                                                        arrayList17 = arrayList7;
+                                                    i5 = i4;
+                                                    if (i5 != arrayList.size() - 1 && (i5 == arrayList.size() - 1 || arrayList10.get(i5 + 1).getDialogId() == messageObject2.getDialogId())) {
                                                         inputPeer = inputPeer5;
-                                                        i4 = i6;
-                                                        arrayList3 = arrayList24;
-                                                        chat2 = chat6;
-                                                        longSparseArray2 = longSparseArray7;
-                                                        longSparseArray = longSparseArray12;
-                                                        j8 = j13;
+                                                        arrayList4 = arrayList7;
+                                                        arrayList3 = arrayList23;
+                                                        i7 = i5;
                                                         str3 = str7;
-                                                        arrayList2 = arrayList9;
-                                                        arrayList4 = arrayList10;
+                                                        longSparseArray = longSparseArray6;
+                                                        longSparseArray2 = longSparseArray11;
+                                                        chat2 = chat5;
+                                                        j8 = j13;
+                                                        z23 = z16;
+                                                        arrayList2 = arrayList8;
+                                                        arrayList5 = arrayList9;
                                                         peer = peer8;
-                                                        longSparseArray3 = longSparseArray2;
                                                         arrayList18 = arrayList2;
-                                                        arrayList5 = arrayList4;
-                                                        arrayList6 = arrayList3;
                                                     }
                                                 } else {
-                                                    i6 = i5;
+                                                    i5 = i4;
                                                 }
                                                 getMessagesStorage().putMessages(new ArrayList<>(arrayList7), false, true, false, 0, i != 0 ? 1 : 0, 0L);
-                                                getMessagesController().updateInterfaceWithMessages(j12, arrayList24, i != 0 ? 1 : 0);
+                                                getMessagesController().updateInterfaceWithMessages(j12, arrayList23, i != 0 ? 1 : 0);
                                                 getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
                                                 getUserConfig().saveConfig(false);
                                                 tL_messages_forwardMessages = new TLRPC.TL_messages_forwardMessages();
                                                 tL_messages_forwardMessages.to_peer = inputPeer5;
                                                 if (z3) {
                                                     if (!MessagesController.getNotificationsSettings(this.currentAccount).getBoolean(NotificationsSettingsFacade.PROPERTY_SILENT + j12, false)) {
-                                                        z15 = false;
-                                                        tL_messages_forwardMessages.silent = z15;
+                                                        z17 = false;
+                                                        tL_messages_forwardMessages.silent = z17;
                                                         if (messageObject != null) {
                                                             tL_messages_forwardMessages.top_msg_id = messageObject.getId();
                                                             tL_messages_forwardMessages.flags |= 512;
                                                         }
                                                         if (i == 0) {
                                                             tL_messages_forwardMessages.schedule_date = i;
-                                                            int i16 = tL_messages_forwardMessages.flags;
-                                                            tL_messages_forwardMessages.flags = i16 | 1024;
+                                                            int i14 = tL_messages_forwardMessages.flags;
+                                                            tL_messages_forwardMessages.flags = i14 | 1024;
                                                             if (i2 != 0) {
                                                                 tL_messages_forwardMessages.schedule_repeat_period = i2;
-                                                                tL_messages_forwardMessages.flags = i16 | 16778240;
+                                                                tL_messages_forwardMessages.flags = i14 | 16778240;
                                                             }
                                                         }
-                                                        if (!(messageObject3.messageOwner.peer_id instanceof TLRPC.TL_peerChannel)) {
-                                                            inputPeer2 = inputPeer5;
-                                                            TLRPC.Chat chat7 = getMessagesController().getChat(Long.valueOf(messageObject3.messageOwner.peer_id.channel_id));
+                                                        if (!(messageObject2.messageOwner.peer_id instanceof TLRPC.TL_peerChannel)) {
+                                                            TLRPC.Chat chat7 = getMessagesController().getChat(Long.valueOf(messageObject2.messageOwner.peer_id.channel_id));
                                                             TLRPC.TL_inputPeerChannel tL_inputPeerChannel = new TLRPC.TL_inputPeerChannel();
                                                             tL_messages_forwardMessages.from_peer = tL_inputPeerChannel;
-                                                            i7 = i6;
-                                                            tL_inputPeerChannel.channel_id = messageObject3.messageOwner.peer_id.channel_id;
+                                                            tL_inputPeerChannel.channel_id = messageObject2.messageOwner.peer_id.channel_id;
                                                             if (chat7 != null) {
                                                                 tL_inputPeerChannel.access_hash = chat7.access_hash;
                                                             }
                                                         } else {
-                                                            inputPeer2 = inputPeer5;
-                                                            i7 = i6;
                                                             tL_messages_forwardMessages.from_peer = new TLRPC.TL_inputPeerEmpty();
                                                         }
-                                                        ArrayList<Long> arrayList25 = arrayList9;
-                                                        tL_messages_forwardMessages.random_id = arrayList25;
-                                                        ArrayList<Integer> arrayList26 = arrayList10;
-                                                        tL_messages_forwardMessages.id = arrayList26;
+                                                        ArrayList<Long> arrayList24 = arrayList8;
+                                                        tL_messages_forwardMessages.random_id = arrayList24;
+                                                        ArrayList<Integer> arrayList25 = arrayList9;
+                                                        tL_messages_forwardMessages.id = arrayList25;
                                                         tL_messages_forwardMessages.drop_author = z;
                                                         tL_messages_forwardMessages.drop_media_captions = z2;
-                                                        tL_messages_forwardMessages.with_my_score = arrayList.size() != 1 && arrayList8.get(0).messageOwner.with_my_score;
+                                                        tL_messages_forwardMessages.with_my_score = arrayList.size() != 1 && arrayList10.get(0).messageOwner.with_my_score;
+                                                        tL_messages_forwardMessages.from_ephemeral = z16;
                                                         if (i3 >= 0) {
                                                             tL_messages_forwardMessages.flags |= 1048576;
                                                             tL_messages_forwardMessages.video_timestamp = i3;
                                                         }
                                                         if (j2 <= 0) {
                                                             tL_messages_forwardMessages.flags |= TLObject.FLAG_21;
-                                                            messageObject2 = messageObject3;
-                                                            j14 = j3;
+                                                            inputPeer2 = inputPeer5;
                                                             tL_messages_forwardMessages.allow_paid_stars = tL_messages_forwardMessages.id.size() * j2;
                                                         } else {
-                                                            messageObject2 = messageObject3;
-                                                            j14 = j3;
+                                                            inputPeer2 = inputPeer5;
                                                         }
                                                         if (messageSuggestionParams != null) {
                                                             tL_messages_forwardMessages.suggested_post = messageSuggestionParams.toTl();
@@ -3545,27 +3548,27 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                                 tL_inputReplyToMessage.reply_to_msg_id = messageObject.getId();
                                                             }
                                                         }
-                                                        applyMonoForumPeerId(tL_messages_forwardMessages, j14);
-                                                        arrayList11 = new ArrayList(arrayList24);
-                                                        final boolean z23 = i != 2147483646;
+                                                        applyMonoForumPeerId(tL_messages_forwardMessages, j3);
+                                                        arrayList11 = new ArrayList(arrayList23);
                                                         peer = peer8;
-                                                        arrayList17 = arrayList7;
                                                         inputPeer = inputPeer2;
-                                                        i4 = i7;
-                                                        longSparseArray2 = longSparseArray7;
-                                                        longSparseArray = longSparseArray12;
-                                                        arrayList2 = arrayList25;
-                                                        arrayList4 = arrayList26;
+                                                        z23 = z16;
+                                                        longSparseArray = longSparseArray6;
+                                                        longSparseArray2 = longSparseArray11;
+                                                        arrayList5 = arrayList25;
+                                                        final boolean z26 = i != 2147483646;
                                                         j8 = j13;
-                                                        final boolean z24 = z20;
-                                                        final MessageObject messageObject6 = messageObject2;
-                                                        arrayList3 = arrayList24;
+                                                        final boolean z27 = z22;
+                                                        arrayList4 = arrayList7;
+                                                        arrayList3 = arrayList23;
                                                         str3 = str7;
-                                                        chat2 = chat6;
+                                                        int i15 = i5;
+                                                        arrayList2 = arrayList24;
+                                                        chat2 = chat5;
                                                         final Runnable runnable2 = new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda14
                                                             @Override // java.lang.Runnable
                                                             public final void run() {
-                                                                SendMessagesHelper.this.lambda$sendMessage$18(tL_messages_forwardMessages, j, i, z23, z24, longSparseArray2, arrayList17, arrayList11, messageObject6, peer);
+                                                                SendMessagesHelper.this.lambda$sendMessage$18(tL_messages_forwardMessages, j, i, z26, z27, longSparseArray, arrayList7, arrayList11, messageObject2, peer);
                                                             }
                                                         };
                                                         runnable = new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda15
@@ -3577,64 +3580,60 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                         if (StarsController.getInstance(this.currentAccount).beforeSendingFinalRequest(tL_messages_forwardMessages, arrayList11, runnable)) {
                                                             runnable.run();
                                                         }
-                                                        if (i4 != arrayList.size() - 1) {
-                                                            arrayList6 = new ArrayList<>();
-                                                            ArrayList arrayList27 = new ArrayList();
-                                                            ArrayList<Long> arrayList28 = new ArrayList<>();
+                                                        i7 = i15;
+                                                        if (i7 != arrayList.size() - 1) {
+                                                            arrayList3 = new ArrayList<>();
+                                                            arrayList4 = new ArrayList();
+                                                            arrayList18 = new ArrayList<>();
                                                             arrayList5 = new ArrayList<>();
-                                                            longSparseArray3 = new LongSparseArray();
-                                                            arrayList17 = arrayList27;
-                                                            arrayList18 = arrayList28;
+                                                            longSparseArray = new LongSparseArray();
                                                         }
-                                                        longSparseArray3 = longSparseArray2;
                                                         arrayList18 = arrayList2;
-                                                        arrayList5 = arrayList4;
-                                                        arrayList6 = arrayList3;
                                                     }
                                                 }
-                                                z15 = true;
-                                                tL_messages_forwardMessages.silent = z15;
+                                                z17 = true;
+                                                tL_messages_forwardMessages.silent = z17;
                                                 if (messageObject != null) {
                                                 }
                                                 if (i == 0) {
                                                 }
-                                                if (!(messageObject3.messageOwner.peer_id instanceof TLRPC.TL_peerChannel)) {
+                                                if (!(messageObject2.messageOwner.peer_id instanceof TLRPC.TL_peerChannel)) {
                                                 }
-                                                ArrayList<Long> arrayList252 = arrayList9;
-                                                tL_messages_forwardMessages.random_id = arrayList252;
-                                                ArrayList<Integer> arrayList262 = arrayList10;
-                                                tL_messages_forwardMessages.id = arrayList262;
+                                                ArrayList<Long> arrayList242 = arrayList8;
+                                                tL_messages_forwardMessages.random_id = arrayList242;
+                                                ArrayList<Integer> arrayList252 = arrayList9;
+                                                tL_messages_forwardMessages.id = arrayList252;
                                                 tL_messages_forwardMessages.drop_author = z;
                                                 tL_messages_forwardMessages.drop_media_captions = z2;
-                                                tL_messages_forwardMessages.with_my_score = arrayList.size() != 1 && arrayList8.get(0).messageOwner.with_my_score;
+                                                tL_messages_forwardMessages.with_my_score = arrayList.size() != 1 && arrayList10.get(0).messageOwner.with_my_score;
+                                                tL_messages_forwardMessages.from_ephemeral = z16;
                                                 if (i3 >= 0) {
                                                 }
                                                 if (j2 <= 0) {
                                                 }
                                                 if (messageSuggestionParams != null) {
                                                 }
-                                                applyMonoForumPeerId(tL_messages_forwardMessages, j14);
-                                                arrayList11 = new ArrayList(arrayList24);
-                                                if (i != 2147483646) {
-                                                }
+                                                applyMonoForumPeerId(tL_messages_forwardMessages, j3);
+                                                arrayList11 = new ArrayList(arrayList23);
                                                 peer = peer8;
-                                                arrayList17 = arrayList7;
                                                 inputPeer = inputPeer2;
-                                                i4 = i7;
-                                                longSparseArray2 = longSparseArray7;
-                                                longSparseArray = longSparseArray12;
-                                                arrayList2 = arrayList252;
-                                                arrayList4 = arrayList262;
+                                                z23 = z16;
+                                                longSparseArray = longSparseArray6;
+                                                longSparseArray2 = longSparseArray11;
+                                                arrayList5 = arrayList252;
+                                                final boolean z262 = i != 2147483646;
                                                 j8 = j13;
-                                                final boolean z242 = z20;
-                                                final MessageObject messageObject62 = messageObject2;
-                                                arrayList3 = arrayList24;
+                                                final boolean z272 = z22;
+                                                arrayList4 = arrayList7;
+                                                arrayList3 = arrayList23;
                                                 str3 = str7;
-                                                chat2 = chat6;
+                                                int i152 = i5;
+                                                arrayList2 = arrayList242;
+                                                chat2 = chat5;
                                                 final Runnable runnable22 = new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda14
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
-                                                        SendMessagesHelper.this.lambda$sendMessage$18(tL_messages_forwardMessages, j, i, z23, z242, longSparseArray2, arrayList17, arrayList11, messageObject62, peer);
+                                                        SendMessagesHelper.this.lambda$sendMessage$18(tL_messages_forwardMessages, j, i, z262, z272, longSparseArray, arrayList7, arrayList11, messageObject2, peer);
                                                     }
                                                 };
                                                 runnable = new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda15
@@ -3645,67 +3644,65 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 };
                                                 if (StarsController.getInstance(this.currentAccount).beforeSendingFinalRequest(tL_messages_forwardMessages, arrayList11, runnable)) {
                                                 }
-                                                if (i4 != arrayList.size() - 1) {
+                                                i7 = i152;
+                                                if (i7 != arrayList.size() - 1) {
                                                 }
-                                                longSparseArray3 = longSparseArray2;
                                                 arrayList18 = arrayList2;
-                                                arrayList5 = arrayList4;
-                                                arrayList6 = arrayList3;
                                             }
                                         }
                                         if (arrayList7.size() != 100) {
                                         }
                                         getMessagesStorage().putMessages(new ArrayList<>(arrayList7), false, true, false, 0, i != 0 ? 1 : 0, 0L);
-                                        getMessagesController().updateInterfaceWithMessages(j12, arrayList24, i != 0 ? 1 : 0);
+                                        getMessagesController().updateInterfaceWithMessages(j12, arrayList23, i != 0 ? 1 : 0);
                                         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
                                         getUserConfig().saveConfig(false);
                                         tL_messages_forwardMessages = new TLRPC.TL_messages_forwardMessages();
                                         tL_messages_forwardMessages.to_peer = inputPeer5;
                                         if (z3) {
                                         }
-                                        z15 = true;
-                                        tL_messages_forwardMessages.silent = z15;
+                                        z17 = true;
+                                        tL_messages_forwardMessages.silent = z17;
                                         if (messageObject != null) {
                                         }
                                         if (i == 0) {
                                         }
-                                        if (!(messageObject3.messageOwner.peer_id instanceof TLRPC.TL_peerChannel)) {
+                                        if (!(messageObject2.messageOwner.peer_id instanceof TLRPC.TL_peerChannel)) {
                                         }
-                                        ArrayList<Long> arrayList2522 = arrayList9;
-                                        tL_messages_forwardMessages.random_id = arrayList2522;
-                                        ArrayList<Integer> arrayList2622 = arrayList10;
-                                        tL_messages_forwardMessages.id = arrayList2622;
+                                        ArrayList<Long> arrayList2422 = arrayList8;
+                                        tL_messages_forwardMessages.random_id = arrayList2422;
+                                        ArrayList<Integer> arrayList2522 = arrayList9;
+                                        tL_messages_forwardMessages.id = arrayList2522;
                                         tL_messages_forwardMessages.drop_author = z;
                                         tL_messages_forwardMessages.drop_media_captions = z2;
-                                        tL_messages_forwardMessages.with_my_score = arrayList.size() != 1 && arrayList8.get(0).messageOwner.with_my_score;
+                                        tL_messages_forwardMessages.with_my_score = arrayList.size() != 1 && arrayList10.get(0).messageOwner.with_my_score;
+                                        tL_messages_forwardMessages.from_ephemeral = z16;
                                         if (i3 >= 0) {
                                         }
                                         if (j2 <= 0) {
                                         }
                                         if (messageSuggestionParams != null) {
                                         }
-                                        applyMonoForumPeerId(tL_messages_forwardMessages, j14);
-                                        arrayList11 = new ArrayList(arrayList24);
-                                        if (i != 2147483646) {
-                                        }
+                                        applyMonoForumPeerId(tL_messages_forwardMessages, j3);
+                                        arrayList11 = new ArrayList(arrayList23);
                                         peer = peer8;
-                                        arrayList17 = arrayList7;
                                         inputPeer = inputPeer2;
-                                        i4 = i7;
-                                        longSparseArray2 = longSparseArray7;
-                                        longSparseArray = longSparseArray12;
-                                        arrayList2 = arrayList2522;
-                                        arrayList4 = arrayList2622;
+                                        z23 = z16;
+                                        longSparseArray = longSparseArray6;
+                                        longSparseArray2 = longSparseArray11;
+                                        arrayList5 = arrayList2522;
+                                        final boolean z2622 = i != 2147483646;
                                         j8 = j13;
-                                        final boolean z2422 = z20;
-                                        final MessageObject messageObject622 = messageObject2;
-                                        arrayList3 = arrayList24;
+                                        final boolean z2722 = z22;
+                                        arrayList4 = arrayList7;
+                                        arrayList3 = arrayList23;
                                         str3 = str7;
-                                        chat2 = chat6;
+                                        int i1522 = i5;
+                                        arrayList2 = arrayList2422;
+                                        chat2 = chat5;
                                         final Runnable runnable222 = new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda14
                                             @Override // java.lang.Runnable
                                             public final void run() {
-                                                SendMessagesHelper.this.lambda$sendMessage$18(tL_messages_forwardMessages, j, i, z23, z2422, longSparseArray2, arrayList17, arrayList11, messageObject622, peer);
+                                                SendMessagesHelper.this.lambda$sendMessage$18(tL_messages_forwardMessages, j, i, z2622, z2722, longSparseArray, arrayList7, arrayList11, messageObject2, peer);
                                             }
                                         };
                                         runnable = new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda15
@@ -3716,17 +3713,15 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         };
                                         if (StarsController.getInstance(this.currentAccount).beforeSendingFinalRequest(tL_messages_forwardMessages, arrayList11, runnable)) {
                                         }
-                                        if (i4 != arrayList.size() - 1) {
+                                        i7 = i1522;
+                                        if (i7 != arrayList.size() - 1) {
                                         }
-                                        longSparseArray3 = longSparseArray2;
                                         arrayList18 = arrayList2;
-                                        arrayList5 = arrayList4;
-                                        arrayList6 = arrayList3;
                                     } else {
                                         tL_message.flags |= 64;
                                     }
                                 } else {
-                                    longSparseArray5 = longSparseArray4;
+                                    longSparseArray4 = longSparseArray3;
                                     j7 = j10;
                                 }
                                 if (!tL_message.entities.isEmpty()) {
@@ -3737,7 +3732,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 tL_message.id = newMessageId2;
                                 tL_message.local_id = newMessageId2;
                                 tL_message.out = true;
-                                j11 = messageObject3.messageOwner.grouped_id;
+                                j11 = messageObject2.messageOwner.grouped_id;
                                 if (j11 == 0) {
                                 }
                                 if (peer4.channel_id == 0) {
@@ -3749,22 +3744,23 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 }
                                 if (tL_message.random_id == 0) {
                                 }
-                                ArrayList<Long> arrayList222 = arrayList18;
-                                arrayList222.add(Long.valueOf(tL_message.random_id));
-                                LongSparseArray longSparseArray112 = longSparseArray10;
-                                longSparseArray112.put(tL_message.random_id, tL_message);
-                                ArrayList<Integer> arrayList232 = arrayList19;
-                                arrayList232.add(Integer.valueOf(tL_message.fwd_msg_id));
+                                ArrayList<Long> arrayList212 = arrayList18;
+                                arrayList212.add(Long.valueOf(tL_message.random_id));
+                                LongSparseArray longSparseArray102 = longSparseArray9;
+                                longSparseArray102.put(tL_message.random_id, tL_message);
+                                if (!messageObject2.isEphemeral()) {
+                                }
+                                ArrayList<Long> arrayList222 = arrayList212;
                                 if (i == 0) {
                                 }
                                 tL_message.date = currentTime;
-                                LongSparseArray longSparseArray122 = longSparseArray6;
+                                LongSparseArray longSparseArray112 = longSparseArray5;
                                 TLRPC.InputPeer inputPeer52 = inputPeer4;
-                                z14 = inputPeer52 instanceof TLRPC.TL_inputPeerChannel;
-                                if (z14) {
+                                z15 = inputPeer52 instanceof TLRPC.TL_inputPeerChannel;
+                                if (z15) {
                                 }
                                 j13 = clientUserId;
-                                message = messageObject3.messageOwner;
+                                message = messageObject2.messageOwner;
                                 if ((message.flags & 1024) != 0) {
                                     tL_message.views = message.views;
                                     tL_message.flags |= 1024;
@@ -3774,41 +3770,37 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 tL_message.peer_id = peer4;
                                 if (!MessageObject.isVoiceMessage(tL_message)) {
                                 }
-                                if (!z14) {
+                                if (!z15) {
                                 }
                                 tL_message.media_unread = true;
                                 if (messageObject == null) {
                                     peer2 = messageReplyHeader.reply_to_peer_id;
                                     if (peer2 != null) {
                                     }
-                                    messageReplyHeader2 = messageObject3.messageOwner.reply_to;
+                                    messageReplyHeader2 = messageObject2.messageOwner.reply_to;
                                     if ((messageReplyHeader2.flags & 16) != 0) {
                                     }
                                 }
                                 String str72 = str5;
-                                TLRPC.Chat chat62 = chat4;
                                 if (j2 > 0) {
                                 }
                                 if (j3 != 0) {
                                 }
                                 if (messageSuggestionParams != null) {
                                 }
-                                z12 = z11;
                                 TLRPC.Peer peer82 = peer4;
-                                MessageObject messageObject42 = new MessageObject(this.currentAccount, tL_message, true, true);
-                                messageObject42.scheduled = i == 0;
-                                messageObject42.messageOwner.send_state = 1;
-                                messageObject42.wasJustSent = true;
-                                ArrayList<MessageObject> arrayList242 = arrayList20;
-                                arrayList242.add(messageObject42);
+                                z12 = z11;
+                                MessageObject messageObject32 = new MessageObject(this.currentAccount, tL_message, true, true);
+                                messageObject32.scheduled = i == 0;
+                                messageObject32.messageOwner.send_state = 1;
+                                messageObject32.wasJustSent = true;
+                                ArrayList<MessageObject> arrayList232 = arrayList20;
+                                arrayList232.add(messageObject32);
                                 arrayList7 = arrayList17;
                                 arrayList7.add(tL_message);
-                                StarsController.getInstance(this.currentAccount).beforeSendingMessage(messageObject42);
-                                if (messageObject3.replyMessageObject != null) {
+                                StarsController.getInstance(this.currentAccount).beforeSendingMessage(messageObject32);
+                                if (messageObject2.replyMessageObject == null) {
                                 }
-                                arrayList8 = arrayList;
-                                arrayList9 = arrayList222;
-                                arrayList10 = arrayList232;
                                 putToSendingMessages(tL_message, i == 0);
                                 if (BuildVars.LOGS_ENABLED) {
                                 }
@@ -3823,56 +3815,56 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 if (arrayList7.size() != 100) {
                                 }
                                 getMessagesStorage().putMessages(new ArrayList<>(arrayList7), false, true, false, 0, i != 0 ? 1 : 0, 0L);
-                                getMessagesController().updateInterfaceWithMessages(j12, arrayList242, i != 0 ? 1 : 0);
+                                getMessagesController().updateInterfaceWithMessages(j12, arrayList232, i != 0 ? 1 : 0);
                                 getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
                                 getUserConfig().saveConfig(false);
                                 tL_messages_forwardMessages = new TLRPC.TL_messages_forwardMessages();
                                 tL_messages_forwardMessages.to_peer = inputPeer52;
                                 if (z3) {
                                 }
-                                z15 = true;
-                                tL_messages_forwardMessages.silent = z15;
+                                z17 = true;
+                                tL_messages_forwardMessages.silent = z17;
                                 if (messageObject != null) {
                                 }
                                 if (i == 0) {
                                 }
-                                if (!(messageObject3.messageOwner.peer_id instanceof TLRPC.TL_peerChannel)) {
+                                if (!(messageObject2.messageOwner.peer_id instanceof TLRPC.TL_peerChannel)) {
                                 }
-                                ArrayList<Long> arrayList25222 = arrayList9;
-                                tL_messages_forwardMessages.random_id = arrayList25222;
-                                ArrayList<Integer> arrayList26222 = arrayList10;
-                                tL_messages_forwardMessages.id = arrayList26222;
+                                ArrayList<Long> arrayList24222 = arrayList8;
+                                tL_messages_forwardMessages.random_id = arrayList24222;
+                                ArrayList<Integer> arrayList25222 = arrayList9;
+                                tL_messages_forwardMessages.id = arrayList25222;
                                 tL_messages_forwardMessages.drop_author = z;
                                 tL_messages_forwardMessages.drop_media_captions = z2;
-                                tL_messages_forwardMessages.with_my_score = arrayList.size() != 1 && arrayList8.get(0).messageOwner.with_my_score;
+                                tL_messages_forwardMessages.with_my_score = arrayList.size() != 1 && arrayList10.get(0).messageOwner.with_my_score;
+                                tL_messages_forwardMessages.from_ephemeral = z16;
                                 if (i3 >= 0) {
                                 }
                                 if (j2 <= 0) {
                                 }
                                 if (messageSuggestionParams != null) {
                                 }
-                                applyMonoForumPeerId(tL_messages_forwardMessages, j14);
-                                arrayList11 = new ArrayList(arrayList242);
-                                if (i != 2147483646) {
-                                }
+                                applyMonoForumPeerId(tL_messages_forwardMessages, j3);
+                                arrayList11 = new ArrayList(arrayList232);
                                 peer = peer82;
-                                arrayList17 = arrayList7;
                                 inputPeer = inputPeer2;
-                                i4 = i7;
-                                longSparseArray2 = longSparseArray7;
-                                longSparseArray = longSparseArray122;
-                                arrayList2 = arrayList25222;
-                                arrayList4 = arrayList26222;
+                                z23 = z16;
+                                longSparseArray = longSparseArray6;
+                                longSparseArray2 = longSparseArray112;
+                                arrayList5 = arrayList25222;
+                                final boolean z26222 = i != 2147483646;
                                 j8 = j13;
-                                final boolean z24222 = z20;
-                                final MessageObject messageObject6222 = messageObject2;
-                                arrayList3 = arrayList242;
+                                final boolean z27222 = z22;
+                                arrayList4 = arrayList7;
+                                arrayList3 = arrayList232;
                                 str3 = str72;
-                                chat2 = chat62;
+                                int i15222 = i5;
+                                arrayList2 = arrayList24222;
+                                chat2 = chat5;
                                 final Runnable runnable2222 = new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda14
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        SendMessagesHelper.this.lambda$sendMessage$18(tL_messages_forwardMessages, j, i, z23, z24222, longSparseArray2, arrayList17, arrayList11, messageObject6222, peer);
+                                        SendMessagesHelper.this.lambda$sendMessage$18(tL_messages_forwardMessages, j, i, z26222, z27222, longSparseArray, arrayList7, arrayList11, messageObject2, peer);
                                     }
                                 };
                                 runnable = new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda15
@@ -3883,233 +3875,221 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 };
                                 if (StarsController.getInstance(this.currentAccount).beforeSendingFinalRequest(tL_messages_forwardMessages, arrayList11, runnable)) {
                                 }
-                                if (i4 != arrayList.size() - 1) {
+                                i7 = i15222;
+                                if (i7 != arrayList.size() - 1) {
                                 }
-                                longSparseArray3 = longSparseArray2;
                                 arrayList18 = arrayList2;
-                                arrayList5 = arrayList4;
-                                arrayList6 = arrayList3;
                             } else {
-                                if (i10 == 0) {
-                                    i8 = ChatObject.isActionBannedByDefault(chat, 19) ? 17 : 18;
-                                    i10 = i8;
-                                    longSparseArray = longSparseArray8;
+                                if (i8 == 0) {
+                                    i6 = ChatObject.isActionBannedByDefault(chat, 19) ? 17 : 18;
+                                    i8 = i6;
                                     j7 = j6;
                                     j8 = clientUserId;
                                     str3 = str2;
                                     chat2 = chat;
-                                    i4 = i5;
+                                    i7 = i4;
+                                    arrayList3 = arrayList20;
+                                    arrayList4 = arrayList17;
                                     arrayList5 = arrayList19;
-                                    longSparseArray3 = longSparseArray10;
+                                    longSparseArray = longSparseArray9;
+                                    peer = peer4;
+                                    longSparseArray2 = longSparseArray7;
                                     z12 = z11;
                                     inputPeer = inputPeer4;
-                                    ArrayList<MessageObject> arrayList21222222 = arrayList20;
-                                    peer = peer4;
-                                    arrayList6 = arrayList21222222;
                                 }
-                                longSparseArray = longSparseArray8;
                                 j7 = j6;
                                 j8 = clientUserId;
                                 str3 = str2;
                                 chat2 = chat;
                                 arrayList2 = arrayList18;
-                                i4 = i5;
+                                i7 = i4;
                                 arrayList3 = arrayList20;
-                                arrayList4 = arrayList19;
-                                longSparseArray2 = longSparseArray10;
+                                arrayList4 = arrayList17;
+                                arrayList5 = arrayList19;
+                                longSparseArray = longSparseArray9;
                                 peer = peer4;
+                                longSparseArray2 = longSparseArray7;
                                 z12 = z11;
                                 inputPeer = inputPeer4;
-                                longSparseArray3 = longSparseArray2;
                                 arrayList18 = arrayList2;
-                                arrayList5 = arrayList4;
-                                arrayList6 = arrayList3;
                             }
                         } else if (chat != null) {
-                            if (i10 == 0) {
-                                i8 = ChatObject.isActionBannedByDefault(chat, 21) ? 15 : 16;
-                                i10 = i8;
-                                longSparseArray = longSparseArray8;
+                            if (i8 == 0) {
+                                i6 = ChatObject.isActionBannedByDefault(chat, 21) ? 15 : 16;
+                                i8 = i6;
                                 j7 = j6;
                                 j8 = clientUserId;
                                 str3 = str2;
                                 chat2 = chat;
-                                i4 = i5;
+                                i7 = i4;
+                                arrayList3 = arrayList20;
+                                arrayList4 = arrayList17;
                                 arrayList5 = arrayList19;
-                                longSparseArray3 = longSparseArray10;
+                                longSparseArray = longSparseArray9;
+                                peer = peer4;
+                                longSparseArray2 = longSparseArray7;
                                 z12 = z11;
                                 inputPeer = inputPeer4;
-                                ArrayList<MessageObject> arrayList212222222 = arrayList20;
-                                peer = peer4;
-                                arrayList6 = arrayList212222222;
                             }
-                            longSparseArray = longSparseArray8;
                             j7 = j6;
                             j8 = clientUserId;
                             str3 = str2;
                             chat2 = chat;
                             arrayList2 = arrayList18;
-                            i4 = i5;
+                            i7 = i4;
                             arrayList3 = arrayList20;
-                            arrayList4 = arrayList19;
-                            longSparseArray2 = longSparseArray10;
+                            arrayList4 = arrayList17;
+                            arrayList5 = arrayList19;
+                            longSparseArray = longSparseArray9;
                             peer = peer4;
+                            longSparseArray2 = longSparseArray7;
                             z12 = z11;
                             inputPeer = inputPeer4;
-                            longSparseArray3 = longSparseArray2;
                             arrayList18 = arrayList2;
-                            arrayList5 = arrayList4;
-                            arrayList6 = arrayList3;
                         } else {
-                            if (i10 == 0) {
-                                i8 = 8;
-                                i10 = i8;
-                                longSparseArray = longSparseArray8;
+                            if (i8 == 0) {
+                                i6 = 8;
+                                i8 = i6;
                                 j7 = j6;
                                 j8 = clientUserId;
                                 str3 = str2;
                                 chat2 = chat;
-                                i4 = i5;
+                                i7 = i4;
+                                arrayList3 = arrayList20;
+                                arrayList4 = arrayList17;
                                 arrayList5 = arrayList19;
-                                longSparseArray3 = longSparseArray10;
+                                longSparseArray = longSparseArray9;
+                                peer = peer4;
+                                longSparseArray2 = longSparseArray7;
                                 z12 = z11;
                                 inputPeer = inputPeer4;
-                                ArrayList<MessageObject> arrayList2122222222 = arrayList20;
-                                peer = peer4;
-                                arrayList6 = arrayList2122222222;
                             }
-                            longSparseArray = longSparseArray8;
                             j7 = j6;
                             j8 = clientUserId;
                             str3 = str2;
                             chat2 = chat;
                             arrayList2 = arrayList18;
-                            i4 = i5;
+                            i7 = i4;
                             arrayList3 = arrayList20;
-                            arrayList4 = arrayList19;
-                            longSparseArray2 = longSparseArray10;
+                            arrayList4 = arrayList17;
+                            arrayList5 = arrayList19;
+                            longSparseArray = longSparseArray9;
                             peer = peer4;
+                            longSparseArray2 = longSparseArray7;
                             z12 = z11;
                             inputPeer = inputPeer4;
-                            longSparseArray3 = longSparseArray2;
                             arrayList18 = arrayList2;
-                            arrayList5 = arrayList4;
-                            arrayList6 = arrayList3;
                         }
                     } else if (chat != null) {
-                        if (i10 == 0) {
-                            i8 = ChatObject.isActionBannedByDefault(chat, 20) ? 13 : 14;
-                            i10 = i8;
-                            longSparseArray = longSparseArray8;
+                        if (i8 == 0) {
+                            i6 = ChatObject.isActionBannedByDefault(chat, 20) ? 13 : 14;
+                            i8 = i6;
                             j7 = j6;
                             j8 = clientUserId;
                             str3 = str2;
                             chat2 = chat;
-                            i4 = i5;
+                            i7 = i4;
+                            arrayList3 = arrayList20;
+                            arrayList4 = arrayList17;
                             arrayList5 = arrayList19;
-                            longSparseArray3 = longSparseArray10;
+                            longSparseArray = longSparseArray9;
+                            peer = peer4;
+                            longSparseArray2 = longSparseArray7;
                             z12 = z11;
                             inputPeer = inputPeer4;
-                            ArrayList<MessageObject> arrayList21222222222 = arrayList20;
-                            peer = peer4;
-                            arrayList6 = arrayList21222222222;
                         }
-                        longSparseArray = longSparseArray8;
                         j7 = j6;
                         j8 = clientUserId;
                         str3 = str2;
                         chat2 = chat;
                         arrayList2 = arrayList18;
-                        i4 = i5;
+                        i7 = i4;
                         arrayList3 = arrayList20;
-                        arrayList4 = arrayList19;
-                        longSparseArray2 = longSparseArray10;
+                        arrayList4 = arrayList17;
+                        arrayList5 = arrayList19;
+                        longSparseArray = longSparseArray9;
                         peer = peer4;
+                        longSparseArray2 = longSparseArray7;
                         z12 = z11;
                         inputPeer = inputPeer4;
-                        longSparseArray3 = longSparseArray2;
                         arrayList18 = arrayList2;
-                        arrayList5 = arrayList4;
-                        arrayList6 = arrayList3;
                     } else {
-                        if (i10 == 0) {
-                            i8 = 7;
-                            i10 = i8;
-                            longSparseArray = longSparseArray8;
+                        if (i8 == 0) {
+                            i6 = 7;
+                            i8 = i6;
                             j7 = j6;
                             j8 = clientUserId;
                             str3 = str2;
                             chat2 = chat;
-                            i4 = i5;
+                            i7 = i4;
+                            arrayList3 = arrayList20;
+                            arrayList4 = arrayList17;
                             arrayList5 = arrayList19;
-                            longSparseArray3 = longSparseArray10;
+                            longSparseArray = longSparseArray9;
+                            peer = peer4;
+                            longSparseArray2 = longSparseArray7;
                             z12 = z11;
                             inputPeer = inputPeer4;
-                            ArrayList<MessageObject> arrayList212222222222 = arrayList20;
-                            peer = peer4;
-                            arrayList6 = arrayList212222222222;
                         }
-                        longSparseArray = longSparseArray8;
                         j7 = j6;
                         j8 = clientUserId;
                         str3 = str2;
                         chat2 = chat;
                         arrayList2 = arrayList18;
-                        i4 = i5;
+                        i7 = i4;
                         arrayList3 = arrayList20;
-                        arrayList4 = arrayList19;
-                        longSparseArray2 = longSparseArray10;
+                        arrayList4 = arrayList17;
+                        arrayList5 = arrayList19;
+                        longSparseArray = longSparseArray9;
                         peer = peer4;
+                        longSparseArray2 = longSparseArray7;
                         z12 = z11;
                         inputPeer = inputPeer4;
-                        longSparseArray3 = longSparseArray2;
                         arrayList18 = arrayList2;
-                        arrayList5 = arrayList4;
-                        arrayList6 = arrayList3;
                     }
                 }
-                i9 = i4 + 1;
+                i7++;
                 arrayList12 = arrayList;
-                z17 = z;
-                z18 = z2;
-                z11 = z12;
+                z19 = z;
+                z20 = z2;
+                peer4 = peer;
                 inputPeer4 = inputPeer;
-                longSparseArray8 = longSparseArray;
-                clientUserId = j8;
-                str2 = str3;
-                chat = chat2;
-                arrayList19 = arrayList5;
-                longSparseArray10 = longSparseArray3;
+                z11 = z12;
+                longSparseArray7 = longSparseArray2;
                 j6 = j7;
-                TLRPC.Peer peer9 = peer;
-                arrayList20 = arrayList6;
-                peer4 = peer9;
+                longSparseArray9 = longSparseArray;
+                arrayList19 = arrayList5;
+                clientUserId = j8;
+                arrayList17 = arrayList4;
+                str2 = str3;
+                arrayList20 = arrayList3;
+                chat = chat2;
             }
-            return i10;
+            return i8;
         }
-        long j17 = getMessagesController().getEncryptedChat(Integer.valueOf((int) j)).user_id;
-        boolean z25 = (!DialogObject.isUserDialog(j17) || getMessagesController().getUser(Long.valueOf(j17)) == null || (userFull = getMessagesController().getUserFull(j17)) == null) ? true : !userFull.voice_messages_forbidden;
-        int i17 = 0;
-        for (int i18 = 0; i18 < arrayList.size(); i18++) {
-            MessageObject messageObject7 = arrayList.get(i18);
-            if (z25 || !MessageObject.isVoiceMessage(messageObject7.messageOwner)) {
-                if (!z25 && MessageObject.isRoundVideoMessage(messageObject7.messageOwner) && i17 == 0) {
-                    i17 = 8;
+        long j16 = getMessagesController().getEncryptedChat(Integer.valueOf((int) j)).user_id;
+        boolean z28 = (!DialogObject.isUserDialog(j16) || getMessagesController().getUser(Long.valueOf(j16)) == null || (userFull = getMessagesController().getUserFull(j16)) == null) ? true : !userFull.voice_messages_forbidden;
+        int i16 = 0;
+        for (int i17 = 0; i17 < arrayList.size(); i17++) {
+            MessageObject messageObject5 = arrayList.get(i17);
+            if (z28 || !MessageObject.isVoiceMessage(messageObject5.messageOwner)) {
+                if (!z28 && MessageObject.isRoundVideoMessage(messageObject5.messageOwner) && i16 == 0) {
+                    i16 = 8;
                 }
-            } else if (i17 == 0) {
-                i17 = 7;
+            } else if (i16 == 0) {
+                i16 = 7;
             }
         }
-        ArrayList<MessageObject> arrayList29 = arrayList;
-        if (i17 == 0) {
-            int i19 = 0;
-            while (i19 < arrayList.size()) {
-                processForwardFromMyName(arrayList29.get(i19), j, j2, j3, messageSuggestionParams);
-                i19++;
-                arrayList29 = arrayList;
+        ArrayList<MessageObject> arrayList26 = arrayList;
+        if (i16 == 0) {
+            int i18 = 0;
+            while (i18 < arrayList.size()) {
+                processForwardFromMyName(arrayList26.get(i18), j, j2, j3, messageSuggestionParams);
+                i18++;
+                arrayList26 = arrayList;
             }
         }
-        return i17;
+        return i16;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

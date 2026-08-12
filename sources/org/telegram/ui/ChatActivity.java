@@ -19537,9 +19537,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x0f84  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x100c  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x100f  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x0f96  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x101e  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x1021  */
     /* JADX WARN: Removed duplicated region for block: B:259:0x04ae  */
     /* JADX WARN: Removed duplicated region for block: B:278:0x054b  */
     /* JADX WARN: Removed duplicated region for block: B:285:0x056f  */
@@ -19561,9 +19561,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     /* JADX WARN: Removed duplicated region for block: B:433:0x0663  */
     /* JADX WARN: Removed duplicated region for block: B:439:0x0568  */
     /* JADX WARN: Removed duplicated region for block: B:440:0x04d6  */
-    /* JADX WARN: Removed duplicated region for block: B:554:0x0d08  */
-    /* JADX WARN: Removed duplicated region for block: B:557:0x0d1c  */
-    /* JADX WARN: Removed duplicated region for block: B:562:0x0d3d  */
+    /* JADX WARN: Removed duplicated region for block: B:554:0x0d1a  */
+    /* JADX WARN: Removed duplicated region for block: B:557:0x0d2e  */
+    /* JADX WARN: Removed duplicated region for block: B:562:0x0d4f  */
     /* JADX WARN: Removed duplicated region for block: B:96:0x0341  */
     /* JADX WARN: Removed duplicated region for block: B:97:0x0384  */
     /* JADX WARN: Type inference failed for: r10v17 */
@@ -20400,7 +20400,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     imageView5.setContentDescription(LocaleController.getString(R.string.AccDescrForwarding));
                     this.replyCloseImageView.setContentDescription(LocaleController.getString(R.string.AccDescrCancelForward));
                     MessageObject messageObject9 = (MessageObject) arrayList.get(0);
-                    if (messageObject9.isFromUser()) {
+                    if (messageObject9.isWelcomeAnchored()) {
+                        arrayList5.add(Long.valueOf(messageObject9.getDialogId()));
+                    } else if (messageObject9.isFromUser()) {
                         arrayList5.add(Long.valueOf(messageObject9.messageOwner.from_id.user_id));
                     } else {
                         TLRPC.Chat chat4 = getMessagesController().getChat(Long.valueOf(messageObject9.messageOwner.peer_id.channel_id));
@@ -63992,41 +63994,41 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         return -1;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:115:0x01bc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:114:0x01ba, code lost:
     
-        if (r4.getDialogId() != r35.mergeDialogId) goto L142;
+        if (r4.getDialogId() != r35.mergeDialogId) goto L141;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:248:0x04de, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:247:0x04dc, code lost:
     
-        if (r5.translated == false) goto L305;
+        if (r5.translated == false) goto L304;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:521:0x0a04, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:520:0x0a02, code lost:
     
-        if (r5.edit_messages != false) goto L583;
+        if (r5.edit_messages != false) goto L582;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:606:0x102a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:607:0x102d, code lost:
     
-        if (r6.translated == false) goto L778;
+        if (r6.translated == false) goto L780;
      */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x018c  */
     /* JADX WARN: Removed duplicated region for block: B:101:0x018e  */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0190  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0199  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x0206  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x021f  */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x0238  */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x0247  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0280  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x02f0  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x0307  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x1516  */
-    /* JADX WARN: Removed duplicated region for block: B:177:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x0368  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00de  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x012f  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x0158 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0164  */
-    /* JADX WARN: Removed duplicated region for block: B:931:0x02f4  */
-    /* JADX WARN: Removed duplicated region for block: B:962:0x0126  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0197  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x0204  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x021d  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x0236  */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x0245  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x027e  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x02ee  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x0305  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x1519  */
+    /* JADX WARN: Removed duplicated region for block: B:176:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x0366  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x012d  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0156 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0162  */
+    /* JADX WARN: Removed duplicated region for block: B:933:0x02f2  */
+    /* JADX WARN: Removed duplicated region for block: B:964:0x0124  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -64091,7 +64093,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 z = userFull.can_pin_message;
             }
             boolean z7 = (((!UserObject.isReplyUser(this.dialog_id) || (this.dialog_id > UserObject.VERIFY ? 1 : (this.dialog_id == UserObject.VERIFY ? 0 : -1)) == 0) ? false : z) || messageObject4.getId() <= 0 || ((messageAction = messageObject4.messageOwner.action) != null && !(messageAction instanceof TLRPC.TL_messageActionEmpty)) || messageObject4.isExpiredStory() || messageObject4.type == 24) ? false : true;
-            boolean z8 = !isEphemeral || isPeerNoForwards() || messageObject4.messageOwner.noforwards || getDialogId() == UserObject.VERIFY;
+            boolean z8 = !isPeerNoForwards() || messageObject4.messageOwner.noforwards || getDialogId() == UserObject.VERIFY;
             boolean z9 = !z8 || messageObject4.type == 29;
             if (isEphemeral) {
                 z2 = z8;
@@ -64546,7 +64548,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                                 arrayList3.add(6);
                                                 arrayList.add(Integer.valueOf(R.drawable.msg_shareout));
                                             }
-                                            if (!this.selectedObject.isSponsored() && !isQuickRepliesOrWelcomeMessagesMode() && this.chatMode != 1 && ((!this.selectedObject.needDrawBluredPreview() || this.selectedObject.hasExtendedMediaPreview()) && !this.selectedObject.isLiveLocation() && (i5 = (messageObject2 = this.selectedObject).type) != 16 && !z2 && i5 != 35 && i5 != 18 && i5 != 33 && i5 != 37 && i5 != 34 && i5 != 25 && i5 != 21 && !messageObject2.isWallpaperAction() && !messageObject4.isExpiredStory() && (i6 = messageObject4.type) != 24 && i6 != 30)) {
+                                            if ((this.selectedObject.isSponsored() || isQuickRepliesOrWelcomeMessagesMode() || this.chatMode == 1 || (this.selectedObject.needDrawBluredPreview() && !this.selectedObject.hasExtendedMediaPreview()) || this.selectedObject.isLiveLocation() || (i5 = (messageObject2 = this.selectedObject).type) == 16 || z2 || i5 == 35 || i5 == 18 || i5 == 33 || i5 == 37 || i5 == 34 || i5 == 25 || i5 == 21 || messageObject2.isWallpaperAction() || messageObject4.isExpiredStory() || (i6 = messageObject4.type) == 24 || i6 == 30) ? false : true) {
                                                 arrayList2.add(LocaleController.getString(R.string.Forward));
                                                 arrayList3.add(2);
                                                 arrayList.add(Integer.valueOf(R.drawable.msg_forward));
@@ -64826,7 +64828,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         z = false;
         if ((!UserObject.isReplyUser(this.dialog_id) || (this.dialog_id > UserObject.VERIFY ? 1 : (this.dialog_id == UserObject.VERIFY ? 0 : -1)) == 0) ? false : z) {
         }
-        if (isEphemeral) {
+        if (isPeerNoForwards()) {
         }
         if (z8) {
         }
