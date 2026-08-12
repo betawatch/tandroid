@@ -2441,29 +2441,29 @@ public class MessageObject {
     
         if ((r3.new_participant instanceof org.telegram.tgnet.TLRPC.TL_channelParticipant) != false) goto L66;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:741:0x0ccb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:748:0x0ccb, code lost:
     
         if (r10.id == r12.id) goto L520;
      */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x1e0f  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x1e61  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x1e66  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x1efc A[ADDED_TO_REGION, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x1efd  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x1f12  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x1f24  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x1f32  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x1f3d  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x1f74  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x1f35  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x1f17  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x1ef3  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x1e63  */
-    /* JADX WARN: Removed duplicated region for block: B:715:0x0cf1  */
-    /* JADX WARN: Removed duplicated region for block: B:718:0x0d32  */
-    /* JADX WARN: Removed duplicated region for block: B:724:0x0dce  */
-    /* JADX WARN: Removed duplicated region for block: B:726:0x0dd9  */
-    /* JADX WARN: Removed duplicated region for block: B:728:0x0cfe  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x1e34  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x1e86  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x1e8b  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x1f21 A[ADDED_TO_REGION, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x1f22  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x1f37  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x1f49  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x1f57  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x1f62  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x1f99  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x1f5a  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x1f3c  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x1f18  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x1e88  */
+    /* JADX WARN: Removed duplicated region for block: B:722:0x0cf1  */
+    /* JADX WARN: Removed duplicated region for block: B:725:0x0d32  */
+    /* JADX WARN: Removed duplicated region for block: B:731:0x0dce  */
+    /* JADX WARN: Removed duplicated region for block: B:733:0x0dd9  */
+    /* JADX WARN: Removed duplicated region for block: B:735:0x0cfe  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -4249,6 +4249,12 @@ public class MessageObject {
                         sb6.append(tL_chatAdminRights2.manage_direct_messages ? '+' : '-');
                         sb6.append(' ');
                         sb6.append(LocaleController.getString(R.string.EventLogPromotedManageDirect));
+                    }
+                    if (tL_chatAdminRights.manage_welcome_messages != tL_chatAdminRights2.manage_welcome_messages) {
+                        sb6.append('\n');
+                        sb6.append(tL_chatAdminRights2.manage_welcome_messages ? '+' : '-');
+                        sb6.append(' ');
+                        sb6.append(LocaleController.getString(R.string.EventLogPromotedManageWelcomeMessages));
                     }
                     sb = sb6;
                 }
