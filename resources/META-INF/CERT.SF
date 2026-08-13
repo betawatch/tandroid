@@ -1,10 +1,10 @@
 Signature-Version: 1.0
 Created-By: Android Gradle 8.6.1
-SHA-256-Digest-Manifest: jHU3Ei2vCn6pQTW0MPgsVXDG+NyKJkyvdgmLoaS7/zQ=
+SHA-256-Digest-Manifest: I2zitWg/mPPwyveDlcKCc9r0tLZDrZA1g+dYjAYUdFc=
 X-Android-APK-Signed: 2
 
 Name: AndroidManifest.xml
-SHA-256-Digest: xax9Gh4WtrI7IwGv0z+MH7FIEq82lVzowHxKZRXS/1c=
+SHA-256-Digest: wMLqniq+stpXRrGSHvvHXckqOL8TC0QZeQW7aSHtZyY=
 
 Name: DebugProbesKt.bin
 SHA-256-Digest: XJYoj9g1jxqW8LSScnHRcHzQEKpqZlq7SOYe/7+BzW4=
@@ -180,7 +180,7 @@ Name: META-INF/services/kotlinx.coroutines.internal.MainDispatcherFact
 SHA-256-Digest: CvpiKzNhVHqONkAL//lJVL9QOZGQGXeAZRDX9l7tM4E=
 
 Name: META-INF/version-control-info.textproto
-SHA-256-Digest: m23oZ0zrQtnlpDrEvIxDXz7DtPrLHC9jnZuu9ddW3tA=
+SHA-256-Digest: BZzE9Nk6ybn15sXPpf4ZF26dwqRJ9QHWDEkzbe0QCRk=
 
 Name: META-INF/versions/9/OSGI-INF/MANIFEST.MF
 SHA-256-Digest: 61Owk6o+Zz8kLb8/j3wagTj1Q0aSKQrU6Hs6PZ46nO4=
@@ -210,10 +210,10 @@ Name: assets/day.attheme
 SHA-256-Digest: l/KBfB6FEOrGfSkoe53dwG0w9pmh8zx9cr6IugDsQD0=
 
 Name: assets/dexopt/baseline.prof
-SHA-256-Digest: I6lY888K/J4MclvhwFRaTJv2nPA78IcjJuqdKe+1dwQ=
+SHA-256-Digest: 8zairSbbTHNVBWIwk/K6r7CKL4hw6+bNZVEnaiZywRI=
 
 Name: assets/dexopt/baseline.profm
-SHA-256-Digest: MSn0yh1ZjPcR5/0tFY9g8Vx6IVkto7aQwYd9Ec6Xf4w=
+SHA-256-Digest: DKQuY2AHRqyqPXaKMchkzMBD2MTPzX7byrSXMbZLn6k=
 
 Name: assets/emoji/0_0.png
 SHA-256-Digest: RpOlnjy9IOHfpaxcJj6GPtzipMpE/5cm45RsDb5rGqw=
@@ -12457,19 +12457,19 @@ Name: car-app-api.level
 SHA-256-Digest: U7VDQ6k7m7J1AoQX3N5vqx+XQLdKhUbKn5KuRPKg9B0=
 
 Name: classes.dex
-SHA-256-Digest: FqNEXvFz6S8RcDR3fUMD8On2mPQaQeglDz+A17IF3OM=
+SHA-256-Digest: p393qJfNUwgr2olycVE6x4R3M7/fiXi7LQU59+YWwiw=
 
 Name: classes2.dex
 SHA-256-Digest: ILMBAl4b6CLXK9aOXtRCac/eZNXUYfAfTwqlzqfJcAc=
 
 Name: classes3.dex
-SHA-256-Digest: +28ozOlEVSyyWS+lPMQrt/XT6zCIzZqiNLwSa83uTEs=
+SHA-256-Digest: XewnAC6fq51bGhUhtVD8T0B/LINlRao4wZbFLicJfTc=
 
 Name: classes4.dex
-SHA-256-Digest: B8u7vjq3jAeLSTvQIF7lftrkDvsgLv8e8t4bSRoOS64=
+SHA-256-Digest: fp/nTN61gVP6EjutBgICCEF8bHwttYtoWypvE6fVYqQ=
 
 Name: classes5.dex
-SHA-256-Digest: OLZbDs4m2pOCYCJgNYKIX+tWfMJwMU0R7Yqp0zQPuYg=
+SHA-256-Digest: 1xYSTJd6GHSxdd2UK+09qws8xdeBrr0aOO0kx5iO8+Q=
 
 Name: client_analytics.proto
 SHA-256-Digest: EsiOhXZ9ARjm/oKvt02rDTapjzIdPYgYWzazsNC7GXU=
@@ -34510,7 +34510,7 @@ Name: res/zzZ.xml
 SHA-256-Digest: E4VAfgYXmJpd0w//sLoB023purpYUbqY97+GnPQ400Y=
 
 Name: resources.arsc
-SHA-256-Digest: QlNAt+QKDuUd7rYXigYFT85St9SeHct3wMCXgxSIeI4=
+SHA-256-Digest: 4kQNAOzdlUix2KJEQ69Rnnn1ocb6hjVBZV7Ozn1juYU=
 
 Name: version.txt
 SHA-256-Digest: p5wDnbLFihlIF5QDi90qOP68wP82L4ISXw+/3WXeeM0=

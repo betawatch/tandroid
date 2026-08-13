@@ -94,6 +94,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.utils.ViewOutlineProviderImpl;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -6987,7 +6988,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
         this.showAnimator.start();
     }
 
-    public class SearchBox extends FrameLayout {
+    public class SearchBox extends FrameLayout implements Theme.Colorable {
         private FrameLayout box;
         private StickerCategoriesListView categoriesListView;
         private ImageView clear;
@@ -7000,6 +7001,11 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
         private boolean inputBoxShown;
         private ImageView search;
         private SearchStateDrawable searchStateDrawable;
+        private boolean useCustomBackground;
+
+        public /* bridge */ /* synthetic */ int[] getColorKeys() {
+            return Theme.Colorable.-CC.$default$getColorKeys(this);
+        }
 
         public SearchBox(Context context, final boolean z) {
             super(context);
@@ -7014,12 +7020,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
             int i = Theme.key_chat_emojiPanelBackground;
             frameLayout.setBackground(Theme.createRoundRectDrawable(dp, Theme.getColor(i, SelectAnimatedEmojiDialog.this.resourcesProvider)));
             this.box.setClipToOutline(true);
-            this.box.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.SearchBox.1
-                @Override // android.view.ViewOutlineProvider
-                public void getOutline(View view, Outline outline) {
-                    outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), AndroidUtilities.dp(18.0f));
-                }
-            });
+            this.box.setOutlineProvider(ViewOutlineProviderImpl.boundsWithPaddingRoundRect(0, AndroidUtilities.dp(18.0f)));
             addView(this.box, LayoutHelper.createFrame(-1, 36.0f, 55, 8.0f, 12.0f, 8.0f, 8.0f));
             ImageView imageView = new ImageView(context);
             this.search = imageView;
@@ -7041,7 +7042,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
             this.search.setClickable(false);
             this.search.setImportantForAccessibility(2);
             this.box.addView(this.search, LayoutHelper.createFrame(36, 36, 51));
-            FrameLayout frameLayout2 = new FrameLayout(context) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.SearchBox.2
+            FrameLayout frameLayout2 = new FrameLayout(context) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.SearchBox.1
                 Paint fadePaint;
 
                 @Override // android.view.ViewGroup, android.view.View
@@ -7065,9 +7066,9 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
             };
             this.inputBox = frameLayout2;
             this.box.addView(frameLayout2, LayoutHelper.createFrame(-1, -1.0f, 119, 36.0f, 0.0f, 0.0f, 0.0f));
-            3 r6 = new 3(context, SelectAnimatedEmojiDialog.this.resourcesProvider, SelectAnimatedEmojiDialog.this);
+            2 r6 = new 2(context, SelectAnimatedEmojiDialog.this.resourcesProvider, SelectAnimatedEmojiDialog.this);
             this.input = r6;
-            r6.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.SearchBox.4
+            r6.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.SearchBox.3
                 @Override // android.text.TextWatcher
                 public void beforeTextChanged(CharSequence charSequence, int i3, int i4, int i5) {
                 }
@@ -7124,7 +7125,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
             ImageView imageView2 = new ImageView(context);
             this.clear = imageView2;
             imageView2.setScaleType(scaleType);
-            this.clear.setImageDrawable(new CloseProgressDrawable2(1.25f) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.SearchBox.5
+            this.clear.setImageDrawable(new CloseProgressDrawable2(1.25f) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.SearchBox.4
                 {
                     setSide(AndroidUtilities.dp(7.0f));
                 }
@@ -7166,11 +7167,11 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
             }
         }
 
-        class 3 extends EditTextCaption {
+        class 2 extends EditTextCaption {
             final /* synthetic */ SelectAnimatedEmojiDialog val$this$0;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            3(Context context, Theme.ResourcesProvider resourcesProvider, SelectAnimatedEmojiDialog selectAnimatedEmojiDialog) {
+            2(Context context, Theme.ResourcesProvider resourcesProvider, SelectAnimatedEmojiDialog selectAnimatedEmojiDialog) {
                 super(context, resourcesProvider);
                 this.val$this$0 = selectAnimatedEmojiDialog;
             }
@@ -7178,10 +7179,10 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
             @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
             public boolean onTouchEvent(MotionEvent motionEvent) {
                 if (motionEvent.getAction() == 1 && SelectAnimatedEmojiDialog.this.prevWindowKeyboardVisible()) {
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SelectAnimatedEmojiDialog$SearchBox$3$$ExternalSyntheticLambda0
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SelectAnimatedEmojiDialog$SearchBox$2$$ExternalSyntheticLambda1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            SelectAnimatedEmojiDialog.SearchBox.3.this.lambda$onTouchEvent$0();
+                            SelectAnimatedEmojiDialog.SearchBox.2.this.lambda$onTouchEvent$0();
                         }
                     }, 200L);
                     return false;
@@ -7198,10 +7199,10 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
             protected void onFocusChanged(boolean z, int i, Rect rect) {
                 if (z) {
                     SelectAnimatedEmojiDialog.this.onInputFocus();
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SelectAnimatedEmojiDialog$SearchBox$3$$ExternalSyntheticLambda1
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SelectAnimatedEmojiDialog$SearchBox$2$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            SelectAnimatedEmojiDialog.SearchBox.3.this.lambda$onFocusChanged$1();
+                            SelectAnimatedEmojiDialog.SearchBox.2.this.lambda$onFocusChanged$1();
                         }
                     }, 200L);
                 }
@@ -7268,7 +7269,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                             i = 0;
                         }
                     }
-                    StickerCategoriesListView stickerCategoriesListView = new StickerCategoriesListView(getContext(), i, SelectAnimatedEmojiDialog.this.resourcesProvider) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.SearchBox.6
+                    StickerCategoriesListView stickerCategoriesListView = new StickerCategoriesListView(getContext(), i, SelectAnimatedEmojiDialog.this.resourcesProvider) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.SearchBox.5
                         @Override // org.telegram.ui.Components.StickerCategoriesListView
                         public void selectCategory(int i3) {
                             super.selectCategory(i3);
@@ -7298,7 +7299,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                     this.box.addView(this.categoriesListView, LayoutHelper.createFrame(-1, -1.0f, 119, 36.0f, 0.0f, 0.0f, 0.0f));
                 }
                 i = 1;
-                StickerCategoriesListView stickerCategoriesListView2 = new StickerCategoriesListView(getContext(), i, SelectAnimatedEmojiDialog.this.resourcesProvider) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.SearchBox.6
+                StickerCategoriesListView stickerCategoriesListView2 = new StickerCategoriesListView(getContext(), i, SelectAnimatedEmojiDialog.this.resourcesProvider) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.SearchBox.5
                     @Override // org.telegram.ui.Components.StickerCategoriesListView
                     public void selectCategory(int i3) {
                         super.selectCategory(i3);
@@ -7458,6 +7459,20 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                 return;
             }
             super.invalidate();
+        }
+
+        public void setUseCustomBackground() {
+            this.useCustomBackground = true;
+            setBackground(null);
+            updateColors();
+            invalidate();
+        }
+
+        @Override // org.telegram.ui.ActionBar.Theme.Colorable
+        public void updateColors() {
+            if (this.useCustomBackground) {
+                this.box.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(18.0f), Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, SelectAnimatedEmojiDialog.this.resourcesProvider), 0.06f)));
+            }
         }
     }
 

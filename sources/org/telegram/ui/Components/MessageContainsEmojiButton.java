@@ -70,7 +70,7 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x010c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x010d, code lost:
     
         r4 = null;
      */
@@ -93,7 +93,7 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         this.loadT = 0.0f;
         this.currentAccount = i;
         this.type = i2;
-        setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector, resourcesProvider), 0, 6));
+        setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector, resourcesProvider), 0, 16));
         TextPaint textPaint = new TextPaint(1);
         this.textPaint = textPaint;
         textPaint.setTextSize(AndroidUtilities.dp(13.0f));

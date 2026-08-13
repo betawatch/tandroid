@@ -16149,7 +16149,7 @@ public class MessagesStorage extends BaseController {
         */
     public java.lang.Runnable getMessagesInternal(long r66, long r68, int r70, int r71, int r72, int r73, int r74, int r75, int r76, long r77, int r79, boolean r80, boolean r81, org.telegram.messenger.Timer r82) {
         /*
-            Method dump skipped, instructions count: 9493
+            Method dump skipped, instructions count: 9629
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.MessagesStorage.getMessagesInternal(long, long, int, int, int, int, int, int, int, long, int, boolean, boolean, org.telegram.messenger.Timer):java.lang.Runnable");
@@ -19541,7 +19541,7 @@ public class MessagesStorage extends BaseController {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v23 ??), method size: 9444
+        jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
@@ -19549,9 +19549,9 @@ public class MessagesStorage extends BaseController {
         */
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: putMessagesInternal, reason: merged with bridge method [inline-methods] */
-    public void lambda$putMessages$200(java.util.ArrayList<org.telegram.tgnet.TLRPC.Message> r61, boolean r62, boolean r63, int r64, boolean r65, int r66, long r67) {
+    public void lambda$putMessages$200(java.util.ArrayList<org.telegram.tgnet.TLRPC.Message> r60, boolean r61, boolean r62, int r63, boolean r64, int r65, long r66) {
         /*
-            Method dump skipped, instructions count: 9444
+            Method dump skipped, instructions count: 9450
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.MessagesStorage.lambda$putMessages$200(java.util.ArrayList, boolean, boolean, int, boolean, int, long):void");
@@ -19696,7 +19696,7 @@ public class MessagesStorage extends BaseController {
                 sQLitePreparedStatement.requery();
                 sQLitePreparedStatement.bindLong(1, DialogObject.getPeerDialogId(next.peer_id));
                 sQLitePreparedStatement.bindInteger(2, next.id);
-                sQLitePreparedStatement.bindInteger(3, 0);
+                sQLitePreparedStatement.bindInteger(3, next.top_msg_id);
                 sQLitePreparedStatement.bindInteger(4, next.date);
                 sQLitePreparedStatement.bindTlObject(5, next);
                 sQLitePreparedStatement.step();

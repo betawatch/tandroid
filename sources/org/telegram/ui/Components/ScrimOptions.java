@@ -241,7 +241,7 @@ public class ScrimOptions extends Dialog {
             return;
         }
         this.dismissing = true;
-        animateOpenTo(false, 2.0f, new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda1
+        animateOpenTo(false, 2.0f, new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 ScrimOptions.this.lambda$dismissFast$4();
@@ -364,7 +364,7 @@ public class ScrimOptions extends Dialog {
     }
 
     public static void makeGlobalBlurBitmaps(final Utilities.Callback2 callback2) {
-        AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda0
+        AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ScrimOptions.lambda$makeGlobalBlurBitmaps$7(Utilities.Callback2.this, (Bitmap) obj);
@@ -381,7 +381,9 @@ public class ScrimOptions extends Dialog {
         applyColorMatrix.setHasAlpha(false);
         ColorMatrix colorMatrix2 = new ColorMatrix();
         colorMatrix2.setSaturation(Theme.isCurrentThemeDark() ? 2.0f : 3.0f);
-        AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix2, Theme.isCurrentThemeDark() ? -0.2f : -0.07f);
+        if (!Theme.isCurrentThemeDark()) {
+            AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix2, Theme.isCurrentThemeDark() ? -0.2f : -0.07f);
+        }
         Bitmap applyColorMatrix2 = AndroidUtilities.applyColorMatrix(bitmap, colorMatrix2);
         applyColorMatrix2.setHasAlpha(false);
         bitmap.recycle();

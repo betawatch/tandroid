@@ -177,9 +177,9 @@ public class TableLayout extends View {
             return this.measuredHeight;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:21:0x0050, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:18:0x002b, code lost:
         
-            if (r2.align_right == false) goto L29;
+            if (r2.align_right == false) goto L22;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -190,15 +190,7 @@ public class TableLayout extends View {
             if (z) {
                 this.fixedHeight = i2;
             }
-            TL_iv.pageTableCell pagetablecell = this.cell;
-            if (pagetablecell != null) {
-                if (pagetablecell.valign_middle) {
-                    this.textY = (i2 - this.textHeight) / 2;
-                } else if (pagetablecell.valign_bottom) {
-                    this.textY = (i2 - this.textHeight) - TableLayout.this.itemPaddingBottom;
-                } else {
-                    this.textY = TableLayout.this.itemPaddingTop;
-                }
+            if (this.cell != null) {
                 CellText cellText = this.textLayout;
                 if (cellText != null) {
                     Layout layout = cellText.getLayout();
@@ -206,8 +198,8 @@ public class TableLayout extends View {
                     if (!z) {
                         if (lineCount <= 1) {
                             if (lineCount > 0) {
-                                TL_iv.pageTableCell pagetablecell2 = this.cell;
-                                if (!pagetablecell2.align_center) {
+                                TL_iv.pageTableCell pagetablecell = this.cell;
+                                if (!pagetablecell.align_center) {
                                 }
                             }
                         }
@@ -216,24 +208,31 @@ public class TableLayout extends View {
                     }
                     updateTextX();
                 }
+                updateTextY();
+            }
+        }
+
+        private void updateTextY() {
+            TL_iv.pageTableCell pagetablecell = this.cell;
+            if (pagetablecell.valign_middle) {
+                this.textY = (this.measuredHeight - this.textHeight) / 2;
+            } else if (pagetablecell.valign_bottom) {
+                this.textY = (this.measuredHeight - this.textHeight) - TableLayout.this.itemPaddingBottom;
+            } else {
+                this.textY = TableLayout.this.itemPaddingTop;
             }
         }
 
         private void updateTextX() {
-            int i = this.textLeft;
-            if (i == 0) {
-                this.textX = TableLayout.this.itemPaddingLeft;
-                return;
-            }
-            int i2 = -i;
-            this.textX = i2;
+            int i = -this.textLeft;
+            this.textX = i;
             TL_iv.pageTableCell pagetablecell = this.cell;
             if (pagetablecell.align_right) {
-                this.textX = i2 + ((this.measuredWidth - this.textWidth) - TableLayout.this.itemPaddingLeft);
+                this.textX = i + ((this.measuredWidth - this.textWidth) - TableLayout.this.itemPaddingLeft);
             } else if (!pagetablecell.align_center) {
-                this.textX = i2 + TableLayout.this.itemPaddingLeft;
+                this.textX = i + TableLayout.this.itemPaddingLeft;
             } else {
-                this.textX = i2 + Math.round((this.measuredWidth - this.textWidth) / 2.0f);
+                this.textX = i + Math.round((this.measuredWidth - this.textWidth) / 2.0f);
             }
         }
 
@@ -256,17 +255,9 @@ public class TableLayout extends View {
         /* JADX INFO: Access modifiers changed from: private */
         public void setRenderVerticalGeometry(int i, int i2) {
             this.y = i;
-            int max = Math.max(0, i2 - i);
-            this.measuredHeight = max;
-            TL_iv.pageTableCell pagetablecell = this.cell;
-            if (pagetablecell != null) {
-                if (pagetablecell.valign_middle) {
-                    this.textY = (max - this.textHeight) / 2;
-                } else if (pagetablecell.valign_bottom) {
-                    this.textY = (max - this.textHeight) - TableLayout.this.itemPaddingBottom;
-                } else {
-                    this.textY = TableLayout.this.itemPaddingTop;
-                }
+            this.measuredHeight = Math.max(0, i2 - i);
+            if (this.cell != null) {
+                updateTextY();
             }
         }
 
@@ -306,14 +297,8 @@ public class TableLayout extends View {
         }
 
         public void setFixedHeight(int i) {
-            int i2 = this.fixedHeight;
-            this.measuredHeight = i2;
-            TL_iv.pageTableCell pagetablecell = this.cell;
-            if (pagetablecell.valign_middle) {
-                this.textY = (i2 - this.textHeight) / 2;
-            } else if (pagetablecell.valign_bottom) {
-                this.textY = (i2 - this.textHeight) - TableLayout.this.itemPaddingBottom;
-            }
+            this.measuredHeight = this.fixedHeight;
+            updateTextY();
         }
 
         public void draw(Canvas canvas, View view) {
