@@ -367,6 +367,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     private int[] location;
     private float lockAnimatedTranslation;
     private Drawable lockShadowDrawable;
+    private View mCustomWindowView;
     private EditTextBoldCursor mOverrideEditTextView;
     private View.AccessibilityDelegate mediaMessageButtonsDelegate;
     public EditTextCaption messageEditText;
@@ -6522,6 +6523,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         return string == null || !string.startsWith("com.samsung");
     }
 
+    public void setCustomWindowView(View view) {
+        this.mCustomWindowView = view;
+        this.messageEditText.setWindowView(view);
+    }
+
     private void createMessageEditText() {
         if (this.messageEditText != null) {
             return;
@@ -6594,7 +6600,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.EditTextEffects, android.widget.TextView, android.view.View
             protected void onAttachedToWindow() {
                 super.onAttachedToWindow();
-                if (ChatActivityEnterView.this.parentFragment == null || ChatActivityEnterView.this.parentFragment.getParentLayout() == null || !ChatActivityEnterView.this.parentFragment.getParentLayout().isSheet()) {
+                if (ChatActivityEnterView.this.mCustomWindowView != null) {
+                    setWindowView(ChatActivityEnterView.this.mCustomWindowView);
+                } else if (ChatActivityEnterView.this.parentFragment == null || ChatActivityEnterView.this.parentFragment.getParentLayout() == null || !ChatActivityEnterView.this.parentFragment.getParentLayout().isSheet()) {
                     setWindowView(ChatActivityEnterView.this.parentActivity.getWindow().getDecorView());
                 } else {
                     setWindowView(ChatActivityEnterView.this.parentFragment.getParentLayout().getWindow().getDecorView());

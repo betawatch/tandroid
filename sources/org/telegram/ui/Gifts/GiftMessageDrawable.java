@@ -12,6 +12,8 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
+import me.vkryl.android.animator.BoolAnimator;
+import me.vkryl.android.animator.FactorAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.ImageLocation;
@@ -23,10 +25,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AvatarDrawable;
+import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.blur3.utils.NinePatchBuilder;
 
 /* loaded from: classes5.dex */
 public class GiftMessageDrawable extends Drawable {
+    private boolean alwaysUseAvatarAnimator;
+    private final BoolAnimator animatorAvatarVisible;
     private final AvatarDrawable avatarDrawable;
     private final int avatarLeftPadding;
     private final int avatarRadius;
@@ -77,6 +82,17 @@ public class GiftMessageDrawable extends Drawable {
         this.lastBaselineBottom = AndroidUtilities.dpf2(7.33f);
         this.textPaddingH = AndroidUtilities.dp(8.0f);
         this.minHeight = (int) AndroidUtilities.dpf2(22.66f);
+        this.animatorAvatarVisible = new BoolAnimator(0, new FactorAnimator.Target() { // from class: org.telegram.ui.Gifts.GiftMessageDrawable$$ExternalSyntheticLambda0
+            @Override // me.vkryl.android.animator.FactorAnimator.Target
+            public /* synthetic */ void onFactorChangeFinished(int i, float f, FactorAnimator factorAnimator) {
+                FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i, f, factorAnimator);
+            }
+
+            @Override // me.vkryl.android.animator.FactorAnimator.Target
+            public final void onFactorChanged(int i, float f, float f2, FactorAnimator factorAnimator) {
+                GiftMessageDrawable.this.lambda$new$0(i, f, f2, factorAnimator);
+            }
+        }, CubicBezierInterpolator.EASE_OUT_QUINT, 320L, true);
         this.bubble = createBubbleNinePatch(R.drawable.gift_message_bubble_24);
         this.bubbleBorder = createBubbleNinePatch(R.drawable.gift_message_bubble_border_24);
         textPaint.setTextSize(AndroidUtilities.dp(12.0f));
@@ -125,7 +141,7 @@ public class GiftMessageDrawable extends Drawable {
     }
 
     private int getTextLeftPadding() {
-        return (this.hasAvatar ? this.avatarLeftPadding + this.avatarSize : 0) + this.textPaddingH;
+        return ((this.hasAvatar || this.alwaysUseAvatarAnimator) ? this.avatarLeftPadding + this.avatarSize : 0) + this.textPaddingH;
     }
 
     public int getLineCount() {
@@ -189,9 +205,23 @@ public class GiftMessageDrawable extends Drawable {
         return this.measuredHeight;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0(int i, float f, float f2, FactorAnimator factorAnimator) {
+        invalidateSelf();
+    }
+
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
+        float f;
         Rect bounds = getBounds();
+        canvas.save();
+        if (this.alwaysUseAvatarAnimator) {
+            float floatValue = this.animatorAvatarVisible.getFloatValue();
+            canvas.translate(((-(this.avatarLeftPadding + this.avatarSize)) / 2.0f) * (1.0f - floatValue), 0.0f);
+            f = floatValue;
+        } else {
+            f = this.hasAvatar ? 1.0f : 0.0f;
+        }
         DrawableUtils.setBoundsIncreasePadding(this.bubble, bounds.left + (this.hasAvatar ? this.avatarLeftPadding + this.avatarSize : 0), bounds.top, bounds.right, bounds.bottom);
         this.bubble.draw(canvas);
         DrawableUtils.setBoundsIncreasePadding(this.bubbleBorder, bounds.left + (this.hasAvatar ? this.avatarLeftPadding + this.avatarSize : 0), bounds.top, bounds.right, bounds.bottom);
@@ -208,15 +238,19 @@ public class GiftMessageDrawable extends Drawable {
             }
             canvas.restore();
         }
-        if (this.hasAvatar) {
+        if (f > 0.0f) {
             int i = bounds.left;
             int i2 = bounds.bottom;
             int i3 = this.avatarSize;
-            float f = i2 - i3;
-            float f2 = i3;
-            this.avatarReceiver.setImageCoords(i, f, f2, f2);
+            float f2 = i2 - i3;
+            float f3 = i3;
+            this.avatarReceiver.setImageCoords(i, f2, f3, f3);
+            canvas.save();
+            canvas.scale(f, f, this.avatarReceiver.getCenterX(), this.avatarReceiver.getCenterY());
             this.avatarReceiver.draw(canvas);
+            canvas.restore();
         }
+        canvas.restore();
     }
 
     private static NinePatchDrawable createBubbleNinePatch(int i) {
