@@ -4,26 +4,24 @@ import java.util.Arrays;
 
 /* loaded from: classes3.dex */
 public final class BitMatrix implements Cloneable {
-    private final int[] bits;
-    private final int height;
-    private final int multiple;
-    private final int rowSize;
-    private final int width;
+    private int[] bits;
+    private int height;
+    private int rowSize;
+    private int width;
 
     public BitMatrix(int i) {
-        this(i, i, 1);
+        this(i, i);
     }
 
-    public BitMatrix(int i, int i2, int i3) {
+    public BitMatrix(int i, int i2) {
         if (i < 1 || i2 < 1) {
             throw new IllegalArgumentException("Both dimensions must be greater than 0");
         }
         this.width = i;
         this.height = i2;
-        this.multiple = i3;
-        int i4 = (i + 31) / 32;
-        this.rowSize = i4;
-        this.bits = new int[i4 * i2];
+        int i3 = (i + 31) / 32;
+        this.rowSize = i3;
+        this.bits = new int[i3 * i2];
     }
 
     private BitMatrix(int i, int i2, int i3, int[] iArr) {
@@ -31,7 +29,6 @@ public final class BitMatrix implements Cloneable {
         this.height = i2;
         this.rowSize = i3;
         this.bits = iArr;
-        this.multiple = 1;
     }
 
     public boolean get(int i, int i2) {

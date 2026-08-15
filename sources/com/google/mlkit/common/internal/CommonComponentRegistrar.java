@@ -17,7 +17,7 @@ import com.google.mlkit.common.sdkinternal.SharedPrefManager;
 import com.google.mlkit.common.sdkinternal.model.ModelFileHelper;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class CommonComponentRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {

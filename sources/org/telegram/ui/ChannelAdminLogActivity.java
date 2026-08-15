@@ -49,9 +49,7 @@ import android.widget.Toast;
 import androidx.collection.LongSparseArray;
 import androidx.core.content.FileProvider;
 import androidx.core.math.MathUtils;
-import androidx.recyclerview.widget.ChatListItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.LinearSmoothScrollerCustom;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
 import j$.util.Collection;
@@ -169,6 +167,8 @@ import org.telegram.ui.Components.chat.layouts.ChatActivityChannelButtonsLayout;
 import org.telegram.ui.Components.chat.layouts.ChatActivityFadeView;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.recyclerview.ChatListItemAnimator;
+import org.telegram.ui.recyclerview.LinearSmoothScrollerCustom;
 
 /* loaded from: classes4.dex */
 public class ChannelAdminLogActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
@@ -1721,7 +1721,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             this.scrollAnimationIndex = -1;
         }
 
-        @Override // androidx.recyclerview.widget.ChatListItemAnimator
+        @Override // org.telegram.ui.recyclerview.ChatListItemAnimator
         public void onAnimationStart() {
             if (this.scrollAnimationIndex == -1) {
                 this.scrollAnimationIndex = ChannelAdminLogActivity.this.getNotificationCenter().setAnimationInProgress(this.scrollAnimationIndex, ChannelAdminLogActivity.allowedNotificationsDuringChatListAnimations, false);
@@ -1736,7 +1736,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             }
         }
 
-        @Override // androidx.recyclerview.widget.ChatListItemAnimator, androidx.recyclerview.widget.DefaultItemAnimator
+        @Override // org.telegram.ui.recyclerview.ChatListItemAnimator, androidx.recyclerview.widget.DefaultItemAnimator
         protected void onAllAnimationsDone() {
             super.onAllAnimationsDone();
             Runnable runnable = this.finishRunnable;

@@ -25,15 +25,15 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
     protected ArrayList mPendingAdditions = new ArrayList();
     protected ArrayList mPendingMoves = new ArrayList();
     protected ArrayList mPendingChanges = new ArrayList();
-    ArrayList mAdditionsList = new ArrayList();
-    ArrayList mMovesList = new ArrayList();
-    ArrayList mChangesList = new ArrayList();
-    ArrayList currentMoves = new ArrayList();
-    ArrayList currentChanges = new ArrayList();
+    protected ArrayList mAdditionsList = new ArrayList();
+    protected ArrayList mMovesList = new ArrayList();
+    protected ArrayList mChangesList = new ArrayList();
+    protected ArrayList currentMoves = new ArrayList();
+    protected ArrayList currentChanges = new ArrayList();
     protected ArrayList mAddAnimations = new ArrayList();
     protected ArrayList mMoveAnimations = new ArrayList();
     protected ArrayList mRemoveAnimations = new ArrayList();
-    ArrayList mChangeAnimations = new ArrayList();
+    protected ArrayList mChangeAnimations = new ArrayList();
     protected boolean delayAnimations = true;
     private long delayIncrement = 0;
 
@@ -92,7 +92,8 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
         }
     }
 
-    protected static class ChangeInfo {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public static class ChangeInfo {
         public int fromX;
         public int fromY;
         public RecyclerView.ViewHolder newHolder;
@@ -105,7 +106,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
             this.newHolder = viewHolder2;
         }
 
-        ChangeInfo(RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder viewHolder2, int i, int i2, int i3, int i4) {
+        public ChangeInfo(RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder viewHolder2, int i, int i2, int i3, int i4) {
             this(viewHolder, viewHolder2);
             this.fromX = i;
             this.fromY = i2;
@@ -824,7 +825,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
         }
     }
 
-    void cancelAll(List list) {
+    protected void cancelAll(List list) {
         for (int size = list.size() - 1; size >= 0; size--) {
             ((RecyclerView.ViewHolder) list.get(size)).itemView.animate().cancel();
         }

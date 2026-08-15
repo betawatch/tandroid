@@ -4,12 +4,16 @@ import com.google.zxing.EncodeHintType;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitArray;
 import com.google.zxing.common.CharacterSetECI;
+import com.google.zxing.common.StringUtils;
 import com.google.zxing.common.reedsolomon.GenericGF;
 import com.google.zxing.common.reedsolomon.ReedSolomonEncoder;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import com.google.zxing.qrcode.decoder.Mode;
 import com.google.zxing.qrcode.decoder.Version;
-import java.io.UnsupportedEncodingException;
+import com.google.zxing.qrcode.encoder.MinimalEncoder;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.charset.UnsupportedCharsetException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
@@ -19,109 +23,189 @@ import org.telegram.tgnet.ConnectionsManager;
 /* loaded from: classes3.dex */
 public abstract class Encoder {
     private static final int[] ALPHANUMERIC_TABLE = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 36, -1, -1, -1, 37, 38, -1, -1, -1, -1, 39, 40, -1, 41, 42, 43, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 44, -1, -1, -1, -1, -1, -1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, -1, -1, -1, -1, -1};
+    static final Charset DEFAULT_BYTE_MODE_ENCODING = StandardCharsets.ISO_8859_1;
 
     private static int calculateMaskPenalty(ByteMatrix byteMatrix) {
         return MaskUtil.applyMaskPenaltyRule1(byteMatrix) + MaskUtil.applyMaskPenaltyRule2(byteMatrix) + MaskUtil.applyMaskPenaltyRule3(byteMatrix) + MaskUtil.applyMaskPenaltyRule4(byteMatrix);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x00f4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x013c, code lost:
     
-        if (com.google.zxing.qrcode.encoder.QRCode.isValidMaskPattern(r8) != false) goto L44;
+        if (com.google.zxing.qrcode.encoder.QRCode.isValidMaskPattern(r8) != false) goto L62;
      */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0097  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00dc  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00fa  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x009c  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x003c  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0142  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0077  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0047 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x001f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static QRCode encode(String str, ErrorCorrectionLevel errorCorrectionLevel, Map map) {
-        String str2;
+        boolean z;
+        boolean z2;
         Version recommendVersion;
+        Mode mode;
+        Version version;
+        BitArray bitArray;
+        CharacterSetECI characterSetECI;
         int i;
-        CharacterSetECI characterSetECIByName;
-        boolean z = map != null && map.containsKey(EncodeHintType.CHARACTER_SET);
-        if (!z) {
-            str2 = "ISO-8859-1";
-        } else {
-            str2 = map.get(EncodeHintType.CHARACTER_SET).toString();
-        }
-        Mode chooseMode = chooseMode(str, str2);
-        BitArray bitArray = new BitArray();
-        Mode mode = Mode.BYTE;
-        if (chooseMode == mode && z && (characterSetECIByName = CharacterSetECI.getCharacterSetECIByName(str2)) != null) {
-            appendECI(characterSetECIByName, bitArray);
-        }
+        boolean z3 = false;
         if (map != null) {
             EncodeHintType encodeHintType = EncodeHintType.GS1_FORMAT;
             if (map.containsKey(encodeHintType) && Boolean.parseBoolean(map.get(encodeHintType).toString())) {
-                appendModeInfo(Mode.FNC1_FIRST_POSITION, bitArray);
-            }
-        }
-        appendModeInfo(chooseMode, bitArray);
-        BitArray bitArray2 = new BitArray();
-        appendBytes(str, chooseMode, bitArray2, str2);
-        if (map != null) {
-            EncodeHintType encodeHintType2 = EncodeHintType.QR_VERSION;
-            if (map.containsKey(encodeHintType2)) {
-                recommendVersion = Version.getVersionForNumber(Integer.parseInt(map.get(encodeHintType2).toString()));
-                if (!willFit(calculateBitsNeeded(chooseMode, bitArray, bitArray2, recommendVersion), recommendVersion, errorCorrectionLevel)) {
-                    throw new WriterException("Data too big for requested version");
-                }
-                BitArray bitArray3 = new BitArray();
-                bitArray3.appendBitArray(bitArray);
-                appendLengthInfo(chooseMode != mode ? bitArray2.getSizeInBytes() : str.length(), recommendVersion, chooseMode, bitArray3);
-                bitArray3.appendBitArray(bitArray2);
-                Version.ECBlocks eCBlocksForLevel = recommendVersion.getECBlocksForLevel(errorCorrectionLevel);
-                int totalCodewords = recommendVersion.getTotalCodewords() - eCBlocksForLevel.getTotalECCodewords();
-                terminateBits(totalCodewords, bitArray3);
-                BitArray interleaveWithECBytes = interleaveWithECBytes(bitArray3, recommendVersion.getTotalCodewords(), totalCodewords, eCBlocksForLevel.getNumBlocks());
-                QRCode qRCode = new QRCode();
-                qRCode.setECLevel(errorCorrectionLevel);
-                qRCode.setMode(chooseMode);
-                qRCode.setVersion(recommendVersion);
-                int dimensionForVersion = recommendVersion.getDimensionForVersion();
-                ByteMatrix byteMatrix = new ByteMatrix(dimensionForVersion, dimensionForVersion);
+                z = true;
                 if (map != null) {
-                    EncodeHintType encodeHintType3 = EncodeHintType.QR_MASK_PATTERN;
-                    if (map.containsKey(encodeHintType3)) {
-                        i = Integer.parseInt(map.get(encodeHintType3).toString());
+                    EncodeHintType encodeHintType2 = EncodeHintType.QR_COMPACT;
+                    if (map.containsKey(encodeHintType2) && Boolean.parseBoolean(map.get(encodeHintType2).toString())) {
+                        z2 = true;
+                        Charset charset = DEFAULT_BYTE_MODE_ENCODING;
+                        if (map != null && map.containsKey(EncodeHintType.CHARACTER_SET)) {
+                            z3 = true;
+                        }
+                        if (z3) {
+                            try {
+                                charset = Charset.forName(map.get(EncodeHintType.CHARACTER_SET).toString());
+                            } catch (UnsupportedCharsetException unused) {
+                            }
+                        }
+                        if (z2) {
+                            mode = Mode.BYTE;
+                            if (charset.equals(DEFAULT_BYTE_MODE_ENCODING)) {
+                                charset = null;
+                            }
+                            MinimalEncoder.ResultList encode = MinimalEncoder.encode(str, null, charset, z, errorCorrectionLevel);
+                            bitArray = new BitArray();
+                            encode.getBits(bitArray);
+                            version = encode.getVersion();
+                        } else {
+                            Mode chooseMode = chooseMode(str, charset);
+                            BitArray bitArray2 = new BitArray();
+                            Mode mode2 = Mode.BYTE;
+                            if (chooseMode == mode2 && z3 && (characterSetECI = CharacterSetECI.getCharacterSetECI(charset)) != null) {
+                                appendECI(characterSetECI, bitArray2);
+                            }
+                            if (z) {
+                                appendModeInfo(Mode.FNC1_FIRST_POSITION, bitArray2);
+                            }
+                            appendModeInfo(chooseMode, bitArray2);
+                            BitArray bitArray3 = new BitArray();
+                            appendBytes(str, chooseMode, bitArray3, charset);
+                            if (map != null) {
+                                EncodeHintType encodeHintType3 = EncodeHintType.QR_VERSION;
+                                if (map.containsKey(encodeHintType3)) {
+                                    recommendVersion = Version.getVersionForNumber(Integer.parseInt(map.get(encodeHintType3).toString()));
+                                    if (!willFit(calculateBitsNeeded(chooseMode, bitArray2, bitArray3, recommendVersion), recommendVersion, errorCorrectionLevel)) {
+                                        throw new WriterException("Data too big for requested version");
+                                    }
+                                    BitArray bitArray4 = new BitArray();
+                                    bitArray4.appendBitArray(bitArray2);
+                                    appendLengthInfo(chooseMode != mode2 ? bitArray3.getSizeInBytes() : str.length(), recommendVersion, chooseMode, bitArray4);
+                                    bitArray4.appendBitArray(bitArray3);
+                                    mode = chooseMode;
+                                    version = recommendVersion;
+                                    bitArray = bitArray4;
+                                }
+                            }
+                            recommendVersion = recommendVersion(errorCorrectionLevel, chooseMode, bitArray2, bitArray3);
+                            BitArray bitArray42 = new BitArray();
+                            bitArray42.appendBitArray(bitArray2);
+                            appendLengthInfo(chooseMode != mode2 ? bitArray3.getSizeInBytes() : str.length(), recommendVersion, chooseMode, bitArray42);
+                            bitArray42.appendBitArray(bitArray3);
+                            mode = chooseMode;
+                            version = recommendVersion;
+                            bitArray = bitArray42;
+                        }
+                        Version.ECBlocks eCBlocksForLevel = version.getECBlocksForLevel(errorCorrectionLevel);
+                        int totalCodewords = version.getTotalCodewords() - eCBlocksForLevel.getTotalECCodewords();
+                        terminateBits(totalCodewords, bitArray);
+                        BitArray interleaveWithECBytes = interleaveWithECBytes(bitArray, version.getTotalCodewords(), totalCodewords, eCBlocksForLevel.getNumBlocks());
+                        QRCode qRCode = new QRCode();
+                        qRCode.setECLevel(errorCorrectionLevel);
+                        qRCode.setMode(mode);
+                        qRCode.setVersion(version);
+                        int dimensionForVersion = version.getDimensionForVersion();
+                        ByteMatrix byteMatrix = new ByteMatrix(dimensionForVersion, dimensionForVersion);
+                        if (map != null) {
+                            EncodeHintType encodeHintType4 = EncodeHintType.QR_MASK_PATTERN;
+                            if (map.containsKey(encodeHintType4)) {
+                                i = Integer.parseInt(map.get(encodeHintType4).toString());
+                            }
+                        }
+                        i = -1;
+                        if (i == -1) {
+                            i = chooseMaskPattern(interleaveWithECBytes, errorCorrectionLevel, version, byteMatrix);
+                        }
+                        qRCode.setMaskPattern(i);
+                        MatrixUtil.buildMatrix(interleaveWithECBytes, errorCorrectionLevel, version, i, byteMatrix);
+                        qRCode.setMatrix(byteMatrix);
+                        return qRCode;
                     }
+                }
+                z2 = false;
+                Charset charset2 = DEFAULT_BYTE_MODE_ENCODING;
+                if (map != null) {
+                    z3 = true;
+                }
+                if (z3) {
+                }
+                if (z2) {
+                }
+                Version.ECBlocks eCBlocksForLevel2 = version.getECBlocksForLevel(errorCorrectionLevel);
+                int totalCodewords2 = version.getTotalCodewords() - eCBlocksForLevel2.getTotalECCodewords();
+                terminateBits(totalCodewords2, bitArray);
+                BitArray interleaveWithECBytes2 = interleaveWithECBytes(bitArray, version.getTotalCodewords(), totalCodewords2, eCBlocksForLevel2.getNumBlocks());
+                QRCode qRCode2 = new QRCode();
+                qRCode2.setECLevel(errorCorrectionLevel);
+                qRCode2.setMode(mode);
+                qRCode2.setVersion(version);
+                int dimensionForVersion2 = version.getDimensionForVersion();
+                ByteMatrix byteMatrix2 = new ByteMatrix(dimensionForVersion2, dimensionForVersion2);
+                if (map != null) {
                 }
                 i = -1;
                 if (i == -1) {
-                    i = chooseMaskPattern(interleaveWithECBytes, errorCorrectionLevel, recommendVersion, byteMatrix);
                 }
-                qRCode.setMaskPattern(i);
-                MatrixUtil.buildMatrix(interleaveWithECBytes, errorCorrectionLevel, recommendVersion, i, byteMatrix);
-                qRCode.setMatrix(byteMatrix);
-                return qRCode;
+                qRCode2.setMaskPattern(i);
+                MatrixUtil.buildMatrix(interleaveWithECBytes2, errorCorrectionLevel, version, i, byteMatrix2);
+                qRCode2.setMatrix(byteMatrix2);
+                return qRCode2;
             }
         }
-        recommendVersion = recommendVersion(errorCorrectionLevel, chooseMode, bitArray, bitArray2);
-        BitArray bitArray32 = new BitArray();
-        bitArray32.appendBitArray(bitArray);
-        appendLengthInfo(chooseMode != mode ? bitArray2.getSizeInBytes() : str.length(), recommendVersion, chooseMode, bitArray32);
-        bitArray32.appendBitArray(bitArray2);
-        Version.ECBlocks eCBlocksForLevel2 = recommendVersion.getECBlocksForLevel(errorCorrectionLevel);
-        int totalCodewords2 = recommendVersion.getTotalCodewords() - eCBlocksForLevel2.getTotalECCodewords();
-        terminateBits(totalCodewords2, bitArray32);
-        BitArray interleaveWithECBytes2 = interleaveWithECBytes(bitArray32, recommendVersion.getTotalCodewords(), totalCodewords2, eCBlocksForLevel2.getNumBlocks());
-        QRCode qRCode2 = new QRCode();
-        qRCode2.setECLevel(errorCorrectionLevel);
-        qRCode2.setMode(chooseMode);
-        qRCode2.setVersion(recommendVersion);
-        int dimensionForVersion2 = recommendVersion.getDimensionForVersion();
-        ByteMatrix byteMatrix2 = new ByteMatrix(dimensionForVersion2, dimensionForVersion2);
+        z = false;
+        if (map != null) {
+        }
+        z2 = false;
+        Charset charset22 = DEFAULT_BYTE_MODE_ENCODING;
+        if (map != null) {
+        }
+        if (z3) {
+        }
+        if (z2) {
+        }
+        Version.ECBlocks eCBlocksForLevel22 = version.getECBlocksForLevel(errorCorrectionLevel);
+        int totalCodewords22 = version.getTotalCodewords() - eCBlocksForLevel22.getTotalECCodewords();
+        terminateBits(totalCodewords22, bitArray);
+        BitArray interleaveWithECBytes22 = interleaveWithECBytes(bitArray, version.getTotalCodewords(), totalCodewords22, eCBlocksForLevel22.getNumBlocks());
+        QRCode qRCode22 = new QRCode();
+        qRCode22.setECLevel(errorCorrectionLevel);
+        qRCode22.setMode(mode);
+        qRCode22.setVersion(version);
+        int dimensionForVersion22 = version.getDimensionForVersion();
+        ByteMatrix byteMatrix22 = new ByteMatrix(dimensionForVersion22, dimensionForVersion22);
         if (map != null) {
         }
         i = -1;
         if (i == -1) {
         }
-        qRCode2.setMaskPattern(i);
-        MatrixUtil.buildMatrix(interleaveWithECBytes2, errorCorrectionLevel, recommendVersion, i, byteMatrix2);
-        qRCode2.setMatrix(byteMatrix2);
-        return qRCode2;
+        qRCode22.setMaskPattern(i);
+        MatrixUtil.buildMatrix(interleaveWithECBytes22, errorCorrectionLevel, version, i, byteMatrix22);
+        qRCode22.setMatrix(byteMatrix22);
+        return qRCode22;
     }
 
     private static Version recommendVersion(ErrorCorrectionLevel errorCorrectionLevel, Mode mode, BitArray bitArray, BitArray bitArray2) {
@@ -140,8 +224,9 @@ public abstract class Encoder {
         return -1;
     }
 
-    private static Mode chooseMode(String str, String str2) {
-        if ("Shift_JIS".equals(str2) && isOnlyDoubleByteKanji(str)) {
+    private static Mode chooseMode(String str, Charset charset) {
+        Charset charset2 = StringUtils.SHIFT_JIS_CHARSET;
+        if (charset2 != null && charset2.equals(charset) && isOnlyDoubleByteKanji(str)) {
             return Mode.KANJI;
         }
         boolean z = false;
@@ -166,23 +251,19 @@ public abstract class Encoder {
         return Mode.BYTE;
     }
 
-    private static boolean isOnlyDoubleByteKanji(String str) {
-        try {
-            byte[] bytes = str.getBytes("Shift_JIS");
-            int length = bytes.length;
-            if (length % 2 != 0) {
-                return false;
-            }
-            for (int i = 0; i < length; i += 2) {
-                int i2 = bytes[i] & 255;
-                if ((i2 < 129 || i2 > 159) && (i2 < 224 || i2 > 235)) {
-                    return false;
-                }
-            }
-            return true;
-        } catch (UnsupportedEncodingException unused) {
+    static boolean isOnlyDoubleByteKanji(String str) {
+        byte[] bytes = str.getBytes(StringUtils.SHIFT_JIS_CHARSET);
+        int length = bytes.length;
+        if (length % 2 != 0) {
             return false;
         }
+        for (int i = 0; i < length; i += 2) {
+            int i2 = bytes[i] & 255;
+            if ((i2 < 129 || i2 > 159) && (i2 < 224 || i2 > 235)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private static int chooseMaskPattern(BitArray bitArray, ErrorCorrectionLevel errorCorrectionLevel, Version version, ByteMatrix byteMatrix) {
@@ -209,7 +290,7 @@ public abstract class Encoder {
         throw new WriterException("Data too big");
     }
 
-    private static boolean willFit(int i, Version version, ErrorCorrectionLevel errorCorrectionLevel) {
+    static boolean willFit(int i, Version version, ErrorCorrectionLevel errorCorrectionLevel) {
         return version.getTotalCodewords() - version.getECBlocksForLevel(errorCorrectionLevel).getTotalECCodewords() >= (i + 7) / 8;
     }
 
@@ -284,15 +365,15 @@ public abstract class Encoder {
             bitArray.toBytes(i4 * 8, bArr, 0, i8);
             byte[] generateECBytes = generateECBytes(bArr, iArr2[0]);
             arrayList.add(new BlockPair(bArr, generateECBytes));
-            i6 = Math.max(i6, i8);
-            i5 = Math.max(i5, generateECBytes.length);
+            i5 = Math.max(i5, i8);
+            i6 = Math.max(i6, generateECBytes.length);
             i4 += iArr[0];
         }
         if (i2 != i4) {
             throw new WriterException("Data bytes does not match offset");
         }
         BitArray bitArray2 = new BitArray();
-        for (int i9 = 0; i9 < i6; i9++) {
+        for (int i9 = 0; i9 < i5; i9++) {
             Iterator it = arrayList.iterator();
             while (it.hasNext()) {
                 byte[] dataBytes = ((BlockPair) it.next()).getDataBytes();
@@ -301,7 +382,7 @@ public abstract class Encoder {
                 }
             }
         }
-        for (int i10 = 0; i10 < i5; i10++) {
+        for (int i10 = 0; i10 < i6; i10++) {
             Iterator it2 = arrayList.iterator();
             while (it2.hasNext()) {
                 byte[] errorCorrectionBytes = ((BlockPair) it2.next()).getErrorCorrectionBytes();
@@ -368,7 +449,7 @@ public abstract class Encoder {
         }
     }
 
-    static void appendBytes(String str, Mode mode, BitArray bitArray, String str2) {
+    static void appendBytes(String str, Mode mode, BitArray bitArray, Charset charset) {
         int i = 1.$SwitchMap$com$google$zxing$qrcode$decoder$Mode[mode.ordinal()];
         if (i == 1) {
             appendNumericBytes(str, bitArray);
@@ -379,7 +460,7 @@ public abstract class Encoder {
             return;
         }
         if (i == 3) {
-            append8BitBytes(str, bitArray, str2);
+            append8BitBytes(str, bitArray, charset);
         } else {
             if (i == 4) {
                 appendKanjiBytes(str, bitArray);
@@ -433,49 +514,45 @@ public abstract class Encoder {
         }
     }
 
-    static void append8BitBytes(String str, BitArray bitArray, String str2) {
-        try {
-            for (byte b : str.getBytes(str2)) {
-                bitArray.appendBits(b, 8);
-            }
-        } catch (UnsupportedEncodingException e) {
-            throw new WriterException(e);
+    static void append8BitBytes(String str, BitArray bitArray, Charset charset) {
+        for (byte b : str.getBytes(charset)) {
+            bitArray.appendBits(b, 8);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x003c A[LOOP:0: B:6:0x000f->B:13:0x003c, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x004b A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x003e A[LOOP:0: B:6:0x0011->B:13:0x003e, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x004d A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     static void appendKanjiBytes(String str, BitArray bitArray) {
         int i;
-        try {
-            byte[] bytes = str.getBytes("Shift_JIS");
-            if (bytes.length % 2 != 0) {
-                throw new WriterException("Kanji byte size not even");
-            }
-            int length = bytes.length - 1;
-            for (int i2 = 0; i2 < length; i2 += 2) {
-                int i3 = ((bytes[i2] & 255) << 8) | (bytes[i2 + 1] & 255);
-                int i4 = 33088;
-                if (i3 < 33088 || i3 > 40956) {
-                    if (i3 < 57408 || i3 > 60351) {
-                        i = -1;
-                        if (i != -1) {
-                            throw new WriterException("Invalid byte sequence");
-                        }
-                        bitArray.appendBits(((i >> 8) * NotificationCenter.didUpdatePremiumGiftStickers) + (i & NotificationCenter.didReceiveSmsCode), 13);
-                    } else {
-                        i4 = 49472;
+        Charset charset = StringUtils.SHIFT_JIS_CHARSET;
+        if (charset == null) {
+            throw new WriterException("SJIS Charset not supported on this platform");
+        }
+        byte[] bytes = str.getBytes(charset);
+        if (bytes.length % 2 != 0) {
+            throw new WriterException("Kanji byte size not even");
+        }
+        int length = bytes.length - 1;
+        for (int i2 = 0; i2 < length; i2 += 2) {
+            int i3 = ((bytes[i2] & 255) << 8) | (bytes[i2 + 1] & 255);
+            int i4 = 33088;
+            if (i3 < 33088 || i3 > 40956) {
+                if (i3 < 57408 || i3 > 60351) {
+                    i = -1;
+                    if (i != -1) {
+                        throw new WriterException("Invalid byte sequence");
                     }
-                }
-                i = i3 - i4;
-                if (i != -1) {
+                    bitArray.appendBits(((i >> 8) * NotificationCenter.didUpdatePremiumGiftStickers) + (i & NotificationCenter.didReceiveSmsCode), 13);
+                } else {
+                    i4 = 49472;
                 }
             }
-        } catch (UnsupportedEncodingException e) {
-            throw new WriterException(e);
+            i = i3 - i4;
+            if (i != -1) {
+            }
         }
     }
 

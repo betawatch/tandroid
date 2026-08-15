@@ -58,7 +58,6 @@ import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.exoplayer2.util.Consumer;
 import com.google.zxing.EncodeHintType;
-import com.google.zxing.qrcode.QRCodeWriter;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -78,6 +77,7 @@ import org.telegram.messenger.MrzRecognizer;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
+import org.telegram.messenger.TelegramQRCodeWriter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserNameResolver;
 import org.telegram.messenger.UserObject;
@@ -1419,7 +1419,7 @@ public class QrActivity extends BaseFragment {
                 float width4 = ((getWidth() / 2.0f) + f) - f2;
                 float round = ((Math.round((r9 / 4.65f) / r6) * width) / 2) * 0.75f;
                 canvas.drawCircle(width3, width4, round, this.bitmapGradientPaint);
-                QRCodeWriter.drawSideQuads(canvas, f2, f, this.bitmapGradientPaint, 7.0f, width, 16, i, 0.75f, this.radii, true);
+                TelegramQRCodeWriter.drawSideQuads(canvas, f2, f, this.bitmapGradientPaint, 7.0f, width, 16, i, 0.75f, this.radii, true);
                 if (this.logoCenterSet || (qrCenterChangedListener = this.centerChangedListener) == null) {
                     return;
                 }
@@ -1733,7 +1733,7 @@ public class QrActivity extends BaseFragment {
                         HashMap hashMap2 = new HashMap();
                         hashMap2.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.M);
                         hashMap2.put(EncodeHintType.MARGIN, Integer.valueOf(i5));
-                        QRCodeWriter qRCodeWriter = new QRCodeWriter();
+                        TelegramQRCodeWriter telegramQRCodeWriter = new TelegramQRCodeWriter();
                         i6 = 3;
                         Bitmap bitmap2 = null;
                         while (i6 < 5) {
@@ -1746,8 +1746,8 @@ public class QrActivity extends BaseFragment {
                                 hashMap = hashMap2;
                             }
                             try {
-                                bitmap2 = qRCodeWriter.encode(this.link, dp, dp, hashMap2, null, 0.75f, 16777215, i4);
-                                i5 = qRCodeWriter.getImageSize();
+                                bitmap2 = telegramQRCodeWriter.encode(this.link, dp, dp, hashMap2, null, 0.75f, 16777215, i4);
+                                i5 = telegramQRCodeWriter.getImageSize();
                             } catch (Exception unused2) {
                                 if (bitmap2 == null) {
                                 }
@@ -1812,7 +1812,7 @@ public class QrActivity extends BaseFragment {
             HashMap hashMap22 = new HashMap();
             hashMap22.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.M);
             hashMap22.put(EncodeHintType.MARGIN, Integer.valueOf(i5));
-            QRCodeWriter qRCodeWriter2 = new QRCodeWriter();
+            TelegramQRCodeWriter telegramQRCodeWriter2 = new TelegramQRCodeWriter();
             i6 = 3;
             Bitmap bitmap22 = null;
             while (i6 < 5) {

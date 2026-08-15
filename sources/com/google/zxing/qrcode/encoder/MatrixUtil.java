@@ -37,17 +37,21 @@ abstract class MatrixUtil {
     }
 
     static void embedTypeInfo(ErrorCorrectionLevel errorCorrectionLevel, int i, ByteMatrix byteMatrix) {
+        int height;
         BitArray bitArray = new BitArray();
         makeTypeInfoBits(errorCorrectionLevel, i, bitArray);
         for (int i2 = 0; i2 < bitArray.getSize(); i2++) {
             boolean z = bitArray.get((bitArray.getSize() - 1) - i2);
             int[] iArr = TYPE_INFO_COORDINATES[i2];
             byteMatrix.set(iArr[0], iArr[1], z);
+            int i3 = 8;
             if (i2 < 8) {
-                byteMatrix.set((byteMatrix.getWidth() - i2) - 1, 8, z);
+                i3 = (byteMatrix.getWidth() - i2) - 1;
+                height = 8;
             } else {
-                byteMatrix.set(8, (byteMatrix.getHeight() - 7) + (i2 - 8), z);
+                height = (byteMatrix.getHeight() - 7) + (i2 - 8);
             }
+            byteMatrix.set(i3, height, z);
         }
     }
 

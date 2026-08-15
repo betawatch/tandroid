@@ -60,31 +60,35 @@ public final class Decoder {
         }
         byte[] bArr = new byte[i];
         int i2 = 0;
+        int i3 = 0;
         for (DataBlock dataBlock2 : dataBlocks) {
             byte[] codewords = dataBlock2.getCodewords();
             int numDataCodewords = dataBlock2.getNumDataCodewords();
-            correctErrors(codewords, numDataCodewords);
-            int i3 = 0;
-            while (i3 < numDataCodewords) {
-                bArr[i2] = codewords[i3];
+            i2 += correctErrors(codewords, numDataCodewords);
+            int i4 = 0;
+            while (i4 < numDataCodewords) {
+                bArr[i3] = codewords[i4];
+                i4++;
                 i3++;
-                i2++;
             }
         }
-        return DecodedBitStreamParser.decode(bArr, readVersion, errorCorrectionLevel, map);
+        DecoderResult decode = DecodedBitStreamParser.decode(bArr, readVersion, errorCorrectionLevel, map);
+        decode.setErrorsCorrected(Integer.valueOf(i2));
+        return decode;
     }
 
-    private void correctErrors(byte[] bArr, int i) {
+    private int correctErrors(byte[] bArr, int i) {
         int length = bArr.length;
         int[] iArr = new int[length];
         for (int i2 = 0; i2 < length; i2++) {
             iArr[i2] = bArr[i2] & 255;
         }
         try {
-            this.rsDecoder.decode(iArr, bArr.length - i);
+            int decodeWithECCount = this.rsDecoder.decodeWithECCount(iArr, bArr.length - i);
             for (int i3 = 0; i3 < i; i3++) {
                 bArr[i3] = (byte) iArr[i3];
             }
+            return decodeWithECCount;
         } catch (ReedSolomonException unused) {
             throw ChecksumException.getChecksumInstance();
         }

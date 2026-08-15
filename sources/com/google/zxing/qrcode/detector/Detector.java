@@ -1,6 +1,6 @@
 package com.google.zxing.qrcode.detector;
 
-import com.google.android.exoplayer2.ExoPlayerImpl$$ExternalSyntheticThrowCCEIfNotNull0;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.NotFoundException;
 import com.google.zxing.ResultPoint;
@@ -22,7 +22,7 @@ public class Detector {
 
     public final DetectorResult detect(Map map) {
         if (map != null) {
-            ExoPlayerImpl$$ExternalSyntheticThrowCCEIfNotNull0.m(map.get(DecodeHintType.NEED_RESULT_POINT_CALLBACK));
+            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(map.get(DecodeHintType.NEED_RESULT_POINT_CALLBACK));
         }
         return processFinderPatternInfo(new FinderPatternFinder(this.image, null).find(map));
     }
@@ -89,7 +89,7 @@ public class Detector {
         int round = (MathUtils.round(ResultPoint.distance(resultPoint, resultPoint2) / f) + MathUtils.round(ResultPoint.distance(resultPoint, resultPoint3) / f)) / 2;
         int i = round + 7;
         int i2 = i & 3;
-        return i2 != 0 ? i2 != 2 ? i2 != 3 ? i : round + 9 : round + 6 : round + 8;
+        return i2 != 0 ? i2 != 2 ? i2 != 3 ? i : round + 5 : round + 6 : round + 8;
     }
 
     protected final float calculateModuleSize(ResultPoint resultPoint, ResultPoint resultPoint2, ResultPoint resultPoint3) {

@@ -14,6 +14,6 @@ public final class NotFoundException extends ReaderException {
     }
 
     public static NotFoundException getNotFoundInstance() {
-        return INSTANCE;
+        return ReaderException.isStackTrace ? new NotFoundException() : INSTANCE;
     }
 }

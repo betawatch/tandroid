@@ -2648,7 +2648,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
             ChatRightsEditActivity.this.onDonePressed();
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:478:0x08bf  */
+        /* JADX WARN: Removed duplicated region for block: B:492:0x08ef  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -2800,7 +2800,11 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                             textCheckCell2.setIcon((ChatRightsEditActivity.this.myAdminRights.post_messages || z3) ? 0 : R.drawable.permission_locked);
                         }
                     } else if (i == ChatRightsEditActivity.this.manageWelcomeRow) {
-                        textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.EditAdminManageWelcomeMessages), z2 && ChatRightsEditActivity.this.adminRights.manage_welcome_messages, true);
+                        if (UserObject.isBot(ChatRightsEditActivity.this.currentUser)) {
+                            textCheckCell2.setTextAndCheck(LocaleController.getString(ChatRightsEditActivity.this.isChannel ? R.string.EditAdminBotChannelSendWelcomeMessages : R.string.EditAdminBotGroupSendWelcomeMessages), z2 && ChatRightsEditActivity.this.adminRights.manage_welcome_messages, true);
+                        } else {
+                            textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.EditAdminUserManageWelcomeMessages), z2 && ChatRightsEditActivity.this.adminRights.manage_welcome_messages, true);
+                        }
                         if (ChatRightsEditActivity.this.currentType == 2) {
                             textCheckCell2.setIcon((ChatRightsEditActivity.this.myAdminRights.manage_welcome_messages || z3) ? 0 : R.drawable.permission_locked);
                         }

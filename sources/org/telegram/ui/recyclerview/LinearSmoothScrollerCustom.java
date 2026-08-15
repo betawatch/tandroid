@@ -1,4 +1,4 @@
-package androidx.recyclerview.widget;
+package org.telegram.ui.recyclerview;
 
 import android.content.Context;
 import android.graphics.PointF;
@@ -7,15 +7,19 @@ import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* loaded from: classes.dex */
-public abstract class LinearSmoothScrollerEnd extends RecyclerView.SmoothScroller {
+/* loaded from: classes3.dex */
+public class LinearSmoothScrollerCustom extends RecyclerView.SmoothScroller {
     private final float MILLISECONDS_PER_PX;
+    private float durationMultiplier;
+    protected final DecelerateInterpolator mDecelerateInterpolator;
+    protected int mInterimTargetDx;
+    protected int mInterimTargetDy;
+    protected final LinearInterpolator mLinearInterpolator;
     protected PointF mTargetVector;
-    protected final LinearInterpolator mLinearInterpolator = new LinearInterpolator();
-    protected final DecelerateInterpolator mDecelerateInterpolator = new DecelerateInterpolator(1.5f);
-    protected int mInterimTargetDx = 0;
-    protected int mInterimTargetDy = 0;
+    private int offset;
+    private int scrollPosition;
 
     private int clampApplyScroll(int i, int i2) {
         int i3 = i - i2;
@@ -25,20 +29,45 @@ public abstract class LinearSmoothScrollerEnd extends RecyclerView.SmoothScrolle
         return i3;
     }
 
+    public void onEnd() {
+    }
+
     @Override // androidx.recyclerview.widget.RecyclerView.SmoothScroller
     protected void onStart() {
     }
 
-    public LinearSmoothScrollerEnd(Context context) {
+    public LinearSmoothScrollerCustom(Context context, int i) {
+        this.mLinearInterpolator = new LinearInterpolator();
+        this.mDecelerateInterpolator = new DecelerateInterpolator(1.5f);
+        this.mInterimTargetDx = 0;
+        this.mInterimTargetDy = 0;
+        this.durationMultiplier = 1.0f;
         this.MILLISECONDS_PER_PX = 25.0f / context.getResources().getDisplayMetrics().densityDpi;
+        this.scrollPosition = i;
+    }
+
+    public LinearSmoothScrollerCustom(Context context, int i, float f) {
+        this.mLinearInterpolator = new LinearInterpolator();
+        this.mDecelerateInterpolator = new DecelerateInterpolator(1.5f);
+        this.mInterimTargetDx = 0;
+        this.mInterimTargetDy = 0;
+        this.durationMultiplier = f;
+        this.MILLISECONDS_PER_PX = (25.0f / context.getResources().getDisplayMetrics().densityDpi) * f;
+        this.scrollPosition = i;
+    }
+
+    public void setOffset(int i) {
+        this.offset = i;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.SmoothScroller
     protected void onTargetFound(View view, RecyclerView.State state, RecyclerView.SmoothScroller.Action action) {
-        int calculateDxToMakeVisible = calculateDxToMakeVisible(view);
-        int calculateTimeForDeceleration = calculateTimeForDeceleration(calculateDxToMakeVisible);
+        int calculateDyToMakeVisible = calculateDyToMakeVisible(view);
+        int calculateTimeForDeceleration = calculateTimeForDeceleration(calculateDyToMakeVisible);
         if (calculateTimeForDeceleration > 0) {
-            action.update(-calculateDxToMakeVisible, 0, Math.max(400, calculateTimeForDeceleration), this.mDecelerateInterpolator);
+            action.update(0, -calculateDyToMakeVisible, Math.max((int) (this.durationMultiplier * 400.0f), calculateTimeForDeceleration), this.mDecelerateInterpolator);
+        } else {
+            onEnd();
         }
     }
 
@@ -85,25 +114,31 @@ public abstract class LinearSmoothScrollerEnd extends RecyclerView.SmoothScrolle
         action.update((int) (this.mInterimTargetDx * 1.2f), (int) (this.mInterimTargetDy * 1.2f), (int) (calculateTimeForScrolling(10000) * 1.2f), this.mLinearInterpolator);
     }
 
-    public int calculateDxToMakeVisible(View view) {
+    public int calculateDyToMakeVisible(View view) {
+        int paddingTop;
         RecyclerView.LayoutManager layoutManager = getLayoutManager();
-        if (layoutManager != null && layoutManager.canScrollHorizontally()) {
+        if (layoutManager != null && layoutManager.canScrollVertically()) {
             RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) view.getLayoutParams();
-            int decoratedLeft = layoutManager.getDecoratedLeft(view) - ((ViewGroup.MarginLayoutParams) layoutParams).leftMargin;
-            int decoratedRight = layoutManager.getDecoratedRight(view) + ((ViewGroup.MarginLayoutParams) layoutParams).rightMargin;
-            int paddingLeft = layoutManager.getPaddingLeft();
-            int width = layoutManager.getWidth() - layoutManager.getPaddingRight();
-            if (decoratedLeft > paddingLeft && decoratedRight < width) {
-                return 0;
+            int decoratedTop = layoutManager.getDecoratedTop(view) - ((ViewGroup.MarginLayoutParams) layoutParams).topMargin;
+            int decoratedBottom = layoutManager.getDecoratedBottom(view) + ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin;
+            int height = (layoutManager.getHeight() - layoutManager.getPaddingBottom()) - layoutManager.getPaddingTop();
+            int i = decoratedBottom - decoratedTop;
+            int i2 = this.scrollPosition;
+            if (i2 == 2) {
+                paddingTop = layoutManager.getPaddingTop() + this.offset;
+            } else if (i > height) {
+                paddingTop = 0;
+            } else if (i2 == 0) {
+                paddingTop = (height - i) / 2;
+            } else {
+                paddingTop = (layoutManager.getPaddingTop() + this.offset) - AndroidUtilities.dp(88.0f);
             }
-            int i = decoratedRight - decoratedLeft;
-            int i2 = (width - paddingLeft) - i;
-            int i3 = i + i2;
-            int i4 = i2 - decoratedLeft;
+            int i3 = i + paddingTop;
+            int i4 = paddingTop - decoratedTop;
             if (i4 > 0) {
                 return i4;
             }
-            int i5 = i3 - decoratedRight;
+            int i5 = i3 - decoratedBottom;
             if (i5 < 0) {
                 return i5;
             }

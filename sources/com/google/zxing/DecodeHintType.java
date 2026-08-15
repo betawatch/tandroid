@@ -14,7 +14,8 @@ public enum DecodeHintType {
     ASSUME_GS1(Void.class),
     RETURN_CODABAR_START_END(Void.class),
     NEED_RESULT_POINT_CALLBACK(ResultPointCallback.class),
-    ALLOWED_EAN_EXTENSIONS(int[].class);
+    ALLOWED_EAN_EXTENSIONS(int[].class),
+    ALSO_INVERTED(Void.class);
 
     private final Class valueType;
 

@@ -6,14 +6,16 @@ import java.util.List;
 public final class DecoderResult {
     private final List byteSegments;
     private final String ecLevel;
+    private Integer errorsCorrected;
     private int numBits;
     private Object other;
     private final byte[] rawBytes;
     private final int structuredAppendParity;
     private final int structuredAppendSequenceNumber;
+    private final int symbologyModifier;
     private final String text;
 
-    public DecoderResult(byte[] bArr, String str, List list, String str2, int i, int i2) {
+    public DecoderResult(byte[] bArr, String str, List list, String str2, int i, int i2, int i3) {
         this.rawBytes = bArr;
         this.numBits = bArr == null ? 0 : bArr.length * 8;
         this.text = str;
@@ -21,6 +23,7 @@ public final class DecoderResult {
         this.ecLevel = str2;
         this.structuredAppendParity = i2;
         this.structuredAppendSequenceNumber = i;
+        this.symbologyModifier = i3;
     }
 
     public byte[] getRawBytes() {
@@ -37,6 +40,14 @@ public final class DecoderResult {
 
     public String getECLevel() {
         return this.ecLevel;
+    }
+
+    public Integer getErrorsCorrected() {
+        return this.errorsCorrected;
+    }
+
+    public void setErrorsCorrected(Integer num) {
+        this.errorsCorrected = num;
     }
 
     public Object getOther() {
@@ -57,5 +68,9 @@ public final class DecoderResult {
 
     public int getStructuredAppendSequenceNumber() {
         return this.structuredAppendSequenceNumber;
+    }
+
+    public int getSymbologyModifier() {
+        return this.symbologyModifier;
     }
 }

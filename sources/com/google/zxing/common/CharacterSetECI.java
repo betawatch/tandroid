@@ -1,6 +1,7 @@
 package com.google.zxing.common;
 
 import com.google.zxing.FormatException;
+import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.NotificationCenter;
@@ -42,12 +43,14 @@ public enum CharacterSetECI {
 
     static {
         for (CharacterSetECI characterSetECI : values()) {
-            for (int i : characterSetECI.values) {
-                VALUE_TO_ECI.put(Integer.valueOf(i), characterSetECI);
-            }
-            NAME_TO_ECI.put(characterSetECI.name(), characterSetECI);
-            for (String str : characterSetECI.otherEncodingNames) {
-                NAME_TO_ECI.put(str, characterSetECI);
+            if (Charset.isSupported(characterSetECI.name())) {
+                for (int i : characterSetECI.values) {
+                    VALUE_TO_ECI.put(Integer.valueOf(i), characterSetECI);
+                }
+                NAME_TO_ECI.put(characterSetECI.name(), characterSetECI);
+                for (String str : characterSetECI.otherEncodingNames) {
+                    NAME_TO_ECI.put(str, characterSetECI);
+                }
             }
         }
     }
@@ -68,6 +71,14 @@ public enum CharacterSetECI {
 
     public int getValue() {
         return this.values[0];
+    }
+
+    public Charset getCharset() {
+        return Charset.forName(name());
+    }
+
+    public static CharacterSetECI getCharacterSetECI(Charset charset) {
+        return (CharacterSetECI) NAME_TO_ECI.get(charset.name());
     }
 
     public static CharacterSetECI getCharacterSetECIByValue(int i) {

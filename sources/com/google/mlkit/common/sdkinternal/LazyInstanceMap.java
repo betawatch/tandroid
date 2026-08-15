@@ -3,7 +3,7 @@ package com.google.mlkit.common.sdkinternal;
 import java.util.HashMap;
 import java.util.Map;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class LazyInstanceMap {
     private final Map zza = new HashMap();
 

@@ -4,12 +4,13 @@ import java.util.Arrays;
 
 /* loaded from: classes3.dex */
 public final class BitArray implements Cloneable {
+    private static final int[] EMPTY_BITS = new int[0];
     private int[] bits;
     private int size;
 
     public BitArray() {
         this.size = 0;
-        this.bits = new int[1];
+        this.bits = EMPTY_BITS;
     }
 
     BitArray(int[] iArr, int i) {
@@ -27,7 +28,7 @@ public final class BitArray implements Cloneable {
 
     private void ensureCapacity(int i) {
         if (i > this.bits.length * 32) {
-            int[] makeArray = makeArray(i);
+            int[] makeArray = makeArray((int) Math.ceil(i / 0.75f));
             int[] iArr = this.bits;
             System.arraycopy(iArr, 0, makeArray, 0, iArr.length);
             this.bits = makeArray;
@@ -53,15 +54,17 @@ public final class BitArray implements Cloneable {
         if (i2 < 0 || i2 > 32) {
             throw new IllegalArgumentException("Num bits must be between 0 and 32");
         }
-        ensureCapacity(this.size + i2);
-        while (i2 > 0) {
-            boolean z = true;
-            if (((i >> (i2 - 1)) & 1) != 1) {
-                z = false;
+        int i3 = this.size;
+        ensureCapacity(i3 + i2);
+        for (int i4 = i2 - 1; i4 >= 0; i4--) {
+            if (((1 << i4) & i) != 0) {
+                int[] iArr = this.bits;
+                int i5 = i3 / 32;
+                iArr[i5] = iArr[i5] | (1 << (i3 & 31));
             }
-            appendBit(z);
-            i2--;
+            i3++;
         }
+        this.size = i3;
     }
 
     public void appendBitArray(BitArray bitArray) {

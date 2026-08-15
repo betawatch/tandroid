@@ -21,7 +21,7 @@ public class GlobalHistogramBinarizer extends Binarizer {
         LuminanceSource luminanceSource = getLuminanceSource();
         int width = luminanceSource.getWidth();
         int height = luminanceSource.getHeight();
-        BitMatrix bitMatrix = new BitMatrix(width, height, 1);
+        BitMatrix bitMatrix = new BitMatrix(width, height);
         initArrays(width);
         int[] iArr = this.buckets;
         for (int i = 1; i < 5; i++) {

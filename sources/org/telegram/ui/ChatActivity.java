@@ -103,12 +103,10 @@ import androidx.dynamicanimation.animation.DynamicAnimation;
 import androidx.dynamicanimation.animation.FloatValueHolder;
 import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.dynamicanimation.animation.SpringForce;
-import androidx.recyclerview.widget.ChatListItemAnimator;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.GridLayoutManagerFixed;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.LinearSmoothScrollerCustom;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
@@ -487,6 +485,8 @@ import org.telegram.ui.iv.RichEditor;
 import org.telegram.ui.iv.RichEditorListView;
 import org.telegram.ui.iv.RichHtml;
 import org.telegram.ui.iv.RichMediaClipboard;
+import org.telegram.ui.recyclerview.ChatListItemAnimator;
+import org.telegram.ui.recyclerview.LinearSmoothScrollerCustom;
 import org.webrtc.MediaStreamTrack;
 
 /* loaded from: classes4.dex */
@@ -10924,7 +10924,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
         }
 
-        @Override // androidx.recyclerview.widget.ChatListItemAnimator
+        @Override // org.telegram.ui.recyclerview.ChatListItemAnimator
         public void onAnimationStart() {
             ChatActivity chatActivity = ChatActivity.this;
             chatActivity.scrollAnimationIndex = chatActivity.getNotificationCenter().setAnimationInProgress(ChatActivity.this.scrollAnimationIndex, ChatActivity.allowedNotificationsDuringChatListAnimations, false);
@@ -10940,7 +10940,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             ChatActivity.this.chatActivityEnterView.runEmojiPanelAnimation();
         }
 
-        @Override // androidx.recyclerview.widget.ChatListItemAnimator, androidx.recyclerview.widget.DefaultItemAnimator
+        @Override // org.telegram.ui.recyclerview.ChatListItemAnimator, androidx.recyclerview.widget.DefaultItemAnimator
         protected void onAllAnimationsDone() {
             super.onAllAnimationsDone();
             Runnable runnable = this.finishRunnable;
@@ -10970,7 +10970,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
         }
 
-        @Override // androidx.recyclerview.widget.ChatListItemAnimator, androidx.recyclerview.widget.DefaultItemAnimator, androidx.recyclerview.widget.RecyclerView.ItemAnimator
+        @Override // org.telegram.ui.recyclerview.ChatListItemAnimator, androidx.recyclerview.widget.DefaultItemAnimator, androidx.recyclerview.widget.RecyclerView.ItemAnimator
         public void endAnimations() {
             super.endAnimations();
             Runnable runnable = this.finishRunnable;
@@ -59326,6 +59326,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         if (j < 0) {
             if (j == getDialogId()) {
                 this.avatarContainer.openProfile(true);
+                return;
+            }
+            if (getMessagesController().isCommunity(j)) {
+                showDialog(new CommunitySheet(this, -j));
                 return;
             }
             Bundle bundle = new Bundle();

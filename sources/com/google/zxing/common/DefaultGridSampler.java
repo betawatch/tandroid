@@ -9,7 +9,7 @@ public final class DefaultGridSampler extends GridSampler {
         if (i <= 0 || i2 <= 0) {
             throw NotFoundException.getNotFoundInstance();
         }
-        BitMatrix bitMatrix2 = new BitMatrix(i, i2, 1);
+        BitMatrix bitMatrix2 = new BitMatrix(i, i2);
         int i3 = i * 2;
         float[] fArr = new float[i3];
         for (int i4 = 0; i4 < i2; i4++) {

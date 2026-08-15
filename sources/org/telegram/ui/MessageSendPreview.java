@@ -31,7 +31,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.recyclerview.widget.ChatListItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.GridLayoutManagerFixed;
 import androidx.recyclerview.widget.RecyclerView;
@@ -91,6 +90,7 @@ import org.telegram.ui.EmojiAnimationsOverlay;
 import org.telegram.ui.MessageSendPreview;
 import org.telegram.ui.Stars.StarsIntroActivity;
 import org.telegram.ui.Stories.recorder.KeyboardNotifier;
+import org.telegram.ui.recyclerview.ChatListItemAnimator;
 
 /* loaded from: classes4.dex */
 public class MessageSendPreview extends Dialog implements NotificationCenter.NotificationCenterDelegate {
@@ -1614,7 +1614,7 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
             super(chatActivity, recyclerListView, resourcesProvider);
         }
 
-        @Override // androidx.recyclerview.widget.ChatListItemAnimator
+        @Override // org.telegram.ui.recyclerview.ChatListItemAnimator
         public void onAnimationStart() {
             Runnable runnable = this.finishRunnable;
             if (runnable != null) {
@@ -1626,7 +1626,7 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
             }
         }
 
-        @Override // androidx.recyclerview.widget.ChatListItemAnimator, androidx.recyclerview.widget.DefaultItemAnimator
+        @Override // org.telegram.ui.recyclerview.ChatListItemAnimator, androidx.recyclerview.widget.DefaultItemAnimator
         protected void onAllAnimationsDone() {
             super.onAllAnimationsDone();
             Runnable runnable = this.finishRunnable;
@@ -1652,7 +1652,7 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
             }
         }
 
-        @Override // androidx.recyclerview.widget.ChatListItemAnimator, androidx.recyclerview.widget.DefaultItemAnimator, androidx.recyclerview.widget.RecyclerView.ItemAnimator
+        @Override // org.telegram.ui.recyclerview.ChatListItemAnimator, androidx.recyclerview.widget.DefaultItemAnimator, androidx.recyclerview.widget.RecyclerView.ItemAnimator
         public void endAnimations() {
             super.endAnimations();
             Runnable runnable = this.finishRunnable;

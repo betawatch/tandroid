@@ -5,7 +5,7 @@ import com.google.zxing.common.BitSource;
 import com.google.zxing.common.CharacterSetECI;
 import com.google.zxing.common.DecoderResult;
 import com.google.zxing.common.StringUtils;
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
@@ -16,17 +16,25 @@ abstract class DecodedBitStreamParser {
     private static final char[] ALPHANUMERIC_CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:".toCharArray();
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x013b A[LOOP:0: B:2:0x0021->B:23:0x013b, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0100 A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     static DecoderResult decode(byte[] bArr, Version version, ErrorCorrectionLevel errorCorrectionLevel, Map map) {
         Mode forBits;
         Mode mode;
         BitSource bitSource = new BitSource(bArr);
         StringBuilder sb = new StringBuilder(50);
+        int i = 1;
         ArrayList arrayList = new ArrayList(1);
-        int i = -1;
-        int i2 = -1;
         boolean z = false;
+        boolean z2 = false;
+        boolean z3 = false;
+        int i2 = -1;
+        int i3 = -1;
         CharacterSetECI characterSetECI = null;
-        do {
+        while (true) {
             try {
                 if (bitSource.available() < 4) {
                     forBits = Mode.TERMINATOR;
@@ -38,11 +46,23 @@ abstract class DecodedBitStreamParser {
                 switch (iArr[mode2.ordinal()]) {
                     case 5:
                         mode = mode2;
-                        break;
+                        if (mode != Mode.TERMINATOR) {
+                            return new DecoderResult(bArr, sb.toString(), arrayList.isEmpty() ? null : arrayList, errorCorrectionLevel == null ? null : errorCorrectionLevel.toString(), i2, i3, characterSetECI != null ? z2 ? 4 : z3 ? 6 : 2 : z2 ? 3 : z3 ? 5 : 1);
+                        }
+                        i = 1;
                     case 6:
+                        mode = mode2;
+                        z = true;
+                        z2 = true;
+                        if (mode != Mode.TERMINATOR) {
+                        }
+                        break;
                     case 7:
                         mode = mode2;
                         z = true;
+                        z3 = true;
+                        if (mode != Mode.TERMINATOR) {
+                        }
                         break;
                     case 8:
                         mode = mode2;
@@ -50,14 +70,18 @@ abstract class DecodedBitStreamParser {
                             throw FormatException.getFormatInstance();
                         }
                         int readBits = bitSource.readBits(8);
-                        i2 = bitSource.readBits(8);
-                        i = readBits;
+                        i3 = bitSource.readBits(8);
+                        i2 = readBits;
+                        if (mode != Mode.TERMINATOR) {
+                        }
                         break;
                     case 9:
                         mode = mode2;
                         characterSetECI = CharacterSetECI.getCharacterSetECIByValue(parseECIValue(bitSource));
                         if (characterSetECI == null) {
                             throw FormatException.getFormatInstance();
+                        }
+                        if (mode != Mode.TERMINATOR) {
                         }
                         break;
                     case 10:
@@ -67,32 +91,37 @@ abstract class DecodedBitStreamParser {
                         if (readBits2 == 1) {
                             decodeHanziSegment(bitSource, sb, readBits3);
                         }
+                        if (mode != Mode.TERMINATOR) {
+                        }
                         break;
                     default:
                         int readBits4 = bitSource.readBits(mode2.getCharacterCountBits(version));
-                        int i3 = iArr[mode2.ordinal()];
-                        if (i3 == 1) {
+                        int i4 = iArr[mode2.ordinal()];
+                        if (i4 == i) {
                             mode = mode2;
                             decodeNumericSegment(bitSource, sb, readBits4);
-                        } else if (i3 == 2) {
+                        } else if (i4 == 2) {
                             mode = mode2;
                             decodeAlphanumericSegment(bitSource, sb, readBits4, z);
-                        } else if (i3 == 3) {
+                        } else if (i4 == 3) {
                             mode = mode2;
                             decodeByteSegment(bitSource, sb, readBits4, characterSetECI, arrayList, map);
-                        } else if (i3 == 4) {
+                        } else if (i4 == 4) {
                             decodeKanjiSegment(bitSource, sb, readBits4);
                             mode = mode2;
+                            if (mode != Mode.TERMINATOR) {
+                            }
                         } else {
                             throw FormatException.getFormatInstance();
+                        }
+                        if (mode != Mode.TERMINATOR) {
                         }
                         break;
                 }
             } catch (IllegalArgumentException unused) {
                 throw FormatException.getFormatInstance();
             }
-        } while (mode != Mode.TERMINATOR);
-        return new DecoderResult(bArr, sb.toString(), arrayList.isEmpty() ? null : arrayList, errorCorrectionLevel == null ? null : errorCorrectionLevel.toString(), i, i2);
+        }
     }
 
     static /* synthetic */ class 1 {
@@ -145,6 +174,9 @@ abstract class DecodedBitStreamParser {
     }
 
     private static void decodeHanziSegment(BitSource bitSource, StringBuilder sb, int i) {
+        if (StringUtils.GB2312_CHARSET == null) {
+            throw FormatException.getFormatInstance();
+        }
         if (i * 13 > bitSource.available()) {
             throw FormatException.getFormatInstance();
         }
@@ -159,14 +191,13 @@ abstract class DecodedBitStreamParser {
             i2 += 2;
             i--;
         }
-        try {
-            sb.append(new String(bArr, "GB2312"));
-        } catch (UnsupportedEncodingException unused) {
-            throw FormatException.getFormatInstance();
-        }
+        sb.append(new String(bArr, StringUtils.GB2312_CHARSET));
     }
 
     private static void decodeKanjiSegment(BitSource bitSource, StringBuilder sb, int i) {
+        if (StringUtils.SHIFT_JIS_CHARSET == null) {
+            throw FormatException.getFormatInstance();
+        }
         if (i * 13 > bitSource.available()) {
             throw FormatException.getFormatInstance();
         }
@@ -181,15 +212,11 @@ abstract class DecodedBitStreamParser {
             i2 += 2;
             i--;
         }
-        try {
-            sb.append(new String(bArr, "SJIS"));
-        } catch (UnsupportedEncodingException unused) {
-            throw FormatException.getFormatInstance();
-        }
+        sb.append(new String(bArr, StringUtils.SHIFT_JIS_CHARSET));
     }
 
     private static void decodeByteSegment(BitSource bitSource, StringBuilder sb, int i, CharacterSetECI characterSetECI, Collection collection, Map map) {
-        String name;
+        Charset charset;
         if (i * 8 > bitSource.available()) {
             throw FormatException.getFormatInstance();
         }
@@ -198,16 +225,12 @@ abstract class DecodedBitStreamParser {
             bArr[i2] = (byte) bitSource.readBits(8);
         }
         if (characterSetECI == null) {
-            name = StringUtils.guessEncoding(bArr, map);
+            charset = StringUtils.guessCharset(bArr, map);
         } else {
-            name = characterSetECI.name();
+            charset = characterSetECI.getCharset();
         }
-        try {
-            sb.append(new String(bArr, name));
-            collection.add(bArr);
-        } catch (UnsupportedEncodingException unused) {
-            throw FormatException.getFormatInstance();
-        }
+        sb.append(new String(bArr, charset));
+        collection.add(bArr);
     }
 
     private static char toAlphaNumericChar(int i) {

@@ -20,10 +20,9 @@ final class GenericGFPoly {
                 this.coefficients = new int[]{0};
                 return;
             }
-            int i2 = length - i;
-            int[] iArr2 = new int[i2];
+            int[] iArr2 = new int[length - i];
             this.coefficients = iArr2;
-            System.arraycopy(iArr, i, iArr2, 0, i2);
+            System.arraycopy(iArr, i, iArr2, 0, iArr2.length);
             return;
         }
         this.coefficients = iArr;

@@ -38,7 +38,7 @@ public class FinderPatternFinder {
         int i2 = i - 1;
         boolean z2 = false;
         while (i2 < height && !z2) {
-            clearCounts(iArr);
+            doClearCounts(iArr);
             int i3 = 0;
             int i4 = 0;
             while (i3 < width) {
@@ -62,14 +62,14 @@ public class FinderPatternFinder {
                                     i3 = width - 1;
                                 }
                             }
-                            clearCounts(iArr);
+                            doClearCounts(iArr);
                             i = 2;
                             i4 = 0;
                         } else {
-                            shiftCounts2(iArr);
+                            doShiftCounts2(iArr);
                         }
                     } else {
-                        shiftCounts2(iArr);
+                        doShiftCounts2(iArr);
                     }
                     i4 = 3;
                 } else {
@@ -130,15 +130,15 @@ public class FinderPatternFinder {
     }
 
     private int[] getCrossCheckStateCount() {
-        clearCounts(this.crossCheckStateCount);
+        doClearCounts(this.crossCheckStateCount);
         return this.crossCheckStateCount;
     }
 
-    protected final void clearCounts(int[] iArr) {
+    protected static void doClearCounts(int[] iArr) {
         Arrays.fill(iArr, 0);
     }
 
-    protected final void shiftCounts2(int[] iArr) {
+    protected static void doShiftCounts2(int[] iArr) {
         iArr[0] = iArr[2];
         iArr[1] = iArr[3];
         iArr[2] = iArr[4];
@@ -505,44 +505,83 @@ public class FinderPatternFinder {
         return (x * x) + (y * y);
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00db  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00e3 A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private FinderPattern[] selectBestPatterns() {
-        int i = 2;
+        double d;
+        double abs;
         if (this.possibleCenters.size() < 3) {
             throw NotFoundException.getNotFoundInstance();
         }
+        Iterator it = this.possibleCenters.iterator();
+        while (it.hasNext()) {
+            if (((FinderPattern) it.next()).getCount() < 2) {
+                it.remove();
+            }
+        }
         Collections.sort(this.possibleCenters, moduleComparator);
         FinderPattern[] finderPatternArr = new FinderPattern[3];
-        int i2 = 0;
-        double d = Double.MAX_VALUE;
-        while (i2 < this.possibleCenters.size() - i) {
-            FinderPattern finderPattern = (FinderPattern) this.possibleCenters.get(i2);
+        int i = 0;
+        double d2 = Double.MAX_VALUE;
+        while (i < this.possibleCenters.size() - 2) {
+            FinderPattern finderPattern = (FinderPattern) this.possibleCenters.get(i);
             float estimatedModuleSize = finderPattern.getEstimatedModuleSize();
-            i2++;
-            int i3 = i2;
-            while (i3 < this.possibleCenters.size() - 1) {
-                FinderPattern finderPattern2 = (FinderPattern) this.possibleCenters.get(i3);
+            i++;
+            int i2 = i;
+            while (i2 < this.possibleCenters.size() - 1) {
+                FinderPattern finderPattern2 = (FinderPattern) this.possibleCenters.get(i2);
                 double squaredDistance = squaredDistance(finderPattern, finderPattern2);
-                i3++;
-                int i4 = i3;
-                while (i4 < this.possibleCenters.size()) {
-                    FinderPattern finderPattern3 = (FinderPattern) this.possibleCenters.get(i4);
+                i2++;
+                for (int i3 = i2; i3 < this.possibleCenters.size(); i3++) {
+                    FinderPattern finderPattern3 = (FinderPattern) this.possibleCenters.get(i3);
                     if (finderPattern3.getEstimatedModuleSize() <= 1.4f * estimatedModuleSize) {
-                        double[] dArr = {squaredDistance, squaredDistance(finderPattern2, finderPattern3), squaredDistance(finderPattern, finderPattern3)};
-                        Arrays.sort(dArr);
-                        double abs = Math.abs(dArr[2] - (dArr[1] * 2.0d)) + Math.abs(dArr[2] - (dArr[0] * 2.0d));
-                        if (abs < d) {
-                            finderPatternArr[0] = finderPattern;
-                            finderPatternArr[1] = finderPattern2;
-                            finderPatternArr[2] = finderPattern3;
-                            d = abs;
+                        double squaredDistance2 = squaredDistance(finderPattern2, finderPattern3);
+                        double squaredDistance3 = squaredDistance(finderPattern, finderPattern3);
+                        if (squaredDistance < squaredDistance2) {
+                            if (squaredDistance2 <= squaredDistance3) {
+                                d = squaredDistance;
+                                squaredDistance2 = squaredDistance3;
+                                squaredDistance3 = squaredDistance2;
+                            } else if (squaredDistance < squaredDistance3) {
+                                d = squaredDistance;
+                            } else {
+                                d = squaredDistance3;
+                                squaredDistance3 = squaredDistance;
+                            }
+                            abs = Math.abs(squaredDistance2 - (squaredDistance3 * 2.0d)) + Math.abs(squaredDistance2 - (d * 2.0d));
+                            if (abs < d2) {
+                                finderPatternArr[0] = finderPattern;
+                                finderPatternArr[1] = finderPattern2;
+                                finderPatternArr[2] = finderPattern3;
+                                d2 = abs;
+                            }
+                        } else {
+                            if (squaredDistance2 >= squaredDistance3) {
+                                d = squaredDistance3;
+                                squaredDistance3 = squaredDistance2;
+                            } else if (squaredDistance < squaredDistance3) {
+                                d = squaredDistance2;
+                                squaredDistance2 = squaredDistance3;
+                                squaredDistance3 = squaredDistance;
+                                abs = Math.abs(squaredDistance2 - (squaredDistance3 * 2.0d)) + Math.abs(squaredDistance2 - (d * 2.0d));
+                                if (abs < d2) {
+                                }
+                            } else {
+                                d = squaredDistance2;
+                            }
+                            squaredDistance2 = squaredDistance;
+                            abs = Math.abs(squaredDistance2 - (squaredDistance3 * 2.0d)) + Math.abs(squaredDistance2 - (d * 2.0d));
+                            if (abs < d2) {
+                            }
                         }
                     }
-                    i4++;
-                    i = 2;
                 }
             }
         }
-        if (d != Double.MAX_VALUE) {
+        if (d2 != Double.MAX_VALUE) {
             return finderPatternArr;
         }
         throw NotFoundException.getNotFoundInstance();

@@ -1,4 +1,4 @@
-package androidx.recyclerview.widget;
+package org.telegram.ui.recyclerview;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -12,7 +12,6 @@ import android.view.ViewPropertyAnimator;
 import android.view.animation.Interpolator;
 import android.view.animation.OvershootInterpolator;
 import androidx.core.view.ViewCompat;
-import androidx.recyclerview.widget.ChatListItemAnimator;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
@@ -39,8 +38,9 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.ThanosEffect;
 import org.telegram.ui.TextMessageEnterTransition;
 import org.telegram.ui.VoiceMessageEnterTransition;
+import org.telegram.ui.recyclerview.ChatListItemAnimator;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ChatListItemAnimator extends DefaultItemAnimator {
     public static final Interpolator DEFAULT_INTERPOLATOR = new CubicBezierInterpolator(0.19919472913616398d, 0.010644531250000006d, 0.27920937042459737d, 0.91025390625d);
     private final ChatActivity activity;
@@ -120,7 +120,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
             runAlphaEnterTransition();
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.recyclerview.widget.ChatListItemAnimator$$ExternalSyntheticLambda0
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                 ChatListItemAnimator.this.lambda$runPendingAnimations$0(valueAnimator);
@@ -217,7 +217,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                     arrayList4.addAll(this.mPendingMoves);
                     this.mMovesList.add(arrayList4);
                     this.mPendingMoves.clear();
-                    Runnable runnable = new Runnable() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.1
+                    Runnable runnable = new Runnable() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator.1
                         @Override // java.lang.Runnable
                         public void run() {
                             Iterator it2 = arrayList4.iterator();
@@ -226,7 +226,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                                 ChatListItemAnimator.this.animateMoveImpl(moveInfo.holder, moveInfo, z);
                             }
                             arrayList4.clear();
-                            ChatListItemAnimator.this.mMovesList.remove(arrayList4);
+                            ((DefaultItemAnimator) ChatListItemAnimator.this).mMovesList.remove(arrayList4);
                         }
                     };
                     if (this.delayAnimations && !isEmpty) {
@@ -240,7 +240,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                     arrayList5.addAll(this.mPendingChanges);
                     this.mChangesList.add(arrayList5);
                     this.mPendingChanges.clear();
-                    Runnable runnable2 = new Runnable() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.2
+                    Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator.2
                         @Override // java.lang.Runnable
                         public void run() {
                             Iterator it2 = arrayList5.iterator();
@@ -248,7 +248,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                                 ChatListItemAnimator.this.animateChangeImpl((DefaultItemAnimator.ChangeInfo) it2.next());
                             }
                             arrayList5.clear();
-                            ChatListItemAnimator.this.mChangesList.remove(arrayList5);
+                            ((DefaultItemAnimator) ChatListItemAnimator.this).mChangesList.remove(arrayList5);
                         }
                     };
                     if (this.delayAnimations && !isEmpty) {
@@ -262,7 +262,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                     arrayList6.addAll(this.mPendingAdditions);
                     this.mPendingAdditions.clear();
                     this.alphaEnterDelay = 0L;
-                    Collections.sort(arrayList6, new Comparator() { // from class: androidx.recyclerview.widget.ChatListItemAnimator$$ExternalSyntheticLambda7
+                    Collections.sort(arrayList6, new Comparator() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator$$ExternalSyntheticLambda7
                         @Override // java.util.Comparator
                         public final int compare(Object obj, Object obj2) {
                             int lambda$runAlphaEnterTransition$1;
@@ -415,7 +415,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                 this.activity.getChatActivityEnterView().startMessageTransition();
             }
         }
-        animate.translationY(0.0f).setDuration(getMoveDuration()).setInterpolator(this.translationInterpolator).setListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.3
+        animate.translationY(0.0f).setDuration(getMoveDuration()).setInterpolator(this.translationInterpolator).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator.3
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationStart(Animator animator) {
                 ChatListItemAnimator.this.dispatchAddStarting(viewHolder);
@@ -437,7 +437,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                     ((ChatMessageCell) view3).getTransitionParams().messageEntering = false;
                 }
                 animate.setListener(null);
-                if (ChatListItemAnimator.this.mAddAnimations.remove(viewHolder)) {
+                if (((DefaultItemAnimator) ChatListItemAnimator.this).mAddAnimations.remove(viewHolder)) {
                     ChatListItemAnimator.this.dispatchAddFinished(viewHolder);
                     ChatListItemAnimator.this.dispatchFinishedWhenDone();
                 }
@@ -898,7 +898,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                 final BotHelpCell botHelpCell = (BotHelpCell) view2;
                 final float translationY = botHelpCell.getTranslationY();
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.4
+                ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator.4
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public void onAnimationUpdate(ValueAnimator valueAnimator) {
                         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
@@ -917,7 +917,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                     }
                 }
                 animatorSet.setDuration((long) (getMoveDuration() * (z ? 1.9f : 1.0f)));
-                animatorSet.addListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.7
+                animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator.7
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationStart(Animator animator) {
                         ChatListItemAnimator.this.dispatchMoveStarting(viewHolder);
@@ -946,7 +946,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                                 currentMessagesGroup.transitionParams.reset();
                             }
                         }
-                        if (ChatListItemAnimator.this.mMoveAnimations.remove(viewHolder)) {
+                        if (((DefaultItemAnimator) ChatListItemAnimator.this).mMoveAnimations.remove(viewHolder)) {
                             ChatListItemAnimator.this.dispatchMoveFinished(viewHolder);
                             ChatListItemAnimator.this.dispatchFinishedWhenDone();
                         }
@@ -962,7 +962,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                 final UserInfoCell userInfoCell = (UserInfoCell) view3;
                 final float translationY2 = userInfoCell.getTranslationY();
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.5
+                ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator.5
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public void onAnimationUpdate(ValueAnimator valueAnimator) {
                         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
@@ -975,7 +975,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                 if (z) {
                 }
                 animatorSet.setDuration((long) (getMoveDuration() * (z ? 1.9f : 1.0f)));
-                animatorSet.addListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.7
+                animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator.7
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationStart(Animator animator) {
                         ChatListItemAnimator.this.dispatchMoveStarting(viewHolder);
@@ -1004,7 +1004,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                                 currentMessagesGroup.transitionParams.reset();
                             }
                         }
-                        if (ChatListItemAnimator.this.mMoveAnimations.remove(viewHolder)) {
+                        if (((DefaultItemAnimator) ChatListItemAnimator.this).mMoveAnimations.remove(viewHolder)) {
                             ChatListItemAnimator.this.dispatchMoveFinished(viewHolder);
                             ChatListItemAnimator.this.dispatchFinishedWhenDone();
                         }
@@ -1037,7 +1037,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                 final boolean z4 = z3;
                 transitionParams = transitionParams3;
                 chatMessageCell = chatMessageCell3;
-                ofFloat3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.recyclerview.widget.ChatListItemAnimator$$ExternalSyntheticLambda1
+                ofFloat3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator$$ExternalSyntheticLambda1
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                         ChatListItemAnimator.lambda$animateMoveImpl$2(ChatListItemAnimator.MoveInfoExtended.this, transitionParams3, z4, f, hasCaptionLayout, chatMessageCell, iArr, viewHolder, valueAnimator);
@@ -1065,7 +1065,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                     transitionParams2.toDeltaRight = (-moveInfoExtended.deltaRight) - chatMessageCell.getAnimationOffsetX();
                 }
                 chatMessageCell2 = chatMessageCell;
-                ofFloat4.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.recyclerview.widget.ChatListItemAnimator$$ExternalSyntheticLambda2
+                ofFloat4.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator$$ExternalSyntheticLambda2
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                         ChatListItemAnimator.lambda$animateMoveImpl$3(ChatListItemAnimator.MoveInfoExtended.this, transitionParams2, chatMessageCell2, valueAnimator);
@@ -1092,13 +1092,13 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                 final float f3 = currentMessagesGroup.hasCaption ? 1.0f : 0.0f;
                 final boolean z5 = f2 != f3;
                 final MoveInfoExtended moveInfoExtended3 = moveInfoExtended;
-                ofFloat5.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.recyclerview.widget.ChatListItemAnimator$$ExternalSyntheticLambda3
+                ofFloat5.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator$$ExternalSyntheticLambda3
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                         ChatListItemAnimator.lambda$animateMoveImpl$4(MessageObject.GroupedMessages.TransitionParams.this, moveInfoExtended3, z5, f2, f3, recyclerListView, valueAnimator);
                     }
                 });
-                ofFloat5.addListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.6
+                ofFloat5.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator.6
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         MessageObject.GroupedMessages.TransitionParams transitionParams5 = transitionParams4;
@@ -1110,7 +1110,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
             }
             if (moveInfoExtended.animatePinnedBottom) {
                 ValueAnimator ofFloat6 = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat6.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.recyclerview.widget.ChatListItemAnimator$$ExternalSyntheticLambda4
+                ofFloat6.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator$$ExternalSyntheticLambda4
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                         ChatListItemAnimator.lambda$animateMoveImpl$5(ChatMessageCell.TransitionParams.this, chatMessageCell2, valueAnimator);
@@ -1121,7 +1121,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
             if (moveInfoExtended.animateChangeInternal) {
                 ValueAnimator ofFloat7 = ValueAnimator.ofFloat(0.0f, 1.0f);
                 transitionParams2.animateChange = true;
-                ofFloat7.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.recyclerview.widget.ChatListItemAnimator$$ExternalSyntheticLambda5
+                ofFloat7.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator$$ExternalSyntheticLambda5
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                         ChatListItemAnimator.lambda$animateMoveImpl$6(ChatMessageCell.TransitionParams.this, chatMessageCell2, valueAnimator);
@@ -1137,7 +1137,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                 if (moveInfoExtended2.animateChangeInternal) {
                     ValueAnimator ofFloat8 = ValueAnimator.ofFloat(0.0f, 1.0f);
                     transitionParams5.animateChange = true;
-                    ofFloat8.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.recyclerview.widget.ChatListItemAnimator$$ExternalSyntheticLambda6
+                    ofFloat8.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator$$ExternalSyntheticLambda6
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                             ChatListItemAnimator.lambda$animateMoveImpl$7(ChatActionCell.TransitionParams.this, chatActionCell, valueAnimator);
@@ -1150,7 +1150,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
         if (z) {
         }
         animatorSet.setDuration((long) (getMoveDuration() * (z ? 1.9f : 1.0f)));
-        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.7
+        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator.7
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationStart(Animator animator) {
                 ChatListItemAnimator.this.dispatchMoveStarting(viewHolder);
@@ -1179,7 +1179,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                         currentMessagesGroup2.transitionParams.reset();
                     }
                 }
-                if (ChatListItemAnimator.this.mMoveAnimations.remove(viewHolder)) {
+                if (((DefaultItemAnimator) ChatListItemAnimator.this).mMoveAnimations.remove(viewHolder)) {
                     ChatListItemAnimator.this.dispatchMoveFinished(viewHolder);
                     ChatListItemAnimator.this.dispatchFinishedWhenDone();
                 }
@@ -1314,7 +1314,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
             this.mChangeAnimations.add(changeInfo.oldHolder);
             duration.translationX(changeInfo.toX - changeInfo.fromX);
             duration.translationY(changeInfo.toY - changeInfo.fromY);
-            duration.alpha(0.0f).setListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.8
+            duration.alpha(0.0f).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator.8
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationStart(Animator animator) {
                     ChatListItemAnimator.this.dispatchChangeStarting(changeInfo.oldHolder, true);
@@ -1333,7 +1333,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                         view3.setTranslationX(0.0f);
                     }
                     view.setTranslationY(0.0f);
-                    if (ChatListItemAnimator.this.mChangeAnimations.remove(changeInfo.oldHolder)) {
+                    if (((DefaultItemAnimator) ChatListItemAnimator.this).mChangeAnimations.remove(changeInfo.oldHolder)) {
                         ChatListItemAnimator.this.dispatchChangeFinished(changeInfo.oldHolder, true);
                         ChatListItemAnimator.this.dispatchFinishedWhenDone();
                     }
@@ -1343,7 +1343,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
         if (view2 != null) {
             final ViewPropertyAnimator animate = view2.animate();
             this.mChangeAnimations.add(changeInfo.newHolder);
-            animate.translationX(0.0f).translationY(0.0f).setDuration(getChangeDuration()).alpha(1.0f).setListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.9
+            animate.translationX(0.0f).translationY(0.0f).setDuration(getChangeDuration()).alpha(1.0f).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator.9
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationStart(Animator animator) {
                     ChatListItemAnimator.this.dispatchChangeStarting(changeInfo.newHolder, false);
@@ -1362,7 +1362,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                         view3.setTranslationX(0.0f);
                     }
                     view2.setTranslationY(0.0f);
-                    if (ChatListItemAnimator.this.mChangeAnimations.remove(changeInfo.newHolder)) {
+                    if (((DefaultItemAnimator) ChatListItemAnimator.this).mChangeAnimations.remove(changeInfo.newHolder)) {
                         ChatListItemAnimator.this.dispatchChangeFinished(changeInfo.newHolder, false);
                         ChatListItemAnimator.this.dispatchFinishedWhenDone();
                     }
@@ -1676,13 +1676,13 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                 chatMessageCell2.getTransitionParams().animateDrawingTimeAlpha = true;
                 chatMessageCell2.getPhotoImage().setImageCoords(imageX2 + f, imageX2 + f2, width, height);
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.recyclerview.widget.ChatListItemAnimator$$ExternalSyntheticLambda8
+                ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator$$ExternalSyntheticLambda9
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                         ChatListItemAnimator.lambda$animateAddImpl$8(ChatMessageCell.this, imageX2, f, imageY2, f2, width, imageWidth, height, imageHeight, valueAnimator);
                     }
                 });
-                ofFloat.addListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.10
+                ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator.10
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         chatMessageCell2.getTransitionParams().resetAnimation();
@@ -1714,7 +1714,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                     animatorSet.setStartDelay(max);
                     animatorSet.setDuration(250L);
                 }
-                animatorSet.addListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.11
+                animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator.11
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationStart(Animator animator) {
                         ChatListItemAnimator.this.dispatchAddStarting(viewHolder);
@@ -1733,7 +1733,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                         view.setScaleY(1.0f);
                         view.setTranslationY(0.0f);
                         view.setTranslationY(0.0f);
-                        if (ChatListItemAnimator.this.mAddAnimations.remove(viewHolder)) {
+                        if (((DefaultItemAnimator) ChatListItemAnimator.this).mAddAnimations.remove(viewHolder)) {
                             ChatListItemAnimator.this.dispatchAddFinished(viewHolder);
                             ChatListItemAnimator.this.dispatchFinishedWhenDone();
                         }
@@ -1766,7 +1766,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
         }
         if (viewHolder != this.greetingsSticker) {
         }
-        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.11
+        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator.11
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationStart(Animator animator) {
                 ChatListItemAnimator.this.dispatchAddStarting(viewHolder);
@@ -1785,7 +1785,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                 view.setScaleY(1.0f);
                 view.setTranslationY(0.0f);
                 view.setTranslationY(0.0f);
-                if (ChatListItemAnimator.this.mAddAnimations.remove(viewHolder)) {
+                if (((DefaultItemAnimator) ChatListItemAnimator.this).mAddAnimations.remove(viewHolder)) {
                     ChatListItemAnimator.this.dispatchAddFinished(viewHolder);
                     ChatListItemAnimator.this.dispatchFinishedWhenDone();
                 }
@@ -1820,7 +1820,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
         if (z && (callback0Return = this.getThanosEffectContainer) != null) {
             ThanosEffect thanosEffect = (ThanosEffect) callback0Return.run();
             dispatchRemoveStarting(viewHolder);
-            thanosEffect.animate(view, new Runnable() { // from class: androidx.recyclerview.widget.ChatListItemAnimator$$ExternalSyntheticLambda10
+            thanosEffect.animate(view, new Runnable() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator$$ExternalSyntheticLambda8
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatListItemAnimator.this.lambda$animateRemoveImpl$9(view, viewHolder);
@@ -1831,7 +1831,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f);
             dispatchRemoveStarting(viewHolder);
             ofFloat.setDuration(getRemoveDuration());
-            ofFloat.addListener(new AnimatorListenerAdapter() { // from class: androidx.recyclerview.widget.ChatListItemAnimator.12
+            ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator.12
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     animator.removeAllListeners();
@@ -1840,7 +1840,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
                     view.setScaleY(1.0f);
                     view.setTranslationX(0.0f);
                     view.setTranslationY(0.0f);
-                    if (ChatListItemAnimator.this.mRemoveAnimations.remove(viewHolder)) {
+                    if (((DefaultItemAnimator) ChatListItemAnimator.this).mRemoveAnimations.remove(viewHolder)) {
                         ChatListItemAnimator.this.dispatchRemoveFinished(viewHolder);
                         ChatListItemAnimator.this.dispatchFinishedWhenDone();
                     }
@@ -1875,7 +1875,7 @@ public abstract class ChatListItemAnimator extends DefaultItemAnimator {
         for (int i2 = 0; i2 < arrayList.size(); i2++) {
             arrayList2.add(((RecyclerView.ViewHolder) arrayList.get(i2)).itemView);
         }
-        thanosEffect.animateGroup(arrayList2, new Runnable() { // from class: androidx.recyclerview.widget.ChatListItemAnimator$$ExternalSyntheticLambda9
+        thanosEffect.animateGroup(arrayList2, new Runnable() { // from class: org.telegram.ui.recyclerview.ChatListItemAnimator$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
                 ChatListItemAnimator.this.lambda$animateRemoveGroupImpl$10(arrayList2, arrayList);

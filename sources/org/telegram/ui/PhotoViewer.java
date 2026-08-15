@@ -119,7 +119,6 @@ import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.dynamicanimation.animation.SpringForce;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.LinearSmoothScrollerEnd;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.Format;
@@ -337,6 +336,7 @@ import org.telegram.ui.Stories.DarkThemeResourceProvider;
 import org.telegram.ui.Stories.recorder.CaptionContainerView;
 import org.telegram.ui.Stories.recorder.HintView2;
 import org.telegram.ui.Stories.recorder.KeyboardNotifier;
+import org.telegram.ui.recyclerview.LinearSmoothScrollerEnd;
 import org.webrtc.MediaStreamTrack;
 
 /* loaded from: classes4.dex */
@@ -6964,7 +6964,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i11) {
                 LinearSmoothScrollerEnd linearSmoothScrollerEnd = new LinearSmoothScrollerEnd(recyclerView.getContext()) { // from class: org.telegram.ui.PhotoViewer.36.1
-                    @Override // androidx.recyclerview.widget.LinearSmoothScrollerEnd
+                    @Override // org.telegram.ui.recyclerview.LinearSmoothScrollerEnd
                     protected int calculateTimeForDeceleration(int i12) {
                         return Math.max(NotificationCenter.needDeleteDialog, super.calculateTimeForDeceleration(i12));
                     }

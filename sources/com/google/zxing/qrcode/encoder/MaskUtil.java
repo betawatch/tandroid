@@ -51,21 +51,27 @@ abstract class MaskUtil {
     }
 
     private static boolean isWhiteHorizontal(byte[] bArr, int i, int i2) {
-        int min = Math.min(i2, bArr.length);
-        for (int max = Math.max(i, 0); max < min; max++) {
-            if (bArr[max] == 1) {
+        if (i < 0 || bArr.length < i2) {
+            return false;
+        }
+        while (i < i2) {
+            if (bArr[i] == 1) {
                 return false;
             }
+            i++;
         }
         return true;
     }
 
     private static boolean isWhiteVertical(byte[][] bArr, int i, int i2, int i3) {
-        int min = Math.min(i3, bArr.length);
-        for (int max = Math.max(i2, 0); max < min; max++) {
-            if (bArr[max][i] == 1) {
+        if (i2 < 0 || bArr.length < i3) {
+            return false;
+        }
+        while (i2 < i3) {
+            if (bArr[i2][i] == 1) {
                 return false;
             }
+            i2++;
         }
         return true;
     }

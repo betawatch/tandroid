@@ -21,7 +21,7 @@ public final class FinderPattern extends ResultPoint {
         return this.estimatedModuleSize;
     }
 
-    int getCount() {
+    public int getCount() {
         return this.count;
     }
 

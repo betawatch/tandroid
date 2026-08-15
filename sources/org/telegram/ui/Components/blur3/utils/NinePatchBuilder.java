@@ -176,6 +176,19 @@ public abstract class NinePatchBuilder {
         return new NinePatchDrawable(ApplicationLoader.applicationContext.getResources(), bitmap2222, createNinePatchChunk(clamp422, clamp2222, clamp3222, MathUtils.clamp((i3 - i5) - ((int) Math.ceil(max14222)), clamp3222 + 1, i3 - 1), ceil2, ceil4, i4, i5, i).array(), new Rect(ceil2, ceil4, i4, i5), null);
     }
 
+    public static NinePatchDrawable createNinePatch(Bitmap bitmap, Rect rect, int i, int i2) {
+        if (bitmap == null) {
+            throw new IllegalArgumentException("bitmap == null");
+        }
+        if (bitmap.isRecycled()) {
+            throw new IllegalArgumentException("bitmap is recycled");
+        }
+        if (i < 0 || i >= bitmap.getWidth() || i2 < 0 || i2 >= bitmap.getHeight()) {
+            throw new IllegalArgumentException("center pixel is outside bitmap: (" + i + ", " + i2 + ") for " + bitmap.getWidth() + "x" + bitmap.getHeight());
+        }
+        return new NinePatchDrawable(ApplicationLoader.applicationContext.getResources(), bitmap, createNinePatchChunk(i, i + 1, i2, i2 + 1, rect.left, rect.top, rect.right, rect.bottom, bitmap.getPixel(i, i2)).array(), rect, null);
+    }
+
     public static ByteBuffer createNinePatchChunk(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9) {
         ByteBuffer order = ByteBuffer.allocate(84).order(ByteOrder.nativeOrder());
         order.put((byte) 1);

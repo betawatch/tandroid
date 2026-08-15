@@ -59,7 +59,6 @@ import androidx.core.util.Consumer;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearSmoothScrollerCustom;
 import androidx.recyclerview.widget.RecyclerView;
 import j$.util.Objects;
 import java.lang.reflect.Field;
@@ -135,6 +134,7 @@ import org.telegram.ui.Components.StickerCategoriesListView;
 import org.telegram.ui.SelectAnimatedEmojiDialog;
 import org.telegram.ui.Stars.StarsController;
 import org.telegram.ui.Stars.StarsReactionsSheet;
+import org.telegram.ui.recyclerview.LinearSmoothScrollerCustom;
 
 /* loaded from: classes4.dex */
 public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
@@ -1128,7 +1128,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                                 public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i15) {
                                     try {
                                         LinearSmoothScrollerCustom linearSmoothScrollerCustom = new LinearSmoothScrollerCustom(recyclerView.getContext(), 2) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.9.1
-                                            @Override // androidx.recyclerview.widget.LinearSmoothScrollerCustom
+                                            @Override // org.telegram.ui.recyclerview.LinearSmoothScrollerCustom
                                             public void onEnd() {
                                                 SelectAnimatedEmojiDialog.this.smoothScrolling = false;
                                             }
@@ -1243,7 +1243,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                                 public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i15) {
                                     try {
                                         LinearSmoothScrollerCustom linearSmoothScrollerCustom = new LinearSmoothScrollerCustom(recyclerView.getContext(), 2) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.14.1
-                                            @Override // androidx.recyclerview.widget.LinearSmoothScrollerCustom
+                                            @Override // org.telegram.ui.recyclerview.LinearSmoothScrollerCustom
                                             public void onEnd() {
                                                 SelectAnimatedEmojiDialog.this.smoothScrolling = false;
                                             }
@@ -1438,7 +1438,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i152) {
                                 try {
                                     LinearSmoothScrollerCustom linearSmoothScrollerCustom = new LinearSmoothScrollerCustom(recyclerView.getContext(), 2) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.9.1
-                                        @Override // androidx.recyclerview.widget.LinearSmoothScrollerCustom
+                                        @Override // org.telegram.ui.recyclerview.LinearSmoothScrollerCustom
                                         public void onEnd() {
                                             SelectAnimatedEmojiDialog.this.smoothScrolling = false;
                                         }
@@ -1542,7 +1542,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i152) {
                                 try {
                                     LinearSmoothScrollerCustom linearSmoothScrollerCustom = new LinearSmoothScrollerCustom(recyclerView.getContext(), 2) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.14.1
-                                        @Override // androidx.recyclerview.widget.LinearSmoothScrollerCustom
+                                        @Override // org.telegram.ui.recyclerview.LinearSmoothScrollerCustom
                                         public void onEnd() {
                                             SelectAnimatedEmojiDialog.this.smoothScrolling = false;
                                         }
@@ -1737,7 +1737,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                     public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i1522) {
                         try {
                             LinearSmoothScrollerCustom linearSmoothScrollerCustom = new LinearSmoothScrollerCustom(recyclerView.getContext(), 2) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.9.1
-                                @Override // androidx.recyclerview.widget.LinearSmoothScrollerCustom
+                                @Override // org.telegram.ui.recyclerview.LinearSmoothScrollerCustom
                                 public void onEnd() {
                                     SelectAnimatedEmojiDialog.this.smoothScrolling = false;
                                 }
@@ -1841,7 +1841,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                     public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i1522) {
                         try {
                             LinearSmoothScrollerCustom linearSmoothScrollerCustom = new LinearSmoothScrollerCustom(recyclerView.getContext(), 2) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.14.1
-                                @Override // androidx.recyclerview.widget.LinearSmoothScrollerCustom
+                                @Override // org.telegram.ui.recyclerview.LinearSmoothScrollerCustom
                                 public void onEnd() {
                                     SelectAnimatedEmojiDialog.this.smoothScrolling = false;
                                 }
@@ -2042,7 +2042,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i15222) {
                 try {
                     LinearSmoothScrollerCustom linearSmoothScrollerCustom = new LinearSmoothScrollerCustom(recyclerView.getContext(), 2) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.9.1
-                        @Override // androidx.recyclerview.widget.LinearSmoothScrollerCustom
+                        @Override // org.telegram.ui.recyclerview.LinearSmoothScrollerCustom
                         public void onEnd() {
                             SelectAnimatedEmojiDialog.this.smoothScrolling = false;
                         }
@@ -2146,7 +2146,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i15222) {
                 try {
                     LinearSmoothScrollerCustom linearSmoothScrollerCustom = new LinearSmoothScrollerCustom(recyclerView.getContext(), 2) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.14.1
-                        @Override // androidx.recyclerview.widget.LinearSmoothScrollerCustom
+                        @Override // org.telegram.ui.recyclerview.LinearSmoothScrollerCustom
                         public void onEnd() {
                             SelectAnimatedEmojiDialog.this.smoothScrolling = false;
                         }
@@ -2801,12 +2801,12 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
             this.scrollHelper.scrollToPosition(i, i2, false, true);
         } else {
             LinearSmoothScrollerCustom linearSmoothScrollerCustom = new LinearSmoothScrollerCustom(this.emojiGridView.getContext(), 2) { // from class: org.telegram.ui.SelectAnimatedEmojiDialog.21
-                @Override // androidx.recyclerview.widget.LinearSmoothScrollerCustom
+                @Override // org.telegram.ui.recyclerview.LinearSmoothScrollerCustom
                 public void onEnd() {
                     SelectAnimatedEmojiDialog.this.smoothScrolling = false;
                 }
 
-                @Override // androidx.recyclerview.widget.LinearSmoothScrollerCustom, androidx.recyclerview.widget.RecyclerView.SmoothScroller
+                @Override // org.telegram.ui.recyclerview.LinearSmoothScrollerCustom, androidx.recyclerview.widget.RecyclerView.SmoothScroller
                 protected void onStart() {
                     SelectAnimatedEmojiDialog.this.smoothScrolling = true;
                 }

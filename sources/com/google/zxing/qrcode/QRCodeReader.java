@@ -53,6 +53,8 @@ public class QRCodeReader {
             result.putMetadata(ResultMetadataType.STRUCTURED_APPEND_SEQUENCE, Integer.valueOf(decoderResult.getStructuredAppendSequenceNumber()));
             result.putMetadata(ResultMetadataType.STRUCTURED_APPEND_PARITY, Integer.valueOf(decoderResult.getStructuredAppendParity()));
         }
+        result.putMetadata(ResultMetadataType.ERRORS_CORRECTED, decoderResult.getErrorsCorrected());
+        result.putMetadata(ResultMetadataType.SYMBOLOGY_IDENTIFIER, "]Q" + decoderResult.getSymbologyModifier());
         return result;
     }
 
@@ -99,7 +101,7 @@ public class QRCodeReader {
             }
             i7 -= i10;
         }
-        BitMatrix bitMatrix2 = new BitMatrix(round, round2, 1);
+        BitMatrix bitMatrix2 = new BitMatrix(round, round2);
         for (int i11 = 0; i11 < round2; i11++) {
             int i12 = ((int) (i11 * moduleSize)) + i7;
             for (int i13 = 0; i13 < round; i13++) {

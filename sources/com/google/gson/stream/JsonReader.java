@@ -10,7 +10,7 @@ import java.io.EOFException;
 import java.io.Reader;
 import java.util.Arrays;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class JsonReader implements Closeable {
     private final Reader in;
     private int[] pathIndices;

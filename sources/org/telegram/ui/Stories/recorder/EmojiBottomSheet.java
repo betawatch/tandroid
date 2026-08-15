@@ -42,7 +42,6 @@ import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.LinearSmoothScrollerCustom;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -119,6 +118,7 @@ import org.telegram.ui.Stories.StoryReactionWidgetBackground;
 import org.telegram.ui.Stories.recorder.EmojiBottomSheet;
 import org.telegram.ui.Stories.recorder.Weather;
 import org.telegram.ui.WrappedResourceProvider;
+import org.telegram.ui.recyclerview.LinearSmoothScrollerCustom;
 
 /* loaded from: classes3.dex */
 public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
@@ -2510,12 +2510,12 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 this.scrollHelper.scrollToPosition(i, i2, false, true);
             } else {
                 LinearSmoothScrollerCustom linearSmoothScrollerCustom = new LinearSmoothScrollerCustom(getContext(), 2) { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet.EmojiListView.2
-                    @Override // androidx.recyclerview.widget.LinearSmoothScrollerCustom
+                    @Override // org.telegram.ui.recyclerview.LinearSmoothScrollerCustom
                     public void onEnd() {
                         EmojiListView.this.smoothScrolling = false;
                     }
 
-                    @Override // androidx.recyclerview.widget.LinearSmoothScrollerCustom, androidx.recyclerview.widget.RecyclerView.SmoothScroller
+                    @Override // org.telegram.ui.recyclerview.LinearSmoothScrollerCustom, androidx.recyclerview.widget.RecyclerView.SmoothScroller
                     protected void onStart() {
                         EmojiListView.this.smoothScrolling = true;
                     }

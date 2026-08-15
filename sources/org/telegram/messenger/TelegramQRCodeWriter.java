@@ -1,4 +1,4 @@
-package com.google.zxing.qrcode;
+package org.telegram.messenger;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -14,12 +14,10 @@ import com.google.zxing.qrcode.encoder.ByteMatrix;
 import com.google.zxing.qrcode.encoder.Encoder;
 import java.util.Arrays;
 import java.util.Map;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
 
 /* loaded from: classes3.dex */
-public final class QRCodeWriter {
+public final class TelegramQRCodeWriter {
+    private static final int QUIET_ZONE_SIZE = 4;
     private int imageBlockX;
     private int imageBloks;
     private int imageSize;
@@ -28,7 +26,7 @@ public final class QRCodeWriter {
     private float[] radii = new float[8];
     public boolean includeSideQuads = true;
 
-    public Bitmap encode(String str, int i, int i2, Map map, Bitmap bitmap) {
+    public Bitmap encode(String str, int i, int i2, Map<EncodeHintType, ?> map, Bitmap bitmap) {
         return encode(str, i, i2, map, bitmap, 1.0f, -1, -16777216);
     }
 
@@ -37,7 +35,7 @@ public final class QRCodeWriter {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Bitmap encode(String str, int i, int i2, Map map, Bitmap bitmap, float f, int i3, int i4) {
+    public Bitmap encode(String str, int i, int i2, Map<EncodeHintType, ?> map, Bitmap bitmap, float f, int i3, int i4) {
         String str2;
         int i5;
         ByteMatrix matrix;
@@ -399,5 +397,9 @@ public final class QRCodeWriter {
 
     public int getImageSize() {
         return this.imageSize;
+    }
+
+    public int getSideSize() {
+        return this.sideQuadSize;
     }
 }

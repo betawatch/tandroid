@@ -27,7 +27,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import androidx.core.graphics.ColorUtils;
-import androidx.recyclerview.widget.ChatListItemAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.Emoji;
@@ -50,6 +49,7 @@ import org.telegram.ui.Components.ReplyMessageLine;
 import org.telegram.ui.Components.chat.ViewPositionWatcher;
 import org.telegram.ui.Components.spoilers.SpoilerEffect;
 import org.telegram.ui.MessageEnterTransitionContainer;
+import org.telegram.ui.recyclerview.ChatListItemAnimator;
 
 /* loaded from: classes4.dex */
 public class TextMessageEnterTransition implements MessageEnterTransitionContainer.Transition {
