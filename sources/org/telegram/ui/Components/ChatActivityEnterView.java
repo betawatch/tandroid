@@ -36,6 +36,7 @@ import android.os.PowerManager;
 import android.os.SystemClock;
 import android.provider.Settings;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.text.Layout;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -92,6 +93,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -4938,7 +4940,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             this.senderSelectView.setScaleY(1.0f);
         }
         this.senderSelectView.setAlpha(1.0f);
-        this.senderSelectPopupWindow.startDismissAnimation(this.isLiveComment ? null : new SpringAnimation(this.senderSelectView, DynamicAnimation.SCALE_X).setSpring(new SpringForce(0.5f).setStiffness(750.0f).setDampingRatio(1.0f)), this.isLiveComment ? null : new SpringAnimation(this.senderSelectView, DynamicAnimation.SCALE_Y).setSpring(new SpringForce(0.5f).setStiffness(750.0f).setDampingRatio(1.0f)), (SpringAnimation) new SpringAnimation(this.senderSelectView, DynamicAnimation.ALPHA).setSpring(new SpringForce(0.0f).setStiffness(750.0f).setDampingRatio(1.0f)).addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda115
+        this.senderSelectPopupWindow.startDismissAnimation(this.isLiveComment ? null : new SpringAnimation(this.senderSelectView, DynamicAnimation.SCALE_X).setSpring(new SpringForce(0.5f).setStiffness(750.0f).setDampingRatio(1.0f)), this.isLiveComment ? null : new SpringAnimation(this.senderSelectView, DynamicAnimation.SCALE_Y).setSpring(new SpringForce(0.5f).setStiffness(750.0f).setDampingRatio(1.0f)), (SpringAnimation) new SpringAnimation(this.senderSelectView, DynamicAnimation.ALPHA).setSpring(new SpringForce(0.0f).setStiffness(750.0f).setDampingRatio(1.0f)).addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda116
             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
             public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f4, float f5) {
                 ChatActivityEnterView.this.lambda$createSenderSelectView$27(dialog, simpleAvatarView, f, f2, dynamicAnimation, z, f4, f5);
@@ -4957,7 +4959,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 } catch (Exception unused) {
                 }
             }
-        })).addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda116
+        })).addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda117
             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
             public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f4, float f5) {
                 ChatActivityEnterView.this.lambda$createSenderSelectView$28(dialog, simpleAvatarView, f, f2, dynamicAnimation, z, f4, f5);
@@ -18087,5 +18089,43 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
         updateFieldRight(this.lastAttachVisible);
         checkSendButton(false);
+    }
+
+    public static void disableNewLines(EditText editText) {
+        InputFilter inputFilter = new InputFilter() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda115
+            @Override // android.text.InputFilter
+            public final CharSequence filter(CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
+                CharSequence lambda$disableNewLines$108;
+                lambda$disableNewLines$108 = ChatActivityEnterView.lambda$disableNewLines$108(charSequence, i, i2, spanned, i3, i4);
+                return lambda$disableNewLines$108;
+            }
+        };
+        InputFilter[] filters = editText.getFilters();
+        if (filters == null) {
+            editText.setFilters(new InputFilter[]{inputFilter});
+            return;
+        }
+        InputFilter[] inputFilterArr = (InputFilter[]) Arrays.copyOf(filters, filters.length + 1);
+        inputFilterArr[filters.length] = inputFilter;
+        editText.setFilters(inputFilterArr);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ CharSequence lambda$disableNewLines$108(CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
+        for (int i5 = i; i5 < i2; i5++) {
+            char charAt = charSequence.charAt(i5);
+            if (charAt == '\n' || charAt == '\r') {
+                StringBuilder sb = new StringBuilder(i2 - i);
+                while (i < i2) {
+                    char charAt2 = charSequence.charAt(i);
+                    if (charAt2 != '\n' && charAt2 != '\r') {
+                        sb.append(charAt2);
+                    }
+                    i++;
+                }
+                return sb;
+            }
+        }
+        return null;
     }
 }

@@ -365,6 +365,10 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         }
     }
 
+    public void skipDismissAnimation() {
+        this.skipDismissAnimation = true;
+    }
+
     public void setDisableScroll(boolean z) {
         this.disableScroll = z;
     }

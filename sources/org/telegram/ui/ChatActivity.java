@@ -37943,44 +37943,53 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     }
 
     public static void fillActionModeMenu(Menu menu, TLRPC.EncryptedChat encryptedChat, boolean z, boolean z2) {
-        int i;
-        int i2 = R.id.menu_bold;
-        if (menu.findItem(i2) != null) {
+        fillActionModeMenu(menu, encryptedChat, z, z2, true, true);
+    }
+
+    public static void fillActionModeMenu(Menu menu, TLRPC.EncryptedChat encryptedChat, boolean z, boolean z2, boolean z3, boolean z4) {
+        int i = R.id.menu_bold;
+        if (menu.findItem(i) != null) {
             return;
         }
         if (Build.VERSION.SDK_INT >= 23) {
             menu.removeItem(android.R.id.shareText);
         }
+        int i2 = 6;
         if (z) {
             menu.add(R.id.menu_groupbolditalic, R.id.menu_quote, 6, LocaleController.getString(R.string.Quote));
-            i = 7;
-        } else {
-            i = 6;
+            i2 = 7;
         }
-        int i3 = R.id.menu_groupbolditalic;
-        menu.add(i3, R.id.menu_spoiler, i, LocaleController.getString(R.string.Spoiler));
+        if (z4) {
+            menu.add(R.id.menu_groupbolditalic, R.id.menu_spoiler, i2, LocaleController.getString(R.string.Spoiler));
+            i2++;
+        }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.Bold));
         spannableStringBuilder.setSpan(new TypefaceSpan(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
-        menu.add(i3, i2, i + 1, spannableStringBuilder);
+        int i3 = R.id.menu_groupbolditalic;
+        menu.add(i3, i, i2, spannableStringBuilder);
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.Italic));
         spannableStringBuilder2.setSpan(new TypefaceSpan(AndroidUtilities.getTypeface("fonts/ritalic.ttf")), 0, spannableStringBuilder2.length(), 33);
-        menu.add(i3, R.id.menu_italic, i + 2, spannableStringBuilder2);
-        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(LocaleController.getString(R.string.Mono));
-        spannableStringBuilder3.setSpan(new TypefaceSpan(Typeface.MONOSPACE), 0, spannableStringBuilder3.length(), 33);
-        int i4 = i + 4;
-        menu.add(i3, R.id.menu_mono, i + 3, spannableStringBuilder3);
+        int i4 = i2 + 2;
+        menu.add(i3, R.id.menu_italic, i2 + 1, spannableStringBuilder2);
+        if (z3) {
+            SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(LocaleController.getString(R.string.Mono));
+            spannableStringBuilder3.setSpan(new TypefaceSpan(Typeface.MONOSPACE), 0, spannableStringBuilder3.length(), 33);
+            menu.add(i3, R.id.menu_mono, i4, spannableStringBuilder3);
+            i4 = i2 + 3;
+        }
         if (encryptedChat == null || AndroidUtilities.getPeerLayerVersion(encryptedChat.layer) >= 101) {
             SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(LocaleController.getString(R.string.Strike));
             TextStyleSpan.TextStyleRun textStyleRun = new TextStyleSpan.TextStyleRun();
             textStyleRun.flags |= 8;
             spannableStringBuilder4.setSpan(new TextStyleSpan(textStyleRun), 0, spannableStringBuilder4.length(), 33);
+            int i5 = i4 + 1;
             menu.add(i3, R.id.menu_strike, i4, spannableStringBuilder4);
             SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder(LocaleController.getString(R.string.Underline));
             TextStyleSpan.TextStyleRun textStyleRun2 = new TextStyleSpan.TextStyleRun();
             textStyleRun2.flags |= 16;
             spannableStringBuilder5.setSpan(new TextStyleSpan(textStyleRun2), 0, spannableStringBuilder5.length(), 33);
-            i4 = i + 6;
-            menu.add(i3, R.id.menu_underline, i + 5, spannableStringBuilder5);
+            i4 += 2;
+            menu.add(i3, R.id.menu_underline, i5, spannableStringBuilder5);
         }
         if (z2) {
             menu.add(i3, R.id.menu_link, i4, LocaleController.getString(R.string.CreateLink));

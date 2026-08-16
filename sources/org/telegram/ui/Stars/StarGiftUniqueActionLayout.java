@@ -28,6 +28,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBar;
@@ -217,8 +218,8 @@ public class StarGiftUniqueActionLayout {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0327  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x034b  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0341  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0365  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -261,12 +262,20 @@ public class StarGiftUniqueActionLayout {
         this.nameWidth = 0.0f;
         this.valueWidth = 0.0f;
         TLRPC.TL_textWithEntities tL_textWithEntities = tL_messageActionStarGiftUnique.message;
+        TLObject tLObject = null;
         if (tL_textWithEntities != null) {
             TextPaint textPaint = this.messageDrawable.getTextPaint();
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tL_textWithEntities.text);
             MessageObject.addEntitiesToText(spannableStringBuilder, tL_textWithEntities.entities, false, false, false, false);
             Spannable replaceAnimatedEmoji = MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, textPaint.getFontMetricsInt(), false), tL_textWithEntities.entities, textPaint.getFontMetricsInt());
-            this.messageDrawable.setUser(MessagesController.getInstance(this.currentAccount).getUserOrChat(messageObject.getFromChatId()));
+            if (!tL_messageActionStarGiftUnique.name_hidden) {
+                if (tL_messageActionStarGiftUnique.from_id != null) {
+                    tLObject = MessagesController.getInstance(this.currentAccount).getUserOrChat(DialogObject.getPeerDialogId(tL_messageActionStarGiftUnique.from_id));
+                } else {
+                    tLObject = MessagesController.getInstance(this.currentAccount).getUserOrChat(messageObject.getFromChatId());
+                }
+            }
+            this.messageDrawable.setUser(tLObject);
             this.messageDrawable.setMessage(replaceAnimatedEmoji);
             this.messageDrawable.measure(((int) f) - AndroidUtilities.dp(24.0f));
             if (!this.widthExpanded && this.messageDrawable.getLineCount() > 3) {

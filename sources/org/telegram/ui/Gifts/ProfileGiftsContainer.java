@@ -776,10 +776,10 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                     public final void run() {
                         ProfileGiftsContainer.Page.this.lambda$onItemClick$4();
                     }
-                }).setOnBoughtGift(new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda5
-                    @Override // org.telegram.messenger.Utilities.Callback2
-                    public final void run(Object obj2, Object obj3) {
-                        ProfileGiftsContainer.Page.this.lambda$onItemClick$5(savedStarGift, (TL_stars.TL_starGiftUnique) obj2, (Long) obj3);
+                }).setOnBoughtGift(new StarGiftSheet.BoughtGiftCallback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda5
+                    @Override // org.telegram.ui.Stars.StarGiftSheet.BoughtGiftCallback
+                    public final void onBoughtGift(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j, boolean z3) {
+                        ProfileGiftsContainer.Page.this.lambda$onItemClick$5(savedStarGift, tL_starGiftUnique, j, z3);
                     }
                 }).set(savedStarGift, this.list).show();
             }
@@ -791,13 +791,13 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$5(TL_stars.SavedStarGift savedStarGift, TL_stars.TL_starGiftUnique tL_starGiftUnique, Long l) {
+        public /* synthetic */ void lambda$onItemClick$5(TL_stars.SavedStarGift savedStarGift, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j, boolean z) {
             this.list.gifts.remove(savedStarGift);
             update(true);
-            if (l.longValue() == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
+            if (j == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
                 BulletinFactory.of(this.parent.fragment).createSimpleBulletin(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftTitle), LocaleController.formatString(R.string.BoughtResoldGiftText, tL_starGiftUnique.title + " #" + LocaleController.formatNumber(tL_starGiftUnique.num, ','))).hideAfterBottomSheet(false).show();
             } else {
-                BulletinFactory.of(this.parent.fragment).createSimpleBulletin(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(this.currentAccount, l.longValue()))).hideAfterBottomSheet(false).show();
+                BulletinFactory.of(this.parent.fragment).createSimpleBulletin(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(this.currentAccount, j))).hideAfterBottomSheet(false).show();
             }
             LaunchActivity launchActivity = LaunchActivity.instance;
             if (launchActivity != null) {

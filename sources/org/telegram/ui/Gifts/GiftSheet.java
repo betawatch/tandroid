@@ -139,7 +139,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
     private UniversalAdapter adapter;
     private final StarsIntroActivity.StarsBalanceView balanceView;
     private boolean birthday;
-    private final Runnable closeParentSheet;
+    private final Utilities.Callback closeParentSheet;
     private final int currentAccount;
     private final long dialogId;
     private final DefaultItemAnimator itemAnimator;
@@ -164,15 +164,15 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         return false;
     }
 
-    public GiftSheet(Context context, int i, long j, Runnable runnable) {
-        this(context, i, j, null, runnable);
+    public GiftSheet(Context context, int i, long j, Utilities.Callback callback) {
+        this(context, i, j, null, callback);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x047a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public GiftSheet(final Context context, final int i, final long j, List list, final Runnable runnable) {
+    public GiftSheet(final Context context, final int i, final long j, List list, final Utilities.Callback callback) {
         super(context, null, false, false, false, null);
         int i2;
         int i3;
@@ -189,7 +189,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         boolean z = UserConfig.getInstance(i).getClientUserId() == j;
         this.self = z;
         this.options = list;
-        this.closeParentSheet = runnable;
+        this.closeParentSheet = callback;
         int i4 = Theme.key_dialogGiftsBackground;
         setBackgroundColor(Theme.getColor(i4));
         fixNavigationBar(Theme.getColor(i4));
@@ -218,7 +218,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         StarsIntroActivity.StarsBalanceView starsBalanceView = new StarsIntroActivity.StarsBalanceView(context, i, this.resourcesProvider);
         this.balanceView = starsBalanceView;
         ScaleStateListAnimator.apply(starsBalanceView);
-        starsBalanceView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda3
+        starsBalanceView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 GiftSheet.this.lambda$new$0(view);
@@ -239,7 +239,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         backupImageView.setRoundRadius(AndroidUtilities.dp(42.0f));
         frameLayout2.addView(backupImageView, LayoutHelper.createFrame(84, 84.0f, 17, 0.0f, 15.0f, 0.0f, 17.0f));
         ScaleStateListAnimator.apply(backupImageView);
-        backupImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda4
+        backupImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 GiftSheet.this.lambda$new$1(j, view);
@@ -266,7 +266,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         linksTextView.setLineSpacing(AndroidUtilities.dp(2.33f), 1.0f);
         linearLayout.addView(linksTextView, LayoutHelper.createLinear(-1, -2, 1, 4, 4, 4, 12));
         textView.setText(LocaleController.getString(R.string.Gift2Premium));
-        linksTextView.setText(TextUtils.concat(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2PremiumInfo, this.name)), " ", AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(LocaleController.getString(R.string.Gift2PremiumInfoLink), new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda5
+        linksTextView.setText(TextUtils.concat(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2PremiumInfo, this.name)), " ", AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(LocaleController.getString(R.string.Gift2PremiumInfoLink), new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 GiftSheet.lambda$new$2();
@@ -339,13 +339,13 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         } else {
             linearLayout2.addView(frameLayout3, LayoutHelper.createLinear(-1, -2, 1, 0, 9, 0, 6));
             final StarsController.GiftsList profileGiftsList = StarsController.getInstance(i).getProfileGiftsList(j);
-            final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda6
+            final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GiftSheet.this.lambda$new$5(profileGiftsList, j, runnable, context);
+                    GiftSheet.this.lambda$new$5(profileGiftsList, j, callback, context);
                 }
             };
-            runnable2.run();
+            runnable.run();
             linksTextView2.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: org.telegram.ui.Gifts.GiftSheet.4
                 @Override // android.view.View.OnAttachStateChangeListener
                 public void onViewDetachedFromWindow(View view) {
@@ -353,17 +353,17 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
 
                 @Override // android.view.View.OnAttachStateChangeListener
                 public void onViewAttachedToWindow(View view) {
-                    runnable2.run();
+                    runnable.run();
                 }
             });
             i3 = 3;
             if (profileGiftsList.gifts.size() < 3) {
                 profileGiftsList.load();
             }
-            NotificationCenter.getInstance(i).listen(linksTextView2, NotificationCenter.starUserGiftsLoaded, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda7
+            NotificationCenter.getInstance(i).listen(linksTextView2, NotificationCenter.starUserGiftsLoaded, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda4
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    GiftSheet.lambda$new$6(StarsController.GiftsList.this, runnable2, (Object[]) obj);
+                    GiftSheet.lambda$new$6(StarsController.GiftsList.this, runnable, (Object[]) obj);
                 }
             });
             ExtendedGridLayoutManager extendedGridLayoutManager = new ExtendedGridLayoutManager(context, i3);
@@ -398,10 +398,10 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             defaultItemAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
             defaultItemAnimator.setDelayIncrement(40L);
             this.recyclerListView.setItemAnimator(defaultItemAnimator);
-            this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda8
+            this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda5
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
                 public final void onItemClick(View view, int i7) {
-                    GiftSheet.this.lambda$new$19(context, i, runnable, j, view, i7);
+                    GiftSheet.this.lambda$new$19(context, i, callback, j, view, i7);
                 }
             });
             updatePremiumTiers();
@@ -451,10 +451,10 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         defaultItemAnimator2.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
         defaultItemAnimator2.setDelayIncrement(40L);
         this.recyclerListView.setItemAnimator(defaultItemAnimator2);
-        this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda8
+        this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i7) {
-                GiftSheet.this.lambda$new$19(context, i, runnable, j, view, i7);
+                GiftSheet.this.lambda$new$19(context, i, callback, j, view, i7);
             }
         });
         updatePremiumTiers();
@@ -505,7 +505,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(StarsController.GiftsList giftsList, final long j, final Runnable runnable, final Context context) {
+    public /* synthetic */ void lambda$new$5(StarsController.GiftsList giftsList, final long j, final Utilities.Callback callback, final Context context) {
         TL_stars.StarGift starGift;
         TLRPC.Document document;
         int i = 0;
@@ -533,14 +533,14 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     spannableStringBuilder2.setSpan(new AnimatedEmojiSpan(document2, this.subtitleStarsView.getPaint().getFontMetricsInt()), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 33);
                 }
                 spannableStringBuilder2.append((CharSequence) " >");
-                spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(spannableStringBuilder2, new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda10
+                spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(spannableStringBuilder2, new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda17
                     @Override // java.lang.Runnable
                     public final void run() {
-                        GiftSheet.this.lambda$new$3(runnable, j);
+                        GiftSheet.this.lambda$new$3(callback, j);
                     }
                 }), true));
             } else {
-                spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(LocaleController.getString(R.string.Gift2StarsInfoLink), new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda11
+                spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(LocaleController.getString(R.string.Gift2StarsInfoLink), new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda18
                     @Override // java.lang.Runnable
                     public final void run() {
                         GiftSheet.lambda$new$4(context);
@@ -555,14 +555,14 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(Runnable runnable, long j) {
+    public /* synthetic */ void lambda$new$3(Utilities.Callback callback, long j) {
         BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
         if (safeLastFragment == null) {
             return;
         }
         lambda$new$0();
-        if (runnable != null) {
-            runnable.run();
+        if (callback != null) {
+            callback.run(Boolean.FALSE);
         }
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", j);
@@ -583,16 +583,16 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$19(final Context context, final int i, final Runnable runnable, final long j, View view, int i2) {
+    public /* synthetic */ void lambda$new$19(final Context context, final int i, final Utilities.Callback callback, final long j, View view, int i2) {
         TL_stars.SavedStarGift savedStarGift;
         UItem item = this.adapter.getItem(i2 - 1);
         if (item != null && item.instanceOf(GiftCell.Factory.class)) {
             Object obj = item.object;
             if (obj instanceof GiftPremiumBottomSheet$GiftTier) {
-                new SendGiftSheet(context, i, (GiftPremiumBottomSheet$GiftTier) obj, this.dialogId, new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda12
+                new SendGiftSheet(context, i, (GiftPremiumBottomSheet$GiftTier) obj, this.dialogId, new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda10
                     @Override // java.lang.Runnable
                     public final void run() {
-                        GiftSheet.this.lambda$new$7(runnable);
+                        GiftSheet.this.lambda$new$7(callback);
                     }
                 }) { // from class: org.telegram.ui.Gifts.GiftSheet.7
                     @Override // org.telegram.ui.Gifts.SendGiftSheet
@@ -629,10 +629,10 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                             return BulletinFactory.of(giftSheet.container, giftSheet.resourcesProvider);
                         }
                     }.set(savedStarGift, (StarsController.IGiftsList) null);
-                    starGiftSheet.openTransferAlert(j, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda13
+                    starGiftSheet.openTransferAlert(j, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda11
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj2) {
-                            GiftSheet.this.lambda$new$10(starGiftSheet, j, runnable, (Browser.Progress) obj2);
+                            GiftSheet.this.lambda$new$10(starGiftSheet, j, callback, (Browser.Progress) obj2);
                         }
                     });
                     return;
@@ -647,7 +647,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     bottomSheetParams.allowNestedScroll = false;
                     bottomSheetParams.occupyNavigationBar = true;
                     final ViewTreeObserver viewTreeObserver = this.container.getViewTreeObserver();
-                    final ViewTreeObserver.OnPreDrawListener onPreDrawListener = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda14
+                    final ViewTreeObserver.OnPreDrawListener onPreDrawListener = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda12
                         @Override // android.view.ViewTreeObserver.OnPreDrawListener
                         public final boolean onPreDraw() {
                             boolean lambda$new$11;
@@ -668,20 +668,20 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                             viewTreeObserver.addOnPreDrawListener(onPreDrawListener);
                         }
                     };
-                    resaleGiftsFragment.setCloseParentSheet(new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda15
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            GiftSheet.this.lambda$new$12(runnable);
+                    resaleGiftsFragment.setCloseParentSheet(new Utilities.Callback() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda13
+                        @Override // org.telegram.messenger.Utilities.Callback
+                        public final void run(Object obj2) {
+                            GiftSheet.this.lambda$new$12(callback, (Boolean) obj2);
                         }
                     });
                     safeLastFragment.showAsSheet(resaleGiftsFragment, bottomSheetParams);
                     return;
                 }
                 if (starGift.auction) {
-                    AuctionJoinSheet.show(context, this.resourcesProvider, i, j, starGift.id, new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda16
+                    AuctionJoinSheet.show(context, this.resourcesProvider, i, j, starGift.id, new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda14
                         @Override // java.lang.Runnable
                         public final void run() {
-                            GiftSheet.this.lambda$new$13(runnable);
+                            GiftSheet.this.lambda$new$13(callback);
                         }
                     });
                     return;
@@ -694,10 +694,10 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     BulletinFactory.of(this.container, this.resourcesProvider).createSimpleMultiBulletin(starGift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2PerUserLimit", starGift.per_user_total))).show();
                     return;
                 }
-                final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda17
+                final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda15
                     @Override // java.lang.Runnable
                     public final void run() {
-                        GiftSheet.this.lambda$new$15(context, i, starGift, runnable);
+                        GiftSheet.this.lambda$new$15(context, i, starGift, callback);
                     }
                 };
                 if (starGift.locked_until_date > ConnectionsManager.getInstance(i).getCurrentTime()) {
@@ -705,10 +705,10 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     alertDialog.showDelayed(500L);
                     TL_stars.checkCanSendGift checkcansendgift = new TL_stars.checkCanSendGift();
                     checkcansendgift.gift_id = starGift.id;
-                    ConnectionsManager.getInstance(i).sendRequest(checkcansendgift, new RequestDelegate() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda18
+                    ConnectionsManager.getInstance(i).sendRequest(checkcansendgift, new RequestDelegate() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda16
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            GiftSheet.this.lambda$new$18(alertDialog, runnable2, runnable, tLObject, tL_error);
+                            GiftSheet.this.lambda$new$18(alertDialog, runnable, callback, tLObject, tL_error);
                         }
                     });
                     return;
@@ -739,35 +739,35 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     swapAnimatedEmojiDrawable.play();
                     return;
                 }
-                runnable2.run();
+                runnable.run();
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$7(Runnable runnable) {
-        if (runnable != null) {
-            runnable.run();
+    public /* synthetic */ void lambda$new$7(Utilities.Callback callback) {
+        if (callback != null) {
+            callback.run(Boolean.FALSE);
         }
         lambda$new$0();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$10(final StarGiftSheet starGiftSheet, long j, final Runnable runnable, final Browser.Progress progress) {
+    public /* synthetic */ void lambda$new$10(final StarGiftSheet starGiftSheet, long j, final Utilities.Callback callback, final Browser.Progress progress) {
         progress.init();
-        starGiftSheet.doTransfer(j, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda24
+        starGiftSheet.doTransfer(j, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda23
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                GiftSheet.this.lambda$new$9(progress, runnable, starGiftSheet, (TLRPC.TL_error) obj);
+                GiftSheet.this.lambda$new$9(progress, callback, starGiftSheet, (TLRPC.TL_error) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$9(Browser.Progress progress, Runnable runnable, final StarGiftSheet starGiftSheet, final TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$new$9(Browser.Progress progress, Utilities.Callback callback, final StarGiftSheet starGiftSheet, final TLRPC.TL_error tL_error) {
         progress.end();
-        if (runnable != null) {
-            runnable.run();
+        if (callback != null) {
+            callback.run(Boolean.FALSE);
         }
         lambda$new$0();
         if (tL_error != null) {
@@ -788,34 +788,37 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$12(Runnable runnable) {
-        if (runnable != null) {
-            runnable.run();
+    public /* synthetic */ void lambda$new$12(Utilities.Callback callback, Boolean bool) {
+        if (callback != null) {
+            callback.run(bool);
+        }
+        if (bool.booleanValue()) {
+            skipDismissAnimation();
         }
         lambda$new$0();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$13(Runnable runnable) {
-        if (runnable != null) {
-            runnable.run();
+    public /* synthetic */ void lambda$new$13(Utilities.Callback callback) {
+        if (callback != null) {
+            callback.run(Boolean.FALSE);
         }
         lambda$new$0();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$15(Context context, int i, TL_stars.StarGift starGift, final Runnable runnable) {
+    public /* synthetic */ void lambda$new$15(Context context, int i, TL_stars.StarGift starGift, final Utilities.Callback callback) {
         TLRPC.DisallowedGiftsSettings disallowedGiftsSettings;
         TLRPC.DisallowedGiftsSettings disallowedGiftsSettings2;
         long j = this.dialogId;
-        Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda22
+        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda22
             @Override // java.lang.Runnable
             public final void run() {
-                GiftSheet.this.lambda$new$14(runnable);
+                GiftSheet.this.lambda$new$14(callback);
             }
         };
         boolean z = starGift.limited;
-        new SendGiftSheet(context, i, starGift, j, runnable2, z && (disallowedGiftsSettings2 = this.userSettings) != null && disallowedGiftsSettings2.disallow_limited_stargifts, z && (disallowedGiftsSettings = this.userSettings) != null && disallowedGiftsSettings.disallow_unique_stargifts) { // from class: org.telegram.ui.Gifts.GiftSheet.10
+        new SendGiftSheet(context, i, starGift, j, runnable, z && (disallowedGiftsSettings2 = this.userSettings) != null && disallowedGiftsSettings2.disallow_limited_stargifts, z && (disallowedGiftsSettings = this.userSettings) != null && disallowedGiftsSettings.disallow_unique_stargifts) { // from class: org.telegram.ui.Gifts.GiftSheet.10
             @Override // org.telegram.ui.Gifts.SendGiftSheet
             protected BulletinFactory getParentBulletinFactory() {
                 GiftSheet giftSheet = GiftSheet.this;
@@ -825,25 +828,25 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$14(Runnable runnable) {
-        if (runnable != null) {
-            runnable.run();
+    public /* synthetic */ void lambda$new$14(Utilities.Callback callback) {
+        if (callback != null) {
+            callback.run(Boolean.FALSE);
         }
         lambda$new$0();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$18(final AlertDialog alertDialog, final Runnable runnable, final Runnable runnable2, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda23
+    public /* synthetic */ void lambda$new$18(final AlertDialog alertDialog, final Runnable runnable, final Utilities.Callback callback, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda24
             @Override // java.lang.Runnable
             public final void run() {
-                GiftSheet.this.lambda$new$17(alertDialog, tLObject, runnable, runnable2, tL_error);
+                GiftSheet.this.lambda$new$17(alertDialog, tLObject, runnable, callback, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$17(AlertDialog alertDialog, TLObject tLObject, Runnable runnable, final Runnable runnable2, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$new$17(AlertDialog alertDialog, TLObject tLObject, Runnable runnable, final Utilities.Callback callback, TLRPC.TL_error tL_error) {
         alertDialog.dismiss();
         if (tLObject instanceof TL_stars.checkCanSendGiftResultOk) {
             runnable.run();
@@ -860,7 +863,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                 ((EffectsTextView) messageTextView).setOnLinkPressListener(new LinkSpanDrawable.LinksTextView.OnLinkPress() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda25
                     @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView.OnLinkPress
                     public final void run(ClickableSpan clickableSpan) {
-                        GiftSheet.this.lambda$new$16(show, runnable2, messageTextView, clickableSpan);
+                        GiftSheet.this.lambda$new$16(show, callback, messageTextView, clickableSpan);
                     }
                 });
             }
@@ -868,10 +871,10 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$16(AlertDialog alertDialog, Runnable runnable, TextView textView, ClickableSpan clickableSpan) {
+    public /* synthetic */ void lambda$new$16(AlertDialog alertDialog, Utilities.Callback callback, TextView textView, ClickableSpan clickableSpan) {
         alertDialog.dismiss();
-        if (runnable != null) {
-            runnable.run();
+        if (callback != null) {
+            callback.run(Boolean.FALSE);
         }
         lambda$new$0();
         clickableSpan.onClick(textView);
@@ -1035,7 +1038,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                 }
             } else if (!arrayList.isEmpty()) {
                 System.currentTimeMillis();
-                BillingController.getInstance().queryProductDetails(arrayList, new ProductDetailsResponseListener() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda0
+                BillingController.getInstance().queryProductDetails(arrayList, new ProductDetailsResponseListener() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda6
                     @Override // com.android.billingclient.api.ProductDetailsResponseListener
                     public final void onProductDetailsResponse(BillingResult billingResult, List list2) {
                         GiftSheet.this.lambda$updatePremiumTiers$22(billingResult, list2);
@@ -1044,7 +1047,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             }
         }
         if (this.premiumTiers.isEmpty()) {
-            BoostRepository.loadGiftOptions(this.currentAccount, null, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda1
+            BoostRepository.loadGiftOptions(this.currentAccount, null, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda7
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     GiftSheet.this.lambda$updatePremiumTiers$23((List) obj);
@@ -1118,7 +1121,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
     protected RecyclerListView.SelectionAdapter createAdapter(RecyclerListView recyclerListView) {
-        UniversalAdapter universalAdapter = new UniversalAdapter(this.recyclerListView, getContext(), this.currentAccount, 0, true, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda2
+        UniversalAdapter universalAdapter = new UniversalAdapter(this.recyclerListView, getContext(), this.currentAccount, 0, true, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda8
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 GiftSheet.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);

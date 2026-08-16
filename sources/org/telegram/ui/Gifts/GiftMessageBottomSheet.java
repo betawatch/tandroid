@@ -177,7 +177,7 @@ public class GiftMessageBottomSheet extends BottomSheet {
 
             @Override // org.telegram.ui.Components.ChatActivityEnterView
             public void extendActionMode(Menu menu) {
-                ChatActivity.fillActionModeMenu(menu, null, false, false);
+                ChatActivity.fillActionModeMenu(menu, null, false, false, false, false);
             }
         };
         this.commentView = chatActivityEnterView;
@@ -435,6 +435,7 @@ public class GiftMessageBottomSheet extends BottomSheet {
                 }
             }
         });
+        ChatActivityEnterView.disableNewLines(chatActivityEnterView.messageEditText);
         AnimatedTextView animatedTextView = new AnimatedTextView(context);
         this.captionLimitView = animatedTextView;
         animatedTextView.setAllowCancel(true);

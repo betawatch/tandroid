@@ -186,7 +186,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
     private final LinkSpanDrawable.LinksTextView beforeTableTextView;
     private final FrameLayout bottomBulletinContainer;
     private final View bottomView;
-    private Utilities.Callback2 boughtGift;
+    private BoughtGiftCallback boughtGift;
     private final ButtonWithCounterView button;
     private final FrameLayout buttonContainer;
     private final View buttonShadow;
@@ -194,7 +194,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
     private final LinearLayout checkboxLayout;
     private final View checkboxSeparator;
     private final TextView checkboxTextView;
-    private Runnable closeParentSheet;
+    private Utilities.Callback closeParentSheet;
     private ContainerView container;
     private final AffiliateProgramFragment.FeatureCell[] craftFeatureCells;
     private final LinearLayout craftLayout;
@@ -257,6 +257,10 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
     private final TextView wearSubtitle;
     private final TextView wearTitle;
 
+    public interface BoughtGiftCallback {
+        void onBoughtGift(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j, boolean z);
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$onResellPressed$35(AlertDialog alertDialog, int i) {
     }
@@ -266,8 +270,8 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         return false;
     }
 
-    public StarGiftSheet setOnBoughtGift(Utilities.Callback2 callback2) {
-        this.boughtGift = callback2;
+    public StarGiftSheet setOnBoughtGift(BoughtGiftCallback boughtGiftCallback) {
+        this.boughtGift = boughtGiftCallback;
         return this;
     }
 
@@ -1327,9 +1331,9 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showGiftOfferSheet$15() {
-        Runnable runnable = this.closeParentSheet;
-        if (runnable != null) {
-            runnable.run();
+        Utilities.Callback callback = this.closeParentSheet;
+        if (callback != null) {
+            callback.run(Boolean.FALSE);
         }
         lambda$new$0();
     }
@@ -5435,7 +5439,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         TL_stars.TL_payments_sendStarsForm tL_payments_sendStarsForm = new TL_stars.TL_payments_sendStarsForm();
         tL_payments_sendStarsForm.form_id = paymentForm.form_id;
         tL_payments_sendStarsForm.invoice = tL_inputInvoiceStarGiftDropOriginalDetails;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_payments_sendStarsForm, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda191
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_payments_sendStarsForm, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda192
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 StarGiftSheet.this.lambda$showDeleteDescriptionAlert$69(makeButtonLoading, alertDialog, tL_starGiftUnique, j, charSequence, tLObject, tL_error);
@@ -5445,7 +5449,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showDeleteDescriptionAlert$69(final Browser.Progress progress, final AlertDialog alertDialog, final TL_stars.TL_starGiftUnique tL_starGiftUnique, final long j, final CharSequence charSequence, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda201
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda202
             @Override // java.lang.Runnable
             public final void run() {
                 StarGiftSheet.this.lambda$showDeleteDescriptionAlert$68(progress, alertDialog, tLObject, tL_starGiftUnique, tL_error, j, charSequence);
@@ -8144,13 +8148,13 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         }
         this.upgradedOnce = true;
         this.upgrade_form = null;
-        applyNewGiftFromUpdates(inputSavedStarGift, (TLRPC.Updates) tLObject, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda189
+        applyNewGiftFromUpdates(inputSavedStarGift, (TLRPC.Updates) tLObject, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda190
             @Override // java.lang.Runnable
             public final void run() {
                 StarGiftSheet.this.lambda$doUpgrade$123();
             }
         });
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda190
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda191
             @Override // java.lang.Runnable
             public final void run() {
                 StarGiftSheet.this.lambda$doUpgrade$124(tLObject);
@@ -8259,7 +8263,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             notificationCenter.lambda$postNotificationNameOnUIThread$1(i, valueOf, bool);
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChatActivity, Long.valueOf(this.dialogId), bool);
             final ChatActivity of = ChatActivity.of(this.dialogId);
-            of.whenFullyVisible(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda200
+            of.whenFullyVisible(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda201
                 @Override // java.lang.Runnable
                 public final void run() {
                     StarGiftSheet.this.lambda$doUpgrade$129(of);
@@ -8306,13 +8310,13 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$doUpgrade$134(long j) {
         final boolean[] zArr = {false};
-        StarsIntroActivity.StarsNeededSheet starsNeededSheet = new StarsIntroActivity.StarsNeededSheet(getContext(), this.resourcesProvider, j, 10, null, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda198
+        StarsIntroActivity.StarsNeededSheet starsNeededSheet = new StarsIntroActivity.StarsNeededSheet(getContext(), this.resourcesProvider, j, 10, null, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda199
             @Override // java.lang.Runnable
             public final void run() {
                 StarGiftSheet.this.lambda$doUpgrade$132(zArr);
             }
         }, 0L);
-        starsNeededSheet.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda199
+        starsNeededSheet.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda200
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 StarGiftSheet.this.lambda$doUpgrade$133(dialogInterface);
@@ -8816,7 +8820,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                     linearLayout3.addView(textView3, LayoutHelper.createLinear(-1, -2));
                 }
                 if ("PASSWORD_MISSING".equals(tL_error.text)) {
-                    builder.setPositiveButton(LocaleController.getString(R.string.Gift2TransferToTONSetPassword), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda194
+                    builder.setPositiveButton(LocaleController.getString(R.string.Gift2TransferToTONSetPassword), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda195
                         @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                         public final void onClick(AlertDialog alertDialog, int i4) {
                             StarGiftSheet.this.lambda$initTONTransfer$151(alertDialog, i4);
@@ -8844,7 +8848,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 }
             }
             if ("SRP_ID_INVALID".equals(tL_error.text)) {
-                ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getPassword(), new RequestDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda193
+                ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getPassword(), new RequestDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda194
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
                         StarGiftSheet.this.lambda$initTONTransfer$153(twoStepVerificationActivity, tLObject2, tL_error2);
@@ -9176,7 +9180,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             if (safeLastFragment != null) {
                 if (j >= 0 && j2 >= 0) {
                     final ChatActivity of = ChatActivity.of(j);
-                    of.whenFullyVisible(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda195
+                    of.whenFullyVisible(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda196
                         @Override // java.lang.Runnable
                         public final void run() {
                             StarGiftSheet.this.lambda$doTransfer$160(of, j);
@@ -9187,7 +9191,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                     BulletinFactory.of(safeLastFragment).createSimpleBulletin(R.raw.forward, LocaleController.getString(R.string.Gift2TransferredTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2TransferredText, getGiftName(), DialogObject.getShortName(j)))).ignoreDetach().show();
                 }
             }
-            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda196
+            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda197
                 @Override // java.lang.Runnable
                 public final void run() {
                     StarGiftSheet.this.lambda$doTransfer$161(tL_payments_paymentResult);
@@ -9201,7 +9205,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 StarsController.showNoSupportDialog(getContext(), this.resourcesProvider);
                 return;
             } else {
-                StarsController.getInstance(this.currentAccount).invalidateBalance(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda197
+                StarsController.getInstance(this.currentAccount).invalidateBalance(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda198
                     @Override // java.lang.Runnable
                     public final void run() {
                         StarGiftSheet.this.lambda$doTransfer$164(j3, j, callback);
@@ -9344,15 +9348,21 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$performBuyPressed$170(Browser.Progress progress, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j, GiftMessageBottomSheet giftMessageBottomSheet, Boolean bool, String str) {
+    public /* synthetic */ void lambda$performBuyPressed$170(Browser.Progress progress, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j, final GiftMessageBottomSheet giftMessageBottomSheet, Boolean bool, String str) {
         progress.end();
         if (bool.booleanValue()) {
-            Utilities.Callback2 callback2 = this.boughtGift;
-            if (callback2 != null) {
-                callback2.run(tL_starGiftUnique, Long.valueOf(j));
+            BoughtGiftCallback boughtGiftCallback = this.boughtGift;
+            if (boughtGiftCallback != null) {
+                boughtGiftCallback.onBoughtGift(tL_starGiftUnique, j, giftMessageBottomSheet != null);
             }
             if (giftMessageBottomSheet != null) {
-                giftMessageBottomSheet.lambda$new$0();
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda189
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        GiftMessageBottomSheet.this.lambda$new$0();
+                    }
+                });
+                skipDismissAnimation();
             }
             lambda$new$0();
         }
@@ -10611,20 +10621,23 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         bottomSheetParams.transitionFromLeft = true;
         bottomSheetParams.allowNestedScroll = false;
         ResaleGiftsFragment resaleGiftsFragment = new ResaleGiftsFragment(this.dialogId, str, j, this.resourcesProvider);
-        resaleGiftsFragment.setCloseParentSheet(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda192
-            @Override // java.lang.Runnable
-            public final void run() {
-                StarGiftSheet.this.lambda$openValueStats$180();
+        resaleGiftsFragment.setCloseParentSheet(new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda193
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                StarGiftSheet.this.lambda$openValueStats$180((Boolean) obj);
             }
         });
         lastFragment.showAsSheet(resaleGiftsFragment, bottomSheetParams);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openValueStats$180() {
-        Runnable runnable = this.closeParentSheet;
-        if (runnable != null) {
-            runnable.run();
+    public /* synthetic */ void lambda$openValueStats$180(Boolean bool) {
+        Utilities.Callback callback = this.closeParentSheet;
+        if (callback != null) {
+            callback.run(bool);
+        }
+        if (bool.booleanValue()) {
+            skipDismissAnimation();
         }
         lambda$new$0();
     }
@@ -10845,10 +10858,13 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                     return;
                 }
                 long peerDialogId = DialogObject.getPeerDialogId(peer);
+                long peerDialogId2 = DialogObject.getPeerDialogId(tL_messageActionStarGiftUnique.peer);
                 if (clientUserId == peerDialogId) {
                     set(AndroidUtilities.replaceTags(LocaleController.formatString((tL_messageActionStarGiftUnique.craft || tL_messageActionStarGiftUnique.gift.crafted) ? R.string.GiftSelfTopActionCrafted : R.string.GiftSelfTopAction, LocaleController.formatDate(messageObject.messageOwner.date))));
-                } else {
+                } else if (clientUserId == peerDialogId2) {
                     set(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftTopAction, DialogObject.getShortName(i, peerDialogId), LocaleController.formatDate(messageObject.messageOwner.date))));
+                } else {
+                    set(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftTopActionFromTo, DialogObject.getShortName(i, peerDialogId), DialogObject.getShortName(i, peerDialogId2), LocaleController.formatDate(messageObject.messageOwner.date))));
                 }
                 setVisibility(0);
                 return;
@@ -10864,10 +10880,13 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             setVisibility(0);
             long clientUserId = UserConfig.getInstance(i).getClientUserId();
             long peerDialogId = DialogObject.getPeerDialogId(savedStarGift.from_id);
+            long peerDialogId2 = DialogObject.getPeerDialogId(savedStarGift.gift.owner_id);
             if (clientUserId == peerDialogId) {
                 set(AndroidUtilities.replaceTags(LocaleController.formatString(savedStarGift.gift.crafted ? R.string.GiftSelfTopActionCrafted : R.string.GiftSelfTopAction, LocaleController.formatDate(savedStarGift.date))));
-            } else {
+            } else if (clientUserId == peerDialogId2) {
                 set(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftTopAction, DialogObject.getShortName(i, peerDialogId), LocaleController.formatDate(savedStarGift.date))));
+            } else {
+                set(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftTopActionFromTo, DialogObject.getShortName(i, peerDialogId), DialogObject.getShortName(i, peerDialogId2), LocaleController.formatDate(savedStarGift.date))));
             }
         }
 
