@@ -153,7 +153,7 @@ public class GiftMessageBottomSheet extends BottomSheet {
         sizeNotifierFrameLayout.setBackgroundImage(PreviewView.getBackgroundDrawable((Drawable) null, this.currentAccount, j, Theme.isCurrentThemeDark()), false);
         StarGiftUniqueActionView starGiftUniqueActionView = new StarGiftUniqueActionView(context, this.currentAccount, resourcesProvider);
         this.starGiftUniqueActionView = starGiftUniqueActionView;
-        starGiftUniqueActionView.set(tL_starGiftUnique, UserConfig.getInstance(this.currentAccount).getClientUserId(), null, LocaleController.getString(R.string.GiftMessageSendNow));
+        starGiftUniqueActionView.set(tL_starGiftUnique, UserConfig.getInstance(this.currentAccount).getClientUserId(), null, LocaleController.getString(R.string.GiftMessageSendNow), false);
         starGiftUniqueActionView.setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
         starGiftUniqueActionView.setLayoutBackground(Theme.createServiceDrawable(AndroidUtilities.dp(18.0f), starGiftUniqueActionView, this.containerView, getThemedPaint("paintChatActionBackground")));
         sizeNotifierFrameLayout.addView(starGiftUniqueActionView, LayoutHelper.createFrame(-2, -2, 17));
@@ -405,7 +405,7 @@ public class GiftMessageBottomSheet extends BottomSheet {
             @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
             public void onTextChanged(CharSequence charSequence, boolean z, boolean z2) {
                 int i2;
-                GiftMessageBottomSheet.this.starGiftUniqueActionView.set(tL_starGiftUnique, UserConfig.getInstance(((BottomSheet) GiftMessageBottomSheet.this).currentAccount).getClientUserId(), GiftMessageBottomSheet.this.commentView.getTextWithEntities(), LocaleController.getString(R.string.GiftMessageSendNow));
+                GiftMessageBottomSheet.this.starGiftUniqueActionView.set(tL_starGiftUnique, UserConfig.getInstance(((BottomSheet) GiftMessageBottomSheet.this).currentAccount).getClientUserId(), GiftMessageBottomSheet.this.commentView.getTextWithEntities(), LocaleController.getString(R.string.GiftMessageSendNow), true);
                 GiftMessageBottomSheet.this.codepointCount = Character.codePointCount(charSequence, 0, charSequence.length());
                 if (GiftMessageBottomSheet.this.captionLimit <= 0 || (i2 = GiftMessageBottomSheet.this.captionLimit - GiftMessageBottomSheet.this.codepointCount) > 15) {
                     GiftMessageBottomSheet.this.captionLimitView.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Gifts.GiftMessageBottomSheet.3.1
@@ -584,6 +584,7 @@ public class GiftMessageBottomSheet extends BottomSheet {
     @Override // org.telegram.ui.ActionBar.BottomSheet
     public void onOpenAnimationEnd() {
         super.onOpenAnimationEnd();
+        setAllowNestedScroll(false);
         Bulletin.addDelegate(this.container, new Bulletin.Delegate() { // from class: org.telegram.ui.Gifts.GiftMessageBottomSheet.5
             @Override // org.telegram.ui.Components.Bulletin.Delegate
             public /* synthetic */ boolean allowLayoutChanges() {

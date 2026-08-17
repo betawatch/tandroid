@@ -10194,9 +10194,9 @@ public class MessageObject {
             alignment2 = hyphenationFrequency.setAlignment(alignment);
             if (z) {
                 alignment2.setIncludePad(false);
-                if (i3 >= 28) {
-                    alignment2.setUseLineSpacingFromFallbacks(false);
-                }
+            }
+            if (i3 >= 28) {
+                alignment2.setUseLineSpacingFromFallbacks(false);
             }
             build = alignment2.build();
             for (int i4 = 0; i4 < build.getLineCount(); i4++) {
@@ -10208,9 +10208,9 @@ public class MessageObject {
                     alignment3 = hyphenationFrequency2.setAlignment(alignment);
                     if (z) {
                         alignment3.setIncludePad(false);
-                        if (Build.VERSION.SDK_INT >= 28) {
-                            alignment3.setUseLineSpacingFromFallbacks(false);
-                        }
+                    }
+                    if (Build.VERSION.SDK_INT >= 28) {
+                        alignment3.setUseLineSpacingFromFallbacks(false);
                     }
                     build2 = alignment3.build();
                     return build2;
@@ -11674,7 +11674,7 @@ public class MessageObject {
         if (bool != null) {
             return bool.booleanValue();
         }
-        if (isWelcomeMessage()) {
+        if (isWelcomeMessage() && !isWelcomeAnchored()) {
             this.isOutOwnerCached = Boolean.FALSE;
             return false;
         }

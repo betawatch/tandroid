@@ -18,6 +18,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.Iterator;
+import me.vkryl.android.animator.FactorAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
@@ -38,6 +39,7 @@ import org.telegram.ui.Cells.ChatActionCell;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.ButtonBounce;
+import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.Text;
 import org.telegram.ui.Gifts.GiftMessageDrawable;
 import org.telegram.ui.Gifts.GiftSheet;
@@ -47,6 +49,7 @@ import org.telegram.ui.Stars.StarsReactionsSheet;
 /* loaded from: classes5.dex */
 public class StarGiftUniqueActionLayout {
     TLRPC.TL_messageActionStarGiftUnique action;
+    private final FactorAnimator animatorVisualWidth;
     private boolean attached;
     private TL_stars.starGiftAttributeBackdrop backdrop;
     private final ButtonBounce bounce;
@@ -112,6 +115,17 @@ public class StarGiftUniqueActionLayout {
         this.buttonPath = new Path();
         this.buttonBackgroundPaint = new Paint();
         this.buttonParticles = new StarsReactionsSheet.Particles(1, 25);
+        this.animatorVisualWidth = new FactorAnimator(0, new FactorAnimator.Target() { // from class: org.telegram.ui.Stars.StarGiftUniqueActionLayout$$ExternalSyntheticLambda0
+            @Override // me.vkryl.android.animator.FactorAnimator.Target
+            public /* synthetic */ void onFactorChangeFinished(int i2, float f, FactorAnimator factorAnimator) {
+                FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i2, f, factorAnimator);
+            }
+
+            @Override // me.vkryl.android.animator.FactorAnimator.Target
+            public final void onFactorChanged(int i2, float f, float f2, FactorAnimator factorAnimator) {
+                StarGiftUniqueActionLayout.this.lambda$new$0(i2, f, f2, factorAnimator);
+            }
+        }, CubicBezierInterpolator.EASE_OUT_QUINT, 320L);
         this.currentAccount = i;
         this.view = view;
         this.resourcesProvider = resourcesProvider;
@@ -134,6 +148,7 @@ public class StarGiftUniqueActionLayout {
     */
     public void set(MessageObject messageObject, boolean z) {
         TLRPC.TL_messageActionStarGiftUnique tL_messageActionStarGiftUnique;
+        float dp;
         TLRPC.Message message;
         this.widthExpanded = false;
         this.currentMessageObject = messageObject;
@@ -193,13 +208,19 @@ public class StarGiftUniqueActionLayout {
                 if (this.repost) {
                     this.width = AndroidUtilities.dp(200.0f);
                 } else {
-                    this.width = Math.min((int) (AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() * 0.6f : (AndroidUtilities.displaySize.x * 0.62f) - AndroidUtilities.dp(34.0f)), ((AndroidUtilities.displaySize.y - ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(64.0f));
+                    if (AndroidUtilities.isTablet()) {
+                        dp = AndroidUtilities.getMinTabletSide() * 0.6f;
+                    } else {
+                        dp = (AndroidUtilities.displaySize.x * 0.62f) - AndroidUtilities.dp(34.0f);
+                    }
+                    this.width = Math.min((int) dp, ((AndroidUtilities.displaySize.y - ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(64.0f));
                     if (!AndroidUtilities.isTablet()) {
                         this.width = (int) (this.width * 1.2f);
                     }
                     this.width -= AndroidUtilities.dp(8.0f);
                 }
                 setInternal(messageObject, tL_messageActionStarGiftUnique, tL_starGiftUnique, z);
+                checkAnimatedWidth(z);
                 return;
             }
         }
@@ -351,7 +372,7 @@ public class StarGiftUniqueActionLayout {
         this.height = (int) (dp42 + dp);
     }
 
-    public void set(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j, TLRPC.TL_textWithEntities tL_textWithEntities, String str) {
+    public void set(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j, TLRPC.TL_textWithEntities tL_textWithEntities, String str, boolean z) {
         this.widthExpanded = false;
         this.action = null;
         this.currentMessageObject = null;
@@ -379,9 +400,9 @@ public class StarGiftUniqueActionLayout {
             this.imageReceiver.setAutoRepeat(0);
             StarsIntroActivity.setGiftImage(this.imageReceiver, this.model.document, 110);
         }
-        boolean z = tL_starGiftUnique.burned;
-        this.burned = z;
-        if (z) {
+        boolean z2 = tL_starGiftUnique.burned;
+        this.burned = z2;
+        if (z2) {
             this.ribbon.setColor(Theme.getColor(Theme.key_text_RedBold, this.resourcesProvider));
             this.ribbon.setText(11, LocaleController.getString(R.string.Gift2UniqueRibbonBurned), true);
         } else {
@@ -399,6 +420,7 @@ public class StarGiftUniqueActionLayout {
         }
         this.width -= AndroidUtilities.dp(8.0f);
         setInternal2(tL_starGiftUnique, j, tL_textWithEntities, str);
+        checkAnimatedWidth(z);
     }
 
     private void setInternal2(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j, TLRPC.TL_textWithEntities tL_textWithEntities, String str) {
@@ -450,7 +472,7 @@ public class StarGiftUniqueActionLayout {
     }
 
     public float getWidth() {
-        return this.width;
+        return this.animatorVisualWidth.getFactor();
     }
 
     public float getHeight() {
@@ -572,12 +594,34 @@ public class StarGiftUniqueActionLayout {
         this.buttonParticles.draw(canvas, Theme.multAlpha(-1, 0.7f));
         this.buttonText.draw(canvas, this.buttonRect.left + AndroidUtilities.dp(15.0f), this.buttonRect.centerY(), -1, 1.0f);
         canvas.restore();
+        invalidate();
+    }
+
+    private void invalidate() {
         View view = this.view;
         if (view instanceof ChatActionCell) {
             ((ChatActionCell) view).invalidateOutbounds();
         } else {
             view.invalidate();
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0(int i, float f, float f2, FactorAnimator factorAnimator) {
+        invalidate();
+    }
+
+    private void checkAnimatedWidth(boolean z) {
+        if (z) {
+            int round = Math.round(this.animatorVisualWidth.getToFactor());
+            int i = this.width;
+            if (round != i) {
+                this.animatorVisualWidth.animateTo(i);
+                return;
+            }
+            return;
+        }
+        this.animatorVisualWidth.forceFactor(this.width);
     }
 
     public boolean onTouchEvent(float f, float f2, MotionEvent motionEvent) {

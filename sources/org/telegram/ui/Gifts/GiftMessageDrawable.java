@@ -3,7 +3,12 @@ package org.telegram.ui.Gifts;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
+import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.NinePatchDrawable;
 import android.text.Layout;
@@ -37,8 +42,8 @@ public class GiftMessageDrawable extends Drawable {
     private final int avatarRadius;
     private final ImageReceiver avatarReceiver;
     private final int avatarSize;
-    private final NinePatchDrawable bubble;
-    private final NinePatchDrawable bubbleBorder;
+    private NinePatchDrawable bubble;
+    private NinePatchDrawable bubbleBorder;
     private AnimatedEmojiSpan.EmojiGroupedSpans emojiGroupedSpans;
     private final float firstBaselineTop;
     private boolean hasAvatar;
@@ -93,11 +98,18 @@ public class GiftMessageDrawable extends Drawable {
                 GiftMessageDrawable.this.lambda$new$0(i, f, f2, factorAnimator);
             }
         }, CubicBezierInterpolator.EASE_OUT_QUINT, 320L, true);
-        this.bubble = createBubbleNinePatch(R.drawable.gift_message_bubble_24);
-        this.bubbleBorder = createBubbleNinePatch(R.drawable.gift_message_bubble_border_24);
         textPaint.setTextSize(AndroidUtilities.dp(12.0f));
         textPaint.setColor(-1);
         imageReceiver.setRoundRadius(dp);
+    }
+
+    private void ensureNinePatches() {
+        if (this.bubble == null) {
+            this.bubble = createBubbleNinePatch(R.drawable.gift_message_bubble_24);
+        }
+        if (this.bubbleBorder == null) {
+            this.bubbleBorder = createBubbleBorderNinePatch(R.drawable.gift_message_bubble_border_24);
+        }
     }
 
     public TextPaint getTextPaint() {
@@ -154,6 +166,7 @@ public class GiftMessageDrawable extends Drawable {
 
     public int measure(int i) {
         int ceil;
+        ensureNinePatches();
         if (i == this.lastMeasuredWidth && this.textLayout != null) {
             return this.measuredHeight;
         }
@@ -213,6 +226,7 @@ public class GiftMessageDrawable extends Drawable {
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
         float f;
+        ensureNinePatches();
         Rect bounds = getBounds();
         canvas.save();
         if (this.alwaysUseAvatarAnimator) {
@@ -261,6 +275,25 @@ public class GiftMessageDrawable extends Drawable {
         Canvas canvas = new Canvas(createBitmap);
         drawable.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
         drawable.draw(canvas);
+        int i2 = (intrinsicWidth * 27) / NotificationCenter.groupCallSpeakingUsersUpdated;
+        int i3 = (intrinsicHeight * 4) / NotificationCenter.filePreparingStarted;
+        return NinePatchBuilder.createNinePatch(createBitmap, new Rect(i2, i3, (intrinsicWidth * 5) / NotificationCenter.groupCallSpeakingUsersUpdated, i3), (intrinsicWidth * 94) / NotificationCenter.groupCallSpeakingUsersUpdated, (intrinsicHeight * 71) / NotificationCenter.filePreparingStarted);
+    }
+
+    private static NinePatchDrawable createBubbleBorderNinePatch(int i) {
+        Drawable drawable = ApplicationLoader.applicationContext.getResources().getDrawable(i);
+        int intrinsicWidth = drawable.getIntrinsicWidth();
+        int intrinsicHeight = drawable.getIntrinsicHeight();
+        Bitmap createBitmap = Bitmap.createBitmap(intrinsicWidth, intrinsicHeight, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(createBitmap);
+        drawable.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
+        drawable.draw(canvas);
+        Paint paint = new Paint(1);
+        float f = intrinsicWidth;
+        float f2 = intrinsicHeight;
+        paint.setShader(new LinearGradient(f, 0.0f, 0.0f, f2, new int[]{1090519039, -805306369, 1090519039}, (float[]) null, Shader.TileMode.CLAMP));
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.MULTIPLY));
+        canvas.drawRect(0.0f, 0.0f, f, f2, paint);
         int i2 = (intrinsicWidth * 27) / NotificationCenter.groupCallSpeakingUsersUpdated;
         int i3 = (intrinsicHeight * 4) / NotificationCenter.filePreparingStarted;
         return NinePatchBuilder.createNinePatch(createBitmap, new Rect(i2, i3, (intrinsicWidth * 5) / NotificationCenter.groupCallSpeakingUsersUpdated, i3), (intrinsicWidth * 94) / NotificationCenter.groupCallSpeakingUsersUpdated, (intrinsicHeight * 71) / NotificationCenter.filePreparingStarted);

@@ -347,8 +347,8 @@ public abstract class PreviewView extends FrameLayout {
                 }
 
                 @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-                public boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
-                    return false;
+                public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
+                    return VideoPlayer.VideoPlayerDelegate.-CC.$default$onSurfaceDestroyed(this, surfaceTexture);
                 }
 
                 @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
@@ -1142,8 +1142,8 @@ public abstract class PreviewView extends FrameLayout {
         }
 
         @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-        public boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
-            return false;
+        public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
+            return VideoPlayer.VideoPlayerDelegate.-CC.$default$onSurfaceDestroyed(this, surfaceTexture);
         }
 
         3(StoryEntry storyEntry, Runnable[] runnableArr) {
@@ -1397,12 +1397,13 @@ public abstract class PreviewView extends FrameLayout {
             }
 
             @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-            public boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
-                return false;
+            public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
+                return VideoPlayer.VideoPlayerDelegate.-CC.$default$onSurfaceDestroyed(this, surfaceTexture);
             }
 
             @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-            public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+            public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+                VideoPlayer.VideoPlayerDelegate.-CC.$default$onSurfaceTextureUpdated(this, surfaceTexture);
             }
 
             @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate

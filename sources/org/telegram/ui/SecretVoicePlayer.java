@@ -1229,12 +1229,13 @@ public class SecretVoicePlayer extends Dialog {
         }
 
         @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-        public boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
-            return false;
+        public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
+            return VideoPlayer.VideoPlayerDelegate.-CC.$default$onSurfaceDestroyed(this, surfaceTexture);
         }
 
         @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate
-        public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+            VideoPlayer.VideoPlayerDelegate.-CC.$default$onSurfaceTextureUpdated(this, surfaceTexture);
         }
 
         @Override // org.telegram.ui.Components.VideoPlayer.VideoPlayerDelegate

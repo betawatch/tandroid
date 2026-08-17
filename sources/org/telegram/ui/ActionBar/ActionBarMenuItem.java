@@ -66,11 +66,14 @@ import org.telegram.ui.Components.CloseProgressDrawable2;
 import org.telegram.ui.Components.CombinedDrawable;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RLottieImageView;
 import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProvider;
 
 /* loaded from: classes4.dex */
 public class ActionBarMenuItem extends FrameLayout {
@@ -124,7 +127,9 @@ public class ActionBarMenuItem extends FrameLayout {
     private View showSubMenuFrom;
     private boolean showSubmenuByMove;
     private ActionBarSubMenuItemDelegate subMenuDelegate;
+    private BlurredBackgroundDrawableViewFactory subMenuFactory;
     private int subMenuOpenSide;
+    private BlurredBackgroundProvider subMenuProvider;
     protected TextView textView;
     private float transitionOffset;
     private boolean wrapSearchInScrollView;
@@ -435,7 +440,11 @@ public class ActionBarMenuItem extends FrameLayout {
         this.location = new int[2];
         ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getContext(), R.drawable.popup_fixed_alert4, this.resourcesProvider, 1);
         this.popupLayout = actionBarPopupWindowLayout;
-        actionBarPopupWindowLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda8
+        BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory = this.subMenuFactory;
+        if (blurredBackgroundDrawableViewFactory != null) {
+            actionBarPopupWindowLayout.setBackground(blurredBackgroundDrawableViewFactory.create((View) actionBarPopupWindowLayout, true).setColorProvider(this.subMenuProvider).setRadius(AndroidUtilities.dp(12.0f)).setPadding(AndroidUtilities.dp(8.0f)));
+        }
+        this.popupLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda8
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 boolean lambda$createPopupLayout$1;
@@ -815,6 +824,16 @@ public class ActionBarMenuItem extends FrameLayout {
         this.xOffset = i;
     }
 
+    public void setBlurredBackgroundFactory(BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory, BlurredBackgroundProvider blurredBackgroundProvider) {
+        this.subMenuFactory = blurredBackgroundDrawableViewFactory;
+        this.subMenuProvider = blurredBackgroundProvider;
+        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = this.popupLayout;
+        if (actionBarPopupWindowLayout == null || blurredBackgroundDrawableViewFactory == null) {
+            return;
+        }
+        actionBarPopupWindowLayout.setBackground(blurredBackgroundDrawableViewFactory.create((View) actionBarPopupWindowLayout, true).setColorProvider(blurredBackgroundProvider).setRadius(AndroidUtilities.dp(12.0f)).setPadding(AndroidUtilities.dp(8.0f)));
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
     public void toggleSubMenu(final View view, View view2) {
         ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout;
@@ -868,9 +887,14 @@ public class ActionBarMenuItem extends FrameLayout {
                         ((ViewGroup) view.getParent()).removeView(view);
                     }
                     if ((view instanceof ActionBarMenuSubItem) || (view instanceof LinearLayout)) {
-                        Drawable mutate = ContextCompat.getDrawable(getContext(), R.drawable.popup_fixed_alert2).mutate();
-                        mutate.setColorFilter(new PorterDuffColorFilter(this.popupLayout.getBackgroundColor(), PorterDuff.Mode.MULTIPLY));
-                        frameLayout.setBackground(mutate);
+                        BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory = this.subMenuFactory;
+                        if (blurredBackgroundDrawableViewFactory != null) {
+                            frameLayout.setBackground(blurredBackgroundDrawableViewFactory.create((View) this.popupLayout, true).setColorProvider(this.subMenuProvider).setRadius(AndroidUtilities.dp(12.0f)).setPadding(AndroidUtilities.dp(8.0f)).setHasPadding(true));
+                        } else {
+                            Drawable mutate = ContextCompat.getDrawable(getContext(), R.drawable.popup_fixed_alert2).mutate();
+                            mutate.setColorFilter(new PorterDuffColorFilter(this.popupLayout.getBackgroundColor(), PorterDuff.Mode.MULTIPLY));
+                            frameLayout.setBackground(mutate);
+                        }
                     }
                     frameLayout.addView(view, LayoutHelper.createFrame(-1, -2.0f));
                     linearLayout.addView(frameLayout, LayoutHelper.createLinear(-1, -2));
@@ -880,6 +904,9 @@ public class ActionBarMenuItem extends FrameLayout {
                 } else {
                     actionBarPopupWindowLayout2.setTopView(null);
                     actionBarPopupWindowLayout = actionBarPopupWindowLayout2;
+                }
+                if (this.subMenuFactory != null) {
+                    ItemOptions.setGapBackgroundColor(this.popupLayout, Theme.multAlpha(getThemedColor(Theme.key_actionBarDefaultSubmenuItem), 0.06f));
                 }
                 ActionBarPopupWindow actionBarPopupWindow3 = new ActionBarPopupWindow(actionBarPopupWindowLayout, -2, -2);
                 this.popupWindow = actionBarPopupWindow3;
